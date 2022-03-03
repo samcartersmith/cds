@@ -11,8 +11,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 326,
-      "totalCallSites": 124,
+      "totalInstances": 338,
+      "totalCallSites": 129,
       "cds": "@cbhq/cds-web/layout/Box",
       "aliasedCdsComponents": [
         {
@@ -56,6 +56,14 @@
         {
           "aliasPath": "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx",
           "callSites": ["@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPModal.tsx"]
+        },
+        {
+          "aliasPath": "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx",
+          "callSites": [
+            "@ubo/settings/Statements/pages/Transactions/Transactions.tsx",
+            "@ubo/settings/Statements/pages/Transactions/Transactions.tsx",
+            "@ubo/settings/TaxCenter/pages/Reports/Reports.tsx"
+          ]
         },
         {
           "aliasPath": "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx",
@@ -116,6 +124,7 @@
         "@ubo/pages/Signout/useAccountTypePicker.tsx": 3,
         "@ubo/settings/Organization/OrganizationDetailsTable.tsx": 1,
         "@ubo/settings/Payments/PaymentMethods.tsx": 3,
+        "@ubo/settings/Statements/Statements.tsx": 2,
         "@ubo/settings/TaxCenter/TaxCenter.tsx": 2,
         "@ubo/settings/pages/Applications.tsx": 1,
         "@ubo/settings/pages/Organization.tsx": 4,
@@ -158,8 +167,8 @@
         "@ubo/settings/TaxCenter/pages/Reports/Reports.tsx": 2,
         "@ubo/settings/TaxCenter/pages/TaxForms/VerifyTaxProfile.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 8,
-        "@ubo/settings/components/DetailsTable/components/InlineBadge.tsx": 1,
         "@ubo/settings/components/DetailsTable/modals/DiscardChangesConfirmationModal.tsx": 4,
+        "@ubo/settings/components/DetailsTable/components/InlineBadge.tsx": 1,
         "@ubo/settings/components/Layout/Header/Header.tsx": 5,
         "@ubo/settings/components/Layout/Header/HeaderTab.tsx": 1,
         "@ubo/settings/components/Layout/Header/ProductPicker.tsx": 1,
@@ -172,9 +181,11 @@
         "@ubo/settings/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
         "@ubo/settings/Security/modals/SecurityKey/steps/RenameKey.tsx": 1,
         "@ubo/settings/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
+        "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
+        "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-        "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 5,
+        "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 6,
         "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Reports/components/ReportsFAQ.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Reports/components/TaxDocumentWithType.tsx": 1,
@@ -185,13 +196,15 @@
         "@ubo/settings/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 9,
         "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 8,
+        "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 2,
+        "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 7,
         "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 8,
-        "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 2,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 4,
+        "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 2,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 5,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/ContextAwareCTA.tsx": 2,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 6,
@@ -210,15 +223,15 @@
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 9,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 6,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 5,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/GenericCell.tsx": 4,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionInfoCell.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 11,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 3,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 14,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 11
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 1
       },
       "propsWithCallSites": {
         "justifyContent": {
@@ -236,6 +249,7 @@
           "@ubo/pages/ErrorPage/SafariErrorPage.tsx": 2,
           "@ubo/pages/Signout/useAccountTypePicker.tsx": 1,
           "@ubo/settings/Payments/PaymentMethods.tsx": 1,
+          "@ubo/settings/Statements/Statements.tsx": 1,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
           "@ubo/settings/pages/Organization.tsx": 1,
           "@ubo/components/modals/MaintenanceModal/MaintenanceModalContent.tsx": 1,
@@ -258,11 +272,15 @@
           "@ubo/settings/components/Layout/Header/ProductPicker.tsx": 1,
           "@ubo/settings/components/Layout/Header/ProductPickerModal.tsx": 1,
           "@ubo/settings/components/Layout/Layout/Layout.tsx": 1,
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
+          "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 4,
           "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
@@ -278,9 +296,9 @@
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/GenericCell.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 4,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 3,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 5,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 4
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 5
         },
         "borderedBottom": {
           "@ubo/components/Modal/Modal.tsx": 1,
@@ -318,6 +336,7 @@
           "@ubo/pages/ErrorPage/InvalidEmailPage.tsx": 1,
           "@ubo/pages/ErrorPage/SafariErrorPage.tsx": 1,
           "@ubo/pages/Signout/useAccountTypePicker.tsx": 1,
+          "@ubo/settings/Statements/Statements.tsx": 2,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 2,
           "@ubo/settings/pages/Organization.tsx": 1,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/ApplicationActionButton.tsx": 1,
@@ -327,7 +346,7 @@
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 2,
           "@ubo/settings/TaxCenter/pages/TaxForms/VerifyTaxProfile.tsx": 1,
           "@ubo/settings/components/Layout/Navigation/NavigationRowItem.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2,
@@ -335,7 +354,7 @@
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1
         },
         "spacingVertical": {
@@ -351,8 +370,8 @@
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 6,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 3
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 3,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 6
         },
         "testID": {
           "@ubo/components/Modal/Modal.tsx": 3,
@@ -417,6 +436,7 @@
           "@ubo/settings/components/Layout/Layout/Layout.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxDocumentWithType.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 3,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
@@ -451,7 +471,7 @@
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/GenericCell.tsx": 2
         },
@@ -480,11 +500,14 @@
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 2,
           "@ubo/settings/components/DetailsTable/modals/DiscardChangesConfirmationModal.tsx": 3,
           "@ubo/settings/components/Layout/Header/HeaderTab.tsx": 1,
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 4,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
@@ -496,7 +519,7 @@
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/OtherWaysToFile.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 2
         },
         "left": { "@ubo/components/Modal/Modal.tsx": 1 },
@@ -525,12 +548,15 @@
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Preferences/Preferences.tsx": 2,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 2,
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 4,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
@@ -545,7 +571,7 @@
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 2
         },
         "borderRadius": {
@@ -566,6 +592,7 @@
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 2,
           "@ubo/settings/components/Layout/Header/HeaderTab.tsx": 1,
           "@ubo/settings/components/Layout/Navigation/NavigationRowItem.tsx": 1,
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 1,
@@ -574,6 +601,8 @@
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 4,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
@@ -589,7 +618,7 @@
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/GenericCell.tsx": 2
         },
@@ -609,16 +638,19 @@
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 2,
           "@ubo/settings/components/Layout/Header/HeaderTab.tsx": 1,
           "@ubo/settings/components/Layout/Navigation/NavigationRowItem.tsx": 1,
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 2,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 4,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/GenericCell.tsx": 2
         },
@@ -668,6 +700,7 @@
           "@ubo/pages/ErrorPage/GenericErrorPage.tsx": 1,
           "@ubo/pages/ErrorPage/InvalidEmailPage.tsx": 1,
           "@ubo/pages/ErrorPage/SafariErrorPage.tsx": 1,
+          "@ubo/settings/Statements/Statements.tsx": 1,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
           "@ubo/settings/pages/Applications.tsx": 1,
           "@ubo/pages/ChecklistScreen/ApplicationChildScreen/Layout.tsx": 1,
@@ -693,6 +726,7 @@
         },
         "flexGrow": {
           "@ubo/pages/ChecklistScreen/ApplicationCard.tsx": 1,
+          "@ubo/settings/Statements/Statements.tsx": 1,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/ApplicationSection.tsx": 2,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/InterestFormApplication.tsx": 1,
@@ -704,7 +738,7 @@
           "@ubo/settings/components/DetailsTable/modals/DiscardChangesConfirmationModal.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 6,
@@ -716,11 +750,11 @@
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 10,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 7
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 7,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 10
         },
         "spacingTop": {
           "@ubo/pages/ChecklistScreen/ChecklistModal.tsx": 1,
@@ -730,6 +764,7 @@
           "@ubo/pages/ErrorPage/GenericErrorPage.tsx": 2,
           "@ubo/pages/ErrorPage/InvalidEmailPage.tsx": 2,
           "@ubo/pages/ErrorPage/SafariErrorPage.tsx": 2,
+          "@ubo/settings/Statements/Statements.tsx": 1,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
           "@ubo/components/modals/InviteApplicationCollaborator/InviteApplicationCollaborator.tsx": 1,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/ApplicationSection.tsx": 1,
@@ -760,8 +795,8 @@
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 4,
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 3,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 4,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
@@ -830,8 +865,8 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 103,
-      "totalCallSites": 64,
+      "totalInstances": 113,
+      "totalCallSites": 67,
       "cds": "@cbhq/cds-web/layout/HStack",
       "aliasedCdsComponents": [
         {
@@ -896,6 +931,7 @@
         "@ubo/settings/pages/Security.tsx": 1,
         "@ubo/pages/ChecklistScreen/ApplicationChildScreen/BackLink.tsx": 1,
         "@ubo/pages/ChecklistScreen/InterestFormApplication/ApplicationSection.tsx": 1,
+        "@ubo/pages/Signout/sidebars/index.tsx": 6,
         "@ubo/settings/Profile/components/PhoneNumberItem.tsx": 2,
         "@ubo/settings/Profile/components/UserHeroBanner.tsx": 1,
         "@ubo/settings/Profile/modals/CryptoAddressModal.tsx": 3,
@@ -912,19 +948,20 @@
         "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPCheck.tsx": 2,
         "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPDownload.tsx": 1,
         "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 1,
+        "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 1,
         "@ubo/settings/TaxCenter/components/Form8949/SummaryForm8949.tsx": 1,
         "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 1,
         "@ubo/settings/components/DetailsTable/components/ReadOnlyDisplay.tsx": 1,
         "@ubo/settings/Security/modals/PasswordReset/steps/PasswordReset.tsx": 1,
         "@ubo/settings/Security/modals/SecurityKey/steps/KeyInfo.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 8,
         "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
@@ -933,15 +970,16 @@
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 3,
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/ModifiedTaxLotReview.tsx": 6,
+        "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/components/TransactionRow.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 3,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 4,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/FlaggableCell.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 2,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 5,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 7,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 2,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 5
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 2
       },
       "propsWithCallSites": {
         "width": {
@@ -955,11 +993,11 @@
           "@ubo/pages/Signout/Header.tsx": 1,
           "@ubo/settings/TaxCenter/components/LastUpdatedBanner.tsx": 1,
           "@ubo/settings/components/DetailsTable/components/ReadOnlyDisplay.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1
         },
         "alignItems": {
@@ -980,7 +1018,7 @@
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 1,
           "@ubo/settings/TaxCenter/components/Form8949/SummaryForm8949.tsx": 1,
           "@ubo/settings/components/DetailsTable/components/ReadOnlyDisplay.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 6,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
@@ -992,13 +1030,13 @@
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/FlaggableCell.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 2,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 2
         },
         "testID": {
           "@ubo/components/RetailLogoWithProduct/RetailLogoWithProduct.tsx": 1,
@@ -1025,11 +1063,12 @@
         },
         "flexGrow": {
           "@ubo/pages/ChecklistScreen/ApplicationCard.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 1,
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2
         },
         "justifyContent": {
           "@ubo/pages/ChecklistScreen/ApplicationCard.tsx": 1,
@@ -1056,6 +1095,7 @@
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/ModifiedTaxLotReview.tsx": 6,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 2
         },
@@ -1072,6 +1112,7 @@
           "@ubo/settings/Profile/modals/CryptoAddressModal.tsx": 1,
           "@ubo/settings/Profile/pages/CryptoAddresses.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/components/TransactionRow.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 1
         },
         "gap": {
@@ -1082,6 +1123,7 @@
           "@ubo/pages/ErrorPage/InvalidEmailPage.tsx": 1,
           "@ubo/pages/ErrorPage/SafariErrorPage.tsx": 1,
           "@ubo/settings/pages/Security.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 3,
           "@ubo/settings/Profile/components/PhoneNumberItem.tsx": 1,
           "@ubo/settings/Profile/pages/CryptoAddresses.tsx": 1,
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthFidoItem.tsx": 1,
@@ -1090,6 +1132,7 @@
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPCheck.tsx": 1,
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPDownload.tsx": 1,
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 1,
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 1,
           "@ubo/settings/Security/modals/PasswordReset/steps/PasswordReset.tsx": 1,
@@ -1100,7 +1143,9 @@
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/components/TransactionRow.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
         },
         "spacingTop": {
           "@ubo/pages/ErrorPage/CookieErrorPage.tsx": 1,
@@ -1178,8 +1223,8 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 66,
-      "totalCallSites": 49,
+      "totalInstances": 74,
+      "totalCallSites": 52,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
       "callSites": {
         "@ubo/components/Modal/Modal.tsx": 1,
@@ -1194,6 +1239,7 @@
         "@ubo/components/modals/MaintenanceModal/MaintenanceModalContent.tsx": 1,
         "@ubo/components/modals/ProfilePickerModal/ProfilePickerModal.tsx": 1,
         "@ubo/pages/ChecklistScreen/InterestFormApplication/ApplicationSection.tsx": 1,
+        "@ubo/pages/Signout/sidebars/index.tsx": 6,
         "@ubo/settings/Profile/components/CryptoAddressConnectionError.tsx": 1,
         "@ubo/settings/Profile/components/CryptoAddressEmptyState.tsx": 1,
         "@ubo/settings/Profile/components/CryptoAddressTableFooter.tsx": 1,
@@ -1211,6 +1257,7 @@
         "@ubo/settings/components/DetailsTable/components/HelpBlock.tsx": 2,
         "@ubo/settings/components/DetailsTable/components/ReadOnlyDisplay.tsx": 1,
         "@ubo/settings/components/Layout/Navigation/NavigationRowItem.tsx": 1,
+        "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
@@ -1227,6 +1274,7 @@
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 3,
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 3,
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
+        "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/components/TransactionRow.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 2,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 4,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/SizeAwareText.tsx": 1,
@@ -1246,6 +1294,7 @@
           "@ubo/components/modals/MaintenanceModal/MaintenanceModalContent.tsx": 1,
           "@ubo/components/modals/ProfilePickerModal/ProfilePickerModal.tsx": 1,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/ApplicationSection.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 6,
           "@ubo/settings/Profile/components/CryptoAddressConnectionError.tsx": 1,
           "@ubo/settings/Profile/components/CryptoAddressEmptyState.tsx": 1,
           "@ubo/settings/Profile/components/CryptoAddressTableFooter.tsx": 1,
@@ -1263,6 +1312,7 @@
           "@ubo/settings/components/DetailsTable/components/HelpBlock.tsx": 2,
           "@ubo/settings/components/DetailsTable/components/ReadOnlyDisplay.tsx": 1,
           "@ubo/settings/components/Layout/Navigation/NavigationRowItem.tsx": 1,
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
@@ -1279,6 +1329,7 @@
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/components/TransactionRow.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 4,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/SizeAwareText.tsx": 1,
@@ -1291,6 +1342,7 @@
         "spacingBottom": {
           "@ubo/pages/ChecklistScreen/ActionItem.tsx": 1,
           "@ubo/pages/Signout/useAccountTypePicker.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 6,
           "@ubo/settings/components/DetailsTable/DetailsSectionHeader.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1
@@ -1364,8 +1416,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 230,
-      "totalCallSites": 120,
+      "totalInstances": 254,
+      "totalCallSites": 126,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -1489,14 +1541,14 @@
           ]
         },
         {
+          "aliasPath": "@ubo/settings/TaxCenter/pages/Transactions/Transactions.tsx",
+          "callSites": []
+        },
+        {
           "aliasPath": "@ubo/settings/TaxCenter/pages/Preferences/Preferences.tsx",
           "callSites": []
         },
         { "aliasPath": "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx", "callSites": [] },
-        {
-          "aliasPath": "@ubo/settings/TaxCenter/pages/Transactions/Transactions.tsx",
-          "callSites": []
-        },
         {
           "aliasPath": "@ubo/settings/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx",
           "callSites": ["@ubo/settings/TaxCenter/pages/TaxForms/VerifyTaxProfile.tsx"]
@@ -1532,6 +1584,7 @@
         "@ubo/pages/ErrorPage/SafariErrorPage.tsx": 3,
         "@ubo/settings/Payments/PaymentMethods.tsx": 1,
         "@ubo/settings/Profile/Formatters.tsx": 1,
+        "@ubo/settings/Statements/Statements.tsx": 1,
         "@ubo/settings/TaxCenter/TaxCenter.tsx": 3,
         "@ubo/settings/pages/Organization.tsx": 1,
         "@ubo/settings/pages/Security.tsx": 5,
@@ -1542,6 +1595,7 @@
         "@ubo/pages/ChecklistScreen/ApplicationChildScreen/Layout.tsx": 2,
         "@ubo/pages/ChecklistScreen/InterestFormApplication/ApplicationSection.tsx": 2,
         "@ubo/pages/ChecklistScreen/InterestFormApplication/InterestFormApplication.tsx": 3,
+        "@ubo/pages/Signout/sidebars/index.tsx": 14,
         "@ubo/settings/Profile/components/CloseAccountSection.tsx": 1,
         "@ubo/settings/Profile/components/ContactInfoSection.tsx": 1,
         "@ubo/settings/Profile/components/CryptoAddressConnectionError.tsx": 2,
@@ -1571,6 +1625,7 @@
         "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPCheck.tsx": 3,
         "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPDownload.tsx": 2,
         "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 1,
+        "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 5,
         "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 5,
         "@ubo/settings/TaxCenter/pages/Preferences/Preferences.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Reports/Reports.tsx": 1,
@@ -1589,6 +1644,7 @@
         "@ubo/settings/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
         "@ubo/settings/Security/modals/SecurityKey/steps/RenameKey.tsx": 1,
         "@ubo/settings/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
+        "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 2,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
@@ -1601,13 +1657,15 @@
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 3,
         "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 6,
+        "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+        "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 2,
-        "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
@@ -1628,12 +1686,12 @@
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 4,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 3,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/FlaggableCell.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 4,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionLabel.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 7,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 7
       },
       "propsWithCallSites": {
         "spacingHorizontal": {
@@ -1646,6 +1704,7 @@
           "@ubo/components/modals/MaintenanceModal/MaintenanceModalContent.tsx": 1,
           "@ubo/pages/ChecklistScreen/ApplicationChildScreen/Layout.tsx": 1,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/InterestFormApplication.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 1,
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/Preferences.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 1,
@@ -1667,9 +1726,11 @@
         },
         "flexGrow": {
           "@ubo/pages/ChecklistScreen/ActionItem.tsx": 1,
+          "@ubo/settings/Statements/Statements.tsx": 1,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
           "@ubo/settings/pages/Security.tsx": 2,
           "@ubo/settings/components/TwoStepVerification/TwoFactorRow.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 3,
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 2,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
@@ -1686,8 +1747,8 @@
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/NeedsReviewList.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 6,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1
         },
         "bordered": {
           "@ubo/pages/ChecklistScreen/AddCollaborators.tsx": 1,
@@ -1766,6 +1827,7 @@
           "@ubo/settings/components/TwoStepVerification/Confirm2FATotp.tsx": 1,
           "@ubo/settings/components/TwoStepVerification/Confirm2FAU2F.tsx": 1,
           "@ubo/settings/components/TwoStepVerification/INeedHelp.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/Preferences.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/Reports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 1,
@@ -1839,27 +1901,32 @@
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
           "@ubo/settings/pages/Organization.tsx": 1,
           "@ubo/components/modals/ProfilePickerModal/ProfilePickerModal.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 1,
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/Preferences.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Reports/Reports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/Transactions.tsx": 2,
           "@ubo/settings/components/Layout/Header/ProductPickerModal.tsx": 1,
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1
         },
         "spacingBottom": {
           "@ubo/pages/ChecklistScreen/ApplicationInReviewContent.tsx": 1,
           "@ubo/pages/ChecklistScreen/ChecklistModal.tsx": 1,
           "@ubo/pages/ChecklistScreen/Faq.tsx": 1,
+          "@ubo/settings/Statements/Statements.tsx": 1,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
           "@ubo/settings/pages/Security.tsx": 5,
           "@ubo/settings/pages/SecurityRetail.tsx": 1,
           "@ubo/components/modals/MaintenanceModal/MaintenanceModalContent.tsx": 1,
           "@ubo/components/modals/ProfilePickerModal/ProfilePickerModal.tsx": 1,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/InterestFormApplication.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 6,
           "@ubo/settings/Profile/components/CloseAccountSection.tsx": 1,
           "@ubo/settings/Profile/components/ContactInfoSection.tsx": 1,
           "@ubo/settings/Profile/components/PersonalInfoSection.tsx": 1,
@@ -1871,7 +1938,6 @@
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1
         },
         "gap": {
@@ -1890,6 +1956,7 @@
           "@ubo/settings/Profile/pages/CryptoAddresses.tsx": 1,
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPCheck.tsx": 1,
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPDownload.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 4,
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Preferences/Preferences.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/Reports.tsx": 1,
@@ -1916,7 +1983,7 @@
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2
         },
         "alignItems": {
           "@ubo/pages/ChecklistScreen/Banner.tsx": 1,
@@ -1949,6 +2016,7 @@
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/InterestFormApplication.tsx": 1,
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPCheck.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 1,
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/Preferences.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/Reports.tsx": 1,
@@ -1965,6 +2033,7 @@
         },
         "as": {
           "@ubo/pages/ChecklistScreen/Faq.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 4,
           "@ubo/settings/components/TwoStepVerification/INeedHelp.tsx": 1,
           "@ubo/settings/components/Layout/Navigation/NavigationList.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1
@@ -1993,6 +2062,7 @@
           "@ubo/pages/ErrorPage/GenericErrorPage.tsx": 1,
           "@ubo/pages/ErrorPage/InvalidEmailPage.tsx": 1,
           "@ubo/pages/ErrorPage/SafariErrorPage.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 3,
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 2,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 2,
@@ -2002,6 +2072,7 @@
         "spacingStart": {
           "@ubo/pages/ErrorPage/CookieErrorPage.tsx": 1,
           "@ubo/pages/ErrorPage/InvalidEmailPage.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 6,
           "@ubo/settings/SecurityRetail/SendsConfiguration/SendsConfigurationRow.tsx": 1,
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthRow.tsx": 1,
           "@ubo/settings/components/Welcome/WelcomeBanner.tsx": 1,
@@ -2030,9 +2101,12 @@
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthRow.tsx": 1,
           "@ubo/settings/components/Layout/Navigation/NavigationList.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1
         },
         "flexBasis": {
+          "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 3,
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 2,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 2,
@@ -2057,31 +2131,37 @@
     {
       "name": "Interactable",
       "sourceFile": "@cbhq/cds-web/system/Interactable",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-web/system/Interactable",
       "callSites": {
         "@ubo/components/RetailLogoWithProduct/RetailLogoWithProduct.tsx": 1,
+        "@ubo/pages/Signout/Header.tsx": 1,
         "@ubo/settings/TaxCenter/components/IconTooltip.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
           "@ubo/components/RetailLogoWithProduct/RetailLogoWithProduct.tsx": 1,
+          "@ubo/pages/Signout/Header.tsx": 1,
           "@ubo/settings/TaxCenter/components/IconTooltip.tsx": 1
         },
         "backgroundColor": {
           "@ubo/components/RetailLogoWithProduct/RetailLogoWithProduct.tsx": 1,
+          "@ubo/pages/Signout/Header.tsx": 1,
           "@ubo/settings/TaxCenter/components/IconTooltip.tsx": 1
         },
-        "onClick": { "@ubo/components/RetailLogoWithProduct/RetailLogoWithProduct.tsx": 1 },
+        "onClick": {
+          "@ubo/components/RetailLogoWithProduct/RetailLogoWithProduct.tsx": 1,
+          "@ubo/pages/Signout/Header.tsx": 1
+        },
         "onMouseEnter": { "@ubo/settings/TaxCenter/components/IconTooltip.tsx": 1 }
       }
     },
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 46,
-      "totalCallSites": 32,
+      "totalInstances": 52,
+      "totalCallSites": 35,
       "cds": "@cbhq/cds-web/typography/Link",
       "callSites": {
         "@ubo/components/interactables/MaskedInput.tsx": 1,
@@ -2095,6 +2175,7 @@
         "@ubo/settings/Organization/OrganizationFooter.tsx": 1,
         "@ubo/settings/Profile/Formatters.tsx": 1,
         "@ubo/components/modals/ProfilePickerModal/ProfilePickerModal.tsx": 1,
+        "@ubo/pages/Signout/sidebars/index.tsx": 2,
         "@ubo/settings/Security/PhoneNumber/PhoneNumberRow.tsx": 3,
         "@ubo/settings/TaxCenter/components/GenericCTACard.tsx": 1,
         "@ubo/settings/components/TwoStepVerification/Tip.tsx": 1,
@@ -2104,23 +2185,26 @@
         "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Reports/components/ReportsFAQ.tsx": 2,
+        "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
+        "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/components/TransactionRow.tsx": 2,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/CoinbaseCostBasisMethod.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 3
       },
       "propsWithCallSites": {
         "onClick": {
           "@ubo/components/interactables/MaskedInput.tsx": 1,
-          "@ubo/settings/components/Layout/Header/ProductPickerModal.tsx": 1
+          "@ubo/settings/components/Layout/Header/ProductPickerModal.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
         },
         "testID": {
           "@ubo/pages/ChecklistScreen/RequiredInfo.tsx": 1,
@@ -2129,9 +2213,10 @@
           "@ubo/settings/components/TwoStepVerification/TwoFactorRow.tsx": 3,
           "@ubo/settings/components/Layout/Header/ProductPickerModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 2
         },
         "onPress": {
@@ -2140,7 +2225,9 @@
           "@ubo/settings/components/TwoStepVerification/TwoFactorRow.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/components/TransactionRow.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
@@ -2154,9 +2241,10 @@
           "@ubo/pages/ErrorPage/SafariErrorPage.tsx": 1,
           "@ubo/components/modals/ProfilePickerModal/ProfilePickerModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/ReportsFAQ.tsx": 2,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
@@ -2166,7 +2254,7 @@
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 3
         },
         "href": {
@@ -2175,6 +2263,7 @@
           "@ubo/pages/ErrorPage/InvalidEmailPage.tsx": 1,
           "@ubo/settings/Organization/OrganizationFooter.tsx": 1,
           "@ubo/settings/Profile/Formatters.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 2,
           "@ubo/settings/components/TwoStepVerification/Tip.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/CoinbaseCostBasisMethod.tsx": 1
         },
@@ -2183,6 +2272,7 @@
           "@ubo/pages/ErrorPage/ErrorPage404.tsx": 2,
           "@ubo/pages/ErrorPage/InvalidEmailPage.tsx": 1,
           "@ubo/settings/Organization/OrganizationFooter.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 2,
           "@ubo/settings/components/TwoStepVerification/Tip.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/CoinbaseCostBasisMethod.tsx": 1
         },
@@ -2192,19 +2282,25 @@
           "@ubo/pages/ErrorPage/InvalidEmailPage.tsx": 1,
           "@ubo/settings/Organization/OrganizationFooter.tsx": 1,
           "@ubo/settings/Profile/Formatters.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 2,
           "@ubo/settings/Security/PhoneNumber/PhoneNumberRow.tsx": 3,
           "@ubo/settings/components/TwoStepVerification/Tip.tsx": 1,
           "@ubo/settings/components/TwoStepVerification/TwoFactorRow.tsx": 3,
           "@ubo/settings/components/Layout/Header/ProductPickerModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/components/TransactionRow.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/CoinbaseCostBasisMethod.tsx": 1
         },
-        "rel": { "@ubo/settings/Organization/OrganizationFooter.tsx": 1 },
+        "rel": {
+          "@ubo/settings/Organization/OrganizationFooter.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 2
+        },
         "openInNewWindow": {
           "@ubo/settings/Profile/Formatters.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/ReportsFAQ.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
@@ -2215,7 +2311,7 @@
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 3
         },
         "color": {
@@ -2228,13 +2324,14 @@
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 37,
-      "totalCallSites": 31,
+      "totalInstances": 46,
+      "totalCallSites": 32,
       "cds": "@cbhq/cds-web/icons/Icon",
       "callSites": {
         "@ubo/components/interactables/NativeSelect.tsx": 1,
         "@ubo/pages/ChecklistScreen/Banner.tsx": 1,
         "@ubo/pages/ChecklistScreen/InterestFormApplication/InterestFormApplication.tsx": 1,
+        "@ubo/pages/Signout/sidebars/index.tsx": 6,
         "@ubo/settings/Profile/components/PhoneNumberItem.tsx": 1,
         "@ubo/settings/Profile/pages/CryptoAddresses.tsx": 1,
         "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthFidoItem.tsx": 2,
@@ -2249,7 +2346,7 @@
         "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 1,
         "@ubo/settings/TaxCenter/components/Form8949/SummaryForm8949.tsx": 1,
         "@ubo/settings/components/Layout/Navigation/NavigationList.tsx": 2,
-        "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 3,
         "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
@@ -2258,7 +2355,7 @@
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/OtherWaysToFile.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 3,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/FlaggableCell.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/GenericCell.tsx": 2,
@@ -2269,6 +2366,7 @@
           "@ubo/components/interactables/NativeSelect.tsx": 1,
           "@ubo/pages/ChecklistScreen/Banner.tsx": 1,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/InterestFormApplication.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 6,
           "@ubo/settings/Profile/components/PhoneNumberItem.tsx": 1,
           "@ubo/settings/Profile/pages/CryptoAddresses.tsx": 1,
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthFidoItem.tsx": 2,
@@ -2283,7 +2381,7 @@
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 1,
           "@ubo/settings/TaxCenter/components/Form8949/SummaryForm8949.tsx": 1,
           "@ubo/settings/components/Layout/Navigation/NavigationList.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
@@ -2292,7 +2390,7 @@
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/OtherWaysToFile.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/FlaggableCell.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/GenericCell.tsx": 2,
@@ -2302,6 +2400,7 @@
           "@ubo/components/interactables/NativeSelect.tsx": 1,
           "@ubo/pages/ChecklistScreen/Banner.tsx": 1,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/InterestFormApplication.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 6,
           "@ubo/settings/Profile/components/PhoneNumberItem.tsx": 1,
           "@ubo/settings/Profile/pages/CryptoAddresses.tsx": 1,
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthFidoItem.tsx": 2,
@@ -2316,7 +2415,7 @@
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 1,
           "@ubo/settings/TaxCenter/components/Form8949/SummaryForm8949.tsx": 1,
           "@ubo/settings/components/Layout/Navigation/NavigationList.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
@@ -2325,7 +2424,7 @@
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/OtherWaysToFile.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/FlaggableCell.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/GenericCell.tsx": 2,
@@ -2335,6 +2434,7 @@
           "@ubo/components/interactables/NativeSelect.tsx": 1,
           "@ubo/pages/ChecklistScreen/Banner.tsx": 1,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/InterestFormApplication.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 6,
           "@ubo/settings/Profile/components/PhoneNumberItem.tsx": 1,
           "@ubo/settings/Profile/pages/CryptoAddresses.tsx": 1,
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthFidoItem.tsx": 2,
@@ -2347,21 +2447,23 @@
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 1,
           "@ubo/settings/TaxCenter/components/Form8949/SummaryForm8949.tsx": 1,
           "@ubo/settings/components/Layout/Navigation/NavigationList.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/OtherWaysToFile.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/FlaggableCell.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 2
         },
         "spacingTop": { "@ubo/components/interactables/NativeSelect.tsx": 1 },
+        "spacing": { "@ubo/pages/Signout/sidebars/index.tsx": 6 },
         "testID": {
           "@ubo/settings/TaxCenter/components/GenericCTACard.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/FlaggableCell.tsx": 1
         },
@@ -2378,8 +2480,8 @@
     {
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
-      "totalInstances": 85,
-      "totalCallSites": 46,
+      "totalInstances": 88,
+      "totalCallSites": 48,
       "cds": "@cbhq/cds-web/typography/TextLabel2",
       "extendedStyledComponents": [
         {
@@ -2419,11 +2521,13 @@
         "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPCheck.tsx": 2,
         "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPDownload.tsx": 1,
         "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Reports/components/TaxDocumentWithType.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 4,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
+        "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+        "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
@@ -2440,10 +2544,10 @@
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionLabel.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionRow.tsx": 2,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 6,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 7,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 6,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 6
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 6
       },
       "propsWithCallSites": {
         "as": {
@@ -2468,11 +2572,13 @@
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPCheck.tsx": 2,
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPDownload.tsx": 1,
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxDocumentWithType.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 4,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
@@ -2489,10 +2595,10 @@
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionLabel.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionRow.tsx": 2,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 6,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 7,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 6,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 6
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 6
         },
         "color": {
           "@ubo/pages/ChecklistScreen/ActionItem.tsx": 2,
@@ -2512,6 +2618,8 @@
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxDocumentWithType.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 2,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
@@ -2521,9 +2629,9 @@
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/ModifiedTaxLotReview.tsx": 5,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 2,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 4,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 5,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 6,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 4
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 6
         },
         "spacingTop": {
           "@ubo/pages/ChecklistScreen/ActionItem.tsx": 2,
@@ -2565,6 +2673,8 @@
         },
         "spacingBottom": {
           "@ubo/settings/components/TwoStepVerification/Missing2FA.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1
         },
         "spacingEnd": {
@@ -2578,8 +2688,8 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 81,
-      "totalCallSites": 63,
+      "totalInstances": 84,
+      "totalCallSites": 65,
       "cds": "@cbhq/cds-web/buttons/Button",
       "aliasedCdsComponents": [
         { "aliasPath": "@ubo/settings/Applications/ApplicationAction.tsx", "callSites": [] }
@@ -2633,6 +2743,8 @@
         "@ubo/settings/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
         "@ubo/settings/Security/modals/SecurityKey/steps/RenameKey.tsx": 2,
         "@ubo/settings/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
+        "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
+        "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
@@ -2647,7 +2759,7 @@
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/ModifiedTaxLotReview.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2
       },
       "propsWithCallSites": {
         "onPress": {
@@ -2695,6 +2807,7 @@
           "@ubo/settings/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
           "@ubo/settings/Security/modals/SecurityKey/steps/RenameKey.tsx": 2,
           "@ubo/settings/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
+          "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
@@ -2708,7 +2821,7 @@
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/ModifiedTaxLotReview.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2
         },
         "variant": {
           "@ubo/pages/ChecklistScreen/ActionItem.tsx": 1,
@@ -2746,7 +2859,8 @@
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/ModifiedTaxLotReview.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/ModifiedTaxLotReview.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
         },
         "testID": {
           "@ubo/pages/ChecklistScreen/ActionItem.tsx": 2,
@@ -2782,6 +2896,7 @@
           "@ubo/settings/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
           "@ubo/settings/Security/modals/SecurityKey/steps/RenameKey.tsx": 2,
           "@ubo/settings/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
+          "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
@@ -2851,7 +2966,7 @@
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2
         },
         "loading": {
           "@ubo/pages/ChecklistScreen/Checklist.tsx": 1,
@@ -2879,6 +2994,7 @@
           "@ubo/settings/Security/modals/PasswordReset/steps/PasswordReset.tsx": 2,
           "@ubo/settings/Security/modals/PhoneNumber/steps/AddPhoneNumber.tsx": 1,
           "@ubo/settings/Security/modals/PhoneNumber/steps/VerifyPhoneNumber.tsx": 1,
+          "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1
         },
@@ -2900,7 +3016,10 @@
           "@ubo/settings/SecurityRetail/TwoFactorAuth/TwoFactorAuthFidoItem.tsx": 2,
           "@ubo/settings/components/DetailsTable/DetailsSectionHeader.tsx": 1
         },
-        "transparent": { "@ubo/settings/TaxCenter/components/LoadMore.tsx": 1 },
+        "transparent": {
+          "@ubo/settings/TaxCenter/components/LoadMore.tsx": 1,
+          "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1
+        },
         "type": {
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 1
@@ -2910,8 +3029,8 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 135,
-      "totalCallSites": 81,
+      "totalInstances": 142,
+      "totalCallSites": 82,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "@ubo/pages/ChecklistScreen/AddCollaborators.tsx": 1,
@@ -2930,6 +3049,7 @@
         "@ubo/settings/pages/Security.tsx": 1,
         "@ubo/components/modals/InviteApplicationCollaborator/InviteApplicationCollaborator.tsx": 1,
         "@ubo/pages/ChecklistScreen/InterestFormApplication/ApplicationSection.tsx": 1,
+        "@ubo/pages/Signout/sidebars/index.tsx": 6,
         "@ubo/settings/Profile/components/CryptoAddressConnectionError.tsx": 1,
         "@ubo/settings/Profile/components/CryptoAddressEmptyState.tsx": 1,
         "@ubo/settings/Profile/modals/CloseAccount.tsx": 2,
@@ -2949,9 +3069,9 @@
         "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Preferences/Preferences.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 3,
+        "@ubo/settings/components/DetailsTable/modals/DiscardChangesConfirmationModal.tsx": 1,
         "@ubo/settings/components/DetailsTable/components/HelpBlock.tsx": 2,
         "@ubo/settings/components/DetailsTable/components/ReadOnlyDisplay.tsx": 1,
-        "@ubo/settings/components/DetailsTable/modals/DiscardChangesConfirmationModal.tsx": 1,
         "@ubo/settings/Security/modals/PasswordReset/steps/PasswordResetSuccess.tsx": 1,
         "@ubo/settings/Security/modals/SecurityKey/steps/Enabled2FA.tsx": 2,
         "@ubo/settings/Security/modals/SecurityKey/steps/HaveKeyReady.tsx": 1,
@@ -2994,7 +3114,7 @@
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 5,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 3
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 4
       },
       "propsWithCallSites": {
         "as": {
@@ -3014,6 +3134,7 @@
           "@ubo/settings/pages/Security.tsx": 1,
           "@ubo/components/modals/InviteApplicationCollaborator/InviteApplicationCollaborator.tsx": 1,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/ApplicationSection.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 6,
           "@ubo/settings/Profile/components/CryptoAddressConnectionError.tsx": 1,
           "@ubo/settings/Profile/components/CryptoAddressEmptyState.tsx": 1,
           "@ubo/settings/Profile/modals/CloseAccount.tsx": 2,
@@ -3033,9 +3154,9 @@
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Preferences/Preferences.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 3,
+          "@ubo/settings/components/DetailsTable/modals/DiscardChangesConfirmationModal.tsx": 1,
           "@ubo/settings/components/DetailsTable/components/HelpBlock.tsx": 2,
           "@ubo/settings/components/DetailsTable/components/ReadOnlyDisplay.tsx": 1,
-          "@ubo/settings/components/DetailsTable/modals/DiscardChangesConfirmationModal.tsx": 1,
           "@ubo/settings/Security/modals/PasswordReset/steps/PasswordResetSuccess.tsx": 1,
           "@ubo/settings/Security/modals/SecurityKey/steps/Enabled2FA.tsx": 2,
           "@ubo/settings/Security/modals/SecurityKey/steps/HaveKeyReady.tsx": 1,
@@ -3078,7 +3199,7 @@
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 5,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 3
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 4
         },
         "color": {
           "@ubo/pages/ChecklistScreen/AddCollaborators.tsx": 1,
@@ -3094,6 +3215,7 @@
           "@ubo/settings/pages/Organization.tsx": 1,
           "@ubo/settings/pages/Security.tsx": 1,
           "@ubo/pages/ChecklistScreen/InterestFormApplication/ApplicationSection.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 6,
           "@ubo/settings/Profile/components/CryptoAddressConnectionError.tsx": 1,
           "@ubo/settings/Profile/components/CryptoAddressEmptyState.tsx": 1,
           "@ubo/settings/Profile/modals/CloseAccount.tsx": 2,
@@ -3128,7 +3250,8 @@
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 3,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 5,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
         },
         "spacingTop": {
           "@ubo/pages/ChecklistScreen/AddCollaborators.tsx": 1,
@@ -3626,8 +3749,8 @@
     {
       "name": "Pictogram",
       "sourceFile": "@cbhq/cds-web/illustrations/Pictogram",
-      "totalInstances": 11,
-      "totalCallSites": 10,
+      "totalInstances": 12,
+      "totalCallSites": 11,
       "cds": "@cbhq/cds-web/illustrations/Pictogram",
       "callSites": {
         "@ubo/pages/Signout/RetailBizProductPicker.tsx": 2,
@@ -3636,6 +3759,7 @@
         "@ubo/settings/Profile/modals/CloseAccount.tsx": 1,
         "@ubo/settings/Profile/pages/CryptoAddresses.tsx": 1,
         "@ubo/settings/TaxCenter/components/GenericCTACard.tsx": 1,
+        "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/EntryPoint/TaxFilingOptions.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
@@ -3649,6 +3773,7 @@
           "@ubo/settings/Profile/modals/CloseAccount.tsx": 1,
           "@ubo/settings/Profile/pages/CryptoAddresses.tsx": 1,
           "@ubo/settings/TaxCenter/components/GenericCTACard.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/EntryPoint/TaxFilingOptions.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
@@ -3658,6 +3783,7 @@
           "@ubo/pages/Signout/RetailBizProductPicker.tsx": 2,
           "@ubo/components/modals/MaintenanceModal/MaintenanceModalContent.tsx": 1,
           "@ubo/settings/Profile/modals/CloseAccount.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/EntryPoint/TaxFilingOptions.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 1
@@ -3704,8 +3830,8 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 52,
-      "totalCallSites": 45,
+      "totalInstances": 56,
+      "totalCallSites": 48,
       "cds": "@cbhq/cds-web/typography/TextTitle3",
       "callSites": {
         "@ubo/settings/pages/Organization.tsx": 1,
@@ -3727,12 +3853,15 @@
         "@ubo/settings/Security/modals/SecurityKey/steps/KeyInfo.tsx": 1,
         "@ubo/settings/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
         "@ubo/settings/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
+        "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
+        "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+        "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
@@ -3750,7 +3879,7 @@
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 3,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 2,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 3,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/SizeAwareText.tsx": 1
       },
@@ -3775,12 +3904,15 @@
           "@ubo/settings/Security/modals/SecurityKey/steps/KeyInfo.tsx": 1,
           "@ubo/settings/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
           "@ubo/settings/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
@@ -3798,7 +3930,7 @@
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 3,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/SizeAwareText.tsx": 1
         },
@@ -3817,8 +3949,11 @@
           "@ubo/settings/Security/modals/SecurityKey/steps/InsertKey.tsx": 1,
           "@ubo/settings/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
           "@ubo/settings/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 1,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
@@ -3853,8 +3988,8 @@
     {
       "name": "Pressable",
       "sourceFile": "@cbhq/cds-web/system/Pressable",
-      "totalInstances": 23,
-      "totalCallSites": 19,
+      "totalInstances": 24,
+      "totalCallSites": 20,
       "cds": "@cbhq/cds-web/system/Pressable",
       "aliasedCdsComponents": [
         {
@@ -3875,11 +4010,12 @@
         "@ubo/settings/components/DetailsTable/components/ReadOnlyDisplay.tsx": 1,
         "@ubo/settings/components/Layout/Header/HeaderTab.tsx": 1,
         "@ubo/settings/components/Layout/Header/ProductPicker.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxForms/components/EW8Screen.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
       },
@@ -3896,11 +4032,12 @@
           "@ubo/settings/components/DetailsTable/components/ReadOnlyDisplay.tsx": 1,
           "@ubo/settings/components/Layout/Header/HeaderTab.tsx": 1,
           "@ubo/settings/components/Layout/Header/ProductPicker.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/EW8Screen.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
         },
@@ -3930,11 +4067,12 @@
           "@ubo/settings/components/DetailsTable/components/ReadOnlyDisplay.tsx": 1,
           "@ubo/settings/components/Layout/Header/HeaderTab.tsx": 1,
           "@ubo/settings/components/Layout/Header/ProductPicker.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxForms/components/EW8Screen.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
         },
@@ -3972,7 +4110,13 @@
         },
         "width": {
           "@ubo/settings/components/Layout/Header/ProductPicker.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
+        },
+        "noScaleOnPress": {
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
         },
@@ -3984,11 +4128,19 @@
         },
         "to": {
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1
-        },
-        "noScaleOnPress": {
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
         }
+      }
+    },
+    {
+      "name": "TextTitle4",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle4",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextTitle4",
+      "callSites": { "@ubo/pages/Signout/sidebars/index.tsx": 2 },
+      "propsWithCallSites": {
+        "as": { "@ubo/pages/Signout/sidebars/index.tsx": 2 },
+        "spacingBottom": { "@ubo/pages/Signout/sidebars/index.tsx": 2 }
       }
     },
     {
@@ -4111,12 +4263,13 @@
     {
       "name": "RemoteImage",
       "sourceFile": "@cbhq/cds-web/media/RemoteImage",
-      "totalInstances": 5,
-      "totalCallSites": 4,
+      "totalInstances": 6,
+      "totalCallSites": 5,
       "cds": "@cbhq/cds-web/media/RemoteImage",
       "callSites": {
         "@ubo/settings/TaxCenter/components/GenericCTACard.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/GenericCell.tsx": 2
       },
@@ -4125,18 +4278,21 @@
         "source": {
           "@ubo/settings/TaxCenter/components/GenericCTACard.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/GenericCell.tsx": 2
         },
         "width": {
           "@ubo/settings/TaxCenter/components/GenericCTACard.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/GenericCell.tsx": 2
         },
         "height": {
           "@ubo/settings/TaxCenter/components/GenericCTACard.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/GenericCell.tsx": 2
         },
@@ -4151,22 +4307,27 @@
     {
       "name": "LottieStatusAnimation",
       "sourceFile": "@cbhq/cds-web/animation/LottieStatusAnimation",
-      "totalInstances": 6,
-      "totalCallSites": 6,
+      "totalInstances": 7,
+      "totalCallSites": 7,
       "cds": "@cbhq/cds-web/animation/LottieStatusAnimation",
       "callSites": {
         "@ubo/settings/TaxCenter/components/LoadMore.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/FilingWizard.tsx": 1,
+        "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 1
       },
       "propsWithCallSites": {
-        "key": { "@ubo/settings/TaxCenter/components/LoadMore.tsx": 1 },
+        "key": {
+          "@ubo/settings/TaxCenter/components/LoadMore.tsx": 1,
+          "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1
+        },
         "height": {
           "@ubo/settings/TaxCenter/components/LoadMore.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/FilingWizard.tsx": 1,
+          "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
@@ -4175,6 +4336,7 @@
         "status": {
           "@ubo/settings/TaxCenter/components/LoadMore.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/FilingWizard.tsx": 1,
+          "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 1
         }
@@ -4285,6 +4447,112 @@
       }
     },
     {
+      "name": "Group",
+      "sourceFile": "@cbhq/cds-web/layout/Group",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/layout/Group",
+      "propsWithCallSites": {
+        "gap": { "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1 }
+      }
+    },
+    {
+      "name": "Select",
+      "sourceFile": "@cbhq/cds-web/controls/Select",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/controls/Select",
+      "callSites": {
+        "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 3
+      },
+      "propsWithCallSites": {
+        "label": {
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 3
+        },
+        "value": {
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 3
+        },
+        "onChange": {
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 3
+        }
+      }
+    },
+    {
+      "name": "SelectOption",
+      "sourceFile": "@cbhq/cds-web/controls/SelectOption",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/controls/SelectOption",
+      "callSites": {
+        "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 3
+      },
+      "propsWithCallSites": {
+        "value": {
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 3
+        },
+        "key": { "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 3 },
+        "title": {
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 3
+        }
+      }
+    },
+    {
+      "name": "RadioGroup",
+      "sourceFile": "@cbhq/cds-web/controls/RadioGroup",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/controls/RadioGroup",
+      "propsWithCallSites": {
+        "id": { "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1 },
+        "label": {
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1
+        },
+        "name": {
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1
+        },
+        "selectedValue": {
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1
+        },
+        "onChange": {
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1
+        },
+        "options": {
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Table",
+      "sourceFile": "@cbhq/cds-web/tables/Table",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/tables/Table",
+      "propsWithCallSites": {
+        "variant": {
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TableBody",
+      "sourceFile": "@cbhq/cds-web/tables/TableBody",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/tables/TableBody"
+    },
+    {
+      "name": "TableRow",
+      "sourceFile": "@cbhq/cds-web/tables/TableRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/tables/TableRow",
+      "propsWithCallSites": {
+        "key": {
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Switch",
       "sourceFile": "@cbhq/cds-web/controls/Switch",
       "totalInstances": 2,
@@ -4369,6 +4637,18 @@
         },
         "key": {
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/OtherWaysToFile.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TableCell",
+      "sourceFile": "@cbhq/cds-web/tables/TableCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/tables/TableCell",
+      "propsWithCallSites": {
+        "direction": {
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/components/TransactionRow.tsx": 1
         }
       }
     }
@@ -4972,52 +5252,52 @@
         },
         {
           "prop": "style",
-          "callSite": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx"
-        },
-        {
-          "prop": "style",
-          "callSite": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx"
-        },
-        {
-          "prop": "style",
-          "callSite": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx"
-        },
-        {
-          "prop": "style",
-          "callSite": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx"
-        },
-        {
-          "prop": "style",
           "callSite": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx"
         }
       ],
       "callSites": {
         "@ubo/pages/ChecklistScreen/ProgressBar.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 7,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 2,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2
       },
       "propsWithCallSites": {
         "value": {
           "@ubo/pages/ChecklistScreen/ProgressBar.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 7,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2
         },
         "style": {
           "@ubo/pages/ChecklistScreen/ProgressBar.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 7,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2
         },
         "currency": {
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 7,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2
         }
       }
     },
@@ -5105,6 +5385,23 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "article"
+    },
+    {
+      "name": "Sidebar",
+      "sourceFile": "@ubo/pages/Signout/RetailBizProductPicker.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "aside"
+    },
+    {
+      "name": "OpacityWrapper",
+      "sourceFile": "@ubo/pages/Signout/RetailBizProductPicker.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "transitionState": { "@ubo/pages/Signout/RetailBizProductPicker.tsx": 1 }
+      }
     },
     {
       "name": "Wrapper",
@@ -5241,6 +5538,27 @@
         "value": { "@ubo/settings/Profile/Formatters.tsx": 2 },
         "showCryptoAddressesIcon": { "@ubo/settings/Profile/Formatters.tsx": 1 }
       }
+    },
+    {
+      "name": "FooterPusher",
+      "sourceFile": "@ubo/settings/Statements/Statements.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ViewportCointainer",
+      "sourceFile": "@ubo/settings/Statements/Statements.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "SpinnerContainer",
+      "sourceFile": "@ubo/settings/Statements/Statements.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "FooterPusher",
@@ -6620,34 +6938,6 @@
       "styledComponent": "div"
     },
     {
-      "name": "IconWrapper",
-      "sourceFile": "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "StyledSelect",
-      "sourceFile": "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Select",
-      "propsWithCallSites": {
-        "options": {
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        },
-        "components": {
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        },
-        "onChange": {
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        },
-        "value": {
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        }
-      }
-    },
-    {
       "name": "NegativeMargins",
       "sourceFile": "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx",
       "totalInstances": 1,
@@ -6672,6 +6962,34 @@
         },
         "alt": {
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "IconWrapper",
+      "sourceFile": "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "StyledSelect",
+      "sourceFile": "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Select",
+      "propsWithCallSites": {
+        "options": {
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
+        },
+        "components": {
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
+        },
+        "onChange": {
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
+        },
+        "value": {
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
         }
       }
     },
@@ -6842,6 +7160,13 @@
       }
     },
     {
+      "name": "CustomDivider",
+      "sourceFile": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "FromToCell",
       "sourceFile": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/FromToCell",
       "totalInstances": 1,
@@ -7008,11 +7333,12 @@
     {
       "name": "Suspense",
       "sourceFile": "react/Suspense",
-      "totalInstances": 8,
-      "totalCallSites": 5,
+      "totalInstances": 10,
+      "totalCallSites": 6,
       "callSites": {
         "@ubo/Routes.tsx": 1,
         "@ubo/index.tsx": 1,
+        "@ubo/settings/Statements/Statements.tsx": 2,
         "@ubo/settings/TaxCenter/TaxCenter.tsx": 2,
         "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 3
@@ -7021,6 +7347,7 @@
         "fallback": {
           "@ubo/Routes.tsx": 1,
           "@ubo/index.tsx": 1,
+          "@ubo/settings/Statements/Statements.tsx": 2,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 2,
           "@ubo/settings/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
           "@ubo/settings/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 3
@@ -7030,12 +7357,13 @@
     {
       "name": "Switch",
       "sourceFile": "react-router-dom/Switch",
-      "totalInstances": 5,
-      "totalCallSites": 5,
+      "totalInstances": 6,
+      "totalCallSites": 6,
       "callSites": {
         "@ubo/Routes.tsx": 1,
         "@ubo/settings/index.tsx": 1,
         "@ubo/settings/Profile/index.tsx": 1,
+        "@ubo/settings/Statements/Statements.tsx": 1,
         "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1
       }
@@ -7057,14 +7385,15 @@
     {
       "name": "Route",
       "sourceFile": "react-router-dom/Route",
-      "totalInstances": 24,
-      "totalCallSites": 7,
+      "totalInstances": 27,
+      "totalCallSites": 8,
       "callSites": {
         "@ubo/Routes.tsx": 1,
         "@ubo/routeHelpers/BugsnagRoute.tsx": 1,
-        "@ubo/settings/index.tsx": 8,
+        "@ubo/settings/index.tsx": 9,
         "@ubo/settings/securityRoutes.tsx": 1,
         "@ubo/settings/Profile/index.tsx": 3,
+        "@ubo/settings/Statements/Statements.tsx": 2,
         "@ubo/settings/TaxCenter/TaxCenter.tsx": 8,
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 2
       },
@@ -7072,18 +7401,21 @@
         "exact": {
           "@ubo/Routes.tsx": 1,
           "@ubo/settings/index.tsx": 1,
+          "@ubo/settings/Statements/Statements.tsx": 1,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 2
         },
         "path": {
           "@ubo/Routes.tsx": 1,
-          "@ubo/settings/index.tsx": 7,
+          "@ubo/settings/index.tsx": 8,
           "@ubo/settings/Profile/index.tsx": 3,
+          "@ubo/settings/Statements/Statements.tsx": 2,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 7,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 2
         },
         "render": { "@ubo/settings/index.tsx": 1 },
         "component": {
           "@ubo/settings/Profile/index.tsx": 2,
+          "@ubo/settings/Statements/Statements.tsx": 2,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 7
         }
       }
@@ -7272,6 +7604,12 @@
       "totalCallSites": 1
     },
     {
+      "name": "Statements",
+      "sourceFile": "@ubo/settings/Statements",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "Payments",
       "sourceFile": "@ubo/settings/pages/Payments",
       "totalInstances": 1,
@@ -7395,14 +7733,15 @@
     {
       "name": "Spinner",
       "sourceFile": "@ubo/components/Spinner",
-      "totalInstances": 20,
-      "totalCallSites": 19,
+      "totalInstances": 22,
+      "totalCallSites": 20,
       "callSites": {
         "@ubo/components/interactables/Button.tsx": 1,
         "@ubo/pages/ChecklistScreen/index.tsx": 1,
         "@ubo/pages/Home/UnifiedWebOnboarding.tsx": 1,
         "@ubo/settings/Applications/ApplicationList.tsx": 1,
         "@ubo/settings/Organization/OrganizationDetailsTable.tsx": 1,
+        "@ubo/settings/Statements/Statements.tsx": 2,
         "@ubo/settings/TaxCenter/TaxCenter.tsx": 2,
         "@ubo/settings/pages/Organization.tsx": 1,
         "@ubo/settings/pages/SecurityRetail.tsx": 1,
@@ -7429,6 +7768,7 @@
         "center": {
           "@ubo/pages/ChecklistScreen/index.tsx": 1,
           "@ubo/pages/Home/UnifiedWebOnboarding.tsx": 1,
+          "@ubo/settings/Statements/Statements.tsx": 1,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
           "@ubo/settings/pages/SecurityRetail.tsx": 1,
           "@ubo/pages/ChecklistScreen/ApplicationChildScreen/ApplicationChildScreen.tsx": 1,
@@ -7477,8 +7817,8 @@
     {
       "name": "FormattedMessage",
       "sourceFile": "react-intl/FormattedMessage",
-      "totalInstances": 336,
-      "totalCallSites": 98,
+      "totalInstances": 348,
+      "totalCallSites": 103,
       "callSites": {
         "@ubo/pages/ChecklistScreen/ActionItem.tsx": 2,
         "@ubo/pages/ChecklistScreen/AddCollaborators.tsx": 3,
@@ -7503,6 +7843,7 @@
         "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
         "@ubo/settings/pages/Applications.tsx": 3,
         "@ubo/pages/ChecklistScreen/ApplicationChildScreen/BackLink.tsx": 1,
+        "@ubo/pages/Signout/sidebars/index.tsx": 1,
         "@ubo/settings/TaxCenter/components/GenericCTACard.tsx": 1,
         "@ubo/settings/TaxCenter/components/LastUpdatedBanner.tsx": 3,
         "@ubo/settings/TaxCenter/components/LoadMore.tsx": 1,
@@ -7524,10 +7865,12 @@
         "@ubo/settings/Security/modals/SecurityKey/steps/Enabled2FA.tsx": 1,
         "@ubo/settings/Security/modals/SecurityKey/steps/HaveKeyReady.tsx": 1,
         "@ubo/settings/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
+        "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
+        "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 4,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 4,
         "@ubo/settings/TaxCenter/pages/Reports/components/CoinTrackerCTA.tsx": 2,
-        "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 8,
+        "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 9,
         "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 3,
         "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 7,
@@ -7535,14 +7878,16 @@
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 4,
         "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 4,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 8,
+        "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 3,
+        "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 2,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/EntryPoint/TaxFilingOptions.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 2,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 4,
         "@ubo/settings/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 4,
         "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 10,
-        "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
+        "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 5,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 5,
         "@ubo/settings/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 3,
@@ -7568,16 +7913,16 @@
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 7,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 3,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 4,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 8,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 11,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 8,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 3,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionInfoCell.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionLabel.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionRow.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 8,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 5,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 13,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 6,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 8
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 6
       },
       "propsWithCallSites": {
         "id": {
@@ -7593,6 +7938,7 @@
           "@ubo/pages/Signout/useAccountTypePicker.tsx": 1,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
           "@ubo/pages/ChecklistScreen/ApplicationChildScreen/BackLink.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 1,
           "@ubo/settings/TaxCenter/components/GenericCTACard.tsx": 1,
           "@ubo/settings/TaxCenter/components/LastUpdatedBanner.tsx": 3,
           "@ubo/settings/TaxCenter/components/LoadMore.tsx": 1,
@@ -7605,10 +7951,12 @@
           "@ubo/settings/components/Layout/Navigation/NavigationRowItem.tsx": 1,
           "@ubo/settings/Security/modals/SecurityKey/steps/HaveKeyReady.tsx": 1,
           "@ubo/settings/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
+          "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 4,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 4,
           "@ubo/settings/TaxCenter/pages/Reports/components/CoinTrackerCTA.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 8,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 9,
           "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 7,
@@ -7616,6 +7964,8 @@
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 4,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 8,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 3,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/EntryPoint/TaxFilingOptions.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 2,
@@ -7646,16 +7996,16 @@
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 7,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 4,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 8,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 11,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 8,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionInfoCell.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionLabel.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionRow.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 8,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 5,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 13,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 6,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 8
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 6
         },
         "defaultMessage": {
           "@ubo/pages/ChecklistScreen/ActionItem.tsx": 2,
@@ -7670,6 +8020,7 @@
           "@ubo/pages/Signout/useAccountTypePicker.tsx": 1,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
           "@ubo/pages/ChecklistScreen/ApplicationChildScreen/BackLink.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 1,
           "@ubo/settings/TaxCenter/components/GenericCTACard.tsx": 1,
           "@ubo/settings/TaxCenter/components/LastUpdatedBanner.tsx": 3,
           "@ubo/settings/TaxCenter/components/LoadMore.tsx": 1,
@@ -7682,10 +8033,12 @@
           "@ubo/settings/components/Layout/Navigation/NavigationRowItem.tsx": 1,
           "@ubo/settings/Security/modals/SecurityKey/steps/HaveKeyReady.tsx": 1,
           "@ubo/settings/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
+          "@ubo/settings/Statements/pages/components/GenerateReport/GenerateReport.tsx": 1,
+          "@ubo/settings/Statements/pages/components/LoadMore/LoadMore.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 4,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 4,
           "@ubo/settings/TaxCenter/pages/Reports/components/CoinTrackerCTA.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 8,
+          "@ubo/settings/TaxCenter/pages/Reports/components/GenerateReport.tsx": 9,
           "@ubo/settings/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxForms.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 5,
@@ -7693,6 +8046,8 @@
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 4,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 8,
+          "@ubo/settings/Statements/pages/Transactions/components/TaxForms/TaxForms.tsx": 3,
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/EntryPoint/TaxFilingOptions.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 2,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 2,
@@ -7723,16 +8078,16 @@
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 7,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 4,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 6,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 9,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 8,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TaxImpactCell.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionInfoCell.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionLabel.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionRow.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 8,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 5,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 13,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 6,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 8
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossTable.tsx": 6
         },
         "values": {
           "@ubo/pages/ChecklistScreen/ProgressBar.tsx": 1,
@@ -7742,6 +8097,7 @@
           "@ubo/settings/Applications/ApplicationStatus.tsx": 1,
           "@ubo/settings/Organization/OrganizationFooter.tsx": 1,
           "@ubo/settings/Profile/Formatters.tsx": 1,
+          "@ubo/pages/Signout/sidebars/index.tsx": 1,
           "@ubo/settings/TaxCenter/components/LastUpdatedBanner.tsx": 1,
           "@ubo/settings/components/TwoStepVerification/Confirm2FASMS.tsx": 1,
           "@ubo/settings/components/TwoStepVerification/Tip.tsx": 1,
@@ -7772,9 +8128,9 @@
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 3,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionInfoCell.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1
         },
         "description": {
           "@ubo/pages/ChecklistScreen/RequiredInfo.tsx": 2,
@@ -8228,6 +8584,22 @@
       "totalCallSites": 1
     },
     {
+      "name": "SwitchTransition",
+      "sourceFile": "react-transition-group/SwitchTransition",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Transition",
+      "sourceFile": "react-transition-group/Transition",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "@ubo/pages/Signout/RetailBizProductPicker.tsx": 1 },
+        "timeout": { "@ubo/pages/Signout/RetailBizProductPicker.tsx": 1 }
+      }
+    },
+    {
       "name": "Button",
       "sourceFile": "@ubo/components/interactables/Button",
       "totalInstances": 6,
@@ -8435,9 +8807,10 @@
     {
       "name": "Layout",
       "sourceFile": "@ubo/settings/components/Layout/Layout/Layout",
-      "totalInstances": 5,
-      "totalCallSites": 5,
+      "totalInstances": 6,
+      "totalCallSites": 6,
       "callSites": {
+        "@ubo/settings/Statements/Statements.tsx": 1,
         "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
         "@ubo/settings/pages/Applications.tsx": 1,
         "@ubo/settings/pages/Organization.tsx": 1,
@@ -8445,8 +8818,12 @@
         "@ubo/settings/pages/Security.tsx": 1
       },
       "propsWithCallSites": {
-        "withoutDefaultStyles": { "@ubo/settings/TaxCenter/TaxCenter.tsx": 1 },
+        "withoutDefaultStyles": {
+          "@ubo/settings/Statements/Statements.tsx": 1,
+          "@ubo/settings/TaxCenter/TaxCenter.tsx": 1
+        },
         "pageTitle": {
+          "@ubo/settings/Statements/Statements.tsx": 1,
           "@ubo/settings/TaxCenter/TaxCenter.tsx": 1,
           "@ubo/settings/pages/Applications.tsx": 1,
           "@ubo/settings/pages/Organization.tsx": 1,
@@ -8465,9 +8842,30 @@
     {
       "name": "SubpageNav",
       "sourceFile": "@ubo/settings/components/SubpageNav",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@ubo/settings/Statements/Statements.tsx": 1,
+        "@ubo/settings/TaxCenter/TaxCenter.tsx": 1
+      },
+      "propsWithCallSites": {
+        "navList": {
+          "@ubo/settings/Statements/Statements.tsx": 1,
+          "@ubo/settings/TaxCenter/TaxCenter.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "StatementsRoutes",
+      "sourceFile": "@ubo/settings/Statements/Statements.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "navList": { "@ubo/settings/TaxCenter/TaxCenter.tsx": 1 } }
+      "totalCallSites": 1
+    },
+    {
+      "name": "StatementsImpl",
+      "sourceFile": "@ubo/settings/Statements/Statements.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "IntroducingTaxesModal",
@@ -9299,6 +9697,12 @@
         "clearSubmissionError": {
           "@ubo/pages/ChecklistScreen/ApplicationChildScreen/ApplicationChildScreen.tsx": 1
         },
+        "missingRequirements": {
+          "@ubo/pages/ChecklistScreen/ApplicationChildScreen/ApplicationChildScreen.tsx": 1
+        },
+        "missingQuestions": {
+          "@ubo/pages/ChecklistScreen/ApplicationChildScreen/ApplicationChildScreen.tsx": 1
+        },
         "sendAnalyticsEvent": {
           "@ubo/pages/ChecklistScreen/ApplicationChildScreen/ApplicationChildScreen.tsx": 1
         }
@@ -9446,6 +9850,14 @@
       "sourceFile": "@ubo/pages/ChecklistScreen/InterestFormApplication/InterestFormApplication.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "div",
+      "sourceFile": "@ubo/pages/Signout/sidebars/index.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "@ubo/pages/Signout/sidebars/index.tsx": 2 },
+      "propsWithCallSites": { "data-testid": { "@ubo/pages/Signout/sidebars/index.tsx": 2 } }
     },
     {
       "name": "div",
@@ -10707,6 +11119,26 @@
       }
     },
     {
+      "name": "GenerateReport",
+      "sourceFile": "@ubo/settings/Statements/pages/components/GenerateReport",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 2 }
+    },
+    {
+      "name": "TransactionsTable",
+      "sourceFile": "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "TaxForms",
+      "sourceFile": "@ubo/settings/Statements/pages/Transactions/components/TaxForms",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "@ubo/settings/Statements/pages/Transactions/Transactions.tsx": 2 }
+    },
+    {
       "name": "span",
       "sourceFile": "@ubo/settings/TaxCenter/components/Form8949/SummaryForm8949.tsx",
       "totalInstances": 1,
@@ -11457,9 +11889,9 @@
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/ModifiedTaxLotReview.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionLabel.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionRow.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1
       },
       "propsWithCallSites": {
         "value": {
@@ -11468,9 +11900,9 @@
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/ModifiedTaxLotReview.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionLabel.tsx": 2,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/TransactionRow.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1
         },
         "year": {
           "@ubo/settings/TaxCenter/pages/Reports/components/TaxReports.tsx": 1,
@@ -11564,8 +11996,36 @@
       "callSites": {
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 4,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 3
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 3,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 4
+      }
+    },
+    {
+      "name": "TransactionRow",
+      "sourceFile": "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/components/TransactionRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "title": {
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "LoadMore",
+      "sourceFile": "@ubo/settings/Statements/pages/components/LoadMore/LoadMore",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "hasMore": {
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        },
+        "isLoading": {
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        },
+        "onPress": {
+          "@ubo/settings/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        }
       }
     },
     {
@@ -11747,29 +12207,29 @@
         "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
         "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2
       },
       "propsWithCallSites": {
         "tooltipName": {
           "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2
         },
         "size": {
           "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2
         },
         "tooltipContent": {
           "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2
         },
         "color": {
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 1
@@ -11781,29 +12241,6 @@
       "sourceFile": "@ubo/settings/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "IconTooltip",
-      "sourceFile": "@taxcenter/components/IconTooltip",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "tooltipContent": {
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        },
-        "size": {
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        },
-        "tooltipName": {
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        },
-        "inline": {
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        },
-        "spacingStart": {
-          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        }
-      }
     },
     {
       "name": "ArticleWrapper",
@@ -11840,6 +12277,29 @@
         "articleBody": {
           "@ubo/settings/TaxCenter/pages/TaxSummary/components/ArticleCard/Articles.tsx": 6,
           "@ubo/settings/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/AdditionalResources.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "IconTooltip",
+      "sourceFile": "@taxcenter/components/IconTooltip",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "tooltipContent": {
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
+        },
+        "size": {
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
+        },
+        "tooltipName": {
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
+        },
+        "inline": {
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
+        },
+        "spacingStart": {
+          "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
         }
       }
     },
@@ -12428,6 +12888,23 @@
       "totalCallSites": 1
     },
     {
+      "name": "ManualEditsComponent",
+      "sourceFile": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onCancel": {
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CointrackerComponent",
+      "sourceFile": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "PrimaryComponent",
       "sourceFile": "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/FlaggableCell.tsx",
       "totalInstances": 1,
@@ -12717,18 +13194,18 @@
       "totalInstances": 9,
       "totalCallSites": 3,
       "callSites": {
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 2,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 4,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 3,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 2
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 3
       },
       "propsWithCallSites": {
+        "flagged": {
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 2,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 4,
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 3
+        },
         "noIcon": {
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 3
-        },
-        "flagged": {
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 4,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 3,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 2
         },
         "componentOverride": {
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 3
@@ -12749,15 +13226,15 @@
       "totalInstances": 3,
       "totalCallSites": 3,
       "callSites": {
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
         "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1,
-        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+        "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1
       },
       "propsWithCallSites": {
         "value": {
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1,
           "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1,
-          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/BuyDetails/BuyDetails.tsx": 1
+          "@ubo/settings/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 1
         }
       }
     },
