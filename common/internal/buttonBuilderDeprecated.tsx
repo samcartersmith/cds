@@ -170,11 +170,37 @@ export function buttonBuilderDeprecated({ Button, VStack, frontier }: CreateButt
     </FeatureFlagProvider>
   );
 
+  const FullWidthEdgeCases = () => (
+    <FeatureFlagProvider frontier={frontier}>
+      <VStack background alignItems="flex-start" width="100%" gap={3}>
+        <Button block onPress={onPressConsole}>
+          Full-width button
+        </Button>
+        <Button compact block onPress={onPressConsole}>
+          Compact full-width button
+        </Button>
+        <VStack spacing={0} alignItems="center">
+          <Button onPress={onPressConsole}>Centered in VStack</Button>
+        </VStack>
+        <VStack spacing={0} flexGrow={1}>
+          <Button onPress={onPressConsole}>In VStack with flexGrow</Button>
+        </VStack>
+        <VStack spacing={0} width="100%">
+          <Button onPress={onPressConsole}>In VStack with width=100%</Button>
+        </VStack>
+        <VStack spacing={0} flexGrow={1} width="100%">
+          <Button onPress={onPressConsole}>flexGrow and width set</Button>
+        </VStack>
+      </VStack>
+    </FeatureFlagProvider>
+  );
+
   return {
     Defaults,
     States,
     Variants,
     Icons,
     BlockWithIcons,
+    FullWidthEdgeCases,
   };
 }

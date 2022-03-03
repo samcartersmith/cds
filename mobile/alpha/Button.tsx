@@ -52,11 +52,11 @@ export const Button = memo(function Button({
   );
 
   const justifyContent = useMemo(() => {
-    if (block) {
-      return startIcon || endIcon ? 'space-between' : 'space-around';
+    if (startIcon || endIcon) {
+      return 'space-between';
     }
-    return 'flex-start';
-  }, [block, endIcon, startIcon]);
+    return 'center';
+  }, [endIcon, startIcon]);
 
   return (
     <Pressable
