@@ -12,7 +12,7 @@ import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional'
 import { listHeight } from '@cbhq/cds-common/tokens/cell';
 
 import { VStack, Box, HStack } from '../layout';
-import { TextTitle4, TextBody } from '../typography';
+import { TextHeadline, TextBody } from '../typography';
 import { Pressable } from '../system/Pressable';
 import { Icon } from '../icons';
 import { useAccordionIconAnimation } from './useAccordionIconAnimation';
@@ -25,7 +25,7 @@ export const AccordionMedia = memo(({ media }: AccordionMediaBaseProps) => <Box>
 export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps) => (
   <Box flexGrow={1} flexShrink={1} justifyContent="flex-start">
     <VStack>
-      <TextTitle4 ellipsize="tail">{title}</TextTitle4>
+      <TextHeadline ellipsize="tail">{title}</TextHeadline>
       {!!subtitle && <TextBody color="foregroundMuted">{subtitle}</TextBody>}
     </VStack>
   </Box>
@@ -38,7 +38,7 @@ export const AccordionIcon = memo(({ expanded }: AccordionIconBaseProps) => {
   return (
     <Box justifyContent="flex-end">
       <Icon
-        name="caretUp"
+        name="caretDown"
         size="s"
         color="foregroundMuted"
         animated

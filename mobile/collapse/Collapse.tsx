@@ -1,7 +1,7 @@
 import React, { memo, forwardRef, ForwardedRef } from 'react';
 import { ScrollView, View } from 'react-native';
 import type { CollapseBaseProps } from '@cbhq/cds-common/types';
-import { collapseSpacing } from '@cbhq/cds-common/tokens/collapse';
+import { useCollapseSpacing } from '@cbhq/cds-common/hooks/useCollapseSpacing';
 
 import { Box } from '../layout';
 import { useCollapseAnimation } from './useCollapseAnimation';
@@ -20,8 +20,9 @@ export const Collapse = memo(
     ) => {
       const [{ height: scrollViewHeight }, handleContentSizeChange] = useContentSize();
       const spacingScale = useSpacingScale();
+      const spacing = useCollapseSpacing();
 
-      const spacingHeight = spacingScale[collapseSpacing];
+      const spacingHeight = spacingScale[spacing.inner.spacingBottom];
       const contentHeight = scrollViewHeight + spacingHeight;
       // cutoff on max height and enable scroll
       const shouldEnableScroll = maxHeight ? contentHeight > maxHeight : false;
@@ -35,16 +36,14 @@ export const Collapse = memo(
 
       return (
         <Box animated testID={testID} dangerouslySetStyle={animatedStyles} ref={forwardedRef}>
-          <Box spacingTop={collapseSpacing}>
+          <Box {...spacing.outer}>
             <ScrollView
               scrollEnabled={shouldEnableScroll}
               onContentSizeChange={handleContentSizeChange}
               // for Android
               nestedScrollEnabled
             >
-              <Box spacingHorizontal={collapseSpacing} spacingBottom={collapseSpacing}>
-                {children}
-              </Box>
+              <Box {...spacing.inner}>{children}</Box>
             </ScrollView>
           </Box>
         </Box>

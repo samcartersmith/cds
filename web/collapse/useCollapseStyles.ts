@@ -11,10 +11,10 @@ import { Animated } from '../animation/Animated';
 
 const variants: Variants = {
   expand: {
-    ...Animated.toFramerTransition([animateInOpacityConfig, animateInMaxHeightConfig]),
-    transitionEnd: {
-      overflow: 'auto',
-    },
+    ...Animated.toFramerTransition([
+      animateInOpacityConfig,
+      { ...animateInMaxHeightConfig, toValue: 'auto' },
+    ]),
   },
   collapse: {
     ...Animated.toFramerTransition([animateOutOpacityConfig, animateOutMaxHeightConfig]),
@@ -22,15 +22,13 @@ const variants: Variants = {
   },
 };
 
-const defaultStyle = { display: 'block', overflow: 'hidden' };
+const defaultStyle = {
+  display: 'block',
+  overflow: 'hidden',
+};
 
-export const useCollapseStyles = (expanded: boolean, maxHeight?: number) => {
+export const useCollapseStyles = (expanded: boolean) => {
   const state = expanded ? 'expand' : 'collapse';
-
-  // override default maxHeight with prop
-  if (maxHeight) {
-    variants.expand = { ...variants.expand, maxHeight };
-  }
 
   return useMemo(
     () => ({

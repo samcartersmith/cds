@@ -1,9 +1,9 @@
 import { MotionBaseSpec } from '../types';
 import { easing, inDuration, outDuration } from './collapse';
 
-export const accordionVisibleMaxHeight = 400;
+export const accordionVisibleMaxHeight = { dense: 200, normal: 400 };
 export const accordionHiddenRotate = 0;
-export const accordionVisibleRotate = -180;
+export const accordionVisibleRotate = 180;
 
 export const animateInRotateConfig: MotionBaseSpec = {
   property: 'transform',

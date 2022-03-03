@@ -11,7 +11,7 @@ import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional'
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 
 import { VStack, Box, HStack } from '../layout';
-import { TextTitle4, TextBody } from '../typography';
+import { TextHeadline, TextBody } from '../typography';
 import { Pressable } from '../system/Pressable';
 import { Icon } from '../icons';
 import { getAccordionHeaderId, getAccordionPanelId } from './utils';
@@ -29,9 +29,9 @@ export const AccordionMedia = memo(({ media }: AccordionMediaBaseProps) => (
 export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps) => (
   <Box flexGrow={1} flexShrink={1} justifyContent="flex-start">
     <VStack>
-      <TextTitle4 as="div" overflow="truncate">
+      <TextHeadline as="div" overflow="truncate">
         {title}
-      </TextTitle4>
+      </TextHeadline>
       {!!subtitle && (
         <TextBody as="div" color="foregroundMuted">
           {subtitle}
@@ -46,7 +46,7 @@ export const AccordionIcon = memo(({ expanded }: AccordionIconBaseProps) => (
     justifyContent="flex-end"
     dangerouslySetClassName={expanded ? iconStyles.expanded : iconStyles.collapsed}
   >
-    <Icon name="caretUp" size="s" color="foregroundMuted" />
+    <Icon name="caretDown" size="s" color="foregroundMuted" />
   </Box>
 ));
 

@@ -1,6 +1,7 @@
 import React, { memo, forwardRef, ForwardedRef } from 'react';
 import type { CollapseBaseProps } from '@cbhq/cds-common/types';
-import { collapseSpacing } from '@cbhq/cds-common/tokens/collapse';
+import { useCollapseSpacing } from '@cbhq/cds-common/hooks/useCollapseSpacing';
+
 import { motion } from 'framer-motion';
 
 import { Box, BoxProps } from '../layout';
@@ -16,21 +17,20 @@ export const Collapse = memo(
       { children, expanded, maxHeight, accessibilityLabelledBy, testID, ...props }: CollapseProps,
       forwardedRef: ForwardedRef<HTMLDivElement>,
     ) => {
-      const styles = useCollapseStyles(expanded, maxHeight);
+      const styles = useCollapseStyles(expanded);
+      const spacing = useCollapseSpacing();
 
       return (
         <motion.div
           {...styles}
           aria-labelledby={accessibilityLabelledBy}
           data-testid={testID}
-          ref={forwardedRef}
           {...props}
+          ref={forwardedRef}
         >
-          <Box
-            // maintain spacing top on long scroll
-            spacingTop={collapseSpacing}
-          >
-            <Box spacingHorizontal={collapseSpacing} spacingBottom={collapseSpacing}>
+          <Box {...spacing.outer}>
+            <Box overflow="auto" maxHeight={maxHeight} {...spacing.inner}>
+              {/* <ScrollFade /> */}
               {children}
             </Box>
           </Box>

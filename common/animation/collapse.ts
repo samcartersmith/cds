@@ -28,14 +28,14 @@ export const animateOutOpacityConfig: MotionBaseSpec = {
 };
 
 export const animateInMaxHeightConfig: MotionBaseSpec = {
-  property: 'maxHeight',
+  property: 'height',
   easing,
   duration: inDuration,
   toValue: collapseVisibleMaxHeight,
   fromValue: collapseHiddenMaxHeight,
 };
 export const animateOutMaxHeightConfig: MotionBaseSpec = {
-  property: 'maxHeight',
+  property: 'height',
   easing,
   duration: outDuration,
   toValue: collapseHiddenMaxHeight,
