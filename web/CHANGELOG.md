@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.36.0 (3/3/2022, 09:10 AM PST)
+
+#### 💥 Breaking
+
+- **[Illustration]** Publish illo feb 28 2022. [#57040](https://github.cbhq.net/mono/repo/pull/57040)
+
+#### 🚀 Updates
+
+- Add forwardRef to CDS Accordion and Collapse. [#57091](https://github.cbhq.net/mono/repo/pull/57091)
+
+#### 🐞 Fixes
+
+- IsSSR to use facebook check for canUseDom. [#57903](https://github.cbhq.net/mono/repo/pull/57903)
+- **[Portal]** Check SSR properly. [#57638](https://github.cbhq.net/mono/repo/pull/57638)
+- Add warning for SpotSquare. [#57434](https://github.cbhq.net/mono/repo/pull/57434)
+- Switcher Recipe Scaffolding with popoverBase components. [#56531](https://github.cbhq.net/mono/repo/pull/56531)
+- **[TextInput, SearchInput]** Fix TextInput being weird with Frontier. Made improvements to SearchInput examples on website. [#57153](https://github.cbhq.net/mono/repo/pull/57153)
+
 ## 0.35.3 (2/28/2022, 06:37 AM PST)
 
 #### 🚀 Updates

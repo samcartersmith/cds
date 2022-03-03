@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.41.0 (3/3/2022, 09:10 AM PST)
+
+#### 💥 Breaking
+
+- **[Illustration]** Publish illo feb 28 2022. [#57040](https://github.cbhq.net/mono/repo/pull/57040)
+
+#### 🚀 Updates
+
+- Add forwardRef to CDS Accordion and Collapse. [#57091](https://github.cbhq.net/mono/repo/pull/57091)
+
+#### 🐞 Fixes
+
+- Layout logic without block. [#57784](https://github.cbhq.net/mono/repo/pull/57784)
+
 ## 0.40.4 (3/1/2022, 08:48 AM PST)
 
 #### 🐞 Fixes

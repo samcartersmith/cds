@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.0 (3/3/2022, 09:10 AM PST)
+
+#### 💥 Breaking
+
+- **[Illustration]** Publish illo feb 28 2022. [#57040](https://github.cbhq.net/mono/repo/pull/57040)
+
+#### 🐞 Fixes
+
+- Layout logic without block. [#57784](https://github.cbhq.net/mono/repo/pull/57784)
+
 ## 0.34.3 (2/28/2022, 06:37 AM PST)
 
 #### 🚀 Updates
