@@ -45,8 +45,11 @@ function getParentPalette(
 ) {
   if (parentThemeConfig) {
     return spectrum === 'light'
-      ? { ...parentThemeConfig.light.palette, ...(hasFrontier ? frontierLight : {}) }
-      : { ...parentThemeConfig.dark.palette, ...(hasFrontier ? frontierDark : {}) };
+      ? {
+          ...parentThemeConfig.light.palette,
+          ...(hasFrontier ? frontierSpectrumPalette.light : {}),
+        }
+      : { ...parentThemeConfig.dark.palette, ...(hasFrontier ? frontierSpectrumPalette.dark : {}) };
   }
   return getFallbackParentPalette(spectrum, hasFrontier);
 }

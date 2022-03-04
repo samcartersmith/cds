@@ -248,6 +248,46 @@ describe('ThemeProvider', () => {
     expect(result.current.activeConfig.rgbaStrings.foreground).toEqual('rgba(255,255,255,1)');
   });
 
+  it('works with nested spectrums and elevation=2 in frontier', () => {
+    const Wrapper: React.FC = ({ children }) => {
+      return (
+        <FeatureFlagContext.Provider value={{ ...defaultFeatureFlags, frontierColor: true }}>
+          <ThemeProvider name="example1" spectrum="light">
+            <ThemeProvider name="example2" spectrum="dark">
+              <Box elevation={2}>{children}</Box>
+            </ThemeProvider>
+          </ThemeProvider>
+        </FeatureFlagContext.Provider>
+      );
+    };
+    const {
+      result: { current: parentTheme },
+    } = renderHook(() => useThemeConfig(), {
+      wrapper: Wrapper,
+    });
+
+    const {
+      result: { current: childrenTheme },
+    } = renderHook(() => useThemeConfig(), {
+      wrapper: ({ children }) => (
+        <Wrapper>
+          <Box background>{children}</Box>
+        </Wrapper>
+      ),
+    });
+
+    expect(parentTheme.activeConfig.rgbaStrings.background).toEqual('rgba(30,32,37,1)');
+    expect(parentTheme.activeConfig.rgbaStrings.secondary).toEqual('rgba(50,53,61,1)');
+
+    // Children of elevated surface should have same background and secondary colors.
+    expect(childrenTheme.activeConfig.rgbaStrings.background).toEqual(
+      parentTheme.activeConfig.rgbaStrings.background,
+    );
+    expect(childrenTheme.activeConfig.rgbaStrings.secondary).toEqual(
+      parentTheme.activeConfig.rgbaStrings.secondary,
+    );
+  });
+
   it('merges custom palette with default palette', () => {
     const { result } = renderHook(() => useThemeConfig(), {
       wrapper: ({ children }) => (
