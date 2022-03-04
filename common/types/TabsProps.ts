@@ -1,4 +1,5 @@
 import { PropsWithChildren, ReactElement } from 'react';
+import { BoxBaseProps } from './BoxBaseProps';
 import { DotCountBaseProps } from './DotCountBaseProps';
 import { SetState } from './React';
 import { SharedProps } from './SharedProps';
@@ -59,4 +60,5 @@ export type TabNavigationProps<T extends string | undefined = string> = {
   /** Use the onChange handler to deal with any side effects, ie event tracking or showing a tooltip */
   onChange: OnChange<T>;
 } & Pick<TabProps, 'variant'> &
+  BoxBaseProps &
   SharedProps;

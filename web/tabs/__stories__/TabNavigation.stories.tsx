@@ -1,13 +1,13 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
+import sample from 'lodash/sample';
 import { Story, Meta } from '@storybook/react';
 import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
-import { useToggler } from '@cbhq/cds-common';
 import { VStack } from '../../layout/VStack';
 
 import { ThemeProvider } from '../../system';
 import { TabNavigation } from '../TabNavigation';
 import { Select, SelectOption } from '../../controls';
-import { Button } from '../../buttons';
+import { Button } from '../../buttons/Button';
 
 const tabs: TabProps[] = [
   {
@@ -41,31 +41,30 @@ export default {
 export const TabIndicatorPrimary: Story = () => {
   const [currentLightTab, setCurrentLightTab] = useState<TabNavigationProps['value']>(tabs[2].id);
   const [currentDarkTab, setCurrentDarkTab] = useState<TabNavigationProps['value']>();
-  const [withCount, { toggle: toggleCount }] = useToggler();
-  const tabsWithCount = useMemo(
-    () => tabs.map((tab, idx) => (idx === 1 ? { ...tab, count: withCount ? 2 : 0 } : tab)),
-    [withCount],
-  );
+  const [count, setCount] = useState(0);
+  // This is just a helper to make a random tab show a count
+  const tabsWithDot = useMemo(() => tabs.map((tab) => ({ ...tab, count })), [count]);
+
+  const updateCount = useCallback(() => {
+    setCount(Number(count ? 0 : sample([2, 14, 100])));
+  }, [count]);
+
   return (
     <>
       <ThemeProvider spectrum="light">
         <VStack spacing={2} gap={2} background="background">
-          <TabNavigation
-            value={currentLightTab}
-            tabs={tabsWithCount}
-            onChange={setCurrentLightTab}
-          />
+          <Button onPress={updateCount}>Randomize dot count</Button>
+          <TabNavigation value={currentLightTab} tabs={tabsWithDot} onChange={setCurrentLightTab} />
           <Select value={currentLightTab} onChange={setCurrentLightTab} label="Select a tab">
-            {tabsWithCount.map((option) => (
+            {tabsWithDot.map((option) => (
               <SelectOption value={option.id} title={option.label} key={option.id} />
             ))}
           </Select>
-          <Button onPress={toggleCount}>Toggle Badge</Button>
         </VStack>
       </ThemeProvider>
       <ThemeProvider spectrum="dark">
         <VStack spacing={2} gap={2} background="background">
-          <TabNavigation tabs={tabs} onChange={setCurrentDarkTab} value={currentDarkTab} />
+          <TabNavigation value={currentDarkTab} tabs={tabs} onChange={setCurrentDarkTab} />
           <Select value={currentDarkTab} onChange={setCurrentDarkTab} label="Select a tab">
             {tabs.map((option) => (
               <SelectOption value={option.id} title={option.label} key={option.id} />

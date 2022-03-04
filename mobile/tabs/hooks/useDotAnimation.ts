@@ -1,9 +1,10 @@
 import {
   animateDotOpacityConfig,
-  animateDotScaleConfig,
+  animateDotWidthConfig,
   dotHidden,
   dotVisible,
 } from '@cbhq/cds-common/animation/dot';
+import { getDotSize } from '@cbhq/cds-common/tokens/dot';
 import { useCallback, useRef } from 'react';
 import { Animated } from 'react-native';
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
@@ -22,37 +23,45 @@ const opacityOutConfig = convertMotionConfig({
 
 // Y transform animation
 const scaleInConfig = convertMotionConfig({
-  ...animateDotScaleConfig,
-  toValue: dotVisible,
-  fromValue: dotHidden,
+  ...animateDotWidthConfig,
+  toValue: getDotSize(),
+  fromValue: 0,
 });
 const scaleOutConfig = convertMotionConfig({
-  ...animateDotScaleConfig,
-  toValue: dotHidden,
-  fromValue: dotVisible,
+  ...animateDotWidthConfig,
+  toValue: 0,
+  fromValue: getDotSize(),
 });
 
 export const useDotAnimation = () => {
   const opacity = useRef(new Animated.Value(dotHidden)).current;
-  const scale = useRef(new Animated.Value(dotHidden)).current;
+  const width = useRef(new Animated.Value(dotHidden)).current;
 
-  const animateIn = useCallback(() => {
-    return Animated.parallel([
-      Animated.timing(opacity, opacityInConfig),
-      Animated.timing(scale, scaleInConfig),
-    ]).start();
-  }, [opacity, scale]);
+  const animateIn = useCallback(
+    (count: number) => {
+      const params = { ...scaleInConfig, toValue: getDotSize(count) };
+      return Animated.parallel([
+        Animated.timing(opacity, opacityInConfig),
+        Animated.timing(width, params),
+      ]).start();
+    },
+    [opacity, width],
+  );
 
-  const animateOut = useCallback(() => {
-    return Animated.parallel([
-      Animated.timing(opacity, opacityOutConfig),
-      Animated.timing(scale, scaleOutConfig),
-    ]).start();
-  }, [opacity, scale]);
+  const animateOut = useCallback(
+    (count: number) => {
+      const params = { ...scaleOutConfig, fromValue: getDotSize(count) };
+      return Animated.parallel([
+        Animated.timing(opacity, opacityOutConfig),
+        Animated.timing(width, params),
+      ]).start();
+    },
+    [opacity, width],
+  );
 
   return {
     opacity,
-    scale,
+    width,
     animateIn,
     animateOut,
   };

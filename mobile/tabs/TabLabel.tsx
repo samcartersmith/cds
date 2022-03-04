@@ -1,10 +1,10 @@
 import { TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common';
 import React, { useMemo, memo, useRef, useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Animated } from 'react-native';
 import { TextHeadline, TextTitle3, TextTitle4 } from '../typography';
 import { useSpacingScale } from '../hooks/useSpacingScale';
 import { TextProps } from '../typography/createText';
-import { HStack, Box } from '../layout';
+import { HStack } from '../layout';
 import { DotCount } from '../dots/DotCount';
 import { useDotAnimation } from './hooks/useDotAnimation';
 
@@ -47,21 +47,21 @@ export const TabLabel = memo(
     );
 
     // ⚡️ Side effects
-    const didMount = useRef(false);
-    const { animateIn, animateOut, scale, opacity } = useDotAnimation();
+    const lastCount = useRef(0);
+    const { animateIn, animateOut, width, opacity } = useDotAnimation();
     useEffect(() => {
       // Animate dotBadge in
-      if (count) {
-        if (!didMount.current) {
-          didMount.current = true;
-          animateIn();
-        }
-        // Animate dotBadge Out
-      } else {
-        didMount.current = false;
-        animateOut();
-      }
+      if (count && lastCount.current !== count) animateIn(count);
+      if (!count && lastCount.current !== count) animateOut(count);
+
+      lastCount.current = count;
     }, [count, animateIn, animateOut]);
+
+    // Memoized dot Styles
+    const dotStyles = useMemo(
+      () => ({ container: { width }, inner: { opacity, marginLeft: spacing[0.5] } }),
+      [opacity, spacing, width],
+    );
 
     return (
       <HStack alignItems="center">
@@ -74,13 +74,11 @@ export const TabLabel = memo(
         ) : (
           <TextElement color={color} {...props} dangerouslySetStyle={dynamicStyles} />
         )}
-        <Box
-          animated
-          dangerouslySetStyle={[{ opacity, transform: [{ scale }] }]}
-          spacingStart={count ? 1 : 0}
-        >
-          <DotCount count={count} />
-        </Box>
+        <Animated.View style={dotStyles.container}>
+          <Animated.View style={dotStyles.inner}>
+            <DotCount count={count} />
+          </Animated.View>
+        </Animated.View>
       </HStack>
     );
   },

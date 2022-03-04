@@ -1,5 +1,5 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import sample from 'lodash/sample';
 import { Story, Meta } from '@storybook/react';
 import { Button } from '../../buttons/Button';
 import { VStack, HStack } from '../../layout';
@@ -12,17 +12,39 @@ export default {
   component: TabLabel,
 } as Meta;
 
-const getRandomNumber = () => Math.floor(Math.random() * 10);
 export const TabIndicatorExample: Story = () => {
   const [count, setCount] = useState(1);
 
-  const handlePress = () => {
-    setCount(getRandomNumber());
-  };
+  const updateCount = useCallback(() => {
+    setCount(Number(count ? 0 : sample([2, 14, 100])));
+  }, [count]);
 
   return (
     <>
       <ThemeProvider spectrum="light">
+        <VStack spacing={4} gap={2} background="background">
+          <Button onPress={updateCount} block>
+            Randomize
+          </Button>
+          <HStack gap={2}>
+            <TabLabel count={count} active>
+              All
+            </TabLabel>
+            <TabLabel>Tradable</TabLabel>
+            <TabLabel>Watchlist</TabLabel>
+            <TabLabel>Trending</TabLabel>
+          </HStack>
+          <HStack gap={2}>
+            <TabLabel count={count} variant="secondary" active>
+              All
+            </TabLabel>
+            <TabLabel variant="secondary">Tradable</TabLabel>
+            <TabLabel variant="secondary">Watchlist</TabLabel>
+            <TabLabel variant="secondary">Trending</TabLabel>
+          </HStack>
+        </VStack>
+      </ThemeProvider>
+      <ThemeProvider spectrum="light" scale="xSmall">
         <VStack spacing={4} gap={2} background="background">
           <HStack gap={2}>
             <TabLabel count={count} active>
@@ -34,16 +56,12 @@ export const TabIndicatorExample: Story = () => {
           </HStack>
           <HStack gap={2}>
             <TabLabel count={count} variant="secondary" active>
-              Secondary Tab
+              All
             </TabLabel>
-            <TabLabel variant="secondary">All</TabLabel>
             <TabLabel variant="secondary">Tradable</TabLabel>
             <TabLabel variant="secondary">Watchlist</TabLabel>
             <TabLabel variant="secondary">Trending</TabLabel>
           </HStack>
-          <Button onPress={handlePress} block>
-            Randomize
-          </Button>
         </VStack>
       </ThemeProvider>
       <ThemeProvider spectrum="dark">
@@ -58,16 +76,12 @@ export const TabIndicatorExample: Story = () => {
           </HStack>
           <HStack gap={2}>
             <TabLabel count={count} variant="secondary" active>
-              Secondary Tab
+              All
             </TabLabel>
-            <TabLabel variant="secondary">All</TabLabel>
             <TabLabel variant="secondary">Tradable</TabLabel>
             <TabLabel variant="secondary">Watchlist</TabLabel>
             <TabLabel variant="secondary">Trending</TabLabel>
           </HStack>
-          <Button onPress={handlePress} block>
-            Randomize
-          </Button>
         </VStack>
       </ThemeProvider>
     </>

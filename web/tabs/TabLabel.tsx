@@ -1,11 +1,22 @@
-import { TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common';
+import { TabIndicatorProps, TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common';
+import { animateDotWidthConfig } from '@cbhq/cds-common/animation/dot';
 import { css } from 'linaria';
-import React, { useLayoutEffect, useMemo, memo, useRef, useEffect } from 'react';
+import React, { useCallback, useMemo, memo, useRef, useLayoutEffect } from 'react';
 import { TextHeadline, TextTitle3, TextTitle4, TextProps } from '../typography';
 import { spacing } from '../tokens';
 import { DotCount } from '../dots/DotCount';
-import { Box, HStack } from '../layout';
+import { HStack } from '../layout';
 import { useDotAnimation } from './hooks/useDotAnimation';
+import { useDimensions } from '../hooks/useDimensions';
+import { cx } from '../utils/linaria';
+import { Animated } from '../animation/Animated';
+
+export const getDotSizeClassName = (count?: number) => {
+  if (!count || count < 10) return 'size--s';
+  if (count <= 99) return 'size--m';
+
+  return 'size--l';
+};
 
 export const tabLabelSpacingClassName = css`
   padding-top: ${spacing[2]};
@@ -13,12 +24,31 @@ export const tabLabelSpacingClassName = css`
 `;
 const containerClassName = css`
   position: relative;
+  > * {
+    white-space: nowrap;
+  }
 `;
 const hiddenClassName = css`
   width: 100%;
   visibility: hidden;
   pointer-events: none;
   height: 0px;
+`;
+const dotClassName = css`
+  display: block;
+  padding-left: ${spacing[0.5]};
+  // Animate to size
+  width: 0px;
+  opacity: 0;
+  &.size--s {
+    ${Animated.toCssTransition([{ ...animateDotWidthConfig, toValue: '27px' }])}
+  }
+  &.size--m {
+    ${Animated.toCssTransition([{ ...animateDotWidthConfig, toValue: '31px' }])}
+  }
+  &.size--l {
+    ${Animated.toCssTransition([{ ...animateDotWidthConfig, toValue: '42px' }])}
+  }
 `;
 
 const COLORS = {
@@ -32,19 +62,16 @@ const COLORS = {
   },
 } as const;
 
-export type LayoutChangeEvent = DOMRect | undefined;
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export type TabLabelProps = CommonTabLabelProps &
-  TextProps & { onLayout?: (props: LayoutChangeEvent) => void };
+  TextProps & { onLayout?: (key: string, props: TabIndicatorProps) => void };
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const TabLabel = memo(
-  ({ id, active, variant = 'primary', count = 0, onLayout, ...props }: TabLabelProps) => {
-    const didMount = useRef(false);
-    const layoutRef = useRef<HTMLElement>(null);
-    const { animateIn, animateOut, ref: dotRef } = useDotAnimation();
+  ({ id = '', active, variant = 'primary', count = 0, onLayout, ...props }: TabLabelProps) => {
     const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);
     const color = useMemo(() => COLORS[variant][active ? 'active' : 'inactive'], [active, variant]);
+    const countClassName = getDotSizeClassName(count);
     const TextElement = useMemo(() => {
       if (variant === 'primary') return TextHeadline;
       if (active) return TextTitle3;
@@ -52,27 +79,29 @@ export const TabLabel = memo(
       return TextTitle4;
     }, [active, variant]);
 
+    // Handle layout events
+    const { observe, width, x } = useDimensions();
+
     // ⚡️ Side effects
-    useEffect(() => {
-      // Animate dotBadge in
-      if (count) {
-        if (!didMount.current) {
-          didMount.current = true;
-          animateIn();
-        }
-        // Animate dotBadge Out
-      } else {
-        didMount.current = false;
-        animateOut();
-      }
-    }, [count, animateIn, animateOut]);
+    const lastCount = useRef(0);
+    const { animateIn, animateOut, dotRef } = useDotAnimation();
+
+    const getOnLayoutHandler = useCallback(() => {
+      onLayout?.(id, { width, x });
+    }, [id, onLayout, width, x]);
 
     useLayoutEffect(() => {
-      onLayout?.(layoutRef.current?.getBoundingClientRect());
-    }, [onLayout]);
+      // Animate dotBadge in
+      if (count && !lastCount.current) void animateIn?.start();
+      if (!count && lastCount.current) void animateOut?.start();
+      getOnLayoutHandler();
+
+      // Update count ref
+      lastCount.current = count;
+    }, [count, animateIn, animateOut, id, getOnLayoutHandler]);
 
     return (
-      <HStack alignItems="center" ref={layoutRef}>
+      <HStack alignItems="center" ref={observe}>
         {shouldMeasureElement ? (
           <span className={containerClassName}>
             <TextElement as="h2" color={color} {...props} />
@@ -92,9 +121,9 @@ export const TabLabel = memo(
             dangerouslySetClassName={variant === 'primary' ? tabLabelSpacingClassName : undefined}
           />
         )}
-        <Box ref={dotRef} spacingStart={count ? 1 : 0}>
+        <span className={cx(dotClassName, count && countClassName)} ref={dotRef}>
           <DotCount count={count} />
-        </Box>
+        </span>
       </HStack>
     );
   },

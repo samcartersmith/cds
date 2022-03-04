@@ -9,6 +9,7 @@ type State = {
   currentBreakpoint: string;
   width: number;
   height: number;
+  x: number;
   entry?: ResizeObserverEntry;
 };
 export type Event<T> = {
@@ -91,9 +92,10 @@ export const useDimensions = <T extends HTMLElement>({
   const [state, setState] = useState<State>({
     currentBreakpoint: '',
     width: 0,
+    x: 0,
     height: 0,
   });
-  const prevSizeRef = useRef<{ width?: number; height?: number }>({});
+  const prevSizeRef = useRef<{ width?: number; height?: number; x?: number }>({});
   const prevBreakpointRef = useRef<string>();
   const observerRef = useRef<ResizeObserver | null>(null);
   const onResizeRef = useRef<OnResize<T> | null>(null);
@@ -161,12 +163,15 @@ export const useDimensions = <T extends HTMLElement>({
 
       if (width === prevSizeRef.current.width && height === prevSizeRef.current.height) return;
 
-      prevSizeRef.current = { width, height };
+      const x = ref.current?.getBoundingClientRect()?.x ?? 0;
+
+      prevSizeRef.current = { width, height, x };
 
       const config = {
         currentBreakpoint: '',
         width,
         height,
+        x,
         entry,
         observe,
         unobserve,
@@ -187,6 +192,7 @@ export const useDimensions = <T extends HTMLElement>({
         currentBreakpoint: config.currentBreakpoint,
         width,
         height,
+        x,
         entry,
       };
 
