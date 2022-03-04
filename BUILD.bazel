@@ -210,6 +210,13 @@ ts_script(
 )
 
 ts_script(
+    name = "contributing",
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/website/contributing.ts",
+    deps = CODEGEN_DEPS,
+)
+
+ts_script(
     name = "sync_icons",
     srcs = CODEGEN_SRCS,
     script = "eng/shared/design-system/codegen/icons/syncSvgsFromFigma.ts",

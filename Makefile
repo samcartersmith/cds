@@ -238,6 +238,7 @@ clean.ios:
 release:
 	bazel run :release
 	bazel run :changelog
+	bazel run :contributing
 	bazel run :docgen
 	bazel run website:lint_fix
 

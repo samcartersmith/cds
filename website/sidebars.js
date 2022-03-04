@@ -132,7 +132,15 @@ module.exports = {
         },
 
         'resources/roadmap',
-        'resources/contributing',
+        {
+          type: 'category',
+          label: 'Contributing',
+          collapsed: true,
+          items: [
+            { type: 'doc', id: 'contributing/engineering', label: 'Engineering Guide' },
+            { type: 'doc', id: 'contributing/design', label: 'Design Guide' },
+          ],
+        },
         {
           type: 'category',
           label: 'Changelog',
