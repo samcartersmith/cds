@@ -34,17 +34,19 @@ const categorizedIconNames: Record<string, Set<string>> = {
 
 const normalizeIconName = (imageName: string): IconName | undefined => {
   const [type, specificName, state] = imageName.split('/');
-  if (type !== 'Icon' && type !== 'NavigationIcon') {
+  if (type !== 'Icon' && type !== 'NavigationIcon' && type !== 'NavigationProductIcon') {
     return undefined;
   }
 
   const [name, size] = specificName.split('_');
   const stateStr = state === undefined ? '' : capitalize(state);
-  if (type === 'NavigationIcon') {
-    categorizedIconNames[`${type}Internal`].add(`${name}${stateStr}`);
-    categorizedIconNames[`${type}`].add(`${name}`);
-  } else {
-    categorizedIconNames[type].add(`${name}${stateStr}`);
+  if (type === 'NavigationIcon' || type === 'NavigationProductIcon') {
+    categorizedIconNames.NavigationIconInternal.add(`${name}${stateStr}`);
+    categorizedIconNames.NavigationIcon.add(`${name}`);
+  }
+
+  if (type === 'Icon' || type === 'NavigationProductIcon') {
+    categorizedIconNames.Icon.add(`${name}${stateStr}`);
   }
 
   return {

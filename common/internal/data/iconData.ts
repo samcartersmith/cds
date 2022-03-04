@@ -176,6 +176,8 @@ export const iconNames = [
   'unknown',
   'thumbsDown',
   'thumbsUp',
+  'planetInactive',
+  'planetActive',
   'paperclip',
   'upload',
   'noWifi',
@@ -189,6 +191,7 @@ export const iconNames = [
   'setPinCode',
   'diagonalUpArrow',
   'diagonalDownArrow',
+  'seenActive',
 ] as const;
 
 export const navigationIconNames = [
@@ -523,4 +526,5 @@ export const unicodeMap = {
     '32': 'uEE47',
   },
   moreVerticalActive: { '8': 'uEE48', '12': 'uEE49', '16': 'uEE4A', '24': 'uEE4B', '32': 'uEE4C' },
+  seenActive: { '8': 'uEE4D', '12': 'uEE4E', '16': 'uEE4F', '24': 'uEE50', '32': 'uEE51' },
 } as const;

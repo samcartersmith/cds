@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 61004,
+  lastUnicode: 61009,
   unicodeMap: {
     cashUSD: { '8': 'uE966', '12': 'uE967', '16': 'uE968', '24': 'uE969', '32': 'uE96A' },
     cashGBP: { '8': 'uE96B', '12': 'uE96C', '16': 'uE96D', '24': 'uE96E', '32': 'uE96F' },
@@ -365,5 +365,6 @@ export const manifest = {
       '24': 'uEE4B',
       '32': 'uEE4C',
     },
+    seenActive: { '8': 'uEE4D', '12': 'uEE4E', '16': 'uEE4F', '24': 'uEE50', '32': 'uEE51' },
   },
 };

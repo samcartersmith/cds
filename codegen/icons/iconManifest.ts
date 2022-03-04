@@ -4164,42 +4164,42 @@ export const iconManifest = {
   },
   '7445:380': {
     key: '70a823bd21cb9093b0de8b56074a2e1a91bf8b41',
-    name: 'NavigationIcon/planet_16/inactive',
+    name: 'NavigationProductIcon/planet_16/inactive',
     description:
       'navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
     documentationLinks: [],
   },
   '7445:381': {
     key: '6bb4c6a26f9edbcd099267218c161a4d6154814e',
-    name: 'NavigationIcon/planet_16/active',
+    name: 'NavigationProductIcon/planet_16/active',
     description:
       'navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
     documentationLinks: [],
   },
   '7445:382': {
     key: 'f128e29ed73e0f2a39ab6ad8b480659ff89c6d04',
-    name: 'NavigationIcon/planet_12/inactive',
+    name: 'NavigationProductIcon/planet_12/inactive',
     description:
       'navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
     documentationLinks: [],
   },
   '7445:383': {
     key: '7008254bcb93b3462281d08a4cc706123ed2edde',
-    name: 'NavigationIcon/planet_12/active',
+    name: 'NavigationProductIcon/planet_12/active',
     description:
       'navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
     documentationLinks: [],
   },
   '7445:384': {
     key: '3a256df94ff1b30e6407e5d307ddc29540698491',
-    name: 'NavigationIcon/planet_24/inactive',
+    name: 'NavigationProductIcon/planet_24/inactive',
     description:
       'navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
     documentationLinks: [],
   },
   '7445:385': {
     key: '93a0f2973df711e16bfc52a59641cf6dfbe3a1ca',
-    name: 'NavigationIcon/planet_24/active',
+    name: 'NavigationProductIcon/planet_24/active',
     description:
       'navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
     documentationLinks: [],
@@ -4631,6 +4631,24 @@ export const iconManifest = {
     key: '72dc4226d49e1e1487c7f0577929d265c4a91146',
     name: 'NavigationIcon/moreVertical_12/active',
     description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
+  '8242:89': {
+    key: '22c75303ae78d0b4de97980cddc2120893df8ec1',
+    name: 'Icon/seen_24/active',
+    description: 'seen, read, checkmark, double checkmark, send receipts, ✅, 🤓',
+    documentationLinks: [],
+  },
+  '8242:87': {
+    key: '86a1097a924b807b2715134c4ec4a051dd671702',
+    name: 'Icon/seen_16/active',
+    description: 'seen, read, checkmark, double checkmark, send receipts, ✅, 🤓',
+    documentationLinks: [],
+  },
+  '8242:88': {
+    key: '76336a5c6a68cd7b773cb1a340f3fd7528e984f0',
+    name: 'Icon/seen_12/active',
+    description: 'seen, read, checkmark, double checkmark, send receipts, ✅, 🤓',
     documentationLinks: [],
   },
 };

@@ -172,6 +172,8 @@ export type IconName =
   | 'unknown'
   | 'thumbsDown'
   | 'thumbsUp'
+  | 'planetInactive'
+  | 'planetActive'
   | 'paperclip'
   | 'upload'
   | 'noWifi'
@@ -184,7 +186,8 @@ export type IconName =
   | 'download'
   | 'setPinCode'
   | 'diagonalUpArrow'
-  | 'diagonalDownArrow';
+  | 'diagonalDownArrow'
+  | 'seenActive';
 
 export type NavigationIconName =
   | 'account'
