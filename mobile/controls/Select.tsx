@@ -51,7 +51,8 @@ export const Select = memo(
         useRotateAnimation(animateCaretInConfig, animateCaretOutConfig, 180);
       const [isSelectTrayOpen, toggleSelectTray] = useToggler(false);
       const focusedVariant = useInputVariant(!!isSelectTrayOpen, variant);
-      const context = useSelect({ value: defaultValue, onChange });
+      const sanitizedValue = defaultValue === '' ? undefined : defaultValue;
+      const context = useSelect({ value: sanitizedValue, onChange });
       const { value } = context;
 
       const getSpacingStart = compact ? 1 : 2;
