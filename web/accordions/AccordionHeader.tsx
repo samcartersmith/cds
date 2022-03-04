@@ -17,6 +17,7 @@ import { Icon } from '../icons';
 import { getAccordionHeaderId, getAccordionPanelId } from './utils';
 import { typographyResets } from '../typography/createText';
 import { iconStyles } from './accordionStyles';
+import { overflowClassName, truncateClassName } from '../cells/Cell';
 
 export type AccordionHeaderProps = AccordionHeaderBaseProps;
 
@@ -27,13 +28,23 @@ export const AccordionMedia = memo(({ media }: AccordionMediaBaseProps) => (
 ));
 
 export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps) => (
-  <Box flexGrow={1} flexShrink={1} justifyContent="flex-start">
+  <Box
+    flexGrow={1}
+    flexShrink={1}
+    justifyContent="flex-start"
+    dangerouslySetClassName={truncateClassName}
+  >
     <VStack>
       <TextHeadline as="div" overflow="truncate">
         {title}
       </TextHeadline>
       {!!subtitle && (
-        <TextBody as="div" color="foregroundMuted">
+        <TextBody
+          as="div"
+          overflow="truncate"
+          color="foregroundMuted"
+          dangerouslySetClassName={overflowClassName}
+        >
           {subtitle}
         </TextBody>
       )}

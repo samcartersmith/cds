@@ -4,7 +4,7 @@ import { useCollapseSpacing } from '@cbhq/cds-common/hooks/useCollapseSpacing';
 
 import { motion } from 'framer-motion';
 
-import { Box, BoxProps } from '../layout';
+import { Box, BoxProps, VStack } from '../layout';
 import { useCollapseStyles } from './useCollapseStyles';
 
 export type CollapseProps = CollapseBaseProps &
@@ -29,10 +29,9 @@ export const Collapse = memo(
           ref={forwardedRef}
         >
           <Box {...spacing.outer}>
-            <Box overflow="auto" maxHeight={maxHeight} {...spacing.inner}>
-              {/* <ScrollFade /> */}
+            <VStack overflow="auto" maxHeight={maxHeight} {...spacing.inner}>
               {children}
-            </Box>
+            </VStack>
           </Box>
         </motion.div>
       );
