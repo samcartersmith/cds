@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.36.1 (3/4/2022, 05:52 AM PST)
+
+#### 🚀 Updates
+
+- **[Select]** Added valueLabel to select web and mobile. [#57877](https://github.cbhq.net/mono/repo/pull/57877), [CDS-2150](https://jira.coinbase-corp.com/browse/CDS-2150)
+
+#### 🐞 Fixes
+
+- CDS Accordion & Collapse fixes. [#57282](https://github.cbhq.net/mono/repo/pull/57282)
+
 ## 0.36.0 (3/3/2022, 09:10 AM PST)
 
 #### 💥 Breaking
