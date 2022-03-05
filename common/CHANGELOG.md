@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.2 (3/4/2022, 04:14 PM PST)
+
+#### 🚀 Updates
+
+- **[Tabs]** Implement motion as defined in the motion spec. [#57338](https://github.cbhq.net/mono/repo/pull/57338), [CDS-2121](https://jira.coinbase-corp.com/browse/CDS-2121)
+
+#### 🐞 Fixes
+
+- **[Illustrations]** Publish illo Mar 3rd, 2022 and modify build to break illustration requests into smaller chunk. [#58335](https://github.cbhq.net/mono/repo/pull/58335)
+- **[Icons]** Publish icons March 3rd 2022. [#57940](https://github.cbhq.net/mono/repo/pull/57940)
+
 ## 0.35.1 (3/4/2022, 05:52 AM PST)
 
 #### 🚀 Updates
