@@ -1,11 +1,12 @@
 import { renameKeys, camelCase, pascalCase } from '@cbhq/cds-utils';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import chalk from 'chalk';
 import fs, { readFileSync, existsSync, renameSync, unlink } from 'fs';
 import { reduce } from 'lodash';
 import ora from 'ora';
 import path from 'path';
 import { optimize, loadConfig, OptimizeOptions } from 'svgo';
+import { FileImageResponse } from 'eng/shared/design-system/codegen/figma/api';
 import { getSourcePath } from '../utils/getSourcePath';
 
 import { FigmaClient, CDS_PERSONAL_ACCESS_TOKEN } from '../figma/client';
@@ -298,42 +299,51 @@ const createNewImgsDirIfDNE = (outDirPath: string) => {
   }
 };
 
+const streamIllustrations = async (nodeIds: string[], fileFormat: 'svg' | 'png') => {
+  // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
+  const promises: Promise<void | AxiosResponse<FileImageResponse>>[] = [];
+  const CHUNK_SIZE = 50;
+
+  for (let i = 0; i < nodeIds.length - 1; i += CHUNK_SIZE) {
+    const nodeIdsSubset = nodeIds.slice(i, i + CHUNK_SIZE);
+
+    promises.push(
+      figmaClient
+        .fileImages(ILLUSTRATION_FILE_ID, nodeIdsSubset, fileFormat, 1)
+        .catch((err) => console.error(err.message)),
+    );
+  }
+  const resolvedPromises = await Promise.all(promises);
+
+  let svgImages: Record<string, string> = {};
+
+  resolvedPromises.forEach((promise) => {
+    if (!promise) {
+      return;
+    }
+
+    if (promise.data.err) {
+      throw new Error(`${promise?.data} - Image is not laoding`);
+    }
+
+    svgImages = {
+      ...svgImages,
+      ...promise.data.images,
+    };
+  });
+
+  return svgImages;
+};
+
 const loadImagesLocally = async (nodeIds: string[], outDirPath: string) => {
   console.log(`Getting image urls for ${nodeIds.length} illustrations from Figma\n`);
   createNewImgsDirIfDNE(outDirPath);
 
-  // Fetching SVG Images
-  const svgImageResponse = await figmaClient
-    .fileImages(ILLUSTRATION_FILE_ID, nodeIds, 'svg', 1)
-    .catch((err) => console.error(err.message));
+  const svgImageResponse = await streamIllustrations(nodeIds, 'svg');
+  const pngImageResponse = await streamIllustrations(nodeIds, 'png');
 
-  // Fetching PNG Images
-  const pngImageResponse = await figmaClient
-    .fileImages(ILLUSTRATION_FILE_ID, nodeIds, 'png', 1)
-    .catch((err) => console.error(err.message));
-
-  if (!svgImageResponse) {
-    console.error('SVG Image is not loading');
-    return undefined;
-  }
-
-  if (!pngImageResponse) {
-    console.error('PNG Image is not loading');
-    return undefined;
-  }
-
-  if (svgImageResponse.data.err) {
-    console.error(svgImageResponse.data.err);
-    return undefined;
-  }
-
-  if (pngImageResponse.data.err) {
-    console.error(pngImageResponse.data.err);
-    return undefined;
-  }
-
-  const svgResponseKeys = Object.keys(svgImageResponse.data.images);
-  const pngResponseKeys = Object.keys(pngImageResponse.data.images);
+  const svgResponseKeys = Object.keys(svgImageResponse);
+  const pngResponseKeys = Object.keys(pngImageResponse);
 
   if (svgResponseKeys.length !== pngResponseKeys.length) {
     console.error('Number of SVGs does not equal number of PNGs');
@@ -342,9 +352,9 @@ const loadImagesLocally = async (nodeIds: string[], outDirPath: string) => {
 
   // Start downloading images from Figma CDN
   const loadImagePromiseArr = [];
-  for (const [nodeId] of Object.entries(svgImageResponse.data.images)) {
-    const svgURL = svgImageResponse.data.images[nodeId];
-    const pngURL = pngImageResponse.data.images[nodeId];
+  for (const [nodeId] of Object.entries(svgImageResponse)) {
+    const svgURL = svgImageResponse[nodeId];
+    const pngURL = pngImageResponse[nodeId];
 
     if (!nodeId || !localManifestData) return undefined;
 
