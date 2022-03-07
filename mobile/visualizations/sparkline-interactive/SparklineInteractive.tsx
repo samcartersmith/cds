@@ -47,7 +47,7 @@ const DefaultFallback = memo(({ fallbackType }: SparklineInteractiveDefaultFallb
   const source = fallbackType === 'negative' ? chartFallbackNegative : chartFallbackPositive;
   return (
     <ThemeProvider name="sparkline-fallback" palette={sparklinePalette}>
-      <Lottie autoplay source={source} loop />
+      <Lottie height="100%" autoplay source={source} loop />
     </ThemeProvider>
   );
 });
@@ -210,7 +210,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
           />
         )}
         <View style={chartDimensionStyles}>
-          {!!isFallbackVisible && !compact && (
+          {!!isFallbackVisible && (
             <View style={StyleSheet.absoluteFill}>
               {fallback ?? <DefaultFallback fallbackType={fallbackType} />}
             </View>
