@@ -1,6 +1,6 @@
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
 load("//tools/js:metro_bundle.bzl", "metro_bundle")
 load("//tools/js:def.bzl", "eslint_test", "type_check")
-load("//tools:def.bzl", "nodejs_binary")
 
 # This is a hack to build the @cbhq
 nodejs_binary(

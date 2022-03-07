@@ -1,4 +1,7 @@
-load("//tools:def.bzl", "pkg_zip", "project_settings", "syn_deployable", "syn_file_asset")
+load("//tools/project_settings:project_settings.bzl", "project_settings")
+load("//tools/zip:zip.bzl", "pkg_zip")
+load("//tools/syn:providers.bzl", "syn_file_asset")
+load("//tools/syn:syn_deployable.bzl", "syn_deployable")
 
 project_settings(
     caf = False,

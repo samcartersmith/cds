@@ -1,4 +1,4 @@
-load("//tools:def.bzl", "node_package_deployable")
+load("//tools/baldur/node:node_package_deployable.bzl", "node_package_deployable")
 
 def cds_deployable(name):
     deploy_label = "//eng/shared/design-system/%s:package_tar" % name
