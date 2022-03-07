@@ -11,6 +11,9 @@ build:
     - BaldurECR:
         name: cds-website-docs-development
         path: ./apps/website/development.Dockerfile
+    - BaldurECR:
+        name: cds-css-upload-development
+        path: ./packages/web/cssupload-development.Dockerfile
     # Packages
     - BaldurNode:
         name: package-cds-common
