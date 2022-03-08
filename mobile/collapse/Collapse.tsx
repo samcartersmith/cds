@@ -1,13 +1,12 @@
-import React, { memo, forwardRef, ForwardedRef } from 'react';
-import { ScrollView, View } from 'react-native';
+import React, { memo, forwardRef, ForwardedRef, useMemo } from 'react';
+import { ScrollView, View, Animated, ViewStyle } from 'react-native';
 import type { CollapseBaseProps } from '@cbhq/cds-common/types';
-import { useCollapseSpacing } from '@cbhq/cds-common/hooks/useCollapseSpacing';
 
-import { Box } from '../layout';
 import { useCollapseAnimation } from './useCollapseAnimation';
 import { useCollapsibleAnimation } from './useCollapsibleAnimation';
 import { useContentSize } from '../hooks/useContentSize';
-import { useSpacingScale } from '../hooks/useSpacingScale';
+import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { useCollapseDirection } from './useCollapseDirection';
 
 export type CollapseProps = CollapseBaseProps;
 
@@ -15,38 +14,78 @@ export type CollapseProps = CollapseBaseProps;
 export const Collapse = memo(
   forwardRef(
     (
-      { children, expanded, maxHeight, testID }: CollapseProps,
+      {
+        children,
+        expanded,
+        maxHeight,
+        maxWidth,
+        direction = 'vertical',
+        testID,
+        // Spacing
+        spacing,
+        spacingBottom,
+        spacingEnd,
+        spacingHorizontal,
+        spacingStart,
+        spacingTop,
+        spacingVertical,
+      }: CollapseProps,
       forwardedRef: ForwardedRef<View>,
     ) => {
-      const [{ height: scrollViewHeight }, handleContentSizeChange] = useContentSize();
-      const spacingScale = useSpacingScale();
-      const spacing = useCollapseSpacing();
+      const [{ height: contentHeight, width: contentWidth }, handleContentSizeChange] =
+        useContentSize();
+      const { paddingTop, ...restPadding } = useSpacingStyles({
+        spacing,
+        spacingBottom,
+        spacingEnd,
+        spacingHorizontal,
+        spacingStart,
+        spacingTop,
+        spacingVertical,
+      });
 
-      const spacingHeight = spacingScale[spacing.inner.spacingBottom];
-      const contentHeight = scrollViewHeight + spacingHeight;
-      // cutoff on max height and enable scroll
-      const shouldEnableScroll = maxHeight ? contentHeight > maxHeight : false;
-      const animateToHeight = maxHeight ?? (scrollViewHeight > spacingHeight ? contentHeight : 0);
+      const { shouldEnableScroll, animateTo, animateProperty, horizontal } = useCollapseDirection({
+        direction,
+        maxHeight,
+        contentHeight,
+        maxWidth,
+        contentWidth,
+      });
 
       const { animatedStyles, animateIn, animateOut } = useCollapseAnimation(
         expanded,
-        animateToHeight,
+        animateTo,
+        animateProperty,
       );
       useCollapsibleAnimation({ expanded, animateIn, animateOut });
 
+      const scrollViewStyles = useMemo(
+        () => ({
+          marginTop: paddingTop,
+        }),
+        [paddingTop],
+      );
+
+      const containerStyles = useMemo(
+        () =>
+          [animatedStyles, { flexDirection: horizontal ? 'row' : 'column', flex: 1 }] as ViewStyle,
+        [animatedStyles, horizontal],
+      );
+
       return (
-        <Box animated testID={testID} dangerouslySetStyle={animatedStyles} ref={forwardedRef}>
-          <Box {...spacing.outer}>
-            <ScrollView
-              scrollEnabled={shouldEnableScroll}
-              onContentSizeChange={handleContentSizeChange}
-              // for Android
-              nestedScrollEnabled
-            >
-              <Box {...spacing.inner}>{children}</Box>
-            </ScrollView>
-          </Box>
-        </Box>
+        <Animated.View testID={testID} style={containerStyles} ref={forwardedRef}>
+          <ScrollView
+            horizontal={horizontal}
+            scrollEnabled={shouldEnableScroll}
+            onContentSizeChange={handleContentSizeChange}
+            // for Android
+            nestedScrollEnabled
+            style={scrollViewStyles}
+            contentContainerStyle={restPadding}
+          >
+            {children}
+          </ScrollView>
+        </Animated.View>
       );
     },
   ),

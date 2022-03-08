@@ -25,9 +25,8 @@ export const AccordionItem = memo(
     headerRef,
     panelRef,
   }: AccordionItemProps) => {
-    const { activeKey, defaultActiveKey } = useAccordionParent();
+    const { activeKey } = useAccordionParent();
     const expanded = activeKey === itemKey;
-    const defaultExpanded = defaultActiveKey === itemKey;
 
     return (
       <VStack>
@@ -42,7 +41,6 @@ export const AccordionItem = memo(
           ref={headerRef}
         />
         <AccordionPanel
-          defaultExpanded={defaultExpanded}
           expanded={expanded}
           itemKey={itemKey}
           testID={testID && `${testID}-panel`}

@@ -1,11 +1,10 @@
-import React, { memo, forwardRef, ForwardedRef } from 'react';
+import React, { memo, forwardRef, ForwardedRef, useMemo } from 'react';
 import type { CollapseBaseProps } from '@cbhq/cds-common/types';
-import { useCollapseSpacing } from '@cbhq/cds-common/hooks/useCollapseSpacing';
-
 import { motion } from 'framer-motion';
 
-import { Box, BoxProps, VStack } from '../layout';
+import { BoxProps, VStack, HStack } from '../layout';
 import { useCollapseStyles } from './useCollapseStyles';
+import { useSpacingStyles } from '../hooks/useSpacingStyles';
 
 export type CollapseProps = CollapseBaseProps &
   Pick<BoxProps, 'role' | 'id' | 'accessibilityLabelledBy'>;
@@ -14,25 +13,66 @@ export type CollapseProps = CollapseBaseProps &
 export const Collapse = memo(
   forwardRef(
     (
-      { children, expanded, maxHeight, accessibilityLabelledBy, testID, ...props }: CollapseProps,
+      {
+        children,
+        expanded,
+        maxHeight,
+        maxWidth,
+        accessibilityLabelledBy,
+        direction = 'vertical',
+        testID,
+        id,
+        role,
+        // Spacing
+        spacing,
+        spacingBottom,
+        spacingEnd,
+        spacingHorizontal,
+        spacingStart,
+        spacingTop,
+        spacingVertical,
+      }: CollapseProps,
       forwardedRef: ForwardedRef<HTMLDivElement>,
     ) => {
-      const styles = useCollapseStyles(expanded);
-      const spacing = useCollapseSpacing();
+      const styles = useCollapseStyles(expanded, direction);
+      const outerSpacing = useSpacingStyles({
+        spacingTop,
+      });
+      const innerSpacing = useSpacingStyles({
+        spacing,
+        spacingBottom,
+        spacingEnd,
+        spacingHorizontal,
+        spacingStart,
+        spacingVertical,
+      });
+
+      const sizeProps = useMemo(() => {
+        return direction === 'horizontal'
+          ? {
+              maxWidth,
+              // prevent horizontal scrollbar when animating
+              display: 'inline-flex' as const,
+            }
+          : { maxHeight };
+      }, [direction, maxWidth, maxHeight]);
+
+      const Stack = direction === 'horizontal' ? HStack : VStack;
 
       return (
         <motion.div
           {...styles}
           aria-labelledby={accessibilityLabelledBy}
           data-testid={testID}
-          {...props}
+          id={id}
+          role={role}
           ref={forwardedRef}
         >
-          <Box {...spacing.outer}>
-            <VStack overflow="auto" maxHeight={maxHeight} {...spacing.inner}>
+          <div className={outerSpacing}>
+            <Stack overflow="auto" {...sizeProps} dangerouslySetClassName={innerSpacing}>
               {children}
-            </VStack>
-          </Box>
+            </Stack>
+          </div>
         </motion.div>
       );
     },

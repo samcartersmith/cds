@@ -1,5 +1,11 @@
 import React from 'react';
-import type { CollapseBaseProps, TextBaseProps, ButtonBaseProps } from '../types';
+import type {
+  CollapseBaseProps,
+  TextBaseProps,
+  ButtonBaseProps,
+  DotCountBaseProps,
+  BoxBaseProps,
+} from '../types';
 import { loremIpsum } from './data/loremIpsum';
 import { useToggler } from '../hooks/useToggler';
 
@@ -7,9 +13,17 @@ export type CreateCollapseProps = {
   Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
   Collapse: React.ComponentType<CollapseBaseProps>;
   TextBody: React.ComponentType<TextBaseProps & { as?: string }>;
+  DotCount: React.ComponentType<DotCountBaseProps>;
+  HStack: React.ComponentType<BoxBaseProps>;
 };
 
-export function collapseBuilder({ Button, Collapse, TextBody }: CreateCollapseProps) {
+export function collapseBuilder({
+  Button,
+  Collapse,
+  TextBody,
+  DotCount,
+  HStack,
+}: CreateCollapseProps) {
   const BasicCollapse = () => {
     const [expanded, { toggle }] = useToggler();
 
@@ -62,6 +76,21 @@ export function collapseBuilder({ Button, Collapse, TextBody }: CreateCollapsePr
     );
   };
 
+  const Horizontal = () => {
+    const [expanded, { toggle }] = useToggler();
+
+    return (
+      <HStack alignItems="center">
+        <Button onPress={toggle}>Click me!</Button>
+        <Collapse expanded={expanded} direction="horizontal">
+          <DotCount count={100} />
+          <DotCount count={1} />
+          <DotCount count={99} />
+        </Collapse>
+      </HStack>
+    );
+  };
+
   const MockCollapse = () => {
     const [expanded, { toggle }] = useToggler();
 
@@ -80,6 +109,7 @@ export function collapseBuilder({ Button, Collapse, TextBody }: CreateCollapsePr
     RevealTop,
     DefaultExpanded,
     Scroll,
+    Horizontal,
     MockCollapse,
   };
 }

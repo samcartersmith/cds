@@ -2,9 +2,9 @@ import { MotionBaseSpec } from '../types';
 
 export const collapseHiddenOpacity = 0;
 export const collapseVisibleOpacity = 1;
-export const collapseHiddenMaxHeight = 0;
+export const collapseHiddenMaxSize = 0;
 // for web, mobile will be determined by content height dynamically
-export const collapseVisibleMaxHeight = 1000;
+export const collapseVisibleMaxSize = 1000;
 export const collapseHiddenRotate = 0;
 export const collapseVisibleRotate = -180;
 
@@ -27,17 +27,17 @@ export const animateOutOpacityConfig: MotionBaseSpec = {
   fromValue: collapseVisibleOpacity,
 };
 
-export const animateInMaxHeightConfig: MotionBaseSpec = {
+export const animateInMaxSizeConfig: MotionBaseSpec = {
   property: 'height',
   easing,
   duration: inDuration,
-  toValue: collapseVisibleMaxHeight,
-  fromValue: collapseHiddenMaxHeight,
+  toValue: collapseVisibleMaxSize,
+  fromValue: collapseHiddenMaxSize,
 };
-export const animateOutMaxHeightConfig: MotionBaseSpec = {
+export const animateOutMaxSizeConfig: MotionBaseSpec = {
   property: 'height',
   easing,
   duration: outDuration,
-  toValue: collapseHiddenMaxHeight,
-  fromValue: collapseVisibleMaxHeight,
+  toValue: collapseHiddenMaxSize,
+  fromValue: collapseVisibleMaxSize,
 };

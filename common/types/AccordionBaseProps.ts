@@ -32,7 +32,8 @@ export type AccordionHeaderBaseProps = {
   AccordionTitleBaseProps &
   AccordionIconBaseProps;
 
-export type AccordionPanelBaseProps = Omit<CollapseBaseProps, 'maxHeight'> & AccordionCommonProps;
+export type AccordionPanelBaseProps = Pick<CollapseBaseProps, 'expanded' | 'children'> &
+  AccordionCommonProps;
 
 export type AccordionMediaBaseProps = Pick<ListCellBaseProps, 'media'>;
 export type AccordionTitleBaseProps = {

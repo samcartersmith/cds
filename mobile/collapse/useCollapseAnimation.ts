@@ -3,18 +3,21 @@ import { Animated } from 'react-native';
 import {
   animateInOpacityConfig,
   animateOutOpacityConfig,
-  animateInMaxHeightConfig,
-  animateOutMaxHeightConfig,
+  animateInMaxSizeConfig,
+  animateOutMaxSizeConfig,
   collapseHiddenOpacity,
-  collapseHiddenMaxHeight,
+  collapseVisibleOpacity,
+  collapseHiddenMaxSize,
 } from '@cbhq/cds-common/animation/collapse';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import type { AnimationHookProps } from '../animation/AnimationProps';
+import type { CollapseDirectionReturnValues } from './useCollapseDirection';
 
 type CollapseAnimation = AnimationHookProps<{
   opacity: Animated.Value;
-  maxHeight: Animated.Value;
+  maxHeight?: Animated.Value;
+  maxWidth?: Animated.Value;
 }>;
 
 // opacity animation
@@ -24,44 +27,48 @@ const opacityOutConfig = convertMotionConfig({
   useNativeDriver: false,
 });
 
-// maxHeight animation (need to turn off native driver)
-const heightInConfig = convertMotionConfig({ ...animateInMaxHeightConfig, useNativeDriver: false });
-const heightOutConfig = convertMotionConfig({
-  ...animateOutMaxHeightConfig,
+// maxHeight/maxWidth animation (need to turn off native driver)
+const sizeInConfig = convertMotionConfig({ ...animateInMaxSizeConfig, useNativeDriver: false });
+const sizeOutConfig = convertMotionConfig({
+  ...animateOutMaxSizeConfig,
   useNativeDriver: false,
 });
 
 export const useCollapseAnimation = (
-  defaultExpanded: boolean,
-  animateToHeight: number,
+  expanded: boolean,
+  animateTo: CollapseDirectionReturnValues['animateTo'],
+  animateProperty: CollapseDirectionReturnValues['animateProperty'],
 ): CollapseAnimation => {
-  const isDefaultExpanded = useRef(defaultExpanded);
+  const defaultExpanded = useRef(expanded);
 
   const collapseOpacity = useRef(new Animated.Value(collapseHiddenOpacity));
-  const collapseHeight = useRef(new Animated.Value(collapseHiddenMaxHeight));
+  const collapseSize = useRef(new Animated.Value(collapseHiddenMaxSize));
 
   // if it's expanded by default, fast forward the animated value to skip the animation
-  if (isDefaultExpanded.current && animateToHeight > 0) {
-    collapseOpacity.current.setValue(1);
-    collapseHeight.current.setValue(animateToHeight);
-    isDefaultExpanded.current = false;
+  if (defaultExpanded.current && animateTo > 0) {
+    collapseOpacity.current.setValue(collapseVisibleOpacity);
+    collapseSize.current.setValue(animateTo);
+    defaultExpanded.current = false;
   }
 
   const animateIn = Animated.parallel([
     Animated.timing(collapseOpacity.current, opacityInConfig),
-    Animated.timing(collapseHeight.current, { ...heightInConfig, toValue: animateToHeight }),
+    Animated.timing(collapseSize.current, { ...sizeInConfig, toValue: animateTo }),
   ]);
 
   const animateOut = Animated.parallel([
     Animated.timing(collapseOpacity.current, opacityOutConfig),
-    Animated.timing(collapseHeight.current, heightOutConfig),
+    Animated.timing(collapseSize.current, sizeOutConfig),
   ]);
 
   return useMemo(() => {
     return {
-      animatedStyles: { opacity: collapseOpacity.current, maxHeight: collapseHeight.current },
+      animatedStyles: {
+        opacity: collapseOpacity.current,
+        [animateProperty]: collapseSize.current,
+      },
       animateIn,
       animateOut,
     };
-  }, [animateIn, animateOut]);
+  }, [animateIn, animateOut, animateProperty]);
 };
