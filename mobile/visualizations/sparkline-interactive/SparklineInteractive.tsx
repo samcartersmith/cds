@@ -64,7 +64,7 @@ type SparklineInteractiveMobileProps<Period extends string> =
     /**
      * function used to format the amount of money used in the minMaxLabel
      */
-    formatMinMaxLabel: ChartFormatAmount;
+    formatMinMaxLabel?: ChartFormatAmount;
   };
 
 function SparklineInteractiveWithGeneric<Period extends string>({
@@ -83,6 +83,10 @@ export const SparklineInteractive = memo(
   SparklineInteractiveWithGeneric,
 ) as typeof SparklineInteractiveWithGeneric;
 
+function defaultFormatMinMaxLabel(value: string | number) {
+  return `${value}`;
+}
+
 function SparklineInteractiveContentWithGeneric<Period extends string>({
   data,
   periods,
@@ -92,7 +96,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   onScrub = noop,
   onScrubStart = noop,
   onScrubEnd = noop,
-  formatMinMaxLabel,
+  formatMinMaxLabel = defaultFormatMinMaxLabel,
   formatDate,
   fallback = null,
   hideMinMaxLabel = false,
