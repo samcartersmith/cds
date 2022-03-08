@@ -83,8 +83,8 @@ The task list below is needed to get the hello world of the poly repo. There are
 
 - [x] Build release script to auto update package.json's
 - [x] Enable npm publish to verdaccio
-- [ ] Upload css to cloud
-- [ ] Update service worker cache
+- [x] Upload css to cloud
+- [x] Update service worker cache
 
 #### Buildkite
 
@@ -93,8 +93,6 @@ The task list below is needed to get the hello world of the poly repo. There are
 ## Repo migration cutover items
 
 - [ ] Migrate mono repo to cds npm packages
-- [ ] Turn off website deployments in the monorepo
-- [ ] Turn on website deployments in the new polyrepo
 
 ## Understand your workspace
 
