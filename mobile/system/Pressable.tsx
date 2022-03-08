@@ -131,10 +131,19 @@ export const Pressable = memo(
       [pressOut, onPressOut],
     );
 
+    const accessibilityState = useMemo(
+      () => ({ busy: loading, disabled: !!disabled }),
+      [loading, disabled],
+    );
+
+    const scaleOnPressStyle = useMemo(() => [{ transform: [{ scale: pressScale }] }], [pressScale]);
+
     return (
       <BasePressable
         accessibilityRole="button"
-        accessibilityState={{ busy: loading, disabled: !!disabled }}
+        // This rule is semi-problematic, as it encourages direct inline object usages
+        // eslint-disable-next-line react-native-a11y/has-valid-accessibility-state
+        accessibilityState={accessibilityState}
         // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         disabled={disabled || loading}
         onPress={handlePress}
@@ -154,7 +163,7 @@ export const Pressable = memo(
           disabled={disabled || loading}
           elevation={elevation}
           pressed={pressed}
-          style={!noScaleOnPress ? [{ transform: [{ scale: pressScale }] }] : undefined}
+          style={!noScaleOnPress ? scaleOnPressStyle : undefined}
           contentStyle={contentStyle}
           transparentWhileInactive={transparentWhileInactive}
         >

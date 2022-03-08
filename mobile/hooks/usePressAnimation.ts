@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useCallback, useMemo } from 'react';
 
 import { Animated, GestureResponderEvent } from 'react-native';
 
@@ -11,21 +11,21 @@ export function usePressAnimation(
 ] {
   const value = useRef(new Animated.Value(1)).current;
 
-  const down = () => {
+  const down = useCallback(() => {
     Animated.spring(value, {
       toValue: 1 - factor,
       useNativeDriver: true,
     }).start();
-  };
+  }, [value, factor]);
 
-  const up = () => {
+  const up = useCallback(() => {
     Animated.spring(value, {
       friction: 3,
       tension: 5,
       toValue: 1,
       useNativeDriver: true,
     }).start();
-  };
+  }, [value]);
 
-  return [down, up, value];
+  return useMemo(() => [down, up, value], [down, up, value]);
 }
