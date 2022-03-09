@@ -1,7 +1,6 @@
 import { Options as PopperOptions } from '@popperjs/core';
 import { useMemo, useState } from 'react';
 import { usePopper } from 'react-popper';
-import { useIsoEffect } from '../../hooks/useIsoEffect';
 import { PopoverBasePlacement } from './PopoverBaseProps';
 
 const DEFAULT_POPPER_GAP = 0;
@@ -35,15 +34,11 @@ export const useCDSPopper = ({
     };
   }, [gap, placement, skid]);
 
-  const {
-    styles: popperStyles,
-    attributes: popperAttributes,
-    update,
-  } = usePopper(subject, popper, popperOptions);
-
-  useIsoEffect(() => {
-    void update?.();
-  }, [update]);
+  const { styles: popperStyles, attributes: popperAttributes } = usePopper(
+    subject,
+    popper,
+    popperOptions,
+  );
 
   return {
     popper,
