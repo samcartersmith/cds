@@ -1,6 +1,6 @@
 import { SharedProps, TextBaseProps, TextInputBaseProps, useSpectrum } from '@cbhq/cds-common';
 import React, { useMemo, memo, ForwardedRef, forwardRef } from 'react';
-import { TextInputProps, View, ViewStyle, TextInput as RNTextInput, TextInput } from 'react-native';
+import { TextInputProps, ViewStyle, TextInput as RNTextInput, TextInput } from 'react-native';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { useInputTextStyles } from '../hooks/useInputStyles';
@@ -56,23 +56,25 @@ export const NativeInput = memo(
           ...containerSpacingStyle,
           ...containerSpacing,
         };
-      }, [containerSpacingStyle, containerSpacing]);
+      }, [containerSpacing, containerSpacingStyle]);
+
+      const inputRootStyles = useMemo(() => {
+        return [inputTextStyle, containerStyle, { textAlign: textAlignInputTransformed }];
+      }, [containerStyle, inputTextStyle, textAlignInputTransformed]);
 
       return (
-        <View style={containerStyle} testID={testID && `${testID}-container`}>
-          <RNTextInput
-            testID={testID}
-            ref={ref}
-            style={[inputTextStyle, { flex: 2, textAlign: textAlignInputTransformed }]}
-            editable={!disabled}
-            accessibilityLabel={accessibilityLabel}
-            accessibilityHint={accessibilityLabel}
-            accessibilityRole="search"
-            placeholderTextColor={palette.foregroundMuted}
-            keyboardAppearance={spectrum}
-            {...editableInputAddonProps}
-          />
-        </View>
+        <RNTextInput
+          testID={testID}
+          ref={ref}
+          style={inputRootStyles}
+          editable={!disabled}
+          accessibilityLabel={accessibilityLabel}
+          accessibilityHint={accessibilityLabel}
+          accessibilityRole="search"
+          placeholderTextColor={palette.foregroundMuted}
+          keyboardAppearance={spectrum}
+          {...editableInputAddonProps}
+        />
       );
     },
   ),

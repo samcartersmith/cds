@@ -66,6 +66,22 @@ export default function InputScreen() {
           placeholder="john.doe@coinbase.com"
         />
       </Example>
+      <Example title="TextInput VStack FlexGrow">
+        <VStack flexGrow={1} alignItems="flex-start">
+          <MockTextInput
+            label="Username"
+            helperText="username must start with an @ symbol"
+            variant="negative"
+            placeholder="john.doe@coinbase.com"
+          />
+          <MockTextInput
+            label="Username"
+            helperText="username must start with an @ symbol"
+            variant="negative"
+            placeholder="john.doe@coinbase.com"
+          />
+        </VStack>
+      </Example>
       <Example inline title="TextInput startNode">
         <MockTextInput
           start={<InputIconButton name="search" transparent />}
@@ -177,7 +193,6 @@ export default function InputScreen() {
           label="One Time Password"
           variant="foregroundMuted"
           placeholder="189-280-1111"
-          start={<InputIcon name="search" />}
         />
       </Example>
       <Example inline title="CompactTextInput Negative">
