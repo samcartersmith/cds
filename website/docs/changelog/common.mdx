@@ -8,6 +8,22 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.3 (3/9/2022, 03:03 PM PST)
+
+#### 🚀 Updates
+
+- CreateDataCard HOC. [#56548](https://github.cbhq.net/mono/repo/pull/56548), [CDS-2106](https://jira.coinbase-corp.com/browse/CDS-2106)
+- **[Collapsible]** Rename Collapse to Collapsible. [#58889](https://github.cbhq.net/mono/repo/pull/58889)
+
+#### 🐞 Fixes
+
+- **[Illustration]** March 9th, 2022 illustration release. [#59163](https://github.cbhq.net/mono/repo/pull/59163)
+- Fix(Tabs) Ensure TabIndicator and Paddle backgrounds are configurable. [#58793](https://github.cbhq.net/mono/repo/pull/58793)
+
+#### 📘 Misc
+
+- **[Collapse]** CDS Collapse enhancements. [#58621](https://github.cbhq.net/mono/repo/pull/58621)
+
 ## 0.35.2 (3/4/2022, 04:14 PM PST)
 
 #### 🚀 Updates

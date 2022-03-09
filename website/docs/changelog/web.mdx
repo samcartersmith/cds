@@ -8,6 +8,25 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.36.3 (3/9/2022, 03:03 PM PST)
+
+#### 🚀 Updates
+
+- **[Collapsible]** Rename Collapse to Collapsible. [#58889](https://github.cbhq.net/mono/repo/pull/58889)
+
+#### 🐞 Fixes
+
+- **[Illustration]** March 9th, 2022 illustration release. [#59163](https://github.cbhq.net/mono/repo/pull/59163)
+- Fix(Tabs) Ensure TabIndicator and Paddle backgrounds are configurable. [#58793](https://github.cbhq.net/mono/repo/pull/58793)
+- Remove useLayoutEffect from useCDSPopper. [#58848](https://github.cbhq.net/mono/repo/pull/58848)
+- Add useIsoEffect and lint rule to warn clients. [#58861](https://github.cbhq.net/mono/repo/pull/58861)
+- **[TextInput]** Ensure 2px padding is guaranteed for input area to ensure it works with overflow:auto. [#58159](https://github.cbhq.net/mono/repo/pull/58159)
+- SparklineInteractive should show fallback when using compact prop. [#58465](https://github.cbhq.net/mono/repo/pull/58465), [CDS-2148](https://jira.coinbase-corp.com/browse/CDS-2148)
+
+#### 📘 Misc
+
+- **[Collapse]** CDS Collapse enhancements. [#58621](https://github.cbhq.net/mono/repo/pull/58621)
+
 ## 0.36.2 (3/4/2022, 04:14 PM PST)
 
 #### 🚀 Updates

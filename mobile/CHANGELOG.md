@@ -8,6 +8,27 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.41.3 (3/9/2022, 03:03 PM PST)
+
+#### 🚀 Updates
+
+- CreateDataCard HOC. [#56548](https://github.cbhq.net/mono/repo/pull/56548), [CDS-2106](https://jira.coinbase-corp.com/browse/CDS-2106)
+- **[Collapsible]** Rename Collapse to Collapsible. [#58889](https://github.cbhq.net/mono/repo/pull/58889)
+- Memoize pressable hot paths.
+
+#### 🐞 Fixes
+
+- **[Illustration]** March 9th, 2022 illustration release. [#59163](https://github.cbhq.net/mono/repo/pull/59163)
+- **[TextInput]** TextInput height was incorrect when wrapped in a VStack with flexGrow set. [#58914](https://github.cbhq.net/mono/repo/pull/58914)
+- Fix(Tabs) Ensure TabIndicator and Paddle backgrounds are configurable. [#58793](https://github.cbhq.net/mono/repo/pull/58793)
+- **[TextInput]** Ensure 2px padding is guaranteed for input area to ensure it works with overflow:auto. [#58159](https://github.cbhq.net/mono/repo/pull/58159)
+- `formatMinMaxLabel` shouldn't be required when using `hideMinMaxLabel`. [#58552](https://github.cbhq.net/mono/repo/pull/58552), [CDS-2147](https://jira.coinbase-corp.com/browse/CDS-2147)
+- SparklineInteractive should show fallback when using compact prop. [#58465](https://github.cbhq.net/mono/repo/pull/58465), [CDS-2148](https://jira.coinbase-corp.com/browse/CDS-2148)
+
+#### 📘 Misc
+
+- **[Collapse]** CDS Collapse enhancements. [#58621](https://github.cbhq.net/mono/repo/pull/58621)
+
 ## 0.41.2 (3/4/2022, 04:14 PM PST)
 
 #### 🚀 Updates

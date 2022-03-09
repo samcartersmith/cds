@@ -164,7 +164,6 @@ module.exports = {
       items: [
         'components/overlays/Alert/alert',
         'components/overlays/Toast/toast',
-        'components/overlays/Tooltip/tooltip',
         'components/overlays/Modal/modal',
         'components/overlays/ModalBody/modal-body',
         'components/overlays/ModalFooter/modal-footer',
@@ -174,6 +173,7 @@ module.exports = {
         'components/overlays/PopoverTrigger/popover-trigger',
         'components/overlays/PopoverTriggerWrapper/popover-trigger-wrapper',
         'components/overlays/SectionTitle/section-title',
+        'components/overlays/Tooltip/tooltip',
         'components/overlays/Drawer/drawer',
         'components/overlays/Tray/tray',
       ],
