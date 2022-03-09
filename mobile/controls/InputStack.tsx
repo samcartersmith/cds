@@ -1,6 +1,6 @@
 import React, { useMemo, memo } from 'react';
 
-import { Animated, ViewStyle, StyleProp } from 'react-native';
+import { View, Animated, ViewStyle, StyleProp, StyleSheet } from 'react-native';
 
 import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
@@ -64,7 +64,7 @@ export const InputStack = memo(function InputStack({
         variant === 'foregroundMuted' ? palette.lineHeavy : palette[variant ?? 'lineHeavy'],
       flexDirection: 'row',
       flex: 1,
-      backgroundColor: 'transparent',
+      backgroundColor: palette.background,
       borderRadius: borderRadiusTokens[borderRadius],
       ...inputBorderRadius,
     };
@@ -97,20 +97,33 @@ export const InputStack = memo(function InputStack({
     <VStack testID={testID} width={width} gap={0.5} {...props}>
       {!!labelNode && <>{labelNode}</>}
       <HStack opacity={disabled ? opacityDisabled : 1}>
-        {focused && <Animated.View style={borderFocusedStyles} />}
         {!!prependNode && <>{prependNode}</>}
-        <Animated.View
-          onLayout={onInputAreaLayout}
-          testID={testID && `${testID}-input-area`}
-          style={inputAreaStyles}
-        >
-          {!!startNode && <>{startNode}</>}
-          {inputNode}
-          {!!endNode && <>{endNode}</>}
-        </Animated.View>
+        <View style={styles.inputAreaContainerStyle}>
+          {focused && <Animated.View style={borderFocusedStyles} />}
+          <Animated.View
+            onLayout={onInputAreaLayout}
+            testID={testID && `${testID}-input-area`}
+            style={inputAreaStyles}
+          >
+            {!!startNode && <>{startNode}</>}
+            {inputNode}
+            {!!endNode && <>{endNode}</>}
+          </Animated.View>
+        </View>
         {!!appendNode && <>{appendNode}</>}
       </HStack>
       {!!helperTextNode && <>{helperTextNode}</>}
     </VStack>
   );
+});
+
+// Fixes a problem found in Accordian children element.
+// When `overflow: auto` is set the thickened border when focused is not accounted for
+// hence you see a cutoff.
+// Fix was to add this so there is always 2px outer layer space
+const styles = StyleSheet.create({
+  inputAreaContainerStyle: {
+    padding: 1,
+    flex: 1,
+  },
 });

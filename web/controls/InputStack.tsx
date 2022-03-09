@@ -32,6 +32,15 @@ const inputBaseAreaStyles = css`
   }
 `;
 
+// Fixes a problem found in Accordian children element.
+// When `overflow: auto` is set the thickened border when focused is not accounted for
+// hence you see a cutoff.
+// Fix was to add this so there is always 2px outer layer space
+const inputAreaContainerStyles = css`
+  padding: 1px;
+  width: 100%;
+`;
+
 /** this should only be used as a last resort, when focus styles need to be persisted. eg: when a Select PopoverMenu is opened */
 const persistedFocusStyles = css`
   &&&& {
@@ -117,22 +126,24 @@ export const InputStack = memo(
         )}
         <HStack opacity={disabled ? opacityDisabled : 1}>
           {!!prependNode && <>{prependNode}</>}
-          <Interactable
-            as="span"
-            backgroundColor="transparent"
-            borderWidth="input"
-            ref={ref}
-            height={height}
-            testID="input-interactable-area"
-            borderRadius={borderRadius}
-            disabled={disabled}
-            style={defaultBorderStyles}
-            className={cx(inputBaseAreaStyles, borderStyle, focused && persistedFocusStyles)}
-          >
-            {!!startNode && <>{startNode}</>}
-            {inputNode}
-            {!!endNode && <>{endNode}</>}
-          </Interactable>
+          <div className={inputAreaContainerStyles}>
+            <Interactable
+              as="span"
+              backgroundColor="background"
+              borderWidth="input"
+              ref={ref}
+              height={height}
+              testID="input-interactable-area"
+              borderRadius={borderRadius}
+              disabled={disabled}
+              style={defaultBorderStyles}
+              className={cx(inputBaseAreaStyles, borderStyle, focused && persistedFocusStyles)}
+            >
+              {!!startNode && <>{startNode}</>}
+              {inputNode}
+              {!!endNode && <>{endNode}</>}
+            </Interactable>
+          </div>
           {!!appendNode && <>{appendNode}</>}
         </HStack>
         {!!helperTextNode && <>{helperTextNode}</>}
