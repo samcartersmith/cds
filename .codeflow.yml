@@ -14,6 +14,12 @@ build:
     - BaldurECR:
         name: cds-css-upload-development
         path: ./packages/web/cssupload-development.Dockerfile
+    - BaldurECR:
+        name: cds-css-upload
+        path: ./packages/web/cssupload-production.Dockerfile
+    - BaldurECR:
+        name: cds-storybook
+        path: ./apps/storybook/production.Dockerfile
     # Packages
     - BaldurNode:
         name: package-cds-common
