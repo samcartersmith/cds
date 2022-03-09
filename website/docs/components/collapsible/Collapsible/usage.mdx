@@ -1,12 +1,12 @@
-### Basic Collapse
+### Basic Collapsible
 ```jsx live
-function BasicCollapse() {
-  const [expanded, { toggle }] = useToggler();
+function BasicCollapsible() {
+  const [collapsed, { toggle }] = useToggler(true);
 
   return (
     <ExampleWithThemeToggles>
       <Button onPress={toggle}>Click me!</Button>
-      <Collapse expanded={expanded}>
+      <Collapsible collapsed={collapsed}>
         <TextInput
           compact
           type="number"
@@ -15,7 +15,7 @@ function BasicCollapse() {
           placeholder="8293323.23"
           suffix="USD"
         />
-      </Collapse>
+      </Collapsible>
     </ExampleWithThemeToggles>
   )
 }
@@ -24,11 +24,11 @@ function BasicCollapse() {
 ### Reveal Top
 ```jsx live
 function RevealTop() {
-  const [expanded, { toggle }] = useToggler();
+  const [collapsed, { toggle }] = useToggler(true);
 
   return (
     <ExampleWithThemeToggles>
-      <Collapse expanded={expanded}>
+      <Collapsible collapsed={collapsed}>
         <TextInput
           compact
           type="number"
@@ -37,7 +37,7 @@ function RevealTop() {
           placeholder="8293323.23"
           suffix="USD"
         />
-      </Collapse>
+      </Collapsible>
       <Button onPress={toggle}>Click me!</Button>
     </ExampleWithThemeToggles>
   )
@@ -47,15 +47,36 @@ function RevealTop() {
 ### Scroll Content
 ```jsx live
 function Scroll() {
-  const [expanded, { toggle }] = useToggler();
+  const [collapsed, { toggle }] = useToggler(true);
 
   return (
     <ExampleWithThemeToggles>
       <Button onPress={toggle}>Click me!</Button>
-      <Collapse expanded={expanded} maxHeight={400}>
+      <Collapsible collapsed={collapsed} maxHeight={400}>
         <TextBody as="p">{loremIpsum.repeat(30)}</TextBody>
-      </Collapse>
+      </Collapsible>
     </ExampleWithThemeToggles>
   )
 }
 ```
+
+### Horizontal
+```jsx live
+function Horizontal() {
+  const [collapsed, { toggle }] = useToggler(true);
+
+  return (
+    <ExampleWithThemeToggles>
+      <HStack alignItems="center">
+        <Button onPress={toggle}>Click me!</Button>
+        <Collapsible collapsed={collapsed} direction="horizontal">
+          <DotCount count={100} />
+          <DotCount count={1} />
+          <DotCount count={99} />
+        </Collapsible>
+      </HStack>
+    </ExampleWithThemeToggles>
+  )
+}
+```
+
