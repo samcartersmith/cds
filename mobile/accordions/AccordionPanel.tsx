@@ -5,26 +5,29 @@ import { accordionVisibleMaxHeight } from '@cbhq/cds-common/animation/accordion'
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { useAccordionSpacing } from '@cbhq/cds-common/hooks/useAccordionSpacing';
 
-import { Collapse } from '../collapse';
+import { Collapsible } from '../collapsible';
 
 export type AccordionPanelProps = AccordionPanelBaseProps;
 
 export const AccordionPanel = memo(
   forwardRef(
-    ({ children, expanded, testID }: AccordionPanelProps, forwardedRef: ForwardedRef<View>) => {
+    (
+      { children, collapsed = true, testID }: AccordionPanelProps,
+      forwardedRef: ForwardedRef<View>,
+    ) => {
       const maxHeight = useScaleConditional(accordionVisibleMaxHeight);
       const spacing = useAccordionSpacing();
 
       return (
-        <Collapse
-          expanded={expanded}
+        <Collapsible
+          collapsed={collapsed}
           maxHeight={maxHeight}
           testID={testID}
           ref={forwardedRef}
           {...spacing}
         >
           {children}
-        </Collapse>
+        </Collapsible>
       );
     },
   ),

@@ -20,7 +20,7 @@ import * as CDSAnimation from '@cbhq/cds-web/animation';
 import * as CDSButtons from '@cbhq/cds-web/buttons';
 import * as CDSCells from '@cbhq/cds-web/cells';
 import { Cell } from '@cbhq/cds-web/cells/Cell';
-import * as CDSCollapse from '@cbhq/cds-web/collapse';
+import * as CDSCollapsible from '@cbhq/cds-web/collapsible';
 import { useAccessibleForeground } from '@cbhq/cds-web/color/useAccessibleForeground';
 import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
 import * as CDSControls from '@cbhq/cds-web/controls';
@@ -140,7 +140,7 @@ const ReactLiveScope = {
   ...CDSButtons,
   ...CDSCardElements,
   ...CDSCells,
-  ...CDSCollapse,
+  ...CDSCollapsible,
   ...CDSControls,
   ...CDSDots,
   ...CDSIcons,

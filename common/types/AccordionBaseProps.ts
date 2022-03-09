@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { ListCellBaseProps } from './CellBaseProps';
 import { SharedProps } from './SharedProps';
-import { CollapseBaseProps } from './CollapseBaseProps';
+import { CollapsibleBaseProps } from './CollapsibleBaseProps';
 
 export type AccordionBaseProps = {
   /**
@@ -19,7 +19,7 @@ export type AccordionBaseProps = {
 
 export type AccordionItemBaseProps = Omit<
   AccordionHeaderBaseProps & AccordionPanelBaseProps,
-  'expanded'
+  'collapsed'
 >;
 
 export type AccordionHeaderBaseProps = {
@@ -32,7 +32,7 @@ export type AccordionHeaderBaseProps = {
   AccordionTitleBaseProps &
   AccordionIconBaseProps;
 
-export type AccordionPanelBaseProps = Pick<CollapseBaseProps, 'expanded' | 'children'> &
+export type AccordionPanelBaseProps = Pick<CollapsibleBaseProps, 'collapsed' | 'children'> &
   AccordionCommonProps;
 
 export type AccordionMediaBaseProps = Pick<ListCellBaseProps, 'media'>;
@@ -46,7 +46,7 @@ export type AccordionTitleBaseProps = {
    */
   subtitle?: string;
 };
-export type AccordionIconBaseProps = Pick<CollapseBaseProps, 'expanded'>;
+export type AccordionIconBaseProps = Pick<CollapsibleBaseProps, 'collapsed'>;
 
 export type AccordionCommonProps = {
   /**

@@ -1,22 +1,22 @@
 import React, { memo, forwardRef, ForwardedRef, useMemo } from 'react';
 import { ScrollView, View, Animated, ViewStyle } from 'react-native';
-import type { CollapseBaseProps } from '@cbhq/cds-common/types';
+import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
 
-import { useCollapseAnimation } from './useCollapseAnimation';
 import { useCollapsibleAnimation } from './useCollapsibleAnimation';
+import { useToggleAnimation } from './useToggleAnimation';
 import { useContentSize } from '../hooks/useContentSize';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import { useCollapseDirection } from './useCollapseDirection';
+import { useCollapsibleDirection } from './useCollapsibleDirection';
 
-export type CollapseProps = CollapseBaseProps;
+export type CollapseProps = CollapsibleBaseProps;
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
-export const Collapse = memo(
+export const Collapsible = memo(
   forwardRef(
     (
       {
         children,
-        expanded,
+        collapsed = true,
         maxHeight,
         maxWidth,
         direction = 'vertical',
@@ -44,20 +44,21 @@ export const Collapse = memo(
         spacingVertical,
       });
 
-      const { shouldEnableScroll, animateTo, animateProperty, horizontal } = useCollapseDirection({
-        direction,
-        maxHeight,
-        contentHeight,
-        maxWidth,
-        contentWidth,
-      });
+      const { shouldEnableScroll, animateTo, animateProperty, horizontal } =
+        useCollapsibleDirection({
+          direction,
+          maxHeight,
+          contentHeight,
+          maxWidth,
+          contentWidth,
+        });
 
-      const { animatedStyles, animateIn, animateOut } = useCollapseAnimation(
-        expanded,
+      const { animatedStyles, animateIn, animateOut } = useCollapsibleAnimation(
+        collapsed,
         animateTo,
         animateProperty,
       );
-      useCollapsibleAnimation({ expanded, animateIn, animateOut });
+      useToggleAnimation({ on: !collapsed, animateIn, animateOut });
 
       const scrollViewStyles = useMemo(
         () => ({

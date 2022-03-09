@@ -3,10 +3,10 @@ import {
   animateOutOpacityConfig,
   animateInMaxSizeConfig,
   animateOutMaxSizeConfig,
-} from '@cbhq/cds-common/animation/collapse';
+} from '@cbhq/cds-common/animation/collapsible';
 import { Variants } from 'framer-motion';
 import { useMemo } from 'react';
-import type { CollapseBaseProps } from '@cbhq/cds-common';
+import type { CollapsibleBaseProps } from '@cbhq/cds-common';
 
 import { Animated } from '../animation/Animated';
 
@@ -15,19 +15,22 @@ const defaultStyle = {
   overflow: 'hidden',
 };
 
-export const useCollapseStyles = (expanded: boolean, direction: CollapseBaseProps['direction']) => {
-  const state = expanded ? 'expand' : 'collapse';
+export const useCollapsibleStyles = (
+  collapsed: boolean,
+  direction: CollapsibleBaseProps['direction'],
+) => {
+  const state = collapsed ? 'collapsed' : 'expanded';
   const variants: Variants = useMemo(() => {
     const sizeProperty = direction === 'horizontal' ? 'width' : 'height';
 
     return {
-      expand: {
+      expanded: {
         ...Animated.toFramerTransition([
           animateInOpacityConfig,
           { ...animateInMaxSizeConfig, toValue: 'auto', property: sizeProperty },
         ]),
       },
-      collapse: {
+      collapsed: {
         ...Animated.toFramerTransition([
           animateOutOpacityConfig,
           { ...animateOutMaxSizeConfig, property: sizeProperty },

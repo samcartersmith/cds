@@ -5,22 +5,22 @@ import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional'
 import { useAccordionSpacing } from '@cbhq/cds-common/hooks/useAccordionSpacing';
 
 import { getAccordionHeaderId, getAccordionPanelId } from './utils';
-import { Collapse } from '../collapse';
+import { Collapsible } from '../collapsible';
 
 export type AccordionPanelProps = AccordionPanelBaseProps;
 
 export const AccordionPanel = memo(
   forwardRef(
     (
-      { children, expanded, itemKey, testID }: AccordionPanelProps,
+      { children, collapsed = true, itemKey, testID }: AccordionPanelProps,
       forwardedRef: ForwardedRef<HTMLDivElement>,
     ) => {
       const maxHeight = useScaleConditional(accordionVisibleMaxHeight);
       const spacing = useAccordionSpacing();
 
       return (
-        <Collapse
-          expanded={expanded}
+        <Collapsible
+          collapsed={collapsed}
           testID={testID}
           maxHeight={maxHeight}
           ref={forwardedRef}
@@ -31,7 +31,7 @@ export const AccordionPanel = memo(
           id={getAccordionPanelId(itemKey)}
         >
           {children}
-        </Collapse>
+        </Collapsible>
       );
     },
   ),

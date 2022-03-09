@@ -52,10 +52,10 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
   </Box>
 ));
 
-export const AccordionIcon = memo(({ expanded }: AccordionIconBaseProps) => (
+export const AccordionIcon = memo(({ collapsed }: AccordionIconBaseProps) => (
   <Box
     justifyContent="flex-end"
-    dangerouslySetClassName={expanded ? iconStyles.expanded : iconStyles.collapsed}
+    dangerouslySetClassName={collapsed ? iconStyles.collapsed : iconStyles.expanded}
   >
     <Icon name="caretDown" size="s" color="foregroundMuted" />
   </Box>
@@ -64,7 +64,7 @@ export const AccordionIcon = memo(({ expanded }: AccordionIconBaseProps) => (
 export const AccordionHeader = memo(
   forwardRef(
     (
-      { itemKey, title, subtitle, onPress, media, expanded = false, testID }: AccordionHeaderProps,
+      { itemKey, title, subtitle, onPress, media, collapsed = false, testID }: AccordionHeaderProps,
       forwardedRef: ForwardedRef<HTMLButtonElement>,
     ) => {
       const { onItemPress } = useAccordionParent();
@@ -87,7 +87,7 @@ export const AccordionHeader = memo(
             testID={testID}
             ref={forwardedRef}
             // a11y guideline: https://www.w3.org/TR/wai-aria-practices/#accordion
-            aria-expanded={expanded}
+            aria-expanded={!collapsed}
             aria-controls={getAccordionPanelId(itemKey)}
             id={getAccordionHeaderId(itemKey)}
           >
@@ -100,7 +100,7 @@ export const AccordionHeader = memo(
             >
               {!!media && <AccordionMedia media={media} />}
               <AccordionTitle title={title} subtitle={subtitle} />
-              <AccordionIcon expanded={expanded} />
+              <AccordionIcon collapsed={collapsed} />
             </HStack>
           </Pressable>
         </h2>

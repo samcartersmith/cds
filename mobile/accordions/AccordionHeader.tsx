@@ -16,7 +16,7 @@ import { TextHeadline, TextBody } from '../typography';
 import { Pressable } from '../system/Pressable';
 import { Icon } from '../icons';
 import { useAccordionIconAnimation } from './useAccordionIconAnimation';
-import { useCollapsibleAnimation } from '../collapse/useCollapsibleAnimation';
+import { useToggleAnimation } from '../collapsible/useToggleAnimation';
 
 export type AccordionHeaderProps = AccordionHeaderBaseProps;
 
@@ -31,9 +31,9 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
   </Box>
 ));
 
-export const AccordionIcon = memo(({ expanded }: AccordionIconBaseProps) => {
+export const AccordionIcon = memo(({ collapsed }: AccordionIconBaseProps) => {
   const { animatedStyles, animateIn, animateOut } = useAccordionIconAnimation();
-  useCollapsibleAnimation({ expanded, animateIn, animateOut });
+  useToggleAnimation({ on: !collapsed, animateIn, animateOut });
 
   return (
     <Box justifyContent="flex-end">
@@ -51,7 +51,7 @@ export const AccordionIcon = memo(({ expanded }: AccordionIconBaseProps) => {
 export const AccordionHeader = memo(
   forwardRef(
     (
-      { itemKey, title, subtitle, onPress, media, expanded, testID }: AccordionHeaderProps,
+      { itemKey, title, subtitle, onPress, media, collapsed, testID }: AccordionHeaderProps,
       forwardedRef: ForwardedRef<View>,
     ) => {
       const { onItemPress } = useAccordionParent();
@@ -75,7 +75,7 @@ export const AccordionHeader = memo(
           <HStack width="100%" alignItems="center" gap={2} minHeight={minHeight} {...spacing.outer}>
             {!!media && <AccordionMedia media={media} />}
             <AccordionTitle title={title} subtitle={subtitle} />
-            <AccordionIcon expanded={expanded} />
+            <AccordionIcon collapsed={collapsed} />
           </HStack>
         </Pressable>
       );

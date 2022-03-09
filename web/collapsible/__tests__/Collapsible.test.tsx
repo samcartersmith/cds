@@ -1,25 +1,32 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { renderA11y } from '@cbhq/jest-utils';
 
-import { collapseBuilder, CreateCollapseProps } from '@cbhq/cds-common/internal/collapseBuilder';
+import {
+  collapsibleBuilder,
+  CreateCollapsibleProps,
+} from '@cbhq/cds-common/internal/collapsibleBuilder';
 
-import { Collapse } from '../Collapse';
+import { Collapsible } from '../Collapsible';
 import { Button } from '../../buttons';
 import { TextBody } from '../../typography';
+import { DotCount } from '../../dots';
+import { HStack } from '../../layout';
 
-const { MockCollapse } = collapseBuilder({
-  Collapse,
+const { MockCollapsible } = collapsibleBuilder({
+  Collapsible,
   Button,
   TextBody,
-} as CreateCollapseProps);
+  DotCount,
+  HStack,
+} as CreateCollapsibleProps);
 
-describe('Collapse', () => {
+describe('Collapsible', () => {
   it('passes accessibility', async () => {
-    expect(await renderA11y(<MockCollapse />)).toHaveNoViolations();
+    expect(await renderA11y(<MockCollapsible />)).toHaveNoViolations();
   });
 
   it('has correct css styles', async () => {
-    const { getByTestId, getByText } = render(<MockCollapse />);
+    const { getByTestId, getByText } = render(<MockCollapsible />);
     expect(getByTestId('mock-collapse')).toHaveStyle('display: none');
 
     fireEvent.click(getByText('Click me!'));
@@ -30,8 +37,8 @@ describe('Collapse', () => {
   });
 
   it('renders children', () => {
-    const { getByText } = render(<MockCollapse />);
+    const { getByText } = render(<MockCollapsible />);
 
-    expect(getByText('Collapse Content')).toBeTruthy();
+    expect(getByText('Collapsible Content')).toBeTruthy();
   });
 });

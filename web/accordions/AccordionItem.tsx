@@ -25,7 +25,7 @@ export const AccordionItem = memo(
     panelRef,
   }: AccordionItemProps) => {
     const { activeKey } = useAccordionParent();
-    const expanded = activeKey === itemKey;
+    const collapsed = activeKey !== itemKey;
 
     return (
       <VStack testID={testID}>
@@ -35,12 +35,12 @@ export const AccordionItem = memo(
           title={title}
           subtitle={subtitle}
           onPress={onPress}
-          expanded={expanded}
+          collapsed={collapsed}
           testID={testID && `${testID}-header`}
           ref={headerRef}
         />
         <AccordionPanel
-          expanded={expanded}
+          collapsed={collapsed}
           itemKey={itemKey}
           testID={testID && `${testID}-panel`}
           ref={panelRef}

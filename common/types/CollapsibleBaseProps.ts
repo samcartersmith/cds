@@ -3,12 +3,12 @@ import { ReactNode } from 'react';
 import { SharedProps } from './SharedProps';
 import { SpacingProps } from './SpacingProps';
 
-export type CollapseBaseProps = {
+export type CollapsibleBaseProps = {
   /**
    * Expand/collapse state of the content.
-   * @default false
+   * @default true
    */
-  expanded: boolean;
+  collapsed: boolean;
   /**
    * Collapsible content
    */

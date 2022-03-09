@@ -1,22 +1,22 @@
-import type { CollapseBaseProps } from '@cbhq/cds-common/types';
+import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
 
-export type CollapseDirectionReturnValues = {
+export type CollapsibleDirectionReturnValues = {
   shouldEnableScroll: boolean;
   animateTo: number;
   animateProperty: 'maxWidth' | 'maxHeight';
   horizontal: boolean;
 };
 
-export const useCollapseDirection = ({
+export const useCollapsibleDirection = ({
   direction,
   maxHeight,
   maxWidth,
   contentWidth,
   contentHeight,
-}: Pick<CollapseBaseProps, 'direction' | 'maxHeight' | 'maxWidth'> & {
+}: Pick<CollapsibleBaseProps, 'direction' | 'maxHeight' | 'maxWidth'> & {
   contentWidth: number;
   contentHeight: number;
-}): CollapseDirectionReturnValues => {
+}): CollapsibleDirectionReturnValues => {
   if (direction === 'vertical') {
     return {
       shouldEnableScroll: maxHeight ? contentHeight > maxHeight : false,

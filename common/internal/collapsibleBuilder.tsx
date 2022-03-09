@@ -1,6 +1,6 @@
 import React from 'react';
 import type {
-  CollapseBaseProps,
+  CollapsibleBaseProps,
   TextBaseProps,
   ButtonBaseProps,
   DotCountBaseProps,
@@ -9,107 +9,107 @@ import type {
 import { loremIpsum } from './data/loremIpsum';
 import { useToggler } from '../hooks/useToggler';
 
-export type CreateCollapseProps = {
+export type CreateCollapsibleProps = {
   Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
-  Collapse: React.ComponentType<CollapseBaseProps>;
+  Collapsible: React.ComponentType<CollapsibleBaseProps>;
   TextBody: React.ComponentType<TextBaseProps & { as?: string }>;
   DotCount: React.ComponentType<DotCountBaseProps>;
   HStack: React.ComponentType<BoxBaseProps>;
 };
 
-export function collapseBuilder({
+export function collapsibleBuilder({
   Button,
-  Collapse,
+  Collapsible,
   TextBody,
   DotCount,
   HStack,
-}: CreateCollapseProps) {
-  const BasicCollapse = () => {
-    const [expanded, { toggle }] = useToggler();
+}: CreateCollapsibleProps) {
+  const BasicCollapsible = () => {
+    const [collapsed, { toggle }] = useToggler(true);
 
     return (
       <>
         <Button onPress={toggle}>Click me!</Button>
-        <Collapse expanded={expanded}>
+        <Collapsible collapsed={collapsed}>
           <TextBody as="p">{loremIpsum}</TextBody>
-        </Collapse>
+        </Collapsible>
       </>
     );
   };
 
   const RevealTop = () => {
-    const [expanded, { toggle }] = useToggler();
+    const [collapsed, { toggle }] = useToggler(true);
 
     return (
       <>
-        <Collapse expanded={expanded}>
+        <Collapsible collapsed={collapsed}>
           <TextBody as="p">{loremIpsum}</TextBody>
-        </Collapse>
+        </Collapsible>
         <Button onPress={toggle}>Click me!</Button>
       </>
     );
   };
 
   const DefaultExpanded = () => {
-    const [expanded, { toggle }] = useToggler(true);
+    const [collapsed, { toggle }] = useToggler(false);
 
     return (
       <>
         <Button onPress={toggle}>Click me!</Button>
-        <Collapse expanded={expanded}>
+        <Collapsible collapsed={collapsed}>
           <TextBody as="p">{loremIpsum}</TextBody>
-        </Collapse>
+        </Collapsible>
       </>
     );
   };
 
   const Scroll = () => {
-    const [expanded, { toggle }] = useToggler();
+    const [collapsed, { toggle }] = useToggler(true);
 
     return (
       <>
         <Button onPress={toggle}>Click me!</Button>
-        <Collapse expanded={expanded} maxHeight={400}>
+        <Collapsible collapsed={collapsed} maxHeight={400}>
           <TextBody as="p">{loremIpsum.repeat(10)}</TextBody>
-        </Collapse>
+        </Collapsible>
       </>
     );
   };
 
   const Horizontal = () => {
-    const [expanded, { toggle }] = useToggler();
+    const [collapsed, { toggle }] = useToggler(true);
 
     return (
       <HStack alignItems="center">
         <Button onPress={toggle}>Click me!</Button>
-        <Collapse expanded={expanded} direction="horizontal">
+        <Collapsible collapsed={collapsed} direction="horizontal">
           <DotCount count={100} />
           <DotCount count={1} />
           <DotCount count={99} />
-        </Collapse>
+        </Collapsible>
       </HStack>
     );
   };
 
-  const MockCollapse = () => {
-    const [expanded, { toggle }] = useToggler();
+  const MockCollapsible = () => {
+    const [collapsed, { toggle }] = useToggler(true);
 
     return (
       <>
         <Button onPress={toggle}>Click me!</Button>
-        <Collapse expanded={expanded} testID="mock-collapse">
-          <TextBody as="p">Collapse Content</TextBody>
-        </Collapse>
+        <Collapsible collapsed={collapsed} testID="mock-collapse">
+          <TextBody as="p">Collapsible Content</TextBody>
+        </Collapsible>
       </>
     );
   };
 
   return {
-    BasicCollapse,
+    BasicCollapsible,
     RevealTop,
     DefaultExpanded,
     Scroll,
     Horizontal,
-    MockCollapse,
+    MockCollapsible,
   };
 }

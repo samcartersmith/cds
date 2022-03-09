@@ -1,7 +1,7 @@
 import React from 'react';
-import { collapseBuilder } from '@cbhq/cds-common/internal/collapseBuilder';
+import { collapsibleBuilder } from '@cbhq/cds-common/internal/collapsibleBuilder';
 
-import { Collapse } from '..';
+import { Collapsible } from '..';
 import { Button } from '../../buttons';
 import { TextBody } from '../../typography';
 import { DotCount } from '../../dots';
@@ -9,8 +9,8 @@ import { HStack } from '../../layout';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
-const { BasicCollapse, RevealTop, DefaultExpanded, Scroll, Horizontal } = collapseBuilder({
-  Collapse,
+const { BasicCollapsible, RevealTop, DefaultExpanded, Scroll, Horizontal } = collapsibleBuilder({
+  Collapsible,
   TextBody,
   Button,
   DotCount,
@@ -20,8 +20,8 @@ const { BasicCollapse, RevealTop, DefaultExpanded, Scroll, Horizontal } = collap
 const CollapseScreen = () => {
   return (
     <ExampleScreen>
-      <Example inline title="Basic Collapse">
-        <BasicCollapse />
+      <Example inline title="Basic Collapsible">
+        <BasicCollapsible />
       </Example>
       <Example inline title="Reveal top">
         <RevealTop />

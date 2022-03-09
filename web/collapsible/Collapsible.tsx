@@ -1,21 +1,21 @@
 import React, { memo, forwardRef, ForwardedRef, useMemo } from 'react';
-import type { CollapseBaseProps } from '@cbhq/cds-common/types';
+import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
 import { motion } from 'framer-motion';
 
 import { BoxProps, VStack, HStack } from '../layout';
-import { useCollapseStyles } from './useCollapseStyles';
+import { useCollapsibleStyles } from './useCollapsibleStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 
-export type CollapseProps = CollapseBaseProps &
+export type CollapsibleProps = CollapsibleBaseProps &
   Pick<BoxProps, 'role' | 'id' | 'accessibilityLabelledBy'>;
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
-export const Collapse = memo(
+export const Collapsible = memo(
   forwardRef(
     (
       {
         children,
-        expanded,
+        collapsed = true,
         maxHeight,
         maxWidth,
         accessibilityLabelledBy,
@@ -31,10 +31,10 @@ export const Collapse = memo(
         spacingStart,
         spacingTop,
         spacingVertical,
-      }: CollapseProps,
+      }: CollapsibleProps,
       forwardedRef: ForwardedRef<HTMLDivElement>,
     ) => {
-      const styles = useCollapseStyles(expanded, direction);
+      const styles = useCollapsibleStyles(collapsed, direction);
       const outerSpacing = useSpacingStyles({
         spacingTop,
       });

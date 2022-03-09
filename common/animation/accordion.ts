@@ -1,5 +1,5 @@
 import { MotionBaseSpec } from '../types';
-import { easing, inDuration, outDuration } from './collapse';
+import { easing, inDuration, outDuration } from './collapsible';
 
 export const accordionVisibleMaxHeight = { dense: 200, normal: 400 };
 export const accordionHiddenRotate = 0;
