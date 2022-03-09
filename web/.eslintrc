@@ -4,8 +4,15 @@
     "no-restricted-imports": [
       "error",
       {
-        "paths": ["@cbhq/cds-web"],
-        "patterns": ["@cbhq/cds-web/*"]
+        "patterns": ["@cbhq/cds-web/*"],
+        "paths": [
+          "@cbhq/cds-web", 
+          {
+            "name": "react",
+            "importNames": ["useLayoutEffect"],
+            "message": "'useLayoutEffect' does nothing in SSR. Use 'useIsoEffect' to handle browser and SSR environments in one bang"
+          }
+        ]
       }
     ],
     "no-process-env": "error",

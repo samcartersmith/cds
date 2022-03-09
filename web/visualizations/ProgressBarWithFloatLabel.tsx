@@ -3,7 +3,7 @@ import {
   ProgressBarFloatLabelProps,
 } from '@cbhq/cds-common/types/ProgressBarBaseProps';
 import { css } from 'linaria';
-import React, { memo, useCallback, useLayoutEffect, useRef } from 'react';
+import React, { memo, useCallback, useRef } from 'react';
 import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
@@ -13,6 +13,7 @@ import { useDimensions } from '../hooks/useDimensions';
 import { isRtl } from '../utils/isRtl';
 import { Animated } from '../animation/Animated';
 import { ProgressTextLabel } from './ProgressTextLabel';
+import { useIsoEffect } from '../hooks/useIsoEffect';
 
 const floatingTextContainerClassName = css`
   position: relative;
@@ -34,7 +35,7 @@ const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFl
 
   const { value: labelNum, render: renderLabel } = getProgressBarLabelParts(label);
 
-  useLayoutEffect(() => {
+  useIsoEffect(() => {
     if (textContainerRef.current && containerRef.current && cHeight > 0 && cWidth > 0) {
       const containerWidth = containerRef.current.offsetWidth;
       const textContainerWidth = textContainerRef.current.offsetWidth;

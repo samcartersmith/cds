@@ -1,7 +1,7 @@
 import { TabIndicatorProps, TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common';
 import { animateDotWidthConfig } from '@cbhq/cds-common/animation/dot';
 import { css } from 'linaria';
-import React, { useCallback, useMemo, memo, useRef, useLayoutEffect } from 'react';
+import React, { useCallback, useMemo, memo, useRef } from 'react';
 import { TextHeadline, TextTitle3, TextTitle4, TextProps } from '../typography';
 import { spacing } from '../tokens';
 import { DotCount } from '../dots/DotCount';
@@ -10,6 +10,7 @@ import { useDotAnimation } from './hooks/useDotAnimation';
 import { useDimensions } from '../hooks/useDimensions';
 import { cx } from '../utils/linaria';
 import { Animated } from '../animation/Animated';
+import { useIsoEffect } from '../hooks/useIsoEffect';
 
 export const getDotSizeClassName = (count?: number) => {
   if (!count || count < 10) return 'size--s';
@@ -90,7 +91,7 @@ export const TabLabel = memo(
       onLayout?.(id, { width, x });
     }, [id, onLayout, width, x]);
 
-    useLayoutEffect(() => {
+    useIsoEffect(() => {
       // Animate dotBadge in
       if (count && !lastCount.current) void animateIn?.start();
       if (!count && lastCount.current) void animateOut?.start();

@@ -1,6 +1,7 @@
 import { Options as PopperOptions } from '@popperjs/core';
-import { useLayoutEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { usePopper } from 'react-popper';
+import { useIsoEffect } from '../../hooks/useIsoEffect';
 import { PopoverBasePlacement } from './PopoverBaseProps';
 
 const DEFAULT_POPPER_GAP = 0;
@@ -40,7 +41,7 @@ export const useCDSPopper = ({
     update,
   } = usePopper(subject, popper, popperOptions);
 
-  useLayoutEffect(() => {
+  useIsoEffect(() => {
     void update?.();
   }, [update]);
 
