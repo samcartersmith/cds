@@ -8,6 +8,7 @@ export * from './CardHeaderProps';
 export * from './CardMediaProps';
 export * from './CardRemoteImageProps';
 export * from './CdsPlatform';
+export * from './DataCardBaseProps';
 export * from './IconButtonBaseProps';
 export * from './FeatureEntryCardBaseProps';
 export * from './FeedCardBaseProps';

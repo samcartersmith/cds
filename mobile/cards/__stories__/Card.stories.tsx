@@ -1,10 +1,12 @@
 import React from 'react';
 import { cardBuilder } from '@cbhq/cds-common/internal/cardBuilder';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { dataCards } from '@cbhq/cds-common/internal/data/dataCards';
 import { feedCards } from '@cbhq/cds-common/internal/data/feedCards';
 import { announcementCards } from '@cbhq/cds-common/internal/data/announcementCards';
 import { featureEntryCards } from '@cbhq/cds-common/internal/data/featureEntryCards';
 
+import { DataCard } from '../../alpha/DataCard';
 import { FeedCard } from '../../alpha/FeedCard';
 import { AnnouncementCard } from '../../alpha/AnnouncementCard';
 import { FeatureEntryCard } from '../../alpha/FeatureEntryCard';
@@ -49,8 +51,11 @@ const CardScreen = () => {
     <ExampleScreen>
       <CardGroup spacingHorizontal={gutter}>
         <Box spacingVertical={2} spacingHorizontal={gutter} background="backgroundAlternate">
-          <TextHeadline>Feed Cards</TextHeadline>
+          <TextHeadline>Data Cards</TextHeadline>
         </Box>
+        {dataCards.map((item) => (
+          <DataCard {...item} />
+        ))}
         {feedCards.map(({ like: getLikeProps, ...item }) => (
           <FeedCard {...item} like={getLikeProps()} />
         ))}

@@ -1,6 +1,6 @@
-import { ProgressBaseProps } from './ProgressBaseProps';
-import { Placement } from './Placement';
-import { PaletteForeground } from '.';
+import type { ProgressBaseProps } from './ProgressBaseProps';
+import type { Placement } from './Placement';
+import type { PaletteForeground } from './Palette';
 
 export type ProgressBarLabel =
   | number

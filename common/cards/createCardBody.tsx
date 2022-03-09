@@ -48,13 +48,16 @@ export function createCardBody<OnPressFn>({
     illustration,
     image,
     media: mediaProp,
-    spacingVertical = gutter,
-    spacingHorizontal = gutter,
+    spacing = gutter,
+    spacingVertical = spacing,
+    spacingHorizontal = spacing,
     spacingTop = spacingVertical,
     spacingBottom = spacingVertical,
     spacingStart = spacingHorizontal,
     spacingEnd = spacingHorizontal,
     numberOfLines = 3,
+    maxWidth = !!illustration || !!image || !!mediaProp ? '70%' : undefined,
+    minHeight = !!illustration || !!image || !!mediaProp ? defaultMediaSize.height : undefined,
     ...props
   }: CardBodyBaseProps<OnPressFn>) {
     const action = useMemo(() => {
@@ -136,10 +139,10 @@ export function createCardBody<OnPressFn>({
         spacingBottom={spacingBottom}
         spacingStart={spacingStart}
         spacingEnd={spacingEnd}
-        minHeight={defaultMediaSize.height}
+        minHeight={minHeight}
         {...props}
       >
-        <VStack gap={1} maxWidth="70%" flexShrink={1} alignItems="flex-start">
+        <VStack gap={1} maxWidth={maxWidth} flexShrink={1} alignItems="flex-start">
           <TextHeadline {...textProps} testID={`${testID}-title`}>
             {title}
           </TextHeadline>
