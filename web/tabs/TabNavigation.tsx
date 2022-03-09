@@ -53,6 +53,7 @@ export const TabNavigation = memo(
         variant = 'primary',
         testID,
         onChange = noop,
+        background = 'background',
         ...rest
       }: TabNavigationProps,
       forwardedRef: ForwardedRef<HTMLElement | null>,
@@ -184,9 +185,15 @@ export const TabNavigation = memo(
             onScroll={handleOnScroll}
             alignItems="center"
             position="relative"
+            background={background}
             dangerouslySetClassName={scrollContainerClassName}
           >
-            <Paddle show={leftPaddle} onPress={handleScrollLeft} variant={variant} />
+            <Paddle
+              background={background}
+              show={leftPaddle}
+              onPress={handleScrollLeft}
+              variant={variant}
+            />
             <VStack testID={testID} {...rest} spacing={0}>
               {shouldOverrideScale ? (
                 <span style={{ zIndex: zIndex.navigation }}>
@@ -201,9 +208,10 @@ export const TabNavigation = memo(
                   {tabLabels}
                 </HStack>
               )}
-              {isPrimary && <TabIndicator {...activeTabLayout} />}
+              {isPrimary && <TabIndicator background={background} {...activeTabLayout} />}
             </VStack>
             <Paddle
+              background={background}
               direction="right"
               show={rightPaddle}
               onPress={handleScrollRight}

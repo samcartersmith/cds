@@ -72,6 +72,21 @@ export const TabIndicatorPrimary: Story = () => {
           </Select>
         </VStack>
       </ThemeProvider>
+      <ThemeProvider spectrum="light">
+        <VStack spacing={2} gap={2} background="backgroundAlternate">
+          <TabNavigation
+            background="backgroundAlternate"
+            value={currentDarkTab}
+            tabs={tabs}
+            onChange={setCurrentDarkTab}
+          />
+          <Select value={currentDarkTab} onChange={setCurrentDarkTab} label="Select a tab">
+            {tabs.map((option) => (
+              <SelectOption value={option.id} title={option.label} key={option.id} />
+            ))}
+          </Select>
+        </VStack>
+      </ThemeProvider>
     </>
   );
 };

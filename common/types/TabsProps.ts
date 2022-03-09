@@ -1,5 +1,6 @@
 import { PropsWithChildren, ReactElement } from 'react';
 import { BoxBaseProps } from './BoxBaseProps';
+import { PaletteBackground } from './Palette';
 import { DotCountBaseProps } from './DotCountBaseProps';
 import { SetState } from './React';
 import { SharedProps } from './SharedProps';
@@ -48,6 +49,10 @@ export type TabIndicatorProps = {
   width: number;
   /** The xPosition of the active TabLabel. */
   x: number;
+  /** This should always match the background color of the parent container
+   * @default: 'background'
+   */
+  background?: PaletteBackground;
 } & SharedProps;
 
 export type TabNavigationProps<T extends string | undefined = string> = {
@@ -59,6 +64,10 @@ export type TabNavigationProps<T extends string | undefined = string> = {
   tabs: Omit<TabProps, 'children'>[];
   /** Use the onChange handler to deal with any side effects, ie event tracking or showing a tooltip */
   onChange: OnChange<T>;
+  /** This should always match the background color of the parent container
+   * @default: 'background'
+   */
+  background?: PaletteBackground;
 } & Pick<TabProps, 'variant'> &
   BoxBaseProps &
   SharedProps;

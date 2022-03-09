@@ -7,7 +7,7 @@ import { Box } from '../layout';
 export const TabIndicator = memo(
   forwardRef(
     (
-      { width, x, testID, ...props }: TabIndicatorProps,
+      { width, x, background = 'background', testID, ...props }: TabIndicatorProps,
       forwardedRef: ForwardedRef<HTMLElement>,
     ) => {
       const xRef = useRef<HTMLElement>(null);
@@ -29,7 +29,7 @@ export const TabIndicator = memo(
               testID="cds-tab-indicator-inner-bar"
               height={2}
               width="100%"
-              background="background"
+              background={background}
             />
           </Box>
         </Box>

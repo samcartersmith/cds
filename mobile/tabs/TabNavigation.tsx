@@ -26,7 +26,15 @@ const fallbackLayout: LayoutRectangle = { width: 0, x: 0, y: 0, height: 0 };
 export const TabNavigation = memo(
   forwardRef<View, TabNavigationProps>(
     (
-      { tabs, value = tabs[0].id, variant = 'primary', testID, onChange, ...rest },
+      {
+        tabs,
+        value = tabs[0].id,
+        variant = 'primary',
+        testID,
+        background = 'background',
+        onChange,
+        ...rest
+      },
       forwardedRef,
     ) => {
       const isDense = useScaleDensity() === 'dense';
@@ -112,7 +120,13 @@ export const TabNavigation = memo(
       );
 
       return (
-        <Box testID={testID} overflow="gradient" ref={forwardedRef} {...rest}>
+        <Box
+          testID={testID}
+          overflow="gradient"
+          ref={forwardedRef}
+          background={background}
+          {...rest}
+        >
           <ScrollView
             horizontal
             scrollEventThrottle={1}
@@ -129,7 +143,13 @@ export const TabNavigation = memo(
               ) : (
                 <HStack gap={4}>{tabLabels}</HStack>
               )}
-              {isPrimary && <TabIndicator x={activeTabLayout.x} width={activeTabLayout.width} />}
+              {isPrimary && (
+                <TabIndicator
+                  background={background}
+                  x={activeTabLayout.x}
+                  width={activeTabLayout.width}
+                />
+              )}
             </VStack>
           </ScrollView>
         </Box>

@@ -16,12 +16,12 @@ const baseGradient = css`
     width: 80px;
     height: 100%;
     &--left {
-      background: linear-gradient(to right, ${palette.background} 50%, ${palette.transparent} 100%);
+      background: linear-gradient(to right, currentColor 50%, ${palette.transparent} 100%);
       left: 0px;
       transform-origin: left;
     }
     &--right {
-      background: linear-gradient(to left, ${palette.background} 50%, ${palette.transparent} 100%);
+      background: linear-gradient(to left, currentColor 50%, ${palette.transparent} 100%);
       right: 0px;
       transform-origin: right;
     }

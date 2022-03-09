@@ -1,17 +1,19 @@
 import { css } from 'linaria';
 import React, { useRef } from 'react';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { TabLabelProps } from '@cbhq/cds-common';
+import { TabLabelProps, PaletteBackground } from '@cbhq/cds-common';
 import { cx } from '../utils/linaria';
 import { IconButton } from '../buttons/IconButton';
 import { usePaddleVisibilityEffect } from './hooks/usePaddleVisibilityEffect';
 import { tabLabelSpacingClassName } from './TabLabel';
 import { gradient } from '../styles/gradient';
+import { usePalette } from '../hooks/usePalette';
 
 export type PaddleProps = {
   direction?: 'left' | 'right';
   show: boolean;
   variant: TabLabelProps['variant'];
+  background?: PaletteBackground;
   onPress: () => void;
 };
 
@@ -39,7 +41,14 @@ const paddleRightClassName = css`
 `;
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
-export const Paddle = ({ variant = 'primary', direction = 'left', show, onPress }: PaddleProps) => {
+export const Paddle = ({
+  variant = 'primary',
+  direction = 'left',
+  show,
+  background = 'background',
+  onPress,
+}: PaddleProps) => {
+  const palette = usePalette();
   const ref = useRef<HTMLButtonElement>(null);
   const gradientRef = useRef<HTMLElement>(null);
   const className = cx(
@@ -51,7 +60,7 @@ export const Paddle = ({ variant = 'primary', direction = 'left', show, onPress 
   usePaddleVisibilityEffect({ ref, gradientRef, show });
 
   return (
-    <span className={className}>
+    <span className={className} style={{ color: palette[background] }}>
       <span className={buttonClassName} ref={ref}>
         <IconButton
           name={direction === 'left' ? 'caretLeft' : 'caretRight'}
