@@ -59,6 +59,7 @@ export const SelectTrigger = memo(
     const minHeight = useScaleConditional(
       compact ? selectTriggerCompactMinHeight : selectTriggerMinHeight,
     );
+    const shouldShowCompactLabel = compact && label;
 
     return (
       <SelectStack
@@ -85,7 +86,7 @@ export const SelectTrigger = memo(
                   {startNode}
                 </HStack>
               )}
-              {compact ? (
+              {shouldShowCompactLabel ? (
                 <HStack spacingEnd={1} alignItems="center" maxWidth="40%">
                   <InputLabel color={labelTextColor} overflow="truncate" id={accessibilityLabelId}>
                     {label}
@@ -104,15 +105,15 @@ export const SelectTrigger = memo(
                   flexGrow={1}
                   flexShrink={1}
                   minWidth={0}
-                  justifyContent={compact ? 'flex-end' : 'flex-start'}
+                  justifyContent={shouldShowCompactLabel ? 'flex-end' : 'flex-start'}
                 >
                   <TextBody
                     as="p"
                     color={value ? 'foreground' : 'foregroundMuted'}
                     overflow="truncate"
-                    align={compact ? 'end' : 'start'}
+                    align={shouldShowCompactLabel ? 'end' : 'start'}
                   >
-                    {value ?? placeholder ?? (!compact && label)}
+                    {value ?? placeholder ?? (!compact ? label : null)}
                   </TextBody>
                 </HStack>
                 <HStack alignItems="center">
