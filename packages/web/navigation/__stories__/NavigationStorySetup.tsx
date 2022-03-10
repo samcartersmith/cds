@@ -40,7 +40,7 @@ export const items: Items = [
   { title: 'DeFi', icon: 'defi' },
 ];
 
-// eslint-disable-next-line no-console
+ 
 const handlePress = (name: string) => console.log(`Pressed ${name}`);
 export const NavigationBarFullExample: React.FC = () => {
   return (

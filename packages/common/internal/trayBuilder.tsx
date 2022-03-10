@@ -73,7 +73,7 @@ type DefaultTrayTypes = {
   fallbackEnabled?: boolean;
 };
 
-// eslint-disable-next-line no-console
+ 
 const handleNoop = () => console.log('pressed');
 
 export const trayBuilder = ({

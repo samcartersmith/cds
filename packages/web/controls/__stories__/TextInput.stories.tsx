@@ -11,7 +11,7 @@ import { InputIconButton } from '../InputIconButton';
 import { NativeTextArea } from '../NativeTextArea';
 import { TextInput } from '../TextInput';
 
-/* eslint-disable no-console */
+ 
 
 export default {
   title: 'Core Components/Inputs/TextInput',

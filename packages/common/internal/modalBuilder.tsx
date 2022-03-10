@@ -12,7 +12,7 @@ import type {
   ThemeProviderBaseProps,
 } from '../types';
 
-// eslint-disable-next-line no-console
+ 
 const onRequestCloseConsole = () => console.log('close modal');
 
 export type CreateModalProps = {

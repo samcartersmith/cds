@@ -3,11 +3,11 @@ import React, { useCallback } from 'react';
 import { useToast } from '../overlays/useToast';
 import type { ButtonBaseProps, ToastBaseProps } from '../types';
 
-// eslint-disable-next-line no-console
+ 
 const onActionPressConsole = () => console.log('action pressed');
-// eslint-disable-next-line no-console
+ 
 const onWillHideConsole = () => console.log('toast hiding');
-// eslint-disable-next-line no-console
+ 
 const onDidHideConsole = () => console.log('toast hidden');
 
 export type CreateToastProps = {

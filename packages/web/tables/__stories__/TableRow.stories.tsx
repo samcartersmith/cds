@@ -10,7 +10,7 @@ export default {
 } as Meta;
 
 const handlePress = () => {
-  // eslint-disable-next-line no-console
+   
   return () => console.log('Thanks for tapping');
 };
 

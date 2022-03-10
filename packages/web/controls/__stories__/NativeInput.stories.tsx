@@ -5,7 +5,7 @@ import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { InputStack } from '../InputStack';
 import { NativeInput } from '../NativeInput';
 
-/* eslint-disable no-console */
+ 
 
 export default {
   title: 'Core Components/Inputs/NativeInput',

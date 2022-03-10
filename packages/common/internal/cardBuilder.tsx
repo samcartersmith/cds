@@ -16,7 +16,7 @@ import {
 
 import { assets } from './data/assets';
 
-// eslint-disable-next-line no-console
+ 
 const onPressConsole = () => console.log('pressed');
 
 const sharedWrapperProps = {

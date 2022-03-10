@@ -4,9 +4,9 @@ import { useToggler } from '../hooks/useToggler';
 import { useAlert } from '../overlays/useAlert';
 import type { AlertBaseProps, ButtonBaseProps, SharedProps } from '../types';
 
-// eslint-disable-next-line no-console
+ 
 const onPressConsole = () => console.log('pressed');
-// eslint-disable-next-line no-console
+ 
 const onRequestCloseConsole = () => console.log('Alert dimissed!');
 
 export type CreateAlertProps = {

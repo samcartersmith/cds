@@ -16,7 +16,7 @@ type CreateFeedCardSheetParams<WrapperProps, PressFn> = {
   renderHorizontalItem: RenderGroupItem<WrapperProps>;
 };
 
-// eslint-disable-next-line no-console
+ 
 const onPressConsole = () => console.log('pressed');
 
 export function createConfigs<WrapperProps, PressFn>({

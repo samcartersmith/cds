@@ -32,7 +32,7 @@ export function accordionBuilder({
   CellMedia,
   TextInput,
 }: CreateAccordionProps) {
-  // eslint-disable-next-line no-console
+   
   const handlePress = console.log;
 
   const BasicAccordion = () => {
