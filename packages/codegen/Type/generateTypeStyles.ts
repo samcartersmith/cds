@@ -7,7 +7,7 @@ import {
   pascalCase,
   toCssVar,
   toCssVarFn,
-} from '@cbhq/cds-utils';
+} from '@cbhq/cds-utils/index';
 
 import { scaleConfig } from '../configs/scaleConfig';
 import {

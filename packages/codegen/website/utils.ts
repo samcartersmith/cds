@@ -1,6 +1,6 @@
 import glob from 'fast-glob';
 import path from 'path';
-import { kebabCase } from '@cbhq/cds-utils';
+import { kebabCase } from '@cbhq/cds-utils/string';
 
 import { getSourcePath } from '../utils/getSourcePath';
 

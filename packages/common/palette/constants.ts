@@ -30,11 +30,17 @@ export const frontierSpectrumPalette = {
   dark: { secondary: 'gray20' },
 } as const;
 
-export const elevation1Palette = { dark: { background: 'gray5', transparent: 'gray5' } } as const;
+export const elevation1Palette = {
+  dark: { background: 'gray5', transparent: 'gray5' },
+} as const;
 
-export const elevation1ChildrenPalette = { dark: { secondary: ['gray5', 0] } } as const;
+export const elevation1ChildrenPalette = {
+  dark: { secondary: ['gray5', 0] },
+} as const;
 
-export const elevation2Palette = { dark: { background: 'gray10', transparent: 'gray10' } } as const;
+export const elevation2Palette = {
+  dark: { background: 'gray10', transparent: 'gray10' },
+} as const;
 
 export const elevation2ChildrenPalette = {
   dark: { line: ['gray60', 0.66], secondary: ['gray10', 0] },

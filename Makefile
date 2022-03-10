@@ -262,6 +262,7 @@ build.all:
 docgen:
 	nx run codegen:docgen
 	nx run website:lint --fix
+	nx run website:format
 
 .PHONY: codegen
 codegen:

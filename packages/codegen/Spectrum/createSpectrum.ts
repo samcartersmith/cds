@@ -1,6 +1,6 @@
 // @ts-expect-error Not typed
 import { generate } from '@k-vyn/coloralgorithm';
-import { emptyObject } from '@cbhq/cds-utils';
+import { emptyObject } from '@cbhq/cds-utils/object';
 
 import * as modes from '../configs/spectrum';
 

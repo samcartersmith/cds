@@ -1,11 +1,11 @@
 import path from 'path';
-import { arrayToObject } from '@cbhq/cds-utils';
+import { arrayToObject } from '@cbhq/cds-utils/array';
 
 import { SubDir } from './types';
 
 export const CDS_DIR = path.resolve(__dirname, '../..');
-export const TSCONFIG_PATH = path.resolve(__dirname, '../../../../../', 'tsconfig.json');
-export const DOCS_DIR = 'website/docs/components';
+export const TSCONFIG_PATH = path.resolve(__dirname, '../', 'tsconfig.json');
+export const DOCS_DIR = '../apps/website/docs/components';
 
 /**
  * All CDS subdirectories to search for components.

@@ -1,4 +1,4 @@
-import { mapValues } from '@cbhq/cds-utils';
+import { mapValues } from '@cbhq/cds-utils/object';
 
 export const borderRadiusConfig = {
   none: 0,

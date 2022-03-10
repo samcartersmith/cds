@@ -1,4 +1,4 @@
-import { mapKeys, mapValues, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
+import { mapKeys, mapValues, toCssVar, toCssVarFn } from '@cbhq/cds-utils/index';
 
 import { controlsConfig } from './configs/controlsConfig';
 import { DEFAULT_SCALE } from './configs/scaleConfig';

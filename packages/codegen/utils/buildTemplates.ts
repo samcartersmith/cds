@@ -1,4 +1,4 @@
-import { AnyObject } from '@cbhq/cds-utils';
+import { AnyObject } from '@cbhq/cds-utils/types';
 
 import { logError } from './logError';
 import { TemplateMap, writeFile } from './writeFile';

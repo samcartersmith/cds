@@ -4,7 +4,7 @@ import ora from 'ora';
 
 import { getSourcePath } from '../utils/getSourcePath';
 
-const contributingOutputDir = 'website/docs/contributing/engineering.mdx';
+const contributingOutputDir = '../apps/website/docs/contributing/engineering.mdx';
 
 async function copyContributing() {
   const spinner = ora(`Starting to copy CONTRIBUTING files`).start();

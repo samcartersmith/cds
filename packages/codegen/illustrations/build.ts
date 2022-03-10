@@ -5,7 +5,7 @@ import { reduce } from 'lodash';
 import ora from 'ora';
 import path from 'path';
 import { loadConfig, optimize, OptimizedSvg, OptimizeOptions } from 'svgo';
-import { camelCase, pascalCase, renameKeys } from '@cbhq/cds-utils';
+import { camelCase, pascalCase, renameKeys } from '@cbhq/cds-utils/index';
 
 import { FileImageResponse } from '../figma/api';
 import { CDS_PERSONAL_ACCESS_TOKEN, FigmaClient } from '../figma/client';

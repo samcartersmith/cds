@@ -1,4 +1,4 @@
-import { arrayToObject } from '@cbhq/cds-utils';
+import { arrayToObject } from '@cbhq/cds-utils/array';
 
 import { iconPixelSizes } from '../configs/iconConfig';
 

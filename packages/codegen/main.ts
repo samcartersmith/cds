@@ -1,4 +1,4 @@
-import { mapValues } from '@cbhq/cds-utils';
+import { mapValues } from '@cbhq/cds-utils/object';
 
 import {
   borderRadiusConfig,

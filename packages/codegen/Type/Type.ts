@@ -1,4 +1,4 @@
-import { pascalCase } from '@cbhq/cds-utils';
+import { pascalCase } from '@cbhq/cds-utils/string';
 
 import { scaleConfig } from '../configs/scaleConfig';
 

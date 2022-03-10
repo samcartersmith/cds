@@ -2,7 +2,7 @@ import { ComponentDoc, withCustomConfig } from 'react-docgen-typescript';
 import glob from 'fast-glob';
 import groupBy from 'lodash/groupBy';
 import path from 'path';
-import { AnyObject, mapValues, pascalCase } from '@cbhq/cds-utils';
+import { AnyObject, mapValues, pascalCase } from '@cbhq/cds-utils/index';
 
 import { buildTemplates } from '../utils/buildTemplates';
 import { getSourcePath } from '../utils/getSourcePath';
@@ -179,7 +179,7 @@ async function buildWebsite() {
     'website/implementation.ejs': implementationTemplate,
     'objectMap.ejs': [
       {
-        dest: 'website/data/sidebar/components.js',
+        dest: '../apps/website/data/sidebar/components.js',
         data: {
           components: prepareSidebarConfig(docgenData),
         },
@@ -187,7 +187,7 @@ async function buildWebsite() {
       },
       // Currently copied and pasted into our Completed Components tab of Roadmap Google Sheet (go/cds-roadmap).
       {
-        dest: 'website/data/componentsList.ts',
+        dest: '../apps/website/data/componentsList.ts',
         data: { components: docgenData.map((item) => item.displayName) },
       },
     ],
@@ -198,7 +198,7 @@ async function buildWebsite() {
   await buildTemplates({
     'website/templatesMap.ejs': [
       {
-        dest: 'website/data/templatesMap.ts',
+        dest: '../apps/website/data/templatesMap.ts',
         data: templates.reduce(flattenTemplatesMap, {}),
         config: { disableStringify: true },
       },

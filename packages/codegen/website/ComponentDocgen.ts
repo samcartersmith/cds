@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import { ComponentDoc, PropItem } from 'react-docgen-typescript';
-import { pascalCase } from '@cbhq/cds-utils';
+import { pascalCase } from '@cbhq/cds-utils/string';
 
 import { normalizeOptions, PropertyDocgen, PropOptions } from './PropertyDocgen';
 import { ComponentDocgenParams } from './types';

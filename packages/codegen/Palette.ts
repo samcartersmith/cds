@@ -1,5 +1,5 @@
 import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
-import { arrayToObject, mapValues, toCssVarFn } from '@cbhq/cds-utils';
+import { arrayToObject, mapValues, toCssVarFn } from '@cbhq/cds-utils/index';
 
 export const defaultPalette = {
   foreground: 'gray100',
