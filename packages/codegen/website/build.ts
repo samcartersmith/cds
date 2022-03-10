@@ -1,19 +1,20 @@
-import { pascalCase, mapValues, AnyObject } from '@cbhq/cds-utils';
+import { ComponentDoc, withCustomConfig } from 'react-docgen-typescript';
 import glob from 'fast-glob';
 import groupBy from 'lodash/groupBy';
 import path from 'path';
-import { ComponentDoc, withCustomConfig } from 'react-docgen-typescript';
+import { AnyObject,mapValues, pascalCase } from '@cbhq/cds-utils';
 
 import { buildTemplates } from '../utils/buildTemplates';
 import { getSourcePath } from '../utils/getSourcePath';
+
 import { ComponentDocgen } from './ComponentDocgen';
 import {
   CDS_DIR,
-  DOCS_DIR,
-  TSCONFIG_PATH,
   CDS_SUB_DIRS,
   CDS_SUB_DIRS_MAP,
   customDocsMap,
+  DOCS_DIR,
+  TSCONFIG_PATH,
 } from './constants';
 import {
   ComponentDocgenParams,
@@ -28,12 +29,12 @@ import {
 import { updateTextStylesTable } from './updateTextStylesTable';
 import {
   excludeSimpleFiles,
-  includeSimpleFiles,
-  getDisplayName,
   getComponentName,
+  getDisplayName,
   getFileName,
   getKebabName,
   getSubDirFiles,
+  includeSimpleFiles,
 } from './utils';
 
 export const parseTypescript = (filepath: string) => {

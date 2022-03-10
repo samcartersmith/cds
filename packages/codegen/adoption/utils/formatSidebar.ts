@@ -1,4 +1,4 @@
-import type { AdoptersConfig, AdopterConfig, AdopterConfigForSidebar } from '../types';
+import type { AdopterConfig, AdopterConfigForSidebar,AdoptersConfig } from '../types';
 
 export function formatSidebar(config: AdoptersConfig[]) {
   function formatNext(item: AdoptersConfig | AdopterConfig) {

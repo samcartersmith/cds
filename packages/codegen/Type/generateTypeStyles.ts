@@ -1,3 +1,4 @@
+import { fromPairs } from 'lodash';
 import {
   entries,
   kebabCase,
@@ -7,17 +8,17 @@ import {
   toCssVar,
   toCssVarFn,
 } from '@cbhq/cds-utils';
-import { fromPairs } from 'lodash';
-import {
-  typographyConfig,
-  TypographyConfig,
-  fontFamilies,
-  fontWeights,
-  xHeight,
-  fallbackStack,
-} from '../configs/typographyConfig';
 
 import { scaleConfig } from '../configs/scaleConfig';
+import {
+  fallbackStack,
+  fontFamilies,
+  fontWeights,
+  TypographyConfig,
+  typographyConfig,
+  xHeight,
+} from '../configs/typographyConfig';
+
 import { calculateMinFontSize, round } from './utils';
 
 type FontFamilies = typeof fontFamilies;

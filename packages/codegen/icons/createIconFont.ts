@@ -1,12 +1,13 @@
-import { arrayToObject } from '@cbhq/cds-utils';
 import * as fs from 'fs';
 import * as path from 'path';
 // @ts-expect-error No types for this package
 import webfont from 'webfont';
+import { arrayToObject } from '@cbhq/cds-utils';
 
 import { iconPixelSizes, iconSizes } from '../configs/iconConfig';
 import { buildTemplates } from '../utils/buildTemplates';
 import { getSourcePath } from '../utils/getSourcePath';
+
 import { createIconSet } from './createIconSet';
 import { manifest } from './manifest';
 

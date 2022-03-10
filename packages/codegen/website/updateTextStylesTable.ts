@@ -1,8 +1,8 @@
-import { writePrettyFile } from '@cbhq/monorepo-utils';
 import chalk from 'chalk';
 import * as fs from 'fs';
 import * as path from 'path';
 import { argv } from 'yargs';
+import { writePrettyFile } from '@cbhq/cds-web-utils';
 
 import { Type } from '../Type/Type';
 import { getSourcePath } from '../utils/getSourcePath';

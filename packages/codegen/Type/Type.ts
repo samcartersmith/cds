@@ -1,15 +1,16 @@
 import { pascalCase } from '@cbhq/cds-utils';
 
 import { scaleConfig } from '../configs/scaleConfig';
+
 import {
-  typographyCss,
-  typographyScaleMapWithCssVariables,
-  typographyScaleMapForWeb,
-  typographyScaleMapForMobile,
-  typographyPascalCaseConfig,
   fontFaceCss,
   fontFamilyCssVariables,
   fontFamilyMobileTokens,
+  typographyCss,
+  typographyPascalCaseConfig,
+  typographyScaleMapForMobile,
+  typographyScaleMapForWeb,
+  typographyScaleMapWithCssVariables,
 } from './generateTypeStyles';
 
 const mdTable = ([header, ...rows]: string[][]) => {

@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import fs from 'fs';
 import ora from 'ora';
+
 import { getSourcePath } from '../utils/getSourcePath';
 
 const contributingOutputDir = 'website/docs/contributing/engineering.mdx';

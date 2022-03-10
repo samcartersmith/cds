@@ -1,16 +1,18 @@
-import { countBy, flattenDeep, fromPairs, map, mapValues, partition, pickBy, uniq } from 'lodash';
-import path from 'path';
-import ora from 'ora';
 import chalk from 'chalk';
+import { countBy, flattenDeep, fromPairs, map, mapValues, partition, pickBy, uniq } from 'lodash';
+import ora from 'ora';
+import path from 'path';
 import { argv } from 'yargs';
-import { getPackageJson } from '../utils/getPackageJson';
-import { getTypescriptConfig } from '../utils/getTypescriptConfig';
-import { getProjectFiles } from '../utils/getProjectFiles';
-import { getMatchingDirectory, getTypescriptAliases } from '../utils/getTypescriptAliases';
-import { FileParser } from './FileParser';
-import { fromId, toId } from '../utils/id';
-import { getStats } from '../utils/getStats';
+
 import type { AdopterConfig, AdoptionStats, PreviousAdoptionStats } from '../types';
+import { getPackageJson } from '../utils/getPackageJson';
+import { getProjectFiles } from '../utils/getProjectFiles';
+import { getStats } from '../utils/getStats';
+import { getMatchingDirectory, getTypescriptAliases } from '../utils/getTypescriptAliases';
+import { getTypescriptConfig } from '../utils/getTypescriptConfig';
+import { fromId, toId } from '../utils/id';
+
+import { FileParser } from './FileParser';
 
 export const FALLBACK_PRESENTATIONAL_LIBRARIES = [
   '@ant-design',

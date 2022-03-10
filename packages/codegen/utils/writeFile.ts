@@ -1,9 +1,9 @@
-import { writePrettyFile } from '@cbhq/monorepo-utils';
 import * as ejs from 'ejs';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as prettier from 'prettier';
 import { argv } from 'yargs';
+import { writePrettyFile } from '@cbhq/cds-web-utils';
 
 import { formatTemplateType } from './formatTemplateType';
 import { getSourcePath } from './getSourcePath';

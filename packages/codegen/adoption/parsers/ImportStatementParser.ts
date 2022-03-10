@@ -1,5 +1,6 @@
 import path from 'path';
 import * as ts from 'typescript';
+
 import type { FileParser } from './FileParser';
 
 export type ParsedImportStatementCallback = (item: ImportStatementParser) => void;

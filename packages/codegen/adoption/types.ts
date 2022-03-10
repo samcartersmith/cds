@@ -1,4 +1,5 @@
 import * as ts from 'typescript';
+
 import type { AdoptionStats } from './utils/getStats';
 
 export type ObjectString = Record<string, string>;

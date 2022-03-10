@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-
 import { LottieSource } from '@cbhq/cds-common/types/LottieSource';
 
 const LOTTIE_FILES_DIR = path.resolve(__dirname, '..', 'lottie-files');

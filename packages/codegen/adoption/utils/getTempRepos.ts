@@ -1,8 +1,9 @@
 import { exec } from 'child_process';
-import { argv } from 'yargs';
 import fs from 'fs';
 import { uniq } from 'lodash';
 import { promisify } from 'util';
+import { argv } from 'yargs';
+
 import { adopters } from '../config';
 
 const sh = promisify(exec);

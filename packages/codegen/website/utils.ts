@@ -1,10 +1,11 @@
-import { kebabCase } from '@cbhq/cds-utils';
 import glob from 'fast-glob';
 import path from 'path';
+import { kebabCase } from '@cbhq/cds-utils';
 
 import { getSourcePath } from '../utils/getSourcePath';
+
 import { displayNameMap, filesToIgnore, kebabCaseMap, simpleDocs } from './constants';
-import { SubDir, ComponentDocgenResponse } from './types';
+import { ComponentDocgenResponse,SubDir } from './types';
 
 export const getFileName = (filePath: string) => path.basename(filePath);
 export const getComponentName = (filePath: string) =>

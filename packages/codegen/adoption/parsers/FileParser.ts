@@ -1,9 +1,11 @@
-import * as ts from 'typescript';
 import path from 'path';
-import type { ProjectParser } from './ProjectParser';
-import { ImportStatementParser } from './ImportStatementParser';
+import * as ts from 'typescript';
+
 import { createAstSourceFile } from '../utils/createAstSourceFile';
 import { toId } from '../utils/id';
+
+import { ImportStatementParser } from './ImportStatementParser';
+import type { ProjectParser } from './ProjectParser';
 
 const rootElementsToStopAt = new Set<string>(['svg']);
 

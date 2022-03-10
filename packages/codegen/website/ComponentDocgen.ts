@@ -1,8 +1,8 @@
 /* eslint-disable class-methods-use-this */
-import { pascalCase } from '@cbhq/cds-utils';
 import { ComponentDoc, PropItem } from 'react-docgen-typescript';
+import { pascalCase } from '@cbhq/cds-utils';
 
-import { PropOptions, PropertyDocgen, normalizeOptions } from './PropertyDocgen';
+import { normalizeOptions,PropertyDocgen, PropOptions } from './PropertyDocgen';
 import { ComponentDocgenParams } from './types';
 
 type PropItemWithOptions = {

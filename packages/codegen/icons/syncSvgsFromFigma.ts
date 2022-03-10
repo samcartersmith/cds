@@ -1,15 +1,16 @@
-import { camelCase, pascalCase, entries, renameKeys, capitalize } from '@cbhq/cds-utils';
 import axios from 'axios';
 import chalk from 'chalk';
 import fs from 'fs';
 import ora from 'ora';
 import path from 'path';
+import { camelCase, capitalize,entries, pascalCase, renameKeys } from '@cbhq/cds-utils';
 
 import { ComponentMetadata } from '../figma/api';
 import { FigmaClient } from '../figma/client';
 import { buildTemplates } from '../utils/buildTemplates';
-import { writeFile } from '../utils/writeFile';
 import { getSourcePath } from '../utils/getSourcePath';
+import { writeFile } from '../utils/writeFile';
+
 import { createIconSet } from './createIconSet';
 import { createUnicodeMap } from './createUnicodeMap';
 import { fillMissingIcons } from './fillMissingIcons';

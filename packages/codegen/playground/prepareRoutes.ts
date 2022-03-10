@@ -1,5 +1,6 @@
 import glob from 'fast-glob';
 import path from 'path';
+
 import { getSourcePath } from '../utils/getSourcePath';
 import { writeFile } from '../utils/writeFile';
 

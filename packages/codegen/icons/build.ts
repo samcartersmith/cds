@@ -1,7 +1,9 @@
 import { reduce } from 'lodash';
+
 import { buildTemplates } from '../utils/buildTemplates';
-import { createIconFont, removeSVGs } from './createIconFont';
 import { createDescriptionGraph } from '../utils/createDescriptionGraph';
+
+import { createIconFont, removeSVGs } from './createIconFont';
 import { iconManifest } from './iconManifest';
 
 async function buildIcons() {

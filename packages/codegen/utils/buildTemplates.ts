@@ -1,7 +1,7 @@
 import { AnyObject } from '@cbhq/cds-utils';
 
-import { writeFile, TemplateMap } from './writeFile';
 import { logError } from './logError';
+import { TemplateMap,writeFile } from './writeFile';
 
 export type { TemplateMap };
 export const buildTemplates = async (templates: TemplateMap) => {

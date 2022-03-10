@@ -1,10 +1,12 @@
 import fs from 'fs';
-import { writeFile } from '../utils/writeFile';
-import { ProjectParser } from './parsers/ProjectParser';
-import { adopters, adoptersSidebar, adoptersWithPillar } from './config';
-import { getTempRepos, cleanup } from './utils/getTempRepos';
-import { getPreviousStats } from './utils/getPreviousStats';
+
 import { getSourcePath } from '../utils/getSourcePath';
+import { writeFile } from '../utils/writeFile';
+
+import { ProjectParser } from './parsers/ProjectParser';
+import { getPreviousStats } from './utils/getPreviousStats';
+import { cleanup,getTempRepos } from './utils/getTempRepos';
+import { adopters, adoptersSidebar, adoptersWithPillar } from './config';
 
 async function preCleanup() {
   const [TEMP_DIR, DOCS_DIR, DOCS_DATA_DIR] = await Promise.all([

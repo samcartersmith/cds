@@ -1,34 +1,35 @@
-import { renameKeys, camelCase, pascalCase } from '@cbhq/cds-utils';
 import axios, { AxiosResponse } from 'axios';
 import chalk from 'chalk';
-import fs, { readFileSync, existsSync, renameSync, unlink } from 'fs';
+import fs, { existsSync, readFileSync, renameSync, unlink } from 'fs';
 import { reduce } from 'lodash';
 import ora from 'ora';
 import path from 'path';
-import { optimize, loadConfig, OptimizeOptions } from 'svgo';
-import { FileImageResponse } from 'eng/shared/design-system/codegen/figma/api';
-import { getSourcePath } from '../utils/getSourcePath';
+import { loadConfig, optimize, OptimizedSvg, OptimizeOptions } from 'svgo';
+import { camelCase, pascalCase,renameKeys } from '@cbhq/cds-utils';
 
-import { FigmaClient, CDS_PERSONAL_ACCESS_TOKEN } from '../figma/client';
-import { writeFile } from '../utils/writeFile';
+import { FileImageResponse } from '../figma/api';
+import { CDS_PERSONAL_ACCESS_TOKEN,FigmaClient } from '../figma/client';
 import { createDescriptionGraph } from '../utils/createDescriptionGraph';
+import { getSourcePath } from '../utils/getSourcePath';
+import { writeFile } from '../utils/writeFile';
+
+import { blacklist } from './blacklist';
+import { manifestData } from './illustration_manifest';
 import {
-  IllustrationSummary,
-  IllustrationProps,
   IllustrationComponent,
   IllustrationNamesMap,
+  IllustrationProps,
+  IllustrationSummary,
   VersionNumManifestStruct,
 } from './interfaces';
-import {
-  errMsg,
-  successMsg,
-  binaryToBase64,
-  isMetadataEqual,
-  fromVersionManifestKey,
-} from './utils';
-import { manifestData } from './illustration_manifest';
-import { blacklist } from './blacklist';
 import { modified } from './modified';
+import {
+  binaryToBase64,
+  errMsg,
+  fromVersionManifestKey,
+  isMetadataEqual,
+  successMsg,
+} from './utils';
 
 const ILLUSTRATION_FILE_ID = 'ay6SCdu5QMjKthzcoPtVOh';
 const NODE_ID = '3972:345';
@@ -217,7 +218,7 @@ const loadOneImage = async (
   if (fileStatus === 'modified' && !modified.includes(nameAndSpectrum)) return;
 
   const optimizedSVG = optimize(String(svgRes.data), svgOptimizerConfig);
-  fs.writeFileSync(fileNameFullPath, optimizedSVG.data, ENCODING);
+  fs.writeFileSync(fileNameFullPath, (optimizedSVG as OptimizedSvg).data, ENCODING);
 
   /** Enable to recreate all the js files  */
   // createSvgXML({
@@ -250,7 +251,7 @@ const loadOneImage = async (
     // the illustration was changed or it is new.
     createSvgXML({
       outPath: newJsOutFullPath,
-      svgStr: optimizedSVG.data,
+      svgStr: (optimizedSVG as OptimizedSvg).data,
       fileName: newJsFileName,
       fileStatus,
     });
@@ -407,12 +408,12 @@ const getIllustrationNamesAndVariants = (
         .sort()
         .map((name) => {
           switch (caseMethod) {
-            default:
-              throw new Error(`usage: ${caseMethod} is invalid.`);
             case 'camelcase':
               return camelCase(name);
             case 'pascalcase':
               return pascalCase(name);
+            default:
+              throw new Error(`usage: ${caseMethod} is invalid.`);
           }
         });
     });

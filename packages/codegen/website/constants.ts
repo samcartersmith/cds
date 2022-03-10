@@ -1,5 +1,5 @@
-import { arrayToObject } from '@cbhq/cds-utils';
 import path from 'path';
+import { arrayToObject } from '@cbhq/cds-utils';
 
 import { SubDir } from './types';
 

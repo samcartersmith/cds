@@ -1,8 +1,8 @@
-import * as ts from 'typescript';
-import path from 'path';
 import fs from 'fs';
 import { merge } from 'lodash';
+import path from 'path';
 import stripJsonComments from 'strip-json-comments';
+import * as ts from 'typescript';
 
 export type TypescriptConfig = {
   extends?: string;

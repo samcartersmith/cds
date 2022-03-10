@@ -1,4 +1,5 @@
 import { iconPixelSizes } from '../configs/iconConfig';
+
 import { SizeMap } from './createIconSet';
 
 export const fillMissingIcons = (nameSet: Set<string>, sizeMap: SizeMap) => {

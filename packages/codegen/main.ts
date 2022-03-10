@@ -7,14 +7,14 @@ import {
   borderWidthCss,
 } from './configs/borderConfig';
 import { scaleConfig } from './configs/scaleConfig';
-import { Control } from './Control';
-import { lottieFiles } from './Lottie';
-import { Palette, defaultPalette } from './Palette';
-import { Spacing } from './Spacing';
 import { Spectrum } from './Spectrum/Spectrum';
 import { Type } from './Type/Type';
-import { TypeScript } from './Typescript';
 import { buildTemplates, TemplateMap } from './utils/buildTemplates';
+import { Control } from './Control';
+import { lottieFiles } from './Lottie';
+import { defaultPalette,Palette } from './Palette';
+import { Spacing } from './Spacing';
+import { TypeScript } from './Typescript';
 
 async function codegen() {
   const templates: TemplateMap = {

@@ -1,6 +1,6 @@
-import { mapValues, arrayToObject, toCssVarFn } from '@cbhq/cds-utils';
+import { arrayToObject, mapValues, toCssVarFn } from '@cbhq/cds-utils';
 
-import { spacingConfig, spacingScale, spacingDirections } from './configs/spacingConfig';
+import { spacingConfig, spacingDirections,spacingScale } from './configs/spacingConfig';
 
 const escape = <T extends number>(input: T) => String(input).replace('.', '\\\\.') as `${T}`;
 

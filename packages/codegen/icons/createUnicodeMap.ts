@@ -1,6 +1,7 @@
 import { arrayToObject } from '@cbhq/cds-utils';
 
 import { iconPixelSizes } from '../configs/iconConfig';
+
 import { manifest } from './manifest';
 
 type UnicodeMap = Record<string, Record<number, number | string>>;

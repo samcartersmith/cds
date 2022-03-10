@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+
 import { getSourcePath } from '../../utils/getSourcePath';
 import type { PreviousAdoptionStats } from '../types';
 

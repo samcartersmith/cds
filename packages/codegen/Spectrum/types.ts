@@ -1,4 +1,4 @@
-import type { ColorOptions, ColorProps, Color } from '@k-vyn/coloralgorithm/src/types';
+import type { Color,ColorOptions, ColorProps } from '@k-vyn/coloralgorithm/src/types';
 
 import type { hueNames, hueSteps } from './Spectrum';
 

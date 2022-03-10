@@ -1,4 +1,5 @@
 import path from 'path';
+
 import { TypescriptConfig } from './getTypescriptConfig';
 
 function removeTrailingSlashAndWildcard(str: string) {

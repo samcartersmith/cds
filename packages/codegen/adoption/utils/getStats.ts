@@ -1,5 +1,7 @@
 import { sumBy } from 'lodash';
+
 import type { ProjectParser } from '../parsers/ProjectParser';
+
 import { formatDate } from './formatDate';
 
 export type AdoptionStats = ReturnType<typeof getStats>;

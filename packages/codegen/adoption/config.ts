@@ -1,8 +1,9 @@
-import { argv } from 'yargs';
 import path from 'path';
-import type { AdoptersConfig } from './types';
+import { argv } from 'yargs';
+
 import { flattenConfig } from './utils/flattenConfig';
 import { formatSidebar } from './utils/formatSidebar';
+import type { AdoptersConfig } from './types';
 
 const { tempDir } = argv as Record<string, string>;
 

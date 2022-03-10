@@ -1,4 +1,4 @@
-import type { AdoptersConfig, AdopterConfig } from '../types';
+import type { AdopterConfig,AdoptersConfig } from '../types';
 
 export function flattenConfig(config: AdoptersConfig[]) {
   const flattened: AdopterConfig[] = [];

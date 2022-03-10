@@ -1,5 +1,5 @@
-import * as ts from 'typescript';
 import fs from 'fs';
+import * as ts from 'typescript';
 
 export async function createAstSourceFile(filePath: string) {
   try {
