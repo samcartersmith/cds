@@ -1,7 +1,8 @@
 {
   "name": "@cbhq/cds-web",
-  "version": "0.34.2",
+  "version": "0.36.3",
   "description": "Coinbase Design System - Web",
+  "repository": "git@github.cbhq.net:frontend/cds.git",
   "keywords": [
     "design system",
     "component library",
@@ -41,6 +42,6 @@
   "devDependencies": {
     "@cbhq/cds-web-utils": "workspace:*"
   },
-  "main": "./index.js",
-  "typings": "./index.d.ts"
+  "main": "index.js",
+  "typings": "index.d.ts"
 }
