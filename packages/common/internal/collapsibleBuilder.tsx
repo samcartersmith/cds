@@ -1,13 +1,15 @@
 import React from 'react';
-import type {
-  CollapsibleBaseProps,
-  TextBaseProps,
-  ButtonBaseProps,
-  DotCountBaseProps,
-  BoxBaseProps,
-} from '../types';
-import { loremIpsum } from './data/loremIpsum';
+
 import { useToggler } from '../hooks/useToggler';
+import type {
+  BoxBaseProps,
+  ButtonBaseProps,
+  CollapsibleBaseProps,
+  DotCountBaseProps,
+  TextBaseProps,
+} from '../types';
+
+import { loremIpsum } from './data/loremIpsum';
 
 export type CreateCollapsibleProps = {
   Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;

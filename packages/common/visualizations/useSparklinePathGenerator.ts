@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-
 import { extent } from 'd3-array';
 import { ScaleLinear, scaleLinear } from 'd3-scale';
 

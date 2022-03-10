@@ -1,4 +1,5 @@
 import React, { ComponentType } from 'react';
+
 import type { BoxBaseProps, IconButtonBaseProps, TextInputBaseProps } from '../types';
 
 export function inputIconButtonBuilder(
@@ -39,13 +40,11 @@ export function inputIconButtonBuilder(
 
   const SetColorAndInheritFocusStyle = () => {
     return (
-      <>
-        <TextInput
+      <TextInput
           label="Search"
           variant="foregroundMuted"
           start={<InputIconButton variant="secondary" name="search" />}
         />
-      </>
     );
   };
 

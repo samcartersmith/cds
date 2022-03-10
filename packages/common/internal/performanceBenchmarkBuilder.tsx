@@ -11,7 +11,7 @@ export function performanceBenchmarkBuilder(
       divs.push(<HTMLComponent key={i} />);
     }
 
-    return <>{divs}</>;
+    return divs;
   }
 
   function generateComponents(n: number) {
@@ -21,7 +21,7 @@ export function performanceBenchmarkBuilder(
       components.push(<CDSComponent key={i} />);
     }
 
-    return <>{components}</>;
+    return components;
   }
 
   const HundredCDSComponents = () => {

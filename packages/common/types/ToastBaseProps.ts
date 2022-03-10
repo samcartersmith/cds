@@ -1,7 +1,7 @@
-import { OverlayLifecycleProps } from './OverlayLifecycleProps';
-import { NoopFn } from './Helpers';
-import { SharedProps } from './SharedProps';
 import { DimensionValue } from './DimensionStyles';
+import { NoopFn } from './Helpers';
+import { OverlayLifecycleProps } from './OverlayLifecycleProps';
+import { SharedProps } from './SharedProps';
 
 export type ToastText = string;
 export type ToastDuration = {

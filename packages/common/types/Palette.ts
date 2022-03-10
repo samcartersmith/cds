@@ -3,9 +3,10 @@ import type { ReadonlyDeep } from 'type-fest';
 import {
   defaultPalette,
   paletteBackgrounds,
-  paletteForegrounds,
   paletteBorders,
+  paletteForegrounds,
 } from '../palette/constants';
+
 import type { SpectrumAlias, SpectrumAliasWithOpacity } from './Spectrum';
 
 export type PaletteAlias = keyof typeof defaultPalette;

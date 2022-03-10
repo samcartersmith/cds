@@ -1,9 +1,10 @@
 import { ReactNode } from 'react';
+
 import { NoopFn } from './Helpers';
 import { InputStackBaseProps, SharedInputProps } from './InputBaseProps';
-import { SharedProps } from './SharedProps';
-import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SetState } from './React';
+import { SharedAccessibilityProps } from './SharedAccessibilityProps';
+import { SharedProps } from './SharedProps';
 
 export type SelectRenderMenu = (props: { closeMenu: NoopFn }) => JSX.Element;
 

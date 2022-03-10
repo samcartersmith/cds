@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-
 import { emptyObject } from '@cbhq/cds-utils';
 
 import { borderRadius } from '../tokens/border';

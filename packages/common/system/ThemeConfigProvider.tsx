@@ -1,7 +1,8 @@
 import React, { memo, useMemo } from 'react';
 
-import type { ThemeConfig } from '../types';
 import { useSpectrum } from '../spectrum/useSpectrum';
+import type { ThemeConfig } from '../types';
+
 import { ThemeConfigContext } from './ThemeConfigContext';
 
 export type ThemeConfigProviderProps = {

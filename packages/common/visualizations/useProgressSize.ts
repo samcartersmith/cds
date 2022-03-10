@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+
 import { useScaleConditional } from '../scale/useScaleConditional';
 import { Weight } from '../types/Weight';
 

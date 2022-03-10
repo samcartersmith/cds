@@ -1,11 +1,13 @@
 import React from 'react';
+
 import type {
   AccordionBaseProps,
   AccordionItemBaseProps,
-  TextBaseProps,
   CellMediaProps,
+  TextBaseProps,
   TextInputBaseProps,
 } from '../types';
+
 import { loremIpsum } from './data/loremIpsum';
 
 export type CreateAccordionProps = {

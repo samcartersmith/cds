@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useCallback, useState, MutableRefObject, useMemo } from 'react';
+import React, { MutableRefObject, useCallback, useEffect, useMemo,useRef, useState } from 'react';
+
+import { useToggler } from '../hooks/useToggler';
 import type {
   BoxBaseProps,
   ButtonBaseProps,
@@ -14,10 +16,10 @@ import type {
   StackBaseProps,
   TrayBaseProps,
 } from '../types';
-import { useToggler } from '../hooks/useToggler';
-import { prices } from './data/prices';
-import { navigationOptions } from './data/navigation';
+
 import { loremIpsum } from './data/loremIpsum';
+import { navigationOptions } from './data/navigation';
+import { prices } from './data/prices';
 
 const options: string[] = prices.slice(0, 4);
 const lotsOfOptions: string[] = prices.slice(0, 30);

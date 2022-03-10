@@ -1,4 +1,5 @@
 import { MotionBaseSpec } from '../types';
+
 import { easing, inDuration, outDuration } from './collapsible';
 
 export const accordionVisibleMaxHeight = { dense: 200, normal: 400 };

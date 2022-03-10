@@ -23,8 +23,8 @@ describe('useSparklinePath', () => {
     const { result, rerender } = renderHook((props: UseSparklinePathParams = mockData1) => {
       return useSparklinePath(props);
     });
-    expect(result.current).toEqual('M2,318L220,2');
+    expect(result.current).toBe('M2,318L220,2');
     rerender(mockData2);
-    expect(result.current).toEqual('M2,2L220,318');
+    expect(result.current).toBe('M2,2L220,318');
   });
 });

@@ -1,7 +1,8 @@
 import { useCallback, useMemo, useState } from 'react';
+
 import { useToggler } from '../../hooks/useToggler';
-import type { LikeButtonBaseProps } from '../../types/alpha';
 import type { NoopFn } from '../../types';
+import type { LikeButtonBaseProps } from '../../types/alpha';
 
 export function likeCounter({
   count: countProp = 0,

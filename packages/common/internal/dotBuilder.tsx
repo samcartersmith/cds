@@ -1,4 +1,5 @@
 import React, { ComponentType } from 'react';
+
 import type {
   AvatarBaseProps,
   BoxBaseProps,
@@ -42,11 +43,9 @@ export function dotBuilder(
 
   const DotCountVariant = () => {
     return (
-      <>
-        <VStack alignItems="flex-start" gap={1} key="DotCount-variant-negative">
+      <VStack alignItems="flex-start" gap={1} key="DotCount-variant-negative">
           <DotCount variant="negative" count={30} />
         </VStack>
-      </>
     );
   };
 
@@ -76,8 +75,7 @@ export function dotBuilder(
 
   const DotCountPlacements = () => {
     return (
-      <>
-        <VStack
+      <VStack
           alignItems="flex-start"
           gap={4}
           spacing={1}
@@ -99,7 +97,6 @@ export function dotBuilder(
             <Icon name="calendar" size="m" />
           </DotCount>
         </VStack>
-      </>
     );
   };
 

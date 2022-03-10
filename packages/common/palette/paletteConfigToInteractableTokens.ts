@@ -1,4 +1,5 @@
-import { PaletteConfigWithInteractableTokens, PaletteConfig, Spectrum } from '../types';
+import { PaletteConfig, PaletteConfigWithInteractableTokens, Spectrum } from '../types';
+
 import { paletteValueToInteractableToken } from './paletteValueToInteractableToken';
 
 export function paletteConfigToInteractableTokens(

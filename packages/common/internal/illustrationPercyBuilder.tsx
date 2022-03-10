@@ -1,11 +1,12 @@
 import React from 'react';
 import { split } from '@cbhq/cds-utils';
+
 import type {
   BoxBaseProps,
   IllustrationBaseProps,
   StackBaseProps,
-  ThemeProviderBaseProps,
   TextBaseProps,
+  ThemeProviderBaseProps,
 } from '../types';
 
 import { sortedImg } from './data/sortedIllustrationData';

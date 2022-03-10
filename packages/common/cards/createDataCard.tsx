@@ -1,19 +1,19 @@
 import React, { memo } from 'react';
 
-import type {
-  CardBaseProps,
-  CardBodyBaseProps,
-  CardBoxProps,
-  DataCardBaseProps,
-} from '../types/alpha';
+import { defaultMediaSize } from '../tokens/card';
+import { gutter } from '../tokens/sizing';
 import type {
   PaletteForeground,
   ProgressBaseProps,
   ProgressCircleBaseProps,
   TextBaseProps,
 } from '../types';
-import { defaultMediaSize } from '../tokens/card';
-import { gutter } from '../tokens/sizing';
+import type {
+  CardBaseProps,
+  CardBodyBaseProps,
+  CardBoxProps,
+  DataCardBaseProps,
+} from '../types/alpha';
 
 type CreateFeatureEntryCardParams<OnPressFn> = {
   Card: React.ComponentType<CardBaseProps<OnPressFn>>;

@@ -1,9 +1,11 @@
 import React from 'react';
 import { entries } from '@cbhq/cds-utils';
+
+import { ScaleProvider } from '../scale/ScaleProvider';
 import type { BoxBaseProps, IconBaseProps, StackBaseProps } from '../types';
 import flattenNodes from '../utils/flattenNodes';
+
 import { unicodeMap } from './data/iconData';
-import { ScaleProvider } from '../scale/ScaleProvider';
 
 export type CreateIconSheetParams = {
   HStack: React.ComponentType<BoxBaseProps & StackBaseProps>;

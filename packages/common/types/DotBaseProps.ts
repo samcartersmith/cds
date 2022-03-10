@@ -1,9 +1,10 @@
 import { ReactNode } from 'react';
+
 import { IconSize } from './IconSize';
-import { SharedProps } from './SharedProps';
+import { PaletteForeground } from './Palette';
 import { PinPlacement } from './Placement';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
-import { PaletteForeground } from './Palette';
+import { SharedProps } from './SharedProps';
 
 export type DotVariant = Extract<
   PaletteForeground,

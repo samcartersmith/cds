@@ -1,4 +1,5 @@
 import type { DividerBaseProps } from '../types';
+
 import { useSpectrumConditional } from './useSpectrumConditional';
 
 export const useAccordionDividerColor = () => {

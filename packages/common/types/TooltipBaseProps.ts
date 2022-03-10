@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+
 import { SharedProps } from './SharedProps';
 import { SpacingScale } from './SpacingScale';
 

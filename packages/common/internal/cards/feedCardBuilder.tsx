@@ -1,8 +1,9 @@
 import React from 'react';
+
 import {
   ButtonBaseProps,
-  IconButtonBaseProps,
   GroupBaseProps,
+  IconButtonBaseProps,
   NoopFn,
   RenderGroupItem,
 } from '../../types';

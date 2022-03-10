@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 
+import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 import { useButtonSpacing, UseButtonSpacingParams } from '../useButtonSpacing';
 
 describe('useButtonSpacing', () => {

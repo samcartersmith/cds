@@ -1,8 +1,8 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act,renderHook } from '@testing-library/react-hooks';
 
 import { FeatureFlagProvider } from '../FeatureFlagProvider';
-import { useFeatureFlagUpdater } from '../useFeatureFlagUpdater';
 import { useFeatureFlags } from '../useFeatureFlags';
+import { useFeatureFlagUpdater } from '../useFeatureFlagUpdater';
 
 describe('useFeatureFlagUpdater', () => {
   it('updates features flags when called', () => {
@@ -18,11 +18,11 @@ describe('useFeatureFlagUpdater', () => {
       },
     );
 
-    expect(result.current.featureFlags.frontierTypography).toEqual(false);
+    expect(result.current.featureFlags.frontierTypography).toBe(false);
     void act(() => {
       result.current.update({ frontierTypography: true });
     });
-    expect(result.current.featureFlags.frontierTypography).toEqual(true);
+    expect(result.current.featureFlags.frontierTypography).toBe(true);
   });
 
   it('merges updates', () => {
@@ -38,7 +38,7 @@ describe('useFeatureFlagUpdater', () => {
       },
     );
 
-    expect(result.current.featureFlags.frontierTypography).toEqual(false);
+    expect(result.current.featureFlags.frontierTypography).toBe(false);
     void act(() => {
       result.current.update({ frontierTypography: true, frontierCard: true });
       result.current.update({ frontierButton: true });

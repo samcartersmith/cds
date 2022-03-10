@@ -1,7 +1,7 @@
-import { PaletteBorder } from './Palette';
-import { SharedProps } from './SharedProps';
 import { AvatarSize } from './AvatarSize';
+import { PaletteBorder } from './Palette';
 import { Shape } from './Shape';
+import { SharedProps } from './SharedProps';
 
 export type AvatarShape = Exclude<Shape, 'rectangle' | 'squircle'>;
 export type AvatarFallback = 'image' | 'text';

@@ -1,6 +1,6 @@
-import { useMemo, useContext } from 'react';
+import { useContext,useMemo } from 'react';
 
-import { FeatureFlagContext, defaultFeatureFlags } from './FeatureFlagContext';
+import { defaultFeatureFlags,FeatureFlagContext } from './FeatureFlagContext';
 
 export const useFeatureFlags = () => {
   const context = useContext(FeatureFlagContext);

@@ -1,4 +1,5 @@
 import { ButtonBaseProps, IconName, InternalSpacingProps } from '../types';
+
 import { memoize } from './memoize';
 
 const defaultSpacing = 4;

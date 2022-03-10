@@ -2,7 +2,7 @@ import React, { createContext, memo, useContext } from 'react';
 
 import { PaletteConfigProvider } from '../palette/PaletteConfigProvider';
 import { useSpectrum } from '../spectrum/useSpectrum';
-import { elevationPalette, elevationChildrenPalette } from '../tokens/elevation';
+import { elevationChildrenPalette,elevationPalette } from '../tokens/elevation';
 import { ElevationLevels } from '../types';
 
 export type ElevationProviderProps = {
@@ -27,6 +27,7 @@ export const ElevationProvider: React.FC<ElevationProviderProps> = memo(
         </ElevationContext.Provider>
       );
     }
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{children}</>;
   },
 );
@@ -45,6 +46,7 @@ export const ElevationChildrenProvider: React.FC = memo(({ children }) => {
       </ElevationChildContext.Provider>
     );
   }
+  // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{children}</>;
 });
 

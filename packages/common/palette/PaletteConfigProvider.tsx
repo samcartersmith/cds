@@ -1,8 +1,8 @@
 import React, { memo, useMemo } from 'react';
-
 import { emptyObject } from '@cbhq/cds-utils';
 
 import { PartialPaletteConfig } from '../types';
+
 import { defaultPalette } from './constants';
 import { PaletteConfigContext } from './context';
 import { usePaletteConfig } from './usePaletteConfig';

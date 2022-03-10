@@ -37,7 +37,7 @@ describe('ElevationProvider', () => {
       ),
     });
     expect(result.current.background).not.toEqual(defaultPalette.background);
-    expect(result.current.background).toEqual('gray5');
+    expect(result.current.background).toBe('gray5');
   });
 
   it('overrides palette variables if spectrum is dark and elevation of 2 is set', () => {
@@ -49,6 +49,6 @@ describe('ElevationProvider', () => {
       ),
     });
     expect(result.current.background).not.toEqual(defaultPalette.background);
-    expect(result.current.background).toEqual('gray10');
+    expect(result.current.background).toBe('gray10');
   });
 });

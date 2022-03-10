@@ -1,7 +1,8 @@
 import { ReactElement } from 'react';
+
 import { ListCellBaseProps } from './CellBaseProps';
-import { SharedProps } from './SharedProps';
 import { CollapsibleBaseProps } from './CollapsibleBaseProps';
+import { SharedProps } from './SharedProps';
 
 export type AccordionBaseProps = {
   /**

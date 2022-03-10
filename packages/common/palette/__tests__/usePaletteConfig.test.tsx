@@ -1,9 +1,9 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
-import { usePaletteConfig } from '../usePaletteConfig';
-import { defaultPalette, frontierSpectrumPalette } from '../constants';
 import { SystemProvider, SystemProviderProps } from '../../SystemProvider';
+import { defaultPalette, frontierSpectrumPalette } from '../constants';
+import { usePaletteConfig } from '../usePaletteConfig';
 
 type TestAppProviderProps = {
   palette?: SystemProviderProps['palette'];

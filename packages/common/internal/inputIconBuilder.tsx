@@ -1,4 +1,5 @@
 import React, { ComponentType } from 'react';
+
 import type {
   BoxBaseProps,
   IconBaseProps,
@@ -37,21 +38,17 @@ export function inputIconBuilder(
 
   const DefaultsToForeground = () => {
     return (
-      <>
-        <TextInput label="Search" variant="foregroundMuted" start={<InputIcon name="search" />} />
-      </>
+      <TextInput label="Search" variant="foregroundMuted" start={<InputIcon name="search" />} />
     );
   };
 
   const SetColorAndInheritFocusStyle = () => {
     return (
-      <>
-        <TextInput
+      <TextInput
           label="Search"
           variant="foregroundMuted"
           start={<InputIcon color="positive" name="search" />}
         />
-      </>
     );
   };
 

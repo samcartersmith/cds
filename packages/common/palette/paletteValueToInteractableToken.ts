@@ -1,11 +1,12 @@
-import { memoize } from '../utils/memoize';
-import { PaletteConfig, PaletteValue, Spectrum } from '../types';
 import { blendColors } from '../color/blendColors';
 import { opacityDisabled, opacityPressed } from '../tokens/interactable';
-import { paletteValueToHueStep } from './paletteValueToHueStep';
-import { paletteValueToTuple } from './paletteValueToTuple';
-import { paletteValueToRgbaArray } from './paletteValueToRgbaArray';
+import { PaletteConfig, PaletteValue, Spectrum } from '../types';
+import { memoize } from '../utils/memoize';
+
 import { paletteValueToCacheName } from './paletteValueToCacheName';
+import { paletteValueToHueStep } from './paletteValueToHueStep';
+import { paletteValueToRgbaArray } from './paletteValueToRgbaArray';
+import { paletteValueToTuple } from './paletteValueToTuple';
 
 const transparentTokens = {
   disabled: { contentOpacity: 0.38, backgroundColor: 'transparent' },

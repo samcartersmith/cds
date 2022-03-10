@@ -1,7 +1,8 @@
 import type { SharedProps } from '../SharedProps';
+
 import type { ButtonBaseProps } from './ButtonBaseProps';
-import type { IconButtonBaseProps } from './IconButtonBaseProps';
 import type { CardMediaIllustrationName, CardMediaPlacement } from './CardMediaProps';
+import type { IconButtonBaseProps } from './IconButtonBaseProps';
 import type { LikeButtonBaseProps } from './LikeButtonBaseProps';
 
 export type FeedCardBaseProps<OnPressFn> = {

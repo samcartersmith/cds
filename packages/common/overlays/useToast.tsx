@@ -1,13 +1,14 @@
 import React, { ComponentType, useCallback, useContext, useMemo } from 'react';
 
-import { ToastBaseProps, ToastText, ToastOptions } from '../types';
-import { ToastContext } from './ToastProvider';
 import {
-  defaultDuration,
-  withActionDuration,
-  perCharsDuration,
   charsThreshold,
+  defaultDuration,
+  perCharsDuration,
+  withActionDuration,
 } from '../tokens/toast';
+import { ToastBaseProps, ToastOptions,ToastText } from '../types';
+
+import { ToastContext } from './ToastProvider';
 
 export const useToast = <T,>(Toast: ComponentType<ToastBaseProps>) => {
   const { addToast, removeToast, clearToastQueue } = useContext(ToastContext);

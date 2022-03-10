@@ -1,5 +1,5 @@
-import type { IconButtonBaseProps as DeprecatedIconButtonBaseProps } from '../IconButtonBaseProps';
 import type { NoopFn } from '../Helpers';
+import type { IconButtonBaseProps as DeprecatedIconButtonBaseProps } from '../IconButtonBaseProps';
 import type { SharedProps } from '../SharedProps';
 
 /** Alpha version adds testID and uses typescript generics to provide onPress type */

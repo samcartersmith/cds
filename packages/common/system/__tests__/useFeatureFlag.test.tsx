@@ -8,13 +8,13 @@ describe('useFeatureFlag', () => {
     const { result } = renderHook(() => useFeatureFlag('frontierTypography'), {
       wrapper: (props) => <FeatureFlagProvider {...props} />,
     });
-    expect(result.current).toEqual(false);
+    expect(result.current).toBe(false);
   });
 
   it('returns true if feature flag was provided', () => {
     const { result } = renderHook(() => useFeatureFlag('frontierTypography'), {
       wrapper: (props) => <FeatureFlagProvider frontierTypography {...props} />,
     });
-    expect(result.current).toEqual(true);
+    expect(result.current).toBe(true);
   });
 });

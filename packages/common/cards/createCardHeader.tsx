@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 import { gutter } from '../tokens/sizing';
-import type { AvatarBaseProps, TextBaseProps, PaletteForeground } from '../types';
+import type { AvatarBaseProps, PaletteForeground,TextBaseProps } from '../types';
 import type { CardBoxProps, CardHeaderProps } from '../types/alpha';
 
 type CreateCardHeaderParams<T> = {

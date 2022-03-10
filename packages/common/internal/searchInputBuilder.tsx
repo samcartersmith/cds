@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
-import React, { useCallback, useState, ComponentType } from 'react';
-import { TextInputBaseProps } from '../types/TextInputBaseProps';
-import { TextBaseProps } from '../types/TextBaseProps';
+import React, { ComponentType,useCallback, useState } from 'react';
+
 import { SearchInputBaseProps } from '../types/SearchInputBaseProps';
+import { TextBaseProps } from '../types/TextBaseProps';
+import { TextInputBaseProps } from '../types/TextInputBaseProps';
 
 type SearchInputProps = Omit<TextInputBaseProps, 'helperText' | 'suffix' | 'start' | 'end'> & {
   onFocus?: () => void;
@@ -28,9 +29,7 @@ export function searchInputBuilder(
     const [text, setText] = useState('');
 
     return (
-      <>
-        <SearchInput bordered={false} value={text} onChangeText={setText} />
-      </>
+      <SearchInput bordered={false} value={text} onChangeText={setText} />
     );
   };
 

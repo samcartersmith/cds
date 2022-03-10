@@ -1,6 +1,6 @@
 import { InputStackBaseProps, SharedInputProps } from './InputBaseProps';
-import { SharedProps } from './SharedProps';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
+import { SharedProps } from './SharedProps';
 import { TextAlignProps } from './TextBaseProps';
 
 export type TextInputBaseProps = {

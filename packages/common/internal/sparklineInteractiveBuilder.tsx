@@ -1,4 +1,5 @@
-import React, { memo, useCallback, useMemo, useRef, useState, ReactNode } from 'react';
+import React, { memo, ReactNode,useCallback, useMemo, useRef, useState } from 'react';
+
 import { ChartData, ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
 import { SparklineInteractiveBaseProps } from '../types/SparklineInteractiveBaseProps';
 import {

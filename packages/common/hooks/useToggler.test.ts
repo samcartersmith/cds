@@ -11,10 +11,10 @@ describe('useToggler', () => {
     });
     expect(result.current[0]).toBe(false);
     act(() => result.current[1].toggleOn());
-    expect(result.current[0]).toEqual(true);
+    expect(result.current[0]).toBe(true);
     act(() => result.current[1].toggleOff());
-    expect(result.current[0]).toEqual(false);
+    expect(result.current[0]).toBe(false);
     act(() => result.current[1].toggle());
-    expect(result.current[0]).toEqual(true);
+    expect(result.current[0]).toBe(true);
   });
 });

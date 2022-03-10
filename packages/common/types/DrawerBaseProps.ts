@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
-import { NoopFn } from './Helpers';
+
 import { PinningDirection } from './BoxBaseProps';
+import { NoopFn } from './Helpers';
 import { SharedProps } from './SharedProps';
 
 export type DrawerRenderChildren = (props: { handleClose: NoopFn }) => NonNullable<ReactNode>;

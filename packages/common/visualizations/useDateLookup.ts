@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+
 import { ChartFormatDate, ChartGetMarker } from '../types';
 
 export type GetFormattedDateParams<Period extends string> = {

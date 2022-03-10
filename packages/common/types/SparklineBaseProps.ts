@@ -1,5 +1,5 @@
-import { SharedProps } from './SharedProps';
 import { ElementChildren } from './React';
+import { SharedProps } from './SharedProps';
 
 export type SparklineBaseProps = {
   /** @danger Only use if you have a non CDS color powering the background color that a Sparkline will appear on top of. This is needed to validate the the `color` prop is an accessible color, otherwise it will pick an appropriate replacement. Accepts any valid color (hex, rgb, rgba). */

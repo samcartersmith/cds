@@ -1,4 +1,5 @@
 import { ScaleDensity } from '../types/Scale';
+
 import { useScale } from './useScale';
 
 export function useScaleDensity(): ScaleDensity {

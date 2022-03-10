@@ -1,14 +1,15 @@
 import {
-  useCallback,
-  useState,
-  useEffect,
-  useRef,
+  cloneElement,
   ReactElement,
   RefAttributes,
-  cloneElement,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
-import { ToastRefBaseProps, ToastBaseProps } from '../types';
+
 import { useTimer } from '../hooks/useTimer';
+import { ToastBaseProps,ToastRefBaseProps } from '../types';
 
 export type ToastNode = {
   duration: number;

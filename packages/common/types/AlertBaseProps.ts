@@ -1,10 +1,11 @@
 import { MouseEventHandler, ReactNode } from 'react';
-import { ButtonVariant } from './ButtonBaseProps';
-import { IllustrationPictogramNames } from './IllustrationNames';
-import { NoopFn } from './Helpers';
+
 import { PositionStyles } from './BoxBaseProps';
-import { SharedProps } from './SharedProps';
+import { ButtonVariant } from './ButtonBaseProps';
+import { NoopFn } from './Helpers';
+import { IllustrationPictogramNames } from './IllustrationNames';
 import { ModalBaseProps } from './ModalBaseProps';
+import { SharedProps } from './SharedProps';
 
 export type AlertBaseProps = {
   /**

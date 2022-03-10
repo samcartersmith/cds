@@ -1,7 +1,8 @@
 import { PropsWithChildren, ReactElement } from 'react';
+
 import { BoxBaseProps } from './BoxBaseProps';
-import { PaletteBackground } from './Palette';
 import { DotCountBaseProps } from './DotCountBaseProps';
+import { PaletteBackground } from './Palette';
 import { SetState } from './React';
 import { SharedProps } from './SharedProps';
 

@@ -1,4 +1,5 @@
-import { PaletteValueToRgbaStringFn, A11yColorUsage } from '../types';
+import { A11yColorUsage,PaletteValueToRgbaStringFn } from '../types';
+
 import { colorToSpectrumAlias } from './colorToSpectrumAlias';
 import { isAccessibleColor } from './isAccessibleColor';
 

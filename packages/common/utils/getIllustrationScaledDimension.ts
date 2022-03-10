@@ -1,5 +1,6 @@
 import { IllustrationVariant } from '../types/IllustrationNames';
 import { IllustrationDimension } from '../types/IllustrationProps';
+
 import { convertDimensionToSize } from './convertDimensionToSize';
 import { convertSizeWithMultiplier } from './convertSizeWithMultiplier';
 

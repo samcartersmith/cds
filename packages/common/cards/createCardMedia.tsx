@@ -1,12 +1,13 @@
 import React, { memo } from 'react';
+
+import { defaultMediaDimension,defaultMediaSize } from '../tokens/card';
 import type {
-  CardMediaImageSizeObject,
   CardMediaIllustrationProps,
-  CardMediaProps,
+  CardMediaImageSizeObject,
   CardMediaPlacement,
+  CardMediaProps,
   CardRemoteImageProps,
 } from '../types/alpha';
-import { defaultMediaSize, defaultMediaDimension } from '../tokens/card';
 
 type CreateCardMediaParams = {
   Illustration: React.ComponentType<CardMediaIllustrationProps>;

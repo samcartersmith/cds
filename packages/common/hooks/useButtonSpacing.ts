@@ -1,5 +1,5 @@
-import { ButtonBaseProps, IconName, InternalSpacingProps } from '../types';
 import { useFeatureFlag } from '../system/useFeatureFlag';
+import { ButtonBaseProps, IconName, InternalSpacingProps } from '../types';
 import { getButtonSpacing } from '../utils/getButtonSpacing';
 
 export type UseButtonSpacingParams = {

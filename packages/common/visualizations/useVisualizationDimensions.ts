@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+
 import { DimensionValue } from '../types';
 
 type VisualizationDimensions = {

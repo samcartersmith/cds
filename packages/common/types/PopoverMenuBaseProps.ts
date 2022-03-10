@@ -1,8 +1,9 @@
-import { ReactNode, FocusEvent } from 'react';
+import { FocusEvent,ReactNode } from 'react';
+
 import { NoopFn } from './Helpers';
-import { SharedProps } from './SharedProps';
-import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SetState } from './React';
+import { SharedAccessibilityProps } from './SharedAccessibilityProps';
+import { SharedProps } from './SharedProps';
 
 export type PopoverPositionConfig = {
   offset: [number, number];

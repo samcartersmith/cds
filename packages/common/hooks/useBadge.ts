@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { BadgeVariant, BadgeValue, BadgeBaseProps } from '../types/BadgeBaseProps';
+import { BadgeBaseProps,BadgeValue, BadgeVariant } from '../types/BadgeBaseProps';
 
 export type { BadgeBaseProps };
 

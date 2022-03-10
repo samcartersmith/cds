@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act,renderHook } from '@testing-library/react-hooks';
 
 import { FeatureFlagProvider } from '../FeatureFlagProvider';
 import { useFeatureFlagDispatcher } from '../useFeatureFlagDispatcher';
@@ -18,11 +18,11 @@ describe('useFeatureFlagDispatcher', () => {
       },
     );
 
-    expect(result.current.featureFlags.frontierTypography).toEqual(false);
+    expect(result.current.featureFlags.frontierTypography).toBe(false);
     void act(() => {
       result.current.dispatcher.dispatch({ type: 'update', value: { frontierTypography: true } });
     });
-    expect(result.current.featureFlags.frontierTypography).toEqual(true);
+    expect(result.current.featureFlags.frontierTypography).toBe(true);
   });
 
   it('merges updates', () => {
@@ -38,7 +38,7 @@ describe('useFeatureFlagDispatcher', () => {
       },
     );
 
-    expect(result.current.featureFlags.frontierTypography).toEqual(false);
+    expect(result.current.featureFlags.frontierTypography).toBe(false);
     void act(() => {
       result.current.dispatcher.dispatch({
         type: 'update',

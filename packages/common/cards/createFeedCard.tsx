@@ -2,7 +2,6 @@ import React, { memo, useMemo } from 'react';
 
 import type {
   ButtonBaseProps,
-  IconButtonBaseProps,
   CardBaseProps,
   CardBodyBaseProps,
   CardBoxProps,
@@ -10,6 +9,7 @@ import type {
   CardHeaderProps,
   CdsPlatform,
   FeedCardBaseProps,
+  IconButtonBaseProps,
   LikeButtonBaseProps,
 } from '../types/alpha';
 

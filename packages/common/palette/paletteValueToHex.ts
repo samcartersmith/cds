@@ -1,8 +1,9 @@
-import { memoize } from '../utils/memoize';
 import { colorToHex } from '../color/colorToHex';
 import type { PaletteValue, Spectrum } from '../types';
-import { paletteValueToRgbaArray } from './paletteValueToRgbaArray';
+import { memoize } from '../utils/memoize';
+
 import { paletteValueToCacheName } from './paletteValueToCacheName';
+import { paletteValueToRgbaArray } from './paletteValueToRgbaArray';
 
 /**
  * Given a color that is a PaletteValue and the spectrum, output a hex value of this color

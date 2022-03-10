@@ -1,7 +1,8 @@
-import type { CardRemoteImageDimensionValue } from './CardRemoteImageProps';
-import type { AspectRatio } from '../Shape';
 import type { IllustrationVariant } from '../IllustrationNames';
 import type { IllustrationBaseProps } from '../IllustrationProps';
+import type { AspectRatio } from '../Shape';
+
+import type { CardRemoteImageDimensionValue } from './CardRemoteImageProps';
 
 export type CardMediaPlacement = 'start' | 'above' | 'end';
 export type CardMediaSize = Extract<IllustrationVariant, 'spotSquare' | 'pictogram'>;

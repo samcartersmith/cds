@@ -1,8 +1,8 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act,renderHook } from '@testing-library/react-hooks';
 
 import { FeatureFlagProvider } from '../FeatureFlagProvider';
-import { useFeatureFlagToggler } from '../useFeatureFlagToggler';
 import { useFeatureFlags } from '../useFeatureFlags';
+import { useFeatureFlagToggler } from '../useFeatureFlagToggler';
 
 describe('useFeatureFlagToggler', () => {
   it('correctly handles toggling a feature flag', () => {
@@ -17,10 +17,10 @@ describe('useFeatureFlagToggler', () => {
         wrapper: (props) => <FeatureFlagProvider {...props} />,
       },
     );
-    expect(result.current.featureFlags.frontierTypography).toEqual(false);
+    expect(result.current.featureFlags.frontierTypography).toBe(false);
     void act(() => {
       result.current.toggle('frontierTypography');
     });
-    expect(result.current.featureFlags.frontierTypography).toEqual(true);
+    expect(result.current.featureFlags.frontierTypography).toBe(true);
   });
 });

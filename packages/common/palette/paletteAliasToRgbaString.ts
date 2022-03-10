@@ -1,6 +1,7 @@
 import type { PaletteAliasToRgbaString } from '../types';
-import { paletteValueToRgbaString } from './paletteValueToRgbaString';
+
 import { defaultPalette, frontierSpectrumPalette } from './constants';
+import { paletteValueToRgbaString } from './paletteValueToRgbaString';
 
 const frontierLight = { ...defaultPalette, ...frontierSpectrumPalette.light } as const;
 const frontierDark = { ...defaultPalette, ...frontierSpectrumPalette.dark } as const;

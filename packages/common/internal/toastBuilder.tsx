@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
-import type { ButtonBaseProps, ToastBaseProps } from '../types';
+
 import { useToast } from '../overlays/useToast';
+import type { ButtonBaseProps, ToastBaseProps } from '../types';
 
 // eslint-disable-next-line no-console
 const onActionPressConsole = () => console.log('action pressed');
@@ -36,9 +37,7 @@ export function toastBuilder({ Toast, Button, PortalProvider }: CreateToastProps
     }, [toast]);
 
     return (
-      <>
-        <Button onPress={handleShow}>Show Toast</Button>
-      </>
+      <Button onPress={handleShow}>Show Toast</Button>
     );
   };
 
@@ -52,9 +51,7 @@ export function toastBuilder({ Toast, Button, PortalProvider }: CreateToastProps
     }, [toast]);
 
     return (
-      <>
-        <Button onPress={handleShow}>Multiline Toast</Button>
-      </>
+      <Button onPress={handleShow}>Multiline Toast</Button>
     );
   };
 

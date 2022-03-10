@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
+
 import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 import { useButtonIconSize } from '../useButtonIconSize';
 
@@ -21,22 +22,22 @@ function createHook({ compact, frontier }: { compact?: boolean; frontier?: boole
 describe('useButtonIconSize', () => {
   it('returns correct size for compact: false, frontier: false', () => {
     const value = createHook({ compact: false, frontier: false });
-    expect(value).toEqual('s');
+    expect(value).toBe('s');
   });
 
   it('returns correct size for compact: true, frontier: false', () => {
     const value = createHook({ compact: true, frontier: false });
-    expect(value).toEqual('xs');
+    expect(value).toBe('xs');
   });
 
   // Frontier tests
   it('returns correct size for compact: false, frontier: true', () => {
     const value = createHook({ compact: false, frontier: true });
-    expect(value).toEqual('m');
+    expect(value).toBe('m');
   });
 
   it('returns correct size for compact: true, frontier: true', () => {
     const value = createHook({ compact: true, frontier: true });
-    expect(value).toEqual('s');
+    expect(value).toBe('s');
   });
 });

@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { useSparklineArea } from '../useSparklineArea';
 
+import { useSparklineArea } from '../useSparklineArea';
 import { UseSparklinePathParams } from '../useSparklinePathGenerator';
 
 const sharedProps = {
@@ -23,8 +23,8 @@ describe('useSparklineArea', () => {
     const { result, rerender } = renderHook((props: UseSparklinePathParams = mockData1) => {
       return useSparklineArea(props);
     });
-    expect(result.current).toEqual('M2,318L220,2L220,320L2,320Z');
+    expect(result.current).toBe('M2,318L220,2L220,320L2,320Z');
     rerender(mockData2);
-    expect(result.current).toEqual('M2,2L220,318L220,320L2,320Z');
+    expect(result.current).toBe('M2,2L220,318L220,320L2,320Z');
   });
 });

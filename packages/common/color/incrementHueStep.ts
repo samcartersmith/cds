@@ -1,6 +1,7 @@
 import { paletteValueToHueStepTuple } from '../palette/paletteValueToHueStepTuple';
 import type { SpectrumAlias } from '../types';
-import { hueSteps, hueStepMap } from './hueSteps';
+
+import { hueStepMap,hueSteps } from './hueSteps';
 
 export const incrementHueStep = (alias: SpectrumAlias) => {
   const [hue, step] = paletteValueToHueStepTuple(alias);

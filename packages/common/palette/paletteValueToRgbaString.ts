@@ -1,6 +1,7 @@
-import { memoize } from '../utils/memoize';
 import { spectrumConfigs } from '../spectrum/spectrumConfigs';
 import type { PaletteValue, Spectrum } from '../types';
+import { memoize } from '../utils/memoize';
+
 import { paletteValueToCacheName } from './paletteValueToCacheName';
 import { paletteValueToTuple } from './paletteValueToTuple';
 

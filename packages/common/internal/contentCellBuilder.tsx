@@ -1,5 +1,6 @@
 import React from 'react';
-import type { ContentCellBaseProps, CellMediaProps, IllustrationPictogramNames } from '../types';
+
+import type { CellMediaProps, ContentCellBaseProps, IllustrationPictogramNames } from '../types';
 
 import { assets } from './data/assets';
 

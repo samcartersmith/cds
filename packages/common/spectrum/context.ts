@@ -1,5 +1,4 @@
 import { createContext } from 'react';
-
 import { noop } from '@cbhq/cds-utils';
 
 import { RootSpectrumPreference, SetState, Spectrum } from '../types';

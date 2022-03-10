@@ -1,7 +1,8 @@
-import { loremIpsum } from './loremIpsum';
+import { likeCounter } from '../utils/likeCounter';
+
 import { avatars } from './avatars';
 import { feedImages } from './feedImages';
-import { likeCounter } from '../utils/likeCounter';
+import { loremIpsum } from './loremIpsum';
 
 const onPress = () => {
   // eslint-disable-next-line no-console

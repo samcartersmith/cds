@@ -1,4 +1,5 @@
 import React, { cloneElement } from 'react';
+
 import { ElementChildren, SparklineAreaBaseProps } from '../types';
 
 export function generateSparklineAreaWithId(

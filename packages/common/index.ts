@@ -1,3 +1,4 @@
+export * from './beta';
 export * from './hooks/useIconSize';
 export * from './hooks/useToggler';
 export * from './lottie/lottieUtils';
@@ -9,4 +10,3 @@ export * from './spectrum/useSpectrum';
 export * from './SystemProvider';
 export * from './types';
 export * from './utils/join';
-export * from './beta';

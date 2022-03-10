@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { selectCellSpacingConfig } from '../tokens/cell';
 import type {
   ButtonBaseProps,
   CellMediaProps,
@@ -7,7 +9,6 @@ import type {
   IllustrationPictogramNames,
   ListCellBaseProps,
 } from '../types';
-import { selectCellSpacingConfig } from '../tokens/cell';
 
 import { assets } from './data/assets';
 

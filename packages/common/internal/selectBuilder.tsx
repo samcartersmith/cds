@@ -1,18 +1,19 @@
-import React, { useState, ReactElement, ComponentType } from 'react';
+import React, { ComponentType,ReactElement, useState } from 'react';
+
+import { useToggler } from '../hooks/useToggler';
 import type {
-  SelectBaseProps,
-  SelectOptionBaseProps,
-  TrayBaseProps,
-  Spectrum,
-  ThemeProviderBaseProps,
   BoxBaseProps,
-  StackBaseProps,
-  Scale,
-  TextInputBaseProps,
   IconBaseProps,
   NoopFn,
+  Scale,
+  SelectBaseProps,
+  SelectOptionBaseProps,
+  Spectrum,
+  StackBaseProps,
+  TextInputBaseProps,
+  ThemeProviderBaseProps,
+  TrayBaseProps,
 } from '../types';
-import { useToggler } from '../hooks/useToggler';
 
 type LinkableProps = {
   onPress?: null | ((event: unknown) => void) | undefined;

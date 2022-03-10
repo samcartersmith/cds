@@ -1,4 +1,5 @@
-import type { PaletteConfigToRgbaStrings, PaletteAlias } from '../types';
+import type { PaletteAlias,PaletteConfigToRgbaStrings } from '../types';
+
 import { paletteValueToRgbaString } from './paletteValueToRgbaString';
 
 /**

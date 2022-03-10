@@ -1,16 +1,17 @@
 import React from 'react';
+
 import {
   BoxBaseProps,
   ButtonBaseProps,
   CardBaseProps,
   CardBodyBaseProps,
-  FeedCardBaseProps,
-  PaletteForeground,
-  StackBaseProps,
-  ListCellBaseProps,
   CellMediaProps,
+  FeedCardBaseProps,
   IconButtonBaseProps,
+  ListCellBaseProps,
+  PaletteForeground,
   SpotSquareProps,
+  StackBaseProps,
 } from '../types';
 
 import { assets } from './data/assets';

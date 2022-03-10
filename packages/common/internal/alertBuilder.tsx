@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+
 import { useToggler } from '../hooks/useToggler';
 import { useAlert } from '../overlays/useAlert';
 import type { AlertBaseProps, ButtonBaseProps, SharedProps } from '../types';
@@ -36,6 +37,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
   };
 
   const PortalAlert = () => {
+    // eslint-disable-next-line react/no-unstable-nested-components
     function AlertExample() {
       const alert = useAlert();
 

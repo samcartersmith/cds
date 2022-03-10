@@ -1,15 +1,16 @@
 import React, { memo, useMemo } from 'react';
 import { emptyObject } from '@cbhq/cds-utils';
+
+import { defaultMediaSize } from '../tokens/card';
+import { gutter } from '../tokens/sizing';
+import type { PaletteForeground, SharedProps, TextBaseProps } from '../types';
 import type {
   ButtonBaseProps,
-  CardBoxProps,
   CardBodyBaseProps,
+  CardBoxProps,
   CardMediaProps,
   CdsPlatform,
 } from '../types/alpha';
-import type { PaletteForeground, SharedProps, TextBaseProps } from '../types';
-import { gutter } from '../tokens/sizing';
-import { defaultMediaSize } from '../tokens/card';
 
 type TextProps = TextBaseProps & {
   color?: PaletteForeground;

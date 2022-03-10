@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { AccordionParentProvider, useAccordionParent } from '../AccordionParentContext';
 import { AccordionBaseProps } from '../../types';
+import { AccordionParentProvider, useAccordionParent } from '../AccordionParentContext';
 
 describe('AccordionParentProvider', () => {
   it('sets default active key', () => {
