@@ -26,9 +26,17 @@ import { useDimensions } from '../hooks/useDimensions';
 import { PressableOpacity, PressableOpacityProps } from '../system/PressableOpacity';
 
 const SCROLL_PADDING = 5; // How much breathing room do we want before showing the paddles
+const containerClassName = css`
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
 const scrollContainerClassName = css`
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 const pressableClass = css`
   margin: 0;
@@ -53,7 +61,7 @@ export const TabNavigation = memo(
         variant = 'primary',
         testID,
         onChange = noop,
-        background = 'background',
+        background,
         ...rest
       }: TabNavigationProps,
       forwardedRef: ForwardedRef<HTMLElement | null>,
@@ -179,7 +187,13 @@ export const TabNavigation = memo(
       );
 
       return (
-        <div ref={observe}>
+        <div ref={observe} className={containerClassName}>
+          <Paddle
+            background={background}
+            show={leftPaddle}
+            onPress={handleScrollLeft}
+            variant={variant}
+          />
           <HStack
             ref={scrollRef}
             onScroll={handleOnScroll}
@@ -188,12 +202,6 @@ export const TabNavigation = memo(
             background={background}
             dangerouslySetClassName={scrollContainerClassName}
           >
-            <Paddle
-              background={background}
-              show={leftPaddle}
-              onPress={handleScrollLeft}
-              variant={variant}
-            />
             <VStack testID={testID} {...rest} spacing={0}>
               {shouldOverrideScale ? (
                 <span style={{ zIndex: zIndex.navigation }}>
@@ -210,14 +218,14 @@ export const TabNavigation = memo(
               )}
               {isPrimary && <TabIndicator background={background} {...activeTabLayout} />}
             </VStack>
-            <Paddle
-              background={background}
-              direction="right"
-              show={rightPaddle}
-              onPress={handleScrollRight}
-              variant={variant}
-            />
           </HStack>
+          <Paddle
+            background={background}
+            direction="right"
+            show={rightPaddle}
+            onPress={handleScrollRight}
+            variant={variant}
+          />
         </div>
       );
     },

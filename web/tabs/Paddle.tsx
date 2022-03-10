@@ -19,7 +19,7 @@ export type PaddleProps = {
 
 const paddleClassName = css`
   display: block;
-  position: relative;
+  position: absolute;
   z-index: ${zIndex.navigation + 1};
 `;
 const noEventsClassName = css`
@@ -33,10 +33,9 @@ const buttonClassName = css`
   z-index: ${zIndex.navigation};
 `;
 const paddleLeftClassName = css`
-  position: fixed;
+  left: 0;
 `;
 const paddleRightClassName = css`
-  position: sticky;
   right: 0;
 `;
 
