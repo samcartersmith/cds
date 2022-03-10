@@ -1,7 +1,7 @@
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
-import { useFeatureFlag } from '../system/useFeatureFlag';
 
-import { frontierLight, frontierDark } from '../styles/spectrum';
+import { frontierDark, frontierLight } from '../styles/spectrum';
+import { useFeatureFlag } from '../system/useFeatureFlag';
 
 const frontierConfig = { light: frontierLight, dark: frontierDark };
 

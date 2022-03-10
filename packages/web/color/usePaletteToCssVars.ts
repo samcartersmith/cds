@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-
 import { usePaletteConfig } from '@cbhq/cds-common';
 
 import { setPaletteConfigToCssVars } from '../utils/palette';

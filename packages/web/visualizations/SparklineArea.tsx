@@ -1,4 +1,4 @@
-import React, { memo, forwardRef } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { SparklineAreaBaseProps } from '@cbhq/cds-common';
 
 export const SparklineArea = memo(

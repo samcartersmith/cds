@@ -1,11 +1,11 @@
-import React, { forwardRef, memo, cloneElement } from 'react';
-
+import React, { cloneElement, forwardRef, memo } from 'react';
 import { IconBaseProps, PaletteForeground } from '@cbhq/cds-common';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 
 import { usePalette } from '../hooks/usePalette';
 import { Box } from '../layout/Box';
 import { visuallyHidden } from '../styles/visuallyHidden';
+
 import { BadgeProps } from './Badge';
 import { iconGlyphMap } from './iconGlyphMap';
 import { iconStyles } from './iconStyles';

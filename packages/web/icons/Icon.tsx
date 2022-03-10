@@ -1,5 +1,4 @@
 import React, { forwardRef, memo } from 'react';
-
 import { IconBaseProps } from '@cbhq/cds-common';
 
 import { IconBase } from './IconBase';

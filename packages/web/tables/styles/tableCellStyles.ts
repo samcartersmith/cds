@@ -1,4 +1,5 @@
 import { css } from 'linaria';
+
 import { palette, spacing } from '../../tokens';
 
 export const tableCell = css`

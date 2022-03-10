@@ -1,9 +1,10 @@
 import { css } from 'linaria';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { animateGradientScaleConfig } from '@cbhq/cds-common/animation/paddle';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+
+import { Animated } from '../animation/Animated';
 import { palette } from '../tokens';
 import { cx } from '../utils/linaria';
-import { Animated } from '../animation/Animated';
 
 export const staticClassName = 'cds-gradient';
 const baseGradient = css`

@@ -1,7 +1,8 @@
-import { InputVariant } from '@cbhq/cds-common';
 import React, { memo } from 'react';
+import { InputVariant } from '@cbhq/cds-common';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
-import { TextLabel2, TextBody, TextProps } from '../typography';
+
+import { TextBody, TextLabel2, TextProps } from '../typography';
 
 export type HelperTextProps = {
   /** Color of helper text */

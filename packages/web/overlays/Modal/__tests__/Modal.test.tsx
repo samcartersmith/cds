@@ -1,21 +1,21 @@
-import { renderA11y } from '@cbhq/jest-utils';
-import { render, fireEvent, waitFor } from '@testing-library/react';
-import { modalBuilder, CreateModalProps } from '@cbhq/cds-common/internal/modalBuilder';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import {
-  loremIpsumBuilder,
   CreateLoremIpsumProps,
   loremIpsum,
+  loremIpsumBuilder,
 } from '@cbhq/cds-common/internal/loremIpsumBuilder';
+import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/internal/modalBuilder';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { Modal } from '../Modal';
-import { ModalFooter } from '../ModalFooter';
-import { ModalBody } from '../ModalBody';
-import { ModalHeader } from '../ModalHeader';
+import { Animated } from '../../../animation/Animated';
 import { Button } from '../../../buttons';
 import { ThemeProvider } from '../../../system/ThemeProvider';
-import { PortalProvider } from '../../PortalProvider';
 import { TextBody, TextLabel1 } from '../../../typography';
-import { Animated } from '../../../animation/Animated';
+import { PortalProvider } from '../../PortalProvider';
+import { Modal } from '../Modal';
+import { ModalBody } from '../ModalBody';
+import { ModalFooter } from '../ModalFooter';
+import { ModalHeader } from '../ModalHeader';
 
 const LoremIpsum = loremIpsumBuilder({
   TextBody,

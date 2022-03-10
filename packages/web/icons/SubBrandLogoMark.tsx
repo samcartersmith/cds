@@ -3,6 +3,7 @@ import {
   SubBrandLogoMarkParams,
   useSubBrandLogoMark,
 } from '@cbhq/cds-common/hooks/useSubBrandLogo';
+
 import { iconStyles } from './iconStyles';
 
 export type SubBrandLogoMarkProps = SubBrandLogoMarkParams;

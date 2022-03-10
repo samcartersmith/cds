@@ -1,3 +1,4 @@
+import { RefObject, useEffect } from 'react';
 import {
   animatePaddleOpacityConfig,
   animatePaddleScaleConfig,
@@ -6,7 +7,7 @@ import {
 } from '@cbhq/cds-common/animation/paddle';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import { durations } from '@cbhq/cds-common/tokens/motion';
-import { RefObject, useEffect } from 'react';
+
 import { Animated } from '../../animation/Animated';
 
 type UseAnimatePaddleVisibility = {

@@ -1,14 +1,13 @@
 import React, { ForwardedRef, forwardRef, memo } from 'react';
-
-import type { CellBaseProps } from '@cbhq/cds-common/types';
-import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 import { css } from 'linaria';
-import { cx } from '../utils/linaria';
+import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
+import type { CellBaseProps } from '@cbhq/cds-common/types';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
-import { Pressable, LinkableProps } from '../system/Pressable';
+import { LinkableProps, Pressable } from '../system/Pressable';
+import { cx } from '../utils/linaria';
 
 const pressClassName = css`
   border-style: hidden;

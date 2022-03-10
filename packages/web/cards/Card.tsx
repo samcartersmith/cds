@@ -1,14 +1,13 @@
-import React, { useCallback, memo } from 'react';
-
+import React, { memo, useCallback } from 'react';
+import { css } from 'linaria';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
 import type { BorderWidth, CardBaseProps, ElevationLevels } from '@cbhq/cds-common/types';
-import { css } from 'linaria';
-import { cx } from '../utils/linaria';
 
 import { usePinStyles } from '../hooks/usePinStyles';
-import { LinkableProps, Pressable } from '../system/Pressable';
 import { VStack } from '../layout/VStack';
+import { LinkableProps, Pressable } from '../system/Pressable';
 import { useFeatureFlag } from '../system/useFeatureFlag';
+import { cx } from '../utils/linaria';
 
 const cardPressableStyles = css`
   padding: 0;

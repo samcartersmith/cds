@@ -1,9 +1,8 @@
-import React, { useCallback, useRef, useState, memo } from 'react';
-
+import React, { memo, useCallback, useRef, useState } from 'react';
 import {
-  useStatusAnimationPoller,
-  LottieStatusAnimationProps,
   LottiePlayer,
+  LottieStatusAnimationProps,
+  useStatusAnimationPoller,
 } from '@cbhq/cds-common';
 import { tradeStatus, TradeStatusLottie } from '@cbhq/cds-lottie-files/tradeStatus';
 

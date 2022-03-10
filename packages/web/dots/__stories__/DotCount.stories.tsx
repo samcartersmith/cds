@@ -1,9 +1,10 @@
 import { dotBuilder } from '@cbhq/cds-common/internal/dotBuilder';
-import { DotCount, DotStatusColor } from '..';
+
+import { Icon } from '../../icons/Icon';
 import { Box, VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
 import { TextLabel1 } from '../../typography/TextLabel1';
-import { Icon } from '../../icons/Icon';
+import { DotCount, DotStatusColor } from '..';
 
 export default {
   title: 'Core Components/Dots/DotCount',

@@ -1,30 +1,28 @@
-import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
-import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import React, {
-  useMemo,
   cloneElement,
-  useCallback,
-  useState,
-  memo,
   forwardRef,
+  memo,
+  useCallback,
+  useMemo,
   useRef,
+  useState,
 } from 'react';
-
-import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
-
-import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { css } from 'linaria';
-import { TextLabel1 } from '../typography';
-import { NativeInput } from './NativeInput';
-import { HelperText } from './HelperText';
+import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
+import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
+import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
+import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 
-import { InputStack } from './InputStack';
-
-import { HStack } from '../layout/HStack';
-import { InputLabel } from './InputLabel';
-import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import { TextInputFocusVariantContext } from './context';
 import { useA11yId } from '../hooks/useA11yId';
+import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { HStack } from '../layout/HStack';
+import { TextLabel1 } from '../typography';
+
+import { TextInputFocusVariantContext } from './context';
+import { HelperText } from './HelperText';
+import { InputLabel } from './InputLabel';
+import { InputStack } from './InputStack';
+import { NativeInput } from './NativeInput';
 
 const borderlessStyle = css`
   border-width: 0;

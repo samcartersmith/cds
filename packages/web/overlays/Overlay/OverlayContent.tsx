@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-import { VStack, VStackProps, BoxElement } from '../../layout';
+import { BoxElement, VStack, VStackProps } from '../../layout';
 import { useThemeProviderStyles } from '../../system/useThemeProviderStyles';
 
 export type OverlayProps = {

@@ -1,5 +1,5 @@
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { css } from 'linaria';
+import { borderRadius } from '@cbhq/cds-common/tokens/border';
 
 import { palette } from '../tokens';
 

@@ -1,12 +1,14 @@
-import React, { memo, useMemo, forwardRef } from 'react';
+import React, { forwardRef, memo, useMemo } from 'react';
 import { ButtonBaseProps, ForwardedRef, SharedProps } from '@cbhq/cds-common';
-import { AvatarBaseProps } from '@cbhq/cds-common/types/AvatarBaseProps';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
-import { cx } from '../utils/linaria';
-import { avatarButton } from './buttonStyles';
-import { PressableOpacity, PressableProps } from '../system';
-import { getFlexStyles } from '../styles/flex';
+import { AvatarBaseProps } from '@cbhq/cds-common/types/AvatarBaseProps';
+
 import { Avatar } from '../media';
+import { getFlexStyles } from '../styles/flex';
+import { PressableOpacity, PressableProps } from '../system';
+import { cx } from '../utils/linaria';
+
+import { avatarButton } from './buttonStyles';
 
 type AvatarButtonProps = {
   as?: React.ComponentType<React.HTMLAttributes<HTMLElement>>;

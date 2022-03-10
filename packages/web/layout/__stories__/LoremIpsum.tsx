@@ -1,7 +1,7 @@
 import React from 'react';
 import { PaletteForeground } from '@cbhq/cds-common/types';
 
-import { TextLabel1, TextBody } from '../../typography';
+import { TextBody, TextLabel1 } from '../../typography';
 
 export type LoremIpsumProps = {
   title?: string;

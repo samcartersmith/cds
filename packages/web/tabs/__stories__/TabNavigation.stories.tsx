@@ -1,13 +1,13 @@
 import React, { useCallback, useMemo, useState } from 'react';
+import { Meta, Story } from '@storybook/react';
 import sample from 'lodash/sample';
-import { Story, Meta } from '@storybook/react';
 import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
-import { VStack } from '../../layout/VStack';
 
+import { Button } from '../../buttons/Button';
+import { Select, SelectOption } from '../../controls';
+import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system';
 import { TabNavigation } from '../TabNavigation';
-import { Select, SelectOption } from '../../controls';
-import { Button } from '../../buttons/Button';
 
 const tabs: TabProps[] = [
   {

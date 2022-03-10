@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 
 type InnerSparklineInteractiveProviderProps = {

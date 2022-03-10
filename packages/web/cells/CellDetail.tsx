@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-
 import type { CellDetailProps } from '@cbhq/cds-common/types';
 
 import { TextBody } from '../typography/TextBody';

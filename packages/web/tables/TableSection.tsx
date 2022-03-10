@@ -1,6 +1,6 @@
-import React, { memo, Children, ReactNode } from 'react';
-import { TableSectionContext } from './context/TableSectionContext';
+import React, { Children, memo, ReactNode } from 'react';
 
+import { TableSectionContext } from './context/TableSectionContext';
 import { TableSectionProps } from './types/tableSectionTypes';
 
 export const TableSection = memo(
@@ -10,7 +10,7 @@ export const TableSection = memo(
     // Provide the section type to child components (specifically TableCell) so that they can
     // be smart about how to render their content.
     return (
-      // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
+      // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop,react/jsx-no-constructed-context-values
       <TableSectionContext.Provider value={{ type: as }}>
         <TableSectionComponent data-testid={testID} {...rest}>
           {Children.map(children, (child: ReactNode) => {

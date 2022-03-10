@@ -1,5 +1,6 @@
 import { css } from 'linaria';
 import { fadeDuration } from '@cbhq/cds-common/tokens/sparkline';
+
 import { cubicBezier } from '../../animation/convertMotionConfig';
 
 export const resetFadeClassName = css`

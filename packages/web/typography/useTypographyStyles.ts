@@ -1,7 +1,8 @@
 import { Typography } from '@cbhq/cds-common';
-import * as typographyStyles from './textStyles';
 
 import { useFeatureFlag } from '../system/useFeatureFlag';
+
+import * as typographyStyles from './textStyles';
 
 export const useTypographyStyles = (name: Typography) => {
   const isFrontier = useFeatureFlag('frontierTypography');

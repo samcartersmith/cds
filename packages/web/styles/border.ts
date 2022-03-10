@@ -1,8 +1,8 @@
 import { css } from 'linaria';
 import { BorderedStyles, ElevationLevels } from '@cbhq/cds-common';
-import { cx } from '../utils/linaria';
 
 import { palette } from '../tokens';
+import { cx } from '../utils/linaria';
 
 export const bordered = css`
   border: 1px solid ${palette.line};

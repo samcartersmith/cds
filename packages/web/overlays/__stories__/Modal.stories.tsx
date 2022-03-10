@@ -1,9 +1,10 @@
-import { modalBuilder, CreateModalProps } from '@cbhq/cds-common/internal/modalBuilder';
-import { PortalProvider } from '../PortalProvider';
+import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/internal/modalBuilder';
+
 import { Button } from '../../buttons/Button';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
-import { Modal, ModalBody, ModalFooter, ModalHeader } from '..';
 import { ThemeProvider } from '../../system/ThemeProvider';
+import { PortalProvider } from '../PortalProvider';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from '..';
 
 export default {
   title: 'Core Components/Modal',

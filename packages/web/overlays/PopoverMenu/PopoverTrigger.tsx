@@ -1,18 +1,20 @@
 import React, {
   cloneElement,
-  useCallback,
-  ReactElement,
   KeyboardEvent,
-  MutableRefObject,
-  RefAttributes,
   memo,
+  MutableRefObject,
+  ReactElement,
+  RefAttributes,
+  useCallback,
 } from 'react';
-import { NoopFn } from '@cbhq/cds-common/types';
 import { selectKeys } from '@cbhq/cds-common/tokens/menu';
-import { usePopoverContext } from './PopoverContext';
-import { HStack } from '../../layout/HStack';
-import { AccessibleControlledReturnType } from '../../hooks/useA11yControlledVisibility';
+import { NoopFn } from '@cbhq/cds-common/types';
+
 import { SearchInputProps } from '../../controls/SearchInput';
+import { AccessibleControlledReturnType } from '../../hooks/useA11yControlledVisibility';
+import { HStack } from '../../layout/HStack';
+
+import { usePopoverContext } from './PopoverContext';
 
 export type PopoverTriggerHOCProps = {
   children: ReactElement;

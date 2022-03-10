@@ -1,12 +1,12 @@
-import { selectBuilder, CreateSelectStoriesProps } from '@cbhq/cds-common/internal/selectBuilder';
-
 import { performanceBenchmarkBuilder } from '@cbhq/cds-common/internal/performanceBenchmarkBuilder';
+import { CreateSelectStoriesProps, selectBuilder } from '@cbhq/cds-common/internal/selectBuilder';
+
 import { VStack } from '../../layout/VStack';
-import { SelectOption } from '../SelectOption';
-import { ThemeProvider } from '../../system/ThemeProvider';
-import { Select } from '../Select';
 import { MenuItem } from '../../overlays/PopoverMenu/MenuItem';
+import { ThemeProvider } from '../../system/ThemeProvider';
 import { InputIcon } from '../InputIcon';
+import { Select } from '../Select';
+import { SelectOption } from '../SelectOption';
 
 export default {
   title: 'Core Components/Inputs/Select',
@@ -23,7 +23,7 @@ const components = {
 };
 
 export const { Default, InputStackOptions, Disabled, Compact, Variants } = selectBuilder(
-  components as CreateSelectStoriesProps,
+  components as unknown as CreateSelectStoriesProps,
 );
 
 export const {
@@ -35,7 +35,7 @@ export const {
 } = selectBuilder({
   ...components,
   spectrum: 'dark',
-} as CreateSelectStoriesProps);
+} as unknown as CreateSelectStoriesProps);
 
 export const {
   Default: Dense,
@@ -46,7 +46,7 @@ export const {
 } = selectBuilder({
   ...components,
   scale: 'xSmall',
-} as CreateSelectStoriesProps);
+} as unknown as CreateSelectStoriesProps);
 
 const NativeSelect = () => {
   return (

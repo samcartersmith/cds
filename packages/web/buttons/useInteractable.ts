@@ -1,20 +1,21 @@
 import {
   BorderRadius,
+  NoopFn,
   PaletteBackground,
   PaletteBorder,
   SpectrumAlias,
   usePaletteConfig,
-  NoopFn,
 } from '@cbhq/cds-common';
 import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
-import { cx } from '../utils/linaria';
 
 import * as borderColors from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
 import { focusRing } from '../styles/focus';
 import { palette } from '../tokens';
 import { OnPress } from '../types';
-import { interactable, disabledState, scaledDownState } from './interactableStyles';
+import { cx } from '../utils/linaria';
+
+import { disabledState, interactable, scaledDownState } from './interactableStyles';
 
 export type InteractableProps<T> = {
   /** Callback fired after the element is pressed.  */

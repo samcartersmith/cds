@@ -1,9 +1,11 @@
 import { PropsWithChildren } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
-import { TableHeader } from '../TableHeader';
+
 import { TableBody } from '../TableBody';
 import { TableFooter } from '../TableFooter';
-import { useTableSectionTag, useTableCellTag } from './useTable';
+import { TableHeader } from '../TableHeader';
+
+import { useTableCellTag, useTableSectionTag } from './useTable';
 
 const HOOK_ERROR = Error(
   'This component must be wrapped in a TableHeader, TableBody or TableFooter.',

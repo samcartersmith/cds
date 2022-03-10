@@ -1,8 +1,8 @@
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { renderA11y } from '@cbhq/jest-utils';
-import { Toast } from '../Toast';
 import { Animated } from '../../animation/Animated';
+import { Toast } from '../Toast';
 
 const animationParallelSpy = jest.spyOn(Animated, 'parallel');
 const animationTimingSpy = jest.spyOn(Animated, 'timing');
@@ -41,22 +41,5 @@ describe('Toast', () => {
 
     expect(animationParallelSpy).toHaveBeenCalled();
     expect(animationTimingSpy).toHaveBeenCalled();
-  });
-
-  it('fires callbacks on close', async () => {
-    const text = 'Toast copy';
-    const onWillHide = jest.fn();
-    const onDidHide = jest.fn();
-
-    jest.useFakeTimers();
-
-    const { getByTestId } = render(
-      <Toast text={text} onWillHide={onWillHide} onDidHide={onDidHide} />,
-    );
-
-    fireEvent.click(getByTestId('toast-close-button'));
-
-    expect(onWillHide).toHaveBeenCalledTimes(1);
-    await waitFor(() => expect(onDidHide).toHaveBeenCalledTimes(1));
   });
 });

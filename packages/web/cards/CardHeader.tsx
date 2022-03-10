@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
-
 import { CardHeaderBaseProps } from '@cbhq/cds-common/types/CardBaseProps';
+
 import { HStack } from '../layout/HStack';
-import { TextLabel1, TextLegal } from '../typography';
 import { RemoteImage } from '../media/RemoteImage';
+import { TextLabel1, TextLegal } from '../typography';
 
 type CardHeaderProps = CardHeaderBaseProps;
 

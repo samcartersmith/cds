@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { SharedProps } from '@cbhq/cds-common';
+
 import { TableSectionProps } from './tableSectionTypes';
 
 /**

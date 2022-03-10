@@ -1,9 +1,10 @@
+import { useCallback, useRef, useState } from 'react';
 import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder';
-import { useRef, useState, useCallback } from 'react';
-import { SearchInput } from '../SearchInput';
-import { TextLabel1 } from '../../typography/TextLabel1';
-import { HStack } from '../../layout/HStack';
+
 import { IconButton } from '../../buttons/IconButton';
+import { HStack } from '../../layout/HStack';
+import { TextLabel1 } from '../../typography/TextLabel1';
+import { SearchInput } from '../SearchInput';
 
 export default {
   title: 'Core Components/Inputs/SearchInput',

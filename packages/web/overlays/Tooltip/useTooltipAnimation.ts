@@ -1,10 +1,11 @@
+import { useCallback, useMemo, useRef } from 'react';
 import {
   animateInOpacityConfig,
   animateInYConfig as baseAnimateInYConfig,
   animateOutOpacityConfig,
   animateOutYConfig as baseAnimateOutYConfig,
 } from '@cbhq/cds-common/animation/tooltip';
-import { useCallback, useMemo, useRef } from 'react';
+
 import { Animated } from '../../animation/Animated';
 
 const animateOutYConfig = {

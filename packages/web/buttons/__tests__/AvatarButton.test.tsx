@@ -1,5 +1,5 @@
-import { render, fireEvent } from '@testing-library/react';
-import { renderA11y } from '@cbhq/jest-utils';
+import { fireEvent, render } from '@testing-library/react';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { AvatarButton } from '../AvatarButton';
 

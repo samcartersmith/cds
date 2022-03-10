@@ -1,9 +1,10 @@
-import { svgs } from '@cbhq/cds-common/internal/data/assets';
 import { css } from 'linaria';
+import { svgs } from '@cbhq/cds-common/internal/data/assets';
+
 import { HStack, VStack } from '../../layout';
+import { ThemeProvider } from '../../system';
 import { TextTitle1 } from '../../typography/TextTitle1';
 import { RemoteImage } from '../RemoteImage';
-import { ThemeProvider } from '../../system';
 
 export default {
   component: RemoteImage,

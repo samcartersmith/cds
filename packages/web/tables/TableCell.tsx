@@ -1,16 +1,16 @@
-import React, { useMemo, memo } from 'react';
-
+import React, { memo, useMemo } from 'react';
 import { css } from 'linaria';
 import { CellSpacing } from '@cbhq/cds-common/types';
 import { isProduction } from '@cbhq/cds-utils';
-import { cx } from '../utils/linaria';
-import { Cell, truncateClassName } from '../cells/Cell';
-import { VStack, HStack } from '../layout';
-import { TextBody, TextLabel2, TextHeadline } from '../typography';
 
-import { TableCellProps } from './types/tableCellTypes';
-import { tableCell, tableHeaderCell, tableFooterCell } from './styles/tableCellStyles';
+import { Cell, truncateClassName } from '../cells/Cell';
+import { HStack, VStack } from '../layout';
+import { TextBody, TextHeadline, TextLabel2 } from '../typography';
+import { cx } from '../utils/linaria';
+
 import { useTableCellTag, useTableSectionTag } from './hooks/useTable';
+import { tableCell, tableFooterCell, tableHeaderCell } from './styles/tableCellStyles';
+import { TableCellProps } from './types/tableCellTypes';
 
 const defaultCellOuterSpacing: CellSpacing = { spacingHorizontal: 0 };
 

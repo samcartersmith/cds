@@ -1,5 +1,5 @@
-import { PinPlacement } from '@cbhq/cds-common';
 import { css } from 'linaria';
+import { PinPlacement } from '@cbhq/cds-common';
 
 export const dotRootContainerStyles = css`
   && {

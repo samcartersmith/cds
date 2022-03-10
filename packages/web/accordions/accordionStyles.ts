@@ -1,10 +1,11 @@
 import { css } from 'linaria';
 import {
+  accordionHiddenRotate,
+  accordionVisibleRotate,
   animateInRotateConfig,
   animateOutRotateConfig,
-  accordionVisibleRotate,
-  accordionHiddenRotate,
 } from '@cbhq/cds-common/animation/accordion';
+
 import { Animated } from '../animation/Animated';
 
 export const iconStyles = {

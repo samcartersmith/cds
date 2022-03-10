@@ -1,11 +1,11 @@
 import React, { memo, useMemo } from 'react';
-
+import { IllustrationVariant } from '@cbhq/cds-common';
+import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { IllustrationBaseProps } from '@cbhq/cds-common/types/IllustrationProps';
 import { convertDimensionToSize } from '@cbhq/cds-common/utils/convertDimensionToSize';
 import { convertSizeWithMultiplier } from '@cbhq/cds-common/utils/convertSizeWithMultiplier';
 import { getDefaultSizeObjectForIllustration } from '@cbhq/cds-common/utils/getDefaultSizeObjectForIllustration';
-import { IllustrationVariant } from '@cbhq/cds-common';
-import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
+
 import { versionNumManifest } from './versionNumManifest';
 
 let loggedWarning = false;

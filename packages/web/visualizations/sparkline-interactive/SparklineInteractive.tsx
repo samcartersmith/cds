@@ -1,41 +1,40 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
-import { emptyArray, noop, isStorybook } from '@cbhq/cds-utils';
+import isEqual from 'lodash/isEqual';
+import isObject from 'lodash/isObject';
+import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { chartCompactHeight, chartHeight } from '@cbhq/cds-common/tokens/sparkline';
 import {
   SparklineInteractiveBaseProps,
   SparklineInteractiveDefaultFallback,
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { VisualizationContainerDimension } from '@cbhq/cds-common/types/VisualizationContainerBaseProps';
-import { chartCompactHeight, chartHeight } from '@cbhq/cds-common/tokens/sparkline';
-import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
-import { chartFallbackPositive, chartFallbackNegative } from '@cbhq/cds-lottie-files';
+import { chartFallbackNegative, chartFallbackPositive } from '@cbhq/cds-lottie-files';
+import { emptyArray, isStorybook, noop } from '@cbhq/cds-utils';
 
-import isObject from 'lodash/isObject';
-import isEqual from 'lodash/isEqual';
+import { Lottie } from '../../animation';
+import { useDimensions } from '../../hooks/useDimensions';
+import { Box } from '../../layout/Box';
+import { ThemeProvider } from '../../system';
+import { VisualizationContainer } from '../VisualizationContainer';
 
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { InnerSparklineInteractiveProvider } from './InnerSparklineInteractiveProvider';
+import { SparklineInteractiveAnimatedPath } from './SparklineInteractiveAnimatedPath';
 import { SparklineInteractiveHoverDate } from './SparklineInteractiveHoverDate';
+import { SparklineInteractiveLineVertical } from './SparklineInteractiveLineVertical';
+import { SparklineInteractiveMarkerDates } from './SparklineInteractiveMarkerDates';
+import { SparklineInteractivePeriodSelector } from './SparklineInteractivePeriodSelector';
 import {
   SparklineInteractiveProvider,
   useSparklineInteractiveContext,
 } from './SparklineInteractiveProvider';
-import { VisualizationContainer } from '../VisualizationContainer';
-import { Box } from '../../layout/Box';
-
-import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
-import { SparklineInteractiveScrubProvider } from './SparklineInteractiveScrubProvider';
 import { SparklineInteractiveScrubHandler } from './SparklineInteractiveScrubHandler';
-import { SparklineInteractiveLineVertical } from './SparklineInteractiveLineVertical';
-import { SparklineInteractiveAnimatedPath } from './SparklineInteractiveAnimatedPath';
-import { InnerSparklineInteractiveProvider } from './InnerSparklineInteractiveProvider';
-import { ThemeProvider } from '../../system';
-import { Lottie } from '../../animation';
-import { SparklineInteractiveMarkerDates } from './SparklineInteractiveMarkerDates';
-import { SparklineInteractivePeriodSelector } from './SparklineInteractivePeriodSelector';
-import { useDimensions } from '../../hooks/useDimensions';
+import { SparklineInteractiveScrubProvider } from './SparklineInteractiveScrubProvider';
+import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
-export * from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 export * from '@cbhq/cds-common/types/Chart';
+export * from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 
 // We override line palette since default line color is a bit too dark.
 // Changing to gray20 more closely matches the line color currently used in production

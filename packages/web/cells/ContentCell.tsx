@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-
 import type { ContentCellBaseProps } from '@cbhq/cds-common/types';
 import { isProduction } from '@cbhq/cds-utils';
 
@@ -9,7 +8,8 @@ import { VStack } from '../layout/VStack';
 import { TextBody } from '../typography/TextBody';
 import { TextHeadline } from '../typography/TextHeadline';
 import { TextLabel2 } from '../typography/TextLabel2';
-import { Cell, CellSharedProps, truncateClassName, overflowClassName } from './Cell';
+
+import { Cell, CellSharedProps, overflowClassName, truncateClassName } from './Cell';
 import { CellAccessory } from './CellAccessory';
 
 export type ContentCellProps = ContentCellBaseProps & CellSharedProps;

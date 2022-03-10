@@ -1,22 +1,24 @@
 import React, {
-  useCallback,
   forwardRef,
   memo,
+  useCallback,
   useEffect,
-  useRef,
   useImperativeHandle,
+  useRef,
 } from 'react';
 import { createPortal } from 'react-dom';
 import { popoverMenuMaxHeight } from '@cbhq/cds-common/tokens/menu';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { ForwardedRef, PopoverMenuBaseProps, PopoverMenuRefProps } from '@cbhq/cds-common/types';
 import { generateRandomId, isDevelopment } from '@cbhq/cds-utils';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { isSSR } from '../../utils/browser';
-import { usePopoverMenu } from './usePopoverMenu';
+
 import { HStack } from '../../layout';
-import { usePopoverChildren } from './usePopoverChildren';
-import { PopoverProvider } from './PopoverContext';
+import { isSSR } from '../../utils/browser';
+
 import { PopoverContent } from './PopoverContent';
+import { PopoverProvider } from './PopoverContext';
+import { usePopoverChildren } from './usePopoverChildren';
+import { usePopoverMenu } from './usePopoverMenu';
 
 export const PopoverMenu = memo(
   forwardRef(function PopoverMenu(

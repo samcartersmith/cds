@@ -1,5 +1,4 @@
 import React, { forwardRef } from 'react';
-
 import { Button } from 'reakit/Button';
 
 type Props = React.AllHTMLAttributes<HTMLElement> & { to?: string };

@@ -1,12 +1,12 @@
-import React, { useEffect, memo, useMemo } from 'react';
+import React, { memo, useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
-import { usePortalState, PortalNode } from '@cbhq/cds-common/overlays/usePortalState';
 import { ToastProvider } from '@cbhq/cds-common/overlays/ToastProvider';
+import { PortalNode, usePortalState } from '@cbhq/cds-common/overlays/usePortalState';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
-import { isBrowser } from '../utils/browser';
 import { ThemeProvider } from '../system';
+import { isBrowser } from '../utils/browser';
 
 export const portalRootId = 'portalRoot';
 export const modalContainerId = 'modalsContainer';

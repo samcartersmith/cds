@@ -1,19 +1,19 @@
 // Children are typed with any
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import React, { useMemo, memo } from 'react';
-
+import React, { memo, useMemo } from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import flattenNodes, { hasProps } from '@cbhq/cds-common/utils/flattenNodes';
 
 import { Button } from '../../buttons';
 import { Divider } from '../../layout/Divider';
 import { VStack } from '../../layout/VStack';
+
+import { MobileMenuChildrenContext } from './MobileMenuChildrenContext';
 import { NavigationBarProps } from './NavigationBar';
 import { NavigationIconButton } from './NavigationIconButton';
 import { NavigationListItem } from './NavigationListItem';
 import { SidebarProps } from './Sidebar';
-import { MobileMenuChildrenContext } from './MobileMenuChildrenContext';
 
 export type MobileMenuProps = {
   sidebar?: SidebarProps['children'];

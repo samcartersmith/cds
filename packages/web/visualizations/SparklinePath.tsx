@@ -1,5 +1,4 @@
 import React, { forwardRef, memo } from 'react';
-
 import { SparklinePathBaseProps } from '@cbhq/cds-common';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 

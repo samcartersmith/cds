@@ -1,4 +1,5 @@
 import { CellMediaType, SharedProps } from '@cbhq/cds-common';
+
 import { TableCellProps } from './tableCellTypes';
 
 export type TableCellFallbackProps = {

@@ -1,9 +1,11 @@
-import { SparklineInteractiveMarkerDatesProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
-import React, { useState, FunctionComponent, memo, useCallback, useMemo } from 'react';
+import React, { FunctionComponent, memo, useCallback, useMemo, useState } from 'react';
 import times from 'lodash/times';
+import { SparklineInteractiveMarkerDatesProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useDateLookup } from '@cbhq/cds-common/visualizations/useDateLookup';
+
 import { Box } from '../../layout';
 import { TextLabel2 } from '../../typography/TextLabel2';
+
 import { fadeInClassName } from './fade';
 
 const labelWidth = 125;
@@ -14,7 +16,7 @@ const SparklineInteractiveMarkerDate: FunctionComponent<{
   const [xPos, setXPos] = useState<number>(0);
   const setupRef = useCallback((ref: HTMLSpanElement) => {
     if (ref) {
-      setXPos(ref?.offsetLeft + ref?.offsetWidth / 2);
+      setXPos(ref.offsetLeft + ref.offsetWidth / 2);
     }
   }, []);
 

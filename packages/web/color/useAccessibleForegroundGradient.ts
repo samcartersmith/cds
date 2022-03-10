@@ -1,8 +1,7 @@
-import { useMemo, useCallback } from 'react';
-
+import { useCallback, useMemo } from 'react';
 import {
-  AccessibleForegroundParams,
   AccessibleForegroundGradientFn,
+  AccessibleForegroundParams,
   GradientArray,
 } from '@cbhq/cds-common';
 import { getAccessibleForegroundGradient } from '@cbhq/cds-common/color/getAccessibleForegroundGradient';

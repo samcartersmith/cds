@@ -1,13 +1,15 @@
-import { css } from 'linaria';
 import React, { useRef } from 'react';
+import { css } from 'linaria';
+import { PaletteBackground, TabLabelProps } from '@cbhq/cds-common';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { TabLabelProps, PaletteBackground } from '@cbhq/cds-common';
-import { cx } from '../utils/linaria';
+
 import { IconButton } from '../buttons/IconButton';
+import { usePalette } from '../hooks/usePalette';
+import { gradient } from '../styles/gradient';
+import { cx } from '../utils/linaria';
+
 import { usePaddleVisibilityEffect } from './hooks/usePaddleVisibilityEffect';
 import { tabLabelSpacingClassName } from './TabLabel';
-import { gradient } from '../styles/gradient';
-import { usePalette } from '../hooks/usePalette';
 
 export type PaddleProps = {
   direction?: 'left' | 'right';

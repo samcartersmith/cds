@@ -1,5 +1,6 @@
+import { fireEvent, render } from '@testing-library/react';
 import { InputVariant, PaletteForeground } from '@cbhq/cds-common';
-import { render, fireEvent } from '@testing-library/react';
+
 import { InputIconButton } from '../InputIconButton';
 import { TextInput } from '../TextInput';
 

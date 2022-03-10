@@ -1,9 +1,9 @@
 import {
-  ReactNode,
+  MouseEventHandler,
   ReactElement,
+  ReactNode,
   TdHTMLAttributes,
   ThHTMLAttributes,
-  MouseEventHandler,
 } from 'react';
 import {
   CellBaseProps,
@@ -12,8 +12,9 @@ import {
   PaletteForeground,
   SharedProps,
 } from '@cbhq/cds-common';
-import { TextProps } from '../../typography';
+
 import { CellProps } from '../../cells/Cell';
+import { TextProps } from '../../typography';
 
 export type TableCellTag = 'td' | 'th' | 'div';
 

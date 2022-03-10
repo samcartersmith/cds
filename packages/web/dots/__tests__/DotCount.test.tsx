@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
-import { renderA11y } from '@cbhq/jest-utils';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { DotCount } from '../DotCount';
 import { Icon } from '../../icons/Icon';
+import { DotCount } from '../DotCount';
 
 const DOTCOUNT_TESTID = 'dot-count-test';
 

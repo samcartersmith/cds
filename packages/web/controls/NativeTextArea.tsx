@@ -1,16 +1,15 @@
-import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
-import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
-import React, { memo, forwardRef } from 'react';
-import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
+import React, { forwardRef, memo } from 'react';
+import { css } from 'linaria';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
+import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
+import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
+import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
 import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 
-import { css } from 'linaria';
-import { cx } from '../utils/linaria';
-import { palette } from '../tokens';
-
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { palette } from '../tokens';
 import { body } from '../typography/textStyles';
+import { cx } from '../utils/linaria';
 
 const nativeTextAreaBaseStyle = css`
   && {

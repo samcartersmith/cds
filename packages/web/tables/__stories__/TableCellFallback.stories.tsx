@@ -1,15 +1,14 @@
-import { CellMediaType } from '@cbhq/cds-common/types';
-import { Story, Meta } from '@storybook/react';
-
+import { Meta, Story } from '@storybook/react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { TextDisplay2 } from '../../typography';
-import { HStack } from '../../layout';
-import { CellMedia } from '../../cells';
+import { CellMediaType } from '@cbhq/cds-common/types';
 
-import { assetHubMock } from '../__mocks__';
-import { Table, TableRow, TableBody, TableCell, TableCellFallback, TableHeader } from '..';
-import { ThemeProvider } from '../../system';
+import { CellMedia } from '../../cells';
 import { Switch } from '../../controls/Switch';
+import { HStack } from '../../layout';
+import { ThemeProvider } from '../../system';
+import { TextDisplay2 } from '../../typography';
+import { assetHubMock } from '../__mocks__';
+import { Table, TableBody, TableCell, TableCellFallback, TableHeader, TableRow } from '..';
 
 export default {
   title: 'Core Components/Table/TableCellFallback',

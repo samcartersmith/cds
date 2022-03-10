@@ -1,5 +1,6 @@
+import { fireEvent, render } from '@testing-library/react';
 import { InputVariant } from '@cbhq/cds-common';
-import { render, fireEvent } from '@testing-library/react';
+
 import { InputIcon } from '../InputIcon';
 import { TextInput } from '../TextInput';
 

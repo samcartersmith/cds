@@ -3,9 +3,10 @@ import {
   SparklineInteractivePeriodProps,
   SparklineInteractivePeriodSelectorProps,
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+
 import { useAccessibleForeground } from '../../color/useAccessibleForeground';
-import { HStack } from '../../layout';
 import { usePalette } from '../../hooks/usePalette';
+import { HStack } from '../../layout';
 import { PressableOpacity } from '../../system/PressableOpacity';
 import { TextLabel1 } from '../../typography/TextLabel1';
 

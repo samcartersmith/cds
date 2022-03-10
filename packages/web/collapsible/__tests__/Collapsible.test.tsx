@@ -1,16 +1,15 @@
-import { render, fireEvent, waitFor } from '@testing-library/react';
-import { renderA11y } from '@cbhq/jest-utils';
-
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import {
   collapsibleBuilder,
   CreateCollapsibleProps,
 } from '@cbhq/cds-common/internal/collapsibleBuilder';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { Collapsible } from '../Collapsible';
 import { Button } from '../../buttons';
-import { TextBody } from '../../typography';
 import { DotCount } from '../../dots';
 import { HStack } from '../../layout';
+import { TextBody } from '../../typography';
+import { Collapsible } from '../Collapsible';
 
 const { MockCollapsible } = collapsibleBuilder({
   Collapsible,

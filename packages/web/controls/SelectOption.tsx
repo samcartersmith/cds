@@ -1,13 +1,14 @@
 import React, { ForwardedRef, forwardRef, memo, RefAttributes } from 'react';
-import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/cell';
+import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
+
 import { Cell, overflowClassName } from '../cells/Cell';
-import { VStack } from '../layout/VStack';
-import { TextHeadline, TextBody } from '../typography';
 import { CellAccessory } from '../cells/CellAccessory';
+import { VStack } from '../layout/VStack';
 import { MenuItem } from '../overlays/PopoverMenu/MenuItem';
 import { usePopoverContext } from '../overlays/PopoverMenu/PopoverContext';
+import { TextBody, TextHeadline } from '../typography';
 
 export type SelectOptionProps = SelectOptionBaseProps & RefAttributes<HTMLElement>;
 

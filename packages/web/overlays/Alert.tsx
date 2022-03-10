@@ -1,22 +1,23 @@
 import React, {
-  useCallback,
-  useRef,
-  MouseEvent,
-  memo,
   forwardRef,
+  memo,
+  MouseEvent,
+  useCallback,
   useImperativeHandle,
+  useRef,
 } from 'react';
-import type { AlertBaseProps, AlertRefBaseProps, ModalRefBaseProps } from '@cbhq/cds-common';
 import { createPortal } from 'react-dom';
+import type { AlertBaseProps, AlertRefBaseProps, ModalRefBaseProps } from '@cbhq/cds-common';
+
+import { Button } from '../buttons';
+import { Pictogram } from '../illustrations';
+import { Box, HStack, VStack } from '../layout';
+import { TextBody, TextTitle3 } from '../typography';
+import { isSSR } from '../utils/browser';
 
 import { Modal, ModalProps } from './Modal/Modal';
-import { TextTitle3, TextBody } from '../typography';
-import { alertContainerId } from './PortalProvider';
-import { HStack, VStack, Box } from '../layout';
-import { Pictogram } from '../illustrations';
-import { Button } from '../buttons';
-import { isSSR } from '../utils/browser';
 import { alertOverModalClassName } from './alertStyles';
+import { alertContainerId } from './PortalProvider';
 
 export type AlertProps = {
   /**

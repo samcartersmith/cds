@@ -1,21 +1,23 @@
 import { createElement } from 'react';
-
+import { css } from 'linaria';
 import type { Typography } from '@cbhq/cds-common';
 import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { emptyObject, pascalCase } from '@cbhq/cds-utils';
-import { css } from 'linaria';
-import { cx } from '../utils/linaria';
-import { fontFamily } from '../tokens';
+
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as foregroundStyles from '../styles/foregroundColor';
 import { disabledState } from '../styles/interactable';
 import { getTypographyStyles } from '../styles/typography';
+import { fontFamily } from '../tokens';
 import type { DynamicElement } from '../types';
+import { cx } from '../utils/linaria';
+
 import type { HTMLTextTags, TextProps } from './TextProps';
 import { useTypographyStyles } from './useTypographyStyles';
 
 export const typographyResets = css`
   margin: 0;
+
   &[data-variant='mono'] {
     font-family: ${fontFamily.mono};
   }
@@ -93,35 +95,38 @@ export const createText = <
       return null;
     }
 
-    return createElement(overrides?.as ?? as, {
-      ...props,
-      'data-testid': testID,
-      'aria-label': accessibilityLabel,
-      'aria-labelledby': accessibilityLabelledBy,
-      id,
-      ...(mono ? { 'data-variant': 'mono' } : emptyObject),
+    return createElement(
+      overrides?.as ?? as,
+      {
+        ...props,
+        'data-testid': testID,
+        'aria-label': accessibilityLabel,
+        'aria-labelledby': accessibilityLabelledBy,
+        id,
+        ...(mono ? { 'data-variant': 'mono' } : emptyObject),
+        style: dangerouslySetColor ? { color: dangerouslySetColor } : undefined,
+        className: cx(
+          typographyResets,
+          inherit ? textInherit : typographyStyles,
+          color === 'currentColor' ? currentColor : foregroundStyles[color],
+          disabled && disabledState,
+          ...getTypographyStyles(name, {
+            align,
+            display,
+            tabularNumbers,
+            slashedZero,
+            selectable,
+            underline,
+            noWrap,
+            overflow,
+            transform,
+          }),
+          spacingStyles,
+          dangerouslySetClassName,
+        ),
+      },
       children,
-      style: dangerouslySetColor ? { color: dangerouslySetColor } : undefined,
-      className: cx(
-        typographyResets,
-        inherit ? textInherit : typographyStyles,
-        color === 'currentColor' ? currentColor : foregroundStyles[color],
-        disabled && disabledState,
-        ...getTypographyStyles(name, {
-          align,
-          display,
-          tabularNumbers,
-          slashedZero,
-          selectable,
-          underline,
-          noWrap,
-          overflow,
-          transform,
-        }),
-        spacingStyles,
-        dangerouslySetClassName,
-      ),
-    });
+    );
   };
 
   TextComponent.displayName = `Text${pascalCase(name)}`;

@@ -1,5 +1,5 @@
-import { ProgressCircle } from '../ProgressCircle';
 import { HStack } from '../../layout';
+import { ProgressCircle } from '../ProgressCircle';
 import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
 
 export default {

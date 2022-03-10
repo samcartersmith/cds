@@ -1,27 +1,27 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { useState } from 'react';
-
 import { css } from 'linaria';
 import { NavigationIconName, useToggler } from '@cbhq/cds-common';
-import { palette } from '../../tokens';
-import { Button, IconButton, AvatarButton, ButtonGroup } from '../../buttons/index';
+
+import { AvatarButton, Button, ButtonGroup, IconButton } from '../../buttons/index';
+import { SelectOption } from '../../controls/SelectOption';
 import { LogoMark, NavigationIcon } from '../../icons';
 import { HStack, VStack } from '../../layout';
-import { TextHeadline, TextDisplay2 } from '../../typography';
+import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
+import { Avatar } from '../../media';
+import { Pressable } from '../../system';
+import { palette } from '../../tokens';
+import { TextDisplay2, TextHeadline } from '../../typography';
 import {
   NavigationBar,
   NavigationTitle,
+  NavLink,
   Sidebar,
   SidebarItem,
   SidebarItemProps,
-  NavLink,
 } from '../index';
 import { navLinkClassName } from '../NavLink';
-import { Pressable } from '../../system';
-import { Avatar } from '../../media';
-import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { SidebarMoreMenu } from '../SidebarMoreMenu';
-import { SelectOption } from '../../controls/SelectOption';
 
 export const StoryMap = {
   NoTabsNoTitle: 'No Tabs no displayTitle',

@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
-
 import { CellMediaType } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { mediaSize, imageSize } from '@cbhq/cds-common/tokens/cell';
+import { imageSize, mediaSize } from '@cbhq/cds-common/tokens/cell';
 
 import { Fallback } from '../layout/Fallback';
 

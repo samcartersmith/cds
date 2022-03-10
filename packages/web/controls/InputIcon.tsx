@@ -1,8 +1,10 @@
-import React, { useContext, memo, forwardRef, ForwardedRef } from 'react';
+import React, { ForwardedRef, forwardRef, memo, useContext } from 'react';
 import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+
 import { Icon } from '../icons';
-import { Box } from '../layout/Box';
 import { IconProps } from '../icons/IconProps';
+import { Box } from '../layout/Box';
+
 import { TextInputFocusVariantContext } from './context';
 
 export type InputIconProps = {

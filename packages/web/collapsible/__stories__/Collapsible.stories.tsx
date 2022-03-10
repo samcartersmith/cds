@@ -3,11 +3,11 @@ import {
   CreateCollapsibleProps,
 } from '@cbhq/cds-common/internal/collapsibleBuilder';
 
-import { Collapsible } from '..';
 import { Button } from '../../buttons';
-import { TextBody } from '../../typography';
 import { DotCount } from '../../dots';
 import { HStack } from '../../layout';
+import { TextBody } from '../../typography';
+import { Collapsible } from '..';
 
 export default {
   component: Collapsible,

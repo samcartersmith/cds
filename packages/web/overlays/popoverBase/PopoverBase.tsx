@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { memo, useCallback } from 'react';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { css } from 'linaria';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
+
 import { Box } from '../../layout/Box';
 import { Overlay } from '../Overlay/Overlay';
+
 import { PopoverBasePortal } from './PopoverBasePortal';
 import { PopoverBaseProps } from './PopoverBaseProps';
 import { useCDSPopper } from './useCDSPopper';

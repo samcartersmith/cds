@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { display2Frontier, display2 } from '../textStyles';
 import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
+import { display2, display2Frontier } from '../textStyles';
 import { useTypographyStyles } from '../useTypographyStyles';
 
 describe('useTypographyStyles', () => {

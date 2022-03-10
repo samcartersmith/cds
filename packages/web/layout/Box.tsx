@@ -1,30 +1,28 @@
 import React, {
-  forwardRef,
   createElement,
-  useState,
-  SetStateAction,
   Dispatch,
+  forwardRef,
+  SetStateAction,
   useEffect,
+  useState,
 } from 'react';
-
-import type { BoxBaseProps, ForwardedRef, SharedProps, Position } from '@cbhq/cds-common';
+import { css } from 'linaria';
+import type { BoxBaseProps, ForwardedRef, Position, SharedProps } from '@cbhq/cds-common';
+import { ElevationLevels } from '@cbhq/cds-common';
 import {
-  ElevationProvider,
   ElevationChildrenProvider,
+  ElevationProvider,
 } from '@cbhq/cds-common/context/ElevationProvider';
 import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
-import { css } from 'linaria';
-
 import { emptyObject } from '@cbhq/cds-utils';
-import { ElevationLevels } from '@cbhq/cds-common';
-import { cx } from '../utils/linaria';
+
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as backgroundColorStyles from '../styles/backgroundColor';
-import * as borderColorStyles from '../styles/borderColor';
 import { getBorderStyles } from '../styles/border';
+import * as borderColorStyles from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
 import { getFlexStyles } from '../styles/flex';
 import {
@@ -37,6 +35,7 @@ import {
   MainAccessibilityRole,
   SectionAccessibilityRole,
 } from '../types';
+import { cx } from '../utils/linaria';
 
 export type InferBoxRole<As> = As extends 'article'
   ? ArticleAccessibilityRole

@@ -1,9 +1,11 @@
-import React, { useMemo, memo } from 'react';
-import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
+import React, { memo, useMemo } from 'react';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
-import { dotRootContainerStyles, getTransform } from './dotStyles';
+import { borderRadius } from '@cbhq/cds-common/tokens/border';
+import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
+
 import { usePalette } from '../hooks/usePalette';
+
+import { dotRootContainerStyles, getTransform } from './dotStyles';
 
 export const DotStatusColor = memo(
   ({ variant, pin, size = 's', children, testID, accessibilityLabel, ...props }: DotBaseProps) => {

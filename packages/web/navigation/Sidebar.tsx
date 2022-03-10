@@ -1,14 +1,15 @@
 import React, { memo, ReactElement, ReactNode, useMemo } from 'react';
-
-import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { css } from 'linaria';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { SharedProps } from '@cbhq/cds-common/types';
-import { VStack } from '../layout';
-import { ThemeProvider } from '../system/ThemeProvider';
+
 import { useDimensions } from '../hooks/useDimensions';
+import { VStack } from '../layout';
 import { breakpoints } from '../layout/responsive';
+import { ThemeProvider } from '../system/ThemeProvider';
+
 import { SidebarProvider } from './SidebarContext';
 
 const breakpointObserverClassName = css`

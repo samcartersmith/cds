@@ -1,11 +1,11 @@
 import React from 'react';
-
-import { DividerBaseProps } from '@cbhq/cds-common';
 import { css } from 'linaria';
 import { Separator } from 'reakit/Separator';
-import { cx } from '../utils/linaria';
+import { DividerBaseProps } from '@cbhq/cds-common';
 
 import { palette } from '../tokens';
+import { cx } from '../utils/linaria';
+
 import { Box, BoxProps } from './Box';
 
 export type DividerProps = DividerBaseProps & Omit<BoxProps, 'as' | 'role'>;

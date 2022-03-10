@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
-import { TextCaption } from '../../typography/TextCaption';
+
 import { HStack } from '../../layout/HStack';
+import { TextCaption } from '../../typography/TextCaption';
 
 export type SectionTitleProps = {
   text: string;

@@ -1,8 +1,8 @@
 import { inputIconBuilder } from '@cbhq/cds-common/internal/inputIconBuilder';
 
+import { Box } from '../../layout/Box';
 import { InputIcon } from '../InputIcon';
 import { TextInput } from '../TextInput';
-import { Box } from '../../layout/Box';
 
 export default {
   title: 'Core Components/Inputs/InputIcon',

@@ -1,5 +1,6 @@
 import { illustrationPercyBuilder } from '@cbhq/cds-common/internal/illustrationPercyBuilder';
-import { HStack, VStack, Box } from '../../layout';
+
+import { Box, HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system';
 import { TextLabel1 } from '../../typography';
 import { Illustration } from '../Illustration';

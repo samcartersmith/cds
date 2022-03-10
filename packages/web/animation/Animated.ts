@@ -1,8 +1,8 @@
 import { RefObject } from 'react';
-import { MotionBaseSpec } from '@cbhq/cds-common';
-import { isStorybook } from '@cbhq/cds-utils';
-import { curves, durations } from '@cbhq/cds-common/tokens/motion';
 import { TargetAndTransition } from 'framer-motion';
+import { MotionBaseSpec } from '@cbhq/cds-common';
+import { curves, durations } from '@cbhq/cds-common/tokens/motion';
+import { isStorybook } from '@cbhq/cds-utils';
 
 import { convertMotionConfig } from './convertMotionConfig';
 

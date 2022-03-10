@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-floating-promises */
 
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import {
-  useDimensions,
-  Options,
-  observerErr,
   borderBoxWarn,
   Event as ResizeEvent,
+  observerErr,
+  Options,
+  useDimensions,
 } from '../useDimensions';
 
 describe('useDimensions', () => {

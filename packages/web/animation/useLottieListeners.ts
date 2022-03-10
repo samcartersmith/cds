@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { LottieListener, LottieAnimationRef } from './types';
+import { LottieAnimationRef, LottieListener } from './types';
 
 export const useLottieListeners = (
   animationRef: LottieAnimationRef,

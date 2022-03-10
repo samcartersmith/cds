@@ -1,8 +1,9 @@
 import { css } from 'linaria';
-import { cx } from '../utils/linaria';
 
 import { spacing } from '../tokens';
-import { modalStaticClassName, devices, modalTopSpacing } from './Modal/modalStyles';
+import { cx } from '../utils/linaria';
+
+import { devices, modalStaticClassName, modalTopSpacing } from './Modal/modalStyles';
 
 export const alertStaticClassName = 'cds-alert';
 

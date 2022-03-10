@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-
 import type { CellAccessoryProps } from '@cbhq/cds-common/types';
 
 import { Icon } from '../icons/Icon';

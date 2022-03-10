@@ -1,9 +1,10 @@
 import { useMemo } from 'react';
+import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import {
   chartCompactHeight,
   chartHeight as chartHeightToken,
 } from '@cbhq/cds-common/tokens/sparkline';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 
 export function useSparklineInteractiveConstants() {

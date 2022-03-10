@@ -1,12 +1,11 @@
 import React from 'react';
-
 import { Placement } from '@popperjs/core';
 import { Tooltip as TooltipPopover, TooltipReference, useTooltipState } from 'reakit/Tooltip';
-import { cx } from '../../utils/linaria';
 
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
-import * as tooltipStyles from '../tooltipStyles';
 import { TextLabel2 } from '../../typography/TextLabel2';
+import { cx } from '../../utils/linaria';
+import * as tooltipStyles from '../tooltipStyles';
 
 type TooltipProps = {
   children: (props: React.HTMLAttributes<HTMLElement>) => React.ReactNode;

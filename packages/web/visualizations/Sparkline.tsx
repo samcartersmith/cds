@@ -1,13 +1,13 @@
 import React, { memo, useRef } from 'react';
-
 import { SparklineBaseProps } from '@cbhq/cds-common/types';
-
-import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
 import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
+import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
 import { generateRandomId } from '@cbhq/cds-utils';
+
 import { useAccessibleForeground } from '../color/useAccessibleForeground';
-import { SparklinePath } from './SparklinePath';
+
 import { SparklineAreaPattern } from './SparklineAreaPattern';
+import { SparklinePath } from './SparklinePath';
 
 export const Sparkline = memo(
   ({

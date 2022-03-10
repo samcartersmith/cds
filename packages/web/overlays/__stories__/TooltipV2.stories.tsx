@@ -3,15 +3,16 @@ import {
   ComponentStory,
 } from '@storybook/react/dist/ts3.9/client/preview/types-6-3';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
-import { TooltipProps } from '../Tooltip/TooltipProps';
-import { VStack } from '../../layout/VStack';
-import { HStack } from '../../layout/HStack';
+
 import { Button } from '../../buttons/Button';
-import { Tooltip } from '../Tooltip/Tooltip';
 import { IconButton } from '../../buttons/IconButton';
+import { DotSymbol } from '../../dots/DotSymbol';
+import { HStack } from '../../layout/HStack';
+import { VStack } from '../../layout/VStack';
 import { TextLabel1 } from '../../typography';
 import { PortalProvider } from '../PortalProvider';
-import { DotSymbol } from '../../dots/DotSymbol';
+import { Tooltip } from '../Tooltip/Tooltip';
+import { TooltipProps } from '../Tooltip/TooltipProps';
 
 export default {
   title: 'Core Components/TooltipV2',

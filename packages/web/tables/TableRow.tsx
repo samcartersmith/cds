@@ -1,13 +1,14 @@
-import React, { useRef, memo, useMemo } from 'react';
+import React, { memo, useMemo, useRef } from 'react';
 import { NoopFn } from '@cbhq/cds-common';
+
+import { palette } from '../tokens';
 import { cx } from '../utils/linaria';
+
 import { useTableSectionTag } from './hooks/useTable';
 import { useTableRowListener } from './hooks/useTableRowListener';
-import { TableCell } from './TableCell';
-import { palette } from '../tokens';
-
-import { TableRowProps, TableRowRef } from './types/tableRowTypes';
 import { tableRow, tableRowHover } from './styles/tableRowStyles';
+import { TableRowProps, TableRowRef } from './types/tableRowTypes';
+import { TableCell } from './TableCell';
 
 export type { TableRowProps } from './types/tableRowTypes';
 export const TableRow = memo(

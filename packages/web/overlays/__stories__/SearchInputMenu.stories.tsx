@@ -1,20 +1,21 @@
 import React, {
-  useCallback,
-  useMemo,
-  useState,
-  useEffect,
-  useRef,
   FocusEvent,
   KeyboardEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
 } from 'react';
 import { PopoverMenuRefProps, useToggler } from '@cbhq/cds-common';
-import { TextCaption, TextLabel1 } from '../../typography';
-import { PopoverMenu, PopoverTrigger, MenuItem } from '../index';
+
 import { SearchInput } from '../../controls/SearchInput';
 import { SelectOption } from '../../controls/SelectOption';
+import { Icon } from '../../icons';
 import { HStack } from '../../layout/HStack';
 import { Pressable } from '../../system/Pressable';
-import { Icon } from '../../icons';
+import { TextCaption, TextLabel1 } from '../../typography';
+import { MenuItem, PopoverMenu, PopoverTrigger } from '../index';
 
 const options = [
   'Option 1',
@@ -96,6 +97,7 @@ export const SearchInputMenu = () => {
     popoverMenuRef.current?.handlePopoverMenuBlur(event);
   }, []);
 
+  // eslint-disable-next-line react/no-unstable-nested-components
   const ShowAllResultsButton = () => {
     return (
       <MenuItem value="" onPress={handleClear}>

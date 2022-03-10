@@ -1,5 +1,6 @@
 import { withPerformance } from 'storybook-addon-performance';
 import { performanceBenchmarkBuilder } from '@cbhq/cds-common/internal/performanceBenchmarkBuilder';
+
 import { Box } from '../Box';
 
 export default {

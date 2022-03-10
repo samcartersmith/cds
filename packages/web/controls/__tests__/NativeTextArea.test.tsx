@@ -1,5 +1,6 @@
-import { renderA11y } from '@cbhq/jest-utils';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
+
 import { NativeTextArea } from '../NativeTextArea';
 
 const TEST_ID = 'native-textarea';

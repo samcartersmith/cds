@@ -1,9 +1,9 @@
-import { useMemo, RefObject } from 'react';
+import { RefObject, useMemo } from 'react';
 import {
-  animateInOpacityConfig,
-  animateOutOpacityConfig,
   animateInBottomConfig,
+  animateInOpacityConfig,
   animateOutBottomConfig,
+  animateOutOpacityConfig,
 } from '@cbhq/cds-common/animation/toast';
 
 import { Animated } from '../animation/Animated';

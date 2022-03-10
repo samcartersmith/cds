@@ -1,8 +1,8 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
+
 import { Button } from '../../buttons';
 import { TextHeadline } from '../../typography';
-
-import { Table, TableRow, TableBody, TableCell } from '..';
+import { Table, TableBody, TableCell, TableRow } from '..';
 
 export default {
   title: 'Core Components/Table/TableRow',

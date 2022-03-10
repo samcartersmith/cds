@@ -1,5 +1,4 @@
-import React, { memo, useState, useEffect } from 'react';
-
+import React, { memo, useEffect, useState } from 'react';
 import { SharedProps } from '@cbhq/cds-common';
 
 export type CircularProgressProps = {

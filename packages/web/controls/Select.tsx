@@ -1,15 +1,17 @@
-import React, { memo, forwardRef, ForwardedRef, useCallback, ReactElement, useEffect } from 'react';
-import { SelectBaseProps } from '@cbhq/cds-common/types';
+import React, { ForwardedRef, forwardRef, memo, ReactElement, useCallback, useEffect } from 'react';
 import { useToggler } from '@cbhq/cds-common';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
-import { TextInputFocusVariantContext } from './context';
-import { LinkableProps } from '../system';
+import { SelectBaseProps } from '@cbhq/cds-common/types';
+
 import { useRotate180Animation } from '../animation/useRotate180Animation';
-import { SelectTrigger } from './SelectTrigger';
+import { HStack } from '../layout/HStack';
 import { PopoverMenu } from '../overlays';
 import { MenuItemProps } from '../overlays/PopoverMenu/MenuItem';
 import { PopoverTriggerWrapper } from '../overlays/PopoverMenu/PopoverTriggerWrapper';
-import { HStack } from '../layout/HStack';
+import { LinkableProps } from '../system';
+
+import { TextInputFocusVariantContext } from './context';
+import { SelectTrigger } from './SelectTrigger';
 
 export type SelectProps = {
   children: ReactElement<MenuItemProps & LinkableProps>[];

@@ -1,6 +1,7 @@
-import { Options as PopperOptions } from '@popperjs/core';
 import { useMemo, useState } from 'react';
 import { usePopper } from 'react-popper';
+import { Options as PopperOptions } from '@popperjs/core';
+
 import { PopoverBasePlacement } from './PopoverBaseProps';
 
 const DEFAULT_POPPER_GAP = 0;

@@ -1,21 +1,23 @@
-import React, { memo, useEffect, useState, useRef, forwardRef } from 'react';
+import React, { forwardRef, memo, useEffect, useRef, useState } from 'react';
+import { css } from 'linaria';
+import { ForwardedRef } from '@cbhq/cds-common';
+import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import {
   ProgressCircleBaseProps,
   ProgressCircleTextBaseProps,
   ProgressInnerCircleBaseProps,
 } from '@cbhq/cds-common/types/ProgressCircleBaseProps';
-import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
-import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { VisualizationContainerDimension } from '@cbhq/cds-common/types/VisualizationContainerBaseProps';
-import { getProgressCircleParams } from '@cbhq/cds-common/visualizations/getProgressCircleParams';
-import { css } from 'linaria';
 import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
-import { ForwardedRef } from '@cbhq/cds-common';
-import { Box } from '../layout';
-import { usePalette } from '../hooks/usePalette';
+import { getProgressCircleParams } from '@cbhq/cds-common/visualizations/getProgressCircleParams';
+import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
+
 import { convertMotionConfig } from '../animation/convertMotionConfig';
-import { VisualizationContainer } from './VisualizationContainer';
+import { usePalette } from '../hooks/usePalette';
+import { Box } from '../layout';
+
 import { ProgressTextLabel } from './ProgressTextLabel';
+import { VisualizationContainer } from './VisualizationContainer';
 
 const svgClassName = css`
   display: block;

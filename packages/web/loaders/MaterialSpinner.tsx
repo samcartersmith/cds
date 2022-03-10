@@ -1,9 +1,9 @@
 import React, { memo, useMemo } from 'react';
-
 import { SharedProps } from '@cbhq/cds-common';
 import { PaletteForeground } from '@cbhq/cds-common/types/Palette';
 
 import { usePalette } from '../hooks/usePalette';
+
 import * as styles from './styles';
 
 export type MaterialSpinnerProp = {

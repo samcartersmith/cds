@@ -1,10 +1,12 @@
 import React, { memo, ReactNode } from 'react';
 import { PopoverMenuBaseProps, PopoverPositionConfig, SharedProps } from '@cbhq/cds-common';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
+import { sidebarMenuMaxWidth, sidebarMenuMinWidth } from '@cbhq/cds-common/tokens/menu';
 import { sidebarGutter, sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
-import { sidebarMenuMinWidth, sidebarMenuMaxWidth } from '@cbhq/cds-common/tokens/menu';
-import { SidebarItemProps, SidebarItem } from './SidebarItem';
+
 import { PopoverMenu, PopoverTrigger, PopoverTriggerProps } from '../overlays';
+
+import { SidebarItem, SidebarItemProps } from './SidebarItem';
 
 export type SidebarMoreMenuProps = {
   children: ReactNode;

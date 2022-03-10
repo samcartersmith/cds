@@ -1,5 +1,6 @@
 import { css } from 'linaria';
-import { toCssVar } from '@cbhq/cds-utils';
+import { toCssVar } from '@cbhq/cds-utils/string';
+
 import { palette } from '../../tokens';
 
 const gray5CssVar = toCssVar('gray5');

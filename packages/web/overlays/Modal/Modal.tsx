@@ -1,32 +1,33 @@
 import React, {
-  useMemo,
+  forwardRef,
+  memo,
   useCallback,
   useEffect,
-  useRef,
-  memo,
-  forwardRef,
   useImperativeHandle,
+  useMemo,
+  useRef,
 } from 'react';
-import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 import { createPortal } from 'react-dom';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
 import { Position } from '@cbhq/cds-common';
-
+import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
+
+import { useScrollBlocker } from '../../hooks/useScrollBlocker';
+import { Box, BoxProps, VStack } from '../../layout';
+import { isSSR } from '../../utils/browser';
 import { cx } from '../../utils/linaria';
-import { Box, VStack, BoxProps } from '../../layout';
 import { Overlay } from '../Overlay/Overlay';
+import { modalContainerId } from '../PortalProvider';
+
 import {
   modalDefaultClassName,
-  modalResponsiveClassName,
   modalOverlayDefaultClassName,
   modalOverlayResponsiveClassName,
+  modalResponsiveClassName,
 } from './modalStyles';
-import { useScrollBlocker } from '../../hooks/useScrollBlocker';
 import { useModalAnimation } from './useModalAnimation';
-import { isSSR } from '../../utils/browser';
-import { modalContainerId } from '../PortalProvider';
 
 export type ModalProps = {
   /**

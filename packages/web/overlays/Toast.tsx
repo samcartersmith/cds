@@ -1,26 +1,27 @@
 import React, {
+  forwardRef,
   memo,
   useCallback,
-  forwardRef,
-  useImperativeHandle,
-  useEffect,
-  useRef,
   useContext,
+  useEffect,
+  useImperativeHandle,
+  useRef,
 } from 'react';
 import { createPortal } from 'react-dom';
 import { ToastBaseProps, ToastRefBaseProps } from '@cbhq/cds-common';
-import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { ToastContext } from '@cbhq/cds-common/overlays/ToastProvider';
+import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 
-import { HStack, Box } from '../layout';
-import { TextHeadline } from '../typography';
+import { Button, IconButton } from '../buttons';
+import { Box, HStack } from '../layout';
 import { ThemeProvider } from '../system';
-import { toastClassName } from './toastStyles';
-import { toastContainerId } from './PortalProvider';
+import { TextHeadline } from '../typography';
 import { isSSR } from '../utils/browser';
+
 import { ModalProps } from './Modal/Modal';
+import { toastContainerId } from './PortalProvider';
+import { toastClassName } from './toastStyles';
 import { useToastAnimation } from './useToastAnimation';
-import { IconButton, Button } from '../buttons';
 
 export type ToastProps = {
   /**

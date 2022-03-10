@@ -1,6 +1,8 @@
 import { PropsWithChildren } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
+
 import { Table, TableBody } from '../index';
+
 import { useTableVariant } from './useTableVariant';
 
 describe('useTableVariant', () => {

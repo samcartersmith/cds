@@ -1,9 +1,11 @@
+import React, { ForwardedRef, forwardRef, useEffect, useMemo, useRef } from 'react';
 import { maxWidth, spacingHorizontal, spacingVertical } from '@cbhq/cds-common/tokens/tooltip';
 import { zIndex as cdsZIndex } from '@cbhq/cds-common/tokens/zIndex';
-import React, { ForwardedRef, forwardRef, useEffect, useMemo, useRef } from 'react';
+
 import { Box } from '../../layout/Box';
 import { spacing } from '../../tokens';
 import { TextLabel2 } from '../../typography';
+
 import { PopperTooltipProps } from './TooltipProps';
 
 export const tooltipId = 'tooltipId';

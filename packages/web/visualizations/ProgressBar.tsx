@@ -1,13 +1,14 @@
 import React, { forwardRef, memo, useEffect, useRef } from 'react';
-import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
-import { ProgressBaseProps } from '@cbhq/cds-common/types/ProgressBaseProps';
-import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
-import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { ForwardedRef } from '@cbhq/cds-common';
-import { isRtl } from '../utils/isRtl';
+import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
+import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
+import { ProgressBaseProps } from '@cbhq/cds-common/types/ProgressBaseProps';
+import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
+
+import { Animated } from '../animation/Animated';
 import { usePalette } from '../hooks/usePalette';
 import { Box, HStack, VStack } from '../layout';
-import { Animated } from '../animation/Animated';
+import { isRtl } from '../utils/isRtl';
 
 export const ProgressBar = memo(
   forwardRef(
@@ -41,7 +42,7 @@ export const ProgressBar = memo(
             : -100 + previousPercent * 100;
 
           const translateXEnd = isRtl() ? 100 - progress * 100 : -100 + progress * 100;
-          Animated.timing(innerBarRef, {
+          void Animated.timing(innerBarRef, {
             property: 'transform',
             fromValue: `translateX(${translateXStart}%)`,
             toValue: `translateX(${translateXEnd}%)`,

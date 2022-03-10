@@ -1,5 +1,4 @@
 import React, { forwardRef, useCallback, useMemo, useState } from 'react';
-
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
 import { Button, IconButton } from '../../../buttons/index';
@@ -8,20 +7,20 @@ import { VStack } from '../../../layout';
 import { ThemeProvider } from '../../../system/ThemeProvider';
 import { TextBody, TextTitle1 } from '../../../typography';
 import {
-  TabItem,
-  Tabs,
   Navigation,
   NavigationBar,
   NavigationBarActions,
-  NavigationBarCtas,
   NavigationBarControls,
-  NavigationIconButton,
+  NavigationBarCtas,
   NavigationBarTitles,
   NavigationDisplayTitle,
+  NavigationIconButton,
   NavigationListItem,
   NavigationListItemLinkProps,
-  SidebarSection,
   Sidebar,
+  SidebarSection,
+  TabItem,
+  Tabs,
 } from '../index';
 
 const defaultRoute = '/navigation';
@@ -134,19 +133,13 @@ export const NoTabsNoTitle: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
-        <Navigation
-          key={`${showDarkMode} ${showSidebarSections}`}
-          sidebar={sidebar}
-          navbar={navbar}
-        >
-          {loremBlock}
-          {loremBlock}
-          {loremBlock}
-        </Navigation>
-      </ThemeProvider>
-    </>
+    <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
+      <Navigation key={`${showDarkMode} ${showSidebarSections}`} sidebar={sidebar} navbar={navbar}>
+        {loremBlock}
+        {loremBlock}
+        {loremBlock}
+      </Navigation>
+    </ThemeProvider>
   );
 };
 
@@ -245,20 +238,18 @@ export const TabsNoTitle: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
-        <Navigation
-          key={`${showDarkMode} ${showTabs} ${showSidebarSections}`}
-          sidebar={sidebar}
-          navbar={navbar}
-          tabs={showTabs && tabs}
-        >
-          {loremBlock}
-          {loremBlock}
-          {loremBlock}
-        </Navigation>
-      </ThemeProvider>
-    </>
+    <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
+      <Navigation
+        key={`${showDarkMode} ${showTabs} ${showSidebarSections}`}
+        sidebar={sidebar}
+        navbar={navbar}
+        tabs={showTabs && tabs}
+      >
+        {loremBlock}
+        {loremBlock}
+        {loremBlock}
+      </Navigation>
+    </ThemeProvider>
   );
 };
 
@@ -351,20 +342,18 @@ export const TitleNoTabs: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
-        <Navigation
-          key={`${showDarkMode} ${showDisplayTitle} ${showSidebarSections}`}
-          sidebar={sidebar}
-          navbar={navbar}
-          displayTitle={showDisplayTitle && displayTitle}
-        >
-          {loremBlock}
-          {loremBlock}
-          {loremBlock}
-        </Navigation>
-      </ThemeProvider>
-    </>
+    <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
+      <Navigation
+        key={`${showDarkMode} ${showDisplayTitle} ${showSidebarSections}`}
+        sidebar={sidebar}
+        navbar={navbar}
+        displayTitle={showDisplayTitle && displayTitle}
+      >
+        {loremBlock}
+        {loremBlock}
+        {loremBlock}
+      </Navigation>
+    </ThemeProvider>
   );
 };
 
@@ -473,21 +462,19 @@ export const TabsAndDisplayTitle: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
-        <Navigation
-          key={`${showDarkMode} ${showTabs} ${showDisplayTitle} ${showSidebarSections}`}
-          sidebar={sidebar}
-          navbar={navbar}
-          displayTitle={showDisplayTitle && displayTitle}
-          tabs={showTabs && tabs}
-        >
-          {loremBlock}
-          {loremBlock}
-          {loremBlock}
-        </Navigation>
-      </ThemeProvider>
-    </>
+    <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
+      <Navigation
+        key={`${showDarkMode} ${showTabs} ${showDisplayTitle} ${showSidebarSections}`}
+        sidebar={sidebar}
+        navbar={navbar}
+        displayTitle={showDisplayTitle && displayTitle}
+        tabs={showTabs && tabs}
+      >
+        {loremBlock}
+        {loremBlock}
+        {loremBlock}
+      </Navigation>
+    </ThemeProvider>
   );
 };
 
@@ -563,20 +550,18 @@ export const SidebarCollapsed: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
-        <Navigation
-          key={`${showDarkMode} ${showTabs} ${showDisplayTitle}`}
-          navbar={navbar}
-          displayTitle={showDisplayTitle && displayTitle}
-          tabs={showTabs && tabs}
-        >
-          {loremBlock}
-          {loremBlock}
-          {loremBlock}
-        </Navigation>
-      </ThemeProvider>
-    </>
+    <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
+      <Navigation
+        key={`${showDarkMode} ${showTabs} ${showDisplayTitle}`}
+        navbar={navbar}
+        displayTitle={showDisplayTitle && displayTitle}
+        tabs={showTabs && tabs}
+      >
+        {loremBlock}
+        {loremBlock}
+        {loremBlock}
+      </Navigation>
+    </ThemeProvider>
   );
 };
 
@@ -685,20 +670,18 @@ export const SidebarWithSections: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
-        <Navigation
-          key={`${showDarkMode} ${showTabs} ${showDisplayTitle} ${showSidebarSections}`}
-          sidebar={sidebar}
-          navbar={navbar}
-          displayTitle={showDisplayTitle && displayTitle}
-          tabs={showTabs && tabs}
-        >
-          {loremBlock}
-          {loremBlock}
-          {loremBlock}
-        </Navigation>
-      </ThemeProvider>
-    </>
+    <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
+      <Navigation
+        key={`${showDarkMode} ${showTabs} ${showDisplayTitle} ${showSidebarSections}`}
+        sidebar={sidebar}
+        navbar={navbar}
+        displayTitle={showDisplayTitle && displayTitle}
+        tabs={showTabs && tabs}
+      >
+        {loremBlock}
+        {loremBlock}
+        {loremBlock}
+      </Navigation>
+    </ThemeProvider>
   );
 };

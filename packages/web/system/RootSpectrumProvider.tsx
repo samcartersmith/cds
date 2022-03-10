@@ -1,13 +1,13 @@
 import React, { memo } from 'react';
-
+import { Spectrum } from '@cbhq/cds-common';
+import { RootSpectrumContext } from '@cbhq/cds-common/spectrum/context';
 import {
   RootSpectrumPreferenceProvider,
   RootSpectrumPreferenceProviderProps,
 } from '@cbhq/cds-common/spectrum/RootSpectrumPreferenceProvider';
 import { SpectrumProvider } from '@cbhq/cds-common/spectrum/SpectrumProvider';
-import { Spectrum } from '@cbhq/cds-common';
-import { RootSpectrumContext } from '@cbhq/cds-common/spectrum/context';
 import { useRootSpectrumPreference } from '@cbhq/cds-common/spectrum/useRootSpectrumPreference';
+
 import { useDeviceSpectrum } from '../hooks/useDeviceSpectrum';
 
 const LocalSpectrumProvider = ({ children }: { children: React.ReactNode }) => {

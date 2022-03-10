@@ -1,8 +1,9 @@
 import React, { memo, ReactNode } from 'react';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { ThemeProvider } from '../system/ThemeProvider';
+
 import { HStack, VStack } from '../layout';
+import { ThemeProvider } from '../system/ThemeProvider';
 
 export type NavigationBarProps = {
   /**

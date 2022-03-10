@@ -1,7 +1,7 @@
-import { css } from 'linaria';
-
 // focus visible polyfill
 import 'focus-visible';
+
+import { css } from 'linaria';
 
 export const globalStyles = css`
   :global() {

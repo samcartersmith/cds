@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
-
-import { useGroupToggler, GroupToggleState } from '@cbhq/cds-common/hooks/useGroupToggler';
+import { GroupToggleState, useGroupToggler } from '@cbhq/cds-common/hooks/useGroupToggler';
 
 export type CheckboxGroupStateProps<T extends string> = {
   select: React.ChangeEventHandler<HTMLInputElement>;

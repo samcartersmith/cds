@@ -1,9 +1,11 @@
-import React, { memo, forwardRef } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { ForwardedRef, SharedProps } from '@cbhq/cds-common/types';
-import { HStack } from '../layout';
-import { TextHeadline } from '../typography';
-import { Pressable } from '../system';
+
 import { NavigationIcon, NavigationIconProps } from '../icons';
+import { HStack } from '../layout';
+import { Pressable } from '../system';
+import { TextHeadline } from '../typography';
+
 import { useSidebarContext } from './SidebarContext';
 
 export type SidebarItemProps = {

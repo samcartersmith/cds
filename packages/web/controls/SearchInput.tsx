@@ -1,14 +1,16 @@
-import React, { useCallback, memo, forwardRef, useRef } from 'react';
+import React, { forwardRef, memo, useCallback, useRef } from 'react';
+import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
+import { useScale } from '@cbhq/cds-common/scale/useScale';
+import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { interactableHeight } from '@cbhq/cds-common/tokens/interactableHeight';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { SearchInputBaseProps } from '@cbhq/cds-common/types/SearchInputBaseProps';
-import { useScale } from '@cbhq/cds-common/scale/useScale';
-import { interactableHeight } from '@cbhq/cds-common/tokens/interactableHeight';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
-import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
+
+import { Box } from '../layout/Box';
+
 import { InputIcon } from './InputIcon';
 import { InputIconButton } from './InputIconButton';
 import { TextInput } from './TextInput';
-import { Box } from '../layout/Box';
 
 export type SearchInputProps = SearchInputBaseProps &
   React.InputHTMLAttributes<HTMLInputElement> & {

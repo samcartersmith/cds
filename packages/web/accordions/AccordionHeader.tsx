@@ -1,23 +1,24 @@
-import React, { forwardRef, memo, useCallback, ForwardedRef } from 'react';
+import React, { ForwardedRef, forwardRef, memo, useCallback } from 'react';
+import { useAccordionParent } from '@cbhq/cds-common/accordions/AccordionParentContext';
+import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
+import { listHeight } from '@cbhq/cds-common/tokens/cell';
 import type {
   AccordionHeaderBaseProps,
+  AccordionIconBaseProps,
   AccordionMediaBaseProps,
   AccordionTitleBaseProps,
-  AccordionIconBaseProps,
 } from '@cbhq/cds-common/types';
-import { useAccordionParent } from '@cbhq/cds-common/accordions/AccordionParentContext';
-import { listHeight } from '@cbhq/cds-common/tokens/cell';
-import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 
-import { VStack, Box, HStack } from '../layout';
-import { TextHeadline, TextBody } from '../typography';
-import { Pressable } from '../system/Pressable';
-import { Icon } from '../icons';
-import { getAccordionHeaderId, getAccordionPanelId } from './utils';
-import { typographyResets } from '../typography/createText';
-import { iconStyles } from './accordionStyles';
 import { overflowClassName, truncateClassName } from '../cells/Cell';
+import { Icon } from '../icons';
+import { Box, HStack, VStack } from '../layout';
+import { Pressable } from '../system/Pressable';
+import { TextBody, TextHeadline } from '../typography';
+import { typographyResets } from '../typography/createText';
+
+import { iconStyles } from './accordionStyles';
+import { getAccordionHeaderId, getAccordionPanelId } from './utils';
 
 export type AccordionHeaderProps = AccordionHeaderBaseProps;
 

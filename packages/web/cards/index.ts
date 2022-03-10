@@ -1,8 +1,8 @@
 export * from './Card';
-export * from './CardGroup';
-export * from './CardHeader';
 export * from './CardBody';
 export * from './CardFooter';
+export * from './CardGroup';
+export * from './CardHeader';
 export * from './CardMedia';
 // Card variants
 export * from './AnnouncementCard';

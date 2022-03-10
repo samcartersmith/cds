@@ -1,11 +1,12 @@
-import { PinPlacement } from '@cbhq/cds-common/types/Placement';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
 import { PIN_DIRECTIONS, SIZES } from '@cbhq/cds-common/internal/dotBuilder';
-import { DotSymbol } from '..';
+import { PinPlacement } from '@cbhq/cds-common/types/Placement';
+
+import { Icon } from '../../icons/Icon';
 import { VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
 import { TextLabel1 } from '../../typography/TextLabel1';
-import { Icon } from '../../icons/Icon';
+import { DotSymbol } from '..';
 
 export default {
   title: 'Core Components/Dots/DotSymbol',

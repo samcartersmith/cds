@@ -1,8 +1,9 @@
 import { css } from 'linaria';
 import { FlexStyles } from '@cbhq/cds-common';
-import { cx } from '../utils/linaria';
 
 import { CSSMap, Display } from '../types';
+import { cx } from '../utils/linaria';
+
 import { display as displayStyles } from './display';
 
 export const alignContent: CSSMap<FlexStyles['alignContent']> = {

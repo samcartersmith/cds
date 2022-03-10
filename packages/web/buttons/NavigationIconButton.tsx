@@ -1,14 +1,16 @@
-import React, { useCallback, forwardRef, memo, useMemo, MouseEvent } from 'react';
+import React, { forwardRef, memo, MouseEvent, useCallback, useMemo } from 'react';
 import { ForwardedRef, IconButtonVariant, NavigationIconName, useToggler } from '@cbhq/cds-common';
-import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
+import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
+
 import { NavigationIcon } from '../icons/NavigationIcon';
+import { getFlexStyles } from '../styles/flex';
+import { focusVisibleClassName } from '../styles/focus';
 import { Pressable } from '../system/Pressable';
+import { cx } from '../utils/linaria';
+
 import { iconButton } from './buttonStyles';
 import { IconButtonProps } from './IconButton';
-import { getFlexStyles } from '../styles/flex';
-import { cx } from '../utils/linaria';
-import { focusVisibleClassName } from '../styles/focus';
 
 type NavigationButtonProps = {
   active?: boolean;

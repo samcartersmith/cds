@@ -1,7 +1,8 @@
 import {
-  iconSheetBuilder,
   CreateIconSheetParams,
+  iconSheetBuilder,
 } from '@cbhq/cds-common/internal/iconSheetBuilder';
+
 import { HStack } from '../../layout';
 import { Icon } from '../Icon';
 

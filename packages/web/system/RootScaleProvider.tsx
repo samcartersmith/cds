@@ -1,10 +1,10 @@
+import React, { memo } from 'react';
+import { DEFAULT_SCALE, RootScaleContext } from '@cbhq/cds-common/scale/context';
 import {
   RootScalePreferenceProvider,
   RootScalePreferenceProviderProps,
 } from '@cbhq/cds-common/scale/RootScalePreferenceProvider';
-import React, { memo } from 'react';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
-import { DEFAULT_SCALE, RootScaleContext } from '@cbhq/cds-common/scale/context';
 import { useRootScalePreference } from '@cbhq/cds-common/scale/useRootScalePreference';
 
 const LocalScaleProvider = ({ children }: { children: React.ReactNode }) => {

@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
 
-import type { TableCellFallbackProps } from './types/tableCellFallbackTypes';
-
-import { Fallback } from '../layout';
 import { Cell } from '../cells/Cell';
 import { MediaFallback } from '../cells/MediaFallback';
-import { tableCell } from './styles/tableCellStyles';
+import { Fallback } from '../layout';
+
 import { useTableCellTag } from './hooks/useTable';
+import { tableCell } from './styles/tableCellStyles';
+import type { TableCellFallbackProps } from './types/tableCellFallbackTypes';
 
 export type { TableCellFallbackProps };
 

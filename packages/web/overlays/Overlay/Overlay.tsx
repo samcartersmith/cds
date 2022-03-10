@@ -1,4 +1,4 @@
-import React, { memo, forwardRef } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { OverlayProvider } from '@cbhq/cds-common/context/OverlayProvider';
 
 import { OverlayContent, OverlayProps } from './OverlayContent';

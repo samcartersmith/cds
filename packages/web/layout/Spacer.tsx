@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-
 import { SharedProps } from '@cbhq/cds-common';
 import { SpacerBaseProps } from '@cbhq/cds-common/types/SpacerBaseProps';
 import { getSpacerStyle } from '@cbhq/cds-common/utils/getSpacerStyle';

@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
-
-import { MotionValue, m as motion } from 'framer-motion';
+import { m as motion, MotionValue } from 'framer-motion';
 
 import { IconButton } from '../../buttons/IconButton';
 import { HStack } from '../../layout/HStack';
 import { Spacer } from '../../layout/Spacer';
 import { VStack } from '../../layout/VStack';
+
 import { useNavigation } from './context';
 import { NavigationBarControlsProps } from './NavigationBarControls';
 import { NavigationBarCtasProps } from './NavigationBarCtas';

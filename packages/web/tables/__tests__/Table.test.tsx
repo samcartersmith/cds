@@ -1,4 +1,5 @@
-import { renderA11y } from '@cbhq/jest-utils';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
+
 import { Table } from '../Table';
 
 describe('Table', () => {
@@ -6,6 +7,7 @@ describe('Table', () => {
     expect(
       await renderA11y(
         <Table>
+          {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
           <>Child</>
         </Table>,
       ),

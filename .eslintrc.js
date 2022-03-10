@@ -29,6 +29,14 @@ module.exports = {
     },
     {
       files: [
+        '**/*.tsx',
+      ],
+      rules: {
+        "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }]
+      }
+    },
+    {
+      files: [
         '**/*.test.ts',
         '**/*.test.tsx',
         '**/*.stories.tsx'

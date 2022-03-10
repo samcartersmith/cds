@@ -1,24 +1,24 @@
-import React, { memo, useMemo, useRef, cloneElement, useState } from 'react';
-
+import React, { cloneElement, memo, useMemo, useRef, useState } from 'react';
+import { m as motion, MotionConfig, useElementScroll } from 'framer-motion';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { MotionConfig, useElementScroll, m as motion } from 'framer-motion';
-import { cx } from '../../utils/linaria';
 
 import { useDimensions } from '../../hooks/useDimensions';
 import { useInterpolate } from '../../hooks/useInterpolate';
 import { Box, Divider, VStack } from '../../layout';
 import { bottom as pinBottom } from '../../styles/pin';
-import { NavigationProvider, SidebarLayout, defaultLayout, useNavigation } from './context';
-import { NavigationDisplayTitleProps } from './NavigationDisplayTitle';
-import { rootStyles, gridForSidebar, scrollContent } from './navigationStyles';
-import { sidebarWidth, appContentSpacing } from './navigationTokens';
-import { TabsProps } from './Tabs';
+import { cx } from '../../utils/linaria';
+
+import { defaultLayout, NavigationProvider, SidebarLayout, useNavigation } from './context';
 import { MobileMenu } from './MobileMenu';
 import { NavigationBarProps } from './NavigationBar';
+import { NavigationDisplayTitleProps } from './NavigationDisplayTitle';
+import { gridForSidebar, rootStyles, scrollContent } from './navigationStyles';
+import { appContentSpacing, sidebarWidth } from './navigationTokens';
 import { SidebarProps } from './Sidebar';
+import { TabsProps } from './Tabs';
 
 export type NavigationProps = {
   displayTitle?: React.ReactElement<NavigationDisplayTitleProps> | false | null;
@@ -58,12 +58,6 @@ const NavigationContent: React.FC<NavigationProps> = memo(
       onResize: ({ currentBreakpoint }) => {
         // Triggered when breakpoint is changed
         switch (currentBreakpoint) {
-          case 'desktop':
-          default:
-            setSidebarLayout('expanded');
-            toggleMobileMenuHidden();
-            setShowDisplayTitle(true);
-            break;
           case 'tablet':
             setSidebarLayout('condensed');
             toggleMobileMenuHidden();
@@ -73,6 +67,12 @@ const NavigationContent: React.FC<NavigationProps> = memo(
             setSidebarLayout('hidden');
             // Hide Big displayTitle in mobile
             setShowDisplayTitle(false);
+            break;
+          case 'desktop':
+          default:
+            setSidebarLayout('expanded');
+            toggleMobileMenuHidden();
+            setShowDisplayTitle(true);
             break;
         }
       },

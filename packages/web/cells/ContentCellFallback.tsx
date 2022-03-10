@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
-
 import type { ContentCellFallbackProps } from '@cbhq/cds-common/types';
 
 import { Box } from '../layout/Box';
 import { Fallback } from '../layout/Fallback';
+
 import { Cell } from './Cell';
 import { MediaFallback } from './MediaFallback';
 

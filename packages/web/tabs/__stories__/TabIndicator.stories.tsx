@@ -1,11 +1,11 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { useState } from 'react';
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
+
 import { Button } from '../../buttons/Button';
 import { VStack } from '../../layout/VStack';
-
-import { TabIndicator } from '..';
 import { ThemeProvider } from '../../system';
+import { TabIndicator } from '..';
 
 export default {
   title: 'Core Components/Tabs/TabIndicator',

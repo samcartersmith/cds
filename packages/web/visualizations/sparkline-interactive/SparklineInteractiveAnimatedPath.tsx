@@ -1,14 +1,17 @@
-import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
-import { SparklineInteractiveAnimatedPathProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
-import { useValueChanges } from '@cbhq/cds-common/hooks/useValueChanges';
-import { animatedPathConfig } from '@cbhq/cds-common/animation/sparkline';
-import { interpolatePath } from 'd3-interpolate-path';
 import 'd3-transition'; // Important! do not remove this, it sets up the linkage so you can use select().transition()
+
+import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
+import { interpolatePath } from 'd3-interpolate-path';
 import { select } from 'd3-selection';
-import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
-import { SparklineGradient } from '../SparklineGradient';
+import { animatedPathConfig } from '@cbhq/cds-common/animation/sparkline';
+import { useValueChanges } from '@cbhq/cds-common/hooks/useValueChanges';
+import { SparklineInteractiveAnimatedPathProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+
 import { SparklineArea } from '../SparklineArea';
+import { SparklineGradient } from '../SparklineGradient';
+
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
+import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
 const { duration, easing } = animatedPathConfig;
 

@@ -1,16 +1,18 @@
 import React, { memo, MouseEvent, useCallback, useRef } from 'react';
-import { noop } from '@cbhq/cds-utils';
-import {
-  SparklineInteractiveScrubHandlerProps,
-  SparklineInteractiveBaseProps,
-} from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { css } from 'linaria';
 import { ChartGetMarker } from '@cbhq/cds-common';
 import { fadeDuration, maskOpacity } from '@cbhq/cds-common/tokens/sparkline';
+import {
+  SparklineInteractiveBaseProps,
+  SparklineInteractiveScrubHandlerProps,
+} from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+import { noop } from '@cbhq/cds-utils';
+
+import { cubicBezier } from '../../animation/convertMotionConfig';
+
+import { fadeIn, fadeOut } from './fade';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveScrubContext } from './SparklineInteractiveScrubProvider';
-import { fadeIn, fadeOut } from './fade';
-import { cubicBezier } from '../../animation/convertMotionConfig';
 
 const scrubHandlerContainerClassName = css`
   position: relative;

@@ -1,8 +1,8 @@
 import React, { memo, useMemo } from 'react';
-
-import { AspectRatio, FixedValue, Shape } from '@cbhq/cds-common';
 import { css } from 'linaria';
+import { AspectRatio, FixedValue, Shape } from '@cbhq/cds-common';
 import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
+
 import { cx } from '../utils/linaria';
 
 const resizeModes = {

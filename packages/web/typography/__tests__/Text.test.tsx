@@ -1,24 +1,24 @@
 import { render } from '@testing-library/react';
-import { renderA11y } from '@cbhq/jest-utils';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { textItemsThatHaveTransform } from '../../styles/typography';
 import { DynamicElement } from '../../types';
-import { HTMLNonHeadingTextTags, HTMLTextTags, TextProps } from '../TextProps';
 import {
+  TextBody,
+  TextCaption,
   TextDisplay1,
   TextDisplay2,
   TextDisplay3,
+  TextHeadline,
+  TextLabel1,
+  TextLabel2,
+  TextLegal,
   TextTitle1,
   TextTitle2,
   TextTitle3,
   TextTitle4,
-  TextHeadline,
-  TextBody,
-  TextLabel1,
-  TextLabel2,
-  TextCaption,
-  TextLegal,
 } from '../index';
+import { HTMLNonHeadingTextTags, HTMLTextTags, TextProps } from '../TextProps';
 
 const textComponents = [
   TextDisplay1,

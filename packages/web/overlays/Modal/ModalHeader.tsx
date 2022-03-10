@@ -1,11 +1,11 @@
 import React from 'react';
-import { ModalHeaderBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
+import { ModalHeaderBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 
+import { IconButton } from '../../buttons';
 import { Box, HStack } from '../../layout';
 import { TextHeadline } from '../../typography';
-import { IconButton } from '../../buttons';
 
 export type ModalHeaderProps = {
   /** Handles back button press */

@@ -1,9 +1,11 @@
 import React, { memo, useCallback } from 'react';
 import { css } from 'linaria';
-import { cx } from '../../utils/linaria';
+
 import { TextLabel2 } from '../../typography/TextLabel2';
-import { useSparklineInteractiveScrubContext } from './SparklineInteractiveScrubProvider';
+import { cx } from '../../utils/linaria';
+
 import { resetFadeClassName } from './fade';
+import { useSparklineInteractiveScrubContext } from './SparklineInteractiveScrubProvider';
 
 const textClassName = css`
   display: inline-flex;

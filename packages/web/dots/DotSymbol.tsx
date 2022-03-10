@@ -1,7 +1,9 @@
-import { DotBaseProps, useIconSize } from '@cbhq/cds-common';
 import React, { memo } from 'react';
 import { css } from 'linaria';
+import { DotBaseProps, useIconSize } from '@cbhq/cds-common';
+
 import { RemoteImage } from '../media/RemoteImage';
+
 import { dotRootContainerStyles, getTransform } from './dotStyles';
 
 const imageBorderClassName = css`

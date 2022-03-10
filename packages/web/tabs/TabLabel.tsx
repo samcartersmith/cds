@@ -1,16 +1,18 @@
+import React, { memo, useCallback, useMemo, useRef } from 'react';
+import { css } from 'linaria';
 import { TabIndicatorProps, TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common';
 import { animateDotWidthConfig } from '@cbhq/cds-common/animation/dot';
-import { css } from 'linaria';
-import React, { useCallback, useMemo, memo, useRef } from 'react';
-import { TextHeadline, TextTitle3, TextTitle4, TextProps } from '../typography';
-import { spacing } from '../tokens';
-import { DotCount } from '../dots/DotCount';
-import { HStack } from '../layout';
-import { useDotAnimation } from './hooks/useDotAnimation';
-import { useDimensions } from '../hooks/useDimensions';
-import { cx } from '../utils/linaria';
+
 import { Animated } from '../animation/Animated';
+import { DotCount } from '../dots/DotCount';
+import { useDimensions } from '../hooks/useDimensions';
 import { useIsoEffect } from '../hooks/useIsoEffect';
+import { HStack } from '../layout';
+import { spacing } from '../tokens';
+import { TextHeadline, TextProps, TextTitle3, TextTitle4 } from '../typography';
+import { cx } from '../utils/linaria';
+
+import { useDotAnimation } from './hooks/useDotAnimation';
 
 export const getDotSizeClassName = (count?: number) => {
   if (!count || count < 10) return 'size--s';

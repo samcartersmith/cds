@@ -1,13 +1,15 @@
 import React, { CSSProperties, memo, useCallback } from 'react';
+import { css } from 'linaria';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { lineDashArray } from '@cbhq/cds-common/tokens/sparkline';
 import { SparklineInteractiveLineVerticalProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
-import { css } from 'linaria';
-import { cx } from '../../utils/linaria';
-import { resetFadeClassName } from './fade';
-import { useSparklineInteractiveScrubContext } from './SparklineInteractiveScrubProvider';
+
 import { usePalette } from '../../hooks/usePalette';
+import { cx } from '../../utils/linaria';
+
+import { resetFadeClassName } from './fade';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
+import { useSparklineInteractiveScrubContext } from './SparklineInteractiveScrubProvider';
 
 const verticalLineClassName = css`
   position: absolute;

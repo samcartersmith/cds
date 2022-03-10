@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import { DevicePreferencesBaseProviderProps } from '@cbhq/cds-common/system/DevicePreferencesBaseProvider';
-import { RootSpectrumProvider } from './RootSpectrumProvider';
+
 import { RootScaleProvider } from './RootScaleProvider';
+import { RootSpectrumProvider } from './RootSpectrumProvider';
 
 export const DevicePreferencesProvider: React.FC<DevicePreferencesBaseProviderProps> = memo(
   ({ children, spectrum, scale }) => {

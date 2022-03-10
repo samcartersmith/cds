@@ -1,11 +1,12 @@
-import React, { memo, forwardRef, ForwardedRef } from 'react';
-import type { AccordionPanelBaseProps } from '@cbhq/cds-common/types';
+import React, { ForwardedRef, forwardRef, memo } from 'react';
 import { accordionVisibleMaxHeight } from '@cbhq/cds-common/animation/accordion';
-import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { useAccordionSpacing } from '@cbhq/cds-common/hooks/useAccordionSpacing';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
+import type { AccordionPanelBaseProps } from '@cbhq/cds-common/types';
+
+import { Collapsible } from '../collapsible';
 
 import { getAccordionHeaderId, getAccordionPanelId } from './utils';
-import { Collapsible } from '../collapsible';
 
 export type AccordionPanelProps = AccordionPanelBaseProps;
 

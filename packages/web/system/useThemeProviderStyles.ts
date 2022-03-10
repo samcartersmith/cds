@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
-import { useScale, SystemProvider } from '@cbhq/cds-common';
-import { cx } from '../utils/linaria';
+import { SystemProvider, useScale } from '@cbhq/cds-common';
 
 import { usePaletteToCssVars } from '../color/usePaletteToCssVars';
 import { useSpectrumClassName } from '../color/useSpectrumClassName';
 import { useSpectrumClassNameForFrontier } from '../color/useSpectrumClassNameForFrontier';
 import * as scaleCss from '../styles/scale';
+import { cx } from '../utils/linaria';
 
 /**
  * Internally the `ThemeProvider` component includes a div element which is used to attach CSS variables that are needed for palette overrides.

@@ -1,4 +1,5 @@
 import { css } from 'linaria';
+
 import { InputLabel } from '../InputLabel';
 
 export default {

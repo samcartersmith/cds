@@ -1,9 +1,9 @@
 import feedCardBuilder, { createConfigs } from '@cbhq/cds-common/internal/cards/feedCardBuilder';
 
-import { CardGroup, CardGroupRenderItem } from '../CardGroup';
-import { FeedCard } from '../FeedCard';
 import { Button } from '../../buttons/Button';
 import { IconButton } from '../../buttons/IconButton';
+import { CardGroup, CardGroupRenderItem } from '../CardGroup';
+import { FeedCard } from '../FeedCard';
 
 const renderHorizontalItem: CardGroupRenderItem = ({ item, Wrapper }) => (
   <Wrapper display="flex" width={250}>

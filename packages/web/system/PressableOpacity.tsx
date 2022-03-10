@@ -1,4 +1,4 @@
-import React, { forwardRef, ForwardedRef } from 'react';
+import React, { ForwardedRef, forwardRef } from 'react';
 
 import { Pressable, PressableInternalProps } from './Pressable';
 

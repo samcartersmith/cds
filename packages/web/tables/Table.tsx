@@ -1,11 +1,13 @@
 import React, { memo } from 'react';
+
 import { cx } from '../utils/linaria';
+
 import { TableContext } from './context/TableContext';
 import { useTableStyles } from './hooks/useTableStyles';
-import { TableProps } from './types/tableTypes';
 import { table, tableFixed } from './styles/tableStyles';
+import { TableProps } from './types/tableTypes';
 
-export type { TableProps, TableVariant, TableLayout } from './types/tableTypes';
+export type { TableLayout, TableProps, TableVariant } from './types/tableTypes';
 export const Table = memo(
   ({ children, variant, bordered, testID, tableLayout, ...rest }: TableProps) => {
     const variantStyles = useTableStyles({ variant, bordered });

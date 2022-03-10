@@ -20,5 +20,5 @@ export * from './Sidebar';
 export * from './SidebarSection';
 /** @deprecated - NavigationListItem has been deprecated. Please use SidebarItem */
 export * from './NavigationListItem';
-export * from './Tabs';
 export * from './TabItem';
+export * from './Tabs';

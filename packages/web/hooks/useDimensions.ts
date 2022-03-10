@@ -1,4 +1,4 @@
-import { RefObject, useState, useRef, useEffect, useCallback } from 'react';
+import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 
 export const observerErr =
   "💡 react-cool-dimensions: the browser doesn't support Resize Observer, please use polyfill: https://github.com/wellyshen/react-cool-dimensions#resizeobserver-polyfill";

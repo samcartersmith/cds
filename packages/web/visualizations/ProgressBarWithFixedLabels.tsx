@@ -6,9 +6,11 @@ import {
   ProgressBarWithFixedLabelsProps,
 } from '@cbhq/cds-common/types/ProgressBarBaseProps';
 import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
+
 import { Box, VStack } from '../layout';
-import { ProgressTextLabel } from './ProgressTextLabel';
 import { isRtl } from '../utils/isRtl';
+
+import { ProgressTextLabel } from './ProgressTextLabel';
 
 const ProgressBarFixedLabelBeside: React.FC<ProgressBarFixedLabelBesideProps> = memo(
   ({ label, disabled }) => {

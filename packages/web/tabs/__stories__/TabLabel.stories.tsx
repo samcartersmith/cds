@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from 'react';
+import { Meta, Story } from '@storybook/react';
 import sample from 'lodash/sample';
-import { Story, Meta } from '@storybook/react';
-import { Button } from '../../buttons/Button';
-import { VStack, HStack } from '../../layout';
 
-import { TabLabel } from '..';
+import { Button } from '../../buttons/Button';
+import { HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system';
+import { TabLabel } from '..';
 
 export default {
   title: 'Core Components/Tabs/TabLabel',

@@ -1,6 +1,7 @@
+import React from 'react';
 import { defaultPopoverPositionConfig } from '@cbhq/cds-common/tokens/menu';
 import { isProduction } from '@cbhq/cds-utils';
-import React from 'react';
+
 import { PopoverContextType } from './usePopoverMenu';
 
 const defaultContext: PopoverContextType = {

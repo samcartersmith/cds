@@ -1,6 +1,6 @@
-import { AvatarButton } from '../AvatarButton';
 import { HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system';
+import { AvatarButton } from '../AvatarButton';
 
 /* eslint-disable no-console */
 

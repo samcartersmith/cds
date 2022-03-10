@@ -1,5 +1,6 @@
-import { useToggler } from '@cbhq/cds-common';
 import { useCallback, useMemo } from 'react';
+import { useToggler } from '@cbhq/cds-common';
+
 import { TimingReturnValues } from '../../animation/Animated';
 
 export const useTooltipState = (animateOut: TimingReturnValues) => {

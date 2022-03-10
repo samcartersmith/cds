@@ -1,11 +1,11 @@
 import { useCallback, useMemo } from 'react';
-
 import type { PaletteValue, PaletteValueToRgbaStringFn } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { paletteValueToTuple } from '@cbhq/cds-common/palette/paletteValueToTuple';
 import { toCssVar } from '@cbhq/cds-utils';
 
 import { getComputedStyleForClassName } from '../utils/getComputedStyleForClassName';
+
 import { useSpectrumClassName } from './useSpectrumClassName';
 
 /** Returns a function to retrieve the rgba string for a palette value. */

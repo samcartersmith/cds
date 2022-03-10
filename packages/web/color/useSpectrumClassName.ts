@@ -1,6 +1,6 @@
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 
-import { light, dark } from '../styles/spectrum';
+import { dark, light } from '../styles/spectrum';
 
 /**
  * Useful to attach spectrum className onto an element or to lookup CSS class properties via getComputedStyle.

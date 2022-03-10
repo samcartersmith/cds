@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
-import { renderA11y } from '@cbhq/jest-utils';
 import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
+
 import { paletteAliasToCssVar } from '../../utils/palette';
 import { DotStatusColor } from '../DotStatusColor';
 

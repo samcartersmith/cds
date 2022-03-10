@@ -1,11 +1,9 @@
 import React, { forwardRef, InputHTMLAttributes, memo, useRef } from 'react';
-
+import { css } from 'linaria';
 import { SharedProps } from '@cbhq/cds-common';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
-import { isDevelopment } from '@cbhq/cds-utils';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { css } from 'linaria';
-import { cx } from '../utils/linaria';
+import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Box, Spacer } from '../layout';
 import { Interactable, InteractableProps } from '../system/Interactable';
@@ -13,6 +11,7 @@ import { FilteredHTMLAttributes } from '../types';
 import { TextProps } from '../typography';
 import { TextBody } from '../typography/TextBody';
 import { isRtl } from '../utils/isRtl';
+import { cx } from '../utils/linaria';
 
 const pointer = css`
   &:not(:disabled),

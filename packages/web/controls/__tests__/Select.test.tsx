@@ -1,18 +1,18 @@
-import { render, fireEvent, waitFor } from '@testing-library/react';
-import { renderA11y } from '@cbhq/jest-utils';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import {
-  selectBuilder,
   CreateSelectStoriesProps,
   exampleOptions,
+  selectBuilder,
 } from '@cbhq/cds-common/internal/selectBuilder';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { Select } from '../Select';
-import { VStack } from '../../layout/VStack';
-import { SelectOption } from '../SelectOption';
-import { ThemeProvider } from '../../system/ThemeProvider';
-import { MenuItem } from '../../overlays/PopoverMenu/MenuItem';
 import { Icon } from '../../icons/Icon';
+import { VStack } from '../../layout/VStack';
+import { MenuItem } from '../../overlays/PopoverMenu/MenuItem';
+import { ThemeProvider } from '../../system/ThemeProvider';
 import { InputIcon } from '../InputIcon';
+import { Select } from '../Select';
+import { SelectOption } from '../SelectOption';
 
 const { Default: MockSelect } = selectBuilder({
   Select,
@@ -22,7 +22,7 @@ const { Default: MockSelect } = selectBuilder({
   ThemeProvider,
   Icon,
   InputIcon,
-} as CreateSelectStoriesProps);
+} as unknown as CreateSelectStoriesProps);
 
 const mockPlaceholder = 'Choose something...';
 const accessibilityLabel = 'label';

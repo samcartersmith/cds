@@ -1,8 +1,9 @@
-import { useRef, useCallback, useMemo, useEffect } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import {
   animateRotate180InConfig,
   animateRotate180OutConfig,
 } from '@cbhq/cds-common/animation/rotate';
+
 import { Animated } from './Animated';
 
 export const useRotate180Animation = (

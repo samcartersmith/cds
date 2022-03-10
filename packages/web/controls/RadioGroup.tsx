@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo, useCallback } from 'react';
-
+import { css } from 'linaria';
 import { SharedProps } from '@cbhq/cds-common';
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
-import { css } from 'linaria';
-import { cx } from '../utils/linaria';
 
 import { Icon } from '../icons/Icon';
 import { control, palette } from '../tokens';
 import { FilteredHTMLAttributes } from '../types';
+import { cx } from '../utils/linaria';
+
 import { Control, ControlProps } from './Control';
 
 export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps;

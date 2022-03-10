@@ -1,7 +1,7 @@
-import { BoxBaseProps } from '@cbhq/cds-common';
 import React from 'react';
-
+import { BoxBaseProps } from '@cbhq/cds-common';
 import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
+
 import { Box } from '../../layout';
 
 export type ModalBodyProps = Pick<BoxBaseProps, 'flexDirection' | 'alignItems'>;

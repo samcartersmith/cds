@@ -1,10 +1,12 @@
-import { renderA11y } from '@cbhq/jest-utils';
 import '@testing-library/jest-dom';
+
 import { render } from '@testing-library/react';
-import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
 import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
-import { ProgressCircle } from '../ProgressCircle';
+import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
+
 import { palette } from '../../tokens';
+import { ProgressCircle } from '../ProgressCircle';
 
 jest.spyOn(window, 'requestAnimationFrame').mockImplementation((cb: FrameRequestCallback) => {
   const time = Date.now();

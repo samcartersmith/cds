@@ -1,11 +1,12 @@
 import React, { memo } from 'react';
 import { FeedCardBaseProps } from '@cbhq/cds-common/types/CardBaseProps';
 
+import { RemoteImage } from '../media/RemoteImage';
+
 import { Card } from './Card';
-import { CardHeader } from './CardHeader';
 import { CardBody } from './CardBody';
 import { CardFooter } from './CardFooter';
-import { RemoteImage } from '../media/RemoteImage';
+import { CardHeader } from './CardHeader';
 
 const aspectRatio = [240, 120] as [number, number];
 

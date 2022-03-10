@@ -1,8 +1,7 @@
 import React, { memo, useMemo } from 'react';
-
+import { css } from 'linaria';
 import { FallbackBaseProps } from '@cbhq/cds-common';
 import { useFallbackShape } from '@cbhq/cds-common/hooks/useFallbackShape';
-import { css } from 'linaria';
 
 import { Box, BoxProps } from './Box';
 

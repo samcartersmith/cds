@@ -1,10 +1,12 @@
-import React, { useMemo, ReactNode, memo } from 'react';
+import React, { memo, ReactNode, useMemo } from 'react';
 import { css } from 'linaria';
-import { usePopoverMenuAnimation } from './usePopoverMenuAnimation';
-import { cx } from '../../utils/linaria';
-import { usePopoverContext } from './PopoverContext';
-import { usePopoverPosition } from './usePopoverPosition';
+
 import { VStack } from '../../layout/VStack';
+import { cx } from '../../utils/linaria';
+
+import { usePopoverContext } from './PopoverContext';
+import { usePopoverMenuAnimation } from './usePopoverMenuAnimation';
+import { usePopoverPosition } from './usePopoverPosition';
 
 const popoverStyleOverrides = css`
   overflow-y: auto;

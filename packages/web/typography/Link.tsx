@@ -1,25 +1,25 @@
-import React, { AnchorHTMLAttributes, useRef, memo } from 'react';
-
+import React, { AnchorHTMLAttributes, memo, useRef } from 'react';
+import { css } from 'linaria';
 import { SharedProps } from '@cbhq/cds-common';
 import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
-import { css } from 'linaria';
-import { cx } from '../utils/linaria';
 
 import { ButtonOrLink } from '../system/ButtonOrLink';
-import { OnPress } from '../types';
 import type { DynamicElement } from '../types';
+import { OnPress } from '../types';
+import { cx } from '../utils/linaria';
+
 import { TextBody } from './TextBody';
 import { TextCaption } from './TextCaption';
 import { TextHeadline } from './TextHeadline';
+import { TextInherited } from './TextInherited';
 import { TextLabel1 } from './TextLabel1';
 import { TextLabel2 } from './TextLabel2';
 import { TextLegal } from './TextLegal';
-import { TextProps, HTMLNonHeadingTextTags } from './TextProps';
+import { HTMLNonHeadingTextTags, TextProps } from './TextProps';
 import { TextTitle1 } from './TextTitle1';
 import { TextTitle2 } from './TextTitle2';
 import { TextTitle3 } from './TextTitle3';
 import { TextTitle4 } from './TextTitle4';
-import { TextInherited } from './TextInherited';
 
 export const linkClassName = 'cds-link';
 export const linkContainerClassName = `${linkClassName}--container`;

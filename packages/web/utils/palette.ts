@@ -1,5 +1,5 @@
-import { defaultPalette, PaletteValue, PaletteAlias, PartialPaletteConfig } from '@cbhq/cds-common';
-import { mapValues, mapKeys, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
+import { defaultPalette, PaletteAlias, PaletteValue, PartialPaletteConfig } from '@cbhq/cds-common';
+import { mapKeys, mapValues, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
 
 /**
  * `Please don't use this unless you absolutely have to. This is meant as last resort.`

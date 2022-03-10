@@ -1,5 +1,5 @@
-import { Placement } from '@popperjs/core';
 import { ReactNode } from 'react';
+import { Placement } from '@popperjs/core';
 
 export type PopoverBasePlacement = Extract<Placement, 'top' | 'bottom' | 'left' | 'right'>;
 

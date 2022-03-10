@@ -1,14 +1,15 @@
-import { useRef, useMemo, useState, useCallback } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
+import { css } from 'linaria';
 import { InputVariant } from '@cbhq/cds-common';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
-import { css } from 'linaria';
-import { TextInput } from '../TextInput';
+
+import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { HStack } from '../../layout';
 import { Link } from '../../typography';
 import { InputIcon } from '../InputIcon';
 import { InputIconButton } from '../InputIconButton';
 import { NativeTextArea } from '../NativeTextArea';
-import { useSpacingStyles } from '../../hooks/useSpacingStyles';
+import { TextInput } from '../TextInput';
 
 /* eslint-disable no-console */
 
@@ -136,14 +137,12 @@ export const BorderRadius = function BorderRadius() {
 
 export const Borderless = function Borderless() {
   return (
-    <>
-      <TextInput
-        label="borderless"
-        placeholder="placeholder"
-        helperText="helperText"
-        bordered={false}
-      />
-    </>
+    <TextInput
+      label="borderless"
+      placeholder="placeholder"
+      helperText="helperText"
+      bordered={false}
+    />
   );
 };
 

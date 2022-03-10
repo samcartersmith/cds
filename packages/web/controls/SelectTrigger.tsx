@@ -1,22 +1,24 @@
-import React, { RefObject, forwardRef, memo } from 'react';
-import { ForwardedRef, InputVariant, SelectBaseProps } from '@cbhq/cds-common';
+import React, { forwardRef, memo, RefObject } from 'react';
 import { css } from 'linaria';
+import { ForwardedRef, InputVariant, SelectBaseProps } from '@cbhq/cds-common';
+import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import {
   labelTextColor,
   selectTriggerCompactMinHeight,
   selectTriggerMinHeight,
 } from '@cbhq/cds-common/tokens/select';
-import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
-import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { TextBody } from '../typography/TextBody';
-import { InputIcon } from './InputIcon';
-import { PressableOpacity } from '../system';
+
+import { useA11yId } from '../hooks/useA11yId';
 import { HStack } from '../layout/HStack';
 import { PopoverTrigger, PopoverTriggerProps } from '../overlays/PopoverMenu/PopoverTrigger';
-import { InputLabel } from './InputLabel';
-import { useA11yId } from '../hooks/useA11yId';
-import { SelectStack } from './SelectStack';
+import { PressableOpacity } from '../system';
+import { TextBody } from '../typography/TextBody';
+
 import { TextInputFocusVariantContext } from './context';
+import { InputIcon } from './InputIcon';
+import { InputLabel } from './InputLabel';
+import { SelectStack } from './SelectStack';
 
 export type SelectTriggerProps = {
   rotateAnimationRef: RefObject<HTMLDivElement>;

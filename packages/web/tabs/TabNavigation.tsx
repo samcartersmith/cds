@@ -1,29 +1,31 @@
-import { TabIndicatorProps, TabNavigationProps, TabProps, useToggler } from '@cbhq/cds-common';
-import { noop } from '@cbhq/cds-utils';
 import React, {
-  useState,
-  useEffect,
-  useRef,
-  useMemo,
-  memo,
-  useCallback,
   createElement,
-  ForwardRefExoticComponent,
-  RefAttributes,
-  forwardRef,
   ForwardedRef,
+  forwardRef,
+  ForwardRefExoticComponent,
+  memo,
+  RefAttributes,
+  useCallback,
+  useEffect,
   useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
 } from 'react';
-import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
-import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { css } from 'linaria';
+import { TabIndicatorProps, TabNavigationProps, TabProps, useToggler } from '@cbhq/cds-common';
+import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
+import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+import { noop } from '@cbhq/cds-utils';
+
+import { useDimensions } from '../hooks/useDimensions';
 import { HStack, VStack } from '../layout';
+import { PressableOpacity, PressableOpacityProps } from '../system/PressableOpacity';
+
+import { Paddle } from './Paddle';
 import { TabIndicator } from './TabIndicator';
 import { TabLabel } from './TabLabel';
-import { Paddle } from './Paddle';
-import { useDimensions } from '../hooks/useDimensions';
-import { PressableOpacity, PressableOpacityProps } from '../system/PressableOpacity';
 
 const SCROLL_PADDING = 5; // How much breathing room do we want before showing the paddles
 const containerClassName = css`
@@ -140,7 +142,7 @@ export const TabNavigation = memo(
       );
 
       const getTabPressHandler = useCallback(
-        (id, onPress) => {
+        (id: string, onPress: (id: string) => void) => {
           return function handleTabPres() {
             onChange(id);
             onPress?.(id); // handle callback
@@ -177,7 +179,7 @@ export const TabNavigation = memo(
                   role: 'tab',
                   accessibilityLabel,
                   accessibilityHint: accessibilityLabel,
-                  onPress: getTabPressHandler(id, onPress),
+                  onPress: getTabPressHandler(id, onPress as (id: string) => void),
                   className: pressableClass,
                 },
                 getChildren({ id, count, label }),

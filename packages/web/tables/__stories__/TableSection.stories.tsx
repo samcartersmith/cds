@@ -1,9 +1,9 @@
-import { Story, Meta } from '@storybook/react';
-import { TextHeadline } from '../../typography';
+import { Meta, Story } from '@storybook/react';
 
-import { Table, TableHeader, TableBody, TableFooter, TableRow, TableCell } from '..';
-import { Spinner } from '../../loaders';
 import { VStack } from '../../layout';
+import { Spinner } from '../../loaders';
+import { TextHeadline } from '../../typography';
+import { Table, TableBody, TableCell, TableFooter, TableHeader, TableRow } from '..';
 
 export default {
   title: 'Core Components/Table/TableSection',

@@ -1,8 +1,8 @@
 import { CreateToastProps, toastBuilder } from '@cbhq/cds-common/internal/toastBuilder';
-import { PortalProvider } from '../PortalProvider';
+
 import { Button } from '../../buttons/Button';
 import { Link } from '../../typography';
-
+import { PortalProvider } from '../PortalProvider';
 import { Toast } from '../Toast';
 
 export default {

@@ -1,5 +1,6 @@
-import { ReactElement, ReactNode, MouseEventHandler, MutableRefObject } from 'react';
+import { MouseEventHandler, MutableRefObject, ReactElement, ReactNode } from 'react';
 import { PaletteBackground, PaletteForeground, SharedProps } from '@cbhq/cds-common';
+
 import { TableCellFallbackProps } from './tableCellFallbackTypes';
 import { TableCellProps } from './tableCellTypes';
 

@@ -1,7 +1,8 @@
+import { RefObject, useEffect } from 'react';
 import { TabIndicatorProps } from '@cbhq/cds-common';
 import { animateTabIndicatorBaseSpec } from '@cbhq/cds-common/animation/tabs';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
-import { RefObject, useEffect } from 'react';
+
 import { Animated } from '../../animation/Animated';
 
 type UseAnimateTabIndicator = {
@@ -19,7 +20,7 @@ export const useAnimateTabIndicator = ({ widthRef, width, xRef, x }: UseAnimateT
   addPreviousX(x);
 
   useEffect(() => {
-    Animated.parallel([
+    void Animated.parallel([
       Animated.timing(widthRef, {
         property: 'transform',
         fromValue: `translateX(${getPreviousWidth()}px)`,

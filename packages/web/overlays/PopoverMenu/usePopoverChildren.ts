@@ -1,5 +1,6 @@
-import { useMemo, useRef, ReactNode, ReactElement } from 'react';
+import { ReactElement, ReactNode, useMemo, useRef } from 'react';
 import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
+
 import { PopoverTrigger } from './PopoverTrigger';
 import { PopoverTriggerWrapper } from './PopoverTriggerWrapper';
 

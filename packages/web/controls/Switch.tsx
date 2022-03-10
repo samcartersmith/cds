@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo } from 'react';
-
+import { css } from 'linaria';
 import { switchPalette } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
-import { css } from 'linaria';
-import { cx } from '../utils/linaria';
 
 import { Box } from '../layout/Box';
 import { round } from '../styles/borderRadius';
 import { level1 } from '../styles/elevation';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { control, palette } from '../tokens';
+import { cx } from '../utils/linaria';
+
 import { Control, ControlProps } from './Control';
 
 export type SwitchProps = Omit<ControlBaseProps<string> & ControlProps, 'value'>;

@@ -1,11 +1,10 @@
 import { useMemo } from 'react';
-
 import { InternalSpacingProps } from '@cbhq/cds-common';
-import { cx } from '../../utils/linaria';
 
 import * as marginStyles from '../../styles/margin';
 import * as paddingStyles from '../../styles/padding';
 import { isRtl } from '../../utils/isRtl';
+import { cx } from '../../utils/linaria';
 
 export type UseInternalSpacingStylesProps = InternalSpacingProps;
 

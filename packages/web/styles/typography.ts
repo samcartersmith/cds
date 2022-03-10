@@ -1,6 +1,6 @@
 import { css } from 'linaria';
-
 import { Typography } from '@cbhq/cds-common';
+
 import { CSSMap } from '../types';
 import { TextProps } from '../typography/TextProps';
 

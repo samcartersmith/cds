@@ -1,5 +1,6 @@
-import { NoopFn } from '@cbhq/cds-common';
 import { useCallback, useEffect } from 'react';
+import { NoopFn } from '@cbhq/cds-common';
+
 import { TableRowRef } from '../types/tableRowTypes';
 
 /** Call an event handler on Enter and Space keypress */

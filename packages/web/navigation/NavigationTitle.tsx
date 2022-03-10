@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { isProduction } from '@cbhq/cds-utils';
-import { TextTitle1, TextProps } from '../typography';
+
+import { TextProps, TextTitle1 } from '../typography';
 
 export type NavigationTitleProps = {
   children: NonNullable<string>;

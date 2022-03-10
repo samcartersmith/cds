@@ -1,10 +1,12 @@
-import React, { memo, useCallback, KeyboardEvent, ReactElement, forwardRef } from 'react';
-import { selectKeys } from '@cbhq/cds-common/tokens/menu';
-import { ForwardedRef, NoopFn } from '@cbhq/cds-common';
+import React, { forwardRef, KeyboardEvent, memo, ReactElement, useCallback } from 'react';
 import { css } from 'linaria';
-import { cx } from '../../utils/linaria';
+import { ForwardedRef, NoopFn } from '@cbhq/cds-common';
+import { selectKeys } from '@cbhq/cds-common/tokens/menu';
+
 import { insetFocusRing } from '../../styles/focus';
 import { Pressable, PressableProps } from '../../system/Pressable';
+import { cx } from '../../utils/linaria';
+
 import { usePopoverContext } from './PopoverContext';
 
 export const menuItemStaticClassName = 'cds-menu-item';
@@ -89,7 +91,7 @@ export const MenuItem = memo(
                 handleExitMenu();
               }
             } else if (event.key === 'ArrowDown') {
-              if (focusedOptionIndex !== selectOptions?.length - 1) {
+              if (focusedOptionIndex !== selectOptions.length - 1) {
                 // focus the next option
                 selectOptions[focusedOptionIndex + 1].focus();
               } else {

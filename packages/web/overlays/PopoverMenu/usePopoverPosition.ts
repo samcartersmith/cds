@@ -1,6 +1,6 @@
+import { usePopper } from 'react-popper';
 import { defaultPopoverPositionConfig } from '@cbhq/cds-common/tokens/menu';
 import { PopoverPositionConfig } from '@cbhq/cds-common/types/PopoverMenuBaseProps';
-import { usePopper } from 'react-popper';
 
 /** TODO: this currently uses PopperJS which causes multiple rerenders since it relies on callback refs
  * Investigating a more performance solution

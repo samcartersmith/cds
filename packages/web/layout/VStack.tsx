@@ -1,8 +1,7 @@
 import React, { Children, forwardRef } from 'react';
+import { ForwardedRef, join, StackBaseProps } from '@cbhq/cds-common';
 
-import { join, StackBaseProps, ForwardedRef } from '@cbhq/cds-common';
-
-import { Box, BoxProps, BoxElement } from './Box';
+import { Box, BoxElement, BoxProps } from './Box';
 import { Spacer } from './Spacer';
 
 export type VStackProps<As extends BoxElement> = Omit<BoxProps<As>, 'flexDirection'> &

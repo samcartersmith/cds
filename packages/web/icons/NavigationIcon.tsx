@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-
 import { NavigationIconInternalName, SharedProps, SpacingProps } from '@cbhq/cds-common';
 import { NavigationBaseIconProps } from '@cbhq/cds-common/types/NavigationBaseIconProps';
 

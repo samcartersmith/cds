@@ -1,13 +1,12 @@
-import { render, fireEvent } from '@testing-library/react';
-import { renderA11y } from '@cbhq/jest-utils';
+import { fireEvent, render } from '@testing-library/react';
 import { accordionBuilder, CreateAccordionProps } from '@cbhq/cds-common/internal/accordionBuilder';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { CellMedia } from '../../cells/CellMedia';
+import { TextInput } from '../../controls';
+import { TextBody } from '../../typography';
 import { Accordion } from '../Accordion';
 import { AccordionItem } from '../AccordionItem';
-import { CellMedia } from '../../cells/CellMedia';
-import { TextBody } from '../../typography';
-import { TextInput } from '../../controls';
-
 import { getAccordionHeaderId, getAccordionPanelId } from '../utils';
 
 const { MockAccordion } = accordionBuilder({

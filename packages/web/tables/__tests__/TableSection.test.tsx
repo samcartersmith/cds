@@ -1,8 +1,9 @@
-import { renderA11y } from '@cbhq/jest-utils';
-import { TableHeader } from '../TableHeader';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
+
+import { Table } from '../Table';
 import { TableBody } from '../TableBody';
 import { TableFooter } from '../TableFooter';
-import { Table } from '../Table';
+import { TableHeader } from '../TableHeader';
 
 describe('Table Sections', () => {
   it('Table Head passes accessibility', async () => {

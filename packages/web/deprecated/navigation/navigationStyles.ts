@@ -1,6 +1,7 @@
 import { css } from 'linaria';
 
 import { devices } from '../../layout/responsive';
+
 import { sidebarWidth } from './navigationTokens';
 
 export const rootStyles = css`

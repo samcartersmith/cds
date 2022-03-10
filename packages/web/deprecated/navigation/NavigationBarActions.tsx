@@ -1,9 +1,9 @@
-import React, { memo, Children } from 'react';
-
+import React, { Children, memo } from 'react';
 import { join } from '@cbhq/cds-common/utils/join';
 
 import { Box } from '../../layout/Box';
 import { Spacer } from '../../layout/Spacer';
+
 import { hideForCondensed } from './navigationStyles';
 import { navbarSpacing } from './navigationTokens';
 

@@ -1,19 +1,21 @@
-import {
-  ProgressBarWithFloatLabelProps,
-  ProgressBarFloatLabelProps,
-} from '@cbhq/cds-common/types/ProgressBarBaseProps';
-import { css } from 'linaria';
 import React, { memo, useCallback, useRef } from 'react';
-import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
-import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
+import { css } from 'linaria';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
+import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
+import {
+  ProgressBarFloatLabelProps,
+  ProgressBarWithFloatLabelProps,
+} from '@cbhq/cds-common/types/ProgressBarBaseProps';
+import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
 import { isStorybook } from '@cbhq/cds-utils';
-import { Box, VStack } from '../layout';
-import { useDimensions } from '../hooks/useDimensions';
-import { isRtl } from '../utils/isRtl';
+
 import { Animated } from '../animation/Animated';
-import { ProgressTextLabel } from './ProgressTextLabel';
+import { useDimensions } from '../hooks/useDimensions';
 import { useIsoEffect } from '../hooks/useIsoEffect';
+import { Box, VStack } from '../layout';
+import { isRtl } from '../utils/isRtl';
+
+import { ProgressTextLabel } from './ProgressTextLabel';
 
 const floatingTextContainerClassName = css`
   position: relative;
@@ -52,7 +54,7 @@ const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFl
 
       textContainerRef.current.style.transformOrigin = isRtl() ? 'left' : 'right';
 
-      Animated.timing(textContainerRef, {
+      void Animated.timing(textContainerRef, {
         property: 'transform',
         fromValue: `translateX(${startLeftTranslate}px)`,
         toValue: `translateX(${endLeftTranslate}px)`,

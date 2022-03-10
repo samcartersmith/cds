@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
-
 import {
   SubBrandLogoWordmarkParams,
   useSubBrandLogoWordmark,
 } from '@cbhq/cds-common/hooks/useSubBrandLogo';
+
 import { iconStyles } from './iconStyles';
 
 export type SubBrandLogoWordmarkProps = SubBrandLogoWordmarkParams;

@@ -1,11 +1,11 @@
 import React from 'react';
 import {
+  IllustrationPictogramNames,
   IllustrationSpotRectangleNames,
   IllustrationSpotSquareNames,
-  IllustrationPictogramNames,
 } from '@cbhq/cds-common/types/IllustrationNames';
 
-import { SpotRectangle, SpotSquare, Pictogram } from '../illustrations';
+import { Pictogram, SpotRectangle, SpotSquare } from '../illustrations';
 import { VStack } from '../layout/VStack';
 
 /** @deprecated Please use CardMedia moving forward */

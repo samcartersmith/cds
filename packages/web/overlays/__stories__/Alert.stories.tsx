@@ -1,6 +1,7 @@
 import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
-import { PortalProvider } from '../PortalProvider';
+
 import { Button } from '../../buttons/Button';
+import { PortalProvider } from '../PortalProvider';
 import { Alert } from '..';
 
 export default {

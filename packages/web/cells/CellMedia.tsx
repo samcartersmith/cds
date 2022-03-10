@@ -1,5 +1,4 @@
 import React, { cloneElement, memo } from 'react';
-
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { imageSize, mediaSize } from '@cbhq/cds-common/tokens/cell';
 import type { CellMediaProps } from '@cbhq/cds-common/types';

@@ -1,4 +1,5 @@
-import { useRef, useCallback } from 'react';
+import { useCallback, useRef } from 'react';
+
 import { isSSR } from '../utils/browser';
 
 export const useScrollBlocker = () => {

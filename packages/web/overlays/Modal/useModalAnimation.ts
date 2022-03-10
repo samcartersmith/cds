@@ -1,8 +1,8 @@
-import { useRef, useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import {
   animateInOpacityConfig,
-  animateOutOpacityConfig,
   animateInScaleConfig,
+  animateOutOpacityConfig,
   animateOutScaleConfig,
 } from '@cbhq/cds-common/animation/modal';
 

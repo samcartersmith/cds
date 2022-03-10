@@ -1,5 +1,6 @@
-import { ButtonBaseProps, InternalSpacingProps } from '@cbhq/cds-common';
 import { useMemo } from 'react';
+import { ButtonBaseProps, InternalSpacingProps } from '@cbhq/cds-common';
+
 import { isRtl } from '../utils/isRtl';
 
 type FlushProps = {

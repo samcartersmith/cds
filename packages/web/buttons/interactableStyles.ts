@@ -1,5 +1,6 @@
-import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { css } from 'linaria';
+import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
+
 import { mediaQueries } from '../tokens';
 
 export const interactable = css`

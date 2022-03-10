@@ -102,7 +102,7 @@ import { Link } from '../Link';
           variant="body"
           color="primary"
           onPress={console.log}
-          renderContainer={props => <RRLink {...props} to={'/invoices'} />}
+          renderContainer={(props) => <RRLink {...props} to={'/invoices'} />}
         >
           Test renderContainer
         </Link>
@@ -119,7 +119,7 @@ import { Link } from '../Link';
           variant="label1"
           color="negative"
           onPress={console.log}
-          renderContainer={props => <RRLink {...props} to={'/invoices'} />}
+          renderContainer={(props) => <RRLink {...props} to={'/invoices'} />}
         >
           Test renderContainer
         </Link>

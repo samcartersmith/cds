@@ -1,10 +1,11 @@
 import { useMemo } from 'react';
+
 import { cx } from '../../utils/linaria';
 import {
+  tableBorder,
   tableVariantBase,
   tableVariantGraph,
   tableVariantRuled,
-  tableBorder,
 } from '../styles/tableStyles';
 import { TableProps } from '../types/tableTypes';
 

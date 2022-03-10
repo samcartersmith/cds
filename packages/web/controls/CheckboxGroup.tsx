@@ -1,18 +1,18 @@
 import React, {
   Children,
   cloneElement,
-  isValidElement,
-  forwardRef,
-  memo,
   FieldsetHTMLAttributes,
+  forwardRef,
+  isValidElement,
+  memo,
 } from 'react';
-
+import { css } from 'linaria';
 import { SharedProps } from '@cbhq/cds-common';
 import type { CheckboxGroupBaseProps } from '@cbhq/cds-common/types/CheckboxGroupBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
-import { css } from 'linaria';
 import { FilteredHTMLAttributes } from '../types';
+
 import { Checkbox, CheckboxProps } from './Checkbox';
 
 const checkboxStyles = css`

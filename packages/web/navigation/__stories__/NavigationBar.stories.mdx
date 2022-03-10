@@ -4,19 +4,24 @@ import { withStoryLabel } from ':cds-storybook/decorators/withStoryLabel';
 import { NavigationBarFullExample, NavigationBarTitle } from './NavigationStorySetup';
 import { NavigationBar } from '../NavigationBar';
 
-
 <Meta title="Core Components/Navigation/NavigationBar" component={NavigationBar} />
 
 # NavigationBar
 
 <Canvas isColumn withToolbar>
-  <Story name="NavigationBar full example" decorators={[withStoryLabel('NavigationBar full example (click the avatar)')]}>
+  <Story
+    name="NavigationBar full example"
+    decorators={[withStoryLabel('NavigationBar full example (click the avatar)')]}
+  >
     <NavigationBarFullExample />
   </Story>
 </Canvas>
 
 <Canvas isColumn withToolbar>
-  <Story name="NavigationBar title example" decorators={[withStoryLabel('NavigationBar title example')]}>
+  <Story
+    name="NavigationBar title example"
+    decorators={[withStoryLabel('NavigationBar title example')]}
+  >
     <NavigationBarTitle />
   </Story>
 </Canvas>

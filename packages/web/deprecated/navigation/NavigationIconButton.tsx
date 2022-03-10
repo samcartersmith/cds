@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IconButtonProps, IconButton } from '../../buttons/IconButton';
+import { IconButton, IconButtonProps } from '../../buttons/IconButton';
 
 type NavigationIconButtonProps = {
   label: string;

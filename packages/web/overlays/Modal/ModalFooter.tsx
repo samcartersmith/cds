@@ -1,10 +1,11 @@
 import React from 'react';
+import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
 import { ModalFooterBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 
-import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
-import { HStack } from '../../layout';
-import { modalFooterClassName } from './modalStyles';
 import { Button } from '../../buttons';
+import { HStack } from '../../layout';
+
+import { modalFooterClassName } from './modalStyles';
 
 export type ModalFooterProps = ModalFooterBaseProps;
 

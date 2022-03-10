@@ -1,11 +1,11 @@
-import { render, fireEvent, waitFor } from '@testing-library/react';
-import { renderA11y } from '@cbhq/jest-utils';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { Alert } from '../Alert';
-import { Button } from '../../buttons';
-import { PortalProvider } from '../PortalProvider';
 import { Animated } from '../../animation/Animated';
+import { Button } from '../../buttons';
+import { Alert } from '../Alert';
+import { PortalProvider } from '../PortalProvider';
 
 const { MockAlert } = alertBuilder({
   Alert,

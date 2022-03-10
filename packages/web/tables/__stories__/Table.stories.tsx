@@ -1,17 +1,17 @@
 /* eslint-disable no-console */
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import { useMemo, useState } from 'react';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { startCase } from 'lodash';
-import { Icon } from '../../icons';
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+
 import { Button } from '../../buttons';
+import { Switch } from '../../controls/Switch';
+import { Icon } from '../../icons';
 import { HStack } from '../../layout';
 import { TextDisplay2 } from '../../typography';
-import { Switch } from '../../controls/Switch';
-
-import { Table, TableVariant, TableHeader, TableBody, TableRow, TableCell } from '..';
 import { assetHubMock } from '../__mocks__';
+import { Table, TableBody, TableCell, TableHeader, TableRow, TableVariant } from '..';
 
 const LABELS = ['name', 'ticker', 'appStatus', 'type', 'bookmarked'];
 const LABELS_SHORT = LABELS.slice(0, 3);

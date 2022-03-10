@@ -1,4 +1,4 @@
-import type { TextBaseProps, PaletteForeground, SharedProps } from '@cbhq/cds-common';
+import type { PaletteForeground, SharedProps, TextBaseProps } from '@cbhq/cds-common';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
 export type TextProps = {

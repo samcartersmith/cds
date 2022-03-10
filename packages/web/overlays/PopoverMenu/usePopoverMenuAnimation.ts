@@ -1,4 +1,4 @@
-import { useCallback, useEffect, MutableRefObject, useMemo } from 'react';
+import { MutableRefObject, useCallback, useEffect, useMemo } from 'react';
 import { PopoverPositionConfig } from '@cbhq/cds-common';
 import {
   animateMenuOpacityInConfig,
@@ -6,6 +6,7 @@ import {
   animateMenuTransformInConfig,
   animateMenuTransformOutConfig,
 } from '@cbhq/cds-common/animation/menu';
+
 import { Animated } from '../../animation/Animated';
 
 export const usePopoverMenuAnimation = (

@@ -1,8 +1,9 @@
 import React from 'react';
 import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
 import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
-import { SparklineInteractiveHeader } from '../SparklineInteractiveHeader';
+
 import { SparklineInteractive } from '../../sparkline-interactive/SparklineInteractive';
+import { SparklineInteractiveHeader } from '../SparklineInteractiveHeader';
 
 export default {
   component: SparklineInteractiveHeader,

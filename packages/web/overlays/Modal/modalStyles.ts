@@ -1,10 +1,10 @@
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
+import { css } from 'linaria';
 import { modalHiddenOpacity, modalHiddenScale } from '@cbhq/cds-common/animation/modal';
 import { overlayHiddenOpacity } from '@cbhq/cds-common/animation/overlay';
-import { css } from 'linaria';
-import { cx } from '../../utils/linaria';
+import { borderRadius } from '@cbhq/cds-common/tokens/border';
 
 import { spacing } from '../../tokens';
+import { cx } from '../../utils/linaria';
 
 // Temp breakpoints
 // TODO: use breakpoints from tokens once they are set in stone

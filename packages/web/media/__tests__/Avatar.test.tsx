@@ -1,8 +1,10 @@
-import { renderA11y } from '@cbhq/jest-utils';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { AvatarSize } from '@cbhq/cds-common/types/AvatarSize';
+
+import { render } from '@testing-library/react';
 import { getNormalAvatarPixelSize } from '@cbhq/cds-common/media/useAvatarSize';
+import { AvatarSize } from '@cbhq/cds-common/types/AvatarSize';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
+
 import { Avatar } from '../Avatar';
 
 const src = 'https://images.coinbase.com/avatar?s=56';
@@ -37,8 +39,8 @@ describe('Avatar', () => {
       const { container } = render(<Avatar alt="TestName" size={size} src={src} />);
       const box: HTMLDivElement | null = container.querySelector('.cds-avatar');
       expect(box).toBeTruthy();
-      expect(box?.style.width).toEqual(`${px}px`);
-      expect(box?.style.height).toEqual(`${px}px`);
+      expect(box?.style.width).toBe(`${px}px`);
+      expect(box?.style.height).toBe(`${px}px`);
     }
 
     for (const size of ['m', 'l', 'xl', 'xxl', 'xxxl']) {

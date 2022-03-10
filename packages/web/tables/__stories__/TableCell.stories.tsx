@@ -1,9 +1,9 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { Avatar } from '../../media';
-import { Table, TableRow, TableBody, TableFooter, TableCell, TableHeader } from '..';
 import { ThemeProvider } from '../../system';
-import { TextLabel2, TextHeadline } from '../../typography';
+import { TextHeadline, TextLabel2 } from '../../typography';
+import { Table, TableBody, TableCell, TableFooter, TableHeader, TableRow } from '..';
 
 export default {
   title: 'Core Components/Table/TableCell',

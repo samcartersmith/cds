@@ -1,5 +1,5 @@
-import { nux } from '@cbhq/cds-lottie-files/nux';
 import { render } from '@testing-library/react';
+import { nux } from '@cbhq/cds-lottie-files/nux';
 
 import { Lottie } from '../Lottie';
 

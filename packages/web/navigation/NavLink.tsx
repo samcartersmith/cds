@@ -1,10 +1,11 @@
 import React, { memo } from 'react';
 import { css } from 'linaria';
 import { opacityPressed } from '@cbhq/cds-common/tokens/interactable';
-import { cx } from '../utils/linaria';
-import { palette, spacing } from '../tokens';
-import { Link, LinkProps, linkContainerClassName } from '../typography/Link';
+
 import { focusRing } from '../styles/focus';
+import { palette, spacing } from '../tokens';
+import { Link, linkContainerClassName, LinkProps } from '../typography/Link';
+import { cx } from '../utils/linaria';
 
 type NavLinkProps = {
   active?: boolean;

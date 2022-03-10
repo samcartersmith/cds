@@ -1,6 +1,8 @@
+import { FocusEvent, useCallback, useMemo, useRef, useState } from 'react';
 import { NoopFn, PopoverMenuBaseProps } from '@cbhq/cds-common';
-import { useRef, useState, useCallback, useMemo, FocusEvent } from 'react';
+
 import { useA11yControlledVisibility } from '../../hooks/useA11yControlledVisibility';
+
 import { usePopoverMenuAnimation } from './usePopoverMenuAnimation';
 
 /** This hook stores all the shared logic between all the PopoverMenu sub components: PopoverTrigger, MenuItem, SelectOption, and PopoverMenu */

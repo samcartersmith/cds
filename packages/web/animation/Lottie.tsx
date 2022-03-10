@@ -1,15 +1,15 @@
-import React, { memo, useImperativeHandle, useCallback, forwardRef } from 'react';
-
+import React, { forwardRef, memo, useCallback, useImperativeHandle } from 'react';
 import {
+  ForwardedRef,
   getLottieMarkers,
-  LottieSource,
   LottieMarkersAsMap,
   LottiePlayer,
-  ForwardedRef,
+  LottieSource,
 } from '@cbhq/cds-common';
 import { noop } from '@cbhq/cds-utils';
 
 import { Box } from '../layout/Box';
+
 import { lottieStyles } from './lottieStyles';
 import { LottieProps } from './types';
 import { useLottieHandlers } from './useLottieHandlers';

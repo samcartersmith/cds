@@ -1,5 +1,6 @@
 import { css } from 'linaria';
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
+
 import { palette } from '../../tokens';
 
 export const table = css`

@@ -2,8 +2,8 @@ import announcementCardBuilder, {
   createConfigs,
 } from '@cbhq/cds-common/internal/cards/announcementCardBuilder';
 
-import { CardGroup, CardGroupRenderItem } from '../CardGroup';
 import { AnnouncementCard } from '../AnnouncementCard';
+import { CardGroup, CardGroupRenderItem } from '../CardGroup';
 
 const renderHorizontalItem: CardGroupRenderItem = ({ item, Wrapper }) => (
   <Wrapper display="flex" width={250}>

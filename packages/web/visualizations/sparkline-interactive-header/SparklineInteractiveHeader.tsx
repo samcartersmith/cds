@@ -6,10 +6,11 @@ import {
   SparklineInteractiveSubHead,
 } from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
 import { interpolateSubHeadText } from '@cbhq/cds-common/visualizations/interpolateSubHeadText';
-import { usePalette } from '../../hooks/usePalette';
-import { TextHeadline, TextDisplay3, TextTitle4 } from '../../typography';
-import { HStack } from '../../layout';
+
 import { useDimensions } from '../../hooks/useDimensions';
+import { usePalette } from '../../hooks/usePalette';
+import { HStack } from '../../layout';
+import { TextDisplay3, TextHeadline, TextTitle4 } from '../../typography';
 
 export * from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
 

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { css } from 'linaria';
-import { useCounter } from '@cbhq/cds-common/visualizations/useCounter';
 import { CounterBaseProps } from '@cbhq/cds-common/types/CounterBaseProps';
+import { useCounter } from '@cbhq/cds-common/visualizations/useCounter';
 
 const containerClassName = css`
   position: relative;

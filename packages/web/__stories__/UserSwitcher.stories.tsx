@@ -1,6 +1,7 @@
+import { memo, ReactElement } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
-import { memo, ReactElement } from 'react';
+
 import { Button } from '../buttons/Button';
 import { IconButton } from '../buttons/IconButton';
 import { NavigationIconButton } from '../buttons/NavigationIconButton';

@@ -1,9 +1,8 @@
 import React, { memo, useCallback } from 'react';
-
 import { NavigationIconName } from '@cbhq/cds-common';
 import { BadgeValue } from '@cbhq/cds-common/types/BadgeBaseProps';
 import { emptyObject } from '@cbhq/cds-utils';
-import { cx } from '../../utils/linaria';
+
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { Badge } from '../../icons/Badge';
 import { NavigationIcon } from '../../icons/NavigationIcon';
@@ -12,6 +11,8 @@ import { Tooltip as DeprecatedTooltip } from '../../overlays/Deprecated/Tooltip'
 import { getFlexStyles } from '../../styles/flex';
 import { Pressable, PressableProps } from '../../system/Pressable';
 import { TextHeadline } from '../../typography/TextHeadline';
+import { cx } from '../../utils/linaria';
+
 import { useNavigation } from './context';
 import { useMobileMenuChildrenContext } from './MobileMenuChildrenContext';
 import { hideForCondensed, showForCondensed, sidebarItemStyles } from './navigationStyles';

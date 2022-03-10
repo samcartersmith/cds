@@ -19,12 +19,6 @@
     "typecheck": {
       "executor": "./tools/executors/typecheck:typecheck"
     },
-    "start-storybook": {
-      "executor": "@cbhq/mono-tasks:start-storybook"
-    },
-    "build-storybook": {
-      "executor": "@cbhq/mono-tasks:build-storybook"
-    },
     "build": {
       "executor": "./tools/executors/build-package:build-package",
       "options": {

@@ -1,10 +1,10 @@
-import React, { memo, Children } from 'react';
-
+import React, { Children, memo } from 'react';
 import { join } from '@cbhq/cds-common/utils/join';
 
 import { IconButtonProps } from '../../buttons/IconButton';
 import { Box } from '../../layout/Box';
 import { Spacer } from '../../layout/Spacer';
+
 import { navbarSpacing } from './navigationTokens';
 
 type IconButtonChild = React.ReactElement<IconButtonProps>;

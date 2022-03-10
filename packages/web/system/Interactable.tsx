@@ -1,32 +1,31 @@
-import React, { createElement, useMemo, forwardRef } from 'react';
-
+import React, { createElement, forwardRef, useMemo } from 'react';
 import { SharedProps, usePaletteConfig } from '@cbhq/cds-common';
 import {
-  ElevationProvider,
   ElevationChildrenProvider,
+  ElevationProvider,
 } from '@cbhq/cds-common/context/ElevationProvider';
-import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
 import { useInteractableBorderRadius } from '@cbhq/cds-common/hooks/useInteractableBorderRadius';
+import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
-import { cx } from '../utils/linaria';
+
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import * as borderColors from '../styles/borderColor';
 import * as borderWidths from '../styles/borderWidth';
-
 import { focusRing } from '../styles/focus';
 import {
+  disabledState,
+  fullWidth,
   interactable,
   interactableBackground,
   interactableTransparent,
   interactableTransparentActive,
-  disabledState,
   overlay,
-  underlay,
   transparentChildren,
-  fullWidth,
+  underlay,
 } from '../styles/interactable';
 import { palette } from '../tokens';
+import { cx } from '../utils/linaria';
 
 export type InteractableInheritedProps = Omit<
   React.AllHTMLAttributes<Element>,

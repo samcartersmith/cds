@@ -1,10 +1,10 @@
-import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
-import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
-import { ProgressBar } from '../ProgressBar';
 import { VStack } from '../../layout';
-import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
 import { ThemeProvider } from '../../system';
 import { TextLabel2, TextTitle3 } from '../../typography';
+import { ProgressBar } from '../ProgressBar';
+import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
+import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
+import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
 
 export default {
   component: ProgressBar,

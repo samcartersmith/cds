@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
-
-import { useLogoMark, LogoMarkParams } from '@cbhq/cds-common/hooks/useLogo';
+import { LogoMarkParams, useLogoMark } from '@cbhq/cds-common/hooks/useLogo';
 
 import { iconStyles } from './iconStyles';
 

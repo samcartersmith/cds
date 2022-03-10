@@ -1,9 +1,10 @@
-import { useScale } from '@cbhq/cds-common';
-import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import React from 'react';
 import { createPortal } from 'react-dom';
-import { isSSR } from '../../utils/browser';
+import { useScale } from '@cbhq/cds-common';
+import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
+
 import { ThemeProvider } from '../../system/ThemeProvider';
+import { isSSR } from '../../utils/browser';
 
 type PopoverBasePortalProps = {
   disablePortal?: boolean;

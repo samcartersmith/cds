@@ -1,7 +1,8 @@
 import { css } from 'linaria';
-import { animateInOpacityConfig, animateInBottomConfig } from '@cbhq/cds-common/animation/toast';
-import { cx } from '../utils/linaria';
+import { animateInBottomConfig, animateInOpacityConfig } from '@cbhq/cds-common/animation/toast';
+
 import { spacing } from '../tokens';
+import { cx } from '../utils/linaria';
 
 export const toastStaticClassName = 'cds-toast';
 

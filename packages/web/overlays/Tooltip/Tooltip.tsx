@@ -1,5 +1,7 @@
 import React, { cloneElement, useMemo } from 'react';
+
 import { PopoverBase } from '../popoverBase/PopoverBase';
+
 import { TooltipContent, tooltipId } from './TooltipContent';
 import { TooltipProps } from './TooltipProps';
 import { useTooltipAnimation } from './useTooltipAnimation';

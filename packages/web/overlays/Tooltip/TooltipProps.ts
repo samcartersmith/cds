@@ -1,9 +1,9 @@
 import {
-  NoopFn,
-  TooltipBaseProps,
-  GapSpacing,
   BaseTooltipPlacement,
+  GapSpacing,
+  NoopFn,
   PositionStyles,
+  TooltipBaseProps,
 } from '@cbhq/cds-common/types';
 
 type TooltipPlacement = BaseTooltipPlacement;

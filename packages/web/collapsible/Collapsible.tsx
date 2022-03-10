@@ -1,10 +1,11 @@
-import React, { memo, forwardRef, ForwardedRef, useMemo } from 'react';
-import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
+import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
 
-import { BoxProps, VStack, HStack } from '../layout';
-import { useCollapsibleStyles } from './useCollapsibleStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { BoxProps, HStack, VStack } from '../layout';
+
+import { useCollapsibleStyles } from './useCollapsibleStyles';
 
 export type CollapsibleProps = CollapsibleBaseProps &
   Pick<BoxProps, 'role' | 'id' | 'accessibilityLabelledBy'>;

@@ -1,9 +1,10 @@
-import React, { ReactElement, forwardRef, memo } from 'react';
-import { ForwardedRef, SelectBaseProps } from '@cbhq/cds-common/types';
+import React, { forwardRef, memo, ReactElement } from 'react';
 import { labelTextColor } from '@cbhq/cds-common/tokens/select';
+import { ForwardedRef, SelectBaseProps } from '@cbhq/cds-common/types';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
-import { InputLabel } from './InputLabel';
+
 import { HelperText } from './HelperText';
+import { InputLabel } from './InputLabel';
 import { InputStack } from './InputStack';
 
 export type SelectStackProps = {
