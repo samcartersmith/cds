@@ -1,0 +1,106 @@
+---
+id: faq
+title: FAQ
+hide_table_of_contents: true
+hide_title: true
+---
+
+import { Image } from ':cds-website/components/Image';
+
+<Image light="/img/frontier/hero_faq_light.png" dark="/img/frontier/hero_faq_dark.png" />
+
+## Frequently Asked Questions
+
+**What changes are in Frontier?**
+
+We'll be making small changes to Typography, Buttons, Colors, Cards, and Sparklines. We'll be announcing more details as we progress in the work.
+
+---
+
+**What is Frontier? Is it a new Design System?**
+
+Frontier is a version of CDS. It's best to think about it like an annual update similiar to iOS, Android, and macOS.
+
+---
+
+**How can I see the changes in Frontier?**
+
+You can selectively enable Frontier using the [Feature Flag Provider](../components/feature-flag-provider).
+
+Frontier is available in the debug menu on CB Alpha, so you can play with Frontier right on your phone!
+
+---
+
+**Does the FeatureFlagProvider enable Frontier app-wide or by component?**
+
+The [Feature Flag Provider](../components/feature-flag-provider) only enables Frontier for anything it wraps. Keep in mind, if you pass the frontier prop, it will enable all available Frontier styles. Check the docs for component-specific flags if you only want to opt into some Frontier styles.
+
+When you use the FeatureFlagProvider, you will need to be mindful of introducing deviations between screens and features, since Frontier won’t be enabled app-wide.
+
+---
+
+**How will these changes affect current design in production?**
+
+If Frontier is enabled, it'll slightly modify the interface. However, you won't need to do anything more than enabling/disabling Frontier.
+
+---
+
+**Are there mandates for when my product team must update to Frontier?**
+
+In Q4, CDS is not mandating opting into Frontier. We intend to no longer support primitives and components prior to Frontier at some point in the future. Seperate from CDS, product teams can impose their own mandates.
+
+---
+
+**Whats the difference between Frontier and Unified App?**
+
+Unified App is a product strategy where we create a singular experience for particular Coinbase products.
+
+Frontier is strictly a visual style upgrade for CDS and has no product implications.
+
+---
+
+**Why are we doing Frontier?**
+
+Frontier contains series of small updates to better support and achieve Unified App's vision.
+
+---
+
+**How do we avoid views having Frontier + non-frontier things?**
+
+Two things to keep in mind:
+
+1. Adopt CDS components as much as possible. Anything that is not CDS needs to be tested to ensure it does not have any divergent styles i.e. rounded rectangle buttons and pill buttons.
+
+2. Once you've migrated completely to CDS, you can add the [Feature Flag Provider](../components/feature-flag-provider) to the root or highest level of your app, and the ThemeProvider will ensure CDS components do not inherit conflicting styles.
+
+---
+
+**When will Frontier be ready?**
+
+Frontier is already available in a few components and ready to be consumed.
+
+---
+
+**Who owns Frontier?**
+
+Frontier is a CDS update, so it is owned and maintained by CDS.
+
+---
+
+**What will CDS deliver as “Frontier” (New Figma styles / New Components / New Providers)?**
+
+All new and existing CDS components will be Frontier-compatible.
+
+CDS will be updating Design and Engineering resources to reflect its new offerings.
+
+---
+
+**Should all new projects use Frontier by default?**
+
+Eventually, yes, but at the moment you have to manually opt into Frontier using the [Feature Flag Provider](../components/feature-flag-provider) and pass frontier as a prop. Teams are encouraged to opt-in as soon as Q1 2022. We are actively working on a timeline for enabling Frontier by default.
+
+---
+
+**Does the FeatureFlagProvider override existing feature flags?**
+
+No, it actually inherits feature flags from Feature Flag Providers higher up in the tree. You can add additional feature flags, or disable inherited ones.

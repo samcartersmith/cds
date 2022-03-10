@@ -1,0 +1,48 @@
+import React, { useMemo, memo, createContext } from 'react';
+
+import { orderBy, sumBy } from 'lodash';
+import type {
+  ComponentData,
+  AdopterComponents,
+} from ':cds-website/components/AdoptionTracker/types';
+
+const AdopterComponentsGroupFallback = {
+  totalInstances: 0,
+  components: [] as ComponentData[],
+};
+
+export const AdopterComponentsContextFallback = {
+  cds: AdopterComponentsGroupFallback,
+  presentational: AdopterComponentsGroupFallback,
+  other: AdopterComponentsGroupFallback,
+};
+
+export const AdopterComponentsContext = createContext(AdopterComponentsContextFallback);
+
+function getComponentsInfo(data: ComponentData[]) {
+  const totalInstances = sumBy(data, 'totalInstances');
+  const components = orderBy(data, ['totalInstances', 'name'], ['desc', 'asc']);
+  return {
+    totalInstances,
+    components,
+  };
+}
+
+export const AdopterComponentsProvider: React.FC<AdopterComponents> = memo(
+  ({ cds, presentational, other, children }) => {
+    const value = useMemo(
+      () => ({
+        cds: getComponentsInfo(cds),
+        presentational: getComponentsInfo(presentational),
+        other: getComponentsInfo(other),
+      }),
+      [cds, other, presentational],
+    );
+
+    return (
+      <AdopterComponentsContext.Provider value={value}>
+        {children}
+      </AdopterComponentsContext.Provider>
+    );
+  },
+);

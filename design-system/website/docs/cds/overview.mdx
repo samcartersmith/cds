@@ -1,0 +1,95 @@
+---
+id: overview
+title: Overview
+slug: /
+---
+
+import { Badge } from ':cds-website/components/Badge';
+
+## Motivation and goals
+
+- **Pursue the universal workflow.** We believe that employees at Coinbase should spend the bulk of their time sweating the user, business, and problem, and all the nuances within those. All the other things shouldn’t get in the way of that.
+
+- **Push the limits of execution and quality.** We face many challenges at Coinbase, but one constant threat is competition. We need to ensure that products that are heading to market are being executed at the highest quality and speed
+
+- **Remove barriers for others.** To achieve Coinbase’s mission, we need to build products for everyone no matter your culture or abilities. Often to ensure our products can be used by others it can be nearly impossible to scope out and prioritize, but in system’s we’re uniquely positioned to take on those challenges.
+
+- **Commit to consistency.** No matter where you navigate in our products it should feel cared for and well made. The way we believe we can do that is by scaling a system across all screens, so that when we make holistic changes we build it in a system level, so it can scale across products, interfaces, and platforms.
+
+- **Become everyone’s favorite partner.** As we continue to take ownership of many aspects of interfaces. It’s important that we take action to ensure we’re actively building and maintaining that trust and responsibility.
+
+- **Performance is top priority.** Regardless of what platform and target is chosen, performance
+  overhead should be almost non-existent. Aim for zero or low runtime overhead.
+
+- **Developer experience must be enjoyable.** Ideally, all CDS APIs and systems are easy to
+  use, easy to learn, and ultimately enjoyable to integrate.
+
+- **User preference matters.** Does the user prefer dark color schemes? Low contrast colors? Reduced
+  motion? The CDS will take all this into account, throughout all aspects of the library.
+
+## What is a design system?
+
+A Design System unites a company around a shared product language that helps teams design and build products at scale. It helps organizations build products with more efficiency and consistency, through a shared set of standards, guidelines, and reusable components. By reducing redundancy of work across an organization, teams can build products faster, and focus on innovating on solutions to new problems.
+
+## Why do we need a design system?
+
+Today our products are not unified across a set of shared design principles, components, and visual language. We currently create bespoke designs for each product area, resulting in a disparate suite of products that will become increasingly difficult to maintain over time. Designers and Engineers across product teams are spending time building unique solutions to identical problems.
+
+As an illustrative example, in today’s world we may have 3 different designers and engineers working on 3 different product teams, spending their time creating 3 different solutions to the same design problem such as how to display information in a list view. A unified design system will help us share work across teams, speeding up design and development time, keeping our products consistent and easier to maintain. Instead of spending time working on UI problems that have already been solved, product teams will be able to spend that energy on product innovation and solving problems for our customers.
+
+## Our Vision
+
+The Coinbase Design System will set a new industry standard for designing and building products at scale. We will push the limits on what’s been done before us, improving upon existing design systems conventions, to develop new methods and standards. We will share our innovations and breakthroughs with the broader design community to advance the practice of design.
+
+Our design system will unite every product team at Coinbase under a common design language and design principles. Design and development will be tightly coupled, and our production code and tooling will be deeply integrated, which will help us design and build more consistent products, more quickly. Every team at Coinbase will be able to leverage our design system to build high-quality experiences that are accessible and loved by all of our customers.
+
+## Role of CDS
+
+At Coinbase we have historically thought of a “design system” as a singular, holistic system that covers all aspects of product design and development. As a result, for many product teams it felt like a blocker more than an enabler.
+
+A successful design system is a tool to help product designers produce higher quality, more consistent work (in our case across the organization), not block them.
+
+To understand how the above works it’s important that we step back and tease apart what exactly makes up a design system, what we expect it to actually enable for our design/engineering teams, and what are the long term product/service team relationships we need for our business.
+
+To start, there are 2 main functions of a successful design system:
+
+1. A `design language` (CDL)
+2. A `component library` (CDS).
+
+## Coinbase Design Language <Badge variant="cds" />
+
+The design language (CDL) is a singular logicless, static library that provides multi-platform stylistic constants (think of a giant set of single key / values). This includes things like color spectrums, spacing constants, typographic constants, elevation constants, etc.
+
+It is the “source of truth”, or “style guide”, for a clear set of style rules that are universal to all “coinbase” product surfaces. It sits at the base layer of all UI at Coinbase. It doesn’t include any higher level abstractions, markup, or behavior.
+
+:::note Spoiler
+The CDS team will own the CDL.
+:::
+
+## Coinbase Design System <Badge variant="cds" />
+
+The CDS is a component library which includes low-level presentational “lego-blocks”. The CDS library only consumes the CDL, and doesn’t know about any other Component libraries “up the stack”.
+
+The CDS is portable (you can move it around), composable (you can stack it like legos) abstractions built to encapsulate common patterns and functionality. Typically these are platform specific implementations (mobile/web), which expose components like “buttons”, “charts”, “listcells'', and more. The CDS will take stylistic directives from the CDL (the mechanism in which will help us achieve cross-organizational visual consistency).
+
+**The CDS component libary will never 100% replace any product component library. The CDS component libraries won’t be exhaustive and instead will only provide common, high value components that are found between most product surfaces at Coinbase**.
+
+For example, the CDS Mobile library does provide a “Line” chart component (which product teams can and should adopt when displaying line charts to customers). However, the CDS Mobile library doesn’t provide a “Pie” chart component (which might only be used by the commerce team today).
+
+## Application component library <Badge variant="product" />
+
+An application component library is comprised of low level, shared components, which consume components and constants from the CDS (as well as provide some of its own unique components composed of CDS components). An application library typically adds additional application specific functionality not provided by CDS such as event tracking or a component which is unique to a product.
+
+Product teams are encouraged to generate their own application component libraries, which is powered by the CDS "lego-blocks" under the hood.
+
+## Integration recommendations
+
+It can be confusing when to use a Button from the CDS vs a Button from an application component library. We have outlined some tips on how to best avoid confusion when integratting with the CDS library. There is no perfect answer, and we welcome other suggestions - these are largely based on our hands-on experience within the React Native project.
+
+- Create an application component library. Try and refrain from naming this a "Design System" library, which may be confused with the CDS (Coinbase Design System) package.
+- Identify an components which may need application specific functionality.
+- Add a linter which errors when importing any CDS components which have an augmented version. i.e. Disbale imports for the CDS Button component since that version does not include application specific tracking functionality.
+- For some teams they may prefer to export all CDS components from an application component library since they find it more confusing to augment only a few components.
+- Pick a workflow that works for your team and be consistent.
+
+### More details coming soon!

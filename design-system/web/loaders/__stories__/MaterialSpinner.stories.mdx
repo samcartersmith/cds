@@ -1,0 +1,38 @@
+import { paletteForegrounds } from '@cbhq/cds-common';
+import { withStoryLabel } from ':cds-storybook/decorators/withStoryLabel';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+
+import { MaterialSpinner } from '../MaterialSpinner';
+
+<Meta title="Core Components/Loaders/MaterialSpinner" component={MaterialSpinner} />
+
+# MaterialSpinner
+
+<Canvas withToolbar>
+  <Story
+    name="MaterialSpinner"
+    decorators={[withStoryLabel('Material Spinner')]}
+    args={{
+      size: 30,
+      color: 'primary',
+    }}
+    argTypes={{
+      color: {
+        control: {
+          type: 'select',
+          options: paletteForegrounds,
+        },
+      },
+    }}
+  >
+    {args => (
+      <div>
+        <MaterialSpinner {...args} />
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+### Material Spinner API
+
+<ArgsTable of={MaterialSpinner} />

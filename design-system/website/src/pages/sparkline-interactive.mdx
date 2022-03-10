@@ -1,0 +1,109 @@
+## Example code for SparklineInteractive
+
+```tsx
+import {
+  SparklineInteractiveHeaderRef,
+  SparklineInteractiveSubHead,
+  SparklineInteractiveHeader,
+} from '@cbhq/cds-web/visualizations/SparklineInteractiveHeader';
+import {
+  SparklineInteractive,
+  ChartData,
+  ChartScrubParams,
+  SparklineInteractiveBaseProps,
+} from '@cbhq/cds-web/visualizations/SparklineInteractive';
+
+type SparklinePeriod = 'hour' | 'day';
+const DEFAULT_PERIOD = 'day';
+
+/* -------------------------------------------------------------------------- */
+/*                           App specific data/utils                          */
+/* -------------------------------------------------------------------------- */
+
+// array of label, value objects. Label should be formatted with app's intl library
+const periods = [{ label: 'Hour', value: 'hour' }, { label: 'Day', value: 'day' }];
+
+ // replace with your app's date formatter
+const formatDate = (date: Date) => date.toLocaleString('en-US');
+
+ // replace with your app's currency formatter
+const formatCurrency = (num: number | string) => num.toLocaleString('en-US');
+
+function getPercentChange(prev: number, next: number) {
+  const priceDifference = next - prev;
+  return (priceDifference / prev) * 100;
+}
+function getSubheadProps(prev: number, next: number): SparklineInteractiveSubHead {
+  const percentChange = getPercentChange(prev, next);
+  const priceIncrease = prev > next;
+  return {
+    percent: `${percentChange}%`,
+    sign: priceIncrease ? '+' : '–',
+    variant: priceIncrease ? 'positive' : 'negative',
+    priceChange: (next - prev).toLocaleString('en-US'), // replace with your app's currency formatter
+  };
+}
+/* -------------------------------------------------------------------------- */
+/*                App specific Chart composed of CDS components               */
+/* -------------------------------------------------------------------------- */
+export const Chart = ({ data }: SparklineInteractiveBaseProps<SparklinePeriod>) => {
+  const [activePeriod, handleOnPeriodChanged] = useState<SparklinePeriod>(DEFAULT_PERIOD);
+  const [isScrubbing, { toggleOn: handleScrubStart, toggleOff: handleScrubEnd }] =
+    useToggler(false);
+  const headerRef = useRef<SparklineInteractiveHeaderRef>(null); // performant way to handle frequest updates on scrub
+  const activeData = data?.[activePeriod] as ChartData;
+  const { defaultLabel, defaultTitle, defaultSubHead } = useMemo(() => {
+    const currentPrice = activeData[activeData.length - 1].value; // replace with whatever endpoint has current price
+    const firstPriceInPeriod = activeData[0].value; // for calculating percent change for period range
+    return {
+      defaultLabel: 'Bitcoin Price',
+      defaultTitle: formatCurrency(currentPrice),
+      defaultSubHead: getSubheadProps(firstPriceInPeriod, currentPrice),
+    };
+  }, [activeData]);
+  // Update values if changed and not scrubbing
+  useEffect(() => {
+    if (!isScrubbing) {
+      headerRef.current?.update({
+        label: defaultLabel,
+        title: defaultTitle,
+        subHead: defaultSubHead,
+      });
+    }
+  }, [isScrubbing, defaultLabel, defaultTitle, defaultSubHead]);
+  const handleScrub = useCallback(
+    ({ point }: ChartScrubParams<SparklinePeriod>) => {
+      const firstPoint = activeData[0].value;
+      const activePoint = point.value;
+      headerRef.current?.update({
+        title: formatCurrency(activePoint),
+        subHead: getSubheadProps(firstPoint, activePoint),
+      });
+    },
+    [activeData],
+  );
+  const header = (
+    <SparklineInteractiveHeader
+      ref={headerRef}
+      defaultLabel="Bitcoin Price"
+      defaultTitle={defaultTitle}
+      defaultSubHead={defaultSubHead}
+    />
+  );
+  return (
+    <SparklineInteractive
+      strokeColor="#F7931A"
+      periods={periods}
+      formatDate={formatDate}
+      formatHoverDate={formatDate}
+      defaultPeriod={DEFAULT_PERIOD}
+      formatMinMaxLabel={formatCurrency}
+      headerNode={header}
+      onScrub={handleScrub}
+      onScrubStart={handleScrubStart}
+      onScrubEnd={handleScrubEnd}
+      onPeriodChanged={handleOnPeriodChanged}
+    />
+  );
+};
+```

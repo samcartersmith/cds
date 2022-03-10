@@ -1,0 +1,26 @@
+```jsx live
+function Example() {
+  const [isFrontierButton, { toggle: toggleFrontierButton }] = useToggler(false);
+  const [isFrontierColor, { toggle: toggleFrontierColor }] = useToggler(false);
+
+  return (
+    <FeatureFlagProvider frontierButton={isFrontierButton} frontierColor={isFrontierColor}>
+      <ThemeProvider>
+        <VStack gap={2}>
+          <HStack gap={1} alignItems="center">
+            <Switch onChange={toggleFrontierButton} checked={isFrontierButton} />
+            <TextBody as="p">Toggle frontierButton</TextBody>
+          </HStack>
+          <HStack gap={1} alignItems="center">
+            <Switch onChange={toggleFrontierColor} checked={isFrontierColor} />
+            <TextBody as="p">Toggle frontierColor</TextBody>
+          </HStack>
+          <Divider direction="horizontal" />
+          {/* ButtonSheet is to simplify this example. Internally it renders every variant available for Button component */}
+          <ButtonSheet />
+        </VStack>
+      </ThemeProvider>
+    </FeatureFlagProvider>
+  );
+}
+```

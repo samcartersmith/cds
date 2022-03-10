@@ -1,0 +1,36 @@
+import { useContext } from 'react';
+
+import { noop, isProduction } from '@cbhq/cds-utils';
+
+import { CarouselItemContext, CarouselItemContextValue } from './CarouselItem';
+
+/** Access the index and dismiss function for a CarouselItem.
+ * @example
+ * ```
+ * const MyCarouselItem = () => {
+ * const { id, dismiss } = useCarouselItem()
+ *  return <Card onPress={dismiss}><TextBody>{`Carousel item ${id}`}</TextBody></Card>
+ * }
+ *
+ * const MyCarousel = () => {
+ *  return (
+ *    <Carousel>
+ *      <MyCarouselItem />
+ *      <MyCarouselItem />
+ *      <MyCarouselItem />
+ *    </Carousel>
+ * )
+ * }
+ * ```
+ */
+export const useCarouselItem = (): CarouselItemContextValue => {
+  const context = useContext(CarouselItemContext);
+  if (context === undefined) {
+    if (!isProduction()) {
+      // eslint-disable-next-line no-console
+      console.error('useCarouselItem: Cannot use `useCarouselItem` outside of Carousel component.');
+    }
+    return { id: '-1', dismiss: noop };
+  }
+  return context;
+};

@@ -1,0 +1,25 @@
+---
+hide_title: true
+hide_table_of_contents: true
+title: Retail Mobile Design System
+sidebar_label: Retail Mobile Design System
+---
+
+import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
+import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
+import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
+import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
+
+<AdopterStatsProvider
+  {...require('@site/static/data/adoption/retail-mobile-design-system/stats.json')}
+>
+  <AdopterProjectInfoProvider
+    {...require('@site/static/data/adoption/retail-mobile-design-system/project.json')}
+  >
+    <AdopterComponentsProvider
+      {...require('@site/static/data/adoption/retail-mobile-design-system/components.json')}
+    >
+      <AdopterDetails />
+    </AdopterComponentsProvider>
+  </AdopterProjectInfoProvider>
+</AdopterStatsProvider>

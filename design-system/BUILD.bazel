@@ -1,0 +1,323 @@
+load("//tools/js:release_packages.bzl", "release_packages")
+load("//tools/js:stylelint_test.bzl", "stylelint_test")
+load("//tools/js:def.bzl", "TS_CONFIGS", "jest_test", "storybook", "ts_script")
+load("@npm//@percy/storybook:index.bzl", "percy_storybook")
+load(":config.bzl", "PACKAGES", "STATIC_PACKAGES")
+load("//eng/shared/design-system/storybook:deps.bzl", "STORYBOOK_DEPS")
+
+exports_files([
+    ".babelrc.js",
+    ".stylelintrc.js",
+    "linaria.config.js",
+])
+
+filegroup(
+    name = "build_source",
+    srcs = [
+        "//eng/shared/design-system/%s:runtime_source" % p
+        for p in (PACKAGES + STATIC_PACKAGES)
+    ],
+    visibility = ["//visibility:public"],
+)
+
+# Make it super easy for consumers to just inherit everything
+filegroup(
+    name = "project_source",
+    srcs = [
+        "//eng/shared/design-system/%s:project_source" % p
+        for p in PACKAGES
+    ] + [
+        "//eng/shared/utils/jest:project_source",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "web_source",
+    srcs = [
+        ":build_source",
+    ] + glob(
+        include = [
+            "**/*.js",
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.css",
+        ],
+        exclude = [
+            "**/*.native.*",
+            "**/*.test.*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+# ***************
+# *** linting ***
+# ***************
+
+filegroup(
+    name = "style_source",
+    srcs = [
+        ".stylelintrc.js",
+        "//eng/shared/design-system/web:runtime_source",
+        "//:babel.config.js",
+    ] + glob(
+        include = [
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.css",
+        ],
+        exclude = [
+            "mobile/**",
+        ],
+    ),
+)
+
+stylelint_test(
+    name = "stylelint",
+    lint_srcs = [":style_source"],
+)
+
+# ***************
+# *** testing ***
+# ***************
+
+filegroup(
+    name = "source",
+    srcs = [
+        "//eng/shared/design-system/%s:source" % p
+        for p in PACKAGES
+    ] + glob([
+        "storybook/**/*.ts",
+        "storybook/**/*.tsx",
+    ]),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "tests_configuration",
+    srcs = [
+        "linaria.config.js",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+TEST_SRCS = [
+    "//eng/shared/design-system:source",
+    "//eng/shared/design-system:tests_configuration",
+]
+
+TEST_DEPS = [
+    "@npm//react",
+    "@npm//linaria",
+]
+
+jest_test(
+    name = "unit_tests_web",
+    srcs = TEST_SRCS,
+    jest_config = "jest.config.web.js",
+    tests = [
+        "//eng/shared/design-system/common:source",
+        "//eng/shared/design-system/storybook:source",
+        "//eng/shared/design-system/utils:source",
+        "//eng/shared/design-system/web:source",
+    ],
+    deps = TEST_DEPS + [
+        "@npm//@cbhq/cds-web",
+    ],
+)
+
+jest_test(
+    name = "unit_tests_mobile",
+    srcs = TEST_SRCS,
+    jest_config = "jest.config.mobile.js",
+    tests = [
+        "//eng/shared/design-system/mobile:source",
+    ],
+    deps = TEST_DEPS + [
+        "@npm//@cbhq/cds-mobile",
+    ],
+)
+
+jest_test(
+    name = "unit_tests_adoption",
+    srcs = TEST_SRCS + [
+        "//eng/shared/design-system/codegen/adoption:parsers/__tests__/project",
+    ],
+    jest_config = "jest.config.adoption.js",
+    tests = [
+        "//eng/shared/design-system/codegen/adoption:source",
+    ],
+    deps = TEST_DEPS + [
+        "@npm//react-native",
+        "@npm//ora",
+        "@npm//chalk",
+        "@npm//yargs",
+        "@npm//fast-glob",
+        "@npm//strip-json-comments",
+    ],
+)
+
+# ***************
+# *** codegen ***
+# ***************
+
+CODEGEN_DEPS = [
+    "@npm//@k-vyn/coloralgorithm",
+    "@npm//@cbhq/cds-web",
+    "@npm//@cbhq/monorepo-utils",
+    "@npm//@types/react",
+    "@npm//@types/react-native",
+    "@npm//axios",
+    "@npm//chalk",
+    "@npm//ejs",
+    "@npm//react-docgen-typescript",
+    "@npm//tsconfig-paths",
+    "@npm//webfont",
+    "@npm//yargs",
+    "@npm//lodash",
+    "@npm//ora",
+    "@npm//svgo",
+    "@npm//svgson",
+    "@npm//element-to-path",
+    "@npm//strip-json-comments",
+]
+
+CODEGEN_SRCS = [
+    ":build_source",
+    "//eng/shared/design-system/codegen:runtime_source",
+    "//eng/shared/design-system/lottie-files:runtime_source",
+] + TS_CONFIGS
+
+ts_script(
+    name = "codegen",
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/main.ts",
+    deps = CODEGEN_DEPS,
+)
+
+ts_script(
+    name = "docgen",
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/website/build.ts",
+    deps = CODEGEN_DEPS,
+)
+
+ts_script(
+    name = "changelog",
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/website/changelog.ts",
+    deps = CODEGEN_DEPS,
+)
+
+ts_script(
+    name = "contributing",
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/website/contributing.ts",
+    deps = CODEGEN_DEPS,
+)
+
+ts_script(
+    name = "sync_icons",
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/icons/syncSvgsFromFigma.ts",
+    deps = CODEGEN_DEPS,
+)
+
+ts_script(
+    name = "build_icons",
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/icons/build.ts",
+    deps = CODEGEN_DEPS,
+)
+
+ts_script(
+    name = "build_illustrations",
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/illustrations/build.ts",
+    deps = CODEGEN_DEPS,
+)
+
+ts_script(
+    name = "prepare_adoption",
+    srcs = CODEGEN_SRCS + [
+        "//eng/shared/design-system/codegen/adoption:source",
+    ],
+    script = "eng/shared/design-system/codegen/adoption/prepare.ts",
+    deps = CODEGEN_DEPS,
+)
+
+ts_script(
+    name = "prepare_mobile_routes",
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/playground/prepareRoutes.ts",
+    deps = CODEGEN_DEPS,
+)
+
+ts_script(
+    name = "new_package",
+    srcs = [
+        "//eng/shared/design-system/codegen:runtime_source",
+    ],
+    script = "eng/shared/design-system/codegen/scaffold/newPackageFromTemplate.ts",
+    deps = ["@npm//chalk"],
+)
+
+release_packages(
+    name = "release",
+    packages_glob = "eng/shared/design-system/*/basepackage.json",
+)
+
+# *****************
+# *** Storybook ***
+# *****************
+
+STORY_SRCS = [
+    ":web_source",
+    "//eng/shared/design-system/fonts:runtime_source",
+    "//eng/shared/design-system/web:story_source",
+    "//eng/shared/design-system/storybook:project_source",
+    "//eng/shared/design-system/storybook:source",
+]
+
+STORY_LIVE_PACKAGES = "cds-\\w+"
+
+STORY_STATIC_FILES = ["eng/shared/design-system/fonts"]
+
+STORY_CONFIG = "//eng/shared/design-system/storybook:.storybook"
+
+storybook(
+    name = "storybook",
+    srcs = STORY_SRCS,
+    live_packages = STORY_LIVE_PACKAGES,
+    static_files = STORY_STATIC_FILES,
+    storybook_config = STORY_CONFIG,
+    deps = STORYBOOK_DEPS,
+)
+
+# We have to do separate target for percy so we can set env to skip animations
+storybook(
+    name = "percy",
+    srcs = STORY_SRCS,
+    env = {
+        "STORYBOOK_SKIP_ANIMATION": "true",
+    },
+    live_packages = STORY_LIVE_PACKAGES,
+    static_files = STORY_STATIC_FILES,
+    storybook_config = STORY_CONFIG,
+    deps = STORYBOOK_DEPS,
+)
+
+# *************************
+# ***      Percy        ***
+# *** visual diff tests ***
+# *************************
+
+percy_storybook(
+    name = "storybook_percy",
+    args = [
+        "-b eng/shared/design-system/percy_build",
+        "--widths=320,768,1170",
+    ],
+    data = ["//eng/shared/design-system:percy_build"],
+)

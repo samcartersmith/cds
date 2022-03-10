@@ -1,0 +1,302 @@
+import { Badge } from ':cds-website/components/Badge';
+
+### Getting Started
+
+`PopoverMenu` is a **web only** component that is composed of trigger and an elevated surface that can be shown/hidden by interacting with the trigger and/or the contents of the `PopoverMenu`.
+
+#### Mobile
+
+On mobile, `PopoverMenu` is displayed as a `Tray`.
+
+### PopoverMenu Triggers
+
+`PopoverMenu`s can take an interactable component (`Button`, `IconButton`, etc.) as the trigger, as long as it is wrapped in the `PopoverTrigger` higher order component.
+
+**Note**: a `PopoverMenu` trigger must contain `PopoverTrigger` as a direct descendent. The `PopoverTrigger`'s direct descendent must be an interactable component that accepts a `ForwardedRef`.
+
+If you need to wrap the trigger in a non interactable (like a layout component or a decorator like a `DotColor`) you will need to wrap it in `PopoverTriggerWrapper` and then wrap the interactable trigger node with `PopoverTrigger`. For example, say we want to have an `AvatarButton` as the trigger, but we also want to surface a `DotStatus`. This is how you would compose it:
+
+```jsx
+const Example = () => (
+  <PopoverMenu>
+    <PopoverTriggerWrapper>
+      <DotStatusColor variant="positive" pin="top-start">
+        <PopoverTrigger>
+          <AvatarButton alt="Sneezy" />
+        </PopoverTrigger>
+      </DotStatusColor>
+    </PopoverTriggerWrapper>
+    {/* children */}
+  </PopoverMenu>
+);
+```
+
+### PopoverMenu Content
+
+#### Interactables
+
+We strongly recommend that you use `SelectOption` for interactable `PopoverMenu` content because it adds keyboard navigation, focus behaviors, and accessibility attributes, all for free; and it comes with all the layout perks of ListCell. If you don't want to use `SelectOption` and you are passing interactables as children, then you will need to wrap each child in a `MenuItem`. See `MenuItem` usage for more details.
+
+#### Noninteractables
+
+`PopoverMenu` can also take non interactables as children.
+
+### Basic PopoverMenu
+
+`PopoverMenu`s are most often used to display lists of options, like a `Select`.
+
+```jsx live
+function Default() {
+  const [value, setValue] = useState('');
+  const [visible, togglePopoverMenuVisibility] = useToggler(false);
+
+  const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
+
+  const handleMenuValueChange = useCallback(
+    (newValue) => {
+      setValue(newValue);
+    },
+    [setValue],
+  );
+
+  return (
+    <VStack minHeight={400} spacing={2} background="background">
+      <PopoverMenu
+        width={200}
+        value={value}
+        onChange={handleMenuValueChange}
+        openMenu={togglePopoverMenuVisibility.toggleOn}
+        closeMenu={togglePopoverMenuVisibility.toggleOff}
+        visible={visible}
+      >
+        <PopoverTrigger>
+          <IconButton transparent name="more" variant="secondary" />
+        </PopoverTrigger>
+        {options.map((option) => (
+          <SelectOption
+            value={option}
+            key={option}
+            title={option}
+            description="Description"
+            testID={`option-${option}`}
+            selected={value === option}
+          />
+        ))}
+      </PopoverMenu>
+    </VStack>
+  );
+}
+```
+
+### Complex PopoverMenu
+
+`PopoverMenu`s can be used on their own, or in groups of inputs, within a `Navigation` component, or even in a `Card`. They can also take non-interactable components as children.
+
+```jsx live
+function NavigationMenu() {
+  const [value, setValue] = useState('');
+  const [visible, togglePopoverMenuVisibility] = useToggler(false);
+
+  const navigationOptions = [
+    {
+      name: 'Coinbase',
+      value: 'coinbase',
+      description: 'Buy, sell, use crypto',
+      mediaName: 'coinbaseOneLogoPictogram',
+    },
+    {
+      name: 'Wallet',
+      value: 'wallet',
+      description: 'The best self-hosted crypto wallet',
+      mediaName: 'wallet',
+    },
+  ];
+
+  const handleMenuValueChange = useCallback(
+    (newValue) => {
+      setValue(newValue);
+    },
+    [setValue],
+  );
+
+  return (
+    <VStack minHeight={300} spacing={2} background="background">
+      <NavigationBar
+        end={
+          <HStack gap={1}>
+            <IconButton name="bell" variant="secondary" />
+            <PopoverMenu
+              width={350}
+              openMenu={togglePopoverMenuVisibility.toggleOn}
+              closeMenu={togglePopoverMenuVisibility.toggleOff}
+              visible={visible}
+              onChange={handleMenuValueChange}
+              value={value}
+            >
+              <PopoverTriggerWrapper>
+                <DotStatusColor variant="positive" pin="top-start">
+                  <PopoverTrigger>
+                    <AvatarButton compact alt="Sneezy" />
+                  </PopoverTrigger>
+                </DotStatusColor>
+              </PopoverTriggerWrapper>
+              <SectionTitle text="For Individuals" />
+              {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
+                <SelectOption
+                  key={name}
+                  value={optionValue}
+                  title={name}
+                  description={description}
+                  media={<Pictogram dimension="48x48" name={mediaName} />}
+                  selected={value === optionValue}
+                />
+              ))}
+            </PopoverMenu>
+          </HStack>
+        }
+      >
+        <NavigationTitle>Navigation Example</NavigationTitle>
+      </NavigationBar>
+    </VStack>
+  );
+}
+```
+
+### PopoverMenu with Search Enabled Trigger
+
+This is an example of how you can compose CDS components to create a searchable select menu. This is a very contrived example and should only be used as reference for how you could use a SearchInput with a PopoverMenu.
+
+Note: you will need to pass `searchEnabled` to PopoverMenu in order for search functionality to work.
+
+```jsx live
+function SearchInputMenu() {
+  const [isVisible, { toggleOn: openMenu, toggleOff: closeMenu }] = useToggler(false);
+  const [selectedValue, setSelectedValue] = useState(undefined);
+  const [searchValue, setSearchValue] = useState();
+  const [filteredOptions, setFilteredOptions] = useState(options);
+  const popoverMenuRef = useRef(null);
+  const shouldShowAllResultsButton =
+    filteredOptions && options && filteredOptions.length < options.length;
+  const options = [
+    'Option 1',
+    'Option 2',
+    'Option 3',
+    'Option 4',
+    'Option 5',
+    'Option 6',
+    'Option 7',
+  ];
+
+  const filterOptions = useMemo(
+    () =>
+      !searchValue
+        ? options
+        : options.filter(
+            (option) =>
+              searchValue &&
+              typeof searchValue === 'string' &&
+              option.toLowerCase().includes(searchValue.toLowerCase()),
+          ),
+    [searchValue],
+  );
+
+  useEffect(() => {
+    setFilteredOptions(filterOptions);
+  }, [filterOptions]);
+
+  const renderOptions = useMemo(
+    () =>
+      filteredOptions &&
+      filteredOptions.map((option) => <SelectOption title={option} value={option} />),
+    [filteredOptions],
+  );
+
+  const handleSearchInputPress = useCallback(() => {
+    openMenu();
+  }, [openMenu]);
+
+  const handleClear = useCallback(() => {
+    setSelectedValue(undefined);
+    setSearchValue(undefined);
+  }, [setSelectedValue]);
+
+  const handleMenuChange = useCallback(
+    (newValue) => {
+      setSelectedValue(newValue);
+      setSearchValue(newValue);
+    },
+    [setSearchValue, setSelectedValue],
+  );
+
+  const handleKeyDown = useCallback(
+    (event) => {
+      // when using keyboard navigation and menu is focused,
+      // open it once they start typing
+      if (!isVisible) {
+        openMenu();
+      }
+      // swap out selectedValue with searchValue so it becomes editable again
+      if (selectedValue) {
+        setSelectedValue(undefined);
+      }
+      if (event.key === 'ArrowDown' || event.key === 'Enter') {
+        popoverMenuRef.current.focusSelectOption();
+      }
+    },
+    [selectedValue, setSelectedValue, openMenu, isVisible],
+  );
+
+  const handleBlur = useCallback((event) => {
+    popoverMenuRef.current.handlePopoverMenuBlur(event);
+  }, []);
+
+  const ShowAllResultsButton = () => {
+    return (
+      <MenuItem value="" onPress={handleClear}>
+        <Pressable backgroundColor="background" noScaleOnPress block onPress={handleClear}>
+          <HStack alignItems="center" spacingVertical={2} spacingHorizontal={2} gap={1}>
+            <TextLabel1 as="p">View all results</TextLabel1>
+            <Icon size="xs" name="forwardArrow" color="foreground" />
+          </HStack>
+        </Pressable>
+      </MenuItem>
+    );
+  };
+
+  return (
+    <HStack minHeight={400} spacing={1}>
+      <PopoverMenu
+        visible={isVisible}
+        openMenu={openMenu}
+        closeMenu={closeMenu}
+        onChange={handleMenuChange}
+        value={selectedValue}
+        width="100%"
+        flush
+        searchEnabled
+        ref={popoverMenuRef}
+      >
+        <PopoverTrigger>
+          <SearchInput
+            onChangeText={setSearchValue}
+            value={selectedValue ? selectedValue : searchValue ? searchValue : ''}
+            width="100%"
+            onClear={handleClear}
+            onKeyDown={handleKeyDown}
+            onBlur={handleBlur}
+            onPress={handleSearchInputPress}
+          />
+        </PopoverTrigger>
+        {filteredOptions && filteredOptions.length > 0 ? (
+          renderOptions
+        ) : (
+          <HStack spacing={3}>
+            <TextCaption as="p">No options were found. </TextCaption>
+          </HStack>
+        )}
+        {shouldShowAllResultsButton ? <ShowAllResultsButton /> : null}
+      </PopoverMenu>
+    </HStack>
+  );
+}
+```

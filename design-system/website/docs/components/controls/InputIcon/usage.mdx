@@ -1,0 +1,26 @@
+Wse this component as the start/end to TextInput or any other Input. This 
+helper component will give you the right spacing, and it will also help control 
+focus states for you. 
+
+By default, when you use InputIcon, it will inherit the focus state from its parent 
+Input, in this case its TextInput, and change the icon color according to its focus state.
+The default color for InputIcon is foreground. 
+```jsx live
+<ExampleWithThemeToggles>
+	<TextInput label="Search" start={<InputIcon name="search" />} />
+</ExampleWithThemeToggles>
+```
+
+You can change the default color of input icon. But use with caution 
+```jsx live
+<ExampleWithThemeToggles>
+	<TextInput label="Search" start={<InputIcon color="foregroundMuted" name="search" />} />
+</ExampleWithThemeToggles>
+```
+
+If you set disableInheritFocusStyle to true, it will not change the color with its focus state. 
+```jsx live
+<ExampleWithThemeToggles>
+	<TextInput label="Search" end={<InputIcon disableInheritFocusStyle name="search" />} />
+</ExampleWithThemeToggles>
+```

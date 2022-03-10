@@ -1,0 +1,322 @@
+import { Image } from ':cds-website/components/Image';
+import { Divider } from '@cbhq/cds-web/layout';
+import { VStack, HStack } from '@cbhq/cds-web/layout';
+
+import definition from ':cds-website/static/img/components/overlays/Tooltip/definition.png';
+import anatomy_a1 from ':cds-website/static/img/components/overlays/Tooltip/anatomy_a1.jpg';
+import anatomy_a2 from ':cds-website/static/img/components/overlays/Tooltip/anatomy_a2.jpg';
+import anatomy_a3 from ':cds-website/static/img/components/overlays/Tooltip/anatomy_a3.jpg';
+import anatomy_b from ':cds-website/static/img/components/overlays/Tooltip/anatomy_b.png';
+import anatomy_b1 from ':cds-website/static/img/components/overlays/Tooltip/anatomy_b1.jpg';
+import behavior_1 from ':cds-website/static/img/components/overlays/Tooltip/behavior_1.png';
+import behavior_2 from ':cds-website/static/img/components/overlays/Tooltip/behavior_2.png';
+import bestPractices_1 from ':cds-website/static/img/components/overlays/Tooltip/bestPractices_1.png';
+import bestPractices_2 from ':cds-website/static/img/components/overlays/Tooltip/bestPractices_2.jpg';
+import placement_1 from ':cds-website/static/img/components/overlays/Tooltip/placement_1.png';
+import placement_2 from ':cds-website/static/img/components/overlays/Tooltip/placement_2.png';
+import placement_3 from ':cds-website/static/img/components/overlays/Tooltip/placement_3.png';
+import placement_4 from ':cds-website/static/img/components/overlays/Tooltip/placement_4.png';
+import size_1 from ':cds-website/static/img/components/overlays/Tooltip/size_1.jpg';
+import size_2 from ':cds-website/static/img/components/overlays/Tooltip/size_2.jpg';
+
+:::note
+This Tooltip documentation represents the V2 for web and V1 for mobile. If you are looking for the old web tooltip documentation you can find it [here](https://cds.cbhq.net/deprecatedTooltip). Please note however that the old tooltips are being deprecated in favor of this version.
+:::
+
+# Definition
+
+<Divider />
+<br />
+
+Tooltip is a floating text label that displays information related to an element.
+
+The content of Tooltip is contextual, useful, and nonessential. The element paired with Tooltip may or may not have a visual indicator like an info-circle on desktop.
+
+<Image src={definition} options={{ maxHeight: '448px' }} />
+<br />
+<br />
+
+# Guidelines
+
+<Divider />
+<br />
+
+<VStack>
+
+<HStack gap={3}>
+  <VStack width="50%">
+    <TextHeadline as="p">When to use:</TextHeadline>
+    <ul>
+      <li>To provide helpful, but non-essential context to a UI element.</li>
+    </ul>
+  </VStack>
+  <VStack width="50%">
+    <TextHeadline as="p">When not to use:</TextHeadline>
+    <ul>
+      <li>
+        To display information that is critical to the understanding of an element or feature such
+        as an error, instructions for performing a task, or interaction feedback.
+      </li>
+    </ul>
+  </VStack>
+</HStack>
+<HStack gap={3}>
+  <VStack width="50%">
+    <TextHeadline as="p">Do:</TextHeadline>
+    <ul>
+      <li>Describe only the element paired with Tooltip.</li>
+      <li>Use succinct and scannable language.</li>
+      <li>As much as possible, limit Tooltip's text to a maximum of 60 to 80 characters.</li>
+      <li>Use an info-circle icon button when the paired element is text-based.</li>
+    </ul>
+  </VStack>
+  <VStack width="50%">
+    <TextHeadline as="p">Don't:</TextHeadline>
+    <ul>
+      <li>Describe elements other than the one that triggers Tooltip.</li>
+      <li>Use Tooltip to restate text already visible on screen.</li>
+      <li>Use a Tooltip on Web / Mobile or RN without a visual indicator.</li>
+      <li>
+        Use a Tooltip on Web / Mobile or RN for an interactive element (which already has a pressed
+        state). Instead, consider another layout / pattern for the information.
+      </li>
+    </ul>
+  </VStack>
+</HStack>
+</VStack>
+
+<br />
+<br />
+
+# Best Practices
+
+<Divider />
+<br />
+
+<HStack gap={3}>
+  <VStack width="50%">
+    <TextHeadline as="p">
+      Use Tooltip to add supplementary information about a feature, typically paired with an
+      info-circle icon button.
+    </TextHeadline>
+  </VStack>
+  <VStack width="50%">
+    <TextHeadline as="p">
+      Use Tooltip to describe the function of an interactive element, typically an icon button, in
+      as few words as possible.
+    </TextHeadline>
+  </VStack>
+</HStack>
+<HStack>
+  <VStack width="50%">
+    <Image src={bestPractices_1} options={{ maxHeight: '448px' }} />
+  </VStack>
+  <VStack width="50%">
+    <Image src={bestPractices_2} options={{ maxHeight: '448px' }} />
+  </VStack>
+</HStack>
+
+<br />
+<br />
+
+# Behavior
+
+<Divider />
+<br />
+
+<HStack>
+  <VStack width="50%">
+    <TextHeadline as="p">
+      Tooltip appears by requested behavior (user initiated). It typically appears after a small
+      delay.
+    </TextHeadline>
+  </VStack>
+</HStack>
+
+<br />
+<br />
+
+<HStack gap={3}>
+  <VStack width="50%">
+    <TextHeadline as="p">For Web/Desktop:</TextHeadline>
+    <ul>
+      <li>Initiate when element receives keyboard focus or mouse hovers over it</li>
+      <li>Element may or may not have a visual indicator</li>
+      <li>Dismiss when escape is pressed or on mouse out</li>
+      <li>Scrolling will dismiss Tooltip</li>
+    </ul>
+  </VStack>
+  <VStack width="50%">
+    <TextHeadline as="p">For React Native:</TextHeadline>
+    <ul>
+      <li>Initiate when the element's visual indicator is tapped</li>
+      <li>Element must have a visual indicator</li>
+      <li>Dismiss when escape is pressed or by tapping outside of element</li>
+      <li>Scrolling will dismiss Tooltip</li>
+    </ul>
+  </VStack>
+</HStack>
+
+<br />
+<br />
+
+# Anatomy
+
+<Divider />
+<br />
+
+Tooltip is comprised of a container (wrapper) with a nested description. It does not have elevation.
+
+<HStack gap={3}>
+  <VStack width="50%">
+    <Image src={anatomy_a1} options={{ maxHeight: '448px' }} />
+  </VStack>
+  <VStack width="50%">
+    <Image src={anatomy_b1} options={{ maxHeight: '448px' }} />
+  </VStack>
+</HStack>
+
+<br />
+
+<HStack gap={3}>
+  <VStack width="50%">
+    <Image src={anatomy_a2} options={{ maxHeight: '448px' }} />
+  </VStack>
+  <VStack width="50%">
+    <Image src={anatomy_b} options={{ maxHeight: '448px' }} />
+  </VStack>
+</HStack>
+
+<br />
+<br />
+
+# Padding
+
+<Divider />
+<br />
+
+<VStack width="50%">
+  <Image src={anatomy_a3} options={{ maxHeight: '448px' }} />
+</VStack>
+
+<br />
+<br />
+
+# Size Variant
+
+<Divider />
+<br />
+
+<HStack gap={3}>
+  <VStack width="50%">
+    <TextHeadline as="p">
+      There are 2 sizing options that are dependant on the text string length.
+    </TextHeadline>
+  </VStack>
+</HStack>
+
+<br />
+
+<HStack gap={3}>
+  <VStack width="50%">
+    <TextHeadline as="p">Default Responsive</TextHeadline>
+    <ul>
+      <li>Container hugs content</li>
+      <li>Supports short text strings</li>
+      <li>Contents are center aligned</li>
+    </ul>
+  </VStack>
+  <VStack width="50%">
+    <TextHeadline as="p">Block 260pt</TextHeadline>
+    <ul>
+      <li>
+        When character length expands container to 260pt [approx 32 - 36 characters], Tooltip
+        defaults to Fixed Width
+      </li>
+      <li>Container width never exceeds 260pt and text wraps</li>
+      <li>Contents are left-aligned for LTR languages and right-aligned for RTL</li>
+    </ul>
+  </VStack>
+</HStack>
+
+<br />
+
+<HStack gap={3}>
+  <VStack width="50%">
+    <Image src={size_1} options={{ maxHeight: '448px' }} />
+  </VStack>
+  <VStack width="50%">
+    <Image src={size_2} options={{ maxHeight: '448px' }} />
+  </VStack>
+</HStack>
+
+<br />
+<br />
+
+# Placement
+
+<Divider />
+<br />
+
+<VStack width="50%">
+  <TextHeadline as="p">Make sure Tooltip never gets cropped.</TextHeadline>
+</VStack>
+
+<br />
+
+<VStack width="50%">
+  <ul>
+    <li>
+      <b>Vertically centered to element</b> - this is overwritten in instances where centering would
+      crop the tooltip. See margin instructions below per platform.
+    </li>
+    <li>
+      <b>Appears below element</b> - this is overwritten in instances where appearing below the
+      element would position the Tooltip outside the viewport.
+    </li>
+  </ul>
+</VStack>
+
+<VStack width="50%">
+  <Image src={placement_1} options={{ maxHeight: '448px' }} />
+</VStack>
+
+<VStack width="50%">
+  <TextHeadline as="p">
+    <b>For Web/Desktop:</b>
+  </TextHeadline>
+  <TextHeadline as="p">Respect a margin 24pt from edge of the viewport</TextHeadline>
+</VStack>
+
+<VStack>
+  <Image src={placement_2} />
+</VStack>
+
+<HStack gap={8}>
+  <VStack width="50%">
+    <TextHeadline as="p">
+      <b>For Web/Mobile:</b>
+    </TextHeadline>
+    <TextHeadline as="p">Respect a margin of 16pt from edge of the viewport</TextHeadline>
+  </VStack>
+  <VStack width="50%">
+    <TextHeadline as="p">
+      <b>For React Native:</b>
+    </TextHeadline>
+    <TextHeadline as="p">Respect a margin of 24pt from edge of the viewport</TextHeadline>
+  </VStack>
+</HStack>
+
+<br />
+
+<HStack gap={8}>
+  <VStack width="50%">
+    <Image src={placement_3} />
+  </VStack>
+  <VStack width="50%">
+    <Image src={placement_4} />
+  </VStack>
+</HStack>
+
+<br />
+<br />

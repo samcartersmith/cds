@@ -1,0 +1,9 @@
+{
+  "extends": "../../../../tsconfig.buildOptions.json",
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "**/*.test.*"
+  ]
+}

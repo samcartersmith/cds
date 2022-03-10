@@ -1,0 +1,60 @@
+{
+  "latest": {
+    "date": "3/1/2022",
+    "cdsPercent": 0.8798803290949888,
+    "cds": 5882,
+    "presentational": 803,
+    "totalCdsAndPresentational": 6685,
+    "totalOther": 5243
+  },
+  "previous": [
+    {
+      "date": "End of Q4",
+      "cdsPercent": 0.8763561219218184,
+      "cds": 5089,
+      "presentational": 718,
+      "totalCdsAndPresentational": 5807,
+      "totalOther": 4864
+    },
+    {
+      "date": "1/26/2022",
+      "cdsPercent": 0.8825386276790165,
+      "cds": 5312,
+      "presentational": 707,
+      "totalCdsAndPresentational": 6019,
+      "totalOther": 4840
+    },
+    {
+      "date": "2/4/2022",
+      "cdsPercent": 0.8815831987075929,
+      "cds": 5457,
+      "presentational": 733,
+      "totalCdsAndPresentational": 6190,
+      "totalOther": 4942
+    },
+    {
+      "date": "2/9/2022",
+      "cdsPercent": 0.8822115384615384,
+      "cds": 5505,
+      "presentational": 735,
+      "totalCdsAndPresentational": 6240,
+      "totalOther": 4970
+    },
+    {
+      "date": "2/16/2022",
+      "cdsPercent": 0.885145482388974,
+      "cds": 5780,
+      "presentational": 750,
+      "totalCdsAndPresentational": 6530,
+      "totalOther": 5083
+    },
+    {
+      "date": "2/16/2022",
+      "cdsPercent": 0.885145482388974,
+      "cds": 5780,
+      "presentational": 750,
+      "totalCdsAndPresentational": 6530,
+      "totalOther": 5083
+    }
+  ]
+}

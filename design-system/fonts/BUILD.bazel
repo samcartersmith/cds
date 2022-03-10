@@ -1,0 +1,32 @@
+load("//tools/js:def.bzl", "ts_package")
+
+# Files to publish to NPM
+filegroup(
+    name = "runtime_source",
+    srcs = glob(
+        [
+            "**/*.ts",
+            "**/*.woff2",
+            "**/*.otf",
+            "**/*.css",
+            "**/*.md",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+# Package building and publishing
+ts_package(
+    name = "package",
+    package_name = "@cbhq/cds-fonts",
+    srcs = [":runtime_source"],
+    dev_deps = [],
+    peer_deps = [],
+    relative_source_directory = ".",
+    static_files = {
+        ":CHANGELOG.md": "./CHANGELOG.md",
+        ":README.md": "./README.md",
+    },
+    typescript_config = ":tsconfig.build.json",
+    deps = [],
+)

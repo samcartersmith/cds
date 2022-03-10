@@ -1,0 +1,73 @@
+---
+id: getting-started
+title: Getting started
+---
+
+## Using CDS library in Figma
+
+- [CDS Dense 🌞](https://www.figma.com/file/PFrMlidBLdYwQRtIzTvMtV/CDS-Dense-%F0%9F%8C%9E?node-id=172%3A0)
+- [CDS Dense 🌙](https://www.figma.com/file/PFrMlidBLdYwQRtIzTvMtV/CDS-Dense-%F0%9F%8C%9E)
+- [CDS Normal 🌞](https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E)
+- [CDS Normal 🌙](https://www.figma.com/file/YjFmec7quTC4bN0xvYnKsx/CDS-Normal-%F0%9F%8C%99)
+
+## Using CDS inside the [`mono/repo`](https://github.cbhq.net/mono/repo)
+
+### For web and mobile projects
+
+In your application's bazel file, include `"@npm//@cbhq/cds-web"` or `"@npm//@cbhq/cds-mobile"` as part of your rules npms deps.
+
+```bazel
+DEPS = [
+  "@npm//@cbhq/cds-fonts",
+  "@npm//@cbhq/cds-web",
+  "@npm//react",
+]
+```
+
+## Using CDS outside the [`mono/repo`](https://github.cbhq.net/mono/repo)
+
+1. Add `@cbhq:registry=https://registry-npm.cbhq.net` to your `.npmrc`.
+2. Install the CDS packages you need
+
+```bash
+yarn add @cbhq/cds-fonts
+yarn add @cbhq/cds-web # if using web components
+yarn add @cbhq/cds-mobile # if using mobile components
+```
+
+## Building with CDS
+
+1. Import `globalStyles` at the root of your application. This includes font face declarations and focus-visible polyfill. This should be included at the very top of your imports before any CDS components are imported.
+
+```tsx
+import '@cbhq/cds-web/globalStyles';
+```
+
+2. Add `ThemeProvider` to the root of your React application.
+
+```tsx
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
+
+export const App = () => {
+  <ThemeProvider>
+    <ErrorBoundary>
+      <AppRoutes />
+    </ErrorBoundary>
+  <ThemeProvider>
+}
+```
+
+3. Ensure that your html has `<meta charset="UTF-8">` which is required for the icon font in CDS web.
+
+> If you have components that are created outside of the app's main DOM tree, such as `Modal`s that use `createPortal`, you will need to add `ThemeProvider` to the root of the portal element as well.
+
+4. Import components from `@cbhq/cds-web` or `@cbhq/cds-mobile`.
+5. To figure out what CDS primitive or component is being used in the design, you can inspect the target in Figma and look for component label, color palette name, or spacing size.
+
+   - example 1. Use `Headline` typography for the text.
+
+     <img src="/img/figma-typography-inspect.png" width="400px" />
+
+   - example 2. Use `postive` palette color for the background. 🌙 indicates that the palette is for dark mode. In most cases, light and dark mode can have the same styling.
+
+     <img src="/img/figma-palette-inspect.png" width="600px" />

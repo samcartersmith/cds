@@ -1,0 +1,44 @@
+import { useMemo } from 'react';
+import { generateRandomId } from '@cbhq/cds-utils';
+
+export type AccessibleControlledReturnType = {
+  triggerAccessibilityProps: {
+    'aria-expanded': boolean;
+    'aria-controls': string;
+    'aria-haspopup': string;
+  };
+  controlledElementAccessibilityProps: {
+    id: string;
+    accessibilityLabel?: string;
+  };
+};
+
+/** hook that generates unique aria labels and attributes for trigger element that controls the visibility of another controlled element */
+export const useA11yControlledVisibility = (
+  isVisible: boolean,
+  accessibilityLabel?: string,
+): AccessibleControlledReturnType => {
+  const uniqueId = generateRandomId(accessibilityLabel);
+
+  const triggerAccessibilityProps = useMemo(
+    () => ({
+      'aria-expanded': isVisible,
+      'aria-controls': uniqueId,
+      'aria-haspopup': 'dialog',
+    }),
+    [isVisible, uniqueId],
+  );
+
+  const controlledElementAccessibilityProps = useMemo(
+    () => ({
+      id: uniqueId,
+      accessibilityLabel,
+    }),
+    [uniqueId, accessibilityLabel],
+  );
+
+  return {
+    triggerAccessibilityProps,
+    controlledElementAccessibilityProps,
+  };
+};
