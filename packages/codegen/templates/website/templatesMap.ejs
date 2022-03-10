@@ -1,9 +1,0 @@
-import React from 'react';
-
-<% Object.entries(data).map(([exportName, objectData]) => { %>
-  export const <%- exportName %> = {
-    <%_ Object.entries(objectData).map(([key, value]) => { _%>
-      "<%- key %>":  <%- value %>,
-    <%_ }) _%>
-  }
-<% }) %>
