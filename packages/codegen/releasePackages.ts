@@ -184,7 +184,7 @@ function formatLogs(logs: Log[], version: string): string {
     }
 
     if (log.pr) {
-      line += ` [#${log.pr}](https://github.cbhq.net/mono/repo/pull/${log.pr})`;
+      line += ` [#${log.pr}](https://github.cbhq.net/frontend/cds/pull/${log.pr})`;
     }
 
     if (log.jira) {

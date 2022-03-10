@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.22 (3/10/2022, 03:34 PM PST)
+
+#### 📘 Misc
+
+- Move existing code into new repo. [#38](https://github.cbhq.net/frontend/cds/pull/38)
+
 ## 0.2.21 (2/3/2022, 01:35 PM PST)
 
 #### 🚀 Updates
