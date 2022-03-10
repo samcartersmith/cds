@@ -73,7 +73,6 @@ type DefaultTrayTypes = {
   fallbackEnabled?: boolean;
 };
 
- 
 const handleNoop = () => console.log('pressed');
 
 export const trayBuilder = ({

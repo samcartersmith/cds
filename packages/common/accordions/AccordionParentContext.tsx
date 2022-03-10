@@ -13,7 +13,6 @@ export const AccordionParentContext = createContext<{
 export const useAccordionParent = () => {
   const context = useContext(AccordionParentContext);
   if (context === undefined) {
-     
     console.error('useAccordionParent must be used within a AccordionParentProvider');
   }
   return context;

@@ -27,7 +27,7 @@ export const ElevationProvider: React.FC<ElevationProviderProps> = memo(
         </ElevationContext.Provider>
       );
     }
-     
+
     return <>{children}</>;
   },
 );
@@ -46,7 +46,7 @@ export const ElevationChildrenProvider: React.FC = memo(({ children }) => {
       </ElevationChildContext.Provider>
     );
   }
-   
+
   return <>{children}</>;
 });
 

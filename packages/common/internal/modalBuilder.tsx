@@ -12,7 +12,6 @@ import type {
   ThemeProviderBaseProps,
 } from '../types';
 
- 
 const onRequestCloseConsole = () => console.log('close modal');
 
 export type CreateModalProps = {

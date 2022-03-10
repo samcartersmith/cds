@@ -8,7 +8,6 @@ type Params<WrapperProps> = {
   renderHorizontalItem: RenderGroupItem<WrapperProps>;
 };
 
- 
 const onPressConsole = () => console.log('pressed');
 
 export function createConfigs<WrapperProps>({

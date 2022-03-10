@@ -27,7 +27,6 @@ export const ContentCell = memo(function ContentCell({
 }: ContentCellProps) {
   if (!isProduction()) {
     if (meta && !title && !subtitle) {
-       
       console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');
     }
   }

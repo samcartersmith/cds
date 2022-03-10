@@ -40,7 +40,6 @@ export const items: Items = [
   { title: 'DeFi', icon: 'defi' },
 ];
 
- 
 const handlePress = (name: string) => console.log(`Pressed ${name}`);
 export const NavigationBarFullExample: React.FC = () => {
   return (

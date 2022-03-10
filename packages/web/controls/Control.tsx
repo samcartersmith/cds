@@ -67,7 +67,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   ref: React.ForwardedRef<HTMLInputElement>,
 ) {
   if (isDevelopment() && !children && !ariaLabelledby) {
-     
     console.warn(
       `Please provide an aria label for the control component ${value} either through the children or aria-labelledby prop.`,
     );

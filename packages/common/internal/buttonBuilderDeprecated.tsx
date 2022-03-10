@@ -3,7 +3,6 @@ import React from 'react';
 import { FeatureFlagProvider } from '../system/FeatureFlagProvider';
 import type { BoxBaseProps, ButtonBaseProps, Scale, Spectrum, StackBaseProps } from '../types';
 
- 
 const onPressConsole = () => console.log('pressed');
 
 export type CreateButtonStoriesParams = {

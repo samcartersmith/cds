@@ -11,8 +11,6 @@ import { InputIconButton } from '../InputIconButton';
 import { NativeTextArea } from '../NativeTextArea';
 import { TextInput } from '../TextInput';
 
- 
-
 export default {
   title: 'Core Components/Inputs/TextInput',
   component: TextInput,

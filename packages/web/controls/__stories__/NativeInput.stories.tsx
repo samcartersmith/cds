@@ -5,8 +5,6 @@ import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { InputStack } from '../InputStack';
 import { NativeInput } from '../NativeInput';
 
- 
-
 export default {
   title: 'Core Components/Inputs/NativeInput',
   component: NativeInput,

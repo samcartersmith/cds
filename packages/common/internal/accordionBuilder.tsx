@@ -32,7 +32,6 @@ export function accordionBuilder({
   CellMedia,
   TextInput,
 }: CreateAccordionProps) {
-   
   const handlePress = console.log;
 
   const BasicAccordion = () => {

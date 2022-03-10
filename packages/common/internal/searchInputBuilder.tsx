@@ -1,4 +1,3 @@
- 
 import React, { ComponentType, useCallback, useState } from 'react';
 
 import { SearchInputBaseProps } from '../types/SearchInputBaseProps';

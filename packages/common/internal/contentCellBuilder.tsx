@@ -4,7 +4,6 @@ import type { CellMediaProps, ContentCellBaseProps, IllustrationPictogramNames }
 
 import { assets } from './data/assets';
 
- 
 const onPressConsole = () => console.log('pressed');
 
 export function contentCellBuilder(

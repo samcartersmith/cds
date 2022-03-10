@@ -44,7 +44,6 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   ref: React.ForwardedRef<HTMLFieldSetElement>,
 ) {
   if (isDevelopment() && !label && !ariaLabelledby) {
-     
     console.warn('Please specify an aria label for the checkbox group.');
   }
 
@@ -56,7 +55,6 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
 
     const { value } = child.props;
     if (isDevelopment() && typeof value === 'undefined') {
-       
       console.error('Checkboxes inside CheckboxGroup should have values.');
     }
     const id = child.props.id ?? ['checkbox-group', name, value].join('-');

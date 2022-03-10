@@ -10,7 +10,6 @@ export default {
 } as Meta;
 
 const handlePress = () => {
-   
   return () => console.log('Thanks for tapping');
 };
 

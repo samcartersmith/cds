@@ -17,7 +17,6 @@ export const RootSpectrumPreferenceProvider: React.FC<RootSpectrumPreferenceProv
 
     /** Guarantee we only have a single RootScaleContext  */
     if (!isProduction() && context) {
-       
       console.error(
         'Multiple RootSpectrumPreferenceProviders were rendered and there should only be one. Ensure there is a single RootSpectrumPreferenceProvider to resolve.',
       );

@@ -12,7 +12,6 @@ import type {
 
 import { assets } from './data/assets';
 
- 
 const onPressConsole = () => console.log('onPress');
 
 export function listCellBuilder(

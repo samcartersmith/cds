@@ -2,8 +2,6 @@ import { HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system';
 import { AvatarButton } from '../AvatarButton';
 
- 
-
 const avatarImageUrl =
   'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg';
 

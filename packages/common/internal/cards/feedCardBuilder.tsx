@@ -16,7 +16,6 @@ type CreateFeedCardSheetParams<WrapperProps, PressFn> = {
   renderHorizontalItem: RenderGroupItem<WrapperProps>;
 };
 
- 
 const onPressConsole = () => console.log('pressed');
 
 export function createConfigs<WrapperProps, PressFn>({

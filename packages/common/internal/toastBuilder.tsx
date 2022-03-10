@@ -3,11 +3,10 @@ import React, { useCallback } from 'react';
 import { useToast } from '../overlays/useToast';
 import type { ButtonBaseProps, ToastBaseProps } from '../types';
 
- 
 const onActionPressConsole = () => console.log('action pressed');
- 
+
 const onWillHideConsole = () => console.log('toast hiding');
- 
+
 const onDidHideConsole = () => console.log('toast hidden');
 
 export type CreateToastProps = {

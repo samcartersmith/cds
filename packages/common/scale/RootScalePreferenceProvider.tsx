@@ -17,7 +17,6 @@ export const RootScalePreferenceProvider: React.FC<RootScalePreferenceProviderPr
 
     /** Guarantee we only have a single RootScaleContext  */
     if (!isProduction() && context) {
-       
       console.error(
         'Multiple RootScalePreferenceProviders were rendered and there should only be one. Ensure there is a single RootScalePreferenceProvider to resolve.',
       );
