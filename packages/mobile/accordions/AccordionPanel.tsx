@@ -1,9 +1,9 @@
 import React, { ForwardedRef, forwardRef, memo } from 'react';
 import { View } from 'react-native';
-import type { AccordionPanelBaseProps } from '@cbhq/cds-common/types';
 import { accordionVisibleMaxHeight } from '@cbhq/cds-common/animation/accordion';
-import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { useAccordionSpacing } from '@cbhq/cds-common/hooks/useAccordionSpacing';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
+import type { AccordionPanelBaseProps } from '@cbhq/cds-common/types';
 
 import { Collapsible } from '../collapsible';
 

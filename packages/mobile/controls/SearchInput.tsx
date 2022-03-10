@@ -1,17 +1,19 @@
-import React, { useRef, useCallback, memo, useState, ForwardedRef, forwardRef } from 'react';
+import React, { ForwardedRef, forwardRef, memo, useCallback, useRef, useState } from 'react';
 import {
   GestureResponderEvent,
-  TextInputProps as RNTextInputProps,
-  TextInput as RNTextInput,
   NativeSyntheticEvent,
+  TextInput as RNTextInput,
   TextInputFocusEventData,
+  TextInputProps as RNTextInputProps,
 } from 'react-native';
-import { SearchInputBaseProps } from '@cbhq/cds-common/types/SearchInputBaseProps';
-import { IconName } from '@cbhq/cds-common/types';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
-import { TextInput } from './TextInput';
+import { IconName } from '@cbhq/cds-common/types';
+import { SearchInputBaseProps } from '@cbhq/cds-common/types/SearchInputBaseProps';
+
 import { Box } from '../layout/Box';
+
 import { InputIconButton } from './InputIconButton';
+import { TextInput } from './TextInput';
 
 export type SearchInputProps = SearchInputBaseProps &
   RNTextInputProps & {

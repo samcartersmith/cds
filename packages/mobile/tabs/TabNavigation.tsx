@@ -1,19 +1,21 @@
-import React, { useEffect, useCallback, useRef, useMemo, useState, memo, forwardRef } from 'react';
+import React, { forwardRef, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   LayoutChangeEvent,
+  LayoutRectangle,
+  NativeScrollEvent,
+  NativeSyntheticEvent,
   ScrollView,
   View,
-  LayoutRectangle,
-  NativeSyntheticEvent,
-  NativeScrollEvent,
 } from 'react-native';
-import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
-import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
+import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
+import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
+
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { PressableOpacity } from '../system/PressableOpacity';
+
 import { TabIndicator } from './TabIndicator';
 import { TabLabel } from './TabLabel';
 
@@ -59,8 +61,13 @@ export const TabNavigation = memo(
 
         /** Check if active tab is offscreen and trigger a scroll event */
         const isOffscreenLeft = layout.x < scrollDetails.current?.xPosition;
-        const isOffscreenRight =
-          layout.x + layout.width - scrollDetails.current?.xPosition > scrollDetails.current?.width;
+        let isOffscreenRight = false;
+        if (scrollDetails.current) {
+          isOffscreenRight =
+            layout.x + layout.width - scrollDetails.current.xPosition >
+            scrollDetails.current?.width;
+        }
+
         const isOffscreen = isOffscreenLeft || isOffscreenRight;
         if (isOffscreen) {
           scrollRef.current?.scrollTo({ x: layout.x, animated: true });
@@ -68,7 +75,7 @@ export const TabNavigation = memo(
       }, []);
 
       const getOnLayoutHandler = useCallback(
-        (id) => {
+        (id: string) => {
           return function onLayout({ nativeEvent: { layout } }: LayoutChangeEvent) {
             tabsLayoutsMap.current.set(id, layout);
             if (id === value) handleActiveTabUpdate(layout);

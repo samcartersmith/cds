@@ -1,5 +1,5 @@
-import type { Scale } from '@cbhq/cds-common/types';
 import { interactableHeight } from '@cbhq/cds-common/tokens/interactableHeight';
+import type { Scale } from '@cbhq/cds-common/types';
 import { memoize } from '@cbhq/cds-common/utils/memoize';
 
 type GetButtonSizeStyles = { compact?: boolean; scale: Scale };

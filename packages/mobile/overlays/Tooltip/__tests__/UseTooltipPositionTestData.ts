@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-loss-of-precision */
 import { LayoutRectangle } from 'react-native';
+
 import { useDimensions } from '../../../hooks/useDimensions';
 import { SubjectLayout } from '../TooltipProps';
 

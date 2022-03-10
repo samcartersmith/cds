@@ -1,6 +1,6 @@
+import { Animated, LayoutRectangle } from 'react-native';
 import { NoopFn } from '@cbhq/cds-common';
 import { BaseTooltipPlacement, TooltipBaseProps } from '@cbhq/cds-common/types/TooltipBaseProps';
-import { LayoutRectangle, Animated } from 'react-native';
 
 export type TooltipPlacement = Extract<BaseTooltipPlacement, 'bottom' | 'top'>;
 

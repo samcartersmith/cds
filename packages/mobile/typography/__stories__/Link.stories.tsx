@@ -3,15 +3,13 @@
 import React, { useCallback } from 'react';
 import { capitalize } from '@cbhq/cds-utils';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useWebBrowserOpener } from '../../hooks/useWebBrowserOpener';
-
 import { Link } from '../Link';
 import { TextBody } from '../TextBody';
 import { TextHeadline } from '../TextHeadline';
 import { TextLabel1 } from '../TextLabel1';
 import { TextTitle1 } from '../TextTitle1';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const typographies = [
   'title1',
@@ -34,7 +32,6 @@ const links = typographies.map((typography) => (
   </Example>
 ));
 
-// eslint-disable-next-line no-console
 const logPressed = () => console.log('Link is pressed');
 const OPEN_WEB_BROWSER_OPTIONS = {
   // cds custom properties

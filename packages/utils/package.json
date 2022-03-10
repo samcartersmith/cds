@@ -14,5 +14,6 @@
     "type-fest": "^1.2.0"
   },
   "main": "index.js",
+  "react-native": "index.ts",
   "typings": "index.d.ts"
 }

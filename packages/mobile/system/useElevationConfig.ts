@@ -1,6 +1,7 @@
 import { createContext, useContext, useMemo } from 'react';
 import { ElevationLevels } from '@cbhq/cds-common/types';
-import { ElevationConfigsContext, ElevationConfigs } from './ElevationConfigsContext';
+
+import { ElevationConfigs, ElevationConfigsContext } from './ElevationConfigsContext';
 
 const DummyElevationConfigsContext = createContext<ElevationConfigs | undefined>(undefined);
 

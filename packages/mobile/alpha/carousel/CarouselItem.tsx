@@ -1,18 +1,18 @@
-import React, { memo, useCallback, useMemo, useRef, createContext, useState } from 'react';
-
-import { NoopFn, SpacingScale } from '@cbhq/cds-common';
+import React, { createContext, memo, useCallback, useMemo, useRef, useState } from 'react';
 import { Animated, View } from 'react-native';
+import { NoopFn, SpacingScale } from '@cbhq/cds-common';
 import { animateOpacityConfig, animateSizeConfig } from '@cbhq/cds-common/animation/carousel';
 
+import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import { IconButton } from '../../buttons/IconButton';
 import { Box } from '../../layout/Box';
+
 import { CarouselControlsWrapper } from './CarouselControlsWrapper';
-import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import type {
+  CarouselHandleDismissItem,
   CarouselId,
   CarouselItemAnimatedStyles,
   CarouselOnDismissItem,
-  CarouselHandleDismissItem,
   CarouselOnItemMount,
 } from './types';
 

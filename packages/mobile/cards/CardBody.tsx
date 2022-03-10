@@ -3,8 +3,8 @@ import { CardBodyBaseProps, CardBodyOrientationProps } from '@cbhq/cds-common/ty
 
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { TextHeadline } from '../typography/TextHeadline';
 import { TextBody } from '../typography/TextBody';
+import { TextHeadline } from '../typography/TextHeadline';
 
 export type CardBodyProps = CardBodyBaseProps & CardBodyOrientationProps;
 

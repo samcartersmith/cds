@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { NormalScaleProvider, DenseScaleProvider } from '../../system/ThemeProvider';
 
-import { useSpacingScale } from '../useSpacingScale';
 import { large, xSmall } from '../../styles/scale';
+import { DenseScaleProvider, NormalScaleProvider } from '../../system/ThemeProvider';
+import { useSpacingScale } from '../useSpacingScale';
 
 describe('useSpacingScale', () => {
   it('returns correct value for normal scale', () => {

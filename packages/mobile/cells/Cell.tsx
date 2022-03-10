@@ -1,13 +1,12 @@
 import React, { memo } from 'react';
 import { ViewProps } from 'react-native';
-
 import { CellBaseProps } from '@cbhq/cds-common';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
-import { Pressable, LinkableProps } from '../system/Pressable';
+import { LinkableProps, Pressable } from '../system/Pressable';
 
 export type CellSharedProps = {
   /** Measure the dimensions of the cell. */
@@ -92,6 +91,7 @@ export const Cell = memo(function Cell({
   if (onPress) {
     content = (
       <Pressable
+        accessibilityRole="button"
         noScaleOnPress
         transparentWhileInactive
         backgroundColor="background"

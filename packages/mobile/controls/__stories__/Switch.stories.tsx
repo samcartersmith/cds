@@ -2,9 +2,8 @@
 import React from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
-import { Switch } from '../Switch';
-
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { Switch } from '../Switch';
 
 const SwitchScreen = () => {
   return (
@@ -15,11 +14,9 @@ const SwitchScreen = () => {
           const [isChecked, { toggle }] = useToggler();
 
           return (
-            <>
-              <Switch checked={isChecked} onChange={toggle}>
-                Default
-              </Switch>
-            </>
+            <Switch checked={isChecked} onChange={toggle}>
+              Default
+            </Switch>
           );
         }}
       </Example>

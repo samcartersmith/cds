@@ -2,33 +2,35 @@ import React, {
   forwardRef,
   memo,
   useCallback,
-  useMemo,
-  useState,
-  useRef,
   useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
 } from 'react';
 import { Animated, ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
-import { SpacingScale, SharedProps } from '@cbhq/cds-common';
+import { SharedProps, SpacingScale } from '@cbhq/cds-common';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { emptyObject } from '@cbhq/cds-utils';
+
+import { useScrollOffset } from '../../hooks/useScrollOffset';
+import { ScrollToParams, useScrollTo } from '../../hooks/useScrollTo';
 import { useSpacingValue } from '../../hooks/useSpacingValue';
 import { VStack } from '../../layout/VStack';
-import { useScrollTo, ScrollToParams } from '../../hooks/useScrollTo';
-import { useScrollOffset } from '../../hooks/useScrollOffset';
 import {
-  ProgressIndicator,
   PROGRESS_INDICATOR_WIDTH,
+  ProgressIndicator,
 } from '../../visualizations/ProgressIndicator';
-import { CarouselItem } from './CarouselItem';
+
 import { CarouselControlsWrapper } from './CarouselControlsWrapper';
+import { CarouselItem } from './CarouselItem';
 import type {
   CarouselId,
-  CarouselRef,
-  CarouselOnDismissItem,
-  CarouselOnDismissLastItem,
   CarouselItemAnimatedStyles,
   CarouselMountedItemsInfo,
+  CarouselOnDismissItem,
+  CarouselOnDismissLastItem,
+  CarouselRef,
 } from './types';
 
 export type { CarouselId, CarouselRef };

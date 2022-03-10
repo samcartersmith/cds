@@ -1,13 +1,14 @@
 import React, { FunctionComponent, memo, useCallback, useRef } from 'react';
 import { Animated, LayoutChangeEvent, StyleSheet } from 'react-native';
 import { SparklineInteractiveMinMaxProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+
+import { useLayout } from '../../hooks/useLayout';
 import { usePalette } from '../../hooks/usePalette';
 import { TextLabel2, useTypographyStyles } from '../../typography';
 
-import { useLayout } from '../../hooks/useLayout';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
-import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 import { useMinMaxTransform } from './useMinMaxTransform';
+import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
 type SparklineInteractiveMinMaxContentProps = {
   x: number;

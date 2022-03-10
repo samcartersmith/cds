@@ -4,13 +4,14 @@ import {
   NewPartialPaletteConfig,
   SystemProviderProps,
 } from '@cbhq/cds-common';
-import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { SpectrumProvider } from '@cbhq/cds-common/spectrum/SpectrumProvider';
+import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
 import { ThemeConfigProvider } from '@cbhq/cds-common/system/ThemeConfigProvider';
+
+import { createFallbackThemeConfig, createThemeConfig } from './createThemeConfig';
 import { ElevationConfigsProvider } from './ElevationConfigsProvider';
 import { FeatureFlagContext } from './FeatureFlagContext';
-import { createThemeConfig, createFallbackThemeConfig } from './createThemeConfig';
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = memo(function ThemeProvider({
   children,

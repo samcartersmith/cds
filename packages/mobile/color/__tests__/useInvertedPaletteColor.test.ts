@@ -1,5 +1,5 @@
-import { PaletteAlias, Spectrum } from '@cbhq/cds-common';
 import { renderHook } from '@testing-library/react-hooks';
+import { PaletteAlias, Spectrum } from '@cbhq/cds-common';
 
 import { DarkModeProvider } from '../../system';
 import { useInvertedPaletteColor } from '../useInvertedPaletteColor';
@@ -18,11 +18,11 @@ const mockUseInvertedPaletteColor = (alias: PaletteAlias, mode?: Spectrum | unde
 describe('useInvertedPaletteColor', () => {
   it('returns the inverted background color if in light mode', () => {
     const rgbaString = mockUseInvertedPaletteColor('background');
-    expect(rgbaString).toEqual('rgba(10,11,13,1)');
+    expect(rgbaString).toBe('rgba(10,11,13,1)');
   });
 
   it('returns the inverted background color if in dark mode', () => {
     const rgbaString = mockUseInvertedPaletteColor('background', 'dark');
-    expect(rgbaString).toEqual('rgba(255,255,255,1)');
+    expect(rgbaString).toBe('rgba(255,255,255,1)');
   });
 });

@@ -1,5 +1,5 @@
-import { SpacingProps } from '@cbhq/cds-common';
 import { ViewStyle } from 'react-native';
+import { SpacingProps } from '@cbhq/cds-common';
 
 import { useInternalSpacingStyles } from './internal/useInternalSpacingStyles';
 

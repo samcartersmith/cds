@@ -1,15 +1,14 @@
 import React, { forwardRef, memo, useCallback, useEffect, useRef, useState } from 'react';
-import { Animated, LayoutChangeEvent, I18nManager, View } from 'react-native';
-import { ProgressBaseProps } from '@cbhq/cds-common/types/ProgressBaseProps';
-
-import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
-import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
-import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
+import { Animated, I18nManager, LayoutChangeEvent, View } from 'react-native';
 import { ForwardedRef } from '@cbhq/cds-common';
+import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
+import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
+import { ProgressBaseProps } from '@cbhq/cds-common/types/ProgressBaseProps';
+import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
-import { Box, HStack, VStack } from '../layout';
 import { usePalette } from '../hooks/usePalette';
+import { Box, HStack, VStack } from '../layout';
 
 export const ProgressBar: React.FC<ProgressBaseProps> = memo(
   forwardRef(

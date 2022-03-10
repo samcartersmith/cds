@@ -1,11 +1,12 @@
-import { render, fireEvent } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
+
 import { SearchInput } from '../SearchInput';
 
 const TEST_ID = 'search';
 const ROLE = 'search';
 
 describe('Search', () => {
-  let SearchComponent = <></>;
+  let SearchComponent: React.ReactElement;
   const onClearSpy = jest.fn();
   const onChangeTextSpy = jest.fn();
   const onSearchSpy = jest.fn();
@@ -47,7 +48,13 @@ describe('Search', () => {
 
   it('does not render a startIcon when hideStartIcon=true', () => {
     const result = render(
-      <SearchInput value="value" testID={TEST_ID} placeholder="Placeholder" hideStartIcon />,
+      <SearchInput
+        onChangeText={onChangeTextSpy}
+        value="value"
+        testID={TEST_ID}
+        placeholder="Placeholder"
+        hideStartIcon
+      />,
     );
 
     expect(result.queryByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeNull();

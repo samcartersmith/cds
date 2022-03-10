@@ -3,26 +3,26 @@ import React, {
   memo,
   useCallback,
   useEffect,
-  useMemo,
-  useState,
-  useRef,
   useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
 } from 'react';
-
-import { SpacingScale, SharedProps } from '@cbhq/cds-common';
+import { Animated, Platform, ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
+import { SharedProps, SpacingScale } from '@cbhq/cds-common';
 import { animateOpacityConfig, animateSizeConfig } from '@cbhq/cds-common/animation/carousel';
 import { emptyObject } from '@cbhq/cds-utils';
-import { Animated, Platform, ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
-import { useScrollTo, ScrollToParams } from '../../hooks/useScrollTo';
+import { ScrollToParams, useScrollTo } from '../../hooks/useScrollTo';
+
 import { CarouselItem } from './CarouselItem';
 import type {
-  CarouselLayoutMap,
-  CarouselRef,
   CarouselDismissItemParams,
-  CarouselOnReady,
   CarouselItemId,
+  CarouselLayoutMap,
+  CarouselOnReady,
+  CarouselRef,
 } from './types';
 
 const opacityConfig = convertMotionConfig(animateOpacityConfig);

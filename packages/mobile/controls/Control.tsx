@@ -1,9 +1,4 @@
 import React, { forwardRef, memo, useCallback, useEffect, useMemo, useRef } from 'react';
-
-import { PaletteBackground, SharedProps } from '@cbhq/cds-common';
-import { opacityPressed } from '@cbhq/cds-common/tokens/interactable';
-import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
-import { isDevelopment } from '@cbhq/cds-utils';
 import {
   AccessibilityActionEvent,
   Animated,
@@ -14,6 +9,10 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
+import { PaletteBackground, SharedProps } from '@cbhq/cds-common';
+import { opacityPressed } from '@cbhq/cds-common/tokens/interactable';
+import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
+import { isDevelopment } from '@cbhq/cds-utils';
 
 import { usePalette } from '../hooks/usePalette';
 import { Spacer } from '../layout/Spacer';
@@ -62,7 +61,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   ref: React.ForwardedRef<View>,
 ) {
   if (isDevelopment() && !label && !accessibilityLabel) {
-    // eslint-disable-next-line no-console
     console.warn(
       `Please specify an accessibility label for the ${accessibilityRole} control with value ${value}.`,
     );

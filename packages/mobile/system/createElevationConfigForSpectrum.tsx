@@ -15,8 +15,9 @@ import {
   elevation2Palette,
   frontierSpectrumPalette,
 } from '@cbhq/cds-common/palette/constants';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
+import { borderWidth } from '@cbhq/cds-common/tokens/border';
+
 import { createThemeConfig } from './createThemeConfig';
 
 type ElevationLevel = Exclude<ElevationLevels, 0>;

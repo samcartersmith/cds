@@ -1,13 +1,11 @@
 import React from 'react';
 import { GestureResponderEvent } from 'react-native';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons/Icon';
 import { PressableOpacity } from '../PressableOpacity';
 
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-
 function onPress(event: GestureResponderEvent) {
-  // eslint-disable-next-line no-console
   console.log('Pressed', event.type || 'GestureResponderEvent');
 }
 

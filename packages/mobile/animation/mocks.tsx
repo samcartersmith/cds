@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect } from 'react';
-
+import { Animated } from 'react-native';
 import { NoopFn } from '@cbhq/cds-common';
 import { noop } from '@cbhq/cds-utils';
-import { Animated } from 'react-native';
 
 import { Box } from '../layout/Box';
+
 import { LottieProps } from './LottieProps';
 
 export const LottieMock = ({

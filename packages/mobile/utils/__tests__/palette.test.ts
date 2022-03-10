@@ -1,36 +1,32 @@
+import { PaletteAlias } from '@cbhq/cds-common';
 import { defaultPalette } from '@cbhq/cds-common/palette/constants';
 
-import { PaletteAlias } from '@cbhq/cds-common';
-import { light, dark } from '../../styles/spectrum';
+import { dark, light } from '../../styles/spectrum';
 import * as spectrumColors from '../../styles/spectrum';
 import {
   paletteAliasToRgbaString,
-  paletteValueToRgbaString,
   paletteConfigToRgbaStrings,
   paletteValueToRgbaArray,
+  paletteValueToRgbaString,
 } from '../palette';
 
 describe('paletteValueToRgbaString', () => {
   it('gets the correct rgb value for spectrum alias in light mode', () => {
-    expect(paletteValueToRgbaString('gray100', 'light')).toEqual(
-      `rgba(${light.gray100.join(',')},1)`,
-    );
+    expect(paletteValueToRgbaString('gray100', 'light')).toBe(`rgba(${light.gray100.join(',')},1)`);
   });
 
   it('gets the correct rgb value for spectrum alias with opacity in light mode', () => {
-    expect(paletteValueToRgbaString(['blue90', 0.33], 'light')).toEqual(
+    expect(paletteValueToRgbaString(['blue90', 0.33], 'light')).toBe(
       `rgba(${light.blue90.join(',')},${0.33})`,
     );
   });
 
   it('gets the correct rgb value for spectrum alias in dark mode', () => {
-    expect(paletteValueToRgbaString('gray100', 'dark')).toEqual(
-      `rgba(${dark.gray100.join(',')},1)`,
-    );
+    expect(paletteValueToRgbaString('gray100', 'dark')).toBe(`rgba(${dark.gray100.join(',')},1)`);
   });
 
   it('gets the correct rgb value for spectrum alias with opacity in dark mode', () => {
-    expect(paletteValueToRgbaString(['blue90', 0.33], 'dark')).toEqual(
+    expect(paletteValueToRgbaString(['blue90', 0.33], 'dark')).toBe(
       `rgba(${dark.blue90.join(',')},${0.33})`,
     );
   });
@@ -68,7 +64,7 @@ describe('paletteAliasToRgbaString', () => {
 
 describe('paletteConfigToRgbaStrings', () => {
   it('returns correct values', () => {
-    expect(paletteConfigToRgbaStrings(defaultPalette, 'dark').primary).toEqual(
+    expect(paletteConfigToRgbaStrings(defaultPalette, 'dark').primary).toBe(
       `rgba(${dark.blue60.join(',')},1)`,
     );
   });

@@ -1,12 +1,12 @@
 import { useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
+import { MotionDuration } from '@cbhq/cds-common';
 import {
   animateInOpacityConfig,
   animateOutOpacityConfig,
   overlayHiddenOpacity,
 } from '@cbhq/cds-common/animation/overlay';
 
-import { MotionDuration } from '@cbhq/cds-common';
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 
 /**

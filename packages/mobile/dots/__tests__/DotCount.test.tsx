@@ -1,12 +1,12 @@
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
-import { render, fireEvent } from '@testing-library/react-native';
-
+import { fireEvent, render } from '@testing-library/react-native';
 import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
-import { paletteAliasToRgbaString } from '../../utils/palette';
-import { ThemeProvider } from '../../system/ThemeProvider';
-import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
-import { DotCount } from '../DotCount';
+import { borderWidth } from '@cbhq/cds-common/tokens/border';
+
 import { Icon } from '../../icons/Icon';
+import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
+import { ThemeProvider } from '../../system/ThemeProvider';
+import { paletteAliasToRgbaString } from '../../utils/palette';
+import { DotCount } from '../DotCount';
 
 const DOTCOUNT_TESTID = 'dot-count-test';
 

@@ -1,10 +1,9 @@
 import React from 'react';
 import * as animations from '@cbhq/cds-lottie-files';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
 import { TextBody } from '../../typography/TextBody';
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-
 import { Lottie } from '../Lottie';
 
 const LottieScreen = () => {

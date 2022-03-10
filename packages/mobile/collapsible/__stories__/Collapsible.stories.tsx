@@ -1,13 +1,12 @@
 import React from 'react';
 import { collapsibleBuilder } from '@cbhq/cds-common/internal/collapsibleBuilder';
 
-import { Collapsible } from '..';
 import { Button } from '../../buttons';
-import { TextBody } from '../../typography';
 import { DotCount } from '../../dots';
-import { HStack } from '../../layout';
-
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { HStack } from '../../layout';
+import { TextBody } from '../../typography';
+import { Collapsible } from '..';
 
 const { BasicCollapsible, RevealTop, DefaultExpanded, Scroll, Horizontal } = collapsibleBuilder({
   Collapsible,

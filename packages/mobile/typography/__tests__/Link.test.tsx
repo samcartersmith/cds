@@ -1,5 +1,5 @@
-import { fireEvent, render } from '@testing-library/react-native';
 import TestRenderer from 'react-test-renderer';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { Link } from '../Link';
 
@@ -81,7 +81,7 @@ describe('Link', () => {
       </Link>,
     );
     const linkInstance = linkRenderer.root;
-    expect(linkInstance.props.forceOpenOutsideApp).toEqual(true);
+    expect(linkInstance.props.forceOpenOutsideApp).toBe(true);
   });
 
   it('can set readerMode to true', () => {
@@ -91,7 +91,7 @@ describe('Link', () => {
       </Link>,
     );
     const linkInstance = linkRenderer.root;
-    expect(linkInstance.props.readerMode).toEqual(true);
+    expect(linkInstance.props.readerMode).toBe(true);
   });
 
   it('removes text style when inherited', () => {

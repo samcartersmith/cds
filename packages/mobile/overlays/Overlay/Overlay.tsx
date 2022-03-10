@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
-
-import { overlayPalette } from '@cbhq/cds-common/palette/constants';
 import { Animated } from 'react-native';
+import { overlayPalette } from '@cbhq/cds-common/palette/constants';
 
 import { VStack, VStackProps } from '../../layout/VStack';
 import { ThemeProvider } from '../../system/ThemeProvider';

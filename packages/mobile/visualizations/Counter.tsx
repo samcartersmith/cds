@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
-
 import { StyleSheet, View } from 'react-native';
-import { useCounter } from '@cbhq/cds-common/visualizations/useCounter';
 import { CounterBaseProps } from '@cbhq/cds-common/types/CounterBaseProps';
+import { useCounter } from '@cbhq/cds-common/visualizations/useCounter';
+
 import { Box } from '../layout';
 
 export const Counter: React.FC<CounterBaseProps> = ({

@@ -1,20 +1,18 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import type { DrawerBaseProps, DrawerRefBaseProps, IconName, NoopFn } from '@cbhq/cds-common/types';
-import { prices } from '@cbhq/cds-common/internal/data/prices';
 import { FlatList } from 'react-native';
-import { Avatar } from '../../media/Avatar';
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { prices } from '@cbhq/cds-common/internal/data/prices';
+import type { DrawerBaseProps, DrawerRefBaseProps, IconName, NoopFn } from '@cbhq/cds-common/types';
 
 import { Button } from '../../buttons/Button';
-import { VStack, Fallback, Spacer } from '../../layout';
-
-import { Drawer } from '../Drawer/Drawer';
-
-import { Example, ExampleScreen, LoremIpsum } from '../../examples/ExampleScreen';
-import { TextTitle3 } from '../../typography';
-import { Icon } from '../../icons/Icon';
 import { ListCell } from '../../cells/ListCell';
-import { SelectOption, Menu } from '../../controls';
+import { Menu, SelectOption } from '../../controls';
+import { Example, ExampleScreen, LoremIpsum } from '../../examples/ExampleScreen';
+import { Icon } from '../../icons/Icon';
+import { Fallback, Spacer, VStack } from '../../layout';
+import { Avatar } from '../../media/Avatar';
+import { TextTitle3 } from '../../typography';
+import { Drawer } from '../Drawer/Drawer';
 
 type NavOptionProps = {
   label: string;

@@ -1,4 +1,5 @@
 import { useWindowDimensions } from 'react-native';
+
 import { useStatusBarHeight } from './useStatusBarHeight';
 
 // The bottom Navigation bar height needs the be accounted for but could not find a lib to help with this.

@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
-
 import type { AccessibleForegroundFn, AccessibleForegroundParams } from '@cbhq/cds-common';
 import { getAccessibleForeground } from '@cbhq/cds-common/color/getAccessibleForeground';
+
 import { usePalette } from '../hooks/usePalette';
 
 import { usePaletteValueToRgbaString } from './usePaletteValueToRgbaString';

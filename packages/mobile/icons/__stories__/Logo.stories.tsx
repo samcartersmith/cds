@@ -1,16 +1,14 @@
 import React from 'react';
 import { SpectrumProvider } from '@cbhq/cds-common/spectrum/SpectrumProvider';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-
 import { LogoMark } from '../LogoMark';
 import { LogoWordmark } from '../LogoWordmark';
 import { SubBrandLogoMark } from '../SubBrandLogoMark';
 import { SubBrandLogoWordmark } from '../SubBrandLogoWordmark';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const LogoScreen = () => {
   return (

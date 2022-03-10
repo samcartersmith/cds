@@ -3,6 +3,7 @@ import {
   ThemeConfigContext,
   ThemeConfigContextValue,
 } from '@cbhq/cds-common/system/ThemeConfigContext';
+
 import { createFallbackThemeConfig } from './createThemeConfig';
 
 export const useThemeConfig = (): ThemeConfigContextValue => {

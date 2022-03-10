@@ -1,14 +1,14 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-
-import { useScale } from '@cbhq/cds-common';
-import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { PressableProps, StyleSheet, View } from 'react-native';
+import { useScale } from '@cbhq/cds-common';
 import { switchControlPalette } from '@cbhq/cds-common/palette/constants';
+import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 
 import { Box } from '../layout/Box';
 import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
 import { ThemeProvider } from '../system/ThemeProvider';
+
 import { Control, ControlIconProps } from './Control';
 
 export type SwitchProps = {

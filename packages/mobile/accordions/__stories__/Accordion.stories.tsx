@@ -1,12 +1,11 @@
 import React from 'react';
 import { accordionBuilder } from '@cbhq/cds-common/internal/accordionBuilder';
 
-import { Accordion, AccordionItem } from '..';
 import { CellMedia } from '../../cells';
 import { TextInput } from '../../controls';
-import { TextBody } from '../../typography';
-
 import { Example, ExampleProps, ExampleScreen } from '../../examples/ExampleScreen';
+import { TextBody } from '../../typography';
+import { Accordion, AccordionItem } from '..';
 
 const { BasicAccordion, NoMedia, NoSubtitle, TitleOnly, LongContent } = accordionBuilder({
   Accordion,

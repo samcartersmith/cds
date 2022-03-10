@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Platform, NativeModules, StatusBar, NativeEventEmitter, NativeModule } from 'react-native';
+import { NativeEventEmitter, NativeModule, NativeModules, Platform, StatusBar } from 'react-native';
 
 const { StatusBarManager } = NativeModules;
 

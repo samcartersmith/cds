@@ -1,8 +1,9 @@
-import { render } from '@testing-library/react-native';
-import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
-import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
-import { defaultPalette } from '@cbhq/cds-common';
 import { View } from 'react-native';
+import { render } from '@testing-library/react-native';
+import { defaultPalette } from '@cbhq/cds-common';
+import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
+import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
+
 import { paletteValueToRgbaString } from '../../utils/palette';
 import { ProgressCircle } from '../ProgressCircle';
 
@@ -85,7 +86,7 @@ describe('ProgressCircle tests', () => {
     const innerCircle = getByTestId('cds-progress-circle-inner');
     expect(innerCircle).toBeTruthy();
     // eslint-disable-next-line no-underscore-dangle
-    expect(innerCircle.props.strokeDashoffset._value).toEqual(0);
+    expect(innerCircle.props.strokeDashoffset._value).toBe(0);
 
     expect(innerCircle.props.strokeDasharray).toEqual(circumference);
 
@@ -102,7 +103,7 @@ describe('ProgressCircle tests', () => {
 
     const innerCircle = getByTestId('cds-progress-circle-inner');
     expect(innerCircle).toBeTruthy();
-    expect(innerCircle.props.strokeWidth).toEqual(12);
+    expect(innerCircle.props.strokeWidth).toBe(12);
   });
 
   it('handles no text', () => {

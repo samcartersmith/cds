@@ -1,7 +1,7 @@
 import { I18nManager, ViewStyle } from 'react-native';
 import { ButtonBaseProps } from '@cbhq/cds-common';
-import { emptyObject } from '@cbhq/cds-utils';
 import { memoize } from '@cbhq/cds-common/utils/memoize';
+import { emptyObject } from '@cbhq/cds-utils';
 
 type GetFlushStylesProps = {
   flush: ButtonBaseProps['flush'];

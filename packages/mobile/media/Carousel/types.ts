@@ -1,7 +1,7 @@
-import type { NoopFn } from '@cbhq/cds-common';
 import { Animated } from 'react-native';
+import type { NoopFn } from '@cbhq/cds-common';
 
-import { ScrollToParams, ScrollToEndFn } from '../../hooks/useScrollTo';
+import { ScrollToEndFn, ScrollToParams } from '../../hooks/useScrollTo';
 
 export type CarouselItemId = React.Key;
 export type CarouselLayoutMap = Record<CarouselItemId, number>;

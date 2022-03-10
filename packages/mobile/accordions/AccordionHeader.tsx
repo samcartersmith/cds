@@ -1,22 +1,23 @@
-import React, { memo, useCallback, forwardRef, ForwardedRef } from 'react';
+import React, { ForwardedRef, forwardRef, memo, useCallback } from 'react';
 import { View } from 'react-native';
-import type {
-  AccordionHeaderBaseProps,
-  AccordionMediaBaseProps,
-  AccordionTitleBaseProps,
-  AccordionIconBaseProps,
-} from '@cbhq/cds-common/types';
-import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 import { useAccordionParent } from '@cbhq/cds-common/accordions/AccordionParentContext';
+import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { listHeight } from '@cbhq/cds-common/tokens/cell';
+import type {
+  AccordionHeaderBaseProps,
+  AccordionIconBaseProps,
+  AccordionMediaBaseProps,
+  AccordionTitleBaseProps,
+} from '@cbhq/cds-common/types';
 
-import { VStack, Box, HStack } from '../layout';
-import { TextHeadline, TextBody } from '../typography';
-import { Pressable } from '../system/Pressable';
-import { Icon } from '../icons';
-import { useAccordionIconAnimation } from './useAccordionIconAnimation';
 import { useToggleAnimation } from '../collapsible/useToggleAnimation';
+import { Icon } from '../icons';
+import { Box, HStack, VStack } from '../layout';
+import { Pressable } from '../system/Pressable';
+import { TextBody, TextHeadline } from '../typography';
+
+import { useAccordionIconAnimation } from './useAccordionIconAnimation';
 
 export type AccordionHeaderProps = AccordionHeaderBaseProps;
 
@@ -65,6 +66,7 @@ export const AccordionHeader = memo(
 
       return (
         <Pressable
+          accessibilityRole="button"
           noScaleOnPress
           transparentWhileInactive
           backgroundColor="background"

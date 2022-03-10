@@ -1,14 +1,13 @@
 import React, { memo } from 'react';
-
+import { StyleSheet, View } from 'react-native';
 import { IconButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
-import { StyleSheet, View } from 'react-native';
 
+import { IconButton as FrontierIconButton } from '../alpha/IconButton';
 import { Icon } from '../icons/Icon';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { useFeatureFlag } from '../system/useFeatureFlag';
-import { IconButton as FrontierIconButton } from '../alpha/IconButton';
 
 export type IconButtonProps = IconButtonBaseProps & PressableProps;
 

@@ -1,10 +1,9 @@
-/* eslint-disable react-native/no-raw-text */
 import React from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
-import { TabLabel } from '../TabLabel';
-import { HStack } from '../../layout/HStack';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { HStack } from '../../layout/HStack';
+import { TabLabel } from '../TabLabel';
 
 const TabLabelScreen = () => {
   return (

@@ -1,15 +1,16 @@
-import React, { useMemo, memo, forwardRef } from 'react';
-
-import { BoxBaseProps, ForwardedRef, SharedProps } from '@cbhq/cds-common';
+import React, { forwardRef, memo, useMemo } from 'react';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
+import { BoxBaseProps, ForwardedRef, SharedProps } from '@cbhq/cds-common';
+
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { getBorderStyles } from '../styles/getBorderStyles';
 import { useElevationConfig } from '../system/useElevationConfig';
 import { useThemeConfig } from '../system/useThemeConfig';
-import { OmitStyle, DangerouslySetStyle } from '../types';
+import { DangerouslySetStyle, OmitStyle } from '../types';
+
 import { OverflowGradient } from './OverflowGradient';
-import { getBorderStyles } from '../styles/getBorderStyles';
 
 export type BoxProps = {
   /**

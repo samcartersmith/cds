@@ -2,8 +2,8 @@ import { useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
 import {
   animateInOpacityConfig,
-  animateOutOpacityConfig,
   animateInScaleConfig,
+  animateOutOpacityConfig,
   animateOutScaleConfig,
   modalHiddenOpacity,
   modalHiddenScale,

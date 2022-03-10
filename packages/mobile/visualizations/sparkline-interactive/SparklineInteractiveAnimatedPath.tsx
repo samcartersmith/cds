@@ -1,15 +1,15 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 import { TextInput } from 'react-native';
 import * as interpolate from 'd3-interpolate-path';
-import { SparklineInteractiveAnimatedPathProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useValueChanges } from '@cbhq/cds-common/hooks/useValueChanges';
+import { SparklineInteractiveAnimatedPathProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 
 import { SparklineArea } from '../SparklineArea';
 import { SparklineGradient } from '../SparklineGradient';
 
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
-import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 import { useInterruptiblePathAnimation } from './useInterruptiblePathAnimation';
+import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
 export const SparklineInteractiveAnimatedPath = memo(
   ({

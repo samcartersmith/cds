@@ -18,6 +18,7 @@ module.exports = {
       files: [
         '**/.*.js',
         '**/.*.ts',
+        '**/*.tsx',
         '**/*.config.js',
         '**/*.config.ts',
         '**/scripts/**/*',
@@ -25,6 +26,7 @@ module.exports = {
       extends: ['plugin:@cbhq/node'],
       rules: {
         'compat/compat': 'off',
+        "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }]
       },
     },
     {
@@ -42,7 +44,7 @@ module.exports = {
         '**/*.stories.tsx'
       ],
       rules: {
-        'import/no-extraneous-dependencies': 'off'
+        'import/no-extraneous-dependencies': 'off',
       }
     }
   ],

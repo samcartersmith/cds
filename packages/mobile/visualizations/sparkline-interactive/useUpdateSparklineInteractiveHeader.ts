@@ -1,7 +1,7 @@
 import { call, cond, eq, onChange, useCode } from 'react-native-reanimated';
 import { ChartGetMarker, ChartScrubParams } from '@cbhq/cds-common/types';
-
 import { noop } from '@cbhq/cds-utils';
+
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 
 type UpdateSparklineInteractiveHeaderParams<Period> = {

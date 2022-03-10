@@ -1,17 +1,18 @@
-import { useRef, useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
 import {
-  animateInOpacityConfig,
-  animateOutOpacityConfig,
   animateInMaxSizeConfig,
+  animateInOpacityConfig,
   animateOutMaxSizeConfig,
+  animateOutOpacityConfig,
+  collapsibleHiddenMaxSize,
   collapsibleHiddenOpacity,
   collapsibleVisibleOpacity,
-  collapsibleHiddenMaxSize,
 } from '@cbhq/cds-common/animation/collapsible';
 
-import { convertMotionConfig } from '../animation/convertMotionConfig';
 import type { AnimationHookProps } from '../animation/AnimationProps';
+import { convertMotionConfig } from '../animation/convertMotionConfig';
+
 import type { CollapsibleDirectionReturnValues } from './useCollapsibleDirection';
 
 type CollapsibleAnimation = AnimationHookProps<{

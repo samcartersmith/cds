@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
-
 import { ContentCellFallbackProps } from '@cbhq/cds-common';
 
 import { Fallback } from '../layout';
 import { useLineHeightMap } from '../typography/useLineHeightMap';
+
 import { ContentCell } from './ContentCell';
 import { MediaFallback } from './MediaFallback';
 

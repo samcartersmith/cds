@@ -1,10 +1,12 @@
-import React, { useMemo, memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { ImageSourcePropType, View } from 'react-native';
 import { DotBaseProps, useIconSize } from '@cbhq/cds-common';
-import { RemoteImage } from '../media/RemoteImage';
-import { getTransform } from './dotStyles';
+
 import { useLayout } from '../hooks/useLayout';
 import { usePalette } from '../hooks/usePalette';
+import { RemoteImage } from '../media/RemoteImage';
+
+import { getTransform } from './dotStyles';
 
 export type DotSymbolProps = Omit<DotBaseProps, 'variant'> & {
   source: ImageSourcePropType | string;

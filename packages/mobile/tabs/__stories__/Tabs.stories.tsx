@@ -1,12 +1,12 @@
-/* eslint-disable no-console */
+ 
 import React, { useState } from 'react';
+import { TabNavigationProps, TabProps } from '@cbhq/cds-common';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
-import { TabNavigationProps, TabProps } from '@cbhq/cds-common';
-import { TabNavigation } from '../TabNavigation';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout/VStack';
 import { TextLabel1, TextTitle2 } from '../../typography';
+import { TabNavigation } from '../TabNavigation';
 
 const tabs: TabProps[] = [
   {

@@ -1,5 +1,4 @@
 import React, { FunctionComponent, memo } from 'react';
-
 import { NavigationIconInternalName } from '@cbhq/cds-common';
 import { NavigationBaseIconProps } from '@cbhq/cds-common/types/NavigationBaseIconProps';
 

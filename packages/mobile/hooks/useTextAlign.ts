@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
-
-import { TextAlignProps } from '@cbhq/cds-common';
 import { I18nManager } from 'react-native';
+import { TextAlignProps } from '@cbhq/cds-common';
 
 export type TextAlign = TextAlignProps['align'];
 

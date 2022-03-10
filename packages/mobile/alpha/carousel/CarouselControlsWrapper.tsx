@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+
 import { HStack, HStackProps } from '../../layout/HStack';
 
 export type CarouselControlsWrapperProps = HStackProps & {

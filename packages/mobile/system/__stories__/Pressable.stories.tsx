@@ -1,31 +1,30 @@
 import React from 'react';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
 import { TextBody } from '../../typography/TextBody';
-
 import { Pressable } from '../Pressable';
 import { PressableOpacity } from '../PressableOpacity';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const PressableScreen = () => {
   return (
     <ExampleScreen>
       <Example title="Pressable">
         <Box spacing={1}>
-          <Pressable backgroundColor="background">
+          <Pressable accessibilityRole="button" backgroundColor="background">
             <TextBody>Default background</TextBody>
           </Pressable>
         </Box>
 
         <Box spacing={1} background="backgroundOverlay">
-          <Pressable backgroundColor="backgroundAlternate">
+          <Pressable accessibilityRole="button" backgroundColor="backgroundAlternate">
             <TextBody>Other background</TextBody>
           </Pressable>
         </Box>
 
         <Box spacing={1}>
           <Pressable
+            accessibilityRole="button"
             backgroundColor="background"
             borderColor="primary"
             borderRadius="pill"

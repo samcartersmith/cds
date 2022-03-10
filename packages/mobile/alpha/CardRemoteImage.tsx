@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import type { CardRemoteImageProps } from '@cbhq/cds-common/types/alpha';
 
-import { RemoteImage, getSource } from '../media/RemoteImage';
+import { getSource, RemoteImage } from '../media/RemoteImage';
 
 export type { CardRemoteImageProps };
 

@@ -1,6 +1,7 @@
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import React from 'react';
 import { Modal as RNModal, ScrollView } from 'react-native';
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+
 import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons/Icon';

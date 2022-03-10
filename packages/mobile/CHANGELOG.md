@@ -217,9 +217,11 @@ All notable changes to this project will be documented in this file.
 #### 📘 Misc
 
 - TabLabel spacing and scale for the primary Variant. [#53092](https://github.cbhq.net/mono/repo/pull/53092)
+
 ## 0.39.4 (2/4/2022, 10:17 AM PST)
 
 #### 🐞 Fixes
+
 - Force fetch correct Lottie dependency. Previously @cbhq/cds-lottie-files was stuck at 0.2.20, need to get it to 0.2.21 - the newest version
 
 ## 0.39.3 (2/2/2022, 01:42 PM PST)

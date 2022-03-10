@@ -1,11 +1,13 @@
 import React, { memo, useEffect, useMemo, useRef } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { maxWidth, spacingHorizontal, spacingVertical } from '@cbhq/cds-common/tokens/tooltip';
+
 import { useInvertedPaletteColor } from '../../color/useInvertedPaletteColor';
 import { useLayout } from '../../hooks/useLayout';
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { Box } from '../../layout/Box';
 import { TextLabel2 } from '../../typography';
+
 import { InternalTooltipProps } from './TooltipProps';
 import { useTooltipPosition } from './useTooltipPosition';
 

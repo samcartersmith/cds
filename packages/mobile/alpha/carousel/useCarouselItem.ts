@@ -1,6 +1,5 @@
 import { useContext } from 'react';
-
-import { noop, isProduction } from '@cbhq/cds-utils';
+import { isProduction, noop } from '@cbhq/cds-utils';
 
 import { CarouselItemContext, CarouselItemContextValue } from './CarouselItem';
 

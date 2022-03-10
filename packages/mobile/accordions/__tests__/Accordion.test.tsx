@@ -1,11 +1,11 @@
-import { render, fireEvent } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import { accordionBuilder } from '@cbhq/cds-common/internal/accordionBuilder';
 
+import { CellMedia } from '../../cells/CellMedia';
+import { TextInput } from '../../controls';
+import { TextBody } from '../../typography';
 import { Accordion } from '../Accordion';
 import { AccordionItem } from '../AccordionItem';
-import { CellMedia } from '../../cells/CellMedia';
-import { TextBody } from '../../typography';
-import { TextInput } from '../../controls';
 
 const { MockAccordion } = accordionBuilder({
   Accordion,

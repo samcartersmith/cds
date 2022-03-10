@@ -1,8 +1,9 @@
-import React, { memo, forwardRef, PropsWithChildren, useCallback } from 'react';
+import React, { forwardRef, memo, PropsWithChildren, useCallback } from 'react';
 import { DrawerRefBaseProps, NoopFn, TrayBaseProps } from '@cbhq/cds-common/types';
-import { Drawer } from '../Drawer/Drawer';
-import { TextTitle3 } from '../../typography/TextTitle3';
+
 import { HStack, VStack } from '../../layout';
+import { TextTitle3 } from '../../typography/TextTitle3';
+import { Drawer } from '../Drawer/Drawer';
 
 type RenderTrayProps = {
   handleClose: NoopFn;

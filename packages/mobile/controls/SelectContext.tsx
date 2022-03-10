@@ -1,5 +1,6 @@
-import { isProduction } from '@cbhq/cds-utils';
 import React, { createContext } from 'react';
+import { isProduction } from '@cbhq/cds-utils';
+
 import { SelectContextType } from './useSelect';
 
 const defaultContext = {
@@ -17,7 +18,6 @@ export const useSelectContext = () => {
   const context = React.useContext(SelectContext);
   //   TODO: check for something required
   if (!context && !isProduction()) {
-    // eslint-disable-next-line no-console
     console.error(errorMessage);
   }
   return context;

@@ -1,7 +1,8 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { Animated, StyleSheet, StyleProp, View, ViewStyle } from 'react-native';
-import { Box, BoxProps } from '../layout/Box';
+import { Animated, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+
 import { usePalette } from '../hooks/usePalette';
+import { Box, BoxProps } from '../layout/Box';
 
 export const PROGRESS_INDICATOR_WIDTH = 24;
 

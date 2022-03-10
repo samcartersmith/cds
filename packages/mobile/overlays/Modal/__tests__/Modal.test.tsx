@@ -1,20 +1,20 @@
 import React from 'react';
-import { render, fireEvent, waitFor, cleanup } from '@testing-library/react-native';
-import { Modal as RNModal, Animated } from 'react-native';
+import { Animated, Modal as RNModal } from 'react-native';
+import { cleanup, fireEvent, render, waitFor } from '@testing-library/react-native';
 import {
-  loremIpsumBuilder,
   CreateLoremIpsumProps,
   loremIpsum,
+  loremIpsumBuilder,
 } from '@cbhq/cds-common/internal/loremIpsumBuilder';
-import { modalBuilder, CreateModalProps } from '@cbhq/cds-common/internal/modalBuilder';
+import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/internal/modalBuilder';
 
-import { Modal } from '../Modal';
-import { ModalFooter } from '../ModalFooter';
-import { ModalBody } from '../ModalBody';
-import { ModalHeader } from '../ModalHeader';
 import { Button } from '../../../buttons';
-import { PortalProvider } from '../../PortalProvider';
 import { TextBody, TextLabel1 } from '../../../typography';
+import { PortalProvider } from '../../PortalProvider';
+import { Modal } from '../Modal';
+import { ModalBody } from '../ModalBody';
+import { ModalFooter } from '../ModalFooter';
+import { ModalHeader } from '../ModalHeader';
 
 const LoremIpsum = loremIpsumBuilder({
   TextBody,

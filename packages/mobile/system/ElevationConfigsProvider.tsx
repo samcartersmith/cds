@@ -1,8 +1,9 @@
-import React, { useMemo, memo } from 'react';
-import type { ThemeConfig } from '@cbhq/cds-common/types';
+import React, { memo, useMemo } from 'react';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
-import { ElevationConfigsContext } from './ElevationConfigsContext';
+import type { ThemeConfig } from '@cbhq/cds-common/types';
+
 import { createElevationConfigForSpectrum } from './createElevationConfigForSpectrum';
+import { ElevationConfigsContext } from './ElevationConfigsContext';
 
 export type ElevationConfigsProviderProps = {
   parentThemeConfig: ThemeConfig;

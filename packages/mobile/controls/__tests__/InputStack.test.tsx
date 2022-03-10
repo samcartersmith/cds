@@ -1,7 +1,7 @@
+import { TextInput as RNTextInput } from 'react-native';
 import TestRenderer from 'react-test-renderer';
 import { render, waitFor } from '@testing-library/react-native';
 
-import { TextInput as RNTextInput } from 'react-native';
 import { InputStack, InputStackProps } from '../InputStack';
 import { NativeInput } from '../NativeInput';
 

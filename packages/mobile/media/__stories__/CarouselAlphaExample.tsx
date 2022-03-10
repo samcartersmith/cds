@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { feedImages } from '@cbhq/cds-common/internal/data/feedImages';
+
 import { AnnouncementCard, AnnouncementCardProps } from '../../alpha/AnnouncementCard';
 import { Carousel, CarouselId } from '../../alpha/carousel/Carousel';
 import { Divider } from '../../layout/Divider';
@@ -11,7 +12,6 @@ export function CarouselItem({
   illustration: NonNullable<AnnouncementCardProps['illustration']>;
 }) {
   const handleOnPress = useCallback(() => {
-    // eslint-disable-next-line no-console
     console.log('pressed card');
   }, []);
 
@@ -27,7 +27,6 @@ export function CarouselItem({
 
 export function CarouselItemImage({ image }: { image: string }) {
   const handleOnPress = useCallback(() => {
-    // eslint-disable-next-line no-console
     console.log('pressed card');
   }, []);
 
@@ -43,12 +42,10 @@ export function CarouselItemImage({ image }: { image: string }) {
 
 export function ProgressBarsExample() {
   const onDismissItem = useCallback((id: CarouselId) => {
-    // eslint-disable-next-line no-console
     console.log('onDismissItem', id);
   }, []);
 
   const onDismissLastItem = useCallback(() => {
-    // eslint-disable-next-line no-console
     console.log('onDismissLastItem');
   }, []);
 

@@ -1,4 +1,4 @@
-import React, { memo, forwardRef } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { View } from 'react-native';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 

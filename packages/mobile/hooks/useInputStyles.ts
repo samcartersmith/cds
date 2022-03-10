@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import { InputVariant } from '@cbhq/cds-common';
+
 import { useTypographyStyles } from '../typography';
+
 import { usePalette } from './usePalette';
 
 /**

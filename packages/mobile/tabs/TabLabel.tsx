@@ -1,11 +1,13 @@
+import React, { memo, useEffect, useMemo, useRef } from 'react';
+import { Animated, StyleSheet, View } from 'react-native';
 import { TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common';
-import React, { useMemo, memo, useRef, useEffect } from 'react';
-import { View, StyleSheet, Animated } from 'react-native';
-import { TextHeadline, TextTitle3, TextTitle4 } from '../typography';
-import { useSpacingScale } from '../hooks/useSpacingScale';
-import { TextProps } from '../typography/createText';
-import { HStack } from '../layout';
+
 import { DotCount } from '../dots/DotCount';
+import { useSpacingScale } from '../hooks/useSpacingScale';
+import { HStack } from '../layout';
+import { TextHeadline, TextTitle3, TextTitle4 } from '../typography';
+import { TextProps } from '../typography/createText';
+
 import { useDotAnimation } from './hooks/useDotAnimation';
 
 const COLORS = {

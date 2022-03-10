@@ -2,13 +2,15 @@ import React, { ForwardedRef, forwardRef, useImperativeHandle, useRef } from 're
 import { Animated, StyleSheet, TextInput } from 'react-native';
 import { ChartScrubParams } from '@cbhq/cds-common/types';
 import {
-  SparklineInteractiveHoverDateRefProps,
   SparklineInteractiveBaseProps,
+  SparklineInteractiveHoverDateRefProps,
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
-import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
-import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
+
 import { usePalette } from '../../hooks/usePalette';
 import { useTypographyStyles } from '../../typography';
+
+import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
+import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
 type Props<Period extends string> = Pick<
   SparklineInteractiveBaseProps<Period>,
@@ -109,7 +111,12 @@ const SparklineInteractiveHoverDateWithGeneric = forwardRef(
             },
           ]}
         >
-          <TextInput style={[label2Styles, labelStyles]} ref={textInputRef} />
+          <TextInput
+            accessibilityLabel="Text input field"
+            accessibilityHint="Text input field"
+            style={[label2Styles, labelStyles]}
+            ref={textInputRef}
+          />
         </Animated.View>
       </Animated.View>
     );

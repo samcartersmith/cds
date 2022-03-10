@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
-
 import { LottieSource } from '@cbhq/cds-common';
 import { colorToHex } from '@cbhq/cds-common/color/colorToHex';
 import { mapKeys } from '@cbhq/cds-utils';
 
 import { usePalette } from '../hooks/usePalette';
+
 import { LottieProps } from './LottieProps';
 
 /**

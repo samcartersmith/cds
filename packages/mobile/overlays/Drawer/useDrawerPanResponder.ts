@@ -6,9 +6,7 @@ import {
   PanResponderGestureState,
   useWindowDimensions,
 } from 'react-native';
-
-import { PinningDirection, NoopFn } from '@cbhq/cds-common';
-import { modulate } from '@cbhq/cds-common/utils/modulate';
+import { NoopFn, PinningDirection } from '@cbhq/cds-common';
 import {
   DISMISSAL_DRAG_THRESHOLD,
   DISMISSAL_VELOCITY_THRESHOLD,
@@ -19,9 +17,10 @@ import {
   handleBarHeight,
   handleBarOffset,
   horizontalDrawerPercentageOfView,
-  verticalDrawerPercentageOfView,
   normalizeDrawerPanDistanceMultiplier,
+  verticalDrawerPercentageOfView,
 } from '@cbhq/cds-common/tokens/drawer';
+import { modulate } from '@cbhq/cds-common/utils/modulate';
 
 type UseDrawerPanResponderParams = {
   drawerAnimation: Animated.Value;

@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
-
-import Svg, { Path, G } from 'react-native-svg';
+import Svg, { G, Path } from 'react-native-svg';
 import {
   SubBrandLogoWordmarkParams,
   useSubBrandLogoWordmark,

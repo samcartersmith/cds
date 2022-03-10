@@ -1,11 +1,11 @@
 import React, { memo, useCallback, useMemo } from 'react';
-
+import { Platform, StatusBar as RNStatusBar, StatusBarStyle } from 'react-native';
 import { isLightOrDarkColor } from '@cbhq/cds-common/color/isLightOrDarkColor';
 import { emptyObject } from '@cbhq/cds-utils';
-import { Platform, StatusBar as RNStatusBar, StatusBarStyle } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';
 import { paletteConfigToRgbaStrings } from '../utils/palette';
+
 import { ThemeProviderProps } from './ThemeProvider';
 
 export type StatusBarProps = Omit<ThemeProviderProps, 'scale' | 'name'> & {

@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
-
 import { ListCellBaseProps } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
+import { compactListHeight, listHeight } from '@cbhq/cds-common/tokens/cell';
 
-import { listHeight, compactListHeight } from '@cbhq/cds-common/tokens/cell';
 import { VStack } from '../layout/VStack';
-import { TextHeadline, TextBody } from '../typography';
+import { TextBody, TextHeadline } from '../typography';
+
 import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';

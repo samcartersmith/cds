@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 
-import { TextInput, TextInputProps } from '../TextInput';
-import { InputIcon } from '../InputIcon';
-import { InputIconButton } from '../InputIconButton';
-
 import { Button } from '../../buttons/Button';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { TextBody } from '../../typography/TextBody';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { InputIcon } from '../InputIcon';
+import { InputIconButton } from '../InputIconButton';
+import { TextInput, TextInputProps } from '../TextInput';
 
 const MockTextInput = ({ ...props }: TextInputProps) => {
   const [text, onChangeText] = useState('');
@@ -29,7 +27,14 @@ const MockComplexInput = () => {
 
   return (
     <HStack justifyContent="center">
-      <TextInput width="50%" label="Test" onChangeText={onChangeText} value={text} />
+      <TextInput
+        accessibilityLabel="Text input field"
+        accessibilityHint="Text Input field"
+        width="50%"
+        label="Test"
+        onChangeText={onChangeText}
+        value={text}
+      />
       <VStack spacingTop={1}>
         <Box spacingTop={3}>
           <Button>Hello</Button>

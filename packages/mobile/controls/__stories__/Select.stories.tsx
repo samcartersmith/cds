@@ -1,16 +1,14 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { selectBuilderMobile, CreateSelectProps } from '@cbhq/cds-common/internal/selectBuilder';
-
-import { Tray } from '../../overlays/Tray/Tray';
-
-import { Select } from '../Select';
-import { SelectOption } from '../SelectOption';
+import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common/internal/selectBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack, VStack } from '../../layout';
-import { TextInput } from '../TextInput';
+import { Tray } from '../../overlays/Tray/Tray';
 import { InputIcon } from '../InputIcon';
+import { Select } from '../Select';
+import { SelectOption } from '../SelectOption';
+import { TextInput } from '../TextInput';
 
 export default function SelectScreen() {
   const { DefaultSelect, ScrollableSelect, SelectFilter, SelectForm } = selectBuilderMobile({

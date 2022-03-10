@@ -1,12 +1,13 @@
-import React, { memo, forwardRef, ForwardedRef, useMemo } from 'react';
-import { ScrollView, View, Animated, ViewStyle } from 'react-native';
+import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
+import { Animated, ScrollView, View, ViewStyle } from 'react-native';
 import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
 
-import { useCollapsibleAnimation } from './useCollapsibleAnimation';
-import { useToggleAnimation } from './useToggleAnimation';
 import { useContentSize } from '../hooks/useContentSize';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+
+import { useCollapsibleAnimation } from './useCollapsibleAnimation';
 import { useCollapsibleDirection } from './useCollapsibleDirection';
+import { useToggleAnimation } from './useToggleAnimation';
 
 export type CollapseProps = CollapsibleBaseProps;
 

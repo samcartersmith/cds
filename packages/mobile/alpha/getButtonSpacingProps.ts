@@ -1,4 +1,5 @@
 import { memoize } from '@cbhq/cds-common/utils/memoize';
+
 import type { ButtonProps } from './Button';
 
 const defaultSpacing = 4;

@@ -1,8 +1,7 @@
 import React, { Children, forwardRef, memo } from 'react';
-
+import { View } from 'react-native';
 import { ForwardedRef, join, StackBaseProps } from '@cbhq/cds-common';
 
-import { View } from 'react-native';
 import { Box, BoxProps } from './Box';
 import { Spacer } from './Spacer';
 

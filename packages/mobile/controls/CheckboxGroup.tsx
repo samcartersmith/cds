@@ -1,9 +1,8 @@
 import React, { Children, cloneElement, forwardRef, isValidElement, memo } from 'react';
-
+import { View, ViewProps } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common';
 import type { CheckboxGroupBaseProps } from '@cbhq/cds-common/types/CheckboxGroupBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
-import { View, ViewProps } from 'react-native';
 
 import { CheckboxProps } from './Checkbox';
 
@@ -28,7 +27,6 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   ref: React.ForwardedRef<View>,
 ) {
   if (isDevelopment() && !label && !accessibilityLabel) {
-    // eslint-disable-next-line no-console
     console.warn('Please specify an accessibility label for the checkbox group.');
   }
 
@@ -39,7 +37,6 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
 
     const { value } = child.props;
     if (isDevelopment() && typeof value === 'undefined') {
-      // eslint-disable-next-line no-console
       console.error('Checkboxes inside CheckboxGroup should have values.');
     }
     return cloneElement(child, {

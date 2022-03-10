@@ -1,4 +1,4 @@
-import { useRef, useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import { Animated, PanResponder, useWindowDimensions } from 'react-native';
 import { ToastBaseProps } from '@cbhq/cds-common';
 import { bottomPanThreshold, horizontalPanThreshold } from '@cbhq/cds-common/animation/toast';

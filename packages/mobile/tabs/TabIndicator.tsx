@@ -1,7 +1,9 @@
-import { TabIndicatorProps, ForwardedRef } from '@cbhq/cds-common';
 import React, { forwardRef, memo } from 'react';
 import { Animated, View } from 'react-native';
+import { ForwardedRef, TabIndicatorProps } from '@cbhq/cds-common';
+
 import { Box } from '../layout';
+
 import { useTabIndicatorStyles } from './hooks/useTabIndicatorStyles';
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */

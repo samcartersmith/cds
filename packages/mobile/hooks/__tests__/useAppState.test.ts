@@ -1,5 +1,5 @@
-import { renderHook } from '@testing-library/react-hooks';
 import { AppStateStatus } from 'react-native';
+import { renderHook } from '@testing-library/react-hooks';
 
 import { useAppState } from '../useAppState';
 
@@ -22,13 +22,13 @@ describe('useAppState', () => {
   it('returns AppState.currentState - active', () => {
     mockCurrentAppState('active');
     const { result } = renderHook(() => useAppState());
-    expect(result.current).toEqual('active');
+    expect(result.current).toBe('active');
   });
 
   it('returns AppState.currentState - inactive', () => {
     mockCurrentAppState('inactive');
     const { result } = renderHook(() => useAppState());
-    expect(result.current).toEqual('inactive');
+    expect(result.current).toBe('inactive');
   });
 
   it('adds an event listener for state changes', () => {

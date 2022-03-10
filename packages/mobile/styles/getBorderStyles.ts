@@ -1,5 +1,4 @@
 import { ViewStyle } from 'react-native';
-import { memoize } from '@cbhq/cds-common/utils/memoize';
 import {
   BorderedStyles,
   BorderRadius,
@@ -10,6 +9,8 @@ import {
   borderRadius as borderRadii,
   borderWidth as borderWidthTokens,
 } from '@cbhq/cds-common/tokens/border';
+import { memoize } from '@cbhq/cds-common/utils/memoize';
+
 import { ElevationConfigForSpectrum } from '../system/createElevationConfigForSpectrum';
 
 export type BorderStyles = ViewStyle;

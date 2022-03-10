@@ -1,7 +1,6 @@
 import React, { Children, cloneElement, memo } from 'react';
-
+import { StyleSheet, View } from 'react-native';
 import { ButtonGroupBaseProps, SharedProps } from '@cbhq/cds-common';
-import { View, StyleSheet } from 'react-native';
 
 import { HStack, VStack } from '../layout';
 

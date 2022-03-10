@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
-import { TabIndicator } from '../TabIndicator';
 
+import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout';
-import { Button } from '../../buttons';
+import { TabIndicator } from '../TabIndicator';
 
 const getRandomNumber = () => Math.random() * 100 + 100;
 const TabIndicatorScreen = () => {

@@ -1,7 +1,8 @@
-import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import { useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
+import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import type { MotionBaseSpec } from '@cbhq/cds-common/types';
+
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 
 /** Animate to a new value from it's previously tracked state */

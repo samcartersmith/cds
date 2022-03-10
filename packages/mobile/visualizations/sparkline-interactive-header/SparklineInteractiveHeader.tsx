@@ -1,11 +1,11 @@
 import React, {
-  memo,
   forwardRef,
-  useRef,
+  FunctionComponent,
+  memo,
+  ReactNode,
   useCallback,
   useImperativeHandle,
-  ReactNode,
-  FunctionComponent,
+  useRef,
 } from 'react';
 import { TextInput, View } from 'react-native';
 import {
@@ -15,9 +15,11 @@ import {
   SparklineInteractiveSubHead,
 } from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
 import { interpolateSubHeadText } from '@cbhq/cds-common/visualizations/interpolateSubHeadText';
-import { useSparklineInteractiveHeaderStyles } from './useSparklineInteractiveHeaderStyles';
+
 import { fontScaleProps } from '../../hooks/useDeviceScaleToCdsScale';
 import { HStack, VStack } from '../../layout';
+
+import { useSparklineInteractiveHeaderStyles } from './useSparklineInteractiveHeaderStyles';
 
 export * from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
 

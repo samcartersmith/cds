@@ -4,11 +4,12 @@ import {
   sparklineInteractiveWithHeaderBuilder,
 } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
 import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
+
 import { Example, ExampleScreen } from '../../../examples/ExampleScreen';
-import { TextTitle3 } from '../../../typography/TextTitle3';
-import { SparklineInteractive } from '../SparklineInteractive';
 import { Box } from '../../../layout';
+import { TextTitle3 } from '../../../typography/TextTitle3';
 import { SparklineInteractiveHeader } from '../../sparkline-interactive-header/SparklineInteractiveHeader';
+import { SparklineInteractive } from '../SparklineInteractive';
 
 const SparklineInteractiveBuild = sparklineInteractiveBuilder({
   SparklineInteractive,

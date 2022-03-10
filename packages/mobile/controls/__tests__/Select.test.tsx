@@ -1,14 +1,14 @@
-import { render, fireEvent } from '@testing-library/react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native';
-import { selectBuilderMobile, CreateSelectProps } from '@cbhq/cds-common/internal/selectBuilder';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { fireEvent, render } from '@testing-library/react-native';
+import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common/internal/selectBuilder';
 
-import { Select } from '../Select';
-import { Tray } from '../../overlays/Tray/Tray';
-import { SelectOption } from '../SelectOption';
 import { HStack, VStack } from '../../layout';
-import { TextInput } from '../TextInput';
+import { Tray } from '../../overlays/Tray/Tray';
 import { SAFE_AREA_METRICS } from '../../utils/testHelpers';
+import { Select } from '../Select';
+import { SelectOption } from '../SelectOption';
+import { TextInput } from '../TextInput';
 
 const { DefaultSelect } = selectBuilderMobile({
   Tray,
@@ -20,24 +20,13 @@ const { DefaultSelect } = selectBuilderMobile({
   TextInput,
 } as CreateSelectProps);
 
-const options = [
-  {
-    label: 'Cake',
-    value: 'CAKE',
-  },
-  {
-    label: 'Death',
-    value: 'DEATH',
-  },
-];
-
 const placeholderText = 'Choose something';
 
 describe('Select Input', () => {
   it('renders the Select Input trigger', async () => {
     const { getByText } = render(
       <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <DefaultSelect options={options} placeholder={placeholderText} />
+        <DefaultSelect placeholder={placeholderText} />
       </SafeAreaProvider>,
     );
 
@@ -47,12 +36,7 @@ describe('Select Input', () => {
     const onPressSpy = jest.fn();
     const { getByText } = render(
       <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <DefaultSelect
-          options={options}
-          placeholder={placeholderText}
-          onPress={onPressSpy}
-          disabled
-        />
+        <DefaultSelect placeholder={placeholderText} onPress={onPressSpy} disabled />
       </SafeAreaProvider>,
     );
 

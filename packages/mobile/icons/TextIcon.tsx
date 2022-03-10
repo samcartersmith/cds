@@ -4,6 +4,7 @@ import { PaletteForeground } from '@cbhq/cds-common';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 
 import { usePalette } from '../hooks/usePalette';
+
 import { IconProps } from './Icon';
 import { iconGlyphMap } from './iconGlyphMap';
 
@@ -57,5 +58,5 @@ export const TextIcon = memo(function TextIcon({
       </Component>
     );
   }
-  return <>{null}</>;
+  return null;
 });

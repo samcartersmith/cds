@@ -1,20 +1,21 @@
 import React, { memo, useCallback, useMemo, useRef } from 'react';
 import { Animated, GestureResponderEvent } from 'react-native';
-import { useScale } from '@cbhq/cds-common/scale/useScale';
-import { LikeButtonBaseProps } from '@cbhq/cds-common/types/alpha';
 import {
   activeScale,
   inactiveScale,
   scaleInConfig,
   scaleOutConfig,
 } from '@cbhq/cds-common/animation/likeButton';
+import { useScale } from '@cbhq/cds-common/scale/useScale';
+import { LikeButtonBaseProps } from '@cbhq/cds-common/types/alpha';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { useInternalSpacingStyles } from '../hooks/internal/useInternalSpacingStyles';
-import { HStack } from '../layout/HStack';
-import { TextLabel1 } from '../typography/TextLabel1';
-import { Pressable, OnPress, PressableProps } from '../system/Pressable';
 import { TextIcon } from '../icons/TextIcon';
+import { HStack } from '../layout/HStack';
+import { OnPress, Pressable, PressableProps } from '../system/Pressable';
+import { TextLabel1 } from '../typography/TextLabel1';
+
 import { getButtonSizeProps } from './getButtonSizeProps';
 import { getButtonSpacingProps } from './getButtonSpacingProps';
 

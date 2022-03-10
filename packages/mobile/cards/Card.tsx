@@ -1,13 +1,13 @@
 import React, { memo, useMemo } from 'react';
 import { ViewStyle } from 'react-native';
-
-import type { CardBaseProps } from '@cbhq/cds-common/types';
 import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
+import type { CardBaseProps } from '@cbhq/cds-common/types';
+
 import { Card as FrontierCard } from '../alpha/Card';
 import { usePinStyles } from '../hooks/usePinStyles';
-import { Pressable, PressableProps } from '../system/Pressable';
 import { VStack } from '../layout/VStack';
+import { Pressable, PressableProps } from '../system/Pressable';
 import { useFeatureFlag } from '../system/useFeatureFlag';
 import { DangerouslySetStyle } from '../types';
 
@@ -59,6 +59,7 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
 
   return onPress ? (
     <Pressable
+      accessibilityRole="button"
       testID={testID}
       backgroundColor={bg}
       borderRadius={borderRadius}

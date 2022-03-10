@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
-
-import { useSpectrum } from '@cbhq/cds-common';
 import { Linking } from 'react-native';
+import { useSpectrum } from '@cbhq/cds-common';
 
 import { openWebBrowser, OpenWebBrowserOptions } from '../utils/openWebBrowser';
 

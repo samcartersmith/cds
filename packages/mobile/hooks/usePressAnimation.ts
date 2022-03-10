@@ -1,5 +1,4 @@
-import { useRef, useCallback, useMemo } from 'react';
-
+import { useCallback, useMemo, useRef } from 'react';
 import { Animated, GestureResponderEvent } from 'react-native';
 
 export function usePressAnimation(

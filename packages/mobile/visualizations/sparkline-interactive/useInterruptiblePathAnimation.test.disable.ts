@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 import { Animated } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
 

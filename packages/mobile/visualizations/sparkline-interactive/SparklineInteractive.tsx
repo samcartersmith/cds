@@ -2,7 +2,8 @@ import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from '
 import { Animated, StyleSheet, View } from 'react-native';
 import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
-import { emptyArray, noop } from '@cbhq/cds-utils';
+import { sparklinePalette } from '@cbhq/cds-common/palette/constants';
+import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import {
   ChartDataPoint,
   ChartFormatAmount,
@@ -10,18 +11,22 @@ import {
   ChartGetMarker,
   ChartScrubParams,
 } from '@cbhq/cds-common/types';
-import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
-import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import {
-  SparklineInteractiveHoverDateRefProps,
   SparklineInteractiveBaseProps,
   SparklineInteractiveDefaultFallback,
+  SparklineInteractiveHoverDateRefProps,
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { minMax } from '@cbhq/cds-common/utils/chart';
+import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
 import { chartFallbackNegative, chartFallbackPositive } from '@cbhq/cds-lottie-files';
-import { sparklinePalette } from '@cbhq/cds-common/palette/constants';
+import { emptyArray, noop } from '@cbhq/cds-utils';
+
+import { Lottie } from '../../animation';
+import { Box } from '../../layout';
+import { ThemeProvider } from '../../system/ThemeProvider';
 
 import { SparklineInteractiveAnimatedPath } from './SparklineInteractiveAnimatedPath';
+import { SparklineInteractiveHoverDate } from './SparklineInteractiveHoverDate';
 import { SparklineInteractiveLineVertical } from './SparklineInteractiveLineVertical';
 import { SparklineInteractiveMarkerDates } from './SparklineInteractiveMarkerDates';
 import { SparklineInteractiveMinMax } from './SparklineInteractiveMinMax';
@@ -33,13 +38,9 @@ import {
 } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 import { useUpdateSparklineInteractiveHeader } from './useUpdateSparklineInteractiveHeader';
-import { Lottie } from '../../animation';
-import { SparklineInteractiveHoverDate } from './SparklineInteractiveHoverDate';
-import { Box } from '../../layout';
-import { ThemeProvider } from '../../system/ThemeProvider';
 
-export * from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 export * from '@cbhq/cds-common/types/Chart';
+export * from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 
 // We override line palette since default line color is a bit too dark.
 // Changing to gray20 more closely matches the line color currently used in production

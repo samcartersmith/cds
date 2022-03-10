@@ -1,16 +1,14 @@
 import React from 'react';
-import { modalBuilder, CreateModalProps } from '@cbhq/cds-common/internal/modalBuilder';
+import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/internal/modalBuilder';
 
 import { Button } from '../../buttons/Button';
 import { TextInput } from '../../controls/TextInput';
+import { Example, ExampleScreen, LoremIpsum } from '../../examples/ExampleScreen';
 import { Modal } from '../Modal/Modal';
 import { ModalBody } from '../Modal/ModalBody';
 import { ModalFooter } from '../Modal/ModalFooter';
 import { ModalHeader } from '../Modal/ModalHeader';
-
 import { PortalProvider } from '../PortalProvider';
-
-import { Example, ExampleScreen, LoremIpsum } from '../../examples/ExampleScreen';
 
 const { BasicModal, LongModal, PortalModal } = modalBuilder({
   Modal,

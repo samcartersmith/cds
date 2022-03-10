@@ -1,17 +1,15 @@
-import React, { useMemo, memo } from 'react';
-
-import { View, Animated, ViewStyle, StyleProp, StyleSheet } from 'react-native';
-
-import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
-import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
+import React, { memo, useMemo } from 'react';
+import { Animated, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common/tokens/border';
-import { inputBorderWidth, focusedInputBorderWidth } from '@cbhq/cds-common/tokens/input';
+import { focusedInputBorderWidth, inputBorderWidth } from '@cbhq/cds-common/tokens/input';
+import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
+import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
 
+import { useLayout } from '../hooks/useLayout';
 import { usePalette } from '../hooks/usePalette';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { DangerouslySetStyle } from '../types';
-import { useLayout } from '../hooks/useLayout';
 
 export type InputStackProps = {
   /** Adds border styling to input  */

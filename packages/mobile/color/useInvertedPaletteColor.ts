@@ -1,5 +1,6 @@
 import { PaletteAlias } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
+
 import { useThemeConfig } from '../system/useThemeConfig';
 
 export function useInvertedPaletteColor(alias: PaletteAlias) {

@@ -1,12 +1,13 @@
-import { PaletteConfig, PartialPaletteConfig, Spectrum } from '@cbhq/cds-common/types';
-import { paletteConfigToRgbaStrings } from '@cbhq/cds-common/palette/paletteConfigToRgbaStrings';
-import { paletteConfigToInteractableTokens } from '@cbhq/cds-common/palette/paletteConfigToInteractableTokens';
 import { defaultPalette, frontierSpectrumPalette } from '@cbhq/cds-common';
+import { paletteConfigToInteractableTokens } from '@cbhq/cds-common/palette/paletteConfigToInteractableTokens';
+import { paletteConfigToRgbaStrings } from '@cbhq/cds-common/palette/paletteConfigToRgbaStrings';
+import { PaletteConfig, PartialPaletteConfig, Spectrum } from '@cbhq/cds-common/types';
+
 import {
   CreateThemeConfigForSpectrumParams,
   NewPartialPaletteConfig,
-  PartialPaletteConfigLight,
   PartialPaletteConfigDark,
+  PartialPaletteConfigLight,
   ThemeConfig,
   ThemeConfigForSpectrum,
 } from './ThemeConfig';

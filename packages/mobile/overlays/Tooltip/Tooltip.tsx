@@ -1,8 +1,9 @@
 import React, { memo, useCallback, useRef, useState } from 'react';
 import { Modal as RNModal, TouchableOpacity, View } from 'react-native';
-import { useTooltipAnimation } from './useTooltipAnimation';
+
 import { InternalTooltip } from './InternalTooltip';
 import { SubjectLayout, TooltipProps } from './TooltipProps';
+import { useTooltipAnimation } from './useTooltipAnimation';
 
 export const Tooltip = memo(
   ({
@@ -41,7 +42,9 @@ export const Tooltip = memo(
 
     return (
       <View collapsable={false} ref={subjectRef}>
-        <TouchableOpacity onPress={handlePressSubject}>{children}</TouchableOpacity>
+        <TouchableOpacity accessibilityRole="button" onPress={handlePressSubject}>
+          {children}
+        </TouchableOpacity>
 
         <RNModal
           hardwareAccelerated
@@ -50,7 +53,12 @@ export const Tooltip = memo(
           visible={isOpen}
           onRequestClose={handleRequestClose}
         >
-          <TouchableOpacity onPress={handleRequestClose} style={{ flex: 1 }} activeOpacity={1} />
+          <TouchableOpacity
+            accessibilityRole="button"
+            onPress={handleRequestClose}
+            style={{ flex: 1 }}
+            activeOpacity={1}
+          />
           <InternalTooltip
             subjectLayout={subjectLayout}
             content={content}

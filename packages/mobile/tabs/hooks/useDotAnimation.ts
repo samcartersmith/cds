@@ -1,3 +1,5 @@
+import { useCallback, useRef } from 'react';
+import { Animated } from 'react-native';
 import {
   animateDotOpacityConfig,
   animateDotWidthConfig,
@@ -5,8 +7,7 @@ import {
   dotVisible,
 } from '@cbhq/cds-common/animation/dot';
 import { getDotSize } from '@cbhq/cds-common/tokens/dot';
-import { useCallback, useRef } from 'react';
-import { Animated } from 'react-native';
+
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 
 // opacity animation

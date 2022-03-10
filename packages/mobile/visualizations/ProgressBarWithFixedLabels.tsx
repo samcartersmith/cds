@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { I18nManager, View } from 'react-native';
 import {
   ProgressBarFixedLabelBesideProps,
   ProgressBarFixedLabelContainerProps,
@@ -6,9 +7,10 @@ import {
   ProgressBarWithFixedLabelsProps,
 } from '@cbhq/cds-common/types/ProgressBarBaseProps';
 import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
-import { I18nManager, View } from 'react-native';
-import { ProgressTextLabel } from './ProgressTextLabel';
+
 import { Box, VStack } from '../layout';
+
+import { ProgressTextLabel } from './ProgressTextLabel';
 
 const ProgressBarFixedLabelBeside: React.FC<ProgressBarFixedLabelBesideProps> = memo(
   ({ label, disabled }) => {

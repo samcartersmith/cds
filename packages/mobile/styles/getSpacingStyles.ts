@@ -1,6 +1,7 @@
-import { memoize } from '@cbhq/cds-common/utils/memoize';
-import { SpacingScale, InternalSpacingProps, Scale } from '@cbhq/cds-common';
 import { I18nManager, ViewStyle } from 'react-native';
+import { InternalSpacingProps, Scale, SpacingScale } from '@cbhq/cds-common';
+import { memoize } from '@cbhq/cds-common/utils/memoize';
+
 import * as scales from './scale';
 
 export type GetSpacingStylesParams = InternalSpacingProps & {

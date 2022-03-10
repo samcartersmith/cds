@@ -1,10 +1,12 @@
 import { createDataCard } from '@cbhq/cds-common/cards/createDataCard';
+
 import { HStack } from '../layout/HStack';
 import { TextBody } from '../typography/TextBody';
 import { TextHeadline } from '../typography/TextHeadline';
 import { TextLabel2 } from '../typography/TextLabel2';
 import { ProgressBar } from '../visualizations/ProgressBar';
 import { ProgressCircle } from '../visualizations/ProgressCircle';
+
 import { Card } from './Card';
 import { CardBody } from './CardBody';
 

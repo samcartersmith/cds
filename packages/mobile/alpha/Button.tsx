@@ -1,15 +1,16 @@
 import React, { memo, useMemo } from 'react';
-import { StyleSheet, ActivityIndicator } from 'react-native';
-import type { ButtonBaseProps } from '@cbhq/cds-common/types/alpha';
+import { ActivityIndicator, StyleSheet } from 'react-native';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
+import type { ButtonBaseProps } from '@cbhq/cds-common/types/alpha';
 
-import { usePalette } from '../hooks/usePalette';
 import { useInternalSpacingStyles } from '../hooks/internal/useInternalSpacingStyles';
+import { usePalette } from '../hooks/usePalette';
 import { Icon } from '../icons/Icon';
 import { HStack } from '../layout/HStack';
-import { Pressable, PressableProps, OnPress } from '../system/Pressable';
+import { OnPress, Pressable, PressableProps } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
+
 import { getButtonSizeProps } from './getButtonSizeProps';
 import { getButtonSpacingProps } from './getButtonSpacingProps';
 

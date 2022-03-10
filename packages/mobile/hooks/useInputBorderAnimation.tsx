@@ -1,11 +1,13 @@
 import { useMemo, useRef } from 'react';
-import { InputVariant } from '@cbhq/cds-common/types/InputBaseProps';
 import { Animated } from 'react-native';
 import {
   animateInputBorderInConfig,
   animateInputBorderOutConfig,
 } from '@cbhq/cds-common/animation/border';
+import { InputVariant } from '@cbhq/cds-common/types/InputBaseProps';
+
 import { convertMotionConfig } from '../animation/convertMotionConfig';
+
 import { usePalette } from './usePalette';
 
 type InputBorderAnimationReturnType = {

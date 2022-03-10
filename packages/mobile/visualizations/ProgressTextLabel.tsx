@@ -1,9 +1,11 @@
 import React, { memo, useCallback } from 'react';
-import { ProgressTextLabelProps } from '@cbhq/cds-common/types/ProgressBarBaseProps';
+import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import { durations } from '@cbhq/cds-common/tokens/motion';
-import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
+import { ProgressTextLabelProps } from '@cbhq/cds-common/types/ProgressBarBaseProps';
+
 import { TextLabel2 } from '../typography';
+
 import { Counter } from './Counter';
 
 export const ProgressTextLabel = memo(

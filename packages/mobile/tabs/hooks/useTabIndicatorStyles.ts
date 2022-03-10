@@ -1,5 +1,6 @@
 import { TabIndicatorProps } from '@cbhq/cds-common';
 import { animateTabIndicatorBaseSpec } from '@cbhq/cds-common/animation/tabs';
+
 import { useAnimatedTransition } from '../../hooks/useAnimatedTransition';
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */

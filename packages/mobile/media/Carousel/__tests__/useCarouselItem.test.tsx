@@ -1,6 +1,7 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
+import { useCallback } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 import { cleanup, fireEvent, render } from '@testing-library/react-native';
-import { useCallback } from 'react';
 
 import { Button } from '../../../buttons';
 import { Box } from '../../../layout';
@@ -42,14 +43,20 @@ describe('useCarouselItem', () => {
   it('returns an id value of -1 if used outside of CarouselItemContext', () => {
     const spy = jest.spyOn(console, 'error').mockImplementation();
     const { result } = renderHook(() => useCarouselItem());
-    expect(result.current.id).toEqual('-1');
+    expect(result.current.id).toBe('-1');
     spy.mockRestore();
   });
 
   it('returns an object with dismiss and id', () => {
     const dismissSpy = jest.fn();
+
     const Wrapper: React.FC = ({ children }) => (
-      <CarouselItemContext.Provider value={{ id: 'item1', dismiss: dismissSpy }}>
+      <CarouselItemContext.Provider
+        value={{
+          id: 'item1',
+          dismiss: dismissSpy,
+        }}
+      >
         {children}
       </CarouselItemContext.Provider>
     );
@@ -76,8 +83,14 @@ describe('useCarouselItem', () => {
         </Button>
       );
     };
+
     const result = render(
-      <CarouselItemContext.Provider value={{ id: 'item1', dismiss: dismissSpy }}>
+      <CarouselItemContext.Provider
+        value={{
+          id: 'item1',
+          dismiss: dismissSpy,
+        }}
+      >
         <ChildWithPressable />
       </CarouselItemContext.Provider>,
     );

@@ -1,7 +1,6 @@
 import { useCallback, useMemo } from 'react';
-
-import { cleanup, fireEvent, render } from '@testing-library/react-native';
 import { ScrollView } from 'react-native';
+import { cleanup, fireEvent, render } from '@testing-library/react-native';
 
 import { Button } from '../../../buttons';
 import { Box } from '../../../layout';
@@ -18,7 +17,6 @@ describe('useCarousel', () => {
   const MockCarousel = ({ length }: { length: number }) => {
     const carouselRef = useCarousel();
     const handleLogLength = useCallback(
-      // eslint-disable-next-line no-console
       () => console.log(`Carousel length: ${carouselRef.current.length}`),
       [carouselRef],
     );

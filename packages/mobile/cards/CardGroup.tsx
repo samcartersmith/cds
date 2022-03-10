@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
 import { CardGroup as FrontierCardGroup } from '../alpha/CardGroup';

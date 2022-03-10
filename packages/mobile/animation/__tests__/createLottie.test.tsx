@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
-
-import { nux, NuxLottie } from '@cbhq/cds-lottie-files/nux';
+import { Animated } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
 import uniqBy from 'lodash/uniqBy';
-import { Animated } from 'react-native';
+import { nux, NuxLottie } from '@cbhq/cds-lottie-files/nux';
 
 import { createLottie, LottiePlayerMobile } from '../createLottie';
 
@@ -37,9 +36,9 @@ describe('useLottieCreator', () => {
   it('ensures progress value updates are registered correctly', () => {
     const [firstItem, secondItem, thirdItem] = result;
     firstItem.progress.value.setValue(1);
-    expect(getAnimatedValue(firstItem.progress.value)).toEqual(1);
-    expect(getAnimatedValue(secondItem.progress.value)).toEqual(0);
-    expect(getAnimatedValue(thirdItem.progress.value)).toEqual(0);
+    expect(getAnimatedValue(firstItem.progress.value)).toBe(1);
+    expect(getAnimatedValue(secondItem.progress.value)).toBe(0);
+    expect(getAnimatedValue(thirdItem.progress.value)).toBe(0);
     expect(firstItem.progress).not.toBe(secondItem.progress);
   });
 });

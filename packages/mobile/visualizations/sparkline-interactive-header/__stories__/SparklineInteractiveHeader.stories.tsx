@@ -1,12 +1,13 @@
 import React, { useMemo } from 'react';
 import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
 import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
-import { SparklineInteractive } from '../../sparkline-interactive/SparklineInteractive';
-import { SparklineInteractiveHeader } from '../SparklineInteractiveHeader';
+
+import { IconButton } from '../../../buttons';
+import { Example, ExampleScreen } from '../../../examples/ExampleScreen';
 import { Box, HStack } from '../../../layout';
 import { TextTitle3 } from '../../../typography/TextTitle3';
-import { Example, ExampleScreen } from '../../../examples/ExampleScreen';
-import { IconButton } from '../../../buttons';
+import { SparklineInteractive } from '../../sparkline-interactive/SparklineInteractive';
+import { SparklineInteractiveHeader } from '../SparklineInteractiveHeader';
 
 const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
   SparklineInteractive,

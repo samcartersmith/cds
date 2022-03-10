@@ -1,5 +1,6 @@
-import { memoize } from '@cbhq/cds-common/utils/memoize';
 import { defaultPalette, frontierSpectrumPalette } from '@cbhq/cds-common/palette/constants';
+import { memoize } from '@cbhq/cds-common/utils/memoize';
+
 import { createThemeConfigForSpectrum } from './createThemeConfigForSpectrum';
 import { CreateThemeConfigParams } from './ThemeConfig';
 

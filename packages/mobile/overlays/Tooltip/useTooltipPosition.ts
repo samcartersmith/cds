@@ -1,8 +1,10 @@
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { useCallback, useMemo } from 'react';
 import { Platform } from 'react-native';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
+
 import { IOS_BOTTOM_NAV_BAR_HEIGHT, useDimensions } from '../../hooks/useDimensions';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
+
 import { TooltipPlacement, UseTooltipPositionParams } from './TooltipProps';
 
 export const useTooltipPosition = ({

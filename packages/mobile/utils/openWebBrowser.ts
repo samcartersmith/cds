@@ -1,10 +1,10 @@
-import { defaultPalette as paletteConfig, Spectrum } from '@cbhq/cds-common';
 import { Linking, Platform } from 'react-native';
 import InAppBrowser, { InAppBrowserOptions } from 'react-native-inappbrowser-reborn';
+import { defaultPalette as paletteConfig, Spectrum } from '@cbhq/cds-common';
 
 import { CustomTabsHelper } from './customTabsHelper';
-import { paletteValueToHex } from './palette';
 import { isValidURL } from './isValidURL';
+import { paletteValueToHex } from './palette';
 
 // react-native-inappbrowser-reborn does not export these types
 // so I have to copy it here instead

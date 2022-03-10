@@ -1,11 +1,12 @@
 import { useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import {
   chartCompactHeight,
   chartHeight as chartHeightToken,
 } from '@cbhq/cds-common/tokens/sparkline';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
+
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 
 type Props = {

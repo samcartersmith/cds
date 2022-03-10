@@ -1,23 +1,23 @@
 /* eslint-disable react-native/no-raw-text */
-import { entries } from '@cbhq/cds-utils';
+import { Animated, StyleSheet, Text, TextStyle } from 'react-native';
 import { render, waitFor } from '@testing-library/react-native';
-import { Animated, TextStyle, StyleSheet, Text } from 'react-native';
+import { entries } from '@cbhq/cds-utils';
 
 import { TextProps } from '../createText';
 import {
+  TextBody,
+  TextCaption,
   TextDisplay1,
   TextDisplay2,
   TextDisplay3,
+  TextHeadline,
+  TextLabel1,
+  TextLabel2,
+  TextLegal,
   TextTitle1,
   TextTitle2,
   TextTitle3,
   TextTitle4,
-  TextHeadline,
-  TextBody,
-  TextLabel1,
-  TextLabel2,
-  TextCaption,
-  TextLegal,
 } from '../index';
 
 const Type = {

@@ -1,14 +1,13 @@
 import React from 'react';
+
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout/VStack';
 import { TextLabel1 } from '../../typography/TextLabel1';
 import { TextLabel2 } from '../../typography/TextLabel2';
-
 import { ProgressBar } from '../ProgressBar';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
-import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
 import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
 
 const renderStartLabelNum = (num: number) => {
   return <TextLabel1>${num.toLocaleString()}</TextLabel1>;

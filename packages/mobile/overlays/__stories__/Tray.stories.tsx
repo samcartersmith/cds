@@ -1,19 +1,17 @@
 import React from 'react';
 import { FlatList, View } from 'react-native';
-import { trayBuilder, CreateTrayProps } from '@cbhq/cds-common/internal/trayBuilder';
+import { CreateTrayProps, trayBuilder } from '@cbhq/cds-common/internal/trayBuilder';
 
 import { Button } from '../../buttons/Button';
-import { SelectOption } from '../../controls/SelectOption';
-
-import { Tray } from '../Tray/Tray';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { IconButton } from '../../buttons/IconButton';
 import { FeedCard } from '../../cards/FeedCard';
-import { Pictogram } from '../../illustrations/Pictogram';
-import { HStack, Fallback, VStack } from '../../layout';
-import { TextBody } from '../../typography';
 import { Menu } from '../../controls/Menu';
+import { SelectOption } from '../../controls/SelectOption';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { Pictogram } from '../../illustrations/Pictogram';
+import { Fallback, HStack, VStack } from '../../layout';
+import { TextBody } from '../../typography';
+import { Tray } from '../Tray/Tray';
 
 const TrayScreen = () => {
   const { DefaultTray, ScrollableTray, FeedCardTray, NavigationTray, TrayWithinTray } = trayBuilder(

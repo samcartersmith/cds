@@ -1,14 +1,15 @@
-import React, { useCallback, memo } from 'react';
-
+import React, { memo, useCallback } from 'react';
+import { GestureResponderEvent } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common';
 import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
-import { GestureResponderEvent } from 'react-native';
 
 import { useWebBrowserOpener } from '../hooks/useWebBrowserOpener';
+
 import { TextProps } from './createText';
 import { TextBody } from './TextBody';
 import { TextCaption } from './TextCaption';
 import { TextHeadline } from './TextHeadline';
+import { TextInherited } from './TextInherited';
 import { TextLabel1 } from './TextLabel1';
 import { TextLabel2 } from './TextLabel2';
 import { TextLegal } from './TextLegal';
@@ -16,7 +17,6 @@ import { TextTitle1 } from './TextTitle1';
 import { TextTitle2 } from './TextTitle2';
 import { TextTitle3 } from './TextTitle3';
 import { TextTitle4 } from './TextTitle4';
-import { TextInherited } from './TextInherited';
 
 const TYPOGRAPHY_MAP: Record<LinkTypography, React.ComponentType<TextProps>> = {
   body: TextBody,

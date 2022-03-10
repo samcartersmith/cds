@@ -1,16 +1,18 @@
-import React, { useMemo, memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { View } from 'react-native';
-import { DotCountBaseProps } from '@cbhq/cds-common/types/DotCountBaseProps';
-import { parseDotCountMaxOverflow } from '@cbhq/cds-common/utils/parseDotCountMaxOverflow';
 import {
-  dotOuterContainerStyles,
   dotCountContent,
   dotCountPadding,
+  dotOuterContainerStyles,
 } from '@cbhq/cds-common/tokens/dot';
+import { DotCountBaseProps } from '@cbhq/cds-common/types/DotCountBaseProps';
+import { parseDotCountMaxOverflow } from '@cbhq/cds-common/utils/parseDotCountMaxOverflow';
+
+import { useLayout } from '../hooks/useLayout';
 import { usePalette } from '../hooks/usePalette';
 import { TextCaption } from '../typography/TextCaption';
+
 import { getTransform } from './dotStyles';
-import { useLayout } from '../hooks/useLayout';
 
 export const DotCount = memo(
   ({ children, pin, variant = 'negative', count, ...props }: DotCountBaseProps) => {
@@ -48,20 +50,18 @@ export const DotCount = memo(
     }, [palette, pinStyles, variant]);
 
     return (
-      <>
-        <View onLayout={onChildrenLayout} {...props}>
-          {children}
-          {count > 0 && (
-            <View
-              testID="dotcount-inner-container"
-              onLayout={onDotLayout}
-              style={innerContainerStyles}
-            >
-              <TextCaption color="primaryForeground">{parseDotCountMaxOverflow(count)}</TextCaption>
-            </View>
-          )}
-        </View>
-      </>
+      <View onLayout={onChildrenLayout} {...props}>
+        {children}
+        {count > 0 && (
+          <View
+            testID="dotcount-inner-container"
+            onLayout={onDotLayout}
+            style={innerContainerStyles}
+          >
+            <TextCaption color="primaryForeground">{parseDotCountMaxOverflow(count)}</TextCaption>
+          </View>
+        )}
+      </View>
     );
   },
 );

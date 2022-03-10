@@ -1,20 +1,19 @@
 import { useMemo, useRef } from 'react';
-
-import { MotionBaseSpec, PinningDirection } from '@cbhq/cds-common';
 import { Animated, Easing, useWindowDimensions } from 'react-native';
+import { MotionBaseSpec, PinningDirection } from '@cbhq/cds-common';
 import {
   animateDrawerInConfig,
   animateDrawerOutConfig,
-  MAX_OVER_DRAG,
   drawerAnimationDefaultDuration,
+  MAX_OVER_DRAG,
 } from '@cbhq/cds-common/animation/drawer';
 import {
-  verticalDrawerPercentageOfView,
-  horizontalDrawerPercentageOfView,
   handleBarOffset,
+  horizontalDrawerPercentageOfView,
+  verticalDrawerPercentageOfView,
 } from '@cbhq/cds-common/tokens/drawer';
-
 import { durations } from '@cbhq/cds-common/tokens/motion';
+
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 
 const animateDrawer = {
@@ -64,18 +63,18 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
           }),
         };
       case 'bottom':
-      default:
-        return {
-          translateY: drawerAnimation.current.interpolate({
-            inputRange: [0, 1],
-            outputRange: [drawerDimension + handleBarOffset, MAX_OVER_DRAG],
-          }),
-        };
       case 'right':
         return {
           translateX: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
             outputRange: [drawerDimension, MAX_OVER_DRAG],
+          }),
+        };
+      default:
+        return {
+          translateY: drawerAnimation.current.interpolate({
+            inputRange: [0, 1],
+            outputRange: [drawerDimension + handleBarOffset, MAX_OVER_DRAG],
           }),
         };
     }

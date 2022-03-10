@@ -1,8 +1,9 @@
 import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
-
-import { NoopFn, SpacingScale } from '@cbhq/cds-common';
 import { Animated, LayoutChangeEvent, View } from 'react-native';
+import { NoopFn, SpacingScale } from '@cbhq/cds-common';
+
 import { Box } from '../../layout/Box';
+
 import { CarouselItemContext } from './CarouselItemContext';
 import type { CarouselDismissItemInternal, CarouselItemId, CarouselUpdateLayoutMap } from './types';
 

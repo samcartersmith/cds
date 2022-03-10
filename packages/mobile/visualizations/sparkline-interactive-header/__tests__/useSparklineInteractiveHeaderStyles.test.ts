@@ -2,8 +2,8 @@ import { StyleProp, TextStyle } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
 import { defaultPalette } from '@cbhq/cds-common';
 
-import { useSparklineInteractiveHeaderStyles } from '../useSparklineInteractiveHeaderStyles';
 import { paletteConfigToRgbaStrings } from '../../../utils/palette';
+import { useSparklineInteractiveHeaderStyles } from '../useSparklineInteractiveHeaderStyles';
 
 jest.mock('react-native/Libraries/Utilities/PixelRatio', () => ({
   get: jest.fn().mockReturnValue(1),

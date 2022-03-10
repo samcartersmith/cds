@@ -1,12 +1,14 @@
-import React, { useCallback, memo } from 'react';
-import { NoopFn, ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
+import React, { memo, useCallback } from 'react';
+import { GestureResponderEvent } from 'react-native';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { selectCellMobileSpacingConfig } from '@cbhq/cds-common/tokens/cell';
-import { GestureResponderEvent } from 'react-native';
+import { NoopFn, ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
+
 import { Cell } from '../cells/Cell';
-import { VStack } from '../layout/VStack';
 import { CellAccessory } from '../cells/CellAccessory';
-import { TextHeadline, TextBody } from '../typography';
+import { VStack } from '../layout/VStack';
+import { TextBody, TextHeadline } from '../typography';
+
 import { useSelectContext } from './SelectContext';
 
 const selectOptionMinHeight: Record<ScaleDensity, number> = {

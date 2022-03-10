@@ -1,9 +1,10 @@
 import React, { memo, RefObject } from 'react';
-import type { AccordionItemBaseProps } from '@cbhq/cds-common/types';
-import { useAccordionParent } from '@cbhq/cds-common/accordions/AccordionParentContext';
 import { View } from 'react-native';
+import { useAccordionParent } from '@cbhq/cds-common/accordions/AccordionParentContext';
+import type { AccordionItemBaseProps } from '@cbhq/cds-common/types';
 
 import { VStack } from '../layout';
+
 import { AccordionHeader } from './AccordionHeader';
 import { AccordionPanel } from './AccordionPanel';
 

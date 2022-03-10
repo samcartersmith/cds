@@ -1,6 +1,7 @@
-import { useRef, useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
 import { MotionBaseSpec } from '@cbhq/cds-common';
+
 import { convertMotionConfig } from './convertMotionConfig';
 
 type SelectAnimation = {

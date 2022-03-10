@@ -1,21 +1,22 @@
-import React, { memo, useCallback, useEffect, forwardRef, useImperativeHandle } from 'react';
+import React, { forwardRef, memo, useCallback, useEffect, useImperativeHandle } from 'react';
 import {
-  ToastBaseProps,
-  ToastRefBaseProps,
-  ToastHandleClose,
   defaultPalette,
+  ToastBaseProps,
+  ToastHandleClose,
+  ToastRefBaseProps,
 } from '@cbhq/cds-common';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
-import { HStack, Box } from '../layout';
-import { TextHeadline } from '../typography';
-import { useToastAnimation } from './useToastAnimation';
-import { useToastPanResponder } from './useToastPanResponder';
 import { Button } from '../buttons';
 import { useSpacingScale } from '../hooks/useSpacingScale';
+import { Box, HStack } from '../layout';
 import { ThemeProvider } from '../system/ThemeProvider';
+import { TextHeadline } from '../typography';
+
+import { useToastAnimation } from './useToastAnimation';
+import { useToastPanResponder } from './useToastPanResponder';
 
 const toastPalette = {
   background: defaultPalette.backgroundAlternate,

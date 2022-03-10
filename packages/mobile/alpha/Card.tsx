@@ -1,8 +1,9 @@
 import React, { memo, useMemo } from 'react';
 import { ViewStyle } from 'react-native';
 import type { CardBaseProps } from '@cbhq/cds-common/types/alpha';
-import { Pressable, PressableProps, OnPress } from '../system/Pressable';
+
 import { VStack } from '../layout/VStack';
+import { OnPress, Pressable, PressableProps } from '../system/Pressable';
 import { DangerouslySetStyle } from '../types';
 
 export type CardProps = {

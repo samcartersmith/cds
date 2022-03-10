@@ -1,8 +1,10 @@
 import { ViewStyle } from 'react-native';
-import { memoize } from '@cbhq/cds-common/utils/memoize';
-import { ThemeConfigForSpectrum } from '@cbhq/cds-common/types/ThemeConfig';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
+import { ThemeConfigForSpectrum } from '@cbhq/cds-common/types/ThemeConfig';
+import { memoize } from '@cbhq/cds-common/utils/memoize';
+
 import { ElevationConfigForSpectrum } from '../system/ElevationConfigsContext';
+
 import { getBorderStyles } from './getBorderStyles';
 
 export type InteractableStyles = {

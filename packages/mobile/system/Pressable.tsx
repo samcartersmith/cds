@@ -1,6 +1,4 @@
 import React, { ForwardedRef, forwardRef, memo, useCallback, useMemo, useState } from 'react';
-
-import { emptyArray } from '@cbhq/cds-utils';
 import {
   AccessibilityProps,
   GestureResponderEvent,
@@ -8,11 +6,13 @@ import {
   PressableProps as BasePressableProps,
   View,
 } from 'react-native';
+import { emptyArray } from '@cbhq/cds-utils';
 
 import { usePressAnimation } from '../hooks/usePressAnimation';
 import { HapticFeedbackType } from '../types';
 import { debounce } from '../utils/debounce';
 import { Haptics } from '../utils/haptics';
+
 import { Interactable, InteractableProps } from './Interactable';
 
 export type LinkableProps = Pick<BasePressableProps, 'onPress'>;
@@ -142,7 +142,7 @@ export const Pressable = memo(
       <BasePressable
         accessibilityRole="button"
         // This rule is semi-problematic, as it encourages direct inline object usages
-        // eslint-disable-next-line react-native-a11y/has-valid-accessibility-state
+
         accessibilityState={accessibilityState}
         // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         disabled={disabled || loading}

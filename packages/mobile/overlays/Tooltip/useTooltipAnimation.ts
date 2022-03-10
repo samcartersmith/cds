@@ -1,3 +1,5 @@
+import { useMemo, useRef } from 'react';
+import { Animated } from 'react-native';
 import {
   animateInOpacityConfig,
   animateInYConfig,
@@ -6,8 +8,7 @@ import {
   tooltipHiddenOpacity,
   tooltipHiddenY,
 } from '@cbhq/cds-common/animation/tooltip';
-import { useMemo, useRef } from 'react';
-import { Animated } from 'react-native';
+
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 
 // opacity animation

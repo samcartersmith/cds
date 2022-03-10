@@ -1,19 +1,19 @@
-import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import { Modal } from 'react-native';
-import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
+import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context';
+import { fireEvent, render, waitFor } from '@testing-library/react-native';
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import {
-  loremIpsumBuilder,
   CreateLoremIpsumProps,
   loremIpsum,
+  loremIpsumBuilder,
 } from '@cbhq/cds-common/internal/loremIpsumBuilder';
 import { DrawerBaseProps } from '@cbhq/cds-common/types';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
 import { Button } from '../../../buttons';
-import { Drawer } from '../Drawer';
 import { VStack } from '../../../layout/VStack';
-import { SAFE_AREA_METRICS } from '../../../utils/testHelpers';
 import { TextBody, TextLabel1 } from '../../../typography';
+import { SAFE_AREA_METRICS } from '../../../utils/testHelpers';
+import { Drawer } from '../Drawer';
 
 const LoremIpsum = loremIpsumBuilder({
   TextBody,

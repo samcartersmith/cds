@@ -1,12 +1,12 @@
 import React, { memo, useMemo } from 'react';
-
+import { ActivityIndicator, StyleSheet, View, ViewStyle } from 'react-native';
 import { ButtonBaseProps } from '@cbhq/cds-common';
-import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
-import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
-import { StyleSheet, ActivityIndicator, View, ViewStyle } from 'react-native';
+import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
+import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 
+import { Button as FrontierButton } from '../alpha/Button';
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
@@ -15,7 +15,6 @@ import { getFlushStyles } from '../styles/getFlushStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { useFeatureFlag } from '../system/useFeatureFlag';
 import { TextHeadline } from '../typography/TextHeadline';
-import { Button as FrontierButton } from '../alpha/Button';
 
 export type ButtonProps = ButtonBaseProps &
   PressableProps & {

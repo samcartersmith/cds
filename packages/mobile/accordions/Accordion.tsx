@@ -3,7 +3,7 @@ import { AccordionBaseProps, join } from '@cbhq/cds-common';
 import { AccordionParentProvider } from '@cbhq/cds-common/accordions/AccordionParentContext';
 import { useAccordionDividerColor } from '@cbhq/cds-common/hooks/useAccordionDividerColor';
 
-import { VStack, Divider } from '../layout';
+import { Divider, VStack } from '../layout';
 
 export type AccordionProps = AccordionBaseProps;
 

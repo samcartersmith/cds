@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from 'react';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import sample from 'lodash/sample';
-
 import { TabNavigationProps, TabProps } from '@cbhq/cds-common';
-import { TabNavigation } from '../TabNavigation';
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
+
 import { Button } from '../../buttons';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { TabNavigation } from '../TabNavigation';
 
 const tabs: TabProps[] = [
   {

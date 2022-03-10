@@ -1,13 +1,14 @@
-import { useRef, useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
 import {
-  animateInRotateConfig,
-  animateOutRotateConfig,
   accordionHiddenRotate,
   accordionVisibleRotate,
+  animateInRotateConfig,
+  animateOutRotateConfig,
 } from '@cbhq/cds-common/animation/accordion';
-import { convertMotionConfig } from '../animation/convertMotionConfig';
+
 import type { AnimationHookProps } from '../animation/AnimationProps';
+import { convertMotionConfig } from '../animation/convertMotionConfig';
 
 type AccordionIconAnimation = AnimationHookProps<{
   transform: [

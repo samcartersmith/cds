@@ -4,9 +4,9 @@ import times from 'lodash/times';
 import { SparklineInteractiveMarkerDatesProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useDateLookup } from '@cbhq/cds-common/visualizations/useDateLookup';
 
+import { useLayout } from '../../hooks/useLayout';
 import { usePalette } from '../../hooks/usePalette';
 import { TextLabel2 } from '../../typography';
-import { useLayout } from '../../hooks/useLayout';
 
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 

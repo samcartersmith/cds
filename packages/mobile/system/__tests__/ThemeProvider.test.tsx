@@ -1,14 +1,16 @@
-import { renderHook } from '@testing-library/react-hooks';
+/* eslint-disable react/jsx-no-constructed-context-values */
 
+import { renderHook } from '@testing-library/react-hooks';
+import { defaultPalette, frontierSpectrumPalette } from '@cbhq/cds-common';
 import {
   defaultFeatureFlags,
   FeatureFlagContext,
 } from '@cbhq/cds-common/system/FeatureFlagContext';
-import { defaultPalette, frontierSpectrumPalette } from '@cbhq/cds-common';
-import { useThemeConfig } from '../useThemeConfig';
-import { ThemeProvider } from '../ThemeProvider';
-import { createThemeConfig } from '../createThemeConfig';
+
 import { Box } from '../../layout/Box';
+import { createThemeConfig } from '../createThemeConfig';
+import { ThemeProvider } from '../ThemeProvider';
+import { useThemeConfig } from '../useThemeConfig';
 
 describe('ThemeProvider', () => {
   afterEach(() => {
@@ -27,7 +29,7 @@ describe('ThemeProvider', () => {
     const { result } = renderHook(() => useThemeConfig(), {
       wrapper: ThemeProvider,
     });
-    expect(result.current.config.name).toEqual('default');
+    expect(result.current.config.name).toBe('default');
   });
 
   it('has activeConfig = config.light by default', () => {
@@ -56,7 +58,7 @@ describe('ThemeProvider', () => {
         </ThemeProvider>
       ),
     });
-    expect(result.current.config.name).toEqual('default-brand');
+    expect(result.current.config.name).toBe('default-brand');
     expect(result.current.activeConfig.palette).toEqual({
       ...defaultPalette,
       primary: 'orange50',
@@ -202,8 +204,8 @@ describe('ThemeProvider', () => {
       ),
     });
 
-    expect(result.current.activeConfig.rgbaStrings.background).toEqual('rgba(10,11,13,1)');
-    expect(result.current.activeConfig.rgbaStrings.foreground).toEqual('rgba(255,255,255,1)');
+    expect(result.current.activeConfig.rgbaStrings.background).toBe('rgba(10,11,13,1)');
+    expect(result.current.activeConfig.rgbaStrings.foreground).toBe('rgba(255,255,255,1)');
   });
 
   it('works with nested spectrums and elevation=1', () => {
@@ -223,8 +225,8 @@ describe('ThemeProvider', () => {
       ),
     });
 
-    expect(result.current.activeConfig.rgbaStrings.background).toEqual('rgba(20,21,25,1)');
-    expect(result.current.activeConfig.rgbaStrings.foreground).toEqual('rgba(255,255,255,1)');
+    expect(result.current.activeConfig.rgbaStrings.background).toBe('rgba(20,21,25,1)');
+    expect(result.current.activeConfig.rgbaStrings.foreground).toBe('rgba(255,255,255,1)');
   });
 
   it('works with nested spectrums and elevation=2', () => {
@@ -244,8 +246,8 @@ describe('ThemeProvider', () => {
       ),
     });
 
-    expect(result.current.activeConfig.rgbaStrings.background).toEqual('rgba(30,32,37,1)');
-    expect(result.current.activeConfig.rgbaStrings.foreground).toEqual('rgba(255,255,255,1)');
+    expect(result.current.activeConfig.rgbaStrings.background).toBe('rgba(30,32,37,1)');
+    expect(result.current.activeConfig.rgbaStrings.foreground).toBe('rgba(255,255,255,1)');
   });
 
   it('works with nested spectrums and elevation=2 in frontier', () => {
@@ -276,8 +278,8 @@ describe('ThemeProvider', () => {
       ),
     });
 
-    expect(parentTheme.activeConfig.rgbaStrings.background).toEqual('rgba(30,32,37,1)');
-    expect(parentTheme.activeConfig.rgbaStrings.secondary).toEqual('rgba(50,53,61,1)');
+    expect(parentTheme.activeConfig.rgbaStrings.background).toBe('rgba(30,32,37,1)');
+    expect(parentTheme.activeConfig.rgbaStrings.secondary).toBe('rgba(50,53,61,1)');
 
     // Children of elevated surface should have same background and secondary colors.
     expect(childrenTheme.activeConfig.rgbaStrings.background).toEqual(

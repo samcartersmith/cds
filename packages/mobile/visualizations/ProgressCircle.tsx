@@ -1,23 +1,25 @@
-import React, { memo, useEffect, useRef, forwardRef } from 'react';
-import Svg, { Circle, CircleProps, G } from 'react-native-svg';
+import React, { forwardRef, memo, useEffect, useRef } from 'react';
 import { Animated, View } from 'react-native';
+import Svg, { Circle, CircleProps, G } from 'react-native-svg';
+import { ForwardedRef, SharedProps } from '@cbhq/cds-common';
+import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import {
   ProgressCircleBaseProps,
   ProgressCircleTextBaseProps,
   ProgressInnerCircleBaseProps,
 } from '@cbhq/cds-common/types/ProgressCircleBaseProps';
-import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
-import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
 import { VisualizationContainerDimension } from '@cbhq/cds-common/types/VisualizationContainerBaseProps';
-import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
+import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
 import { getProgressCircleParams } from '@cbhq/cds-common/visualizations/getProgressCircleParams';
-import { ForwardedRef, SharedProps } from '@cbhq/cds-common';
+import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
 import { isTest } from '@cbhq/cds-utils';
-import { VisualizationContainer } from './VisualizationContainer';
+
 import { convertMotionConfig } from '../animation/convertMotionConfig';
-import { Box } from '../layout';
 import { usePalette } from '../hooks/usePalette';
+import { Box } from '../layout';
+
 import { ProgressTextLabel } from './ProgressTextLabel';
+import { VisualizationContainer } from './VisualizationContainer';
 
 type CircleType = React.ComponentClass<CircleProps & SharedProps>;
 const AnimatedCircle = Animated.createAnimatedComponent(Circle as CircleType);

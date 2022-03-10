@@ -8,6 +8,7 @@ import {
   NativeSyntheticEvent,
   TextInputChangeEventData,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   CardStyleInterpolators,
   HeaderStyleInterpolators,
@@ -16,18 +17,18 @@ import {
   StackNavigationProp,
 } from '@react-navigation/stack';
 import includes from 'lodash/includes';
+import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { emptyObject, mapValues } from '@cbhq/cds-utils';
 
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
-import { TextHeadline } from '../typography/TextHeadline';
-import { TextInput } from '../controls/TextInput';
 import { IconButton } from '../buttons/IconButton';
+import { ListCell } from '../cells/ListCell';
+import { TextInput } from '../controls/TextInput';
+import { useLayout } from '../hooks/useLayout';
+import { usePalette } from '../hooks/usePalette';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
-import { ListCell } from '../cells/ListCell';
 import { Spacer } from '../layout/Spacer';
-import { useLayout } from '../hooks/useLayout';
+import { TextHeadline } from '../typography/TextHeadline';
 
 import {
   ExamplesSearchProvider,
@@ -35,7 +36,6 @@ import {
   SetSearchFilterContext,
 } from './ExamplesSearchProvider';
 import { routes as codegenRoutes } from './routes';
-import { usePalette } from '../hooks/usePalette';
 
 const initialRouteKey = 'Examples' as const;
 const searchRouteKey = 'Search' as const;
@@ -179,45 +179,40 @@ export function useExampleScreenOptions() {
               iconButtonPlaceholder
             );
             return (
-              <>
-                <Box
-                  animated
-                  background
-                  onLayout={onLayout}
-                  dangerouslySetStyle={{ marginTop: top }}
+              <Box animated background onLayout={onLayout} dangerouslySetStyle={{ marginTop: top }}>
+                <HStack
+                  alignItems="center"
+                  justifyContent="center"
+                  spacingVertical={1}
+                  spacingHorizontal={2}
                 >
-                  <HStack
+                  {leftHeaderButton}
+                  <Spacer />
+                  <Box
+                    width="100%"
+                    pointerEvents={isSearch ? undefined : 'none'}
+                    position="absolute"
                     alignItems="center"
-                    justifyContent="center"
-                    spacingVertical={1}
-                    spacingHorizontal={2}
                   >
-                    {leftHeaderButton}
-                    <Spacer />
-                    <Box
-                      width="100%"
-                      pointerEvents={isSearch ? undefined : 'none'}
-                      position="absolute"
-                      alignItems="center"
-                    >
-                      {isSearch ? (
-                        <TextInput
-                          start={<IconButton transparent name="backArrow" onPress={goBack} />}
-                          label=""
-                          placeholder="Search"
-                          onChange={handleSearch}
-                        />
-                      ) : (
-                        <TextHeadline align="center" animated dangerouslySetStyle={titleStyle}>
-                          {titleForScene}
-                        </TextHeadline>
-                      )}
-                    </Box>
-                    <Spacer />
-                    {rightHeaderButton}
-                  </HStack>
-                </Box>
-              </>
+                    {isSearch ? (
+                      <TextInput
+                        accessibilityLabel="Search for component"
+                        start={<IconButton transparent name="backArrow" onPress={goBack} />}
+                        label=""
+                        placeholder="Search"
+                        onChange={handleSearch}
+                        accessibilityHint="Search for component"
+                      />
+                    ) : (
+                      <TextHeadline align="center" animated dangerouslySetStyle={titleStyle}>
+                        {titleForScene}
+                      </TextHeadline>
+                    )}
+                  </Box>
+                  <Spacer />
+                  {rightHeaderButton}
+                </HStack>
+              </Box>
             );
           },
           gestureDirection: 'horizontal',
