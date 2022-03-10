@@ -24,6 +24,7 @@ export const Normal = () => {
           <Avatar alt="Grumpy" src={avatarImageUrl} size="xl" />
           <Avatar alt="Grumpy" src={avatarImageUrl} size="xxl" />
           <Avatar alt="Grumpy" src={avatarImageUrl} size="xxxl" />
+          <Avatar selected alt="Grumpy" src={avatarImageUrl} size="xxxl" />
         </HStack>
       </VStack>
     </ThemeProvider>
@@ -42,6 +43,7 @@ export const Fallback = () => {
           <Avatar alt="Grumpy" size="l" />
           <Avatar alt="Grumpy" size="xl" />
           <Avatar alt="Grumpy" size="xxl" />
+          <Avatar alt="Grumpy" size="xxxl" />
           <Avatar alt="Grumpy" size="xxxl" />
         </HStack>
       </VStack>
