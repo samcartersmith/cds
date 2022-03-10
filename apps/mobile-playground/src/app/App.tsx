@@ -17,9 +17,7 @@ import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
 
 // this code allows the use of toLocaleString() on Android
 if (Platform.OS === 'android') {
-  // eslint-disable-next-line global-require
   require('intl');
-  // eslint-disable-next-line global-require
   require('intl/locale-data/jsonp/en-US');
 }
 
@@ -61,7 +59,7 @@ const App = memo(() => {
   return (
     <FeatureFlagProvider>
       <DevicePreferencesProvider>
-        <ThemeProvider>
+        <ThemeProvider name="playground-root">
           <CdsSafeAreaProvider>
             <PortalProvider>
               <StatusBar />
