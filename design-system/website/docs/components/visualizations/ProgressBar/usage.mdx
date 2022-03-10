@@ -1,0 +1,58 @@
+**Default**
+
+```jsx live
+<VStack gap={2}>
+    <ProgressBar progress={0} />
+    <ProgressBar progress={0.5} />
+    <ProgressBar progress={1} />
+</VStack>
+```
+
+**Heavy**
+
+```jsx live
+<VStack gap={2}>
+    <ProgressBar weight="heavy" progress={0} />
+    <ProgressBar weight="heavy" progress={0.5} />
+    <ProgressBar weight="heavy" progress={1} />
+</VStack>
+```
+
+**Disabled**
+
+```jsx live
+<VStack gap={2}>
+    <ProgressBar disabled progress={0} />
+    <ProgressBar disabled progress={0.5} />
+    <ProgressBar disabled progress={1} />
+</VStack>
+```
+
+**Colors**
+
+```jsx live
+<ThemeProvider>
+  <VStack gap={2}>
+    <ProgressBar color="positive" progress={0.5} />
+    <ProgressBar color="negative" progress={0.5} />
+    <ProgressBar color="primary" progress={0.5} />
+    <ProgressBar color="foreground" progress={0.5} />
+    <ProgressBar disabled color="foreground" progress={0.5} />
+  </VStack>
+</ThemeProvider>
+```
+
+**Interactive Demo**
+
+This is for demo purposes. ProgressContainerWithButtons isn't designed for production usage.
+
+```jsx live
+<ProgressContainerWithButtons>
+  {({ calculateProgress }) => (
+    <VStack gap={2}>
+      <ProgressBar progress={calculateProgress(0)} />
+      <ProgressBar progress={calculateProgress(0.2)} />
+    </VStack>
+  )}
+</ProgressContainerWithButtons>
+```

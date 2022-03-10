@@ -1,0 +1,730 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/controls/InputIcon](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/controls/InputIcon.tsx)
+
+<ComponentDetails componentName="InputIcon" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="InputIcon" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="InputIcon" templateName="a11y" />
+
+## Props
+
+### animated <Badge variant="mobile" />
+
+If value is `true` then style prop can take animated values.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="animated"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-animated" />
+
+### badge
+
+Add a badge to the top right of an icon
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="badge"
+  required={false}
+  defaultValue=""
+  mobileOptions={['ReactElement<BadgeProps, string | JSXElementConstructor<any>>']}
+  webOptions={['ReactElement<BadgeProps, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-badge" />
+
+### bordered <Badge variant="mobile" />
+
+A boolean flag indicating whether or not a border should be shown around an icon. This border will match color prop. Border is only allowed for sizes m and above.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="bordered"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-bordered" />
+
+### color
+
+Color of the icon when used as a foreground.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="color"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+  webOptions={[
+    'currentColor',
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-color" />
+
+### compact <Badge variant="mobile" />
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="compact"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-compact" />
+
+### dangerouslySetColor <Badge variant="danger" order={1} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="dangerouslySetColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={['AnimatedInterpolation', 'string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-dangerouslySetColor" />
+
+### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="dangerouslySetStyle"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RecursiveArray<Falsy | TextStyle | RegisteredStyle<TextStyle>>',
+    'RegisteredStyle<TextStyle>',
+    'TextStyle',
+    'Value',
+    'WithAnimatedArray<Falsy | TextStyle | RegisteredStyle<TextStyle> | RecursiveArray<Falsy | TextStyle | RegisteredStyle<TextStyle>> | readonly (Falsy | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<TextStyle>',
+    'false',
+    'null',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-dangerouslySetStyle" />
+
+### disableInheritFocusStyle
+
+If set to true, when parent input is focused, the icon will match the color of the focus state
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="disableInheritFocusStyle"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-disableInheritFocusStyle" />
+
+### labeledBy <Badge variant="web" />
+
+If the icon is labelled by an independent element, then provide that elements id. This is used to set the aria-labelledby value on the icon. If the `title` prop is also provided, then `labeledBy` will be used to set the id on the `<title>` element.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="labeledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-labeledBy" />
+
+### name
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="name"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'add',
+    'airdrop',
+    'allTimeHigh',
+    'annotation',
+    'api',
+    'arrowDown',
+    'arrowLeft',
+    'arrowRight',
+    'arrowUp',
+    'arrowsHorizontal',
+    'arrowsVertical',
+    'avatar',
+    'average',
+    'backArrow',
+    'bank',
+    'bell',
+    'blockchain',
+    'bookmarkActive',
+    'bookmarkInactive',
+    'calendar',
+    'camera',
+    'card',
+    'caretDown',
+    'caretLeft',
+    'caretRight',
+    'caretUp',
+    'cash',
+    'cashEUR',
+    'cashGBP',
+    'cashJPY',
+    'cashRupee',
+    'cashUSD',
+    'chainLink',
+    'chartBar',
+    'chartCandles',
+    'chartLine',
+    'chartPie',
+    'chartPieCircle',
+    'chartVolume',
+    'chatBubble',
+    'checkbox',
+    'checkboxChecked',
+    'checkboxEmpty',
+    'checkmark',
+    'circleCheckmark',
+    'circleCross',
+    'circulatingSupply',
+    'clipboard',
+    'clock',
+    'clockOutline',
+    'close',
+    'closeCaption',
+    'collapse',
+    'continuous',
+    'convert',
+    'copy',
+    'crossTrade',
+    'currencies',
+    'defi',
+    'deposit',
+    'dex',
+    'diagonalDownArrow',
+    'diagonalRightArrow',
+    'diagonalUpArrow',
+    'document',
+    'dot',
+    'doubleChevronRight',
+    'downArrow',
+    'download',
+    'drag',
+    'email',
+    'error',
+    'ethereum',
+    'exclamationMark',
+    'expand',
+    'expandAddress',
+    'expandAll',
+    'externalLink',
+    'fib',
+    'filter',
+    'flame',
+    'followActive',
+    'followInactive',
+    'fork',
+    'forwardArrow',
+    'gauge',
+    'gavel',
+    'gear',
+    'giftBox',
+    'giftCard',
+    'globe',
+    'hamburger',
+    'heartActive',
+    'heartInactive',
+    'home',
+    'horizontalLine',
+    'ideal',
+    'identityCard',
+    'info',
+    'initiator',
+    'keyboard',
+    'laptop',
+    'lightningBolt',
+    'list',
+    'lock',
+    'marketCap',
+    'minus',
+    'more',
+    'newsFeed',
+    'nft',
+    'noWifi',
+    'orderHistory',
+    'outline',
+    'paperAirplane',
+    'paperclip',
+    'pause',
+    'pay',
+    'paypal',
+    'pencil',
+    'percentage',
+    'phone',
+    'pin',
+    'planetActive',
+    'planetInactive',
+    'play',
+    'profile',
+    'protection',
+    'pulse',
+    'pyramid',
+    'qrCode',
+    'questionMark',
+    'reCenter',
+    'rectangle',
+    'recurring',
+    'regulated',
+    'reportActive',
+    'reportInactive',
+    'safe',
+    'search',
+    'seenActive',
+    'setPinCode',
+    'share',
+    'shield',
+    'smartContract',
+    'sofort',
+    'sortDown',
+    'sortDownCenter',
+    'sortUp',
+    'sortUpCenter',
+    'soundOff',
+    'soundOn',
+    'sparkle',
+    'speaker',
+    'stake',
+    'starActive',
+    'starInactive',
+    'statusDot',
+    'step0',
+    'step1',
+    'step2',
+    'step3',
+    'step4',
+    'step5',
+    'step6',
+    'step7',
+    'step8',
+    'step9',
+    'telephone',
+    'thumbsDown',
+    'thumbsUp',
+    'trashCan',
+    'trophy',
+    'undo',
+    'unknown',
+    'upArrow',
+    'upload',
+    'verticalLine',
+    'visibleActive',
+    'visibleInactive',
+    'wallet',
+    'warning',
+    'wifi',
+    'wireTransfer',
+    'withdraw',
+  ]}
+  webOptions={[
+    'add',
+    'airdrop',
+    'allTimeHigh',
+    'annotation',
+    'api',
+    'arrowDown',
+    'arrowLeft',
+    'arrowRight',
+    'arrowUp',
+    'arrowsHorizontal',
+    'arrowsVertical',
+    'avatar',
+    'average',
+    'backArrow',
+    'bank',
+    'bell',
+    'blockchain',
+    'bookmarkActive',
+    'bookmarkInactive',
+    'calendar',
+    'camera',
+    'card',
+    'caretDown',
+    'caretLeft',
+    'caretRight',
+    'caretUp',
+    'cash',
+    'cashEUR',
+    'cashGBP',
+    'cashJPY',
+    'cashRupee',
+    'cashUSD',
+    'chainLink',
+    'chartBar',
+    'chartCandles',
+    'chartLine',
+    'chartPie',
+    'chartPieCircle',
+    'chartVolume',
+    'chatBubble',
+    'checkbox',
+    'checkboxChecked',
+    'checkboxEmpty',
+    'checkmark',
+    'circleCheckmark',
+    'circleCross',
+    'circulatingSupply',
+    'clipboard',
+    'clock',
+    'clockOutline',
+    'close',
+    'closeCaption',
+    'collapse',
+    'continuous',
+    'convert',
+    'copy',
+    'crossTrade',
+    'currencies',
+    'defi',
+    'deposit',
+    'dex',
+    'diagonalDownArrow',
+    'diagonalRightArrow',
+    'diagonalUpArrow',
+    'document',
+    'dot',
+    'doubleChevronRight',
+    'downArrow',
+    'download',
+    'drag',
+    'email',
+    'error',
+    'ethereum',
+    'exclamationMark',
+    'expand',
+    'expandAddress',
+    'expandAll',
+    'externalLink',
+    'fib',
+    'filter',
+    'flame',
+    'followActive',
+    'followInactive',
+    'fork',
+    'forwardArrow',
+    'gauge',
+    'gavel',
+    'gear',
+    'giftBox',
+    'giftCard',
+    'globe',
+    'hamburger',
+    'heartActive',
+    'heartInactive',
+    'home',
+    'horizontalLine',
+    'ideal',
+    'identityCard',
+    'info',
+    'initiator',
+    'keyboard',
+    'laptop',
+    'lightningBolt',
+    'list',
+    'lock',
+    'marketCap',
+    'minus',
+    'more',
+    'newsFeed',
+    'nft',
+    'noWifi',
+    'orderHistory',
+    'outline',
+    'paperAirplane',
+    'paperclip',
+    'pause',
+    'pay',
+    'paypal',
+    'pencil',
+    'percentage',
+    'phone',
+    'pin',
+    'planetActive',
+    'planetInactive',
+    'play',
+    'profile',
+    'protection',
+    'pulse',
+    'pyramid',
+    'qrCode',
+    'questionMark',
+    'reCenter',
+    'rectangle',
+    'recurring',
+    'regulated',
+    'reportActive',
+    'reportInactive',
+    'safe',
+    'search',
+    'seenActive',
+    'setPinCode',
+    'share',
+    'shield',
+    'smartContract',
+    'sofort',
+    'sortDown',
+    'sortDownCenter',
+    'sortUp',
+    'sortUpCenter',
+    'soundOff',
+    'soundOn',
+    'sparkle',
+    'speaker',
+    'stake',
+    'starActive',
+    'starInactive',
+    'statusDot',
+    'step0',
+    'step1',
+    'step2',
+    'step3',
+    'step4',
+    'step5',
+    'step6',
+    'step7',
+    'step8',
+    'step9',
+    'telephone',
+    'thumbsDown',
+    'thumbsUp',
+    'trashCan',
+    'trophy',
+    'undo',
+    'unknown',
+    'upArrow',
+    'upload',
+    'verticalLine',
+    'visibleActive',
+    'visibleInactive',
+    'wallet',
+    'warning',
+    'wifi',
+    'wireTransfer',
+    'withdraw',
+  ]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-name" />
+
+### opacity <Badge variant="mobile" />
+
+Opacity of element
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="opacity"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RegisteredStyle<TextStyle>',
+    'Value',
+    'WithAnimatedArray<Falsy | TextStyle | RegisteredStyle<TextStyle> | RecursiveArray<Falsy | TextStyle | RegisteredStyle<TextStyle>> | readonly (Falsy | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<TextStyle>',
+    'false',
+    'null',
+    'number',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-opacity" />
+
+### spacing <Badge variant="mobile" />
+
+Apply inner spacing on all sides.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="spacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-spacing" />
+
+### spacingBottom <Badge variant="mobile" />
+
+Apply inner spacing on the bottom side.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="spacingBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-spacingBottom" />
+
+### spacingEnd <Badge variant="mobile" />
+
+Apply inner spacing on the trailing side.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="spacingEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-spacingEnd" />
+
+### spacingHorizontal <Badge variant="mobile" />
+
+Apply inner spacing on the leading and trailing sides.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="spacingHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-spacingHorizontal" />
+
+### spacingStart <Badge variant="mobile" />
+
+Apply inner spacing on the leading side.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="spacingStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-spacingStart" />
+
+### spacingTop <Badge variant="mobile" />
+
+Apply inner spacing on the top side.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="spacingTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-spacingTop" />
+
+### spacingVertical <Badge variant="mobile" />
+
+Apply inner spacing on the top and bottom sides.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="spacingVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-spacingVertical" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-testID" />
+
+### title <Badge variant="web" />
+
+Give the icon a description. It will show up in a tooltip after hovering over the icon for 3s. This is a default browser feature and very helpful to users to understand what the icon does.
+
+<ApiDetails
+  componentName="InputIcon"
+  propertyName="title"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="InputIcon" templateName="prop-title" />
+
+<ComponentDetails componentName="InputIcon" templateName="outro" />

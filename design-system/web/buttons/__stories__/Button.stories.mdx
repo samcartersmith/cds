@@ -1,0 +1,178 @@
+import { withStoryLabel } from ':cds-storybook/decorators/withStoryLabel';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+
+import { Button } from '../Button';
+import { ToggleLoading } from './ToggleLoading';
+
+<Meta title="Core Components/Buttons/Button" component={Button} />
+
+# Button
+
+<Canvas isColumn withToolbar>
+  <Story name="Normal" decorators={[withStoryLabel('Normal')]}>
+    <div>
+      <Button onPress={console.log}>Button</Button> <Button to="/">As a link</Button>
+    </div>
+  </Story>
+  <Story name="Normal compact" decorators={[withStoryLabel('Normal compact')]}>
+    <div>
+      <Button compact>Button</Button>
+    </div>
+  </Story>
+  <Story name="Block" decorators={[withStoryLabel('Block')]}>
+    <div>
+      <Button block>Full-width button</Button>
+    </div>
+  </Story>
+  <Story name="Block compact" decorators={[withStoryLabel('Block compact')]}>
+    <div>
+      <Button block compact>
+        Full-width button
+      </Button>
+    </div>
+  </Story>
+</Canvas>
+
+# States
+
+<Canvas withToolbar>
+  <Story name="Loading" decorators={[withStoryLabel('Loading')]}>
+    <div>
+      <Button loading>Button</Button>
+    </div>
+  </Story>
+  <Story name="Loading compact" decorators={[withStoryLabel('Loading compact')]}>
+    <div>
+      <Button loading compact>
+        Button
+      </Button>
+    </div>
+  </Story>
+  <Story name="Disabled" decorators={[withStoryLabel('Disabled')]}>
+    <div>
+      <Button disabled>Button</Button>
+    </div>
+  </Story>
+  <Story name="Toggle Loader" decorators={[withStoryLabel('Toggle Loader')]}>
+    <div>
+      <ToggleLoading />
+    </div>
+  </Story>
+  <Story name="Toggle Loader compact" decorators={[withStoryLabel('Toggle Loader Compact')]}>
+    <div>
+      <ToggleLoading compact />
+    </div>
+  </Story>
+</Canvas>
+
+# Variants
+
+<Canvas withToolbar>
+  <Story name="Primary" decorators={[withStoryLabel('Primary')]}>
+    <div>
+      <Button variant="primary">Button</Button>{' '}
+      <Button variant="primary" compact>
+        Button
+      </Button>
+      <br />
+      <Button variant="primary" transparent>
+        Button
+      </Button>{' '}
+      <Button variant="primary" transparent compact>
+        Button
+      </Button>
+    </div>
+  </Story>
+  <Story name="Secondary" decorators={[withStoryLabel('Secondary')]}>
+    <div>
+      <Button variant="secondary">Button</Button>{' '}
+      <Button variant="secondary" compact>
+        Button
+      </Button>
+      <br />
+      <Button variant="secondary" transparent>
+        Button
+      </Button>{' '}
+      <Button variant="secondary" transparent compact>
+        Button
+      </Button>
+    </div>
+  </Story>
+  <Story name="Positive" decorators={[withStoryLabel('Positive')]}>
+    <div>
+      <Button variant="positive">Button</Button>{' '}
+      <Button variant="positive" compact>
+        Button
+      </Button>
+      <br />
+      <Button variant="positive" transparent>
+        Button
+      </Button>{' '}
+      <Button variant="positive" transparent compact>
+        Button
+      </Button>
+    </div>
+  </Story>
+  <Story name="Negative" decorators={[withStoryLabel('Negative')]}>
+    <div>
+      <Button variant="negative">Button</Button>{' '}
+      <Button variant="negative" compact>
+        Button
+      </Button>
+      <br />
+      <Button variant="negative" transparent>
+        Button
+      </Button>{' '}
+      <Button variant="negative" transparent compact>
+        Button
+      </Button>
+    </div>
+  </Story>
+</Canvas>
+
+# Icons
+
+<Canvas withToolbar>
+  <Story name="Start icon" decorators={[withStoryLabel('Start icon')]}>
+    <div>
+      <Button startIcon="arrowLeft">With start icon</Button>{' '}
+      <Button compact startIcon="arrowLeft">
+        With start icon
+      </Button>
+    </div>
+  </Story>
+  <Story name="End icon" decorators={[withStoryLabel('End icon')]}>
+    <div>
+      <Button endIcon="arrowRight" variant="secondary">
+        With end icon
+      </Button>{' '}
+      <Button compact endIcon="arrowRight" variant="secondary">
+        With end icon
+      </Button>
+    </div>
+  </Story>
+  <Story name="Both icons" decorators={[withStoryLabel('Both icons')]}>
+    <div>
+      <Button startIcon="wireTransfer" endIcon="questionMark" variant="positive">
+        With both icons
+      </Button>{' '}
+      <Button compact startIcon="wireTransfer" endIcon="questionMark" variant="positive">
+        With both icons
+      </Button>
+    </div>
+  </Story>
+  <Story name="Disabled icons" decorators={[withStoryLabel('Disabled icons')]}>
+    <div>
+      <Button disabled endIcon="sparkle" variant="negative">
+        When disabled
+      </Button>{' '}
+      <Button compact disabled startIcon="identityCard" variant="negative">
+        When disabled
+      </Button>
+    </div>
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable />

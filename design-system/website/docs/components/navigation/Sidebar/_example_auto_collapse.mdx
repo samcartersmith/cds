@@ -1,0 +1,29 @@
+```jsx live
+function SidebarItemWithAutoCollapse() {
+  const items = mocks.product.navigationItems;
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handlePress = (index) => {
+    setActiveIndex(index);
+  };
+
+  return (
+    <ExampleWithThemeToggles>
+      <HStack justifyContent="center" alignItems="flex-start" dangerouslySetBackground={palette.backgroundAlternate}>
+        <Sidebar autoCollapse logo={<LogoMark />}>
+          {items.map((props, index) => (
+            <SidebarItem
+              key={`sidebar-item--${props.title}`} 
+              active={index === activeIndex}
+              onPress={() => handlePress(index)}
+              {...props} />
+          ))}
+        </Sidebar>
+        <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center" flexGrow={1}>
+          <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
+        </HStack>
+      </HStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```

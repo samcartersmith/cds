@@ -1,0 +1,1049 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/layout/Fallback](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/layout/Fallback.tsx)
+
+<ComponentDetails componentName="Fallback" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Fallback" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Fallback" templateName="a11y" />
+
+## Props
+
+### accessibilityLabel
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-accessibilityLabel" />
+
+### accessibilityLabelledBy
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-accessibilityLabelledBy" />
+
+### alignContent
+
+Set the distribution of space between and around content items along the cross-axis.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="alignContent"
+  required={false}
+  defaultValue="flex-start"
+  mobileOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-alignContent" />
+
+### alignItems
+
+Set the alignment of all direct children on the cross-axis.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="alignItems"
+  required={false}
+  defaultValue="stretch"
+  mobileOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-alignItems" />
+
+### alignSelf
+
+Override the parents defined item alignment for this element alone.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="alignSelf"
+  required={false}
+  defaultValue="auto"
+  mobileOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-alignSelf" />
+
+### animated <Badge variant="mobile" />
+
+If value is `true` then style prop can take animated values.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="animated"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-animated" />
+
+### as <Badge variant="web" />
+
+The semantic element to render the box as. Is necessary for accessibility support and assistive technologies.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="as"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['div']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-as" />
+
+### aspectRatio <Badge variant="mobile" />
+
+Aspect ratio controls the size of the undefined dimension of a node. Aspect ratio is a non-standard property only available in React Native and not CSS. On a node with a set width/height, aspect ratio controls the size of the unset dimension. On a node with a set flex basis, aspect ratio controls the size of the node in the cross axis if unset. On a node with a measure function, aspect ratio works as though the measure function measures the flex basis. On a node with flex grow/shrink, aspect ratio controls the size of the node in the cross axis if unset. Aspect ratio takes min/max dimensions into account.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="aspectRatio"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-aspectRatio" />
+
+### background
+
+Set the background color of the box. Passing `true` will enable the default background, otherwise a custom palette alias can be passed.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="background"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+    'true',
+  ]}
+  webOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+    'true',
+  ]}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-background" />
+
+### borderColor
+
+Adds a custom border color from the palette
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="borderColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+  webOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-borderColor" />
+
+### bordered
+
+Add a border around all sides of the box.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="bordered"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-bordered" />
+
+### borderedBottom
+
+Add a border to the bottom side of the box.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="borderedBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-borderedBottom" />
+
+### borderedEnd
+
+Add a border to the trailing side of the box.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="borderedEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-borderedEnd" />
+
+### borderedHorizontal
+
+Add a border to the leading and trailing sides of the box.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="borderedHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-borderedHorizontal" />
+
+### borderedStart
+
+Add a border to the leading side of the box.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="borderedStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-borderedStart" />
+
+### borderedTop
+
+Add a border to the top side of the box.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="borderedTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-borderedTop" />
+
+### borderedVertical
+
+Add a border to the top and bottom sides of the box.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="borderedVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-borderedVertical" />
+
+### bottom
+
+Position the box to the bottom edge.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="bottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-bottom" />
+
+### children
+
+Content to render within the box.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="children"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-children" />
+
+### dangerouslySetBackground <Badge variant="danger" order={1} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="dangerouslySetBackground"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-dangerouslySetBackground" />
+
+### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="dangerouslySetClassName"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-dangerouslySetClassName" />
+
+### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="dangerouslySetStyle"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
+    'ViewStyle',
+    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-dangerouslySetStyle" />
+
+### display <Badge variant="web" />
+
+The display value to uss in CSS display attribute.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="display"
+  required={false}
+  defaultValue="flex"
+  mobileOptions={[]}
+  webOptions={['contents', 'flex', 'inline-flex', 'none']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-display" />
+
+### elevation
+
+Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="elevation"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '1', '2']}
+  webOptions={['0', '1', '2']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-elevation" />
+
+### flexBasis
+
+Sets the initial main flex size.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="flexBasis"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-flexBasis" />
+
+### flexDirection
+
+Order children on the main-axis in this direction.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="flexDirection"
+  required={false}
+  defaultValue=""
+  mobileOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+  webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-flexDirection" />
+
+### flexGrow
+
+Set the grow factor of this flex item.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="flexGrow"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-flexGrow" />
+
+### flexShrink
+
+Set the shrink factor of this flex item.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="flexShrink"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-flexShrink" />
+
+### flexWrap
+
+How should children wrap when overflowing.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="flexWrap"
+  required={false}
+  defaultValue="nowrap"
+  mobileOptions={['nowrap', 'wrap', 'wrap-reverse']}
+  webOptions={['nowrap', 'wrap', 'wrap-reverse']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-flexWrap" />
+
+### height
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="height"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-height" />
+
+### id <Badge variant="danger" order={1} />
+
+This should only be used for accessibility purposes, eg: aria-controls https://accessibilityresources.org/aria-controls
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="id"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-id" />
+
+### justifyContent
+
+Set the distribution of space between and around content items along the main-axis.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="justifyContent"
+  required={false}
+  defaultValue="flex-start"
+  mobileOptions={[
+    'center',
+    'flex-end',
+    'flex-start',
+    'space-around',
+    'space-between',
+    'space-evenly',
+  ]}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-justifyContent" />
+
+### left
+
+Position the box to the left edge.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="left"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-left" />
+
+### maxHeight
+
+Set a maximum height.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="maxHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-maxHeight" />
+
+### maxWidth
+
+Set a maximum width.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="maxWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-maxWidth" />
+
+### minHeight
+
+Set a minimum height.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="minHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-minHeight" />
+
+### minWidth
+
+Set a minimum width.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="minWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-minWidth" />
+
+### offset
+
+Apply negative outer spacing on all sides.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="offset"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-offset" />
+
+### offsetBottom
+
+Apply negative outer spacing on the bottom side.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="offsetBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-offsetBottom" />
+
+### offsetEnd
+
+Apply negative outer spacing on the trailing side.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="offsetEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-offsetEnd" />
+
+### offsetHorizontal
+
+Apply negative outer spacing on the leading and trailing sides.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="offsetHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-offsetHorizontal" />
+
+### offsetStart
+
+Apply negative outer spacing on the leading side.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="offsetStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-offsetStart" />
+
+### offsetTop
+
+Apply negative outer spacing on the top side.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="offsetTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-offsetTop" />
+
+### offsetVertical
+
+Apply negative outer spacing on the top and bottom sides.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="offsetVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-offsetVertical" />
+
+### opacity
+
+Sets the opacity of the box
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="opacity"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
+    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
+    'number',
+  ]}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-opacity" />
+
+### overflow
+
+Control how the content should overflow.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="overflow"
+  required={false}
+  defaultValue=""
+  mobileOptions={['gradient', 'hidden', 'visible']}
+  webOptions={['auto', 'hidden', 'scroll', 'visible']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-overflow" />
+
+### percentage <Badge variant="web" />
+
+Convert width to a percentage.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="percentage"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-percentage" />
+
+### pin
+
+Direction in which to absolutely pin the box.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="pin"
+  required={false}
+  defaultValue=""
+  mobileOptions={['all', 'bottom', 'left', 'right', 'top']}
+  webOptions={['all', 'bottom', 'left', 'right', 'top']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-pin" />
+
+### position
+
+How to position the box within its parent.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="position"
+  required={false}
+  defaultValue=""
+  mobileOptions={['absolute', 'relative']}
+  webOptions={['absolute', 'fixed', 'relative', 'static', 'sticky']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-position" />
+
+### right
+
+Position the box to the right edge.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="right"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-right" />
+
+### role <Badge variant="web" />
+
+Semantic role whole using a non-semantic element.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="role"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-role" />
+
+### shape
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="shape"
+  required={false}
+  defaultValue=""
+  mobileOptions={['circle', 'rectangle', 'square', 'squircle']}
+  webOptions={['circle', 'rectangle', 'square', 'squircle']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-shape" />
+
+### spacing
+
+Apply inner spacing on all sides.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="spacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-spacing" />
+
+### spacingBottom
+
+Apply inner spacing on the bottom side.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="spacingBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-spacingBottom" />
+
+### spacingEnd
+
+Apply inner spacing on the trailing side.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="spacingEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-spacingEnd" />
+
+### spacingHorizontal
+
+Apply inner spacing on the leading and trailing sides.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="spacingHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-spacingHorizontal" />
+
+### spacingStart
+
+Apply inner spacing on the leading side.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="spacingStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-spacingStart" />
+
+### spacingTop
+
+Apply inner spacing on the top side.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="spacingTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-spacingTop" />
+
+### spacingVertical
+
+Apply inner spacing on the top and bottom sides.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="spacingVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-spacingVertical" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-testID" />
+
+### top
+
+Position the box to the top edge.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="top"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-top" />
+
+### width
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="width"
+  required={true}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-width" />
+
+### zIndex
+
+Adjust the z-index positioning layer.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="zIndex"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-zIndex" />
+
+<ComponentDetails componentName="Fallback" templateName="outro" />

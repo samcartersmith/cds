@@ -1,0 +1,80 @@
+load("//tools/js:def.bzl", "eslint_test", "ts_package", "type_check")
+
+# Files to publish to NPM
+filegroup(
+    name = "runtime_source",
+    srcs = glob(
+        [
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.js",
+            "**/*.json",
+        ],
+        exclude = [
+            "**/*.test.*",
+            "basepackage.json",
+            "tsconfig.build.json",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+# All files to lint and test
+filegroup(
+    name = "source",
+    srcs = glob(
+        [
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.json",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "source_without_json",
+    srcs = glob(
+        [
+            "**/*.ts",
+            "**/*.tsx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+eslint_test(
+    name = "lint",
+    lints = [":source_without_json"],
+)
+
+# Package building and publishing
+ts_package(
+    name = "package",
+    package_name = "@cbhq/cds-lottie-files",
+    srcs = [":runtime_source"],
+    dev_deps = [],
+    peer_deps = [],
+    relative_source_directory = ".",
+    static_files = {
+        ":CHANGELOG.md": "./CHANGELOG.md",
+        ":README.md": "./README.md",
+    },
+    typescript_config = ":tsconfig.build.json",
+    deps = [],
+)
+
+filegroup(
+    name = "project_source",
+    srcs = glob([
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.json",
+    ]),
+    visibility = ["//visibility:public"],
+)
+
+type_check(
+    name = "typecheck",
+    srcs = [":project_source"],
+)

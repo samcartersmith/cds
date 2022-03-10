@@ -1,0 +1,465 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/cells/ContentCell](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/cells/ContentCell.tsx)
+
+<ComponentDetails componentName="ContentCell" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="ContentCell" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="ContentCell" templateName="a11y" />
+
+## Props
+
+### accessory
+
+Accessory to display at the end of the cell.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="accessory"
+  required={false}
+  defaultValue=""
+  mobileOptions={['arrow', 'more', 'selected']}
+  webOptions={['arrow', 'more', 'selected']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-accessory" />
+
+### as <Badge variant="web" />
+
+The type of outer wrapping element.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="as"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['div', 'li']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-as" />
+
+### borderRadius
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="borderRadius"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'badge',
+    'compact',
+    'input',
+    'none',
+    'pill',
+    'popover',
+    'round',
+    'search',
+    'standard',
+    'tooltip',
+    'tooltipV2',
+  ]}
+  webOptions={[
+    'badge',
+    'compact',
+    'input',
+    'none',
+    'pill',
+    'popover',
+    'round',
+    'search',
+    'standard',
+    'tooltip',
+    'tooltipV2',
+  ]}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-borderRadius" />
+
+### compact
+
+enables compact spacing
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="compact"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-compact" />
+
+### description
+
+Description of content. Content will wrap accordingly.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="description"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-description" />
+
+### detailWidth
+
+Apply a fixed width to the detail (end).
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="detailWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-detailWidth" />
+
+### disabled
+
+Is the cell disabled? Will apply opacity and disable interaction.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-disabled" />
+
+### innerSpacing
+
+The spacing to use on the inner content of Cell
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="innerSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['CellSpacing']}
+  webOptions={['CellSpacing']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-innerSpacing" />
+
+### media
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="media"
+  required={false}
+  defaultValue=""
+  mobileOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
+  webOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-media" />
+
+### meta
+
+Meta information to display at the end of the title.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="meta"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-meta" />
+
+### offsetHorizontal <Badge variant="deprecated" order={1} />
+
+Reduce horizontal offset if parent container already has spacing.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="offsetHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-offsetHorizontal" />
+
+### onKeyDown <Badge variant="web" />
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="onKeyDown"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(event: KeyboardEvent<HTMLElement>) => void']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-onKeyDown" />
+
+### onKeyPress <Badge variant="web" />
+
+Callback fired when a key is pressed
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="onKeyPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['KeyboardEventHandler<Element>']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-onKeyPress" />
+
+### onLayout <Badge variant="mobile" />
+
+Measure the dimensions of the cell.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="onLayout"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: LayoutChangeEvent) => void']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-onLayout" />
+
+### onPress
+
+Callback fired when the element is pressed.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
+  webOptions={['MouseEventHandler<Element>']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-onPress" />
+
+### outerSpacing
+
+The spacing to use on the parent wrapper of Cell
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="outerSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['CellSpacing']}
+  webOptions={['CellSpacing']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-outerSpacing" />
+
+### priority
+
+Which piece of content has the highest priority in regards to text truncation, growing, and shrinking.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="priority"
+  required={false}
+  defaultValue=""
+  mobileOptions={['end', 'middle', 'start']}
+  webOptions={['end', 'middle', 'start']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-priority" />
+
+### reduceHorizontalSpacing <Badge variant="deprecated" order={1} />
+
+Reduce horizontal spacing for tighter layout requirements.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="reduceHorizontalSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-reduceHorizontalSpacing" />
+
+### selected
+
+Is the cell selected? Will apply a background and selected accessory.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="selected"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-selected" />
+
+### subtitle
+
+Subtitle of content. Max 1 line, otherwise will truncate.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="subtitle"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-subtitle" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-testID" />
+
+### title
+
+Title of content. Max 1 line, otherwise will truncate.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="title"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-title" />
+
+### to <Badge variant="web" />
+
+URL that this links to when pressed.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="to"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-to" />
+
+<ComponentDetails componentName="ContentCell" templateName="outro" />

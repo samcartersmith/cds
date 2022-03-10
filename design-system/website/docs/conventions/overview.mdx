@@ -1,0 +1,52 @@
+---
+title: Overview
+---
+
+import {UnknownIcon} from '../../components/InlineIcons';
+
+## Component Types <UnknownIcon size="m" />
+
+Current breakdown of component types is as follows:
+
+Primitive => Element => Recipe => Components => Team Components
+
+### Primitive
+
+Primitives extend 1 or more HTML or React Native elements. Never consists of other CDS primitives.
+
+Examples include: [Box](https://cds.cbhq.net/components/box), [Divider](https://cds.cbhq.net/components/divider), [Text](https://cds.cbhq.net/components/text)
+
+### Element
+
+Elements consist of 1 or n primitives. If it is only one primitive it can still be considered an element if there is more HTML/react native elements beyond the single primitive.
+Elements are CDS driven.
+
+Examples include: [Card](https://cds.cbhq.net/components/card) Cell
+
+### Recipe
+
+Recipes are composed of at least 1 element.
+It is exposed by CDS to consumers. It is our chosen way to expose un-opinionated complex components to foster flexible adoption.
+
+Examples include:
+
+### Components
+
+Components are opinionated complex components. They are different than recipes in the sense that they have a well formed API.
+
+Components contain at least 1 element.
+
+The typical pattern for component creation would be for a team component that is then reused by another team. Once two teams use the same component it is a signal to move it into CDS.
+Components can be created from CDS. However, there is still some blurriness on the exact relation between an element and a component. So we are planning to sharpen the difference through future discussion around components.
+
+
+### Team Components
+
+Team Components are components that product teams build out on an as needed basis. Once 2 teams use a single component it is a signal we may want to move it to CDS
+
+
+### Building Recipes or components
+
+Fill in
+
+### Decision Process on which type to pick

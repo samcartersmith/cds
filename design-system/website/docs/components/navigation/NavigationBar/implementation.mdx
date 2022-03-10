@@ -1,0 +1,96 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-web/navigation/NavigationBar](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/navigation/NavigationBar.tsx)
+
+<ComponentDetails componentName="NavigationBar" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="NavigationBar" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="NavigationBar" templateName="a11y" />
+
+## Props
+
+### children <Badge variant="web" />
+
+The middle content. Use the children to render the page title
+
+<ApiDetails
+  componentName="NavigationBar"
+  propertyName="children"
+  required={true}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="NavigationBar" templateName="prop-children" />
+
+### end <Badge variant="web" />
+
+Node (icons, avatar, etc) to display at the end of the nav bar
+
+<ApiDetails
+  componentName="NavigationBar"
+  propertyName="end"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="NavigationBar" templateName="prop-end" />
+
+### start <Badge variant="web" />
+
+Node (ie Back button) to display at the start of the nav bar
+
+<ApiDetails
+  componentName="NavigationBar"
+  propertyName="start"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="NavigationBar" templateName="prop-start" />
+
+<ComponentDetails componentName="NavigationBar" templateName="outro" />

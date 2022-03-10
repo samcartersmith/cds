@@ -1,0 +1,24 @@
+```jsx live
+function Example() {
+  const cardProps = {
+    title: 'Introducing SHIB',
+    description: 'Shiba Inu (SHIB) is now on Coinbase',
+    pictogram: 'worldwide',
+    headerDescription: 'Actor name',
+    headerMetaData: 'Metadata',
+    headerAvatarUrl: assets.btc.imageUrl,
+    headerAction: 'more',
+    footerAction: 'View asset',
+  };
+  return (
+    <ResponsiveExample>
+      <CardGroup>
+        <AnnouncementCard {...cardProps} />
+        <AnnouncementCard {...cardProps} />
+        <AnnouncementCard {...cardProps} />
+        <AnnouncementCard {...cardProps} />
+      </CardGroup>
+    </ResponsiveExample>
+  );
+}
+```

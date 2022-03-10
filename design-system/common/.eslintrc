@@ -1,0 +1,22 @@
+{
+  "rules": {
+    // Dont import from itself
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": ["@cbhq/cds-common"],
+        "patterns": ["@cbhq/cds-common/*"]
+      }
+    ],
+    "no-process-env": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/**"],
+      "excludedFiles": ["*.test.ts", "*.test.tsx"],
+      "rules": {
+        "react/react-in-jsx-scope": "error"
+      }
+    }
+  ]
+}

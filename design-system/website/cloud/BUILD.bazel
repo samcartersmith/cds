@@ -1,0 +1,46 @@
+load("//tools/project_settings:project_settings.bzl", "project_settings")
+load("//tools/zip:zip.bzl", "pkg_zip")
+load("//tools/syn:providers.bzl", "syn_file_asset")
+load("//tools/syn:syn_deployable.bzl", "syn_deployable")
+
+project_settings(
+    caf = False,
+    slack_channels = ["#cds-builds"],
+)
+
+pkg_zip(
+    name = "bundled_source_zip",
+    srcs = [
+        "//eng/shared/design-system/website:docusaurus_build",
+    ],
+    remap_paths = {"{gendir}/eng/shared/design-system/website/docusaurus_build": "."},
+)
+
+syn_deployable(
+    name = "deploy",
+    assets = [
+        syn_file_asset(
+            name = "bundled_source_asset",
+            src = ":bundled_source_zip",
+            bucket = "coinbase-design-system-website",
+            is_zip = True,
+        ),
+    ],
+    config_name = "website",  # config_name (i.e. Codeflow's config_name)
+    continuous_deployment = True,
+    target = "production",  # environment to deploy to
+)
+
+syn_deployable(
+    name = "deploy_dev",
+    assets = [
+        syn_file_asset(
+            name = "dev_bundled_source_asset",
+            src = ":bundled_source_zip",
+            bucket = "coinbase-design-system-website-development",
+            is_zip = True,
+        ),
+    ],
+    config_name = "feature",  # config_name (i.e. Codeflow's config_name)
+    target = "development",  # environment to deploy to
+)

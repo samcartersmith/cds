@@ -1,0 +1,98 @@
+import { DocImage } from ':cds-website/components/DocImage';
+import { Principles } from ':cds-website/components/Principles';
+import { Collection, Item } from ':cds-website/components/Collection';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
+import { Pictogram } from '@cbhq/cds-web/illustrations';
+import { TextBody, TextTitle3 } from '@cbhq/cds-web/typography';
+
+### Principles
+<Principles
+  identifiable="Select Inputs should be recognizable and easy to identify."
+  efficient="Users should be able to quickly parse through a list of options and make a selection."
+  easy="Select Inputs should be recognizable and easy to identify." />
+
+### Usage
+- Use Select when users need to choose a value from a list of predefined options. Select is often found in forms with other input components or used as filters. 
+- If using in forms, always use a label. 
+- If using in forms, leverage helper text to communicate information about the input. 
+
+### Anatomy
+<DocImage component="Select" name="anatomy" format="png" />
+
+1. **Select Input**: Tapping or clicking on the Input will trigger the [Popover Menu](/components/popover-menu) for Web or [Tray](/components/tray) for Mobile. 
+2. **Popover Menu**: When triggered, a list of options will appear. 
+3. **Select Option**: See [Select Option](/components/select-option) for more details.
+
+### Cross-Platform
+The expanded state of Select differs based on platform. The collapsed state should be the same regardless of platform. 
+
+<Collection>
+  <Item
+    textAlign="left"
+    vid={{
+      light: '/img/components/Select/web_light.mp4',
+      dark: '/img/components/Select/web_dark.mp4',
+      options: { autoPlay: true, controls: false }
+    }}
+    title="Web"
+    description="On Web, the expanded state will reveal a Popover Menu that appears directly under the Select."
+  />
+  <Item
+    textAlign="left"
+    vid={{
+      light: '/img/components/Select/mobile_light.mp4',
+      dark: '/img/components/Select/mobile_dark.mp4',
+      options: { autoPlay: true, controls: false }
+    }}
+    title="Mobile"
+    description="On Mobile, the expanded state will trigger a Background Overlay and Tray that animates  from the bottom of the screen."
+  />
+</Collection>
+
+### Behavior
+
+#### Position
+Place this component in line with other form and control components. Use Spacing 3 when stacking form elements. 
+
+<DocImage component="Select" name="position" format="png" />
+
+#### Scrolling
+If the list of options is longer than the max-height of the Popover Menu, a scrollbar will appear.
+
+#### Interaction
+There are two states of Select: collapsed and expanded. 
+
+- When collapsed, the currently selected value will show in the Select. 
+- Clicking or tapping anywhere in the Select will open the Select Menu, triggering the expanded state. 
+- A Select Menu will expand downwards until it reaches its max-height. When expanded, users can scroll the list of options in the Select Menu.
+- A check mark icon placed on the right of the list item indicates which value is currently selected. 
+- Tapping an option in the list of values closes the Select Menu and populates the input with the new value, collapsing the Select to its default state. 
+
+<Item
+  flexGrow={1}
+  vid={{
+    light: '/img/components/Select/interaction_web_light.mp4',
+    dark: '/img/components/Select/interaction_web_dark.mp4',
+    options: { autoPlay: true, controls: false }
+  }}
+/>
+
+### Content
+Follow these content guidelines for select menus and inputs.
+
+**Concise and scannable**
+- Inside the menu, use concise copy that’s easy for the user to scan.
+- Avoid punctuation.
+
+**Use appropriately**
+- Avoid long lists of familiar data, such as a user’s birth year (which has 100+ options). Instead, let the user enter the info directly.
+- Avoid using a select menu for top level navigation or important items that should have higher visibility.
+
+**Placeholder text**
+- Use helpful placeholder text (such as “Select asset”) when the input is collapsed.
+- Keep the placeholder text visible after the menu is open to help guide users.
+- After the user makes a selection, replace the placeholder text with what they selected.
+
+### Motion
+Clicking on Select triggers Expand animation where Select Menu unfolds without transition. Selecting an item of clicking away will trigger the Collapse Animation.

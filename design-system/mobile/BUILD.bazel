@@ -1,0 +1,112 @@
+load("//tools/js:def.bzl", "eslint_test", "ts_package", "type_check")
+
+SOURCE = [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.ttf",
+    "**/*.js",
+]
+
+DEPS = [
+    "@npm//@cbhq/cds-common",
+    "@npm//@cbhq/cds-fonts",
+    "@npm//@cbhq/cds-lottie-files",
+    "@npm//@cbhq/cds-utils",
+    "@npm//lodash",
+]
+
+PEER_DEPS = [
+    "@npm//lottie-ios",
+    "@npm//lottie-react-native",
+    "@npm//react-native-linear-gradient",
+    "@npm//react-native-navigation-bar-color",
+    "@npm//react-native-svg",
+    "@npm//react-native",
+    "@npm//react",
+    "@npm//react-native-inappbrowser-reborn",
+    "@npm//react-native-safe-area-context",
+    "@npm//@react-navigation/stack",  # for types in mobile/examples
+    "@npm//d3-interpolate-path",
+    "@npm//react-native-reanimated",
+]
+
+DEV_DEPS = [
+    "@npm//@types/lodash",
+    "@npm//@types/react",
+    "@npm//@types/react-native",
+    "@npm//type-fest",
+    "@npm//@types/d3-interpolate-path",
+]
+
+# Files to publish to NPM
+filegroup(
+    name = "runtime_source",
+    srcs = glob(
+        SOURCE + [
+            "**/*.png",
+            "**/*.md",
+        ],
+        exclude = [
+            "**/*.test.*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+# All files to lint and test
+filegroup(
+    name = "source",
+    srcs = glob(
+        SOURCE + [
+            "**/*.test.*",
+            "**/*.mdx",
+        ],
+        exclude = [
+            "**/*.ttf",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+eslint_test(
+    name = "lint",
+    lints = [":source"],
+    local_eslint_config = ".eslintrc",
+    deps = DEPS + PEER_DEPS + DEV_DEPS,
+)
+
+# Package building and publishing
+ts_package(
+    name = "package",
+    package_name = "@cbhq/cds-mobile",
+    srcs = [":runtime_source"],
+    dev_deps = DEV_DEPS,
+    peer_deps = PEER_DEPS,
+    relative_source_directory = ".",
+    static_files = {
+        ":CHANGELOG.md": "./CHANGELOG.md",
+        ":README.md": "./README.md",
+    },
+    typescript_config = ":tsconfig.build.json",
+    deps = DEPS,
+)
+
+filegroup(
+    name = "project_source",
+    srcs = [
+        "tsconfig.json",
+        ":runtime_source",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+type_check(
+    name = "typecheck",
+    srcs = [
+        ":project_source",
+        "//eng/shared/design-system/common:project_source",
+        "//eng/shared/design-system/lottie-files:project_source",
+        "//eng/shared/design-system/utils:project_source",
+    ],
+    deps = DEPS + PEER_DEPS + DEV_DEPS,
+)

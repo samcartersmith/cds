@@ -1,0 +1,97 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/visualizations/ProgressBar](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/visualizations/ProgressBar.tsx)
+
+<ComponentDetails componentName="ProgressBar" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="ProgressBar" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="ProgressBar" templateName="a11y" />
+
+## Props
+
+### color
+
+Custom progress color.
+
+<ApiDetails
+  componentName="ProgressBar"
+  propertyName="color"
+  required={false}
+  defaultValue="primary"
+  mobileOptions={['foreground', 'negative', 'positive', 'primary']}
+  webOptions={['foreground', 'negative', 'positive', 'primary']}
+/>
+
+<ComponentDetails componentName="ProgressBar" templateName="prop-color" />
+
+### disabled
+
+Toggle used to show a disabled progress visualization
+
+<ApiDetails
+  componentName="ProgressBar"
+  propertyName="disabled"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ProgressBar" templateName="prop-disabled" />
+
+### progress
+
+Number between 0-1 representing the progress percentage
+
+<ApiDetails
+  componentName="ProgressBar"
+  propertyName="progress"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="ProgressBar" templateName="prop-progress" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="ProgressBar"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="ProgressBar" templateName="prop-testID" />
+
+### weight
+
+Toggle used to show a thicker progress visualization
+
+<ApiDetails
+  componentName="ProgressBar"
+  propertyName="weight"
+  required={false}
+  defaultValue="normal"
+  mobileOptions={['heavy', 'normal']}
+  webOptions={['heavy', 'normal']}
+/>
+
+<ComponentDetails componentName="ProgressBar" templateName="prop-weight" />
+
+<ComponentDetails componentName="ProgressBar" templateName="outro" />

@@ -1,0 +1,14 @@
+import { LottieSource } from '../LottieSource';
+import <%- data.file %>Json from './<%- data.file %>.json';
+
+<% if (data.markers.length) { %>
+  export type <%- data.type %> = LottieSource<
+  <% data.markers.map((marker, index) => { %>
+    <%- (index && '|') || '' %> '<%= marker %>'
+  <% }) %>
+>;
+<% } else { %>
+export type <%- data.type %> = LottieSource;
+<%_ } _%>
+
+export const <%- data.file %> = <%- data.file %>Json as <%- data.type %>;

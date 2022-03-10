@@ -1,0 +1,30 @@
+```jsx live
+function DefaultSelect() {
+  const content = 'This is the tooltip Content';
+  return (
+    <ThemeProvider spectrum="light">
+      <PortalProvider>
+        <VStack spacingHorizontal={8} spacingVertical={2} gap={5} background>
+          <HStack spacingHorizontal={2} gap={2} justifyContent="space-around">
+            <Tooltip content={content}>
+              <Button>Default</Button>
+            </Tooltip>
+            <Tooltip content={content} placement="top">
+              <Button>Top</Button>
+            </Tooltip>
+            <Tooltip content={content} placement="left">
+              <Button>Left</Button>
+            </Tooltip>
+            <Tooltip content={content} placement="right">
+              <Button>Right</Button>
+            </Tooltip>
+            <Tooltip content={content} placement="bottom">
+              <Button>Bottom</Button>
+            </Tooltip>
+          </HStack>
+        </VStack>
+      </PortalProvider>
+    </ThemeProvider>
+  );
+}
+```

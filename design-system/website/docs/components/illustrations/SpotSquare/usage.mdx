@@ -1,0 +1,18 @@
+```jsx live
+<SpotSquare name="algoStaking" />
+```
+Use scaleMultiplier sparingly, and with caution. We have predefined dimension to ensure 
+that the illustration are in the sizes it was originated for.
+
+If no dimension fits your use case, you can use scaleMultiplier to scale illustration at different size. 
+If dimension prop is absent, it will scale based on the default size of SpotSquare, which is 120 x 120. Therefore,
+if you set the scaleMultiplier to 1.5, the final size would be (120 \* 1.5) x (120 \* 1.5) = 180 x 180
+
+```jsx live
+<SpotSquare name="addPasswordProtection" scaleMultiplier={1.5} />
+```
+
+If dimension is provided, it will scale based on the dimension. 
+```jsx live
+<SpotSquare name="addPasswordProtection" dimension="120x120" scaleMultiplier={1.5} />
+```

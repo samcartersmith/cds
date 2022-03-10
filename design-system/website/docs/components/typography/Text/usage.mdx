@@ -1,0 +1,52 @@
+### Display
+
+Display styles are to be used very sparingly. Display styles supersede Title styles, so they are there for when you need to layer on more hierarchy.
+
+```jsx live
+<VStack>
+  <TextDisplay1 as="h1">Display1</TextDisplay1>
+  <TextDisplay2 as="h2">Display2</TextDisplay2>
+  <TextDisplay3 as="h3">Display3 🆕</TextDisplay3>
+</VStack>
+```
+
+### Title
+
+Title styles are used to establish the primary hierarchy in a layout. They should be used to label sections.
+
+```jsx live
+<VStack>
+  <TextTitle1 as="h3">Title1</TextTitle1>
+  <TextTitle2 as="h4">Title2</TextTitle2>
+  <TextTitle3 as="p">Title3</TextTitle3>
+  <TextTitle4 as="p">Title4 🆕</TextTitle4>
+</VStack>
+```
+
+### Headline & Body
+
+Headline and body styles are your essential content styles. They’re versatile styles that can be used for paragraphs, data, labels for buttons.
+
+```jsx live
+<VStack>
+  <TextHeadline as="p">Headline</TextHeadline>
+  <TextBody as="p">Body</TextBody>
+</VStack>
+```
+
+### Label & Caption
+
+Label and caption styles are when you need to add hierarchy in your content. They ideally are used in conjunction with Headline and Body styles, but in extraordinarily dense interfaces they can replace Headline & Body should you need to present large data sets to users. They’re also great candidates for presenting numbers to the user as they have tabular numbers by default.
+
+```jsx live
+<VStack>
+  <TextLabel1 as="p">Label1</TextLabel1>
+  <TextLabel2 as="p">Label2</TextLabel2>
+  <TextCaption as="p">Caption</TextCaption>
+  <TextLegal as="p">Legal</TextLegal>
+</VStack>
+```
+
+### Features
+
+All text components support a few numeric typography styles, overflow, text transformation, flex display, and underline. Please check the [Props](#props) section for more details.

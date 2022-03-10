@@ -1,0 +1,33 @@
+---
+id: card
+title: Card
+hide_table_of_contents: true
+hide_title: true
+---
+
+import { Image } from ':cds-website/components/Image';
+import CardExample from ':cds-website/docs/components/system/FeatureFlagProvider/_frontier-card-example.mdx';
+
+<Image light="/img/frontier/hero_card_light.png" dark="/img/frontier/hero_card_dark.png" />
+
+Items marked with **FF** are only available through an opt-in [FeatureFlag](https://cds.cbhq.net/components/feature-flag-provider)
+
+### Cards are now full width (FF)
+
+<Image light="/img/frontier/full_width_light.png" dark="/img/frontier/full_width_dark.png" />
+
+We are moving away from inset and rounded cards, and
+
+### CardGroup updates (FF)
+
+<Image light="/img/frontier/cardgroup_light.png" dark="/img/frontier/cardgroup_dark.png" />
+
+To get full-width cards, you'll need to wrap your cards in a [CardGroup](https://cds.cbhq.net/components/card-group).
+
+### Divider lines
+
+<Image light="/img/frontier/lines_light.png" dark="/img/frontier/lines_dark.png" />
+
+Since we no longer have borders around cards, we've added a divider. By default, you'll receive our [Divider](https://cds.cbhq.net/components/divider), but you'll be able to override this with a custom divider if needed.
+
+<CardExample />

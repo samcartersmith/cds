@@ -1,0 +1,61 @@
+A `Drawer` is an elevated container that is pinned to one side of the screen. It also triggers an overlay. Its visibility is toggled by another component, typically a `Button` or a control, like a `Select`. It is the mobile equivalent of a `PopoverMenu`.
+
+### How to Use a Drawer
+
+`Drawer`s should be conditionally rendered.
+
+`Drawer`s expose an `onCloseComplete` prop, this takes a callback which will be fired **after** exit animation has completed.
+
+By default, they are pinned to the bottom of the screen, however, you can pin a `Drawer` to any side of the screen. Bottom pinned `Drawer`s are called `Tray`s and have a `HandleBar` which is used to drag the `Tray` on and off the screen.
+
+`Drawer`s can render anything as children, however we recommend passing a callback as a child, and taking advantage of the exposed `handleClose` prop so children can toggle the visibility of the `Drawer`.
+
+```jsx
+function DefaultDrawer() {
+  const [visible, { toggleOn, toggleOff }] = useToggler(false);
+  return (
+    <>
+      <Button onPress={toggleOn}>Open</Button>
+      {visible && (
+        <Drawer pin={pin} onCloseComplete={toggleOff}>
+          {({ handleClose }) => (
+            <VStack spacing={2}>
+              <LoremIpsum />
+              <Button onPress={handleClose}>Close Drawer</Button>
+            </VStack>
+          )}
+        </Drawer>
+      )}
+    </>
+  );
+}
+```
+
+### Overflow
+
+`Drawer`s do not allow scrolling by default, to allow for pan gestures to work. However, you can enable scrolling by passing `disableCapturePanGestureToDismiss` and wrapping `children` in a `ScrollView`.
+
+**Please note:** when `disableCapturePanGestureToDismiss` is enabled, you will not be able to use pan gestures to close the `Drawer` within the `Drawer` container. However, you can still use the `HandleBar` and `StatusBar` to drag to close.
+
+```jsx
+function ScrollableDrawer() {
+  const [visible, { toggleOn, toggleOff }] = useToggler(false);
+  return (
+    <>
+      <Button onPress={toggleOn}>Open</Button>
+      {visible && (
+        <Drawer pin={pin} onCloseComplete={toggleOff} disableCapturePanGestureToDismiss>
+          {({ handleClose }) => (
+            <ScrollView>
+              <VStack spacing={2}>
+                <LoremIpsum />
+                <Button onPress={handleClose}>Close Drawer</Button>
+              </VStack>
+            </ScrollView>
+          )}
+        </Drawer>
+      )}
+    </>
+  );
+}
+```

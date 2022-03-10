@@ -1,0 +1,26 @@
+/* stylelint-disable */
+.hueGrid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(100% / 10);
+}
+
+.hueColumn {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 40px;
+}
+
+.hue {
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 10px;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.25s;
+  width: 100%;
+}
+
+.hue:hover {
+  opacity: 1;
+}

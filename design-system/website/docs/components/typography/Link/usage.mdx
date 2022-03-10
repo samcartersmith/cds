@@ -1,0 +1,68 @@
+Default Link text will inherit parent text styles.
+
+```jsx live
+<Link>Default is inherited text</Link>
+```
+
+```jsx live
+<VStack alignItems="flex-start" gap={3}>
+  {['body', 'caption', 'label1', 'label2', 'legal', 'title1', 'title2', 'title3'].map(variant => (
+    <Link variant={variant} to="https://www.google.com/" openInNewWindow>
+      {`${variant} link`}
+    </Link>
+  ))}
+</VStack>
+```
+
+```jsx live
+<Link to="https://www.google.com/" color="negative">
+  With color override
+</Link>
+```
+
+```jsx live
+<TextBody as="span">
+  {'Inherit text styles from parent text '}
+  <Link to="https://www.google.com">{'like this'}</Link>
+</TextBody>
+```
+
+```jsx live
+<TextBody as="span">
+  {'Different text styles from parent text '}
+  <Link variant="title3" to="https://www.google.com">
+    {'like this'}
+  </Link>
+</TextBody>
+```
+
+```jsx live
+<VStack alignItems="flex-start" gap={3}>
+  <Link variant="title1" to="https://www.google.com/" openInNewWindow>
+    Open window in existing tab
+  </Link>
+  <Link variant="title2" to="https://www.google.com/" rel="noreferrer">
+    Sets rel to noreferrer
+  </Link>
+  <Link variant="title3" to="https://www.google.com/" rel="noopener">
+    Sets rel to noopener
+  </Link>
+</VStack>
+```
+
+```jsx live
+<Link variant="headline" onPress={() => console.log('pressed link')} rel="noopener">
+  Handles onPress
+</Link>
+```
+
+```jsx live
+<Link
+  variant="body"
+  color="primary"
+  onPress={console.log}
+  renderContainer={props => <ReactRouterLink {...props} to="/introduction/getting-started" />}
+>
+  Use React Router Link via renderContainer
+</Link>
+```

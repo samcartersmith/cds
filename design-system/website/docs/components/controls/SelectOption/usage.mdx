@@ -1,0 +1,78 @@
+import { Badge } from ':cds-website/components/Badge';
+
+### Web
+
+`SelectOption` has the same API as a ListCell, but with custom styles specific to usage within a Select. `SelectOption` also comes with a lot of baked in functionality, like keyboard navigation, accessibility properties, and focus behaviors.
+
+#### Default Composition
+
+```jsx live
+function DefaultSelect() {
+  const [value, setValue] = useState();
+  const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2} background minHeight={400}>
+        <Select value={value} placeholder="Choose something..." onChange={setValue}>
+          {options.map((option) => (
+            <SelectOption
+              value={option}
+              key={option}
+              title={option}
+              description="Description"
+              media={<CellMedia type="icon" name="upload" />}
+            />
+          ))}
+        </Select>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+### Mobile
+
+`SelectOption` has almost the same API as a ListCell, but with custom styles specific to usage within a `Select`.
+
+**Key differences:** All `SelectOption`s must be wrapped in a `Menu` component in order to work as a controlled input.
+
+`SelectOption` can be used as part of a `Select` composition or as options in a `Tray`.
+
+#### Default Composition
+
+```jsx
+const SelectMobile = () => {
+  const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
+    useToggler(false);
+  const [value, setValue] = useState();
+  const trayRef = useRef(undefined);
+
+  const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5'];
+
+  const handleOptionPress = () => {
+    trayRef.current?.handleClose();
+  };
+
+  return (
+    <>
+      <Select value={value} onPress={handleOpenTray} />
+      {isTrayVisible && (
+        <Tray title={title} onCloseComplete={handlehandleClose} ref={trayRef}>
+          {/* You must wrap options in Menu. Treat it as a Select on web */}
+          <Menu value={value} onChange={setValue}>
+            {options.map((option: string) => (
+              <SelectOption
+                key={option}
+                title={option}
+                description="BTC"
+                onPress={handleOptionPress}
+                value={option}
+              />
+            ))}
+          </Menu>
+        </Tray>
+      )}
+    </>
+  );
+};
+```

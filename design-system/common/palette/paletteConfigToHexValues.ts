@@ -1,0 +1,28 @@
+import type { PaletteConfigToHexValues, PaletteAlias } from '../types';
+import { paletteValueToHex } from './paletteValueToHex';
+
+/**
+ * `Please don't use this unless you absolutely have to. This is meant as last resort.`
+ * Takes a palette config and returns an object to access computed color values based on config.
+ * @param paletteConfig  - { background: 'gray0' }
+ * @param spectrum - light or dark
+ * @param hasFrontier - boolean returned from useFeatureFlag('frontierColor')
+ * @returns hex value based on color and spectrum
+ */
+export const paletteConfigToHexValues: PaletteConfigToHexValues = (
+  paletteConfig,
+  spectrum,
+  hasFrontier,
+) => {
+  // Object.keys + reduce is more performant than for/of loop https://jsbench.me/uhkyu88ggg/1
+  return (Object.keys(paletteConfig) as Extract<keyof typeof paletteConfig, string>[]).reduce(
+    (acc, paletteAlias) => {
+      const value = paletteConfig[paletteAlias];
+      if (value) {
+        acc[paletteAlias] = paletteValueToHex(value, spectrum, hasFrontier);
+      }
+      return acc;
+    },
+    {} as Record<PaletteAlias, string>,
+  );
+};

@@ -1,0 +1,121 @@
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { DarkStoryContainer } from ':cds-storybook/decorators/StoryContainer';
+import { withStoryLabel } from ':cds-storybook/decorators/withStoryLabel';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+
+import { Box } from '../../layout/Box';
+import { ThemeProvider } from '../../system/ThemeProvider';
+import { Switch } from '../Switch';
+
+<Meta title="Core Components/Switch" component={Switch} />
+
+# Switch
+
+<Canvas isColumn withToolbar>
+  <Story name="Normal">
+    {() => {
+      const [checked, { toggle }] = useToggler();
+      return (
+        <Switch checked={checked} onChange={toggle}>
+          Normal
+        </Switch>
+      );
+    }}
+  </Story>
+  <Story name="Dense">
+    {() => {
+      const [checked, { toggle }] = useToggler();
+      return (
+        <ThemeProvider scale="xSmall">
+          <Switch checked={checked} onChange={toggle}>
+            Dense
+          </Switch>
+        </ThemeProvider>
+      );
+    }}
+  </Story>
+  <Story name="Dark normal" decorators={[DarkStoryContainer]}>
+    {() => {
+      const [checked, { toggle }] = useToggler();
+      return (
+        <ThemeProvider spectrum="dark">
+          <Switch checked={checked} onChange={toggle}>
+            Normal
+          </Switch>
+        </ThemeProvider>
+      );
+    }}
+  </Story>
+  <Story name="No label" decorators={[withStoryLabel('No label')]}>
+    {() => {
+      const [checked, { toggle }] = useToggler();
+      return <Switch checked={checked} onChange={toggle} />;
+    }}
+  </Story>
+</Canvas>
+
+## States
+
+<Canvas withToolbar>
+  <Story name="On">
+    {(args) => (
+      <Switch {...args} checked>
+        On
+      </Switch>
+    )}
+  </Story>
+  <Story name="Disabled off">
+    {(args) => (
+      <Switch {...args} disabled>
+        Disabled off
+      </Switch>
+    )}
+  </Story>
+  <Story name="Disabled on">
+    {(args) => (
+      <Switch {...args} checked disabled>
+        Disabled on
+      </Switch>
+    )}
+  </Story>
+  <Story name="Dark normal on" decorators={[DarkStoryContainer]}>
+    {(args) => (
+      <ThemeProvider spectrum="dark">
+        <Switch {...args} checked>
+          On
+        </Switch>
+      </ThemeProvider>
+    )}
+  </Story>
+  <Story name="Dark normal disabled off" decorators={[DarkStoryContainer]}>
+    {(args) => (
+      <ThemeProvider spectrum="dark">
+        <Switch {...args} disabled>
+          Disabled off
+        </Switch>
+      </ThemeProvider>
+    )}
+  </Story>
+  <Story name="Dark normal disabled on" decorators={[DarkStoryContainer]}>
+    {(args) => (
+      <ThemeProvider spectrum="dark">
+        <Switch {...args} checked disabled>
+          Disabled on
+        </Switch>
+      </ThemeProvider>
+    )}
+  </Story>
+  <Story name="Multi-line label">
+    {(args) => (
+      <Box width="250px">
+        <Switch {...args}>
+          This switch has a multi-line label. The switch and label should align at the top.
+        </Switch>
+      </Box>
+    )}
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable />

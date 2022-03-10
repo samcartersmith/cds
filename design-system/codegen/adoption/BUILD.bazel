@@ -1,0 +1,14 @@
+exports_files([
+    "parsers/__tests__/project",
+])
+
+filegroup(
+    name = "source",
+    srcs = glob(
+        [
+            "**/*.ts",
+            "**/*.tsx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)

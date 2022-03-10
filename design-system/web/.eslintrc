@@ -1,0 +1,30 @@
+{
+  "rules": {
+    // Dont import from itself
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@cbhq/cds-web/*"],
+        "paths": [
+          "@cbhq/cds-web", 
+          {
+            "name": "react",
+            "importNames": ["useLayoutEffect"],
+            "message": "'useLayoutEffect' does nothing in SSR. Use 'useIsoEffect' to handle browser and SSR environments in one bang"
+          }
+        ]
+      }
+    ],
+    "no-process-env": "error",
+    "@cbhq/prefer-react-named-module-import": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/**"],
+      "excludedFiles": ["*.test.ts", "*.test.tsx", "*.stories.tsx"],
+      "rules": {
+        "react/react-in-jsx-scope": "error"
+      }
+    }
+  ]
+}

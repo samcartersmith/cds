@@ -1,0 +1,27 @@
+```jsx live
+function Example() {
+  const [isEnabled, { toggle }] = useToggler(true);
+  //  mono is not frontier specific and does not require feature flag, but was completed during frontierTypography work.
+  const [isMonoEnabled, { toggle: toggleMono }] = useToggler(false);
+
+  return (
+    <FeatureFlagProvider frontierTypography={isEnabled}>
+      <ThemeProvider>
+        <VStack gap={2}>
+          <HStack gap={1} alignItems="center">
+            <Switch onChange={toggle} checked={isEnabled} />
+            <TextBody as="p">Toggle frontierTypography</TextBody>
+          </HStack>
+          <HStack gap={1} alignItems="center">
+            <Switch onChange={toggleMono} checked={isMonoEnabled} />
+            <TextBody as="p">Toggle mono</TextBody>
+          </HStack>
+          <Divider direction="horizontal" />
+          {/* TypographySheet is to simplify this example. Internally it renders every Typography component and passes any props down to them */}
+          <TypographySheet mono={isMonoEnabled} />
+        </VStack>
+      </ThemeProvider>
+    </FeatureFlagProvider>
+  );
+}
+```

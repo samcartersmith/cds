@@ -1,0 +1,82 @@
+### Basic Collapsible
+```jsx live
+function BasicCollapsible() {
+  const [collapsed, { toggle }] = useToggler(true);
+
+  return (
+    <ExampleWithThemeToggles>
+      <Button onPress={toggle}>Click me!</Button>
+      <Collapsible collapsed={collapsed}>
+        <TextInput
+          compact
+          type="number"
+          step="0.01"
+          label="Amount"
+          placeholder="8293323.23"
+          suffix="USD"
+        />
+      </Collapsible>
+    </ExampleWithThemeToggles>
+  )
+}
+```
+
+### Reveal Top
+```jsx live
+function RevealTop() {
+  const [collapsed, { toggle }] = useToggler(true);
+
+  return (
+    <ExampleWithThemeToggles>
+      <Collapsible collapsed={collapsed}>
+        <TextInput
+          compact
+          type="number"
+          step="0.01"
+          label="Amount"
+          placeholder="8293323.23"
+          suffix="USD"
+        />
+      </Collapsible>
+      <Button onPress={toggle}>Click me!</Button>
+    </ExampleWithThemeToggles>
+  )
+}
+```
+
+### Scroll Content
+```jsx live
+function Scroll() {
+  const [collapsed, { toggle }] = useToggler(true);
+
+  return (
+    <ExampleWithThemeToggles>
+      <Button onPress={toggle}>Click me!</Button>
+      <Collapsible collapsed={collapsed} maxHeight={400}>
+        <TextBody as="p">{loremIpsum.repeat(30)}</TextBody>
+      </Collapsible>
+    </ExampleWithThemeToggles>
+  )
+}
+```
+
+### Horizontal
+```jsx live
+function Horizontal() {
+  const [collapsed, { toggle }] = useToggler(true);
+
+  return (
+    <ExampleWithThemeToggles>
+      <HStack alignItems="center">
+        <Button onPress={toggle}>Click me!</Button>
+        <Collapsible collapsed={collapsed} direction="horizontal">
+          <DotCount count={100} />
+          <DotCount count={1} />
+          <DotCount count={99} />
+        </Collapsible>
+      </HStack>
+    </ExampleWithThemeToggles>
+  )
+}
+```
+
