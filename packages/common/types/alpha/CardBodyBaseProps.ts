@@ -1,5 +1,5 @@
 import type { CardBoxProps } from './CardBaseProps';
-import type { CardMediaIllustrationName,CardMediaPlacement } from './CardMediaProps';
+import type { CardMediaIllustrationName, CardMediaPlacement } from './CardMediaProps';
 
 export type CardBodyBaseProps<OnPressFn> = {
   /** Text to be displayed in TextHeadline. */

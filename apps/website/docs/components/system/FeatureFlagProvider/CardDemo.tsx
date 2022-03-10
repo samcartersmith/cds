@@ -6,7 +6,7 @@ import { CardGroup, FeedCard } from '@cbhq/cds-web/cards';
 import { ResponsiveExample } from ':cds-website/components/ResponsiveExample';
 
 export function CardDemo() {
-  // eslint-disable-next-line no-console
+   
   const onPressConsole = () => console.log('press');
 
   const demoCard = useMemo(() => {

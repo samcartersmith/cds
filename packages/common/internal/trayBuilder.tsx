@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useCallback, useEffect, useMemo,useRef, useState } from 'react';
+import React, { MutableRefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { useToggler } from '../hooks/useToggler';
 import type {

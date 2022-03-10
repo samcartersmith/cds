@@ -1,4 +1,4 @@
-import { dark, frontierDark,frontierLight, light } from './spectrumRgbArray';
+import { dark, frontierDark, frontierLight, light } from './spectrumRgbArray';
 
 export const spectrumConfigs = {
   base: {

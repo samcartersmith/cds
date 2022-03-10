@@ -1,4 +1,4 @@
-import { LottieMarkersAsMap,LottieSource } from './LottieSource';
+import { LottieMarkersAsMap, LottieSource } from './LottieSource';
 
 export type LottiePlayer<Source extends LottieSource> = {
   play: (startFrame?: number, endFrame?: number) => void;

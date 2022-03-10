@@ -1,7 +1,7 @@
 import { cloneElement, useCallback, useMemo, useRef } from 'react';
 import { generateRandomId } from '@cbhq/cds-utils';
 
-import type { AlertRefBaseProps,ModalRefBaseProps } from '../types';
+import type { AlertRefBaseProps, ModalRefBaseProps } from '../types';
 
 import { usePortal } from './usePortal';
 import { PortalNode } from './usePortalState';

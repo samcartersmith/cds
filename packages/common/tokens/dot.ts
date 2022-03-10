@@ -1,4 +1,4 @@
-import { borderRadius,borderWidth } from './border';
+import { borderRadius, borderWidth } from './border';
 
 export const dotOuterContainerStyles = {
   alignItems: 'center',

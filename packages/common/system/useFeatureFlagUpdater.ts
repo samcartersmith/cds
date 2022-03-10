@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { FeatureFlagsOnChange,FeatureFlagsPartial } from './FeatureFlagContext';
+import { FeatureFlagsOnChange, FeatureFlagsPartial } from './FeatureFlagContext';
 import { useFeatureFlagDispatcher } from './useFeatureFlagDispatcher';
 
 export const useFeatureFlagUpdater = () => {

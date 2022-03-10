@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { ComponentType,useCallback, useState } from 'react';
+import React, { ComponentType, useCallback, useState } from 'react';
 
 import { SearchInputBaseProps } from '../types/SearchInputBaseProps';
 import { TextBaseProps } from '../types/TextBaseProps';
@@ -28,9 +28,7 @@ export function searchInputBuilder(
   const Borderless = () => {
     const [text, setText] = useState('');
 
-    return (
-      <SearchInput bordered={false} value={text} onChangeText={setText} />
-    );
+    return <SearchInput bordered={false} value={text} onChangeText={setText} />;
   };
 
   const HideStartIcon = () => {

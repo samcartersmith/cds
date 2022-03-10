@@ -1,4 +1,4 @@
-import { MouseEventHandler,ReactElement, ReactNode } from 'react';
+import { MouseEventHandler, ReactElement, ReactNode } from 'react';
 
 import { PositionStyles } from './BoxBaseProps';
 import { ButtonBaseProps } from './ButtonBaseProps';

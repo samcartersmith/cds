@@ -44,8 +44,8 @@ export function dotBuilder(
   const DotCountVariant = () => {
     return (
       <VStack alignItems="flex-start" gap={1} key="DotCount-variant-negative">
-          <DotCount variant="negative" count={30} />
-        </VStack>
+        <DotCount variant="negative" count={30} />
+      </VStack>
     );
   };
 
@@ -76,27 +76,27 @@ export function dotBuilder(
   const DotCountPlacements = () => {
     return (
       <VStack
-          alignItems="flex-start"
-          gap={4}
-          spacing={1}
-          key="DotCount-placement-top-end"
-          spacingBottom={4}
-        >
-          <TextLabel1>top-end</TextLabel1>
-          <DotCount pin="top-end" count={30}>
-            <Avatar size="xl" shape="square" alt="Sneezy" />
-          </DotCount>
-          <DotCount pin="top-end" count={30}>
-            <Avatar size="l" shape="square" alt="Sneezy" />
-          </DotCount>
-          <DotCount pin="top-end" count={1}>
-            <Icon name="calendar" size="m" />
-          </DotCount>
-          <DotCount pin="top-end" count={0}>
-            <TextLabel1>Count = 0. Dot should not show up</TextLabel1>
-            <Icon name="calendar" size="m" />
-          </DotCount>
-        </VStack>
+        alignItems="flex-start"
+        gap={4}
+        spacing={1}
+        key="DotCount-placement-top-end"
+        spacingBottom={4}
+      >
+        <TextLabel1>top-end</TextLabel1>
+        <DotCount pin="top-end" count={30}>
+          <Avatar size="xl" shape="square" alt="Sneezy" />
+        </DotCount>
+        <DotCount pin="top-end" count={30}>
+          <Avatar size="l" shape="square" alt="Sneezy" />
+        </DotCount>
+        <DotCount pin="top-end" count={1}>
+          <Icon name="calendar" size="m" />
+        </DotCount>
+        <DotCount pin="top-end" count={0}>
+          <TextLabel1>Count = 0. Dot should not show up</TextLabel1>
+          <Icon name="calendar" size="m" />
+        </DotCount>
+      </VStack>
     );
   };
 

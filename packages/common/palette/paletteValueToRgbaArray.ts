@@ -1,5 +1,5 @@
 import { spectrumConfigs } from '../spectrum/spectrumConfigs';
-import type { PaletteValue, RgbaArray,Spectrum } from '../types';
+import type { PaletteValue, RgbaArray, Spectrum } from '../types';
 import { memoize } from '../utils/memoize';
 
 import { paletteValueToCacheName } from './paletteValueToCacheName';

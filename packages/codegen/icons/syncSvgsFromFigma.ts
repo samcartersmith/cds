@@ -3,7 +3,7 @@ import chalk from 'chalk';
 import fs from 'fs';
 import ora from 'ora';
 import path from 'path';
-import { camelCase, capitalize,entries, pascalCase, renameKeys } from '@cbhq/cds-utils';
+import { camelCase, capitalize, entries, pascalCase, renameKeys } from '@cbhq/cds-utils';
 
 import { ComponentMetadata } from '../figma/api';
 import { FigmaClient } from '../figma/client';

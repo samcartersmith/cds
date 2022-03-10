@@ -9,7 +9,7 @@ import {
 } from 'react';
 
 import { useTimer } from '../hooks/useTimer';
-import { ToastBaseProps,ToastRefBaseProps } from '../types';
+import { ToastBaseProps, ToastRefBaseProps } from '../types';
 
 export type ToastNode = {
   duration: number;

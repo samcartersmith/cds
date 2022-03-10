@@ -12,7 +12,7 @@ import { Type } from './Type/Type';
 import { buildTemplates, TemplateMap } from './utils/buildTemplates';
 import { Control } from './Control';
 import { lottieFiles } from './Lottie';
-import { defaultPalette,Palette } from './Palette';
+import { defaultPalette, Palette } from './Palette';
 import { Spacing } from './Spacing';
 import { TypeScript } from './Typescript';
 

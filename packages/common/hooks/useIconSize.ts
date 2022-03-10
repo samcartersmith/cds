@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { useScaleConditional } from '../scale/useScaleConditional';
-import type { IconPixelSize,IconSize } from '../types';
+import type { IconPixelSize, IconSize } from '../types';
 
 type IconScaleMap = Record<IconSize, IconPixelSize>;
 

@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useMemo,useState } from 'react';
+import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
 import { AccordionBaseProps } from '../types';
 

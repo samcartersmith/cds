@@ -1,4 +1,4 @@
-import React, { ComponentType,ReactElement, useState } from 'react';
+import React, { ComponentType, ReactElement, useState } from 'react';
 
 import { useToggler } from '../hooks/useToggler';
 import type {

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { defaultMediaDimension,defaultMediaSize } from '../tokens/card';
+import { defaultMediaDimension, defaultMediaSize } from '../tokens/card';
 import type {
   CardMediaIllustrationProps,
   CardMediaImageSizeObject,

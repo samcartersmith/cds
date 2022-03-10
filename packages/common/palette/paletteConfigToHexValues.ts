@@ -1,4 +1,4 @@
-import type { PaletteAlias,PaletteConfigToHexValues } from '../types';
+import type { PaletteAlias, PaletteConfigToHexValues } from '../types';
 
 import { paletteValueToHex } from './paletteValueToHex';
 

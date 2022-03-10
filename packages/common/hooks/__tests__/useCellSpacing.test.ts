@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { innerDefaults, outerDefaults,useCellSpacing } from '../useCellSpacing';
+import { innerDefaults, outerDefaults, useCellSpacing } from '../useCellSpacing';
 
 describe('useCellSpacing', () => {
   it('returns correct default spacing', () => {

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { DEFAULT_SCALE,ScaleContext } from './context';
+import { DEFAULT_SCALE, ScaleContext } from './context';
 
 export const useScale = () => {
   const context = useContext(ScaleContext);

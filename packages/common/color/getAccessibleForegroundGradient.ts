@@ -1,4 +1,4 @@
-import { A11yColorUsage, GradientArray, PaletteValueToRgbaStringFn,Spectrum } from '../types';
+import { A11yColorUsage, GradientArray, PaletteValueToRgbaStringFn, Spectrum } from '../types';
 
 import { colorToSpectrumAlias } from './colorToSpectrumAlias';
 import { darkenColor } from './darkenColor';

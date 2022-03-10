@@ -1,4 +1,3 @@
- 
 import React, { useState } from 'react';
 import { TabNavigationProps, TabProps } from '@cbhq/cds-common';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';

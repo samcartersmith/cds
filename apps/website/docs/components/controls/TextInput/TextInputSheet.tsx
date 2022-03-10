@@ -53,7 +53,7 @@ export const FormInputsExample = () => {
 
   const onSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
-    // eslint-disable-next-line no-console
+     
     console.log(e.currentTarget.nodeValue);
     // eslint-disable-next-line no-alert
     alert('Submitted');

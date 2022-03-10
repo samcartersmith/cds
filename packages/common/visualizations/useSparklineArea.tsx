@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { area,curveBasis } from 'd3-shape';
+import { area, curveBasis } from 'd3-shape';
 
 import {
   SparklineGeneratorParams,

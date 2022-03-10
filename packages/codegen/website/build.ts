@@ -2,7 +2,7 @@ import { ComponentDoc, withCustomConfig } from 'react-docgen-typescript';
 import glob from 'fast-glob';
 import groupBy from 'lodash/groupBy';
 import path from 'path';
-import { AnyObject,mapValues, pascalCase } from '@cbhq/cds-utils';
+import { AnyObject, mapValues, pascalCase } from '@cbhq/cds-utils';
 
 import { buildTemplates } from '../utils/buildTemplates';
 import { getSourcePath } from '../utils/getSourcePath';

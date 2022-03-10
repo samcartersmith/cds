@@ -2,7 +2,7 @@
 import { ComponentDoc, PropItem } from 'react-docgen-typescript';
 import { pascalCase } from '@cbhq/cds-utils';
 
-import { normalizeOptions,PropertyDocgen, PropOptions } from './PropertyDocgen';
+import { normalizeOptions, PropertyDocgen, PropOptions } from './PropertyDocgen';
 import { ComponentDocgenParams } from './types';
 
 type PropItemWithOptions = {

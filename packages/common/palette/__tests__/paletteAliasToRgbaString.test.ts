@@ -1,5 +1,5 @@
 import { spectrumConfigs } from '../../spectrum/spectrumConfigs';
-import { dark,light } from '../../spectrum/spectrumRgbArray';
+import { dark, light } from '../../spectrum/spectrumRgbArray';
 import { PaletteAlias } from '../../types';
 import { defaultPalette } from '../constants';
 import { paletteAliasToRgbaString } from '../paletteAliasToRgbaString';

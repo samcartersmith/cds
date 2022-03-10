@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { DEFAULT_SPECTRUM,SpectrumContext } from './context';
+import { DEFAULT_SPECTRUM, SpectrumContext } from './context';
 
 export const useSpectrum = () => {
   const context = useContext(SpectrumContext);

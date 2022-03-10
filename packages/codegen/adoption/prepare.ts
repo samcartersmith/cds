@@ -5,7 +5,7 @@ import { writeFile } from '../utils/writeFile';
 
 import { ProjectParser } from './parsers/ProjectParser';
 import { getPreviousStats } from './utils/getPreviousStats';
-import { cleanup,getTempRepos } from './utils/getTempRepos';
+import { cleanup, getTempRepos } from './utils/getTempRepos';
 import { adopters, adoptersSidebar, adoptersWithPillar } from './config';
 
 async function preCleanup() {

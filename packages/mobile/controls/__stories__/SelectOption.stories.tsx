@@ -5,7 +5,6 @@ import { SelectOption } from '../SelectOption';
 
 export default function SelectOptionScreen() {
   const handleOptionPress = useCallback(() => {
-     
     console.log('pressed');
   }, []);
   return (

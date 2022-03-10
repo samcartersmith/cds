@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { isProduction } from '@cbhq/cds-utils';
 
-import { DEFAULT_SCALE,RootScaleContext } from './context';
+import { DEFAULT_SCALE, RootScaleContext } from './context';
 
 export const useRootScale = () => {
   const context = useContext(RootScaleContext);

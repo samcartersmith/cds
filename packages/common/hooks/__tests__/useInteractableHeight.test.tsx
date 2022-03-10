@@ -3,7 +3,7 @@ import { entries } from '@cbhq/cds-utils';
 
 import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 import { SystemProvider } from '../../SystemProvider';
-import { compactHeight,defaultHeight } from '../../tokens/interactable';
+import { compactHeight, defaultHeight } from '../../tokens/interactable';
 import { interactableHeight } from '../../tokens/interactableHeight';
 import { Scale } from '../../types';
 import { useInteractableHeight } from '../useInteractableHeight';

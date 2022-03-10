@@ -6,7 +6,7 @@ import {
   perCharsDuration,
   withActionDuration,
 } from '../tokens/toast';
-import { ToastBaseProps, ToastOptions,ToastText } from '../types';
+import { ToastBaseProps, ToastOptions, ToastText } from '../types';
 
 import { ToastContext } from './ToastProvider';
 

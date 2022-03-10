@@ -1,4 +1,4 @@
-import { ScaleDensity,SpacingScale } from '../types';
+import { ScaleDensity, SpacingScale } from '../types';
 
 export const accordionSpacing: Record<ScaleDensity, Record<string, SpacingScale>> = {
   normal: {

@@ -45,10 +45,10 @@ export function inputIconBuilder(
   const SetColorAndInheritFocusStyle = () => {
     return (
       <TextInput
-          label="Search"
-          variant="foregroundMuted"
-          start={<InputIcon color="positive" name="search" />}
-        />
+        label="Search"
+        variant="foregroundMuted"
+        start={<InputIcon color="positive" name="search" />}
+      />
     );
   };
 

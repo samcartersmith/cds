@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { useFeatureFlag } from '../system/useFeatureFlag';
-import { ButtonVariant,PaletteBackground, PaletteBorder, PaletteForeground } from '../types';
+import { ButtonVariant, PaletteBackground, PaletteBorder, PaletteForeground } from '../types';
 
 export type ButtonVariantStyles = {
   backgroundColor: PaletteBackground;

@@ -1,4 +1,4 @@
-import { FocusEvent,ReactNode } from 'react';
+import { FocusEvent, ReactNode } from 'react';
 
 import { NoopFn } from './Helpers';
 import { SetState } from './React';

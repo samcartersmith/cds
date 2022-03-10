@@ -1,8 +1,8 @@
 import { avatarPixelSizes, avatarSizes } from './configs/avatarConfig';
-import { RootScalePreference,scales } from './configs/scaleConfig';
+import { RootScalePreference, scales } from './configs/scaleConfig';
 import { spacingScale } from './configs/spacingConfig';
 import { typographyConfig } from './configs/typographyConfig';
-import { RootSpectrumPreference,Spectrum } from './Spectrum/Spectrum';
+import { RootSpectrumPreference, Spectrum } from './Spectrum/Spectrum';
 
 const templates = {
   'common/types/Scale.ts': {
