@@ -1,9 +1,9 @@
-import React, { useMemo, memo, createContext } from 'react';
-
+import React, { createContext, memo, useMemo } from 'react';
 import { orderBy, sumBy } from 'lodash';
+
 import type {
-  ComponentData,
   AdopterComponents,
+  ComponentData,
 } from ':cds-website/components/AdoptionTracker/types';
 
 const AdopterComponentsGroupFallback = {

@@ -1,26 +1,29 @@
-Use this component as the start/end to TextInput or any other Input. This 
-helper component will give you the right spacing, and it will also help control 
-focus states for you. 
+Use this component as the start/end to TextInput or any other Input. This
+helper component will give you the right spacing, and it will also help control
+focus states for you.
 
-By default, when you use InputIconButton, it will inherit the focus state from its parent 
+By default, when you use InputIconButton, it will inherit the focus state from its parent
 Input, in this case its TextInput, and change the icon color according to its focus state.
-The default color for InputIconButton is primary. Icons that are interactable should be primary color. 
+The default color for InputIconButton is primary. Icons that are interactable should be primary color.
+
 ```jsx live
 <ExampleWithThemeToggles>
-	<TextInput label="Search" start={<InputIconButton name="search" />} />
+  <TextInput label="Search" start={<InputIconButton name="search" />} />
 </ExampleWithThemeToggles>
 ```
 
-You can change the default color. But use with caution 
+You can change the default color. But use with caution
+
 ```jsx live
 <ExampleWithThemeToggles>
-	<TextInput label="Search" end={<InputIconButton color="foregroundMuted" name="search" />} />
+  <TextInput label="Search" end={<InputIconButton color="foregroundMuted" name="search" />} />
 </ExampleWithThemeToggles>
 ```
 
-If you set disableInheritFocusStyle to true, it will not change the color with its focus state. 
+If you set disableInheritFocusStyle to true, it will not change the color with its focus state.
+
 ```jsx live
 <ExampleWithThemeToggles>
-	<TextInput label="Search" end={<InputIconButton disableInheritFocusStyle name="search" />} />
+  <TextInput label="Search" end={<InputIconButton disableInheritFocusStyle name="search" />} />
 </ExampleWithThemeToggles>
 ```

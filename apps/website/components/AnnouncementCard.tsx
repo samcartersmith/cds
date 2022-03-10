@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
+import { PaletteBackground } from '@cbhq/cds-common';
 import { Card } from '@cbhq/cds-web/layout';
 import { TextTitle1 } from '@cbhq/cds-web/typography';
-import { PaletteBackground } from '@cbhq/cds-common';
 
 type AnnouncementCardProps = {
   title: string;

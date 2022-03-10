@@ -1,15 +1,15 @@
 import MDXComponents from '@theme-original/MDXComponents';
 import {
+  Link,
+  LinkProps,
+  TextBody,
   TextDisplay3,
+  TextHeadline,
   TextLabel2,
+  TextProps,
   TextTitle1,
   TextTitle3,
   TextTitle4,
-  TextBody,
-  TextProps,
-  TextHeadline,
-  Link,
-  LinkProps,
 } from '@cbhq/cds-web/typography';
 
 const MDXComponentOverrides = {

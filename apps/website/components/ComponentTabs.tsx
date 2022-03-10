@@ -1,8 +1,8 @@
-import React, { useCallback, useMemo, Suspense } from 'react';
-
+import React, { Suspense, useCallback, useMemo } from 'react';
 import useUserPreferencesContext from '@theme/hooks/useUserPreferencesContext';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
+
 import * as templatesMap from ':cds-website/data/templatesMap';
 
 type ComponentsMap = typeof templatesMap;

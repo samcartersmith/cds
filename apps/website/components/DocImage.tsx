@@ -1,7 +1,7 @@
 import { styled } from 'linaria/react';
+import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
-import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 
 type ImageOptions = {
   maxWidth?: string;

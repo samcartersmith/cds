@@ -43,7 +43,7 @@ function Example() {
   return (
     <ExampleWithThemeToggles>
       <VStack gap={2}>
-        {assetColors.map(color => (
+        {assetColors.map((color) => (
           <Sparkline key={color} {...dimensions} path={path} color={color} />
         ))}
       </VStack>
@@ -63,7 +63,7 @@ function Example() {
   return (
     <ExampleWithThemeToggles>
       <VStack gap={2}>
-        {assetColors.map(background => (
+        {assetColors.map((background) => (
           <VStack key={background} dangerouslySetBackground={background}>
             <Sparkline {...dimensions} path={path} background={background} color="auto" />
           </VStack>
@@ -75,6 +75,7 @@ function Example() {
 ```
 
 ## y axis scaling
+
 ```jsx live
 function Example() {
   const yAxisScalingFactor = 0.2;
@@ -84,16 +85,22 @@ function Example() {
   const path = useSparklinePath({ ...dimensions, data: prices, yAxisScalingFactor });
   return (
     <ExampleWithThemeToggles>
-        <VStack gap={2}>
-           <TextLabel1 as="p">Scale {yAxisScalingFactor}</TextLabel1>
-          <Sparkline {...dimensions} path={path} color="auto" yAxisScalingFactor={yAxisScalingFactor} />
-        </VStack>
+      <VStack gap={2}>
+        <TextLabel1 as="p">Scale {yAxisScalingFactor}</TextLabel1>
+        <Sparkline
+          {...dimensions}
+          path={path}
+          color="auto"
+          yAxisScalingFactor={yAxisScalingFactor}
+        />
+      </VStack>
     </ExampleWithThemeToggles>
   );
 }
 ```
 
 ## Sparkline fill
+
 ```jsx live
 function Example() {
   const normal = { width: 400, height: 200 };
@@ -104,7 +111,7 @@ function Example() {
   return (
     <ExampleWithThemeToggles>
       <VStack gap={2}>
-        {assetColors.map(color => (
+        {assetColors.map((color) => (
           <Sparkline key={color} {...dimensions} path={path} color={color}>
             <SparklineArea area={area} />
           </Sparkline>

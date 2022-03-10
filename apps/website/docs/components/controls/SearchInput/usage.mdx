@@ -1,157 +1,176 @@
 import { Badge } from ':cds-website/components/Badge';
 
-## Default 
+## Default
+
 The onChangeText is required for this to work. You must maintain your own
-value state using useState, and pass the state to the value prop. Below is 
-the most basic example of how to get this SearchInput working. 
+value state using useState, and pass the state to the value prop. Below is
+the most basic example of how to get this SearchInput working.
 
-```jsx live 
+```jsx live
 function SearchExample() {
-	const [text, setText] = useState('');
+  const [text, setText] = useState('');
 
-	return (
-		<ExampleWithThemeToggles>
-			<VStack spacing={2}>
-				<SearchInput value={text} onChangeText={setText}  placeholder="Placeholder" />
-				<TextLabel1 as="p">{text}</TextLabel1>
-			</VStack>
-		</ExampleWithThemeToggles>
-	);
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2}>
+        <SearchInput value={text} onChangeText={setText} placeholder="Placeholder" />
+        <TextLabel1 as="p">{text}</TextLabel1>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
 }
 ```
 
 ## Search Example for Mobile
-Using SearchInput on Mobile is very similar to using SearchInput on Web. However, there is one caveat. 
+
+Using SearchInput on Mobile is very similar to using SearchInput on Web. However, there is one caveat.
 SearchInput requires that users tap the clear button twice before it clears the text, which isn't a great user experience.
 
 To fix this issue, you can wrap the SearchInput in a ScrollView, and set keyboardShouldPersistTaps="always". Users can
-unfocus the Search by pressing the back button. Below is an example 
-```jsx 
-function SearchMobileExample() {
-	const [text, setText] = useState('');
+unfocus the Search by pressing the back button. Below is an example
 
-	return (
-		<ScrollView style={{ height: '100%' }} keyboardShouldPersistTaps="always">
-			<SearchInput value={text} onChangeText={setText}  placeholder="Placeholder" />
-			{...children}
-		</ScrollView> 
-	)
+```jsx
+function SearchMobileExample() {
+  const [text, setText] = useState('');
+
+  return (
+    <ScrollView style={{ height: '100%' }} keyboardShouldPersistTaps="always">
+      <SearchInput value={text} onChangeText={setText} placeholder="Placeholder" />
+      {...children}
+    </ScrollView>
+  );
 }
 ```
 
-## onSearch Example 
-onSearch is triggered when user hits 'Enter' on both Mobile and Web. 
-On Mobile, there are two ways to trigger onSearch. You can trigger by hitting 
+## onSearch Example
+
+onSearch is triggered when user hits 'Enter' on both Mobile and Web.
+On Mobile, there are two ways to trigger onSearch. You can trigger by hitting
 'Enter' on Keyboard or by pressing the Search Icon when its available
 
 ```jsx live
 function OnSearchExample() {
-	const [text, setText] = useState('');
+  const [text, setText] = useState('');
 
-	const handleOnSearch = useCallback(
-		(str) => {
-			console.log(`User just typed: ${str}`);
-		},
-		[],
-	)
+  const handleOnSearch = useCallback((str) => {
+    console.log(`User just typed: ${str}`);
+  }, []);
 
-	return (
-		<ExampleWithThemeToggles>
-			<VStack spacing={2}>
-				<SearchInput value={text} onChangeText={setText} onSearch={handleOnSearch} placeholder="Hit Enter" />
-				<TextLabel1 as="p">{text}</TextLabel1>
-			</VStack>
-		</ExampleWithThemeToggles>
-	)
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2}>
+        <SearchInput
+          value={text}
+          onChangeText={setText}
+          onSearch={handleOnSearch}
+          placeholder="Hit Enter"
+        />
+        <TextLabel1 as="p">{text}</TextLabel1>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
 }
 ```
 
-## onClear Example 
+## onClear Example
+
 Add custom onClear logic example
 
-```jsx live 
+```jsx live
 function OnClearExample() {
-	const [text, setText] = useState('');
+  const [text, setText] = useState('');
 
-	return (
-		<ExampleWithThemeToggles>
-			<VStack spacing={2}>
-				<SearchInput 
-					onClear={() => console.log('Clearing...')} 
-					onChangeText={setText}
-					value={text}
-					placeholder="Placeholder" 
-				/>
-			</VStack>
-		</ExampleWithThemeToggles>
-	)
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2}>
+        <SearchInput
+          onClear={() => console.log('Clearing...')}
+          onChangeText={setText}
+          value={text}
+          placeholder="Placeholder"
+        />
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
 }
 ```
 
-## Disabled 
-```jsx live 
+## Disabled
+
+```jsx live
 function DisabledSearchExample() {
-	const [text, setText] = useState('');
+  const [text, setText] = useState('');
 
-	return (
-		<Box spacing={2}>
-			<SearchInput value={text} disabled onChangeText={setText} placeholder="Placeholder" />
-		</Box>
-	)
+  return (
+    <Box spacing={2}>
+      <SearchInput value={text} disabled onChangeText={setText} placeholder="Placeholder" />
+    </Box>
+  );
 }
 ```
 
-## Compact 
-```jsx live 
+## Compact
+
+```jsx live
 function CompactSearchExample() {
-	const [text, setText] = useState('');
+  const [text, setText] = useState('');
 
-	return (
-		<ExampleWithThemeToggles>
-			<Box spacing={2}>
-				<SearchInput value={text} compact onChangeText={setText} placeholder="Placeholder" />
-			</Box>
-		</ExampleWithThemeToggles>
-		
-	)
+  return (
+    <ExampleWithThemeToggles>
+      <Box spacing={2}>
+        <SearchInput value={text} compact onChangeText={setText} placeholder="Placeholder" />
+      </Box>
+    </ExampleWithThemeToggles>
+  );
 }
 ```
 
-### Borderless SearchInput <Badge variant="web" /> 
-A borderless SearchInput SHOULD NOT be used alone. It should be used 
-with a TypeAhead component.  
+### Borderless SearchInput <Badge variant="web" />
+
+A borderless SearchInput SHOULD NOT be used alone. It should be used
+with a TypeAhead component.
 
 ```jsx live
 function BorderlessSearchExample() {
-	const [text, setText] = useState('');
+  const [text, setText] = useState('');
 
-	return (
-		<ExampleWithThemeToggles>
-			<Box spacing={2}>
-				<SearchInput bordered={false} value={text} onChangeText={setText} placeholder="Placeholder" />
-			</Box>
-		</ExampleWithThemeToggles>
-		
-	)
+  return (
+    <ExampleWithThemeToggles>
+      <Box spacing={2}>
+        <SearchInput
+          bordered={false}
+          value={text}
+          onChangeText={setText}
+          placeholder="Placeholder"
+        />
+      </Box>
+    </ExampleWithThemeToggles>
+  );
 }
 ```
 
-## hideStartIcon 
-There may be search experiences where you don't want to show the search icon. You can hide it 
-by using this prop. 
+## hideStartIcon
 
-```jsx live 
+There may be search experiences where you don't want to show the search icon. You can hide it
+by using this prop.
+
+```jsx live
 function hideStartIcon() {
-	const [text, setText] = useState('');
+  const [text, setText] = useState('');
 
-	return (
-		<ExampleWithThemeToggles>
-			<HStack spacing={2} gap={1}>
-				<IconButton name="backArrow" transparent />
-				<SearchInput hideStartIcon value={text} compact onChangeText={setText} placeholder="Placeholder" />
-			</HStack>
-		</ExampleWithThemeToggles>
-		
-	)
+  return (
+    <ExampleWithThemeToggles>
+      <HStack spacing={2} gap={1}>
+        <IconButton name="backArrow" transparent />
+        <SearchInput
+          hideStartIcon
+          value={text}
+          compact
+          onChangeText={setText}
+          placeholder="Placeholder"
+        />
+      </HStack>
+    </ExampleWithThemeToggles>
+  );
 }
 ```

@@ -9,14 +9,19 @@ function SidebarItemWithAutoCollapse() {
 
   return (
     <ExampleWithThemeToggles>
-      <HStack justifyContent="center" alignItems="flex-start" dangerouslySetBackground={palette.backgroundAlternate}>
+      <HStack
+        justifyContent="center"
+        alignItems="flex-start"
+        dangerouslySetBackground={palette.backgroundAlternate}
+      >
         <Sidebar autoCollapse logo={<LogoMark />}>
           {items.map((props, index) => (
             <SidebarItem
-              key={`sidebar-item--${props.title}`} 
+              key={`sidebar-item--${props.title}`}
               active={index === activeIndex}
               onPress={() => handlePress(index)}
-              {...props} />
+              {...props}
+            />
           ))}
         </Sidebar>
         <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center" flexGrow={1}>

@@ -21,11 +21,11 @@ import { Spacer, Box } from '@cbhq/cds-web/layout';
 
 <span>&nbsp;</span>
 
-`Modals` are containers comprised of: Modal Header, Modal Body, and Modal Footer with a Background Overlay. Each section relates to the subject/topic of the Card. 
+`Modals` are containers comprised of: Modal Header, Modal Body, and Modal Footer with a Background Overlay. Each section relates to the subject/topic of the Card.
 
-Modal Header provides high level information about the modal such as the simple task the user needs to complete (example: Borrow cash). 
+Modal Header provides high level information about the modal such as the simple task the user needs to complete (example: Borrow cash).
 Modal Body should be short and simple. Limit the number of inputs that the user needs to fill out since modals are, by nature, easy to dismiss and cancel out of.
-Modal Footer is reserved for actions. 
+Modal Footer is reserved for actions.
 
 <span>&nbsp;</span>
 
@@ -46,7 +46,7 @@ Modal Footer is reserved for actions.
 
 ## Responsive
 
-`Modal` responds to device and browser. 
+`Modal` responds to device and browser.
 
 <Image
   light="/img/components/overlays/modal/specs_light.png"
@@ -56,6 +56,7 @@ Modal Footer is reserved for actions.
 <span>&nbsp;</span>
 
 When device width is more than 660px:
+
 - **Buttons:** responsive and side-by-side
 - **Maximum Width:** 612px
 - **Minimum Width:** device-width with 24px margins from the left and right of the screen
@@ -73,6 +74,7 @@ When device width is more than 660px:
 <span>&nbsp;</span>
 
 When device width is less than 414px:
+
 - **Buttons:** block and stack
 - **Width:** if device width is less than 414px, modal is 100% device-width with no margins
 - **Height:** modal is 100% device-heigh with no margins
@@ -105,4 +107,3 @@ Scrollbar is the default OS scrollbar, and determined by the height and content 
     description="When window height is less than 600px, the container’s height is determined by content, actions are not locked, and an external scroll is triggered."
   />
 </Collection>
-

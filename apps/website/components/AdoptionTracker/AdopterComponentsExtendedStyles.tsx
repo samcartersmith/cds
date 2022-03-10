@@ -1,11 +1,13 @@
-import React, { useCallback, useState, memo } from 'react';
+import React, { memo, useCallback, useState } from 'react';
+import { countBy, groupBy, orderBy, toPairs } from 'lodash';
+import { Icon } from '@cbhq/cds-web/icons';
 import { VStack } from '@cbhq/cds-web/layout';
 import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';
-import { groupBy, orderBy, countBy, toPairs } from 'lodash';
-import { Icon } from '@cbhq/cds-web/icons';
+
 import { BetaCell } from ':cds-website/components/BetaCell';
-import type { ComponentData } from './types';
+
 import { useGetGitLink } from './hooks/useGetGitLink';
+import type { ComponentData } from './types';
 
 export const AdopterComponentsExtendedStyles = memo(
   ({

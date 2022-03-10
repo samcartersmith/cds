@@ -1,9 +1,10 @@
 import React, { memo, useCallback, useState } from 'react';
-import { TextHeadline, TextLabel2, TextLabel1 } from '@cbhq/cds-web/typography';
-import { Divider, VStack } from '@cbhq/cds-web/layout';
 import { Icon } from '@cbhq/cds-web/icons';
-import { ComponentData } from ':cds-website/components/AdoptionTracker/types';
+import { Divider, VStack } from '@cbhq/cds-web/layout';
+import { TextHeadline, TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
+
 import { useGetGitLink } from ':cds-website/components/AdoptionTracker/hooks/useGetGitLink';
+import { ComponentData } from ':cds-website/components/AdoptionTracker/types';
 import { BetaCell } from ':cds-website/components/BetaCell';
 
 export const AdopterComponentsAliasedCds = memo(

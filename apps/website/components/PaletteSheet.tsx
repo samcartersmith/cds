@@ -2,9 +2,10 @@ import { Fragment } from 'react';
 import { css } from 'linaria';
 import { usePaletteConfig } from '@cbhq/cds-common';
 import { paletteValueToTuple } from '@cbhq/cds-common/palette/paletteValueToTuple';
-import { wordCase, entries } from '@cbhq/cds-utils';
+import { entries, wordCase } from '@cbhq/cds-utils';
 import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
 import { TextHeadline, TextLabel1 } from '@cbhq/cds-web/typography';
+
 import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 
 const tile = css`

@@ -1,27 +1,26 @@
 import React, { PropsWithChildren, useMemo } from 'react';
-
+import { Link } from 'react-router-dom';
+import Head from '@docusaurus/Head';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { Button, IconButton } from '@cbhq/cds-web/buttons';
-import { LogoMark } from '@cbhq/cds-web/icons/LogoMark';
-import { VStack } from '@cbhq/cds-web/layout';
 import {
-  TabItem,
-  Tabs,
   Navigation,
   NavigationBar,
   NavigationBarActions,
-  NavigationBarCtas,
   NavigationBarControls,
+  NavigationBarCtas,
   NavigationBarTitles,
   NavigationDisplayTitle,
-  Sidebar,
   NavigationListItem,
+  Sidebar,
   SidebarSection,
+  TabItem,
+  Tabs,
 } from '@cbhq/cds-web/deprecated/navigation';
+import { LogoMark } from '@cbhq/cds-web/icons/LogoMark';
+import { VStack } from '@cbhq/cds-web/layout';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { TextBody, TextTitle1 } from '@cbhq/cds-web/typography';
-import Head from '@docusaurus/Head';
-import { Link } from 'react-router-dom';
 
 const defaultRoute = '/';
 

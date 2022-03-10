@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
-import { CardGroup, FeedCard } from '@cbhq/cds-web/cards';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
+import { CardGroup, FeedCard } from '@cbhq/cds-web/cards';
+
 import { ResponsiveExample } from ':cds-website/components/ResponsiveExample';
 
 export function CardDemo() {

@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+
 import { useAdopterProjectInfo } from './useAdopterProjectInfo';
 
 export const useGetGitLink = () => {

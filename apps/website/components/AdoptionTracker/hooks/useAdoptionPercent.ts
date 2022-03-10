@@ -1,5 +1,6 @@
-import { useAdopterComponents } from './useAdopterComponents';
 import { getPercentageText } from '../utils/getPercentageText';
+
+import { useAdopterComponents } from './useAdopterComponents';
 
 export function useAdoptionPercent(variant: 'cds' | 'presentational') {
   const groups = useAdopterComponents();

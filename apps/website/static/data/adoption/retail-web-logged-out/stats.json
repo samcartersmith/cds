@@ -1,1 +1,60 @@
-{"latest":{"date":"3/1/2022","cdsPercent":0.41394753678822777,"cds":1294,"presentational":1832,"totalCdsAndPresentational":3126,"totalOther":2171},"previous":[{"date":"End of Q4","cdsPercent":0.3325572370974001,"cds":857,"presentational":1720,"totalCdsAndPresentational":2577,"totalOther":1805},{"date":"1/26/2022","cdsPercent":0.3595752471622116,"cds":982,"presentational":1749,"totalCdsAndPresentational":2731,"totalOther":1917},{"date":"2/4/2022","cdsPercent":0.36126564673157163,"cds":1039,"presentational":1837,"totalCdsAndPresentational":2876,"totalOther":2022},{"date":"2/9/2022","cdsPercent":0.36814891416752843,"cds":1068,"presentational":1833,"totalCdsAndPresentational":2901,"totalOther":2016},{"date":"2/16/2022","cdsPercent":0.3964227642276423,"cds":1219,"presentational":1856,"totalCdsAndPresentational":3075,"totalOther":2134},{"date":"2/16/2022","cdsPercent":0.3964227642276423,"cds":1219,"presentational":1856,"totalCdsAndPresentational":3075,"totalOther":2134}]}
+{
+  "latest": {
+    "date": "3/1/2022",
+    "cdsPercent": 0.41394753678822777,
+    "cds": 1294,
+    "presentational": 1832,
+    "totalCdsAndPresentational": 3126,
+    "totalOther": 2171
+  },
+  "previous": [
+    {
+      "date": "End of Q4",
+      "cdsPercent": 0.3325572370974001,
+      "cds": 857,
+      "presentational": 1720,
+      "totalCdsAndPresentational": 2577,
+      "totalOther": 1805
+    },
+    {
+      "date": "1/26/2022",
+      "cdsPercent": 0.3595752471622116,
+      "cds": 982,
+      "presentational": 1749,
+      "totalCdsAndPresentational": 2731,
+      "totalOther": 1917
+    },
+    {
+      "date": "2/4/2022",
+      "cdsPercent": 0.36126564673157163,
+      "cds": 1039,
+      "presentational": 1837,
+      "totalCdsAndPresentational": 2876,
+      "totalOther": 2022
+    },
+    {
+      "date": "2/9/2022",
+      "cdsPercent": 0.36814891416752843,
+      "cds": 1068,
+      "presentational": 1833,
+      "totalCdsAndPresentational": 2901,
+      "totalOther": 2016
+    },
+    {
+      "date": "2/16/2022",
+      "cdsPercent": 0.3964227642276423,
+      "cds": 1219,
+      "presentational": 1856,
+      "totalCdsAndPresentational": 3075,
+      "totalOther": 2134
+    },
+    {
+      "date": "2/16/2022",
+      "cdsPercent": 0.3964227642276423,
+      "cds": 1219,
+      "presentational": 1856,
+      "totalCdsAndPresentational": 3075,
+      "totalOther": 2134
+    }
+  ]
+}

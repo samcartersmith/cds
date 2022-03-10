@@ -1,21 +1,21 @@
-import React, { useCallback, useState, useMemo } from 'react';
-
+import React, { useCallback, useMemo, useState } from 'react';
+import throttle from 'lodash/throttle';
 import { PaletteForeground, paletteForegrounds } from '@cbhq/cds-common';
+import { iconNames, iconSizes, navigationIconNames } from '@cbhq/cds-common/internal/data/iconData';
+import { iconDescriptionGraph } from '@cbhq/cds-common/internal/data/iconDescriptionGraph';
 import {
   IconName as ProductIconName,
   NavigationIconInternalName,
   NavigationIconName,
 } from '@cbhq/cds-common/types/IconName';
+import { IconSize } from '@cbhq/cds-common/types/IconSize';
 import { Button } from '@cbhq/cds-web/buttons/Button';
+import { TextInput } from '@cbhq/cds-web/controls/TextInput';
 import { IconBase } from '@cbhq/cds-web/icons/IconBase';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
-import throttle from 'lodash/throttle';
-import { TextInput } from '@cbhq/cds-web/controls/TextInput';
-import { IconSize } from '@cbhq/cds-common/types/IconSize';
-import { navigationIconNames, iconNames, iconSizes } from '@cbhq/cds-common/internal/data/iconData';
-import { iconDescriptionGraph } from '@cbhq/cds-common/internal/data/iconDescriptionGraph';
+
 import { Tabs } from ':cds-website/components/Tabs';
 
 type IconData = typeof iconData;

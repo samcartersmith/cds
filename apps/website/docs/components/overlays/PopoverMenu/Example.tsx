@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
+import { useToggler } from '@cbhq/cds-common';
 import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
 import { SelectOption } from '@cbhq/cds-web/controls/SelectOption';
 import { VStack } from '@cbhq/cds-web/layout';
 import { PopoverMenu, PopoverTrigger } from '@cbhq/cds-web/overlays';
-import { useToggler } from '@cbhq/cds-common';
 
 const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
 

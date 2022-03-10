@@ -1,7 +1,7 @@
 import React from 'react';
-import { VStack, HStack } from '@cbhq/cds-web/layout';
-import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
 import type { FlexAlignCommon, SpacingScale } from '@cbhq/cds-common';
+import { HStack, VStack } from '@cbhq/cds-web/layout';
+import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
 
 import { Image, ImageProps } from './Image';
 import { Video, VideoProps } from './Video';

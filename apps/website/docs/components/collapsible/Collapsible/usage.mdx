@@ -1,4 +1,5 @@
 ### Basic Collapsible
+
 ```jsx live
 function BasicCollapsible() {
   const [collapsed, { toggle }] = useToggler(true);
@@ -17,11 +18,12 @@ function BasicCollapsible() {
         />
       </Collapsible>
     </ExampleWithThemeToggles>
-  )
+  );
 }
 ```
 
 ### Reveal Top
+
 ```jsx live
 function RevealTop() {
   const [collapsed, { toggle }] = useToggler(true);
@@ -40,11 +42,12 @@ function RevealTop() {
       </Collapsible>
       <Button onPress={toggle}>Click me!</Button>
     </ExampleWithThemeToggles>
-  )
+  );
 }
 ```
 
 ### Scroll Content
+
 ```jsx live
 function Scroll() {
   const [collapsed, { toggle }] = useToggler(true);
@@ -56,11 +59,12 @@ function Scroll() {
         <TextBody as="p">{loremIpsum.repeat(30)}</TextBody>
       </Collapsible>
     </ExampleWithThemeToggles>
-  )
+  );
 }
 ```
 
 ### Horizontal
+
 ```jsx live
 function Horizontal() {
   const [collapsed, { toggle }] = useToggler(true);
@@ -76,7 +80,6 @@ function Horizontal() {
         </Collapsible>
       </HStack>
     </ExampleWithThemeToggles>
-  )
+  );
 }
 ```
-

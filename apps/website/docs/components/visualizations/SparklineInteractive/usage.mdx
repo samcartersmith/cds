@@ -4,7 +4,7 @@ Please see [here](/sparkline-interactive) for sample code with SparklineInteract
 
 ```jsx live
 <Box spacing={3} width="100%">
-    <SparklineInteractivePrice data={sparklineInteractiveData} strokeColor="#F7931A" />
+  <SparklineInteractivePrice data={sparklineInteractiveData} strokeColor="#F7931A" />
 </Box>
 ```
 
@@ -14,7 +14,7 @@ If you are using frontier then the fill will be added by default
 
 ```jsx live
 <Box spacing={3} width="100%">
-    <SparklineInteractivePrice data={sparklineInteractiveData} fill strokeColor="#F7931A" />
+  <SparklineInteractivePrice data={sparklineInteractiveData} fill strokeColor="#F7931A" />
 </Box>
 ```
 
@@ -22,7 +22,7 @@ If you are using frontier then the fill will be added by default
 
 ```jsx live
 <Box spacing={3} width="100%">
-    <SparklineInteractivePrice data={sparklineInteractiveData} compact strokeColor="#F7931A" />
+  <SparklineInteractivePrice data={sparklineInteractiveData} compact strokeColor="#F7931A" />
 </Box>
 ```
 
@@ -30,7 +30,11 @@ If you are using frontier then the fill will be added by default
 
 ```jsx live
 <Box spacing={3} width="100%">
-    <SparklineInteractivePrice data={sparklineInteractiveData} hidePeriodSelector strokeColor="#F7931A" />
+  <SparklineInteractivePrice
+    data={sparklineInteractiveData}
+    hidePeriodSelector
+    strokeColor="#F7931A"
+  />
 </Box>
 ```
 
@@ -40,7 +44,11 @@ The scaling factor is usually used when you want to show less variance in the ch
 
 ```jsx live
 <Box spacing={3} width="100%">
-    <SparklineInteractivePrice data={sparklineInteractiveData} strokeColor="#F7931A" yAxisScalingFactor={0.1} />
+  <SparklineInteractivePrice
+    data={sparklineInteractiveData}
+    strokeColor="#F7931A"
+    yAxisScalingFactor={0.1}
+  />
 </Box>
 ```
 
@@ -48,6 +56,6 @@ The scaling factor is usually used when you want to show less variance in the ch
 
 ```jsx live
 <Box spacing={3} width="100%">
-    <SparklineInteractivePriceWithHeader data={sparklineInteractiveData} fill strokeColor="#F7931A" />
+  <SparklineInteractivePriceWithHeader data={sparklineInteractiveData} fill strokeColor="#F7931A" />
 </Box>
 ```

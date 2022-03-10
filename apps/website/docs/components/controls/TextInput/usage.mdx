@@ -13,7 +13,7 @@ Default composition of Inputs.
       label="API Access Token"
       placeholder="HaeJiWplJohn6W42eCq0Qqft0"
       end={
-        <Box spacingEnd={2} >
+        <Box spacingEnd={2}>
           <Link variant="caption" color="primary" to="">
             COPY
           </Link>
@@ -22,9 +22,7 @@ Default composition of Inputs.
     />
 
     <VStack>
-      <TextBody as="p">
-        Use the compact variant when space is tight.
-      </TextBody>
+      <TextBody as="p">Use the compact variant when space is tight.</TextBody>
       <TextInput
         compact
         type="number"
@@ -47,8 +45,9 @@ Default composition of Inputs.
 ```
 
 ### Borderless TextInput <Badge variant="web" />
-A borderless TextInput SHOULD NOT be used alone. It should be used 
-with a TypeAhead component.  
+
+A borderless TextInput SHOULD NOT be used alone. It should be used
+with a TypeAhead component.
 
 ```jsx live
 <HStack spacing={2}>
@@ -58,7 +57,7 @@ with a TypeAhead component.
     helperText="helperText"
     bordered={false}
   />
-</HStack>  
+</HStack>
 ```
 
 ### Helper Text
@@ -108,7 +107,9 @@ with a TypeAhead component.
 <ExampleWithThemeToggles>
   <VStack gap={3}>
     <VStack>
-      <TextBody as="p"><strong>Left aligned: </strong>This is the default setting.</TextBody>
+      <TextBody as="p">
+        <strong>Left aligned: </strong>This is the default setting.
+      </TextBody>
       <TextInput label="City/town" placeholder="Oakland" />
     </VStack>
 
@@ -138,12 +139,18 @@ function StartContentExamples() {
     <ExampleWithThemeToggles>
       <VStack gap={3}>
         <VStack>
-          <TextBody as="p"><strong>Asset</strong>:  Asset objects are not interactive</TextBody>
+          <TextBody as="p">
+            <strong>Asset</strong>: Asset objects are not interactive
+          </TextBody>
           <TextInput
             label="Address"
             start={
               <Box spacingHorizontal={2}>
-                <Avatar size="l" src="https://dynamic-assets.coinbase.com/e785e0181f1a23a30d9476038d9be91e9f6c63959b538eabbc51a1abc8898940383291eede695c3b8dfaa1829a9b57f5a2d0a16b0523580346c6b8fab67af14b/asset_icons/b57ac673f06a4b0338a596817eb0a50ce16e2059f327dc117744449a47915cb2.png" alt="address" />
+                <Avatar
+                  size="l"
+                  src="https://dynamic-assets.coinbase.com/e785e0181f1a23a30d9476038d9be91e9f6c63959b538eabbc51a1abc8898940383291eede695c3b8dfaa1829a9b57f5a2d0a16b0523580346c6b8fab67af14b/asset_icons/b57ac673f06a4b0338a596817eb0a50ce16e2059f327dc117744449a47915cb2.png"
+                  alt="address"
+                />
               </Box>
             }
             placeholder="HaeJiWplJohn6W42eCq0Qqft0"
@@ -151,19 +158,17 @@ function StartContentExamples() {
         </VStack>
 
         <VStack>
-          <TextBody as="p"><strong>Icon</strong>: Icon objects are not interactive.</TextBody>
-          <TextInput
-            label="Amount"
-            start={
-              <InputIcon name="cashUSD" />
-            }
-            placeholder="1234"
-          />
+          <TextBody as="p">
+            <strong>Icon</strong>: Icon objects are not interactive.
+          </TextBody>
+          <TextInput label="Amount" start={<InputIcon name="cashUSD" />} placeholder="1234" />
         </VStack>
 
         <VStack>
-          <TextBody as="p"><strong>IconButton</strong>: The most common use case for Icon Button at the start of a Text Field is
-          search.</TextBody>
+          <TextBody as="p">
+            <strong>IconButton</strong>: The most common use case for Icon Button at the start of a
+            Text Field is search.
+          </TextBody>
           <TextInput
             label="Search"
             start={<InputIconButton name="search" />}
@@ -184,7 +189,9 @@ Here are some examples and best practices when using end content in a TextField.
 <ExampleWithThemeToggles>
   <VStack gap={3}>
     <VStack>
-      <TextBody as="p"><strong>Icon</strong>: Icon objects are not interactive.</TextBody>
+      <TextBody as="p">
+        <strong>Icon</strong>: Icon objects are not interactive.
+      </TextBody>
       <TextInput
         label="Address"
         placeholder="1234 Abc Way"
@@ -315,23 +322,23 @@ function CopyTextField() {
 </ExampleWithThemeToggles>
 ```
 
-### TextArea Example <Badge variant="mobile" /> 
+### TextArea Example <Badge variant="mobile" />
 
-On mobile, TextInput is versatile enough to support 
-a "TextArea" as well. You just need to add multiline prop. 
-Here is an example 
+On mobile, TextInput is versatile enough to support
+a "TextArea" as well. You just need to add multiline prop.
+Here is an example
 
-```jsx 
-  const [text, onChangeText] = useState('');
+```jsx
+const [text, onChangeText] = useState('');
 
-  <MockTextInput
-    onChangeText={onChangeText}
-    value={text}
-    label="Textarea"
-    helperText="Write about yourself"
-    variant="foregroundMuted"
-    multiline
-    value="
+<MockTextInput
+  onChangeText={onChangeText}
+  value={text}
+  label="Textarea"
+  helperText="Write about yourself"
+  variant="foregroundMuted"
+  multiline
+  value="
       A really really really really
       long piece 
       of text
@@ -344,18 +351,18 @@ Here is an example
       of text
       displayed
     "
-  />
+/>;
 ```
 
-### Example of a Form  
+### Example of a Form
 
-We recommend that you use spacing 3 when building stacked forms. 
+We recommend that you use spacing 3 when building stacked forms.
 
 ```jsx live
 function FormExample() {
   const gap = 3;
 
-  const onSubmit = useCallback(e => {
+  const onSubmit = useCallback((e) => {
     e.preventDefault();
     console.log(e.currentTarget.nodeValue);
     alert('Submitted');
@@ -389,7 +396,8 @@ function FormExample() {
 }
 ```
 
-### Example of a Sign Up Form 
+### Example of a Sign Up Form
+
 ```jsx live
 <ExampleWithThemeToggles>
   <HStack gap={2} alignItems="center">

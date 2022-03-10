@@ -1,4 +1,4 @@
-import React, { memo, createContext } from 'react';
+import React, { createContext, memo } from 'react';
 
 import type { AdopterStats, AdopterStatsItem } from ':cds-website/components/AdoptionTracker/types';
 

@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-
 import { join, LottieStatusAnimationType } from '@cbhq/cds-common';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { Spacer } from '@cbhq/cds-web/layout/Spacer';

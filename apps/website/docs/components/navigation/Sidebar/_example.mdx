@@ -10,19 +10,26 @@ function SidebarItemWithPress() {
 
   return (
     <ExampleWithThemeToggles>
-      <HStack justifyContent="center" alignItems="flex-start" dangerouslySetBackground={palette.backgroundAlternate}>
+      <HStack
+        justifyContent="center"
+        alignItems="flex-start"
+        dangerouslySetBackground={palette.backgroundAlternate}
+      >
         <Sidebar collapsed={collapsed} logo={<LogoMark />}>
           {items.map((props, index) => (
             <SidebarItem
-              key={`sidebar-item--${props.title}`} 
+              key={`sidebar-item--${props.title}`}
               active={index === activeIndex}
               onPress={() => handlePress(index)}
-              {...props} />
+              {...props}
+            />
           ))}
         </Sidebar>
         <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center" flexGrow={1}>
           <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
-          <Switch checked={collapsed} onChange={toggle}>Collapsed</Switch>
+          <Switch checked={collapsed} onChange={toggle}>
+            Collapsed
+          </Switch>
         </HStack>
       </HStack>
     </ExampleWithThemeToggles>

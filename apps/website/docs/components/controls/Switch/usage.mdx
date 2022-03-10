@@ -6,11 +6,11 @@ function SwitchDemo() {
   const [isChecked, { toggle }] = useToggler(isDarkTheme);
 
   const handleChange = useCallback(
-    event => {
+    (event) => {
       event.target.checked ? setDarkTheme() : setLightTheme();
       toggle();
     },
-    [setLightTheme, setDarkTheme]
+    [setLightTheme, setDarkTheme],
   );
 
   return (

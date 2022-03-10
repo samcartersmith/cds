@@ -1,8 +1,9 @@
 import { memo } from 'react';
 import { VStack } from '@cbhq/cds-web/layout';
 import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
-import { BetaCell } from ':cds-website/components/BetaCell';
+
 import { useAdopterComponents } from ':cds-website/components/AdoptionTracker/hooks/useAdopterComponents';
+import { BetaCell } from ':cds-website/components/BetaCell';
 
 export const AdopterStatsBreakdownCell = memo(
   ({ title, detail }: { title: string; detail: number }) => {

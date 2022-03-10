@@ -1,6 +1,6 @@
+import { styled } from 'linaria/react';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { palette } from '@cbhq/cds-web/tokens';
-import { styled } from 'linaria/react';
 
 type BadgeVariant = keyof typeof badgePalettes;
 

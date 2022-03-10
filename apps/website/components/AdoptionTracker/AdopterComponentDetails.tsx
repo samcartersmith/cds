@@ -1,12 +1,14 @@
 import React, { memo, useMemo } from 'react';
 import { VStack } from '@cbhq/cds-web/layout';
-import { TextLabel1, TextLabel2, TextTitle3, TextHeadline } from '@cbhq/cds-web/typography';
-import type { ComponentData } from './types';
-import { AdopterComponentProps } from './AdopterComponentProps';
-import { AdopterComponentCallSites } from './AdopterComponentCallSites';
-import { AdopterComponentsExtendedStyles } from './AdopterComponentsExtendedStyles';
-import { AdopterCdsRecommendation, useCdsRecommendations } from './AdopterCdsRecommendation';
+import { TextHeadline, TextLabel1, TextLabel2, TextTitle3 } from '@cbhq/cds-web/typography';
+
 import { AdopterComponentsAliasedCds } from ':cds-website/components/AdoptionTracker/AdopterComponentsAliasedCds';
+
+import { AdopterCdsRecommendation, useCdsRecommendations } from './AdopterCdsRecommendation';
+import { AdopterComponentCallSites } from './AdopterComponentCallSites';
+import { AdopterComponentProps } from './AdopterComponentProps';
+import { AdopterComponentsExtendedStyles } from './AdopterComponentsExtendedStyles';
+import type { ComponentData } from './types';
 
 type DetailsObject = { title: string; details: Details };
 type Details = [string, string[]] | string | string[] | DetailsObject | DetailsObject[];

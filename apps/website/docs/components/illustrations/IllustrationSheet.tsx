@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
-
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+import throttle from 'lodash/throttle';
+import {
+  heroSquareNames,
+  pictogramNames,
+  spotRectangleNames,
+  spotSquareNames,
+} from '@cbhq/cds-common/internal/data/illustrationData';
+import { illustrationDescriptionGraph } from '@cbhq/cds-common/internal/data/illustrationDescriptionGraph';
 import {
   illustrationDimensionDefaults,
   illustrationDimensions,
 } from '@cbhq/cds-common/tokens/illustrations';
 import {
   IllustrationHeroSquareNames,
-  IllustrationSpotRectangleNames,
   IllustrationPictogramNames,
+  IllustrationSpotRectangleNames,
   IllustrationSpotSquareNames,
   IllustrationVariant,
 } from '@cbhq/cds-common/types/IllustrationNames';
+import { TextInput } from '@cbhq/cds-web/controls/TextInput';
 import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
 import { Box } from '@cbhq/cds-web/layout';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
-import throttle from 'lodash/throttle';
-import TabItem from '@theme/TabItem';
-import Tabs from '@theme/Tabs';
-import { TextInput } from '@cbhq/cds-web/controls/TextInput';
-import {
-  heroSquareNames,
-  spotRectangleNames,
-  spotSquareNames,
-  pictogramNames,
-} from '@cbhq/cds-common/internal/data/illustrationData';
-import { illustrationDescriptionGraph } from '@cbhq/cds-common/internal/data/illustrationDescriptionGraph';
 
 const variantToNamesMap: Record<
   string,

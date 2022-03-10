@@ -1,6 +1,6 @@
-import { HStack, VStack, Box } from '@cbhq/cds-web/layout';
+import { Box, HStack, VStack } from '@cbhq/cds-web/layout';
 import { Avatar } from '@cbhq/cds-web/media/Avatar';
-import { TextLabel2, TextTitle1, TextLegal, TextBody } from '@cbhq/cds-web/typography';
+import { TextBody, TextLabel2, TextLegal, TextTitle1 } from '@cbhq/cds-web/typography';
 
 type WhatsHappeningHeaderProps = {
   date: string;

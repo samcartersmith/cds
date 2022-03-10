@@ -1,11 +1,11 @@
 /* eslint-disable no-nested-ternary */
 import React from 'react';
 import { css } from 'linaria';
-import { VStack } from '@cbhq/cds-web/layout/VStack';
-import { SelectOption } from '@cbhq/cds-web/controls/SelectOption';
-import { CellMedia } from '@cbhq/cds-web/cells';
 import { shuffle } from 'lodash';
 import { IconName } from '@cbhq/cds-common';
+import { CellMedia } from '@cbhq/cds-web/cells';
+import { SelectOption } from '@cbhq/cds-web/controls/SelectOption';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
 
 const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
 

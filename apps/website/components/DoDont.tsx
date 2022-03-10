@@ -1,8 +1,8 @@
 import { styled } from 'linaria/react';
+import { SpacingScale } from '@cbhq/cds-common';
+import { Box, HStack, VStack } from '@cbhq/cds-web/layout';
 import { palette } from '@cbhq/cds-web/tokens';
 import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
-import { Box, VStack, HStack } from '@cbhq/cds-web/layout';
-import { SpacingScale } from '@cbhq/cds-common';
 
 import { Image, ImageProps } from './Image';
 

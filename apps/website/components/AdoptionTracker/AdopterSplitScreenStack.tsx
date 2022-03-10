@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import { Divider, HStack, VStack } from '@cbhq/cds-web/layout';
 import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
+import { Divider, HStack, VStack } from '@cbhq/cds-web/layout';
 
 type AdopterSplitScreenStackProps = {
   start?: React.ReactNode;

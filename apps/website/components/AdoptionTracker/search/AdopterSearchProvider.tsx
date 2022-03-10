@@ -1,4 +1,5 @@
 import React, { createContext, Dispatch, memo, SetStateAction, useMemo, useState } from 'react';
+
 import { AdopterSearchResult } from '../types';
 
 export type AdopterSearchContextType = {

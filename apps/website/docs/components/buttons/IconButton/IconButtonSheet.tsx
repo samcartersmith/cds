@@ -1,9 +1,9 @@
 import { memo } from 'react';
-import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
 import { capitalize } from '@cbhq/cds-utils';
+import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
+import { Box } from '@cbhq/cds-web/layout/Box';
 import { HStack } from '@cbhq/cds-web/layout/HStack';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
-import { Box } from '@cbhq/cds-web/layout/Box';
 
 const transparentOptions = [
   {

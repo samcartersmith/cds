@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, TextBody } from '@cbhq/cds-web/typography';
 import { VStack } from '@cbhq/cds-web/layout';
+import { Link, TextBody } from '@cbhq/cds-web/typography';
+
 import { AnnouncementCard } from ':cds-website/components/AnnouncementCard';
 
 export const IconAnnouncement = function IconAnnouncement() {

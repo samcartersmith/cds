@@ -6,13 +6,13 @@ function Example() {
     // join is a util for adding a separator element
     // between an array of React components
     return join(
-      statuses.map(item => (
+      statuses.map((item) => (
         <Box spacing={1}>
           <Button key={item} onPress={() => setStatus(item)}>
             {item}
           </Button>
         </Box>
-      ))
+      )),
     );
   }, []);
 

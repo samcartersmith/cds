@@ -1,26 +1,28 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
-import React, { useEffect, memo, useCallback, useMemo, useState } from 'react';
-import { Card, Divider, HStack, VStack } from '@cbhq/cds-web/layout';
-import { TextBody, TextTitle2, TextDisplay2, TextHeadline } from '@cbhq/cds-web/typography';
-import { CellDetailVariant, join, SetState, useToggler } from '@cbhq/cds-common';
-import { CellAccessory } from '@cbhq/cds-web/cells/CellAccessory';
+import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import Link from '@docusaurus/Link';
-import { first as getFirst, toPairs, groupBy } from 'lodash';
+import { first as getFirst, groupBy, toPairs } from 'lodash';
+import { CellDetailVariant, join, SetState, useToggler } from '@cbhq/cds-common';
 import { Button } from '@cbhq/cds-web/buttons';
-import { ThemeProvider } from '@cbhq/cds-web/system';
+import { CellAccessory } from '@cbhq/cds-web/cells/CellAccessory';
 import { Icon } from '@cbhq/cds-web/icons';
-import { adopters } from ':cds-website/data/adopters';
-import { AdopterProjectInfo, AdopterStats } from './types';
-import { getPercentageText } from './utils/getPercentageText';
-import type { Adopter, AdopterStatsItem } from './types';
-import { AdopterSplitScreenStack } from './AdopterSplitScreenStack';
+import { Card, Divider, HStack, VStack } from '@cbhq/cds-web/layout';
+import { ThemeProvider } from '@cbhq/cds-web/system';
+import { TextBody, TextDisplay2, TextHeadline, TextTitle2 } from '@cbhq/cds-web/typography';
+
 import { BetaCell } from ':cds-website/components/BetaCell';
-import { AdopterStatsProvider, statsFallback } from './context/AdopterStatsProvider';
+import { adopters } from ':cds-website/data/adopters';
+
 import { AdopterProjectInfoProvider } from './context/AdopterProjectInfoProvider';
-import { useAdopterStats } from './hooks/useAdopterStats';
+import { AdopterStatsProvider, statsFallback } from './context/AdopterStatsProvider';
 import { useAdopterProjectInfo } from './hooks/useAdopterProjectInfo';
+import { useAdopterStats } from './hooks/useAdopterStats';
+import { getPercentageText } from './utils/getPercentageText';
+import { AdopterSplitScreenStack } from './AdopterSplitScreenStack';
 import { AdopterStatsBreakdownCell } from './AdopterStatsBreakdown';
+import type { Adopter, AdopterStatsItem } from './types';
+import { AdopterProjectInfo, AdopterStats } from './types';
 
 type SetActiveProject = SetState<Adopter>;
 type ProjectProps = { id: Adopter };

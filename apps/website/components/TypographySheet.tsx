@@ -1,19 +1,19 @@
 import { VStack } from '@cbhq/cds-web/layout';
 import {
+  TextBody,
+  TextCaption,
   TextDisplay1,
   TextDisplay2,
   TextDisplay3,
+  TextHeadline,
+  TextLabel1,
+  TextLabel2,
+  TextLegal,
+  TextProps,
   TextTitle1,
   TextTitle2,
   TextTitle3,
   TextTitle4,
-  TextHeadline,
-  TextBody,
-  TextLabel1,
-  TextLabel2,
-  TextCaption,
-  TextLegal,
-  TextProps,
 } from '@cbhq/cds-web/typography';
 
 export function TypographySheet(props: TextProps) {

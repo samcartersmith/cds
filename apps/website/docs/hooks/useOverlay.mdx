@@ -4,9 +4,11 @@ Consumes `PortalProvider` and returns `open` and `close` function to control vis
 This is the underlying hook that supports the `useModal()` and `useAlert()` hook.
 
 ## Prerequisite
+
 Component should be wrapped by `PortalProvider`.
 
 ## How it works?
+
 The hook accepts an optional `idPrefix` which is used as the prefix to generate the random element id.
 This generated id will be used to uniquely identify the element inside the portal provider.
 
@@ -19,39 +21,40 @@ And then when you call `close()`, it will remove the node with same id from the 
 **NOTE:** each `useOverlay` hook can only control one element at a time.
 
 ## API
+
 ### useOverlay(idPrefix?: string)
+
 Accepts an optional `idPrefix` which is used as the prefix to generate the random element id.
 
 ### open(content: ReactElement) => string
+
 This function accepts one of Modal, Alert, or Toast element as param, and then makes it visible.
 
 ### close() => void
+
 This function triggers the exit animation and close the element.
 
 ## Examples
+
 ### Basic
+
 ```jsx live
 function BasicExample() {
   function BasicModal() {
     const modal = useOverlay('modal_'); // or useModal()
-  
-    const handlePress = useCallback(
-      () => {
-        modal.open(
-          <Modal visible>
-            <ModalHeader title="Basic Modal" />
-            <ModalBody>
-              <TextBody as="p">{loremIpsum}</TextBody>
-            </ModalBody>
-            <ModalFooter
-              primaryAction={<Button onPress={modal.close}>Save</Button>}
-            />
-          </Modal>
-        );
-      },
-      [open],
-    );
-  
+
+    const handlePress = useCallback(() => {
+      modal.open(
+        <Modal visible>
+          <ModalHeader title="Basic Modal" />
+          <ModalBody>
+            <TextBody as="p">{loremIpsum}</TextBody>
+          </ModalBody>
+          <ModalFooter primaryAction={<Button onPress={modal.close}>Save</Button>} />
+        </Modal>,
+      );
+    }, [open]);
+
     return (
       <Box spacingBottom={2}>
         <Button onPress={handlePress}>Basic</Button>
@@ -68,13 +71,14 @@ function BasicExample() {
 ```
 
 ### Multiple
+
 ```jsx live
 function MultipleExample() {
   function MultipleModals() {
     // use better names for your components
     const modal1 = useOverlay('modal_'); // or useModal();
     const modal2 = useOverlay('modal_');
-  
+
     const openModal2 = () => {
       modal2.open(
         <Modal visible>
@@ -82,13 +86,11 @@ function MultipleExample() {
           <ModalBody>
             <TextBody as="p">{loremIpsum.repeat(10)}</TextBody>
           </ModalBody>
-          <ModalFooter
-            primaryAction={<Button onPress={modal2.close}>Close Modal2</Button>}
-          />
-        </Modal>
+          <ModalFooter primaryAction={<Button onPress={modal2.close}>Close Modal2</Button>} />
+        </Modal>,
       );
-    }
-  
+    };
+
     const openModal1 = () => {
       modal1.open(
         <Modal visible>
@@ -100,10 +102,10 @@ function MultipleExample() {
             primaryAction={<Button onPress={openModal2}>Open Modal2</Button>}
             secondaryAction={<Button onPress={modal1.close}>Close Modal1</Button>}
           />
-        </Modal>
+        </Modal>,
       );
     };
-  
+
     return (
       <Box>
         <Button onPress={openModal1}>Open Modal1</Button>

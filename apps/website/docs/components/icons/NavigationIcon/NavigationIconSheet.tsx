@@ -1,16 +1,15 @@
 import { useCallback, useState } from 'react';
-
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+import throttle from 'lodash/throttle';
+import { navigationIconNames, navigationIconSizes } from '@cbhq/cds-common/internal/data/iconData';
 import { IconSize } from '@cbhq/cds-common/types/IconSize';
 import { Button } from '@cbhq/cds-web/buttons/Button';
+import { TextInput } from '@cbhq/cds-web/controls/TextInput';
 import { NavigationIcon } from '@cbhq/cds-web/icons/NavigationIcon';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
-import TabItem from '@theme/TabItem';
-import Tabs from '@theme/Tabs';
-import throttle from 'lodash/throttle';
-import { TextInput } from '@cbhq/cds-web/controls/TextInput';
-import { navigationIconNames, navigationIconSizes } from '@cbhq/cds-common/internal/data/iconData';
 
 const STATES = ['Inactive', 'Active'] as const;
 type StateTypes = 'Active' | 'Inactive';

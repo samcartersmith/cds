@@ -4,13 +4,13 @@ import { Collection, Item } from ':cds-website/components/Collection';
 `Toasts` inform users of a process that an app has performed or will perform. They appear temporarily, towards the bottom of the screen. They shouldn’t interrupt the user experience, and they don’t require user input to disappear.
 
 ## Anatomy
-<Image
-  src="/img/components/overlays/toast/anatomy.png"
-/>
+
+<Image src="/img/components/overlays/toast/anatomy.png" />
 
 <span>&nbsp;</span>
 
 ## Usage
+
 **Frequency**
 Only one toast may be displayed at a time. When multiple toasts are necessary, they should appear one at a time.
 
@@ -18,20 +18,23 @@ Only one toast may be displayed at a time. When multiple toasts are necessary, t
 A toast can contain a single action.
 
 **Web vs React Native**
-The only difference is the presence of a dismiss “x” on the  web version. The react native version can be swiped away  sideways or down.
-
+The only difference is the presence of a dismiss “x” on the web version. The react native version can be swiped away sideways or down.
 
 ## Content
+
 **Keep it concise**
+
 - Use short, declarative copy
 - Avoid going over one line
 - Use partial sentences (“Copied to clipboard”) rather than full sentences (“The text was copied to your clipboard”)
 - Actions should be 1-3 words
 
 **Punctuation**
+
 - Don’t put a period at the end of the text, unless there’s more than one sentence
 
 ## Placement
+
 <Collection>
   <Item
     img={{
@@ -49,16 +52,20 @@ The only difference is the presence of a dismiss “x” on the  web version. Th
     img={{
       src: '/img/components/overlays/toast/placement_web.png',
     }}
-    description={["On web, the Toast is 4× (32pt) above the edge of the viewport", "Max-width of the toast is 550pt"]}
+    description={[
+      'On web, the Toast is 4× (32pt) above the edge of the viewport',
+      'Max-width of the toast is 550pt',
+    ]}
   />
 </Collection>
 
 ## Density
+
 The toast does not react to Density.
 
 ## Behaviour
+
 - Toasts animate upwards from the bottom edge of the screen.
 - Upon entrance, snackbars animate upwards from the bottom edge of the screen.
 - They exit by being swiped off-screen (left/right or to the bottom) or automatically disappear after a timeout or user interaction elsewhere (such as summoning a new surface or activity).
 - They automatically disappear from the screen after a minimum of 3 seconds, and a maximum of ten seconds.
-

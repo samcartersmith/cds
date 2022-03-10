@@ -2,20 +2,12 @@
 
 ```jsx live
 <VStack gap={2}>
-    <ProgressBarWithFloatLabel
-        label={0}
-        progress={0}
-        labelPlacement="above"
-    >
-      <ProgressBar progress={0} />
-    </ProgressBarWithFloatLabel>
-    <ProgressBarWithFloatLabel
-        label={20}
-        progress={0.2}
-        labelPlacement="above"
-    >
-        <ProgressBar progress={0.2} />
-    </ProgressBarWithFloatLabel>
+  <ProgressBarWithFloatLabel label={0} progress={0} labelPlacement="above">
+    <ProgressBar progress={0} />
+  </ProgressBarWithFloatLabel>
+  <ProgressBarWithFloatLabel label={20} progress={0.2} labelPlacement="above">
+    <ProgressBar progress={0.2} />
+  </ProgressBarWithFloatLabel>
 </VStack>
 ```
 
@@ -23,20 +15,12 @@
 
 ```jsx live
 <VStack gap={2}>
-    <ProgressBarWithFloatLabel
-        label={0}
-        progress={0}
-        labelPlacement="below"
-    >
-      <ProgressBar progress={0} />
-    </ProgressBarWithFloatLabel>
-    <ProgressBarWithFloatLabel
-        label={20}
-        progress={0.2}
-        labelPlacement="below"
-    >
-        <ProgressBar progress={0.2} />
-    </ProgressBarWithFloatLabel>
+  <ProgressBarWithFloatLabel label={0} progress={0} labelPlacement="below">
+    <ProgressBar progress={0} />
+  </ProgressBarWithFloatLabel>
+  <ProgressBarWithFloatLabel label={20} progress={0.2} labelPlacement="below">
+    <ProgressBar progress={0.2} />
+  </ProgressBarWithFloatLabel>
 </VStack>
 ```
 
@@ -45,11 +29,7 @@
 ```jsx live
 <ThemeProvider>
   <VStack gap={2}>
-    <ProgressBarWithFloatLabel
-        label={70}
-        progress={0.7}
-        disabled
-    >
+    <ProgressBarWithFloatLabel label={70} progress={0.7} disabled>
       <ProgressBar progress={0.7} disabled />
     </ProgressBarWithFloatLabel>
   </VStack>
@@ -60,48 +40,52 @@
 
 ```jsx live
 function Example() {
-    const renderLabelNumStr = useCallback((num) => {
-        return `$${num.toLocaleString()}`;
-    }, []);
+  const renderLabelNumStr = useCallback((num) => {
+    return `$${num.toLocaleString()}`;
+  }, []);
 
-    const renderLabelNum = useCallback((num, disabled) => {
-      return <TextTitle3 as="span" disabled={disabled}>${num.toLocaleString()}</TextTitle3>;
-    }, []);
-
+  const renderLabelNum = useCallback((num, disabled) => {
     return (
-        <VStack gap={2}>
-          <ProgressBarWithFloatLabel
-            progress={0.6}
-            label={{ value: 12500, render: renderLabelNumStr }}
-            labelPlacement="above"
-          >
-            <ProgressBar progress={0.6} />
-          </ProgressBarWithFloatLabel>
-          <ProgressBarWithFloatLabel
-            progress={0.6}
-            label={{ value: 12500, render: renderLabelNum }}
-            labelPlacement="above"
-          >
-            <ProgressBar progress={0.6} />
-          </ProgressBarWithFloatLabel>
-          <ProgressBarWithFloatLabel
-            progress={0.6}
-            label={{ value: 12500, render: renderLabelNumStr }}
-            labelPlacement="above"
-            disabled
-          >
-            <ProgressBar disabled progress={0.6} />
-          </ProgressBarWithFloatLabel>
-          <ProgressBarWithFloatLabel
-            progress={0.6}
-            label={{ value: 12500, render: renderLabelNum }}
-            labelPlacement="above"
-            disabled
-          >
-            <ProgressBar disabled progress={0.6} />
-          </ProgressBarWithFloatLabel>
-        </VStack>
+      <TextTitle3 as="span" disabled={disabled}>
+        ${num.toLocaleString()}
+      </TextTitle3>
     );
+  }, []);
+
+  return (
+    <VStack gap={2}>
+      <ProgressBarWithFloatLabel
+        progress={0.6}
+        label={{ value: 12500, render: renderLabelNumStr }}
+        labelPlacement="above"
+      >
+        <ProgressBar progress={0.6} />
+      </ProgressBarWithFloatLabel>
+      <ProgressBarWithFloatLabel
+        progress={0.6}
+        label={{ value: 12500, render: renderLabelNum }}
+        labelPlacement="above"
+      >
+        <ProgressBar progress={0.6} />
+      </ProgressBarWithFloatLabel>
+      <ProgressBarWithFloatLabel
+        progress={0.6}
+        label={{ value: 12500, render: renderLabelNumStr }}
+        labelPlacement="above"
+        disabled
+      >
+        <ProgressBar disabled progress={0.6} />
+      </ProgressBarWithFloatLabel>
+      <ProgressBarWithFloatLabel
+        progress={0.6}
+        label={{ value: 12500, render: renderLabelNum }}
+        labelPlacement="above"
+        disabled
+      >
+        <ProgressBar disabled progress={0.6} />
+      </ProgressBarWithFloatLabel>
+    </VStack>
+  );
 }
 ```
 

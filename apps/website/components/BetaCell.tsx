@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
+import { css } from 'linaria';
+import { BoxBaseProps } from '@cbhq/cds-common';
+import { useOffsetStyles } from '@cbhq/cds-web/hooks/useOffsetStyles';
 import { Box, HStack } from '@cbhq/cds-web/layout';
 import { Pressable } from '@cbhq/cds-web/system';
-import { css } from 'linaria';
-import { useOffsetStyles } from '@cbhq/cds-web/hooks/useOffsetStyles';
-import { BoxBaseProps } from '@cbhq/cds-common';
 
 const pressClassName = css`
   padding: 0;

@@ -1,13 +1,15 @@
-import React, { useCallback, useState, memo, useContext } from 'react';
-import { Divider, VStack } from '@cbhq/cds-web/layout';
-import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';
+import React, { memo, useCallback, useContext, useState } from 'react';
 import { orderBy, sumBy, toPairs } from 'lodash';
 import { Icon } from '@cbhq/cds-web/icons';
+import { Divider, VStack } from '@cbhq/cds-web/layout';
+import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';
+
 import { BetaCell } from ':cds-website/components/BetaCell';
-import type { ComponentData } from './types';
+
 import { useGetGitLink } from './hooks/useGetGitLink';
 import { AdopterSearchContext, AdopterSearchContextType } from './search/AdopterSearchProvider';
 import { getResultsByType, isMatch } from './search/SearchUtils';
+import type { ComponentData } from './types';
 
 export const AdopterComponentProps = memo(
   ({ propsWithCallSites }: { propsWithCallSites: ComponentData['propsWithCallSites'] }) => {

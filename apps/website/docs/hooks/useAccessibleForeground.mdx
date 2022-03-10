@@ -43,7 +43,7 @@ function Example() {
 function Example() {
   return (
     <ExampleWithThemeToggles>
-      {assetColors.map(assetColor => (
+      {assetColors.map((assetColor) => (
         <Box height={50} spacing={2} dangerouslySetBackground={assetColor}>
           <TextBody
             as="p"

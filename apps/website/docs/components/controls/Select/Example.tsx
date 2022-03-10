@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { shuffle } from 'lodash';
 import { Select } from '@cbhq/cds-web/controls/Select';
 import { SelectOption } from '@cbhq/cds-web/controls/SelectOption';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { TextTitle3 } from '@cbhq/cds-web/typography';
-import { shuffle } from 'lodash';
 
 // Give me 4 random designers and engineers
 const design = shuffle([

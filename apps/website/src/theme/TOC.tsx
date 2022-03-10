@@ -1,7 +1,7 @@
 import React from 'react';
 import OriginalTOC, { TOCHeadings } from '@theme-original/TOC';
 
-import { useRightSidebar, TOCItem } from './RightSidebar';
+import { TOCItem, useRightSidebar } from './RightSidebar';
 
 const TOC = (props: { toc: TOCItem[] }) => {
   const { items } = useRightSidebar();

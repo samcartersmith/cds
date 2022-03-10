@@ -1,25 +1,27 @@
 import React, { memo, useContext, useMemo } from 'react';
-import { HStack, VStack } from '@cbhq/cds-web/layout';
-import { TextTitle1, TextBody } from '@cbhq/cds-web/typography';
-import { IconButton } from '@cbhq/cds-web/buttons';
 import Link, { LinkProps } from '@docusaurus/Link';
-import { Tabs } from ':cds-website/components/Tabs';
+import { IconButton } from '@cbhq/cds-web/buttons';
+import { HStack, VStack } from '@cbhq/cds-web/layout';
+import { TextBody, TextTitle1 } from '@cbhq/cds-web/typography';
+
 import { StatsTextStack } from ':cds-website/components/StatsTextStack';
-import { useAdopterProjectInfo } from './hooks/useAdopterProjectInfo';
-import { useAdopterComponents } from './hooks/useAdopterComponents';
-import { useAdopterStats } from './hooks/useAdopterStats';
-import { useAdoptionPercent } from './hooks/useAdoptionPercent';
-import { AdopterComponentsList } from './AdopterComponentsList';
-import { useOkrPlanningComponents } from './hooks/useOkrPlanningComponents';
+import { Tabs } from ':cds-website/components/Tabs';
+
 import {
   AdopterTabContext,
   AdopterTabContextType,
   AdopterTabProvider,
 } from './context/AdopterTabProvider';
+import { useAdopterComponents } from './hooks/useAdopterComponents';
+import { useAdopterProjectInfo } from './hooks/useAdopterProjectInfo';
+import { useAdopterStats } from './hooks/useAdopterStats';
+import { useAdoptionPercent } from './hooks/useAdoptionPercent';
+import { useOkrPlanningComponents } from './hooks/useOkrPlanningComponents';
 import { AdopterSearchInput } from './search/AdopterSearchInput';
-import { ComponentData } from './types';
 import { AdopterSearchProvider } from './search/AdopterSearchProvider';
+import { AdopterComponentsList } from './AdopterComponentsList';
 import { AdopterStatsBreakdown } from './AdopterStatsBreakdown';
+import { ComponentData } from './types';
 
 const AdopterTabs = memo(() => {
   const { id } = useAdopterProjectInfo();

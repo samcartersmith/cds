@@ -1,8 +1,8 @@
 import { startCase } from 'lodash';
-import { VStack } from '@cbhq/cds-web/layout/VStack';
-import { HStack } from '@cbhq/cds-web/layout/HStack';
 import { IllustrationPictogramNames } from '@cbhq/cds-common';
 import { Pictogram } from '@cbhq/cds-web/illustrations';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { TextBody, TextTitle3 } from '@cbhq/cds-web/typography';
 
 // TODO get these from something legit

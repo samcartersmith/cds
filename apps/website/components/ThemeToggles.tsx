@@ -1,13 +1,11 @@
 import { memo, useCallback } from 'react';
-
-import { Switch } from '@cbhq/cds-web/controls';
-import { Spacer } from '@cbhq/cds-web/layout';
-
-import { useFeatureFlagUpdater } from '@cbhq/cds-common/system/useFeatureFlagUpdater';
+import useThemeContext from '@theme/hooks/useThemeContext';
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
 import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useFeatureFlagUpdater } from '@cbhq/cds-common/system/useFeatureFlagUpdater';
+import { Switch } from '@cbhq/cds-web/controls';
+import { Spacer } from '@cbhq/cds-web/layout';
 
 export type ThemeTogglesProps = {
   showFrontier?: boolean;

@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-
-import { mapValues } from '@cbhq/cds-utils';
+import throttle from 'lodash/throttle';
 import * as animations from '@cbhq/cds-lottie-files';
 import { LottieSource } from '@cbhq/cds-lottie-files/LottieSource';
-import { Box } from '@cbhq/cds-web/layout';
-import throttle from 'lodash/throttle';
+import { mapValues } from '@cbhq/cds-utils';
 import { Lottie } from '@cbhq/cds-web/animation/Lottie';
+import { TextInput } from '@cbhq/cds-web/controls/TextInput';
+import { Box } from '@cbhq/cds-web/layout';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
-import { TextInput } from '@cbhq/cds-web/controls/TextInput';
 
 export const LottieSheet = function LottieSheet() {
   const [query, setQuery] = useState('');

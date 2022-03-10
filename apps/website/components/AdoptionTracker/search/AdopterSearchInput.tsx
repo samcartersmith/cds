@@ -1,15 +1,18 @@
+import './ant-styles.css';
+
+import React, { memo, useCallback, useContext, useState } from 'react';
 import { Select, Tag } from 'antd';
-import React, { memo, useContext, useState } from 'react';
-import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
 import { CustomTagProps } from 'rc-select/lib/interface/generator';
 import { Box } from '@cbhq/cds-web/layout';
+import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
+
 import {
   AdopterSearchResult,
   AdopterSearchResultType,
   ComponentData,
 } from ':cds-website/components/AdoptionTracker/types';
+
 import { AdopterSearchContext, AdopterSearchContextType } from './AdopterSearchProvider';
-import './ant-styles.css';
 
 const { Option, OptGroup } = Select;
 
@@ -158,16 +161,19 @@ export const AdopterSearchInput = memo(({ components }: AdoptionTrackerSearchInp
   const [searchValue, setSearchValue] = useState('');
   const { setResults } = useContext(AdopterSearchContext) as AdopterSearchContextType;
 
-  function handleChange(values: string[]) {
-    setSearchValue('');
+  const handleChange = useCallback(
+    (values: string[]) => {
+      setSearchValue('');
 
-    const results: AdopterSearchResult[] = values.map((id: string) => getSearchResultFromId(id));
-    setResults(results);
-  }
+      const results: AdopterSearchResult[] = values.map((id: string) => getSearchResultFromId(id));
+      setResults(results);
+    },
+    [setResults],
+  );
 
-  function handleSearch(value: string) {
+  const handleSearch = useCallback((value: string) => {
     setSearchValue(value);
-  }
+  }, []);
 
   return (
     <Box width={450} spacingBottom={2}>

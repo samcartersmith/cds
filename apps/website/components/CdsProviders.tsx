@@ -1,10 +1,9 @@
 import { memo } from 'react';
-import { css } from 'linaria';
 import useThemeContext from '@theme/hooks/useThemeContext';
-
+import { css } from 'linaria';
 import { FeatureFlagProvider, ThemeProvider } from '@cbhq/cds-web/system';
-import { fontFamily, palette, spacing } from '@cbhq/cds-web/tokens';
 import { RootScaleProvider } from '@cbhq/cds-web/system/RootScaleProvider';
+import { fontFamily, palette, spacing } from '@cbhq/cds-web/tokens';
 
 const overrides = css`
   display: contents;

@@ -1,5 +1,6 @@
-import { entries } from '@cbhq/cds-utils';
 import { kebabCase, uniq } from 'lodash';
+import { entries } from '@cbhq/cds-utils';
+
 import { components as cdsComponents } from ':cds-website/data/componentsList';
 
 const tags = {

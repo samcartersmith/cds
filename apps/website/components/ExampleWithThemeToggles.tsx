@@ -1,9 +1,8 @@
 import React, { memo } from 'react';
-
+import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { Divider, VStack } from '@cbhq/cds-web/layout';
 import { ThemeProvider } from '@cbhq/cds-web/system';
 
-import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { ThemeToggles, ThemeTogglesProps } from './ThemeToggles';
 
 export const ExampleWithThemeToggles: React.FC<ThemeTogglesProps> = memo(

@@ -1,11 +1,12 @@
 import React, { useCallback, useMemo } from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { kebabCase } from '@cbhq/cds-utils';
-
-import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';
 import { Icon } from '@cbhq/cds-web/icons';
 import { VStack } from '@cbhq/cds-web/layout';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';
+
 import { BetaCell } from ':cds-website/components/BetaCell';
+
 import { getCdsRecs } from './utils/getCdsRecs';
 
 export const useCdsRecommendations = (name: string) => {

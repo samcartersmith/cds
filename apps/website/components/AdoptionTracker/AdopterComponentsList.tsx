@@ -1,10 +1,11 @@
-import React, { useState, memo, useCallback, useEffect, useContext } from 'react';
-import { ListCell } from '@cbhq/cds-web/cells';
+import React, { memo, useCallback, useContext, useEffect, useState } from 'react';
+import AutoSizer, { Size } from 'react-virtualized/dist/commonjs/AutoSizer';
 import List, { ListRowProps } from 'react-virtualized/dist/commonjs/List';
 import WindowScroller, {
   WindowScrollerChildProps,
 } from 'react-virtualized/dist/commonjs/WindowScroller';
-import AutoSizer, { Size } from 'react-virtualized/dist/commonjs/AutoSizer';
+import { ListCell } from '@cbhq/cds-web/cells';
+
 import {
   AdopterTabContext,
   AdopterTabContextType,
@@ -13,11 +14,12 @@ import {
   AdopterSearchContext,
   AdopterSearchContextType,
 } from ':cds-website/components/AdoptionTracker/search/AdopterSearchProvider';
-import type { AdopterSearchResult, AdopterTabKey, ComponentData } from './types';
+
+import { getResultsByType, isMatch } from './search/SearchUtils';
 import { AdopterComponentDetails } from './AdopterComponentDetails';
 import { AdopterComponentsEmptyState } from './AdopterComponentsEmptyState';
-import { getResultsByType, isMatch } from './search/SearchUtils';
 import { AdopterSplitScreenStack } from './AdopterSplitScreenStack';
+import type { AdopterSearchResult, AdopterTabKey, ComponentData } from './types';
 
 type AdopterListCellProps = ComponentData & {
   isActive: boolean;
@@ -31,17 +33,15 @@ const AdopterListCell = memo((props: AdopterListCellProps) => {
   const handleOnPress = useCallback(() => setActiveComponent(), [setActiveComponent]);
 
   return (
-    <>
-      <ListCell
-        title={name}
-        description={`${totalCallSites} files`}
-        detail={`${totalInstances} instances`}
-        accessory={isActive ? 'selected' : 'arrow'}
-        onPress={handleOnPress}
-        selected={isActive}
-        reduceHorizontalSpacing
-      />
-    </>
+    <ListCell
+      title={name}
+      description={`${totalCallSites} files`}
+      detail={`${totalInstances} instances`}
+      accessory={isActive ? 'selected' : 'arrow'}
+      onPress={handleOnPress}
+      selected={isActive}
+      reduceHorizontalSpacing
+    />
   );
 });
 
@@ -99,6 +99,7 @@ export const AdopterComponentsList = memo(
         ? filteredComponents[activeComponentIndex]
         : filteredComponents[0];
 
+    // eslint-disable-next-line react/no-unstable-nested-components
     const Row = ({ index, style }: ListRowProps) => {
       const item = filteredComponents[index];
       const { name, sourceFile } = item;

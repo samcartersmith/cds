@@ -12,9 +12,9 @@
 
 ```jsx live
 <HStack gap={2}>
-    <ProgressCircle progress={0} weight="heavy" size={100} />
-    <ProgressCircle progress={0.5} weight="heavy" size={100} />
-    <ProgressCircle progress={1} weight="heavy" size={100} />
+  <ProgressCircle progress={0} weight="heavy" size={100} />
+  <ProgressCircle progress={0.5} weight="heavy" size={100} />
+  <ProgressCircle progress={1} weight="heavy" size={100} />
 </HStack>
 ```
 
@@ -22,9 +22,9 @@
 
 ```jsx live
 <HStack gap={2}>
-    <ProgressCircle progress={0} hideText size={25} />
-    <ProgressCircle progress={0.5} hideText size={25} />
-    <ProgressCircle progress={1} hideText size={25} />
+  <ProgressCircle progress={0} hideText size={25} />
+  <ProgressCircle progress={0.5} hideText size={25} />
+  <ProgressCircle progress={1} hideText size={25} />
 </HStack>
 ```
 
@@ -42,16 +42,17 @@
 
 ```jsx live
 <HStack gap={2}>
-    <ProgressCircle progress={0.5} color="positive" size={100} />
-    <ProgressCircle progress={0.5} color="negative" size={100} />
-    <ProgressCircle progress={0.5} color="primary" size={100} />
-    <ProgressCircle progress={0.5} color="foreground" size={100} />
+  <ProgressCircle progress={0.5} color="positive" size={100} />
+  <ProgressCircle progress={0.5} color="negative" size={100} />
+  <ProgressCircle progress={0.5} color="primary" size={100} />
+  <ProgressCircle progress={0.5} color="foreground" size={100} />
 </HStack>
 ```
 
 **Fill Parent**
 
 The progress circle can be dynamically sized to fit its parent. If you drag the browser window smaller or larger then the ProgressCircle will resize accordingly.
+
 ```jsx live
 <HStack gap={2} flexWrap="wrap">
   <div style={{ height: '15vw', width: '15vw', minWidth: '60px', minHeight: '60px' }}>
@@ -69,6 +70,7 @@ The progress circle can be dynamically sized to fit its parent. If you drag the 
 **Interactive Demo**
 
 This is for demo purposes. ProgressContainerWithButtons isn't designed for production usage.
+
 ```jsx live
 <ProgressContainerWithButtons>
   {({ calculateProgress }) => (

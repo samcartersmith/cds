@@ -21,12 +21,15 @@ const DEFAULT_PERIOD = 'day';
 /* -------------------------------------------------------------------------- */
 
 // array of label, value objects. Label should be formatted with app's intl library
-const periods = [{ label: 'Hour', value: 'hour' }, { label: 'Day', value: 'day' }];
+const periods = [
+  { label: 'Hour', value: 'hour' },
+  { label: 'Day', value: 'day' },
+];
 
- // replace with your app's date formatter
+// replace with your app's date formatter
 const formatDate = (date: Date) => date.toLocaleString('en-US');
 
- // replace with your app's currency formatter
+// replace with your app's currency formatter
 const formatCurrency = (num: number | string) => num.toLocaleString('en-US');
 
 function getPercentChange(prev: number, next: number) {

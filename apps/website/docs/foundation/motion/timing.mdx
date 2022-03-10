@@ -9,7 +9,16 @@ import { Video } from '../../../components/Video';
 import { Collection, Item } from '../../../components/Collection';
 import { Cell } from '../../../components/Cell';
 import { VStack, HStack as Row, Divider, Box } from '@cbhq/cds-web/layout';
-import { TextDisplay1, TextDisplay2, TextTitle2, TextTitle3, Link, TextTitle1, TextLabel2, TextLabel1 } from '@cbhq/cds-web/typography';
+import {
+  TextDisplay1,
+  TextDisplay2,
+  TextTitle2,
+  TextTitle3,
+  Link,
+  TextTitle1,
+  TextLabel2,
+  TextLabel1,
+} from '@cbhq/cds-web/typography';
 
 <TextDisplay1 as="h1">Timing</TextDisplay1>
 
@@ -19,7 +28,9 @@ import { TextDisplay1, TextDisplay2, TextTitle2, TextTitle3, Link, TextTitle1, T
 <Link to="#duration">Duration&#8594;</Link>
 
 <TextDisplay2 as="p" spacingVertical={0}>
-  Timing is a combination of easing curves and durations. It’s an essential element that adheres to the principles of the physical world, conveying speed and gravity. Timing makes incoming and outgoing elements feel natural and real.
+  Timing is a combination of easing curves and durations. It’s an essential element that adheres to
+  the principles of the physical world, conveying speed and gravity. Timing makes incoming and
+  outgoing elements feel natural and real.
 </TextDisplay2>
 
 <Box spacingVertical={10}>
@@ -34,7 +45,8 @@ import { TextDisplay1, TextDisplay2, TextTitle2, TextTitle3, Link, TextTitle1, T
 <div id="easing" />
 <TextDisplay2 as="h2">Easing</TextDisplay2>
 <TextTitle2 as="p" spacingBottom={0}>
-  Easing controls the rate of movement and transitions. Like the physical world, objects should accelerate and decelerate, emphasizing friction, gravity, and mass.
+  Easing controls the rate of movement and transitions. Like the physical world, objects should
+  accelerate and decelerate, emphasizing friction, gravity, and mass.
 </TextTitle2>
 
 <Box spacingVertical={10}>
@@ -48,109 +60,150 @@ import { TextDisplay1, TextDisplay2, TextTitle2, TextTitle3, Link, TextTitle1, T
 
 <TextDisplay2 as="h2">Easing Types</TextDisplay2>
 <TextTitle2 as="p" spacingBottom={0}>
-  There are four types of easing curves that are used as elements enter, exit, and persist across the screen.
+  There are four types of easing curves that are used as elements enter, exit, and persist across
+  the screen.
 </TextTitle2>
 
-<TextTitle1 as="h1" spacingTop={10}>Global</TextTitle1>
+<TextTitle1 as="h1" spacingTop={10}>
+  Global
+</TextTitle1>
 <Collection spacingVertical={0}>
   <Item spacingHorizontal={0} spacingEnd={6}>
-    <TextLabel2 as="p">Global is the most common type of easing. It’s used for objects that move within a view between point A and point B. Objects such as buttons, toggles, and selection controls use Global to emphasize the start and end of a transition by accelerating quickly and gradually slowing down.</TextLabel2>
+    <TextLabel2 as="p">
+      Global is the most common type of easing. It’s used for objects that move within a view
+      between point A and point B. Objects such as buttons, toggles, and selection controls use
+      Global to emphasize the start and end of a transition by accelerating quickly and gradually
+      slowing down.
+    </TextLabel2>
   </Item>
   <Item
     flexGrow={2}
     vid={{
       light: '/video/lightmode/02_timing/cds_lm_globalTimingMaster.mp4',
       dark: '/video/darkmode/02_timing/cds_dm_globalTimingMaster.mp4',
-      options: { autoPlay: false, controls: true }
+      options: { autoPlay: false, controls: true },
     }}
   />
 </Collection>
 
-<TextTitle1 as="h1" spacingTop={10}>Enter</TextTitle1>
+<TextTitle1 as="h1" spacingTop={10}>
+  Enter
+</TextTitle1>
 <Collection spacingVertical={0}>
   <Item spacingHorizontal={0} spacingEnd={6}>
-    <TextLabel2 as="p">Enter is a type of easing used for objects that animate into view. Objects come into frame at peak velocity and decelerate afterwards. Enter is used for objects such as modals, trays, and notifications.</TextLabel2>
+    <TextLabel2 as="p">
+      Enter is a type of easing used for objects that animate into view. Objects come into frame at
+      peak velocity and decelerate afterwards. Enter is used for objects such as modals, trays, and
+      notifications.
+    </TextLabel2>
   </Item>
   <Item
     flexGrow={2}
     vid={{
       light: '/video/lightmode/02_timing/cds_lm_enterTimingMaster.mp4',
       dark: '/video/darkmode/02_timing/cds_dm_enterTimingMaster.mp4',
-      options: { autoPlay: false, controls: true }
+      options: { autoPlay: false, controls: true },
     }}
   />
 </Collection>
 
-<TextTitle1 as="h1" spacingTop={10}>Exit</TextTitle1>
+<TextTitle1 as="h1" spacingTop={10}>
+  Exit
+</TextTitle1>
 <Collection spacingVertical={0}>
   <Item spacingHorizontal={0} spacingEnd={6}>
-    <TextLabel2 as="p">Exit is a type of easing used for objects that leave the view. Objects gradually acclerate before leaving the view at peak velocity. Exit is used for objects such as modals, trays, and notifications.</TextLabel2>
+    <TextLabel2 as="p">
+      Exit is a type of easing used for objects that leave the view. Objects gradually acclerate
+      before leaving the view at peak velocity. Exit is used for objects such as modals, trays, and
+      notifications.
+    </TextLabel2>
   </Item>
   <Item
     flexGrow={2}
     vid={{
       light: '/video/lightmode/02_timing/cds_lm_exitTimingMaster.mp4',
       dark: '/video/darkmode/02_timing/cds_dm_exitTimingMaster.mp4',
-      options: { autoPlay: false, controls: true }
+      options: { autoPlay: false, controls: true },
     }}
   />
 </Collection>
 
-<TextTitle1 as="h1" spacingTop={10}>Expressive</TextTitle1>
+<TextTitle1 as="h1" spacingTop={10}>
+  Expressive
+</TextTitle1>
 <Collection spacingVertical={0}>
   <Item spacingHorizontal={0} spacingEnd={6}>
-    <TextLabel2 as="p">Expressive is a stylized version of Global easing. It exaggerates the sense of speed to give extra attention to an animation. It’s used for objects that move within a view between point A and point B.</TextLabel2>
+    <TextLabel2 as="p">
+      Expressive is a stylized version of Global easing. It exaggerates the sense of speed to give
+      extra attention to an animation. It’s used for objects that move within a view between point A
+      and point B.
+    </TextLabel2>
   </Item>
   <Item
     flexGrow={2}
     vid={{
       light: '/video/lightmode/02_timing/cds_lm_expressiveTimingMaster.mp4',
       dark: '/video/darkmode/02_timing/cds_dm_expressiveTimingMaster.mp4',
-      options: { autoPlay: false, controls: true }
+      options: { autoPlay: false, controls: true },
     }}
   />
 </Collection>
 
 <Collection spacingVertical={10}>
-  <Item
-    alignItems="flex-start"
-  >
+  <Item alignItems="flex-start">
     <Video
-      light='/video/lightmode/02_timing/cds_lm_correct_01.mp4'
-      dark='/video/darkmode/02_timing/cds_dm_correct_01.mp4'
+      light="/video/lightmode/02_timing/cds_lm_correct_01.mp4"
+      dark="/video/darkmode/02_timing/cds_dm_correct_01.mp4"
     />
-    <TextLabel1 color="primary" as="p">CDS</TextLabel1>
-    <TextLabel2 as="p">CDS motion helps our UI feel lightweight and easy to use. It mimics the physical world. Objects speed up quickly and resolve gradually.</TextLabel2>
+    <TextLabel1 color="primary" as="p">
+      CDS
+    </TextLabel1>
+    <TextLabel2 as="p">
+      CDS motion helps our UI feel lightweight and easy to use. It mimics the physical world.
+      Objects speed up quickly and resolve gradually.
+    </TextLabel2>
   </Item>
-  <Item
-    alignItems="flex-start"
-  >
+  <Item alignItems="flex-start">
     <Video
-      light='/video/lightmode/02_timing/cds_lm_dont_linear_01.mp4'
-      dark='/video/darkmode/02_timing/cds_dm_dont_linear_01.mp4'
+      light="/video/lightmode/02_timing/cds_lm_dont_linear_01.mp4"
+      dark="/video/darkmode/02_timing/cds_dm_dont_linear_01.mp4"
     />
-    <TextLabel1 color="negative" as="p">Linear</TextLabel1>
-    <TextLabel2 as="p">We avoid linear motion, which feels unnatural. It makes objects and transitions feel stiff and mechnical.</TextLabel2>
+    <TextLabel1 color="negative" as="p">
+      Linear
+    </TextLabel1>
+    <TextLabel2 as="p">
+      We avoid linear motion, which feels unnatural. It makes objects and transitions feel stiff and
+      mechnical.
+    </TextLabel2>
   </Item>
-  <Item
-    alignItems="flex-start"
-  >
+  <Item alignItems="flex-start">
     <Video
-      light='/video/lightmode/02_timing/cds_lm_dont_bounce_01.mp4'
-      dark='/video/darkmode/02_timing/cds_dm_dont_bounce_01.mp4'
+      light="/video/lightmode/02_timing/cds_lm_dont_bounce_01.mp4"
+      dark="/video/darkmode/02_timing/cds_dm_dont_bounce_01.mp4"
     />
-    <TextLabel1 color="negative" as="p">Spring & Bounce</TextLabel1>
-    <TextLabel2 as="p">We avoid spring and bounce, which is decorative rather than  efficient. Motion should be accessible, reduce tap target issues, and prevent motion sickness.</TextLabel2>
+    <TextLabel1 color="negative" as="p">
+      Spring & Bounce
+    </TextLabel1>
+    <TextLabel2 as="p">
+      We avoid spring and bounce, which is decorative rather than efficient. Motion should be
+      accessible, reduce tap target issues, and prevent motion sickness.
+    </TextLabel2>
   </Item>
 </Collection>
 
 <Divider />
 
-<TextTitle1 as="h1" spacingTop={10}>Easing Tokens</TextTitle1>
+<TextTitle1 as="h1" spacingTop={10}>
+  Easing Tokens
+</TextTitle1>
 <Collection spacingVertical={0}>
   <Item spacingHorizontal={0} spacingEnd={6}>
-    <TextLabel2 as="p">A token is a pre-defined pattern that provides UI and transition consistency.</TextLabel2>
-    <TextLabel2 as="p">For easy implementation, there are currently 3 CDS tokens available to use.</TextLabel2>
+    <TextLabel2 as="p">
+      A token is a pre-defined pattern that provides UI and transition consistency.
+    </TextLabel2>
+    <TextLabel2 as="p">
+      For easy implementation, there are currently 3 CDS tokens available to use.
+    </TextLabel2>
   </Item>
   <Item flexGrow={2}>
     <VStack width="100%">
@@ -232,7 +285,9 @@ import { TextDisplay1, TextDisplay2, TextTitle2, TextTitle3, Link, TextTitle1, T
 <div id="duration" />
 <TextDisplay2 as="h2">Duration</TextDisplay2>
 <TextTitle2 as="p" spacingBottom={0}>
-  Motion duration is based on an object’s traveling distance and size. Objects that transition over a large area (in position or scale) use a longer duration versus objects that transition over a shorter surface.
+  Motion duration is based on an object’s traveling distance and size. Objects that transition over
+  a large area (in position or scale) use a longer duration versus objects that transition over a
+  shorter surface.
 </TextTitle2>
 
 <Box spacingVertical={10}>
@@ -273,7 +328,9 @@ import { TextDisplay1, TextDisplay2, TextTitle2, TextTitle3, Link, TextTitle1, T
   />
 </Collection>
 
-<TextTitle1 as="h1" spacingTop={10}>Size</TextTitle1>
+<TextTitle1 as="h1" spacingTop={10}>
+  Size
+</TextTitle1>
 <Collection spacingVertical={0}>
   <Item spacingHorizontal={0} spacingEnd={6} alignItems="flex-start">
     <TextLabel2 as="p">Small objects have a shorter duration than larger ones.</TextLabel2>
@@ -282,45 +339,60 @@ import { TextDisplay1, TextDisplay2, TextTitle2, TextTitle3, Link, TextTitle1, T
     vid={{
       light: '/video/lightmode/02_timing/cds_lm_200ms.mp4',
       dark: '/video/darkmode/02_timing/cds_dm_200ms.mp4',
-      options: { autoPlay: false, controls: true }
+      options: { autoPlay: false, controls: true },
     }}
   />
   <Item
     vid={{
       light: '/video/lightmode/02_timing/cds_lm_300ms.mp4',
       dark: '/video/darkmode/02_timing/cds_dm_300ms.mp4',
-      options: { autoPlay: false, controls: true }
+      options: { autoPlay: false, controls: true },
     }}
   />
 </Collection>
 
-<TextTitle1 as="h1" spacingTop={10}>Distance</TextTitle1>
+<TextTitle1 as="h1" spacingTop={10}>
+  Distance
+</TextTitle1>
 <Collection spacingVertical={0}>
   <Item spacingHorizontal={0} spacingEnd={6}>
-    <TextLabel2 as="p">Objects that transition across a small surface area have a shorter duration than objects that travel over a large surface area.</TextLabel2>
+    <TextLabel2 as="p">
+      Objects that transition across a small surface area have a shorter duration than objects that
+      travel over a large surface area.
+    </TextLabel2>
   </Item>
   <Item
     vid={{
       light: '/video/lightmode/02_timing/cds_lm_switch_200ms.mp4',
       dark: '/video/darkmode/02_timing/cds_dm_switch_200ms.mp4',
-      options: { autoPlay: false, controls: true }
+      options: { autoPlay: false, controls: true },
     }}
   />
   <Item
     vid={{
       light: '/video/lightmode/02_timing/cds_lm_expand_300ms.mp4',
       dark: '/video/darkmode/02_timing/cds_dm_expand_300ms.mp4',
-      options: { autoPlay: false, controls: true }
+      options: { autoPlay: false, controls: true },
     }}
   />
 </Collection>
 
-<TextTitle1 as="h1" spacingTop={10}>Duration Tokens</TextTitle1>
+<TextTitle1 as="h1" spacingTop={10}>
+  Duration Tokens
+</TextTitle1>
 <Collection>
   <Item spacingHorizontal={0} spacingEnd={6}>
-    <TextLabel2 as="p">Duration Tokens are a set of patterns that give motion consistency to interfaces and transitions.</TextLabel2>
-    <TextLabel2 as="p">For easy implementation, there are currently 9 CDS duration tokens that are available to use.</TextLabel2>
-    <TextLabel2 as="p">Each duration token has 3 levels of speed, allowing flexibility for a wide range of component sizes and screen transitions.</TextLabel2>
+    <TextLabel2 as="p">
+      Duration Tokens are a set of patterns that give motion consistency to interfaces and
+      transitions.
+    </TextLabel2>
+    <TextLabel2 as="p">
+      For easy implementation, there are currently 9 CDS duration tokens that are available to use.
+    </TextLabel2>
+    <TextLabel2 as="p">
+      Each duration token has 3 levels of speed, allowing flexibility for a wide range of component
+      sizes and screen transitions.
+    </TextLabel2>
   </Item>
   <Item flexGrow={3}>
     <VStack width="100%">
