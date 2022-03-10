@@ -3,7 +3,6 @@
   "version": "0.35.3",
   "description": "Coinbase Design System - Common",
   "repository": "git@github.cbhq.net:frontend/cds.git",
-  "type": "commonjs",
   "keywords": [
     "cds",
     "design system",
@@ -26,7 +25,7 @@
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
   },
-  "types": "./index.d.ts",
   "react-native": "./index.ts",
-  "main": "./index.js"
+  "main": "index.js",
+  "typings": "index.d.ts"
 }

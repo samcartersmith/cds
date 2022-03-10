@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-utils",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Coinbase Design System - Utils",
   "keywords": [
     "design system",
@@ -13,6 +13,6 @@
     "humps": "^2.0.1",
     "type-fest": "^1.2.0"
   },
-  "types": "./index.d.ts",
-  "main": "./index.ts"
+  "main": "index.js",
+  "typings": "index.d.ts"
 }

@@ -3,18 +3,13 @@
   "version": "0.2.21",
   "description": "Coinbase Design System - Lottie Files",
   "repository": "git@github.cbhq.net:frontend/cds.git",
-  "type": "commonjs",
   "keywords": [
     "cds",
     "design system",
     "lottie files",
     "animations"
   ],
-  "packemon": {
-    "format": "lib",
-    "platform": "node"
-  },
-  "types": "./index.d.ts",
-  "main": "./index.js",
+  "main": "index.js",
+  "typings": "index.d.ts",
   "react-native": "./index.ts"
 }
