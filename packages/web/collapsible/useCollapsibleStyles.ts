@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Variants } from 'framer-motion';
-import type { CollapsibleBaseProps } from '@cbhq/cds-common';
+import type { CollapsibleDirection } from '@cbhq/cds-common';
 import {
   animateInMaxSizeConfig,
   animateInOpacityConfig,
@@ -15,24 +15,20 @@ const defaultStyle = {
   overflow: 'hidden',
 };
 
-export const useCollapsibleStyles = (
-  collapsed: boolean,
-  direction: CollapsibleBaseProps['direction'],
-) => {
+export const useCollapsibleStyles = (collapsed: boolean, direction: CollapsibleDirection) => {
   const state = collapsed ? 'collapsed' : 'expanded';
   const variants: Variants = useMemo(() => {
-    const sizeProperty = direction === 'horizontal' ? 'width' : 'height';
-
     return {
       expanded: Animated.toFramerTransition([
-        animateInOpacityConfig,
-        { ...animateInMaxSizeConfig, toValue: 'auto', property: sizeProperty },
+        animateInOpacityConfig[direction],
+        { ...animateInMaxSizeConfig[direction], toValue: 'auto' },
       ]),
       collapsed: {
         ...Animated.toFramerTransition([
-          animateOutOpacityConfig,
-          { ...animateOutMaxSizeConfig, property: sizeProperty },
+          animateOutOpacityConfig[direction],
+          animateOutMaxSizeConfig[direction],
         ]),
+        // prevent focus on collapsed element
         transitionEnd: { display: 'none' },
       },
     };

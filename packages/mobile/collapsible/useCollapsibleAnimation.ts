@@ -1,5 +1,6 @@
 import { useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
+import type { CollapsibleDirection } from '@cbhq/cds-common';
 import {
   animateInMaxSizeConfig,
   animateInOpacityConfig,
@@ -10,66 +11,55 @@ import {
   collapsibleVisibleOpacity,
 } from '@cbhq/cds-common/animation/collapsible';
 
-import type { AnimationHookProps } from '../animation/AnimationProps';
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 
-import type { CollapsibleDirectionReturnValues } from './useCollapsibleDirection';
+import type { UseCollapsibleDirectionReturn } from './useCollapsibleDirection';
 
-type CollapsibleAnimation = AnimationHookProps<{
-  opacity: Animated.Value;
-  maxHeight?: Animated.Value;
-  maxWidth?: Animated.Value;
-}>;
+type UseCollapsibleAnimationParams = {
+  collapsed: boolean;
+  animateTo: UseCollapsibleDirectionReturn['animateTo'];
+  animateProperty: UseCollapsibleDirectionReturn['animateProperty'];
+  direction: CollapsibleDirection;
+};
 
-// opacity animation
-const opacityInConfig = convertMotionConfig({ ...animateInOpacityConfig, useNativeDriver: false });
-const opacityOutConfig = convertMotionConfig({
-  ...animateOutOpacityConfig,
-  useNativeDriver: false,
-});
-
-// maxHeight/maxWidth animation (need to turn off native driver)
-const sizeInConfig = convertMotionConfig({ ...animateInMaxSizeConfig, useNativeDriver: false });
-const sizeOutConfig = convertMotionConfig({
-  ...animateOutMaxSizeConfig,
-  useNativeDriver: false,
-});
-
-export const useCollapsibleAnimation = (
-  collapsed: boolean,
-  animateTo: CollapsibleDirectionReturnValues['animateTo'],
-  animateProperty: CollapsibleDirectionReturnValues['animateProperty'],
-): CollapsibleAnimation => {
+export const useCollapsibleAnimation = ({
+  collapsed,
+  animateTo,
+  animateProperty,
+  direction,
+}: UseCollapsibleAnimationParams) => {
   const defaultExpanded = useRef(!collapsed);
-
-  const collapsibleOpacity = useRef(new Animated.Value(collapsibleHiddenOpacity));
-  const collapsibleSize = useRef(new Animated.Value(collapsibleHiddenMaxSize));
+  const collapsibleOpacity = useRef(new Animated.Value(collapsibleHiddenOpacity)).current;
+  const collapsibleSize = useRef(new Animated.Value(collapsibleHiddenMaxSize)).current;
 
   // if it's expanded by default, fast forward the animated value to skip the animation
   if (defaultExpanded.current && animateTo > 0) {
-    collapsibleOpacity.current.setValue(collapsibleVisibleOpacity);
-    collapsibleSize.current.setValue(animateTo);
+    collapsibleOpacity.setValue(collapsibleVisibleOpacity);
+    collapsibleSize.setValue(animateTo);
     defaultExpanded.current = false;
   }
 
   const animateIn = Animated.parallel([
-    Animated.timing(collapsibleOpacity.current, opacityInConfig),
-    Animated.timing(collapsibleSize.current, { ...sizeInConfig, toValue: animateTo }),
+    Animated.timing(collapsibleOpacity, convertMotionConfig(animateInOpacityConfig[direction])),
+    Animated.timing(collapsibleSize, {
+      ...convertMotionConfig(animateInMaxSizeConfig[direction]),
+      toValue: animateTo,
+    }),
   ]);
 
   const animateOut = Animated.parallel([
-    Animated.timing(collapsibleOpacity.current, opacityOutConfig),
-    Animated.timing(collapsibleSize.current, sizeOutConfig),
+    Animated.timing(collapsibleOpacity, convertMotionConfig(animateOutOpacityConfig[direction])),
+    Animated.timing(collapsibleSize, convertMotionConfig(animateOutMaxSizeConfig[direction])),
   ]);
 
   return useMemo(() => {
     return {
       animatedStyles: {
-        opacity: collapsibleOpacity.current,
-        [animateProperty]: collapsibleSize.current,
+        opacity: collapsibleOpacity,
+        [animateProperty]: collapsibleSize,
       },
       animateIn,
       animateOut,
     };
-  }, [animateIn, animateOut, animateProperty]);
+  }, [animateIn, animateOut, animateProperty, collapsibleOpacity, collapsibleSize]);
 };

@@ -3,6 +3,8 @@ import { ReactNode } from 'react';
 import { SharedProps } from './SharedProps';
 import { SpacingProps } from './SpacingProps';
 
+export type CollapsibleDirection = 'vertical' | 'horizontal';
+
 export type CollapsibleBaseProps = {
   /**
    * Expand/collapse state of the content.
@@ -25,6 +27,6 @@ export type CollapsibleBaseProps = {
    * Direction the content should expand/collapse to
    * @default vertical
    */
-  direction?: 'vertical' | 'horizontal';
+  direction?: CollapsibleDirection;
 } & SharedProps &
   SpacingProps;

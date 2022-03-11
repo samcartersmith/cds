@@ -54,11 +54,12 @@ export const Collapsible = memo(
           contentWidth,
         });
 
-      const { animatedStyles, animateIn, animateOut } = useCollapsibleAnimation(
+      const { animatedStyles, animateIn, animateOut } = useCollapsibleAnimation({
         collapsed,
         animateTo,
         animateProperty,
-      );
+        direction,
+      });
       useToggleAnimation({ on: !collapsed, animateIn, animateOut });
 
       const scrollViewStyles = useMemo(

@@ -1,11 +1,6 @@
 import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
 
-export type CollapsibleDirectionReturnValues = {
-  shouldEnableScroll: boolean;
-  animateTo: number;
-  animateProperty: 'maxWidth' | 'maxHeight';
-  horizontal: boolean;
-};
+export type UseCollapsibleDirectionReturn = ReturnType<typeof useCollapsibleDirection>;
 
 export const useCollapsibleDirection = ({
   direction,
@@ -16,7 +11,7 @@ export const useCollapsibleDirection = ({
 }: Pick<CollapsibleBaseProps, 'direction' | 'maxHeight' | 'maxWidth'> & {
   contentWidth: number;
   contentHeight: number;
-}): CollapsibleDirectionReturnValues => {
+}) => {
   if (direction === 'vertical') {
     return {
       shouldEnableScroll: maxHeight ? contentHeight > maxHeight : false,

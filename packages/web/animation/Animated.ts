@@ -100,6 +100,7 @@ export class Animated {
             [config.property]: {
               ease: curves[config.easing],
               duration: durations[config.duration] / 1000,
+              delay: config.delay && config.delay / 1000,
             },
           },
         };
