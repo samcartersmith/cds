@@ -63,20 +63,20 @@ steps:
       - yarn mono-pipeline run-ci typecheck
 
   # Steps described below this line will not run in parallel. They will wait for the steps above to finish before running
-  # - wait
+  - wait
 
-  # - label: 'Percy.io - CDS visual diff tests'
-  #   <<: *shared_step
-  #   commands:
-  #     - tools/ci/setup.sh
-  #     - yarn nx run storybook:percy
-  #   env:
-  #     CONFIG_SERVICE_CONTEXT: percy-cds
-  #   plugins:
-  #     - file:///buildkite/plugins/docker:
-  #         <<: *docker_plugin
-  #         image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16-chrome
-  #         environment:
-  #           - 'BUILDKITE_API_TOKEN'
-  #           - 'PERCY_TOKEN'
-  #     - file:///buildkite/plugins/cache: *cache_plugin
+  - label: 'Percy.io - CDS visual diff tests'
+    <<: *shared_step
+    commands:
+      - tools/ci/setup.sh
+      - yarn nx run storybook:percy
+    env:
+      CONFIG_SERVICE_CONTEXT: percy-cds
+    plugins:
+      - file:///buildkite/plugins/docker:
+          <<: *docker_plugin
+          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16-chrome
+          environment:
+            - 'BUILDKITE_API_TOKEN'
+            - 'PERCY_TOKEN'
+      - file:///buildkite/plugins/cache: *cache_plugin
