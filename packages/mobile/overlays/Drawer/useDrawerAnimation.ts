@@ -62,7 +62,6 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
             outputRange: [-drawerDimension, -MAX_OVER_DRAG],
           }),
         };
-      case 'bottom':
       case 'right':
         return {
           translateX: drawerAnimation.current.interpolate({
@@ -70,6 +69,7 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
             outputRange: [drawerDimension, MAX_OVER_DRAG],
           }),
         };
+      case 'bottom':
       default:
         return {
           translateY: drawerAnimation.current.interpolate({
