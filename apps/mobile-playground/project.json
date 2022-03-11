@@ -3,13 +3,19 @@
   "sourceRoot": "apps/mobile-playground/src",
   "projectType": "application",
   "targets": {
-    "android": {
+    "start-android": {
       "executor": "@cbhq/mono-tasks:start-android"
     },
-    "ios": {
+    "build-android": {
+      "executor": "@cbhq/mono-tasks:build-android"
+    },
+    "start-ios": {
       "executor": "@cbhq/mono-tasks:start-ios"
     },
-    "start": {
+    "build-ios": {
+      "executor": "@cbhq/mono-tasks:build-ios"
+    },
+    "start-metro": {
       "executor": "@cbhq/mono-tasks:start-metro"
     },
     "format": {

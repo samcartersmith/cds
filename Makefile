@@ -42,10 +42,13 @@ Help:
   $$ make start.website             -- Start website local dev server.
   $$ make build.website             -- Build website.
 
-  $$ make clean.ios                 -- Clean ios build
-  $$ make clean.android             -- Clean android build
+  $$ make start.metro               -- Start the playground metro server.
+  $$ make start.ios                 -- Start the playground ios app.
   $$ make build.ios                 -- Build the playground ios app.
+  $$ make clean.ios                 -- Clean ios build
+  $$ make start.android             -- Start the playground android app.
   $$ make build.android             -- Build the playground android app.
+  $$ make clean.android             -- Clean android build
 
   $$ make build.fonts               -- Build the `fonts` package.
   $$ make build.common              -- Build the `common` package.
@@ -208,22 +211,39 @@ build.website:
 start.website:
 	cd apps/website; yarn docusaurus start --port 3000; cd -;
 
+.PHONY: mobile.routes
+mobile.routes:
+	nx run codegen:prepare_mobile_routes
+
+.PHONY: start.metro
+start.metro:
+	nx run mobile-playground:start-metro
+
 .PHONY: clean.ios
 clean.ios:
-	nx run mobile-playground:ios --clean
+	nx run mobile-playground:start-ios --clean
 
-.PHONY: clean.android
-clean.android:
-	nx run mobile-playground:android --clean
+.PHONY: start.ios
+start.ios:
+	make mobile.routes
+	nx run mobile-playground:start-ios
 
 .PHONY: build.ios
 build.ios:
-	nx run mobile-playground:ios
+	nx run mobile-playground:build-ios
+
+.PHONY: clean.android
+clean.android:
+	nx run mobile-playground:start-android --clean
+
+.PHONY: start.android
+start.android:
+	make mobile.routes
+	nx run mobile-playground:start-android
 
 .PHONY: build.android
 build.android:
-	nx run mobile-playground:android
-
+	nx run mobile-playground:build-android
 
 .PHONY: build.common
 build.common:
@@ -283,10 +303,6 @@ prepare.icons:
 	yarn svgo packages/codegen/icons/svg/*.svg --config=packages/codegen/configs/svgo.config.js
 	nx run codegen:build_icons
 	make docgen
-
-.PHONY: mobile.routes
-mobile.routes:
-	nx run codegen:prepare_mobile_routes
 
 .PHONY: prepare.adoption
 prepare.adoption:
