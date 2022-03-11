@@ -1,6 +1,7 @@
 import React, { forwardRef, KeyboardEvent, memo, ReactElement, useCallback } from 'react';
 import { css } from 'linaria';
 import { ForwardedRef, NoopFn } from '@cbhq/cds-common';
+import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { selectKeys } from '@cbhq/cds-common/tokens/menu';
 
 import { insetFocusRing } from '../../styles/focus';
@@ -17,6 +18,18 @@ const pressableStyles = css`
   /* overrides button defaults in safari */
   margin: 0;
   border: none;
+  &:first-child {
+    &:before {
+      border-top-right-radius: ${borderRadius.popover}px;
+      border-top-left-radius: ${borderRadius.popover}px;
+    }
+  }
+  &:last-child {
+    &:before {
+      border-bottom-right-radius: ${borderRadius.popover}px;
+      border-bottom-left-radius: ${borderRadius.popover}px;
+    }
+  }
 `;
 
 export type MenuItemProps = {

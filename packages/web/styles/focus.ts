@@ -59,16 +59,4 @@ export const insetFocusRing = css`
       border-radius: ${borderRadius.compact}px;
     }
   }
-  &:first-child {
-    &:before {
-      border-top-right-radius: ${borderRadius.popover}px;
-      border-top-left-radius: ${borderRadius.popover}px;
-    }
-  }
-  &:last-child {
-    &:before {
-      border-bottom-right-radius: ${borderRadius.popover}px;
-      border-bottom-left-radius: ${borderRadius.popover}px;
-    }
-  }
 `;
