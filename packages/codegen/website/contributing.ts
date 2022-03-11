@@ -10,7 +10,7 @@ async function copyContributing() {
   const spinner = ora(`Starting to copy CONTRIBUTING files`).start();
 
   async function handleCopy() {
-    const input = await getSourcePath('/CONTRIBUTING.md');
+    const input = await getSourcePath('../CONTRIBUTING.md');
     const output = await getSourcePath(contributingOutputDir);
     try {
       await fs.promises.copyFile(input, output);

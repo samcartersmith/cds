@@ -4,7 +4,7 @@
   "githubUrl": "https://github.cbhq.net/frontend/coinbase-www/tree/master",
   "id": "uwo",
   "label": "Unified Web Onboarding",
-  "totalParsedFiles": 429,
+  "totalParsedFiles": 430,
   "projectTsAliases": ["@uwo"],
   "baseUrl": "frontend/coinbase-www/packages/uwo",
   "tsAliases": { "@uwo": "packages/uwo/src" },

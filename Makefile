@@ -299,3 +299,8 @@ debug.adoption:
 .PHONY: release 
 release:
 	nx run codegen:release
+	nx run codegen:changelog
+	nx run codegen:contributing
+	nx run codegen:docgen
+
+	

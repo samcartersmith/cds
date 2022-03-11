@@ -11,15 +11,26 @@ import { adopters, adoptersSidebar, adoptersWithPillar } from './config';
 async function preCleanup() {
   const [TEMP_DIR, DOCS_DIR, DOCS_DATA_DIR] = await Promise.all([
     getSourcePath('codegen/adoption/temp'),
-    getSourcePath('website/docs/adoption-tracker'),
-    getSourcePath('website/static/data/adoption'),
+    getSourcePath('../apps/website/docs/adoption-tracker'),
+    getSourcePath('../apps/website/static/data/adoption'),
   ]);
+
+  const removeDirPromises = [];
+
+  if (fs.existsSync(TEMP_DIR)) {
+    removeDirPromises.push(fs.promises.rmdir(TEMP_DIR, { recursive: true }));
+  }
+
+  if (fs.existsSync(DOCS_DIR)) {
+    removeDirPromises.push(fs.promises.rmdir(DOCS_DIR, { recursive: true }));
+  }
+
+  if (fs.existsSync(DOCS_DATA_DIR)) {
+    removeDirPromises.push(fs.promises.rmdir(DOCS_DATA_DIR, { recursive: true }));
+  }
+
   // Clear directories so we don't keep around any data we want to remove
-  return Promise.all([
-    fs.promises.rmdir(TEMP_DIR, { recursive: true }),
-    fs.promises.rmdir(DOCS_DIR, { recursive: true }),
-    fs.promises.rmdir(DOCS_DATA_DIR, { recursive: true }),
-  ]);
+  return Promise.all(removeDirPromises);
 }
 
 async function writeFiles(project: ProjectParser) {
@@ -30,7 +41,7 @@ async function writeFiles(project: ProjectParser) {
     writeFile({
       template: 'website/adoptionTracker.ejs',
       data: project,
-      dest: `website/docs/adoption-tracker/${project.id}.mdx`,
+      dest: `../apps/website/docs/adoption-tracker/${project.id}.mdx`,
     }),
     writeFile({
       dest: `codegen/adoption/results/${project.id}.json`,
@@ -41,21 +52,21 @@ async function writeFiles(project: ProjectParser) {
       data: stats,
     }),
     writeFile({
-      dest: `website/static/data/adoption/${project.id}/components.json`,
+      dest: `../apps/website/static/data/adoption/${project.id}/components.json`,
       data: components,
       config: {
         disablePrettier: true,
       },
     }),
     writeFile({
-      dest: `website/static/data/adoption/${project.id}/stats.json`,
+      dest: `../apps/website/static/data/adoption/${project.id}/stats.json`,
       data: stats,
       config: {
         disablePrettier: true,
       },
     }),
     writeFile({
-      dest: `website/static/data/adoption/${project.id}/project.json`,
+      dest: `../apps/website/static/data/adoption/${project.id}/project.json`,
       data: project.projectInfo,
       config: {
         disablePrettier: true,
@@ -72,13 +83,13 @@ async function prepare() {
     await writeFile({
       template: 'objectMap.ejs',
       data: { adopters: adoptersWithPillar },
-      dest: `website/data/adopters.ts`,
+      dest: `../apps/website/data/adopters.ts`,
     });
     // Required to for website sidebar.
     await writeFile({
       template: 'objectMap.ejs',
       data: { adopters: adoptersSidebar },
-      dest: `website/data/sidebar/adopters.js`,
+      dest: `../apps/website/data/sidebar/adopters.js`,
       config: { commonJS: true },
     });
     await Promise.all(
