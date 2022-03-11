@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import { BoxProps, HStack, VStack } from '../layout';
+import { Box, BoxProps, HStack } from '../layout';
 
 import { useCollapsibleStyles } from './useCollapsibleStyles';
 
@@ -58,7 +58,7 @@ export const Collapsible = memo(
           : { maxHeight };
       }, [direction, maxWidth, maxHeight]);
 
-      const Stack = direction === 'horizontal' ? HStack : VStack;
+      const Stack = direction === 'horizontal' ? HStack : Box;
 
       return (
         <motion.div

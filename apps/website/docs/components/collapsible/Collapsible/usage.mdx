@@ -1,3 +1,5 @@
+You can basically put anything inside the `Collapsible` component to make it expand/collapse.
+
 ### Basic Collapsible
 
 ```jsx live
@@ -7,14 +9,12 @@ function BasicCollapsible() {
   return (
     <ExampleWithThemeToggles>
       <Button onPress={toggle}>Click me!</Button>
-      <Collapsible collapsed={collapsed}>
-        <TextInput
-          compact
-          type="number"
-          step="0.01"
-          label="Amount"
-          placeholder="8293323.23"
-          suffix="USD"
+      <Collapsible collapsed={collapsed} spacing={3}>
+        <FeatureEntryCard
+          title="Send a crypto gift"
+          description="Share the gift of crypto this holiday season"
+          spotSquare="coinbaseCardSparkle"
+          action="Start gifting"
         />
       </Collapsible>
     </ExampleWithThemeToggles>
@@ -22,22 +22,30 @@ function BasicCollapsible() {
 }
 ```
 
-### Reveal Top
+### Expand Top
+
+Place `Collapsible` above the trigger to expand top.
 
 ```jsx live
-function RevealTop() {
+function ExpandTop() {
   const [collapsed, { toggle }] = useToggler(true);
 
   return (
     <ExampleWithThemeToggles>
       <Collapsible collapsed={collapsed}>
-        <TextInput
-          compact
-          type="number"
-          step="0.01"
-          label="Amount"
-          placeholder="8293323.23"
-          suffix="USD"
+        <ContentCell
+          title="A deep dive into Eth 2.0, scaling that lets users buy the entire crypto market"
+          subtitle="The Block - Ethereum 2"
+          description="On this episode of The Scoop, Ethereum 2.0 developer and Prysmatic Labs founder Preston Van Loon and Joe Sticco broke down Cryptex. The post A deep dive into Eth 2.0, scaling and a project that lets users buy the entire crypto market appeared first on The Block."
+          meta="March 2nd, 2021"
+          media={
+            <CellMedia
+              type="image"
+              title="Eth 2.0"
+              source="https://dynamic-assets.coinbase.com/2954170d91149bea19e2d2eab8acc2f50ff4446b4b6fb09a7983ad7a481c636e6b29c5e09cf90f49f57dcef30ef7ff50bb99ad4fc068cf43265ad135c590fa7d/news_article_images/28216c10d33e3f2147fe05aa8a27bf4b9620dd658ce0be6c482b5629176e52e4.png"
+            />
+          }
+          onPress={console.log}
         />
       </Collapsible>
       <Button onPress={toggle}>Click me!</Button>
@@ -48,6 +56,8 @@ function RevealTop() {
 
 ### Scroll Content
 
+Enable scroll by setting `maxHeight`.
+
 ```jsx live
 function Scroll() {
   const [collapsed, { toggle }] = useToggler(true);
@@ -56,14 +66,16 @@ function Scroll() {
     <ExampleWithThemeToggles>
       <Button onPress={toggle}>Click me!</Button>
       <Collapsible collapsed={collapsed} maxHeight={400}>
-        <TextBody as="p">{loremIpsum.repeat(30)}</TextBody>
+        <TextBody as="p">{loremIpsum.repeat(50)}</TextBody>
       </Collapsible>
     </ExampleWithThemeToggles>
   );
 }
 ```
 
-### Horizontal
+### Horizontal (Experimental)
+
+Set `direction="horizontal"` for horizontal expand/collapse.
 
 ```jsx live
 function Horizontal() {

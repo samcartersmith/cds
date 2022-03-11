@@ -24,12 +24,10 @@ export const useCollapsibleStyles = (
     const sizeProperty = direction === 'horizontal' ? 'width' : 'height';
 
     return {
-      expanded: {
-        ...Animated.toFramerTransition([
-          animateInOpacityConfig,
-          { ...animateInMaxSizeConfig, toValue: 'auto', property: sizeProperty },
-        ]),
-      },
+      expanded: Animated.toFramerTransition([
+        animateInOpacityConfig,
+        { ...animateInMaxSizeConfig, toValue: 'auto', property: sizeProperty },
+      ]),
       collapsed: {
         ...Animated.toFramerTransition([
           animateOutOpacityConfig,
