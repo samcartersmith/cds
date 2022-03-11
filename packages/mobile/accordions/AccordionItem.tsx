@@ -1,6 +1,7 @@
 import React, { memo, RefObject } from 'react';
 import { View } from 'react-native';
 import { useAccordionParent } from '@cbhq/cds-common/accordions/AccordionParentContext';
+import { accordionMinWidth } from '@cbhq/cds-common/tokens/accordion';
 import type { AccordionItemBaseProps } from '@cbhq/cds-common/types';
 
 import { VStack } from '../layout';
@@ -30,7 +31,7 @@ export const AccordionItem = memo(
     const collapsed = activeKey !== itemKey;
 
     return (
-      <VStack>
+      <VStack minWidth={accordionMinWidth}>
         <AccordionHeader
           itemKey={itemKey}
           media={media}

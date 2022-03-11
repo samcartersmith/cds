@@ -15,7 +15,7 @@ export type TextProps = {
    * Set overflow behavior.
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
    */
-  readonly overflow?: 'truncate' | 'clip';
+  readonly overflow?: 'truncate' | 'clip' | 'wrap';
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */

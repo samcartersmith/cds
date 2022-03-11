@@ -12,3 +12,5 @@ export const accordionSpacing: Record<ScaleDensity, Record<string, SpacingScale>
     spacingBottom: 4,
   },
 };
+
+export const accordionMinWidth = 300;

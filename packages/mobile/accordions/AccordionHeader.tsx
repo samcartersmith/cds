@@ -26,7 +26,7 @@ export const AccordionMedia = memo(({ media }: AccordionMediaBaseProps) => <Box>
 export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps) => (
   <Box flexGrow={1} flexShrink={1} justifyContent="flex-start">
     <VStack>
-      <TextHeadline ellipsize="tail">{title}</TextHeadline>
+      <TextHeadline>{title}</TextHeadline>
       {!!subtitle && <TextBody color="foregroundMuted">{subtitle}</TextBody>}
     </VStack>
   </Box>

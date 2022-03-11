@@ -7,21 +7,12 @@ import {
   animateOutRotateConfig,
 } from '@cbhq/cds-common/animation/accordion';
 
-import type { AnimationHookProps } from '../animation/AnimationProps';
 import { convertMotionConfig } from '../animation/convertMotionConfig';
-
-type AccordionIconAnimation = AnimationHookProps<{
-  transform: [
-    {
-      rotate: Animated.AnimatedInterpolation;
-    },
-  ];
-}>;
 
 const rotateInConfig = convertMotionConfig(animateInRotateConfig);
 const rotateOutConfig = convertMotionConfig(animateOutRotateConfig);
 
-export const useAccordionIconAnimation = (): AccordionIconAnimation => {
+export const useAccordionIconAnimation = () => {
   const accordionIconRotate = useRef(new Animated.Value(accordionHiddenRotate));
 
   const animateIn = Animated.timing(accordionIconRotate.current, rotateInConfig);

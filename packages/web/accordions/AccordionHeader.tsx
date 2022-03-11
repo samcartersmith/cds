@@ -36,13 +36,13 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
     dangerouslySetClassName={truncateClassName}
   >
     <VStack>
-      <TextHeadline as="div" overflow="truncate">
+      <TextHeadline as="div" overflow="wrap">
         {title}
       </TextHeadline>
       {!!subtitle && (
         <TextBody
           as="div"
-          overflow="truncate"
+          overflow="wrap"
           color="foregroundMuted"
           dangerouslySetClassName={overflowClassName}
         >
