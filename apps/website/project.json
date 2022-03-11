@@ -15,9 +15,6 @@
     "lint-styles": {
       "executor": "./tools/executors/lint-styles:lint-styles"
     },
-    "start": {
-      "executor": "@cbhq/mono-tasks:start-docusaurus"
-    },
     "typecheck": {
       "executor": "./tools/executors/typecheck:typecheck"
     }

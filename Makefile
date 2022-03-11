@@ -198,7 +198,7 @@ build.story:
 
 .PHONY: start.story
 start.story:
-	nx run storybook:start
+	cd apps/storybook; yarn start-storybook; cd -;
 
 .PHONY: build.website
 build.website:
@@ -206,7 +206,7 @@ build.website:
 
 .PHONY: start.website
 start.website:
-	nx run website:start
+	cd apps/website; yarn docusaurus start --port 3000; cd -;
 
 .PHONY: clean.ios
 clean.ios:
