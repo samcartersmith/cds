@@ -9,6 +9,7 @@ import { LogoMark, NavigationIcon } from '../../icons';
 import { HStack, VStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Avatar } from '../../media';
+import { PortalProvider } from '../../overlays/PortalProvider';
 import { Pressable } from '../../system';
 import { palette } from '../../tokens';
 import { TextDisplay2, TextHeadline } from '../../typography';
@@ -212,55 +213,59 @@ export const SidebarWithMoreMenuExample: React.FC = () => {
   };
 
   return (
-    <HStack justifyContent="center" alignItems="flex-start" background="backgroundAlternate">
-      <Sidebar collapsed={collapsed} logo={<LogoMark />}>
-        {items.slice(0, 4).map((props, index) => (
-          <SidebarItem
-            key={`sidebar-item--${props.title}`}
-            active={index === activeIndex}
-            onPress={() => handleItemPress(index)}
-            {...props}
-          />
-        ))}
-        <SidebarMoreMenu
-          onChange={handleMoreMenuChange}
-          value={moreMenuValue}
-          visible={moreMenuVisible}
-          active={activeIndex === moreMenuIndex}
-          openMenu={toggleMoreMenuVisibility.toggleOn}
-          closeMenu={toggleMoreMenuVisibility.toggleOff}
-          onPress={() => setActiveIndex(moreMenuIndex)}
-        >
-          {moreMenuOptions.map((item) => (
-            <SelectOption
-              key={`sidebar-more-menu-item--${item.value}`}
-              value={item.value}
-              description={item.label}
-              media={<NavigationIcon name={item.icon} />}
+    <PortalProvider>
+      <HStack justifyContent="center" alignItems="flex-start" background="backgroundAlternate">
+        <Sidebar collapsed={collapsed} logo={<LogoMark />}>
+          {items.slice(0, 4).map((props, index) => (
+            <SidebarItem
+              key={`sidebar-item--${props.title}`}
+              active={index === activeIndex}
+              onPress={() => handleItemPress(index)}
+              tooltipContent={props.title}
+              {...props}
             />
           ))}
-        </SidebarMoreMenu>
-      </Sidebar>
+          <SidebarMoreMenu
+            onChange={handleMoreMenuChange}
+            value={moreMenuValue}
+            visible={moreMenuVisible}
+            active={activeIndex === moreMenuIndex}
+            openMenu={toggleMoreMenuVisibility.toggleOn}
+            closeMenu={toggleMoreMenuVisibility.toggleOff}
+            onPress={() => setActiveIndex(moreMenuIndex)}
+            tooltipContent="More"
+          >
+            {moreMenuOptions.map((item) => (
+              <SelectOption
+                key={`sidebar-more-menu-item--${item.value}`}
+                value={item.value}
+                description={item.label}
+                media={<NavigationIcon name={item.icon} />}
+              />
+            ))}
+          </SidebarMoreMenu>
+        </Sidebar>
 
-      <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center" flexGrow={1}>
-        <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
-        <ButtonGroup accessibilityLabel="make collapsed">
-          <Button
-            compact
-            variant={collapsed ? 'secondary' : 'primary'}
-            onPress={() => setCompact(false)}
-          >
-            default
-          </Button>
-          <Button
-            compact
-            variant={collapsed ? 'primary' : 'secondary'}
-            onPress={() => setCompact(true)}
-          >
-            collapsed
-          </Button>
-        </ButtonGroup>
+        <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center" flexGrow={1}>
+          <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
+          <ButtonGroup accessibilityLabel="make collapsed">
+            <Button
+              compact
+              variant={collapsed ? 'secondary' : 'primary'}
+              onPress={() => setCompact(false)}
+            >
+              default
+            </Button>
+            <Button
+              compact
+              variant={collapsed ? 'primary' : 'secondary'}
+              onPress={() => setCompact(true)}
+            >
+              collapsed
+            </Button>
+          </ButtonGroup>
+        </HStack>
       </HStack>
-    </HStack>
+    </PortalProvider>
   );
 };
