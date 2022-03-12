@@ -21,7 +21,9 @@ import { noop } from '@cbhq/cds-utils';
 
 import { useDimensions } from '../hooks/useDimensions';
 import { HStack, VStack } from '../layout';
+import { insetFocusRing } from '../styles/focus';
 import { PressableOpacity, PressableOpacityProps } from '../system/PressableOpacity';
+import { cx } from '../utils/linaria';
 
 import { Paddle } from './Paddle';
 import { TabIndicator } from './TabIndicator';
@@ -180,7 +182,7 @@ export const TabNavigation = memo(
                   accessibilityLabel,
                   accessibilityHint: accessibilityLabel,
                   onPress: getTabPressHandler(id, onPress as (id: string) => void),
-                  className: pressableClass,
+                  className: cx(pressableClass, insetFocusRing),
                 },
                 getChildren({ id, count, label }),
               );
