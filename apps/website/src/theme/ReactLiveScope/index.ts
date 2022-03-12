@@ -56,6 +56,7 @@ import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
 import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
 import * as CDSTables from '@cbhq/cds-web/tables';
+import * as CDSTabs from '@cbhq/cds-web/tabs';
 import { palette } from '@cbhq/cds-web/tokens';
 import * as CDSTypography from '@cbhq/cds-web/typography';
 import * as CDSVisualizations from '@cbhq/cds-web/visualizations';
@@ -150,6 +151,7 @@ const ReactLiveScope: unknown = {
   ...CDSSystem,
   DeprecatedTooltip,
   ...CDSTables,
+  ...CDSTabs,
   ...CDSTypography,
   ...CDSIllustrations,
   ...CDSVisualizations,

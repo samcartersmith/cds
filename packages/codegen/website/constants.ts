@@ -28,6 +28,7 @@ export const CDS_SUB_DIRS = [
   'overlays',
   'system',
   'tables',
+  'tabs',
   'typography',
   'visualizations',
 ] as const;
@@ -44,6 +45,7 @@ export const filesToIgnore = [
   'LogoWordmark',
   'Badge',
   'Overlay',
+  'Paddle',
 ];
 
 /**

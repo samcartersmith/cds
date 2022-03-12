@@ -33,6 +33,7 @@ module.exports = {
         'components/buttons/ButtonGroup/button-group',
         'components/buttons/IconButton/icon-button',
         'components/buttons/NavigationIconButton/navigation-icon-button',
+        'components/buttons/TileButton/tile-button',
       ],
     },
     {
@@ -203,6 +204,16 @@ module.exports = {
         'components/tables/TableFooter/table-footer',
         'components/tables/TableHeader/table-header',
         'components/tables/TableRow/table-row',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Tabs',
+      collapsed: true,
+      items: [
+        'components/tabs/TabIndicator/tab-indicator',
+        'components/tabs/TabLabel/tab-label',
+        'components/tabs/TabNavigation/tab-navigation',
       ],
     },
     {

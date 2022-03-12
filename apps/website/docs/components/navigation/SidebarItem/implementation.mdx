@@ -49,6 +49,21 @@ Use collapsed to show only the logo
 
 <ComponentDetails componentName="SidebarItem" templateName="prop-collapsed" />
 
+### disablePortal <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+By setting this to true you are essentially opting out of CDS zIndex management. By default the subject is rendered in a portal. If set to true the subject will be rendered in the DOM hierarchy of the parent component.
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="disablePortal"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SidebarItem" templateName="prop-disablePortal" />
+
 ### icon <Badge variant="web" />
 
 The Navigation Icon this item represents
@@ -144,5 +159,30 @@ The title of the page this item represents
 />
 
 <ComponentDetails componentName="SidebarItem" templateName="prop-title" />
+
+### tooltipContent <Badge variant="web" />
+
+Label or content to display when Sidebar is collapsed and side bar more menu is hovered
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="tooltipContent"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="SidebarItem" templateName="prop-tooltipContent" />
 
 <ComponentDetails componentName="SidebarItem" templateName="outro" />

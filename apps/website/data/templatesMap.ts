@@ -235,6 +235,21 @@ export const NavigationIconButton = {
   ),
 };
 
+export const TileButton = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/TileButton/implementation.mdx'
+      ),
+  ),
+  'tile-button': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/TileButton/tile-button.mdx'
+      ),
+  ),
+};
+
 export const AnnouncementCard = {
   a11y: React.lazy(
     async () =>
@@ -2313,6 +2328,87 @@ export const TableRow = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableRow/usage.mdx'
+      ),
+  ),
+};
+
+export const TabIndicator = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tabs/TabIndicator/implementation.mdx'
+      ),
+  ),
+  'tab-indicator': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tabs/TabIndicator/tab-indicator.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tabs/TabIndicator/usage.mdx'
+      ),
+  ),
+};
+
+export const TabLabel = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tabs/TabLabel/implementation.mdx'
+      ),
+  ),
+  'tab-label': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tabs/TabLabel/tab-label.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tabs/TabLabel/usage.mdx'
+      ),
+  ),
+};
+
+export const TabNavigation = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tabs/TabNavigation/a11y.mdx'
+      ),
+  ),
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tabs/TabNavigation/design.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tabs/TabNavigation/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tabs/TabNavigation/intro.mdx'
+      ),
+  ),
+  'tab-navigation': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tabs/TabNavigation/tab-navigation.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tabs/TabNavigation/usage.mdx'
       ),
   ),
 };

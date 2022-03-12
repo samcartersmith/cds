@@ -21,7 +21,7 @@
     "codegen": "yarn nx run codegen:codegen && yarn codegen.docs && yarn lint.all --skip-nx-cache && yarn format.all --skip-nx-cache && yarn stylelint.all --skip-nx-cache && ",
     "codegen.changelog": "yarn nx run codegen:changelog",
     "codegen.contributing": "yarn nx run codegen:contributing",
-    "codegen.docs": "yarn nx run codegen:docgen && yarn website.lint --fix && yarn website.format",
+    "codegen.docs": "yarn nx run codegen:docgen && yarn lint.website --fix && yarn format.website",
     "codegen.icons": "yarn nx run codegen:build_icons",
     "codegen.illustrations": "yarn nx run codegen:build_illustrations",
     "codegen.routes": "yarn nx run codegen:prepare_mobile_routes",
