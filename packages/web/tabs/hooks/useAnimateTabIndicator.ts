@@ -10,7 +10,6 @@ type UseAnimateTabIndicator = {
   xRef: RefObject<HTMLElement>;
 } & Pick<TabIndicatorProps, 'width' | 'x'>;
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const useAnimateTabIndicator = ({ widthRef, width, xRef, x }: UseAnimateTabIndicator) => {
   const { getPreviousValue: getPreviousWidth, addPreviousValue: addPreviousWidth } =
     usePreviousValues<number>([0]);

@@ -41,7 +41,6 @@ const paddleRightClassName = css`
   right: 0;
 `;
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Paddle = ({
   variant = 'primary',
   direction = 'left',

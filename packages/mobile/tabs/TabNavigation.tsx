@@ -24,7 +24,6 @@ type TabsLayoutsMap = Map<string, LayoutRectangle>;
 
 const fallbackLayout: LayoutRectangle = { width: 0, x: 0, y: 0, height: 0 };
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const TabNavigation = memo(
   forwardRef<View, TabNavigationProps>(
     (

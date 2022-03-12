@@ -16,7 +16,6 @@ type UseAnimatePaddleVisibility = {
   show: boolean;
 };
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const usePaddleVisibilityEffect = ({
   ref,
   gradientRef,

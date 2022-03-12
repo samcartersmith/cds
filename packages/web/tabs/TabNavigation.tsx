@@ -55,7 +55,6 @@ type LayoutProps = { width: number; x: number };
 type TabsLayoutsMap = Map<string, LayoutProps>;
 const fallbackLayout: LayoutProps = { width: 0, x: 0 };
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const TabNavigation = memo(
   forwardRef(
     (

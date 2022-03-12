@@ -21,10 +21,7 @@ const COLORS = {
   },
 } as const;
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export type TabLabelProps = CommonTabLabelProps & TextProps;
-
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const TabLabel = memo(
   ({ active, variant = 'primary', count = 0, ...props }: TabLabelProps) => {
     const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);

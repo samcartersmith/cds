@@ -65,11 +65,9 @@ const COLORS = {
   },
 } as const;
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export type TabLabelProps = CommonTabLabelProps &
   TextProps & { onLayout?: (key: string, props: TabIndicatorProps) => void };
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const TabLabel = memo(
   ({ id = '', active, variant = 'primary', count = 0, onLayout, ...props }: TabLabelProps) => {
     const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);

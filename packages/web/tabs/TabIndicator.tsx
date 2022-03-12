@@ -5,7 +5,6 @@ import { Box } from '../layout';
 
 import { useAnimateTabIndicator } from './hooks/useAnimateTabIndicator';
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const TabIndicator = memo(
   forwardRef(
     (

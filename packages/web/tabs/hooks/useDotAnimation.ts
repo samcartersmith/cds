@@ -3,7 +3,6 @@ import { animateDotOpacityConfig, dotHidden, dotVisible } from '@cbhq/cds-common
 
 import { Animated } from '../../animation/Animated';
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const useDotAnimation = () => {
   const ref = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
