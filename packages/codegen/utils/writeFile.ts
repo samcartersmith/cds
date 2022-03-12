@@ -2,13 +2,10 @@ import * as ejs from 'ejs';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as prettier from 'prettier';
-import { argv } from 'yargs';
 import { writePrettyFile } from '@cbhq/cds-web-utils';
 
 import { formatTemplateType } from './formatTemplateType';
 import { getSourcePath } from './getSourcePath';
-
-const prettierConfig = argv.prettierConfig as string;
 
 export type TemplateConfig<T = unknown> = {
   dest: string;
@@ -96,7 +93,6 @@ export const writeFile = async ({
       await fs.promises.writeFile(outFile, contents, { encoding: 'utf8', flag: 'w' });
     } else {
       await writePrettyFile({
-        prettierConfig,
         outFile,
         contents,
         logInfo: dest,

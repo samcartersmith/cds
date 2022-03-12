@@ -4,19 +4,17 @@ import fs from 'fs';
 import prettier from 'prettier';
 
 export async function writePrettyFile({
-  prettierConfig,
   outFile,
   contents,
   parser,
   logInfo,
 }: {
-  prettierConfig: string;
   outFile: string;
   contents: string;
   parser?: prettier.BuiltInParserName;
   logInfo?: string | boolean;
 }): Promise<string> {
-  const prettierOptions = prettierConfig ? await prettier.resolveConfig(prettierConfig) : null;
+  const prettierOptions = await prettier.resolveConfig('@cbhq/eslint-plugin/prettierConfig.json');
   const prettiered = prettier.format(contents, {
     ...prettierOptions,
     parser: parser ?? 'typescript',

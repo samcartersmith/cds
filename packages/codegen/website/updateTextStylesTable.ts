@@ -1,7 +1,6 @@
 import chalk from 'chalk';
 import * as fs from 'fs';
 import * as path from 'path';
-import { argv } from 'yargs';
 import { writePrettyFile } from '@cbhq/cds-web-utils';
 
 import { Type } from '../Type/Type';
@@ -26,7 +25,6 @@ export const updateTextStylesTable = async () => {
       )}${tableStart}\n\n${typeStylesTable}\n${textStory.slice(sectionEndIndex, textStory.length)}`;
 
       await writePrettyFile({
-        prettierConfig: argv.prettierConfig as string,
         outFile: textStoryFile,
         contents: updatedStylesTable,
         parser: 'mdx',
