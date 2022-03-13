@@ -2,7 +2,8 @@
   "extends": "../../tsconfig.buildOptions.json",
   "compilerOptions": {
     "outDir": "../../.nx/dist/packages/mobile",
-    "rootDir": "./"
+    "rootDir": "./",
+    "baseUrl": "."
   },
   "include": [
     "**/*"

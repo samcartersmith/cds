@@ -2102,11 +2102,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/cds-common@*, @cbhq/cds-common@workspace:*, @cbhq/cds-common@workspace:packages/common":
+"@cbhq/cds-common@workspace:*, @cbhq/cds-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-common@workspace:packages/common"
   dependencies:
-    "@cbhq/cds-utils": ^0.3.0
+    "@cbhq/cds-utils": "workspace:*"
     d3-array: ^2.3.3
     d3-color: ^2.0.0
     d3-scale: ^3.3.0
@@ -2120,13 +2120,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-fonts@*, @cbhq/cds-fonts@workspace:*, @cbhq/cds-fonts@workspace:packages/fonts":
+"@cbhq/cds-fonts@workspace:*, @cbhq/cds-fonts@workspace:packages/fonts":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-fonts@workspace:packages/fonts"
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-lottie-files@*, @cbhq/cds-lottie-files@workspace:*, @cbhq/cds-lottie-files@workspace:packages/lottie-files":
+"@cbhq/cds-lottie-files@workspace:*, @cbhq/cds-lottie-files@workspace:packages/lottie-files":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-lottie-files@workspace:packages/lottie-files"
   languageName: unknown
@@ -2136,10 +2136,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-mobile@workspace:packages/mobile"
   dependencies:
-    "@cbhq/cds-common": "*"
-    "@cbhq/cds-fonts": "*"
-    "@cbhq/cds-lottie-files": "*"
-    "@cbhq/cds-utils": "*"
+    "@cbhq/cds-common": "workspace:*"
+    "@cbhq/cds-fonts": "workspace:*"
+    "@cbhq/cds-lottie-files": "workspace:*"
+    "@cbhq/cds-utils": "workspace:*"
     "@react-native-community/netinfo": ^7.1.7
     "@react-navigation/stack": 5.12.8
     d3-interpolate-path: ^2.2.2
@@ -2171,7 +2171,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-utils@*, @cbhq/cds-utils@^0.3.0, @cbhq/cds-utils@workspace:*, @cbhq/cds-utils@workspace:packages/utils":
+"@cbhq/cds-utils@workspace:*, @cbhq/cds-utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-utils@workspace:packages/utils"
   dependencies:

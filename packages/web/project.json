@@ -34,7 +34,13 @@
         ],
         "babelConfig": "./packages/web/babel.build.config.js",
         "babelExtensions": [".ts", ".tsx"],
-        "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx", "**/*.stories.tsx"],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx",
+          "**/*.stories.tsx",
+          "storybook-decorators"
+        ],
         "typescriptConfig": "packages/web/tsconfig.build.json"
       }
     },

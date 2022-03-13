@@ -12,7 +12,7 @@
   ],
   "authors": "Coinbase",
   "dependencies": {
-    "@cbhq/cds-utils": "^0.3.0",
+    "@cbhq/cds-utils": "workspace:*",
     "d3-array": "^2.3.3",
     "d3-color": "^2.0.0",
     "d3-scale": "^3.3.0",
@@ -26,6 +26,6 @@
     "react-dom": ">=17.0.0"
   },
   "react-native": "./index.ts",
-  "main": "index.js",
+  "main": "index",
   "typings": "index.d.ts"
 }

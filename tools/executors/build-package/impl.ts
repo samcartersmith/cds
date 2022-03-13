@@ -55,6 +55,7 @@ type PackageJson = {
   dependencies?: Record<string, string>;
   peerDependencies?: Record<string, string>;
   devDependencies?: Record<string, string>;
+  'react-native': string;
 };
 
 // babel --config-file ../../babel.build.config.js  --extensions .ts,.tsx --ignore "**/*.js","**/*.test.ts","**/*.test.tsx","dist/**" --source-maps --out-dir dist ./
@@ -145,11 +146,11 @@ function replaceDeps(context: ExecutorContext, pkgJson: PackageJson, deps: Recor
   for (const dep of Object.keys(deps || {})) {
     if (packageVersionReplacePathMap[dep]) {
       promises.push(
-        getPackageVersion(path.join(context.root, packageVersionReplacePathMap[dep], 'package.json')).then(
-          (version: string) => {
-            deps[dep] = version;
-          },
-        ),
+        getPackageVersion(
+          path.join(context.root, packageVersionReplacePathMap[dep], 'package.json'),
+        ).then((version: string) => {
+          deps[dep] = version;
+        }),
       );
     }
   }
@@ -158,12 +159,18 @@ function replaceDeps(context: ExecutorContext, pkgJson: PackageJson, deps: Recor
 }
 
 function deletePackages(packagesToDelete: string[], deps?: Record<string, string>) {
-  if (deps === undefined) return; 
+  if (deps === undefined) return;
 
-  for(const pkg of packagesToDelete) {
+  for (const pkg of packagesToDelete) {
     if (pkg in deps) {
       delete deps[pkg];
     }
+  }
+}
+
+function deleteFields(pkgJson: PackageJson, fields: (keyof PackageJson)[]) {
+  for (const field of fields) {
+    delete pkgJson[field];
   }
 }
 
@@ -179,6 +186,7 @@ async function replacePackageVersions(context: ExecutorContext, destinationDir: 
   await Promise.all(promises);
 
   deletePackages(['@cbhq/cds-web-utils'], pkgJson.dependencies);
+  deleteFields(pkgJson, ['react-native']);
 
   if (pkgJson.devDependencies) {
     delete pkgJson.devDependencies;

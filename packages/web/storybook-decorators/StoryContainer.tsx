@@ -1,4 +1,5 @@
 import React, { memo, useMemo } from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
 import { Story } from '@storybook/react';
 import { css } from 'linaria';
 import { merge } from 'lodash';

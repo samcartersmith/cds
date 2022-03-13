@@ -11,10 +11,10 @@
   ],
   "authors": "Coinbase",
   "dependencies": {
-    "@cbhq/cds-common": "*",
-    "@cbhq/cds-fonts": "*",
-    "@cbhq/cds-lottie-files": "*",
-    "@cbhq/cds-utils": "*",
+    "@cbhq/cds-common": "workspace:*",
+    "@cbhq/cds-fonts": "workspace:*",
+    "@cbhq/cds-lottie-files": "workspace:*",
+    "@cbhq/cds-utils": "workspace:*",
     "@react-native-community/netinfo": "^7.1.7",
     "d3-interpolate-path": "^2.2.2",
     "lodash": "^4.17.21",
@@ -47,6 +47,6 @@
     "react-native-safe-area-context": "3.1.9",
     "react-native-svg": "12.1.0"
   },
-  "main": "index.js",
+  "main": "index",
   "typings": "index.d.ts"
 }

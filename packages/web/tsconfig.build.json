@@ -2,12 +2,15 @@
   "extends": "../../tsconfig.buildOptions.json",
   "compilerOptions": {
     "outDir": "../../.nx/dist/packages/web",
-    "rootDir": "./"
+    "rootDir": "./",
+    "baseUrl": "."
   },
   "include": [
     "**/*"
   ],
   "exclude": [
+    "storybook-decorators/**/*.tsx",
+    "storybook-decorators/**/*.ts",
     "dist",
     "**/*.test.ts",
     "**/*.test.tsx",

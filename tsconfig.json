@@ -4,6 +4,18 @@
   "files": [],
   "references": [
     {
+      "path": "packages/web"
+    },
+    {
+      "path": "packages/codegen"
+    },
+    {
+      "path": "packages/lottie-files"
+    },
+    {
+      "path": "packages/fonts"
+    },
+    {
       "path": "packages/common"
     },
     {

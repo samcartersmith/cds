@@ -9,7 +9,7 @@
     "lottie files",
     "animations"
   ],
-  "main": "index.js",
+  "main": "index",
   "typings": "index.d.ts",
   "react-native": "./index.ts"
 }
