@@ -8,26 +8,21 @@
       "executor": "./tools/executors/build-package:build-package",
       "options": {
         "destinationDir": ".nx/dist/packages/fonts",
-        "staticFilesToIgnore": [
-          "tsconfig.json",
-          "tsconfig.build.json",
-          "project.json"
-        ],
+        "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],
         "babelConfig": "./babel.build.config.js",
-        "babelExtensions": [
-          ".ts",
-          ".tsx"
-        ],
-        "babelIgnore": [
-          "**/*.js",
-          "**/*.test.ts",
-          "**/*.test.tsx"
-        ],
+        "babelExtensions": [".ts", ".tsx"],
+        "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
         "typescriptConfig": "packages/fonts/tsconfig.build.json"
       }
     },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
     "lint-styles": {
       "executor": "./tools/executors/lint-styles:lint-styles"
+    },
+    "typecheck": {
+      "executor": "./tools/executors/typecheck:typecheck"
     }
   }
 }

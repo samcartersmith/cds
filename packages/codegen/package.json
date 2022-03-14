@@ -2,6 +2,22 @@
   "name": "@cds/codegen",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "adoption": "nx run codegen:prepare_adoption",
+    "all": "nx run codegen:codegen && nx run codegen:docgen",
+    "changelog": "nx run codegen:changelog",
+    "contributing": "nx run codegen:contributing",
+    "docs": "nx run codegen:docgen",
+    "format": "nx run codegen:format",
+    "icons": "nx run codegen:sync_icons && yarn svgo packages/codegen/icons/svg/*.svg --config=packages/codegen/configs/svgo.config.js && nx run codegen:build_icons && nx run codegen:docgen",
+    "illustrations": "nx run codegen:build_illustrations && nx run codegen:docgen",
+    "lint": "nx codegen:lint",
+    "lint.fix": "nx codegen:lint --fix",
+    "routes": "nx run codegen:prepare_mobile_routes",
+    "release": "nx run codegen:release",
+    "test": "jest",
+    "typecheck": "nx run codegen:typecheck"
+  },
   "dependencies": {
     "@k-vyn/coloralgorithm": "^1.0.0",
     "axios": "^0.18.0",

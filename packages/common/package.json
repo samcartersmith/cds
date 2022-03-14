@@ -11,6 +11,14 @@
     "types"
   ],
   "authors": "Coinbase",
+  "scripts": {
+    "build": "nx run common:build",
+    "format": "nx run common:format",
+    "lint": "nx run common:lint",
+    "lint.fix": "nx run common:lint --fix",
+    "test": "jest",
+    "typecheck": "nx run common:typecheck"
+  },
   "dependencies": {
     "@cbhq/cds-utils": "workspace:*",
     "d3-array": "^2.3.3",

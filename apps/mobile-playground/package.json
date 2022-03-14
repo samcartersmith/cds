@@ -2,6 +2,20 @@
   "name": "@cds/mobile-playground",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "build.android": "nx run mobile-playground:android",
+    "build.ios": "nx run mobile-playground:ios",
+    "clean.android": "nx run mobile-playground:start-android --clean",
+    "clean.ios": "nx run mobile-playground:start-ios --clean",
+    "format": "nx run mobile-playground:format",
+    "lint": "nx run mobile-playground:lint",
+    "lint.fix": "nx run mobile-playground:lint --fix",
+    "start": "nx run codegen:prepare_mobile_routes && nx run mobile-playground:start-ios",
+    "start.android": "nx run codegen:prepare_mobile_routes && nx run mobile-playground:start-android",
+    "start.ios": "nx run codegen:prepare_mobile_routes && nx run mobile-playground:start-ios",
+    "start.metro": "nx run mobile-playground:start-metro",
+    "typecheck": "nx run mobile-playground:typecheck"
+  },
   "dependencies": {
     "@cbhq/cds-common": "workspace:*",
     "@cbhq/cds-mobile": "workspace:*",

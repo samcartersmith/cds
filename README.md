@@ -1,23 +1,82 @@
 # Coinbase design system
 
-This project was generated using [Nx](https://nx.dev).
+## Setup
 
-This repo is currently a prototype of the new design system polyrepo.
-The existing CDS code used in this repo is a snapshot from https://github.cbhq.net/mono/repo/pull/49327.
-Do not commit the latest CDS master code to this repo.
-
-## Running Nx
-
-Once everything is copied and configured, run:
-
-```
+```sh
 yarn install
-yarn setup
 ```
 
-## Current commands
+## Commands (nx workflow)
 
-See Makefile for a list of commands that currently work.
+This CDS monorepo uses [Nx](https://nx.dev) for improved CI times.
+
+- Nx workspace names are configured in the root workspace.json file.
+- Each project has a project.json which lists the tasks available for a workspace.
+- Nx commands follow the `nx run {project}:task` syntax.
+
+```sh
+nx run common:lint
+```
+
+## Commands (yarn workflow)
+
+This CDS monorepo uses [yarn workspaces](https://yarnpkg.com/features/workspaces).
+
+- Yarn workspace names are configured in each projects package.json.
+- Aliases for each workspace have been added to the root package.json to simplify the yarn workspace workflow.
+- Each project has a package.json which lists the yarn commands available for a workspace.
+
+| Workspace name         | Alias      |
+| ---------------------- | ---------- |
+| @cbhq/cds-common       | common     |
+| @cbhq/cds-fonts        | fonts      |
+| @cbhq/cds-lottie-files | lottie     |
+| @cbhq/cds-mobile       | mobile     |
+| @cbhq/cds-utils        | utils      |
+| @cbhq/cds-web          | web        |
+| @cds/codegen           | codegen    |
+| @cds/mobile-playground | playground |
+| @cds/storybook         | storybook  |
+| @cds/website           | website    |
+
+A diff for adding lodash to cds-utils in workspace vs alias syntax is shown below.
+
+```diff
+- yarn workspace @cbhq/cds-utils add lodash
++ yarn utils add lodash
+```
+
+Both commands work, but the alias version is preferred if you want to minimize keystrokes.
+
+Alias examples:
+
+```sh
+yarn codegen docs
+yarn common lint
+yarn common lint.fix
+yarn website start
+yarn storybook start
+yarn playground start // defaults to ios
+yarn playground start.ios
+yarn playground start.android
+```
+
+## When should I use Nx vs Yarn CLI?
+
+This is sort of personal preference, but there are also known limitations to Nx commands. Majority of CDS's yarn commands call Nx internally so the recommendation is to use `yarn` workflow to avoid decision fatique.
+
+**Why yarn?**
+
+- Adding a dependency, i.e. `yarn utils add lodash`
+- Want to watch a single test file / pass args not accounted for in Nx task, i.e. `yarn web test packages/web/buttons/__tests__/Button.test.tsx --watch`
+- Want to avoid sticky nx cache, i.e. `yarn website start`. (All start commands do not pipe through Nx to avoid this.)
+- Run a simple ts-node script which is not hooked into Nx. i.e. custom CLI for Codegen 2.0.
+- Standardized command names. Nx offers multiple ways to trigger tasks which can be confusing.
+
+**Why Nx?**
+
+- Debug/replicate CI workflow
+- Run a task or Nx command which is not included in yarn commands.
 
 ## Tasks
 

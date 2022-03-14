@@ -17,6 +17,17 @@
     "globalStyles.js",
     "styles/global.js"
   ],
+  "scripts": {
+    "build": "nx run web:build",
+    "build.css": "nx run web:build-css",
+    "format": "nx run web:format",
+    "lint": "nx run web:lint",
+    "lint.fix": "nx run web:lint --fix",
+    "stylelint": "nx run web:lint-styles",
+    "stylelint.fix": "nx run web:lint-styles --fix",
+    "test": "jest",
+    "typecheck": "nx run web:typecheck"
+  },
   "dependencies": {
     "@cbhq/cds-common": "workspace:*",
     "@cbhq/cds-fonts": "workspace:*",

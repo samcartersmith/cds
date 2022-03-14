@@ -9,5 +9,13 @@
   ],
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "authors": "Coinbase",
-  "main": "./index"
+  "main": "./index",
+  "scripts": {
+    "build": "nx run fonts:build",
+    "lint": "nx run fonts:lint",
+    "lint.fix": "nx run fonts:lint --fix",
+    "stylelint": "nx run fonts:lint-styles",
+    "stylelint.fix": "nx run fonts:lint-styles --fix",
+    "typecheck": "nx run fonts:typecheck"
+  }
 }
