@@ -6,6 +6,93 @@
 yarn install
 ```
 
+## Comands (overview)
+
+| Command                         | Description                                                  |
+| ------------------------------- | ------------------------------------------------------------ |
+| yarn build                      | Build all packages.                                          |
+| yarn format                     | Format all of the affected packages                          |
+| yarn lint                       | Lint all of the affected packages                            |
+| yarn lint.fix                   | Lint all of the affected packages and fix errors             |
+| yarn release                    | Automatically update CHANGELOG based on PR titles            |
+| yarn stylelint                  | Stylelint all affected packages                              |
+| yarn stylelint.fix              | Stylelint and fix all affected packages                      |
+| yarn test                       | Test all of the affected packages                            |
+| yarn typecheck                  | typecheck all of the affected packages                       |
+| ----                            | ----                                                         |
+| yarn codegen adoption           | Prepare adoption numbers                                     |
+| yarn codegen adoption --DEBUG=1 | Debug adoption tracker script                                |
+| yarn codegen all                | Generate code in design system.                              |
+| yarn codegen docs               | Generate docs for CDS website.                               |
+| yarn codegen format             | Format the `codegen` project.                                |
+| yarn codegen icons              | Prepare icons                                                |
+| yarn codegen illustrations      | Prepare illustrations                                        |
+| yarn codegen lint               | Lint the `codegen` project.                                  |
+| yarn codegen lint.fix           | Lint the `codegen` project and fix errors.                   |
+| yarn codegen routes             | Create routes for mobile-playgrounds from screens directory. |
+| ----                            | ----                                                         |
+| yarn common build               | Build the `common` package.                                  |
+| yarn common format              | Format the `common` package.                                 |
+| yarn common lint                | Lint the `common` package.                                   |
+| yarn common lint.fix            | Lint the `common` package and fix errors.                    |
+| yarn common test                | Test the `common` package.                                   |
+| yarn common typecheck           | Typecheck the `common` package.                              |
+| ----                            | ----                                                         |
+| yarn fonts build                | Build the `fonts` package.                                   |
+| yarn fonts format               | Format the `fonts` package.                                  |
+| yarn fonts lint                 | Lint the `fonts` package.                                    |
+| yarn fonts typecheck            | Typecheck the `fonts` package.                               |
+| ----                            | ----                                                         |
+| yarn lottie build               | Build the `lottie` package.                                  |
+| yarn lottie format              | Format the `lottie` package.                                 |
+| yarn lottie lint                | Lint the `lottie` package.                                   |
+| yarn lottie typecheck           | Typecheck the `lottie` package.                              |
+| ----                            | ----                                                         |
+| yarn mobile build               | Build the `mobile` package.                                  |
+| yarn mobile format              | Format the `mobile` package.                                 |
+| yarn mobile lint                | Lint the `mobile` package.                                   |
+| yarn mobile lint.fix            | Lint the `mobile` package and fix errors.                    |
+| yarn mobile test                | Test the `mobile` package.                                   |
+| yarn mobile typecheck           | Typecheck the `mobile` package.                              |
+| ----                            | ----                                                         |
+| yarn utils build                | Build the `utils` package.                                   |
+| yarn utils format               | Format the `utils` package.                                  |
+| yarn utils lint                 | Lint the `utils` package.                                    |
+| yarn utils lint.fix             | Lint the `utils` package and fix errors.                     |
+| yarn utils test                 | Test the `utils` package.                                    |
+| yarn utils typecheck            | Typecheck the `utils` package.                               |
+| ----                            | ----                                                         |
+| yarn web build                  | Build the `web` package.                                     |
+| yarn web build.css              | Build the static css.                                        |
+| yarn web format                 | Format the `web` package.                                    |
+| yarn web lint                   | Lint the `web` package.                                      |
+| yarn web lint.fix               | Lint the `web` package and fix errors.                       |
+| yarn web stylelint              | Stylelint the `web` package                                  |
+| yarn web stylelint.fix          | Stylelint and fix the `web` package                          |
+| yarn web test                   | Test the `web` package.                                      |
+| yarn web typecheck              | Typecheck the `web` package.                                 |
+| ----                            | ----                                                         |
+| yarn website build              | Build website.                                               |
+| yarn website format             | Format the `website`                                         |
+| yarn website lint               | Lint the `website`.                                          |
+| yarn website start              | Start website local dev server.                              |
+| yarn website stylelint          | Stylelint website                                            |
+| yarn website stylelint.fix      | Stylelint website and fix errors.                            |
+| ----                            | ----                                                         |
+| yarn storybook build            | Build storybook.                                             |
+| yarn storybook start            | Start storybook local dev server.                            |
+| yarn storybook format           | Format the `storybook`                                       |
+| ----                            | ----                                                         |
+| yarn playground format          | Format the `mobile-playground`                               |
+| yarn playground start           | Start the playground app (ios by default).                   |
+| yarn playground start.metro     | Start the playground metro server.                           |
+| yarn playground start.ios       | Start the playground ios app.                                |
+| yarn playground build.ios       | Build the playground ios app.                                |
+| yarn playground clean.ios       | Clean ios build                                              |
+| yarn playground start.android   | Start the playground android app.                            |
+| yarn playground build.android   | Build the playground android app.                            |
+| yarn playground clean.android   | Clean android build                                          |
+
 ## Commands (nx workflow)
 
 This CDS monorepo uses [Nx](https://nx.dev) for improved CI times.
