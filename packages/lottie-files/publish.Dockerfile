@@ -8,7 +8,6 @@ COPY . .
 
 # Install dependencies
 RUN yarn --immutable
-RUN yarn setup
 
 # Build the package with nx
 RUN yarn nx run lottie-files:build

@@ -8,7 +8,6 @@ COPY . .
 
 # Install dependencies
 RUN yarn --immutable
-RUN yarn setup
 
 # Build the app with nx
 ENV NODE_ENV=production
