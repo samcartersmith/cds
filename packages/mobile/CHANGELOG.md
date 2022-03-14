@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.41.5 (3/14/2022, 08:37 AM PST)
+
+#### 🚀 Updates
+
+- **[Tabs]** Remove deprecation warning from all tabs components.
+- **[Accordion]** Accordion UI adjustments. [#55](https://github.cbhq.net/frontend/cds/pull/55)
+- **[Collapsible]** Collapsible horizontal motion. [#57](https://github.cbhq.net/frontend/cds/pull/57)
+
+#### 🐞 Fixes
+
+- Web release build errors. [#63](https://github.cbhq.net/frontend/cds/pull/63)
+- Create tabs documentation. [#58](https://github.cbhq.net/frontend/cds/pull/58)
+- Fix drawer animation. [#50](https://github.cbhq.net/frontend/cds/pull/50)
+
+#### 📘 Misc
+
+- Fix codegen scripts. Port contributing to codegen. [#43](https://github.cbhq.net/frontend/cds/pull/43)
+
 ## 0.41.4 (3/10/2022, 03:34 PM PST)
 
 #### 📘 Misc

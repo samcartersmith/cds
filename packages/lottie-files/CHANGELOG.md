@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.23 (3/14/2022, 08:37 AM PST)
+
+#### 🐞 Fixes
+
+- Web release build errors. [#63](https://github.cbhq.net/frontend/cds/pull/63)
+
+#### 📘 Misc
+
+- Fix codegen scripts. Port contributing to codegen. [#43](https://github.cbhq.net/frontend/cds/pull/43)
+
 ## 0.2.22 (3/10/2022, 03:34 PM PST)
 
 #### 📘 Misc
