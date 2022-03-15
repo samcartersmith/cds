@@ -11,6 +11,7 @@ import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Avatar } from '../../media';
 import { PortalProvider } from '../../overlays/PortalProvider';
 import { Pressable } from '../../system';
+import { TabNavigation } from '../../tabs';
 import { palette } from '../../tokens';
 import { TextDisplay2, TextHeadline } from '../../typography';
 import {
@@ -42,7 +43,26 @@ export const items: Items = [
 ];
 
 const handlePress = (name: string) => console.log(`Pressed ${name}`);
+const tabs = [
+  {
+    id: 'all',
+    label: 'All',
+  },
+  {
+    id: 'watchlist',
+    label: 'Watchlist',
+  },
+  {
+    id: 'tradable',
+    label: 'Tradable',
+  },
+  {
+    id: 'gainers',
+    label: 'Gainers',
+  },
+];
 export const NavigationBarFullExample: React.FC = () => {
+  const [value, setValue] = useState(tabs[0].id);
   return (
     <NavigationBar
       start={<IconButton name="backArrow" onPress={() => handlePress('Back')} />}
@@ -58,7 +78,8 @@ export const NavigationBarFullExample: React.FC = () => {
         </HStack>
       }
     >
-      <NavigationTitle>Personal Portfolio</NavigationTitle>
+      <NavigationTitle>{`Personal Portfolio (${value})`}</NavigationTitle>
+      <TabNavigation tabs={tabs} value={value} onChange={setValue} />
     </NavigationBar>
   );
 };

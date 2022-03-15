@@ -1,12 +1,36 @@
 ```jsx live
 function NavigationWithPress() {
+  const tabs = [
+    {
+      id: 'all',
+      label: 'All',
+    },
+    {
+      id: 'watchlist',
+      label: 'Watchlist',
+    },
+    {
+      id: 'tradable',
+      label: 'Tradable',
+    },
+    {
+      id: 'gainers',
+      label: 'Gainers',
+      count: 2,
+    },
+  ];
   const handlePress = (name) => alert(`Pressed ${name}`);
+  const [value, setValue] = useState(tabs[1].id);
   const { name, avatar } = mocks.users.find(({ name }) => name === 'Donna');
 
   return (
     <ExampleWithThemeToggles>
       <NavigationBar
-        start={<IconButton name="backArrow" onPress={() => handlePress('Back')} />}
+        start={
+          value !== tabs[0].id ? (
+            <IconButton name="backArrow" onPress={() => setValue(tabs[0].id)} />
+          ) : undefined
+        }
         end={
           <HStack gap={1} alignItems="center">
             <IconButton name="bell" onPress={() => handlePress('Notifications')} />
@@ -18,8 +42,9 @@ function NavigationWithPress() {
             </Pressable>
           </HStack>
         }
+        bottom={<TabNavigation tabs={tabs} value={value} onChange={setValue} />}
       >
-        <NavigationTitle>Personal Portfolio</NavigationTitle>
+        <NavigationTitle>{`Personal Portfolio (${value})`}</NavigationTitle>
       </NavigationBar>
     </ExampleWithThemeToggles>
   );
