@@ -61,7 +61,7 @@ export const InputStack = memo(function InputStack({
       borderColor:
         variant === 'foregroundMuted' ? palette.lineHeavy : palette[variant ?? 'lineHeavy'],
       flexDirection: 'row',
-      flex: 1,
+      flexGrow: 1,
       backgroundColor: palette.background,
       borderRadius: borderRadiusTokens[borderRadius],
       ...inputBorderRadius,
@@ -122,6 +122,6 @@ export const InputStack = memo(function InputStack({
 const styles = StyleSheet.create({
   inputAreaContainerStyle: {
     padding: 1,
-    flex: 1,
+    flexGrow: 1,
   },
 });
