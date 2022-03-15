@@ -6,14 +6,14 @@ import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumCondit
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { isSSR } from '../../utils/browser';
 
-type PopoverBasePortalProps = {
+type PositionedOverlayPortalProps = {
   disablePortal?: boolean;
   invertSpectrum?: boolean;
 };
 
 const inverseConfig = { light: 'dark', dark: 'light' } as const;
 
-export const PopoverBasePortal: React.FC<PopoverBasePortalProps> = ({
+export const PositionedOverlayPortal: React.FC<PositionedOverlayPortalProps> = ({
   disablePortal = false,
   invertSpectrum = false,
   children,

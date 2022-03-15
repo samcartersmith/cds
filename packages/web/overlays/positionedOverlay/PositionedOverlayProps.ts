@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import { Placement } from '@popperjs/core';
 
-export type PopoverBasePlacement = Extract<Placement, 'top' | 'bottom' | 'left' | 'right'>;
+export type PositionedOverlayPlacement = Extract<Placement, 'top' | 'bottom' | 'left' | 'right'>;
 
-export type PopoverBaseProps = {
+export type PositionedOverlayProps = {
   content: ReactNode;
   children: ReactNode;
   disablePortal?: boolean;
@@ -17,5 +17,5 @@ export type PopoverBaseProps = {
   onMouseDown?: (event: React.MouseEvent) => void;
   invertPopoverSpectrum?: boolean;
   visible: boolean;
-  placement?: PopoverBasePlacement;
+  placement?: PositionedOverlayPlacement;
 };

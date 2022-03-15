@@ -1,23 +1,23 @@
 import { useMemo, useState } from 'react';
-import { usePopper } from 'react-popper';
+import { usePopper as useExternalPopper } from 'react-popper';
 import { Options as PopperOptions } from '@popperjs/core';
 
-import { PopoverBasePlacement } from './PopoverBaseProps';
+import { PositionedOverlayPlacement } from './PositionedOverlayProps';
 
 const DEFAULT_POPPER_GAP = 0;
 const DEFAULT_POPPER_SKID = 0;
 
-type UseCDSPopperParams = {
-  placement: PopoverBasePlacement;
+type UsePopperParams = {
+  placement: PositionedOverlayPlacement;
   skid?: number;
   gap?: number;
 };
 
-export const useCDSPopper = ({
+export const usePopper = ({
   placement,
   skid = DEFAULT_POPPER_GAP,
   gap = DEFAULT_POPPER_SKID,
-}: UseCDSPopperParams) => {
+}: UsePopperParams) => {
   const [subject, setSubject] = useState<HTMLDivElement | null>(null);
   const [popper, setPopper] = useState<HTMLDivElement | null>(null);
 
@@ -35,7 +35,7 @@ export const useCDSPopper = ({
     };
   }, [gap, placement, skid]);
 
-  const { styles: popperStyles, attributes: popperAttributes } = usePopper(
+  const { styles: popperStyles, attributes: popperAttributes } = useExternalPopper(
     subject,
     popper,
     popperOptions,

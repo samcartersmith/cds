@@ -8,8 +8,8 @@ import { NavigationIconButton } from '../buttons/NavigationIconButton';
 import { DotSymbol } from '../dots/DotSymbol';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { PopoverBase } from '../overlays/popoverBase/PopoverBase';
 import { PortalProvider } from '../overlays/PortalProvider';
+import { PositionedOverlay } from '../overlays/positionedOverlay/PositionedOverlay';
 
 const UserSwitcherContent = memo(() => {
   // This is the content that will vary across app and user.
@@ -30,7 +30,7 @@ export type UserSwitcherRecipeProps = {
 const UserSwitcherRecipe = memo(({ children }: UserSwitcherRecipeProps) => {
   const [visible, { toggleOn: handleClickSubject, toggleOff: handleClose }] = useToggler(false);
   return (
-    <PopoverBase
+    <PositionedOverlay
       visible={visible}
       onClickSubject={handleClickSubject}
       onClose={handleClose}
@@ -38,7 +38,7 @@ const UserSwitcherRecipe = memo(({ children }: UserSwitcherRecipeProps) => {
       content={<UserSwitcherContent />}
     >
       {children}
-    </PopoverBase>
+    </PositionedOverlay>
   );
 });
 

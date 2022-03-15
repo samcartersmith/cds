@@ -7,10 +7,10 @@ import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { Box } from '../../layout/Box';
 import { Overlay } from '../Overlay/Overlay';
 
-import { PopoverBasePortal } from './PopoverBasePortal';
-import { PopoverBaseProps } from './PopoverBaseProps';
-import { useCDSPopper } from './useCDSPopper';
+import { PositionedOverlayPortal } from './PositionedOverlayPortal';
+import { PositionedOverlayProps } from './PositionedOverlayProps';
 import { useKeyboardNavigatablePortal } from './useKeyboardNavigatablePortal';
+import { usePopper } from './usePopper';
 
 const subjectStyle = css`
   background-color: transparent;
@@ -18,7 +18,11 @@ const subjectStyle = css`
   cursor: default;
 `;
 
-export const PopoverBase = memo(
+/**
+ * PositionedOverlay is the internal recommended base component used for any overlay that is laid out with respect to a subject.
+ * It is purposely a flexible component and is reserved for CDS internal usage.
+ */
+export const PositionedOverlay = memo(
   ({
     content,
     children,
@@ -34,12 +38,10 @@ export const PopoverBase = memo(
     invertPopoverSpectrum,
     visible,
     placement = 'bottom',
-  }: PopoverBaseProps) => {
-    const { popper, subject, setSubject, setPopper, popperStyles, popperAttributes } = useCDSPopper(
-      {
-        placement,
-      },
-    );
+  }: PositionedOverlayProps) => {
+    const { popper, subject, setSubject, setPopper, popperStyles, popperAttributes } = usePopper({
+      placement,
+    });
 
     const handleClose = useCallback(() => {
       subject?.focus(); // P3: get to refocus on subject upon close.
@@ -61,7 +63,10 @@ export const PopoverBase = memo(
           {children}
         </div>
         {visible ? (
-          <PopoverBasePortal disablePortal={disablePortal} invertSpectrum={invertPopoverSpectrum}>
+          <PositionedOverlayPortal
+            disablePortal={disablePortal}
+            invertSpectrum={invertPopoverSpectrum}
+          >
             {showOverlay && <Overlay onPress={handleClose} />}
             <div ref={setPopper} style={popperStyles.popper} {...popperAttributes.popper}>
               {/* Box with Horizontal spacing to ensure proper margins but still rely on popper for layout. */}
@@ -69,7 +74,7 @@ export const PopoverBase = memo(
                 {content}
               </Box>
             </div>
-          </PopoverBasePortal>
+          </PositionedOverlayPortal>
         ) : undefined}
       </div>
     );
