@@ -16,6 +16,7 @@ yarn
 - [Release Workflows](#release-and-cds-consumers)
 - [Testing](#testing)
 - [Miscellaneous](#miscellaneous)
+- [Troubleshooting](#troubleshooting)
 
 # Web development
 
@@ -521,59 +522,30 @@ By default, these commands will run every test that exist. You can configure it 
 
 <br />
 
-### **Selectively Test Web Features**
-
-<br />
-
-To do this, you need to modify [`jest.config.web.js`](eng/shared/design-system/jest.config.web.js) file. Change the regular expression so that it only matches tests you care about.
-
-For example, if you change the testMatch to this, it will only run tests for Alert.
-
-```
-testMatch: ['**/__tests__/**/Alert.test.[jt]s?(x)'],
-```
-
-You can also test more than 1 feature at a time. Here is an example of how you can test InputStack and Alert simultaneously
-
-```
-testMatch: [
-  '**/__tests__/**/InputStack.test.[jt]s?(x)',
-  '**/__tests__/**/Alert.test.[jt]s?(x)'
-]
-```
-
-<br />
-
-> **Note:** Please don't commit your jest.config.web.js changes.
-
-### **Selectively Test Mobile Features**
-
-<br />
-
-The steps required to selectively test mobile features are very similar to how you do it in web. The only difference is that you will be modifying [`jest.config.mobile.js`](eng/shared/design-system/jest.config.mobile.js) instead.
-
-<br />
-
-> **Note:** Please don't commit your jest.config.mobile.js changes.
-
-<br />
-
 ## **Testing Locally on external projects**
 
 - Build your project and any dependencies of that project with `make build.packages`.
-- The output of the packages above will be in `bazel-out/darwin-fastbuild/bin/eng/shared/design-system`. Locate your package in the subdirectory `[package]/package`. For example
-  `cds-mobile` would be in `bazel-out/darwin-fastbuild/bin/eng/shared/design-system/mobile/package`
+- The output of the packages above will be in `design-system/.nx/dist`. Locate your package in the subdirectory `[package]/package`. For example, `cds-mobile` would be in `design-system/.nx/dist/packages/mobile`
 - Copy the absolute path to your package
 - In the external project add to dependencies and resolution portion of package.json to guarantee everything is pulling from your local packages:
 
 ```
-  "@cbhq/cds-common": "file:/absolute path to this/repo/bazel-out/darwin-fastbuild/bin/eng/shared/design-system/common/package",
-  "@cbhq/cds-fonts": "file:/absolute path to this/repo/bazel-out/darwin-fastbuild/bin/eng/shared/design-system/fonts/package"
-  "@cbhq/cds-lottie-files": "file:/absolute path to this/repo/bazel-out/darwin-fastbuild/bin/eng/shared/design-system/lottie-files/package",
-  "@cbhq/cds-mobile": "file:/absolute path to this/repo/bazel-out/darwin-fastbuild/bin/eng/shared/design-system/mobile/package"
-  "@cbhq/cds-utils": "file:/absolute path to this/repo/bazel-out/darwin-fastbuild/bin/eng/shared/design-system/utils/package"
-  "@cbhq/cds-web": "file:/absolute path to this/repo/bazel-out/darwin-fastbuild/bin/eng/shared/design-system/web/package"
+  "@cbhq/cds-common": "file:/absolute path to this/.nx/dist/packages/common",
+  "@cbhq/cds-fonts": "file:/absolute path to this/.nx/dist/packages/fonts"
+  "@cbhq/cds-lottie-files": "file:/absolute path to this/.nx/dist/packages/lottie-files",
+  "@cbhq/cds-mobile": "file:/absolute path to this/.nx/dist/packages/mobile"
+  "@cbhq/cds-utils": "file:/absolute path to this/.nx/dist/packages/utils"
+  "@cbhq/cds-web": "file:/absolute path to this/.nx/dist/packages/web"
 ```
 
 - Run `yarn install` on the external project
 - If you update the package in the monorepo and want to sync it in the external project then you will have to run `yarn upgrade [dependency]`. For example `yarn upgrade @cbhq/cds-common`
+
+# **Troubleshooting**
+
+### **Having issues testing locally on external project**
+
+If you find that the output in `.nx/dist/packages/<package>` is not what you expect. Its possible that there were changes made to one of the scripts in `tools/executors`. Try running `yarn install`.
+
+**Explanation** <br/>
+By running `yarn install`, it will trigger the `setup.sh` script to get executed during post-install. This will ensure that you are running the latest executor script.
