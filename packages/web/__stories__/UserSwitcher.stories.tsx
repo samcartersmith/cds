@@ -1,82 +1,138 @@
-import { memo, ReactElement } from 'react';
+import React, { memo, ReactElement } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { assets } from '@cbhq/cds-common/internal/data/assets';
+import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { Button } from '../buttons/Button';
-import { IconButton } from '../buttons/IconButton';
-import { NavigationIconButton } from '../buttons/NavigationIconButton';
-import { DotSymbol } from '../dots/DotSymbol';
-import { HStack } from '../layout/HStack';
-import { VStack } from '../layout/VStack';
-import { PortalProvider } from '../overlays/PortalProvider';
-import { PositionedOverlay } from '../overlays/positionedOverlay/PositionedOverlay';
+import { Cell } from '../cells/Cell';
+import { DotCount } from '../dots/DotCount';
+import { HStack, Spacer, VStack } from '../layout';
+import { Avatar } from '../media/Avatar';
+import { SectionTitle } from '../overlays/PopoverMenu/SectionTitle';
+import { Pressable } from '../system/Pressable';
+import { TextBody, TextHeadline, TextLabel1, TextLabel2, TextTitle3 } from '../typography';
 
-const UserSwitcherContent = memo(() => {
-  // This is the content that will vary across app and user.
+import { Switcher } from './Switcher';
+
+const Content = memo(() => {
   return (
-    <VStack gap={2} maxWidth={400} background="background" spacing={1}>
-      <Button>Btn 1</Button>
-      <Button>Btn 2</Button>
-      <Button>Btn 3</Button>
+    <VStack spacingVertical={2} spacingHorizontal={3}>
+      <VStack gap={2} alignItems="center">
+        <Avatar size="xxxl" selected alt="Brian Armstrong" />
+        <VStack alignItems="center">
+          <TextTitle3 align="center" as="h3">
+            Brian Armstrong
+          </TextTitle3>
+          <TextBody align="center" as="p">
+            brian.armstrong@coinbase.com
+          </TextBody>
+        </VStack>
+      </VStack>
+      <Spacer vertical={2} />
+      <SectionTitle text="Your Accounts" />
+      {/* This has to be a Cell for the truncation expand on hover to work */}
+      <Cell onPress={NoopFn}>
+        <VStack>
+          <TextHeadline as="p">Brian Armstrong</TextHeadline>
+          <TextBody as="p" color="foregroundMuted">
+            Personal
+          </TextBody>
+        </VStack>
+      </Cell>
+      <Cell onPress={NoopFn}>
+        <VStack>
+          <TextHeadline as="p">Brian Armstrong</TextHeadline>
+          <TextBody as="p" color="foregroundMuted">
+            Personal
+          </TextBody>
+        </VStack>
+      </Cell>
+      <HStack>
+        <Button flush="start" startIcon="followInactive" transparent>
+          Add Account
+        </Button>
+      </HStack>
+      <Spacer vertical={4} />
+      <VStack alignItems="center" gap={1}>
+        <Button block>Sign out</Button>
+        <Button transparent>Sign out of all accounts</Button>
+      </VStack>
     </VStack>
   );
 });
 
-export type UserSwitcherRecipeProps = {
-  children: ReactElement;
+type SwitcherSubjectProps = {
+  title: string;
+  description?: string;
 };
 
-// Recipe to be turned into the Switcher component
-const UserSwitcherRecipe = memo(({ children }: UserSwitcherRecipeProps) => {
+const Subject = ({ title, description }: SwitcherSubjectProps) => {
+  return (
+    <Pressable backgroundColor="transparent" as="button" borderRadius="standard">
+      <HStack gap={1} alignItems="center">
+        <Avatar size="xl" alt="Test" />
+        <VStack maxWidth={172} minWidth={0}>
+          {description ? (
+            <TextLabel1 overflow="truncate" as="p">
+              {title}
+            </TextLabel1>
+          ) : (
+            <TextHeadline overflow="truncate" as="h3">
+              {title}
+            </TextHeadline>
+          )}
+          {description ? (
+            <TextLabel2 overflow="truncate" as="p">
+              {description}
+            </TextLabel2>
+          ) : null}
+        </VStack>
+      </HStack>
+    </Pressable>
+  );
+};
+
+export type UserSwitcherProps = {
+  children?: ReactElement;
+} & SwitcherSubjectProps;
+
+export const UserSwitcher = memo(({ title = 'Brian', description }: UserSwitcherProps) => {
   const [visible, { toggleOn: handleClickSubject, toggleOff: handleClose }] = useToggler(false);
   return (
-    <PositionedOverlay
-      visible={visible}
-      onClickSubject={handleClickSubject}
-      onClose={handleClose}
-      showOverlay
-      content={<UserSwitcherContent />}
-    >
-      {children}
-    </PositionedOverlay>
+    <HStack>
+      <Switcher
+        visible={visible}
+        onPressSubject={handleClickSubject}
+        onClose={handleClose}
+        content={<Content />}
+      >
+        <Subject title={title} description={description} />
+      </Switcher>
+    </HStack>
   );
 });
 
-export default {
-  title: 'Core Components/UserSwitcher',
-  component: UserSwitcherRecipe,
+export const UserSwitcherWithDot = ({
+  title = 'Emilie',
+  description = 'Personal',
+}: UserSwitcherProps) => {
+  const [visible, { toggleOn: handleClickSubject, toggleOff: handleClose }] = useToggler(false);
+  return (
+    <HStack>
+      <Switcher
+        visible={visible}
+        onPressSubject={handleClickSubject}
+        onClose={handleClose}
+        content={<Content />}
+      >
+        <DotCount pin="top-end" count={2}>
+          <Subject title={title} description={description} />
+        </DotCount>
+      </Switcher>
+    </HStack>
+  );
 };
 
-export const Base = () => {
-  return (
-    <PortalProvider>
-      <HStack pin="right" spacingHorizontal={2} gap={3}>
-        <UserSwitcherRecipe>
-          <VStack spacing={2}>
-            <IconButton name="bell" variant="secondary" />
-          </VStack>
-        </UserSwitcherRecipe>
-        <UserSwitcherRecipe>
-          <VStack spacing={2}>
-            <DotSymbol size="m" pin="bottom-start" source={assets.eth.imageUrl}>
-              <IconButton name="bell" variant="secondary" />
-            </DotSymbol>
-          </VStack>
-        </UserSwitcherRecipe>
-
-        <UserSwitcherRecipe>
-          <VStack spacing={2}>
-            <NavigationIconButton name="appSwitcher" />
-          </VStack>
-        </UserSwitcherRecipe>
-        <UserSwitcherRecipe>
-          <VStack spacing={2}>
-            <DotSymbol size="m" pin="bottom-start" source={assets.eth.imageUrl}>
-              <NavigationIconButton name="appSwitcher" />
-            </DotSymbol>
-          </VStack>
-        </UserSwitcherRecipe>
-      </HStack>
-    </PortalProvider>
-  );
+export default {
+  title: 'Core Components/Switchers/UserSwitcher',
+  component: UserSwitcher,
 };

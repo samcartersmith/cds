@@ -1,11 +1,13 @@
 import { useMemo } from 'react';
 import { generateRandomId } from '@cbhq/cds-utils';
 
+export type AriaHasPopupType = 'false' | 'true' | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
+
 export type AccessibleControlledReturnType = {
   triggerAccessibilityProps: {
     'aria-expanded': boolean;
     'aria-controls': string;
-    'aria-haspopup': string;
+    'aria-haspopup': AriaHasPopupType;
   };
   controlledElementAccessibilityProps: {
     id: string;
@@ -24,7 +26,7 @@ export const useA11yControlledVisibility = (
     () => ({
       'aria-expanded': isVisible,
       'aria-controls': uniqueId,
-      'aria-haspopup': 'dialog',
+      'aria-haspopup': 'dialog' as AriaHasPopupType,
     }),
     [isVisible, uniqueId],
   );

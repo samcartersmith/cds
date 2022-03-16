@@ -1,8 +1,8 @@
 import { css } from 'linaria';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
-export const getZIndexFromOrder = (order: number, total: number) =>
-  total - order + zIndex.interactable;
+export const getZIndexFromRow = (row: number, totalRows: number) =>
+  totalRows - row + zIndex.interactable;
 
 const truncatedStyles = css`
   width: 100%;
@@ -14,6 +14,7 @@ const truncatedStyles = css`
 const overflowStyles = css`
   overflow: visible;
   white-space: normal;
+  word-wrap: break-word;
 `;
 
 export const useOverflowTextStyles = (expanded: boolean) =>

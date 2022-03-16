@@ -3,18 +3,34 @@ import {
   animateInOpacityConfig,
   animateOutOpacityConfig,
 } from '@cbhq/cds-common/animation/overlay';
+import { MotionDuration } from '@cbhq/cds-common/types';
 
 import { Animated } from '../../animation/Animated';
 
-export const useOverlayAnimation = (overlayRef: RefObject<HTMLElement>) => {
+export const useOverlayAnimation = (
+  overlayRef: RefObject<HTMLElement>,
+  motionDuration?: MotionDuration,
+) => {
+  const animateInConfig = useMemo(
+    () => ({
+      ...animateInOpacityConfig,
+      duration: motionDuration ?? animateInOpacityConfig.duration,
+    }),
+    [motionDuration],
+  );
+  const animateOutConfig = useMemo(
+    () => ({
+      ...animateOutOpacityConfig,
+      duration: motionDuration ?? animateOutOpacityConfig.duration,
+    }),
+    [motionDuration],
+  );
+
   const animate = useCallback(
     (type: 'in' | 'out') => {
-      return Animated.timing(
-        overlayRef,
-        type === 'in' ? animateInOpacityConfig : animateOutOpacityConfig,
-      );
+      return Animated.timing(overlayRef, type === 'in' ? animateInConfig : animateOutConfig);
     },
-    [overlayRef],
+    [overlayRef, animateInConfig, animateOutConfig],
   );
 
   return useMemo(

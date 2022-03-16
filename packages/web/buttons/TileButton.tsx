@@ -33,7 +33,7 @@ export type TileButtonProps = TileBaseProps &
 
 export const TileButton = memo(
   forwardRef(function TileButton(
-    { pictogram, title, ...props }: TileButtonProps,
+    { pictogram, title, count, ...props }: TileButtonProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) {
     return (
@@ -47,7 +47,7 @@ export const TileButton = memo(
           noScaleOnPress
           className={cx(insetFocusRing, pressableStyles)}
         >
-          <Tile title={title} pictogram={pictogram} />
+          <Tile title={title} pictogram={pictogram} count={count} />
         </Pressable>
       </div>
     );

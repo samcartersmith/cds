@@ -2,6 +2,8 @@ import React from 'react';
 import { defaultPopoverPositionConfig } from '@cbhq/cds-common/tokens/menu';
 import { isProduction } from '@cbhq/cds-utils';
 
+import { AriaHasPopupType } from '../../hooks/useA11yControlledVisibility';
+
 import { PopoverContextType } from './usePopoverMenu';
 
 const defaultContext: PopoverContextType = {
@@ -33,7 +35,7 @@ const defaultContext: PopoverContextType = {
   triggerAccessibilityProps: {
     'aria-controls': '',
     'aria-expanded': false,
-    'aria-haspopup': '',
+    'aria-haspopup': 'dialog' as AriaHasPopupType,
   },
   handleExitMenu: () => null,
   handlePopoverMenuBlur: () => null,

@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import { css } from 'linaria';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
+import { useA11yControlledVisibility } from '../../hooks/useA11yControlledVisibility';
 import { Box } from '../../layout/Box';
 import { Overlay } from '../Overlay/Overlay';
 
@@ -14,7 +16,7 @@ import { usePopper } from './usePopper';
 
 const subjectStyle = css`
   background-color: transparent;
-  display: inline-block;
+  display: flex;
   cursor: default;
 `;
 
@@ -28,7 +30,8 @@ export const PositionedOverlay = memo(
     children,
     disablePortal,
     showOverlay = false,
-    onClickSubject,
+    overlayRef,
+    onPressSubject,
     onClose,
     onMouseEnter,
     onMouseLeave,
@@ -38,27 +41,57 @@ export const PositionedOverlay = memo(
     invertPopoverSpectrum,
     visible,
     placement = 'bottom',
+    skid,
+    gap,
   }: PositionedOverlayProps) => {
     const { popper, subject, setSubject, setPopper, popperStyles, popperAttributes } = usePopper({
       placement,
+      skid,
+      gap,
     });
 
-    const handleClose = useCallback(() => {
+    const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
+      useA11yControlledVisibility(visible);
+
+    const handleClose = useCallback(async () => {
       subject?.focus(); // P3: get to refocus on subject upon close.
       onClose?.();
     }, [onClose, subject]);
 
     useKeyboardNavigatablePortal({ portalContent: popper, handleClose });
 
+    const memoizedContent = useMemo(
+      () => (
+        <div ref={setPopper} style={popperStyles.popper} {...popperAttributes.popper}>
+          {/* Box with Horizontal spacing to ensure proper margins but still rely on popper for layout. */}
+          <Box
+            background="transparent"
+            spacingHorizontal={gutter}
+            {...controlledElementAccessibilityProps}
+          >
+            {content}
+          </Box>
+        </div>
+      ),
+      [
+        content,
+        controlledElementAccessibilityProps,
+        popperAttributes.popper,
+        popperStyles.popper,
+        setPopper,
+      ],
+    );
+
     return (
       <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <div
           ref={setSubject}
-          onClick={onClickSubject}
+          onClick={onPressSubject}
           className={subjectStyle}
           onFocus={onFocus}
           onBlur={onBlur}
           onMouseDown={onMouseDown}
+          {...triggerAccessibilityProps}
         >
           {children}
         </div>
@@ -67,13 +100,22 @@ export const PositionedOverlay = memo(
             disablePortal={disablePortal}
             invertSpectrum={invertPopoverSpectrum}
           >
-            {showOverlay && <Overlay onPress={handleClose} />}
-            <div ref={setPopper} style={popperStyles.popper} {...popperAttributes.popper}>
-              {/* Box with Horizontal spacing to ensure proper margins but still rely on popper for layout. */}
-              <Box background="transparent" spacingHorizontal={gutter}>
-                {content}
+            {showOverlay ? (
+              <Box
+                pin="all"
+                zIndex={zIndex.overlays.modal}
+                height="100vh"
+                width="100vw"
+                position="fixed"
+                role="dialog"
+                aria-modal="true"
+              >
+                <Overlay ref={overlayRef} onPress={handleClose} />
+                {memoizedContent}
               </Box>
-            </div>
+            ) : (
+              memoizedContent
+            )}
           </PositionedOverlayPortal>
         ) : undefined}
       </div>

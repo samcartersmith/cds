@@ -1,4 +1,4 @@
-import { MutableRefObject, useCallback, useEffect, useMemo } from 'react';
+import { MutableRefObject, useCallback, useEffect } from 'react';
 import { PopoverPositionConfig } from '@cbhq/cds-common';
 import {
   animateMenuOpacityInConfig,
@@ -28,16 +28,12 @@ export const usePopoverMenuAnimation = (
     ])?.start();
   }, [ref, translate]);
 
-  const animatePopoverMenuOut = useMemo(() => {
-    return Animated.parallel([
-      Animated.timing(ref, animateMenuOpacityOutConfig),
-      Animated.timing(ref, {
-        ...animateMenuTransformOutConfig,
-        fromValue: `${translate}(${animateMenuTransformOutConfig.fromValue}px)`,
-        toValue: `${translate}(${animateMenuTransformOutConfig.toValue}px)`,
-      }),
-    ]);
-  }, [ref, translate]);
+  const animatePopoverOverlayOut = Animated.timing(ref, animateMenuOpacityOutConfig);
+  const animatePopoverTranslateOut = Animated.timing(ref, {
+    ...animateMenuTransformOutConfig,
+    fromValue: `${translate}(${animateMenuTransformOutConfig.fromValue}px)`,
+    toValue: `${translate}(${animateMenuTransformOutConfig.toValue}px)`,
+  });
 
   useEffect(() => {
     if (triggerAnimation) {
@@ -45,5 +41,5 @@ export const usePopoverMenuAnimation = (
     }
   }, [animatePopoverMenuIn, triggerAnimation]);
 
-  return { animatePopoverMenuOut };
+  return { animatePopoverOverlayOut, animatePopoverTranslateOut };
 };

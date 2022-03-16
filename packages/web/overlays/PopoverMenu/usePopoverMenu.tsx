@@ -1,6 +1,7 @@
 import { FocusEvent, useCallback, useMemo, useRef, useState } from 'react';
 import { NoopFn, PopoverMenuBaseProps } from '@cbhq/cds-common';
 
+import { Animated } from '../../animation/Animated';
 import { useA11yControlledVisibility } from '../../hooks/useA11yControlledVisibility';
 
 import { usePopoverMenuAnimation } from './usePopoverMenuAnimation';
@@ -40,34 +41,36 @@ export const usePopoverMenu = ({
   // if a min or max width is declared, we don't want to instantiate width with the default of 100%
   const width = minWidth || maxWidth ? undefined : customWidth ?? '100%';
 
-  const { animatePopoverMenuOut } = usePopoverMenuAnimation(
+  const { animatePopoverOverlayOut, animatePopoverTranslateOut } = usePopoverMenuAnimation(
     visible,
     popoverMenuRef,
     popoverPositionConfig,
   );
 
   const animateOutAndCloseMenu = useCallback(
-    (cb?: NoopFn) => {
-      void animatePopoverMenuOut.start(({ finished }) => {
-        if (finished) {
-          closeMenu();
-          cb?.();
-        }
-      });
+    async (cb?: NoopFn) => {
+      await Animated.parallel([animatePopoverOverlayOut, animatePopoverTranslateOut]).start(
+        ({ finished }) => {
+          if (finished) {
+            closeMenu();
+            cb?.();
+          }
+        },
+      );
     },
-    [animatePopoverMenuOut, closeMenu],
+    [closeMenu, animatePopoverOverlayOut, animatePopoverTranslateOut],
   );
 
   const togglePopoverMenuVisibility = useCallback(() => {
     if (visible) {
-      animateOutAndCloseMenu();
+      void animateOutAndCloseMenu();
     } else {
       openMenu();
     }
   }, [visible, openMenu, animateOutAndCloseMenu]);
 
   const handleExitMenu = useCallback(() => {
-    animateOutAndCloseMenu();
+    void animateOutAndCloseMenu();
     triggerRef.current?.focus();
   }, [triggerRef, animateOutAndCloseMenu]);
 
@@ -81,7 +84,7 @@ export const usePopoverMenu = ({
         return;
       }
       if (eventIsBlur && !isOptionFocused) {
-        animateOutAndCloseMenu(onBlur);
+        void animateOutAndCloseMenu(onBlur);
       }
     },
     [popoverMenuRef, onBlur, triggerRef, animateOutAndCloseMenu],
