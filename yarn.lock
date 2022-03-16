@@ -2267,9 +2267,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/jest-preset-mobile@npm:^0.1.10":
-  version: 0.1.10
-  resolution: "@cbhq/jest-preset-mobile@npm:0.1.10"
+"@cbhq/jest-preset-mobile@npm:^0.1.11":
+  version: 0.1.11
+  resolution: "@cbhq/jest-preset-mobile@npm:0.1.11"
   dependencies:
     "@testing-library/jest-native": ^4.0.4
     dd-trace: ^2.1.1
@@ -2279,12 +2279,8 @@ __metadata:
     jest-extended: ^2.0.0
     node-fetch: ^2.6.7
   peerDependencies:
-    detox: ^19.0.0
     jest: ^27.0.0
-  peerDependenciesMeta:
-    detox:
-      optional: true
-  checksum: 09f01906a53325888513adfe2c2c61a59fd315aa4c24fda2fd630f98aaaa66cdaf7d249dade684979d68b387dc89ececc033d39488cdb7e270acbb5a11536001
+  checksum: b788ab2a6d7f291dec9fc5188da24fb445480508531a35ad7a8eba2d7a59ea3abc083363582049a327808e8db8b7886a119708bfea5308a13cf659b4d0629f73
   languageName: node
   linkType: hard
 
@@ -2308,9 +2304,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/mono-env@npm:^0.1.6":
-  version: 0.1.6
-  resolution: "@cbhq/mono-env@npm:0.1.6"
+"@cbhq/mono-env@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@cbhq/mono-env@npm:0.2.0"
   dependencies:
     chalk: ^4.1.2
     envinfo: ^7.8.1
@@ -2319,13 +2315,13 @@ __metadata:
     yargs: ^17.3.1
   bin:
     mono-env: lib/bin.js
-  checksum: fcb1d1743b55cb200b1e77b84665238e8d5e99761d8b1b8f9c46c1da7fb3ac4ae478f448a4837fb78506837b902d497a771861984e028749c3c9ca443569c701
+  checksum: b6946e7db82758ec68b3d1fe892d1ab9ad1838a1b639c70f6feffb835483817c7fcc1e07c0ef8c86ef349564a3b64a3343f12179cdb3685b2abefa87496a2dac
   languageName: node
   linkType: hard
 
-"@cbhq/mono-pipeline@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "@cbhq/mono-pipeline@npm:0.2.1"
+"@cbhq/mono-pipeline@npm:^0.4.3":
+  version: 0.4.3
+  resolution: "@cbhq/mono-pipeline@npm:0.4.3"
   dependencies:
     chalk: ^4.1.2
     execa: ^5.1.1
@@ -2333,13 +2329,13 @@ __metadata:
     yargs: ^17.3.1
   bin:
     mono-pipeline: lib/bin.js
-  checksum: 7a8db09a72e8ef1eb9014373ca5b5b7192a65f2478fab12473148d1f55b14d9adc2e36482abcb6ce557afe5af6d3fec9c76458727b43ac142664e48f3442a16e
+  checksum: e079c51ec69574f817f31c6133d39bbe584895e44da837b5b26c436e8ea4076370becc6de39ba9483027e2d353f58a6c58a04ded6979d663c5491b8936143014
   languageName: node
   linkType: hard
 
-"@cbhq/mono-tasks@npm:^0.1.26":
-  version: 0.1.26
-  resolution: "@cbhq/mono-tasks@npm:0.1.26"
+"@cbhq/mono-tasks@npm:^0.1.31":
+  version: 0.1.31
+  resolution: "@cbhq/mono-tasks@npm:0.1.31"
   dependencies:
     "@babel/cli": ^7.17.6
     "@babel/core": ^7.17.5
@@ -2356,17 +2352,21 @@ __metadata:
     json5: ^2.2.0
     node-fetch: ^2.6.7
     packemon: ^1.14.0
+    semver: ^7.3.5
+    ts-node: ^10.5.0
     tsconfig-paths: ^3.12.0
   peerDependencies:
     "@docusaurus/core": ^2.0.0-beta.16
     "@percy/cli": ^1.0.0-beta.75
     "@storybook/react": ^6.4.0
-    danger: ^10.7.0
+    danger: ^11.0.2
     detox: ^19.0.0
     eslint: ^8.0.0
+    graphql: ^15.0.0
     jest: ^27.0.0
     prettier: ^2.0.0
     react-native: ">=0.64.0"
+    relay-compiler: ^13.0.0
     stylelint: ^14.0.0
     typescript: ^4.0.0
     webpack: ^5.67.0
@@ -2381,23 +2381,27 @@ __metadata:
       optional: true
     detox:
       optional: true
+    graphql:
+      optional: true
     react-native:
+      optional: true
+    relay-compiler:
       optional: true
     stylelint:
       optional: true
     webpack:
       optional: true
-  checksum: e3417e76aa51a1f5915fa564a44de4e78fdd3e72126a0986b4b7e1ac56e0e4c332e2682ca806b0f7ad766c138e17d557289b25529dbbd013a13997ff4e61b7a9
+  checksum: ceb077e2534bd0d9f2e4f7d7b729ba2a43cdd7e02ea38c8e2cc8dbc784ef356445f59da1b7b25a939185f2f95070e2b9255d6d28d11046d439f2a6a07a59cf98
   languageName: node
   linkType: hard
 
-"@cbhq/mono-templates@npm:^0.1.5":
-  version: 0.1.5
-  resolution: "@cbhq/mono-templates@npm:0.1.5"
+"@cbhq/mono-templates@npm:^0.1.7":
+  version: 0.1.7
+  resolution: "@cbhq/mono-templates@npm:0.1.7"
   dependencies:
-    "@nrwl/devkit": ^13.7.1
+    "@nrwl/devkit": ^13.8.3
     json5: ^2.2.0
-  checksum: 4f69828fc19364ca4538f689a58be80c3ce4c6bd24ce547e52ce71c2890dfaf2104bc4fc0f397d9cf744449375a38fb38d7f5f59d2a15a6642575721bafd3fd3
+  checksum: d0bc6fdc8d23e99e3ffd95a9d6d2daad0b620b10d70a7bcc2cdfc7d6457d011d4e4f39d50f5ca7cb22eb5852beea337f2e1485e1aa18daff5c427d51109bd781
   languageName: node
   linkType: hard
 
@@ -3990,7 +3994,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/devkit@npm:^13.7.1, @nrwl/devkit@npm:^13.8.3":
+"@nrwl/devkit@npm:^13.8.3":
   version: 13.8.3
   resolution: "@nrwl/devkit@npm:13.8.3"
   dependencies:
@@ -12193,11 +12197,11 @@ __metadata:
     "@babel/types": ^7.14.4
     "@cbhq/eslint-plugin": ^1.5.0
     "@cbhq/jest-preset": ^0.1.3
-    "@cbhq/jest-preset-mobile": ^0.1.10
-    "@cbhq/mono-env": ^0.1.6
-    "@cbhq/mono-pipeline": ^0.2.1
-    "@cbhq/mono-tasks": ^0.1.26
-    "@cbhq/mono-templates": ^0.1.5
+    "@cbhq/jest-preset-mobile": ^0.1.11
+    "@cbhq/mono-env": ^0.2.0
+    "@cbhq/mono-pipeline": ^0.4.3
+    "@cbhq/mono-tasks": ^0.1.31
+    "@cbhq/mono-templates": ^0.1.7
     "@nrwl/cli": ^13.8.2
     "@nrwl/tao": ^13.8.2
     "@nrwl/workspace": ^13.8.2
@@ -27783,7 +27787,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:^10.0.0, ts-node@npm:^10.7.0":
+"ts-node@npm:^10.0.0, ts-node@npm:^10.5.0, ts-node@npm:^10.7.0":
   version: 10.7.0
   resolution: "ts-node@npm:10.7.0"
   dependencies:

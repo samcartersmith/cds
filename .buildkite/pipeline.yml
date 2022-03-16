@@ -72,6 +72,7 @@ steps:
       - yarn nx run storybook:percy
     env:
       CONFIG_SERVICE_CONTEXT: percy-cds
+      STORYBOOK_SKIP_ANIMATION: true
     plugins:
       - file:///buildkite/plugins/docker:
           <<: *docker_plugin
@@ -79,4 +80,5 @@ steps:
           environment:
             - 'BUILDKITE_API_TOKEN'
             - 'PERCY_TOKEN'
+            - 'STORYBOOK_SKIP_ANIMATION'
       - file:///buildkite/plugins/cache: *cache_plugin

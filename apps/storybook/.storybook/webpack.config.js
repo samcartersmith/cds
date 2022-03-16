@@ -1,5 +1,5 @@
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
 
 const HtmlPlugin = require('html-webpack-plugin');
 
@@ -7,9 +7,8 @@ const BABEL_OPTIONS = { configFile: true, rootMode: 'upward' };
 
 module.exports = ({ config, environmentFile }) => {
   config.plugins?.push(
-    new Dotenv({
-      path: environmentFile,
-      STORYBOOK_SKIP_ANIMATION: process.env.STORYBOOK_SKIP_ANIMATION,
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env),
     }),
   );
 

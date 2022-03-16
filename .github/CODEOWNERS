@@ -2,6 +2,6 @@
 ### Run `yarn codeowners` to update
 
 # FROM ./OWNERS
-/.* @mono/client-foundations
-/*.config.js @mono/client-foundations
-/*.json @mono/client-foundations
+.* @frontend/client-foundations
+*.config.js @frontend/client-foundations
+*.json @frontend/client-foundations
