@@ -2146,13 +2146,13 @@ __metadata:
     lodash: ^4.17.21
     lottie-ios: 3.2.3
     lottie-react-native: 4.1.3
-    react-native: 0.65.2
+    react-native: 0.66.3
     react-native-gesture-handler: ^1.9.0
     react-native-inappbrowser-reborn: 3.6.3
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.1
     react-native-reanimated: 1.13.1
-    react-native-safe-area-context: 3.1.9
+    react-native-safe-area-context: ^3.2.0
     react-native-svg: 12.1.0
     type-fest: ^1.2.0
     url-parse: ^1.5.1
@@ -2166,7 +2166,7 @@ __metadata:
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.1
     react-native-reanimated: 1.13.1
-    react-native-safe-area-context: 3.1.9
+    react-native-safe-area-context: ">=3.1.9"
     react-native-svg: 12.1.0
   languageName: unknown
   linkType: soft
@@ -2439,7 +2439,7 @@ __metadata:
     lottie-ios: 3.2.3
     lottie-react-native: 4.1.3
     react: ^17.0.2
-    react-native: ^0.65.2
+    react-native: 0.66.3
     react-native-codegen: ^0.0.11
     react-native-config: ^1.4.5
     react-native-gesture-handler: ^1.9.0
@@ -2447,7 +2447,7 @@ __metadata:
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.1
     react-native-reanimated: 1.13.1
-    react-native-safe-area-context: 3.1.9
+    react-native-safe-area-context: ^3.2.0
     react-native-screens: ^3.12.0
     react-native-svg: 12.1.0
   languageName: unknown
@@ -4693,10 +4693,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native/polyfills@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@react-native/polyfills@npm:1.0.0"
-  checksum: b68f722b2325315d41cd3edfbc6f4eb7c6ec355e52aa8d781a3da6289e302f47f3b9e11deb69f689395e70923eb5b8202203e9e25a714c30c30ba2392c850db3
+"@react-native/polyfills@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@react-native/polyfills@npm:2.0.0"
+  checksum: 6f2a0d1c8c4df4f20e8adac92fcfaec0fb536d097f96fbfd56bdb21b0a3afc4157f82d084b6851093255f58d350818f7ad28098818d584f654533eeb9cba2656
   languageName: node
   linkType: hard
 
@@ -15509,10 +15509,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hermes-engine@npm:~0.8.1":
-  version: 0.8.1
-  resolution: "hermes-engine@npm:0.8.1"
-  checksum: cae8b684582db45d69d4be208af678f2b1c0472ea57947be88d6021eef9cfd11f7309f352a705f8894b91a97de38375744fc26efeb1ec19e0b10f10abbf310fb
+"hermes-engine@npm:~0.9.0":
+  version: 0.9.0
+  resolution: "hermes-engine@npm:0.9.0"
+  checksum: 384549c544de9efb07e9d84202f45bde00e62539a5b56fed2fd2763dbd02560eb37786e61349119966e3086e95a6b8e008822730180a679e229b43a611718f4c
   languageName: node
   linkType: hard
 
@@ -23762,13 +23762,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-devtools-core@npm:^4.19.1, react-devtools-core@npm:^4.6.0":
-  version: 4.23.0
-  resolution: "react-devtools-core@npm:4.23.0"
+"react-devtools-core@npm:^4.13.0, react-devtools-core@npm:^4.19.1":
+  version: 4.24.0
+  resolution: "react-devtools-core@npm:4.24.0"
   dependencies:
     shell-quote: ^1.6.1
     ws: ^7
-  checksum: 16c020149171c18039f366f43e305fdf5ec5991a40841e0ef83d5360b41c9a52cb072f22915b35732dd767954adbd65b6baf4f7f1bbcc785d9ffeb7f42bc1bb4
+  checksum: c9e21ff2621447a6de51d4a350f3859e8077634f8be327f006d8da73dba349e78432ef910e432f066c615938fed697231ed3daee8f9eae049004c14ebac85625
   languageName: node
   linkType: hard
 
@@ -24005,6 +24005,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-codegen@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "react-native-codegen@npm:0.0.7"
+  dependencies:
+    flow-parser: ^0.121.0
+    jscodeshift: ^0.11.0
+    nullthrows: ^1.1.1
+  checksum: d550d6e985a0d564f0ac470b19c9a2e4e78ffc0f5769ba46992a4d10130928093e9c2ada7eda0ec8bd976db4ba4c21ef410280e979226f11844aa0215335cde5
+  languageName: node
+  linkType: hard
+
 "react-native-config@npm:^1.4.5":
   version: 1.4.5
   resolution: "react-native-config@npm:1.4.5"
@@ -24088,13 +24099,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-safe-area-context@npm:3.1.9":
-  version: 3.1.9
-  resolution: "react-native-safe-area-context@npm:3.1.9"
+"react-native-safe-area-context@npm:^3.2.0":
+  version: 3.4.1
+  resolution: "react-native-safe-area-context@npm:3.4.1"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: dc1a234696df2e7f8d748f43cd8822441ed48190985c6a4fd4e9c6ce05fa54fbb53cb70165e156defe9f3b278152b9299894b2e64528f3c73a70868e97a3f39c
+  checksum: 86a0614c5bef60ff8e056cff3fd4200cc6d181653cb6c26992ab62061792474f4872d1f5d394234ec6da75ce8b2960c930f4d6a1b6af3b6579cf1c30b6d64bb5
   languageName: node
   linkType: hard
 
@@ -24136,9 +24147,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native@npm:0.65.2, react-native@npm:^0.65.2":
-  version: 0.65.2
-  resolution: "react-native@npm:0.65.2"
+"react-native@npm:0.66.3":
+  version: 0.66.3
+  resolution: "react-native@npm:0.66.3"
   dependencies:
     "@jest/create-cache-key-function": ^27.0.1
     "@react-native-community/cli": ^6.0.0
@@ -24146,12 +24157,12 @@ __metadata:
     "@react-native-community/cli-platform-ios": ^6.0.0
     "@react-native/assets": 1.0.0
     "@react-native/normalize-color": 1.0.0
-    "@react-native/polyfills": 1.0.0
+    "@react-native/polyfills": 2.0.0
     abort-controller: ^3.0.0
     anser: ^1.4.9
     base64-js: ^1.1.2
     event-target-shim: ^5.0.1
-    hermes-engine: ~0.8.1
+    hermes-engine: ~0.9.0
     invariant: ^2.2.4
     jsc-android: ^250230.2.1
     metro-babel-register: 0.66.2
@@ -24162,7 +24173,8 @@ __metadata:
     pretty-format: ^26.5.2
     promise: ^8.0.3
     prop-types: ^15.7.2
-    react-devtools-core: ^4.6.0
+    react-devtools-core: ^4.13.0
+    react-native-codegen: ^0.0.7
     react-refresh: ^0.4.0
     regenerator-runtime: ^0.13.2
     scheduler: ^0.20.2
@@ -24174,7 +24186,7 @@ __metadata:
     react: 17.0.2
   bin:
     react-native: cli.js
-  checksum: fdb3240921b541a8708376d6c4a95aa6457ef08c367c4d29006b8dbd1bce2f582402eeb1f68e2a18d15a6c5f9e6194f1ae4d7b7e4e06e8f2027b9ae940ec0d55
+  checksum: 61b4a78caee7299edc04a3fdba59354495d8deb2eb4e924df1b7b29fb9a42196d01d462cadc4e9a94fd761e06ac8e38ff66c0cb6627b8dafec0f5f8287315602
   languageName: node
   linkType: hard
 

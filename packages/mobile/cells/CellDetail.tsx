@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { CellDetailProps as CellDetailBaseProps } from '@cbhq/cds-common';
+import { getAdjustsFontSizeToFitProp } from '@cbhq/cds-mobile/utils/getAdjustsFontSizeToFitProp';
 
 import { VStack } from '../layout/VStack';
 import { TextBody } from '../typography/TextBody';
@@ -14,21 +15,17 @@ export const CellDetail = memo(function CellDetail({
   subdetail,
   variant = 'foregroundMuted',
 }: CellDetailProps) {
+  const safeAdjustFontSizeToFit = getAdjustsFontSizeToFitProp({ enabled: adjustsFontSizeToFit });
   return (
     <VStack alignContent="flex-end" alignItems="flex-end" justifyContent="center">
       {!!detail && (
-        <TextBody align="end" numberOfLines={1} adjustsFontSizeToFit={adjustsFontSizeToFit}>
+        <TextBody align="end" numberOfLines={1} {...safeAdjustFontSizeToFit}>
           {detail}
         </TextBody>
       )}
 
       {!!subdetail && (
-        <TextBody
-          align="end"
-          numberOfLines={1}
-          color={variant}
-          adjustsFontSizeToFit={adjustsFontSizeToFit}
-        >
+        <TextBody align="end" numberOfLines={1} color={variant} {...safeAdjustFontSizeToFit}>
           {subdetail}
         </TextBody>
       )}

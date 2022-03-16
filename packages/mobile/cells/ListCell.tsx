@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { ListCellBaseProps } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { compactListHeight, listHeight } from '@cbhq/cds-common/tokens/cell';
+import { getAdjustsFontSizeToFitProp } from '@cbhq/cds-mobile/utils/getAdjustsFontSizeToFitProp';
 
 import { VStack } from '../layout/VStack';
 import { TextBody, TextHeadline } from '../typography';
@@ -51,7 +52,7 @@ export const ListCell = memo(function ListCell({
         action ||
         (hasDetails && (
           <CellDetail
-            adjustsFontSizeToFit={!!detailWidth}
+            {...getAdjustsFontSizeToFitProp({ enabled: !!detailWidth })}
             detail={detail}
             subdetail={subdetail}
             variant={variant}
