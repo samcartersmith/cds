@@ -181,6 +181,7 @@ export const Cell = memo(
           to={to}
           className={`${pressClassName} ${offsetClassName}`}
           tabIndex={tabIndex}
+          testID={testID && `${testID}-cell-pressable`}
         >
           {content}
         </Pressable>
