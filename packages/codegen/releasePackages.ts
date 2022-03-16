@@ -7,8 +7,10 @@ import path from 'path';
 import semver from 'semver';
 import { argv } from 'yargs';
 
+import { codegen } from './codegen';
+
 const MONOREPO_ROOT = process.env.BUILD_WORKSPACE_DIRECTORY;
-const PACKAGE_GLOB = argv.packages as string;
+const PACKAGES = argv.packages as string;
 const LOG_PREFIX = /^(?:- )?(\w+)(?:\(([a-zA-Z0-9\-., ]+)\))?:/u;
 
 type VersionBump = 'major' | 'minor' | 'patch';
@@ -318,12 +320,13 @@ async function releasePackage(pkgJsonPath: string, toRelease: Set<string>) {
 }
 
 async function prepareRelease() {
-  const pkgJsonPaths = await glob(PACKAGE_GLOB, {
+  const pkgJsonPaths = await glob(`packages/(${PACKAGES})/package.json`, {
     absolute: true,
     cwd: MONOREPO_ROOT,
     onlyFiles: true,
   });
   const toRelease = new Set<string>();
+  const packagesArray = PACKAGES.split('|');
 
   await Promise.all(
     pkgJsonPaths.map(async (pkgJsonPath) =>
@@ -331,6 +334,9 @@ async function prepareRelease() {
         console.error(chalk.red(`FAIL: ${error}`));
       }),
     ),
+  );
+  await Promise.all(
+    packagesArray.map(async (name) => codegen('website/package-release', { name })),
   );
 
   if (toRelease.size > 0) {

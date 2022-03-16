@@ -5,9 +5,8 @@
   "scripts": {
     "adoption": "nx run codegen:prepare_adoption",
     "all": "nx run codegen:codegen && nx run codegen:docgen",
-    "changelog": "nx run codegen:changelog",
     "cli": "ts-node ./bin.ts",
-    "contributing": "nx run codegen:contributing",
+    "docs.internal": "yarn cli website/docs-internal",
     "docs": "nx run codegen:docgen",
     "format": "nx run codegen:format",
     "icons": "nx run codegen:sync_icons && yarn svgo packages/codegen/icons/svg/*.svg --config=packages/codegen/configs/svgo.config.js && nx run codegen:build_icons && nx run codegen:docgen",
