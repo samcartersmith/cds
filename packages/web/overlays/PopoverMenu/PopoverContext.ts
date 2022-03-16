@@ -55,7 +55,7 @@ export const PopoverProvider = PopoverContext.Provider;
 
 export const usePopoverContext = () => {
   const context = React.useContext(PopoverContext);
-  if (!context.onChange && !isProduction()) {
+  if (!context.triggerRef.current && !isProduction()) {
     // eslint-disable-next-line no-console
     console.error(errorMessage);
   }
