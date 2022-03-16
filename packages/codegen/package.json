@@ -6,6 +6,7 @@
     "adoption": "nx run codegen:prepare_adoption",
     "all": "nx run codegen:codegen && nx run codegen:docgen",
     "changelog": "nx run codegen:changelog",
+    "cli": "ts-node ./bin.ts",
     "contributing": "nx run codegen:contributing",
     "docs": "nx run codegen:docgen",
     "format": "nx run codegen:format",
@@ -22,8 +23,12 @@
     "@k-vyn/coloralgorithm": "^1.0.0",
     "axios": "^0.18.0",
     "ejs": "3.1.3",
+    "enquirer": "^2.3.6",
+    "hygen": "patch:hygen@^6.2.0#./patches/hygen.patch",
     "react-docgen-typescript": "^2.0.0",
     "svgo": "^2.3.0",
-    "yargs": "^15.3.1"
+    "ts-node": "^10.7.0",
+    "yargs": "^17.3.1",
+    "yargs-parser": "^21.0.1"
   }
 }

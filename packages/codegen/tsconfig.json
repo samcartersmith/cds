@@ -23,5 +23,11 @@
     {
       "path": "../web-utils"
     }
-  ]
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "require": ["tsconfig-paths/register"]
+  },
+
 }

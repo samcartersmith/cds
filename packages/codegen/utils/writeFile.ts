@@ -1,10 +1,11 @@
 import * as ejs from 'ejs';
 import * as fs from 'fs';
 import * as path from 'path';
-import * as prettier from 'prettier';
 import { writePrettyFile } from '@cbhq/cds-web-utils';
 
 import { formatTemplateType } from './formatTemplateType';
+import { getHeaderCommentForFileType } from './getHeaderCommentForFileType';
+import { getPrettierParser } from './getPrettierParser';
 import { getSourcePath } from './getSourcePath';
 
 export type TemplateConfig<T = unknown> = {
@@ -28,39 +29,6 @@ type WriteFileParams = {
   template?: string;
 } & TemplateConfig;
 
-const getParser = (ext: string): prettier.BuiltInParserName => {
-  switch (ext) {
-    case '.mdx':
-      return 'mdx';
-    case '.js':
-      return 'babel';
-    case '.json':
-      return 'json';
-    case '.css':
-      return 'css';
-    default:
-      return 'typescript';
-  }
-};
-
-const getFileDocString = (ext: string) => {
-  switch (ext) {
-    case '.json':
-    case '.mdx':
-    case '.md':
-    case '.css': {
-      return '';
-    }
-    default:
-      return `
-/**
- * DO NOT MODIFY
- * Generated from scripts/codegen/main.ts
- */
-`;
-  }
-};
-
 export const writeFile = async ({
   template,
   data,
@@ -82,7 +50,7 @@ export const writeFile = async ({
         config,
         types,
       });
-      contents = getFileDocString(ext) + header + code;
+      contents = getHeaderCommentForFileType(ext) + header + code;
     }
 
     const dirForFile = path.dirname(outFile);
@@ -96,7 +64,7 @@ export const writeFile = async ({
         outFile,
         contents,
         logInfo: dest,
-        parser: getParser(ext),
+        parser: getPrettierParser(ext),
       });
     }
   } catch (error) {
