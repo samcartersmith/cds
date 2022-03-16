@@ -4651,4 +4651,46 @@ export const iconManifest = {
     description: 'seen, read, checkmark, double checkmark, send receipts, ✅, 🤓',
     documentationLinks: [],
   },
+  '8341:156': {
+    key: '353db7ca7a1bf2fd7f9f9a8f12fbbdb5075a55ec',
+    name: 'NavigationIcon/browser_16/inactive',
+    description:
+      'navigation, speciality, globe, earth, international, continents, global, internet, browsing, surfing, 🌎, 🌍, 🌐, 🌏',
+    documentationLinks: [],
+  },
+  '8341:155': {
+    key: '179269b7f40b66eed059a0fef6ba8bbed5f230e5',
+    name: 'NavigationIcon/browser_16/active',
+    description:
+      'navigation, speciality, globe, earth, international, continents, global, internet, browsing, surfing, 🌎, 🌍, 🌐, 🌏',
+    documentationLinks: [],
+  },
+  '8341:154': {
+    key: 'a5cdd9db0bf4e3f6e122c5dcaa775646772fef50',
+    name: 'NavigationIcon/browser_24/inactive',
+    description:
+      'navigation, speciality, globe, earth, international, continents, global, internet, browsing, surfing, 🌎, 🌍, 🌐, 🌏',
+    documentationLinks: [],
+  },
+  '8341:152': {
+    key: 'de6d7b0eefb1e9ed3e25d1ac8832daaaac3831f7',
+    name: 'NavigationIcon/browser_24/active',
+    description:
+      'navigation, speciality, globe, earth, international, continents, global, internet, browsing, surfing, 🌎, 🌍, 🌐, 🌏',
+    documentationLinks: [],
+  },
+  '8341:153': {
+    key: '2275d7f0581185023232ba1dfbe06e237a0cfbc2',
+    name: 'NavigationIcon/browser_12/inactive',
+    description:
+      'navigation, speciality, globe, earth, international, continents, global, internet, browsing, surfing, 🌎, 🌍, 🌐, 🌏',
+    documentationLinks: [],
+  },
+  '8341:151': {
+    key: '904a18c277939fde4929fb1eaf4b2a11c2be8fd6',
+    name: 'NavigationIcon/browser_12/active',
+    description:
+      'navigation, speciality, globe, earth, international, continents, global, internet, browsing, surfing, 🌎, 🌍, 🌐, 🌏',
+    documentationLinks: [],
+  },
 };
