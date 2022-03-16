@@ -1,8 +1,7 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef } from 'react';
 import { IconButtonBaseProps, SharedProps } from '@cbhq/cds-common';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
-import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 
 import { Icon } from '../icons/Icon';
 import { getFlexStyles } from '../styles/flex';
@@ -11,6 +10,7 @@ import { useFeatureFlag } from '../system/useFeatureFlag';
 import { cx } from '../utils/linaria';
 
 import { iconButton } from './buttonStyles';
+import { useIconButtonStyles } from './useIconButtonStyles';
 
 export type IconButtonProps = {
   as?: React.ComponentType<React.HTMLAttributes<HTMLElement>>;
@@ -40,9 +40,8 @@ export const IconButton = forwardRef(
     }: IconButtonProps,
     ref: React.Ref<HTMLButtonElement>,
   ) => {
-    const height = useInteractableHeight(compact);
+    const styles = useIconButtonStyles(compact);
     const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
-    const style = useMemo(() => ({ '--interactable-height': `${height}px` }), [height]);
     const hasFrontier = useFeatureFlag('frontierButton');
     const iconSize = useButtonIconSize(compact);
 
@@ -59,7 +58,7 @@ export const IconButton = forwardRef(
         className={cx(flexStyles, iconButton)}
         disabled={disabled}
         onPress={onPress}
-        style={style}
+        style={styles}
         ref={ref}
         to={to}
       >
