@@ -21,6 +21,8 @@ const monorepoConfig = {
   tsconfigFileName: 'tsconfig.options.json',
 };
 
+export const hiddenProjects = ['maui'];
+
 export const config: AdoptersConfig[] = [
   {
     type: 'category',
@@ -225,9 +227,16 @@ export const config: AdoptersConfig[] = [
   },
 ];
 
+/** Used for AST parser */
 export const adopters = flattenConfig(config);
-export const adoptersSidebar = formatSidebar(config);
-export const adoptersWithPillar = adopters.map((item) => ({
-  id: item.id,
-  pillar: item.pillar,
-}));
+
+/** Required to for website sidebar. */
+export const adoptersSidebar = formatSidebar(config, hiddenProjects);
+
+/** Required to associate adopters with their stats.json file for Adoption Overview page. */
+export const adoptersWithPillar = adopters
+  .filter((item) => !hiddenProjects.includes(item.id))
+  .map((item) => ({
+    id: item.id,
+    pillar: item.pillar,
+  }));

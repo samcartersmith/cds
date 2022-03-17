@@ -7,7 +7,6 @@ export const adopters = [
   { id: 'assethub-web', pillar: 'Ecosystem' },
   { id: 'assethub-admin', pillar: 'Ecosystem' },
   { id: 'commerce', pillar: 'Ecosystem' },
-  { id: 'maui', pillar: 'Ecosystem' },
   { id: 'prime-mobile', pillar: 'Institutional' },
   { id: 'prime-web', pillar: 'Institutional' },
   { id: 'prime-admin', pillar: 'Institutional' },

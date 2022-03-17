@@ -10,18 +10,9 @@ module.exports = {
       label: 'Ecosystem',
       collapsed: true,
       items: [
-        {
-          type: 'doc',
-          id: 'adoption-tracker/assethub-web',
-          label: 'AssetHub Issuer',
-        },
-        {
-          type: 'doc',
-          id: 'adoption-tracker/assethub-admin',
-          label: 'AssetHub Admin',
-        },
+        { type: 'doc', id: 'adoption-tracker/assethub-web', label: 'AssetHub Issuer' },
+        { type: 'doc', id: 'adoption-tracker/assethub-admin', label: 'AssetHub Admin' },
         { type: 'doc', id: 'adoption-tracker/commerce', label: 'Commerce' },
-        { type: 'doc', id: 'adoption-tracker/maui', label: 'Maui' },
       ],
     },
     {
@@ -29,17 +20,9 @@ module.exports = {
       label: 'Institutional',
       collapsed: true,
       items: [
-        {
-          type: 'doc',
-          id: 'adoption-tracker/prime-mobile',
-          label: 'Prime Mobile',
-        },
+        { type: 'doc', id: 'adoption-tracker/prime-mobile', label: 'Prime Mobile' },
         { type: 'doc', id: 'adoption-tracker/prime-web', label: 'Prime Web' },
-        {
-          type: 'doc',
-          id: 'adoption-tracker/prime-admin',
-          label: 'Prime Admin',
-        },
+        { type: 'doc', id: 'adoption-tracker/prime-admin', label: 'Prime Admin' },
       ],
     },
     {
@@ -47,41 +30,17 @@ module.exports = {
       label: 'Platform',
       collapsed: true,
       items: [
-        {
-          type: 'doc',
-          id: 'adoption-tracker/unified-accounts',
-          label: 'Unified Accounts',
-        },
-        {
-          type: 'doc',
-          id: 'adoption-tracker/umo',
-          label: 'Unified Mobile Onboarding',
-        },
-        {
-          type: 'doc',
-          id: 'adoption-tracker/uwo',
-          label: 'Unified Web Onboarding',
-        },
-        {
-          type: 'doc',
-          id: 'adoption-tracker/retail-web-identity',
-          label: 'Identity',
-        },
+        { type: 'doc', id: 'adoption-tracker/unified-accounts', label: 'Unified Accounts' },
+        { type: 'doc', id: 'adoption-tracker/umo', label: 'Unified Mobile Onboarding' },
+        { type: 'doc', id: 'adoption-tracker/uwo', label: 'Unified Web Onboarding' },
+        { type: 'doc', id: 'adoption-tracker/retail-web-identity', label: 'Identity' },
         {
           type: 'doc',
           id: 'adoption-tracker/unified-business-onboarding',
           label: 'Unified Business Onboarding',
         },
-        {
-          type: 'doc',
-          id: 'adoption-tracker/unified-login',
-          label: 'Unified Login Web',
-        },
-        {
-          type: 'doc',
-          id: 'adoption-tracker/two-factor-web',
-          label: 'Two Factor Web',
-        },
+        { type: 'doc', id: 'adoption-tracker/unified-login', label: 'Unified Login Web' },
+        { type: 'doc', id: 'adoption-tracker/two-factor-web', label: 'Two Factor Web' },
         { type: 'doc', id: 'adoption-tracker/tax-center', label: 'Tax Center' },
       ],
     },
@@ -90,31 +49,15 @@ module.exports = {
       label: 'Retail',
       collapsed: true,
       items: [
-        {
-          type: 'doc',
-          id: 'adoption-tracker/retail-mobile',
-          label: 'Retail Mobile',
-        },
+        { type: 'doc', id: 'adoption-tracker/retail-mobile', label: 'Retail Mobile' },
         {
           type: 'doc',
           id: 'adoption-tracker/retail-mobile-design-system',
           label: 'Retail Mobile Design System',
         },
-        {
-          type: 'doc',
-          id: 'adoption-tracker/retail-web-logged-in',
-          label: 'Retail Web Logged In',
-        },
-        {
-          type: 'doc',
-          id: 'adoption-tracker/retail-web-shared',
-          label: 'Retail Web Shared',
-        },
-        {
-          type: 'doc',
-          id: 'adoption-tracker/wallet-react-native',
-          label: 'Wallet React Native',
-        },
+        { type: 'doc', id: 'adoption-tracker/retail-web-logged-in', label: 'Retail Web Logged In' },
+        { type: 'doc', id: 'adoption-tracker/retail-web-shared', label: 'Retail Web Shared' },
+        { type: 'doc', id: 'adoption-tracker/wallet-react-native', label: 'Wallet React Native' },
       ],
     },
     {
