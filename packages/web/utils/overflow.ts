@@ -14,7 +14,7 @@ const truncatedStyles = css`
 const overflowStyles = css`
   overflow: visible;
   white-space: normal;
-  word-wrap: break-word;
+  hyphens: auto;
 `;
 
 export const useOverflowTextStyles = (expanded: boolean) =>

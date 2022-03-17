@@ -1,0 +1,147 @@
+## Introduction
+
+This doc contains _Recipes_ that will show you how to compose an App Switcher out of CDS components.
+
+These Recipes are purely presentational --containing no business logic. It is a product team’s responsibility to add meaning to these presentational compositions.
+
+**Please Note**: Recipes are not API-driven, rather variants should be composed out of CDS components
+and primitives.
+
+## Components
+
+An App Switcher is composed out of the following CDS components:
+
+- [Switcher](../components/switcher)
+- [NavigationIconButton](../components/navigation-icon-button)
+- [TileButton](../components/tile-button)
+- [SectionTitle](../components/section-title)
+
+## Composition
+
+```jsx live
+function SwitcherExample() {
+  const [visible, toggleVisibility] = useToggler(false);
+
+  function NoopFn() {
+    console.log('pressed');
+  }
+
+  const appSwitcherData = {
+    sections: [
+      {
+        sectionTitle: 'For Individuals',
+        tiles: [
+          { pictogram: 'cardNavigation', title: 'Card', onPress: NoopFn },
+          {
+            pictogram: 'earnNavigation',
+            title: 'Earn',
+            onPress: NoopFn,
+          },
+          { pictogram: 'walletNavigation', title: 'Wallet', onPress: NoopFn, count: 9 },
+          { pictogram: 'proNavigation', title: 'Pro', onPress: NoopFn },
+          {
+            pictogram: 'privateClientNavigation',
+            title: 'Private Client',
+            onPress: NoopFn,
+            count: 4,
+          },
+        ],
+      },
+      {
+        sectionTitle: 'For Businesses',
+        tiles: [
+          { pictogram: 'primeNavigation', title: 'Prime', onPress: NoopFn, count: 10 },
+          { pictogram: 'commerceNavigation', title: 'Commerce', onPress: NoopFn },
+          { pictogram: 'exchangeNavigation', title: 'Exchange', onPress: NoopFn },
+
+          { pictogram: 'assetHubNavigation', title: 'Asset Hub', onPress: NoopFn, count: 2 },
+          { pictogram: 'custodyNavigation', title: 'Custody', onPress: NoopFn, count: 999 },
+          { pictogram: 'analyticsNavigation', title: 'Analytics', onPress: NoopFn },
+
+          { pictogram: 'venturesNavigation', title: 'Ventures', onPress: NoopFn },
+          { pictogram: 'institutionalNavigation', title: 'Institutional', onPress: NoopFn },
+        ],
+      },
+    ],
+  };
+
+  function AppSwitcherContentSection({ columns, data }) {
+    const { sectionTitle, tiles } = data;
+    const rows = [...Array(Math.ceil(tiles.length / columns))].fill(0);
+
+    return (
+      <VStack spacingHorizontal={2}>
+        <SectionTitle text="For you" />
+        {rows.map((_, row) => {
+          const currentRow = tiles.slice(row * columns, row * columns + columns);
+          return (
+            <HStack gap={0.5}>
+              {currentRow.map((props) => {
+                return (
+                  <HStack zIndex={getZIndexFromRow(row, rows.length)}>
+                    <TileButton {...props} />
+                  </HStack>
+                );
+              })}
+            </HStack>
+          );
+        })}
+      </VStack>
+    );
+  }
+
+  function AppSwitcherContent({ data = appSwitcherData, columns = 3 }) {
+    const { sections } = data;
+    return (
+      <>
+        {sections.map((section, idx) => {
+          return (
+            <>
+              <AppSwitcherContentSection data={section} columns={columns} />
+              {idx < sections.length - 1 ? <Divider spacingVertical={1} /> : null}
+            </>
+          );
+        })}
+      </>
+    );
+  }
+
+  function AppSwitcher() {
+    const handleSubjectPress = () => {
+      toggleVisibility.toggle();
+    };
+
+    const handleClose = () => {
+      toggleVisibility.toggleOff();
+    };
+    return (
+      <Switcher
+        onPressSubject={handleSubjectPress}
+        onClose={handleClose}
+        visible={visible}
+        content={<AppSwitcherContent />}
+      >
+        <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
+      </Switcher>
+    );
+  }
+
+  return (
+    <FeatureFlagProvider frontierButton frontierColor>
+      <PortalProvider>
+        <HStack minHeight={700}>
+          <NavigationBar
+            end={
+              <HStack alignItems="center" justifyContent="flex-end" gap={1}>
+                <AppSwitcher />
+              </HStack>
+            }
+          >
+            <NavigationTitle>Portfolio</NavigationTitle>
+          </NavigationBar>
+        </HStack>
+      </PortalProvider>
+    </FeatureFlagProvider>
+  );
+}
+```

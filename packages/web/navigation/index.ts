@@ -4,3 +4,4 @@ export * from './NavLink';
 export * from './Sidebar';
 export * from './SidebarItem';
 export * from './SidebarMoreMenu';
+export * from './Switcher';

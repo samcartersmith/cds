@@ -7,11 +7,10 @@ import { Cell } from '../cells/Cell';
 import { DotCount } from '../dots/DotCount';
 import { HStack, Spacer, VStack } from '../layout';
 import { Avatar } from '../media/Avatar';
+import { Switcher } from '../navigation/Switcher';
 import { SectionTitle } from '../overlays/PopoverMenu/SectionTitle';
 import { Pressable } from '../system/Pressable';
 import { TextBody, TextHeadline, TextLabel1, TextLabel2, TextTitle3 } from '../typography';
-
-import { Switcher } from './Switcher';
 
 const Content = memo(() => {
   return (

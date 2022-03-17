@@ -2,14 +2,16 @@ import React, { memo, useMemo } from 'react';
 import DocTabItem from '@theme/TabItem';
 import DocTabs from '@theme/Tabs';
 
+export type ValuesProps<T> = {
+  label: string;
+  id: T;
+  content: React.ReactNode;
+};
+
 export type TabsProps<T extends string = string> = {
   id: string;
   defaultTab: T;
-  values: {
-    label: string;
-    id: T;
-    content: React.ReactNode;
-  }[];
+  values: ValuesProps<T>[];
 };
 
 export const Tabs = memo(({ id, defaultTab, values }: TabsProps) => {

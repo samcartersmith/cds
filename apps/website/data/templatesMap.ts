@@ -233,6 +233,12 @@ export const NavigationIconButton = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/NavigationIconButton/navigation-icon-button.mdx'
       ),
   ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/NavigationIconButton/usage.mdx'
+      ),
+  ),
 };
 
 export const TileButton = {
@@ -246,6 +252,12 @@ export const TileButton = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/TileButton/tile-button.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/TileButton/usage.mdx'
       ),
   ),
 };
@@ -1629,6 +1641,27 @@ export const SidebarMoreMenu = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/SidebarMoreMenu/usage.mdx'
+      ),
+  ),
+};
+
+export const Switcher = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/Switcher/implementation.mdx'
+      ),
+  ),
+  switcher: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/Switcher/switcher.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/Switcher/usage.mdx'
       ),
   ),
 };

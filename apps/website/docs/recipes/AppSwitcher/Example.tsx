@@ -1,14 +1,14 @@
 import { memo, useCallback } from 'react';
 import { IllustrationPictogramNames, NoopFn as NoopFnType, useToggler } from '@cbhq/cds-common';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
+import { NavigationIconButton } from '@cbhq/cds-web/buttons/NavigationIconButton';
+import { TileButton } from '@cbhq/cds-web/buttons/TileButton';
+import { Divider, HStack, VStack } from '@cbhq/cds-web/layout';
+import { Switcher } from '@cbhq/cds-web/navigation/Switcher';
+import { SectionTitle } from '@cbhq/cds-web/overlays/PopoverMenu/SectionTitle';
+import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
+import { FeatureFlagProvider } from '@cbhq/cds-web/system/FeatureFlagProvider';
 import { getZIndexFromRow } from '@cbhq/cds-web/utils/overflow';
-
-import { NavigationIconButton } from '../buttons/NavigationIconButton';
-import { TileButton } from '../buttons/TileButton';
-import { DotCount } from '../dots/DotCount';
-import { Divider, HStack, VStack } from '../layout';
-import { Switcher } from '../navigation/Switcher';
-import { SectionTitle } from '../overlays/PopoverMenu/SectionTitle';
 
 type AppSwitcherSection = {
   sectionTitle: string;
@@ -65,30 +65,28 @@ type AppSwitcherContentSectionProps = {
 };
 
 const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSectionProps) => {
-  const rows = Math.ceil(data.tiles.length / columns);
+  const { tiles, sectionTitle } = data;
+  const rows = Math.ceil(tiles.length / columns);
   return (
-    <>
-      <VStack spacingHorizontal={2}>
-        <SectionTitle text={data.sectionTitle} />
-        {[...Array<number>(rows)].map((_, row) => {
-          return (
-            <HStack gap={0.5}>
-              {data.tiles
-                // We are able to infer the interval because we know how big dataset is + what row we are on.
-                .slice(row * columns, row * columns + columns)
-                .map((props) => {
-                  return (
-                    <HStack zIndex={getZIndexFromRow(row, rows)}>
-                      <TileButton {...props} />
-                    </HStack>
-                  );
-                })}
-            </HStack>
-          );
-        })}
-      </VStack>
-      <Divider spacingVertical={1} />
-    </>
+    <VStack spacingHorizontal={2}>
+      <SectionTitle text={sectionTitle} />
+      {[...Array<number>(rows)].map((_, row) => {
+        return (
+          <HStack gap={0.5}>
+            {tiles
+              // We are able to infer the interval because we know how big dataset is + what row we are on.
+              .slice(row * columns, row * columns + columns)
+              .map((props) => {
+                return (
+                  <HStack zIndex={getZIndexFromRow(row, rows)}>
+                    <TileButton {...props} />
+                  </HStack>
+                );
+              })}
+          </HStack>
+        );
+      })}
+    </VStack>
   );
 });
 
@@ -99,12 +97,18 @@ type AppSwitcherContentProps = {
 
 const AppSwitcherContent = memo(
   ({ columns = 3, data = appSwitcherData }: AppSwitcherContentProps) => {
+    const { sections } = data;
     return (
-      <VStack>
-        {data.sections.map((section) => {
-          return <AppSwitcherContentSection data={section} columns={columns} />;
+      <>
+        {sections.map((section, idx) => {
+          return (
+            <>
+              <AppSwitcherContentSection data={section} columns={columns} />
+              {idx < sections.length - 1 ? <Divider spacingVertical={1} /> : null}
+            </>
+          );
         })}
-      </VStack>
+      </>
     );
   },
 );
@@ -131,29 +135,22 @@ const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => 
   );
 });
 
-export const AppSwitcher = () => {
+export const AppSwitcherExample = () => {
   return (
-    <HStack>
-      <AppSwitcherRecipe>
-        <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
-      </AppSwitcherRecipe>
-    </HStack>
+    <FeatureFlagProvider frontierColor frontierButton>
+      <PortalProvider>
+        <VStack
+          alignItems="center"
+          justifyContent="center"
+          spacingVertical={4}
+          bordered
+          borderRadius="standard"
+        >
+          <AppSwitcherRecipe>
+            <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
+          </AppSwitcherRecipe>
+        </VStack>
+      </PortalProvider>
+    </FeatureFlagProvider>
   );
-};
-
-export const AppSwitcherWithDot = () => {
-  return (
-    <HStack>
-      <AppSwitcherRecipe>
-        <DotCount pin="top-end" count={4}>
-          <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
-        </DotCount>
-      </AppSwitcherRecipe>
-    </HStack>
-  );
-};
-
-export default {
-  title: 'Core Components/Switchers/AppSwitcher',
-  component: AppSwitcher,
 };

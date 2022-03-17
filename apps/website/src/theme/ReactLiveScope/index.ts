@@ -59,6 +59,7 @@ import * as CDSTables from '@cbhq/cds-web/tables';
 import * as CDSTabs from '@cbhq/cds-web/tabs';
 import { palette } from '@cbhq/cds-web/tokens';
 import * as CDSTypography from '@cbhq/cds-web/typography';
+import { getZIndexFromRow } from '@cbhq/cds-web/utils/overflow';
 import * as CDSVisualizations from '@cbhq/cds-web/visualizations';
 import { ProgressContainerWithButtons } from '@cbhq/cds-web/visualizations/ProgressContainerWithButtons';
 import { SparklineInteractive } from '@cbhq/cds-web/visualizations/sparkline-interactive/SparklineInteractive';
@@ -132,6 +133,7 @@ const ReactLiveScope: unknown = {
   useAlert,
   useOverlay,
   useToast,
+  getZIndexFromRow,
   // CDS Components
   Text: CDSTypography.TextBody,
   ...CDSAccordion,

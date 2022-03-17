@@ -65,6 +65,7 @@ export const components = [
   'Sidebar',
   'SidebarItem',
   'SidebarMoreMenu',
+  'Switcher',
   'Alert',
   'Toast',
   'Modal',

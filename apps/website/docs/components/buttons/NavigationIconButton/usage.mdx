@@ -1,0 +1,67 @@
+`NavigationIconButton` is meant to be used inside of a `NavigationBar`. It is typically used to trigger the visibility of a `PopoverMenu`.
+
+```jsx live
+function NavigationMenu() {
+  const [value, setValue] = useState('');
+  const [visible, togglePopoverMenuVisibility] = useToggler(false);
+
+  const navigationOptions = [
+    {
+      name: 'Coinbase',
+      value: 'coinbase',
+      description: 'Buy, sell, use crypto',
+      mediaName: 'coinbaseOneLogoPictogram',
+    },
+    {
+      name: 'Wallet',
+      value: 'wallet',
+      description: 'The best self-hosted crypto wallet',
+      mediaName: 'wallet',
+    },
+  ];
+
+  const handleMenuValueChange = useCallback(
+    (newValue) => {
+      setValue(newValue);
+    },
+    [setValue],
+  );
+
+  return (
+    <VStack minHeight={300} spacing={2} background="background">
+      <NavigationBar
+        end={
+          <HStack gap={1}>
+            <NavigationIconButton name="bell" variant="secondary" />
+            <PopoverMenu
+              width={350}
+              openMenu={togglePopoverMenuVisibility.toggleOn}
+              closeMenu={togglePopoverMenuVisibility.toggleOff}
+              visible={visible}
+              onChange={handleMenuValueChange}
+              value={value}
+            >
+              <PopoverTrigger>
+                <NavigationIconButton name="appSwitcher" />
+              </PopoverTrigger>
+              <SectionTitle text="For Individuals" />
+              {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
+                <SelectOption
+                  key={name}
+                  value={optionValue}
+                  title={name}
+                  description={description}
+                  media={<Pictogram dimension="48x48" name={mediaName} />}
+                  selected={value === optionValue}
+                />
+              ))}
+            </PopoverMenu>
+          </HStack>
+        }
+      >
+        <NavigationTitle>Navigation Example</NavigationTitle>
+      </NavigationBar>
+    </VStack>
+  );
+}
+```

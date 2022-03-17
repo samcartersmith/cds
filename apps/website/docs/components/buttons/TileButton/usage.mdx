@@ -1,0 +1,50 @@
+`TileButton`s are a pressable layout component that displays a Pictogram with a Title. The Title will reveal truncated text on hover.
+
+```jsx live
+function TileButtonExample() {
+  function NoopFn() {
+    console.log('pressed');
+  }
+
+  const tiles = [
+    { pictogram: 'cardNavigation', title: 'Card', onPress: NoopFn },
+    { pictogram: 'earnNavigation', title: 'Earn', onPress: NoopFn },
+    { pictogram: 'walletNavigation', title: 'Wallet', onPress: NoopFn, count: 9 },
+    { pictogram: 'proNavigation', title: 'Pro', onPress: NoopFn },
+    {
+      pictogram: 'privateClientNavigation',
+      title: 'Private Client',
+      onPress: NoopFn,
+      count: 4,
+    },
+  ];
+
+  const columns = 3;
+  const rows = [...Array(Math.ceil(tiles.length / columns))].fill(0);
+
+  return (
+    <VStack minHeight={300} spacing={2}>
+      {rows.map((_, row) => {
+        const currentRow = tiles.slice(row * columns, row * columns + columns);
+        return (
+          <HStack gap={0.5}>
+            {currentRow.map((props) => {
+              return (
+                <HStack zIndex={getZIndexFromRow(row, rows.length)}>
+                  <TileButton {...props} />
+                </HStack>
+              );
+            })}
+          </HStack>
+        );
+      })}
+    </VStack>
+  );
+}
+```
+
+### Overflow
+
+`TileButton` will surface truncated Title text on hover, increasing the height of the `TileButton` to fit the text content without pushing down any surrounding elements.
+
+If you have multiple rows of `TileButton`s you will need to use the `getZIndexFromRow` utility which will generate a `zIndex` based on the index of each row. This will prevent rows farther down the DOM tree from clipping the overflow content of rows higher up.

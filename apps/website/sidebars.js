@@ -2,12 +2,14 @@ const { components } = require('./data/sidebar/components');
 const { adopters } = require('./data/sidebar/adopters');
 
 // Removes unfinished categories from side bar
-const sectionsToExcludeByLabel = new Set(['Accordions', 'Collapsible', 'NavigationIconButton']);
+const sectionsToExcludeByLabel = new Set(['Accordions', 'Collapsible', 'Tabs']);
 
 // Removes unfinished components from section in side bar
 // Please alphabetize to avoid merge conflicts
 const componentsToExcludeByLabel = new Set([
   'components/navigation/SidebarMoreMenu/sidebar-more-menu',
+  'components/navigation/Switcher/switcher',
+  'components/buttons/TileButton/tile-button',
   'components/buttons/NavigationIconButton/navigation-icon-button',
 ]);
 
@@ -103,6 +105,12 @@ module.exports = {
         'hooks/useToast',
       ],
     },
+    // {
+    //   type: 'category',
+    //   label: 'Recipes',
+    //   collapsed: true,
+    //   items: ['recipes/AppSwitcher/app-switcher'],
+    // },
     {
       type: 'category',
       label: 'Adoption Guides',

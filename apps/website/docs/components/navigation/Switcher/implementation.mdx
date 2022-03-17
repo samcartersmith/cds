@@ -1,0 +1,167 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-web/navigation/Switcher](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/navigation/Switcher.tsx)
+
+<ComponentDetails componentName="Switcher" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Switcher" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Switcher" templateName="a11y" />
+
+## Props
+
+### children <Badge variant="web" />
+
+Subject of the positionedOverlay that when interacted with will toggle the visibility of the content
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="children"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="Switcher" templateName="prop-children" />
+
+### content <Badge variant="web" />
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="content"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="Switcher" templateName="prop-content" />
+
+### maxHeight <Badge variant="web" />
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="maxHeight"
+  required={false}
+  defaultValue="600"
+  mobileOptions={[]}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Switcher" templateName="prop-maxHeight" />
+
+### maxWidth <Badge variant="web" />
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="maxWidth"
+  required={false}
+  defaultValue="359"
+  mobileOptions={[]}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Switcher" templateName="prop-maxWidth" />
+
+### minHeight <Badge variant="web" />
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="minHeight"
+  required={false}
+  defaultValue="400"
+  mobileOptions={[]}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Switcher" templateName="prop-minHeight" />
+
+### minWidth <Badge variant="web" />
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="minWidth"
+  required={false}
+  defaultValue="359"
+  mobileOptions={[]}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Switcher" templateName="prop-minWidth" />
+
+### onClose <Badge variant="web" />
+
+Callback that is fired after the content animates out
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="onClose"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['() => void']}
+/>
+
+<ComponentDetails componentName="Switcher" templateName="prop-onClose" />
+
+### onPressSubject <Badge variant="web" />
+
+Callback that fires when the subject is pressed
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="onPressSubject"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['() => void']}
+/>
+
+<ComponentDetails componentName="Switcher" templateName="prop-onPressSubject" />
+
+### visible <Badge variant="web" />
+
+Controls visibility of the Popover content
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="visible"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Switcher" templateName="prop-visible" />
+
+<ComponentDetails componentName="Switcher" templateName="outro" />
