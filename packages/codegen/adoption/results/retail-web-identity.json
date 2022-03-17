@@ -3,8 +3,8 @@
     {
       "name": "ButtonGroup",
       "sourceFile": "@cbhq/cds-web/buttons/ButtonGroup",
-      "totalInstances": 5,
-      "totalCallSites": 5,
+      "totalInstances": 6,
+      "totalCallSites": 6,
       "cds": "@cbhq/cds-web/buttons/ButtonGroup",
       "aliasedCdsComponents": [
         {
@@ -14,6 +14,7 @@
       ],
       "callSites": {
         "components/Authentication/Authentication.tsx": 1,
+        "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
         "components/SecurityKeyModal/components/Manage/Manage.tsx": 1,
         "components/SecurityKeyModal/components/Remove/Remove.tsx": 1,
         "components/SecurityKeyModal/components/Rename/Rename.tsx": 1,
@@ -22,12 +23,15 @@
       "propsWithCallSites": {
         "accessibilityLabel": {
           "components/Authentication/Authentication.tsx": 1,
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/SecurityKeyModal/components/Manage/Manage.tsx": 1,
           "components/SecurityKeyModal/components/Remove/Remove.tsx": 1,
           "components/SecurityKeyModal/components/Rename/Rename.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/ActionButtons.tsx": 1
         },
+        "vertical": { "components/RfiPep/RfiPepAccountRestricted.tsx": 1 },
         "block": {
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/ActionButtons.tsx": 1
         }
       }
@@ -35,13 +39,17 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 29,
-      "totalCallSites": 18,
+      "totalInstances": 34,
+      "totalCallSites": 22,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
         "components/Authentication/Authentication.tsx": 2,
         "components/ContactUsView/ContactUsView.tsx": 1,
+        "components/RfiPep/AccountUnderReview.tsx": 1,
         "components/RfiPep/MultiHitForm.tsx": 1,
+        "components/RfiPep/MultiHitScreen.tsx": 1,
+        "components/RfiPep/RfiPepAccountRestricted.tsx": 2,
+        "components/RfiPep/RfiPepSuccess.tsx": 1,
         "components/SuccessViewV2/SuccessViewV2.tsx": 1,
         "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1,
         "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
@@ -61,6 +69,10 @@
       "propsWithCallSites": {
         "onPress": {
           "components/Authentication/Authentication.tsx": 2,
+          "components/RfiPep/AccountUnderReview.tsx": 1,
+          "components/RfiPep/MultiHitScreen.tsx": 1,
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 2,
+          "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
           "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1,
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
@@ -79,6 +91,7 @@
         },
         "variant": {
           "components/Authentication/Authentication.tsx": 1,
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/SecurityKeyModal/components/Manage/Manage.tsx": 2,
           "components/SecurityKeyModal/components/Remove/Remove.tsx": 1,
           "components/SecurityKeyModal/components/Rename/Rename.tsx": 1,
@@ -93,6 +106,7 @@
         "disabled": {
           "components/Authentication/Authentication.tsx": 1,
           "components/RfiPep/MultiHitForm.tsx": 1,
+          "components/RfiPep/MultiHitScreen.tsx": 1,
           "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1,
           "components/SecurityKeyModal/components/Manage/Manage.tsx": 1,
           "components/SecurityKeyModal/components/Remove/Remove.tsx": 1,
@@ -103,6 +117,7 @@
         "block": {
           "components/ContactUsView/ContactUsView.tsx": 1,
           "components/RfiPep/MultiHitForm.tsx": 1,
+          "components/RfiPep/MultiHitScreen.tsx": 1,
           "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
           "components/SecurityKeyModal/components/Confirmation/Confirmation.tsx": 1,
@@ -119,30 +134,33 @@
           "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/ActionButtons.tsx": 1
         },
-        "onClick": {
-          "components/SecurityKeyModal/components/Manage/Manage.tsx": 2
-        },
-        "compact": {
-          "components/SecurityKeyModal/components/Manage/Manage.tsx": 2
-        }
+        "onClick": { "components/SecurityKeyModal/components/Manage/Manage.tsx": 2 },
+        "compact": { "components/SecurityKeyModal/components/Manage/Manage.tsx": 2 }
       }
     },
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 33,
-      "totalCallSites": 15,
+      "totalInstances": 39,
+      "totalCallSites": 19,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
           "aliasPath": "components/RfiPep/MultiHitForm.tsx",
           "callSites": ["steps/RfiPep/RfiPepStep.tsx"]
-        }
+        },
+        { "aliasPath": "components/RfiPep/MultiHitScreen.tsx", "callSites": [] },
+        { "aliasPath": "components/RfiPep/RfiPepAccountRestricted.tsx", "callSites": [] },
+        { "aliasPath": "components/RfiPep/RfiPepSuccess.tsx", "callSites": [] }
       ],
       "callSites": {
         "components/ContactUsView/ContactUsView.tsx": 2,
         "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
+        "components/RfiPep/AccountUnderReview.tsx": 3,
         "components/RfiPep/MultiHitForm.tsx": 2,
+        "components/RfiPep/MultiHitScreen.tsx": 1,
+        "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+        "components/RfiPep/RfiPepSuccess.tsx": 1,
         "components/SuccessViewV2/SuccessViewV2.tsx": 3,
         "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1,
         "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 4,
@@ -166,6 +184,7 @@
         },
         "alignItems": {
           "components/ContactUsView/ContactUsView.tsx": 1,
+          "components/RfiPep/AccountUnderReview.tsx": 2,
           "components/SuccessViewV2/SuccessViewV2.tsx": 2,
           "components/IdCapture/components/Intro/Intro.tsx": 2,
           "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 2,
@@ -179,11 +198,25 @@
           "components/ContactUsView/ContactUsView.tsx": 1,
           "components/RfiPep/MultiHitForm.tsx": 1
         },
-        "justifyContent": {
-          "components/LabelWithHelpText/LabelWithHelpText.tsx": 1
+        "justifyContent": { "components/LabelWithHelpText/LabelWithHelpText.tsx": 1 },
+        "gap": {
+          "components/RfiPep/AccountUnderReview.tsx": 3,
+          "components/RfiPep/MultiHitForm.tsx": 1,
+          "components/RfiPep/RfiPepSuccess.tsx": 1,
+          "components/SuccessViewV2/SuccessViewV2.tsx": 2,
+          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 3,
+          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 2,
+          "components/IdCapture/components/Intro/Intro.tsx": 2,
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
+        },
+        "spacingTop": {
+          "components/RfiPep/AccountUnderReview.tsx": 1,
+          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1
         },
         "spacing": {
+          "components/RfiPep/AccountUnderReview.tsx": 1,
           "components/RfiPep/MultiHitForm.tsx": 1,
+          "components/RfiPep/MultiHitScreen.tsx": 1,
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
           "components/IdCapture/components/Intro/Intro.tsx": 1,
           "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1
@@ -195,13 +228,9 @@
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 2
         },
-        "gap": {
-          "components/RfiPep/MultiHitForm.tsx": 1,
-          "components/SuccessViewV2/SuccessViewV2.tsx": 2,
-          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 3,
-          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 2,
-          "components/IdCapture/components/Intro/Intro.tsx": 2,
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
+        "spacingHorizontal": {
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+          "components/RfiPep/RfiPepSuccess.tsx": 1
         },
         "bordered": {
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
@@ -228,22 +257,20 @@
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
         },
-        "spacingBottom": {
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        },
-        "spacingTop": {
-          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1
-        }
+        "spacingBottom": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 }
       }
     },
     {
       "name": "HeroSquare",
       "sourceFile": "@cbhq/cds-web/illustrations/HeroSquare",
-      "totalInstances": 6,
-      "totalCallSites": 6,
+      "totalInstances": 9,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-web/illustrations/HeroSquare",
       "callSites": {
         "components/ContactUsView/ContactUsView.tsx": 1,
+        "components/RfiPep/AccountUnderReview.tsx": 1,
+        "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+        "components/RfiPep/RfiPepSuccess.tsx": 1,
         "components/SuccessViewV2/SuccessViewV2.tsx": 1,
         "components/IdCapture/components/Intro/Intro.tsx": 1,
         "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
@@ -253,6 +280,9 @@
       "propsWithCallSites": {
         "name": {
           "components/ContactUsView/ContactUsView.tsx": 1,
+          "components/RfiPep/AccountUnderReview.tsx": 1,
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+          "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
           "components/IdCapture/components/Intro/Intro.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
@@ -261,6 +291,9 @@
         },
         "scaleMultiplier": {
           "components/ContactUsView/ContactUsView.tsx": 1,
+          "components/RfiPep/AccountUnderReview.tsx": 1,
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+          "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
           "components/IdCapture/components/Intro/Intro.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
@@ -272,12 +305,16 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 5,
-      "totalCallSites": 5,
+      "totalInstances": 9,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-web/typography/TextTitle3",
       "callSites": {
         "components/ContactUsView/ContactUsView.tsx": 1,
+        "components/RfiPep/AccountUnderReview.tsx": 1,
         "components/RfiPep/MultiHitForm.tsx": 1,
+        "components/RfiPep/MultiHitScreen.tsx": 1,
+        "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+        "components/RfiPep/RfiPepSuccess.tsx": 1,
         "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
         "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
         "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
@@ -285,13 +322,19 @@
       "propsWithCallSites": {
         "as": {
           "components/ContactUsView/ContactUsView.tsx": 1,
+          "components/RfiPep/AccountUnderReview.tsx": 1,
           "components/RfiPep/MultiHitForm.tsx": 1,
+          "components/RfiPep/MultiHitScreen.tsx": 1,
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+          "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         },
         "spacingBottom": {
           "components/ContactUsView/ContactUsView.tsx": 1,
+          "components/RfiPep/MultiHitScreen.tsx": 1,
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
@@ -301,17 +344,26 @@
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         },
-        "align": { "components/ContactUsView/ContactUsView.tsx": 1 }
+        "align": {
+          "components/ContactUsView/ContactUsView.tsx": 1,
+          "components/RfiPep/AccountUnderReview.tsx": 1,
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+          "components/RfiPep/RfiPepSuccess.tsx": 1
+        }
       }
     },
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 16,
-      "totalCallSites": 10,
+      "totalInstances": 20,
+      "totalCallSites": 14,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "components/ContactUsView/ContactUsView.tsx": 1,
+        "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
+        "components/RfiPep/AccountUnderReview.tsx": 1,
+        "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+        "components/RfiPep/RfiPepSuccess.tsx": 1,
         "components/SuccessViewV2/SuccessViewV2.tsx": 1,
         "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 3,
         "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 2,
@@ -325,6 +377,10 @@
       "propsWithCallSites": {
         "as": {
           "components/ContactUsView/ContactUsView.tsx": 1,
+          "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
+          "components/RfiPep/AccountUnderReview.tsx": 1,
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+          "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 3,
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 2,
@@ -337,6 +393,9 @@
         },
         "align": {
           "components/ContactUsView/ContactUsView.tsx": 1,
+          "components/RfiPep/AccountUnderReview.tsx": 1,
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+          "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
           "components/IdCapture/components/Intro/Intro.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
@@ -355,6 +414,11 @@
           "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         },
+        "spacingBottom": {
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
+          "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
+        },
         "spacingTop": {
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
@@ -362,13 +426,7 @@
           "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1,
           "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1
         },
-        "spacingHorizontal": {
-          "components/IdCapture/components/Intro/Intro.tsx": 1
-        },
-        "spacingBottom": {
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
-          "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
-        }
+        "spacingHorizontal": { "components/IdCapture/components/Intro/Intro.tsx": 1 }
       }
     },
     {
@@ -385,9 +443,9 @@
       ],
       "callSites": {
         "components/IdCapture/IdCapture.tsx": 1,
-        "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
         "components/KYCRefresh/KYCRefreshScreen.tsx": 2,
         "components/RfiPep/MultiHitForm.tsx": 1,
+        "components/RfiPep/MultiHitScreen.tsx": 1,
         "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1,
         "steps/IDV/IDV.tsx": 1,
         "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
@@ -418,38 +476,32 @@
           "steps/IDV/IDV.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 2
         },
-        "maxWidth": { "components/LabelWithHelpText/LabelWithHelpText.tsx": 1 },
-        "spacingStart": {
-          "components/LabelWithHelpText/LabelWithHelpText.tsx": 1
-        },
-        "spacingEnd": {
-          "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
-          "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1
-        },
         "spacingTop": {
           "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
         },
-        "spacingHorizontal": {
-          "components/KYCRefresh/KYCRefreshScreen.tsx": 1
-        },
+        "spacingHorizontal": { "components/KYCRefresh/KYCRefreshScreen.tsx": 1 },
         "spacingVertical": { "components/KYCRefresh/KYCRefreshScreen.tsx": 1 },
         "offsetBottom": { "components/KYCRefresh/KYCRefreshScreen.tsx": 1 },
         "borderRadius": {
           "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
+          "components/RfiPep/MultiHitScreen.tsx": 1,
           "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 1
         },
         "background": {
           "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
+          "components/RfiPep/MultiHitScreen.tsx": 1,
           "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 1
         },
+        "spacing": { "components/RfiPep/MultiHitScreen.tsx": 1 },
         "height": { "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1 },
         "flexShrink": { "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1 },
-        "spacingBottom": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        "spacingEnd": {
+          "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1
         },
+        "spacingBottom": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 },
         "overflow": {
           "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 1
         },
@@ -459,10 +511,48 @@
       }
     },
     {
+      "name": "TextLabel2",
+      "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
+      "totalInstances": 8,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-web/typography/TextLabel2",
+      "callSites": {
+        "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
+        "components/RfiPep/MultiHitScreen.tsx": 1,
+        "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
+        "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 3,
+        "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
+        "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
+          "components/RfiPep/MultiHitScreen.tsx": 1,
+          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
+          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 3,
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
+          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
+        },
+        "color": {
+          "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
+          "components/RfiPep/MultiHitScreen.tsx": 1,
+          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
+          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 3,
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
+          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
+        },
+        "spacingStart": { "components/KYCRefresh/KYCRefreshScreen.tsx": 1 },
+        "display": { "components/RfiPep/MultiHitScreen.tsx": 1 },
+        "spacingVertical": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 },
+        "spacingTop": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 },
+        "align": { "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1 }
+      }
+    },
+    {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 6,
-      "totalCallSites": 5,
+      "totalInstances": 8,
+      "totalCallSites": 7,
       "cds": "@cbhq/cds-web/layout/HStack",
       "aliasedCdsComponents": [
         {
@@ -473,6 +563,8 @@
       "callSites": {
         "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
         "components/RfiPep/MultiHitForm.tsx": 1,
+        "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+        "components/RfiPep/RfiPepSuccess.tsx": 1,
         "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 2,
         "components/IdCapture/components/ImageUploadV2/components/ImageUploadTiles.tsx": 1,
         "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
@@ -480,28 +572,35 @@
       "propsWithCallSites": {
         "justifyContent": {
           "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+          "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         },
         "alignItems": {
           "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         },
+        "spacingBottom": {
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+          "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
+        },
+        "spacingTop": {
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+          "components/RfiPep/RfiPepSuccess.tsx": 1
+        },
         "width": { "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1 },
         "gap": {
           "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 2,
           "components/IdCapture/components/ImageUploadV2/components/ImageUploadTiles.tsx": 1
-        },
-        "spacingBottom": {
-          "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         }
       }
     },
     {
       "name": "Tooltip",
-      "sourceFile": "@cbhq/cds-web/overlays/Deprecated/Tooltip",
+      "sourceFile": "@cbhq/cds-web/overlays/Tooltip/Tooltip",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/overlays/Deprecated/Tooltip",
+      "cds": "@cbhq/cds-web/overlays/Tooltip/Tooltip",
       "propsWithCallSites": {
         "content": { "components/LabelWithHelpText/LabelWithHelpText.tsx": 1 },
         "placement": { "components/LabelWithHelpText/LabelWithHelpText.tsx": 1 }
@@ -539,46 +638,6 @@
       }
     },
     {
-      "name": "TextLabel2",
-      "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
-      "totalInstances": 7,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-web/typography/TextLabel2",
-      "callSites": {
-        "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
-        "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
-        "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 3,
-        "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
-        "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
-          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 3,
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        },
-        "color": {
-          "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
-          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 3,
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        },
-        "spacingStart": { "components/KYCRefresh/KYCRefreshScreen.tsx": 1 },
-        "spacingVertical": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
-        },
-        "spacingTop": {
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        },
-        "align": {
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TextInput",
       "sourceFile": "@cbhq/cds-web/controls/TextInput",
       "totalInstances": 3,
@@ -596,31 +655,32 @@
     {
       "name": "TextLabel1",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
-      "totalInstances": 4,
-      "totalCallSites": 3,
+      "totalInstances": 5,
+      "totalCallSites": 4,
       "cds": "@cbhq/cds-web/typography/TextLabel1",
       "callSites": {
         "components/RfiPep/MultiHitForm.tsx": 2,
+        "components/RfiPep/MultiHitScreen.tsx": 1,
         "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
         "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
           "components/RfiPep/MultiHitForm.tsx": 2,
+          "components/RfiPep/MultiHitScreen.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
         },
         "spacingVertical": { "components/RfiPep/MultiHitForm.tsx": 1 },
+        "color": {
+          "components/RfiPep/MultiHitScreen.tsx": 1,
+          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
+        },
         "spacingBottom": {
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
         },
-        "align": {
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        },
-        "color": {
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        }
+        "align": { "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1 }
       }
     },
     {
@@ -629,9 +689,30 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "cds": "@cbhq/cds-web/typography/TextLegal",
+      "propsWithCallSites": { "as": { "components/RfiPep/MultiHitForm.tsx": 1 } }
+    },
+    {
+      "name": "RadioGroup",
+      "sourceFile": "@cbhq/cds-web/controls/RadioGroup",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/controls/RadioGroup",
       "propsWithCallSites": {
-        "as": { "components/RfiPep/MultiHitForm.tsx": 1 }
+        "aria-labelledby": { "components/RfiPep/MultiHitScreen.tsx": 1 },
+        "name": { "components/RfiPep/MultiHitScreen.tsx": 1 },
+        "onChange": { "components/RfiPep/MultiHitScreen.tsx": 1 },
+        "options": { "components/RfiPep/MultiHitScreen.tsx": 1 },
+        "selectedValue": { "components/RfiPep/MultiHitScreen.tsx": 1 }
       }
+    },
+    {
+      "name": "Spacer",
+      "sourceFile": "@cbhq/cds-web/layout/Spacer",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/layout/Spacer",
+      "callSites": { "components/RfiPep/MultiHitScreen.tsx": 2 },
+      "propsWithCallSites": { "vertical": { "components/RfiPep/MultiHitScreen.tsx": 2 } }
     },
     {
       "name": "Select",
@@ -644,7 +725,8 @@
           "aliasPath": "components/RfiPep/YearPicker.tsx",
           "callSites": ["components/RfiPep/MultiHitForm.tsx", "components/RfiPep/MultiHitForm.tsx"]
         }
-      ]
+      ],
+      "propsWithCallSites": { "onChange": { "components/RfiPep/YearPicker.tsx": 1 } }
     },
     {
       "name": "SelectOption",
@@ -694,9 +776,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "cds": "@cbhq/cds-web/loaders/Spinner",
-      "propsWithCallSites": {
-        "size": { "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1 }
-      }
+      "propsWithCallSites": { "size": { "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1 } }
     },
     {
       "name": "TextHeadline",
@@ -751,15 +831,9 @@
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
         },
-        "selected": {
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        },
-        "disabled": {
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        },
-        "media": {
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        }
+        "selected": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 },
+        "disabled": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 },
+        "media": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 }
       }
     },
     {
@@ -793,9 +867,7 @@
         "transparent": {
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         },
-        "name": {
-          "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
-        },
+        "name": { "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1 },
         "onPress": {
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         }
@@ -809,9 +881,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div",
-      "propsWithCallSites": {
-        "visible": { "components/AddPhoneNumber/AddPhoneNumber.tsx": 1 }
-      }
+      "propsWithCallSites": { "visible": { "components/AddPhoneNumber/AddPhoneNumber.tsx": 1 } }
     },
     {
       "name": "FormWrapper",
@@ -819,6 +889,58 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
+    },
+    {
+      "name": "TwoFactorAuth",
+      "sourceFile": "@cb/shared/TwoFactorAuth",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@cb/shared/TwoFactorAuth",
+      "propsWithCallSites": {
+        "onChange": { "components/Authentication/Authentication.tsx": 1 },
+        "code": { "components/Authentication/Authentication.tsx": 1 },
+        "onValid": { "components/Authentication/Authentication.tsx": 1 },
+        "onInvalid": { "components/Authentication/Authentication.tsx": 1 },
+        "onSubmit": { "components/Authentication/Authentication.tsx": 1 },
+        "noBorder": { "components/Authentication/Authentication.tsx": 1 },
+        "twoFactorMethod": { "components/Authentication/Authentication.tsx": 1 },
+        "sendTwoFactorAuthCode": { "components/Authentication/Authentication.tsx": 1 },
+        "endpointOverrides": { "components/Authentication/Authentication.tsx": 1 },
+        "client": { "components/Authentication/Authentication.tsx": 1 }
+      }
+    },
+    {
+      "name": "AuthenticationBody",
+      "sourceFile": "components/Authentication/Authentication.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
+      "propsWithCallSites": { "column": { "components/Authentication/Authentication.tsx": 1 } }
+    },
+    {
+      "name": "AuthenticationHeader",
+      "sourceFile": "components/Authentication/Authentication.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "h3"
+    },
+    {
+      "name": "AuthenticationText",
+      "sourceFile": "components/Authentication/Authentication.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
+      "name": "Card",
+      "sourceFile": "components/Card/Card.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
+      "propsWithCallSites": {
+        "auto": { "components/Card/Card.tsx": 1 },
+        "column": { "components/Card/Card.tsx": 1 }
+      }
     },
     {
       "name": "Container",
@@ -916,9 +1038,7 @@
           "components/IdCapture/components/UploadMethod/UploadMethod.tsx": 2
         },
         "data-testid": { "components/SuccessView/SuccessView.tsx": 1 },
-        "flexColumn": {
-          "components/IdCapture/components/MobileUpload/MobileUpload.tsx": 1
-        },
+        "flexColumn": { "components/IdCapture/components/MobileUpload/MobileUpload.tsx": 1 },
         "className": {
           "components/IdCapture/components/Capture/components/ExampleGuide/ExampleGuide.tsx": 1
         }
@@ -935,9 +1055,7 @@
         "selected": { "components/AttestationsForm/AttestationsForm.tsx": 1 },
         "onChange": { "components/AttestationsForm/AttestationsForm.tsx": 1 },
         "size": { "components/AttestationsForm/AttestationsForm.tsx": 1 },
-        "invalidFields": {
-          "components/AttestationsForm/AttestationsForm.tsx": 1
-        }
+        "invalidFields": { "components/AttestationsForm/AttestationsForm.tsx": 1 }
       }
     },
     {
@@ -965,9 +1083,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "Button",
-      "propsWithCallSites": {
-        "onClick": { "components/AttestationsForm/AttestationsForm.tsx": 1 }
-      }
+      "propsWithCallSites": { "onClick": { "components/AttestationsForm/AttestationsForm.tsx": 1 } }
     },
     {
       "name": "Link",
@@ -988,10 +1104,7 @@
           "steps/KYC/KYCForm.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 2
         },
-        "target": {
-          "steps/BasicKYC/BasicKYCForm.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 1
-        },
+        "target": { "steps/BasicKYC/BasicKYCForm.tsx": 1, "steps/KYC/KYCForm.tsx": 1 },
         "underlined": {
           "steps/BasicKYC/BasicKYCForm.tsx": 1,
           "steps/KYC/KYCForm.tsx": 1,
@@ -1012,72 +1125,8 @@
           "steps/KYC/KYCForm.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 2
         },
-        "openInNewTab": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 2
-        },
-        "rel": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TwoFactorAuth",
-      "sourceFile": "@cb/shared/TwoFactorAuth",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/TwoFactorAuth",
-      "propsWithCallSites": {
-        "onChange": { "components/Authentication/Authentication.tsx": 1 },
-        "code": { "components/Authentication/Authentication.tsx": 1 },
-        "onValid": { "components/Authentication/Authentication.tsx": 1 },
-        "onInvalid": { "components/Authentication/Authentication.tsx": 1 },
-        "onSubmit": { "components/Authentication/Authentication.tsx": 1 },
-        "noBorder": { "components/Authentication/Authentication.tsx": 1 },
-        "twoFactorMethod": {
-          "components/Authentication/Authentication.tsx": 1
-        },
-        "sendTwoFactorAuthCode": {
-          "components/Authentication/Authentication.tsx": 1
-        },
-        "endpointOverrides": {
-          "components/Authentication/Authentication.tsx": 1
-        },
-        "client": { "components/Authentication/Authentication.tsx": 1 }
-      }
-    },
-    {
-      "name": "AuthenticationBody",
-      "sourceFile": "components/Authentication/Authentication.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "propsWithCallSites": {
-        "column": { "components/Authentication/Authentication.tsx": 1 }
-      }
-    },
-    {
-      "name": "AuthenticationHeader",
-      "sourceFile": "components/Authentication/Authentication.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "h3"
-    },
-    {
-      "name": "AuthenticationText",
-      "sourceFile": "components/Authentication/Authentication.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
-    },
-    {
-      "name": "Card",
-      "sourceFile": "components/Card/Card.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "propsWithCallSites": {
-        "auto": { "components/Card/Card.tsx": 1 },
-        "column": { "components/Card/Card.tsx": 1 }
+        "openInNewTab": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 2 },
+        "rel": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 }
       }
     },
     {
@@ -1100,9 +1149,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div",
-      "propsWithCallSites": {
-        "hasSubtitle": { "components/ContentLayout/ContentLayout.tsx": 1 }
-      }
+      "propsWithCallSites": { "hasSubtitle": { "components/ContentLayout/ContentLayout.tsx": 1 } }
     },
     {
       "name": "Subtitle",
@@ -1150,9 +1197,7 @@
       "totalInstances": 2,
       "totalCallSites": 1,
       "presentationalLibrary": "@cb/shared/assets/icons/documents/Id",
-      "callSites": {
-        "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 2
-      }
+      "callSites": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 2 }
     },
     {
       "name": "Document",
@@ -1160,9 +1205,7 @@
       "totalInstances": 3,
       "totalCallSites": 1,
       "presentationalLibrary": "@cb/shared/assets/icons/documents/Document",
-      "callSites": {
-        "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 3
-      }
+      "callSites": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 3 }
     },
     {
       "name": "Section",
@@ -1185,9 +1228,7 @@
       "totalCallSites": 1,
       "styledComponent": "Flex",
       "propsWithCallSites": {
-        "column": {
-          "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1
-        }
+        "column": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1 }
       }
     },
     {
@@ -1263,12 +1304,8 @@
       "totalCallSites": 1,
       "presentationalElement": "Section",
       "propsWithCallSites": {
-        "key": {
-          "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1
-        },
-        "onClick": {
-          "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1
-        }
+        "key": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1 },
+        "onClick": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1 }
       }
     },
     {
@@ -1285,15 +1322,9 @@
       "totalCallSites": 1,
       "styledComponent": "InlineAlert",
       "propsWithCallSites": {
-        "title": {
-          "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1
-        },
-        "type": {
-          "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1
-        },
-        "iconType": {
-          "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1
-        }
+        "title": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1 },
+        "type": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1 },
+        "iconType": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1 }
       }
     },
     {
@@ -1303,15 +1334,9 @@
       "totalCallSites": 1,
       "styledComponent": "Flex",
       "propsWithCallSites": {
-        "auto": {
-          "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1
-        },
-        "align": {
-          "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1
-        },
-        "justify": {
-          "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1
-        }
+        "auto": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1 },
+        "align": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1 },
+        "justify": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 1 }
       }
     },
     {
@@ -1331,9 +1356,9 @@
         "steps/Address/Address.tsx": 1,
         "steps/BasicKYC/BasicKYCForm.tsx": 1,
         "steps/IDV/IDV.tsx": 1,
+        "steps/KBA/KBAForm.tsx": 1,
         "steps/KYC/KYCForm.tsx": 1,
         "steps/KYCRefresh/KYCRefresh.tsx": 1,
-        "steps/KBA/KBAForm.tsx": 1,
         "components/IdCapture/components/MobileUpload/MobileUpload.tsx": 1,
         "components/IdCapture/components/Verification/Verification.tsx": 1,
         "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
@@ -1378,11 +1403,16 @@
           "components/EDPCForm/FormField.tsx": 1,
           "components/EDPCForm/NameFields.tsx": 1
         },
+        "value": {
+          "components/EDPCForm/AddressFields.tsx": 1,
+          "components/EDPCForm/FormField.tsx": 1
+        },
         "onChange": {
           "components/EDPCForm/AddressFields.tsx": 1,
           "components/EDPCForm/FormField.tsx": 1,
           "components/EDPCForm/NameFields.tsx": 1
         },
+        "onBlur": { "components/EDPCForm/AddressFields.tsx": 1 },
         "isValid": {
           "components/EDPCForm/AddressFields.tsx": 1,
           "components/EDPCForm/FormField.tsx": 1,
@@ -1398,7 +1428,6 @@
           "components/EDPCForm/FormField.tsx": 1,
           "components/EDPCForm/NameFields.tsx": 1
         },
-        "value": { "components/EDPCForm/FormField.tsx": 1 },
         "label": { "components/EDPCForm/NameFields.tsx": 1 }
       }
     },
@@ -1527,10 +1556,7 @@
       "totalCallSites": 1,
       "presentationalElement": "input",
       "presentationalProps": [
-        {
-          "prop": "className",
-          "callSite": "components/EDPCForm/IDMatchConfirm.tsx"
-        }
+        { "prop": "className", "callSite": "components/EDPCForm/IDMatchConfirm.tsx" }
       ],
       "propsWithCallSites": {
         "type": { "components/EDPCForm/IDMatchConfirm.tsx": 1 },
@@ -1552,10 +1578,7 @@
       "totalCallSites": 1,
       "presentationalElement": "input",
       "presentationalProps": [
-        {
-          "prop": "className",
-          "callSite": "components/EDPCForm/Over75Confirm.tsx"
-        }
+        { "prop": "className", "callSite": "components/EDPCForm/Over75Confirm.tsx" }
       ],
       "propsWithCallSites": {
         "type": { "components/EDPCForm/Over75Confirm.tsx": 1 },
@@ -1575,15 +1598,15 @@
         "steps/BasicKYC/BasicKYCForm.tsx": 1,
         "steps/Birthplace/Birthplace.tsx": 1,
         "steps/CDD/CDD.tsx": 1,
+        "steps/KBA/KBAForm.tsx": 1,
         "steps/KYC/KYCForm.tsx": 1,
         "steps/KYCRefresh/KYCRefresh.tsx": 1,
-        "steps/KBA/KBAForm.tsx": 1,
         "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
         "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
+        "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2,
         "components/GDPR/steps/Emails/Emails.tsx": 2,
         "components/GDPR/steps/Intro/Intro.tsx": 1,
         "components/GDPR/steps/Privacy/Privacy.tsx": 1,
-        "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2,
         "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
         "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1
       },
@@ -1594,15 +1617,15 @@
           "steps/BasicKYC/BasicKYCForm.tsx": 1,
           "steps/Birthplace/Birthplace.tsx": 1,
           "steps/CDD/CDD.tsx": 1,
+          "steps/KBA/KBAForm.tsx": 1,
           "steps/KYC/KYCForm.tsx": 1,
           "steps/KYCRefresh/KYCRefresh.tsx": 1,
-          "steps/KBA/KBAForm.tsx": 1,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
+          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2,
           "components/GDPR/steps/Emails/Emails.tsx": 2,
           "components/GDPR/steps/Intro/Intro.tsx": 1,
           "components/GDPR/steps/Privacy/Privacy.tsx": 1,
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
           "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1
         },
@@ -1611,8 +1634,8 @@
           "steps/BasicKYC/BasicKYCForm.tsx": 1,
           "steps/Birthplace/Birthplace.tsx": 1,
           "steps/CDD/CDD.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 1,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 1,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
           "components/GDPR/steps/Emails/Emails.tsx": 2,
@@ -1635,8 +1658,8 @@
           "steps/BasicKYC/BasicKYCForm.tsx": 1,
           "steps/Birthplace/Birthplace.tsx": 1,
           "steps/CDD/CDD.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 1,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 1,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
           "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
@@ -1647,9 +1670,9 @@
           "steps/BasicKYC/BasicKYCForm.tsx": 1,
           "steps/Birthplace/Birthplace.tsx": 1,
           "steps/CDD/CDD.tsx": 1,
+          "steps/KBA/KBAForm.tsx": 1,
           "steps/KYC/KYCForm.tsx": 1,
           "steps/KYCRefresh/KYCRefresh.tsx": 1,
-          "steps/KBA/KBAForm.tsx": 1,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
           "components/GDPR/steps/Emails/Emails.tsx": 2,
@@ -1662,23 +1685,21 @@
           "steps/BasicKYC/BasicKYCForm.tsx": 1,
           "steps/Birthplace/Birthplace.tsx": 1,
           "steps/CDD/CDD.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 1,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 1,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
+          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2,
           "components/GDPR/steps/Emails/Emails.tsx": 2,
           "components/GDPR/steps/Intro/Intro.tsx": 1,
           "components/GDPR/steps/Privacy/Privacy.tsx": 1,
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
           "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1
         },
         "type": {
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1
         },
-        "aria-disabled": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        }
+        "aria-disabled": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 }
       }
     },
     {
@@ -1782,9 +1803,7 @@
       "totalCallSites": 1,
       "styledComponent": "Text",
       "callSites": { "components/JapanIDV/VendorHandoff.tsx": 3 },
-      "propsWithCallSites": {
-        "weight": { "components/JapanIDV/VendorHandoff.tsx": 3 }
-      }
+      "propsWithCallSites": { "weight": { "components/JapanIDV/VendorHandoff.tsx": 3 } }
     },
     {
       "name": "QRCode",
@@ -1865,6 +1884,125 @@
       }
     },
     {
+      "name": "StyledButton",
+      "sourceFile": "components/KYCRefresh/KYCRClickableByStatus.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "propsWithCallSites": {
+        "onClick": { "components/KYCRefresh/KYCRClickableByStatus.tsx": 1 },
+        "type": { "components/KYCRefresh/KYCRClickableByStatus.tsx": 1 }
+      }
+    },
+    {
+      "name": "KYCRListItem",
+      "sourceFile": "components/KYCRefresh/KYCRListItem",
+      "totalInstances": 10,
+      "totalCallSites": 2,
+      "presentationalElement": "ItemContainer",
+      "callSites": {
+        "components/KYCRefresh/KYCRIdDigitsListItem.tsx": 1,
+        "components/KYCRefresh/KYCRefreshScreen.tsx": 9
+      },
+      "propsWithCallSites": {
+        "field": {
+          "components/KYCRefresh/KYCRIdDigitsListItem.tsx": 1,
+          "components/KYCRefresh/KYCRefreshScreen.tsx": 9
+        },
+        "label": {
+          "components/KYCRefresh/KYCRIdDigitsListItem.tsx": 1,
+          "components/KYCRefresh/KYCRefreshScreen.tsx": 9
+        }
+      }
+    },
+    {
+      "name": "IconContainer",
+      "sourceFile": "components/KYCRefresh/KYCRListItem.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "propsWithCallSites": {
+        "type": { "components/KYCRefresh/KYCRListItem.tsx": 1 },
+        "onClick": { "components/KYCRefresh/KYCRListItem.tsx": 1 }
+      }
+    },
+    {
+      "name": "StyledFailedMessage",
+      "sourceFile": "components/KYCRefresh/KYCRStatusMessage.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "TooltipTrigger",
+      "sourceFile": "@cb/shared/TooltipTrigger",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@cb/shared/TooltipTrigger",
+      "propsWithCallSites": {
+        "isSmall": { "components/KYCRefresh/KYCRStatusMessage.tsx": 1 },
+        "position": { "components/KYCRefresh/KYCRStatusMessage.tsx": 1 },
+        "centerTipContent": { "components/KYCRefresh/KYCRStatusMessage.tsx": 1 },
+        "align": { "components/KYCRefresh/KYCRStatusMessage.tsx": 1 },
+        "content": { "components/KYCRefresh/KYCRStatusMessage.tsx": 1 }
+      }
+    },
+    {
+      "name": "InfoFilled",
+      "sourceFile": "@cb/shared/assets/icons/InfoFilled",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@cb/shared/assets/icons/InfoFilled"
+    },
+    {
+      "name": "StyledText",
+      "sourceFile": "components/KYCRefresh/KYCRStatusSection.tsx",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "styledComponent": "Text",
+      "callSites": { "components/KYCRefresh/KYCRStatusSection.tsx": 5 },
+      "propsWithCallSites": { "color": { "components/KYCRefresh/KYCRStatusSection.tsx": 2 } }
+    },
+    {
+      "name": "UpdatedCheckmark",
+      "sourceFile": "assets/icons/UpdatedCheckmark",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "style", "callSite": "components/KYCRefresh/KYCRStatusSection.tsx" }
+      ],
+      "propsWithCallSites": { "style": { "components/KYCRefresh/KYCRStatusSection.tsx": 1 } }
+    },
+    {
+      "name": "Row",
+      "sourceFile": "components/KYCRefresh/KYCRefreshScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Col",
+      "sourceFile": "components/KYCRefresh/KYCRefreshScreen.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": { "components/KYCRefresh/KYCRefreshScreen.tsx": 2 }
+    },
+    {
+      "name": "Spacer",
+      "sourceFile": "components/KYCRefresh/KYCRefreshScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Line",
+      "sourceFile": "components/KYCRefresh/KYCRefreshScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
       "name": "IconWrapper",
       "sourceFile": "components/LabelWithHelpText/LabelWithHelpText.tsx",
       "totalInstances": 1,
@@ -1896,9 +2034,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "Text",
-      "propsWithCallSites": {
-        "color": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 }
-      }
+      "propsWithCallSites": { "color": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 } }
     },
     {
       "name": "InstructionText",
@@ -1961,9 +2097,7 @@
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 4
         },
         "onSearch": { "steps/BasicKYC/BasicKYCForm.tsx": 1 },
-        "labelID": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 3
-        },
+        "labelID": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 3 },
         "forceWarningBorder": {
           "components/SuitabilityFormManager/components/SuitabilityForm/SuitabilityForm.tsx": 1
         },
@@ -2024,28 +2158,12 @@
       }
     },
     {
-      "name": "StyledDropzone",
-      "sourceFile": "components/ProofOfAddress/ProofOfAddress.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Dropzone",
-      "propsWithCallSites": {
-        "onDrop": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 },
-        "multiple": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 },
-        "maxSize": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 },
-        "accept": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 },
-        "error": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 }
-      }
-    },
-    {
       "name": "CloseTrigger",
       "sourceFile": "@cb/shared/CloseTrigger",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalLibrary": "@cb/shared/CloseTrigger",
-      "propsWithCallSites": {
-        "onClose": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 }
-      }
+      "propsWithCallSites": { "onClose": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 } }
     },
     {
       "name": "PDFPreview",
@@ -2064,9 +2182,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "img",
-      "propsWithCallSites": {
-        "src": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 }
-      }
+      "propsWithCallSites": { "src": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 } }
     },
     {
       "name": "ErrorText",
@@ -2074,9 +2190,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "Text",
-      "propsWithCallSites": {
-        "color": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 }
-      }
+      "propsWithCallSites": { "color": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 } }
     },
     {
       "name": "StyledButton",
@@ -2133,134 +2247,6 @@
         "align": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 },
         "justify": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 }
       }
-    },
-    {
-      "name": "StyledButton",
-      "sourceFile": "components/KYCRefresh/KYCRClickableByStatus.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "onClick": { "components/KYCRefresh/KYCRClickableByStatus.tsx": 1 },
-        "type": { "components/KYCRefresh/KYCRClickableByStatus.tsx": 1 }
-      }
-    },
-    {
-      "name": "KYCRListItem",
-      "sourceFile": "components/KYCRefresh/KYCRListItem",
-      "totalInstances": 10,
-      "totalCallSites": 2,
-      "presentationalElement": "ItemContainer",
-      "callSites": {
-        "components/KYCRefresh/KYCRIdDigitsListItem.tsx": 1,
-        "components/KYCRefresh/KYCRefreshScreen.tsx": 9
-      },
-      "propsWithCallSites": {
-        "field": {
-          "components/KYCRefresh/KYCRIdDigitsListItem.tsx": 1,
-          "components/KYCRefresh/KYCRefreshScreen.tsx": 9
-        },
-        "label": {
-          "components/KYCRefresh/KYCRIdDigitsListItem.tsx": 1,
-          "components/KYCRefresh/KYCRefreshScreen.tsx": 9
-        }
-      }
-    },
-    {
-      "name": "IconContainer",
-      "sourceFile": "components/KYCRefresh/KYCRListItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "type": { "components/KYCRefresh/KYCRListItem.tsx": 1 },
-        "onClick": { "components/KYCRefresh/KYCRListItem.tsx": 1 }
-      }
-    },
-    {
-      "name": "StyledFailedMessage",
-      "sourceFile": "components/KYCRefresh/KYCRStatusMessage.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "TooltipTrigger",
-      "sourceFile": "@cb/shared/TooltipTrigger",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/TooltipTrigger",
-      "propsWithCallSites": {
-        "isSmall": { "components/KYCRefresh/KYCRStatusMessage.tsx": 1 },
-        "position": { "components/KYCRefresh/KYCRStatusMessage.tsx": 1 },
-        "centerTipContent": {
-          "components/KYCRefresh/KYCRStatusMessage.tsx": 1
-        },
-        "align": { "components/KYCRefresh/KYCRStatusMessage.tsx": 1 },
-        "content": { "components/KYCRefresh/KYCRStatusMessage.tsx": 1 }
-      }
-    },
-    {
-      "name": "InfoFilled",
-      "sourceFile": "@cb/shared/assets/icons/InfoFilled",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/assets/icons/InfoFilled"
-    },
-    {
-      "name": "StyledText",
-      "sourceFile": "components/KYCRefresh/KYCRStatusSection.tsx",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "styledComponent": "Text",
-      "callSites": { "components/KYCRefresh/KYCRStatusSection.tsx": 5 },
-      "propsWithCallSites": {
-        "color": { "components/KYCRefresh/KYCRStatusSection.tsx": 2 }
-      }
-    },
-    {
-      "name": "UpdatedCheckmark",
-      "sourceFile": "assets/icons/UpdatedCheckmark",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "components/KYCRefresh/KYCRStatusSection.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "style": { "components/KYCRefresh/KYCRStatusSection.tsx": 1 }
-      }
-    },
-    {
-      "name": "Row",
-      "sourceFile": "components/KYCRefresh/KYCRefreshScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Col",
-      "sourceFile": "components/KYCRefresh/KYCRefreshScreen.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "callSites": { "components/KYCRefresh/KYCRefreshScreen.tsx": 2 }
-    },
-    {
-      "name": "Spacer",
-      "sourceFile": "components/KYCRefresh/KYCRefreshScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Line",
-      "sourceFile": "components/KYCRefresh/KYCRefreshScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
     },
     {
       "name": "ModalHeader",
@@ -2320,9 +2306,7 @@
       "totalCallSites": 1,
       "styledComponent": "a",
       "propsWithCallSites": {
-        "hasButtons": {
-          "components/SecurityPageModal/SecurityPageModal.tsx": 1
-        },
+        "hasButtons": { "components/SecurityPageModal/SecurityPageModal.tsx": 1 },
         "href": { "components/SecurityPageModal/SecurityPageModal.tsx": 1 },
         "target": { "components/SecurityPageModal/SecurityPageModal.tsx": 1 },
         "onClick": { "components/SecurityPageModal/SecurityPageModal.tsx": 1 }
@@ -2334,9 +2318,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div",
-      "propsWithCallSites": {
-        "hasPlaceholder": { "components/Selector/Selector.tsx": 1 }
-      }
+      "propsWithCallSites": { "hasPlaceholder": { "components/Selector/Selector.tsx": 1 } }
     },
     {
       "name": "Container",
@@ -2548,9 +2530,7 @@
       "totalCallSites": 1,
       "styledComponent": "Button",
       "propsWithCallSites": {
-        "onClick": {
-          "components/SuitabilityFormManager/SuitabilityFormManager.tsx": 1
-        }
+        "onClick": { "components/SuitabilityFormManager/SuitabilityFormManager.tsx": 1 }
       }
     },
     {
@@ -2566,9 +2546,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "iframe",
-      "propsWithCallSites": {
-        "src": { "components/TaxFormFrame/TaxFormFrame.tsx": 1 }
-      }
+      "propsWithCallSites": { "src": { "components/TaxFormFrame/TaxFormFrame.tsx": 1 } }
     },
     {
       "name": "SpinnerContainer",
@@ -2577,9 +2555,14 @@
       "totalCallSites": 1,
       "styledComponent": "Flex",
       "callSites": { "components/TaxFormFrame/TaxFormFrame.tsx": 2 },
-      "propsWithCallSites": {
-        "center": { "components/TaxFormFrame/TaxFormFrame.tsx": 2 }
-      }
+      "propsWithCallSites": { "center": { "components/TaxFormFrame/TaxFormFrame.tsx": 2 } }
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/VerificationError/VerificationError.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "SpinnerContainer",
@@ -2594,21 +2577,12 @@
       }
     },
     {
-      "name": "Container",
-      "sourceFile": "components/VerificationError/VerificationError.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "AddressLine",
       "sourceFile": "steps/AddressConfirm/AddressConfirm.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div",
-      "propsWithCallSites": {
-        "key": { "steps/AddressConfirm/AddressConfirm.tsx": 1 }
-      }
+      "propsWithCallSites": { "key": { "steps/AddressConfirm/AddressConfirm.tsx": 1 } }
     },
     {
       "name": "StyledStep",
@@ -2616,9 +2590,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "Step",
-      "propsWithCallSites": {
-        "title": { "steps/AddressConfirm/AddressConfirm.tsx": 1 }
-      }
+      "propsWithCallSites": { "title": { "steps/AddressConfirm/AddressConfirm.tsx": 1 } }
     },
     {
       "name": "Header",
@@ -2706,8 +2678,8 @@
       "presentationalLibrary": "@cb/shared/Form",
       "callSites": {
         "steps/BasicKYC/BasicKYCForm.tsx": 1,
-        "steps/KYC/KYCForm.tsx": 1,
         "steps/KBA/KBAForm.tsx": 1,
+        "steps/KYC/KYCForm.tsx": 1,
         "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
         "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
         "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
@@ -2716,8 +2688,8 @@
       "propsWithCallSites": {
         "onSubmit": {
           "steps/BasicKYC/BasicKYCForm.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 1,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 1,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
@@ -2725,8 +2697,8 @@
         },
         "onValid": {
           "steps/BasicKYC/BasicKYCForm.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 1,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 1,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
@@ -2734,8 +2706,8 @@
         },
         "onInvalid": {
           "steps/BasicKYC/BasicKYCForm.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 1,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 1,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
@@ -2743,8 +2715,8 @@
         },
         "onChange": {
           "steps/BasicKYC/BasicKYCForm.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 1,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 1,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
@@ -2756,8 +2728,8 @@
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
         },
         "countryCode": {
-          "steps/KYC/KYCForm.tsx": 1,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 1,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
           "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1
@@ -2770,9 +2742,7 @@
           "steps/KYC/KYCForm.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
         },
-        "validateOnMount": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        }
+        "validateOnMount": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 }
       }
     },
     {
@@ -2958,14 +2928,6 @@
       }
     },
     {
-      "name": "AutoWidthStep",
-      "sourceFile": "steps/Identity/Identity.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Step",
-      "propsWithCallSites": { "title": { "steps/Identity/Identity.tsx": 1 } }
-    },
-    {
       "name": "SpinnerContainer",
       "sourceFile": "steps/IDV/IDV.tsx",
       "totalInstances": 1,
@@ -3001,14 +2963,20 @@
       }
     },
     {
+      "name": "AutoWidthStep",
+      "sourceFile": "steps/Identity/Identity.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Step",
+      "propsWithCallSites": { "title": { "steps/Identity/Identity.tsx": 1 } }
+    },
+    {
       "name": "StyledStep",
       "sourceFile": "steps/IdentityConfirm/IdentityConfirm.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "Step",
-      "propsWithCallSites": {
-        "title": { "steps/IdentityConfirm/IdentityConfirm.tsx": 1 }
-      }
+      "propsWithCallSites": { "title": { "steps/IdentityConfirm/IdentityConfirm.tsx": 1 } }
     },
     {
       "name": "Header",
@@ -3087,177 +3055,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "WonkyBackLink"
-    },
-    {
-      "name": "AutoWidthStep",
-      "sourceFile": "steps/KYC/KYC.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Step",
-      "propsWithCallSites": { "title": { "steps/KYC/KYC.tsx": 1 } }
-    },
-    {
-      "name": "StateSelect",
-      "sourceFile": "@cb/shared/StateSelect",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalLibrary": "@cb/shared/StateSelect",
-      "callSites": {
-        "steps/KYC/KYCForm.tsx": 1,
-        "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        },
-        "validators": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        },
-        "hideInlineErrorMessages": { "steps/KYC/KYCForm.tsx": 1 },
-        "onFocus": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MonthSelect",
-      "sourceFile": "@cb/shared/MonthSelect",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalLibrary": "@cb/shared/MonthSelect",
-      "callSites": {
-        "steps/KYC/KYCForm.tsx": 1,
-        "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        },
-        "validators": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        },
-        "hideInlineErrorMessages": { "steps/KYC/KYCForm.tsx": 1 },
-        "onFocus": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        },
-        "avoidResizingOptions": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DaySelect",
-      "sourceFile": "@cb/shared/DaySelect",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalLibrary": "@cb/shared/DaySelect",
-      "callSites": {
-        "steps/KYC/KYCForm.tsx": 1,
-        "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        },
-        "validators": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        },
-        "hideInlineErrorMessages": { "steps/KYC/KYCForm.tsx": 1 },
-        "onFocus": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        },
-        "avoidResizingOptions": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "YearSelect",
-      "sourceFile": "@cb/shared/YearSelect",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalLibrary": "@cb/shared/YearSelect",
-      "callSites": {
-        "steps/KYC/KYCForm.tsx": 1,
-        "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        },
-        "validators": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        },
-        "hideInlineErrorMessages": { "steps/KYC/KYCForm.tsx": 1 },
-        "onFocus": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        },
-        "avoidResizingOptions": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "InvisibleFormField",
-      "sourceFile": "@cb/shared/InvisibleFormField",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalLibrary": "@cb/shared/InvisibleFormField",
-      "callSites": {
-        "steps/KYC/KYCForm.tsx": 1,
-        "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "steps/KYC/KYCForm.tsx": 1,
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "LoadingContainer",
-      "sourceFile": "steps/KYCRefresh/KYCRefresh.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "AutoWidthStep",
-      "sourceFile": "steps/KYCRefresh/KYCRefresh.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Step",
-      "callSites": { "steps/KYCRefresh/KYCRefresh.tsx": 2 },
-      "propsWithCallSites": {
-        "title": { "steps/KYCRefresh/KYCRefresh.tsx": 2 },
-        "subTitle": { "steps/KYCRefresh/KYCRefresh.tsx": 1 }
-      }
-    },
-    {
-      "name": "MarginBottom",
-      "sourceFile": "steps/KYCRefresh/KYCRefresh.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "KYCRefreshScreen",
-      "sourceFile": "components/KYCRefresh/KYCRefreshScreen",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "StyledButton"
     },
     {
       "name": "Container",
@@ -3347,6 +3144,171 @@
       }
     },
     {
+      "name": "AutoWidthStep",
+      "sourceFile": "steps/KYC/KYC.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Step",
+      "propsWithCallSites": { "title": { "steps/KYC/KYC.tsx": 1 } }
+    },
+    {
+      "name": "StateSelect",
+      "sourceFile": "@cb/shared/StateSelect",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalLibrary": "@cb/shared/StateSelect",
+      "callSites": {
+        "steps/KYC/KYCForm.tsx": 1,
+        "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        },
+        "validators": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        },
+        "hideInlineErrorMessages": { "steps/KYC/KYCForm.tsx": 1 },
+        "onFocus": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MonthSelect",
+      "sourceFile": "@cb/shared/MonthSelect",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalLibrary": "@cb/shared/MonthSelect",
+      "callSites": {
+        "steps/KYC/KYCForm.tsx": 1,
+        "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        },
+        "validators": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        },
+        "hideInlineErrorMessages": { "steps/KYC/KYCForm.tsx": 1 },
+        "onFocus": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        },
+        "avoidResizingOptions": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 }
+      }
+    },
+    {
+      "name": "DaySelect",
+      "sourceFile": "@cb/shared/DaySelect",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalLibrary": "@cb/shared/DaySelect",
+      "callSites": {
+        "steps/KYC/KYCForm.tsx": 1,
+        "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        },
+        "validators": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        },
+        "hideInlineErrorMessages": { "steps/KYC/KYCForm.tsx": 1 },
+        "onFocus": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        },
+        "avoidResizingOptions": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 }
+      }
+    },
+    {
+      "name": "YearSelect",
+      "sourceFile": "@cb/shared/YearSelect",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalLibrary": "@cb/shared/YearSelect",
+      "callSites": {
+        "steps/KYC/KYCForm.tsx": 1,
+        "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        },
+        "validators": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        },
+        "hideInlineErrorMessages": { "steps/KYC/KYCForm.tsx": 1 },
+        "onFocus": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        },
+        "avoidResizingOptions": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 }
+      }
+    },
+    {
+      "name": "InvisibleFormField",
+      "sourceFile": "@cb/shared/InvisibleFormField",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalLibrary": "@cb/shared/InvisibleFormField",
+      "callSites": {
+        "steps/KYC/KYCForm.tsx": 1,
+        "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "steps/KYC/KYCForm.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "LoadingContainer",
+      "sourceFile": "steps/KYCRefresh/KYCRefresh.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "AutoWidthStep",
+      "sourceFile": "steps/KYCRefresh/KYCRefresh.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Step",
+      "callSites": { "steps/KYCRefresh/KYCRefresh.tsx": 2 },
+      "propsWithCallSites": {
+        "title": { "steps/KYCRefresh/KYCRefresh.tsx": 2 },
+        "subTitle": { "steps/KYCRefresh/KYCRefresh.tsx": 1 }
+      }
+    },
+    {
+      "name": "MarginBottom",
+      "sourceFile": "steps/KYCRefresh/KYCRefresh.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "KYCRefreshScreen",
+      "sourceFile": "components/KYCRefresh/KYCRefreshScreen",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "StyledButton"
+    },
+    {
       "name": "Header",
       "sourceFile": "steps/Nationality/Nationality.tsx",
       "totalInstances": 1,
@@ -3359,9 +3321,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "Labeled",
-      "propsWithCallSites": {
-        "label": { "steps/Nationality/Nationality.tsx": 1 }
-      }
+      "propsWithCallSites": { "label": { "steps/Nationality/Nationality.tsx": 1 } }
     },
     {
       "name": "StyledButton",
@@ -3384,9 +3344,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "Step",
-      "propsWithCallSites": {
-        "title": { "steps/RemediationAlert/RemediationAlert.tsx": 1 }
-      }
+      "propsWithCallSites": { "title": { "steps/RemediationAlert/RemediationAlert.tsx": 1 } }
     },
     {
       "name": "LoadingContainer",
@@ -3559,9 +3517,7 @@
         "hyphenOnWordBreak": {
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1
         },
-        "iconType": {
-          "components/IdCapture/components/Verification/Verification.tsx": 1
-        }
+        "iconType": { "components/IdCapture/components/Verification/Verification.tsx": 1 }
       }
     },
     {
@@ -3749,54 +3705,6 @@
       }
     },
     {
-      "name": "Spacer",
-      "sourceFile": "components/GDPR/steps/Emails/Emails.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Content",
-      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "propsWithCallSites": {
-        "column": { "components/GDPR/steps/Privacy/Privacy.tsx": 1 },
-        "align": { "components/GDPR/steps/Privacy/Privacy.tsx": 1 },
-        "onScroll": { "components/GDPR/steps/Privacy/Privacy.tsx": 1 }
-      }
-    },
-    {
-      "name": "IconContainer",
-      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Header",
-      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "styledComponent": "h3",
-      "callSites": { "components/GDPR/steps/Privacy/Privacy.tsx": 4 }
-    },
-    {
-      "name": "ButtonContainer",
-      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
       "name": "VerticalMask",
       "sourceFile": "components/IdCapture/components/Capture/Capture.tsx",
       "totalInstances": 2,
@@ -3870,15 +3778,9 @@
       "propsWithCallSites": {
         "onClick": { "components/IdCapture/components/Capture/Capture.tsx": 5 },
         "type": { "components/IdCapture/components/Capture/Capture.tsx": 1 },
-        "data-testid": {
-          "components/IdCapture/components/Capture/Capture.tsx": 3
-        },
-        "disabled": {
-          "components/IdCapture/components/Capture/Capture.tsx": 2
-        },
-        "eventName": {
-          "components/IdCapture/components/Capture/Capture.tsx": 1
-        }
+        "data-testid": { "components/IdCapture/components/Capture/Capture.tsx": 3 },
+        "disabled": { "components/IdCapture/components/Capture/Capture.tsx": 2 },
+        "eventName": { "components/IdCapture/components/Capture/Capture.tsx": 1 }
       }
     },
     {
@@ -3889,9 +3791,7 @@
       "styledComponent": "div",
       "propsWithCallSites": {
         "onClick": { "components/IdCapture/components/Capture/Capture.tsx": 1 },
-        "data-testid": {
-          "components/IdCapture/components/Capture/Capture.tsx": 1
-        }
+        "data-testid": { "components/IdCapture/components/Capture/Capture.tsx": 1 }
       }
     },
     {
@@ -3908,9 +3808,7 @@
       "totalCallSites": 1,
       "presentationalElement": "ScamWarningContainerStyled",
       "callSites": { "components/IdCapture/components/Capture/Capture.tsx": 2 },
-      "propsWithCallSites": {
-        "type": { "components/IdCapture/components/Capture/Capture.tsx": 2 }
-      }
+      "propsWithCallSites": { "type": { "components/IdCapture/components/Capture/Capture.tsx": 2 } }
     },
     {
       "name": "StyledExampleGuide",
@@ -3918,9 +3816,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "ExampleGuide",
-      "propsWithCallSites": {
-        "side": { "components/IdCapture/components/Capture/Capture.tsx": 1 }
-      }
+      "propsWithCallSites": { "side": { "components/IdCapture/components/Capture/Capture.tsx": 1 } }
     },
     {
       "name": "Container",
@@ -4007,9 +3903,7 @@
       "totalInstances": 2,
       "totalCallSites": 1,
       "styledComponent": "div",
-      "callSites": {
-        "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2
-      }
+      "callSites": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2 }
     },
     {
       "name": "Drop",
@@ -4038,9 +3932,7 @@
       "totalInstances": 2,
       "totalCallSites": 1,
       "styledComponent": "div",
-      "callSites": {
-        "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2
-      }
+      "callSites": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2 }
     },
     {
       "name": "WarningText",
@@ -4056,12 +3948,8 @@
       "totalCallSites": 1,
       "styledComponent": "img",
       "propsWithCallSites": {
-        "src": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
-        },
-        "alt": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
-        }
+        "src": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 },
+        "alt": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 }
       }
     },
     {
@@ -4079,6 +3967,13 @@
       "styledComponent": "ul"
     },
     {
+      "name": "WaitMessage",
+      "sourceFile": "components/IdCapture/components/MobileUpload/MobileUpload.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "p"
+    },
+    {
       "name": "QRCode",
       "sourceFile": "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx",
       "totalInstances": 1,
@@ -4091,20 +3986,9 @@
       ],
       "styledComponent": "QRCodeRaw",
       "propsWithCallSites": {
-        "value": {
-          "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 1
-        },
-        "style": {
-          "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 1
-        }
+        "value": { "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 1 },
+        "style": { "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 1 }
       }
-    },
-    {
-      "name": "WaitMessage",
-      "sourceFile": "components/IdCapture/components/MobileUpload/MobileUpload.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "p"
     },
     {
       "name": "RecommendOption",
@@ -4155,9 +4039,7 @@
       "totalCallSites": 1,
       "styledComponent": "div",
       "propsWithCallSites": {
-        "key": {
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        }
+        "key": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 }
       }
     },
     {
@@ -4181,17 +4063,13 @@
       "totalCallSites": 1,
       "styledComponent": "video",
       "propsWithCallSites": {
-        "aspectRatio": {
-          "components/IdCapture/components/Webcam/Webcam.tsx": 1
-        },
+        "aspectRatio": { "components/IdCapture/components/Webcam/Webcam.tsx": 1 },
         "id": { "components/IdCapture/components/Webcam/Webcam.tsx": 1 },
         "blur": { "components/IdCapture/components/Webcam/Webcam.tsx": 1 },
         "flipped": { "components/IdCapture/components/Webcam/Webcam.tsx": 1 },
         "autoPlay": { "components/IdCapture/components/Webcam/Webcam.tsx": 1 },
         "muted": { "components/IdCapture/components/Webcam/Webcam.tsx": 1 },
-        "playsinline": {
-          "components/IdCapture/components/Webcam/Webcam.tsx": 1
-        }
+        "playsinline": { "components/IdCapture/components/Webcam/Webcam.tsx": 1 }
       }
     },
     {
@@ -4200,9 +4078,55 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "canvas",
+      "propsWithCallSites": { "id": { "components/IdCapture/components/Webcam/Webcam.tsx": 1 } }
+    },
+    {
+      "name": "Spacer",
+      "sourceFile": "components/GDPR/steps/Emails/Emails.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Content",
+      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
       "propsWithCallSites": {
-        "id": { "components/IdCapture/components/Webcam/Webcam.tsx": 1 }
+        "column": { "components/GDPR/steps/Privacy/Privacy.tsx": 1 },
+        "align": { "components/GDPR/steps/Privacy/Privacy.tsx": 1 },
+        "onScroll": { "components/GDPR/steps/Privacy/Privacy.tsx": 1 }
       }
+    },
+    {
+      "name": "IconContainer",
+      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Header",
+      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "styledComponent": "h3",
+      "callSites": { "components/GDPR/steps/Privacy/Privacy.tsx": 4 }
+    },
+    {
+      "name": "ButtonContainer",
+      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
     },
     {
       "name": "HelpText",
@@ -4218,9 +4142,7 @@
       "totalCallSites": 1,
       "styledComponent": "Flex",
       "propsWithCallSites": {
-        "column": {
-          "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1
-        }
+        "column": { "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1 }
       }
     },
     {
@@ -4230,9 +4152,7 @@
       "totalCallSites": 1,
       "styledComponent": "Flex",
       "propsWithCallSites": {
-        "justify": {
-          "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1
-        }
+        "justify": { "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1 }
       }
     },
     {
@@ -4249,9 +4169,7 @@
       "totalCallSites": 1,
       "styledComponent": "Flex",
       "propsWithCallSites": {
-        "column": {
-          "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1
-        }
+        "column": { "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1 }
       }
     },
     {
@@ -4261,18 +4179,10 @@
       "totalCallSites": 1,
       "styledComponent": "Labeled",
       "propsWithCallSites": {
-        "key": {
-          "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1
-        },
-        "label": {
-          "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1
-        },
-        "color": {
-          "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1
-        },
-        "size": {
-          "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1
-        }
+        "key": { "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1 },
+        "label": { "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1 },
+        "color": { "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1 },
+        "size": { "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1 }
       }
     },
     {
@@ -4295,9 +4205,7 @@
       "totalInstances": 3,
       "totalCallSites": 1,
       "styledComponent": "div",
-      "callSites": {
-        "components/Idology/components/VendorVerification/VendorVerification.tsx": 3
-      }
+      "callSites": { "components/Idology/components/VendorVerification/VendorVerification.tsx": 3 }
     },
     {
       "name": "IconText",
@@ -4305,13 +4213,9 @@
       "totalInstances": 3,
       "totalCallSites": 1,
       "styledComponent": "Text",
-      "callSites": {
-        "components/Idology/components/VendorVerification/VendorVerification.tsx": 3
-      },
+      "callSites": { "components/Idology/components/VendorVerification/VendorVerification.tsx": 3 },
       "propsWithCallSites": {
-        "weight": {
-          "components/Idology/components/VendorVerification/VendorVerification.tsx": 3
-        }
+        "weight": { "components/Idology/components/VendorVerification/VendorVerification.tsx": 3 }
       }
     },
     {
@@ -4425,9 +4329,7 @@
       "totalInstances": 3,
       "totalCallSites": 1,
       "styledComponent": "div",
-      "callSites": {
-        "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 3
-      }
+      "callSites": { "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 3 }
     },
     {
       "name": "KeyList",
@@ -4540,9 +4442,7 @@
       "totalInstances": 2,
       "totalCallSites": 1,
       "styledComponent": "div",
-      "callSites": {
-        "components/SecurityKeyModal/components/Remove/Remove.tsx": 2
-      }
+      "callSites": { "components/SecurityKeyModal/components/Remove/Remove.tsx": 2 }
     },
     {
       "name": "ContentMessage",
@@ -4586,18 +4486,10 @@
       "totalCallSites": 1,
       "presentationalLibrary": "@cb/shared/Input",
       "propsWithCallSites": {
-        "placeholder": {
-          "components/SecurityKeyModal/components/Rename/Rename.tsx": 1
-        },
-        "value": {
-          "components/SecurityKeyModal/components/Rename/Rename.tsx": 1
-        },
-        "onChange": {
-          "components/SecurityKeyModal/components/Rename/Rename.tsx": 1
-        },
-        "maxLength": {
-          "components/SecurityKeyModal/components/Rename/Rename.tsx": 1
-        }
+        "placeholder": { "components/SecurityKeyModal/components/Rename/Rename.tsx": 1 },
+        "value": { "components/SecurityKeyModal/components/Rename/Rename.tsx": 1 },
+        "onChange": { "components/SecurityKeyModal/components/Rename/Rename.tsx": 1 },
+        "maxLength": { "components/SecurityKeyModal/components/Rename/Rename.tsx": 1 }
       }
     },
     {
@@ -4607,9 +4499,7 @@
       "totalCallSites": 1,
       "presentationalElement": "strong",
       "propsWithCallSites": {
-        "key": {
-          "components/SecurityKeyModal/components/Warnings/Warnings.tsx": 1
-        }
+        "key": { "components/SecurityKeyModal/components/Warnings/Warnings.tsx": 1 }
       }
     },
     {
@@ -4618,16 +4508,10 @@
       "totalInstances": 2,
       "totalCallSites": 1,
       "styledComponent": "a",
-      "callSites": {
-        "components/SecurityKeyModal/components/Warnings/Warnings.tsx": 2
-      },
+      "callSites": { "components/SecurityKeyModal/components/Warnings/Warnings.tsx": 2 },
       "propsWithCallSites": {
-        "key": {
-          "components/SecurityKeyModal/components/Warnings/Warnings.tsx": 2
-        },
-        "href": {
-          "components/SecurityKeyModal/components/Warnings/Warnings.tsx": 2
-        }
+        "key": { "components/SecurityKeyModal/components/Warnings/Warnings.tsx": 2 },
+        "href": { "components/SecurityKeyModal/components/Warnings/Warnings.tsx": 2 }
       }
     },
     {
@@ -4687,12 +4571,8 @@
       "totalCallSites": 1,
       "styledComponent": "img",
       "propsWithCallSites": {
-        "src": {
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        },
-        "alt": {
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        }
+        "src": { "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1 },
+        "alt": { "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1 }
       }
     },
     {
@@ -4723,12 +4603,8 @@
       "totalCallSites": 1,
       "styledComponent": "img",
       "propsWithCallSites": {
-        "src": {
-          "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 1
-        },
-        "alt": {
-          "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 1
-        }
+        "src": { "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 1 },
+        "alt": { "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 1 }
       }
     },
     {
@@ -4831,9 +4707,7 @@
         "onRequestClose": {
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         },
-        "style": {
-          "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
-        }
+        "style": { "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1 }
       }
     },
     {
@@ -4875,41 +4749,35 @@
         "Context.tsx": 1,
         "components/Wrapper.tsx": 1,
         "utils/setupJest.js": 1,
-        "utils/test.tsx": 3
+        "utils/testUtils.tsx": 3
       },
       "propsWithCallSites": {
-        "messages": {
-          "Context.tsx": 1,
-          "utils/setupJest.js": 1,
-          "utils/test.tsx": 2
-        },
+        "messages": { "Context.tsx": 1, "utils/setupJest.js": 1, "utils/testUtils.tsx": 2 },
         "locale": {
           "Context.tsx": 1,
           "components/Wrapper.tsx": 1,
           "utils/setupJest.js": 1,
-          "utils/test.tsx": 3
+          "utils/testUtils.tsx": 3
         }
       }
     },
     {
       "name": "ThemeProvider",
       "sourceFile": "styled-components/ThemeProvider",
-      "totalInstances": 5,
-      "totalCallSites": 5,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
         "Context.tsx": 1,
         "components/Wrapper.tsx": 1,
         "utils/setupJest.js": 1,
-        "utils/test.tsx": 1,
-        "utils/tests.js": 1
+        "utils/testUtils.tsx": 1
       },
       "propsWithCallSites": {
         "theme": {
           "Context.tsx": 1,
           "components/Wrapper.tsx": 1,
           "utils/setupJest.js": 1,
-          "utils/test.tsx": 1,
-          "utils/tests.js": 1
+          "utils/testUtils.tsx": 1
         }
       }
     },
@@ -4948,9 +4816,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "onAddPhoneNumber": {
-          "components/AddPhoneNumber/AddPhoneNumber.tsx": 1
-        },
+        "onAddPhoneNumber": { "components/AddPhoneNumber/AddPhoneNumber.tsx": 1 },
         "footer": { "components/AddPhoneNumber/AddPhoneNumber.tsx": 1 }
       }
     },
@@ -4961,8 +4827,8 @@
       "totalCallSites": 65,
       "callSites": {
         "components/AddPhoneNumber/AddPhoneNumber.tsx": 1,
-        "components/AttestationsForm/AttestationsForm.tsx": 9,
         "components/Authentication/Authentication.tsx": 5,
+        "components/AttestationsForm/AttestationsForm.tsx": 9,
         "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 2,
         "components/EDPCForm/MonthSelector.tsx": 12,
         "components/EDPCForm/prefectureOptions.tsx": 47,
@@ -4975,9 +4841,9 @@
         "components/JapanIDVPending/Error.tsx": 3,
         "components/JapanIDVPending/Pending.tsx": 2,
         "components/JapanIDVPending/Success.tsx": 3,
-        "components/ProofOfAddress/ProofOfAddress.tsx": 7,
         "components/KYCRefresh/KYCRStatusMessage.tsx": 2,
         "components/KYCRefresh/KYCRStatusSection.tsx": 5,
+        "components/ProofOfAddress/ProofOfAddress.tsx": 7,
         "components/Step/Content.tsx": 1,
         "components/SuitabilityFormManager/SuitabilityFormManager.tsx": 3,
         "steps/Address/Address.tsx": 1,
@@ -4989,18 +4855,18 @@
         "steps/CDD/CDD.tsx": 4,
         "steps/EDPC/EDPC.tsx": 1,
         "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 2,
-        "steps/Identity/Identity.tsx": 1,
         "steps/IDV/IDV.tsx": 1,
+        "steps/Identity/Identity.tsx": 1,
         "steps/IdentityConfirm/IdentityConfirm.tsx": 7,
         "steps/JapanIDV/JapanIDV.tsx": 1,
         "steps/JapanIDVPending/JapanIDVPending.tsx": 2,
+        "steps/KBA/KBAForm.tsx": 2,
         "steps/KYC/KYC.tsx": 1,
         "steps/KYC/KYCForm.tsx": 7,
         "steps/KYCRefresh/KYCRefresh.tsx": 5,
-        "steps/KBA/KBAForm.tsx": 2,
         "steps/Nationality/Nationality.tsx": 4,
-        "steps/PhoneNumber/PhoneNumber.tsx": 2,
         "steps/PendingDocuments/PendingDocuments.tsx": 1,
+        "steps/PhoneNumber/PhoneNumber.tsx": 2,
         "steps/Suitability/Suitability.tsx": 1,
         "steps/TOS/TOS.tsx": 4,
         "steps/TaxForm/TaxForm.tsx": 1,
@@ -5008,10 +4874,10 @@
         "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 3,
         "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 2,
         "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberFormContainer.tsx": 1,
-        "components/GDPR/steps/Privacy/Privacy.tsx": 1,
         "components/IdCapture/components/Capture/Capture.tsx": 14,
         "components/IdCapture/components/IdType/IdType.tsx": 1,
         "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
+        "components/GDPR/steps/Privacy/Privacy.tsx": 1,
         "components/Idology/components/IdentityForm/IdentityForm.tsx": 6,
         "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 3,
         "components/Idology/components/VendorVerification/VendorVerification.tsx": 6,
@@ -5029,8 +4895,8 @@
       "propsWithCallSites": {
         "id": {
           "components/AddPhoneNumber/AddPhoneNumber.tsx": 1,
-          "components/AttestationsForm/AttestationsForm.tsx": 7,
           "components/Authentication/Authentication.tsx": 5,
+          "components/AttestationsForm/AttestationsForm.tsx": 7,
           "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 2,
           "components/EDPCForm/MonthSelector.tsx": 12,
           "components/EDPCForm/prefectureOptions.tsx": 47,
@@ -5054,17 +4920,17 @@
           "steps/Birthplace/Birthplace.tsx": 5,
           "steps/CDD/CDD.tsx": 4,
           "steps/EDPC/EDPC.tsx": 1,
-          "steps/Identity/Identity.tsx": 1,
           "steps/IDV/IDV.tsx": 1,
+          "steps/Identity/Identity.tsx": 1,
           "steps/IdentityConfirm/IdentityConfirm.tsx": 7,
           "steps/JapanIDV/JapanIDV.tsx": 1,
           "steps/JapanIDVPending/JapanIDVPending.tsx": 2,
+          "steps/KBA/KBAForm.tsx": 2,
           "steps/KYC/KYC.tsx": 1,
           "steps/KYC/KYCForm.tsx": 7,
-          "steps/KBA/KBAForm.tsx": 2,
           "steps/Nationality/Nationality.tsx": 4,
-          "steps/PhoneNumber/PhoneNumber.tsx": 2,
           "steps/PendingDocuments/PendingDocuments.tsx": 1,
+          "steps/PhoneNumber/PhoneNumber.tsx": 2,
           "steps/Suitability/Suitability.tsx": 1,
           "steps/TOS/TOS.tsx": 4,
           "steps/TaxForm/TaxForm.tsx": 1,
@@ -5072,10 +4938,10 @@
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 3,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 2,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberFormContainer.tsx": 1,
-          "components/GDPR/steps/Privacy/Privacy.tsx": 1,
           "components/IdCapture/components/Capture/Capture.tsx": 14,
           "components/IdCapture/components/IdType/IdType.tsx": 1,
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
+          "components/GDPR/steps/Privacy/Privacy.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 6,
           "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 3,
           "components/Idology/components/VendorVerification/VendorVerification.tsx": 6,
@@ -5092,8 +4958,8 @@
         },
         "defaultMessage": {
           "components/AddPhoneNumber/AddPhoneNumber.tsx": 1,
-          "components/AttestationsForm/AttestationsForm.tsx": 7,
           "components/Authentication/Authentication.tsx": 5,
+          "components/AttestationsForm/AttestationsForm.tsx": 7,
           "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 2,
           "components/EDPCForm/MonthSelector.tsx": 12,
           "components/EDPCForm/prefectureOptions.tsx": 47,
@@ -5117,17 +4983,17 @@
           "steps/Birthplace/Birthplace.tsx": 5,
           "steps/CDD/CDD.tsx": 4,
           "steps/EDPC/EDPC.tsx": 1,
-          "steps/Identity/Identity.tsx": 1,
           "steps/IDV/IDV.tsx": 1,
+          "steps/Identity/Identity.tsx": 1,
           "steps/IdentityConfirm/IdentityConfirm.tsx": 7,
           "steps/JapanIDV/JapanIDV.tsx": 1,
           "steps/JapanIDVPending/JapanIDVPending.tsx": 2,
+          "steps/KBA/KBAForm.tsx": 2,
           "steps/KYC/KYC.tsx": 1,
           "steps/KYC/KYCForm.tsx": 7,
-          "steps/KBA/KBAForm.tsx": 2,
           "steps/Nationality/Nationality.tsx": 4,
-          "steps/PhoneNumber/PhoneNumber.tsx": 2,
           "steps/PendingDocuments/PendingDocuments.tsx": 1,
+          "steps/PhoneNumber/PhoneNumber.tsx": 2,
           "steps/Suitability/Suitability.tsx": 1,
           "steps/TOS/TOS.tsx": 4,
           "steps/TaxForm/TaxForm.tsx": 1,
@@ -5135,10 +5001,10 @@
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 3,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 2,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberFormContainer.tsx": 1,
-          "components/GDPR/steps/Privacy/Privacy.tsx": 1,
           "components/IdCapture/components/Capture/Capture.tsx": 14,
           "components/IdCapture/components/IdType/IdType.tsx": 1,
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
+          "components/GDPR/steps/Privacy/Privacy.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 6,
           "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 3,
           "components/Idology/components/VendorVerification/VendorVerification.tsx": 6,
@@ -5155,8 +5021,8 @@
         },
         "description": {
           "components/AddPhoneNumber/AddPhoneNumber.tsx": 1,
-          "components/AttestationsForm/AttestationsForm.tsx": 7,
           "components/Authentication/Authentication.tsx": 5,
+          "components/AttestationsForm/AttestationsForm.tsx": 7,
           "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 2,
           "components/EDPCForm/MonthSelector.tsx": 12,
           "components/EDPCForm/prefectureOptions.tsx": 47,
@@ -5180,17 +5046,17 @@
           "steps/Birthplace/Birthplace.tsx": 5,
           "steps/CDD/CDD.tsx": 4,
           "steps/EDPC/EDPC.tsx": 1,
-          "steps/Identity/Identity.tsx": 1,
           "steps/IDV/IDV.tsx": 1,
+          "steps/Identity/Identity.tsx": 1,
           "steps/IdentityConfirm/IdentityConfirm.tsx": 7,
           "steps/JapanIDV/JapanIDV.tsx": 1,
           "steps/JapanIDVPending/JapanIDVPending.tsx": 2,
+          "steps/KBA/KBAForm.tsx": 2,
           "steps/KYC/KYC.tsx": 1,
           "steps/KYC/KYCForm.tsx": 7,
-          "steps/KBA/KBAForm.tsx": 2,
           "steps/Nationality/Nationality.tsx": 4,
-          "steps/PhoneNumber/PhoneNumber.tsx": 2,
           "steps/PendingDocuments/PendingDocuments.tsx": 1,
+          "steps/PhoneNumber/PhoneNumber.tsx": 2,
           "steps/Suitability/Suitability.tsx": 1,
           "steps/TOS/TOS.tsx": 4,
           "steps/TaxForm/TaxForm.tsx": 1,
@@ -5198,10 +5064,10 @@
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 3,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 2,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberFormContainer.tsx": 1,
-          "components/GDPR/steps/Privacy/Privacy.tsx": 1,
           "components/IdCapture/components/Capture/Capture.tsx": 14,
           "components/IdCapture/components/IdType/IdType.tsx": 1,
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
+          "components/GDPR/steps/Privacy/Privacy.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 6,
           "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 3,
           "components/Idology/components/VendorVerification/VendorVerification.tsx": 6,
@@ -5226,10 +5092,10 @@
           "steps/TOS/TOS.tsx": 1,
           "steps/ConfirmEmail/components/ConfirmEmail.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberFormContainer.tsx": 1,
-          "components/GDPR/steps/Privacy/Privacy.tsx": 1,
           "components/IdCapture/components/Capture/Capture.tsx": 6,
           "components/IdCapture/components/IdType/IdType.tsx": 1,
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
+          "components/GDPR/steps/Privacy/Privacy.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 3,
           "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 1,
           "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1,
@@ -5244,33 +5110,11 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "showEnterAuthenticationCodeMessage": {
-          "components/AddPhoneNumber/AddPhoneNumber.tsx": 1
-        },
+        "showEnterAuthenticationCodeMessage": { "components/AddPhoneNumber/AddPhoneNumber.tsx": 1 },
         "phoneNumber": { "components/AddPhoneNumber/AddPhoneNumber.tsx": 1 },
-        "onVerificationSuccess": {
-          "components/AddPhoneNumber/AddPhoneNumber.tsx": 1
-        },
+        "onVerificationSuccess": { "components/AddPhoneNumber/AddPhoneNumber.tsx": 1 },
         "onResetNumber": { "components/AddPhoneNumber/AddPhoneNumber.tsx": 1 }
       }
-    },
-    {
-      "name": "a",
-      "sourceFile": "components/AttestationsForm/AttestationsForm.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": { "components/AttestationsForm/AttestationsForm.tsx": 1 },
-        "target": { "components/AttestationsForm/AttestationsForm.tsx": 1 },
-        "rel": { "components/AttestationsForm/AttestationsForm.tsx": 1 },
-        "onClick": { "components/AttestationsForm/AttestationsForm.tsx": 1 }
-      }
-    },
-    {
-      "name": "SupportedBankStatement",
-      "sourceFile": "components/AttestationsForm/AttestationsForm.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "SecurityPageModal",
@@ -5322,9 +5166,7 @@
           "components/SecurityKeyModal/components/Rename/Rename.tsx": 1,
           "components/SecurityKeyModal/components/Warnings/Warnings.tsx": 1
         },
-        "secondFactorForm": {
-          "components/Authentication/Authentication.tsx": 1
-        },
+        "secondFactorForm": { "components/Authentication/Authentication.tsx": 1 },
         "error": {
           "components/Authentication/Authentication.tsx": 1,
           "components/SecurityKeyModal/components/Registration/Registration.tsx": 1
@@ -5340,6 +5182,24 @@
           "components/SecurityKeyModal/components/Warnings/Warnings.tsx": 1
         }
       }
+    },
+    {
+      "name": "a",
+      "sourceFile": "components/AttestationsForm/AttestationsForm.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "href": { "components/AttestationsForm/AttestationsForm.tsx": 1 },
+        "target": { "components/AttestationsForm/AttestationsForm.tsx": 1 },
+        "rel": { "components/AttestationsForm/AttestationsForm.tsx": 1 },
+        "onClick": { "components/AttestationsForm/AttestationsForm.tsx": 1 }
+      }
+    },
+    {
+      "name": "SupportedBankStatement",
+      "sourceFile": "components/AttestationsForm/AttestationsForm.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "Container",
@@ -5387,13 +5247,9 @@
       "sourceFile": "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx",
       "totalInstances": 2,
       "totalCallSites": 1,
-      "callSites": {
-        "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 2
-      },
+      "callSites": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 2 },
       "propsWithCallSites": {
-        "key": {
-          "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 2
-        }
+        "key": { "components/DocumentVerificationsWidget/DocumentVerificationsWidget.tsx": 2 }
       }
     },
     {
@@ -5475,12 +5331,8 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "onChange": { "components/EDPCForm/SelectorWithValidation.tsx": 1 },
-        "showErrorBorder": {
-          "components/EDPCForm/SelectorWithValidation.tsx": 1
-        },
-        "allocateSpaceForErrorMessage": {
-          "components/EDPCForm/SelectorWithValidation.tsx": 1
-        }
+        "showErrorBorder": { "components/EDPCForm/SelectorWithValidation.tsx": 1 },
+        "allocateSpaceForErrorMessage": { "components/EDPCForm/SelectorWithValidation.tsx": 1 }
       }
     },
     {
@@ -5640,10 +5492,7 @@
           "components/Idology/Idology.tsx": 1,
           "steps/KYC/KYCForm.tsx": 1
         },
-        "hideRetryButton": {
-          "components/Idology/Idology.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 1
-        },
+        "hideRetryButton": { "components/Idology/Idology.tsx": 1, "steps/KYC/KYCForm.tsx": 1 },
         "countryCode": { "components/Idology/Idology.tsx": 1 }
       }
     },
@@ -5652,10 +5501,7 @@
       "sourceFile": "components/SuccessView",
       "totalInstances": 2,
       "totalCallSites": 2,
-      "callSites": {
-        "components/IdCapture/IdCapture.tsx": 1,
-        "components/Idology/Idology.tsx": 1
-      },
+      "callSites": { "components/IdCapture/IdCapture.tsx": 1, "components/Idology/Idology.tsx": 1 },
       "propsWithCallSites": {
         "onContinue": {
           "components/IdCapture/IdCapture.tsx": 1,
@@ -5668,9 +5514,7 @@
       "sourceFile": "components/SuccessViewV2",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onContinue": { "components/IdCapture/IdCapture.tsx": 1 }
-      }
+      "propsWithCallSites": { "onContinue": { "components/IdCapture/IdCapture.tsx": 1 } }
     },
     {
       "name": "ContentLayout",
@@ -5683,8 +5527,8 @@
         "components/VerificationError/VerificationError.tsx": 1,
         "components/IdCapture/components/IdType/IdType.tsx": 1,
         "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
-        "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 1,
         "components/IdCapture/components/MobileUpload/MobileUpload.tsx": 1,
+        "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 1,
         "components/IdCapture/components/UploadMethod/UploadMethod.tsx": 2,
         "components/IdCapture/components/Verification/Verification.tsx": 1
       },
@@ -5700,8 +5544,8 @@
           "components/VerificationError/VerificationError.tsx": 1,
           "components/IdCapture/components/IdType/IdType.tsx": 1,
           "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
-          "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 1,
           "components/IdCapture/components/MobileUpload/MobileUpload.tsx": 1,
+          "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 1,
           "components/IdCapture/components/UploadMethod/UploadMethod.tsx": 2,
           "components/IdCapture/components/Verification/Verification.tsx": 1
         },
@@ -5710,8 +5554,8 @@
           "components/VerificationError/VerificationError.tsx": 1,
           "components/IdCapture/components/IdType/IdType.tsx": 1,
           "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
-          "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 1,
           "components/IdCapture/components/MobileUpload/MobileUpload.tsx": 1,
+          "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 1,
           "components/IdCapture/components/Verification/Verification.tsx": 1
         },
         "actions": {
@@ -5719,22 +5563,16 @@
           "components/IdCapture/components/IdType/IdType.tsx": 1,
           "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
         },
-        "actionsSubtitle": {
-          "components/VerificationError/VerificationError.tsx": 1
-        },
+        "actionsSubtitle": { "components/VerificationError/VerificationError.tsx": 1 },
         "footer": { "components/IdCapture/components/IdType/IdType.tsx": 1 },
         "onGoBack": {
           "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
-          "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 1,
           "components/IdCapture/components/MobileUpload/MobileUpload.tsx": 1,
+          "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 1,
           "components/IdCapture/components/UploadMethod/UploadMethod.tsx": 2
         },
-        "image": {
-          "components/IdCapture/components/Verification/Verification.tsx": 1
-        },
-        "testId": {
-          "components/IdCapture/components/Verification/Verification.tsx": 1
-        }
+        "image": { "components/IdCapture/components/Verification/Verification.tsx": 1 },
+        "testId": { "components/IdCapture/components/Verification/Verification.tsx": 1 }
       }
     },
     {
@@ -5899,9 +5737,7 @@
       "sourceFile": "components/IdCapture/IdCapture.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isPhone": { "components/IdCapture/IdCapture.tsx": 1 }
-      }
+      "propsWithCallSites": { "isPhone": { "components/IdCapture/IdCapture.tsx": 1 } }
     },
     {
       "name": "IdentityForm",
@@ -5939,10 +5775,7 @@
       "sourceFile": "components/ContactUsView",
       "totalInstances": 2,
       "totalCallSites": 2,
-      "callSites": {
-        "components/Idology/Idology.tsx": 1,
-        "steps/IDV/IDV.tsx": 1
-      }
+      "callSites": { "components/Idology/Idology.tsx": 1, "steps/IDV/IDV.tsx": 1 }
     },
     {
       "name": "Container",
@@ -6079,9 +5912,7 @@
       "sourceFile": "components/JapanIDV/useStepMachine.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "propsWithCallSites": {
-        "next": { "components/JapanIDV/useStepMachine.tsx": 1 }
-      }
+      "propsWithCallSites": { "next": { "components/JapanIDV/useStepMachine.tsx": 1 } }
     },
     {
       "name": "IDVerificationIssue",
@@ -6102,6 +5933,26 @@
       "totalCallSites": 1
     },
     {
+      "name": "SSNSecurityDiscs",
+      "sourceFile": "assets/icons/SSNSecurityDiscs",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    { "name": "Eye", "sourceFile": "assets/icons/Eye", "totalInstances": 1, "totalCallSites": 1 },
+    {
+      "name": "Alert",
+      "sourceFile": "assets/icons/Alert",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "KYCRIdDigitsListItem",
+      "sourceFile": "components/KYCRefresh/KYCRIdDigitsListItem",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "field": { "components/KYCRefresh/KYCRefreshScreen.tsx": 1 } }
+    },
+    {
       "name": "span",
       "sourceFile": "components/LabelWithHelpText/LabelWithHelpText.tsx",
       "totalInstances": 1,
@@ -6112,6 +5963,41 @@
       "sourceFile": "components/ProofOfAddress/ProofOfAddress.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "StyledDropzone",
+      "sourceFile": "components/ProofOfAddress/ProofOfAddress.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onDrop": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 },
+        "multiple": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 },
+        "maxSize": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 },
+        "accept": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 },
+        "$error": { "components/ProofOfAddress/ProofOfAddress.tsx": 1 }
+      }
+    },
+    {
+      "name": "form",
+      "sourceFile": "components/RfiPep/MultiHitForm.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "onSubmit": { "components/RfiPep/MultiHitForm.tsx": 1 } }
+    },
+    {
+      "name": "YearPicker",
+      "sourceFile": "components/RfiPep/YearPicker",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/RfiPep/MultiHitForm.tsx": 2 },
+      "propsWithCallSites": {
+        "name": { "components/RfiPep/MultiHitForm.tsx": 2 },
+        "accessibilityLabel": { "components/RfiPep/MultiHitForm.tsx": 2 },
+        "width": { "components/RfiPep/MultiHitForm.tsx": 2 },
+        "placeholder": { "components/RfiPep/MultiHitForm.tsx": 2 },
+        "onChange": { "components/RfiPep/MultiHitForm.tsx": 2 },
+        "value": { "components/RfiPep/MultiHitForm.tsx": 2 }
+      }
     },
     {
       "name": "Introduction",
@@ -6142,16 +6028,10 @@
       "callSites": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 3 },
       "propsWithCallSites": {
         "close": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 3 },
-        "twoFactorMethod": {
-          "components/SecurityKeyModal/SecurityKeyModal.tsx": 3
-        },
-        "sendTwoFactorAuthCode": {
-          "components/SecurityKeyModal/SecurityKeyModal.tsx": 3
-        },
+        "twoFactorMethod": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 3 },
+        "sendTwoFactorAuthCode": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 3 },
         "client": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 3 },
-        "endpointOverrides": {
-          "components/SecurityKeyModal/SecurityKeyModal.tsx": 3
-        },
+        "endpointOverrides": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 3 },
         "onMount": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 3 },
         "onSubmit": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 3 },
         "onError": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 3 }
@@ -6186,9 +6066,7 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "close": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
-        "secKeyStore": {
-          "components/SecurityKeyModal/SecurityKeyModal.tsx": 1
-        },
+        "secKeyStore": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
         "addKey": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
         "removeKey": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
         "renameKey": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 }
@@ -6200,18 +6078,12 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "formatMessage": {
-          "components/SecurityKeyModal/SecurityKeyModal.tsx": 1
-        },
+        "formatMessage": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
         "keyStore": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
         "close": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
-        "secKeyStore": {
-          "components/SecurityKeyModal/SecurityKeyModal.tsx": 1
-        },
+        "secKeyStore": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
         "removeKey": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
-        "cancelRemove": {
-          "components/SecurityKeyModal/SecurityKeyModal.tsx": 1
-        }
+        "cancelRemove": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 }
       }
     },
     {
@@ -6220,18 +6092,12 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "formatMessage": {
-          "components/SecurityKeyModal/SecurityKeyModal.tsx": 1
-        },
+        "formatMessage": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
         "keyStore": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
         "close": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
-        "secKeyStore": {
-          "components/SecurityKeyModal/SecurityKeyModal.tsx": 1
-        },
+        "secKeyStore": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
         "renameKey": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
-        "cancelRename": {
-          "components/SecurityKeyModal/SecurityKeyModal.tsx": 1
-        }
+        "cancelRename": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 }
       }
     },
     {
@@ -6242,56 +6108,6 @@
       "propsWithCallSites": {
         "close": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 },
         "onContinue": { "components/SecurityKeyModal/SecurityKeyModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "SSNSecurityDiscs",
-      "sourceFile": "assets/icons/SSNSecurityDiscs",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Eye",
-      "sourceFile": "assets/icons/Eye",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Alert",
-      "sourceFile": "assets/icons/Alert",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "KYCRIdDigitsListItem",
-      "sourceFile": "components/KYCRefresh/KYCRIdDigitsListItem",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "field": { "components/KYCRefresh/KYCRefreshScreen.tsx": 1 }
-      }
-    },
-    {
-      "name": "form",
-      "sourceFile": "components/RfiPep/MultiHitForm.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onSubmit": { "components/RfiPep/MultiHitForm.tsx": 1 }
-      }
-    },
-    {
-      "name": "YearPicker",
-      "sourceFile": "components/RfiPep/YearPicker",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "components/RfiPep/MultiHitForm.tsx": 2 },
-      "propsWithCallSites": {
-        "accessibilityLabel": { "components/RfiPep/MultiHitForm.tsx": 2 },
-        "width": { "components/RfiPep/MultiHitForm.tsx": 2 },
-        "placeholder": { "components/RfiPep/MultiHitForm.tsx": 2 },
-        "onChange": { "components/RfiPep/MultiHitForm.tsx": 2 },
-        "value": { "components/RfiPep/MultiHitForm.tsx": 2 }
       }
     },
     {
@@ -6334,18 +6150,10 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "fields": {
-          "components/SuitabilityFormManager/SuitabilityFormManager.tsx": 1
-        },
-        "invalidFields": {
-          "components/SuitabilityFormManager/SuitabilityFormManager.tsx": 1
-        },
-        "updateSelection": {
-          "components/SuitabilityFormManager/SuitabilityFormManager.tsx": 1
-        },
-        "analytics": {
-          "components/SuitabilityFormManager/SuitabilityFormManager.tsx": 1
-        }
+        "fields": { "components/SuitabilityFormManager/SuitabilityFormManager.tsx": 1 },
+        "invalidFields": { "components/SuitabilityFormManager/SuitabilityFormManager.tsx": 1 },
+        "updateSelection": { "components/SuitabilityFormManager/SuitabilityFormManager.tsx": 1 },
+        "analytics": { "components/SuitabilityFormManager/SuitabilityFormManager.tsx": 1 }
       }
     },
     {
@@ -6361,8 +6169,8 @@
         "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1,
         "steps/GDPR/GDPR.tsx": 1,
         "steps/Nationality/Nationality.tsx": 1,
-        "steps/PhoneNumber/PhoneNumber.tsx": 1,
         "steps/PendingDocuments/PendingDocuments.tsx": 1,
+        "steps/PhoneNumber/PhoneNumber.tsx": 1,
         "steps/RfiPep/RfiPepStep.tsx": 1,
         "steps/Suitability/Suitability.tsx": 1,
         "steps/TaxForm/TaxForm.tsx": 1,
@@ -6377,8 +6185,9 @@
           "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1,
           "steps/GDPR/GDPR.tsx": 1,
           "steps/Nationality/Nationality.tsx": 1,
-          "steps/PhoneNumber/PhoneNumber.tsx": 1,
           "steps/PendingDocuments/PendingDocuments.tsx": 1,
+          "steps/PhoneNumber/PhoneNumber.tsx": 1,
+          "steps/RfiPep/RfiPepStep.tsx": 1,
           "steps/Suitability/Suitability.tsx": 1,
           "steps/TaxForm/TaxForm.tsx": 1,
           "steps/ConfirmEmail/components/ConfirmEmail.tsx": 1
@@ -6406,9 +6215,7 @@
       "sourceFile": "steps/AddressConfirm/AddressConfirm.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "propsWithCallSites": {
-        "lines": { "steps/AddressConfirm/AddressConfirm.tsx": 1 }
-      }
+      "propsWithCallSites": { "lines": { "steps/AddressConfirm/AddressConfirm.tsx": 1 } }
     },
     {
       "name": "ProofOfAddressPending",
@@ -6498,8 +6305,8 @@
       "totalCallSites": 4,
       "callSites": {
         "steps/BasicKYC/BasicKYCForm.tsx": 1,
-        "steps/KYC/KYCForm.tsx": 1,
         "steps/KBA/KBAForm.tsx": 1,
+        "steps/KYC/KYCForm.tsx": 1,
         "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
       }
     },
@@ -6510,8 +6317,8 @@
       "totalCallSites": 3,
       "callSites": {
         "steps/BasicKYC/BasicKYCForm.tsx": 1,
-        "steps/KYC/KYCForm.tsx": 1,
-        "steps/KBA/KBAForm.tsx": 1
+        "steps/KBA/KBAForm.tsx": 1,
+        "steps/KYC/KYCForm.tsx": 1
       }
     },
     {
@@ -6521,21 +6328,21 @@
       "totalCallSites": 4,
       "callSites": {
         "steps/BasicKYC/BasicKYCForm.tsx": 1,
-        "steps/KYC/KYCForm.tsx": 2,
         "steps/KBA/KBAForm.tsx": 1,
+        "steps/KYC/KYCForm.tsx": 2,
         "components/Idology/components/IdentityForm/IdentityForm.tsx": 2
       },
       "propsWithCallSites": {
         "title": {
           "steps/BasicKYC/BasicKYCForm.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 2,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 2,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 2
         },
         "type": {
           "steps/BasicKYC/BasicKYCForm.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 2,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 2,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 2
         },
         "subtitle": {
@@ -6618,12 +6425,8 @@
           "steps/KYC/KYCForm.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
         },
-        "id": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 3
-        },
-        "labelFor": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 3
-        }
+        "id": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 3 },
+        "labelFor": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 3 }
       }
     },
     {
@@ -6684,25 +6487,6 @@
       }
     },
     {
-      "name": "Idology",
-      "sourceFile": "components/Idology",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "showExplanation": { "steps/Identity/Identity.tsx": 1 },
-        "skipFailedViewAndDo": { "steps/Identity/Identity.tsx": 1 },
-        "skipSuccessViewAndDo": { "steps/Identity/Identity.tsx": 1 },
-        "client": { "steps/Identity/Identity.tsx": 1 },
-        "refreshNextRequirement": { "steps/Identity/Identity.tsx": 1 },
-        "onFallbackToRestriction": { "steps/Identity/Identity.tsx": 1 },
-        "getExperimentGroup": { "steps/Identity/Identity.tsx": 1 },
-        "track": { "steps/Identity/Identity.tsx": 1 },
-        "onApiError": { "steps/Identity/Identity.tsx": 1 },
-        "user": { "steps/Identity/Identity.tsx": 1 },
-        "verificationMetadata": { "steps/Identity/Identity.tsx": 1 }
-      }
-    },
-    {
       "name": "IdCapture",
       "sourceFile": "components/IdCapture",
       "totalInstances": 1,
@@ -6738,6 +6522,25 @@
       }
     },
     {
+      "name": "Idology",
+      "sourceFile": "components/Idology",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "showExplanation": { "steps/Identity/Identity.tsx": 1 },
+        "skipFailedViewAndDo": { "steps/Identity/Identity.tsx": 1 },
+        "skipSuccessViewAndDo": { "steps/Identity/Identity.tsx": 1 },
+        "client": { "steps/Identity/Identity.tsx": 1 },
+        "refreshNextRequirement": { "steps/Identity/Identity.tsx": 1 },
+        "onFallbackToRestriction": { "steps/Identity/Identity.tsx": 1 },
+        "getExperimentGroup": { "steps/Identity/Identity.tsx": 1 },
+        "track": { "steps/Identity/Identity.tsx": 1 },
+        "onApiError": { "steps/Identity/Identity.tsx": 1 },
+        "user": { "steps/Identity/Identity.tsx": 1 },
+        "verificationMetadata": { "steps/Identity/Identity.tsx": 1 }
+      }
+    },
+    {
       "name": "HeaderWrapper",
       "sourceFile": "components/Step/Content/HeaderWrapper",
       "totalInstances": 1,
@@ -6755,18 +6558,14 @@
       "sourceFile": "steps/JapanIDV/JapanIDV.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "propsWithCallSites": {
-        "analytics": { "steps/JapanIDV/JapanIDV.tsx": 1 }
-      }
+      "propsWithCallSites": { "analytics": { "steps/JapanIDV/JapanIDV.tsx": 1 } }
     },
     {
       "name": "CurrentStep",
       "sourceFile": "steps/JapanIDVPending/JapanIDVPending.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "propsWithCallSites": {
-        "analytics": { "steps/JapanIDVPending/JapanIDVPending.tsx": 1 }
-      }
+      "propsWithCallSites": { "analytics": { "steps/JapanIDVPending/JapanIDVPending.tsx": 1 } }
     },
     {
       "name": "KYCForm",
@@ -6831,9 +6630,7 @@
         "avoidResizingOptions": {
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
         },
-        "maxOptionsWidth": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        }
+        "maxOptionsWidth": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 }
       }
     },
     {
@@ -6943,6 +6740,20 @@
       }
     },
     {
+      "name": "DocumentVerificationsWidget",
+      "sourceFile": "components/DocumentVerificationsWidget",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onTryAgain": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
+        "onSuccess": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
+        "onApiError": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
+        "client": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
+        "nameDobMismatchSource": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
+        "getExperimentGroup": { "steps/PendingDocuments/PendingDocuments.tsx": 1 }
+      }
+    },
+    {
       "name": "AddPhoneNumber",
       "sourceFile": "components/AddPhoneNumber",
       "totalInstances": 1,
@@ -6956,30 +6767,10 @@
         "onPhoneNumberReset": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
         "onSuccess": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
         "sendTwoFactorAuthCode": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
-        "showEnterAuthenticationCodeMessage": {
-          "steps/PhoneNumber/PhoneNumber.tsx": 1
-        },
+        "showEnterAuthenticationCodeMessage": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
         "track": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
         "twoFactorMethod": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
         "user": { "steps/PhoneNumber/PhoneNumber.tsx": 1 }
-      }
-    },
-    {
-      "name": "DocumentVerificationsWidget",
-      "sourceFile": "components/DocumentVerificationsWidget",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onTryAgain": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
-        "onSuccess": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
-        "onApiError": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
-        "client": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
-        "nameDobMismatchSource": {
-          "steps/PendingDocuments/PendingDocuments.tsx": 1
-        },
-        "getExperimentGroup": {
-          "steps/PendingDocuments/PendingDocuments.tsx": 1
-        }
       }
     },
     {
@@ -6988,6 +6779,13 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "onSubmit": { "steps/RfiPep/RfiPepStep.tsx": 1 } }
+    },
+    {
+      "name": "RfiPepAccountRestricted",
+      "sourceFile": "components/RfiPep/RfiPepAccountRestricted",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "onContinue": { "steps/RfiPep/RfiPepStep.tsx": 1 } }
     },
     {
       "name": "SuitabilityFormManager",
@@ -7082,71 +6880,16 @@
       }
     },
     {
-      "name": "SelectBox",
-      "sourceFile": "components/ContentLayout/components/SelectBox/SelectBox.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "SelectBoxContainer",
       "sourceFile": "components/ContentLayout/components/SelectBoxContainer/SelectBoxContainer.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
-      "name": "ReactComponent",
-      "sourceFile": "components/GDPR/steps/Emails/marketingIcons.svg/ReactComponent",
+      "name": "SelectBox",
+      "sourceFile": "components/ContentLayout/components/SelectBox/SelectBox.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "Title",
-      "sourceFile": "components/GDPR/steps/components/Title",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "components/GDPR/steps/Emails/Emails.tsx": 1,
-        "components/GDPR/steps/Intro/Intro.tsx": 1,
-        "components/GDPR/steps/Privacy/Privacy.tsx": 1
-      }
-    },
-    {
-      "name": "Disclaimer",
-      "sourceFile": "components/GDPR/steps/components/Disclaimer",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/GDPR/steps/Emails/Emails.tsx": 1,
-        "components/GDPR/steps/Intro/Intro.tsx": 1
-      }
-    },
-    {
-      "name": "ReactComponent",
-      "sourceFile": "components/GDPR/steps/assets/gdpr.svg/ReactComponent",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/GDPR/steps/Intro/Intro.tsx": 1,
-        "components/GDPR/steps/Privacy/Privacy.tsx": 1
-      }
-    },
-    {
-      "name": "p",
-      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "callSites": { "components/GDPR/steps/Privacy/Privacy.tsx": 5 }
-    },
-    {
-      "name": "a",
-      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": { "components/GDPR/steps/Privacy/Privacy.tsx": 1 },
-        "target": { "components/GDPR/steps/Privacy/Privacy.tsx": 1 },
-        "rel": { "components/GDPR/steps/Privacy/Privacy.tsx": 1 }
-      }
     },
     {
       "name": "MaskContainer",
@@ -7283,9 +7026,7 @@
       "sourceFile": "components/IdCapture/components/Capture/Capture.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "components/IdCapture/components/Capture/Capture.tsx": 1 }
-      }
+      "propsWithCallSites": { "key": { "components/IdCapture/components/Capture/Capture.tsx": 1 } }
     },
     {
       "name": "Step",
@@ -7350,9 +7091,7 @@
           "components/IdCapture/components/IdType/IdType.tsx": 1,
           "components/IdCapture/components/UploadMethod/UploadMethod.tsx": 1
         },
-        "disabled": {
-          "components/IdCapture/components/UploadMethod/UploadMethod.tsx": 1
-        }
+        "disabled": { "components/IdCapture/components/UploadMethod/UploadMethod.tsx": 1 }
       }
     },
     {
@@ -7381,9 +7120,7 @@
       "propsWithCallSites": {
         "key": { "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1 },
         "href": { "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1 },
-        "target": {
-          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1
-        },
+        "target": { "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1 },
         "rel": { "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1 }
       }
     },
@@ -7392,43 +7129,23 @@
       "sourceFile": "components/IdCapture/components/ImageUpload/ImageUpload.tsx",
       "totalInstances": 2,
       "totalCallSites": 1,
-      "callSites": {
-        "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2
-      }
+      "callSites": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2 }
     },
     {
       "name": "DropImage",
       "sourceFile": "components/IdCapture/components/ImageUpload/ImageUpload.tsx",
       "totalInstances": 2,
       "totalCallSites": 1,
-      "callSites": {
-        "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2
-      },
+      "callSites": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2 },
       "propsWithCallSites": {
-        "applicationContext": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2
-        },
-        "side": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2
-        },
-        "onUpload": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2
-        },
-        "onDropRejected": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2
-        },
-        "file": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2
-        },
-        "showLabel": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
-        },
-        "showWarning": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
-        },
-        "track": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2
-        }
+        "applicationContext": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2 },
+        "side": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2 },
+        "onUpload": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2 },
+        "onDropRejected": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2 },
+        "file": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2 },
+        "showLabel": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 },
+        "showWarning": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 },
+        "track": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 2 }
       }
     },
     {
@@ -7443,27 +7160,13 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "onDrop": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
-        },
-        "multiple": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
-        },
-        "minSize": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
-        },
-        "maxSize": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
-        },
-        "accept": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
-        },
-        "color": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
-        },
-        "onDropRejected": {
-          "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1
-        }
+        "onDrop": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 },
+        "multiple": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 },
+        "minSize": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 },
+        "maxSize": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 },
+        "accept": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 },
+        "color": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 },
+        "onDropRejected": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 }
       }
     },
     {
@@ -7490,15 +7193,9 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "mobileStep": {
-          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1
-        },
-        "onUpload": {
-          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1
-        },
-        "onUploadReject": {
-          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1
-        }
+        "mobileStep": { "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1 },
+        "onUpload": { "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1 },
+        "onUploadReject": { "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1 }
       }
     },
     {
@@ -7513,18 +7210,12 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "view": {
-          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1
-        },
-        "mobileStep": {
-          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1
-        },
+        "view": { "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1 },
+        "mobileStep": { "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1 },
         "goToBackImageMobileStep": {
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1
         },
-        "goToFaceMatch": {
-          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1
-        },
+        "goToFaceMatch": { "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1 },
         "goToFirstMobileStep": {
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1
         }
@@ -7555,9 +7246,16 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "href": {
-          "components/IdCapture/components/UploadMethod/UploadMethod.tsx": 1
-        }
+        "href": { "components/IdCapture/components/UploadMethod/UploadMethod.tsx": 1 }
+      }
+    },
+    {
+      "name": "a",
+      "sourceFile": "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "href": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 }
       }
     },
     {
@@ -7566,9 +7264,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "sessionUrl": {
-          "components/IdCapture/components/Veriff/Veriff.tsx": 1
-        },
+        "sessionUrl": { "components/IdCapture/components/Veriff/Veriff.tsx": 1 },
         "onBack": { "components/IdCapture/components/Veriff/Veriff.tsx": 1 },
         "onCancel": { "components/IdCapture/components/Veriff/Veriff.tsx": 1 },
         "onFinish": { "components/IdCapture/components/Veriff/Veriff.tsx": 1 },
@@ -7588,25 +7284,12 @@
       }
     },
     {
-      "name": "a",
-      "sourceFile": "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": {
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        }
-      }
-    },
-    {
       "name": "div",
       "sourceFile": "components/IdCapture/components/VeriffFrame/VeriffFrame.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "id": {
-          "components/IdCapture/components/VeriffFrame/VeriffFrame.tsx": 1
-        }
+        "id": { "components/IdCapture/components/VeriffFrame/VeriffFrame.tsx": 1 }
       }
     },
     {
@@ -7622,38 +7305,75 @@
       "totalCallSites": 1
     },
     {
+      "name": "ReactComponent",
+      "sourceFile": "components/GDPR/steps/Emails/marketingIcons.svg/ReactComponent",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Title",
+      "sourceFile": "components/GDPR/steps/components/Title",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "components/GDPR/steps/Emails/Emails.tsx": 1,
+        "components/GDPR/steps/Intro/Intro.tsx": 1,
+        "components/GDPR/steps/Privacy/Privacy.tsx": 1
+      }
+    },
+    {
+      "name": "Disclaimer",
+      "sourceFile": "components/GDPR/steps/components/Disclaimer",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/GDPR/steps/Emails/Emails.tsx": 1,
+        "components/GDPR/steps/Intro/Intro.tsx": 1
+      }
+    },
+    {
+      "name": "ReactComponent",
+      "sourceFile": "components/GDPR/steps/assets/gdpr.svg/ReactComponent",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/GDPR/steps/Intro/Intro.tsx": 1,
+        "components/GDPR/steps/Privacy/Privacy.tsx": 1
+      }
+    },
+    {
+      "name": "p",
+      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "callSites": { "components/GDPR/steps/Privacy/Privacy.tsx": 5 }
+    },
+    {
+      "name": "a",
+      "sourceFile": "components/GDPR/steps/Privacy/Privacy.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "href": { "components/GDPR/steps/Privacy/Privacy.tsx": 1 },
+        "target": { "components/GDPR/steps/Privacy/Privacy.tsx": 1 },
+        "rel": { "components/GDPR/steps/Privacy/Privacy.tsx": 1 }
+      }
+    },
+    {
       "name": "StyledValidatedInputBase",
       "sourceFile": "components/Idology/IdentityHelperFunctions/StyledValidatedInputBase",
       "totalInstances": 8,
       "totalCallSites": 1,
-      "callSites": {
-        "components/Idology/components/IdentityForm/IdentityForm.tsx": 8
-      },
+      "callSites": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 8 },
       "propsWithCallSites": {
-        "id": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 4
-        },
-        "name": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 8
-        },
-        "placeholder": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 8
-        },
-        "validators": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 8
-        },
-        "size": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 7
-        },
-        "onFocus": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 8
-        },
-        "maxLength": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 5
-        },
-        "autoFocus": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        }
+        "id": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 4 },
+        "name": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 8 },
+        "placeholder": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 8 },
+        "validators": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 8 },
+        "size": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 7 },
+        "onFocus": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 8 },
+        "maxLength": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 5 },
+        "autoFocus": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 }
       }
     },
     {
@@ -7661,9 +7381,7 @@
       "sourceFile": "components/Idology/components/IdentityForm/IdentityForm.tsx",
       "totalInstances": 2,
       "totalCallSites": 1,
-      "callSites": {
-        "components/Idology/components/IdentityForm/IdentityForm.tsx": 2
-      }
+      "callSites": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 2 }
     },
     {
       "name": "GlobalStyle",
@@ -7677,9 +7395,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "auto": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        }
+        "auto": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 }
       }
     },
     {
@@ -7687,19 +7403,11 @@
       "sourceFile": "components/Idology/IdentityHelperFunctions/NameFieldLabeledSection",
       "totalInstances": 2,
       "totalCallSites": 1,
-      "callSites": {
-        "components/Idology/components/IdentityForm/IdentityForm.tsx": 2
-      },
+      "callSites": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 2 },
       "propsWithCallSites": {
-        "label": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 2
-        },
-        "labelFor": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 2
-        },
-        "auto": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 2
-        }
+        "label": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 2 },
+        "labelFor": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 2 },
+        "auto": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 2 }
       }
     },
     {
@@ -7720,12 +7428,8 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "title": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        },
-        "description": {
-          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
-        }
+        "title": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 },
+        "description": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 }
       }
     },
     {
@@ -7752,9 +7456,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "onClick": {
-          "components/Idology/components/VendorVerification/VendorVerification.tsx": 1
-        }
+        "onClick": { "components/Idology/components/VendorVerification/VendorVerification.tsx": 1 }
       }
     },
     {
@@ -7763,18 +7465,10 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "key": {
-          "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1
-        },
-        "value": {
-          "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1
-        },
-        "numeric": {
-          "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1
-        },
-        "unit": {
-          "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1
-        }
+        "key": { "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1 },
+        "value": { "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1 },
+        "numeric": { "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1 },
+        "unit": { "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1 }
       }
     },
     {
@@ -7789,12 +7483,8 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "current": {
-          "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1
-        },
-        "lastUsed": {
-          "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1
-        }
+        "current": { "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1 },
+        "lastUsed": { "components/SecurityKeyModal/components/Manage/KeyLastUsed.tsx": 1 }
       }
     },
     {
@@ -7809,9 +7499,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "lastUsed": {
-          "components/SecurityKeyModal/components/Manage/Manage.tsx": 1
-        }
+        "lastUsed": { "components/SecurityKeyModal/components/Manage/Manage.tsx": 1 }
       }
     },
     {
@@ -7819,9 +7507,7 @@
       "sourceFile": "components/SecurityKeyModal/components/Warnings/Warnings.tsx",
       "totalInstances": 3,
       "totalCallSites": 1,
-      "callSites": {
-        "components/SecurityKeyModal/components/Warnings/Warnings.tsx": 3
-      }
+      "callSites": { "components/SecurityKeyModal/components/Warnings/Warnings.tsx": 3 }
     },
     {
       "name": "StyledDropzone",
@@ -7832,24 +7518,12 @@
         "activeClassName": {
           "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
         },
-        "onDrop": {
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        },
-        "multiple": {
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        },
-        "minSize": {
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        },
-        "maxSize": {
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        },
-        "accept": {
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        },
-        "$warning": {
-          "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
-        }
+        "onDrop": { "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1 },
+        "multiple": { "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1 },
+        "minSize": { "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1 },
+        "maxSize": { "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1 },
+        "accept": { "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1 },
+        "$warning": { "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1 }
       }
     },
     {
