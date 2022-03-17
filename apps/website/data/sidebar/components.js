@@ -7,11 +7,11 @@ module.exports = {
   components: [
     {
       type: 'category',
-      label: 'Accordions',
+      label: 'Accordion',
       collapsed: true,
       items: [
-        'components/accordions/Accordion/accordion',
-        'components/accordions/AccordionItem/accordion-item',
+        'components/accordion/Accordion/accordion',
+        'components/accordion/AccordionItem/accordion-item',
       ],
     },
     {
@@ -166,11 +166,11 @@ module.exports = {
       items: [
         'components/overlays/Alert/alert',
         'components/overlays/Toast/toast',
+        'components/overlays/Tooltip/tooltip',
         'components/overlays/Modal/modal',
         'components/overlays/ModalBody/modal-body',
         'components/overlays/ModalFooter/modal-footer',
         'components/overlays/ModalHeader/modal-header',
-        'components/overlays/Tooltip/tooltip',
         'components/overlays/MenuItem/menu-item',
         'components/overlays/PopoverMenu/popover-menu',
         'components/overlays/PopoverTrigger/popover-trigger',

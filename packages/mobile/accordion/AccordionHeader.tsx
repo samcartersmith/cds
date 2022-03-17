@@ -1,6 +1,6 @@
 import React, { ForwardedRef, forwardRef, memo, useCallback } from 'react';
 import { View } from 'react-native';
-import { useAccordionParent } from '@cbhq/cds-common/accordions/AccordionParentContext';
+import { useAccordionParent } from '@cbhq/cds-common/accordion/AccordionParentContext';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { listHeight } from '@cbhq/cds-common/tokens/cell';

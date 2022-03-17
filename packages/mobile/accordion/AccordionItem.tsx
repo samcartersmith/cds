@@ -1,5 +1,6 @@
 import React, { memo, RefObject } from 'react';
-import { useAccordionParent } from '@cbhq/cds-common/accordions/AccordionParentContext';
+import { View } from 'react-native';
+import { useAccordionParent } from '@cbhq/cds-common/accordion/AccordionParentContext';
 import { accordionMinWidth } from '@cbhq/cds-common/tokens/accordion';
 import type { AccordionItemBaseProps } from '@cbhq/cds-common/types';
 
@@ -9,8 +10,8 @@ import { AccordionHeader } from './AccordionHeader';
 import { AccordionPanel } from './AccordionPanel';
 
 export type AccordionItemProps = {
-  headerRef?: RefObject<HTMLButtonElement>;
-  panelRef?: RefObject<HTMLDivElement>;
+  headerRef?: RefObject<View>;
+  panelRef?: RefObject<View>;
 } & AccordionItemBaseProps;
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
@@ -30,7 +31,7 @@ export const AccordionItem = memo(
     const collapsed = activeKey !== itemKey;
 
     return (
-      <VStack minWidth={accordionMinWidth} testID={testID}>
+      <VStack minWidth={accordionMinWidth}>
         <AccordionHeader
           itemKey={itemKey}
           media={media}

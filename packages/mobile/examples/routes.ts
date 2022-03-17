@@ -6,7 +6,7 @@
 /* eslint-disable global-require */
 
 export const routes = {
-  Accordion: () => require('../accordions/__stories__/Accordion.stories').default,
+  Accordion: () => require('../accordion/__stories__/Accordion.stories').default,
   Alert: () => require('../overlays/__stories__/Alert.stories').default,
   Avatar: () => require('../media/__stories__/Avatar.stories').default,
   AvatarButton: () => require('../buttons/__stories__/AvatarButton.stories').default,

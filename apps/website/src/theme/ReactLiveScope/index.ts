@@ -24,7 +24,7 @@ import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineAr
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import { nux } from '@cbhq/cds-lottie-files';
-import * as CDSAccordion from '@cbhq/cds-web/accordions';
+import * as CDSAccordion from '@cbhq/cds-web/accordion';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
 import * as CDSButtons from '@cbhq/cds-web/buttons';
 import * as CDSCardElements from '@cbhq/cds-web/cards';

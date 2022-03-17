@@ -11,7 +11,7 @@ export const DOCS_DIR = '../apps/website/docs/components';
  * All CDS subdirectories to search for components.
  */
 export const CDS_SUB_DIRS = [
-  'accordions',
+  'accordion',
   'animation',
   'buttons',
   'cards',
