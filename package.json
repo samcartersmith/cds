@@ -34,6 +34,7 @@
     "diagnose": "mono-env diagnose --group common web",
     "help": "yarn nx help",
     "postinstall": "./setup.sh",
+    "setup": "mono-env setup --group common",
     "release": "yarn codegen release && yarn codegen docs.internal && yarn codegen docs",
     "setup-env": "mono-env setup --group common web",
     "validate": "yarn nx workspace-lint"

@@ -4,6 +4,7 @@
 
 ```sh
 yarn install
+yarn setup
 ```
 
 ## Comands (overview)
