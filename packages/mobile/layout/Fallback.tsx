@@ -23,37 +23,29 @@ export const Fallback = memo(function Fallback({
   const spectrum = useSpectrum();
   const shimmerColor = spectrum === 'light' ? fallbackShimmer.light : fallbackShimmer.dark;
   const shimmerPosition = useRef(new Animated.Value(-1));
-  const shimmerAnimation = useRef<Animated.CompositeAnimation>();
-  const loopCount = useRef(0);
 
   useEffect(() => {
-    const animateShimmer = () => {
-      shimmerAnimation.current = Animated.timing(shimmerPosition.current, {
+    const shimmerAnimation = Animated.loop(
+      Animated.timing(shimmerPosition.current, {
         toValue: 1,
         duration: 1300,
         useNativeDriver: true,
         // Disable interaction otherwise all `InteractionManager` listeners
         // will hang indefinitely since Fallbacks will be rendered offscreen.
         isInteraction: false,
-      });
+      }),
+      {
+        iterations: 10,
+      },
+    );
 
-      shimmerAnimation.current.start(({ finished }) => {
-        if (finished) {
-          shimmerPosition.current.setValue(-1);
-
-          // We also want to avoid playing the animation forever
-          // in the background, so stop once we loop 10 times.
-          if (loopCount.current < 10) {
-            animateShimmer();
-            loopCount.current += 1;
-          }
-        }
-      });
+    const animateShimmer = () => {
+      shimmerAnimation.start();
     };
 
     animateShimmer();
 
-    return () => shimmerAnimation.current?.stop();
+    return () => shimmerAnimation.stop();
   }, []);
 
   const containerStyle: ViewStyle = useMemo(
