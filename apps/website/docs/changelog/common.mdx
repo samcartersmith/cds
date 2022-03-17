@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.6 (3/16/2022, 05:18 PM PST)
+
+#### 🚀 Updates
+
+- Scaffolding out the App Switcher Prototype. [#56](https://github.cbhq.net/frontend/cds/pull/56)
+
+#### 🐞 Fixes
+
+- **[Icons]** March 16, 2022 Icon Publication. [#92](https://github.cbhq.net/frontend/cds/pull/92)
+
+#### 📘 Misc
+
+- Remove yarn setup from Dockerfiles. [#67](https://github.cbhq.net/frontend/cds/pull/67)
+- Yarn commands and readme update. [#65](https://github.cbhq.net/frontend/cds/pull/65)
+
 ## 0.35.5 (3/14/2022, 08:37 AM PST)
 
 #### 🚀 Updates

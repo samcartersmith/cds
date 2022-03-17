@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.41.7 (3/16/2022, 05:18 PM PST)
+
+#### 🐞 Fixes
+
+- Safegaurd against adjustsFontSizeToFit. [#70](https://github.cbhq.net/frontend/cds/pull/70), [CDS-2145](https://jira.coinbase-corp.com/browse/CDS-2145)
+- **[Icons]** March 16, 2022 Icon Publication. [#92](https://github.cbhq.net/frontend/cds/pull/92)
+
+#### 📘 Misc
+
+- **[Illustrations]** Add ability to filter illustrations through categories. [#86](https://github.cbhq.net/frontend/cds/pull/86)
+
 ## 0.41.6 (3/15/2022, 08:28 AM PST)
 
 #### 🐞 Fixes

@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.36.6 (3/16/2022, 05:18 PM PST)
+
+#### 🚀 Updates
+
+- Made common utility for icon button styles. [#76](https://github.cbhq.net/frontend/cds/pull/76)
+- Scaffolding out the App Switcher Prototype. [#56](https://github.cbhq.net/frontend/cds/pull/56)
+- **[Tabs]** Include TabNavigation in the NavBar docs. [#62](https://github.cbhq.net/frontend/cds/pull/62)
+
+#### 🐞 Fixes
+
+- Add cell-pressable testId. [#85](https://github.cbhq.net/frontend/cds/pull/85)
+- **[Icons]** March 16, 2022 Icon Publication. [#92](https://github.cbhq.net/frontend/cds/pull/92)
+- Fix popover context error. [#78](https://github.cbhq.net/frontend/cds/pull/78)
+- Renames. [#75](https://github.cbhq.net/frontend/cds/pull/75)
+
+#### 📘 Misc
+
+- Remove yarn setup from Dockerfiles. [#67](https://github.cbhq.net/frontend/cds/pull/67)
+- Yarn commands and readme update. [#65](https://github.cbhq.net/frontend/cds/pull/65)
+
 ## 0.36.5 (3/14/2022, 08:37 AM PST)
 
 #### 🚀 Updates
