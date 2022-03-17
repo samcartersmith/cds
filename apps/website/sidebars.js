@@ -81,6 +81,19 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Concepts',
+      collapsed: true,
+      items: [
+        {
+          type: 'category',
+          label: 'Messaging',
+          collapsed: false,
+          items: ['concepts/messaging/errors'],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Components',
       collapsed: true,
       items: filteredComponents,

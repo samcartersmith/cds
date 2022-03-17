@@ -1,0 +1,130 @@
+---
+id: errors
+title: Errors
+---
+
+import { Image } from ':cds-website/components/Image';
+import { Collection, Item } from ':cds-website/components/Collection';
+
+<br />
+An error state is a screen that is shown when things go wrong. It is an example of a situation where
+the user is getting something other than their desired state. Every error, regardless of cause, becomes
+a point of friction for your users and blocks them from moving forward in their experience.
+
+## General guidelines
+
+### Look
+
+- Do not solely use color to signify error. Add an error message or an illustration (sparingly).
+- Illustrations are opportunities to communicate and lessen the confusion and frustration, ensuring ease when things aren't working accordingly. Use error state illustrations sparingly but with intent. Consider how many error state illustrations appear on a singular screen. These illustrations set the tone that something is wrong.
+- The bigger the component, the more visual noise it creates.
+- Use the color red sparingly.
+- Search for these illustrations in our search with the name of the error (e.g. "404", "500", etc.) or "error" in the search bar. We have an ‘error’ icon which is in its name.
+
+[CDS HeroSquare Illustrations](https://cds.cbhq.net/components/hero-square) <br />
+[CDS Pictogram Illustrations](https://cds.cbhq.net/components/pictogram) <br />
+[CDS Iconography](https://cds.cbhq.net/components/icon)
+
+### Sound
+
+- Error messages should be clear, concise, and use consistent vocabulary.
+- Error messages should be written according to local standards and guidelines.
+- Use sentence case capitalization.
+- For country-specific requirements, reach out to #ask-localization on Slack.
+
+[Coinbase Content Design Guide](https://docs.google.com/document/d/1QnxOOjhqUb8ENrGt3hQTTDCDxnCPRyEfkO-U-ftm4uc/edit#heading=h.xo750yt3a4gs) <br />
+
+### Feel
+
+- Guide users through areas where they need to focus.
+- Consistent use of animation to set clear expectations.
+- Always consider the user's emotional state, as seeing these symbols/icons are like visual alerts as they set the tone for the incident at hand.
+- Only use dramatic animation for urgent messages.
+- Use hint motion sparingly but with intent. Hint motion should be applied to components or surfaces that need immediate attention. Adding or combining various hints system in a single view can control the severity of the tone. Overstacking can causing a negative experience.
+
+## Severity of error
+
+Severity is measured by friction, the degree the error blocks the user from moving on, and level of ease to remedy.
+
+<Image
+  light="/img/concepts/messaging/errors/paradigm_light.png"
+  dark="/img/concepts/messaging/errors/paradigm_dark.png"
+/>
+
+### Low Severity
+
+- Human error
+- Invalid data input
+
+#### Text Input
+
+[Go to Text Input Errors](https://cds.cbhq.net/components/text-input)
+
+<Image
+  light="/img/concepts/messaging/errors/textinput_light.png"
+  dark="/img/concepts/messaging/errors/textinput_dark.png"
+/>
+
+### Low to Medium Severity
+
+- Human error
+- Inability to process a user request
+
+#### Banners
+
+_Coming Soon_
+
+### Medium Severity
+
+- Human or system error
+- Inability to process a user request
+- Inability of an app to connect to the server
+
+#### Alerts
+
+[Go to Alerts](https://cds.cbhq.net/components/alert)
+
+<Image
+  light="/img/concepts/messaging/errors/alert_light.png"
+  dark="/img/concepts/messaging/errors/alert_dark.png"
+/>
+
+#### Banners
+
+_Coming Soon_
+
+### High Severity
+
+- System error
+- Inability of an app to connect to the server
+
+#### Types
+
+Go to Full Screen Modal (WIP)
+
+<Image
+  light="/img/concepts/messaging/errors/fullscreen_light.png"
+  dark="/img/concepts/messaging/errors/fullscreen_dark.png"
+/>
+
+## System vs Human
+
+As there are a spectrum of error states, the choice of illustration is incredibly important. Illustrations are used for medium to high error messages.
+
+<Collection>
+  <Item
+    img={{
+      light: '/img/concepts/messaging/errors/illustrations_system_light.png',
+	  dark: '/img/concepts/messaging/errors/illustrations_system_dark.png'
+    }}
+    description="System error illustrations visually display the connectivity issue at hand. We want to take accountability for the system issue and have users informed. You can see these illustrations labelled within our illustration library based on the error, e.g. 404, 500, 400, etc."
+  />
+  <Item
+    img={{
+      light: '/img/concepts/messaging/errors/illustrations_human_light.png',
+	  dark: '/img/concepts/messaging/errors/illustrations_human_dark.png'
+    }}
+    description="Human error illustrations detail the issue created by the user, but we use these illustrations sparingly as the symbol and color usage here can be intense. We want users to be informed, supported, and take action on what to do next. These illustrations are visually paired with the issue + icon/symbol. A good example would be a card declined which is a card illustration + error icon."
+/>
+
+</Collection>

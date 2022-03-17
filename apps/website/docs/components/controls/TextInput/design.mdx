@@ -1,6 +1,7 @@
 import * as Input from './TextInputSheet';
 import { Spacer, Box, Divider, VStack, HStack } from '@cbhq/cds-web/layout';
 import { Table, TableBody, TableRow, TableCell, TableHeader } from '@cbhq/cds-web/tables';
+import { DoDont, DoExample, DontExample } from ':cds-website/components/DoDont';
 import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
 import { Image } from ':cds-website/components/Image';
 
@@ -61,6 +62,72 @@ When stacking inputs, use spacing 3.
 Heights are predetermined and based on scale. Please avoid customizing the height of the input unless necessary. The height value has been selected to align with our Button components.
 
 <span>&nbsp;</span>
+
+## Behavior
+
+### Error States
+
+When a user enters invalid data, they’re prevented from continuing through the experience. An error message is displayed below the text input.
+
+<DoDont>
+  <DoExample
+    img={{
+      light: '/img/components/inputs/TextInput/error_do_light.png',
+      dark: '/img/components/inputs/TextInput/error_do_dark.png',
+    }}
+  >
+    State a solution
+  </DoExample>
+  <DontExample
+    img={{
+      light: '/img/components/inputs/TextInput/error_dont_light.png',
+      dark: '/img/components/inputs/TextInput/error_dont_dark.png',
+    }}
+  >
+    Explain what went wrong
+  </DontExample>
+</DoDont>
+
+<Table variant="graph" bordered>
+  <TableHeader>
+    <TableRow fullWidth backgroundColor="backgroundAlternate">
+      <TableCell>
+        <TextHeadline as="h1">Severity</TextHeadline>
+      </TableCell>
+      <TableCell>
+        <TextBody as="p">Low</TextBody>
+      </TableCell>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    {/* Row 1 */}
+    <TableRow>
+      <TableCell>
+        <TextHeadline as="h1">When are alerts triggered?</TextHeadline>
+      </TableCell>
+      <TableCell>
+        <TextBody as="p">A user entered information incorrectly</TextBody>
+      </TableCell>
+    </TableRow>
+    {/* Row 2 */}
+    <TableRow>
+      <TableCell>
+        <TextHeadline as="h1">Where</TextHeadline>
+      </TableCell>
+      <TableCell>Requires correction before the user can progress in the flow. </TableCell>
+    </TableRow>
+    {/* Row 3 */}
+    <TableRow>
+      <TableCell>
+        <TextHeadline as="h1">Dismiss</TextHeadline>
+      </TableCell>
+      <TableCell>
+        State a solution rather than explaining what went wrong. Don’t add a period unless there are
+        multiple sentences. Use sentence case capitalization.
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
 
 ## Best Practices
 
