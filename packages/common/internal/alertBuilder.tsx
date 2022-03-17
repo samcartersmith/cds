@@ -35,6 +35,20 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
     );
   };
 
+  const VisibleAlert = ({ singleAction }: { singleAction?: boolean }) => {
+    return (
+      <Alert
+        visible
+        title="Alert title"
+        body="Alert body type that can run over multiple lines, but should be kept short."
+        pictogram="warning"
+        preferredActionLabel="Primary"
+        onPreferredActionPress={onPressConsole}
+        dismissActionLabel={singleAction ? undefined : 'Cancel'}
+      />
+    );
+  };
+
   const PortalAlert = () => {
     // eslint-disable-next-line react/no-unstable-nested-components
     function AlertExample() {
@@ -103,6 +117,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
 
   return {
     BasicAlert,
+    VisibleAlert,
     SingleActionAlert: () => <BasicAlert singleAction />,
     PortalAlert,
     MockAlert,

@@ -11,13 +11,14 @@ export default {
   component: Modal,
 };
 
-export const { BasicModal, ModalWithoutPortal, DarkModal, LongModal, PortalModal } = modalBuilder({
-  Modal,
-  ModalBody,
-  ModalHeader,
-  ModalFooter,
-  ThemeProvider,
-  Button,
-  LoremIpsum,
-  PortalProvider,
-} as CreateModalProps);
+export const { BasicModal, VisibleModal, ModalWithoutPortal, DarkModal, LongModal, PortalModal } =
+  modalBuilder({
+    Modal,
+    ModalBody,
+    ModalHeader,
+    ModalFooter,
+    ThemeProvider,
+    Button,
+    LoremIpsum,
+    PortalProvider,
+  } as CreateModalProps);

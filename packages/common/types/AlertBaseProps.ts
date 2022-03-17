@@ -1,10 +1,10 @@
-import { MouseEventHandler, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import { PositionStyles } from './BoxBaseProps';
 import { ButtonVariant } from './ButtonBaseProps';
 import { NoopFn } from './Helpers';
 import { IllustrationPictogramNames } from './IllustrationNames';
-import { ModalBaseProps } from './ModalBaseProps';
+import { ModalBaseProps, ModalRefBaseProps } from './ModalBaseProps';
 import { SharedProps } from './SharedProps';
 
 export type AlertBaseProps = {
@@ -55,6 +55,4 @@ export type AlertBaseProps = {
   SharedProps &
   Pick<PositionStyles, 'zIndex'>;
 
-export type AlertRefBaseProps = {
-  onRequestClose: NoopFn & MouseEventHandler<Element>;
-};
+export type AlertRefBaseProps = ModalRefBaseProps;

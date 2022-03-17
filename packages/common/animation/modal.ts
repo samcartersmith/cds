@@ -21,14 +21,14 @@ export const animateOutOpacityConfig: MotionBaseSpec = {
 };
 
 export const animateInScaleConfig: MotionBaseSpec = {
-  property: 'transform',
+  property: 'scale',
   easing: 'enterFunctional',
   duration: 'moderate3',
   toValue: modalVisibleScale,
   fromValue: modalHiddenScale,
 };
 export const animateOutScaleConfig: MotionBaseSpec = {
-  property: 'transform',
+  property: 'scale',
   easing: 'global',
   duration: 'fast1',
   toValue: modalHiddenScale,

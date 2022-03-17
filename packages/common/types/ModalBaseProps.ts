@@ -1,4 +1,4 @@
-import { MouseEventHandler, ReactElement, ReactNode } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 import { PositionStyles } from './BoxBaseProps';
 import { ButtonBaseProps } from './ButtonBaseProps';
@@ -34,9 +34,7 @@ export type ModalBaseProps = {
 } & SharedProps &
   Pick<PositionStyles, 'zIndex'>;
 
-export type ModalRefBaseProps = {
-  onRequestClose: NoopFn & MouseEventHandler<Element>;
-};
+export type ModalRefBaseProps = Pick<ModalBaseProps, 'onRequestClose'>;
 
 export type ModalHeaderBaseProps = {
   /** Handles back action */

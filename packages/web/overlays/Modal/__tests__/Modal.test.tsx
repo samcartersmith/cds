@@ -7,7 +7,6 @@ import {
 import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/internal/modalBuilder';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { Animated } from '../../../animation/Animated';
 import { Button } from '../../../buttons';
 import { ThemeProvider } from '../../../system/ThemeProvider';
 import { TextBody, TextLabel1 } from '../../../typography';
@@ -130,18 +129,14 @@ describe('Modal', () => {
     expect(getByTestId('modal-footer')).toBeTruthy();
   });
 
-  it('triggers close animation on footer action press', async () => {
+  it('triggers close on footer action press', async () => {
     const onRequestClose = jest.fn();
-    const animationParallelSpy = jest.spyOn(Animated, 'parallel');
-    const animationTimingSpy = jest.spyOn(Animated, 'timing');
 
     const { getByTestId } = render(<MockModal visible onRequestClose={onRequestClose} />);
 
     // press on footer action
     fireEvent.click(getByTestId('modal-footer-save'));
 
-    expect(animationParallelSpy).toHaveBeenCalledTimes(2);
-    expect(animationTimingSpy).toHaveBeenCalledTimes(6);
     // wait for animation to finish
     await waitFor(() => expect(onRequestClose).toHaveBeenCalledTimes(1));
   });

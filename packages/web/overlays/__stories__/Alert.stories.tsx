@@ -9,7 +9,7 @@ export default {
   component: Alert,
 };
 
-export const { BasicAlert, SingleActionAlert, PortalAlert } = alertBuilder({
+export const { BasicAlert, VisibleAlert, SingleActionAlert, PortalAlert } = alertBuilder({
   Alert,
   Button,
   PortalProvider,

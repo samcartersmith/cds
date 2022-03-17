@@ -32,7 +32,7 @@ export const useOverlay = (idPrefix?: string) => {
   );
 
   const close = useCallback(() => {
-    elementRef.current?.onRequestClose();
+    elementRef.current?.onRequestClose?.();
   }, [elementRef]);
 
   return useMemo(

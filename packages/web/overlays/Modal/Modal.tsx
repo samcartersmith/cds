@@ -1,33 +1,31 @@
-import React, {
-  forwardRef,
-  memo,
-  useCallback,
-  useEffect,
-  useImperativeHandle,
-  useMemo,
-  useRef,
-} from 'react';
-import { createPortal } from 'react-dom';
+import React, { forwardRef, memo, useCallback, useImperativeHandle, useMemo } from 'react';
+import { motion, Target } from 'framer-motion';
 import { Position } from '@cbhq/cds-common';
+import {
+  animateInOpacityConfig,
+  animateInScaleConfig,
+  animateOutOpacityConfig,
+  animateOutScaleConfig,
+} from '@cbhq/cds-common/animation/modal';
+import {
+  animateInOpacityConfig as animateInOverlayOpacityConfig,
+  animateOutOpacityConfig as animateOutOverlayOpacityConfig,
+} from '@cbhq/cds-common/animation/overlay';
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
-import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
-import { useScrollBlocker } from '../../hooks/useScrollBlocker';
-import { Box, BoxProps, VStack } from '../../layout';
-import { isSSR } from '../../utils/browser';
+import { Animated } from '../../animation/Animated';
+import { VStack } from '../../layout';
 import { cx } from '../../utils/linaria';
+import { FocusTrap } from '../FocusTrap';
 import { Overlay } from '../Overlay/Overlay';
-import { modalContainerId } from '../PortalProvider';
 
 import {
   modalDefaultClassName,
-  modalOverlayDefaultClassName,
   modalOverlayResponsiveClassName,
   modalResponsiveClassName,
 } from './modalStyles';
-import { useModalAnimation } from './useModalAnimation';
+import { ModalWrapper, ModalWrapperProps } from './ModalWrapper';
 
 export type ModalProps = {
   /**
@@ -35,10 +33,6 @@ export type ModalProps = {
    * @default false
    */
   disableOverlayPress?: boolean;
-  /**
-   * Disable React portal integration
-   */
-  disablePortal?: boolean;
   /**
    * If pressing the esc key should close the modal
    * @default true
@@ -56,8 +50,7 @@ export type ModalProps = {
    */
   dangerouslySetPosition?: Position;
 } & ModalBaseProps &
-  Pick<BoxProps, 'dangerouslySetClassName'> &
-  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy' | 'id'>;
+  ModalWrapperProps;
 
 export const Modal = memo(
   forwardRef<ModalRefBaseProps, React.PropsWithChildren<ModalProps>>((props, ref) => {
@@ -78,103 +71,9 @@ export const Modal = memo(
       id,
     } = props;
 
-    const blockScroll = useScrollBlocker();
-    const { modalRef, overlayRef, animateIn, animateOut } = useModalAnimation();
-    const isFocused = useRef(false);
-
-    useEffect(() => {
-      if (visible) {
-        void animateIn();
-      }
-    }, [visible, animateIn]);
-
-    // prevent body scroll when modal is open
-    useEffect(() => {
-      if (visible) {
-        blockScroll(true);
-      } else {
-        blockScroll(false);
-      }
-
-      return () => {
-        blockScroll(false);
-      };
-    }, [visible, blockScroll]);
-
-    const handleClose = useCallback(async () => {
-      // unmount after animations finished
-      const finished = await animateOut();
-      if (finished) {
-        onRequestClose?.();
-        isFocused.current = false;
-      }
-    }, [animateOut, onRequestClose]);
-
-    // trap focus in modal for accessibility
-    const handleTabKey = useCallback(
-      (event: KeyboardEvent) => {
-        if (!modalRef?.current || isSSR()) return;
-
-        const focusableModalElements = modalRef.current.querySelectorAll(
-          'a[href], button:not([disabled]), textarea, input, select',
-        );
-
-        if (focusableModalElements.length === 0) return;
-
-        const firstElement = focusableModalElements[0] as HTMLElement;
-        const lastElement = focusableModalElements[
-          focusableModalElements.length - 1
-        ] as HTMLElement;
-
-        // bring focus inside modal
-        if (
-          !isFocused.current &&
-          // check if focus is inside modal
-          !Array.from(focusableModalElements).includes(document.activeElement as HTMLElement)
-        ) {
-          firstElement.focus();
-          isFocused.current = true;
-          event.preventDefault();
-        }
-
-        // tab to change focus to next element
-        if (!event.shiftKey && document.activeElement === lastElement) {
-          firstElement.focus();
-          event.preventDefault();
-        }
-
-        // shift + tab to change to previous element
-        if (event.shiftKey && document.activeElement === firstElement) {
-          lastElement.focus();
-          event.preventDefault();
-        }
-      },
-      [modalRef],
-    );
-
-    // close modal on Escape key press for accessibility
-    const handleKeyDown = useCallback(
-      (event: KeyboardEvent) => {
-        if (event.key === 'Escape' && shouldCloseOnEscPress) {
-          void handleClose();
-        }
-
-        if (event.key === 'Tab') {
-          handleTabKey(event);
-        }
-
-        // Swallow the event, in case someone is listening on the body.
-        event.stopPropagation();
-      },
-      [handleClose, handleTabKey, shouldCloseOnEscPress],
-    );
-
-    useEffect(() => {
-      window.addEventListener('keydown', handleKeyDown);
-      return () => {
-        window.removeEventListener('keydown', handleKeyDown);
-      };
-    }, [handleKeyDown]);
+    const handleClose = useCallback(() => {
+      onRequestClose?.();
+    }, [onRequestClose]);
 
     useImperativeHandle(
       ref,
@@ -189,59 +88,74 @@ export const Modal = memo(
       [handleClose, props],
     );
 
+    // TODO: remove render props as we no longer need the method to close modal
     const renderChildrenProps = useMemo(() => ({ closeModal: handleClose }), [handleClose]);
 
-    if (!visible) {
-      return null;
-    }
+    const dialogStyles = useMemo(
+      () => ({
+        position: dangerouslySetPosition,
+      }),
+      [dangerouslySetPosition],
+    );
 
-    const modalNode = (
-      <Box
-        position="fixed"
-        pin="all"
-        height="100vh"
-        width="100vw"
-        justifyContent="center"
-        alignItems="center"
-        role="dialog"
-        aria-modal="true"
+    const dialogTransformTemplate = useCallback(({ scale }) => `scale(${scale})`, []);
+
+    return (
+      <ModalWrapper
+        visible={visible}
+        disablePortal={disablePortal}
         accessibilityLabelledBy={accessibilityLabelledBy}
         accessibilityLabel={accessibilityLabel}
-        id={id}
-        zIndex={customZIndex ?? zIndex.overlays.modal}
+        zIndex={customZIndex}
         dangerouslySetClassName={dangerouslySetClassName}
+        id={id}
       >
-        <Overlay
-          onPress={disableOverlayPress ? undefined : handleClose}
-          dangerouslySetClassName={cx(
-            modalOverlayDefaultClassName,
-            !dangerouslyDisableResponsiveness && modalOverlayResponsiveClassName,
-          )}
-          ref={overlayRef}
-          testID="modal-overlay"
-        />
-        <VStack
-          elevation={2}
-          background="background"
-          width={dangerouslySetWidth}
-          position={dangerouslySetPosition}
-          dangerouslySetClassName={cx(
+        <motion.div
+          initial={
+            Animated.toFramerTransition([animateOutOverlayOpacityConfig], {
+              propertiesOnly: true,
+            }) as Target
+          }
+          animate={Animated.toFramerTransition([animateInOverlayOpacityConfig])}
+          exit={Animated.toFramerTransition([animateOutOverlayOpacityConfig])}
+        >
+          <Overlay
+            onPress={disableOverlayPress ? undefined : handleClose}
+            dangerouslySetClassName={
+              !dangerouslyDisableResponsiveness ? modalOverlayResponsiveClassName : undefined
+            }
+            testID="modal-overlay"
+          />
+        </motion.div>
+        <motion.div
+          initial={
+            Animated.toFramerTransition([animateOutOpacityConfig, animateOutScaleConfig], {
+              propertiesOnly: true,
+            }) as Target
+          }
+          animate={Animated.toFramerTransition([animateInOpacityConfig, animateInScaleConfig])}
+          exit={Animated.toFramerTransition([animateOutOpacityConfig, animateOutScaleConfig])}
+          transformTemplate={dialogTransformTemplate}
+          className={cx(
             modalDefaultClassName,
             !dangerouslyDisableResponsiveness && modalResponsiveClassName,
           )}
-          ref={modalRef}
+          style={dialogStyles}
         >
-          <ModalParentContext.Provider value={modalData}>
-            {typeof children === 'function' ? children(renderChildrenProps) : children}
-          </ModalParentContext.Provider>
-        </VStack>
-      </Box>
+          <FocusTrap onEscPress={shouldCloseOnEscPress ? handleClose : undefined}>
+            <VStack
+              elevation={2}
+              background="background"
+              width={dangerouslySetWidth}
+              borderRadius="standard"
+            >
+              <ModalParentContext.Provider value={modalData}>
+                {typeof children === 'function' ? children(renderChildrenProps) : children}
+              </ModalParentContext.Provider>
+            </VStack>
+          </FocusTrap>
+        </motion.div>
+      </ModalWrapper>
     );
-
-    if (disablePortal || isSSR() || !document?.getElementById(modalContainerId)) {
-      return modalNode;
-    }
-
-    return createPortal(modalNode, document.getElementById(modalContainerId) as HTMLElement);
   }),
 );

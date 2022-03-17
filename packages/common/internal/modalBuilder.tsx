@@ -37,11 +37,12 @@ export function modalBuilder({
   ThemeProvider,
   PortalProvider,
 }: CreateModalProps) {
-  const BasicModalExample: React.FC<{ disablePortal?: boolean }> = ({
+  const BasicModalExample: React.FC<{ disablePortal?: boolean; visible?: boolean }> = ({
     children,
     disablePortal,
+    visible: defaultVisible,
   }) => {
-    const [visible, { toggleOn, toggleOff }] = useToggler();
+    const [visible, { toggleOn, toggleOff }] = useToggler(defaultVisible);
 
     return (
       <>
@@ -143,6 +144,14 @@ export function modalBuilder({
     </PortalProvider>
   );
 
+  const VisibleModal = () => (
+    <PortalProvider>
+      <BasicModalExample visible>
+        <LoremIpsum />
+      </BasicModalExample>
+    </PortalProvider>
+  );
+
   const ModalWithoutPortal = () => (
     <PortalProvider>
       <BasicModalExample disablePortal>
@@ -182,6 +191,7 @@ export function modalBuilder({
 
   return {
     BasicModal,
+    VisibleModal,
     ModalWithoutPortal,
     DarkModal,
     LongModal,

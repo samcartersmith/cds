@@ -1,7 +1,4 @@
 import { css } from 'linaria';
-import { modalHiddenOpacity, modalHiddenScale } from '@cbhq/cds-common/animation/modal';
-import { overlayHiddenOpacity } from '@cbhq/cds-common/animation/overlay';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
 
 import { spacing } from '../../tokens';
 import { cx } from '../../utils/linaria';
@@ -20,12 +17,6 @@ export const devices = {
 
 export const modalTopSpacing = spacing[10];
 
-// these properties will be animated
-const modalAnimationStyles = {
-  opacity: modalHiddenOpacity,
-  transform: `scale(${modalHiddenScale})`,
-};
-
 export const modalStaticClassName = 'cds-modal';
 export const modalOverlayStaticClassName = 'cds-modal-overlay';
 export const modalFooterStaticClassName = 'cds-modal-footer';
@@ -33,12 +24,12 @@ export const modalFooterStaticClassName = 'cds-modal-footer';
 /** Modal styles */
 export const modalDefault = css`
   &.${modalStaticClassName} {
-    ${modalAnimationStyles}
     position: absolute;
     top: ${modalTopSpacing};
     width: 612px;
     max-height: calc(100vh - ${modalTopSpacing}*2);
-    border-radius: ${borderRadius.standard}px;
+    display: flex;
+    justify-content: center;
   }
 `;
 
@@ -66,16 +57,6 @@ export const modalDefaultClassName = cx(modalStaticClassName, modalDefault);
 export const modalResponsiveClassName = cx(modalStaticClassName, modalResponsive);
 
 /** Overlay styles */
-const overlayAnimationStyles = {
-  opacity: overlayHiddenOpacity,
-};
-
-export const modalOverlayDefault = css`
-  &.${modalOverlayStaticClassName} {
-    ${overlayAnimationStyles}
-  }
-`;
-
 export const modalOverlayResponsive = css`
   &.${modalOverlayStaticClassName} {
     @media only screen and (${devices.phone}) {
@@ -84,7 +65,6 @@ export const modalOverlayResponsive = css`
   }
 `;
 
-export const modalOverlayDefaultClassName = cx(modalOverlayStaticClassName, modalOverlayDefault);
 export const modalOverlayResponsiveClassName = cx(
   modalOverlayStaticClassName,
   modalOverlayResponsive,

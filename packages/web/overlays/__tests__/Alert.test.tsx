@@ -2,7 +2,6 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { Animated } from '../../animation/Animated';
 import { Button } from '../../buttons';
 import { Alert } from '../Alert';
 import { PortalProvider } from '../PortalProvider';
@@ -12,9 +11,6 @@ const { MockAlert } = alertBuilder({
   Button,
   PortalProvider,
 } as CreateAlertProps);
-
-const animationParallelSpy = jest.spyOn(Animated, 'parallel');
-const animationTimingSpy = jest.spyOn(Animated, 'timing');
 
 describe('Alert', () => {
   it('passes a11y', async () => {
@@ -39,9 +35,6 @@ describe('Alert', () => {
     fireEvent.click(getByText('Show Alert'));
 
     const alert = await waitFor(() => getByRole('dialog'));
-    // in animation
-    expect(animationParallelSpy).toHaveBeenCalled();
-    expect(animationTimingSpy).toHaveBeenCalled();
 
     expect(alert).toBeTruthy();
   });
@@ -76,9 +69,6 @@ describe('Alert', () => {
     fireEvent.click(getByText('Save'));
 
     expect(onPreferredActionPress).toHaveBeenCalledTimes(1);
-    // out animation
-    expect(animationParallelSpy).toHaveBeenCalled();
-    expect(animationTimingSpy).toHaveBeenCalled();
   });
 
   it('renders dismiss action', () => {
@@ -88,10 +78,6 @@ describe('Alert', () => {
       <MockAlert visible dismissActionLabel="Cancel" onRequestClose={onRequestClose} />,
     );
 
-    fireEvent.click(getByText('Cancel'));
-
-    // out animation
-    expect(animationParallelSpy).toHaveBeenCalled();
-    expect(animationTimingSpy).toHaveBeenCalled();
+    expect(getByText('Cancel')).toBeTruthy();
   });
 });

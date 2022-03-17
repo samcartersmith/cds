@@ -1,5 +1,5 @@
 import { RefObject } from 'react';
-import { TargetAndTransition } from 'framer-motion';
+import { Target, TargetAndTransition } from 'framer-motion';
 import { MotionBaseSpec } from '@cbhq/cds-common';
 import { curves, durations } from '@cbhq/cds-common/tokens/motion';
 import { isStorybook } from '@cbhq/cds-utils';
@@ -10,6 +10,14 @@ type MotionSpec = {
   toValue: MotionBaseSpec['toValue'] | string; // allow string values like scale(0.5)
   fromValue?: MotionBaseSpec['fromValue'] | string;
 } & Omit<MotionBaseSpec, 'toValue' | 'fromValue'>;
+
+type Options = {
+  /**
+   * return css properties and values without transition
+   * This is useful for the initial prop on framer-motion component
+   */
+  propertiesOnly?: boolean;
+};
 
 type AnimationCompleteCallback = ({ finished }: { finished: boolean }) => void;
 
@@ -89,23 +97,30 @@ export class Animated {
    * @param configs CDS Motion Configs
    * @returns framer-motion transition styles
    */
-  static toFramerTransition = (configs: MotionSpec[]): TargetAndTransition => {
-    return configs.reduce(
-      (acc, config) => {
-        return {
-          ...acc,
-          [config.property]: config.toValue,
-          transition: {
-            ...acc.transition,
-            [config.property]: {
-              ease: curves[config.easing],
-              duration: durations[config.duration] / 1000,
-              delay: config.delay && config.delay / 1000,
-            },
+  static toFramerTransition(
+    configs: MotionSpec[],
+    options?: Options,
+  ): TargetAndTransition | Target {
+    const initialValue = options?.propertiesOnly ? {} : { transition: {} };
+
+    return configs.reduce((acc, config) => {
+      const transitions = {
+        ...acc,
+        [config.property]: config.toValue,
+      };
+
+      if (!options?.propertiesOnly) {
+        transitions.transition = {
+          ...acc.transition,
+          [config.property]: {
+            ease: curves[config.easing],
+            duration: durations[config.duration] / 1000,
+            delay: config.delay && config.delay / 1000,
           },
         };
-      },
-      { transition: {} },
-    );
-  };
+      }
+
+      return transitions;
+    }, initialValue);
+  }
 }
