@@ -113,25 +113,24 @@ This CDS monorepo uses [yarn workspaces](https://yarnpkg.com/features/workspaces
 - Aliases for each workspace have been added to the root package.json to simplify the yarn workspace workflow.
 - Each project has a package.json which lists the yarn commands available for a workspace.
 
-Yarn commands follow this structure -> yarn <workspace-name-alias> <script>
+Yarn commands follow this structure -> yarn `<workspace-name-alias>` `<script>`
 
-The alias of the workspace name can be obtained in Table 1.0. The script can be obtained by going
-to the folder of the workspace and inspecting the script key of the package.json. You can also add custom
-script in the key-value pair too.
+The alias of the workspace name can be obtained in Table 1.0. The script can be obtained by going to the folder of the workspace and inspecting the script key of the package.json.You can also add custom script in the key-value pair too.
 
-Table 1.0
-| Workspace name | Alias |
+**Table 1.0**
+
+| Workspace name         | Alias      |
 | ---------------------- | ---------- |
-| @cbhq/cds-common | common |
-| @cbhq/cds-fonts | fonts |
-| @cbhq/cds-lottie-files | lottie |
-| @cbhq/cds-mobile | mobile |
-| @cbhq/cds-utils | utils |
-| @cbhq/cds-web | web |
-| @cds/codegen | codegen |
+| @cbhq/cds-common       | common     |
+| @cbhq/cds-fonts        | fonts      |
+| @cbhq/cds-lottie-files | lottie     |
+| @cbhq/cds-mobile       | mobile     |
+| @cbhq/cds-utils        | utils      |
+| @cbhq/cds-web          | web        |
+| @cds/codegen           | codegen    |
 | @cds/mobile-playground | playground |
-| @cds/storybook | storybook |
-| @cds/website | website |
+| @cds/storybook         | storybook  |
+| @cds/website           | website    |
 
 A diff for adding lodash to cds-utils in workspace vs alias syntax is shown below.
 
