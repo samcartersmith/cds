@@ -118,12 +118,12 @@ module.exports = {
         'hooks/useToast',
       ],
     },
-    // {
-    //   type: 'category',
-    //   label: 'Recipes',
-    //   collapsed: true,
-    //   items: ['recipes/AppSwitcher/app-switcher'],
-    // },
+    {
+      type: 'category',
+      label: 'Recipes',
+      collapsed: true,
+      items: ['recipes/AppSwitcher/app-switcher'],
+    },
     {
       type: 'category',
       label: 'Adoption Guides',

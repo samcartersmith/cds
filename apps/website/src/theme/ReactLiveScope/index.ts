@@ -24,6 +24,7 @@ import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineAr
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import { nux } from '@cbhq/cds-lottie-files';
+import { AppSwitcherContent } from '@cbhq/cds-web/__stories__/AppSwitcherContent';
 import * as CDSAccordion from '@cbhq/cds-web/accordion';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
 import * as CDSButtons from '@cbhq/cds-web/buttons';
@@ -185,6 +186,7 @@ const ReactLiveScope: unknown = {
   SparklineInteractivePrice,
   SparklineInteractivePriceWithHeader,
   sparklineInteractiveData,
+  AppSwitcherContent,
 };
 
 export default ReactLiveScope;

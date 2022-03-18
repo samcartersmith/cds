@@ -1,27 +1,146 @@
-## Introduction
+<br />
 
-This doc contains _Recipes_ that will show you how to compose an App Switcher out of CDS components.
+This page demonstrates the recipes that we recommend consumers adopt in order to build out their AppSwitcher component.
 
-These Recipes are purely presentational --containing no business logic. It is a product team’s responsibility to add meaning to these presentational compositions.
+These Recipes are purposely NOT API-driven and simply serve as a recommendation for implementing AppSwitcher. It is a product team's responsibility to turn these recipes into reusable components.
 
-**Please Note**: Recipes are not API-driven, rather variants should be composed out of CDS components
-and primitives.
+<br />
 
-## Components
+We have also added demo data to show a more realistic example; note that this is for demo purposes only, we anticipate the consumer will need to modify the content component to work with Relay/GraphQL.
 
-An App Switcher is composed out of the following CDS components:
+<br />
+
+## CDS Components
+
+<br />
+
+The App Switcher recipe is composed of the following CDS components:
 
 - [Switcher](../components/switcher)
 - [NavigationIconButton](../components/navigation-icon-button)
 - [TileButton](../components/tile-button)
 - [SectionTitle](../components/section-title)
 
-## Composition
+<br />
+
+Some key details about the abstractions in this recipe:
+
+<br />
+
+Switcher
+
+- Switcher contains the prescriptive layout/overlay logic shared between App and UserSwitcher.
+- This component will be exposed to consumers.
+
+<br />
+
+AppSwitcherContent
+
+- This is a component that was built simply for demonstration purposes.
+- We technically consider this component more of a recipe and is demo'd in the second example.
+- CDS will not expose a component like this, however we expect Identity will implement a product component very similar to this.
+
+<br />
 
 ```jsx live
-function SwitcherExample() {
-  const [visible, toggleVisibility] = useToggler(false);
+function AppSwitcherRecipeExample() {
+  // Dummy function for data:
+  const NoopFn = () => {
+    console.log('Pressed!');
+  };
+  // Demo Data (the way data is passed in is expected to change when identity hooks up to Graphql):
+  const appSwitcherData = {
+    sections: [
+      {
+        sectionTitle: 'For Individuals',
+        tiles: [
+          { pictogram: 'cardNavigation', title: 'Card', onPress: NoopFn },
+          { pictogram: 'earnNavigation', title: 'Earn ksdjfkasdbakdjbfaskdjfbds', onPress: NoopFn },
+          { pictogram: 'walletNavigation', title: 'Wallet', onPress: NoopFn, count: 9 },
+          { pictogram: 'proNavigation', title: 'Pro', onPress: NoopFn },
+          {
+            pictogram: 'privateClientNavigation',
+            title: 'Private Client',
+            onPress: NoopFn,
+            count: 4,
+          },
+        ],
+      },
+      {
+        sectionTitle: 'For Businesses',
+        tiles: [
+          { pictogram: 'primeNavigation', title: 'Prime', onPress: NoopFn, count: 10 },
+          { pictogram: 'commerceNavigation', title: 'Commerce', onPress: NoopFn },
+          { pictogram: 'exchangeNavigation', title: 'Exchange', onPress: NoopFn },
+          { pictogram: 'assetHubNavigation', title: 'Asset Hub', onPress: NoopFn, count: 2 },
+          { pictogram: 'custodyNavigation', title: 'Custody', onPress: NoopFn, count: 999 },
+          { pictogram: 'analyticsNavigation', title: 'Analytics', onPress: NoopFn },
+          { pictogram: 'venturesNavigation', title: 'Ventures', onPress: NoopFn },
+          { pictogram: 'institutionalNavigation', title: 'Institutional', onPress: NoopFn },
+        ],
+      },
+    ],
+  };
 
+  // Suggested Composition of elements (the "AppSwitcherRecipe"):
+  function AppSwitcherRecipe() {
+    const [visible, toggleVisibility] = useToggler(false);
+
+    const handleSubjectPress = () => {
+      toggleVisibility.toggle();
+    };
+
+    const handleClose = () => {
+      toggleVisibility.toggleOff();
+    };
+    return (
+      <Switcher
+        onPressSubject={handleSubjectPress}
+        onClose={handleClose}
+        visible={visible}
+        // Please note `AppSwitcherContent` should be thought as a recipe also.
+        content={<AppSwitcherContent />}
+      >
+        <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
+      </Switcher>
+    );
+  }
+
+  return (
+    <FeatureFlagProvider frontierButton frontierColor>
+      <PortalProvider>
+        <HStack height={200}>
+          <NavigationBar
+            end={
+              <HStack alignItems="center" justifyContent="flex-end" gap={1}>
+                <AppSwitcherRecipe />
+              </HStack>
+            }
+          >
+            <NavigationTitle>Example on NavBar</NavigationTitle>
+          </NavigationBar>
+        </HStack>
+      </PortalProvider>
+    </FeatureFlagProvider>
+  );
+}
+```
+
+<br />
+
+## AppSwitcherContent Recipe
+
+<br />
+
+Above we encapsulated the content code into a component to cleanly demonstrate the high level architecture of the AppSwitcher Recipe.
+
+The below example is meant to expose the AppSwitcherContent Recipe because we have no intention of exposing the AppSwitcherContent component.
+`AppSwitcherContent` was simply built out for demonstration purposes and we expect it will be different when consumers implement it with GraphQL etc.
+
+<br />
+
+```jsx live
+function AppSwitcherContentRecipeExample() {
   function NoopFn() {
     console.log('pressed');
   }
@@ -90,7 +209,7 @@ function SwitcherExample() {
     );
   }
 
-  function AppSwitcherContent({ data = appSwitcherData, columns = 3 }) {
+  function AppSwitcherContentRecipe({ data = appSwitcherData, columns = 3 }) {
     const { sections } = data;
     return (
       <>
@@ -106,42 +225,12 @@ function SwitcherExample() {
     );
   }
 
-  function AppSwitcher() {
-    const handleSubjectPress = () => {
-      toggleVisibility.toggle();
-    };
-
-    const handleClose = () => {
-      toggleVisibility.toggleOff();
-    };
-    return (
-      <Switcher
-        onPressSubject={handleSubjectPress}
-        onClose={handleClose}
-        visible={visible}
-        content={<AppSwitcherContent />}
-      >
-        <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
-      </Switcher>
-    );
-  }
-
   return (
-    <FeatureFlagProvider frontierButton frontierColor>
-      <PortalProvider>
-        <HStack minHeight={700}>
-          <NavigationBar
-            end={
-              <HStack alignItems="center" justifyContent="flex-end" gap={1}>
-                <AppSwitcher />
-              </HStack>
-            }
-          >
-            <NavigationTitle>Portfolio</NavigationTitle>
-          </NavigationBar>
-        </HStack>
-      </PortalProvider>
-    </FeatureFlagProvider>
+    <VStack justifyContent="center" spacing={4}>
+      <VStack maxWidth={359}>
+        <AppSwitcherContentRecipe />
+      </VStack>
+    </VStack>
   );
 }
 ```
