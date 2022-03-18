@@ -13,7 +13,6 @@ export type AccordionItemProps = {
   panelRef?: RefObject<HTMLDivElement>;
 } & AccordionItemBaseProps;
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const AccordionItem = memo(
   ({
     itemKey,

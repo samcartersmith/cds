@@ -10,7 +10,6 @@ import { useCollapsibleStyles } from './useCollapsibleStyles';
 export type CollapsibleProps = CollapsibleBaseProps &
   Pick<BoxProps, 'role' | 'id' | 'accessibilityLabelledBy'>;
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Collapsible = memo(
   forwardRef(
     (

@@ -11,7 +11,6 @@ import { useToggleAnimation } from './useToggleAnimation';
 
 export type CollapseProps = CollapsibleBaseProps;
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Collapsible = memo(
   forwardRef(
     (

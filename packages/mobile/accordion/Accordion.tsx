@@ -7,7 +7,6 @@ import { Divider, VStack } from '../layout';
 
 export type AccordionProps = AccordionBaseProps;
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Accordion = memo(
   ({ children, defaultActiveKey, onItemPress, testID }: AccordionProps) => {
     const dividerColor = useAccordionDividerColor();
