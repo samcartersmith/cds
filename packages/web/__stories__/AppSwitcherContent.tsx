@@ -67,7 +67,7 @@ const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSec
     <>
       <VStack spacingHorizontal={2}>
         <SectionTitle text={data.sectionTitle} />
-        {[...Array<number>(rows)].map((_, row) => {
+        {Array.from(Array(rows)).map((_, row) => {
           return (
             <HStack gap={0.5}>
               {data.tiles
