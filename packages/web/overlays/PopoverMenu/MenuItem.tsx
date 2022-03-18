@@ -43,11 +43,13 @@ export type MenuItemProps = {
   tabIndex?: number;
   /** Custom event handler for when a MenuItem is pressed */
   onPress?: NoopFn;
+  /** Prevent menu from closing when an option is selected */
+  disableCloseOnOptionChange?: boolean;
 } & PressableProps;
 
 export const MenuItem = memo(
   forwardRef(function MenuItem(
-    { tabIndex, children, onPress, value, ...props }: MenuItemProps,
+    { tabIndex, children, onPress, value, disableCloseOnOptionChange, ...props }: MenuItemProps,
     ref: ForwardedRef<HTMLElement>,
   ) {
     const {
@@ -66,17 +68,19 @@ export const MenuItem = memo(
         onChange?.(newValue);
         // this is a hack for Safari to prevent blur from being called on option click
         selectOptionRef.current?.focus();
-        handleExitMenu();
+        if (!disableCloseOnOptionChange) {
+          handleExitMenu();
+        }
       },
-      [onChange, handleExitMenu, selectOptionRef],
+      [onChange, handleExitMenu, selectOptionRef, disableCloseOnOptionChange],
     );
 
-    const handleOnOptionSelectPress = useCallback(() => {
+    const handleOnOptionPress = useCallback(() => {
       handleOptionChange(value);
       onPress?.();
     }, [handleOptionChange, onPress, value]);
 
-    const handleOnOptionSelectKeyDown = useCallback(
+    const handleOnOptionKeyDown = useCallback(
       (event: KeyboardEvent<HTMLElement>) => {
         event.stopPropagation();
         event.preventDefault();
@@ -130,8 +134,8 @@ export const MenuItem = memo(
         backgroundColor={selected ? 'backgroundAlternate' : 'background'}
         ref={selected ? selectOptionRef : ref}
         noScaleOnPress
-        onPress={handleOnOptionSelectPress}
-        onKeyDown={handleOnOptionSelectKeyDown}
+        onPress={handleOnOptionPress}
+        onKeyDown={handleOnOptionKeyDown}
         tabIndex={selected ? 0 : tabIndex ?? -1}
         role="menuitem"
         className={cx(menuItemStaticClassName, insetFocusRing, pressableStyles)}
