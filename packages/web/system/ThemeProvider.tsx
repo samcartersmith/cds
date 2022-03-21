@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { css } from 'linaria';
 import { SystemProvider, SystemProviderProps } from '@cbhq/cds-common';
 
+import { FramerMotionProvider } from '../animation/FramerMotionProvider';
 import { cx } from '../utils/linaria';
 
 import { useThemeProviderStyles } from './useThemeProviderStyles';
@@ -32,9 +33,11 @@ const ThemeManager: React.FC<ThemeManagerProps> = ({ children, display }) => {
 export const ThemeProvider: React.FC<ThemeProviderProps> = memo(
   ({ children, display, ...props }) => {
     return (
-      <SystemProvider {...props}>
-        <ThemeManager display={display}>{children}</ThemeManager>
-      </SystemProvider>
+      <FramerMotionProvider>
+        <SystemProvider {...props}>
+          <ThemeManager display={display}>{children}</ThemeManager>
+        </SystemProvider>
+      </FramerMotionProvider>
     );
   },
 );

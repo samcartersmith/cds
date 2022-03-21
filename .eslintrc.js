@@ -11,6 +11,9 @@ module.exports = {
     project: 'tsconfig.eslint.json',
     tsconfigRootDir: __dirname,
   },
+  env: {
+    'jest/globals': true,
+  },
   reportUnusedDisableDirectives: true,
   overrides: [
     // Node.js
@@ -26,26 +29,20 @@ module.exports = {
       extends: ['plugin:@cbhq/node'],
       rules: {
         'compat/compat': 'off',
-        "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }]
+        'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
       },
     },
     {
-      files: [
-        '**/*.tsx',
-      ],
+      files: ['**/*.tsx'],
       rules: {
-        "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }]
-      }
+        'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
+      },
     },
     {
-      files: [
-        '**/*.test.ts',
-        '**/*.test.tsx',
-        '**/*.stories.tsx'
-      ],
+      files: ['**/*.test.ts', '**/*.test.tsx', '**/*.stories.tsx'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
-      }
-    }
+      },
+    },
   ],
 };

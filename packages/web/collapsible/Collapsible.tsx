@@ -1,5 +1,5 @@
 import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';

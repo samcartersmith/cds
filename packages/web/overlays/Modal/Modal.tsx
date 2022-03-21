@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useCallback, useImperativeHandle, useMemo } from 'react';
-import { motion, Target } from 'framer-motion';
+import { m as motion, Target } from 'framer-motion';
 import { Position } from '@cbhq/cds-common';
 import {
   animateInOpacityConfig,
