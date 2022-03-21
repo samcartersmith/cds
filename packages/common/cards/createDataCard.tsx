@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 
 import { defaultMediaSize } from '../tokens/card';
 import { gutter } from '../tokens/sizing';
@@ -43,16 +43,32 @@ export function createDataCard<OnPressFn>({
     progressVariant,
     progress,
     progressColor,
-    startLabel,
-    endLabel,
-    testID,
+    startLabel: startLabelProp,
+    endLabel: endLabelProp,
+    testID = 'data-card',
+    ...cardProps
   }: DataCardBaseProps<OnPressFn>) {
-    const TextEndLabel = progressVariant === 'bar' ? TextLabel2 : TextBody;
+    const content = useMemo(() => {
+      const TextEndLabel = progressVariant === 'bar' ? TextLabel2 : TextBody;
+      return (
+        <HStack justifyContent="space-between">
+          {!!startLabelProp && (
+            <TextHeadline testID={`${testID}-start-label`}>{startLabelProp}</TextHeadline>
+          )}
+          {!!endLabelProp && (
+            <TextEndLabel testID={`${testID}-end-label`} color="foregroundMuted">
+              {endLabelProp}
+            </TextEndLabel>
+          )}
+        </HStack>
+      );
+    }, [endLabelProp, progressVariant, startLabelProp, testID]);
 
     if (progressVariant === 'circle') {
       return (
-        <Card testID={testID} onPress={onPress}>
+        <Card testID={testID} onPress={onPress} {...cardProps}>
           <CardBody
+            testID={`${testID}-body`}
             title={title}
             description={description}
             media={
@@ -65,22 +81,16 @@ export function createDataCard<OnPressFn>({
               )
             }
           >
-            <HStack justifyContent="space-between">
-              {!!startLabel && <TextHeadline>{startLabel}</TextHeadline>}
-              {!!endLabel && <TextEndLabel color="foregroundMuted">{endLabel}</TextEndLabel>}
-            </HStack>
+            {content}
           </CardBody>
         </Card>
       );
     }
 
     return (
-      <Card testID={testID} onPress={onPress} gap={2} spacing={gutter}>
-        <CardBody title={title} description={description} spacing={0} />
-        <HStack justifyContent="space-between">
-          {!!startLabel && <TextHeadline>{startLabel}</TextHeadline>}
-          {!!endLabel && <TextEndLabel color="foregroundMuted">{endLabel}</TextEndLabel>}
-        </HStack>
+      <Card testID={testID} onPress={onPress} gap={2} spacing={gutter} {...cardProps}>
+        <CardBody testID={`${testID}-body`} title={title} description={description} spacing={0} />
+        {content}
         {progressVariant === 'bar' && !!progress && (
           <ProgressBar progress={progress} color={progressColor} />
         )}

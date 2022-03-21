@@ -13,11 +13,12 @@ export function createFeatureEntryCard<OnPressFn>({
 }: CreateFeatureEntryCardParams<OnPressFn>) {
   const FeatureEntryCard = memo(function FeatureEntryCard({
     onPress,
+    testID = 'feature-entry-card',
     ...props
   }: FeatureEntryCardBaseProps<OnPressFn>) {
     return (
-      <Card testID={props.testID} onPress={onPress} flexShrink={0}>
-        <CardBody mediaPlacement="end" {...props} />
+      <Card testID={testID} onPress={onPress} flexShrink={0}>
+        <CardBody testID={`${testID}-body`} mediaPlacement="end" {...props} />
       </Card>
     );
   });

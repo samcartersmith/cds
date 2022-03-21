@@ -1,5 +1,4 @@
 import React, { memo, useMemo } from 'react';
-import { emptyObject } from '@cbhq/cds-utils';
 
 import { defaultMediaSize } from '../tokens/card';
 import { gutter } from '../tokens/sizing';
@@ -67,7 +66,7 @@ export function createCardBody<OnPressFn>({
           <CardBodyAction
             onPress={onActionPress}
             endIcon="forwardArrow"
-            testID={testID ? `${testID}-action` : undefined}
+            testID={`${testID}-action`}
           >
             {actionLabel}
           </CardBodyAction>
@@ -103,7 +102,10 @@ export function createCardBody<OnPressFn>({
 
     /** TODO: Add numberOfLines and ellipsize functionality to web and remove this conditional */
     const textProps: TextProps = useMemo(
-      () => (platform === 'mobile' ? { numberOfLines, ellipsize: 'tail' } : emptyObject),
+      () =>
+        platform === 'mobile'
+          ? { numberOfLines, ellipsize: 'tail', transform: 'none' }
+          : { transform: 'none' },
       [numberOfLines],
     );
 

@@ -1,6 +1,8 @@
 import type { ProgressColor } from '../ProgressBaseProps';
 import type { SharedProps } from '../SharedProps';
 
+import type { CardBaseProps } from './CardBaseProps';
+
 export type DataCardBaseProps<OnPressFn> = {
   /** Text to be displayed in TextHeadline under CardHeader section. */
   title: string;
@@ -12,4 +14,5 @@ export type DataCardBaseProps<OnPressFn> = {
   progressVariant?: 'bar' | 'circle';
   progress?: number;
   progressColor?: ProgressColor;
-} & SharedProps;
+} & CardBaseProps<OnPressFn> &
+  SharedProps;
