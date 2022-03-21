@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import { css } from 'linaria';
-import { AspectRatio, FixedValue, Shape } from '@cbhq/cds-common';
+import { AspectRatio, FixedValue, Shape, SharedProps } from '@cbhq/cds-common';
 import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
 
 import { cx } from '../utils/linaria';
@@ -42,7 +42,8 @@ type BaseRemoteImageProps = {
 } & Omit<
   React.ImgHTMLAttributes<HTMLImageElement>,
   'className' | 'style' | 'height' | 'width' | 'source'
->;
+> &
+  SharedProps;
 
 type RemoteImagePropsWithWidth = {
   width: FixedValue;
@@ -73,6 +74,7 @@ export const RemoteImage = memo(function RemoteImage({
   alt,
   dangerouslySetClassName,
   resizeMode = 'cover',
+  testID,
   ...props
 }: RemoteImageProps) {
   const borderRadius = useShapeToBorderRadiusSize(shape);
@@ -88,6 +90,7 @@ export const RemoteImage = memo(function RemoteImage({
 
   return (
     <img
+      data-testid={testID}
       alt={alt ?? ''}
       {...props}
       src={source}
