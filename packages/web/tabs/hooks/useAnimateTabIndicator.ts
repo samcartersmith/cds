@@ -10,11 +10,17 @@ type UseAnimateTabIndicator = {
   xRef: RefObject<HTMLElement>;
 } & Pick<TabIndicatorProps, 'width' | 'x'>;
 
+// We don't want to animate on the initial mount, so we'll set the initial value to something impossible
+const INITIAL_VALUE = -1;
+
 export const useAnimateTabIndicator = ({ widthRef, width, xRef, x }: UseAnimateTabIndicator) => {
   const { getPreviousValue: getPreviousWidth, addPreviousValue: addPreviousWidth } =
-    usePreviousValues<number>([0]);
+    usePreviousValues<number>([INITIAL_VALUE]);
   const { getPreviousValue: getPreviousX, addPreviousValue: addPreviousX } =
-    usePreviousValues<number>([0]);
+    usePreviousValues<number>([]);
+
+  const skipAnimation = getPreviousWidth() === INITIAL_VALUE;
+
   addPreviousWidth(width);
   addPreviousX(x);
 
@@ -22,16 +28,16 @@ export const useAnimateTabIndicator = ({ widthRef, width, xRef, x }: UseAnimateT
     void Animated.parallel([
       Animated.timing(widthRef, {
         property: 'transform',
-        fromValue: `translateX(${getPreviousWidth()}px)`,
+        fromValue: `translateX(${skipAnimation ? width : getPreviousWidth()}px)`,
         toValue: `translateX(${width}px)`,
         ...animateTabIndicatorBaseSpec,
       }),
       Animated.timing(xRef, {
         property: 'transform',
-        fromValue: `translateX(${getPreviousX()}px)`,
+        fromValue: `translateX(${skipAnimation ? x : getPreviousX()}px)`,
         toValue: `translateX(${x}px)`,
         ...animateTabIndicatorBaseSpec,
       }),
     ])?.start();
-  }, [getPreviousX, getPreviousWidth, xRef, widthRef, width, x]);
+  }, [getPreviousX, getPreviousWidth, xRef, widthRef, width, x, skipAnimation]);
 };
