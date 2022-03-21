@@ -8,6 +8,8 @@ import {
 } from '@cbhq/cds-common/animation/likeButton';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { LikeButtonBaseProps } from '@cbhq/cds-common/types/alpha';
+import { getButtonSizeProps } from '@cbhq/cds-common/utils/getButtonSizeProps';
+import { getButtonSpacingProps } from '@cbhq/cds-common/utils/getButtonSpacingProps';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { useInternalSpacingStyles } from '../hooks/internal/useInternalSpacingStyles';
@@ -15,9 +17,6 @@ import { TextIcon } from '../icons/TextIcon';
 import { HStack } from '../layout/HStack';
 import { OnPress, Pressable, PressableProps } from '../system/Pressable';
 import { TextLabel1 } from '../typography/TextLabel1';
-
-import { getButtonSizeProps } from './getButtonSizeProps';
-import { getButtonSpacingProps } from './getButtonSpacingProps';
 
 export type LikeButtonProps = LikeButtonBaseProps<OnPress, PressableProps>;
 

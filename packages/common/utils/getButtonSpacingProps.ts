@@ -1,6 +1,6 @@
-import { memoize } from '@cbhq/cds-common/utils/memoize';
+import type { ButtonBaseProps } from '../types';
 
-import type { ButtonProps } from './Button';
+import { memoize } from './memoize';
 
 const defaultSpacing = 4;
 const iconSpacing = 3;
@@ -9,11 +9,11 @@ const flushSpacing = 2;
 export type GetButtonSpacingParams = {
   compact?: boolean;
   /** If present decrease horizontal padding since icons have built in white space. */
-  startIcon?: ButtonProps['startIcon'] | boolean;
+  startIcon?: ButtonBaseProps['startIcon'] | boolean;
   /** If present decrease horizontal padding since icons have built in white space. */
-  endIcon?: ButtonProps['endIcon'] | boolean;
+  endIcon?: ButtonBaseProps['endIcon'] | boolean;
   /** If present decrease horizontal padding */
-  flush?: ButtonProps['flush'] | boolean;
+  flush?: ButtonBaseProps['flush'] | boolean;
 };
 
 const getCacheKey = ({ compact, flush, startIcon, endIcon }: GetButtonSpacingParams) => {

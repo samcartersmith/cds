@@ -3,6 +3,8 @@ import { ActivityIndicator, StyleSheet } from 'react-native';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import type { ButtonBaseProps } from '@cbhq/cds-common/types/alpha';
+import { getButtonSizeProps } from '@cbhq/cds-common/utils/getButtonSizeProps';
+import { getButtonSpacingProps } from '@cbhq/cds-common/utils/getButtonSpacingProps';
 
 import { useInternalSpacingStyles } from '../hooks/internal/useInternalSpacingStyles';
 import { usePalette } from '../hooks/usePalette';
@@ -10,9 +12,6 @@ import { Icon } from '../icons/Icon';
 import { HStack } from '../layout/HStack';
 import { OnPress, Pressable, PressableProps } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
-
-import { getButtonSizeProps } from './getButtonSizeProps';
-import { getButtonSpacingProps } from './getButtonSpacingProps';
 
 export type ButtonProps = ButtonBaseProps<OnPress> & Omit<PressableProps, 'onPress'>;
 

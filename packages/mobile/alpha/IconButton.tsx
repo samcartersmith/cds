@@ -3,14 +3,13 @@ import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { Scale } from '@cbhq/cds-common/types';
 import { IconButtonBaseProps } from '@cbhq/cds-common/types/alpha';
+import { getButtonSizeProps } from '@cbhq/cds-common/utils/getButtonSizeProps';
+import { getButtonSpacingProps } from '@cbhq/cds-common/utils/getButtonSpacingProps';
 import { memoize } from '@cbhq/cds-common/utils/memoize';
 
 import { Icon } from '../icons/Icon';
 import { getSpacingStyles } from '../styles/getSpacingStyles';
 import { OnPress, Pressable, PressableProps } from '../system/Pressable';
-
-import { getButtonSizeProps } from './getButtonSizeProps';
-import { getButtonSpacingProps } from './getButtonSpacingProps';
 
 export type IconButtonProps = IconButtonBaseProps<OnPress> & PressableProps;
 

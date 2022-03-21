@@ -17,9 +17,11 @@ const pressablePaddingResetStyles = css`
   padding: 0;
 `;
 
+export type OnPress = React.MouseEventHandler;
+
 export type LinkableProps = {
   /** Callback fired when the element is pressed. */
-  onPress?: React.MouseEventHandler;
+  onPress?: OnPress;
   /** Callback fired when a key is pressed */
   onKeyPress?: React.KeyboardEventHandler;
   /** URL that this links to when pressed. */
