@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { Animated, StyleSheet, Text, TextProps as RNTextProps, TextStyle } from 'react-native';
 import { PaletteForeground, SharedProps, TextBaseProps, Typography } from '@cbhq/cds-common';
+import { useTextTransform } from '@cbhq/cds-common/hooks/useTextTransform';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { pascalCase } from '@cbhq/cds-utils';
@@ -87,6 +88,8 @@ export const createText = (name: Typography, overrides?: TextProps) => {
 
     const textStyles = useTypographyStyles(name, mono);
 
+    const textTransform = useTextTransform(name, transform);
+
     // TODO: Update React Native to not override this and remove deprecatedLineHeight
     const lineHeight = useMemo(() => {
       if (deprecatedLineHeight === undefined) {
@@ -115,17 +118,13 @@ export const createText = (name: Typography, overrides?: TextProps) => {
       ellipsizeMode: ellipsize,
     };
 
-    const textTransform = useMemo(() => {
-      return { textTransform: transform };
-    }, [transform]);
-
     const style = useMemo(
       () => [
         spacingStyles,
         textAlign,
         !inherit && textStyles,
-        textTransform,
         {
+          textTransform,
           color: dangerouslySetColor ?? palette[color],
           lineHeight,
           overflow: ellipsize ? ('hidden' as const) : ('visible' as const),

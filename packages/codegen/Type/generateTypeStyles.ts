@@ -85,49 +85,27 @@ const calculateVariantStyle = (
   const minLowerCaseFontSize = Math.ceil(calculateMinFontSize(xHeight.text));
   const minLowercaseLineHeight = round(minLowerCaseFontSize + leading);
 
-  const minUpperCaseFontSize = Math.ceil(calculateMinFontSize(1));
-  const minUpperCaseLineHeight = round(minUpperCaseFontSize + leading);
+  const lowercasePasses = rawFontSize >= minLowerCaseFontSize;
 
-  const lowercase = {
+  let styles: TypographyStyles = {
     fontSize: defaultFontSize,
     lineHeight: defaultLineHeight,
-    textTransform: 'none',
   };
-
-  const allCaps = {
-    ...lowercase,
-    textTransform: 'uppercase',
-  };
-
-  const adjustedLowercase = {
-    fontSize: mobile ? minLowerCaseFontSize : `${minLowerCaseFontSize}px`,
-    lineHeight: mobile ? minLowercaseLineHeight : `${minLowercaseLineHeight}px`,
-    textTransform: 'none',
-  };
-
-  const adjustedUppercase = {
-    fontSize: mobile ? minUpperCaseFontSize : `${minUpperCaseFontSize}px`,
-    lineHeight: mobile ? minUpperCaseLineHeight : `${minUpperCaseLineHeight}px`,
-    textTransform: 'uppercase',
-  };
-
-  const lowercasePasses = rawFontSize >= minLowerCaseFontSize;
-  const uppercasePasses = rawFontSize >= minUpperCaseFontSize;
-
-  let styles: TypographyStyles = adjustedUppercase;
-  if (lowercasePasses) {
-    styles = lowercase;
-  } else if (!lowercasePasses && uppercasePasses && allowAllCaps) {
-    styles = allCaps;
-  } else if (!lowercasePasses && !allowAllCaps && !disableMinimums) {
-    styles = adjustedLowercase;
-  } else if (disableMinimums) {
-    styles = lowercase;
+  if (!lowercasePasses && !allowAllCaps && !disableMinimums) {
+    styles = {
+      fontSize: mobile ? minLowerCaseFontSize : `${minLowerCaseFontSize}px`,
+      lineHeight: mobile ? minLowercaseLineHeight : `${minLowercaseLineHeight}px`,
+    };
+  } else {
+    styles = {
+      fontSize: defaultFontSize,
+      lineHeight: defaultLineHeight,
+    };
   }
 
   return {
     ...styles,
-    ...getFontFamilyStyles(styles.fontSize, fontWeight, mobile),
+    ...getFontFamilyStyles(styles.fontSize, fontWeight, !!mobile),
   };
 };
 

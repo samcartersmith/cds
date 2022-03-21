@@ -1,6 +1,7 @@
 import { createElement } from 'react';
 import { css } from 'linaria';
 import type { Typography } from '@cbhq/cds-common';
+import { useTextTransform } from '@cbhq/cds-common/hooks/useTextTransform';
 import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { emptyObject, pascalCase } from '@cbhq/cds-utils';
 
@@ -80,6 +81,7 @@ export const createText = <
     Overrides extends { as: E } ? false : true /* as prop is required */
   >) => {
     const typographyStyles = useTypographyStyles(name);
+    const textTransform = useTextTransform(name, transform);
 
     const spacingStyles = useSpacingStyles({
       spacing,
@@ -110,7 +112,7 @@ export const createText = <
           inherit ? textInherit : typographyStyles,
           color === 'currentColor' ? currentColor : foregroundStyles[color],
           disabled && disabledState,
-          ...getTypographyStyles(name, {
+          ...getTypographyStyles({
             align,
             display,
             tabularNumbers,
@@ -119,7 +121,7 @@ export const createText = <
             underline,
             noWrap,
             overflow,
-            transform,
+            transform: textTransform,
           }),
           spacingStyles,
           dangerouslySetClassName,

@@ -1,7 +1,9 @@
 import { render } from '@testing-library/react';
+import { variantsWithTransforms } from '@cbhq/cds-common/hooks/useTextTransform';
+import type { Typography } from '@cbhq/cds-common/types';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { textItemsThatHaveTransform } from '../../styles/typography';
+import { ThemeProvider } from '../../system';
 import { DynamicElement } from '../../types';
 import {
   TextBody,
@@ -160,11 +162,36 @@ describe('Text', () => {
     });
   });
 
-  describe('transform', () => {
+  describe('transform works with any override', () => {
     textTestRunner((TextComponent) => {
-      const name = TextComponent.displayName?.replace('Text', '').toLowerCase();
-      if (!textItemsThatHaveTransform.has(name as string)) {
-        expectClassName(TextComponent, 'transform', ['uppercase', 'lowercase', 'capitalize']);
+      expectClassName(TextComponent, 'transform', ['uppercase', 'lowercase', 'capitalize', 'none']);
+    });
+  });
+
+  describe('transform defaults in normal', () => {
+    textTestRunner((TextComponent) => {
+      const name = TextComponent.displayName?.replace('Text', '').toLowerCase() as Typography;
+      if (variantsWithTransforms.normal.has(name)) {
+        it(`${name} defaults to uppercase in normal`, () => {
+          const { container } = render(<TextComponent as="p">Child</TextComponent>);
+          expect(container.firstChild).toHaveClass('uppercase');
+        });
+      }
+    });
+  });
+
+  describe('transform defaults in dense', () => {
+    textTestRunner((TextComponent) => {
+      const name = TextComponent.displayName?.replace('Text', '').toLowerCase() as Typography;
+      if (variantsWithTransforms.dense.has(name)) {
+        it(`${name} defaults to uppercase in dense`, () => {
+          const { container } = render(
+            <ThemeProvider scale="xSmall">
+              <TextComponent as="p">Child</TextComponent>
+            </ThemeProvider>,
+          );
+          expect(container.getElementsByTagName('p')[0]).toHaveClass('uppercase');
+        });
       }
     });
   });

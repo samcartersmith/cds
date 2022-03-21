@@ -1,5 +1,4 @@
 import { css } from 'linaria';
-import { Typography } from '@cbhq/cds-common';
 
 import { CSSMap } from '../types';
 import { TextProps } from '../typography/TextProps';
@@ -80,6 +79,11 @@ const transform: CSSMap<TextProps['transform']> = {
       text-transform: capitalize;
     }
   `,
+  none: css`
+    && {
+      text-transform: none;
+    }
+  `,
 };
 
 const tabularNumbers = css`
@@ -98,8 +102,7 @@ const noWrap = css`
   white-space: nowrap;
 `;
 
-export const textItemsThatHaveTransform = new Set<string>(['label1', 'label2', 'caption']);
-export const getTypographyStyles = (name: Typography, props: Omit<TextProps, 'children'>) => {
+export const getTypographyStyles = (props: Omit<TextProps, 'children'>) => {
   return [
     transition,
     props.align && textAlign[props.align],
@@ -110,7 +113,6 @@ export const getTypographyStyles = (name: Typography, props: Omit<TextProps, 'ch
     props.underline && underline,
     props.noWrap && noWrap,
     props.overflow && overflow[props.overflow],
-    // don't allow user to set to lower case in dense mode for accessibility reasons
-    props.transform && !textItemsThatHaveTransform.has(name) && transform[props.transform],
+    props.transform && transform[props.transform],
   ];
 };

@@ -1,6 +1,9 @@
 import type { ReactNode } from 'react';
 
+import { SharedProps } from './SharedProps';
 import { SpacingProps } from './SpacingProps';
+
+export type TextTransform = 'uppercase' | 'lowercase' | 'capitalize' | 'none';
 
 export type TextAlignProps = {
   /**
@@ -51,7 +54,7 @@ export type TextBaseProps = {
    * Transform text to all uppercase, all lowercase, or capitalized. This is not available for label1, label2 and caption.
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform) | [React Native Docs](https://reactnative.dev/docs/text-style-props#texttransform)
    */
-  transform?: 'uppercase' | 'lowercase' | 'capitalize';
+  transform?: TextTransform;
   /**
    * Add disabled opacity style to text
    */
@@ -61,4 +64,5 @@ export type TextBaseProps = {
   /** Should the Text component inherit styles of parent */
   inherit?: boolean;
 } & SpacingProps &
-  TextAlignProps;
+  TextAlignProps &
+  SharedProps;
