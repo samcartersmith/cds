@@ -2,7 +2,7 @@ const { components } = require('./data/sidebar/components');
 const { adopters } = require('./data/sidebar/adopters');
 
 // Removes unfinished categories from side bar
-const sectionsToExcludeByLabel = new Set(['Tabs']);
+const sectionsToExcludeByLabel = new Set([]);
 
 // Removes unfinished components from section in side bar
 // Please alphabetize to avoid merge conflicts
