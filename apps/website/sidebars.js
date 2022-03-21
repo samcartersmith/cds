@@ -122,7 +122,7 @@ module.exports = {
       type: 'category',
       label: 'Recipes',
       collapsed: true,
-      items: ['recipes/AppSwitcher/app-switcher'],
+      items: ['recipes/AppSwitcher/app-switcher', 'recipes/UserSwitcher/user-switcher'],
     },
     {
       type: 'category',

@@ -1,0 +1,230 @@
+<br />
+
+This page demonstrates the recipes that CDS recommends consumers adopt in order to build out a User Switcher component.
+
+These Recipes are intentionally NOT API-driven and simply serve as guidance on how to create a User Switcher. It is a product team's responsibility to turn these recipes into reusable components.
+
+<br />
+
+We have also added demo data to show a more realistic example; note that this is for demo purposes only, we anticipate the consumer will need to modify the content component to work with Relay/GraphQL.
+
+<br />
+
+## CDS Components
+
+<br />
+
+The User Switcher recipe is composed of the following CDS components:
+
+- [Switcher](../components/switcher)
+- [ListCell](../components/list-cell)
+- [Cell](https://github.cbhq.net/frontend/cds/blob/master/packages/web/cells/Cell.tsx)
+- [Collapsible](../components/collapsible)
+
+<br />
+
+Some key details about the abstractions in this recipe:
+
+<br />
+
+Switcher
+
+- Switcher contains the prescriptive layout/overlay logic shared between App and UserSwitcher.
+- This component will be exposed to consumers.
+
+<br />
+
+UserSwitcherContent
+
+- This is a component that was built for demonstration purposes only.
+- CDS will not expose a component like this, however we expect Identity will implement a product component very similar to this.
+
+<br />
+
+```jsx live
+function UserSwitcherRecipe({
+  title = 'Brian Armstrong',
+  description = 'brian.armstrong@coinbase.com',
+}) {
+  const [visible, toggleVisibility] = useToggler(false);
+
+  const userSwitcherWidth = 400;
+
+  const handleSubjectPress = () => {
+    toggleVisibility.toggle();
+  };
+
+  const handleClose = () => {
+    toggleVisibility.toggleOff();
+  };
+
+  return (
+    <PortalProvider>
+      <FeatureFlagProvider frontierColor frontierButton>
+        <HStack spacing={4}>
+          <Switcher
+            visible={visible}
+            onPressSubject={handleSubjectPress}
+            onClose={handleClose}
+            content={<UserSwitcherContent />}
+            minWidth={userSwitcherWidth}
+            maxWidth={userSwitcherWidth}
+          >
+            <Pressable backgroundColor="transparent" as="button" borderRadius="standard">
+              <HStack gap={1} alignItems="center">
+                <Avatar size="xl" alt="Test" />
+                <VStack maxWidth={172} minWidth={0}>
+                  {description ? (
+                    <TextLabel1 overflow="truncate" as="p">
+                      {title}
+                    </TextLabel1>
+                  ) : (
+                    <TextHeadline overflow="truncate" as="h3">
+                      {title}
+                    </TextHeadline>
+                  )}
+                  {description ? (
+                    <TextLabel2 overflow="truncate" as="p">
+                      {description}
+                    </TextLabel2>
+                  ) : null}
+                </VStack>
+              </HStack>
+            </Pressable>
+          </Switcher>
+        </HStack>
+      </FeatureFlagProvider>
+    </PortalProvider>
+  );
+}
+```
+
+<br />
+
+## UserSwitcherContent Recipe
+
+<br />
+
+Above we encapsulated the content code into a component to cleanly demonstrate the high level architecture of the UserSwitcher Recipe.
+
+<br />
+
+The below example is meant to expose the `UserSwitcherContent` Recipe because we have no intention of exposing the `UserSwitcherContent` component.
+`UserSwitcherContent` was simply built out for demonstration purposes and we expect it will be different when consumers implement it with GraphQL etc.
+
+<br />
+
+```jsx live
+function UserSwitcherContentExample() {
+  const userSwitcherData = [
+    {
+      name: 'Brian Armstrong',
+      email: 'brian.armstrong@coinbase.com',
+      selected: true,
+      authenticated: true,
+      avatarUri:
+        'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg',
+    },
+    {
+      name: 'Brian Armstrong',
+      email: 'barmstrong@bisontrails.com',
+      selected: false,
+      authenticated: false,
+    },
+    {
+      name: 'Brian Armstrong',
+      email: 'bstrong@yahoo.com',
+      selected: false,
+      authenticated: true,
+    },
+  ];
+
+  // this is the height of 3 account list cells, if there are more, it will scroll vertically
+  const userAccountsListMaxHeight = 208;
+
+  const { name, email, avatarUri } = userSwitcherData.find((user) => user.selected);
+
+  function NoopFn() {
+    console.log('pressed');
+  }
+
+  function UserAccountListCell({ name, email, selected, authenticated, avatarUri }) {
+    const [collapsed, { toggle }] = useToggler(true);
+
+    const userCellOuterSpacingConfig = useMemo(
+      () => ({
+        spacingHorizontal: 2,
+        spacingVertical: 0,
+      }),
+      [],
+    );
+
+    return (
+      <>
+        <PressableOpacity
+          noScaleOnPress
+          className={insetFocusRing}
+          onPress={!selected ? toggle : NoopFn}
+        >
+          <ListCell
+            title={name}
+            selected={selected}
+            description={email}
+            accessory={selected ? 'selected' : 'arrow'}
+            outerSpacing={userCellOuterSpacingConfig}
+            intermediary={!authenticated && 'Signed out'}
+            priority="middle"
+            media={<Avatar src={avatarUri} alt={name} />}
+            compact
+          />
+        </PressableOpacity>
+        <Collapsible collapsed={collapsed}>
+          <HStack spacingVertical={0.5} spacingStart={4} gap={0.5}>
+            <Button compact transparent variant="negative">
+              Remove
+            </Button>
+            <Button compact transparent>
+              Sign in
+            </Button>
+          </HStack>
+        </Collapsible>
+      </>
+    );
+  }
+
+  return (
+    <VStack spacingHorizontal={1}>
+      <VStack gap={1} alignItems="center" spacingTop={1}>
+        <Avatar size="xxxl" selected alt="Brian Armstrong" src={avatarUri} />
+        <VStack alignItems="center">
+          <TextTitle3 align="center" as="h3">
+            {name}
+          </TextTitle3>
+          <TextBody align="center" as="p">
+            {email}
+          </TextBody>
+        </VStack>
+        <Button compact transparent onPress={NoopFn}>
+          Manage Settings
+        </Button>
+      </VStack>
+      <SectionTitle text="Your Accounts" />
+      <VStack maxHeight={userAccountsListMaxHeight} overflow="scroll" gap={0.5}>
+        {userSwitcherData.map((userProps) => (
+          <UserAccountListCell {...userProps} />
+        ))}
+        <HStack>
+          <Button startIcon="followInactive" transparent>
+            Add Account
+          </Button>
+        </HStack>
+      </VStack>
+      <Divider spacingTop={1} spacingBottom={2} />
+      <VStack alignItems="center" gap={1}>
+        <Button block>Sign out</Button>
+        <Button transparent>Sign out of all accounts</Button>
+      </VStack>
+    </VStack>
+  );
+}
+```

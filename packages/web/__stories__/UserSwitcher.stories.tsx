@@ -19,7 +19,7 @@ const userSwitcherWidth = 400;
 
 const Subject = ({ title, description }: SwitcherSubjectProps) => {
   return (
-    <Pressable backgroundColor="transparent" as="button" borderRadius="standard">
+    <Pressable noScaleOnPress backgroundColor="transparent" as="button" borderRadius="standard">
       <HStack gap={1} alignItems="center">
         <Avatar size="xl" alt="Test" />
         <VStack maxWidth={172} minWidth={0}>

@@ -63,7 +63,11 @@ const UserAccountListCell = ({
 
   return (
     <>
-      <PressableOpacity className={insetFocusRing} onPress={!selected ? toggle : NoopFn}>
+      <PressableOpacity
+        noScaleOnPress
+        className={insetFocusRing}
+        onPress={!selected ? toggle : NoopFn}
+      >
         <ListCell
           title={name}
           selected={selected}
@@ -73,6 +77,7 @@ const UserAccountListCell = ({
           intermediary={!authenticated && 'Signed out'}
           priority="middle"
           media={<Avatar src={avatarUri} alt={name} />}
+          compact
         />
       </PressableOpacity>
       <Collapsible collapsed={collapsed} dangerouslyDisableOverflowHidden>
@@ -114,7 +119,7 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
         </Button>
       </VStack>
       <SectionTitle text="Your Accounts" />
-      <VStack maxHeight={userAccountsListMaxHeight} overflow="scroll">
+      <VStack maxHeight={userAccountsListMaxHeight} overflow="scroll" gap={0.5}>
         {data.map((userProps) => (
           <UserAccountListCell {...userProps} />
         ))}

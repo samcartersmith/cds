@@ -25,6 +25,7 @@ import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePa
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import { nux } from '@cbhq/cds-lottie-files';
 import { AppSwitcherContent } from '@cbhq/cds-web/__stories__/AppSwitcherContent';
+import { UserSwitcherContent } from '@cbhq/cds-web/__stories__/UserSwitcherContent';
 import * as CDSAccordion from '@cbhq/cds-web/accordion';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
 import * as CDSButtons from '@cbhq/cds-web/buttons';
@@ -52,6 +53,7 @@ import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { useAlert } from '@cbhq/cds-web/overlays/useAlert';
 import { useModal } from '@cbhq/cds-web/overlays/useModal';
 import { useToast } from '@cbhq/cds-web/overlays/useToast';
+import { insetFocusRing } from '@cbhq/cds-web/styles/focus';
 import * as CDSSystem from '@cbhq/cds-web/system';
 import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
 import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
@@ -187,6 +189,8 @@ const ReactLiveScope: unknown = {
   SparklineInteractivePriceWithHeader,
   sparklineInteractiveData,
   AppSwitcherContent,
+  UserSwitcherContent,
+  insetFocusRing,
 };
 
 export default ReactLiveScope;
