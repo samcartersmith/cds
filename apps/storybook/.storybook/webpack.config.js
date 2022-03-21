@@ -12,14 +12,6 @@ module.exports = ({ config, environmentFile }) => {
     }),
   );
 
-  config.plugins.push(
-    new HtmlPlugin({
-      inject: false,
-      filename: 'addon-designs-oauth.html',
-      template: path.resolve(__dirname, './figma_oauth.html'),
-    }),
-  );
-
   const isProduction = config.mode === 'production';
 
   config.module?.rules?.forEach((rule) => {

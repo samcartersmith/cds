@@ -14,19 +14,18 @@ import { palette } from '../tokens';
 
 import type { GetStory } from './types';
 
-const wrapperProps = {
-  old: {
-    dangerouslySetClassName: css`
-      padding: 20px;
-      display: block;
-    `,
-  },
-  new: {
-    background: true,
-    alignItems: 'flex-start',
-    spacing: gutter,
-    gap: 2,
-  },
+const oldWrapperProps = {
+  dangerouslySetClassName: css`
+    padding: 20px;
+    display: block;
+  `,
+};
+
+const newWrapperProps = {
+  background: true,
+  alignItems: 'flex-start',
+  spacing: gutter,
+  gap: 2,
 } as const;
 
 export function StoryContainer<Props>(
@@ -50,6 +49,9 @@ export function StoryContainer<Props>(
 
     const InnerWrapper = context.parameters?.wrapper ?? React.Fragment;
     const isNewStory = context.args?.frontier !== undefined ?? stories;
+    const wrapperProps = isNewStory
+      ? context.parameters?.wrapperProps ?? newWrapperProps
+      : oldWrapperProps;
 
     return (
       <FeatureFlagProvider frontier={context.args?.frontier}>
@@ -58,7 +60,7 @@ export function StoryContainer<Props>(
           scale={context.args?.scale}
           spectrum={context.args?.spectrum}
         >
-          <Group {...wrapperProps[isNewStory ? 'new' : 'old']}>
+          <Group {...wrapperProps}>
             <InnerWrapper>{contents}</InnerWrapper>
           </Group>
         </ThemeProvider>

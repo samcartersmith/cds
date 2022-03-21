@@ -15,9 +15,15 @@ type ArgType<T> = {
 
 type ArgTypes<Props> = { [key in keyof Props]?: ArgType<Props[key]> };
 
-type Parameters<Props, WrapperProps> = {
+type Parameters<Props, WrapperProps, Wrapper extends React.ComponentType<WrapperProps>> = {
   stories?: Story<Props, WrapperProps>[];
-  wrapper?: React.ComponentType<WrapperProps>;
+  wrapper?: Wrapper;
+  wrapperProps?: WrapperProps;
+  design?: {
+    type: 'figspec';
+    url: string;
+    accessToken: string;
+  };
   // add types for parameters within addons that we want to support here
 };
 
@@ -59,7 +65,7 @@ export type Story<Props, WrapperProps, ExampleFnReturnType = React.ReactElement<
    * Custom metadata for a story.
    * @see [Parameters](https://storybook.js.org/docs/basics/writing-stories/#parameters)
    */
-  parameters?: Parameters<Props, WrapperProps>;
+  parameters?: Parameters<Props, WrapperProps, React.ComponentType<WrapperProps>>;
   /**
    * Wrapper components or Storybook decorators that wrap a story.
    *
@@ -79,10 +85,10 @@ export type StoryBuilderConfig<Props, WrapperProps> = {
     scale?: Scale;
   } & Props;
   argTypes?: ArgTypes<Props>;
-  parameters?: Parameters<Props, WrapperProps>;
+  parameters?: Parameters<Props, WrapperProps, React.ComponentType<WrapperProps>>;
 };
 
-const baseConfig = {
+export const baseConfig = {
   args: {
     frontier: false,
     scale: 'large',

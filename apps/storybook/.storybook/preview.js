@@ -5,8 +5,9 @@ import '@cbhq/cds-web/styles/icon-font.css';
 import { globalStyles } from '@cbhq/cds-web/styles/global';
 import { withPerformance } from 'storybook-addon-performance';
 import { StoryContainer } from '@cbhq/cds-web/storybook-decorators/StoryContainer';
+import { withDesign } from 'storybook-addon-designs';
 
-export const decorators = [StoryContainer, withPerformance];
+export const decorators = [StoryContainer, withPerformance, withDesign];
 
 export const parameters = {
   layout: 'fullscreen',
