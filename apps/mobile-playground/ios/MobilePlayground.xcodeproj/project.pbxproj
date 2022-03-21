@@ -8,30 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		3B13C4F7BBAE5578C4BD4AD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FAE5370AADDABE43A1BEEB /* Images.xcassets */; };
-		5347570F21990210094E62B4 /* libPods-MobilePlayground.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8006226F961DA1E060D30C0E /* libPods-MobilePlayground.a */; };
+		56998E29E6CE2FB46E11F45E /* libPods-MobilePlayground.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 290E935303B31BABF7532B83 /* libPods-MobilePlayground.a */; };
 		600A8A14489CBF2D6EDE9C5C /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE486B00E491326F2B5756B5 /* dummy.swift */; settings = {COMPILER_FLAGS = "-fstack-protector-all"; }; };
 		6B2D00267F451703C5A6802D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D93720A60CF2749CBBFDCFA /* LaunchScreen.xib */; };
 		6CF5868CF44EECC71CE038C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 059CCFE407F64E6169A2EF7F /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-fstack-protector-all"; }; };
 		9D335A2080B2B4269C143351 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3814F40C440DD270A45259C9 /* main.m */; settings = {COMPILER_FLAGS = "-fstack-protector-all"; }; };
 		C389EA49F65C9493C155B8F4 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B331A1CEBB4A9401D6F70DF0 /* Expo.plist */; };
 		C4BEEF66111A100224BBAB10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB5B8C0018A4B5342AFD3BE /* LaunchScreen.storyboard */; };
-		3A6435EBE9BD4A03B36A306C /* CoinbaseDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 72BB09B53B584CA6AEB2A215 /* CoinbaseDisplay-Medium.otf */; };
-		C24EE428111046468367E42D /* CoinbaseDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A836E90B965A4900B2EC2C40 /* CoinbaseDisplay-Regular.otf */; };
-		CC6BD7C5A7F34E1988FAAF23 /* CoinbaseMono-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E7E86670608456CBFDCA072 /* CoinbaseMono-Medium.otf */; };
-		FA0D26E81F284910A448F522 /* CoinbaseMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17F32F03897041A4BB374D4C /* CoinbaseMono-Regular.otf */; };
-		8FD557A720814C1EA935F175 /* CoinbaseSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3EE03982644F4A01BEEE0C35 /* CoinbaseSans-Medium.otf */; };
-		027714F858354894B955290E /* CoinbaseSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59810801CD064B1EBFF6C304 /* CoinbaseSans-Regular.otf */; };
-		496725D137C0430DB53BDA70 /* CoinbaseText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63C721011C0A486495199D77 /* CoinbaseText-Medium.otf */; };
-		2416556E6A534F40A4367376 /* CoinbaseText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18A065A126394D538155B221 /* CoinbaseText-Regular.otf */; };
-		588666DE7AB6480DB09E0F3C /* CoinbaseIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D61A8EFDC36E442CB332C4B5 /* CoinbaseIcons.ttf */; };
+		D6ACAF61420E427BAA4EF8B0 /* CoinbaseDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = CEE4EEEC71CC4F228414BA65 /* CoinbaseDisplay-Medium.otf */; };
+		FC74A3F75C814BE5B263B9D9 /* CoinbaseDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 83935F62B9074BFD96912D31 /* CoinbaseDisplay-Regular.otf */; };
+		B1DBF7414CC04FABAEEA4420 /* CoinbaseMono-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB86A768DB0C41F3A0A2C90A /* CoinbaseMono-Medium.otf */; };
+		1E46B7EFD3F04628821FAF93 /* CoinbaseMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDCC2678A0BE43BB8EDADC3B /* CoinbaseMono-Regular.otf */; };
+		B3F946D4F1F94A3F997683EE /* CoinbaseSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F33E2772416D4719B87ED2BA /* CoinbaseSans-Medium.otf */; };
+		8BBC12EAD7C244F29D36F931 /* CoinbaseSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8658566B4EA0476187063387 /* CoinbaseSans-Regular.otf */; };
+		1E62457F6AAE4AE09E2F86B4 /* CoinbaseText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0CD754E43E784AF6A0032D46 /* CoinbaseText-Medium.otf */; };
+		5F8D69757E024FADBFB950B2 /* CoinbaseText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D09F8AEDADEE4F86994BBF1D /* CoinbaseText-Regular.otf */; };
+		2FD3ACAD7CA644FE8D6DC219 /* CoinbaseIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 197CA2B9F1A34CD899B389D3 /* CoinbaseIcons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		059CCFE407F64E6169A2EF7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2A4BD70A62DA381132775C9E /* Pods-MobilePlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilePlayground.debug.xcconfig"; path = "Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground.debug.xcconfig"; sourceTree = "<group>"; };
+		290E935303B31BABF7532B83 /* libPods-MobilePlayground.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobilePlayground.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3814F40C440DD270A45259C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		48814C9969E1AEFAF27857F6 /* Pods-MobilePlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilePlayground.debug.xcconfig"; path = "Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground.debug.xcconfig"; sourceTree = "<group>"; };
 		55FAE5370AADDABE43A1BEEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8006226F961DA1E060D30C0E /* libPods-MobilePlayground.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobilePlayground.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A348BEF0E069DB27E02B3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8DB5B8C0018A4B5342AFD3BE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F45F740BDCF16D09E5CD89C /* MobilePlayground.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MobilePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,23 +39,23 @@
 		B8BB2A46E68931574FB81D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CF70D7B04CFD53B2417711AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE486B00E491326F2B5756B5 /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
-		72BB09B53B584CA6AEB2A215 /* CoinbaseDisplay-Medium.otf */ = {isa = PBXFileReference; name = "CoinbaseDisplay-Medium.otf"; path = "../../../packages/fonts/native/CoinbaseDisplay-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A836E90B965A4900B2EC2C40 /* CoinbaseDisplay-Regular.otf */ = {isa = PBXFileReference; name = "CoinbaseDisplay-Regular.otf"; path = "../../../packages/fonts/native/CoinbaseDisplay-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		4E7E86670608456CBFDCA072 /* CoinbaseMono-Medium.otf */ = {isa = PBXFileReference; name = "CoinbaseMono-Medium.otf"; path = "../../../packages/fonts/native/CoinbaseMono-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		17F32F03897041A4BB374D4C /* CoinbaseMono-Regular.otf */ = {isa = PBXFileReference; name = "CoinbaseMono-Regular.otf"; path = "../../../packages/fonts/native/CoinbaseMono-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3EE03982644F4A01BEEE0C35 /* CoinbaseSans-Medium.otf */ = {isa = PBXFileReference; name = "CoinbaseSans-Medium.otf"; path = "../../../packages/fonts/native/CoinbaseSans-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		59810801CD064B1EBFF6C304 /* CoinbaseSans-Regular.otf */ = {isa = PBXFileReference; name = "CoinbaseSans-Regular.otf"; path = "../../../packages/fonts/native/CoinbaseSans-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		63C721011C0A486495199D77 /* CoinbaseText-Medium.otf */ = {isa = PBXFileReference; name = "CoinbaseText-Medium.otf"; path = "../../../packages/fonts/native/CoinbaseText-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		18A065A126394D538155B221 /* CoinbaseText-Regular.otf */ = {isa = PBXFileReference; name = "CoinbaseText-Regular.otf"; path = "../../../packages/fonts/native/CoinbaseText-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D61A8EFDC36E442CB332C4B5 /* CoinbaseIcons.ttf */ = {isa = PBXFileReference; name = "CoinbaseIcons.ttf"; path = "../../../packages/mobile/icons/font/CoinbaseIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CEE4EEEC71CC4F228414BA65 /* CoinbaseDisplay-Medium.otf */ = {isa = PBXFileReference; name = "CoinbaseDisplay-Medium.otf"; path = "../../../packages/fonts/native/CoinbaseDisplay-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		83935F62B9074BFD96912D31 /* CoinbaseDisplay-Regular.otf */ = {isa = PBXFileReference; name = "CoinbaseDisplay-Regular.otf"; path = "../../../packages/fonts/native/CoinbaseDisplay-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CB86A768DB0C41F3A0A2C90A /* CoinbaseMono-Medium.otf */ = {isa = PBXFileReference; name = "CoinbaseMono-Medium.otf"; path = "../../../packages/fonts/native/CoinbaseMono-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EDCC2678A0BE43BB8EDADC3B /* CoinbaseMono-Regular.otf */ = {isa = PBXFileReference; name = "CoinbaseMono-Regular.otf"; path = "../../../packages/fonts/native/CoinbaseMono-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F33E2772416D4719B87ED2BA /* CoinbaseSans-Medium.otf */ = {isa = PBXFileReference; name = "CoinbaseSans-Medium.otf"; path = "../../../packages/fonts/native/CoinbaseSans-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8658566B4EA0476187063387 /* CoinbaseSans-Regular.otf */ = {isa = PBXFileReference; name = "CoinbaseSans-Regular.otf"; path = "../../../packages/fonts/native/CoinbaseSans-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0CD754E43E784AF6A0032D46 /* CoinbaseText-Medium.otf */ = {isa = PBXFileReference; name = "CoinbaseText-Medium.otf"; path = "../../../packages/fonts/native/CoinbaseText-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D09F8AEDADEE4F86994BBF1D /* CoinbaseText-Regular.otf */ = {isa = PBXFileReference; name = "CoinbaseText-Regular.otf"; path = "../../../packages/fonts/native/CoinbaseText-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		197CA2B9F1A34CD899B389D3 /* CoinbaseIcons.ttf */ = {isa = PBXFileReference; name = "CoinbaseIcons.ttf"; path = "../../../packages/mobile/icons/font/CoinbaseIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		95774C0A55831671954321C7 /* Frameworks */ = {
+		EF0B9138B2E70006245B763C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5347570F21990210094E62B4 /* libPods-MobilePlayground.a in Frameworks */,
+				56998E29E6CE2FB46E11F45E /* libPods-MobilePlayground.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,32 +78,15 @@
 			path = MobilePlayground;
 			sourceTree = "<group>";
 		};
-		2ECD94031EE61823F06DD602 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2A4BD70A62DA381132775C9E /* Pods-MobilePlayground.debug.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		350C0B014D98A2BCC58496FC = {
 			isa = PBXGroup;
 			children = (
 				1A0434228FED217969DE01DA /* MobilePlayground */,
 				F2B0EF1B3F5688EA79F868F6 /* Products */,
-				2ECD94031EE61823F06DD602 /* Pods */,
-				3C67C000E487A9FBE11BEB98 /* Frameworks */,
-				CAC7832D61DB49C283A56F06 /* Resources */,
+				DC318A6B780323E5D4CDA58D /* Pods */,
+				C83FA2EECE11AFCB7B1395EA /* Frameworks */,
+				3ADAB0194E48474A99020075 /* Resources */,
 			);
-			sourceTree = "<group>";
-		};
-		3C67C000E487A9FBE11BEB98 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8006226F961DA1E060D30C0E /* libPods-MobilePlayground.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		860744C7804E4A6ABA70218F /* Supporting */ = {
@@ -114,6 +97,23 @@
 			path = Supporting;
 			sourceTree = "<group>";
 		};
+		C83FA2EECE11AFCB7B1395EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				290E935303B31BABF7532B83 /* libPods-MobilePlayground.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC318A6B780323E5D4CDA58D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48814C9969E1AEFAF27857F6 /* Pods-MobilePlayground.debug.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F2B0EF1B3F5688EA79F868F6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,18 +122,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CAC7832D61DB49C283A56F06 /* Resources */ = {
+		3ADAB0194E48474A99020075 /* Resources */ = {
 			isa = "PBXGroup";
 			children = (
-				72BB09B53B584CA6AEB2A215 /* CoinbaseDisplay-Medium.otf */,
-				A836E90B965A4900B2EC2C40 /* CoinbaseDisplay-Regular.otf */,
-				4E7E86670608456CBFDCA072 /* CoinbaseMono-Medium.otf */,
-				17F32F03897041A4BB374D4C /* CoinbaseMono-Regular.otf */,
-				3EE03982644F4A01BEEE0C35 /* CoinbaseSans-Medium.otf */,
-				59810801CD064B1EBFF6C304 /* CoinbaseSans-Regular.otf */,
-				63C721011C0A486495199D77 /* CoinbaseText-Medium.otf */,
-				18A065A126394D538155B221 /* CoinbaseText-Regular.otf */,
-				D61A8EFDC36E442CB332C4B5 /* CoinbaseIcons.ttf */,
+				CEE4EEEC71CC4F228414BA65 /* CoinbaseDisplay-Medium.otf */,
+				83935F62B9074BFD96912D31 /* CoinbaseDisplay-Regular.otf */,
+				CB86A768DB0C41F3A0A2C90A /* CoinbaseMono-Medium.otf */,
+				EDCC2678A0BE43BB8EDADC3B /* CoinbaseMono-Regular.otf */,
+				F33E2772416D4719B87ED2BA /* CoinbaseSans-Medium.otf */,
+				8658566B4EA0476187063387 /* CoinbaseSans-Regular.otf */,
+				0CD754E43E784AF6A0032D46 /* CoinbaseText-Medium.otf */,
+				D09F8AEDADEE4F86994BBF1D /* CoinbaseText-Regular.otf */,
+				197CA2B9F1A34CD899B389D3 /* CoinbaseIcons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -146,12 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EA23218344FB97C4CB61C5C /* Build configuration list for PBXNativeTarget "MobilePlayground" */;
 			buildPhases = (
-				281F208A78638F6DD757E731 /* [CP] Check Pods Manifest.lock */,
+				EDB4D9A7521D95BCCA216E14 /* [CP] Check Pods Manifest.lock */,
 				2272E9D10ED4BF677F98B9A5 /* Sources */,
 				C43E27A04669DC34A571F075 /* Resources */,
-				95774C0A55831671954321C7 /* Frameworks */,
-				F13D918CE86A425C8F46E23F /* [CP] Embed Pods Frameworks */,
-				2EBFA5275AF7DE571C81CFEE /* [CP] Copy Pods Resources */,
+				EF0B9138B2E70006245B763C /* Frameworks */,
+				952CFA05BCEF7E7308F48712 /* [CP] Embed Pods Frameworks */,
+				DD4A6BE9100FD8DF4C8DDB01 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,22 +202,56 @@
 				3B13C4F7BBAE5578C4BD4AD0 /* Images.xcassets in Resources */,
 				C4BEEF66111A100224BBAB10 /* LaunchScreen.storyboard in Resources */,
 				6B2D00267F451703C5A6802D /* LaunchScreen.xib in Resources */,
-				3A6435EBE9BD4A03B36A306C /* CoinbaseDisplay-Medium.otf in Resources */,
-				C24EE428111046468367E42D /* CoinbaseDisplay-Regular.otf in Resources */,
-				CC6BD7C5A7F34E1988FAAF23 /* CoinbaseMono-Medium.otf in Resources */,
-				FA0D26E81F284910A448F522 /* CoinbaseMono-Regular.otf in Resources */,
-				8FD557A720814C1EA935F175 /* CoinbaseSans-Medium.otf in Resources */,
-				027714F858354894B955290E /* CoinbaseSans-Regular.otf in Resources */,
-				496725D137C0430DB53BDA70 /* CoinbaseText-Medium.otf in Resources */,
-				2416556E6A534F40A4367376 /* CoinbaseText-Regular.otf in Resources */,
-				588666DE7AB6480DB09E0F3C /* CoinbaseIcons.ttf in Resources */,
+				D6ACAF61420E427BAA4EF8B0 /* CoinbaseDisplay-Medium.otf in Resources */,
+				FC74A3F75C814BE5B263B9D9 /* CoinbaseDisplay-Regular.otf in Resources */,
+				B1DBF7414CC04FABAEEA4420 /* CoinbaseMono-Medium.otf in Resources */,
+				1E46B7EFD3F04628821FAF93 /* CoinbaseMono-Regular.otf in Resources */,
+				B3F946D4F1F94A3F997683EE /* CoinbaseSans-Medium.otf in Resources */,
+				8BBC12EAD7C244F29D36F931 /* CoinbaseSans-Regular.otf in Resources */,
+				1E62457F6AAE4AE09E2F86B4 /* CoinbaseText-Medium.otf in Resources */,
+				5F8D69757E024FADBFB950B2 /* CoinbaseText-Regular.otf in Resources */,
+				2FD3ACAD7CA644FE8D6DC219 /* CoinbaseIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		281F208A78638F6DD757E731 /* [CP] Check Pods Manifest.lock */ = {
+		952CFA05BCEF7E7308F48712 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD4A6BE9100FD8DF4C8DDB01 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDB4D9A7521D95BCCA216E14 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -237,40 +271,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2EBFA5275AF7DE571C81CFEE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F13D918CE86A425C8F46E23F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -365,7 +365,7 @@
 		};
 		1A157E5958B758EDD761E876 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A4BD70A62DA381132775C9E /* Pods-MobilePlayground.debug.xcconfig */;
+			baseConfigurationReference = 48814C9969E1AEFAF27857F6 /* Pods-MobilePlayground.debug.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = MobilePlayground;
 				APP_VERSION = 1.0.0;
