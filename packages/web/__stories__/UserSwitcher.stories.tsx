@@ -1,68 +1,21 @@
-import React, { memo, ReactElement } from 'react';
+import React, { memo } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
-import { Button } from '../buttons/Button';
-import { Cell } from '../cells/Cell';
-import { DotCount } from '../dots/DotCount';
-import { HStack, Spacer, VStack } from '../layout';
+import { HStack, VStack } from '../layout';
 import { Avatar } from '../media/Avatar';
 import { Switcher } from '../navigation/Switcher';
-import { SectionTitle } from '../overlays/PopoverMenu/SectionTitle';
+import { FeatureFlagProvider } from '../system';
 import { Pressable } from '../system/Pressable';
-import { TextBody, TextHeadline, TextLabel1, TextLabel2, TextTitle3 } from '../typography';
+import { TextHeadline, TextLabel1, TextLabel2 } from '../typography';
 
-const Content = memo(() => {
-  return (
-    <VStack spacingVertical={2} spacingHorizontal={3}>
-      <VStack gap={2} alignItems="center">
-        <Avatar size="xxxl" selected alt="Brian Armstrong" />
-        <VStack alignItems="center">
-          <TextTitle3 align="center" as="h3">
-            Brian Armstrong
-          </TextTitle3>
-          <TextBody align="center" as="p">
-            brian.armstrong@coinbase.com
-          </TextBody>
-        </VStack>
-      </VStack>
-      <Spacer vertical={2} />
-      <SectionTitle text="Your Accounts" />
-      {/* This has to be a Cell for the truncation expand on hover to work */}
-      <Cell onPress={NoopFn}>
-        <VStack>
-          <TextHeadline as="p">Brian Armstrong</TextHeadline>
-          <TextBody as="p" color="foregroundMuted">
-            Personal
-          </TextBody>
-        </VStack>
-      </Cell>
-      <Cell onPress={NoopFn}>
-        <VStack>
-          <TextHeadline as="p">Brian Armstrong</TextHeadline>
-          <TextBody as="p" color="foregroundMuted">
-            Personal
-          </TextBody>
-        </VStack>
-      </Cell>
-      <HStack>
-        <Button flush="start" startIcon="followInactive" transparent>
-          Add Account
-        </Button>
-      </HStack>
-      <Spacer vertical={4} />
-      <VStack alignItems="center" gap={1}>
-        <Button block>Sign out</Button>
-        <Button transparent>Sign out of all accounts</Button>
-      </VStack>
-    </VStack>
-  );
-});
+import { UserSwitcherContent } from './UserSwitcherContent';
 
 type SwitcherSubjectProps = {
   title: string;
   description?: string;
 };
+
+const userSwitcherWidth = 400;
 
 const Subject = ({ title, description }: SwitcherSubjectProps) => {
   return (
@@ -90,46 +43,33 @@ const Subject = ({ title, description }: SwitcherSubjectProps) => {
   );
 };
 
-export type UserSwitcherProps = {
-  children?: ReactElement;
-} & SwitcherSubjectProps;
-
-export const UserSwitcher = memo(({ title = 'Brian', description }: UserSwitcherProps) => {
+const UserSwitcherRecipe = memo(({ children }) => {
   const [visible, { toggleOn: handleClickSubject, toggleOff: handleClose }] = useToggler(false);
   return (
-    <HStack>
-      <Switcher
-        visible={visible}
-        onPressSubject={handleClickSubject}
-        onClose={handleClose}
-        content={<Content />}
-      >
-        <Subject title={title} description={description} />
-      </Switcher>
-    </HStack>
+    <FeatureFlagProvider frontierColor frontierButton>
+      <HStack>
+        <Switcher
+          visible={visible}
+          onPressSubject={handleClickSubject}
+          onClose={handleClose}
+          content={<UserSwitcherContent />}
+          minWidth={userSwitcherWidth}
+          maxWidth={userSwitcherWidth}
+        >
+          {children}
+        </Switcher>
+      </HStack>
+    </FeatureFlagProvider>
   );
 });
 
-export const UserSwitcherWithDot = ({
-  title = 'Emilie',
-  description = 'Personal',
-}: UserSwitcherProps) => {
-  const [visible, { toggleOn: handleClickSubject, toggleOff: handleClose }] = useToggler(false);
+export const UserSwitcher = memo(({ title = 'Brian', description }: SwitcherSubjectProps) => {
   return (
-    <HStack>
-      <Switcher
-        visible={visible}
-        onPressSubject={handleClickSubject}
-        onClose={handleClose}
-        content={<Content />}
-      >
-        <DotCount pin="top-end" count={2}>
-          <Subject title={title} description={description} />
-        </DotCount>
-      </Switcher>
-    </HStack>
+    <UserSwitcherRecipe>
+      <Subject title={title} description={description} />
+    </UserSwitcherRecipe>
   );
-};
+});
 
 export default {
   title: 'Core Components/Switchers/UserSwitcher',

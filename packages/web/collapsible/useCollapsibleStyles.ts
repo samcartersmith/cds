@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { Variants } from 'framer-motion';
-import type { CollapsibleDirection } from '@cbhq/cds-common';
 import {
   animateInMaxSizeConfig,
   animateInOpacityConfig,
@@ -10,13 +9,26 @@ import {
 
 import { Animated } from '../animation/Animated';
 
-const defaultStyle = {
-  display: 'block',
-  overflow: 'hidden',
-};
+import type { CollapsibleProps } from './Collapsible';
 
-export const useCollapsibleStyles = (collapsed: boolean, direction: CollapsibleDirection) => {
+export const useCollapsibleStyles = ({
+  collapsed,
+  direction = 'vertical',
+  dangerouslyDisableOverflowHidden,
+}: Pick<CollapsibleProps, 'collapsed' | 'direction' | 'dangerouslyDisableOverflowHidden'>) => {
   const state = collapsed ? 'collapsed' : 'expanded';
+
+  const defaultStyle = useMemo(() => {
+    if (dangerouslyDisableOverflowHidden) {
+      return { display: 'block' };
+    }
+    return {
+      display: 'block',
+      // need this for enter animation to have correct masking effect
+      overflow: 'hidden',
+    };
+  }, [dangerouslyDisableOverflowHidden]);
+
   const variants: Variants = useMemo(() => {
     return {
       expanded: Animated.toFramerTransition([
@@ -42,6 +54,6 @@ export const useCollapsibleStyles = (collapsed: boolean, direction: CollapsibleD
       initial: state,
       animate: state,
     }),
-    [state, variants],
+    [state, variants, defaultStyle],
   );
 };

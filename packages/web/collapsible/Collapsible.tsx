@@ -7,7 +7,13 @@ import { Box, BoxProps, HStack } from '../layout';
 
 import { useCollapsibleStyles } from './useCollapsibleStyles';
 
-export type CollapsibleProps = CollapsibleBaseProps &
+export type CollapsibleProps = {
+  /**
+   * This option may break animation. Only use this if your container has fixed height or width.
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   */
+  dangerouslyDisableOverflowHidden?: boolean;
+} & CollapsibleBaseProps &
   Pick<BoxProps, 'role' | 'id' | 'accessibilityLabelledBy'>;
 
 export const Collapsible = memo(
@@ -23,6 +29,7 @@ export const Collapsible = memo(
         testID,
         id,
         role,
+        dangerouslyDisableOverflowHidden = false,
         // Spacing
         spacing,
         spacingBottom,
@@ -34,7 +41,11 @@ export const Collapsible = memo(
       }: CollapsibleProps,
       forwardedRef: ForwardedRef<HTMLDivElement>,
     ) => {
-      const styles = useCollapsibleStyles(collapsed, direction);
+      const styles = useCollapsibleStyles({
+        collapsed,
+        direction,
+        dangerouslyDisableOverflowHidden,
+      });
       const outerSpacing = useSpacingStyles({
         spacingTop,
       });
