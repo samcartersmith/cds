@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import type { FlexAlignCommon, SpacingScale } from '@cbhq/cds-common';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
+import { PressableOpacity } from '@cbhq/cds-web/system';
 import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
 
 import { Image, ImageProps } from './Image';
@@ -18,6 +19,7 @@ type ItemProps = {
   description?: string | string[];
   flexGrow?: number;
   textAlign?: FlexAlignCommon;
+  href?: string;
 };
 
 export const Collection: React.FC<CollectionProps> = ({
@@ -46,6 +48,7 @@ export const Item: React.FC<ItemProps> = ({
   flexGrow = 1,
   children,
   textAlign = 'center',
+  href,
   ...rest
 }) => {
   const renderDescription = () => {
@@ -67,6 +70,11 @@ export const Item: React.FC<ItemProps> = ({
       </TextLabel2>
     );
   };
+  const handlePress = useCallback(() => {
+    if (href) {
+      window.open(href, '_blank');
+    }
+  }, [href]);
 
   return (
     <VStack
@@ -80,8 +88,12 @@ export const Item: React.FC<ItemProps> = ({
       {...rest}
     >
       {children ?? (
-        <VStack flexGrow={0} flexBasis={0} alignItems="center" justifyContent="flex-start">
-          {img && <Image {...img} />}
+        <VStack flexGrow={0} flexBasis={0} alignItems={textAlign} justifyContent="flex-start">
+          {img && (
+            <PressableOpacity onPress={handlePress}>
+              <Image {...img} />
+            </PressableOpacity>
+          )}
           {vid && <Video {...vid} />}
           <VStack flexGrow={1} spacingTop={2} alignItems={textAlign} justifyContent="center">
             {!!title && (
