@@ -1,6 +1,7 @@
 import type { SharedProps } from '../SharedProps';
 
 import type { ButtonBaseProps } from './ButtonBaseProps';
+import type { CardBaseProps } from './CardBaseProps';
 import type { CardMediaIllustrationName, CardMediaPlacement } from './CardMediaProps';
 import type { IconButtonBaseProps } from './IconButtonBaseProps';
 import type { LikeButtonBaseProps } from './LikeButtonBaseProps';
@@ -30,4 +31,5 @@ export type FeedCardBaseProps<OnPressFn> = {
   comment?: Omit<IconButtonBaseProps<OnPressFn>, 'name'>;
   share?: Omit<IconButtonBaseProps<OnPressFn>, 'name'>;
   cta?: ButtonBaseProps<OnPressFn>;
-} & SharedProps;
+} & CardBaseProps<OnPressFn> &
+  SharedProps;

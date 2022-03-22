@@ -51,6 +51,7 @@ export function createFeedCard<OnPressFn>({
     comment,
     share,
     cta,
+    ...cardProps
   }: FeedCardBaseProps<OnPressFn>) {
     const footer = useMemo(() => {
       const hasFooterActions = Boolean(like ?? comment ?? share ?? cta);
@@ -82,7 +83,7 @@ export function createFeedCard<OnPressFn>({
     }, [comment, cta, like, share, testID]);
 
     return (
-      <Card testID={testID} gap={2}>
+      <Card testID={testID} gap={2} {...cardProps}>
         <CardHeader
           testID={`${testID}-header`}
           avatar={avatar}
@@ -98,6 +99,7 @@ export function createFeedCard<OnPressFn>({
           mediaPlacement={mediaPlacement}
           /** Only override default CardBody spacing if footer is present */
           spacingVertical={footer === null ? undefined : 0}
+          testID={`${testID}-body`}
         />
         {footer}
       </Card>
