@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.37.1 (3/22/2022, 01:22 PM PST)
+
+#### 🐞 Fixes
+
+- Add missing React import. [#146](https://github.cbhq.net/frontend/cds/pull/146)
+
 ## 0.37.0 (3/22/2022, 09:36 AM PST)
 
 #### 💥 Breaking
