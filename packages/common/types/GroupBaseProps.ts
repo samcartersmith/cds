@@ -7,7 +7,7 @@ export type GroupBaseProps<BoxProps> = {
   /** Accessibility label describing the group of items. */
   accessibilityLabel?: string;
   /** Items to render in a group. */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /** Direction a group of components should flow.
    * @default vertical
    */
