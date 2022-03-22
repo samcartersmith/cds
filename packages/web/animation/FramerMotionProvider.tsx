@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 import { domAnimation, LazyMotion } from 'framer-motion';
 
 export const FramerMotionProvider = memo(function FramerMotionProvider({
