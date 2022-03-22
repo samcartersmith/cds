@@ -37,7 +37,7 @@ function DefaultSelect() {
     { value: '3', label: 'Option 3' },
     { value: '4', label: 'Option 4' },
   ];
-  const selectedValueLabel = options.find((option) => option.value === value).label;
+  const selectedValueLabel = value && options.find((option) => option.value === value).label;
   return (
     <ExampleWithThemeToggles>
       <VStack spacing={2} background minHeight={400}>
@@ -48,7 +48,12 @@ function DefaultSelect() {
           onChange={setValue}
         >
           {options.map((option) => (
-            <SelectOption value={option} key={option} title={option} description="Description" />
+            <SelectOption
+              value={option.value}
+              key={option.value}
+              title={option.label}
+              description="Description"
+            />
           ))}
         </Select>
       </VStack>
