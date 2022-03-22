@@ -1,4 +1,10 @@
-import type { BorderedStyles, FlexStyles, StackBaseProps } from '../BoxBaseProps';
+import type {
+  BorderedStyles,
+  BoxA11yProps,
+  BoxBackgroundProps,
+  FlexStyles,
+  StackBaseProps,
+} from '../BoxBaseProps';
 import type { DimensionStyles } from '../DimensionStyles';
 import type { SharedProps } from '../SharedProps';
 import type { OffsetProps, SpacingProps } from '../SpacingProps';
@@ -9,9 +15,16 @@ export type CardBoxProps = SharedProps &
   OffsetProps &
   DimensionStyles &
   StackBaseProps &
-  BorderedStyles;
+  BorderedStyles &
+  BoxA11yProps &
+  BoxBackgroundProps;
 
 export type CardBaseProps<T> = {
-  /** The callback function to trigger when the entire Card is pressed. This will not be used if Card has an onActionPress. */
+  /** The callback function to trigger when the entire Card is pressed. */
   onPress?: T;
+  /**
+   * How content should overflow if it exceeds a Card's fixed width/height
+   * @default hidden
+   */
+  overflow?: 'hidden' | 'visible';
 } & CardBoxProps;
