@@ -8,6 +8,25 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.41.8 (3/22/2022, 09:36 AM PST)
+
+#### 🚀 Updates
+
+- **[Card]** Add forwardRef. [#143](https://github.cbhq.net/frontend/cds/pull/143)
+- **[Text]** Allow text transform overrides. [#126](https://github.cbhq.net/frontend/cds/pull/126)
+- **[Button]** Move button utils to common. [#129](https://github.cbhq.net/frontend/cds/pull/129)
+- Remove deprecated tag and enable sidebar. [#122](https://github.cbhq.net/frontend/cds/pull/122)
+- **[Accordion]** Rename accordions folder to accordion (Singular). [#111](https://github.cbhq.net/frontend/cds/pull/111)
+
+#### 🐞 Fixes
+
+- **[ModalFooter]** Fix key warning. [#113](https://github.cbhq.net/frontend/cds/pull/113)
+- Only on JS thread once. [#102](https://github.cbhq.net/frontend/cds/pull/102)
+
+#### 📘 Misc
+
+- Update ci build process. [#110](https://github.cbhq.net/frontend/cds/pull/110)
+
 ## 0.41.7 (3/16/2022, 05:18 PM PST)
 
 #### 🐞 Fixes

@@ -8,6 +8,39 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.37.0 (3/22/2022, 09:36 AM PST)
+
+#### 💥 Breaking
+
+- Upgrade framer-motion + add LazyMotion to ThemeProvider. [#124](https://github.cbhq.net/frontend/cds/pull/124)
+
+#### 🚀 Updates
+
+- **[CardGroup]** Add alpha CardGroup. [#141](https://github.cbhq.net/frontend/cds/pull/141)
+- Made useRotateAnimation hook and added animation to collapsible User Switcher List Cells. [#132](https://github.cbhq.net/frontend/cds/pull/132)
+- **[LikeButton]** For FeedCard. [#136](https://github.cbhq.net/frontend/cds/pull/136), [CDS-2204](https://jira.coinbase-corp.com/browse/CDS-2204)
+- **[Text]** Allow text transform overrides. [#126](https://github.cbhq.net/frontend/cds/pull/126)
+- **[Button]** Move button utils to common. [#129](https://github.cbhq.net/frontend/cds/pull/129)
+- Remove deprecated tag and enable sidebar. [#122](https://github.cbhq.net/frontend/cds/pull/122)
+- **[Modal]** Break down Modal components and use framer-motion. [#91](https://github.cbhq.net/frontend/cds/pull/91)
+- **[Accordion]** Rename accordions folder to accordion (Singular). [#111](https://github.cbhq.net/frontend/cds/pull/111)
+
+#### 🐞 Fixes
+
+- User Switcher Prototype. [#125](https://github.cbhq.net/frontend/cds/pull/125)
+- **[RemoteImage]** Expose testID prop on web. [#130](https://github.cbhq.net/frontend/cds/pull/130)
+- **[Tabs]** Prevent TabIndicator from animating on the initial mount. [#128](https://github.cbhq.net/frontend/cds/pull/128)
+- Add prop preventCloseOnOptionChange to menu item. [#120](https://github.cbhq.net/frontend/cds/pull/120)
+
+#### 📘 Misc
+
+- User Switcher recipe docs. [#133](https://github.cbhq.net/frontend/cds/pull/133)
+- Measure and figma storybook addons. [#127](https://github.cbhq.net/frontend/cds/pull/127)
+- Resolve weird array mapping bug that only occurred when deployed. [#116](https://github.cbhq.net/frontend/cds/pull/116)
+- Fast follow to AppSwitcher Docs. [#115](https://github.cbhq.net/frontend/cds/pull/115)
+- Switcher docs + App Switcher recipe. [#83](https://github.cbhq.net/frontend/cds/pull/83)
+- Update ci build process. [#110](https://github.cbhq.net/frontend/cds/pull/110)
+
 ## 0.36.6 (3/16/2022, 05:18 PM PST)
 
 #### 🚀 Updates

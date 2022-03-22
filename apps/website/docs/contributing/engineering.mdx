@@ -13,7 +13,7 @@ yarn
 - [Web Development](#web-development)
 - [React Native Development](#react-native-development)
 - [The CDS Website Development](#cds-website-development)
-- [Release Workflows](#release-and-cds-consumers)
+- [Release Workflows](#release-workflows)
 - [Testing](#testing)
 - [Miscellaneous](#miscellaneous)
 - [Troubleshooting](#troubleshooting)
@@ -276,21 +276,11 @@ make serve.website
 
 ### Deploy
 
-```console
-ash_login
-ash deploy -p eng/shared/design-system/website/cloud
-```
-
-Select the artifact to deploy.
-
-Please not that anything you want to deploy to production aka cds.cbhq.net must be merged into master prior to deployment. This is because artifcats only exist for merges to master.
+After a commit is merged to master you will need to trigger a manual deploy with [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits).
 
 ### Deploy Dev
 
-```console
-ash_login
-make deploy.website-dev
-```
+You can trigger a deploy to dev via [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits).
 
 ### Debugging s3 bucket
 
@@ -382,21 +372,11 @@ After a release PR is merged, the following should automatically be deployed:
 
 If the website is not updated, following the steps above for [how to manually release the website](#deploy).
 
-If Verdaccio is not updated, you need to trigger a manual deploy by following these steps:
+You will need to trigger a manual deploy in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) to publish the mobile and web packages to Verdaccio.
 
-1. Run
+After the Codeflow deploy has succeeded, double check that the package is published at [development Coinbase NPM registry](https://publish-npm-dev.cbhq.net/) or [production Coinbase NPM registry](https://publish-npm.cbhq.net/). It usually takes about 10 min or so for the package to be uploaded.
 
-```bash
-assume-role development eng-ops (for development)
-ash_login (for production)
-ash deploy -p eng/shared/design-system/cloud
-```
-
-2. Enter the number for the commit/package you want to deploy for prod or development registry
-
-3. Check that the package is published at[development Coinbase NPM registry](https://publish-npm-dev.cbhq.net/) or [production Coinbase NPM registry](https://publish-npm.cbhq.net/). It usually takes about 10 min or so for the package to be uploaded.
-
-You will also need to verify that the CSS was deployed to AWS. If web was bumped, verify `upload_css` was deployed to AWS (i.e. https://assets.coinbase.com/cds/web/version-0.18.0.css). Verify `upload_css_sw_cache` deployed to aws was bumped (ie: https://assets.coinbase.com/assets/sw-cache/web/version-0.30.8.css) which should be mapped to https://coinbase.com/assets/sw-cache/web/version-0.30.8.css
+You will also need to verify that the CSS was deployed to AWS. If web was bumped, verify `upload_css` was deployed to AWS (i.e. `https://assets.coinbase.com/cds/web/version-0.18.0.css`). Verify `upload_css_sw_cache` deployed to aws was bumped (ie: `https://assets.coinbase.com/assets/sw-cache/web/version-0.30.8.css`) which should be mapped to `https://coinbase.com/assets/sw-cache/web/version-0.30.8.css`
 
 ## Manually Release to CB Alpha
 

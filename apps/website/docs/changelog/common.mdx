@@ -8,6 +8,25 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.7 (3/22/2022, 09:36 AM PST)
+
+#### 🚀 Updates
+
+- **[CardGroup]** Add alpha CardGroup. [#141](https://github.cbhq.net/frontend/cds/pull/141)
+- **[BoxProps]** Export BoxA11yProps and BoxBackgroundProps. [#142](https://github.cbhq.net/frontend/cds/pull/142)
+- **[FeedCard]** Spread CardBaseProps and interpolate testID for CardBody. [#140](https://github.cbhq.net/frontend/cds/pull/140)
+- Made useRotateAnimation hook and added animation to collapsible User Switcher List Cells. [#132](https://github.cbhq.net/frontend/cds/pull/132)
+- **[createCards]** TestId defaults and override transform for card body. [#135](https://github.cbhq.net/frontend/cds/pull/135)
+- **[Text]** Allow text transform overrides. [#126](https://github.cbhq.net/frontend/cds/pull/126)
+- **[Button]** Move button utils to common. [#129](https://github.cbhq.net/frontend/cds/pull/129)
+- **[Modal]** Break down Modal components and use framer-motion. [#91](https://github.cbhq.net/frontend/cds/pull/91)
+- **[Accordion]** Rename accordions folder to accordion (Singular). [#111](https://github.cbhq.net/frontend/cds/pull/111)
+
+#### 📘 Misc
+
+- Measure and figma storybook addons. [#127](https://github.cbhq.net/frontend/cds/pull/127)
+- Update ci build process. [#110](https://github.cbhq.net/frontend/cds/pull/110)
+
 ## 0.35.6 (3/16/2022, 05:18 PM PST)
 
 #### 🚀 Updates
