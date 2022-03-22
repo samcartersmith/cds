@@ -5,6 +5,7 @@ import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { Button } from '../buttons/Button';
 import { ListCell } from '../cells/ListCell';
+import { CollapseArrow } from '../collapsible/CollapseArrow';
 import { Collapsible } from '../collapsible/Collapsible';
 import { Divider, HStack, VStack } from '../layout';
 import { Avatar } from '../media/Avatar';
@@ -72,7 +73,7 @@ const UserAccountListCell = ({
           title={name}
           selected={selected}
           description={email}
-          accessory={selected ? 'selected' : 'arrow'}
+          action={!selected && <CollapseArrow degrees={90} collapsed={collapsed} />}
           outerSpacing={userCellOuterSpacingConfig}
           intermediary={!authenticated && 'Signed out'}
           priority="middle"

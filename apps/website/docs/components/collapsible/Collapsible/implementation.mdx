@@ -84,6 +84,25 @@ Expand/collapse state of the content.
 
 <ComponentDetails componentName="Collapsible" templateName="prop-collapsed" />
 
+### dangerouslyDisableOverflowHidden <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This option may break animation. Only use this if your container has fixed height or width.
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Collapsible"
+  propertyName="dangerouslyDisableOverflowHidden"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails
+  componentName="Collapsible"
+  templateName="prop-dangerouslyDisableOverflowHidden"
+/>
+
 ### direction
 
 Direction the content should expand/collapse to

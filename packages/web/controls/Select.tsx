@@ -3,7 +3,7 @@ import { useToggler } from '@cbhq/cds-common';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { SelectBaseProps } from '@cbhq/cds-common/types';
 
-import { useRotate180Animation } from '../animation/useRotate180Animation';
+import { useRotateAnimation } from '../animation/useRotateAnimation';
 import { HStack } from '../layout/HStack';
 import { PopoverMenu } from '../overlays';
 import { MenuItemProps } from '../overlays/PopoverMenu/MenuItem';
@@ -34,9 +34,11 @@ export const Select = memo(
   ) {
     const [visible, togglePopoverMenuVisibility] = useToggler(false);
     const [triggerHasFocus, toggleTriggerFocus] = useToggler(false);
-    const [animationsEnabled, toggleAnimations] = useToggler(false);
-    const { rotateAnimationRef } = useRotate180Animation(visible, animationsEnabled);
+    const { rotateAnimationRef, animateClockwise, animateCounterClockwise } =
+      useRotateAnimation(180);
     const focusedVariant = useInputVariant(triggerHasFocus, variant);
+    /** prevents animation from firing on mount */
+    const [animationsEnabled, toggleAnimations] = useToggler(false);
 
     // this corrects for when value is initialized with an empty string, coerce it to undefined
     const sanitizedValue = value === '' ? undefined : value;
@@ -54,10 +56,21 @@ export const Select = memo(
     }, [toggleTriggerFocus]);
 
     const handleOnSelectPress = useCallback(() => {
-      toggleAnimations.toggleOn();
       onPress?.();
+      toggleAnimations.toggleOn();
       toggleTriggerFocus.toggleOn();
-    }, [toggleTriggerFocus, toggleAnimations, onPress]);
+    }, [toggleTriggerFocus, onPress, toggleAnimations]);
+
+    useEffect(() => {
+      if (!animationsEnabled) {
+        return;
+      }
+      if (visible) {
+        void animateClockwise();
+      } else {
+        void animateCounterClockwise();
+      }
+    }, [animateClockwise, animateCounterClockwise, visible, animationsEnabled]);
 
     return (
       <HStack width={width}>
