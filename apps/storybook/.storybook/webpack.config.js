@@ -6,9 +6,12 @@ const HtmlPlugin = require('html-webpack-plugin');
 const BABEL_OPTIONS = { configFile: true, rootMode: 'upward' };
 
 module.exports = ({ config, environmentFile }) => {
+  const dotEnv = require('dotenv').config({ path: path.resolve(__dirname, '.env') }).parsed;
+  const envVars = { ...dotEnv, ...process.env };
+
   config.plugins?.push(
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify(process.env),
+      'process.env': JSON.stringify(envVars),
     }),
   );
 

@@ -24,6 +24,14 @@ type Parameters<Props, WrapperProps, Wrapper extends React.ComponentType<Wrapper
     url: string;
     accessToken: string;
   };
+  percy?: {
+    /**  Boolean indicating whether or not to skip this story. */
+    skip?: boolean;
+    /** Story args to use when snapshotting. */
+    args?: Props;
+    /**  An array of additional snapshots to take of this story */
+    additionalSnapshots?: { args?: Props }[];
+  };
   // add types for parameters within addons that we want to support here
 };
 
