@@ -1,3 +1,132 @@
+import { Principles } from ':cds-website/components/Principles';
+import { Image } from ':cds-website/components/Image';
+import { Divider } from '@cbhq/cds-web/layout';
+import { VStack, HStack } from '@cbhq/cds-web/layout';
+import { TextTitle3, TextBody } from '@cbhq/cds-web/typography';
+import { AppSwitcherContent } from '@cbhq/cds-web/__stories__/AppSwitcherContent';
+
+import anatomy from ':cds-website/static/img/recipes/AppSwitcher/anatomy.png';
+import commerce from ':cds-website/static/img/recipes/AppSwitcher/commerce.png';
+import mobile from ':cds-website/static/img/recipes/AppSwitcher/mobile.png';
+
 ## Principles
 
-Coming soon!
+<br />
+
+<HStack gap={3}>
+  <VStack width="33%">
+    <TextTitle3 as="p">Discoverable</TextTitle3>
+    <TextBody as="p">
+      Provide customers with a centralized way to discover all products that Coinbase offers.
+    </TextBody>
+  </VStack>
+  <VStack width="33%">
+    <TextTitle3 as="p">Unified</TextTitle3>
+    <TextBody as="p">
+      Convey to customers that our product ecosystem is a unified, holistic experience.
+    </TextBody>
+  </VStack>
+  <VStack width="33%">
+    <TextTitle3 as="p">Seamless</TextTitle3>
+    <TextBody as="p">Users can switch between Coinbase products without logging in again</TextBody>
+  </VStack>
+</HStack>
+
+<br />
+
+## Anatomy
+
+App Switcher is composed with the following elements.
+
+<br />
+
+<Image src={anatomy} options={{ width: '100%' }} />
+
+<br />
+<br />
+
+<br />
+
+## Placement
+
+On web, App Switcher is anchored below the App Switcher Icon Button that lives in the unified Navigation Bar. It is pinned to the top right corner of the screen.
+
+<br />
+
+<Image src={commerce} options={{ width: '100%' }} />
+
+<br />
+<br />
+
+On Mobile, App Switcher is positioned below the Navigation Bar and centered on the screen.
+
+<br />
+
+<Image src={mobile} />
+
+<br />
+<br />
+
+<br />
+
+## Behavior
+
+<br />
+
+### Opening and closing
+
+<br />
+
+<ul>
+  <li>When the App Switcher Icon Button is triggered, a background overlay appears.</li>
+  <li>App Switcher animates in from the top of the screen.</li>
+  <li>Selecting a product or clicking outside of the Menu will close the App Switcher.</li>
+</ul>
+
+<br />
+
+### Scrolling
+
+<br />
+
+<ul>
+  <li>A scrollbar will appear in the Menu when the height of the Popover Menu exceeds 600px.</li>
+</ul>
+
+<VStack width="100%" alignItems="center">
+  <VStack width={359}>
+    <AppSwitcherContent />
+  </VStack>
+</VStack>
+
+<br />
+
+### Overflow
+
+<br />
+
+<ul>
+  <li>
+    If a Product Name is longer than the width of the Square Button container, the name will
+    truncate to one line line with “...”.
+  </li>
+  <li>
+    On hover, the full name will show on two lines. This should not push down or disrupt the other
+    items in the Menu.{' '}
+  </li>
+</ul>
+
+<VStack width="100%" alignItems="center">
+  <VStack width={359}>
+    <AppSwitcherContent />
+  </VStack>
+</VStack>
+
+<br />
+
+## Adding products
+
+<br />
+
+The App Switcher will include core Coinbase products and highest impact & upsell opportunity features and services.
+If your product is eligible, contact @joe (Joe Biesmeyer).
