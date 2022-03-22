@@ -1,4 +1,4 @@
-import { memo, ReactNode } from 'react';
+import React, { memo, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
 import { isSSR } from '../utils/browser';

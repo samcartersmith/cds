@@ -36,12 +36,14 @@ module.exports = {
       files: ['**/*.tsx'],
       rules: {
         'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
+        'react/react-in-jsx-scope': 'error',
       },
     },
     {
-      files: ['**/*.test.ts', '**/*.test.tsx', '**/*.stories.tsx'],
+      files: ['**/*.test.ts', '**/*.test.tsx', '**/*.stories.tsx', '**/__stories__/**'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
+        'react/react-in-jsx-scope': 'off',
       },
     },
   ],
