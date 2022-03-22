@@ -84,29 +84,39 @@ export type BorderedStyles = {
   borderColor?: PaletteBorder;
 };
 
-export type BoxBaseProps = {
+export type BoxA11yProps = Pick<
+  SharedAccessibilityProps,
+  'accessibilityLabel' | 'accessibilityLabelledBy'
+> & {
+  /** @danger This should only be used for accessibility purposes, eg: aria-controls https://accessibilityresources.org/aria-controls */
+  id?: string;
+};
+
+export type BoxBackgroundProps = {
   /**
    * Set the background color of the box. Passing `true` will enable the default background,
    * otherwise a custom palette alias can be passed.
    */
   background?: true | Exclude<PaletteBackground, 'divider' | 'stroke'>;
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetBackground?: string;
+};
+
+export type BoxBaseProps = {
   /** Content to render within the box. */
   children?: React.ReactNode;
   /** Direction in which to absolutely pin the box. */
   pin?: PinningDirection;
   /** Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped. */
   elevation?: ElevationLevels;
-  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
-  dangerouslySetBackground?: string;
-  /** @danger This should only be used for accessibility purposes, eg: aria-controls https://accessibilityresources.org/aria-controls */
-  id?: string;
 } & DimensionStyles &
   FlexStyles &
   OffsetProps &
   SpacingProps &
   PositionStyles &
   BorderedStyles &
-  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy'>;
+  BoxA11yProps &
+  BoxBackgroundProps;
 
 export type StackBaseProps = {
   /** Gap to insert between siblings. */
