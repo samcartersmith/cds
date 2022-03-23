@@ -194,14 +194,14 @@ function UserSwitcherContentExample() {
   }
 
   return (
-    <VStack spacingHorizontal={1}>
-      <VStack gap={1} alignItems="center" spacingTop={1}>
+    <FeatureFlagProvider frontierColor frontierButton>
+      <VStack gap={1} alignItems="center" spacingTop={1} spacingHorizontal={1}>
         <Avatar size="xxxl" selected alt="Brian Armstrong" src={avatarUri} />
         <VStack alignItems="center">
-          <TextTitle3 align="center" as="h3">
+          <TextTitle3 align="center" as="h3" overflow="wrap">
             {name}
           </TextTitle3>
-          <TextBody align="center" as="p">
+          <TextBody align="center" as="p" overflow="wrap">
             {email}
           </TextBody>
         </VStack>
@@ -209,19 +209,21 @@ function UserSwitcherContentExample() {
           Manage Settings
         </Button>
       </VStack>
-      <SectionTitle text="Your Accounts" />
-      <VStack maxHeight={userAccountsListMaxHeight} overflow="auto" gap={0.5}>
+      <VStack spacingHorizontal={2}>
+        <SectionTitle text="Your other accounts" />
+      </VStack>
+      <VStack maxHeight={userAccountsListMaxHeight} overflow="auto" gap={0.5} spacingHorizontal={1}>
         {otherAccountsData.map((userProps) => (
           <UserAccountListCell {...userProps} />
         ))}
-        <HStack>
+        <HStack spacingHorizontal={0.5}>
           <Button startIcon="followInactive" transparent>
             Add Account
           </Button>
         </HStack>
       </VStack>
-      <Divider spacingTop={1} spacingBottom={2} />
-      <VStack alignItems="center" gap={1}>
+      <Divider spacingBottom={2} />
+      <VStack alignItems="center" gap={1} spacingHorizontal={1}>
         <Button variant="secondary" block>
           Sign out
         </Button>
@@ -229,7 +231,7 @@ function UserSwitcherContentExample() {
           Sign out of all accounts
         </Button>
       </VStack>
-    </VStack>
+    </FeatureFlagProvider>
   );
 }
 ```

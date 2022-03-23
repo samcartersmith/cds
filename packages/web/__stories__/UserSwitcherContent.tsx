@@ -98,14 +98,14 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
   const { name, email, avatarUri } = data.find((user) => user.selected) as UserSwitcherData;
   const otherAccountsData = data.filter((user) => !user.selected);
   return (
-    <VStack spacingHorizontal={1}>
-      <VStack gap={1} alignItems="center" spacingTop={1}>
+    <>
+      <VStack gap={1} alignItems="center" spacingTop={1} spacingHorizontal={1}>
         <Avatar size="xxxl" selected alt="Brian Armstrong" src={avatarUri} />
         <VStack alignItems="center">
-          <TextTitle3 align="center" as="h3">
+          <TextTitle3 align="center" as="h3" overflow="wrap">
             {name}
           </TextTitle3>
-          <TextBody align="center" as="p">
+          <TextBody align="center" as="p" overflow="wrap">
             {email}
           </TextBody>
         </VStack>
@@ -113,24 +113,34 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
           Manage Settings
         </Button>
       </VStack>
-      <SectionTitle text="Your other accounts" />
-      <VStack maxHeight={userAccountsListMaxHeight} overflow="scroll" gap={0.5}>
+      <VStack spacingHorizontal={2}>
+        <SectionTitle text="Your other accounts" />
+      </VStack>
+      <VStack
+        maxHeight={userAccountsListMaxHeight}
+        spacingBottom={1}
+        overflow="auto"
+        gap={0.5}
+        spacingHorizontal={1}
+      >
         {otherAccountsData.map((userProps) => (
           <UserAccountListCell {...userProps} />
         ))}
-        <HStack>
+        <HStack spacingHorizontal={0.5}>
           <Button startIcon="followInactive" transparent>
             Add Account
           </Button>
         </HStack>
       </VStack>
-      <Divider spacingTop={1} spacingBottom={2} />
-      <VStack alignItems="center" gap={1}>
+      <Divider spacingBottom={2} />
+      <VStack alignItems="center" gap={1} spacingHorizontal={1}>
         <Button variant="secondary" block>
           Sign out
         </Button>
-        <Button transparent>Sign out of all accounts</Button>
+        <Button transparent block>
+          Sign out of all accounts
+        </Button>
       </VStack>
-    </VStack>
+    </>
   );
 });
