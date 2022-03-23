@@ -138,12 +138,19 @@ function UserSwitcherContentExample() {
       selected: false,
       authenticated: true,
     },
+    {
+      name: 'Test Account',
+      email: 'brian.armstrong+test@coinbase.com',
+      selected: false,
+      authenticated: false,
+    },
   ];
 
   // this is the height of 3 account list cells, if there are more, it will scroll vertically
   const userAccountsListMaxHeight = 208;
 
   const { name, email, avatarUri } = userSwitcherData.find((user) => user.selected);
+  const otherAccountsData = userSwitcherData.filter((user) => !user.selected);
 
   function NoopFn() {
     console.log('pressed');
@@ -161,17 +168,12 @@ function UserSwitcherContentExample() {
     );
 
     return (
-      <>
-        <PressableOpacity
-          noScaleOnPress
-          className={insetFocusRing}
-          onPress={!selected ? toggle : NoopFn}
-        >
+      <VStack background={collapsed ? 'background' : 'backgroundAlternate'} borderRadius="standard">
+        <PressableOpacity noScaleOnPress className={insetFocusRing} onPress={toggle}>
           <ListCell
             title={name}
-            selected={selected}
             description={email}
-            accessory={selected ? 'selected' : 'arrow'}
+            action={<CollapseArrow degrees={90} collapsed={collapsed} />}
             outerSpacing={userCellOuterSpacingConfig}
             intermediary={!authenticated && 'Signed out'}
             priority="middle"
@@ -179,17 +181,15 @@ function UserSwitcherContentExample() {
             compact
           />
         </PressableOpacity>
-        <Collapsible collapsed={collapsed}>
-          <HStack spacingVertical={0.5} spacingStart={4} gap={0.5}>
-            <Button compact transparent variant="negative">
+        <Collapsible collapsed={collapsed} dangerouslyDisableOverflowHidden>
+          <HStack spacingTop={0.5} spacingBottom={1} spacingStart={8} gap={0.5}>
+            <Button compact>Sign in</Button>
+            <Button compact transparent variant="secondary">
               Remove
-            </Button>
-            <Button compact transparent>
-              Sign in
             </Button>
           </HStack>
         </Collapsible>
-      </>
+      </VStack>
     );
   }
 
@@ -210,8 +210,8 @@ function UserSwitcherContentExample() {
         </Button>
       </VStack>
       <SectionTitle text="Your Accounts" />
-      <VStack maxHeight={userAccountsListMaxHeight} overflow="scroll" gap={0.5}>
-        {userSwitcherData.map((userProps) => (
+      <VStack maxHeight={userAccountsListMaxHeight} overflow="auto" gap={0.5}>
+        {otherAccountsData.map((userProps) => (
           <UserAccountListCell {...userProps} />
         ))}
         <HStack>
@@ -222,8 +222,12 @@ function UserSwitcherContentExample() {
       </VStack>
       <Divider spacingTop={1} spacingBottom={2} />
       <VStack alignItems="center" gap={1}>
-        <Button block>Sign out</Button>
-        <Button transparent>Sign out of all accounts</Button>
+        <Button variant="secondary" block>
+          Sign out
+        </Button>
+        <Button transparent block>
+          Sign out of all accounts
+        </Button>
       </VStack>
     </VStack>
   );

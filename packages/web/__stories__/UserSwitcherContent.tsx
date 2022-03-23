@@ -11,7 +11,7 @@ import { Divider, HStack, VStack } from '../layout';
 import { Avatar } from '../media/Avatar';
 import { SectionTitle } from '../overlays/PopoverMenu/SectionTitle';
 import { insetFocusRing } from '../styles/focus';
-import { PressableOpacity } from '../system';
+import { PressableOpacity } from '../system/PressableOpacity';
 import { TextBody, TextTitle3 } from '../typography';
 
 type UserSwitcherData = {
@@ -43,15 +43,15 @@ const userSwitcherData: UserSwitcherData[] = [
     selected: false,
     authenticated: true,
   },
+  {
+    name: 'Test Account',
+    email: 'brian.armstrong+test@coinbase.com',
+    selected: false,
+    authenticated: false,
+  },
 ];
 
-const UserAccountListCell = ({
-  name,
-  email,
-  selected,
-  authenticated,
-  avatarUri,
-}: UserSwitcherData) => {
+const UserAccountListCell = ({ name, email, authenticated, avatarUri }: UserSwitcherData) => {
   const [collapsed, { toggle }] = useToggler(true);
 
   const userCellOuterSpacingConfig: CellSpacing = useMemo(
@@ -63,17 +63,12 @@ const UserAccountListCell = ({
   );
 
   return (
-    <>
-      <PressableOpacity
-        noScaleOnPress
-        className={insetFocusRing}
-        onPress={!selected ? toggle : NoopFn}
-      >
+    <VStack background={collapsed ? 'background' : 'backgroundAlternate'} borderRadius="standard">
+      <PressableOpacity noScaleOnPress className={insetFocusRing} onPress={toggle}>
         <ListCell
           title={name}
-          selected={selected}
           description={email}
-          action={!selected && <CollapseArrow degrees={90} collapsed={collapsed} />}
+          action={<CollapseArrow degrees={90} collapsed={collapsed} />}
           outerSpacing={userCellOuterSpacingConfig}
           intermediary={!authenticated && 'Signed out'}
           priority="middle"
@@ -82,16 +77,14 @@ const UserAccountListCell = ({
         />
       </PressableOpacity>
       <Collapsible collapsed={collapsed} dangerouslyDisableOverflowHidden>
-        <HStack spacingVertical={0.5} spacingStart={4} gap={0.5}>
-          <Button compact transparent variant="negative">
+        <HStack spacingTop={0.5} spacingBottom={1} spacingStart={8} gap={0.5}>
+          <Button compact>Sign in</Button>
+          <Button compact transparent variant="secondary">
             Remove
-          </Button>
-          <Button compact transparent>
-            Sign in
           </Button>
         </HStack>
       </Collapsible>
-    </>
+    </VStack>
   );
 };
 
@@ -103,6 +96,7 @@ const userAccountsListMaxHeight = 208;
 
 export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitcherContentProps) => {
   const { name, email, avatarUri } = data.find((user) => user.selected) as UserSwitcherData;
+  const otherAccountsData = data.filter((user) => !user.selected);
   return (
     <VStack spacingHorizontal={1}>
       <VStack gap={1} alignItems="center" spacingTop={1}>
@@ -119,9 +113,9 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
           Manage Settings
         </Button>
       </VStack>
-      <SectionTitle text="Your Accounts" />
+      <SectionTitle text="Your other accounts" />
       <VStack maxHeight={userAccountsListMaxHeight} overflow="scroll" gap={0.5}>
-        {data.map((userProps) => (
+        {otherAccountsData.map((userProps) => (
           <UserAccountListCell {...userProps} />
         ))}
         <HStack>
@@ -132,7 +126,9 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
       </VStack>
       <Divider spacingTop={1} spacingBottom={2} />
       <VStack alignItems="center" gap={1}>
-        <Button block>Sign out</Button>
+        <Button variant="secondary" block>
+          Sign out
+        </Button>
         <Button transparent>Sign out of all accounts</Button>
       </VStack>
     </VStack>
