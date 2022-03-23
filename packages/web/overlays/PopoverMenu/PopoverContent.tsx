@@ -2,6 +2,7 @@ import React, { memo, ReactNode, useMemo } from 'react';
 import { css } from 'linaria';
 
 import { VStack } from '../../layout/VStack';
+import { transparentScrollbar } from '../../styles/scrollbar';
 import { cx } from '../../utils/linaria';
 
 import { usePopoverContext } from './PopoverContext';
@@ -64,7 +65,11 @@ export const PopoverContent = memo(({ children }: PopoverContentProps) => {
         maxHeight={maxHeight}
         minWidth={minWidth}
         maxWidth={maxWidth}
-        dangerouslySetClassName={cx(popoverMenuStaticClassName, popoverStyleOverrides)}
+        dangerouslySetClassName={cx(
+          popoverMenuStaticClassName,
+          popoverStyleOverrides,
+          transparentScrollbar,
+        )}
       >
         {children}
       </VStack>

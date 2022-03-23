@@ -198,7 +198,7 @@ function AppSwitcherContentRecipeExample() {
                   .slice(row * columns, row * columns + columns)
                   .map((props) => {
                     return (
-                      <HStack zIndex={getZIndexFromRow(row, rows)}>
+                      <HStack zIndex={getZIndexFromRow(row, rows)} gap={0.5} spacingBottom={0.5}>
                         <TileButton {...props} />
                       </HStack>
                     );
@@ -207,7 +207,6 @@ function AppSwitcherContentRecipeExample() {
             );
           })}
         </VStack>
-        <Divider spacingVertical={1} />
       </>
     );
   }
@@ -215,8 +214,13 @@ function AppSwitcherContentRecipeExample() {
   function AppSwitcherContentRecipe({ columns = 3, data = appSwitcherData }) {
     return (
       <VStack>
-        {data.sections.map((section) => {
-          return <AppSwitcherContentSection data={section} columns={columns} />;
+        {data.sections.map((section, idx) => {
+          return (
+            <>
+              <AppSwitcherContentSection data={section} columns={columns} />
+              {data.sections.length - 1 !== idx && <Divider spacingVertical={1} />}
+            </>
+          );
         })}
       </VStack>
     );

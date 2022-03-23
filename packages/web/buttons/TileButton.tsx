@@ -1,5 +1,6 @@
-import React, { ForwardedRef, forwardRef, memo } from 'react';
+import React, { ForwardedRef, forwardRef, memo, useCallback } from 'react';
 import { css } from 'linaria';
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { tileSize } from '@cbhq/cds-common/tokens/tile';
@@ -36,6 +37,16 @@ export const TileButton = memo(
     { pictogram, title, count, ...props }: TileButtonProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) {
+    const [shouldOverflow, toggleShouldOverflow] = useToggler(false);
+
+    const handleShowOverflow = useCallback(() => {
+      toggleShouldOverflow.toggleOn();
+    }, [toggleShouldOverflow]);
+
+    const handleHideOverflow = useCallback(() => {
+      toggleShouldOverflow.toggleOff();
+    }, [toggleShouldOverflow]);
+
     return (
       <div className={wrapperStyles}>
         <Pressable
@@ -46,8 +57,10 @@ export const TileButton = memo(
           width={tileSize}
           noScaleOnPress
           className={cx(insetFocusRing, pressableStyles)}
+          onFocus={handleShowOverflow}
+          onBlur={handleHideOverflow}
         >
-          <Tile title={title} pictogram={pictogram} count={count} />
+          <Tile title={title} pictogram={pictogram} count={count} showOverflow={shouldOverflow} />
         </Pressable>
       </div>
     );

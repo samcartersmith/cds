@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, useCallback, useEffect, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common';
 import { pictogramWrapperSize, tileSize } from '@cbhq/cds-common/tokens/tile';
 import { TileBaseProps } from '@cbhq/cds-common/types';
@@ -12,16 +12,24 @@ import { useOverflowTextStyles } from '../utils/overflow';
 /**
  * @danger this component is for internal use only
  */
-export const Tile = memo(({ pictogram, title, count }: TileBaseProps) => {
+export const Tile = memo(({ pictogram, title, count, showOverflow }: TileBaseProps) => {
   const [shouldOverflow, toggleShouldOverflow] = useToggler(false);
   const overflowTextStyles = useOverflowTextStyles(shouldOverflow);
 
-  const handleMouseEnter = useCallback(() => {
+  const handleShowOverflow = useCallback(() => {
     toggleShouldOverflow.toggleOn();
   }, [toggleShouldOverflow]);
-  const handleMouseLeave = useCallback(() => {
+  const handleHideOverflow = useCallback(() => {
     toggleShouldOverflow.toggleOff();
   }, [toggleShouldOverflow]);
+
+  useEffect(() => {
+    if (showOverflow) {
+      handleShowOverflow();
+    } else {
+      handleHideOverflow();
+    }
+  }, [showOverflow, handleShowOverflow, handleHideOverflow]);
 
   /* Pictogram size is a close estimation of maxWidth and maxHeight based on Figma specs which vary by Pictogram type */
   const renderPictogram = useMemo(() => {
@@ -41,8 +49,8 @@ export const Tile = memo(({ pictogram, title, count }: TileBaseProps) => {
       gap={1}
       spacing={1}
       width={tileSize}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={handleShowOverflow}
+      onMouseLeave={handleHideOverflow}
     >
       <VStack
         justifyContent="center"

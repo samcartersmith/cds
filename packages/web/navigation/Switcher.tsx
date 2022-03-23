@@ -10,6 +10,8 @@ import { useOverlayAnimation } from '../overlays/Overlay/useOverlayAnimation';
 import { usePopoverMenuAnimation } from '../overlays/PopoverMenu/usePopoverMenuAnimation';
 import { PositionedOverlay } from '../overlays/positionedOverlay/PositionedOverlay';
 import { PositionedOverlayProps } from '../overlays/positionedOverlay/PositionedOverlayProps';
+import { transparentScrollbar } from '../styles/scrollbar';
+import { cx } from '../utils/linaria';
 
 const switcherGutter: SpacingScale = 1;
 
@@ -30,6 +32,7 @@ export type SwitcherBaseProps = {
 
 const contentStyles = css`
   overflow-y: scroll;
+  overflow-x: hidden;
 `;
 
 type UseSwitcherAnimationParams = {
@@ -94,7 +97,7 @@ export const Switcher = ({
         maxWidth={maxWidth}
         minHeight={minHeight}
         maxHeight={maxHeight}
-        dangerouslySetClassName={contentStyles}
+        dangerouslySetClassName={cx(contentStyles, transparentScrollbar)}
         borderRadius="popover"
         elevation={2}
         background="background"

@@ -64,28 +64,25 @@ type AppSwitcherContentSectionProps = {
 const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSectionProps) => {
   const rows = Math.ceil(data.tiles.length / columns);
   return (
-    <>
-      <VStack spacingHorizontal={2}>
-        <SectionTitle text={data.sectionTitle} />
-        {Array.from(Array(rows)).map((_, row) => {
-          return (
-            <HStack gap={0.5}>
-              {data.tiles
-                // We are able to infer the interval because we know how big dataset is + what row we are on.
-                .slice(row * columns, row * columns + columns)
-                .map((props) => {
-                  return (
-                    <HStack zIndex={getZIndexFromRow(row, rows)}>
-                      <TileButton {...props} />
-                    </HStack>
-                  );
-                })}
-            </HStack>
-          );
-        })}
-      </VStack>
-      <Divider spacingVertical={1} />
-    </>
+    <VStack spacingHorizontal={2}>
+      <SectionTitle text={data.sectionTitle} />
+      {Array.from(Array(rows)).map((_, row) => {
+        return (
+          <HStack gap={0.5}>
+            {data.tiles
+              // We are able to infer the interval because we know how big dataset is + what row we are on.
+              .slice(row * columns, row * columns + columns)
+              .map((props) => {
+                return (
+                  <HStack zIndex={getZIndexFromRow(row, rows)} gap={0.5} spacingBottom={0.5}>
+                    <TileButton {...props} />
+                  </HStack>
+                );
+              })}
+          </HStack>
+        );
+      })}
+    </VStack>
   );
 });
 
@@ -98,8 +95,13 @@ export const AppSwitcherContent = memo(
   ({ columns = 3, data = appSwitcherData }: AppSwitcherContentProps) => {
     return (
       <VStack>
-        {data.sections.map((section) => {
-          return <AppSwitcherContentSection data={section} columns={columns} />;
+        {data.sections.map((section, idx) => {
+          return (
+            <>
+              <AppSwitcherContentSection data={section} columns={columns} />
+              {data.sections.length - 1 !== idx && <Divider spacingVertical={1} />}
+            </>
+          );
         })}
       </VStack>
     );

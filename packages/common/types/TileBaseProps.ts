@@ -5,4 +5,6 @@ export type TileBaseProps = {
   pictogram: IllustrationPictogramNames;
   /** Surfaces a DotCount around the Pictogram */
   count?: number;
+  /** Reveals truncated title text */
+  showOverflow?: boolean;
 };
