@@ -11,6 +11,7 @@
 	  {
 		"path": "../../packages/fonts"
 	  }
-	]
+	],
+	"exclude": ["babel.config.js"]
 }
   

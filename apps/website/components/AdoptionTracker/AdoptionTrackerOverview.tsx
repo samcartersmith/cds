@@ -12,12 +12,13 @@ import { TextBody, TextDisplay2, TextHeadline, TextTitle2 } from '@cbhq/cds-web/
 import { BetaCell } from ':cds-website/components/BetaCell';
 import { adopters } from ':cds-website/data/adopters';
 
+import { SplitScreenStack } from '../SplitScreenStack';
+
 import { AdopterProjectInfoProvider } from './context/AdopterProjectInfoProvider';
 import { AdopterStatsProvider, statsFallback } from './context/AdopterStatsProvider';
 import { useAdopterProjectInfo } from './hooks/useAdopterProjectInfo';
 import { useAdopterStats } from './hooks/useAdopterStats';
 import { getPercentageText } from './utils/getPercentageText';
-import { AdopterSplitScreenStack } from './AdopterSplitScreenStack';
 import { AdopterStatsBreakdownCell } from './AdopterStatsBreakdown';
 import type { Adopter, AdopterStatsItem } from './types';
 import { AdopterProjectInfo, AdopterStats } from './types';
@@ -71,7 +72,7 @@ const PercentChange = memo(({ showParenthesis }: { showParenthesis?: boolean }) 
   );
 });
 
-const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps) => {
+export const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps) => {
   const { label, id } = useAdopterProjectInfo();
   const { latest } = useAdopterStats();
 
@@ -108,7 +109,7 @@ const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps) => {
   );
 });
 
-const Project: React.FC<ProjectProps> = memo(({ id, children }) => {
+export const Project: React.FC<ProjectProps> = memo(({ id, children }) => {
   const { projectInfo, stats } = useProject(id);
   return (
     <AdopterProjectInfoProvider {...projectInfo}>
@@ -177,7 +178,7 @@ const DetailStatCell = memo(
   },
 );
 
-const ActiveProject = memo(() => {
+export const ActiveProject = memo(() => {
   const { label, id } = useAdopterProjectInfo();
   const { latest, previous } = useAdopterStats();
   const [allExpanded, { toggle: setAllExpanded }] = useToggler(false);
@@ -242,7 +243,7 @@ export const AdoptionTrackerOverview = memo(() => {
 
   return (
     <ThemeProvider>
-      <AdopterSplitScreenStack start={start} end={end} />
+      <SplitScreenStack start={start} end={end} />
     </ThemeProvider>
   );
 });

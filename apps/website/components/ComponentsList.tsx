@@ -15,18 +15,18 @@ import {
   AdopterSearchContextType,
 } from ':cds-website/components/AdoptionTracker/search/AdopterSearchProvider';
 
-import { getResultsByType, isMatch } from './search/SearchUtils';
-import { AdopterComponentDetails } from './AdopterComponentDetails';
-import { AdopterComponentsEmptyState } from './AdopterComponentsEmptyState';
-import { AdopterSplitScreenStack } from './AdopterSplitScreenStack';
-import type { AdopterSearchResult, AdopterTabKey, ComponentData } from './types';
+import { AdopterComponentDetails } from './AdoptionTracker/AdopterComponentDetails';
+import { AdopterComponentsEmptyState } from './AdoptionTracker/AdopterComponentsEmptyState';
+import { getResultsByType, isMatch } from './AdoptionTracker/search/SearchUtils';
+import type { AdopterSearchResult, AdopterTabKey, ComponentData } from './AdoptionTracker/types';
+import { SplitScreenStack } from './SplitScreenStack';
 
-type AdopterListCellProps = ComponentData & {
+type ListCellProps = ComponentData & {
   isActive: boolean;
   setActiveComponent: () => void;
 };
 
-const AdopterListCell = memo((props: AdopterListCellProps) => {
+const ComponentListCell = memo((props: ListCellProps) => {
   const { isActive, setActiveComponent, ...componentInfo } = props;
   const { name, totalCallSites, totalInstances } = componentInfo;
 
@@ -115,7 +115,7 @@ export const AdopterComponentsList = memo(
           className={index % 2 ? 'ListItemOdd' : 'ListItemEven'}
           style={style}
         >
-          <AdopterListCell
+          <ComponentListCell
             isActive={isActive}
             // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
             setActiveComponent={() => setActiveComponentIndex(index)}
@@ -152,6 +152,6 @@ export const AdopterComponentsList = memo(
 
     const end = activeComponent ? <AdopterComponentDetails {...activeComponent} /> : null;
 
-    return <AdopterSplitScreenStack start={start} end={end} />;
+    return <SplitScreenStack start={start} end={end} />;
   },
 );

@@ -8,7 +8,8 @@
     "start": "start-storybook -p 6006",
     "stylelint": "nx run storybook:lint-styles",
     "stylelint.fix": "nx run storybook:lint-styles --fix",
-    "typecheck": "nx run storybook:typecheck"
+    "typecheck": "nx run storybook:typecheck",
+    "a11y": "nx run storybook:build && jest a11y.test"
   },
   "dependencies": {
     "@cbhq/cds-fonts": "workspace:*",
@@ -29,6 +30,8 @@
     "@storybook/addon-docs": "^6.4.17",
     "@storybook/addon-essentials": "^6.4.17",
     "@storybook/addon-links": "^6.4.17",
+    "@storybook/addon-storyshots": "^6.4.17",
+    "@storybook/addon-storyshots-puppeteer": "^6.4.17",
     "@storybook/addon-toolbars": "^6.4.17",
     "@storybook/addon-viewport": "^6.4.17",
     "@storybook/addons": "^6.4.17",
@@ -37,6 +40,7 @@
     "@storybook/react": "^6.4.17",
     "@storybook/theming": "^6.4.17",
     "dotenv": "^16.0.0",
+    "puppeteer": "^13.5.1",
     "storybook-addon-designs": "^6.0.1",
     "storybook-addon-performance": "^0.16.0",
     "storybook-addon-pseudo-states": "^1.0.0"

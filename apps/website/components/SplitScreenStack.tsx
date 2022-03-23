@@ -2,12 +2,12 @@ import { memo } from 'react';
 import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
 import { Divider, HStack, VStack } from '@cbhq/cds-web/layout';
 
-type AdopterSplitScreenStackProps = {
+type SplitScreenStackProps = {
   start?: React.ReactNode;
   end?: React.ReactNode;
 };
 
-export const AdopterSplitScreenStack = memo(({ start, end }: AdopterSplitScreenStackProps) => {
+export const SplitScreenStack = memo(({ start, end }: SplitScreenStackProps) => {
   return (
     <HStack alignItems="flex-start" justifyContent="space-between">
       <VStack flexGrow={1}>{start}</VStack>

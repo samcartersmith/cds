@@ -7,6 +7,8 @@ import { TextBody, TextTitle1 } from '@cbhq/cds-web/typography';
 import { StatsTextStack } from ':cds-website/components/StatsTextStack';
 import { Tabs } from ':cds-website/components/Tabs';
 
+import { AdopterComponentsList } from '../ComponentsList';
+
 import {
   AdopterTabContext,
   AdopterTabContextType,
@@ -19,7 +21,6 @@ import { useAdoptionPercent } from './hooks/useAdoptionPercent';
 import { useOkrPlanningComponents } from './hooks/useOkrPlanningComponents';
 import { AdopterSearchInput } from './search/AdopterSearchInput';
 import { AdopterSearchProvider } from './search/AdopterSearchProvider';
-import { AdopterComponentsList } from './AdopterComponentsList';
 import { AdopterStatsBreakdown } from './AdopterStatsBreakdown';
 import { ComponentData } from './types';
 
