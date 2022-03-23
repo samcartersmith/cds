@@ -53,7 +53,6 @@ const UserSwitcherRecipe = memo(({ children }) => {
           onPressSubject={handleClickSubject}
           onClose={handleClose}
           content={<UserSwitcherContent />}
-          minWidth={userSwitcherWidth}
           maxWidth={userSwitcherWidth}
         >
           {children}

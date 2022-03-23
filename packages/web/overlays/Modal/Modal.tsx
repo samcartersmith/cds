@@ -7,10 +7,6 @@ import {
   animateOutOpacityConfig,
   animateOutScaleConfig,
 } from '@cbhq/cds-common/animation/modal';
-import {
-  animateInOpacityConfig as animateInOverlayOpacityConfig,
-  animateOutOpacityConfig as animateOutOverlayOpacityConfig,
-} from '@cbhq/cds-common/animation/overlay';
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
 import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 
@@ -18,39 +14,23 @@ import { Animated } from '../../animation/Animated';
 import { VStack } from '../../layout';
 import { cx } from '../../utils/linaria';
 import { FocusTrap } from '../FocusTrap';
-import { Overlay } from '../Overlay/Overlay';
 
-import {
-  modalDefaultClassName,
-  modalOverlayResponsiveClassName,
-  modalResponsiveClassName,
-} from './modalStyles';
+import { modalDefaultClassName, modalResponsiveClassName } from './modalStyles';
 import { ModalWrapper, ModalWrapperProps } from './ModalWrapper';
 
 export type ModalProps = {
-  /**
-   * Disable overlay click that closes the Modal
-   * @default false
-   */
-  disableOverlayPress?: boolean;
   /**
    * If pressing the esc key should close the modal
    * @default true
    */
   shouldCloseOnEscPress?: boolean;
   /**
-   * Disable responsiveness so it maintains the same UI across different viewports.
-   * @danger This is a migration escape hatch. It is not intended to be used normally.
-   * @default false
-   */
-  dangerouslyDisableResponsiveness?: boolean;
-  /**
    * Set the position for the modal dialogue
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslySetPosition?: Position;
 } & ModalBaseProps &
-  ModalWrapperProps;
+  Omit<ModalWrapperProps, 'onOverlayPress'>;
 
 export const Modal = memo(
   forwardRef<ModalRefBaseProps, React.PropsWithChildren<ModalProps>>((props, ref) => {
@@ -109,24 +89,10 @@ export const Modal = memo(
         zIndex={customZIndex}
         dangerouslySetClassName={dangerouslySetClassName}
         id={id}
+        disableOverlayPress={disableOverlayPress}
+        dangerouslyDisableResponsiveness={dangerouslyDisableResponsiveness}
+        onOverlayPress={handleClose}
       >
-        <motion.div
-          initial={
-            Animated.toFramerTransition([animateOutOverlayOpacityConfig], {
-              propertiesOnly: true,
-            }) as Target
-          }
-          animate={Animated.toFramerTransition([animateInOverlayOpacityConfig])}
-          exit={Animated.toFramerTransition([animateOutOverlayOpacityConfig])}
-        >
-          <Overlay
-            onPress={disableOverlayPress ? undefined : handleClose}
-            dangerouslySetClassName={
-              !dangerouslyDisableResponsiveness ? modalOverlayResponsiveClassName : undefined
-            }
-            testID="modal-overlay"
-          />
-        </motion.div>
         <motion.div
           initial={
             Animated.toFramerTransition([animateOutOpacityConfig, animateOutScaleConfig], {

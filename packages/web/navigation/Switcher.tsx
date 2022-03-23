@@ -1,37 +1,42 @@
-import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { forwardRef, memo, useCallback, useEffect, useRef, useState } from 'react';
 import { css } from 'linaria';
 import { animateMenuOpacityInConfig } from '@cbhq/cds-common/animation/menu';
-import { DimensionValue } from '@cbhq/cds-common/types';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+import { DimensionValue, ForwardedRef } from '@cbhq/cds-common/types';
 import { SpacingScale } from '@cbhq/cds-common/types/SpacingScale';
 
 import { Animated } from '../animation/Animated';
+import { useA11yControlledVisibility } from '../hooks/useA11yControlledVisibility';
 import { VStack } from '../layout/VStack';
+import { FocusTrap } from '../overlays/FocusTrap';
+import { ModalWrapper } from '../overlays/Modal/ModalWrapper';
 import { useOverlayAnimation } from '../overlays/Overlay/useOverlayAnimation';
 import { usePopoverMenuAnimation } from '../overlays/PopoverMenu/usePopoverMenuAnimation';
 import { PositionedOverlay } from '../overlays/positionedOverlay/PositionedOverlay';
 import { PositionedOverlayProps } from '../overlays/positionedOverlay/PositionedOverlayProps';
 import { transparentScrollbar } from '../styles/scrollbar';
+import { isSSR } from '../utils/browser';
 import { cx } from '../utils/linaria';
 
 const switcherGutter: SpacingScale = 1;
 
 const switcherDefaultWidth = 359;
-const switcherMinHeight = 400;
 const switcherMaxHeight = 600;
 
 export type SwitcherBaseProps = {
   /** @default 359 */
-  minWidth?: DimensionValue;
-  /** @default 359 */
   maxWidth?: DimensionValue;
-  /** @default 400 */
-  minHeight?: DimensionValue;
   /** @default 600 */
   maxHeight?: DimensionValue;
-} & Pick<PositionedOverlayProps, 'children' | 'visible' | 'onPressSubject' | 'onClose' | 'content'>;
+} & Pick<
+  PositionedOverlayProps,
+  'children' | 'visible' | 'onPressSubject' | 'onClose' | 'content' | 'disablePortal'
+>;
 
 const contentStyles = css`
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 `;
 
@@ -77,49 +82,139 @@ function useSwitcherAnimation({ onClose, visible }: UseSwitcherAnimationParams) 
   };
 }
 
-export const Switcher = ({
-  children,
-  visible,
-  onPressSubject,
-  onClose,
-  content,
-  minWidth = switcherDefaultWidth,
-  maxWidth = switcherDefaultWidth,
-  minHeight = switcherMinHeight,
-  maxHeight = switcherMaxHeight,
-}: SwitcherBaseProps) => {
-  const { overlayRef, popoverRef, handleClose } = useSwitcherAnimation({ onClose, visible });
+const SwitcherContent = memo(
+  forwardRef(
+    (
+      {
+        maxWidth,
+        maxHeight,
+        children,
+      }: Pick<SwitcherBaseProps, 'maxWidth' | 'maxHeight' | 'children'>,
+      forwardedRef: ForwardedRef<HTMLElement>,
+    ) => {
+      return (
+        <VStack
+          maxWidth={maxWidth}
+          maxHeight={maxHeight}
+          elevation={2}
+          background="background"
+          borderRadius="popover"
+          spacingVertical={2}
+          zIndex={zIndex.overlays.popoverMenu}
+          ref={forwardedRef}
+        >
+          <VStack dangerouslySetClassName={cx(contentStyles, transparentScrollbar)}>
+            {children}
+          </VStack>
+        </VStack>
+      );
+    },
+  ),
+);
 
-  const switcherContent = useMemo(
-    () => (
-      <VStack
-        minWidth={minWidth}
-        maxWidth={maxWidth}
-        minHeight={minHeight}
-        maxHeight={maxHeight}
-        dangerouslySetClassName={cx(contentStyles, transparentScrollbar)}
-        borderRadius="popover"
-        elevation={2}
-        background="background"
-        spacingVertical={2}
-        ref={popoverRef}
+const ModalSwitcher = memo(
+  ({
+    children,
+    visible,
+    onPressSubject,
+    onClose,
+    content,
+    disablePortal,
+    maxHeight,
+    maxWidth,
+  }: SwitcherBaseProps) => {
+    const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
+      useA11yControlledVisibility(visible);
+
+    return (
+      <>
+        <ModalWrapper
+          visible={visible}
+          disablePortal={disablePortal}
+          onOverlayPress={onClose}
+          dangerouslyDisableResponsiveness
+          {...controlledElementAccessibilityProps}
+        >
+          <FocusTrap onEscPress={onClose}>
+            <SwitcherContent maxHeight={maxHeight} maxWidth={maxWidth}>
+              {content}
+            </SwitcherContent>
+          </FocusTrap>
+        </ModalWrapper>
+        <div onClick={onPressSubject} {...triggerAccessibilityProps}>
+          {children}
+        </div>
+      </>
+    );
+  },
+);
+
+const PositionedOverlaySwitcher = memo(
+  ({
+    children,
+    visible,
+    onPressSubject,
+    onClose,
+    content,
+    maxWidth,
+    maxHeight,
+    disablePortal,
+  }: SwitcherBaseProps) => {
+    const { overlayRef, popoverRef, handleClose } = useSwitcherAnimation({ onClose, visible });
+
+    return (
+      <PositionedOverlay
+        onClose={handleClose}
+        overlayRef={overlayRef}
+        visible={visible}
+        showOverlay
+        gap={switcherGutter}
+        disablePortal={disablePortal}
+        content={
+          <SwitcherContent ref={popoverRef} maxWidth={maxWidth} maxHeight={maxHeight}>
+            {content}
+          </SwitcherContent>
+        }
+        onPressSubject={onPressSubject}
       >
-        {content}
-      </VStack>
-    ),
-    [content, maxHeight, maxWidth, minHeight, minWidth, popoverRef],
-  );
+        {children}
+      </PositionedOverlay>
+    );
+  },
+);
+
+const mobileBreakPoint = 414;
+
+const useIsMobile = () => {
+  const [width, setWidth] = useState<number | undefined>(!isSSR() ? window.innerWidth : undefined);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    // useEffect will only run client side
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+    };
+  }, []);
+
+  return width && width <= mobileBreakPoint;
+};
+
+export const Switcher = ({
+  maxWidth = switcherDefaultWidth,
+  maxHeight = switcherMaxHeight,
+  ...props
+}: SwitcherBaseProps) => {
+  const isMobileWeb = useIsMobile();
   return (
-    <PositionedOverlay
-      onClose={handleClose}
-      overlayRef={overlayRef}
-      visible={visible}
-      showOverlay
-      gap={switcherGutter}
-      content={switcherContent}
-      onPressSubject={onPressSubject}
-    >
-      {children}
-    </PositionedOverlay>
+    <>
+      {isMobileWeb ? (
+        <ModalSwitcher maxWidth={maxWidth} maxHeight={maxHeight} {...props} />
+      ) : (
+        <PositionedOverlaySwitcher maxWidth={maxWidth} maxHeight={maxHeight} {...props} />
+      )}
+    </>
   );
 };

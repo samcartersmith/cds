@@ -1,15 +1,37 @@
 import React, { ForwardedRef, forwardRef, memo, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, m as motion, Target } from 'framer-motion';
+import {
+  animateInOpacityConfig as animateInOverlayOpacityConfig,
+  animateOutOpacityConfig as animateOutOverlayOpacityConfig,
+} from '@cbhq/cds-common/animation/overlay';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { ModalBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
+import { Animated } from '../../animation/Animated';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
 import { Box, BoxProps } from '../../layout';
+import { Overlay } from '../Overlay/Overlay';
 import { Portal, PortalProps } from '../Portal';
 import { modalContainerId } from '../PortalProvider';
 
-export type ModalWrapperProps = Pick<PortalProps, 'disablePortal'> &
+import { modalOverlayResponsiveClassName } from './modalStyles';
+
+export type ModalWrapperProps = {
+  /**
+   * Disable overlay click that closes the Modal
+   * @default false
+   */
+  disableOverlayPress?: boolean;
+  /**
+   * Disable responsiveness so it maintains the same UI across different viewports.
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   * @default false
+   */
+  dangerouslyDisableResponsiveness?: boolean;
+
+  onOverlayPress: (() => void) | undefined;
+} & Pick<PortalProps, 'disablePortal'> &
   Pick<ModalBaseProps, 'visible' | 'zIndex' | 'children'> &
   Pick<BoxProps, 'dangerouslySetClassName'> &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy' | 'id'>;
@@ -25,6 +47,9 @@ export const ModalWrapper = memo(
       zIndex: customZIndex,
       dangerouslySetClassName,
       id,
+      disableOverlayPress = false,
+      dangerouslyDisableResponsiveness = false,
+      onOverlayPress,
     } = props;
 
     const blockScroll = useScrollBlocker();
@@ -58,6 +83,23 @@ export const ModalWrapper = memo(
               dangerouslySetClassName={dangerouslySetClassName}
               ref={ref}
             >
+              <motion.div
+                initial={
+                  Animated.toFramerTransition([animateOutOverlayOpacityConfig], {
+                    propertiesOnly: true,
+                  }) as Target
+                }
+                animate={Animated.toFramerTransition([animateInOverlayOpacityConfig])}
+                exit={Animated.toFramerTransition([animateOutOverlayOpacityConfig])}
+              >
+                <Overlay
+                  onPress={disableOverlayPress ? undefined : onOverlayPress}
+                  dangerouslySetClassName={
+                    !dangerouslyDisableResponsiveness ? modalOverlayResponsiveClassName : undefined
+                  }
+                  testID="modal-overlay"
+                />
+              </motion.div>
               {children}
             </Box>
           </Portal>
