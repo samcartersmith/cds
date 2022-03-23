@@ -32,6 +32,7 @@ const controlInput = css`
 const interactableContainer = css`
   height: fit-content;
   width: fit-content;
+  position: relative;
 `;
 
 export type ControlProps = FilteredHTMLAttributes<InputHTMLAttributes<HTMLInputElement>, 'value'> &
