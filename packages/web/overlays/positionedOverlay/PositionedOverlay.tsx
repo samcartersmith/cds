@@ -7,11 +7,11 @@ import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { useA11yControlledVisibility } from '../../hooks/useA11yControlledVisibility';
 import { Box } from '../../layout/Box';
+import { FocusTrap } from '../FocusTrap';
 import { Overlay } from '../Overlay/Overlay';
 
 import { PositionedOverlayPortal } from './PositionedOverlayPortal';
 import { PositionedOverlayProps } from './PositionedOverlayProps';
-import { useKeyboardNavigatablePortal } from './useKeyboardNavigatablePortal';
 import { usePopper } from './usePopper';
 
 const subjectStyle = css`
@@ -44,7 +44,7 @@ export const PositionedOverlay = memo(
     skid,
     gap,
   }: PositionedOverlayProps) => {
-    const { popper, subject, setSubject, setPopper, popperStyles, popperAttributes } = usePopper({
+    const { subject, setSubject, setPopper, popperStyles, popperAttributes } = usePopper({
       placement,
       skid,
       gap,
@@ -58,19 +58,19 @@ export const PositionedOverlay = memo(
       onClose?.();
     }, [onClose, subject]);
 
-    useKeyboardNavigatablePortal({ portalContent: popper, handleClose });
-
     const memoizedContent = useMemo(
       () => (
         <div ref={setPopper} style={popperStyles.popper} {...popperAttributes.popper}>
-          {/* Box with Horizontal spacing to ensure proper margins but still rely on popper for layout. */}
-          <Box
-            background="transparent"
-            spacingHorizontal={gutter}
-            {...controlledElementAccessibilityProps}
-          >
-            {content}
-          </Box>
+          <FocusTrap onEscPress={handleClose}>
+            {/* Box with Horizontal spacing to ensure proper margins but still rely on popper for layout. */}
+            <Box
+              background="transparent"
+              spacingHorizontal={gutter}
+              {...controlledElementAccessibilityProps}
+            >
+              {content}
+            </Box>
+          </FocusTrap>
         </div>
       ),
       [
@@ -79,6 +79,7 @@ export const PositionedOverlay = memo(
         popperAttributes.popper,
         popperStyles.popper,
         setPopper,
+        handleClose,
       ],
     );
 
