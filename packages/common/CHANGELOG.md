@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.8 (3/23/2022, 02:22 PM PST)
+
+#### 🚀 Updates
+
+- **[Cards]** AnnouncementCard, DataCard, FeatureEntryCard, FeedCard. [#153](https://github.cbhq.net/frontend/cds/pull/153)
+- **[Card]** Expand CardBaseProps and add overflow. [#149](https://github.cbhq.net/frontend/cds/pull/149)
+
+#### 🐞 Fixes
+
+- Fixed App Switcher bugs from bash. [#156](https://github.cbhq.net/frontend/cds/pull/156)
+
+#### 📘 Misc
+
+- App/user switcher docs. [#148](https://github.cbhq.net/frontend/cds/pull/148)
+
 ## 0.35.7 (3/22/2022, 09:36 AM PST)
 
 #### 🚀 Updates

@@ -8,6 +8,27 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.37.2 (3/23/2022, 02:22 PM PST)
+
+#### 🚀 Updates
+
+- Updated User Switcher designs. [#152](https://github.cbhq.net/frontend/cds/pull/152)
+- Migrate PositionedOverlay to use the FocusTrap component. [#154](https://github.cbhq.net/frontend/cds/pull/154)
+- **[Cards]** AnnouncementCard, DataCard, FeatureEntryCard, FeedCard. [#153](https://github.cbhq.net/frontend/cds/pull/153)
+- **[Card]** Alpha Card for web. [#150](https://github.cbhq.net/frontend/cds/pull/150)
+- CardBody, CardFooter and CardHeader for web alpha. [#151](https://github.cbhq.net/frontend/cds/pull/151)
+
+#### 🐞 Fixes
+
+- Fix checkbox. [#163](https://github.cbhq.net/frontend/cds/pull/163)
+- Fixes UserSwitcher bugs. [#158](https://github.cbhq.net/frontend/cds/pull/158)
+- Fixed App Switcher bugs from bash. [#156](https://github.cbhq.net/frontend/cds/pull/156)
+
+#### 📘 Misc
+
+- Add lint rule to force React import on web. [#155](https://github.cbhq.net/frontend/cds/pull/155)
+- App/user switcher docs. [#148](https://github.cbhq.net/frontend/cds/pull/148)
+
 ## 0.37.1 (3/22/2022, 01:22 PM PST)
 
 #### 🐞 Fixes
