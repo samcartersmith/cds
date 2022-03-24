@@ -20,11 +20,26 @@ type Report = {
   violations: unknown[];
   passes: number;
 };
+type Impact = {
+  id: string;
+  count: number;
+};
 type Results = {
   timestamp: string | Date;
+  critical: Impact[];
+  serious: Impact[];
+  minor: Impact[];
+  moderate: Impact[];
   report: Report[];
 };
-const results: Results = { timestamp: new Date(), report: [] };
+const results: Results = {
+  timestamp: new Date(),
+  report: [],
+  critical: [],
+  moderate: [],
+  minor: [],
+  serious: [],
+};
 const logger: unknown[] = [];
 
 const outFile = path.resolve(__dirname, '../../website/data/a11yReport.ts');
@@ -61,17 +76,16 @@ export const a11yTest = (customConfig: Partial<AxeConfig> = {}) => {
       } = testOptions.context.parameters.a11y || {};
       const { context }: Options = testOptions;
 
-      await beforeAxeTest(page, options);
-      const axe = new AxePuppeteer(page);
-      axe.include(element);
-
       // Log Title
       if (!logger.includes(context.title)) {
         logger.push(context.title);
         spinner.info(chalk.black.bold.bgBlueBright(context.title));
       }
 
-      // Setup configs
+      // Setup axe
+      await beforeAxeTest(page, options);
+      const axe = new AxePuppeteer(page);
+      axe.include(element);
       if (exclude) axe.exclude(exclude);
       if (options) axe.options(options);
       if (disabledRules) axe.disableRules(disabledRules);
@@ -87,9 +101,23 @@ export const a11yTest = (customConfig: Partial<AxeConfig> = {}) => {
           name: context.name,
           title: context.title,
           kind: context.kind,
-          violations,
           passes: passes.length,
+          violations,
         });
+
+        violations.forEach(({ id, impact = 'critical' }) => {
+          if (impact) {
+            const index = results[impact].findIndex((i) => i.id === id);
+            const count = results[impact].find((i) => i.id === id)?.count ?? 0;
+
+            if (index !== -1) {
+              results[impact][index] = { id, count: count + 1 };
+            } else {
+              results[impact].push({ id, count: 1 });
+            }
+          }
+        });
+
         await writePrettyFile({
           outFile,
           contents: getReport(results),
