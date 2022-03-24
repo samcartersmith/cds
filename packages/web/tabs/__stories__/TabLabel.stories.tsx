@@ -12,7 +12,7 @@ export default {
   component: TabLabel,
 } as Meta;
 
-export const TabIndicatorExample: Story = () => {
+export const Default: Story = () => {
   const [count, setCount] = useState(1);
 
   const updateCount = useCallback(() => {

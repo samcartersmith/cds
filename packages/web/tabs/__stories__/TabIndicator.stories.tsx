@@ -7,13 +7,14 @@ import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system';
 import { TabIndicator } from '..';
 
+const getRandomNumber = () => Math.random() * 100 + 100;
+
 export default {
   title: 'Core Components/Tabs/TabIndicator',
   component: TabIndicator,
 } as Meta;
 
-const getRandomNumber = () => Math.random() * 100 + 100;
-export const TabIndicatorExample: Story = () => {
+export const Default: Story = () => {
   const [width, setWidth] = useState(120);
   const [x, setX] = useState(120);
 
@@ -33,3 +34,5 @@ export const TabIndicatorExample: Story = () => {
     </ThemeProvider>
   );
 };
+
+Default.parameters = { skipA11y: true };

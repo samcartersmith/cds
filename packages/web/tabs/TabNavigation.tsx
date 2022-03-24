@@ -14,7 +14,6 @@ import React, {
 } from 'react';
 import { css } from 'linaria';
 import { TabIndicatorProps, TabNavigationProps, TabProps, useToggler } from '@cbhq/cds-common';
-import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { noop } from '@cbhq/cds-utils';
@@ -23,6 +22,7 @@ import { useDimensions } from '../hooks/useDimensions';
 import { HStack, VStack } from '../layout';
 import { insetFocusRing } from '../styles/focus';
 import { PressableOpacity, PressableOpacityProps } from '../system/PressableOpacity';
+import { ThemeProvider } from '../system/ThemeProvider';
 import { cx } from '../utils/linaria';
 
 import { Paddle } from './Paddle';
@@ -208,11 +208,11 @@ export const TabNavigation = memo(
             <VStack testID={testID} {...rest} spacing={0}>
               {shouldOverrideScale ? (
                 <span style={{ zIndex: zIndex.navigation }}>
-                  <ScaleProvider value="large">
+                  <ThemeProvider scale="large">
                     <HStack role="tablist" gap={4} flexShrink={0}>
                       {tabLabels}
                     </HStack>
-                  </ScaleProvider>
+                  </ThemeProvider>
                 </span>
               ) : (
                 <HStack role="tablist" gap={4} flexShrink={0} zIndex={zIndex.navigation}>
