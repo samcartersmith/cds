@@ -14,9 +14,11 @@ import { fromId, toId } from '../utils/id';
 
 import { FileParser } from './FileParser';
 
-export const FALLBACK_PRESENTATIONAL_LIBRARIES = [
+const DEFAULT_PRESENTATIONAL_LIBRARIES = [
   '@ant-design',
   '@cb/shared',
+  '@components/UI',
+  '@components/interactables',
   '@designSystem',
   '@material-ui',
   'highcharts',
@@ -30,7 +32,7 @@ export const FALLBACK_PRESENTATIONAL_LIBRARIES = [
   'antd',
 ];
 
-export const FALLBACK_PRESENTATIONAL_ELEMENTS = [
+const DEFAULT_PRESENTATIONAL_ELEMENTS = [
   'input',
   'button',
   'select',
@@ -42,7 +44,9 @@ export const FALLBACK_PRESENTATIONAL_ELEMENTS = [
   'td',
 ];
 
-export const FALLBACK_PRESENTATIONAL_ATTRIBUTES = ['className', 'style', 'dangerouslySet'];
+const DEFAULT_PRESENTATIONAL_ATTRIBUTES = ['className', 'style', 'dangerouslySet'];
+
+const DEFAULT_CDS_ALIASES = ['interactables/IconButton', '@components/interactables/Button'];
 
 type ComponentInstance = {
   callSite: string;
@@ -124,7 +128,7 @@ export class ProjectParser {
   private ignoreDirs: string[];
 
   /** Optional override of the default source glob * */
-  private sourceGlob: string | undefined;
+  private sourceGlob: string[] | undefined;
 
   /** Path aliases dictionary from tsconfig. Only present if tsAlias param is passed into ProjectParser. */
   private tsAliases!: Record<string, string>;
@@ -156,9 +160,9 @@ export class ProjectParser {
       id,
       label,
       projectTsAliases,
-      presentationalAttributes,
-      presentationalElements,
-      presentationalLibraries,
+      presentationalAttributes = [],
+      presentationalElements = [],
+      presentationalLibraries = [],
       cdsAliases = [],
       ignoreDirs = [],
       sourceGlob,
@@ -176,10 +180,16 @@ export class ProjectParser {
     this.sourceGlob = sourceGlob;
     this.label = label;
     this.projectTsAliases = projectTsAliases;
-    this.cdsAliases = ['@cbhq/cds-', ...cdsAliases];
-    this.presentationalAttributes = presentationalAttributes ?? FALLBACK_PRESENTATIONAL_ATTRIBUTES;
-    this.presentationalElements = presentationalElements ?? FALLBACK_PRESENTATIONAL_ELEMENTS;
-    this.presentationalLibraries = presentationalLibraries ?? FALLBACK_PRESENTATIONAL_LIBRARIES;
+    this.cdsAliases = ['@cbhq/cds-', ...DEFAULT_CDS_ALIASES, ...cdsAliases];
+    this.presentationalAttributes = [
+      ...DEFAULT_PRESENTATIONAL_ATTRIBUTES,
+      ...presentationalAttributes,
+    ];
+    this.presentationalElements = [...DEFAULT_PRESENTATIONAL_ELEMENTS, ...presentationalElements];
+    this.presentationalLibraries = [
+      ...DEFAULT_PRESENTATIONAL_LIBRARIES,
+      ...presentationalLibraries,
+    ];
     this.root = root;
     this.tsconfigFileName = tsconfigFileName ?? 'tsconfig.json';
     if (previousStats) {

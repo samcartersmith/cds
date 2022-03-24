@@ -1583,7 +1583,8 @@
       "propsWithCallSites": {
         "noBorder": { "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1 },
         "onPendingResponse": { "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1 },
-        "user": { "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1 }
+        "user": { "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1 },
+        "isProduction": { "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1 }
       }
     },
     {

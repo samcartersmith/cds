@@ -57,6 +57,24 @@ export const config: AdoptersConfig[] = [
         label: 'Maui',
         type: 'doc',
       },
+      {
+        root: path.join(tempDir, retailMobileGit),
+        github: retailMobileGit,
+        tsconfigFileName: 'tsconfig.base.json',
+        id: 'yield-mobile',
+        label: 'Yield Mobile',
+        type: 'doc',
+        projectTsAliases: ['@app'],
+        sourceGlob: ['screens/YieldCenter/**/*.(ts|tsx)', 'screens/DefiBoost/**/*.(ts|tsx)'],
+      },
+      {
+        root: path.join(tempDir, retailWebGit, 'app'),
+        github: retailWebGit,
+        id: 'yield-web',
+        label: 'Yield Web',
+        type: 'doc',
+        sourceGlob: ['views/YieldCenter/**/*.(ts|tsx)', 'views/YieldCenter/**/*.(ts|tsx)'],
+      },
     ],
   },
   {
@@ -104,10 +122,10 @@ export const config: AdoptersConfig[] = [
       {
         root: path.join(tempDir, retailMobileGit),
         github: retailMobileGit,
+        tsconfigFileName: 'tsconfig.base.json',
         id: 'umo',
         label: 'Unified Mobile Onboarding',
         projectTsAliases: ['@onboarding'],
-        cdsAliases: ['interactables/IconButton', '@components/interactables/Button'],
         type: 'doc',
       },
       {
@@ -165,18 +183,10 @@ export const config: AdoptersConfig[] = [
       {
         root: path.join(tempDir, retailMobileGit),
         github: retailMobileGit,
+        tsconfigFileName: 'tsconfig.base.json',
         id: 'retail-mobile',
         label: 'Retail Mobile',
         projectTsAliases: ['@app'],
-        cdsAliases: ['interactables/IconButton', '@components/interactables/Button'],
-        type: 'doc',
-      },
-      {
-        root: path.join(tempDir, retailMobileGit),
-        github: retailMobileGit,
-        id: 'retail-mobile-design-system',
-        label: 'Retail Mobile Design System',
-        projectTsAliases: ['@designSystem'],
         type: 'doc',
       },
       {

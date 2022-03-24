@@ -13,6 +13,8 @@ module.exports = {
         { type: 'doc', id: 'adoption-tracker/assethub-web', label: 'AssetHub Issuer' },
         { type: 'doc', id: 'adoption-tracker/assethub-admin', label: 'AssetHub Admin' },
         { type: 'doc', id: 'adoption-tracker/commerce', label: 'Commerce' },
+        { type: 'doc', id: 'adoption-tracker/yield-mobile', label: 'Yield Mobile' },
+        { type: 'doc', id: 'adoption-tracker/yield-web', label: 'Yield Web' },
       ],
     },
     {
@@ -50,11 +52,6 @@ module.exports = {
       collapsed: true,
       items: [
         { type: 'doc', id: 'adoption-tracker/retail-mobile', label: 'Retail Mobile' },
-        {
-          type: 'doc',
-          id: 'adoption-tracker/retail-mobile-design-system',
-          label: 'Retail Mobile Design System',
-        },
         { type: 'doc', id: 'adoption-tracker/retail-web-logged-in', label: 'Retail Web Logged In' },
         { type: 'doc', id: 'adoption-tracker/retail-web-shared', label: 'Retail Web Shared' },
         { type: 'doc', id: 'adoption-tracker/wallet-react-native', label: 'Wallet React Native' },

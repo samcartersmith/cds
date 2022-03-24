@@ -15,19 +15,26 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 39,
-      "totalCallSites": 19,
+      "totalInstances": 47,
+      "totalCallSites": 24,
       "cds": "@cbhq/cds-web/buttons/Button",
       "aliasedCdsComponents": [
-        { "aliasPath": "components/Wallet/ConnectWalletButton.tsx", "callSites": [] }
+        {
+          "aliasPath": "components/Wallet/ConnectWalletButton.tsx",
+          "callSites": ["pages/wallets.tsx"]
+        }
       ],
       "callSites": {
         "components/Buying/CheckoutSteps.tsx": 4,
         "components/Buying/Errors.tsx": 1,
         "components/Buying/UpdateListingSteps.tsx": 11,
+        "components/Comments/Comments.tsx": 1,
+        "components/Homepage/NewsletterModal.tsx": 1,
         "components/General/ConnectWalletModal.tsx": 1,
+        "components/NFTDetails/ModalListings.tsx": 1,
         "components/NFTDetails/ModalMessages.tsx": 1,
         "components/NFTDetails/ReportDialog.tsx": 1,
+        "components/Onboarding/EmailVerifiedModal.tsx": 2,
         "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
         "components/Onboarding/SignInWalletModal.tsx": 2,
         "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
@@ -35,12 +42,13 @@
         "components/Profile/FollowOrEditButton.tsx": 2,
         "components/Settings/EditSettingsDialog.tsx": 2,
         "components/Wallet/ConnectWalletButton.tsx": 1,
+        "components/Wallet/Wallet.tsx": 1,
         "components/Wallet/WalletV2.tsx": 1,
         "pages/signup/create.tsx": 1,
         "pages/signup/personalize.tsx": 2,
         "components/General/Overlays/ConfirmDialog.tsx": 2,
         "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 3,
-        "components/Profile/Edit/ProfileForm.tsx": 1
+        "components/Profile/Edit/ProfileForm.tsx": 3
       },
       "propsWithCallSites": {
         "variant": {
@@ -48,14 +56,18 @@
           "components/Buying/UpdateListingSteps.tsx": 2,
           "components/Profile/FollowOrEditButton.tsx": 2,
           "components/Settings/EditSettingsDialog.tsx": 1,
+          "components/Wallet/Wallet.tsx": 1,
           "components/Wallet/WalletV2.tsx": 1,
           "pages/signup/personalize.tsx": 1,
           "components/General/Overlays/ConfirmDialog.tsx": 1,
-          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1
+          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1,
+          "components/Profile/Edit/ProfileForm.tsx": 2
         },
         "disabled": {
           "components/Buying/CheckoutSteps.tsx": 3,
           "components/Buying/UpdateListingSteps.tsx": 10,
+          "components/Comments/Comments.tsx": 1,
+          "components/Onboarding/EmailVerifiedModal.tsx": 1,
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
           "components/Settings/EditSettingsDialog.tsx": 1,
           "pages/signup/create.tsx": 1,
@@ -66,24 +78,30 @@
         "onPress": {
           "components/Buying/CheckoutSteps.tsx": 2,
           "components/Buying/UpdateListingSteps.tsx": 3,
+          "components/Comments/Comments.tsx": 1,
           "components/General/ConnectWalletModal.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 1,
           "components/NFTDetails/ModalMessages.tsx": 1,
           "components/NFTDetails/ReportDialog.tsx": 1,
+          "components/Onboarding/EmailVerifiedModal.tsx": 2,
           "components/Onboarding/SignInWalletModal.tsx": 2,
           "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
           "components/Onboarding/VerifyEmailModal.tsx": 1,
           "components/Profile/FollowOrEditButton.tsx": 1,
           "components/Settings/EditSettingsDialog.tsx": 1,
           "components/Wallet/ConnectWalletButton.tsx": 1,
+          "components/Wallet/Wallet.tsx": 1,
           "components/Wallet/WalletV2.tsx": 1,
           "pages/signup/personalize.tsx": 2,
           "components/General/Overlays/ConfirmDialog.tsx": 2,
-          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 3
+          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 3,
+          "components/Profile/Edit/ProfileForm.tsx": 2
         },
         "block": {
           "components/Buying/Errors.tsx": 1,
           "components/General/ConnectWalletModal.tsx": 1,
           "components/NFTDetails/ReportDialog.tsx": 1,
+          "components/Onboarding/EmailVerifiedModal.tsx": 2,
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
           "components/Onboarding/SignInWalletModal.tsx": 2,
           "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
@@ -97,8 +115,17 @@
         "to": { "components/Buying/Errors.tsx": 1 },
         "target": { "components/Buying/Errors.tsx": 1 },
         "rel": { "components/Buying/Errors.tsx": 1 },
+        "data-testid": {
+          "components/Buying/UpdateListingSteps.tsx": 4,
+          "components/Onboarding/SignInWalletModal.tsx": 2,
+          "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
+          "components/Profile/FollowOrEditButton.tsx": 1,
+          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 3
+        },
         "type": {
           "components/Buying/UpdateListingSteps.tsx": 1,
+          "components/Comments/Comments.tsx": 1,
+          "components/Homepage/NewsletterModal.tsx": 1,
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
           "components/Settings/EditSettingsDialog.tsx": 1,
           "components/Wallet/ConnectWalletButton.tsx": 1,
@@ -107,6 +134,8 @@
           "components/Profile/Edit/ProfileForm.tsx": 1
         },
         "loading": {
+          "components/Comments/Comments.tsx": 1,
+          "components/Onboarding/EmailVerifiedModal.tsx": 1,
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
           "components/Profile/FollowOrEditButton.tsx": 1,
           "pages/signup/create.tsx": 1,
@@ -114,29 +143,28 @@
           "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1,
           "components/Profile/Edit/ProfileForm.tsx": 1
         },
-        "data-testid": {
-          "components/Onboarding/SignInWalletModal.tsx": 2,
+        "compact": {
+          "components/Comments/Comments.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 1,
           "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
-          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 3
+          "components/Settings/EditSettingsDialog.tsx": 2,
+          "components/Wallet/ConnectWalletButton.tsx": 1,
+          "components/Wallet/Wallet.tsx": 1,
+          "components/Wallet/WalletV2.tsx": 1,
+          "components/General/Overlays/ConfirmDialog.tsx": 2,
+          "components/Profile/Edit/ProfileForm.tsx": 2
         },
         "transparent": {
           "components/Onboarding/SignInWalletModal.tsx": 1,
           "pages/signup/personalize.tsx": 1
-        },
-        "compact": {
-          "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
-          "components/Settings/EditSettingsDialog.tsx": 2,
-          "components/Wallet/ConnectWalletButton.tsx": 1,
-          "components/Wallet/WalletV2.tsx": 1,
-          "components/General/Overlays/ConfirmDialog.tsx": 2
         }
       }
     },
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 29,
-      "totalCallSites": 24,
+      "totalInstances": 33,
+      "totalCallSites": 27,
       "cds": "@cbhq/cds-web/icons/Icon",
       "callSites": {
         "components/Buying/CheckoutSteps.tsx": 1,
@@ -145,11 +173,14 @@
         "components/Card/CollectionCard.tsx": 1,
         "components/Collections/CollectionDetails.tsx": 2,
         "components/Collections/CollectionsTrendingWidget.tsx": 1,
+        "components/Comments/CommentCount.tsx": 1,
+        "components/Comments/RootComment.tsx": 1,
         "components/Feed/AccountsToFollowWidget.tsx": 1,
         "components/General/ProgressSteps.tsx": 2,
         "components/Media/NsfwWindowShade.tsx": 2,
         "components/NFTDetails/ActivityFeed.tsx": 2,
         "components/NFTDetails/Attributes.tsx": 1,
+        "components/NFTDetails/ModalListings.tsx": 2,
         "components/Nav/Nav.tsx": 1,
         "components/Nav/NavLinks.tsx": 1,
         "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
@@ -172,11 +203,14 @@
           "components/Card/CollectionCard.tsx": 1,
           "components/Collections/CollectionDetails.tsx": 2,
           "components/Collections/CollectionsTrendingWidget.tsx": 1,
+          "components/Comments/CommentCount.tsx": 1,
+          "components/Comments/RootComment.tsx": 1,
           "components/Feed/AccountsToFollowWidget.tsx": 1,
           "components/General/ProgressSteps.tsx": 2,
           "components/Media/NsfwWindowShade.tsx": 2,
           "components/NFTDetails/ActivityFeed.tsx": 2,
           "components/NFTDetails/Attributes.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 2,
           "components/Nav/Nav.tsx": 1,
           "components/Nav/NavLinks.tsx": 1,
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
@@ -198,11 +232,14 @@
           "components/Card/CollectionCard.tsx": 1,
           "components/Collections/CollectionDetails.tsx": 2,
           "components/Collections/CollectionsTrendingWidget.tsx": 1,
+          "components/Comments/CommentCount.tsx": 1,
+          "components/Comments/RootComment.tsx": 1,
           "components/Feed/AccountsToFollowWidget.tsx": 1,
           "components/General/ProgressSteps.tsx": 2,
           "components/Media/NsfwWindowShade.tsx": 2,
           "components/NFTDetails/ActivityFeed.tsx": 2,
           "components/NFTDetails/Attributes.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 2,
           "components/Nav/Nav.tsx": 1,
           "components/Nav/NavLinks.tsx": 1,
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
@@ -223,11 +260,14 @@
           "components/Buying/UpdateListingSteps.tsx": 2,
           "components/Collections/CollectionDetails.tsx": 2,
           "components/Collections/CollectionsTrendingWidget.tsx": 1,
+          "components/Comments/CommentCount.tsx": 1,
+          "components/Comments/RootComment.tsx": 1,
           "components/Feed/AccountsToFollowWidget.tsx": 1,
           "components/General/ProgressSteps.tsx": 2,
           "components/Media/NsfwWindowShade.tsx": 2,
           "components/NFTDetails/ActivityFeed.tsx": 2,
           "components/NFTDetails/Attributes.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 2,
           "components/Nav/Nav.tsx": 1,
           "components/Nav/NavLinks.tsx": 1,
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
@@ -243,6 +283,7 @@
         },
         "spacingEnd": {
           "components/Buying/Errors.tsx": 1,
+          "components/Comments/RootComment.tsx": 1,
           "components/Onboarding/VerifyEmailModal.tsx": 1,
           "components/Profile/CardMenuItem.tsx": 1
         },
@@ -259,11 +300,14 @@
     {
       "name": "TextInput",
       "sourceFile": "@cbhq/cds-web/controls/TextInput",
-      "totalInstances": 11,
-      "totalCallSites": 9,
+      "totalInstances": 14,
+      "totalCallSites": 12,
       "cds": "@cbhq/cds-web/controls/TextInput",
       "callSites": {
         "components/Buying/UpdateListingSteps.tsx": 1,
+        "components/Comments/Comments.tsx": 1,
+        "components/Comments/RootComment.tsx": 1,
+        "components/Homepage/NewsletterModal.tsx": 1,
         "components/NFTDetails/ReportDialog.tsx": 1,
         "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
         "components/Search/SearchInput.tsx": 1,
@@ -291,6 +335,9 @@
         },
         "placeholder": {
           "components/Buying/UpdateListingSteps.tsx": 1,
+          "components/Comments/Comments.tsx": 1,
+          "components/Comments/RootComment.tsx": 1,
+          "components/Homepage/NewsletterModal.tsx": 1,
           "components/NFTDetails/ReportDialog.tsx": 1,
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
           "pages/signup/create.tsx": 2,
@@ -301,6 +348,9 @@
         "suffix": { "components/Buying/UpdateListingSteps.tsx": 1 },
         "value": {
           "components/Buying/UpdateListingSteps.tsx": 1,
+          "components/Comments/Comments.tsx": 1,
+          "components/Comments/RootComment.tsx": 1,
+          "components/Homepage/NewsletterModal.tsx": 1,
           "components/Search/SearchInput.tsx": 1,
           "components/Settings/EditSettingsDialog.tsx": 1,
           "pages/signup/personalize.tsx": 1,
@@ -309,6 +359,7 @@
         "inputMode": { "components/Buying/UpdateListingSteps.tsx": 1 },
         "variant": {
           "components/Buying/UpdateListingSteps.tsx": 1,
+          "components/Homepage/NewsletterModal.tsx": 1,
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
           "components/Settings/EditSettingsDialog.tsx": 1,
           "pages/signup/create.tsx": 2,
@@ -318,6 +369,7 @@
         },
         "helperText": {
           "components/Buying/UpdateListingSteps.tsx": 1,
+          "components/Homepage/NewsletterModal.tsx": 1,
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
           "components/Settings/EditSettingsDialog.tsx": 1,
           "pages/signup/create.tsx": 2,
@@ -333,6 +385,9 @@
         },
         "onChange": {
           "components/Buying/UpdateListingSteps.tsx": 1,
+          "components/Comments/Comments.tsx": 1,
+          "components/Comments/RootComment.tsx": 1,
+          "components/Homepage/NewsletterModal.tsx": 1,
           "components/NFTDetails/ReportDialog.tsx": 1,
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
           "components/Search/SearchInput.tsx": 1,
@@ -343,17 +398,24 @@
           "components/Profile/Edit/ProfileForm.tsx": 1
         },
         "disabled": { "components/Buying/UpdateListingSteps.tsx": 1 },
+        "data-testid": {
+          "components/Buying/UpdateListingSteps.tsx": 1,
+          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1
+        },
+        "end": {
+          "components/Comments/Comments.tsx": 1,
+          "components/Comments/RootComment.tsx": 1,
+          "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
+          "components/Search/SearchInput.tsx": 1,
+          "pages/signup/create.tsx": 2
+        },
+        "compact": { "components/Comments/RootComment.tsx": 1 },
         "onBlur": {
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
           "components/Settings/EditSettingsDialog.tsx": 1,
           "pages/signup/create.tsx": 1,
           "pages/signup/personalize.tsx": 1,
           "components/Profile/Edit/ProfileForm.tsx": 1
-        },
-        "end": {
-          "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
-          "components/Search/SearchInput.tsx": 1,
-          "pages/signup/create.tsx": 2
         },
         "start": { "components/Search/SearchInput.tsx": 1 },
         "height": { "components/Search/SearchInput.tsx": 1 },
@@ -377,8 +439,7 @@
           "pages/signup/create.tsx": 1,
           "pages/signup/personalize.tsx": 1,
           "components/Profile/Edit/ProfileForm.tsx": 2
-        },
-        "data-testid": { "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1 }
+        }
       }
     },
     {
@@ -402,6 +463,121 @@
       }
     },
     {
+      "name": "SelectOption",
+      "sourceFile": "@cbhq/cds-web/controls/SelectOption",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/controls/SelectOption",
+      "propsWithCallSites": {
+        "value": { "components/Comments/CommentControls.tsx": 1 },
+        "key": { "components/Comments/CommentControls.tsx": 1 },
+        "title": { "components/Comments/CommentControls.tsx": 1 }
+      }
+    },
+    {
+      "name": "HStack",
+      "sourceFile": "@cbhq/cds-web/layout/HStack",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/layout/HStack",
+      "callSites": {
+        "components/Comments/Comments.tsx": 1,
+        "components/Comments/RootComment.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacingEnd": {
+          "components/Comments/Comments.tsx": 1,
+          "components/Comments/RootComment.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "components/Comments/InsetCommentWrapper.tsx",
+          "callSites": [
+            "components/Comments/RootComment.tsx",
+            "components/Comments/RootComment.tsx"
+          ]
+        },
+        { "aliasPath": "components/Search/SearchInput.tsx", "callSites": [] }
+      ],
+      "callSites": {
+        "components/Comments/InsetCommentWrapper.tsx": 1,
+        "components/Onboarding/EmailVerifiedModal.tsx": 1,
+        "components/Search/SearchInput.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacingStart": { "components/Comments/InsetCommentWrapper.tsx": 1 },
+        "spacingTop": { "components/Comments/InsetCommentWrapper.tsx": 1 },
+        "width": { "components/Comments/InsetCommentWrapper.tsx": 1 },
+        "spacingEnd": { "components/Search/SearchInput.tsx": 1 }
+      }
+    },
+    {
+      "name": "VStack",
+      "sourceFile": "@cbhq/cds-web/layout/VStack",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/layout/VStack",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "components/Comments/RootComment.tsx",
+          "callSites": ["components/Comments/Comments.tsx"]
+        }
+      ],
+      "callSites": {
+        "components/Comments/InsetCommentWrapper.tsx": 1,
+        "components/Comments/RootComment.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacingStart": { "components/Comments/InsetCommentWrapper.tsx": 1 },
+        "borderedStart": { "components/Comments/InsetCommentWrapper.tsx": 1 },
+        "width": { "components/Comments/InsetCommentWrapper.tsx": 1 },
+        "spacingTop": { "components/Comments/RootComment.tsx": 1 }
+      }
+    },
+    {
+      "name": "Pictogram",
+      "sourceFile": "@cbhq/cds-web/illustrations/Pictogram",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/illustrations/Pictogram",
+      "callSites": {
+        "components/Homepage/EducationalPanels.tsx": 1,
+        "components/Homepage/NewsletterModal.tsx": 1,
+        "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
+        "pages/nft/removed.tsx": 1,
+        "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "components/Homepage/EducationalPanels.tsx": 1,
+          "components/Homepage/NewsletterModal.tsx": 1,
+          "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
+          "pages/nft/removed.tsx": 1,
+          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1
+        },
+        "dimension": {
+          "components/Homepage/EducationalPanels.tsx": 1,
+          "components/Homepage/NewsletterModal.tsx": 1,
+          "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
+          "pages/nft/removed.tsx": 1,
+          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1
+        },
+        "scaleMultiplier": {
+          "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
+          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1
+        },
+        "data-testid": { "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1 }
+      }
+    },
+    {
       "name": "Tooltip",
       "sourceFile": "@cbhq/cds-web/overlays/Tooltip",
       "totalInstances": 1,
@@ -411,13 +587,14 @@
         "testID": { "components/General/ComingSoonWrapper.tsx": 1 },
         "content": { "components/General/ComingSoonWrapper.tsx": 1 },
         "placement": { "components/General/ComingSoonWrapper.tsx": 1 },
-        "gap": { "components/General/ComingSoonWrapper.tsx": 1 }
+        "gap": { "components/General/ComingSoonWrapper.tsx": 1 },
+        "disablePortal": { "components/General/ComingSoonWrapper.tsx": 1 }
       }
     },
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 6,
+      "totalInstances": 7,
       "totalCallSites": 6,
       "cds": "@cbhq/cds-web/typography/Link",
       "presentationalProps": [
@@ -425,7 +602,7 @@
       ],
       "callSites": {
         "components/General/ConnectWalletModal.tsx": 1,
-        "components/Nav/NavProfilePopover.tsx": 1,
+        "components/Nav/NavProfilePopover.tsx": 2,
         "components/Onboarding/SignInWalletModal.tsx": 1,
         "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
         "components/Onboarding/VerifyEmailModal.tsx": 1,
@@ -446,7 +623,7 @@
         },
         "variant": {
           "components/General/ConnectWalletModal.tsx": 1,
-          "components/Nav/NavProfilePopover.tsx": 1,
+          "components/Nav/NavProfilePopover.tsx": 2,
           "components/Onboarding/SignInWalletModal.tsx": 1,
           "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
           "components/Onboarding/VerifyEmailModal.tsx": 1,
@@ -458,15 +635,69 @@
           "components/Nav/NavProfilePopover.tsx": 1,
           "components/Onboarding/SignInWalletModal.tsx": 1
         },
+        "testID": { "components/Nav/NavProfilePopover.tsx": 1 },
+        "onPress": {
+          "components/Nav/NavProfilePopover.tsx": 1,
+          "components/Onboarding/VerifyEmailModal.tsx": 1
+        },
         "rel": {
+          "components/Nav/NavProfilePopover.tsx": 1,
           "components/Onboarding/SignInWalletModal.tsx": 1,
           "components/Onboarding/VerifyEmailModal.tsx": 1
         },
         "data-testid": {
           "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
           "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PopoverMenu",
+      "sourceFile": "@cbhq/cds-web/overlays/PopoverMenu",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/overlays/PopoverMenu",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "components/General/Overlays/MorePopover.tsx",
+          "callSites": ["components/Comments/CommentControls.tsx"]
+        }
+      ],
+      "callSites": {
+        "components/General/EmojiPicker.tsx": 1,
+        "components/General/Overlays/MorePopover.tsx": 1
+      },
+      "propsWithCallSites": {
+        "width": {
+          "components/General/EmojiPicker.tsx": 1,
+          "components/General/Overlays/MorePopover.tsx": 1
         },
-        "onPress": { "components/Onboarding/VerifyEmailModal.tsx": 1 }
+        "openMenu": {
+          "components/General/EmojiPicker.tsx": 1,
+          "components/General/Overlays/MorePopover.tsx": 1
+        },
+        "closeMenu": {
+          "components/General/EmojiPicker.tsx": 1,
+          "components/General/Overlays/MorePopover.tsx": 1
+        },
+        "visible": {
+          "components/General/EmojiPicker.tsx": 1,
+          "components/General/Overlays/MorePopover.tsx": 1
+        },
+        "ref": { "components/General/EmojiPicker.tsx": 1 },
+        "disablePortal": { "components/General/EmojiPicker.tsx": 1 },
+        "onChange": { "components/General/Overlays/MorePopover.tsx": 1 }
+      }
+    },
+    {
+      "name": "PopoverTrigger",
+      "sourceFile": "@cbhq/cds-web/overlays/PopoverTrigger",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/overlays/PopoverTrigger",
+      "callSites": {
+        "components/General/EmojiPicker.tsx": 1,
+        "components/General/Overlays/MorePopover.tsx": 1
       }
     },
     {
@@ -522,8 +753,8 @@
     {
       "name": "ThemeProvider",
       "sourceFile": "@cbhq/cds-web/system/ThemeProvider",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-web/system/ThemeProvider",
       "aliasedCdsComponents": [
         {
@@ -533,6 +764,7 @@
       ],
       "callSites": {
         "components/General/ThemePicker.tsx": 1,
+        "components/Nav/Nav.tsx": 1,
         "components/General/Overlays/SlideUpDialog.tsx": 1
       },
       "propsWithCallSites": {
@@ -563,44 +795,38 @@
       }
     },
     {
-      "name": "Divider",
-      "sourceFile": "@cbhq/cds-web/layout/Divider",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/layout/Divider",
-      "callSites": {
-        "components/Nav/NavProfilePopover.tsx": 2,
-        "components/General/Overlays/Modal.tsx": 1
-      },
-      "propsWithCallSites": { "spacingBottom": { "components/General/Overlays/Modal.tsx": 1 } }
+      "name": "DotStatusColor",
+      "sourceFile": "@cbhq/cds-web/dots/DotStatusColor",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/dots/DotStatusColor",
+      "callSites": { "components/Nav/NavProfilePopover.tsx": 2 },
+      "propsWithCallSites": {
+        "testID": { "components/Nav/NavProfilePopover.tsx": 1 },
+        "variant": { "components/Nav/NavProfilePopover.tsx": 2 },
+        "pin": { "components/Nav/NavProfilePopover.tsx": 1 },
+        "size": { "components/Nav/NavProfilePopover.tsx": 1 }
+      }
     },
     {
-      "name": "Pictogram",
-      "sourceFile": "@cbhq/cds-web/illustrations/Pictogram",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/illustrations/Pictogram",
-      "callSites": {
-        "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
-        "pages/nft/removed.tsx": 1,
-        "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1
-      },
+      "name": "Divider",
+      "sourceFile": "@cbhq/cds-web/layout/Divider",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/layout/Divider",
+      "callSites": { "components/Nav/NavProfilePopover.tsx": 2 }
+    },
+    {
+      "name": "LottieStatusAnimation",
+      "sourceFile": "@cbhq/cds-web/animation/LottieStatusAnimation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/animation/LottieStatusAnimation",
       "propsWithCallSites": {
-        "name": {
-          "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
-          "pages/nft/removed.tsx": 1,
-          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1
-        },
-        "dimension": {
-          "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
-          "pages/nft/removed.tsx": 1,
-          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1
-        },
-        "scaleMultiplier": {
-          "components/Onboarding/UnrecognizedWalletModal.tsx": 1,
-          "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1
-        },
-        "data-testid": { "components/Onboarding/BetaAccess/BetaInviteModal.tsx": 1 }
+        "key": { "components/Onboarding/EmailVerifiedModal.tsx": 1 },
+        "height": { "components/Onboarding/EmailVerifiedModal.tsx": 1 },
+        "width": { "components/Onboarding/EmailVerifiedModal.tsx": 1 },
+        "status": { "components/Onboarding/EmailVerifiedModal.tsx": 1 }
       }
     },
     {
@@ -617,38 +843,46 @@
     {
       "name": "IconButton",
       "sourceFile": "@cbhq/cds-web/buttons/IconButton",
-      "totalInstances": 6,
-      "totalCallSites": 6,
+      "totalInstances": 8,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-web/buttons/IconButton",
       "callSites": {
         "components/Profile/ShareNftButton.tsx": 1,
+        "components/Wallet/Wallet.tsx": 1,
         "components/Wallet/WalletV2.tsx": 1,
         "components/General/Buttons/FollowIconButton.tsx": 1,
         "components/General/Buttons/LikeButton.tsx": 1,
         "components/General/Overlays/Modal.tsx": 1,
+        "components/General/Overlays/MorePopover.tsx": 1,
         "components/General/Overlays/SlideUpDialog.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
           "components/Profile/ShareNftButton.tsx": 1,
+          "components/Wallet/Wallet.tsx": 1,
           "components/Wallet/WalletV2.tsx": 1,
           "components/General/Buttons/FollowIconButton.tsx": 1,
           "components/General/Buttons/LikeButton.tsx": 1,
           "components/General/Overlays/Modal.tsx": 1,
+          "components/General/Overlays/MorePopover.tsx": 1,
           "components/General/Overlays/SlideUpDialog.tsx": 1
         },
         "variant": {
           "components/Profile/ShareNftButton.tsx": 1,
+          "components/Wallet/Wallet.tsx": 1,
           "components/Wallet/WalletV2.tsx": 1,
           "components/General/Buttons/FollowIconButton.tsx": 1,
-          "components/General/Buttons/LikeButton.tsx": 1
+          "components/General/Buttons/LikeButton.tsx": 1,
+          "components/General/Overlays/MorePopover.tsx": 1
         },
         "transparent": {
           "components/Profile/ShareNftButton.tsx": 1,
+          "components/Wallet/Wallet.tsx": 1,
           "components/Wallet/WalletV2.tsx": 1,
           "components/General/Buttons/FollowIconButton.tsx": 1,
           "components/General/Buttons/LikeButton.tsx": 1,
           "components/General/Overlays/Modal.tsx": 1,
+          "components/General/Overlays/MorePopover.tsx": 1,
           "components/General/Overlays/SlideUpDialog.tsx": 1
         },
         "accessibilityLabel": {
@@ -665,10 +899,11 @@
           "components/General/Overlays/SlideUpDialog.tsx": 1
         },
         "onClick": {
+          "components/Wallet/Wallet.tsx": 1,
           "components/Wallet/WalletV2.tsx": 1,
           "components/General/Overlays/Modal.tsx": 1
         },
-        "data-testid": { "components/Wallet/WalletV2.tsx": 1 },
+        "data-testid": { "components/Wallet/Wallet.tsx": 1, "components/Wallet/WalletV2.tsx": 1 },
         "disabled": {
           "components/General/Buttons/FollowIconButton.tsx": 1,
           "components/General/Buttons/LikeButton.tsx": 1,
@@ -687,17 +922,6 @@
         "testID": { "components/Search/SearchInput.tsx": 1 },
         "name": { "components/Search/SearchInput.tsx": 1 }
       }
-    },
-    {
-      "name": "Box",
-      "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/layout/Box",
-      "aliasedCdsComponents": [
-        { "aliasPath": "components/Search/SearchInput.tsx", "callSites": [] }
-      ],
-      "propsWithCallSites": { "spacingEnd": { "components/Search/SearchInput.tsx": 1 } }
     },
     {
       "name": "InputIconButton",
@@ -759,16 +983,26 @@
       "totalCallSites": 1,
       "cds": "@cbhq/cds-web/illustrations/HeroSquare",
       "propsWithCallSites": { "name": { "components/General/Overlays/SlideUpDialog.tsx": 1 } }
+    },
+    {
+      "name": "SpotSquare",
+      "sourceFile": "@cbhq/cds-web/illustrations/SpotSquare",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/illustrations/SpotSquare",
+      "propsWithCallSites": { "name": { "components/General/Overlays/SlideUpDialog.tsx": 1 } }
     }
   ],
   "presentational": [
     {
       "name": "Loader",
       "sourceFile": "@maui/components/General/Loader",
-      "totalInstances": 15,
-      "totalCallSites": 15,
+      "totalInstances": 21,
+      "totalCallSites": 20,
       "presentationalProps": [
         { "prop": "className", "callSite": "pages/search.tsx" },
+        { "prop": "className", "callSite": "components/Collections/CollectionNftGrid.tsx" },
+        { "prop": "className", "callSite": "components/Comments/RootComment.tsx" },
         { "prop": "className", "callSite": "components/Profile/FollowersModal.tsx" },
         { "prop": "className", "callSite": "components/Profile/FollowingModal.tsx" },
         { "prop": "className", "callSite": "pages/search/collections.tsx" },
@@ -777,11 +1011,16 @@
       ],
       "callSites": {
         "components/withRelay.tsx": 1,
+        "pages/_app.tsx": 1,
         "pages/accounts-to-follow.tsx": 1,
         "pages/search.tsx": 1,
         "components/Buying/UpdateListing.tsx": 1,
+        "components/Collections/CollectionNftGrid.tsx": 2,
+        "components/Comments/Comments.tsx": 1,
+        "components/Comments/RootComment.tsx": 1,
         "components/Feed/FeedItemOwnerInfo.tsx": 1,
         "components/Layouts/Layout.tsx": 1,
+        "components/NFTDetails/ModalListings.tsx": 1,
         "components/NFTDetails/OwnerInfo.tsx": 1,
         "components/Nav/Nav.tsx": 1,
         "components/Profile/FollowersModal.tsx": 1,
@@ -795,6 +1034,8 @@
       "propsWithCallSites": {
         "className": {
           "pages/search.tsx": 1,
+          "components/Collections/CollectionNftGrid.tsx": 1,
+          "components/Comments/RootComment.tsx": 1,
           "components/Profile/FollowersModal.tsx": 1,
           "components/Profile/FollowingModal.tsx": 1,
           "pages/search/collections.tsx": 1,
@@ -804,7 +1045,7 @@
       }
     },
     {
-      "name": "section",
+      "name": "div",
       "sourceFile": "pages/_app.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -817,22 +1058,6 @@
         "className": { "pages/_app.tsx": 1 },
         "style": { "pages/_app.tsx": 1 }
       }
-    },
-    {
-      "name": "Loader",
-      "sourceFile": "components/General/Loader",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "presentationalElement": "div",
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" }
-      ],
-      "callSites": {
-        "pages/_app.tsx": 1,
-        "components/General/AuthedPageWrapper.tsx": 1,
-        "components/Nav/NavProfilePopover.tsx": 1
-      },
-      "propsWithCallSites": { "className": { "components/Nav/NavProfilePopover.tsx": 1 } }
     },
     {
       "name": "Html",
@@ -980,15 +1205,16 @@
     {
       "name": "div",
       "sourceFile": "pages/wallets.tsx",
-      "totalInstances": 3,
+      "totalInstances": 4,
       "totalCallSites": 1,
       "presentationalProps": [
         { "prop": "className", "callSite": "pages/wallets.tsx" },
         { "prop": "className", "callSite": "pages/wallets.tsx" },
+        { "prop": "className", "callSite": "pages/wallets.tsx" },
         { "prop": "className", "callSite": "pages/wallets.tsx" }
       ],
-      "callSites": { "pages/wallets.tsx": 3 },
-      "propsWithCallSites": { "className": { "pages/wallets.tsx": 3 } }
+      "callSites": { "pages/wallets.tsx": 4 },
+      "propsWithCallSites": { "className": { "pages/wallets.tsx": 4 } }
     },
     {
       "name": "h1",
@@ -1018,21 +1244,17 @@
       "propsWithCallSites": { "className": { "stories/RelayStorybook.tsx": 1 } }
     },
     {
-      "name": "section",
-      "sourceFile": "utils/ScrollAwayProvider.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "className", "callSite": "utils/ScrollAwayProvider.tsx" }],
-      "propsWithCallSites": { "className": { "utils/ScrollAwayProvider.tsx": 1 } }
-    },
-    {
       "name": "div",
       "sourceFile": "utils/ScrollAwayProvider.tsx",
-      "totalInstances": 1,
+      "totalInstances": 2,
       "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "className", "callSite": "utils/ScrollAwayProvider.tsx" }],
+      "presentationalProps": [
+        { "prop": "className", "callSite": "utils/ScrollAwayProvider.tsx" },
+        { "prop": "className", "callSite": "utils/ScrollAwayProvider.tsx" }
+      ],
+      "callSites": { "utils/ScrollAwayProvider.tsx": 2 },
       "propsWithCallSites": {
-        "className": { "utils/ScrollAwayProvider.tsx": 1 },
+        "className": { "utils/ScrollAwayProvider.tsx": 2 },
         "ref": { "utils/ScrollAwayProvider.tsx": 1 }
       }
     },
@@ -1149,9 +1371,9 @@
       "presentationalProps": [
         { "prop": "className", "callSite": "components/General/MauiImage.tsx" },
         { "prop": "className", "callSite": "components/Profile/Art.tsx" },
+        { "prop": "className", "callSite": "components/SignInWithWallet/ProviderList.tsx" },
         { "prop": "className", "callSite": "components/Wallet/Wallet.tsx" },
         { "prop": "className", "callSite": "components/Wallet/WalletV2.tsx" },
-        { "prop": "className", "callSite": "components/SignInWithWallet/ProviderList.tsx" },
         {
           "prop": "className",
           "callSite": "components/Feed/FollowingFeed/FollowingFeedEmptyState.tsx"
@@ -1166,10 +1388,10 @@
         "components/General/MauiImage.tsx": 1,
         "components/Onboarding/OnboardingScreenWrapper.tsx": 1,
         "components/Profile/Art.tsx": 1,
-        "components/Wallet/Wallet.tsx": 1,
-        "components/Wallet/WalletV2.tsx": 1,
         "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1,
         "components/SignInWithWallet/ProviderList.tsx": 1,
+        "components/Wallet/Wallet.tsx": 1,
+        "components/Wallet/WalletV2.tsx": 1,
         "components/Feed/FollowingFeed/FollowingFeedEmptyState.tsx": 3
       },
       "propsWithCallSites": {
@@ -1178,10 +1400,10 @@
           "components/General/MauiImage.tsx": 1,
           "components/Onboarding/OnboardingScreenWrapper.tsx": 1,
           "components/Profile/Art.tsx": 1,
-          "components/Wallet/Wallet.tsx": 1,
-          "components/Wallet/WalletV2.tsx": 1,
           "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1,
           "components/SignInWithWallet/ProviderList.tsx": 1,
+          "components/Wallet/Wallet.tsx": 1,
+          "components/Wallet/WalletV2.tsx": 1,
           "components/Feed/FollowingFeed/FollowingFeedEmptyState.tsx": 3
         },
         "alt": {
@@ -1189,30 +1411,30 @@
           "components/General/MauiImage.tsx": 1,
           "components/Onboarding/OnboardingScreenWrapper.tsx": 1,
           "components/Profile/Art.tsx": 1,
-          "components/Wallet/Wallet.tsx": 1,
-          "components/Wallet/WalletV2.tsx": 1,
           "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1,
           "components/SignInWithWallet/ProviderList.tsx": 1,
+          "components/Wallet/Wallet.tsx": 1,
+          "components/Wallet/WalletV2.tsx": 1,
           "components/Feed/FollowingFeed/FollowingFeedEmptyState.tsx": 3
         },
         "height": {
           "components/Buying/CheckoutSteps.tsx": 1,
           "components/Onboarding/OnboardingScreenWrapper.tsx": 1,
           "components/Profile/Art.tsx": 1,
-          "components/Wallet/Wallet.tsx": 1,
-          "components/Wallet/WalletV2.tsx": 1,
           "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1,
           "components/SignInWithWallet/ProviderList.tsx": 1,
+          "components/Wallet/Wallet.tsx": 1,
+          "components/Wallet/WalletV2.tsx": 1,
           "components/Feed/FollowingFeed/FollowingFeedEmptyState.tsx": 1
         },
         "width": {
           "components/Buying/CheckoutSteps.tsx": 1,
           "components/Onboarding/OnboardingScreenWrapper.tsx": 1,
           "components/Profile/Art.tsx": 1,
-          "components/Wallet/Wallet.tsx": 1,
-          "components/Wallet/WalletV2.tsx": 1,
           "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1,
           "components/SignInWithWallet/ProviderList.tsx": 1,
+          "components/Wallet/Wallet.tsx": 1,
+          "components/Wallet/WalletV2.tsx": 1,
           "components/Feed/FollowingFeed/FollowingFeedEmptyState.tsx": 1
         },
         "objectPosition": { "components/General/MauiImage.tsx": 1 },
@@ -1228,9 +1450,9 @@
         "className": {
           "components/General/MauiImage.tsx": 1,
           "components/Profile/Art.tsx": 1,
+          "components/SignInWithWallet/ProviderList.tsx": 1,
           "components/Wallet/Wallet.tsx": 1,
           "components/Wallet/WalletV2.tsx": 1,
-          "components/SignInWithWallet/ProviderList.tsx": 1,
           "components/Feed/FollowingFeed/FollowingFeedEmptyState.tsx": 2
         },
         "blurDataURL": { "components/General/MauiImage.tsx": 1 },
@@ -1455,39 +1677,19 @@
     {
       "name": "MauiImage",
       "sourceFile": "@maui/components/General/MauiImage",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 1,
+      "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "className", "callSite": "components/Card/CollectionCard.tsx" },
-        { "prop": "className", "callSite": "components/Collections/CollectionDetails.tsx" }
+        { "prop": "className", "callSite": "components/Card/CollectionCard.tsx" }
       ],
-      "callSites": {
-        "components/Card/CollectionCard.tsx": 1,
-        "components/Collections/CollectionDetails.tsx": 1
-      },
       "propsWithCallSites": {
-        "className": {
-          "components/Card/CollectionCard.tsx": 1,
-          "components/Collections/CollectionDetails.tsx": 1
-        },
-        "src": {
-          "components/Card/CollectionCard.tsx": 1,
-          "components/Collections/CollectionDetails.tsx": 1
-        },
-        "width": {
-          "components/Card/CollectionCard.tsx": 1,
-          "components/Collections/CollectionDetails.tsx": 1
-        },
-        "height": {
-          "components/Card/CollectionCard.tsx": 1,
-          "components/Collections/CollectionDetails.tsx": 1
-        },
+        "className": { "components/Card/CollectionCard.tsx": 1 },
+        "src": { "components/Card/CollectionCard.tsx": 1 },
+        "width": { "components/Card/CollectionCard.tsx": 1 },
+        "height": { "components/Card/CollectionCard.tsx": 1 },
         "alt": { "components/Card/CollectionCard.tsx": 1 },
         "placeholder": { "components/Card/CollectionCard.tsx": 1 },
-        "layout": {
-          "components/Card/CollectionCard.tsx": 1,
-          "components/Collections/CollectionDetails.tsx": 1
-        }
+        "layout": { "components/Card/CollectionCard.tsx": 1 }
       }
     },
     {
@@ -1683,7 +1885,8 @@
           "components/Collections/CollectionDetails.tsx": 1,
           "components/Feed/FeedItemOwnerInfo.tsx": 1,
           "components/Profile/ProfileHead.tsx": 1
-        }
+        },
+        "dataTestId": { "components/Profile/ProfileHead.tsx": 1 }
       }
     },
     {
@@ -1846,7 +2049,6 @@
         },
         "poster": {
           "components/Collections/CollectionDetails.tsx": 1,
-          "components/NFT/NFTAsset.tsx": 1,
           "pages/dev/DevSandbox.tsx": 2
         },
         "className": { "components/Collections/CollectionDetails.tsx": 1 },
@@ -1857,7 +2059,46 @@
           "pages/dev/DevSandbox.tsx": 4
         },
         "aspectRatio": { "components/NFT/NFTAsset.tsx": 1 },
-        "isVideo": { "components/NFT/NFTAsset.tsx": 1, "pages/dev/DevSandbox.tsx": 2 }
+        "isVideo": { "pages/dev/DevSandbox.tsx": 2 }
+      }
+    },
+    {
+      "name": "InfiniteScroll",
+      "sourceFile": "react-infinite-scroll-component/InfiniteScroll",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalProps": [
+        { "prop": "style", "callSite": "components/Collections/CollectionNftGrid.tsx" },
+        { "prop": "className", "callSite": "components/Feed/Layout.tsx" },
+        { "prop": "style", "callSite": "components/Feed/Layout.tsx" }
+      ],
+      "callSites": {
+        "components/Collections/CollectionNftGrid.tsx": 1,
+        "components/Feed/Layout.tsx": 1
+      },
+      "propsWithCallSites": {
+        "loader": {
+          "components/Collections/CollectionNftGrid.tsx": 1,
+          "components/Feed/Layout.tsx": 1
+        },
+        "next": {
+          "components/Collections/CollectionNftGrid.tsx": 1,
+          "components/Feed/Layout.tsx": 1
+        },
+        "dataLength": {
+          "components/Collections/CollectionNftGrid.tsx": 1,
+          "components/Feed/Layout.tsx": 1
+        },
+        "hasMore": {
+          "components/Collections/CollectionNftGrid.tsx": 1,
+          "components/Feed/Layout.tsx": 1
+        },
+        "scrollableTarget": { "components/Collections/CollectionNftGrid.tsx": 1 },
+        "style": {
+          "components/Collections/CollectionNftGrid.tsx": 1,
+          "components/Feed/Layout.tsx": 1
+        },
+        "className": { "components/Feed/Layout.tsx": 1 }
       }
     },
     {
@@ -1908,6 +2149,84 @@
       ],
       "propsWithCallSites": {
         "className": { "components/Collections/CollectionsTrendingWidget.tsx": 1 }
+      }
+    },
+    {
+      "name": "ConditionalLink",
+      "sourceFile": "@maui/components/General/ConditionalLink",
+      "totalInstances": 12,
+      "totalCallSites": 6,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Comments/CommentCount.tsx" },
+        { "prop": "className", "callSite": "components/Feed/FeedItem.tsx" },
+        { "prop": "className", "callSite": "components/General/ListCells.tsx" },
+        { "prop": "className", "callSite": "components/General/ListCells.tsx" },
+        { "prop": "className", "callSite": "components/NFTDetails/ActivityFeed.tsx" }
+      ],
+      "callSites": {
+        "components/Comments/CommentCount.tsx": 1,
+        "components/Feed/FeedItem.tsx": 2,
+        "components/Feed/FeedItemOwnerInfo.tsx": 1,
+        "components/General/Avatars.tsx": 3,
+        "components/General/ListCells.tsx": 3,
+        "components/NFTDetails/ActivityFeed.tsx": 2
+      },
+      "propsWithCallSites": {
+        "href": {
+          "components/Comments/CommentCount.tsx": 1,
+          "components/Feed/FeedItem.tsx": 2,
+          "components/Feed/FeedItemOwnerInfo.tsx": 1,
+          "components/General/Avatars.tsx": 3,
+          "components/General/ListCells.tsx": 3,
+          "components/NFTDetails/ActivityFeed.tsx": 2
+        },
+        "className": {
+          "components/Comments/CommentCount.tsx": 1,
+          "components/Feed/FeedItem.tsx": 1,
+          "components/General/ListCells.tsx": 2,
+          "components/NFTDetails/ActivityFeed.tsx": 1
+        },
+        "fallback": { "components/General/ListCells.tsx": 1 },
+        "target": { "components/NFTDetails/ActivityFeed.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/Comments/CommentCount.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Comments/CommentCount.tsx" }
+      ],
+      "propsWithCallSites": { "className": { "components/Comments/CommentCount.tsx": 1 } }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/Comments/Comments.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Comments/Comments.tsx" }
+      ],
+      "callSites": { "components/Comments/Comments.tsx": 2 },
+      "propsWithCallSites": { "className": { "components/Comments/Comments.tsx": 1 } }
+    },
+    {
+      "name": "button",
+      "sourceFile": "components/Comments/RootComment.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalElement": "button",
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Comments/RootComment.tsx" },
+        { "prop": "className", "callSite": "components/Comments/RootComment.tsx" }
+      ],
+      "callSites": { "components/Comments/RootComment.tsx": 2 },
+      "propsWithCallSites": {
+        "disabled": { "components/Comments/RootComment.tsx": 1 },
+        "type": { "components/Comments/RootComment.tsx": 1 },
+        "className": { "components/Comments/RootComment.tsx": 2 },
+        "onClick": { "components/Comments/RootComment.tsx": 2 }
       }
     },
     {
@@ -1976,39 +2295,6 @@
       "propsWithCallSites": { "className": { "components/Feed/FeedItem.tsx": 1 } }
     },
     {
-      "name": "ConditionalLink",
-      "sourceFile": "@maui/components/General/ConditionalLink",
-      "totalInstances": 10,
-      "totalCallSites": 4,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Feed/FeedItem.tsx" },
-        { "prop": "className", "callSite": "components/General/ListCells.tsx" },
-        { "prop": "className", "callSite": "components/General/ListCells.tsx" },
-        { "prop": "className", "callSite": "components/NFTDetails/ActivityFeed.tsx" }
-      ],
-      "callSites": {
-        "components/Feed/FeedItem.tsx": 2,
-        "components/General/Avatars.tsx": 3,
-        "components/General/ListCells.tsx": 3,
-        "components/NFTDetails/ActivityFeed.tsx": 2
-      },
-      "propsWithCallSites": {
-        "href": {
-          "components/Feed/FeedItem.tsx": 2,
-          "components/General/Avatars.tsx": 3,
-          "components/General/ListCells.tsx": 3,
-          "components/NFTDetails/ActivityFeed.tsx": 2
-        },
-        "className": {
-          "components/Feed/FeedItem.tsx": 1,
-          "components/General/ListCells.tsx": 2,
-          "components/NFTDetails/ActivityFeed.tsx": 1
-        },
-        "fallback": { "components/General/ListCells.tsx": 1 },
-        "target": { "components/NFTDetails/ActivityFeed.tsx": 1 }
-      }
-    },
-    {
       "name": "UsernameOrWalletAddress",
       "sourceFile": "@maui/components/Feed/FeedItemOwnerInfo/UsernameOrWalletAddress",
       "totalInstances": 1,
@@ -2047,18 +2333,6 @@
       "totalCallSites": 1,
       "presentationalProps": [{ "prop": "className", "callSite": "components/Feed/FeedItem.tsx" }],
       "propsWithCallSites": { "className": { "components/Feed/FeedItem.tsx": 1 } }
-    },
-    {
-      "name": "div",
-      "sourceFile": "components/Feed/FeedItem.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Feed/FeedItem.tsx" },
-        { "prop": "className", "callSite": "components/Feed/FeedItem.tsx" }
-      ],
-      "callSites": { "components/Feed/FeedItem.tsx": 2 },
-      "propsWithCallSites": { "className": { "components/Feed/FeedItem.tsx": 2 } }
     },
     {
       "name": "h3",
@@ -2117,30 +2391,19 @@
       "propsWithCallSites": { "className": { "components/Feed/Layout.tsx": 1 } }
     },
     {
-      "name": "InfiniteScroll",
-      "sourceFile": "react-infinite-scroll-component/InfiniteScroll",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Feed/Layout.tsx" },
-        { "prop": "style", "callSite": "components/Feed/Layout.tsx" }
-      ],
-      "propsWithCallSites": {
-        "className": { "components/Feed/Layout.tsx": 1 },
-        "style": { "components/Feed/Layout.tsx": 1 },
-        "next": { "components/Feed/Layout.tsx": 1 },
-        "hasMore": { "components/Feed/Layout.tsx": 1 },
-        "dataLength": { "components/Feed/Layout.tsx": 1 },
-        "loader": { "components/Feed/Layout.tsx": 1 }
-      }
-    },
-    {
       "name": "div",
       "sourceFile": "components/Feed/StickySidebar.tsx",
-      "totalInstances": 1,
+      "totalInstances": 3,
       "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "style", "callSite": "components/Feed/StickySidebar.tsx" }],
-      "propsWithCallSites": { "style": { "components/Feed/StickySidebar.tsx": 1 } }
+      "presentationalProps": [
+        { "prop": "style", "callSite": "components/Feed/StickySidebar.tsx" },
+        { "prop": "style", "callSite": "components/Feed/StickySidebar.tsx" }
+      ],
+      "callSites": { "components/Feed/StickySidebar.tsx": 3 },
+      "propsWithCallSites": {
+        "style": { "components/Feed/StickySidebar.tsx": 2 },
+        "ref": { "components/Feed/StickySidebar.tsx": 1 }
+      }
     },
     {
       "name": "span",
@@ -2151,212 +2414,75 @@
       "propsWithCallSites": { "style": { "components/Feed/StickySidebar.tsx": 1 } }
     },
     {
-      "name": "section",
-      "sourceFile": "components/Feed/StickySidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "style", "callSite": "components/Feed/StickySidebar.tsx" }],
-      "propsWithCallSites": {
-        "ref": { "components/Feed/StickySidebar.tsx": 1 },
-        "style": { "components/Feed/StickySidebar.tsx": 1 }
-      }
-    },
-    {
-      "name": "Avatar",
-      "sourceFile": "@maui/components/General/Avatar",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Profile/ProfileUserAvatar.tsx" }
-      ],
-      "callSites": {
-        "components/General/Avatars.tsx": 2,
-        "components/Profile/ProfileUserAvatar.tsx": 1
-      },
-      "propsWithCallSites": {
-        "user": {
-          "components/General/Avatars.tsx": 1,
-          "components/Profile/ProfileUserAvatar.tsx": 1
-        },
-        "width": {
-          "components/General/Avatars.tsx": 2,
-          "components/Profile/ProfileUserAvatar.tsx": 1
-        },
-        "avatarUrl": { "components/General/Avatars.tsx": 1 },
-        "sqorcle": { "components/General/Avatars.tsx": 1 },
-        "wallet": { "components/Profile/ProfileUserAvatar.tsx": 1 },
-        "height": { "components/Profile/ProfileUserAvatar.tsx": 1 },
-        "className": { "components/Profile/ProfileUserAvatar.tsx": 1 }
-      }
-    },
-    {
       "name": "div",
-      "sourceFile": "components/General/Avatars.tsx",
-      "totalInstances": 1,
+      "sourceFile": "components/Homepage/EducationalPanels.tsx",
+      "totalInstances": 3,
       "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "className", "callSite": "components/General/Avatars.tsx" }
+        { "prop": "className", "callSite": "components/Homepage/EducationalPanels.tsx" },
+        { "prop": "className", "callSite": "components/Homepage/EducationalPanels.tsx" },
+        { "prop": "className", "callSite": "components/Homepage/EducationalPanels.tsx" }
       ],
-      "propsWithCallSites": { "className": { "components/General/Avatars.tsx": 1 } }
-    },
-    {
-      "name": "HeaderContent",
-      "sourceFile": "components/SignInWithWallet/HeaderContent",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "presentationalElement": "div",
-      "callSites": {
-        "components/General/ConnectWalletModal.tsx": 2,
-        "components/Onboarding/BannedUserModal.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": {
-          "components/General/ConnectWalletModal.tsx": 2,
-          "components/Onboarding/BannedUserModal.tsx": 1
-        },
-        "body": {
-          "components/General/ConnectWalletModal.tsx": 2,
-          "components/Onboarding/BannedUserModal.tsx": 1
-        }
-      }
+      "callSites": { "components/Homepage/EducationalPanels.tsx": 3 },
+      "propsWithCallSites": { "className": { "components/Homepage/EducationalPanels.tsx": 3 } }
     },
     {
       "name": "p",
-      "sourceFile": "components/General/ConnectWalletModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/General/ConnectWalletModal.tsx" }
-      ],
-      "propsWithCallSites": { "className": { "components/General/ConnectWalletModal.tsx": 1 } }
-    },
-    {
-      "name": "ProviderList",
-      "sourceFile": "components/SignInWithWallet/ProviderList",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalElement": "div",
-      "callSites": {
-        "components/General/ConnectWalletModal.tsx": 1,
-        "components/SignInWithWallet/CreateWalletModal.tsx": 1
-      },
-      "propsWithCallSites": {
-        "items": {
-          "components/General/ConnectWalletModal.tsx": 1,
-          "components/SignInWithWallet/CreateWalletModal.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "components/General/ConnectWalletModal.tsx",
+      "sourceFile": "components/Homepage/EducationalPanels.tsx",
       "totalInstances": 2,
       "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "className", "callSite": "components/General/ConnectWalletModal.tsx" },
-        { "prop": "className", "callSite": "components/General/ConnectWalletModal.tsx" }
+        { "prop": "className", "callSite": "components/Homepage/EducationalPanels.tsx" },
+        { "prop": "className", "callSite": "components/Homepage/EducationalPanels.tsx" }
       ],
-      "callSites": { "components/General/ConnectWalletModal.tsx": 2 },
-      "propsWithCallSites": { "className": { "components/General/ConnectWalletModal.tsx": 2 } }
+      "callSites": { "components/Homepage/EducationalPanels.tsx": 2 },
+      "propsWithCallSites": { "className": { "components/Homepage/EducationalPanels.tsx": 2 } }
     },
     {
       "name": "a",
-      "sourceFile": "components/General/LinkedLogo.tsx",
+      "sourceFile": "components/Homepage/EducationalPanels.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "className", "callSite": "components/General/LinkedLogo.tsx" }
+        { "prop": "className", "callSite": "components/Homepage/EducationalPanels.tsx" }
       ],
-      "propsWithCallSites": {
-        "className": { "components/General/LinkedLogo.tsx": 1 },
-        "data-testid": { "components/General/LinkedLogo.tsx": 1 }
-      }
-    },
-    {
-      "name": "span",
-      "sourceFile": "components/General/ListCells.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/General/ListCells.tsx" }
-      ],
-      "callSites": { "components/General/ListCells.tsx": 2 },
-      "propsWithCallSites": { "className": { "components/General/ListCells.tsx": 1 } }
-    },
-    {
-      "name": "BlueCheckIcon",
-      "sourceFile": "@maui/components/Icons/BlueCheckIcon",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/General/ListCells.tsx" }
-      ],
-      "propsWithCallSites": {
-        "width": { "components/General/ListCells.tsx": 1 },
-        "className": { "components/General/ListCells.tsx": 1 }
-      }
-    },
-    {
-      "name": "button",
-      "sourceFile": "components/General/ListCells.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalElement": "button",
-      "callSites": { "components/General/ListCells.tsx": 2 },
-      "propsWithCallSites": { "onClick": { "components/General/ListCells.tsx": 2 } }
-    },
-    {
-      "name": "MauiImageFallback",
-      "sourceFile": "components/General/MauiImageFallback",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "div",
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/General/MauiImage.tsx" }
-      ],
-      "propsWithCallSites": { "className": { "components/General/MauiImage.tsx": 1 } }
+      "propsWithCallSites": { "className": { "components/Homepage/EducationalPanels.tsx": 1 } }
     },
     {
       "name": "div",
-      "sourceFile": "components/General/ProgressSteps.tsx",
+      "sourceFile": "components/Homepage/NewsletterModal.tsx",
       "totalInstances": 2,
       "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "className", "callSite": "components/General/ProgressSteps.tsx" },
-        { "prop": "className", "callSite": "components/General/ProgressSteps.tsx" }
+        { "prop": "className", "callSite": "components/Homepage/NewsletterModal.tsx" },
+        { "prop": "className", "callSite": "components/Homepage/NewsletterModal.tsx" }
       ],
-      "callSites": { "components/General/ProgressSteps.tsx": 2 },
-      "propsWithCallSites": { "className": { "components/General/ProgressSteps.tsx": 2 } }
+      "callSites": { "components/Homepage/NewsletterModal.tsx": 2 },
+      "propsWithCallSites": { "className": { "components/Homepage/NewsletterModal.tsx": 2 } }
     },
     {
-      "name": "span",
-      "sourceFile": "components/General/ProgressSteps.tsx",
-      "totalInstances": 6,
+      "name": "p",
+      "sourceFile": "components/Homepage/NewsletterModal.tsx",
+      "totalInstances": 2,
       "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "className", "callSite": "components/General/ProgressSteps.tsx" },
-        { "prop": "className", "callSite": "components/General/ProgressSteps.tsx" },
-        { "prop": "className", "callSite": "components/General/ProgressSteps.tsx" },
-        { "prop": "className", "callSite": "components/General/ProgressSteps.tsx" }
+        { "prop": "className", "callSite": "components/Homepage/NewsletterModal.tsx" },
+        { "prop": "className", "callSite": "components/Homepage/NewsletterModal.tsx" }
       ],
-      "callSites": { "components/General/ProgressSteps.tsx": 6 },
-      "propsWithCallSites": { "className": { "components/General/ProgressSteps.tsx": 4 } }
+      "callSites": { "components/Homepage/NewsletterModal.tsx": 2 },
+      "propsWithCallSites": { "className": { "components/Homepage/NewsletterModal.tsx": 2 } }
     },
     {
-      "name": "img",
-      "sourceFile": "components/General/Shimmer.tsx",
+      "name": "form",
+      "sourceFile": "components/Homepage/NewsletterModal.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "className", "callSite": "components/General/Shimmer.tsx" }
+        { "prop": "className", "callSite": "components/Homepage/NewsletterModal.tsx" }
       ],
       "propsWithCallSites": {
-        "aria-hidden": { "components/General/Shimmer.tsx": 1 },
-        "alt": { "components/General/Shimmer.tsx": 1 },
-        "width": { "components/General/Shimmer.tsx": 1 },
-        "height": { "components/General/Shimmer.tsx": 1 },
-        "src": { "components/General/Shimmer.tsx": 1 },
-        "className": { "components/General/Shimmer.tsx": 1 }
+        "className": { "components/Homepage/NewsletterModal.tsx": 1 },
+        "onSubmit": { "components/Homepage/NewsletterModal.tsx": 1 }
       }
     },
     {
@@ -2654,6 +2780,275 @@
       }
     },
     {
+      "name": "Loader",
+      "sourceFile": "components/General/Loader",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "div",
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" }
+      ],
+      "callSites": {
+        "components/General/AuthedPageWrapper.tsx": 1,
+        "components/Nav/NavProfilePopover.tsx": 1
+      },
+      "propsWithCallSites": {
+        "size": { "components/Nav/NavProfilePopover.tsx": 1 },
+        "className": { "components/Nav/NavProfilePopover.tsx": 1 }
+      }
+    },
+    {
+      "name": "Avatar",
+      "sourceFile": "@maui/components/General/Avatar",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Profile/ProfileUserAvatar.tsx" }
+      ],
+      "callSites": {
+        "components/General/Avatars.tsx": 2,
+        "components/Profile/ProfileUserAvatar.tsx": 1
+      },
+      "propsWithCallSites": {
+        "user": {
+          "components/General/Avatars.tsx": 1,
+          "components/Profile/ProfileUserAvatar.tsx": 1
+        },
+        "width": {
+          "components/General/Avatars.tsx": 2,
+          "components/Profile/ProfileUserAvatar.tsx": 1
+        },
+        "avatarUrl": { "components/General/Avatars.tsx": 1 },
+        "sqorcle": { "components/General/Avatars.tsx": 1 },
+        "wallet": { "components/Profile/ProfileUserAvatar.tsx": 1 },
+        "height": { "components/Profile/ProfileUserAvatar.tsx": 1 },
+        "className": { "components/Profile/ProfileUserAvatar.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/General/Avatars.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/Avatars.tsx" }
+      ],
+      "propsWithCallSites": { "className": { "components/General/Avatars.tsx": 1 } }
+    },
+    {
+      "name": "HeaderContent",
+      "sourceFile": "components/SignInWithWallet/HeaderContent",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "presentationalElement": "div",
+      "callSites": {
+        "components/General/ConnectWalletModal.tsx": 2,
+        "components/Onboarding/BannedUserModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "components/General/ConnectWalletModal.tsx": 2,
+          "components/Onboarding/BannedUserModal.tsx": 1
+        },
+        "body": {
+          "components/General/ConnectWalletModal.tsx": 2,
+          "components/Onboarding/BannedUserModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "p",
+      "sourceFile": "components/General/ConnectWalletModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/ConnectWalletModal.tsx" }
+      ],
+      "propsWithCallSites": { "className": { "components/General/ConnectWalletModal.tsx": 1 } }
+    },
+    {
+      "name": "ProviderList",
+      "sourceFile": "components/SignInWithWallet/ProviderList",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "div",
+      "callSites": {
+        "components/General/ConnectWalletModal.tsx": 1,
+        "components/SignInWithWallet/CreateWalletModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "items": {
+          "components/General/ConnectWalletModal.tsx": 1,
+          "components/SignInWithWallet/CreateWalletModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/General/ConnectWalletModal.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/ConnectWalletModal.tsx" },
+        { "prop": "className", "callSite": "components/General/ConnectWalletModal.tsx" }
+      ],
+      "callSites": { "components/General/ConnectWalletModal.tsx": 2 },
+      "propsWithCallSites": { "className": { "components/General/ConnectWalletModal.tsx": 2 } }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/General/EmojiPicker.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/EmojiPicker.tsx" },
+        { "prop": "className", "callSite": "components/General/EmojiPicker.tsx" }
+      ],
+      "callSites": { "components/General/EmojiPicker.tsx": 2 },
+      "propsWithCallSites": { "className": { "components/General/EmojiPicker.tsx": 2 } }
+    },
+    {
+      "name": "button",
+      "sourceFile": "components/General/EmojiPicker.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalElement": "button",
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/EmojiPicker.tsx" }
+      ],
+      "callSites": { "components/General/EmojiPicker.tsx": 2 },
+      "propsWithCallSites": {
+        "type": { "components/General/EmojiPicker.tsx": 1 },
+        "className": { "components/General/EmojiPicker.tsx": 1 },
+        "onClick": { "components/General/EmojiPicker.tsx": 2 },
+        "key": { "components/General/EmojiPicker.tsx": 1 }
+      }
+    },
+    {
+      "name": "a",
+      "sourceFile": "components/General/LinkedLogo.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/LinkedLogo.tsx" }
+      ],
+      "propsWithCallSites": {
+        "className": { "components/General/LinkedLogo.tsx": 1 },
+        "data-testid": { "components/General/LinkedLogo.tsx": 1 }
+      }
+    },
+    {
+      "name": "span",
+      "sourceFile": "components/General/ListCells.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/ListCells.tsx" }
+      ],
+      "callSites": { "components/General/ListCells.tsx": 2 },
+      "propsWithCallSites": {
+        "data-testid": { "components/General/ListCells.tsx": 1 },
+        "className": { "components/General/ListCells.tsx": 1 }
+      }
+    },
+    {
+      "name": "BlueCheckIcon",
+      "sourceFile": "@maui/components/Icons/BlueCheckIcon",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/ListCells.tsx" },
+        { "prop": "className", "callSite": "components/NFTDetails/ModalListings.tsx" }
+      ],
+      "callSites": {
+        "components/General/ListCells.tsx": 1,
+        "components/NFTDetails/ModalListings.tsx": 1
+      },
+      "propsWithCallSites": {
+        "width": { "components/General/ListCells.tsx": 1 },
+        "className": {
+          "components/General/ListCells.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "button",
+      "sourceFile": "components/General/ListCells.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalElement": "button",
+      "callSites": { "components/General/ListCells.tsx": 2 },
+      "propsWithCallSites": { "onClick": { "components/General/ListCells.tsx": 2 } }
+    },
+    {
+      "name": "MauiImageFallback",
+      "sourceFile": "components/General/MauiImageFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "div",
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/MauiImage.tsx" }
+      ],
+      "propsWithCallSites": { "className": { "components/General/MauiImage.tsx": 1 } }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/General/ProgressSteps.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/ProgressSteps.tsx" },
+        { "prop": "className", "callSite": "components/General/ProgressSteps.tsx" }
+      ],
+      "callSites": { "components/General/ProgressSteps.tsx": 2 },
+      "propsWithCallSites": { "className": { "components/General/ProgressSteps.tsx": 2 } }
+    },
+    {
+      "name": "span",
+      "sourceFile": "components/General/ProgressSteps.tsx",
+      "totalInstances": 6,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/ProgressSteps.tsx" },
+        { "prop": "className", "callSite": "components/General/ProgressSteps.tsx" },
+        { "prop": "className", "callSite": "components/General/ProgressSteps.tsx" },
+        { "prop": "className", "callSite": "components/General/ProgressSteps.tsx" }
+      ],
+      "callSites": { "components/General/ProgressSteps.tsx": 6 },
+      "propsWithCallSites": { "className": { "components/General/ProgressSteps.tsx": 4 } }
+    },
+    {
+      "name": "img",
+      "sourceFile": "components/General/Shimmer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/Shimmer.tsx" }
+      ],
+      "propsWithCallSites": {
+        "aria-hidden": { "components/General/Shimmer.tsx": 1 },
+        "alt": { "components/General/Shimmer.tsx": 1 },
+        "width": { "components/General/Shimmer.tsx": 1 },
+        "height": { "components/General/Shimmer.tsx": 1 },
+        "src": { "components/General/Shimmer.tsx": 1 },
+        "className": { "components/General/Shimmer.tsx": 1 }
+      }
+    },
+    {
+      "name": "Tab",
+      "sourceFile": "@headlessui/react/Tab",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/TabList.tsx" }
+      ],
+      "propsWithCallSites": {
+        "key": { "components/General/TabList.tsx": 1 },
+        "className": { "components/General/TabList.tsx": 1 }
+      }
+    },
+    {
       "name": "FrenContainer",
       "sourceFile": "@maui/components/General/FrenContainer",
       "totalInstances": 2,
@@ -2702,83 +3097,17 @@
       }
     },
     {
-      "name": "img",
-      "sourceFile": "components/Media/SandboxableImage.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "style", "callSite": "components/Media/SandboxableImage.tsx" }
-      ],
-      "propsWithCallSites": {
-        "alt": { "components/Media/SandboxableImage.tsx": 1 },
-        "decoding": { "components/Media/SandboxableImage.tsx": 1 },
-        "loading": { "components/Media/SandboxableImage.tsx": 1 },
-        "draggable": { "components/Media/SandboxableImage.tsx": 1 },
-        "tabIndex": { "components/Media/SandboxableImage.tsx": 1 },
-        "style": { "components/Media/SandboxableImage.tsx": 1 }
-      }
-    },
-    {
-      "name": "video",
-      "sourceFile": "components/Media/SandboxableVideo.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "style", "callSite": "components/Media/SandboxableVideo.tsx" }
-      ],
-      "propsWithCallSites": {
-        "loop": { "components/Media/SandboxableVideo.tsx": 1 },
-        "muted": { "components/Media/SandboxableVideo.tsx": 1 },
-        "autoPlay": { "components/Media/SandboxableVideo.tsx": 1 },
-        "preload": { "components/Media/SandboxableVideo.tsx": 1 },
-        "playsInline": { "components/Media/SandboxableVideo.tsx": 1 },
-        "controls": { "components/Media/SandboxableVideo.tsx": 1 },
-        "draggable": { "components/Media/SandboxableVideo.tsx": 1 },
-        "tabIndex": { "components/Media/SandboxableVideo.tsx": 1 },
-        "style": { "components/Media/SandboxableVideo.tsx": 1 }
-      }
-    },
-    {
       "name": "IframeSandbox",
       "sourceFile": "@maui/components/Media/IframeSandbox",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "style", "callSite": "components/Media/SandboxedMedia.tsx" }
+        { "prop": "className", "callSite": "components/Media/SandboxedMedia.tsx" }
       ],
       "propsWithCallSites": {
         "ref": { "components/Media/SandboxedMedia.tsx": 1 },
         "role": { "components/Media/SandboxedMedia.tsx": 1 },
-        "style": { "components/Media/SandboxedMedia.tsx": 1 }
-      }
-    },
-    {
-      "name": "html",
-      "sourceFile": "components/Media/SandboxedMedia.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "style", "callSite": "components/Media/SandboxedMedia.tsx" }
-      ],
-      "propsWithCallSites": { "style": { "components/Media/SandboxedMedia.tsx": 1 } }
-    },
-    {
-      "name": "SandboxableImage",
-      "sourceFile": "@maui/components/Media/SandboxableImage",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "style", "callSite": "components/Media/SandboxedMedia.tsx" }
-      ],
-      "callSites": { "components/Media/SandboxedMedia.tsx": 2 },
-      "propsWithCallSites": {
-        "id": { "components/Media/SandboxedMedia.tsx": 2 },
-        "onLoadCode": { "components/Media/SandboxedMedia.tsx": 1 },
-        "onErrorCode": { "components/Media/SandboxedMedia.tsx": 2 },
-        "decoding": { "components/Media/SandboxedMedia.tsx": 1 },
-        "loading": { "components/Media/SandboxedMedia.tsx": 1 },
-        "src": { "components/Media/SandboxedMedia.tsx": 1 },
-        "style": { "components/Media/SandboxedMedia.tsx": 1 }
+        "className": { "components/Media/SandboxedMedia.tsx": 1 }
       }
     },
     {
@@ -2787,9 +3116,9 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "style", "callSite": "components/Media/SandboxedMedia.tsx" }
+        { "prop": "className", "callSite": "components/Media/SandboxedMedia.tsx" }
       ],
-      "propsWithCallSites": { "style": { "components/Media/SandboxedMedia.tsx": 1 } }
+      "propsWithCallSites": { "className": { "components/Media/SandboxedMedia.tsx": 1 } }
     },
     {
       "name": "div",
@@ -2816,21 +3145,10 @@
       "totalCallSites": 1,
       "presentationalProps": [
         { "prop": "className", "callSite": "components/NFTDetails/ActivityFeed.tsx" },
-        { "prop": "className", "callSite": "components/NFTDetails/ActivityFeed.tsx" },
         { "prop": "className", "callSite": "components/NFTDetails/ActivityFeed.tsx" }
       ],
       "callSites": { "components/NFTDetails/ActivityFeed.tsx": 3 },
-      "propsWithCallSites": { "className": { "components/NFTDetails/ActivityFeed.tsx": 3 } }
-    },
-    {
-      "name": "h3",
-      "sourceFile": "components/NFTDetails/ActivityFeed.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/NFTDetails/ActivityFeed.tsx" }
-      ],
-      "propsWithCallSites": { "className": { "components/NFTDetails/ActivityFeed.tsx": 1 } }
+      "propsWithCallSites": { "className": { "components/NFTDetails/ActivityFeed.tsx": 2 } }
     },
     {
       "name": "ul",
@@ -2954,6 +3272,57 @@
     },
     {
       "name": "div",
+      "sourceFile": "components/NFTDetails/ModalListings.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/NFTDetails/ModalListings.tsx" },
+        { "prop": "className", "callSite": "components/NFTDetails/ModalListings.tsx" },
+        { "prop": "className", "callSite": "components/NFTDetails/ModalListings.tsx" }
+      ],
+      "callSites": { "components/NFTDetails/ModalListings.tsx": 3 },
+      "propsWithCallSites": { "className": { "components/NFTDetails/ModalListings.tsx": 3 } }
+    },
+    {
+      "name": "button",
+      "sourceFile": "components/NFTDetails/ModalListings.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalElement": "button",
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/NFTDetails/ModalListings.tsx" },
+        { "prop": "className", "callSite": "components/NFTDetails/ModalListings.tsx" }
+      ],
+      "callSites": { "components/NFTDetails/ModalListings.tsx": 2 },
+      "propsWithCallSites": {
+        "className": { "components/NFTDetails/ModalListings.tsx": 2 },
+        "onClick": { "components/NFTDetails/ModalListings.tsx": 2 }
+      }
+    },
+    {
+      "name": "li",
+      "sourceFile": "components/NFTDetails/ModalListings.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/NFTDetails/ModalListings.tsx" }
+      ],
+      "propsWithCallSites": { "className": { "components/NFTDetails/ModalListings.tsx": 1 } }
+    },
+    {
+      "name": "span",
+      "sourceFile": "components/NFTDetails/ModalListings.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/NFTDetails/ModalListings.tsx" },
+        { "prop": "className", "callSite": "components/NFTDetails/ModalListings.tsx" }
+      ],
+      "callSites": { "components/NFTDetails/ModalListings.tsx": 2 },
+      "propsWithCallSites": { "className": { "components/NFTDetails/ModalListings.tsx": 2 } }
+    },
+    {
+      "name": "div",
       "sourceFile": "components/NFTDetails/ModalMessages.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -3001,6 +3370,16 @@
       "propsWithCallSites": { "className": { "components/NFTDetails/NFTInfo.tsx": 2 } }
     },
     {
+      "name": "h1",
+      "sourceFile": "components/NFTDetails/NftTransaction.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/NFTDetails/NftTransaction.tsx" }
+      ],
+      "propsWithCallSites": { "className": { "components/NFTDetails/NftTransaction.tsx": 1 } }
+    },
+    {
       "name": "div",
       "sourceFile": "components/NFTDetails/OwnerInfo.tsx",
       "totalInstances": 1,
@@ -3026,7 +3405,11 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "div",
-      "propsWithCallSites": { "onClick": { "components/NFTDetails/PurchaseActions.tsx": 1 } }
+      "propsWithCallSites": {
+        "onClick": { "components/NFTDetails/PurchaseActions.tsx": 1 },
+        "totalListings": { "components/NFTDetails/PurchaseActions.tsx": 1 },
+        "setListingsModalOpen": { "components/NFTDetails/PurchaseActions.tsx": 1 }
+      }
     },
     {
       "name": "ul",
@@ -3076,17 +3459,6 @@
       ],
       "propsWithCallSites": {
         "style": { "components/Nav/Nav.tsx": 1 },
-        "className": { "components/Nav/Nav.tsx": 1 }
-      }
-    },
-    {
-      "name": "nav",
-      "sourceFile": "components/Nav/Nav.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "className", "callSite": "components/Nav/Nav.tsx" }],
-      "propsWithCallSites": {
-        "data-testid": { "components/Nav/Nav.tsx": 1 },
         "className": { "components/Nav/Nav.tsx": 1 }
       }
     },
@@ -3158,21 +3530,26 @@
       "propsWithCallSites": {
         "width": { "components/Nav/NavProfilePopover.tsx": 1 },
         "user": { "components/Nav/NavProfilePopover.tsx": 1 },
-        "onPress": { "components/Nav/NavProfilePopover.tsx": 1 }
+        "onPress": { "components/Nav/NavProfilePopover.tsx": 1 },
+        "data-testid": { "components/Nav/NavProfilePopover.tsx": 1 }
       }
     },
     {
       "name": "div",
       "sourceFile": "components/Nav/NavProfilePopover.tsx",
-      "totalInstances": 3,
+      "totalInstances": 4,
       "totalCallSites": 1,
       "presentationalProps": [
         { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" },
         { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" },
+        { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" },
         { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" }
       ],
-      "callSites": { "components/Nav/NavProfilePopover.tsx": 3 },
-      "propsWithCallSites": { "className": { "components/Nav/NavProfilePopover.tsx": 3 } }
+      "callSites": { "components/Nav/NavProfilePopover.tsx": 4 },
+      "propsWithCallSites": {
+        "className": { "components/Nav/NavProfilePopover.tsx": 4 },
+        "data-testid": { "components/Nav/NavProfilePopover.tsx": 1 }
+      }
     },
     {
       "name": "p",
@@ -3223,6 +3600,48 @@
         "target": { "components/Onboarding/BannedUserModal.tsx": 2 },
         "rel": { "components/Onboarding/BannedUserModal.tsx": 2 }
       }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/Onboarding/EmailVerifiedModal.tsx",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Onboarding/EmailVerifiedModal.tsx" },
+        { "prop": "className", "callSite": "components/Onboarding/EmailVerifiedModal.tsx" },
+        { "prop": "className", "callSite": "components/Onboarding/EmailVerifiedModal.tsx" },
+        { "prop": "className", "callSite": "components/Onboarding/EmailVerifiedModal.tsx" },
+        { "prop": "className", "callSite": "components/Onboarding/EmailVerifiedModal.tsx" }
+      ],
+      "callSites": { "components/Onboarding/EmailVerifiedModal.tsx": 5 },
+      "propsWithCallSites": {
+        "className": { "components/Onboarding/EmailVerifiedModal.tsx": 5 },
+        "data-testid": { "components/Onboarding/EmailVerifiedModal.tsx": 2 }
+      }
+    },
+    {
+      "name": "p",
+      "sourceFile": "components/Onboarding/EmailVerifiedModal.tsx",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Onboarding/EmailVerifiedModal.tsx" },
+        { "prop": "className", "callSite": "components/Onboarding/EmailVerifiedModal.tsx" },
+        { "prop": "className", "callSite": "components/Onboarding/EmailVerifiedModal.tsx" },
+        { "prop": "className", "callSite": "components/Onboarding/EmailVerifiedModal.tsx" }
+      ],
+      "callSites": { "components/Onboarding/EmailVerifiedModal.tsx": 4 },
+      "propsWithCallSites": { "className": { "components/Onboarding/EmailVerifiedModal.tsx": 4 } }
+    },
+    {
+      "name": "a",
+      "sourceFile": "components/Onboarding/EmailVerifiedModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Onboarding/EmailVerifiedModal.tsx" }
+      ],
+      "propsWithCallSites": { "className": { "components/Onboarding/EmailVerifiedModal.tsx": 1 } }
     },
     {
       "name": "form",
@@ -3671,7 +4090,10 @@
       "presentationalProps": [
         { "prop": "className", "callSite": "components/Profile/ProfileHead.tsx" }
       ],
-      "propsWithCallSites": { "className": { "components/Profile/ProfileHead.tsx": 1 } }
+      "propsWithCallSites": {
+        "data-testid": { "components/Profile/ProfileHead.tsx": 1 },
+        "className": { "components/Profile/ProfileHead.tsx": 1 }
+      }
     },
     {
       "name": "p",
@@ -3839,6 +4261,18 @@
       }
     },
     {
+      "name": "ul",
+      "sourceFile": "components/SignInWithWallet/ConnectWalletModalV2.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/SignInWithWallet/ConnectWalletModalV2.tsx" }
+      ],
+      "propsWithCallSites": {
+        "className": { "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1 }
+      }
+    },
+    {
       "name": "div",
       "sourceFile": "components/Wallet/AlreadyConnectedPrompt.tsx",
       "totalInstances": 4,
@@ -3873,7 +4307,7 @@
     {
       "name": "div",
       "sourceFile": "components/Wallet/Wallet.tsx",
-      "totalInstances": 9,
+      "totalInstances": 10,
       "totalCallSites": 1,
       "presentationalProps": [
         { "prop": "className", "callSite": "components/Wallet/Wallet.tsx" },
@@ -3883,10 +4317,11 @@
         { "prop": "className", "callSite": "components/Wallet/Wallet.tsx" },
         { "prop": "className", "callSite": "components/Wallet/Wallet.tsx" },
         { "prop": "className", "callSite": "components/Wallet/Wallet.tsx" },
+        { "prop": "className", "callSite": "components/Wallet/Wallet.tsx" },
         { "prop": "className", "callSite": "components/Wallet/Wallet.tsx" }
       ],
-      "callSites": { "components/Wallet/Wallet.tsx": 9 },
-      "propsWithCallSites": { "className": { "components/Wallet/Wallet.tsx": 8 } }
+      "callSites": { "components/Wallet/Wallet.tsx": 10 },
+      "propsWithCallSites": { "className": { "components/Wallet/Wallet.tsx": 9 } }
     },
     {
       "name": "p",
@@ -3947,18 +4382,6 @@
       ],
       "callSites": { "components/Wallet/WalletV2.tsx": 9 },
       "propsWithCallSites": { "className": { "components/Wallet/WalletV2.tsx": 9 } }
-    },
-    {
-      "name": "ul",
-      "sourceFile": "components/SignInWithWallet/ConnectWalletModalV2.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/SignInWithWallet/ConnectWalletModalV2.tsx" }
-      ],
-      "propsWithCallSites": {
-        "className": { "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1 }
-      }
     },
     {
       "name": "article",
@@ -4433,16 +4856,25 @@
     },
     {
       "name": "div",
+      "sourceFile": "components/General/Overlays/ConfirmDialog.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/Overlays/ConfirmDialog.tsx" }
+      ],
+      "propsWithCallSites": { "className": { "components/General/Overlays/ConfirmDialog.tsx": 1 } }
+    },
+    {
+      "name": "div",
       "sourceFile": "components/General/Overlays/Modal.tsx",
-      "totalInstances": 3,
+      "totalInstances": 2,
       "totalCallSites": 1,
       "presentationalProps": [
         { "prop": "className", "callSite": "components/General/Overlays/Modal.tsx" },
-        { "prop": "className", "callSite": "components/General/Overlays/Modal.tsx" },
         { "prop": "className", "callSite": "components/General/Overlays/Modal.tsx" }
       ],
-      "callSites": { "components/General/Overlays/Modal.tsx": 3 },
-      "propsWithCallSites": { "className": { "components/General/Overlays/Modal.tsx": 3 } }
+      "callSites": { "components/General/Overlays/Modal.tsx": 2 },
+      "propsWithCallSites": { "className": { "components/General/Overlays/Modal.tsx": 2 } }
     },
     {
       "name": "p",
@@ -4459,19 +4891,21 @@
     {
       "name": "span",
       "sourceFile": "components/General/Overlays/Modal.tsx",
-      "totalInstances": 1,
+      "totalInstances": 2,
       "totalCallSites": 1,
       "presentationalProps": [
         { "prop": "className", "callSite": "components/General/Overlays/Modal.tsx" }
       ],
+      "callSites": { "components/General/Overlays/Modal.tsx": 2 },
       "propsWithCallSites": { "className": { "components/General/Overlays/Modal.tsx": 1 } }
     },
     {
       "name": "div",
       "sourceFile": "components/General/Overlays/SlideUpDialog.tsx",
-      "totalInstances": 17,
+      "totalInstances": 18,
       "totalCallSites": 1,
       "presentationalProps": [
+        { "prop": "className", "callSite": "components/General/Overlays/SlideUpDialog.tsx" },
         { "prop": "className", "callSite": "components/General/Overlays/SlideUpDialog.tsx" },
         { "prop": "className", "callSite": "components/General/Overlays/SlideUpDialog.tsx" },
         { "prop": "className", "callSite": "components/General/Overlays/SlideUpDialog.tsx" },
@@ -4490,8 +4924,8 @@
         { "prop": "className", "callSite": "components/General/Overlays/SlideUpDialog.tsx" },
         { "prop": "className", "callSite": "components/General/Overlays/SlideUpDialog.tsx" }
       ],
-      "callSites": { "components/General/Overlays/SlideUpDialog.tsx": 17 },
-      "propsWithCallSites": { "className": { "components/General/Overlays/SlideUpDialog.tsx": 17 } }
+      "callSites": { "components/General/Overlays/SlideUpDialog.tsx": 18 },
+      "propsWithCallSites": { "className": { "components/General/Overlays/SlideUpDialog.tsx": 18 } }
     },
     {
       "name": "p",
@@ -4629,23 +5063,6 @@
       "propsWithCallSites": { "className": { "components/Profile/Edit/Frame.tsx": 2 } }
     },
     {
-      "name": "button",
-      "sourceFile": "components/Profile/Edit/ProfileForm.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalElement": "button",
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Profile/Edit/ProfileForm.tsx" },
-        { "prop": "className", "callSite": "components/Profile/Edit/ProfileForm.tsx" }
-      ],
-      "callSites": { "components/Profile/Edit/ProfileForm.tsx": 2 },
-      "propsWithCallSites": {
-        "className": { "components/Profile/Edit/ProfileForm.tsx": 2 },
-        "onClick": { "components/Profile/Edit/ProfileForm.tsx": 2 },
-        "type": { "components/Profile/Edit/ProfileForm.tsx": 2 }
-      }
-    },
-    {
       "name": "span",
       "sourceFile": "components/Profile/Edit/ProfileForm.tsx",
       "totalInstances": 3,
@@ -4779,12 +5196,14 @@
     {
       "name": "SsrCompatibleSuspense",
       "sourceFile": "@maui/components/General/SuspenseSSR/SsrCompatibleSuspense",
-      "totalInstances": 12,
-      "totalCallSites": 12,
+      "totalInstances": 14,
+      "totalCallSites": 14,
       "callSites": {
         "components/withMockData.tsx": 1,
+        "pages/_app.tsx": 1,
         "pages/accounts-to-follow.tsx": 1,
         "pages/search.tsx": 1,
+        "components/Collections/CollectionNftGrid.tsx": 1,
         "components/Feed/FeedItemOwnerInfo.tsx": 1,
         "components/Layouts/Layout.tsx": 1,
         "components/NFTDetails/OwnerInfo.tsx": 1,
@@ -4798,8 +5217,10 @@
       "propsWithCallSites": {
         "fallback": {
           "components/withMockData.tsx": 1,
+          "pages/_app.tsx": 1,
           "pages/accounts-to-follow.tsx": 1,
           "pages/search.tsx": 1,
+          "components/Collections/CollectionNftGrid.tsx": 1,
           "components/Feed/FeedItemOwnerInfo.tsx": 1,
           "components/Layouts/Layout.tsx": 1,
           "components/NFTDetails/OwnerInfo.tsx": 1,
@@ -4850,7 +5271,14 @@
       "totalInstances": 1,
       "totalCallSites": 1
     },
-    { "name": "Nav", "sourceFile": "components/Nav/Nav", "totalInstances": 1, "totalCallSites": 1 },
+    {
+      "name": "Nav",
+      "sourceFile": "@maui/components/Nav/Nav",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": { "pages/_app.tsx": 1, "pages/index.tsx": 1 },
+      "propsWithCallSites": { "variant": { "pages/index.tsx": 1 } }
+    },
     {
       "name": "Head",
       "sourceFile": "next/head/Head",
@@ -4956,13 +5384,13 @@
     },
     {
       "name": "ScrollAwayProvider",
-      "sourceFile": "utils/ScrollAwayProvider",
+      "sourceFile": "@maui/utils/ScrollAwayProvider",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
       "name": "VisualViewportStyleVars",
-      "sourceFile": "utils/VisualViewportStyleVars",
+      "sourceFile": "@maui/utils/VisualViewportStyleVars",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -4991,13 +5419,6 @@
       }
     },
     {
-      "name": "SsrCompatibleSuspense",
-      "sourceFile": "components/General/SuspenseSSR/SsrCompatibleSuspense",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "fallback": { "pages/_app.tsx": 1 } }
-    },
-    {
       "name": "RelayEnvironmentProvider",
       "sourceFile": "react-relay/hooks/RelayEnvironmentProvider",
       "totalInstances": 2,
@@ -5009,7 +5430,7 @@
     },
     {
       "name": "OnboardingProvider",
-      "sourceFile": "contexts/OnboardingContext/OnboardingProvider",
+      "sourceFile": "@maui/contexts/OnboardingContext/OnboardingProvider",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -5089,8 +5510,8 @@
     {
       "name": "Link",
       "sourceFile": "next/link/Link",
-      "totalInstances": 33,
-      "totalCallSites": 20,
+      "totalInstances": 35,
+      "totalCallSites": 22,
       "callSites": {
         "pages/dev.tsx": 10,
         "components/Card/CollectionCard.tsx": 2,
@@ -5098,11 +5519,13 @@
         "components/Collections/CollectionsTrendingWidget.tsx": 1,
         "components/Feed/AccountsToFollowWidget.tsx": 1,
         "components/Feed/FeedItemOwnerInfo.tsx": 1,
+        "components/Homepage/EducationalPanels.tsx": 1,
         "components/General/ConditionalLink.tsx": 1,
         "components/General/LinkedLogo.tsx": 1,
         "components/NFT/NFTCardLarge.tsx": 1,
         "components/Nav/NavItem.tsx": 1,
         "components/Onboarding/BannedUserModal.tsx": 2,
+        "components/Onboarding/EmailVerifiedModal.tsx": 1,
         "components/Profile/ArtCardLink.tsx": 1,
         "components/Profile/FollowOrEditButton.tsx": 1,
         "components/Profile/FollowedByLine.tsx": 1,
@@ -5121,10 +5544,12 @@
           "components/Collections/CollectionsTrendingWidget.tsx": 1,
           "components/Feed/AccountsToFollowWidget.tsx": 1,
           "components/Feed/FeedItemOwnerInfo.tsx": 1,
+          "components/Homepage/EducationalPanels.tsx": 1,
           "components/General/ConditionalLink.tsx": 1,
           "components/General/LinkedLogo.tsx": 1,
           "components/NFT/NFTCardLarge.tsx": 1,
           "components/Onboarding/BannedUserModal.tsx": 2,
+          "components/Onboarding/EmailVerifiedModal.tsx": 1,
           "components/Profile/ArtCardLink.tsx": 1,
           "components/Profile/FollowOrEditButton.tsx": 1,
           "components/Profile/FollowedByLine.tsx": 1,
@@ -5140,13 +5565,18 @@
           "components/Collections/CollectionDetails.tsx": 2,
           "components/Feed/AccountsToFollowWidget.tsx": 1,
           "components/Onboarding/BannedUserModal.tsx": 2,
+          "components/Onboarding/EmailVerifiedModal.tsx": 1,
           "components/Profile/FollowOrEditButton.tsx": 1,
           "components/Profile/FollowedByLine.tsx": 1,
           "components/Search/SearchPageResults.tsx": 1,
           "pages/nft/removed.tsx": 2,
           "components/Profile/Edit/Frame.tsx": 1
         },
-        "shallow": { "components/NFT/NFTCardLarge.tsx": 1, "components/Profile/ArtCardLink.tsx": 1 }
+        "shallow": {
+          "components/NFT/NFTCardLarge.tsx": 1,
+          "components/Profile/ArtCardLink.tsx": 1
+        },
+        "data-testid": { "components/Onboarding/EmailVerifiedModal.tsx": 1 }
       }
     },
     {
@@ -5208,6 +5638,12 @@
     {
       "name": "HomepageContent",
       "sourceFile": "@maui/components/Homepage/HomepageContent",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "EmailVerifiedWrapper",
+      "sourceFile": "@maui/components/Onboarding/EmailVerifiedWrapper",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -5289,6 +5725,12 @@
     {
       "name": "title",
       "sourceFile": "pages/wallets.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ConnectWalletButton",
+      "sourceFile": "@maui/components/Wallet/ConnectWalletButton",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -5388,31 +5830,27 @@
       }
     },
     {
-      "name": "ErrorState",
-      "sourceFile": "@maui/components/Buying/Errors/ErrorState",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/Buying/CheckoutSteps.tsx": 1,
-        "components/Buying/UpdateListingSteps.tsx": 2
-      },
-      "propsWithCallSites": {
-        "canAfford": { "components/Buying/CheckoutSteps.tsx": 1 },
-        "correctChain": {
-          "components/Buying/CheckoutSteps.tsx": 1,
-          "components/Buying/UpdateListingSteps.tsx": 2
-        }
-      }
+      "name": "WrongChain",
+      "sourceFile": "@maui/components/Buying/Errors/WrongChain",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "NotEnoughEth",
+      "sourceFile": "@maui/components/Buying/Errors/NotEnoughEth",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "ListCellBase",
       "sourceFile": "@maui/components/General/ListCells/ListCellBase",
-      "totalInstances": 7,
-      "totalCallSites": 6,
+      "totalInstances": 8,
+      "totalCallSites": 7,
       "callSites": {
         "components/Buying/CheckoutSteps.tsx": 1,
         "components/NFT/NFTThumbnail.tsx": 1,
         "components/NFTDetails/ActivityFeed.tsx": 1,
+        "components/NFTDetails/ModalListings.tsx": 1,
         "components/NFTDetails/ReportDialog.tsx": 1,
         "components/NFTDetails/RoyaltyFee.tsx": 1,
         "components/Nav/NavProfilePopover.tsx": 2
@@ -5422,12 +5860,14 @@
           "components/Buying/CheckoutSteps.tsx": 1,
           "components/NFT/NFTThumbnail.tsx": 1,
           "components/NFTDetails/ActivityFeed.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 1,
           "components/Nav/NavProfilePopover.tsx": 2
         },
         "title": {
           "components/Buying/CheckoutSteps.tsx": 1,
           "components/NFT/NFTThumbnail.tsx": 1,
           "components/NFTDetails/ActivityFeed.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 1,
           "components/NFTDetails/ReportDialog.tsx": 1,
           "components/NFTDetails/RoyaltyFee.tsx": 1,
           "components/Nav/NavProfilePopover.tsx": 2
@@ -5451,7 +5891,9 @@
         "onPress": {
           "components/NFTDetails/ReportDialog.tsx": 1,
           "components/Nav/NavProfilePopover.tsx": 2
-        }
+        },
+        "detail": { "components/Nav/NavProfilePopover.tsx": 1 },
+        "testID": { "components/Nav/NavProfilePopover.tsx": 1 }
       }
     },
     {
@@ -5574,6 +6016,14 @@
       "propsWithCallSites": { "nft": { "components/Buying/UpdateListing.tsx": 1 } }
     },
     {
+      "name": "ErrorState",
+      "sourceFile": "@maui/components/Buying/Errors/ErrorState",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/Buying/UpdateListingSteps.tsx": 2 },
+      "propsWithCallSites": { "correctChain": { "components/Buying/UpdateListingSteps.tsx": 2 } }
+    },
+    {
       "name": "CollectionCell",
       "sourceFile": "@maui/components/General/ListCells/CollectionCell",
       "totalInstances": 3,
@@ -5652,12 +6102,6 @@
       "propsWithCallSites": { "source": { "components/Collections/CollectionDetails.tsx": 1 } }
     },
     {
-      "name": "CollectionPhotoFallback",
-      "sourceFile": "components/Collections/CollectionDetails.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "ShareCollectionButton",
       "sourceFile": "components/Collections/CollectionDetails.tsx",
       "totalInstances": 1,
@@ -5680,6 +6124,219 @@
         "address": { "components/Collections/CollectionDetails.tsx": 1 },
         "total": { "components/Collections/CollectionDetails.tsx": 1 }
       }
+    },
+    {
+      "name": "CardGrid",
+      "sourceFile": "@maui/components/General/CardGrid",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "components/Collections/CollectionNftGrid.tsx": 1,
+        "components/Search/SearchPageResults.tsx": 1,
+        "pages/dev/DevSandbox.tsx": 1
+      }
+    },
+    {
+      "name": "ArtCardLink",
+      "sourceFile": "@maui/components/Profile/ArtCardLink",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/Collections/CollectionNftGrid.tsx": 1,
+        "pages/dev/DevSandbox.tsx": 1
+      },
+      "propsWithCallSites": {
+        "key": { "components/Collections/CollectionNftGrid.tsx": 1 },
+        "nft": { "components/Collections/CollectionNftGrid.tsx": 1, "pages/dev/DevSandbox.tsx": 1 },
+        "data-testid": { "pages/dev/DevSandbox.tsx": 1 },
+        "data-test-title": { "pages/dev/DevSandbox.tsx": 1 }
+      }
+    },
+    {
+      "name": "UserCell",
+      "sourceFile": "@maui/components/General/ListCells/UserCell",
+      "totalInstances": 10,
+      "totalCallSites": 8,
+      "callSites": {
+        "components/Comments/BaseComment.tsx": 1,
+        "components/Feed/FeedItemOwnerInfo.tsx": 2,
+        "components/NFTDetails/NFTInfo.tsx": 1,
+        "components/NFTDetails/OwnerInfo.tsx": 2,
+        "components/Nav/NavProfilePopover.tsx": 1,
+        "components/Profile/FollowersModal.tsx": 1,
+        "components/Profile/FollowingModal.tsx": 1,
+        "components/General/LikedByDialog/index.tsx": 1
+      },
+      "propsWithCallSites": {
+        "user": {
+          "components/Comments/BaseComment.tsx": 1,
+          "components/Feed/FeedItemOwnerInfo.tsx": 2,
+          "components/NFTDetails/NFTInfo.tsx": 1,
+          "components/NFTDetails/OwnerInfo.tsx": 2,
+          "components/Nav/NavProfilePopover.tsx": 1,
+          "components/Profile/FollowersModal.tsx": 1,
+          "components/Profile/FollowingModal.tsx": 1,
+          "components/General/LikedByDialog/index.tsx": 1
+        },
+        "description": { "components/Comments/BaseComment.tsx": 1 },
+        "size": {
+          "components/Feed/FeedItemOwnerInfo.tsx": 1,
+          "components/NFTDetails/NFTInfo.tsx": 1,
+          "components/NFTDetails/OwnerInfo.tsx": 1
+        },
+        "href": { "components/Feed/FeedItemOwnerInfo.tsx": 1 },
+        "key": {
+          "components/Feed/FeedItemOwnerInfo.tsx": 1,
+          "components/NFTDetails/OwnerInfo.tsx": 1,
+          "components/Profile/FollowersModal.tsx": 1,
+          "components/Profile/FollowingModal.tsx": 1,
+          "components/General/LikedByDialog/index.tsx": 1
+        },
+        "action": {
+          "components/Feed/FeedItemOwnerInfo.tsx": 1,
+          "components/NFTDetails/NFTInfo.tsx": 1,
+          "components/NFTDetails/OwnerInfo.tsx": 2,
+          "components/Profile/FollowersModal.tsx": 1,
+          "components/Profile/FollowingModal.tsx": 1,
+          "components/General/LikedByDialog/index.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MorePopover2",
+      "sourceFile": "@maui/components/General/Overlays/MorePopover/MorePopover2",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "onChange": { "components/Comments/CommentControls.tsx": 1 } }
+    },
+    {
+      "name": "ShortNum",
+      "sourceFile": "@maui/components/General/Text/ShortNum",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "components/Comments/CommentCount.tsx": 1,
+        "components/Profile/FollowedByLine.tsx": 1,
+        "components/General/Buttons/LikeButton.tsx": 1
+      },
+      "propsWithCallSites": {
+        "value": {
+          "components/Comments/CommentCount.tsx": 1,
+          "components/Profile/FollowedByLine.tsx": 1,
+          "components/General/Buttons/LikeButton.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "form",
+      "sourceFile": "components/Comments/Comments.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "onSubmit": { "components/Comments/Comments.tsx": 1 } }
+    },
+    {
+      "name": "EmojiPicker",
+      "sourceFile": "@maui/components/General/EmojiPicker",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/Comments/Comments.tsx": 1,
+        "components/Comments/RootComment.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onSelect": {
+          "components/Comments/Comments.tsx": 1,
+          "components/Comments/RootComment.tsx": 1
+        },
+        "compact": { "components/Comments/RootComment.tsx": 1 }
+      }
+    },
+    {
+      "name": "RootComment",
+      "sourceFile": "@maui/components/Comments/RootComment",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "brandNewCommentHex": { "components/Comments/Comments.tsx": 1 },
+        "key": { "components/Comments/Comments.tsx": 1 },
+        "self": { "components/Comments/Comments.tsx": 1 },
+        "comment": { "components/Comments/Comments.tsx": 1 },
+        "childComments": { "components/Comments/Comments.tsx": 1 },
+        "commenters": { "components/Comments/Comments.tsx": 1 },
+        "onReplySubmit": { "components/Comments/Comments.tsx": 1 },
+        "replyToUndo": { "components/Comments/Comments.tsx": 1 },
+        "onCommentDelete": { "components/Comments/Comments.tsx": 1 }
+      }
+    },
+    {
+      "name": "ConfirmDialog",
+      "sourceFile": "@maui/components/General/Overlays/ConfirmDialog",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": { "components/Comments/Comments.tsx": 1, "components/Nav/SignoutDialog.tsx": 1 },
+      "propsWithCallSites": {
+        "title": { "components/Comments/Comments.tsx": 1, "components/Nav/SignoutDialog.tsx": 1 },
+        "body": { "components/Comments/Comments.tsx": 1, "components/Nav/SignoutDialog.tsx": 1 },
+        "open": { "components/Comments/Comments.tsx": 1, "components/Nav/SignoutDialog.tsx": 1 },
+        "onCancel": {
+          "components/Comments/Comments.tsx": 1,
+          "components/Nav/SignoutDialog.tsx": 1
+        },
+        "onConfirm": {
+          "components/Comments/Comments.tsx": 1,
+          "components/Nav/SignoutDialog.tsx": 1
+        },
+        "cancelText": { "components/Nav/SignoutDialog.tsx": 1 },
+        "confirmText": { "components/Nav/SignoutDialog.tsx": 1 },
+        "onClose": { "components/Nav/SignoutDialog.tsx": 1 }
+      }
+    },
+    {
+      "name": "CommentHighghlighter",
+      "sourceFile": "@maui/components/Comments/CommentHighghlighter",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/Comments/RootComment.tsx": 2 },
+      "propsWithCallSites": { "highlight": { "components/Comments/RootComment.tsx": 2 } }
+    },
+    {
+      "name": "BaseComment",
+      "sourceFile": "@maui/components/Comments/BaseComment",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/Comments/RootComment.tsx": 2 },
+      "propsWithCallSites": {
+        "comment": { "components/Comments/RootComment.tsx": 2 },
+        "id": { "components/Comments/RootComment.tsx": 2 }
+      }
+    },
+    {
+      "name": "CommentControls",
+      "sourceFile": "@maui/components/Comments/CommentControls",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/Comments/RootComment.tsx": 2 },
+      "propsWithCallSites": {
+        "comment": { "components/Comments/RootComment.tsx": 2 },
+        "onReplyPress": { "components/Comments/RootComment.tsx": 1 },
+        "self": { "components/Comments/RootComment.tsx": 2 },
+        "onCommentDelete": { "components/Comments/RootComment.tsx": 2 }
+      }
+    },
+    {
+      "name": "InsetCommentWrapper",
+      "sourceFile": "@maui/components/Comments/InsetCommentWrapper",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/Comments/RootComment.tsx": 2 },
+      "propsWithCallSites": { "key": { "components/Comments/RootComment.tsx": 1 } }
+    },
+    {
+      "name": "form",
+      "sourceFile": "components/Comments/RootComment.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "onSubmit": { "components/Comments/RootComment.tsx": 1 } }
     },
     {
       "name": "FeedInfiniteScroll",
@@ -5797,10 +6454,11 @@
     {
       "name": "NFTCardLarge",
       "sourceFile": "@maui/components/NFT/NFTCardLarge",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
         "components/Feed/FeedItem.tsx": 1,
+        "components/NFTDetails/NftTransaction.tsx": 1,
         "pages/dev/DevBigCard.tsx": 1,
         "pages/dev/DevSandbox.tsx": 1
       },
@@ -5808,11 +6466,15 @@
         "link": { "components/Feed/FeedItem.tsx": 1 },
         "nft": {
           "components/Feed/FeedItem.tsx": 1,
+          "components/NFTDetails/NftTransaction.tsx": 1,
           "pages/dev/DevBigCard.tsx": 1,
           "pages/dev/DevSandbox.tsx": 1
         },
-        "UFI": { "components/Feed/FeedItem.tsx": 1 },
-        "footer": { "components/Feed/FeedItem.tsx": 1 },
+        "UFI": { "components/Feed/FeedItem.tsx": 1, "components/NFTDetails/NftTransaction.tsx": 1 },
+        "footer": {
+          "components/Feed/FeedItem.tsx": 1,
+          "components/NFTDetails/NftTransaction.tsx": 1
+        },
         "data-testid": { "pages/dev/DevBigCard.tsx": 1, "pages/dev/DevSandbox.tsx": 1 },
         "data-test-title": { "pages/dev/DevBigCard.tsx": 1, "pages/dev/DevSandbox.tsx": 1 }
       }
@@ -5847,6 +6509,20 @@
           "components/Feed/FeedItem.tsx": 1,
           "components/NFTDetails/SocialActions.tsx": 1
         }
+      }
+    },
+    {
+      "name": "CommentCount",
+      "sourceFile": "@maui/components/Comments/CommentCount",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/Feed/FeedItem.tsx": 1,
+        "components/NFTDetails/SocialActions.tsx": 1
+      },
+      "propsWithCallSites": {
+        "nft": { "components/Feed/FeedItem.tsx": 1, "components/NFTDetails/SocialActions.tsx": 1 },
+        "href": { "components/Feed/FeedItem.tsx": 1 }
       }
     },
     {
@@ -5962,57 +6638,18 @@
       "totalCallSites": 1
     },
     {
+      "name": "div",
+      "sourceFile": "components/Feed/FeedItem.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/Feed/FeedItem.tsx": 2 }
+    },
+    {
       "name": "NftOwner",
       "sourceFile": "@maui/components/Feed/FeedItemOwnerInfo/NftOwner",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "nft": { "components/Feed/FeedItem.tsx": 1 } }
-    },
-    {
-      "name": "UserCell",
-      "sourceFile": "@maui/components/General/ListCells/UserCell",
-      "totalInstances": 9,
-      "totalCallSites": 7,
-      "callSites": {
-        "components/Feed/FeedItemOwnerInfo.tsx": 2,
-        "components/NFTDetails/NFTInfo.tsx": 1,
-        "components/NFTDetails/OwnerInfo.tsx": 2,
-        "components/Nav/NavProfilePopover.tsx": 1,
-        "components/Profile/FollowersModal.tsx": 1,
-        "components/Profile/FollowingModal.tsx": 1,
-        "components/General/LikedByDialog/index.tsx": 1
-      },
-      "propsWithCallSites": {
-        "user": {
-          "components/Feed/FeedItemOwnerInfo.tsx": 2,
-          "components/NFTDetails/NFTInfo.tsx": 1,
-          "components/NFTDetails/OwnerInfo.tsx": 2,
-          "components/Nav/NavProfilePopover.tsx": 1,
-          "components/Profile/FollowersModal.tsx": 1,
-          "components/Profile/FollowingModal.tsx": 1,
-          "components/General/LikedByDialog/index.tsx": 1
-        },
-        "size": {
-          "components/Feed/FeedItemOwnerInfo.tsx": 1,
-          "components/NFTDetails/NFTInfo.tsx": 1,
-          "components/NFTDetails/OwnerInfo.tsx": 1
-        },
-        "key": {
-          "components/Feed/FeedItemOwnerInfo.tsx": 1,
-          "components/NFTDetails/OwnerInfo.tsx": 1,
-          "components/Profile/FollowersModal.tsx": 1,
-          "components/Profile/FollowingModal.tsx": 1,
-          "components/General/LikedByDialog/index.tsx": 1
-        },
-        "action": {
-          "components/Feed/FeedItemOwnerInfo.tsx": 1,
-          "components/NFTDetails/NFTInfo.tsx": 1,
-          "components/NFTDetails/OwnerInfo.tsx": 2,
-          "components/Profile/FollowersModal.tsx": 1,
-          "components/Profile/FollowingModal.tsx": 1,
-          "components/General/LikedByDialog/index.tsx": 1
-        }
-      }
     },
     {
       "name": "MultiUserCell",
@@ -6056,10 +6693,12 @@
     {
       "name": "Modal",
       "sourceFile": "@maui/components/General/Overlays/Modal",
-      "totalInstances": 8,
-      "totalCallSites": 8,
+      "totalInstances": 10,
+      "totalCallSites": 10,
       "callSites": {
         "components/Feed/FeedItemOwnerInfo.tsx": 1,
+        "components/Homepage/NewsletterModal.tsx": 1,
+        "components/NFTDetails/ModalListings.tsx": 1,
         "components/NFTDetails/ModalMessages.tsx": 1,
         "components/NFTDetails/OwnerInfo.tsx": 1,
         "components/Onboarding/SignInWalletModal.tsx": 1,
@@ -6071,6 +6710,8 @@
       "propsWithCallSites": {
         "visible": {
           "components/Feed/FeedItemOwnerInfo.tsx": 1,
+          "components/Homepage/NewsletterModal.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 1,
           "components/NFTDetails/ModalMessages.tsx": 1,
           "components/NFTDetails/OwnerInfo.tsx": 1,
           "components/Onboarding/SignInWalletModal.tsx": 1,
@@ -6081,6 +6722,8 @@
         },
         "onRequestClose": {
           "components/Feed/FeedItemOwnerInfo.tsx": 1,
+          "components/Homepage/NewsletterModal.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 1,
           "components/NFTDetails/ModalMessages.tsx": 1,
           "components/NFTDetails/OwnerInfo.tsx": 1,
           "components/Onboarding/SignInWalletModal.tsx": 1,
@@ -6091,6 +6734,8 @@
         },
         "title": {
           "components/Feed/FeedItemOwnerInfo.tsx": 1,
+          "components/Homepage/NewsletterModal.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 1,
           "components/NFTDetails/ModalMessages.tsx": 1,
           "components/NFTDetails/OwnerInfo.tsx": 1,
           "components/Onboarding/SignInWalletModal.tsx": 1,
@@ -6100,9 +6745,11 @@
           "components/General/Overlays/ConfirmDialog.tsx": 1
         },
         "subTitle": {
+          "components/Homepage/NewsletterModal.tsx": 1,
           "components/NFTDetails/ModalMessages.tsx": 1,
           "components/Onboarding/SignInWalletModal.tsx": 1
         },
+        "scrollableBody": { "components/NFTDetails/ModalListings.tsx": 1 },
         "footer": {
           "components/NFTDetails/ModalMessages.tsx": 1,
           "components/General/Overlays/ConfirmDialog.tsx": 1
@@ -6147,12 +6794,6 @@
     {
       "name": "Loading",
       "sourceFile": "components/Feed/Layout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "aside",
-      "sourceFile": "components/Feed/StickySidebar.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -6286,7 +6927,8 @@
       "name": "LogoBeta",
       "sourceFile": "@maui/components/General/Logo/LogoBeta",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": { "variant": { "components/General/LinkedLogo.tsx": 1 } }
     },
     {
       "name": "ListCellBase",
@@ -6314,22 +6956,27 @@
     {
       "name": "ProfileAvatar",
       "sourceFile": "@maui/components/General/Avatars/ProfileAvatar",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "callSites": {
         "components/General/ListCells.tsx": 1,
-        "components/NFTDetails/ActivityFeed.tsx": 1
+        "components/NFTDetails/ActivityFeed.tsx": 1,
+        "components/NFTDetails/ModalListings.tsx": 1
       },
       "propsWithCallSites": {
         "profile": {
           "components/General/ListCells.tsx": 1,
-          "components/NFTDetails/ActivityFeed.tsx": 1
+          "components/NFTDetails/ActivityFeed.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 1
         },
         "href": {
           "components/General/ListCells.tsx": 1,
           "components/NFTDetails/ActivityFeed.tsx": 1
         },
-        "size": { "components/General/ListCells.tsx": 1 },
+        "size": {
+          "components/General/ListCells.tsx": 1,
+          "components/NFTDetails/ModalListings.tsx": 1
+        },
         "wallet": { "components/NFTDetails/ActivityFeed.tsx": 1 }
       }
     },
@@ -6384,15 +7031,25 @@
     {
       "name": "FooterNav",
       "sourceFile": "@maui/components/Nav/FooterNav",
-      "totalInstances": 2,
+      "totalInstances": 3,
       "totalCallSites": 2,
-      "callSites": { "components/Layouts/Layout.tsx": 1, "pages/test/TestStickySidebar.tsx": 1 }
+      "callSites": { "components/Layouts/Layout.tsx": 2, "pages/test/TestStickySidebar.tsx": 1 }
     },
     {
       "name": "HomepageFooterNav",
       "sourceFile": "@maui/components/Nav/FooterNav/HomepageFooterNav",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "IframeSandboxInnards",
+      "sourceFile": "components/Media/IframeSandbox.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "ref": { "components/Media/IframeSandbox.tsx": 1 },
+        "dangerouslySetSrcDocHTML": { "components/Media/IframeSandbox.tsx": 1 }
+      }
     },
     {
       "name": "iframe",
@@ -6409,13 +7066,32 @@
       }
     },
     {
-      "name": "IframeSandboxInnards",
-      "sourceFile": "components/Media/IframeSandbox.tsx",
+      "name": "img",
+      "sourceFile": "components/Media/SandboxableImage.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "ref": { "components/Media/IframeSandbox.tsx": 1 },
-        "dangerouslySetSrcDocHTML": { "components/Media/IframeSandbox.tsx": 1 }
+        "alt": { "components/Media/SandboxableImage.tsx": 1 },
+        "decoding": { "components/Media/SandboxableImage.tsx": 1 },
+        "loading": { "components/Media/SandboxableImage.tsx": 1 },
+        "draggable": { "components/Media/SandboxableImage.tsx": 1 },
+        "tabIndex": { "components/Media/SandboxableImage.tsx": 1 }
+      }
+    },
+    {
+      "name": "video",
+      "sourceFile": "components/Media/SandboxableVideo.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "loop": { "components/Media/SandboxableVideo.tsx": 1 },
+        "muted": { "components/Media/SandboxableVideo.tsx": 1 },
+        "autoPlay": { "components/Media/SandboxableVideo.tsx": 1 },
+        "preload": { "components/Media/SandboxableVideo.tsx": 1 },
+        "playsInline": { "components/Media/SandboxableVideo.tsx": 1 },
+        "controls": { "components/Media/SandboxableVideo.tsx": 1 },
+        "draggable": { "components/Media/SandboxableVideo.tsx": 1 },
+        "tabIndex": { "components/Media/SandboxableVideo.tsx": 1 }
       }
     },
     {
@@ -6427,11 +7103,11 @@
     {
       "name": "source",
       "sourceFile": "components/Media/SandboxableVideoWithSources.tsx",
-      "totalInstances": 3,
+      "totalInstances": 4,
       "totalCallSites": 1,
-      "callSites": { "components/Media/SandboxableVideoWithSources.tsx": 3 },
+      "callSites": { "components/Media/SandboxableVideoWithSources.tsx": 4 },
       "propsWithCallSites": {
-        "src": { "components/Media/SandboxableVideoWithSources.tsx": 3 },
+        "src": { "components/Media/SandboxableVideoWithSources.tsx": 4 },
         "type": { "components/Media/SandboxableVideoWithSources.tsx": 3 }
       }
     },
@@ -6443,10 +7119,18 @@
       "propsWithCallSites": { "aspectRatio": { "components/Media/SandboxedMedia.tsx": 1 } }
     },
     {
-      "name": "body",
-      "sourceFile": "components/Media/SandboxedMedia.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
+      "name": "SandboxableImage",
+      "sourceFile": "@maui/components/Media/SandboxableImage",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": { "components/Media/SandboxedMedia.tsx": 4 },
+      "propsWithCallSites": {
+        "hidden": { "components/Media/SandboxedMedia.tsx": 1 },
+        "id": { "components/Media/SandboxedMedia.tsx": 4 },
+        "decoding": { "components/Media/SandboxedMedia.tsx": 1 },
+        "loading": { "components/Media/SandboxedMedia.tsx": 1 },
+        "src": { "components/Media/SandboxedMedia.tsx": 2 }
+      }
     },
     {
       "name": "SandboxableVideoWithSources",
@@ -6456,20 +7140,14 @@
       "propsWithCallSites": {
         "id": { "components/Media/SandboxedMedia.tsx": 1 },
         "source": { "components/Media/SandboxedMedia.tsx": 1 },
+        "posterSource": { "components/Media/SandboxedMedia.tsx": 1 },
         "aspectRatio": { "components/Media/SandboxedMedia.tsx": 1 },
         "measuredWidth": { "components/Media/SandboxedMedia.tsx": 1 },
-        "onPlayingCode": { "components/Media/SandboxedMedia.tsx": 1 },
-        "onErrorCode": { "components/Media/SandboxedMedia.tsx": 1 }
+        "isVideoSource": { "components/Media/SandboxedMedia.tsx": 1 }
       }
     },
     {
-      "name": "Overlay",
-      "sourceFile": "components/Media/SandboxedMedia.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "style",
+      "name": "TouchOverlay",
       "sourceFile": "components/Media/SandboxedMedia.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
@@ -6542,6 +7220,23 @@
       "totalCallSites": 1
     },
     {
+      "name": "ul",
+      "sourceFile": "components/NFTDetails/ModalListings.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Listing",
+      "sourceFile": "components/NFTDetails/ModalListings.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "components/NFTDetails/ModalListings.tsx": 1 },
+        "listing": { "components/NFTDetails/ModalListings.tsx": 1 },
+        "handleBuyClick": { "components/NFTDetails/ModalListings.tsx": 1 }
+      }
+    },
+    {
       "name": "FollowIconButton",
       "sourceFile": "components/General/Buttons/FollowIconButton",
       "totalInstances": 1,
@@ -6549,6 +7244,90 @@
       "propsWithCallSites": {
         "userId": { "components/NFTDetails/NFTInfo.tsx": 1 },
         "isFollowing": { "components/NFTDetails/NFTInfo.tsx": 1 }
+      }
+    },
+    {
+      "name": "PurchaseActions",
+      "sourceFile": "@maui/components/NFTDetails/PurchaseActions",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "nft": { "components/NFTDetails/NftTransaction.tsx": 1 },
+        "listing": { "components/NFTDetails/NftTransaction.tsx": 1 },
+        "totalListings": { "components/NFTDetails/NftTransaction.tsx": 1 },
+        "emitPurchaseActionAnalytics": { "components/NFTDetails/NftTransaction.tsx": 1 },
+        "setListingsModalOpen": { "components/NFTDetails/NftTransaction.tsx": 1 }
+      }
+    },
+    {
+      "name": "SocialActions",
+      "sourceFile": "@maui/components/NFTDetails/SocialActions",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "nft": { "components/NFTDetails/NftTransaction.tsx": 1 } }
+    },
+    {
+      "name": "SetListing",
+      "sourceFile": "@maui/components/NFTDetails/SetListing",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "setSelectedListing": { "components/NFTDetails/NftTransaction.tsx": 1 }
+      }
+    },
+    {
+      "name": "ModalListings",
+      "sourceFile": "@maui/components/NFTDetails/ModalListings",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "nft": { "components/NFTDetails/NftTransaction.tsx": 1 },
+        "setListingsModalOpen": { "components/NFTDetails/NftTransaction.tsx": 1 },
+        "emitPurchaseActionAnalytics": { "components/NFTDetails/NftTransaction.tsx": 1 },
+        "listingsModalOpen": { "components/NFTDetails/NftTransaction.tsx": 1 },
+        "title": { "components/NFTDetails/NftTransaction.tsx": 1 }
+      }
+    },
+    {
+      "name": "ListingDrawer",
+      "sourceFile": "@maui/components/Buying/Drawers/ListingDrawer",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "components/NFTDetails/NftTransaction.tsx": 3 },
+      "propsWithCallSites": {
+        "title": { "components/NFTDetails/NftTransaction.tsx": 3 },
+        "selector": { "components/NFTDetails/NftTransaction.tsx": 3 }
+      }
+    },
+    {
+      "name": "Checkout",
+      "sourceFile": "@maui/components/Buying/Checkout",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "nft": { "components/NFTDetails/NftTransaction.tsx": 1 },
+        "listing": { "components/NFTDetails/NftTransaction.tsx": 1 }
+      }
+    },
+    {
+      "name": "UpdateListing",
+      "sourceFile": "@maui/components/Buying/UpdateListing",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/NFTDetails/NftTransaction.tsx": 2 },
+      "propsWithCallSites": {
+        "nft": { "components/NFTDetails/NftTransaction.tsx": 2 },
+        "listing": { "components/NFTDetails/NftTransaction.tsx": 2 }
+      }
+    },
+    {
+      "name": "NftStateMachineInit",
+      "sourceFile": "@maui/components/NFTDetails/NftStateMachineInit",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "nft": { "components/NFTDetails/NftTransaction.tsx": 1 },
+        "setTotalListings": { "components/NFTDetails/NftTransaction.tsx": 1 }
       }
     },
     {
@@ -6675,7 +7454,8 @@
       "callSites": {
         "components/Nav/Nav.tsx": 1,
         "components/General/Overlays/SlideUpDialog.tsx": 1
-      }
+      },
+      "propsWithCallSites": { "variant": { "components/Nav/Nav.tsx": 1 } }
     },
     {
       "name": "NavSearchForm",
@@ -6695,7 +7475,8 @@
       "name": "LoginNav",
       "sourceFile": "components/Nav/Nav.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": { "variant": { "components/Nav/Nav.tsx": 1 } }
     },
     {
       "name": "ScrollShadow",
@@ -6713,7 +7494,8 @@
       "name": "SignInButton",
       "sourceFile": "@maui/components/Onboarding/SignInWalletLinkingButton/SignInButton",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": { "variant": { "components/Nav/Nav.tsx": 1 } }
     },
     {
       "name": "ComingSoonWrapper",
@@ -6775,6 +7557,13 @@
       "totalCallSites": 1
     },
     {
+      "name": "NotificationWrapper",
+      "sourceFile": "components/Nav/NavProfilePopover.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "showNotification": { "components/Nav/NavProfilePopover.tsx": 1 } }
+    },
+    {
       "name": "BalanceInfo",
       "sourceFile": "components/Nav/NavProfilePopover.tsx",
       "totalInstances": 1,
@@ -6788,7 +7577,8 @@
       "propsWithCallSites": {
         "username": { "components/Nav/NavProfilePopover.tsx": 1 },
         "closeMenu": { "components/Nav/NavProfilePopover.tsx": 1 },
-        "handleConfirmOpen": { "components/Nav/NavProfilePopover.tsx": 1 }
+        "handleConfirmOpen": { "components/Nav/NavProfilePopover.tsx": 1 },
+        "isEmailVerified": { "components/Nav/NavProfilePopover.tsx": 1 }
       }
     },
     {
@@ -6801,6 +7591,36 @@
         "onConfirm": { "components/Nav/NavProfilePopover.tsx": 1 },
         "onCancel": { "components/Nav/NavProfilePopover.tsx": 1 }
       }
+    },
+    {
+      "name": "VerifyEmailModal",
+      "sourceFile": "@maui/components/Onboarding/VerifyEmailModal",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "components/Nav/NavProfilePopover.tsx": 1,
+        "components/Settings/EditSettingsDialog.tsx": 1,
+        "pages/signup/personalize.tsx": 1
+      },
+      "propsWithCallSites": {
+        "sendEmailOnOpen": { "components/Nav/NavProfilePopover.tsx": 1 },
+        "isOpen": {
+          "components/Nav/NavProfilePopover.tsx": 1,
+          "components/Settings/EditSettingsDialog.tsx": 1,
+          "pages/signup/personalize.tsx": 1
+        },
+        "onClose": {
+          "components/Nav/NavProfilePopover.tsx": 1,
+          "components/Settings/EditSettingsDialog.tsx": 1,
+          "pages/signup/personalize.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "VerifyEmailNotification",
+      "sourceFile": "components/Nav/NavProfilePopover.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "Icon",
@@ -6817,19 +7637,43 @@
       "propsWithCallSites": { "width": { "components/Nav/NavProfilePopover.tsx": 1 } }
     },
     {
-      "name": "ConfirmDialog",
-      "sourceFile": "@maui/components/General/Overlays/ConfirmDialog",
+      "name": "BrandedSlideUpDialog",
+      "sourceFile": "@maui/components/General/Overlays/SlideUpDialog/BrandedSlideUpDialog",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "components/Onboarding/EmailVerifiedModal.tsx": 1,
+        "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
+        "components/Onboarding/VerifyEmailModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "isOpen": {
+          "components/Onboarding/EmailVerifiedModal.tsx": 1,
+          "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
+          "components/Onboarding/VerifyEmailModal.tsx": 1
+        },
+        "onClose": {
+          "components/Onboarding/EmailVerifiedModal.tsx": 1,
+          "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
+          "components/Onboarding/VerifyEmailModal.tsx": 1
+        },
+        "spotSquare": { "components/Onboarding/EmailVerifiedModal.tsx": 1 },
+        "canClose": { "components/Onboarding/EmailVerifiedModal.tsx": 1 },
+        "heroSquare": {
+          "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
+          "components/Onboarding/VerifyEmailModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "EmailVerifiedModal",
+      "sourceFile": "@maui/components/Onboarding/EmailVerifiedModal",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "open": { "components/Nav/SignoutDialog.tsx": 1 },
-        "title": { "components/Nav/SignoutDialog.tsx": 1 },
-        "body": { "components/Nav/SignoutDialog.tsx": 1 },
-        "cancelText": { "components/Nav/SignoutDialog.tsx": 1 },
-        "confirmText": { "components/Nav/SignoutDialog.tsx": 1 },
-        "onClose": { "components/Nav/SignoutDialog.tsx": 1 },
-        "onCancel": { "components/Nav/SignoutDialog.tsx": 1 },
-        "onConfirm": { "components/Nav/SignoutDialog.tsx": 1 }
+        "token": { "components/Onboarding/EmailVerifiedWrapper.tsx": 1 },
+        "isOpen": { "components/Onboarding/EmailVerifiedWrapper.tsx": 1 },
+        "onClose": { "components/Onboarding/EmailVerifiedWrapper.tsx": 1 }
       }
     },
     {
@@ -6883,30 +7727,6 @@
           "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
           "pages/signup/create.tsx": 2,
           "components/Profile/Edit/ProfileForm.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "BrandedSlideUpDialog",
-      "sourceFile": "@maui/components/General/Overlays/SlideUpDialog/BrandedSlideUpDialog",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
-        "components/Onboarding/VerifyEmailModal.tsx": 1
-      },
-      "propsWithCallSites": {
-        "isOpen": {
-          "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
-          "components/Onboarding/VerifyEmailModal.tsx": 1
-        },
-        "onClose": {
-          "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
-          "components/Onboarding/VerifyEmailModal.tsx": 1
-        },
-        "heroSquare": {
-          "components/Onboarding/NoEmailConfirmationModal.tsx": 1,
-          "components/Onboarding/VerifyEmailModal.tsx": 1
         }
       }
     },
@@ -7135,22 +7955,6 @@
       "propsWithCallSites": { "username": { "components/Profile/FollowedByLine.tsx": 3 } }
     },
     {
-      "name": "ShortNum",
-      "sourceFile": "@maui/components/General/Text/ShortNum",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/Profile/FollowedByLine.tsx": 1,
-        "components/General/Buttons/LikeButton.tsx": 1
-      },
-      "propsWithCallSites": {
-        "value": {
-          "components/Profile/FollowedByLine.tsx": 1,
-          "components/General/Buttons/LikeButton.tsx": 1
-        }
-      }
-    },
-    {
       "name": "FollowersList",
       "sourceFile": "components/Profile/FollowersModal.tsx",
       "totalInstances": 1,
@@ -7339,13 +8143,6 @@
       }
     },
     {
-      "name": "CardGrid",
-      "sourceFile": "@maui/components/General/CardGrid",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": { "components/Search/SearchPageResults.tsx": 1, "pages/dev/DevSandbox.tsx": 1 }
-    },
-    {
       "name": "CollectionCard",
       "sourceFile": "@maui/components/Card/CollectionCard",
       "totalInstances": 2,
@@ -7418,17 +8215,17 @@
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
-        "components/Wallet/AlreadyConnectedPrompt.tsx": 1,
-        "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1
+        "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1,
+        "components/Wallet/AlreadyConnectedPrompt.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
-          "components/Wallet/AlreadyConnectedPrompt.tsx": 1,
-          "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1
+          "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1,
+          "components/Wallet/AlreadyConnectedPrompt.tsx": 1
         },
         "body": {
-          "components/Wallet/AlreadyConnectedPrompt.tsx": 1,
-          "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1
+          "components/SignInWithWallet/ConnectWalletModalV2.tsx": 1,
+          "components/Wallet/AlreadyConnectedPrompt.tsx": 1
         }
       }
     },
@@ -7474,18 +8271,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "collection": { "pages/collection/[...collectionId].tsx": 1 } }
-    },
-    {
-      "name": "ArtCardLink",
-      "sourceFile": "@maui/components/Profile/ArtCardLink",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": { "pages/dev/DevArtCardLink.tsx": 1, "pages/dev/DevSandbox.tsx": 1 },
-      "propsWithCallSites": {
-        "nft": { "pages/dev/DevArtCardLink.tsx": 1, "pages/dev/DevSandbox.tsx": 1 },
-        "data-testid": { "pages/dev/DevArtCardLink.tsx": 1, "pages/dev/DevSandbox.tsx": 1 },
-        "data-test-title": { "pages/dev/DevArtCardLink.tsx": 1, "pages/dev/DevSandbox.tsx": 1 }
-      }
     },
     {
       "name": "h3",
@@ -7760,16 +8545,6 @@
       "sourceFile": "pages/signup/personalize.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "VerifyEmailModal",
-      "sourceFile": "@maui/components/Onboarding/VerifyEmailModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isOpen": { "pages/signup/personalize.tsx": 1 },
-        "onClose": { "pages/signup/personalize.tsx": 1 }
-      }
     },
     {
       "name": "NoEmailConfirmationModal",

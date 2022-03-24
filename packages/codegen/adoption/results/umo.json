@@ -58,8 +58,7 @@
         {
           "aliasPath": "@onboarding/components/Form/PromoCodeInput.tsx",
           "callSites": ["@onboarding/screens/signup/SignUpScreen.tsx"]
-        },
-        { "aliasPath": "@onboarding/components/UI/CameraPermissionFallback.tsx", "callSites": [] }
+        }
       ],
       "callSites": {
         "@onboarding/debugScreen/SelectExperience.tsx": 1,
@@ -812,6 +811,7 @@
       "totalInstances": 80,
       "totalCallSites": 58,
       "cds": "@components/interactables/Button",
+      "presentationalLibrary": "@components/interactables/Button",
       "callSites": {
         "@onboarding/debugScreen/UMODebugScreen.tsx": 2,
         "@onboarding/screens/ErrorMessageScreen.tsx": 1,
@@ -1739,6 +1739,108 @@
   ],
   "presentational": [
     {
+      "name": "SearchSelect",
+      "sourceFile": "@components/interactables/SearchSelect",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "presentationalLibrary": "@components/interactables/SearchSelect",
+      "callSites": {
+        "@onboarding/debugScreen/CountryPicker.tsx": 1,
+        "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+        "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
+        "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
+        "@onboarding/screens/nationality/NationalityScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "isDirty": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1
+        },
+        "prepended": { "@onboarding/debugScreen/CountryPicker.tsx": 1 },
+        "value": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1
+        },
+        "name": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1
+        },
+        "caret": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
+        },
+        "width": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1
+        },
+        "label": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
+        },
+        "modalTitle": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
+        },
+        "searchPlaceholder": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
+        },
+        "onChange": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
+        },
+        "onErrors": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
+          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
+        },
+        "errors": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
+        },
+        "suggestion": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
+        },
+        "suggestions": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
+        },
+        "onSuggestionChange": {
+          "@onboarding/debugScreen/CountryPicker.tsx": 1,
+          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
+        },
+        "transparent": { "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1 },
+        "placeholder": { "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1 }
+      }
+    },
+    {
       "name": "SelectInput",
       "sourceFile": "@designSystem/interactables/inputs/SelectInput",
       "totalInstances": 1,
@@ -1750,10 +1852,173 @@
       }
     },
     {
+      "name": "Modal",
+      "sourceFile": "@components/UI/Modal",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalLibrary": "@components/UI/Modal",
+      "callSites": {
+        "@onboarding/debugScreen/SelectExperience.tsx": 1,
+        "@onboarding/components/Form/QuestionAnswerInputSelector.tsx": 1
+      },
+      "propsWithCallSites": {
+        "visible": {
+          "@onboarding/debugScreen/SelectExperience.tsx": 1,
+          "@onboarding/components/Form/QuestionAnswerInputSelector.tsx": 1
+        },
+        "title": { "@onboarding/debugScreen/SelectExperience.tsx": 1 },
+        "onRequestClose": {
+          "@onboarding/debugScreen/SelectExperience.tsx": 1,
+          "@onboarding/components/Form/QuestionAnswerInputSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextInput",
+      "sourceFile": "@components/interactables/TextInput",
+      "totalInstances": 31,
+      "totalCallSites": 11,
+      "presentationalLibrary": "@components/interactables/TextInput",
+      "callSites": {
+        "@onboarding/debugScreen/SelectExperience.tsx": 1,
+        "@onboarding/components/Form/AddressInput.tsx": 1,
+        "@onboarding/components/Form/PromoCodeInput.tsx": 1,
+        "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
+        "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+        "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 4,
+        "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 4,
+        "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 11,
+        "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 3,
+        "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+        "@onboarding/screens/signup/SignUpScreen.tsx": 3
+      },
+      "propsWithCallSites": {
+        "autoFocus": {
+          "@onboarding/debugScreen/SelectExperience.tsx": 1,
+          "@onboarding/components/Form/AddressInput.tsx": 1,
+          "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 2,
+          "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 2
+        },
+        "label": {
+          "@onboarding/debugScreen/SelectExperience.tsx": 1,
+          "@onboarding/components/Form/AddressInput.tsx": 1,
+          "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
+          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 4,
+          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 4,
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 11,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 3,
+          "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 3
+        },
+        "name": {
+          "@onboarding/debugScreen/SelectExperience.tsx": 1,
+          "@onboarding/components/Form/AddressInput.tsx": 1
+        },
+        "placeholder": {
+          "@onboarding/debugScreen/SelectExperience.tsx": 1,
+          "@onboarding/components/Form/AddressInput.tsx": 1,
+          "@onboarding/components/Form/PromoCodeInput.tsx": 1,
+          "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
+          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 4,
+          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 4,
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 11,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 3,
+          "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 3
+        },
+        "value": {
+          "@onboarding/debugScreen/SelectExperience.tsx": 1,
+          "@onboarding/components/Form/AddressInput.tsx": 1,
+          "@onboarding/components/Form/PromoCodeInput.tsx": 1
+        },
+        "isDirty": {
+          "@onboarding/debugScreen/SelectExperience.tsx": 1,
+          "@onboarding/components/Form/AddressInput.tsx": 1,
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1
+        },
+        "onChange": {
+          "@onboarding/debugScreen/SelectExperience.tsx": 1,
+          "@onboarding/components/Form/AddressInput.tsx": 1,
+          "@onboarding/components/Form/PromoCodeInput.tsx": 1
+        },
+        "onErrors": {
+          "@onboarding/debugScreen/SelectExperience.tsx": 1,
+          "@onboarding/components/Form/AddressInput.tsx": 1
+        },
+        "errors": {
+          "@onboarding/debugScreen/SelectExperience.tsx": 1,
+          "@onboarding/components/Form/AddressInput.tsx": 1
+        },
+        "returnKeyType": {
+          "@onboarding/components/Form/AddressInput.tsx": 1,
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 3,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
+        },
+        "autoCapitalize": {
+          "@onboarding/components/Form/PromoCodeInput.tsx": 1,
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 2,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 1
+        },
+        "onFocus": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
+        "onBlur": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
+        "variant": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
+        "ref": {
+          "@onboarding/components/Form/PromoCodeInput.tsx": 1,
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 4,
+          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 3,
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 9,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 2,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 3
+        },
+        "editable": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
+        "description": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
+        "keyboardType": {
+          "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
+          "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 1
+        },
+        "maxLength": {
+          "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 3,
+          "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1
+        },
+        "testID": {
+          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 4,
+          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 4,
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 11,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 3,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 3
+        },
+        "onSubmitEditing": {
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 4,
+          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 4,
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 8,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 2,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 3
+        },
+        "key": {
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 11,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 3
+        },
+        "endContent": { "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1 },
+        "getErrorMessage": { "@onboarding/screens/signup/SignUpScreen.tsx": 2 },
+        "textContentType": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 }
+      }
+    },
+    {
       "name": "FlatList",
       "sourceFile": "@components/UI/FlatList",
       "totalInstances": 17,
       "totalCallSites": 17,
+      "presentationalLibrary": "@components/UI/FlatList",
       "presentationalProps": [
         { "prop": "style", "callSite": "@onboarding/components/Form/AddressInput.tsx" }
       ],
@@ -1853,6 +2118,90 @@
       }
     },
     {
+      "name": "Alert",
+      "sourceFile": "@components/UI/Alert",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "presentationalLibrary": "@components/UI/Alert",
+      "callSites": {
+        "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
+        "@onboarding/components/UI/ErrorHandler.tsx": 1,
+        "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
+        "@onboarding/screens/signup/SignUpScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "isVisible": {
+          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
+          "@onboarding/components/UI/ErrorHandler.tsx": 1,
+          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 1
+        },
+        "dismissText": {
+          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
+          "@onboarding/components/UI/ErrorHandler.tsx": 1,
+          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 1
+        },
+        "title": {
+          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
+          "@onboarding/components/UI/ErrorHandler.tsx": 1,
+          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 1
+        },
+        "subtitle": {
+          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
+          "@onboarding/components/UI/ErrorHandler.tsx": 1,
+          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 1
+        },
+        "onAlertHide": {
+          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
+          "@onboarding/components/UI/ErrorHandler.tsx": 1,
+          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 1
+        },
+        "onPrimaryPress": {
+          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
+          "@onboarding/components/UI/ErrorHandler.tsx": 1,
+          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 1
+        },
+        "cancelAction": {
+          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
+          "@onboarding/components/UI/ErrorHandler.tsx": 1,
+          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 1
+        },
+        "handleHardwareDismiss": {
+          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
+          "@onboarding/components/UI/ErrorHandler.tsx": 1,
+          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 1
+        },
+        "primaryActionText": {
+          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ToggleCell",
+      "sourceFile": "@components/interactables/ToggleCell",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@components/interactables/ToggleCell",
+      "callSites": { "@onboarding/debugScreen/UMODebugScreen.tsx": 2 },
+      "propsWithCallSites": {
+        "key": { "@onboarding/debugScreen/UMODebugScreen.tsx": 2 },
+        "testID": { "@onboarding/debugScreen/UMODebugScreen.tsx": 1 },
+        "title": { "@onboarding/debugScreen/UMODebugScreen.tsx": 2 },
+        "subtitle": { "@onboarding/debugScreen/UMODebugScreen.tsx": 1 },
+        "value": { "@onboarding/debugScreen/UMODebugScreen.tsx": 2 },
+        "onEnable": { "@onboarding/debugScreen/UMODebugScreen.tsx": 2 },
+        "onDisable": { "@onboarding/debugScreen/UMODebugScreen.tsx": 2 }
+      }
+    },
+    {
       "name": "DeprecatedThemeProvider",
       "sourceFile": "@designSystem/theme/DeprecatedThemeProvider",
       "totalInstances": 5,
@@ -1886,6 +2235,29 @@
         "style": { "@onboarding/navigation/Navigator.tsx": 1 },
         "behavior": { "@onboarding/navigation/Navigator.tsx": 1 },
         "keyboardVerticalOffset": { "@onboarding/navigation/Navigator.tsx": 1 }
+      }
+    },
+    {
+      "name": "FullScreenLoader",
+      "sourceFile": "@components/UI/FullScreenLoader",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "presentationalLibrary": "@components/UI/FullScreenLoader",
+      "callSites": {
+        "@onboarding/refactoredDirector/Experience.tsx": 1,
+        "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
+        "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
+        "@onboarding/utils/DirectorUtils/createDirector.tsx": 1,
+        "@onboarding/utils/ExperienceUtils/createExperience.tsx": 1
+      },
+      "propsWithCallSites": {
+        "loading": {
+          "@onboarding/refactoredDirector/Experience.tsx": 1,
+          "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
+          "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
+          "@onboarding/utils/DirectorUtils/createDirector.tsx": 1,
+          "@onboarding/utils/ExperienceUtils/createExperience.tsx": 1
+        }
       }
     },
     {
@@ -1924,6 +2296,57 @@
           "@onboarding/components/UI/NavBar.tsx": 2,
           "@onboarding/utils/ScreenUtils/createScreen.tsx": 1
         }
+      }
+    },
+    {
+      "name": "HeroImage",
+      "sourceFile": "@components/UI/HeroImage",
+      "totalInstances": 29,
+      "totalCallSites": 29,
+      "presentationalLibrary": "@components/UI/HeroImage",
+      "callSites": {
+        "@onboarding/screens/ErrorMessageScreen.tsx": 1,
+        "@onboarding/refactoredDirector/PhoneExperience/SecureAccountCheckpointScene.tsx": 1,
+        "@onboarding/refactoredDirector/PhoneExperience/SecureAccountExplainerScene.tsx": 1,
+        "@onboarding/refactoredDirector/VerifyEmailExperience/VerifyEmailScene.tsx": 1,
+        "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
+        "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
+        "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
+        "@onboarding/screens/idv/IDVFallbackScreen.tsx": 1,
+        "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
+        "@onboarding/screens/idv/VerifyPhotoIdScreen.tsx": 1,
+        "@onboarding/screens/kyc/KYCErrorScreen.tsx": 1,
+        "@onboarding/screens/kyc/TodoListScreen.tsx": 1,
+        "@onboarding/screens/kyc/VendorVerificationScreen.tsx": 1,
+        "@onboarding/screens/kyc/VerifyIdentityScreen.tsx": 1,
+        "@onboarding/screens/liquid/LiquidErrorScreen.tsx": 1,
+        "@onboarding/screens/liquid/LiquidHandoffScreen.tsx": 1,
+        "@onboarding/screens/liquid/LiquidIDVExplanationScreen.tsx": 1,
+        "@onboarding/screens/liquid/LiquidIDVIntroScreen.tsx": 1,
+        "@onboarding/screens/liquid/ReviewingIDScreen.tsx": 1,
+        "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
+        "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
+        "@onboarding/screens/phone/TodoListScreen.tsx": 1,
+        "@onboarding/screens/poaConfirm/POAManualReviewScreen.tsx": 1,
+        "@onboarding/screens/signup/GdprScreen.tsx": 1,
+        "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
+        "@onboarding/screens/signup/VerifyEmailScreen.tsx": 1,
+        "@onboarding/screens/success/SuccessScreen.tsx": 1,
+        "@onboarding/screens/suitability/SuitabilityErrorScreen.tsx": 1,
+        "@onboarding/screens/unhandled/UnhandledRequirementScreen.tsx": 1
+      },
+      "propsWithCallSites": { "testID": { "@onboarding/screens/idv/IDVFallbackScreen.tsx": 1 } }
+    },
+    {
+      "name": "SmallButton",
+      "sourceFile": "@components/interactables/SmallButton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@components/interactables/SmallButton",
+      "propsWithCallSites": {
+        "variant": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
+        "disabled": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
+        "onPress": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 }
       }
     },
     {
@@ -2070,6 +2493,14 @@
       }
     },
     {
+      "name": "PunchOut",
+      "sourceFile": "@components/UI/PunchOut",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@components/UI/PunchOut",
+      "propsWithCallSites": { "shape": { "@onboarding/components/UI/CaptureView.tsx": 1 } }
+    },
+    {
       "name": "SafeAreaView",
       "sourceFile": "react-native-safe-area-context/SafeAreaView",
       "totalInstances": 1,
@@ -2080,6 +2511,101 @@
       "propsWithCallSites": {
         "edges": { "@onboarding/components/UI/NavBar.tsx": 1 },
         "style": { "@onboarding/components/UI/NavBar.tsx": 1 }
+      }
+    },
+    {
+      "name": "PhoneInput",
+      "sourceFile": "@components/interactables/PhoneInput",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalLibrary": "@components/interactables/PhoneInput",
+      "callSites": {
+        "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
+        "@onboarding/screens/phone/PhoneScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "keyboardType": {
+          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
+          "@onboarding/screens/phone/PhoneScreen.tsx": 1
+        },
+        "placeholder": {
+          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
+          "@onboarding/screens/phone/PhoneScreen.tsx": 1
+        },
+        "label": {
+          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
+          "@onboarding/screens/phone/PhoneScreen.tsx": 1
+        },
+        "countryLabel": {
+          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
+          "@onboarding/screens/phone/PhoneScreen.tsx": 1
+        },
+        "countryCodeValue": {
+          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
+          "@onboarding/screens/phone/PhoneScreen.tsx": 1
+        },
+        "onCountryCodeChange": {
+          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
+          "@onboarding/screens/phone/PhoneScreen.tsx": 1
+        },
+        "returnKeyType": {
+          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
+          "@onboarding/screens/phone/PhoneScreen.tsx": 1
+        },
+        "modalTitle": {
+          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
+          "@onboarding/screens/phone/PhoneScreen.tsx": 1
+        },
+        "searchPlaceholder": {
+          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
+          "@onboarding/screens/phone/PhoneScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CheckBox",
+      "sourceFile": "@components/interactables/CheckBox",
+      "totalInstances": 7,
+      "totalCallSites": 4,
+      "presentationalLibrary": "@components/interactables/CheckBox",
+      "callSites": {
+        "@onboarding/screens/attestations/AttestationsScreen.tsx": 4,
+        "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
+        "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
+        "@onboarding/screens/signup/SignUpScreen.tsx": 1
+      },
+      "propsWithCallSites": { "key": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 } }
+    },
+    {
+      "name": "DateInput",
+      "sourceFile": "@components/interactables/DateInput",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalLibrary": "@components/interactables/DateInput",
+      "callSites": {
+        "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
+        "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "testID": {
+          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
+        },
+        "placeholder": {
+          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
+        },
+        "label": {
+          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
+        },
+        "ref": {
+          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
+        },
+        "onChange": { "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1 },
+        "onSubmitEditing": { "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1 },
+        "endContent": { "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1 }
       }
     },
     {
@@ -2123,6 +2649,35 @@
       }
     },
     {
+      "name": "AlertTray",
+      "sourceFile": "@components/UI/AlertTray",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "presentationalLibrary": "@components/UI/AlertTray",
+      "callSites": {
+        "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
+        "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
+        "@onboarding/screens/kyc/KYCRefreshScreen/KycRefreshStatusMessage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "isVisible": {
+          "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
+          "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
+          "@onboarding/screens/kyc/KYCRefreshScreen/KycRefreshStatusMessage.tsx": 1
+        },
+        "onDismiss": {
+          "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
+          "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
+          "@onboarding/screens/kyc/KYCRefreshScreen/KycRefreshStatusMessage.tsx": 1
+        },
+        "alertData": {
+          "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
+          "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
+          "@onboarding/screens/kyc/KYCRefreshScreen/KycRefreshStatusMessage.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Recaptcha",
       "sourceFile": "@onboarding/screens/signup/Recaptcha",
       "totalInstances": 2,
@@ -2146,6 +2701,24 @@
           "@onboarding/screens/signup/SignUpScreen.tsx": 1
         },
         "isHidden": { "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "PasswordInput",
+      "sourceFile": "@components/interactables/PasswordInput",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@components/interactables/PasswordInput",
+      "propsWithCallSites": {
+        "computeStrength": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
+        "secureTextEntry": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
+        "placeholder": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
+        "label": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
+        "ref": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
+        "returnKeyType": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
+        "testID": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
+        "key": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
+        "caption": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 }
       }
     },
     {
@@ -2255,267 +2828,6 @@
       "sourceFile": "@react-navigation/native/NavigationContainer",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "SearchSelect",
-      "sourceFile": "@components/interactables/SearchSelect",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "callSites": {
-        "@onboarding/debugScreen/CountryPicker.tsx": 1,
-        "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-        "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
-        "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
-        "@onboarding/screens/nationality/NationalityScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "isDirty": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1
-        },
-        "prepended": { "@onboarding/debugScreen/CountryPicker.tsx": 1 },
-        "value": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1
-        },
-        "name": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1
-        },
-        "caret": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
-        },
-        "width": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1
-        },
-        "label": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
-        },
-        "modalTitle": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
-        },
-        "searchPlaceholder": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
-        },
-        "onChange": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
-        },
-        "onErrors": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
-          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
-        },
-        "errors": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
-        },
-        "suggestion": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
-        },
-        "suggestions": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
-        },
-        "onSuggestionChange": {
-          "@onboarding/debugScreen/CountryPicker.tsx": 1,
-          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/nationality/NationalityScreen.tsx": 1
-        },
-        "transparent": { "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1 },
-        "placeholder": { "@onboarding/screens/edpc/JapanPrefecturePicker.tsx": 1 }
-      }
-    },
-    {
-      "name": "Modal",
-      "sourceFile": "@components/UI/Modal",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@onboarding/debugScreen/SelectExperience.tsx": 1,
-        "@onboarding/components/Form/QuestionAnswerInputSelector.tsx": 1
-      },
-      "propsWithCallSites": {
-        "visible": {
-          "@onboarding/debugScreen/SelectExperience.tsx": 1,
-          "@onboarding/components/Form/QuestionAnswerInputSelector.tsx": 1
-        },
-        "title": { "@onboarding/debugScreen/SelectExperience.tsx": 1 },
-        "onRequestClose": {
-          "@onboarding/debugScreen/SelectExperience.tsx": 1,
-          "@onboarding/components/Form/QuestionAnswerInputSelector.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextInput",
-      "sourceFile": "@components/interactables/TextInput",
-      "totalInstances": 31,
-      "totalCallSites": 11,
-      "callSites": {
-        "@onboarding/debugScreen/SelectExperience.tsx": 1,
-        "@onboarding/components/Form/AddressInput.tsx": 1,
-        "@onboarding/components/Form/PromoCodeInput.tsx": 1,
-        "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
-        "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-        "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 4,
-        "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 4,
-        "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 11,
-        "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 3,
-        "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
-        "@onboarding/screens/signup/SignUpScreen.tsx": 3
-      },
-      "propsWithCallSites": {
-        "autoFocus": {
-          "@onboarding/debugScreen/SelectExperience.tsx": 1,
-          "@onboarding/components/Form/AddressInput.tsx": 1,
-          "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 2,
-          "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 2
-        },
-        "label": {
-          "@onboarding/debugScreen/SelectExperience.tsx": 1,
-          "@onboarding/components/Form/AddressInput.tsx": 1,
-          "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
-          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 4,
-          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 4,
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 11,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 3,
-          "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 3
-        },
-        "name": {
-          "@onboarding/debugScreen/SelectExperience.tsx": 1,
-          "@onboarding/components/Form/AddressInput.tsx": 1
-        },
-        "placeholder": {
-          "@onboarding/debugScreen/SelectExperience.tsx": 1,
-          "@onboarding/components/Form/AddressInput.tsx": 1,
-          "@onboarding/components/Form/PromoCodeInput.tsx": 1,
-          "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
-          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 4,
-          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 4,
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 11,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 3,
-          "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 3
-        },
-        "value": {
-          "@onboarding/debugScreen/SelectExperience.tsx": 1,
-          "@onboarding/components/Form/AddressInput.tsx": 1,
-          "@onboarding/components/Form/PromoCodeInput.tsx": 1
-        },
-        "isDirty": {
-          "@onboarding/debugScreen/SelectExperience.tsx": 1,
-          "@onboarding/components/Form/AddressInput.tsx": 1,
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1
-        },
-        "onChange": {
-          "@onboarding/debugScreen/SelectExperience.tsx": 1,
-          "@onboarding/components/Form/AddressInput.tsx": 1,
-          "@onboarding/components/Form/PromoCodeInput.tsx": 1
-        },
-        "onErrors": {
-          "@onboarding/debugScreen/SelectExperience.tsx": 1,
-          "@onboarding/components/Form/AddressInput.tsx": 1
-        },
-        "errors": {
-          "@onboarding/debugScreen/SelectExperience.tsx": 1,
-          "@onboarding/components/Form/AddressInput.tsx": 1
-        },
-        "returnKeyType": {
-          "@onboarding/components/Form/AddressInput.tsx": 1,
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 3,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
-        },
-        "autoCapitalize": {
-          "@onboarding/components/Form/PromoCodeInput.tsx": 1,
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 2,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 1
-        },
-        "onFocus": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
-        "onBlur": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
-        "variant": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
-        "ref": {
-          "@onboarding/components/Form/PromoCodeInput.tsx": 1,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 4,
-          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 3,
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 9,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 2,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 3
-        },
-        "editable": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
-        "description": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
-        "keyboardType": {
-          "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
-          "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 1
-        },
-        "maxLength": {
-          "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 3,
-          "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1
-        },
-        "testID": {
-          "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 4,
-          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 4,
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 11,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 3,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 3
-        },
-        "onSubmitEditing": {
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 3,
-          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 4,
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 8,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 2,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 3
-        },
-        "key": {
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 11,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 3
-        },
-        "endContent": { "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1 },
-        "getErrorMessage": { "@onboarding/screens/signup/SignUpScreen.tsx": 2 },
-        "textContentType": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 }
-      }
     },
     {
       "name": "ConfirmationCell",
@@ -2677,88 +2989,6 @@
       }
     },
     {
-      "name": "Alert",
-      "sourceFile": "@components/UI/Alert",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
-        "@onboarding/components/UI/ErrorHandler.tsx": 1,
-        "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
-        "@onboarding/screens/signup/SignUpScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "isVisible": {
-          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
-          "@onboarding/components/UI/ErrorHandler.tsx": 1,
-          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 1
-        },
-        "dismissText": {
-          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
-          "@onboarding/components/UI/ErrorHandler.tsx": 1,
-          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 1
-        },
-        "title": {
-          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
-          "@onboarding/components/UI/ErrorHandler.tsx": 1,
-          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 1
-        },
-        "subtitle": {
-          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
-          "@onboarding/components/UI/ErrorHandler.tsx": 1,
-          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 1
-        },
-        "onAlertHide": {
-          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
-          "@onboarding/components/UI/ErrorHandler.tsx": 1,
-          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 1
-        },
-        "onPrimaryPress": {
-          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
-          "@onboarding/components/UI/ErrorHandler.tsx": 1,
-          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 1
-        },
-        "cancelAction": {
-          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
-          "@onboarding/components/UI/ErrorHandler.tsx": 1,
-          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 1
-        },
-        "handleHardwareDismiss": {
-          "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
-          "@onboarding/components/UI/ErrorHandler.tsx": 1,
-          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 1
-        },
-        "primaryActionText": {
-          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ToggleCell",
-      "sourceFile": "@components/interactables/ToggleCell",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "@onboarding/debugScreen/UMODebugScreen.tsx": 2 },
-      "propsWithCallSites": {
-        "key": { "@onboarding/debugScreen/UMODebugScreen.tsx": 2 },
-        "testID": { "@onboarding/debugScreen/UMODebugScreen.tsx": 1 },
-        "title": { "@onboarding/debugScreen/UMODebugScreen.tsx": 2 },
-        "subtitle": { "@onboarding/debugScreen/UMODebugScreen.tsx": 1 },
-        "value": { "@onboarding/debugScreen/UMODebugScreen.tsx": 2 },
-        "onEnable": { "@onboarding/debugScreen/UMODebugScreen.tsx": 2 },
-        "onDisable": { "@onboarding/debugScreen/UMODebugScreen.tsx": 2 }
-      }
-    },
-    {
       "name": "SelectExperience",
       "sourceFile": "@onboarding/debugScreen/SelectExperience",
       "totalInstances": 1,
@@ -2801,35 +3031,12 @@
       "propsWithCallSites": {
         "route": { "@onboarding/navigation/Navigator.tsx": 1 },
         "completionPercent": { "@onboarding/navigation/Navigator.tsx": 1 },
-        "type": { "@onboarding/navigation/Navigator.tsx": 1 },
         "action": { "@onboarding/navigation/Navigator.tsx": 1 },
         "skipAlert": { "@onboarding/navigation/Navigator.tsx": 1 },
         "onBackNavigation": { "@onboarding/navigation/Navigator.tsx": 1 },
         "experience": { "@onboarding/navigation/Navigator.tsx": 1 },
         "showSkip": { "@onboarding/navigation/Navigator.tsx": 1 },
         "onExitOptions": { "@onboarding/navigation/Navigator.tsx": 1 }
-      }
-    },
-    {
-      "name": "FullScreenLoader",
-      "sourceFile": "@components/UI/FullScreenLoader",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "callSites": {
-        "@onboarding/refactoredDirector/Experience.tsx": 1,
-        "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
-        "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
-        "@onboarding/utils/DirectorUtils/createDirector.tsx": 1,
-        "@onboarding/utils/ExperienceUtils/createExperience.tsx": 1
-      },
-      "propsWithCallSites": {
-        "loading": {
-          "@onboarding/refactoredDirector/Experience.tsx": 1,
-          "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
-          "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
-          "@onboarding/utils/DirectorUtils/createDirector.tsx": 1,
-          "@onboarding/utils/ExperienceUtils/createExperience.tsx": 1
-        }
       }
     },
     {
@@ -2843,44 +3050,6 @@
         "experience": { "@onboarding/refactoredDirector/Experience.tsx": 1 },
         "onExperienceComplete": { "@onboarding/refactoredDirector/Experience.tsx": 1 }
       }
-    },
-    {
-      "name": "HeroImage",
-      "sourceFile": "@components/UI/HeroImage",
-      "totalInstances": 29,
-      "totalCallSites": 29,
-      "callSites": {
-        "@onboarding/screens/ErrorMessageScreen.tsx": 1,
-        "@onboarding/refactoredDirector/PhoneExperience/SecureAccountCheckpointScene.tsx": 1,
-        "@onboarding/refactoredDirector/PhoneExperience/SecureAccountExplainerScene.tsx": 1,
-        "@onboarding/refactoredDirector/VerifyEmailExperience/VerifyEmailScene.tsx": 1,
-        "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
-        "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
-        "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
-        "@onboarding/screens/idv/IDVFallbackScreen.tsx": 1,
-        "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
-        "@onboarding/screens/idv/VerifyPhotoIdScreen.tsx": 1,
-        "@onboarding/screens/kyc/KYCErrorScreen.tsx": 1,
-        "@onboarding/screens/kyc/TodoListScreen.tsx": 1,
-        "@onboarding/screens/kyc/VendorVerificationScreen.tsx": 1,
-        "@onboarding/screens/kyc/VerifyIdentityScreen.tsx": 1,
-        "@onboarding/screens/liquid/LiquidErrorScreen.tsx": 1,
-        "@onboarding/screens/liquid/LiquidHandoffScreen.tsx": 1,
-        "@onboarding/screens/liquid/LiquidIDVExplanationScreen.tsx": 1,
-        "@onboarding/screens/liquid/LiquidIDVIntroScreen.tsx": 1,
-        "@onboarding/screens/liquid/ReviewingIDScreen.tsx": 1,
-        "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
-        "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
-        "@onboarding/screens/phone/TodoListScreen.tsx": 1,
-        "@onboarding/screens/poaConfirm/POAManualReviewScreen.tsx": 1,
-        "@onboarding/screens/signup/GdprScreen.tsx": 1,
-        "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
-        "@onboarding/screens/signup/VerifyEmailScreen.tsx": 1,
-        "@onboarding/screens/success/SuccessScreen.tsx": 1,
-        "@onboarding/screens/suitability/SuitabilityErrorScreen.tsx": 1,
-        "@onboarding/screens/unhandled/UnhandledRequirementScreen.tsx": 1
-      },
-      "propsWithCallSites": { "testID": { "@onboarding/screens/idv/IDVFallbackScreen.tsx": 1 } }
     },
     {
       "name": "IdVerificationError",
@@ -3036,17 +3205,6 @@
       }
     },
     {
-      "name": "SmallButton",
-      "sourceFile": "@components/interactables/SmallButton",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "variant": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
-        "disabled": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 },
-        "onPress": { "@onboarding/components/Form/PromoCodeInput.tsx": 1 }
-      }
-    },
-    {
       "name": "QuestionAnswerChooser",
       "sourceFile": "@onboarding/screens/kba/QuestionAnswerChooser",
       "totalInstances": 1,
@@ -3084,13 +3242,6 @@
       "sourceFile": "@components/ThemeProvider/LightThemeProvider",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "PunchOut",
-      "sourceFile": "@components/UI/PunchOut",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "shape": { "@onboarding/components/UI/CaptureView.tsx": 1 } }
     },
     {
       "name": "BulletItem",
@@ -3143,12 +3294,6 @@
         },
         "testID": { "@onboarding/components/UI/SkipButton.tsx": 1 }
       }
-    },
-    {
-      "name": "ThemeProvider",
-      "sourceFile": "@onboarding/components/UI/NavBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "StatusBarAndSafeArea",
@@ -3217,54 +3362,6 @@
           "@onboarding/refactoredDirector/PhoneExperience/SecureAccountExplainerScene.tsx": 1,
           "@onboarding/refactoredDirector/PhoneExperience/VerifyPhoneScene.tsx": 1,
           "@onboarding/utils/ScreenUtils/createScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PhoneInput",
-      "sourceFile": "@components/interactables/PhoneInput",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
-        "@onboarding/screens/phone/PhoneScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "keyboardType": {
-          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
-          "@onboarding/screens/phone/PhoneScreen.tsx": 1
-        },
-        "placeholder": {
-          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
-          "@onboarding/screens/phone/PhoneScreen.tsx": 1
-        },
-        "label": {
-          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
-          "@onboarding/screens/phone/PhoneScreen.tsx": 1
-        },
-        "countryLabel": {
-          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
-          "@onboarding/screens/phone/PhoneScreen.tsx": 1
-        },
-        "countryCodeValue": {
-          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
-          "@onboarding/screens/phone/PhoneScreen.tsx": 1
-        },
-        "onCountryCodeChange": {
-          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
-          "@onboarding/screens/phone/PhoneScreen.tsx": 1
-        },
-        "returnKeyType": {
-          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
-          "@onboarding/screens/phone/PhoneScreen.tsx": 1
-        },
-        "modalTitle": {
-          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
-          "@onboarding/screens/phone/PhoneScreen.tsx": 1
-        },
-        "searchPlaceholder": {
-          "@onboarding/refactoredDirector/PhoneExperience/PhoneScene.tsx": 1,
-          "@onboarding/screens/phone/PhoneScreen.tsx": 1
         }
       }
     },
@@ -3476,19 +3573,6 @@
       }
     },
     {
-      "name": "CheckBox",
-      "sourceFile": "@components/interactables/CheckBox",
-      "totalInstances": 7,
-      "totalCallSites": 4,
-      "callSites": {
-        "@onboarding/screens/attestations/AttestationsScreen.tsx": 4,
-        "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
-        "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
-        "@onboarding/screens/signup/SignUpScreen.tsx": 1
-      },
-      "propsWithCallSites": { "key": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 } }
-    },
-    {
       "name": "PEPLink",
       "sourceFile": "@onboarding/screens/attestations/AttestationsScreen.tsx",
       "totalInstances": 1,
@@ -3516,37 +3600,6 @@
         "placeholder": { "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1 },
         "selectedPrefecture": { "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1 },
         "onStateSelect": { "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1 }
-      }
-    },
-    {
-      "name": "DateInput",
-      "sourceFile": "@components/interactables/DateInput",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
-        "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "testID": {
-          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
-        },
-        "placeholder": {
-          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
-        },
-        "label": {
-          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
-        },
-        "ref": {
-          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1
-        },
-        "onChange": { "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1 },
-        "onSubmitEditing": { "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1 },
-        "endContent": { "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1 }
       }
     },
     {
@@ -3668,34 +3721,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "AlertTray",
-      "sourceFile": "@components/UI/AlertTray",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
-        "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
-        "@onboarding/screens/kyc/KYCRefreshScreen/KycRefreshStatusMessage.tsx": 1
-      },
-      "propsWithCallSites": {
-        "isVisible": {
-          "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
-          "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
-          "@onboarding/screens/kyc/KYCRefreshScreen/KycRefreshStatusMessage.tsx": 1
-        },
-        "onDismiss": {
-          "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
-          "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
-          "@onboarding/screens/kyc/KYCRefreshScreen/KycRefreshStatusMessage.tsx": 1
-        },
-        "alertData": {
-          "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
-          "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
-          "@onboarding/screens/kyc/KYCRefreshScreen/KycRefreshStatusMessage.tsx": 1
-        }
-      }
-    },
-    {
       "name": "NotificationsPromptContent",
       "sourceFile": "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx",
       "totalInstances": 1,
@@ -3726,6 +3751,13 @@
       "sourceFile": "@components/Images/NotificationsPrompt/Security/SecurityImage",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "WarningMessage",
+      "sourceFile": "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 2 }
     },
     {
       "name": "DocumentStatus",
@@ -3846,23 +3878,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "PasswordInput",
-      "sourceFile": "@components/interactables/PasswordInput",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "computeStrength": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
-        "secureTextEntry": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
-        "placeholder": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
-        "label": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
-        "ref": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
-        "returnKeyType": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
-        "testID": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
-        "key": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 },
-        "caption": { "@onboarding/screens/signup/SignUpScreen.tsx": 1 }
-      }
-    },
-    {
       "name": "PromoCodeInput",
       "sourceFile": "@onboarding/components/Form/PromoCodeInput",
       "totalInstances": 1,
@@ -3912,12 +3927,6 @@
       }
     },
     {
-      "name": "Warning",
-      "sourceFile": "@components/Images/Warning",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "Experience",
       "sourceFile": "@onboarding/utils/DirectorUtils/createDirector.tsx",
       "totalInstances": 1,
@@ -3930,6 +3939,12 @@
         "setIsLoading": { "@onboarding/utils/DirectorUtils/createDirector.tsx": 1 },
         "onExperienceComplete": { "@onboarding/utils/DirectorUtils/createDirector.tsx": 1 }
       }
+    },
+    {
+      "name": "Warning",
+      "sourceFile": "@components/Images/Warning",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "Screen",

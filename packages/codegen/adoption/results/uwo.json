@@ -251,12 +251,13 @@
     {
       "name": "Markdown",
       "sourceFile": "@uwo/components/common/layout/Markdown",
-      "totalInstances": 10,
-      "totalCallSites": 6,
+      "totalInstances": 11,
+      "totalCallSites": 7,
       "presentationalElement": "List",
       "callSites": {
         "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
         "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
+        "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
         "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
         "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
         "@uwo/components/common/interactables/inputs/Select.tsx": 1,
@@ -476,8 +477,8 @@
     {
       "name": "Text",
       "sourceFile": "@uwo/components/common/Text",
-      "totalInstances": 13,
-      "totalCallSites": 8,
+      "totalInstances": 12,
+      "totalCallSites": 7,
       "presentationalProps": [
         {
           "prop": "style",
@@ -491,7 +492,6 @@
       "callSites": {
         "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
         "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 2,
-        "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
         "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
         "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
         "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1,
@@ -502,7 +502,6 @@
         "color": {
           "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
           "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1,
-          "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
           "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
           "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
           "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1,
@@ -581,7 +580,7 @@
     {
       "name": "HStack",
       "sourceFile": "@uwo/components/common/primitives/HStack",
-      "totalInstances": 10,
+      "totalInstances": 11,
       "totalCallSites": 7,
       "presentationalProps": [
         {
@@ -595,7 +594,7 @@
         "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 2,
         "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1,
         "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
-        "@uwo/components/common/interactables/inputs/Select.tsx": 2,
+        "@uwo/components/common/interactables/inputs/Select.tsx": 3,
         "@uwo/components/common/interactables/inputs/TextInput.tsx": 2
       },
       "propsWithCallSites": {
@@ -619,7 +618,7 @@
           "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 2,
           "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1,
           "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
-          "@uwo/components/common/interactables/inputs/Select.tsx": 2,
+          "@uwo/components/common/interactables/inputs/Select.tsx": 3,
           "@uwo/components/common/interactables/inputs/TextInput.tsx": 2
         },
         "data-testid": {
@@ -3909,8 +3908,8 @@
         "@uwo/components/common/core/collapsible/Collapsible.tsx": 2,
         "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
         "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
         "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
         "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 2,
         "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1
       },
@@ -3925,8 +3924,8 @@
           "@uwo/components/common/core/collapsible/Collapsible.tsx": 2,
           "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
           "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
           "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
           "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 2,
           "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1
         },
@@ -4919,26 +4918,6 @@
       }
     },
     {
-      "name": "CollapsibleWrapper",
-      "sourceFile": "@uwo/components/common/core/CollapsibleWrapper",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SelectUploadMethodPresentation",
-      "sourceFile": "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "handleSelection": {
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodScene.tsx": 1
-        },
-        "uploadMethods": {
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodScene.tsx": 1
-        }
-      }
-    },
-    {
       "name": "UploadInstructions",
       "sourceFile": "@uwo/experiences/idv/scenes/components/UploadInstructions",
       "totalInstances": 1,
@@ -4962,6 +4941,26 @@
         "handleFileAdded": { "@uwo/experiences/idv/scenes/UploadScene/UploadScene.tsx": 1 },
         "resetPhoto": { "@uwo/experiences/idv/scenes/UploadScene/UploadScene.tsx": 1 },
         "isLoading": { "@uwo/experiences/idv/scenes/UploadScene/UploadScene.tsx": 1 }
+      }
+    },
+    {
+      "name": "CollapsibleWrapper",
+      "sourceFile": "@uwo/components/common/core/CollapsibleWrapper",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SelectUploadMethodPresentation",
+      "sourceFile": "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "handleSelection": {
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodScene.tsx": 1
+        },
+        "uploadMethods": {
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodScene.tsx": 1
+        }
       }
     },
     {

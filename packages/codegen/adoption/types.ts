@@ -46,7 +46,7 @@ export type AdopterConfig = {
   presentationalAttributes?: string[];
   cdsAliases?: string[];
   ignoreDirs?: string[];
-  sourceGlob?: string;
+  sourceGlob?: string[];
   tsconfigFileName?: string;
   type: 'doc';
   pillar?: string;
