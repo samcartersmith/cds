@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.37.4 (3/24/2022, 01:43 PM PST)
+
+#### 🐞 Fixes
+
+- **[Modal]** Modal content should have 612px default width. [#168](https://github.cbhq.net/frontend/cds/pull/168)
+
 ## 0.37.3 (3/23/2022, 08:10 PM PST)
 
 #### 🐞 Fixes
