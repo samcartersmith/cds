@@ -67,6 +67,21 @@ Subject of the positionedOverlay that when interacted with will toggle the visib
 
 <ComponentDetails componentName="Switcher" templateName="prop-content" />
 
+### disablePortal <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This disables React portal integration. Use this with caution.
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="disablePortal"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Switcher" templateName="prop-disablePortal" />
+
 ### maxHeight <Badge variant="web" />
 
 <ApiDetails
@@ -92,32 +107,6 @@ Subject of the positionedOverlay that when interacted with will toggle the visib
 />
 
 <ComponentDetails componentName="Switcher" templateName="prop-maxWidth" />
-
-### minHeight <Badge variant="web" />
-
-<ApiDetails
-  componentName="Switcher"
-  propertyName="minHeight"
-  required={false}
-  defaultValue="400"
-  mobileOptions={[]}
-  webOptions={['number', 'string']}
-/>
-
-<ComponentDetails componentName="Switcher" templateName="prop-minHeight" />
-
-### minWidth <Badge variant="web" />
-
-<ApiDetails
-  componentName="Switcher"
-  propertyName="minWidth"
-  required={false}
-  defaultValue="359"
-  mobileOptions={[]}
-  webOptions={['number', 'string']}
-/>
-
-<ComponentDetails componentName="Switcher" templateName="prop-minWidth" />
 
 ### onClose <Badge variant="web" />
 
