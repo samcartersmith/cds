@@ -112,7 +112,8 @@ export const Modal = memo(
             <VStack
               elevation={2}
               background="background"
-              width={dangerouslySetWidth}
+              width={dangerouslySetWidth ?? '100%'}
+              overflow="hidden"
               borderRadius="standard"
             >
               <ModalParentContext.Provider value={modalData}>
