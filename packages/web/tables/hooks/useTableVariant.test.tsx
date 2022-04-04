@@ -14,7 +14,7 @@ describe('useTableVariant', () => {
     );
     const { result } = renderHook(() => useTableVariant(), { wrapper });
 
-    expect(result.current).toBe('default');
+    expect(result.current.variant).toBe('default');
   });
 
   it('Get graph variant from Table', async () => {
@@ -25,7 +25,7 @@ describe('useTableVariant', () => {
     );
     const { result } = renderHook(() => useTableVariant(), { wrapper });
 
-    expect(result.current).toBe('graph');
+    expect(result.current.variant).toBe('graph');
   });
 
   it('Get ruled variant from Table', async () => {
@@ -36,6 +36,6 @@ describe('useTableVariant', () => {
     );
     const { result } = renderHook(() => useTableVariant(), { wrapper });
 
-    expect(result.current).toBe('ruled');
+    expect(result.current.variant).toBe('ruled');
   });
 });

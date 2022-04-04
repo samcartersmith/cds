@@ -1,11 +1,13 @@
 import { PropsWithChildren } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 
+import { defaultCellSpacing } from '../context/TableContext';
+import { Table } from '../Table';
 import { TableBody } from '../TableBody';
 import { TableFooter } from '../TableFooter';
 import { TableHeader } from '../TableHeader';
 
-import { useTableCellTag, useTableSectionTag } from './useTable';
+import { useTableCellSpacing, useTableCellTag, useTableSectionTag } from './useTable';
 
 const HOOK_ERROR = Error(
   'This component must be wrapped in a TableHeader, TableBody or TableFooter.',
@@ -66,5 +68,32 @@ describe('useTableTag', () => {
     const { result } = renderHook(() => useTableCellTag(), { wrapper });
 
     expect(result.current).toBe('td');
+  });
+
+  it('Get proper cell spacing', async () => {
+    const cellSpacing = {
+      outer: { spacingVertical: 0, spacingHorizontal: 0 },
+      inner: { spacingVertical: 0 },
+    } as const;
+
+    const wrapper = ({ children }: PropsWithChildren<unknown>) => (
+      <Table cellSpacing={cellSpacing}>
+        <TableBody>{children}</TableBody>
+      </Table>
+    );
+    const { result } = renderHook(() => useTableCellSpacing(), { wrapper });
+
+    expect(result.current).toBe(cellSpacing);
+  });
+
+  it('Get default cell spacing', async () => {
+    const wrapper = ({ children }: PropsWithChildren<unknown>) => (
+      <Table>
+        <TableBody>{children}</TableBody>
+      </Table>
+    );
+    const { result } = renderHook(() => useTableCellSpacing(), { wrapper });
+
+    expect(result.current).toBe(defaultCellSpacing);
   });
 });

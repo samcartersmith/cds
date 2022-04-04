@@ -1,7 +1,5 @@
-import { ReactElement } from 'react';
-import { SharedProps } from '@cbhq/cds-common';
-
-import { TableSectionProps } from './tableSectionTypes';
+import { ReactNode } from 'react';
+import { CellSpacing, SharedProps } from '@cbhq/cds-common';
 
 /**
  * The table variant will be provided via context and available
@@ -10,8 +8,15 @@ import { TableSectionProps } from './tableSectionTypes';
  */
 export type TableVariant = 'default' | 'graph' | 'ruled';
 export type TableLayout = 'auto' | 'fixed';
+export type TableCellSpacing = {
+  inner?: CellSpacing;
+  outer?: CellSpacing;
+};
 
-export type TableCtx = TableVariant | undefined;
+export type TableCtx = {
+  variant?: TableVariant;
+  cellSpacing?: TableCellSpacing;
+};
 
 export type TableProps = {
   /**
@@ -25,7 +30,7 @@ export type TableProps = {
    * TableHeader and TableFooter are both optional, and will magically
    * flow into the correct place in the table (top/bottom)
    */
-  children: ReactElement<TableSectionProps> | ReactElement<TableSectionProps>[];
+  children: ReactNode;
   /**
    * When provided, we'll apply a bordered around the entire table
    */
@@ -35,4 +40,6 @@ export type TableProps = {
    * @default 'auto'
    */
   tableLayout?: TableLayout;
+  /** Provide custom cell spacing for all child TableCells */
+  cellSpacing?: TableCellSpacing;
 } & SharedProps;

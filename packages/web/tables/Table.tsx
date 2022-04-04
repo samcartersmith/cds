@@ -1,21 +1,30 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 
 import { cx } from '../utils/linaria';
 
-import { TableContext } from './context/TableContext';
+import { defaultCellSpacing, TableContext } from './context/TableContext';
 import { useTableStyles } from './hooks/useTableStyles';
 import { table, tableFixed } from './styles/tableStyles';
 import { TableProps } from './types/tableTypes';
 
 export type { TableLayout, TableProps, TableVariant } from './types/tableTypes';
 export const Table = memo(
-  ({ children, variant, bordered, testID, tableLayout, ...rest }: TableProps) => {
+  ({
+    children,
+    variant = 'default',
+    bordered,
+    cellSpacing = defaultCellSpacing,
+    testID,
+    tableLayout,
+    ...rest
+  }: TableProps) => {
     const variantStyles = useTableStyles({ variant, bordered });
+    const value = useMemo(() => ({ variant, cellSpacing }), [variant, cellSpacing]);
     const fixed = tableLayout === 'fixed';
     const tableStyles = cx(table, fixed && tableFixed);
 
     return (
-      <TableContext.Provider value={variant}>
+      <TableContext.Provider value={value}>
         <div className={variantStyles}>
           <table className={tableStyles} data-testid={testID} {...rest}>
             {children}

@@ -10,6 +10,28 @@ export default {
   component: TableCell,
 } as Meta;
 
+const cellSpacing = {
+  outer: { spacingVertical: 0, spacingHorizontal: 0 },
+  inner: { spacingVertical: 0 },
+} as const;
+
+export const CellSpacing: Story = () => {
+  return (
+    <Table variant="ruled" bordered cellSpacing={cellSpacing}>
+      <TableHeader>
+        <TableRow backgroundColor="backgroundAlternate">
+          <TableCell title="First Header" />
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow>
+          <TableCell title="$2,475.68" subtitle="0.11882557" />
+        </TableRow>
+      </TableBody>
+    </Table>
+  );
+};
+
 export const SampleCells: Story = () => {
   return (
     <ThemeProvider spectrum="light">

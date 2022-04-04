@@ -1,6 +1,5 @@
 import React, { memo, useMemo } from 'react';
 import { css } from 'linaria';
-import { CellSpacing } from '@cbhq/cds-common/types';
 import { isProduction } from '@cbhq/cds-utils';
 
 import { Cell, truncateClassName } from '../cells/Cell';
@@ -8,11 +7,9 @@ import { HStack, VStack } from '../layout';
 import { TextBody, TextHeadline, TextLabel2 } from '../typography';
 import { cx } from '../utils/linaria';
 
-import { useTableCellTag, useTableSectionTag } from './hooks/useTable';
+import { useTableCellSpacing, useTableCellTag, useTableSectionTag } from './hooks/useTable';
 import { tableCell, tableFooterCell, tableHeaderCell } from './styles/tableCellStyles';
 import { TableCellProps } from './types/tableCellTypes';
-
-const defaultCellOuterSpacing: CellSpacing = { spacingHorizontal: 0 };
 
 export type { TableCellProps } from './types/tableCellTypes';
 export const TableCell = memo(
@@ -36,10 +33,11 @@ export const TableCell = memo(
     dangerouslySetHtmlWidth,
     width,
     innerSpacing,
-    outerSpacing = defaultCellOuterSpacing,
+    outerSpacing,
     ...props
   }: TableCellProps) => {
     const tableSectionType = useTableSectionTag();
+    const tableCellSpacing = useTableCellSpacing();
     const TableCellComponent = useTableCellTag();
     const isInBody = tableSectionType === 'tbody';
     const TextComponent = TableCellComponent === 'th' ? TextHeadline : TextBody;
@@ -98,10 +96,9 @@ export const TableCell = memo(
           alignItems={alignItems}
           media={start}
           accessory={end}
-          reduceHorizontalSpacing
           shouldOverflow={!overflow}
-          outerSpacing={outerSpacing}
-          innerSpacing={innerSpacing}
+          outerSpacing={outerSpacing ?? tableCellSpacing?.outer}
+          innerSpacing={innerSpacing ?? tableCellSpacing?.inner}
         >
           {children ? (
             <TextComponent

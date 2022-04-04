@@ -1,5 +1,13 @@
 import { createContext } from 'react';
 
-import { TableCtx } from '../types/tableTypes';
+import { TableCellSpacing, TableCtx } from '../types/tableTypes';
 
-export const TableContext = createContext<TableCtx>('default');
+export const defaultCellSpacing: TableCellSpacing = {
+  outer: { spacingHorizontal: 2 },
+  inner: { spacingHorizontal: 2 },
+};
+const initialContext = {
+  variant: 'default',
+  cellSpacing: defaultCellSpacing,
+} as const;
+export const TableContext = createContext<TableCtx>(initialContext);
