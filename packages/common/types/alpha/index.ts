@@ -1,3 +1,4 @@
+// codegen:start { preset: barrel, include: ./*.ts }
 export * from './AnnouncementCardBaseProps';
 export * from './ButtonBaseProps';
 export * from './CardBaseProps';
@@ -13,3 +14,4 @@ export * from './FeatureEntryCardBaseProps';
 export * from './FeedCardBaseProps';
 export * from './IconButtonBaseProps';
 export * from './LikeButtonBaseProps';
+// codegen:end

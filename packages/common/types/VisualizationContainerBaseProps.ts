@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { DimensionValue } from '.';
+import type { DimensionValue } from './DimensionStyles';
 
 export type VisualizationContainerBaseProps = {
   width: DimensionValue;

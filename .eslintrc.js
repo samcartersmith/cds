@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  plugins: ['@cbhq'],
+  plugins: ['@cbhq', 'codegen'],
   extends: [
     'plugin:@cbhq/conventions',
     'plugin:@cbhq/react',
@@ -16,6 +16,12 @@ module.exports = {
   },
   reportUnusedDisableDirectives: true,
   overrides: [
+    {
+      files: ['**/*.ts', '**/*.tsx'],
+      rules: {
+        'codegen/codegen': 'error',
+      },
+    },
     // Node.js
     {
       files: [

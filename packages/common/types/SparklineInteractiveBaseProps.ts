@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import {
+import type {
   ChartData,
   ChartDataPoint,
   ChartFormatAmount,
@@ -8,8 +8,8 @@ import {
   ChartGetMarker,
   ChartScrubParams,
   ChartXFunction,
-  SparklineScalingBaseProps,
-} from '.';
+} from './Chart';
+import type { SparklineScalingBaseProps } from './SparklineBaseProps';
 
 export type SparklineInteractiveBaseProps<Period extends string> = {
   /**
