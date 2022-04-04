@@ -4,10 +4,6 @@
     "outDir": "../../.nx/dist/packages/fonts",
     "rootDir": "./"
   },
-  "include": [
-    "**/*"
-  ],
-  "exclude": [
-    "**/*.test.*"
-  ]
+  "include": ["**/*"],
+  "exclude": ["**/*.test.*"]
 }

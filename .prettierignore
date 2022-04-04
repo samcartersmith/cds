@@ -7,9 +7,6 @@ apps/website/docs/**/*.json
 apps/website/static/**/*.json
 
 # Nx
-dts/
-lib/
-esm/
 dist/
 package.json
 .docusaurus

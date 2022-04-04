@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { CellDetailProps as CellDetailBaseProps } from '@cbhq/cds-common';
-import { getAdjustsFontSizeToFitProp } from '@cbhq/cds-mobile/utils/getAdjustsFontSizeToFitProp';
 
 import { VStack } from '../layout/VStack';
 import { TextBody } from '../typography/TextBody';
+import { getAdjustsFontSizeToFitProp } from '../utils/getAdjustsFontSizeToFitProp';
 
 export type CellDetailProps = {
   adjustsFontSizeToFit?: boolean;

@@ -20,6 +20,7 @@ export function createIllustration<T extends IllustrationVariant>(variant?: T) {
     testID,
   }: IllustrationBaseProps<T>) {
     if (!loggedWarning) {
+      // eslint-disable-next-line no-console
       console.warn(
         'SpotSquare will soon be deprecating its size 120x120. Instead it will use 96x96 as default. Please check screens that use SpotSquare to ensure there are no visual regression.',
       );

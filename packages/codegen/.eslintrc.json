@@ -1,12 +1,3 @@
 {
-  "extends": ["../../.eslintrc.js"],
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {
-        "import/no-extraneous-dependencies": "off",
-        "no-console": "off"
-      }
-    }
-  ]
+  "extends": ["../../.eslintrc.js", "plugin:@cbhq/node"]
 }

@@ -4,7 +4,6 @@
     {
       "files": ["*.ts", "*.tsx"],
       "rules": {
-        "@cbhq/prefer-react-named-module-import": "off",
         "react/forbid-component-props": [
           "error",
           {
@@ -16,6 +15,12 @@
             ]
           }
         ]
+      }
+    },
+    {
+      "files": ["**/__stories__/*"],
+      "rules": {
+        "no-console": "off"
       }
     }
   ]

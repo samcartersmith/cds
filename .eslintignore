@@ -1,14 +1,13 @@
-*.json
 *.md
 dist/
 node_modules/
 OWNERS
 Makefile
-*.json
 .eslintrc.js
 
 # Nx/Builds
 **/dts/
 **/lib/
+**/dist/
 **/esm/
 **/templates/

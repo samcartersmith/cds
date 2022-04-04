@@ -18,6 +18,7 @@ export const useSelectContext = () => {
   const context = React.useContext(SelectContext);
   //   TODO: check for something required
   if (!context && !isProduction()) {
+    // eslint-disable-next-line no-console
     console.error(errorMessage);
   }
   return context;

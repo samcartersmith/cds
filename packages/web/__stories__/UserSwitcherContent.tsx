@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { CellSpacing } from '@cbhq/cds-common/types';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';

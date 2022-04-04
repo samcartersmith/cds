@@ -8,6 +8,8 @@
     "packageManager": "yarn"
   },
   "implicitDependencies": {
+    ".eslintrc.js": "*",
+    ".*ignore": "*",
     "*.config.js": "*",
     "nx.json": "*",
     "package.json": {

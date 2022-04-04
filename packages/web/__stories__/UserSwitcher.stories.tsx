@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
 import { HStack, VStack } from '../layout';

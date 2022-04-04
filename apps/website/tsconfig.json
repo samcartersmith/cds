@@ -8,6 +8,9 @@
   "exclude": ["dist", "jest.config.js", "babel.config.js", "babel.build.config.js"],
   "references": [
     {
+      "path": "../../packages/common"
+    },
+    {
       "path": "../../packages/web"
     }
   ]

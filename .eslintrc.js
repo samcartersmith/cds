@@ -1,55 +1,44 @@
 module.exports = {
   root: true,
   plugins: ['@cbhq', 'codegen'],
-  extends: [
-    'plugin:@cbhq/conventions',
-    'plugin:@cbhq/react',
-    'plugin:@cbhq/testing',
-    'plugin:@cbhq/imports',
-  ],
+  extends: ['plugin:@cbhq/conventions', 'plugin:@cbhq/react', 'plugin:@cbhq/imports'],
   parserOptions: {
     project: 'tsconfig.eslint.json',
     tsconfigRootDir: __dirname,
   },
-  env: {
-    'jest/globals': true,
-  },
   reportUnusedDisableDirectives: true,
   overrides: [
     {
-      files: ['**/*.ts', '**/*.tsx'],
+      files: ['packages/**/*.ts', 'packages/**/*.tsx'],
       rules: {
         'codegen/codegen': 'error',
+        'react/jsx-uses-react': 'error',
+        'react/react-in-jsx-scope': 'error',
+        'import/no-extraneous-dependencies': [
+          'error',
+          {
+            devDependencies: true,
+          },
+        ],
       },
     },
-    // Node.js
+    // Jest configs
     {
       files: [
-        '**/.*.js',
-        '**/.*.ts',
-        '**/*.tsx',
-        '**/*.config.js',
-        '**/*.config.ts',
-        '**/scripts/**/*',
+        '**/*.test.ts',
+        '**/*.test.tsx',
+        '**/__tests__/*.ts',
+        '**/__tests__/*.tsx',
+        '**/jest/**',
       ],
-      extends: ['plugin:@cbhq/node'],
-      rules: {
-        'compat/compat': 'off',
-        'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
-      },
-    },
-    {
-      files: ['**/*.tsx'],
-      rules: {
-        'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
-        'react/react-in-jsx-scope': 'error',
-      },
-    },
-    {
-      files: ['**/*.test.ts', '**/*.test.tsx', '**/*.stories.tsx', '**/__stories__/**'],
+      extends: ['plugin:@cbhq/testing', 'plugin:@cbhq/node'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
-        'react/react-in-jsx-scope': 'off',
+        'react/jsx-uses-react': 0,
+        'react/react-in-jsx-scope': 0,
+      },
+      env: {
+        'jest/globals': true,
       },
     },
   ],

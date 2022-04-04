@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { HStack } from '../layout/HStack';
 import { NavigationBar, NavigationTitle } from '../navigation';
 import { PortalProvider } from '../overlays/PortalProvider';

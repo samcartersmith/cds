@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { createContext, memo, useContext } from 'react';
 
 import { PaletteConfigProvider } from '../palette/PaletteConfigProvider';

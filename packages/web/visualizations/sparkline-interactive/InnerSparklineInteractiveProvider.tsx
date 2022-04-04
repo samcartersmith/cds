@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { useEffect } from 'react';
 
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';

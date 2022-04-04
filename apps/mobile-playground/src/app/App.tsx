@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import React, { memo, useMemo } from 'react';
 import { Platform } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';

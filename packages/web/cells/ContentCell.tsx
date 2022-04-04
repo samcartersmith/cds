@@ -27,6 +27,7 @@ export const ContentCell = memo(function ContentCell({
 }: ContentCellProps) {
   if (!isProduction()) {
     if (meta && !title && !subtitle) {
+      // eslint-disable-next-line no-console
       console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');
     }
   }

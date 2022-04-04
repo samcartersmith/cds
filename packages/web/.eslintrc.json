@@ -1,21 +1,24 @@
 {
   "extends": ["../../.eslintrc.js"],
+  "settings": {
+    // Put deps which are dev only and removed at build time to avoid import/no-extraneous-dependencies error
+    "import/core-modules": ["linaria"]
+  },
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx"],
+      "files": [
+        // Stories
+        "**/__stories__/*",
+        "**/*.stories.ts",
+        "**/*.stories.tsx"
+      ],
+      "extends": ["plugin:@cbhq/node"],
       "rules": {
-        "import/no-extraneous-dependencies": [
-          "error",
-          {
-            "devDependencies": true
-          }
-        ]
-      }
-    },
-    {
-      "files": ["*.test.ts", "*.test.tsx", "*.stories.ts", "*.stories.tsx"],
-      "rules": {
-        "import/no-extraneous-dependencies": 0
+        "compat/compat": "off",
+        "no-console": "off",
+        // apps/storybook is using the new react JSX transform
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-uses-react": "off"
       }
     }
   ]

@@ -13,6 +13,7 @@
     "typecheck": "nx run website:typecheck"
   },
   "dependencies": {
+    "@cbhq/cds-common": "workspace:*",
     "@cbhq/cds-web": "workspace:*",
     "@docusaurus/core": "2.0.0-beta.6",
     "@docusaurus/module-type-aliases": "2.0.0-beta.6",

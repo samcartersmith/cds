@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
 import { render, RenderResult } from '@testing-library/react';
 import type axe from 'axe-core';
 import { axe as runAxe, toHaveNoViolations } from 'jest-axe';

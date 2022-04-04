@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from 'linaria';
 import { ForwardedRef } from '@cbhq/cds-common';
