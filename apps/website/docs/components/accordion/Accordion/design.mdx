@@ -5,15 +5,13 @@ import { Box } from '@cbhq/cds-web/layout';
 
 # Accordions
 
-A vertical list of collapsed header items, where each header can expand to reveal  related content.
+A vertical list of collapsed header items, where each header can expand to reveal related content.
 
-<Image
-  src="/img/components/accordion/hero_accordion.gif"
-/>
+<Image src="/img/components/accordion/hero_accordion.gif" />
 
 ## Usage
 
-Accordions are a cross-platform component  used for displaying auxiliary (not  vital) content to the end-user. Similar components are: 
+Accordions are a cross-platform component used for displaying auxiliary (not vital) content to the end-user. Similar components are:
 
 <Collection spacingVertical={0}>
   <Item
@@ -78,8 +76,8 @@ Accordions are a cross-platform component  used for displaying auxiliary (not  v
 
 Accordions hide content from the user. Not all users will notice accordions or understand how they work. For this reason, you should only use accordions in specific situations and if user research supports it.
 
-- Do not use accordions for navigation. Use [CDS Side Nav](/components/sidebar) or [CDS Tabs](/components/tab-navigation) 
-- Do not use an accordion for content that all users need to see at once.  Use CDS Lists
+- Do not use accordions for navigation. Use [CDS Side Nav](/components/sidebar) or [CDS Tabs](/components/tab-navigation)
+- Do not use an accordion for content that all users need to see at once. Use CDS Lists
 - Do not use accordions for content if you want all accordion items expanded. Use CDS Lists
 - Do not nest accordions within accordions, as it will make content difficult to find, and degrade usability.
 - Do not use accordion if you need to expand and collapse a group of components. Use [Collapsible](/components/collapsible).
@@ -88,34 +86,24 @@ Accordions hide content from the user. Not all users will notice accordions or u
 
 ### Body and Head Structure
 
-<Image
-  src="/img/components/accordion/anatomy_01_single.png"
-/>
+<Image src="/img/components/accordion/anatomy_01_single.png" />
 
 <Collection spacingVertical={0}>
-  <Item
-    title="1. Title"
-  />
-  <Item
-    title="2. “Zippy” chevron collapsed state by default"
-  />
-  <Item
-    title="3. Zippy chevron expanded state"
-  />
-  <Item
-    title="4. Expanded Accordion item"
-  />
+  <Item title="1. Title" />
+  <Item title="2. “Zippy” chevron collapsed state by default" />
+  <Item title="3. Zippy chevron expanded state" />
+  <Item title="4. Expanded Accordion item" />
 </Collection>
 
 <Collection spacingVertical={0}>
   <Item
     img={{
-      src: "/img/components/accordion/anatomy_head.png"
+      src: '/img/components/accordion/anatomy_head.png',
     }}
   />
   <Item
     img={{
-      src: "/img/components/accordion/anatomy_body.png"
+      src: '/img/components/accordion/anatomy_body.png',
     }}
   />
 </Collection>
@@ -124,9 +112,7 @@ Accordions hide content from the user. Not all users will notice accordions or u
 
 ### Head Variants
 
-<Image
-  src="/img/components/accordion/anatomy_02_single.png"
-/>
+<Image src="/img/components/accordion/anatomy_02_single.png" />
 
 <Collection spacingVertical={0}>
   <Item
@@ -134,30 +120,24 @@ Accordions hide content from the user. Not all users will notice accordions or u
     description="A title and the zippy icon on the right are required"
     textAlign="flex-start"
   />
-  <Item
-    title="2. Default + SubTitle"
-    textAlign="flex-start"
-  />
+  <Item title="2. Default + SubTitle" textAlign="flex-start" />
   <Item
     title="3. Default + Media"
     description="An icon can be added on the left of Title/text block"
     textAlign="flex-start"
   />
-  <Item
-    title="4. Default + SubTitle + Media"
-    textAlign="flex-start"
-  />
+  <Item title="4. Default + SubTitle + Media" textAlign="flex-start" />
 </Collection>
 
 <Collection spacingVertical={0}>
   <Item
     img={{
-      src: "/img/components/accordion/accordion_item_01a.png"
+      src: '/img/components/accordion/accordion_item_01a.png',
     }}
   />
   <Item
     img={{
-      src: "/img/components/accordion/accordion_item_01b.png"
+      src: '/img/components/accordion/accordion_item_01b.png',
     }}
   />
 </Collection>
@@ -165,12 +145,12 @@ Accordions hide content from the user. Not all users will notice accordions or u
 <Collection spacingVertical={3}>
   <Item
     img={{
-      src: "/img/components/accordion/accordion_item_02a.png"
+      src: '/img/components/accordion/accordion_item_02a.png',
     }}
   />
   <Item
     img={{
-      src: "/img/components/accordion/accordion_item_02b.png"
+      src: '/img/components/accordion/accordion_item_02b.png',
     }}
   />
 </Collection>
@@ -181,19 +161,20 @@ Accordions hide content from the user. Not all users will notice accordions or u
 
 Accordions are responsive to screen sizes and localization. Therefore the number of lines in the header will vary. Test your Accordion designs in various languages and screen sizes to ensure the content does not bloat the header and overwhelm the UI. See [Accordion's Content Guidelines](#content-guidelines) for more guidance on crafting header titles.
 
-The Accordion header is designed for 2-lines max: 
+The Accordion header is designed for 2-lines max:
+
 - 1-line Title and 1-line SubTitle; or a
 - 2-line Title, text wrapping is supported.
 
 <Collection spacingVertical={0}>
   <Item
     img={{
-      src: "/img/components/accordion/text_01.png"
+      src: '/img/components/accordion/text_01.png',
     }}
   />
   <Item
     img={{
-      src: "/img/components/accordion/text_02.png"
+      src: '/img/components/accordion/text_02.png',
     }}
   />
 </Collection>
@@ -202,9 +183,7 @@ The Accordion header is designed for 2-lines max:
 
 ### Body Variants
 
-<Image
-  src="/img/components/accordion/anatomy_03_scrolling.png"
-/>
+<Image src="/img/components/accordion/anatomy_03_scrolling.png" />
 
 <Collection spacingVertical={0}>
   <Item
@@ -222,21 +201,19 @@ The Accordion header is designed for 2-lines max:
 <Collection spacingVertical={0}>
   <Item
     img={{
-      src: "/img/components/accordion/scrolling_01.png"
+      src: '/img/components/accordion/scrolling_01.png',
     }}
   />
   <Item
     img={{
-      src: "/img/components/accordion/scrolling_02.png"
+      src: '/img/components/accordion/scrolling_02.png',
     }}
   />
 </Collection>
 
 ### Interaction Variants
 
-<Image
-  src="/img/components/accordion/anatomy_04_multi.png"
-/>
+<Image src="/img/components/accordion/anatomy_04_multi.png" />
 
 <Collection spacingVertical={0} spacingBottom={3}>
   <Item
@@ -256,28 +233,25 @@ The Accordion header is designed for 2-lines max:
 <Collection spacingVertical={0}>
   <Item
     img={{
-      src: "/img/components/accordion/lists_1a.png"
+      src: '/img/components/accordion/lists_1a.png',
     }}
   />
   <Item
     img={{
-      src: "/img/components/accordion/lists_1b.png"
+      src: '/img/components/accordion/lists_1b.png',
     }}
   />
 </Collection>
 
 <Collection spacingVertical={0} spacingBottom={6}>
-  <Item
-    description="Example of an Accordion list where all Accordion Items are collapsed by default"
-  />
-  <Item
-    description="Example of an Accordion list where one Accordion Item is expanded onLoad. One Accordion Item can be opened/expanded by default."
-  />
+  <Item description="Example of an Accordion list where all Accordion Items are collapsed by default" />
+  <Item description="Example of an Accordion list where one Accordion Item is expanded onLoad. One Accordion Item can be opened/expanded by default." />
 </Collection>
 
 ### Scaling and Adaptation
 
-CDS Accordions is a cross-platform responsive component. By default, Accordion's width is 100% of the container encapsulating it. 
+CDS Accordions is a cross-platform responsive component. By default, Accordion's width is 100% of the container encapsulating it.
+
 - Min-width = 300 in normal and dense
 - Min-height = 80 in normal
 - Min-height = 64 in dense
@@ -285,42 +259,41 @@ CDS Accordions is a cross-platform responsive component. By default, Accordion's
 <Collection spacingVertical={0}>
   <Item
     img={{
-      src: "/img/components/accordion/min_width_01.png"
+      src: '/img/components/accordion/min_width_01.png',
     }}
   />
   <Item
     img={{
-      src: "/img/components/accordion/min_width_02.png"
+      src: '/img/components/accordion/min_width_02.png',
     }}
   />
 </Collection>
 
-*Normal scale*
+_Normal scale_
 
 <Collection spacingVertical={0}>
   <Item
     img={{
-      src: "/img/components/accordion/min_width_03.png"
+      src: '/img/components/accordion/min_width_03.png',
     }}
   />
   <Item
     img={{
-      src: "/img/components/accordion/min_width_04.png"
+      src: '/img/components/accordion/min_width_04.png',
     }}
   />
 </Collection>
 
-*Dense scale*
+_Dense scale_
 
-<Image
-  src="/img/components/accordion/responsive.gif"
-/>
+<Image src="/img/components/accordion/responsive.gif" />
 
 ### Dont's
 
 <DoDont spacingVertical={0}>
   <DontExample img={{ src: '/img/components/accordion/dont_01.png' }}>
-    Mix and match variants and syntax styles (questions vs statements) in an Accordion List. Follow one format for your lists.
+    Mix and match variants and syntax styles (questions vs statements) in an Accordion List. Follow
+    one format for your lists.
   </DontExample>
   <DontExample img={{ src: '/img/components/accordion/dont_02.png' }}>
     Have a wordy header. And do not avoid a 1-word body.
@@ -348,21 +321,19 @@ AccordionItems inherit focus states built into ListItems. When an accordion head
 <Collection spacingVertical={0} spacingBottom={10}>
   <Item
     img={{
-      src: "/img/components/accordion/state_hover.png"
+      src: '/img/components/accordion/state_hover.png',
     }}
     title="Hover state"
   />
   <Item
     img={{
-      src: "/img/components/accordion/state_focus.png"
+      src: '/img/components/accordion/state_focus.png',
     }}
     title="Focus state"
   />
 </Collection>
 
-<Image
-  src="/img/components/accordion/a11y_tabbing_demo.gif"
-/>
+<Image src="/img/components/accordion/a11y_tabbing_demo.gif" />
 
 ## Content Guidelines
 
@@ -376,14 +347,14 @@ Do not use accordions as a junk drawer. Although the content is condensed by an 
   <Image
     src="/img/components/accordion/content_design_example.png"
     options={{
-      maxWidth: '50%'
+      maxWidth: '50%',
     }}
   />
 </Box>
 
 **Header** → AccordionItem - Collapsed
 
-- Be as brief as possible while remaining descriptive and clear. 
+- Be as brief as possible while remaining descriptive and clear.
 - The header can be a question or a title as long as it provides context for what it is in the body copy.
 - Headers can be 2 lines, either as a 2 line header or a 1 line header and 1 line sub-header.
 - Headers should all be in the same format (eg, all questions or all nouns to be defined)
@@ -394,12 +365,12 @@ Do not use accordions as a junk drawer. Although the content is condensed by an 
 - Body can be split into multiple paragraphs and use sub-headers if needed.
 - Body copy in each accordion unit should directly relate to the header next to the zippy.
 
-> If you have questions on how to create content for an accordion, sign up for [Content Design Office Hours](https://docs.google.com/spreadsheets/d/1KgQ4IlWBnwP3T1buAWtjnVkGxZamrwToszhUu1TDCkE/edit#gid=0) or use #ask-a-writer on Slack. 
+> If you have questions on how to create content for an accordion, sign up for [Content Design Office Hours](https://docs.google.com/spreadsheets/d/1KgQ4IlWBnwP3T1buAWtjnVkGxZamrwToszhUu1TDCkE/edit#gid=0) or use #ask-a-writer on Slack.
 
 ## Resources
 
-- Want to see the UI spacing and alignment details? [Figma specs/redlines](https://www.figma.com/file/9TCCKTO5uxbuJsnrircede/CDS-Design-Intent-Library?node-id=1588%3A32507) 
-- Problem with the component's Figma symbol  or with the code? [File a bug](https://jira.coinbase-corp.com/secure/CreateIssueDetails!init.jspa?pid=15203&issuetype=1&priority=3&summary=%5BBug%5D%20&description=*Where%20is%20the%20bug?%20(figma,%20cds%20package,%20etc)*%0A%0A%0A*Repro%20Steps:*%0A1.%0A2.%0A%0A*Actual%20behavior:*%0A%0AAdd%20description,%20images,%20video%20of%20what%20actually%20happened.%0A%0A*Expected%20behavior:*%0A)  
+- Want to see the UI spacing and alignment details? [Figma specs/redlines](https://www.figma.com/file/9TCCKTO5uxbuJsnrircede/CDS-Design-Intent-Library?node-id=1588%3A32507)
+- Problem with the component's Figma symbol or with the code? [File a bug](<https://jira.coinbase-corp.com/secure/CreateIssueDetails!init.jspa?pid=15203&issuetype=1&priority=3&summary=%5BBug%5D%20&description=*Where%20is%20the%20bug?%20(figma,%20cds%20package,%20etc)*%0A%0A%0A*Repro%20Steps:*%0A1.%0A2.%0A%0A*Actual%20behavior:*%0A%0AAdd%20description,%20images,%20video%20of%20what%20actually%20happened.%0A%0A*Expected%20behavior:*%0A>)
 - CDS Accordion team: Krishna Brown , Michael Chen, Yong Kim, and Eungee Lee
 - Got feedback about this component or general feedback about CDS? [Anonymous feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdlcOr5PIS9FPuzOQaZD3RuO_AZCu9zyx9pLZx9prLITn9JdQ/viewform)
 - Slack: [#ask-cds](https://app.slack.com/client/T02Q6DY7G/C01A6PKGM3J/thread/C029SR9RN1M-1647533367.203959?cdn_fallback=2)

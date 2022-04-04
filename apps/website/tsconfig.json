@@ -4,15 +4,8 @@
     "outDir": "../../.nx/dist/app/website",
     "rootDir": "./"
   },
-  "include": [
-    "**/*"
-  ],
-  "exclude": [
-    "dist",
-    "jest.config.js",
-    "babel.config.js",
-    "babel.build.config.js"
-  ],
+  "include": ["**/*"],
+  "exclude": ["dist", "jest.config.js", "babel.config.js", "babel.build.config.js"],
   "references": [
     {
       "path": "../../packages/web"

@@ -4,10 +4,6 @@
     "outDir": "./dist",
     "rootDir": "./"
   },
-  "include": [
-    "**/*"
-  ],
-  "exclude": [
-    "dist"
-  ]
+  "include": ["**/*"],
+  "exclude": ["dist"]
 }

@@ -2,13 +2,15 @@
 **/persisted_queries.json
 **/__generated__
 
+# Apps
+apps/website/docs/**/*.json
+apps/website/static/**/*.json
+
 # Nx
 dts/
 lib/
 esm/
 dist/
 package.json
-tsconfig.json
-tsconfig.*.json
 .docusaurus
 .nx

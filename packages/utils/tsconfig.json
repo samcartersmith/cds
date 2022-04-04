@@ -4,8 +4,6 @@
     "outDir": "../../.nx/dist/packages/utils",
     "rootDir": "./"
   },
-  "include": [
-    "**/*"
-  ],
+  "include": ["**/*"],
   "exclude": []
 }

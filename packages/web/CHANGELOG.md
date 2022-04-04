@@ -18,7 +18,7 @@ All notable changes to this project will be documented in this file.
 
 #### 🐞 Fixes
 
-- **[Tabs]** Ensure TabNavigation is *always* displayed in normal scale. [#165](https://github.cbhq.net/frontend/cds/pull/165), [CODA-41](https://jira.coinbase-corp.com/browse/CODA-41)
+- **[Tabs]** Ensure TabNavigation is _always_ displayed in normal scale. [#165](https://github.cbhq.net/frontend/cds/pull/165), [CODA-41](https://jira.coinbase-corp.com/browse/CODA-41)
 - Switcher as modal on mobile web. [#160](https://github.cbhq.net/frontend/cds/pull/160)
 
 ## 0.37.2 (3/23/2022, 02:22 PM PST)

@@ -4,13 +4,8 @@
     "outDir": "../../.nx/dist/packages/common",
     "rootDir": "./"
   },
-  "include": [
-    "**/*"
-  ],
-  "exclude": [
-    "dist",
-    "jest.config.js"
-  ],
+  "include": ["**/*"],
+  "exclude": ["dist", "jest.config.js"],
   "references": [
     {
       "path": "../utils"

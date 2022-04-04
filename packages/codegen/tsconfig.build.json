@@ -4,9 +4,7 @@
     "outDir": "../../.nx/dist/packages/codegen",
     "rootDir": "./"
   },
-  "include": [
-    "**/*"
-  ],
+  "include": ["**/*"],
   "exclude": [
     "dist",
     "**/*.test.ts",

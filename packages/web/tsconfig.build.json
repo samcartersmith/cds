@@ -5,9 +5,7 @@
     "rootDir": "./",
     "baseUrl": "."
   },
-  "include": [
-    "**/*"
-  ],
+  "include": ["**/*"],
   "exclude": [
     "storybook-decorators/**/*.tsx",
     "storybook-decorators/**/*.ts",
