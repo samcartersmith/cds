@@ -670,9 +670,6 @@ const createMobileSpectrumMap = async (names: IllustrationNamesMap, outDirPath: 
     data: {
       illustrationSpectrumMap: paths,
     },
-    config: {
-      disablePrettier: true,
-    },
   });
 
   spinner.stop();

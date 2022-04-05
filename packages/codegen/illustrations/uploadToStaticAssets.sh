@@ -140,8 +140,8 @@ fi
 echo "FLAGS --- BRANCHNAME: ${BRANCHNAME}, ROOTDIRPATH: ${ROOTDIRPATH}, USERNAME: ${USERNAME}, CREATEDIRFLAG: ${CREATEDIRFLAG}, OPENPRFLAG: ${OPENPRFLAG}, DELREPO: ${DELREPO}."
 
 # Optimize PNGs so they are smallest size possible
-pngLight=`compressPNGs "${ROOTDIRPATH}eng/shared/design-system/codegen/illustrations/images/png-light/"`
-pngDark=`compressPNGs "${ROOTDIRPATH}eng/shared/design-system/codegen/illustrations/images/png-dark/"`
+pngLight=`compressPNGs "${ROOTDIRPATH}packages/codegen/illustrations/images/png-light/"`
+pngDark=`compressPNGs "${ROOTDIRPATH}packages/codegen/illustrations/images/png-dark/"`
 echo $pngLight
 echo $pngDark
 
@@ -160,7 +160,7 @@ then
 fi
 
 echo "Copying images to static-assets..."
-cp -rf "${ROOTDIRPATH}eng/shared/design-system/codegen/illustrations/images/" "${ROOTDIRPATH}eng/shared/design-system/codegen/illustrations/static-assets/assets/design-system/illustrations/"
+cp -rf "${ROOTDIRPATH}packages/codegen/illustrations/images/" "${ROOTDIRPATH}packages/codegen/illustrations/static-assets/assets/design-system/illustrations/"
 
 echo "Pushing changes to static-assets"
 git add -A &&  git ci -m "Update Illustration" && git push --set-upstream origin "${USERNAME}/${BRANCHNAME}" 
