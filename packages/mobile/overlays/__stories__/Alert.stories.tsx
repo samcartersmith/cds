@@ -20,40 +20,37 @@ const { BasicAlert, SingleActionAlert, PortalAlert } = alertBuilder({
 
 const AlertOnModal = () => {
   const { openModal, closeModal } = useModal();
-  const alert = useAlert();
-
-  const handlePrimaryActionPress = () => console.log('primary pressed');
+  const { open, close } = useAlert();
 
   const showAlert = useCallback(
     () =>
-      alert.open(
+      open(
         <Alert
           visible
+          onRequestClose={close}
           title="Alert title"
           body="Alert body type that can run over multiple lines, but should be kept short."
           pictogram="warning"
           preferredActionLabel="Primary"
-          onPreferredActionPress={handlePrimaryActionPress}
+          onPreferredActionPress={close}
         />,
       ),
-    [alert],
+    [open, close],
   );
-
-  const close = useCallback(() => closeModal(), [closeModal]);
 
   const handlePress = useCallback(() => {
     openModal(
-      <Modal visible>
+      <Modal visible onRequestClose={closeModal}>
         <ModalBody>
           <TextBody>Test Modal</TextBody>
         </ModalBody>
         <ModalFooter
           primaryAction={<Button onPress={showAlert}>Show Alert</Button>}
-          secondaryAction={<Button onPress={close}>Cancel</Button>}
+          secondaryAction={<Button onPress={closeModal}>Cancel</Button>}
         />
       </Modal>,
     );
-  }, [close, openModal, showAlert]);
+  }, [closeModal, openModal, showAlert]);
 
   return <Button onPress={handlePress}>Open Modal</Button>;
 };

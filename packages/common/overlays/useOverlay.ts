@@ -1,39 +1,30 @@
-import { cloneElement, useCallback, useMemo, useRef } from 'react';
+import { cloneElement, useCallback, useMemo } from 'react';
 import { generateRandomId } from '@cbhq/cds-utils';
-
-import type { AlertRefBaseProps, ModalRefBaseProps } from '../types';
 
 import { usePortal } from './usePortal';
 import { PortalNode } from './usePortalState';
 
 export const useOverlay = (idPrefix?: string) => {
   const { addNode, removeNode } = usePortal();
-  const elementRef = useRef<ModalRefBaseProps | AlertRefBaseProps>(null);
 
   const id = generateRandomId(idPrefix);
 
   const open = useCallback(
     (content: PortalNode['element']): string => {
-      const onRequestClose = () => {
-        content.props.onRequestClose?.();
-        removeNode(id);
-      };
-
-      const component = cloneElement(content, {
+      const element = cloneElement(content, {
         key: id,
-        onRequestClose,
-        ref: elementRef,
+        visible: true,
       });
 
-      addNode(id, component);
+      addNode(id, element);
       return id;
     },
-    [addNode, removeNode, id],
+    [addNode, id],
   );
 
   const close = useCallback(() => {
-    elementRef.current?.onRequestClose?.();
-  }, [elementRef]);
+    removeNode(id);
+  }, [removeNode, id]);
 
   return useMemo(
     () => ({

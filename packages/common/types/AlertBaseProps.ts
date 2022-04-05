@@ -51,7 +51,7 @@ export type AlertBaseProps = {
    * @default horizontal
    */
   actionLayout?: 'horizontal' | 'vertical';
-} & Pick<ModalBaseProps, 'onRequestClose' | 'visible'> &
+} & Pick<ModalBaseProps, 'onRequestClose' | 'visible' | 'onDidClose'> &
   SharedProps &
   Pick<PositionStyles, 'zIndex'>;
 

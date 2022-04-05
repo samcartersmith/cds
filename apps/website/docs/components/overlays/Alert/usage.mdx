@@ -45,7 +45,7 @@ function PortalAlertExample() {
           body="Alert body type that can run over multiple lines, but should be kept short."
           pictogram="warning"
           visible
-          onRequestClose={() => console.log('Alert dimissed!')}
+          onRequestClose={alert.close}
           preferredActionLabel="Save"
           onPreferredActionPress={() => console.log('Save pressed')}
         />,
@@ -78,6 +78,7 @@ function AlertOnModalExample() {
       alert.open(
         <Alert
           visible
+          onRequestClose={alert.close}
           title="Are you sure?"
           body="Cancel will discard your existing changes, are you sure?"
           pictogram="warning"
@@ -91,7 +92,7 @@ function AlertOnModalExample() {
 
     const handlePress = () => {
       openModal(
-        <Modal visible>
+        <Modal visible onRequestClose={closeModal}>
           <ModalBody>
             <TextBody as="p">{loremIpsum}</TextBody>
           </ModalBody>

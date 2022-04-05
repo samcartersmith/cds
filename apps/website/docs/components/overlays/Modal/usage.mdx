@@ -19,50 +19,37 @@
 
 Modal is using React Portal by default, which will port the node to the end of the `body` tag. You can add `disabledPortal` to disable this behavior.
 
-**Recommended** to use the `closeModal()` from render children to close the Modal which will have the close animation play properly.
-
 ```jsx live
 // import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 
 function DefaultModalExample() {
   const [visible, { toggleOn, toggleOff }] = useToggler();
   const [scrolling, { toggle: toggleScrolling }] = useToggler();
-  const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
-    useA11yControlledVisibility(visible);
 
   return (
     <ExampleWithThemeToggles showFrontier>
       <PortalProvider>
         <ButtonGroup>
-          <Button onPress={toggleOn} {...triggerAccessibilityProps}>
+          <Button onPress={toggleOn}>
             Open Modal
           </Button>
           <Switch onChange={toggleScrolling} checked={scrolling}>
             Show long content
           </Switch>
         </ButtonGroup>
-        <Modal
-          visible={visible}
-          onRequestClose={toggleOff}
-          {...controlledElementAccessibilityProps}
-        >
-          {({ closeModal }) => (
-            <>
-              <ModalHeader title="Basic Modal" />{' '}
-              {/* close action is inherited from onRequestClose */}
-              <ModalBody>
-                <TextBody as="p">{loremIpsum.repeat(scrolling ? 50 : 1)}</TextBody>
-              </ModalBody>
-              <ModalFooter
-                primaryAction={<Button onPress={closeModal}>Save</Button>}
-                secondaryAction={
-                  <Button variant="secondary" onPress={closeModal}>
-                    Cancel
-                  </Button>
-                }
-              />
-            </>
-          )}
+        <Modal visible={visible} onRequestClose={toggleOff}>
+          <ModalHeader title="Basic Modal" />
+          <ModalBody>
+            <TextBody as="p">{loremIpsum.repeat(scrolling ? 50 : 1)}</TextBody>
+          </ModalBody>
+          <ModalFooter
+            primaryAction={<Button onPress={toggleOff}>Save</Button>}
+            secondaryAction={
+              <Button variant="secondary" onPress={toggleOff}>
+                Cancel
+              </Button>
+            }
+          />
         </Modal>
       </PortalProvider>
     </ExampleWithThemeToggles>
@@ -75,11 +62,11 @@ function DefaultModalExample() {
 `PortalProvider` is a convenient way for adding anything to the CDS portal. The CDS portal is what CDS uses to centralize all elements that need a portal and handles the zIndex of those pieces.
 You can control Modal visibility programmatically using `openModal()` and `closeModal()` from the `useModal()` hook which consumes `PortalProvider` under the hood.
 
-To **open** the modal, simple pass your `Modal` component into `openModal()` like `openModal(<Modal />)`.
+To **open** the modal, pass your `Modal` component into `openModal()` and pass in the `closeModal` handler to the `onRequestClose` prop to make the modal close properly on pressing the X button.
 
-To **close** the modal, simply call the `closeModal()` function from `useModal()`.
+To **close** the modal, use the `closeModal()` function from `useModal()`.
 
-Multiple Modals? No problem, check example [here](/hooks/useOverlay#multiple)
+Multiple Modals? No problem, check the example [here](/hooks/useOverlay#multiple)
 
 ```jsx live
 // import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
@@ -92,7 +79,7 @@ function PortalModalExample() {
     const handlePress = useCallback(
       () =>
         openModal(
-          <Modal visible>
+          <Modal visible onRequestClose={closeModal}>
             <ModalHeader title="Basic Modal" />
             <ModalBody>
               <TextBody as="p">{loremIpsum}</TextBody>
@@ -100,7 +87,7 @@ function PortalModalExample() {
             <ModalFooter primaryAction={<Button onPress={closeModal}>Save</Button>} />
           </Modal>,
         ),
-      [openModal],
+      [openModal, closeModal],
     );
 
     return (

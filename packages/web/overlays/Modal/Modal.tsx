@@ -38,6 +38,7 @@ export const Modal = memo(
       children,
       visible = false,
       onRequestClose,
+      onDidClose,
       disableOverlayPress = false,
       disablePortal = false,
       accessibilityLabelledBy = 'modal_title',
@@ -92,6 +93,7 @@ export const Modal = memo(
         disableOverlayPress={disableOverlayPress}
         dangerouslyDisableResponsiveness={dangerouslyDisableResponsiveness}
         onOverlayPress={handleClose}
+        onDidClose={onDidClose}
       >
         <motion.div
           initial={

@@ -6,8 +6,6 @@ import type { AlertBaseProps, ButtonBaseProps, SharedProps } from '../types';
 
 const onPressConsole = () => console.log('pressed');
 
-const onRequestCloseConsole = () => console.log('Alert dimissed!');
-
 export type CreateAlertProps = {
   Alert: React.ComponentType<AlertBaseProps & { disablePortal?: boolean }>;
   Button: React.ComponentType<ButtonBaseProps & SharedProps & { onPress?: () => void }>;
@@ -36,15 +34,18 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
   };
 
   const VisibleAlert = ({ singleAction }: { singleAction?: boolean }) => {
+    const [visible, { toggleOff }] = useToggler(true);
+
     return (
       <Alert
-        visible
+        visible={visible}
         title="Alert title"
         body="Alert body type that can run over multiple lines, but should be kept short."
         pictogram="warning"
         preferredActionLabel="Primary"
         onPreferredActionPress={onPressConsole}
         dismissActionLabel={singleAction ? undefined : 'Cancel'}
+        onRequestClose={toggleOff}
       />
     );
   };
@@ -52,24 +53,24 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
   const PortalAlert = () => {
     // eslint-disable-next-line react/no-unstable-nested-components
     function AlertExample() {
-      const alert = useAlert();
+      const { open, close } = useAlert();
 
       const showAlert = useCallback(
         () =>
-          alert.open(
+          open(
             <Alert
               visible
               title="Alert title"
               body="Alert body type that can run over multiple lines, but should be kept short."
               pictogram="warning"
-              onRequestClose={onRequestCloseConsole}
+              onRequestClose={close}
               preferredActionLabel="Save"
               onPreferredActionPress={onPressConsole}
               preferredActionVariant="negative"
               dismissActionLabel="Cancel"
             />,
           ),
-        [alert],
+        [open, close],
       );
 
       return <Button onPress={showAlert}>Show Alert</Button>;

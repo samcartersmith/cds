@@ -1,4 +1,5 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import {
   CreateLoremIpsumProps,
   loremIpsum,
@@ -72,7 +73,7 @@ describe('Modal', () => {
     fireEvent.click(getByTestId('modal-overlay'));
 
     // wait for animation to finish
-    await waitFor(() => expect(onRequestClose).toHaveBeenCalledTimes(1));
+    expect(onRequestClose).toHaveBeenCalledTimes(1);
   });
 
   it('triggers close on close button click', async () => {
@@ -86,7 +87,20 @@ describe('Modal', () => {
     await waitFor(() => getByRole('dialog'));
     fireEvent.click(getByTestId('modal-close-button'));
 
-    await waitFor(() => expect(onRequestClose).toHaveBeenCalledTimes(1));
+    expect(onRequestClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('triggers close on ESC key press', async () => {
+    const onRequestClose = jest.fn();
+    const { container, getByRole } = render(<MockModal onRequestClose={onRequestClose} />);
+
+    fireEvent.click(container.querySelector('button') as Element);
+
+    await waitFor(() => getByRole('dialog'));
+    const user = userEvent.setup();
+    await user.keyboard('{Escape}');
+
+    expect(onRequestClose).toHaveBeenCalledTimes(1);
   });
 
   it('triggers back action on back button click', async () => {
@@ -127,17 +141,5 @@ describe('Modal', () => {
     await waitFor(() => getByRole('dialog'));
 
     expect(getByTestId('modal-footer')).toBeTruthy();
-  });
-
-  it('triggers close on footer action press', async () => {
-    const onRequestClose = jest.fn();
-
-    const { getByTestId } = render(<MockModal visible onRequestClose={onRequestClose} />);
-
-    // press on footer action
-    fireEvent.click(getByTestId('modal-footer-save'));
-
-    // wait for animation to finish
-    await waitFor(() => expect(onRequestClose).toHaveBeenCalledTimes(1));
   });
 });

@@ -32,7 +32,7 @@ export type ModalWrapperProps = {
 
   onOverlayPress: (() => void) | undefined;
 } & Pick<PortalProps, 'disablePortal'> &
-  Pick<ModalBaseProps, 'visible' | 'zIndex' | 'children'> &
+  Pick<ModalBaseProps, 'visible' | 'zIndex' | 'children' | 'onDidClose'> &
   Pick<BoxProps, 'dangerouslySetClassName'> &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy' | 'id'>;
 
@@ -50,6 +50,7 @@ export const ModalWrapper = memo(
       disableOverlayPress = false,
       dangerouslyDisableResponsiveness = false,
       onOverlayPress,
+      onDidClose,
     } = props;
 
     const blockScroll = useScrollBlocker();
@@ -64,7 +65,7 @@ export const ModalWrapper = memo(
     }, [visible, blockScroll]);
 
     return (
-      <AnimatePresence>
+      <AnimatePresence onExitComplete={onDidClose}>
         {visible && (
           <Portal disablePortal={disablePortal} containerId={modalContainerId}>
             <Box

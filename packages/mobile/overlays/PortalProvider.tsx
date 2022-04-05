@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Platform } from 'react-native';
 import { DimensionValue } from '@cbhq/cds-common';
 import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
@@ -11,16 +11,17 @@ export type PortalProviderProps = {
 
 type PortalHostProps = { nodes: PortalNode[] };
 
-const PortalHost = ({ nodes }: PortalHostProps) => {
+const PortalHost = memo(({ nodes }: PortalHostProps) => {
   if (!nodes.length) return null;
 
   const isAndroid = Platform.OS === 'android';
 
-  // multiple modal doesn't work if they are at the same level
-  // insert node into previous node as children to avoid it
-  const reducedNodes = nodes
-    .map((node) => node.element)
-    .reduce((parent, child) => {
+  const elements = nodes.map((node) => node.element);
+
+  if (elements.length > 1) {
+    // multiple modal doesn't work if they are at the same level
+    // insert node into previous node as children to avoid it
+    return elements.reduce((parent, child) => {
       return React.cloneElement(parent, {
         children: (
           <>
@@ -31,9 +32,10 @@ const PortalHost = ({ nodes }: PortalHostProps) => {
         ),
       });
     }, nodes[0].element);
+  }
 
-  return reducedNodes;
-};
+  return <>{elements}</>;
+});
 
 export const PortalProvider: React.FC<PortalProviderProps> = ({
   children,

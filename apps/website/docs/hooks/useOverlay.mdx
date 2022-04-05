@@ -34,26 +34,29 @@ This function accepts one of Modal, Alert, or Toast element as param, and then m
 
 This function triggers the exit animation and close the element.
 
+
 ## Examples
+
+**NOTE:** [useModal](/hooks/useModal) and [useAlert](/hooks/useAlert) consumes `useOverlay()` under the hood.
 
 ### Basic
 
 ```jsx live
 function BasicExample() {
   function BasicModal() {
-    const modal = useOverlay('modal_'); // or useModal()
+    const { openModal, closeModal } = useModal();
 
     const handlePress = useCallback(() => {
-      modal.open(
-        <Modal visible>
+      openModal(
+        <Modal visible onRequestClose={closeModal}>
           <ModalHeader title="Basic Modal" />
           <ModalBody>
             <TextBody as="p">{loremIpsum}</TextBody>
           </ModalBody>
-          <ModalFooter primaryAction={<Button onPress={modal.close}>Save</Button>} />
+          <ModalFooter primaryAction={<Button onPress={closeModal}>Save</Button>} />
         </Modal>,
       );
-    }, [open]);
+    }, [openModal, closeModal]);
 
     return (
       <Box spacingBottom={2}>
@@ -76,31 +79,31 @@ function BasicExample() {
 function MultipleExample() {
   function MultipleModals() {
     // use better names for your components
-    const modal1 = useOverlay('modal_'); // or useModal();
-    const modal2 = useOverlay('modal_');
+    const modal1 = useModal();
+    const modal2 = useModal();
 
     const openModal2 = () => {
-      modal2.open(
-        <Modal visible>
+      modal2.openModal(
+        <Modal visible onRequestClose={modal2.closeModal}>
           <ModalHeader title="Modal 2" />
           <ModalBody>
             <TextBody as="p">{loremIpsum.repeat(10)}</TextBody>
           </ModalBody>
-          <ModalFooter primaryAction={<Button onPress={modal2.close}>Close Modal2</Button>} />
+          <ModalFooter primaryAction={<Button onPress={modal2.closeModal}>Close Modal2</Button>} />
         </Modal>,
       );
     };
 
     const openModal1 = () => {
-      modal1.open(
-        <Modal visible>
+      modal1.openModal(
+        <Modal visible onRequestClose={modal1.closeModal}>
           <ModalHeader title="Modal 1" />
           <ModalBody>
             <TextBody as="p">{loremIpsum}</TextBody>
           </ModalBody>
           <ModalFooter
             primaryAction={<Button onPress={openModal2}>Open Modal2</Button>}
-            secondaryAction={<Button onPress={modal1.close}>Close Modal1</Button>}
+            secondaryAction={<Button onPress={modal1.closeModal}>Close Modal1</Button>}
           />
         </Modal>,
       );

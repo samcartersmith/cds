@@ -18,7 +18,7 @@ export type ModalBaseProps = {
   /**
    * Callback function fired when modal is closed.
    */
-  onRequestClose?: NoopFn;
+  onRequestClose: NoopFn;
   /**
    * Hide top and bottom dividers inside Modal body
    * @default false
@@ -31,6 +31,10 @@ export type ModalBaseProps = {
   hideCloseButton?: boolean;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
   dangerouslySetWidth?: number;
+  /**
+   * Callback fired after the component is closed.
+   */
+  onDidClose?: NoopFn;
 } & SharedProps &
   Pick<PositionStyles, 'zIndex'>;
 
