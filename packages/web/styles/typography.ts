@@ -60,6 +60,9 @@ const overflow: CSSMap<TextProps['overflow']> = {
     white-space: normal;
     overflow-wrap: break-word;
   `,
+  break: css`
+    overflow-wrap: anywhere;
+  `,
 };
 
 const transform: CSSMap<TextProps['transform']> = {
