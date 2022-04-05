@@ -1,3 +1,5 @@
+import { cellPriorities } from '../tokens/cell';
+
 import { BorderRadius } from './BorderRadius';
 import { IconName } from './IconName';
 import { IllustrationPictogramNames } from './IllustrationNames';
@@ -8,6 +10,7 @@ import { SpacingScale } from './SpacingScale';
 
 export type CellSpacing = SpacingProps & OffsetProps;
 export type CellSpacingConfig = Pick<CellBaseProps, 'innerSpacing' | 'outerSpacing'>;
+export type CellPriority = typeof cellPriorities[number];
 
 export type CellCommonProps = {
   borderRadius?: BorderRadius;
@@ -18,7 +21,7 @@ export type CellCommonProps = {
   /** Is the cell disabled? Will apply opacity and disable interaction. */
   disabled?: boolean;
   /** Which piece of content has the highest priority in regards to text truncation, growing, and shrinking. */
-  priority?: 'start' | 'middle' | 'end';
+  priority?: CellPriority | CellPriority[];
   /** Reduce horizontal spacing for tighter layout requirements.
    * @deprecated Please use innerSpacing={{ spacingHorizontal: xyz }} moving forward
    */

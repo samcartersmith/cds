@@ -2,6 +2,7 @@ import React, { ForwardedRef, forwardRef, memo } from 'react';
 import { css } from 'linaria';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 import type { CellBaseProps } from '@cbhq/cds-common/types';
+import { hasCellPriority } from '@cbhq/cds-common/utils/cell';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';
@@ -127,7 +128,7 @@ export const Cell = memo(
 
         <Box
           flexGrow={1}
-          flexShrink={priority === 'start' ? 0 : 1}
+          flexShrink={hasCellPriority('start', priority) ? 0 : 1}
           justifyContent="flex-start"
           dangerouslySetClassName={maybeTruncateClassName}
         >
@@ -137,7 +138,7 @@ export const Cell = memo(
         {!!intermediary && (
           <Box
             flexGrow={0}
-            flexShrink={priority === 'middle' ? 0 : 1}
+            flexShrink={hasCellPriority('middle', priority) ? 0 : 1}
             justifyContent="center"
             dangerouslySetClassName={maybeTruncateClassName}
           >
@@ -148,8 +149,10 @@ export const Cell = memo(
         {!!detail && (
           <Box
             flexGrow={detailWidth ? undefined : 1}
-            // eslint-disable-next-line no-nested-ternary
-            flexShrink={detailWidth ? undefined : priority === 'end' ? 0 : 1}
+            flexShrink={
+              // eslint-disable-next-line no-nested-ternary
+              detailWidth ? undefined : hasCellPriority('end', priority) ? 0 : 1
+            }
             flexDirection="column"
             alignItems="flex-end"
             justifyContent="flex-end"

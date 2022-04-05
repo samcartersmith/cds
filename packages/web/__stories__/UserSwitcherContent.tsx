@@ -1,6 +1,6 @@
 import { memo, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { CellSpacing } from '@cbhq/cds-common/types';
+import { CellPriority, CellSpacing } from '@cbhq/cds-common/types';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { Button } from '../buttons/Button';
@@ -51,6 +51,8 @@ const userSwitcherData: UserSwitcherData[] = [
   },
 ];
 
+const cellPriority: CellPriority[] = ['middle', 'end'];
+
 const UserAccountListCell = ({ name, email, authenticated, avatarUri }: UserSwitcherData) => {
   const [collapsed, { toggle }] = useToggler(true);
 
@@ -71,7 +73,7 @@ const UserAccountListCell = ({ name, email, authenticated, avatarUri }: UserSwit
           action={<CollapseArrow degrees={90} collapsed={collapsed} />}
           outerSpacing={userCellOuterSpacingConfig}
           intermediary={!authenticated && 'Signed out'}
-          priority="middle"
+          priority={cellPriority}
           media={<Avatar src={avatarUri} alt={name} />}
           compact
         />

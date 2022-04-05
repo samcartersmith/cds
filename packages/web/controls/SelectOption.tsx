@@ -1,6 +1,6 @@
 import React, { ForwardedRef, forwardRef, memo, RefAttributes } from 'react';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/cell';
+import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/select';
 import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
 
 import { Cell, overflowClassName } from '../cells/Cell';

@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { GestureResponderEvent } from 'react-native';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { selectCellMobileSpacingConfig } from '@cbhq/cds-common/tokens/cell';
+import { selectCellMobileSpacingConfig } from '@cbhq/cds-common/tokens/select';
 import { NoopFn, ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
 
 import { Cell } from '../cells/Cell';

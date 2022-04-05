@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { selectCellSpacingConfig } from '../tokens/cell';
+import { selectCellSpacingConfig } from '../tokens/select';
 import type {
   ButtonBaseProps,
   CellMediaProps,
+  CellPriority,
   ControlBaseProps,
   IconButtonBaseProps,
   IllustrationPictogramNames,
@@ -309,6 +310,8 @@ export function listCellBuilder(
     </>
   );
 
+  const cellPriorities: CellPriority[] = ['middle', 'end'];
+
   const PriorityContent = () => (
     <>
       <ListCell
@@ -337,6 +340,15 @@ export function listCellBuilder(
         variant="positive"
         intermediary={<CellMedia type="icon" name="chartLine" />}
         priority="end"
+      />
+      <ListCell
+        title="Asset with a really long name"
+        description="Some description of the asset"
+        detail="$334,239.03"
+        subdetail="+4.06%"
+        variant="positive"
+        intermediary={<CellMedia type="icon" name="chartLine" />}
+        priority={cellPriorities}
       />
     </>
   );

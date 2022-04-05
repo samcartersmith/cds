@@ -7,3 +7,5 @@ export const arrayToObject = <T extends string | number>(arr: T[] | Readonly<T[]
       [`${next}`]: next,
     };
   }, {} as { [key in T]: key });
+
+export const arrayIncludes = <T>(arr: T[], arg: T) => arr.includes(arg);

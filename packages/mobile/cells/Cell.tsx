@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { ViewProps } from 'react-native';
 import { CellBaseProps } from '@cbhq/cds-common';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
+import { hasCellPriority } from '@cbhq/cds-common/utils/cell';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';
@@ -57,12 +58,20 @@ export const Cell = memo(function Cell({
         </Box>
       )}
 
-      <Box flexGrow={1} flexShrink={priority === 'start' ? 0 : 1} justifyContent="flex-start">
+      <Box
+        flexGrow={1}
+        flexShrink={hasCellPriority('start', priority) ? 0 : 1}
+        justifyContent="flex-start"
+      >
         {children}
       </Box>
 
       {!!intermediary && (
-        <Box flexGrow={0} flexShrink={priority === 'middle' ? 0 : 1} justifyContent="center">
+        <Box
+          flexGrow={0}
+          flexShrink={hasCellPriority('middle', priority) ? 0 : 1}
+          justifyContent="center"
+        >
           {intermediary}
         </Box>
       )}
@@ -70,8 +79,10 @@ export const Cell = memo(function Cell({
       {!!detail && (
         <Box
           flexGrow={detailWidth ? undefined : 1}
-          // eslint-disable-next-line no-nested-ternary
-          flexShrink={detailWidth ? undefined : priority === 'end' ? 0 : 1}
+          flexShrink={
+            // eslint-disable-next-line no-nested-ternary
+            detailWidth ? undefined : hasCellPriority('end', priority) ? 0 : 1
+          }
           alignItems="flex-end"
           justifyContent="flex-end"
           width={detailWidth}
