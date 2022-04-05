@@ -149,7 +149,7 @@ function replaceDeps(context: ExecutorContext, pkgJson: PackageJson, deps: Recor
         getPackageVersion(
           path.join(context.root, packageVersionReplacePathMap[dep], 'package.json'),
         ).then((version: string) => {
-          deps[dep] = version;
+          deps[dep] = `^${version}`;
         }),
       );
     }
