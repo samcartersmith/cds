@@ -31,11 +31,11 @@ export const elevationPalette: ElevationPalette = {
 /** line - Increase brightness of lines in level2 so they appear closer to light source. */
 export const elevationChildrenPalette: ElevationChildrenPalette = {
   1: {
-    secondary: [elevationPalette[1].background, 0],
+    secondary: [elevationPalette[1].background, 1],
   },
   2: {
     line: defaultPalette.lineHeavy,
-    secondary: [elevationPalette[2].background, 0],
+    secondary: [elevationPalette[2].background, 1],
   },
 };
 

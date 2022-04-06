@@ -62,8 +62,8 @@ describe('ElevationChildrenProvider', () => {
     });
     expect(result.current.background).not.toEqual(defaultPalette.background);
     expect(result.current.background).toBe('gray5');
-    // secondary should match background and be transparent
-    expect(result.current.secondary).toEqual(['gray5', 0]);
+    // secondary should match background
+    expect(result.current.secondary).toEqual(['gray5', 1]);
     // should not override line unless level 2
     expect(result.current.line).toEqual(defaultPalette.line);
   });
@@ -80,8 +80,8 @@ describe('ElevationChildrenProvider', () => {
     });
     expect(result.current.background).not.toEqual(defaultPalette.background);
     expect(result.current.background).toBe('gray10');
-    // secondary should match background and be transparent
-    expect(result.current.secondary).toEqual(['gray10', 0]);
+    // secondary should match background
+    expect(result.current.secondary).toEqual(['gray10', 1]);
     // line should be brighter
     expect(result.current.line).toEqual(defaultPalette.lineHeavy);
   });
