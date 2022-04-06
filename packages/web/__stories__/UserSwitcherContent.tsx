@@ -104,10 +104,10 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
       <VStack gap={1} alignItems="center" spacingTop={1} spacingHorizontal={1}>
         <Avatar size="xxxl" selected alt="Brian Armstrong" src={avatarUri} />
         <VStack alignItems="center">
-          <TextTitle3 align="center" as="h3" overflow="wrap">
+          <TextTitle3 align="center" as="h3" overflow="break">
             {name}
           </TextTitle3>
-          <TextBody align="center" as="p" overflow="wrap">
+          <TextBody align="center" as="p" overflow="break">
             {email}
           </TextBody>
         </VStack>

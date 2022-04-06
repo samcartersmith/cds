@@ -45,6 +45,9 @@ type UseSwitcherAnimationParams = {
   visible: boolean;
 } & Pick<SwitcherBaseProps, 'onClose'>;
 
+/**
+ * @deprecated DANGER this component is for internal use only
+ */
 function useSwitcherAnimation({ onClose, visible }: UseSwitcherAnimationParams) {
   const overlayRef = useRef<HTMLElement | null>(null);
   const popoverRef = useRef<HTMLElement | null>(null);
@@ -203,6 +206,9 @@ const useIsMobile = () => {
   return width && width <= mobileBreakPoint;
 };
 
+/**
+ * @deprecated DANGER this component is for internal use only
+ */
 export const Switcher = ({
   maxWidth = switcherDefaultWidth,
   maxHeight = switcherMaxHeight,

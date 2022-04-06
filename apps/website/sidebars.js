@@ -122,7 +122,13 @@ module.exports = {
       type: 'category',
       label: 'Recipes',
       collapsed: true,
-      items: ['recipes/AppSwitcher/app-switcher', 'recipes/UserSwitcher/user-switcher'],
+      items: [{ type: 'doc', id: 'recipes/navigation', label: 'Navigation' }],
+    },
+    {
+      type: 'category',
+      label: 'Partnerships',
+      collapsed: true,
+      items: ['partnerships/AppSwitcher/app-switcher', 'partnerships/UserSwitcher/user-switcher'],
     },
     {
       type: 'category',

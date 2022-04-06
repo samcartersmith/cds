@@ -1,0 +1,163 @@
+# Navigation Components
+
+<br />
+
+This recipe offers guidance on how you could compose a system of Navigation components in an application. This recipe is for demonstration purposes only and uses hard coded data. Please note: the App and User Switcher components in this recipe are recommendations on how to compose them. Identity will own these components long term.
+
+```jsx live
+function NavigationRecipe() {
+  const [isCollapsed, toggleCollapsed] = useToggler(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [moreMenuVisible, toggleMoreMenuVisibility] = useToggler(false);
+  const [appSwitcherVisibility, toggleAppSwitcherVisibility] = useToggler(false);
+  const [userSwitcherVisibility, toggleUserSwitcherVisibility] = useToggler(false);
+  const [moreMenuValue, setMoreMenuValue] = useState(undefined);
+  const moreMenuIndex = 4;
+
+  const sidebarItems = [
+    { title: 'Assets', icon: 'chartPie' },
+    { title: 'Trade', icon: 'trading' },
+    { title: 'Pay', icon: 'pay' },
+    { title: 'For you', icon: 'newsfeed' },
+    { title: 'Earn', icon: 'giftBox' },
+    { title: 'Borrow', icon: 'cash' },
+    { title: 'DeFi', icon: 'defi' },
+  ];
+
+  const moreMenuOptions = [
+    {
+      value: 'earn',
+      label: 'Earn',
+      icon: 'earn',
+    },
+    {
+      value: 'borrow',
+      label: 'Borrow',
+      icon: 'cash',
+    },
+    {
+      value: 'defi',
+      label: 'DeFi',
+      icon: 'defi',
+    },
+  ];
+
+  // NOTE: This is for example purposes only. Identity will create a UserSwitcher component.
+  const UserSwitcherSubject = ({ title, description }) => {
+    return (
+      <Pressable noScaleOnPress backgroundColor="transparent" as="button" borderRadius="standard">
+        <HStack gap={1} alignItems="center">
+          <Avatar size="xl" alt="Test" />
+          <VStack maxWidth={172} minWidth={0}>
+            {description ? (
+              <TextLabel1 overflow="truncate" as="p">
+                {title}
+              </TextLabel1>
+            ) : (
+              <TextHeadline overflow="truncate" as="h3">
+                {title}
+              </TextHeadline>
+            )}
+            {description ? (
+              <TextLabel2 overflow="truncate" as="p">
+                {description}
+              </TextLabel2>
+            ) : null}
+          </VStack>
+        </HStack>
+      </Pressable>
+    );
+  };
+
+  const handleMoreMenuChange = (newValue) => {
+    setActiveIndex(moreMenuIndex);
+    setMoreMenuValue(newValue);
+  };
+
+  const handleItemPress = (index) => {
+    setActiveIndex(index);
+    setMoreMenuValue(undefined);
+  };
+  return (
+    <PortalProvider>
+      <FeatureFlagProvider frontierColor frontierButton>
+        <HStack>
+          <Sidebar collapsed={isCollapsed} logo={<LogoMark />}>
+            {sidebarItems.slice(0, 4).map((props, index) => (
+              <SidebarItem
+                key={`sidebar-item--${props.title}`}
+                active={index === activeIndex}
+                onPress={() => handleItemPress(index)}
+                tooltipContent={props.title}
+                {...props}
+              />
+            ))}
+            <SidebarMoreMenu
+              onChange={handleMoreMenuChange}
+              value={moreMenuValue}
+              visible={moreMenuVisible}
+              active={activeIndex === moreMenuIndex}
+              openMenu={toggleMoreMenuVisibility.toggleOn}
+              closeMenu={toggleMoreMenuVisibility.toggleOff}
+              onPress={() => setActiveIndex(moreMenuIndex)}
+              tooltipContent="More"
+            >
+              {moreMenuOptions.map((item) => (
+                <SelectOption
+                  key={`sidebar-more-menu-item--${item.value}`}
+                  value={item.value}
+                  description={item.label}
+                  media={<NavigationIcon name={item.icon} />}
+                />
+              ))}
+            </SidebarMoreMenu>
+          </Sidebar>
+          <VStack width="100%">
+            <NavigationBar
+              end={
+                <HStack alignItems="center" justifyContent="flex-end" gap={1}>
+                  {/* NOTE: this is for example purposes only. Identity will create the AppSwitcher components and own them. */}
+                  <Switcher
+                    onPressSubject={toggleAppSwitcherVisibility.toggleOn}
+                    onClose={toggleAppSwitcherVisibility.toggleOff}
+                    visible={appSwitcherVisibility}
+                    content={<AppSwitcherContent />}
+                  >
+                    <NavigationIconButton
+                      accessibilityLabel="App Switcher Menu"
+                      name="appSwitcher"
+                    />
+                  </Switcher>
+                  {/* NOTE: this is for example purposes only. Identity will create the UserSwitcher components and own them. */}
+                  <Switcher
+                    visible={userSwitcherVisibility}
+                    onPressSubject={toggleUserSwitcherVisibility.toggleOn}
+                    onClose={toggleUserSwitcherVisibility.toggleOff}
+                    content={<UserSwitcherContent />}
+                    maxWidth={400}
+                  >
+                    <UserSwitcherSubject title="Brian Armstrong" />
+                  </Switcher>
+                </HStack>
+              }
+            >
+              <NavigationTitle>{sidebarItems[activeIndex].title}</NavigationTitle>
+            </NavigationBar>
+            <HStack
+              justifyContent="center"
+              alignItems="flex-start"
+              background="backgroundAlternate"
+              flexGrow={1}
+              spacing={4}
+            >
+              <Button compact variant="primary" onPress={toggleCollapsed.toggle}>
+                {isCollapsed ? 'Expand' : 'Collapse'} Sidebar
+              </Button>
+            </HStack>
+          </VStack>
+        </HStack>
+      </FeatureFlagProvider>
+    </PortalProvider>
+  );
+}
+```

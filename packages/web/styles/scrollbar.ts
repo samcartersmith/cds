@@ -11,8 +11,6 @@ import { palette } from '../tokens';
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar
  */
 export const transparentScrollbar = css`
-  /* this ensures the scrollbar won't add to the content's width */
-  scrollbar-gutter: stable;
   /* this makes the track (the background) invisible */
   &::-webkit-scrollbar {
     background: transparent;
