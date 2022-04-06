@@ -34,6 +34,7 @@ const PortalHost = memo(({ nodes }: PortalHostProps) => {
     }, nodes[0].element);
   }
 
+  // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{elements}</>;
 });
 

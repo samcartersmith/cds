@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
 import React, { memo, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -22,6 +21,7 @@ export const Portal = memo(function Portal({
   containerId = '',
 }: PortalProps) {
   if (disablePortal || isSSR() || !document.getElementById(containerId)) {
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{children}</>;
   }
 
