@@ -313,6 +313,21 @@ Used for a11y to indicate the relationship between a controlled element and its 
 
 <ComponentDetails componentName="Modal" templateName="prop-id" />
 
+### onDidClose
+
+Callback fired after the component is closed.
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="onDidClose"
+  required={false}
+  defaultValue=""
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-onDidClose" />
+
 ### onRequestClose
 
 Callback function fired when modal is closed.
@@ -320,10 +335,10 @@ Callback function fired when modal is closed.
 <ApiDetails
   componentName="Modal"
   propertyName="onRequestClose"
-  required={false}
+  required={true}
   defaultValue=""
-  mobileOptions={['NoopFn']}
-  webOptions={['NoopFn']}
+  mobileOptions={[]}
+  webOptions={[]}
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-onRequestClose" />

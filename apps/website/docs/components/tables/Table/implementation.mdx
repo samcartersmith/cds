@@ -34,6 +34,21 @@ When provided, well apply a bordered around the entire table
 
 <ComponentDetails componentName="Table" templateName="prop-bordered" />
 
+### cellSpacing <Badge variant="web" />
+
+Provide custom cell spacing for all child TableCells
+
+<ApiDetails
+  componentName="Table"
+  propertyName="cellSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['TableCellSpacing']}
+/>
+
+<ComponentDetails componentName="Table" templateName="prop-cellSpacing" />
+
 ### children <Badge variant="web" />
 
 Children are required, and should always include a TableBody. TableHeader and TableFooter are both optional, and will magically flow into the correct place in the table (top/bottom)
@@ -45,8 +60,15 @@ Children are required, and should always include a TableBody. TableHeader and Ta
   defaultValue=""
   mobileOptions={[]}
   webOptions={[
-    'ReactElement<TableSectionProps, string | JSXElementConstructor<any>>',
-    'ReactElement<TableSectionProps, string | JSXElementConstructor<any>>[]',
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
   ]}
 />
 

@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.42.0 (4/6/2022, 10:44 AM PST)
+
+#### 💥 Breaking
+
+- Refactor Modal mobile and useOverlay hook. [#174](https://github.cbhq.net/frontend/cds/pull/174)
+
+#### 🚀 Updates
+
+- **** add tuple type to cell priority. [#179](https://github.cbhq.net/frontend/cds/pull/179), [CDS-2224](https://jira.coinbase-corp.com/browse/CDS-2224)
+
+#### 🐞 Fixes
+
+- **[linting]** Imports and react fragment lint rule. [#170](https://github.cbhq.net/frontend/cds/pull/170)
+- **[prettier]** Re-run prettier format. [#171](https://github.cbhq.net/frontend/cds/pull/171)
+
+#### 📘 Misc
+
+- **[Illustrations]** Illustrations update Apr 4. [#180](https://github.cbhq.net/frontend/cds/pull/180)
+- App/user switcher docs. [#148](https://github.cbhq.net/frontend/cds/pull/148)
+
 ## 0.41.8 (3/22/2022, 09:36 AM PST)
 
 #### 🚀 Updates

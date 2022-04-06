@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.5.3 (4/6/2022, 10:44 AM PST)
+
+#### 🐞 Fixes
+
+- **[linting]** Imports and react fragment lint rule. [#170](https://github.cbhq.net/frontend/cds/pull/170)
+
+#### 📘 Misc
+
+- Remove yarn setup from Dockerfiles. [#67](https://github.cbhq.net/frontend/cds/pull/67)
+- Yarn commands and readme update. [#65](https://github.cbhq.net/frontend/cds/pull/65)
+
 ## 0.5.2 (3/14/2022, 08:37 AM PST)
 
 #### 🐞 Fixes

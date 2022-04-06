@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.3.5 (4/6/2022, 10:44 AM PST)
+
+#### 🚀 Updates
+
+- **** add tuple type to cell priority. [#179](https://github.cbhq.net/frontend/cds/pull/179), [CDS-2224](https://jira.coinbase-corp.com/browse/CDS-2224)
+
+#### 🐞 Fixes
+
+- **[prettier]** Re-run prettier format. [#171](https://github.cbhq.net/frontend/cds/pull/171)
+
+#### 📘 Misc
+
+- Remove yarn setup from Dockerfiles. [#67](https://github.cbhq.net/frontend/cds/pull/67)
+- Yarn commands and readme update. [#65](https://github.cbhq.net/frontend/cds/pull/65)
+
 ## 0.3.4 (3/14/2022, 08:37 AM PST)
 
 #### 🐞 Fixes
