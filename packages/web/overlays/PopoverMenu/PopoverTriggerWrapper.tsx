@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
 import React, { memo, ReactNode } from 'react';
 
 export type PopoverTriggerWrapperProps = {
@@ -11,5 +10,6 @@ export type PopoverTriggerWrapperProps = {
 export const PopoverTriggerWrapper = memo(function PopoverTriggerWrapper({
   children,
 }: PopoverTriggerWrapperProps) {
+  // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{children}</>;
 });

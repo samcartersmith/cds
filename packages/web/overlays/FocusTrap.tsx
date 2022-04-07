@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
 import React, { memo, ReactElement, RefObject, useCallback, useEffect, useRef } from 'react';
 
 import { isSSR } from '../utils/browser';
@@ -77,6 +76,7 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
   const onlyChild = React.Children.only(children);
 
   if (!onlyChild) {
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{children}</>;
   }
 
