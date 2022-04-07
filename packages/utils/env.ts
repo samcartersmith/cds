@@ -15,5 +15,6 @@ export const isTest = () => {
 };
 
 export const isStorybook = () => {
-  return Boolean(typeof process === 'object' && process?.env?.STORYBOOK_SKIP_ANIMATION);
+  // @ts-expect-error STORYBOOK_SKIP_ANIMATION is injected with DefinePulgin as a global var
+  return Boolean(typeof process === 'object' && process?.env?.STORYBOOK_SKIP_ANIMATION) || typeof STORYBOOK_SKIP_ANIMATION !== 'undefined';
 };

@@ -9,10 +9,16 @@ module.exports = ({ config, environmentFile }) => {
   const dotEnv = require('dotenv').config({ path: path.resolve(__dirname, '.env') }).parsed;
   const envVars = { ...dotEnv, ...process.env };
 
+  const definitions = {
+    'process.env': JSON.stringify(envVars),
+  };
+
+  if (envVars.STORYBOOK_SKIP_ANIMATION) {
+    definitions.STORYBOOK_SKIP_ANIMATION = true;
+  }
+
   config.plugins?.push(
-    new webpack.DefinePlugin({
-      'process.env': JSON.stringify(envVars),
-    }),
+    new webpack.DefinePlugin(definitions),
   );
 
   const isProduction = config.mode === 'production';

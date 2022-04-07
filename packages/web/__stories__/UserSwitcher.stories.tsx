@@ -62,13 +62,13 @@ const UserSwitcherRecipe = memo(({ children }) => {
   );
 });
 
-export const UserSwitcher = memo(({ title = 'Brian', description }: SwitcherSubjectProps) => {
+export const UserSwitcher = ({ title = 'Brian', description }: SwitcherSubjectProps) => {
   return (
     <UserSwitcherRecipe>
       <Subject title={title} description={description} />
     </UserSwitcherRecipe>
   );
-});
+};
 
 export default {
   title: 'Core Components/Switchers/UserSwitcher',
