@@ -42,6 +42,7 @@ export const TextInput = memo(
         helperText = '',
         variant = 'foregroundMuted',
         testID,
+        testIDMap,
         start,
         end,
         width = '100%',
@@ -111,20 +112,23 @@ export const TextInput = memo(
               accessibilityHint={accessibilityLabel}
               disabled={disabled}
               compact={compact}
+              testID={testIDMap?.input ?? ''}
               {...editableInputAddonProps}
             />
           }
           helperTextNode={
             !!helperText && (
-              <HelperText color={variant} align={align}>
+              <HelperText testID={testIDMap?.helperText ?? ''} color={variant} align={align}>
                 {helperText}
               </HelperText>
             )
           }
-          labelNode={!compact && !!label && <InputLabel>{label}</InputLabel>}
+          labelNode={
+            !compact && !!label && <InputLabel testID={testIDMap?.label ?? ''}>{label}</InputLabel>
+          }
           startNode={
             (compact || !!start) && (
-              <Box justifyContent="center" alignItems="center">
+              <Box justifyContent="center" alignItems="center" testID={testIDMap?.start}>
                 <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
                   {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
                   {!!start && (
@@ -138,7 +142,12 @@ export const TextInput = memo(
           }
           endNode={
             (suffix !== '' || !!end) && (
-              <HStack justifyContent="center" alignItems="center" gap={2}>
+              <HStack
+                justifyContent="center"
+                alignItems="center"
+                gap={2}
+                testID={testIDMap?.end ?? ''}
+              >
                 <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
                   {suffix !== '' && (
                     <TextLabel1 spacingEnd={2} color="foregroundMuted">

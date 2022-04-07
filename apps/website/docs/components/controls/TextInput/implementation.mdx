@@ -343,6 +343,25 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
 
 <ComponentDetails componentName="TextInput" templateName="prop-testID" />
 
+### testIDMap
+
+Add ability to test individual parts of the input
+
+<ApiDetails
+  componentName="TextInput"
+  propertyName="testIDMap"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    '{ input?: string | undefined; start?: string | undefined; end?: string | undefined; label?: string | undefined; helperText?: string | undefined; }',
+  ]}
+  webOptions={[
+    '{ input?: string | undefined; start?: string | undefined; end?: string | undefined; label?: string | undefined; helperText?: string | undefined; }',
+  ]}
+/>
+
+<ComponentDetails componentName="TextInput" templateName="prop-testIDMap" />
+
 ### value
 
 <ApiDetails

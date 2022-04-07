@@ -17,6 +17,16 @@ export type TextInputBaseProps = {
   start?: React.ReactNode;
   /** Adds content to the end of the inner input. Refer to diagram for location of endNode in InputStack component */
   end?: React.ReactNode;
+  /**
+   * Add ability to test individual parts of the input
+   */
+  testIDMap?: {
+    input?: string;
+    start?: string;
+    end?: string;
+    label?: string;
+    helperText?: string;
+  };
 } & SharedProps &
   Pick<
     SharedAccessibilityProps,

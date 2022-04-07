@@ -61,6 +61,7 @@ export const TextInput = memo(
       helperText = '',
       variant = 'foregroundMuted',
       testID,
+      testIDMap,
       start,
       end,
       width = '100%',
@@ -141,25 +142,27 @@ export const TextInput = memo(
           onBlur={handleOnBlur}
           disabled={disabled}
           compact={compact}
+          testID={testIDMap?.input ?? ''}
           ref={refs}
           id={label}
           {...htmlInputElmProps}
         />
       );
     }, [
-      accessibilityLabel,
-      align,
-      compact,
-      disabled,
-      handleOnBlur,
-      handleOnFocus,
-      helperTextId,
-      htmlInputElmProps,
-      label,
-      refs,
       inputNode,
+      align,
+      accessibilityLabel,
+      label,
+      helperTextId,
       start,
       startSpacing,
+      testIDMap?.input,
+      handleOnFocus,
+      handleOnBlur,
+      disabled,
+      compact,
+      refs,
+      htmlInputElmProps,
     ]);
 
     return (
@@ -175,11 +178,19 @@ export const TextInput = memo(
           // If bordered is true, we want disableFocusedStyle = false
           // If bordered is false, we want disableFocusedStyle = true
           disableFocusedStyle={!bordered}
-          labelNode={!compact && !!label && <InputLabel htmlFor={label}>{label}</InputLabel>}
+          labelNode={
+            !compact &&
+            !!label && (
+              <InputLabel testID={testIDMap?.label ?? ''} htmlFor={label}>
+                {label}
+              </InputLabel>
+            )
+          }
           inputNode={inputNodeCloned}
           helperTextNode={
             !!helperText && (
               <HelperText
+                testID={testIDMap?.helperText ?? ''}
                 color={variant}
                 align={align}
                 accessibilityLabel={helperText}
@@ -191,7 +202,13 @@ export const TextInput = memo(
           }
           startNode={
             (compact || !!start) && (
-              <HStack onClick={handleNodePress} alignItems="center" justifyContent="center" gap={2}>
+              <HStack
+                testID={testIDMap?.start ?? ''}
+                onClick={handleNodePress}
+                alignItems="center"
+                justifyContent="center"
+                gap={2}
+              >
                 {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
                 {!!start && <>{start}</>}
               </HStack>
@@ -199,7 +216,13 @@ export const TextInput = memo(
           }
           endNode={
             (suffix !== '' || !!end) && (
-              <HStack onClick={handleNodePress} alignItems="center" justifyContent="center" gap={2}>
+              <HStack
+                testID={testIDMap?.end ?? ''}
+                onClick={handleNodePress}
+                alignItems="center"
+                justifyContent="center"
+                gap={2}
+              >
                 {suffix !== '' && (
                   <TextLabel1 spacingEnd={2} as="p" color="foregroundMuted">
                     {suffix}
