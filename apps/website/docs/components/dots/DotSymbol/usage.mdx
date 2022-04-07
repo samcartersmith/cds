@@ -4,7 +4,7 @@
 function Placements() {
   const PIN_DIRECTIONS = ['top-start', 'top-end', 'bottom-start', 'bottom-end'];
   return (
-    <ExampleWithThemeToggles>
+    <ResponsiveExample>
       {PIN_DIRECTIONS.map((pinDirection) => (
         <VStack gap={4} spacing={1} key={`dotsymbol-placement-${pinDirection}`} spacingBottom={4}>
           <DotSymbol size="m" pin={pinDirection} source={assets.eth.imageUrl}>
@@ -18,7 +18,7 @@ function Placements() {
           </DotSymbol>
         </VStack>
       ))}
-    </ExampleWithThemeToggles>
+    </ResponsiveExample>
   );
 }
 ```
@@ -27,15 +27,15 @@ function Placements() {
 
 ```jsx live
 function Sizes() {
-  const SIZES = ['s', 'm', 'l'];
+  const SIZES = ['xs', 's', 'm', 'l'];
   return (
-    <ExampleWithThemeToggles>
+    <ResponsiveExample>
       {SIZES.map((size) => (
         <VStack gap={1} key={`dotsymbol-size-${size}`}>
           <DotSymbol source={assets.eth.imageUrl} size={size} />
         </VStack>
       ))}
-    </ExampleWithThemeToggles>
+    </ResponsiveExample>
   );
 }
 ```

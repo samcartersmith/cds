@@ -6,13 +6,13 @@ import { VARIANTS, PIN_DIRECTIONS } from '@cbhq/cds-common/internal/dotBuilder';
 function DotCountBasic() {
   const counts = [1, 100, 30, 2, 0, 99];
   return (
-    <ExampleWithThemeToggles>
+    <ResponsiveExample>
       {counts.map((count) => (
         <Box spacing={1} key={`DotCount-${count}`}>
           <DotCount count={count} />
         </Box>
       ))}
-    </ExampleWithThemeToggles>
+    </ResponsiveExample>
   );
 }
 ```
@@ -22,9 +22,9 @@ function DotCountBasic() {
 ```jsx live
 function Variants() {
   return (
-    <ExampleWithThemeToggles>
+    <ResponsiveExample>
       <DotCount count={30} />
-    </ExampleWithThemeToggles>
+    </ResponsiveExample>
   );
 }
 ```
@@ -35,7 +35,7 @@ function Variants() {
 function Placements() {
   const PIN_DIRECTIONS = ['top-end'];
   return (
-    <ExampleWithThemeToggles>
+    <ResponsiveExample>
       {PIN_DIRECTIONS.map((pinDirection) => (
         <VStack gap={4} spacing={1} key={`DotCount-placement-${pinDirection}`} spacingBottom={4}>
           <DotCount pin={pinDirection} count={30}>
@@ -49,7 +49,7 @@ function Placements() {
           </DotCount>
         </VStack>
       ))}
-    </ExampleWithThemeToggles>
+    </ResponsiveExample>
   );
 }
 ```

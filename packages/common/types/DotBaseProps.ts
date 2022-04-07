@@ -11,7 +11,7 @@ export type DotVariant = Extract<
   'positive' | 'negative' | 'primary' | 'foregroundMuted'
 >;
 
-export type DotSize = Extract<IconSize, 'l' | 'm' | 's'>;
+export type DotSize = IconSize;
 
 export type DotBaseProps = {
   /** Position of dot relative to its parent */

@@ -4,7 +4,7 @@
 function Variants() {
   const PIN_DIRECTIONS = ['top-start', 'top-end', 'bottom-start', 'bottom-end'];
   return (
-    <ExampleWithThemeToggles>
+    <ResponsiveExample>
       {PIN_DIRECTIONS.map((pinDirection) => (
         <VStack
           gap={4}
@@ -23,7 +23,7 @@ function Variants() {
           </DotStatusColor>
         </VStack>
       ))}
-    </ExampleWithThemeToggles>
+    </ResponsiveExample>
   );
 }
 ```
@@ -32,15 +32,15 @@ function Variants() {
 
 ```jsx live
 function Sizes() {
-  const SIZES = ['s', 'm', 'l'];
+  const SIZES = ['xs', 's', 'm', 'l'];
   return (
-    <ExampleWithThemeToggles>
+    <ResponsiveExample>
       {SIZES.map((size) => (
         <VStack gap={1} key={`DotStatusColor-size-${size}`}>
           <DotStatusColor variant="negative" size={size} />
         </VStack>
       ))}
-    </ExampleWithThemeToggles>
+    </ResponsiveExample>
   );
 }
 ```
