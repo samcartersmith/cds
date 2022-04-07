@@ -14,7 +14,10 @@ module.exports = ({ config, environmentFile }) => {
   };
 
   if (envVars.STORYBOOK_SKIP_ANIMATION) {
-    definitions.STORYBOOK_SKIP_ANIMATION = true;
+    definitions.STORYBOOK_SKIP_ANIMATION = JSON.stringify(true);
+  }
+  if (envVars.FIGMA_ACCESS_TOKEN) {
+    definitions.FIGMA_ACCESS_TOKEN = JSON.stringify(envVars.FIGMA_ACCESS_TOKEN);
   }
 
   config.plugins?.push(

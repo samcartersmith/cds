@@ -3,6 +3,7 @@ import { dataCards } from '@cbhq/cds-common/internal/data/dataCards';
 import { featureEntryCards } from '@cbhq/cds-common/internal/data/featureEntryCards';
 import { feedCards } from '@cbhq/cds-common/internal/data/feedCards';
 import { baseConfig, storyBuilder } from '@cbhq/cds-common/internal/utils/storyBuilder';
+import { getFigmaAccessToken } from '@cbhq/cds-utils/env';
 
 import { AnnouncementCard as AnnouncementCardComponent } from '../alpha/AnnouncementCard';
 import { CardGroup } from '../alpha/CardGroup';
@@ -11,7 +12,7 @@ import { FeatureEntryCard as FeatureEntryCardComponent } from '../alpha/FeatureE
 import { FeedCard as FeedCardComponent, FeedCardProps } from '../alpha/FeedCard';
 import { ThemeProvider, ThemeProviderProps } from '../system';
 
-const accessToken = process.env.FIGMA_ACCESS_TOKEN ?? '';
+const accessToken = getFigmaAccessToken();
 const cardParameters = {
   percy: { skip: true },
   wrapper: CardGroup,
