@@ -100,7 +100,7 @@ export const SearchInputMenu = () => {
   // eslint-disable-next-line react/no-unstable-nested-components
   const ShowAllResultsButton = () => {
     return (
-      <MenuItem value="" onPress={handleClear}>
+      <MenuItem disableCloseOnOptionChange value="" onPress={handleClear}>
         <Pressable backgroundColor="background" noScaleOnPress block onPress={handleClear}>
           <HStack alignItems="center" spacingVertical={2} spacingHorizontal={2} gap={1}>
             <TextLabel1 as="p">View all results</TextLabel1>

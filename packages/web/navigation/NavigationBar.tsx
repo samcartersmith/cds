@@ -1,5 +1,6 @@
 import React, { memo, ReactNode } from 'react';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
+import { navigationBarMinHeight } from '@cbhq/cds-common/tokens/navigation';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { HStack, VStack } from '../layout';
@@ -43,7 +44,7 @@ export const NavigationBar = memo(({ start, children, end, bottom }: NavigationB
         spacingTop={2}
         spacingBottom={bottom ? undefined : 2}
         width="100%"
-        minHeight={80} // TODO move this to some sizing tokens
+        minHeight={navigationBarMinHeight}
         alignItems="flex-start"
         justifyContent="space-between"
         zIndex={zIndex.navigation}

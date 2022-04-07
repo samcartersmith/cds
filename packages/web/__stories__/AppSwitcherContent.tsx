@@ -63,18 +63,25 @@ type AppSwitcherContentSectionProps = {
 
 const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSectionProps) => {
   const rows = Math.ceil(data.tiles.length / columns);
+  // this creates a key for each row
+  const rowsArr = Array.from(Array(rows), (_, i) => i + 1);
   return (
     <VStack spacingHorizontal={2}>
       <SectionTitle text={data.sectionTitle} />
-      {Array.from(Array(rows)).map((_, row) => {
+      {rowsArr.map((_, row) => {
         return (
-          <HStack gap={0.5}>
+          <HStack gap={0.5} key={_}>
             {data.tiles
               // We are able to infer the interval because we know how big dataset is + what row we are on.
               .slice(row * columns, row * columns + columns)
               .map((props) => {
                 return (
-                  <HStack zIndex={getZIndexFromRow(row, rows)} gap={0.5} spacingBottom={0.5}>
+                  <HStack
+                    zIndex={getZIndexFromRow(row, rows)}
+                    gap={0.5}
+                    spacingBottom={0.5}
+                    key={props.title}
+                  >
                     <TileButton {...props} />
                   </HStack>
                 );

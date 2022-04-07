@@ -1,5 +1,7 @@
 import { memo, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
+import { listHeight } from '@cbhq/cds-common/tokens/cell';
 import { CellPriority, CellSpacing } from '@cbhq/cds-common/types';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
@@ -7,6 +9,7 @@ import { Button } from '../buttons/Button';
 import { ListCell } from '../cells/ListCell';
 import { CollapseArrow } from '../collapsible/CollapseArrow';
 import { Collapsible } from '../collapsible/Collapsible';
+import { useSpacingValue } from '../hooks/useSpacingValue';
 import { Divider, HStack, VStack } from '../layout';
 import { Avatar } from '../media/Avatar';
 import { SectionTitle } from '../overlays/PopoverMenu/SectionTitle';
@@ -94,11 +97,14 @@ type UserSwitcherContentProps = {
   data?: UserSwitcherData[];
 };
 
-const userAccountsListMaxHeight = 208;
-
 export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitcherContentProps) => {
   const { name, email, avatarUri } = data.find((user) => user.selected) as UserSwitcherData;
   const otherAccountsData = data.filter((user) => !user.selected);
+  const minGutter = useSpacingValue(1);
+  const maxGutter = useSpacingValue(2);
+  const listCellHeight = useScaleConditional(listHeight);
+  const userAccountsListMinHeight = listCellHeight * 2 + minGutter;
+  const userAccountsListMaxHeight = listCellHeight * 3 + maxGutter;
   return (
     <>
       <VStack gap={1} alignItems="center" spacingTop={1} spacingHorizontal={1}>
@@ -119,6 +125,7 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
         <SectionTitle text="Your other accounts" />
       </VStack>
       <VStack
+        minHeight={userAccountsListMinHeight}
         maxHeight={userAccountsListMaxHeight}
         spacingBottom={1}
         overflow="auto"
