@@ -15,7 +15,7 @@ import { Avatar } from '../media/Avatar';
 import { SectionTitle } from '../overlays/PopoverMenu/SectionTitle';
 import { insetFocusRing } from '../styles/focus';
 import { PressableOpacity } from '../system/PressableOpacity';
-import { TextBody, TextTitle3 } from '../typography';
+import { TextBody, TextLegal, TextTitle3 } from '../typography';
 
 type UserSwitcherData = {
   name: string;
@@ -75,7 +75,7 @@ const UserAccountListCell = ({ name, email, authenticated, avatarUri }: UserSwit
           description={email}
           action={<CollapseArrow degrees={90} collapsed={collapsed} />}
           outerSpacing={userCellOuterSpacingConfig}
-          intermediary={!authenticated && 'Signed out'}
+          intermediary={!authenticated && <TextLegal as="span">Signed out</TextLegal>}
           priority={cellPriority}
           media={<Avatar src={avatarUri} alt={name} />}
           compact

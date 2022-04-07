@@ -175,7 +175,7 @@ function UserSwitcherContentExample() {
             description={email}
             action={<CollapseArrow degrees={90} collapsed={collapsed} />}
             outerSpacing={userCellOuterSpacingConfig}
-            intermediary={!authenticated && 'Signed out'}
+            intermediary={!authenticated && <TextLegal as="p">Signed out</TextLegal>}
             priority="middle"
             media={<Avatar src={avatarUri} alt={name} />}
             compact
