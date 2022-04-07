@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Animated, StyleSheet, View } from 'react-native';
+import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
 import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
 import { sparklinePalette } from '@cbhq/cds-common/palette/constants';
@@ -10,6 +10,7 @@ import {
   ChartFormatDate,
   ChartGetMarker,
   ChartScrubParams,
+  SpacingScale,
 } from '@cbhq/cds-common/types';
 import {
   SparklineInteractiveBaseProps,
@@ -66,14 +67,29 @@ type SparklineInteractiveMobileProps<Period extends string> =
      * function used to format the amount of money used in the minMaxLabel
      */
     formatMinMaxLabel?: ChartFormatAmount;
+
+    /**
+     * The amount of padding to apply to the left and right of the chart. The chart width is calculated by (screen width - 2* gutter).
+     *
+     * @default 3
+     */
+    gutter?: SpacingScale;
+
+    /**
+     * The chart applies horizontal padding by default which is specified by the gutter. If the chart is placed in a container with padding then you can disable horizontal padding and set the gutter
+     * to match the container padding.
+     *
+     */
+    disableHorizontalPadding?: boolean;
   };
 
 function SparklineInteractiveWithGeneric<Period extends string>({
   compact,
+  gutter,
   ...props
 }: SparklineInteractiveMobileProps<Period>) {
   return (
-    <SparklineInteractiveProvider compact={compact}>
+    <SparklineInteractiveProvider compact={compact} gutter={gutter}>
       <SparklineInteractiveContent {...props} />
     </SparklineInteractiveProvider>
   );
@@ -108,6 +124,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   formatHoverDate,
   headerNode,
   fallbackType = 'positive',
+  disableHorizontalPadding = false,
 }: SparklineInteractiveMobileProps<Period>) {
   const { isFallbackVisible, showFallback, chartOpacity, minMaxOpacity, compact } =
     useSparklineInteractiveContext();
@@ -188,12 +205,13 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     header = <Box spacingBottom={2}>{headerNode}</Box>;
   }
 
+  const style: ViewStyle = {};
+  if (!disableHorizontalPadding) {
+    style.paddingHorizontal = chartHorizontalGutter;
+  }
+
   return (
-    <Animated.View
-      style={{
-        paddingHorizontal: chartHorizontalGutter,
-      }}
-    >
+    <Animated.View style={style}>
       {header}
       <SparklineInteractivePanGestureHandler
         onScrubEnd={onScrubEnd}

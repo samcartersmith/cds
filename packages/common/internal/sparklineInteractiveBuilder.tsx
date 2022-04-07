@@ -1,5 +1,6 @@
 import React, { memo, ReactNode, useCallback, useMemo, useRef, useState } from 'react';
 
+import {SpacingScale} from "../types";
 import { ChartData, ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
 import { SparklineInteractiveBaseProps } from '../types/SparklineInteractiveBaseProps';
 import {
@@ -18,6 +19,8 @@ type SparklineInteractivePriceProps = Omit<
     hideHoverDate?: boolean;
     hideMinMaxLabel?: boolean;
     trailing?: ReactNode;
+    gutter?: SpacingScale;
+    disableHorizontalPadding?: boolean;
   };
 
 export const DEFAULT_PERIOD = 'day';

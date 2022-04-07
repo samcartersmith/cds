@@ -64,6 +64,24 @@ default period value that the chart will use
 
 <ComponentDetails componentName="SparklineInteractive" templateName="prop-defaultPeriod" />
 
+### disableHorizontalPadding <Badge variant="mobile" />
+
+The chart applies horizontal padding by default which is specified by the gutter. If the chart is placed in a container with padding then you can disable horizontal padding and set the gutter to match the container padding.
+
+<ApiDetails
+  componentName="SparklineInteractive"
+  propertyName="disableHorizontalPadding"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails
+  componentName="SparklineInteractive"
+  templateName="prop-disableHorizontalPadding"
+/>
+
 ### disableScrubbing
 
 Disables the scrub user interaction from the chart
@@ -188,6 +206,21 @@ function used to format the amount of money used in the minMaxLabel
 />
 
 <ComponentDetails componentName="SparklineInteractive" templateName="prop-formatMinMaxLabel" />
+
+### gutter <Badge variant="mobile" />
+
+The amount of padding to apply to the left and right of the chart. The chart width is calculated by (screen width - 2\* gutter).
+
+<ApiDetails
+  componentName="SparklineInteractive"
+  propertyName="gutter"
+  required={false}
+  defaultValue="3"
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-gutter" />
 
 ### headerNode
 

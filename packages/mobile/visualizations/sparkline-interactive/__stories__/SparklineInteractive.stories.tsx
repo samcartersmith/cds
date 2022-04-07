@@ -165,6 +165,43 @@ const SparklineInteractiveScreen = () => {
           />
         </Box>
       </Example>
+      <Example spacing={0}>
+        <Box>
+          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+            No Spacing
+          </TextTitle3>
+          <SparklineInteractiveBuild
+            data={sparklineInteractiveData}
+            strokeColor="#F7931A"
+            gutter={0}
+          />
+        </Box>
+      </Example>
+      <Example spacing={4}>
+        <Box>
+          <TextTitle3 spacingVertical={3}>
+            In Container With 4 spacing
+          </TextTitle3>
+          <SparklineInteractiveWithHeaderBuild
+            data={sparklineInteractiveData}
+            strokeColor="#F7931A"
+            gutter={4}
+            disableHorizontalPadding
+          />
+        </Box>
+      </Example>
+      <Example spacing={0}>
+        <Box>
+          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+            Custom screen spacing 6
+          </TextTitle3>
+          <SparklineInteractiveBuild
+            data={sparklineInteractiveData}
+            strokeColor="#F7931A"
+            gutter={6}
+          />
+        </Box>
+      </Example>
     </ExampleScreen>
   );
 };

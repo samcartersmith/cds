@@ -1,13 +1,14 @@
 import { useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import {
   chartCompactHeight,
   chartHeight as chartHeightToken,
 } from '@cbhq/cds-common/tokens/sparkline';
 
 import { useSpacingScale } from '../../hooks/useSpacingScale';
+
+import {useSparklineInteractiveContext} from "./SparklineInteractiveProvider";
 
 type Props = {
   compact?: boolean;
@@ -16,6 +17,7 @@ type Props = {
 export function useSparklineInteractiveConstants({ compact = false }: Props) {
   const spacing = useSpacingScale();
   const { width: screenWidth } = useWindowDimensions();
+  const { gutter } = useSparklineInteractiveContext();
 
   return useMemo(() => {
     const chartHorizontalGutter = spacing[gutter];
@@ -47,5 +49,5 @@ export function useSparklineInteractiveConstants({ compact = false }: Props) {
       startX,
       endX,
     };
-  }, [compact, screenWidth, spacing]);
+  }, [compact, gutter, screenWidth, spacing]);
 }

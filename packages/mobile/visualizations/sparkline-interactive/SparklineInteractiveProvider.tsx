@@ -9,11 +9,13 @@ import React, {
 } from 'react';
 import { Animated } from 'react-native';
 import { Value } from 'react-native-reanimated';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { SpacingScale } from '@cbhq/cds-common/types/SpacingScale';
 import { noop } from '@cbhq/cds-utils';
 
 import { useOpacityAnimation } from './useOpacityAnimation';
 
-type SparklineInteractiveProviderProps = { children: React.ReactNode; compact?: boolean };
+type SparklineInteractiveProviderProps = { children: React.ReactNode; compact?: boolean, gutter?: SpacingScale };
 
 type SparklineInteractiveContextInterface = {
   isFallbackVisible: boolean;
@@ -33,6 +35,7 @@ type SparklineInteractiveContextInterface = {
   animateHoverDateIn: Animated.CompositeAnimation;
   animateHoverDateOut: Animated.CompositeAnimation;
   compact: boolean;
+  gutter: SpacingScale;
 };
 
 const SparklineInteractiveContext = createContext<SparklineInteractiveContextInterface>({
@@ -53,10 +56,11 @@ const SparklineInteractiveContext = createContext<SparklineInteractiveContextInt
   animateHoverDateIn: noop as unknown as Animated.CompositeAnimation,
   animateHoverDateOut: noop as unknown as Animated.CompositeAnimation,
   compact: false,
+  gutter,
 });
 
 export const SparklineInteractiveProvider = memo(
-  ({ children, compact = false }: SparklineInteractiveProviderProps) => {
+  ({ children, compact = false, gutter: propGutter }: SparklineInteractiveProviderProps) => {
     const [isFallbackVisible, setIsFallbackVisible] = useState(true);
     const markerXPosition = useRef(new Value(-1)).current;
     const markerGestureState = useRef(new Value(0)).current;
@@ -64,6 +68,7 @@ export const SparklineInteractiveProvider = memo(
     const [markerOpacity, animateMarkerIn, animateMarkerOut] = useOpacityAnimation();
     const [minMaxOpacity, animateMinMaxIn, animateMinxMaxOut] = useOpacityAnimation();
     const [hoverDateOpacity, animateHoverDateIn, animateHoverDateOut] = useOpacityAnimation();
+    const chartGutter = useRef<SpacingScale>(propGutter ?? gutter).current;
 
     const showFallback = useCallback(() => {
       animateChartOut.start();
@@ -95,6 +100,7 @@ export const SparklineInteractiveProvider = memo(
         animateHoverDateIn,
         animateHoverDateOut,
         compact,
+        gutter: chartGutter,
       };
     }, [
       animateChartIn,
@@ -114,8 +120,8 @@ export const SparklineInteractiveProvider = memo(
       markerXPosition,
       minMaxOpacity,
       showFallback,
+      chartGutter,
     ]);
-
     return (
       <SparklineInteractiveContext.Provider value={sparklineProviderVal}>
         {children}
