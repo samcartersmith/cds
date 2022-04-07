@@ -36,7 +36,8 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({ children, toastBot
       {children}
       {/* render as the last element for it to work on android */}
       {isValidElement(element) && toastBottomOffset
-        ? cloneElement(element, { bottomOffset: toastBottomOffset })
+        ? // props level offset should have higher specificity
+          cloneElement(element, { bottomOffset: element.props.bottomOffset ?? toastBottomOffset })
         : element}
     </ToastContext.Provider>
   );
