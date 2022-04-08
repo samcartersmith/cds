@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import { useEffect, useLayoutEffect } from 'react';
 
 import { isBrowser } from '../utils/browser';
