@@ -17,9 +17,9 @@ All notable changes to this project will be documented in this file.
 #### 🐞 Fixes
 
 - **[PopoverMenu]** Fixed popover context error. [#200](https://github.cbhq.net/frontend/cds/pull/200), [CDS-2222](https://jira.coinbase-corp.com/browse/CDS-2222)
-- ([User Switcher]) fixed intermediary. [#206](https://github.cbhq.net/frontend/cds/pull/206)
+- **[User Switcher]** fixed intermediary. [#206](https://github.cbhq.net/frontend/cds/pull/206)
 - Ignored fragment errors for popovertriggerwrapper and focus trap. [#202](https://github.cbhq.net/frontend/cds/pull/202)
-- **** height should be dynamic when screen is short. [#188](https://github.cbhq.net/frontend/cds/pull/188)
+- **[Switcher]** height should be dynamic when screen is short. [#188](https://github.cbhq.net/frontend/cds/pull/188)
 
 #### 📘 Misc
 
@@ -35,8 +35,8 @@ All notable changes to this project will be documented in this file.
 #### 🚀 Updates
 
 - **[UserSwitcher]** UserSwitcher cleanup. [#184](https://github.cbhq.net/frontend/cds/pull/184)
-- **** add tuple type to cell priority. [#179](https://github.cbhq.net/frontend/cds/pull/179), [CDS-2224](https://jira.coinbase-corp.com/browse/CDS-2224)
-- **** adds break type to overflow that breaks emails and long names up. [#181](https://github.cbhq.net/frontend/cds/pull/181)
+- **[UserSwitcher]** add tuple type to cell priority. [#179](https://github.cbhq.net/frontend/cds/pull/179), [CDS-2224](https://jira.coinbase-corp.com/browse/CDS-2224)
+- **[Typography]** adds break type to overflow that breaks emails and long names up. [#181](https://github.cbhq.net/frontend/cds/pull/181)
 - **[Tables]** Handle custom TableCell spacing configs. [#173](https://github.cbhq.net/frontend/cds/pull/173), [CDS-2217](https://jira.coinbase-corp.com/browse/CDS-2217)
 
 #### 🐞 Fixes

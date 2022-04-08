@@ -20,7 +20,7 @@ All notable changes to this project will be documented in this file.
 - **[PopoverMenu]** Fixed popover context error. [#200](https://github.cbhq.net/frontend/cds/pull/200), [CDS-2222](https://jira.coinbase-corp.com/browse/CDS-2222)
 - **[Toast]** Toast offset specificity. [#204](https://github.cbhq.net/frontend/cds/pull/204)
 - **[Dots]** Add xs as an available size to DotSymbol and DotStatusColor. [#190](https://github.cbhq.net/frontend/cds/pull/190)
-- **** height should be dynamic when screen is short. [#188](https://github.cbhq.net/frontend/cds/pull/188)
+- **[Switcher]** height should be dynamic when screen is short. [#188](https://github.cbhq.net/frontend/cds/pull/188)
 
 #### 📘 Misc
 
@@ -34,7 +34,7 @@ All notable changes to this project will be documented in this file.
 
 #### 🚀 Updates
 
-- **** add tuple type to cell priority. [#179](https://github.cbhq.net/frontend/cds/pull/179), [CDS-2224](https://jira.coinbase-corp.com/browse/CDS-2224)
+- **[UserSwitcher]** add tuple type to cell priority. [#179](https://github.cbhq.net/frontend/cds/pull/179), [CDS-2224](https://jira.coinbase-corp.com/browse/CDS-2224)
 - Eslint-plugin-codegen. [#172](https://github.cbhq.net/frontend/cds/pull/172)
 
 #### 🐞 Fixes

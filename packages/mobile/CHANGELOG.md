@@ -27,7 +27,7 @@ All notable changes to this project will be documented in this file.
 
 #### 🚀 Updates
 
-- **** add tuple type to cell priority. [#179](https://github.cbhq.net/frontend/cds/pull/179), [CDS-2224](https://jira.coinbase-corp.com/browse/CDS-2224)
+- **[UserSwitcher]** add tuple type to cell priority. [#179](https://github.cbhq.net/frontend/cds/pull/179), [CDS-2224](https://jira.coinbase-corp.com/browse/CDS-2224)
 
 #### 🐞 Fixes
 
