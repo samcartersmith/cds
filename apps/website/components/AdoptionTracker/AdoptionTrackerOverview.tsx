@@ -2,7 +2,9 @@
 /* eslint-disable import/no-dynamic-require */
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import Link from '@docusaurus/Link';
-import { first as getFirst, groupBy, toPairs } from 'lodash';
+import getFirst from 'lodash/first';
+import groupBy from 'lodash/groupBy';
+import toPairs from 'lodash/toPairs';
 import { CellDetailVariant, join, SetState, useToggler } from '@cbhq/cds-common';
 import { Button } from '@cbhq/cds-web/buttons';
 import { CellAccessory } from '@cbhq/cds-web/cells/CellAccessory';

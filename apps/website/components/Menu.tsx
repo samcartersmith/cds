@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React from 'react';
 import { css } from 'linaria';
-import { shuffle } from 'lodash';
+import shuffle from 'lodash/shuffle';
 import { IconName } from '@cbhq/cds-common';
 import { CellMedia } from '@cbhq/cds-web/cells';
 import { SelectOption } from '@cbhq/cds-web/controls/SelectOption';

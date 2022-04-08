@@ -1,4 +1,4 @@
-import { startCase } from 'lodash';
+import startCase from 'lodash/startCase';
 import { IllustrationPictogramNames } from '@cbhq/cds-common';
 import { Pictogram } from '@cbhq/cds-web/illustrations';
 import { HStack } from '@cbhq/cds-web/layout/HStack';

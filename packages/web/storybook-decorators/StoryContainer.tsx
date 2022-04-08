@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { Story } from '@storybook/react';
 import { css } from 'linaria';
-import { merge } from 'lodash';
+import merge from 'lodash/merge';
 import { sanitizeProps, StoryBuilderConfig } from '@cbhq/cds-common/internal/utils/storyBuilder';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { FeatureFlagProvider } from '@cbhq/cds-common/system/FeatureFlagProvider';

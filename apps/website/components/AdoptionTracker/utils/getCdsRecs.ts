@@ -1,4 +1,5 @@
-import { kebabCase, uniq } from 'lodash';
+import kebabCase from 'lodash/kebabCase';
+import uniq from 'lodash/uniq';
 import { entries } from '@cbhq/cds-utils';
 
 import { components as cdsComponents } from ':cds-website/data/componentsList';

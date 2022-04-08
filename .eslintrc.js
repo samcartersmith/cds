@@ -9,8 +9,19 @@ module.exports = {
   reportUnusedDisableDirectives: true,
   overrides: [
     {
-      files: ['packages/**/*.ts', 'packages/**/*.tsx'],
+      files: ['**/*.ts', '**/*.tsx'],
       rules: {
+        'no-restricted-imports': [
+          'error',
+          {
+            paths: [
+              {
+                name: 'lodash',
+                message: 'Use deep imports for lodash so it is tree shakeable',
+              },
+            ],
+          },
+        ],
         'codegen/codegen': 'error',
         'react/jsx-uses-react': 'error',
         'react/react-in-jsx-scope': 'error',

@@ -1,7 +1,7 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import { useMemo, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
-import { startCase } from 'lodash';
+import startCase from 'lodash/startCase';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
 import { Button } from '../../buttons';

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { shuffle } from 'lodash';
+import shuffle from 'lodash/shuffle';
 import { Select } from '@cbhq/cds-web/controls/Select';
 import { SelectOption } from '@cbhq/cds-web/controls/SelectOption';
 import { HStack, VStack } from '@cbhq/cds-web/layout';

@@ -1,5 +1,6 @@
 import React, { memo, useCallback } from 'react';
-import { orderBy, toPairs } from 'lodash';
+import orderBy from 'lodash/orderBy';
+import toPairs from 'lodash/toPairs';
 import { Icon } from '@cbhq/cds-web/icons';
 import { VStack } from '@cbhq/cds-web/layout';
 import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';

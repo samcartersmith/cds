@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react';
-import { isObject, merge, omit } from 'lodash';
-import { generateRandomId } from '@cbhq/cds-utils';
+import isObject from 'lodash/isObject';
+import merge from 'lodash/merge';
+import omit from 'lodash/omit';
+import { generateRandomId } from '@cbhq/cds-utils/string';
 
 import { Scale, Spectrum } from '../../types';
 

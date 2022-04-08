@@ -1,5 +1,6 @@
 import React, { createContext, memo, useMemo } from 'react';
-import { orderBy, sumBy } from 'lodash';
+import orderBy from 'lodash/orderBy';
+import sumBy from 'lodash/sumBy';
 
 import type {
   AdopterComponents,
