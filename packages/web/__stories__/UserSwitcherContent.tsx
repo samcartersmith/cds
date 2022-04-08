@@ -133,7 +133,7 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
         spacingHorizontal={1}
       >
         {otherAccountsData.map((userProps) => (
-          <UserAccountListCell {...userProps} />
+          <UserAccountListCell key={userProps.email} {...userProps} />
         ))}
         <HStack spacingHorizontal={0.5}>
           <Button startIcon="followInactive" transparent>

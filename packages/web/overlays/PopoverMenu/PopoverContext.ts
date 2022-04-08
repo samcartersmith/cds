@@ -1,8 +1,10 @@
 import React from 'react';
 import { defaultPopoverPositionConfig } from '@cbhq/cds-common/tokens/menu';
+import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { isProduction } from '@cbhq/cds-utils';
 
 import { AriaHasPopupType } from '../../hooks/useA11yControlledVisibility';
+import { useIsoEffect } from '../../hooks/useIsoEffect';
 
 import { PopoverContextType } from './usePopoverMenu';
 
@@ -23,9 +25,9 @@ const defaultContext: PopoverContextType = {
   maxWidth: undefined,
   maxHeight: undefined,
   flush: false,
-  setTrigger: () => null,
-  setPopper: () => null,
-  togglePopoverMenuVisibility: () => null,
+  setTrigger: NoopFn,
+  setPopper: NoopFn,
+  togglePopoverMenuVisibility: NoopFn,
   trigger: null,
   popper: null,
   controlledElementAccessibilityProps: {
@@ -37,14 +39,14 @@ const defaultContext: PopoverContextType = {
     'aria-expanded': false,
     'aria-haspopup': 'dialog' as AriaHasPopupType,
   },
-  handleExitMenu: () => null,
-  handlePopoverMenuBlur: () => null,
-  onChange: () => null,
-  onBlur: () => null,
+  handleExitMenu: NoopFn,
+  handlePopoverMenuBlur: NoopFn,
+  onChange: NoopFn,
+  onBlur: NoopFn,
   popoverPositionConfig: defaultPopoverPositionConfig,
   visible: false,
   searchEnabled: false,
-  openMenu: () => null,
+  openMenu: NoopFn,
 };
 
 const errorMessage =
@@ -55,9 +57,12 @@ export const PopoverProvider = PopoverContext.Provider;
 
 export const usePopoverContext = () => {
   const context = React.useContext(PopoverContext);
-  if (!context.triggerRef.current && !isProduction()) {
-    // eslint-disable-next-line no-console
-    console.error(errorMessage);
-  }
+  const hasContext = context.openMenu !== NoopFn;
+  useIsoEffect(() => {
+    if (!hasContext && !isProduction()) {
+      // eslint-disable-next-line no-console
+      console.error(errorMessage);
+    }
+  });
   return context;
 };
