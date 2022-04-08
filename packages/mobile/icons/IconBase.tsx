@@ -15,6 +15,7 @@ import { IconOutline } from './IconOutline';
 
 export type IconBaseMobileProps = {
   /**
+   * @deprecated - use Icon paired with DotCount/DotSymbol/DotStatusColor instead
    * Add a badge to the top right of an icon
    */
   badge?: React.ReactElement<BadgeProps>;

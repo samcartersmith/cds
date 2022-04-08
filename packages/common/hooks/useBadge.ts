@@ -4,6 +4,7 @@ import { BadgeBaseProps, BadgeValue, BadgeVariant } from '../types/BadgeBaseProp
 
 export type { BadgeBaseProps };
 
+/** @deprecated Use DotCount/DotSymbol/DotStatusColor instead */
 const badgeVariants = {
   empty: {
     width: 0,

@@ -6,6 +6,7 @@ import { TextCaption } from '../typography';
 
 export type BadgeProps = BadgeBaseProps & BoxProps;
 
+/** @deprecated Use DotCount/DotSymbol/DotStatusColor instead */
 export const Badge = ({ value, variant, ...boxProps }: BadgeProps) => {
   const { badgeVariant, badgeContent, badgeStyles } = useBadge(value, variant);
 
