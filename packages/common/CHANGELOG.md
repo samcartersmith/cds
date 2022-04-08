@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.36.1 (4/8/2022, 08:42 AM PST)
+
+#### 🚀 Updates
+
+- **[TextInput]** Add testID to each part of the TextInput, so they can be individually tested. [#183](https://github.cbhq.net/frontend/cds/pull/183)
+- Allow custom padding on SparklineInteractive. [#194](https://github.cbhq.net/frontend/cds/pull/194), [CDS-2213](https://jira.coinbase-corp.com/browse/CDS-2213)
+
+#### 🐞 Fixes
+
+- **[PopoverMenu]** Fixed popover context error. [#200](https://github.cbhq.net/frontend/cds/pull/200), [CDS-2222](https://jira.coinbase-corp.com/browse/CDS-2222)
+- **[Toast]** Toast offset specificity. [#204](https://github.cbhq.net/frontend/cds/pull/204)
+- **[Dots]** Add xs as an available size to DotSymbol and DotStatusColor. [#190](https://github.cbhq.net/frontend/cds/pull/190)
+- **** height should be dynamic when screen is short. [#188](https://github.cbhq.net/frontend/cds/pull/188)
+
+#### 📘 Misc
+
+- Downgrade storybook to fix percy. [#196](https://github.cbhq.net/frontend/cds/pull/196)
+
 ## 0.36.0 (4/6/2022, 10:44 AM PST)
 
 #### 💥 Breaking
