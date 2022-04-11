@@ -1,0 +1,14 @@
+{
+  "root": "apps/nextjs-playground",
+  "sourceRoot": "apps/nextjs-playground",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "typecheck": {
+      "executor": "./tools/executors/typecheck:typecheck"
+    }
+  }
+}

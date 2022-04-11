@@ -120,3 +120,6 @@ buck-out/
 ## Nested node_modules
 
 node_modules/
+
+#nextjs
+.next

@@ -2114,6 +2114,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cbhq/cds-common@npm:0.35.8":
+  version: 0.35.8
+  resolution: "@cbhq/cds-common@npm:0.35.8"
+  dependencies:
+    "@cbhq/cds-utils": 0.3.4
+    d3-array: ^2.3.3
+    d3-color: ^2.0.0
+    d3-scale: ^3.3.0
+    d3-shape: ^2.1.0
+    lodash: ^4.17.21
+    react-is: ^17.0.2
+    type-fest: ^1.2.0
+  peerDependencies:
+    react: ">=17.0.0"
+    react-dom: ">=17.0.0"
+  checksum: bad0f464e9633f94922e1d41babe2876ae2fe4b4d34804569a19914474f5b190e85ce887ef2af4d2e8600e161e250acd37dc7554920c7f87913477eb7455f629
+  languageName: node
+  linkType: hard
+
 "@cbhq/cds-common@workspace:*, @cbhq/cds-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-common@workspace:packages/common"
@@ -2132,11 +2151,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@cbhq/cds-fonts@npm:0.5.2":
+  version: 0.5.2
+  resolution: "@cbhq/cds-fonts@npm:0.5.2"
+  checksum: 0cc91d5bc17e07ed195b134d8ebfe7fc9997189a26030880248d1bab52307a26c92bb5836bf9c53a3076a9b3d26524333d9fb00d5c2f5c305b1b961dcdc8d22f
+  languageName: node
+  linkType: hard
+
 "@cbhq/cds-fonts@workspace:*, @cbhq/cds-fonts@workspace:packages/fonts":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-fonts@workspace:packages/fonts"
   languageName: unknown
   linkType: soft
+
+"@cbhq/cds-lottie-files@npm:0.2.23":
+  version: 0.2.23
+  resolution: "@cbhq/cds-lottie-files@npm:0.2.23"
+  checksum: 721ff3cb559a63c1f32139460eefb77e16b201e0fbf02fb6bd7b06e67129dedaeba7a76029f621d9c87d4190a51323b9949bb6a98c560e921ab63d8572f147f4
+  languageName: node
+  linkType: hard
 
 "@cbhq/cds-lottie-files@workspace:*, @cbhq/cds-lottie-files@workspace:packages/lottie-files":
   version: 0.0.0-use.local
@@ -2183,6 +2216,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@cbhq/cds-utils@npm:0.3.4":
+  version: 0.3.4
+  resolution: "@cbhq/cds-utils@npm:0.3.4"
+  dependencies:
+    humps: ^2.0.1
+    type-fest: ^1.2.0
+  checksum: ec6b37329b0c3b07cd40ed41ae24e5d5c444ea6531d2aa9653de48e97a6d8320da3ca09c0be145bec083fb3a950fe808aac23e3cc5b7124f2d17123078080e53
+  languageName: node
+  linkType: hard
+
 "@cbhq/cds-utils@workspace:*, @cbhq/cds-utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-utils@workspace:packages/utils"
@@ -2219,6 +2262,31 @@ __metadata:
     yargs: ^15.3.1
   languageName: unknown
   linkType: soft
+
+"@cbhq/cds-web@npm:^0.37.4":
+  version: 0.37.4
+  resolution: "@cbhq/cds-web@npm:0.37.4"
+  dependencies:
+    "@cbhq/cds-common": 0.35.8
+    "@cbhq/cds-fonts": 0.5.2
+    "@cbhq/cds-lottie-files": 0.2.23
+    "@cbhq/cds-utils": 0.3.4
+    "@popperjs/core": ^2.9.0
+    d3-interpolate-path: ^2.2.2
+    d3-selection: ^1.4.2
+    d3-transition: ^1.3.2
+    focus-visible: ^5.2.0
+    framer-motion: ^6.2.8
+    lodash: ^4.17.21
+    lottie-web: ^5.7.6
+    react-popper: ^2.2.4
+    reakit: ^1.3.6
+  peerDependencies:
+    react: ">=17.0.0"
+    react-dom: ">=17.0.0"
+  checksum: f6af292179af35a65defe1cd74206de1515c0f2d554a44c4285ad7b9c9668f5e584ed9ca95f0fd172aa019c670a3d633ce53632c4f0de047d3bb9cfe8025fcf5
+  languageName: node
+  linkType: hard
 
 "@cbhq/cds-web@workspace:*, @cbhq/cds-web@workspace:packages/web":
   version: 0.0.0-use.local
@@ -3925,6 +3993,97 @@ __metadata:
     call-me-maybe: ^1.0.1
     glob-to-regexp: ^0.3.0
   checksum: d3b82b29368821154ce8e10bef5ccdbfd070d3e9601643c99ea4607e56f3daeaa4e755dd6d2355da20762c695c1b0570543d9f84b48f70c211ec09c4aaada2e1
+  languageName: node
+  linkType: hard
+
+"@next/env@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/env@npm:12.1.4"
+  checksum: ff18e94d3b539b6fb0b5dd2c9b642e13e5efd68b886e5fc947330af10be68adb5a1a415777eec34273a7ed1ab51ab7482659aa8b33bd3d932269243d3d6eefad
+  languageName: node
+  linkType: hard
+
+"@next/swc-android-arm-eabi@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/swc-android-arm-eabi@npm:12.1.4"
+  conditions: os=android & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@next/swc-android-arm64@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/swc-android-arm64@npm:12.1.4"
+  conditions: os=android & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@next/swc-darwin-arm64@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/swc-darwin-arm64@npm:12.1.4"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@next/swc-darwin-x64@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/swc-darwin-x64@npm:12.1.4"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@next/swc-linux-arm-gnueabihf@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/swc-linux-arm-gnueabihf@npm:12.1.4"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@next/swc-linux-arm64-gnu@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/swc-linux-arm64-gnu@npm:12.1.4"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@next/swc-linux-arm64-musl@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/swc-linux-arm64-musl@npm:12.1.4"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@next/swc-linux-x64-gnu@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/swc-linux-x64-gnu@npm:12.1.4"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@next/swc-linux-x64-musl@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/swc-linux-x64-musl@npm:12.1.4"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@next/swc-win32-arm64-msvc@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/swc-win32-arm64-msvc@npm:12.1.4"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@next/swc-win32-ia32-msvc@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/swc-win32-ia32-msvc@npm:12.1.4"
+  conditions: os=win32 & cpu=ia32
+  languageName: node
+  linkType: hard
+
+"@next/swc-win32-x64-msvc@npm:12.1.4":
+  version: 12.1.4
+  resolution: "@next/swc-win32-x64-msvc@npm:12.1.4"
+  conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
@@ -10515,7 +10674,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001125, caniuse-lite@npm:^1.0.30001179, caniuse-lite@npm:^1.0.30001304, caniuse-lite@npm:^1.0.30001317":
+"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001125, caniuse-lite@npm:^1.0.30001179, caniuse-lite@npm:^1.0.30001283, caniuse-lite@npm:^1.0.30001304, caniuse-lite@npm:^1.0.30001317":
   version: 1.0.30001327
   resolution: "caniuse-lite@npm:1.0.30001327"
   checksum: 789076fb889bd03515c4a3e2bfa09cd5b28439645173445147eb6ddfd8105c755e46dfda3de4b75edd2b71490864188bbfe8a2efe920c7998960b4e98916f518
@@ -13454,7 +13613,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.9.2":
+"enhanced-resolve@npm:^5.7.0, enhanced-resolve@npm:^5.9.2":
   version: 5.9.2
   resolution: "enhanced-resolve@npm:5.9.2"
   dependencies:
@@ -21071,7 +21230,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.1.15, nanoid@npm:^3.1.32, nanoid@npm:^3.3.1":
+"nanoid@npm:^3.1.15, nanoid@npm:^3.1.30, nanoid@npm:^3.1.32, nanoid@npm:^3.3.1":
   version: 3.3.2
   resolution: "nanoid@npm:3.3.2"
   bin:
@@ -21144,6 +21303,111 @@ __metadata:
   checksum: 206ee736f9eb83489cc093d43e7d3024255ec93c66a31eaee58ca14d5ad9d925d813494725dcf5dec264e70cd8430167b7f82a2d00b0dd099f83c78d9ca650fd
   languageName: node
   linkType: hard
+
+"next-compose-plugins@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "next-compose-plugins@npm:2.2.1"
+  checksum: 771762fda2b12b81daf10431cbb494816cff96be02b44009692c6c0eefbacd62cbf51ddb93af8d3380ec00254c6a95d64d10f744d4b9ddadefc21efee7dc69fc
+  languageName: node
+  linkType: hard
+
+"next-linaria@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "next-linaria@npm:0.11.0"
+  peerDependencies:
+    linaria: "*"
+  checksum: d60d99fddf580b449c34df4eed7ed58c4ecd2951374affc390c5a7a1aa6d7091cfebbb81d2613caf9d59d69456281349f7a754c7de1e8076c3c2430226a944d5
+  languageName: node
+  linkType: hard
+
+"next-transpile-modules@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "next-transpile-modules@npm:9.0.0"
+  dependencies:
+    enhanced-resolve: ^5.7.0
+    escalade: ^3.1.1
+  checksum: 9a5d86d80cedc2404b2b1d5bd4994f2f7bf60e5e20f24e8cc5cfec34da1418b4a439916f37a95ca336bcf6d81094c3647354ac6a0c6737b3df59e62b6380507d
+  languageName: node
+  linkType: hard
+
+"next@npm:latest":
+  version: 12.1.4
+  resolution: "next@npm:12.1.4"
+  dependencies:
+    "@next/env": 12.1.4
+    "@next/swc-android-arm-eabi": 12.1.4
+    "@next/swc-android-arm64": 12.1.4
+    "@next/swc-darwin-arm64": 12.1.4
+    "@next/swc-darwin-x64": 12.1.4
+    "@next/swc-linux-arm-gnueabihf": 12.1.4
+    "@next/swc-linux-arm64-gnu": 12.1.4
+    "@next/swc-linux-arm64-musl": 12.1.4
+    "@next/swc-linux-x64-gnu": 12.1.4
+    "@next/swc-linux-x64-musl": 12.1.4
+    "@next/swc-win32-arm64-msvc": 12.1.4
+    "@next/swc-win32-ia32-msvc": 12.1.4
+    "@next/swc-win32-x64-msvc": 12.1.4
+    caniuse-lite: ^1.0.30001283
+    postcss: 8.4.5
+    styled-jsx: 5.0.1
+  peerDependencies:
+    fibers: ">= 3.1.0"
+    node-sass: ^6.0.0 || ^7.0.0
+    react: ^17.0.2 || ^18.0.0-0
+    react-dom: ^17.0.2 || ^18.0.0-0
+    sass: ^1.3.0
+  dependenciesMeta:
+    "@next/swc-android-arm-eabi":
+      optional: true
+    "@next/swc-android-arm64":
+      optional: true
+    "@next/swc-darwin-arm64":
+      optional: true
+    "@next/swc-darwin-x64":
+      optional: true
+    "@next/swc-linux-arm-gnueabihf":
+      optional: true
+    "@next/swc-linux-arm64-gnu":
+      optional: true
+    "@next/swc-linux-arm64-musl":
+      optional: true
+    "@next/swc-linux-x64-gnu":
+      optional: true
+    "@next/swc-linux-x64-musl":
+      optional: true
+    "@next/swc-win32-arm64-msvc":
+      optional: true
+    "@next/swc-win32-ia32-msvc":
+      optional: true
+    "@next/swc-win32-x64-msvc":
+      optional: true
+  peerDependenciesMeta:
+    fibers:
+      optional: true
+    node-sass:
+      optional: true
+    sass:
+      optional: true
+  bin:
+    next: dist/bin/next
+  checksum: d19354cf4e5bc58473e922c38a5a282de62c0b78bebdd31617b9e958b6f6877bcc2df371b7368db2110e098f87722e084c950f9229d35e4c06842de79cd90d20
+  languageName: node
+  linkType: hard
+
+"nextjs-playground-651d4b@workspace:apps/nextjs-playground":
+  version: 0.0.0-use.local
+  resolution: "nextjs-playground-651d4b@workspace:apps/nextjs-playground"
+  dependencies:
+    "@cbhq/cds-web": ^0.37.4
+    next: latest
+    next-compose-plugins: ^2.2.1
+    next-linaria: ^0.11.0
+    next-transpile-modules: ^9.0.0
+  peerDependencies:
+    react: ">=17.0.0"
+    react-dom: ">=17.0.0"
+  languageName: unknown
+  linkType: soft
 
 "nice-try@npm:^1.0.4":
   version: 1.0.5
@@ -23355,6 +23619,17 @@ __metadata:
   peerDependencies:
     postcss: ^8.2.15
   checksum: 8581e0ee552622489dcb9fb9609a3ccc261a67a229ba91a70bd138fe102a2d04cedb14642b82b673d4cac7b559ef32574f2dafde2ff7816eecac024d231c5ead
+  languageName: node
+  linkType: hard
+
+"postcss@npm:8.4.5":
+  version: 8.4.5
+  resolution: "postcss@npm:8.4.5"
+  dependencies:
+    nanoid: ^3.1.30
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.1
+  checksum: b78abdd89c10f7b48f4bdcd376104a19d6e9c7495ab521729bdb3df315af6c211360e9f06887ad3bc0ab0f61a04b91d68ea11462997c79cced58b9ccd66fac07
   languageName: node
   linkType: hard
 
@@ -27118,7 +27393,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-js@npm:^1.0.2":
+"source-map-js@npm:^1.0.1, source-map-js@npm:^1.0.2":
   version: 1.0.2
   resolution: "source-map-js@npm:1.0.2"
   checksum: c049a7fc4deb9a7e9b481ae3d424cc793cb4845daa690bc5a05d428bf41bf231ced49b4cf0c9e77f9d42fdb3d20d6187619fc586605f5eabe995a316da8d377c
@@ -27929,6 +28204,20 @@ __metadata:
     react-dom: ">= 16.8.0"
     react-is: ">= 16.8.0"
   checksum: a104341068fc39fa2c73950a34970d832dc7a511fc52b3df12f34e6746031f1f128f53b4d540bf39d9f0da043cf0d91517faf874d2c87de5e385f5c2e7620436
+  languageName: node
+  linkType: hard
+
+"styled-jsx@npm:5.0.1":
+  version: 5.0.1
+  resolution: "styled-jsx@npm:5.0.1"
+  peerDependencies:
+    react: ">= 16.8.0 || 17.x.x || ^18.0.0-0"
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    babel-plugin-macros:
+      optional: true
+  checksum: b85eb03da76b566065b10911a24396659b45a34efa16eef87ed8ff2ce3ea7b9b6a9c0c92c3b2113f92cbca9ab12496690d72329cb9932759ea98d0386acb38a9
   languageName: node
   linkType: hard
 

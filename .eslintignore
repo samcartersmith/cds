@@ -4,6 +4,7 @@ node_modules/
 OWNERS
 Makefile
 .eslintrc.js
+next-env.d.ts
 
 # Nx/Builds
 **/dts/
