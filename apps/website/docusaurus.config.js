@@ -34,21 +34,18 @@ function configureForDocusaurus(config) {
 module.exports = {
   title: 'Coinbase Design System',
   tagline: '',
-  url: 'https://design-system.cbhq.net',
+  url: 'https://cds.cbhq.net',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'mono',
-  projectName: 'repo',
+  organizationName: 'frontend',
+  projectName: 'cds',
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
   themeConfig: {
-    gtag: {
-      trackingID: 'G-369GEFT8FG',
-    },
     navbar: {
       title: 'Coinbase Design System',
       logo: {
@@ -58,7 +55,7 @@ module.exports = {
       items: [
         { to: 'blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system',
+          href: 'https://github.cbhq.net/frontend/cds/tree/master',
           label: 'GitHub',
           position: 'right',
         },
@@ -119,11 +116,14 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+        gtag: {
+          trackingID: 'G-369GEFT8FG',
+        },
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system/website/',
+          editUrl: 'https://github.cbhq.net/frontend/cds/tree/master/apps/website/',
+          sidebarCollapsible: true,
         },
         blog: {
           path: 'blog',
@@ -131,8 +131,7 @@ module.exports = {
           blogSidebarCount: 'ALL',
           blogSidebarTitle: 'All Blog posts',
           showReadingTime: true,
-          editUrl:
-            'https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system/website/blog',
+          editUrl: 'https://github.cbhq.net/frontend/cds/tree/master/apps/website/blog',
           feedOptions: {
             type: 'all',
             language: 'en',

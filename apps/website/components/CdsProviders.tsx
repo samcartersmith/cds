@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
 import { css } from 'linaria';
 import { FeatureFlagProvider, ThemeProvider } from '@cbhq/cds-web/system';
 import { RootScaleProvider } from '@cbhq/cds-web/system/RootScaleProvider';
@@ -38,7 +38,8 @@ const overrides = css`
 `;
 
 export const CdsProviders: React.FC = memo(({ children }) => {
-  const { isDarkTheme } = useThemeContext();
+  const { colorMode } = useColorMode();
+  const isDarkTheme = colorMode === 'dark';
   return (
     <FeatureFlagProvider>
       <RootScaleProvider>

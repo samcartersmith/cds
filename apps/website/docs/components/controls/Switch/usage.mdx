@@ -1,16 +1,16 @@
 ```jsx live
 function SwitchDemo() {
   // doc site theme control
-  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
+  const { colorMode, setColorMode } = useColorMode();
   // from @cbhq/cds-common/hooks/useToggler
-  const [isChecked, { toggle }] = useToggler(isDarkTheme);
+  const [isChecked, { toggle }] = useToggler(colorMode === 'dark');
 
   const handleChange = useCallback(
     (event) => {
-      event.target.checked ? setDarkTheme() : setLightTheme();
+      setColorMode(event.target.checked ? 'light' : 'dark');
       toggle();
     },
-    [setLightTheme, setDarkTheme],
+    [setColorMode, toggle],
   );
 
   return (

@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
 import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
@@ -14,15 +14,18 @@ export type ThemeTogglesProps = {
 
 export const ThemeToggles: React.FC<ThemeTogglesProps> = memo(({ showFrontier, hideDense }) => {
   const scale = useRootScale();
-  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
+  const { colorMode, setColorMode } = useColorMode();
   const scaleUpdate = useRootScalePreferenceUpdater();
   const featureFlagUpdate = useFeatureFlagUpdater();
   const hasFrontier = useFeatureFlag('frontier');
 
   const toggleSpectrum = useCallback(() => {
-    const updateFn = isDarkTheme ? setLightTheme : setDarkTheme;
-    updateFn();
-  }, [setDarkTheme, setLightTheme, isDarkTheme]);
+    if (colorMode === 'dark') {
+      setColorMode('light');
+    } else {
+      setColorMode('dark');
+    }
+  }, [colorMode, setColorMode]);
 
   const toggleScale = useCallback(() => {
     const newScale = scale === 'large' ? 'medium' : 'large';
@@ -35,7 +38,7 @@ export const ThemeToggles: React.FC<ThemeTogglesProps> = memo(({ showFrontier, h
 
   return (
     <>
-      <Switch onChange={toggleSpectrum} checked={isDarkTheme}>
+      <Switch onChange={toggleSpectrum} checked={colorMode === 'dark'}>
         Dark Spectrum
       </Switch>
       {!hideDense && (

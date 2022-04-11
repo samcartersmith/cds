@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
 import { join, useToggler } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { accounts } from '@cbhq/cds-common/internal/data/accounts';
@@ -109,7 +109,7 @@ const ReactLiveScope: unknown = {
   React,
   ...React,
   // Docusaurus
-  useThemeContext,
+  useColorMode,
   // CDS
   join,
   lottieFiles,

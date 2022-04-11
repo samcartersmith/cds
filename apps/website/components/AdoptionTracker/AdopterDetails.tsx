@@ -1,5 +1,5 @@
 import React, { memo, useContext, useMemo } from 'react';
-import Link, { LinkProps } from '@docusaurus/Link';
+import Link from '@docusaurus/Link';
 import { IconButton } from '@cbhq/cds-web/buttons';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { TextBody, TextTitle1 } from '@cbhq/cds-web/typography';
@@ -83,7 +83,9 @@ const AdopterTabs = memo(() => {
   );
 });
 
-const RouterLink = (props: LinkProps) => <Link {...props} to="/adoption-tracker-overview" />;
+const RouterLink = (props: React.ComponentProps<typeof Link>) => (
+  <Link {...props} to="/adoption-tracker-overview" />
+);
 
 export const AdopterDetails = memo(() => {
   const { label } = useAdopterProjectInfo();

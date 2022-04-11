@@ -1,5 +1,5 @@
 import React, { Suspense, useCallback, useMemo } from 'react';
-import useUserPreferencesContext from '@theme/hooks/useUserPreferencesContext';
+import { useTabGroupChoice } from '@docusaurus/theme-common';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 
@@ -15,7 +15,7 @@ const tabs = [
 ];
 
 export const ComponentTabs = <T extends ComponentNames>({ name }: { name: T }) => {
-  const { tabGroupChoices } = useUserPreferencesContext();
+  const { tabGroupChoices } = useTabGroupChoice();
   const getTemplate = useCallback(
     (templateName: TemplateName) => {
       if (name in templatesMap) {
