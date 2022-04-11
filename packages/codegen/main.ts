@@ -6,6 +6,7 @@ import {
   borderWidthConfig,
   borderWidthCss,
 } from './configs/borderConfig';
+import { gridConfig } from './configs/gridConfig';
 import { scaleConfig } from './configs/scaleConfig';
 import { Spectrum } from './Spectrum/Spectrum';
 import { Type } from './Type/Type';
@@ -82,6 +83,7 @@ async function codegen() {
       },
     ],
     'cssMap.ejs': [
+      ...gridConfig.cssMap,
       {
         dest: 'web/styles/padding.ts',
         data: Spacing.css('padding'),
@@ -146,7 +148,7 @@ async function codegen() {
         },
       },
     ],
-    'typescript.ejs': TypeScript,
+    'typescript.ejs': [...TypeScript, ...gridConfig.typescript],
   };
 
   // Palette.validate();

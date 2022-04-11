@@ -25,6 +25,7 @@ export * from './DrawerBaseProps';
 export * from './ElevationLevels';
 export * from './FallbackBaseProps';
 export * from './ForwardedRef';
+export * from './Grid';
 export * from './GroupBaseProps';
 export * from './Helpers';
 export * from './IconBaseProps';

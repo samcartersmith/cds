@@ -17,9 +17,7 @@ export const Spacing = {
         const escapedPadding = `var(--spacing-${escape(spacing)})` as const;
         const escapedMargin = `calc(-1 * var(--spacing-${escape(spacing)}))` as const;
         const value = attribute === 'padding' ? escapedPadding : escapedMargin;
-        return `css\`
-            ${fullAttribute}: ${value}
-          \``;
+        return `${fullAttribute}: ${value}`;
       });
     });
   },
