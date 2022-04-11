@@ -42,6 +42,7 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
     frontierColor: frontierColorProp,
     frontierCard: frontierCardProp,
     frontierSparkline: frontierSparklineProp,
+    flexGap: flexGapProp,
     onChange,
   }) => {
     const {
@@ -51,6 +52,7 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
       frontierColor: frontierColorContext,
       frontierCard: frontierCardContext,
       frontierSparkline: frontierSparklineContext,
+      flexGap: flexGapContext,
     } = useFeatureFlags();
 
     const [featureFlagsState, dispatch] = useReducer(featureFlagReducer, emptyObject);
@@ -65,10 +67,13 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
         frontierColor: frontierColorProp ?? (hasFrontier || frontierColorContext),
         frontierCard: frontierCardProp ?? (hasFrontier || frontierCardContext),
         frontierSparkline: frontierSparklineProp ?? (hasFrontier || frontierSparklineContext),
+        flexGap: flexGapProp ?? flexGapContext,
         ...otherFeatureFlagsState,
       };
     }, [
       featureFlagsState,
+      flexGapContext,
+      flexGapProp,
       frontierButtonContext,
       frontierButtonProp,
       frontierCardContext,

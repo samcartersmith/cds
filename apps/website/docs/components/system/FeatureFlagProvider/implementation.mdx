@@ -19,6 +19,23 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### flexGap
+
+Web only - Leverages the CSS flex gap property instead of inserting extra DOM nodes.
+
+**https://developer.mozilla.org/en-US/docs/Web/CSS/gap**
+
+<ApiDetails
+  componentName="FeatureFlagProvider"
+  propertyName="flexGap"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="FeatureFlagProvider" templateName="prop-flexGap" />
+
 ### frontier
 
 Conventiently toggle all the Frontier flags at once.
@@ -81,7 +98,7 @@ Change secondary palette from gray0 to gray60 at 10%.
 
 ### frontierSparkline
 
-TBD
+Dotted sparkline fills
 
 <ApiDetails
   componentName="FeatureFlagProvider"

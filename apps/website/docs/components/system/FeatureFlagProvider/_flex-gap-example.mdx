@@ -1,0 +1,20 @@
+```jsx live
+function Example() {
+  const [isEnabled, { toggle }] = useToggler(true);
+  return (
+    <FeatureFlagProvider flexGap={isEnabled}>
+      <HStack spacing={3} gap={1} alignItems="center">
+        <Switch onChange={toggle} checked={isEnabled} />
+        <TextBody as="p">Toggle flexGap</TextBody>
+      </HStack>
+      <VStack spacing={3} gap={3} background="primary">
+        <HStack gap={3}>
+          <Box width={40} height={40} background />
+          <Box width={40} height={40} background />
+        </HStack>
+        <Box width={40} height={40} background />
+      </VStack>
+    </FeatureFlagProvider>
+  );
+}
+```

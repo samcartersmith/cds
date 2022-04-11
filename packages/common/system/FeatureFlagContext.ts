@@ -29,10 +29,14 @@ export const defaultFeatureFlags = {
    */
   frontierCard: false,
   /**
-   * TBD
+   * Dotted sparkline fills
    * @default false
    */
   frontierSparkline: false,
+  /** Web only - Leverages the CSS flex 'gap' property instead of inserting extra DOM nodes.
+   * @link https://developer.mozilla.org/en-US/docs/Web/CSS/gap
+   */
+  flexGap: false,
 };
 
 export const frontierFeaturesOn = {
