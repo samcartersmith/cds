@@ -79,27 +79,6 @@ module.exports = {
             },
           ],
         },
-        {
-          title: 'Prototypes',
-          items: [
-            {
-              label: 'Navigation',
-              href: '/navigation',
-            },
-            {
-              label: 'Tables',
-              href: '/tables',
-            },
-            {
-              label: 'Cards',
-              href: '/cards',
-            },
-            {
-              label: 'Select Input',
-              href: '/selectinput',
-            },
-          ],
-        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Coinbase`,
     },
