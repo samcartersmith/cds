@@ -57,6 +57,7 @@ esm/
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+install-state.gz
 
 # Docusaurus
 .docusaurus
