@@ -41,8 +41,7 @@
   },
   "resolutions": {
     "colors": "1.4.0",
-    "coa": "2.0.2",
-    "@docusaurus/core@2.0.0-beta.18": "patch:@docusaurus/core@2.0.0-beta.18#.yarn/patches/docusaurus.patch"
+    "coa": "2.0.2"
   },
   "workspaces": [
     "apps/*",

@@ -1,4 +1,4 @@
-import { styled } from 'linaria/react';
+import { styled } from '@linaria/react';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { palette } from '@cbhq/cds-web/tokens';
 

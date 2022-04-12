@@ -1,19 +1,19 @@
-const baseConfig = require('../../babel.config');
-
-const isTestEnv = process.env.NODE_ENV === 'test';
-
 module.exports = {
-  presets: [
-    ...baseConfig.presets,
-    ['linaria/babel', { classNameSlug: (hash, title) => (isTestEnv ? title : `${title}-${hash}`) }],
-  ],
+  presets: [require.resolve('@docusaurus/core/lib/babel/preset'), '@linaria'],
   plugins: [
+    [
+      '@babel/plugin-transform-react-jsx',
+      {
+        runtime: 'automatic',
+      },
+    ],
     [
       require.resolve('babel-plugin-module-resolver'),
       {
         root: ['./'],
         alias: {
           ':cds-website': './',
+          linaria: '@linaria/core',
         },
       },
     ],

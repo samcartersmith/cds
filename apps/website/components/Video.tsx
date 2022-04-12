@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { styled } from 'linaria/react';
+import { styled } from '@linaria/react';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 
 type VideoOptions = {

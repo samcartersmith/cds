@@ -1,9 +1,6 @@
 const path = require('path');
 
 /* eslint-disable no-param-reassign */
-
-const BABEL_OPTIONS = { configFile: true, rootMode: 'upward' };
-
 function configureForDocusaurus(config) {
   const isProduction = config.mode === 'production';
 
@@ -16,16 +13,15 @@ function configureForDocusaurus(config) {
     // Add `linaria/loader` for .tsx files
     if ('.tsx'.match(rule.test)) {
       rule.use.push({
-        loader: 'linaria/loader',
+        loader: '@linaria/webpack-loader',
         options: {
-          displayName: !isProduction,
           sourceMap: !isProduction,
-          babelOptions: BABEL_OPTIONS,
         },
       });
     }
   });
 
+  config.resolve.alias.linaria$ = '@linaria/core';
   config.resolve.alias[':cds-website'] = path.resolve(__dirname, './');
 
   return {};
@@ -34,7 +30,7 @@ function configureForDocusaurus(config) {
 module.exports = {
   title: 'Coinbase Design System',
   tagline: '',
-  url: 'https://cds.cbhq.net',
+  url: process.env.NODE_ENV === 'production' ? 'https://cds.cbhq.net' : 'https://cds-dev.cbhq.net',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -85,7 +81,7 @@ module.exports = {
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      'classic',
       {
         gtag: {
           trackingID: 'G-369GEFT8FG',
@@ -99,11 +95,21 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        blog: false,
       },
     ],
   ],
   plugins: [
     '@docusaurus/theme-live-codeblock',
+    [
+      '@cmfcmf/docusaurus-search-local',
+      {
+        language: 'en',
+        indexBlog: false,
+        indexDocs: true,
+        indexDocSidebarParentCategories: 2,
+      },
+    ],
     // Must run last!
     () => ({
       name: 'cds-docusaurus-plugin',

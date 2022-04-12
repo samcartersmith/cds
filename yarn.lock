@@ -14,6 +14,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@algolia/autocomplete-core@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@algolia/autocomplete-core@npm:1.6.2"
+  dependencies:
+    "@algolia/autocomplete-shared": 1.6.2
+  checksum: 3b3148fa76eb4c4daee9869594f08970206ce40e8c711d50d5dce15227fffa0c20a05057ea6337b44bda8a1bf5e7916ee5e00bfb867abe033f98b5ac0ffef0e8
+  languageName: node
+  linkType: hard
+
+"@algolia/autocomplete-js@npm:^1.5.1":
+  version: 1.6.2
+  resolution: "@algolia/autocomplete-js@npm:1.6.2"
+  dependencies:
+    "@algolia/autocomplete-core": 1.6.2
+    "@algolia/autocomplete-preset-algolia": 1.6.2
+    "@algolia/autocomplete-shared": 1.6.2
+    htm: ^3.0.0
+    preact: ^10.0.0
+  peerDependencies:
+    "@algolia/client-search": ^4.5.1
+  checksum: 37d66e5a5e79e41c5012167c9362321c25464baf1d03b6bda8c0bd7849bf2d16e890d89258bc452640ffcf2a9115ebd7ab4cab14c4fbedb1405d657eb9d59d9c
+  languageName: node
+  linkType: hard
+
 "@algolia/autocomplete-preset-algolia@npm:1.5.2":
   version: 1.5.2
   resolution: "@algolia/autocomplete-preset-algolia@npm:1.5.2"
@@ -26,10 +50,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@algolia/autocomplete-preset-algolia@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@algolia/autocomplete-preset-algolia@npm:1.6.2"
+  dependencies:
+    "@algolia/autocomplete-shared": 1.6.2
+  peerDependencies:
+    "@algolia/client-search": ^4.9.1
+    algoliasearch: ^4.9.1
+  checksum: ce9b3895c348c5d61cd5e95b00d6fa8ebdf47c908c65be1e61bdc64844f0bd166efdfa46e6ef1f80b4e7644d935876ca9aefb4943a6a0a90d2583c14b0186922
+  languageName: node
+  linkType: hard
+
 "@algolia/autocomplete-shared@npm:1.5.2":
   version: 1.5.2
   resolution: "@algolia/autocomplete-shared@npm:1.5.2"
   checksum: 35d60ea6c38d0cae79e431460e3014da5a71408061fafa9bb5882e91de26dd923c18b5ed905fbea87639875f1d0c0857057a27eac6e786856646b8553a2aa61f
+  languageName: node
+  linkType: hard
+
+"@algolia/autocomplete-shared@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@algolia/autocomplete-shared@npm:1.6.2"
+  checksum: e571eddd0688582234c90c9e2af79bcd413bfcb43fc58dfa7596090d8562718496cf9adb70cd16726e24058d1597eca4aad932c6742c9013802ed6d8fa1122cc
+  languageName: node
+  linkType: hard
+
+"@algolia/autocomplete-theme-classic@npm:^1.5.1":
+  version: 1.6.2
+  resolution: "@algolia/autocomplete-theme-classic@npm:1.6.2"
+  checksum: ed8461efdc810168f9e060439daf95705624676334cb2c41aa48ac123504f8517eeeb8431dfc84b401ec233f0650035336073dedb8a2d27548f9ba7ca8109142
   languageName: node
   linkType: hard
 
@@ -102,7 +152,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@algolia/client-search@npm:4.13.0":
+"@algolia/client-search@npm:4.13.0, @algolia/client-search@npm:^4.12.0":
   version: 4.13.0
   resolution: "@algolia/client-search@npm:4.13.0"
   dependencies:
@@ -1695,7 +1745,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.14.4, @babel/preset-env@npm:^7.15.6, @babel/preset-env@npm:^7.16.11":
+"@babel/preset-env@npm:>=7, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.14.4, @babel/preset-env@npm:^7.15.6, @babel/preset-env@npm:^7.16.11":
   version: 7.16.11
   resolution: "@babel/preset-env@npm:7.16.11"
   dependencies:
@@ -2507,16 +2557,44 @@ __metadata:
   dependencies:
     "@cbhq/cds-common": "workspace:*"
     "@cbhq/cds-web": "workspace:*"
+    "@cmfcmf/docusaurus-search-local": ^0.10.0
     "@docusaurus/core": 2.0.0-beta.18
     "@docusaurus/module-type-aliases": 2.0.0-beta.18
     "@docusaurus/preset-classic": 2.0.0-beta.18
     "@docusaurus/theme-live-codeblock": 2.0.0-beta.18
+    "@linaria/babel-preset": ^3.0.0-beta.15
+    "@linaria/core": ^3.0.0-beta.15
+    "@linaria/react": ^3.0.0-beta.15
+    "@linaria/shaker": ^3.0.0-beta.15
+    "@linaria/webpack-loader": ^3.0.0-beta.15
     antd: 4.4.1
     react: ^17.0.2
     react-dom: ^17.0.2
     react-virtualized: ^9.22.3
   languageName: unknown
   linkType: soft
+
+"@cmfcmf/docusaurus-search-local@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "@cmfcmf/docusaurus-search-local@npm:0.10.0"
+  dependencies:
+    "@algolia/autocomplete-js": ^1.5.1
+    "@algolia/autocomplete-theme-classic": ^1.5.1
+    "@algolia/client-search": ^4.12.0
+    algoliasearch: ^4.12.0
+    cheerio: ^1.0.0-rc.9
+    clsx: ^1.1.1
+    lunr-languages: ^1.4.0
+    mark.js: ^8.11.1
+  peerDependencies:
+    "@docusaurus/core": ^v2.0.0-beta.15
+    nodejieba: ^2.5.0
+  peerDependenciesMeta:
+    nodejieba:
+      optional: true
+  checksum: 70ff5c226e6a3cc55ffe56c6a2eacee9bb0c101a402f0337031f804f2eb2bf6c5c71b007d894808cb62d03ccff854ea40fd59705f3c353d03921b730cc10b60b
+  languageName: node
+  linkType: hard
 
 "@cnakazawa/watch@npm:^1.0.3":
   version: 1.0.4
@@ -2720,92 +2798,6 @@ __metadata:
   bin:
     docusaurus: bin/docusaurus.mjs
   checksum: 3f5751011fbd029b53fde14d653943993f66948918ca5280547cd4091cb3d9260be3f0db166cd41ca0d9078721ce921c69d22959314b0df494b529c905a2897a
-  languageName: node
-  linkType: hard
-
-"@docusaurus/core@patch:@docusaurus/core@2.0.0-beta.18#.yarn/patches/docusaurus.patch::locator=design-system%40workspace%3A.":
-  version: 2.0.0-beta.18
-  resolution: "@docusaurus/core@patch:@docusaurus/core@npm%3A2.0.0-beta.18#.yarn/patches/docusaurus.patch::version=2.0.0-beta.18&hash=9fdf0b&locator=design-system%40workspace%3A."
-  dependencies:
-    "@babel/core": ^7.17.8
-    "@babel/generator": ^7.17.7
-    "@babel/plugin-syntax-dynamic-import": ^7.8.3
-    "@babel/plugin-transform-runtime": ^7.17.0
-    "@babel/preset-env": ^7.16.11
-    "@babel/preset-react": ^7.16.7
-    "@babel/preset-typescript": ^7.16.7
-    "@babel/runtime": ^7.17.8
-    "@babel/runtime-corejs3": ^7.17.8
-    "@babel/traverse": ^7.17.3
-    "@docusaurus/cssnano-preset": 2.0.0-beta.18
-    "@docusaurus/logger": 2.0.0-beta.18
-    "@docusaurus/mdx-loader": 2.0.0-beta.18
-    "@docusaurus/react-loadable": 5.5.2
-    "@docusaurus/utils": 2.0.0-beta.18
-    "@docusaurus/utils-common": 2.0.0-beta.18
-    "@docusaurus/utils-validation": 2.0.0-beta.18
-    "@slorber/static-site-generator-webpack-plugin": ^4.0.4
-    "@svgr/webpack": ^6.2.1
-    autoprefixer: ^10.4.4
-    babel-loader: ^8.2.4
-    babel-plugin-dynamic-import-node: 2.3.0
-    boxen: ^6.2.1
-    chokidar: ^3.5.3
-    clean-css: ^5.2.4
-    cli-table3: ^0.6.1
-    combine-promises: ^1.1.0
-    commander: ^5.1.0
-    copy-webpack-plugin: ^10.2.4
-    core-js: ^3.21.1
-    css-loader: ^6.7.1
-    css-minimizer-webpack-plugin: ^3.4.1
-    cssnano: ^5.1.5
-    del: ^6.0.0
-    detect-port: ^1.3.0
-    escape-html: ^1.0.3
-    eta: ^1.12.3
-    file-loader: ^6.2.0
-    fs-extra: ^10.0.1
-    html-minifier-terser: ^6.1.0
-    html-tags: ^3.1.0
-    html-webpack-plugin: ^5.5.0
-    import-fresh: ^3.3.0
-    is-root: ^2.1.0
-    leven: ^3.1.0
-    lodash: ^4.17.21
-    mini-css-extract-plugin: ^2.6.0
-    nprogress: ^0.2.0
-    postcss: ^8.4.12
-    postcss-loader: ^6.2.1
-    prompts: ^2.4.2
-    react-dev-utils: ^12.0.0
-    react-helmet-async: ^1.2.3
-    react-loadable: "npm:@docusaurus/react-loadable@5.5.2"
-    react-loadable-ssr-addon-v5-slorber: ^1.0.1
-    react-router: ^5.2.0
-    react-router-config: ^5.1.1
-    react-router-dom: ^5.2.0
-    remark-admonitions: ^1.2.1
-    rtl-detect: ^1.0.4
-    semver: ^7.3.5
-    serve-handler: ^6.1.3
-    shelljs: ^0.8.5
-    terser-webpack-plugin: ^5.3.1
-    tslib: ^2.3.1
-    update-notifier: ^5.1.0
-    url-loader: ^4.1.1
-    wait-on: ^6.0.1
-    webpack: ^5.70.0
-    webpack-bundle-analyzer: ^4.5.0
-    webpack-dev-server: ^4.7.4
-    webpack-merge: ^5.8.0
-    webpackbar: ^5.0.2
-  peerDependencies:
-    react: ^16.8.4 || ^17.0.0
-    react-dom: ^16.8.4 || ^17.0.0
-  bin:
-    docusaurus: bin/docusaurus.mjs
-  checksum: c67a2e5254acd142ee37fb3659afbf53cc00587de57422c46ab9ecfd51413e03e3caad12dc1581b3499627dcb4cfcb245bbea9ce51d550b4d2be8059bb16126c
   languageName: node
   linkType: hard
 
@@ -3795,6 +3787,134 @@ __metadata:
   version: 2.0.3
   resolution: "@leichtgewicht/ip-codec@npm:2.0.3"
   checksum: 5b6bee0481c82ac05c748322e34ac68aa01757451b4f49f1ab9cc91e420a1ea4cd0fc4678251e6fa41d566a3e3683cca3e179fb767c87845286863ac98b54f15
+  languageName: node
+  linkType: hard
+
+"@linaria/babel-preset@npm:^3.0.0-beta.15, @linaria/babel-preset@npm:^3.0.0-beta.18":
+  version: 3.0.0-beta.18
+  resolution: "@linaria/babel-preset@npm:3.0.0-beta.18"
+  dependencies:
+    "@babel/generator": ">=7"
+    "@babel/plugin-syntax-dynamic-import": ">=7"
+    "@babel/template": ">=7"
+    "@linaria/core": ^3.0.0-beta.18
+    "@linaria/logger": ^3.0.0-beta.15
+    "@linaria/utils": ^3.0.0-beta.18
+    cosmiconfig: ^5.1.0
+    source-map: ^0.7.3
+    stylis: ^3.5.4
+  peerDependencies:
+    "@babel/core": ">=7"
+  checksum: 17dfa0dad87618f2527ba92736f7a050a3da5a23fd888d3e3c08c1c59f09de8a7d6ddf5365c8cc690cbb6dd247018b65bebe832c019090f653fccee0a0952003
+  languageName: node
+  linkType: hard
+
+"@linaria/core@npm:^3.0.0-beta.15, @linaria/core@npm:^3.0.0-beta.18":
+  version: 3.0.0-beta.18
+  resolution: "@linaria/core@npm:3.0.0-beta.18"
+  dependencies:
+    "@linaria/utils": ^3.0.0-beta.18
+  checksum: a685b272dccf53e8b7d73e1246ca0e6eeb5a4c5576a344d7619ddaf17e55a63093b783b3b8daba90d9209de00c66b28f53dfe4d60e36ddf70d78fc8833560969
+  languageName: node
+  linkType: hard
+
+"@linaria/logger@npm:^3.0.0-beta.15":
+  version: 3.0.0-beta.15
+  resolution: "@linaria/logger@npm:3.0.0-beta.15"
+  dependencies:
+    debug: ^4.1.1
+    picocolors: ^1.0.0
+  checksum: fd855f0bfe97f5629e00241f961862f192e64e7d2a7e6dce5d3ef631396d9434def88c699550a2d46a8c45278acea1a0059937cf8f265a98c95c1c8254ccd788
+  languageName: node
+  linkType: hard
+
+"@linaria/preeval@npm:^3.0.0-beta.18":
+  version: 3.0.0-beta.18
+  resolution: "@linaria/preeval@npm:3.0.0-beta.18"
+  dependencies:
+    "@linaria/babel-preset": ^3.0.0-beta.18
+  peerDependencies:
+    "@babel/core": ">=7"
+  checksum: 0bc5f8786165db87d4700dfdb75a54e98b7ae7ae6929ff37c3df265bed759398cf346ea422b6fc5de7e271e605915363d060f564aec27ba508ef8b419e55c34d
+  languageName: node
+  linkType: hard
+
+"@linaria/react@npm:^3.0.0-beta.15":
+  version: 3.0.0-beta.18
+  resolution: "@linaria/react@npm:3.0.0-beta.18"
+  dependencies:
+    "@emotion/is-prop-valid": ^0.8.8
+    "@linaria/core": ^3.0.0-beta.18
+  peerDependencies:
+    react: ">=16"
+  checksum: 5f7661d31e35bea46f9cdf2e582518c1a8d0cb85afa63b265be2e95691bd4952bb06cb400d2dd32c9d61f6c2c0920e20ea0d9de2069532b5afe2d816f518f63b
+  languageName: node
+  linkType: hard
+
+"@linaria/shaker@npm:^3.0.0-beta.15":
+  version: 3.0.0-beta.18
+  resolution: "@linaria/shaker@npm:3.0.0-beta.18"
+  dependencies:
+    "@babel/generator": ">=7"
+    "@babel/plugin-transform-runtime": ">=7"
+    "@babel/plugin-transform-template-literals": ">=7"
+    "@babel/preset-env": ">=7"
+    "@linaria/babel-preset": ^3.0.0-beta.18
+    "@linaria/logger": ^3.0.0-beta.15
+    "@linaria/preeval": ^3.0.0-beta.18
+    babel-plugin-transform-react-remove-prop-types: ^0.4.24
+    ts-invariant: ^0.9.0
+  peerDependencies:
+    "@babel/core": ">=7"
+  checksum: 7740b9a4ec513e4be6e897a9c618b7bb30296717a30b62da7ee9d181e8243e55ff2073540db4b2abae24e5ed57027298a939f254f8f870f4795015aa97b849f7
+  languageName: node
+  linkType: hard
+
+"@linaria/utils@npm:^3.0.0-beta.18":
+  version: 3.0.0-beta.18
+  resolution: "@linaria/utils@npm:3.0.0-beta.18"
+  checksum: ecbd189c93fc31175e5107eb9ced88da260181d16eb93ee22b54abff72858bef12edfd29771865f85babe4a6b6166dc8616a030c78c352ac3896f5d875cf80a4
+  languageName: node
+  linkType: hard
+
+"@linaria/webpack-loader@npm:^3.0.0-beta.15":
+  version: 3.0.0-beta.18
+  resolution: "@linaria/webpack-loader@npm:3.0.0-beta.18"
+  dependencies:
+    "@linaria/webpack4-loader": ^3.0.0-beta.18
+    "@linaria/webpack5-loader": ^3.0.0-beta.18
+  checksum: 2b08061cf9dc74e5d99f5fd8067c77af687336601b59783159c8565c7f69d2edeb7deb238b45ab2a5d5962398b08e96865f8aa8fff1760eba4d898404fb4c250
+  languageName: node
+  linkType: hard
+
+"@linaria/webpack4-loader@npm:^3.0.0-beta.18":
+  version: 3.0.0-beta.18
+  resolution: "@linaria/webpack4-loader@npm:3.0.0-beta.18"
+  dependencies:
+    "@linaria/babel-preset": ^3.0.0-beta.18
+    "@linaria/logger": ^3.0.0-beta.15
+    enhanced-resolve: ^4.1.0
+    loader-utils: ^1.2.3
+    mkdirp: ^0.5.1
+  peerDependencies:
+    "@babel/core": ">=7"
+  checksum: 30e6fe858a85b4aa1525ac26274992d199f9b795bdd47bb995bea687c69c20daeadc81fb5d91c556e732d22512d0b75a4ba4272d7d8cab69a1473486c92f4b71
+  languageName: node
+  linkType: hard
+
+"@linaria/webpack5-loader@npm:^3.0.0-beta.18":
+  version: 3.0.0-beta.18
+  resolution: "@linaria/webpack5-loader@npm:3.0.0-beta.18"
+  dependencies:
+    "@linaria/babel-preset": ^3.0.0-beta.18
+    "@linaria/logger": ^3.0.0-beta.15
+    enhanced-resolve: ^5.3.1
+    loader-utils: ^2.0.0
+    mkdirp: ^0.5.1
+  peerDependencies:
+    "@babel/core": ">=7"
+    webpack: ">=5"
+  checksum: 92db233501d21e4eefe5b5159a377438842a5717ec17cca43c05434dfb02c3344b818f3c908524682731fb5888d2d20a438f35b30081a46eeedb629744d89e8e
   languageName: node
   linkType: hard
 
@@ -8527,7 +8647,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"algoliasearch@npm:^4.0.0, algoliasearch@npm:^4.13.0":
+"algoliasearch@npm:^4.0.0, algoliasearch@npm:^4.12.0, algoliasearch@npm:^4.13.0":
   version: 4.13.0
   resolution: "algoliasearch@npm:4.13.0"
   dependencies:
@@ -10711,7 +10831,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cheerio@npm:^1.0.0-rc.10":
+"cheerio@npm:^1.0.0-rc.10, cheerio@npm:^1.0.0-rc.9":
   version: 1.0.0-rc.10
   resolution: "cheerio@npm:1.0.0-rc.10"
   dependencies:
@@ -13454,7 +13574,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.9.2":
+"enhanced-resolve@npm:^5.3.1, enhanced-resolve@npm:^5.9.2":
   version: 5.9.2
   resolution: "enhanced-resolve@npm:5.9.2"
   dependencies:
@@ -16247,6 +16367,13 @@ __metadata:
     readable-stream: ^2.0.1
     wbuf: ^1.1.0
   checksum: 2de144115197967ad6eeee33faf41096c6ba87078703c5cb011632dcfbffeb45784569e0cf02c317bd79c48375597c8ec88c30fff5bb0b023e8f654fb6e9c06e
+  languageName: node
+  linkType: hard
+
+"htm@npm:^3.0.0":
+  version: 3.1.0
+  resolution: "htm@npm:3.1.0"
+  checksum: d6d00146bcc1d2cc45ae6e82f5a54e8b5d1142fe67d3b7363503926c426f608e359ae7bc67242efa0e6afda278ae3865a303d82200a4399cabe53c0a05f82fa8
   languageName: node
   linkType: hard
 
@@ -19821,6 +19948,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lunr-languages@npm:^1.4.0":
+  version: 1.9.0
+  resolution: "lunr-languages@npm:1.9.0"
+  checksum: 19da5df19ba77bc5b91653ed801676f2cb6d4f38dc5fd1d5446d909e4134c54e206f97715814abdeb6792bd4e21915259a8c3e02b3a8727ec8545f2a6d13dd11
+  languageName: node
+  linkType: hard
+
 "lz-string@npm:^1.4.4":
   version: 1.4.4
   resolution: "lz-string@npm:1.4.4"
@@ -19948,6 +20082,13 @@ __metadata:
   dependencies:
     object-visit: ^1.0.0
   checksum: c27045a5021c344fc19b9132eb30313e441863b2951029f8f8b66f79d3d8c1e7e5091578075a996f74e417479506fe9ede28c44ca7bc351a61c9d8073daec36a
+  languageName: node
+  linkType: hard
+
+"mark.js@npm:^8.11.1":
+  version: 8.11.1
+  resolution: "mark.js@npm:8.11.1"
+  checksum: aa6b9ae1c67245348d5b7abd253ef2acd6bb05c6be358d7d192416d964e42665fc10e0e865591c6f93ab9b57e8da1f23c23216e8ebddb580905ea7a0c0df15d4
   languageName: node
   linkType: hard
 
@@ -23387,6 +23528,13 @@ __metadata:
   peerDependencies:
     preact: ">=10"
   checksum: 69e36751415cd81b68ac23811122e674f761efca0f5365b5ac90e62498ee1f4d25abe718b6c21f52faa8764582a667378fe1817dadba69ad24259033fddd6d21
+  languageName: node
+  linkType: hard
+
+"preact@npm:^10.0.0":
+  version: 10.7.1
+  resolution: "preact@npm:10.7.1"
+  checksum: e99d08bd38372e78ce1c84e68685cad66adf076bd95069bc8bcd32c9903a4df09c01d5b04aad849527362b67cc2c09446b647f72de4e67d0578fdea0f904f28f
   languageName: node
   linkType: hard
 
@@ -28770,6 +28918,15 @@ __metadata:
   version: 2.2.0
   resolution: "ts-dedent@npm:2.2.0"
   checksum: 93ed8f7878b6d5ed3c08d99b740010eede6bccfe64bce61c5a4da06a2c17d6ddbb80a8c49c2d15251de7594a4f93ffa21dd10e7be75ef66a4dc9951b4a94e2af
+  languageName: node
+  linkType: hard
+
+"ts-invariant@npm:^0.9.0":
+  version: 0.9.4
+  resolution: "ts-invariant@npm:0.9.4"
+  dependencies:
+    tslib: ^2.1.0
+  checksum: c9e5726361fa266916966b2070605f8664b6dd1d8b0ef7565dbf056abb6a87be26195985ef62dd97aeb0894cf2f4ad5b7f0d89dadadc197eaa38e99222afa29c
   languageName: node
   linkType: hard
 
