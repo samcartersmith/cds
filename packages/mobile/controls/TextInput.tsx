@@ -95,7 +95,6 @@ export const TextInput = memo(
 
       return (
         <InputStack
-          testID={testID}
           width={width}
           borderRadius={borderRadius}
           disabled={disabled}
@@ -112,7 +111,7 @@ export const TextInput = memo(
               accessibilityHint={accessibilityLabel}
               disabled={disabled}
               compact={compact}
-              testID={testIDMap?.input ?? ''}
+              testID={testID}
               {...editableInputAddonProps}
             />
           }

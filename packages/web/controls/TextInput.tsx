@@ -142,7 +142,7 @@ export const TextInput = memo(
           onBlur={handleOnBlur}
           disabled={disabled}
           compact={compact}
-          testID={testIDMap?.input ?? ''}
+          testID={testID}
           ref={refs}
           id={label}
           {...htmlInputElmProps}
@@ -153,10 +153,10 @@ export const TextInput = memo(
       align,
       accessibilityLabel,
       label,
+      testID,
       helperTextId,
       start,
       startSpacing,
-      testIDMap?.input,
       handleOnFocus,
       handleOnBlur,
       disabled,
@@ -168,7 +168,6 @@ export const TextInput = memo(
     return (
       <TextInputFocusVariantContext.Provider value={focused ? focusedVariant : undefined}>
         <InputStack
-          testID={testID}
           width={width}
           disabled={disabled}
           variant={variant}

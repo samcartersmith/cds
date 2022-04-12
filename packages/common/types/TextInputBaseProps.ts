@@ -21,7 +21,6 @@ export type TextInputBaseProps = {
    * Add ability to test individual parts of the input
    */
   testIDMap?: {
-    input?: string;
     start?: string;
     end?: string;
     label?: string;

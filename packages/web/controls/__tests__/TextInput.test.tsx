@@ -50,16 +50,18 @@ describe('TextInput', () => {
 
   it('renders an Input', () => {
     const testID = 'input-id';
+    const value = 'input';
+
     const result = render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
-        testIDMap={{
-          input: testID,
-        }}
+        value={value}
+        testID={testID}
       />,
     );
-    expect(result.getByTestId(testID)).toBeDefined();
+    const input = result.getByTestId(testID) as HTMLInputElement;
+    expect(input.value).toBe(value);
   });
 
   it('renders a start node', () => {
