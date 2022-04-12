@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/app/nextjs-playground",
+    "outDir": "../../.nx/dist/examples/nextjs",
     "noEmit": false,
     "jsx": "preserve"
   },

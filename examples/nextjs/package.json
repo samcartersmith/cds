@@ -1,19 +1,19 @@
 {
-  "private": true,
+  "name": "nextjs",
+  "version": "0.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "@cbhq/cds-web": "^0.37.4",
+    "@cbhq/cds-web": "^0.38.1",
     "next": "latest",
     "next-compose-plugins": "^2.2.1",
     "next-linaria": "^0.11.0",
-    "next-transpile-modules": "^9.0.0"
+    "next-transpile-modules": "^9.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
-  "peerDependencies": {
-    "react": ">=17.0.0",
-    "react-dom": ">=17.0.0"
-  }
+  "packageManager": "yarn@3.1.0"
 }

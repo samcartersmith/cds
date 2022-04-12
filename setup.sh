@@ -7,3 +7,6 @@ rm -rf dist/node_modules
 rm -rf dist/dist
 ../../node_modules/.bin/tsc --project ./tsconfig.build.json
 cd ../..
+cd examples/nextjs
+yarn install
+cd ../..

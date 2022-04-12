@@ -2,7 +2,8 @@
   "extends": "./tsconfig.base.json",
   "include": [
     "packages/**/*",
-    "apps/**/*"
+    "apps/**/*",
+    "examples/**/*"
   ],
   "exclude": [
     "**/dist/**/*",

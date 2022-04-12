@@ -12,6 +12,6 @@
     "web": "packages/web",
     "web-utils": "packages/web-utils",
     "website": "apps/website",
-    "nextjs-playground": "apps/nextjs-playground"
+    "nextjs-example": "examples/nextjs"
   }
 }
