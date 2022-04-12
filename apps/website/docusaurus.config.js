@@ -52,14 +52,6 @@ module.exports = {
         alt: 'CDS Logo',
         src: 'img/logo.svg',
       },
-      items: [
-        { to: 'blog', label: 'Blog', position: 'left' },
-        {
-          href: 'https://github.cbhq.net/frontend/cds/tree/master',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
     },
     footer: {
       style: 'dark',
@@ -124,18 +116,6 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.cbhq.net/frontend/cds/tree/master/apps/website/',
           sidebarCollapsible: true,
-        },
-        blog: {
-          path: 'blog',
-          routeBasePath: 'blog',
-          blogSidebarCount: 'ALL',
-          blogSidebarTitle: 'All Blog posts',
-          showReadingTime: true,
-          editUrl: 'https://github.cbhq.net/frontend/cds/tree/master/apps/website/blog',
-          feedOptions: {
-            type: 'all',
-            language: 'en',
-          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
