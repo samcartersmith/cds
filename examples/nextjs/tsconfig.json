@@ -5,12 +5,6 @@
     "noEmit": false,
     "jsx": "preserve"
   },
-  "exclude": [
-    "babel.config.js"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["babel.config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

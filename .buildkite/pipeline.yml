@@ -48,6 +48,13 @@ steps:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci lint
 
+  - label: Format
+    <<: *shared_step
+    parallelism: 1
+    commands:
+      - tools/ci/setup.sh
+      - yarn mono-pipeline run-ci format
+
   - label: Test
     <<: *shared_step
     parallelism: 1

@@ -5,7 +5,9 @@ import { getBrowserGlobals } from '../utils/browser';
 
 export const useDeviceSpectrum = () => {
   const window = getBrowserGlobals()?.window;
-  const mediaQuery = useRef<MediaQueryList | undefined>(window?.matchMedia('(prefers-color-scheme: dark)'));
+  const mediaQuery = useRef<MediaQueryList | undefined>(
+    window?.matchMedia('(prefers-color-scheme: dark)'),
+  );
 
   const [deviceSpectrum, setDeviceSpectrum] = useState<Spectrum>(
     mediaQuery.current?.matches ? 'dark' : 'light',

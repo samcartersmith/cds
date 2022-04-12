@@ -1,11 +1,12 @@
-import { useCallback,useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { breakpoints } from '../layout/responsive';
-import {getBrowserGlobals, isSSR} from '../utils/browser';
+import { getBrowserGlobals, isSSR } from '../utils/browser';
 
 export const useIsMobile = () => {
-
-  const [width, setWidth] = useState<number | undefined>(!isSSR() ? getBrowserGlobals()?.window.innerWidth : undefined);
+  const [width, setWidth] = useState<number | undefined>(
+    !isSSR() ? getBrowserGlobals()?.window.innerWidth : undefined,
+  );
 
   const handleWindowSizeChange = useCallback(() => {
     setWidth(getBrowserGlobals()?.window.innerWidth);

@@ -1,35 +1,27 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-import React, { useCallback, useEffect,useMemo,  useState } from 'react';
-import Head from 'next/head'
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import Head from 'next/head';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { accounts } from '@cbhq/cds-common/internal/data/accounts';
-import { assetColors, assetImages,assets } from '@cbhq/cds-common/internal/data/assets';
+import { assetColors, assetImages, assets } from '@cbhq/cds-common/internal/data/assets';
 import { prices } from '@cbhq/cds-common/internal/data/prices';
 import { product } from '@cbhq/cds-common/internal/data/product';
 import { users } from '@cbhq/cds-common/internal/data/users';
-import {
-  sparklineInteractiveWithHeaderBuilder
-} from "@cbhq/cds-common/internal/sparklineInteractiveBuilder";
-import {sparklineInteractiveData} from "@cbhq/cds-common/internal/visualizations/SparklineInteractiveData";
+import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
+import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
-import {SetState} from "@cbhq/cds-web";
+import { SetState } from '@cbhq/cds-web';
 import { Button, IconButton } from '@cbhq/cds-web/buttons';
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardGroup,
-  FeedCard,
-} from '@cbhq/cds-web/cards';
-import {SelectOption, Switch} from '@cbhq/cds-web/controls';
-import {Icon, LogoMark, NavigationIconProps} from '@cbhq/cds-web/icons';
-import {Pictogram} from "@cbhq/cds-web/illustrations";
+import { Card, CardBody, CardFooter, CardGroup, FeedCard } from '@cbhq/cds-web/cards';
+import { SelectOption, Switch } from '@cbhq/cds-web/controls';
+import { Icon, LogoMark, NavigationIconProps } from '@cbhq/cds-web/icons';
+import { Pictogram } from '@cbhq/cds-web/illustrations';
 import { Divider, Group, HStack, VStack } from '@cbhq/cds-web/layout';
 import { Avatar } from '@cbhq/cds-web/media';
-import {NavigationBar, NavigationTitle, Sidebar, SidebarItem} from '@cbhq/cds-web/navigation';
-import {PopoverMenu, PopoverTrigger, SectionTitle} from "@cbhq/cds-web/overlays";
-import { FeatureFlagProvider, Pressable,ThemeProvider } from '@cbhq/cds-web/system';
+import { NavigationBar, NavigationTitle, Sidebar, SidebarItem } from '@cbhq/cds-web/navigation';
+import { PopoverMenu, PopoverTrigger, SectionTitle } from '@cbhq/cds-web/overlays';
+import { FeatureFlagProvider, Pressable, ThemeProvider } from '@cbhq/cds-web/system';
 import {
   Table,
   TableBody,
@@ -38,10 +30,7 @@ import {
   TableHeader,
   TableRow,
 } from '@cbhq/cds-web/tables';
-import {
-  TextHeadline,
-  TextTitle3,
-} from '@cbhq/cds-web/typography';
+import { TextHeadline, TextTitle3 } from '@cbhq/cds-web/typography';
 import {
   ProgressBar,
   ProgressBarWithFloatLabel,
@@ -71,7 +60,7 @@ const { name, avatar } = mocks.users[1];
 
 const sidebarItems = mocks.product.navigationItems;
 function createSidebarItem(activeIndex: number, setActiveIndex: SetState<number>) {
-  return ({title, icon}: {title: string, icon: string}, index: number) => {
+  return ({ title, icon }: { title: string; icon: string }, index: number) => {
     // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
     const handlePress = () => setActiveIndex(index);
 
@@ -115,7 +104,6 @@ function createMenuOption() {
   );
 }
 
-
 function Popover({ trigger }: { trigger: () => React.ReactElement }) {
   // const [value, onChange] = useState<OptionValue>();
   const [value, onChange] = useState<string>('');
@@ -129,13 +117,11 @@ function Popover({ trigger }: { trigger: () => React.ReactElement }) {
       onChange={onChange}
       value={value}
     >
-      <PopoverTrigger>
-        {trigger()}
-      </PopoverTrigger>
+      <PopoverTrigger>{trigger()}</PopoverTrigger>
       <SectionTitle text="For Individuals" />
       {options.map(createMenuOption())}
     </PopoverMenu>
-  )
+  );
 }
 
 /** Triggers */
@@ -234,22 +220,19 @@ function VerticalDivider() {
 }
 
 function ChartWithBalance() {
-
   const [data, setData] = useState<null | typeof sparklineInteractiveData>(null);
 
   useEffect(() => {
-
     // hack to fix opaque selected data
     // TODO fix this
     setTimeout(() => {
       setData(sparklineInteractiveData);
     }, 0);
-
   }, []);
 
   return (
     <VStack width="100%" spacingTop={2}>
-      {!data && <div style={{height: "500px"}} />}
+      {!data && <div style={{ height: '500px' }} />}
       {data && <SparklineInteractiveWithHeaderBuild data={data} strokeColor={assets.btc.color} />}
     </VStack>
   );

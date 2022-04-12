@@ -15,7 +15,11 @@ import { noop } from '@cbhq/cds-utils';
 
 import { useOpacityAnimation } from './useOpacityAnimation';
 
-type SparklineInteractiveProviderProps = { children: React.ReactNode; compact?: boolean, gutter?: SpacingScale };
+type SparklineInteractiveProviderProps = {
+  children: React.ReactNode;
+  compact?: boolean;
+  gutter?: SpacingScale;
+};
 
 type SparklineInteractiveContextInterface = {
   isFallbackVisible: boolean;

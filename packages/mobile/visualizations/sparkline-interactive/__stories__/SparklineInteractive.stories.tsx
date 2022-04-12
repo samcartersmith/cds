@@ -179,9 +179,7 @@ const SparklineInteractiveScreen = () => {
       </Example>
       <Example spacing={4}>
         <Box>
-          <TextTitle3 spacingVertical={3}>
-            In Container With 4 spacing
-          </TextTitle3>
+          <TextTitle3 spacingVertical={3}>In Container With 4 spacing</TextTitle3>
           <SparklineInteractiveWithHeaderBuild
             data={sparklineInteractiveData}
             strokeColor="#F7931A"

@@ -1,6 +1,6 @@
 import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 
-import {getBrowserGlobals} from "../utils/browser";
+import { getBrowserGlobals } from '../utils/browser';
 
 export const observerErr =
   "💡 react-cool-dimensions: the browser doesn't support Resize Observer, please use polyfill: https://github.com/wellyshen/react-cool-dimensions#resizeobserver-polyfill";
@@ -132,13 +132,15 @@ export const useDimensions = <T extends HTMLElement>({
   useEffect(() => {
     if (!ref.current) return () => null;
     const window = getBrowserGlobals()?.window;
-    if (!window || (!('ResizeObserver' in window) || !('ResizeObserverEntry' in window)) && !polyfill) {
+    if (
+      !window ||
+      ((!('ResizeObserver' in window) || !('ResizeObserverEntry' in window)) && !polyfill)
+    ) {
       // eslint-disable-next-line no-console
       console.error(observerErr);
       return () => null;
     }
 
-     
     const Observer = (polyfill || window.ResizeObserver) as typeof window.ResizeObserver;
 
     observerRef.current = new Observer(([entry]) => {

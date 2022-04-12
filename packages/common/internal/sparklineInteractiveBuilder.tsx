@@ -1,6 +1,6 @@
 import React, { memo, ReactNode, useCallback, useMemo, useRef, useState } from 'react';
 
-import {SpacingScale} from "../types";
+import { SpacingScale } from '../types';
 import { ChartData, ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
 import { SparklineInteractiveBaseProps } from '../types/SparklineInteractiveBaseProps';
 import {

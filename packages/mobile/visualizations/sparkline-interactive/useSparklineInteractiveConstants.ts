@@ -8,7 +8,7 @@ import {
 
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 
-import {useSparklineInteractiveContext} from "./SparklineInteractiveProvider";
+import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 
 type Props = {
   compact?: boolean;

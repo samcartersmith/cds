@@ -20,9 +20,7 @@ module.exports = ({ config, environmentFile }) => {
     definitions.FIGMA_ACCESS_TOKEN = JSON.stringify(envVars.FIGMA_ACCESS_TOKEN);
   }
 
-  config.plugins?.push(
-    new webpack.DefinePlugin(definitions),
-  );
+  config.plugins?.push(new webpack.DefinePlugin(definitions));
 
   const isProduction = config.mode === 'production';
 

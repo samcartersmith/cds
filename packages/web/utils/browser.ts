@@ -30,4 +30,3 @@ export function getBrowserGlobals() {
   // eslint-disable-next-line no-restricted-globals
   return isSSR() ? undefined : { window, document };
 }
-

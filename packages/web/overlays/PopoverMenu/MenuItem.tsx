@@ -6,7 +6,7 @@ import { selectKeys } from '@cbhq/cds-common/tokens/menu';
 
 import { insetFocusRing } from '../../styles/focus';
 import { Pressable, PressableProps } from '../../system/Pressable';
-import {getBrowserGlobals} from "../../utils/browser";
+import { getBrowserGlobals } from '../../utils/browser';
 import { cx } from '../../utils/linaria';
 
 import { usePopoverContext } from './PopoverContext';

@@ -1,6 +1,6 @@
 import React, { memo, ReactElement, RefObject, useCallback, useEffect, useRef } from 'react';
 
-import {getBrowserGlobals, isSSR} from '../utils/browser';
+import { getBrowserGlobals, isSSR } from '../utils/browser';
 
 export type FocusTrapProps = { children: ReactElement; onEscPress?: () => void };
 
@@ -22,7 +22,7 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
       const firstElement = focusableModalElements[0] as HTMLElement;
       const lastElement = focusableModalElements[focusableModalElements.length - 1] as HTMLElement;
 
-      const document = getBrowserGlobals()?.document
+      const document = getBrowserGlobals()?.document;
       // bring focus inside modal
       if (
         !isFocused.current &&

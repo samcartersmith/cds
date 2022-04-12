@@ -9,6 +9,9 @@
     },
     "typecheck": {
       "executor": "./tools/executors/typecheck:typecheck"
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
     }
   }
 }
