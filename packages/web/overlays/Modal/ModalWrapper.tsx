@@ -32,7 +32,7 @@ export type ModalWrapperProps = {
 
   onOverlayPress: (() => void) | undefined;
 } & Pick<PortalProps, 'disablePortal'> &
-  Pick<ModalBaseProps, 'visible' | 'zIndex' | 'children' | 'onDidClose'> &
+  Pick<ModalBaseProps, 'visible' | 'zIndex' | 'children' | 'onDidClose' | 'testID'> &
   Pick<BoxProps, 'dangerouslySetClassName'> &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy' | 'id'>;
 
@@ -51,6 +51,7 @@ export const ModalWrapper = memo(
       dangerouslyDisableResponsiveness = false,
       onOverlayPress,
       onDidClose,
+      testID,
     } = props;
 
     const blockScroll = useScrollBlocker();
@@ -82,6 +83,7 @@ export const ModalWrapper = memo(
               id={id}
               zIndex={customZIndex ?? zIndex.overlays.modal}
               dangerouslySetClassName={dangerouslySetClassName}
+              testID={testID}
               ref={ref}
             >
               <motion.div
