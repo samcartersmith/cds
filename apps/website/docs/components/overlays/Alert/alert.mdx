@@ -1,8 +1,38 @@
 ---
 title: Alert
 slug: /components/alert
+hide_title: true
 ---
 
-import { ComponentTabs } from ':cds-website/components/ComponentTabs';
+import { VStack } from '@cbhq/cds-web/alpha/VStack';
+import { Link } from '@cbhq/cds-web/typography/Link';
+import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-<ComponentTabs name="Alert" />
+import Design from './_design.mdx';
+import Usage from './_usage.mdx';
+import Props from './_implementation.mdx';
+
+<VStack gap={3}>
+  <TextDisplay3 as="h1">Alert</TextDisplay3>
+  <Link
+    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/Alert.tsx"
+    openInNewWindow
+  >
+    @cbhq/cds-(web|mobile)/overlays/Alert
+  </Link>
+  <Tabs>
+    <TabItem value="guidelines" label="Guidelines">
+      <VStack gap={3}>
+        <Design />
+      </VStack>
+    </TabItem>
+    <TabItem value="implementation" label="Implementation" default>
+      <VStack gap={3}>
+        <Usage />
+        <Props />
+      </VStack>
+    </TabItem>
+  </Tabs>
+</VStack>

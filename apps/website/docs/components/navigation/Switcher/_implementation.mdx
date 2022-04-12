@@ -1,0 +1,136 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### children <Badge variant="web" />
+
+Subject of the positionedOverlay that when interacted with will toggle the visibility of the content
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="children"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+### content <Badge variant="web" />
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="content"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+### disablePortal <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This disables React portal integration. Use this with caution.
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="disablePortal"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### height <Badge variant="web" />
+
+Calculated dynamically based on screen height
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="height"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['number', 'string']}
+/>
+
+### maxHeight <Badge variant="web" />
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="maxHeight"
+  required={false}
+  defaultValue="600"
+  mobileOptions={[]}
+  webOptions={['number', 'string']}
+/>
+
+### maxWidth <Badge variant="web" />
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="maxWidth"
+  required={false}
+  defaultValue="359"
+  mobileOptions={[]}
+  webOptions={['number', 'string']}
+/>
+
+### onClose <Badge variant="web" />
+
+Callback that is fired after the content animates out
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="onClose"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['() => void']}
+/>
+
+### onPressSubject <Badge variant="web" />
+
+Callback that fires when the subject is pressed
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="onPressSubject"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['() => void']}
+/>
+
+### visible <Badge variant="web" />
+
+Controls visibility of the Popover content
+
+<ApiDetails
+  componentName="Switcher"
+  propertyName="visible"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>

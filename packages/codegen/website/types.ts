@@ -21,14 +21,6 @@ export type ComponentDocgenResponse = {
 
 export type GetSubDirFilesResponse = { subDir: SubDir; files: string[] };
 
-export type SidebarCategory = {
-  type: 'category';
-  label: string;
-  collapsed: boolean;
-  items: string[] | SidebarCategory;
-};
-
 export type FilterFn = (value: string, index: number, array: string[]) => boolean;
 export type DocgenDataForPlatform = Record<SubDir, ComponentDoc[]>;
 export type DocgenData = { web: DocgenDataForPlatform; mobile: DocgenDataForPlatform };
-export type FlattenTemplatesMapResponse = { displayName: string; subDir: SubDir; files: string[] };

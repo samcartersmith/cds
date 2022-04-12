@@ -1,0 +1,505 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### accessibilityLabel
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="Text"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="Text"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### align
+
+Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to `start` on Android.
+
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) | [React Native docs](https://reactnative.dev/docs/text-style-props#textalign)**
+
+<ApiDetails
+  componentName="Text"
+  propertyName="align"
+  required={false}
+  defaultValue="start"
+  mobileOptions={['center', 'end', 'justify', 'start']}
+  webOptions={['center', 'end', 'justify', 'start']}
+/>
+
+### animated <Badge variant="mobile" />
+
+If value is `true` then style prop can take animated values.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="animated"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+### as <Badge variant="web" />
+
+A semantic HTML element or a React component to be rendered. All native HTML attributes for that element will be available through the styled component.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="as"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'abbr',
+    'code',
+    'dd',
+    'del',
+    'div',
+    'dl',
+    'dt',
+    'ins',
+    'kbd',
+    'label',
+    'li',
+    'output',
+    'p',
+    'pre',
+    'q',
+    's',
+    'span',
+    'strong',
+    'sub',
+    'sup',
+    'time',
+  ]}
+/>
+
+### color
+
+Foreground text color. Accepts a valid `PaletteForeground` alias.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="color"
+  required={false}
+  defaultValue="foreground"
+  mobileOptions={[
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+  webOptions={[
+    'currentColor',
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+/>
+
+### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="dangerouslySetClassName"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### dangerouslySetColor <Badge variant="danger" order={1} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="dangerouslySetColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="dangerouslySetStyle"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>>',
+    'RegisteredStyle<TextStyle>',
+    'TextStyle',
+    'Value',
+    'WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<TextStyle>',
+    'false',
+    'null',
+  ]}
+  webOptions={[]}
+/>
+
+### deprecatedLineHeight <Badge variant="mobile" /> <Badge variant="deprecated" order={2} />
+
+Override line-height. This is deprecated since overriding this prevents line height from being scale aware.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="deprecatedLineHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['none', 'number']}
+  webOptions={[]}
+/>
+
+### disabled
+
+Add disabled opacity style to text
+
+<ApiDetails
+  componentName="Text"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### display <Badge variant="web" />
+
+Set CSS display attribute.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="display"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['block', 'initial', 'inline']}
+/>
+
+### ellipsize <Badge variant="mobile" />
+
+Choose ellipsize mode.
+
+**[React Native docs](https://reactnative.dev/docs/text#ellipsizemode)**
+
+<ApiDetails
+  componentName="Text"
+  propertyName="ellipsize"
+  required={false}
+  defaultValue=""
+  mobileOptions={['clip', 'head', 'middle', 'tail']}
+  webOptions={[]}
+/>
+
+### id <Badge variant="web" />
+
+Used to associate a label with a control
+
+<ApiDetails
+  componentName="Text"
+  propertyName="id"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### inherit
+
+Should the Text component inherit styles of parent
+
+<ApiDetails
+  componentName="Text"
+  propertyName="inherit"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### mono
+
+Use CoinbaseMono font
+
+<ApiDetails
+  componentName="Text"
+  propertyName="mono"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### noWrap
+
+Set text to be in a single line.
+
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)**
+
+<ApiDetails
+  componentName="Text"
+  propertyName="noWrap"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### opacity <Badge variant="mobile" />
+
+Opacity of element
+
+<ApiDetails
+  componentName="Text"
+  propertyName="opacity"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RegisteredStyle<TextStyle>',
+    'Value',
+    'WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<TextStyle>',
+    'false',
+    'null',
+    'number',
+  ]}
+  webOptions={[]}
+/>
+
+### overflow <Badge variant="web" />
+
+Set overflow behavior.
+
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)**
+
+<ApiDetails
+  componentName="Text"
+  propertyName="overflow"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['break', 'clip', 'truncate', 'wrap']}
+/>
+
+### selectable
+
+Set select behavior. On mobile, selectable is binary, none will be not selectable and either text or all will be selectable on Android. It is not yet supported on iOS.
+
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/user-select) | [React Native Docs](https://reactnative.dev/docs/text#selectable)**
+
+<ApiDetails
+  componentName="Text"
+  propertyName="selectable"
+  required={false}
+  defaultValue="'text' for web, 'none' for mobile"
+  mobileOptions={['all', 'none', 'text']}
+  webOptions={['all', 'none', 'text']}
+/>
+
+### slashedZero
+
+Use character for number zero with a slash through it to differentiate it from the letter O.
+
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)**
+
+<ApiDetails
+  componentName="Text"
+  propertyName="slashedZero"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### spacing
+
+Apply inner spacing on all sides.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingBottom
+
+Apply inner spacing on the bottom side.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacingBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingEnd
+
+Apply inner spacing on the trailing side.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacingEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingHorizontal
+
+Apply inner spacing on the leading and trailing sides.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacingHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingStart
+
+Apply inner spacing on the leading side.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacingStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingTop
+
+Apply inner spacing on the top side.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacingTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingVertical
+
+Apply inner spacing on the top and bottom sides.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacingVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### tabularNumbers
+
+Activates the set of figures where numbers are all of the same size, allowing them to be easily aligned.
+
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric) | [React Native Docs](https://reactnative.dev/docs/text-style-props#fontvariant)**
+
+<ApiDetails
+  componentName="Text"
+  propertyName="tabularNumbers"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="Text"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### transform
+
+Transform text to all uppercase, all lowercase, or capitalized. This is not available for label1, label2 and caption.
+
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform) | [React Native Docs](https://reactnative.dev/docs/text-style-props#texttransform)**
+
+<ApiDetails
+  componentName="Text"
+  propertyName="transform"
+  required={false}
+  defaultValue=""
+  mobileOptions={['capitalize', 'lowercase', 'none', 'uppercase']}
+  webOptions={['capitalize', 'lowercase', 'none', 'uppercase']}
+/>
+
+### underline
+
+Set text decoration to underline.
+
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) | [React Native Docs](https://reactnative.dev/docs/text-style-props#textdecorationline)**
+
+<ApiDetails
+  componentName="Text"
+  propertyName="underline"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>

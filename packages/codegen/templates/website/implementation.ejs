@@ -1,25 +1,8 @@
 import { ApiDetails } from ":cds-website/components/ApiDetails";
 import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
 import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
-
-<% if (data.importPath && data.sourceUrl){ %>
-> [<%- data.importPath %>](<%- data.sourceUrl %>)
-<% } %>
-
-<ComponentDetails componentName="<%- data.displayName %>" templateName="intro" />
-
-## Usage
-
-<ComponentDetails componentName="<%- data.displayName %>" templateName="usage" />
-
-## Accessibility
-
-<ComponentDetails componentName="<%- data.displayName %>" templateName="a11y" />
-
-## Props
 
 <%_ data.props.map(({ heading, name, description, link, defaultValue, required, danger, mobileOptions, webOptions }) => { _%>
 ### <%- heading %>
@@ -41,8 +24,4 @@ import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
   webOptions={<%- JSON.stringify(webOptions) %>}
 />
 
-<ComponentDetails componentName="<%- data.displayName %>" templateName="prop-<%- name %>" />
-
 <% }) %>
-
-<ComponentDetails componentName="<%- data.displayName %>" templateName="outro" />

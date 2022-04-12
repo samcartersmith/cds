@@ -1,0 +1,228 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### accessibilityHint
+
+Accessibility hint for assisted devices when focused. Message should indicate the purpose of the control. If not supplied, will default to label
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="accessibilityHint"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### accessibilityLabel
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### accessibilityLabelledBy
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### bordered <Badge variant="web" />
+
+Adds border to input
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="bordered"
+  required={false}
+  defaultValue="true"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### compact
+
+Enables compact variation
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="compact"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### disableBackArrow <Badge variant="mobile" />
+
+If this is set to true, the start icon wont toggle between backArrow and Search. The start icon will always be a search icon
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="disableBackArrow"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+### disabled
+
+Toggles input interactability and opacity
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="disabled"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### hideStartIcon
+
+hide the start icon
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="hideStartIcon"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### onBack <Badge variant="mobile" />
+
+Callback is fired when backArrow is pressed. If disableBackArrow is true, this will do nothing
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="onBack"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void']}
+  webOptions={[]}
+/>
+
+### onChangeText
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="onChangeText"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### onClear
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="onClear"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void']}
+  webOptions={['MouseEventHandler<Element>']}
+/>
+
+### onPress <Badge variant="web" />
+
+Callback fired when pressed/clicked
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['MouseEventHandler<Element>']}
+/>
+
+### onSearch
+
+Callback is fired when a user hits enter on the keyboard. Can obtain the query through str parameter
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="onSearch"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(str: string) => void']}
+  webOptions={['(str: string) => void']}
+/>
+
+### placeholder
+
+Placeholder text displayed inside of the input. Will be replaced if there is a value.
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="placeholder"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### testIDMap
+
+Add ability to test individual parts of the input
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="testIDMap"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    '{ input?: string | undefined; start?: string | undefined; end?: string | undefined; label?: string | undefined; helperText?: string | undefined; }',
+  ]}
+  webOptions={[
+    '{ input?: string | undefined; start?: string | undefined; end?: string | undefined; label?: string | undefined; helperText?: string | undefined; }',
+  ]}
+/>
+
+### width
+
+Width of input as a percentage string.
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="width"
+  required={false}
+  defaultValue="100%"
+  mobileOptions={['`${number}%`', 'number']}
+  webOptions={['`${number}%` & string', 'number']}
+/>

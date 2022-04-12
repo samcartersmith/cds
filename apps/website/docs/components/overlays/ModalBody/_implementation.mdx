@@ -1,0 +1,31 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### alignItems <Badge variant="web" />
+
+Set the alignment of all direct children on the cross-axis.
+
+<ApiDetails
+  componentName="ModalBody"
+  propertyName="alignItems"
+  required={false}
+  defaultValue="stretch"
+  mobileOptions={[]}
+  webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+/>
+
+### flexDirection <Badge variant="web" />
+
+Order children on the main-axis in this direction.
+
+<ApiDetails
+  componentName="ModalBody"
+  propertyName="flexDirection"
+  required={false}
+  defaultValue="column"
+  mobileOptions={[]}
+  webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+/>

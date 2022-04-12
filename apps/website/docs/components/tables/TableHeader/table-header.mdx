@@ -1,8 +1,32 @@
 ---
 title: TableHeader
 slug: /components/table-header
+hide_title: true
 ---
 
-import { ComponentTabs } from ':cds-website/components/ComponentTabs';
+import { VStack } from '@cbhq/cds-web/alpha/VStack';
+import { Link } from '@cbhq/cds-web/typography/Link';
+import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-<ComponentTabs name="TableHeader" />
+import Usage from './_usage.mdx';
+import Props from './_implementation.mdx';
+
+<VStack gap={3}>
+  <TextDisplay3 as="h1">TableHeader</TextDisplay3>
+  <Link
+    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/tables/TableHeader.tsx"
+    openInNewWindow
+  >
+    @cbhq/cds-web/tables/TableHeader
+  </Link>
+  <Tabs>
+    <TabItem value="implementation" label="Implementation" default>
+      <VStack gap={3}>
+        <Usage />
+        <Props />
+      </VStack>
+    </TabItem>
+  </Tabs>
+</VStack>

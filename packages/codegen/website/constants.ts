@@ -1,8 +1,6 @@
 import path from 'path';
 import { arrayToObject } from '@cbhq/cds-utils/array';
 
-import { SubDir } from './types';
-
 export const CDS_DIR = path.resolve(__dirname, '../..');
 export const TSCONFIG_PATH = path.resolve(__dirname, '../', 'tsconfig.json');
 export const DOCS_DIR = '../apps/website/docs/components';
@@ -46,12 +44,9 @@ export const filesToIgnore = [
   'Badge',
   'Overlay',
   'Paddle',
+  'Spacer',
+  'Divider',
 ];
-
-/**
- * Components you only want to use `intro.mdx` and `usage.mdx` templates for. Excludes design/implementation tabs, api table, etc.
- */
-export const simpleDocs = ['Spacer', 'Divider', 'Badge'];
 
 /**
  * Use the displayNameMap for any components that you want to rename when displayed on website.
@@ -59,17 +54,3 @@ export const simpleDocs = ['Spacer', 'Divider', 'Badge'];
  * Since we don't want to expose a `Text` component - we use this displayNameMap to rename one of them
  */
 export const displayNameMap = { TextBody: 'Text' };
-
-/**
- * Not necessary, but if you don't want a `v-stack.mdx` file you can use the kebabCaseMap to override.
- */
-export const kebabCaseMap = { VStack: 'vstack', HStack: 'hstack' };
-
-/**
- * Use the customDocsMap to add any mdx routes which are not auto generated.
- * The key value is the category it should be grouped in.
- * The second value is the path (relative to website folder) that the .mdx file is.
- * */
-export const customDocsMap: Partial<Record<SubDir, string[]>> = {
-  icons: ['components/icons/logo'],
-};

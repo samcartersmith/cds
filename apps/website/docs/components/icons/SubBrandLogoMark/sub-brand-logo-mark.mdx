@@ -1,8 +1,49 @@
 ---
 title: SubBrandLogoMark
 slug: /components/sub-brand-logo-mark
+hide_title: true
 ---
 
-import { ComponentTabs } from ':cds-website/components/ComponentTabs';
+import { VStack } from '@cbhq/cds-web/alpha/VStack';
+import { Link } from '@cbhq/cds-web/typography/Link';
+import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-<ComponentTabs name="SubBrandLogoMark" />
+import Usage from './_usage.mdx';
+import Props from './_implementation.mdx';
+
+<VStack gap={3}>
+  <TextDisplay3 as="h1">SubBrandLogoMark</TextDisplay3>
+  <Link
+    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/icons/SubBrandLogoMark.tsx"
+    openInNewWindow
+  >
+    @cbhq/cds-(web|mobile)/icons/SubBrandLogoMark
+  </Link>
+  <Tabs>
+    <TabItem value="implementation" label="Implementation" default>
+      <VStack gap={3}>
+        <Usage />
+        <Props />
+      </VStack>
+    </TabItem>
+  </Tabs>
+</VStack>
+
+## Props
+
+### type
+
+<ApiDetails
+  componentName="SubBrandLogoMark"
+  propertyName="type"
+  required={true}
+  defaultValue=""
+  mobileOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
+  webOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
+/>
+
+<ComponentDetails componentName="SubBrandLogoMark" templateName="prop-type" />
+
+<ComponentDetails componentName="SubBrandLogoMark" templateName="outro" />

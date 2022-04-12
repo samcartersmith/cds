@@ -1,0 +1,309 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### active
+
+Toggles the active and inactive state of the navigation icon
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="active"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### animated <Badge variant="mobile" />
+
+If value is `true` then style prop can take animated values.
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="animated"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+### badge <Badge variant="deprecated" order={1} />
+
+Add a badge to the top right of an icon
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="badge"
+  required={false}
+  defaultValue=""
+  mobileOptions={['ReactElement<BadgeProps, string | JSXElementConstructor<any>>']}
+  webOptions={['ReactElement<BadgeProps, string | JSXElementConstructor<any>>']}
+/>
+
+### dangerouslySetColor <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="dangerouslySetColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### labeledBy <Badge variant="web" />
+
+If the icon is labelled by an independent element, then provide that elements id. This is used to set the aria-labelledby value on the icon. If the `title` prop is also provided, then `labeledBy` will be used to set the id on the `<title>` element.
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="labeledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### name
+
+Navigation icon names
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="name"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'account',
+    'addPeople',
+    'appSwitcher',
+    'application',
+    'bell',
+    'browser',
+    'caretUp',
+    'cash',
+    'chartBar',
+    'chartCandles',
+    'chartPie',
+    'dashboard',
+    'defi',
+    'directDeposit',
+    'documentation',
+    'earn',
+    'eye',
+    'gab',
+    'giftBox',
+    'home',
+    'invoice',
+    'moreVertical',
+    'newsfeed',
+    'pay',
+    'paymentCard',
+    'planet',
+    'scanQrCode',
+    'securityShield',
+    'settings',
+    'shoppingCart',
+    'support',
+    'tag',
+    'taxes',
+    'trading',
+    'trophyCup',
+    'wallet',
+  ]}
+  webOptions={[
+    'account',
+    'addPeople',
+    'appSwitcher',
+    'application',
+    'bell',
+    'browser',
+    'caretUp',
+    'cash',
+    'chartBar',
+    'chartCandles',
+    'chartPie',
+    'dashboard',
+    'defi',
+    'directDeposit',
+    'documentation',
+    'earn',
+    'eye',
+    'gab',
+    'giftBox',
+    'home',
+    'invoice',
+    'moreVertical',
+    'newsfeed',
+    'pay',
+    'paymentCard',
+    'planet',
+    'scanQrCode',
+    'securityShield',
+    'settings',
+    'shoppingCart',
+    'support',
+    'tag',
+    'taxes',
+    'trading',
+    'trophyCup',
+    'wallet',
+  ]}
+/>
+
+### opacity <Badge variant="mobile" />
+
+Opacity of element
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="opacity"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RegisteredStyle<TextStyle>',
+    'Value',
+    'WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<TextStyle>',
+    'false',
+    'null',
+    'number',
+  ]}
+  webOptions={[]}
+/>
+
+### size
+
+Size of navigation Icon
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="size"
+  required={false}
+  defaultValue="l"
+  mobileOptions={['l', 'm', 's']}
+  webOptions={['l', 'm', 's']}
+/>
+
+### spacing
+
+Apply inner spacing on all sides.
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="spacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingBottom
+
+Apply inner spacing on the bottom side.
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="spacingBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingEnd
+
+Apply inner spacing on the trailing side.
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="spacingEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingHorizontal
+
+Apply inner spacing on the leading and trailing sides.
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="spacingHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingStart
+
+Apply inner spacing on the leading side.
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="spacingStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingTop
+
+Apply inner spacing on the top side.
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="spacingTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingVertical
+
+Apply inner spacing on the top and bottom sides.
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="spacingVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### title <Badge variant="web" />
+
+Give the icon a description. It will show up in a tooltip after hovering over the icon for 3s. This is a default browser feature and very helpful to users to understand what the icon does.
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="title"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>

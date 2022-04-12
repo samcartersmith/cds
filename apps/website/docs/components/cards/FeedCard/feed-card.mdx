@@ -1,8 +1,34 @@
 ---
 title: FeedCard
 slug: /components/feed-card
+hide_title: true
 ---
 
-import { ComponentTabs } from ':cds-website/components/ComponentTabs';
+import { VStack } from '@cbhq/cds-web/alpha/VStack';
+import { Link } from '@cbhq/cds-web/typography/Link';
+import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-<ComponentTabs name="FeedCard" />
+import A11y from './_a11y.mdx';
+import Usage from './_usage.mdx';
+import Props from './_implementation.mdx';
+
+<VStack gap={3}>
+  <TextDisplay3 as="h1">FeedCard</TextDisplay3>
+  <Link
+    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/cards/FeedCard.tsx"
+    openInNewWindow
+  >
+    @cbhq/cds-(web|mobile)/cards/FeedCard
+  </Link>
+  <Tabs>
+    <TabItem value="implementation" label="Implementation" default>
+      <VStack gap={3}>
+        <Usage />
+        <A11y />
+        <Props />
+      </VStack>
+    </TabItem>
+  </Tabs>
+</VStack>

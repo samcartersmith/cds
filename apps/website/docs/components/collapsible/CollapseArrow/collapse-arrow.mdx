@@ -1,8 +1,30 @@
 ---
 title: CollapseArrow
 slug: /components/collapse-arrow
+hide_title: true
 ---
 
-import { ComponentTabs } from ':cds-website/components/ComponentTabs';
+import { VStack } from '@cbhq/cds-web/alpha/VStack';
+import { Link } from '@cbhq/cds-web/typography/Link';
+import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-<ComponentTabs name="CollapseArrow" />
+import Props from './_implementation.mdx';
+
+<VStack gap={3}>
+  <TextDisplay3 as="h1">CollapseArrow</TextDisplay3>
+  <Link
+    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/collapsible/CollapseArrow.tsx"
+    openInNewWindow
+  >
+    @cbhq/cds-web/collapsible/CollapseArrow
+  </Link>
+  <Tabs>
+    <TabItem value="implementation" label="Implementation" default>
+      <VStack gap={3}>
+        <Props />
+      </VStack>
+    </TabItem>
+  </Tabs>
+</VStack>

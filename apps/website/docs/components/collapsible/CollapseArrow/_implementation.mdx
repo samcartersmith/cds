@@ -1,0 +1,27 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### collapsed <Badge variant="web" />
+
+<ApiDetails
+  componentName="CollapseArrow"
+  propertyName="collapsed"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### degrees <Badge variant="web" />
+
+<ApiDetails
+  componentName="CollapseArrow"
+  propertyName="degrees"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['number']}
+/>

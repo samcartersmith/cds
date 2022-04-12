@@ -4,8 +4,8 @@ import { kebabCase } from '@cbhq/cds-utils/string';
 
 import { getSourcePath } from '../utils/getSourcePath';
 
-import { displayNameMap, filesToIgnore, kebabCaseMap, simpleDocs } from './constants';
-import { ComponentDocgenResponse, SubDir } from './types';
+import { displayNameMap, filesToIgnore } from './constants';
+import { SubDir } from './types';
 
 export const getFileName = (filePath: string) => path.basename(filePath);
 export const getComponentName = (filePath: string) =>
@@ -17,15 +17,11 @@ export const getDisplayName = (filePath: string) => {
 };
 export const getKebabName = (filePath: string) => {
   const name = getDisplayName(filePath);
-  if (name in kebabCaseMap) return kebabCaseMap[name as keyof typeof kebabCaseMap];
   return kebabCase(name);
 };
 
 export const excludeIgnored = (filePath: string) =>
   !filesToIgnore.includes(getDisplayName(filePath));
-export const includeSimpleFiles = ({ filePath }: ComponentDocgenResponse) =>
-  simpleDocs.includes(getDisplayName(filePath));
-export const excludeSimpleFiles = (res: ComponentDocgenResponse) => !includeSimpleFiles(res);
 
 export const getSubDirFiles =
   (startPath: string | undefined = 'web', extension = '.tsx', fullPaths?: string[]) =>

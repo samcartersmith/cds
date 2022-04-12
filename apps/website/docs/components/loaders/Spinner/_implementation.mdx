@@ -1,0 +1,55 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### color <Badge variant="web" />
+
+Color of spinner.
+
+<ApiDetails
+  componentName="Spinner"
+  propertyName="color"
+  required={false}
+  defaultValue="foregroundMuted"
+  mobileOptions={[]}
+  webOptions={[
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+/>
+
+### size <Badge variant="web" />
+
+The pixel size of the spinner. Restricting spinner to have a n:n aspect ratio (square basically)
+
+<ApiDetails
+  componentName="Spinner"
+  propertyName="size"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### testID <Badge variant="web" />
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="Spinner"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>

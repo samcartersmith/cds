@@ -1,8 +1,62 @@
 ---
 title: SubBrandLogoWordmark
 slug: /components/sub-brand-logo-wordmark
+hide_title: true
 ---
 
-import { ComponentTabs } from ':cds-website/components/ComponentTabs';
+import { VStack } from '@cbhq/cds-web/alpha/VStack';
+import { Link } from '@cbhq/cds-web/typography/Link';
+import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-<ComponentTabs name="SubBrandLogoWordmark" />
+import Usage from './_usage.mdx';
+import Props from './_implementation.mdx';
+
+<VStack gap={3}>
+  <TextDisplay3 as="h1">SubBrandLogoWordmark</TextDisplay3>
+  <Link
+    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/icons/SubBrandLogoWordmark.tsx"
+    openInNewWindow
+  >
+    @cbhq/cds-(web|mobile)/icons/SubBrandLogoWordmark
+  </Link>
+  <Tabs>
+    <TabItem value="implementation" label="Implementation" default>
+      <VStack gap={3}>
+        <Usage />
+        <Props />
+      </VStack>
+    </TabItem>
+  </Tabs>
+</VStack>
+
+## Props
+
+### foreground
+
+<ApiDetails
+  componentName="SubBrandLogoWordmark"
+  propertyName="foreground"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SubBrandLogoWordmark" templateName="prop-foreground" />
+
+### type
+
+<ApiDetails
+  componentName="SubBrandLogoWordmark"
+  propertyName="type"
+  required={true}
+  defaultValue=""
+  mobileOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
+  webOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
+/>
+
+<ComponentDetails componentName="SubBrandLogoWordmark" templateName="prop-type" />
+
+<ComponentDetails componentName="SubBrandLogoWordmark" templateName="outro" />

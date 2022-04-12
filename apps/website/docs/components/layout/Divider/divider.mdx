@@ -4,12 +4,52 @@ slug: /components/divider
 ---
 
 import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { ApiDetails } from ':cds-website/components/ApiDetails';
 
-> [@cbhq/cds-(web|mobile)/layout/Divider](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/layout/Divider.tsx)
-
-<ComponentDetails componentName="Divider" templateName="intro" />
+> [@cbhq/cds-(web|mobile)/layout/Divider](https://github.cbhq.net/frontend/cds/blob/master/packages/web/layout/Divider.tsx)
 
 ## Usage
 
-<ComponentDetails componentName="Divider" templateName="usage" />
+```jsx live
+<VStack>
+  <Box height={100} width={100} />
+  <Divider direction="horizontal" />
+  <Box height={100} width={100} />
+</VStack>
+```
+
+```jsx live
+<HStack>
+  <Box height={100} width={100} />
+  <Divider direction="vertical" />
+  <Box height={100} width={100} />
+</HStack>
+```
+
+## Props
+
+### direction
+
+The direction to render the divider line.
+
+<ApiDetails
+  componentName="Divider"
+  propertyName="direction"
+  required={false}
+  defaultValue="horizontal"
+  mobileOptions={['horizontal', 'vertical']}
+  webOptions={['horizontal', 'vertical']}
+/>
+
+## color
+
+Color of the divider line.
+
+<ApiDetails
+  componentName="Divider"
+  propertyName="color"
+  required={false}
+  defaultValue="line"
+  mobileOptions={['line', 'lineHeavy']}
+  webOptions={['line', 'lineHeavy']}
+/>

@@ -1,8 +1,32 @@
 ---
 title: NavigationIconButton
 slug: /components/navigation-icon-button
+hide_title: true
 ---
 
-import { ComponentTabs } from ':cds-website/components/ComponentTabs';
+import { VStack } from '@cbhq/cds-web/alpha/VStack';
+import { Link } from '@cbhq/cds-web/typography/Link';
+import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-<ComponentTabs name="NavigationIconButton" />
+import Usage from './_usage.mdx';
+import Props from './_implementation.mdx';
+
+<VStack gap={3}>
+  <TextDisplay3 as="h1">NavigationIconButton</TextDisplay3>
+  <Link
+    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/buttons/NavigationIconButton.tsx"
+    openInNewWindow
+  >
+    @cbhq/cds-web/buttons/NavigationIconButton
+  </Link>
+  <Tabs>
+    <TabItem value="implementation" label="Implementation" default>
+      <VStack gap={3}>
+        <Usage />
+        <Props />
+      </VStack>
+    </TabItem>
+  </Tabs>
+</VStack>

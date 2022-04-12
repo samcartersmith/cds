@@ -1,0 +1,771 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### alignContent
+
+Set the distribution of space between and around content items along the cross-axis.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="alignContent"
+  required={false}
+  defaultValue="flex-start"
+  mobileOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
+/>
+
+### alignItems
+
+Set the alignment of all direct children on the cross-axis.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="alignItems"
+  required={false}
+  defaultValue="stretch"
+  mobileOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+/>
+
+### alignSelf
+
+Override the parents defined item alignment for this element alone.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="alignSelf"
+  required={false}
+  defaultValue="auto"
+  mobileOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+/>
+
+### animated <Badge variant="mobile" />
+
+If value is `true` then style prop can take animated values.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="animated"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+### background
+
+Set the background color of the Card. Passing `true` will enable the default background, otherwise a custom palette alias can be passed.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="background"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+    'true',
+  ]}
+  webOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+    'true',
+  ]}
+/>
+
+### borderColor
+
+Adds a custom border color from the palette
+
+<ApiDetails
+  componentName="Card"
+  propertyName="borderColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+  webOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+/>
+
+### bordered
+
+Add a border around all sides of the box.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="bordered"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderedBottom
+
+Add a border to the bottom side of the box.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="borderedBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderedEnd
+
+Add a border to the trailing side of the box.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="borderedEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderedHorizontal
+
+Add a border to the leading and trailing sides of the box.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="borderedHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderedStart
+
+Add a border to the leading side of the box.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="borderedStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderedTop
+
+Add a border to the top side of the box.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="borderedTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderedVertical
+
+Add a border to the top and bottom sides of the box.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="borderedVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderRadius
+
+Leverage one of the borderRadius styles we offer to round the corners of the box.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="borderRadius"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'badge',
+    'compact',
+    'input',
+    'none',
+    'pill',
+    'popover',
+    'round',
+    'search',
+    'standard',
+    'tooltip',
+    'tooltipV2',
+  ]}
+  webOptions={[
+    'badge',
+    'compact',
+    'input',
+    'none',
+    'pill',
+    'popover',
+    'round',
+    'search',
+    'standard',
+    'tooltip',
+    'tooltipV2',
+  ]}
+/>
+
+### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="dangerouslySetStyle"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
+    'ViewStyle',
+    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
+  ]}
+  webOptions={[]}
+/>
+
+### elevation
+
+Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="elevation"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '1', '2']}
+  webOptions={['0', '1', '2']}
+/>
+
+### flexBasis
+
+Sets the initial main flex size.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="flexBasis"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### flexDirection
+
+Order children on the main-axis in this direction.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="flexDirection"
+  required={false}
+  defaultValue=""
+  mobileOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+  webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+/>
+
+### flexGrow
+
+Set the grow factor of this flex item.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="flexGrow"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+### flexShrink
+
+Set the shrink factor of this flex item.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="flexShrink"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+### flexWrap
+
+How should children wrap when overflowing.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="flexWrap"
+  required={false}
+  defaultValue="nowrap"
+  mobileOptions={['nowrap', 'wrap', 'wrap-reverse']}
+  webOptions={['nowrap', 'wrap', 'wrap-reverse']}
+/>
+
+### gap
+
+Gap to insert between siblings.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="gap"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### height
+
+Set a fixed height.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="height"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### justifyContent
+
+Set the distribution of space between and around content items along the main-axis.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="justifyContent"
+  required={false}
+  defaultValue="flex-start"
+  mobileOptions={[
+    'center',
+    'flex-end',
+    'flex-start',
+    'space-around',
+    'space-between',
+    'space-evenly',
+  ]}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
+/>
+
+### maxHeight
+
+Set a maximum height.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="maxHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### maxWidth
+
+Set a maximum width.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="maxWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### minHeight
+
+Set a minimum height.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="minHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### minWidth
+
+Set a minimum width.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="minWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### noScaleOnPress
+
+Dont scale Card on press.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="noScaleOnPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### offset
+
+Apply negative outer spacing on all sides.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="offset"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### offsetBottom
+
+Apply negative outer spacing on the bottom side.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="offsetBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### offsetEnd
+
+Apply negative outer spacing on the trailing side.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="offsetEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### offsetHorizontal
+
+Apply negative outer spacing on the leading and trailing sides.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="offsetHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### offsetStart
+
+Apply negative outer spacing on the leading side.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="offsetStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### offsetTop
+
+Apply negative outer spacing on the top side.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="offsetTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### offsetVertical
+
+Apply negative outer spacing on the top and bottom sides.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="offsetVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### onKeyPress <Badge variant="web" />
+
+Callback fired when a key is pressed
+
+<ApiDetails
+  componentName="Card"
+  propertyName="onKeyPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['KeyboardEventHandler<Element>']}
+/>
+
+### onPress
+
+Callback fired when the element is pressed.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
+  webOptions={['OnPress']}
+/>
+
+### opacity <Badge variant="mobile" />
+
+Opacity of element
+
+<ApiDetails
+  componentName="Card"
+  propertyName="opacity"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
+    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
+    'number',
+  ]}
+  webOptions={[]}
+/>
+
+### overflow
+
+How content should overflow if it exceeds a Cards fixed width/height
+
+<ApiDetails
+  componentName="Card"
+  propertyName="overflow"
+  required={false}
+  defaultValue=""
+  mobileOptions={['hidden', 'visible']}
+  webOptions={['hidden', 'visible']}
+/>
+
+### pin
+
+Direction in which to absolutely pin the box.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="pin"
+  required={false}
+  defaultValue=""
+  mobileOptions={['all', 'bottom', 'left', 'right', 'top']}
+  webOptions={['all', 'bottom', 'left', 'right', 'top']}
+/>
+
+### size
+
+Size of the card. Small and medium have fixed widths and large grows with its children.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="size"
+  required={false}
+  defaultValue=""
+  mobileOptions={['large', 'medium', 'small']}
+  webOptions={['large', 'medium', 'small']}
+/>
+
+### spacing
+
+Apply inner spacing on all sides.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="spacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingBottom
+
+Apply inner spacing on the bottom side.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="spacingBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingEnd
+
+Apply inner spacing on the trailing side.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="spacingEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingHorizontal
+
+Apply inner spacing on the leading and trailing sides.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="spacingHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingStart
+
+Apply inner spacing on the leading side.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="spacingStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingTop
+
+Apply inner spacing on the top side.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="spacingTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingVertical
+
+Apply inner spacing on the top and bottom sides.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="spacingVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="Card"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### to <Badge variant="web" />
+
+URL that this links to when pressed.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="to"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### width
+
+Set a fixed width.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="width"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>

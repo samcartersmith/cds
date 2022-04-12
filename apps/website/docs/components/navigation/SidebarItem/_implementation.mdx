@@ -1,0 +1,156 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### active <Badge variant="web" />
+
+Use the active prop to identify the current page
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="active"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### collapsed <Badge variant="web" />
+
+Use collapsed to show only the logo
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="collapsed"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### disablePortal <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+By setting this to true you are essentially opting out of CDS zIndex management. By default the subject is rendered in a portal. If set to true the subject will be rendered in the DOM hierarchy of the parent component.
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="disablePortal"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### icon <Badge variant="web" />
+
+The Navigation Icon this item represents
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="icon"
+  required={true}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[
+    'account',
+    'addPeople',
+    'appSwitcher',
+    'application',
+    'bell',
+    'browser',
+    'caretUp',
+    'cash',
+    'chartBar',
+    'chartCandles',
+    'chartPie',
+    'dashboard',
+    'defi',
+    'directDeposit',
+    'documentation',
+    'earn',
+    'eye',
+    'gab',
+    'giftBox',
+    'home',
+    'invoice',
+    'moreVertical',
+    'newsfeed',
+    'pay',
+    'paymentCard',
+    'planet',
+    'scanQrCode',
+    'securityShield',
+    'settings',
+    'shoppingCart',
+    'support',
+    'tag',
+    'taxes',
+    'trading',
+    'trophyCup',
+    'wallet',
+  ]}
+/>
+
+### onPress <Badge variant="web" />
+
+Handle the press events, ie () => navigate(/trade)
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['() => void']}
+/>
+
+### testID <Badge variant="web" />
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### title <Badge variant="web" />
+
+The title of the page this item represents
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="title"
+  required={true}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### tooltipContent <Badge variant="web" />
+
+Label or content to display when Sidebar is collapsed and side bar more menu is hovered
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="tooltipContent"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>

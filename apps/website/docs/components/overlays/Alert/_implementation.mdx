@@ -1,0 +1,751 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### accessibilityLabel <Badge variant="web" />
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### actionLayout
+
+Layout of the actions
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="actionLayout"
+  required={false}
+  defaultValue="horizontal"
+  mobileOptions={['horizontal', 'vertical']}
+  webOptions={['horizontal', 'vertical']}
+/>
+
+### body
+
+Alert body/description
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="body"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### children <Badge variant="danger" order={1} />
+
+Should only be used internally to support overlay component over alert on mobile
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="children"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+### disablePortal <Badge variant="web" />
+
+Disable React portal integration
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="disablePortal"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### dismissActionLabel
+
+Label of the dimiss action
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="dismissActionLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### onDidClose
+
+Callback fired after the component is closed.
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="onDidClose"
+  required={false}
+  defaultValue=""
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
+/>
+
+### onDismissActionPress
+
+Callback function fired when the dismiss action is pressed
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="onDismissActionPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
+/>
+
+### onPreferredActionPress
+
+Callback function fired when the preferred action is pressed
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="onPreferredActionPress"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### onRequestClose
+
+Callback function fired when modal is closed.
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="onRequestClose"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### pictogram
+
+Illustration pictogram name for alert
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="pictogram"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    '2fa',
+    'add',
+    'addCard',
+    'addPayment',
+    'addPhone',
+    'addToWatchlist',
+    'addWallet',
+    'addressBook',
+    'advancedTradingDesktop',
+    'agent',
+    'alerts',
+    'analyticsNavigation',
+    'applyForHigherLimits',
+    'assetEncryption',
+    'assetHubNavigation',
+    'assetMeasurements',
+    'assetMovement',
+    'authenticationApp',
+    'authenticator',
+    'authenticatorAlt',
+    'authenticatorProgress',
+    'barChart',
+    'bitcoinPizza',
+    'bitcoinWhitePaper',
+    'blockchainConnection',
+    'borrowCoins',
+    'borrowNavigation',
+    'borrowingLending',
+    'browser',
+    'browserMultiPlatform',
+    'browserTransaction',
+    'bundle',
+    'bundleGray',
+    'calendar',
+    'calendarCaution',
+    'candleSticksGraph',
+    'cardBlocked',
+    'cardDeclined',
+    'cardNavigation',
+    'chart',
+    'chat',
+    'checkmark',
+    'clock',
+    'cloudNavigation',
+    'coinFocus',
+    'coinShare',
+    'coinbaseOneAuthenticator',
+    'coinbaseOneChat',
+    'coinbaseOneEarnCoins',
+    'coinbaseOneFiat',
+    'coinbaseOneLogoPictogram',
+    'coinbaseOneRefreshed',
+    'coinbaseOneShield',
+    'coinbaseOneTrusted',
+    'coldStorageCheck',
+    'collectionOfAssets',
+    'commerceCheckout',
+    'commerceInvoice',
+    'commerceNavigation',
+    'commerceNoPaymentsGray',
+    'completeQuiz',
+    'congratulations',
+    'connectNavigation',
+    'contactInfo',
+    'controlWalletStorage',
+    'creative',
+    'creditCard',
+    'crypto101',
+    'cryptoCard',
+    'cryptoFolder',
+    'custodialJourney',
+    'custodyNavigation',
+    'decentralizationEverything',
+    'decentralizedExchange',
+    'decentralizedIdentity',
+    'decentralizedWeb3',
+    'defiEarnMoment',
+    'delegate',
+    'dollarShowcase',
+    'done',
+    'doneGray',
+    'earnCoins',
+    'earnGraph',
+    'earnNavigation',
+    'easyToUse',
+    'economyGlobal',
+    'email',
+    'emailAndMessages',
+    'emptyNft',
+    'enableVoting',
+    'envelope',
+    'error',
+    'ethStakingPicto',
+    'ethereumFocus',
+    'exchangeNavigation',
+    'explore',
+    'exploreGray',
+    'fast',
+    'feesRestriction',
+    'fiat',
+    'finance',
+    'findYourSelection',
+    'formDownload',
+    'gasFees',
+    'gem',
+    'getStarted',
+    'giftbox',
+    'globalConnections',
+    'globalPayments',
+    'globalTransactions',
+    'googleAuthenticator',
+    'graphsGray',
+    'hardwareWallet',
+    'higherLimits',
+    'holdingCoin',
+    'idVerification',
+    'identityCard',
+    'increaseLimits',
+    'institutionalNavigation',
+    'institutions',
+    'internet',
+    'investGraph',
+    'key',
+    'laptop',
+    'laptopCharts',
+    'laptopVideo',
+    'layerNetworks',
+    'learn',
+    'lightbulbLearn',
+    'linkYourAccount',
+    'listingFees',
+    'locationUsa',
+    'lock',
+    'lowFees',
+    'miningCoins',
+    'mobileCharts',
+    'mobileNotifcation',
+    'moneyEarn',
+    'moneySwift',
+    'monitoringPerformance',
+    'moreThanBitcoin',
+    'multiAccountsAndCards',
+    'multiPlatform',
+    'multipleAssets',
+    'musicAndSounds',
+    'newUserChecklistBuyCrypto',
+    'newUserChecklistCompleteAccount',
+    'newUserChecklistVerifyId',
+    'nftAvatar',
+    'nftLibrary',
+    'nftNavigation',
+    'noAnnualFee',
+    'noNotificationsGray',
+    'noTransactions',
+    'noVisibility',
+    'noWiFi',
+    'notifications',
+    'orders',
+    'ordersGray',
+    'partialCoins',
+    'participateNavigation',
+    'passwordWalletLocked',
+    'paypal',
+    'pendingApprovalGray',
+    'phone',
+    'pieChart',
+    'pizza',
+    'pluginBrowser',
+    'positiveReviews',
+    'predictionMarkets',
+    'priceTracking',
+    'primeNavigation',
+    'privateClientNavigation',
+    'proNavigation',
+    'protectionPlan',
+    'queryTransactNavigation',
+    'receipt',
+    'recurringPurchases',
+    'restaking',
+    'reviewAndAdd',
+    'rewardsNavigation',
+    'rosettaNavigation',
+    'safe',
+    'securedAssets',
+    'security',
+    'securityCoinShield',
+    'seedPhrase',
+    'selfCustodyWallet',
+    'selfServe',
+    'sendPaymentToOthers',
+    'settings',
+    'settled',
+    'shield',
+    'sideChainSide',
+    'signInNavigation',
+    'smsAuthenticate',
+    'stableCoinMetaphor',
+    'stacking',
+    'stakingGraph',
+    'startToday',
+    'strongInfo',
+    'strongWarning',
+    'successPhone',
+    'support',
+    'supportChat',
+    'takeQuiz',
+    'target',
+    'taxBeta',
+    'taxSeason',
+    'taxes',
+    'taxesArrangement',
+    'timingCheck',
+    'tokenBaskets',
+    'trading',
+    'transferSend',
+    'transistor',
+    'trendingAssets',
+    'trusted',
+    'tryAgainLater',
+    'typeScript',
+    'ubiKey',
+    'usaProduct',
+    'venturesNavigation',
+    'videoCalendar',
+    'videoContent',
+    'waiting',
+    'waitingForConsensus',
+    'wallet',
+    'walletDeposit',
+    'walletExchange',
+    'walletLinkNavigation',
+    'walletNavigation',
+    'walletPassword',
+    'walletWarning',
+    'warning',
+    'worldwide',
+    'wrapEth',
+  ]}
+  webOptions={[
+    '2fa',
+    'add',
+    'addCard',
+    'addPayment',
+    'addPhone',
+    'addToWatchlist',
+    'addWallet',
+    'addressBook',
+    'advancedTradingDesktop',
+    'agent',
+    'alerts',
+    'analyticsNavigation',
+    'applyForHigherLimits',
+    'assetEncryption',
+    'assetHubNavigation',
+    'assetMeasurements',
+    'assetMovement',
+    'authenticationApp',
+    'authenticator',
+    'authenticatorAlt',
+    'authenticatorProgress',
+    'barChart',
+    'bitcoinPizza',
+    'bitcoinWhitePaper',
+    'blockchainConnection',
+    'borrowCoins',
+    'borrowNavigation',
+    'borrowingLending',
+    'browser',
+    'browserMultiPlatform',
+    'browserTransaction',
+    'bundle',
+    'bundleGray',
+    'calendar',
+    'calendarCaution',
+    'candleSticksGraph',
+    'cardBlocked',
+    'cardDeclined',
+    'cardNavigation',
+    'chart',
+    'chat',
+    'checkmark',
+    'clock',
+    'cloudNavigation',
+    'coinFocus',
+    'coinShare',
+    'coinbaseOneAuthenticator',
+    'coinbaseOneChat',
+    'coinbaseOneEarnCoins',
+    'coinbaseOneFiat',
+    'coinbaseOneLogoPictogram',
+    'coinbaseOneRefreshed',
+    'coinbaseOneShield',
+    'coinbaseOneTrusted',
+    'coldStorageCheck',
+    'collectionOfAssets',
+    'commerceCheckout',
+    'commerceInvoice',
+    'commerceNavigation',
+    'commerceNoPaymentsGray',
+    'completeQuiz',
+    'congratulations',
+    'connectNavigation',
+    'contactInfo',
+    'controlWalletStorage',
+    'creative',
+    'creditCard',
+    'crypto101',
+    'cryptoCard',
+    'cryptoFolder',
+    'custodialJourney',
+    'custodyNavigation',
+    'decentralizationEverything',
+    'decentralizedExchange',
+    'decentralizedIdentity',
+    'decentralizedWeb3',
+    'defiEarnMoment',
+    'delegate',
+    'dollarShowcase',
+    'done',
+    'doneGray',
+    'earnCoins',
+    'earnGraph',
+    'earnNavigation',
+    'easyToUse',
+    'economyGlobal',
+    'email',
+    'emailAndMessages',
+    'emptyNft',
+    'enableVoting',
+    'envelope',
+    'error',
+    'ethStakingPicto',
+    'ethereumFocus',
+    'exchangeNavigation',
+    'explore',
+    'exploreGray',
+    'fast',
+    'feesRestriction',
+    'fiat',
+    'finance',
+    'findYourSelection',
+    'formDownload',
+    'gasFees',
+    'gem',
+    'getStarted',
+    'giftbox',
+    'globalConnections',
+    'globalPayments',
+    'globalTransactions',
+    'googleAuthenticator',
+    'graphsGray',
+    'hardwareWallet',
+    'higherLimits',
+    'holdingCoin',
+    'idVerification',
+    'identityCard',
+    'increaseLimits',
+    'institutionalNavigation',
+    'institutions',
+    'internet',
+    'investGraph',
+    'key',
+    'laptop',
+    'laptopCharts',
+    'laptopVideo',
+    'layerNetworks',
+    'learn',
+    'lightbulbLearn',
+    'linkYourAccount',
+    'listingFees',
+    'locationUsa',
+    'lock',
+    'lowFees',
+    'miningCoins',
+    'mobileCharts',
+    'mobileNotifcation',
+    'moneyEarn',
+    'moneySwift',
+    'monitoringPerformance',
+    'moreThanBitcoin',
+    'multiAccountsAndCards',
+    'multiPlatform',
+    'multipleAssets',
+    'musicAndSounds',
+    'newUserChecklistBuyCrypto',
+    'newUserChecklistCompleteAccount',
+    'newUserChecklistVerifyId',
+    'nftAvatar',
+    'nftLibrary',
+    'nftNavigation',
+    'noAnnualFee',
+    'noNotificationsGray',
+    'noTransactions',
+    'noVisibility',
+    'noWiFi',
+    'notifications',
+    'orders',
+    'ordersGray',
+    'partialCoins',
+    'participateNavigation',
+    'passwordWalletLocked',
+    'paypal',
+    'pendingApprovalGray',
+    'phone',
+    'pieChart',
+    'pizza',
+    'pluginBrowser',
+    'positiveReviews',
+    'predictionMarkets',
+    'priceTracking',
+    'primeNavigation',
+    'privateClientNavigation',
+    'proNavigation',
+    'protectionPlan',
+    'queryTransactNavigation',
+    'receipt',
+    'recurringPurchases',
+    'restaking',
+    'reviewAndAdd',
+    'rewardsNavigation',
+    'rosettaNavigation',
+    'safe',
+    'securedAssets',
+    'security',
+    'securityCoinShield',
+    'seedPhrase',
+    'selfCustodyWallet',
+    'selfServe',
+    'sendPaymentToOthers',
+    'settings',
+    'settled',
+    'shield',
+    'sideChainSide',
+    'signInNavigation',
+    'smsAuthenticate',
+    'stableCoinMetaphor',
+    'stacking',
+    'stakingGraph',
+    'startToday',
+    'strongInfo',
+    'strongWarning',
+    'successPhone',
+    'support',
+    'supportChat',
+    'takeQuiz',
+    'target',
+    'taxBeta',
+    'taxSeason',
+    'taxes',
+    'taxesArrangement',
+    'timingCheck',
+    'tokenBaskets',
+    'trading',
+    'transferSend',
+    'transistor',
+    'trendingAssets',
+    'trusted',
+    'tryAgainLater',
+    'typeScript',
+    'ubiKey',
+    'usaProduct',
+    'venturesNavigation',
+    'videoCalendar',
+    'videoContent',
+    'waiting',
+    'waitingForConsensus',
+    'wallet',
+    'walletDeposit',
+    'walletExchange',
+    'walletLinkNavigation',
+    'walletNavigation',
+    'walletPassword',
+    'walletWarning',
+    'warning',
+    'worldwide',
+    'wrapEth',
+  ]}
+/>
+
+### preferredActionLabel
+
+Label of the preferred action
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="preferredActionLabel"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### preferredActionVariant
+
+Button variant of the preferred action
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="preferredActionVariant"
+  required={false}
+  defaultValue="primary"
+  mobileOptions={['negative', 'primary']}
+  webOptions={['negative', 'primary']}
+/>
+
+### stacked <Badge variant="web" />
+
+Indicating if Alert is stacked on top of Modal
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="stacked"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### title
+
+Alert title
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="title"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### visible
+
+Controls visibility of the Modal
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="visible"
+  required={true}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### zIndex
+
+Adjust the z-index positioning layer.
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="zIndex"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>

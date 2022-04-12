@@ -1,8 +1,36 @@
 ---
 title: Button
 slug: /components/button
+hide_title: true
 ---
 
-import { ComponentTabs } from ':cds-website/components/ComponentTabs';
+import { VStack } from '@cbhq/cds-web/alpha/VStack';
+import { Link } from '@cbhq/cds-web/typography/Link';
+import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-<ComponentTabs name="Button" />
+import A11y from './_a11y.mdx';
+import Intro from './_intro.mdx';
+import Usage from './_usage.mdx';
+import Props from './_implementation.mdx';
+
+<VStack gap={3}>
+  <TextDisplay3 as="h1">Button</TextDisplay3>
+  <Link
+    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/buttons/Button.tsx"
+    openInNewWindow
+  >
+    @cbhq/cds-(web|mobile)/buttons/Button
+  </Link>
+  <Tabs>
+    <TabItem value="implementation" label="Implementation" default>
+      <VStack gap={3}>
+        <Intro />
+        <Usage />
+        <A11y />
+        <Props />
+      </VStack>
+    </TabItem>
+  </Tabs>
+</VStack>

@@ -1,0 +1,936 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### accessibilityLabel
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="Box"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### accessibilityLabelledBy
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="Box"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### alignContent
+
+Set the distribution of space between and around content items along the cross-axis.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="alignContent"
+  required={false}
+  defaultValue="flex-start"
+  mobileOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
+/>
+
+### alignItems
+
+Set the alignment of all direct children on the cross-axis.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="alignItems"
+  required={false}
+  defaultValue="stretch"
+  mobileOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+/>
+
+### alignSelf
+
+Override the parents defined item alignment for this element alone.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="alignSelf"
+  required={false}
+  defaultValue="auto"
+  mobileOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+/>
+
+### animated <Badge variant="mobile" />
+
+If value is `true` then style prop can take animated values.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="animated"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+### as <Badge variant="web" />
+
+The semantic element to render the box as. Is necessary for accessibility support and assistive technologies.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="as"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'article',
+    'aside',
+    'div',
+    'footer',
+    'header',
+    'label',
+    'li',
+    'main',
+    'nav',
+    'ol',
+    'section',
+    'ul',
+  ]}
+/>
+
+### aspectRatio <Badge variant="mobile" />
+
+Aspect ratio controls the size of the undefined dimension of a node. Aspect ratio is a non-standard property only available in React Native and not CSS. On a node with a set width/height, aspect ratio controls the size of the unset dimension. On a node with a set flex basis, aspect ratio controls the size of the node in the cross axis if unset. On a node with a measure function, aspect ratio works as though the measure function measures the flex basis. On a node with flex grow/shrink, aspect ratio controls the size of the node in the cross axis if unset. Aspect ratio takes min/max dimensions into account.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="aspectRatio"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={[]}
+/>
+
+### background
+
+Set the background color of the box. Passing `true` will enable the default background, otherwise a custom palette alias can be passed.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="background"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+    'true',
+  ]}
+  webOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+    'true',
+  ]}
+/>
+
+### borderColor
+
+Adds a custom border color from the palette
+
+<ApiDetails
+  componentName="Box"
+  propertyName="borderColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+  webOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+/>
+
+### bordered
+
+Add a border around all sides of the box.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="bordered"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderedBottom
+
+Add a border to the bottom side of the box.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="borderedBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderedEnd
+
+Add a border to the trailing side of the box.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="borderedEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderedHorizontal
+
+Add a border to the leading and trailing sides of the box.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="borderedHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderedStart
+
+Add a border to the leading side of the box.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="borderedStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderedTop
+
+Add a border to the top side of the box.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="borderedTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderedVertical
+
+Add a border to the top and bottom sides of the box.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="borderedVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### borderRadius
+
+Leverage one of the borderRadius styles we offer to round the corners of the box.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="borderRadius"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'badge',
+    'compact',
+    'input',
+    'none',
+    'pill',
+    'popover',
+    'round',
+    'search',
+    'standard',
+    'tooltip',
+    'tooltipV2',
+  ]}
+  webOptions={[
+    'badge',
+    'compact',
+    'input',
+    'none',
+    'pill',
+    'popover',
+    'round',
+    'search',
+    'standard',
+    'tooltip',
+    'tooltipV2',
+  ]}
+/>
+
+### bottom
+
+Position the box to the bottom edge.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="bottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### children
+
+Content to render within the box.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="children"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+### dangerouslySetBackground <Badge variant="danger" order={1} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="dangerouslySetBackground"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="dangerouslySetClassName"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="dangerouslySetStyle"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
+    'ViewStyle',
+    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
+  ]}
+  webOptions={[]}
+/>
+
+### display <Badge variant="web" />
+
+The display value to uss in CSS display attribute.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="display"
+  required={false}
+  defaultValue="flex"
+  mobileOptions={[]}
+  webOptions={['contents', 'flex', 'inline-flex', 'none']}
+/>
+
+### elevation
+
+Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="elevation"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '1', '2']}
+  webOptions={['0', '1', '2']}
+/>
+
+### flexBasis
+
+Sets the initial main flex size.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="flexBasis"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### flexDirection
+
+Order children on the main-axis in this direction.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="flexDirection"
+  required={false}
+  defaultValue=""
+  mobileOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+  webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+/>
+
+### flexGrow
+
+Set the grow factor of this flex item.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="flexGrow"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+### flexShrink
+
+Set the shrink factor of this flex item.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="flexShrink"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+### flexWrap
+
+How should children wrap when overflowing.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="flexWrap"
+  required={false}
+  defaultValue="nowrap"
+  mobileOptions={['nowrap', 'wrap', 'wrap-reverse']}
+  webOptions={['nowrap', 'wrap', 'wrap-reverse']}
+/>
+
+### height
+
+Set a fixed height.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="height"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### id <Badge variant="danger" order={1} />
+
+This should only be used for accessibility purposes, eg: aria-controls https://accessibilityresources.org/aria-controls
+
+<ApiDetails
+  componentName="Box"
+  propertyName="id"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### justifyContent
+
+Set the distribution of space between and around content items along the main-axis.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="justifyContent"
+  required={false}
+  defaultValue="flex-start"
+  mobileOptions={[
+    'center',
+    'flex-end',
+    'flex-start',
+    'space-around',
+    'space-between',
+    'space-evenly',
+  ]}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
+/>
+
+### left
+
+Position the box to the left edge.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="left"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### maxHeight
+
+Set a maximum height.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="maxHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### maxWidth
+
+Set a maximum width.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="maxWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### minHeight
+
+Set a minimum height.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="minHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### minWidth
+
+Set a minimum width.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="minWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### offset
+
+Apply negative outer spacing on all sides.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="offset"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### offsetBottom
+
+Apply negative outer spacing on the bottom side.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="offsetBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### offsetEnd
+
+Apply negative outer spacing on the trailing side.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="offsetEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### offsetHorizontal
+
+Apply negative outer spacing on the leading and trailing sides.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="offsetHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### offsetStart
+
+Apply negative outer spacing on the leading side.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="offsetStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### offsetTop
+
+Apply negative outer spacing on the top side.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="offsetTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### offsetVertical
+
+Apply negative outer spacing on the top and bottom sides.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="offsetVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### opacity
+
+Sets the opacity of the box
+
+<ApiDetails
+  componentName="Box"
+  propertyName="opacity"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
+    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
+    'number',
+  ]}
+  webOptions={['number']}
+/>
+
+### overflow
+
+Control how the content should overflow.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="overflow"
+  required={false}
+  defaultValue=""
+  mobileOptions={['gradient', 'hidden', 'visible']}
+  webOptions={['auto', 'hidden', 'scroll', 'visible']}
+/>
+
+### pin
+
+Direction in which to absolutely pin the box.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="pin"
+  required={false}
+  defaultValue=""
+  mobileOptions={['all', 'bottom', 'left', 'right', 'top']}
+  webOptions={['all', 'bottom', 'left', 'right', 'top']}
+/>
+
+### position
+
+How to position the box within its parent.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="position"
+  required={false}
+  defaultValue=""
+  mobileOptions={['absolute', 'relative']}
+  webOptions={['absolute', 'fixed', 'relative', 'static', 'sticky']}
+/>
+
+### right
+
+Position the box to the right edge.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="right"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### role <Badge variant="web" />
+
+Semantic role whole using a non-semantic element.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="role"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### spacing
+
+Apply inner spacing on all sides.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="spacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingBottom
+
+Apply inner spacing on the bottom side.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="spacingBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingEnd
+
+Apply inner spacing on the trailing side.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="spacingEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingHorizontal
+
+Apply inner spacing on the leading and trailing sides.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="spacingHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingStart
+
+Apply inner spacing on the leading side.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="spacingStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingTop
+
+Apply inner spacing on the top side.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="spacingTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### spacingVertical
+
+Apply inner spacing on the top and bottom sides.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="spacingVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="Box"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### top
+
+Position the box to the top edge.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="top"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### width
+
+Set a fixed width.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="width"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### zIndex
+
+Adjust the z-index positioning layer.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="zIndex"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>

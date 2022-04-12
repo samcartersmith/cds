@@ -1,0 +1,53 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### height
+
+We use aspect ratio to calculate the unset dimension based on the set dimension and a given aspect ratio. Only width or height is allowed, but not both.
+
+<ApiDetails
+  componentName="LottieStatusAnimation"
+  propertyName="height"
+  required={true}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+### onFinish
+
+<ApiDetails
+  componentName="LottieStatusAnimation"
+  propertyName="onFinish"
+  required={false}
+  defaultValue=""
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
+/>
+
+### status
+
+<ApiDetails
+  componentName="LottieStatusAnimation"
+  propertyName="status"
+  required={false}
+  defaultValue=""
+  mobileOptions={['cardSuccess', 'failure', 'loading', 'pending', 'success']}
+  webOptions={['cardSuccess', 'failure', 'loading', 'pending', 'success']}
+/>
+
+### width
+
+We use aspect ratio to calculate the unset dimension based on the set dimension and a given aspect ratio. Only width or height is allowed, but not both.
+
+<ApiDetails
+  componentName="LottieStatusAnimation"
+  propertyName="width"
+  required={true}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>

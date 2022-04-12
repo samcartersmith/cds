@@ -1,0 +1,44 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### defaultActiveKey
+
+Default active accordion item key. If not specified or does not exist in the accordion items, all items will be closed on mount
+
+<ApiDetails
+  componentName="Accordion"
+  propertyName="defaultActiveKey"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+### onItemPress
+
+Callback function fired when any of accordion items is pressed
+
+<ApiDetails
+  componentName="Accordion"
+  propertyName="onItemPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(key: string) => void']}
+  webOptions={['(key: string) => void']}
+/>
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="Accordion"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>

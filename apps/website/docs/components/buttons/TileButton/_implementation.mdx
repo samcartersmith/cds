@@ -1,0 +1,575 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### accessibilityDescriptionId <Badge variant="web" />
+
+Used to associate descriptive text to an input for accessibility
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="accessibilityDescriptionId"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### accessibilityHint <Badge variant="web" />
+
+Accessibility hint for assisted devices when focused. Message should indicate the purpose of the control. If not supplied, will default to label
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="accessibilityHint"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### accessibilityLabel <Badge variant="web" />
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### accessibilityLabelId <Badge variant="web" />
+
+Used to associate a label with an input for accessibility
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="accessibilityLabelId"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### as <Badge variant="web" />
+
+Element or component to render the container as.
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="as"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['ComponentClass<any, any>', 'FunctionComponent<any>', 'a', 'button']}
+/>
+
+### block <Badge variant="web" />
+
+Set element to block and expand to 100% width.
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="block"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### borderColor <Badge variant="web" />
+
+Border color of the element being interacted with.
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="borderColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+/>
+
+### borderRadius <Badge variant="web" />
+
+Border radius of the element being interacted with. Number should only be used if value comes from useButtonBorderRadius.
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="borderRadius"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'badge',
+    'compact',
+    'input',
+    'none',
+    'number',
+    'pill',
+    'popover',
+    'round',
+    'search',
+    'standard',
+    'tooltip',
+    'tooltipV2',
+  ]}
+/>
+
+### borderWidth <Badge variant="web" />
+
+Width of the border.
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="borderWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['button', 'card', 'checkbox', 'focusRing', 'input', 'none', 'radio', 'sparkline']}
+/>
+
+### className <Badge variant="web" />
+
+Apply class names to the outer container.
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="className"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### count <Badge variant="web" />
+
+Surfaces a DotCount around the Pictogram
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="count"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['number']}
+/>
+
+### disabled <Badge variant="web" />
+
+Is the element currently disabled.
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### elevation <Badge variant="web" />
+
+Is the element elevated.
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="elevation"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['0', '1', '2']}
+/>
+
+### onKeyPress <Badge variant="web" />
+
+Callback fired when a key is pressed
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="onKeyPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['KeyboardEventHandler<Element>']}
+/>
+
+### onPress <Badge variant="web" />
+
+Callback fired when the element is pressed.
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['OnPress']}
+/>
+
+### pictogram <Badge variant="web" />
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="pictogram"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    '2fa',
+    'add',
+    'addCard',
+    'addPayment',
+    'addPhone',
+    'addToWatchlist',
+    'addWallet',
+    'addressBook',
+    'advancedTradingDesktop',
+    'agent',
+    'alerts',
+    'analyticsNavigation',
+    'applyForHigherLimits',
+    'assetEncryption',
+    'assetHubNavigation',
+    'assetMeasurements',
+    'assetMovement',
+    'authenticationApp',
+    'authenticator',
+    'authenticatorAlt',
+    'authenticatorProgress',
+    'barChart',
+    'bitcoinPizza',
+    'bitcoinWhitePaper',
+    'blockchainConnection',
+    'borrowCoins',
+    'borrowNavigation',
+    'borrowingLending',
+    'browser',
+    'browserMultiPlatform',
+    'browserTransaction',
+    'bundle',
+    'bundleGray',
+    'calendar',
+    'calendarCaution',
+    'candleSticksGraph',
+    'cardBlocked',
+    'cardDeclined',
+    'cardNavigation',
+    'chart',
+    'chat',
+    'checkmark',
+    'clock',
+    'cloudNavigation',
+    'coinFocus',
+    'coinShare',
+    'coinbaseOneAuthenticator',
+    'coinbaseOneChat',
+    'coinbaseOneEarnCoins',
+    'coinbaseOneFiat',
+    'coinbaseOneLogoPictogram',
+    'coinbaseOneRefreshed',
+    'coinbaseOneShield',
+    'coinbaseOneTrusted',
+    'coldStorageCheck',
+    'collectionOfAssets',
+    'commerceCheckout',
+    'commerceInvoice',
+    'commerceNavigation',
+    'commerceNoPaymentsGray',
+    'completeQuiz',
+    'congratulations',
+    'connectNavigation',
+    'contactInfo',
+    'controlWalletStorage',
+    'creative',
+    'creditCard',
+    'crypto101',
+    'cryptoCard',
+    'cryptoFolder',
+    'custodialJourney',
+    'custodyNavigation',
+    'decentralizationEverything',
+    'decentralizedExchange',
+    'decentralizedIdentity',
+    'decentralizedWeb3',
+    'defiEarnMoment',
+    'delegate',
+    'dollarShowcase',
+    'done',
+    'doneGray',
+    'earnCoins',
+    'earnGraph',
+    'earnNavigation',
+    'easyToUse',
+    'economyGlobal',
+    'email',
+    'emailAndMessages',
+    'emptyNft',
+    'enableVoting',
+    'envelope',
+    'error',
+    'ethStakingPicto',
+    'ethereumFocus',
+    'exchangeNavigation',
+    'explore',
+    'exploreGray',
+    'fast',
+    'feesRestriction',
+    'fiat',
+    'finance',
+    'findYourSelection',
+    'formDownload',
+    'gasFees',
+    'gem',
+    'getStarted',
+    'giftbox',
+    'globalConnections',
+    'globalPayments',
+    'globalTransactions',
+    'googleAuthenticator',
+    'graphsGray',
+    'hardwareWallet',
+    'higherLimits',
+    'holdingCoin',
+    'idVerification',
+    'identityCard',
+    'increaseLimits',
+    'institutionalNavigation',
+    'institutions',
+    'internet',
+    'investGraph',
+    'key',
+    'laptop',
+    'laptopCharts',
+    'laptopVideo',
+    'layerNetworks',
+    'learn',
+    'lightbulbLearn',
+    'linkYourAccount',
+    'listingFees',
+    'locationUsa',
+    'lock',
+    'lowFees',
+    'miningCoins',
+    'mobileCharts',
+    'mobileNotifcation',
+    'moneyEarn',
+    'moneySwift',
+    'monitoringPerformance',
+    'moreThanBitcoin',
+    'multiAccountsAndCards',
+    'multiPlatform',
+    'multipleAssets',
+    'musicAndSounds',
+    'newUserChecklistBuyCrypto',
+    'newUserChecklistCompleteAccount',
+    'newUserChecklistVerifyId',
+    'nftAvatar',
+    'nftLibrary',
+    'nftNavigation',
+    'noAnnualFee',
+    'noNotificationsGray',
+    'noTransactions',
+    'noVisibility',
+    'noWiFi',
+    'notifications',
+    'orders',
+    'ordersGray',
+    'partialCoins',
+    'participateNavigation',
+    'passwordWalletLocked',
+    'paypal',
+    'pendingApprovalGray',
+    'phone',
+    'pieChart',
+    'pizza',
+    'pluginBrowser',
+    'positiveReviews',
+    'predictionMarkets',
+    'priceTracking',
+    'primeNavigation',
+    'privateClientNavigation',
+    'proNavigation',
+    'protectionPlan',
+    'queryTransactNavigation',
+    'receipt',
+    'recurringPurchases',
+    'restaking',
+    'reviewAndAdd',
+    'rewardsNavigation',
+    'rosettaNavigation',
+    'safe',
+    'securedAssets',
+    'security',
+    'securityCoinShield',
+    'seedPhrase',
+    'selfCustodyWallet',
+    'selfServe',
+    'sendPaymentToOthers',
+    'settings',
+    'settled',
+    'shield',
+    'sideChainSide',
+    'signInNavigation',
+    'smsAuthenticate',
+    'stableCoinMetaphor',
+    'stacking',
+    'stakingGraph',
+    'startToday',
+    'strongInfo',
+    'strongWarning',
+    'successPhone',
+    'support',
+    'supportChat',
+    'takeQuiz',
+    'target',
+    'taxBeta',
+    'taxSeason',
+    'taxes',
+    'taxesArrangement',
+    'timingCheck',
+    'tokenBaskets',
+    'trading',
+    'transferSend',
+    'transistor',
+    'trendingAssets',
+    'trusted',
+    'tryAgainLater',
+    'typeScript',
+    'ubiKey',
+    'usaProduct',
+    'venturesNavigation',
+    'videoCalendar',
+    'videoContent',
+    'waiting',
+    'waitingForConsensus',
+    'wallet',
+    'walletDeposit',
+    'walletExchange',
+    'walletLinkNavigation',
+    'walletNavigation',
+    'walletPassword',
+    'walletWarning',
+    'warning',
+    'worldwide',
+    'wrapEth',
+  ]}
+/>
+
+### showOverflow <Badge variant="web" />
+
+Reveals truncated title text
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="showOverflow"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### tabIndex <Badge variant="web" />
+
+Necessary to control roving tabindex for accessibility https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="tabIndex"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['number']}
+/>
+
+### testID <Badge variant="web" />
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### title <Badge variant="web" />
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="title"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### to <Badge variant="web" />
+
+URL that this links to when pressed.
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="to"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### transparentWhileInactive <Badge variant="web" />
+
+Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc).
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="transparentWhileInactive"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### wrapWithLayeredElements <Badge variant="web" />
+
+Inject and wrap the content with overlay and underlay elements.
+
+<ApiDetails
+  componentName="TileButton"
+  propertyName="wrapWithLayeredElements"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>

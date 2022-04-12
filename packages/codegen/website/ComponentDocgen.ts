@@ -67,7 +67,7 @@ export class ComponentDocgen {
   }
 
   get sourceUrl() {
-    return `https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/${
+    return `https://github.cbhq.net/frontend/cds/blob/master/packages/${
       !this.web ? 'mobile' : 'web'
     }/${this.docgen.importPath}`;
   }

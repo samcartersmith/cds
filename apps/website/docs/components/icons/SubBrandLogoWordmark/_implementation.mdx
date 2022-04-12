@@ -1,0 +1,27 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### foreground
+
+<ApiDetails
+  componentName="SubBrandLogoWordmark"
+  propertyName="foreground"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+### type
+
+<ApiDetails
+  componentName="SubBrandLogoWordmark"
+  propertyName="type"
+  required={true}
+  defaultValue=""
+  mobileOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
+  webOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
+/>
