@@ -7,4 +7,5 @@ import activityIndicatorJson from './activityIndicator.json';
 
 export type ActivityIndicatorLottie = LottieSource;
 
+// @deprecated Use the CDS Spinner component instead.
 export const activityIndicator = activityIndicatorJson as ActivityIndicatorLottie;

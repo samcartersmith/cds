@@ -60,6 +60,7 @@ export const routes = {
     require('../visualizations/sparkline-interactive-header/__stories__/SparklineInteractiveHeader.stories')
       .default,
   Spectrum: () => require('../system/__stories__/Spectrum.stories').default,
+  Spinner: () => require('../loaders/__stories__/Spinner.stories').default,
   SpotRectangle: () => require('../illustrations/__stories__/SpotRectangle.stories').default,
   SpotSquare: () => require('../illustrations/__stories__/SpotSquare.stories').default,
   Switch: () => require('../controls/__stories__/Switch.stories').default,

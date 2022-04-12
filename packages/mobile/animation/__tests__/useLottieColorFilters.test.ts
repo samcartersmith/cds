@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import LottieView from 'lottie-react-native';
 import { defaultPalette } from '@cbhq/cds-common';
 import { colorToHex } from '@cbhq/cds-common/color/colorToHex';
-import { activityIndicator } from '@cbhq/cds-lottie-files/activityIndicator';
+import { globalTradeButton } from '@cbhq/cds-lottie-files/globalTradeButton';
 
 import { paletteConfigToRgbaStrings } from '../../utils/palette';
 import { useLottieColorFilters } from '../useLottieColorFilters';
@@ -24,14 +24,14 @@ describe('useLottieColorFilters', () => {
   let result: ColorFiltersProp = [];
 
   beforeEach(() => {
-    result = renderHook(() => useLottieColorFilters(activityIndicator)).result.current;
+    result = renderHook(() => useLottieColorFilters(globalTradeButton)).result.current;
   });
 
   it('ensures the color values are mapped to hex version of palette colors', () => {
-    expect(getPaletteColors(result)).toContain(colorToHex(mockPalette.foregroundMuted));
+    expect(getPaletteColors(result)).toContain(colorToHex(mockPalette.primaryForeground));
   });
 
   it('ensures the palette aliases are mapped to palette names', () => {
-    expect(getPaletteAliases(result)).toContain('palette_foregroundMuted');
+    expect(getPaletteAliases(result)).toContain('palette_primaryForeground');
   });
 });
