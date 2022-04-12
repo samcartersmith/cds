@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.25 (4/12/2022, 03:01 PM PST)
+
+#### 🚀 Updates
+
+- **[Spinner]** Deprecate the activityIndicator lottie in favor of Spinner. [#230](https://github.cbhq.net/frontend/cds/pull/230), [CDS-2233](https://jira.coinbase-corp.com/browse/CDS-2233)
+- Remove broken cardRewards lottie. [#211](https://github.cbhq.net/frontend/cds/pull/211), [CDS-2246](https://jira.coinbase-corp.com/browse/CDS-2246)
+
+#### 📘 Misc
+
+- Downgrade storybook to fix percy. [#196](https://github.cbhq.net/frontend/cds/pull/196)
+
 ## 0.2.24 (4/6/2022, 10:44 AM PST)
 
 #### 🐞 Fixes

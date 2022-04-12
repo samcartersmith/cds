@@ -8,6 +8,27 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.37.0 (4/12/2022, 03:01 PM PST)
+
+#### 💥 Breaking
+
+- **[TextInput]** Map testID to input of TextInput for web and mobile. [#237](https://github.cbhq.net/frontend/cds/pull/237)
+
+#### 🚀 Updates
+
+- Formatting fixes and adding it to pipeline script. [#227](https://github.cbhq.net/frontend/cds/pull/227)
+- **[Grid]** Add grid codegen for cssMap and types. [#216](https://github.cbhq.net/frontend/cds/pull/216)
+
+#### 🐞 Fixes
+
+- : feat(Box): Add alpha VStack & HStack using CSS gap behind feature flag. [#212](https://github.cbhq.net/frontend/cds/pull/212)
+- Ensure lodash is using deep imports. [#197](https://github.cbhq.net/frontend/cds/pull/197)
+
+#### 📘 Misc
+
+- **[website]** Upgrade docusaurus to latest beta. [#213](https://github.cbhq.net/frontend/cds/pull/213)
+- Fix items in CHANGELOG that has incorrect formats. [#210](https://github.cbhq.net/frontend/cds/pull/210)
+
 ## 0.36.1 (4/8/2022, 08:42 AM PST)
 
 #### 🚀 Updates
