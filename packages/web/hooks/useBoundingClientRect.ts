@@ -1,7 +1,7 @@
 import { MutableRefObject, useCallback, useState } from 'react';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
-import { isSSR } from '../utils/browser';
+import { getBrowserGlobals, isSSR } from '../utils/browser';
 
 import { useIsoEffect } from './useIsoEffect';
 
@@ -35,8 +35,8 @@ export const useBoundingClientRect = (ref: MutableRefObject<HTMLElement | null>)
     if (isSSR()) {
       return undefined;
     }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    getBrowserGlobals()?.window.addEventListener('resize', handleResize);
+    return () => getBrowserGlobals()?.window.removeEventListener('resize', handleResize);
   }, [ref, handleResize]);
 
   return rect;

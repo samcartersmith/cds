@@ -1,6 +1,6 @@
 import React, { memo, ReactElement, RefObject, useCallback, useEffect, useRef } from 'react';
 
-import { isSSR } from '../utils/browser';
+import {getBrowserGlobals, isSSR} from '../utils/browser';
 
 export type FocusTrapProps = { children: ReactElement; onEscPress?: () => void };
 
@@ -22,11 +22,12 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
       const firstElement = focusableModalElements[0] as HTMLElement;
       const lastElement = focusableModalElements[focusableModalElements.length - 1] as HTMLElement;
 
+      const document = getBrowserGlobals()?.document
       // bring focus inside modal
       if (
         !isFocused.current &&
         // check if focus is inside modal
-        !Array.from(focusableModalElements).includes(document.activeElement as HTMLElement)
+        !Array.from(focusableModalElements).includes(document?.activeElement as HTMLElement)
       ) {
         firstElement.focus();
         isFocused.current = true;
@@ -34,13 +35,13 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
       }
 
       // tab to change focus to next element
-      if (!event.shiftKey && document.activeElement === lastElement) {
+      if (!event.shiftKey && document?.activeElement === lastElement) {
         firstElement.focus();
         event.preventDefault();
       }
 
       // shift + tab to change to previous element
-      if (event.shiftKey && document.activeElement === firstElement) {
+      if (event.shiftKey && document?.activeElement === firstElement) {
         lastElement.focus();
         event.preventDefault();
       }
@@ -66,9 +67,9 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
   );
 
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
+    getBrowserGlobals()?.window.addEventListener('keydown', handleKeyDown);
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      getBrowserGlobals()?.window.removeEventListener('keydown', handleKeyDown);
     };
   }, [handleKeyDown]);
 

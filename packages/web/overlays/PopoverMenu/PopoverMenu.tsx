@@ -84,11 +84,13 @@ export const PopoverMenu = memo(
     }, [focusSelectOption, searchEnabled, visible]);
 
     const renderContent = () => {
+      // eslint-disable-next-line no-restricted-globals
       if (isSSR() || disablePortal || !document.getElementById(containerId.current)) {
         return <PopoverContent>{childNodes}</PopoverContent>;
       }
       return createPortal(
         <PopoverContent>{childNodes}</PopoverContent>,
+        // eslint-disable-next-line no-restricted-globals
         document.getElementById(containerId.current) as Element,
       );
     };

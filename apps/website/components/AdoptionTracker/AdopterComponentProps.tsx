@@ -5,6 +5,7 @@ import toPairs from 'lodash/toPairs';
 import { Icon } from '@cbhq/cds-web/icons';
 import { Divider, VStack } from '@cbhq/cds-web/layout';
 import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';
+import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
 
 import { BetaCell } from ':cds-website/components/BetaCell';
 
@@ -51,7 +52,7 @@ export const AdopterComponentProps = memo(
 
     const handleOnPropCallSite = useCallback(
       (callSite: string) => {
-        return () => window?.open(getGitLink(callSite), '_blank');
+        return () => getBrowserGlobals()?.window.open(getGitLink(callSite), '_blank');
       },
       [getGitLink],
     );

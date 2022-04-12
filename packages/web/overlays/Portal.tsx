@@ -2,6 +2,7 @@ import React, { memo, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
 import { isSSR } from '../utils/browser';
+/* eslint-disable no-restricted-globals */
 
 export type PortalProps = {
   /**

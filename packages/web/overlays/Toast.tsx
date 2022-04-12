@@ -16,7 +16,7 @@ import { Button, IconButton } from '../buttons';
 import { Box, HStack } from '../layout';
 import { ThemeProvider } from '../system';
 import { TextHeadline } from '../typography';
-import { isSSR } from '../utils/browser';
+import {getBrowserGlobals, isSSR} from '../utils/browser';
 
 import { ModalProps } from './Modal/Modal';
 import { toastContainerId } from './PortalProvider';
@@ -119,11 +119,12 @@ export const Toast: React.FC<ToastProps> = memo(
         </ThemeProvider>
       );
 
+      const document = getBrowserGlobals()?.document;
       if (disablePortal || isSSR() || !document?.getElementById(toastContainerId)) {
         return toastNode;
       }
 
-      return createPortal(toastNode, document.getElementById(toastContainerId) as HTMLElement);
+      return createPortal(toastNode, document?.getElementById(toastContainerId) as HTMLElement);
     },
   ),
 );

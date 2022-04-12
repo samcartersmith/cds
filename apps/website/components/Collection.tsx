@@ -3,6 +3,7 @@ import type { FlexAlignCommon, SpacingScale } from '@cbhq/cds-common';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { PressableOpacity } from '@cbhq/cds-web/system';
 import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
+import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
 
 import { Image, ImageProps } from './Image';
 import { Video, VideoProps } from './Video';
@@ -72,7 +73,7 @@ export const Item: React.FC<ItemProps> = ({
   };
   const handlePress = useCallback(() => {
     if (href) {
-      window.open(href, '_blank');
+      getBrowserGlobals()?.window.open(href, '_blank');
     }
   }, [href]);
 

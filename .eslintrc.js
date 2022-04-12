@@ -31,6 +31,17 @@ module.exports = {
             devDependencies: true,
           },
         ],
+        "no-restricted-globals": [
+          "error",
+          {
+            name: "window",
+            message: "Use getBrowserGlobals() function to access window",
+          },
+          {
+            name: "document",
+            message: "Use getBrowserGlobals() function to access document",
+          },
+        ],
       },
     },
     // Jest configs
@@ -47,6 +58,7 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'react/jsx-uses-react': 0,
         'react/react-in-jsx-scope': 0,
+        'no-restricted-globals': 'off',
       },
       env: {
         'jest/globals': true,

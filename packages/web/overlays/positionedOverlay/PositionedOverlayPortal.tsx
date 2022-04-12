@@ -6,6 +6,8 @@ import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumCondit
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { isSSR } from '../../utils/browser';
 
+/* eslint-disable no-restricted-globals */
+
 type PositionedOverlayPortalProps = {
   disablePortal?: boolean;
   invertSpectrum?: boolean;

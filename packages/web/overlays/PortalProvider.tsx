@@ -14,6 +14,8 @@ export const alertContainerId = 'alertsContainer';
 export const toastContainerId = 'toastsContainer';
 export const tooltipContainerId = 'tooltipContainer';
 
+/* eslint-disable no-restricted-globals */
+
 const PortalHost = memo(() => {
   const portalRoot = useMemo(
     // prevent duplicate portal root

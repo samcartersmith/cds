@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Spectrum } from '@cbhq/cds-common/types';
 
+import { getBrowserGlobals } from '../utils/browser';
+
 export const useDeviceSpectrum = () => {
-  const mediaQuery = useRef<MediaQueryList>(window.matchMedia('(prefers-color-scheme: dark)'));
+  const window = getBrowserGlobals()?.window;
+  const mediaQuery = useRef<MediaQueryList | undefined>(window?.matchMedia('(prefers-color-scheme: dark)'));
 
   const [deviceSpectrum, setDeviceSpectrum] = useState<Spectrum>(
-    mediaQuery.current.matches ? 'dark' : 'light',
+    mediaQuery.current?.matches ? 'dark' : 'light',
   );
 
   const mediaQueryListEventHandler = useCallback(
@@ -17,10 +20,10 @@ export const useDeviceSpectrum = () => {
     const listener = ({ matches }: { matches: boolean }) => mediaQueryListEventHandler(matches);
 
     const currentMediaQuery = mediaQuery.current;
-    currentMediaQuery.addEventListener('change', listener);
+    currentMediaQuery?.addEventListener('change', listener);
 
     return () => {
-      currentMediaQuery.removeEventListener('change', listener);
+      currentMediaQuery?.removeEventListener('change', listener);
     };
   }, [mediaQueryListEventHandler]);
 

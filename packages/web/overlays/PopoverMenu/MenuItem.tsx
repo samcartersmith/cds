@@ -6,6 +6,7 @@ import { selectKeys } from '@cbhq/cds-common/tokens/menu';
 
 import { insetFocusRing } from '../../styles/focus';
 import { Pressable, PressableProps } from '../../system/Pressable';
+import {getBrowserGlobals} from "../../utils/browser";
 import { cx } from '../../utils/linaria';
 
 import { usePopoverContext } from './PopoverContext';
@@ -87,7 +88,7 @@ export const MenuItem = memo(
 
         if (popoverMenuRef?.current) {
           const selectOptions = Array.from(popoverMenuRef.current?.getElementsByTagName('button'));
-          const focusedOption = document.activeElement as HTMLButtonElement;
+          const focusedOption = getBrowserGlobals()?.document.activeElement as HTMLButtonElement;
 
           if (selectOptions) {
             // get index of current active element

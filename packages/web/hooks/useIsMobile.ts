@@ -1,21 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useCallback,useEffect, useState } from 'react';
 
 import { breakpoints } from '../layout/responsive';
-import { isSSR } from '../utils/browser';
+import {getBrowserGlobals, isSSR} from '../utils/browser';
 
 export const useIsMobile = () => {
-  const [width, setWidth] = useState<number | undefined>(!isSSR() ? window.innerWidth : undefined);
 
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
+  const [width, setWidth] = useState<number | undefined>(!isSSR() ? getBrowserGlobals()?.window.innerWidth : undefined);
+
+  const handleWindowSizeChange = useCallback(() => {
+    setWidth(getBrowserGlobals()?.window.innerWidth);
+  }, [setWidth]);
   useEffect(() => {
     // useEffect will only run client side
-    window.addEventListener('resize', handleWindowSizeChange);
+    getBrowserGlobals()?.window.addEventListener('resize', handleWindowSizeChange);
     return () => {
-      window.removeEventListener('resize', handleWindowSizeChange);
+      getBrowserGlobals()?.window.removeEventListener('resize', handleWindowSizeChange);
     };
-  }, []);
+  }, [handleWindowSizeChange]);
 
   return width && width <= breakpoints.phone;
 };
