@@ -58,7 +58,7 @@ export const Alert = memo(
       );
 
       const handlePrimaryActionPress = useCallback(() => {
-        onPreferredActionPress();
+        onPreferredActionPress?.();
         handleClose();
       }, [onPreferredActionPress, handleClose]);
 

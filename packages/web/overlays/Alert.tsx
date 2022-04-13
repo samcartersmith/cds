@@ -44,7 +44,7 @@ export const Alert = memo(
       const isVerticalActions = actionLayout === 'vertical';
 
       const handlePreferredActionPress = useCallback(() => {
-        onPreferredActionPress();
+        onPreferredActionPress?.();
         onRequestClose?.();
       }, [onPreferredActionPress, onRequestClose]);
 

@@ -27,14 +27,14 @@ export type AlertBaseProps = {
   /**
    * Callback function fired when the preferred action is pressed
    */
-  onPreferredActionPress: NoopFn;
+  onPreferredActionPress?: NoopFn;
   /**
    * Button variant of the preferred action
    * @default primary
    */
   preferredActionVariant?: Extract<ButtonVariant, 'primary' | 'negative'>;
   /**
-   * Label of the dimiss action
+   * Label of the dismiss action
    */
   dismissActionLabel?: string;
   /**
