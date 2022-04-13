@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.37.1 (4/13/2022, 11:32 AM PST)
+
+#### 🚀 Updates
+
+- **[Alert]** Make the onPreferredActionPress prop in Alert optional. [#245](https://github.cbhq.net/frontend/cds/pull/245)
+
+#### 🐞 Fixes
+
+- Update(A11y) Add configs to optionally ignore a11y rules per story. [#232](https://github.cbhq.net/frontend/cds/pull/232), [CDS-2238](https://jira.coinbase-corp.com/browse/CDS-2238)
+
 ## 0.37.0 (4/12/2022, 03:01 PM PST)
 
 #### 💥 Breaking

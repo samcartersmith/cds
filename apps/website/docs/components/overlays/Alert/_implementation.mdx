@@ -107,7 +107,7 @@ Disable React portal integration
 
 ### dismissActionLabel
 
-Label of the dimiss action
+Label of the dismiss action
 
 <ApiDetails
   componentName="Alert"
@@ -151,10 +151,10 @@ Callback function fired when the preferred action is pressed
 <ApiDetails
   componentName="Alert"
   propertyName="onPreferredActionPress"
-  required={true}
+  required={false}
   defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
 />
 
 ### onRequestClose

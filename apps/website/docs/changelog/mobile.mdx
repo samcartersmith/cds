@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.43.1 (4/13/2022, 11:32 AM PST)
+
+#### 🚀 Updates
+
+- **[Alert]** Make the onPreferredActionPress prop in Alert optional. [#245](https://github.cbhq.net/frontend/cds/pull/245)
+
+#### 📘 Misc
+
+- Add env checks to prevent errors in SSR for website. [#242](https://github.cbhq.net/frontend/cds/pull/242), [CDS-1850](https://jira.coinbase-corp.com/browse/CDS-1850)
+
 ## 0.43.0 (4/12/2022, 03:01 PM PST)
 
 #### 💥 Breaking
