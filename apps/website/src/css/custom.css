@@ -18,3 +18,9 @@
 .markdown li + li {
   margin-top: 0;
 }
+
+/** turns off search highlighting after navigation **/
+mark[data-markjs] {
+  background-color: transparent;
+  color: inherit;
+}
