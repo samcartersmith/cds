@@ -32,6 +32,7 @@ type Report = {
   violations: unknown[];
   passes: number;
 };
+
 type Impact = {
   id: string;
   count: number;
