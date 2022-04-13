@@ -1,5 +1,6 @@
 import React, { cloneElement, memo } from 'react';
-import { CellMediaProps } from '@cbhq/cds-common';
+import { ImageURISource } from 'react-native';
+import { CellMediaProps as CellMediaBaseProps } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { imageSize, mediaSize } from '@cbhq/cds-common/tokens/cell';
 
@@ -7,7 +8,13 @@ import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
 import { getSource, RemoteImage } from '../media/RemoteImage';
 
-export type { CellMediaProps };
+export type CellMediaProps = CellMediaBaseProps & {
+  /**
+   * Determines how the requests handles potentially cached responses. Not applicable to type="icon".
+   * @link https://reactnative.dev/docs/0.67/images#cache-control-ios-only
+   */
+  cache?: ImageURISource['cache'];
+};
 
 export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   const mediaSizeScaled = useScaleConditional(mediaSize);
@@ -24,7 +31,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
       <RemoteImage
         accessibilityHint={props.title}
         accessibilityLabel={props.title}
-        source={getSource(props.source)}
+        source={getSource(props.source, props.cache)}
         resizeMode="cover"
         shape="circle"
         width={size}
@@ -40,7 +47,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
       <RemoteImage
         accessibilityHint={props.title}
         accessibilityLabel={props.title}
-        source={getSource(props.source)}
+        source={getSource(props.source, props.cache)}
         resizeMode="contain"
         shape="squircle"
         width={size}

@@ -46,12 +46,15 @@ export type RemoteImageProps =
   | RemoteImagePropsWithHeight
   | RemoteImagePropsWidthAndHeight;
 
-export function getSource(source: string | number | ImageURISource): ImageSourcePropType {
+export function getSource(
+  source: string | number | ImageURISource,
+  cachePolicy?: ImageURISource['cache'],
+): ImageSourcePropType {
   if (typeof source === 'string') {
     if (source.endsWith('.svg')) {
-      return { uri: source, headers: { format: 'svg' } };
+      return { uri: source, headers: { format: 'svg' }, cache: cachePolicy };
     }
-    return { uri: source };
+    return { uri: source, cache: cachePolicy };
   }
 
   return source;
