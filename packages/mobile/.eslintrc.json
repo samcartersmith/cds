@@ -14,7 +14,8 @@
               }
             ]
           }
-        ]
+        ],
+        "no-restricted-imports": "off"
       }
     },
     {

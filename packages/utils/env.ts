@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+
 function isEnv(env: 'development' | 'production' | 'test') {
   return Boolean(typeof process === 'object' && process?.env?.NODE_ENV === env);
 }

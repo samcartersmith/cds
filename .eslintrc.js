@@ -19,6 +19,12 @@ module.exports = {
                 name: 'lodash',
                 message: 'Use deep imports for lodash so it is tree shakeable',
               },
+              {
+                name: 'react',
+                importNames: ['useLayoutEffect', 'Suspense'],
+                message:
+                  'useLayoutEffect and Suspense do not work for SSR apps. If you are confident useEffect will not work for your purposes consider using useIsoEffect.',
+              },
             ],
           },
         ],
@@ -31,15 +37,19 @@ module.exports = {
             devDependencies: true,
           },
         ],
-        "no-restricted-globals": [
-          "error",
+        'no-restricted-globals': [
+          'error',
           {
-            name: "window",
-            message: "Use getBrowserGlobals() function to access window",
+            name: 'window',
+            message: 'Use getBrowserGlobals() function to access window',
           },
           {
-            name: "document",
-            message: "Use getBrowserGlobals() function to access document",
+            name: 'document',
+            message: 'Use getBrowserGlobals() function to access document',
+          },
+          {
+            name: 'process',
+            message: 'Do not directly interact with process. Use a function from utils/env',
           },
         ],
       },

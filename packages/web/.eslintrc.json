@@ -6,23 +6,6 @@
   },
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {
-        "no-restricted-imports": [
-          "error",
-          {
-            "paths": [
-              {
-                "name": "react",
-                "importNames": ["useLayoutEffect"],
-                "message": "useLayoutEffect does not work for SSR apps. If you are confident useEffect will not work for your purposes consider using useIsoEffect."
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
       "files": [
         // Stories
         "**/__stories__/*",
