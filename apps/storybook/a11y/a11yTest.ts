@@ -12,6 +12,18 @@ import ora from 'ora';
 import path from 'path';
 import { writePrettyFile } from '@cbhq/cds-web-utils';
 
+/** 🙅 Do not add to these lists without leads approval
+ * ❤️‍🩹 Please provide a reason we need to ignore each rule */
+const rulesToIgnoreForStoryId = new Map([
+  // Example:
+  // /** We like having multiple interactive elements in the same node - it provides folks using assistive tech with a sweet "unexpected" moment in their day */
+  // ['components-cards--announcement-cards', ['nested-interactive']],
+]);
+const rulesToIgnoreForStoryKind = new Map([
+  /** Axe core is not correctly capturing color contrast here. The labels are marked as a 1:1 ratio, but storybook lists a passing ratio */
+  ['Core Components/SparklineInteractive', ['color-contrast']],
+]);
+
 type Report = {
   id?: string;
   name?: string;
@@ -96,16 +108,31 @@ export const a11yTest = (customConfig: Partial<AxeConfig> = {}) => {
 
       // Write the file
       try {
+        const filteredViolations = violations.filter((violation) => {
+          // Bail if axe didn't provide enough story context
+          if (!context.id || !context.kind) return false;
+
+          const rulesById = (rulesToIgnoreForStoryId.get(context.id) as string[]) ?? [];
+          const rulesByKind = (rulesToIgnoreForStoryKind.get(context.kind) as string[]) ?? [];
+          const rules = [...rulesById, ...rulesByKind];
+
+          // Include this item if this story isn't in either ignore list?
+          if (rules.length === 0) return true;
+
+          // Did we include *this rule* for *this story* in either ignore list?
+          return !rules?.some((violationId) => violation.id === violationId);
+        });
+
         results.report.push({
           id: context.id,
           name: context.name,
           title: context.title,
           kind: context.kind,
           passes: passes.length,
-          violations,
+          violations: filteredViolations,
         });
 
-        violations.forEach(({ id, impact = 'critical' }) => {
+        filteredViolations.forEach(({ id, impact = 'critical' }) => {
           if (impact) {
             const index = results[impact].findIndex((i) => i.id === id);
             const count = results[impact].find((i) => i.id === id)?.count ?? 0;
@@ -126,10 +153,12 @@ export const a11yTest = (customConfig: Partial<AxeConfig> = {}) => {
         });
 
         // Log the report
-        const total = chalk[violations.length ? 'redBright' : 'greenBright'](
-          `${passes.length}/${passes.length + violations.length}`,
+        const total = chalk[filteredViolations.length ? 'redBright' : 'greenBright'](
+          `${passes.length}/${passes.length + filteredViolations.length}`,
         );
-        spinner[violations.length ? 'fail' : 'succeed'](`${total} - ${context.name}`);
+        spinner[filteredViolations.length ? 'fail' : 'succeed'](`${total} - ${context.name}`);
+
+        expect(filteredViolations).toHaveLength(0);
       } catch (error) {
         if (error instanceof Error) {
           // eslint-disable-next-line no-console
@@ -139,8 +168,6 @@ export const a11yTest = (customConfig: Partial<AxeConfig> = {}) => {
           throw error;
         }
       }
-
-      expect(violations).toHaveLength(0);
     },
   });
 };

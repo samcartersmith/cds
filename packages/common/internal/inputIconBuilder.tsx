@@ -27,7 +27,7 @@ export function inputIconBuilder(
         {variants.map((variant) => (
           <TextInput
             key={`${variant}-inputicon`}
-            label="Label"
+            label={variant}
             variant={variant}
             start={<InputIcon color={variant} name="add" />}
           />

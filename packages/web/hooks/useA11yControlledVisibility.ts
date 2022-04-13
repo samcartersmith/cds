@@ -20,7 +20,7 @@ export const useA11yControlledVisibility = (
   isVisible: boolean,
   accessibilityLabel?: string,
 ): AccessibleControlledReturnType => {
-  const uniqueId = generateRandomId(accessibilityLabel);
+  const uniqueId = useMemo(() => generateRandomId(accessibilityLabel), [accessibilityLabel]);
 
   const triggerAccessibilityProps = useMemo(
     () => ({

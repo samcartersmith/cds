@@ -18,7 +18,7 @@ export function inputIconButtonBuilder(
       <>
         {variants.map((variant) => (
           <TextInput
-            label="Label"
+            label={variant}
             key={`${variant}-input-iconbutton`}
             variant={variant}
             start={<InputIconButton variant="foregroundMuted" name="add" />}

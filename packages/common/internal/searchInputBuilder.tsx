@@ -21,19 +21,35 @@ export function searchInputBuilder(
   const Basic = () => {
     const [text, setText] = useState('Value');
 
-    return <SearchInput placeholder="Placeholder" onChangeText={setText} value={text} />;
+    return (
+      <SearchInput
+        accessibilityLabel="Search"
+        placeholder="Placeholder"
+        onChangeText={setText}
+        value={text}
+      />
+    );
   };
 
   const Borderless = () => {
     const [text, setText] = useState('');
 
-    return <SearchInput bordered={false} value={text} onChangeText={setText} />;
+    return (
+      <SearchInput
+        accessibilityLabel="Search"
+        bordered={false}
+        value={text}
+        onChangeText={setText}
+      />
+    );
   };
 
   const HideStartIcon = () => {
     const [text, setText] = useState('');
 
-    return <SearchInput value={text} hideStartIcon onChangeText={setText} />;
+    return (
+      <SearchInput accessibilityLabel="Search" value={text} hideStartIcon onChangeText={setText} />
+    );
   };
 
   const OnClear = () => {
@@ -45,6 +61,7 @@ export function searchInputBuilder(
 
     return (
       <SearchInput
+        accessibilityLabel="Search"
         onClear={handleOnClear}
         onChangeText={setText}
         value={text}
@@ -62,6 +79,7 @@ export function searchInputBuilder(
 
     return (
       <SearchInput
+        accessibilityLabel="Search"
         value={text}
         onChangeText={setText}
         onSearch={handleOnSearch}
@@ -79,6 +97,7 @@ export function searchInputBuilder(
 
     return (
       <SearchInput
+        accessibilityLabel="Search"
         value={text}
         onChangeText={setText}
         onFocus={handleOnFocus}
@@ -96,6 +115,7 @@ export function searchInputBuilder(
 
     return (
       <SearchInput
+        accessibilityLabel="Search"
         value={text}
         onChangeText={setText}
         onBlur={handleOnBlur}
@@ -123,7 +143,7 @@ export function searchInputBuilder(
 
     return (
       <>
-        <SearchInput value={text} onChangeText={setText} />
+        <SearchInput accessibilityLabel="Search" value={text} onChangeText={setText} />
         <TextLabel1>{text}</TextLabel1>
       </>
     );
