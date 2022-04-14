@@ -170,8 +170,6 @@ export type IconName =
   | 'airdrop'
   | 'fork'
   | 'unknown'
-  | 'thumbsDown'
-  | 'thumbsUp'
   | 'planetInactive'
   | 'planetActive'
   | 'paperclip'
@@ -187,7 +185,10 @@ export type IconName =
   | 'setPinCode'
   | 'diagonalUpArrow'
   | 'diagonalDownArrow'
-  | 'seenActive';
+  | 'seenActive'
+  | 'comment'
+  | 'thumbsUp'
+  | 'thumbsDown';
 
 export type NavigationIconName =
   | 'account'
@@ -225,7 +226,8 @@ export type NavigationIconName =
   | 'shoppingCart'
   | 'trophyCup'
   | 'moreVertical'
-  | 'browser';
+  | 'browser'
+  | 'interest';
 
 export type NavigationIconInternalName =
   | 'accountInactive'
@@ -299,4 +301,6 @@ export type NavigationIconInternalName =
   | 'moreVerticalInactive'
   | 'moreVerticalActive'
   | 'browserInactive'
-  | 'browserActive';
+  | 'browserActive'
+  | 'interestInactive'
+  | 'interestActive';

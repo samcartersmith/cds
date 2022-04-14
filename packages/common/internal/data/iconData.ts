@@ -174,8 +174,6 @@ export const iconNames = [
   'airdrop',
   'fork',
   'unknown',
-  'thumbsDown',
-  'thumbsUp',
   'planetInactive',
   'planetActive',
   'paperclip',
@@ -192,6 +190,9 @@ export const iconNames = [
   'diagonalUpArrow',
   'diagonalDownArrow',
   'seenActive',
+  'comment',
+  'thumbsUp',
+  'thumbsDown',
 ] as const;
 
 export const navigationIconNames = [
@@ -231,6 +232,7 @@ export const navigationIconNames = [
   'trophyCup',
   'moreVertical',
   'browser',
+  'interest',
 ] as const;
 
 export const unicodeMap = {
@@ -530,4 +532,7 @@ export const unicodeMap = {
   seenActive: { '8': 'uEE4D', '12': 'uEE4E', '16': 'uEE4F', '24': 'uEE50', '32': 'uEE51' },
   browserInactive: { '8': 'uEE52', '12': 'uEE53', '16': 'uEE54', '24': 'uEE55', '32': 'uEE56' },
   browserActive: { '8': 'uEE57', '12': 'uEE58', '16': 'uEE59', '24': 'uEE5A', '32': 'uEE5B' },
+  interestInactive: { '8': 'uEE5C', '12': 'uEE5D', '16': 'uEE5E', '24': 'uEE5F', '32': 'uEE60' },
+  interestActive: { '8': 'uEE61', '12': 'uEE62', '16': 'uEE63', '24': 'uEE64', '32': 'uEE65' },
+  comment: { '8': 'uEE66', '12': 'uEE67', '16': 'uEE68', '24': 'uEE69', '32': 'uEE6A' },
 } as const;
