@@ -1,6 +1,7 @@
-import React, { AnchorHTMLAttributes, memo, useRef } from 'react';
+import React, { AnchorHTMLAttributes, forwardRef, memo, useRef } from 'react';
 import { css } from 'linaria';
-import { SharedProps } from '@cbhq/cds-common';
+import { ForwardedRef, SharedProps } from '@cbhq/cds-common';
+import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
 
 import { ButtonOrLink } from '../system/ButtonOrLink';
@@ -73,46 +74,52 @@ export type LinkProps = {
   SharedProps &
   Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children' | 'color'>;
 
-export const Link = memo(function Link({
-  accessibilityLabel,
-  children,
-  to,
-  openInNewWindow = false,
-  testID,
-  rel,
-  renderContainer,
-  variant = 'inherit',
-  onPress,
-  // text props
-  color = 'primary',
-  mono,
-  dangerouslySetClassName,
-  ...props
-}: LinkProps) {
-  const linkRef = useRef(null);
-  const TextComponent = TYPOGRAPHY_MAP[variant];
+export const Link = memo(
+  forwardRef(function Link(
+    {
+      accessibilityLabel,
+      children,
+      to,
+      openInNewWindow = false,
+      testID,
+      rel,
+      renderContainer,
+      variant = 'inherit',
+      onPress,
+      // text props
+      color = 'primary',
+      mono,
+      dangerouslySetClassName,
+      ...props
+    }: LinkProps,
+    ref: ForwardedRef<HTMLElement>,
+  ) {
+    const linkRef = useRef(null);
+    const TextComponent = TYPOGRAPHY_MAP[variant];
+    const mergedRef = useMergedRef(ref, linkRef);
 
-  const enhancedProps = {
-    'aria-label': accessibilityLabel,
-    'data-testid': testID,
-    className: cx(linkClassName, link, dangerouslySetClassName),
-    onClick: onPress,
-    ref: linkRef,
-    href: to,
-    rel,
-    target: openInNewWindow ? '_blank' : undefined,
-    children: (
-      <TextComponent
-        as="span"
-        color={color}
-        mono={mono}
-        dangerouslySetClassName={linkContainerClassName}
-      >
-        {children}
-      </TextComponent>
-    ),
-    ...props,
-  };
+    const enhancedProps = {
+      'aria-label': accessibilityLabel,
+      'data-testid': testID,
+      className: cx(linkClassName, link, dangerouslySetClassName),
+      onClick: onPress,
+      ref: mergedRef,
+      href: to,
+      rel,
+      target: openInNewWindow ? '_blank' : undefined,
+      children: (
+        <TextComponent
+          as="span"
+          color={color}
+          mono={mono}
+          dangerouslySetClassName={linkContainerClassName}
+        >
+          {children}
+        </TextComponent>
+      ),
+      ...props,
+    };
 
-  return renderContainer ? renderContainer(enhancedProps) : <ButtonOrLink {...enhancedProps} />;
-});
+    return renderContainer ? renderContainer(enhancedProps) : <ButtonOrLink {...enhancedProps} />;
+  }),
+);
