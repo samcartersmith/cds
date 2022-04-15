@@ -3,7 +3,9 @@
   "compilerOptions": {
     "outDir": "../../.nx/dist/examples/nextjs",
     "noEmit": false,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "rootDir": ".",
+    "paths": {}
   },
   "exclude": ["babel.config.js"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]

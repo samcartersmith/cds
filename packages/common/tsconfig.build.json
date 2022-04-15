@@ -2,8 +2,7 @@
   "extends": "../../tsconfig.buildOptions.json",
   "compilerOptions": {
     "outDir": "../../.nx/dist/packages/common",
-    "rootDir": "./",
-    "baseUrl": "."
+    "rootDir": "./"
   },
   "include": ["**/*"],
   "exclude": ["dist", "**/*.test.ts", "**/*.test.tsx", "jest.config.js"],

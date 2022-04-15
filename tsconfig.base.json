@@ -22,6 +22,48 @@
     "paths": {
       ":cds-website/*": [
         "apps/website/*"
+      ],
+      "@cbhq/cds-common": [
+        "packages/common"
+      ],
+      "@cbhq/cds-common/*": [
+        "packages/common/*"
+      ],
+      "@cbhq/cds-fonts": [
+        "packages/fonts"
+      ],
+      "@cbhq/cds-fonts/*": [
+        "packages/fonts/*"
+      ],
+      "@cbhq/cds-lottie-files": [
+        "packages/lottie-files"
+      ],
+      "@cbhq/cds-lottie-files/*": [
+        "packages/lottie-files/*"
+      ],
+      "@cbhq/cds-mobile": [
+        "packages/mobile"
+      ],
+      "@cbhq/cds-mobile/*": [
+        "packages/mobile/*"
+      ],
+      "@cbhq/cds-utils": [
+        "packages/utils"
+      ],
+      "@cbhq/cds-utils/*": [
+        "packages/utils/*"
+      ],
+      "@cbhq/cds-web": [
+        "packages/web"
+      ],
+      "@cbhq/cds-web/*": [
+        "packages/web/*"
+      ],
+      "@cbhq/cds-web-utils": [
+        "packages/web-utils"
+      ],
+      "@cbhq/cds-web-utils/*": [
+        "packages/web-utils/*"
       ]
     }
   }
