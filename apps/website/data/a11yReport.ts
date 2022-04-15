@@ -4,205 +4,132 @@
  */
 
 export const a11yReport = {
-  timestamp: '2022-03-24T02:38:07.878Z',
+  timestamp: '2022-04-15T18:10:27.890Z',
   report: [
     {
-      id: 'core-components-switchers-appswitcher--app-switcher',
-      name: 'App Switcher',
-      title: 'Core Components/Switchers/AppSwitcher',
-      kind: 'Core Components/Switchers/AppSwitcher',
-      passes: 10,
-      violations: [
-        {
-          id: 'aria-allowed-attr',
-          impact: 'critical',
-          tags: ['cat.aria', 'wcag2a', 'wcag412'],
-          description: "Ensures ARIA attributes are allowed for an element's role",
-          help: 'Elements must only use allowed ARIA attributes',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="9kfu8ntv1mh" aria-haspopup="dialog">',
-              target: ['.sfo71e8'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-          ],
-        },
-      ],
+      id: 'components-cards--announcement-card',
+      name: 'Announcement Card',
+      title: 'components/Cards',
+      kind: 'components/Cards',
+      passes: 13,
+      violations: [],
     },
     {
-      id: 'core-components-switchers-appswitcher--app-switcher-with-dot',
-      name: 'App Switcher With Dot',
-      title: 'Core Components/Switchers/AppSwitcher',
-      kind: 'Core Components/Switchers/AppSwitcher',
-      passes: 10,
+      id: 'components-cards--announcement-cards',
+      name: 'Announcement Cards',
+      title: 'components/Cards',
+      kind: 'components/Cards',
+      passes: 16,
       violations: [
         {
-          id: 'aria-allowed-attr',
-          impact: 'critical',
-          tags: ['cat.aria', 'wcag2a', 'wcag412'],
-          description: "Ensures ARIA attributes are allowed for an element's role",
-          help: 'Elements must only use allowed ARIA attributes',
+          id: 'nested-interactive',
+          impact: 'serious',
+          tags: ['cat.keyboard', 'wcag2a', 'wcag412'],
+          description:
+            'Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies',
+          help: 'Interactive controls must not be nested',
           helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axe-puppeteer',
+            'https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axe-puppeteer',
           nodes: [
             {
               any: [
                 {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="9fe3z3pjwb8" aria-haspopup="dialog">',
-              target: ['.sfo71e8'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: 'core-components-recipes-navigationbarwithswitchers--navigation-bar-with-switchers',
-      name: 'Navigation Bar With Switchers',
-      title: 'Core Components/Recipes/NavigationBarWithSwitchers',
-      kind: 'Core Components/Recipes/NavigationBarWithSwitchers',
-      passes: 17,
-      violations: [
-        {
-          id: 'aria-allowed-attr',
-          impact: 'critical',
-          tags: ['cat.aria', 'wcag2a', 'wcag412'],
-          description: "Ensures ARIA attributes are allowed for an element's role",
-          help: 'Elements must only use allowed ARIA attributes',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="58n4aavh7ug" aria-haspopup="dialog">',
-              target: ['div[aria-controls="58n4aavh7ug"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="bnqmkn6y3ah" aria-haspopup="dialog">',
-              target: ['div[aria-controls="bnqmkn6y3ah"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-          ],
-        },
-        {
-          id: 'heading-order',
-          impact: 'moderate',
-          tags: ['cat.semantics', 'best-practice'],
-          description: 'Ensures the order of headings is semantically correct',
-          help: 'Heading levels should only increase by one',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'heading-order',
+                  id: 'no-focusable-content',
                   data: null,
-                  relatedNodes: [],
-                  impact: 'moderate',
-                  message: 'Heading order invalid',
+                  relatedNodes: [
+                    {
+                      html: '<button type="button" data-testid="card-body-action" class="i1mid3m6 iqamtvt ixq3qcz tnurl35 t106q4en b19rrrfi fxvgl8z ppscynd bs74mpw b1idwjgh _12x2frn _czghws _jf348 _1os04ly _jf348" style="--interactable-height:40px; margin-left: calc(var(--spacing-2) * -1); margin-right: 0px; min-width: unset; --interactable-opacity-hovered:0.98; --interactable-opacity-pressed:0.92; --interactable-overlay:var(--gray0); --interactable-underlay:var(--foreground); --interactable-border-radius:4px;">',
+                      target: [
+                        '.cys9fvs:nth-child(3) > .p1qbvwwp > .c1wa27ul.f13ygna6 > .c1omxyrd.r45vtfp.s19f9ocl > .f1g4ii86.c1wa27ul.f13ygna6 > .ixq3qcz.b19rrrfi.bs74mpw',
+                      ],
+                    },
+                  ],
+                  impact: 'serious',
+                  message: 'Element has focusable descendants',
                 },
               ],
               all: [],
               none: [],
-              impact: 'moderate',
-              html: '<h3 class="t160640o h1hmspdn f1eacfne t5418vf sjo1exx t41rhkw">Brian</h3>',
-              target: ['h3'],
-              failureSummary: 'Fix any of the following:\n  Heading order invalid',
+              impact: 'serious',
+              html: '<button type="button" class="i1mid3m6 iqamtvt tnurl35 t106q4en fxvgl8z p1qbvwwp" style="--interactable-opacity-hovered:0.98; --interactable-opacity-pressed:0.92; --interactable-underlay:var(--foreground); --interactable-border-radius:0px;">',
+              target: ['.cys9fvs:nth-child(3) > .p1qbvwwp'],
+              failureSummary: 'Fix any of the following:\n  Element has focusable descendants',
+            },
+            {
+              any: [
+                {
+                  id: 'no-focusable-content',
+                  data: null,
+                  relatedNodes: [
+                    {
+                      html: '<button type="button" data-testid="card-body-action" class="i1mid3m6 iqamtvt ixq3qcz tnurl35 t106q4en b19rrrfi fxvgl8z ppscynd bs74mpw b1idwjgh _12x2frn _czghws _jf348 _1os04ly _jf348" style="--interactable-height:40px; margin-left: calc(var(--spacing-2) * -1); margin-right: 0px; min-width: unset; --interactable-opacity-hovered:0.98; --interactable-opacity-pressed:0.92; --interactable-overlay:var(--gray0); --interactable-underlay:var(--foreground); --interactable-border-radius:4px;">',
+                      target: [
+                        '.cys9fvs:nth-child(5) > .p1qbvwwp > .c1wa27ul.f13ygna6 > .c1omxyrd.r45vtfp.s19f9ocl > .f1g4ii86.c1wa27ul.f13ygna6 > .ixq3qcz.b19rrrfi.bs74mpw',
+                      ],
+                    },
+                  ],
+                  impact: 'serious',
+                  message: 'Element has focusable descendants',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<button type="button" class="i1mid3m6 iqamtvt tnurl35 t106q4en fxvgl8z p1qbvwwp" style="--interactable-opacity-hovered:0.98; --interactable-opacity-pressed:0.92; --interactable-underlay:var(--foreground); --interactable-border-radius:0px;">',
+              target: ['.cys9fvs:nth-child(5) > .p1qbvwwp'],
+              failureSummary: 'Fix any of the following:\n  Element has focusable descendants',
             },
           ],
         },
       ],
     },
     {
-      id: 'core-components-switchers-userswitcher--user-switcher',
-      name: 'User Switcher',
-      title: 'Core Components/Switchers/UserSwitcher',
-      kind: 'Core Components/Switchers/UserSwitcher',
-      passes: 15,
-      violations: [
-        {
-          id: 'aria-allowed-attr',
-          impact: 'critical',
-          tags: ['cat.aria', 'wcag2a', 'wcag412'],
-          description: "Ensures ARIA attributes are allowed for an element's role",
-          help: 'Elements must only use allowed ARIA attributes',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="beymlm38pn" aria-haspopup="dialog">',
-              target: ['.sfo71e8'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-          ],
-        },
-      ],
+      id: 'components-cards--data-card',
+      name: 'Data Card',
+      title: 'components/Cards',
+      kind: 'components/Cards',
+      passes: 9,
+      violations: [],
+    },
+    {
+      id: 'components-cards--data-cards',
+      name: 'Data Cards',
+      title: 'components/Cards',
+      kind: 'components/Cards',
+      passes: 13,
+      violations: [],
+    },
+    {
+      id: 'components-cards--feature-entry-card',
+      name: 'Feature Entry Card',
+      title: 'components/Cards',
+      kind: 'components/Cards',
+      passes: 13,
+      violations: [],
+    },
+    {
+      id: 'components-cards--feature-entry-cards',
+      name: 'Feature Entry Cards',
+      title: 'components/Cards',
+      kind: 'components/Cards',
+      passes: 16,
+      violations: [],
+    },
+    {
+      id: 'components-cards--feed-card',
+      name: 'Feed Card',
+      title: 'components/Cards',
+      kind: 'components/Cards',
+      passes: 13,
+      violations: [],
+    },
+    {
+      id: 'components-cards--feed-cards',
+      name: 'Feed Cards',
+      title: 'components/Cards',
+      kind: 'components/Cards',
+      passes: 16,
+      violations: [],
     },
     {
       id: 'core-components-accordion--basic-accordion',
@@ -489,118 +416,8 @@ export const a11yReport = {
       name: 'With Actions',
       title: 'Core Components/Cells/ListCell',
       kind: 'Core Components/Cells/ListCell',
-      passes: 13,
-      violations: [
-        {
-          id: 'aria-allowed-attr',
-          impact: 'critical',
-          tags: ['cat.aria', 'wcag2a', 'wcag412'],
-          description: "Ensures ARIA attributes are allowed for an element's role",
-          help: 'Elements must only use allowed ARIA attributes',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-required="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-required="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input class="c1baze8m poigcwi" type="checkbox" aria-checked="true" aria-disabled="false" aria-readonly="false" aria-required="false" role="switch" accessibilitylabel="Checkbox" value="" checked="">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-required="false"',
-            },
-          ],
-        },
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input class="c1baze8m poigcwi" type="checkbox" aria-checked="true" aria-disabled="false" aria-readonly="false" aria-required="false" role="switch" accessibilitylabel="Checkbox" value="" checked="">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 15,
+      violations: [],
     },
     {
       id: 'core-components-cells-listcell--with-intermediary',
@@ -711,66 +528,8 @@ export const a11yReport = {
       name: 'Basic',
       title: 'Core Components/Inputs/InputIcon',
       kind: 'Core Components/Inputs/InputIcon',
-      passes: 12,
-      violations: [
-        {
-          id: 'duplicate-id-aria',
-          impact: 'critical',
-          tags: ['cat.parsing', 'wcag2a', 'wcag411'],
-          description: 'Ensures every id attribute value used in ARIA and in labels is unique',
-          help: 'IDs used in ARIA and labels must be unique',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'duplicate-id-aria',
-                  data: 'Label',
-                  relatedNodes: [
-                    {
-                      html: '<input aria-label="Label" aria-describedby="cds-textinput-description-tra951iphjn" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" id="Label" style="text-align: start;">',
-                      target: [
-                        '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(2) > .r45vtfp.f13ygna6 > .i68rftm > .i1mid3m6.i769vsc.tnurl35 > input',
-                      ],
-                    },
-                    {
-                      html: '<input aria-label="Label" aria-describedby="cds-textinput-description-7ao9h7kznok" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" id="Label" style="text-align: start;">',
-                      target: [
-                        '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(3) > .r45vtfp.f13ygna6 > .i68rftm > .i1mid3m6.i769vsc.tnurl35 > input',
-                      ],
-                    },
-                    {
-                      html: '<input aria-label="Label" aria-describedby="cds-textinput-description-p0ftntqzah9" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" id="Label" style="text-align: start;">',
-                      target: [
-                        '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(4) > .r45vtfp.f13ygna6 > .i68rftm > .i1mid3m6.i769vsc.tnurl35 > input',
-                      ],
-                    },
-                    {
-                      html: '<input aria-label="Label" aria-describedby="cds-textinput-description-ze362d1547" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" id="Label" style="text-align: start;">',
-                      target: [
-                        '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(5) > .r45vtfp.f13ygna6 > .i68rftm > .i1mid3m6.i769vsc.tnurl35 > input',
-                      ],
-                    },
-                  ],
-                  impact: 'critical',
-                  message:
-                    'Document has multiple elements referenced with ARIA with the same id attribute: Label',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-label="Label" aria-describedby="cds-textinput-description-h4q59x7852u" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" id="Label" style="text-align: start;">',
-              target: [
-                '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(1) > .r45vtfp.f13ygna6 > .i68rftm > .i1mid3m6.i769vsc.tnurl35 > input',
-              ],
-              failureSummary:
-                'Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: Label',
-            },
-          ],
-        },
-      ],
+      passes: 14,
+      violations: [],
     },
     {
       id: 'core-components-inputs-inputicon--basic-end',
@@ -825,66 +584,8 @@ export const a11yReport = {
       name: 'Basic',
       title: 'Core Components/Inputs/InputIconButton',
       kind: 'Core Components/Inputs/InputIconButton',
-      passes: 14,
-      violations: [
-        {
-          id: 'duplicate-id-aria',
-          impact: 'critical',
-          tags: ['cat.parsing', 'wcag2a', 'wcag411'],
-          description: 'Ensures every id attribute value used in ARIA and in labels is unique',
-          help: 'IDs used in ARIA and labels must be unique',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'duplicate-id-aria',
-                  data: 'Label',
-                  relatedNodes: [
-                    {
-                      html: '<input aria-label="Label" aria-describedby="cds-textinput-description-amtktb0qhqg" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" id="Label" style="text-align: start;">',
-                      target: [
-                        '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(2) > .r45vtfp.f13ygna6 > .i68rftm > .i769vsc.iku8viz.ieg5chz > input',
-                      ],
-                    },
-                    {
-                      html: '<input aria-label="Label" aria-describedby="cds-textinput-description-meexvf35lvj" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" id="Label" style="text-align: start;">',
-                      target: [
-                        '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(3) > .r45vtfp.f13ygna6 > .i68rftm > .i769vsc.iku8viz.ieg5chz > input',
-                      ],
-                    },
-                    {
-                      html: '<input aria-label="Label" aria-describedby="cds-textinput-description-z6c19uhcrwl" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" id="Label" style="text-align: start;">',
-                      target: [
-                        '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(4) > .r45vtfp.f13ygna6 > .i68rftm > .i769vsc.iku8viz.ieg5chz > input',
-                      ],
-                    },
-                    {
-                      html: '<input aria-label="Label" aria-describedby="cds-textinput-description-9xqocj6ff9n" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" id="Label" style="text-align: start;">',
-                      target: [
-                        '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(5) > .r45vtfp.f13ygna6 > .i68rftm > .i769vsc.iku8viz.ieg5chz > input',
-                      ],
-                    },
-                  ],
-                  impact: 'critical',
-                  message:
-                    'Document has multiple elements referenced with ARIA with the same id attribute: Label',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-label="Label" aria-describedby="cds-textinput-description-9mixqu7m3l" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" id="Label" style="text-align: start;">',
-              target: [
-                '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(1) > .r45vtfp.f13ygna6 > .i68rftm > .i769vsc.iku8viz.ieg5chz > input',
-              ],
-              failureSummary:
-                'Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: Label',
-            },
-          ],
-        },
-      ],
+      passes: 16,
+      violations: [],
     },
     {
       id: 'core-components-inputs-inputiconbutton--basic-end',
@@ -956,116 +657,7 @@ export const a11yReport = {
       title: 'Core Components/InputStack',
       kind: 'Core Components/InputStack',
       passes: 7,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#0a0b0d',
-                    bgColor: '#098551',
-                    contrastRatio: 4.2,
-                    fontSize: '12.0pt (16px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [
-                    {
-                      html: '<div class="f13ygna6 p41xkb9 it312lv"><p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">StartContent</p></div>',
-                      target: ['.p41xkb9.it312lv.f13ygna6:nth-child(1)'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 4.2 (foreground color: #0a0b0d, background color: #098551, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">StartContent</p>',
-              target: ['.p41xkb9.it312lv.f13ygna6:nth-child(1) > .t160640o.bw3lfah.f1eacfne'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #0a0b0d, background color: #098551, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#0a0b0d',
-                    bgColor: '#098551',
-                    contrastRatio: 4.2,
-                    fontSize: '12.0pt (16px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [
-                    {
-                      html: '<div class="f13ygna6 p41xkb9 it312lv"><p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">EndContent</p></div>',
-                      target: ['.p41xkb9.it312lv.f13ygna6:nth-child(3)'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 4.2 (foreground color: #0a0b0d, background color: #098551, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">EndContent</p>',
-              target: ['.p41xkb9.it312lv.f13ygna6:nth-child(3) > .t160640o.bw3lfah.f1eacfne'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #0a0b0d, background color: #098551, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#0a0b0d',
-                    bgColor: '#0052ff',
-                    contrastRatio: 3.42,
-                    fontSize: '12.0pt (16px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [
-                    {
-                      html: '<div class="f13ygna6 p102s7wl it312lv"><p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">Append</p></div>',
-                      target: ['.p102s7wl'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 3.42 (foreground color: #0a0b0d, background color: #0052ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">Append</p>',
-              target: ['.p102s7wl > .t160640o.bw3lfah.f1eacfne'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 3.42 (foreground color: #0a0b0d, background color: #0052ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-inputstack--input-stack-examples',
@@ -1073,148 +665,7 @@ export const a11yReport = {
       title: 'Core Components/InputStack',
       kind: 'Core Components/InputStack',
       passes: 7,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#0a0b0d',
-                    bgColor: '#0052ff',
-                    contrastRatio: 3.42,
-                    fontSize: '12.0pt (16px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [
-                    {
-                      html: '<div class="f13ygna6 p102s7wl"><p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">Prepend</p></div>',
-                      target: ['.p102s7wl.f13ygna6:nth-child(1)'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 3.42 (foreground color: #0a0b0d, background color: #0052ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">Prepend</p>',
-              target: ['.p102s7wl.f13ygna6:nth-child(1) > .t160640o.bw3lfah.f1eacfne'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 3.42 (foreground color: #0a0b0d, background color: #0052ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#0a0b0d',
-                    bgColor: '#098551',
-                    contrastRatio: 4.2,
-                    fontSize: '12.0pt (16px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [
-                    {
-                      html: '<div class="f13ygna6 p41xkb9 it312lv"><p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">StartContent</p></div>',
-                      target: ['.p41xkb9.it312lv.f13ygna6:nth-child(1)'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 4.2 (foreground color: #0a0b0d, background color: #098551, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">StartContent</p>',
-              target: ['.p41xkb9.it312lv.f13ygna6:nth-child(1) > .t160640o.bw3lfah.f1eacfne'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #0a0b0d, background color: #098551, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#0a0b0d',
-                    bgColor: '#098551',
-                    contrastRatio: 4.2,
-                    fontSize: '12.0pt (16px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [
-                    {
-                      html: '<div class="f13ygna6 p41xkb9 it312lv"><p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">EndContent</p></div>',
-                      target: ['.p41xkb9.it312lv.f13ygna6:nth-child(3)'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 4.2 (foreground color: #0a0b0d, background color: #098551, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">EndContent</p>',
-              target: ['.p41xkb9.it312lv.f13ygna6:nth-child(3) > .t160640o.bw3lfah.f1eacfne'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #0a0b0d, background color: #098551, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#0a0b0d',
-                    bgColor: '#0052ff',
-                    contrastRatio: 3.42,
-                    fontSize: '12.0pt (16px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [
-                    {
-                      html: '<div class="f13ygna6 p102s7wl"><p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">Append</p></div>',
-                      target: ['.p102s7wl.f13ygna6:nth-child(3)'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 3.42 (foreground color: #0a0b0d, background color: #0052ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">Append</p>',
-              target: ['.p102s7wl.f13ygna6:nth-child(3) > .t160640o.bw3lfah.f1eacfne'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 3.42 (foreground color: #0a0b0d, background color: #0052ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-inputstack--prepend',
@@ -1222,390 +673,38 @@ export const a11yReport = {
       title: 'Core Components/InputStack',
       kind: 'Core Components/InputStack',
       passes: 7,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#0a0b0d',
-                    bgColor: '#0052ff',
-                    contrastRatio: 3.42,
-                    fontSize: '12.0pt (16px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [
-                    {
-                      html: '<div class="f13ygna6 p102s7wl it312lv"><p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">Append</p></div>',
-                      target: ['.p102s7wl'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 3.42 (foreground color: #0a0b0d, background color: #0052ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">Append</p>',
-              target: ['.p102s7wl > .t160640o.bw3lfah.f1eacfne'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 3.42 (foreground color: #0a0b0d, background color: #0052ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#0a0b0d',
-                    bgColor: '#098551',
-                    contrastRatio: 4.2,
-                    fontSize: '12.0pt (16px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [
-                    {
-                      html: '<div class="f13ygna6 p41xkb9 it312lv"><p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">StartContent</p></div>',
-                      target: ['.p41xkb9.it312lv.f13ygna6:nth-child(1)'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 4.2 (foreground color: #0a0b0d, background color: #098551, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">StartContent</p>',
-              target: ['.p41xkb9.it312lv.f13ygna6:nth-child(1) > .t160640o.bw3lfah.f1eacfne'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #0a0b0d, background color: #098551, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#0a0b0d',
-                    bgColor: '#098551',
-                    contrastRatio: 4.2,
-                    fontSize: '12.0pt (16px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [
-                    {
-                      html: '<div class="f13ygna6 p41xkb9 it312lv"><p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">EndContent</p></div>',
-                      target: ['.p41xkb9.it312lv.f13ygna6:nth-child(3)'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 4.2 (foreground color: #0a0b0d, background color: #098551, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<p class="t160640o bw3lfah f1eacfne t5418vf sjo1exx">EndContent</p>',
-              target: ['.p41xkb9.it312lv.f13ygna6:nth-child(3) > .t160640o.bw3lfah.f1eacfne'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #0a0b0d, background color: #098551, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-inputs-nativeinput--native-input-actions',
       name: 'Native Input Actions',
       title: 'Core Components/Inputs/NativeInput',
       kind: 'Core Components/Inputs/NativeInput',
-      passes: 10,
-      violations: [
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 12,
+      violations: [],
     },
     {
       id: 'core-components-inputs-nativeinput--native-input-basic',
       name: 'Native Input Basic',
       title: 'Core Components/Inputs/NativeInput',
       kind: 'Core Components/Inputs/NativeInput',
-      passes: 10,
-      violations: [
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 12,
+      violations: [],
     },
     {
       id: 'core-components-inputs-nativeinput--native-input-custom-container-spacing',
       name: 'Native Input Custom Container Spacing',
       title: 'Core Components/Inputs/NativeInput',
       kind: 'Core Components/Inputs/NativeInput',
-      passes: 10,
-      violations: [
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input class="n1re6qxo bw3lfah _12x2frn _czghws _14apokp _oepdog" tabindex="0" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 12,
+      violations: [],
     },
     {
       id: 'core-components-inputs-nativeinput--native-input-text-align',
       name: 'Native Input Text Align',
       title: 'Core Components/Inputs/NativeInput',
       kind: 'Core Components/Inputs/NativeInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -1613,165 +712,23 @@ export const a11yReport = {
       name: 'Basic',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 13,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-mqzfyzc9v9g" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" placeholder="Placeholder" value="Value" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-      ],
+      passes: 15,
+      violations: [],
     },
     {
       id: 'core-components-inputs-searchinput--borderless',
       name: 'Borderless',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 9,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-khdesx6nxy" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-describedby="cds-textinput-description-khdesx6nxy" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 12,
+      violations: [],
     },
     {
       id: 'core-components-inputs-searchinput--compact',
       name: 'Compact',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -1779,119 +736,8 @@ export const a11yReport = {
       name: 'Custom Ref',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 9,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-qkmk88t7ue" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-describedby="cds-textinput-description-qkmk88t7ue" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 12,
+      violations: [],
     },
     {
       id: 'core-components-inputs-searchinput--disabled',
@@ -1923,8 +769,8 @@ export const a11yReport = {
                 },
               ],
               impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-hh3rvbi31fs" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" disabled="" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
+              html: '<input aria-describedby="cds-textinput-description-m28n5nzg7lf" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" disabled="" id="3z1sgrrg1kr" role="searchbox" type="search" value="" style="text-align: start;">',
+              target: ['#\\33 z1sgrrg1kr'],
               failureSummary:
                 'Fix all of the following:\n  Only title used to generate label for form element',
             },
@@ -2003,8 +849,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<input aria-describedby="cds-textinput-description-hh3rvbi31fs" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" disabled="" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
+              html: '<input aria-describedby="cds-textinput-description-m28n5nzg7lf" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" disabled="" id="3z1sgrrg1kr" role="searchbox" type="search" value="" style="text-align: start;">',
+              target: ['#\\33 z1sgrrg1kr'],
               failureSummary:
                 'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
             },
@@ -2017,552 +863,64 @@ export const a11yReport = {
       name: 'Display Value',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 9,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-v3v1ijtv2gn" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-describedby="cds-textinput-description-v3v1ijtv2gn" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 12,
+      violations: [],
     },
     {
       id: 'core-components-inputs-searchinput--hide-start-icon',
       name: 'Hide Start Icon',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 9,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-i6wvoljdq6" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-describedby="cds-textinput-description-i6wvoljdq6" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 12,
+      violations: [],
     },
     {
       id: 'core-components-inputs-searchinput--hide-start-icon-search-example',
       name: 'Hide Start Icon Search Example',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 13,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-6wafjw5sycw" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" role="searchbox" type="search" placeholder="Placeholder" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-      ],
+      passes: 15,
+      violations: [],
     },
     {
       id: 'core-components-inputs-searchinput--on-blur',
       name: 'On Blur',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 10,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-r8erdg32vx8" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" placeholder="Placeholder" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-      ],
+      passes: 12,
+      violations: [],
     },
     {
       id: 'core-components-inputs-searchinput--on-change-example',
       name: 'On Change Example',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 9,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-0m7w3cj1oimd" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-describedby="cds-textinput-description-0m7w3cj1oimd" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 12,
+      violations: [],
     },
     {
       id: 'core-components-inputs-searchinput--on-clear',
       name: 'On Clear',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 10,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-xhhdh7x3jcr" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" placeholder="Placeholder" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-      ],
+      passes: 12,
+      violations: [],
     },
     {
       id: 'core-components-inputs-searchinput--on-focus',
       name: 'On Focus',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 10,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-l3jhhhye06" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" placeholder="Placeholder" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-      ],
+      passes: 12,
+      violations: [],
     },
     {
       id: 'core-components-inputs-searchinput--on-search',
       name: 'On Search',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 10,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-1ldle4qbvnb" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" placeholder="Hit Enter to see the string logged to console" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-      ],
+      passes: 12,
+      violations: [],
     },
     {
       id: 'core-components-inputs-select--compact',
@@ -2689,48 +1047,8 @@ export const a11yReport = {
       name: 'Align',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 14,
-      violations: [
-        {
-          id: 'duplicate-id-aria',
-          impact: 'critical',
-          tags: ['cat.parsing', 'wcag2a', 'wcag411'],
-          description: 'Ensures every id attribute value used in ARIA and in labels is unique',
-          help: 'IDs used in ARIA and labels must be unique',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'duplicate-id-aria',
-                  data: 'Label',
-                  relatedNodes: [
-                    {
-                      html: '<input aria-label="Label" aria-describedby="cds-textinput-description-4a36ckde5qe" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" id="Label" placeholder="placeholder" style="text-align: end;">',
-                      target: [
-                        '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(2) > .r45vtfp.f13ygna6 > .i68rftm > .i1mid3m6.i769vsc.tnurl35 > input',
-                      ],
-                    },
-                  ],
-                  impact: 'critical',
-                  message:
-                    'Document has multiple elements referenced with ARIA with the same id attribute: Label',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-label="Label" aria-describedby="cds-textinput-description-4ch07i5si4w" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" id="Label" placeholder="placeholder" style="text-align: start;">',
-              target: [
-                '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(1) > .r45vtfp.f13ygna6 > .i68rftm > .i1mid3m6.i769vsc.tnurl35 > input',
-              ],
-              failureSummary:
-                'Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: Label',
-            },
-          ],
-        },
-      ],
+      passes: 16,
+      violations: [],
     },
     {
       id: 'core-components-inputs-textinput--basic',
@@ -2745,7 +1063,7 @@ export const a11yReport = {
       name: 'Border Radius',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 15,
+      passes: 16,
       violations: [],
     },
     {
@@ -2753,7 +1071,7 @@ export const a11yReport = {
       name: 'Borderless',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 15,
+      passes: 16,
       violations: [],
     },
     {
@@ -2801,7 +1119,7 @@ export const a11yReport = {
       name: 'Copy Text Input',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 17,
+      passes: 18,
       violations: [],
     },
     {
@@ -2809,44 +1127,8 @@ export const a11yReport = {
       name: 'Disabled',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 13,
-      violations: [
-        {
-          id: 'duplicate-id-aria',
-          impact: 'critical',
-          tags: ['cat.parsing', 'wcag2a', 'wcag411'],
-          description: 'Ensures every id attribute value used in ARIA and in labels is unique',
-          help: 'IDs used in ARIA and labels must be unique',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'duplicate-id-aria',
-                  data: 'Label',
-                  relatedNodes: [
-                    {
-                      html: '<input aria-label="Label" aria-describedby="cds-textinput-description-6b15wbgdoyh" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" disabled="" id="Label" style="text-align: start;">',
-                      target: ['._15bc7a9'],
-                    },
-                  ],
-                  impact: 'critical',
-                  message:
-                    'Document has multiple elements referenced with ARIA with the same id attribute: Label',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-label="Label" aria-describedby="cds-textinput-description-j3s7d321gaf" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" disabled="" id="Label" style="text-align: start;">',
-              target: ['._1vh1yhf'],
-              failureSummary:
-                'Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: Label',
-            },
-          ],
-        },
-      ],
+      passes: 15,
+      violations: [],
     },
     {
       id: 'core-components-inputs-textinput--end-content',
@@ -2861,7 +1143,7 @@ export const a11yReport = {
       name: 'Height',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 15,
+      passes: 16,
       violations: [],
     },
     {
@@ -2869,7 +1151,7 @@ export const a11yReport = {
       name: 'Helper Text',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 15,
+      passes: 16,
       violations: [],
     },
     {
@@ -2877,7 +1159,7 @@ export const a11yReport = {
       name: 'Input On Change',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 15,
+      passes: 16,
       violations: [],
     },
     {
@@ -2885,7 +1167,7 @@ export const a11yReport = {
       name: 'No Label',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 9,
+      passes: 10,
       violations: [
         {
           id: 'label-title-only',
@@ -2910,8 +1192,8 @@ export const a11yReport = {
                 },
               ],
               impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-pnwboucakcg" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" style="text-align: start;">',
-              target: ['input'],
+              html: '<input aria-describedby="cds-textinput-description-pw1p6uwmqf9" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" id="blktd2xnewi" style="text-align: start;">',
+              target: ['#blktd2xnewi'],
               failureSummary:
                 'Fix all of the following:\n  Only title used to generate label for form element',
             },
@@ -2990,8 +1272,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<input aria-describedby="cds-textinput-description-pnwboucakcg" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" style="text-align: start;">',
-              target: ['input'],
+              html: '<input aria-describedby="cds-textinput-description-pw1p6uwmqf9" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" id="blktd2xnewi" style="text-align: start;">',
+              target: ['#blktd2xnewi'],
               failureSummary:
                 'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
             },
@@ -3012,445 +1294,40 @@ export const a11yReport = {
       name: 'Render Input Compact',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 11,
-      violations: [
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input class="n1i2hyg0" style="width: 100%; border-radius: 8px;">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 14,
+      violations: [],
     },
     {
       id: 'core-components-inputs-textinput--render-input-default',
       name: 'Render Input Default',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 11,
-      violations: [
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input class="n1i2hyg0" style="width: 100%; border-radius: 8px;">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 14,
+      violations: [],
     },
     {
       id: 'core-components-inputs-textinput--render-input-disabled',
       name: 'Render Input Disabled',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 11,
-      violations: [
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input class="n1i2hyg0" disabled="" value="Custom Input" style="width: 100%; border-radius: 8px;">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 13,
+      violations: [],
     },
     {
       id: 'core-components-inputs-textinput--render-native-text-area',
       name: 'Render Native Text Area',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 12,
-      violations: [
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<textarea class="n8pqtx8 bw3lfah _1vh1yhf" tabindex="0" rows="7" cols="5" style="resize: none;"></textarea>',
-              target: ['textarea'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 15,
+      violations: [],
     },
     {
       id: 'core-components-inputs-textinput--render-native-text-area-custom-spacing',
       name: 'Render Native Text Area Custom Spacing',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 12,
-      violations: [
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<textarea class="n8pqtx8 bw3lfah _79f347" tabindex="0" rows="7" cols="5" style="resize: none;"></textarea>',
-              target: ['textarea'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 15,
+      violations: [],
     },
     {
       id: 'core-components-inputs-textinput--start-content',
@@ -3481,61 +1358,15 @@ export const a11yReport = {
       name: 'Variants',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 14,
-      violations: [
-        {
-          id: 'duplicate-id-aria',
-          impact: 'critical',
-          tags: ['cat.parsing', 'wcag2a', 'wcag411'],
-          description: 'Ensures every id attribute value used in ARIA and in labels is unique',
-          help: 'IDs used in ARIA and labels must be unique',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'duplicate-id-aria',
-                  data: 'Label',
-                  relatedNodes: [
-                    {
-                      html: '<input aria-label="Label" aria-describedby="cds-textinput-description-f0hxvgokpul" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" id="Label" placeholder="placeholder" style="text-align: start;">',
-                      target: [
-                        '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(2) > .r45vtfp.f13ygna6 > .i68rftm > .i1mid3m6.i769vsc.tnurl35 > input',
-                      ],
-                    },
-                    {
-                      html: '<input aria-label="Label" aria-describedby="cds-textinput-description-d69ypyn4syh" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" id="Label" placeholder="placeholder" style="text-align: start;">',
-                      target: [
-                        '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(3) > .r45vtfp.f13ygna6 > .i68rftm > .i1mid3m6.i769vsc.tnurl35 > input',
-                      ],
-                    },
-                  ],
-                  impact: 'critical',
-                  message:
-                    'Document has multiple elements referenced with ARIA with the same id attribute: Label',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-label="Label" aria-describedby="cds-textinput-description-hqw9p8tujh" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" id="Label" placeholder="placeholder" style="text-align: start;">',
-              target: [
-                '.c1wa27ul.f13ygna6[data-testid=""]:nth-child(1) > .r45vtfp.f13ygna6 > .i68rftm > .i1mid3m6.i769vsc.tnurl35 > input',
-              ],
-              failureSummary:
-                'Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: Label',
-            },
-          ],
-        },
-      ],
+      passes: 16,
+      violations: [],
     },
     {
       id: 'core-components-inputs-textinput--width',
       name: 'Width',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 15,
+      passes: 16,
       violations: [],
     },
     {
@@ -4053,125 +1884,6 @@ export const a11yReport = {
       violations: [],
     },
     {
-      id: 'core-components-recipes-searchinputmenu--search-input-menu',
-      name: 'Search Input Menu',
-      title: 'Core Components/Recipes/SearchInputMenu',
-      kind: 'Core Components/Recipes/SearchInputMenu',
-      passes: 9,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-7wscxpl5fwd" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-describedby="cds-textinput-description-7wscxpl5fwd" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['input'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
-    },
-    {
       id: 'core-components-toast--basic-toast',
       name: 'Basic Toast',
       title: 'Core Components/Toast',
@@ -4216,8 +1928,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="mw47evrv07a" aria-haspopup="dialog">',
-              target: ['div[aria-controls="mw47evrv07a"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="k8kx9qjzq9c" aria-haspopup="dialog">',
+              target: ['div[aria-controls="k8kx9qjzq9c"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4234,8 +1946,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="73sclspgirb" aria-haspopup="dialog">',
-              target: ['div[aria-controls="73sclspgirb"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="aow235680r9" aria-haspopup="dialog">',
+              target: ['div[aria-controls="aow235680r9"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4252,8 +1964,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="p99epylfhc" aria-haspopup="dialog">',
-              target: ['div[aria-controls="p99epylfhc"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="7uell9v8mio" aria-haspopup="dialog">',
+              target: ['div[aria-controls="7uell9v8mio"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4270,8 +1982,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="7l7q3uhs4n6" aria-haspopup="dialog">',
-              target: ['div[aria-controls="7l7q3uhs4n6"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="kesn1zdi9md" aria-haspopup="dialog">',
+              target: ['div[aria-controls="kesn1zdi9md"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4288,8 +2000,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="0hgif99mmvfs" aria-haspopup="dialog">',
-              target: ['div[aria-controls="0hgif99mmvfs"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="f8q0ubanf3j" aria-haspopup="dialog">',
+              target: ['div[aria-controls="f8q0ubanf3j"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4306,8 +2018,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="uqqnql4hhxs" aria-haspopup="dialog">',
-              target: ['div[aria-controls="uqqnql4hhxs"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="c5zjyb91rdr" aria-haspopup="dialog">',
+              target: ['div[aria-controls="c5zjyb91rdr"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4324,8 +2036,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="ywif3sd21kn" aria-haspopup="dialog">',
-              target: ['div[aria-controls="ywif3sd21kn"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="1qcu6vsol2a" aria-haspopup="dialog">',
+              target: ['div[aria-controls="1qcu6vsol2a"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4342,8 +2054,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="tdpoh8m9t8o" aria-haspopup="dialog">',
-              target: ['div[aria-controls="tdpoh8m9t8o"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="scmdl4av4hk" aria-haspopup="dialog">',
+              target: ['div[aria-controls="scmdl4av4hk"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4360,8 +2072,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="qp2fqiclh4q" aria-haspopup="dialog">',
-              target: ['div[aria-controls="qp2fqiclh4q"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="so9tihhnqcm" aria-haspopup="dialog">',
+              target: ['div[aria-controls="so9tihhnqcm"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4378,8 +2090,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="s9x4g8glbfl" aria-haspopup="dialog"><p aria-describedby="tooltipId" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">Default</p></div>',
-              target: ['div[aria-controls="s9x4g8glbfl"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="bp376ip2cap" aria-haspopup="dialog"><p aria-describedby="tooltipId" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">Default</p></div>',
+              target: ['div[aria-controls="bp376ip2cap"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4396,8 +2108,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="lgy3tnpwex" aria-haspopup="dialog">',
-              target: ['div[aria-controls="lgy3tnpwex"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="ujwcejlk4bi" aria-haspopup="dialog">',
+              target: ['div[aria-controls="ujwcejlk4bi"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4414,8 +2126,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="53pnmoqaia2" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">right</p></div></div>',
-              target: ['div[aria-controls="53pnmoqaia2"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="j28wbfv7x38" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">right</p></div></div>',
+              target: ['div[aria-controls="j28wbfv7x38"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4432,8 +2144,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="yxlq4m9p3ej" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">bottom</p></div></div>',
-              target: ['div[aria-controls="yxlq4m9p3ej"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="pmxe91l0h2e" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">bottom</p></div></div>',
+              target: ['div[aria-controls="pmxe91l0h2e"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4470,8 +2182,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="zkf23av7tzg" aria-haspopup="dialog">',
-              target: ['div[aria-controls="zkf23av7tzg"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="jzpcc52e8a" aria-haspopup="dialog">',
+              target: ['div[aria-controls="jzpcc52e8a"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4488,8 +2200,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="5uhaf3v6a6w" aria-haspopup="dialog">',
-              target: ['div[aria-controls="5uhaf3v6a6w"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="yf8p8e89qj" aria-haspopup="dialog">',
+              target: ['div[aria-controls="yf8p8e89qj"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4506,8 +2218,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="q2u0syuf3j" aria-haspopup="dialog">',
-              target: ['div[aria-controls="q2u0syuf3j"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="vpoey0igkvl" aria-haspopup="dialog">',
+              target: ['div[aria-controls="vpoey0igkvl"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4524,8 +2236,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="rmftnzwz5j" aria-haspopup="dialog">',
-              target: ['div[aria-controls="rmftnzwz5j"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="9dlejg3skpc" aria-haspopup="dialog">',
+              target: ['div[aria-controls="9dlejg3skpc"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4542,8 +2254,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="4o87z5515vf" aria-haspopup="dialog">',
-              target: ['div[aria-controls="4o87z5515vf"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="3xbfifs7dk5" aria-haspopup="dialog">',
+              target: ['div[aria-controls="3xbfifs7dk5"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4560,8 +2272,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="hpviisflx37" aria-haspopup="dialog">',
-              target: ['div[aria-controls="hpviisflx37"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="hfih2ww7f1l" aria-haspopup="dialog">',
+              target: ['div[aria-controls="hfih2ww7f1l"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4578,8 +2290,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="g62ogxqk8av" aria-haspopup="dialog">',
-              target: ['div[aria-controls="g62ogxqk8av"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="44tf885l639" aria-haspopup="dialog">',
+              target: ['div[aria-controls="44tf885l639"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4596,8 +2308,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="fsbn8com0va" aria-haspopup="dialog">',
-              target: ['div[aria-controls="fsbn8com0va"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="xfhp345mumr" aria-haspopup="dialog">',
+              target: ['div[aria-controls="xfhp345mumr"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4614,8 +2326,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="qb5m8a0d8ec" aria-haspopup="dialog">',
-              target: ['div[aria-controls="qb5m8a0d8ec"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="1cfczbxpxkw" aria-haspopup="dialog">',
+              target: ['div[aria-controls="1cfczbxpxkw"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4632,8 +2344,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="nkk1uevtvms" aria-haspopup="dialog"><p aria-describedby="tooltipId" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">Default</p></div>',
-              target: ['div[aria-controls="nkk1uevtvms"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="x686ncawshl" aria-haspopup="dialog"><p aria-describedby="tooltipId" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">Default</p></div>',
+              target: ['div[aria-controls="x686ncawshl"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4650,8 +2362,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="ybpsgoonclk" aria-haspopup="dialog">',
-              target: ['div[aria-controls="ybpsgoonclk"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="af8y1jnt1wo" aria-haspopup="dialog">',
+              target: ['div[aria-controls="af8y1jnt1wo"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4668,8 +2380,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="0h5ujsw3z0ku" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">right</p></div></div>',
-              target: ['div[aria-controls="0h5ujsw3z0ku"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="ozgqziqsjnj" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">right</p></div></div>',
+              target: ['div[aria-controls="ozgqziqsjnj"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4686,8 +2398,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="49cbiyvg724" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">bottom</p></div></div>',
-              target: ['div[aria-controls="49cbiyvg724"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="82hfk7drzsu" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">bottom</p></div></div>',
+              target: ['div[aria-controls="82hfk7drzsu"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -4719,7 +2431,7 @@ export const a11yReport = {
                   data: null,
                   relatedNodes: [
                     {
-                      html: '<input class="c1baze8m poigcwi" type="checkbox" aria-checked="true" aria-disabled="false" aria-readonly="false" aria-required="false" role="switch" value="" checked="">',
+                      html: '<input class="c1baze8m poigcwi" type="checkbox" aria-checked="true" aria-disabled="false" aria-readonly="false" role="switch" value="" checked="">',
                       target: ['input'],
                     },
                   ],
@@ -4762,7 +2474,7 @@ export const a11yReport = {
                   data: null,
                   relatedNodes: [
                     {
-                      html: '<input class="c1baze8m poigcwi" type="checkbox" aria-checked="false" aria-disabled="false" aria-readonly="false" aria-required="false" role="switch" value="">',
+                      html: '<input class="c1baze8m poigcwi" type="checkbox" aria-checked="false" aria-disabled="false" aria-readonly="false" role="switch" value="">',
                       target: ['input'],
                     },
                   ],
@@ -4788,6 +2500,51 @@ export const a11yReport = {
       kind: 'Core Components/Table/Table',
       passes: 15,
       violations: [],
+    },
+    {
+      id: 'core-components-table-tablecell--cell-spacing',
+      name: 'Cell Spacing',
+      title: 'Core Components/Table/TableCell',
+      kind: 'Core Components/Table/TableCell',
+      passes: 10,
+      violations: [
+        {
+          id: 'scrollable-region-focusable',
+          impact: 'moderate',
+          tags: ['cat.keyboard', 'wcag2a', 'wcag211'],
+          description: 'Ensure elements that have scrollable content are accessible by keyboard',
+          help: 'Scrollable region must have keyboard access',
+          helpUrl:
+            'https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axe-puppeteer',
+          nodes: [
+            {
+              any: [
+                {
+                  id: 'focusable-content',
+                  data: null,
+                  relatedNodes: [],
+                  impact: 'moderate',
+                  message: 'Element should have focusable content',
+                },
+                {
+                  id: 'focusable-element',
+                  data: null,
+                  relatedNodes: [],
+                  impact: 'moderate',
+                  message: 'Element should be focusable',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'moderate',
+              html: '<div class="t1suoejk t19xe4r7 tm8z8h3">',
+              target: ['.t1suoejk'],
+              failureSummary:
+                'Fix any of the following:\n  Element should have focusable content\n  Element should be focusable',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 'core-components-table-tablecell--sample-cells',
@@ -4829,7 +2586,7 @@ export const a11yReport = {
                   data: null,
                   relatedNodes: [
                     {
-                      html: '<input class="c1baze8m poigcwi" type="checkbox" aria-checked="false" aria-disabled="false" aria-readonly="false" aria-required="false" role="switch" value="">',
+                      html: '<input class="c1baze8m poigcwi" type="checkbox" aria-checked="false" aria-disabled="false" aria-readonly="false" role="switch" value="">',
                       target: ['input'],
                     },
                   ],
@@ -4881,35 +2638,51 @@ export const a11yReport = {
       violations: [],
     },
     {
-      id: 'core-components-tabs-tabindicator--tab-indicator-example',
-      name: 'Tab Indicator Example',
+      id: 'core-components-tabs-tabindicator--default',
+      name: 'Default',
       title: 'Core Components/Tabs/TabIndicator',
       kind: 'Core Components/Tabs/TabIndicator',
       passes: 8,
       violations: [],
     },
     {
-      id: 'core-components-tabs-tablabel--tab-indicator-example',
-      name: 'Tab Indicator Example',
+      id: 'core-components-tabs-tablabel--default',
+      name: 'Default',
       title: 'Core Components/Tabs/TabLabel',
       kind: 'Core Components/Tabs/TabLabel',
       passes: 11,
       violations: [],
     },
     {
-      id: 'core-components-tabs-tabnavigation--tab-indicator-primary',
-      name: 'Tab Indicator Primary',
+      id: 'core-components-tabs-tabnavigation--default',
+      name: 'Default',
+      title: 'Core Components/Tabs/TabNavigation',
+      kind: 'Core Components/Tabs/TabNavigation',
+      passes: 15,
+      violations: [],
+    },
+    {
+      id: 'core-components-tabs-tabnavigation--secondary',
+      name: 'Secondary',
+      title: 'Core Components/Tabs/TabNavigation',
+      kind: 'Core Components/Tabs/TabNavigation',
+      passes: 15,
+      violations: [],
+    },
+    {
+      id: 'core-components-tabs-tabnavigation--with-dot-count-change',
+      name: 'With Dot Count Change',
       title: 'Core Components/Tabs/TabNavigation',
       kind: 'Core Components/Tabs/TabNavigation',
       passes: 16,
       violations: [],
     },
     {
-      id: 'core-components-tabs-tabnavigation--tab-indicator-secondary',
-      name: 'Tab Indicator Secondary',
+      id: 'core-components-tabs-tabnavigation--with-paddles',
+      name: 'With Paddles',
       title: 'Core Components/Tabs/TabNavigation',
       kind: 'Core Components/Tabs/TabNavigation',
-      passes: 15,
+      passes: 16,
       violations: [],
     },
     {
@@ -4967,7 +2740,7 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1o033nd d1bntmt1 t5418vf e5jiys6 t1yf9way n1lx234e">$2,769</span>',
+              html: '<span class="t160640o l1rottxd f1o033nd d1bntmt1 t5418vf e5jiys6 tb1lqn8 n1pjz25m">$2,130</span>',
               target: ['.v1427yu5 > .d1bntmt1.l1rottxd.f1o033nd'],
               failureSummary:
                 'Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
@@ -5023,7 +2796,7 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1eacfne d1bntmt1 t5418vf e5jiys6 t1yf9way n1lx234e">0%</span>',
+              html: '<span class="t160640o l1rottxd f1eacfne d1bntmt1 t5418vf e5jiys6 tb1lqn8 n1pjz25m">0%</span>',
               target: [
                 '.c1wa27ul.f13ygna6:nth-child(3) > .n1uq5gfe.c1omxyrd.f13ygna6 > ._14apokp.f13ygna6 > .c1kq2fue > .v1427yu5 > .f1eacfne.t160640o.l1rottxd',
               ],
@@ -5052,7 +2825,7 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1eacfne d1bntmt1 t5418vf e5jiys6 t1yf9way n1lx234e">0%</span>',
+              html: '<span class="t160640o l1rottxd f1eacfne d1bntmt1 t5418vf e5jiys6 tb1lqn8 n1pjz25m">0%</span>',
               target: [
                 '.c1wa27ul.f13ygna6:nth-child(5) > .n1uq5gfe.c1omxyrd.f13ygna6 > ._14apokp.f13ygna6 > .c1kq2fue > .v1427yu5 > .f1eacfne.t160640o.l1rottxd',
               ],
@@ -5081,7 +2854,7 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1eacfne d1bntmt1 t5418vf e5jiys6 t1yf9way n1lx234e">2%</span>',
+              html: '<span class="t160640o l1rottxd f1eacfne d1bntmt1 t5418vf e5jiys6 tb1lqn8 n1pjz25m">2%</span>',
               target: [
                 '.c1wa27ul.f13ygna6:nth-child(7) > .n1uq5gfe.c1omxyrd.f13ygna6 > ._14apokp.f13ygna6 > .c1kq2fue > .v1427yu5 > .f1eacfne.t160640o.l1rottxd',
               ],
@@ -5110,7 +2883,7 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1o033nd d1bntmt1 t5418vf e5jiys6 t1yf9way n1lx234e">5%</span>',
+              html: '<span class="t160640o l1rottxd f1o033nd d1bntmt1 t5418vf e5jiys6 tb1lqn8 n1pjz25m">3%</span>',
               target: ['.v1427yu5 > .f1o033nd.t160640o.l1rottxd'],
               failureSummary:
                 'Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
@@ -5213,47 +2986,7 @@ export const a11yReport = {
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
       passes: 8,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#efc0ad',
-                    bgColor: '#ffffff',
-                    contrastRatio: 1.63,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 1.63 (foreground color: #efc0ad, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['.i1mid3m6.iqamtvt.tnurl35:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #efc0ad, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-sparklineinteractive--default',
@@ -5261,47 +2994,7 @@ export const a11yReport = {
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
       passes: 8,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#e8a589',
-                    bgColor: '#ffffff',
-                    contrastRatio: 2.06,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['.i1mid3m6.iqamtvt.tnurl35:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-sparklineinteractive--disable-scrubbing',
@@ -5309,47 +3002,7 @@ export const a11yReport = {
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
       passes: 8,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#efc0ad',
-                    bgColor: '#ffffff',
-                    contrastRatio: 1.63,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 1.63 (foreground color: #efc0ad, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['.i1mid3m6.iqamtvt.tnurl35:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #efc0ad, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-sparklineinteractive--fallback-compact',
@@ -5357,47 +3010,7 @@ export const a11yReport = {
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
       passes: 8,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#e8a589',
-                    bgColor: '#ffffff',
-                    contrastRatio: 2.06,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['.i1mid3m6.iqamtvt.tnurl35:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-sparklineinteractive--fallback-negative',
@@ -5405,47 +3018,7 @@ export const a11yReport = {
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
       passes: 8,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#efc0ad',
-                    bgColor: '#ffffff',
-                    contrastRatio: 1.63,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 1.63 (foreground color: #efc0ad, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['.i1mid3m6.iqamtvt.tnurl35:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #efc0ad, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-sparklineinteractive--fallback-positive',
@@ -5453,47 +3026,7 @@ export const a11yReport = {
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
       passes: 8,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#e8a589',
-                    bgColor: '#ffffff',
-                    contrastRatio: 2.06,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['.i1mid3m6.iqamtvt.tnurl35:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-sparklineinteractive--fill',
@@ -5501,47 +3034,7 @@ export const a11yReport = {
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
       passes: 8,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#efc0ad',
-                    bgColor: '#ffffff',
-                    contrastRatio: 1.63,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 1.63 (foreground color: #efc0ad, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['.i1mid3m6.iqamtvt.tnurl35:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #efc0ad, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-sparklineinteractive--hide-period-selector',
@@ -5557,47 +3050,7 @@ export const a11yReport = {
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
       passes: 8,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#e8a589',
-                    bgColor: '#ffffff',
-                    contrastRatio: 2.06,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['.i1mid3m6.iqamtvt.tnurl35:nth-child(2) > .l194pyb5.f1eacfne.sjo1exx'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-sparklineinteractive--with-header-node',
@@ -5605,47 +3058,7 @@ export const a11yReport = {
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
       passes: 8,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#e8a589',
-                    bgColor: '#ffffff',
-                    contrastRatio: 2.06,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['.i1mid3m6.iqamtvt.tnurl35:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-sparklineinteractive--y-axis-scaling',
@@ -5653,47 +3066,7 @@ export const a11yReport = {
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
       passes: 8,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#e8a589',
-                    bgColor: '#ffffff',
-                    contrastRatio: 2.06,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['.i1mid3m6.iqamtvt.tnurl35:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-sparklineinteractiveheader--default',
@@ -5717,9 +3090,9 @@ export const a11yReport = {
                 {
                   id: 'color-contrast',
                   data: {
-                    fgColor: '#e8a589',
+                    fgColor: '#efc0ad',
                     bgColor: '#ffffff',
-                    contrastRatio: 2.06,
+                    contrastRatio: 1.63,
                     fontSize: '10.5pt (14px)',
                     fontWeight: 'normal',
                     messageKey: null,
@@ -5728,161 +3101,36 @@ export const a11yReport = {
                   relatedNodes: [],
                   impact: 'serious',
                   message:
-                    'Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                    'Element has insufficient color contrast of 1.63 (foreground color: #efc0ad, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
                 },
               ],
               all: [],
               none: [],
               impact: 'serious',
               html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['.i1mid3m6.iqamtvt.tnurl35:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
+              target: ['button:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
               failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                'Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #efc0ad, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
             },
           ],
         },
       ],
-    },
-    {
-      id: 'components-cards--announcement-card',
-      name: 'Announcement Card',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 13,
-      violations: [],
-    },
-    {
-      id: 'components-cards--announcement-cards',
-      name: 'Announcement Cards',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 16,
-      violations: [
-        {
-          id: 'nested-interactive',
-          impact: 'serious',
-          tags: ['cat.keyboard', 'wcag2a', 'wcag412'],
-          description:
-            'Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies',
-          help: 'Interactive controls must not be nested',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'no-focusable-content',
-                  data: null,
-                  relatedNodes: [
-                    {
-                      html: '<button type="button" data-testid="card-body-action" class="i1mid3m6 iqamtvt ixq3qcz tnurl35 t106q4en b19rrrfi fxvgl8z ppscynd bs74mpw b1idwjgh _12x2frn _czghws _jf348 _1os04ly _jf348" style="--interactable-height:40px; margin-left: calc(var(--spacing-2) * -1); margin-right: 0px; min-width: unset; --interactable-opacity-hovered:0.98; --interactable-opacity-pressed:0.92; --interactable-overlay:var(--gray0); --interactable-underlay:var(--foreground); --interactable-border-radius:4px;">',
-                      target: [
-                        '.cys9fvs:nth-child(3) > .p1qbvwwp.i1mid3m6.iqamtvt > .c1wa27ul.f13ygna6 > .c1omxyrd.r45vtfp.s19f9ocl > .f1g4ii86.c1wa27ul.f13ygna6 > .ixq3qcz.b19rrrfi.bs74mpw',
-                      ],
-                    },
-                  ],
-                  impact: 'serious',
-                  message: 'Element has focusable descendants',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<button type="button" class="i1mid3m6 iqamtvt tnurl35 t106q4en fxvgl8z p1qbvwwp" style="--interactable-opacity-hovered:0.98; --interactable-opacity-pressed:0.92; --interactable-underlay:var(--foreground); --interactable-border-radius:0px;">',
-              target: ['.cys9fvs:nth-child(3) > .p1qbvwwp.i1mid3m6.iqamtvt'],
-              failureSummary: 'Fix any of the following:\n  Element has focusable descendants',
-            },
-            {
-              any: [
-                {
-                  id: 'no-focusable-content',
-                  data: null,
-                  relatedNodes: [
-                    {
-                      html: '<button type="button" data-testid="card-body-action" class="i1mid3m6 iqamtvt ixq3qcz tnurl35 t106q4en b19rrrfi fxvgl8z ppscynd bs74mpw b1idwjgh _12x2frn _czghws _jf348 _1os04ly _jf348" style="--interactable-height:40px; margin-left: calc(var(--spacing-2) * -1); margin-right: 0px; min-width: unset; --interactable-opacity-hovered:0.98; --interactable-opacity-pressed:0.92; --interactable-overlay:var(--gray0); --interactable-underlay:var(--foreground); --interactable-border-radius:4px;">',
-                      target: [
-                        '.cys9fvs:nth-child(5) > .p1qbvwwp.i1mid3m6.iqamtvt > .c1wa27ul.f13ygna6 > .c1omxyrd.r45vtfp.s19f9ocl > .f1g4ii86.c1wa27ul.f13ygna6 > .ixq3qcz.b19rrrfi.bs74mpw',
-                      ],
-                    },
-                  ],
-                  impact: 'serious',
-                  message: 'Element has focusable descendants',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<button type="button" class="i1mid3m6 iqamtvt tnurl35 t106q4en fxvgl8z p1qbvwwp" style="--interactable-opacity-hovered:0.98; --interactable-opacity-pressed:0.92; --interactable-underlay:var(--foreground); --interactable-border-radius:0px;">',
-              target: ['.cys9fvs:nth-child(5) > .p1qbvwwp.i1mid3m6.iqamtvt'],
-              failureSummary: 'Fix any of the following:\n  Element has focusable descendants',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: 'components-cards--data-card',
-      name: 'Data Card',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 9,
-      violations: [],
-    },
-    {
-      id: 'components-cards--data-cards',
-      name: 'Data Cards',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 13,
-      violations: [],
-    },
-    {
-      id: 'components-cards--feature-entry-card',
-      name: 'Feature Entry Card',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 13,
-      violations: [],
-    },
-    {
-      id: 'components-cards--feature-entry-cards',
-      name: 'Feature Entry Cards',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 16,
-      violations: [],
-    },
-    {
-      id: 'components-cards--feed-card',
-      name: 'Feed Card',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 13,
-      violations: [],
-    },
-    {
-      id: 'components-cards--feed-cards',
-      name: 'Feed Cards',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 16,
-      violations: [],
     },
   ],
   critical: [
-    { id: 'aria-allowed-attr', count: 7 },
-    { id: 'label', count: 17 },
-    { id: 'duplicate-id-aria', count: 5 },
+    { id: 'label', count: 2 },
+    { id: 'aria-allowed-attr', count: 2 },
   ],
   moderate: [
-    { id: 'heading-order', count: 3 },
+    { id: 'heading-order', count: 2 },
     { id: 'landmark-unique', count: 2 },
+    { id: 'scrollable-region-focusable', count: 1 },
   ],
   minor: [],
   serious: [
-    { id: 'color-contrast', count: 16 },
-    { id: 'label-title-only', count: 14 },
-    { id: 'aria-hidden-focus', count: 3 },
     { id: 'nested-interactive', count: 1 },
+    { id: 'label-title-only', count: 2 },
+    { id: 'aria-hidden-focus', count: 3 },
+    { id: 'color-contrast', count: 3 },
   ],
 } as const;

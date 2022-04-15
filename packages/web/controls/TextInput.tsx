@@ -125,6 +125,7 @@ export const TextInput = memo(
           onFocus: handleOnFocus,
           onBlur: handleOnBlur,
           ref: refs,
+          'aria-label': accessibilityLabel ?? label,
           disabled,
         });
 

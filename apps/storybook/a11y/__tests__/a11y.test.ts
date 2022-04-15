@@ -8,7 +8,7 @@ const relativePathToStorybook = '../../../../.nx/outs/projects/apps/storybook/st
 const storybookUrl = `file://${path.resolve(__dirname, relativePathToStorybook)}`;
 
 // Skip stories that blow up the test runner
-const REGEX = /^(?!.*(thousand|hundred|performance)).*$/gim;
+const REGEX = /^(?!.*(thousand|hundred|performance|switchers|recipes)).*$/gim;
 
 initStoryshots({
   framework: 'react',

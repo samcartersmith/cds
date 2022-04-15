@@ -18,7 +18,14 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
 ) {
   const { checked } = props;
   return (
-    <Control role="switch" type="checkbox" label={children} ref={ref} {...props}>
+    <Control
+      role="switch"
+      type="checkbox"
+      label={children}
+      aria-label={props.accessibilityLabel}
+      ref={ref}
+      {...props}
+    >
       <div role="presentation" className={cx(checkbox, focusRing)} data-filled={checked}>
         {checked && <Icon name="checkmark" size="s" color="primaryForeground" />}
       </div>

@@ -22,6 +22,10 @@ const rulesToIgnoreForStoryId = new Map([
 const rulesToIgnoreForStoryKind = new Map([
   /** Axe core is not correctly capturing color contrast here. The labels are marked as a 1:1 ratio, but storybook lists a passing ratio */
   ['Core Components/SparklineInteractive', ['color-contrast']],
+  /** This story has some debug setup that doesn't meet WCAG requirements - but they are for anotation so we'll ignore them */
+  ['Core Components/InputStack', ['color-contrast']],
+  /** This is an internal component used for composing TextStack, which handles this issue - https://github.cbhq.net/frontend/cds/pull/233/files#r696449 */
+  ['Core Components/Inputs/NativeInput', ['label']],
 ]);
 
 type Report = {
@@ -106,28 +110,27 @@ export const a11yTest = (customConfig: Partial<AxeConfig> = {}) => {
 
       // Check for violations
       const { violations, passes } = await axe.analyze();
+      const filteredViolations = violations.filter((violation) => {
+        // Bail if axe didn't provide enough story context
+        if (!context.id || !context.kind) return false;
+
+        const rulesById = (rulesToIgnoreForStoryId.get(context.id) as string[]) ?? [];
+        const rulesByKind = (rulesToIgnoreForStoryKind.get(context.kind) as string[]) ?? [];
+        const rules = [...rulesById, ...rulesByKind];
+
+        // Include this item if this story isn't in either ignore list?
+        if (rules.length === 0) return true;
+
+        // Did we include *this rule* for *this story* in either ignore list?
+        return !rules?.some((violationId) => violation.id === violationId);
+      });
 
       // Write the file
       try {
-        const filteredViolations = violations.filter((violation) => {
-          // Bail if axe didn't provide enough story context
-          if (!context.id || !context.kind) return false;
-
-          const rulesById = (rulesToIgnoreForStoryId.get(context.id) as string[]) ?? [];
-          const rulesByKind = (rulesToIgnoreForStoryKind.get(context.kind) as string[]) ?? [];
-          const rules = [...rulesById, ...rulesByKind];
-
-          // Include this item if this story isn't in either ignore list?
-          if (rules.length === 0) return true;
-
-          // Did we include *this rule* for *this story* in either ignore list?
-          return !rules?.some((violationId) => violation.id === violationId);
-        });
-
         results.report.push({
           id: context.id,
           name: context.name,
-          title: context.title,
+          title: context.title ?? context.kind,
           kind: context.kind,
           passes: passes.length,
           violations: filteredViolations,
@@ -158,17 +161,14 @@ export const a11yTest = (customConfig: Partial<AxeConfig> = {}) => {
           `${passes.length}/${passes.length + filteredViolations.length}`,
         );
         spinner[filteredViolations.length ? 'fail' : 'succeed'](`${total} - ${context.name}`);
-
-        expect(filteredViolations).toHaveLength(0);
       } catch (error) {
         if (error instanceof Error) {
-          // eslint-disable-next-line no-console
-          console.error(error);
           spinner.fail(`Something went wrong while trying to get a report for ${context.name}`);
         } else {
           throw error;
         }
       }
+      expect(filteredViolations).toHaveLength(0);
     },
   });
 };

@@ -11,4 +11,6 @@ export type ControlBaseProps<T extends string> = {
   readOnly?: boolean;
   /** Value of the option. Useful for multiple choice. */
   value?: T;
+  /** Accessibility label describing the element. */
+  accessibilityLabel?: string;
 };

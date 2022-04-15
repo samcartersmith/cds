@@ -29,7 +29,7 @@ export const CustomRef = () => {
 
   const [text, setText] = useState('');
 
-  return <SearchInput value={text} onChangeText={setText} ref={ref} />;
+  return <SearchInput accessibilityLabel="Search" value={text} onChangeText={setText} ref={ref} />;
 };
 
 /**
@@ -48,7 +48,12 @@ export const OnChangeExample = () => {
 
   return (
     <>
-      <SearchInput value={text} onChange={handleOnChange} onChangeText={setText} />
+      <SearchInput
+        accessibilityLabel="Search"
+        value={text}
+        onChange={handleOnChange}
+        onChangeText={setText}
+      />
       <p>{text}</p>
     </>
   );
@@ -61,6 +66,7 @@ export const HideStartIconSearchExample = function HideStartIconSearchExample() 
     <HStack spacing={2} gap={1}>
       <IconButton name="backArrow" transparent />
       <SearchInput
+        accessibilityLabel="Search"
         hideStartIcon
         value={text}
         compact
