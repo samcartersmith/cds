@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.37.2 (4/14/2022, 03:44 PM PST)
+
+#### 🐞 Fixes
+
+- **[Icons]** Publish Apr 13 2022 Icons. [#248](https://github.cbhq.net/frontend/cds/pull/248)
+
 ## 0.37.1 (4/13/2022, 11:32 AM PST)
 
 #### 🚀 Updates

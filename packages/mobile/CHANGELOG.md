@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.43.2 (4/14/2022, 03:44 PM PST)
+
+#### 🚀 Updates
+
+- **[CellMedia]** Add 'cache' prop to pass to getSource. [#250](https://github.cbhq.net/frontend/cds/pull/250)
+
+#### 🐞 Fixes
+
+- **[Icons]** Publish Apr 13 2022 Icons. [#248](https://github.cbhq.net/frontend/cds/pull/248)
+
 ## 0.43.1 (4/13/2022, 11:32 AM PST)
 
 #### 🚀 Updates

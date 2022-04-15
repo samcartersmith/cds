@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.39.2 (4/14/2022, 03:44 PM PST)
+
+#### 🐞 Fixes
+
+- **[Icons]** Publish Apr 13 2022 Icons. [#248](https://github.cbhq.net/frontend/cds/pull/248)
+- Added forwardRef to Link (web only). [#253](https://github.cbhq.net/frontend/cds/pull/253), [CDS-2265](https://jira.coinbase-corp.com/browse/CDS-2265)
+
 ## 0.39.1 (4/13/2022, 11:32 AM PST)
 
 #### 🚀 Updates
