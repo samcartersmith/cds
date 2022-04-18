@@ -1,0 +1,30 @@
+---
+title: FullscreenModal
+slug: /components/fullscreen-modal
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web/alpha/VStack';
+import { Link } from '@cbhq/cds-web/typography/Link';
+import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import Props from './_implementation.mdx';
+
+<VStack gap={3}>
+  <TextDisplay3 as="h1">FullscreenModal</TextDisplay3>
+  <Link
+    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/FullscreenModal.tsx"
+    openInNewWindow
+  >
+    @cbhq/cds-web/overlays/FullscreenModal
+  </Link>
+  <Tabs>
+    <TabItem value="implementation" label="Implementation" default>
+      <VStack gap={3}>
+        <Props />
+      </VStack>
+    </TabItem>
+  </Tabs>
+</VStack>

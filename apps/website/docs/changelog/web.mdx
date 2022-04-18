@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.39.3 (4/18/2022, 11:50 AM PST)
+
+#### 🚀 Updates
+
+- **[Fullscreen Modal]** FullscreenModal component. [#218](https://github.cbhq.net/frontend/cds/pull/218)
+- **[A11y]** Resolve identified a11y issues. [#233](https://github.cbhq.net/frontend/cds/pull/233), [CDS-2238](https://jira.coinbase-corp.com/browse/CDS-2238)
+
+#### 📘 Misc
+
+- Add typescript paths to suppot package auto complete. [#259](https://github.cbhq.net/frontend/cds/pull/259)
+
 ## 0.39.2 (4/14/2022, 03:44 PM PST)
 
 #### 🐞 Fixes

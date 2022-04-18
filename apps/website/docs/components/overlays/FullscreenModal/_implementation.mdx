@@ -1,0 +1,111 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### accessibilityLabel <Badge variant="web" />
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### disablePortal <Badge variant="web" />
+
+Disable React portal integration
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="disablePortal"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### onRequestClose <Badge variant="web" />
+
+Callback function fired when modal is closed.
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="onRequestClose"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### primaryContent <Badge variant="web" />
+
+Primary content element.
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="primaryContent"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### secondaryContent <Badge variant="web" />
+
+Secondary content element.
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="secondaryContent"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
+/>
+
+### title <Badge variant="web" />
+
+Title displayed in the Fullscreen Modal header.
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="title"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### visible <Badge variant="web" />
+
+Controls visibility of the Modal
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="visible"
+  required={true}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
