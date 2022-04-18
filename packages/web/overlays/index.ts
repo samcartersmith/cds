@@ -1,4 +1,5 @@
 export * from './Alert';
+export * from './Modal/FullscreenModal';
 export * from './Modal/Modal';
 export * from './Modal/ModalBody';
 export * from './Modal/ModalFooter';

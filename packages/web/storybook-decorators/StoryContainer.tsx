@@ -9,6 +9,7 @@ import { FeatureFlagProvider } from '@cbhq/cds-common/system/FeatureFlagProvider
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
 import { Group } from '../layout/Group';
+import { PortalProvider } from '../overlays/PortalProvider';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { palette } from '../tokens';
 
@@ -60,9 +61,11 @@ export function StoryContainer<Props>(
           scale={context.args?.scale}
           spectrum={context.args?.spectrum}
         >
-          <Group {...wrapperProps}>
-            <InnerWrapper>{contents}</InnerWrapper>
-          </Group>
+          <PortalProvider>
+            <Group {...wrapperProps}>
+              <InnerWrapper>{contents}</InnerWrapper>
+            </Group>
+          </PortalProvider>
         </ThemeProvider>
       </FeatureFlagProvider>
     );

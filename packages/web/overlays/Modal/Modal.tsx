@@ -80,8 +80,6 @@ export const Modal = memo(
       [dangerouslySetPosition],
     );
 
-    const dialogTransformTemplate = useCallback(({ scale }) => `scale(${scale})`, []);
-
     return (
       <ModalWrapper
         visible={visible}
@@ -105,7 +103,6 @@ export const Modal = memo(
           }
           animate={Animated.toFramerTransition([animateInOpacityConfig, animateInScaleConfig])}
           exit={Animated.toFramerTransition([animateOutOpacityConfig, animateOutScaleConfig])}
-          transformTemplate={dialogTransformTemplate}
           className={cx(
             modalDefaultClassName,
             !dangerouslyDisableResponsiveness && modalResponsiveClassName,

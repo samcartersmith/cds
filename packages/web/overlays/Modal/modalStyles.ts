@@ -1,4 +1,5 @@
 import { css } from 'linaria';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { spacing } from '../../tokens';
 import { cx } from '../../utils/linaria';
@@ -30,6 +31,8 @@ export const modalDefault = css`
     max-height: calc(100vh - ${modalTopSpacing}*2);
     display: flex;
     justify-content: center;
+    /* this makes sure modal dialogue displays on top of overlay */
+    z-index: ${zIndex.overlays.modal};
   }
 `;
 

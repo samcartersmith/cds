@@ -8,6 +8,7 @@ import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { ModalBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
+import { NoopFn } from '../..';
 import { Animated } from '../../animation/Animated';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
 import { Box, BoxProps } from '../../layout';
@@ -29,8 +30,15 @@ export type ModalWrapperProps = {
    * @default false
    */
   dangerouslyDisableResponsiveness?: boolean;
-
-  onOverlayPress: (() => void) | undefined;
+  /**
+   * Callback function fired when the overlay is pressed.
+   */
+  onOverlayPress?: NoopFn | undefined;
+  /**
+   * Configure if the overlay should be visible/hidden
+   * @default false
+   */
+  hideOverlay?: boolean;
 } & Pick<PortalProps, 'disablePortal'> &
   Pick<ModalBaseProps, 'visible' | 'zIndex' | 'children' | 'onDidClose' | 'testID'> &
   Pick<BoxProps, 'dangerouslySetClassName'> &
@@ -51,6 +59,7 @@ export const ModalWrapper = memo(
       dangerouslyDisableResponsiveness = false,
       onOverlayPress,
       onDidClose,
+      hideOverlay = false,
       testID,
     } = props;
 
@@ -86,23 +95,30 @@ export const ModalWrapper = memo(
               testID={testID}
               ref={ref}
             >
-              <motion.div
-                initial={
-                  Animated.toFramerTransition([animateOutOverlayOpacityConfig], {
-                    propertiesOnly: true,
-                  }) as Target
-                }
-                animate={Animated.toFramerTransition([animateInOverlayOpacityConfig])}
-                exit={Animated.toFramerTransition([animateOutOverlayOpacityConfig])}
-              >
-                <Overlay
-                  onPress={disableOverlayPress ? undefined : onOverlayPress}
-                  dangerouslySetClassName={
-                    !dangerouslyDisableResponsiveness ? modalOverlayResponsiveClassName : undefined
+              {!hideOverlay && (
+                <motion.div
+                  initial={
+                    Animated.toFramerTransition([animateOutOverlayOpacityConfig], {
+                      propertiesOnly: true,
+                    }) as Target
                   }
-                  testID="modal-overlay"
-                />
-              </motion.div>
+                  animate={Animated.toFramerTransition([animateInOverlayOpacityConfig])}
+                  exit={Animated.toFramerTransition([animateOutOverlayOpacityConfig])}
+                >
+                  <Overlay
+                    onPress={disableOverlayPress ? undefined : onOverlayPress}
+                    dangerouslySetClassName={
+                      !dangerouslyDisableResponsiveness
+                        ? modalOverlayResponsiveClassName
+                        : undefined
+                    }
+                    testID="modal-overlay"
+                  />
+                </motion.div>
+              )}
+              {/* NOTE: Add position or zIndex to children to avoid displaying under overlay
+               * https://www.freecodecamp.org/news/z-index-explained-how-to-stack-elements-using-css-7c5aa0f179b3/
+               */}
               {children}
             </Box>
           </Portal>
