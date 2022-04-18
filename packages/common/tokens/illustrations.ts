@@ -1,15 +1,15 @@
 export const illustrationDimensions = {
   heroSquare: ['240x240', '200x200'],
   spotRectangle: ['240x120'],
-  spotSquare: ['120x120'],
-  pictogram: ['48x48', '64x64', '96x96'],
+  spotSquare: ['96x96'],
+  pictogram: ['48x48', '64x64'],
 } as const;
 
 export const illustrationDimensionDefaults = {
   all: '48x48',
   heroSquare: '240x240',
   pictogram: '48x48',
-  spotSquare: '120x120',
+  spotSquare: '96x96',
   spotRectangle: '240x120',
 } as const;
 

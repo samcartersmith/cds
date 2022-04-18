@@ -34,7 +34,7 @@ export function illustrationPercyBuilder(
             <VStack gap={1} alignItems="center">
               <ThemeProvider spectrum={spectrum}>
                 <Box background="background">
-                  <Illustration name={name} dimension="120x120" />
+                  <Illustration name={name} dimension="96x96" />
                 </Box>
               </ThemeProvider>
               <TextLabel1>{nameAndSpectrum}</TextLabel1>

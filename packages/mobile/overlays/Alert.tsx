@@ -124,8 +124,8 @@ export const Alert = memo(
                     {/* fixed size: 120x120 */}
                     <Pictogram
                       name={pictogram}
-                      dimension="96x96"
-                      scaleMultiplier={1.25}
+                      dimension="48x48"
+                      scaleMultiplier={2.5}
                       testID={testID && `${testID}-pictogram`}
                     />
                   </Box>
