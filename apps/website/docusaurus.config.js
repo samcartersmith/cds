@@ -27,6 +27,15 @@ function configureForDocusaurus(config) {
   return {};
 }
 
+function getNavbarHref() {
+  if (process.env === 'development') {
+    return '/';
+  }
+  return process.env.NODE_ENV === 'production'
+    ? 'https://cds.cbhq.net'
+    : 'https://cds-dev.cbhq.net';
+}
+
 module.exports = {
   title: 'Coinbase Design System',
   tagline: '',
@@ -43,35 +52,36 @@ module.exports = {
   },
   themeConfig: {
     navbar: {
-      title: 'Coinbase Design System',
+      // We only want to show the logo with no text so we have to set to empty string.
+      title: '',
       logo: {
-        alt: 'CDS Logo',
+        alt: 'Coinbase',
         src: 'img/logo.svg',
+        srcDark: 'img/logo_dark.svg',
+        href: getNavbarHref(),
+        target: '_self',
       },
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
-          // Add important links to display in footer here
-          items: [
-            {
-              label: 'Overview',
-              to: '/',
-            },
-            {
-              label: 'Roadmap',
-              to: 'resources/roadmap/',
-            },
-          ],
-        },
-        {
           title: 'Resources',
           items: [
             {
+              type: 'link',
               label: 'Figma',
-              href: 'https://www.figma.com/files/657352101224507447/team/832671005685976359/Coinbase-Design-System',
+              href: 'https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E?node-id=1%3A9',
+            },
+            {
+              type: 'link',
+              label: 'Github',
+              href: 'https://github.cbhq.net/frontend/cds/tree/master',
+            },
+            {
+              type: 'link',
+              label: 'Coda',
+              href: 'https://coda.io/d/CDS-Team_dFaC-pktuzN',
             },
           ],
         },
