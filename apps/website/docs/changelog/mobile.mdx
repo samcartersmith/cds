@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.44.0 (4/19/2022, 08:22 AM PST)
+
+#### 💥 Breaking
+
+- **[Illustrations]** Change default sizes for SpotSquare to 96x96. Remove 96x96 dimension for Pictogram. [#262](https://github.cbhq.net/frontend/cds/pull/262)
+
+#### 🐞 Fixes
+
+- Remove url-parser from mobile deps. [#267](https://github.cbhq.net/frontend/cds/pull/267)
+
+#### 📘 Misc
+
+- Add typescript paths to suppot package auto complete. [#259](https://github.cbhq.net/frontend/cds/pull/259)
+
 ## 0.43.2 (4/14/2022, 03:44 PM PST)
 
 #### 🚀 Updates
