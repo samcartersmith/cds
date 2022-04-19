@@ -59,7 +59,7 @@ export type LinkProps = {
   /**
    * If true, it opens the link in a new window.
    * If false, it replaces the current screen with the link
-   * @default true
+   * @default false
    */
   openInNewWindow?: boolean;
   /** Callback fired when the element is clicked. */

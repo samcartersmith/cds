@@ -1,0 +1,260 @@
+import { Image } from ':cds-website/components/Image';
+import { Collection, Item } from ':cds-website/components/Collection';
+import { Table, TableHeader, TableRow, TableCell, TableBody } from '@cbhq/cds-web/tables';
+import { TextBody, TextHeadline, Link } from '@cbhq/cds-web/typography';
+
+Full-screen modals fill the entire screen and are used to contain actions that may require a series of steps to complete.
+
+<Image
+  light="/img/components/overlays/FullscreenModal/hero_light.png"
+  dark="/img/components/overlays/FullscreenModal/hero_dark.png"
+/>
+
+## Usage
+
+A full-screen modal interrupts the user's workflow in order to focus their attention on the modal content. They're useful for tasks that require the user's full attention by preventing the user from being distracted by other content on the screen.
+
+Full-screen modals are especially useful for grouping together a series of steps or tasks. For example, creating a calendar event might use a full-screen modal, with individual tasks for adding an event title, date, time, and finally location.
+
+Because full-screen modals take up the entire screen, other modals or dialogs can appear over them. This is the only modal that supports this.
+
+### Principles
+
+1. The content that appears in a full screen modal should be important enough to require the user's full attention.
+2. Use full-screen modals sparingly. Only interrupt the user's attention when absolutely necessary.
+
+### When to use
+
+<Image src="/img/components/overlays/FullscreenModal/motion.gif" />
+
+1. Does this experience need to be in a modal or a new page?
+2. Does your experience require the user's undivided attention?
+3. Modals should be contextual to the page that triggers them. For example, they may provide info related to the page, or they may trigger an experience that starts and ends on the page.
+4. If the experience spans multiple workflows, dedicate a page to it rather than using a modal.
+5. Full-screen modals are perfect for high severity errors that require the user's undivided attention
+
+### Layouts
+
+There are three different layouts. The headers are customizable and are not married to the configuration of the primary and secondary content layouts.
+
+Primary content is where the core of the task or information should live. Secondary content is supplemental information.
+
+Once a layout is chosen, the primary content must remain in a consistent location through out the flow. For example, primary content should not be left-aligned on one step and then center-aligned on the next.
+
+<Collection>
+  <Item
+    img={{
+      light: '/img/components/overlays/FullscreenModal/layout1_light.png',
+      dark: '/img/components/overlays/FullscreenModal/layout1_dark.png',
+    }}
+    title="Primary and secondary content"
+  />
+  <Item
+    img={{
+      light: '/img/components/overlays/FullscreenModal/layout2_light.png',
+      dark: '/img/components/overlays/FullscreenModal/layout2_dark.png',
+    }}
+    title="Primary content, secondary content off, left aligned"
+  />
+  <Item
+    img={{
+      light: '/img/components/overlays/FullscreenModal/layout3_light.png',
+      dark: '/img/components/overlays/FullscreenModal/layout3_dark.png',
+    }}
+    title="Primary content centered"
+  />
+</Collection>
+
+### Multi-step workflows
+
+If multiple steps are being hosted in the full screen modal, CDS recommends that breadcrumbs, progress tracker, or a back button live above the primary content. Please note that CDS currently does not have breadcrumbs or a progress tracker and will need to be provided by the product team.
+
+<Image
+  light="/img/components/overlays/FullscreenModal/breadcrumbs_light.png"
+  dark="/img/components/overlays/FullscreenModal/breadcrumbs_dark.png"
+/>
+
+### Cross-Platform
+
+How headers translate across desktop and mobile.
+
+<Image
+  light="/img/components/overlays/FullscreenModal/headers_light.png"
+  dark="/img/components/overlays/FullscreenModal/headers_dark.png"
+/>
+
+## Anatomy
+
+### Desktop
+
+<Image
+  light="/img/components/overlays/FullscreenModal/desktop_anatomy_light.png"
+  dark="/img/components/overlays/FullscreenModal/desktop_anatomy_dark.png"
+/>
+
+1. Container
+2. Start
+3. Middle
+4. End
+5. Divider
+6. Primary container
+7. Secondary container
+
+### Mobile
+
+<Image
+  light="/img/components/overlays/FullscreenModal/mobile_anatomy_light.png"
+  dark="/img/components/overlays/FullscreenModal/mobile_anatomy_dark.png"
+/>
+
+1. Container
+2. Middle
+3. End
+4. Divider
+5. Primary container
+6. Secondary container
+
+### Header
+
+<Image
+  light="/img/components/overlays/FullscreenModal/header_anatomy_light.png"
+  dark="/img/components/overlays/FullscreenModal/header_anatomy_dark.png"
+/>
+
+1. Start → logo → mandatory on desktop, optional on mobile
+2. Middle → Modal title → optional
+3. End → Close button → mandatory
+4. Divider → optional
+
+### Logo
+
+The logo is mandatory on the top left corner of the full screen modal on desktop to avoid losing context and keep the user informed of where they are currently.
+
+## Sizing & Scaling
+
+### Design specs
+
+<Image
+  light="/img/components/overlays/FullscreenModal/specs_light.png"
+  dark="/img/components/overlays/FullscreenModal/specs_dark.png"
+/>
+
+### Breakpoints
+
+At this point in time, full screen modals will be following Retail's breaking points.
+
+<Image
+  light="/img/components/overlays/FullscreenModal/breakpoints_light.png"
+  dark="/img/components/overlays/FullscreenModal/breakpoints_dark.png"
+/>
+
+<Table bordered>
+  <TableHeader>
+    <TableRow>
+      <TableCell title="Mobile" />
+      <TableCell title="Tablet" />
+      <TableCell title="Desktop Small" />
+      <TableCell title="Desktop Large" />
+      <TableCell title="Desktop x-Large" />
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell title="320-612px" />
+      <TableCell title="612-1039px" />
+      <TableCell title="1040-1279px" />
+      <TableCell title="1280-1440px" />
+      <TableCell title="1440px+" />
+    </TableRow>
+    <TableRow>
+      <TableCell title="Secondary container stacks under primary container." />
+      <TableCell title="Secondary container stacks under primary container." />
+      <TableCell title="Primary container is a percentage width. Secondary container is a fixed width." />
+      <TableCell title="Primary container is a percentage width. Secondary container is a fixed width." />
+      <TableCell title="Primary container is a percentage width. Secondary container is a fixed width. Containers left-aligned on the page." />
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Behavior
+
+### Error States
+
+System errors that prevent the app from working can inform the user of the problem with a full-screen modal. The user should be told what went wrong in the headline, updated on any progress or solution in the body copy, and given options for what to do next through a button or link.
+
+**Example:** User is blocked due to the app's inability to connect to the server, and must take action to acknowledge the error but it may not fix the system error.
+
+<Image
+  light="/img/components/overlays/FullscreenModal/error_light.png"
+  dark="/img/components/overlays/FullscreenModal/error_dark.png"
+/>
+
+<Table bordered>
+  <TableBody>
+    <TableRow>
+      <TableCell>
+        <TextHeadline as="p">Severity</TextHeadline>
+      </TableCell>
+      <TableCell>
+        <TextBody as="p">High</TextBody>
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <TextHeadline as="p">When are full screen modal errors triggered?</TextHeadline>
+      </TableCell>
+      <TableCell>
+        <TextBody as="p">Blocker in the flow (cannot progress any further).</TextBody>
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <TextHeadline as="p">Where</TextHeadline>
+      </TableCell>
+      <TableCell>
+        <TextBody as="p">Takes up the whole screen. Accompanied by an illustration.</TextBody>
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <TextHeadline as="p">Dismiss</TextHeadline>
+      </TableCell>
+      <TableCell>
+        <TextBody as="p">
+          User taps action or acknowledgment button but may not clear the error
+        </TextBody>
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <TextHeadline as="p">Content</TextHeadline>
+      </TableCell>
+      <TableCell>
+        <TextBody as="p">
+          For full screen error messages, state what went wrong in the headline and offer a solution
+          in the body copy.{' '}
+          <Link to="https://docs.google.com/document/d/1QnxOOjhqUb8ENrGt3hQTTDCDxnCPRyEfkO-U-ftm4uc/edit#heading=h.bqjlx0cnlsjn">
+            See examples
+          </Link>{' '}
+          in the Content Design Guide.
+        </TextBody>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Content guidelines
+
+The written copy inside a full-screen modal may vary widely but here are some general guidelines.
+
+### Modal title
+
+The title at the top of the modal should reference the general environment. For example, if the user is changing their email address in a Settings modal, the title would be Settings.
+
+### Headline
+
+Any headlines in the modal should be 1-2 lines and provide a clear explanation of what occurred or instructions for what to do next. For error messages, explain what went wrong in the headline.
+
+### Body copy
+
+The body copy should provide details about the modal, encourage the user to complete the action, and offer advice on how to complete it successfully.

@@ -1,0 +1,30 @@
+```jsx live
+function DefaultModal() {
+  const [visible, { toggleOn, toggleOff }] = useToggler();
+
+  const primaryContent = (
+    <Box height={800} background="backgroundAlternate">
+      <TextBody as="p">Primary Content {loremIpsum}</TextBody>
+    </Box>
+  );
+
+  const secondaryContent = (
+    <Box height={800} background="backgroundAlternate">
+      <TextBody as="p">Secondary Content {loremIpsum}</TextBody>
+    </Box>
+  );
+
+  return (
+    <PortalProvider>
+      <Button onPress={toggleOn}>Open Modal</Button>
+      <FullscreenModal
+        visible={visible}
+        onRequestClose={toggleOff}
+        primaryContent={primaryContent}
+        secondaryContent={secondaryContent}
+        title="Modal title"
+      />
+    </PortalProvider>
+  );
+}
+```

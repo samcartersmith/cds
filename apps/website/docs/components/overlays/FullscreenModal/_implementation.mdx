@@ -84,6 +84,19 @@ Secondary content element.
   webOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
 />
 
+### testID <Badge variant="web" />
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
 ### title <Badge variant="web" />
 
 Title displayed in the Fullscreen Modal header.
@@ -108,4 +121,17 @@ Controls visibility of the Modal
   defaultValue="false"
   mobileOptions={[]}
   webOptions={['false', 'true']}
+/>
+
+### zIndex <Badge variant="web" />
+
+Adjust the z-index positioning layer.
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="zIndex"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['number']}
 />

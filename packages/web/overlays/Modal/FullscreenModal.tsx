@@ -37,7 +37,13 @@ export type FullscreenModalProps = {
   secondaryContent?: ReactElement;
 } & Pick<
   ModalProps,
-  'visible' | 'onRequestClose' | 'disablePortal' | 'accessibilityLabel' | 'accessibilityLabelledBy'
+  | 'visible'
+  | 'onRequestClose'
+  | 'disablePortal'
+  | 'accessibilityLabel'
+  | 'accessibilityLabelledBy'
+  | 'testID'
+  | 'zIndex'
 >;
 
 export const FullscreenModal = memo(function FullscreenModal({
@@ -46,6 +52,9 @@ export const FullscreenModal = memo(function FullscreenModal({
   primaryContent,
   secondaryContent,
   title,
+  testID,
+  zIndex,
+  disablePortal,
 }: FullscreenModalProps) {
   const pinStyles = usePinStyles('all');
 
@@ -98,7 +107,13 @@ export const FullscreenModal = memo(function FullscreenModal({
   );
 
   return (
-    <ModalWrapper visible={visible} hideOverlay>
+    <ModalWrapper
+      visible={visible}
+      hideOverlay
+      testID={testID}
+      zIndex={zIndex}
+      disablePortal={disablePortal}
+    >
       {overlay}
       <motion.div
         initial={
