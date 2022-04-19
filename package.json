@@ -41,7 +41,8 @@
   },
   "resolutions": {
     "colors": "1.4.0",
-    "coa": "2.0.2"
+    "coa": "2.0.2",
+    "yargs-parser": "^21.0.1"
   },
   "workspaces": [
     "apps/*",

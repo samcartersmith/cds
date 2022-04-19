@@ -27,8 +27,7 @@
     "d3-interpolate-path": "^2.2.2",
     "lodash": "^4.17.21",
     "react-native-gesture-handler": "^1.9.0",
-    "type-fest": "^1.2.0",
-    "url-parse": "^1.5.1"
+    "type-fest": "^1.2.0"
   },
   "peerDependencies": {
     "@react-navigation/stack": "5.12.8",
