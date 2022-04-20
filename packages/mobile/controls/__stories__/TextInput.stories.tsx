@@ -105,6 +105,9 @@ export default function InputScreen() {
           placeholder="ex. Bitcoin"
         />
       </Example>
+      <Example inline title="TextInput Height">
+        <MockTextInput label="Bitcoin" height={300} multiline value="100" />
+      </Example>
       <Example inline title="TextArea">
         <MockTextInput
           label="Textarea"

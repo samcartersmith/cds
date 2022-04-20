@@ -32,4 +32,4 @@ export type TextInputBaseProps = {
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
   > &
   SharedInputProps &
-  Pick<InputStackBaseProps, 'variant' | 'width' | 'disabled' | 'borderRadius'>;
+  Pick<InputStackBaseProps, 'height' | 'variant' | 'width' | 'disabled' | 'borderRadius'>;

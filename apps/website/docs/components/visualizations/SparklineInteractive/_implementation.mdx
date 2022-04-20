@@ -239,6 +239,19 @@ Hides the period selector at the bottom of the chart
   webOptions={['false', 'true']}
 />
 
+### hoverData
+
+Optional data to show on hover/scrub instead of the original sparkline. This allows multiple timeseries lines. Period => timeseries list
+
+<ApiDetails
+  componentName="SparklineInteractive"
+  propertyName="hoverData"
+  required={false}
+  defaultValue=""
+  mobileOptions={['Record<Period, ChartTimeseries[]>']}
+  webOptions={['Record<Period, ChartTimeseries[]>']}
+/>
+
 ### onPeriodChanged
 
 Callback when the user selects a new period.
