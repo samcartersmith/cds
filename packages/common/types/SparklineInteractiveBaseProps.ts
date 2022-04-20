@@ -7,6 +7,7 @@ import type {
   ChartFormatDate,
   ChartGetMarker,
   ChartScrubParams,
+  ChartTimeseries,
   ChartXFunction,
 } from './Chart';
 import type { SparklineScalingBaseProps } from './SparklineBaseProps';
@@ -104,6 +105,13 @@ export type SparklineInteractiveBaseProps<Period extends string> = {
    * Adds a header node above the chart. It will be placed next to the period selector on web.
    */
   headerNode?: ReactNode;
+
+  /**
+   *  Optional data to show on hover/scrub instead of the original sparkline. This allows multiple timeseries lines.
+   *
+   *  Period => timeseries list
+   */
+  hoverData?: Record<Period, ChartTimeseries[]>;
 } & SparklineScalingBaseProps;
 
 export type SparklineInteractiveContentProps<Period extends string> = Omit<
@@ -129,7 +137,9 @@ export type SparklineInteractiveAnimatedPathProps = {
   color: string;
   area?: string;
   selectedPeriod: string;
-  yAxisScalingFactor: number;
+  yAxisScalingFactor?: number;
+  initialPath?: string;
+  initialArea?: string;
 };
 
 export type SparklineInteractiveMarkerDatesProps<Period extends string> = {
@@ -164,3 +174,13 @@ export type SparklineInteractiveDefaultFallback = Pick<
   SparklineInteractiveBaseProps<string>,
   'fallbackType'
 >;
+
+export type SparklineInteractivePathsProps<Period extends string> = Pick<
+  SparklineInteractiveBaseProps<Period>,
+  'fill' | 'yAxisScalingFactor' | 'strokeColor' | 'hoverData' | 'compact'
+> & {
+  showHoverData: boolean;
+  path: string;
+  area: string;
+  selectedPeriod: Period;
+};

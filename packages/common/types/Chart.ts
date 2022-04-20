@@ -7,6 +7,11 @@ export type ChartDataPoint = {
   y?: number;
 };
 export type ChartData = ChartDataPoint[];
+export type ChartTimeseries = {
+  points: ChartData;
+  id: string;
+  strokeColor: string;
+};
 export type ChartFormatDate<Period extends string> = (value: Date, period: Period) => string;
 export type ChartFormatAmount = (value: string | number) => string;
 export type ChartScrubParams<T> = {

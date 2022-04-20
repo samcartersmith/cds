@@ -18,6 +18,8 @@ export const SparklineInteractiveAnimatedPath = memo(
     selectedPeriod,
     area,
     yAxisScalingFactor,
+    initialPath,
+    initialArea,
   }: SparklineInteractiveAnimatedPathProps) => {
     const { isFallbackVisible, hideFallback, animateMinMaxIn, compact } =
       useSparklineInteractiveContext();
@@ -42,13 +44,13 @@ export const SparklineInteractiveAnimatedPath = memo(
     } = useValueChanges(area ?? '');
 
     const pathInterpolator = useMemo(
-      () => interpolate.interpolatePath(previousPath as string, newPath),
-      [previousPath, newPath],
+      () => interpolate.interpolatePath((previousPath ?? initialPath) as string, newPath),
+      [previousPath, initialPath, newPath],
     );
 
     const areaInterpolator = useMemo(
-      () => interpolate.interpolatePath(previousArea as string, newArea),
-      [previousArea, newArea],
+      () => interpolate.interpolatePath((previousArea ?? initialArea) as string, newArea),
+      [previousArea, initialArea, newArea],
     );
 
     const animationListener = useCallback(
@@ -120,13 +122,14 @@ export const SparklineInteractiveAnimatedPath = memo(
 
     return (
       <SparklineGradient
+        path={initialPath}
         ref={pathRef}
         width={chartWidth}
         height={chartHeight}
         color={color}
         yAxisScalingFactor={yAxisScalingFactor}
       >
-        {!!area && <SparklineArea ref={areaRef} />}
+        {!!area && <SparklineArea area={initialArea} ref={areaRef} />}
       </SparklineGradient>
     );
   },

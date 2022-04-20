@@ -3,7 +3,11 @@ import {
   sparklineInteractiveBuilder,
   sparklineInteractiveWithHeaderBuilder,
 } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
-import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
+import {
+  sparklineInteractiveData,
+  sparklineInteractiveHoverData,
+  strokeColor,
+} from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 
 import { Example, ExampleScreen } from '../../../examples/ExampleScreen';
 import { Box } from '../../../layout';
@@ -22,7 +26,6 @@ const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilde
   isMobile: true,
 });
 
-const strokeColor = '#F7931A';
 const SparklineInteractiveScreen = () => {
   return (
     <ExampleScreen>
@@ -197,6 +200,18 @@ const SparklineInteractiveScreen = () => {
             data={sparklineInteractiveData}
             strokeColor="#F7931A"
             gutter={6}
+          />
+        </Box>
+      </Example>
+      <Example spacing={0}>
+        <Box>
+          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+            Hover data
+          </TextTitle3>
+          <SparklineInteractiveBuild
+            data={sparklineInteractiveData}
+            strokeColor={strokeColor}
+            hoverData={sparklineInteractiveHoverData}
           />
         </Box>
       </Example>

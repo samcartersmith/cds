@@ -13,17 +13,24 @@ const animationConfig = {
 type Params = {
   animationListener: Animated.ValueListenerCallback;
   onInterrupt: () => void;
+  ignoreMinMax?: boolean;
 };
 
-export const useInterruptiblePathAnimation = ({ animationListener, onInterrupt }: Params) => {
+export const useInterruptiblePathAnimation = ({
+  animationListener,
+  onInterrupt,
+  ignoreMinMax,
+}: Params) => {
   const { animateMinMaxIn } = useSparklineInteractiveContext();
   const isRunning = useRef(false);
   const animationProgress = useRef(new Animated.Value(0)).current;
 
-  const animation = Animated.sequence([
-    Animated.timing(animationProgress, animationConfig),
-    animateMinMaxIn,
-  ]);
+  const animations = [Animated.timing(animationProgress, animationConfig)];
+  if (!ignoreMinMax) {
+    animations.push(animateMinMaxIn);
+  }
+
+  const animation = Animated.sequence(animations);
 
   const onFinishAnimation = useCallback(
     ({ finished }: { finished: boolean }) => {

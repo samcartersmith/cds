@@ -1,5 +1,6 @@
-import { ChartDataPoint } from '../../types/Chart';
+import { ChartDataPoint, ChartTimeseries } from '../../types/Chart';
 import assetJSON from '../data/asset';
+import { SparklinePeriod } from '../sparklineInteractiveBuilder';
 
 const transformAndFilterPrices = (
   data?: readonly {
@@ -39,5 +40,41 @@ export const sparklineInteractiveData = (() => {
     month: transformAndFilterPrices(asset.priceDataForMonth.quotes),
     year: transformAndFilterPrices(asset.priceDataForYear.quotes),
     all: transformAndFilterPrices(asset.priceDataForAll.quotes),
+  };
+})();
+
+export const strokeColor = '#F7931A';
+const strokeColor2 = '#03925e';
+function generateTimeseriesList(data: ChartDataPoint[]) {
+  const timeseries = [];
+  const prices = data;
+  timeseries.push({
+    points: prices,
+    id: 'hour',
+    strokeColor,
+  });
+
+  timeseries.push({
+    points: prices.map((point) => ({
+      ...point,
+      value: point.value + 10000 + Math.random() * 1000,
+    })),
+    id: 'hour 2',
+    strokeColor: strokeColor2,
+  });
+
+  return timeseries;
+}
+
+export const sparklineInteractiveHoverData: Record<SparklinePeriod, ChartTimeseries[]> = (() => {
+  const { asset } = assetJSON.data.viewer.assetByUuid;
+
+  return {
+    hour: generateTimeseriesList(transformAndFilterPrices(asset.priceDataForHour.quotes)),
+    day: generateTimeseriesList(transformAndFilterPrices(asset.priceDataForDay.quotes)),
+    week: generateTimeseriesList(transformAndFilterPrices(asset.priceDataForWeek.quotes)),
+    month: generateTimeseriesList(transformAndFilterPrices(asset.priceDataForMonth.quotes)),
+    year: generateTimeseriesList(transformAndFilterPrices(asset.priceDataForYear.quotes)),
+    all: generateTimeseriesList(transformAndFilterPrices(asset.priceDataForAll.quotes)),
   };
 })();

@@ -3,7 +3,6 @@ import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
 import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
 import { sparklinePalette } from '@cbhq/cds-common/palette/constants';
-import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import {
   ChartDataPoint,
   ChartFormatAmount,
@@ -26,12 +25,12 @@ import { Lottie } from '../../animation';
 import { Box } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 
-import { SparklineInteractiveAnimatedPath } from './SparklineInteractiveAnimatedPath';
 import { SparklineInteractiveHoverDate } from './SparklineInteractiveHoverDate';
 import { SparklineInteractiveLineVertical } from './SparklineInteractiveLineVertical';
 import { SparklineInteractiveMarkerDates } from './SparklineInteractiveMarkerDates';
 import { SparklineInteractiveMinMax } from './SparklineInteractiveMinMax';
 import { SparklineInteractivePanGestureHandler } from './SparklineInteractivePanGestureHandler';
+import { SparklineInteractivePaths } from './SparklineInteractivePaths';
 import { SparklineInteractivePeriodSelector } from './SparklineInteractivePeriodSelector';
 import {
   SparklineInteractiveProvider,
@@ -125,15 +124,14 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   headerNode,
   fallbackType = 'positive',
   disableHorizontalPadding = false,
+  hoverData,
 }: SparklineInteractiveMobileProps<Period>) {
+  const [isScrubbing, setIsScrubbing] = useState(false);
   const { isFallbackVisible, showFallback, chartOpacity, minMaxOpacity, compact } =
     useSparklineInteractiveContext();
   const color = strokeColor;
   const [selectedPeriod, setSelectedPeriod] = useState(defaultPeriod);
-  const hasFrontier = useFeatureFlag('frontierSparkline');
   const chartHoverTextInputRef = useRef<SparklineInteractiveHoverDateRefProps<Period> | null>(null);
-
-  const shouldShowFill = typeof fill !== 'undefined' ? fill : hasFrontier;
 
   const dataForPeriod = useMemo(() => {
     if (!data) {
@@ -194,6 +192,22 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     [onScrub],
   );
 
+  const handleScrubStart = useCallback(() => {
+    if (hoverData) {
+      setIsScrubbing(true);
+    }
+
+    onScrubStart?.();
+  }, [hoverData, onScrubStart]);
+
+  const handleScrubEnd = useCallback(() => {
+    if (hoverData) {
+      setIsScrubbing(false);
+    }
+
+    onScrubEnd?.();
+  }, [hoverData, onScrubEnd]);
+
   useUpdateSparklineInteractiveHeader({
     getMarker,
     onScrub: handleScrub,
@@ -214,8 +228,8 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     <Animated.View style={style}>
       {header}
       <SparklineInteractivePanGestureHandler
-        onScrubEnd={onScrubEnd}
-        onScrubStart={onScrubStart}
+        onScrubEnd={handleScrubEnd}
+        onScrubStart={handleScrubStart}
         disabled={disableScrubbing}
       >
         {!!formatHoverDate && (
@@ -242,12 +256,16 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
             {!!hasData && !!path && (
               <>
                 <SparklineInteractiveLineVertical color={color} showHoverDate={!!formatHoverDate} />
-                <SparklineInteractiveAnimatedPath
-                  d={path}
-                  area={shouldShowFill ? area : undefined}
-                  color={color}
+                <SparklineInteractivePaths
+                  strokeColor={color}
+                  showHoverData={isScrubbing}
+                  path={path}
+                  area={area}
                   selectedPeriod={selectedPeriod}
+                  fill={fill}
                   yAxisScalingFactor={yAxisScalingFactor}
+                  compact={compact}
+                  hoverData={hoverData}
                 />
               </>
             )}
