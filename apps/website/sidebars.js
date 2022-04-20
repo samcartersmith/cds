@@ -115,7 +115,10 @@ module.exports = {
     {
       type: 'category',
       label: 'Recipes',
-      items: [{ type: 'doc', id: 'recipes/navigation', label: 'Navigation' }],
+      items: [
+        { type: 'doc', id: 'recipes/navigation', label: 'Navigation' },
+        { type: 'doc', id: 'recipes/sparkline-interactive', label: 'Sparkline Interactive' },
+      ],
     },
     {
       type: 'category',
@@ -174,17 +177,17 @@ module.exports = {
         },
         'resources/release',
         /* Uncomment to enable CDS Code conventions in the side bar
-        {
-          type: 'category',
-          label: 'Conventions',
-          collapsed: true,
-          items: [
-            { type: 'doc', id: 'conventions/overview', label: 'Overview' },
-            { type: 'doc', id: 'conventions/api-design', label: 'API Design' },
-            { type: 'doc', id: 'conventions/composition', label: 'Composition' },
-          ],
-        },
-         */
+                {
+                  type: 'category',
+                  label: 'Conventions',
+                  collapsed: true,
+                  items: [
+                    { type: 'doc', id: 'conventions/overview', label: 'Overview' },
+                    { type: 'doc', id: 'conventions/api-design', label: 'API Design' },
+                    { type: 'doc', id: 'conventions/composition', label: 'Composition' },
+                  ],
+                },
+                 */
       ],
     },
   ],
