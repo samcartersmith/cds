@@ -15,10 +15,19 @@ import { usePinStyles } from '../../hooks/usePinStyles';
 import { LogoMark } from '../../icons';
 import { Box, HStack, VStack } from '../../layout';
 import { TextTitle1 } from '../../typography';
+import { cx } from '../../utils/linaria';
 import { FocusTrap } from '../FocusTrap';
 import { Overlay } from '../Overlay/Overlay';
 
-import { containerClassName, contentClassName, headerClassName } from './fullscreenModalStyles';
+import {
+  containerClassName,
+  contentClassName,
+  headerClassName,
+  headerLogoClassName,
+  headerLogoInnerClassName,
+  primaryContentContainerClassName,
+  secondaryContentContainerClassName,
+} from './fullscreenModalStyles';
 import { ModalProps } from './Modal';
 import { ModalWrapper } from './ModalWrapper';
 
@@ -35,6 +44,15 @@ export type FullscreenModalProps = {
    * Secondary content element.
    */
   secondaryContent?: ReactElement;
+  /**
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   */
+  dangerouslySetContentClassName?: string;
+  /**
+   * Hide header bottom divider
+   * @default false
+   */
+  hideDivider?: boolean;
 } & Pick<
   ModalProps,
   | 'visible'
@@ -55,6 +73,8 @@ export const FullscreenModal = memo(function FullscreenModal({
   testID,
   zIndex,
   disablePortal,
+  dangerouslySetContentClassName,
+  hideDivider = false,
 }: FullscreenModalProps) {
   const pinStyles = usePinStyles('all');
 
@@ -74,19 +94,19 @@ export const FullscreenModal = memo(function FullscreenModal({
 
   const header = (
     <HStack
-      borderedBottom
+      borderedBottom={!hideDivider}
       spacingHorizontal={4}
       spacingVertical={3}
       dangerouslySetClassName={headerClassName}
     >
-      <Box spacingEnd={3} dangerouslySetClassName="fsm-header-logo">
+      <Box spacingEnd={3} dangerouslySetClassName={headerLogoClassName}>
         <LogoMark size={32} />
       </Box>
       <Box flexGrow={1}>
         {title ? (
           <TextTitle1 as="h1">{title}</TextTitle1>
         ) : (
-          <div className="fsm-header-logo-inner">
+          <div className={headerLogoInnerClassName}>
             <LogoMark size={32} />
           </div>
         )}
@@ -98,10 +118,10 @@ export const FullscreenModal = memo(function FullscreenModal({
   );
 
   const content = (
-    <div className={contentClassName}>
-      <div className="fsm-primary-content-container">{primaryContent}</div>
+    <div className={cx(contentClassName, dangerouslySetContentClassName)}>
+      <div className={primaryContentContainerClassName}>{primaryContent}</div>
       {!!secondaryContent && (
-        <div className="fsm-secondary-content-container">{secondaryContent}</div>
+        <div className={secondaryContentContainerClassName}>{secondaryContent}</div>
       )}
     </div>
   );

@@ -3,7 +3,7 @@ import { css } from 'linaria';
 import { spacing } from '../../tokens';
 
 // TODO: use CDS breakpoints
-const breakpoints = {
+export const breakpoints = {
   mobile: 612,
   tablet: 1040,
   desktopS: 1280,
@@ -16,6 +16,9 @@ const secondaryContentWidth = 400;
 const spacingStartSmall = 80;
 const spacingStartLarge = 240;
 
+export const primaryContentContainerClassName = 'fsm-primary-content-container';
+export const secondaryContentContainerClassName = 'fsm-secondary-content-container';
+
 export const containerClassName = css`
   width: 100%;
   height: 100%;
@@ -27,23 +30,23 @@ export const contentClassName = css`
   padding: ${gutter};
   overflow: auto;
 
-  .fsm-primary-content-container {
+  .${primaryContentContainerClassName} {
     margin-bottom: ${gutter};
   }
 
-  .fsm-secondary-content-container {
+  .${secondaryContentContainerClassName} {
     width: 100%;
   }
 
   @media only screen and (min-width: ${breakpoints.mobile}px) {
     margin-left: ${spacingStartSmall}px;
 
-    .fsm-primary-content-container {
+    .${primaryContentContainerClassName} {
       max-width: ${contentMaxWidth}px;
       width: 100%;
     }
 
-    .fsm-secondary-content-container {
+    .${secondaryContentContainerClassName} {
       max-width: ${contentMaxWidth}px;
     }
   }
@@ -51,7 +54,7 @@ export const contentClassName = css`
   @media only screen and (min-width: ${breakpoints.tablet}px) {
     flex-direction: row;
 
-    .fsm-primary-content-container {
+    .${primaryContentContainerClassName} {
       margin-right: ${gutter};
       margin-bottom: 0;
     }
@@ -66,35 +69,38 @@ export const contentClassName = css`
   }
 `;
 
+export const headerLogoClassName = 'fsm-header-logo';
+export const headerLogoInnerClassName = 'fsm-header-logo-inner';
+
 export const headerClassName = css`
-  .fsm-header-logo {
+  .${headerLogoClassName} {
     display: none;
   }
 
-  .fsm-header-logo-inner {
+  .${headerLogoInnerClassName} {
     display: flex;
   }
 
   @media only screen and (min-width: ${breakpoints.mobile}px) {
-    .fsm-header-logo {
+    .${headerLogoClassName} {
       display: flex;
       width: ${spacingStartSmall}px;
     }
 
-    .fsm-header-logo-inner {
+    .${headerLogoInnerClassName} {
       display: none;
     }
   }
 
   @media only screen and (min-width: ${breakpoints.tablet}px) {
-    .fsm-header-logo {
+    .${headerLogoClassName} {
       display: flex;
       width: ${spacingStartSmall}px;
     }
   }
 
   @media only screen and (min-width: ${breakpoints.desktopS}px) {
-    .fsm-header-logo {
+    .${headerLogoClassName} {
       width: ${spacingStartLarge}px;
     }
   }

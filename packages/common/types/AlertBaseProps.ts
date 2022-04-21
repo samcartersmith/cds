@@ -21,6 +21,17 @@ export type AlertBaseProps = {
    */
   pictogram?: IllustrationPictogramNames;
   /**
+   * Should only be used internally to support overlay component over alert on mobile
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   */
+  children?: ReactNode;
+} & AlertActionsBaseProps &
+  Pick<ModalBaseProps, 'onRequestClose' | 'visible' | 'onDidClose'> &
+  SharedProps &
+  Pick<PositionStyles, 'zIndex'>;
+
+export type AlertActionsBaseProps = {
+  /**
    * Label of the preferred action
    */
   preferredActionLabel: string;
@@ -42,17 +53,10 @@ export type AlertBaseProps = {
    */
   onDismissActionPress?: NoopFn;
   /**
-   * Should only be used internally to support overlay component over alert on mobile
-   * @danger This is a migration escape hatch. It is not intended to be used normally.
-   */
-  children?: ReactNode;
-  /**
    * Layout of the actions
    * @default horizontal
    */
   actionLayout?: 'horizontal' | 'vertical';
-} & Pick<ModalBaseProps, 'onRequestClose' | 'visible' | 'onDidClose'> &
-  SharedProps &
-  Pick<PositionStyles, 'zIndex'>;
+};
 
 export type AlertRefBaseProps = ModalRefBaseProps;
