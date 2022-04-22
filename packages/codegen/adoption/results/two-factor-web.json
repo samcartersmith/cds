@@ -3,8 +3,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 26,
-      "totalCallSites": 18,
+      "totalInstances": 29,
+      "totalCallSites": 19,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -30,8 +30,8 @@
             "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx",
             "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx",
             "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx",
-            "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx",
-            "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx"
+            "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx",
+            "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx"
           ]
         },
         {
@@ -52,14 +52,14 @@
         { "aliasPath": "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx", "callSites": [] },
         { "aliasPath": "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx", "callSites": [] },
         {
-          "aliasPath": "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx",
-          "callSites": ["@cbhq/two-factor-web/flows/idv/IDVFlow.tsx"]
-        },
-        {
           "aliasPath": "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx",
           "callSites": [
             "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveRecoveryCode.tsx"
           ]
+        },
+        {
+          "aliasPath": "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx",
+          "callSites": ["@cbhq/two-factor-web/flows/idv/IDVFlow.tsx"]
         },
         {
           "aliasPath": "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx",
@@ -73,19 +73,20 @@
       "callSites": {
         "@cbhq/two-factor-web/components/BaseHelpMenu.tsx": 1,
         "@cbhq/two-factor-web/components/Drawer.tsx": 1,
-        "@cbhq/two-factor-web/components/Fallback.tsx": 1,
+        "@cbhq/two-factor-web/components/Fallback.tsx": 2,
         "@cbhq/two-factor-web/components/Header.tsx": 1,
         "@cbhq/two-factor-web/components/InputCode.tsx": 1,
         "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 4,
         "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
+        "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 2,
         "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
         "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
         "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
         "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 4,
+        "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/Status/Failed.tsx": 2,
         "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 2
@@ -95,14 +96,15 @@
           "@cbhq/two-factor-web/components/BaseHelpMenu.tsx": 1,
           "@cbhq/two-factor-web/components/Fallback.tsx": 1,
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
         },
@@ -127,6 +129,7 @@
         "spacingVertical": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
         "spacingHorizontal": {
           "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/Fallback.tsx": 1,
           "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1
         },
         "dangerouslySetClassName": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
@@ -138,6 +141,7 @@
         },
         "alignItems": {
           "@cbhq/two-factor-web/components/Fallback.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
         },
         "justifyContent": {
@@ -145,11 +149,14 @@
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
         },
+        "alignSelf": { "@cbhq/two-factor-web/components/Fallback.tsx": 1 },
         "spacingBottom": {
           "@cbhq/two-factor-web/components/Header.tsx": 1,
-          "@cbhq/two-factor-web/components/InputCode.tsx": 1
+          "@cbhq/two-factor-web/components/InputCode.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 1
         },
         "position": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
+        "key": { "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 1 },
         "gap": { "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1 },
         "spacingTop": {
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
@@ -161,11 +168,12 @@
     {
       "name": "TextTitle1",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
-      "totalInstances": 6,
-      "totalCallSites": 6,
+      "totalInstances": 7,
+      "totalCallSites": 7,
       "cds": "@cbhq/cds-web/typography/TextTitle1",
       "callSites": {
         "@cbhq/two-factor-web/components/BaseHelpMenu.tsx": 1,
+        "@cbhq/two-factor-web/components/Fallback.tsx": 1,
         "@cbhq/two-factor-web/components/Header.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1,
@@ -175,24 +183,34 @@
       "propsWithCallSites": {
         "as": {
           "@cbhq/two-factor-web/components/BaseHelpMenu.tsx": 1,
+          "@cbhq/two-factor-web/components/Fallback.tsx": 1,
           "@cbhq/two-factor-web/components/Header.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
         },
-        "spacingBottom": { "@cbhq/two-factor-web/components/BaseHelpMenu.tsx": 1 },
-        "align": {
-          "@cbhq/two-factor-web/components/Header.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx": 1
+        "spacingBottom": {
+          "@cbhq/two-factor-web/components/BaseHelpMenu.tsx": 1,
+          "@cbhq/two-factor-web/components/Fallback.tsx": 1
         },
-        "spacingTop": { "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1 }
+        "spacingTop": {
+          "@cbhq/two-factor-web/components/Fallback.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
+        },
+        "align": {
+          "@cbhq/two-factor-web/components/Fallback.tsx": 1,
+          "@cbhq/two-factor-web/components/Header.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx": 1
+        }
       }
     },
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 23,
+      "totalInstances": 24,
       "totalCallSites": 13,
       "cds": "@cbhq/cds-web/layout/Box",
       "aliasedCdsComponents": [
@@ -226,7 +244,7 @@
         "@cbhq/two-factor-web/components/Warning.tsx": 1,
         "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
-        "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 2,
+        "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 3,
         "@cbhq/two-factor-web/flows/idv/components/Footer.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 3,
         "@cbhq/two-factor-web/flows/idv/steps/Status/Failed.tsx": 1,
@@ -280,7 +298,7 @@
         "spacingTop": {
           "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2,
           "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
-          "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 2,
+          "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 3,
           "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
         },
         "flexDirection": {
@@ -311,8 +329,8 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 15,
-      "totalCallSites": 12,
+      "totalInstances": 14,
+      "totalCallSites": 11,
       "cds": "@cbhq/cds-web/buttons/Button",
       "aliasedCdsComponents": [
         {
@@ -340,7 +358,6 @@
         "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
         "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 2,
-        "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 2,
         "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
@@ -366,7 +383,6 @@
           "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 2,
-          "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 2,
           "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
@@ -380,7 +396,6 @@
           "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 2,
-          "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 2,
           "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
@@ -412,53 +427,40 @@
       "callSites": {
         "@cbhq/two-factor-web/components/Fallback.tsx": 1,
         "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
-        "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1
+        "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
           "@cbhq/two-factor-web/components/Fallback.tsx": 1,
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
-          "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1
+          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
         },
         "testID": {
-          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
-          "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1
+          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1
         },
         "scaleMultiplier": {
-          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
-          "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1
+          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1
         }
-      }
-    },
-    {
-      "name": "TextTitle3",
-      "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/typography/TextTitle3",
-      "propsWithCallSites": {
-        "as": { "@cbhq/two-factor-web/components/Fallback.tsx": 1 },
-        "spacingTop": { "@cbhq/two-factor-web/components/Fallback.tsx": 1 },
-        "spacingBottom": { "@cbhq/two-factor-web/components/Fallback.tsx": 1 }
       }
     },
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 17,
-      "totalCallSites": 13,
+      "totalInstances": 19,
+      "totalCallSites": 14,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "@cbhq/two-factor-web/components/Fallback.tsx": 1,
         "@cbhq/two-factor-web/components/Header.tsx": 1,
         "@cbhq/two-factor-web/components/InputCode.tsx": 1,
         "@cbhq/two-factor-web/components/Warning.tsx": 1,
+        "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 2,
         "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 3,
         "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1,
+        "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/Status/Failed.tsx": 3,
         "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
@@ -469,20 +471,34 @@
           "@cbhq/two-factor-web/components/Header.tsx": 1,
           "@cbhq/two-factor-web/components/InputCode.tsx": 1,
           "@cbhq/two-factor-web/components/Warning.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 2,
           "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 3,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/Status/Failed.tsx": 3,
           "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
         },
-        "spacingBottom": { "@cbhq/two-factor-web/components/Fallback.tsx": 1 },
+        "spacingBottom": {
+          "@cbhq/two-factor-web/components/Fallback.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 1
+        },
+        "align": {
+          "@cbhq/two-factor-web/components/Fallback.tsx": 1,
+          "@cbhq/two-factor-web/components/Header.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
+        },
         "color": {
           "@cbhq/two-factor-web/components/Header.tsx": 1,
           "@cbhq/two-factor-web/components/InputCode.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
@@ -500,14 +516,6 @@
           "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx": 1
-        },
-        "align": {
-          "@cbhq/two-factor-web/components/Header.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
         },
         "dangerouslySetClassName": { "@cbhq/two-factor-web/components/Header.tsx": 1 },
         "testID": {
@@ -586,8 +594,8 @@
       "callSites": {
         "@cbhq/two-factor-web/components/InputCode.tsx": 1,
         "@cbhq/two-factor-web/components/Warning.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
+        "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+        "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
       },
       "propsWithCallSites": {
         "justifyContent": {
@@ -629,23 +637,29 @@
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "cds": "@cbhq/cds-web/typography/Link",
       "callSites": {
         "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
+        "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/components/Footer.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/Status/Failed.tsx": 1
       },
       "propsWithCallSites": {
-        "variant": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
+        "variant": {
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1
+        },
         "color": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
         "onPress": {
           "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/components/Footer.tsx": 1
         },
         "testID": {
           "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/components/Footer.tsx": 1
         },
         "to": { "@cbhq/two-factor-web/flows/idv/steps/Status/Failed.tsx": 1 },
@@ -697,10 +711,14 @@
     {
       "name": "Modal",
       "sourceFile": "@cbhq/cds-web/overlays/Modal/Modal",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-web/overlays/Modal/Modal",
       "aliasedCdsComponents": [
+        {
+          "aliasPath": "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx",
+          "callSites": ["@cbhq/two-factor-web/flows/push/PushPrompt.tsx"]
+        },
         {
           "aliasPath": "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx",
           "callSites": ["@cbhq/two-factor-web/flows/idv/components/Footer.tsx"]
@@ -711,22 +729,64 @@
         }
       ],
       "callSites": {
+        "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1
       },
       "propsWithCallSites": {
         "visible": {
+          "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1
+        },
+        "hideCloseButton": { "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 1 },
+        "hideDividers": {
+          "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1
         },
         "onRequestClose": {
-          "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1
-        },
-        "hideDividers": {
+          "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1
         }
+      }
+    },
+    {
+      "name": "ModalHeader",
+      "sourceFile": "@cbhq/cds-web/overlays/ModalHeader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/overlays/ModalHeader"
+    },
+    {
+      "name": "ModalBody",
+      "sourceFile": "@cbhq/cds-web/overlays/Modal/ModalBody",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/overlays/Modal/ModalBody",
+      "callSites": {
+        "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 1,
+        "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
+        "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "alignItems": {
+          "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SpotSquare",
+      "sourceFile": "@cbhq/cds-web/illustrations/SpotSquare",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/illustrations/SpotSquare",
+      "propsWithCallSites": {
+        "name": { "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1 },
+        "testID": { "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1 },
+        "scaleMultiplier": { "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1 }
       }
     },
     {
@@ -738,23 +798,6 @@
       "callSites": {
         "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1
-      }
-    },
-    {
-      "name": "ModalBody",
-      "sourceFile": "@cbhq/cds-web/overlays/Modal/ModalBody",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/overlays/Modal/ModalBody",
-      "callSites": {
-        "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1
-      },
-      "propsWithCallSites": {
-        "alignItems": {
-          "@cbhq/two-factor-web/flows/idv/components/CancelModal.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveConfirmationModal.tsx": 1
-        }
       }
     },
     {
@@ -820,14 +863,14 @@
   "presentational": [],
   "other": [
     {
-      "name": "PushFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/push/PushFlow",
+      "name": "IDVFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/idv/IDVFlow",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
-      "name": "IDVFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/idv/IDVFlow",
+      "name": "PushFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/push/PushFlow",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -1224,8 +1267,8 @@
         "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
         "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
         "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
+        "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+        "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
@@ -1235,8 +1278,8 @@
           "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
+          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
         },
         "description": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
@@ -1245,8 +1288,8 @@
           "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
+          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
         },
         "align": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1
@@ -1395,10 +1438,11 @@
     {
       "name": "TryAnotherWay",
       "sourceFile": "@cbhq/two-factor-web/components/TryAnotherWay",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "totalInstances": 5,
+      "totalCallSites": 5,
       "callSites": {
         "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationTryAnotherWay.tsx": 1,
+        "@cbhq/two-factor-web/flows/push/PushTryAnotherWay.tsx": 1,
         "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
         "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
         "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
@@ -1406,18 +1450,21 @@
       "propsWithCallSites": {
         "onCloseDrawer": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
         },
         "twoFactorType": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
         },
         "alternateTwoFactorOptions": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
@@ -1430,12 +1477,14 @@
         },
         "troubleshootOption": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
         },
         "testID": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
@@ -1484,10 +1533,14 @@
       }
     },
     {
-      "name": "h1",
-      "sourceFile": "@cbhq/two-factor-web/flows/push/PushFlow.tsx",
+      "name": "PushFAQModal",
+      "sourceFile": "@cbhq/two-factor-web/flows/push/PushFAQModal",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "visible": { "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1 },
+        "onClose": { "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1 }
+      }
     },
     {
       "name": "VerifyInputCode",
@@ -1584,7 +1637,8 @@
         "noBorder": { "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1 },
         "onPendingResponse": { "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1 },
         "user": { "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1 },
-        "isProduction": { "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1 }
+        "isProduction": { "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1 },
+        "source": { "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1 }
       }
     },
     {
