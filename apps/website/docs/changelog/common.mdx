@@ -8,6 +8,23 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.38.1 (4/22/2022, 11:49 AM PST)
+
+#### 🚀 Updates
+
+- SparklineInteractive updates for wallet app. [#282](https://github.cbhq.net/frontend/cds/pull/282), [CDS-2215](https://jira.coinbase-corp.com/browse/CDS-2215)
+- **[FullscreenAlert]** FullscreenAlert component. [#278](https://github.cbhq.net/frontend/cds/pull/278)
+- **[TextInput]** Expose height prop on web and mobile for TextInput. [#279](https://github.cbhq.net/frontend/cds/pull/279)
+- **[SparklineInteractive]** Add the ability to show custom timeseries data when scrubbing on SparklineInteractive. [#274](https://github.cbhq.net/frontend/cds/pull/274)
+
+#### 🐞 Fixes
+
+- [EXC-231, EXC-232] CDS/CCA integration: added new EventDelegation and button integration with CCA. [#268](https://github.cbhq.net/frontend/cds/pull/268)
+
+#### 📘 Misc
+
+- Upgrade react-native-gesture-handler to 2.4.0. [#273](https://github.cbhq.net/frontend/cds/pull/273), [CDS-2193](https://jira.coinbase-corp.com/browse/CDS-2193)
+
 ## 0.38.0 (4/19/2022, 08:22 AM PST)
 
 #### 💥 Breaking

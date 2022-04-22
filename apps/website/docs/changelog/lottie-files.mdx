@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.26 (4/22/2022, 11:49 AM PST)
+
+#### 🐞 Fixes
+
+- [EXC-231, EXC-232] CDS/CCA integration: added new EventDelegation and button integration with CCA. [#268](https://github.cbhq.net/frontend/cds/pull/268)
+
+#### 📘 Misc
+
+- Add typescript paths to suppot package auto complete. [#259](https://github.cbhq.net/frontend/cds/pull/259)
+
 ## 0.2.25 (4/12/2022, 03:01 PM PST)
 
 #### 🚀 Updates

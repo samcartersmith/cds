@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.40.1 (4/22/2022, 11:49 AM PST)
+
+#### 🚀 Updates
+
+- SparklineInteractive updates for wallet app. [#282](https://github.cbhq.net/frontend/cds/pull/282), [CDS-2215](https://jira.coinbase-corp.com/browse/CDS-2215)
+- **[FullscreenAlert]** FullscreenAlert component. [#278](https://github.cbhq.net/frontend/cds/pull/278)
+
+#### 🐞 Fixes
+
+- [EXC-231, EXC-232] CDS/CCA integration: added new EventDelegation and button integration with CCA. [#268](https://github.cbhq.net/frontend/cds/pull/268)
+- Add MountComponent HOC to fix console errors for PortalHost rendering before hydration. [#276](https://github.cbhq.net/frontend/cds/pull/276), [CDS-2178](https://jira.coinbase-corp.com/browse/CDS-2178)
+
+#### 📘 Misc
+
+- **[FullscreenAlert]** FullscreenAlert design doc. [#281](https://github.cbhq.net/frontend/cds/pull/281)
+- **[FullscreenModal]** FullscreenModal design and usage doc. [#270](https://github.cbhq.net/frontend/cds/pull/270)
+- Upgrade react-native-gesture-handler to 2.4.0. [#273](https://github.cbhq.net/frontend/cds/pull/273), [CDS-2193](https://jira.coinbase-corp.com/browse/CDS-2193)
+
 ## 0.40.0 (4/19/2022, 08:22 AM PST)
 
 #### 💥 Breaking

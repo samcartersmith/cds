@@ -9,7 +9,7 @@ import { getSourcePath } from '../utils/getSourcePath';
 export const updateTextStylesTable = async () => {
   const typeStylesTable = Type.generateScaleTable();
   const textStoryFile = await getSourcePath(
-    '../apps/website/docs/components/typography/Text/design.mdx',
+    '../apps/website/docs/components/typography/Text/_design.mdx',
   );
 
   if (fs.existsSync(textStoryFile)) {
