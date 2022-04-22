@@ -20,7 +20,21 @@ import { Pictogram } from '@cbhq/cds-web/illustrations';
 import { Divider, Group, HStack, VStack } from '@cbhq/cds-web/layout';
 import { Avatar } from '@cbhq/cds-web/media';
 import { NavigationBar, NavigationTitle, Sidebar, SidebarItem } from '@cbhq/cds-web/navigation';
-import { PopoverMenu, PopoverTrigger, SectionTitle } from '@cbhq/cds-web/overlays';
+import {
+  Alert,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  PopoverMenu,
+  PopoverTrigger,
+  SectionTitle,
+  Tooltip,
+} from '@cbhq/cds-web/overlays';
+import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
+import { useAlert } from '@cbhq/cds-web/overlays/useAlert';
+import { useModal } from '@cbhq/cds-web/overlays/useModal';
+import { useToast } from '@cbhq/cds-web/overlays/useToast';
 import { FeatureFlagProvider, Pressable, ThemeProvider } from '@cbhq/cds-web/system';
 import {
   Table,
@@ -30,7 +44,7 @@ import {
   TableHeader,
   TableRow,
 } from '@cbhq/cds-web/tables';
-import { TextHeadline, TextTitle3 } from '@cbhq/cds-web/typography';
+import { TextBody, TextHeadline, TextTitle3 } from '@cbhq/cds-web/typography';
 import {
   ProgressBar,
   ProgressBarWithFloatLabel,
@@ -145,6 +159,26 @@ function NotificationsTrigger() {
 }
 
 function FeedCardWithPopover() {
+  const alert = useAlert();
+
+  const showAlert = useCallback(
+    () =>
+      alert.open(
+        <Alert
+          title="Alert title"
+          body="Alert body type that can run over multiple lines, but should be kept short."
+          pictogram="warning"
+          visible
+          // eslint-disable-next-line react/jsx-handler-names
+          onRequestClose={alert.close}
+          preferredActionLabel="Save"
+          // eslint-disable-next-line react/jsx-handler-names
+          onPreferredActionPress={alert.close}
+        />,
+      ),
+    [alert],
+  );
+
   const feedCardProps = {
     avatarUrl: assets.eth.imageUrl,
     headerMetaData: 'Dec 18',
@@ -157,7 +191,7 @@ function FeedCardWithPopover() {
       'https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png',
     bodyOrientation: 'vertical',
     footerActions: (
-      <Button compact variant="secondary">
+      <Button compact variant="secondary" onPress={showAlert}>
         Earn AMP
       </Button>
     ),
@@ -167,6 +201,12 @@ function FeedCardWithPopover() {
 }
 
 function DataCardWithCircle() {
+  const toast = useToast();
+
+  const showToast = useCallback(() => {
+    toast.show('Copied to clipboard');
+  }, [toast]);
+
   return (
     <Card>
       <CardBody
@@ -176,7 +216,7 @@ function DataCardWithCircle() {
         media={<ProgressCircle progress={0.5} size={100} />}
       />
       <CardFooter>
-        <Button compact variant="secondary">
+        <Button compact variant="secondary" onPress={showToast}>
           See more
         </Button>
       </CardFooter>
@@ -197,6 +237,20 @@ function DataCardWithBar() {
     return { value: 12500, render: renderLabelNum } as const;
   }, [renderLabelNum]);
 
+  const { openModal, closeModal } = useModal();
+
+  const showModal = useCallback(() => {
+    openModal(
+      <Modal visible onRequestClose={closeModal}>
+        <ModalHeader title="Basic Modal" />
+        <ModalBody>
+          <TextBody as="p">This is a Modal rendered inside of a portal</TextBody>
+        </ModalBody>
+        <ModalFooter primaryAction={<Button onPress={closeModal}>Save</Button>} />
+      </Modal>,
+    );
+  }, [closeModal, openModal]);
+
   return (
     <Card>
       <CardBody title="Crypto earned" description="Earn $40 more by learning about new assets">
@@ -207,7 +261,7 @@ function DataCardWithBar() {
         </VStack>
       </CardBody>
       <CardFooter>
-        <Button compact variant="secondary">
+        <Button compact variant="secondary" onPress={showModal}>
           See more
         </Button>
       </CardFooter>
@@ -252,7 +306,15 @@ function AssetTable() {
       <TableHeader>
         <TableRow>
           <TableCell title="Currency" width="20%" />
-          <TableCell title="Balance" width="40%" />
+          <TableCell width="40%">
+            <Tooltip content="Information about balance">
+              <TextHeadline as="p" color="currentColor">
+                <HStack>
+                  Balance <Icon name="info" size="xs" />
+                </HStack>
+              </TextHeadline>
+            </Tooltip>
+          </TableCell>
           <TableCell title="Status" alignItems="flex-end" width="60%" />
         </TableRow>
       </TableHeader>
@@ -361,7 +423,9 @@ function App() {
       </Head>
       <FeatureFlagProvider frontier>
         <ThemeProvider display="contents">
-          <AppContent />
+          <PortalProvider>
+            <AppContent />
+          </PortalProvider>
         </ThemeProvider>
       </FeatureFlagProvider>
     </>

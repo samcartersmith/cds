@@ -6,7 +6,7 @@ import { PortalNode, usePortalState } from '@cbhq/cds-common/overlays/usePortalS
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { ThemeProvider } from '../system';
-import { isBrowser } from '../utils/browser';
+import { MountComponent } from '../system/MountComponent';
 
 export const portalRootId = 'portalRoot';
 export const modalContainerId = 'modalsContainer';
@@ -64,7 +64,9 @@ export const PortalProvider: React.FC = memo(({ children }) => {
   return (
     <PortalContext.Provider value={portalState}>
       <ToastProvider>
-        {isBrowser() && <PortalHost />}
+        <MountComponent>
+          <PortalHost />
+        </MountComponent>
         {portalState.nodes.map((node: PortalNode) => node.element)}
         {children}
       </ToastProvider>
