@@ -10,6 +10,7 @@ import type {
   ChartTimeseries,
   ChartXFunction,
 } from './Chart';
+import { SpacingScale } from './SpacingScale';
 import type { SparklineScalingBaseProps } from './SparklineBaseProps';
 
 export type SparklineInteractiveBaseProps<Period extends string> = {
@@ -112,6 +113,11 @@ export type SparklineInteractiveBaseProps<Period extends string> = {
    *  Period => timeseries list
    */
   hoverData?: Record<Period, ChartTimeseries[]>;
+
+  /**
+   * Optional gutter to add to the Period selector. This is useful if you choose to use the full screen width for the chart
+   */
+  timePeriodGutter?: SpacingScale;
 } & SparklineScalingBaseProps;
 
 export type SparklineInteractiveContentProps<Period extends string> = Omit<
@@ -146,6 +152,7 @@ export type SparklineInteractiveMarkerDatesProps<Period extends string> = {
   getMarker: ChartGetMarker;
   formatDate: ChartFormatDate<Period>;
   selectedPeriod: Period;
+  timePeriodGutter?: SpacingScale;
 };
 
 export type SparklineInteractivePeriodSelectorProps<Period extends string> = {
@@ -172,7 +179,7 @@ export type SparklineInteractiveHoverDateRefProps<Period extends string> = {
 
 export type SparklineInteractiveDefaultFallback = Pick<
   SparklineInteractiveBaseProps<string>,
-  'fallbackType'
+  'fallbackType' | 'compact'
 >;
 
 export type SparklineInteractivePathsProps<Period extends string> = Pick<

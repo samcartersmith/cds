@@ -88,3 +88,13 @@ export const WithHeaderNode = () => {
     <SparklineInteractiveWithHeaderBuild data={sparklineInteractiveData} strokeColor="#F7931A" />
   );
 };
+
+export const TimePeriodGutter = () => {
+  return (
+    <SparklineInteractiveBuild
+      data={sparklineInteractiveData}
+      strokeColor={strokeColor}
+      timePeriodGutter={3}
+    />
+  );
+};

@@ -19,6 +19,7 @@ import {
 import { minMax } from '@cbhq/cds-common/utils/chart';
 import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
 import { chartFallbackNegative, chartFallbackPositive } from '@cbhq/cds-lottie-files';
+import { useSpacingScale } from '@cbhq/cds-mobile/hooks/useSpacingScale';
 import { emptyArray, noop } from '@cbhq/cds-utils';
 
 import { Lottie } from '../../animation';
@@ -48,7 +49,9 @@ const DefaultFallback = memo(({ fallbackType }: SparklineInteractiveDefaultFallb
   const source = fallbackType === 'negative' ? chartFallbackNegative : chartFallbackPositive;
   return (
     <ThemeProvider name="sparkline-fallback" palette={sparklinePalette}>
-      <Lottie height="100%" autoplay source={source} loop />
+      <Box alignItems="center" justifyContent="center">
+        <Lottie autoplay height="100%" source={source} loop />
+      </Box>
     </ThemeProvider>
   );
 });
@@ -75,7 +78,8 @@ type SparklineInteractiveMobileProps<Period extends string> =
     gutter?: SpacingScale;
 
     /**
-     * The chart applies horizontal padding by default which is specified by the gutter. If the chart is placed in a container with padding then you can disable horizontal padding and set the gutter
+     * The chart applies horizontal padding by default which is specified by the gutter.
+     * If the chart is placed in a container with padding then you can disable horizontal padding and set the gutter
      * to match the container padding.
      *
      */
@@ -125,6 +129,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   fallbackType = 'positive',
   disableHorizontalPadding = false,
   hoverData,
+  timePeriodGutter,
 }: SparklineInteractiveMobileProps<Period>) {
   const [isScrubbing, setIsScrubbing] = useState(false);
   const { isFallbackVisible, showFallback, chartOpacity, minMaxOpacity, compact } =
@@ -287,6 +292,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
           periods={periods}
           selectedPeriod={selectedPeriod}
           setSelectedPeriod={updatePeriod}
+          timePeriodGutter={timePeriodGutter}
         />
       )}
     </Animated.View>
@@ -304,6 +310,7 @@ type BelowChartProps<Period extends string> = {
   periods: { label: string; value: Period }[];
   selectedPeriod: Period;
   setSelectedPeriod: (period: Period) => void;
+  timePeriodGutter?: SpacingScale;
 };
 
 function BelowChartWithGeneric<Period extends string>({
@@ -313,13 +320,22 @@ function BelowChartWithGeneric<Period extends string>({
   periods,
   selectedPeriod,
   setSelectedPeriod,
+  timePeriodGutter,
 }: BelowChartProps<Period>) {
+  const spacing = useSpacingScale();
+
+  const style: ViewStyle = {};
+  if (timePeriodGutter) {
+    style.paddingHorizontal = spacing[timePeriodGutter];
+  }
+
   return (
-    <View>
+    <View style={style}>
       <SparklineInteractiveMarkerDates
         getMarker={getMarker}
         formatDate={formatDate}
         selectedPeriod={selectedPeriod}
+        timePeriodGutter={timePeriodGutter}
       />
       <SparklineInteractivePeriodSelector
         periods={periods}

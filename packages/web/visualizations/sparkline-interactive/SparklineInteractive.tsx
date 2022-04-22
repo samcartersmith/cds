@@ -46,7 +46,7 @@ const DefaultFallback = memo(({ fallbackType }: SparklineInteractiveDefaultFallb
   const source = fallbackType === 'negative' ? chartFallbackNegative : chartFallbackPositive;
   return (
     <ThemeProvider palette={customPalette}>
-      {!skipLottie && <Lottie height="100%" autoplay source={source} loop />}
+      {!skipLottie && <Lottie height="100%" width="100%" autoplay source={source} loop />}
     </ThemeProvider>
   );
 });
@@ -71,6 +71,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   formatHoverDate,
   headerNode,
   fallbackType = 'positive',
+  timePeriodGutter,
 }: SparklineInteractiveBaseProps<Period>) {
   const innerSparklineInteractiveHeight = compact ? chartCompactHeight : chartHeight;
   const { isFallbackVisible, showFallback } = useSparklineInteractiveContext();
@@ -211,6 +212,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
         getMarker={getMarker}
         formatDate={formatDate}
         selectedPeriod={selectedPeriod}
+        timePeriodGutter={timePeriodGutter}
       />
     </div>
   );

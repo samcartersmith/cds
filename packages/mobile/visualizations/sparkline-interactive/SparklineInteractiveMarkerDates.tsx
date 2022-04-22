@@ -1,8 +1,9 @@
 import React, { FunctionComponent, memo, useMemo } from 'react';
-import { Animated, StyleSheet } from 'react-native';
+import { Animated, StyleSheet, ViewStyle } from 'react-native';
 import times from 'lodash/times';
 import { SparklineInteractiveMarkerDatesProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useDateLookup } from '@cbhq/cds-common/visualizations/useDateLookup';
+import { useSpacingScale } from '@cbhq/cds-mobile/hooks/useSpacingScale';
 
 import { useLayout } from '../../hooks/useLayout';
 import { usePalette } from '../../hooks/usePalette';
@@ -16,7 +17,9 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
   formatDate,
   selectedPeriod,
   getMarker,
+  timePeriodGutter,
 }: SparklineInteractiveMarkerDatesProps<Period>) {
+  const spacing = useSpacingScale();
   const { markerOpacity } = useSparklineInteractiveContext();
   const colors = usePalette();
   const getFormattedDate = useDateLookup({
@@ -24,6 +27,11 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
     formatDate,
     selectedPeriod,
   });
+
+  const paddingHorizontalStyle: ViewStyle = {};
+  if (timePeriodGutter) {
+    paddingHorizontalStyle.paddingHorizontal = spacing[timePeriodGutter];
+  }
 
   return (
     <Animated.View
@@ -33,6 +41,7 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
           opacity: markerOpacity,
           backgroundColor: colors.background,
         },
+        paddingHorizontalStyle,
       ]}
       pointerEvents="none"
     >
@@ -77,7 +86,6 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    width: '100%',
     zIndex: 1,
   },
   label: {

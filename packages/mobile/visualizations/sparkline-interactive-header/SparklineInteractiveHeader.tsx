@@ -32,7 +32,7 @@ type SparklineInteractiveHeaderMobileProps = {
 
 export const SparklineInteractiveHeader = memo(
   forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderMobileProps>(
-    ({ defaultLabel, defaultTitle, defaultSubHead, testID, trailing }, ref) => {
+    ({ defaultLabel, defaultTitle, defaultSubHead, testID, trailing, labelNode }, ref) => {
       return (
         <SparklineInteractiveHeaderStable
           ref={ref}
@@ -45,6 +45,7 @@ export const SparklineInteractiveHeader = memo(
           defaultSubHead={useRef(defaultSubHead).current}
           testID={testID}
           trailing={trailing}
+          labelNode={labelNode}
         />
       );
     },
@@ -53,7 +54,7 @@ export const SparklineInteractiveHeader = memo(
 
 const SparklineInteractiveHeaderStable = memo(
   forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderMobileProps>(
-    ({ defaultLabel, defaultTitle, defaultSubHead, testID, trailing }, forwardedRef) => {
+    ({ defaultLabel, defaultTitle, defaultSubHead, testID, trailing, labelNode }, forwardedRef) => {
       const labelRef = useRef<TextInput>(null);
       const titleRef = useRef<TextInput>(null);
       const subHeadRef = useRef<TextInput>(null);
@@ -212,7 +213,7 @@ const SparklineInteractiveHeaderStable = memo(
       return (
         <HStack testID={testID} spacing={0} justifyContent="space-between">
           <VStack spacing={0} flexShrink={1}>
-            {label}
+            {labelNode ?? label}
             {title}
           </VStack>
           <Trailing>{trailing}</Trailing>

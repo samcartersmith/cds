@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { SharedProps } from './SharedProps';
 
 export type SparklineInteractiveHeaderProps = {
@@ -15,6 +17,11 @@ export type SparklineInteractiveHeaderProps = {
    * Default SubHead, changing this prop has no effect once the default is rendered.
    */
   defaultSubHead?: SparklineInteractiveSubHead;
+
+  /**
+   * Adds a label node that allows React components. If you use this node then you cannot use the text based label that supports updates.
+   */
+  labelNode?: ReactNode;
 } & SharedProps;
 
 export type SparklineInteractiveHeaderVariant = 'foregroundMuted' | 'positive' | 'negative';

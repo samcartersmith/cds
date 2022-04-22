@@ -21,6 +21,8 @@ type SparklineInteractivePriceProps = Omit<
     trailing?: ReactNode;
     gutter?: SpacingScale;
     disableHorizontalPadding?: boolean;
+    timePeriodGutter?: SpacingScale;
+    labelNode?: ReactNode;
   };
 
 export const DEFAULT_PERIOD = 'day';
@@ -199,7 +201,10 @@ function generateSubHead(
 type SparklineInteractiveWithHeaderBuilderProps = SparklineInteractiveBuilderProps & {
   SparklineInteractiveHeader: React.ForwardRefExoticComponent<
     SparklineInteractiveHeaderProps &
-      React.RefAttributes<SparklineInteractiveHeaderRef> & { trailing?: ReactNode }
+      React.RefAttributes<SparklineInteractiveHeaderRef> & {
+        trailing?: ReactNode;
+        labelNode?: ReactNode;
+      }
   >;
 };
 
@@ -214,7 +219,7 @@ export const sparklineInteractiveWithHeaderBuilder = ({
   });
 
   return memo((props: SparklineInteractivePriceProps) => {
-    const { data: sparklineData, trailing } = props;
+    const { data: sparklineData, trailing, labelNode } = props;
     const sparklineInteractiveData = sparklineData as Record<SparklinePeriod, ChartData>;
     const headerRef = useRef<SparklineInteractiveHeaderRef | null>(null);
     const [currentPeriod, setCurrentPeriod] = useState<SparklinePeriod>(DEFAULT_PERIOD);
@@ -260,6 +265,7 @@ export const sparklineInteractiveWithHeaderBuilder = ({
         defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
         defaultSubHead={generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData)}
         trailing={trailing}
+        labelNode={labelNode}
       />
     );
 

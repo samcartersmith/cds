@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
 import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
+import { Icon } from '@cbhq/cds-mobile/icons';
 
 import { IconButton } from '../../../buttons';
 import { Example, ExampleScreen } from '../../../examples/ExampleScreen';
@@ -18,6 +19,15 @@ const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilde
 function handlePress() {
   // do nothing
 }
+
+const HeaderLabel = () => {
+  return (
+    <HStack gap={1} alignItems="center" spacingBottom={0}>
+      <Icon name="wallet" size="s" />
+      <TextTitle3>CustomHeader</TextTitle3>
+    </HStack>
+  );
+};
 
 const SparklineInteractiveHeaderScreen = () => {
   const trailing = useMemo(() => {
@@ -51,6 +61,18 @@ const SparklineInteractiveHeaderScreen = () => {
             data={sparklineInteractiveData}
             strokeColor="#F7931A"
             trailing={trailing}
+          />
+        </Box>
+      </Example>
+      <Example spacing={0}>
+        <Box>
+          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+            SparklineInteractive Header Custom Label
+          </TextTitle3>
+          <SparklineInteractiveWithHeaderBuild
+            data={sparklineInteractiveData}
+            strokeColor="#F7931A"
+            labelNode={<HeaderLabel />}
           />
         </Box>
       </Example>

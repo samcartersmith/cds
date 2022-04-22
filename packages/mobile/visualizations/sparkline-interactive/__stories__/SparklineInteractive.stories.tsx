@@ -177,6 +177,7 @@ const SparklineInteractiveScreen = () => {
             data={sparklineInteractiveData}
             strokeColor="#F7931A"
             gutter={0}
+            timePeriodGutter={3}
           />
         </Box>
       </Example>

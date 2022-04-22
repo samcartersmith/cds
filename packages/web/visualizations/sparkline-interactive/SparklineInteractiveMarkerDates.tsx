@@ -37,6 +37,7 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
   formatDate,
   selectedPeriod,
   getMarker,
+  timePeriodGutter = 2,
 }: SparklineInteractiveMarkerDatesProps<Period>) {
   const [numberOfLabels, setNumberOfLabels] = useState(0);
   const getFormattedDate = useDateLookup({
@@ -68,6 +69,7 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
       justifyContent="space-between"
       width="100%"
       spacingTop={2}
+      spacingHorizontal={timePeriodGutter}
       dangerouslySetClassName={fadeInClassName}
     >
       {markers}

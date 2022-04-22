@@ -18,7 +18,7 @@ const mobileLayoutBreakpoint = 650;
 
 const SparklineInteractiveHeaderStable = memo(
   forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderProps>(
-    ({ defaultLabel, defaultTitle, defaultSubHead, testID }, forwardedRef) => {
+    ({ defaultLabel, defaultTitle, defaultSubHead, testID, labelNode }, forwardedRef) => {
       const labelRef = useRef<HTMLSpanElement>(null);
       const titleRef = useRef<HTMLSpanElement>(null);
       const subHeadIconRef = useRef<HTMLSpanElement>(null);
@@ -153,7 +153,7 @@ const SparklineInteractiveHeaderStable = memo(
 
       return (
         <div data-testid={testID} ref={containerRef} style={{ width: '100%' }}>
-          {label}
+          {labelNode ?? label}
           {title}
         </div>
       );
@@ -162,7 +162,7 @@ const SparklineInteractiveHeaderStable = memo(
 );
 export const SparklineInteractiveHeader = memo(
   forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderProps>(
-    ({ defaultLabel, defaultTitle, defaultSubHead, testID }, ref) => {
+    ({ defaultLabel, defaultTitle, defaultSubHead, testID, labelNode }, ref) => {
       return (
         <SparklineInteractiveHeaderStable
           ref={ref}
@@ -174,6 +174,7 @@ export const SparklineInteractiveHeader = memo(
           defaultTitle={useRef(defaultTitle).current}
           defaultSubHead={useRef(defaultSubHead).current}
           testID={testID}
+          labelNode={labelNode}
         />
       );
     },
