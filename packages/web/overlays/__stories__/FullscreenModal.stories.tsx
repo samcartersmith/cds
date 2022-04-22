@@ -1,5 +1,4 @@
 import { useToggler } from '@cbhq/cds-common';
-import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { Accordion, AccordionItem } from '../../accordion';
 import { IconButton } from '../../buttons';
@@ -17,7 +16,7 @@ export default {
 };
 
 export const Basic = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler();
+  const [visible, { toggleOn, toggleOff }] = useToggler(true);
 
   const primaryContent = (
     <Box height={800} background="backgroundAlternate">
@@ -46,7 +45,7 @@ export const Basic = () => {
 };
 
 export const NoTitle = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler();
+  const [visible, { toggleOn, toggleOff }] = useToggler(true);
 
   const primaryContent = (
     <Box height={800} background="backgroundAlternate">
@@ -74,7 +73,7 @@ export const NoTitle = () => {
 };
 
 export const NoSecondary = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler();
+  const [visible, { toggleOn, toggleOff }] = useToggler(true);
 
   const primaryContent = (
     <Box height={800} background="backgroundAlternate">
@@ -95,8 +94,9 @@ export const NoSecondary = () => {
   );
 };
 
-// For percy snapshot
-export const Visible = () => {
+export const Example = () => {
+  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+
   const feedCard = (
     <FeedCard
       avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
@@ -150,12 +150,15 @@ export const Visible = () => {
   );
 
   return (
-    <FullscreenModal
-      visible
-      onRequestClose={NoopFn}
-      primaryContent={primaryContent}
-      secondaryContent={secondaryContent}
-      title="Modal title"
-    />
+    <>
+      <Button onPress={toggleOn}>Open Modal</Button>
+      <FullscreenModal
+        visible={visible}
+        onRequestClose={toggleOff}
+        primaryContent={primaryContent}
+        secondaryContent={secondaryContent}
+        title="Modal title"
+      />
+    </>
   );
 };

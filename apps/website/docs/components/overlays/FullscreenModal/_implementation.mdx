@@ -32,6 +32,19 @@ Accessibility prop that describes the component that labels it by its `id`
   webOptions={['string']}
 />
 
+### dangerouslySetContentClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="dangerouslySetContentClassName"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
 ### disablePortal <Badge variant="web" />
 
 Disable React portal integration
@@ -41,6 +54,19 @@ Disable React portal integration
   propertyName="disablePortal"
   required={false}
   defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### hideDivider <Badge variant="web" />
+
+Hide header bottom divider
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="hideDivider"
+  required={false}
+  defaultValue="false"
   mobileOptions={[]}
   webOptions={['false', 'true']}
 />

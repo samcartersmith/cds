@@ -1,0 +1,435 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### accessibilityLabel <Badge variant="web" />
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### actionLayout <Badge variant="web" />
+
+Layout of the actions
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="actionLayout"
+  required={false}
+  defaultValue="horizontal"
+  mobileOptions={[]}
+  webOptions={['horizontal', 'vertical']}
+/>
+
+### body <Badge variant="web" />
+
+Alert body/description
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="body"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### disablePortal <Badge variant="web" />
+
+Disable React portal integration
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="disablePortal"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+### dismissActionLabel <Badge variant="web" />
+
+Label of the dismiss action
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="dismissActionLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### heroSquare <Badge variant="web" />
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="heroSquare"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'accessToAdvancedCharts',
+    'accountUnderReview',
+    'add2Fa',
+    'addBankAccount',
+    'addCreditCard',
+    'addMoreCrypto',
+    'addPhoneNumber',
+    'advancedTrading',
+    'advancedTradingChartsIndicatorsCandles',
+    'advancedTradingUi',
+    'appTrackingTransparency',
+    'automaticPayments',
+    'backedByUsDollar',
+    'basedInUsa',
+    'bigBtc',
+    'bigError',
+    'bigWarning',
+    'bitcoinAndOtherCrypto',
+    'blockchain',
+    'borrow',
+    'borrowWallet',
+    'browserExtension',
+    'buyFirstCrypto',
+    'camera',
+    'cardAndPhone',
+    'cardReloadFunds',
+    'cashExcitement',
+    'coinCheckmark',
+    'coinbaseCard',
+    'coinbaseCardIssue',
+    'coinbaseCardLock',
+    'coinbaseCardPocket',
+    'coinbaseCardSpend',
+    'coinbaseCardSpendCrypto',
+    'coinbaseFees',
+    'coinbaseIsDown',
+    'coinbaseIsDownMobile',
+    'coinbaseOneCardWarning',
+    'coinbaseOneDiscountedAmount',
+    'coinbaseOneDocWarning',
+    'coinbaseOneInsufficientWallet',
+    'coinbaseOneLogoHeroSquare',
+    'coinbaseOnePhoneLightning',
+    'coinbaseOneProtectedCrypto',
+    'coinbaseOneSavingFunds',
+    'coinbaseOneWaitlist',
+    'coinbaseRedesigned',
+    'coinbaseWalletToTrade',
+    'coinsInWallet',
+    'collectableNfts',
+    'collectingNfts',
+    'commerceAccounting',
+    'commerceInvoices',
+    'completeAQuiz',
+    'congratulationsOnEarningCrypto',
+    'contactsListWarning',
+    'crossBorderPayments',
+    'cryptoAndMore',
+    'cryptoApps',
+    'cryptoAppsWallet',
+    'cryptoAssets',
+    'cryptoEconomy',
+    'cryptoForBeginners',
+    'cryptoPortfolio',
+    'cryptoWallet',
+    'currencyPairs',
+    'dappsArts',
+    'dappsFinance',
+    'dappsGaming',
+    'dappsMusic',
+    'decentralization',
+    'decentralizedWebWeb3',
+    'defiDecentralizedBorrowingLending',
+    'defiDecentralizedTradingExchange',
+    'defiEarn',
+    'defiEnrollBoost',
+    'defiHow',
+    'defiRisk',
+    'desktopAuthorized',
+    'desktopUnknown',
+    'diamondHands',
+    'didDecentralizedIdentity',
+    'digitalCollectibles',
+    'directDepositPhone',
+    'discardAssets',
+    'docError',
+    'documentCertified',
+    'documentSuccess',
+    'downloadCoinbaseWallet',
+    'earn',
+    'earnCryptoCard',
+    'earnGrowth',
+    'earnIdVerification',
+    'earnInterest',
+    'earnMore',
+    'earnProgress',
+    'earnSuccess',
+    'earnToLearn',
+    'emailNotification',
+    'emptyCollection',
+    'emptyCrypto',
+    'emptyTrading',
+    'encryptedEverything',
+    'error400',
+    'errorApp500',
+    'errorRefresh',
+    'errorWeb400',
+    'errorWeb404',
+    'errorWeb500',
+    'estimatedAmount',
+    'ethStakingRewardsHero',
+    'ethStakingUpsell',
+    'ethereumToWallet',
+    'exploreDecentralizedApps',
+    'feeScale',
+    'fileYourCryptoTaxes',
+    'fileYourCryptoTaxesCheck',
+    'focusLimitOrders',
+    'freeBtc',
+    'gainsAndLosses',
+    'gasFeesNetworkFees',
+    'getStartedInMinutes',
+    'givingToOthers',
+    'givingTogether',
+    'globalTransactions',
+    'hardwareWallets',
+    'holdCrypto',
+    'holdingCrypto',
+    'idAngles',
+    'idBack',
+    'idCard',
+    'idFront',
+    'idIssue',
+    'idVerificationSecure',
+    'insufficientBalance',
+    'insuranceProtection',
+    'invest',
+    'invite',
+    'japanVerifyId',
+    'layeredNetworks',
+    'ledgerAccess',
+    'ledgerPlugin',
+    'limitOrders',
+    'linkingYourWalletToYourCoinbaseAccount',
+    'mic',
+    'mining',
+    'moneyDecentralized',
+    'multiPlatformMobileAppBrowserExtension',
+    'multicoinSupport',
+    'multipleAccountsWalletsForOneUser',
+    'myNameIsSatoshi',
+    'networkWarning',
+    'noFees',
+    'notificationsAlt',
+    'notificationsAndUpdates',
+    'onTheList',
+    'openEmail',
+    'optInPushNotificationsEmail',
+    'orderBooks',
+    'p2pGifting',
+    'p2pPayments',
+    'paperHands',
+    'payUpFront',
+    'pending',
+    'performance',
+    'phoneNumber',
+    'phoneUnknown',
+    'polling',
+    'portfolioPerformance',
+    'powerOfCrypto',
+    'poweredByEthereum',
+    'primeDeFiHero',
+    'primeEarnHero',
+    'primeStakingHero',
+    'processing',
+    'quickAndSimple',
+    'quickBuy',
+    'ratingsAndReviews',
+    'readyToTrade',
+    'receivedCard',
+    'recommendInvest',
+    'recurringReward',
+    'remittances',
+    'restrictedCountry',
+    'reviewInfo',
+    'rocket',
+    'rotatingRewards',
+    'routingAccount',
+    'secureAndTrusted',
+    'secureGlobalTransactions',
+    'secureStorage',
+    'securityShield',
+    'selectCorrectCrypto',
+    'selectReward',
+    'selfCustody',
+    'semiCustodial',
+    'sendCryptoFaster',
+    'sendToUsername',
+    'shareOnSocialMedia',
+    'sidechain',
+    'slippageTolerance',
+    'stableValue',
+    'staking',
+    'startToday',
+    'stayInControlSelfHostedWalletsStorage',
+    'stopLimitOrder',
+    'stopLimitOrderDown',
+    'stressTestedColdStorage',
+    'success',
+    'supportAndMore',
+    'switchAdvancedToSimpleTrading',
+    'taxesDetails',
+    'tradeHistory',
+    'tradeImmediately',
+    'transactionLimit',
+    'trendingHotAssets',
+    'twoIdVerify',
+    'verifyBankTransactions',
+    'verifyCardTransactions',
+    'verifyEmail',
+    'verifyIdDetails',
+    'verifyInfo',
+    'videoRequest',
+    'videoReview',
+    'videoUpload',
+    'walletAsset',
+    'walletLoading',
+    'walletNotifications',
+    'walletSecurity',
+    'walletSolana',
+    'walletUi',
+    'watchVideos',
+    'whyNotBoth',
+    'yourContacts',
+  ]}
+/>
+
+### onDismissActionPress <Badge variant="web" />
+
+Callback function fired when the dismiss action is pressed
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="onDismissActionPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['NoopFn']}
+/>
+
+### onPreferredActionPress <Badge variant="web" />
+
+Callback function fired when the preferred action is pressed
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="onPreferredActionPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['NoopFn']}
+/>
+
+### onRequestClose <Badge variant="web" />
+
+Callback function fired when modal is closed.
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="onRequestClose"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### preferredActionLabel <Badge variant="web" />
+
+Label of the preferred action
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="preferredActionLabel"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### preferredActionVariant <Badge variant="web" />
+
+Button variant of the preferred action
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="preferredActionVariant"
+  required={false}
+  defaultValue="primary"
+  mobileOptions={[]}
+  webOptions={['negative', 'primary']}
+/>
+
+### testID <Badge variant="web" />
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### title <Badge variant="web" />
+
+Alert title
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="title"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+### visible <Badge variant="web" />
+
+Controls visibility of the Modal
+
+<ApiDetails
+  componentName="FullscreenAlert"
+  propertyName="visible"
+  required={true}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
