@@ -116,7 +116,7 @@ async function syncIcons() {
     const requests = Object.values(images).map(async (url) => axios.get(url));
     const responses = await Promise.all(requests);
     spinner.text = 'Write svg icons to files.';
-    const OUT_DIR = await getSourcePath('codegen/icons/svg');
+    const OUT_DIR = await getSourcePath('common/internal/data/iconSvgs');
     if (fs.existsSync(OUT_DIR)) {
       fs.rmdirSync(OUT_DIR, { recursive: true });
     }

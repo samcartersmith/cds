@@ -29,12 +29,12 @@ type GlyphData = {
  * Remove svgs after IconFonts are created
  */
 export const removeSVGs = async () => {
-  const SVGS_DIR = await getSourcePath('codegen/icons/svg');
+  const SVGS_DIR = await getSourcePath('common/internal/data/iconSvgs');
   fs.rmdirSync(SVGS_DIR, { recursive: true });
 };
 
 export const createIconFont = async () => {
-  const SVGS_DIR = await getSourcePath('codegen/icons/svg');
+  const SVGS_DIR = await getSourcePath('common/internal/data/iconSvgs');
   const MOBILE_FONTS_DIR = await getSourcePath('mobile/icons/font');
   const WEB_FONTS_DIR = await getSourcePath('web/icons/font');
 
@@ -53,6 +53,8 @@ export const createIconFont = async () => {
      */
     startUnicode: 0xf000, // U+F000
     prependUnicode: true,
+  }).catch((err: Error) => {
+    throw err;
   })) as {
     ttf: string;
     woff2: string;

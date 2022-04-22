@@ -3,7 +3,7 @@ import { reduce } from 'lodash';
 import { buildTemplates } from '../utils/buildTemplates';
 import { createDescriptionGraph } from '../utils/createDescriptionGraph';
 
-import { createIconFont, removeSVGs } from './createIconFont';
+import { createIconFont } from './createIconFont';
 import { iconManifest } from './iconManifest';
 
 async function buildIcons() {
@@ -64,7 +64,7 @@ async function buildIcons() {
   };
 
   await buildTemplates(templates);
-  await removeSVGs();
+  // await removeSVGs();
 }
 
 void buildIcons();

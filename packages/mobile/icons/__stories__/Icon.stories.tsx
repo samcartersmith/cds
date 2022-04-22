@@ -3,8 +3,8 @@ import { Animated } from 'react-native';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import {
   CreateIconSheetParams,
-  iconSheetBuilder,
-} from '@cbhq/cds-common/internal/iconSheetBuilder';
+  iconSheetBuilderMobile,
+} from '@cbhq/cds-common/internal/iconSheetBuilderMobile';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -43,9 +43,10 @@ export const useAnimation = (): [
   }, []);
 };
 
-export const { IconSheet } = iconSheetBuilder({
-  Icon,
+export const { IconSheet } = iconSheetBuilderMobile({
+  VStack,
   HStack,
+  Icon,
 } as CreateIconSheetParams);
 
 const IconScreen = () => {
