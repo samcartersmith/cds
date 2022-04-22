@@ -41,8 +41,8 @@ export const Interactable = memo(function Interactable({
     return getInteractableStyles({
       themeConfig,
       elevationConfig,
-      backgroundColor: transparentWhileInactive ? 'transparent' : backgroundColor,
-      borderColor: transparentWhileInactive ? 'transparent' : borderColor,
+      backgroundColor: transparentWhileInactive && !pressed ? 'transparent' : backgroundColor,
+      borderColor: transparentWhileInactive && !pressed ? 'transparent' : borderColor,
       borderRadius,
       borderWidth,
     });
@@ -54,6 +54,7 @@ export const Interactable = memo(function Interactable({
     elevationConfig,
     themeConfig,
     transparentWhileInactive,
+    pressed,
   ]);
 
   const mergedWrapperStyles = useMemo(

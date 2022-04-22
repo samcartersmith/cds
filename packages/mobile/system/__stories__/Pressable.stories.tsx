@@ -48,6 +48,19 @@ const PressableScreen = () => {
           </PressableOpacity>
         </Box>
       </Example>
+      <Example title="Pressable transparentWhileInactive">
+        <Box spacing={1}>
+          <Pressable backgroundColor="primary" transparentWhileInactive accessibilityRole="button">
+            <TextBody>Default background</TextBody>
+          </Pressable>
+        </Box>
+
+        <Box spacing={1} background="backgroundOverlay">
+          <Pressable backgroundColor="primary" transparentWhileInactive accessibilityRole="button">
+            <TextBody>Other background</TextBody>
+          </Pressable>
+        </Box>
+      </Example>
     </ExampleScreen>
   );
 };
