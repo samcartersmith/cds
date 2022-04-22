@@ -1,5 +1,6 @@
 export * from './AndroidNavigationBar';
 export * from './DevicePreferencesProvider';
+export * from './EventDelegationProvider';
 export * from './FeatureFlagProvider';
 export * from './Interactable';
 export * from './Pressable';

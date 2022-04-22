@@ -1,0 +1,20 @@
+### Capture events
+
+```tsx
+const config = {
+  Button: {
+    onPress: (customConfig: EventCustomConfig) => {
+      const { data, componentName } = customConfig;
+      // ... handle custom data
+    },
+    onHover: (customConfig: EventCustomConfig) => {
+      const { data, componentName } = customConfig;
+      // ... handle custom data
+    },
+  },
+};
+
+<EventDelegationProvider config={config}>
+  <App />
+</EventDelegationProvider>;
+```

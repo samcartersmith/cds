@@ -1,0 +1,67 @@
+---
+id: analytics
+title: Analytics
+slug: /analytics/
+---
+
+## Motivation and goals
+
+CDS is widely used and because of its success having the ability to automatically generate tracking events has several advantages:
+
+- Create a single source of truth for event shape and definitions, e.g. event name/uuid
+- Reduce proliferation and redundant event tracking code
+- Enforce analytics best practices, e.g. event definitions
+- More Efficient and cost effective datadog/amplitude strategy
+
+## CCA integration
+
+In order to automatically collect events and send them to Coinbase analytics infrastructre applications need
+to use both CDS and CCA.
+
+To enable CDS/CCA integration applications require the following components:
+
+- CDS: import CDS and use [EventDelegationProvider](https://github.cbhq.net/frontend/cds/blob/master/packages/common/system/EventDelegationProvider.tsx).
+- CCA: import CCA and use [EventConfigMapping](http://go/cca).
+
+### Import CCA
+
+To import CCA, refer to [getting started documentation](http://go/cca);
+
+### Import CDS
+
+To import CDS, refer to [getting started documentation](../cds/getting-started).
+
+### Integration
+
+Import `EventConfigMapping` from CCA and `EventDelegationProvider` from CDS. Render the EventDelegationProvider at the root of your application.
+
+```jsx
+<EventDelegationProvider eventConfig={EventConfigMapping}>
+  <App />
+</EventDelegationProvider
+```
+
+For more info on EventConfigMapping format refer to [EventDelegationProvider documentation](../category/components/system/EventDelegationProvider/event-delegation-provider).
+
+Note: passing `EventConfigMapping` is not enough to enable automatic analtyics event collection.
+
+### Event capture
+
+To start capturing component events, import the component from CDS into your application and pass a custom event configuration.
+
+```jsx
+const eventConfig = {
+  actions: ['onPress'],
+  componentName: 'place_order',
+  enabled: true,
+  data: {
+    side: 'buy',
+  },
+};
+
+<Button {...props} eventConfig={eventConfig} />;
+```
+
+The above example shows how to capture onPress button actions (when user clicks) and pass custom data to the analytcs event.
+
+Only components accepting `eventConfig` as prop support event tracking.

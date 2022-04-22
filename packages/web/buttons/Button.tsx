@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef, useCallback, useMemo } from 'react';
 import { ButtonProps as ReakitButtonProps } from 'reakit/Button';
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
@@ -6,6 +6,8 @@ import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useButtonSpacing as useSharedButtonSpacing } from '@cbhq/cds-common/hooks/useButtonSpacing';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
+import { useEventDelegation } from '@cbhq/cds-common/system/useEventDelegation';
+import { ComponentEventDelegationProps } from '@cbhq/cds-common/types/ComponentEventDelegationProps';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { useFlushStyles } from '../hooks/useFlushStyles';
@@ -21,6 +23,7 @@ import * as buttonStyles from './buttonStyles';
 
 export type ButtonProps = ButtonBaseProps &
   PressableProps &
+  ComponentEventDelegationProps &
   Omit<
     ReakitButtonProps,
     | 'children'
@@ -51,6 +54,7 @@ export const Button = forwardRef(function Button(
     type = 'button',
     variant = 'primary',
     noScaleOnPress,
+    eventConfig,
     ...props
   }: ButtonProps,
   ref: React.Ref<HTMLButtonElement>,
@@ -67,6 +71,16 @@ export const Button = forwardRef(function Button(
   const style = useMemo(
     () => ({ '--interactable-height': `${height}px`, ...flushStyles }),
     [height, flushStyles],
+  );
+
+  const onPressEvent = useEventDelegation('Button', 'onPress', eventConfig);
+
+  const handlePress = useCallback(
+    (event: React.MouseEvent) => {
+      onPressEvent();
+      onPress?.(event);
+    },
+    [onPressEvent, onPress],
   );
 
   return (
@@ -89,7 +103,7 @@ export const Button = forwardRef(function Button(
       )}
       loading={loading}
       disabled={disabled}
-      onPress={onPress}
+      onPress={handlePress}
       style={style}
       type={type}
       ref={ref}

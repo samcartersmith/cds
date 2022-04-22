@@ -136,6 +136,7 @@ module.exports = {
       items: [{ type: 'doc', id: 'adoption-tracker-overview', label: 'Overview' }, ...adopters],
     },
     'a11y-report',
+    'analytics',
     {
       type: 'category',
       link: showIndexPageForCategory,

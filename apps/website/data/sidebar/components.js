@@ -195,6 +195,7 @@ module.exports = {
         'components/system/Pressable/pressable',
         'components/system/PressableOpacity/pressable-opacity',
         'components/system/ThemeProvider/theme-provider',
+        'components/system/EventDelegationProvider/event-delegation-provider',
       ],
     },
     {

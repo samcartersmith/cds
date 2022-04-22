@@ -1,0 +1,20 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+### config
+
+<ApiDetails
+  componentName="EventDelegationProvider"
+  propertyName="config"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'Partial<Record<Button, Partial<Record<EventDelegationAction, EventDelegationCallback>>>>',
+  ]}
+  webOptions={[
+    'Partial<Record<Button, Partial<Record<EventDelegationAction, EventDelegationCallback>>>>',
+  ]}
+/>

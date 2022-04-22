@@ -1,8 +1,10 @@
-import React, { memo, useMemo } from 'react';
-import { ActivityIndicator, StyleSheet } from 'react-native';
+import React, { memo, useCallback, useMemo } from 'react';
+import { ActivityIndicator, GestureResponderEvent, StyleSheet } from 'react-native';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
+import { useEventDelegation } from '@cbhq/cds-common/system/useEventDelegation';
 import type { ButtonBaseProps } from '@cbhq/cds-common/types/alpha';
+import { ComponentEventDelegationProps } from '@cbhq/cds-common/types/ComponentEventDelegationProps';
 import { getButtonSizeProps } from '@cbhq/cds-common/utils/getButtonSizeProps';
 import { getButtonSpacingProps } from '@cbhq/cds-common/utils/getButtonSpacingProps';
 
@@ -13,7 +15,9 @@ import { HStack } from '../layout/HStack';
 import { OnPress, Pressable, PressableProps } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 
-export type ButtonProps = ButtonBaseProps<OnPress> & Omit<PressableProps, 'onPress'>;
+export type ButtonProps = ButtonBaseProps<OnPress> &
+  Omit<PressableProps, 'onPress'> &
+  ComponentEventDelegationProps;
 
 export const Button = memo(function Button({
   block,
@@ -28,6 +32,7 @@ export const Button = memo(function Button({
   variant = 'primary',
   numberOfLines = 1,
   noScaleOnPress,
+  eventConfig,
   ...props
 }: ButtonProps) {
   const palette = usePalette();
@@ -58,6 +63,15 @@ export const Button = memo(function Button({
     return 'center';
   }, [endIcon, startIcon]);
 
+  const onPressEvent = useEventDelegation('Button', 'onPress', eventConfig);
+  const handleOnPress = useCallback(
+    (event: GestureResponderEvent) => {
+      onPressEvent();
+      props.onPress?.(event);
+    },
+    [onPressEvent, props],
+  );
+
   return (
     <Pressable
       transparentWhileInactive={transparent}
@@ -70,6 +84,7 @@ export const Button = memo(function Button({
       loading={loading}
       style={pressableStyles}
       noScaleOnPress={noScaleOnPress}
+      onPress={handleOnPress}
       {...props}
     >
       <HStack
