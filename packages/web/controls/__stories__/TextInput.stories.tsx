@@ -4,7 +4,8 @@ import { InputVariant } from '@cbhq/cds-common';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
-import { HStack } from '../../layout';
+import { Box, HStack } from '../../layout';
+import { Avatar } from '../../media/Avatar';
 import { Link } from '../../typography';
 import { InputIcon } from '../InputIcon';
 import { InputIconButton } from '../InputIconButton';
@@ -198,12 +199,13 @@ export const CompactInputStart = function CompactInputStart() {
     <TextInput
       label="Label"
       start={
-        <HStack spacingEnd={1}>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <Link to="" variant="headline">
-            Hello
-          </Link>
-        </HStack>
+        <Box>
+          <Avatar
+            size="l"
+            src="https://dynamic-assets.coinbase.com/e785e0181f1a23a30d9476038d9be91e9f6c63959b538eabbc51a1abc8898940383291eede695c3b8dfaa1829a9b57f5a2d0a16b0523580346c6b8fab67af14b/asset_icons/b57ac673f06a4b0338a596817eb0a50ce16e2059f327dc117744449a47915cb2.png"
+            alt="address"
+          />
+        </Box>
       }
       compact
     />

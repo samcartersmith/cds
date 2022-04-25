@@ -203,6 +203,34 @@ export default function InputScreen() {
           placeholder="189-280-1111"
         />
       </Example>
+      <Example inline title="CompactTextInput with start node">
+        <MockCompactTextInput
+          variant="foregroundMuted"
+          label="Compact Start Node"
+          start={
+            <HStack>
+              <TextBody>Start Node</TextBody>
+            </HStack>
+          }
+          placeholder="189-280-1111"
+        />
+      </Example>
+      <Example inline title="CompactTextInput with suffix">
+        <MockCompactTextInput
+          variant="foregroundMuted"
+          label="Compact Suffix"
+          suffix="Suffix"
+          placeholder="189-280-1111"
+        />
+      </Example>
+      <Example inline title="CompactTextInput with End Node">
+        <MockCompactTextInput
+          variant="foregroundMuted"
+          label="Compact Suffix"
+          end={<TextBody>End Node</TextBody>}
+          placeholder="189-280-1111"
+        />
+      </Example>
       <Example inline title="CompactTextInput Negative">
         <MockCompactTextInput
           label="One Time Password"

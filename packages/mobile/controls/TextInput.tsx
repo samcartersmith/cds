@@ -129,12 +129,14 @@ export const TextInput = memo(
             (compact || !!start) && (
               <Box justifyContent="center" alignItems="center" testID={testIDMap?.start}>
                 <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
-                  {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
-                  {!!start && (
-                    <TextInputFocusVariantContext.Provider value={focusedVariant}>
-                      {start}
-                    </TextInputFocusVariantContext.Provider>
-                  )}
+                  <HStack>
+                    {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
+                    {!!start && (
+                      <TextInputFocusVariantContext.Provider value={focusedVariant}>
+                        {start}
+                      </TextInputFocusVariantContext.Provider>
+                    )}
+                  </HStack>
                 </Pressable>
               </Box>
             )
@@ -148,16 +150,18 @@ export const TextInput = memo(
                 testID={testIDMap?.end ?? ''}
               >
                 <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
-                  {suffix !== '' && (
-                    <TextLabel1 spacingEnd={2} color="foregroundMuted">
-                      {suffix}
-                    </TextLabel1>
-                  )}
-                  {!!end && (
-                    <TextInputFocusVariantContext.Provider value={focusedVariant}>
-                      {end}
-                    </TextInputFocusVariantContext.Provider>
-                  )}
+                  <HStack>
+                    {suffix !== '' && (
+                      <TextLabel1 spacingEnd={2} color="foregroundMuted">
+                        {suffix}
+                      </TextLabel1>
+                    )}
+                    {!!end && (
+                      <TextInputFocusVariantContext.Provider value={focusedVariant}>
+                        {end}
+                      </TextInputFocusVariantContext.Provider>
+                    )}
+                  </HStack>
                 </Pressable>
               </HStack>
             )

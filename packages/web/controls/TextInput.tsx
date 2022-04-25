@@ -113,9 +113,9 @@ export const TextInput = memo(
      * In normal circumnstances, spacing horizontal should be 2 (16px)
      */
     const startSpacing = useSpacingStyles({
-      spacingVertical: 2,
+      spacingVertical: compact ? 1 : 2,
       spacingStart: 0.5,
-      spacingEnd: 2,
+      spacingEnd: compact ? 1 : 2,
     });
 
     const inputNodeCloned = useMemo(() => {
