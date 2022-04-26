@@ -135,7 +135,7 @@ export function searchInputBuilder(
   const Disabled = () => {
     const [text, setText] = useState('');
 
-    return <SearchInput value={text} onChangeText={setText} disabled />;
+    return <SearchInput accessibilityLabel="Search" value={text} onChangeText={setText} disabled />;
   };
 
   const DisplayValue = () => {

@@ -117,7 +117,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     <label className={pointer}>
       <Box alignItems="flex-start" flexDirection={isRtl() ? 'row-reverse' : 'row'}>
         {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
-        <Box role="presentation" aria-hidden height="var(--body-line-height)" alignItems="center">
+        <Box role="presentation" height="var(--body-line-height)" alignItems="center">
           {iconNode}
         </Box>
         <Spacer horizontal={1} />

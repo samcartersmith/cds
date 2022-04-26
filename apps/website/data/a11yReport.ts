@@ -4,8 +4,56 @@
  */
 
 export const a11yReport = {
-  timestamp: '2022-04-15T18:10:27.890Z',
+  timestamp: '2022-04-26T00:33:33.142Z',
   report: [
+    {
+      id: 'icon--sheet-0',
+      name: 'Sheet 0',
+      title: 'Icon',
+      kind: 'Icon',
+      passes: 10,
+      violations: [],
+    },
+    {
+      id: 'icon--sheet-1',
+      name: 'Sheet 1',
+      title: 'Icon',
+      kind: 'Icon',
+      passes: 10,
+      violations: [],
+    },
+    {
+      id: 'icon--sheet-2',
+      name: 'Sheet 2',
+      title: 'Icon',
+      kind: 'Icon',
+      passes: 10,
+      violations: [],
+    },
+    {
+      id: 'icon--sheet-3',
+      name: 'Sheet 3',
+      title: 'Icon',
+      kind: 'Icon',
+      passes: 10,
+      violations: [],
+    },
+    {
+      id: 'icon--sheet-4',
+      name: 'Sheet 4',
+      title: 'Icon',
+      kind: 'Icon',
+      passes: 10,
+      violations: [],
+    },
+    {
+      id: 'icon--sheet-5',
+      name: 'Sheet 5',
+      title: 'Icon',
+      kind: 'Icon',
+      passes: 10,
+      violations: [],
+    },
     {
       id: 'components-cards--announcement-card',
       name: 'Announcement Card',
@@ -680,7 +728,7 @@ export const a11yReport = {
       name: 'Native Input Actions',
       title: 'Core Components/Inputs/NativeInput',
       kind: 'Core Components/Inputs/NativeInput',
-      passes: 12,
+      passes: 10,
       violations: [],
     },
     {
@@ -688,7 +736,7 @@ export const a11yReport = {
       name: 'Native Input Basic',
       title: 'Core Components/Inputs/NativeInput',
       kind: 'Core Components/Inputs/NativeInput',
-      passes: 12,
+      passes: 10,
       violations: [],
     },
     {
@@ -696,7 +744,7 @@ export const a11yReport = {
       name: 'Native Input Custom Container Spacing',
       title: 'Core Components/Inputs/NativeInput',
       kind: 'Core Components/Inputs/NativeInput',
-      passes: 12,
+      passes: 10,
       violations: [],
     },
     {
@@ -704,7 +752,7 @@ export const a11yReport = {
       name: 'Native Input Text Align',
       title: 'Core Components/Inputs/NativeInput',
       kind: 'Core Components/Inputs/NativeInput',
-      passes: 12,
+      passes: 11,
       violations: [],
     },
     {
@@ -712,7 +760,7 @@ export const a11yReport = {
       name: 'Basic',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 15,
+      passes: 14,
       violations: [],
     },
     {
@@ -720,7 +768,7 @@ export const a11yReport = {
       name: 'Borderless',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 12,
+      passes: 11,
       violations: [],
     },
     {
@@ -728,7 +776,7 @@ export const a11yReport = {
       name: 'Compact',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 12,
+      passes: 11,
       violations: [],
     },
     {
@@ -736,7 +784,7 @@ export const a11yReport = {
       name: 'Custom Ref',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 12,
+      passes: 11,
       violations: [],
     },
     {
@@ -744,126 +792,15 @@ export const a11yReport = {
       name: 'Disabled',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 9,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-m28n5nzg7lf" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" disabled="" id="3z1sgrrg1kr" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['#\\33 z1sgrrg1kr'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-describedby="cds-textinput-description-m28n5nzg7lf" class="n1re6qxo bw3lfah _15bc7a9 _1o6rgns _1vs5646 _1os04ly" tabindex="0" disabled="" id="3z1sgrrg1kr" role="searchbox" type="search" value="" style="text-align: start;">',
-              target: ['#\\33 z1sgrrg1kr'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 11,
+      violations: [],
     },
     {
       id: 'core-components-inputs-searchinput--display-value',
       name: 'Display Value',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 12,
+      passes: 11,
       violations: [],
     },
     {
@@ -871,7 +808,7 @@ export const a11yReport = {
       name: 'Hide Start Icon',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 12,
+      passes: 11,
       violations: [],
     },
     {
@@ -879,7 +816,7 @@ export const a11yReport = {
       name: 'Hide Start Icon Search Example',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 15,
+      passes: 14,
       violations: [],
     },
     {
@@ -887,7 +824,7 @@ export const a11yReport = {
       name: 'On Blur',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 12,
+      passes: 11,
       violations: [],
     },
     {
@@ -895,7 +832,7 @@ export const a11yReport = {
       name: 'On Change Example',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 12,
+      passes: 11,
       violations: [],
     },
     {
@@ -903,7 +840,7 @@ export const a11yReport = {
       name: 'On Clear',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 12,
+      passes: 11,
       violations: [],
     },
     {
@@ -911,7 +848,7 @@ export const a11yReport = {
       name: 'On Focus',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 12,
+      passes: 11,
       violations: [],
     },
     {
@@ -919,7 +856,7 @@ export const a11yReport = {
       name: 'On Search',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 12,
+      passes: 11,
       violations: [],
     },
     {
@@ -1047,7 +984,7 @@ export const a11yReport = {
       name: 'Align',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 16,
+      passes: 15,
       violations: [],
     },
     {
@@ -1063,7 +1000,7 @@ export const a11yReport = {
       name: 'Border Radius',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 16,
+      passes: 15,
       violations: [],
     },
     {
@@ -1071,7 +1008,7 @@ export const a11yReport = {
       name: 'Borderless',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 16,
+      passes: 15,
       violations: [],
     },
     {
@@ -1103,7 +1040,7 @@ export const a11yReport = {
       name: 'Compact Input Start',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 15,
+      passes: 16,
       violations: [],
     },
     {
@@ -1119,7 +1056,7 @@ export const a11yReport = {
       name: 'Copy Text Input',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 18,
+      passes: 17,
       violations: [],
     },
     {
@@ -1143,7 +1080,7 @@ export const a11yReport = {
       name: 'Height',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 16,
+      passes: 15,
       violations: [],
     },
     {
@@ -1151,7 +1088,7 @@ export const a11yReport = {
       name: 'Helper Text',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 16,
+      passes: 15,
       violations: [],
     },
     {
@@ -1159,7 +1096,7 @@ export const a11yReport = {
       name: 'Input On Change',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 16,
+      passes: 15,
       violations: [],
     },
     {
@@ -1167,119 +1104,8 @@ export const a11yReport = {
       name: 'No Label',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 10,
-      violations: [
-        {
-          id: 'label-title-only',
-          impact: 'serious',
-          tags: ['cat.forms', 'best-practice'],
-          description:
-            'Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
-          help: 'Form elements should have a visible label',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [],
-              none: [
-                {
-                  id: 'title-only',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Only title used to generate label for form element',
-                },
-              ],
-              impact: 'serious',
-              html: '<input aria-describedby="cds-textinput-description-pw1p6uwmqf9" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" id="blktd2xnewi" style="text-align: start;">',
-              target: ['#blktd2xnewi'],
-              failureSummary:
-                'Fix all of the following:\n  Only title used to generate label for form element',
-            },
-          ],
-        },
-        {
-          id: 'label',
-          impact: 'critical',
-          tags: [
-            'cat.forms',
-            'wcag2a',
-            'wcag412',
-            'wcag131',
-            'section508',
-            'section508.22.n',
-            'ACT',
-          ],
-          description: 'Ensures every form element has a label',
-          help: 'Form elements must have labels',
-          helpUrl: 'https://dequeuniversity.com/rules/axe/4.4/label?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'implicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an implicit (wrapped) <label>',
-                },
-                {
-                  id: 'explicit-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'Form element does not have an explicit <label>',
-                },
-                {
-                  id: 'aria-label',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'aria-label attribute does not exist or is empty',
-                },
-                {
-                  id: 'aria-labelledby',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty',
-                },
-                {
-                  id: 'non-empty-title',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no title attribute',
-                },
-                {
-                  id: 'non-empty-placeholder',
-                  data: { messageKey: 'noAttr' },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message: 'Element has no placeholder attribute',
-                },
-                {
-                  id: 'presentational-role',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'minor',
-                  message:
-                    'Element\'s default semantics were not overridden with role="none" or role="presentation"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<input aria-describedby="cds-textinput-description-pw1p6uwmqf9" class="n1re6qxo bw3lfah _1vh1yhf" tabindex="0" id="blktd2xnewi" style="text-align: start;">',
-              target: ['#blktd2xnewi'],
-              failureSummary:
-                'Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element\'s default semantics were not overridden with role="none" or role="presentation"',
-            },
-          ],
-        },
-      ],
+      passes: 11,
+      violations: [],
     },
     {
       id: 'core-components-inputs-textinput--placeholder',
@@ -1294,7 +1120,7 @@ export const a11yReport = {
       name: 'Render Input Compact',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 14,
+      passes: 13,
       violations: [],
     },
     {
@@ -1302,7 +1128,7 @@ export const a11yReport = {
       name: 'Render Input Default',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 14,
+      passes: 13,
       violations: [],
     },
     {
@@ -1318,7 +1144,7 @@ export const a11yReport = {
       name: 'Render Native Text Area',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 15,
+      passes: 14,
       violations: [],
     },
     {
@@ -1326,7 +1152,7 @@ export const a11yReport = {
       name: 'Render Native Text Area Custom Spacing',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 15,
+      passes: 14,
       violations: [],
     },
     {
@@ -1358,7 +1184,7 @@ export const a11yReport = {
       name: 'Variants',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 16,
+      passes: 15,
       violations: [],
     },
     {
@@ -1366,7 +1192,7 @@ export const a11yReport = {
       name: 'Width',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 16,
+      passes: 15,
       violations: [],
     },
     {
@@ -1442,14 +1268,6 @@ export const a11yReport = {
       violations: [],
     },
     {
-      id: 'core-components-icon-sheet--icon-sheet',
-      name: 'Icon Sheet',
-      title: 'Core Components/Icon Sheet',
-      kind: 'Core Components/Icon Sheet',
-      passes: 6,
-      violations: [],
-    },
-    {
       id: 'core-components-logo-sheet--logo-sheet',
       name: 'Logo Sheet',
       title: 'Core Components/Logo Sheet',
@@ -1458,19 +1276,19 @@ export const a11yReport = {
       violations: [],
     },
     {
-      id: 'core-components-illustration--list-illustrations',
-      name: 'List Illustrations',
-      title: 'Core Components/Illustration',
-      kind: 'Core Components/Illustration',
-      passes: 10,
-      violations: [],
-    },
-    {
       id: 'core-components-card--dark-mode-pinned-bottom-card',
       name: 'Dark Mode Pinned Bottom Card',
       title: 'Core Components/Card',
       kind: 'Core Components/Card',
       passes: 6,
+      violations: [],
+    },
+    {
+      id: 'core-components-illustration--list-illustrations',
+      name: 'List Illustrations',
+      title: 'Core Components/Illustration',
+      kind: 'Core Components/Illustration',
+      passes: 10,
       violations: [],
     },
     {
@@ -1796,6 +1614,194 @@ export const a11yReport = {
       ],
     },
     {
+      id: 'core-components-fullscreenalert--basic',
+      name: 'Basic',
+      title: 'Core Components/FullscreenAlert',
+      kind: 'Core Components/FullscreenAlert',
+      passes: 15,
+      violations: [],
+    },
+    {
+      id: 'core-components-fullscreenalert--single-action',
+      name: 'Single Action',
+      title: 'Core Components/FullscreenAlert',
+      kind: 'Core Components/FullscreenAlert',
+      passes: 15,
+      violations: [],
+    },
+    {
+      id: 'core-components-fullscreenmodal--basic',
+      name: 'Basic',
+      title: 'Core Components/FullscreenModal',
+      kind: 'Core Components/FullscreenModal',
+      passes: 13,
+      violations: [
+        {
+          id: 'scrollable-region-focusable',
+          impact: 'moderate',
+          tags: ['cat.keyboard', 'wcag2a', 'wcag211'],
+          description: 'Ensure elements that have scrollable content are accessible by keyboard',
+          help: 'Scrollable region must have keyboard access',
+          helpUrl:
+            'https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axe-puppeteer',
+          nodes: [
+            {
+              any: [
+                {
+                  id: 'focusable-content',
+                  data: null,
+                  relatedNodes: [],
+                  impact: 'moderate',
+                  message: 'Element should have focusable content',
+                },
+                {
+                  id: 'focusable-element',
+                  data: null,
+                  relatedNodes: [],
+                  impact: 'moderate',
+                  message: 'Element should be focusable',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'moderate',
+              html: '<div class="c156wrku">',
+              target: ['.c156wrku'],
+              failureSummary:
+                'Fix any of the following:\n  Element should have focusable content\n  Element should be focusable',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'core-components-fullscreenmodal--example',
+      name: 'Example',
+      title: 'Core Components/FullscreenModal',
+      kind: 'Core Components/FullscreenModal',
+      passes: 20,
+      violations: [
+        {
+          id: 'heading-order',
+          impact: 'moderate',
+          tags: ['cat.semantics', 'best-practice'],
+          description: 'Ensures the order of headings is semantically correct',
+          help: 'Heading levels should only increase by one',
+          helpUrl:
+            'https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axe-puppeteer',
+          nodes: [
+            {
+              any: [
+                {
+                  id: 'heading-order',
+                  data: null,
+                  relatedNodes: [],
+                  impact: 'moderate',
+                  message: 'Heading order invalid',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'moderate',
+              html: '<h3 class="t160640o h1hmspdn f1eacfne t5418vf sjo1exx">Learn AMP. Earn $3 in AMP.</h3>',
+              target: ['h3'],
+              failureSummary: 'Fix any of the following:\n  Heading order invalid',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'core-components-fullscreenmodal--no-secondary',
+      name: 'No Secondary',
+      title: 'Core Components/FullscreenModal',
+      kind: 'Core Components/FullscreenModal',
+      passes: 13,
+      violations: [
+        {
+          id: 'scrollable-region-focusable',
+          impact: 'moderate',
+          tags: ['cat.keyboard', 'wcag2a', 'wcag211'],
+          description: 'Ensure elements that have scrollable content are accessible by keyboard',
+          help: 'Scrollable region must have keyboard access',
+          helpUrl:
+            'https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axe-puppeteer',
+          nodes: [
+            {
+              any: [
+                {
+                  id: 'focusable-content',
+                  data: null,
+                  relatedNodes: [],
+                  impact: 'moderate',
+                  message: 'Element should have focusable content',
+                },
+                {
+                  id: 'focusable-element',
+                  data: null,
+                  relatedNodes: [],
+                  impact: 'moderate',
+                  message: 'Element should be focusable',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'moderate',
+              html: '<div class="c156wrku">',
+              target: ['.c156wrku'],
+              failureSummary:
+                'Fix any of the following:\n  Element should have focusable content\n  Element should be focusable',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'core-components-fullscreenmodal--no-title',
+      name: 'No Title',
+      title: 'Core Components/FullscreenModal',
+      kind: 'Core Components/FullscreenModal',
+      passes: 11,
+      violations: [
+        {
+          id: 'scrollable-region-focusable',
+          impact: 'moderate',
+          tags: ['cat.keyboard', 'wcag2a', 'wcag211'],
+          description: 'Ensure elements that have scrollable content are accessible by keyboard',
+          help: 'Scrollable region must have keyboard access',
+          helpUrl:
+            'https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axe-puppeteer',
+          nodes: [
+            {
+              any: [
+                {
+                  id: 'focusable-content',
+                  data: null,
+                  relatedNodes: [],
+                  impact: 'moderate',
+                  message: 'Element should have focusable content',
+                },
+                {
+                  id: 'focusable-element',
+                  data: null,
+                  relatedNodes: [],
+                  impact: 'moderate',
+                  message: 'Element should be focusable',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'moderate',
+              html: '<div class="c156wrku">',
+              target: ['.c156wrku'],
+              failureSummary:
+                'Fix any of the following:\n  Element should have focusable content\n  Element should be focusable',
+            },
+          ],
+        },
+      ],
+    },
+    {
       id: 'core-components-modal--basic-modal',
       name: 'Basic Modal',
       title: 'Core Components/Modal',
@@ -1840,7 +1846,7 @@ export const a11yReport = {
       name: 'Visible Modal',
       title: 'Core Components/Modal',
       kind: 'Core Components/Modal',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -1928,8 +1934,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="k8kx9qjzq9c" aria-haspopup="dialog">',
-              target: ['div[aria-controls="k8kx9qjzq9c"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="tjqlht1p9x" aria-haspopup="dialog">',
+              target: ['div[aria-controls="tjqlht1p9x"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -1946,8 +1952,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="aow235680r9" aria-haspopup="dialog">',
-              target: ['div[aria-controls="aow235680r9"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="su8q9kul27" aria-haspopup="dialog">',
+              target: ['div[aria-controls="su8q9kul27"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -1964,8 +1970,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="7uell9v8mio" aria-haspopup="dialog">',
-              target: ['div[aria-controls="7uell9v8mio"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="msi0wadawy" aria-haspopup="dialog">',
+              target: ['div[aria-controls="msi0wadawy"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -1982,8 +1988,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="kesn1zdi9md" aria-haspopup="dialog">',
-              target: ['div[aria-controls="kesn1zdi9md"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="jg1w9krg47e" aria-haspopup="dialog">',
+              target: ['div[aria-controls="jg1w9krg47e"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2000,8 +2006,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="f8q0ubanf3j" aria-haspopup="dialog">',
-              target: ['div[aria-controls="f8q0ubanf3j"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="l3y3zh8f0cd" aria-haspopup="dialog">',
+              target: ['div[aria-controls="l3y3zh8f0cd"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2018,8 +2024,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="c5zjyb91rdr" aria-haspopup="dialog">',
-              target: ['div[aria-controls="c5zjyb91rdr"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="2z3f5fzd8e8" aria-haspopup="dialog">',
+              target: ['div[aria-controls="2z3f5fzd8e8"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2036,8 +2042,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="1qcu6vsol2a" aria-haspopup="dialog">',
-              target: ['div[aria-controls="1qcu6vsol2a"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="qc36owuhg0c" aria-haspopup="dialog">',
+              target: ['div[aria-controls="qc36owuhg0c"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2054,8 +2060,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="scmdl4av4hk" aria-haspopup="dialog">',
-              target: ['div[aria-controls="scmdl4av4hk"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="1cx9uf7f6g2" aria-haspopup="dialog">',
+              target: ['div[aria-controls="1cx9uf7f6g2"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2072,8 +2078,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="so9tihhnqcm" aria-haspopup="dialog">',
-              target: ['div[aria-controls="so9tihhnqcm"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="fiymtmlm3kg" aria-haspopup="dialog">',
+              target: ['div[aria-controls="fiymtmlm3kg"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2090,8 +2096,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="bp376ip2cap" aria-haspopup="dialog"><p aria-describedby="tooltipId" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">Default</p></div>',
-              target: ['div[aria-controls="bp376ip2cap"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="8s04kxhly0f" aria-haspopup="dialog"><p aria-describedby="tooltipId" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">Default</p></div>',
+              target: ['div[aria-controls="8s04kxhly0f"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2108,8 +2114,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="ujwcejlk4bi" aria-haspopup="dialog">',
-              target: ['div[aria-controls="ujwcejlk4bi"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="a2kilhxn4nj" aria-haspopup="dialog">',
+              target: ['div[aria-controls="a2kilhxn4nj"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2126,8 +2132,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="j28wbfv7x38" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">right</p></div></div>',
-              target: ['div[aria-controls="j28wbfv7x38"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="ioy79n8kgio" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">right</p></div></div>',
+              target: ['div[aria-controls="ioy79n8kgio"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2144,8 +2150,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="pmxe91l0h2e" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">bottom</p></div></div>',
-              target: ['div[aria-controls="pmxe91l0h2e"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="pklq5xv5jao" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">bottom</p></div></div>',
+              target: ['div[aria-controls="pklq5xv5jao"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2182,8 +2188,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="jzpcc52e8a" aria-haspopup="dialog">',
-              target: ['div[aria-controls="jzpcc52e8a"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="4jjt5x3uhig" aria-haspopup="dialog">',
+              target: ['div[aria-controls="4jjt5x3uhig"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2200,8 +2206,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="yf8p8e89qj" aria-haspopup="dialog">',
-              target: ['div[aria-controls="yf8p8e89qj"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="wbsb5siduyf" aria-haspopup="dialog">',
+              target: ['div[aria-controls="wbsb5siduyf"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2218,8 +2224,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="vpoey0igkvl" aria-haspopup="dialog">',
-              target: ['div[aria-controls="vpoey0igkvl"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="ir1m6l8qz" aria-haspopup="dialog">',
+              target: ['div[aria-controls="ir1m6l8qz"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2236,8 +2242,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="9dlejg3skpc" aria-haspopup="dialog">',
-              target: ['div[aria-controls="9dlejg3skpc"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="axjk36s9rph" aria-haspopup="dialog">',
+              target: ['div[aria-controls="axjk36s9rph"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2254,8 +2260,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="3xbfifs7dk5" aria-haspopup="dialog">',
-              target: ['div[aria-controls="3xbfifs7dk5"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="odu08emo3x" aria-haspopup="dialog">',
+              target: ['div[aria-controls="odu08emo3x"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2272,8 +2278,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="hfih2ww7f1l" aria-haspopup="dialog">',
-              target: ['div[aria-controls="hfih2ww7f1l"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="789bzrvgc93" aria-haspopup="dialog">',
+              target: ['div[aria-controls="789bzrvgc93"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2290,8 +2296,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="44tf885l639" aria-haspopup="dialog">',
-              target: ['div[aria-controls="44tf885l639"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="x5pxzjofnjj" aria-haspopup="dialog">',
+              target: ['div[aria-controls="x5pxzjofnjj"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2308,8 +2314,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="xfhp345mumr" aria-haspopup="dialog">',
-              target: ['div[aria-controls="xfhp345mumr"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="femqnui7kme" aria-haspopup="dialog">',
+              target: ['div[aria-controls="femqnui7kme"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2326,8 +2332,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="1cfczbxpxkw" aria-haspopup="dialog">',
-              target: ['div[aria-controls="1cfczbxpxkw"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="ac4vx94lkhv" aria-haspopup="dialog">',
+              target: ['div[aria-controls="ac4vx94lkhv"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2344,8 +2350,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="x686ncawshl" aria-haspopup="dialog"><p aria-describedby="tooltipId" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">Default</p></div>',
-              target: ['div[aria-controls="x686ncawshl"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="5fpuadpics2" aria-haspopup="dialog"><p aria-describedby="tooltipId" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">Default</p></div>',
+              target: ['div[aria-controls="5fpuadpics2"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2362,8 +2368,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="af8y1jnt1wo" aria-haspopup="dialog">',
-              target: ['div[aria-controls="af8y1jnt1wo"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="y2n2xt6ghlc" aria-haspopup="dialog">',
+              target: ['div[aria-controls="y2n2xt6ghlc"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2380,8 +2386,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="ozgqziqsjnj" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">right</p></div></div>',
-              target: ['div[aria-controls="ozgqziqsjnj"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="1x2wjosbubb" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">right</p></div></div>',
+              target: ['div[aria-controls="1x2wjosbubb"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2398,8 +2404,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="82hfk7drzsu" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">bottom</p></div></div>',
-              target: ['div[aria-controls="82hfk7drzsu"]'],
+              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="h0s686anuzf" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">bottom</p></div></div>',
+              target: ['div[aria-controls="h0s686anuzf"]'],
               failureSummary:
                 'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
             },
@@ -2412,86 +2418,16 @@ export const a11yReport = {
       name: 'Fixed Layout Example',
       title: 'Core Components/Table/Table',
       kind: 'Core Components/Table/Table',
-      passes: 14,
-      violations: [
-        {
-          id: 'aria-hidden-focus',
-          impact: 'serious',
-          tags: ['cat.name-role-value', 'wcag2a', 'wcag412', 'wcag131'],
-          description: 'Ensures aria-hidden elements do not contain focusable elements',
-          help: 'ARIA hidden element must not contain focusable elements',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [
-                {
-                  id: 'focusable-disabled',
-                  data: null,
-                  relatedNodes: [
-                    {
-                      html: '<input class="c1baze8m poigcwi" type="checkbox" aria-checked="true" aria-disabled="false" aria-readonly="false" role="switch" value="" checked="">',
-                      target: ['input'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message: 'Focusable content should be disabled or be removed from the DOM',
-                },
-              ],
-              none: [],
-              impact: 'serious',
-              html: '<div aria-hidden="true" class="f13ygna6 c1omxyrd" role="presentation" style="height: var(--body-line-height);">',
-              target: ['.c1omxyrd[aria-hidden="true"][role="presentation"]'],
-              failureSummary:
-                'Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM',
-            },
-          ],
-        },
-      ],
+      passes: 21,
+      violations: [],
     },
     {
       id: 'core-components-table-table--sample-table',
       name: 'Sample Table',
       title: 'Core Components/Table/Table',
       kind: 'Core Components/Table/Table',
-      passes: 16,
-      violations: [
-        {
-          id: 'aria-hidden-focus',
-          impact: 'serious',
-          tags: ['cat.name-role-value', 'wcag2a', 'wcag412', 'wcag131'],
-          description: 'Ensures aria-hidden elements do not contain focusable elements',
-          help: 'ARIA hidden element must not contain focusable elements',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [
-                {
-                  id: 'focusable-disabled',
-                  data: null,
-                  relatedNodes: [
-                    {
-                      html: '<input class="c1baze8m poigcwi" type="checkbox" aria-checked="false" aria-disabled="false" aria-readonly="false" role="switch" value="">',
-                      target: ['input'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message: 'Focusable content should be disabled or be removed from the DOM',
-                },
-              ],
-              none: [],
-              impact: 'serious',
-              html: '<div aria-hidden="true" class="f13ygna6 c1omxyrd" role="presentation" style="height: var(--body-line-height);">',
-              target: ['.c1omxyrd[aria-hidden="true"][role="presentation"]'],
-              failureSummary:
-                'Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM',
-            },
-          ],
-        },
-      ],
+      passes: 22,
+      violations: [],
     },
     {
       id: 'core-components-table-table--sorting-example',
@@ -2567,43 +2503,8 @@ export const a11yReport = {
       name: 'Table Cell Fallback Example',
       title: 'Core Components/Table/TableCellFallback',
       kind: 'Core Components/Table/TableCellFallback',
-      passes: 15,
-      violations: [
-        {
-          id: 'aria-hidden-focus',
-          impact: 'serious',
-          tags: ['cat.name-role-value', 'wcag2a', 'wcag412', 'wcag131'],
-          description: 'Ensures aria-hidden elements do not contain focusable elements',
-          help: 'ARIA hidden element must not contain focusable elements',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [],
-              all: [
-                {
-                  id: 'focusable-disabled',
-                  data: null,
-                  relatedNodes: [
-                    {
-                      html: '<input class="c1baze8m poigcwi" type="checkbox" aria-checked="false" aria-disabled="false" aria-readonly="false" role="switch" value="">',
-                      target: ['input'],
-                    },
-                  ],
-                  impact: 'serious',
-                  message: 'Focusable content should be disabled or be removed from the DOM',
-                },
-              ],
-              none: [],
-              impact: 'serious',
-              html: '<div aria-hidden="true" class="f13ygna6 c1omxyrd" role="presentation" style="height: var(--body-line-height);">',
-              target: ['.c1omxyrd[aria-hidden="true"][role="presentation"]'],
-              failureSummary:
-                'Fix all of the following:\n  Focusable content should be disabled or be removed from the DOM',
-            },
-          ],
-        },
-      ],
+      passes: 22,
+      violations: [],
     },
     {
       id: 'core-components-table-tablerow--table-row-example',
@@ -2740,7 +2641,7 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1o033nd d1bntmt1 t5418vf e5jiys6 tb1lqn8 n1pjz25m">$2,130</span>',
+              html: '<span class="t160640o l1rottxd f1o033nd d1bntmt1 t5418vf e5jiys6 tb1lqn8 n1pjz25m">$2,486</span>',
               target: ['.v1427yu5 > .d1bntmt1.l1rottxd.f1o033nd'],
               failureSummary:
                 'Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
@@ -3053,6 +2954,14 @@ export const a11yReport = {
       violations: [],
     },
     {
+      id: 'core-components-sparklineinteractive--time-period-gutter',
+      name: 'Time Period Gutter',
+      title: 'Core Components/SparklineInteractive',
+      kind: 'Core Components/SparklineInteractive',
+      passes: 8,
+      violations: [],
+    },
+    {
       id: 'core-components-sparklineinteractive--with-header-node',
       name: 'With Header Node',
       title: 'Core Components/SparklineInteractive',
@@ -3069,11 +2978,11 @@ export const a11yReport = {
       violations: [],
     },
     {
-      id: 'core-components-sparklineinteractiveheader--default',
-      name: 'Default',
+      id: 'core-components-sparklineinteractiveheader--custom-label',
+      name: 'Custom Label',
       title: 'Core Components/SparklineInteractiveHeader',
       kind: 'Core Components/SparklineInteractiveHeader',
-      passes: 8,
+      passes: 9,
       violations: [
         {
           id: 'color-contrast',
@@ -3116,21 +3025,64 @@ export const a11yReport = {
         },
       ],
     },
+    {
+      id: 'core-components-sparklineinteractiveheader--default',
+      name: 'Default',
+      title: 'Core Components/SparklineInteractiveHeader',
+      kind: 'Core Components/SparklineInteractiveHeader',
+      passes: 8,
+      violations: [
+        {
+          id: 'color-contrast',
+          impact: 'serious',
+          tags: ['cat.color', 'wcag2aa', 'wcag143'],
+          description:
+            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
+          help: 'Elements must have sufficient color contrast',
+          helpUrl:
+            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
+          nodes: [
+            {
+              any: [
+                {
+                  id: 'color-contrast',
+                  data: {
+                    fgColor: '#e8a589',
+                    bgColor: '#ffffff',
+                    contrastRatio: 2.06,
+                    fontSize: '10.5pt (14px)',
+                    fontWeight: 'normal',
+                    messageKey: null,
+                    expectedContrastRatio: '4.5:1',
+                  },
+                  relatedNodes: [],
+                  impact: 'serious',
+                  message:
+                    'Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
+              target: ['button:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
+              failureSummary:
+                'Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+            },
+          ],
+        },
+      ],
+    },
   ],
-  critical: [
-    { id: 'label', count: 2 },
-    { id: 'aria-allowed-attr', count: 2 },
-  ],
+  critical: [{ id: 'aria-allowed-attr', count: 2 }],
   moderate: [
-    { id: 'heading-order', count: 2 },
+    { id: 'heading-order', count: 3 },
     { id: 'landmark-unique', count: 2 },
-    { id: 'scrollable-region-focusable', count: 1 },
+    { id: 'scrollable-region-focusable', count: 4 },
   ],
   minor: [],
   serious: [
     { id: 'nested-interactive', count: 1 },
-    { id: 'label-title-only', count: 2 },
-    { id: 'aria-hidden-focus', count: 3 },
-    { id: 'color-contrast', count: 3 },
+    { id: 'color-contrast', count: 4 },
   ],
 } as const;

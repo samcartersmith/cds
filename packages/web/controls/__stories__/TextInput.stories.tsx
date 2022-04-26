@@ -57,7 +57,12 @@ export const Align = function Align() {
   return (
     <>
       {alignments.map((align) => (
-        <TextInput label="Label" placeholder="placeholder" helperText="helperText" align={align} />
+        <TextInput
+          label={`Label: ${align}`}
+          placeholder="placeholder"
+          helperText="helperText"
+          align={align}
+        />
       ))}
     </>
   );
@@ -70,7 +75,7 @@ export const Variants = function Variants() {
     <>
       {variants.map((variant) => (
         <TextInput
-          label="Label"
+          label={`Label: ${variant}`}
           placeholder="placeholder"
           helperText="helperText"
           variant={variant}
@@ -148,14 +153,14 @@ export const Borderless = function Borderless() {
 export const Disabled = function Disabled() {
   return (
     <>
-      <TextInput label="Label" disabled />
+      <TextInput label="Disabled label" disabled />
       <TextInput label="Label" start={<InputIconButton name="add" transparent />} disabled />
     </>
   );
 };
 
 export const NoLabel = function NoLabel() {
-  return <TextInput />;
+  return <TextInput accessibilityLabel="No Label" />;
 };
 
 export const StartContent = function StartContent() {
