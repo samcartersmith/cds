@@ -1,7 +1,6 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
-import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { chartCompactHeight, chartHeight } from '@cbhq/cds-common/tokens/sparkline';
 import {
@@ -15,15 +14,16 @@ import { emptyArray, isStorybook, noop } from '@cbhq/cds-utils';
 
 import { Lottie } from '../../animation';
 import { useDimensions } from '../../hooks/useDimensions';
+import { usePalette } from '../../hooks/usePalette';
 import { Box } from '../../layout/Box';
 import { ThemeProvider } from '../../system';
 import { VisualizationContainer } from '../VisualizationContainer';
 
 import { InnerSparklineInteractiveProvider } from './InnerSparklineInteractiveProvider';
-import { SparklineInteractiveAnimatedPath } from './SparklineInteractiveAnimatedPath';
 import { SparklineInteractiveHoverDate } from './SparklineInteractiveHoverDate';
 import { SparklineInteractiveLineVertical } from './SparklineInteractiveLineVertical';
 import { SparklineInteractiveMarkerDates } from './SparklineInteractiveMarkerDates';
+import { SparklineInteractivePaths } from './SparklineInteractivePaths';
 import { SparklineInteractivePeriodSelector } from './SparklineInteractivePeriodSelector';
 import {
   SparklineInteractiveProvider,
@@ -72,18 +72,18 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   headerNode,
   fallbackType = 'positive',
   timePeriodGutter,
+  hoverData,
 }: SparklineInteractiveBaseProps<Period>) {
+  const [isScrubbing, setIsScrubbing] = useState(false);
   const innerSparklineInteractiveHeight = compact ? chartCompactHeight : chartHeight;
   const { isFallbackVisible, showFallback } = useSparklineInteractiveContext();
   const { observe: containerRef, width: containerWidth } = useDimensions();
+  const palette = usePalette();
 
   const isMobileLayout = containerWidth > 0 && containerWidth < mobileLayoutBreakpoint;
 
   const color = strokeColor;
   const [selectedPeriod, setSelectedPeriod] = useState(defaultPeriod);
-  const hasFrontier = useFeatureFlag('frontierSparkline');
-
-  const shouldShowFill = typeof fill !== 'undefined' ? fill : hasFrontier;
 
   const dataForPeriod = useMemo(() => {
     if (!data) {
@@ -91,6 +91,22 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     }
     return data[selectedPeriod] ?? emptyArray;
   }, [data, selectedPeriod]);
+
+  const handleScrubStart = useCallback(() => {
+    if (hoverData) {
+      setIsScrubbing(true);
+    }
+
+    onScrubStart?.();
+  }, [hoverData, onScrubStart]);
+
+  const handleScrubEnd = useCallback(() => {
+    if (hoverData) {
+      setIsScrubbing(false);
+    }
+
+    onScrubEnd?.();
+  }, [hoverData, onScrubEnd]);
 
   // If dataForPeriod is empty we know that we are either loading
   // or backend returned bad data and we should show fallback UI.
@@ -175,8 +191,8 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
             <InnerSparklineInteractiveProvider width={width} height={height}>
               <SparklineInteractiveScrubHandler
                 onScrub={onScrub}
-                onScrubEnd={onScrubEnd}
-                onScrubStart={onScrubStart}
+                onScrubEnd={handleScrubEnd}
+                onScrubStart={handleScrubStart}
                 disabled={disableScrubbing}
                 selectedPeriod={selectedPeriod}
                 formatHoverDate={formatHoverDate}
@@ -191,14 +207,21 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
                   <Box width="100%" height="100%">
                     {!!hasData && !!path && (
                       <>
-                        <SparklineInteractiveAnimatedPath
-                          d={path}
-                          area={shouldShowFill ? area : undefined}
-                          color={color}
+                        <SparklineInteractivePaths
+                          strokeColor={color}
+                          showHoverData={isScrubbing}
+                          path={path}
+                          area={area}
                           selectedPeriod={selectedPeriod}
+                          fill={fill}
                           yAxisScalingFactor={yAxisScalingFactor}
+                          compact={compact}
+                          hoverData={hoverData}
                         />
-                        <SparklineInteractiveLineVertical color={color} />
+
+                        <SparklineInteractiveLineVertical
+                          color={hoverData ? palette.lineHeavy : color}
+                        />
                       </>
                     )}
                   </Box>

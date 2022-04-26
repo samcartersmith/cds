@@ -59,3 +59,16 @@ The scaling factor is usually used when you want to show less variance in the ch
   <SparklineInteractivePriceWithHeader data={sparklineInteractiveData} fill strokeColor="#F7931A" />
 </Box>
 ```
+
+#### Custom hover data
+
+```jsx live
+<Box spacing={3} width="100%">
+  <SparklineInteractivePrice
+    fill
+    data={sparklineInteractiveData}
+    hoverData={sparklineInteractiveHoverData}
+    strokeColor="#F7931A"
+  />
+</Box>
+```

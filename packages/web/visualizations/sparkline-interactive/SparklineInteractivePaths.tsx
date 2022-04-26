@@ -1,10 +1,11 @@
 import React, { memo, useCallback, useRef } from 'react';
+import { ChartTimeseries } from '@cbhq/cds-common';
+import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
+import { chartCompactHeight, chartHeight } from '@cbhq/cds-common/tokens/sparkline';
 import {
-  ChartTimeseries,
   SparklineInteractivePathsProps,
   TimeseriesPathOnRenderParams,
-} from '@cbhq/cds-common';
-import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
+} from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 
 import { SparklineInteractiveAnimatedPath } from './SparklineInteractiveAnimatedPath';
 import { SparklineInteractiveTimeseriesPaths } from './SparklineInteractiveTimeseriesPaths';
@@ -26,7 +27,8 @@ function SparklineInteractivePathsWithGeneric<Period extends string>({
   const hasFrontier = useFeatureFlag('frontierSparkline');
   const shouldShowFill = typeof fill !== 'undefined' ? fill : hasFrontier;
 
-  const { chartWidth, chartHeight } = useSparklineInteractiveConstants({ compact });
+  const { chartWidth } = useSparklineInteractiveConstants();
+  const innerSparklineInteractiveHeight = compact ? chartCompactHeight : chartHeight;
 
   const handleMultiTimeseriesRender = useCallback(
     ({ area: timeseriesArea, path: timeseriesPath }: TimeseriesPathOnRenderParams) => {
@@ -53,7 +55,7 @@ function SparklineInteractivePathsWithGeneric<Period extends string>({
         <SparklineInteractiveTimeseriesPaths
           initialPath={path}
           width={chartWidth}
-          height={chartHeight}
+          height={innerSparklineInteractiveHeight}
           data={hoverData?.[selectedPeriod] as ChartTimeseries[]}
           onRender={handleMultiTimeseriesRender}
         />

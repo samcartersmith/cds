@@ -22,6 +22,7 @@ import { chartFallbackNegative, chartFallbackPositive } from '@cbhq/cds-lottie-f
 import { emptyArray, noop } from '@cbhq/cds-utils';
 
 import { Lottie } from '../../animation';
+import { usePalette } from '../../hooks/usePalette';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 import { Box } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
@@ -137,6 +138,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   const color = strokeColor;
   const [selectedPeriod, setSelectedPeriod] = useState(defaultPeriod);
   const chartHoverTextInputRef = useRef<SparklineInteractiveHoverDateRefProps<Period> | null>(null);
+  const palette = usePalette();
 
   const dataForPeriod = useMemo(() => {
     if (!data) {
@@ -260,7 +262,10 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
           <Animated.View style={{ opacity: chartOpacity }}>
             {!!hasData && !!path && (
               <>
-                <SparklineInteractiveLineVertical color={color} showHoverDate={!!formatHoverDate} />
+                <SparklineInteractiveLineVertical
+                  color={hoverData ? palette.lineHeavy : color}
+                  showHoverDate={!!formatHoverDate}
+                />
                 <SparklineInteractivePaths
                   strokeColor={color}
                   showHoverData={isScrubbing}

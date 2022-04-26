@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { Area, Line } from 'd3-shape';
 
 import type {
   ChartData,
@@ -98,7 +99,7 @@ export type SparklineInteractiveBaseProps<Period extends string> = {
   fill?: boolean;
 
   /**
-    Formats the date above the chart as you scrub. Omit this if you don't want to show the date as the user scrubs
+   Formats the date above the chart as you scrub. Omit this if you don't want to show the date as the user scrubs
    */
   formatHoverDate?: (date: Date, period: Period) => string;
 
@@ -190,4 +191,25 @@ export type SparklineInteractivePathsProps<Period extends string> = Pick<
   path: string;
   area: string;
   selectedPeriod: Period;
+};
+
+export type TimeseriesPathOnRenderParams = {
+  path: string;
+  area: string;
+};
+
+export type SparklineInteractiveTimeseriesPathsProps = {
+  initialPath: string;
+  data: ChartTimeseries[];
+  width: number;
+  height: number;
+  onRender: ({ path, area }: TimeseriesPathOnRenderParams) => void;
+};
+
+export type TimeseriesPathProps = {
+  lineFn: Line<ChartDataPoint>;
+  areaFn: Area<ChartDataPoint>;
+  timeseries: ChartTimeseries;
+  initialPath: string;
+  onRender?: ({ path, area }: TimeseriesPathOnRenderParams) => void;
 };

@@ -22,6 +22,8 @@ export const SparklineInteractiveAnimatedPath = memo(
     selectedPeriod,
     area,
     yAxisScalingFactor,
+    initialPath,
+    initialArea,
   }: SparklineInteractiveAnimatedPathProps) => {
     const pathRef = useRef<SVGPathElement | null>(null);
     const areaRef = useRef<SVGPathElement | null>(null);
@@ -47,13 +49,13 @@ export const SparklineInteractiveAnimatedPath = memo(
     } = useValueChanges(area ?? '');
 
     const pathInterpolator = useMemo(
-      () => interpolatePath(previousPath as string, newPath),
-      [previousPath, newPath],
+      () => interpolatePath((previousPath ?? initialPath) as string, newPath),
+      [previousPath, initialPath, newPath],
     );
 
     const areaInterpolator = useMemo(
-      () => interpolatePath(previousArea as string, newArea),
-      [previousArea, newArea],
+      () => interpolatePath((previousArea ?? initialArea) as string, newArea),
+      [previousArea, initialArea, newArea],
     );
 
     const updatePathWithoutAnimation = useCallback(() => {
@@ -68,8 +70,9 @@ export const SparklineInteractiveAnimatedPath = memo(
         .ease(easing)
         .attrTween('d', function tween() {
           const previous = select(this).attr('d');
+
           const current = d;
-          return interpolatePath(previous, current);
+          return interpolatePath(previous ?? initialPath, current);
         });
 
       if (area) {
@@ -80,10 +83,10 @@ export const SparklineInteractiveAnimatedPath = memo(
           .attrTween('d', function tween() {
             const previous = select(this).attr('d');
             const current = area;
-            return interpolatePath(previous, current);
+            return interpolatePath(previous ?? initialArea, current);
           });
       }
-    }, [area, d]);
+    }, [area, d, initialArea, initialPath]);
 
     useEffect(() => {
       addPreviousPeriod(selectedPeriod);

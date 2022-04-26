@@ -3,7 +3,10 @@ import {
   sparklineInteractiveBuilder,
   sparklineInteractiveWithHeaderBuilder,
 } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
-import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
+import {
+  sparklineInteractiveData,
+  sparklineInteractiveHoverData,
+} from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 
 import { SparklineInteractiveHeader } from '../../sparkline-interactive-header/SparklineInteractiveHeader';
 import { SparklineInteractive } from '../SparklineInteractive';
@@ -95,6 +98,27 @@ export const TimePeriodGutter = () => {
       data={sparklineInteractiveData}
       strokeColor={strokeColor}
       timePeriodGutter={3}
+    />
+  );
+};
+
+export const HoverData = () => {
+  return (
+    <SparklineInteractiveBuild
+      data={sparklineInteractiveData}
+      strokeColor={strokeColor}
+      hoverData={sparklineInteractiveHoverData}
+    />
+  );
+};
+
+export const HoverDataWithFill = () => {
+  return (
+    <SparklineInteractiveBuild
+      data={sparklineInteractiveData}
+      strokeColor={strokeColor}
+      hoverData={sparklineInteractiveHoverData}
+      fill
     />
   );
 };

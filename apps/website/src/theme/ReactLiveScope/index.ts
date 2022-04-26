@@ -13,7 +13,10 @@ import {
   sparklineInteractiveBuilder,
   sparklineInteractiveWithHeaderBuilder,
 } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
-import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
+import {
+  sparklineInteractiveData,
+  sparklineInteractiveHoverData,
+} from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 import { useOverlay } from '@cbhq/cds-common/overlays/useOverlay';
 import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
@@ -190,6 +193,7 @@ const ReactLiveScope: unknown = {
   SparklineInteractivePrice,
   SparklineInteractivePriceWithHeader,
   sparklineInteractiveData,
+  sparklineInteractiveHoverData,
   AppSwitcherContent,
   UserSwitcherContent,
   insetFocusRing,

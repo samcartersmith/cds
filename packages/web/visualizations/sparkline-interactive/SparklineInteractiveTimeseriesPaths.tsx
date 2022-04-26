@@ -1,22 +1,19 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
-import { TextInput } from 'react-native';
-import Svg, { G, Path } from 'react-native-svg';
-import * as interpolate from 'd3-interpolate-path';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
-import {
-  SparklineInteractiveTimeseriesPathsProps,
-  TimeseriesPathProps,
-} from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+import { interpolatePath } from 'd3-interpolate-path';
+import { select } from 'd3-selection';
+import { SparklineInteractiveTimeseriesPathsProps, TimeseriesPathProps } from '@cbhq/cds-common';
+import { animatedPathConfig } from '@cbhq/cds-common/animation/sparkline';
 import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
 import { useTimeseriesPaths } from '@cbhq/cds-common/visualizations/useTimeseriesPaths';
 
 import { useAccessibleForeground } from '../../color/useAccessibleForeground';
+import { SparklinePath } from '../SparklinePath';
 
-import { useInterruptiblePathAnimation } from './useInterruptiblePathAnimation';
+const { duration, easing } = animatedPathConfig;
 
 const TimeseriesPath = memo(
   ({ timeseries, lineFn, initialPath, onRender, areaFn }: TimeseriesPathProps) => {
-    const pathRef = useRef<TextInput | null>(null);
+    const pathRef = useRef<SVGPathElement | null>(null);
     const { strokeColor } = timeseries;
 
     const lineColor = useAccessibleForeground({ color: strokeColor, usage: 'graphic' });
@@ -27,32 +24,16 @@ const TimeseriesPath = memo(
       [areaFn, onRender, timeseries.points],
     );
 
-    const pathInterpolator = useMemo(
-      () => interpolate.interpolatePath(initialPath, newPath),
-      [initialPath, newPath],
-    );
-
-    const animationListener = useCallback(
-      ({ value }: { value: number }) => {
-        const val = Number(value.toFixed(4));
-        pathRef.current?.setNativeProps({
-          d: pathInterpolator(val),
+    const playAnimation = useCallback(() => {
+      select(pathRef.current)
+        .transition()
+        .duration(duration)
+        .ease(easing)
+        .attrTween('d', function tween() {
+          const current = newPath;
+          return interpolatePath(initialPath, current);
         });
-      },
-      [pathInterpolator],
-    );
-
-    const updatePathWithoutAnimation = useCallback(() => {
-      pathRef.current?.setNativeProps({
-        d: pathInterpolator(1),
-      });
-    }, [pathInterpolator]);
-
-    const playAnimation = useInterruptiblePathAnimation({
-      animationListener,
-      onInterrupt: updatePathWithoutAnimation,
-      ignoreMinMax: true,
-    });
+    }, [initialPath, newPath]);
 
     useEffect(() => {
       playAnimation();
@@ -61,18 +42,9 @@ const TimeseriesPath = memo(
         path: newPath,
         area: newArea as string,
       });
-    }, [newArea, newPath, onRender, pathInterpolator, playAnimation]);
+    }, [newArea, newPath, onRender, playAnimation]);
 
-    return (
-      <Path
-        ref={pathRef}
-        d={initialPath}
-        strokeLinejoin="round"
-        strokeLinecap="round"
-        strokeWidth={borderWidth.sparkline}
-        stroke={lineColor}
-      />
-    );
+    return <SparklinePath ref={pathRef} path={initialPath} stroke={lineColor} />;
   },
 );
 
@@ -99,9 +71,9 @@ export const SparklineInteractiveTimeseriesPaths = memo(
     });
 
     return (
-      <Svg width={width} height={height}>
-        <G {...translateProps}>{paths}</G>
-      </Svg>
+      <svg width={width} height={height}>
+        <g {...translateProps}>{paths}</g>
+      </svg>
     );
   },
 );
