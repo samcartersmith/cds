@@ -96,8 +96,9 @@ export const FullscreenModal = memo(function FullscreenModal({
     <HStack
       borderedBottom={!hideDivider}
       spacingHorizontal={4}
-      spacingVertical={3}
+      spacingVertical={2}
       dangerouslySetClassName={headerClassName}
+      alignItems="center"
     >
       <Box spacingEnd={3} dangerouslySetClassName={headerLogoClassName}>
         <LogoMark size={32} />
