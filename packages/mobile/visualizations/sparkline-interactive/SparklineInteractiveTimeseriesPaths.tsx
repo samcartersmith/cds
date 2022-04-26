@@ -7,8 +7,10 @@ import { ChartDataPoint, ChartTimeseries } from '@cbhq/cds-common';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
 import { useTimeseriesPaths } from '@cbhq/cds-common/visualizations/useTimeseriesPaths';
-import { useAccessibleForeground } from '@cbhq/cds-mobile/color/useAccessibleForeground';
-import { useInterruptiblePathAnimation } from '@cbhq/cds-mobile/visualizations/sparkline-interactive/useInterruptiblePathAnimation';
+
+import { useAccessibleForeground } from '../../color/useAccessibleForeground';
+
+import { useInterruptiblePathAnimation } from './useInterruptiblePathAnimation';
 
 export type TimeseriesPathOnRenderParams = {
   path: string;

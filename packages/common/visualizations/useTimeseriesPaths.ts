@@ -2,8 +2,10 @@ import { useMemo } from 'react';
 import { extent } from 'd3-array';
 import { scaleLinear, scaleTime } from 'd3-scale';
 import { area, line } from 'd3-shape';
-import { ChartDataPoint, ChartTimeseries } from '@cbhq/cds-common/types/Chart';
-import { getSparklineRange } from '@cbhq/cds-common/visualizations/getSparklineRange';
+
+import { ChartDataPoint, ChartTimeseries } from '../types/Chart';
+
+import { getSparklineRange } from './getSparklineRange';
 
 export type UseTimeseriesPathsParams = {
   data: ChartTimeseries[];

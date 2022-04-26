@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
 import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
-import { Icon } from '@cbhq/cds-mobile/icons';
 
 import { IconButton } from '../../../buttons';
 import { Example, ExampleScreen } from '../../../examples/ExampleScreen';
+import { Icon } from '../../../icons';
 import { Box, HStack } from '../../../layout';
 import { TextTitle3 } from '../../../typography/TextTitle3';
 import { SparklineInteractive } from '../../sparkline-interactive/SparklineInteractive';

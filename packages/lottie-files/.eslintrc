@@ -1,6 +1,0 @@
-{
-  "rules": {
-    "import/extensions": ["error", "never", { "json": "always" }],
-    "simple-import-sort/imports": 0
-  }
-}

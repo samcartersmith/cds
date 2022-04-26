@@ -3,10 +3,10 @@ import { Animated, StyleSheet, ViewStyle } from 'react-native';
 import times from 'lodash/times';
 import { SparklineInteractiveMarkerDatesProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useDateLookup } from '@cbhq/cds-common/visualizations/useDateLookup';
-import { useSpacingScale } from '@cbhq/cds-mobile/hooks/useSpacingScale';
 
 import { useLayout } from '../../hooks/useLayout';
 import { usePalette } from '../../hooks/usePalette';
+import { useSpacingScale } from '../../hooks/useSpacingScale';
 import { TextLabel2 } from '../../typography';
 
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';

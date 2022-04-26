@@ -19,10 +19,10 @@ import {
 import { minMax } from '@cbhq/cds-common/utils/chart';
 import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
 import { chartFallbackNegative, chartFallbackPositive } from '@cbhq/cds-lottie-files';
-import { useSpacingScale } from '@cbhq/cds-mobile/hooks/useSpacingScale';
 import { emptyArray, noop } from '@cbhq/cds-utils';
 
 import { Lottie } from '../../animation';
+import { useSpacingScale } from '../../hooks/useSpacingScale';
 import { Box } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 

@@ -11,23 +11,6 @@ module.exports = {
     {
       files: ['**/*.ts', '**/*.tsx'],
       rules: {
-        'no-restricted-imports': [
-          'error',
-          {
-            paths: [
-              {
-                name: 'lodash',
-                message: 'Use deep imports for lodash so it is tree shakeable',
-              },
-              {
-                name: 'react',
-                importNames: ['useLayoutEffect', 'Suspense'],
-                message:
-                  'useLayoutEffect and Suspense do not work for SSR apps. If you are confident useEffect will not work for your purposes consider using useIsoEffect.',
-              },
-            ],
-          },
-        ],
         'codegen/codegen': 'error',
         'react/jsx-uses-react': 'error',
         'react/react-in-jsx-scope': 'error',
