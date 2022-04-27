@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import Head from 'next/head';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { accounts } from '@cbhq/cds-common/internal/data/accounts';
 import { assetColors, assetImages, assets } from '@cbhq/cds-common/internal/data/assets';
+import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 import { prices } from '@cbhq/cds-common/internal/data/prices';
 import { product } from '@cbhq/cds-common/internal/data/product';
 import { users } from '@cbhq/cds-common/internal/data/users';
@@ -12,9 +12,11 @@ import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal
 import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { SetState } from '@cbhq/cds-web';
+import { Accordion, AccordionItem } from '@cbhq/cds-web/accordion';
 import { Button, IconButton } from '@cbhq/cds-web/buttons';
 import { Card, CardBody, CardFooter, CardGroup, FeedCard } from '@cbhq/cds-web/cards';
-import { SelectOption, Switch } from '@cbhq/cds-web/controls';
+import { ListCell } from '@cbhq/cds-web/cells';
+import { Select, SelectOption, Switch } from '@cbhq/cds-web/controls';
 import { Icon, LogoMark, NavigationIconProps } from '@cbhq/cds-web/icons';
 import { Pictogram } from '@cbhq/cds-web/illustrations';
 import { Divider, Group, HStack, VStack } from '@cbhq/cds-web/layout';
@@ -22,6 +24,8 @@ import { Avatar } from '@cbhq/cds-web/media';
 import { NavigationBar, NavigationTitle, Sidebar, SidebarItem } from '@cbhq/cds-web/navigation';
 import {
   Alert,
+  FullscreenAlert,
+  FullscreenModal,
   Modal,
   ModalBody,
   ModalFooter,
@@ -44,7 +48,7 @@ import {
   TableHeader,
   TableRow,
 } from '@cbhq/cds-web/tables';
-import { TextBody, TextHeadline, TextTitle3 } from '@cbhq/cds-web/typography';
+import { TextBody, TextHeadline, TextTitle1, TextTitle3 } from '@cbhq/cds-web/typography';
 import {
   ProgressBar,
   ProgressBarWithFloatLabel,
@@ -269,6 +273,144 @@ function DataCardWithBar() {
   );
 }
 
+const FullScreenModalSelectComponent = () => {
+  const [value, setValue] = useState<string>();
+  const selectOptions = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
+
+  return (
+    <Select value={value} placeholder="Choose something..." onChange={setValue}>
+      {selectOptions.map((option) => (
+        <SelectOption value={option} key={option} title={option} description="Description" />
+      ))}
+    </Select>
+  );
+};
+
+function FullScreenModalAmp() {
+  const [visible, { toggleOn, toggleOff }] = useToggler();
+
+  const handleClose = useCallback(() => {
+    // eslint-disable-next-line no-console
+    console.log('modal closing');
+    toggleOff();
+  }, [toggleOff]);
+
+  const primaryContent = (
+    <VStack>
+      <TextTitle1 as="h1">Fullscreen Modal</TextTitle1>
+      <TextBody as="p">This is a test Fullscreen Modal with components composition.</TextBody>
+      <FeedCard
+        avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
+        headerMetaData="Dec 18"
+        headerDescription="Earn crypto"
+        headerActionNode={<IconButton name="more" variant="foregroundMuted" transparent />}
+        bodyTitle="Learn AMP. Earn $3 in AMP."
+        bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
+        bodyMediaUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
+        bodyOrientation="vertical"
+        footerActions={
+          <Button compact variant="secondary">
+            Earn AMP
+          </Button>
+        }
+      />
+      <ListCell
+        title="Bitcoin"
+        description="BTC"
+        detail="$45,123"
+        subdetail="+4.55%"
+        variant="positive"
+      />
+      <FullScreenModalSelectComponent />
+      <HStack spacingVertical={3} gap={3}>
+        <Button onPress={toggleOff}>Yes</Button>
+        <Button onPress={toggleOff} variant="secondary">
+          No
+        </Button>
+      </HStack>
+    </VStack>
+  );
+
+  const secondaryContent = (
+    <VStack borderRadius="standard" elevation={1}>
+      <Accordion defaultActiveKey="2">
+        <AccordionItem itemKey="1" title="Accordion #1" subtitle="subtitle1">
+          <TextBody as="p">{loremIpsum}</TextBody>
+        </AccordionItem>
+        <AccordionItem itemKey="2" title="Accordion #2" subtitle="subtitle2">
+          <TextBody as="p">{loremIpsum}</TextBody>
+        </AccordionItem>
+      </Accordion>
+    </VStack>
+  );
+
+  return (
+    <>
+      <Button onPress={toggleOn}>Open Modal</Button>
+      <FullscreenModal
+        visible={visible}
+        onRequestClose={handleClose}
+        primaryContent={primaryContent}
+        secondaryContent={secondaryContent}
+        title="Modal title"
+      />
+    </>
+  );
+}
+
+function DataCardWithFullScreenModal() {
+  return (
+    <Card>
+      <CardBody
+        title="Crypto earned"
+        description="Earn $40 more by learning about new assets"
+        orientation="horizontal"
+        media={<ProgressCircle progress={0.5} size={100} />}
+      />
+      <CardFooter>
+        <FullScreenModalAmp />
+      </CardFooter>
+    </Card>
+  );
+}
+
+function FullScreenAlertAmp() {
+  const [visible, { toggleOn, toggleOff }] = useToggler();
+
+  return (
+    <>
+      <Button onPress={toggleOn}>Open Alert</Button>
+      <FullscreenAlert
+        visible={visible}
+        onRequestClose={toggleOff}
+        title="Connection trouble"
+        body="We're unable to connect to our card partner. Apologies for the inconvenience. Please try again later today or tomorrow."
+        heroSquare="errorApp500"
+        preferredActionLabel="Try again"
+        onPreferredActionPress={toggleOff}
+        dismissActionLabel="Cancel"
+        onDismissActionPress={toggleOff}
+      />
+    </>
+  );
+}
+
+function DataCardWithFullScreenAlert() {
+  return (
+    <Card>
+      <CardBody
+        title="Crypto earned"
+        description="Earn $40 more by learning about new assets"
+        orientation="horizontal"
+        media={<ProgressCircle progress={0.5} size={100} />}
+      />
+      <CardFooter>
+        <FullScreenAlertAmp />
+      </CardFooter>
+    </Card>
+  );
+}
+
 function VerticalDivider() {
   return <Divider direction="vertical" />;
 }
@@ -285,7 +427,7 @@ function ChartWithBalance() {
   }, []);
 
   return (
-    <VStack width="100%" spacingTop={2}>
+    <VStack width="100%" spacingVertical={2}>
       {!data && <div style={{ height: '500px' }} />}
       {data && <SparklineInteractiveWithHeaderBuild data={data} strokeColor={assets.btc.color} />}
     </VStack>
@@ -406,6 +548,8 @@ function AppContent() {
               <FeedCardWithPopover />
               <DataCardWithCircle />
               <DataCardWithBar />
+              <DataCardWithFullScreenModal />
+              <DataCardWithFullScreenAlert />
             </CardGroup>
           </VStack>
         </Group>
@@ -416,19 +560,13 @@ function AppContent() {
 
 function App() {
   return (
-    <>
-      <Head>
-        <link rel="preload" as="style" href="reset.css" />
-        <link rel="stylesheet" href="reset.css" />
-      </Head>
-      <FeatureFlagProvider frontier>
-        <ThemeProvider display="contents">
-          <PortalProvider>
-            <AppContent />
-          </PortalProvider>
-        </ThemeProvider>
-      </FeatureFlagProvider>
-    </>
+    <FeatureFlagProvider frontier>
+      <ThemeProvider display="contents">
+        <PortalProvider>
+          <AppContent />
+        </PortalProvider>
+      </ThemeProvider>
+    </FeatureFlagProvider>
   );
 }
 
