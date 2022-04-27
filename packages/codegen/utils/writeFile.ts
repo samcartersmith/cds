@@ -18,7 +18,10 @@ export type TemplateConfig<T = unknown> = {
     disableAsConst?: boolean;
     disableStringify?: boolean;
     disablePrettier?: boolean;
-    imports?: string[];
+    imports?: {
+      func: string;
+      module: string;
+    }[];
     sort?: boolean;
   };
   header?: string;

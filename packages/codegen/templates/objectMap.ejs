@@ -1,3 +1,9 @@
+<% if (config.imports) { %> 
+	<% config.imports.forEach(im => { %> 
+	import <%= im.func %> from "<%= im.module %>"; 
+	<% }) %> 
+<% } %> 
+
 <% const prependedText = config.disableAsConst ? ';' : 'as const;' %>
 <% const items = config.sort ? Object.entries(data).sort(([prevKey], [nextKey]) => prevKey.localeCompare(nextKey)) : Object.entries(data) %>
 <% if (config.commonJS){ %>

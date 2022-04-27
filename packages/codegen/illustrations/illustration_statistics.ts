@@ -9,6 +9,10 @@ export const illustrationMetadata = {
   spotRectangleCount: 54,
   heroSquareCount: 234,
   pictogramCount: 237,
-  newIllustration: [],
+  newIllustrations: [],
   modifiedIllustrations: [],
+  deletedIllustrations: [
+    'spotSquare/defiEarnAnnouncement-dark',
+    'spotSquare/defiEarnAnnouncement-light',
+  ],
 };

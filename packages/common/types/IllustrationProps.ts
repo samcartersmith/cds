@@ -8,6 +8,12 @@ import {
 } from './IllustrationNames';
 import { SharedProps } from './SharedProps';
 
+export type ReleasedIllustrationsTypes = {
+  newIllustrations: string[];
+  modifiedIllustrations: string[];
+  deletedIllustrations: string[];
+};
+
 export type IllustrationNames =
   | IllustrationHeroSquareNames
   | IllustrationSpotRectangleNames

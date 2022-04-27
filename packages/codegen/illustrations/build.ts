@@ -14,6 +14,7 @@ import { getSourcePath } from '../utils/getSourcePath';
 import { writeFile } from '../utils/writeFile';
 
 import { blacklist } from './blacklist';
+import { generateReleaseHistory } from './generateReleaseHistory';
 import { manifestData } from './illustration_manifest';
 import {
   IllustrationComponent,
@@ -47,6 +48,7 @@ let mobileImagesPath: string;
 
 const newIllustrations: string[] = [];
 const modifiedIllustrations: string[] = [];
+const deletedIllustrations: Set<string> = new Set([]);
 
 function normalizeIllustration(illustrationName: string): IllustrationProps | null {
   const [type, spectrum, variant, name] = illustrationName.split('/');
@@ -152,6 +154,46 @@ const downloadPNG = async (pngURL: string, fileName: string, outFullPath: string
   });
 };
 
+/**
+ * If the illustration is deleted on Figma,
+ * we need to also delete it locally here.
+ *
+ * @spectrum - is the svg for dark or light mode
+ * @svgFilesPath - the full path the the svgs which is in codege/illustrations/images
+ */
+const deleteIllustrations = (nodeId: string, svgFilesPath: string) => {
+  const metadata = manifestData.svg[nodeId];
+  const { versionNum, spectrum, name, variant } = metadata;
+
+  const fileNameWithVersion = `${name}-${versionNum}`;
+
+  // mobileImagesPath is path where all the js files are
+  const filesToCheck: string[] = [
+    `${mobileImagesPath}/${spectrum}/${fileNameWithVersion}.js`,
+    `${svgFilesPath}/${spectrum}/${fileNameWithVersion}.svg`,
+  ];
+
+  filesToCheck.forEach((file) => {
+    if (fs.existsSync(file)) {
+      fs.rm(file, (err) => {
+        console.log(chalk.red(`${file} no longer exist in Figma. Deleting...`));
+
+        console.log(chalk.gray(`${nodeId} is being deleted`));
+
+        deletedIllustrations.add(`${variant}/${name}-${spectrum}`);
+
+        if (nodeId in manifestData.svg) {
+          delete manifestData.svg[nodeId];
+        }
+
+        if (err) {
+          throw new Error(err.message);
+        }
+      });
+    }
+  });
+};
+
 const loadOneImage = async (
   svgURL: string,
   pngURL: string,
@@ -160,10 +202,11 @@ const loadOneImage = async (
 ): Promise<void> => {
   const imageMetadata = localManifestData[FILE_FORMAT][nodeId];
   const imageName = imageMetadata.name;
-  const { versionNum, spectrum } = imageMetadata;
+  const { versionNum, spectrum, variant } = imageMetadata;
   const imageOutFullPath = `${outDirPath}/${spectrum}/`;
   const pngOutFullPath = `${outDirPath}/png-${spectrum}/`;
   const jsOutFullPath = `${mobileImagesPath}/${spectrum}/`;
+  const svgFilesPath = await getSourcePath('codegen/illustrations/images');
 
   try {
     if (!fs.existsSync(imageOutFullPath)) fs.mkdirSync(imageOutFullPath, { recursive: true });
@@ -184,7 +227,16 @@ const loadOneImage = async (
       },
     })
     .catch((err) => {
-      console.error(`${fileName} cannot be fetched - ${(err as Error).message}`);
+      const castedErr = err as Error;
+      console.error(`${fileName} cannot be fetched - ${castedErr.message}`);
+
+      // TODO: Use error code to check that this error is the right one
+      // before we start deleting illustrations
+      // only delete illustrations if svg is not available on figma.
+      // Don't do this operation if its network issue resulting fetch illustration failure
+      if (castedErr.message === `The "url" argument must be of type string. Received null`) {
+        deleteIllustrations(nodeId, svgFilesPath);
+      }
     });
 
   if (!svgRes) return;
@@ -210,7 +262,7 @@ const loadOneImage = async (
   // specify modified files in modified.ts, and then
   // it will get added to the modifiedIllustrations array
   if (modified.includes(nameAndSpectrum)) {
-    modifiedIllustrations.push(nameAndSpectrum);
+    modifiedIllustrations.push(`${variant}/${nameAndSpectrum}`);
   }
 
   /** Disable this if statement and enable createSvgXML. And you
@@ -260,7 +312,7 @@ const loadOneImage = async (
     await downloadPNG(pngURL, pngFileName, path.join(pngOutFullPath, pngFileName));
 
     if (fileStatus === 'new') {
-      newIllustrations.push(nameAndSpectrum);
+      newIllustrations.push(`${variant}/${nameAndSpectrum}`);
     }
 
     console.log(`Created ${newFileName} at ${newJsOutFullPath}, File Status: ${fileStatus}`);
@@ -504,8 +556,9 @@ const genStatistics = async (destPath: string, names: IllustrationNamesMap) => {
   const illustrationMetadata = {
     numIllustrations: Object.keys(localManifestData.svg).length,
     ...variantCountMap,
-    newIllustration: newIllustrations.sort(),
+    newIllustrations: newIllustrations.sort(),
     modifiedIllustrations: modifiedIllustrations.sort(),
+    deletedIllustrations: Array.from(deletedIllustrations).sort(),
   };
 
   await writeFile({
@@ -514,6 +567,8 @@ const genStatistics = async (destPath: string, names: IllustrationNamesMap) => {
     config: { disableAsConst: true },
     dest: destPath,
   });
+
+  return illustrationMetadata;
 };
 
 const createManifestFile = async (destPath: string) => {
@@ -522,6 +577,10 @@ const createManifestFile = async (destPath: string) => {
     data: { manifestData: localManifestData },
     config: { disableAsConst: true },
     dest: destPath,
+    types: {
+      manifestData:
+        'Record<string, Record<string, {variant: string;description: string;name: string;spectrum: string;versionNum: number;}>>',
+    },
   });
 };
 
@@ -711,6 +770,13 @@ const main = async (deleteImgsDir = false) => {
 
     await loadImagesLocally(Object.keys(localManifestData.svg), outDirPath);
     await genStatistics('codegen/illustrations/illustration_statistics.ts', pascalCaseNames);
+
+    const deletedIllustrationsArr = Array.from(deletedIllustrations);
+    await generateReleaseHistory('common/internal/data/illustrationReleaseHistory.ts', {
+      newIllustrations,
+      modifiedIllustrations,
+      deletedIllustrations: deletedIllustrationsArr,
+    });
 
     console.log('All images loaded');
     await createTypes(camelCaseNames, variants);

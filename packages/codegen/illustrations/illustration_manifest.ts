@@ -3,7 +3,13 @@
  * Generated from scripts/codegen/main.ts
  */
 
-export const manifestData = {
+export const manifestData: Record<
+  string,
+  Record<
+    string,
+    { variant: string; description: string; name: string; spectrum: string; versionNum: number }
+  >
+> = {
   svg: {
     '4201:2578': {
       variant: 'spotSquare',
