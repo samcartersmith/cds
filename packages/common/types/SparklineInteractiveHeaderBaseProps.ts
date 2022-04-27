@@ -35,7 +35,7 @@ export type SparklineInteractiveSubHead = {
   /**
    * Sign to denote the change in price
    */
-  sign: '–' | '+' | '';
+  sign: '–' | '+' | '' | '\u2197 ' | '\u2198 ';
 
   /**
    * The variant to use for the price and percentage change

@@ -190,7 +190,7 @@ function generateSubHead(
     percent: `${numToLocaleString(
       Math.abs((point.value - firstPoint.value) / firstPoint.value) * 100,
     )}%`,
-    sign: increase ? '+' : '–',
+    sign: increase ? '\u2197 ' : '\u2198 ',
     variant: increase ? 'positive' : 'negative',
     priceChange: `$${numToLocaleString(Math.abs(point.value - firstPoint.value))}`,
   };
