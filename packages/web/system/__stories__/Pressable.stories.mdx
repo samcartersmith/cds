@@ -66,6 +66,31 @@ import { Pressable } from '../Pressable';
         <Box spacing={1}>transparentWhileInactive</Box>
       </Pressable>
     </div>
+    <div>
+      <Pressable as="button" backgroundColor="transparent" borderColor="positive">
+        <Box spacing={1}>transparent with borders</Box>
+      </Pressable>{' '}
+      <Pressable
+        as="button"
+        backgroundColor="primary"
+        transparentWhileInactive
+        borderColor="positive"
+      >
+        <Box spacing={1}>transparentWhileInactive with borders</Box>
+      </Pressable>{' '}
+      <Pressable as="button" backgroundColor="transparent" disabled borderColor="positive">
+        <Box spacing={1}>transparent with borders</Box>
+      </Pressable>{' '}
+      <Pressable
+        as="button"
+        backgroundColor="primary"
+        transparentWhileInactive
+        disabled
+        borderColor="positive"
+      >
+        <Box spacing={1}>transparentWhileInactive with borders</Box>
+      </Pressable>
+    </div>
   </Story>
   <Story name="Border styles" decorators={[withStoryLabel('Borders')]}>
     <div>

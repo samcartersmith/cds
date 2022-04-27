@@ -1,5 +1,5 @@
 import { blendColors } from '../color/blendColors';
-import { opacityDisabled, opacityPressed } from '../tokens/interactable';
+import { opacityDisabled, opacityHovered, opacityPressed } from '../tokens/interactable';
 import { PaletteConfig, PaletteValue, Spectrum } from '../types';
 import { memoize } from '../utils/memoize';
 
@@ -8,23 +8,30 @@ import { paletteValueToHueStep } from './paletteValueToHueStep';
 import { paletteValueToRgbaArray } from './paletteValueToRgbaArray';
 import { paletteValueToTuple } from './paletteValueToTuple';
 
-const transparentTokens = {
-  disabled: { contentOpacity: 0.38, backgroundColor: 'transparent' },
-  pressed: { contentOpacity: 0.82, backgroundColor: 'transparent' },
+const mobileTransparentTokens = {
+  disabled: { contentOpacity: opacityDisabled, backgroundColor: 'transparent' },
+  hovered: undefined,
+  pressed: { contentOpacity: opacityPressed[100], backgroundColor: 'transparent' },
+};
+
+const webTransparentTokens = {
+  ...mobileTransparentTokens,
+  hovered: { contentOpacity: opacityHovered[100], backgroundColor: 'transparent' },
 };
 
 type PaletteValueToInteractableTokenParams = {
-  paletteConfig: PaletteConfig;
   paletteValue: PaletteValue;
-  spectrum: Spectrum;
-  hasFrontier?: boolean;
+  options: {
+    paletteConfig: PaletteConfig;
+    spectrum: Spectrum;
+    hasFrontier?: boolean;
+    isWeb?: boolean;
+  };
 };
 
 function getCacheKey({
-  paletteConfig,
   paletteValue,
-  spectrum,
-  hasFrontier,
+  options: { paletteConfig, spectrum, hasFrontier, isWeb },
 }: PaletteValueToInteractableTokenParams) {
   const { background, foreground } = paletteConfig;
   const [backgroundAlias, backgroundOpacity] = paletteValueToTuple(background);
@@ -33,23 +40,25 @@ function getCacheKey({
     paletteValue,
     spectrum,
     hasFrontier,
-  )}-background-${backgroundAlias}-${backgroundOpacity}-foreground-${foregroundAlias}-${foregroundOpacity}`;
+  )}-background-${backgroundAlias}-${backgroundOpacity}-foreground-${foregroundAlias}-${foregroundOpacity}-isWeb-${isWeb}`;
 }
 
 export const paletteValueToInteractableToken = memoize(
   ({
-    paletteConfig,
     paletteValue,
-    spectrum,
-    hasFrontier,
+    options: { paletteConfig, spectrum, hasFrontier, isWeb },
   }: PaletteValueToInteractableTokenParams) => {
     const { background, foreground } = paletteConfig;
     const [overlayAlias, overlayOpacity] = paletteValueToTuple(paletteValue);
+
+    // For interables with opacity zero we do not need to do any underlay/overlay blending.
     if (overlayOpacity === 0) {
-      return transparentTokens;
+      return isWeb ? webTransparentTokens : mobileTransparentTokens;
     }
+
     const hueStep = paletteValueToHueStep(paletteValue);
     const underlayAlias = hueStep > 60 ? 'background' : 'foreground';
+
     const backgroundRgbaArray = paletteValueToRgbaArray(background, spectrum, hasFrontier);
     const foregroundRgbaArray =
       underlayAlias === 'background'
@@ -59,27 +68,45 @@ export const paletteValueToInteractableToken = memoize(
     const opacity = {
       disabled: opacityDisabled,
       pressed: opacityPressed[hueStep],
+      hovered: opacityHovered[hueStep],
     };
 
-    const overlayColors = {
-      disabled: paletteValueToRgbaArray([overlayAlias, opacity.disabled], spectrum),
+    const overlay = {
+      disabled: paletteValueToRgbaArray([overlayAlias, opacityDisabled], spectrum),
       pressed: paletteValueToRgbaArray([overlayAlias, opacity.pressed], spectrum),
+      hovered: paletteValueToRgbaArray([overlayAlias, opacity.hovered], spectrum),
     };
 
-    const underlayColors = {
+    const underlay = {
       disabled: backgroundRgbaArray,
       pressed: foregroundRgbaArray,
+      hovered: foregroundRgbaArray,
     };
 
     return {
       disabled: {
         contentOpacity: opacity.disabled,
-        backgroundColor: blendColors(backgroundRgbaArray, overlayColors.disabled),
+        backgroundColor: blendColors({
+          underlayColor: underlay.disabled,
+          overlayColor: overlay.disabled,
+        }),
       },
       pressed: {
         contentOpacity: opacity.pressed,
-        backgroundColor: blendColors(underlayColors.pressed, overlayColors.pressed),
+        backgroundColor: blendColors({
+          underlayColor: underlay.pressed,
+          overlayColor: overlay.pressed,
+        }),
       },
+      hovered: isWeb
+        ? {
+            contentOpacity: opacity.hovered,
+            backgroundColor: blendColors({
+              underlayColor: underlay.hovered,
+              overlayColor: overlay.hovered,
+            }),
+          }
+        : undefined,
     };
   },
   getCacheKey,

@@ -49,8 +49,8 @@ declare module 'react' {
   // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface CSSProperties extends PaletteCssVariable {
     '--interactable-height'?: string;
-    '--interactable-opacity-hovered'?: typeof opacityHovered[keyof typeof opacityHovered];
-    '--interactable-opacity-pressed'?: typeof opacityHovered[keyof typeof opacityHovered];
+    '--interactable-hovered-opacity'?: typeof opacityHovered[keyof typeof opacityHovered];
+    '--interactable-pressed-opacity'?: typeof opacityHovered[keyof typeof opacityHovered];
     '--interactable-overlay'?: CssVariableFn<SpectrumAlias>;
     '--interactable-underlay'?: CssVariableFn<PaletteAlias>;
   }

@@ -1,13 +1,13 @@
 import {
   PaletteAlias,
-  PaletteConfig,
   PartialPaletteConfig,
   Spectrum,
+  ThemeConfig,
+  ThemeConfigForSpectrum,
 } from '@cbhq/cds-common/types';
 
 export type PaletteConfigWithRgbaStrings = Record<PaletteAlias, string>;
 export type PaletteConfigWithHexValues = Record<PaletteAlias, string>;
-export type PaletteConfigWithInteractableTokens = Record<PaletteAlias, InteractableTokensConfig>;
 export type InteractableState = keyof InteractableTokensConfig;
 export type InteractableTokensForState = {
   contentOpacity: number;
@@ -16,19 +16,6 @@ export type InteractableTokensForState = {
 export type InteractableTokensConfig = {
   disabled: InteractableTokensForState;
   pressed: InteractableTokensForState;
-};
-
-export type ThemeConfigForSpectrum = {
-  palette: PaletteConfig;
-  rgbaStrings: PaletteConfigWithRgbaStrings;
-  interactableTokens: PaletteConfigWithInteractableTokens;
-  name: string;
-};
-
-export type ThemeConfig = {
-  light: ThemeConfigForSpectrum;
-  dark: ThemeConfigForSpectrum;
-  name: string;
 };
 
 export type PartialPaletteConfigLight = {

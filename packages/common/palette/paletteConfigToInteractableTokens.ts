@@ -2,20 +2,31 @@ import { PaletteConfig, PaletteConfigWithInteractableTokens, Spectrum } from '..
 
 import { paletteValueToInteractableToken } from './paletteValueToInteractableToken';
 
-export function paletteConfigToInteractableTokens(
-  paletteConfig: PaletteConfig,
-  spectrum: Spectrum,
-  hasFrontier?: boolean,
-) {
+type PaletteConfigToInteractableTokensParams = {
+  paletteConfig: PaletteConfig;
+  spectrum: Spectrum;
+  hasFrontier?: boolean;
+  isWeb?: boolean;
+};
+
+export function paletteConfigToInteractableTokens({
+  paletteConfig,
+  spectrum,
+  hasFrontier,
+  isWeb,
+}: PaletteConfigToInteractableTokensParams) {
   // Object.keys + reduce is more performant than for/of loop https://jsbench.me/uhkyu88ggg/1
   return (Object.keys(paletteConfig) as Extract<keyof typeof paletteConfig, string>[]).reduce(
     (acc, paletteAlias) => {
       const paletteValue = paletteConfig[paletteAlias];
       acc[paletteAlias] = paletteValueToInteractableToken({
-        paletteConfig,
         paletteValue,
-        spectrum,
-        hasFrontier,
+        options: {
+          paletteConfig,
+          spectrum,
+          hasFrontier,
+          isWeb,
+        },
       });
       return acc;
     },

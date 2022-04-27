@@ -3,11 +3,19 @@ import { css } from 'linaria';
 import { SharedProps } from '@cbhq/cds-common';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
-import { scaledDownState } from '../styles/interactable';
 import { cx } from '../utils/linaria';
 
 import { ButtonOrLink } from './ButtonOrLink';
 import { Interactable, InteractableProps } from './Interactable';
+
+const scaledDownState = css`
+  /* Prevents layout shift - https://web.dev/cls/#animations-and-transitions */
+  transform: scale(1);
+
+  &:active {
+    transform: scale(0.98);
+  }
+`;
 
 const pressableResetStyles: string = css`
   padding: 0;

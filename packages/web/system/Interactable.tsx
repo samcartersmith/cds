@@ -1,31 +1,75 @@
 import React, { createElement, forwardRef, useMemo } from 'react';
-import { SharedProps, usePaletteConfig } from '@cbhq/cds-common';
+import { css } from 'linaria';
+import { SharedProps, usePaletteConfig, useSpectrum } from '@cbhq/cds-common';
 import {
   ElevationChildrenProvider,
   ElevationProvider,
 } from '@cbhq/cds-common/context/ElevationProvider';
 import { useInteractableBorderRadius } from '@cbhq/cds-common/hooks/useInteractableBorderRadius';
-import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
+import { paletteConfigToInteractableTokens } from '@cbhq/cds-common/palette/paletteConfigToInteractableTokens';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
+import { usePalette } from '../hooks/usePalette';
 import * as borderColors from '../styles/borderColor';
 import * as borderWidths from '../styles/borderWidth';
+import { disabledState } from '../styles/disabledState';
 import { focusRing } from '../styles/focus';
-import {
-  disabledState,
-  fullWidth,
-  interactable,
-  interactableBackground,
-  interactableTransparent,
-  interactableTransparentActive,
-  overlay,
-  transparentChildren,
-  underlay,
-} from '../styles/interactable';
-import { palette } from '../tokens';
 import { cx } from '../utils/linaria';
+
+import {
+  interactableBackground,
+  interactableBorderRadius,
+  interactableDisabledBackground,
+  interactableHoveredBackground,
+  interactableHoveredOpacity,
+  interactableOpacity,
+  interactablePressedBackground,
+  interactablePressedOpacity,
+} from './interactableCSSProperties';
+
+const interactable = css`
+  appearance: none;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  border-radius: var(${interactableBorderRadius});
+  background-color: var(${interactableBackground});
+
+  /* Removes weird bonus padding in Firefox */
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  &:hover {
+    background-color: var(${interactableHoveredBackground});
+    > * {
+      opacity: var(${interactableHoveredOpacity});
+    }
+  }
+
+  &:active {
+    background-color: var(${interactablePressedBackground});
+    > * {
+      opacity: var(${interactablePressedOpacity});
+    }
+  }
+`;
+
+// Apply opacity to children as well
+const transparentChildren = css`
+  & > * {
+    opacity: var(${interactableOpacity}, 1);
+  }
+`;
+
+const fullWidth = css`
+  display: block;
+  width: 100%;
+`;
 
 export type InteractableInheritedProps = Omit<
   React.AllHTMLAttributes<Element>,
@@ -81,70 +125,63 @@ export const InteractableContent = forwardRef(function InteractableContent(
   }: InteractableProps,
   ref: React.Ref<Element>,
 ) {
+  const palette = usePalette();
   const paletteConfig = usePaletteConfig();
   const elevationStyles = useElevationStyles(elevation);
-  const spectrumAlias = backgroundColor === 'transparent' ? '' : paletteConfig[backgroundColor];
-  const { underlayColor, hoverOpacity, pressedOpacity } = useInteractableTokens(backgroundColor);
+  const spectrum = useSpectrum();
+  const {
+    disabled: disabledToken,
+    pressed: pressedToken,
+    hovered: hoveredToken,
+  } = paletteConfigToInteractableTokens({
+    paletteConfig,
+    spectrum,
+    isWeb: true,
+  })[backgroundColor];
   const borderRadiusValue = useInteractableBorderRadius(borderRadius);
-
-  const backgroundStyles = useMemo(() => {
-    // Transparent by default, opaque when interacted with
-    if (transparentWhileInactive) {
-      return [interactableTransparent, interactableTransparentActive];
-    }
-    // Always transparent
-    if (!spectrumAlias) {
-      return [interactableTransparent];
-    }
-    // Opaque and handles interactive states
-    return [interactableBackground];
-  }, [transparentWhileInactive, spectrumAlias]);
 
   const className = cx(
     interactable,
-    ...backgroundStyles,
     !wrapWithLayeredElements && transparentChildren,
-    borderColors[borderColor],
+    transparentWhileInactive ? borderColors.transparent : borderColors[borderColor],
     borderWidth && borderWidths[borderWidth],
     disabled ? disabledState : focusRing,
     block && fullWidth,
     customClassName,
   );
+
   const style = useMemo(
-    () =>
-      ({
-        ...customStyle,
-        '--interactable-opacity-hovered': hoverOpacity,
-        '--interactable-opacity-pressed': pressedOpacity,
-        '--interactable-overlay': spectrumAlias ? (`var(--${spectrumAlias})` as const) : undefined,
-        '--interactable-underlay': palette[underlayColor],
-        '--interactable-border-radius': `${borderRadiusValue}px`,
-        width,
-        height,
-        ...elevationStyles,
-      } as React.CSSProperties),
-    [
-      borderRadiusValue,
-      hoverOpacity,
-      pressedOpacity,
-      spectrumAlias,
-      underlayColor,
-      customStyle,
-      elevationStyles,
+    () => ({
+      ...customStyle,
+      [interactableBorderRadius]: `${borderRadiusValue}px`,
+      [interactableBackground]: transparentWhileInactive ? 'transparent' : palette[backgroundColor],
+      // Hover:
+      [interactableHoveredBackground]: hoveredToken ? hoveredToken.backgroundColor : undefined,
+      [interactableHoveredOpacity]: hoveredToken ? hoveredToken.contentOpacity : undefined,
+      // Pressed:
+      [interactablePressedBackground]: pressedToken.backgroundColor,
+      [interactablePressedOpacity]: pressedToken.contentOpacity,
+      // Disabled:
+      [interactableDisabledBackground]: disabledToken.backgroundColor,
       width,
       height,
+      ...elevationStyles,
+    }),
+    [
+      backgroundColor,
+      borderRadiusValue,
+      customStyle,
+      disabledToken.backgroundColor,
+      elevationStyles,
+      height,
+      hoveredToken,
+      palette,
+      pressedToken.backgroundColor,
+      pressedToken.contentOpacity,
+      transparentWhileInactive,
+      width,
     ],
   );
-
-  const content =
-    disabled || !wrapWithLayeredElements ? (
-      children
-    ) : (
-      <>
-        <span className={underlay} role="presentation" />
-        <span className={overlay}>{children}</span>
-      </>
-    );
 
   return createElement(
     Container,
@@ -160,7 +197,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
       style,
       ref,
     },
-    <ElevationChildrenProvider>{content}</ElevationChildrenProvider>,
+    <ElevationChildrenProvider>{children}</ElevationChildrenProvider>,
   );
 });
 

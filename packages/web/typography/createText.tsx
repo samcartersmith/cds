@@ -6,8 +6,8 @@ import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { emptyObject, pascalCase } from '@cbhq/cds-utils';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { disabledState } from '../styles/disabledState';
 import * as foregroundStyles from '../styles/foregroundColor';
-import { disabledState } from '../styles/interactable';
 import { getTypographyStyles } from '../styles/typography';
 import { fontFamily } from '../tokens';
 import type { DynamicElement } from '../types';

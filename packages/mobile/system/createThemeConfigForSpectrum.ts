@@ -1,15 +1,19 @@
 import { defaultPalette, frontierSpectrumPalette } from '@cbhq/cds-common';
 import { paletteConfigToInteractableTokens } from '@cbhq/cds-common/palette/paletteConfigToInteractableTokens';
 import { paletteConfigToRgbaStrings } from '@cbhq/cds-common/palette/paletteConfigToRgbaStrings';
-import { PaletteConfig, PartialPaletteConfig, Spectrum } from '@cbhq/cds-common/types';
+import {
+  PaletteConfig,
+  PartialPaletteConfig,
+  Spectrum,
+  ThemeConfig,
+  ThemeConfigForSpectrum,
+} from '@cbhq/cds-common/types';
 
 import {
   CreateThemeConfigForSpectrumParams,
   NewPartialPaletteConfig,
   PartialPaletteConfigDark,
   PartialPaletteConfigLight,
-  ThemeConfig,
-  ThemeConfigForSpectrum,
 } from './ThemeConfig';
 
 const frontierLight = { ...defaultPalette, ...frontierSpectrumPalette.light } as const;
@@ -72,7 +76,11 @@ export const createThemeConfigForSpectrum = ({
   return {
     palette: mergedPalette,
     rgbaStrings: paletteConfigToRgbaStrings(mergedPalette, spectrum, hasFrontier),
-    interactableTokens: paletteConfigToInteractableTokens(mergedPalette, spectrum, hasFrontier),
+    interactableTokens: paletteConfigToInteractableTokens({
+      paletteConfig: mergedPalette,
+      spectrum,
+      hasFrontier,
+    }),
     name: `${name}-${spectrum}`,
   };
 };

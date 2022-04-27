@@ -10,8 +10,20 @@ export type InteractableTokensForState = {
   backgroundColor: string;
 };
 export type InteractableTokensConfig = {
-  disabled: InteractableTokensForState;
-  pressed: InteractableTokensForState;
+  disabled: {
+    contentOpacity: number;
+    backgroundColor: string;
+  };
+  hovered:
+    | {
+        contentOpacity: number;
+        backgroundColor: string;
+      }
+    | undefined;
+  pressed: {
+    contentOpacity: number;
+    backgroundColor: string;
+  };
 };
 
 export type ThemeConfigForSpectrum = {

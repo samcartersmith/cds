@@ -1,12 +1,17 @@
 import type { RgbaArray } from '../types';
 
+type BlendColorsParams = {
+  underlayColor: RgbaArray;
+  overlayColor: RgbaArray;
+};
+
 /**
  * The overlayColor value must have an alpha less than 1 in order to output a different color.
  * @param underlayColor rgbaArray
  * @param overlayColor  rgbaArray
  * @returns rbgString
  */
-export const blendColors = (underlayColor: RgbaArray, overlayColor: RgbaArray) => {
+export const blendColors = ({ underlayColor, overlayColor }: BlendColorsParams) => {
   const mix = [];
   mix[3] = 1 - (1 - overlayColor[3]) * (1 - underlayColor[3]); // alpha
   // red

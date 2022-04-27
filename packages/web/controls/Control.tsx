@@ -20,12 +20,19 @@ const pointer = css`
   }
 `;
 
-const controlInput = css`
-  margin: 0;
-  opacity: 0;
+const hiddenNativeControlInput = css`
+  // Its common practive to implement controls by hiding the underlying native input.
+  // To properly hide the native input across all browsers we followed the implementation here: https://polished.js.org/docs/#hidevisually
+  border: 0;
+  clip: rect(0 0 0 0);
+  clippath: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  white-space: nowrap;
+  width: 1px;
   z-index: ${zIndex.interactable};
 `;
 
@@ -106,7 +113,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       className={interactableContainer}
     >
       <>
-        <input className={cx(controlInput, pointer)} {...inputProps} />
+        <input className={cx(hiddenNativeControlInput, pointer)} {...inputProps} />
         {children}
       </>
     </Interactable>
