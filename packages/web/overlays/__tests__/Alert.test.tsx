@@ -23,7 +23,7 @@ describe('Alert', () => {
         async afterRender({ container, getByRole }) {
           fireEvent.click(container.querySelector('button') as Element);
 
-          return waitFor(() => getByRole('dialog'));
+          return waitFor(() => getByRole('alertdialog'));
         },
       }),
     ).toHaveNoViolations();
@@ -34,7 +34,7 @@ describe('Alert', () => {
 
     fireEvent.click(getByText('Show Alert'));
 
-    const alert = await waitFor(() => getByRole('dialog'));
+    const alert = await waitFor(() => getByRole('alertdialog'));
 
     expect(alert).toBeTruthy();
   });

@@ -71,14 +71,16 @@ function DefaultModal() {
 
   return (
     <PortalProvider>
-      <Button onPress={toggleOn}>Open Modal</Button>
-      <FullscreenModal
-        visible={visible}
-        onRequestClose={handleClose}
-        primaryContent={primaryContent}
-        secondaryContent={secondaryContent}
-        title="Modal title"
-      />
+      <ExampleWithThemeToggles>
+        <Button onPress={toggleOn}>Open Modal</Button>
+        <FullscreenModal
+          visible={visible}
+          onRequestClose={handleClose}
+          primaryContent={primaryContent}
+          secondaryContent={secondaryContent}
+          title="Modal title"
+        />
+      </ExampleWithThemeToggles>
     </PortalProvider>
   );
 }

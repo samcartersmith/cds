@@ -36,7 +36,7 @@ const defaultConfig = {
   // Enable strict mode in development
   reactStrictMode: !isProdEnv,
 
-  // Minifiy for production builds
+  // Minify for production builds
   swcMinify: useSwc,
 
   // This is required for SSG to generate index.html files

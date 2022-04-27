@@ -31,29 +31,31 @@ export type FullscreenAlertProps = { heroSquare?: IllustrationHeroSquareNames } 
 export const actionsContainerClassName = 'fsa-actions-container';
 
 export const centerContentClassName = css`
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  margin-left: 0px;
-
-  .${primaryContentContainerClassName} {
+  && {
     height: 100%;
-  }
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
 
-  .${actionsContainerClassName} {
-    gap: ${spacing[3]};
-    flex-direction: column-reverse;
-    width: 100%;
-  }
-
-  @media only screen and (min-width: ${breakpoints.mobile}px) {
     .${primaryContentContainerClassName} {
-      height: auto;
+      height: 100%;
     }
 
     .${actionsContainerClassName} {
-      flex-direction: row;
-      width: auto;
+      gap: ${spacing[3]};
+      flex-direction: column-reverse;
+      width: 100%;
+    }
+
+    @media only screen and (min-width: ${breakpoints.mobile}px) {
+      .${primaryContentContainerClassName} {
+        height: auto;
+      }
+
+      .${actionsContainerClassName} {
+        flex-direction: row;
+        width: auto;
+      }
     }
   }
 `;
@@ -116,6 +118,7 @@ export const FullscreenAlert = memo(function FullscreenAlert({
       accessibilityLabel={accessibilityLabel}
       accessibilityLabelledBy={accessibilityLabelledBy}
       testID={testID}
+      role="alertdialog"
     />
   );
 });

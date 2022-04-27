@@ -51,6 +51,7 @@ export const Modal = memo(
       dangerouslySetClassName,
       id,
       testID,
+      role,
     } = props;
 
     const handleClose = useCallback(() => {
@@ -94,6 +95,7 @@ export const Modal = memo(
         onOverlayPress={handleClose}
         onDidClose={onDidClose}
         testID={testID}
+        role={role}
       >
         <motion.div
           initial={

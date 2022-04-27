@@ -37,11 +37,11 @@ export type FullscreenModalProps = {
    */
   title?: string;
   /**
-   * Primary content element.
+   * Primary content element. Primary content is where the core of the task or information should live.
    */
   primaryContent: ReactElement;
   /**
-   * Secondary content element.
+   * Secondary content element. Secondary content is supplemental information.
    */
   secondaryContent?: ReactElement;
   /**
@@ -62,6 +62,7 @@ export type FullscreenModalProps = {
   | 'accessibilityLabelledBy'
   | 'testID'
   | 'zIndex'
+  | 'role'
 >;
 
 export const FullscreenModal = memo(function FullscreenModal({
@@ -75,6 +76,7 @@ export const FullscreenModal = memo(function FullscreenModal({
   disablePortal,
   dangerouslySetContentClassName,
   hideDivider = false,
+  role,
 }: FullscreenModalProps) {
   const pinStyles = usePinStyles('all');
 
@@ -134,6 +136,7 @@ export const FullscreenModal = memo(function FullscreenModal({
       testID={testID}
       zIndex={zIndex}
       disablePortal={disablePortal}
+      role={role}
     >
       {overlay}
       <motion.div

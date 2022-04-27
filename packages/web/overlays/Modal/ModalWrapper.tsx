@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, memo, useEffect } from 'react';
+import React, { AriaRole, ForwardedRef, forwardRef, memo, useEffect } from 'react';
 import { AnimatePresence, m as motion, Target } from 'framer-motion';
 import {
   animateInOpacityConfig as animateInOverlayOpacityConfig,
@@ -39,6 +39,11 @@ export type ModalWrapperProps = {
    * @default false
    */
   hideOverlay?: boolean;
+  /**
+   * WAI-ARIA Roles
+   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
+   */
+  role?: Extract<AriaRole, 'dialog' | 'alertdialog'>;
 } & Pick<PortalProps, 'disablePortal'> &
   Pick<ModalBaseProps, 'visible' | 'zIndex' | 'children' | 'onDidClose' | 'testID'> &
   Pick<BoxProps, 'dangerouslySetClassName'> &
@@ -61,6 +66,7 @@ export const ModalWrapper = memo(
       onDidClose,
       hideOverlay = false,
       testID,
+      role = 'dialog',
     } = props;
 
     const blockScroll = useScrollBlocker();
@@ -85,7 +91,7 @@ export const ModalWrapper = memo(
               width="100vw"
               justifyContent="center"
               alignItems="center"
-              role="dialog"
+              role={role}
               aria-modal="true"
               accessibilityLabelledBy={accessibilityLabelledBy}
               accessibilityLabel={accessibilityLabel}

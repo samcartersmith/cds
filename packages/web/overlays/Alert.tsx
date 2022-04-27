@@ -99,6 +99,7 @@ export const Alert = memo(
             dangerouslySetClassName={stacked ? alertOverModalClassName : undefined}
             testID={testID}
             ref={ref}
+            role="alertdialog"
             {...props}
           >
             <Box

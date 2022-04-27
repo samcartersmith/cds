@@ -6,18 +6,20 @@ function DefaultAlert() {
 
   return (
     <PortalProvider>
-      <Button onPress={toggleOn}>Open Alert</Button>
-      <FullscreenAlert
-        visible={visible}
-        onRequestClose={toggleOff}
-        title="Connection trouble"
-        body="We're unable to connect to our card partner. Apologies for the inconvenience. Please try again later today or tomorrow."
-        heroSquare="errorApp500"
-        preferredActionLabel="Try again"
-        onPreferredActionPress={toggleOff}
-        dismissActionLabel="Cancel"
-        onDismissActionPress={toggleOff}
-      />
+      <ExampleWithThemeToggles>
+        <Button onPress={toggleOn}>Open Alert</Button>
+        <FullscreenAlert
+          visible={visible}
+          onRequestClose={toggleOff}
+          title="Connection trouble"
+          body="We're unable to connect to our card partner. Apologies for the inconvenience. Please try again later today or tomorrow."
+          heroSquare="errorApp500"
+          preferredActionLabel="Try again"
+          onPreferredActionPress={toggleOff}
+          dismissActionLabel="Cancel"
+          onDismissActionPress={toggleOff}
+        />
+      </ExampleWithThemeToggles>
     </PortalProvider>
   );
 }

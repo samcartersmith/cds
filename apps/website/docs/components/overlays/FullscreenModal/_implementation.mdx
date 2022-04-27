@@ -86,7 +86,7 @@ Callback function fired when modal is closed.
 
 ### primaryContent <Badge variant="web" />
 
-Primary content element.
+Primary content element. Primary content is where the core of the task or information should live.
 
 <ApiDetails
   componentName="FullscreenModal"
@@ -97,9 +97,24 @@ Primary content element.
   webOptions={[]}
 />
 
+### role <Badge variant="web" />
+
+WAI-ARIA Roles
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles**
+
+<ApiDetails
+  componentName="FullscreenModal"
+  propertyName="role"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['alertdialog', 'dialog']}
+/>
+
 ### secondaryContent <Badge variant="web" />
 
-Secondary content element.
+Secondary content element. Secondary content is supplemental information.
 
 <ApiDetails
   componentName="FullscreenModal"
