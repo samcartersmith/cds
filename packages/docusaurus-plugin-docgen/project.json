@@ -1,0 +1,44 @@
+{
+  "root": "packages/docusaurus-plugin-docgen",
+  "sourceRoot": "packages/docusaurus-plugin-docgen",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "./tools/executors/build-package:build-package",
+      "options": {
+        "destinationDir": "packages/docusaurus-plugin-docgen",
+        "srcDir": "src",
+        "distDir": "dist",
+        "babelConfig": "./babel.build.config.js",
+        "babelExtensions": [".ts", ".tsx"],
+        "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
+        "typescriptConfig": "packages/docusaurus-plugin-docgen/tsconfig.build.json"
+      }
+    },
+    "package": {
+      "executor": "./tools/executors/build-package:build-package",
+      "options": {
+        "destinationDir": ".nx/dist/packages/docusaurus-plugin-docgen",
+        "srcDir": "src",
+        "distDir": "dist",
+        "staticFilesToCopy": ["package.json", "README.md", "CHANGELOG.md"],
+        "babelConfig": "./babel.build.config.js",
+        "babelExtensions": [".ts", ".tsx"],
+        "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
+        "typescriptConfig": "packages/docusaurus-plugin-docgen/tsconfig.build.json"
+      }
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "./tools/executors/typecheck:typecheck"
+    }
+  }
+}

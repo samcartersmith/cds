@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@cbhq/cds-fonts": "workspace:*",
-    "@cbhq/cds-web": "workspace:*"
+    "@cbhq/cds-web": "workspace:*",
+    "@cbhq/docusaurus-plugin-docgen": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=17.0.0",

@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "build": "nx run website:build",
+    "build.docgen": "yarn workspace @cbhq/docusaurus-plugin-docgen build",
+    "debug.docgen": "DEBUG_DOCGEN=1 yarn start",
     "format": "nx format website",
     "lint": "nx run website:lint",
     "lint.fix": "nx run website:lint --fix",
@@ -16,6 +18,7 @@
   "dependencies": {
     "@cbhq/cds-common": "workspace:*",
     "@cbhq/cds-web": "workspace:*",
+    "@cbhq/docusaurus-plugin-docgen": "workspace:*",
     "@cmfcmf/docusaurus-search-local": "^0.10.0",
     "@docusaurus/core": "2.0.0-beta.18",
     "@docusaurus/module-type-aliases": "2.0.0-beta.18",

@@ -1,4 +1,5 @@
 const path = require('path');
+const docgenConfig = require('./docusaurus-plugin-docgen.config');
 
 /* eslint-disable no-param-reassign */
 function configureForDocusaurus(config) {
@@ -27,15 +28,6 @@ function configureForDocusaurus(config) {
   return {};
 }
 
-function getNavbarHref() {
-  if (process.env === 'development') {
-    return '/';
-  }
-  return process.env.NODE_ENV === 'production'
-    ? 'https://cds.cbhq.net'
-    : 'https://cds-dev.cbhq.net';
-}
-
 module.exports = {
   title: 'Coinbase Design System',
   tagline: '',
@@ -58,8 +50,6 @@ module.exports = {
         alt: 'Coinbase',
         src: 'img/logo.svg',
         srcDark: 'img/logo_dark.svg',
-        href: getNavbarHref(),
-        target: '_self',
       },
     },
     footer: {
@@ -111,6 +101,7 @@ module.exports = {
   ],
   plugins: [
     '@docusaurus/theme-live-codeblock',
+    ['@cbhq/docusaurus-plugin-docgen', docgenConfig],
     [
       '@cmfcmf/docusaurus-search-local',
       {

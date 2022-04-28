@@ -18,7 +18,7 @@ export function getProjectPath(context: ExecutorContext): string {
  * @param cwdOverride 
  * @returns 
  */
-export async function runLocalCommand(context: ExecutorContext, bin: string, args: string[], envs = {}, cwdOverride?: string) {
+export async function runLocalCommand(context: ExecutorContext, bin: string, args: string[] = [], envs = {}, cwdOverride?: string) {
   const cwd = cwdOverride ?? path.join(context.root, getProjectPath(context));
   console.log(chalk.gray(`Running \`${reduce(
     envs, 

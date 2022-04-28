@@ -6,7 +6,10 @@ import { createDir, deleteDir, runLocalCommand } from '../utils';
 
 type BuildPackageOptions = {
   destinationDir: string;
+  distDir?: string;
+  srcDir?: string;
   staticFilesToIgnore: string[];
+  staticFilesToCopy?: string[];
   babelConfig: string;
   babelExtensions: string[];
   babelIgnore: string[];
@@ -18,7 +21,23 @@ type PackageArgs = {
     absolute path on the filesystem of the destination directory
    */
   destinationDir: string;
-
+  /*
+    Directory to parse src files. Relative to destinationDir.
+    This should match the tsconfig.build's rootDir.
+    @default './'
+   */
+  srcDir: string;
+  /*
+    Directory to output transpiled src files. Relative to destinationDir.
+    Should match tsconfig.build's outDir when joined with destinationDir.
+    @default './'
+   */
+  distDir?: string;
+  /*
+  Paths of the static files that you wish to add to the destination directory.
+  Useful if you are using an src and dist folder structure and you need to copy package.json and md files.
+   */
+  staticFilesToCopy?: string[];
   /*
   Paths of the static files that you wish to remove from the destination directory
    */
@@ -61,13 +80,13 @@ type PackageJson = {
 // babel --config-file ../../babel.build.config.js  --extensions .ts,.tsx --ignore "**/*.js","**/*.test.ts","**/*.test.tsx","dist/**" --source-maps --out-dir dist ./
 async function runBabel(
   context: ExecutorContext,
-  { destinationDir }: PackageArgs,
+  { destinationDir, srcDir }: PackageArgs,
   { configFile, extensions, ignore }: BabelArgs,
 ) {
   const bin = 'babel';
 
   const args = [
-    './',
+    srcDir,
     '--config-file',
     path.join(context.root, configFile),
     '--extensions',
@@ -126,6 +145,26 @@ async function removeIgnoredFiles(
   };
 }
 
+async function copyFiles({
+  destinationDir,
+  staticFilesToCopy,
+  projectDir,
+}: {
+  destinationDir: string;
+  staticFilesToCopy: string[];
+  projectDir: string;
+}) {
+  return await Promise.all(
+    staticFilesToCopy.map((item) => {
+      const fromPath = path.join(projectDir, item);
+      const toPath = path.join(destinationDir, item);
+      return fs.promises.copyFile(fromPath, toPath);
+    }),
+  )
+    .then(() => ({ sucess: true }))
+    .catch(() => ({ success: false }));
+}
+
 // packages with versions to replace in the output
 const packageVersionReplacePathMap: Record<string, string> = {
   '@cbhq/cds-common': 'packages/common',
@@ -134,6 +173,7 @@ const packageVersionReplacePathMap: Record<string, string> = {
   '@cbhq/cds-mobile': 'packages/mobile',
   '@cbhq/cds-utils': 'packages/utils',
   '@cbhq/cds-web': 'packages/web',
+  '@cbhq/docusaurus-plugin-docgen': 'packages/docusaurus-plugin-docgen',
 };
 
 async function getPackageVersion(pkgJsonPath: string) {
@@ -198,7 +238,10 @@ async function replacePackageVersions(context: ExecutorContext, destinationDir: 
 export default async function buildPackage(options: BuildPackageOptions, context: ExecutorContext) {
   const {
     destinationDir: dest,
+    srcDir = '.',
+    distDir = '.',
     staticFilesToIgnore = [],
+    staticFilesToCopy = [],
     babelConfig,
     babelExtensions,
     babelIgnore = [],
@@ -206,10 +249,11 @@ export default async function buildPackage(options: BuildPackageOptions, context
   } = options;
 
   const destinationDir = path.join(context.root, dest);
+  const dist = path.join(destinationDir, distDir);
+  const projectDir = path.dirname(path.join(context.root, typescriptConfig));
 
-  await deleteDir(destinationDir);
-
-  await createDir(destinationDir);
+  await deleteDir(dist);
+  await createDir(dist);
 
   const babelArgs: BabelArgs = {
     configFile: babelConfig,
@@ -218,7 +262,8 @@ export default async function buildPackage(options: BuildPackageOptions, context
   };
 
   const packageArgs: PackageArgs = {
-    destinationDir,
+    destinationDir: dist,
+    srcDir,
   };
 
   let { success } = await runBabel(context, packageArgs, babelArgs);
@@ -232,6 +277,8 @@ export default async function buildPackage(options: BuildPackageOptions, context
   success = success
     ? (await removeIgnoredFiles(context, destinationDir, staticFilesToIgnore)).success
     : success;
+
+  await copyFiles({ destinationDir, projectDir, staticFilesToCopy });
 
   await replacePackageVersions(context, destinationDir);
 

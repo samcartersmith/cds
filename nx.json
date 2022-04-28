@@ -36,6 +36,12 @@
         "target": "build",
         "projects": "dependencies"
       }
+    ],
+    "package": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
     ]
   },
   "workspaceLayout": {

@@ -25,6 +25,9 @@
       "path": "packages/mobile"
     },
     {
+      "path": "packages/docusaurus-plugin-docgen"
+    },
+    {
       "path": "examples/nextjs"
     }
   ]

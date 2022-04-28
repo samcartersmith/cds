@@ -1,7 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  stories: [path.resolve(__dirname, `../../../packages/web/**/*.stories.@(tsx|mdx)`)],
+  stories: [
+    path.resolve(__dirname, `../../../packages/web/**/*.stories.@(tsx|mdx)`),
+    path.resolve(
+      __dirname,
+      `../../../packages/docusaurus-plugin-docgen/src/**/*.stories.@(tsx|mdx)`,
+    ),
+  ],
   addons: [
     '@storybook/addon-measure',
     '@storybook/addon-backgrounds',

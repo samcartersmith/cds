@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.projectOptions.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/**/*", "dist"],
+  "references": [
+    {
+      "path": "../web"
+    }
+  ]
+}

@@ -7,9 +7,21 @@
       "type": "string",
       "description": "relative path to output directory"
     },
+    "distDir": {
+      "type": "string",
+      "description": "Paths of the static files that you wish to add to the destination directory"
+    },
+    "srcDir": {
+      "type": "string",
+      "description": "Directory to output transpiled src files. Relative to destinationDir"
+    },
     "staticFilesToIgnore": {
       "type": "array",
       "description": "Static files to remove from the output"
+    },
+    "staticFilesToCopy": {
+      "type": "array",
+      "description": "Static files to copy to output"
     },
     "babelConfig": {
       "type": "string",

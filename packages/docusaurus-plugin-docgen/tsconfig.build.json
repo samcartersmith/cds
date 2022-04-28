@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.buildOptions.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "../../.nx/dist/packages/docusaurus-plugin-docgen/dist"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/**/*", "dist"],
+  "references": [
+    {
+      "path": "../web"
+    }
+  ]
+}

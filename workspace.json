@@ -3,6 +3,7 @@
   "projects": {
     "codegen": "packages/codegen",
     "common": "packages/common",
+    "docusaurus-plugin-docgen": "packages/docusaurus-plugin-docgen",
     "fonts": "packages/fonts",
     "lottie-files": "packages/lottie-files",
     "mobile": "packages/mobile",
