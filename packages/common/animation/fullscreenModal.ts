@@ -14,7 +14,7 @@ export const animateInOpacityConfig: MotionBaseSpec = {
 export const animateOutOpacityConfig: MotionBaseSpec = {
   property: 'opacity',
   easing: 'exitFunctional',
-  duration: 'moderate3',
+  duration: 'moderate1',
   toValue: modalHiddenOpacity,
 };
 
@@ -27,7 +27,7 @@ export const animateInTranslateYConfig: MotionBaseSpec = {
 export const animateOutTranslateYConfig: MotionBaseSpec = {
   property: 'y',
   easing: 'exitFunctional',
-  duration: 'moderate3',
+  duration: 'moderate1',
   toValue: modalHiddenTranslateY,
 };
 
