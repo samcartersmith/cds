@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { css } from 'linaria';
+import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { FeatureFlagProvider, ThemeProvider } from '@cbhq/cds-web/system';
 import { RootScaleProvider } from '@cbhq/cds-web/system/RootScaleProvider';
 import { fontFamily, palette, spacing } from '@cbhq/cds-web/tokens';
@@ -35,19 +36,29 @@ const overrides = css`
       color: ${palette.primary};
     }
   }
+
+  nav.menu {
+    padding: 0;
+    @supports (scrollbar-gutter: stable) {
+      scrollbar-gutter: stable;
+      overflow-y: auto;
+    }
+  }
 `;
 
 export const CdsProviders: React.FC = memo(({ children }) => {
   const { colorMode } = useColorMode();
   const isDarkTheme = colorMode === 'dark';
   return (
-    <FeatureFlagProvider>
-      <RootScaleProvider>
-        <ThemeProvider spectrum={isDarkTheme ? 'dark' : 'light'}>
-          <div className={overrides}>{children}</div>
-        </ThemeProvider>
-      </RootScaleProvider>
-    </FeatureFlagProvider>
+    <PortalProvider>
+      <FeatureFlagProvider frontier flexGap>
+        <RootScaleProvider>
+          <ThemeProvider display="contents" spectrum={isDarkTheme ? 'dark' : 'light'}>
+            <div className={overrides}>{children}</div>
+          </ThemeProvider>
+        </RootScaleProvider>
+      </FeatureFlagProvider>
+    </PortalProvider>
   );
 });
 
