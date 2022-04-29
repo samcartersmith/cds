@@ -37,6 +37,12 @@ module.exports = {
     accordion: getCoreFiles(['accordion/Accordion.tsx', 'accordion/AccordionItem.tsx']),
     cardBody: getCoreFiles('alpha/CardBody.tsx'),
     button: getCoreFiles('buttons/Button.tsx'),
+    illustration: getCoreFiles([
+      'illustrations/HeroSquare.tsx',
+      'illustrations/Pictogram.tsx',
+      'illustrations/SpotSquare.tsx',
+      'illustrations/SpotRectangletsx',
+    ]),
   },
   parserConfig: {
     /**
@@ -55,13 +61,20 @@ module.exports = {
      * Add any props which might live in parentTypes but that are used frequently in day-to-day work.
      * We don't want to bury these in parent types section.
      */
-    propsToForceIncludeIfPresent: ['autoFocus', 'onBlur', 'onChange', 'role', 'type', 'value'],
+    propsToForceIncludeIfPresent: ['autoFocus', 'onBlur', 'onChange', 'type', 'value'],
     aliasesToExtractValuesFor: [
-      'IconName',
-      'SpacingScale',
       'EventCustomConfig',
+      'IconName',
+      'IllustrationNames',
+      'IllustrationHeroSquareNames',
+      'IllustrationPictogramNames',
+      'IllustrationSpotSquareNames',
+      'IllustrationSpotRectangleNames',
+      'IllustrationVariant',
+      'NavigationIconName',
       'PaletteForeground',
       'PaletteBackground',
+      'SpacingScale',
     ],
   },
 };

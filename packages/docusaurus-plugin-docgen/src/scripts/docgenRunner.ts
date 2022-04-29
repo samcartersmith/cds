@@ -1,4 +1,3 @@
-/* eslint-disable guard-for-in */
 import camelCase from 'lodash/camelCase';
 import flatten from 'lodash/flatten';
 import groupBy from 'lodash/groupBy';
@@ -48,30 +47,13 @@ export async function docgenRunner({
 }: DocgenParserParams): Promise<DocgenWriterParams> {
   const docsData: WriteFileConfig[] = [];
   mapValues(components, (value, id) => {
-    /**
-     * Array of parsed docs
-     * [ {name: 'Accordion', packageName: 'web' }, {name: 'Accordion', packageName: 'mobile' }]
-     */
-    const flattenedData = flatten(value.map((item) => docgenParser(item, parserConfig)));
-    /**
-     * Grouped data based on config
-     * { Accordion: [ {name: 'Accordion', packageName: 'web'}, {name: 'Accordion', packageName: 'mobile'} ]}
-     */
-    const groupedData = groupBy(flattenedData, 'name');
-    for (const name in groupedData) {
-      const componentsForGroup = groupedData[name];
-      const packageGroup = groupBy(componentsForGroup, 'packageName');
-      for (const packageName in packageGroup) {
-        const dataForPlatform = packageGroup[packageName];
-        for (const data of dataForPlatform) {
-          docsData.push({
-            dest: `${id}/${packageName}/_${camelCase(name)}.mdx`,
-            data,
-            template: componentsTemplate,
-          });
-        }
-      }
-    }
+    flatten(value.map((item) => docgenParser(item, parserConfig))).forEach((item) => {
+      docsData.push({
+        dest: `${id}/${item.packageName}/_${camelCase(item.name)}.mdx`,
+        data: item,
+        template: componentsTemplate,
+      });
+    });
   });
 
   const groupedParentTypes = mapValues(
