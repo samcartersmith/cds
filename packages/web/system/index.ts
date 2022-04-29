@@ -1,5 +1,5 @@
 export * from './DevicePreferencesProvider';
-export * from './EventDelegationProvider';
+export * from './EventHandlerProvider';
 export * from './FeatureFlagProvider';
 export * from './Interactable';
 export * from './Pressable';

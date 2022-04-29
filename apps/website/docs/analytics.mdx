@@ -20,7 +20,7 @@ to use both CDS and CCA.
 
 To enable CDS/CCA integration applications require the following components:
 
-- CDS: import CDS and use [EventDelegationProvider](https://github.cbhq.net/frontend/cds/blob/master/packages/common/system/EventDelegationProvider.tsx).
+- CDS: import CDS and use [EventHandlerProvider](https://github.cbhq.net/frontend/cds/blob/master/packages/common/system/EventHandlerProvider.tsx).
 - CCA: import CCA and use [EventConfigMapping](http://go/cca).
 
 ### Import CCA
@@ -33,17 +33,17 @@ To import CDS, refer to [getting started documentation](../cds/getting-started).
 
 ### Integration
 
-Import `EventConfigMapping` from CCA and `EventDelegationProvider` from CDS. Render the EventDelegationProvider at the root of your application.
+Import `EventConfigMapping` from CCA and `EventHandlerProvider` from CDS. Render the EventHandlerProvider at the root of your application.
 
 ```jsx
-<EventDelegationProvider eventConfig={EventConfigMapping}>
+<EventHandlerProvider eventConfig={EventConfigMapping}>
   <App />
-</EventDelegationProvider
+</EventHandlerProvider>
 ```
 
-For more info on EventConfigMapping format refer to [EventDelegationProvider documentation](../category/components/system/EventDelegationProvider/event-delegation-provider).
+For more info on EventConfigMapping format refer to [EventHandlerProvider documentation](../components/event-handler-provider).
 
-Note: passing `EventConfigMapping` is not enough to enable automatic analtyics event collection.
+Note: passing `EventConfigMapping` is not enough to enable automatic analytics event collection.
 
 ### Event capture
 

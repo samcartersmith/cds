@@ -22,7 +22,7 @@ import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
-import { useEventDelegation } from '@cbhq/cds-common/system/useEventDelegation';
+import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
@@ -141,7 +141,7 @@ const ReactLiveScope: unknown = {
   useOverlay,
   useToast,
   getZIndexFromRow,
-  useEventDelegation,
+  useEventHandler,
   // CDS Components
   Text: CDSTypography.TextBody,
   ...CDSAccordion,

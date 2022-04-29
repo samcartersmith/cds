@@ -6,12 +6,12 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import { ButtonBaseProps, ComponentEventDelegationProps } from '@cbhq/cds-common';
+import { ButtonBaseProps, ComponentEventHandlerProps } from '@cbhq/cds-common';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
-import { useEventDelegation } from '@cbhq/cds-common/system/useEventDelegation';
+import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
 
 import { Button as FrontierButton } from '../alpha/Button';
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
@@ -25,7 +25,7 @@ import { TextHeadline } from '../typography/TextHeadline';
 
 export type ButtonProps = ButtonBaseProps &
   PressableProps &
-  ComponentEventDelegationProps & {
+  ComponentEventHandlerProps & {
     /**
      * When provided the Button text will not truncate and will wrap until the number of lines provided is met.
      * @default 1
@@ -68,7 +68,7 @@ export const DeprecatedButton = memo(function DeprecatedButton({
   const startIconStyles = useSpacingStyles({ spacingEnd: 1 });
   const endIconStyles = useSpacingStyles({ spacingStart: 1 });
 
-  const onPressEvent = useEventDelegation('Button', 'onPress', eventConfig);
+  const onPressEvent = useEventHandler('Button', 'onPress', eventConfig);
   const handleOnPress = useCallback(
     (event: GestureResponderEvent) => {
       onPressEvent();

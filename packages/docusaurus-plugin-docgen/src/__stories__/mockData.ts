@@ -489,7 +489,7 @@ export const mockData = {
       'onTransitionEnd',
       'onTransitionEndCapture',
     ],
-    ComponentEventDelegationProps: ['eventConfig'],
+    ComponentEventHandlerProps: ['eventConfig'],
   },
   packageName: 'web',
   aliasTypes: {},

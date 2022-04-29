@@ -1,8 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
 import {
-  EventCustomConfig,
-  EventDelegationProvider,
-} from '@cbhq/cds-common/system/EventDelegationProvider';
+  EventHandlerCustomConfig,
+  EventHandlerProvider,
+} from '@cbhq/cds-common/system/EventHandlerProvider';
 
 import { Button } from '../Button';
 
@@ -13,7 +13,7 @@ describe('ButtonEventDelegation', () => {
     },
   };
 
-  let customEventConfig: EventCustomConfig = {
+  let customEventConfig: EventHandlerCustomConfig = {
     actions: [],
     componentName: 'place_order',
   };
@@ -30,9 +30,9 @@ describe('ButtonEventDelegation', () => {
     const spy = jest.fn();
 
     const { container } = render(
-      <EventDelegationProvider>
+      <EventHandlerProvider>
         <Button onPress={spy}>Child</Button>
-      </EventDelegationProvider>,
+      </EventHandlerProvider>,
     );
 
     fireEvent.click(container.querySelector('button') as Element);
@@ -46,9 +46,9 @@ describe('ButtonEventDelegation', () => {
     const spy = jest.fn();
 
     const { container } = render(
-      <EventDelegationProvider config={EVENT_DELEGATION_CONFIG}>
+      <EventHandlerProvider config={EVENT_DELEGATION_CONFIG}>
         <Button onPress={spy}>Child</Button>
-      </EventDelegationProvider>,
+      </EventHandlerProvider>,
     );
 
     fireEvent.click(container.querySelector('button') as Element);
@@ -68,11 +68,11 @@ describe('ButtonEventDelegation', () => {
     };
 
     const { container } = render(
-      <EventDelegationProvider config={EVENT_DELEGATION_CONFIG}>
+      <EventHandlerProvider config={EVENT_DELEGATION_CONFIG}>
         <Button onPress={spy} eventConfig={customEventConfig}>
           Child
         </Button>
-      </EventDelegationProvider>,
+      </EventHandlerProvider>,
     );
 
     fireEvent.click(container.querySelector('button') as Element);
@@ -93,11 +93,11 @@ describe('ButtonEventDelegation', () => {
     };
 
     const { container } = render(
-      <EventDelegationProvider config={EVENT_DELEGATION_CONFIG}>
+      <EventHandlerProvider config={EVENT_DELEGATION_CONFIG}>
         <Button onPress={spy} eventConfig={customEventConfig}>
           Child
         </Button>
-      </EventDelegationProvider>,
+      </EventHandlerProvider>,
     );
 
     fireEvent.click(container.querySelector('button') as Element);
@@ -118,11 +118,11 @@ describe('ButtonEventDelegation', () => {
     const spy = jest.fn();
 
     const { container } = render(
-      <EventDelegationProvider config={EVENT_DELEGATION_CONFIG}>
+      <EventHandlerProvider config={EVENT_DELEGATION_CONFIG}>
         <Button onPress={spy} eventConfig={customEventConfig}>
           child
         </Button>
-      </EventDelegationProvider>,
+      </EventHandlerProvider>,
     );
 
     fireEvent.click(container.querySelector('button') as Element);

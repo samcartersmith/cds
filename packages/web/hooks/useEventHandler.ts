@@ -3,4 +3,4 @@
  * CDS common is dep of cds-mobile.
  * This allows consumers to pull directly from cds-web.
  */
-export { useEventDelegation } from '@cbhq/cds-common/system/useEventDelegation';
+export { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';

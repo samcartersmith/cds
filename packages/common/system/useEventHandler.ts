@@ -1,23 +1,23 @@
 import { useCallback, useContext } from 'react';
 
 import {
-  EventCustomConfig,
-  EventDelegationAction,
-  EventDelegationComponent,
-  EventDelegationConfig,
-  EventDelegationContext,
-} from './EventDelegationProvider';
+  EventHandlerAction,
+  EventHandlerComponent,
+  EventHandlerConfig,
+  EventHandlerContext,
+  EventHandlerCustomConfig,
+} from './EventHandlerProvider';
 
 const noOp = () => {};
 
 const EVENT_ENABLED_BY_DEFAULT = false;
 
-export const useEventDelegation = (
-  component: EventDelegationComponent,
-  action: EventDelegationAction,
-  eventConfig?: EventCustomConfig,
+export const useEventHandler = (
+  component: EventHandlerComponent,
+  action: EventHandlerAction,
+  eventConfig?: EventHandlerCustomConfig,
 ): (() => void) => {
-  const config = useContext<EventDelegationConfig>(EventDelegationContext);
+  const config = useContext<EventHandlerConfig>(EventHandlerContext);
 
   return useCallback(() => {
     // by default events are disabled

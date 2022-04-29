@@ -1,10 +1,10 @@
 import { Badge } from ':cds-website/components/Badge';
 
-> [@cbhq/cds-(web|mobile)/hooks/useEventDelegation](https://github.cbhq.net/frontend/cds/blob/master/packages/common/system/useEventDelegation.ts)
+> [@cbhq/cds-(web|mobile)/hooks/useEventHandler](https://github.cbhq.net/frontend/cds/blob/master/packages/common/system/useEventHandler.ts)
 
-Returns a callback to capture a specific component event if specified in [EventDelegationProvider config](/components/event-delegation-provider).
+Returns a callback to capture a specific component event if specified in [EventHandlerProvider config](/components/event-handler-provider).
 
-In order to use this hook, EventDelegationProvider must wrap your root application component.
+In order to use this hook, EventHandlerProvider must wrap your root application component.
 
 ## Examples
 
@@ -18,7 +18,7 @@ function Example(props) {
     },
   };
 
-  const onPressEvent = useEventDelegation('Button', 'onPress', customEventConfig);
+  const onPressEvent = useEventHandler('Button', 'onPress', customEventConfig);
 
   const onPress = useCallback(
     (event: React.MouseEvent) => {

@@ -6,8 +6,8 @@ import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useButtonSpacing as useSharedButtonSpacing } from '@cbhq/cds-common/hooks/useButtonSpacing';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
-import { useEventDelegation } from '@cbhq/cds-common/system/useEventDelegation';
-import { ComponentEventDelegationProps } from '@cbhq/cds-common/types/ComponentEventDelegationProps';
+import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
+import { ComponentEventHandlerProps } from '@cbhq/cds-common/types/ComponentEventHandlerProps';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { useFlushStyles } from '../hooks/useFlushStyles';
@@ -23,7 +23,7 @@ import * as buttonStyles from './buttonStyles';
 
 export type ButtonProps = ButtonBaseProps &
   PressableProps &
-  ComponentEventDelegationProps &
+  ComponentEventHandlerProps &
   Omit<
     ReakitButtonProps,
     | 'children'
@@ -73,7 +73,7 @@ export const Button = forwardRef(function Button(
     [height, flushStyles],
   );
 
-  const onPressEvent = useEventDelegation('Button', 'onPress', eventConfig);
+  const onPressEvent = useEventHandler('Button', 'onPress', eventConfig);
 
   const handlePress = useCallback(
     (event: React.MouseEvent) => {

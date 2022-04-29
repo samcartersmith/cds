@@ -46,7 +46,7 @@ module.exports = {
     parentTypes: [
       'AriaAttributes',
       'ButtonHTMLAttributes',
-      'ComponentEventDelegationProps',
+      'ComponentEventHandlerProps',
       'DOMAttributes',
       'HTMLAttributes',
       'SpacingProps',

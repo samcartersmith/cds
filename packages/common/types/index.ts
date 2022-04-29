@@ -15,7 +15,7 @@ export * from './Chart';
 export * from './CheckboxGroupBaseProps';
 export * from './CollapsibleBaseProps';
 export * from './Color';
-export * from './ComponentEventDelegationProps';
+export * from './ComponentEventHandlerProps';
 export * from './ControlBaseProps';
 export * from './CounterBaseProps';
 export * from './DimensionStyles';
