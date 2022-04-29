@@ -13,5 +13,21 @@ describe('convertMotionConfig', () => {
       toValue: 1,
       useNativeDriver: true,
     });
+
+    expect(
+      convertMotionConfig({
+        toValue: 0.5,
+        delay: 2000,
+        easing: 'linear',
+        duration: 'quick',
+        useNativeDriver: false,
+      }),
+    ).toEqual({
+      toValue: 0.5,
+      delay: 2000,
+      easing: mobileCurves.linear,
+      duration: durations.quick,
+      useNativeDriver: false,
+    });
   });
 });

@@ -7,6 +7,7 @@ export const webCurves = {
   enterFunctional: curves.enterFunctional.join(),
   exitExpressive: curves.exitExpressive.join(),
   exitFunctional: curves.exitFunctional.join(),
+  linear: curves.linear.join(),
 };
 
 export type MotionBaseSpec = {

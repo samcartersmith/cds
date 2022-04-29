@@ -10,6 +10,7 @@ export const mobileCurves = {
   enterFunctional: Easing.bezier(...curves.enterFunctional),
   exitExpressive: Easing.bezier(...curves.exitExpressive),
   exitFunctional: Easing.bezier(...curves.exitFunctional),
+  linear: Easing.bezier(...curves.linear),
 };
 
 export const convertMotionConfig = ({
@@ -21,9 +22,9 @@ export const convertMotionConfig = ({
 }: MotionSpec): Animated.TimingAnimationConfig => {
   return {
     toValue,
+    delay,
     easing: mobileCurves[easing],
     duration: durations[duration],
-    delay,
     useNativeDriver,
   };
 };

@@ -6,9 +6,11 @@ export const curves = {
   enterFunctional: [0, 0, 0.15, 1] as EasingArray,
   exitExpressive: [1, 0, 0.67, 1] as EasingArray,
   exitFunctional: [0.6, 0, 1, 1] as EasingArray,
+  linear: [0, 0, 1, 1] as EasingArray,
 } as const;
 
 export const durations = {
+  quick: 33,
   /** Buttons, Toggles, Text, Icons, Selection Controls */
   fast1: 100,
   fast2: 133,
@@ -21,4 +23,5 @@ export const durations = {
   slow1: 350,
   slow2: 400,
   slow3: 500,
+  slow4: 1000,
 } as const;
