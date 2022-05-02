@@ -4,7 +4,6 @@ import {
   animateInOpacityConfig as animateInOverlayOpacityConfig,
   animateOutOpacityConfig as animateOutOverlayOpacityConfig,
 } from '@cbhq/cds-common/animation/overlay';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { ModalBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
@@ -96,7 +95,7 @@ export const ModalWrapper = memo(
               accessibilityLabelledBy={accessibilityLabelledBy}
               accessibilityLabel={accessibilityLabel}
               id={id}
-              zIndex={customZIndex ?? zIndex.overlays.modal}
+              zIndex={customZIndex}
               dangerouslySetClassName={dangerouslySetClassName}
               testID={testID}
               ref={ref}

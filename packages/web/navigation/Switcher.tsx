@@ -135,6 +135,7 @@ const ModalSwitcher = memo(
           disablePortal={disablePortal}
           onOverlayPress={onClose}
           dangerouslyDisableResponsiveness
+          zIndex={zIndex.overlays.popoverMenu}
           {...controlledElementAccessibilityProps}
         >
           <FocusTrap onEscPress={onClose}>
