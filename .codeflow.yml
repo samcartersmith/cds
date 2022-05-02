@@ -2,6 +2,7 @@ secure:
   required_reviews: 1
   branches:
     - master
+    - develop
 build:
   engines:
     # Apps
