@@ -32,7 +32,7 @@ function getCoreFiles(nameOrNames) {
  */
 module.exports = {
   alias: '@docgen',
-  enable: process.env.DEBUG_DOCGEN ?? false,
+  enable: process.env.THEME === 'refresh',
   components: {
     accordion: getCoreFiles(['accordion/Accordion.tsx', 'accordion/AccordionItem.tsx']),
     cardBody: getCoreFiles('alpha/CardBody.tsx'),
@@ -41,7 +41,7 @@ module.exports = {
       'illustrations/HeroSquare.tsx',
       'illustrations/Pictogram.tsx',
       'illustrations/SpotSquare.tsx',
-      'illustrations/SpotRectangletsx',
+      'illustrations/SpotRectangle.tsx',
     ]),
   },
   parserConfig: {

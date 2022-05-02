@@ -1,32 +1,8 @@
-const path = require('path');
-const docgenConfig = require('./docusaurus-plugin-docgen.config');
+const docgenConfig = require('./docgenConfig');
+const webpackPlugin = require('./webpackPlugin');
 
-/* eslint-disable no-param-reassign */
-function configureForDocusaurus(config) {
-  const isProduction = config.mode === 'production';
-
-  // Modify rules to support our tooling
-  config.module?.rules?.forEach((rule) => {
-    if (rule === '...' || !(rule.test instanceof RegExp) || !Array.isArray(rule.use)) {
-      return;
-    }
-
-    // Add `linaria/loader` for .tsx files
-    if ('.tsx'.match(rule.test)) {
-      rule.use.push({
-        loader: '@linaria/webpack-loader',
-        options: {
-          sourceMap: !isProduction,
-        },
-      });
-    }
-  });
-
-  config.resolve.alias.linaria$ = '@linaria/core';
-  config.resolve.alias[':cds-website'] = path.resolve(__dirname, './');
-
-  return {};
-}
+const SLACK_TEAM = 'T02Q6DY7G';
+const hasThemeRefresh = process.env.THEME === 'refresh';
 
 module.exports = {
   title: 'Coinbase Design System',
@@ -43,6 +19,7 @@ module.exports = {
     locales: ['en'],
   },
   themeConfig: {
+    // https://docusaurus.io/docs/api/themes/configuration#navbar-items
     navbar: {
       // We only want to show the logo with no text so we have to set to empty string.
       title: '',
@@ -52,33 +29,45 @@ module.exports = {
         srcDark: 'img/logo_dark.svg',
       },
     },
+    // https://docusaurus.io/docs/api/themes/configuration#footer-1
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Resources',
-          items: [
-            {
-              type: 'link',
-              label: 'Figma',
-              href: 'https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E?node-id=1%3A9',
-            },
-            {
-              type: 'link',
-              label: 'Github',
-              href: 'https://github.cbhq.net/frontend/cds/tree/master',
-            },
-            {
-              type: 'link',
-              label: 'Coda',
-              href: 'https://coda.io/d/CDS-Team_dFaC-pktuzN',
-            },
-          ],
+          type: 'link',
+          label: 'Coda',
+          href: 'https://coda.io/d/CDS-Team_dFaC-pktuzN',
+        },
+        {
+          type: 'link',
+          label: 'Jira',
+          href: 'https://jira.coinbase-corp.com/projects/CDS/summary',
+        },
+        {
+          type: 'link',
+          label: 'Storybook',
+          href: 'https://cdsstorybook.cbhq.net/',
+        },
+        {
+          type: 'link',
+          label: 'Figma Libraries',
+          href: 'https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E?node-id=1%3A9',
+        },
+        {
+          type: 'link',
+          label: 'Github',
+          href: 'https://github.cbhq.net/frontend/cds/tree/master',
+        },
+        {
+          type: 'link',
+          label: '#ask-cds',
+          href: `slack://channel?team=${SLACK_TEAM}&id=C01A6PKGM3J`,
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Coinbase`,
     },
   },
+  // https://docusaurus.io/docs/using-plugins#docusauruspreset-classic
   presets: [
     [
       'classic',
@@ -87,9 +76,14 @@ module.exports = {
           trackingID: 'G-369GEFT8FG',
         },
         docs: {
+          breadcrumbs: !hasThemeRefresh,
           routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.cbhq.net/frontend/cds/tree/master/apps/website/',
+          sidebarPath: hasThemeRefresh
+            ? require.resolve('./sidebarsRefresh.js')
+            : require.resolve('./sidebars.js'),
+          editUrl: hasThemeRefresh
+            ? undefined
+            : 'https://github.cbhq.net/frontend/cds/tree/master/apps/website/',
           sidebarCollapsible: true,
         },
         theme: {
@@ -112,10 +106,7 @@ module.exports = {
       },
     ],
     // Must run last!
-    () => ({
-      name: 'cds-docusaurus-plugin',
-      configureWebpack: configureForDocusaurus,
-    }),
+    webpackPlugin,
   ],
   clientModules: [require.resolve('./global.ts')],
 };
