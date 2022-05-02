@@ -14,6 +14,7 @@ type BuildPackageOptions = {
   babelExtensions: string[];
   babelIgnore: string[];
   typescriptConfig: string;
+  replacePackageJson?: boolean;
 };
 
 type PackageArgs = {
@@ -246,6 +247,7 @@ export default async function buildPackage(options: BuildPackageOptions, context
     babelExtensions,
     babelIgnore = [],
     typescriptConfig,
+    replacePackageJson = true,
   } = options;
 
   const destinationDir = path.join(context.root, dest);
@@ -280,7 +282,9 @@ export default async function buildPackage(options: BuildPackageOptions, context
 
   await copyFiles({ destinationDir, projectDir, staticFilesToCopy });
 
-  await replacePackageVersions(context, destinationDir);
+  if (replacePackageJson) {
+    await replacePackageVersions(context, destinationDir);
+  }
 
   return Promise.resolve({ success });
 }

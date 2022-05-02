@@ -12,7 +12,8 @@
         "babelConfig": "./babel.build.config.js",
         "babelExtensions": [".ts", ".tsx"],
         "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
-        "typescriptConfig": "packages/docusaurus-plugin-docgen/tsconfig.build.json"
+        "typescriptConfig": "packages/docusaurus-plugin-docgen/tsconfig.build.json",
+        "replacePackageJson": false
       }
     },
     "package": {
