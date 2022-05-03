@@ -80,12 +80,26 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
         }
       };
 
+      if (event.key === 'Home') {
+        event.preventDefault();
+        firstElement.focus();
+        return;
+      }
+
+      if (event.key === 'End') {
+        event.preventDefault();
+        lastElement.focus();
+        return;
+      }
+
       if (activeElement === lastElement) {
         handleLastElement();
+        return;
       }
 
       if (activeElement === firstElement) {
         handleFirstElement();
+        return;
       }
 
       if (
@@ -101,16 +115,6 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
         activeElementIndex
       ) {
         focusPrevElement();
-      }
-
-      if (event.key === 'Home') {
-        firstElement.focus();
-        event.preventDefault();
-      }
-
-      if (event.key === 'End') {
-        lastElement.focus();
-        event.preventDefault();
       }
     },
     [],

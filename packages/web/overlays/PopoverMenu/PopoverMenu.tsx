@@ -4,6 +4,7 @@ import React, {
   useCallback,
   useEffect,
   useImperativeHandle,
+  useMemo,
   useRef,
 } from 'react';
 import { createPortal } from 'react-dom';
@@ -12,6 +13,7 @@ import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { ForwardedRef, PopoverMenuBaseProps, PopoverMenuRefProps } from '@cbhq/cds-common/types';
 import { generateRandomId, isDevelopment } from '@cbhq/cds-utils';
 
+import { SelectProvider } from '../../controls/selectContext';
 import { HStack } from '../../layout';
 import { isSSR } from '../../utils/browser';
 
@@ -57,12 +59,22 @@ export const PopoverMenu = memo(
       searchEnabled,
       ...props,
     });
-    const { handlePopoverMenuBlur, selectOptionRef, popoverMenuRef } = context;
+    const { handlePopoverMenuBlur, selectOptionRef, popoverMenuRef, handleExitMenu } = context;
+
+    const selectContext = useMemo(
+      () => ({
+        onChange,
+        value,
+        handleCloseMenu: handleExitMenu,
+      }),
+      [handleExitMenu, onChange, value],
+    );
 
     const containerPrefix = 'cds-popover-menu-container-';
     // have to store it in a ref because PopperJS renders twice on mount causing issues with createPortal grabbing the id
     const containerId = useRef<string>(generateRandomId(containerPrefix));
     const popoverPortalZIndex = zIndex.overlays.portal + zIndex.overlays.popoverMenu;
+    const valueRef = useRef<string | undefined>(value);
 
     const focusSelectOption = useCallback(() => {
       if (selectOptionRef.current) {
@@ -82,6 +94,13 @@ export const PopoverMenu = memo(
         focusSelectOption();
       }
     }, [focusSelectOption, searchEnabled, visible]);
+
+    useEffect(() => {
+      if (valueRef.current !== value) {
+        handleExitMenu();
+        valueRef.current = value;
+      }
+    }, [handleExitMenu, value]);
 
     const renderContent = () => {
       // eslint-disable-next-line no-restricted-globals
@@ -112,14 +131,16 @@ export const PopoverMenu = memo(
     }
 
     return (
-      <PopoverProvider value={context}>
-        <HStack position="relative" height="100%" width={flush ? '100%' : 'auto'} {...props}>
-          {triggerNode}
-          <div id={containerId.current} style={{ zIndex: popoverPortalZIndex }}>
-            {visible && renderContent()}
-          </div>
-        </HStack>
-      </PopoverProvider>
+      <SelectProvider value={selectContext}>
+        <PopoverProvider value={context}>
+          <HStack position="relative" height="100%" width={flush ? '100%' : 'auto'} {...props}>
+            {triggerNode}
+            <div id={containerId.current} style={{ zIndex: popoverPortalZIndex }}>
+              {visible && renderContent()}
+            </div>
+          </HStack>
+        </PopoverProvider>
+      </SelectProvider>
     );
   }),
 );

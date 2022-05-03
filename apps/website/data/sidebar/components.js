@@ -175,7 +175,6 @@ module.exports = {
         'components/overlays/ModalFooter/modal-footer',
         'components/overlays/ModalHeader/modal-header',
         'components/overlays/FullscreenModal/fullscreen-modal',
-        'components/overlays/MenuItem/menu-item',
         'components/overlays/PopoverMenu/popover-menu',
         'components/overlays/PopoverTrigger/popover-trigger',
         'components/overlays/PopoverTriggerWrapper/popover-trigger-wrapper',

@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, memo, ReactElement, useCallback, useEffect } from 'react';
+import React, { ForwardedRef, forwardRef, memo, ReactNode, useCallback, useEffect } from 'react';
 import { useToggler } from '@cbhq/cds-common';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { SelectBaseProps } from '@cbhq/cds-common/types';
@@ -6,15 +6,13 @@ import { SelectBaseProps } from '@cbhq/cds-common/types';
 import { useRotateAnimation } from '../animation/useRotateAnimation';
 import { HStack } from '../layout/HStack';
 import { PopoverMenu } from '../overlays';
-import { MenuItemProps } from '../overlays/PopoverMenu/MenuItem';
 import { PopoverTriggerWrapper } from '../overlays/PopoverMenu/PopoverTriggerWrapper';
-import { LinkableProps } from '../system';
 
 import { TextInputFocusVariantContext } from './context';
 import { SelectTrigger } from './SelectTrigger';
 
 export type SelectProps = {
-  children: ReactElement<MenuItemProps & LinkableProps>[];
+  children: ReactNode;
 } & SelectBaseProps;
 
 export const Select = memo(

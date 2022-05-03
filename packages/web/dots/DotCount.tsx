@@ -10,6 +10,7 @@ import { parseDotCountMaxOverflow } from '@cbhq/cds-common/utils/parseDotCountMa
 
 import { usePalette } from '../hooks/usePalette';
 import { TextCaption } from '../typography/TextCaption';
+import { handlePreventPropagation } from '../utils/eventHandlers';
 
 import { dotRootContainerStyles, getTransform } from './dotStyles';
 
@@ -51,10 +52,12 @@ export const DotCount = memo(
       >
         {children}
         {count > 0 && (
+          // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
           <div
             className={dotCountContentLinaria}
             data-testid="dotcount-outer-container"
             style={styles}
+            onClick={handlePreventPropagation}
           >
             <TextCaption align="center" as="p" color="primaryForeground">
               {parseDotCountMaxOverflow(count)}

@@ -15,7 +15,7 @@ export type AccessibleControlledReturnType = {
 };
 
 /** hook that generates unique aria labels and attributes for subject that controls the visibility of content */
-export const useA11yPopover = (
+export const usePopoverA11y = (
   isVisible: boolean,
   isDropdown: boolean,
   accessibilityLabel?: string,

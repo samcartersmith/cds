@@ -4,6 +4,7 @@ import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
 
 import { usePalette } from '../hooks/usePalette';
+import { handlePreventPropagation } from '../utils/eventHandlers';
 
 import { dotRootContainerStyles, getTransform } from './dotStyles';
 
@@ -34,7 +35,13 @@ export const DotStatusColor = memo(
         {...props}
       >
         {children}
-        <div data-testid="dotstatuscolor-inner-container" style={styles} />
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,
+        jsx-a11y/no-static-element-interactions */}
+        <div
+          data-testid="dotstatuscolor-inner-container"
+          style={styles}
+          onClick={handlePreventPropagation}
+        />
       </div>
     );
   },

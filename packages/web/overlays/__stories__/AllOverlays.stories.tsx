@@ -24,7 +24,6 @@ import { Pressable } from '../../system/Pressable';
 import { TextBody, TextDisplay3 } from '../../typography';
 import {
   Alert,
-  MenuItem,
   Modal,
   ModalBody,
   ModalFooter,
@@ -46,7 +45,6 @@ const { NavigationMenu, FeedCardMenu } = popoverMenuBuilder({
   VStack,
   HStack,
   SelectOption,
-  MenuItem,
   IconButton,
   NavigationBar,
   NavigationTitle,

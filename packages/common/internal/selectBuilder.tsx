@@ -1,4 +1,4 @@
-import React, { ComponentType, ReactElement, useState } from 'react';
+import React, { ComponentType, ReactNode, RefAttributes, useState } from 'react';
 
 import { useToggler } from '../hooks/useToggler';
 import type {
@@ -17,20 +17,18 @@ import type {
 
 type LinkableProps = {
   onPress?: null | ((event: unknown) => void) | undefined;
+  onKeyPress?: null | ((event: unknown) => void) | undefined;
 };
 
-type MenuItemProps = {
-  value: string;
-  key?: string;
-  ref?: ((ref: HTMLElement) => void) | undefined;
-  onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
-  selected?: boolean;
-} & LinkableProps;
-
-type SelectOptionProps = SelectOptionBaseProps & Pick<MenuItemProps, 'value' | 'key'>;
+export type SelectOptionProps = {
+  /** Prevent menu from closing when an option is selected */
+  disableCloseOnOptionChange?: boolean;
+} & SelectOptionBaseProps &
+  RefAttributes<HTMLElement> &
+  LinkableProps;
 
 export type SelectProps = {
-  children: ReactElement<MenuItemProps>[];
+  children: ReactNode;
   onBlur?: NoopFn;
 } & SelectBaseProps;
 

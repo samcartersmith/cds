@@ -2,7 +2,6 @@ import { performanceBenchmarkBuilder } from '@cbhq/cds-common/internal/performan
 import { CreateSelectStoriesProps, selectBuilder } from '@cbhq/cds-common/internal/selectBuilder';
 
 import { VStack } from '../../layout/VStack';
-import { MenuItem } from '../../overlays/PopoverMenu/MenuItem';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { InputIcon } from '../InputIcon';
 import { Select } from '../Select';
@@ -15,7 +14,6 @@ export default {
 
 const components = {
   Select,
-  MenuItem,
   VStack,
   SelectOption,
   ThemeProvider,

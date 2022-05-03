@@ -26,13 +26,6 @@ type LinkableProps = {
   onKeyDown?: React.KeyboardEventHandler<Element>;
 };
 
-type MenuItemProps = {
-  value: string;
-  key?: string;
-  ref?: ((ref: HTMLElement) => void) | undefined;
-  onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
-} & LinkableProps;
-
 export type PopoverTriggerProps = {
   children: ReactElement;
 };
@@ -61,7 +54,7 @@ export type CreatePopoverMenuStoriesProps = {
   PopoverTriggerWrapper: ComponentType<PopoverTriggerWrapperProps>;
   VStack: ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
   HStack: ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
-  SelectOption: ComponentType<SelectOptionBaseProps & Pick<MenuItemProps, 'value' | 'key'>>;
+  SelectOption: ComponentType<SelectOptionBaseProps & LinkableProps>;
   IconButton: ComponentType<IconButtonBaseProps & SharedProps>;
   NavigationBar: ComponentType<NavigationBarProps>;
   NavigationTitle: ComponentType<NavigationTitleProps>;

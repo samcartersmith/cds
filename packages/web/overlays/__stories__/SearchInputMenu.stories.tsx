@@ -15,7 +15,7 @@ import { Icon } from '../../icons';
 import { HStack } from '../../layout/HStack';
 import { Pressable } from '../../system/Pressable';
 import { TextCaption, TextLabel1 } from '../../typography';
-import { MenuItem, PopoverMenu, PopoverTrigger } from '../index';
+import { PopoverMenu, PopoverTrigger } from '../index';
 
 const options = [
   'Option 1',
@@ -100,14 +100,12 @@ export const SearchInputMenu = () => {
   // eslint-disable-next-line react/no-unstable-nested-components
   const ShowAllResultsButton = () => {
     return (
-      <MenuItem disableCloseOnOptionChange value="" onPress={handleClear}>
-        <Pressable backgroundColor="background" noScaleOnPress block onPress={handleClear}>
-          <HStack alignItems="center" spacingVertical={2} spacingHorizontal={2} gap={1}>
-            <TextLabel1 as="p">View all results</TextLabel1>
-            <Icon size="xs" name="forwardArrow" color="foreground" />
-          </HStack>
-        </Pressable>
-      </MenuItem>
+      <Pressable backgroundColor="background" noScaleOnPress block onPress={handleClear}>
+        <HStack alignItems="center" spacingVertical={2} spacingHorizontal={2} gap={1}>
+          <TextLabel1 as="p">View all results</TextLabel1>
+          <Icon size="xs" name="forwardArrow" color="foreground" />
+        </HStack>
+      </Pressable>
     );
   };
 

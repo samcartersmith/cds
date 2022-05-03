@@ -10,14 +10,14 @@ export const usePopoverPosition = (
   popover: HTMLDivElement | null,
   dropdownPositionConfig?: DropdownPositionConfig,
 ) => {
-  const getDropdownPositionConfig = dropdownPositionConfig ?? defaultDropdownPositionConfig;
+  const actualDropdownPositionConfig = dropdownPositionConfig ?? defaultDropdownPositionConfig;
   const { styles: popperStyles, attributes: popperAttributes } = usePopper(trigger, popover, {
-    placement: getDropdownPositionConfig.placement,
+    placement: actualDropdownPositionConfig.placement,
     modifiers: [
       {
         name: 'offset',
         options: {
-          offset: getDropdownPositionConfig.offset,
+          offset: actualDropdownPositionConfig.offset,
         },
       },
     ],

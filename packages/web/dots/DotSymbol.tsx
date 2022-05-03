@@ -3,6 +3,7 @@ import { css } from 'linaria';
 import { DotBaseProps, useIconSize } from '@cbhq/cds-common';
 
 import { RemoteImage } from '../media/RemoteImage';
+import { handlePreventPropagation } from '../utils/eventHandlers';
 
 import { dotRootContainerStyles, getTransform } from './dotStyles';
 
@@ -32,7 +33,12 @@ export const DotSymbol = memo(
         {...props}
       >
         {children}
-        <div style={pinStyles} data-testid="dotsymbol-inner-container">
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+        <div
+          onClick={handlePreventPropagation}
+          style={pinStyles}
+          data-testid="dotsymbol-inner-container"
+        >
           <RemoteImage
             dangerouslySetClassName={imageBorderClassName}
             shape="circle"

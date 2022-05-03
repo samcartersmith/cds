@@ -9,7 +9,6 @@ import { HStack, VStack } from '../../layout';
 import { Divider } from '../../layout/Divider';
 import { NavigationBar, NavigationTitle } from '../../navigation';
 import { Pressable } from '../../system/Pressable';
-import { MenuItem } from '../PopoverMenu/MenuItem';
 import { PopoverMenu } from '../PopoverMenu/PopoverMenu';
 import { PopoverTrigger } from '../PopoverMenu/PopoverTrigger';
 import { PopoverTriggerWrapper } from '../PopoverMenu/PopoverTriggerWrapper';
@@ -30,7 +29,6 @@ const components = {
   VStack,
   HStack,
   SelectOption,
-  MenuItem,
   IconButton,
   NavigationBar,
   NavigationTitle,
