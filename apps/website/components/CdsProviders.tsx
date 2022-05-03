@@ -50,15 +50,15 @@ export const CdsProviders: React.FC = memo(({ children }) => {
   const { colorMode } = useColorMode();
   const isDarkTheme = colorMode === 'dark';
   return (
-    <PortalProvider>
-      <FeatureFlagProvider frontier flexGap>
-        <RootScaleProvider>
-          <ThemeProvider display="contents" spectrum={isDarkTheme ? 'dark' : 'light'}>
+    <FeatureFlagProvider frontier flexGap>
+      <RootScaleProvider>
+        <ThemeProvider display="contents" spectrum={isDarkTheme ? 'dark' : 'light'}>
+          <PortalProvider>
             <div className={overrides}>{children}</div>
-          </ThemeProvider>
-        </RootScaleProvider>
-      </FeatureFlagProvider>
-    </PortalProvider>
+          </PortalProvider>
+        </ThemeProvider>
+      </RootScaleProvider>
+    </FeatureFlagProvider>
   );
 });
 
