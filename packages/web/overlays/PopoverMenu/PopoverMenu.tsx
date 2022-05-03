@@ -7,7 +7,7 @@ import React, {
   useRef,
 } from 'react';
 import { createPortal } from 'react-dom';
-import { popoverMenuMaxHeight } from '@cbhq/cds-common/tokens/menu';
+import { dropdownMaxHeight } from '@cbhq/cds-common/tokens/menu';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { ForwardedRef, PopoverMenuBaseProps, PopoverMenuRefProps } from '@cbhq/cds-common/types';
 import { generateRandomId, isDevelopment } from '@cbhq/cds-utils';
@@ -27,7 +27,7 @@ export const PopoverMenu = memo(
       onChange,
       value,
       width,
-      maxHeight = popoverMenuMaxHeight,
+      maxHeight = dropdownMaxHeight,
       visible,
       flush,
       openMenu,

@@ -3,6 +3,7 @@ import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from 'linaria';
 import { ForwardedRef } from '@cbhq/cds-common';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { inputStackGap } from '@cbhq/cds-common/tokens/input';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { durations } from '@cbhq/cds-common/tokens/motion';
 import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
@@ -121,7 +122,7 @@ export const InputStack = memo(
     }, [variant, palette, borderColorFocused, inputBorderRadius]);
 
     return (
-      <VStack testID={testID} width={width} gap={0.5} {...props}>
+      <VStack testID={testID} width={width} gap={inputStackGap} {...props}>
         {!!labelNode && (
           <>{typeof labelNode === 'string' ? <InputLabel>{labelNode}</InputLabel> : labelNode}</>
         )}

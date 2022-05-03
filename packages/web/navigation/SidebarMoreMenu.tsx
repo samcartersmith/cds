@@ -1,5 +1,5 @@
 import React, { memo, ReactNode, useMemo } from 'react';
-import { PopoverMenuBaseProps, PopoverPositionConfig, SharedProps } from '@cbhq/cds-common';
+import { DropdownPositionConfig, PopoverMenuBaseProps, SharedProps } from '@cbhq/cds-common';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import { sidebarMenuMaxWidth, sidebarMenuMinWidth } from '@cbhq/cds-common/tokens/menu';
 import { sidebarGutter, sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
@@ -42,7 +42,7 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
   const popoverPositionConfig = {
     offset: [0, calculateMoreMenuOffset + sidebarGutter],
     placement: 'right-start',
-  } as PopoverPositionConfig;
+  } as DropdownPositionConfig;
 
   const baseTrigger = useMemo(
     () => (

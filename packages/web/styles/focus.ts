@@ -36,7 +36,6 @@ export const focusRing = css`
 const INSET_FOCUS_RING_PADDING = 0;
 
 /**
- * insetFocusRing should only be used in a MenuItem or when overflow is hidden.
  * insetFocusRing uses the focus-visible polyfill (since Safari does not yet support focus-visible)
  * @link https://github.com/WICG/focus-visible
  * this polyfill detects whether an interaction would have triggered the focus-visible property

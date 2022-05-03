@@ -1,5 +1,5 @@
 import React from 'react';
-import { defaultPopoverPositionConfig } from '@cbhq/cds-common/tokens/menu';
+import { defaultDropdownPositionConfig } from '@cbhq/cds-common/tokens/menu';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { isProduction } from '@cbhq/cds-utils';
 
@@ -43,7 +43,7 @@ const defaultContext: PopoverContextType = {
   handlePopoverMenuBlur: NoopFn,
   onChange: NoopFn,
   onBlur: NoopFn,
-  popoverPositionConfig: defaultPopoverPositionConfig,
+  popoverPositionConfig: defaultDropdownPositionConfig,
   visible: false,
   searchEnabled: false,
   openMenu: NoopFn,

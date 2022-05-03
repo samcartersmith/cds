@@ -1,6 +1,6 @@
 import { usePopper } from 'react-popper';
-import { defaultPopoverPositionConfig } from '@cbhq/cds-common/tokens/menu';
-import { PopoverPositionConfig } from '@cbhq/cds-common/types/PopoverMenuBaseProps';
+import { defaultDropdownPositionConfig } from '@cbhq/cds-common/tokens/menu';
+import { DropdownPositionConfig } from '@cbhq/cds-common/types/PopoverMenuBaseProps';
 
 /** TODO: this currently uses PopperJS which causes multiple rerenders since it relies on callback refs
  * Investigating a more performance solution
@@ -8,16 +8,16 @@ import { PopoverPositionConfig } from '@cbhq/cds-common/types/PopoverMenuBasePro
 export const usePopoverPosition = (
   trigger: HTMLElement | null,
   popover: HTMLDivElement | null,
-  popoverPositionConfig?: PopoverPositionConfig,
+  dropdownPositionConfig?: DropdownPositionConfig,
 ) => {
-  const getPopoverPositionConfig = popoverPositionConfig ?? defaultPopoverPositionConfig;
+  const getDropdownPositionConfig = dropdownPositionConfig ?? defaultDropdownPositionConfig;
   const { styles: popperStyles, attributes: popperAttributes } = usePopper(trigger, popover, {
-    placement: getPopoverPositionConfig.placement,
+    placement: getDropdownPositionConfig.placement,
     modifiers: [
       {
         name: 'offset',
         options: {
-          offset: getPopoverPositionConfig.offset,
+          offset: getDropdownPositionConfig.offset,
         },
       },
     ],

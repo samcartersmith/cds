@@ -1,5 +1,5 @@
 import { MutableRefObject, useCallback, useEffect } from 'react';
-import { PopoverPositionConfig } from '@cbhq/cds-common';
+import { DropdownPositionConfig } from '@cbhq/cds-common';
 import {
   animateMenuOpacityInConfig,
   animateMenuOpacityOutConfig,
@@ -12,7 +12,7 @@ import { Animated } from '../../animation/Animated';
 export const usePopoverMenuAnimation = (
   triggerAnimation: boolean,
   ref: MutableRefObject<HTMLElement | null>,
-  popoverPositionConfig?: PopoverPositionConfig,
+  popoverPositionConfig?: DropdownPositionConfig,
 ) => {
   const isHorizontal = popoverPositionConfig?.placement.includes('right' || 'left');
   const translate = isHorizontal ? 'translateX' : 'translateY';
