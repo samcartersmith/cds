@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
 import React, { memo, useMemo, useRef } from 'react';
 import { NoopFn } from '@cbhq/cds-common';
 
@@ -62,7 +61,7 @@ export const TableRow = memo(
             {children}
           </TableCell>
         ) : (
-          <>{children}</>
+          children
         )}
       </tr>
     );
