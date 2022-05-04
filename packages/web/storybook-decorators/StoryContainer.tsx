@@ -3,6 +3,7 @@ import React, { memo, useMemo } from 'react';
 import { Story } from '@storybook/react';
 import { css } from 'linaria';
 import merge from 'lodash/merge';
+import { useDarkMode } from 'storybook-dark-mode';
 import { sanitizeProps, StoryBuilderConfig } from '@cbhq/cds-common/internal/utils/storyBuilder';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { FeatureFlagProvider } from '@cbhq/cds-common/system/FeatureFlagProvider';
@@ -33,6 +34,7 @@ export function StoryContainer<Props>(
   StoryComponent: Story,
   context: StoryBuilderConfig<Props, { children?: React.ReactNode }>,
 ) {
+  const isDarkMode = useDarkMode();
   const stories = context.parameters?.stories;
   const Container = memo(() => {
     const contents = useMemo(() => {
@@ -59,7 +61,7 @@ export function StoryContainer<Props>(
         <ThemeProvider
           display="contents"
           scale={context.args?.scale}
-          spectrum={context.args?.spectrum}
+          spectrum={context.args?.spectrum ?? (isDarkMode ? 'dark' : 'light')}
         >
           <PortalProvider>
             <Group {...wrapperProps}>
