@@ -1,28 +1,17 @@
 import { useMemo, useState } from 'react';
 import { usePopper as useExternalPopper } from 'react-popper';
-import { Options as PopperOptions, Placement } from '@popperjs/core';
-import { SpacingScale } from '@cbhq/cds-common/types';
+import { Options as PopperOptions } from '@popperjs/core';
 
 import { useSpacingValue } from '../../hooks/useSpacingValue';
 
-const DEFAULT_POPPER_GAP = 0;
-const DEFAULT_POPPER_SKID = 0;
+import { PopoverContentPositionConfig } from './PositionedOverlayProps';
 
-type UsePopperParams = {
-  placement: Placement;
-  skid?: SpacingScale;
-  gap?: SpacingScale;
-};
-
-export const usePopper = ({
-  placement,
-  skid = DEFAULT_POPPER_GAP,
-  gap = DEFAULT_POPPER_SKID,
-}: UsePopperParams) => {
+export const usePopper = ({ placement, skid, gap, offsetGap }: PopoverContentPositionConfig) => {
   const [subject, setSubject] = useState<HTMLDivElement | null>(null);
   const [popper, setPopper] = useState<HTMLDivElement | null>(null);
-  const calculatedSkid = useSpacingValue(skid);
-  const calculatedGap = useSpacingValue(gap);
+  const calculatedSkid = useSpacingValue(skid ?? 0);
+  const calculatedGap = useSpacingValue(gap ?? 0);
+  const getOffsetGap = offsetGap && calculatedGap - offsetGap;
 
   const popperOptions: Partial<PopperOptions> = useMemo(() => {
     return {
@@ -31,12 +20,12 @@ export const usePopper = ({
         {
           name: 'offset',
           options: {
-            offset: [calculatedSkid, calculatedGap],
+            offset: [calculatedSkid, getOffsetGap ?? calculatedGap],
           },
         },
       ],
     };
-  }, [calculatedGap, placement, calculatedSkid]);
+  }, [placement, calculatedSkid, getOffsetGap, calculatedGap]);
 
   const { styles: popperStyles, attributes: popperAttributes } = useExternalPopper(
     subject,

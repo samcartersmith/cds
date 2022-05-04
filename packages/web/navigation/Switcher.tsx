@@ -18,7 +18,10 @@ import { ModalWrapper } from '../overlays/Modal/ModalWrapper';
 import { useOverlayAnimation } from '../overlays/Overlay/useOverlayAnimation';
 import { usePopoverMenuAnimation } from '../overlays/PopoverMenu/usePopoverMenuAnimation';
 import { PositionedOverlay } from '../overlays/positionedOverlay/PositionedOverlay';
-import { PositionedOverlayProps } from '../overlays/positionedOverlay/PositionedOverlayProps';
+import {
+  PopoverContentPositionConfig,
+  PositionedOverlayProps,
+} from '../overlays/positionedOverlay/PositionedOverlayProps';
 import { transparentScrollbar } from '../styles/scrollbar';
 import { cx } from '../utils/linaria';
 
@@ -152,6 +155,10 @@ const ModalSwitcher = memo(
   },
 );
 
+const contentPositionConfig: PopoverContentPositionConfig = {
+  gap: switcherGutter,
+};
+
 const PositionedOverlaySwitcher = memo(
   ({
     children,
@@ -179,7 +186,7 @@ const PositionedOverlaySwitcher = memo(
         overlayRef={overlayRef}
         visible={visible}
         showOverlay
-        gap={switcherGutter}
+        contentPosition={contentPositionConfig}
         disablePortal={disablePortal}
         content={
           <SwitcherContent

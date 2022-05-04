@@ -32,9 +32,16 @@ export const Tooltip = ({
     });
   }, [children]);
 
+  const contentPosition = useMemo(
+    () => ({
+      placement,
+    }),
+    [placement],
+  );
+
   return (
     <PositionedOverlay
-      placement={placement}
+      contentPosition={contentPosition}
       disablePortal={disablePortal}
       onMouseEnter={handleOnMouseEnter}
       onMouseLeave={handleOnMouseLeave}

@@ -1,6 +1,23 @@
-import { ReactNode, RefObject } from 'react';
+import React, { ReactNode, RefObject } from 'react';
 import { Placement } from '@popperjs/core';
-import { SpacingScale } from '@cbhq/cds-common/types';
+import { SharedAccessibilityProps, SharedProps, SpacingScale } from '@cbhq/cds-common/types';
+
+export type PopoverContentPositionConfig = {
+  /**
+   * Custom placement config
+   * @default bottom
+   */
+  placement?: Placement;
+  /** Offset content placement on the x axis */
+  skid?: SpacingScale;
+  /** Offset content placement on the y axis */
+  gap?: SpacingScale;
+  /** This should only be used if there is content within the subject that needs to be overlaid
+   * eg: helperText below a Select input
+   * This value will be subtracted from the gap
+   */
+  offsetGap?: number;
+};
 
 export type PositionedOverlayProps = {
   content: ReactNode;
@@ -26,20 +43,14 @@ export type PositionedOverlayProps = {
   /** Callback fired when the subject is focused */
   onFocus?: () => void;
   /** Callback fired when the subject or content is blurred */
-  onBlur?: () => void;
+  onBlur?: (event?: React.FocusEvent) => void;
   /** Callback fired when a mouse down event is fired on the subject */
   onMouseDown?: (event: React.MouseEvent) => void;
   /** Invert the the color spectrum for the Popover content */
   invertPopoverSpectrum?: boolean;
   /** Controls visibility of the Popover content */
   visible: boolean;
-  /**
-   * Custom placement config
-   * @default bottom
-   */
-  placement?: Placement;
-  /** Offset content placement on the x axis */
-  skid?: SpacingScale;
-  /** Offset content placement on the y axis */
-  gap?: SpacingScale;
-};
+  /** Override content positioning defaults */
+  contentPosition?: PopoverContentPositionConfig;
+} & Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
+  SharedProps;
