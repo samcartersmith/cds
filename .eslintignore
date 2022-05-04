@@ -5,6 +5,7 @@ OWNERS
 Makefile
 .eslintrc.js
 next-env.d.ts
+__mocks__
 
 # Nx/Builds
 **/dts/
