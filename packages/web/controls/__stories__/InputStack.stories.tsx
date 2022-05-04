@@ -1,5 +1,3 @@
-import { css } from 'linaria';
-
 import { Box } from '../../layout/Box';
 import { TextBody } from '../../typography/TextBody';
 import { InputStack } from '../InputStack';
@@ -8,10 +6,6 @@ export default {
   title: 'Core Components/InputStack',
   component: InputStack,
 };
-
-const borderStyle = css`
-  border-width: 1px;
-`;
 
 export const InputStackExamples = () => (
   <InputStack
@@ -50,7 +44,6 @@ export const InputStackExamples = () => (
         <TextBody as="p">HelperText</TextBody>
       </Box>
     }
-    borderStyle={borderStyle}
     variant="primary"
   />
 );
@@ -87,7 +80,6 @@ export const Append = () => (
         <TextBody as="p">HelperText</TextBody>
       </Box>
     }
-    borderStyle={borderStyle}
     variant="primary"
   />
 );
@@ -124,7 +116,6 @@ export const Prepend = () => (
         <TextBody as="p">HelperText</TextBody>
       </Box>
     }
-    borderStyle={borderStyle}
     variant="primary"
   />
 );

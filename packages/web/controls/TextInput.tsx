@@ -8,7 +8,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { css } from 'linaria';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
@@ -24,10 +23,6 @@ import { HelperText } from './HelperText';
 import { InputLabel } from './InputLabel';
 import { InputStack } from './InputStack';
 import { NativeInput } from './NativeInput';
-
-const borderlessStyle = css`
-  border-width: 0;
-`;
 
 export type TextInputProps = {
   /**
@@ -174,7 +169,7 @@ export const TextInput = memo(
           variant={variant}
           borderRadius={borderRadius}
           height={height}
-          borderStyle={!bordered ? borderlessStyle : ''}
+          borderWidth={bordered ? 'input' : 'none'}
           // If bordered is true, we want disableFocusedStyle = false
           // If bordered is false, we want disableFocusedStyle = true
           disableFocusedStyle={!bordered}
