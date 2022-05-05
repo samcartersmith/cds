@@ -1,9 +1,9 @@
 import { memo } from 'react';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
+import { Dropdown } from '../dropdown';
 import { HStack, VStack } from '../layout';
 import { Avatar } from '../media/Avatar';
-import { Switcher } from '../navigation/Switcher';
+import { PopoverContentPositionConfig } from '../overlays/positionedOverlay/PositionedOverlayProps';
 import { FeatureFlagProvider } from '../system';
 import { Pressable } from '../system/Pressable';
 import { TextHeadline, TextLabel1, TextLabel2 } from '../typography';
@@ -43,20 +43,26 @@ const Subject = ({ title, description }: SwitcherSubjectProps) => {
   );
 };
 
+const switcherPositionConfig: PopoverContentPositionConfig = {
+  placement: 'bottom',
+  gap: 1,
+};
+
 const UserSwitcherRecipe = memo(({ children }) => {
-  const [visible, { toggleOn: handleClickSubject, toggleOff: handleClose }] = useToggler(false);
   return (
     <FeatureFlagProvider frontierColor frontierButton>
       <HStack>
-        <Switcher
-          visible={visible}
-          onPressSubject={handleClickSubject}
-          onClose={handleClose}
+        <Dropdown
+          width={400}
+          maxHeight={600}
           content={<UserSwitcherContent />}
           maxWidth={userSwitcherWidth}
+          showOverlay
+          contentPosition={switcherPositionConfig}
+          enableMobileModal
         >
           {children}
-        </Switcher>
+        </Dropdown>
       </HStack>
     </FeatureFlagProvider>
   );

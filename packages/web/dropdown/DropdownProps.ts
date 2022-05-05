@@ -43,7 +43,10 @@ export type DropdownProps = {
    * @default false
    */
   enableSearch?: boolean;
-} & Pick<PositionedOverlayProps, 'content' | 'children' | 'showOverlay' | 'contentPosition'> &
+} & Pick<
+  PositionedOverlayProps,
+  'content' | 'children' | 'showOverlay' | 'contentPosition' | 'block'
+> &
   SharedProps &
   Pick<
     SharedAccessibilityProps,

@@ -1,21 +1,12 @@
-import React, {
-  FocusEvent,
-  KeyboardEvent,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
-import { PopoverMenuRefProps, useToggler } from '@cbhq/cds-common';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { SearchInput } from '../../controls/SearchInput';
 import { SelectOption } from '../../controls/SelectOption';
+import { Dropdown, DropdownRefProps } from '../../dropdown';
 import { Icon } from '../../icons';
 import { HStack } from '../../layout/HStack';
 import { Pressable } from '../../system/Pressable';
 import { TextCaption, TextLabel1 } from '../../typography';
-import { PopoverMenu, PopoverTrigger } from '../index';
 
 const options = [
   'Option 1',
@@ -27,12 +18,11 @@ const options = [
   'Option 7',
 ];
 
-export const SearchInputMenu = () => {
-  const [isVisible, { toggleOn: openMenu, toggleOff: closeMenu }] = useToggler(false);
+const SearchInputMenuRecipe = () => {
+  const dropdownRef = useRef<DropdownRefProps>(null);
   const [selectedValue, setSelectedValue] = useState<string | undefined>(undefined);
   const [searchValue, setSearchValue] = useState<string>();
   const [filteredOptions, setFilteredOptions] = useState<string[]>(options);
-  const popoverMenuRef = useRef<PopoverMenuRefProps | null>(null);
   const shouldShowAllResultsButton =
     filteredOptions.length && filteredOptions.length < options.length;
 
@@ -53,14 +43,9 @@ export const SearchInputMenu = () => {
     setFilteredOptions(filterOptions);
   }, [filterOptions]);
 
-  const renderOptions = useMemo(
-    () => filteredOptions.map((option) => <SelectOption title={option} value={option} />),
-    [filteredOptions],
-  );
-
   const handleSearchInputPress = useCallback(() => {
-    openMenu();
-  }, [openMenu]);
+    dropdownRef.current?.openMenu();
+  }, []);
 
   const handleClear = useCallback(() => {
     setSelectedValue(undefined);
@@ -75,74 +60,70 @@ export const SearchInputMenu = () => {
     [setSearchValue, setSelectedValue],
   );
 
-  const handleKeyDown = useCallback(
-    (event: KeyboardEvent<HTMLInputElement>) => {
-      // when using keyboard navigation and menu is focused,
-      // open it once they start typing
-      if (!isVisible) {
-        openMenu();
-      }
-      // swap out selectedValue with searchValue so it becomes editable again
-      if (selectedValue) {
-        setSelectedValue(undefined);
-      }
-      if (event.key === 'ArrowDown' || event.key === 'Enter') {
-        popoverMenuRef.current?.focusSelectOption();
-      }
-    },
-    [selectedValue, setSelectedValue, openMenu, isVisible],
+  const renderOptions = useMemo(
+    () => filteredOptions.map((option) => <SelectOption title={option} value={option} />),
+    [filteredOptions],
   );
 
-  const handleBlur = useCallback((event: FocusEvent<HTMLElement>) => {
-    popoverMenuRef.current?.handlePopoverMenuBlur(event);
-  }, []);
+  const handleKeyDown = useCallback(() => {
+    // when using keyboard navigation and menu is focused,
+    // open it once they start typing
+    if (!searchValue) {
+      dropdownRef.current?.openMenu();
+    }
+    // swap out selectedValue with searchValue so it becomes editable again
+    if (selectedValue) {
+      setSelectedValue(undefined);
+    }
+  }, [searchValue, selectedValue]);
 
-  // eslint-disable-next-line react/no-unstable-nested-components
-  const ShowAllResultsButton = () => {
-    return (
-      <Pressable backgroundColor="background" noScaleOnPress block onPress={handleClear}>
-        <HStack alignItems="center" spacingVertical={2} spacingHorizontal={2} gap={1}>
-          <TextLabel1 as="p">View all results</TextLabel1>
-          <Icon size="xs" name="forwardArrow" color="foreground" />
-        </HStack>
-      </Pressable>
-    );
-  };
+  const content = useMemo(
+    () => (
+      <>
+        {filteredOptions.length ? (
+          renderOptions
+        ) : (
+          <HStack spacing={3}>
+            <TextCaption as="p">No options were found. </TextCaption>
+          </HStack>
+        )}
+        {shouldShowAllResultsButton ? (
+          <Pressable backgroundColor="background" noScaleOnPress block onPress={handleClear}>
+            <HStack alignItems="center" spacingVertical={2} spacingHorizontal={2} gap={1}>
+              <TextLabel1 as="p">View all results</TextLabel1>
+              <Icon size="xs" name="forwardArrow" color="foreground" />
+            </HStack>
+          </Pressable>
+        ) : null}
+      </>
+    ),
+    [filteredOptions.length, handleClear, renderOptions, shouldShowAllResultsButton],
+  );
 
   return (
-    <PopoverMenu
-      visible={isVisible}
-      openMenu={openMenu}
-      closeMenu={closeMenu}
-      onChange={handleMenuChange}
+    <Dropdown
       value={selectedValue}
+      onChange={handleMenuChange}
       width="100%"
-      flush
-      searchEnabled
-      ref={popoverMenuRef}
+      enableSearch
+      block
+      disableCloseOnOptionChange
+      ref={dropdownRef}
+      content={content}
     >
-      <PopoverTrigger>
-        <SearchInput
-          onChangeText={setSearchValue}
-          value={selectedValue ?? searchValue ?? ''}
-          width="100%"
-          onClear={handleClear}
-          onKeyDown={handleKeyDown}
-          onBlur={handleBlur}
-          onPress={handleSearchInputPress}
-        />
-      </PopoverTrigger>
-      {filteredOptions.length ? (
-        renderOptions
-      ) : (
-        <HStack spacing={3}>
-          <TextCaption as="p">No options were found. </TextCaption>
-        </HStack>
-      )}
-      {shouldShowAllResultsButton ? <ShowAllResultsButton /> : null}
-    </PopoverMenu>
+      <SearchInput
+        onChangeText={setSearchValue}
+        value={selectedValue ?? searchValue ?? ''}
+        width="100%"
+        onClear={handleClear}
+        onKeyDown={handleKeyDown}
+        onPress={handleSearchInputPress}
+      />
+    </Dropdown>
   );
 };
+
+export const SearchInputMenu = () => <SearchInputMenuRecipe />;
 
 export default {
   title: 'Core Components/Recipes/SearchInputMenu',

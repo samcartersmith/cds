@@ -8,7 +8,6 @@ const sectionsToExcludeByLabel = new Set([]);
 // Please alphabetize to avoid merge conflicts
 const componentsToExcludeByLabel = new Set([
   'components/navigation/SidebarMoreMenu/sidebar-more-menu',
-  'components/navigation/Switcher/switcher',
   'components/buttons/TileButton/tile-button',
   'components/buttons/NavigationIconButton/navigation-icon-button',
   'components/overlays/FullscreenModal/fullscreen-modal',

@@ -1,28 +1,19 @@
 import React, { memo, ReactNode, useMemo } from 'react';
-import { DropdownPositionConfig, PopoverMenuBaseProps, SharedProps } from '@cbhq/cds-common';
-import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
+import { SharedProps, SpacingScale } from '@cbhq/cds-common';
 import { sidebarMenuMaxWidth, sidebarMenuMinWidth } from '@cbhq/cds-common/tokens/menu';
 import { sidebarGutter, sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
 
-import {
-  PopoverMenu,
-  PopoverTrigger,
-  PopoverTriggerProps,
-  PopoverTriggerWrapper,
-  Tooltip,
-} from '../overlays';
+import { Dropdown, DropdownProps } from '../dropdown';
+import { Tooltip } from '../overlays';
+import { PopoverContentPositionConfig } from '../overlays/positionedOverlay/PositionedOverlayProps';
 
 import { useSidebarContext } from './SidebarContext';
 import { SidebarItem, SidebarItemProps } from './SidebarItem';
 
 export type SidebarMoreMenuProps = {
   children: ReactNode;
-} & Pick<
-  PopoverMenuBaseProps,
-  'onChange' | 'value' | 'visible' | 'openMenu' | 'closeMenu' | 'onBlur' | 'disablePortal'
-> &
-  Pick<SidebarItemProps, 'active' | 'tooltipContent'> &
-  Pick<PopoverTriggerProps, 'onPress'> &
+} & Pick<DropdownProps, 'value' | 'onBlur' | 'disablePortal' | 'onChange'> &
+  Pick<SidebarItemProps, 'active' | 'tooltipContent' | 'onPress'> &
   SharedProps;
 
 export const SidebarMoreMenu = memo(function SidebarMoreMenu({
@@ -34,49 +25,42 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
   disablePortal,
   ...props
 }: SidebarMoreMenuProps) {
-  const scale = useScaleDensity();
-  const scaleMultiplier = scale === 'dense' ? 4 : 8;
-  const calculateMoreMenuOffset = sidebarHorizontalSpacing * scaleMultiplier;
   const { collapsed } = useSidebarContext();
-
-  const popoverPositionConfig = {
-    offset: [0, calculateMoreMenuOffset + sidebarGutter],
-    placement: 'right-start',
-  } as DropdownPositionConfig;
+  const sidebarGap = (sidebarHorizontalSpacing + sidebarGutter) as SpacingScale;
+  const defaultContentPosition: PopoverContentPositionConfig = useMemo(
+    () => ({
+      gap: sidebarGap,
+      placement: 'right-start',
+    }),
+    [sidebarGap],
+  );
 
   const baseTrigger = useMemo(
-    () => (
-      <PopoverTrigger onPress={onPress}>
-        <SidebarItem title="More" icon="moreVertical" active={active} />
-      </PopoverTrigger>
-    ),
+    () => <SidebarItem onPress={onPress} title="More" icon="moreVertical" active={active} />,
     [onPress, active],
   );
 
   const trigger = useMemo(() => {
     return collapsed && tooltipContent ? (
-      <PopoverTriggerWrapper>
-        <Tooltip placement="right" disablePortal={disablePortal} content={tooltipContent}>
-          {baseTrigger}
-        </Tooltip>
-      </PopoverTriggerWrapper>
+      <Tooltip placement="right" disablePortal={disablePortal} content={tooltipContent}>
+        {baseTrigger}
+      </Tooltip>
     ) : (
       baseTrigger
     );
   }, [collapsed, tooltipContent, disablePortal, baseTrigger]);
 
   return (
-    <PopoverMenu
+    <Dropdown
       minWidth={sidebarMenuMinWidth}
       maxWidth={sidebarMenuMaxWidth}
-      popoverPositionConfig={popoverPositionConfig}
+      contentPosition={defaultContentPosition}
       value={value}
-      flush
       disablePortal={disablePortal}
+      content={children}
       {...props}
     >
       {trigger}
-      {children}
-    </PopoverMenu>
+    </Dropdown>
   );
 });

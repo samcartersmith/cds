@@ -159,7 +159,6 @@ module.exports = {
         'components/navigation/Sidebar/sidebar',
         'components/navigation/SidebarItem/sidebar-item',
         'components/navigation/SidebarMoreMenu/sidebar-more-menu',
-        'components/navigation/Switcher/switcher',
       ],
     },
     {

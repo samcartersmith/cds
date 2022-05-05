@@ -52,5 +52,10 @@ export type PositionedOverlayProps = {
   visible: boolean;
   /** Override content positioning defaults */
   contentPosition?: PopoverContentPositionConfig;
+  /**
+   * Makes the Popover Subject fill the width of the parent container
+   * @default false
+   */
+  block?: boolean;
 } & Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
   SharedProps;

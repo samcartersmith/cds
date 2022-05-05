@@ -10,7 +10,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { SpacingScale } from '@cbhq/cds-common';
+import { NoopFn, SpacingScale } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { dropdownMaxHeight } from '@cbhq/cds-common/tokens/menu';
 
@@ -33,6 +33,8 @@ import { useDropdownAnimation } from './useDropdownAnimation';
 
 type DropdownVisibilityProps = {
   visible: boolean;
+  onOpenMenu: NoopFn;
+  onCloseMenu: NoopFn;
 };
 
 export const ModalDropdown = memo(
@@ -51,35 +53,29 @@ export const ModalDropdown = memo(
         onChange,
         width,
         ...props
-      }: Omit<DropdownProps & DropdownVisibilityProps, 'controlledElementAccessibilityProps'>,
+      }: Omit<DropdownProps, 'controlledElementAccessibilityProps' | 'onOpenMenu' | 'onCloseMenu'> &
+        DropdownVisibilityProps,
       ref: ForwardedRef<DropdownRefProps>,
     ) => {
       const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
         useA11yControlledVisibility(visible, accessibilityLabel);
-      const handleRequestCloseMenu = useCallback(() => {
-        onCloseMenu?.();
-      }, [onCloseMenu]);
-
-      const handleRequestOpenMenu = useCallback(() => {
-        onOpenMenu?.();
-      }, [onOpenMenu]);
 
       const context = useMemo(
         () => ({
           onChange,
           value,
-          handleCloseMenu: handleRequestCloseMenu,
+          handleCloseMenu: onCloseMenu,
         }),
-        [onChange, value, handleRequestCloseMenu],
+        [onChange, value, onCloseMenu],
       );
 
       useImperativeHandle(
         ref,
         () => ({
-          openMenu: handleRequestOpenMenu,
-          closeMenu: handleRequestCloseMenu,
+          openMenu: onOpenMenu,
+          closeMenu: onCloseMenu,
         }),
-        [handleRequestOpenMenu, handleRequestCloseMenu],
+        [onOpenMenu, onCloseMenu],
       );
 
       return (
@@ -87,19 +83,19 @@ export const ModalDropdown = memo(
           <ModalWrapper
             visible={visible}
             disablePortal={disablePortal}
-            onOverlayPress={handleRequestCloseMenu}
+            onOverlayPress={onCloseMenu}
             dangerouslyDisableResponsiveness
             {...controlledElementAccessibilityProps}
           >
-            <FocusTrap onEscPress={handleRequestCloseMenu}>
+            <FocusTrap onEscPress={onCloseMenu}>
               <DropdownContent {...props}>{content}</DropdownContent>
             </FocusTrap>
           </ModalWrapper>
           {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
           <div
             {...triggerAccessibilityProps}
-            onClick={handleRequestOpenMenu}
-            onKeyDown={handleRequestOpenMenu}
+            onClick={onOpenMenu}
+            onKeyDown={onOpenMenu}
             style={{ width }}
           >
             {children}
@@ -191,12 +187,15 @@ const PopoverDropdown = memo(
         onBlur,
         enableSearch,
         contentPosition = defaultPopoverContentPositionConfig,
+        block,
         ...props
-      }: Omit<DropdownProps, 'enableMobileModal'> & DropdownVisibilityProps,
+      }: Omit<DropdownProps, 'enableMobileModal' | 'onOpenMenu' | 'onCloseMenu'> &
+        DropdownVisibilityProps,
       ref: ForwardedRef<DropdownRefProps>,
     ) => {
       const dropdownRef = useRef<HTMLElement | null>(null);
       const subjectRef = useRef<HTMLDivElement | null>(null);
+      const subjectRect = useBoundingClientRect(subjectRef);
 
       const { dropdownHeight } = useResponsiveHeight({
         gap: contentPosition.gap,
@@ -213,14 +212,6 @@ const PopoverDropdown = memo(
         animateIn,
       } = useDropdownAnimation(dropdownRef, contentPosition.placement, showOverlay);
 
-      const handleRequestCloseMenu = useCallback(() => {
-        onCloseMenu?.();
-      }, [onCloseMenu]);
-
-      const handleRequestOpenMenu = useCallback(() => {
-        onOpenMenu?.();
-      }, [onOpenMenu]);
-
       const animateOutAndCloseMenu = useCallback(async () => {
         if (showOverlay) {
           await Animated.parallel([
@@ -229,24 +220,25 @@ const PopoverDropdown = memo(
             animateOverlayOut(),
           ]).start(({ finished }) => {
             if (finished) {
-              handleRequestCloseMenu();
+              onOpenMenu?.();
             }
           });
         } else {
           await Animated.parallel([animatePopoverOverlayOut, animatePopoverTranslateOut]).start(
             ({ finished }) => {
               if (finished) {
-                handleRequestCloseMenu();
+                onCloseMenu?.();
               }
             },
           );
         }
       }, [
-        animateOverlayOut,
+        showOverlay,
         animatePopoverOverlayOut,
         animatePopoverTranslateOut,
-        showOverlay,
-        handleRequestCloseMenu,
+        animateOverlayOut,
+        onOpenMenu,
+        onCloseMenu,
       ]);
 
       const context = useMemo(
@@ -258,43 +250,60 @@ const PopoverDropdown = memo(
         [onChange, value, animateOutAndCloseMenu],
       );
 
+      const memoizedContent = useMemo(() => {
+        return (
+          <DropdownContent
+            ref={dropdownRef}
+            onOpen={animateIn}
+            width={block ? subjectRect.width : width}
+            minWidth={minWidth}
+            maxWidth={maxWidth}
+            height={dropdownHeight.current}
+            maxHeight={maxHeight}
+            enableSearch={enableSearch}
+            value={value}
+          >
+            {content}
+          </DropdownContent>
+        );
+      }, [
+        animateIn,
+        block,
+        content,
+        dropdownHeight,
+        enableSearch,
+        maxHeight,
+        maxWidth,
+        minWidth,
+        subjectRect.width,
+        value,
+        width,
+      ]);
+
       useImperativeHandle(
         ref,
         () => ({
-          openMenu: handleRequestOpenMenu,
-          closeMenu: handleRequestCloseMenu,
+          openMenu: onOpenMenu,
+          closeMenu: onCloseMenu,
         }),
-        [handleRequestOpenMenu, handleRequestCloseMenu],
+        [onOpenMenu, onCloseMenu],
       );
 
       return (
         <SelectProvider value={context}>
           <PositionedOverlay
             // DropdownContent will handle exit animation on menu blur, including pressing the subject again to close
-            onPressSubject={!visible ? handleRequestOpenMenu : undefined}
+            onPressSubject={!visible ? onOpenMenu : undefined}
             onClose={animateOutAndCloseMenu}
             visible={visible}
-            content={
-              <DropdownContent
-                ref={dropdownRef}
-                onOpen={animateIn}
-                width={width}
-                minWidth={minWidth}
-                maxWidth={maxWidth}
-                height={dropdownHeight.current}
-                maxHeight={maxHeight}
-                enableSearch={enableSearch}
-                value={value}
-              >
-                {content}
-              </DropdownContent>
-            }
+            content={memoizedContent}
             showOverlay={showOverlay}
             overlayRef={overlayRef}
             contentPosition={contentPosition ?? defaultPopoverContentPositionConfig}
             testID={testID}
             disablePortal={disablePortal}
             onBlur={onBlur}
+            block={block}
             {...props}
           >
             <div ref={subjectRef} style={{ width: '100%' }}>
@@ -315,12 +324,24 @@ export const Dropdown = memo(
         maxHeight = dropdownMaxHeight,
         enableSearch = false,
         enableMobileModal,
+        onOpenMenu,
+        onCloseMenu,
         ...props
       }: DropdownProps,
       ref: ForwardedRef<DropdownRefProps>,
     ) => {
       const isMobileWeb = useIsMobile();
-      const [visible, { toggleOn: handleOpenMenu, toggleOff: handleCloseMenu }] = useToggler();
+      const [visible, { toggleOn, toggleOff }] = useToggler();
+
+      const handleOpenMenu = useCallback(() => {
+        toggleOn();
+        onOpenMenu?.();
+      }, [onOpenMenu, toggleOn]);
+
+      const handleCloseMenu = useCallback(() => {
+        toggleOff();
+        onCloseMenu?.();
+      }, [onCloseMenu, toggleOff]);
 
       return isMobileWeb && enableMobileModal ? (
         <ModalDropdown

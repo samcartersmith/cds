@@ -7,6 +7,7 @@ import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { usePopoverA11y } from '../../hooks/usePopoverA11y';
 import { Box } from '../../layout/Box';
+import { cx } from '../../utils/linaria';
 import { FocusTrap } from '../FocusTrap';
 import { Overlay } from '../Overlay/Overlay';
 
@@ -26,6 +27,10 @@ const defaultContentPosition: PopoverContentPositionConfig = {
   placement: 'bottom',
   offsetGap: undefined,
 };
+
+const blockStyles = css`
+  width: 100%;
+`;
 
 /**
  * PositionedOverlay is the internal recommended base component used for any overlay that is laid out with respect to a subject.
@@ -50,6 +55,7 @@ export const PositionedOverlay = memo(
     accessibilityLabel,
     testID,
     contentPosition = defaultContentPosition,
+    block = false,
   }: PositionedOverlayProps) => {
     const { subject, setSubject, setPopper, popperStyles, popperAttributes } =
       usePopper(contentPosition);
@@ -96,11 +102,15 @@ export const PositionedOverlay = memo(
     );
 
     return (
-      <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      <div
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        className={block ? blockStyles : undefined}
+      >
         <div
           ref={setSubject}
           onClick={onPressSubject}
-          className={subjectStyle}
+          className={cx(subjectStyle, block ? blockStyles : undefined)}
           onFocus={onFocus}
           onBlur={onBlur}
           onMouseDown={onMouseDown}
