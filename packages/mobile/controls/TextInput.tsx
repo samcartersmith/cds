@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
+import { DimensionValue } from '@cbhq/cds-common/types/DimensionStyles';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 
@@ -27,6 +28,11 @@ export type TextInputProps = {
   value?: RNTextInputProps['value'];
   onChange?: RNTextInputProps['onChange'];
   onChangeText?: RNTextInputProps['onChangeText'];
+  /**
+   * minimum height of input
+   * @default auto
+   */
+  minHeight?: DimensionValue;
 } & TextInputBaseProps &
   Pick<
     SharedAccessibilityProps,

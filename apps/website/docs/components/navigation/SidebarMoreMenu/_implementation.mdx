@@ -17,19 +17,6 @@ Use the active prop to identify the current page
   webOptions={['false', 'true']}
 />
 
-### closeMenu <Badge variant="web" />
-
-Callback that unMounts the Menu
-
-<ApiDetails
-  componentName="SidebarMoreMenu"
-  propertyName="closeMenu"
-  required={true}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
-/>
-
 ### disablePortal <Badge variant="web" />
 
 Does not render the PopoverMenu inside of a portal (react-dom createPortal). Portal is automatically disabled for SSR
@@ -71,7 +58,7 @@ Callback that is fired whenever a select option is selected
 
 ### onPress <Badge variant="web" />
 
-Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement() when rendering the PopoverTrigger
+Handle the press events, ie () => navigate(/trade)
 
 <ApiDetails
   componentName="SidebarMoreMenu"
@@ -79,20 +66,7 @@ Note: the value passed will be ignored on Web because PopoverMenu overrides it w
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['NoopFn']}
-/>
-
-### openMenu <Badge variant="web" />
-
-Callback that mounts the Menu
-
-<ApiDetails
-  componentName="SidebarMoreMenu"
-  propertyName="openMenu"
-  required={true}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
+  webOptions={['() => void']}
 />
 
 ### testID <Badge variant="web" />
@@ -142,17 +116,4 @@ Default selected value, or preselected value
   defaultValue=""
   mobileOptions={[]}
   webOptions={['string']}
-/>
-
-### visible <Badge variant="web" />
-
-Whether Menu is mounted or dismounted
-
-<ApiDetails
-  componentName="SidebarMoreMenu"
-  propertyName="visible"
-  required={true}
-  defaultValue="false"
-  mobileOptions={[]}
-  webOptions={['false', 'true']}
 />
