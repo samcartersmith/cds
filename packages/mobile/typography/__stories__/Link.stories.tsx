@@ -87,6 +87,12 @@ const LinkScreen = function LinkScreen() {
         </Link>
       </Example>
       <Example inline>
+        <TextHeadline>Coinbase link without protocol should crash</TextHeadline>
+        <Link variant="body" to="coinbase.com/">
+          Go to Coinbase
+        </Link>
+      </Example>
+      <Example inline>
         <TextHeadline>Link Typography defaults to headline</TextHeadline>
         <Link to="https://www.coinbase.com/">Go to Coinbase (Headline)</Link>
       </Example>
