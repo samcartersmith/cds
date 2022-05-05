@@ -84,21 +84,21 @@ function AppSwitcherRecipeExample() {
   // Suggested Composition of elements (the "AppSwitcherRecipe"):
   function AppSwitcherRecipe() {
     const switcherPositionConfig = {
-  placement: 'bottom',
-  gap: 1,
-};
+      placement: 'bottom',
+      gap: 1,
+    };
     return (
       <Dropdown
-      width={359}
-      maxHeight={600}
-      showOverlay
-      enableMobileModal
-      contentPosition={switcherPositionConfig}
+        width={359}
+        maxHeight={600}
+        showOverlay
+        enableMobileModal
+        contentPosition={switcherPositionConfig}
         // Please note `AppSwitcherContent` should be thought as a recipe also.
         content={<AppSwitcherContent columns={3} data={appSwitcherData} />}
       >
         <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
-      </Switcher>
+      </Dropdown>
     );
   }
 

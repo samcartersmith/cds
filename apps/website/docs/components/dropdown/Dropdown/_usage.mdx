@@ -33,27 +33,29 @@ function Example() {
   );
 
   return (
-    <VStack spacing={4}>
-      <VStack minHeight={450} width="100%" spacingTop={5} gap={3}>
-        <HStack gap={2}>
-          <Button compact onPress={toggleMobileModal.toggle}>
-            {showMobileModal ? 'Disable' : 'Enable'} Mobile Modal
-          </Button>
-          <Button compact onPress={toggleOverlay.toggle}>
-            {showOverlay ? 'Hide' : 'Show'} Overlay
-          </Button>
-        </HStack>
-        <Dropdown
-          value={value}
-          onChange={setValue}
-          content={content}
-          enableMobileModal={showMobileModal}
-          showOverlay={showOverlay}
-        >
-          <IconButton name="more" />
-        </Dropdown>
+    <PortalProvider>
+      <VStack spacing={4}>
+        <VStack minHeight={450} width="100%" spacingTop={5} gap={3}>
+          <HStack gap={2}>
+            <Button compact onPress={toggleMobileModal.toggle}>
+              {showMobileModal ? 'Disable' : 'Enable'} Mobile Modal
+            </Button>
+            <Button compact onPress={toggleOverlay.toggle}>
+              {showOverlay ? 'Hide' : 'Show'} Overlay
+            </Button>
+          </HStack>
+          <Dropdown
+            value={value}
+            onChange={setValue}
+            content={content}
+            enableMobileModal={showMobileModal}
+            showOverlay={showOverlay}
+          >
+            <IconButton name="more" />
+          </Dropdown>
+        </VStack>
       </VStack>
-    </VStack>
+    </PortalProvider>
   );
 }
 ```
@@ -61,54 +63,6 @@ function Example() {
 ### Control a Dropdown Programmatically
 
 You can control the visibility of a Dropdown menu programmatically using the exposed `openMenu` and `closeMenu` methods on a Dropdown's `ref`.
-
-```jsx live
-function Example() {
-  const dropdownRef = useRef(null);
-  const [value, setValue] = useState(undefined);
-
-  const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
-
-  const handleOpenButtonPress = () =>
-    useCallback(() => {
-      dropdownRef.current.openMenu();
-    }, []);
-  const handleCloseButtonPress = () =>
-    useCallback(() => {
-      dropdownRef.current.closeMenu();
-    }, []);
-
-  const content = useMemo(
-    () => (
-      <>
-        <SectionTitle text="Section Heading" />
-        {options.map((option) => (
-          <SelectOption value={option} title={option} />
-        ))}
-      </>
-    ),
-    [],
-  );
-
-  return (
-    <VStack spacing={4}>
-      <VStack minHeight={450} width="100%" spacingTop={5} gap={3}>
-        <HStack gap={2}>
-          <Button compact onPress={handleOpenButtonPress}>
-            Open
-          </Button>
-          <Button compact onPress={handleCloseButtonPress}>
-            Close
-          </Button>
-        </HStack>
-        <Dropdown value={value} onChange={setValue} content={content} ref={dropdownRef}>
-          <IconButton name="more" />
-        </Dropdown>
-      </VStack>
-    </VStack>
-  );
-}
-```
 
 ### Search Enabled
 
@@ -211,28 +165,30 @@ function SearchInputMenu() {
   );
 
   return (
-    <HStack minHeight={400} spacing={1}>
-      <Dropdown
-        onChange={handleMenuChange}
-        value={selectedValue}
-        width="100%"
-        block
-        searchEnabled
-        disableCloseOnOptionChange
-        ref={dropdownRef}
-        content={content}
-      >
-        <SearchInput
-          onChangeText={setSearchValue}
-          value={selectedValue ? selectedValue : searchValue ? searchValue : ''}
+    <PortalProvider>
+      <HStack minHeight={400} spacing={1}>
+        <Dropdown
+          onChange={handleMenuChange}
+          value={selectedValue}
           width="100%"
-          onClear={handleClear}
-          onKeyDown={handleKeyDown}
-          onPress={handleSearchInputPress}
-          accessibilityLabel="search-input"
-        />
-      </Dropdown>
-    </HStack>
+          block
+          searchEnabled
+          disableCloseOnOptionChange
+          ref={dropdownRef}
+          content={content}
+        >
+          <SearchInput
+            onChangeText={setSearchValue}
+            value={selectedValue ? selectedValue : searchValue ? searchValue : ''}
+            width="100%"
+            onClear={handleClear}
+            onKeyDown={handleKeyDown}
+            onPress={handleSearchInputPress}
+            accessibilityLabel="search-input"
+          />
+        </Dropdown>
+      </HStack>
+    </PortalProvider>
   );
 }
 ```

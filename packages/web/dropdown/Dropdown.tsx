@@ -220,7 +220,7 @@ const PopoverDropdown = memo(
             animateOverlayOut(),
           ]).start(({ finished }) => {
             if (finished) {
-              onOpenMenu?.();
+              onCloseMenu?.();
             }
           });
         } else {
@@ -237,7 +237,6 @@ const PopoverDropdown = memo(
         animatePopoverOverlayOut,
         animatePopoverTranslateOut,
         animateOverlayOut,
-        onOpenMenu,
         onCloseMenu,
       ]);
 

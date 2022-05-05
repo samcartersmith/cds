@@ -47,9 +47,9 @@ function UserSwitcherRecipe({
   description = 'brian.armstrong@coinbase.com',
 }) {
   const switcherPositionConfig = {
-  placement: 'bottom',
-  gap: 1,
-};
+    placement: 'bottom',
+    gap: 1,
+  };
   return (
     <PortalProvider>
       <FeatureFlagProvider frontierColor frontierButton>
@@ -57,10 +57,10 @@ function UserSwitcherRecipe({
           <Dropdown
             content={<UserSwitcherContent />}
             width={400}
-          maxHeight={600}
-          showOverlay
-          contentPosition={switcherPositionConfig}
-          showMobileModal
+            maxHeight={600}
+            showOverlay
+            contentPosition={switcherPositionConfig}
+            showMobileModal
           >
             <Pressable backgroundColor="transparent" as="button" borderRadius="standard">
               <HStack gap={1} alignItems="center">
@@ -83,7 +83,7 @@ function UserSwitcherRecipe({
                 </VStack>
               </HStack>
             </Pressable>
-          </Switcher>
+          </Dropdown>
         </HStack>
       </FeatureFlagProvider>
     </PortalProvider>

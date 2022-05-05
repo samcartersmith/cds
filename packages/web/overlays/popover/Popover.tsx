@@ -83,7 +83,7 @@ export const Popover = memo(
           ref={setPopper}
           style={{
             ...popperStyles.popper,
-            zIndex: zIndex.overlays.portal + zIndex.overlays.popoverMenu,
+            zIndex: zIndex.overlays.portal + zIndex.overlays.dropdown,
           }}
           {...popperAttributes.popper}
           onClick={handleCaptureEvents}
@@ -127,22 +127,28 @@ export const Popover = memo(
         </div>
         {visible ? (
           <PopoverPortal disablePortal={disablePortal} invertSpectrum={invertPopoverSpectrum}>
-            <div
-              style={{
-                position: 'absolute',
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 0,
-                zIndex: zIndex.overlays.modal,
-              }}
-              role="dialog"
-              aria-modal="true"
-              onClick={handleClose}
-            >
-              {showOverlay && <Overlay ref={overlayRef} />}
-              {memoizedContent}
-            </div>
+            {showOverlay ? (
+              <Box position="fixed" pin="all" zIndex={zIndex.overlays.modal}>
+                <Overlay onPress={handleClose} ref={overlayRef} />
+                {memoizedContent}
+              </Box>
+            ) : (
+              <div
+                style={{
+                  position: 'fixed',
+                  left: 0,
+                  right: 0,
+                  top: 0,
+                  bottom: 0,
+                  zIndex: zIndex.overlays.modal,
+                }}
+                role="dialog"
+                aria-modal="true"
+                onClick={handleClose}
+              >
+                {memoizedContent}
+              </div>
+            )}
           </PopoverPortal>
         ) : undefined}
       </div>
