@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, MouseEvent, useCallback, useMemo } from 'react';
 import { css } from 'linaria';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
@@ -72,6 +72,11 @@ export const PositionedOverlay = memo(
       onBlur?.();
     }, [onBlur, onClose, subject]);
 
+    // swallow click events inside the Popover content so the overlay doesn't consider it a blur event
+    const handleCaptureEvents = useCallback((event: MouseEvent<HTMLDivElement>) => {
+      event.stopPropagation();
+    }, []);
+
     const memoizedContent = useMemo(
       () => (
         <div
@@ -81,6 +86,7 @@ export const PositionedOverlay = memo(
             zIndex: zIndex.overlays.portal + zIndex.overlays.popoverMenu,
           }}
           {...popperAttributes.popper}
+          onClick={handleCaptureEvents}
         >
           <FocusTrap onEscPress={handleClose}>
             {/* Box with Horizontal spacing to ensure proper margins but still rely on popper for layout. */}
@@ -94,6 +100,7 @@ export const PositionedOverlay = memo(
         setPopper,
         popperStyles.popper,
         popperAttributes.popper,
+        handleCaptureEvents,
         handleClose,
         contentAccessibilityProps,
         testID,

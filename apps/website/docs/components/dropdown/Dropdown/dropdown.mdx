@@ -1,6 +1,6 @@
 ---
-title: PopoverTrigger
-slug: /components/popover-trigger
+title: Dropdown
+slug: /components/dropdown
 hide_title: true
 ---
 
@@ -10,27 +10,31 @@ import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Usage from './_usage.mdx';
+import A11y from './_a11y.mdx';
+import Intro from './_intro.mdx';
+import Design from './_design.mdx';
 import Props from './_implementation.mdx';
-
-:::caution
-
-PopoverMenu has been deprecated. Please use [Dropdown](../components/dropdown) instead.
-
-:::
+import Usage from './_usage.mdx';
 
 <VStack gap={3}>
-  <TextDisplay3 as="h1">PopoverTrigger</TextDisplay3>
+  <TextDisplay3 as="h1">Dropdown</TextDisplay3>
   <Link
-    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverTrigger.tsx"
+    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/dropdown/Dropdown.tsx"
     openInNewWindow
   >
-    @cbhq/cds-web/overlays/PopoverTrigger
+    @cbhq/cds-web/dropdown/Dropdown
   </Link>
   <Tabs>
+    <TabItem value="guidelines" label="Guidelines">
+      <VStack gap={3}>
+        <Design />
+      </VStack>
+    </TabItem>
     <TabItem value="implementation" label="Implementation" default>
       <VStack gap={3}>
+        <Intro />
         <Usage />
+        <A11y />
         <Props />
       </VStack>
     </TabItem>

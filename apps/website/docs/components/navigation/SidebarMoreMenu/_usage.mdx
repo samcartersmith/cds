@@ -4,7 +4,6 @@
 function SidebarWithMoreMenuExample() {
   const [collapsed, setCompact] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [moreMenuVisible, toggleMoreMenuVisibility] = useToggler(false);
   const [moreMenuValue, setMoreMenuValue] = useState(undefined);
   const moreMenuIndex = 4;
 
@@ -60,10 +59,7 @@ function SidebarWithMoreMenuExample() {
         <SidebarMoreMenu
           onChange={handleMoreMenuChange}
           value={moreMenuValue}
-          visible={moreMenuVisible}
           active={activeIndex === moreMenuIndex}
-          openMenu={toggleMoreMenuVisibility.toggleOn}
-          closeMenu={toggleMoreMenuVisibility.toggleOff}
           onPress={() => setActiveIndex(moreMenuIndex)}
         >
           {moreMenuOptions.map((item) => (

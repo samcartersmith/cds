@@ -64,9 +64,9 @@ export const ModalDropdown = memo(
         () => ({
           onChange,
           value,
-          handleCloseMenu: onCloseMenu,
+          handleCloseMenu: !disableCloseOnOptionChange ? onCloseMenu : undefined,
         }),
-        [onChange, value, onCloseMenu],
+        [onChange, value, disableCloseOnOptionChange, onCloseMenu],
       );
 
       useImperativeHandle(
@@ -245,9 +245,9 @@ const PopoverDropdown = memo(
         () => ({
           onChange,
           value,
-          handleCloseMenu: animateOutAndCloseMenu,
+          handleCloseMenu: !disableCloseOnOptionChange ? animateOutAndCloseMenu : undefined,
         }),
-        [onChange, value, animateOutAndCloseMenu],
+        [onChange, value, disableCloseOnOptionChange, animateOutAndCloseMenu],
       );
 
       const memoizedContent = useMemo(() => {

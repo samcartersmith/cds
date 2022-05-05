@@ -118,6 +118,7 @@ const SearchInputMenuRecipe = () => {
         onClear={handleClear}
         onKeyDown={handleKeyDown}
         onPress={handleSearchInputPress}
+        accessibilityLabel="search-input"
       />
     </Dropdown>
   );

@@ -252,14 +252,12 @@ function SearchInputMenu() {
 
   const ShowAllResultsButton = () => {
     return (
-      <MenuItem value="" onPress={handleClear}>
-        <Pressable backgroundColor="background" noScaleOnPress block onPress={handleClear}>
-          <HStack alignItems="center" spacingVertical={2} spacingHorizontal={2} gap={1}>
-            <TextLabel1 as="p">View all results</TextLabel1>
-            <Icon size="xs" name="forwardArrow" color="foreground" />
-          </HStack>
-        </Pressable>
-      </MenuItem>
+      <Pressable backgroundColor="background" noScaleOnPress block onPress={handleClear}>
+        <HStack alignItems="center" spacingVertical={2} spacingHorizontal={2} gap={1}>
+          <TextLabel1 as="p">View all results</TextLabel1>
+          <Icon size="xs" name="forwardArrow" color="foreground" />
+        </HStack>
+      </Pressable>
     );
   };
 

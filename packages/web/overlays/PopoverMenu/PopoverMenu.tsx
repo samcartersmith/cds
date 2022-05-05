@@ -22,6 +22,9 @@ import { PopoverProvider } from './PopoverContext';
 import { usePopoverChildren } from './usePopoverChildren';
 import { usePopoverMenu } from './usePopoverMenu';
 
+/**
+ * @deprecated PopoverMenu has been deprecated. Please use Dropdown instead.
+ */
 export const PopoverMenu = memo(
   forwardRef(function PopoverMenu(
     {

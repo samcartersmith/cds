@@ -1,0 +1,238 @@
+## Usage
+
+A Dropdown wraps a subject which when interacted with will toggle the visibility of an elevated surface called a menu.
+
+### Mobile
+
+On mobile, `Dropdown` is displayed as a `Tray`.
+
+### Basic Dropdown
+
+Dropdown menus can show an scrim below the menu, overlaying all other content on the screen when passed `showOverlay`.
+
+Dropdown can render as a Modal on mobile web if passed `enableMobileModal`.
+
+```jsx live
+function Example() {
+  const [value, setValue] = useState(undefined);
+  const [showMobileModal, toggleMobileModal] = useToggler(false);
+  const [showOverlay, toggleOverlay] = useToggler(false);
+
+  const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
+
+  const content = useMemo(
+    () => (
+      <>
+        <SectionTitle text="Section Heading" />
+        {options.map((option) => (
+          <SelectOption value={option} title={option} />
+        ))}
+      </>
+    ),
+    [],
+  );
+
+  return (
+    <VStack spacing={4}>
+      <VStack minHeight={450} width="100%" spacingTop={5} gap={3}>
+        <HStack gap={2}>
+          <Button compact onPress={toggleMobileModal.toggle}>
+            {showMobileModal ? 'Disable' : 'Enable'} Mobile Modal
+          </Button>
+          <Button compact onPress={toggleOverlay.toggle}>
+            {showOverlay ? 'Hide' : 'Show'} Overlay
+          </Button>
+        </HStack>
+        <Dropdown
+          value={value}
+          onChange={setValue}
+          content={content}
+          enableMobileModal={showMobileModal}
+          showOverlay={showOverlay}
+        >
+          <IconButton name="more" />
+        </Dropdown>
+      </VStack>
+    </VStack>
+  );
+}
+```
+
+### Control a Dropdown Programmatically
+
+You can control the visibility of a Dropdown menu programmatically using the exposed `openMenu` and `closeMenu` methods on a Dropdown's `ref`.
+
+```jsx live
+function Example() {
+  const dropdownRef = useRef(null);
+  const [value, setValue] = useState(undefined);
+
+  const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
+
+  const handleOpenButtonPress = () =>
+    useCallback(() => {
+      dropdownRef.current.openMenu();
+    }, []);
+  const handleCloseButtonPress = () =>
+    useCallback(() => {
+      dropdownRef.current.closeMenu();
+    }, []);
+
+  const content = useMemo(
+    () => (
+      <>
+        <SectionTitle text="Section Heading" />
+        {options.map((option) => (
+          <SelectOption value={option} title={option} />
+        ))}
+      </>
+    ),
+    [],
+  );
+
+  return (
+    <VStack spacing={4}>
+      <VStack minHeight={450} width="100%" spacingTop={5} gap={3}>
+        <HStack gap={2}>
+          <Button compact onPress={handleOpenButtonPress}>
+            Open
+          </Button>
+          <Button compact onPress={handleCloseButtonPress}>
+            Close
+          </Button>
+        </HStack>
+        <Dropdown value={value} onChange={setValue} content={content} ref={dropdownRef}>
+          <IconButton name="more" />
+        </Dropdown>
+      </VStack>
+    </VStack>
+  );
+}
+```
+
+### Search Enabled
+
+This is an example of how you can compose CDS components to create a searchable select menu. This is a very contrived example and should only be used as reference for how you could use a SearchInput with a Dropdown.
+
+Note: you will need to pass `searchEnabled` to Dropdown in order for search functionality to work.
+
+```jsx live
+function SearchInputMenu() {
+  const options = [
+    'Option 1',
+    'Option 2',
+    'Option 3',
+    'Option 4',
+    'Option 5',
+    'Option 6',
+    'Option 7',
+  ];
+
+  const [isVisible, { toggleOn: openMenu, toggleOff: closeMenu }] = useToggler(false);
+  const [selectedValue, setSelectedValue] = useState(undefined);
+  const [searchValue, setSearchValue] = useState();
+  const [filteredOptions, setFilteredOptions] = useState(options);
+  const dropdownRef = useRef(null);
+  const shouldShowAllResultsButton =
+    filteredOptions && options && filteredOptions.length < options.length;
+
+  const filterOptions = useMemo(
+    () =>
+      !searchValue
+        ? options
+        : options.filter(
+            (option) =>
+              searchValue &&
+              typeof searchValue === 'string' &&
+              option.toLowerCase().includes(searchValue.toLowerCase()),
+          ),
+    [searchValue],
+  );
+
+  useEffect(() => {
+    setFilteredOptions(filterOptions);
+  }, [filterOptions]);
+
+  const handleSearchInputPress = useCallback(() => {
+    dropdownRef.current.openMenu();
+  }, [openMenu]);
+
+  const handleClear = useCallback(() => {
+    setSelectedValue(undefined);
+    setSearchValue(undefined);
+  }, [setSelectedValue]);
+
+  const handleMenuChange = useCallback(
+    (newValue) => {
+      setSelectedValue(newValue);
+      setSearchValue(newValue);
+    },
+    [setSearchValue, setSelectedValue],
+  );
+
+  const renderOptions = useMemo(
+    () => filteredOptions.map((option) => <SelectOption title={option} value={option} />),
+    [filteredOptions],
+  );
+
+  const handleKeyDown = useCallback(() => {
+    // when using keyboard navigation and menu is focused,
+    // open it once they start typing
+    if (!searchValue) {
+      dropdownRef.current.openMenu();
+    }
+    // swap out selectedValue with searchValue so it becomes editable again
+    if (selectedValue) {
+      setSelectedValue(undefined);
+    }
+  }, [searchValue, selectedValue]);
+
+  const content = useMemo(
+    () => (
+      <>
+        {filteredOptions.length ? (
+          renderOptions
+        ) : (
+          <HStack spacing={3}>
+            <TextCaption as="p">No options were found. </TextCaption>
+          </HStack>
+        )}
+        {shouldShowAllResultsButton ? (
+          <Pressable backgroundColor="background" noScaleOnPress block onPress={handleClear}>
+            <HStack alignItems="center" spacingVertical={2} spacingHorizontal={2} gap={1}>
+              <TextLabel1 as="p">View all results</TextLabel1>
+              <Icon size="xs" name="forwardArrow" color="foreground" />
+            </HStack>
+          </Pressable>
+        ) : null}
+      </>
+    ),
+    [filteredOptions.length, handleClear, renderOptions, shouldShowAllResultsButton],
+  );
+
+  return (
+    <HStack minHeight={400} spacing={1}>
+      <Dropdown
+        onChange={handleMenuChange}
+        value={selectedValue}
+        width="100%"
+        block
+        searchEnabled
+        disableCloseOnOptionChange
+        ref={dropdownRef}
+        content={content}
+      >
+        <SearchInput
+          onChangeText={setSearchValue}
+          value={selectedValue ? selectedValue : searchValue ? searchValue : ''}
+          width="100%"
+          onClear={handleClear}
+          onKeyDown={handleKeyDown}
+          onPress={handleSearchInputPress}
+          accessibilityLabel="search-input"
+        />
+      </Dropdown>
+    </HStack>
+  );
+}
+```

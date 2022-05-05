@@ -151,6 +151,19 @@ Apply a fixed width to the detail (end).
   webOptions={['number', 'string']}
 />
 
+### disableCloseOnOptionChange <Badge variant="web" />
+
+Prevent menu from closing when an option is selected
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="disableCloseOnOptionChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
 ### disabled
 
 Is the cell disabled? Will apply opacity and disable interaction.
@@ -254,7 +267,22 @@ Allow the description to span multiple lines. This _will_ break fixed height req
   webOptions={['false', 'true']}
 />
 
-### onPress <Badge variant="mobile" />
+### onKeyPress <Badge variant="web" />
+
+Callback fired when a key is pressed
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="onKeyPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['KeyboardEventHandler<Element>']}
+/>
+
+### onPress
+
+Callback fired when the element is pressed.
 
 <ApiDetails
   componentName="SelectOption"
@@ -262,7 +290,7 @@ Allow the description to span multiple lines. This _will_ break fixed height req
   required={false}
   defaultValue=""
   mobileOptions={['(event: GestureResponderEvent) => void', 'NoopFn']}
-  webOptions={[]}
+  webOptions={['OnPress']}
 />
 
 ### outerSpacing

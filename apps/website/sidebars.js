@@ -11,6 +11,7 @@ const componentsToExcludeByLabel = new Set([
   'components/buttons/TileButton/tile-button',
   'components/buttons/NavigationIconButton/navigation-icon-button',
   'components/overlays/FullscreenModal/fullscreen-modal',
+  'components/dropdown/Dropdown/dropdown',
 ]);
 
 // Filter sidebar components

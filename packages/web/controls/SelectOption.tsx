@@ -93,8 +93,11 @@ export const SelectOption = memo(
 
     const handleChange = useCallback(() => {
       onChange?.(value);
-      handleCloseMenu();
-    }, [onChange, value, handleCloseMenu]);
+      // You can disable close on option change from either an individual SelectOption or globally through the Select or Dropdown components
+      if (!disableCloseOnOptionChange) {
+        handleCloseMenu?.();
+      }
+    }, [onChange, value, disableCloseOnOptionChange, handleCloseMenu]);
 
     const handlePress = useCallback(
       (event: React.MouseEvent) => {

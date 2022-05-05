@@ -41,6 +41,7 @@ import { useAccessibleForeground } from '@cbhq/cds-web/color/useAccessibleForegr
 import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
 import * as CDSControls from '@cbhq/cds-web/controls';
 import * as CDSDots from '@cbhq/cds-web/dots';
+import { Dropdown } from '@cbhq/cds-web/dropdown/Dropdown';
 import { useA11yControlledVisibility } from '@cbhq/cds-web/hooks/useA11yControlledVisibility';
 import { useCheckboxGroupState } from '@cbhq/cds-web/hooks/useCheckboxGroupState';
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
@@ -166,6 +167,7 @@ const ReactLiveScope: unknown = {
   ...CDSIllustrations,
   ...CDSVisualizations,
   Cell,
+  Dropdown,
   // context
   PortalProvider,
   // Utils

@@ -16,7 +16,7 @@ We have also added demo data to show a more realistic example; note that this is
 
 The App Switcher recipe is composed of the following CDS components:
 
-- [Switcher](../components/switcher)
+- [Dropdown](../components/dropdown)
 - [NavigationIconButton](../components/navigation-icon-button)
 - [TileButton](../components/tile-button)
 - [SectionTitle](../components/section-title)
@@ -27,10 +27,9 @@ Some key details about the abstractions in this recipe:
 
 <br />
 
-Switcher
+Dropdown
 
-- Switcher contains the prescriptive layout/overlay logic shared between App and UserSwitcher.
-- This component will be exposed to consumers.
+- Dropdown contains the prescriptive layout/overlay logic shared between App and UserSwitcher.
 
 <br />
 
@@ -84,20 +83,17 @@ function AppSwitcherRecipeExample() {
 
   // Suggested Composition of elements (the "AppSwitcherRecipe"):
   function AppSwitcherRecipe() {
-    const [visible, toggleVisibility] = useToggler(false);
-
-    const handleSubjectPress = () => {
-      toggleVisibility.toggle();
-    };
-
-    const handleClose = () => {
-      toggleVisibility.toggleOff();
-    };
+    const switcherPositionConfig = {
+  placement: 'bottom',
+  gap: 1,
+};
     return (
-      <Switcher
-        onPressSubject={handleSubjectPress}
-        onClose={handleClose}
-        visible={visible}
+      <Dropdown
+      width={359}
+      maxHeight={600}
+      showOverlay
+      enableMobileModal
+      contentPosition={switcherPositionConfig}
         // Please note `AppSwitcherContent` should be thought as a recipe also.
         content={<AppSwitcherContent columns={3} data={appSwitcherData} />}
       >
