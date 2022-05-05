@@ -9,7 +9,7 @@ import { paletteValueToHex } from '../palette';
 describe('openWebBrowser', () => {
   it('opens web browser outside of app', async () => {
     const spy = jest.spyOn(Linking, 'openURL');
-    await openWebBrowser('www.google.com', {
+    await openWebBrowser('https://www.google.com', {
       spectrum: 'dark',
       forceOpenOutsideApp: true,
     });
@@ -20,7 +20,7 @@ describe('openWebBrowser', () => {
       return Promise.resolve(true);
     });
     const spyInAppBrowserOpen = jest.spyOn(InAppBrowser, 'open').mockImplementation();
-    await openWebBrowser('www.google.com', {
+    await openWebBrowser('https://www.google.com', {
       spectrum: 'dark',
       forceOpenOutsideApp: false,
     });
@@ -29,7 +29,7 @@ describe('openWebBrowser', () => {
   });
   it('dark mode configuration is applied in browserConfig', async () => {
     const selectPlatform = jest.spyOn(Platform, 'select').mockImplementation();
-    await openWebBrowser('www.google.com', {
+    await openWebBrowser('https://www.google.com', {
       spectrum: 'dark',
       forceOpenOutsideApp: false,
     });
@@ -63,7 +63,7 @@ describe('openWebBrowser', () => {
     const selectPlatform = jest.spyOn(Platform, 'select').mockImplementation();
     const spectrum = 'light';
 
-    await openWebBrowser('www.google.com', {
+    await openWebBrowser('https://www.google.com', {
       spectrum,
       forceOpenOutsideApp: false,
     });
@@ -97,7 +97,7 @@ describe('openWebBrowser', () => {
     const selectPlatform = jest.spyOn(Platform, 'select').mockImplementation();
     const spectrum = 'light';
 
-    await openWebBrowser('www.google.com', {
+    await openWebBrowser('https://www.google.com', {
       spectrum,
       readerMode: true,
       forceOpenOutsideApp: false,
@@ -133,7 +133,7 @@ describe('openWebBrowser', () => {
     const spyPreventRedirection = jest
       .spyOn(CustomTabsHelper, 'preventRedirectionIntoApp')
       .mockImplementation();
-    await openWebBrowser('www.google.com', {
+    await openWebBrowser('https://www.google.com', {
       spectrum: 'dark',
       preventRedirectionIntoApp: true,
       forceOpenOutsideApp: true,
@@ -144,7 +144,7 @@ describe('openWebBrowser', () => {
     const selectPlatform = jest.spyOn(Platform, 'select').mockImplementation();
     const spectrum = 'dark';
 
-    await openWebBrowser('www.google.com', {
+    await openWebBrowser('https://www.google.com', {
       // cds custom properties
       spectrum,
       preventRedirectionIntoApp: true,
