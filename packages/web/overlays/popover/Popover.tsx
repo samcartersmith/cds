@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { memo, MouseEvent, useCallback, useMemo } from 'react';
@@ -66,6 +65,9 @@ export const Popover = memo(
       accessibilityLabel,
     );
 
+    // We use this to infer that hover events are triggering the mounting/dismounting of the content
+    const hasHoverInteractions = !!onMouseEnter && !!onMouseLeave && !onPressSubject;
+
     const handleClose = useCallback(async () => {
       subject?.focus(); // P3: get to refocus on subject upon close.
       onClose?.();
@@ -108,6 +110,21 @@ export const Popover = memo(
       ],
     );
 
+    const renderContent = hasHoverInteractions ? (
+      memoizedContent
+    ) : (
+      <Box
+        position="fixed"
+        pin="all"
+        zIndex={zIndex.overlays.modal}
+        onClick={handleClose}
+        role="dialog"
+        aria-modal="true"
+      >
+        {memoizedContent}
+      </Box>
+    );
+
     return (
       <div
         onMouseEnter={onMouseEnter}
@@ -133,21 +150,7 @@ export const Popover = memo(
                 {memoizedContent}
               </Box>
             ) : (
-              <div
-                style={{
-                  position: 'fixed',
-                  left: 0,
-                  right: 0,
-                  top: 0,
-                  bottom: 0,
-                  zIndex: zIndex.overlays.modal,
-                }}
-                role="dialog"
-                aria-modal="true"
-                onClick={handleClose}
-              >
-                {memoizedContent}
-              </div>
+              renderContent
             )}
           </PopoverPortal>
         ) : undefined}
