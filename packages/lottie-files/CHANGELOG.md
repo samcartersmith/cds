@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.27 (5/5/2022, 01:35 PM PST)
+
+#### 🐞 Fixes
+
+- Block imports from current package. [#288](https://github.cbhq.net/frontend/cds/pull/288)
+
+#### 📘 Misc
+
+- Update ejs version to fix yarn audit. [#295](https://github.cbhq.net/frontend/cds/pull/295)
+
 ## 0.2.26 (4/22/2022, 11:49 AM PST)
 
 #### 🐞 Fixes

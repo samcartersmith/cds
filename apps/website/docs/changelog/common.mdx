@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.38.2 (5/5/2022, 01:35 PM PST)
+
+#### 🚀 Updates
+
+- **[Motion]** Update motion tokens. [#299](https://github.cbhq.net/frontend/cds/pull/299)
+- Renamed EventDelegationProvider and corresponding components to EventHandlerProvider. [#300](https://github.cbhq.net/frontend/cds/pull/300), [EXC-252](https://jira.coinbase-corp.com/browse/EXC-252)
+- **[FullscreenModal]** Update exit duration to moderate1. [#297](https://github.cbhq.net/frontend/cds/pull/297)
+- Add types to SparklineInteractiveSubHead to show new increase/decrease symbol. [#294](https://github.cbhq.net/frontend/cds/pull/294), [CDS-2277](https://jira.coinbase-corp.com/browse/CDS-2277)
+- **[SparklineInteractive]** Add dual time series functionality for web SparklineInteractive on hover. [#290](https://github.cbhq.net/frontend/cds/pull/290)
+
+#### 🐞 Fixes
+
+- **[Interactable]** Resolve anti-aliasing issue on Interactables. [#234](https://github.cbhq.net/frontend/cds/pull/234), [CDS-2063](https://jira.coinbase-corp.com/browse/CDS-2063)
+- Resolve remaining \*critical a11y issues. [#289](https://github.cbhq.net/frontend/cds/pull/289), [CDS-2247](https://jira.coinbase-corp.com/browse/CDS-2247)
+- Block imports from current package. [#288](https://github.cbhq.net/frontend/cds/pull/288)
+
+#### 📘 Misc
+
+- **[Illustrations]** Autogenerate illustrations release history and output to website. [#214](https://github.cbhq.net/frontend/cds/pull/214)
+
 ## 0.38.1 (4/22/2022, 11:49 AM PST)
 
 #### 🚀 Updates

@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.40.2 (5/5/2022, 01:35 PM PST)
+
+#### 🚀 Updates
+
+- **[Motion]** Update motion tokens. [#299](https://github.cbhq.net/frontend/cds/pull/299)
+- Renamed EventDelegationProvider and corresponding components to EventHandlerProvider. [#300](https://github.cbhq.net/frontend/cds/pull/300), [EXC-252](https://jira.coinbase-corp.com/browse/EXC-252)
+- **[SparklineInteractive]** Add dual time series functionality for web SparklineInteractive on hover. [#290](https://github.cbhq.net/frontend/cds/pull/290)
+
+#### 🐞 Fixes
+
+- FSM & FSA bug bash fixes. [#296](https://github.cbhq.net/frontend/cds/pull/296)
+- **[Interactable]** Resolve anti-aliasing issue on Interactables. [#234](https://github.cbhq.net/frontend/cds/pull/234), [CDS-2063](https://jira.coinbase-corp.com/browse/CDS-2063)
+- Resolve remaining \*critical a11y issues. [#289](https://github.cbhq.net/frontend/cds/pull/289), [CDS-2247](https://jira.coinbase-corp.com/browse/CDS-2247)
+- Block imports from current package. [#288](https://github.cbhq.net/frontend/cds/pull/288)
+- **[TextInput]** Fix issue with start adding extra spacing to top/bottom when in compact={true}. [#285](https://github.cbhq.net/frontend/cds/pull/285)
+
+#### 📘 Misc
+
+- FullscreenModal and FullscreenAlert fixes. [#291](https://github.cbhq.net/frontend/cds/pull/291)
+
 ## 0.40.1 (4/22/2022, 11:49 AM PST)
 
 #### 🚀 Updates
