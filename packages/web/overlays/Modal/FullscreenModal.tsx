@@ -114,7 +114,7 @@ export const FullscreenModal = memo(function FullscreenModal({
           </div>
         )}
         <Box flexGrow={1} justifyContent="flex-end">
-          <IconButton transparent name="close" onPress={onRequestClose} />
+          <IconButton transparent name="close" onPress={onRequestClose} aria-label="Close button" />
         </Box>
       </Box>
     </HStack>
