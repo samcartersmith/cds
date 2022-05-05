@@ -8,14 +8,14 @@ import { isSSR } from '../../utils/browser';
 
 /* eslint-disable no-restricted-globals */
 
-type PositionedOverlayPortalProps = {
+type PopoverPortalProps = {
   disablePortal?: boolean;
   invertSpectrum?: boolean;
 };
 
 const inverseConfig = { light: 'dark', dark: 'light' } as const;
 
-export const PositionedOverlayPortal: React.FC<PositionedOverlayPortalProps> = ({
+export const PopoverPortal: React.FC<PopoverPortalProps> = ({
   disablePortal = false,
   invertSpectrum = false,
   children,

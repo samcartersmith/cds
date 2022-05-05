@@ -19,9 +19,9 @@ export type PopoverContentPositionConfig = {
   offsetGap?: number;
 };
 
-export type PositionedOverlayProps = {
+export type PopoverProps = {
   content: ReactNode;
-  /** Subject of the positionedOverlay that when interacted with will toggle the visibility of the content */
+  /** Subject of the Popover that when interacted with will toggle the visibility of the content */
   children: ReactNode;
   /**
    * @danger This disables React portal integration. Use this with caution.

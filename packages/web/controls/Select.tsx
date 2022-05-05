@@ -16,7 +16,7 @@ import { useRotateAnimation } from '../animation/useRotateAnimation';
 import { Dropdown } from '../dropdown';
 import { useSpacingValue } from '../hooks/useSpacingValue';
 import { HStack } from '../layout/HStack';
-import { PopoverContentPositionConfig } from '../overlays/positionedOverlay/PositionedOverlayProps';
+import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
 
 import { TextInputFocusVariantContext } from './context';
 import { SelectTrigger } from './SelectTrigger';

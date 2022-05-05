@@ -5,7 +5,7 @@ import { sidebarGutter, sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens
 
 import { Dropdown, DropdownProps } from '../dropdown';
 import { Tooltip } from '../overlays';
-import { PopoverContentPositionConfig } from '../overlays/positionedOverlay/PositionedOverlayProps';
+import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
 
 import { useSidebarContext } from './SidebarContext';
 import { SidebarItem, SidebarItemProps } from './SidebarItem';

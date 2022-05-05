@@ -4,7 +4,7 @@ import { Options as PopperOptions } from '@popperjs/core';
 
 import { useSpacingValue } from '../../hooks/useSpacingValue';
 
-import { PopoverContentPositionConfig } from './PositionedOverlayProps';
+import { PopoverContentPositionConfig } from './PopoverProps';
 
 export const usePopper = ({ placement, skid, gap, offsetGap }: PopoverContentPositionConfig) => {
   const [subject, setSubject] = useState<HTMLDivElement | null>(null);

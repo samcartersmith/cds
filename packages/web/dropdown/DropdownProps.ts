@@ -5,7 +5,7 @@ import {
   SharedProps,
 } from '@cbhq/cds-common/types';
 
-import { PositionedOverlayProps } from '../overlays/positionedOverlay/PositionedOverlayProps';
+import { PopoverProps } from '../overlays/popover/PopoverProps';
 
 export type DropdownProps = {
   /** Display a Modal on mobile web instead of a relatively positioned Dropdown */
@@ -43,10 +43,7 @@ export type DropdownProps = {
    * @default false
    */
   enableSearch?: boolean;
-} & Pick<
-  PositionedOverlayProps,
-  'content' | 'children' | 'showOverlay' | 'contentPosition' | 'block'
-> &
+} & Pick<PopoverProps, 'content' | 'children' | 'showOverlay' | 'contentPosition' | 'block'> &
   SharedProps &
   Pick<
     SharedAccessibilityProps,

@@ -11,8 +11,8 @@ import { cx } from '../../utils/linaria';
 import { FocusTrap } from '../FocusTrap';
 import { Overlay } from '../Overlay/Overlay';
 
-import { PositionedOverlayPortal } from './PositionedOverlayPortal';
-import { PopoverContentPositionConfig, PositionedOverlayProps } from './PositionedOverlayProps';
+import { PopoverPortal } from './PopoverPortal';
+import { PopoverContentPositionConfig, PopoverProps } from './PopoverProps';
 import { usePopper } from './usePopper';
 
 const subjectStyle = css`
@@ -33,10 +33,10 @@ const blockStyles = css`
 `;
 
 /**
- * PositionedOverlay is the internal recommended base component used for any overlay that is laid out with respect to a subject.
+ * Popover is the internal recommended base component used for any overlay that is laid out with respect to a subject.
  * It is purposely a flexible component and is reserved for CDS internal usage.
  */
-export const PositionedOverlay = memo(
+export const Popover = memo(
   ({
     content,
     children,
@@ -56,7 +56,7 @@ export const PositionedOverlay = memo(
     testID,
     contentPosition = defaultContentPosition,
     block = false,
-  }: PositionedOverlayProps) => {
+  }: PopoverProps) => {
     const { subject, setSubject, setPopper, popperStyles, popperAttributes } =
       usePopper(contentPosition);
 
@@ -126,10 +126,7 @@ export const PositionedOverlay = memo(
           {children}
         </div>
         {visible ? (
-          <PositionedOverlayPortal
-            disablePortal={disablePortal}
-            invertSpectrum={invertPopoverSpectrum}
-          >
+          <PopoverPortal disablePortal={disablePortal} invertSpectrum={invertPopoverSpectrum}>
             <div
               style={{
                 position: 'absolute',
@@ -146,7 +143,7 @@ export const PositionedOverlay = memo(
               {showOverlay && <Overlay ref={overlayRef} />}
               {memoizedContent}
             </div>
-          </PositionedOverlayPortal>
+          </PopoverPortal>
         ) : undefined}
       </div>
     );

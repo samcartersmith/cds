@@ -3,8 +3,8 @@ import { AppSwitcherContent } from '@cbhq/cds-web/__stories__/AppSwitcherContent
 import { NavigationIconButton } from '@cbhq/cds-web/buttons/NavigationIconButton';
 import { Dropdown } from '@cbhq/cds-web/dropdown';
 import { VStack } from '@cbhq/cds-web/layout';
+import { PopoverContentPositionConfig } from '@cbhq/cds-web/overlays/popover/PopoverProps';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
-import { PopoverContentPositionConfig } from '@cbhq/cds-web/overlays/positionedOverlay/PositionedOverlayProps';
 import { FeatureFlagProvider } from '@cbhq/cds-web/system/FeatureFlagProvider';
 import { TextBody } from '@cbhq/cds-web/typography/TextBody';
 

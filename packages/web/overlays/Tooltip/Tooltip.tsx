@@ -1,6 +1,6 @@
 import React, { cloneElement, useMemo } from 'react';
 
-import { PositionedOverlay } from '../positionedOverlay/PositionedOverlay';
+import { Popover } from '../popover/Popover';
 
 import { TooltipContent, tooltipId } from './TooltipContent';
 import { TooltipProps } from './TooltipProps';
@@ -40,7 +40,7 @@ export const Tooltip = ({
   );
 
   return (
-    <PositionedOverlay
+    <Popover
       contentPosition={contentPosition}
       disablePortal={disablePortal}
       onMouseEnter={handleOnMouseEnter}
@@ -62,6 +62,6 @@ export const Tooltip = ({
       }
     >
       {clonedChild}
-    </PositionedOverlay>
+    </Popover>
   );
 };

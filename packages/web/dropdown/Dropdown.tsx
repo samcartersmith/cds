@@ -23,8 +23,8 @@ import { useIsoEffect } from '../hooks/useIsoEffect';
 import { useSpacingValue } from '../hooks/useSpacingValue';
 import { FocusTrap } from '../overlays/FocusTrap';
 import { ModalWrapper } from '../overlays/Modal/ModalWrapper';
-import { PositionedOverlay } from '../overlays/positionedOverlay/PositionedOverlay';
-import { PopoverContentPositionConfig } from '../overlays/positionedOverlay/PositionedOverlayProps';
+import { Popover } from '../overlays/popover/Popover';
+import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
 import { getBrowserGlobals, isSSR } from '../utils/browser';
 
 import { DropdownContent } from './DropdownContent';
@@ -291,7 +291,7 @@ const PopoverDropdown = memo(
 
       return (
         <SelectProvider value={context}>
-          <PositionedOverlay
+          <Popover
             // DropdownContent will handle exit animation on menu blur, including pressing the subject again to close
             onPressSubject={!visible ? onOpenMenu : undefined}
             onClose={animateOutAndCloseMenu}
@@ -309,7 +309,7 @@ const PopoverDropdown = memo(
             <div ref={subjectRef} style={{ width: '100%' }}>
               {children}
             </div>
-          </PositionedOverlay>
+          </Popover>
         </SelectProvider>
       );
     },

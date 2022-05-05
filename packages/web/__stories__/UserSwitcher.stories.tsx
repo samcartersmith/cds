@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { Dropdown } from '../dropdown';
 import { HStack, VStack } from '../layout';
 import { Avatar } from '../media/Avatar';
-import { PopoverContentPositionConfig } from '../overlays/positionedOverlay/PositionedOverlayProps';
+import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
 import { FeatureFlagProvider } from '../system';
 import { Pressable } from '../system/Pressable';
 import { TextHeadline, TextLabel1, TextLabel2 } from '../typography';

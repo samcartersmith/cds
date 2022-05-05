@@ -4,7 +4,7 @@ import { NavigationIconButton } from '../buttons/NavigationIconButton';
 import { DotCount } from '../dots/DotCount';
 import { Dropdown } from '../dropdown';
 import { HStack } from '../layout';
-import { PopoverContentPositionConfig } from '../overlays/positionedOverlay/PositionedOverlayProps';
+import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
 
 import { AppSwitcherContent } from './AppSwitcherContent';
 
