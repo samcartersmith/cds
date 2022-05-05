@@ -11,20 +11,49 @@ import { scaleConfig } from './configs/scaleConfig';
 import { Spectrum } from './Spectrum/Spectrum';
 import { Type } from './Type/Type';
 import { buildTemplates, TemplateMap } from './utils/buildTemplates';
+import { codegen } from './codegen';
 import { Control } from './Control';
 import { lottieFiles } from './Lottie';
 import { defaultPalette, Palette } from './Palette';
 import { Spacing } from './Spacing';
 import { TypeScript } from './Typescript';
 
-async function codegen() {
+const web = {
+  motion: {
+    defaultPalette,
+  },
+  styles: {
+    backgroundColor: Palette.cssBackgroundColor,
+    borderColor: Palette.cssBorderColor,
+    borderRadius: borderRadiusCss,
+    borderWidth: borderWidthCss,
+    foregroundColor: Palette.cssColor,
+    grid: gridConfig.web,
+    margin: Spacing.css('margin'),
+    padding: Spacing.css('padding'),
+    scale: mapValues(scaleConfig, (_, scale) => {
+      return {
+        ...Type.scaleCss[scale],
+        ...Spacing.scaleCss[scale],
+        ...Control.scaleCss[scale],
+      };
+    }),
+    spectrum: Spectrum.web,
+    typography: Type.css,
+  },
+  tokens: {
+    spacing: Spacing.cssVariables,
+    palette: Palette.cssVariables,
+    control: Control.cssVariables,
+    fontFamily: Type.fontFamilyCssVariables,
+    mediaQueries: {
+      supportsHover: '@media (any-hover: hover)',
+    },
+  },
+};
+
+async function main() {
   const templates: TemplateMap = {
-    'lottieStyles.ejs': [
-      {
-        dest: 'web/animation/lottieStyles.ts',
-        data: defaultPalette,
-      },
-    ],
     'lottieSource.ejs': [
       {
         dest: 'lottie-files/LottieSource.ts',
@@ -40,57 +69,6 @@ async function codegen() {
       {
         dest: 'fonts/fonts.css',
         data: Type.fontFaceCss,
-      },
-    ],
-    'css.ejs': [
-      {
-        dest: 'web/typography/textStyles.ts',
-        data: Type.css,
-      },
-      {
-        dest: 'web/styles/scale.ts',
-        data: mapValues(scaleConfig, (_, scale) => {
-          return {
-            ...Type.scaleCss[scale],
-            ...Spacing.scaleCss[scale],
-            ...Control.scaleCss[scale],
-          };
-        }),
-      },
-      {
-        dest: 'web/styles/spectrum.ts',
-        data: Spectrum.css,
-      },
-      {
-        dest: 'web/styles/foregroundColor.ts',
-        data: Palette.cssColor,
-      },
-      {
-        dest: 'web/styles/backgroundColor.ts',
-        data: Palette.cssBackgroundColor,
-      },
-      {
-        dest: 'web/styles/borderColor.ts',
-        data: Palette.cssBorderColor,
-      },
-      {
-        dest: 'web/styles/borderRadius.ts',
-        data: borderRadiusCss,
-      },
-      {
-        dest: 'web/styles/borderWidth.ts',
-        data: borderWidthCss,
-      },
-    ],
-    'cssMap.ejs': [
-      ...gridConfig.cssMap,
-      {
-        dest: 'web/styles/padding.ts',
-        data: Spacing.css('padding'),
-      },
-      {
-        dest: 'web/styles/margin.ts',
-        data: Spacing.css('margin'),
       },
     ],
     'objectMap.ejs': [
@@ -121,18 +99,6 @@ async function codegen() {
         data: { borderRadius: borderRadiusConfig, borderWidth: borderWidthConfig },
       },
       {
-        dest: 'web/tokens.ts',
-        data: {
-          spacing: Spacing.cssVariables,
-          palette: Palette.cssVariables,
-          control: Control.cssVariables,
-          fontFamily: Type.fontFamilyCssVariables,
-          mediaQueries: {
-            supportsHover: '@media (any-hover: hover)',
-          },
-        },
-      },
-      {
         dest: 'mobile/tokens.ts',
         data: {
           fontFamily: Type.fontFamilyMobileTokens,
@@ -153,7 +119,7 @@ async function codegen() {
 
   // Palette.validate();
 
-  await buildTemplates(templates);
+  await Promise.all([buildTemplates(templates), codegen('packages/web', web)]);
 }
 
-void codegen();
+void main();

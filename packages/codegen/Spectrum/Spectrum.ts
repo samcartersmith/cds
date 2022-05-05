@@ -29,7 +29,7 @@ export const spectrumRgbArrayMap = mapValues(spectrumModes, (_, mode) =>
 const modes = ['dark', 'light'];
 
 export const Spectrum = {
-  css: mapValues(spectrumRgbStringMap, (_, spectrum) =>
+  web: mapValues(spectrumRgbStringMap, (_, spectrum) =>
     mapKeys(spectrumRgbStringMap[spectrum], (_2, key) => toCssVar(key)),
   ),
   native: spectrumRgbArrayMap,
