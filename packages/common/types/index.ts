@@ -22,6 +22,7 @@ export * from './DimensionStyles';
 export * from './DividerBaseProps';
 export * from './DotBaseProps';
 export * from './DotCountBaseProps';
+export * from './DotSymbolBaseProps';
 export * from './DrawerBaseProps';
 export * from './ElevationLevels';
 export * from './FallbackBaseProps';

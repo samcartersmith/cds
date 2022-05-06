@@ -5,6 +5,7 @@
   "scripts": {
     "adoption": "nx run codegen:prepare_adoption",
     "all": "nx run codegen:codegen && nx run codegen:docgen",
+    "codegen": "nx run codegen:codegen",
     "cli": "ts-node ./bin.ts",
     "docs.internal": "yarn cli website/docs-internal",
     "docs": "nx run codegen:docgen",
