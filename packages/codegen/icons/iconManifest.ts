@@ -4660,37 +4660,43 @@ export const iconManifest = {
   '8449:201': {
     key: '5b22d0bef809c723cd5566980b5a4b055d3258dd',
     name: 'NavigationIcon/interest_16/inactive',
-    description: '',
+    description:
+      'navigation, speciality, percentage, interest, reward, rate, ratio, pct, measurement, %',
     documentationLinks: [],
   },
   '8449:200': {
     key: '1afe7921cda23fc8192a4c165bf6b9b587d62295',
     name: 'NavigationIcon/interest_16/active',
-    description: '',
+    description:
+      'navigation, speciality, percentage, interest, reward, rate, ratio, pct, measurement, %',
     documentationLinks: [],
   },
   '8449:199': {
     key: '9f931b3ef8a1949a925adf7ac1c97696f953d68d',
     name: 'NavigationIcon/interest_12/inactive',
-    description: '',
+    description:
+      'navigation, speciality, percentage, interest, reward, rate, ratio, pct, measurement, %',
     documentationLinks: [],
   },
   '8449:197': {
     key: '7893be365caf45d48039793368d12336d2ce18a6',
     name: 'NavigationIcon/interest_12/active',
-    description: '',
+    description:
+      'navigation, speciality, percentage, interest, reward, rate, ratio, pct, measurement, %',
     documentationLinks: [],
   },
   '8449:198': {
     key: '69b6b705409e309122e85adc23f6ad3bf7ced0b7',
     name: 'NavigationIcon/interest_24/inactive',
-    description: '',
+    description:
+      'navigation, speciality, percentage, interest, reward, rate, ratio, pct, measurement, %',
     documentationLinks: [],
   },
   '8449:196': {
     key: 'c3dad296718f71c271f3cba051a5bb14d6f9f102',
     name: 'NavigationIcon/interest_24/active',
-    description: '',
+    description:
+      'navigation, speciality, percentage, interest, reward, rate, ratio, pct, measurement, %',
     documentationLinks: [],
   },
   '8463:67': {
@@ -4781,6 +4787,102 @@ export const iconManifest = {
     key: 'eb6521e3275a3eefad65f19c6e418f1da86cf46f',
     name: 'Icon/thumbsDown_12',
     description: 'no, thumbs down, thumb, down, 👎',
+    documentationLinks: [],
+  },
+  '8517:148': {
+    key: 'a3f00453762eb8cbaf969e8a4115b2b4c2bf5ea3',
+    name: 'Icon/unlock_24',
+    description: 'unlock, access, latch, open, freedom., 🔒, 🔐, 🔑, 🗝, 🔓',
+    documentationLinks: [],
+  },
+  '8517:147': {
+    key: 'c5b4eef7eea240b9005e5899f36a8bcc3535d4bc',
+    name: 'Icon/unlock_16',
+    description: 'unlock, access, latch, open, freedom., 🔒, 🔐, 🔑, 🗝, 🔓',
+    documentationLinks: [],
+  },
+  '8517:146': {
+    key: 'd29babddfe8dee6057b622d19bb1f6690f5866ab',
+    name: 'Icon/unlock_12',
+    description: 'unlock, access, latch, open, freedom., 🔒, 🔐, 🔑, 🗝, 🔓',
+    documentationLinks: [],
+  },
+  '8571:256': {
+    key: '025693ec465851f965a829118a8d1abc7ab1f127',
+    name: 'Icon/taxesReceipt_24',
+    description: '',
+    documentationLinks: [],
+  },
+  '8571:255': {
+    key: '0f4bca2ad2be23b0dd5474a6f58dcef7a04c74cc',
+    name: 'Icon/taxesReceipt_12',
+    description: '',
+    documentationLinks: [],
+  },
+  '8571:254': {
+    key: '26b2cd90a9e1a8c23b4130a5f25e64860bac9911',
+    name: 'Icon/taxesReceipt_16',
+    description: '',
+    documentationLinks: [],
+  },
+  '8598:882': {
+    key: 'cf7f12eb1cf88a2d8602884b91018f3f854396ee',
+    name: 'NavigationIcon/crystalBall_16/inactive',
+    description:
+      'navigation, speciality, non fungible token, blockchain, certify, magical, audio, photos, audio, digital, art, items, ✨,  ❇️, 🪄, 🔮',
+    documentationLinks: [],
+  },
+  '8598:880': {
+    key: '4217463b20919f566e747228072d212082534862',
+    name: 'NavigationIcon/crystalBall_16/active',
+    description:
+      'navigation, speciality, non fungible token, blockchain, certify, magical, audio, photos, audio, digital, art, items, ✨,  ❇️, 🪄, 🔮',
+    documentationLinks: [],
+  },
+  '8598:881': {
+    key: '4f582babbd70c7fe02cd1657c653f54d75491620',
+    name: 'NavigationIcon/crystalBall_12/inactive',
+    description:
+      'navigation, speciality, non fungible token, blockchain, certify, magical, audio, photos, audio, digital, art, items, ✨,  ❇️, 🪄, 🔮',
+    documentationLinks: [],
+  },
+  '8598:879': {
+    key: 'bd4cf079c0e2b2ec5974e8e065cd3d0623f48b9d',
+    name: 'NavigationIcon/crystalBall_12/active',
+    description:
+      'navigation, speciality, non fungible token, blockchain, certify, magical, audio, photos, audio, digital, art, items, ✨,  ❇️, 🪄, 🔮',
+    documentationLinks: [],
+  },
+  '8598:877': {
+    key: 'a6375217ab92873563b046080d8f132584dfd98a',
+    name: 'NavigationIcon/crystalBall_24/inactive',
+    description:
+      'navigation, speciality, non fungible token, blockchain, certify, magical, audio, photos, audio, digital, art, items, ✨,  ❇️, 🪄, 🔮',
+    documentationLinks: [],
+  },
+  '8598:878': {
+    key: '84a425076be119f2d2b11ee4057991e1d2331185',
+    name: 'NavigationIcon/crystalBall_24/active',
+    description:
+      'navigation, speciality, non fungible token, blockchain, certify, magical, audio, photos, audio, digital, art, items, ✨,  ❇️, 🪄, 🔮',
+    documentationLinks: [],
+  },
+  '8606:753': {
+    key: 'e295a9dcc70eddeeff6f729107eff633c6f19ce1',
+    name: 'Icon/visibleFilled_24',
+    description: 'eye, privacy, protection, personal, filled, 👀, 👁, 🧿, 👁‍🗨',
+    documentationLinks: [],
+  },
+  '8606:752': {
+    key: '39ed07da135d40ffe8f6842bb50f944f8071d4fa',
+    name: 'Icon/visibleFilled_16',
+    description: 'eye, privacy, protection, personal, filled, 👀, 👁, 🧿, 👁‍🗨',
+    documentationLinks: [],
+  },
+  '8606:751': {
+    key: 'c182a2d643dd634906e374883d1e395d7d6a70a1',
+    name: 'Icon/visibleFilled_12',
+    description: 'eye, privacy, protection, personal, filled, 👀, 👁, 🧿, 👁‍🗨',
     documentationLinks: [],
   },
 };

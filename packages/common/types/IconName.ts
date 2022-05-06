@@ -188,7 +188,10 @@ export type IconName =
   | 'seenActive'
   | 'comment'
   | 'thumbsUp'
-  | 'thumbsDown';
+  | 'thumbsDown'
+  | 'unlock'
+  | 'taxesReceipt'
+  | 'visibleFilled';
 
 export type NavigationIconName =
   | 'account'
@@ -227,7 +230,8 @@ export type NavigationIconName =
   | 'trophyCup'
   | 'moreVertical'
   | 'browser'
-  | 'interest';
+  | 'interest'
+  | 'crystalBall';
 
 export type NavigationIconInternalName =
   | 'accountInactive'
@@ -303,4 +307,6 @@ export type NavigationIconInternalName =
   | 'browserInactive'
   | 'browserActive'
   | 'interestInactive'
-  | 'interestActive';
+  | 'interestActive'
+  | 'crystalBallInactive'
+  | 'crystalBallActive';

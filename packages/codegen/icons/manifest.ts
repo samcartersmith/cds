@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 61034,
+  lastUnicode: 61059,
   unicodeMap: {
     cashUSD: { '8': 'uE966', '12': 'uE967', '16': 'uE968', '24': 'uE969', '32': 'uE96A' },
     cashGBP: { '8': 'uE96B', '12': 'uE96C', '16': 'uE96D', '24': 'uE96E', '32': 'uE96F' },
@@ -371,5 +371,16 @@ export const manifest = {
     interestInactive: { '8': 'uEE5C', '12': 'uEE5D', '16': 'uEE5E', '24': 'uEE5F', '32': 'uEE60' },
     interestActive: { '8': 'uEE61', '12': 'uEE62', '16': 'uEE63', '24': 'uEE64', '32': 'uEE65' },
     comment: { '8': 'uEE66', '12': 'uEE67', '16': 'uEE68', '24': 'uEE69', '32': 'uEE6A' },
+    unlock: { '8': 'uEE6B', '12': 'uEE6C', '16': 'uEE6D', '24': 'uEE6E', '32': 'uEE6F' },
+    taxesReceipt: { '8': 'uEE70', '12': 'uEE71', '16': 'uEE72', '24': 'uEE73', '32': 'uEE74' },
+    crystalBallInactive: {
+      '8': 'uEE75',
+      '12': 'uEE76',
+      '16': 'uEE77',
+      '24': 'uEE78',
+      '32': 'uEE79',
+    },
+    crystalBallActive: { '8': 'uEE7A', '12': 'uEE7B', '16': 'uEE7C', '24': 'uEE7D', '32': 'uEE7E' },
+    visibleFilled: { '8': 'uEE7F', '12': 'uEE80', '16': 'uEE81', '24': 'uEE82', '32': 'uEE83' },
   },
 };
