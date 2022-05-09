@@ -3,6 +3,7 @@ secure:
   branches:
     - master
     - develop
+    - alpha-may-9-2022
 build:
   engines:
     # Apps
