@@ -12,7 +12,23 @@ module.exports = {
         'no-restricted-imports': [
           'error',
           {
-            paths: ['@cbhq/cds-web', ...noRestrictedImportPaths],
+            paths: [
+              {
+                name: '@cbhq/cds-common/tokens/border',
+                message:
+                  'This has been deprecated. Use borderWidth & borderRadius css variables from web/tokens.ts instead',
+              },
+              {
+                name: '@cbhq/cds-common/tokens/borderWidth',
+                message: 'Use borderWidth css variables from web/tokens.ts instead',
+              },
+              {
+                name: '@cbhq/cds-common/tokens/borderRadius',
+                message: 'Use borderRadius css variables from web/tokens.ts instead',
+              },
+              '@cbhq/cds-web',
+              ...noRestrictedImportPaths,
+            ],
             patterns: ['@cbhq/cds-web/*'],
           },
         ],

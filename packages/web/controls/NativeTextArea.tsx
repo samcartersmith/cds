@@ -1,13 +1,12 @@
 import React, { forwardRef, memo } from 'react';
 import { css } from 'linaria';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
 import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import { palette } from '../tokens';
+import { borderRadius, palette } from '../tokens';
 import { body } from '../typography/textStyles';
 import { cx } from '../utils/linaria';
 
@@ -36,7 +35,7 @@ const nativeTextAreaBaseStyle = css`
     }
 
     &:-webkit-autofill {
-      border-radius: ${borderRadius.input}px;
+      border-radius: ${borderRadius.input};
     }
   }
 `;

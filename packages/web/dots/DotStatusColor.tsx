@@ -1,9 +1,9 @@
 import React, { memo, useMemo } from 'react';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
 
 import { usePalette } from '../hooks/usePalette';
+import { borderRadius } from '../tokens';
 import { handlePreventPropagation } from '../utils/eventHandlers';
 
 import { dotRootContainerStyles, getTransform } from './dotStyles';
@@ -26,9 +26,9 @@ export const DotStatusColor = memo(
 
     const styles = useMemo(() => {
       return {
-        borderRadius: `${borderRadius.round}px`,
-        width: `${iconSize}px`,
-        height: `${iconSize}px`,
+        borderRadius: borderRadius.round,
+        width: iconSize,
+        height: iconSize,
         backgroundColor: palette[variant],
         alignItems: 'center',
         justifyContent: 'center',

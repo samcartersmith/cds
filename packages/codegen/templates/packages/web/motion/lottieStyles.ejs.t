@@ -7,7 +7,7 @@ import { css } from 'linaria';
 import { palette } from '../tokens';
 
 export const lottieStyles = css`
-<% Object.keys(motion.defaultPalette).map(paletteAlias => { %>
+<% Object.keys(configs.defaultPalette).map(paletteAlias => { %>
   .palette_<%- paletteAlias %> {
     &_stroke {
       stroke: ${palette.<%- paletteAlias %>};

@@ -3,14 +3,13 @@ import React, { forwardRef, memo } from 'react';
 import { css } from 'linaria';
 import { switchPalette } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
-import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 
 import { Box } from '../layout/Box';
 import { round } from '../styles/borderRadius';
 import { level1 } from '../styles/elevation';
 import { ThemeProvider } from '../system/ThemeProvider';
-import { control, palette } from '../tokens';
+import { borderRadius, borderWidth, control, palette } from '../tokens';
 import { cx } from '../utils/linaria';
 
 import { Control, ControlProps } from './Control';
@@ -75,7 +74,7 @@ export const Switch = memo(SwitchWithRef);
 const track = css`
   width: ${control.switchWidth};
   height: ${control.switchHeight};
-  border-radius: ${borderRadius.pill}px;
+  border-radius: ${borderRadius.pill};
   flex-shrink: 0;
   position: relative;
 
@@ -119,8 +118,8 @@ const focusRing = css`
   position: relative;
   &::after {
     content: '';
-    border: ${borderWidth.focusRing}px solid ${palette.primary};
-    border-radius: ${borderRadius.pill + 2}px;
+    border: ${borderWidth.focusRing} solid ${palette.primary};
+    border-radius: calc(${borderRadius.pill} + 2px);
     position: absolute;
     left: -${FOCUS_PADDING}px;
     top: -${FOCUS_PADDING}px;

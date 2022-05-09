@@ -1,12 +1,12 @@
 import React, { forwardRef, memo, useCallback, useRef } from 'react';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { interactableHeight } from '@cbhq/cds-common/tokens/interactableHeight';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { SearchInputBaseProps } from '@cbhq/cds-common/types/SearchInputBaseProps';
 
 import { Box } from '../layout/Box';
+import { borderWidth } from '../tokens';
 
 import { InputIcon } from './InputIcon';
 import { InputIconButton } from './InputIconButton';
@@ -44,8 +44,8 @@ export const SearchInput = memo(
     ref: ForwardedRef<HTMLInputElement>,
   ) {
     const scale = useScale();
-    const height =
-      interactableHeight[scale][compact ? 'compact' : 'regular'] + borderWidth.input * 2;
+    const heightWithoutBorder = interactableHeight[scale][compact ? 'compact' : 'regular'];
+    const height = `calc(${heightWithoutBorder}px + ${borderWidth.input} + ${borderWidth.input})`;
     const internalRef = useRef<HTMLInputElement>(null);
     const refs = useMergedRef(ref, internalRef);
 

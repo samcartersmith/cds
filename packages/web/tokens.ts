@@ -2,6 +2,32 @@
  * DO NOT MODIFY
  * Generated from scripts/codegen/main.ts
  */
+/** The values for these CSS variables are defined in [styles/borderRadius](./styles/borderRadius.ts) */
+export const borderRadius = {
+  none: 'var(--border-radius-none)',
+  compact: 'var(--border-radius-compact)',
+  tooltipV2: 'var(--border-radius-tooltip-v2)',
+  standard: 'var(--border-radius-standard)',
+  badge: 'var(--border-radius-badge)',
+  tooltip: 'var(--border-radius-tooltip)',
+  pill: 'var(--border-radius-pill)',
+  round: 'var(--border-radius-round)',
+  input: 'var(--border-radius-input)',
+  search: 'var(--border-radius-search)',
+  popover: 'var(--border-radius-popover)',
+} as const;
+
+/** The values for these CSS variables are defined in [styles/borderWidth](./styles/borderWidth.ts) */
+export const borderWidth = {
+  none: 'var(--border-width-none)',
+  button: 'var(--border-width-button)',
+  card: 'var(--border-width-card)',
+  checkbox: 'var(--border-width-checkbox)',
+  radio: 'var(--border-width-radio)',
+  sparkline: 'var(--border-width-sparkline)',
+  focusRing: 'var(--border-width-focus-ring)',
+  input: 'var(--border-width-input)',
+} as const;
 
 export const spacing = {
   '0': 'var(--spacing-0)',

@@ -2,7 +2,6 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from 'linaria';
 import { BorderWidth, ForwardedRef } from '@cbhq/cds-common';
-import { borderWidth as borderWidths } from '@cbhq/cds-common/tokens/border';
 import { inputStackGap } from '@cbhq/cds-common/tokens/input';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { durations } from '@cbhq/cds-common/tokens/motion';
@@ -12,6 +11,7 @@ import { usePalette } from '../hooks/usePalette';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Interactable } from '../system/Interactable';
+import { borderWidth as borderWidths } from '../tokens';
 import { cx } from '../utils/linaria';
 
 import { InputLabel } from './InputLabel';
@@ -119,7 +119,7 @@ export const InputStack = memo(
         '--border-color-unfocused':
           variant === 'foregroundMuted' ? palette.lineHeavy : palette[variant],
         '--border-color-focused': borderColorFocused,
-        '--border-width-focused': `${borderWidths[borderWidth]}px`,
+        '--border-width-focused': borderWidths[borderWidth],
         ...inputBorderRadius,
       };
     }, [variant, palette, borderColorFocused, borderWidth, inputBorderRadius]);

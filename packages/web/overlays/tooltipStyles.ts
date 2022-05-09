@@ -1,11 +1,10 @@
 import { css } from 'linaria';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
 
-import { palette } from '../tokens';
+import { borderRadius, palette } from '../tokens';
 
 export const container = css`
   background-color: ${palette.foreground};
-  border-radius: ${borderRadius.tooltip}px;
+  border-radius: ${borderRadius.tooltip};
   z-index: 1000;
   min-height: 24px;
   align-items: center;

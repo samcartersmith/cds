@@ -1,7 +1,6 @@
 import React, { memo, RefAttributes, useCallback, useEffect, useRef } from 'react';
 import { css } from 'linaria';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/select';
 import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
 
@@ -10,6 +9,7 @@ import { CellAccessory } from '../cells/CellAccessory';
 import { VStack } from '../layout/VStack';
 import { insetFocusRing } from '../styles/focus';
 import { Pressable, PressableProps } from '../system';
+import { borderRadius } from '../tokens';
 import { TextBody, TextHeadline } from '../typography';
 import { cx } from '../utils/linaria';
 
@@ -25,14 +25,14 @@ const pressableStyles = css`
   border: none;
   &:first-child {
     &:before {
-      border-top-right-radius: ${borderRadius.popover}px;
-      border-top-left-radius: ${borderRadius.popover}px;
+      border-top-right-radius: ${borderRadius.popover};
+      border-top-left-radius: ${borderRadius.popover};
     }
   }
   &:last-child {
     &:before {
-      border-bottom-right-radius: ${borderRadius.popover}px;
-      border-bottom-left-radius: ${borderRadius.popover}px;
+      border-bottom-right-radius: ${borderRadius.popover};
+      border-bottom-left-radius: ${borderRadius.popover};
     }
   }
 `;

@@ -1,12 +1,8 @@
 import { mapValues } from '@cbhq/cds-utils/object';
 
 import { avatarSizes } from './configs/avatarConfig';
-import {
-  borderRadiusConfig,
-  borderRadiusCss,
-  borderWidthConfig,
-  borderWidthCss,
-} from './configs/borderConfig';
+import { borderRadius } from './configs/borderRadius';
+import { borderWidth } from './configs/borderWidth';
 import { gridConfig } from './configs/gridConfig';
 import { scaleConfig } from './configs/scaleConfig';
 import { Spectrum } from './Spectrum/Spectrum';
@@ -19,15 +15,22 @@ import { defaultPalette, Palette } from './Palette';
 import { Spacing } from './Spacing';
 import { TypeScript } from './Typescript';
 
+/** Add any configs that do not have platform specific transformations here */
+const configs = {
+  borderRadius,
+  borderWidth,
+  defaultPalette,
+};
+
+const common = {
+  configs,
+};
+
 const web = {
-  motion: {
-    defaultPalette,
-  },
+  configs,
   styles: {
     backgroundColor: Palette.cssBackgroundColor,
     borderColor: Palette.cssBorderColor,
-    borderRadius: borderRadiusCss,
-    borderWidth: borderWidthCss,
     foregroundColor: Palette.cssColor,
     grid: gridConfig.web,
     margin: Spacing.css('margin'),
@@ -96,10 +99,6 @@ async function main() {
         data: Spectrum.native,
       },
       {
-        dest: 'common/tokens/border.ts',
-        data: { borderRadius: borderRadiusConfig, borderWidth: borderWidthConfig },
-      },
-      {
         dest: 'mobile/tokens.ts',
         data: {
           fontFamily: Type.fontFamilyMobileTokens,
@@ -130,7 +129,11 @@ async function main() {
 
   // Palette.validate();
 
-  await Promise.all([buildTemplates(templates), codegen('packages/web', web)]);
+  await Promise.all([
+    buildTemplates(templates),
+    codegen('packages/common', common),
+    codegen('packages/web', web),
+  ]);
 }
 
 void main();

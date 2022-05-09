@@ -2,12 +2,11 @@
 import React, { forwardRef, memo, useCallback } from 'react';
 import { css } from 'linaria';
 import { SharedProps } from '@cbhq/cds-common';
-import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
 
 import { Icon } from '../icons/Icon';
-import { control, palette } from '../tokens';
+import { borderRadius, borderWidth, control, palette } from '../tokens';
 import { FilteredHTMLAttributes } from '../types';
 import { cx } from '../utils/linaria';
 
@@ -92,7 +91,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
 export const RadioGroup = memo(RadioGroupWithRef) as typeof RadioGroupWithRef &
   React.MemoExoticComponent<typeof RadioGroupWithRef>;
 
-const FOCUS_PADDING = 4 + borderWidth.checkbox;
+const FOCUS_PADDING = `calc(-1 * (4px + ${borderWidth.checkbox}))`;
 
 const radio = css`
   width: ${control.radioSize};
@@ -105,8 +104,8 @@ const radio = css`
   justify-content: center;
 
   background-color: ${palette.background};
-  border: ${borderWidth.checkbox}px solid ${palette.lineHeavy};
-  border-radius: ${borderRadius.round}px;
+  border: ${borderWidth.checkbox} solid ${palette.lineHeavy};
+  border-radius: ${borderRadius.round};
   transition: border-color 150ms ease-out;
   &[data-filled='true'] {
     border-color: ${palette.primary};
@@ -117,13 +116,13 @@ const focusRing = css`
   position: relative;
   &::after {
     content: '';
-    border: ${borderWidth.focusRing}px solid ${palette.primary};
-    border-radius: ${borderRadius.round}px;
+    border: ${borderWidth.focusRing} solid ${palette.primary};
+    border-radius: ${borderRadius.round};
     position: absolute;
-    left: -${FOCUS_PADDING}px;
-    top: -${FOCUS_PADDING}px;
-    right: -${FOCUS_PADDING}px;
-    bottom: -${FOCUS_PADDING}px;
+    left: ${FOCUS_PADDING};
+    top: ${FOCUS_PADDING};
+    right: ${FOCUS_PADDING};
+    bottom: ${FOCUS_PADDING};
 
     opacity: 0;
     transition: opacity 100ms ease-out;
