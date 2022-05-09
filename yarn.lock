@@ -2185,12 +2185,16 @@ __metadata:
 "@cbhq/cds-fonts@workspace:*, @cbhq/cds-fonts@workspace:packages/fonts":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-fonts@workspace:packages/fonts"
+  dependencies:
+    "@cbhq/cds-tools": "workspace:*"
   languageName: unknown
   linkType: soft
 
 "@cbhq/cds-lottie-files@workspace:*, @cbhq/cds-lottie-files@workspace:packages/lottie-files":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-lottie-files@workspace:packages/lottie-files"
+  dependencies:
+    "@cbhq/cds-tools": "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -2201,6 +2205,7 @@ __metadata:
     "@cbhq/cds-common": "workspace:*"
     "@cbhq/cds-fonts": "workspace:*"
     "@cbhq/cds-lottie-files": "workspace:*"
+    "@cbhq/cds-tools": "workspace:*"
     "@cbhq/cds-utils": "workspace:*"
     "@react-native-community/netinfo": ^7.1.7
     "@react-navigation/stack": 5.12.8
@@ -2233,10 +2238,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@cbhq/cds-tools@workspace:*, @cbhq/cds-tools@workspace:tools":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/cds-tools@workspace:tools"
+  languageName: unknown
+  linkType: soft
+
 "@cbhq/cds-utils@workspace:*, @cbhq/cds-utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-utils@workspace:packages/utils"
   dependencies:
+    "@cbhq/cds-tools": "workspace:*"
     humps: ^2.0.1
     type-fest: ^1.2.0
   languageName: unknown
@@ -2247,6 +2259,7 @@ __metadata:
   resolution: "@cbhq/cds-web-utils@workspace:packages/web-utils"
   dependencies:
     "@babel/types": ^7.14.4
+    "@cbhq/cds-tools": "workspace:*"
     "@pmmmwh/react-refresh-webpack-plugin": ^0.4.3
     chalk: ^4.1.0
     css-loader: ^6.2.0
@@ -2277,6 +2290,7 @@ __metadata:
     "@cbhq/cds-common": "workspace:*"
     "@cbhq/cds-fonts": "workspace:*"
     "@cbhq/cds-lottie-files": "workspace:*"
+    "@cbhq/cds-tools": "workspace:*"
     "@cbhq/cds-utils": "workspace:*"
     "@cbhq/cds-web-utils": "workspace:*"
     "@popperjs/core": ^2.9.0
@@ -2300,6 +2314,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/docusaurus-plugin-docgen@workspace:packages/docusaurus-plugin-docgen"
   dependencies:
+    "@cbhq/cds-tools": "workspace:*"
     "@cbhq/cds-web": "workspace:*"
     "@docusaurus/module-type-aliases": 2.0.0-beta.18
     "@docusaurus/types": 2.0.0-beta.18
@@ -2543,6 +2558,7 @@ __metadata:
   resolution: "@cds/storybook@workspace:apps/storybook"
   dependencies:
     "@cbhq/cds-fonts": "workspace:*"
+    "@cbhq/cds-tools": "workspace:*"
     "@cbhq/cds-web": "workspace:*"
     "@cbhq/cds-web-utils": "workspace:*"
     "@cbhq/docusaurus-plugin-docgen": "workspace:*"
@@ -2581,6 +2597,7 @@ __metadata:
   resolution: "@cds/website@workspace:apps/website"
   dependencies:
     "@cbhq/cds-common": "workspace:*"
+    "@cbhq/cds-tools": "workspace:*"
     "@cbhq/cds-web": "workspace:*"
     "@cbhq/docusaurus-plugin-docgen": "workspace:*"
     "@cmfcmf/docusaurus-search-local": ^0.10.0

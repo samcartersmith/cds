@@ -50,6 +50,7 @@
     "react-dom": ">=17.0.0"
   },
   "devDependencies": {
+    "@cbhq/cds-tools": "workspace:*",
     "@cbhq/cds-web-utils": "workspace:*",
     "linaria": "^2.3.1"
   },

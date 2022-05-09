@@ -21,6 +21,9 @@
     "humps": "^2.0.1",
     "type-fest": "^1.2.0"
   },
+  "devDependencies": {
+    "@cbhq/cds-tools": "workspace:*"
+  },
   "main": "index",
   "react-native": "index.ts",
   "typings": "index.d.ts"

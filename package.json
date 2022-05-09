@@ -15,8 +15,10 @@
     "fonts": "yarn workspace @cbhq/cds-fonts",
     "lottie": "yarn workspace @cbhq/cds-lottie-files",
     "mobile": "yarn workspace @cbhq/cds-mobile",
+    "tools": "yarn workspace @cbhq/cds-tools",
     "utils": "yarn workspace @cbhq/cds-utils",
     "web": "yarn workspace @cbhq/cds-web",
+    "web-utils": "yarn workspace @cbhq/cds-web-utils",
     "___global___": "✨✨✨ run scripts for any affected nx projects in repo ✨✨✨",
     "affected": "yarn nx affected --base=master --head=HEAD",
     "affected:dep-graph": "yarn nx affected:dep-graph",
@@ -47,7 +49,8 @@
   },
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "tools"
   ],
   "devDependencies": {
     "@babel/cli": "^7.14.3",

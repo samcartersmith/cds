@@ -73,9 +73,15 @@
 | yarn website stylelint          | Stylelint website                                            |
 | yarn website stylelint.fix      | Stylelint website and fix errors.                            |
 | ----                            | ----                                                         |
+| yarn web-utils build            | Build web-utils.                                             |
+| yarn web-utils start            | Build web-utils in watch mode.                               |
+| ----                            | ----                                                         |
 | yarn storybook build            | Build storybook.                                             |
 | yarn storybook start            | Start storybook local dev server.                            |
 | yarn storybook format           | Format the `storybook`                                       |
+| ----                            | ----                                                         |
+| yarn tools build                | Build tools.                                                 |
+| yarn tools start                | Build tools in watch mode.                                   |
 | ----                            | ----                                                         |
 | yarn playground format          | Format the `mobile-playground`                               |
 | yarn playground start           | Start the playground app (ios by default).                   |

@@ -43,6 +43,7 @@
     "react-native-svg": "12.1.0"
   },
   "devDependencies": {
+    "@cbhq/cds-tools": "workspace:*",
     "@react-navigation/stack": "5.12.8",
     "d3-shape": "^2.1.0",
     "lottie-ios": "3.2.3",

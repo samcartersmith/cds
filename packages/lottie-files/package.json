@@ -18,5 +18,8 @@
   },
   "main": "./index",
   "typings": "index.d.ts",
-  "react-native": "./index.ts"
+  "react-native": "./index.ts",
+  "devDependencies": {
+    "@cbhq/cds-tools": "workspace:*"
+  }
 }

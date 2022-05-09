@@ -4,6 +4,7 @@
   "description": "Jest utils and developer tools.",
   "dependencies": {
     "@babel/types": "^7.14.4",
+    "@cbhq/cds-tools": "workspace:*",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "chalk": "^4.1.0",
     "css-loader": "^6.2.0",
@@ -28,6 +29,35 @@
   "keywords": [
     "web utils"
   ],
-  "types": "./index.d.ts",
-  "main": "./index.ts"
+  "scripts": {
+    "babel": "../../node_modules/.bin/babel",
+    "build": "yarn babel . --extensions .ts,.tsx --delete-dir-on-start --out-dir dist",
+    "watch": "yarn build --watch"
+  },
+  "exports": {
+    ".": {
+      "node": "./dist/index.js",
+      "require": "./dist/index.js",
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./babel/*": {
+      "node": "./dist/babel/*.js",
+      "require": "./dist/babel/*.js",
+      "import": "./babel/*.ts",
+      "types": "./babel/*.ts"
+    },
+    "./jest/*": {
+      "node": "./dist/jest/*.js",
+      "require": "./dist/jest/*.js",
+      "import": "./jest/*.ts",
+      "types": "./jest/*.ts"
+    },
+    "./monorepo/*": {
+      "node": "./dist/monorepo/*.js",
+      "require": "./dist/monorepo/*.js",
+      "import": "./monorepo/*.ts",
+      "types": "./monorepo/*.ts"
+    }
+  }
 }

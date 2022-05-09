@@ -11,10 +11,10 @@
       "executor": "@cbhq/mono-tasks:lint"
     },
     "lint-styles": {
-      "executor": "./tools/executors/lint-styles:lint-styles"
+      "executor": "@cbhq/cds-tools:lint-styles"
     },
     "typecheck": {
-      "executor": "./tools/executors/typecheck:typecheck"
+      "executor": "@cbhq/cds-tools:typecheck"
     },
     "build": {
       "executor": "@cbhq/mono-tasks:build-storybook"

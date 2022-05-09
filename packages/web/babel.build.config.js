@@ -4,7 +4,7 @@ module.exports = {
   presets: [
     ...baseConfig.presets,
     // eslint-disable-next-line global-require
-    [require.resolve('../web-utils/dist/babel/linariaPreset'), require('./linaria.config')],
+    ['@cbhq/cds-web-utils/babel/linariaPreset', require('./linaria.config')],
   ],
   plugins: [...baseConfig.plugins],
 };

@@ -14,53 +14,53 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "./tools/executors/typecheck:typecheck"
+      "executor": "@cbhq/cds-tools:typecheck"
     },
     "docgen": {
-      "executor": "./tools/executors/ts-script:ts-script",
+      "executor": "@cbhq/cds-tools:ts-script",
       "options": {
         "scriptPath": "packages/codegen/website/build.ts"
       }
     },
     "codegen": {
-      "executor": "./tools/executors/ts-script:ts-script",
+      "executor": "@cbhq/cds-tools:ts-script",
       "options": {
         "scriptPath": "packages/codegen/main.ts"
       }
     },
     "release": {
-      "executor": "./tools/executors/ts-script:ts-script",
+      "executor": "@cbhq/cds-tools:ts-script",
       "options": {
         "scriptPath": "packages/codegen/releasePackages.ts",
         "args": ["--packages=fonts|web|lottie-files|mobile|utils|common"]
       }
     },
     "sync_icons": {
-      "executor": "./tools/executors/ts-script:ts-script",
+      "executor": "@cbhq/cds-tools:ts-script",
       "options": {
         "scriptPath": "packages/codegen/icons/syncSvgsFromFigma.ts"
       }
     },
     "build_icons": {
-      "executor": "./tools/executors/ts-script:ts-script",
+      "executor": "@cbhq/cds-tools:ts-script",
       "options": {
         "scriptPath": "packages/codegen/icons/build.ts"
       }
     },
     "build_illustrations": {
-      "executor": "./tools/executors/ts-script:ts-script",
+      "executor": "@cbhq/cds-tools:ts-script",
       "options": {
         "scriptPath": "packages/codegen/illustrations/build.ts"
       }
     },
     "prepare_mobile_routes": {
-      "executor": "./tools/executors/ts-script:ts-script",
+      "executor": "@cbhq/cds-tools:ts-script",
       "options": {
         "scriptPath": "packages/codegen/playground/prepareRoutes.ts"
       }
     },
     "prepare_adoption": {
-      "executor": "./tools/executors/ts-script:ts-script",
+      "executor": "@cbhq/cds-tools:ts-script",
       "options": {
         "scriptPath": "packages/codegen/adoption/prepare.ts",
         "args": ["--tempDir=packages/codegen/adoption/temp"],
@@ -70,7 +70,7 @@
       }
     },
     "debug_adoption": {
-      "executor": "./tools/executors/ts-script:ts-script",
+      "executor": "@cbhq/cds-tools:ts-script",
       "options": {
         "scriptPath": "packages/codegen/adoption/prepare.ts",
         "args": ["--tempDir=packages/codegen/adoption/temp", "debug=1"],
