@@ -2,14 +2,42 @@
 
 ```tsx
 const config = {
-  Button: {
-    onPress: (customConfig: EventCustomConfig) => {
-      const { data, componentName } = customConfig;
-      // ... handle custom data
+  handlers: {
+    Button: {
+      onPress: (customConfig: EventCustomConfig) => {
+        const { data, componentName } = customConfig;
+        // ... handle custom data
+      },
+      onHover: (customConfig: EventCustomConfig) => {
+        const { data, componentName } = customConfig;
+        // ... handle custom data
+      },
     },
-    onHover: (customConfig: EventCustomConfig) => {
-      const { data, componentName } = customConfig;
-      // ... handle custom data
+  },
+};
+
+<EventHandlerProvider config={config}>
+  <App />
+</EventHandlerProvider>;
+```
+
+with actionMapping option
+
+```tsx
+const config = {
+  actionMapping: {
+    onPress: 'click',
+  },
+  handlers: {
+    Button: {
+      click: (customConfig: EventCustomConfig) => {
+        const { data, componentName } = customConfig;
+        // ... handle custom data
+      },
+      onHover: (customConfig: EventCustomConfig) => {
+        const { data, componentName } = customConfig;
+        // ... handle custom data
+      },
     },
   },
 };
