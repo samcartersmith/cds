@@ -83,7 +83,7 @@ export const frontierButton = css`
 export const frontierIcon = `
   display: flex;
   flex-direction: row;
-  alignItems: center;
+  align-items: center;
   flex-grow: 1;
   flex-shrink: 0;
 `;
