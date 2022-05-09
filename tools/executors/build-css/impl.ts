@@ -1,7 +1,8 @@
 import { ExecutorContext } from '@nrwl/devkit';
 import glob from 'fast-glob';
-import path from 'path';
 import fs from 'fs';
+import path from 'path';
+
 import { createDir, deleteDir, getProjectPath } from '../utils';
 
 type BuildCssOptions = {
@@ -110,7 +111,7 @@ export default async function buildCss(options: BuildCssOptions, context: Execut
 
   await deleteDir(outputDir);
 
-  await createDir(outputDir);
+  createDir(outputDir);
 
   // Write css and fonts to bazel out
   try {

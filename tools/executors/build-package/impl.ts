@@ -1,7 +1,8 @@
 import { ExecutorContext } from '@nrwl/devkit';
-import path from 'path';
-import fs from 'fs';
 import chalk from 'chalk';
+import fs from 'fs';
+import path from 'path';
+
 import { createDir, deleteDir, runLocalCommand } from '../utils';
 
 type BuildPackageOptions = {
@@ -94,7 +95,7 @@ async function runBabel(
     extensions.join(','),
     '--ignore',
     [...ignore, 'node_modules'].join(','),
-    //'--source-maps',
+    // '--source-maps',
     '--out-dir',
     destinationDir,
     '--copy-files',
@@ -155,8 +156,8 @@ async function copyFiles({
   staticFilesToCopy: string[];
   projectDir: string;
 }) {
-  return await Promise.all(
-    staticFilesToCopy.map((item) => {
+  return Promise.all(
+    staticFilesToCopy.map(async (item) => {
       const fromPath = path.join(projectDir, item);
       const toPath = path.join(destinationDir, item);
       return fs.promises.copyFile(fromPath, toPath);
@@ -190,6 +191,7 @@ function replaceDeps(context: ExecutorContext, pkgJson: PackageJson, deps: Recor
         getPackageVersion(
           path.join(context.root, packageVersionReplacePathMap[dep], 'package.json'),
         ).then((version: string) => {
+          // eslint-disable-next-line no-param-reassign
           deps[dep] = `^${version}`;
         }),
       );
@@ -204,6 +206,7 @@ function deletePackages(packagesToDelete: string[], deps?: Record<string, string
 
   for (const pkg of packagesToDelete) {
     if (pkg in deps) {
+      // eslint-disable-next-line no-param-reassign
       delete deps[pkg];
     }
   }
@@ -211,6 +214,7 @@ function deletePackages(packagesToDelete: string[], deps?: Record<string, string
 
 function deleteFields(pkgJson: PackageJson, fields: (keyof PackageJson)[]) {
   for (const field of fields) {
+    // eslint-disable-next-line no-param-reassign
     delete pkgJson[field];
   }
 }
@@ -255,7 +259,7 @@ export default async function buildPackage(options: BuildPackageOptions, context
   const projectDir = path.dirname(path.join(context.root, typescriptConfig));
 
   await deleteDir(dist);
-  await createDir(dist);
+  createDir(dist);
 
   const babelArgs: BabelArgs = {
     configFile: babelConfig,

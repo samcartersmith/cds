@@ -1,65 +1,75 @@
 import { ExecutorContext } from '@nrwl/devkit';
-import path from 'path';
 import chalk from 'chalk';
 import execa from 'execa';
 import fs from 'fs';
 import { reduce } from 'lodash';
+import path from 'path';
 
 export function getProjectPath(context: ExecutorContext): string {
   return context.workspace.projects[context.projectName as string].root;
 }
 
 /**
- * 
- * @param context 
- * @param bin 
- * @param args 
- * @param envs Environment key-value pairs. Extends automatically from process.env. Set extendEnv to false if you don't want this. 
- * @param cwdOverride 
- * @returns 
+ *
+ * @param context
+ * @param bin
+ * @param args
+ * @param envs Environment key-value pairs. Extends automatically from process.env. Set extendEnv to false if you don't want this.
+ * @param cwdOverride
+ * @returns
  */
-export async function runLocalCommand(context: ExecutorContext, bin: string, args: string[] = [], envs = {}, cwdOverride?: string) {
+export async function runLocalCommand(
+  context: ExecutorContext,
+  bin: string,
+  args: string[] = [],
+  envs = {},
+  cwdOverride?: string,
+) {
   const cwd = cwdOverride ?? path.join(context.root, getProjectPath(context));
-  console.log(chalk.gray(`Running \`${reduce(
-    envs, 
-    function(result, value, key) {
-      return result + `${key}="${value}" `; 
-    },
-    ""
-  )} ${bin} ${args.join(' ')}\` in .${cwd}`));
+  console.log(
+    chalk.gray(
+      `Running \`${reduce(
+        envs,
+        (result, value, key) => {
+          return `${result}${key}="${value}" `;
+        },
+        '',
+      )} ${bin} ${args.join(' ')}\` in .${cwd}`,
+    ),
+  );
 
   const result = await execa(bin, args, {
     cwd,
     stdio: 'inherit',
     preferLocal: true,
-    env: envs, 
+    env: envs,
   });
 
   return Promise.resolve({ success: result.exitCode === 0 });
 }
 
-export async function deleteDir(path: string) {
-  if (fs.existsSync(path)) {
-    console.log(`deleting ${path}`);
+export async function deleteDir(dir: string) {
+  if (fs.existsSync(dir)) {
+    console.log(`deleting ${dir}`);
 
     await new Promise((resolve) => {
-      fs.rm(path, { recursive: true }, (err) => {
+      fs.rm(dir, { recursive: true }, (err) => {
         if (err) {
-          console.log(`error while trying to delete ${path}: ${err?.message}`);
+          console.log(`error while trying to delete ${dir}: ${err?.message}`);
           process.exit(1);
         }
 
-        console.log(`${path} is deleted!`);
+        console.log(`${dir} is deleted!`);
         resolve(null);
       });
     });
   }
 }
 
-export function createDir(path: string) {
-  console.log(`creating ${path}`);
-  if (!fs.existsSync(path)) {
-    fs.mkdirSync(path, { recursive: true });
+export function createDir(dir: string) {
+  console.log(`creating ${dir}`);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
   }
 }
 
