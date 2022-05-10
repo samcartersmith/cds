@@ -1,6 +1,4 @@
 _shared_step: &shared_step
-  env:
-    PERCY_TARGET_BRANCH: $BUILDKITE_PULL_REQUEST_BASE_BRANCH
   commands:
     - tools/ci/setup.sh
   plugins:
@@ -82,7 +80,6 @@ steps:
     env:
       CONFIG_SERVICE_CONTEXT: percy-cds
       STORYBOOK_SKIP_ANIMATION: true
-      PERCY_TARGET_BRANCH: $BUILDKITE_PULL_REQUEST_BASE_BRANCH
     plugins:
       - file:///buildkite/plugins/docker:
           <<: *docker_plugin

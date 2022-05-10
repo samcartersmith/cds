@@ -11,11 +11,16 @@ yarn install --immutable
 # Need to make sure base branch is up-to-date. If not running on a PR, use `master`.
 BASE_BRANCH=$BUILDKITE_PULL_REQUEST_BASE_BRANCH
 if [[ -z "$BASE_BRANCH" ]]; then
+    BASE_BRANCH=$BUILDKITE_BRANCH
+fi
+
+if [[ -z "$BASE_BRANCH" ]]; then
     BASE_BRANCH="master"
 fi
 
-# Temporarary workaround for null coalescing issue on an empty string here https://github.cbhq.net/frontend/web/blob/master/packages/mono-pipeline/src/helpers.ts#L30
-BUILDKITE_PULL_REQUEST_BASE_BRANCH=$BASE_BRANCH
+export PERCY_TARGET_BRANCH=$BASE_BRANCH
+
+echo "--- Percy Target '$PERCY_TARGET_BRANCH'"
 
 echo "--- Updating local '$BASE_BRANCH' base branch from buildkite branch '$BUILDKITE_PULL_REQUEST_BASE_BRANCH'"
 
