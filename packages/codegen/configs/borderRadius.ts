@@ -1,4 +1,12 @@
 export const borderRadius = {
+  roundedNone: 0,
+  roundedSmall: 4,
+  rounded: 8,
+  roundedLarge: 16,
+  roundedFull: 1000,
+};
+
+export const borderRadiusDeprecated = {
   none: 0,
   compact: 4,
   tooltipV2: 6,

@@ -4,17 +4,33 @@
  */
 /** The values for these CSS variables are defined in [styles/borderRadius](./styles/borderRadius.ts) */
 export const borderRadius = {
+  /** @deprecated Please use new rounded prefixed values */
   none: 'var(--border-radius-none)',
+  /** @deprecated Please use new rounded prefixed values */
   compact: 'var(--border-radius-compact)',
+  /** @deprecated Please use new rounded prefixed values */
   tooltipV2: 'var(--border-radius-tooltip-v2)',
+  /** @deprecated Please use new rounded prefixed values */
   standard: 'var(--border-radius-standard)',
+  /** @deprecated Please use new rounded prefixed values */
   badge: 'var(--border-radius-badge)',
+  /** @deprecated Please use new rounded prefixed values */
   tooltip: 'var(--border-radius-tooltip)',
+  /** @deprecated Please use new rounded prefixed values */
   pill: 'var(--border-radius-pill)',
+  /** @deprecated Please use new rounded prefixed values */
   round: 'var(--border-radius-round)',
+  /** @deprecated Please use new rounded prefixed values */
   input: 'var(--border-radius-input)',
+  /** @deprecated Please use new rounded prefixed values */
   search: 'var(--border-radius-search)',
+  /** @deprecated Please use new rounded prefixed values */
   popover: 'var(--border-radius-popover)',
+  roundedNone: 'var(--border-radius-rounded-none)',
+  roundedSmall: 'var(--border-radius-rounded-small)',
+  rounded: 'var(--border-radius-rounded)',
+  roundedLarge: 'var(--border-radius-rounded-large)',
+  roundedFull: 'var(--border-radius-rounded-full)',
 } as const;
 
 /** The values for these CSS variables are defined in [styles/borderWidth](./styles/borderWidth.ts) */
