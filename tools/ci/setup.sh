@@ -26,5 +26,6 @@ echo "--- Updating local '$BASE_BRANCH' base branch from buildkite branch '$BUIL
 
 # Required for correct NX affected project resolution
 git fetch -f --no-tags origin $BASE_BRANCH:$BASE_BRANCH
+git fetch -f --no-tags origin master:master
 
 echo "--- Setup complete, running jobs"
