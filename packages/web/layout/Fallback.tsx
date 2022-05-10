@@ -22,7 +22,6 @@ const fallback = css`
     rgb(var(--gray60), 0.05) 100%
   );
   background-repeat: no-repeat;
-  background-size: 600px 100px;
   display: inline-block;
   position: relative;
 
@@ -57,6 +56,7 @@ export const Fallback = memo(function Fallback({
   const style = useMemo(
     () => ({
       width: percentage ? `100%` : width,
+      backgroundSize: `600px ${height}px`,
       height,
       borderRadius,
     }),
