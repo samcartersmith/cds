@@ -185,7 +185,6 @@ const PopoverDropdown = memo(
         onChange,
         disablePortal,
         onBlur,
-        enableSearch,
         contentPosition = defaultPopoverContentPositionConfig,
         block,
         ...props
@@ -259,7 +258,6 @@ const PopoverDropdown = memo(
             maxWidth={maxWidth}
             height={dropdownHeight.current}
             maxHeight={maxHeight}
-            enableSearch={enableSearch}
             value={value}
           >
             {content}
@@ -270,7 +268,6 @@ const PopoverDropdown = memo(
         block,
         content,
         dropdownHeight,
-        enableSearch,
         maxHeight,
         maxWidth,
         minWidth,
@@ -321,7 +318,6 @@ export const Dropdown = memo(
       {
         children,
         maxHeight = dropdownMaxHeight,
-        enableSearch = false,
         enableMobileModal,
         onOpenMenu,
         onCloseMenu,
@@ -356,7 +352,6 @@ export const Dropdown = memo(
       ) : (
         <PopoverDropdown
           maxHeight={maxHeight}
-          enableSearch={enableSearch}
           visible={visible}
           onOpenMenu={handleOpenMenu}
           onCloseMenu={handleCloseMenu}

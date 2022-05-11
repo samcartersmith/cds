@@ -31,18 +31,12 @@ export type DropdownProps = {
   onOpenMenu?: NoopFn;
   /** Callback that fires when Dropdown is closed */
   onCloseMenu?: NoopFn;
-  /** Callback that fires when PopoverMenu or trigger are blurred */
+  /** Callback that fires when Dropdown or trigger are blurred */
   onBlur?: NoopFn;
-  /** Does not render the PopoverMenu inside of a portal (react-dom createPortal).
+  /** Does not render the Dropdown inside of a portal (react-dom createPortal).
    * Portal is automatically disabled for SSR
    * */
   disablePortal?: boolean;
-  /**
-   * Enable when PopoverMenu is used with a SearchInput as the trigger. Applies
-   * relevant focus behaviors and keyboard events
-   * @default false
-   */
-  enableSearch?: boolean;
 } & Pick<PopoverProps, 'content' | 'children' | 'showOverlay' | 'contentPosition' | 'block'> &
   SharedProps &
   Pick<

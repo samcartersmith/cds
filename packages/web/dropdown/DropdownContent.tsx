@@ -21,15 +21,12 @@ const popoverMenuStaticClassName = 'cds-popover-menu';
 type DropdownContentProps = {
   height?: DimensionValue;
   onOpen?: NoopFn;
-} & Pick<
-  DropdownProps,
-  'width' | 'maxHeight' | 'maxWidth' | 'minWidth' | 'children' | 'enableSearch' | 'value'
->;
+} & Pick<DropdownProps, 'width' | 'maxHeight' | 'maxWidth' | 'minWidth' | 'children' | 'value'>;
 
 export const DropdownContent = memo(
   forwardRef(
     (
-      { children, value, enableSearch, onOpen, ...props }: DropdownContentProps,
+      { children, value, onOpen, ...props }: DropdownContentProps,
       ref: ForwardedRef<HTMLElement>,
     ) => {
       const isMounted = useRef<boolean>(false);
@@ -43,13 +40,13 @@ export const DropdownContent = memo(
 
       // on mount focus the first option (unless there is an already selected value, then select option will focus it)
       useEffect(() => {
-        if (!value && !enableSearch && isBrowser() && ref && typeof ref !== 'function') {
+        if (!value && isBrowser() && ref && typeof ref !== 'function') {
           const focusableElements = ref.current?.querySelectorAll(FOCUSABLE_ELEMENTS);
           if (focusableElements) {
             (focusableElements[0] as HTMLElement).focus();
           }
         }
-      }, [ref, value, enableSearch]);
+      }, [ref, value]);
 
       return (
         <VStack

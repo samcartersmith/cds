@@ -12,7 +12,7 @@ function DefaultSelect() {
   const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
   return (
     <ExampleWithThemeToggles>
-      <VStack spacing={2} background minHeight={400}>
+      <VStack spacing={2} background>
         <Select value={value} placeholder="Choose something..." onChange={setValue}>
           {options.map((option) => (
             <SelectOption value={option} key={option} title={option} description="Description" />
@@ -40,7 +40,7 @@ function DefaultSelect() {
   const selectedValueLabel = value && options.find((option) => option.value === value).label;
   return (
     <ExampleWithThemeToggles>
-      <VStack spacing={2} background minHeight={400}>
+      <VStack spacing={2} background>
         <Select
           value={value}
           valueLabel={selectedValueLabel}
@@ -76,7 +76,7 @@ function LabelHelperTextSelect() {
   const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
   return (
     <ExampleWithThemeToggles>
-      <VStack spacing={2} background minHeight={400}>
+      <VStack spacing={2} background>
         <Select
           label="Make a selection"
           helperText="You can only choose one"
@@ -104,7 +104,7 @@ function CompactSelect() {
   const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
   return (
     <ExampleWithThemeToggles>
-      <VStack spacing={2} background minHeight={400}>
+      <VStack spacing={2} background>
         <Select compact label="Make a selection" value={value} onChange={setValue}>
           {options.map((option) => (
             <SelectOption
@@ -132,7 +132,7 @@ function Variant() {
   const options = ['Positive', 'Negative', 'Primary', 'Secondary', 'Foreground'];
   return (
     <ExampleWithThemeToggles>
-      <VStack spacing={2} background minHeight={400}>
+      <VStack spacing={2} background>
         <Select
           variant={value.toLowerCase()}
           label="Make a selection"

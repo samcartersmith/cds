@@ -105,7 +105,6 @@ const SearchInputMenuRecipe = () => {
       value={selectedValue}
       onChange={handleMenuChange}
       width="100%"
-      enableSearch
       block
       disableCloseOnOptionChange
       ref={dropdownRef}

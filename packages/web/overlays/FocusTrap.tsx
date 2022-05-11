@@ -46,8 +46,11 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
         event.preventDefault();
       }
 
-      // only prevent default when it's not an arrow press, because we want to preserve scroll via arrows
       if (event.key === 'Tab') {
+        event.preventDefault();
+      }
+
+      if (isMenuItem && (event.key === 'ArrowUp' || event.key === 'ArrowDown')) {
         event.preventDefault();
       }
 
@@ -122,11 +125,6 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        void onEscPress?.();
-        isFocused.current = false;
-      }
-
       if (NAVIGATION_KEYS.includes(event.key)) {
         handleKeyboardNavigation(event, childrenRef.current);
       }
@@ -134,15 +132,27 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
       // Swallow the event, in case someone is listening on the body.
       event.stopPropagation();
     },
-    [handleKeyboardNavigation, childrenRef, onEscPress],
+    [handleKeyboardNavigation, childrenRef],
+  );
+
+  const handleKeyUp = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        void onEscPress?.();
+        isFocused.current = false;
+      }
+    },
+    [onEscPress],
   );
 
   useEffect(() => {
     getBrowserGlobals()?.window.addEventListener('keydown', handleKeyDown);
+    getBrowserGlobals()?.window.addEventListener('keyup', handleKeyUp);
     return () => {
       getBrowserGlobals()?.window.removeEventListener('keydown', handleKeyDown);
+      getBrowserGlobals()?.window.removeEventListener('keyup', handleKeyUp);
     };
-  }, [handleKeyDown]);
+  }, [handleKeyDown, handleKeyUp]);
 
   // only works for single child
   const onlyChild = React.Children.only(children);
