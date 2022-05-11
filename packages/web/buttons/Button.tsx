@@ -97,7 +97,7 @@ export const Button = forwardRef(function Button(
       className={cx(
         foregroundColors[color],
         buttonStyles.button,
-        hasFrontier && buttonStyles.frontierButton,
+        numberOfLines && buttonStyles.unsetNoWrap,
         hasFrontier && hasIcon && buttonStyles.frontierButtonWithIcon,
         compact && buttonStyles.buttonCompact,
         block && buttonStyles.buttonBlock,

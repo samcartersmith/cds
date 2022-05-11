@@ -73,9 +73,7 @@ export const positionRelative = css`
   position: relative;
 `;
 
-// Frontier specific styles
-// TODO: When frontierButton is resolved remove white-space: nowrap from base Button styles
-export const frontierButton = css`
+export const unsetNoWrap = css`
   white-space: unset;
 `;
 
