@@ -63,6 +63,10 @@ export type TextBaseProps = {
   dangerouslySetColor?: string;
   /** Should the Text component inherit styles of parent */
   inherit?: boolean;
+  /**
+   * Truncates text after wrapping to a defined number of lines.
+   */
+  numberOfLines?: number;
 } & SpacingProps &
   TextAlignProps &
   SharedProps;

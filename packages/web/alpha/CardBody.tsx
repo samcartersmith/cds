@@ -13,7 +13,6 @@ export type CardBodyActionProps = React.ComponentProps<typeof CardBodyAction>;
 
 export const CardBodyAction = createCardBodyAction({
   Button,
-  platform: 'web',
 });
 
 const TextHeadline = createText('headline', { as: 'h3' });

@@ -14,7 +14,6 @@ export type CardBodyActionProps = React.ComponentProps<typeof CardBodyAction>;
 
 export const CardBodyAction = createCardBodyAction({
   Button,
-  platform: 'mobile',
 });
 
 export const CardBody = createCardBody({

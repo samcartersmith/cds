@@ -13,9 +13,8 @@ import type {
 
 type TextProps = TextBaseProps & {
   color?: PaletteForeground;
-  /** TODO: Add numberOfLines and ellipsize functionality to web and remove this conditional */
+  /** TODO: Add ellipsize functionality to web and remove this conditional */
   ellipsize?: 'head' | 'middle' | 'tail' | 'clip' | undefined;
-  numberOfLines?: number;
 } & SharedProps;
 
 type CreateCardBodyParams<OnPressFn> = {
@@ -100,12 +99,12 @@ export function createCardBody<OnPressFn>({
       return null;
     }, [illustration, image, mediaPlacement, mediaProp, testID]);
 
-    /** TODO: Add numberOfLines and ellipsize functionality to web and remove this conditional */
+    /** TODO: Add ellipsize functionality to web and remove this conditional */
     const textProps: TextProps = useMemo(
       () =>
         platform === 'mobile'
           ? { numberOfLines, ellipsize: 'tail', transform: 'none' }
-          : { transform: 'none' },
+          : { numberOfLines, transform: 'none' },
       [numberOfLines],
     );
 

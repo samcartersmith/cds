@@ -1,4 +1,4 @@
-import { createElement } from 'react';
+import React, { createElement, useMemo } from 'react';
 import { css } from 'linaria';
 import type { Typography } from '@cbhq/cds-common';
 import { useTextTransform } from '@cbhq/cds-common/hooks/useTextTransform';
@@ -55,6 +55,7 @@ export const createText = <
     underline = overrides?.underline,
     mono = overrides?.mono,
     noWrap = overrides?.noWrap,
+    numberOfLines = overrides?.numberOfLines,
     overflow = overrides?.overflow,
     testID = overrides?.testID,
     transform = overrides?.transform,
@@ -93,6 +94,17 @@ export const createText = <
       spacingHorizontal,
     });
 
+    const textStyles = useMemo(() => {
+      const style: React.CSSProperties = {};
+      if (dangerouslySetColor) {
+        style.color = dangerouslySetColor;
+      }
+      if (numberOfLines) {
+        style['--typography-number-of-lines'] = numberOfLines;
+      }
+      return style;
+    }, [dangerouslySetColor, numberOfLines]);
+
     if (isChildrenFalsy(children)) {
       return null;
     }
@@ -106,7 +118,7 @@ export const createText = <
         'aria-labelledby': accessibilityLabelledBy,
         id,
         ...(mono ? { 'data-variant': 'mono' } : emptyObject),
-        style: dangerouslySetColor ? { color: dangerouslySetColor } : undefined,
+        style: textStyles,
         className: cx(
           typographyResets,
           inherit ? textInherit : typographyStyles,
@@ -120,6 +132,7 @@ export const createText = <
             selectable,
             underline,
             noWrap,
+            numberOfLines,
             overflow,
             transform: textTransform,
           }),
