@@ -42,6 +42,7 @@ import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValue
 import * as CDSControls from '@cbhq/cds-web/controls';
 import * as CDSDots from '@cbhq/cds-web/dots';
 import { Dropdown } from '@cbhq/cds-web/dropdown/Dropdown';
+import { MenuItem } from '@cbhq/cds-web/dropdown/MenuItem';
 import { useA11yControlledVisibility } from '@cbhq/cds-web/hooks/useA11yControlledVisibility';
 import { useCheckboxGroupState } from '@cbhq/cds-web/hooks/useCheckboxGroupState';
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
@@ -168,6 +169,7 @@ const ReactLiveScope: unknown = {
   ...CDSVisualizations,
   Cell,
   Dropdown,
+  MenuItem,
   // context
   PortalProvider,
   // Utils

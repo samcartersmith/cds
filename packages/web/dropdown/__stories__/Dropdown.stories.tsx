@@ -7,10 +7,11 @@ import { Icon } from '../../icons';
 import { HStack } from '../../layout';
 import { PopoverContentPositionConfig } from '../../overlays/popover/PopoverProps';
 import { SectionTitle } from '../../overlays/PopoverMenu/SectionTitle';
-import { Pressable } from '../../system';
-import { TextBody, TextHeadline } from '../../typography';
+import { Pressable, PressableOpacity } from '../../system';
+import { TextBody, TextHeadline, TextTitle2 } from '../../typography';
 import { Dropdown } from '../Dropdown';
 import { DropdownProps, DropdownRefProps } from '../DropdownProps';
+import { MenuItem } from '../MenuItem';
 
 export default {
   title: 'Core Components/Dropdown',
@@ -182,5 +183,54 @@ export const SubMenu = () => {
   );
 };
 
+const emojiMap = [
+  { label: 'react', glyph: '⚛️' },
+  { label: 'love', glyph: '💕' },
+  { label: 'mindblow', glyph: '🤯' },
+  { label: 'shiny', glyph: '✨' },
+  { label: 'surprised', glyph: '🥺' },
+  { label: 'brick', glyph: '🧱' },
+  { label: 'poop', glyph: '💩' },
+  { label: 'poodle', glyph: '🐩' },
+  { label: 'rocket', glyph: '🚀' },
+  { label: 'phone', glyph: '☎️' },
+  { label: 'dog', glyph: '🐕‍🦺' },
+  { label: 'nails', glyph: '💅🏻' },
+  { label: 'upsidedown', glyph: '🙃' },
+  { label: 'coder', glyph: '👩🏼‍💻' },
+];
+
 export const ShowOverlay = () => <Default showOverlay />;
 export const MobileModal = () => <Default enableMobileModal />;
+
+export const CustomOptions = () => {
+  const [value, onChange] = useState<string | undefined>();
+  const currentGlyph = useMemo(
+    () => emojiMap.find((emoji) => emoji.label === value)?.glyph ?? '😄',
+    [value],
+  );
+
+  const content = useMemo(
+    () => (
+      <>
+        <SectionTitle text="Most Popular" />
+        <HStack gap={1} flexWrap="wrap" spacingHorizontal={2} spacingBottom={2}>
+          {emojiMap.map(({ label, glyph }) => (
+            <MenuItem value={label}>
+              <TextTitle2 as="p">{glyph}</TextTitle2>
+            </MenuItem>
+          ))}
+        </HStack>
+      </>
+    ),
+    [],
+  );
+
+  return (
+    <Dropdown width={190} content={content} value={value} onChange={onChange}>
+      <PressableOpacity>
+        <TextTitle2 as="p">{currentGlyph}</TextTitle2>
+      </PressableOpacity>
+    </Dropdown>
+  );
+};

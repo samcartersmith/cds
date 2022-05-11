@@ -105,29 +105,6 @@ describe('PopoverMenu', () => {
     // menu should dismount
     expect(onBlurSpy).toHaveBeenCalled();
   });
-  it('the selected option has a tabindex of 0', async () => {
-    const { getAllByRole, getByTestId } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />,
-    );
-
-    // press the trigger
-    fireEvent.click(getByTestId(mockTriggerTestID));
-
-    // select the first option
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
-    fireEvent.click(firstOption);
-
-    // menu should dismount
-    expect(onBlurSpy).toHaveBeenCalled();
-
-    // press the trigger
-    fireEvent.click(getByTestId(mockTriggerTestID));
-
-    // expect the first option to have tabindex 0
-    // you have to rerender it because it has a checkbox accessory now
-    const firstOptionRerendered = await waitFor(() => getAllByRole('menuitem')[0]);
-    expect(firstOptionRerendered).toHaveAttribute('tabindex', '0');
-  });
   // keyboard interactions to open the menu
   it('opens the menu when the trigger is focused and user types Enter', async () => {
     const { getByTestId, getAllByRole } = render(

@@ -80,6 +80,7 @@ export const SelectTrigger = memo(
           width="100%"
           noScaleOnPress
           className={pressableOverrides}
+          tabIndex={0}
           {...props}
         >
           <HStack minHeight={minHeight} width="100%" minWidth={0} spacingStart={startNode ? 0 : 2}>

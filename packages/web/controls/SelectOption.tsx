@@ -40,9 +40,14 @@ const pressableStyles = css`
 export type SelectOptionProps = {
   /** Prevent menu from closing when an option is selected */
   disableCloseOnOptionChange?: boolean;
+  /**
+   * Necessary to control roving tabindex for accessibility
+   * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
+   * */
+  tabIndex?: number;
 } & SelectOptionBaseProps &
   RefAttributes<HTMLElement> &
-  Pick<PressableProps, 'onPress' | 'onKeyPress'>;
+  Pick<PressableProps, 'onPress' | 'onKeyPress' | 'to'>;
 
 const selectOptionMinHeight: Record<ScaleDensity, number> = {
   normal: 48,
@@ -71,6 +76,7 @@ export const SelectOption = memo(
     disableCloseOnOptionChange,
     onPress,
     onKeyPress,
+    tabIndex,
     ...props
   }: SelectOptionProps) => {
     const selectOptionRef = useRef<HTMLButtonElement | null>(null);
@@ -120,7 +126,8 @@ export const SelectOption = memo(
         backgroundColor="background"
         onPress={handlePress}
         onKeyPress={handleKeyPress}
-        tabIndex={selected ? 0 : -1}
+        // default to -1 since this is a grouped control and the parent control will have tabIndex 0
+        tabIndex={tabIndex ?? -1}
         className={cx(selectOptionStaticClassName, insetFocusRing, pressableStyles)}
         ref={selectOptionRef}
         role="menuitem"

@@ -13,7 +13,7 @@ import { helperTextHeight, inputStackGap } from '@cbhq/cds-common/tokens/input';
 import { SelectBaseProps } from '@cbhq/cds-common/types';
 
 import { useRotateAnimation } from '../animation/useRotateAnimation';
-import { Dropdown } from '../dropdown';
+import { Dropdown } from '../dropdown/Dropdown';
 import { useSpacingValue } from '../hooks/useSpacingValue';
 import { HStack } from '../layout/HStack';
 import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
