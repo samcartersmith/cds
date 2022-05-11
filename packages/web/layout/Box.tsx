@@ -99,6 +99,10 @@ export type BoxProps<As extends BoxElement = 'div'> = {
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslySetClassName?: string;
+  /**
+   * @danger There may be times when you need to dynamically set styles. This comes at a performance cost, so use with caution.
+   */
+  dangerouslySetStyle?: React.CSSProperties;
 } & Omit<BoxBaseProps, 'position'> &
   SharedProps &
   React.AriaAttributes &
@@ -191,6 +195,7 @@ export const BoxInner = forwardRef(
       offsetVertical,
       dangerouslySetBackground,
       dangerouslySetClassName,
+      dangerouslySetStyle = emptyObject,
       // A11y
       ...restProps
     } = props;
@@ -285,6 +290,7 @@ export const BoxInner = forwardRef(
           borderColor,
           ...borderRadiusStyles,
           ...elevationStyles,
+          ...dangerouslySetStyle,
         },
       },
       childNodes,

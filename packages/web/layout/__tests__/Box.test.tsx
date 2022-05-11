@@ -270,4 +270,13 @@ describe('Box', () => {
       expect(container.firstChild).toHaveClass('all');
     });
   });
+
+  describe('styles', () => {
+    const style = { opacity: 0.4, padding: '2px 4px' };
+    it('can be set _dangerously_', () => {
+      const { container } = render(<Box dangerouslySetStyle={style}>Child</Box>);
+
+      expect(container.firstChild).toHaveAttribute('style', 'opacity: 0.4; padding: 2px 4px;');
+    });
+  });
 });
