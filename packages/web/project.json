@@ -42,7 +42,13 @@
           "storybook-decorators"
         ],
         "typescriptConfig": "packages/web/tsconfig.build.json"
-      }
+      },
+      "dependsOn": [
+        {
+          "target": "build-esm",
+          "projects": "self"
+        }
+      ]
     },
     "build-esm": {
       "executor": "@cbhq/cds-tools:build-package-esm",
@@ -69,7 +75,13 @@
         "typescriptConfig": "packages/web/tsconfig.build.json",
         "fontsOutputDir": "packages/fonts",
         "maxFileSizeInKb": 90
-      }
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "dependencies"
+        }
+      ]
     },
     "build-css": {
       "executor": "@cbhq/cds-tools:build-css",
