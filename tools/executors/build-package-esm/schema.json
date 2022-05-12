@@ -42,6 +42,10 @@
     "envs": {
       "type": "object",
       "description": "Allows additional environment variables"
+    },
+    "maxFileSizeInKb": {
+      "type": "number",
+      "description": "Maximum allowed file size of generated css."
     }
   }
 }

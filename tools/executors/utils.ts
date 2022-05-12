@@ -93,3 +93,16 @@ export function getCachePath(context: ExecutorContext, ...parts: string[]): stri
 export function getProjectCachePath(context: ExecutorContext, ...parts: string[]): string {
   return getCachePath(context, 'projects', getProjectPath(context), ...parts);
 }
+
+export async function getFileSizeInKb(filePath: string): Promise<number> {
+  return new Promise((resolve, reject) => {
+    fs.stat(filePath, (err, stats) => {
+      if (err || !Number.isFinite(stats.size)) {
+        reject(new Error(`Problem obtaining file size ${filePath}`));
+      } else {
+        const { size } = stats;
+        resolve(size / 1000);
+      }
+    });
+  });
+}

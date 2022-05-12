@@ -67,7 +67,8 @@
           "storybook-decorators"
         ],
         "typescriptConfig": "packages/web/tsconfig.build.json",
-        "fontsOutputDir": "packages/fonts"
+        "fontsOutputDir": "packages/fonts",
+        "maxFileSizeInKb": 90
       }
     },
     "build-css": {
