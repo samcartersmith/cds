@@ -24,6 +24,11 @@
       "implementation": "./dist/executors/typecheck/impl",
       "schema": "./dist/executors/typecheck/schema.json",
       "description": "Runs typecheck"
+    },
+    "build-package-esm": {
+      "implementation": "./dist/executors/build-package-esm/impl",
+      "schema": "./dist/executors/build-package-esm/schema.json",
+      "description": "Builds an esm compliant CDS npm package"
     }
   }
 }

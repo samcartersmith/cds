@@ -20,6 +20,7 @@
   "scripts": {
     "build": "nx run web:build",
     "build.css": "nx run web:build-css",
+    "build.ssr": "CSS_BUILD=true nx run web:build",
     "format": "nx run web:format",
     "lint": "nx run web:lint",
     "lint.fix": "nx run web:lint --fix",

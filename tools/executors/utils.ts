@@ -48,22 +48,31 @@ export async function runLocalCommand(
   return Promise.resolve({ success: result.exitCode === 0 });
 }
 
-export async function deleteDir(dir: string) {
-  if (fs.existsSync(dir)) {
-    console.log(`deleting ${dir}`);
+// mimics unix rm function
+async function rm(filePath: string, recursive?: boolean) {
+  if (fs.existsSync(filePath)) {
+    console.log(`deleting ${filePath}`);
 
     await new Promise((resolve) => {
-      fs.rm(dir, { recursive: true }, (err) => {
+      fs.rm(filePath, { recursive: recursive === true }, (err) => {
         if (err) {
-          console.log(`error while trying to delete ${dir}: ${err?.message}`);
+          console.log(`error while trying to delete ${filePath}: ${err?.message}`);
           process.exit(1);
         }
 
-        console.log(`${dir} is deleted!`);
+        console.log(`${filePath} is deleted!`);
         resolve(null);
       });
     });
   }
+}
+
+export async function deleteFile(filePath: string) {
+  return rm(filePath);
+}
+
+export async function deleteDir(dir: string) {
+  return rm(dir, true);
 }
 
 export function createDir(dir: string) {

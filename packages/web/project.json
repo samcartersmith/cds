@@ -44,6 +44,32 @@
         "typescriptConfig": "packages/web/tsconfig.build.json"
       }
     },
+    "build-esm": {
+      "executor": "@cbhq/cds-tools:build-package-esm",
+      "options": {
+        "destinationDir": ".nx/dist/packages/web-esm",
+        "staticFilesToIgnore": [
+          "babel.build.config.js",
+          "babel.config.js",
+          "jest.config.js",
+          "linaria.config.js",
+          "tsconfig.json",
+          "tsconfig.build.json",
+          "project.json"
+        ],
+        "babelConfig": "./packages/web/babel.build.config.js",
+        "babelExtensions": [".ts", ".tsx"],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx",
+          "**/*.stories.tsx",
+          "storybook-decorators"
+        ],
+        "typescriptConfig": "packages/web/tsconfig.build.json",
+        "fontsOutputDir": "packages/fonts"
+      }
+    },
     "build-css": {
       "executor": "@cbhq/cds-tools:build-css",
       "options": {

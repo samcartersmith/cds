@@ -4,19 +4,7 @@ import fs from 'fs';
 import path from 'path';
 
 import { createDir, deleteDir, runLocalCommand } from '../utils';
-
-type BuildPackageOptions = {
-  destinationDir: string;
-  distDir?: string;
-  srcDir?: string;
-  staticFilesToIgnore: string[];
-  staticFilesToCopy?: string[];
-  babelConfig: string;
-  babelExtensions: string[];
-  babelIgnore: string[];
-  typescriptConfig: string;
-  replacePackageJson?: boolean;
-};
+import { BuildPackageOptions } from '../../types';
 
 type PackageArgs = {
   /*
@@ -84,6 +72,7 @@ async function runBabel(
   context: ExecutorContext,
   { destinationDir, srcDir }: PackageArgs,
   { configFile, extensions, ignore }: BabelArgs,
+  envs: Record<string, string>,
 ) {
   const bin = 'babel';
 
@@ -102,18 +91,18 @@ async function runBabel(
     '--no-copy-ignored',
   ];
 
-  return runLocalCommand(context, bin, args);
+  return runLocalCommand(context, bin, args, envs);
 }
 
 // tsc --p tsconfig.build.json
-async function runTsc(context: ExecutorContext, tscArgs: TscArgs) {
+async function runTsc(context: ExecutorContext, tscArgs: TscArgs, envs: Record<string, string>) {
   const { configFile } = tscArgs;
 
   const bin = 'tsc';
 
   const args = ['--project', path.join(context.root, configFile)];
 
-  return runLocalCommand(context, bin, args);
+  return runLocalCommand(context, bin, args, envs);
 }
 
 async function removeIgnoredFiles(
@@ -240,7 +229,11 @@ async function replacePackageVersions(context: ExecutorContext, destinationDir: 
   await fs.promises.writeFile(pkgJsonPath, JSON.stringify(pkgJson, null, 2));
 }
 
-export default async function buildPackage(options: BuildPackageOptions, context: ExecutorContext) {
+export default async function buildPackage(
+  options: BuildPackageOptions,
+  context: ExecutorContext,
+  ignoreTsc?: boolean,
+) {
   const {
     destinationDir: dest,
     srcDir = '.',
@@ -251,8 +244,9 @@ export default async function buildPackage(options: BuildPackageOptions, context
     babelExtensions,
     babelIgnore = [],
     typescriptConfig,
+    envs,
     replacePackageJson = true,
-  } = options;
+} = options;
 
   const destinationDir = path.join(context.root, dest);
   const dist = path.join(destinationDir, distDir);
@@ -272,13 +266,15 @@ export default async function buildPackage(options: BuildPackageOptions, context
     srcDir,
   };
 
-  let { success } = await runBabel(context, packageArgs, babelArgs);
+  let { success } = await runBabel(context, packageArgs, babelArgs, envs);
 
   const tscArgs: TscArgs = {
     configFile: typescriptConfig,
   };
 
-  success = success ? (await runTsc(context, tscArgs)).success : success;
+  if (!ignoreTsc) {
+    success = success ? (await runTsc(context, tscArgs, envs)).success : success;
+  }
 
   success = success
     ? (await removeIgnoredFiles(context, destinationDir, staticFilesToIgnore)).success
