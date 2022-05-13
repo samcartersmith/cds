@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.44.4 (5/12/2022, 04:03 PM PST)
+
+#### 🐞 Fixes
+
+- **[Illustration]** Publish Illustrations May 12th, 2022. [#393](https://github.cbhq.net/frontend/cds/pull/393)
+
+#### 📘 Misc
+
+- Upgrade @cbhq/mono-pipeline from ^0.4.3->^0.5.10. [#394](https://github.cbhq.net/frontend/cds/pull/394)
+
 ## 0.44.3 (5/6/2022, 02:32 PM PST)
 
 #### 🐞 Fixes
