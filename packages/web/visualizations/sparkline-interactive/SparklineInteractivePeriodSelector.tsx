@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import {
   SparklineInteractivePeriodProps,
   SparklineInteractivePeriodSelectorProps,
@@ -6,7 +6,7 @@ import {
 
 import { useAccessibleForeground } from '../../color/useAccessibleForeground';
 import { usePalette } from '../../hooks/usePalette';
-import { HStack } from '../../layout';
+import { Box, HStack } from '../../layout';
 import { PressableOpacity } from '../../system/PressableOpacity';
 import { TextLabel1 } from '../../typography/TextLabel1';
 
@@ -20,17 +20,33 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
     setSelectedPeriod(period.value);
   }, [period, setSelectedPeriod]);
   const colors = usePalette();
+
+  const backgroundStyle = useMemo(
+    () => ({
+      backgroundColor: period.value === selectedPeriod ? colors.primaryWash : undefined,
+    }),
+    [colors.primaryWash, period.value, selectedPeriod],
+  );
+
   return (
-    <PressableOpacity onPress={handleOnPress}>
-      <TextLabel1
-        as="span"
-        spacingHorizontal={2}
-        spacingVertical={3}
-        dangerouslySetColor={period.value === selectedPeriod ? color : colors.foregroundMuted}
-      >
-        {period.label}
-      </TextLabel1>
-    </PressableOpacity>
+    <Box
+      borderRadius="round"
+      alignItems="center"
+      justifyContent="center"
+      spacingVertical={1}
+      dangerouslySetStyle={backgroundStyle}
+      height="fit-content"
+    >
+      <PressableOpacity onPress={handleOnPress}>
+        <TextLabel1
+          as="span"
+          spacingHorizontal={2}
+          dangerouslySetColor={period.value === selectedPeriod ? color : colors.foregroundMuted}
+        >
+          {period.label}
+        </TextLabel1>
+      </PressableOpacity>
+    </Box>
   );
 }
 

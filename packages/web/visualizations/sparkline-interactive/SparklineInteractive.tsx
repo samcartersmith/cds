@@ -174,7 +174,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
               {periodSelector}
             </Box>
           )}
-          <Box justifyContent="space-between" spacingBottom={2}>
+          <Box justifyContent="space-between" spacingBottom={2} alignItems="center">
             {header ?? <div />}
             {!isMobileLayout && <Box flexGrow={0}>{periodSelector}</Box>}
           </Box>
