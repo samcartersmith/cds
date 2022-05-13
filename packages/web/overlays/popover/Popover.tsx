@@ -2,15 +2,19 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { memo, MouseEvent, useCallback, useMemo } from 'react';
 import { css } from 'linaria';
+import { useScale } from '@cbhq/cds-common';
+import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { usePopoverA11y } from '../../hooks/usePopoverA11y';
 import { Box } from '../../layout/Box';
+import { ThemeProvider } from '../../system';
 import { cx } from '../../utils/linaria';
 import { FocusTrap } from '../FocusTrap';
 import { Overlay } from '../Overlay/Overlay';
+import { Portal } from '../Portal';
+import { tooltipContainerId } from '../PortalProvider';
 
-import { PopoverPortal } from './PopoverPortal';
 import { PopoverContentPositionConfig, PopoverProps } from './PopoverProps';
 import { usePopper } from './usePopper';
 
@@ -30,6 +34,8 @@ const defaultContentPosition: PopoverContentPositionConfig = {
 const blockStyles = css`
   width: 100%;
 `;
+
+const inverseConfig = { light: 'dark', dark: 'light' } as const;
 
 /**
  * Popover is the internal recommended base component used for any overlay that is laid out with respect to a subject.
@@ -58,6 +64,8 @@ export const Popover = memo(
   }: PopoverProps) => {
     const { subject, setSubject, setPopper, popperStyles, popperAttributes } =
       usePopper(contentPosition);
+    const scale = useScale();
+    const invertedSpectrum = useSpectrumConditional(inverseConfig);
 
     const { subjectAccessibilityProps, contentAccessibilityProps } = usePopoverA11y(
       visible,
@@ -143,20 +151,22 @@ export const Popover = memo(
           {children}
         </div>
         {visible ? (
-          <PopoverPortal disablePortal={disablePortal} invertSpectrum={invertPopoverSpectrum}>
-            {showOverlay ? (
-              <Box
-                position="fixed"
-                pin="all"
-                zIndex={zIndex.overlays.portal + zIndex.overlays.modal}
-              >
-                <Overlay onPress={handleClose} ref={overlayRef} />
-                {memoizedContent}
-              </Box>
-            ) : (
-              renderContent
-            )}
-          </PopoverPortal>
+          <Portal disablePortal={disablePortal} containerId={tooltipContainerId}>
+            <ThemeProvider scale={scale} spectrum={invertPopoverSpectrum ? invertedSpectrum : null}>
+              {showOverlay ? (
+                <Box
+                  position="fixed"
+                  pin="all"
+                  zIndex={zIndex.overlays.portal + zIndex.overlays.modal}
+                >
+                  <Overlay onPress={handleClose} ref={overlayRef} />
+                  {memoizedContent}
+                </Box>
+              ) : (
+                renderContent
+              )}
+            </ThemeProvider>
+          </Portal>
         ) : undefined}
       </div>
     );
