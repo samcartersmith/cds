@@ -2,6 +2,7 @@
 // remove useless global styles
 
 import { ExecutorContext } from '@nrwl/devkit';
+import fs from "fs";
 import path from 'path';
 
 import { BuildCssOptions, BuildPackageOptions } from '../../types';
@@ -13,6 +14,21 @@ type BuildPackageEsmOptions =  BuildPackageOptions &
   Pick<BuildCssOptions, 'fontsOutputDir'> & {
   maxFileSizeInKb: number;
 };
+
+type PackageJson = {
+  version: string;
+}
+
+async function addPackageTag(pkgJsonPath: string) {
+  const pkgJson = JSON.parse(await fs.promises.readFile(pkgJsonPath, 'utf8')) as PackageJson;
+
+  const { version } = pkgJson;
+
+  const newVersion = `${version}-esm.0`;
+  pkgJson.version = newVersion;
+
+  await fs.promises.writeFile(pkgJsonPath, JSON.stringify(pkgJson, null, 2));
+}
 
 export default async function buildPackageEsm(
   options: BuildPackageEsmOptions,
@@ -56,6 +72,8 @@ export default async function buildPackageEsm(
   // remove global styles that aren't ssr specific
   await deleteFile(path.join(destinationDir, 'globalStyles.js'));
   await deleteFile(path.join(destinationDir, 'globalStyles.d.ts'));
+
+  await addPackageTag(path.join(destinationDir, 'package.json'));
 
   // validate file size
   const cssFile = path.join(distDir, 'main.css');

@@ -40,3 +40,6 @@ build:
     - BaldurNode:
         name: package-cds-web
         path: ./packages/web/publish.Dockerfile
+    - BaldurNode:
+        name: package-cds-web-esm
+        path: ./packages/web/publish-esm.Dockerfile

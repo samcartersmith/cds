@@ -3,8 +3,8 @@ import chalk from 'chalk';
 import fs from 'fs';
 import path from 'path';
 
-import { createDir, deleteDir, runLocalCommand } from '../utils';
 import { BuildPackageOptions } from '../../types';
+import { createDir, deleteDir, runLocalCommand } from '../utils';
 
 type PackageArgs = {
   /*
