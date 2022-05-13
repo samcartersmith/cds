@@ -1,4 +1,4 @@
-# Coinbase design system
+# Coinbase Design System
 
 ### Table of Contents
 

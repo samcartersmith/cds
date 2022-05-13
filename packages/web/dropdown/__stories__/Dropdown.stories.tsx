@@ -18,7 +18,7 @@ export default {
   component: Dropdown,
 };
 
-const options = [
+const defaultOptions = [
   'Option 1',
   'Option 2',
   'Option 3',
@@ -30,9 +30,10 @@ const options = [
 
 type MockDropdownProps = {
   subjectTestID?: string;
-} & Pick<DropdownProps, 'enableMobileModal' | 'showOverlay' | 'testID' | 'onBlur'>;
+  options?: string[];
+} & Pick<DropdownProps, 'enableMobileModal' | 'showOverlay' | 'testID' | 'onBlur' | 'onCloseMenu'>;
 
-export const Default = (props: MockDropdownProps) => {
+export const Default = ({ options = defaultOptions, ...props }: MockDropdownProps) => {
   const [value, setValue] = useState('');
   const dropdownRef = useRef<DropdownRefProps>(null);
 
@@ -65,7 +66,7 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
   const content = (
     <>
       <SectionTitle text="Section Heading" />
-      {options.map((option) => (
+      {defaultOptions.map((option) => (
         <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
       ))}
     </>
@@ -114,7 +115,7 @@ export const SubMenu = () => {
   const subMenuContent = useMemo(
     () => (
       <>
-        {options.slice(2, 6).map((option) => (
+        {defaultOptions.slice(2, 6).map((option) => (
           <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
         ))}
       </>
@@ -126,7 +127,7 @@ export const SubMenu = () => {
     () => (
       <>
         <SectionTitle text="Section 1" />
-        {options.slice(0, 2).map((option) => (
+        {defaultOptions.slice(0, 2).map((option) => (
           <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
         ))}
         <Dropdown

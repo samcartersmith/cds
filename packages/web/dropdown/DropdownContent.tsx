@@ -42,7 +42,7 @@ export const DropdownContent = memo(
       useEffect(() => {
         if (!value && isBrowser() && ref && typeof ref !== 'function') {
           const focusableElements = ref.current?.querySelectorAll(FOCUSABLE_ELEMENTS);
-          if (focusableElements) {
+          if (focusableElements?.length && focusableElements[0]) {
             (focusableElements[0] as HTMLElement).focus();
           }
         }
