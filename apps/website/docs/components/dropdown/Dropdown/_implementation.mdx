@@ -130,7 +130,7 @@ Prevent menu from closing when an option is selected
 
 ### disablePortal <Badge variant="web" />
 
-Does not render the PopoverMenu inside of a portal (react-dom createPortal). Portal is automatically disabled for SSR
+Does not render the Dropdown inside of a portal (react-dom createPortal). Portal is automatically disabled for SSR
 
 <ApiDetails
   componentName="Dropdown"
@@ -150,19 +150,6 @@ Display a Modal on mobile web instead of a relatively positioned Dropdown
   propertyName="enableMobileModal"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
-  webOptions={['false', 'true']}
-/>
-
-### enableSearch <Badge variant="web" />
-
-Enable when PopoverMenu is used with a SearchInput as the trigger. Applies relevant focus behaviors and keyboard events
-
-<ApiDetails
-  componentName="Dropdown"
-  propertyName="enableSearch"
-  required={false}
-  defaultValue="false"
   mobileOptions={[]}
   webOptions={['false', 'true']}
 />
@@ -208,7 +195,7 @@ Minimum width of input as a percentage string or number converted to pixels.
 
 ### onBlur <Badge variant="web" />
 
-Callback that fires when PopoverMenu or trigger are blurred
+Callback that fires when Dropdown or trigger are blurred
 
 <ApiDetails
   componentName="Dropdown"

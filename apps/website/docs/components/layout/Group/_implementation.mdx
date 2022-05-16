@@ -284,6 +284,11 @@ Leverage one of the borderRadius styles we offer to round the corners of the box
     'pill',
     'popover',
     'round',
+    'rounded',
+    'roundedFull',
+    'roundedLarge',
+    'roundedNone',
+    'roundedSmall',
     'search',
     'standard',
     'tooltip',
@@ -297,6 +302,11 @@ Leverage one of the borderRadius styles we offer to round the corners of the box
     'pill',
     'popover',
     'round',
+    'rounded',
+    'roundedFull',
+    'roundedLarge',
+    'roundedNone',
+    'roundedSmall',
     'search',
     'standard',
     'tooltip',
@@ -376,9 +386,9 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={['string']}
 />
 
-### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
+### dangerouslySetStyle <Badge variant="danger" order={1} />
 
-This is a migration escape hatch. It is not intended to be used normally.
+There may be times when you need to dynamically set styles. This comes at a performance cost, so use with caution.
 
 <ApiDetails
   componentName="Group"
@@ -396,7 +406,7 @@ This is a migration escape hatch. It is not intended to be used normally.
     'false',
     'null',
   ]}
-  webOptions={[]}
+  webOptions={['CSSProperties']}
 />
 
 ### direction
