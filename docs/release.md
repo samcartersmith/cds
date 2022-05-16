@@ -37,9 +37,10 @@ If the website is not updated, following the steps here to [deploy](./website.md
 
 You will need to trigger a manual deploy in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) to publish the npm packages to Verdaccio.
 
-You should only deploy the packages that are listed in the commit. If you are deploying cds-web then you must also deploy the built css.
+You should only deploy the packages that are listed in the commit. If you are deploying cds-web then you must also deploy the built css and cds-web-esm.
 For example in the screenshot below you must deploy:
 
+- corporate::cds-web-esm
 - corporate::cds-web
 - corporate::cds-common
 - corporate::cds-mobile
