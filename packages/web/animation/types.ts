@@ -1,6 +1,6 @@
 import { MutableRefObject } from 'react';
 import { AnimationEventName, AnimationItem, SVGRendererConfig } from 'lottie-web';
-import { LottieBaseProps, LottieSource, NoopFn, SharedProps } from '@cbhq/cds-common';
+import type { LottieBaseProps, LottieSource, NoopFn, SharedProps } from '@cbhq/cds-common';
 
 export type LottieEventHandlersMap = {
   [key in LottieListener['name']]?: LottieListener['handler'];
