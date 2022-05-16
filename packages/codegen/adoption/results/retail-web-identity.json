@@ -39,13 +39,13 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 35,
-      "totalCallSites": 23,
+      "totalInstances": 40,
+      "totalCallSites": 28,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
         "components/Authentication/Authentication.tsx": 2,
         "components/ContactUsView/ContactUsView.tsx": 1,
-        "components/RfiPep/AccountUnderReview.tsx": 1,
+        "components/RfiPep/InfoModal.tsx": 1,
         "components/RfiPep/MultiHitForm.tsx": 1,
         "components/RfiPep/MultiHitScreen.tsx": 1,
         "components/RfiPep/RfiPepAccountRestricted.tsx": 2,
@@ -53,9 +53,14 @@
         "components/RfiPep/SingleHitScreen.tsx": 1,
         "components/SuccessViewV2/SuccessViewV2.tsx": 1,
         "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1,
+        "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+        "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
         "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
         "components/IdCapture/components/Intro/Intro.tsx": 1,
         "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
+        "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1,
         "components/SecurityKeyModal/components/Confirmation/Confirmation.tsx": 1,
         "components/SecurityKeyModal/components/Disable/Disable.tsx": 1,
         "components/SecurityKeyModal/components/Introduction/Introduction.tsx": 1,
@@ -70,16 +75,21 @@
       "propsWithCallSites": {
         "onPress": {
           "components/Authentication/Authentication.tsx": 2,
-          "components/RfiPep/AccountUnderReview.tsx": 1,
+          "components/RfiPep/InfoModal.tsx": 1,
           "components/RfiPep/MultiHitScreen.tsx": 1,
           "components/RfiPep/RfiPepAccountRestricted.tsx": 2,
           "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/RfiPep/SingleHitScreen.tsx": 1,
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
           "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
           "components/IdCapture/components/Intro/Intro.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1,
           "components/SecurityKeyModal/components/Confirmation/Confirmation.tsx": 1,
           "components/SecurityKeyModal/components/Disable/Disable.tsx": 1,
           "components/SecurityKeyModal/components/Introduction/Introduction.tsx": 1,
@@ -93,6 +103,7 @@
         },
         "variant": {
           "components/Authentication/Authentication.tsx": 1,
+          "components/RfiPep/InfoModal.tsx": 1,
           "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/SecurityKeyModal/components/Manage/Manage.tsx": 2,
           "components/SecurityKeyModal/components/Remove/Remove.tsx": 1,
@@ -111,6 +122,9 @@
           "components/RfiPep/MultiHitScreen.tsx": 1,
           "components/RfiPep/SingleHitScreen.tsx": 1,
           "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1,
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
           "components/SecurityKeyModal/components/Manage/Manage.tsx": 1,
           "components/SecurityKeyModal/components/Remove/Remove.tsx": 1,
           "components/SecurityKeyModal/components/Rename/Rename.tsx": 1,
@@ -119,6 +133,7 @@
         "to": { "components/ContactUsView/ContactUsView.tsx": 1 },
         "block": {
           "components/ContactUsView/ContactUsView.tsx": 1,
+          "components/RfiPep/InfoModal.tsx": 1,
           "components/RfiPep/MultiHitForm.tsx": 1,
           "components/RfiPep/MultiHitScreen.tsx": 1,
           "components/RfiPep/SingleHitScreen.tsx": 1,
@@ -133,7 +148,10 @@
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         },
         "type": { "components/RfiPep/MultiHitForm.tsx": 1 },
-        "testID": { "components/RfiPep/MultiHitForm.tsx": 1 },
+        "testID": {
+          "components/RfiPep/MultiHitForm.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1
+        },
         "loading": {
           "steps/FCAExtendedCDD/FCAExtendedCDD.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/ActionButtons.tsx": 1
@@ -145,8 +163,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 13,
-      "totalCallSites": 11,
+      "totalInstances": 16,
+      "totalCallSites": 13,
       "cds": "@cbhq/cds-web/layout/Box",
       "aliasedCdsComponents": [
         {
@@ -163,12 +181,14 @@
       ],
       "callSites": {
         "components/Authentication/Authentication.tsx": 1,
+        "components/FuturesTradingModal/FuturesTradingModal.tsx": 1,
         "components/IdCapture/IdCapture.tsx": 1,
         "components/KYCRefresh/KYCRefreshScreen.tsx": 2,
         "components/RfiPep/InfoBox.tsx": 1,
         "components/RfiPep/MultiHitForm.tsx": 1,
         "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1,
         "steps/IDV/IDV.tsx": 1,
+        "components/FuturesTradingModal/components/FullSSNScreen.tsx": 2,
         "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
         "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
         "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
@@ -179,10 +199,20 @@
           "components/Authentication/Authentication.tsx": 1,
           "components/RfiPep/InfoBox.tsx": 1
         },
+        "spacingHorizontal": {
+          "components/FuturesTradingModal/FuturesTradingModal.tsx": 1,
+          "components/KYCRefresh/KYCRefreshScreen.tsx": 1
+        },
+        "spacingTop": {
+          "components/FuturesTradingModal/FuturesTradingModal.tsx": 1,
+          "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
+        },
         "justifyContent": {
           "components/IdCapture/IdCapture.tsx": 1,
           "components/RfiPep/MultiHitForm.tsx": 1,
           "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 2
         },
         "alignItems": {
@@ -201,11 +231,6 @@
           "steps/IDV/IDV.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 2
         },
-        "spacingTop": {
-          "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        },
-        "spacingHorizontal": { "components/KYCRefresh/KYCRefreshScreen.tsx": 1 },
         "spacingVertical": { "components/KYCRefresh/KYCRefreshScreen.tsx": 1 },
         "offsetBottom": { "components/KYCRefresh/KYCRefreshScreen.tsx": 1 },
         "borderRadius": {
@@ -222,10 +247,14 @@
         },
         "height": { "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1 },
         "flexShrink": { "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1 },
+        "spacingBottom": {
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+          "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
+        },
+        "flexBasis": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 },
         "spacingEnd": {
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1
         },
-        "spacingBottom": { "components/Idology/components/IdentityForm/IdentityForm.tsx": 1 },
         "overflow": {
           "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 1
         },
@@ -237,14 +266,10 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 41,
-      "totalCallSites": 20,
+      "totalInstances": 45,
+      "totalCallSites": 25,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
-        {
-          "aliasPath": "components/RfiPep/AccountUnderReview.tsx",
-          "callSites": ["steps/RfiPep/RfiPepStep.tsx"]
-        },
         {
           "aliasPath": "components/RfiPep/MultiHitForm.tsx",
           "callSites": ["steps/RfiPep/RfiPepStep.tsx"]
@@ -269,7 +294,7 @@
       "callSites": {
         "components/ContactUsView/ContactUsView.tsx": 2,
         "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
-        "components/RfiPep/AccountUnderReview.tsx": 3,
+        "components/RfiPep/InfoModal.tsx": 1,
         "components/RfiPep/MultiHitForm.tsx": 2,
         "components/RfiPep/MultiHitScreen.tsx": 1,
         "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
@@ -277,6 +302,10 @@
         "components/RfiPep/SingleHitScreen.tsx": 1,
         "components/SuccessViewV2/SuccessViewV2.tsx": 3,
         "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1,
+        "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+        "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
         "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 4,
         "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 4,
         "components/IdCapture/components/Intro/Intro.tsx": 3,
@@ -285,6 +314,7 @@
         "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 3,
         "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 2,
         "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
+        "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 2,
         "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1,
         "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
       },
@@ -298,13 +328,13 @@
         },
         "alignItems": {
           "components/ContactUsView/ContactUsView.tsx": 1,
-          "components/RfiPep/AccountUnderReview.tsx": 2,
           "components/SuccessViewV2/SuccessViewV2.tsx": 2,
           "components/IdCapture/components/Intro/Intro.tsx": 2,
           "components/IdCapture/components/RecoveryQRCode/RecoveryQRCode.tsx": 2,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
           "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 2,
           "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 2,
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 2,
           "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         },
@@ -313,27 +343,29 @@
           "components/RfiPep/MultiHitForm.tsx": 1
         },
         "justifyContent": { "components/LabelWithHelpText/LabelWithHelpText.tsx": 1 },
-        "gap": {
-          "components/RfiPep/AccountUnderReview.tsx": 3,
-          "components/RfiPep/MultiHitForm.tsx": 1,
-          "components/RfiPep/RfiPepSuccess.tsx": 1,
-          "components/SuccessViewV2/SuccessViewV2.tsx": 2,
-          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 3,
-          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 2,
-          "components/IdCapture/components/Intro/Intro.tsx": 1,
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
+        "spacingHorizontal": {
+          "components/RfiPep/InfoModal.tsx": 1,
+          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
+          "components/RfiPep/RfiPepSuccess.tsx": 1
         },
         "spacingTop": {
-          "components/RfiPep/AccountUnderReview.tsx": 1,
+          "components/RfiPep/InfoModal.tsx": 1,
           "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1,
-          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1
+          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1,
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1
+        },
+        "spacingBottom": {
+          "components/RfiPep/InfoModal.tsx": 1,
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
         },
         "spacing": {
-          "components/RfiPep/AccountUnderReview.tsx": 1,
           "components/RfiPep/MultiHitForm.tsx": 1,
           "components/RfiPep/MultiHitScreen.tsx": 1,
           "components/RfiPep/SingleHitScreen.tsx": 1,
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
           "components/IdCapture/components/Intro/Intro.tsx": 1,
           "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1
         },
@@ -342,11 +374,17 @@
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 2
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 2,
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1
         },
-        "spacingHorizontal": {
-          "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
-          "components/RfiPep/RfiPepSuccess.tsx": 1
+        "gap": {
+          "components/RfiPep/MultiHitForm.tsx": 1,
+          "components/RfiPep/RfiPepSuccess.tsx": 1,
+          "components/SuccessViewV2/SuccessViewV2.tsx": 2,
+          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 3,
+          "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 2,
+          "components/IdCapture/components/Intro/Intro.tsx": 1,
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
         },
         "bordered": {
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
@@ -369,22 +407,21 @@
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
           "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1
         },
+        "flexBasis": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 },
         "minWidth": {
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        },
-        "spacingBottom": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 }
+        }
       }
     },
     {
       "name": "HeroSquare",
       "sourceFile": "@cbhq/cds-web/illustrations/HeroSquare",
-      "totalInstances": 9,
-      "totalCallSites": 9,
+      "totalInstances": 8,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-web/illustrations/HeroSquare",
       "callSites": {
         "components/ContactUsView/ContactUsView.tsx": 1,
-        "components/RfiPep/AccountUnderReview.tsx": 1,
         "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
         "components/RfiPep/RfiPepSuccess.tsx": 1,
         "components/SuccessViewV2/SuccessViewV2.tsx": 1,
@@ -396,7 +433,6 @@
       "propsWithCallSites": {
         "name": {
           "components/ContactUsView/ContactUsView.tsx": 1,
-          "components/RfiPep/AccountUnderReview.tsx": 1,
           "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
@@ -407,7 +443,6 @@
         },
         "scaleMultiplier": {
           "components/ContactUsView/ContactUsView.tsx": 1,
-          "components/RfiPep/AccountUnderReview.tsx": 1,
           "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
@@ -421,17 +456,21 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 10,
-      "totalCallSites": 10,
+      "totalInstances": 14,
+      "totalCallSites": 14,
       "cds": "@cbhq/cds-web/typography/TextTitle3",
       "callSites": {
         "components/ContactUsView/ContactUsView.tsx": 1,
-        "components/RfiPep/AccountUnderReview.tsx": 1,
+        "components/RfiPep/InfoModal.tsx": 1,
         "components/RfiPep/MultiHitForm.tsx": 1,
         "components/RfiPep/MultiHitScreen.tsx": 1,
         "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
         "components/RfiPep/RfiPepSuccess.tsx": 1,
         "components/RfiPep/SingleHitScreen.tsx": 1,
+        "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+        "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
         "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
         "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
         "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
@@ -439,12 +478,16 @@
       "propsWithCallSites": {
         "as": {
           "components/ContactUsView/ContactUsView.tsx": 1,
-          "components/RfiPep/AccountUnderReview.tsx": 1,
+          "components/RfiPep/InfoModal.tsx": 1,
           "components/RfiPep/MultiHitForm.tsx": 1,
           "components/RfiPep/MultiHitScreen.tsx": 1,
           "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/RfiPep/SingleHitScreen.tsx": 1,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
@@ -454,6 +497,9 @@
           "components/RfiPep/MultiHitScreen.tsx": 1,
           "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/RfiPep/SingleHitScreen.tsx": 1,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
@@ -465,22 +511,22 @@
         },
         "align": {
           "components/ContactUsView/ContactUsView.tsx": 1,
-          "components/RfiPep/AccountUnderReview.tsx": 1,
           "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/RfiPep/RfiPepSuccess.tsx": 1
-        }
+        },
+        "spacingVertical": { "components/RfiPep/InfoModal.tsx": 1 }
       }
     },
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 20,
-      "totalCallSites": 14,
+      "totalInstances": 21,
+      "totalCallSites": 15,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "components/ContactUsView/ContactUsView.tsx": 1,
         "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
-        "components/RfiPep/AccountUnderReview.tsx": 1,
+        "components/RfiPep/InfoModal.tsx": 1,
         "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
         "components/RfiPep/RfiPepSuccess.tsx": 1,
         "components/SuccessViewV2/SuccessViewV2.tsx": 1,
@@ -490,6 +536,7 @@
         "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 3,
         "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1,
         "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1,
+        "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1,
         "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 1,
         "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
       },
@@ -497,7 +544,7 @@
         "as": {
           "components/ContactUsView/ContactUsView.tsx": 1,
           "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
-          "components/RfiPep/AccountUnderReview.tsx": 1,
+          "components/RfiPep/InfoModal.tsx": 1,
           "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
@@ -507,19 +554,20 @@
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 3,
           "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1,
           "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1,
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         },
         "align": {
           "components/ContactUsView/ContactUsView.tsx": 1,
-          "components/RfiPep/AccountUnderReview.tsx": 1,
           "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/RfiPep/RfiPepSuccess.tsx": 1,
           "components/SuccessViewV2/SuccessViewV2.tsx": 1,
           "components/IdCapture/components/Intro/Intro.tsx": 2,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
           "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1,
-          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1
+          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1,
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1
         },
         "color": {
           "components/ContactUsView/ContactUsView.tsx": 1,
@@ -530,10 +578,12 @@
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 3,
           "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1,
           "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1,
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/WebcamCapture.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         },
         "spacingBottom": {
+          "components/RfiPep/InfoModal.tsx": 1,
           "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
@@ -543,19 +593,72 @@
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
           "components/IdCapture/components/Intro/Intro.tsx": 1,
           "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1,
-          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1
+          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1,
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1
         }
+      }
+    },
+    {
+      "name": "FeatureFlagProvider",
+      "sourceFile": "@cbhq/cds-web/system/FeatureFlagProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/system/FeatureFlagProvider",
+      "propsWithCallSites": {
+        "frontier": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "Modal",
+      "sourceFile": "@cbhq/cds-web/overlays/Modal/Modal",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/overlays/Modal/Modal",
+      "callSites": {
+        "components/FuturesTradingModal/FuturesTradingModal.tsx": 1,
+        "components/RfiPep/InfoModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "visible": {
+          "components/FuturesTradingModal/FuturesTradingModal.tsx": 1,
+          "components/RfiPep/InfoModal.tsx": 1
+        },
+        "onRequestClose": {
+          "components/FuturesTradingModal/FuturesTradingModal.tsx": 1,
+          "components/RfiPep/InfoModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ModalHeader",
+      "sourceFile": "@cbhq/cds-web/overlays/Modal/ModalHeader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/overlays/Modal/ModalHeader",
+      "propsWithCallSites": {
+        "title": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "ProgressBar",
+      "sourceFile": "@cbhq/cds-web/visualizations/ProgressBar",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/visualizations/ProgressBar",
+      "propsWithCallSites": {
+        "progress": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 }
       }
     },
     {
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
-      "totalInstances": 8,
-      "totalCallSites": 6,
+      "totalInstances": 9,
+      "totalCallSites": 7,
       "cds": "@cbhq/cds-web/typography/TextLabel2",
       "callSites": {
         "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
         "components/RfiPep/InfoBox.tsx": 1,
+        "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
         "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
         "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 3,
         "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
@@ -565,6 +668,7 @@
         "as": {
           "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
           "components/RfiPep/InfoBox.tsx": 1,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
           "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 3,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
@@ -573,6 +677,7 @@
         "color": {
           "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
           "components/RfiPep/InfoBox.tsx": 1,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
           "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 3,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
@@ -588,8 +693,8 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 8,
-      "totalCallSites": 7,
+      "totalInstances": 9,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-web/layout/HStack",
       "aliasedCdsComponents": [
         {
@@ -603,6 +708,7 @@
         "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
         "components/RfiPep/RfiPepSuccess.tsx": 1,
         "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 2,
+        "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
         "components/IdCapture/components/ImageUploadV2/components/ImageUploadTiles.tsx": 1,
         "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
       },
@@ -611,6 +717,7 @@
           "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
           "components/RfiPep/RfiPepAccountRestricted.tsx": 1,
           "components/RfiPep/RfiPepSuccess.tsx": 1,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
           "components/IdCapture/components/Veriff/components/BackModal/BackModal.tsx": 1
         },
         "alignItems": {
@@ -629,7 +736,11 @@
         "gap": {
           "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 2,
           "components/IdCapture/components/ImageUploadV2/components/ImageUploadTiles.tsx": 1
-        }
+        },
+        "background": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 },
+        "spacingVertical": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 },
+        "spacingHorizontal": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 },
+        "borderRadius": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 }
       }
     },
     {
@@ -646,22 +757,25 @@
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 5,
-      "totalCallSites": 3,
+      "totalInstances": 6,
+      "totalCallSites": 4,
       "cds": "@cbhq/cds-web/icons/Icon",
       "callSites": {
         "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
+        "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
         "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 3,
         "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
           "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 3,
           "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
         },
         "size": {
           "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 3,
           "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
         },
@@ -669,6 +783,7 @@
           "components/LabelWithHelpText/LabelWithHelpText.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
         },
+        "spacingTop": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 },
         "spacingBottom": {
           "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
         }
@@ -677,12 +792,16 @@
     {
       "name": "TextLabel1",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
-      "totalInstances": 5,
-      "totalCallSites": 4,
+      "totalInstances": 9,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-web/typography/TextLabel1",
       "callSites": {
         "components/RfiPep/InfoBox.tsx": 1,
         "components/RfiPep/MultiHitForm.tsx": 2,
+        "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+        "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
         "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
         "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
       },
@@ -690,15 +809,27 @@
         "as": {
           "components/RfiPep/InfoBox.tsx": 1,
           "components/RfiPep/MultiHitForm.tsx": 2,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
         },
         "color": {
           "components/RfiPep/InfoBox.tsx": 1,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
         },
         "spacingVertical": { "components/RfiPep/MultiHitForm.tsx": 1 },
         "spacingBottom": {
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1
         },
@@ -708,25 +839,55 @@
     {
       "name": "TextInput",
       "sourceFile": "@cbhq/cds-web/controls/TextInput",
-      "totalInstances": 3,
-      "totalCallSites": 1,
+      "totalInstances": 4,
+      "totalCallSites": 2,
       "cds": "@cbhq/cds-web/controls/TextInput",
-      "callSites": { "components/RfiPep/MultiHitForm.tsx": 3 },
+      "callSites": {
+        "components/RfiPep/MultiHitForm.tsx": 3,
+        "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1
+      },
       "propsWithCallSites": {
         "name": { "components/RfiPep/MultiHitForm.tsx": 3 },
-        "label": { "components/RfiPep/MultiHitForm.tsx": 3 },
-        "placeholder": { "components/RfiPep/MultiHitForm.tsx": 3 },
-        "value": { "components/RfiPep/MultiHitForm.tsx": 3 },
-        "onChange": { "components/RfiPep/MultiHitForm.tsx": 3 }
+        "label": {
+          "components/RfiPep/MultiHitForm.tsx": 3,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1
+        },
+        "placeholder": {
+          "components/RfiPep/MultiHitForm.tsx": 3,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1
+        },
+        "value": {
+          "components/RfiPep/MultiHitForm.tsx": 3,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1
+        },
+        "onChange": {
+          "components/RfiPep/MultiHitForm.tsx": 3,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1
+        },
+        "type": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 },
+        "helperText": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 },
+        "variant": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 },
+        "end": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 }
       }
     },
     {
       "name": "TextLegal",
       "sourceFile": "@cbhq/cds-web/typography/TextLegal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "cds": "@cbhq/cds-web/typography/TextLegal",
-      "propsWithCallSites": { "as": { "components/RfiPep/MultiHitForm.tsx": 1 } }
+      "callSites": {
+        "components/RfiPep/MultiHitForm.tsx": 1,
+        "components/Idology/components/VendorVerification/VendorVerification.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "components/RfiPep/MultiHitForm.tsx": 1,
+          "components/Idology/components/VendorVerification/VendorVerification.tsx": 1
+        },
+        "spacing": { "components/Idology/components/VendorVerification/VendorVerification.tsx": 1 },
+        "color": { "components/Idology/components/VendorVerification/VendorVerification.tsx": 1 }
+      }
     },
     {
       "name": "RadioGroup",
@@ -809,8 +970,8 @@
     {
       "name": "TextTitle1",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
-      "totalInstances": 7,
-      "totalCallSites": 7,
+      "totalInstances": 8,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-web/typography/TextTitle1",
       "callSites": {
         "components/SuccessViewV2/SuccessViewV2.tsx": 1,
@@ -819,7 +980,8 @@
         "components/IdCapture/components/Intro/Intro.tsx": 1,
         "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
         "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1,
-        "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1
+        "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1,
+        "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
@@ -829,10 +991,12 @@
           "components/IdCapture/components/Intro/Intro.tsx": 1,
           "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1,
           "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1,
-          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1
+          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1,
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1
         },
         "align": {
-          "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1
+          "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1,
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1
         }
       }
     },
@@ -847,15 +1011,130 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 3,
-      "totalCallSites": 1,
+      "totalInstances": 4,
+      "totalCallSites": 2,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
-      "callSites": { "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 3 },
+      "callSites": {
+        "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 3,
+        "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1
+      },
       "propsWithCallSites": {
-        "color": { "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 2 },
-        "as": { "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 3 },
+        "color": {
+          "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 2,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1
+        },
+        "as": {
+          "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 3,
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1
+        },
         "spacingBottom": { "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1 },
         "noWrap": { "steps/FCAIntroToDoList/FCAIntroToDoList.tsx": 1 }
+      }
+    },
+    {
+      "name": "ModalBody",
+      "sourceFile": "@cbhq/cds-web/overlays/Modal/ModalBody",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/overlays/Modal/ModalBody",
+      "callSites": {
+        "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+        "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1
+      }
+    },
+    {
+      "name": "InputIconButton",
+      "sourceFile": "@cbhq/cds-web/controls/InputIconButton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/controls/InputIconButton",
+      "propsWithCallSites": {
+        "name": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 },
+        "onPress": { "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "ModalFooter",
+      "sourceFile": "@cbhq/cds-web/overlays/Modal/ModalFooter",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/overlays/Modal/ModalFooter",
+      "callSites": {
+        "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+        "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "primaryAction": {
+          "components/FuturesTradingModal/components/FullSSNScreen.tsx": 1,
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ListCell",
+      "sourceFile": "@cbhq/cds-web/cells/ListCell",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/cells/ListCell",
+      "callSites": {
+        "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+        "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
+        "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
+        "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
+      },
+      "propsWithCallSites": {
+        "outerSpacing": {
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1
+        },
+        "key": {
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1
+        },
+        "title": {
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
+          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
+        },
+        "variant": {
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1
+        },
+        "onPress": {
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
+          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
+        },
+        "selected": {
+          "components/FuturesTradingModal/components/NetWorthScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/components/TradingPurposeScreen.tsx": 1,
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
+        },
+        "accessory": {
+          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
+        },
+        "description": {
+          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
+          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
+        },
+        "disabled": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 },
+        "media": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 }
       }
     },
     {
@@ -871,55 +1150,29 @@
       }
     },
     {
-      "name": "ListCell",
-      "sourceFile": "@cbhq/cds-web/cells/ListCell",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/cells/ListCell",
-      "callSites": {
-        "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
-        "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-      },
-      "propsWithCallSites": {
-        "accessory": {
-          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        },
-        "title": {
-          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        },
-        "description": {
-          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        },
-        "onPress": {
-          "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 1,
-          "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1
-        },
-        "selected": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 },
-        "disabled": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 },
-        "media": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 }
-      }
-    },
-    {
       "name": "LottieStatusAnimation",
       "sourceFile": "@cbhq/cds-web/animation/LottieStatusAnimation",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-web/animation/LottieStatusAnimation",
       "callSites": {
         "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
-        "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1
+        "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1,
+        "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1
       },
       "propsWithCallSites": {
         "status": {
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
-          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1
+          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1,
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1
         },
         "height": {
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 1,
-          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1
+          "components/IdCapture/components/VerificationPending/VerificationPending.tsx": 1,
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1
+        },
+        "key": {
+          "components/Idology/components/VerificationPending/VerificationPendingContent.tsx": 1
         }
       }
     },
@@ -4082,18 +4335,18 @@
       "styledComponent": "span"
     },
     {
-      "name": "StyledList",
-      "sourceFile": "components/IdCapture/components/Intro/Intro.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ul"
-    },
-    {
       "name": "WaitMessage",
       "sourceFile": "components/IdCapture/components/MobileUpload/MobileUpload.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "p"
+    },
+    {
+      "name": "StyledList",
+      "sourceFile": "components/IdCapture/components/Intro/Intro.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ul"
     },
     {
       "name": "QRCode",
@@ -4898,7 +5151,7 @@
     {
       "name": "FormattedMessage",
       "sourceFile": "react-intl/FormattedMessage",
-      "totalInstances": 282,
+      "totalInstances": 283,
       "totalCallSites": 65,
       "callSites": {
         "components/AddPhoneNumber/AddPhoneNumber.tsx": 1,
@@ -4955,7 +5208,7 @@
         "components/IdCapture/components/Intro/Intro.tsx": 1,
         "components/Idology/components/IdentityForm/IdentityForm.tsx": 6,
         "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 3,
-        "components/Idology/components/VendorVerification/VendorVerification.tsx": 6,
+        "components/Idology/components/VendorVerification/VendorVerification.tsx": 7,
         "components/SecurityKeyModal/components/Confirmation/Confirmation.tsx": 4,
         "components/SecurityKeyModal/components/Disable/Disable.tsx": 4,
         "components/SecurityKeyModal/components/Introduction/Introduction.tsx": 4,
@@ -5019,7 +5272,7 @@
           "components/IdCapture/components/Intro/Intro.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 6,
           "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 3,
-          "components/Idology/components/VendorVerification/VendorVerification.tsx": 6,
+          "components/Idology/components/VendorVerification/VendorVerification.tsx": 7,
           "components/SecurityKeyModal/components/Confirmation/Confirmation.tsx": 4,
           "components/SecurityKeyModal/components/Disable/Disable.tsx": 4,
           "components/SecurityKeyModal/components/Introduction/Introduction.tsx": 4,
@@ -5082,7 +5335,7 @@
           "components/IdCapture/components/Intro/Intro.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 6,
           "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 3,
-          "components/Idology/components/VendorVerification/VendorVerification.tsx": 6,
+          "components/Idology/components/VendorVerification/VendorVerification.tsx": 7,
           "components/SecurityKeyModal/components/Confirmation/Confirmation.tsx": 4,
           "components/SecurityKeyModal/components/Disable/Disable.tsx": 4,
           "components/SecurityKeyModal/components/Introduction/Introduction.tsx": 4,
@@ -5145,7 +5398,7 @@
           "components/IdCapture/components/Intro/Intro.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 6,
           "components/Idology/components/QuestionsForm/QuestionsForm.tsx": 3,
-          "components/Idology/components/VendorVerification/VendorVerification.tsx": 6,
+          "components/Idology/components/VendorVerification/VendorVerification.tsx": 7,
           "components/SecurityKeyModal/components/Confirmation/Confirmation.tsx": 4,
           "components/SecurityKeyModal/components/Disable/Disable.tsx": 4,
           "components/SecurityKeyModal/components/Introduction/Introduction.tsx": 4,
@@ -5442,6 +5695,24 @@
         "href": { "components/FailureView/FailureView.tsx": 1 },
         "target": { "components/FailureView/FailureView.tsx": 1 },
         "rel": { "components/FailureView/FailureView.tsx": 1 }
+      }
+    },
+    {
+      "name": "FullSSNScreen",
+      "sourceFile": "components/FuturesTradingModal/components/FullSSNScreen",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onContinue": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "TradingExperienceScreen",
+      "sourceFile": "components/FuturesTradingModal/components/TradingExperienceScreen",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onContinue": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 }
       }
     },
     {
@@ -5801,25 +6072,33 @@
     {
       "name": "IdentityForm",
       "sourceFile": "components/Idology/components/IdentityForm",
-      "totalInstances": 2,
+      "totalInstances": 1,
       "totalCallSites": 1,
-      "callSites": { "components/Idology/Idology.tsx": 2 },
       "propsWithCallSites": {
-        "store": { "components/Idology/Idology.tsx": 2 },
-        "showExplanation": { "components/Idology/Idology.tsx": 2 },
-        "showGermanyContent": { "components/Idology/Idology.tsx": 2 },
-        "showFCAContent": { "components/Idology/Idology.tsx": 2 },
-        "reConfirmSsn": { "components/Idology/Idology.tsx": 2 }
+        "store": { "components/Idology/Idology.tsx": 1 },
+        "showExplanation": { "components/Idology/Idology.tsx": 1 },
+        "showGermanyContent": { "components/Idology/Idology.tsx": 1 },
+        "showFCAContent": { "components/Idology/Idology.tsx": 1 },
+        "reConfirmSsn": { "components/Idology/Idology.tsx": 1 }
       }
     },
     {
       "name": "VendorVerification",
       "sourceFile": "components/Idology/components/VendorVerification",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/Idology/Idology.tsx": 2 },
+      "propsWithCallSites": { "track": { "components/Idology/Idology.tsx": 2 } }
+    },
+    {
+      "name": "VerificationPending",
+      "sourceFile": "components/Idology/components/VerificationPending",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "track": { "components/Idology/Idology.tsx": 1 },
-        "vendorUrl": { "components/Idology/Idology.tsx": 1 }
+        "getPendingEDP": { "components/Idology/Idology.tsx": 1 },
+        "onStatusNotPending": { "components/Idology/Idology.tsx": 1 },
+        "track": { "components/Idology/Idology.tsx": 1 }
       }
     },
     {
@@ -5835,6 +6114,16 @@
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": { "components/Idology/Idology.tsx": 1, "steps/IDV/IDV.tsx": 1 }
+    },
+    {
+      "name": "ObservedIdology",
+      "sourceFile": "components/Idology/Idology.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "disableAsyncEDP": { "components/Idology/Idology.tsx": 1 },
+        "disableAsyncKBA": { "components/Idology/Idology.tsx": 1 }
+      }
     },
     {
       "name": "Container",
@@ -6055,7 +6344,10 @@
         "width": { "components/RfiPep/MultiHitForm.tsx": 2 },
         "placeholder": { "components/RfiPep/MultiHitForm.tsx": 2 },
         "onChange": { "components/RfiPep/MultiHitForm.tsx": 2 },
-        "value": { "components/RfiPep/MultiHitForm.tsx": 2 }
+        "value": { "components/RfiPep/MultiHitForm.tsx": 2 },
+        "to": { "components/RfiPep/MultiHitForm.tsx": 1 },
+        "from": { "components/RfiPep/MultiHitForm.tsx": 1 },
+        "currentOption": { "components/RfiPep/MultiHitForm.tsx": 1 }
       }
     },
     {
@@ -6076,6 +6368,16 @@
           "components/RfiPep/MultiHitScreen.tsx": 1,
           "components/RfiPep/SingleHitScreen.tsx": 1
         }
+      }
+    },
+    {
+      "name": "InfoModal",
+      "sourceFile": "components/RfiPep/InfoModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "visible": { "components/RfiPep/RfiPepAccountRestricted.tsx": 1 },
+        "onCloseComplete": { "components/RfiPep/RfiPepAccountRestricted.tsx": 1 }
       }
     },
     {
@@ -6862,10 +7164,10 @@
     {
       "name": "Route",
       "sourceFile": "react-router-dom/Route",
-      "totalInstances": 6,
+      "totalInstances": 5,
       "totalCallSites": 1,
-      "callSites": { "steps/RfiPep/RfiPepStep.tsx": 6 },
-      "propsWithCallSites": { "path": { "steps/RfiPep/RfiPepStep.tsx": 6 } }
+      "callSites": { "steps/RfiPep/RfiPepStep.tsx": 5 },
+      "propsWithCallSites": { "path": { "steps/RfiPep/RfiPepStep.tsx": 5 } }
     },
     {
       "name": "SingleHitScreen",
@@ -6900,16 +7202,6 @@
     {
       "name": "RfiPepAccountRestricted",
       "sourceFile": "components/RfiPep/RfiPepAccountRestricted",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onContinue": { "steps/RfiPep/RfiPepStep.tsx": 1 },
-        "loading": { "steps/RfiPep/RfiPepStep.tsx": 1 }
-      }
-    },
-    {
-      "name": "AccountUnderReview",
-      "sourceFile": "components/RfiPep/AccountUnderReview",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -6971,6 +7263,12 @@
       "totalCallSites": 1
     },
     {
+      "name": "SelectBox",
+      "sourceFile": "components/ContentLayout/components/SelectBox/SelectBox.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "Field",
       "sourceFile": "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx",
       "totalInstances": 3,
@@ -6980,8 +7278,8 @@
       }
     },
     {
-      "name": "SelectBox",
-      "sourceFile": "components/ContentLayout/components/SelectBox/SelectBox.tsx",
+      "name": "SelectBoxContainer",
+      "sourceFile": "components/ContentLayout/components/SelectBoxContainer/SelectBoxContainer.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -7021,12 +7319,6 @@
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberFormContainer.tsx": 1
         }
       }
-    },
-    {
-      "name": "SelectBoxContainer",
-      "sourceFile": "components/ContentLayout/components/SelectBoxContainer/SelectBoxContainer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "ReactComponent",
@@ -7594,6 +7886,21 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "onClick": { "components/Idology/components/VendorVerification/VendorVerification.tsx": 1 }
+      }
+    },
+    {
+      "name": "VerificationPendingContent",
+      "sourceFile": "components/Idology/components/VerificationPending/VerificationPendingContent",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onTryAgain": {
+          "components/Idology/components/VerificationPending/VerificationPending.tsx": 1
+        },
+        "status": {
+          "components/Idology/components/VerificationPending/VerificationPending.tsx": 1
+        },
+        "track": { "components/Idology/components/VerificationPending/VerificationPending.tsx": 1 }
       }
     },
     {
