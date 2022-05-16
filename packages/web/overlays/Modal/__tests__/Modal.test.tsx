@@ -11,7 +11,6 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 import { Button } from '../../../buttons';
 import { ThemeProvider } from '../../../system/ThemeProvider';
 import { TextBody, TextLabel1 } from '../../../typography';
-import { PortalProvider } from '../../PortalProvider';
 import { Modal } from '../Modal';
 import { ModalBody } from '../ModalBody';
 import { ModalFooter } from '../ModalFooter';
@@ -30,7 +29,6 @@ const { MockModal } = modalBuilder({
   ThemeProvider,
   Button,
   LoremIpsum,
-  PortalProvider,
 } as CreateModalProps);
 
 describe('Modal', () => {
@@ -141,5 +139,26 @@ describe('Modal', () => {
     await waitFor(() => getByRole('dialog'));
 
     expect(getByTestId('modal-footer')).toBeTruthy();
+  });
+
+  it('should have correct styles at the end of animation', async () => {
+    const { container, getByTestId } = render(<MockModal />);
+
+    fireEvent.click(container.querySelector('button') as Element);
+    // initial styles
+    expect(getByTestId('modal-overlay-motion')).toHaveStyle({ opacity: 0 });
+    expect(getByTestId('modal-dialog-motion')).toHaveStyle({ opacity: 0 });
+    expect(getByTestId('modal-dialog-motion')).toHaveStyle({
+      transform: 'scale(0.98) translateZ(0)',
+    });
+
+    // animated styles
+    await waitFor(() => {
+      expect(getByTestId('modal-overlay-motion')).toHaveStyle({ opacity: 1 });
+      expect(getByTestId('modal-dialog-motion')).toHaveStyle({ opacity: 1 });
+      expect(getByTestId('modal-dialog-motion')).toHaveStyle({
+        transform: 'none',
+      });
+    });
   });
 });

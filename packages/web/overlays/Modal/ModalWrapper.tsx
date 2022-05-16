@@ -1,16 +1,16 @@
 import React, { AriaRole, ForwardedRef, forwardRef, memo, useEffect } from 'react';
-import { AnimatePresence, m as motion, Target } from 'framer-motion';
+import { AnimatePresence, m as motion } from 'framer-motion';
 import {
-  animateInOpacityConfig as animateInOverlayOpacityConfig,
-  animateOutOpacityConfig as animateOutOverlayOpacityConfig,
+  animateInOpacityConfig,
+  animateOutOpacityConfig,
 } from '@cbhq/cds-common/animation/overlay';
 import { ModalBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
 import { NoopFn } from '../..';
-import { Animated } from '../../animation/Animated';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
 import { Box, BoxProps } from '../../layout';
+import { useMotionProps } from '../../motion/useMotionProps';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal, PortalProps } from '../Portal';
 import { modalContainerId } from '../PortalProvider';
@@ -67,6 +67,11 @@ export const ModalWrapper = memo(
       testID,
       role = 'dialog',
     } = props;
+    const motionProps = useMotionProps({
+      enterConfigs: [animateInOpacityConfig],
+      exitConfigs: [animateOutOpacityConfig],
+      exit: 'exit',
+    });
 
     const blockScroll = useScrollBlocker();
 
@@ -101,15 +106,7 @@ export const ModalWrapper = memo(
               ref={ref}
             >
               {!hideOverlay && (
-                <motion.div
-                  initial={
-                    Animated.toFramerTransition([animateOutOverlayOpacityConfig], {
-                      propertiesOnly: true,
-                    }) as Target
-                  }
-                  animate={Animated.toFramerTransition([animateInOverlayOpacityConfig])}
-                  exit={Animated.toFramerTransition([animateOutOverlayOpacityConfig])}
-                >
+                <motion.div {...motionProps} data-testid="modal-overlay-motion">
                   <Overlay
                     onPress={disableOverlayPress ? undefined : onOverlayPress}
                     dangerouslySetClassName={

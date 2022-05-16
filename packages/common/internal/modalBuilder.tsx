@@ -9,7 +9,6 @@ import type {
   ModalHeaderBaseProps,
   SharedProps,
   TextInputBaseProps,
-  ThemeProviderBaseProps,
 } from '../types';
 
 export type CreateModalProps = {
@@ -19,8 +18,6 @@ export type CreateModalProps = {
   ModalFooter: React.ComponentType<ModalFooterBaseProps>;
   LoremIpsum: React.ComponentType<Record<string, unknown>>;
   Button: React.ComponentType<ButtonBaseProps & SharedProps & { onPress?: () => void }>;
-  ThemeProvider: React.ComponentType<ThemeProviderBaseProps>;
-  PortalProvider: React.ComponentType<ThemeProviderBaseProps>;
   TextInput?: React.ComponentType<TextInputBaseProps>;
 };
 
@@ -32,15 +29,13 @@ export function modalBuilder({
   Button,
   TextInput, // test keyboard avoiding on mobile
   LoremIpsum,
-  ThemeProvider,
-  PortalProvider,
 }: CreateModalProps) {
   const BasicModalExample: React.FC<{ disablePortal?: boolean; visible?: boolean }> = ({
     children,
     disablePortal,
     visible: defaultVisible,
   }) => {
-    const [visible, { toggleOn, toggleOff }] = useToggler(defaultVisible);
+    const [visible, { toggleOn, toggleOff }] = useToggler(defaultVisible ?? true);
 
     return (
       <>
@@ -128,55 +123,35 @@ export function modalBuilder({
   };
 
   const BasicModal = () => (
-    <PortalProvider>
-      <BasicModalExample>
-        <LoremIpsum />
-      </BasicModalExample>
-    </PortalProvider>
+    <BasicModalExample>
+      <LoremIpsum />
+    </BasicModalExample>
   );
 
   const VisibleModal = () => (
-    <PortalProvider>
-      <BasicModalExample visible>
-        <LoremIpsum />
-      </BasicModalExample>
-    </PortalProvider>
+    <BasicModalExample visible>
+      <LoremIpsum />
+    </BasicModalExample>
   );
 
   const ModalWithoutPortal = () => (
-    <PortalProvider>
-      <BasicModalExample disablePortal>
-        <LoremIpsum />
-      </BasicModalExample>
-    </PortalProvider>
-  );
-
-  const DarkModal = () => (
-    <ThemeProvider spectrum="dark">
-      <PortalProvider>
-        <BasicModalExample>
-          <LoremIpsum />
-        </BasicModalExample>
-      </PortalProvider>
-    </ThemeProvider>
+    <BasicModalExample disablePortal>
+      <LoremIpsum />
+    </BasicModalExample>
   );
 
   const LongModal = () => (
-    <PortalProvider>
-      <BasicModalExample>
-        <LoremIpsum repeat={30} />
-        {!!TextInput && <TextInput label="" placeholder="test input" />}
-      </BasicModalExample>
-    </PortalProvider>
+    <BasicModalExample>
+      <LoremIpsum repeat={30} />
+      {!!TextInput && <TextInput label="" placeholder="test input" />}
+    </BasicModalExample>
   );
 
   const PortalModal = () => {
     return (
-      <PortalProvider>
-        <PortalModalExample>
-          <LoremIpsum />
-        </PortalModalExample>
-      </PortalProvider>
+      <PortalModalExample>
+        <LoremIpsum />
+      </PortalModalExample>
     );
   };
 
@@ -184,7 +159,6 @@ export function modalBuilder({
     BasicModal,
     VisibleModal,
     ModalWithoutPortal,
-    DarkModal,
     LongModal,
     PortalModal,
     MockModal,
