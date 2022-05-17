@@ -9,6 +9,9 @@
   "references": [
     {
       "path": "../web"
+    },
+    {
+      "path": "../web-utils"
     }
   ]
 }

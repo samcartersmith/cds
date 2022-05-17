@@ -1,19 +1,12 @@
 import ejs from 'ejs';
 import fs from 'fs';
+import { camelCase, kebabCase, startCase } from 'lodash';
 import path from 'path';
 import prettier from 'prettier';
 
-import { ParsedDoc } from './docgenParser';
-
-export type DocgenWriterParams = {
-  alias: string;
-  files: WriteFileConfig[];
-  outputDir: string;
-};
-
 export type WriteFileConfig = {
   dest: string;
-  data: ParsedDoc | Record<string, unknown>;
+  data: Record<string, unknown>;
   template: string;
 };
 
@@ -23,6 +16,12 @@ type WriteFileParams<T> = {
 };
 
 const writeConfig = { encoding: 'utf8', flag: 'w' } as const;
+
+const helpers = {
+  pascalCase: startCase,
+  camelCase,
+  kebabCase,
+};
 
 function getParser(dest: string): prettier.BuiltInParserName {
   const ext = path.extname(dest);
@@ -53,14 +52,14 @@ export async function writeFile<T>({ dest, data }: WriteFileParams<T>) {
 /**
  * Writes the content passed from docgenRunner to disk based on plugin config.
  */
-export async function docgenWriter({ alias, files }: DocgenWriterParams) {
+export async function docgenWriter(files: WriteFileConfig[]) {
   return Promise.all(
     files.map(async (item) => {
       const contents = await ejs.renderFile(item.template, {
         data: item.data,
-        alias,
+        h: helpers,
       });
-      await writeFile({
+      return writeFile({
         dest: item.dest,
         data: contents,
       });

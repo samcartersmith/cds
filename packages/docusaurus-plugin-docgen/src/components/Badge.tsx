@@ -12,7 +12,7 @@ type BadgeProps = {
 
 const badgePalettes = {
   beta: { primary: ['green30', 0.5], primaryForeground: 'gray100' },
-  dangerous: { primary: ['red30', 0.5], primaryForeground: 'gray100' },
+  danger: { primary: ['red30', 0.5], primaryForeground: 'gray100' },
   deprecated: { primary: ['purple30', 0.5], primaryForeground: 'gray100' },
   internal: { primary: ['blue30', 0.5], primaryForeground: 'gray100' },
   required: { primary: ['yellow30', 0.5], primaryForeground: 'gray100' },
@@ -20,7 +20,7 @@ const badgePalettes = {
 
 const badgeText = {
   beta: 'Beta',
-  dangerous: 'Dangerous',
+  danger: 'Dangerous',
   deprecated: 'Deprecated',
   internal: 'Internal',
   required: 'Required',

@@ -35,6 +35,7 @@ function configureForDocusaurus(config) {
     config.resolve.alias['@theme/DocPaginator'] = getRefreshFile('DocPaginator');
     config.resolve.alias['@theme/Footer'] = getRefreshFile('Footer');
     config.resolve.alias['@theme/Playground'] = getRefreshFile('Playground');
+    config.resolve.alias['@theme/MDXComponents'] = getRefreshFile('MDXComponents');
   }
 
   return {};

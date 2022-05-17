@@ -1,0 +1,194 @@
+import { Method, ParentType } from 'react-docgen-typescript/lib/parser';
+import ts from 'typescript';
+
+import { formatString } from './docgenParser';
+
+/* -------------------------------------------------------------------------- */
+/*                        Overrides for narrower types                        */
+/* -------------------------------------------------------------------------- */
+
+declare module 'react-docgen-typescript' {
+  export function withCustomConfig(): { parse: (files: string[]) => Doc[] };
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Plugin options                               */
+/* -------------------------------------------------------------------------- */
+
+export type DocgenPluginOptions = {
+  id?: string;
+  /**
+   * Webpack alias to use for accessing files output to docusaurus's temporary plugin directory
+   * This is where the component and props data is output to.
+   * @default @docgen
+   */
+  alias?: string;
+  /**
+   * Directory to output codegenerated doc scaffolds.
+   * Path should be relative path to root of docusaurus project. i.e. docs/api.
+   * If no path is provided that plugin will not output any files outside of temporary
+   * plugin directory, which you can pull in and customize how API data is presented.
+   */
+  docsDir: string;
+  /**
+   * Determines if plugin should run. If plugin is too slow in development,
+   * you can either increase watchInterval or set this to false.
+   * @default true
+   */
+  enabled?: boolean;
+  /**
+   * Absolute paths to tsconfig.json's for any projects that sourceFiles belong to.
+   * When the plugin is run it will loop through each tsconfig and determine
+   * which sourceFiles are present in those packages.
+   */
+  entryPoints: string[];
+  /**
+   * When you use the templates from plugin, if there are two components with the same name coming from
+   * two separate projects (cross platform), it will group those components together and use toggle to switch between them.
+   * This formatPackageName will allow you to customize how that toggle is displayed.
+   * i.e. remove `@cbhq-cds` scope from `@cbhq/cds-mobile` and `@cbhq/cds-web` so it returns just 'mobile' and 'web'.
+   */
+  formatPackageName?: (name: string) => string;
+  /**
+   * Determines if plugin should overwrite scaffolded docs on subsequent runs.
+   * This is useful if you only want to jumpstart docs, but plan to re-organize layout.
+   * For those usecases, you can set to true for first run, then false after. You can also include
+   * an array of files that you want to force overriding on each run.
+   */
+  forceDocs: boolean | string[];
+  onProcessDoc: OnProcessDoc;
+  /**
+   * A key:value pair, where the key is the sidebar item and the value is an array
+   * of source files you want docgen to parse. This is useful when components are
+   * cross-platform or have related sub-components/hooks which you want to consolidate
+   * to a single page.
+   */
+  sourceFiles: Record<string, string[]>;
+  /**
+   * How frequently (in minutes) should plugin run after it was last run.
+   * This is typically triggered via on save of project file.
+   * @default 5
+   */
+  watchInterval?: number;
+};
+
+/* -------------------------------------------------------------------------- */
+/*                                 Pre Process                                */
+/* -------------------------------------------------------------------------- */
+export type PropType = {
+  name: string;
+  raw?: string;
+  value?: PropValue[];
+};
+
+export type PropValue = {
+  value: string;
+  description?: string;
+  fullComment?: string;
+  tags?: PropItemTags;
+};
+
+export type PropItemTags = {
+  danger?: string;
+  deprecated?: string;
+  internal?: string;
+  default?: string;
+};
+
+export type PropItem = {
+  name: string;
+  declarations?: ParentType[];
+  defaultValue: null | { value: string };
+  description: string;
+  parent?: ParentType;
+  required: boolean;
+  tags?: PropItemTags;
+  type: PropType;
+};
+
+export type DocTags = {
+  danger?: string;
+  description?: string;
+  example?: string;
+  internal?: string;
+};
+
+export type Doc = {
+  expression?: ts.Symbol;
+  description: string;
+  displayName: string;
+  filePath: string;
+  props: Record<string, PropItem>;
+  methods?: Method[];
+  tags?: DocTags;
+};
+
+/* -------------------------------------------------------------------------- */
+/*                                Pre-Processed                               */
+/* -------------------------------------------------------------------------- */
+
+export type PreProcessedDoc = Omit<Doc, 'props'> & {
+  example?: string;
+  parentTypes?: Record<string, string[]>;
+  props: PreProcessedPropItem[];
+  tags?: Omit<DocTags, 'example' | 'description'>;
+};
+
+export type PreProcessedPropItem = Omit<PropItem, 'defaultValue' | 'parent' | 'type'> & {
+  defaultValue?: string;
+  parent: string;
+  type: Required<PropType>;
+};
+
+/* -------------------------------------------------------------------------- */
+/*                                  Processed                                 */
+/* -------------------------------------------------------------------------- */
+
+export type ProcessedDoc = Omit<PreProcessedDoc, 'props' | 'expression'> & {
+  props: ProcessedPropItem[];
+  parentTypes: Record<string, string[]>;
+};
+
+export type ProcessedPropItem = Omit<PreProcessedPropItem, 'type'> & {
+  type: string;
+};
+
+/* -------------------------------------------------------------------------- */
+/*                            Consumer integration                            */
+/* -------------------------------------------------------------------------- */
+
+type OnParseDocHelpers = {
+  formatString: typeof formatString;
+  /**
+   * @param alias - What you want to show in PropsTable. Usually comes from prop.type.raw
+   * @param value - What you want to show when clicking on an alias for more info. Usually comes from prop.type.value.
+   *
+   * If a prop's type is matched with an alias in sharedTypeAliases it will only show the alias name with a Link
+   * that triggers a Modal to view the actual value. This helps us avoid super long values which can make
+   * the docs noisy. We also avoid making docs too sparse had we only shown the alias without any way to
+   * view the actual underlying value.
+   */
+  addToSharedTypeAliases: (alias: string, value: PreProcessedPropItem['type']['value']) => void;
+  /**
+   * Automatically excluding all types which come from node_modules can be problematic especially
+   * since we extend core functionality from html and react-native.
+   *
+   * The docgen plugin provides flexibility with what types we want to include in main props table versus
+   * what types we want to pull out into, `parentTypes` via an "Extends from ...." UI.
+   *
+   * If you want to...
+   * 1. show prop in the props table - include the prop in the doc's props array.
+   * 2. hide prop in the props table - filter the prop from the doc's props array.
+   * 3. show prop in parentTypes UI - call addToParentTypes with the prop in processDoc
+   * 4. hide prop in the props table + show prop in parentTypes UI - do both #2 and #3 above
+   */
+  addToParentTypes: (prop: PreProcessedPropItem) => void;
+};
+
+export type OnProcessDoc = (
+  doc: PreProcessedDoc,
+  helpers: OnParseDocHelpers,
+) => PreProcessedDoc | ProcessedDoc;
+
+export type SharedTypeAliases = Record<string, string>;
+export type SharedParentTypes = Record<string, Record<string, ProcessedPropItem>>;

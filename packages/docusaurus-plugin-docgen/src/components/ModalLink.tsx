@@ -7,12 +7,12 @@ import { ModalHeader } from '@cbhq/cds-web/overlays/Modal/ModalHeader';
 import { Link } from '@cbhq/cds-web/typography/Link';
 import { TextBody } from '@cbhq/cds-web/typography/TextBody';
 
-export type PropsTableModalProps = {
+export type ModalLinkProps = {
   title: string;
-  modalContent: React.ReactNode;
+  content: React.ReactNode;
 };
 
-export function PropsTableModal({ title, modalContent }: PropsTableModalProps) {
+export function ModalLink({ title, content }: ModalLinkProps) {
   const [visible, { toggleOn, toggleOff }] = useToggler();
 
   return (
@@ -23,11 +23,7 @@ export function PropsTableModal({ title, modalContent }: PropsTableModalProps) {
       <Modal visible={visible} onRequestClose={toggleOff}>
         <ModalHeader title={title} />
         <ModalBody>
-          {typeof modalContent === 'string' ? (
-            <TextBody as="p">{modalContent}</TextBody>
-          ) : (
-            modalContent
-          )}
+          {typeof content === 'string' ? <TextBody as="p">{content}</TextBody> : content}
         </ModalBody>
       </Modal>
     </>

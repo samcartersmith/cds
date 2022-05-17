@@ -1,4 +1,4 @@
-const docgenConfig = require('./docgenConfig');
+const docgenConfig = require('./docgen/config');
 const webpackPlugin = require('./webpackPlugin');
 
 const SLACK_TEAM = 'T02Q6DY7G';
@@ -76,6 +76,7 @@ module.exports = {
           trackingID: 'G-369GEFT8FG',
         },
         docs: {
+          exclude: hasThemeRefresh ? undefined : ['debug/**/*'],
           breadcrumbs: !hasThemeRefresh,
           routeBasePath: '/',
           sidebarPath: hasThemeRefresh
