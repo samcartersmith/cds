@@ -19,7 +19,7 @@ export function illustrationPercyBuilder(
   Box: React.ComponentType<BoxBaseProps>,
   TextLabel1: React.ComponentType<TextBaseProps>,
 ) {
-  const ListIllustrations = () => {
+  const ListIllustrations = (startIdx: number, endIdx: number) => {
     return (
       <HStack
         flexWrap="wrap"
@@ -28,7 +28,7 @@ export function illustrationPercyBuilder(
         justifyContent="flex-start"
         alignItems="center"
       >
-        {sortedImg.map((nameAndSpectrum) => {
+        {sortedImg.slice(startIdx, endIdx).map((nameAndSpectrum) => {
           const [name, spectrum] = split(nameAndSpectrum, '-');
           return (
             <VStack gap={1} alignItems="center">
