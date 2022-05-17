@@ -1,5 +1,6 @@
 import { css } from 'linaria';
 import { svgs } from '@cbhq/cds-common/internal/data/assets';
+import { avatarSizes } from '@cbhq/cds-common/internal/data/avatars';
 
 import { HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system';
@@ -80,6 +81,34 @@ export const Default = () => {
                 {...sharedProps}
                 shape="squircle"
               />
+            );
+          })}
+        </HStack>
+      </VStack>
+      <VStack gap={2}>
+        <TextTitle1 as="h3">Avatar Sizes with Squircle</TextTitle1>
+        <HStack gap={2}>
+          {avatarSizes.map((size, idx) => {
+            const key = `squircle-${idx}`;
+            return (
+              <>
+                <div>{size}</div>
+                <RemoteImage key={key} shape="squircle" source={imageURL} size={size} />
+              </>
+            );
+          })}
+        </HStack>
+      </VStack>
+      <VStack gap={2}>
+        <TextTitle1 as="h3">Avatar Sizes with Circle</TextTitle1>
+        <HStack gap={2}>
+          {avatarSizes.map((size, idx) => {
+            const key = `circle-${idx}`;
+            return (
+              <>
+                <div>{size}</div>
+                <RemoteImage key={key} shape="circle" source={imageURL} size={size} />
+              </>
             );
           })}
         </HStack>

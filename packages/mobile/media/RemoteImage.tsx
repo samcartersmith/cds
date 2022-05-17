@@ -8,7 +8,7 @@ import {
   ImageURISource,
 } from 'react-native';
 import { SvgCssUri } from 'react-native-svg';
-import { AspectRatio, FixedValue, Shape, useSpectrum } from '@cbhq/cds-common';
+import { AspectRatio, FixedValue, RemoteImageBaseProps, useSpectrum } from '@cbhq/cds-common';
 import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
 
 import { useInvertedPaletteColor } from '../color/useInvertedPaletteColor';
@@ -16,14 +16,11 @@ import { usePalette } from '../hooks/usePalette';
 import { DangerouslySetStyle } from '../types';
 
 type BaseRemoteImageProps = {
-  aspectRatio?: AspectRatio;
-  height?: FixedValue;
-  shape?: Shape;
-  width?: FixedValue;
   /** Fill in transparent background with inverted background color and add border. This solves issue of transparent, stamped out asset icons not being visible on dark backgrounds.  */
   shouldApplyDarkModeEnhacements?: boolean;
 } & Omit<ImageProps, 'style' | 'width' | 'height'> &
-  DangerouslySetStyle<ImageStyle, false>;
+  DangerouslySetStyle<ImageStyle, false> &
+  RemoteImageBaseProps;
 
 type RemoteImagePropsWithWidth = {
   width: FixedValue;

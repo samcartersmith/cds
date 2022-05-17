@@ -1,7 +1,14 @@
 import React, { memo, useMemo } from 'react';
 import { css } from 'linaria';
-import { AspectRatio, FixedValue, Shape, SharedProps } from '@cbhq/cds-common';
+import {
+  AspectRatio,
+  AvatarSize,
+  FixedValue,
+  RemoteImageBaseProps,
+  SharedProps,
+} from '@cbhq/cds-common';
 import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
+import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
 
 import { cx } from '../utils/linaria';
 
@@ -31,10 +38,6 @@ const imageRatio = css`
 `;
 
 type BaseRemoteImageProps = {
-  aspectRatio?: AspectRatio;
-  height?: FixedValue;
-  shape?: Shape;
-  width?: FixedValue;
   alt?: string;
   source: string;
   dangerouslySetClassName?: string;
@@ -43,7 +46,8 @@ type BaseRemoteImageProps = {
   React.ImgHTMLAttributes<HTMLImageElement>,
   'className' | 'style' | 'height' | 'width' | 'source'
 > &
-  SharedProps;
+  SharedProps &
+  RemoteImageBaseProps;
 
 type RemoteImagePropsWithWidth = {
   width: FixedValue;
@@ -60,10 +64,15 @@ type RemoteImagePropsWidthAndHeight = {
   height: FixedValue;
 } & BaseRemoteImageProps;
 
+type RemoteImagePropsSize = {
+  size: AvatarSize;
+} & BaseRemoteImageProps;
+
 export type RemoteImageProps =
   | RemoteImagePropsWithWidth
   | RemoteImagePropsWithHeight
-  | RemoteImagePropsWidthAndHeight;
+  | RemoteImagePropsWidthAndHeight
+  | RemoteImagePropsSize;
 
 export const RemoteImage = memo(function RemoteImage({
   width,
@@ -75,9 +84,14 @@ export const RemoteImage = memo(function RemoteImage({
   dangerouslySetClassName,
   resizeMode = 'cover',
   testID,
+  size,
   ...props
-}: RemoteImageProps) {
+}: BaseRemoteImageProps) {
   const borderRadius = useShapeToBorderRadiusSize(shape);
+  const avatarSize = useAvatarSize(size ?? 'm');
+
+  const finalWidth = size !== undefined ? avatarSize : width;
+  const finalHeight = size !== undefined ? avatarSize : height;
 
   const styles = useMemo(
     () =>
@@ -94,8 +108,8 @@ export const RemoteImage = memo(function RemoteImage({
       alt={alt ?? ''}
       {...props}
       src={source}
-      width={width}
-      height={height}
+      width={finalWidth}
+      height={finalHeight}
       className={cx(
         image,
         aspectRatio && imageRatio,
