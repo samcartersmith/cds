@@ -1,12 +1,12 @@
-export const getTransform = (translateX: number, translateY: number) => {
+export const getTransform = (translateValues: { translateX: number; translateY: number }) => {
   return {
     position: 'absolute',
     transform: [
       {
-        translateX,
+        translateX: translateValues.translateX,
       },
       {
-        translateY,
+        translateY: translateValues.translateY,
       },
     ],
   };

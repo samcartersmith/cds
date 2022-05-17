@@ -1,53 +1,28 @@
 import React, { memo } from 'react';
 import { css } from 'linaria';
-import { DotSymbolBaseProps, useIconSize } from '@cbhq/cds-common';
+import { DotBaseProps, useIconSize } from '@cbhq/cds-common';
 
-import { Icon } from '../icons';
-import { Box } from '../layout';
 import { RemoteImage } from '../media/RemoteImage';
-import { palette } from '../tokens';
 import { handlePreventPropagation } from '../utils/eventHandlers';
 
 import { dotRootContainerStyles, getTransform } from './dotStyles';
 
-// These widths sizes are using px not
-// spacing because it shouldn't change with density.
-// And spacing doesn't support such small pixel size
-// either
 const imageBorderClassName = css`
   && {
-    border-color: ${palette.secondary};
+    border-color: white;
     border-width: 1px;
   }
 `;
 
-// Not using spacing, same as above reasoning
-const iconBorderClassName = css`
-  && {
-    border-width: 2px;
-  }
-`;
-
-export type DotSymbolProps = DotSymbolBaseProps & {
-  /** a string path to image source */
-  source?: string;
+export type DotSymbolProps = Omit<DotBaseProps, 'variant'> & {
+  source: string;
 };
 
 const aspectRatio: [number, number] = [1, 1];
 
 export const DotSymbol = memo(
-  ({
-    children,
-    pin,
-    source,
-    iconName,
-    size = 's',
-    testID,
-    overlap,
-    accessibilityLabel,
-    ...props
-  }: DotSymbolProps) => {
-    const pinStyles = getTransform(pin, overlap);
+  ({ children, pin, source, size = 's', testID, accessibilityLabel, ...props }: DotSymbolProps) => {
+    const pinStyles = getTransform(pin);
     const { iconSize } = useIconSize(size);
 
     return (
@@ -64,26 +39,13 @@ export const DotSymbol = memo(
           style={pinStyles}
           data-testid="dotsymbol-inner-container"
         >
-          {source && (
-            <RemoteImage
-              dangerouslySetClassName={imageBorderClassName}
-              shape="circle"
-              aspectRatio={aspectRatio}
-              source={source}
-              width={iconSize}
-            />
-          )}
-          {iconName && (
-            <Box
-              dangerouslySetClassName={iconBorderClassName}
-              spacing={1}
-              background="primary"
-              borderRadius="round"
-              borderColor="secondary"
-            >
-              <Icon color="primaryForeground" name={iconName} size={size} />
-            </Box>
-          )}
+          <RemoteImage
+            dangerouslySetClassName={imageBorderClassName}
+            shape="circle"
+            aspectRatio={aspectRatio}
+            source={source}
+            width={iconSize}
+          />
         </div>
       </div>
     );

@@ -1,5 +1,5 @@
 import { css } from 'linaria';
-import { DotOverlap, PinPlacement } from '@cbhq/cds-common';
+import { PinPlacement } from '@cbhq/cds-common';
 
 export const dotRootContainerStyles = css`
   && {
@@ -8,7 +8,7 @@ export const dotRootContainerStyles = css`
   }
 `;
 
-export const getTransform = (pin?: PinPlacement, overlap?: DotOverlap) => {
+export const getTransform = (pin?: PinPlacement) => {
   if (pin === undefined) {
     return {};
   }
@@ -25,17 +25,10 @@ export const getTransform = (pin?: PinPlacement, overlap?: DotOverlap) => {
   const verticalMultiplier = vertical === 'bottom' ? 1 : -1;
   const horizontalMultiplier = horizontal === 'end' ? 1 : -1;
 
-  // If the content we are overlapping has a circular shape
-  // we need to apply more transformation to the dot
-  // so it sits on the circle rather than awkwardly outside
-  // inpsiration: https://mui.com/material-ui/react-badge/#badge-overlap
-  // 14% because that is what yields the best result :p
-  const amountToShift = overlap === 'circular' ? '14%' : 0;
-
   return {
     position: 'absolute',
-    [transformedHorizontal]: amountToShift,
-    [vertical]: amountToShift,
+    [transformedHorizontal]: 0,
+    [vertical]: 0,
     transform: `translate(${horizontalMultiplier * 50}%, ${verticalMultiplier * 50}%)`,
   } as const;
 };

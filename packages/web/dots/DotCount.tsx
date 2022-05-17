@@ -30,11 +30,10 @@ export const DotCount = memo(
     count,
     testID,
     accessibilityLabel,
-    overlap,
     ...props
   }: DotCountBaseProps) => {
     const palette = usePalette();
-    const pinStyles = getTransform(pin, overlap);
+    const pinStyles = getTransform(pin);
 
     const styles = useMemo(() => {
       return {

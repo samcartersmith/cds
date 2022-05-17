@@ -1,89 +1,59 @@
 import React, { memo, useMemo } from 'react';
 import { ImageSourcePropType, View } from 'react-native';
-import { DotSymbolBaseProps, useIconSize } from '@cbhq/cds-common';
+import { DotBaseProps, useIconSize } from '@cbhq/cds-common';
 
-import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
 import { useLayout } from '../hooks/useLayout';
 import { usePalette } from '../hooks/usePalette';
-import { Icon } from '../icons/Icon';
-import { Box } from '../layout/Box';
 import { RemoteImage } from '../media/RemoteImage';
 
 import { getTransform } from './dotStyles';
 
-export type DotSymbolProps = DotSymbolBaseProps & {
-  source?: ImageSourcePropType | string;
+export type DotSymbolProps = Omit<DotBaseProps, 'variant'> & {
+  source: ImageSourcePropType | string;
 };
 
-export const DotSymbol = memo(
-  ({ children, pin, source, overlap, iconName, size = 's', ...props }: DotSymbolProps) => {
-    const { iconSize } = useIconSize(size);
-    const [childrenSize, onChildrenLayout] = useLayout();
-    const [iconWrapperSize, onIconWrapperLayout] = useLayout();
-    const palette = usePalette();
-    const dotIsIcon = iconName !== undefined;
+export const DotSymbol = memo(({ children, pin, source, size = 's', ...props }: DotSymbolProps) => {
+  const { iconSize } = useIconSize(size);
+  const [layoutSize, onLayout] = useLayout();
+  const palette = usePalette();
 
-    const transforms = useDotPinStyles(
-      childrenSize,
-      dotIsIcon ? iconWrapperSize : iconSize,
-      overlap,
-    );
+  const pinStyles = useMemo(() => {
+    // If pin placement exist, we compute the right
+    // position to pin the dot
+    if (pin) {
+      const [vertical, horizontal] = (pin as string).split('-');
 
-    const pinStyles = useMemo(() => {
-      if (pin) {
-        const [vertical, horizontal] = (pin as string).split('-');
+      return getTransform({
+        translateX: horizontal === 'end' ? layoutSize.width - iconSize / 2 : -(iconSize / 2),
+        translateY: vertical === 'bottom' ? layoutSize.height - iconSize / 2 : -(iconSize / 2),
+      });
+    }
 
-        return getTransform(
-          transforms[horizontal as DotPinStylesKey],
-          transforms[vertical as DotPinStylesKey],
-        );
-      }
-      return {};
-    }, [pin, transforms]);
+    return {};
+  }, [iconSize, layoutSize.height, layoutSize.width, pin]);
 
-    const imageBorderStyle = useMemo(() => {
-      return {
-        borderColor: palette.secondary,
-        borderWidth: 1,
-      };
-    }, [palette.secondary]);
+  const imageBorderStyle = useMemo(() => {
+    return {
+      borderColor: palette.secondary,
+      borderWidth: 1,
+    };
+  }, [palette.secondary]);
 
-    const iconBorderStyle = useMemo(() => {
-      return {
-        borderWidth: 2,
-      };
-    }, []);
-
-    return (
-      <View onLayout={onChildrenLayout} {...props}>
-        {children}
-        <View testID="dotsymbol-inner-container" style={pinStyles}>
-          {source !== undefined && (
-            <RemoteImage
-              shape="circle"
-              testID="dotsymbol-remote-image"
-              shouldApplyDarkModeEnhacements
-              dangerouslySetStyle={imageBorderStyle}
-              source={typeof source === 'string' ? { uri: source } : source}
-              width={iconSize}
-              height={iconSize}
-              resizeMode="cover"
-            />
-          )}
-          {iconName !== undefined && (
-            <Box
-              onLayout={onIconWrapperLayout}
-              spacing={1}
-              dangerouslySetStyle={iconBorderStyle}
-              borderRadius="round"
-              background="primary"
-              borderColor="secondary"
-            >
-              <Icon color="primaryForeground" name={iconName} size={size} />
-            </Box>
-          )}
-        </View>
+  return (
+    <View onLayout={onLayout} {...props}>
+      {children}
+      <View testID="dotsymbol-inner-container" style={pinStyles}>
+        <RemoteImage
+          shape="circle"
+          testID="dotsymbol-remote-image"
+          shouldApplyDarkModeEnhacements
+          dangerouslySetStyle={imageBorderStyle}
+          source={typeof source === 'string' ? { uri: source } : source}
+          width={iconSize}
+          height={iconSize}
+          resizeMode="cover"
+        />
       </View>
-    );
-  },
-);
+    </View>
+  );
+});

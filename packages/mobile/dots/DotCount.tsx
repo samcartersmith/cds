@@ -8,7 +8,6 @@ import {
 import { DotCountBaseProps } from '@cbhq/cds-common/types/DotCountBaseProps';
 import { parseDotCountMaxOverflow } from '@cbhq/cds-common/utils/parseDotCountMaxOverflow';
 
-import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
 import { useLayout } from '../hooks/useLayout';
 import { usePalette } from '../hooks/usePalette';
 import { TextCaption } from '../typography/TextCaption';
@@ -16,23 +15,26 @@ import { TextCaption } from '../typography/TextCaption';
 import { getTransform } from './dotStyles';
 
 export const DotCount = memo(
-  ({ children, pin, variant = 'negative', count, overlap, ...props }: DotCountBaseProps) => {
+  ({ children, pin, variant = 'negative', count, ...props }: DotCountBaseProps) => {
     const palette = usePalette();
     const [childrenSize, onChildrenLayout] = useLayout();
     const [dotSize, onDotLayout] = useLayout();
-    const transforms = useDotPinStyles(childrenSize, dotSize, overlap);
 
     const pinStyles = useMemo(() => {
       if (pin) {
         const [vertical, horizontal] = (pin as string).split('-');
 
-        return getTransform(
-          transforms[horizontal as DotPinStylesKey],
-          transforms[vertical as DotPinStylesKey],
-        );
+        return getTransform({
+          translateX:
+            horizontal === 'end' ? childrenSize.width - dotSize.width / 2 : -(dotSize.width / 2),
+          translateY:
+            vertical === 'bottom'
+              ? childrenSize.height - dotSize.height / 2
+              : -(dotSize.height / 2),
+        });
       }
       return {};
-    }, [pin, transforms]);
+    }, [pin, childrenSize.width, childrenSize.height, dotSize.width, dotSize.height]);
 
     const innerContainerStyles = useMemo(() => {
       return [
