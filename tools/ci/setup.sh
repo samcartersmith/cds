@@ -18,10 +18,6 @@ if [[ -z "$BASE_BRANCH" ]]; then
     BASE_BRANCH="master"
 fi
 
-export PERCY_TARGET_BRANCH=$BASE_BRANCH
-
-echo "--- Percy Target '$PERCY_TARGET_BRANCH'"
-
 echo "--- Updating local '$BASE_BRANCH' base branch from buildkite branch '$BUILDKITE_PULL_REQUEST_BASE_BRANCH'"
 
 # Required for correct NX affected project resolution
