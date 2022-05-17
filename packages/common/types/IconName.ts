@@ -187,11 +187,13 @@ export type IconName =
   | 'diagonalDownArrow'
   | 'seenActive'
   | 'comment'
+  | 'thumbsUpOutline'
   | 'thumbsUp'
   | 'thumbsDown'
   | 'unlock'
   | 'taxesReceipt'
-  | 'visibleFilled';
+  | 'visibleFilled'
+  | 'group';
 
 export type NavigationIconName =
   | 'account'
@@ -231,7 +233,13 @@ export type NavigationIconName =
   | 'moreVertical'
   | 'browser'
   | 'interest'
-  | 'crystalBall';
+  | 'crystalBall'
+  | 'faces'
+  | 'moon'
+  | 'sun'
+  | 'light'
+  | 'astronautHelmet'
+  | 'peopleGroup';
 
 export type NavigationIconInternalName =
   | 'accountInactive'
@@ -309,4 +317,16 @@ export type NavigationIconInternalName =
   | 'interestInactive'
   | 'interestActive'
   | 'crystalBallInactive'
-  | 'crystalBallActive';
+  | 'crystalBallActive'
+  | 'facesInactive'
+  | 'facesActive'
+  | 'moonInactive'
+  | 'moonActive'
+  | 'sunInactive'
+  | 'lightInactive'
+  | 'sunActive'
+  | 'lightActive'
+  | 'astronautHelmetInactive'
+  | 'astronautHelmetActive'
+  | 'peopleGroupInactive'
+  | 'peopleGroupActive';

@@ -4719,37 +4719,37 @@ export const iconManifest = {
   },
   '8462:247': {
     key: '299e4ad7a5d69218e7d5bed9248d03f12764ef35',
-    name: 'Icon/thumbsUp_24',
+    name: 'Icon/thumbsUpOutline_24',
     description: 'yes, thumbs up, thumb, up, 👍',
     documentationLinks: [],
   },
   '8462:249': {
     key: '5271ee30f0790712946fd6742f68f60e621b941f',
-    name: 'Icon/thumbsUp_24',
+    name: 'Icon/thumbsUpOutline_24',
     description: 'no, thumbs down, thumb, down, 👎',
     documentationLinks: [],
   },
   '8462:243': {
     key: '1c3b1f26a9f93e525f21b096dd49a10d49ca3666',
-    name: 'Icon/thumbsUp_16',
+    name: 'Icon/thumbsUpOutline_16',
     description: 'yes, thumbs up, thumb, up, 👍',
     documentationLinks: [],
   },
   '8462:242': {
     key: 'd4548274eb99ee516fbaabbaf3df3a68b034927d',
-    name: 'Icon/thumbsUp_16',
+    name: 'Icon/thumbsUpOutline_16',
     description: 'no, thumbs down, thumb, down, 👎',
     documentationLinks: [],
   },
   '8462:250': {
     key: '7780ffbdbe61df8fe2049ae04861be697a4f51e1',
-    name: 'Icon/thumbsUp_12',
+    name: 'Icon/thumbsUpOutline_12',
     description: 'yes, thumbs up, thumb, up, 👍',
     documentationLinks: [],
   },
   '8462:246': {
     key: '5cd72faafb90aeba671cdce2e1e6242c7b151a57',
-    name: 'Icon/thumbsUp_12',
+    name: 'Icon/thumbsUpOutline_12',
     description: 'no, thumbs down, thumb, down, 👎',
     documentationLinks: [],
   },
@@ -4883,6 +4883,279 @@ export const iconManifest = {
     key: 'c182a2d643dd634906e374883d1e395d7d6a70a1',
     name: 'Icon/visibleFilled_12',
     description: 'eye, privacy, protection, personal, filled, 👀, 👁, 🧿, 👁‍🗨',
+    documentationLinks: [],
+  },
+  '8630:765': {
+    key: 'd7e8eb6ac65136f628d3017b73cc484787e87f92',
+    name: 'NavigationIcon/faces_24/inactive',
+    description:
+      'navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8630:764': {
+    key: '67ccb76598119c42149f0833ab5429e7e295a67a',
+    name: 'NavigationIcon/faces_24/active',
+    description:
+      'navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8630:763': {
+    key: '890a8d18705255386733c1c166831d9baf99c897',
+    name: 'NavigationIcon/faces_16/inactive',
+    description:
+      'navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8630:762': {
+    key: '9bf14ce4317a14e929f6dddc2b6d088d0d2fa430',
+    name: 'NavigationIcon/faces_16/active',
+    description:
+      'navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8630:761': {
+    key: '6956546bcc1d444ed75b3c63a2a20d2b449fa05b',
+    name: 'NavigationIcon/faces_12/inactive',
+    description:
+      'navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8630:760': {
+    key: '3d61f43823d2e2ee2e3ad36c8cd8558e77f4fb48',
+    name: 'NavigationIcon/faces_12/active',
+    description:
+      'navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8630:785': {
+    key: '9a3573e8bab149e1245beb9f19235a4b5ca1176b',
+    name: 'NavigationIcon/moon_16/inactive',
+    description:
+      'navigation, speciality, moon, night, dark mode, star, 🌕, 🌖, 🌗, 🌘, 🌑, 🌒, 🌓, 🌔, 🌙, 🌛, 🌜, 🌝',
+    documentationLinks: [],
+  },
+  '8630:784': {
+    key: '1b1f2cde1822275d6944b10c7dcc7f58eebb042b',
+    name: 'NavigationIcon/moon_16/active',
+    description:
+      'navigation, speciality, moon, night, dark mode, star, 🌕, 🌖, 🌗, 🌘, 🌑, 🌒, 🌓, 🌔, 🌙, 🌛, 🌜, 🌝',
+    documentationLinks: [],
+  },
+  '8630:783': {
+    key: 'bd4ac7368e57706eaf2feb3a50afe98c7293c3f1',
+    name: 'NavigationIcon/moon_12/inactive',
+    description:
+      'navigation, speciality, moon, night, dark mode, star, 🌕, 🌖, 🌗, 🌘, 🌑, 🌒, 🌓, 🌔, 🌙, 🌛, 🌜, 🌝',
+    documentationLinks: [],
+  },
+  '8630:782': {
+    key: '742ec42782df23b8b5853032f92d33cb42474c69',
+    name: 'NavigationIcon/moon_12/active',
+    description:
+      'navigation, speciality, moon, night, dark mode, star, 🌕, 🌖, 🌗, 🌘, 🌑, 🌒, 🌓, 🌔, 🌙, 🌛, 🌜, 🌝',
+    documentationLinks: [],
+  },
+  '8630:781': {
+    key: '2238ee8c67791739043b4d67f7426fe3aba329d7',
+    name: 'NavigationIcon/moon_24/inactive',
+    description:
+      'navigation, speciality, moon, night, dark mode, star, 🌕, 🌖, 🌗, 🌘, 🌑, 🌒, 🌓, 🌔, 🌙, 🌛, 🌜, 🌝',
+    documentationLinks: [],
+  },
+  '8630:780': {
+    key: '292a26de8fa77d863e7ed9c32f5863093d10b92a',
+    name: 'NavigationIcon/moon_24/active',
+    description:
+      'navigation, speciality, moon, night, dark mode, star, 🌕, 🌖, 🌗, 🌘, 🌑, 🌒, 🌓, 🌔, 🌙, 🌛, 🌜, 🌝',
+    documentationLinks: [],
+  },
+  '8630:823': {
+    key: '7d5a4eab3e246c7a0648c82e2e80486cf64959dc',
+    name: 'NavigationIcon/sun_16/inactive',
+    description:
+      'navigation, speciality, sun, sunny, sunlight, light, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅',
+    documentationLinks: [],
+  },
+  '8630:821': {
+    key: '8822bd7bf0816b8854a35c4374b3e49aa162fbf2',
+    name: 'NavigationIcon/light_16/inactive',
+    description:
+      'navigation, speciality, light, beam, glow, moment, sunshine, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅 ',
+    documentationLinks: [],
+  },
+  '8630:819': {
+    key: 'ce5f07b1b1f4135f4210222b17855f2428d28ef4',
+    name: 'NavigationIcon/light_16/inactive',
+    description:
+      'navigation, speciality, light, beam, glow, moment, sunshine, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅 ',
+    documentationLinks: [],
+  },
+  '8630:817': {
+    key: '5ab3af437d0787f8c4111cf18b0ef83205757e6a',
+    name: 'NavigationIcon/sun_16/active',
+    description:
+      'navigation, speciality, sun, sunny, sunlight, light, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅',
+    documentationLinks: [],
+  },
+  '8630:816': {
+    key: '9fd79de9dabb495d74d8ef2bd151074f15763b67',
+    name: 'NavigationIcon/sun_12/inactive',
+    description:
+      'navigation, speciality, sun, sunny, sunlight, light, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅',
+    documentationLinks: [],
+  },
+  '8630:822': {
+    key: '1694a19d20285a461e91937e823470711e476c8b',
+    name: 'NavigationIcon/light_12/inactive',
+    description:
+      'navigation, speciality, light, beam, glow, moment, sunshine, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅 ',
+    documentationLinks: [],
+  },
+  '8630:820': {
+    key: '7551247b463fb906a1b885218d31a7f6c2bcbe3e',
+    name: 'NavigationIcon/light_12/inactive',
+    description:
+      'navigation, speciality, light, beam, glow, moment, sunshine, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅 ',
+    documentationLinks: [],
+  },
+  '8630:818': {
+    key: '6a8a92a5b3a66837107860216db6fa67c24c83de',
+    name: 'NavigationIcon/sun_12/active',
+    description:
+      'navigation, speciality, sun, sunny, sunlight, light, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅',
+    documentationLinks: [],
+  },
+  '8630:815': {
+    key: '15347ef750964b94366db249b9cabf59aaeed96d',
+    name: 'NavigationIcon/sun_24/inactive',
+    description:
+      'navigation, speciality, sun, sunny, sunlight, light, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅',
+    documentationLinks: [],
+  },
+  '8630:814': {
+    key: '1fd5f23f61db6ae04c0b7f06225340d57656bb6b',
+    name: 'NavigationIcon/light_24/inactive',
+    description:
+      'navigation, speciality, light, beam, glow, moment, sunshine, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅 ',
+    documentationLinks: [],
+  },
+  '8630:812': {
+    key: 'c8f8b89d8627de410c73d898562a3b555d642d66',
+    name: 'NavigationIcon/light_24/active',
+    description:
+      'navigation, speciality, light, beam, glow, moment, sunshine, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅 ',
+    documentationLinks: [],
+  },
+  '8630:811': {
+    key: '12ec8e34ee55c2ac0aae36bfdb2b19ea9039c0b4',
+    name: 'NavigationIcon/sun_24/active',
+    description:
+      'navigation, speciality, sun, sunny, sunlight, light, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅',
+    documentationLinks: [],
+  },
+  '8630:1028': {
+    key: '64b20593c202af120d455483475eb32228f59a9c',
+    name: 'NavigationIcon/astronautHelmet_16/inactive',
+    description:
+      'navigation, speciality, space, helmet,  astronaut, galaxy, 🪐, 🔭, 🛸, 👽, 👩‍🚀, 🧑‍🚀, 👨‍🚀',
+    documentationLinks: [],
+  },
+  '8630:1031': {
+    key: '91ce212a82d1554d2184782185908802651d52c1',
+    name: 'NavigationIcon/astronautHelmet_16/active',
+    description:
+      'navigation, speciality, space, helmet,  astronaut, galaxy, 🪐, 🔭, 🛸, 👽, 👩‍🚀, 🧑‍🚀, 👨‍🚀',
+    documentationLinks: [],
+  },
+  '8630:1030': {
+    key: 'b8690eaec4f23cc8cbb9c9c4c5f45690e79d2573',
+    name: 'NavigationIcon/astronautHelmet_12/inactive',
+    description:
+      'navigation, speciality, space, helmet,  astronaut, galaxy, 🪐, 🔭, 🛸, 👽, 👩‍🚀, 🧑‍🚀, 👨‍🚀',
+    documentationLinks: [],
+  },
+  '8630:1029': {
+    key: 'afcd93bb8981c03c64f35275cc4b55d01553db25',
+    name: 'NavigationIcon/astronautHelmet_12/active',
+    description:
+      'navigation, speciality, space, helmet,  astronaut, galaxy, 🪐, 🔭, 🛸, 👽, 👩‍🚀, 🧑‍🚀, 👨‍🚀',
+    documentationLinks: [],
+  },
+  '8630:1027': {
+    key: 'd154224b00e31bcdb2acbd4cbca877d9787e76f2',
+    name: 'NavigationIcon/astronautHelmet_24/inactive',
+    description:
+      'navigation, speciality, space, helmet,  astronaut, galaxy, 🪐, 🔭, 🛸, 👽, 👩‍🚀, 🧑‍🚀, 👨‍🚀',
+    documentationLinks: [],
+  },
+  '8630:1026': {
+    key: 'a94e67f918e5e48bcb52b687f3db85275ea4f8f7',
+    name: 'NavigationIcon/astronautHelmet_24/active',
+    description:
+      'navigation, speciality, space, helmet,  astronaut, galaxy, 🪐, 🔭, 🛸, 👽, 👩‍🚀, 🧑‍🚀, 👨‍🚀',
+    documentationLinks: [],
+  },
+  '8637:760': {
+    key: '9b5feeb8ba26d676c248a1fdb88264c22afb43d0',
+    name: 'NavigationIcon/peopleGroup_24/inactive',
+    description:
+      'navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8637:754': {
+    key: 'e28111c6db10a0fa5fc9b2d9c824930a50fe11f1',
+    name: 'NavigationIcon/peopleGroup_24/active',
+    description:
+      'navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8637:758': {
+    key: '49a14791bf8376e795f829279de5d466e6a93d4d',
+    name: 'NavigationIcon/peopleGroup_16/inactive',
+    description:
+      'navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8637:759': {
+    key: '43a2c7027e5b202d9ea1b1d64805e7564ac7f93c',
+    name: 'NavigationIcon/peopleGroup_12/inactive',
+    description:
+      'navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8637:753': {
+    key: '147886642ee7d6f92d85d18eb4c8e484f21d69e0',
+    name: 'NavigationIcon/peopleGroup_16/active',
+    description:
+      'navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8637:752': {
+    key: 'fed04064d14e9ee42cbd3c95a932fe1388cd5e14',
+    name: 'NavigationIcon/peopleGroup_12/active',
+    description:
+      'navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8670:916': {
+    key: '2aaecef8f106b79bee18f0c9a6ae11871c0e2040',
+    name: 'Icon/group_24',
+    description:
+      'faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8670:915': {
+    key: 'dee36bf2b3f02824872b3e16ce3b873d24b3e918',
+    name: 'Icon/group_16',
+    description:
+      'faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8670:914': {
+    key: '468a5071d7d1cb6c4161feaa6c282bf0b34c6595',
+    name: 'Icon/group_12',
+    description:
+      'faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
     documentationLinks: [],
   },
 };
