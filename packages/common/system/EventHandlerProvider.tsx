@@ -15,7 +15,7 @@ export type EventCallbackProps = {
   data?: EventCustomData;
 };
 
-export type EventHandlerCallback = (eventData?: EventCallbackProps) => void;
+export type EventHandlerCallback = (eventData: EventCallbackProps) => void;
 export type EventHandlerEntry = Record<string, EventHandlerCallback>;
 
 export type EventHandlerConfig = {
