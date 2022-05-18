@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.3.0 (5/17/2022, 01:24 PM PST)
+
+#### 🐞 Fixes
+
+- Block imports from current package. [#288](https://github.cbhq.net/frontend/cds/pull/288)
+
+#### 📘 Misc
+
+- Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
+- Update ejs version to fix yarn audit. [#295](https://github.cbhq.net/frontend/cds/pull/295)
+
 ## 0.2.26 (4/22/2022, 11:49 AM PST)
 
 #### 🐞 Fixes

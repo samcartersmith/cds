@@ -8,6 +8,32 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.45.0 (5/17/2022, 01:24 PM PST)
+
+#### 🚀 Updates
+
+- Add primaryWash background to selected time period. [#399](https://github.cbhq.net/frontend/cds/pull/399), [CDS-2283](https://jira.coinbase-corp.com/browse/CDS-2283)
+- Rework PositionedOverlay to support Dropdown, and introduce Dropdown. [#314](https://github.cbhq.net/frontend/cds/pull/314)
+- **[Motion]** Update motion tokens. [#299](https://github.cbhq.net/frontend/cds/pull/299)
+- Renamed EventDelegationProvider and corresponding components to EventHandlerProvider. [#300](https://github.cbhq.net/frontend/cds/pull/300), [EXC-252](https://jira.coinbase-corp.com/browse/EXC-252)
+- **[SparklineInteractive]** Add dual time series functionality for web SparklineInteractive on hover. [#290](https://github.cbhq.net/frontend/cds/pull/290)
+
+#### 🐞 Fixes
+
+- Fix merge conflicts. [#420](https://github.cbhq.net/frontend/cds/pull/420)
+- **[Illustration]** Publish Illustrations May 12th, 2022 (#393). [#397](https://github.cbhq.net/frontend/cds/pull/397)
+- **[Icons]** Publish May 5th 2022 icons. [#353](https://github.cbhq.net/frontend/cds/pull/353)
+- Add TextInput height. [#337](https://github.cbhq.net/frontend/cds/pull/337)
+- **[isValidUrl]** Top-level-domain should be considered valid as long as its 2-63 chars long in isValidUrl. [#338](https://github.cbhq.net/frontend/cds/pull/338)
+- **[Interactable]** Resolve anti-aliasing issue on Interactables. [#234](https://github.cbhq.net/frontend/cds/pull/234), [CDS-2063](https://jira.coinbase-corp.com/browse/CDS-2063)
+- Block imports from current package. [#288](https://github.cbhq.net/frontend/cds/pull/288)
+- **[TextInput]** Fix issue with start adding extra spacing to top/bottom when in compact={true}. [#285](https://github.cbhq.net/frontend/cds/pull/285)
+
+#### 📘 Misc
+
+- **[Modal]** Refactor Modal to use the useMotionProps hook. [#410](https://github.cbhq.net/frontend/cds/pull/410)
+- Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
+
 ## 0.44.1 (4/22/2022, 11:49 AM PST)
 
 #### 🚀 Updates

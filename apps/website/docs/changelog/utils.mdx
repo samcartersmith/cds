@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.4.0 (5/17/2022, 01:24 PM PST)
+
+#### 🐞 Fixes
+
+- Block imports from current package. [#288](https://github.cbhq.net/frontend/cds/pull/288)
+
+#### 📘 Misc
+
+- Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
+- Add typescript paths to suppot package auto complete. [#259](https://github.cbhq.net/frontend/cds/pull/259)
+- Add env checks to prevent errors in SSR for website. [#242](https://github.cbhq.net/frontend/cds/pull/242), [CDS-1850](https://jira.coinbase-corp.com/browse/CDS-1850)
+
 ## 0.3.6 (4/12/2022, 03:01 PM PST)
 
 #### 🚀 Updates

@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.6.0 (5/17/2022, 01:24 PM PST)
+
+#### 🐞 Fixes
+
+- Block imports from current package. [#288](https://github.cbhq.net/frontend/cds/pull/288)
+
+#### 📘 Misc
+
+- Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
+- Add typescript paths to suppot package auto complete. [#259](https://github.cbhq.net/frontend/cds/pull/259)
+- Downgrade storybook to fix percy. [#196](https://github.cbhq.net/frontend/cds/pull/196)
+
 ## 0.5.3 (4/6/2022, 10:44 AM PST)
 
 #### 🐞 Fixes
