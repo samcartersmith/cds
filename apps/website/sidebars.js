@@ -138,6 +138,7 @@ module.exports = {
     },
     'a11y-report',
     'analytics',
+    { type: 'doc', id: 'guides/migration/overview', label: 'Migration Guides' },
     {
       type: 'category',
       link: showIndexPageForCategory,
