@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 61059,
+  lastUnicode: 61129,
   unicodeMap: {
     cashUSD: { '8': 'uE966', '12': 'uE967', '16': 'uE968', '24': 'uE969', '32': 'uE96A' },
     cashGBP: { '8': 'uE96B', '12': 'uE96C', '16': 'uE96D', '24': 'uE96E', '32': 'uE96F' },
@@ -382,5 +382,37 @@ export const manifest = {
     },
     crystalBallActive: { '8': 'uEE7A', '12': 'uEE7B', '16': 'uEE7C', '24': 'uEE7D', '32': 'uEE7E' },
     visibleFilled: { '8': 'uEE7F', '12': 'uEE80', '16': 'uEE81', '24': 'uEE82', '32': 'uEE83' },
+    thumbsUpOutline: { '8': 'uEE84', '12': 'uEE85', '16': 'uEE86', '24': 'uEE87', '32': 'uEE88' },
+    facesInactive: { '8': 'uEE89', '12': 'uEE8A', '16': 'uEE8B', '24': 'uEE8C', '32': 'uEE8D' },
+    facesActive: { '8': 'uEE8E', '12': 'uEE8F', '16': 'uEE90', '24': 'uEE91', '32': 'uEE92' },
+    moonInactive: { '8': 'uEE93', '12': 'uEE94', '16': 'uEE95', '24': 'uEE96', '32': 'uEE97' },
+    moonActive: { '8': 'uEE98', '12': 'uEE99', '16': 'uEE9A', '24': 'uEE9B', '32': 'uEE9C' },
+    sunInactive: { '8': 'uEE9D', '12': 'uEE9E', '16': 'uEE9F', '24': 'uEEA0', '32': 'uEEA1' },
+    lightInactive: { '8': 'uEEA2', '12': 'uEEA3', '16': 'uEEA4', '24': 'uEEA5', '32': 'uEEA6' },
+    sunActive: { '8': 'uEEA7', '12': 'uEEA8', '16': 'uEEA9', '24': 'uEEAA', '32': 'uEEAB' },
+    lightActive: { '8': 'uEEAC', '12': 'uEEAD', '16': 'uEEAE', '24': 'uEEAF', '32': 'uEEB0' },
+    astronautHelmetInactive: {
+      '8': 'uEEB1',
+      '12': 'uEEB2',
+      '16': 'uEEB3',
+      '24': 'uEEB4',
+      '32': 'uEEB5',
+    },
+    astronautHelmetActive: {
+      '8': 'uEEB6',
+      '12': 'uEEB7',
+      '16': 'uEEB8',
+      '24': 'uEEB9',
+      '32': 'uEEBA',
+    },
+    peopleGroupInactive: {
+      '8': 'uEEBB',
+      '12': 'uEEBC',
+      '16': 'uEEBD',
+      '24': 'uEEBE',
+      '32': 'uEEBF',
+    },
+    peopleGroupActive: { '8': 'uEEC0', '12': 'uEEC1', '16': 'uEEC2', '24': 'uEEC3', '32': 'uEEC4' },
+    group: { '8': 'uEEC5', '12': 'uEEC6', '16': 'uEEC7', '24': 'uEEC8', '32': 'uEEC9' },
   },
 };
