@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.40.6 (5/18/2022, 08:15 PM PST)
+
+#### 🐞 Fixes
+
+- **[Checkbox]** Ensure control is _always_ wrapped in a label. [#438](https://github.cbhq.net/frontend/cds/pull/438)
+
 ## 0.40.5 (5/18/2022, 08:36 AM PST)
 
 #### 🐞 Fixes
