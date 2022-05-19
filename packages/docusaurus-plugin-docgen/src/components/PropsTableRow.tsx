@@ -1,44 +1,78 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useContext, useMemo } from 'react';
 import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
-import { HStack } from '@cbhq/cds-web/layout';
+import { VStack } from '@cbhq/cds-web/layout';
 import { useToast } from '@cbhq/cds-web/overlays/useToast';
-import { TableCell, TableRow } from '@cbhq/cds-web/tables';
+import { TableCell, TableCellProps, TableRow } from '@cbhq/cds-web/tables';
+import { TextBody } from '@cbhq/cds-web/typography/TextBody';
 import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
 
 import type { ProcessedPropItem, PropItemTags, SharedTypeAliases } from '../scripts/types';
 
-import { Badge, BadgeVariant } from './Badge';
-import { ModalLink } from './ModalLink';
+import { Badge, BADGE_VARIANTS, BadgeVariant } from './Badge';
+import { ModalChildContext, ModalLink } from './ModalLink';
 
 export type PropsTableRowProps = {
   prop: ProcessedPropItem;
   sharedTypeAliases: SharedTypeAliases;
 };
 
-function getBadges({ danger, deprecated, internal }: PropItemTags) {
-  const badges: BadgeVariant[] = [];
-  if (danger) {
-    badges.push('danger');
-  }
-  if (deprecated) {
-    badges.push('deprecated');
-  }
-  if (internal) {
-    badges.push('internal');
-  }
-  return badges;
+type TypeAliasModalContentProps = {
+  typeAlias: string;
+};
+
+function keys(item: PropItemTags) {
+  return Object.keys(item) as unknown as BadgeVariant[];
 }
 
-const emptyArray: BadgeVariant[] = [];
+export function NameCell(props: TableCellProps) {
+  return <TableCell width="33%" {...props} />;
+}
+
+export function BadgesCell(props: TableCellProps) {
+  return <TableCell {...props} />;
+}
+
+export function TypeCell(props: TableCellProps) {
+  return <TableCell width="25%" {...props} />;
+}
+
+export function DefaultValueCell(props: TableCellProps) {
+  return <TableCell width="17" {...props} />;
+}
+
+export function LinkCell(props: TableCellProps) {
+  const isInModal = useContext(ModalChildContext);
+  return isInModal ? null : <TableCell {...props} />;
+}
+
+export function TypeAliasModalContent({ typeAlias }: TypeAliasModalContentProps) {
+  const values = useMemo(() => {
+    return typeAlias.split('|');
+  }, [typeAlias]);
+
+  return (
+    <VStack gap={1}>
+      {values.map((item) => (
+        <span>
+          <code key={item}>{item}</code>
+        </span>
+      ))}
+    </VStack>
+  );
+}
 
 export function PropsTableRow({ prop, sharedTypeAliases }: PropsTableRowProps) {
-  const { defaultValue, name, description, type, tags, required } = prop;
+  const { defaultValue, name, description, type, tags = {}, required } = prop;
   const badgeVariants = useMemo(() => {
-    if (tags) {
-      return getBadges(tags);
+    const variants = keys(tags);
+    if (required) {
+      variants.push('required');
     }
-    return emptyArray;
-  }, [tags]);
+    return variants
+      .filter((item) => BADGE_VARIANTS.includes(item))
+      .map((item) => <Badge key={item} variant={item} />);
+  }, [required, tags]);
+
   const toast = useToast();
 
   const copyLinkToClipboard = useCallback(() => {
@@ -53,32 +87,31 @@ export function PropsTableRow({ prop, sharedTypeAliases }: PropsTableRowProps) {
 
   const typeContent = useMemo(() => {
     if (type in sharedTypeAliases) {
+      const typeAlias = sharedTypeAliases[type];
       return (
-        <TableCell>
-          <ModalLink title={type} content={sharedTypeAliases[type]} />
-        </TableCell>
+        <ModalLink variant="body" mono content={<TypeAliasModalContent typeAlias={typeAlias} />}>
+          {type}
+        </ModalLink>
       );
     }
-    return <TableCell title={type} />;
+    return (
+      <TextBody as="p" mono>
+        {type}
+      </TextBody>
+    );
   }, [type, sharedTypeAliases]);
 
   return (
-    <TableRow key={name}>
-      <TableCell
-        title={name}
-        subtitle={description}
-        end={required ? <Badge variant="required" /> : undefined}
-      />
-      {typeContent}
-      <TableCell title={defaultValue ?? '--'} />
-      <TableCell direction="horizontal" justifyContent="flex-end">
-        <HStack gap={1}>
-          {badgeVariants.map((item) => (
-            <Badge key={item} variant={item} />
-          ))}
-        </HStack>
-      </TableCell>
-      <TableCell>
+    <TableRow>
+      <NameCell title={name} subtitle={description} />
+      <BadgesCell>{badgeVariants}</BadgesCell>
+      <TypeCell>{typeContent}</TypeCell>
+      <DefaultValueCell>
+        <TextBody as="p" mono>
+          {defaultValue ?? '--'}
+        </TextBody>
+      </DefaultValueCell>
+      <LinkCell>
         <IconButton
           id={name}
           onPress={copyLinkToClipboard}
@@ -86,7 +119,7 @@ export function PropsTableRow({ prop, sharedTypeAliases }: PropsTableRowProps) {
           variant="foregroundMuted"
           transparent
         />
-      </TableCell>
+      </LinkCell>
     </TableRow>
   );
 }

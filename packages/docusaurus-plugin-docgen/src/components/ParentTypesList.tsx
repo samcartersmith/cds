@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { HStack } from '@cbhq/cds-web/layout/HStack';
+import { TextHeadline } from '@cbhq/cds-web/typography';
 
 import type { ProcessedDoc, SharedParentTypes, SharedTypeAliases } from '../scripts/types';
 
@@ -32,7 +33,11 @@ export function ParentTypes({
     return <PropsTable sharedTypeAliases={sharedTypeAliases} props={filteredProps} />;
   }, [sharedTypeAliases, name, sharedParentTypes, props]);
 
-  return <ModalLink title={name} content={content} />;
+  return (
+    <ModalLink content={content} variant="headline">
+      {name}
+    </ModalLink>
+  );
 }
 
 export function ParentTypesList({
@@ -40,10 +45,12 @@ export function ParentTypesList({
   sharedTypeAliases,
   sharedParentTypes,
 }: ParentTypesListProps) {
-  if (parentTypes) {
+  const parentTypesAsArray = useMemo(() => Object.entries(parentTypes), [parentTypes]);
+  if (parentTypesAsArray.length) {
     return (
       <HStack gap={1} alignItems="center">
-        {Object.entries(parentTypes).map(([key, value]) => {
+        <TextHeadline as="p">Extends from:</TextHeadline>
+        {parentTypesAsArray.map(([key, value]) => {
           return (
             <ParentTypes
               key={key}

@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import { withCustomConfig } from 'react-docgen-typescript';
-import { omit } from 'lodash';
 import mapValues from 'lodash/mapValues';
+import omit from 'lodash/omit';
 import orderBy from 'lodash/orderBy';
 import path from 'path';
 
@@ -13,7 +13,6 @@ import type {
   ProcessedDoc,
   ProcessedPropItem,
   PropItem,
-  PropValue,
 } from './types';
 
 export const sharedParentTypesCache = new Set<ProcessedPropItem>();
@@ -55,10 +54,7 @@ function getDocExample(doc: Doc) {
       '```tsx live\n' + doc.tags.example + '\n```';
 }
 
-function formatPropItemType(value: string | PropValue[]) {
-  if (Array.isArray(value)) {
-    return formatString(value.map((item) => item.value).join(' | '));
-  }
+function formatPropItemType(value: string) {
   switch (value) {
     case 'ReactElement<any, string | JSXElementConstructor<any>>':
       return 'ReactElement';
@@ -117,14 +113,13 @@ function preProcessDoc(doc: Doc): PreProcessedDoc {
 /* -------------------------------------------------------------------------- */
 function processPropItem(prop: PreProcessedPropItem | ProcessedPropItem): ProcessedPropItem {
   const propCopy = { ...prop };
-  if (process.env.NODE_ENV === 'production') {
-    if (prop.declarations) {
-      delete propCopy.declarations;
-    }
+  if (!propCopy.tags) {
+    delete propCopy.tags;
   }
+
   return {
     ...propCopy,
-    type: formatPropItemType(typeof prop.type === 'string' ? prop.type : prop.type.value),
+    type: formatPropItemType(typeof prop.type === 'string' ? prop.type : prop.type.raw),
   };
 }
 
@@ -162,14 +157,17 @@ export function docgenParser({
 }: DocgenParamsParams): ProcessedDoc[] {
   const filesToParse = params.files.map((file) => path.join(params.projectDir, file));
 
-  function addToSharedTypeAliases(alias: string, value: PreProcessedPropItem['type']['value']) {
-    sharedTypeAliasesCache.set(alias, formatPropItemType(value));
+  function addToSharedTypeAliases(prop: PreProcessedPropItem) {
+    const { raw: alias, value } = prop.type;
+    const processedValue = formatString(value.map((item) => item.value).join(' | '));
+    sharedTypeAliasesCache.set(alias, formatPropItemType(processedValue));
+    return { ...prop, type: alias };
   }
 
   /** React docgen integration */
   return withCustomConfig(params.tsconfigPath, {
     savePropValueAsString: true,
-    shouldExtractValuesFromUnion: false,
+    shouldExtractValuesFromUnion: true,
     shouldExtractLiteralValuesFromEnum: true,
     shouldRemoveUndefinedFromOptional: true,
     shouldIncludePropTagMap: true,

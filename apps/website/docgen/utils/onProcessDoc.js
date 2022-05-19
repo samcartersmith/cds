@@ -30,12 +30,9 @@ function onProcessDoc(doc, { addToSharedTypeAliases, addToParentTypes }) {
     })
     .map((prop) => {
       if (isTypeAlias(prop)) {
-        const alias = prop.type.raw;
-        const aliasValue = prop.type.value;
-        addToSharedTypeAliases(alias, aliasValue);
-        return { ...prop, type: alias };
+        return addToSharedTypeAliases(prop);
       }
-      return prop;
+      return { ...prop, type: prop.type.raw };
     })
     /** Example of us filtering out parent types from surfacing in props table UI */
     .filter((prop) => {

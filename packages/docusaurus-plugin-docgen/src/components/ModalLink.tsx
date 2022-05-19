@@ -1,31 +1,39 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { createContext } from 'react';
 import { useToggler } from '@cbhq/cds-web';
 import { Modal } from '@cbhq/cds-web/overlays/Modal/Modal';
 import { ModalBody } from '@cbhq/cds-web/overlays/Modal/ModalBody';
 import { ModalHeader } from '@cbhq/cds-web/overlays/Modal/ModalHeader';
-import { Link } from '@cbhq/cds-web/typography/Link';
+import { Link, LinkProps } from '@cbhq/cds-web/typography/Link';
 import { TextBody } from '@cbhq/cds-web/typography/TextBody';
 
 export type ModalLinkProps = {
-  title: string;
+  children: string;
   content: React.ReactNode;
-};
+} & LinkProps;
 
-export function ModalLink({ title, content }: ModalLinkProps) {
+/**
+ * Gives us the ability to determine if a component is child of Modal.
+ * This is useful since we want to hide hyperlink column in PropsTable when in Modal.
+ */
+export const ModalChildContext = createContext<boolean>(false);
+
+export function ModalLink({ children, content, ...props }: ModalLinkProps) {
   const [visible, { toggleOn, toggleOff }] = useToggler();
 
   return (
     <>
-      <Link variant="headline" onPress={toggleOn}>
-        {title}
+      <Link onPress={toggleOn} {...props}>
+        {children}
       </Link>
-      <Modal visible={visible} onRequestClose={toggleOff}>
-        <ModalHeader title={title} />
-        <ModalBody>
-          {typeof content === 'string' ? <TextBody as="p">{content}</TextBody> : content}
-        </ModalBody>
-      </Modal>
+      {/* eslint-disable-next-line react/jsx-boolean-value */}
+      <ModalChildContext.Provider value={true}>
+        <Modal visible={visible} onRequestClose={toggleOff}>
+          <ModalHeader title={children} />
+          <ModalBody>
+            {typeof content === 'string' ? <TextBody as="p">{content}</TextBody> : content}
+          </ModalBody>
+        </Modal>
+      </ModalChildContext.Provider>
     </>
   );
 }
