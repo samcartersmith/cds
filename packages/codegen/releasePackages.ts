@@ -152,7 +152,7 @@ function parseLogChange(line: string): LogChange {
     bump: determineVersionBump(type as LogType),
     message: line.replace(prefix, '').trim(),
     scope,
-    type: type as LogType,
+    type: type.toLowerCase() as LogType,
   };
 }
 
