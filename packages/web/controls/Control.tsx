@@ -119,27 +119,28 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     </Interactable>
   );
 
-  return label ? (
+  return (
     // eslint-disable-next-line jsx-a11y/label-has-associated-control
     <label className={pointer}>
-      <Box alignItems="flex-start" flexDirection={isRtl() ? 'row-reverse' : 'row'}>
-        {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
-        <Box role="presentation" height="var(--body-line-height)" alignItems="center">
-          {iconNode}
+      {label ? (
+        <Box alignItems="flex-start" flexDirection={isRtl() ? 'row-reverse' : 'row'}>
+          {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
+          <Box role="presentation" height="var(--body-line-height)" alignItems="center">
+            {iconNode}
+          </Box>
+          <Spacer horizontal={1} />
+          <TextBody
+            as="span"
+            color={checked ? 'foreground' : 'foregroundMuted'}
+            disabled={disabled || readOnly}
+          >
+            {label}
+          </TextBody>
         </Box>
-        <Spacer horizontal={1} />
-        <TextBody
-          as="span"
-          color={checked ? 'foreground' : 'foregroundMuted'}
-          disabled={disabled || readOnly}
-        >
-          {label}
-        </TextBody>
-      </Box>
+      ) : (
+        iconNode
+      )}
     </label>
-  ) : (
-    // If no label (children) is provided, consumer should wrap the checkbox with <label> or provide a value for the aria-labelledby prop.
-    iconNode
   );
 }) as <T extends string>(
   props: ControlInternalProps<T> & React.RefAttributes<HTMLInputElement>,
