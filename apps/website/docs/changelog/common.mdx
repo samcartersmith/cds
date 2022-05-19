@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.38.6 (5/19/2022, 09:03 AM PST)
+
+#### 🐞 Fixes
+
+- Hidden controls should still take up space and be clickable. [#446](https://github.cbhq.net/frontend/cds/pull/446)
+
 ## 0.38.5 (5/18/2022, 08:36 AM PST)
 
 #### 🐞 Fixes
