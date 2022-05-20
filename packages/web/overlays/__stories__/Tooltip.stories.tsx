@@ -15,7 +15,7 @@ import { Tooltip } from '../Tooltip/Tooltip';
 import { TooltipProps } from '../Tooltip/TooltipProps';
 
 export default {
-  title: 'Core Components/TooltipV2',
+  title: 'Core Components/Tooltip',
   component: Tooltip,
   parameters: {
     layout: 'padded',

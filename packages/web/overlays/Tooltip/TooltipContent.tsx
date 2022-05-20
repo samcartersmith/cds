@@ -45,7 +45,7 @@ export const TooltipContent = forwardRef(
           testID={testID}
         >
           {typeof content === 'string' ? (
-            <TextLabel2 as="p" id={tooltipId} accessibilityLabel={content}>
+            <TextLabel2 as="p" overflow="break" id={tooltipId} accessibilityLabel={content}>
               {content}
             </TextLabel2>
           ) : (
