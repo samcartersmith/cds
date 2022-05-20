@@ -57,6 +57,7 @@ export * from './ProgressContainerWithButtonsProps';
 export * from './RadioGroupBaseProps';
 export * from './React';
 export * from './RemoteImageBaseProps';
+export * from './RemoteImageGroupBaseProps';
 export * from './Scale';
 export * from './SearchInputBaseProps';
 export * from './SelectBaseProps';

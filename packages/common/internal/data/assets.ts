@@ -64,6 +64,11 @@ export const assets = {
   },
 };
 
+export const squareAssets = {
+  human1: 'https://avatars3.githubusercontent.com/u/100200?s=460&v=4',
+  human2: 'https://bit.ly/kent-c-dodds',
+} as const;
+
 export const assetColors = Object.entries(assets).map(([, value]) => value.color);
 export const assetImages = Object.entries(assets).map(([, value]) => value.imageUrl);
 
