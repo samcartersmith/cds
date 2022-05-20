@@ -12,15 +12,15 @@ export default {
 export const Playground = () => {
   return (
     <VStack gap={3}>
-      <TextInput />
+      <TextInput label="I am not within a FocusTrap" />
       <Button>Submit</Button>
       <FocusTrap>
         <VStack background="primaryWash" spacing={3} gap={1}>
           <TextHeadline as="h1">These components are trapped</TextHeadline>
-          <TextInput />
-          <TextInput />
-          <TextInput />
-          <TextInput />
+          <TextInput label="Test 1" />
+          <TextInput label="Test 2" />
+          <TextInput label="Test 3" />
+          <TextInput label="Test 4" />
           <Button>Submit</Button>
         </VStack>
       </FocusTrap>
