@@ -5,6 +5,7 @@
   "scripts": {
     "build": "nx run website:build",
     "build.plugin": "yarn workspace @cbhq/docusaurus-plugin-docgen build",
+    "build.refresh": "THEME=refresh yarn docusaurus build --out-dir ../../.nx/outs/projects/apps/website/docusaurus",
     "format": "nx format website",
     "lint": "nx run website:lint",
     "lint.fix": "nx run website:lint --fix",

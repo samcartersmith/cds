@@ -1,6 +1,5 @@
+import CdsProviders from '@theme/CdsProviders';
 import Layout from '@theme-original/Layout';
-
-import { CdsProviders } from ':cds-website/components/CdsProviders';
 
 const LayoutOverride: React.FC = ({ children }) => {
   return (

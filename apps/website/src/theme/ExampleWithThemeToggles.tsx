@@ -3,9 +3,9 @@ import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { Divider, VStack } from '@cbhq/cds-web/layout';
 import { ThemeProvider } from '@cbhq/cds-web/system';
 
-import { ThemeToggles, ThemeTogglesProps } from './ThemeToggles';
+import ThemeToggles, { ThemeTogglesProps } from './ThemeToggles';
 
-export const ExampleWithThemeToggles: React.FC<ThemeTogglesProps> = memo(
+const ExampleWithThemeToggles: React.FC<ThemeTogglesProps> = memo(
   ({ children, ...toggleProps }) => {
     const scale = useRootScale();
     return (
@@ -28,3 +28,5 @@ export const ExampleWithThemeToggles: React.FC<ThemeTogglesProps> = memo(
 );
 
 ExampleWithThemeToggles.displayName = 'ExampleWithThemeToggles';
+
+export default ExampleWithThemeToggles;

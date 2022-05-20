@@ -11,8 +11,9 @@ import { duplicates, useScrollPositionBlocker, useTabGroupChoice } from '@docusa
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import type { Props as TabItemProps } from '@theme/TabItem';
 import type { Props } from '@theme/Tabs';
+import { SpacingScale } from '@cbhq/cds-common';
 import { pascalCase } from '@cbhq/cds-utils';
-import { VStack } from '@cbhq/cds-web/layout';
+import { Spacer, VStack } from '@cbhq/cds-web/layout';
 import { TabNavigation } from '@cbhq/cds-web/tabs';
 
 // A very rough duck type, but good enough to guard against mistakes while allowing customization
@@ -20,8 +21,10 @@ function isTabItem(comp: ReactElement): comp is ReactElement<TabItemProps> {
   return typeof comp.props.value !== 'undefined';
 }
 
-const TabsComponent = memo(function TabsComponent(props: Props): JSX.Element {
-  const { defaultValue: defaultValueProp, values: valuesProp, groupId } = props;
+const TabsComponent = memo(function TabsComponent(
+  props: Props & { gap?: SpacingScale },
+): JSX.Element {
+  const { defaultValue: defaultValueProp, values: valuesProp, gap, groupId } = props;
   const children = React.Children.map(props.children, (child) => {
     if (isValidElement(child) && isTabItem(child)) {
       return child;
@@ -100,7 +103,7 @@ const TabsComponent = memo(function TabsComponent(props: Props): JSX.Element {
   );
 
   return (
-    <VStack ref={wrapperRef} gap={4}>
+    <VStack ref={wrapperRef} gap={gap}>
       <TabNavigation
         value={selectedValue ?? ''}
         onChange={handleTabChange}
@@ -109,6 +112,7 @@ const TabsComponent = memo(function TabsComponent(props: Props): JSX.Element {
           label: pascalCase(item.label ?? item.value),
         }))}
       />
+      <Spacer vertical={4} />
       {children.map((tabItem, i) =>
         cloneElement(tabItem, {
           key: i,

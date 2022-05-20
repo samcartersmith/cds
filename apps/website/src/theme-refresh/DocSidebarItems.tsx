@@ -24,12 +24,7 @@ function DocSidebarItems({ items, ...props }: DocSidebarItemsProps): JSX.Element
   const filteredItems = useMemo(() => items.filter((item) => !item.customProps?.hide), [items]);
   return (
     <DocSidebarItemsExpandedStateProvider>
-      <Group
-        divider={DividerWithGap}
-        spacingHorizontal={sidebarHorizontalSpacing}
-        spacingVertical={1}
-        spacingBottom={3}
-      >
+      <Group divider={DividerWithGap} spacingVertical={1} spacingHorizontal={1} spacingBottom={3}>
         {filteredItems.map((item, index) => (
           <DocSidebarItem
             // eslint-disable-next-line react/no-array-index-key

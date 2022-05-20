@@ -4,13 +4,42 @@ const webpackPlugin = require('./webpackPlugin');
 const SLACK_TEAM = 'T02Q6DY7G';
 const hasThemeRefresh = process.env.THEME === 'refresh';
 
+const preRefreshOptions = {
+  docs: {
+    exclude: ['debug/**/*', 'home/**/*'],
+    breadcrumbs: true,
+    routeBasePath: '/',
+    sidebarPath: require.resolve('./sidebars.js'),
+    editUrl: 'https://github.cbhq.net/frontend/cds/tree/master/apps/website/',
+    sidebarCollapsible: true,
+  },
+  theme: {
+    customCss: require.resolve('./src/css/custom.css'),
+  },
+};
+
+const refreshPresetOptions = {
+  docs: {
+    exclude: ['cds/overview.mdx'],
+    breadcrumbs: false,
+    routeBasePath: '/',
+    sidebarPath: require.resolve('./refresh/sidebars.js'),
+    editUrl: undefined,
+    sidebarCollapsible: true,
+  },
+  theme: {
+    customCss: require.resolve('./refresh/custom.css'),
+  },
+};
+
 module.exports = {
   title: 'Coinbase Design System',
   tagline: '',
   url: process.env.NODE_ENV === 'production' ? 'https://cds.cbhq.net' : 'https://cds-dev.cbhq.net',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'throw',
+  onDuplicateRoutes: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'frontend',
   projectName: 'cds',
@@ -75,21 +104,7 @@ module.exports = {
         gtag: {
           trackingID: 'G-369GEFT8FG',
         },
-        docs: {
-          exclude: hasThemeRefresh ? undefined : ['debug/**/*'],
-          breadcrumbs: !hasThemeRefresh,
-          routeBasePath: '/',
-          sidebarPath: hasThemeRefresh
-            ? require.resolve('./sidebarsRefresh.js')
-            : require.resolve('./sidebars.js'),
-          editUrl: hasThemeRefresh
-            ? undefined
-            : 'https://github.cbhq.net/frontend/cds/tree/master/apps/website/',
-          sidebarCollapsible: true,
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
+        ...(hasThemeRefresh ? refreshPresetOptions : preRefreshOptions),
         blog: false,
       },
     ],
@@ -104,10 +119,11 @@ module.exports = {
         indexBlog: false,
         indexDocs: true,
         indexDocSidebarParentCategories: 2,
+        style: hasThemeRefresh ? 'none' : undefined,
       },
     ],
     // Must run last!
     webpackPlugin,
   ],
-  clientModules: [require.resolve('./global.ts')],
+  clientModules: [require.resolve(hasThemeRefresh ? './refresh/global.ts' : './global.ts')],
 };

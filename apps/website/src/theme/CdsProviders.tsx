@@ -69,7 +69,7 @@ function useIsDarkMode() {
   return isDarkTheme;
 }
 
-export const CdsProviders: React.FC = memo(({ children }) => {
+const CdsProviders: React.FC = memo(({ children }) => {
   const isDarkMode = useIsDarkMode();
   return (
     <FeatureFlagProvider frontier flexGap>
@@ -85,3 +85,5 @@ export const CdsProviders: React.FC = memo(({ children }) => {
 });
 
 CdsProviders.displayName = 'CdsProviders';
+
+export default CdsProviders;

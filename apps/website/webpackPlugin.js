@@ -1,6 +1,6 @@
 const path = require('path');
 
-function getRefreshFile(name) {
+function getRefreshComponent(name) {
   return path.resolve(__dirname, './src/theme-refresh', `${name}.tsx`);
 }
 
@@ -30,14 +30,18 @@ function configureForDocusaurus(config) {
 
   // Theme refresh conditionals
   if (process.env.THEME === 'refresh') {
-    config.resolve.alias['@theme/DocSidebarItem'] = getRefreshFile('DocSidebarItem');
-    config.resolve.alias['@theme/DocSidebarItems'] = getRefreshFile('DocSidebarItems');
-    config.resolve.alias['@theme/DocPaginator'] = getRefreshFile('DocPaginator');
-    config.resolve.alias['@theme/Footer'] = getRefreshFile('Footer');
-    config.resolve.alias['@theme/Playground'] = getRefreshFile('Playground');
-    config.resolve.alias['@theme/MDXComponents'] = getRefreshFile('MDXComponents');
-    config.resolve.alias['@theme/Tabs'] = getRefreshFile('Tabs');
-    config.resolve.alias['@theme/TabItem'] = getRefreshFile('TabItem');
+    config.resolve.alias['@theme/DocSidebarItem'] = getRefreshComponent('DocSidebarItem');
+    config.resolve.alias['@theme/DocSidebarItems'] = getRefreshComponent('DocSidebarItems');
+    config.resolve.alias['@theme/DocPaginator'] = getRefreshComponent('DocPaginator');
+    config.resolve.alias['@theme/Footer'] = getRefreshComponent('Footer');
+    config.resolve.alias['@theme/Playground'] = getRefreshComponent('Playground');
+    config.resolve.alias['@theme/MDXComponents'] = getRefreshComponent('MDXComponents');
+    config.resolve.alias['@theme/Tabs'] = getRefreshComponent('Tabs');
+    config.resolve.alias['@theme/TabItem'] = getRefreshComponent('TabItem');
+    config.resolve.alias['@theme/CdsProviders'] = getRefreshComponent('CdsProviders');
+    config.resolve.alias['@theme/ExampleWithThemeToggles'] =
+      getRefreshComponent('ExampleWithThemeToggles');
+    config.resolve.alias['@theme/ThemeToggles'] = getRefreshComponent('ThemeToggles');
   }
 
   return {};

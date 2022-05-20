@@ -1,10 +1,9 @@
-import { useCallback } from 'react';
+import Link from '@docusaurus/Link';
 import type {
   PropSidebarItem,
   PropSidebarItemCategory,
   PropSidebarItemLink,
 } from '@docusaurus/plugin-content-docs';
-import { useHistory } from '@docusaurus/router';
 import { isActiveSidebarItem } from '@docusaurus/theme-common';
 import type { SpacingScale } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
@@ -31,19 +30,16 @@ function SidebarItemLink({
   activePath,
 }: DocSidebarItemProps & { item: PropSidebarItemLink }) {
   const isActive = isActiveSidebarItem(item, activePath);
-  const history = useHistory();
-  const handleOnPress = useCallback(() => {
-    history.push(item.href);
-  }, [history, item.href]);
 
   return (
     <VStack>
       <Pressable
+        as={Link}
         key={item.label}
         transparentWhileInactive
         backgroundColor="background"
         borderRadius="popover"
-        onPress={handleOnPress}
+        to={item.href}
         noScaleOnPress
       >
         <TextBody

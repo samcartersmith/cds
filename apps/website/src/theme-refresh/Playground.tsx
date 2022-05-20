@@ -65,13 +65,13 @@ const Playground = memo(function Playground({
   );
 
   return (
-    <VStack gap={1}>
+    <VStack gap={1} spacingBottom={3}>
       {/* @ts-expect-error - issue with LiveProvider props */}
       <LiveProvider code={code} transformCode={transformCode} theme={prismTheme} {...props}>
         <VStack borderRadius="popover" bordered overflow="hidden" spacing={3}>
           <BrowserOnly fallback={<div>Loading...</div>}>{preview}</BrowserOnly>
         </VStack>
-        <HStack gap={0.5} alignItems="center">
+        <HStack gap={0.5} alignItems="center" offsetHorizontal={1}>
           <Pressable
             backgroundColor="background"
             borderRadius="popover"
@@ -79,27 +79,25 @@ const Playground = memo(function Playground({
             noScaleOnPress
           >
             <HStack gap={1} spacing={1} width={112} alignItems="center">
-              <Icon name={collapsed ? 'caretDown' : 'caretUp'} size="xs" color="foregroundMuted" />
-              <TextCaption transform="none" as="p" color="foregroundMuted">
+              <Icon name={collapsed ? 'caretDown' : 'caretUp'} size="xs" color="primary" />
+              <TextCaption transform="none" as="p" color="primary">
                 {collapsed ? 'Show code' : 'Hide code'}
               </TextCaption>
             </HStack>
           </Pressable>
-          {!collapsed && (
-            <Pressable
-              backgroundColor="background"
-              borderRadius="round"
-              noScaleOnPress
-              onPress={handleCopyToClipboard}
-            >
-              <HStack gap={1} spacing={1} alignItems="center">
-                <Icon name="copy" size="xs" color="foregroundMuted" />
-                <TextCaption transform="none" as="p" color="foregroundMuted">
-                  Copy code
-                </TextCaption>
-              </HStack>
-            </Pressable>
-          )}
+          <Pressable
+            backgroundColor="background"
+            borderRadius="round"
+            noScaleOnPress
+            onPress={handleCopyToClipboard}
+          >
+            <HStack gap={1} spacing={1} alignItems="center">
+              <Icon name="copy" size="xs" color="primary" />
+              <TextCaption transform="none" as="p" color="primary">
+                Copy code
+              </TextCaption>
+            </HStack>
+          </Pressable>
         </HStack>
         <Collapsible collapsed={collapsed}>
           <VStack width="100%" borderRadius="popover" overflow="hidden">
