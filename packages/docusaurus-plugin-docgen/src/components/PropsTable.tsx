@@ -5,11 +5,11 @@ import { Table, TableBody, TableHeader, TableRow } from '@cbhq/cds-web/tables';
 import type { ProcessedPropItem, SharedTypeAliases } from '../scripts/types';
 
 import {
-  BadgesCell,
   DefaultValueCell,
   LinkCell,
   NameCell,
   PropsTableRow,
+  TagsCell,
   TypeCell,
 } from './PropsTableRow';
 
@@ -35,7 +35,7 @@ export function PropsTable({ props, sharedTypeAliases }: PropsTableProps) {
         <TableHeader>
           <TableRow>
             <NameCell title="Name" />
-            <BadgesCell title="" />
+            <TagsCell title="" />
             <TypeCell title="Type" />
             <DefaultValueCell title="Default" />
             <LinkCell title="" />

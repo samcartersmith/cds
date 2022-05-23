@@ -1,9 +1,4 @@
 import Link from '@docusaurus/Link';
-import type {
-  PropSidebarItem,
-  PropSidebarItemCategory,
-  PropSidebarItemLink,
-} from '@docusaurus/plugin-content-docs';
 import { isActiveSidebarItem } from '@docusaurus/theme-common';
 import type { SpacingScale } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
@@ -12,6 +7,35 @@ import { HStack } from '@cbhq/cds-web/layout/HStack';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { Pressable } from '@cbhq/cds-web/system/Pressable';
 import { TextBody, TextCaption } from '@cbhq/cds-web/typography';
+import { JSDocTag, JSDocTagVariant } from '@cbhq/docusaurus-plugin-docgen/components/JSDocTag';
+
+export type PropSidebarItem = PropSidebarItemLink | PropSidebarItemCategory;
+
+// Makes all properties visible when hovering over the type
+type Expand<T extends Record<string, unknown>> = { [P in keyof T]: T[P] };
+
+type CustomProps = {
+  hidden?: boolean;
+  tag?: JSDocTagVariant;
+};
+
+type PropSidebarItemCategory = {
+  type: 'category';
+  label: string;
+  collapsed: boolean;
+  collapsible: boolean;
+  items: PropSidebarItem[];
+  href?: string;
+  customProps?: CustomProps;
+};
+
+type PropSidebarItemLink = {
+  docId?: string;
+  type: 'link';
+  href: string;
+  label: string;
+  customProps?: CustomProps;
+};
 
 export type DocSidebarItemProps = {
   activePath: string;
@@ -20,6 +44,12 @@ export type DocSidebarItemProps = {
   level: SpacingScale;
   parentLevel?: SpacingScale;
 };
+
+export type CollapsibleCategoryProps = Expand<
+  DocSidebarItemProps & {
+    item: PropSidebarItemCategory;
+  }
+>;
 
 function addLevel(level: SpacingScale, increment: SpacingScale) {
   return (level + increment) as unknown as SpacingScale;
@@ -42,14 +72,14 @@ function SidebarItemLink({
         to={item.href}
         noScaleOnPress
       >
-        <TextBody
-          as="p"
-          color={isActive ? 'primary' : 'foregroundMuted'}
-          spacingHorizontal={2}
-          spacingVertical={1}
-        >
-          {item.label}
-        </TextBody>
+        <HStack gap={2} spacingHorizontal={2} alignItems="center" justifyContent="space-between">
+          <TextBody as="p" color={isActive ? 'primary' : 'foregroundMuted'} spacingVertical={1}>
+            {item.label}
+          </TextBody>
+          {typeof item.customProps?.tag === 'string' ? (
+            <JSDocTag variant={item.customProps.tag} />
+          ) : null}
+        </HStack>
       </Pressable>
     </VStack>
   );
@@ -60,7 +90,7 @@ function CollapsibleCategory({
   activePath,
   level,
   parentLevel = 0,
-}: DocSidebarItemProps & { item: PropSidebarItemCategory }) {
+}: CollapsibleCategoryProps) {
   const [expanded, { toggle }] = useToggler(level === 1);
   const collapsed = !expanded;
   return (
@@ -77,6 +107,7 @@ function CollapsibleCategory({
           alignItems="center"
           justifyContent="space-between"
           spacingHorizontal={2}
+          flexWrap="wrap"
         >
           {parentLevel === 0 && level === 1 ? (
             <TextCaption as="p" spacingVertical={2} noWrap overflow="truncate">
@@ -87,7 +118,12 @@ function CollapsibleCategory({
               {item.label}
             </TextBody>
           )}
-          <CollapseArrow collapsed={collapsed} degrees={90} />
+          <HStack gap={2} alignItems="center" justifyContent="space-between">
+            {typeof item.customProps?.tag === 'string' ? (
+              <JSDocTag variant={item.customProps.tag} />
+            ) : null}
+            <CollapseArrow collapsed={collapsed} degrees={90} />
+          </HStack>
         </HStack>
       </Pressable>
       <Collapsible collapsed={collapsed}>
@@ -117,11 +153,9 @@ export default function DocSidebarItem({
   switch (item.type) {
     case 'category':
       return <CollapsibleCategory item={item} {...props} />;
-    case 'html':
-      return null;
     case 'link':
     default: {
-      return item?.customProps?.hide ? null : <SidebarItemLink item={item} {...props} />;
+      return item.customProps?.hidden ? null : <SidebarItemLink item={item} {...props} />;
     }
   }
 }

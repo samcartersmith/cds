@@ -17,7 +17,7 @@ module.exports = {
       type: 'doc',
       id: 'home/home',
       label: `CDS`, // This is hidden, but docusaurus does not allow empty label
-      customProps: { hide: true },
+      customProps: { hidden: true },
     },
     {
       type: 'category',
@@ -169,6 +169,9 @@ module.exports = {
         {
           type: 'category',
           label: 'Card',
+          customProps: {
+            tag: 'deprecated',
+          },
           items: [
             'components/cards/Card/card',
             { type: 'doc', id: 'components/cards/CardBody/card-body', label: 'Card Body' },
@@ -224,40 +227,19 @@ module.exports = {
           ],
         },
         { type: 'doc', id: 'components/overlays/Drawer/drawer', label: 'Drawer' },
-        { type: 'doc', id: 'components/dropdown/Dropdown/dropdown', label: 'Dropdown' },
+        {
+          type: 'doc',
+          id: 'components/dropdown/Dropdown/dropdown',
+          label: 'Dropdown',
+          customProps: {
+            tag: 'new',
+          },
+        },
         { type: 'doc', id: 'components/layout/Fallback/fallback', label: 'Fallback' },
         { type: 'doc', id: 'components/layout/Group/group', label: 'Group' },
         { type: 'doc', id: 'components/layout/HStack/hstack', label: 'HStack' },
         { type: 'ref', id: 'components/icons/Icon/icon', label: 'Icon' },
         { type: 'doc', id: 'components/buttons/IconButton/icon-button', label: 'Icon Button' },
-        { type: 'doc', id: 'components/controls/TextInput/text-input', label: 'Input' },
-        {
-          type: 'category',
-          label: 'Navigation Bar',
-          items: [
-            {
-              type: 'doc',
-              id: 'components/navigation/NavigationBar/navigation-bar',
-              label: 'Navigation Bar',
-            },
-            {
-              type: 'ref',
-              id: 'components/icons/NavigationIcon/navigation-icon',
-              label: 'Navigation Icon',
-            },
-            {
-              type: 'ref',
-              id: 'components/buttons/NavigationIconButton/navigation-icon-button',
-              label: 'Navigation Icon Button',
-            },
-            { type: 'doc', id: 'components/navigation/NavLink/nav-link', label: 'Nav Link' },
-            {
-              type: 'doc',
-              id: 'components/navigation/NavigationTitle/navigation-title',
-              label: 'Navigation Title',
-            },
-          ],
-        },
         { type: 'doc', id: 'components/typography/Link/link', label: 'Link' },
         {
           type: 'category',
@@ -288,21 +270,76 @@ module.exports = {
               label: 'Modal Header',
             },
             { type: 'doc', id: 'hooks/useModal', label: 'useModal' },
+            {
+              type: 'doc',
+              id: 'components/overlays/FullscreenModal/fullscreen-modal',
+              label: 'Fullscreen Modal',
+            },
           ],
         },
         {
-          type: 'doc',
-          id: 'components/controls/NativeTextArea/native-text-area',
-          label: 'Native Text Area',
+          type: 'category',
+          label: 'Navigation Bar',
+          items: [
+            {
+              type: 'doc',
+              id: 'components/navigation/NavigationBar/navigation-bar',
+              label: 'Navigation Bar',
+            },
+            {
+              type: 'ref',
+              id: 'components/icons/NavigationIcon/navigation-icon',
+              label: 'Navigation Icon',
+            },
+            {
+              type: 'ref',
+              id: 'components/buttons/NavigationIconButton/navigation-icon-button',
+              label: 'Navigation Icon Button',
+            },
+            { type: 'doc', id: 'components/navigation/NavLink/nav-link', label: 'Nav Link' },
+            {
+              type: 'doc',
+              id: 'components/navigation/NavigationTitle/navigation-title',
+              label: 'Navigation Title',
+            },
+          ],
         },
-        { type: 'doc', id: 'components/system/Pressable/pressable', label: 'Pressable' },
         {
-          type: 'doc',
-          id: 'components/system/PressableOpacity/pressable-opacity',
-          label: 'Pressable Opacity',
+          type: 'category',
+          label: 'Popover Menu',
+          customProps: { tag: 'deprecated' },
+          items: [
+            {
+              type: 'doc',
+              id: 'components/overlays/PopoverMenu/popover-menu',
+              label: 'Popover Menu',
+            },
+            {
+              type: 'doc',
+              id: 'components/overlays/PopoverTrigger/popover-trigger',
+              label: 'Popover Trigger',
+            },
+            {
+              type: 'doc',
+              id: 'components/overlays/PopoverTriggerWrapper/popover-trigger-wrapper',
+              label: 'Popover Trigger Wrapper',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Pressable',
+          items: [
+            { type: 'doc', id: 'components/system/Pressable/pressable', label: 'Pressable' },
+            {
+              type: 'doc',
+              id: 'components/system/PressableOpacity/pressable-opacity',
+              label: 'Pressable Opacity',
+            },
+          ],
         },
         { type: 'doc', id: 'components/controls/RadioGroup/radio-group', label: 'Radio Group' },
-        { type: 'doc', id: 'components/media/RemoteImage/remote-image', label: 'Remoate Image' },
+        { type: 'doc', id: 'components/media/RemoteImage/remote-image', label: 'Remote Image' },
         { type: 'doc', id: 'components/controls/SearchInput/search-input', label: 'Search  Input' },
         {
           type: 'doc',
@@ -366,6 +403,23 @@ module.exports = {
         { type: 'doc', id: 'components/controls/Switch/switch', label: 'Switch' },
         {
           type: 'category',
+          label: 'Tab Navigation',
+          items: [
+            {
+              type: 'doc',
+              id: 'components/tabs/TabNavigation/tab-navigation',
+              label: 'Tab Navigation',
+            },
+            { type: 'doc', id: 'components/tabs/TabLabel/tab-label', label: 'Tab Label' },
+            {
+              type: 'doc',
+              id: 'components/tabs/TabIndicator/tab-indicator',
+              label: 'Tab Indicator',
+            },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Table',
           items: [
             'components/tables/Table/table',
@@ -389,24 +443,13 @@ module.exports = {
             { type: 'doc', id: 'components/tables/TableRow/table-row', label: 'Table Row' },
           ],
         },
-        {
-          type: 'category',
-          label: 'Tab Navigation',
-          items: [
-            {
-              type: 'doc',
-              id: 'components/tabs/TabNavigation/tab-navigation',
-              label: 'Tab Navigation',
-            },
-            { type: 'doc', id: 'components/tabs/TabLabel/tab-label', label: 'Tab Label' },
-            {
-              type: 'doc',
-              id: 'components/tabs/TabIndicator/tab-indicator',
-              label: 'Tab Indicator',
-            },
-          ],
-        },
         { type: 'doc', id: 'components/typography/Text/text', label: 'Text' },
+        { type: 'doc', id: 'components/controls/TextInput/text-input', label: 'Text Input' },
+        {
+          type: 'doc',
+          id: 'components/controls/NativeTextArea/native-text-area',
+          label: 'Native Text Area',
+        },
         {
           type: 'category',
           label: 'Toast',
@@ -487,6 +530,7 @@ module.exports = {
           id: 'components/system/FeatureFlagProvider/feature-flag-provider',
           label: 'FeatureFlagProvider',
         },
+        { type: 'doc', id: 'components/system/Interactable/interactable', label: 'Interactable' },
         {
           type: 'category',
           label: 'PortalProvider',
@@ -540,8 +584,12 @@ module.exports = {
           type: 'category',
           label: 'Contributing',
           items: [
-            { type: 'doc', id: 'contributing/engineering', label: 'Engineering Guide' },
-            { type: 'doc', id: 'contributing/design', label: 'Design Guide' },
+            {
+              type: 'link',
+              href: 'https://github.cbhq.net/frontend/cds/tree/master/docs',
+              label: 'Engineering',
+            },
+            { type: 'doc', id: 'contributing/design', label: 'Design' },
           ],
         },
         'resources/release',

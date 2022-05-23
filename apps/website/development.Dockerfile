@@ -10,6 +10,7 @@ COPY . .
 RUN yarn --immutable
 
 # Build the app with nx
+ENV THEME=refresh
 ENV NODE_ENV=development
 RUN yarn nx run website:build
 

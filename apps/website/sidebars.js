@@ -161,7 +161,11 @@ module.exports = {
           link: showIndexPageForCategory,
           label: 'Contributing',
           items: [
-            { type: 'doc', id: 'contributing/engineering', label: 'Engineering Guide' },
+            {
+              type: 'link',
+              href: 'https://github.cbhq.net/frontend/cds/tree/master/docs',
+              label: 'Engineering Guide',
+            },
             { type: 'doc', id: 'contributing/design', label: 'Design Guide' },
           ],
         },

@@ -1,4 +1,5 @@
 import MDXComponents from '@theme-original/MDXComponents';
+import { Box, Divider, Group, HStack, VStack } from '@cbhq/cds-web/layout';
 import {
   Link,
   LinkProps,
@@ -24,6 +25,11 @@ const MDXComponentOverrides = {
   p: (props: TextProps) => <TextBody as="p" {...props} />,
   li: (props: TextProps) => <TextBody as="li" {...props} />,
   span: (props: TextProps) => <TextLabel2 as="span" {...props} />,
+  Box,
+  Divider,
+  Group,
+  HStack,
+  VStack,
 };
 
 export default MDXComponentOverrides;

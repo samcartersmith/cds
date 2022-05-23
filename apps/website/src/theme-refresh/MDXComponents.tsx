@@ -3,7 +3,7 @@ import Tabs from '@theme/Tabs';
 import MDXComponents from '@theme-original/MDXComponents';
 import { Button, ButtonGroup, IconButton } from '@cbhq/cds-web/buttons';
 import { Icon } from '@cbhq/cds-web/icons';
-import { Box, Group, HStack, VStack } from '@cbhq/cds-web/layout';
+import { Box, Divider, Group, HStack, VStack } from '@cbhq/cds-web/layout';
 import {
   Link,
   TextBody,
@@ -21,6 +21,7 @@ const MDXComponentOverrides = {
   Button,
   ButtonGroup,
   Box,
+  Divider,
   Group,
   HStack,
   Icon,

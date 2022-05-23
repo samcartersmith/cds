@@ -2,11 +2,12 @@ const docgenConfig = require('./docgen/config');
 const webpackPlugin = require('./webpackPlugin');
 
 const SLACK_TEAM = 'T02Q6DY7G';
-const hasThemeRefresh = process.env.THEME === 'refresh';
+const hasThemeRefresh = process.env.THEME === 'refresh' || process.env.theme === 'refresh';
+const sharedExclusions = ['**/_*.{js,jsx,ts,tsx,md,mdx}'];
 
 const preRefreshOptions = {
   docs: {
-    exclude: ['debug/**/*', 'home/**/*'],
+    exclude: [...sharedExclusions, 'debug/**/*', 'home/**/*'],
     breadcrumbs: true,
     routeBasePath: '/',
     sidebarPath: require.resolve('./sidebars.js'),
@@ -20,15 +21,12 @@ const preRefreshOptions = {
 
 const refreshPresetOptions = {
   docs: {
-    exclude: ['cds/overview.mdx'],
+    exclude: [...sharedExclusions, 'cds/overview.mdx'],
     breadcrumbs: false,
     routeBasePath: '/',
     sidebarPath: require.resolve('./refresh/sidebars.js'),
     editUrl: undefined,
     sidebarCollapsible: true,
-  },
-  theme: {
-    customCss: require.resolve('./refresh/custom.css'),
   },
 };
 

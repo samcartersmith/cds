@@ -32,7 +32,8 @@
       "@cbhq/cds-web/*": ["packages/web/*"],
       "@cbhq/cds-web-utils": ["packages/web-utils"],
       "@cbhq/cds-web-utils/*": ["packages/web-utils/*"],
-      "@cbhq/docusaurus-plugin-docgen": ["packages/docusaurus-plugin-docgen"]
+      "@cbhq/docusaurus-plugin-docgen": ["packages/docusaurus-plugin-docgen/src"],
+      "@cbhq/docusaurus-plugin-docgen/*": ["packages/docusaurus-plugin-docgen/src/*"]
     }
   }
 }

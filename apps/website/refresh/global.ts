@@ -1,7 +1,7 @@
 import '@cbhq/cds-fonts/fonts.css';
 import '@cbhq/cds-web/styles/icon-font.css';
+import './styles';
 
-import { globalStyles } from '@cbhq/cds-web/styles/global';
 import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
 
 (function init() {
@@ -16,5 +16,3 @@ import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
 
   getBrowserGlobals()?.document.addEventListener('keydown', triggerSearch);
 })();
-
-export default globalStyles;

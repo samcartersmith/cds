@@ -1,10 +1,9 @@
 import { memo, useMemo } from 'react';
-import type { PropSidebarItem } from '@docusaurus/plugin-content-docs';
 import { DocSidebarItemsExpandedStateProvider } from '@docusaurus/theme-common';
 import type { SpacingScale } from '@cbhq/cds-common';
 import { Divider, Group } from '@cbhq/cds-web/layout';
 
-import DocSidebarItem from './DocSidebarItem';
+import DocSidebarItem, { PropSidebarItem } from './DocSidebarItem';
 
 type DocSidebarItemsProps = {
   items: PropSidebarItem[];
@@ -21,7 +20,7 @@ function DividerWithGap() {
 // TODO this item should probably not receive the "activePath" props
 // TODO this triggers whole sidebar re-renders on navigation
 function DocSidebarItems({ items, ...props }: DocSidebarItemsProps): JSX.Element {
-  const filteredItems = useMemo(() => items.filter((item) => !item.customProps?.hide), [items]);
+  const filteredItems = useMemo(() => items.filter((item) => !item.customProps?.hidden), [items]);
   return (
     <DocSidebarItemsExpandedStateProvider>
       <Group divider={DividerWithGap} spacingVertical={1} spacingHorizontal={1} spacingBottom={3}>

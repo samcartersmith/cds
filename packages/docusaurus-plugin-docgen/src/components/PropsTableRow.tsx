@@ -8,7 +8,7 @@ import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
 
 import type { ProcessedPropItem, PropItemTags, SharedTypeAliases } from '../scripts/types';
 
-import { Badge, BADGE_VARIANTS, BadgeVariant } from './Badge';
+import { JSDOC_TAG_VARIANTS, JSDocTag, JSDocTagVariant } from './JSDocTag';
 import { ModalChildContext, ModalLink } from './ModalLink';
 
 export type PropsTableRowProps = {
@@ -21,14 +21,14 @@ type TypeAliasModalContentProps = {
 };
 
 function keys(item: PropItemTags) {
-  return Object.keys(item) as unknown as BadgeVariant[];
+  return Object.keys(item) as unknown as JSDocTagVariant[];
 }
 
 export function NameCell(props: TableCellProps) {
   return <TableCell width="33%" {...props} />;
 }
 
-export function BadgesCell(props: TableCellProps) {
+export function TagsCell(props: TableCellProps) {
   return <TableCell {...props} />;
 }
 
@@ -63,14 +63,14 @@ export function TypeAliasModalContent({ typeAlias }: TypeAliasModalContentProps)
 
 export function PropsTableRow({ prop, sharedTypeAliases }: PropsTableRowProps) {
   const { defaultValue, name, description, type, tags = {}, required } = prop;
-  const badgeVariants = useMemo(() => {
+  const tagComponents = useMemo(() => {
     const variants = keys(tags);
     if (required) {
       variants.push('required');
     }
     return variants
-      .filter((item) => BADGE_VARIANTS.includes(item))
-      .map((item) => <Badge key={item} variant={item} />);
+      .filter((item) => JSDOC_TAG_VARIANTS.includes(item))
+      .map((item) => <JSDocTag key={item} variant={item} />);
   }, [required, tags]);
 
   const toast = useToast();
@@ -104,7 +104,7 @@ export function PropsTableRow({ prop, sharedTypeAliases }: PropsTableRowProps) {
   return (
     <TableRow>
       <NameCell title={name} subtitle={description} />
-      <BadgesCell>{badgeVariants}</BadgesCell>
+      <TagsCell>{tagComponents}</TagsCell>
       <TypeCell>{typeContent}</TypeCell>
       <DefaultValueCell>
         <TextBody as="p" mono>
