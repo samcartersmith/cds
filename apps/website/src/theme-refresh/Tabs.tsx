@@ -1,30 +1,43 @@
+/* eslint-disable compat/compat */
 import React, {
   type ReactElement,
   cloneElement,
   isValidElement,
   memo,
   useCallback,
+  useMemo,
   useRef,
   useState,
 } from 'react';
+import { useHistory, useLocation } from '@docusaurus/router';
 import { duplicates, useScrollPositionBlocker, useTabGroupChoice } from '@docusaurus/theme-common';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import type { Props as TabItemProps } from '@theme/TabItem';
 import type { Props } from '@theme/Tabs';
-import { SpacingScale } from '@cbhq/cds-common';
+import { SpacingScale, TabNavigationProps } from '@cbhq/cds-common';
 import { pascalCase } from '@cbhq/cds-utils';
-import { Spacer, VStack } from '@cbhq/cds-web/layout';
+import { VStack } from '@cbhq/cds-web/layout';
 import { TabNavigation } from '@cbhq/cds-web/tabs';
+
+export type TabProps = Omit<Props, 'groupId'> & {
+  gap?: SpacingScale;
+  groupId: string;
+  variant?: TabNavigationProps['variant'];
+};
 
 // A very rough duck type, but good enough to guard against mistakes while allowing customization
 function isTabItem(comp: ReactElement): comp is ReactElement<TabItemProps> {
   return typeof comp.props.value !== 'undefined';
 }
 
-const TabsComponent = memo(function TabsComponent(
-  props: Props & { gap?: SpacingScale },
-): JSX.Element {
-  const { defaultValue: defaultValueProp, values: valuesProp, gap, groupId } = props;
+const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element {
+  const {
+    defaultValue: defaultValueProp,
+    values: valuesProp,
+    variant = 'primary',
+    gap = 3,
+    groupId,
+  } = props;
   const children = React.Children.map(props.children, (child) => {
     if (isValidElement(child) && isTabItem(child)) {
       return child;
@@ -73,15 +86,30 @@ const TabsComponent = memo(function TabsComponent(
   const [selectedValue, setSelectedValue] = useState(defaultValue);
   const { blockElementScrollPositionUntilNextRender } = useScrollPositionBlocker();
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const history = useHistory();
+  const location = useLocation();
+  const urlParams = useMemo(
+    () => (groupId === 'page' ? new URLSearchParams(history.location.search) : null),
+    [groupId, history.location.search],
+  );
 
   if (groupId != null) {
+    const urlValue = urlParams?.get(groupId);
+    const shouldUpdateUrlParams = urlValue && selectedValue !== urlValue;
     const relevantTabGroupChoice = tabGroupChoices[groupId];
-    if (
+    if (shouldUpdateUrlParams) {
+      setSelectedValue(urlValue);
+    } else if (
       relevantTabGroupChoice != null &&
       relevantTabGroupChoice !== selectedValue &&
       values.some((item) => item.value === relevantTabGroupChoice)
     ) {
-      setSelectedValue(relevantTabGroupChoice);
+      if (urlParams) {
+        urlParams.set(groupId, relevantTabGroupChoice);
+        history.replace({ ...location, search: urlParams.toString() });
+      } else {
+        setSelectedValue(relevantTabGroupChoice);
+      }
     }
   }
 
@@ -97,14 +125,26 @@ const TabsComponent = memo(function TabsComponent(
       setSelectedValue(newTabValue);
       if (groupId != null) {
         setTabGroupChoices(groupId, newTabValue);
+        if (urlParams) {
+          urlParams.set(groupId, newTabValue);
+          history.replace({ ...location, search: urlParams.toString() });
+        }
       }
     },
-    [blockElementScrollPositionUntilNextRender, groupId, setTabGroupChoices],
+    [
+      blockElementScrollPositionUntilNextRender,
+      groupId,
+      history,
+      location,
+      setTabGroupChoices,
+      urlParams,
+    ],
   );
 
   return (
-    <VStack ref={wrapperRef} gap={gap}>
+    <VStack ref={wrapperRef}>
       <TabNavigation
+        variant={variant}
         value={selectedValue ?? ''}
         onChange={handleTabChange}
         tabs={values.map((item) => ({
@@ -112,18 +152,21 @@ const TabsComponent = memo(function TabsComponent(
           label: pascalCase(item.label ?? item.value),
         }))}
       />
-      <Spacer vertical={4} />
-      {children.map((tabItem, i) =>
-        cloneElement(tabItem, {
-          key: i,
-          hidden: tabItem.props.value !== selectedValue,
-        }),
-      )}
+      <VStack gap={gap}>
+        {children
+          .filter((tabItem) => tabItem.props.value === selectedValue)
+          .map((tabItem, i) =>
+            cloneElement(tabItem, {
+              key: i,
+              hidden: tabItem.props.value !== selectedValue,
+            }),
+          )}
+      </VStack>
     </VStack>
   );
 });
 
-export default function Tabs(props: Props): JSX.Element {
+export default function Tabs(props: TabProps): JSX.Element {
   const isBrowser = useIsBrowser();
   return (
     <TabsComponent

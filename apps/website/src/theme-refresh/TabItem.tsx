@@ -2,10 +2,19 @@ import React from 'react';
 import type { Props } from '@theme/TabItem';
 import { VStack } from '@cbhq/cds-web/layout';
 
-export default function TabItem({ children, hidden }: Props): JSX.Element {
+import { RightSidebar, TOCItem } from '../theme/RightSidebar';
+
+export type TabItemProps = Props & {
+  toc?: TOCItem[];
+};
+
+export default function TabItem({ children, hidden, toc }: TabItemProps): JSX.Element {
   return (
-    <VStack gap={3} role="tabpanel" {...{ hidden }} display={hidden ? 'none' : undefined}>
-      {children}
-    </VStack>
+    <>
+      {toc ? <RightSidebar toc={toc} /> : null}
+      <VStack gap={3} role="tabpanel" {...{ hidden }}>
+        {children}
+      </VStack>
+    </>
   );
 }
