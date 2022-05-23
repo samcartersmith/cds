@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.38.7 (5/23/2022, 10:04 AM PST)
+
+#### 🚀 Updates
+
+- **[Illustrations]** Re-add SpotSquare 120x120 and Pictogram 96x96. Deprecate illustration sizes instead. Will remove these sizes in next major release. [#461](https://github.cbhq.net/frontend/cds/pull/461)
+
 ## 0.38.6 (5/19/2022, 09:03 AM PST)
 
 #### 🐞 Fixes
