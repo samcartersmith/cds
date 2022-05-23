@@ -117,7 +117,7 @@ function createMenuOption() {
       value={item.value}
       title={item.name}
       description={item.description}
-      media={<Pictogram dimension="48x48" name={item.mediaName} />}
+      media={<Pictogram name={item.mediaName} />}
     />
   );
 }
