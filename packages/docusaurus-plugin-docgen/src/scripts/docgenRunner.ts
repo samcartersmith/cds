@@ -1,11 +1,10 @@
 import glob from 'fast-glob';
 import fs from 'fs';
-import camelCase from 'lodash/camelCase';
-import flatten from 'lodash/flatten';
 import groupBy from 'lodash/groupBy';
 import keyBy from 'lodash/keyBy';
 import mapValues from 'lodash/mapValues';
 import startCase from 'lodash/startCase';
+import uniqBy from 'lodash/uniqBy';
 import path from 'path';
 
 import { getPackageJsonFromTsconfig } from '../utils/getPackageJsonFromTsconfig';
@@ -37,6 +36,11 @@ const docItemIndex = path.join(templatesDir, 'doc-item/index.ejs.t');
 const docItemApi = path.join(templatesDir, 'doc-item/api.ejs.t');
 const docItemData = path.join(templatesDir, 'doc-item/data.ejs.t');
 const docItemExample = path.join(templatesDir, 'doc-item/example.ejs.t');
+
+function getTempDirForDoc({ projectDir, doc }: { projectDir: string; doc: ProcessedDoc }) {
+  const relativeFilePath = doc.filePath.replace(`${path.dirname(projectDir)}/`, '');
+  return relativeFilePath.replace(path.extname(relativeFilePath), '');
+}
 
 /**
  * Takes plugin config and runs docgenParser.
@@ -80,12 +84,23 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<WriteFil
    */
   const projects = await Promise.all(
     entryPoints.map(async (tsconfigPath) => {
-      const allSourceFiles = flatten(Object.values(sourceFiles));
       const projectDir = path.dirname(tsconfigPath);
-      const files = await glob(allSourceFiles, {
+      const files = await glob('**/*.(ts|tsx|js|jsx)', {
         onlyFiles: true,
         cwd: projectDir,
         absolute: false,
+        ignore: [
+          '**/__tests__',
+          '**/__stories__',
+          '**/*-test.*',
+          '**/*.fixture.*',
+          '**/*.test.*',
+          '**/*.spec.*',
+          '**/*.d.ts',
+          '**/*.stories.*',
+          '**/index.ts',
+          'node_modules',
+        ],
       });
       return {
         tsconfigPath,
@@ -113,45 +128,27 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<WriteFil
         /**
          * Turn absolute path of parsed doc into path relative to project.
          * This should match what was provided in config.
-         * i.e. `Users/katherinemartinez/cds/packages/web/accordions/Accordion.tsx` into `accordions/Accordion.tsx`.
+         * i.e. `Users/katherinemartinez/cds/packages/web/accordions/Accordion.tsx` into `web/accordions/Accordion.tsx`.
          */
-        const projectRelativePath = doc.filePath.replace(`${projectDir}/`, '');
 
-        /**
-         * Re-associate a sourceFile with it's doc.
-         */
-        const docMatch = sourceFilesDocMap.get(projectRelativePath);
-        if (!docMatch) {
-          logger.matchingDocError(doc.displayName);
-          throw new Error(`Unable to find matching doc for ${doc.displayName}`);
-        }
-
-        /**
-         * We want to avoid having component docs with the same name overwritting eachother so we
-         * output their details to their associated projectDir. i.e. common, web, mobile
-         */
-        const relativeDocPath = path.join(projectName, camelCase(doc.displayName));
-
-        /** Get the absolute path of the doc's temp directory we want to output data to. */
-        const docDir = path.join(pluginDir, docMatch, relativeDocPath);
-
-        /** Get the absolute path to the doc we want to output displayed doc to. */
-        const docFilePath = path.join(docDir, 'index.mdx');
+        const destDir = getTempDirForDoc({ projectDir, doc });
+        const [, ...destDirWithoutProjectArray] = destDir.split('/');
+        const destDirWithoutProject = destDirWithoutProjectArray.join('/');
 
         /**
          * Format mdx partials in codegenerated docs to use uppercase format of path
          * i.e. `accordion/mobile/accordionItem.mdx` -> `MobileAccordionItem`
          */
-        const mdxImportName = startCase(relativeDocPath).split(' ').join('');
+        const mdxImportName = startCase(destDirWithoutProject).split(' ').join('');
 
         /**
          * Turns absolute path for .docusaurus cache into path with webpack aliass.
          * i.e. `Users/katherinemartinez/apps/website/.docusaurus/docusaurus-plugin-docgen/accordion` -> `@docgen/accordion`
          */
-        const mdxImportPath = docFilePath.replace(pluginDir, alias);
+        const mdxImportPath = destDir.replace(pluginDir, alias);
 
         /** This displays the info about where to import the component or util from, with a "copy to clipboard" button */
-        const importBlockFrom = `${packageNameWithScope}/${projectRelativePath}`;
+        const importBlockFrom = path.join(packageNameWithScope, destDirWithoutProject);
 
         const data: DocOutputData = {
           alias,
@@ -176,35 +173,30 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<WriteFil
         /** Data from react-docgen-typescript */
         filesToWriteToDisk.push({
           data,
-          dest: path.join(docDir, 'data.js'),
+          dest: path.join(pluginDir, destDir, 'data.js'),
           template: docItemData,
         });
 
         /** MDX file with PropsTable react component. Passes in props from js file in .docusaurus cache */
         filesToWriteToDisk.push({
           data,
-          dest: path.join(docDir, 'api.mdx'),
+          dest: path.join(pluginDir, destDir, 'api.mdx'),
           template: docItemApi,
         });
 
         if (example) {
           filesToWriteToDisk.push({
             data: { example },
-            dest: path.join(docDir, 'example.mdx'),
+            dest: path.join(pluginDir, destDir, 'example.mdx'),
             template: docItemExample,
           });
         }
 
         filesToWriteToDisk.push({
           data,
-          dest: path.join(docDir, 'index.mdx'),
+          dest: path.join(pluginDir, destDir, 'index.mdx'),
           template: docItemIndex,
         });
-
-        if (docs[docMatch]) {
-          /** Associate each doc based on grouping from original config. */
-          docs[docMatch].add(data);
-        }
       },
     );
   });
@@ -276,14 +268,14 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<WriteFil
   logger.writingData();
 
   return [
-    ...filesToWriteToDisk,
+    ...uniqBy(filesToWriteToDisk, 'dest'),
     {
-      dest: `${pluginDir}/shared/sharedParentTypes.js`,
+      dest: `${pluginDir}/_types/sharedParentTypes.js`,
       data: { sharedParentTypes: groupedObjectTypes },
       template: sharedParentTypes,
     },
     {
-      dest: `${pluginDir}/shared/sharedTypeAliases.js`,
+      dest: `${pluginDir}/_types/sharedTypeAliases.js`,
       data: { sharedTypeAliases: Object.fromEntries(sharedTypeAliasesCache) },
       template: sharedTypeAliases,
     },

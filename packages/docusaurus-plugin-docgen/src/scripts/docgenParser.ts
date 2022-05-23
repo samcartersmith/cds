@@ -23,7 +23,7 @@ export const sharedTypeAliasesCache: Map<string, unknown> = new Map();
 /* -------------------------------------------------------------------------- */
 
 export function formatString(str: string) {
-  return str.replace(/['"]+/g, '').replace(/\n/g, ' ').replace(/`/g, '');
+  return str.replaceAll(/['"]+/g, '').replaceAll(/\n/g, ' ').replaceAll(/`/g, '');
 }
 
 function getDocParent({ declarations = [], parent }: PropItem) {
@@ -112,13 +112,10 @@ function preProcessDoc(doc: Doc): PreProcessedDoc {
 /*                                   Process                                  */
 /* -------------------------------------------------------------------------- */
 function processPropItem(prop: PreProcessedPropItem | ProcessedPropItem): ProcessedPropItem {
-  const propCopy = { ...prop };
-  if (!propCopy.tags) {
-    delete propCopy.tags;
-  }
-
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  const { declarations: _declarations, tags: _tags, ...restOfProp } = prop;
   return {
-    ...propCopy,
+    ...restOfProp,
     type: formatPropItemType(typeof prop.type === 'string' ? prop.type : prop.type.raw),
   };
 }
@@ -157,11 +154,8 @@ export function docgenParser({
 }: DocgenParamsParams): ProcessedDoc[] {
   const filesToParse = params.files.map((file) => path.join(params.projectDir, file));
 
-  function addToSharedTypeAliases(prop: PreProcessedPropItem) {
-    const { raw: alias, value } = prop.type;
-    const processedValue = formatString(value.map((item) => item.value).join(' | '));
-    sharedTypeAliasesCache.set(alias, formatPropItemType(processedValue));
-    return { ...prop, type: alias };
+  function addToSharedTypeAliases(alias: string, value: string) {
+    sharedTypeAliasesCache.set(alias, formatPropItemType(value));
   }
 
   /** React docgen integration */

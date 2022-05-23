@@ -10,13 +10,6 @@ const sourceFiles = require('./sourceFiles');
 module.exports = {
   alias: '@docgen',
   /**
-   * Directory to output codegenerated doc scaffolds.
-   * Path should be relative path to root of docusaurus project.
-   * If no path is provided that plugin will not output any files outside of
-   * .docusaurus/docusaurus-plugin-docgen plugin directory.
-   */
-  docsDir: 'docs/debug',
-  /**
    * Determines if plugin should run. If plugin is too slow in development,
    * you can either increase watchInterval or set this to false.
    * @default true
@@ -32,13 +25,6 @@ module.exports = {
     path.join(__dirname, '../../../packages/mobile/tsconfig.json'),
     path.join(__dirname, '../../../packages/common/tsconfig.json'),
   ],
-  /**
-   * Determines if plugin should overwrite codegenerated doc scaffolds on subsequent runs.
-   * This is useful if you only want to jumpstart docs, but plan to re-organize layout.
-   * For those usecases you can set to true for first run, then false after. You can also include
-   * an array of files that you want to force overriding on each run.
-   */
-  forceDocs: false,
   formatPackageName: (name) => {
     return name.replace('cds-', '');
   },
@@ -55,5 +41,5 @@ module.exports = {
    * This is typically triggered via on save of project file.
    * @default 5
    */
-  watchInterval: 3,
+  watchInterval: 20,
 };

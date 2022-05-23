@@ -13,7 +13,7 @@ const shouldAddToParentTypes = require('./shouldAddToParentTypes');
  * 3. show prop in parentTypes UI - call addToParentTypes with the prop in processDoc
  * 4. hide prop in the props table + show prop in parentTypes UI - do both #2 and #3 above
  */
-function onProcessDoc(doc, { addToSharedTypeAliases, addToParentTypes }) {
+function onProcessDoc(doc, { addToSharedTypeAliases, addToParentTypes, formatString }) {
   const props = doc.props
     .map((prop) => {
       let parentType = prop.parent;
@@ -30,7 +30,10 @@ function onProcessDoc(doc, { addToSharedTypeAliases, addToParentTypes }) {
     })
     .map((prop) => {
       if (isTypeAlias(prop)) {
-        return addToSharedTypeAliases(prop);
+        const { raw: alias, value } = prop.type;
+        const formattedValue = formatString(value.map((item) => item.value).join(' | '));
+        addToSharedTypeAliases(alias, formattedValue);
+        return { ...prop, type: alias };
       }
       return { ...prop, type: prop.type.raw };
     })

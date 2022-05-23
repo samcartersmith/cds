@@ -168,7 +168,7 @@ type OnParseDocHelpers = {
    * the docs noisy. We also avoid making docs too sparse had we only shown the alias without any way to
    * view the actual underlying value.
    */
-  addToSharedTypeAliases: (prop: PreProcessedPropItem) => ProcessedPropItem;
+  addToSharedTypeAliases: (alias: string, value: string) => void;
   /**
    * Automatically excluding all types which come from node_modules can be problematic especially
    * since we extend core functionality from html and react-native.

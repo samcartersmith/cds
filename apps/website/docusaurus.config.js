@@ -7,7 +7,7 @@ const sharedExclusions = ['**/_*.{js,jsx,ts,tsx,md,mdx}'];
 
 const preRefreshOptions = {
   docs: {
-    exclude: [...sharedExclusions, 'debug/**/*', 'home/**/*'],
+    exclude: [...sharedExclusions, 'home/**/*'],
     breadcrumbs: true,
     routeBasePath: '/',
     sidebarPath: require.resolve('./sidebars.js'),
@@ -41,6 +41,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'frontend',
   projectName: 'cds',
+  trailingSlash: false,
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
