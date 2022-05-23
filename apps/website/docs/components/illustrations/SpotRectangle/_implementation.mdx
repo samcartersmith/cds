@@ -4,15 +4,15 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
-### dimension
+### dimension <Badge variant="deprecated" order={1} />
 
-Size of illustration given that the size constraint is available in Figma
+HeroSquare Default: 240x240 SpotSquare Default: 120x120 (120x120 is being deprecated. Please use 96x96 instead. The default size of SpotSquare will be 96x96 in the next major release) Pictogram Default: 48x48. The size 96x96 is soon to be deprecated. Please use 64x64 instead. SpotRectangle Default: 240x120
 
 <ApiDetails
   componentName="SpotRectangle"
   propertyName="dimension"
   required={false}
-  defaultValue="pictogram - 48x48, heroSquare - 240x240, spotRectangle - 240x120, spotSquare 120x120"
+  defaultValue=""
   mobileOptions={['240x120']}
   webOptions={['240x120']}
 />
