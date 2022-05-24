@@ -56,7 +56,7 @@ yarn add @cbhq/cds-mobile@^0.44.1 # if using mobile components
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { DevicePreferencesProvider } from '@cbhq/cds-web/system/DevicePreferencesProvider';
 
-export const App = () => {
+export const App = () => (
   <DevicePreferencesProvider>
     <ThemeProvider>
       <ErrorBoundary>
@@ -64,7 +64,7 @@ export const App = () => {
       </ErrorBoundary>
     </ThemeProvider>
   </DevicePreferencesProvider>;
-};
+);
 ```
 
 3. Ensure that your html has `<meta charset="UTF-8">` which is required for the icon font in CDS web.
