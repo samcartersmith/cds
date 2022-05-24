@@ -6,25 +6,25 @@ import { RemoteImageGroupBaseProps } from '../types/RemoteImageGroupBaseProps';
 import { assets, squareAssets } from './data/assets';
 import { avatarSizes } from './data/avatars';
 
-type RemoteImageBuilder = {
+export type RemoteImageBuilderTypes = {
+  source: string;
+} & RemoteImageBaseProps;
+
+type RemoteImageGroupBuilder = {
   RemoteImageGroup: ComponentType<RemoteImageGroupBaseProps>;
-  RemoteImage: ComponentType<
-    RemoteImageBaseProps & {
-      source: string;
-    }
-  >;
+  RemoteImage: ComponentType<RemoteImageBuilderTypes>;
   VStack: ComponentType<BoxBaseProps & StackBaseProps>;
   TextLabel1: ComponentType<TextBaseProps>;
   TextBody: ComponentType<TextBaseProps>;
 };
 
-export const remoteImageBuilder = ({
+export const remoteImageGroupBuilder = ({
   RemoteImageGroup,
   RemoteImage,
   VStack,
   TextLabel1,
   TextBody,
-}: RemoteImageBuilder) => {
+}: RemoteImageGroupBuilder) => {
   const Circle = () => (
     <>
       <TextLabel1>Circle Custom Size: 32x32. Test that default max = 4.</TextLabel1>
@@ -73,7 +73,7 @@ export const remoteImageBuilder = ({
         {avatarSizes.map((avatarSize) => (
           <>
             {maxSizes.map((maxSize) => (
-              <>
+              <VStack key={`remote-image-group-circle-max-size-${maxSize}-${avatarSize}`}>
                 <TextLabel1>
                   Max Size to Truncate: {maxSize}, RemoteImage size: {avatarSize}
                 </TextLabel1>
@@ -90,7 +90,7 @@ export const remoteImageBuilder = ({
                   <RemoteImage source={assets.dai.imageUrl} />
                   <RemoteImage source={assets.btc.imageUrl} />
                 </RemoteImageGroup>
-              </>
+              </VStack>
             ))}
           </>
         ))}
@@ -158,7 +158,7 @@ export const remoteImageBuilder = ({
         {avatarSizes.map((avatarSize) => (
           <>
             {maxSizes.map((maxSize) => (
-              <>
+              <VStack key={`remote-image-group-squircle-max-size-${maxSize}-${avatarSize}`}>
                 <TextLabel1>
                   Max Size to Truncate: {maxSize}, RemoteImage size: {avatarSize}
                 </TextLabel1>
@@ -168,7 +168,7 @@ export const remoteImageBuilder = ({
                   <RemoteImage source={squareAssets.human2} />
                   <RemoteImage source={squareAssets.human1} />
                 </RemoteImageGroup>
-              </>
+              </VStack>
             ))}
           </>
         ))}

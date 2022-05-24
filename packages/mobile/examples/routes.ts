@@ -46,6 +46,7 @@ export const routes = {
   ProgressCircle: () => require('../visualizations/__stories__/ProgressCircle.stories').default,
   RadioGroup: () => require('../controls/__stories__/RadioGroup.stories').default,
   RemoteImage: () => require('../media/__stories__/RemoteImage.stories').default,
+  RemoteImageGroup: () => require('../media/__stories__/RemoteImageGroup.stories').default,
   SearchInput: () => require('../controls/__stories__/SearchInput.stories').default,
   Select: () => require('../controls/__stories__/Select.stories').default,
   SelectOption: () => require('../controls/__stories__/SelectOption.stories').default,

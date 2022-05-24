@@ -1,4 +1,4 @@
-import { remoteImageBuilder } from '@cbhq/cds-common/internal/remoteImageGroupBuilder';
+import { remoteImageGroupBuilder } from '@cbhq/cds-common/internal/remoteImageGroupBuilder';
 
 import { VStack } from '../../layout';
 import { TextBody, TextLabel1 } from '../../typography';
@@ -10,7 +10,7 @@ export default {
   title: 'Core Components/RemoteImage/RemoteImageGroup',
 };
 
-export const { All } = remoteImageBuilder({
+export const { All } = remoteImageGroupBuilder({
   RemoteImageGroup,
   RemoteImage,
   VStack,

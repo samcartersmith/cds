@@ -1,11 +1,12 @@
 import React, { Children, isValidElement, useMemo } from 'react';
+import { StyleSheet, Text } from 'react-native';
 import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
 import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusAlias';
 import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
 import { RemoteImageGroupBaseProps } from '@cbhq/cds-common/types/RemoteImageGroupBaseProps';
 
+import { usePalette } from '../hooks/usePalette';
 import { Box } from '../layout/Box';
-import { palette } from '../tokens';
 import { TextBody } from '../typography';
 import { useTypographyStyles } from '../typography/useTypographyStyles';
 
@@ -18,6 +19,7 @@ export const RemoteImageGroup = ({
   ...props
 }: RemoteImageGroupBaseProps) => {
   const arrayChildren = Children.toArray(children);
+  const palette = usePalette();
 
   const borderRadius = useShapeToBorderRadiusAlias(shape);
   const sizeIsString = typeof size === 'string';
@@ -44,18 +46,17 @@ export const RemoteImageGroup = ({
   // Dynamically calculate font size based on size of remote image
   // so smaller excess image gets a smaller text, and larger excess
   // image gets a larger text
-  const typographyStyles = useTypographyStyles('body');
-
-  const fontSizeStyle = useMemo(() => {
+  const { fontFamily } = useTypographyStyles('body');
+  const typographyStyles = useMemo(() => {
     return {
-      fontSize: (sizeIsNumber ? size : avatarSize) * 0.4,
+      fontFamily,
       color: palette.foreground,
+      fontSize: (sizeIsNumber ? size : avatarSize) * 0.4,
     };
-  }, [sizeIsNumber, size, avatarSize]);
+  }, [fontFamily, palette.foreground, sizeIsNumber, size, avatarSize]);
 
   return (
     <Box
-      display="flex"
       alignItems="center"
       flexDirection="row-reverse"
       justifyContent="flex-end"
@@ -74,9 +75,9 @@ export const RemoteImageGroup = ({
         >
           {/** We don't want the font size to infinitely scale, so we have a stop gap */}
           {sizeIsNumber && size > normalScaleMap.l ? (
-            <TextBody as="p">{`+${excess}`}</TextBody>
+            <TextBody>{`+${excess}`}</TextBody>
           ) : (
-            <p className={typographyStyles} style={fontSizeStyle}>{`+${excess}`}</p>
+            <Text style={[typographyStyles, styles.centerText]}>{`+${excess}`}</Text>
           )}
         </Box>
       )}
@@ -124,3 +125,8 @@ export const RemoteImageGroup = ({
     </Box>
   );
 };
+const styles = StyleSheet.create({
+  centerText: {
+    textAlign: 'center',
+  },
+});

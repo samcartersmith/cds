@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build.android": "nx run mobile-playground:android",
-    "build.ios": "nx run mobile-playground:ios",
+    "build.android": "nx run mobile-playground:build-android",
+    "build.ios": "nx run mobile-playground:build-ios",
     "clean.android": "nx run mobile-playground:start-android --clean",
     "clean.ios": "nx run mobile-playground:start-ios --clean",
     "format": "nx run mobile-playground:format",

@@ -9,7 +9,9 @@ import {
 } from '@cbhq/cds-common';
 import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
 import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
+import { getRemoteImageWidthAndHeight } from '@cbhq/cds-common/utils/getRemoteImageWidthAndHeight';
 
+import { palette } from '../tokens';
 import { cx } from '../utils/linaria';
 
 const resizeModes = {
@@ -85,21 +87,27 @@ export const RemoteImage = memo(function RemoteImage({
   resizeMode = 'cover',
   testID,
   size,
+  borderColor,
   ...props
 }: BaseRemoteImageProps) {
   const borderRadius = useShapeToBorderRadiusSize(shape);
   const avatarSize = useAvatarSize(size ?? 'm');
 
-  const finalWidth = size !== undefined ? avatarSize : width;
-  const finalHeight = size !== undefined ? avatarSize : height;
+  const { width: finalWidth, height: finalHeight } = getRemoteImageWidthAndHeight({
+    size,
+    width,
+    height,
+    avatarSize,
+  });
 
   const styles = useMemo(
     () =>
       ({
         borderRadius,
         '--image-aspect-ratio': aspectRatio ? aspectRatio.join(' / ') : undefined,
+        border: borderColor ? `1px solid ${palette[borderColor]}` : undefined,
       } as const),
-    [aspectRatio, borderRadius],
+    [aspectRatio, borderColor, borderRadius],
   );
 
   return (

@@ -30,6 +30,8 @@ If value is `true` then style prop can take animated values.
 
 ### aspectRatio
 
+Scale image based on this aspect-ratio
+
 <ApiDetails
   componentName="RemoteImage"
   propertyName="aspectRatio"
@@ -42,6 +44,37 @@ If value is `true` then style prop can take animated values.
     'readonly [number, number] & [number, number]',
   ]}
   webOptions={['[number, number]', 'readonly [number, number]']}
+/>
+
+### borderColor
+
+Adds a custom border color from the palette
+
+<ApiDetails
+  componentName="RemoteImage"
+  propertyName="borderColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+  webOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
 />
 
 ### dangerouslySetClassName <Badge variant="web" />
@@ -75,6 +108,8 @@ This is a migration escape hatch. It is not intended to be used normally.
 />
 
 ### height
+
+Height of RemoteImage. Height takes precedence over size
 
 <ApiDetails
   componentName="RemoteImage"
@@ -111,11 +146,13 @@ Opacity of element
 
 ### shape
 
+Shape of RemoteImage
+
 <ApiDetails
   componentName="RemoteImage"
   propertyName="shape"
   required={false}
-  defaultValue=""
+  defaultValue="square"
   mobileOptions={['circle', 'rectangle', 'square', 'squircle']}
   webOptions={['circle', 'rectangle', 'square', 'squircle']}
 />
@@ -135,11 +172,13 @@ Fill in transparent background with inverted background color and add border. Th
 
 ### size
 
+Size for a given RemoteImage. If width or height is not defined, it will set size = m as default
+
 <ApiDetails
   componentName="RemoteImage"
   propertyName="size"
   required={false}
-  defaultValue=""
+  defaultValue="m"
   mobileOptions={['l', 'm', 'xl', 'xxl', 'xxxl']}
   webOptions={['l', 'm', 'xl', 'xxl', 'xxxl']}
 />
@@ -151,7 +190,7 @@ Fill in transparent background with inverted background color and add border. Th
   propertyName="source"
   required={true}
   defaultValue=""
-  mobileOptions={['ImageURISource', 'ImageURISource[]', 'number']}
+  mobileOptions={['ImageURISource', 'ImageURISource[]', 'number', 'string']}
   webOptions={[]}
 />
 
@@ -169,6 +208,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
 />
 
 ### width
+
+Width of RemoteImage. Width takes precedence over size
 
 <ApiDetails
   componentName="RemoteImage"
