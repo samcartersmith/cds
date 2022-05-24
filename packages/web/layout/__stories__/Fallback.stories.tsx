@@ -29,3 +29,7 @@ export const Basic = () => {
     </VStack>
   );
 };
+
+export const HeightAsCSSVar = () => {
+  return <Fallback width={100} height="var(--title3-line-height)" />;
+};

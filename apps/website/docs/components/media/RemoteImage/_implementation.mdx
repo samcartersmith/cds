@@ -41,12 +41,7 @@ If value is `true` then style prop can take animated values.
     'readonly [number, number]',
     'readonly [number, number] & [number, number]',
   ]}
-  webOptions={[
-    '[number, number]',
-    '[number, number] & readonly [number, number]',
-    'readonly [number, number]',
-    'readonly [number, number] & [number, number]',
-  ]}
+  webOptions={['[number, number]', 'readonly [number, number]']}
 />
 
 ### dangerouslySetClassName <Badge variant="web" />
@@ -136,6 +131,17 @@ Fill in transparent background with inverted background color and add border. Th
   defaultValue=""
   mobileOptions={['false', 'true']}
   webOptions={[]}
+/>
+
+### size
+
+<ApiDetails
+  componentName="RemoteImage"
+  propertyName="size"
+  required={false}
+  defaultValue=""
+  mobileOptions={['l', 'm', 'xl', 'xxl', 'xxxl']}
+  webOptions={['l', 'm', 'xl', 'xxl', 'xxxl']}
 />
 
 ### source

@@ -52,15 +52,16 @@ export const Fallback = memo(function Fallback({
   ...props
 }: FallbackProps) {
   const { width, borderRadius } = useFallbackShape(shape, baseWidth);
+  const backgroundSizeHeight = typeof height === 'number' ? `${height}px` : height;
 
   const style = useMemo(
     () => ({
       width: percentage ? `100%` : width,
-      backgroundSize: `600px ${height}px`,
+      backgroundSize: `600px ${backgroundSizeHeight}`,
       height,
       borderRadius,
     }),
-    [height, borderRadius, width, percentage],
+    [percentage, width, backgroundSizeHeight, height, borderRadius],
   );
 
   return (
