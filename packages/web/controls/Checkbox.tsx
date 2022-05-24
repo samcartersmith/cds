@@ -37,7 +37,7 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
 export const Checkbox = memo(CheckboxWithRef) as typeof CheckboxWithRef &
   React.MemoExoticComponent<typeof CheckboxWithRef>;
 
-const FOCUS_PADDING = `calc(-1 (4px + ${borderWidth.checkbox}))`;
+const FOCUS_PADDING = `calc(-1 * (4px + ${borderWidth.checkbox}))`;
 
 const checkbox = css`
   width: ${control.checkboxSize};
