@@ -1,7 +1,7 @@
 import { css } from 'linaria';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
-import { spacing } from '../../tokens';
+import { borderRadius, spacing } from '../../tokens';
 import { cx } from '../../utils/linaria';
 
 // Temp breakpoints
@@ -51,7 +51,20 @@ export const modalResponsive = css`
       bottom: 0;
       right: 0;
       left: 0;
-      border-radius: 0;
+    }
+  }
+`;
+
+export const modalDialogClassName = css`
+  && {
+    border-radius: ${borderRadius.rounded};
+  }
+`;
+
+export const modalDialogResponsiveClassName = css`
+  && {
+    @media only screen and (${devices.phone}) {
+      border-radius: ${borderRadius.roundedNone};
     }
   }
 `;

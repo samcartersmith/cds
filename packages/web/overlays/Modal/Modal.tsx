@@ -15,7 +15,12 @@ import { useMotionProps } from '../../motion/useMotionProps';
 import { cx } from '../../utils/linaria';
 import { FocusTrap } from '../FocusTrap';
 
-import { modalDefaultClassName, modalResponsiveClassName } from './modalStyles';
+import {
+  modalDefaultClassName,
+  modalDialogClassName,
+  modalDialogResponsiveClassName,
+  modalResponsiveClassName,
+} from './modalStyles';
 import { ModalWrapper, ModalWrapperProps } from './ModalWrapper';
 
 export type ModalProps = {
@@ -117,7 +122,10 @@ export const Modal = memo(
               background="background"
               width={dangerouslySetWidth ?? '100%'}
               overflow="hidden"
-              borderRadius="standard"
+              dangerouslySetClassName={cx(
+                modalDialogClassName,
+                !dangerouslyDisableResponsiveness && modalDialogResponsiveClassName,
+              )}
             >
               <ModalParentContext.Provider value={modalData}>
                 {typeof children === 'function' ? children(renderChildrenProps) : children}
