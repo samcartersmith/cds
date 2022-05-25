@@ -35,5 +35,8 @@
   },
   "react-native": "./index.ts",
   "main": "index",
-  "typings": "index.d.ts"
+  "typings": "index.d.ts",
+  "devDependencies": {
+    "jest-date-mock": "^1.0.8"
+  }
 }

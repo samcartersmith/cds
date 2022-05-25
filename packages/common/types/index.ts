@@ -1,6 +1,7 @@
 // codegen:start {preset: barrel, include: ./*.ts}
 export * from './AccordionBaseProps';
 export * from './AlertBaseProps';
+export * from './AnimatedCaretBaseProp';
 export * from './AvatarBaseProps';
 export * from './AvatarSize';
 export * from './BadgeBaseProps';

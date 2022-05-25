@@ -8,6 +8,7 @@
 export const routes = {
   Accordion: () => require('../accordion/__stories__/Accordion.stories').default,
   Alert: () => require('../overlays/__stories__/Alert.stories').default,
+  AnimatedCaret: () => require('../motion/__stories__/AnimatedCaret.stories').default,
   Avatar: () => require('../media/__stories__/Avatar.stories').default,
   AvatarButton: () => require('../buttons/__stories__/AvatarButton.stories').default,
   Box: () => require('../layout/__stories__/Box.stories').default,

@@ -1,6 +1,10 @@
 import React, { ForwardedRef, forwardRef, memo, useCallback } from 'react';
 import { View } from 'react-native';
 import { useAccordionParent } from '@cbhq/cds-common/accordion/AccordionParentContext';
+import {
+  accordionIconHiddenRotate,
+  accordionIconVisibleRotate,
+} from '@cbhq/cds-common/animation/accordion';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { listHeight } from '@cbhq/cds-common/tokens/cell';
@@ -11,13 +15,10 @@ import type {
   AccordionTitleBaseProps,
 } from '@cbhq/cds-common/types';
 
-import { useToggleAnimation } from '../collapsible/useToggleAnimation';
-import { Icon } from '../icons';
 import { Box, HStack, VStack } from '../layout';
+import { AnimatedCaret } from '../motion/AnimatedCaret';
 import { Pressable } from '../system/Pressable';
 import { TextBody, TextHeadline } from '../typography';
-
-import { useAccordionIconAnimation } from './useAccordionIconAnimation';
 
 export type AccordionHeaderProps = AccordionHeaderBaseProps;
 
@@ -33,18 +34,9 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
 ));
 
 export const AccordionIcon = memo(({ collapsed }: AccordionIconBaseProps) => {
-  const { animatedStyles, animateIn, animateOut } = useAccordionIconAnimation();
-  useToggleAnimation({ on: !collapsed, animateIn, animateOut });
-
   return (
     <Box justifyContent="flex-end">
-      <Icon
-        name="caretDown"
-        size="s"
-        color="foregroundMuted"
-        animated
-        dangerouslySetStyle={animatedStyles}
-      />
+      <AnimatedCaret rotate={collapsed ? accordionIconHiddenRotate : accordionIconVisibleRotate} />
     </Box>
   );
 });

@@ -2173,6 +2173,7 @@ __metadata:
     d3-color: ^2.0.0
     d3-scale: ^3.3.0
     d3-shape: ^2.1.0
+    jest-date-mock: ^1.0.8
     lodash: ^4.17.21
     react-is: ^17.0.2
     type-fest: ^1.2.0
@@ -18353,6 +18354,13 @@ __metadata:
     ts-node:
       optional: true
   checksum: 1188fd46c0ed78cbe3175eb9ad6712ccf74a74be33d9f0d748e147c107f0889f8b701fbff1567f31836ae18597dacdc43d6a8fc30dd34ade6c9229cc6c7cb82d
+  languageName: node
+  linkType: hard
+
+"jest-date-mock@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "jest-date-mock@npm:1.0.8"
+  checksum: 7b012870440b0df742d0b651435b91625dbbf02d916633a0c70c7deb5d5087f9aadc59847602312368826325909e70e95cd412896a0c9ee1d5ac382000bf5ef9
   languageName: node
   linkType: hard
 
