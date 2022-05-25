@@ -3,6 +3,7 @@ import { StyleSheet, Text } from 'react-native';
 import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
 import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusAlias';
 import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
+import { RemoteImageBaseProps } from '@cbhq/cds-common/types/RemoteImageBaseProps';
 import { RemoteImageGroupBaseProps } from '@cbhq/cds-common/types/RemoteImageGroupBaseProps';
 
 import { usePalette } from '../hooks/usePalette';
@@ -12,7 +13,7 @@ import { useTypographyStyles } from '../typography/useTypographyStyles';
 
 export const RemoteImageGroup = ({
   children,
-  size,
+  size = 'm',
   max = 4,
   shape = 'circle',
   testID,
@@ -75,9 +76,12 @@ export const RemoteImageGroup = ({
         >
           {/** We don't want the font size to infinitely scale, so we have a stop gap */}
           {sizeIsNumber && size > normalScaleMap.l ? (
-            <TextBody>{`+${excess}`}</TextBody>
+            <TextBody testID={`${testID}-excess-text`}>{`+${excess}`}</TextBody>
           ) : (
-            <Text style={[typographyStyles, styles.centerText]}>{`+${excess}`}</Text>
+            <Text
+              testID={`${testID}-excess-text`}
+              style={[typographyStyles, styles.centerText]}
+            >{`+${excess}`}</Text>
           )}
         </Box>
       )}
@@ -85,10 +89,16 @@ export const RemoteImageGroup = ({
         const isFirstRemoteImage = index === 0;
 
         if (isValidElement(child)) {
-          let overrideChildProps = {};
+          let overrideChildProps: {
+            testID: string;
+          } & Pick<RemoteImageBaseProps, 'height' | 'width'> &
+            Pick<RemoteImageGroupBaseProps, 'size' | 'shape'> = {
+            testID: `${testID}-image-${index}`,
+          };
 
           if (sizeIsString) {
             overrideChildProps = {
+              ...overrideChildProps,
               size,
             };
           } else if (sizeIsNumber) {
@@ -96,6 +106,7 @@ export const RemoteImageGroup = ({
             // size from the above statement. Its either
             // use this size or the size above
             overrideChildProps = {
+              ...overrideChildProps,
               width: size,
               height: size,
             };
@@ -103,6 +114,7 @@ export const RemoteImageGroup = ({
             // No size was set, carry the default
             // avatarSize of m to child
             overrideChildProps = {
+              ...overrideChildProps,
               width: avatarSize,
               height: avatarSize,
             };
@@ -117,7 +129,11 @@ export const RemoteImageGroup = ({
 
           const clonedChild = React.cloneElement(child, overrideChildProps);
 
-          return <Box offsetEnd={isFirstRemoteImage ? 0 : 0.5}>{clonedChild}</Box>;
+          return (
+            <Box testID={`${testID}-inner-box-${index}`} offsetEnd={isFirstRemoteImage ? 0 : 0.5}>
+              {clonedChild}
+            </Box>
+          );
         }
 
         return null;

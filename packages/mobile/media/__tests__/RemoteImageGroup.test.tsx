@@ -1,0 +1,145 @@
+import { render, waitFor } from '@testing-library/react-native';
+import { normalScaleMap } from '@cbhq/cds-common';
+import { RemoteImageGroupBaseProps } from '@cbhq/cds-common/types/RemoteImageGroupBaseProps';
+
+import * as scaleStyles from '../../styles/scale';
+import { RemoteImage } from '../RemoteImage';
+import { RemoteImageGroup } from '../RemoteImageGroup';
+
+const src = 'https://images.coinbase.com/avatar?s=56';
+const TEST_ID = 'remote-image-test-id';
+const remoteImageIndices = [0, 1, 2, 3];
+
+const MockRemoteImageGroup = ({ ...props }: RemoteImageGroupBaseProps) => (
+  <RemoteImageGroup testID={TEST_ID} shape="circle" {...props}>
+    {remoteImageIndices.map((index) => (
+      <RemoteImage key={`remote-image-child-${index}`} source={src} />
+    ))}
+  </RemoteImageGroup>
+);
+
+describe('RemoteImageGroup', () => {
+  it('renders RemoteImageGroup', () => {
+    const { getByTestId } = render(<MockRemoteImageGroup />);
+
+    const imageWrapper = getByTestId(TEST_ID);
+
+    expect(imageWrapper).toBeTruthy();
+  });
+
+  it('Margin are correctly applied. First one has 0, and the following ones will have 0.5', () => {
+    const { getByTestId } = render(<MockRemoteImageGroup />);
+
+    const remoteImage1 = getByTestId(`${TEST_ID}-inner-box-0`);
+
+    expect(remoteImage1).toHaveStyle({
+      marginRight: -0,
+    });
+
+    remoteImageIndices.slice(1).forEach((index) => {
+      const imageChildren = getByTestId(`${TEST_ID}-inner-box-${index}`);
+
+      expect(imageChildren).toHaveStyle({
+        marginRight: -scaleStyles.xxLarge.spacing[0.5],
+      });
+    });
+  });
+
+  it('default size = m', () => {
+    const { getByTestId } = render(<MockRemoteImageGroup />);
+
+    remoteImageIndices.forEach((index) => {
+      const remoteImage = getByTestId(`${TEST_ID}-image-${index}`);
+
+      expect(remoteImage).toHaveStyle({
+        width: normalScaleMap.m,
+        height: normalScaleMap.m,
+      });
+    });
+  });
+
+  it('default shape = circle', async () => {
+    const { getByTestId } = render(<MockRemoteImageGroup />);
+
+    await waitFor(() => getByTestId(TEST_ID));
+
+    remoteImageIndices.forEach((index) => {
+      const remoteImage = getByTestId(`${TEST_ID}-image-${index}`);
+
+      expect(remoteImage).toHaveStyle({
+        borderRadius: 100,
+      });
+    });
+  });
+
+  it('default max = 4', () => {
+    const { queryByTestId } = render(<MockRemoteImageGroup />);
+
+    // There are 4 remote images, if the default was max = 4,
+    // there shall be no need for excess text
+    expect(queryByTestId(`${TEST_ID}-excess-text`)).toBeNull();
+  });
+
+  it('size={30} prop works as expected', () => {
+    const { getByTestId } = render(<MockRemoteImageGroup size={30} />);
+
+    remoteImageIndices.forEach((index) => {
+      const remoteImage = getByTestId(`${TEST_ID}-image-${index}`);
+
+      expect(remoteImage).toHaveStyle({
+        width: 30,
+        height: 30,
+      });
+    });
+  });
+
+  it('size={l} prop works as expected', () => {
+    const { getByTestId } = render(<MockRemoteImageGroup size="l" />);
+
+    remoteImageIndices.forEach((index) => {
+      const remoteImage = getByTestId(`${TEST_ID}-image-${index}`);
+
+      expect(remoteImage).toHaveStyle({
+        width: normalScaleMap.l,
+        height: normalScaleMap.l,
+      });
+    });
+  });
+
+  it('excess text shows up correctly', () => {
+    const { getByText } = render(<MockRemoteImageGroup max={2} size={50} />);
+    expect(getByText('+2')).toBeTruthy();
+  });
+
+  it('fontSize stops growing if size > 32', () => {
+    const { getByTestId } = render(<MockRemoteImageGroup max={2} size={50} />);
+
+    const excessText = getByTestId(`${TEST_ID}-excess-text`);
+
+    expect(excessText).toHaveStyle({
+      fontSize: scaleStyles.large.typography.body.fontSize,
+      fontFamily: scaleStyles.large.typography.body.fontFamily,
+    });
+  });
+
+  it('fontSize is proportional to dimension of RemoteImage for avatarSizes={m}', () => {
+    const { getByTestId } = render(<MockRemoteImageGroup max={2} />);
+
+    const excessText = getByTestId(`${TEST_ID}-excess-text`);
+
+    expect(excessText).toHaveStyle({
+      fontSize: normalScaleMap.m * 0.4,
+    });
+  });
+
+  it('fontSize is proportional to dimension of RemoteImage for number sizes', () => {
+    const LOCAL_SIZE = 27;
+    const { getByTestId } = render(<MockRemoteImageGroup max={2} size={LOCAL_SIZE} />);
+
+    const excessText = getByTestId(`${TEST_ID}-excess-text`);
+
+    expect(excessText).toHaveStyle({
+      fontSize: LOCAL_SIZE * 0.4,
+    });
+  });
+});
