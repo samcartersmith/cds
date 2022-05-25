@@ -85,7 +85,7 @@ const createSvgXML = (data: {
 }) => {
   const { outPath, svgStr, fileName, fileStatus } = data;
 
-  fs.writeFile(outPath, `/* eslint-disable */ module.exports = {content:\`${svgStr}\`} `, (err) => {
+  fs.writeFile(outPath, `module.exports = {content:\`${svgStr}\`} `, (err) => {
     if (err) {
       console.error(err);
     } else {
