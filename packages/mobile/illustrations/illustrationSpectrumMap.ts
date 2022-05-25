@@ -46,6 +46,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/borrowLimitsAddressed-1').content,
     dark: () => require('./images/dark/borrowLimitsAddressed-1').content,
   },
+  bridgingSpotSquare: {
+    light: () => require('./images/light/bridgingSpotSquare-0').content,
+    dark: () => require('./images/dark/bridgingSpotSquare-0').content,
+  },
   bullishCase: {
     light: () => require('./images/light/bullishCase-1').content,
     dark: () => require('./images/dark/bullishCase-1').content,
@@ -146,6 +150,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/fileYourCryptoTaxesOther-2').content,
     dark: () => require('./images/dark/fileYourCryptoTaxesOther-2').content,
   },
+  frameEmpty: {
+    light: () => require('./images/light/frameEmpty-0').content,
+    dark: () => require('./images/dark/frameEmpty-0').content,
+  },
   giftBoxCrypto: {
     light: () => require('./images/light/giftBoxCrypto-1').content,
     dark: () => require('./images/dark/giftBoxCrypto-0').content,
@@ -198,6 +206,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/nft-0').content,
     dark: () => require('./images/dark/nft-0').content,
   },
+  nftTag: {
+    light: () => require('./images/light/nftTag-0').content,
+    dark: () => require('./images/dark/nftTag-0').content,
+  },
   nuxChecklist: {
     light: () => require('./images/light/nuxChecklist-1').content,
     dark: () => require('./images/dark/nuxChecklist-1').content,
@@ -217,6 +229,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   nuxRecurringBuys: {
     light: () => require('./images/light/nuxRecurringBuys-2').content,
     dark: () => require('./images/dark/nuxRecurringBuys-2').content,
+  },
+  offersEmpty: {
+    light: () => require('./images/light/offersEmpty-0').content,
+    dark: () => require('./images/dark/offersEmpty-0').content,
   },
   performanceSpotSquare: {
     light: () => require('./images/light/performanceSpotSquare-0').content,
@@ -321,6 +337,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   bridging: {
     light: () => require('./images/light/bridging-0').content,
     dark: () => require('./images/dark/bridging-0').content,
+  },
+  browserHistory: {
+    light: () => require('./images/light/browserHistory-0').content,
+    dark: () => require('./images/dark/browserHistory-0').content,
   },
   cardWaitlist: {
     light: () => require('./images/light/cardWaitlist-1').content,
@@ -1266,6 +1286,18 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/recurringReward-1').content,
     dark: () => require('./images/dark/recurringReward-1').content,
   },
+  referralsAvatars: {
+    light: () => require('./images/light/referralsAvatars-0').content,
+    dark: () => require('./images/dark/referralsAvatars-0').content,
+  },
+  referralsBitcoin: {
+    light: () => require('./images/light/referralsBitcoin-0').content,
+    dark: () => require('./images/dark/referralsBitcoin-0').content,
+  },
+  referralsWalletPhones: {
+    light: () => require('./images/light/referralsWalletPhones-0').content,
+    dark: () => require('./images/dark/referralsWalletPhones-0').content,
+  },
   remittances: {
     light: () => require('./images/light/remittances-1').content,
     dark: () => require('./images/dark/remittances-0').content,
@@ -1477,6 +1509,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   '2fa': {
     light: () => require('./images/light/2fa-1').content,
     dark: () => require('./images/dark/2fa-1').content,
+  },
+  accountsNavigation: {
+    light: () => require('./images/light/accountsNavigation-0').content,
+    dark: () => require('./images/dark/accountsNavigation-0').content,
   },
   add: {
     light: () => require('./images/light/add-1').content,
@@ -1765,6 +1801,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   custodyNavigation: {
     light: () => require('./images/light/custodyNavigation-0').content,
     dark: () => require('./images/dark/custodyNavigation-0').content,
+  },
+  dataMarketplaceNavigation: {
+    light: () => require('./images/light/dataMarketplaceNavigation-0').content,
+    dark: () => require('./images/dark/dataMarketplaceNavigation-0').content,
   },
   decentralizationEverything: {
     light: () => require('./images/light/decentralizationEverything-0').content,
