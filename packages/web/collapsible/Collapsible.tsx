@@ -80,7 +80,11 @@ export const Collapsible = memo(
           ref={forwardedRef}
         >
           <div className={outerSpacing}>
-            <Stack overflow="auto" {...sizeProps} dangerouslySetClassName={innerSpacing}>
+            <Stack
+              overflow={maxWidth || maxHeight ? 'auto' : undefined}
+              {...sizeProps}
+              dangerouslySetClassName={innerSpacing}
+            >
               {children}
             </Stack>
           </div>

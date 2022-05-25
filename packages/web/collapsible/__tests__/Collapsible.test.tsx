@@ -26,13 +26,13 @@ describe('Collapsible', () => {
 
   it('has correct css styles', async () => {
     const { getByTestId, getByText } = render(<MockCollapsible />);
-    expect(getByTestId('mock-collapse')).toHaveStyle('display: none');
+    expect(getByTestId('mock-collapse')).toHaveStyle('visibility: hidden');
 
     fireEvent.click(getByText('Click me!'));
-    await waitFor(() => expect(getByTestId('mock-collapse')).toHaveStyle('display: block'));
+    await waitFor(() => expect(getByTestId('mock-collapse')).toHaveStyle('visibility: visible'));
 
     fireEvent.click(getByText('Click me!'));
-    await waitFor(() => expect(getByTestId('mock-collapse')).toHaveStyle('display: none'));
+    await waitFor(() => expect(getByTestId('mock-collapse')).toHaveStyle('visibility: hidden'));
   });
 
   it('renders children', () => {

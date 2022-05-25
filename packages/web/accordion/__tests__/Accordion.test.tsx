@@ -69,9 +69,9 @@ describe('Accordion', () => {
     const { getByTestId } = render(<MockAccordion />);
 
     expect(getByTestId('mock-accordion-item1-panel')).toBeInTheDocument();
-    expect(getByTestId('mock-accordion-item1-panel')).toHaveStyle('display: none');
+    expect(getByTestId('mock-accordion-item1-panel')).toHaveStyle('visibility: hidden');
     expect(getByTestId('mock-accordion-item2-panel')).toBeInTheDocument();
-    expect(getByTestId('mock-accordion-item2-panel')).toHaveStyle('display: block');
+    expect(getByTestId('mock-accordion-item2-panel')).toHaveStyle('visibility: visible');
   });
 
   it('expand pressed panel and collapse expanded panel', () => {
