@@ -34,7 +34,6 @@
     "@cbhq/cds-fonts": "workspace:*",
     "@cbhq/cds-lottie-files": "workspace:*",
     "@cbhq/cds-utils": "workspace:*",
-    "@cbhq/cds-web-utils": "workspace:*",
     "@popperjs/core": "^2.9.0",
     "d3-interpolate-path": "^2.2.2",
     "d3-selection": "^1.4.2",
@@ -44,7 +43,7 @@
     "lodash": "^4.17.21",
     "lottie-web": "^5.7.6",
     "react-popper": "^2.2.4",
-    "reakit": "^1.3.6"
+    "reakit": "^1.3.11"
   },
   "peerDependencies": {
     "react": ">=17.0.0",

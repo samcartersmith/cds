@@ -64,6 +64,10 @@ install-state.gz
 
 # Executors
 /tools/executors/**/*.js
+/tools/executors/**/*.d.ts
+/tools/executors/**/*.d.ts.map
+/tools/types.d.ts
+/tools/types.d.ts.map
 
 # React Native
 

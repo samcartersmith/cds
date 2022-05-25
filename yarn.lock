@@ -2304,7 +2304,7 @@ __metadata:
     lodash: ^4.17.21
     lottie-web: ^5.7.6
     react-popper: ^2.2.4
-    reakit: ^1.3.6
+    reakit: ^1.3.11
   peerDependencies:
     react: ">=17.0.0"
     react-dom: ">=17.0.0"
@@ -2330,7 +2330,7 @@ __metadata:
     react: ^17.0.2
     react-docgen-typescript: ^2.0.0
     react-dom: ^17.0.2
-    typescript: ~4.5.4
+    typescript: ~4.7.2
   peerDependencies:
     react: ">=17.0.0"
     react-dom: ">=17.0.0"
@@ -6895,12 +6895,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/user-event@npm:^14.0.4":
+"@testing-library/user-event@npm:14.0.4":
   version: 14.0.4
   resolution: "@testing-library/user-event@npm:14.0.4"
   peerDependencies:
     "@testing-library/dom": ">=7.21.4"
   checksum: 7a99309acfd22e5173543546548ad2fe8b53466294607fdc9300e914d320f86b1631a45f2e5a695750c1067272d7b57ed541e7e3645fe1fff4de285ecdf76521
+  languageName: node
+  linkType: hard
+
+"@testing-library/user-event@patch:@testing-library/user-event@npm:14.0.4#.yarn/patches/@testing-library-user-event-npm-14.0.4-109d618170::locator=design-system%40workspace%3A.":
+  version: 14.0.4
+  resolution: "@testing-library/user-event@patch:@testing-library/user-event@npm%3A14.0.4#.yarn/patches/@testing-library-user-event-npm-14.0.4-109d618170::version=14.0.4&hash=80affb&locator=design-system%40workspace%3A."
+  peerDependencies:
+    "@testing-library/dom": ">=7.21.4"
+  checksum: ae29b925ca8543fc75f0dca92dadce56af80d7ad55f3b5e9c4c36a4e0435eea5b58fac79b86bf856e1e10fac800fc602b2be78abda99b2ed45ab6414c486edc0
   languageName: node
   linkType: hard
 
@@ -12966,9 +12975,9 @@ __metadata:
     stylelint-prettier: ^1.1.2
     svgo: ^2.3.0
     ts-node: ^10.0.0
-    tsconfig-paths: ^3.9.0
+    tsconfig-paths: ^4.0.0
     type-fest: 1.2.0
-    typescript: ~4.5.4
+    typescript: ~4.7.2
     url-loader: 4.1.1
     webfont: 9.0.0
     webpack: ^5.63.0
@@ -15345,7 +15354,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^6.2.8":
+"framer-motion@npm:6.2.8":
   version: 6.2.8
   resolution: "framer-motion@npm:6.2.8"
   dependencies:
@@ -15362,6 +15371,26 @@ __metadata:
     "@emotion/is-prop-valid":
       optional: true
   checksum: d84b716ab5e9480804856088551dbb493092e63625fe2d29c05ce734025d3e5cfded223443c604e807e8fca09064282aed9fb05f3ff590c9fb6ff4502f1ca1a6
+  languageName: node
+  linkType: hard
+
+"framer-motion@patch:framer-motion@npm:6.2.8#.yarn/patches/framer-motion-npm-6.2.8-db4a5dedad::locator=design-system%40workspace%3A.":
+  version: 6.2.8
+  resolution: "framer-motion@patch:framer-motion@npm%3A6.2.8#.yarn/patches/framer-motion-npm-6.2.8-db4a5dedad::version=6.2.8&hash=2d372b&locator=design-system%40workspace%3A."
+  dependencies:
+    "@emotion/is-prop-valid": ^0.8.2
+    framesync: 6.0.1
+    hey-listen: ^1.0.8
+    popmotion: 11.0.3
+    style-value-types: 5.0.0
+    tslib: ^2.1.0
+  peerDependencies:
+    react: ">=16.8 || ^17.0.0 || ^18.0.0"
+    react-dom: ">=16.8 || ^17.0.0 || ^18.0.0"
+  dependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+  checksum: 231a0e4553f93231982183e2fb20726a753b45d27cedc4605bb8d8943e1549a15dabb4009f12af7ee882643275b2d00ad298087ff04383088b31e3fa040d9922
   languageName: node
   linkType: hard
 
@@ -21054,10 +21083,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.1.1, minimist@npm:^1.2.0, minimist@npm:^1.2.5":
-  version: 1.2.5
-  resolution: "minimist@npm:1.2.5"
-  checksum: 86706ce5b36c16bfc35c5fe3dbb01d5acdc9a22f2b6cc810b6680656a1d2c0e44a0159c9a3ba51fb072bb5c203e49e10b51dcd0eec39c481f4c42086719bae52
+"minimist@npm:^1.1.1, minimist@npm:^1.2.0, minimist@npm:^1.2.5, minimist@npm:^1.2.6":
+  version: 1.2.6
+  resolution: "minimist@npm:1.2.6"
+  checksum: d15428cd1e11eb14e1233bcfb88ae07ed7a147de251441d61158619dfb32c4d7e9061d09cab4825fdee18ecd6fce323228c8c47b5ba7cd20af378ca4048fb3fb
   languageName: node
   linkType: hard
 
@@ -25766,7 +25795,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reakit@npm:^1.3.6":
+"reakit@npm:^1.3.11":
   version: 1.3.11
   resolution: "reakit@npm:1.3.11"
   dependencies:
@@ -29165,6 +29194,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tsconfig-paths@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "tsconfig-paths@npm:4.0.0"
+  dependencies:
+    json5: ^2.2.1
+    minimist: ^1.2.6
+    strip-bom: ^3.0.0
+  checksum: a8cf746ffe438513a71c70c1bcdee8da7d62ab2af286efbe2728ff55c4d4c92c2aea80a0822982ded6d0a13c7686c24632934d7c0f4f564be9e1b2cdc3d65eea
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^1.8.1, tslib@npm:^1.9.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
@@ -29350,7 +29390,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:~4.5.2, typescript@npm:~4.5.4":
+"typescript@npm:~4.5.2":
   version: 4.5.5
   resolution: "typescript@npm:4.5.5"
   bin:
@@ -29360,13 +29400,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@~4.5.2#~builtin<compat/typescript>, typescript@patch:typescript@~4.5.4#~builtin<compat/typescript>":
+"typescript@npm:~4.7.2":
+  version: 4.7.2
+  resolution: "typescript@npm:4.7.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 5163585e6b56410f77d5483b698d9489bbee8902c99029eb70cf6d21525a186530ce19a00951af84eefd4a131cc51d0959f5118e25e70ab61f45ac4057dbd1ef
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@~4.5.2#~builtin<compat/typescript>":
   version: 4.5.5
   resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=ddd1e8"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 9cdde4aae20b2904431f3f2ca8acaf3b0cc52faddf68aa88b288c9d0520221817da43783a756fce7ab9360033ada0371c3ff93dfc4bdb4b13f6e9bac64e1658d
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@~4.7.2#~builtin<compat/typescript>":
+  version: 4.7.2
+  resolution: "typescript@patch:typescript@npm%3A4.7.2#~builtin<compat/typescript>::version=4.7.2&hash=ddd1e8"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 09d93fc0983d38eadd9b0427f790b49b4437f45002a87d447be3fbe53120880e87a91dd03e1d900498f99205d6e0b7c9784fe41fca11d56f4bbce371f74bb160
   languageName: node
   linkType: hard
 

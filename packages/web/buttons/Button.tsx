@@ -1,5 +1,5 @@
 import React, { forwardRef, useCallback, useMemo } from 'react';
-import { ButtonProps as ReakitButtonProps } from 'reakit/Button';
+import { ButtonProps as ReakitButtonProps } from 'reakit';
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
@@ -37,7 +37,7 @@ export type ButtonProps = ButtonBaseProps &
     | 'wrapElement'
   >;
 
-export const Button = forwardRef(function Button(
+const BaseButton = forwardRef(function Button(
   {
     accessibilityLabel,
     block,
@@ -137,3 +137,7 @@ export const Button = forwardRef(function Button(
     </Pressable>
   );
 });
+
+// We need to override the props, otherwise they are not compatible with
+// TypeScript 4.7's new "nodenext" module resolution.
+export const Button = BaseButton as React.ForwardRefExoticComponent<ButtonProps>;

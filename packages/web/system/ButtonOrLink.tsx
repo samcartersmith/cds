@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { Button } from 'reakit/Button';
+import { Button } from 'reakit';
 
 type Props = React.AllHTMLAttributes<HTMLElement> & { to?: string };
 
