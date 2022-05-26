@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo } from 'react';
 import { css } from 'linaria';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 
 import { Icon } from '../icons/Icon';
-import { control, palette } from '../tokens';
+import { borderWidth, control, palette } from '../tokens';
 import { cx } from '../utils/linaria';
 
 import { Control, ControlProps } from './Control';
@@ -38,7 +37,7 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
 export const Checkbox = memo(CheckboxWithRef) as typeof CheckboxWithRef &
   React.MemoExoticComponent<typeof CheckboxWithRef>;
 
-const FOCUS_PADDING = 4 + borderWidth.checkbox;
+const FOCUS_PADDING = `calc(-1 * (4px + ${borderWidth.checkbox}))`;
 
 const checkbox = css`
   width: ${control.checkboxSize};
@@ -50,7 +49,7 @@ const checkbox = css`
   justify-content: center;
 
   background-color: ${palette.background};
-  border: ${borderWidth.checkbox}px solid ${palette.lineHeavy};
+  border: ${borderWidth.checkbox} solid ${palette.lineHeavy};
   transition: border-color 150ms ease-out;
 
   &[data-filled='true'] {
@@ -66,10 +65,10 @@ const focusRing = css`
     border: 2px solid ${palette.primary};
     border-radius: 4px;
     position: absolute;
-    left: -${FOCUS_PADDING}px;
-    top: -${FOCUS_PADDING}px;
-    right: -${FOCUS_PADDING}px;
-    bottom: -${FOCUS_PADDING}px;
+    left: ${FOCUS_PADDING};
+    top: ${FOCUS_PADDING};
+    right: ${FOCUS_PADDING};
+    bottom: ${FOCUS_PADDING};
 
     opacity: 0;
     transition: opacity 100ms ease-out;

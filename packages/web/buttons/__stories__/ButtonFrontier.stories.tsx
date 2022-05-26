@@ -1,5 +1,6 @@
 import { buttonBuilder } from '@cbhq/cds-common/internal/buttonBuilder';
 
+import { Box } from '../../layout/Box';
 import { Button } from '../Button';
 
 const { build, buildSheet } = buttonBuilder(Button, { args: { frontier: true } });
@@ -19,6 +20,19 @@ export const All = buildSheet([
   { transparent: true, flush: 'start', compact: true, endIcon: 'forwardArrow' },
   { transparent: true, flush: 'end', compact: true, endIcon: 'forwardArrow' },
 ]);
+
+export const numberOfLines = build(
+  {
+    numberOfLines: 2,
+    // @ts-expect-error We exclude children prop from types in storybuilder so that we don't have to repeat for each story, but we want to override for this use case.
+    children:
+      'Some really really really long button text that should get truncated after wrapping two lines',
+  },
+  {
+    args: { frontier: true },
+    parameters: { wrapper: Box, wrapperProps: { width: 300, spacing: 3 } },
+  },
+);
 
 const ButtonBaseline = (props: JSX.IntrinsicElements['button']) => (
   <button type="button" {...props}>

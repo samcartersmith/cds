@@ -1,3 +1,6 @@
+// eslint-disable-next-line jest/no-mocks-import
+import '../__mocks__/matchMedia.mock';
+
 import initStoryshots from '@storybook/addon-storyshots';
 import { render } from '@testing-library/react';
 import path from 'path';

@@ -8,7 +8,6 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Icon } from '../../icons/Icon';
 import { VStack } from '../../layout/VStack';
-import { MenuItem } from '../../overlays/PopoverMenu/MenuItem';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { InputIcon } from '../InputIcon';
 import { Select } from '../Select';
@@ -16,7 +15,6 @@ import { SelectOption } from '../SelectOption';
 
 const { Default: MockSelect } = selectBuilder({
   Select,
-  MenuItem,
   VStack,
   SelectOption,
   ThemeProvider,
@@ -30,7 +28,10 @@ const mockTestID = 'select-input-test';
 
 describe('Select', () => {
   it('passes accessibility', async () => {
-    expect(await renderA11y(<MockSelect accessibilityLabel="label" />)).toHaveNoViolations();
+    expect(
+      await renderA11y(<MockSelect accessibilityLabel={accessibilityLabel} />),
+    ).toHaveNoViolations();
+    expect(await renderA11y(<MockSelect label="Test" />)).toHaveNoViolations();
   });
   it('can pass `aria-label` attribute', () => {
     const { getByTestId } = render(

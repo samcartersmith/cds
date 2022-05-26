@@ -6,7 +6,6 @@ export * from './Modal/ModalBody';
 export * from './Modal/ModalFooter';
 export * from './Modal/ModalHeader';
 export * from './Overlay/Overlay';
-export * from './PopoverMenu/MenuItem';
 export * from './PopoverMenu/PopoverMenu';
 export * from './PopoverMenu/PopoverTrigger';
 export * from './PopoverMenu/PopoverTriggerWrapper';

@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+// eslint-disable-next-line no-restricted-imports
+import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 import {
   chartCompactHeight,
   chartHeight as chartHeightToken,

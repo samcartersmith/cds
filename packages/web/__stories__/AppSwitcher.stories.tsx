@@ -1,32 +1,31 @@
-import { memo, useCallback } from 'react';
-import { useToggler } from '@cbhq/cds-common';
+import { memo } from 'react';
 
 import { NavigationIconButton } from '../buttons/NavigationIconButton';
 import { DotCount } from '../dots/DotCount';
+import { Dropdown } from '../dropdown';
 import { HStack } from '../layout';
-import { Switcher } from '../navigation/Switcher';
+import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
 
 import { AppSwitcherContent } from './AppSwitcherContent';
 
+const switcherPositionConfig: PopoverContentPositionConfig = {
+  placement: 'bottom',
+  gap: 1,
+};
+
 /** This is the component that Identity will likely encapsulate themselves. */
 const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => {
-  const [visible, toggleVisibility] = useToggler(false);
-  const handleSubjectPress = useCallback(() => {
-    toggleVisibility.toggle();
-  }, [toggleVisibility]);
-
-  const handleClose = useCallback(() => {
-    toggleVisibility.toggleOff();
-  }, [toggleVisibility]);
   return (
-    <Switcher
-      onPressSubject={handleSubjectPress}
-      onClose={handleClose}
-      visible={visible}
+    <Dropdown
+      width={359}
+      maxHeight={600}
       content={<AppSwitcherContent />}
+      showOverlay
+      enableMobileModal
+      contentPosition={switcherPositionConfig}
     >
       {children}
-    </Switcher>
+    </Dropdown>
   );
 });
 

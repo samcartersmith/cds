@@ -16,7 +16,8 @@ import { Accordion, AccordionItem } from '@cbhq/cds-web/accordion';
 import { Button, IconButton } from '@cbhq/cds-web/buttons';
 import { Card, CardBody, CardFooter, CardGroup, FeedCard } from '@cbhq/cds-web/cards';
 import { ListCell } from '@cbhq/cds-web/cells';
-import { Select, SelectOption, Switch } from '@cbhq/cds-web/controls';
+import { Checkbox, Select, SelectOption, Switch } from '@cbhq/cds-web/controls';
+import { Dropdown } from '@cbhq/cds-web/dropdown/Dropdown';
 import { Icon, LogoMark, NavigationIconProps } from '@cbhq/cds-web/icons';
 import { Pictogram } from '@cbhq/cds-web/illustrations';
 import { Divider, Group, HStack, VStack } from '@cbhq/cds-web/layout';
@@ -507,8 +508,21 @@ function AssetTable() {
   );
 }
 
+const dropdownOptions = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
+
+const DropdownContent = () => (
+  <>
+    <SectionTitle text="Section Heading" />
+    {dropdownOptions.map((option) => (
+      <SelectOption value={option} title={option} />
+    ))}
+  </>
+);
+
 function AppContent() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [value, setValue] = useState<string | undefined>(undefined);
+  const [showOverlay, toggleOverlay] = useToggler(false);
 
   return (
     <HStack>
@@ -519,6 +533,18 @@ function AppContent() {
         <NavigationBar
           end={
             <HStack gap={1} alignItems="center">
+              {/* eslint-disable-next-line react/jsx-handler-names */}
+              <Checkbox value="hyped" onChange={toggleOverlay.toggle} checked={showOverlay}>
+                Show overlay
+              </Checkbox>
+              <Dropdown
+                value={value}
+                onChange={setValue}
+                content={<DropdownContent />}
+                showOverlay={showOverlay}
+              >
+                <IconButton name="more" />
+              </Dropdown>
               <Popover trigger={NotificationsTrigger} />
               <Popover trigger={AvatarTrigger} />
             </HStack>

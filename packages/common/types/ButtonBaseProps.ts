@@ -36,6 +36,10 @@ export type ButtonBaseProps = {
   variant?: Exclude<ButtonVariant, 'foregroundMuted'>;
   /** Don't scale element on press. */
   noScaleOnPress?: boolean;
+  /**
+   * Truncates text after wrapping to a defined number of lines.
+   */
+  numberOfLines?: number;
 };
 
 export type ButtonGroupBaseProps = {

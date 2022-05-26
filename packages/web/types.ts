@@ -53,6 +53,7 @@ declare module 'react' {
     '--interactable-pressed-opacity'?: typeof opacityHovered[keyof typeof opacityHovered];
     '--interactable-overlay'?: CssVariableFn<SpectrumAlias>;
     '--interactable-underlay'?: CssVariableFn<PaletteAlias>;
+    '--typography-number-of-lines'?: number;
   }
 }
 

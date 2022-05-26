@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-web",
-  "version": "0.40.8",
+  "version": "0.41.0",
   "description": "Coinbase Design System - Web",
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "keywords": [
@@ -20,6 +20,7 @@
   "scripts": {
     "build": "nx run web:build",
     "build.css": "nx run web:build-css",
+    "build.ssr": "CSS_BUILD=true nx run web:build",
     "format": "nx run web:format",
     "lint": "nx run web:lint",
     "lint.fix": "nx run web:lint --fix",
@@ -50,6 +51,7 @@
     "react-dom": ">=17.0.0"
   },
   "devDependencies": {
+    "@cbhq/cds-tools": "workspace:*",
     "@cbhq/cds-web-utils": "workspace:*",
     "linaria": "^2.3.1"
   },

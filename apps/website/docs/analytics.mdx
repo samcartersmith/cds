@@ -36,9 +36,37 @@ To import CDS, refer to [getting started documentation](../cds/getting-started).
 Import `EventConfigMapping` from CCA and `EventHandlerProvider` from CDS. Render the EventHandlerProvider at the root of your application.
 
 ```jsx
-<EventHandlerProvider eventConfig={EventConfigMapping}>
-  <App />
-</EventHandlerProvider>
+import { Button } from '@cbhq/cds-[mobile|web]/buttons';
+import { EventHandlerProvider } from '@cbhq/cds-[mobile|web]/system/EventHandlerProvider';
+
+import { ActionType, automatedMappingConfig } from '@cbhq/client-analytics';
+
+const App = (props) => {
+  const onPress = useCallback(() => {}, []);
+
+  // in order to capture events you must pass event config to a given cds component
+  const eventConfig = useMemo(
+    () => ({
+      actions: [ActionType.click, ActionType.hover],
+      componentName: 'order',
+      data: {
+        side: props.side,
+        product: props.product,
+      },
+    }),
+    [props.side, props.product],
+  );
+
+  return (
+    <EventHandlerProvider eventConfig={automatedMappingConfig}>
+      <div>
+        <Button onPress={onPress} eventConfig={eventConfig} testID="place-order">
+          Place Order
+        </Button>
+      </div>
+    </EventHandlerProvider>
+  );
+};
 ```
 
 For more info on EventConfigMapping format refer to [EventHandlerProvider documentation](../components/event-handler-provider).
@@ -53,7 +81,6 @@ To start capturing component events, import the component from CDS into your app
 const eventConfig = {
   actions: ['onPress'],
   componentName: 'place_order',
-  enabled: true,
   data: {
     side: 'buy',
   },

@@ -10,7 +10,6 @@ import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/internal/modalB
 
 import { Button } from '../../../buttons';
 import { TextBody, TextLabel1 } from '../../../typography';
-import { PortalProvider } from '../../PortalProvider';
 import { Modal } from '../Modal';
 import { ModalBody } from '../ModalBody';
 import { ModalFooter } from '../ModalFooter';
@@ -29,7 +28,6 @@ const { MockModal } = modalBuilder({
   ThemeProvider: React.Fragment,
   Button,
   LoremIpsum,
-  PortalProvider,
 } as CreateModalProps);
 
 describe('Modal', () => {

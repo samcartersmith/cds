@@ -63,6 +63,9 @@ export type PopoverTriggerProps = {
   children: RefAttributes<HTMLButtonElement>;
 } & ClonedPopoverTriggerRef;
 
+/**
+ * @deprecated PopoverMenu has been deprecated. Please use Dropdown instead.
+ */
 export const PopoverTrigger = memo(function PopoverTrigger({
   children,
   onPress,

@@ -100,13 +100,12 @@ type UserSwitcherContentProps = {
 export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitcherContentProps) => {
   const { name, email, avatarUri } = data.find((user) => user.selected) as UserSwitcherData;
   const otherAccountsData = data.filter((user) => !user.selected);
-  const minGutter = useSpacingValue(1);
-  const maxGutter = useSpacingValue(2);
+  const gutter = useSpacingValue(1);
   const listCellHeight = useScaleConditional(listHeight);
-  const userAccountsListMinHeight = listCellHeight * 2 + minGutter;
-  const userAccountsListMaxHeight = listCellHeight * 3 + maxGutter;
+  const userAccountsListMinHeight = listCellHeight * 2 + gutter;
+  const userAccountsListMaxHeight = listCellHeight * 2.5 + gutter;
   return (
-    <>
+    <VStack spacingVertical={2}>
       <VStack gap={1} alignItems="center" spacingTop={1} spacingHorizontal={1}>
         <Avatar size="xxxl" selected alt="Brian Armstrong" src={avatarUri} />
         <VStack alignItems="center">
@@ -150,6 +149,6 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
           Sign out of all accounts
         </Button>
       </VStack>
-    </>
+    </VStack>
   );
 });

@@ -3,7 +3,8 @@
   "include": [
     "packages/**/*",
     "apps/**/*",
-    "examples/**/*"
+    "examples/**/*",
+    "tools/**/*"
   ],
   "exclude": [
     "**/dist/**/*",

@@ -1,11 +1,11 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { css } from 'linaria';
 import { InputVariant } from '@cbhq/cds-common';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
 
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { Box, HStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
+import { borderRadius } from '../../tokens';
 import { Link } from '../../typography';
 import { InputIcon } from '../InputIcon';
 import { InputIconButton } from '../InputIconButton';
@@ -267,7 +267,7 @@ export const RenderInputDefault = () => {
   const renderInput = (
     <input
       className={nativeInputCustomCSS}
-      style={{ width: '100%', borderRadius: `${borderRadius.input}px` }}
+      style={{ width: '100%', borderRadius: borderRadius.input }}
       onChange={onChange}
     />
   );
@@ -290,7 +290,7 @@ export const RenderInputDisabled = () => {
   const renderInput = (
     <input
       className={nativeInputCustomCSS}
-      style={{ width: '100%', borderRadius: `${borderRadius.input}px` }}
+      style={{ width: '100%', borderRadius: borderRadius.input }}
       onChange={onChange}
       value="Custom Input"
     />
@@ -314,7 +314,7 @@ export const RenderInputCompact = () => {
   const renderInput = (
     <input
       className={nativeInputCustomCSS}
-      style={{ width: '100%', borderRadius: `${borderRadius.input}px` }}
+      style={{ width: '100%', borderRadius: borderRadius.input }}
       onChange={onChange}
     />
   );

@@ -4,7 +4,7 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "./tools/executors/build-package:build-package",
+      "executor": "@cbhq/cds-tools:build-package",
       "options": {
         "destinationDir": "packages/docusaurus-plugin-docgen",
         "srcDir": "src",
@@ -12,11 +12,12 @@
         "babelConfig": "./babel.build.config.js",
         "babelExtensions": [".ts", ".tsx"],
         "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
-        "typescriptConfig": "packages/docusaurus-plugin-docgen/tsconfig.build.json"
+        "typescriptConfig": "packages/docusaurus-plugin-docgen/tsconfig.build.json",
+        "replacePackageJson": false
       }
     },
     "package": {
-      "executor": "./tools/executors/build-package:build-package",
+      "executor": "@cbhq/cds-tools:build-package",
       "options": {
         "destinationDir": ".nx/dist/packages/docusaurus-plugin-docgen",
         "srcDir": "src",
@@ -38,7 +39,7 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "./tools/executors/typecheck:typecheck"
+      "executor": "@cbhq/cds-tools:typecheck"
     }
   }
 }

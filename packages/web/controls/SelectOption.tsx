@@ -1,4 +1,5 @@
-import React, { ForwardedRef, forwardRef, memo, RefAttributes } from 'react';
+import React, { memo, RefAttributes, useCallback, useEffect, useRef } from 'react';
+import { css } from 'linaria';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/select';
 import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
@@ -6,11 +7,47 @@ import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
 import { Cell, overflowClassName } from '../cells/Cell';
 import { CellAccessory } from '../cells/CellAccessory';
 import { VStack } from '../layout/VStack';
-import { MenuItem } from '../overlays/PopoverMenu/MenuItem';
-import { usePopoverContext } from '../overlays/PopoverMenu/PopoverContext';
+import { insetFocusRing } from '../styles/focus';
+import { Pressable, PressableProps } from '../system';
+import { borderRadius } from '../tokens';
 import { TextBody, TextHeadline } from '../typography';
+import { cx } from '../utils/linaria';
 
-export type SelectOptionProps = SelectOptionBaseProps & RefAttributes<HTMLElement>;
+import { useSelectContext } from './selectContext';
+
+export const selectOptionStaticClassName = 'cds-select-option';
+
+const pressableStyles = css`
+  /* overrides button defaults */
+  padding: 0;
+  /* overrides button defaults in safari */
+  margin: 0;
+  border: none;
+  &:first-child {
+    &:before {
+      border-top-right-radius: ${borderRadius.popover};
+      border-top-left-radius: ${borderRadius.popover};
+    }
+  }
+  &:last-child {
+    &:before {
+      border-bottom-right-radius: ${borderRadius.popover};
+      border-bottom-left-radius: ${borderRadius.popover};
+    }
+  }
+`;
+
+export type SelectOptionProps = {
+  /** Prevent menu from closing when an option is selected */
+  disableCloseOnOptionChange?: boolean;
+  /**
+   * Necessary to control roving tabindex for accessibility
+   * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
+   * */
+  tabIndex?: number;
+} & SelectOptionBaseProps &
+  RefAttributes<HTMLElement> &
+  Pick<PressableProps, 'onPress' | 'onKeyPress' | 'to'>;
 
 const selectOptionMinHeight: Record<ScaleDensity, number> = {
   normal: 48,
@@ -30,10 +67,20 @@ const selectOptionCompactMaxHeight: Record<ScaleDensity, number> = {
 };
 
 export const SelectOption = memo(
-  forwardRef(function SelectOption(
-    { title, description, multiline, compact, value, ...props }: SelectOptionProps,
-    ref: ForwardedRef<HTMLElement>,
-  ) {
+  ({
+    title,
+    description,
+    multiline,
+    compact,
+    value,
+    disableCloseOnOptionChange,
+    onPress,
+    onKeyPress,
+    tabIndex,
+    ...props
+  }: SelectOptionProps) => {
+    const selectOptionRef = useRef<HTMLButtonElement | null>(null);
+
     const minHeight = useScaleConditional(
       compact ? selectOptionCompactMinHeight : selectOptionMinHeight,
     );
@@ -41,11 +88,51 @@ export const SelectOption = memo(
       compact ? selectOptionCompactMaxHeight : selectOptionMaxHeight,
     );
 
-    const { sanitizedValue } = usePopoverContext();
-    const selected = value === sanitizedValue;
+    const { onChange, value: selectedValue, handleCloseMenu } = useSelectContext();
+    const selected = selectedValue === value;
+
+    useEffect(() => {
+      if (selected) {
+        selectOptionRef.current?.focus();
+      }
+    }, [selected]);
+
+    const handleChange = useCallback(() => {
+      onChange?.(value);
+      // You can disable close on option change from either an individual SelectOption or globally through the Select or Dropdown components
+      if (!disableCloseOnOptionChange) {
+        handleCloseMenu?.();
+      }
+    }, [onChange, value, disableCloseOnOptionChange, handleCloseMenu]);
+
+    const handlePress = useCallback(
+      (event: React.MouseEvent) => {
+        handleChange();
+        onPress?.(event);
+      },
+      [onPress, handleChange],
+    );
+
+    const handleKeyPress = useCallback(
+      (event: React.KeyboardEvent) => {
+        handleChange();
+        onKeyPress?.(event);
+      },
+      [onKeyPress, handleChange],
+    );
 
     return (
-      <MenuItem value={value} ref={ref}>
+      <Pressable
+        backgroundColor="background"
+        onPress={handlePress}
+        onKeyPress={handleKeyPress}
+        // default to -1 since this is a grouped control and the parent control will have tabIndex 0
+        tabIndex={tabIndex ?? -1}
+        className={cx(selectOptionStaticClassName, insetFocusRing, pressableStyles)}
+        ref={selectOptionRef}
+        role="menuitem"
+        noScaleOnPress
+      >
         <Cell
           {...selectCellSpacingConfig}
           borderRadius="none"
@@ -74,7 +161,7 @@ export const SelectOption = memo(
             )}
           </VStack>
         </Cell>
-      </MenuItem>
+      </Pressable>
     );
-  }),
+  },
 );

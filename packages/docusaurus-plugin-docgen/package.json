@@ -11,9 +11,14 @@
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "authors": "Coinbase",
   "scripts": {
-    "debug": "yarn build && node ./dist/scripts/debug.js",
-    "build": "rm -rf dist && ../../node_modules/.bin/babel ./src --config-file ./babel.config.js --extensions .ts,.tsx --out-dir ./dist --copy-files --no-copy-ignored",
-    "watch": "yarn build --watch",
+    "babel": "../../node_modules/.bin/babel",
+    "tsc": "../../node_modules/.bin/tsc",
+    "build-babel": "yarn babel src --config-file ./babel.config.js --extensions .ts,.tsx --copy-files --no-copy-ignored --delete-dir-on-start --out-dir dist",
+    "build-typescript": "yarn tsc -p ./tsconfig.json",
+    "build": "yarn build-babel && yarn build-typescript",
+    "watch-babel": "yarn build-babel --watch",
+    "watch-typescript": "yarn build-typescript --watch",
+    "watch": "concurrently 'yarn:watch-*'",
     "format": "nx run docusaurus-plugin-docgen:format",
     "lint": "nx run docusaurus-plugin-docgen:lint",
     "lint.fix": "nx run docusaurus-plugin-docgen:lint --fix",
@@ -22,18 +27,21 @@
   },
   "dependencies": {
     "@cbhq/cds-web": "workspace:*",
+    "@docusaurus/logger": "^2.0.0-beta.20",
     "@docusaurus/utils": "2.0.0-beta.18",
     "ejs": "^3.1.7",
-    "lodash": "^4.17.21",
+    "fast-glob": "^3.2.11",
     "prettier": "^2.5.1",
     "react-docgen-typescript": "^2.0.0",
     "typescript": "~4.5.4"
   },
   "devDependencies": {
+    "@cbhq/cds-tools": "workspace:*",
     "@docusaurus/module-type-aliases": "2.0.0-beta.18",
     "@docusaurus/types": "2.0.0-beta.18",
     "@types/ejs": "^3.1.0",
     "@types/lodash": "^4.14.178",
+    "concurrently": "^7.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -45,6 +53,7 @@
   "typings": "./dist/plugin.d.ts",
   "exports": {
     ".": "./dist/plugin.js",
-    "./components/*": "./dist/components/*.js"
+    "./components/*": "./dist/components/*.js",
+    "./scripts/*": "./dist/scripts/*.js"
   }
 }

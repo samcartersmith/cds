@@ -108,6 +108,19 @@ export default function InputScreen() {
       <Example inline title="TextInput Height">
         <MockTextInput label="Bitcoin" height={300} multiline value="100" />
       </Example>
+      <Example inline title="TextInput Min Height">
+        <MockTextInput
+          label="Bitcoin"
+          minHeight={50}
+          multiline
+          value="
+            A really really really really
+            long piece of text of text of text 
+            of text of text of text of text of text
+            of text of text of text of text
+          "
+        />
+      </Example>
       <Example inline title="TextArea">
         <MockTextInput
           label="Textarea"

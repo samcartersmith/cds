@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "cli": "nx",
+  "properties": {
+    "destinationDir": {
+      "type": "string",
+      "description": "relative path to output directory"
+    },
+    "distDir": {
+      "type": "string",
+      "description": "Paths of the static files that you wish to add to the destination directory"
+    },
+    "srcDir": {
+      "type": "string",
+      "description": "Directory to output transpiled src files. Relative to destinationDir"
+    },
+    "staticFilesToIgnore": {
+      "type": "array",
+      "description": "Static files to remove from the output"
+    },
+    "staticFilesToCopy": {
+      "type": "array",
+      "description": "Static files to copy to output"
+    },
+    "babelConfig": {
+      "type": "string",
+      "description": "relative path to babel config file"
+    },
+    "babelExtensions": {
+      "type": "array",
+      "description": "array of extensions of files to compile with babel"
+    },
+    "babelIgnore": {
+      "type": "array",
+      "description": "array of globs of files to ignore"
+    },
+    "typescriptConfig": {
+      "type": "string",
+      "description": "relative path of the typescript config file"
+    },
+    "envs": {
+      "type": "object",
+      "description": "Allows additional environment variables"
+    },
+    "maxFileSizeInKb": {
+      "type": "number",
+      "description": "Maximum allowed file size of generated css."
+    }
+  }
+}

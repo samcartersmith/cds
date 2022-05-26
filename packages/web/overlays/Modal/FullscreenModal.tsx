@@ -1,5 +1,5 @@
 import React, { memo, ReactElement } from 'react';
-import { m as motion, Target } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import {
   animateInOpacityConfig,
   animateInOverlayOpacityConfig,
@@ -9,11 +9,11 @@ import {
   animateOutTranslateYConfig,
 } from '@cbhq/cds-common/animation/fullscreenModal';
 
-import { Animated } from '../../animation/Animated';
 import { IconButton } from '../../buttons';
 import { usePinStyles } from '../../hooks/usePinStyles';
 import { LogoMark } from '../../icons';
 import { Box, HStack, VStack } from '../../layout';
+import { useMotionProps } from '../../motion/useMotionProps';
 import { TextTitle1 } from '../../typography';
 import { cx } from '../../utils/linaria';
 import { FocusTrap } from '../FocusTrap';
@@ -79,17 +79,19 @@ export const FullscreenModal = memo(function FullscreenModal({
   role,
 }: FullscreenModalProps) {
   const pinStyles = usePinStyles('all');
+  const overlayMotionProps = useMotionProps({
+    enterConfigs: [animateInOverlayOpacityConfig],
+    exitConfigs: [animateOutOverlayOpacityConfig],
+    exit: 'exit',
+  });
+  const dialogMotionProps = useMotionProps({
+    enterConfigs: [animateInOpacityConfig, animateInTranslateYConfig],
+    exitConfigs: [animateOutOpacityConfig, animateOutTranslateYConfig],
+    exit: 'exit',
+  });
 
   const overlay = (
-    <motion.div
-      initial={
-        Animated.toFramerTransition([animateOutOverlayOpacityConfig], {
-          propertiesOnly: true,
-        }) as Target
-      }
-      animate={Animated.toFramerTransition([animateInOverlayOpacityConfig])}
-      exit={Animated.toFramerTransition([animateOutOverlayOpacityConfig])}
-    >
+    <motion.div {...overlayMotionProps}>
       <Overlay />
     </motion.div>
   );
@@ -114,7 +116,7 @@ export const FullscreenModal = memo(function FullscreenModal({
           </div>
         )}
         <Box flexGrow={1} justifyContent="flex-end">
-          <IconButton transparent name="close" onPress={onRequestClose} />
+          <IconButton transparent name="close" onPress={onRequestClose} aria-label="Close button" />
         </Box>
       </Box>
     </HStack>
@@ -139,16 +141,7 @@ export const FullscreenModal = memo(function FullscreenModal({
       role={role}
     >
       {overlay}
-      <motion.div
-        initial={
-          Animated.toFramerTransition([animateOutOpacityConfig, animateOutTranslateYConfig], {
-            propertiesOnly: true,
-          }) as Target
-        }
-        animate={Animated.toFramerTransition([animateInOpacityConfig, animateInTranslateYConfig])}
-        exit={Animated.toFramerTransition([animateOutOpacityConfig, animateOutTranslateYConfig])}
-        className={pinStyles}
-      >
+      <motion.div {...dialogMotionProps} className={pinStyles}>
         <FocusTrap onEscPress={onRequestClose}>
           <VStack background="background" dangerouslySetClassName={containerClassName}>
             {header}

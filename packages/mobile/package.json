@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-mobile",
-  "version": "0.44.7",
+  "version": "0.45.0",
   "description": "Coinbase Design System - Mobile Native",
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "keywords": [
@@ -43,6 +43,7 @@
     "react-native-svg": "12.1.0"
   },
   "devDependencies": {
+    "@cbhq/cds-tools": "workspace:*",
     "@react-navigation/stack": "5.12.8",
     "d3-shape": "^2.1.0",
     "lottie-ios": "3.2.3",

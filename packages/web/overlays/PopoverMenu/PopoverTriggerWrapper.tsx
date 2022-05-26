@@ -5,7 +5,7 @@ export type PopoverTriggerWrapperProps = {
 };
 
 /**
- * This component should only be used to wrap a non interactable component that wraps a PopoverTrigger
+ * @deprecated PopoverMenu has been deprecated. Please use Dropdown instead.
  */
 export const PopoverTriggerWrapper = memo(function PopoverTriggerWrapper({
   children,

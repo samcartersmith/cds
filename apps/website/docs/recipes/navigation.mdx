@@ -22,9 +22,6 @@ This recipe offers guidance on how you could compose a system of Navigation comp
 function NavigationRecipe() {
   const [isCollapsed, toggleCollapsed] = useToggler(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [moreMenuVisible, toggleMoreMenuVisibility] = useToggler(false);
-  const [appSwitcherVisibility, toggleAppSwitcherVisibility] = useToggler(false);
-  const [userSwitcherVisibility, toggleUserSwitcherVisibility] = useToggler(false);
   const [moreMenuValue, setMoreMenuValue] = useState(undefined);
   const moreMenuIndex = 4;
 
@@ -92,6 +89,12 @@ function NavigationRecipe() {
     setActiveIndex(index);
     setMoreMenuValue(undefined);
   };
+
+  const switcherPositionConfig = {
+    placement: 'bottom',
+    gap: 1,
+  };
+
   return (
     <PortalProvider>
       <FeatureFlagProvider frontierColor frontierButton>
@@ -109,10 +112,7 @@ function NavigationRecipe() {
             <SidebarMoreMenu
               onChange={handleMoreMenuChange}
               value={moreMenuValue}
-              visible={moreMenuVisible}
               active={activeIndex === moreMenuIndex}
-              openMenu={toggleMoreMenuVisibility.toggleOn}
-              closeMenu={toggleMoreMenuVisibility.toggleOff}
               onPress={() => setActiveIndex(moreMenuIndex)}
               tooltipContent="More"
             >
@@ -131,27 +131,30 @@ function NavigationRecipe() {
               end={
                 <HStack alignItems="center" justifyContent="flex-end" gap={1}>
                   {/* NOTE: this is for example purposes only. Identity will create the AppSwitcher components and own them. */}
-                  <Switcher
-                    onPressSubject={toggleAppSwitcherVisibility.toggleOn}
-                    onClose={toggleAppSwitcherVisibility.toggleOff}
-                    visible={appSwitcherVisibility}
+                  <Dropdown
+                    width={359}
+                    maxHeight={600}
+                    showOverlay
+                    enableMobileModal
+                    contentPosition={switcherPositionConfig}
                     content={<AppSwitcherContent />}
                   >
                     <NavigationIconButton
                       accessibilityLabel="App Switcher Menu"
                       name="appSwitcher"
                     />
-                  </Switcher>
+                  </Dropdown>
                   {/* NOTE: this is for example purposes only. Identity will create the UserSwitcher components and own them. */}
-                  <Switcher
-                    visible={userSwitcherVisibility}
-                    onPressSubject={toggleUserSwitcherVisibility.toggleOn}
-                    onClose={toggleUserSwitcherVisibility.toggleOff}
+                  <Dropdown
                     content={<UserSwitcherContent />}
-                    maxWidth={400}
+                    width={400}
+                    maxHeight={600}
+                    showOverlay
+                    contentPosition={switcherPositionConfig}
+                    showMobileModal
                   >
                     <UserSwitcherSubject title="Brian Armstrong" />
-                  </Switcher>
+                  </Dropdown>
                 </HStack>
               }
             >

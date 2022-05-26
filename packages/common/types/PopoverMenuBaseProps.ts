@@ -5,7 +5,7 @@ import { SetState } from './React';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
 
-export type PopoverPositionConfig = {
+export type DropdownPositionConfig = {
   offset: [number, number];
   placement:
     | 'auto'
@@ -71,7 +71,7 @@ export type PopoverMenuBaseProps = {
    * Pass a custom config for the PopoverMenu position relative to the trigger
    * @internal this property is for internal use only!
    */
-  popoverPositionConfig?: PopoverPositionConfig;
+  popoverPositionConfig?: DropdownPositionConfig;
   /**
    * Enable when PopoverMenu is used with a SearchInput as the trigger. Applies
    * relevant focus behaviors and keyboard events

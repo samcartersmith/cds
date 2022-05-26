@@ -6,7 +6,7 @@ import { useA11yControlledVisibility } from '../../hooks/useA11yControlledVisibi
 
 import { usePopoverMenuAnimation } from './usePopoverMenuAnimation';
 
-/** This hook stores all the shared logic between all the PopoverMenu sub components: PopoverTrigger, MenuItem, SelectOption, and PopoverMenu */
+/** This hook stores all the shared logic between all the PopoverMenu sub components: PopoverTrigger, SelectOption, and PopoverMenu */
 export const usePopoverMenu = ({
   onChange,
   value,

@@ -41,6 +41,11 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
     'pill',
     'popover',
     'round',
+    'rounded',
+    'roundedFull',
+    'roundedLarge',
+    'roundedNone',
+    'roundedSmall',
     'search',
     'standard',
     'tooltip',
@@ -54,6 +59,11 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
     'pill',
     'popover',
     'round',
+    'rounded',
+    'roundedFull',
+    'roundedLarge',
+    'roundedNone',
+    'roundedSmall',
     'search',
     'standard',
     'tooltip',
@@ -149,6 +159,19 @@ Apply a fixed width to the detail (end).
   defaultValue=""
   mobileOptions={['number', 'string']}
   webOptions={['number', 'string']}
+/>
+
+### disableCloseOnOptionChange <Badge variant="web" />
+
+Prevent menu from closing when an option is selected
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="disableCloseOnOptionChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
 />
 
 ### disabled
@@ -254,7 +277,22 @@ Allow the description to span multiple lines. This _will_ break fixed height req
   webOptions={['false', 'true']}
 />
 
-### onPress <Badge variant="mobile" />
+### onKeyPress <Badge variant="web" />
+
+Callback fired when a key is pressed
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="onKeyPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['KeyboardEventHandler<Element>']}
+/>
+
+### onPress
+
+Callback fired when the element is pressed.
 
 <ApiDetails
   componentName="SelectOption"
@@ -262,7 +300,7 @@ Allow the description to span multiple lines. This _will_ break fixed height req
   required={false}
   defaultValue=""
   mobileOptions={['(event: GestureResponderEvent) => void', 'NoopFn']}
-  webOptions={[]}
+  webOptions={['OnPress']}
 />
 
 ### outerSpacing
@@ -300,6 +338,19 @@ Which piece of content has the highest priority in regards to text truncation, g
   defaultValue=""
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
+/>
+
+### tabIndex <Badge variant="web" />
+
+Necessary to control roving tabindex for accessibility https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="tabIndex"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['number']}
 />
 
 ### testID
@@ -346,6 +397,19 @@ Title of content. Max 1 line (with description) or 2 lines (without), otherwise 
     'true',
     '{}',
   ]}
+/>
+
+### to <Badge variant="web" />
+
+URL that this links to when pressed.
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="to"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
 />
 
 ### value

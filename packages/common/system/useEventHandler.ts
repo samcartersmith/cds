@@ -10,8 +10,6 @@ import {
 
 const noOp = () => {};
 
-const EVENT_ENABLED_BY_DEFAULT = false;
-
 export const useEventHandler = (
   component: EventHandlerComponent,
   action: EventHandlerAction,
@@ -20,15 +18,36 @@ export const useEventHandler = (
   const config = useContext<EventHandlerConfig>(EventHandlerContext);
 
   return useCallback(() => {
-    // by default events are disabled
-    const isEnabled = eventConfig?.enabled ?? EVENT_ENABLED_BY_DEFAULT;
+    if (!config.handlers || !eventConfig || !eventConfig?.actions.length) {
+      return noOp();
+    }
 
-    if (!isEnabled || !eventConfig) {
+    const handler = config?.handlers[component];
+
+    if (!handler) {
+      return noOp();
+    }
+
+    const { actionMapping } = config;
+
+    /**
+     * Handler can provide an actionMapping object that maps
+     * CDS events (onPress, onHover) to its event names.
+     * If actionMapping is provided we convert CDS action into the handler one
+     * if the mapping between the two values exists
+     */
+    const convertedAction = actionMapping?.[action] ?? action;
+
+    /**
+     * the component event config provides a list of actions to track.
+     * If the current action is not listed we return a noOp
+     */
+    if (!eventConfig.actions.includes(convertedAction)) {
       return noOp();
     }
 
     // pass event and custom data
-    const callback = config?.[component]?.[action] ?? noOp;
+    const callback = handler[convertedAction] ?? noOp;
     return callback({
       componentName: eventConfig.componentName,
       data: eventConfig.data,

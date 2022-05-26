@@ -77,7 +77,7 @@ export const Select = memo(
         toggleSelectTray.toggleOff();
       }, [animateRotateIn, animateRotateOut, children, rotateAnimation, toggleSelectTray]);
 
-      const onSelectTriggerPress = useCallback(() => {
+      const handleOnSubjectPress = useCallback(() => {
         onPress?.();
         toggleSelectTray.toggleOn();
       }, [onPress, toggleSelectTray]);
@@ -86,7 +86,7 @@ export const Select = memo(
         <TextInputFocusVariantContext.Provider value={focusedVariant}>
           <SelectProvider value={context}>
             <TouchableWithoutFeedback
-              onPress={onSelectTriggerPress}
+              onPress={handleOnSubjectPress}
               testID={testID}
               accessibilityLabel={accessibilityLabel ?? label}
               accessibilityHint={accessibilityHint ?? label}

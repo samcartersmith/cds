@@ -1,18 +1,30 @@
 import { fireEvent, render } from '@testing-library/react';
 import {
+  EventHandlerConfig,
   EventHandlerCustomConfig,
   EventHandlerProvider,
 } from '@cbhq/cds-common/system/EventHandlerProvider';
 
 import { Button } from '../Button';
 
-describe('ButtonEventDelegation', () => {
-  const EVENT_DELEGATION_CONFIG = {
+const EVENT_HANDLER_CONFIG: EventHandlerConfig = {
+  handlers: {
     Button: {
       onPress: jest.fn(),
     },
-  };
+  },
+};
 
+const CUSTOM_EVENT_HANDLER_WITH_MAPPING: EventHandlerConfig = {
+  actionMapping: { onPress: 'click' },
+  handlers: {
+    Button: {
+      click: jest.fn(),
+    },
+  },
+};
+
+describe('ButtonEventDelegation', () => {
   let customEventConfig: EventHandlerCustomConfig = {
     actions: [],
     componentName: 'place_order',
@@ -39,14 +51,14 @@ describe('ButtonEventDelegation', () => {
 
     // callback should be called
     expect(spy).toHaveBeenCalled();
-    expect(EVENT_DELEGATION_CONFIG.Button.onPress).not.toHaveBeenCalled();
+    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onPress).not.toHaveBeenCalled();
   });
 
   it('EventDelegationConfig `Button.onPress` should not be called because eventConfig is not provided to `Button`', () => {
     const spy = jest.fn();
 
     const { container } = render(
-      <EventHandlerProvider config={EVENT_DELEGATION_CONFIG}>
+      <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
         <Button onPress={spy}>Child</Button>
       </EventHandlerProvider>,
     );
@@ -55,82 +67,78 @@ describe('ButtonEventDelegation', () => {
 
     // callback should be called
     expect(spy).toHaveBeenCalled();
-    expect(EVENT_DELEGATION_CONFIG.Button.onPress).not.toHaveBeenCalled();
-  });
-
-  it('EventDelegationConfig `Button.onPress` should not be called because eventConfig has enabled set to undefined', () => {
-    const spy = jest.fn();
-
-    customEventConfig = {
-      actions: ['onPress'],
-      componentName: 'place_order',
-      data: { currency: 'BTC' },
-    };
-
-    const { container } = render(
-      <EventHandlerProvider config={EVENT_DELEGATION_CONFIG}>
-        <Button onPress={spy} eventConfig={customEventConfig}>
-          Child
-        </Button>
-      </EventHandlerProvider>,
-    );
-
-    fireEvent.click(container.querySelector('button') as Element);
-
-    // callback should be called
-    expect(spy).toHaveBeenCalled();
-    expect(EVENT_DELEGATION_CONFIG.Button.onPress).not.toHaveBeenCalled();
-  });
-
-  it('EventDelegationConfig `Button.onPress` should not be called because eventConfig has enabled set to false', () => {
-    const spy = jest.fn();
-
-    customEventConfig = {
-      actions: ['onPress'],
-      componentName: 'place_order',
-      data: { currency: 'BTC' },
-      enabled: false,
-    };
-
-    const { container } = render(
-      <EventHandlerProvider config={EVENT_DELEGATION_CONFIG}>
-        <Button onPress={spy} eventConfig={customEventConfig}>
-          Child
-        </Button>
-      </EventHandlerProvider>,
-    );
-
-    fireEvent.click(container.querySelector('button') as Element);
-
-    // callback should be called
-    expect(spy).toHaveBeenCalled();
-    expect(EVENT_DELEGATION_CONFIG.Button.onPress).not.toHaveBeenCalled();
+    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onPress).not.toHaveBeenCalled();
   });
 
   it('EventDelegationConfig `Button.onPress` should be called', () => {
+    const spy = jest.fn();
+
     customEventConfig = {
       actions: ['onPress'],
       componentName: 'place_order',
       data: { currency: 'BTC' },
-      enabled: true,
     };
 
-    const spy = jest.fn();
-
     const { container } = render(
-      <EventHandlerProvider config={EVENT_DELEGATION_CONFIG}>
+      <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
         <Button onPress={spy} eventConfig={customEventConfig}>
-          child
+          Child
         </Button>
       </EventHandlerProvider>,
     );
 
     fireEvent.click(container.querySelector('button') as Element);
 
+    // callback should be called
     expect(spy).toHaveBeenCalled();
-    expect(EVENT_DELEGATION_CONFIG.Button.onPress).toHaveBeenCalledWith({
+    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onPress).toHaveBeenCalled();
+  });
+
+  it('EventDelegationConfig `Button.onPress` should not be called because onPress is not defined in action list', () => {
+    const spy = jest.fn();
+
+    customEventConfig = {
+      actions: ['click'],
       componentName: 'place_order',
       data: { currency: 'BTC' },
-    });
+    };
+
+    const { container } = render(
+      <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
+        <Button onPress={spy} eventConfig={customEventConfig}>
+          Child
+        </Button>
+      </EventHandlerProvider>,
+    );
+
+    fireEvent.click(container.querySelector('button') as Element);
+
+    // callback should be called
+    expect(spy).toHaveBeenCalled();
+    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onPress).not.toHaveBeenCalled();
+  });
+
+  it('EventDelegationConfig `Button.click` should be called because of actionMapping entry', () => {
+    const spy = jest.fn();
+
+    customEventConfig = {
+      actions: ['click'],
+      componentName: 'place_order',
+      data: { currency: 'BTC' },
+    };
+
+    const { container } = render(
+      <EventHandlerProvider config={CUSTOM_EVENT_HANDLER_WITH_MAPPING}>
+        <Button onPress={spy} eventConfig={customEventConfig}>
+          Child
+        </Button>
+      </EventHandlerProvider>,
+    );
+
+    fireEvent.click(container.querySelector('button') as Element);
+
+    // callback should be called
+    expect(spy).toHaveBeenCalled();
+    expect(CUSTOM_EVENT_HANDLER_WITH_MAPPING.handlers?.Button.click).toHaveBeenCalled();
   });
 });

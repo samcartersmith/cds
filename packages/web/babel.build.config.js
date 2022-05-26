@@ -1,10 +1,20 @@
 const baseConfig = require('../../babel.build.config');
 
-module.exports = {
-  presets: [
-    ...baseConfig.presets,
+const isSSRBuild = process.env.SSR_BUILD;
+
+const presets = [...baseConfig.presets];
+
+if (!isSSRBuild) {
+  presets.push([
+    require.resolve('@cbhq/cds-web-utils/babel/linariaPreset'),
     // eslint-disable-next-line global-require
-    [require.resolve('../web-utils/dist/babel/linariaPreset'), require('./linaria.config')],
-  ],
+    require('./linaria.config'),
+  ]);
+} else {
+  presets.push('linaria/babel');
+}
+
+module.exports = {
+  presets,
   plugins: [...baseConfig.plugins],
 };

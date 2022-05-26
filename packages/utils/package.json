@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-utils",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "description": "Coinbase Design System - Utils",
   "keywords": [
     "design system",
@@ -20,6 +20,9 @@
   "dependencies": {
     "humps": "^2.0.1",
     "type-fest": "^1.2.0"
+  },
+  "devDependencies": {
+    "@cbhq/cds-tools": "workspace:*"
   },
   "main": "index",
   "react-native": "index.ts",

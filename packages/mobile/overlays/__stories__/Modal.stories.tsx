@@ -8,17 +8,14 @@ import { Modal } from '../Modal/Modal';
 import { ModalBody } from '../Modal/ModalBody';
 import { ModalFooter } from '../Modal/ModalFooter';
 import { ModalHeader } from '../Modal/ModalHeader';
-import { PortalProvider } from '../PortalProvider';
 
 const { BasicModal, LongModal, PortalModal } = modalBuilder({
   Modal,
   ModalBody,
   ModalHeader,
   ModalFooter,
-  ThemeProvider: React.Fragment,
   Button,
   LoremIpsum,
-  PortalProvider,
   TextInput,
 } as CreateModalProps);
 

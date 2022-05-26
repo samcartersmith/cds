@@ -11,16 +11,16 @@
       "executor": "@cbhq/mono-tasks:lint"
     },
     "lint-styles": {
-      "executor": "./tools/executors/lint-styles:lint-styles"
+      "executor": "@cbhq/cds-tools:lint-styles"
     },
     "test": {
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "./tools/executors/typecheck:typecheck"
+      "executor": "@cbhq/cds-tools:typecheck"
     },
     "build": {
-      "executor": "./tools/executors/build-package:build-package",
+      "executor": "@cbhq/cds-tools:build-package",
       "options": {
         "destinationDir": ".nx/dist/packages/web",
         "staticFilesToIgnore": [
@@ -42,10 +42,49 @@
           "storybook-decorators"
         ],
         "typescriptConfig": "packages/web/tsconfig.build.json"
-      }
+      },
+      "dependsOn": [
+        {
+          "target": "build-esm",
+          "projects": "self"
+        }
+      ]
+    },
+    "build-esm": {
+      "executor": "@cbhq/cds-tools:build-package-esm",
+      "options": {
+        "destinationDir": ".nx/dist/packages/web-esm",
+        "staticFilesToIgnore": [
+          "babel.build.config.js",
+          "babel.config.js",
+          "jest.config.js",
+          "linaria.config.js",
+          "tsconfig.json",
+          "tsconfig.build.json",
+          "project.json"
+        ],
+        "babelConfig": "./packages/web/babel.build.config.js",
+        "babelExtensions": [".ts", ".tsx"],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx",
+          "**/*.stories.tsx",
+          "storybook-decorators"
+        ],
+        "typescriptConfig": "packages/web/tsconfig.build.json",
+        "fontsOutputDir": "packages/fonts",
+        "maxFileSizeInKb": 90
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "dependencies"
+        }
+      ]
     },
     "build-css": {
-      "executor": "./tools/executors/build-css:build-css",
+      "executor": "@cbhq/cds-tools:build-css",
       "options": {
         "fontsOutputDir": ".nx/dist/packages/fonts",
         "webOutputDir": ".nx/dist/packages/web",

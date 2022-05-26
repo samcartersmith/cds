@@ -8,6 +8,59 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.41.0 (5/17/2022, 01:24 PM PST)
+
+#### 💥 Breaking
+
+- **[MenuItem]** Moved MenuItem to dropdown directory. [#348](https://github.cbhq.net/frontend/cds/pull/348)
+- **[Input]** Modify InputStack to use borderWidth prop to control borderWidth rather than borderStyle. [#328](https://github.cbhq.net/frontend/cds/pull/328)
+
+#### 🚀 Updates
+
+- Add primaryWash background to selected time period. [#399](https://github.cbhq.net/frontend/cds/pull/399), [CDS-2283](https://jira.coinbase-corp.com/browse/CDS-2283)
+- **[Popover]** Moved Popover to CDS Portal and remove PopoverPortal. [#398](https://github.cbhq.net/frontend/cds/pull/398)
+- **[Box]** Include dangerouslySetStyle on the Box component. [#379](https://github.cbhq.net/frontend/cds/pull/379)
+- Add new border radius aliases. [#372](https://github.cbhq.net/frontend/cds/pull/372)
+- **[borders]** Leverage new codegen templates & move to css variables. [#354](https://github.cbhq.net/frontend/cds/pull/354)
+- **[Modal]** Add aria-label to Modal close buttons. [#335](https://github.cbhq.net/frontend/cds/pull/335)
+- Rename PositionedOverlay to Popover. [#334](https://github.cbhq.net/frontend/cds/pull/334)
+- Css vars as objects and migrate web codegen. [#329](https://github.cbhq.net/frontend/cds/pull/329)
+- Rework PositionedOverlay to support Dropdown, and introduce Dropdown. [#314](https://github.cbhq.net/frontend/cds/pull/314)
+- Removed menu item and replaced with select context. [#313](https://github.cbhq.net/frontend/cds/pull/313)
+- Dropdown constants utils and hooks. [#312](https://github.cbhq.net/frontend/cds/pull/312)
+- Arrow functionality added to focus trap for menu items. [#311](https://github.cbhq.net/frontend/cds/pull/311)
+- **[Modal]** Remove default zIndex. [#308](https://github.cbhq.net/frontend/cds/pull/308)
+
+#### 🐞 Fixes
+
+- **[Illustrations]** Publish May 25 2022 Illustrations. [#500](https://github.cbhq.net/frontend/cds/pull/500)
+- **[Checkbox]** Calc from border radius change (#490). [#492](https://github.cbhq.net/frontend/cds/pull/492)
+- **[Fallback]** Add string support for height in Fallback component (#480). [#487](https://github.cbhq.net/frontend/cds/pull/487)
+- Fix merge conflicts. [#420](https://github.cbhq.net/frontend/cds/pull/420)
+- **[Dropdown]** Added tests and cleanup. [#389](https://github.cbhq.net/frontend/cds/pull/389)
+- **[Popover]** Fixed zindexes. [#385](https://github.cbhq.net/frontend/cds/pull/385)
+- **[Dropdown]** Fixes bugs from bash. [#367](https://github.cbhq.net/frontend/cds/pull/367)
+- Ensure SidebarItems have proper justification (attempting to resolve percy flake):. [#361](https://github.cbhq.net/frontend/cds/pull/361)
+- **[Fallback]** Fixed fallback have a max height of 100. [#369](https://github.cbhq.net/frontend/cds/pull/369), [CDS-2289](https://jira.coinbase-corp.com/browse/CDS-2289)
+- **[Button]** AlignItems to align-items for css. [#355](https://github.cbhq.net/frontend/cds/pull/355)
+- Refactored EventHandlerProvider config type to allow action mapping. [#331](https://github.cbhq.net/frontend/cds/pull/331)
+- **[Popover]** Fix Popover when used with Tooltip. [#339](https://github.cbhq.net/frontend/cds/pull/339)
+- (Dropdown) Fixed Dropdown docs and overlay zIndex issues. [#336](https://github.cbhq.net/frontend/cds/pull/336)
+- Migrated PopoverMenu consumers to Dropdown. [#332](https://github.cbhq.net/frontend/cds/pull/332)
+- **[Tables]** Remove useless fragment on TableRow. [#175](https://github.cbhq.net/frontend/cds/pull/175)
+
+#### 📘 Misc
+
+- **[Modal]** Refactor Modal to use the useMotionProps hook. [#410](https://github.cbhq.net/frontend/cds/pull/410)
+- **[Motion]** Add useMotionProps hook. [#384](https://github.cbhq.net/frontend/cds/pull/384)
+- Add esm publish task. [#396](https://github.cbhq.net/frontend/cds/pull/396)
+- Added build-esm to buildkite. [#391](https://github.cbhq.net/frontend/cds/pull/391)
+- Add bundle size check to common css file. [#390](https://github.cbhq.net/frontend/cds/pull/390)
+- Add web esm build task to build a cds-web package that is esm compatible. [#386](https://github.cbhq.net/frontend/cds/pull/386)
+- Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
+- **[Dropdown]** Adds Dropdown Docs. [#333](https://github.cbhq.net/frontend/cds/pull/333)
+- Add ability to switch spectrum in storybook. [#318](https://github.cbhq.net/frontend/cds/pull/318)
+
 ## 0.40.8 (5/23/2022, 10:04 AM PST)
 
 #### 🚀 Updates

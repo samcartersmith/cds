@@ -5,11 +5,11 @@ __metadata:
   version: 5
   cacheKey: 8
 
-"@cbhq/cds-common@npm:^0.38.1":
-  version: 0.38.1
-  resolution: "@cbhq/cds-common@npm:0.38.1"
+"@cbhq/cds-common@npm:^0.39.0-alpha.0":
+  version: 0.39.0-alpha.0
+  resolution: "@cbhq/cds-common@npm:0.39.0-alpha.0"
   dependencies:
-    "@cbhq/cds-utils": ^0.3.6
+    "@cbhq/cds-utils": ^0.4.0-alpha.0
     d3-array: ^2.3.3
     d3-color: ^2.0.0
     d3-scale: ^3.3.0
@@ -20,42 +20,42 @@ __metadata:
   peerDependencies:
     react: ">=17.0.0"
     react-dom: ">=17.0.0"
-  checksum: 6a222bf04b233f289fa78f451a62b1fc3af19ec69bff941ab26012bdeab2937a8b925a6815586aeb5a9cc20ab568a55fb25ef788506196e2c3c3d790a298b0ab
+  checksum: 5fa5a296205c7b8ac43d3cb159c3b81cd08b2eab08964e24ab8823383cd54e0ba73f43b642b5736915688e10bd971a0fd8074cbf1debeecd437acdf068fae216
   languageName: node
   linkType: hard
 
-"@cbhq/cds-fonts@npm:^0.5.3":
-  version: 0.5.3
-  resolution: "@cbhq/cds-fonts@npm:0.5.3"
-  checksum: 94534516271e067091cd0dc7c3851f02ace2712216a828e89f0024e5946f9371d95ffb78616286edd1d55a58c2e5d52671be0ddea5c5dc1517071957b46aa8cd
+"@cbhq/cds-fonts@npm:^0.6.0-alpha.0":
+  version: 0.6.0-alpha.0
+  resolution: "@cbhq/cds-fonts@npm:0.6.0-alpha.0"
+  checksum: 748e38e9613bb17c191942b4e459dda30cd4c303c5980354eefc3fca4f19306fbd40b84a0f1a37128cd6b086819a4102eaf1e7f0919f147c280253f00a957547
   languageName: node
   linkType: hard
 
-"@cbhq/cds-lottie-files@npm:^0.2.26":
-  version: 0.2.26
-  resolution: "@cbhq/cds-lottie-files@npm:0.2.26"
-  checksum: 48e0cf7e8ca90798f5a125cd004a427fb5822adbe5bf7318cc6e1df1738cf4cb660efb9e11cf54b8bdd4f66b6ce51d7ef4350f9e6497c0363131da08dc9e09e4
+"@cbhq/cds-lottie-files@npm:^0.3.0-alpha.0":
+  version: 0.3.0-alpha.0
+  resolution: "@cbhq/cds-lottie-files@npm:0.3.0-alpha.0"
+  checksum: 876d92cc85269e91a97434b1df4e47fad3ad5e9b2a8d04fa29504e2d64920b50e12e36070bb4bbc5d6fd1268060ed11d0711d6657e40a9f40dbad4878dc2c627
   languageName: node
   linkType: hard
 
-"@cbhq/cds-utils@npm:^0.3.6":
-  version: 0.3.6
-  resolution: "@cbhq/cds-utils@npm:0.3.6"
+"@cbhq/cds-utils@npm:^0.4.0-alpha.0":
+  version: 0.4.0-alpha.0
+  resolution: "@cbhq/cds-utils@npm:0.4.0-alpha.0"
   dependencies:
     humps: ^2.0.1
     type-fest: ^1.2.0
-  checksum: bff4289264b7fa3eca72282aba9bd503d86e7580f098eb9b89b0e9e052b99ecc566441a2631786531b6a20fe2eb8a69e542256c817db701e852cdcf56133c448
+  checksum: ef023cd47dd71d691f026393b0ddccea185db44862347f8a0a0993287b3c98e104e6cebb022288e069b32c478f73c4073435aa291ab4e87acd8603613df7c08f
   languageName: node
   linkType: hard
 
-"@cbhq/cds-web@npm:^0.40.1":
-  version: 0.40.1
-  resolution: "@cbhq/cds-web@npm:0.40.1"
+"@cbhq/cds-web@npm:^0.41.0-alpha.0":
+  version: 0.41.0-alpha.0
+  resolution: "@cbhq/cds-web@npm:0.41.0-alpha.0"
   dependencies:
-    "@cbhq/cds-common": ^0.38.1
-    "@cbhq/cds-fonts": ^0.5.3
-    "@cbhq/cds-lottie-files": ^0.2.26
-    "@cbhq/cds-utils": ^0.3.6
+    "@cbhq/cds-common": ^0.39.0-alpha.0
+    "@cbhq/cds-fonts": ^0.6.0-alpha.0
+    "@cbhq/cds-lottie-files": ^0.3.0-alpha.0
+    "@cbhq/cds-utils": ^0.4.0-alpha.0
     "@popperjs/core": ^2.9.0
     d3-interpolate-path: ^2.2.2
     d3-selection: ^1.4.2
@@ -69,7 +69,7 @@ __metadata:
   peerDependencies:
     react: ">=17.0.0"
     react-dom: ">=17.0.0"
-  checksum: bcaa223a726843a456307d9c1cebc5c60e811b6002ce6eaa500ec6c876a0dc17336ba3e73d7690d18a88bb75f79c896613c55902f86b45c0a3c460bd35b104f1
+  checksum: 7ed31d7273387aaaeab63f34341844e82a419c5f7df7822bdfdeca59f2f2c67f5f1e8788f1dbfe96630f7905d358e7063bc666df8b0a2c99d172bd9d20618313
   languageName: node
   linkType: hard
 
@@ -561,7 +561,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nextjs@workspace:."
   dependencies:
-    "@cbhq/cds-web": ^0.40.1
+    "@cbhq/cds-web": ^0.41.0-alpha.0
     next: latest
     next-compose-plugins: ^2.2.1
     next-linaria: ^0.11.0

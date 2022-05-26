@@ -1,14 +1,10 @@
 import { ExecutorContext } from '@nrwl/devkit';
 import glob from 'fast-glob';
-import path from 'path';
 import fs from 'fs';
-import { createDir, deleteDir, getProjectPath } from '../utils';
+import path from 'path';
 
-type BuildCssOptions = {
-  fontsOutputDir: string;
-  webOutputDir: string;
-  outputDir: string;
-};
+import { createDir, deleteDir, getProjectPath } from '../utils';
+import { BuildCssOptions } from '../../types';
 
 async function readCss(files: string[]): Promise<string> {
   const css = await Promise.all(files.map(async (file) => fs.promises.readFile(file, 'utf8')));
@@ -54,24 +50,27 @@ async function writeCssToOut(
   cssNoFonts: string,
   outputDir: string,
   context: ExecutorContext,
+  name?: string,
 ) {
-  const packageVersion = (
-    JSON.parse(
-      await fs.promises.readFile(
-        path.join(context.root, getProjectPath(context), 'package.json'),
-        'utf8',
-      ),
-    ) as { version: string }
-  ).version;
+  let filename = name;
+
+  if (!filename) {
+    const packageVersion = (
+      JSON.parse(
+        await fs.promises.readFile(
+          path.join(context.root, getProjectPath(context), 'package.json'),
+          'utf8',
+        ),
+      ) as { version: string }
+    ).version;
+
+    filename = `version-${packageVersion}`;
+  }
 
   await Promise.all([
+    fs.promises.writeFile(path.join(outputDir, `${filename}.css`), css.replace(/\n/g, ''), 'utf8'),
     fs.promises.writeFile(
-      path.join(outputDir, `version-${packageVersion}.css`),
-      css.replace(/\n/g, ''),
-      'utf8',
-    ),
-    fs.promises.writeFile(
-      path.join(outputDir, `version-${packageVersion}-no-fonts.css`),
+      path.join(outputDir, `${filename}-no-fonts.css`),
       cssNoFonts.replace(/\n/g, ''),
       'utf8',
     ),
@@ -79,7 +78,7 @@ async function writeCssToOut(
 }
 
 export default async function buildCss(options: BuildCssOptions, context: ExecutorContext) {
-  const { fontsOutputDir, webOutputDir, outputDir } = options;
+  const { fontsOutputDir, webOutputDir, outputDir, name } = options;
 
   let success = true;
 
@@ -110,12 +109,18 @@ export default async function buildCss(options: BuildCssOptions, context: Execut
 
   await deleteDir(outputDir);
 
-  await createDir(outputDir);
+  createDir(outputDir);
 
   // Write css and fonts to bazel out
   try {
     await Promise.all([
-      writeCssToOut(criticalCss + fontsCss + otherCss, criticalCss + otherCss, outputDir, context),
+      writeCssToOut(
+        criticalCss + fontsCss + otherCss,
+        criticalCss + otherCss,
+        outputDir,
+        context,
+        name,
+      ),
       copyFontsToOut(fontsOutputDir, outputDir),
       copyFontsToOut(webOutputDir, outputDir),
     ]);

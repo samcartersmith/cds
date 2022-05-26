@@ -1,31 +1,30 @@
-import { memo, useCallback } from 'react';
-import { useToggler } from '@cbhq/cds-common';
+import { memo } from 'react';
 import { AppSwitcherContent } from '@cbhq/cds-web/__stories__/AppSwitcherContent';
 import { NavigationIconButton } from '@cbhq/cds-web/buttons/NavigationIconButton';
+import { Dropdown } from '@cbhq/cds-web/dropdown';
 import { VStack } from '@cbhq/cds-web/layout';
-import { Switcher } from '@cbhq/cds-web/navigation/Switcher';
+import { PopoverContentPositionConfig } from '@cbhq/cds-web/overlays/popover/PopoverProps';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { FeatureFlagProvider } from '@cbhq/cds-web/system/FeatureFlagProvider';
 import { TextBody } from '@cbhq/cds-web/typography/TextBody';
 
-const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => {
-  const [visible, toggleVisibility] = useToggler(false);
-  const handleSubjectPress = useCallback(() => {
-    toggleVisibility.toggle();
-  }, [toggleVisibility]);
+const switcherPositionConfig: PopoverContentPositionConfig = {
+  placement: 'bottom',
+  gap: 1,
+};
 
-  const handleClose = useCallback(() => {
-    toggleVisibility.toggleOff();
-  }, [toggleVisibility]);
+const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => {
   return (
-    <Switcher
-      onPressSubject={handleSubjectPress}
-      onClose={handleClose}
-      visible={visible}
+    <Dropdown
+      width={359}
+      maxHeight={600}
       content={<AppSwitcherContent />}
+      showOverlay
+      enableMobileModal
+      contentPosition={switcherPositionConfig}
     >
       {children}
-    </Switcher>
+    </Dropdown>
   );
 });
 

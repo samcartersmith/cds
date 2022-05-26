@@ -15,8 +15,10 @@
     "fonts": "yarn workspace @cbhq/cds-fonts",
     "lottie": "yarn workspace @cbhq/cds-lottie-files",
     "mobile": "yarn workspace @cbhq/cds-mobile",
+    "tools": "yarn workspace @cbhq/cds-tools",
     "utils": "yarn workspace @cbhq/cds-utils",
     "web": "yarn workspace @cbhq/cds-web",
+    "web-utils": "yarn workspace @cbhq/cds-web-utils",
     "___global___": "✨✨✨ run scripts for any affected nx projects in repo ✨✨✨",
     "affected": "yarn nx affected --base=master --head=HEAD",
     "affected:dep-graph": "yarn nx affected:dep-graph",
@@ -34,7 +36,7 @@
     "diagnose": "mono-env diagnose --group common web",
     "help": "yarn nx help",
     "postinstall": "./setup.sh",
-    "setup": "mono-env setup --group common",
+    "setup": "./setup.sh && mono-env setup --group common",
     "release": "yarn codegen release && yarn codegen docs",
     "setup-env": "mono-env setup --group common web",
     "validate": "yarn nx workspace-lint"
@@ -43,11 +45,13 @@
     "colors": "1.4.0",
     "coa": "2.0.2",
     "yargs-parser": "^21.0.1",
-    "ejs": "^3.1.7"
+    "ejs": "^3.1.7",
+    "@cbhq/mono-pipeline@0.6.0": "patch:@cbhq/mono-pipeline@npm:0.6.0#.yarn/patches/@cbhq-mono-pipeline-npm-0.6.0-1eea4a3e55"
   },
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "tools"
   ],
   "devDependencies": {
     "@babel/cli": "^7.14.3",
@@ -68,7 +72,7 @@
     "@cbhq/jest-preset": "^0.1.3",
     "@cbhq/jest-preset-mobile": "^0.1.11",
     "@cbhq/mono-env": "^0.2.0",
-    "@cbhq/mono-pipeline": "^0.5.10",
+    "@cbhq/mono-pipeline": "0.6.0",
     "@cbhq/mono-tasks": "^0.1.31",
     "@cbhq/mono-templates": "^0.1.7",
     "@nrwl/cli": "^13.8.2",

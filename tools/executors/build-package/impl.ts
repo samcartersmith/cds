@@ -1,20 +1,10 @@
 import { ExecutorContext } from '@nrwl/devkit';
-import path from 'path';
-import fs from 'fs';
 import chalk from 'chalk';
-import { createDir, deleteDir, runLocalCommand } from '../utils';
+import fs from 'fs';
+import path from 'path';
 
-type BuildPackageOptions = {
-  destinationDir: string;
-  distDir?: string;
-  srcDir?: string;
-  staticFilesToIgnore: string[];
-  staticFilesToCopy?: string[];
-  babelConfig: string;
-  babelExtensions: string[];
-  babelIgnore: string[];
-  typescriptConfig: string;
-};
+import { BuildPackageOptions } from '../../types';
+import { createDir, deleteDir, runLocalCommand } from '../utils';
 
 type PackageArgs = {
   /*
@@ -82,6 +72,7 @@ async function runBabel(
   context: ExecutorContext,
   { destinationDir, srcDir }: PackageArgs,
   { configFile, extensions, ignore }: BabelArgs,
+  envs: Record<string, string>,
 ) {
   const bin = 'babel';
 
@@ -93,25 +84,25 @@ async function runBabel(
     extensions.join(','),
     '--ignore',
     [...ignore, 'node_modules'].join(','),
-    //'--source-maps',
+    // '--source-maps',
     '--out-dir',
     destinationDir,
     '--copy-files',
     '--no-copy-ignored',
   ];
 
-  return runLocalCommand(context, bin, args);
+  return runLocalCommand(context, bin, args, envs);
 }
 
 // tsc --p tsconfig.build.json
-async function runTsc(context: ExecutorContext, tscArgs: TscArgs) {
+async function runTsc(context: ExecutorContext, tscArgs: TscArgs, envs: Record<string, string>) {
   const { configFile } = tscArgs;
 
   const bin = 'tsc';
 
   const args = ['--project', path.join(context.root, configFile)];
 
-  return runLocalCommand(context, bin, args);
+  return runLocalCommand(context, bin, args, envs);
 }
 
 async function removeIgnoredFiles(
@@ -154,8 +145,8 @@ async function copyFiles({
   staticFilesToCopy: string[];
   projectDir: string;
 }) {
-  return await Promise.all(
-    staticFilesToCopy.map((item) => {
+  return Promise.all(
+    staticFilesToCopy.map(async (item) => {
       const fromPath = path.join(projectDir, item);
       const toPath = path.join(destinationDir, item);
       return fs.promises.copyFile(fromPath, toPath);
@@ -189,6 +180,7 @@ function replaceDeps(context: ExecutorContext, pkgJson: PackageJson, deps: Recor
         getPackageVersion(
           path.join(context.root, packageVersionReplacePathMap[dep], 'package.json'),
         ).then((version: string) => {
+          // eslint-disable-next-line no-param-reassign
           deps[dep] = `^${version}`;
         }),
       );
@@ -203,6 +195,7 @@ function deletePackages(packagesToDelete: string[], deps?: Record<string, string
 
   for (const pkg of packagesToDelete) {
     if (pkg in deps) {
+      // eslint-disable-next-line no-param-reassign
       delete deps[pkg];
     }
   }
@@ -210,6 +203,7 @@ function deletePackages(packagesToDelete: string[], deps?: Record<string, string
 
 function deleteFields(pkgJson: PackageJson, fields: (keyof PackageJson)[]) {
   for (const field of fields) {
+    // eslint-disable-next-line no-param-reassign
     delete pkgJson[field];
   }
 }
@@ -235,7 +229,11 @@ async function replacePackageVersions(context: ExecutorContext, destinationDir: 
   await fs.promises.writeFile(pkgJsonPath, JSON.stringify(pkgJson, null, 2));
 }
 
-export default async function buildPackage(options: BuildPackageOptions, context: ExecutorContext) {
+export default async function buildPackage(
+  options: BuildPackageOptions,
+  context: ExecutorContext,
+  ignoreTsc?: boolean,
+) {
   const {
     destinationDir: dest,
     srcDir = '.',
@@ -246,14 +244,16 @@ export default async function buildPackage(options: BuildPackageOptions, context
     babelExtensions,
     babelIgnore = [],
     typescriptConfig,
-  } = options;
+    envs,
+    replacePackageJson = true,
+} = options;
 
   const destinationDir = path.join(context.root, dest);
   const dist = path.join(destinationDir, distDir);
   const projectDir = path.dirname(path.join(context.root, typescriptConfig));
 
   await deleteDir(dist);
-  await createDir(dist);
+  createDir(dist);
 
   const babelArgs: BabelArgs = {
     configFile: babelConfig,
@@ -266,13 +266,15 @@ export default async function buildPackage(options: BuildPackageOptions, context
     srcDir,
   };
 
-  let { success } = await runBabel(context, packageArgs, babelArgs);
+  let { success } = await runBabel(context, packageArgs, babelArgs, envs);
 
   const tscArgs: TscArgs = {
     configFile: typescriptConfig,
   };
 
-  success = success ? (await runTsc(context, tscArgs)).success : success;
+  if (!ignoreTsc) {
+    success = success ? (await runTsc(context, tscArgs, envs)).success : success;
+  }
 
   success = success
     ? (await removeIgnoredFiles(context, destinationDir, staticFilesToIgnore)).success
@@ -280,7 +282,9 @@ export default async function buildPackage(options: BuildPackageOptions, context
 
   await copyFiles({ destinationDir, projectDir, staticFilesToCopy });
 
-  await replacePackageVersions(context, destinationDir);
+  if (replacePackageJson) {
+    await replacePackageVersions(context, destinationDir);
+  }
 
   return Promise.resolve({ success });
 }

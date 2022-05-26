@@ -1,4 +1,4 @@
-# Coinbase design system
+# Coinbase Design System
 
 ### Table of Contents
 
@@ -13,7 +13,7 @@
 
 # Setup
 
-Welcome to the Coinbase design system. To get started you can run the following commands:
+Welcome to the Coinbase Design System. To get started you can run the following commands:
 
 ```sh
 yarn install

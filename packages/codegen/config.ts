@@ -5,7 +5,7 @@ import Logger from 'hygen/dist/logger';
 import { RunnerConfig } from 'hygen/dist/types';
 import { camelCase } from 'lodash';
 import path from 'path';
-import { pascalCase } from '@cbhq/cds-utils';
+import { kebabCase, pascalCase, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
 import { writePrettyFile } from '@cbhq/cds-web-utils';
 
 import { formatTemplateType } from './utils/formatTemplateType';
@@ -73,6 +73,24 @@ const localsDefaults = {
 };
 
 /**
+ *
+ * @param prefix - the prefix you want the css variable to use. This will be the broader cateogry a token belongs to like sizing or palette.
+ * @param alias - the alias for this token. i.e. rounded or xs
+ * @returns string - the final css variable
+ */
+function getCssAlias(prefix: string, alias: string) {
+  return `${kebabCase(prefix)}-${alias}`;
+}
+
+function toCssVarSetter(prefix: string, alias: string) {
+  return toCssVar(getCssAlias(prefix, alias));
+}
+
+function toCssVarGetter(prefix: string, alias: string) {
+  return toCssVarFn(getCssAlias(prefix, alias));
+}
+
+/**
  * Add any helpers you want to have accessible in hygen templates i.e `h.camelCase`
  * @link http://www.hygen.io/docs/templates
  * @example
@@ -85,8 +103,11 @@ const localsDefaults = {
  */
 const helpers = {
   camelCase,
-  pascalCase,
+  kebabCase,
   format: formatTemplateType,
+  pascalCase,
+  toCssVarGetter,
+  toCssVarSetter,
 };
 
 export const config: RunnerConfig = {

@@ -11,10 +11,10 @@
       "executor": "@cbhq/mono-tasks:lint"
     },
     "typecheck": {
-      "executor": "./tools/executors/typecheck:typecheck"
+      "executor": "@cbhq/cds-tools:typecheck"
     },
     "build": {
-      "executor": "./tools/executors/build-package:build-package",
+      "executor": "@cbhq/cds-tools:build-package",
       "options": {
         "destinationDir": "packages/web-utils/dist",
         "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],

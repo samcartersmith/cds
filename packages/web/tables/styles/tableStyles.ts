@@ -1,7 +1,8 @@
 import { css } from 'linaria';
-import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 
-import { palette } from '../../tokens';
+import { borderRadius, borderWidth, palette } from '../../tokens';
+
+const TABLE_BORDER = `${borderWidth.card} solid ${palette.line}`;
 
 export const table = css`
   display: table;
@@ -37,7 +38,7 @@ export const tableVariantBase = css`
 export const tableVariantGraph = css`
   table {
     & > tfoot {
-      border-top: ${borderWidth.card}px solid ${palette.line};
+      border-top: ${TABLE_BORDER};
     }
 
     & > tr > td,
@@ -45,8 +46,8 @@ export const tableVariantGraph = css`
     & > thead > tr > th,
     & > thead > .table-row,
     & > tfoot > tr > td {
-      border-bottom: ${borderWidth.card}px solid ${palette.line};
-      border-right: ${borderWidth.card}px solid ${palette.line};
+      border-bottom: ${TABLE_BORDER};
+      border-right: ${TABLE_BORDER};
     }
 
     & > tbody > tr:last-child > td,
@@ -66,14 +67,14 @@ export const tableVariantGraph = css`
 export const tableVariantRuled = css`
   table {
     & > tfoot {
-      border-top: ${borderWidth.card}px solid ${palette.line};
+      border-top: ${TABLE_BORDER};
     }
 
     & > tr > td,
     & > tbody > tr > td,
     & > thead > tr > th,
     & > tfoot > tr > td {
-      border-bottom: ${borderWidth.card}px solid ${palette.line};
+      border-bottom: ${TABLE_BORDER};
     }
 
     & > tbody > tr:last-child > td,
@@ -85,6 +86,6 @@ export const tableVariantRuled = css`
 
 export const tableBorder = css`
   overflow: auto;
-  border: ${borderWidth.card}px solid ${palette.line};
-  border-radius: ${borderRadius.standard}px;
+  border: ${TABLE_BORDER};
+  border-radius: ${borderRadius.standard};
 `;

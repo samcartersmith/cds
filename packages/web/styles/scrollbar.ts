@@ -1,7 +1,6 @@
 import { css } from 'linaria';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
 
-import { palette } from '../tokens';
+import { borderRadius, palette } from '../tokens';
 
 /**
  * This is custom styling for scrollbars that should only be used when
@@ -19,7 +18,7 @@ export const transparentScrollbar = css`
   /* when you make the track invisible, you have to recreate the thumb (scrubber) */
   &::-webkit-scrollbar-thumb {
     background-color: ${palette.lineHeavy};
-    border-radius: ${borderRadius.pill}px;
+    border-radius: ${borderRadius.pill};
     &:hover {
       background-color: ${palette.foregroundMuted};
     }

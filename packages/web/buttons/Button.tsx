@@ -55,6 +55,7 @@ export const Button = forwardRef(function Button(
     variant = 'primary',
     noScaleOnPress,
     eventConfig,
+    numberOfLines,
     ...props
   }: ButtonProps,
   ref: React.Ref<HTMLButtonElement>,
@@ -96,7 +97,8 @@ export const Button = forwardRef(function Button(
       className={cx(
         foregroundColors[color],
         buttonStyles.button,
-        hasFrontier && hasIcon && buttonStyles.frontierButton,
+        numberOfLines && buttonStyles.unsetNoWrap,
+        hasFrontier && hasIcon && buttonStyles.frontierButtonWithIcon,
         compact && buttonStyles.buttonCompact,
         block && buttonStyles.buttonBlock,
         spacingClass,
@@ -122,7 +124,7 @@ export const Button = forwardRef(function Button(
             <MaterialSpinner size={buttonStyles.LOADERSIZE} color={color} />
           </span>
         )}
-        <TextHeadline as="span" color={color} noWrap>
+        <TextHeadline as="span" color={color} numberOfLines={numberOfLines} noWrap={!hasFrontier}>
           <span className={cx(loading && buttonStyles.visibilityHidden)}>{children}</span>
         </TextHeadline>
       </span>

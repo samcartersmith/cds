@@ -105,6 +105,13 @@ const noWrap = css`
   white-space: nowrap;
 `;
 
+const numberOfLines = css`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--typography-number-of-lines);
+  overflow: hidden;
+`;
+
 export const getTypographyStyles = (props: Omit<TextProps, 'children'>) => {
   return [
     transition,
@@ -115,6 +122,7 @@ export const getTypographyStyles = (props: Omit<TextProps, 'children'>) => {
     props.selectable && userSelect[props.selectable],
     props.underline && underline,
     props.noWrap && noWrap,
+    props.numberOfLines && numberOfLines,
     props.overflow && overflow[props.overflow],
     props.transform && transform[props.transform],
   ];

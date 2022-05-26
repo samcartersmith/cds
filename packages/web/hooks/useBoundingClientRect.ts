@@ -18,9 +18,7 @@ const defaultValue: DOMRect = {
 };
 
 export const useBoundingClientRect = (ref: MutableRefObject<HTMLElement | null>) => {
-  const [rect, setRect] = useState<DOMRect>(
-    ref.current ? ref.current.getBoundingClientRect() : defaultValue,
-  );
+  const [rect, setRect] = useState<DOMRect>(ref.current?.getBoundingClientRect() ?? defaultValue);
 
   const handleResize = useCallback(() => {
     if (ref.current) {

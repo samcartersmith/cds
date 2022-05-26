@@ -16,7 +16,7 @@ We have also added demo data to show a more realistic example; note that this is
 
 The User Switcher recipe is composed of the following CDS components:
 
-- [Switcher](../components/switcher)
+- [Dropdown](../components/dropdown)
 - [ListCell](../components/list-cell)
 - [Cell](https://github.cbhq.net/frontend/cds/blob/master/packages/web/cells/Cell.tsx)
 - [Collapsible](../components/collapsible)
@@ -28,10 +28,9 @@ Some key details about the abstractions in this recipe:
 
 <br />
 
-Switcher
+Dropdown
 
-- Switcher contains the prescriptive layout/overlay logic shared between App and UserSwitcher.
-- This component will be exposed to consumers.
+- Dropdown contains the prescriptive layout/overlay logic shared between App and UserSwitcher.
 
 <br />
 
@@ -47,29 +46,21 @@ function UserSwitcherRecipe({
   title = 'Brian Armstrong',
   description = 'brian.armstrong@coinbase.com',
 }) {
-  const [visible, toggleVisibility] = useToggler(false);
-
-  const userSwitcherWidth = 400;
-
-  const handleSubjectPress = () => {
-    toggleVisibility.toggle();
+  const switcherPositionConfig = {
+    placement: 'bottom',
+    gap: 1,
   };
-
-  const handleClose = () => {
-    toggleVisibility.toggleOff();
-  };
-
   return (
     <PortalProvider>
       <FeatureFlagProvider frontierColor frontierButton>
         <HStack spacing={4}>
-          <Switcher
-            visible={visible}
-            onPressSubject={handleSubjectPress}
-            onClose={handleClose}
+          <Dropdown
             content={<UserSwitcherContent />}
-            minWidth={userSwitcherWidth}
-            maxWidth={userSwitcherWidth}
+            width={400}
+            maxHeight={600}
+            showOverlay
+            contentPosition={switcherPositionConfig}
+            showMobileModal
           >
             <Pressable backgroundColor="transparent" as="button" borderRadius="standard">
               <HStack gap={1} alignItems="center">
@@ -92,7 +83,7 @@ function UserSwitcherRecipe({
                 </VStack>
               </HStack>
             </Pressable>
-          </Switcher>
+          </Dropdown>
         </HStack>
       </FeatureFlagProvider>
     </PortalProvider>

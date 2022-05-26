@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { CSSProperties, useMemo } from 'react';
 import { Variants } from 'framer-motion';
 import {
   animateInMaxSizeConfig,
@@ -19,11 +19,14 @@ export const useCollapsibleStyles = ({
   const state = collapsed ? 'collapsed' : 'expanded';
 
   const defaultStyle = useMemo(() => {
+    // override visibility: hidden
+    const styles = { visibility: 'visible' as CSSProperties['visibility'] };
+
     if (dangerouslyDisableOverflowHidden) {
-      return { display: 'block' };
+      return styles;
     }
     return {
-      display: 'block',
+      ...styles,
       // need this for enter animation to have correct masking effect
       overflow: 'hidden',
     };
@@ -41,7 +44,7 @@ export const useCollapsibleStyles = ({
           animateOutMaxSizeConfig[direction],
         ]),
         // prevent focus on collapsed element
-        transitionEnd: { display: 'none' },
+        transitionEnd: { visibility: 'hidden' },
       },
     };
   }, [direction]);

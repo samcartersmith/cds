@@ -28,6 +28,7 @@ module.exports = {
     'storybook-addon-designs',
     'storybook-addon-performance/register',
     // 'storybook-addon-pseudo-states', enable when addon/docs is removed
+    'storybook-dark-mode',
   ],
   core: {
     builder: 'webpack5',

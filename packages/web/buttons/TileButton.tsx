@@ -1,13 +1,13 @@
 import React, { ForwardedRef, forwardRef, memo, useCallback } from 'react';
 import { css } from 'linaria';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { tileSize } from '@cbhq/cds-common/tokens/tile';
 import { TileBaseProps } from '@cbhq/cds-common/types';
 
 import { focusVisibleClassName, insetFocusRing } from '../styles/focus';
 import { Pressable, PressableInternalProps } from '../system/Pressable';
+import { borderRadius } from '../tokens';
 import { cx } from '../utils/linaria';
 
 import { Tile } from './Tile';
@@ -17,7 +17,7 @@ const pressableStyles = css`
   padding: 0;
   &.${focusVisibleClassName} {
     &::before {
-      border-radius: ${borderRadius.standard}px;
+      border-radius: ${borderRadius.standard};
     }
   }
 `;

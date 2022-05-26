@@ -25,7 +25,6 @@ import { UserSwitcher } from './UserSwitcher.stories';
 export const NavigationRecipe = () => {
   const [isCollapsed, handleToggleCollapsed] = useToggler(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [moreMenuVisible, toggleMoreMenuVisibility] = useToggler(false);
   const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);
   const moreMenuIndex = 4;
 
@@ -67,10 +66,7 @@ export const NavigationRecipe = () => {
             <SidebarMoreMenu
               onChange={handleMoreMenuChange}
               value={moreMenuValue}
-              visible={moreMenuVisible}
               active={activeIndex === moreMenuIndex}
-              openMenu={toggleMoreMenuVisibility.toggleOn}
-              closeMenu={toggleMoreMenuVisibility.toggleOff}
               onPress={handleSidebarMoreMenuPress}
               tooltipContent="More"
             >

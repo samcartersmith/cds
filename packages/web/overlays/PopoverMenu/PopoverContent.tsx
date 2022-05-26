@@ -4,6 +4,7 @@ import { css } from 'linaria';
 import { VStack } from '../../layout/VStack';
 import { transparentScrollbar } from '../../styles/scrollbar';
 import { cx } from '../../utils/linaria';
+import { FocusTrap } from '../FocusTrap';
 
 import { usePopoverContext } from './PopoverContext';
 import { usePopoverMenuAnimation } from './usePopoverMenuAnimation';
@@ -31,6 +32,8 @@ export const PopoverContent = memo(({ children }: PopoverContentProps) => {
     controlledElementAccessibilityProps,
     popoverPositionConfig,
     visible,
+    handlePopoverMenuBlur,
+    handleExitMenu,
   } = usePopoverContext();
   const { popperStyles, popperAttributes } = usePopoverPosition(
     trigger,
@@ -70,8 +73,14 @@ export const PopoverContent = memo(({ children }: PopoverContentProps) => {
           popoverStyleOverrides,
           transparentScrollbar,
         )}
+        onBlur={handlePopoverMenuBlur}
       >
-        {children}
+        {/* NOTE: this is a temp fix since we're deprecating this component but 
+        FocusTrap must take a ReactElement as child and it breaks the animations 
+        if I wrap the outer VStack in FocusTrap */}
+        <FocusTrap onEscPress={handleExitMenu}>
+          <VStack>{children}</VStack>
+        </FocusTrap>
       </VStack>
     </div>
   );

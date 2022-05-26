@@ -7,11 +7,8 @@ const sectionsToExcludeByLabel = new Set([]);
 // Removes unfinished components from section in side bar
 // Please alphabetize to avoid merge conflicts
 const componentsToExcludeByLabel = new Set([
-  'components/navigation/SidebarMoreMenu/sidebar-more-menu',
-  'components/navigation/Switcher/switcher',
   'components/buttons/TileButton/tile-button',
   'components/buttons/NavigationIconButton/navigation-icon-button',
-  'components/overlays/FullscreenModal/fullscreen-modal',
 ]);
 
 // Filter sidebar components
@@ -137,6 +134,7 @@ module.exports = {
     },
     'a11y-report',
     'analytics',
+    { type: 'doc', id: 'guides/migration/overview', label: 'Migration Guides' },
     {
       type: 'category',
       link: showIndexPageForCategory,

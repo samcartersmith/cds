@@ -6,6 +6,7 @@ import { globalStyles } from '@cbhq/cds-web/styles/global';
 import { withPerformance } from 'storybook-addon-performance';
 import { StoryContainer } from '@cbhq/cds-web/storybook-decorators/StoryContainer';
 import { withDesign } from 'storybook-addon-designs';
+import { themes } from '@storybook/theming';
 
 export const decorators = [StoryContainer, withPerformance, withDesign];
 
@@ -28,6 +29,11 @@ export const parameters = {
     },
   },
   globalStyles, // linaria requires usage to generate the styles
+  darkMode: {
+    // Override the default dark theme
+    dark: { ...themes.dark, appContentBg: 'black', barBg: 'black' },
+    light: themes.normal,
+  },
 };
 
 export const globalTypes = {

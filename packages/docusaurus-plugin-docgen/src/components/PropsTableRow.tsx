@@ -1,29 +1,24 @@
 import React, { useCallback, useMemo } from 'react';
-import entries from 'lodash/entries';
 import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
 import { HStack } from '@cbhq/cds-web/layout';
 import { useToast } from '@cbhq/cds-web/overlays/useToast';
-import { Table, TableBody, TableCell, TableHeader, TableRow } from '@cbhq/cds-web/tables';
+import { TableCell, TableRow } from '@cbhq/cds-web/tables';
 import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
 
-import type { AliasTypes, ParentTypes, ParsedProp } from '../scripts/docgenParser';
+import type { ProcessedPropItem, PropItemTags, SharedTypeAliases } from '../scripts/types';
 
 import { Badge, BadgeVariant } from './Badge';
-import { PropsTableModal } from './PropsTableModal';
+import { ModalLink } from './ModalLink';
 
-export type PropsTableRowProps = ParsedProp & {
-  aliasTypes: AliasTypes;
-  parentTypes: ParentTypes;
+export type PropsTableRowProps = {
+  prop: ProcessedPropItem;
+  sharedTypeAliases: SharedTypeAliases;
 };
 
-function getBadges({
-  dangerous,
-  deprecated,
-  internal,
-}: Pick<ParsedProp, 'dangerous' | 'deprecated' | 'internal'>) {
+function getBadges({ danger, deprecated, internal }: PropItemTags) {
   const badges: BadgeVariant[] = [];
-  if (dangerous) {
-    badges.push('dangerous');
+  if (danger) {
+    badges.push('danger');
   }
   if (deprecated) {
     badges.push('deprecated');
@@ -34,21 +29,16 @@ function getBadges({
   return badges;
 }
 
-export function PropsTableRow({
-  name,
-  description,
-  options: type,
-  defaultValue = '--',
-  dangerous,
-  deprecated,
-  internal,
-  required,
-  aliasTypes,
-  parentTypes,
-}: PropsTableRowProps) {
+const emptyArray: BadgeVariant[] = [];
+
+export function PropsTableRow({ prop, sharedTypeAliases }: PropsTableRowProps) {
+  const { defaultValue, name, description, type, tags, required } = prop;
   const badgeVariants = useMemo(() => {
-    return getBadges({ dangerous, deprecated, internal });
-  }, [dangerous, deprecated, internal]);
+    if (tags) {
+      return getBadges(tags);
+    }
+    return emptyArray;
+  }, [tags]);
   const toast = useToast();
 
   const copyLinkToClipboard = useCallback(() => {
@@ -62,64 +52,29 @@ export function PropsTableRow({
   }, [name, toast]);
 
   const typeContent = useMemo(() => {
-    if (type in aliasTypes) {
+    if (type in sharedTypeAliases) {
       return (
         <TableCell>
-          <PropsTableModal title={type} modalContent={aliasTypes[type]} />
-        </TableCell>
-      );
-    }
-    if (type in parentTypes) {
-      const propsForParentType = parentTypes[type];
-      return (
-        <TableCell>
-          <PropsTableModal
-            title={type}
-            modalContent={
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableCell title="Name" />
-                    <TableCell title="Type" />
-                    <TableCell title="Default" />
-                    <TableCell title="" />
-                    <TableCell title="" />
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {entries(propsForParentType).map(([, item]) => {
-                    return (
-                      <PropsTableRow
-                        key={item.name}
-                        {...item}
-                        parentTypes={parentTypes}
-                        aliasTypes={aliasTypes}
-                      />
-                    );
-                  })}
-                </TableBody>
-              </Table>
-            }
-          />
+          <ModalLink title={type} content={sharedTypeAliases[type]} />
         </TableCell>
       );
     }
     return <TableCell title={type} />;
-  }, [type, aliasTypes, parentTypes]);
+  }, [type, sharedTypeAliases]);
 
   return (
-    <TableRow>
+    <TableRow key={name}>
       <TableCell
         title={name}
         subtitle={description}
         end={required ? <Badge variant="required" /> : undefined}
       />
       {typeContent}
-      <TableCell title={defaultValue} />
+      <TableCell title={defaultValue ?? '--'} />
       <TableCell direction="horizontal" justifyContent="flex-end">
         <HStack gap={1}>
           {badgeVariants.map((item) => (
-            <Badge variant={item} />
+            <Badge key={item} variant={item} />
           ))}
         </HStack>
       </TableCell>

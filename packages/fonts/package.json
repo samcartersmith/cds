@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-fonts",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "description": "Coinbase Design System - Fonts",
   "keywords": [
     "cds",
@@ -10,6 +10,9 @@
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "authors": "Coinbase",
   "main": "./index",
+  "devDependencies": {
+    "@cbhq/cds-tools": "workspace:*"
+  },
   "scripts": {
     "build": "nx run fonts:build",
     "lint": "nx run fonts:lint",

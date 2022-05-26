@@ -38,6 +38,10 @@
     "typescriptConfig": {
       "type": "string",
       "description": "relative path of the typescript config file"
+    },
+    "envs": {
+      "type": "object",
+      "description": "Allows additional environment variables"
     }
   }
 }

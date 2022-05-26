@@ -12,7 +12,6 @@ import {
   popoverMenuBuilder,
   priceOptions,
 } from '../__stories__/popoverMenuBuilder';
-import { MenuItem } from '../PopoverMenu/MenuItem';
 import { PopoverMenu } from '../PopoverMenu/PopoverMenu';
 import { PopoverTrigger } from '../PopoverMenu/PopoverTrigger';
 import { PopoverTriggerWrapper } from '../PopoverMenu/PopoverTriggerWrapper';
@@ -23,7 +22,6 @@ const { Default: MockPopoverMenu, AvatarButtonMenu } = popoverMenuBuilder({
   PopoverMenu,
   PopoverTrigger,
   PopoverTriggerWrapper,
-  MenuItem,
   SelectOption,
   IconButton,
   ThemeProvider,
@@ -106,29 +104,6 @@ describe('PopoverMenu', () => {
 
     // menu should dismount
     expect(onBlurSpy).toHaveBeenCalled();
-  });
-  it('the selected option has a tabindex of 0', async () => {
-    const { getAllByRole, getByTestId } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />,
-    );
-
-    // press the trigger
-    fireEvent.click(getByTestId(mockTriggerTestID));
-
-    // select the first option
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
-    fireEvent.click(firstOption);
-
-    // menu should dismount
-    expect(onBlurSpy).toHaveBeenCalled();
-
-    // press the trigger
-    fireEvent.click(getByTestId(mockTriggerTestID));
-
-    // expect the first option to have tabindex 0
-    // you have to rerender it because it has a checkbox accessory now
-    const firstOptionRerendered = await waitFor(() => getAllByRole('menuitem')[0]);
-    expect(firstOptionRerendered).toHaveAttribute('tabindex', '0');
   });
   // keyboard interactions to open the menu
   it('opens the menu when the trigger is focused and user types Enter', async () => {
@@ -272,9 +247,14 @@ describe('PopoverMenu', () => {
     });
 
     const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
+    const secondOption = getAllByRole('menuitem')[1];
     const lastOption = getAllByRole('menuitem')[getAllByRole('menuitem').length - 1];
 
     fireEvent.keyDown(firstOption, {
+      key: 'ArrowDown',
+      code: 'ArrowDown',
+    });
+    fireEvent.keyDown(secondOption, {
       key: 'End',
       code: 'End',
     });
@@ -325,7 +305,7 @@ describe('PopoverMenu', () => {
     expect(onBlurSpy).toHaveBeenCalled();
   });
 
-  it('when the first option is focused and ArrowUp is typed it closes the menu', async () => {
+  it('when the first option is focused and ArrowUp is typed it focuses on the last option', async () => {
     const { getByTestId, getAllByRole } = render(
       <MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />,
     );
@@ -336,16 +316,16 @@ describe('PopoverMenu', () => {
     });
 
     const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
+    const lastOption = getAllByRole('menuitem')[getAllByRole('menuitem').length - 1];
 
     fireEvent.keyDown(firstOption, {
       key: 'ArrowUp',
       code: 'ArrowUp',
     });
 
-    // expect the menu to close
-    expect(onBlurSpy).toHaveBeenCalled();
+    expect(lastOption).toHaveFocus();
   });
-  it('when the last option is focused and ArrowDown is typed it closes the menu', async () => {
+  it('when the last option is focused and ArrowDown is typed it focuses on the first option', async () => {
     const { getByTestId, getAllByRole } = render(
       <MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />,
     );
@@ -356,20 +336,19 @@ describe('PopoverMenu', () => {
     });
 
     const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
+    const lastOption = getAllByRole('menuitem')[getAllByRole('menuitem').length - 1];
 
     fireEvent.keyDown(firstOption, {
       key: 'End',
       code: 'End',
     });
 
-    const lastOption = getAllByRole('menuitem')[getAllByRole('menuitem').length - 1];
     fireEvent.keyDown(lastOption, {
       key: 'ArrowDown',
       code: 'ArrowDown',
     });
 
-    // expect the menu to close
-    expect(onBlurSpy).toHaveBeenCalled();
+    expect(firstOption).toHaveFocus();
   });
 });
 

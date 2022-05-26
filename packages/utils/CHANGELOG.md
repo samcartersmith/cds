@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.4.0 (5/17/2022, 01:24 PM PST)
+
+#### 📘 Misc
+
+- Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
+
 ## 0.3.7 (5/5/2022, 01:35 PM PST)
 
 #### 🐞 Fixes

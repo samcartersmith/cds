@@ -1,16 +1,12 @@
 import React, { memo } from 'react';
 
-import type { ButtonBaseProps, CdsPlatform } from '../types/alpha';
+import type { ButtonBaseProps } from '../types/alpha';
 
 type CreateCardBodyParams<OnPressFn> = {
   Button: React.ComponentType<ButtonBaseProps<OnPressFn>>;
-  platform: CdsPlatform;
 };
 
-export function createCardBodyAction<OnPressFn>({
-  Button,
-  platform,
-}: CreateCardBodyParams<OnPressFn>) {
+export function createCardBodyAction<OnPressFn>({ Button }: CreateCardBodyParams<OnPressFn>) {
   const CardBodyAction = memo(function CardBodyAction({
     children,
     compact = true,
@@ -27,7 +23,7 @@ export function createCardBodyAction<OnPressFn>({
         transparent={transparent}
         variant={variant}
         noScaleOnPress
-        numberOfLines={platform === 'mobile' ? numberOfLines : undefined}
+        numberOfLines={numberOfLines}
         {...props}
       >
         {children}

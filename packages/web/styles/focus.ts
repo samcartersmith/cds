@@ -1,9 +1,11 @@
 import { css } from 'linaria';
-import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 
-import { palette } from '../tokens';
+import { borderRadius, borderWidth, palette } from '../tokens';
 
 const FOCUS_RING_PADDING = 4;
+const FOCUS_RING_POSITION = `calc(-1 * (${FOCUS_RING_PADDING}px + ${borderWidth.button}))`;
+const INSET_FOCUS_RING_PADDING = 0;
+
 export const focusVisibleClassName = 'focus-visible';
 
 /**
@@ -23,20 +25,17 @@ export const focusRing = css`
       content: '';
       position: absolute;
       /* TODO: make border width work with other components */
-      top: calc(-1 * (${FOCUS_RING_PADDING}px + ${borderWidth.button}px));
-      left: calc(-1 * (${FOCUS_RING_PADDING}px + ${borderWidth.button}px));
-      right: calc(-1 * (${FOCUS_RING_PADDING}px + ${borderWidth.button}px));
-      bottom: calc(-1 * (${FOCUS_RING_PADDING}px + ${borderWidth.button}px));
-      border: ${borderWidth.focusRing}px solid ${palette.primary};
+      top: ${FOCUS_RING_POSITION};
+      left: ${FOCUS_RING_POSITION};
+      right: ${FOCUS_RING_POSITION};
+      bottom: ${FOCUS_RING_POSITION};
+      border: ${borderWidth.focusRing} solid ${palette.primary};
       border-radius: inherit;
     }
   }
 `;
 
-const INSET_FOCUS_RING_PADDING = 0;
-
 /**
- * insetFocusRing should only be used in a MenuItem or when overflow is hidden.
  * insetFocusRing uses the focus-visible polyfill (since Safari does not yet support focus-visible)
  * @link https://github.com/WICG/focus-visible
  * this polyfill detects whether an interaction would have triggered the focus-visible property
@@ -55,8 +54,8 @@ export const insetFocusRing = css`
       left: ${INSET_FOCUS_RING_PADDING}px;
       right: ${INSET_FOCUS_RING_PADDING}px;
       bottom: ${INSET_FOCUS_RING_PADDING}px;
-      border: ${borderWidth.focusRing}px solid ${palette.primary};
-      border-radius: ${borderRadius.compact}px;
+      border: ${borderWidth.focusRing} solid ${palette.primary};
+      border-radius: ${borderRadius.compact};
     }
   }
 `;

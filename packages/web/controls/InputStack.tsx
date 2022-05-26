@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from 'linaria';
-import { ForwardedRef } from '@cbhq/cds-common';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { BorderWidth, ForwardedRef } from '@cbhq/cds-common';
+import { inputStackGap } from '@cbhq/cds-common/tokens/input';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { durations } from '@cbhq/cds-common/tokens/motion';
 import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
@@ -11,6 +11,7 @@ import { usePalette } from '../hooks/usePalette';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Interactable } from '../system/Interactable';
+import { borderWidth as borderWidths } from '../tokens';
 import { cx } from '../utils/linaria';
 
 import { InputLabel } from './InputLabel';
@@ -28,7 +29,7 @@ const inputBaseAreaStyles = css`
 
     &:focus-within {
       border-color: var(--border-color-focused);
-      box-shadow: 0 0 0 ${borderWidth.input}px var(--border-color-focused);
+      box-shadow: 0 0 0 var(--border-width-focused) var(--border-color-focused);
     }
   }
 `;
@@ -46,13 +47,15 @@ const inputAreaContainerStyles = css`
 const persistedFocusStyles = css`
   &&&& {
     border-color: var(--border-color-focused);
-    box-shadow: 0 0 0 ${borderWidth.input}px var(--border-color-focused);
+    box-shadow: 0 0 0 var(--border-width-focused) var(--border-color-focused);
   }
 `;
 
 export type InputStackProps = {
-  /** Adds border styling to input  */
-  borderStyle?: string;
+  /** Width of the border.
+   * @default input
+   */
+  borderWidth?: BorderWidth;
 } & InputStackBaseProps;
 
 export const InputStack = memo(
@@ -67,7 +70,7 @@ export const InputStack = memo(
       disabled = false,
       inputNode,
       helperTextNode,
-      borderStyle,
+      borderWidth = 'input',
       variant = 'foregroundMuted',
       labelNode,
       testID = '',
@@ -116,12 +119,13 @@ export const InputStack = memo(
         '--border-color-unfocused':
           variant === 'foregroundMuted' ? palette.lineHeavy : palette[variant],
         '--border-color-focused': borderColorFocused,
+        '--border-width-focused': borderWidths[borderWidth],
         ...inputBorderRadius,
       };
-    }, [variant, palette, borderColorFocused, inputBorderRadius]);
+    }, [variant, palette, borderColorFocused, borderWidth, inputBorderRadius]);
 
     return (
-      <VStack testID={testID} width={width} gap={0.5} {...props}>
+      <VStack testID={testID} width={width} gap={inputStackGap} {...props}>
         {!!labelNode && (
           <>{typeof labelNode === 'string' ? <InputLabel>{labelNode}</InputLabel> : labelNode}</>
         )}
@@ -131,14 +135,14 @@ export const InputStack = memo(
             <Interactable
               as="span"
               backgroundColor="background"
-              borderWidth="input"
+              borderWidth={borderWidth}
               ref={ref}
               height={height}
               testID="input-interactable-area"
               borderRadius={borderRadius}
               disabled={disabled}
               style={defaultBorderStyles}
-              className={cx(inputBaseAreaStyles, borderStyle, focused && persistedFocusStyles)}
+              className={cx(inputBaseAreaStyles, focused && persistedFocusStyles)}
             >
               {!!startNode && <>{startNode}</>}
               {inputNode}

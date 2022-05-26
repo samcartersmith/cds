@@ -11,7 +11,6 @@ import {
 
 import { useA11yId } from '../hooks/useA11yId';
 import { HStack } from '../layout/HStack';
-import { PopoverTrigger, PopoverTriggerProps } from '../overlays/PopoverMenu/PopoverTrigger';
 import { PressableOpacity } from '../system';
 import { TextBody } from '../typography/TextBody';
 
@@ -23,8 +22,7 @@ import { SelectStack } from './SelectStack';
 export type SelectTriggerProps = {
   rotateAnimationRef: RefObject<HTMLDivElement>;
   triggerHasFocus: boolean;
-} & Omit<SelectBaseProps, 'children' | 'focused' | 'width' | 'onChange'> &
-  Omit<PopoverTriggerProps, 'children' | 'focused'>;
+} & Omit<SelectBaseProps, 'children' | 'focused' | 'width' | 'onChange'>;
 
 const pressableOverrides = css`
   padding: 0;
@@ -62,6 +60,8 @@ export const SelectTrigger = memo(
       compact ? selectTriggerCompactMinHeight : selectTriggerMinHeight,
     );
     const shouldShowCompactLabel = compact && label;
+    // this corrects for when value is initialized with an empty string, coerce it to undefined
+    const sanitizedValue = value === '' ? undefined : value;
 
     return (
       <SelectStack
@@ -75,58 +75,58 @@ export const SelectTrigger = memo(
         accessibilityLabelId={accessibilityLabelId}
         accessibilityDescriptionId={accessibilityDescriptionId}
       >
-        <PopoverTrigger onPress={onPress}>
-          <PressableOpacity width="100%" noScaleOnPress className={pressableOverrides} {...props}>
+        <PressableOpacity
+          onPress={onPress}
+          width="100%"
+          noScaleOnPress
+          className={pressableOverrides}
+          tabIndex={0}
+          {...props}
+        >
+          <HStack minHeight={minHeight} width="100%" minWidth={0} spacingStart={startNode ? 0 : 2}>
+            {!!startNode && (
+              <HStack alignItems="center" justifyContent="center" minWidth={0}>
+                {startNode}
+              </HStack>
+            )}
+            {shouldShowCompactLabel ? (
+              <HStack spacingEnd={1} alignItems="center" maxWidth="40%">
+                <InputLabel color={labelTextColor} overflow="truncate" id={accessibilityLabelId}>
+                  {label}
+                </InputLabel>
+              </HStack>
+            ) : null}
             <HStack
-              minHeight={minHeight}
+              alignItems="center"
+              borderRadius="standard"
+              justifyContent="space-between"
+              spacingVertical={compact ? 1 : 2}
               width="100%"
               minWidth={0}
-              spacingStart={startNode ? 0 : 2}
             >
-              {!!startNode && (
-                <HStack alignItems="center" justifyContent="center" minWidth={0}>
-                  {startNode}
-                </HStack>
-              )}
-              {shouldShowCompactLabel ? (
-                <HStack spacingEnd={1} alignItems="center" maxWidth="40%">
-                  <InputLabel color={labelTextColor} overflow="truncate" id={accessibilityLabelId}>
-                    {label}
-                  </InputLabel>
-                </HStack>
-              ) : null}
               <HStack
-                alignItems="center"
-                borderRadius="standard"
-                justifyContent="space-between"
-                spacingVertical={compact ? 1 : 2}
-                width="100%"
+                flexGrow={1}
+                flexShrink={1}
                 minWidth={0}
+                justifyContent={shouldShowCompactLabel ? 'flex-end' : 'flex-start'}
               >
-                <HStack
-                  flexGrow={1}
-                  flexShrink={1}
-                  minWidth={0}
-                  justifyContent={shouldShowCompactLabel ? 'flex-end' : 'flex-start'}
+                <TextBody
+                  as="p"
+                  color={sanitizedValue ? 'foreground' : 'foregroundMuted'}
+                  overflow="truncate"
+                  align={shouldShowCompactLabel ? 'end' : 'start'}
                 >
-                  <TextBody
-                    as="p"
-                    color={value ? 'foreground' : 'foregroundMuted'}
-                    overflow="truncate"
-                    align={shouldShowCompactLabel ? 'end' : 'start'}
-                  >
-                    {value ?? placeholder ?? (!compact ? label : null)}
-                  </TextBody>
-                </HStack>
-                <HStack alignItems="center">
-                  <TextInputFocusVariantContext.Provider value={focusedVariant ?? undefined}>
-                    <InputIcon ref={rotateAnimationRef} name="caretDown" />
-                  </TextInputFocusVariantContext.Provider>
-                </HStack>
+                  {sanitizedValue ?? placeholder ?? (!compact ? label : null)}
+                </TextBody>
+              </HStack>
+              <HStack alignItems="center">
+                <TextInputFocusVariantContext.Provider value={focusedVariant ?? undefined}>
+                  <InputIcon ref={rotateAnimationRef} name="caretDown" />
+                </TextInputFocusVariantContext.Provider>
               </HStack>
             </HStack>
-          </PressableOpacity>
-        </PopoverTrigger>
+          </HStack>
+        </PressableOpacity>
       </SelectStack>
     );
   }),

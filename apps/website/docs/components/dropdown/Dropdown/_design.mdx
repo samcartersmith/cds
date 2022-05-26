@@ -1,0 +1,119 @@
+import { DocImage } from ':cds-website/components/DocImage';
+import { Menu } from ':cds-website/components/Menu';
+import { Principles } from ':cds-website/components/Principles';
+import { Collection, Item } from ':cds-website/components/Collection';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
+import { Pictogram } from '@cbhq/cds-web/illustrations';
+import { TextBody, TextTitle3 } from '@cbhq/cds-web/typography';
+
+### Principles
+
+<Principles
+  contextual="Dropdown should always be placed in context to the trigger."
+  relevant="Always ensure Select Options are related to the trigger."
+  scannable="Select Option items should be quick and easy to scan through."
+/>
+
+### Usage
+
+Use this component to display a list of options related to an existing UI element like an icon, button, action, or content.
+
+### Types
+
+There are a handful of ways to modify our Menu component. By default, all Dropdowns will be a simple list of items. If needed, you can adjust the style of the list item, add a description line, or place an object like an icon, avatar, or photo at the start of the list item.
+
+<VStack
+  borderRadius="standard"
+  background="backgroundAlternate"
+  spacingVertical={8}
+  width="100%"
+  spacingHorizontal={2}
+  gap={3}
+>
+  <HStack gap={2} justifyContent="center">
+    <Menu />
+    <Menu preferTitle />
+    <Menu showDescription />
+  </HStack>
+  <HStack gap={2} justifyContent="center">
+    <Menu showMediaIcons />
+    <Menu showMediaAssets preferTitle />
+    <Menu showMediaAssets showDescription />
+  </HStack>
+</VStack>
+
+### Anatomy
+
+<DocImage component="Dropdown" name="anatomy" format="png" />
+
+**1. Select Option**
+
+Menu is composed of multiple Select Options.
+
+**2. Selected Option**
+
+A checkmark indicates a selected Select Option.
+
+### Cross-Platform
+
+On Mobile, Dropdowns are displayed as Trays.
+
+<Collection>
+  <Item
+    textAlign="left"
+    vid={{
+      light: '/img/components/Dropdown/web_light.mp4',
+      dark: '/img/components/Dropdown/web_dark.mp4',
+      options: { controls: false },
+    }}
+    title="Web"
+    description="On Web, the expanded state will reveal a Dropdown that appears directly under the trigger. "
+  />
+  <Item
+    textAlign="left"
+    vid={{
+      light: '/img/components/Dropdown/mobile_light.mp4',
+      dark: '/img/components/Dropdown/mobile_dark.mp4',
+      options: { controls: false },
+    }}
+    title="Mobile"
+    description="On Mobile, the expanded state will trigger a Background Overlay and Tray that animates  from the bottom of the screen."
+  />
+</Collection>
+
+### Behavior
+
+#### Position
+
+Use spacing 0.5 between the trigger and the Dropdown.
+
+<DocImage component="Dropdown" name="position" format="png" />
+
+### Scrolling
+
+If the list of options is longer than the max-height of the Dropdown, a scrollbar will appear.
+
+<VStack
+  borderRadius="standard"
+  background="backgroundAlternate"
+  spacingVertical={5}
+  width="100%"
+  alignItems="center"
+>
+  <Menu showDescription showMediaIcons />
+</VStack>
+
+### Content
+
+Follow these content guidelines for Dropdowns.
+
+**Concise and scannable**
+
+- Inside the menu, use concise copy that’s easy for the user to scan.
+- Avoid punctuation.
+
+**Use appropriately**
+
+- Avoid long lists of familiar data, such as a user’s birth year (which has 100+ options). Instead, let the user enter the info directly.
+- Avoid using a Dropdown for top level navigation or important items that should have higher visibility.

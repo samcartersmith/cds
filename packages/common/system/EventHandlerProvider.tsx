@@ -5,7 +5,7 @@ type RecursiveMapType<T> = T | Record<string, T>;
 export type EventDataEntryTypes = string | number | boolean | null;
 export type EventDataEntry = EventDataEntryTypes | EventDataEntryTypes[];
 
-export type EventHandlerAction = 'onPress' | 'onChange' | 'onHover' | 'onBlur';
+export type EventHandlerAction = string;
 export type EventCustomData = Record<string, RecursiveMapType<EventDataEntry>>;
 
 export type EventHandlerComponent = 'Button';
@@ -15,10 +15,13 @@ export type EventCallbackProps = {
   data?: EventCustomData;
 };
 
-export type EventHandlerCallback = (eventData?: EventCallbackProps) => void;
-export type EventHandlerEntry = Partial<Record<EventHandlerAction, EventHandlerCallback>>;
+export type EventHandlerCallback = (eventData: EventCallbackProps) => void;
+export type EventHandlerEntry = Record<string, EventHandlerCallback>;
 
-export type EventHandlerConfig = Partial<Record<EventHandlerComponent, EventHandlerEntry>>;
+export type EventHandlerConfig = {
+  actionMapping?: Record<string, string>;
+  handlers?: Record<EventHandlerComponent, EventHandlerEntry>;
+};
 
 // Event Custom Config
 // {
@@ -30,7 +33,6 @@ export type EventHandlerConfig = Partial<Record<EventHandlerComponent, EventHand
 // }
 export type EventHandlerCustomConfig = {
   actions: EventHandlerAction[];
-  enabled?: boolean;
   componentName: string;
   data?: EventCustomData;
 };

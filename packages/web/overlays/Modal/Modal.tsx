@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useCallback, useImperativeHandle, useMemo } from 'react';
-import { m as motion, Target } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { Position } from '@cbhq/cds-common';
 import {
   animateInOpacityConfig,
@@ -10,12 +10,17 @@ import {
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
 import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 
-import { Animated } from '../../animation/Animated';
 import { VStack } from '../../layout';
+import { useMotionProps } from '../../motion/useMotionProps';
 import { cx } from '../../utils/linaria';
 import { FocusTrap } from '../FocusTrap';
 
-import { modalDefaultClassName, modalResponsiveClassName } from './modalStyles';
+import {
+  modalDefaultClassName,
+  modalDialogClassName,
+  modalDialogResponsiveClassName,
+  modalResponsiveClassName,
+} from './modalStyles';
 import { ModalWrapper, ModalWrapperProps } from './ModalWrapper';
 
 export type ModalProps = {
@@ -53,6 +58,11 @@ export const Modal = memo(
       testID,
       role,
     } = props;
+    const motionProps = useMotionProps({
+      enterConfigs: [animateInOpacityConfig, animateInScaleConfig],
+      exitConfigs: [animateOutOpacityConfig, animateOutScaleConfig],
+      exit: 'exit',
+    });
 
     const handleClose = useCallback(() => {
       onRequestClose?.();
@@ -98,18 +108,13 @@ export const Modal = memo(
         role={role}
       >
         <motion.div
-          initial={
-            Animated.toFramerTransition([animateOutOpacityConfig, animateOutScaleConfig], {
-              propertiesOnly: true,
-            }) as Target
-          }
-          animate={Animated.toFramerTransition([animateInOpacityConfig, animateInScaleConfig])}
-          exit={Animated.toFramerTransition([animateOutOpacityConfig, animateOutScaleConfig])}
+          {...motionProps}
           className={cx(
             modalDefaultClassName,
             !dangerouslyDisableResponsiveness && modalResponsiveClassName,
           )}
           style={dialogStyles}
+          data-testid="modal-dialog-motion"
         >
           <FocusTrap onEscPress={shouldCloseOnEscPress ? handleClose : undefined}>
             <VStack
@@ -117,7 +122,10 @@ export const Modal = memo(
               background="background"
               width={dangerouslySetWidth ?? '100%'}
               overflow="hidden"
-              borderRadius="standard"
+              dangerouslySetClassName={cx(
+                modalDialogClassName,
+                !dangerouslyDisableResponsiveness && modalDialogResponsiveClassName,
+              )}
             >
               <ModalParentContext.Provider value={modalData}>
                 {typeof children === 'function' ? children(renderChildrenProps) : children}

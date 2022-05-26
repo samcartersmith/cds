@@ -1,7 +1,7 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { useState } from 'react';
 import { css } from 'linaria';
-import { NavigationIconName, useToggler } from '@cbhq/cds-common';
+import { NavigationIconName } from '@cbhq/cds-common';
 
 import { AvatarButton, Button, ButtonGroup, IconButton } from '../../buttons/index';
 import { SelectOption } from '../../controls/SelectOption';
@@ -23,7 +23,7 @@ import {
   SidebarItemProps,
 } from '../index';
 import { navLinkClassName } from '../NavLink';
-import { SidebarMoreMenu } from '../SidebarMoreMenu';
+import { SidebarMoreMenu, SidebarMoreMenuProps } from '../SidebarMoreMenu';
 
 export const StoryMap = {
   NoTabsNoTitle: 'No Tabs no displayTitle',
@@ -216,10 +216,9 @@ export const moreMenuOptions: MoreMenuOption[] = [
   },
 ];
 
-export const SidebarWithMoreMenuExample: React.FC = () => {
+export const SidebarWithMoreMenuExample = ({ children, ...props }: SidebarMoreMenuProps) => {
   const [collapsed, setCompact] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [moreMenuVisible, toggleMoreMenuVisibility] = useToggler(false);
   const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);
   const moreMenuIndex = 4;
 
@@ -237,24 +236,22 @@ export const SidebarWithMoreMenuExample: React.FC = () => {
     <PortalProvider>
       <HStack justifyContent="center" alignItems="flex-start" background="backgroundAlternate">
         <Sidebar collapsed={collapsed} logo={<LogoMark />}>
-          {items.slice(0, 4).map((props, index) => (
+          {items.slice(0, 4).map((item, index) => (
             <SidebarItem
-              key={`sidebar-item--${props.title}`}
+              key={`sidebar-item--${item.title}`}
               active={index === activeIndex}
               onPress={() => handleItemPress(index)}
-              tooltipContent={props.title}
-              {...props}
+              tooltipContent={item.title}
+              {...item}
             />
           ))}
           <SidebarMoreMenu
             onChange={handleMoreMenuChange}
             value={moreMenuValue}
-            visible={moreMenuVisible}
             active={activeIndex === moreMenuIndex}
-            openMenu={toggleMoreMenuVisibility.toggleOn}
-            closeMenu={toggleMoreMenuVisibility.toggleOff}
             onPress={() => setActiveIndex(moreMenuIndex)}
             tooltipContent="More"
+            {...props}
           >
             {moreMenuOptions.map((item) => (
               <SelectOption
@@ -266,26 +263,28 @@ export const SidebarWithMoreMenuExample: React.FC = () => {
             ))}
           </SidebarMoreMenu>
         </Sidebar>
-
-        <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center" flexGrow={1}>
-          <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
-          <ButtonGroup accessibilityLabel="make collapsed">
-            <Button
-              compact
-              variant={collapsed ? 'secondary' : 'primary'}
-              onPress={() => setCompact(false)}
-            >
-              default
-            </Button>
-            <Button
-              compact
-              variant={collapsed ? 'primary' : 'secondary'}
-              onPress={() => setCompact(true)}
-            >
-              collapsed
-            </Button>
-          </ButtonGroup>
-        </HStack>
+        <VStack>
+          <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center">
+            <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
+            <ButtonGroup accessibilityLabel="make collapsed">
+              <Button
+                compact
+                variant={collapsed ? 'secondary' : 'primary'}
+                onPress={() => setCompact(false)}
+              >
+                default
+              </Button>
+              <Button
+                compact
+                variant={collapsed ? 'primary' : 'secondary'}
+                onPress={() => setCompact(true)}
+              >
+                collapsed
+              </Button>
+            </ButtonGroup>
+          </HStack>
+          <HStack spacing={3}>{children}</HStack>
+        </VStack>
       </HStack>
     </PortalProvider>
   );

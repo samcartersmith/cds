@@ -1,0 +1,54 @@
+## Usage
+
+MenuItem can be used to compose custom menu options for either a `Select` or a `Dropdown` component.
+
+```jsx live
+function EmojiPicker() {
+  const emojiMap = [
+    { label: 'react', glyph: '⚛️' },
+    { label: 'love', glyph: '💕' },
+    { label: 'mindblow', glyph: '🤯' },
+    { label: 'shiny', glyph: '✨' },
+    { label: 'surprised', glyph: '🥺' },
+    { label: 'brick', glyph: '🧱' },
+    { label: 'poop', glyph: '💩' },
+    { label: 'poodle', glyph: '🐩' },
+    { label: 'rocket', glyph: '🚀' },
+    { label: 'phone', glyph: '☎️' },
+    { label: 'dog', glyph: '🐕‍🦺' },
+    { label: 'nails', glyph: '💅🏻' },
+    { label: 'upsidedown', glyph: '🙃' },
+    { label: 'coder', glyph: '👩🏼‍💻' },
+  ];
+  const [value, onChange] = useState();
+  const currentGlyph = useMemo(() => emojiMap.find((emoji) => emoji.label === value), [value]);
+
+  const content = useMemo(
+    () => (
+      <>
+        <SectionTitle text="Most Popular" />
+        <HStack gap={1} flexWrap="wrap" spacingHorizontal={2} spacingBottom={2}>
+          {emojiMap.map(({ label, glyph }) => (
+            <MenuItem value={label}>
+              <TextTitle2 as="p">{glyph}</TextTitle2>
+            </MenuItem>
+          ))}
+        </HStack>
+      </>
+    ),
+    [],
+  );
+
+  return (
+    <VStack spacing={3}>
+      <TextLabel1 as="p">Select an emoji</TextLabel1>
+      <Dropdown width={190} content={content} value={value} onChange={onChange}>
+        <PressableOpacity>
+          {/* This is a workaround because Docusaurus doesn't like nullish coalescing operators */}
+          <TextTitle2 as="p">{currentGlyph ? currentGlyph.glyph : '😄'}</TextTitle2>
+        </PressableOpacity>
+      </Dropdown>
+    </VStack>
+  );
+}
+```

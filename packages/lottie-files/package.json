@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-lottie-files",
-  "version": "0.2.27",
+  "version": "0.3.0",
   "description": "Coinbase Design System - Lottie Files",
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "keywords": [
@@ -18,5 +18,8 @@
   },
   "main": "./index",
   "typings": "index.d.ts",
-  "react-native": "./index.ts"
+  "react-native": "./index.ts",
+  "devDependencies": {
+    "@cbhq/cds-tools": "workspace:*"
+  }
 }

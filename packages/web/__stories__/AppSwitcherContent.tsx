@@ -101,7 +101,7 @@ type AppSwitcherContentProps = {
 export const AppSwitcherContent = memo(
   ({ columns = 3, data = appSwitcherData }: AppSwitcherContentProps) => {
     return (
-      <VStack>
+      <VStack spacingVertical={2}>
         {data.sections.map((section, idx) => {
           return (
             <>

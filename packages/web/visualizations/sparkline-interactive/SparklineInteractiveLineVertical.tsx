@@ -1,10 +1,10 @@
 import React, { CSSProperties, memo, useCallback } from 'react';
 import { css } from 'linaria';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { lineDashArray } from '@cbhq/cds-common/tokens/sparkline';
 import { SparklineInteractiveLineVerticalProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 
 import { usePalette } from '../../hooks/usePalette';
+import { borderWidth } from '../../tokens';
 import { cx } from '../../utils/linaria';
 
 import { resetFadeClassName } from './fade';

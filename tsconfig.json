@@ -29,6 +29,12 @@
     },
     {
       "path": "examples/nextjs"
+    },
+    {
+      "path": "tools"
+    },
+    {
+      "path": "packages/web-utils"
     }
   ]
 }

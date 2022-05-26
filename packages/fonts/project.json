@@ -5,7 +5,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "./tools/executors/build-package:build-package",
+      "executor": "@cbhq/cds-tools:build-package",
       "options": {
         "destinationDir": ".nx/dist/packages/fonts",
         "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],
@@ -19,10 +19,10 @@
       "executor": "@cbhq/mono-tasks:lint"
     },
     "lint-styles": {
-      "executor": "./tools/executors/lint-styles:lint-styles"
+      "executor": "@cbhq/cds-tools:lint-styles"
     },
     "typecheck": {
-      "executor": "./tools/executors/typecheck:typecheck"
+      "executor": "@cbhq/cds-tools:typecheck"
     }
   }
 }

@@ -1,7 +1,14 @@
+/**
+ * DO NOT MODIFY
+ * Generated from scripts/codegen/main.ts
+ */
 // focus visible polyfill
 import 'focus-visible';
 
 import { css } from 'linaria';
+
+import { borderRadiusVariables } from './borderRadius';
+import { borderWidthVariables } from './borderWidth';
 
 export const globalStyles = css`
   :global() {
@@ -21,6 +28,11 @@ export const globalStyles = css`
     html {
       -webkit-text-size-adjust: 100%; /* 2 */
       -webkit-tap-highlight-color: transparent; /* 3*/
+    }
+
+    :root {
+      ${borderRadiusVariables};
+      ${borderWidthVariables}
     }
   }
 `;

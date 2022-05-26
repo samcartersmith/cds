@@ -1,40 +1,75 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import type { LoadContext, Plugin } from '@docusaurus/types';
 import { DEFAULT_PLUGIN_ID } from '@docusaurus/utils';
-import ejs from 'ejs';
+import { flatten } from 'lodash';
 import path from 'path';
 
-import { DocgenParserParams, docgenRunner } from './scripts/docgenRunner';
-import { DocgenWriterParams } from './scripts/docgenWriter';
+import { docgenRunner } from './scripts/docgenRunner';
+import { docgenWriter, WriteFileConfig } from './scripts/docgenWriter';
+import { DocgenPluginOptions } from './scripts/types';
+import { getMinutesBetweenDates } from './utils/getMinutesBetweenDates';
+import { logger } from './utils/logger';
 
 const PLUGIN_ID = 'docusaurus-plugin-docgen';
 
-export type DocgenPluginParams = Omit<DocgenParserParams, 'outputDir'> & {
-  enable?: boolean;
-};
+/**
+ * Persist build state as a global, since the plugin is re-evaluated every hot reload.
+ * Because of this, we can't use state in the plugin or module scope.
+ */
+declare module global {
+  // eslint-disable-next-line import/no-mutable-exports
+  export let docgenBuild: {
+    lastRun: Date | undefined;
+    isRunning: boolean;
+    count: number;
+  };
+}
+
+if (!global.docgenBuild) {
+  global.docgenBuild = { lastRun: undefined, isRunning: false, count: 0 };
+}
 
 export default function plugin(
   { generatedFilesDir }: LoadContext,
-  { enable = true, ...options }: DocgenPluginParams,
-): Plugin<DocgenWriterParams | undefined> {
-  /** The directory where we want to output docgen data and components.
-   * If running on website, this will be in .docusaurus/docusaurus-plugin-docgen
+  { alias = '@docgen', enabled = true, watchInterval = 5, ...options }: DocgenPluginOptions,
+): Plugin<WriteFileConfig[] | undefined> {
+  /**
+   * The directory where we want to output docgen data and components.
+   * If running on website, this will be in .docusaurus/docusaurus-plugin-docgen/default
    */
-  const outputDir = path.join(generatedFilesDir, PLUGIN_ID, options.id ?? DEFAULT_PLUGIN_ID);
+  const pluginDir = path.join(generatedFilesDir, PLUGIN_ID, options.id ?? DEFAULT_PLUGIN_ID);
 
   return {
     name: PLUGIN_ID,
     async loadContent() {
-      if (enable) {
-        return docgenRunner({ ...options, outputDir });
+      if (enabled) {
+        logger.init();
+
+        const { isRunning, lastRun } = global.docgenBuild;
+        const isFirstRun = lastRun === undefined;
+        const lastUpdate = getMinutesBetweenDates(lastRun, new Date());
+
+        if (!isFirstRun) logger.lastUpdate(lastUpdate);
+
+        const shouldUpdate = !isRunning && (isFirstRun || lastUpdate >= watchInterval);
+        logger.initStatus(shouldUpdate);
+
+        if (shouldUpdate) {
+          return docgenRunner({ ...options, alias, pluginDir });
+        }
+      } else {
+        logger.enabledOff();
       }
       return undefined;
+    },
+    getPathsToWatch() {
+      return flatten(Object.values(options.sourceFiles));
     },
     configureWebpack(webpackConfig) {
       return {
         resolve: {
           alias: {
-            [options.alias]: path.join(
+            [alias]: path.join(
               // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
               // @ts-ignore This is how we are able to have consumers access the docgen data with alias of their choice
               webpackConfig.resolve.alias['@generated'],
@@ -46,17 +81,16 @@ export default function plugin(
         },
       };
     },
-    async contentLoaded({ content, actions }): Promise<void> {
+    async contentLoaded({ content }): Promise<void> {
       if (content) {
-        await Promise.all(
-          content.files.map(async (item) => {
-            const contents = await ejs.renderFile(item.template, {
-              data: item.data,
-              alias: options.alias,
-            });
-            await actions.createData(item.dest, contents);
-          }),
-        );
+        await docgenWriter(content);
+        logger.pluginComplete();
+
+        global.docgenBuild = {
+          count: (global.docgenBuild.count += 1),
+          lastRun: new Date(),
+          isRunning: false,
+        };
       }
     },
   };

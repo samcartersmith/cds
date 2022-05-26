@@ -4,100 +4,130 @@
  */
 import { css } from 'linaria';
 
+export const display1Styles = {
+  fontSize: 'var(--display1-font-size)',
+  lineHeight: 'var(--display1-line-height)',
+  fontWeight: 'var(--display1-font-weight)',
+  fontFamily: 'var(--display1-font-family)',
+};
+export const display2Styles = {
+  fontSize: 'var(--display2-font-size)',
+  lineHeight: 'var(--display2-line-height)',
+  fontWeight: 'var(--display2-font-weight)',
+  fontFamily: 'var(--display2-font-family)',
+};
+export const display2FrontierStyles = {
+  fontSize: 'var(--display2-frontier-font-size)',
+  lineHeight: 'var(--display2-frontier-line-height)',
+  fontWeight: 'var(--display2-frontier-font-weight)',
+  fontFamily: 'var(--display2-frontier-font-family)',
+};
+export const display3Styles = {
+  fontSize: 'var(--display3-font-size)',
+  lineHeight: 'var(--display3-line-height)',
+  fontWeight: 'var(--display3-font-weight)',
+  fontFamily: 'var(--display3-font-family)',
+};
+export const title1Styles = {
+  fontSize: 'var(--title1-font-size)',
+  lineHeight: 'var(--title1-line-height)',
+  fontWeight: 'var(--title1-font-weight)',
+  fontFamily: 'var(--title1-font-family)',
+};
+export const title2Styles = {
+  fontSize: 'var(--title2-font-size)',
+  lineHeight: 'var(--title2-line-height)',
+  fontWeight: 'var(--title2-font-weight)',
+  fontFamily: 'var(--title2-font-family)',
+};
+export const title3Styles = {
+  fontSize: 'var(--title3-font-size)',
+  lineHeight: 'var(--title3-line-height)',
+  fontWeight: 'var(--title3-font-weight)',
+  fontFamily: 'var(--title3-font-family)',
+};
+export const title4Styles = {
+  fontSize: 'var(--title4-font-size)',
+  lineHeight: 'var(--title4-line-height)',
+  fontWeight: 'var(--title4-font-weight)',
+  fontFamily: 'var(--title4-font-family)',
+};
+export const headlineStyles = {
+  fontSize: 'var(--headline-font-size)',
+  lineHeight: 'var(--headline-line-height)',
+  fontWeight: 'var(--headline-font-weight)',
+  fontFamily: 'var(--headline-font-family)',
+};
+export const bodyStyles = {
+  fontSize: 'var(--body-font-size)',
+  lineHeight: 'var(--body-line-height)',
+  fontWeight: 'var(--body-font-weight)',
+  fontFamily: 'var(--body-font-family)',
+};
+export const label1Styles = {
+  fontSize: 'var(--label1-font-size)',
+  lineHeight: 'var(--label1-line-height)',
+  fontWeight: 'var(--label1-font-weight)',
+  fontFamily: 'var(--label1-font-family)',
+};
+export const label2Styles = {
+  fontSize: 'var(--label2-font-size)',
+  lineHeight: 'var(--label2-line-height)',
+  fontWeight: 'var(--label2-font-weight)',
+  fontFamily: 'var(--label2-font-family)',
+};
+export const captionStyles = {
+  fontSize: 'var(--caption-font-size)',
+  lineHeight: 'var(--caption-line-height)',
+  fontWeight: 'var(--caption-font-weight)',
+  fontFamily: 'var(--caption-font-family)',
+};
+export const legalStyles = {
+  fontSize: 'var(--legal-font-size)',
+  lineHeight: 'var(--legal-line-height)',
+  fontWeight: 'var(--legal-font-weight)',
+  fontFamily: 'var(--legal-font-family)',
+};
+
 export const display1 = css`
-  font-size: var(--display1-font-size);
-  line-height: var(--display1-line-height);
-  font-weight: var(--display1-font-weight);
-  font-family: var(--display1-font-family);
+  ${display1Styles}
 `;
-
 export const display2 = css`
-  font-size: var(--display2-font-size);
-  line-height: var(--display2-line-height);
-  font-weight: var(--display2-font-weight);
-  font-family: var(--display2-font-family);
+  ${display2Styles}
 `;
-
 export const display2Frontier = css`
-  font-size: var(--display2-frontier-font-size);
-  line-height: var(--display2-frontier-line-height);
-  font-weight: var(--display2-frontier-font-weight);
-  font-family: var(--display2-frontier-font-family);
+  ${display2FrontierStyles}
 `;
-
 export const display3 = css`
-  font-size: var(--display3-font-size);
-  line-height: var(--display3-line-height);
-  font-weight: var(--display3-font-weight);
-  font-family: var(--display3-font-family);
+  ${display3Styles}
 `;
-
 export const title1 = css`
-  font-size: var(--title1-font-size);
-  line-height: var(--title1-line-height);
-  font-weight: var(--title1-font-weight);
-  font-family: var(--title1-font-family);
+  ${title1Styles}
 `;
-
 export const title2 = css`
-  font-size: var(--title2-font-size);
-  line-height: var(--title2-line-height);
-  font-weight: var(--title2-font-weight);
-  font-family: var(--title2-font-family);
+  ${title2Styles}
 `;
-
 export const title3 = css`
-  font-size: var(--title3-font-size);
-  line-height: var(--title3-line-height);
-  font-weight: var(--title3-font-weight);
-  font-family: var(--title3-font-family);
+  ${title3Styles}
 `;
-
 export const title4 = css`
-  font-size: var(--title4-font-size);
-  line-height: var(--title4-line-height);
-  font-weight: var(--title4-font-weight);
-  font-family: var(--title4-font-family);
+  ${title4Styles}
 `;
-
 export const headline = css`
-  font-size: var(--headline-font-size);
-  line-height: var(--headline-line-height);
-  font-weight: var(--headline-font-weight);
-  font-family: var(--headline-font-family);
+  ${headlineStyles}
 `;
-
 export const body = css`
-  font-size: var(--body-font-size);
-  line-height: var(--body-line-height);
-  font-weight: var(--body-font-weight);
-  font-family: var(--body-font-family);
+  ${bodyStyles}
 `;
-
 export const label1 = css`
-  font-size: var(--label1-font-size);
-  line-height: var(--label1-line-height);
-  font-weight: var(--label1-font-weight);
-  font-family: var(--label1-font-family);
+  ${label1Styles}
 `;
-
 export const label2 = css`
-  font-size: var(--label2-font-size);
-  line-height: var(--label2-line-height);
-  font-weight: var(--label2-font-weight);
-  font-family: var(--label2-font-family);
+  ${label2Styles}
 `;
-
 export const caption = css`
-  font-size: var(--caption-font-size);
-  line-height: var(--caption-line-height);
-  font-weight: var(--caption-font-weight);
-  font-family: var(--caption-font-family);
+  ${captionStyles}
 `;
-
 export const legal = css`
-  font-size: var(--legal-font-size);
-  line-height: var(--legal-line-height);
-  font-weight: var(--legal-font-weight);
-  font-family: var(--legal-font-family);
+  ${legalStyles}
 `;
