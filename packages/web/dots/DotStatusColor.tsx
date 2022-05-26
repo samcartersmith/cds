@@ -9,11 +9,20 @@ import { handlePreventPropagation } from '../utils/eventHandlers';
 import { dotRootContainerStyles, getTransform } from './dotStyles';
 
 export const DotStatusColor = memo(
-  ({ variant, pin, size = 's', children, testID, accessibilityLabel, ...props }: DotBaseProps) => {
+  ({
+    variant,
+    pin,
+    size = 's',
+    overlap,
+    children,
+    testID,
+    accessibilityLabel,
+    ...props
+  }: DotBaseProps) => {
     const palette = usePalette();
     const { iconSize } = useIconSize(size);
 
-    const pinStyles = getTransform(pin);
+    const pinStyles = getTransform(pin, overlap);
 
     const styles = useMemo(() => {
       return {

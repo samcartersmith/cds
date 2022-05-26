@@ -2,10 +2,7 @@ import { getTransform } from '../dotStyles';
 
 describe('getTransform', () => {
   it('returns correct style object', () => {
-    const pinStyles = getTransform({
-      translateX: -12,
-      translateY: -12,
-    });
+    const pinStyles = getTransform(-12, -12);
 
     expect(pinStyles).toEqual({
       position: 'absolute',
