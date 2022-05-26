@@ -180,6 +180,8 @@ module.exports = {
         'components/overlays/SectionTitle/section-title',
         'components/overlays/Drawer/drawer',
         'components/overlays/Tray/tray',
+        'components/dropdown/Dropdown/dropdown',
+        'components/dropdown/MenuItem/menu-item',
       ],
     },
     {
