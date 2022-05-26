@@ -20,8 +20,7 @@
       "executor": "@cbhq/mono-tasks:build-storybook"
     },
     "percy": {
-      "executor": "@cbhq/mono-tasks:run-percy",
-      "dependsOn": [{ "target": "build", "projects": "self" }]
+      "executor": "@cbhq/mono-tasks:run-percy"
     }
   }
 }

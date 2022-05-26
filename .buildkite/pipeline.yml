@@ -42,6 +42,18 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci build
+      - tools/ci/uploadStorybookArtifacts.sh
+    env:
+      CONFIG_SERVICE_CONTEXT: cds-build
+      STORYBOOK_SKIP_ANIMATION: true
+    plugins:
+      - file:///buildkite/plugins/docker:
+          <<: *docker_plugin
+          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16-chrome
+          environment:
+            - 'BUILDKITE_API_TOKEN'
+            - 'STORYBOOK_SKIP_ANIMATION'
+      - file:///buildkite/plugins/cache: *cache_plugin
 
   - label: Lint
     <<: *shared_step
@@ -74,10 +86,31 @@ steps:
   # Steps described below this line will not run in parallel. They will wait for the steps above to finish before running
   - wait
 
-  - label: 'Percy.io - CDS visual diff tests'
+  - label: 'A11y'
     <<: *shared_step
+    parallelism: 1
     commands:
       - tools/ci/setup.sh
+      - tools/ci/downloadStorybookArtifacts.sh
+      - yarn storybook a11y
+    env:
+      CONFIG_SERVICE_CONTEXT: cds-a11y
+      STORYBOOK_SKIP_ANIMATION: true
+    plugins:
+      - file:///buildkite/plugins/docker:
+          <<: *docker_plugin
+          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16-chrome
+          environment:
+            - 'BUILDKITE_API_TOKEN'
+            - 'STORYBOOK_SKIP_ANIMATION'
+      - file:///buildkite/plugins/cache: *cache_plugin
+
+  - label: 'Percy.io - CDS visual diff tests'
+    <<: *shared_step
+    parallelism: 1
+    commands:
+      - tools/ci/setup.sh
+      - tools/ci/downloadStorybookArtifacts.sh
       - yarn nx run storybook:percy
     env:
       CONFIG_SERVICE_CONTEXT: percy-cds
