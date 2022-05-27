@@ -61,3 +61,26 @@ function Placements() {
   );
 }
 ```
+
+### Dotting relative to shape of child
+
+You can use the overlap prop to place the dot relative to the corner of the wrapped element.
+
+```jsx live
+<ResponsiveExample>
+  <HStack gap={2}>
+    <DotStatusColor variant="positive" pin="top-end">
+      <RemoteImage size="xxxl" />
+    </DotStatusColor>
+    <DotStatusColor variant="negative" pin="top-end">
+      <RemoteImage size="xxxl" />
+    </DotStatusColor>
+    <DotStatusColor variant="positive" overlap="circular" pin="top-end">
+      <Avatar size="xxxl" />
+    </DotStatusColor>
+    <DotStatusColor variant="negative" overlap="circular" pin="top-end">
+      <Avatar size="xxxl" />
+    </DotStatusColor>
+  </HStack>
+</ResponsiveExample>
+```

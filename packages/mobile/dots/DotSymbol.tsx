@@ -73,7 +73,7 @@ export const DotSymbol = memo(
           {iconName !== undefined && (
             <Box
               onLayout={onIconWrapperLayout}
-              spacing={1}
+              spacing={0.5}
               dangerouslySetStyle={iconBorderStyle}
               borderRadius="round"
               background="primary"

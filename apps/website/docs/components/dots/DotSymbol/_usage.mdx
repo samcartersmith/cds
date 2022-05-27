@@ -39,3 +39,52 @@ function Sizes() {
   );
 }
 ```
+
+### Dotting relative to shape of child
+
+You can use the overlap prop to place the dot relative to the corner of the wrapped element.
+
+```jsx live
+<ResponsiveExample>
+  <HStack gap={2}>
+    <DotSymbol source={assets.polygon.imageUrl} overlap="circular" pin="bottom-end" size="m">
+      <Avatar src={assets.dai.imageUrl} size="xxxl" />
+    </DotSymbol>
+    <DotSymbol source={assets.polygon.imageUrl} overlap="circular" pin="bottom-end" size="l">
+      <Avatar src={assets.dai.imageUrl} size="xxxl" />
+    </DotSymbol>
+  </HStack>
+</ResponsiveExample>
+```
+
+### Use DotSymbol paired with Icon
+
+```jsx live
+<ResponsiveExample>
+  {/* import { avatarIconSizeMap } from '@cbhq/cds-common/tokens/dot' */}
+  <DotSymbol
+    overlap="circular"
+    iconName="lightningBolt"
+    pin="bottom-end"
+    size={avatarIconSizeMap['xxxl']}
+  >
+    <Avatar source={assets.dai.imageUrl} size="xxxl" />
+  </DotSymbol>
+</ResponsiveExample>
+```
+
+### Use DotSymbol paired with another Asset
+
+```jsx live
+<ResponsiveExample>
+  {/* import { avatarDotSizeMap } from '@cbhq/cds-common/tokens/dot' */}
+  <DotSymbol
+    overlap="circular"
+    pin="bottom-end"
+    source={assets.polygon.imageUrl}
+    size={avatarDotSizeMap['xxxl']}
+  >
+    <Avatar source={assets.dai.imageUrl} size="xxxl" />
+  </DotSymbol>
+</ResponsiveExample>
+```

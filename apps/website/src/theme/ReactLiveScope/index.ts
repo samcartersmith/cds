@@ -6,7 +6,12 @@ import ThemeToggles from '@theme/ThemeToggles';
 import { join, useToggler } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { accounts } from '@cbhq/cds-common/internal/data/accounts';
-import { assetColors, assetImages, assets } from '@cbhq/cds-common/internal/data/assets';
+import {
+  assetColors,
+  assetImages,
+  assets,
+  squareAssets,
+} from '@cbhq/cds-common/internal/data/assets';
 import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 import { prices } from '@cbhq/cds-common/internal/data/prices';
 import { product } from '@cbhq/cds-common/internal/data/product';
@@ -25,6 +30,7 @@ import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
+import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common/tokens/dot';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
@@ -116,10 +122,13 @@ const ReactLiveScope: unknown = {
   ...React,
   // Docusaurus
   useColorMode,
+  // CDS Tokens
+  palette,
+  avatarDotSizeMap,
+  avatarIconSizeMap,
   // CDS
   join,
   lottieFiles,
-  palette,
   useAccessibleForeground,
   useCheckboxGroupState,
   usePalette,
@@ -176,6 +185,7 @@ const ReactLiveScope: unknown = {
   loremIpsum,
   ReactRouterLink,
   assets,
+  squareAssets,
   assetColors,
   prices,
   mocks,

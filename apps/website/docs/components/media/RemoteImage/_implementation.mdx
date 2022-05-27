@@ -48,7 +48,7 @@ Scale image based on this aspect-ratio
 
 ### borderColor
 
-Adds a custom border color from the palette
+Adds a custom border color from the border palette
 
 <ApiDetails
   componentName="RemoteImage"
@@ -185,13 +185,15 @@ Size for a given RemoteImage. If width or height is not defined, it will set siz
 
 ### source
 
+Absolute url to the image that should be shown in the RemoteImage. If no source is provided then a generic fallback image is used.
+
 <ApiDetails
   componentName="RemoteImage"
   propertyName="source"
-  required={true}
+  required={false}
   defaultValue=""
   mobileOptions={['ImageURISource', 'ImageURISource[]', 'number', 'string']}
-  webOptions={[]}
+  webOptions={['string']}
 />
 
 ### testID

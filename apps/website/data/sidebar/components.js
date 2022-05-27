@@ -146,7 +146,11 @@ module.exports = {
       type: 'category',
       label: 'Media',
       collapsed: true,
-      items: ['components/media/Avatar/avatar', 'components/media/RemoteImage/remote-image'],
+      items: [
+        'components/media/Avatar/avatar',
+        'components/media/RemoteImage/remote-image',
+        'components/media/RemoteImageGroup/remote-image-group',
+      ],
     },
     {
       type: 'category',

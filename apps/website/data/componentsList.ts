@@ -60,6 +60,7 @@ export const components = [
   'Spinner',
   'Avatar',
   'RemoteImage',
+  'RemoteImageGroup',
   'NavLink',
   'NavigationBar',
   'NavigationTitle',

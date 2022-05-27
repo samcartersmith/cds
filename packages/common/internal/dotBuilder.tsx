@@ -1,6 +1,6 @@
 import React, { ComponentType } from 'react';
 
-import { avatarIconSizePair } from '../tokens/dot';
+import { avatarIconSizeMap } from '../tokens/dot';
 import type {
   AvatarBaseProps,
   BoxBaseProps,
@@ -236,11 +236,11 @@ export function dotBuilder(
             >
               <TextLabel1>
                 Pin Direction: {pinDirection} Avatar Size: {avatarSize} Icon Size:{' '}
-                {avatarIconSizePair[avatarSize]}
+                {avatarIconSizeMap[avatarSize]}
               </TextLabel1>
               <DotSymbol
                 overlap="circular"
-                size={avatarIconSizePair[avatarSize]}
+                size={avatarIconSizeMap[avatarSize]}
                 pin={pinDirection}
                 iconName="safe"
               >
