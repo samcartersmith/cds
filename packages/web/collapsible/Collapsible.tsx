@@ -5,7 +5,7 @@ import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Box, BoxProps, HStack } from '../layout';
 
-import { useCollapsibleStyles } from './useCollapsibleStyles';
+import { useCollapsibleMotionProps } from './useCollapsibleMotionProps';
 
 export type CollapsibleProps = {
   /**
@@ -41,7 +41,7 @@ export const Collapsible = memo(
       }: CollapsibleProps,
       forwardedRef: ForwardedRef<HTMLDivElement>,
     ) => {
-      const styles = useCollapsibleStyles({
+      const styles = useCollapsibleMotionProps({
         collapsed,
         direction,
         dangerouslyDisableOverflowHidden,

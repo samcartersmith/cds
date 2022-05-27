@@ -24,20 +24,21 @@ describe('Collapsible', () => {
     expect(await renderA11y(<MockCollapsible />)).toHaveNoViolations();
   });
 
-  it('has correct css styles', async () => {
+  it('shows and hides content', async () => {
     const { getByTestId, getByText } = render(<MockCollapsible />);
     expect(getByTestId('mock-collapse')).toHaveStyle('visibility: hidden');
+    expect(getByText('Collapsible Content')).not.toBeVisible();
 
     fireEvent.click(getByText('Click me!'));
-    await waitFor(() => expect(getByTestId('mock-collapse')).toHaveStyle('visibility: visible'));
+    await waitFor(() => {
+      expect(getByTestId('mock-collapse')).toHaveStyle('visibility: visible');
+      expect(getByText('Collapsible Content')).toBeVisible();
+    });
 
     fireEvent.click(getByText('Click me!'));
-    await waitFor(() => expect(getByTestId('mock-collapse')).toHaveStyle('visibility: hidden'));
-  });
-
-  it('renders children', () => {
-    const { getByText } = render(<MockCollapsible />);
-
-    expect(getByText('Collapsible Content')).toBeTruthy();
+    await waitFor(() => {
+      expect(getByTestId('mock-collapse')).toHaveStyle('visibility: hidden');
+      expect(getByText('Collapsible Content')).not.toBeVisible();
+    });
   });
 });
