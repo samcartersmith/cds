@@ -10,6 +10,7 @@ import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Usage from './_usage.mdx';
 import Props from './_implementation.mdx';
 
 <VStack gap={3}>
@@ -23,6 +24,7 @@ import Props from './_implementation.mdx';
   <Tabs>
     <TabItem value="implementation" label="Implementation" default>
       <VStack gap={3}>
+        <Usage />
         <Props />
       </VStack>
     </TabItem>

@@ -2,9 +2,10 @@ import Link from '@docusaurus/Link';
 import { isActiveSidebarItem } from '@docusaurus/theme-common';
 import type { SpacingScale } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { CollapseArrow, Collapsible } from '@cbhq/cds-web/collapsible';
+import { Collapsible } from '@cbhq/cds-web/collapsible';
 import { HStack } from '@cbhq/cds-web/layout/HStack';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
+import { AnimatedCaret } from '@cbhq/cds-web/motion/AnimatedCaret';
 import { Pressable } from '@cbhq/cds-web/system/Pressable';
 import { TextBody, TextCaption } from '@cbhq/cds-web/typography';
 import { JSDocTag, JSDocTagVariant } from '@cbhq/docusaurus-plugin-docgen/components/JSDocTag';
@@ -122,7 +123,7 @@ function CollapsibleCategory({
             {typeof item.customProps?.tag === 'string' ? (
               <JSDocTag variant={item.customProps.tag} />
             ) : null}
-            <CollapseArrow collapsed={collapsed} degrees={90} />
+            <AnimatedCaret rotate={collapsed ? 90 : 180} />
           </HStack>
         </HStack>
       </Pressable>
