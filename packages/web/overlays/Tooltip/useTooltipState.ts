@@ -1,20 +1,18 @@
 import { useCallback, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common';
 
-import { TimingReturnValues } from '../../animation/Animated';
-
-export const useTooltipState = (animateOut: TimingReturnValues) => {
+export const useTooltipState = () => {
   const [isHovered, { toggleOn: handleOnMouseEnter, toggleOff: toggleOffIsHovered }] =
     useToggler(false);
   const [isFocused, { toggleOn: handleOnFocus, toggleOff: toggleOffIsFocused }] = useToggler(false);
 
   const handleOnBlur = useCallback(() => {
-    void animateOut.start(() => toggleOffIsFocused());
-  }, [animateOut, toggleOffIsFocused]);
+    toggleOffIsFocused();
+  }, [toggleOffIsFocused]);
 
   const handleOnMouseLeave = useCallback(() => {
-    void animateOut.start(() => toggleOffIsHovered());
-  }, [animateOut, toggleOffIsHovered]);
+    toggleOffIsHovered();
+  }, [toggleOffIsHovered]);
 
   return useMemo(() => {
     return {

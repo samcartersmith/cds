@@ -3,7 +3,6 @@ import {
   ComponentMeta,
   ComponentStory,
 } from '@storybook/react/dist/ts3.9/client/preview/types-6-3';
-import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { Button } from '../../buttons/Button';
 import { HStack } from '../../layout/HStack';
@@ -33,7 +32,7 @@ const BasicTooltipContent = ({ content }: PopperTooltipProps) => {
     <PortalProvider>
       <HStack spacingHorizontal={8} spacingVertical={2} gap={5}>
         <VStack spacingHorizontal={2} gap={2}>
-          <TooltipContent ref={ref} content={content} gap={0} animateIn={NoopFn} />
+          <TooltipContent ref={ref} content={content} gap={0} />
         </VStack>
       </HStack>
     </PortalProvider>
