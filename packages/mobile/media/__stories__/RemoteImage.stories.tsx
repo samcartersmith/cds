@@ -18,13 +18,20 @@ const sharedProps = {
 
 const mockItems = Array.from({ length: 4 });
 const images = entries(assets).map(([, { imageUrl }]) => imageUrl);
-const { AvatarSizesWithCircle, AvatarSizesWithSquircle, BorderColorImg, BorderColorSvgs } =
-  remoteImageBuilder({
-    RemoteImage,
-    VStack,
-    HStack,
-    TextBody: (props) => <TextBody {...props} />,
-  });
+const {
+  AvatarSizesWithCircle,
+  AvatarSizesWithSquircle,
+  BorderColorImg,
+  BorderColorSvgs,
+  CircleFallback,
+  RectangleFallback,
+  SquareFallback,
+} = remoteImageBuilder({
+  RemoteImage,
+  VStack,
+  HStack,
+  TextBody: (props) => <TextBody {...props} />,
+});
 
 const RemoteImageScreen = () => {
   return (
@@ -106,6 +113,15 @@ const RemoteImageScreen = () => {
       </Example>
       <Example title="Border Color Svgs">
         <BorderColorSvgs />
+      </Example>
+      <Example title="Circle Fallback">
+        <CircleFallback />
+      </Example>
+      <Example title="Rectangle Fallback">
+        <RectangleFallback />
+      </Example>
+      <Example title="Square Fallback">
+        <SquareFallback />
       </Example>
     </ExampleScreen>
   );

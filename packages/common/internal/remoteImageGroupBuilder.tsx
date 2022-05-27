@@ -7,7 +7,7 @@ import { assets, squareAssets } from './data/assets';
 import { avatarSizes } from './data/avatars';
 
 export type RemoteImageBuilderTypes = {
-  source: string;
+  source?: string;
 } & RemoteImageBaseProps;
 
 type RemoteImageGroupBuilder = {
@@ -113,6 +113,19 @@ export const remoteImageGroupBuilder = ({
       </RemoteImageGroup>
     </>
   );
+
+  const MixAndMatchShapes = () => (
+    <>
+      <TextBody>RemoteImage child shape takes precedence over RemoteImageGroup shape</TextBody>
+      <RemoteImageGroup shape="circle" size="xxl">
+        <RemoteImage shape="squircle" source={squareAssets.human1} />
+        <RemoteImage source={assets.sushi.imageUrl} />
+        <RemoteImage shape="squircle" source={squareAssets.human2} />
+        <RemoteImage source={assets.ltc.imageUrl} />
+      </RemoteImageGroup>
+    </>
+  );
+
   const Squircle = () => (
     <>
       <TextLabel1>Sqcircle Custom Size: 32x32</TextLabel1>
@@ -230,6 +243,7 @@ export const remoteImageGroupBuilder = ({
       <SquircleMaxDefaultCustomSize />
       <SquircleMaxSetCustomMaxSize />
       <HideExcessWhenExceedThreshold />
+      <MixAndMatchShapes />
     </VStack>
   );
 

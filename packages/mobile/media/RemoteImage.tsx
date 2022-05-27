@@ -7,7 +7,7 @@ import {
   ImageStyle,
   ImageURISource,
 } from 'react-native';
-import { SvgCssUri } from 'react-native-svg';
+import { SvgCssUri, SvgXml } from 'react-native-svg';
 import { AspectRatio, FixedValue, RemoteImageBaseProps, useSpectrum } from '@cbhq/cds-common';
 import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
 import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
@@ -19,16 +19,18 @@ import { DangerouslySetStyle } from '../types';
 
 type SourceProp = string | ImageProps['source'];
 
+type XmlReturnType = { content: string };
+
 type BaseRemoteImageProps = {
   /** Fill in transparent background with inverted background color and add border. This solves issue of transparent, stamped out asset icons not being visible on dark backgrounds.  */
   shouldApplyDarkModeEnhacements?: boolean;
-  source: SourceProp;
+  source?: SourceProp;
 } & Omit<ImageProps, 'style' | 'width' | 'height' | 'source'> &
   DangerouslySetStyle<ImageStyle, false> &
   RemoteImageBaseProps;
 
 type RemoteImagePropsWithSource = {
-  source: SourceProp;
+  source?: SourceProp;
 } & BaseRemoteImageProps;
 
 type RemoteImagePropsWithWidth = {
@@ -85,6 +87,7 @@ export const RemoteImage = memo(function RemoteImage({
 }: RemoteImageProps) {
   const borderRadius = useShapeToBorderRadiusSize(shape);
   const avatarSize = useAvatarSize(size);
+  const spectrum = useSpectrum();
 
   const { width: finalWidth, height: finalHeight } = getRemoteImageWidthAndHeight({
     size,
@@ -93,10 +96,12 @@ export const RemoteImage = memo(function RemoteImage({
     avatarSize,
   });
 
-  // Give user a shortcut to use path instead of ImageSourcePropType
-  const transformedSource = typeof source === 'string' ? getSource(source) : source;
+  const useFallback = source === undefined;
+  const transformedSource = useMemo(
+    () => (typeof source === 'string' ? getSource(source) : source),
+    [source],
+  );
 
-  const spectrum = useSpectrum();
   const palette = usePalette();
   const backgroundColor = useInvertedPaletteColor('background');
 
@@ -118,7 +123,7 @@ export const RemoteImage = memo(function RemoteImage({
     if (!applyDarkModeEnhancement && borderColor) {
       return {
         borderColor: palette[borderColor],
-        borderWidth: 1,
+        borderWidth: 2,
       };
     }
 
@@ -149,13 +154,36 @@ export const RemoteImage = memo(function RemoteImage({
     ],
   );
 
-  if (isSvg(transformedSource)) {
+  if (isSvg(transformedSource as SourceProp)) {
     return (
-      <SvgCssUri style={styles} uri={Image.resolveAssetSource(transformedSource).uri} {...props} />
+      <SvgCssUri
+        style={styles}
+        uri={Image.resolveAssetSource(transformedSource as ImageSourcePropType).uri}
+        {...props}
+      />
+    );
+  }
+
+  if (useFallback) {
+    // eslint-disable-next-line global-require
+    const darkFallback = require('./RemoteImageFallbackXmls/dark') as XmlReturnType;
+    // eslint-disable-next-line global-require
+    const lightFallback = require('./RemoteImageFallbackXmls/light') as XmlReturnType;
+
+    return (
+      <SvgXml
+        style={styles}
+        xml={spectrum === 'dark' ? darkFallback.content : lightFallback.content}
+      />
     );
   }
 
   return (
-    <Image accessibilityIgnoresInvertColors source={transformedSource} {...props} style={styles} />
+    <Image
+      accessibilityIgnoresInvertColors
+      source={transformedSource as ImageSourcePropType}
+      {...props}
+      style={styles}
+    />
   );
 });

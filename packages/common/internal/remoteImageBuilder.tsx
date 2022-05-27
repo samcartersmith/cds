@@ -84,10 +84,49 @@ export const remoteImageBuilder = ({
     </VStack>
   );
 
+  const CircleFallback = () => {
+    return (
+      <VStack gap={1}>
+        {avatarSizes.map((size, idx) => {
+          const key = `circle-fallback-${idx}`;
+          return (
+            <VStack key={key}>
+              <TextBody>{size}</TextBody>
+              <RemoteImage shape="circle" size={size} />
+            </VStack>
+          );
+        })}
+      </VStack>
+    );
+  };
+
+  const SquareFallback = () => {
+    return (
+      <VStack gap={1}>
+        {avatarSizes.map((size, idx) => {
+          const key = `square-fallback-${idx}`;
+          return (
+            <VStack key={key}>
+              <TextBody>{size}</TextBody>
+              <RemoteImage shape="square" size={size} />
+            </VStack>
+          );
+        })}
+      </VStack>
+    );
+  };
+
+  const RectangleFallback = () => {
+    return <RemoteImage shape="rectangle" width={30} height={10} />;
+  };
+
   return {
     AvatarSizesWithSquircle,
     AvatarSizesWithCircle,
     BorderColorImg,
     BorderColorSvgs,
+    CircleFallback,
+    RectangleFallback,
+    SquareFallback,
   };
 };

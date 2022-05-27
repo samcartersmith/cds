@@ -27,7 +27,7 @@ describe('RemoteImageGroup', () => {
     expect(imageWrapper).toBeTruthy();
   });
 
-  it('Margin are correctly applied. First one has 0, and the following ones will have 0.5', () => {
+  it('Margin are correctly applied for size m. First one has 0, and the following ones will have 1', () => {
     const { getByTestId } = render(<MockRemoteImageGroup />);
 
     const remoteImage1 = getByTestId(`${TEST_ID}-inner-box-0`);
@@ -40,7 +40,25 @@ describe('RemoteImageGroup', () => {
       const imageChildren = getByTestId(`${TEST_ID}-inner-box-${index}`);
 
       expect(imageChildren).toHaveStyle({
-        marginRight: -scaleStyles.xxLarge.spacing[0.5],
+        marginRight: -scaleStyles.xxLarge.spacing[1],
+      });
+    });
+  });
+
+  it('Margin are correctly applied for size xxl. First one has 0, and the following ones will have 2', () => {
+    const { getByTestId } = render(<MockRemoteImageGroup size="xxl" />);
+
+    const remoteImage1 = getByTestId(`${TEST_ID}-inner-box-0`);
+
+    expect(remoteImage1).toHaveStyle({
+      marginRight: -0,
+    });
+
+    remoteImageIndices.slice(1).forEach((index) => {
+      const imageChildren = getByTestId(`${TEST_ID}-inner-box-${index}`);
+
+      expect(imageChildren).toHaveStyle({
+        marginRight: -scaleStyles.xxLarge.spacing[2],
       });
     });
   });
@@ -109,17 +127,6 @@ describe('RemoteImageGroup', () => {
   it('excess text shows up correctly', () => {
     const { getByText } = render(<MockRemoteImageGroup max={2} size={50} />);
     expect(getByText('+2')).toBeTruthy();
-  });
-
-  it('fontSize stops growing if size > 32', () => {
-    const { getByTestId } = render(<MockRemoteImageGroup max={2} size={50} />);
-
-    const excessText = getByTestId(`${TEST_ID}-excess-text`);
-
-    expect(excessText).toHaveStyle({
-      fontSize: scaleStyles.large.typography.body.fontSize,
-      fontFamily: scaleStyles.large.typography.body.fontFamily,
-    });
   });
 
   it('fontSize is proportional to dimension of RemoteImage for avatarSizes={m}', () => {

@@ -30,13 +30,20 @@ const imageURL =
 
 const mockItems = Array.from({ length: 4 });
 
-const { AvatarSizesWithCircle, AvatarSizesWithSquircle, BorderColorImg, BorderColorSvgs } =
-  remoteImageBuilder({
-    RemoteImage,
-    VStack,
-    HStack,
-    TextBody: (props) => <TextBody as="p" {...props} />,
-  });
+const {
+  AvatarSizesWithCircle,
+  AvatarSizesWithSquircle,
+  BorderColorImg,
+  BorderColorSvgs,
+  CircleFallback,
+  RectangleFallback,
+  SquareFallback,
+} = remoteImageBuilder({
+  RemoteImage,
+  VStack,
+  HStack,
+  TextBody: (props) => <TextBody as="p" {...props} />,
+});
 
 export const Default = () => {
   return (
@@ -109,6 +116,18 @@ export const Default = () => {
       <VStack gap={2}>
         <TextTitle1 as="h3">Border Color Svgs</TextTitle1>
         <BorderColorSvgs />
+      </VStack>
+      <VStack gap={2}>
+        <TextTitle1 as="h3">Circle Fallback</TextTitle1>
+        <CircleFallback />
+      </VStack>
+      <VStack gap={2}>
+        <TextTitle1 as="h3">Rectangle Fallback</TextTitle1>
+        <RectangleFallback />
+      </VStack>
+      <VStack gap={2}>
+        <TextTitle1 as="h3">Square Fallback</TextTitle1>
+        <SquareFallback />
       </VStack>
     </ThemeProvider>
   );

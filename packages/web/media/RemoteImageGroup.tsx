@@ -1,17 +1,16 @@
 import React, { Children, isValidElement, useMemo } from 'react';
-import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
 import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusAlias';
 import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
 import { RemoteImageGroupBaseProps } from '@cbhq/cds-common/types/RemoteImageGroupBaseProps';
+import { getRemoteImageGroupOverlapSpacing } from '@cbhq/cds-common/utils/getRemoteImageGroupOverlapSpacing';
 
 import { Box } from '../layout/Box';
 import { palette } from '../tokens';
-import { TextBody } from '../typography';
 import { useTypographyStyles } from '../typography/useTypographyStyles';
 
 export const RemoteImageGroup = ({
   children,
-  size,
+  size = 'm',
   max = 4,
   shape = 'circle',
   testID,
@@ -22,6 +21,7 @@ export const RemoteImageGroup = ({
   const borderRadius = useShapeToBorderRadiusAlias(shape);
   const sizeIsString = typeof size === 'string';
   const sizeIsNumber = typeof size === 'number';
+  const overlapSpacing = getRemoteImageGroupOverlapSpacing(size);
 
   // obtain avatar size
   // set the avatar size to m, if no size was set
@@ -44,12 +44,14 @@ export const RemoteImageGroup = ({
   // Dynamically calculate font size based on size of remote image
   // so smaller excess image gets a smaller text, and larger excess
   // image gets a larger text
-  const typographyStyles = useTypographyStyles('body');
+  const typographyStyles = useTypographyStyles('legal');
 
   const fontSizeStyle = useMemo(() => {
     return {
       fontSize: (sizeIsNumber ? size : avatarSize) * 0.4,
       color: palette.foreground,
+      marginTop: 'auto',
+      marginBottom: 'auto',
     };
   }, [sizeIsNumber, size, avatarSize]);
 
@@ -66,18 +68,13 @@ export const RemoteImageGroup = ({
         <Box
           height={excessSize}
           width={excessSize}
-          offsetStart={0.5}
+          offsetStart={overlapSpacing}
           borderRadius={borderRadius}
           alignItems="center"
           background="backgroundOverlay"
           justifyContent="center"
         >
-          {/** We don't want the font size to infinitely scale, so we have a stop gap */}
-          {sizeIsNumber && size > normalScaleMap.l ? (
-            <TextBody as="p">{`+${excess}`}</TextBody>
-          ) : (
-            <p className={typographyStyles} style={fontSizeStyle}>{`+${excess}`}</p>
-          )}
+          <p className={typographyStyles} style={fontSizeStyle}>{`+${excess}`}</p>
         </Box>
       )}
       {Children.map(reverseChildren, (child, index) => {
@@ -107,7 +104,8 @@ export const RemoteImageGroup = ({
             };
           }
 
-          if (shape) {
+          // The shape of its child shall take precedence
+          if (shape && child.props.shape === undefined) {
             overrideChildProps = {
               ...overrideChildProps,
               shape,
@@ -116,7 +114,7 @@ export const RemoteImageGroup = ({
 
           const clonedChild = React.cloneElement(child, overrideChildProps);
 
-          return <Box offsetEnd={isFirstRemoteImage ? 0 : 0.5}>{clonedChild}</Box>;
+          return <Box offsetEnd={isFirstRemoteImage ? 0 : overlapSpacing}>{clonedChild}</Box>;
         }
 
         return null;

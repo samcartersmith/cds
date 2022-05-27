@@ -68,7 +68,7 @@ describe('RemoteImage', () => {
       expect(image).toBeTruthy();
 
       expect(image).toHaveStyle({
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: rgbaString,
       });
     });
