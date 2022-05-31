@@ -1,32 +1,20 @@
 ---
-title: SparklineGradient
+title: Sparkline Gradient
 slug: /components/sparkline-gradient
-hide_title: true
 ---
 
-import { VStack } from '@cbhq/cds-web/alpha/VStack';
-import { Link } from '@cbhq/cds-web/typography/Link';
-import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Intro, { toc as introToc } from './_intro.mdx';
+import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-import Intro from './_intro.mdx';
-import Props from './_implementation.mdx';
-
-<VStack gap={3}>
-  <TextDisplay3 as="h1">SparklineGradient</TextDisplay3>
-  <Link
-    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/visualizations/SparklineGradient.tsx"
-    openInNewWindow
-  >
-    @cbhq/cds-(web|mobile)/visualizations/SparklineGradient
-  </Link>
-  <Tabs>
-    <TabItem value="implementation" label="Implementation" default>
-      <VStack gap={3}>
-        <Intro />
-        <Props />
-      </VStack>
-    </TabItem>
-  </Tabs>
-</VStack>
+<Tabs groupId="page" gap={3}>
+  <TabItem value="implementation" label="Implementation" toc={[...introToc, ...implementationToc]}>
+    <Link
+      to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/visualizations/SparklineGradient.tsx"
+      openInNewWindow
+    >
+      @cbhq/cds-(web|mobile)/visualizations/SparklineGradient
+    </Link>
+    <Intro />
+    <Implementation />
+  </TabItem>
+</Tabs>

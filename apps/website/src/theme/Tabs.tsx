@@ -16,7 +16,7 @@ import type { Props as TabItemProps } from '@theme/TabItem';
 import type { Props } from '@theme/Tabs';
 import { SpacingScale, TabNavigationProps } from '@cbhq/cds-common';
 import { pascalCase } from '@cbhq/cds-utils';
-import { VStack } from '@cbhq/cds-web/layout';
+import { Spacer, VStack } from '@cbhq/cds-web/layout';
 import { TabNavigation } from '@cbhq/cds-web/tabs';
 
 export type TabProps = Omit<Props, 'groupId'> & {
@@ -127,7 +127,8 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
         setTabGroupChoices(groupId, newTabValue);
         if (urlParams) {
           urlParams.set(groupId, newTabValue);
-          history.replace({ ...location, search: urlParams.toString() });
+          // remove url hash (anchor links) from previous toc clicks when switching tabs
+          history.replace({ ...location, hash: '', search: urlParams.toString() });
         }
       }
     },
@@ -152,6 +153,7 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
           label: pascalCase(item.label ?? item.value),
         }))}
       />
+      <Spacer vertical={3} />
       <VStack gap={gap}>
         {children
           .filter((tabItem) => tabItem.props.value === selectedValue)

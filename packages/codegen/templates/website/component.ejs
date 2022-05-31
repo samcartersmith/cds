@@ -1,54 +1,60 @@
 ---
-title: <%- data.displayName %>
+title: <%- data.title %>
 slug: <%- data.slug %>
-hide_title: true
 ---
+<%
+ function getTemplates() {
+  const items = [];
 
-import { VStack } from "@cbhq/cds-web/alpha/VStack";
-import { Link } from "@cbhq/cds-web/typography/Link";
-import { TextDisplay3 } from "@cbhq/cds-web/typography/TextDisplay3";
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+  if (data.hasIntro) {
+    items.push('intro')
+  }
+   
+  if (data.hasDesign) {
+    items.push('design');
+  }
+   
+  if (data.hasUsage) {
+    items.push('usage')
+  }
 
-<% if (data.hasA11y){ _%>
-import A11y from "./_a11y.mdx";
-<% } _%>
-<% if (data.hasIntro){ _%>
-import Intro from "./_intro.mdx";
-<% } _%>
+  if (data.hasA11y) {
+    items.push('a11y')
+  }
+
+  if (data.hasImplementation) {
+    items.push('implementation')
+  }
+  
+  return items;
+ };
+
+ const templates = getTemplates().map(item => {
+   const pascalCaseName = data.pascalCase(item);
+   return { template: item, component: pascalCaseName, toc: `${item}Toc` }
+ });
+
+ const engTemplates = templates.filter(item => item.template !== 'design');
+%>
+
+<% templates.map((item) => { _%>
+import <%- item.component %>, { toc as <%- item.toc %>  } from './_<%- item.template %>.mdx';
+<% }) _%>
+
+<Tabs groupId="page" gap={3}>
 <% if (data.hasDesign){ _%>
-import Design from "./_design.mdx";
+  <TabItem value="guidelines" label="Guidelines" toc={designToc}>
+    <Design />
+  </TabItem>
 <% } _%>
-<% if (data.hasUsage){ _%>
-import Usage from "./_usage.mdx";
-<% } _%>
-import Props from "./_implementation.mdx";
-
-
-<VStack gap={3}>
-  <TextDisplay3 as="h1"><%- data.displayName %></TextDisplay3>
+  <TabItem value="implementation" label="Implementation" toc={[
+  <% engTemplates.map((item) => { _%>
+    ...<%- item.toc %>,
+  <% }) _%>
+  ]}>
   <Link to="<%- data.sourceUrl %>" openInNewWindow><%- data.importPath %></Link>
-  <Tabs>
-    <% if (data.hasDesign){ _%>
-    <TabItem value="guidelines" label="Guidelines">
-      <VStack gap={3}>
-        <Design />
-      </VStack>
-    </TabItem>
-    <% } _%>
-    <TabItem value="implementation" label="Implementation" default>
-      <VStack gap={3}>
-        <% if (data.hasIntro){ _%>
-        <Intro />
-        <% } _%>
-        <% if (data.hasUsage){ _%>
-        <Usage />
-        <% } _%>
-        <% if (data.hasA11y){ _%>
-        <A11y />
-        <% } _%>
-        <Props />
-      </VStack>
-    </TabItem>
-  </Tabs>
-</VStack>
+  <% engTemplates.map((item) => { _%>
+    <<%- item.component %> />
+  <% }) _%>
+  </TabItem>
+</Tabs>

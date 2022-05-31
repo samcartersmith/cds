@@ -2,7 +2,7 @@ import React from 'react';
 import type { Props } from '@theme/TabItem';
 import { VStack } from '@cbhq/cds-web/layout';
 
-import { RightSidebar, TOCItem } from '../theme/RightSidebar';
+import { RightSidebar, TOCItem } from './RightSidebar';
 
 export type TabItemProps = Props & {
   toc?: TOCItem[];

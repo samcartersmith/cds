@@ -36,8 +36,6 @@ function configureForDocusaurus(config) {
     config.resolve.alias['@theme/Footer'] = getRefreshComponent('Footer');
     config.resolve.alias['@theme/Playground'] = getRefreshComponent('Playground');
     config.resolve.alias['@theme/MDXComponents'] = getRefreshComponent('MDXComponents');
-    config.resolve.alias['@theme/Tabs'] = getRefreshComponent('Tabs');
-    config.resolve.alias['@theme/TabItem'] = getRefreshComponent('TabItem');
     config.resolve.alias['@theme/CdsProviders'] = getRefreshComponent('CdsProviders');
     config.resolve.alias['@theme/ExampleWithThemeToggles'] =
       getRefreshComponent('ExampleWithThemeToggles');

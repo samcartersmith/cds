@@ -5,7 +5,6 @@ import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootSca
 import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import { useFeatureFlagUpdater } from '@cbhq/cds-common/system/useFeatureFlagUpdater';
 import { Switch } from '@cbhq/cds-web/controls';
-import { Spacer } from '@cbhq/cds-web/layout';
 
 export type ThemeTogglesProps = {
   showFrontier?: boolean;
@@ -42,20 +41,14 @@ const ThemeToggles: React.FC<ThemeTogglesProps> = memo(({ showFrontier, hideDens
         Dark Spectrum
       </Switch>
       {!hideDense && (
-        <>
-          <Spacer vertical={3} />
-          <Switch onChange={toggleScale} checked={scale === 'medium'}>
-            Dense Scale
-          </Switch>
-        </>
+        <Switch onChange={toggleScale} checked={scale === 'medium'}>
+          Dense Scale
+        </Switch>
       )}
       {showFrontier && (
-        <>
-          <Spacer vertical={3} />
-          <Switch onChange={toggleFrontier} checked={hasFrontier}>
-            Frontier
-          </Switch>
-        </>
+        <Switch onChange={toggleFrontier} checked={hasFrontier}>
+          Frontier
+        </Switch>
       )}
     </>
   );

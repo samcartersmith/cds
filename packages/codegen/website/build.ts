@@ -1,7 +1,8 @@
 import { ComponentDoc, withCustomConfig } from 'react-docgen-typescript';
 import fs from 'fs';
+import startCase from 'lodash/startCase';
 import path from 'path';
-import { mapValues } from '@cbhq/cds-utils/index';
+import { mapValues, pascalCase } from '@cbhq/cds-utils/index';
 
 import { buildTemplates } from '../utils/buildTemplates';
 
@@ -77,6 +78,8 @@ const prepareTemplate =
   (template: 'props' | 'component') =>
   ({ subDir, displayName, data }: ComponentDocgenResponse) => {
     const kebabCaseName = getKebabName(displayName);
+    const [, sourceFileWithExt] = data.docgen.filePath.split(subDir);
+    const sourceFile = path.join(subDir, sourceFileWithExt).replace(/\.(ts|tsx)$/, '');
     const fileName = template === 'component' ? kebabCaseName : '_implementation';
 
     const destDir = `${DOCS_DIR}/${subDir}/${displayName}`;
@@ -86,10 +89,14 @@ const prepareTemplate =
       const hasIntro = fs.existsSync(`${absoluteDir}/_intro.mdx`);
       const hasA11y = fs.existsSync(`${absoluteDir}/_a11y.mdx`);
       const hasDesign = fs.existsSync(`${absoluteDir}/_design.mdx`);
+      const hasImplementation = fs.existsSync(`${absoluteDir}/_implementation.mdx`);
       const hasUsage = fs.existsSync(`${absoluteDir}/_usage.mdx`);
       return {
         dest,
         data: {
+          ...data,
+          sourceFile,
+          title: startCase(data.displayName),
           displayName: data.displayName,
           slug: data.slug,
           importPath: data.importPath,
@@ -97,7 +104,9 @@ const prepareTemplate =
           hasIntro,
           hasA11y,
           hasDesign,
+          hasImplementation,
           hasUsage,
+          pascalCase,
         },
       };
     }

@@ -5,7 +5,6 @@ import { css } from 'linaria';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { FeatureFlagProvider, ThemeProvider } from '@cbhq/cds-web/system';
 import { RootScaleProvider } from '@cbhq/cds-web/system/RootScaleProvider';
-import { fontFamily, palette, spacing } from '@cbhq/cds-web/tokens';
 
 const overrides = css`
   display: contents;
@@ -17,34 +16,6 @@ const overrides = css`
   --ifm-tabs-color: var(--foreground);
   --ifm-tabs-color-active: var(--primary);
   --ifm-tabs-color-active-border: var(--primary);
-
-  .markdown h1:first-child {
-    margin: 0;
-  }
-  [class^='playgroundPreview'],
-  [class*=' playgroundPreview'] {
-    padding: 0;
-  }
-  .tabs__item {
-    padding: ${spacing[2]} 0;
-    margin-right: ${spacing[3]};
-    font-family: ${fontFamily.sans};
-    &:last-child {
-      margin-right: 0;
-    }
-    &:hover {
-      background: transparent;
-      color: ${palette.primary};
-    }
-  }
-
-  nav.menu {
-    padding: 0;
-    @supports (scrollbar-gutter: stable) {
-      scrollbar-gutter: stable;
-      overflow-y: auto;
-    }
-  }
 `;
 
 // Guarantee that we are synced with light/dark mode changes were are triggerd on data-theme attribute of page

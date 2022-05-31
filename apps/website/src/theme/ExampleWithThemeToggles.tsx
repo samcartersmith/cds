@@ -12,7 +12,7 @@ const ExampleWithThemeToggles: React.FC<ThemeTogglesProps> = memo(
       /** Remove the gap that ReactLiveScope adds to the live editor */
       <div>
         <ThemeProvider scale="large">
-          <VStack spacingVertical={2} spacingHorizontal={3} background>
+          <VStack background>
             <ThemeProvider scale="xSmall">
               <VStack gap={3} spacingBottom={3}>
                 <ThemeToggles {...toggleProps} />
