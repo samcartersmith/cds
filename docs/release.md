@@ -69,4 +69,8 @@ Sometimes we want to test updates to the `@cbhq/cds-mobile` package in the `reac
 
 1. Run `yarn codegen icons`
 2. Run both android and iOS and make sure the new illustrations didn't break either build.
-3. Verify that the icons maatch what it on go/icon-illo-release-history
+3. Verify that the icons match what's on go/icon-illo-release-history.
+
+## Releasing New Features
+
+CDS should only release a new feature once it has been bug bashed and documented. If a feature does not meet both criteria, it should be gated behind a `@deprecated` JSDoc.

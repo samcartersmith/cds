@@ -17,6 +17,10 @@ const booleanDeviceNames: Record<DeviceBreakpoint, string> = {
 
 const deviceKeys = Object.keys(deviceMqRanges) as DeviceBreakpoint[];
 
+/**
+ * @deprecated This component is unreleased and is inherently unstable
+ * Please use useIsMobile instead
+ */
 export const useBreakpoints = (): BreakpointRecord => {
   const window = getBrowserGlobals()?.window;
 

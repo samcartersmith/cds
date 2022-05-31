@@ -18,7 +18,7 @@ import { Animated } from '../animation/Animated';
 import { SelectProvider } from '../controls/selectContext';
 import { useA11yControlledVisibility } from '../hooks/useA11yControlledVisibility';
 import { useBoundingClientRect } from '../hooks/useBoundingClientRect';
-import { useBreakpoints } from '../hooks/useBreakpoints';
+import { useIsMobile } from '../hooks/useIsMobile';
 import { useIsoEffect } from '../hooks/useIsoEffect';
 import { useSpacingValue } from '../hooks/useSpacingValue';
 import { FocusTrap } from '../overlays/FocusTrap';
@@ -325,7 +325,7 @@ export const Dropdown = memo(
       }: DropdownProps,
       ref: ForwardedRef<DropdownRefProps>,
     ) => {
-      const { isPhone } = useBreakpoints();
+      const isMobile = useIsMobile();
       const [visible, { toggleOn, toggleOff }] = useToggler();
 
       const handleOpenMenu = useCallback(() => {
@@ -338,7 +338,7 @@ export const Dropdown = memo(
         onCloseMenu?.();
       }, [onCloseMenu, toggleOff]);
 
-      return isPhone && enableMobileModal ? (
+      return isMobile && enableMobileModal ? (
         <ModalDropdown
           maxHeight={maxHeight}
           visible={visible}
