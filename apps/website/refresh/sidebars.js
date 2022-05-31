@@ -329,6 +329,11 @@ module.exports = {
         },
         { type: 'doc', id: 'components/controls/RadioGroup/radio-group', label: 'Radio Group' },
         { type: 'doc', id: 'components/media/RemoteImage/remote-image', label: 'Remote Image' },
+        {
+          type: 'doc',
+          id: 'components/media/RemoteImageGroup/remote-image-group',
+          label: 'Remote Image Group',
+        },
         { type: 'doc', id: 'components/controls/SearchInput/search-input', label: 'Search  Input' },
         {
           type: 'doc',
