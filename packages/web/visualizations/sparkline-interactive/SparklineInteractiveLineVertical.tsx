@@ -35,12 +35,12 @@ const maskClassName = css`
   bottom: 0;
 `;
 
-const lineProps = {
+const lineProps: React.SVGProps<SVGLineElement> = {
   x1: 0,
   x2: 0,
   y1: 0,
   y2: 0,
-  'stroke-dasharray': lineDashArray,
+  strokeDasharray: lineDashArray.join(','),
   strokeWidth: borderWidth.sparkline,
 };
 
