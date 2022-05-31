@@ -19,8 +19,13 @@
     "build": {
       "executor": "@cbhq/mono-tasks:build-storybook"
     },
+    "a11y": {
+      "executor": "@cbhq/cds-tools:a11y",
+      "dependsOn": [{ "target": "build", "projects": "self" }]
+    },
     "percy": {
-      "executor": "@cbhq/mono-tasks:run-percy"
+      "executor": "@cbhq/mono-tasks:run-percy",
+      "dependsOn": [{ "target": "build", "projects": "self" }]
     }
   }
 }

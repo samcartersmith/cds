@@ -29,6 +29,11 @@
       "implementation": "./dist/executors/build-package-esm/impl",
       "schema": "./dist/executors/build-package-esm/schema.json",
       "description": "Builds an esm compliant CDS npm package"
+    },
+    "a11y": {
+      "implementation": "./dist/executors/a11y/impl",
+      "schema": "./dist/executors/a11y/schema.json",
+      "description": "Build storbook and run a11y tests"
     }
   }
 }

@@ -92,7 +92,7 @@ steps:
     commands:
       - tools/ci/setup.sh
       - tools/ci/downloadStorybookArtifacts.sh
-      - yarn storybook a11y
+      - yarn nx run storybook:a11y
     env:
       CONFIG_SERVICE_CONTEXT: cds-a11y
       STORYBOOK_SKIP_ANIMATION: true

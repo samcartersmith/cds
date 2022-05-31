@@ -9,8 +9,8 @@
     "stylelint": "nx run storybook:lint-styles",
     "stylelint.fix": "nx run storybook:lint-styles --fix",
     "typecheck": "nx run storybook:typecheck",
-    "a11y": "jest a11y.test",
-    "a11y.report": "jest a11yReport.test"
+    "a11y": "nx run storybook:a11y",
+    "a11y.report": "nx run storybook:a11y --report"
   },
   "dependencies": {
     "@cbhq/cds-fonts": "workspace:*",
