@@ -46,9 +46,9 @@
     "coa": "2.0.2",
     "yargs-parser": "^21.0.1",
     "ejs": "^3.1.7",
-    "@cbhq/mono-pipeline@0.6.0": "patch:@cbhq/mono-pipeline@npm:0.6.0#.yarn/patches/@cbhq-mono-pipeline-npm-0.6.0-1eea4a3e55",
     "framer-motion@^6.2.8": "patch:framer-motion@npm:6.2.8#.yarn/patches/framer-motion-npm-6.2.8-db4a5dedad",
-    "@testing-library/user-event@^14.0.4": "patch:@testing-library/user-event@npm:14.0.4#.yarn/patches/@testing-library-user-event-npm-14.0.4-109d618170"
+    "@testing-library/user-event@^14.0.4": "patch:@testing-library/user-event@npm:14.0.4#.yarn/patches/@testing-library-user-event-npm-14.0.4-109d618170",
+    "@cbhq/mono-pipeline@0.6.0": "patch:@cbhq/mono-pipeline@npm:0.6.0#.yarn/patches/@cbhq-mono-pipeline-npm-0.6.0-1eea4a3e55"
   },
   "workspaces": [
     "apps/*",

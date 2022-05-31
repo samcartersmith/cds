@@ -1,6 +1,7 @@
 _shared_step: &shared_step
   env:
-    PERCY_TARGET_BRANCH: $BUILDKITE_PULL_REQUEST_BASE_BRANCH
+    OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: develop
+    PERCY_TARGET_BRANCH: develop
   commands:
     - tools/ci/setup.sh
   plugins:
@@ -46,6 +47,7 @@ steps:
     env:
       CONFIG_SERVICE_CONTEXT: cds-build
       STORYBOOK_SKIP_ANIMATION: true
+      OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: develop
     plugins:
       - file:///buildkite/plugins/docker:
           <<: *docker_plugin
@@ -96,6 +98,7 @@ steps:
     env:
       CONFIG_SERVICE_CONTEXT: cds-a11y
       STORYBOOK_SKIP_ANIMATION: true
+      OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: develop
     plugins:
       - file:///buildkite/plugins/docker:
           <<: *docker_plugin
@@ -115,7 +118,8 @@ steps:
     env:
       CONFIG_SERVICE_CONTEXT: percy-cds
       STORYBOOK_SKIP_ANIMATION: true
-      PERCY_TARGET_BRANCH: $BUILDKITE_PULL_REQUEST_BASE_BRANCH
+      OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: develop
+      PERCY_TARGET_BRANCH: develop
     plugins:
       - file:///buildkite/plugins/docker:
           <<: *docker_plugin
