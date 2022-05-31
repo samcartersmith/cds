@@ -14,11 +14,11 @@ export type LoremIpsumProps = {
 export const LoremIpsum = ({ color, concise, title, repeat }: LoremIpsumProps) => {
   return (
     <>
-      <TextLabel1 as="p" color={color} spacingBottom={1}>
+      <TextLabel1 color={color} spacingBottom={1}>
         {title}
       </TextLabel1>
       {concise ? null : (
-        <TextBody as="p" color={color} spacingBottom={3}>
+        <TextBody color={color} spacingBottom={3}>
           {repeat ? loremIpsum.repeat(repeat) : loremIpsum}
         </TextBody>
       )}
