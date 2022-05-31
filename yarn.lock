@@ -2441,7 +2441,7 @@ __metadata:
 
 "@cbhq/mono-pipeline@patch:@cbhq/mono-pipeline@npm:0.6.0#.yarn/patches/@cbhq-mono-pipeline-npm-0.6.0-1eea4a3e55::locator=design-system%40workspace%3A.":
   version: 0.6.0
-  resolution: "@cbhq/mono-pipeline@patch:@cbhq/mono-pipeline@npm%3A0.6.0#.yarn/patches/@cbhq-mono-pipeline-npm-0.6.0-1eea4a3e55::version=0.6.0&hash=bc0615&locator=design-system%40workspace%3A."
+  resolution: "@cbhq/mono-pipeline@patch:@cbhq/mono-pipeline@npm%3A0.6.0#.yarn/patches/@cbhq-mono-pipeline-npm-0.6.0-1eea4a3e55::version=0.6.0&hash=80145b&locator=design-system%40workspace%3A."
   dependencies:
     "@babel/core": ^7.18.0
     "@babel/traverse": ^7.18.0
@@ -2455,7 +2455,7 @@ __metadata:
     yargs: ^17.3.1
   bin:
     mono-pipeline: lib/bin.js
-  checksum: 019bff34eccd1bc60e0f258a0ccfd49b58a444a697354edc9bf89e3f6e9bb5d29d38959473d4785184540058ffb4c4431a5fb2e80655ad2b2e571f7310570dbe
+  checksum: a4c8af027ce052a7f244a099ac3340217200a37cc0b87c579ab4a8df914705e8e4f8a13ab7a8f02a74b0c8cf007c0e565d76e1da5174017460d81f371b7f95de
   languageName: node
   linkType: hard
 
