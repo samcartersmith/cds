@@ -4,10 +4,18 @@ import { camelCase, kebabCase, startCase } from 'lodash';
 import path from 'path';
 import prettier from 'prettier';
 
+export type Template =
+  | 'shared/objectMap'
+  | 'doc/component'
+  | 'doc/implementation'
+  | 'doc-item/api'
+  | 'doc-item/example'
+  | 'doc-item/import-block';
+
 export type WriteFileConfig = {
   dest: string;
   data: Record<string, unknown>;
-  template: string;
+  template: Template;
 };
 
 type WriteFileParams<T> = {
@@ -18,9 +26,10 @@ type WriteFileParams<T> = {
 const writeConfig = { encoding: 'utf8', flag: 'w' } as const;
 
 const helpers = {
-  pascalCase: startCase,
   camelCase,
   kebabCase,
+  pascalCase: (str: string) => startCase(str).split(' ').join(''),
+  startCase,
 };
 
 function getParser(dest: string): prettier.BuiltInParserName {
@@ -43,11 +52,15 @@ export async function writeFile<T>({ dest, data }: WriteFileParams<T>) {
   const dirForFile = path.dirname(dest);
   // If directory doesn't already exist, create it.
   await fs.promises.mkdir(dirForFile, { recursive: true });
+  const prettierOptions = await prettier.resolveConfig('@cbhq/eslint-plugin/prettierConfig.json');
   const prettiered = prettier.format(content, {
+    ...prettierOptions,
     parser: getParser(dest),
   });
   return fs.promises.writeFile(dest, prettiered, writeConfig);
 }
+
+const templatesDir = path.join(__dirname, '../templates');
 
 /**
  * Writes the content passed from docgenRunner to disk based on plugin config.
@@ -55,7 +68,7 @@ export async function writeFile<T>({ dest, data }: WriteFileParams<T>) {
 export async function docgenWriter(files: WriteFileConfig[]) {
   return Promise.all(
     files.map(async (item) => {
-      const contents = await ejs.renderFile(item.template, {
+      const contents = await ejs.renderFile(path.join(templatesDir, `${item.template}.ejs.t`), {
         data: item.data,
         h: helpers,
       });

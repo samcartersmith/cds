@@ -18,18 +18,12 @@ declare module 'react-docgen-typescript' {
 export type DocgenPluginOptions = {
   id?: string;
   /**
-   * Webpack alias to use for accessing files output to docusaurus's temporary plugin directory
-   * This is where the component and props data is output to.
-   * @default @docgen
-   */
-  alias?: string;
-  /**
    * Directory to output codegenerated doc scaffolds.
    * Path should be relative path to root of docusaurus project. i.e. docs/api.
    * If no path is provided that plugin will not output any files outside of temporary
    * plugin directory, which you can pull in and customize how API data is presented.
    */
-  docsDir: string;
+  docsDir?: string;
   /**
    * Determines if plugin should run. If plugin is too slow in development,
    * you can either increase watchInterval or set this to false.
@@ -54,16 +48,14 @@ export type DocgenPluginOptions = {
    * This is useful if you only want to jumpstart docs, but plan to re-organize layout.
    * For those usecases, you can set to true for first run, then false after. You can also include
    * an array of files that you want to force overriding on each run.
+   * @default false
    */
-  forceDocs: boolean | string[];
-  onProcessDoc: OnProcessDoc;
+  forceDocs?: boolean | string[];
+  onProcessDoc?: OnProcessDoc;
   /**
-   * A key:value pair, where the key is the sidebar item and the value is an array
-   * of source files you want docgen to parse. This is useful when components are
-   * cross-platform or have related sub-components/hooks which you want to consolidate
-   * to a single page.
+   * An array of source files you want docgen to parse.
    */
-  sourceFiles: Record<string, string[]>;
+  sourceFiles: string[];
   /**
    * How frequently (in minutes) should plugin run after it was last run.
    * This is typically triggered via on save of project file.
@@ -108,6 +100,7 @@ export type PropItem = {
 
 export type DocTags = {
   danger?: string;
+  deprecated?: string;
   description?: string;
   example?: string;
   internal?: string;
@@ -151,6 +144,22 @@ export type ProcessedDoc = Omit<PreProcessedDoc, 'props' | 'expression'> & {
 
 export type ProcessedPropItem = Omit<PreProcessedPropItem, 'type'> & {
   type: string;
+};
+
+/* -------------------------------------------------------------------------- */
+/*                                   Output                                   */
+/* -------------------------------------------------------------------------- */
+
+export type OutputDoc = Omit<ProcessedDoc, 'example'> & {
+  /**
+   * Format mdx partials in codegenerated docs to use uppercase format of path
+   * i.e. `accordion/mobile/accordionItem.mdx` -> `MobileAccordionItem`
+   */
+  partial: { name: string; path: string };
+  /** This displays the info about where to import the component or util from, with a "copy to clipboard" button */
+  importBlock: { name: string; path: string };
+  tab: { label: string; value: string };
+  slug: string;
 };
 
 /* -------------------------------------------------------------------------- */

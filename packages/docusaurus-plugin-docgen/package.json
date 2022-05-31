@@ -11,6 +11,7 @@
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "authors": "Coinbase",
   "scripts": {
+    "debug": "node ./dist/scripts/debug.js",
     "babel": "../../node_modules/.bin/babel",
     "tsc": "../../node_modules/.bin/tsc",
     "build-babel": "yarn babel src --config-file ./babel.config.js --extensions .ts,.tsx --copy-files --no-copy-ignored --delete-dir-on-start --out-dir dist",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "@cbhq/cds-web": "workspace:*",
+    "@cbhq/eslint-plugin": "^1.5.0",
     "@docusaurus/logger": "^2.0.0-beta.20",
     "@docusaurus/utils": "2.0.0-beta.18",
     "ejs": "^3.1.7",

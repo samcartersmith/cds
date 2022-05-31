@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import type { LoadContext, Plugin } from '@docusaurus/types';
 import { DEFAULT_PLUGIN_ID } from '@docusaurus/utils';
-import { flatten } from 'lodash';
 import path from 'path';
 
 import { docgenRunner } from './scripts/docgenRunner';
@@ -31,7 +30,7 @@ if (!global.docgenBuild) {
 
 export default function plugin(
   { generatedFilesDir }: LoadContext,
-  { alias = '@docgen', enabled = true, watchInterval = 5, ...options }: DocgenPluginOptions,
+  { enabled = true, watchInterval = 5, ...options }: DocgenPluginOptions,
 ): Plugin<WriteFileConfig[] | undefined> {
   /**
    * The directory where we want to output docgen data and components.
@@ -55,21 +54,18 @@ export default function plugin(
         logger.initStatus(shouldUpdate);
 
         if (shouldUpdate) {
-          return docgenRunner({ ...options, alias, pluginDir });
+          return docgenRunner({ ...options, pluginDir });
         }
       } else {
         logger.enabledOff();
       }
       return undefined;
     },
-    getPathsToWatch() {
-      return flatten(Object.values(options.sourceFiles));
-    },
     configureWebpack(webpackConfig) {
       return {
         resolve: {
           alias: {
-            [alias]: path.join(
+            [`@docgen`]: path.join(
               // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
               // @ts-ignore This is how we are able to have consumers access the docgen data with alias of their choice
               webpackConfig.resolve.alias['@generated'],

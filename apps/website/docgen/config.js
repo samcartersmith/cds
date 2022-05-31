@@ -8,7 +8,7 @@ const sourceFiles = require('./sourceFiles');
  * The alias defined below, i.e. @docgen, will give you access to anything in that directory.
  */
 module.exports = {
-  alias: '@docgen',
+  // docsDir: path.join(__dirname, '../docs/components'),
   /**
    * Determines if plugin should run. If plugin is too slow in development,
    * you can either increase watchInterval or set this to false.
