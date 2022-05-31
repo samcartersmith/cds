@@ -1,13 +1,7 @@
 import { css } from 'linaria';
 
+import { deviceBreakpoints } from '../../layout/responsive';
 import { spacing } from '../../tokens';
-
-// TODO: use CDS breakpoints
-export const breakpoints = {
-  mobile: 612,
-  tablet: 1040,
-  desktopS: 1280,
-};
 
 // tokens
 const gutter = spacing[4];
@@ -38,7 +32,7 @@ export const contentClassName = css`
     width: 100%;
   }
 
-  @media only screen and (min-width: ${breakpoints.mobile}px) {
+  @media only screen and (min-width: ${deviceBreakpoints.phoneLarge}px) {
     margin-left: ${spacingStartSmall}px;
 
     .${primaryContentContainerClassName} {
@@ -51,7 +45,7 @@ export const contentClassName = css`
     }
   }
 
-  @media only screen and (min-width: ${breakpoints.tablet}px) {
+  @media only screen and (min-width: ${deviceBreakpoints.tablet}px) {
     flex-direction: row;
 
     .${primaryContentContainerClassName} {
@@ -64,7 +58,7 @@ export const contentClassName = css`
     }
   }
 
-  @media only screen and (min-width: ${breakpoints.desktopS}px) {
+  @media only screen and (min-width: ${deviceBreakpoints.desktop}px) {
     margin-left: ${spacingStartLarge}px;
   }
 `;
@@ -81,7 +75,7 @@ export const headerClassName = css`
     display: flex;
   }
 
-  @media only screen and (min-width: ${breakpoints.mobile}px) {
+  @media only screen and (min-width: ${deviceBreakpoints.phoneLarge}px) {
     .${headerLogoClassName} {
       display: flex;
       width: ${spacingStartSmall}px;
@@ -92,14 +86,14 @@ export const headerClassName = css`
     }
   }
 
-  @media only screen and (min-width: ${breakpoints.tablet}px) {
+  @media only screen and (min-width: ${deviceBreakpoints.tablet}px) {
     .${headerLogoClassName} {
       display: flex;
       width: ${spacingStartSmall}px;
     }
   }
 
-  @media only screen and (min-width: ${breakpoints.desktopS}px) {
+  @media only screen and (min-width: ${deviceBreakpoints.desktop}px) {
     .${headerLogoClassName} {
       width: ${spacingStartLarge}px;
     }

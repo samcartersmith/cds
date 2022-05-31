@@ -5,11 +5,12 @@ import type { AlertActionsBaseProps, IllustrationHeroSquareNames } from '@cbhq/c
 import { Button } from '../buttons';
 import { HeroSquare } from '../illustrations';
 import { Box, VStack } from '../layout';
+import { deviceBreakpoints } from '../layout/responsive';
 import { spacing } from '../tokens';
 import { TextBody, TextTitle3 } from '../typography';
 
 import { FullscreenModal } from './Modal/FullscreenModal';
-import { breakpoints, primaryContentContainerClassName } from './Modal/fullscreenModalStyles';
+import { primaryContentContainerClassName } from './Modal/fullscreenModalStyles';
 import { ModalProps } from './Modal/Modal';
 import { AlertProps } from './Alert';
 
@@ -47,7 +48,7 @@ export const centerContentClassName = css`
       width: 100%;
     }
 
-    @media only screen and (min-width: ${breakpoints.mobile}px) {
+    @media only screen and (min-width: ${deviceBreakpoints.phoneLarge}px) {
       .${primaryContentContainerClassName} {
         height: auto;
       }

@@ -7,7 +7,7 @@ import { SharedProps } from '@cbhq/cds-common/types';
 
 import { useDimensions } from '../hooks/useDimensions';
 import { VStack } from '../layout';
-import { breakpoints } from '../layout/responsive';
+import { deviceBreakpoints } from '../layout/responsive';
 import { ThemeProvider } from '../system/ThemeProvider';
 
 import { SidebarProvider } from './SidebarContext';
@@ -23,7 +23,7 @@ const breakpointObserverClassName = css`
 type BreakpointProps = { collapsed: number; expanded: number };
 const WIDTH: BreakpointProps = { collapsed: 87, expanded: 240 };
 const BREAKPOINT_CONFIG = {
-  breakpoints: { collapsed: 0, expanded: breakpoints.tablet },
+  breakpoints: { collapsed: 0, expanded: deviceBreakpoints.tablet },
   updateOnBreakpointChange: true,
 };
 

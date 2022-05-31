@@ -1,3 +1,6 @@
+// eslint-disable-next-line jest/no-mocks-import
+import '../../jest/__mocks__/matchMediaMinWidth.mock';
+
 import { fireEvent, render, waitFor } from '@testing-library/react';
 
 import { Default as Dropdown } from '../../dropdown/__stories__/Dropdown.stories';

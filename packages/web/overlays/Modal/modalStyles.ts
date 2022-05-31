@@ -1,19 +1,13 @@
 import { css } from 'linaria';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
+import { deviceBreakpoints } from '../../layout/responsive';
 import { borderRadius, spacing } from '../../tokens';
 import { cx } from '../../utils/linaria';
 
-// Temp breakpoints
-// TODO: use breakpoints from tokens once they are set in stone
-const breakpoints = {
-  tablet: 660,
-  phone: 414,
-};
-
 export const devices = {
-  phone: `max-width: ${breakpoints.phone}px`,
-  tablet: `max-width: ${breakpoints.tablet}px`,
+  phone: `max-width: ${deviceBreakpoints.phone}px`,
+  tablet: `max-width: ${deviceBreakpoints.tablet}px`,
 };
 
 export const modalTopSpacing = spacing[10];
