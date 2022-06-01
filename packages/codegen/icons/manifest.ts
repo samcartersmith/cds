@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 61129,
+  lastUnicode: 61139,
   unicodeMap: {
     cashUSD: { '8': 'uE966', '12': 'uE967', '16': 'uE968', '24': 'uE969', '32': 'uE96A' },
     cashGBP: { '8': 'uE96B', '12': 'uE96C', '16': 'uE96D', '24': 'uE96E', '32': 'uE96F' },
@@ -414,5 +414,7 @@ export const manifest = {
     },
     peopleGroupActive: { '8': 'uEEC0', '12': 'uEEC1', '16': 'uEEC2', '24': 'uEEC3', '32': 'uEEC4' },
     group: { '8': 'uEEC5', '12': 'uEEC6', '16': 'uEEC7', '24': 'uEEC8', '32': 'uEEC9' },
+    thumbsDownOutline: { '8': 'uEECA', '12': 'uEECB', '16': 'uEECC', '24': 'uEECD', '32': 'uEECE' },
+    chatBotAgent: { '8': 'uEECF', '12': 'uEED0', '16': 'uEED1', '24': 'uEED2', '32': 'uEED3' },
   },
 };

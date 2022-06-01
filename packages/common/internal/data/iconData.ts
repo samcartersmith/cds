@@ -192,12 +192,14 @@ export const iconNames = [
   'seenActive',
   'comment',
   'thumbsUpOutline',
+  'thumbsDownOutline',
   'thumbsUp',
   'thumbsDown',
   'unlock',
   'taxesReceipt',
   'visibleFilled',
   'group',
+  'chatBotAgent',
 ] as const;
 
 export const navigationIconNames = [
@@ -578,4 +580,6 @@ export const unicodeMap = {
   peopleGroupInactive: { '8': 'uEEBB', '12': 'uEEBC', '16': 'uEEBD', '24': 'uEEBE', '32': 'uEEBF' },
   peopleGroupActive: { '8': 'uEEC0', '12': 'uEEC1', '16': 'uEEC2', '24': 'uEEC3', '32': 'uEEC4' },
   group: { '8': 'uEEC5', '12': 'uEEC6', '16': 'uEEC7', '24': 'uEEC8', '32': 'uEEC9' },
+  thumbsDownOutline: { '8': 'uEECA', '12': 'uEECB', '16': 'uEECC', '24': 'uEECD', '32': 'uEECE' },
+  chatBotAgent: { '8': 'uEECF', '12': 'uEED0', '16': 'uEED1', '24': 'uEED2', '32': 'uEED3' },
 } as const;

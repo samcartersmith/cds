@@ -188,12 +188,14 @@ export type IconName =
   | 'seenActive'
   | 'comment'
   | 'thumbsUpOutline'
+  | 'thumbsDownOutline'
   | 'thumbsUp'
   | 'thumbsDown'
   | 'unlock'
   | 'taxesReceipt'
   | 'visibleFilled'
-  | 'group';
+  | 'group'
+  | 'chatBotAgent';
 
 export type NavigationIconName =
   | 'account'
