@@ -20,33 +20,33 @@ export const borderWidthVariables = {
 };
 
 export const none = css`
-  border-radius: ${borderWidth.none};
+  border-width: ${borderWidth.none};
 `;
 
 export const button = css`
-  border-radius: ${borderWidth.button};
+  border-width: ${borderWidth.button};
 `;
 
 export const card = css`
-  border-radius: ${borderWidth.card};
+  border-width: ${borderWidth.card};
 `;
 
 export const checkbox = css`
-  border-radius: ${borderWidth.checkbox};
+  border-width: ${borderWidth.checkbox};
 `;
 
 export const radio = css`
-  border-radius: ${borderWidth.radio};
+  border-width: ${borderWidth.radio};
 `;
 
 export const sparkline = css`
-  border-radius: ${borderWidth.sparkline};
+  border-width: ${borderWidth.sparkline};
 `;
 
 export const focusRing = css`
-  border-radius: ${borderWidth.focusRing};
+  border-width: ${borderWidth.focusRing};
 `;
 
 export const input = css`
-  border-radius: ${borderWidth.input};
+  border-width: ${borderWidth.input};
 `;

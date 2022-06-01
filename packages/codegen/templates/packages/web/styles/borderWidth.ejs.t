@@ -17,6 +17,6 @@ export const borderWidthVariables = {
 
 <% Object.entries(configs.borderWidth).map(([alias, value]) => { %>
   export const <%- alias %> = css`
-    border-radius: ${borderWidth.<%- alias %>};
+    border-width: ${borderWidth.<%- alias %>};
   `;
 <% }) %>
