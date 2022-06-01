@@ -1,42 +1,61 @@
-import React, { ForwardedRef, forwardRef, memo, useEffect, useRef } from 'react';
+import React, { ForwardedRef, forwardRef, memo, useEffect } from 'react';
+import { Placement } from '@popperjs/core';
+import { AnimationProps, m as motion } from 'framer-motion';
 import { css } from 'linaria';
+import {
+  animateDropdownOpacityInConfig,
+  animateDropdownOpacityOutConfig,
+  animateDropdownTransformInConfig,
+  animateDropdownTransformOutConfig,
+} from '@cbhq/cds-common/animation/dropdown';
 import { FOCUSABLE_ELEMENTS } from '@cbhq/cds-common/tokens/overlays';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { DimensionValue, NoopFn } from '@cbhq/cds-common/types';
 
 import { VStack } from '../layout/VStack';
+import { useMotionProps } from '../motion/useMotionProps';
 import { transparentScrollbar } from '../styles/scrollbar';
 import { isBrowser } from '../utils/browser';
 import { cx } from '../utils/linaria';
 
 import { DropdownProps } from './DropdownProps';
 
-const popoverStyleOverrides = css`
+const dropdownStyleOverrides = css`
   overflow-y: auto;
   overflow-x: hidden;
 `;
 
-const popoverMenuStaticClassName = 'cds-popover-menu';
+const dropdownStaticClassName = 'cds-dropdown';
 
 type DropdownContentProps = {
   height?: DimensionValue;
   onOpen?: NoopFn;
+  placement?: Placement;
 } & Pick<DropdownProps, 'width' | 'maxHeight' | 'maxWidth' | 'minWidth' | 'children' | 'value'>;
+
+const MotionVStack = motion(VStack);
 
 export const DropdownContent = memo(
   forwardRef(
     (
-      { children, value, onOpen, ...props }: DropdownContentProps,
+      { children, value, onOpen, placement, ...props }: DropdownContentProps,
       ref: ForwardedRef<HTMLElement>,
     ) => {
-      const isMounted = useRef<boolean>(false);
+      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+      const isHorizontal = placement?.includes('left') || placement?.includes('right');
+      const translate = isHorizontal ? 'x' : 'y';
 
-      useEffect(() => {
-        if (!isMounted.current) {
-          onOpen?.();
-          isMounted.current = true;
-        }
-      }, [onOpen]);
+      const motionProps = useMotionProps({
+        enterConfigs: [
+          animateDropdownOpacityInConfig,
+          { ...animateDropdownTransformInConfig, property: translate },
+        ],
+        exitConfigs: [
+          animateDropdownOpacityOutConfig,
+          { ...animateDropdownTransformOutConfig, property: translate },
+        ],
+        exit: 'exit',
+      });
 
       // on mount focus the first option (unless there is an already selected value, then select option will focus it)
       useEffect(() => {
@@ -49,7 +68,7 @@ export const DropdownContent = memo(
       }, [ref, value]);
 
       return (
-        <VStack
+        <MotionVStack
           ref={ref}
           background
           elevation={2}
@@ -57,14 +76,15 @@ export const DropdownContent = memo(
           zIndex={zIndex.overlays.dropdown}
           role="menu"
           dangerouslySetClassName={cx(
-            popoverMenuStaticClassName,
-            popoverStyleOverrides,
+            dropdownStaticClassName,
+            dropdownStyleOverrides,
             transparentScrollbar,
           )}
           {...props}
+          {...(motionProps as AnimationProps)}
         >
           {children}
-        </VStack>
+        </MotionVStack>
       );
     },
   ),

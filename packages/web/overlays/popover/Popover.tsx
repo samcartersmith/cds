@@ -48,7 +48,6 @@ export const Popover = memo(
     children,
     disablePortal,
     showOverlay = false,
-    overlayRef,
     onPressSubject,
     onClose,
     onMouseEnter,
@@ -164,7 +163,7 @@ export const Popover = memo(
                     pin="all"
                     zIndex={zIndex.overlays.portal + zIndex.overlays.modal}
                   >
-                    <Overlay onPress={handleClose} ref={overlayRef} />
+                    <Overlay onPress={handleClose} animated />
                     {memoizedContent}
                   </Box>
                 ) : (

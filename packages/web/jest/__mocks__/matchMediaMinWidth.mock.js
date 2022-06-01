@@ -1,6 +1,11 @@
 /* eslint-disable no-undef */
 // grab the min width value
-const queryMinWidth = (query) => parseInt(query.split(' ')[1].split('px')[0]);
+const queryMinWidth = (query) => {
+  const q = query.split(' ');
+  if (q.length < 2) return false;
+
+  return parseInt(q[1].split('px')[0]);
+};
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
