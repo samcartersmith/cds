@@ -4725,7 +4725,7 @@ export const iconManifest = {
   },
   '8462:249': {
     key: '5271ee30f0790712946fd6742f68f60e621b941f',
-    name: 'Icon/thumbsUpOutline_24',
+    name: 'Icon/thumbsDownOutline_24',
     description: 'no, thumbs down, thumb, down, 👎',
     documentationLinks: [],
   },
@@ -4737,7 +4737,7 @@ export const iconManifest = {
   },
   '8462:242': {
     key: 'd4548274eb99ee516fbaabbaf3df3a68b034927d',
-    name: 'Icon/thumbsUpOutline_16',
+    name: 'Icon/thumbsDownOutline_16',
     description: 'no, thumbs down, thumb, down, 👎',
     documentationLinks: [],
   },
@@ -4749,7 +4749,7 @@ export const iconManifest = {
   },
   '8462:246': {
     key: '5cd72faafb90aeba671cdce2e1e6242c7b151a57',
-    name: 'Icon/thumbsUpOutline_12',
+    name: 'Icon/thumbsDownOutline_12',
     description: 'no, thumbs down, thumb, down, 👎',
     documentationLinks: [],
   },
@@ -5156,6 +5156,24 @@ export const iconManifest = {
     name: 'Icon/group_12',
     description:
       'faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧',
+    documentationLinks: [],
+  },
+  '8781:837': {
+    key: 'cad03fbbe693ff648ad0ac8094cb240bbe0db288',
+    name: 'Icon/chatBotAgent_12',
+    description: 'chat, bot, agent, person, help, support, 💬, 👩‍💼, 🧑‍💼, 👨‍💼',
+    documentationLinks: [],
+  },
+  '8781:836': {
+    key: '46ff0464e9c842a0e2d4de060adcacd25154c9a5',
+    name: 'Icon/chatBotAgent_16',
+    description: 'chat, bot, agent, person, help, support, 💬, 👩‍💼, 🧑‍💼, 👨‍💼',
+    documentationLinks: [],
+  },
+  '8781:835': {
+    key: 'ccfc2110f3bda3b3dbb2168c806c26f2d72ad77d',
+    name: 'Icon/chatBotAgent_24',
+    description: 'chat, bot, agent, person, help, support, 💬, 👩‍💼, 🧑‍💼, 👨‍💼',
     documentationLinks: [],
   },
 };
