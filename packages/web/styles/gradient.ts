@@ -1,8 +1,6 @@
 import { css } from 'linaria';
-import { animateGradientScaleConfig } from '@cbhq/cds-common/animation/paddle';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
-import { Animated } from '../animation/Animated';
 import { palette } from '../tokens';
 import { cx } from '../utils/linaria';
 
@@ -25,18 +23,6 @@ const baseGradient = css`
       background: linear-gradient(to left, currentColor 50%, ${palette.transparent} 100%);
       right: 0px;
       transform-origin: right;
-    }
-    // Transitions
-    transform: scaleX(0);
-    &.hide {
-      ${Animated.toCssTransition([
-        { ...animateGradientScaleConfig, fromValue: 'scale(1)', toValue: `scaleX(0)` },
-      ])}
-    }
-    &.show {
-      ${Animated.toCssTransition([
-        { ...animateGradientScaleConfig, fromValue: `scaleX(0)`, toValue: `scaleX(1)` },
-      ])}
     }
   }
 `;
