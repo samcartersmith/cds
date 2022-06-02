@@ -1,25 +1,15 @@
-import React, { memo, useCallback, useMemo, useRef } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import { css } from 'linaria';
 import { TabIndicatorProps, TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common';
-import { animateDotWidthConfig } from '@cbhq/cds-common/animation/dot';
+import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 
-import { Animated } from '../animation/Animated';
+import { Collapsible } from '../collapsible';
 import { DotCount } from '../dots/DotCount';
 import { useDimensions } from '../hooks/useDimensions';
 import { useIsoEffect } from '../hooks/useIsoEffect';
 import { HStack } from '../layout';
 import { spacing } from '../tokens';
 import { TextHeadline, TextProps, TextTitle3, TextTitle4 } from '../typography';
-import { cx } from '../utils/linaria';
-
-import { useDotAnimation } from './hooks/useDotAnimation';
-
-export const getDotSizeClassName = (count?: number) => {
-  if (!count || count < 10) return 'size--s';
-  if (count <= 99) return 'size--m';
-
-  return 'size--l';
-};
 
 export const tabLabelSpacingClassName = css`
   padding-top: ${spacing[2]};
@@ -36,22 +26,6 @@ const hiddenClassName = css`
   visibility: hidden;
   pointer-events: none;
   height: 0px;
-`;
-const dotClassName = css`
-  display: block;
-  padding-left: ${spacing[0.5]};
-  // Animate to size
-  width: 0px;
-  opacity: 0;
-  &.size--s {
-    ${Animated.toCssTransition([{ ...animateDotWidthConfig, toValue: '27px' }])}
-  }
-  &.size--m {
-    ${Animated.toCssTransition([{ ...animateDotWidthConfig, toValue: '31px' }])}
-  }
-  &.size--l {
-    ${Animated.toCssTransition([{ ...animateDotWidthConfig, toValue: '42px' }])}
-  }
 `;
 
 const COLORS = {
@@ -72,7 +46,8 @@ export const TabLabel = memo(
   ({ id = '', active, variant = 'primary', count = 0, onLayout, ...props }: TabLabelProps) => {
     const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);
     const color = useMemo(() => COLORS[variant][active ? 'active' : 'inactive'], [active, variant]);
-    const countClassName = getDotSizeClassName(count);
+    const prevCount = usePreviousValue<number>(count);
+
     const TextElement = useMemo(() => {
       if (variant === 'primary') return TextHeadline;
       if (active) return TextTitle3;
@@ -83,23 +58,13 @@ export const TabLabel = memo(
     // Handle layout events
     const { observe, width, x } = useDimensions();
 
-    // ⚡️ Side effects
-    const lastCount = useRef(0);
-    const { animateIn, animateOut, dotRef } = useDotAnimation();
-
     const getOnLayoutHandler = useCallback(() => {
       onLayout?.(id, { width, x });
     }, [id, onLayout, width, x]);
 
     useIsoEffect(() => {
-      // Animate dotBadge in
-      if (count && !lastCount.current) void animateIn?.start();
-      if (!count && lastCount.current) void animateOut?.start();
       getOnLayoutHandler();
-
-      // Update count ref
-      lastCount.current = count;
-    }, [count, animateIn, animateOut, id, getOnLayoutHandler]);
+    }, [getOnLayoutHandler]);
 
     return (
       <HStack alignItems="center" ref={observe}>
@@ -122,9 +87,11 @@ export const TabLabel = memo(
             dangerouslySetClassName={variant === 'primary' ? tabLabelSpacingClassName : undefined}
           />
         )}
-        <span className={cx(dotClassName, count && countClassName)} ref={dotRef}>
-          <DotCount count={count} />
-        </span>
+        <Collapsible collapsed={!count} direction="horizontal" spacingStart={0.5}>
+          {/* When count is set to 0 this will fallback to prevCount
+          which has the previous count value to keep the component mounted */}
+          <DotCount count={(count || prevCount) ?? 0} />
+        </Collapsible>
       </HStack>
     );
   },

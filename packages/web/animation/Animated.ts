@@ -29,6 +29,7 @@ type TransitionReturnValue = {
   transition: string;
 };
 
+/** @deprecated Use Framer motion and the useMotionProps hook */
 export class Animated {
   static timing(ref: RefObject<HTMLElement>, specs: MotionSpec): TimingReturnValues | null {
     const { property, ...restSpecs } = specs;
