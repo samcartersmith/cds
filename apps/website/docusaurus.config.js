@@ -30,6 +30,8 @@ const refreshPresetOptions = {
   },
 };
 
+const presetOptions = hasThemeRefresh ? refreshPresetOptions : preRefreshOptions;
+
 module.exports = {
   title: 'Coinbase Design System',
   tagline: '',
@@ -103,7 +105,7 @@ module.exports = {
         gtag: {
           trackingID: 'G-369GEFT8FG',
         },
-        ...(hasThemeRefresh ? refreshPresetOptions : preRefreshOptions),
+        ...presetOptions,
         blog: false,
       },
     ],
@@ -111,18 +113,21 @@ module.exports = {
   plugins: [
     '@docusaurus/theme-live-codeblock',
     ['@cbhq/docusaurus-plugin-docgen', docgenConfig],
-    [
-      '@cmfcmf/docusaurus-search-local',
-      {
-        language: 'en',
-        indexBlog: false,
-        indexDocs: true,
-        indexDocSidebarParentCategories: 2,
-        style: hasThemeRefresh ? 'none' : undefined,
-      },
-    ],
+    ['@cbhq/docusaurus-plugin-kbar', { docs: presetOptions.docs }],
+    hasThemeRefresh
+      ? undefined
+      : [
+          '@cmfcmf/docusaurus-search-local',
+          {
+            language: 'en',
+            indexBlog: false,
+            indexDocs: true,
+            indexDocSidebarParentCategories: 2,
+            style: hasThemeRefresh ? 'none' : undefined,
+          },
+        ],
     // Must run last!
     webpackPlugin,
-  ],
+  ].filter(Boolean),
   clientModules: [require.resolve(hasThemeRefresh ? './refresh/global.ts' : './global.ts')],
 };

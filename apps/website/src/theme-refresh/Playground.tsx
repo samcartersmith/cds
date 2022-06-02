@@ -77,6 +77,7 @@ const Playground = memo(function Playground({
             borderRadius="popover"
             onPress={toggle}
             noScaleOnPress
+            transparentWhileInactive
           >
             <HStack gap={1} spacing={1} width={112} alignItems="center">
               <Icon name={collapsed ? 'caretDown' : 'caretUp'} size="xs" color="primary" />
@@ -90,6 +91,7 @@ const Playground = memo(function Playground({
             borderRadius="round"
             noScaleOnPress
             onPress={handleCopyToClipboard}
+            transparentWhileInactive
           >
             <HStack gap={1} spacing={1} alignItems="center">
               <Icon name="copy" size="xs" color="primary" />

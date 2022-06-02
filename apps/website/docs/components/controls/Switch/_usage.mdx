@@ -2,23 +2,15 @@
 function SwitchDemo() {
   // doc site theme control
   const { colorMode, setColorMode } = useColorMode();
-  // from @cbhq/cds-common/hooks/useToggler
-  const [isChecked, { toggle }] = useToggler(colorMode === 'dark');
 
-  const handleChange = useCallback(
-    (event) => {
-      setColorMode(event.target.checked ? 'light' : 'dark');
-      toggle();
-    },
-    [setColorMode, toggle],
-  );
+  const handleChange = useCallback(() => {
+    setColorMode(colorMode === 'light' ? 'dark' : 'light');
+  }, [colorMode, setColorMode]);
 
   return (
-    <ThemeProvider spectrum={isChecked ? 'dark' : 'light'}>
-      <Switch onChange={handleChange} checked={isChecked}>
-        Dark Mode
-      </Switch>
-    </ThemeProvider>
+    <Switch onChange={handleChange} checked={colorMode === 'dark'}>
+      Dark Mode
+    </Switch>
   );
 }
 ```

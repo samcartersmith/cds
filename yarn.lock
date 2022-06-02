@@ -2324,6 +2324,42 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@cbhq/docusaurus-plugin-kbar@workspace:*, @cbhq/docusaurus-plugin-kbar@workspace:packages/docusaurus-plugin-kbar":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/docusaurus-plugin-kbar@workspace:packages/docusaurus-plugin-kbar"
+  dependencies:
+    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-web": "workspace:*"
+    "@docusaurus/core": 2.0.0-beta.18
+    "@docusaurus/logger": 2.0.0-beta.20
+    "@docusaurus/module-type-aliases": 2.0.0-beta.18
+    "@docusaurus/plugin-content-docs": 2.0.0-beta.18
+    "@docusaurus/theme-classic": 2.0.0-beta.18
+    "@docusaurus/types": 2.0.0-beta.18
+    "@docusaurus/utils": 2.0.0-beta.18
+    "@joshcena/docusaurus-plugin-utils": ^0.1.3
+    "@types/lodash": ^4.14.178
+    concurrently: ^7.1.0
+    ejs: ^3.1.7
+    kbar: ^0.1.0-beta.35
+    lodash: ^4.17.21
+    prettier: ^2.5.1
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    type-fest: 1.2.0
+    typescript: ~4.5.4
+  peerDependencies:
+    "@cbhq/cds-web": "workspace:*"
+    "@docusaurus/core": ^2.0.0-beta.18
+    "@docusaurus/module-type-aliases": ^2.0.0-beta.18
+    "@docusaurus/theme-classic": 2.0.0-beta.18
+    "@docusaurus/types": ^2.0.0-beta.18
+    "@types/lodash": ^4.14.178
+    react: ^17.0.2
+    react-dom: ^17.0.2
+  languageName: unknown
+  linkType: soft
+
 "@cbhq/eslint-plugin@npm:^1.5.0":
   version: 1.5.0
   resolution: "@cbhq/eslint-plugin@npm:1.5.0"
@@ -2616,6 +2652,7 @@ __metadata:
     "@cbhq/cds-tools": "workspace:*"
     "@cbhq/cds-web": "workspace:*"
     "@cbhq/docusaurus-plugin-docgen": "workspace:*"
+    "@cbhq/docusaurus-plugin-kbar": "workspace:*"
     "@cmfcmf/docusaurus-search-local": ^0.10.0
     "@docusaurus/core": 2.0.0-beta.18
     "@docusaurus/module-type-aliases": 2.0.0-beta.18
@@ -2877,6 +2914,16 @@ __metadata:
     chalk: ^4.1.2
     tslib: ^2.3.1
   checksum: 5821a9f360d3eff64a12722c0e39a83d9226116ba78ef5ec9b2400248e46b09ed4e754bb72939aa08375dedf8324bbad8b820d73d0f8c27be9a2e2d720d8010c
+  languageName: node
+  linkType: hard
+
+"@docusaurus/logger@npm:2.0.0-beta.20":
+  version: 2.0.0-beta.20
+  resolution: "@docusaurus/logger@npm:2.0.0-beta.20"
+  dependencies:
+    chalk: ^4.1.2
+    tslib: ^2.4.0
+  checksum: 71ac220746f09bdf0180369460c44c324a0bc931617d9868ccc2b739ab6f15a800c277cf62d54c1c354f5db3251b558006ef4ad7512dd2f21060c437e1e69e5e
   languageName: node
   linkType: hard
 
@@ -4777,6 +4824,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@reach/observe-rect@npm:^1.1.0":
+  version: 1.2.0
+  resolution: "@reach/observe-rect@npm:1.2.0"
+  checksum: 7dd903eeaad0e22c6d973bd26265d91eadba56ab5134701ceb3e85214db75339fae94aa7e8b88a65e8daa64bc7cf1b915d4ffcdfd324466b561dc6adc3c6e070
+  languageName: node
+  linkType: hard
+
+"@reach/portal@npm:^0.16.0":
+  version: 0.16.2
+  resolution: "@reach/portal@npm:0.16.2"
+  dependencies:
+    "@reach/utils": 0.16.0
+    tiny-warning: ^1.0.3
+    tslib: ^2.3.0
+  peerDependencies:
+    react: ^16.8.0 || 17.x
+    react-dom: ^16.8.0 || 17.x
+  checksum: 7413dcd169cfb9854dd0d3a01f811ec19ef170558fcbd00118d676fc02c197d1c0bce1d1357508879d4775169561d103e13a8e4d74cc677eb0037cc7b04f7a1e
+  languageName: node
+  linkType: hard
+
 "@reach/router@npm:^1.3.4":
   version: 1.3.4
   resolution: "@reach/router@npm:1.3.4"
@@ -4789,6 +4857,19 @@ __metadata:
     react: 15.x || 16.x || 16.4.0-alpha.0911da3
     react-dom: 15.x || 16.x || 16.4.0-alpha.0911da3
   checksum: f64372497e0464a9fdfd79283fec3f4fd01ee093f1599d8a8035e0a41fbce22113bfa46dcea63aa8b7b4e0796e916f134aa8e3fccd3974be397e7c19468de3c4
+  languageName: node
+  linkType: hard
+
+"@reach/utils@npm:0.16.0":
+  version: 0.16.0
+  resolution: "@reach/utils@npm:0.16.0"
+  dependencies:
+    tiny-warning: ^1.0.3
+    tslib: ^2.3.0
+  peerDependencies:
+    react: ^16.8.0 || 17.x
+    react-dom: ^16.8.0 || 17.x
+  checksum: 36bc0eb41a71798eb6186b23de265ba709e51dae5bf214fb8505c66bb3f2e6a41bb2401457350436ba89ca9e3a50f93a04fe7c33d15648ce11e568a85622d770
   languageName: node
   linkType: hard
 
@@ -11470,6 +11551,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"command-score@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "command-score@npm:0.1.2"
+  checksum: b733fd552d7e569070da3d474b1ed5f54785fdf3dd61670002e0a00b2eff1a547c2b6d3af3683c012f4f39c6455f9e7ee5e9997a79c08048ec37ec2195d3df08
+  languageName: node
+  linkType: hard
+
 "commander@npm:^2.19.0, commander@npm:^2.20.0, commander@npm:^2.7.1":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
@@ -14866,6 +14954,13 @@ __metadata:
   version: 1.2.0
   resolution: "fast-diff@npm:1.2.0"
   checksum: 1b5306eaa9e826564d9e5ffcd6ebd881eb5f770b3f977fcbf38f05c824e42172b53c79920e8429c54eb742ce15a0caf268b0fdd5b38f6de52234c4a8368131ae
+  languageName: node
+  linkType: hard
+
+"fast-equals@npm:^2.0.3":
+  version: 2.0.4
+  resolution: "fast-equals@npm:2.0.4"
+  checksum: 1aac8a2e16b33e5e402bb5cd46be65f1ca331903c2c44e3bd75324e8472ee04f0acdbc6889e45fc28f9707ca3964f2a86789b32305d4d8b85dc97f61e446ef4b
   languageName: node
   linkType: hard
 
@@ -19524,6 +19619,22 @@ __metadata:
   version: 3.1.0
   resolution: "junk@npm:3.1.0"
   checksum: 6c4d68e8f8bc25b546baed802cd0e7be6a971e92f1e885c92cbfe98946d5690b961a32f8e7909e77765d3204c3e556d13c17f73e31697ffae1db07a58b9e68c0
+  languageName: node
+  linkType: hard
+
+"kbar@npm:^0.1.0-beta.35":
+  version: 0.1.0-beta.35
+  resolution: "kbar@npm:0.1.0-beta.35"
+  dependencies:
+    "@reach/portal": ^0.16.0
+    command-score: ^0.1.2
+    fast-equals: ^2.0.3
+    react-virtual: ^2.8.2
+    tiny-invariant: ^1.2.0
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0
+    react-dom: ^16.0.0 || ^17.0.0
+  checksum: 25cb2b7f7ce9df0bb61c94738591af938fef40d110a57686f8247d6e32ff189b49884fe73118011583b38b8c551eeae3020804d669e73c655f361c68a4d65aec
   languageName: node
   linkType: hard
 
@@ -25741,6 +25852,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-virtual@npm:^2.8.2":
+  version: 2.10.4
+  resolution: "react-virtual@npm:2.10.4"
+  dependencies:
+    "@reach/observe-rect": ^1.1.0
+  peerDependencies:
+    react: ^16.6.3 || ^17.0.0
+  checksum: 1bebc741b01057829a7d7f29256114caecf0597d41b187cb41e75af77f24a87c780bc1a81ec11205b78ee2e9c801fc5e36b20a9e1ab7ddc70a18dd95417795f8
+  languageName: node
+  linkType: hard
+
 "react-virtualized@npm:^9.22.3":
   version: 9.22.3
   resolution: "react-virtualized@npm:9.22.3"
@@ -29043,7 +29165,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tiny-invariant@npm:^1.0.2, tiny-invariant@npm:^1.1.0":
+"tiny-invariant@npm:^1.0.2, tiny-invariant@npm:^1.1.0, tiny-invariant@npm:^1.2.0":
   version: 1.2.0
   resolution: "tiny-invariant@npm:1.2.0"
   checksum: e09a718a7c4a499ba592cdac61f015d87427a0867ca07f50c11fd9b623f90cdba18937b515d4a5e4f43dac92370498d7bdaee0d0e7a377a61095e02c4a92eade
@@ -29524,7 +29646,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:~4.5.2":
+"typescript@npm:~4.5.2, typescript@npm:~4.5.4":
   version: 4.5.5
   resolution: "typescript@npm:4.5.5"
   bin:
@@ -29544,7 +29666,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@~4.5.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@~4.5.2#~builtin<compat/typescript>, typescript@patch:typescript@~4.5.4#~builtin<compat/typescript>":
   version: 4.5.5
   resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=ddd1e8"
   bin:

@@ -101,6 +101,7 @@ function CollapsibleCategory({
         borderRadius="popover"
         onPress={toggle}
         noScaleOnPress
+        transparentWhileInactive
       >
         <HStack
           width="100%"

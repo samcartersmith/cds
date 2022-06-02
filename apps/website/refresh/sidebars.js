@@ -11,16 +11,54 @@ module.exports = {
     {
       type: 'category',
       label: 'Foundations',
+      customProps: {
+        illustration: 'commerceNavigation',
+        description: 'Get started with the Coinbase Design System.',
+        priority: -1,
+      },
       items: [
-        'cds/getting-started',
-        'foundation/a11y',
-        'foundation/color',
-        'foundation/content',
-        'foundation/elevation',
-        'foundation/layout',
+        {
+          type: 'doc',
+          id: 'cds/getting-started',
+          customProps: { description: 'A checklist of everything you need to get up and running.' },
+        },
+        {
+          type: 'doc',
+          id: 'foundation/a11y',
+          customProps: { description: 'Make experiences that are accessible for everyone.' },
+        },
+        {
+          type: 'doc',
+          id: 'foundation/color',
+          customProps: { description: 'Use tokens and themes to manage color.' },
+        },
+        {
+          type: 'doc',
+          id: 'foundation/content',
+          customProps: {
+            description:
+              'Use language to build trust, convey information, and increase engagement with our customers.',
+          },
+        },
+        {
+          type: 'doc',
+          id: 'foundation/elevation',
+          customProps: {
+            description: 'The relationship and importance of different components on the screen.',
+          },
+        },
+        {
+          type: 'doc',
+          id: 'foundation/layout',
+          customProps: { description: 'Deliver clear, functional layouts.' },
+        },
         {
           type: 'category',
           label: 'Motion',
+          customProps: {
+            description:
+              'Bring the screen to life, guide users through complex experiences, and help move them forward.',
+          },
           items: [
             { type: 'doc', id: 'foundation/motion/brand-motion', label: 'Brand' },
             { type: 'doc', id: 'foundation/motion/product-motion-language', label: 'Product' },
@@ -28,13 +66,28 @@ module.exports = {
             { type: 'doc', id: 'foundation/motion/motion-handoff', label: 'Handoff' },
           ],
         },
-        { type: 'doc', id: 'foundation/scale', label: 'Scale' },
-        { type: 'doc', id: 'foundation/typography', label: 'Typography' },
+        {
+          type: 'doc',
+          id: 'foundation/scale',
+          label: 'Scale',
+          customProps: { description: 'Design for different information densities.' },
+        },
+        {
+          type: 'doc',
+          id: 'foundation/typography',
+          label: 'Typography',
+          customProps: { description: 'Create clear hierarchies and organize information.' },
+        },
       ],
     },
     {
       type: 'category',
       label: 'Assets',
+      customProps: {
+        illustration: 'connectNavigation',
+        description: 'Illustration, icons, and logos for building immersive experiences.',
+        priority: -1,
+      },
       items: [
         {
           type: 'category',
@@ -50,11 +103,17 @@ module.exports = {
               type: 'doc',
               id: 'foundation/creating-and-maintaining-iconography',
               label: 'Contributing',
+              customProps: {
+                description: 'Guide for non-illustrators to create and contribute back.',
+              },
             },
             {
               type: 'doc',
               id: 'foundation/iconography',
               label: 'Guidelines',
+              customProps: {
+                description: 'Symbols that are recognized immediately.',
+              },
             },
           ],
         },
@@ -66,6 +125,9 @@ module.exports = {
               type: 'doc',
               id: 'foundation/product-illustration',
               label: 'Guidelines',
+              customProps: {
+                description: 'Design guidance for using illustrations in product.',
+              },
             },
             {
               type: 'doc',
@@ -111,6 +173,11 @@ module.exports = {
     {
       type: 'category',
       label: 'Components',
+      customProps: {
+        illustration: 'rosettaNavigation',
+        description: 'Design guidelines, figma resources and code components',
+        priority: -1,
+      },
       items: [
         {
           type: 'category',
@@ -328,11 +395,17 @@ module.exports = {
           ],
         },
         { type: 'doc', id: 'components/controls/RadioGroup/radio-group', label: 'Radio Group' },
-        { type: 'doc', id: 'components/media/RemoteImage/remote-image', label: 'Remote Image' },
         {
-          type: 'doc',
-          id: 'components/media/RemoteImageGroup/remote-image-group',
-          label: 'Remote Image Group',
+          type: 'category',
+          label: 'Remote Image',
+          items: [
+            { type: 'doc', id: 'components/media/RemoteImage/remote-image', label: 'Remote Image' },
+            {
+              type: 'doc',
+              id: 'components/media/RemoteImageGroup/remote-image-group',
+              label: 'Remote Image Group',
+            },
+          ],
         },
         { type: 'doc', id: 'components/controls/SearchInput/search-input', label: 'Search  Input' },
         {
@@ -480,20 +553,42 @@ module.exports = {
       type: 'category',
       label: 'Patterns',
       items: ['concepts/messaging/errors'],
+      customProps: {
+        illustration: 'participateNavigation',
+        description: 'How pieces work together in your experiences.',
+        priority: -1,
+      },
     },
     {
       type: 'category',
       label: 'Recipes',
+      customProps: {
+        illustration: 'earnNavigation',
+        description: 'Examples of complex CDS compositions to build off of.',
+        priority: -1,
+      },
       items: [
         { type: 'doc', id: 'recipes/sparkline-interactive', label: 'Asset Chart' },
         { type: 'doc', id: 'partnerships/AppSwitcher/app-switcher', label: 'App Switcher' },
         { type: 'doc', id: 'partnerships/UserSwitcher/user-switcher', label: 'User Switcher' },
-        { type: 'doc', id: 'recipes/navigation', label: 'Navigation' },
+        {
+          type: 'doc',
+          id: 'recipes/navigation',
+          label: 'Navigation',
+          customProps: {
+            description: 'Compose a system of Navigation components.',
+          },
+        },
       ],
     },
     {
       type: 'category',
       label: 'Abstract Components',
+      customProps: {
+        illustration: 'walletNavigation',
+        description: 'Abstractions that are UI agnostic.',
+        priority: -1,
+      },
       items: [
         {
           type: 'category',
@@ -554,6 +649,11 @@ module.exports = {
     {
       type: 'category',
       label: 'Resources',
+      customProps: {
+        illustration: 'pluginBrowser',
+        description: 'Everything you need to work with CDS.',
+        priority: -1,
+      },
       items: [
         {
           type: 'category',
@@ -572,18 +672,6 @@ module.exports = {
             { type: 'doc', id: 'changelog/mobile', label: '@cbhq/cds-mobile' },
             { type: 'doc', id: 'changelog/utils', label: '@cbhq/cds-utils' },
             { type: 'doc', id: 'changelog/web', label: '@cbhq/cds-web' },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Contributing',
-          items: [
-            {
-              type: 'link',
-              href: 'https://github.cbhq.net/frontend/cds/tree/master/docs',
-              label: 'Engineering',
-            },
-            { type: 'doc', id: 'contributing/design', label: 'Design' },
           ],
         },
         'resources/release',

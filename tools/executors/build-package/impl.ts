@@ -246,7 +246,7 @@ export default async function buildPackage(
     typescriptConfig,
     envs,
     replacePackageJson = true,
-} = options;
+  } = options;
 
   const destinationDir = path.join(context.root, dest);
   const dist = path.join(destinationDir, distDir);
