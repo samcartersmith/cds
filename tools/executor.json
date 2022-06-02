@@ -5,6 +5,11 @@
       "schema": "./dist/executors/build-css/schema.json",
       "description": "Aggregates all of the cds css"
     },
+    "build-docusaurus-plugin": {
+      "implementation": "./dist/executors/build-docusaurus-plugin/impl",
+      "schema": "./dist/executors/build-docusaurus-plugin/schema.json",
+      "description": "Builds a docusaurus plugin"
+    },
     "build-package": {
       "implementation": "./dist/executors/build-package/impl",
       "schema": "./dist/executors/build-package/schema.json",

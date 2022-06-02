@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "cli": "nx",
+  "properties": {
+    "sourceDir": {
+      "type": "string",
+      "description": "The source directory of your TypeScript plugin."
+    },
+    "targetDir": {
+      "type": "string",
+      "description": "The target directory of transpilation output."
+    },
+    "themeDir": {
+      "type": "string",
+      "description": "The directory of your theme components. If the directory is not present, we assume that no theme components are present."
+    },
+    "themeTargetDir": {
+      "type": "string",
+      "description": "The directory to output the human-readable JS components."
+    },
+    "ignore": {
+      "type": "array",
+      "description": "A list of patterns to be ignored—no compilation output will be emitted."
+    }
+  }
+}

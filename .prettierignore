@@ -8,6 +8,7 @@ apps/website/static/**/*.json
 
 # Nx
 dist/
+lib/
 package.json
 .docusaurus
 .nx
