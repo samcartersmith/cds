@@ -36,20 +36,26 @@ export const deviceBreakpoints: Record<DeviceBreakpoint, number> = {
 };
 
 export const deviceMqs: Record<DeviceBreakpoint, string> = {
-  phone: `min-width: ${deviceBreakpoints.phone}px`,
-  phoneLarge: `min-width: ${deviceBreakpoints.phoneLarge}px`,
-  tablet: `min-width: ${deviceBreakpoints.tablet}px`,
-  tabletLandscape: `min-width: ${deviceBreakpoints.tabletLandscape}px`,
+  phone: `max-width: ${deviceBreakpoints.phoneLarge - 1}px`,
+  phoneLarge: `max-width: ${deviceBreakpoints.tablet - 1}px`,
+  tablet: `max-width: ${deviceBreakpoints.tabletLandscape - 1}px`,
+  tabletLandscape: `max-width: ${deviceBreakpoints.desktop - 1}px`,
   desktop: `min-width: ${deviceBreakpoints.desktop}px`,
   desktopLarge: `min-width: ${deviceBreakpoints.desktopLarge}px`,
   extraWide: `min-width: ${deviceBreakpoints.extraWide}px`,
 };
 
 export const deviceMqRanges: Record<DeviceBreakpoint, string> = {
-  phone: `(min-width: ${deviceBreakpoints.phone}px) and (max-width: ${deviceBreakpoints.tablet}px)`,
-  phoneLarge: `(min-width: ${deviceBreakpoints.phoneLarge}px) and (max-width: ${deviceBreakpoints.tablet}px)`,
-  tablet: `(min-width: ${deviceBreakpoints.tablet}px) and (max-width: ${deviceBreakpoints.desktop}px)`,
-  tabletLandscape: `(min-width: ${deviceBreakpoints.tabletLandscape}px) and (max-width: ${deviceBreakpoints.desktop}px)`,
+  phone: `(max-width: ${deviceBreakpoints.phoneLarge - 1}px)`,
+  phoneLarge: `(min-width: ${deviceBreakpoints.phoneLarge}px) and (max-width: ${
+    deviceBreakpoints.tablet - 1
+  }px)`,
+  tablet: `(min-width: ${deviceBreakpoints.tablet}px) and (max-width: ${
+    deviceBreakpoints.desktop - 1
+  }px)`,
+  tabletLandscape: `(min-width: ${deviceBreakpoints.tabletLandscape}px) and (max-width: ${
+    deviceBreakpoints.desktop - 1
+  }px)`,
   desktop: `(min-width: ${deviceBreakpoints.desktop}px)`,
   desktopLarge: `(min-width: ${deviceBreakpoints.desktopLarge}px)`,
   extraWide: `(min-width: ${deviceBreakpoints.extraWide}px)`,
