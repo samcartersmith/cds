@@ -1,5 +1,6 @@
 ---
 title: <%- data.title %>
+slug: /components/<%- data.kebabCaseName %>
 ---
 <%
  function getTemplates() {

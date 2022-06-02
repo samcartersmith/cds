@@ -1,17 +1,17 @@
 import React from 'react';
+import { TOCItems } from '@theme/createTOCManager';
 import type { Props } from '@theme/TabItem';
+import { TOCUpdater } from '@theme/TOCManager';
 import { VStack } from '@cbhq/cds-web/layout';
 
-import { RightSidebar, TOCItem } from './RightSidebar';
-
 export type TabItemProps = Props & {
-  toc?: TOCItem[];
+  toc?: TOCItems;
 };
 
 export default function TabItem({ children, hidden, toc }: TabItemProps): JSX.Element {
   return (
     <>
-      {toc ? <RightSidebar toc={toc} /> : null}
+      {toc ? <TOCUpdater toc={toc} /> : null}
       <VStack gap={3} role="tabpanel" {...{ hidden }}>
         {children}
       </VStack>

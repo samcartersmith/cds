@@ -1,3 +1,4 @@
+import ImportBlock from '@theme/ImportBlock';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import MDXComponents from '@theme-original/MDXComponents';
@@ -26,6 +27,7 @@ const MDXComponentOverrides = {
   HStack,
   Icon,
   IconButton,
+  ImportBlock,
   Link,
   VStack,
   Tabs,

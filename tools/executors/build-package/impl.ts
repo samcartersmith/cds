@@ -164,7 +164,6 @@ const packageVersionReplacePathMap: Record<string, string> = {
   '@cbhq/cds-mobile': 'packages/mobile',
   '@cbhq/cds-utils': 'packages/utils',
   '@cbhq/cds-web': 'packages/web',
-  '@cbhq/docusaurus-plugin-docgen': 'packages/docusaurus-plugin-docgen',
 };
 
 async function getPackageVersion(pkgJsonPath: string) {

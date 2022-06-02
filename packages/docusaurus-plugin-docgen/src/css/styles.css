@@ -1,0 +1,35 @@
+.props-table-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: unset;
+  margin: unset;
+  position: relative;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
+  isolation: isolate;
+}
+
+.props-table-wrapper .hash-link {
+  display: flex;
+  align-self: flex-end;
+  flex-direction: row;
+  width: 95%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 1;
+  font-size: 1.25rem;
+}
+
+.props-table-wrapper .type-aliases-link {
+  z-index: 2;
+}
+
+/* Temporary until CDS offers underline prop on Link component  */
+.props-table-wrapper .cds-link span {
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+}

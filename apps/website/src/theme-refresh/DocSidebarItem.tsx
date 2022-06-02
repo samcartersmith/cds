@@ -1,5 +1,6 @@
 import Link from '@docusaurus/Link';
 import { isActiveSidebarItem } from '@docusaurus/theme-common';
+import JSDocTag, { JSDocTagVariant } from '@theme/JSDocTag';
 import type { SpacingScale } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { Collapsible } from '@cbhq/cds-web/collapsible';
@@ -8,7 +9,6 @@ import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { AnimatedCaret } from '@cbhq/cds-web/motion/AnimatedCaret';
 import { Pressable } from '@cbhq/cds-web/system/Pressable';
 import { TextBody, TextCaption } from '@cbhq/cds-web/typography';
-import { JSDocTag, JSDocTagVariant } from '@cbhq/docusaurus-plugin-docgen/components/JSDocTag';
 
 export type PropSidebarItem = PropSidebarItemLink | PropSidebarItemCategory;
 

@@ -1,12 +1,11 @@
 import React, { memo, useCallback, useState } from 'react';
+import type { ImportBlockProps } from '@theme/ImportBlock';
 import { IconName } from '@cbhq/cds-common/types';
 import { IconButton } from '@cbhq/cds-web/buttons';
 import { HStack } from '@cbhq/cds-web/layout';
 import { useToast } from '@cbhq/cds-web/overlays/useToast';
 import { TextLabel2 } from '@cbhq/cds-web/typography';
 import { paletteValueToCssVar } from '@cbhq/cds-web/utils/palette';
-
-export type ImportBlockProps = { name: string; from: string };
 
 const ImportBlock = memo(function ImportBlock({ name, from }: ImportBlockProps) {
   const [iconName, setIconName] = useState<IconName>('clipboard');

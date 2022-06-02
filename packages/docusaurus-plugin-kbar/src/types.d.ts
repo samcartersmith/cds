@@ -61,10 +61,10 @@ declare module '@theme/KBarCellAccessory' {
 }
 
 declare module '@theme/KBarListCell' {
-  import type { CellSharedProps } from '@cbhq/cds-web/cells/Cell';
-  import type { Expand, ListCellBaseProps } from '@cbhq/cds-common/types';
+  type CellSharedProps = import('@cbhq/cds-web/cells/Cell').CellSharedProps;
+  type ListCellBaseProps = import('@cbhq/cds-web').ListCellBaseProps;
 
-  export type KBarListCellProps = Expand<
+  export type KBarListCellProps = import('@cbhq/cds-web').Expand<
     Omit<ListCellBaseProps, 'accessory'> &
       CellSharedProps & {
         accessory?: import('react').ReactNode;
@@ -72,7 +72,8 @@ declare module '@theme/KBarListCell' {
   >;
 
   export default function KBarListCell(
-    props: PropsWithoutRef<KBarListCellProps> & RefAttributes<HTMLElement>,
+    props: import('react').PropsWithoutRef<KBarListCellProps> &
+      import('react').RefAttributes<HTMLElement>,
   ): JSX.Element;
 }
 
@@ -87,17 +88,6 @@ declare module '@theme/KBarResultItem' {
   export default function KBarResultItem(props: KBarResultItemProps): JSX.Element;
 }
 
-declare module '@cbhq/docusaurus-plugin-kbar' {
-  export type Plugin = import('@docusaurus/types').Plugin;
-  export type DocsPluginOptions = import('@docusaurus/plugin-content-docs').PluginOptions;
-
-  export type PluginOptions = { id?: string; docs: DocsPluginOptions };
-  export default function plugin(
-    context: import('@docusaurus/types').LoadContext,
-    options: PluginOptions,
-  ): Promise<Plugin<Action[] | undefined>>;
-}
-
 declare module '@theme/KBarActions' {
   export type Action = import('kbar').Action;
 
@@ -107,4 +97,15 @@ declare module '@theme/KBarActions' {
 
   const actions: KBarAction[];
   export default actions;
+}
+
+declare module '@cbhq/docusaurus-plugin-kbar' {
+  export type Plugin = import('@docusaurus/types').Plugin;
+  export type DocsPluginOptions = import('@docusaurus/plugin-content-docs').PluginOptions;
+
+  export type PluginOptions = { id?: string; docs: DocsPluginOptions };
+  export default function plugin(
+    context: import('@docusaurus/types').LoadContext,
+    options: PluginOptions,
+  ): Promise<Plugin<Action[] | undefined>>;
 }

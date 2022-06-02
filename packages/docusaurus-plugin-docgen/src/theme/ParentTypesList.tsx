@@ -1,31 +1,12 @@
 import React, { useMemo } from 'react';
+import type { ParentTypesItem, ParentTypesListProps } from '@theme/ParentTypesList';
+import PropsTable from '@theme/PropsTable';
 import { HStack } from '@cbhq/cds-web/layout/HStack';
-import { TextHeadline } from '@cbhq/cds-web/typography';
-
-import type { ProcessedDoc, SharedParentTypes, SharedTypeAliases } from '../scripts/types';
+import { TextBody } from '@cbhq/cds-web/typography';
 
 import { ModalLink } from './ModalLink';
-import { PropsTable } from './PropsTable';
 
-export type ParentTypesItem = {
-  name: string;
-  props: string[];
-  sharedTypeAliases: SharedTypeAliases;
-  sharedParentTypes: SharedParentTypes;
-};
-
-export type ParentTypesListProps = {
-  parentTypes: ProcessedDoc['parentTypes'];
-  sharedTypeAliases: SharedTypeAliases;
-  sharedParentTypes: SharedParentTypes;
-};
-
-export function ParentTypes({
-  name,
-  sharedTypeAliases,
-  sharedParentTypes,
-  props,
-}: ParentTypesItem) {
+function ParentTypes({ name, sharedTypeAliases, sharedParentTypes, props }: ParentTypesItem) {
   const content = useMemo(() => {
     const filteredProps = Object.values(sharedParentTypes[name]).filter((item) =>
       props.includes(item.name),
@@ -40,7 +21,7 @@ export function ParentTypes({
   );
 }
 
-export function ParentTypesList({
+function ParentTypesList({
   parentTypes,
   sharedTypeAliases,
   sharedParentTypes,
@@ -49,7 +30,9 @@ export function ParentTypesList({
   if (parentTypesAsArray.length) {
     return (
       <HStack gap={1} alignItems="center">
-        <TextHeadline as="p">Extends from:</TextHeadline>
+        <TextBody as="p" color="foregroundMuted">
+          Extends from:
+        </TextBody>
         {parentTypesAsArray.map(([key, value]) => {
           return (
             <ParentTypes
@@ -67,3 +50,5 @@ export function ParentTypesList({
 
   return null;
 }
+
+export default ParentTypesList;

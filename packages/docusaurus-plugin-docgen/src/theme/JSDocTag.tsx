@@ -1,4 +1,5 @@
 import React from 'react';
+import type { JSDocTagProps, JSDocTagVariant } from '@theme/JSDocTag';
 import { Box } from '@cbhq/cds-web/layout';
 import { ThemeProvider } from '@cbhq/cds-web/system';
 import { TextLabel1 } from '@cbhq/cds-web/typography';
@@ -11,13 +12,6 @@ export const JSDOC_TAG_VARIANTS = [
   'new',
   'required',
 ] as const;
-
-export type JSDocTagVariant = typeof JSDOC_TAG_VARIANTS[number];
-
-type JSDocTagProps = {
-  variant: JSDocTagVariant;
-  order?: number;
-};
 
 const JSDOC_TAG_HEIGHT = 24;
 
@@ -50,7 +44,7 @@ const LABELS: Record<JSDocTagVariant, string> = {
   required: 'Required',
 };
 
-export function JSDocTag({ variant }: JSDocTagProps) {
+function JSDocTag({ variant }: JSDocTagProps) {
   return (
     <ThemeProvider display="contents" palette={BADGE_PALETTES[variant]}>
       <Box
@@ -66,3 +60,5 @@ export function JSDocTag({ variant }: JSDocTagProps) {
     </ThemeProvider>
   );
 }
+
+export default JSDocTag;

@@ -14,7 +14,7 @@ export type Template =
 
 export type WriteFileConfig = {
   dest: string;
-  data: Record<string, unknown>;
+  data: unknown;
   template: Template;
 };
 

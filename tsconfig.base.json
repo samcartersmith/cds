@@ -33,9 +33,7 @@
       "@cbhq/cds-web-utils": ["packages/web-utils"],
       "@cbhq/cds-web-utils/*": ["packages/web-utils/*"],
       "@cbhq/docusaurus-plugin-docgen": ["packages/docusaurus-plugin-docgen/src"],
-      "@cbhq/docusaurus-plugin-docgen/*": ["packages/docusaurus-plugin-docgen/src/*"],
-      "@cbhq/docusaurus-plugin-kbar": ["packages/docusaurus-plugin-kbar/src"],
-      "@cbhq/docusaurus-plugin-kbar/*": ["packages/docusaurus-plugin-kbar/src/*"]
+      "@cbhq/docusaurus-plugin-kbar": ["packages/docusaurus-plugin-kbar/src"]
     }
   }
 }

@@ -9,7 +9,7 @@ import { DocgenPluginOptions } from './scripts/types';
 import { getMinutesBetweenDates } from './utils/getMinutesBetweenDates';
 import { logger } from './utils/logger';
 
-const PLUGIN_ID = 'docusaurus-plugin-docgen';
+const PLUGIN_ID = '@cbhq/docusaurus-plugin-docgen';
 
 /**
  * Persist build state as a global, since the plugin is re-evaluated every hot reload.
@@ -77,6 +77,12 @@ export default function plugin(
         },
       };
     },
+    getThemePath(): string {
+      return path.resolve(__dirname, './theme');
+    },
+    getTypeScriptThemePath(): string {
+      return path.resolve(__dirname, '..', 'src', 'theme');
+    },
     async contentLoaded({ content }): Promise<void> {
       if (content) {
         await docgenWriter(content);
@@ -88,6 +94,9 @@ export default function plugin(
           isRunning: false,
         };
       }
+    },
+    getClientModules() {
+      return [require.resolve('./css/styles.css')];
     },
   };
 }

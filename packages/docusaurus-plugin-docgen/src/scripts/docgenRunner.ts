@@ -117,7 +117,7 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<WriteFil
           },
           partial: {
             name: `${capitalize(`${projectName}`)}PropsTable`,
-            path: path.join('@docgen', destDir),
+            path: path.join('@docgen', destDir, 'api.mdx'),
           },
           tab: { label: capitalize(projectName), value: projectName },
           slug,
@@ -134,6 +134,12 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<WriteFil
         filesToWriteToDisk.push({
           data,
           dest: path.join(pluginDir, destDir, 'data.js'),
+          template: 'shared/objectMap',
+        });
+
+        filesToWriteToDisk.push({
+          data: data.props.map((item) => ({ id: item.name, level: 3, value: item.name })),
+          dest: path.join(pluginDir, destDir, 'toc.js'),
           template: 'shared/objectMap',
         });
 
