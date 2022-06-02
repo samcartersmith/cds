@@ -52,7 +52,11 @@ yarn add @cbhq/cds-mobile@^0.44.1 # if using mobile components
 2. Add `ThemeProvider` to the root of your React application. You may also add `DevicePreferencesProvider`.
    The latter is optional and only needed if you wish to sync the spectrum and scale based on device settings.
 
-   **Note**: the `ThemeProvider` component will add a `div` to the root of your app. If this is not desired, you can optionally use the `useThemeProviderStyles` hook from `@cbhq/cds-web/system/useThemeProviderStyles` instead and attach the returned `className` and `style` prop to the element of your choice. If you opt to use the `useThemeProviderStyles` hook, you will need to wrap the root of your application with the `FramerMotionProvider` from `@cbhq/cds-web/animation/FramerMotionProvider` the enable animations.
+   **Note**: the `ThemeProvider` component will add a `div` to the root of your app. If this is not desired, you can either:
+
+   a. Pass a `display` prop to `ThemeProvider` and set it to `display="contents"`, which will visually remove the ThemeProvider's box and replace it with its content.
+
+   b. Use the `useThemeProviderStyles` hook from `@cbhq/cds-web/system/useThemeProviderStyles` instead and attach the returned `className` and `style` prop to the element of your choice. If you opt to use the `useThemeProviderStyles` hook, you will need to wrap the root of your application with the `FramerMotionProvider` from `@cbhq/cds-web/animation/FramerMotionProvider` the enable animations.
 
 ```tsx
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
