@@ -1,12 +1,13 @@
 import React, { ForwardedRef, forwardRef, useImperativeHandle, useRef } from 'react';
 import { Animated, StyleSheet, TextInput } from 'react-native';
-import { ChartScrubParams } from '@cbhq/cds-common/types';
+import { ChartScrubParams, SpacingScale } from '@cbhq/cds-common/types';
 import {
   SparklineInteractiveBaseProps,
   SparklineInteractiveHoverDateRefProps,
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 
 import { usePalette } from '../../hooks/usePalette';
+import { useSpacingScale } from '../../hooks/useSpacingScale';
 import { useTypographyStyles } from '../../typography';
 
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
@@ -24,10 +25,11 @@ function setTransform(
   elWidth: number,
   containerWidth: number,
   transform: Animated.ValueXY,
+  gutter: SpacingScale,
 ) {
   let newX = x - elWidth / 2;
-  newX = Math.max(0, newX);
-  newX = Math.min(newX, containerWidth - elWidth);
+  newX = Math.max(gutter, newX);
+  newX = Math.min(newX, containerWidth - elWidth - gutter);
 
   transform.setValue({ x: newX, y: 0 });
 }
@@ -39,7 +41,8 @@ const SparklineInteractiveHoverDateWithGeneric = forwardRef(
     ref: ForwardedRef<SparklineInteractiveHoverDateRefProps<Period>>,
   ) => {
     const colors = usePalette();
-    const { hoverDateOpacity } = useSparklineInteractiveContext();
+    const { hoverDateOpacity, gutter } = useSparklineInteractiveContext();
+    const spacing = useSpacingScale();
     const { SparklineInteractiveMinMaxLabelHeight, chartWidth } = useSparklineInteractiveConstants(
       {},
     );
@@ -50,6 +53,8 @@ const SparklineInteractiveHoverDateWithGeneric = forwardRef(
     // period => number mapping
     const measuredWidth = useRef<Record<string, number>>({});
     const measureIterations = useRef<Record<string, number>>({});
+    // if we have no gutter the min/max label needs some space so it's not right up against the edge of the screen
+    const minGutter = gutter === 0 ? spacing['1'] : 0;
 
     useImperativeHandle(ref, () => ({
       update: (params: ChartScrubParams<Period>) => {
@@ -75,12 +80,12 @@ const SparklineInteractiveHoverDateWithGeneric = forwardRef(
         measureIterations.current[period] = measureIterations.current[period] ?? 0;
         if (measureIterations.current[period] > MAX_MEASURE_ITERATIONS) {
           const currWidth = measuredWidth.current[period];
-          setTransform(x, currWidth, chartWidth, transform);
+          setTransform(x, currWidth, chartWidth, transform, minGutter);
         } else {
           textInputRef.current?.measure((ox, oy, width) => {
             measureIterations.current[period] += 1;
             measuredWidth.current[period] = Math.max(width, measuredWidth.current[period] ?? 0);
-            setTransform(x, measuredWidth.current[period], chartWidth, transform);
+            setTransform(x, measuredWidth.current[period], chartWidth, transform, minGutter);
           });
         }
       },

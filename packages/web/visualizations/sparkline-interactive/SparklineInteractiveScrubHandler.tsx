@@ -1,6 +1,7 @@
 import React, { memo, MouseEvent, useCallback, useRef } from 'react';
 import { css } from 'linaria';
 import { ChartGetMarker } from '@cbhq/cds-common';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { fadeDuration, maskOpacity } from '@cbhq/cds-common/tokens/sparkline';
 import {
   SparklineInteractiveBaseProps,
@@ -89,6 +90,7 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const { lineDOMNode, maskDOMNode, hoverDateDOMNode } = useSparklineInteractiveScrubContext();
   const { width: chartWidth } = useSparklineInteractiveContext();
+  const padding = useScaleConditional({ dense: 4, normal: 8 });
 
   const handleMouseEnter = useCallback(() => {
     onScrubStart?.();
@@ -125,8 +127,8 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
           const textWidth = hoverDateDOMNode.offsetWidth;
           const halfTextWidth = textWidth / 2;
           let textPos = xPos - halfTextWidth;
-          textPos = Math.max(0, textPos);
-          textPos = Math.min(textPos, chartWidth - textWidth);
+          textPos = Math.max(padding, textPos);
+          textPos = Math.min(textPos, chartWidth - textWidth - padding);
 
           hoverDateDOMNode.style.transform = `translateX(${textPos}px)`;
         }
@@ -140,6 +142,7 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
       maskDOMNode,
       hoverDateDOMNode,
       formatHoverDate,
+      padding,
       chartWidth,
     ],
   );
