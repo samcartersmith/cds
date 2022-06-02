@@ -5,6 +5,9 @@ secure:
     - develop
     - alpha-may-9-2022
     - release-may-17-2022
+    - release-june-01-2022
+    - beta-june-15-2022
+    - beta-june-29-2022
 build:
   engines:
     # Apps
