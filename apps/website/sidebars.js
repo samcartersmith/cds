@@ -10,6 +10,7 @@ const componentsToExcludeByLabel = new Set([
   'components/buttons/TileButton/tile-button',
   'components/buttons/NavigationIconButton/navigation-icon-button',
   'components/overlays/FullscreenModal/fullscreen-modal',
+  'components/media/RemoteImageGroup/remote-image-group',
 ]);
 
 // Filter sidebar components
