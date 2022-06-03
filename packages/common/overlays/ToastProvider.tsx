@@ -1,4 +1,4 @@
-import React, { cloneElement, createContext, isValidElement } from 'react';
+import React, { cloneElement, createContext, isValidElement, useMemo } from 'react';
 
 import { DimensionValue, NoopFn } from '../types';
 
@@ -27,12 +27,24 @@ export const ToastContext = createContext<ToastProviderStates>({
 });
 
 export const ToastProvider: React.FC<ToastProviderProps> = ({ children, toastBottomOffset }) => {
-  const { activeToast, ...contextValue } = useToastQueue();
+  const { activeToast, addToast, removeToast, clearToastQueue, pauseTimer, resumeTimer } =
+    useToastQueue();
 
   const element = activeToast?.element;
 
+  const memoizedContextValue = useMemo(
+    () => ({
+      addToast,
+      removeToast,
+      clearToastQueue,
+      pauseTimer,
+      resumeTimer,
+    }),
+    [addToast, removeToast, clearToastQueue, pauseTimer, resumeTimer],
+  );
+
   return (
-    <ToastContext.Provider value={contextValue}>
+    <ToastContext.Provider value={memoizedContextValue}>
       {children}
       {/* render as the last element for it to work on android */}
       {isValidElement(element) && toastBottomOffset
