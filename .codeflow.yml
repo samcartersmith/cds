@@ -8,6 +8,7 @@ secure:
     - release-june-01-2022
     - beta-june-15-2022
     - beta-june-29-2022
+    - release-june-2-master-gesture-handler
 build:
   engines:
     # Apps
