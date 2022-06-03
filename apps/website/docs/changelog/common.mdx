@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.39.2 (6/3/2022, 10:04 AM PST)
+
+#### 🐞 Fixes
+
+- Rollback gesture handler version. [#593](https://github.cbhq.net/frontend/cds/pull/593)
+
 ## 0.39.1 (6/1/2022, 02:00 PM PST)
 
 #### 🐞 Fixes
