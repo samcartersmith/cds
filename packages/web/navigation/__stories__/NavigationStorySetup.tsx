@@ -104,7 +104,12 @@ export const SidebarExample: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <HStack justifyContent="center" alignItems="flex-start" background="backgroundAlternate">
+    <HStack
+      justifyContent="center"
+      alignItems="flex-start"
+      background="backgroundAlternate"
+      overflow="hidden"
+    >
       <Sidebar collapsed={collapsed} logo={<LogoMark />}>
         {items.map((props, index) => (
           <SidebarItem
@@ -115,7 +120,7 @@ export const SidebarExample: React.FC = () => {
           />
         ))}
       </Sidebar>
-      <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center" flexGrow={1}>
+      <VStack spacing={2} gap={1} justifyContent="space-between" flexGrow={1}>
         <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
         <ButtonGroup accessibilityLabel="make collapsed">
           <Button
@@ -133,7 +138,7 @@ export const SidebarExample: React.FC = () => {
             collapsed
           </Button>
         </ButtonGroup>
-      </HStack>
+      </VStack>
     </HStack>
   );
 };
@@ -234,7 +239,12 @@ export const SidebarWithMoreMenuExample = ({ children, ...props }: SidebarMoreMe
 
   return (
     <PortalProvider>
-      <HStack justifyContent="center" alignItems="flex-start" background="backgroundAlternate">
+      <HStack
+        justifyContent="center"
+        alignItems="flex-start"
+        background="backgroundAlternate"
+        overflow="hidden"
+      >
         <Sidebar collapsed={collapsed} logo={<LogoMark />}>
           {items.slice(0, 4).map((item, index) => (
             <SidebarItem
@@ -263,8 +273,8 @@ export const SidebarWithMoreMenuExample = ({ children, ...props }: SidebarMoreMe
             ))}
           </SidebarMoreMenu>
         </Sidebar>
-        <VStack>
-          <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center">
+        <VStack spacing={2} gap={1} justifyContent="space-between" flexGrow={1}>
+          <VStack spacing={2} gap={1} justifyContent="space-between">
             <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
             <ButtonGroup accessibilityLabel="make collapsed">
               <Button
@@ -282,7 +292,7 @@ export const SidebarWithMoreMenuExample = ({ children, ...props }: SidebarMoreMe
                 collapsed
               </Button>
             </ButtonGroup>
-          </HStack>
+          </VStack>
           <HStack spacing={3}>{children}</HStack>
         </VStack>
       </HStack>

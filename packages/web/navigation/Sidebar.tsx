@@ -59,8 +59,14 @@ export const Sidebar: React.FC<SidebarProps> = memo(
      * Next, do what is set explicitly on Sidebar. And finally if autoCollapse is
      * set and we're within or outside the defined breakpoint, collapse or expand
      * */
-    const computedCollapse = collapsed || (autoCollapse && currentBreakpoint === 'collapsed');
-    const computedWidth = computedCollapse ? WIDTH.collapsed : WIDTH.expanded;
+    const computedCollapse = useMemo(
+      () => collapsed || (autoCollapse && currentBreakpoint === 'collapsed'),
+      [autoCollapse, collapsed, currentBreakpoint],
+    );
+    const computedWidth = useMemo(
+      () => (computedCollapse ? WIDTH.collapsed : WIDTH.expanded),
+      [computedCollapse],
+    );
     const sidebarContext = useMemo(() => ({ collapsed: computedCollapse }), [computedCollapse]);
 
     return (
@@ -85,7 +91,7 @@ export const Sidebar: React.FC<SidebarProps> = memo(
             <VStack spacingTop={1} spacingStart={1} spacingBottom={4}>
               {logo}
             </VStack>
-            <VStack gap={0.5} offsetStart={0.5}>
+            <VStack gap={0.5} offsetStart={0.5} role="group">
               {children}
             </VStack>
           </VStack>
