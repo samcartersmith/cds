@@ -4,14 +4,11 @@
   "private": true,
   "scripts": {
     "build": "nx run website:build",
-    "build.plugin": "yarn workspace @cbhq/docusaurus-plugin-docgen build",
-    "build.refresh": "THEME=refresh yarn docusaurus build --out-dir ../../.nx/outs/projects/apps/website/docusaurus",
     "format": "nx format website",
     "lint": "nx run website:lint",
     "lint.fix": "nx run website:lint --fix",
     "serve": "yarn docusaurus serve --dir ../../.nx/outs/projects/apps/website/docusaurus",
     "start": "yarn docusaurus start --port 3000",
-    "start.refresh": "THEME=refresh yarn start",
     "stylelint": "nx run website:lint-styles",
     "stylelint.fix": "nx run website:lint-styles --fix",
     "typecheck": "nx run website:typecheck"
@@ -19,7 +16,6 @@
   "dependencies": {
     "@cbhq/cds-common": "workspace:*",
     "@cbhq/cds-web": "workspace:*",
-    "@cbhq/docusaurus-plugin-docgen": "workspace:*",
     "@cmfcmf/docusaurus-search-local": "^0.10.0",
     "@docusaurus/core": "2.0.0-beta.18",
     "@docusaurus/module-type-aliases": "2.0.0-beta.18",

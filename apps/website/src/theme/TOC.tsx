@@ -1,13 +1,11 @@
 import React from 'react';
-import { usePropsTOC } from '@theme/PropsTOCManager';
-import type { Props } from '@theme/TOC';
-import { useTOC } from '@theme/TOCManager';
 import OriginalTOC from '@theme-original/TOC';
 
-const TOC = (props: Props) => {
-  const { items: itemsForProps = [] } = usePropsTOC();
-  const { items = [] } = useTOC();
-  const propsOverride = items ? { ...props, toc: [...items, ...itemsForProps] } : props;
+import { TOCItem, useRightSidebar } from './RightSidebar';
+
+const TOC = (props: { toc: TOCItem[] }) => {
+  const { items } = useRightSidebar();
+  const propsOverride = items ? { ...props, toc: items } : props;
   return <OriginalTOC {...propsOverride} />;
 };
 

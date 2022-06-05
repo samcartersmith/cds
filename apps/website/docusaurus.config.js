@@ -1,36 +1,6 @@
-const docgenConfig = require('./docgen/config');
 const webpackPlugin = require('./webpackPlugin');
 
 const SLACK_TEAM = 'T02Q6DY7G';
-const hasThemeRefresh = process.env.THEME === 'refresh' || process.env.theme === 'refresh';
-const sharedExclusions = ['**/_*.{js,jsx,ts,tsx,md,mdx}'];
-
-const preRefreshOptions = {
-  docs: {
-    exclude: [...sharedExclusions, 'home/**/*'],
-    breadcrumbs: true,
-    routeBasePath: '/',
-    sidebarPath: require.resolve('./sidebars.js'),
-    editUrl: 'https://github.cbhq.net/frontend/cds/tree/master/apps/website/',
-    sidebarCollapsible: true,
-  },
-  theme: {
-    customCss: require.resolve('./src/css/custom.css'),
-  },
-};
-
-const refreshPresetOptions = {
-  docs: {
-    exclude: [...sharedExclusions, 'cds/overview.mdx'],
-    breadcrumbs: false,
-    routeBasePath: '/',
-    sidebarPath: require.resolve('./refresh/sidebars.js'),
-    editUrl: undefined,
-    sidebarCollapsible: true,
-  },
-};
-
-const presetOptions = hasThemeRefresh ? refreshPresetOptions : preRefreshOptions;
 
 module.exports = {
   title: 'Coinbase Design System',
@@ -105,28 +75,33 @@ module.exports = {
         gtag: {
           trackingID: 'G-369GEFT8FG',
         },
-        ...presetOptions,
+        docs: {
+          breadcrumbs: true,
+          routeBasePath: '/',
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.cbhq.net/frontend/cds/tree/master/apps/website/',
+          sidebarCollapsible: true,
+        },
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
+        },
         blog: false,
       },
     ],
   ],
   plugins: [
     '@docusaurus/theme-live-codeblock',
-    ['@cbhq/docusaurus-plugin-docgen', docgenConfig],
-    hasThemeRefresh
-      ? undefined
-      : [
-          '@cmfcmf/docusaurus-search-local',
-          {
-            language: 'en',
-            indexBlog: false,
-            indexDocs: true,
-            indexDocSidebarParentCategories: 2,
-            style: hasThemeRefresh ? 'none' : undefined,
-          },
-        ],
+    [
+      '@cmfcmf/docusaurus-search-local',
+      {
+        language: 'en',
+        indexBlog: false,
+        indexDocs: true,
+        indexDocSidebarParentCategories: 2,
+      },
+    ],
     // Must run last!
     webpackPlugin,
   ].filter(Boolean),
-  clientModules: [require.resolve(hasThemeRefresh ? './refresh/global.ts' : './global.ts')],
+  clientModules: [require.resolve('./global.ts')],
 };
