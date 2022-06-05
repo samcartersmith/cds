@@ -113,7 +113,6 @@ module.exports = {
   plugins: [
     '@docusaurus/theme-live-codeblock',
     ['@cbhq/docusaurus-plugin-docgen', docgenConfig],
-    ['@cbhq/docusaurus-plugin-kbar', { docs: presetOptions.docs }],
     hasThemeRefresh
       ? undefined
       : [

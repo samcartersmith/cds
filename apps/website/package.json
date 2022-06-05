@@ -20,7 +20,6 @@
     "@cbhq/cds-common": "workspace:*",
     "@cbhq/cds-web": "workspace:*",
     "@cbhq/docusaurus-plugin-docgen": "workspace:*",
-    "@cbhq/docusaurus-plugin-kbar": "workspace:*",
     "@cmfcmf/docusaurus-search-local": "^0.10.0",
     "@docusaurus/core": "2.0.0-beta.18",
     "@docusaurus/module-type-aliases": "2.0.0-beta.18",

@@ -1,16 +1,11 @@
-import type { SidebarItem } from '@docusaurus/plugin-content-docs/lib/sidebars/types';
 import type { LoadedVersion } from '@docusaurus/plugin-content-docs/lib/types';
-import { Action, createAction } from 'kbar';
+import { createAction } from 'kbar';
 import kebabCase from 'lodash/kebabCase';
 import uniqBy from 'lodash/uniqBy';
 import path from 'path';
+import type { KBarCustomAction, SidebarItem } from '@cbhq/docusaurus-plugin-kbar';
 
-type KBarAction = Action & {
-  slug?: string;
-  illustration?: string;
-};
-
-export function getKBarActions(currentVersion: LoadedVersion): KBarAction[] {
+export function getKBarActions(currentVersion: LoadedVersion): KBarCustomAction[] {
   function getDocInfo(id: string) {
     return currentVersion.docs.find((doc) => doc.id === id);
   }
@@ -23,7 +18,7 @@ export function getKBarActions(currentVersion: LoadedVersion): KBarAction[] {
     return getDocInfo(id)?.slug;
   }
 
-  function flatten(item: SidebarItem, parent?: string): KBarAction[] {
+  function flatten(item: SidebarItem, parent?: string): KBarCustomAction[] {
     if (item.type === 'category') {
       const name = item.label;
       const kebabCaseId = kebabCase(name);
@@ -34,9 +29,9 @@ export function getKBarActions(currentVersion: LoadedVersion): KBarAction[] {
             parent,
             name,
             id,
-            illustration: item.customProps?.illustration as string,
-            subtitle: item.customProps?.description as string,
-            priority: item.customProps?.priority as number,
+            illustration: item.customProps?.kbar?.illustration,
+            subtitle: item.customProps?.kbar?.description,
+            priority: item.customProps?.kbar?.priority,
           },
           ...flatten(next, id),
         ];
@@ -45,15 +40,15 @@ export function getKBarActions(currentVersion: LoadedVersion): KBarAction[] {
 
     if (item.type === 'doc') {
       const name = getNameForDoc(item.id);
-      const subtitle = item.customProps?.description as string;
-      const priority = item.customProps?.priority as number;
+      const subtitle = item.customProps?.kbar?.description;
+      const priority = item.customProps?.kbar?.priority;
       return [{ parent, id: item.id, name, subtitle, priority }];
     }
 
     if (item.type === 'ref') {
       const name = getNameForDoc(item.id);
-      const subtitle = item.customProps?.description as string;
-      const priority = item.customProps?.priority as number;
+      const subtitle = item.customProps?.kbar?.description;
+      const priority = item.customProps?.kbar?.priority;
       return [
         createAction({
           name,
@@ -66,8 +61,8 @@ export function getKBarActions(currentVersion: LoadedVersion): KBarAction[] {
 
     if (item.type === 'link') {
       const name = getNameForDoc(item.label);
-      const subtitle = item.customProps?.description as string;
-      const priority = item.customProps?.priority as number;
+      const subtitle = item.customProps?.kbar?.description;
+      const priority = item.customProps?.kbar?.priority;
       return [
         {
           ...createAction({
