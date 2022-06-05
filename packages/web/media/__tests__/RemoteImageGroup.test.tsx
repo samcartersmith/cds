@@ -76,7 +76,6 @@ describe('renders correct default', () => {
 
       const childImg = child.querySelector('img');
       const childBorderRadius = childImg?.style.getPropertyValue('border-radius');
-      console.log(childBorderRadius);
 
       allChildrenHaveParentShape = childBorderRadius === SHAPE_TO_BORDERRADIUS_MAP.circle;
     });
