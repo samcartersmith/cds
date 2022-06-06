@@ -38,6 +38,7 @@
     "postinstall": "./setup.sh",
     "setup": "./setup.sh && mono-env setup --group common",
     "release": "yarn codegen release && yarn codegen docs",
+    "release.beta": "yarn codegen release.beta && yarn codegen docs",
     "setup-env": "mono-env setup --group common web",
     "validate": "yarn nx workspace-lint"
   },

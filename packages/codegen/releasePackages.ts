@@ -4,14 +4,16 @@ import glob from 'fast-glob';
 import fs from 'fs';
 import upperFirst from 'lodash/upperFirst';
 import path from 'path';
-import semver from 'semver';
+import semver, { ReleaseType } from 'semver';
 import { argv } from 'yargs';
 
 import { codegen } from './codegen';
 
 const MONOREPO_ROOT = process.env.BUILD_WORKSPACE_DIRECTORY;
 const PACKAGES = argv.packages as string;
+const IS_BETA = argv.beta as boolean;
 const LOG_PREFIX = /^(?:- )?(\w+)(?:\(([a-zA-Z0-9\-., ]+)\))?:/u;
+const SHOULD_UPDATE_CHANGELOG = !IS_BETA;
 
 type VersionBump = 'major' | 'minor' | 'patch';
 
@@ -54,31 +56,28 @@ const templateStart = `<!-- template-start -->`;
 
 function determineNextVersion(logs: Log[], currentVersion: string): string | null {
   const isAlpha = currentVersion.startsWith('0.');
-  let major = 0;
-  let minor = 0;
-  let patch = 0;
+  let bump: 'major' | 'minor' | 'patch' | undefined;
 
   logs.forEach(({ change }) => {
     if (change.bump === 'major') {
-      major += 1;
+      bump = isAlpha ? 'minor' : 'major';
     } else if (change.bump === 'minor') {
-      minor += 1;
+      bump = isAlpha ? 'patch' : 'minor';
     } else if (change.bump === 'patch') {
-      patch += 1;
+      bump = 'patch';
     }
   });
 
-  if (major > 0) {
-    return semver.inc(currentVersion, isAlpha ? 'minor' : 'major');
-  }
-  if (minor > 0) {
-    return semver.inc(currentVersion, isAlpha ? 'patch' : 'minor');
-  }
-  if (patch > 0) {
-    return semver.inc(currentVersion, 'patch');
+  if (IS_BETA) {
+    // If we're incrementing the current beta
+    if (currentVersion.includes('beta')) {
+      return semver.inc(currentVersion, 'prerelease', 'beta');
+    }
+    // Otherwise, create a new beta
+    return semver.inc(currentVersion, 'pre'.concat(bump ?? '') as ReleaseType, 'beta');
   }
 
-  return null;
+  return bump ? semver.inc(currentVersion, bump) : null;
 }
 
 function determineVersionBump(type: LogType): LogChange['bump'] {
@@ -287,6 +286,7 @@ async function releasePackage(pkgJsonPath: string, toRelease: Set<string>) {
 
   const logs = await extractGitLogs(pkgPath);
   const prefix = chalk.gray(`[${chalk.white(pkgName)}]`);
+  let steps = 'Package versions';
 
   if (logs.length === 0) {
     console.log(chalk.yellow(`${prefix} No new commits since last release`));
@@ -306,15 +306,16 @@ async function releasePackage(pkgJsonPath: string, toRelease: Set<string>) {
     return;
   }
 
-  await updateChangelog(pkgPath, logs, nextVersion);
+  if (SHOULD_UPDATE_CHANGELOG) {
+    steps = `${steps} and changelog`;
+    await updateChangelog(pkgPath, logs, nextVersion);
+  }
 
   pkg.version = nextVersion;
 
   await fs.promises.writeFile(pkgJsonPath, JSON.stringify(pkg, null, 2));
 
-  console.info(
-    chalk.green(`${prefix} Versions and changelog updated, ready for release! ${shaRange}`),
-  );
+  console.info(chalk.green(`${prefix} ${steps} updated, ready for release! ${shaRange}`));
 
   toRelease.add(`${pkg.name}@${nextVersion}`);
 }
@@ -340,7 +341,9 @@ async function prepareRelease() {
   );
 
   if (toRelease.size > 0) {
-    const prTitle = `[trivial] release: ${Array.from(toRelease).join(', ')}`;
+    const prTitle = `[trivial] release(${IS_BETA ? 'Beta' : 'Production'}): ${Array.from(
+      toRelease,
+    ).join(', ')}`;
 
     console.log('');
     console.log(`Pull request title: ${chalk.cyan(prTitle)}`);
