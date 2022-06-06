@@ -3,7 +3,7 @@ import { css } from 'linaria';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { SharedProps } from '@cbhq/cds-common/types';
+import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
 
 import { useDimensions } from '../hooks/useDimensions';
 import { VStack } from '../layout';
@@ -48,10 +48,19 @@ export type SidebarProps = {
    * @default false
    */
   autoCollapse?: boolean;
-} & SharedProps;
+} & SharedProps &
+  SharedAccessibilityProps;
 
 export const Sidebar: React.FC<SidebarProps> = memo(
-  ({ logo, children, collapsed, autoCollapse, testID }) => {
+  ({
+    logo,
+    children,
+    collapsed,
+    autoCollapse,
+    testID,
+    accessibilityLabel = 'Sidebar',
+    ...rest
+  }) => {
     const { ref, currentBreakpoint } = useDimensions(BREAKPOINT_CONFIG);
     /**
      * Calculates collapsed state which will be passed to the Sidebar Context Provider
@@ -87,6 +96,8 @@ export const Sidebar: React.FC<SidebarProps> = memo(
             spacingTop={2}
             zIndex={zIndex.navigation}
             testID={testID}
+            accessibilityLabel={accessibilityLabel}
+            {...rest}
           >
             <VStack spacingTop={1} spacingStart={1} spacingBottom={4}>
               {logo}

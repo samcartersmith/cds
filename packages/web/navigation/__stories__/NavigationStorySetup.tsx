@@ -1,9 +1,8 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { useState } from 'react';
 import { css } from 'linaria';
-import { NavigationIconName } from '@cbhq/cds-common';
 
-import { AvatarButton, Button, ButtonGroup, IconButton } from '../../buttons/index';
+import { AvatarButton, IconButton } from '../../buttons/index';
 import { SelectOption } from '../../controls/SelectOption';
 import { LogoMark, NavigationIcon } from '../../icons';
 import { HStack, VStack } from '../../layout';
@@ -99,50 +98,6 @@ export const NavigationBarTitle: React.FC = () => {
   );
 };
 
-export const SidebarExample: React.FC = () => {
-  const [collapsed, setCompact] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  return (
-    <HStack
-      justifyContent="center"
-      alignItems="flex-start"
-      background="backgroundAlternate"
-      overflow="hidden"
-    >
-      <Sidebar collapsed={collapsed} logo={<LogoMark />}>
-        {items.map((props, index) => (
-          <SidebarItem
-            key={`sidebar-item--${props.title}`}
-            active={index === activeIndex}
-            onPress={() => setActiveIndex(index)}
-            {...props}
-          />
-        ))}
-      </Sidebar>
-      <VStack spacing={2} gap={1} justifyContent="space-between" flexGrow={1}>
-        <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
-        <ButtonGroup accessibilityLabel="make collapsed">
-          <Button
-            compact
-            variant={collapsed ? 'secondary' : 'primary'}
-            onPress={() => setCompact(false)}
-          >
-            default
-          </Button>
-          <Button
-            compact
-            variant={collapsed ? 'primary' : 'secondary'}
-            onPress={() => setCompact(true)}
-          >
-            collapsed
-          </Button>
-        </ButtonGroup>
-      </VStack>
-    </HStack>
-  );
-};
-
 export const ComposedSystem: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -197,38 +152,16 @@ export const NavLinkExample: React.FC = () => {
   );
 };
 
-type MoreMenuOption = {
-  value: string;
-  label: string;
-  icon: NavigationIconName;
-};
-
-export const moreMenuOptions: MoreMenuOption[] = [
-  {
-    value: 'earn',
-    label: 'Earn',
-    icon: 'earn',
-  },
-  {
-    value: 'borrow',
-    label: 'Borrow',
-    icon: 'cash',
-  },
-  {
-    value: 'defi',
-    label: 'DeFi',
-    icon: 'defi',
-  },
-];
-
-export const SidebarWithMoreMenuExample = ({ children, ...props }: SidebarMoreMenuProps) => {
-  const [collapsed, setCompact] = useState(false);
+const navItems = items.slice(0, 4);
+const moreMenuOptions = items.slice(4);
+export const SidebarExample = ({ children, ...props }: SidebarMoreMenuProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);
-  const moreMenuIndex = 4;
 
   const handleMoreMenuChange = (newValue: string) => {
-    setActiveIndex(moreMenuIndex);
+    const moreIndex =
+      moreMenuOptions.findIndex((option) => option.title === newValue) + navItems.length;
+    setActiveIndex(moreIndex);
     setMoreMenuValue(newValue);
   };
 
@@ -245,8 +178,8 @@ export const SidebarWithMoreMenuExample = ({ children, ...props }: SidebarMoreMe
         background="backgroundAlternate"
         overflow="hidden"
       >
-        <Sidebar collapsed={collapsed} logo={<LogoMark />}>
-          {items.slice(0, 4).map((item, index) => (
+        <Sidebar logo={<LogoMark />} autoCollapse>
+          {navItems.map((item, index) => (
             <SidebarItem
               key={`sidebar-item--${item.title}`}
               active={index === activeIndex}
@@ -258,42 +191,27 @@ export const SidebarWithMoreMenuExample = ({ children, ...props }: SidebarMoreMe
           <SidebarMoreMenu
             onChange={handleMoreMenuChange}
             value={moreMenuValue}
-            active={activeIndex === moreMenuIndex}
-            onPress={() => setActiveIndex(moreMenuIndex)}
+            active={activeIndex >= navItems.length}
             tooltipContent="More"
             {...props}
           >
             {moreMenuOptions.map((item) => (
               <SelectOption
-                key={`sidebar-more-menu-item--${item.value}`}
-                value={item.value}
-                description={item.label}
+                key={`sidebar-more-menu-item--${item.title}`}
+                value={item.title}
+                description={item.title}
                 media={<NavigationIcon name={item.icon} />}
               />
             ))}
           </SidebarMoreMenu>
         </Sidebar>
         <VStack spacing={2} gap={1} justifyContent="space-between" flexGrow={1}>
-          <VStack spacing={2} gap={1} justifyContent="space-between">
-            <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
-            <ButtonGroup accessibilityLabel="make collapsed">
-              <Button
-                compact
-                variant={collapsed ? 'secondary' : 'primary'}
-                onPress={() => setCompact(false)}
-              >
-                default
-              </Button>
-              <Button
-                compact
-                variant={collapsed ? 'primary' : 'secondary'}
-                onPress={() => setCompact(true)}
-              >
-                collapsed
-              </Button>
-            </ButtonGroup>
-          </VStack>
-          <HStack spacing={3}>{children}</HStack>
+          <TextHeadline as="h2">
+            Active Page: {[...items, ...moreMenuOptions][activeIndex].title}
+          </TextHeadline>
+          <HStack spacing={3} flexGrow={1} justifyContent="center" alignItems="center">
+            {children}
+          </HStack>
         </VStack>
       </HStack>
     </PortalProvider>
