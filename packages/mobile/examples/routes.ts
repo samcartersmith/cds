@@ -70,6 +70,7 @@ export const routes = {
   TabLabel: () => require('../tabs/__stories__/TabLabel.stories').default,
   TabNavigation: () => require('../tabs/__stories__/TabNavigation.stories').default,
   Tabs: () => require('../tabs/__stories__/Tabs.stories').default,
+  Tag: () => require('../tag/__stories__/Tag.stories').default,
   Text: () => require('../typography/__stories__/Text.stories').default,
   TextBody: () => require('../typography/__stories__/TextBody.stories').default,
   TextCaption: () => require('../typography/__stories__/TextCaption.stories').default,

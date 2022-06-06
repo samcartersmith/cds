@@ -74,6 +74,7 @@ import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
 import * as CDSTables from '@cbhq/cds-web/tables';
 import * as CDSTabs from '@cbhq/cds-web/tabs';
+import { Tag } from '@cbhq/cds-web/tag/Tag';
 import { palette } from '@cbhq/cds-web/tokens';
 import * as CDSTypography from '@cbhq/cds-web/typography';
 import { getZIndexFromRow } from '@cbhq/cds-web/utils/overflow';
@@ -179,6 +180,7 @@ const ReactLiveScope: unknown = {
   Cell,
   Dropdown,
   MenuItem,
+  Tag,
   // context
   PortalProvider,
   // Utils

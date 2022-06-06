@@ -76,6 +76,7 @@ export * from './SparklineInteractiveHeaderBaseProps';
 export * from './SparklinePathBaseProps';
 export * from './Spectrum';
 export * from './TabsProps';
+export * from './TagBaseProps';
 export * from './TextBaseProps';
 export * from './TextInputBaseProps';
 export * from './ThemeConfig';
