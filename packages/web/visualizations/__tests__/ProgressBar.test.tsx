@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
@@ -51,7 +51,7 @@ describe('ProgressBar test', () => {
     expect(await renderA11y(<ProgressBar progress={0} />)).toHaveNoViolations();
   });
 
-  it('places bar label in correct position if it flows off the left container', () => {
+  it('places bar label in correct position if it flows off the left container', async () => {
     const { getByTestId, getAllByText } = render(
       <Box width="200">
         <ProgressBarWithFloatLabel label={0} progress={0}>
@@ -62,14 +62,16 @@ describe('ProgressBar test', () => {
 
     const floatLabel = getByTestId('cds-progress-bar-float-label');
 
-    expect(floatLabel).toHaveStyle({
-      transform: 'translateX(0px)',
-    });
+    await waitFor(() =>
+      expect(floatLabel).toHaveStyle({
+        transform: 'none',
+      }),
+    );
 
     expect(getAllByText('0%')).toHaveLength(2);
   });
 
-  it('places bar label in correct position in middle', () => {
+  it('places bar label in correct position in middle', async () => {
     const { getByTestId, getAllByText } = render(
       <Box width="200">
         <ProgressBarWithFloatLabel label={50} progress={0.5}>
@@ -80,8 +82,10 @@ describe('ProgressBar test', () => {
 
     const floatLabel = getByTestId('cds-progress-bar-float-label');
 
-    expect(floatLabel).toHaveStyle({
-      transform: 'translateX(80px)',
+    await waitFor(() => {
+      expect(floatLabel).toHaveStyle({
+        transform: 'translateX(80px) translateZ(0)',
+      });
     });
 
     const floatLabelText = getAllByText('50%')[0];
@@ -110,7 +114,7 @@ describe('ProgressBar test', () => {
     });
   });
 
-  it('has correct bar width', () => {
+  it('has correct bar width', async () => {
     const { getByTestId } = render(
       <Box width="200">
         <ProgressBar progress={0.77} color="positive" />
@@ -118,9 +122,11 @@ describe('ProgressBar test', () => {
     );
 
     const bar = getByTestId('cds-progress-bar-inner-bar');
-    expect(bar).toHaveStyle({
-      backgroundColor: palette.positive,
-      transform: 'translateX(-23%)',
+    await waitFor(() => {
+      expect(bar).toHaveStyle({
+        backgroundColor: palette.positive,
+        transform: 'translateX(-23%) translateZ(0)',
+      });
     });
   });
 
@@ -137,7 +143,7 @@ describe('ProgressBar test', () => {
     });
   });
 
-  it('handles disabled state correctly', () => {
+  it('handles disabled state correctly', async () => {
     const { getByTestId, getAllByText } = render(
       <Box width="200">
         <ProgressBarWithFixedLabels startLabel={0} endLabel={77} disabled>
@@ -150,9 +156,11 @@ describe('ProgressBar test', () => {
     const startLabelText = getAllByText('0%')[0];
     const endLabelText = getAllByText('77%')[0];
 
-    expect(bar).toHaveStyle({
-      backgroundColor: palette.lineHeavy,
-      transform: 'translateX(-23%)',
+    await waitFor(() => {
+      expect(bar).toHaveStyle({
+        backgroundColor: palette.lineHeavy,
+        transform: 'translateX(-23%) translateZ(0)',
+      });
     });
 
     expect(startLabelText).toHaveStyle({

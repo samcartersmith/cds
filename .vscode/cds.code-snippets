@@ -46,5 +46,11 @@
       ""
     ],
     "description": "Create a barebone React component"
+  },
+  "awaitWaitFor": {
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": "awf",
+    "body": ["await waitFor(() => {", "  $1", "});"],
+    "description": "Wait for a test"
   }
 }
