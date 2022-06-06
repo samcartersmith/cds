@@ -33,7 +33,7 @@ export const tagColorMap: TagColorMap = {
       foreground: 'red60',
     },
     gray: {
-      background: 'gray0',
+      background: 'gray10',
       foreground: 'gray80',
     },
   },
@@ -60,7 +60,7 @@ export const tagColorMap: TagColorMap = {
     },
     gray: {
       background: 'gray80',
-      foreground: 'gray0',
+      foreground: 'gray10',
     },
   },
 };
