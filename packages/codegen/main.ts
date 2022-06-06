@@ -28,7 +28,11 @@ const common = {
 };
 
 const web = {
-  configs,
+  configs: {
+    ...configs,
+    palette: Palette.setCssVariables,
+    font: Type.fontFaceCss,
+  },
   styles: {
     backgroundColor: Palette.cssBackgroundColor,
     borderColor: Palette.cssBorderColor,
@@ -133,6 +137,7 @@ async function main() {
   await Promise.all([
     buildTemplates(templates),
     codegen('packages/common', common),
+    codegen('packages/docusaurus-theme', web),
     codegen('packages/web', web),
   ]);
 }

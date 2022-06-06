@@ -1,5 +1,6 @@
 import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
 import { arrayToObject, mapValues, toCssVarFn } from '@cbhq/cds-utils/index';
+import { setPaletteConfigToCssVars } from '@cbhq/cds-web/utils/palette';
 
 export const defaultPalette = {
   foreground: 'gray100',
@@ -143,6 +144,16 @@ export const Palette = {
   cssBorderColor,
   cssColor,
   cssVariables,
+  setCssVariables: {
+    light: setPaletteConfigToCssVars({
+      ...defaultPalette,
+      ...frontierSpectrumPalette.light,
+    }),
+    dark: setPaletteConfigToCssVars({
+      ...defaultPalette,
+      ...frontierSpectrumPalette.dark,
+    }),
+  },
   palettes: {
     defaultPalette,
     switchPalette,
