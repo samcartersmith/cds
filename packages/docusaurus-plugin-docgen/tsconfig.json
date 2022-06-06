@@ -2,10 +2,10 @@
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "lib"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "**/__tests__/**/*", "dist"],
+  "exclude": ["node_modules", "**/__tests__/**/*", "lib"],
   "references": [
     {
       "path": "../web"

@@ -5,16 +5,22 @@ import keyBy from 'lodash/keyBy';
 import mapValues from 'lodash/mapValues';
 import uniqBy from 'lodash/uniqBy';
 import path from 'path';
+import type {
+  OutputDoc,
+  PluginContent,
+  PluginOptions,
+  ProcessedDoc,
+  Projects,
+  WriteFileConfig,
+} from '@cbhq/docusaurus-plugin-docgen';
 
 import { getPackageJsonFromTsconfig } from '../utils/getPackageJsonFromTsconfig';
 import { logger } from '../utils/logger';
 
 import { docgenParser, sharedParentTypesCache, sharedTypeAliasesCache } from './docgenParser';
 import { docgenScaffolder } from './docgenScaffolder';
-import type { WriteFileConfig } from './docgenWriter';
-import type { DocgenPluginOptions, OutputDoc, ProcessedDoc } from './types';
 
-type DocgenRunnerParams = DocgenPluginOptions & {
+type DocgenRunnerParams = PluginOptions & {
   pluginDir: string;
 };
 
@@ -27,7 +33,7 @@ function getTempDirForDoc({ projectDir, doc }: { projectDir: string; doc: Proces
  * Takes plugin config and runs docgenParser.
  * Based on parsed docs, will pass onto docgenWriter any templates we want to write to disk.
  */
-export async function docgenRunner(params: DocgenRunnerParams): Promise<WriteFileConfig[]> {
+export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginContent> {
   const {
     entryPoints,
     formatPackageName,
@@ -38,6 +44,8 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<WriteFil
     onProcessDoc,
   } = params;
   let filesToWriteToDisk: WriteFileConfig[] = [];
+  const parsedProjects: Projects = [];
+
   const docs = new Set<OutputDoc>();
 
   /**
@@ -80,14 +88,6 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<WriteFil
     const { name: packageNameWithScope = '', version } = getPackageJsonFromTsconfig(tsconfigPath);
     const [maybeScope, packageNameWithoutScope = maybeScope] = packageNameWithScope.split('/');
 
-    filesToWriteToDisk.push({
-      dest: path.join(pluginDir, path.basename(path.dirname(tsconfigPath)), `metadata.js`),
-      data: {
-        version,
-      },
-      template: 'shared/objectMap',
-    });
-
     /**
      * If a component is associated with multiple packages, such as web and mobile, we want
      * to aggregate that information to a single doc and use mechanism like Tabs to toggle between the two.
@@ -97,6 +97,13 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<WriteFil
      *  `@cbhq/cds-web` -> `cds-web`
      */
     const projectName = formatPackageName?.(packageNameWithoutScope) ?? packageNameWithoutScope;
+
+    // Include anything you want to be accessible client side via usePluginData here.
+    parsedProjects.push({
+      label: projectName,
+      name: packageNameWithScope,
+      version,
+    });
 
     docgenParser({ tsconfigPath, projectDir, files, onProcessDoc }).forEach(
       ({ example, ...doc }) => {
@@ -178,17 +185,20 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<WriteFil
 
   logger.writingData();
 
-  return [
-    ...uniqBy(filesToWriteToDisk, 'dest'),
-    {
-      dest: `${pluginDir}/_types/sharedParentTypes.js`,
-      data: { sharedParentTypes: groupedObjectTypes },
-      template: 'shared/objectMap',
-    },
-    {
-      dest: `${pluginDir}/_types/sharedTypeAliases.js`,
-      data: { sharedTypeAliases: Object.fromEntries(sharedTypeAliasesCache) },
-      template: 'shared/objectMap',
-    },
-  ];
+  return {
+    filesToWrite: [
+      ...uniqBy(filesToWriteToDisk, 'dest'),
+      {
+        dest: `${pluginDir}/_types/sharedParentTypes.js`,
+        data: { sharedParentTypes: groupedObjectTypes },
+        template: 'shared/objectMap',
+      },
+      {
+        dest: `${pluginDir}/_types/sharedTypeAliases.js`,
+        data: { sharedTypeAliases: Object.fromEntries(sharedTypeAliasesCache) },
+        template: 'shared/objectMap',
+      },
+    ],
+    projects: parsedProjects,
+  };
 }

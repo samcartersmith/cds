@@ -1,22 +1,11 @@
 import ejs from 'ejs';
 import fs from 'fs';
-import { camelCase, kebabCase, startCase } from 'lodash';
+import camelCase from 'lodash/camelCase';
+import kebabCase from 'lodash/kebabCase';
+import startCase from 'lodash/startCase';
 import path from 'path';
 import prettier from 'prettier';
-
-export type Template =
-  | 'shared/objectMap'
-  | 'doc/component'
-  | 'doc/implementation'
-  | 'doc-item/api'
-  | 'doc-item/example'
-  | 'doc-item/import-block';
-
-export type WriteFileConfig = {
-  dest: string;
-  data: unknown;
-  template: Template;
-};
+import type { WriteFileConfig } from '@cbhq/docusaurus-plugin-docgen';
 
 type WriteFileParams<T> = {
   dest: string;

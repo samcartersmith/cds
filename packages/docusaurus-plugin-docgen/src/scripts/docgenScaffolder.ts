@@ -5,13 +5,11 @@ import orderBy from 'lodash/orderBy';
 import startCase from 'lodash/startCase';
 import uniqBy from 'lodash/uniqBy';
 import path from 'path';
+import type { OutputDoc, PluginOptions, WriteFileConfig } from '@cbhq/docusaurus-plugin-docgen';
 
 import { logger } from '../utils/logger';
 
-import { WriteFileConfig } from './docgenWriter';
-import type { DocgenPluginOptions, OutputDoc } from './types';
-
-type DocgenScaffolderParams = Pick<DocgenPluginOptions, 'docsDir' | 'forceDocs'> & {
+type DocgenScaffolderParams = Pick<PluginOptions, 'docsDir' | 'forceDocs'> & {
   docs: Set<OutputDoc>;
 };
 

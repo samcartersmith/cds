@@ -2,10 +2,10 @@
 import type { LoadContext, Plugin } from '@docusaurus/types';
 import { DEFAULT_PLUGIN_ID } from '@docusaurus/utils';
 import path from 'path';
+import type { PluginContent, PluginOptions } from '@cbhq/docusaurus-plugin-docgen';
 
 import { docgenRunner } from './scripts/docgenRunner';
-import { docgenWriter, WriteFileConfig } from './scripts/docgenWriter';
-import { DocgenPluginOptions } from './scripts/types';
+import { docgenWriter } from './scripts/docgenWriter';
 import { getMinutesBetweenDates } from './utils/getMinutesBetweenDates';
 import { logger } from './utils/logger';
 
@@ -30,8 +30,8 @@ if (!global.docgenBuild) {
 
 export default function plugin(
   { generatedFilesDir }: LoadContext,
-  { enabled = true, watchInterval = 5, ...options }: DocgenPluginOptions,
-): Plugin<WriteFileConfig[] | undefined> {
+  { enabled = true, watchInterval = 5, ...options }: PluginOptions,
+): Plugin<PluginContent | undefined> {
   /**
    * The directory where we want to output docgen data and components.
    * If running on website, this will be in .docusaurus/docusaurus-plugin-docgen/default
@@ -77,15 +77,11 @@ export default function plugin(
         },
       };
     },
-    getThemePath(): string {
-      return path.resolve(__dirname, './theme');
-    },
-    getTypeScriptThemePath(): string {
-      return path.resolve(__dirname, '..', 'src', 'theme');
-    },
-    async contentLoaded({ content }): Promise<void> {
+    async contentLoaded({ content, actions }): Promise<void> {
       if (content) {
-        await docgenWriter(content);
+        const { projects, filesToWrite } = content;
+        await docgenWriter(filesToWrite);
+        actions.setGlobalData({ enabled: true, projects });
         logger.pluginComplete();
 
         global.docgenBuild = {
@@ -93,10 +89,9 @@ export default function plugin(
           lastRun: new Date(),
           isRunning: false,
         };
+      } else {
+        actions.setGlobalData({ enabled: false, projects: [] });
       }
-    },
-    getClientModules() {
-      return [require.resolve('./css/styles.css')];
     },
   };
 }

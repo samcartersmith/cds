@@ -1,132 +1,240 @@
-/* eslint-disable @typescript-eslint/triple-slash-reference */
-/// <reference types="@docusaurus/module-type-aliases" />
-/// <reference types="@docusaurus/theme-classic" />
+import { Method, ParentType } from 'react-docgen-typescript/lib/parser';
 
-declare module '@theme/ImportBlock' {
-  export type ImportBlockProps = { name: string; from: string };
-  export default function ImportBlock(props: ImportBlockProps): JSX.Element;
+/* -------------------------------------------------------------------------- */
+/*                        Overrides for narrower types                        */
+/* -------------------------------------------------------------------------- */
+
+declare module 'react-docgen-typescript' {
+  export function withCustomConfig(): { parse: (files: string[]) => Doc[] };
 }
 
-declare module '@theme/JSDocTag' {
-  export const JSDOC_TAG_VARIANTS: JSDocTagVariant[];
-  export type JSDocTagVariant = 'beta' | 'danger' | 'deprecated' | 'internal' | 'new' | 'required';
+declare module '@cbhq/docusaurus-plugin-docgen' {
+  export type Plugin = import('@docusaurus/types').Plugin;
 
-  type JSDocTagProps = {
-    variant: JSDocTagVariant;
-    order?: number;
+  /* -------------------------------------------------------------------------- */
+  /*                               Plugin options                               */
+  /* -------------------------------------------------------------------------- */
+
+  export type PluginOptions = {
+    id?: string;
+    /**
+     * Directory to output codegenerated doc scaffolds.
+     * Path should be relative path to root of docusaurus project. i.e. docs/api.
+     * If no path is provided that plugin will not output any files outside of temporary
+     * plugin directory, which you can pull in and customize how API data is presented.
+     */
+    docsDir?: string;
+    /**
+     * Determines if plugin should run. If plugin is too slow in development,
+     * you can either increase watchInterval or set this to false.
+     * @default true
+     */
+    enabled?: boolean;
+    /**
+     * Absolute paths to tsconfig.json's for any projects that sourceFiles belong to.
+     * When the plugin is run it will loop through each tsconfig and determine
+     * which sourceFiles are present in those packages.
+     */
+    entryPoints: string[];
+    /**
+     * When you use the templates from plugin, if there are two components with the same name coming from
+     * two separate projects (cross platform), it will group those components together and use toggle to switch between them.
+     * This formatPackageName will allow you to customize how that toggle is displayed.
+     * i.e. remove `@cbhq-cds` scope from `@cbhq/cds-mobile` and `@cbhq/cds-web` so it returns just 'mobile' and 'web'.
+     */
+    formatPackageName?: (name: string) => string;
+    /**
+     * Determines if plugin should overwrite scaffolded docs on subsequent runs.
+     * This is useful if you only want to jumpstart docs, but plan to re-organize layout.
+     * For those usecases, you can set to true for first run, then false after. You can also include
+     * an array of files that you want to force overriding on each run.
+     * @default false
+     */
+    forceDocs?: boolean | string[];
+    onProcessDoc?: OnProcessDoc;
+    /**
+     * An array of source files you want docgen to parse.
+     */
+    sourceFiles: string[];
+    /**
+     * How frequently (in minutes) should plugin run after it was last run.
+     * This is typically triggered via on save of project file.
+     * @default 5
+     */
+    watchInterval?: number;
   };
 
-  export default function JSDocTag(props: JSDocTagProps): JSX.Element;
-}
-
-declare module '@theme/ParentTypesList' {
-  type ParentTypes = import('./scripts/types').ProcessedDoc['parentTypes'];
-  type SharedParentTypes = import('./scripts/types').SharedParentTypes;
-  type SharedTypeAliases = import('./scripts/types').SharedTypeAliases;
-
-  export type ParentTypesItem = {
+  /* -------------------------------------------------------------------------- */
+  /*                                 Pre Process                                */
+  /* -------------------------------------------------------------------------- */
+  export type PropType = {
     name: string;
-    props: string[];
-    sharedTypeAliases: SharedTypeAliases;
-    sharedParentTypes: SharedParentTypes;
+    raw?: string;
+    value?: PropValue[];
   };
 
-  export type ParentTypesListProps = {
-    parentTypes: ParentTypes;
-    sharedTypeAliases: SharedTypeAliases;
-    sharedParentTypes: SharedParentTypes;
+  export type PropValue = {
+    value: string;
+    description?: string;
+    fullComment?: string;
+    tags?: PropItemTags;
   };
 
-  export default function ParentTypesList(props: ParentTypesListProps): JSX.Element;
-}
+  export type PropItemTags = {
+    danger?: string;
+    deprecated?: string;
+    internal?: string;
+    default?: string;
+  };
 
-declare module '@theme/PropsTable' {
-  type ProcessedPropItem = import('./scripts/types').ProcessedPropItem;
-  type SharedTypeAliases = import('./scripts/types').SharedTypeAliases;
+  export type PropItem = {
+    name: string;
+    declarations?: ParentType[];
+    defaultValue: null | { value: string };
+    description: string;
+    parent?: ParentType;
+    required: boolean;
+    tags?: PropItemTags;
+    type: PropType;
+  };
 
-  export type PropsTableProps = {
+  export type DocTags = {
+    danger?: string;
+    deprecated?: string;
+    description?: string;
+    example?: string;
+    internal?: string;
+  };
+
+  export type Doc = {
+    expression?: unknown;
+    description: string;
+    displayName: string;
+    filePath: string;
+    props: Record<string, PropItem>;
+    methods?: Method[];
+    tags?: DocTags;
+  };
+
+  /* -------------------------------------------------------------------------- */
+  /*                                Pre-Processed                               */
+  /* -------------------------------------------------------------------------- */
+
+  export type PreProcessedDoc = Omit<Doc, 'props'> & {
+    example?: string;
+    parentTypes?: Record<string, string[]>;
+    props: PreProcessedPropItem[];
+    tags?: Omit<DocTags, 'example' | 'description'>;
+  };
+
+  export type PreProcessedPropItem = Omit<PropItem, 'defaultValue' | 'parent' | 'type'> & {
+    defaultValue?: string;
+    parent: string;
+    type: Required<PropType>;
+  };
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Processed                                 */
+  /* -------------------------------------------------------------------------- */
+
+  export type ProcessedDoc = Omit<PreProcessedDoc, 'props' | 'expression'> & {
     props: ProcessedPropItem[];
-    sharedTypeAliases: SharedTypeAliases;
+    parentTypes: Record<string, string[]>;
   };
 
-  export default function PropsTable(props: PropsTableProps): JSX.Element;
-}
-
-declare module '@theme/PropsTableCellAccessory' {
-  type IconName = import('@cbhq/cds-common/types').IconName;
-  type IconProps = import('@cbhq/cds-web/icons/IconProps').IconProps;
-
-  export type PropsTableCellAccessoryProps = {
-    children?: import('react').ReactNode;
+  export type ProcessedPropItem = Omit<PreProcessedPropItem, 'type'> & {
+    type: string;
   };
 
-  export default function PropsTableListCellAccessory(
-    props: PropsTableCellAccessoryProps,
-  ): JSX.Element;
-}
+  /* -------------------------------------------------------------------------- */
+  /*                                   Output                                   */
+  /* -------------------------------------------------------------------------- */
 
-declare module '@theme/PropsTableListCell' {
-  type CellSharedProps = import('@cbhq/cds-web/cells/Cell').CellSharedProps;
-  type ListCellBaseProps = import('@cbhq/cds-web').ListCellBaseProps;
-
-  export type PropsTableListCellProps = import('@cbhq/cds-web').Expand<
-    Omit<ListCellBaseProps, 'accessory'> &
-      Omit<CellSharedProps, 'detail' | 'subdetail'> & {
-        accessory?: import('react').ReactNode;
-        tags?: import('react').ReactNode;
-        type?: import('react').ReactNode;
-        defaultValue?: import('react').ReactNode;
-      }
-  >;
-
-  export default function PropsTableListCell(
-    props: import('react').PropsWithoutRef<PropsTableListCellProps> &
-      import('react').RefAttributes<HTMLElement>,
-  ): JSX.Element;
-}
-
-declare module '@theme/PropsTableRow' {
-  type ProcessedPropItem = import('./scripts/types').ProcessedPropItem;
-  type SharedTypeAliases = import('./scripts/types').SharedTypeAliases;
-  export type TypeAliasModalContentProps = {
-    typeAlias: string;
+  export type OutputDoc = Omit<ProcessedDoc, 'example'> & {
+    /**
+     * Format mdx partials in codegenerated docs to use uppercase format of path
+     * i.e. `accordion/mobile/accordionItem.mdx` -> `MobileAccordionItem`
+     */
+    partial: { name: string; path: string };
+    /** This displays the info about where to import the component or util from, with a "copy to clipboard" button */
+    importBlock: { name: string; path: string };
+    tab: { label: string; value: string };
+    slug: string;
   };
 
-  export type PropsTableRowProps = {
-    prop: ProcessedPropItem;
-    sharedTypeAliases: SharedTypeAliases;
+  export type Template =
+    | 'shared/objectMap'
+    | 'doc/component'
+    | 'doc/implementation'
+    | 'doc-item/api'
+    | 'doc-item/example'
+    | 'doc-item/import-block';
+
+  export type WriteFileConfig = {
+    dest: string;
+    data: unknown;
+    template: Template;
   };
 
-  export default function PropsTableRow(props: PropsTableRowProps): JSX.Element;
-}
+  /* -------------------------------------------------------------------------- */
+  /*                            Consumer integration                            */
+  /* -------------------------------------------------------------------------- */
 
-declare module '@theme/createTOCManager' {
-  export type TOCItems = import('@docusaurus/types').TOCItem[] | undefined;
-
-  export type TOCContextValue = {
-    items: TOCItems;
-    update: import('@cbhq/cds-common').SetState<TOCItems>;
+  type OnParseDocHelpers = {
+    formatString: (str: string) => string;
+    /**
+     * @param alias - What you want to show in PropsTable. Usually comes from prop.type.raw
+     * @param value - What you want to show when clicking on an alias for more info. Usually comes from prop.type.value.
+     *
+     * If a prop's type is matched with an alias in sharedTypeAliases it will only show the alias name with a Link
+     * that triggers a Modal to view the actual value. This helps us avoid super long values which can make
+     * the docs noisy. We also avoid making docs too sparse had we only shown the alias without any way to
+     * view the actual underlying value.
+     */
+    addToSharedTypeAliases: (alias: string, value: string) => void;
+    /**
+     * Automatically excluding all types which come from node_modules can be problematic especially
+     * since we extend core functionality from html and react-native.
+     *
+     * The docgen plugin provides flexibility with what types we want to include in main props table versus
+     * what types we want to pull out into, `parentTypes` via an "Extends from ...." UI.
+     *
+     * If you want to...
+     * 1. show prop in the props table - include the prop in the doc's props array.
+     * 2. hide prop in the props table - filter the prop from the doc's props array.
+     * 3. show prop in parentTypes UI - call addToParentTypes with the prop in processDoc
+     * 4. hide prop in the props table + show prop in parentTypes UI - do both #2 and #3 above
+     */
+    addToParentTypes: (prop: PreProcessedPropItem) => void;
   };
 
-  export type TOCProviderProps = {
-    children: import('react').ReactNode;
+  export type OnProcessDoc = (
+    doc: PreProcessedDoc,
+    helpers: OnParseDocHelpers,
+  ) => PreProcessedDoc | ProcessedDoc;
+
+  export type SharedTypeAliases = Record<string, string>;
+  export type SharedParentTypes = Record<string, Record<string, ProcessedPropItem>>;
+  export type Projects = DocgenProjectMetadata[];
+
+  export type DocgenProjectMetadata = {
+    label: string;
+    name: string;
+    version: string;
   };
-  export type TOCUpdaterProps = { toc: TOCItems };
 
-  const TOCContext: import('react').Context<TOCContextValue>;
-  export function TOCProvider(props: TOCProviderProps): JSX.Element;
-  export function useTOC(): TOCContextValue;
-  export function TOCUpdater(props: TOCUpdaterProps): JSX.Element;
-
-  export default function createTOCManager(): {
-    useTOC: typeof useTOC;
-    TOCProvider: typeof TOCProvider;
-    TOCUpdater: typeof TOCUpdater;
+  export type PluginData = {
+    projects: Projects;
+    enabled: boolean;
   };
-}
 
-declare module '@theme/PropsTOCManager' {
-  export const usePropsTOC: typeof import('@theme/createTOCManager').useTOC;
-  export const PropsTOCProvider: typeof import('@theme/createTOCManager').TOCProvider;
-  export const PropsTOCUpdater: typeof import('@theme/createTOCManager').TOCUpdater;
+  export type PluginContent = {
+    filesToWrite: WriteFileConfig[];
+    projects: Projects;
+  };
+
+  export default function plugin(
+    context: import('@docusaurus/types').LoadContext,
+    options: PluginOptions,
+  ): Promise<Plugin<PluginContent | undefined>>;
 }
