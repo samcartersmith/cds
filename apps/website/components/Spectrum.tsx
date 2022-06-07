@@ -1,3 +1,4 @@
+import React from 'react';
 import ExampleWithThemeToggles from '@theme/ExampleWithThemeToggles';
 import { useAccessibleForeground } from '@cbhq/cds-web/color/useAccessibleForeground';
 import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
@@ -24,7 +25,7 @@ export const Spectrum = () => {
   const getAccessibleForeground = useAccessibleForeground();
   const getRgbaString = usePaletteValueToRgbaString();
   return (
-    <ExampleWithThemeToggles showFrontier hideDense>
+    <ExampleWithThemeToggles>
       <div className={styles.hueGrid}>
         {hueNames.map((hue) => {
           return (

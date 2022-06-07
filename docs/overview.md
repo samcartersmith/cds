@@ -1,10 +1,4 @@
----
-id: overview
-title: Overview
-slug: /
----
-
-import { Badge } from ':cds-website/components/Badge';
+# Overview
 
 ## Motivation and goals
 
@@ -56,7 +50,7 @@ To start, there are 2 main functions of a successful design system:
 1. A `design language` (CDL)
 2. A `component library` (CDS).
 
-## Coinbase Design Language <Badge variant="cds" />
+## Coinbase Design Language
 
 The design language (CDL) is a singular logicless, static library that provides multi-platform stylistic constants (think of a giant set of single key / values). This includes things like color spectrums, spacing constants, typographic constants, elevation constants, etc.
 
@@ -66,7 +60,7 @@ It is the “source of truth”, or “style guide”, for a clear set of style 
 The CDS team will own the CDL.
 :::
 
-## Coinbase Design System <Badge variant="cds" />
+## Coinbase Design System
 
 The CDS is a component library which includes low-level presentational “lego-blocks”. The CDS library only consumes the CDL, and doesn’t know about any other Component libraries “up the stack”.
 
@@ -76,7 +70,7 @@ The CDS is portable (you can move it around), composable (you can stack it like 
 
 For example, the CDS Mobile library does provide a “Line” chart component (which product teams can and should adopt when displaying line charts to customers). However, the CDS Mobile library doesn’t provide a “Pie” chart component (which might only be used by the commerce team today).
 
-## Application component library <Badge variant="product" />
+## Application component library
 
 An application component library is comprised of low level, shared components, which consume components and constants from the CDS (as well as provide some of its own unique components composed of CDS components). An application library typically adds additional application specific functionality not provided by CDS such as event tracking or a component which is unique to a product.
 

@@ -16,11 +16,9 @@
   "dependencies": {
     "@cbhq/cds-common": "workspace:*",
     "@cbhq/cds-web": "workspace:*",
-    "@cmfcmf/docusaurus-search-local": "^0.10.0",
+    "@cbhq/docusaurus-preset": "workspace:*",
     "@docusaurus/core": "2.0.0-beta.18",
     "@docusaurus/module-type-aliases": "2.0.0-beta.18",
-    "@docusaurus/preset-classic": "2.0.0-beta.18",
-    "@docusaurus/theme-live-codeblock": "2.0.0-beta.18",
     "@linaria/babel-preset": "^3.0.0-beta.15",
     "@linaria/core": "^3.0.0-beta.15",
     "@linaria/react": "^3.0.0-beta.15",

@@ -1,4 +1,6 @@
-const webpackPlugin = require('./webpackPlugin');
+const docgenConfig = require('./docgen.config');
+const kbarConfig = require('./kbar.config');
+const webpackConfig = require('./webpack.config');
 
 const SLACK_TEAM = 'T02Q6DY7G';
 
@@ -23,6 +25,7 @@ module.exports = {
     navbar: {
       // We only want to show the logo with no text so we have to set to empty string.
       title: '',
+      hideOnScroll: true,
       logo: {
         alt: 'Coinbase',
         src: 'img/logo.svg',
@@ -70,38 +73,25 @@ module.exports = {
   // https://docusaurus.io/docs/using-plugins#docusauruspreset-classic
   presets: [
     [
-      'classic',
+      '@cbhq/docusaurus-preset',
       {
         gtag: {
           trackingID: 'G-369GEFT8FG',
         },
         docs: {
-          breadcrumbs: true,
+          breadcrumbs: false,
           routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.cbhq.net/frontend/cds/tree/master/apps/website/',
+          sidebarPath: require.resolve('./sidebar.config.js'),
+          editUrl: undefined,
           sidebarCollapsible: true,
         },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-        blog: false,
+        docgen: docgenConfig,
+        kbar: kbarConfig,
       },
     ],
   ],
   plugins: [
-    '@docusaurus/theme-live-codeblock',
-    [
-      '@cmfcmf/docusaurus-search-local',
-      {
-        language: 'en',
-        indexBlog: false,
-        indexDocs: true,
-        indexDocSidebarParentCategories: 2,
-      },
-    ],
     // Must run last!
-    webpackPlugin,
-  ].filter(Boolean),
-  clientModules: [require.resolve('./global.ts')],
+    webpackConfig,
+  ],
 };

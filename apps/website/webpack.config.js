@@ -29,7 +29,7 @@ function configureForDocusaurus(config) {
 
 function webpackPlugin() {
   return {
-    name: 'cds-docusaurus-plugin',
+    name: 'cds-docusaurus-webpack-plugin',
     configureWebpack: configureForDocusaurus,
   };
 }
