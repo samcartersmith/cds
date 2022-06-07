@@ -28,7 +28,9 @@ export default async function runPercy(options: RunPercyOptions, context: Execut
   }
 
   if (!shouldRun) {
-    return undefined;
+    return {
+      success: true
+    }
   }
 
   const bin = 'nx';
