@@ -39,6 +39,11 @@
       "implementation": "./dist/executors/a11y/impl",
       "schema": "./dist/executors/a11y/schema.json",
       "description": "Build storbook and run a11y tests"
+    },
+    "run-conditional": {
+      "implementation": "./dist/executors/run-conditional/impl",
+      "schema": "./dist/executors/run-conditional/schema.json",
+      "description": "Conditionally runs percy"
     }
   }
 }

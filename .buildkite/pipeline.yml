@@ -94,7 +94,7 @@ steps:
     commands:
       - tools/ci/setup.sh
       - tools/ci/downloadStorybookArtifacts.sh
-      - yarn nx run storybook:a11y
+      - yarn nx run storybook:run-a11y
     env:
       CONFIG_SERVICE_CONTEXT: cds-a11y
       STORYBOOK_SKIP_ANIMATION: true
@@ -114,7 +114,7 @@ steps:
     commands:
       - tools/ci/setup.sh
       - tools/ci/downloadStorybookArtifacts.sh
-      - yarn nx run storybook:percy
+      - yarn nx run web:run-percy
     env:
       CONFIG_SERVICE_CONTEXT: percy-cds
       STORYBOOK_SKIP_ANIMATION: true
