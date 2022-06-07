@@ -15,7 +15,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'frontend',
   projectName: 'cds',
-  trailingSlash: false,
+  trailingSlash: true,
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],

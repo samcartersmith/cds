@@ -5,7 +5,7 @@ import { TOCProvider } from '@theme/TOCManager';
 const Root = memo(({ children }) => {
   return (
     <TOCProvider>
-      <PropsTOCProvider>{children}</PropsTOCProvider>;
+      <PropsTOCProvider>{children}</PropsTOCProvider>
     </TOCProvider>
   );
 });
