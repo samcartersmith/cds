@@ -45,6 +45,9 @@ export function dotBuilder(
             <DotCount count={count} />
           </Box>
         ))}
+        <Box alignItems="flex-start" spacing={1}>
+          <DotCount count={11} max={9} />
+        </Box>
       </>
     );
   };

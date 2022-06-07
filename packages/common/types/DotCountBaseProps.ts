@@ -11,6 +11,11 @@ export type DotCountBaseProps = Omit<DotBaseProps, 'size' | 'variant' | 'pin'> &
    *  */
   count: number;
   /**
+   * If a badge count is greater than max, it will truncate the numbers so its max+
+   * @default 99
+   *  */
+  max?: number;
+  /**
    * Background color of dot
    * @default negative
    * */

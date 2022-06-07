@@ -12,6 +12,10 @@ function DotCountBasic() {
           <DotCount count={count} />
         </Box>
       ))}
+      // with max prop
+      <Box alignItems="flex-start" spacing={1}>
+        <DotCount count={11} max={9} />
+      </Box>
     </ResponsiveExample>
   );
 }
