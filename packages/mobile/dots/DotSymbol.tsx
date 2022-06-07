@@ -41,6 +41,8 @@ export const DotSymbol = memo(
       return {};
     }, [pin, transforms]);
 
+    // TODO: These should be tokens, i don't know what the name
+    // of the token will be called though. No design direction yet
     const imageBorderStyle = useMemo(() => {
       return {
         borderColor: palette.secondary,
@@ -48,6 +50,8 @@ export const DotSymbol = memo(
       };
     }, [palette.secondary]);
 
+    // TODO: These should be tokens, i don't know what the name
+    // of the token will be called though. No design direction yet
     const iconBorderStyle = useMemo(() => {
       return {
         borderWidth: 2,
