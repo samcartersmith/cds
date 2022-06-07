@@ -1,0 +1,25 @@
+{
+  "root": "packages/docusaurus-theme",
+  "sourceRoot": "packages/docusaurus-theme",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@cbhq/cds-tools:build-docusaurus-plugin",
+      "options": {
+        "postbuild": "./scripts/postbuild.ts"
+      }
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/cds-tools:typecheck"
+    }
+  }
+}

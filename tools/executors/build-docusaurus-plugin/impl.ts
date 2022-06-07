@@ -4,6 +4,10 @@ import { runLocalCommand } from '../utils';
 
 type Options = {
   /**
+   * A script to run postbuild
+   */
+  postbuild?: string;
+  /**
    * The source directory of your TypeScript plugin
    * @default src
    */
@@ -30,7 +34,7 @@ type Options = {
   ignore?: string[];
 };
 export default async function runScript(
-  { sourceDir, targetDir, themeDir, themeTargetDir, ignore }: Options,
+  { sourceDir, targetDir, themeDir, themeTargetDir, ignore, postbuild }: Options,
   context: ExecutorContext,
 ) {
   const bin = 'docusaurus-plugin';
@@ -56,5 +60,9 @@ export default async function runScript(
     finalArgs = [...finalArgs, '--ignore', ...ignore];
   }
 
+  if (postbuild) {
+    await runLocalCommand(context, bin, finalArgs);
+    return runLocalCommand(context, 'ts-node', [postbuild]);
+  }
   return runLocalCommand(context, bin, finalArgs);
 }

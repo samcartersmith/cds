@@ -1,0 +1,22 @@
+{
+  "root": "packages/docusaurus-preset",
+  "sourceRoot": "packages/docusaurus-preset",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@cbhq/cds-tools:build-docusaurus-plugin"
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/cds-tools:typecheck"
+    }
+  }
+}

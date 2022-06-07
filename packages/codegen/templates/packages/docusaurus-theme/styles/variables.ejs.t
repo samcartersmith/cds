@@ -1,5 +1,5 @@
 ---
-to: packages/docusaurus-theme/styles/variables.ts
+to: packages/docusaurus-theme/src/css/variables.ts
 force: true
 ---
 

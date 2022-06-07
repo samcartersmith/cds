@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.projectOptions.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "lib"
+  },
+  "include": ["src", "scripts"],
+  "exclude": ["node_modules", "**/__tests__/**/*", "lib"],
+  "references": [
+    {
+      "path": "../web"
+    },
+    {
+      "path": "../web-utils"
+    }
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "require": ["tsconfig-paths/register"]
+  }
+}
