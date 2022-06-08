@@ -14,7 +14,11 @@
     "start.android": "nx run codegen:prepare_mobile_routes && nx run mobile-playground:start-android",
     "start.ios": "nx run codegen:prepare_mobile_routes && nx run mobile-playground:start-ios",
     "start.metro": "nx run mobile-playground:start-metro",
-    "typecheck": "nx run mobile-playground:typecheck"
+    "typecheck": "nx run mobile-playground:typecheck",
+    "e2e.build.ios:debug": "yarn detox build --configuration=ios.debug.app",
+    "e2e.test.ios:debug": "yarn detox test --configuration=ios.debug.app --cleanup --gpu=host -o e2e/config.json",
+    "e2e.build.android:debug": "yarn detox build --configuration=android.debug.app",
+    "e2e.test.android:debug": "yarn detox test --configuration=android.debug.app --cleanup --gpu=host -o e2e/config.json"
   },
   "dependencies": {
     "@cbhq/cds-common": "workspace:*",
@@ -34,6 +38,8 @@
     "react-native-screens": "^3.12.0"
   },
   "devDependencies": {
+    "detox": "^19.6.9",
+    "jest": "27.2.5",
     "lottie-ios": "3.2.3",
     "lottie-react-native": "^5.0.1",
     "react-native-inappbrowser-reborn": "3.6.3",
