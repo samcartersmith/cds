@@ -14,6 +14,7 @@ export default async function theme(): Promise<Plugin<void>> {
     },
     getClientModules() {
       return [
+        require.resolve('schedulely/dist/index.css'),
         require.resolve('@cbhq/cds-fonts/fonts.css'),
         require.resolve('@cbhq/cds-web/styles/icon-font.css'),
         require.resolve('./css/styles.css'),

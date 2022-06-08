@@ -384,6 +384,12 @@ declare module '@theme/ThemeToggles' {
   export default function ThemeToggles(): JSX.Element;
 }
 
+declare module '@theme/Calendar' {
+  export type CalendarProps = import('schedulely').SchedulelyProps;
+  export type CalendarEvent = import('schedulely').CalendarEvent;
+  export default function Calendar(props: CalendarProps): JSX.Element;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                   Theming                                  */
 /* -------------------------------------------------------------------------- */

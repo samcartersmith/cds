@@ -8,3 +8,5 @@
 /// <reference types="@cbhq/docusaurus-plugin-docgen" />
 /// <reference types="@cbhq/docusaurus-plugin-kbar" />
 /// <reference types="@cbhq/docusaurus-theme" />
+
+declare module 'dayjs-recur';

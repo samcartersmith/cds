@@ -134,6 +134,66 @@ export default css`
     --ifm-scrollbar-thumb-hover-background-color: ${palette.backgroundAlternate} !important;
   }
 
+  /* Release Calendar */
+  .schedulely {
+    --schedulely-font-color: ${palette.foreground};
+    --schedulely-grid-gap: 0em;
+    --schedulely-day-of-week-header-bg-color: ${palette.background};
+    --schedulely-day-of-week-header-text-color: ${palette.primaryForeground};
+    --schedulely-day-height: 7em;
+    --schedulely-border: 1px solid ${palette.line};
+    --schedulely-border-radius: 0;
+    font-family: var(--cds-font-sans);
+
+    & .default-day-sibling,
+    [data-theme='minimal'] {
+      --schedulely-sibling-month-bg-color: ${palette.backgroundAlternate};
+      --schedulely-sibling-month-font-color: ${palette.foregroundMuted};
+    }
+
+    & .current-month-indicator {
+      background-color: ${palette.primary};
+    }
+
+    & .default-day-header {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    & .default-day-header--indicator {
+      --schedulely-today-indicator-color: ${palette.primary};
+      color: ${palette.primaryForeground};
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & .default-day-header--text {
+      top: unset;
+      font-weight: unset;
+      font-size: var(--label1-font-size);
+      line-height: var(--label1-line-height);
+    }
+
+    & .event {
+      box-shadow: unset;
+      font-weight: unset;
+      border: 1px solid var(--line);
+      font-size: var(--label1-font-size);
+      line-height: var(--label1-line-height);
+    }
+
+    & .day-of-week-layout {
+      border-top: 1px solid var(--line);
+    }
+  }
+
+  .schedulely[data-theme='minimal'] {
+    --schedulely-sibling-month-bg-color: ${palette.backgroundAlternate};
+    --schedulely-day-of-week-header-bg-color: ${palette.background};
+    --schedulely-day-of-week-header-text-color: ${palette.foreground};
+  }
+
   /* Navbar */
   .navbar {
     border-bottom: 1px solid ${palette.line};

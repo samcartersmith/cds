@@ -19,7 +19,8 @@
     "@docusaurus/theme-classic": "2.0.0-beta.18",
     "@docusaurus/theme-common": "2.0.0-beta.18",
     "@docusaurus/theme-live-codeblock": "2.0.0-beta.18",
-    "kbar": "^0.1.0-beta.35"
+    "kbar": "^0.1.0-beta.35",
+    "schedulely": "^0.0.31"
   },
   "devDependencies": {
     "@cbhq/cds-tools": "workspace:*",

@@ -2317,6 +2317,7 @@ __metadata:
     kbar: ^0.1.0-beta.35
     postcss: ^8.4.14
     postcss-preset-env: ^7.7.1
+    schedulely: ^0.0.31
     ts-node: ^10.7.0
   peerDependencies:
     react: ^17.0.2
@@ -2626,9 +2627,12 @@ __metadata:
     "@linaria/shaker": ^3.0.0-beta.15
     "@linaria/webpack-loader": ^3.0.0-beta.15
     antd: 4.4.1
+    dayjs: ^1.11.3
+    dayjs-recur: ^1.0.1
     react: ^17.0.2
     react-dom: ^17.0.2
     react-virtualized: ^9.22.3
+    semver: ^7.3.7
   languageName: unknown
   linkType: soft
 
@@ -7020,6 +7024,15 @@ __metadata:
     "@svgr/plugin-jsx": ^6.2.1
     "@svgr/plugin-svgo": ^6.2.0
   checksum: 3da7e61942d7fc3c5cdd0ffd2fbc5520168bc75bf783920e843e920bdc462f9869d47a16ca37be9f3435c90eb89c0d4acd044a0f2e1ad478ff2bc90d65e6c2dd
+  languageName: node
+  linkType: hard
+
+"@swc/helpers@npm:^0.3.13":
+  version: 0.3.17
+  resolution: "@swc/helpers@npm:0.3.17"
+  dependencies:
+    tslib: ^2.4.0
+  checksum: ce3a5146d738b707f0608bba731aa1fd0a8e3f75f140ff7281225d775a769f085f085e0293b570a9d201c76e09951af178c9222d8c706d4ed0d1c85b25f55cb6
   languageName: node
   linkType: hard
 
@@ -12885,10 +12898,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.8.15":
-  version: 1.10.7
-  resolution: "dayjs@npm:1.10.7"
-  checksum: a0a4ca95abaa03d0702161dc2c35d16121188e342f5052b9c61cdf784dab68af766f477c04f87f71c6af666fd4d13db9b9853b87265850d6093b7b04e1bb1cd7
+"date-fns@npm:^2.28.0":
+  version: 2.28.0
+  resolution: "date-fns@npm:2.28.0"
+  checksum: a0516b2e4f99b8bffc6cc5193349f185f195398385bdcaf07f17c2c4a24473c99d933eb0018be4142a86a6d46cb0b06be6440ad874f15e795acbedd6fd727a1f
+  languageName: node
+  linkType: hard
+
+"dayjs-recur@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "dayjs-recur@npm:1.0.1"
+  checksum: ee4f2a782d5dbae4c99ef8222eac54d1bea29873d3c7827a5346672efdb68437d65fde28636c3e075d809e43dbf4979e41383e8cc2c74fb7104bdb5cd4921443
+  languageName: node
+  linkType: hard
+
+"dayjs@npm:^1.11.3, dayjs@npm:^1.8.15":
+  version: 1.11.3
+  resolution: "dayjs@npm:1.11.3"
+  checksum: c87e06b562a51ae6568cc5b840c7579d82a0f8af7163128c858fe512d3d71d07bd8e8e464b8cc41b8698a9e26b80ab2c082d14a1cd4c33df5692d77ccdfc5a43
   languageName: node
   linkType: hard
 
@@ -27720,6 +27747,19 @@ __metadata:
   dependencies:
     xmlchars: ^2.2.0
   checksum: 5636b55cf15f7cf0baa73f2797bf992bdcf75d1b39d82c0aa4608555c774368f6ac321cb641fd5f3d3ceb87805122cd47540da6a7b5960fe0dbdb8f8c263f000
+  languageName: node
+  linkType: hard
+
+"schedulely@npm:^0.0.31":
+  version: 0.0.31
+  resolution: "schedulely@npm:0.0.31"
+  dependencies:
+    "@swc/helpers": ^0.3.13
+    date-fns: ^2.28.0
+  peerDependencies:
+    react: 17.0.2
+    react-dom: 17.0.2
+  checksum: 3d844481d4f48c12f0a8c9250b4a72770a5b7a398c2d165026881f3d2069a34297080ce35c92e422881ef0988b8319b8528028378cfa56decedf0401f1b02e48
   languageName: node
   linkType: hard
 
