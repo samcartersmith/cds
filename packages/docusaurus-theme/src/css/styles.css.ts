@@ -44,51 +44,51 @@ export default css`
     --cds-font-mono: CoinbaseMono, var(--cds-font-fallback);
     --cds-font-icon: CoinbaseIcons;
 
-    --ifm-global-radius: ${borderRadius.rounded};
-    --ifm-global-shadow-lw: 0 1px 0 0 ${palette.line};
-    --ifm-global-spacing: ${spacing[1]};
+    --ifm-global-radius: ${borderRadius.rounded} !important;
+    --ifm-global-shadow-lw: 0 1px 0 0 ${palette.line} !important;
+    --ifm-global-spacing: ${spacing[1]} !important;
 
-    --ifm-font-color-base: ${palette.foreground};
-    --ifm-font-color-base-inverse: ${palette.background};
-    --ifm-font-color-secondary: ${palette.secondary};
-    --ifm-font-family-base: var(--cds-font-sans);
-    --ifm-font-family-monospace: var(--cds-font-mono);
+    --ifm-font-color-base: ${palette.foreground} !important;
+    --ifm-font-color-base-inverse: ${palette.background} !important;
+    --ifm-font-color-secondary: ${palette.secondary} !important;
+    --ifm-font-family-base: var(--cds-font-sans) !important;
+    --ifm-font-family-monospace: var(--cds-font-mono) !important;
 
-    --ifm-color-primary: ${palette.primary};
-    --ifm-color-info: ${palette.primary};
-    --ifm-color-danger: ${palette.negative};
-    --ifm-color-success: ${palette.positive};
+    --ifm-color-primary: ${palette.primary} !important;
+    --ifm-color-info: ${palette.primary} !important;
+    --ifm-color-danger: ${palette.negative} !important;
+    --ifm-color-success: ${palette.positive} !important;
 
-    --ifm-navbar-background-color: ${palette.background};
-    --ifm-navbar-padding-horizontal: ${spacing[3]};
-    --ifm-navbar-shadow: none;
+    --ifm-navbar-background-color: ${palette.background} !important;
+    --ifm-navbar-padding-horizontal: ${spacing[3]} !important;
+    --ifm-navbar-shadow: none !important;
 
-    --ifm-pre-padding: ${spacing[3]};
-    --ifm-pre-border-radius: ${borderRadius.rounded};
+    --ifm-pre-padding: ${spacing[3]} !important;
+    --ifm-pre-border-radius: ${borderRadius.rounded} !important;
 
-    --ifm-avatar-photo-size-md: 80px;
-    --ifm-toc-border-color: ${palette.line};
-    --ifm-link-color: ${palette.primary};
+    --ifm-avatar-photo-size-md: 80px !important;
+    --ifm-toc-border-color: ${palette.line} !important;
+    --ifm-link-color: ${palette.primary} !important;
 
-    --ifm-tabs-color: ${palette.foreground};
-    --ifm-tabs-color-active: ${palette.primary};
-    --ifm-tabs-color-active-border: ${palette.primary};
+    --ifm-tabs-color: ${palette.foreground} !important;
+    --ifm-tabs-color-active: ${palette.primary} !important;
+    --ifm-tabs-color-active-border: ${palette.primary} !important;
 
-    --ifm-code-font-size: 95%;
-    --ifm-code-border-radius: ${borderRadius.roundedSmall};
+    --ifm-code-font-size: 95% !important;
+    --ifm-code-border-radius: ${borderRadius.roundedSmall} !important;
 
-    --ifm-badge-border-radius: ${borderRadius.roundedLarge};
-    --ifm-heading-margin-bottom: ${spacing[2]};
+    --ifm-badge-border-radius: ${borderRadius.roundedLarge} !important;
+    --ifm-heading-margin-bottom: ${spacing[2]} !important;
 
-    --ifm-alert-border-color: ${palette.transparent};
-    --ifm-alert-border-width: 1px;
-    --ifm-alert-border-left-width: 1px;
-    --ifm-alert-border-radius: ${borderRadius.roundedLarge};
-    --ifm-alert-padding-vertical: ${spacing[3]};
-    --ifm-alert-padding-horizontal: ${spacing[3]};
-    --ifm-alert-shadow: none;
+    --ifm-alert-border-color: ${palette.transparent} !important;
+    --ifm-alert-border-width: 1px !important;
+    --ifm-alert-border-left-width: 1px !important;
+    --ifm-alert-border-radius: ${borderRadius.roundedLarge} !important;
+    --ifm-alert-padding-vertical: ${spacing[3]} !important;
+    --ifm-alert-padding-horizontal: ${spacing[3]} !important;
+    --ifm-alert-shadow: none !important;
 
-    --ifm-list-left-padding: ${spacing[1]};
+    --ifm-list-left-padding: ${spacing[1]} !important;
 
     /* Search bar */
     --search-input-height: 61px;
@@ -101,18 +101,18 @@ export default css`
     --elevation1: ${palette.background};
     --elevation2: ${palette.background};
 
-    --ifm-background-color: ${palette.background};
-    --ifm-color-secondary-contrast-background: ${palette.secondary};
-    --ifm-color-primary-dark: rgb(0, 82, 255);
-    --ifm-color-primary-darker: rgb(0, 62, 193);
-    --ifm-color-primary-darkest: rgb(0, 24, 77);
-    --ifm-color-primary-light: rgb(70, 132, 255);
-    --ifm-color-primary-lighter: rgb(115, 162, 255);
-    --ifm-color-primary-lightest: rgb(176, 202, 255);
+    --ifm-background-color: ${palette.background} !important;
+    --ifm-color-secondary-contrast-background: ${palette.secondary} !important;
+    --ifm-color-primary-dark: rgb(0, 82, 255) !important;
+    --ifm-color-primary-darker: rgb(0, 62, 193) !important;
+    --ifm-color-primary-darkest: rgb(0, 24, 77) !important;
+    --ifm-color-primary-light: rgb(70, 132, 255) !important;
+    --ifm-color-primary-lighter: rgb(115, 162, 255) !important;
+    --ifm-color-primary-lightest: rgb(176, 202, 255) !important;
 
-    --ifm-scrollbar-track-background-color: ${palette.transparent};
-    --ifm-scrollbar-thumb-background-color: ${palette.backgroundAlternate};
-    --ifm-scrollbar-thumb-hover-background-color: ${palette.backgroundAlternate};
+    --ifm-scrollbar-track-background-color: ${palette.transparent} !important;
+    --ifm-scrollbar-thumb-background-color: ${palette.backgroundAlternate} !important;
+    --ifm-scrollbar-thumb-hover-background-color: ${palette.backgroundAlternate} !important;
   }
 
   :root[data-theme='dark'] {
@@ -120,18 +120,18 @@ export default css`
     --elevation1: rgba(20, 21, 25, 1);
     --elevation2: rgba(30, 32, 37, 1);
 
-    --ifm-background-color: ${palette.background};
-    --ifm-color-primary-dark: rgb(87, 139, 250);
-    --ifm-color-primary-darker: rgb(132, 170, 253);
-    --ifm-color-primary-darkest: rgb(185, 207, 255);
-    --ifm-color-primary-light: rgb(10, 72, 206);
-    --ifm-color-primary-lighter: rgb(5, 59, 177);
-    --ifm-color-primary-lightest: rgb(1, 42, 130);
-    --ifm-color-secondary-contrast-background: var(--elevation1);
+    --ifm-background-color: ${palette.background} !important;
+    --ifm-color-primary-dark: rgb(87, 139, 250) !important;
+    --ifm-color-primary-darker: rgb(132, 170, 253) !important;
+    --ifm-color-primary-darkest: rgb(185, 207, 255) !important;
+    --ifm-color-primary-light: rgb(10, 72, 206) !important;
+    --ifm-color-primary-lighter: rgb(5, 59, 177) !important;
+    --ifm-color-primary-lightest: rgb(1, 42, 130) !important;
+    --ifm-color-secondary-contrast-background: var(--elevation1) !important;
 
-    --ifm-scrollbar-track-background-color: ${palette.transparent};
-    --ifm-scrollbar-thumb-background-color: ${palette.backgroundAlternate};
-    --ifm-scrollbar-thumb-hover-background-color: ${palette.backgroundAlternate};
+    --ifm-scrollbar-track-background-color: ${palette.transparent} !important;
+    --ifm-scrollbar-thumb-background-color: ${palette.backgroundAlternate} !important;
+    --ifm-scrollbar-thumb-hover-background-color: ${palette.backgroundAlternate} !important;
   }
 
   /* Navbar */
@@ -169,8 +169,8 @@ export default css`
 
   /* TODO - finish mapping all admonitions to cds colors */
   .alert--warning {
-    --ifm-alert-background-color: ${red0};
-    --ifm-alert-foreground-color: ${red60};
+    --ifm-alert-background-color: ${red0} !important;
+    --ifm-alert-foreground-color: ${red60} !important;
   }
 
   /* Sidebar https://docusaurus.io/docs/next/styling-layout#theme-class-names */
@@ -183,7 +183,7 @@ export default css`
   }
 
   .theme-doc-sidebar-menu {
-    margin-right: calc(var(--ifm-global-spacing) * -1);
+    margin-right: calc(var(--ifm-global-spacing) * -1) !important;
   }
 
   /* To get search in navbar to appear to the left of dark mode toggle */
@@ -201,12 +201,12 @@ export default css`
       This will match the doc's id in sidebars.js.
     */
   .docs-doc-id-home\\/home {
-    --ifm-container-width-xl: 100%;
+    --ifm-container-width-xl: 100% !important;
   }
 
   .docs-doc-id-home\\/home main {
-    --ifm-spacing-horizontal: 0;
-    --ifm-spacing-vertical: 0;
+    --ifm-spacing-horizontal: 0 !important;
+    --ifm-spacing-vertical: 0 !important;
   }
 
   .docs-doc-id-home\\/home main .container {
@@ -247,7 +247,7 @@ export default css`
     color: unset;
     margin: unset;
     position: relative;
-    scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
+    scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem) !important;
     isolation: isolate;
 
     & .hash-link {
@@ -283,7 +283,7 @@ export default css`
   }
 
   .landing-page {
-    button {
+    & button {
       width: fit-content;
     }
 

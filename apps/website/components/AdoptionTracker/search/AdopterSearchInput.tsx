@@ -1,5 +1,3 @@
-import './ant-styles.css';
-
 import React, { memo, useCallback, useContext, useState } from 'react';
 import { Select, Tag } from 'antd';
 import { CustomTagProps } from 'rc-select/lib/interface/generator';
