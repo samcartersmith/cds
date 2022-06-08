@@ -6,6 +6,8 @@ import { a11yReport } from ':cds-website/data/a11yReport';
 
 import { A11yReportDetails } from './A11yReportDetails';
 
+type List = readonly { count: number }[];
+const getCount = (list: List) => list.reduce((prev, { count = 0 }) => prev + Number(count), 0);
 const tabs = [
   {
     id: 'all',
@@ -14,28 +16,22 @@ const tabs = [
   {
     id: 'critical',
     label: 'Critical issues',
-    count: a11yReport.report.filter((report) =>
-      report.violations.some(({ impact }) => impact === 'critical'),
-    ).length,
+    count: getCount(a11yReport.critical),
   },
   {
     id: 'serious',
     label: 'Serious issues',
-    count: a11yReport.report.filter((report) =>
-      report.violations.some(({ impact }) => impact === 'serious'),
-    ).length,
+    count: getCount(a11yReport.serious),
   },
   {
     id: 'moderate',
     label: 'Moderate issues',
-    count: a11yReport.report.filter((report) =>
-      report.violations.some(({ impact }) => impact === 'moderate'),
-    ).length,
+    count: getCount(a11yReport.moderate),
   },
-];
+].filter((tab) => tab.id === 'all' || (tab.count ?? 0) > 0);
+
 export const A11yReportOverview = memo(() => {
   const [value, setValue] = useState<string>(tabs[0].id);
-
   return (
     <ThemeProvider>
       <TabNavigation value={value} tabs={tabs} onChange={setValue} spacingBottom={3} />

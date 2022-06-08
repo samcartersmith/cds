@@ -11,8 +11,8 @@ export default {
 } as Meta;
 
 const cellSpacing = {
-  outer: { spacingVertical: 0, spacingHorizontal: 0 },
-  inner: { spacingVertical: 0 },
+  outer: { spacingVertical: 0, spacingHorizontal: 2 },
+  inner: { spacingVertical: 0, spacingHorizontal: 0 },
 } as const;
 
 export const CellSpacing: Story = () => {
