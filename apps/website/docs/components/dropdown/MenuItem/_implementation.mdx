@@ -3,6 +3,19 @@ import { Badge } from ':cds-website/components/Badge';
 
 ## Props
 
+### accessibilityLabel <Badge variant="web" />
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
 ### disableCloseOnOptionChange <Badge variant="web" />
 
 Prevent menu from closing when an option is selected
@@ -53,6 +66,19 @@ Necessary to control roving tabindex for accessibility https://www.w3.org/TR/wai
   defaultValue=""
   mobileOptions={[]}
   webOptions={['number']}
+/>
+
+### testID <Badge variant="web" />
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
 />
 
 ### to <Badge variant="web" />

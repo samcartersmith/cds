@@ -1,6 +1,8 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useCallback } from 'react';
 import { css } from 'linaria';
 import { SharedProps } from '@cbhq/cds-common';
+import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
+import { ComponentEventHandlerProps } from '@cbhq/cds-common/types/ComponentEventHandlerProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
 import { cx } from '../utils/linaria';
@@ -47,6 +49,7 @@ export type PressableProps = {
 } & React.AriaAttributes &
   SharedProps &
   LinkableProps &
+  ComponentEventHandlerProps &
   Omit<SharedAccessibilityProps, 'id'>;
 
 export type PressableInternalProps = {
@@ -72,6 +75,7 @@ export const Pressable = forwardRef(function Pressable(
     onKeyPress,
     noScaleOnPress,
     tabIndex,
+    eventConfig,
     ...props
   }: PressableInternalProps,
   ref: React.Ref<Element>,
@@ -89,12 +93,21 @@ export const Pressable = forwardRef(function Pressable(
     }
   }
 
+  const onEventHandler = useEventHandler('Button', 'onPress', eventConfig);
+  const onClick = useCallback(
+    (event: React.MouseEvent) => {
+      onPress?.(event);
+      onEventHandler();
+    },
+    [onPress, onEventHandler],
+  );
+
   return (
     <Interactable
       aria-busy={loading}
       aria-disabled={isDisabled}
       as={as ?? ButtonOrLink}
-      onClick={onPress}
+      onClick={onClick}
       onKeyPress={onKeyPress}
       {...props}
       className={cx(!noScaleOnPress && scaledDownState, className, resetStyles)}

@@ -3,6 +3,73 @@ import { Badge } from ':cds-website/components/Badge';
 
 ## Props
 
+### accessibilityDescriptionId <Badge variant="web" />
+
+Used to associate descriptive text to an input for accessibility
+
+<ApiDetails
+  componentName="Sidebar"
+  propertyName="accessibilityDescriptionId"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### accessibilityHint <Badge variant="web" />
+
+Accessibility hint for assisted devices when focused. Message should indicate the purpose of the control. If not supplied, will default to label
+
+<ApiDetails
+  componentName="Sidebar"
+  propertyName="accessibilityHint"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### accessibilityLabel <Badge variant="web" />
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="Sidebar"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### accessibilityLabelId <Badge variant="web" />
+
+Used to associate a label with an input for accessibility
+
+<ApiDetails
+  componentName="Sidebar"
+  propertyName="accessibilityLabelId"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="Sidebar"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
 ### autoCollapse <Badge variant="web" />
 
 When set, the sidebar will auto collapse at or below the tablet breakpoint (currently 768px)
@@ -49,6 +116,19 @@ Use collapsed to show only the logo
   defaultValue="false"
   mobileOptions={[]}
   webOptions={['false', 'true']}
+/>
+
+### id <Badge variant="web" />
+
+Used for a11y to indicate the relationship between a controlled element and its controller eg: a Button that controls the visibility of a Modal
+
+<ApiDetails
+  componentName="Sidebar"
+  propertyName="id"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
 />
 
 ### logo <Badge variant="web" />
