@@ -20,6 +20,7 @@ export const ModalBody: React.FC<ModalBodyProps> = ({
       spacingVertical={hideDividers ? 0 : 3}
       flexGrow={1}
       overflow="auto"
+      tabIndex={0}
       flexDirection={flexDirection}
       {...props}
     >
