@@ -33,6 +33,30 @@ import { Link } from '../Link';
   </Story>
 </Canvas>
 
+## Underline
+
+<Canvas isColumn withToolbar>
+  <Story name="Underline" decorators={[withStoryLabel('Underline')]}>
+    <div>
+      <Link underline to="https://www.google.com/">
+        Default
+      </Link>
+      <br />
+      <Link underline onClick={() => {}}>
+        As a button
+      </Link>
+      <br />
+      <Link underline variant="body" to="https://www.google.com/">
+        Body
+      </Link>
+      <br />
+      <Link underline variant="headline" to="https://www.google.com/" color="negative">
+        Negative
+      </Link>
+    </div>
+  </Story>
+</Canvas>
+
 ## Nested with other Components
 
 <Canvas isColumn withToolbar>
