@@ -1,0 +1,2 @@
+#!/bin/bash
+concurrently "yarn workspace @cbhq/docusaurus-plugin-docgen watch" "yarn workspace @cbhq/docusaurus-plugin-kbar watch" "yarn workspace @cbhq/docusaurus-theme watch" "yarn workspace @cbhq/docusaurus-preset watch"

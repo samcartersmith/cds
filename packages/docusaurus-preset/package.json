@@ -10,7 +10,7 @@
   "authors": "Coinbase",
   "scripts": {
     "build": "yarn docusaurus-plugin build",
-    "watch": "yarn docusaurus-plugin watch",
+    "watch": "yarn docusaurus-plugin build && yarn docusaurus-plugin watch",
     "test": "jest"
   },
   "dependencies": {

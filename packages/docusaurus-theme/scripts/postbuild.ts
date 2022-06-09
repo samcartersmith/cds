@@ -39,10 +39,4 @@ void (async function buildCss() {
       const dest = path.join(destDir, 'css/styles.css');
       await fs.promises.writeFile(dest, result.css, writeConfig);
     });
-
-  cssFiles.forEach((file) => {
-    const fileWithoutExt = file.replace(path.extname(file), '');
-    const destFile = path.join(destDir, path.relative(srcDir, `${fileWithoutExt}.js`));
-    fs.rmSync(destFile);
-  });
 })();
