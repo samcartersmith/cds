@@ -8,7 +8,7 @@ import { AnimatedCaret } from '../AnimatedCaret';
 
 export default {
   component: AnimatedCaret,
-  title: 'Core Components/AnimatedCaret',
+  title: 'Core Components/Motion/AnimatedCaret',
 };
 
 export const BasicAnimatedCaret = () => {

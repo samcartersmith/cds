@@ -2,9 +2,9 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from 'linaria';
 import { BorderWidth, ForwardedRef } from '@cbhq/cds-common';
+import { durations } from '@cbhq/cds-common/motion/tokens';
 import { inputStackGap } from '@cbhq/cds-common/tokens/input';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
-import { durations } from '@cbhq/cds-common/tokens/motion';
 import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
 
 import { usePalette } from '../hooks/usePalette';

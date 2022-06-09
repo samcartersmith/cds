@@ -7,12 +7,12 @@ import {
   drawerAnimationDefaultDuration,
   MAX_OVER_DRAG,
 } from '@cbhq/cds-common/animation/drawer';
+import { durations } from '@cbhq/cds-common/motion/tokens';
 import {
   handleBarOffset,
   horizontalDrawerPercentageOfView,
   verticalDrawerPercentageOfView,
 } from '@cbhq/cds-common/tokens/drawer';
-import { durations } from '@cbhq/cds-common/tokens/motion';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 

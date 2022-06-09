@@ -9,7 +9,7 @@ import {
   paddleHidden,
   paddleVisible,
 } from '@cbhq/cds-common/animation/paddle';
-import { durations } from '@cbhq/cds-common/tokens/motion';
+import { durations } from '@cbhq/cds-common/motion/tokens';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { IconButton } from '../buttons/IconButton';

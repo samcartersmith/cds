@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Animated, LayoutRectangle } from 'react-native';
-import { durations } from '@cbhq/cds-common/tokens/motion';
+import { durations } from '@cbhq/cds-common/motion/tokens';
 
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 
