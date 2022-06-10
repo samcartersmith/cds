@@ -256,8 +256,8 @@ function SparklineInteractiveWithGeneric<Period extends string>({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const resizeHandler = useCallback(
     debounce(() => {
+      // no resizing on percy
       if (!isStorybook()) {
-        // no resizing on percy
         setResizeKey((prev) => prev + 1);
       }
     }, 300),
