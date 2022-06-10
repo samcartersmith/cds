@@ -106,3 +106,37 @@ export async function getFileSizeInKb(filePath: string): Promise<number> {
     });
   });
 }
+
+export async function compressCssFile(context: ExecutorContext, filePath: string) {
+  await runLocalCommand(
+    context,
+    'parcel-css',
+    [
+      '--minify',
+      filePath,
+      '-o',
+      filePath,
+    ],
+    {},
+    context.root,
+  );
+
+  await runLocalCommand(
+    context,
+    'postcss',
+    [filePath, '--output', filePath, '--env', 'production'],
+    {},
+    context.root,
+  );
+}
+
+export async function compressCssFiles(context: ExecutorContext, filePaths: string[]) {
+  const promises = [];
+  for (const filePath of filePaths) {
+    promises.push(compressCssFile(context, filePath));
+  }
+
+  await Promise.all(promises);
+
+  return true;
+}
