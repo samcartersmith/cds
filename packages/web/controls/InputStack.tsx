@@ -22,6 +22,10 @@ const inputBaseAreaStyles = css`
     display: flex;
     min-width: 0;
     flex-grow: 2;
+
+    /* When input is disabled, opacity 0.38 was applied twice. One time on the root VStack, and second time in interactable. As a result, it was not a11y compliant. To resolve this issue, i had to put an opacity of 1 override in the interactable element. */
+    opacity: 1;
+
     border-color: var(--border-color-unfocused);
     /* stylelint-disable plugin/no-low-performance-animation-properties */
     transition: box-shadow ${durations.moderate1}ms ease-in-out;
@@ -125,11 +129,17 @@ export const InputStack = memo(
     }, [variant, palette, borderColorFocused, borderWidth, inputBorderRadius]);
 
     return (
-      <VStack testID={testID} width={width} gap={inputStackGap} {...props}>
+      <VStack
+        testID={testID}
+        width={width}
+        gap={inputStackGap}
+        opacity={disabled ? opacityDisabled : 1}
+        {...props}
+      >
         {!!labelNode && (
           <>{typeof labelNode === 'string' ? <InputLabel>{labelNode}</InputLabel> : labelNode}</>
         )}
-        <HStack opacity={disabled ? opacityDisabled : 1}>
+        <HStack>
           {!!prependNode && <>{prependNode}</>}
           <div className={inputAreaContainerStyles}>
             <Interactable
@@ -138,9 +148,9 @@ export const InputStack = memo(
               borderWidth={borderWidth}
               ref={ref}
               height={height}
+              disabled={disabled}
               testID="input-interactable-area"
               borderRadius={borderRadius}
-              disabled={disabled}
               style={defaultBorderStyles}
               className={cx(inputBaseAreaStyles, focused && persistedFocusStyles)}
             >
