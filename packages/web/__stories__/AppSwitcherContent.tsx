@@ -105,7 +105,11 @@ export const AppSwitcherContent = memo(
         {data.sections.map((section, idx) => {
           return (
             <>
-              <AppSwitcherContentSection data={section} columns={columns} />
+              <AppSwitcherContentSection
+                key={section.sectionTitle}
+                data={section}
+                columns={columns}
+              />
               {data.sections.length - 1 !== idx && <Divider spacingVertical={1} />}
             </>
           );

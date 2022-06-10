@@ -1,0 +1,65 @@
+import UseThemeProvider from ':cds-website/docs/hooks/useThemeProviderStyles/_usage.mdx';
+
+Add the following to the root of your React application.
+
+- [DevicePreferencesProvider](/components/device-preferences-provider) is optional. It will sync the spectrum and scale based on device settings.
+- [ThemeProvider](/components/theme-provider) is required and is responsible for handling colors and scale (font-sizes, spacing, etc).
+- PortalProvider is required if you use any portal related components such as Modal, Alert, Dropdown, etc.
+- [FeatureFlagProvider](/components/feature-flag-provider) is optional, but is likely going to be needed if you want to have access to a new brand update. We use the FeatureFlagProvider as way to rollout large updates through an opt-in model to avoid unexpected & disruptive changes. This Provider has no integration with any experimentation framework or backend. It's a very primitive, boolean based Provider to conditionally do something if a certain prop is present.
+
+```tsx
+import { DevicePreferencesProvider } from '@cbhq/cds-web/system/DevicePreferencesProvider';
+import { FeatureFlagProvider } from '@cbhq/cds-web/system/FeatureFlagProvider';
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
+import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
+
+function App() {
+  return (
+    <FeatureFlagProvider>
+      <DevicePreferencesProvider>
+        // ThemeProvider must be a child of FeatureFlagProvider & DevicePreferencesProvider.
+        <ThemeProvider>
+          // PortalProvider must be a child of ThemeProvider
+          <PortalProvider>
+            <ErrorBoundary>
+              <AppRoutes />
+            </ErrorBoundary>
+          </PortalProvider>
+        </ThemeProvider>
+      </DevicePreferencesProvider>
+    </FeatureFlagProvider>
+  );
+}
+```
+
+## ThemeProvider
+
+See the [ThemeProvider](/components/theme-provider) component page for more details.
+
+:::note
+
+The ThemeProvider component will add a div to the root of your app with default div styles.
+
+If this is not desired you can use [display prop](#disaply-prop) or [useThemeProviderStyles](#usethemeproviderstyles) hook.
+
+:::
+
+### display prop
+
+Uses the CSS display: contents property to avoid applying block level styles.
+
+```tsx
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
+
+function App() {
+  return (
+    <ThemeProvider display="contents">
+      <AppRoutes />
+    </ThemeProvider>
+  );
+}
+```
+
+### useThemeProviderStyles
+
+<UseThemeProvider />

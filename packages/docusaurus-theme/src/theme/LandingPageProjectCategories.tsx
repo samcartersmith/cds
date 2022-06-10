@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import type { LandingPageProjectCategoriesProps } from '@theme/LandingPageProjectCategories';
-import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { HStack } from '@cbhq/cds-web/layout/HStack';
@@ -12,9 +11,8 @@ const LandingPageProjectCategories = memo(function LandingPageProjectCategories(
   label,
   items: categoryItems,
 }: LandingPageProjectCategoriesProps) {
-  const isDarkMode = useSpectrum() === 'dark';
   return (
-    <HStack minHeight={600} borderedBottom={isDarkMode}>
+    <HStack minHeight={600}>
       <Box spacing={gutter} width="50%" borderedEnd>
         <h3 className="project-categories-title">{label}</h3>
       </Box>

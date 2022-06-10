@@ -19,7 +19,7 @@ declare module '@theme/LandingPage' {
     LandingPageAnnouncementsProps &
       LandingPageFocusAreasProps & {
         title?: string;
-        quickLinks?: import('@theme/PressableColorBlock').PressableColorBlockProps[];
+        quickLinks?: import('@theme/LandingPageQuickLink').LandingPageQuickLinkProps[];
         categories: LandingPageProjectCategoriesProps[];
       }
   >;
@@ -73,22 +73,19 @@ declare module '@theme/LandingPageAnnouncements' {
   ): JSX.Element;
 }
 
-declare module '@theme/PressableColorBlock' {
+declare module '@theme/LandingPageQuickLink' {
   type SpacingScale = import('@cbhq/cds-common/types').SpacingScale;
-  type Spectrum = import('@cbhq/cds-common/types').Spectrum;
   type BoxProps = import('@cbhq/cds-web/layout/Box').BoxProps;
 
-  export type PressableColorBlockProps = {
+  export type LandingPageQuickLinkProps = {
     href?: string;
     onPress?: import('@cbhq/cds-web/system/Pressable').OnPress;
-    preset: import('@theme/ThemeProviderPreset').ThemePreset;
-    spectrum?: Spectrum;
     caption?: string;
     title: string;
     gap?: SpacingScale;
   } & BoxProps;
 
-  export default function PressableColorBlock(props: PressableColorBlockProps): JSX.Element;
+  export default function LandingPageQuickLink(props: LandingPageQuickLinkProps): JSX.Element;
 }
 
 declare module '@theme/LandingPageFocusAreaItem' {
@@ -393,23 +390,6 @@ declare module '@theme/Calendar' {
 /* -------------------------------------------------------------------------- */
 /*                                   Theming                                  */
 /* -------------------------------------------------------------------------- */
-
-declare module '@theme/ThemeProviderPreset' {
-  type CustomThemeComponentType = import('@theme/createCustomTheme').CustomThemeComponentType;
-  type SpectrumHue = import('@cbhq/cds-common/types').SpectrumHue | 'black';
-  export type ThemePresets = {
-    [key in SpectrumHue]?: CustomThemeComponentType;
-  };
-  export type ThemePreset = import('@cbhq/cds-web').Expand<keyof ThemePresets>;
-  export type ThemeProviderPresetProps = import('@cbhq/cds-web').Expand<
-    {
-      preset: ThemePreset;
-      children?: import('react').ReactNode;
-    } & import('@cbhq/cds-web/system/ThemeProvider').ThemeProviderProps
-  >;
-
-  export default function ThemeProviderPreset(props: ThemeProviderPresetProps): JSX.Element;
-}
 
 declare module '@theme/createCustomTheme' {
   type PartialPaletteConfig = import('@cbhq/cds-common').PartialPaletteConfig;

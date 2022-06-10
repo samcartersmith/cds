@@ -1,18 +1,10 @@
-<br />
-
 This page demonstrates the recipes that CDS recommends consumers adopt in order to build out a User Switcher component.
 
 These Recipes are intentionally NOT API-driven and simply serve as guidance on how to create a User Switcher. It is a product team's responsibility to turn these recipes into reusable components.
 
-<br />
-
 We have also added demo data to show a more realistic example; note that this is for demo purposes only, we anticipate the consumer will need to modify the content component to work with Relay/GraphQL.
 
-<br />
-
-## CDS Components
-
-<br />
+## Anatomy
 
 The User Switcher recipe is composed of the following CDS components:
 
@@ -22,24 +14,15 @@ The User Switcher recipe is composed of the following CDS components:
 - [Collapsible](/components/collapsible)
 - [CollapseArrow](/components/collapse-arrow)
 
-<br />
-
 Some key details about the abstractions in this recipe:
 
-<br />
+- Dropdown
 
-Dropdown
+  - Dropdown contains the prescriptive layout/overlay logic shared between App and UserSwitcher.
 
-- Dropdown contains the prescriptive layout/overlay logic shared between App and UserSwitcher.
-
-<br />
-
-UserSwitcherContent
-
-- This is a component that was built for demonstration purposes only.
-- CDS will not expose a component like this, however we expect Identity will implement a product component very similar to this.
-
-<br />
+- UserSwitcherContent
+  - This is a component that was built for demonstration purposes only.
+  - CDS will not expose a component like this, however we expect Identity will implement a product component very similar to this.
 
 ```jsx live
 function UserSwitcherRecipe({
@@ -91,20 +74,12 @@ function UserSwitcherRecipe({
 }
 ```
 
-<br />
-
-## UserSwitcherContent Recipe
-
-<br />
+## Recipe
 
 Above we encapsulated the content code into a component to cleanly demonstrate the high level architecture of the UserSwitcher Recipe.
 
-<br />
-
 The below example is meant to expose the `UserSwitcherContent` Recipe because we have no intention of exposing the `UserSwitcherContent` component.
 `UserSwitcherContent` was simply built out for demonstration purposes and we expect it will be different when consumers implement it with GraphQL etc.
-
-<br />
 
 ```jsx live
 function UserSwitcherContentExample() {

@@ -13,15 +13,11 @@ export default {
       caption: 'Getting started',
       title: 'For Designers',
       href: '/cds/getting-started',
-      preset: 'yellow',
-      spectrum: 'light',
     },
     {
       caption: 'Getting started',
       title: 'For Engineers',
       href: '/cds/getting-started',
-      preset: 'orange',
-      spectrum: 'light',
     },
   ],
   focusAreas: [

@@ -1,29 +1,22 @@
 ---
-title: AppSwitcher
+title: App Switcher
 slug: /recipes/app-switcher
 ---
 
-import { RecipeTabs } from ':cds-website/components/Recipes/RecipeTabs';
-
-import Design from './design.mdx';
-import Implementation from './implementation.mdx';
+import Design, { toc as designToc } from './design.mdx';
+import Implementation, { toc as implementationToc } from './implementation.mdx';
 
 import { AppSwitcherExample } from './Example';
 
-<VStack spacingVertical={2} gap={2}>
-  <AppSwitcherExample />
-</VStack>
-<RecipeTabs
-  values={[
-    {
-      label: 'Design',
-      id: 'design',
-      content: <Design />,
-    },
-    {
-      label: 'Implementation',
-      id: 'implementation',
-      content: <Implementation />,
-    },
-  ]}
-/>
+App Switcher is a global component that lives in the Navigation Header that enables users to switch between all Coinbase products without having to log in again.
+
+<AppSwitcherExample />
+
+<Tabs groupId="page" defaultTab="implementation">
+  <TabItem value="guidelines" label="Guidelines" toc={designToc}>
+    <Design />
+  </TabItem>
+  <TabItem value="implementation" label="Implementation" toc={implementationToc}>
+    <Implementation />
+  </TabItem>
+</Tabs>

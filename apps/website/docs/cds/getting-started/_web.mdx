@@ -1,0 +1,30 @@
+import Npmrc from './_npmrc.mdx';
+import Providers, { toc as providersToc } from './_providers-web.mdx';
+
+export const tocOverride = [...toc, ...providersToc];
+
+## Web
+
+If your web environment has a css-loader for node_modules.
+
+### Setup
+
+<Npmrc />
+
+### Install
+
+```bash
+yarn add @cbhq/cds-web@^0.40.4
+```
+
+### Add root imports
+
+```tsx
+// This includes font face declarations and focus-visible polyfill & has side-effects.
+// This should go at top of app entry before CDS components.
+import '@cbhq/cds-web/globalStyles';
+```
+
+### Add providers
+
+<Providers />

@@ -1,0 +1,29 @@
+import Npmrc from './_npmrc.mdx';
+import Providers, { toc as providersToc } from './_providers-web.mdx';
+
+export const tocOverride = [...toc, ...providersToc];
+
+## Web ESM
+
+If your web environment does not have a css loader for node_modules (nextjs, Remix etc.)
+
+### Setup
+
+<Npmrc />
+
+### Install
+
+```bash
+yarn add @cbhq/cds-web@^0.40.4-esm.0
+```
+
+### Add root imports
+
+```tsx
+import '@cbhq/cds-web/assets/main.css'; // This will load all styles that are necessary for CDS.
+import '@cbhq/cds-web/globalImports'; // This will load the focus-visible polyfill.
+```
+
+### Add providers
+
+<Providers />

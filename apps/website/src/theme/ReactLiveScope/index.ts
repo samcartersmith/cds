@@ -72,6 +72,7 @@ import * as CDSSystem from '@cbhq/cds-web/system';
 import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
 import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
+import { useThemeProviderStyles } from '@cbhq/cds-web/system/useThemeProviderStyles';
 import * as CDSTables from '@cbhq/cds-web/tables';
 import * as CDSTabs from '@cbhq/cds-web/tabs';
 import { Tag } from '@cbhq/cds-web/tag/Tag';
@@ -149,6 +150,7 @@ const ReactLiveScope: unknown = {
   useFeatureFlags,
   useFeatureFlag,
   useFeatureFlagUpdater,
+  useThemeProviderStyles,
   useAlert,
   useOverlay,
   useToast,

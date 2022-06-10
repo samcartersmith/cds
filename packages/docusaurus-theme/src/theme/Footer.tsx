@@ -14,7 +14,7 @@ const Footer = memo(function Footer() {
   if (isSimpleFooter(footer)) {
     return (
       <ThemeProvider spectrum="dark" display="contents">
-        <HStack spacingBottom={4} background>
+        <HStack spacingBottom={4} background borderedTop>
           <Box width="calc(var(--doc-sidebar-width) + var(--spacing-8))" />
           <HStack
             minHeight={180}

@@ -25,7 +25,6 @@ module.exports = {
     navbar: {
       // We only want to show the logo with no text so we have to set to empty string.
       title: '',
-      hideOnScroll: true,
       logo: {
         alt: 'Coinbase',
         src: 'img/logo.svg',

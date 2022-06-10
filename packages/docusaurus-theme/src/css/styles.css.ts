@@ -1,7 +1,7 @@
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { borderRadius, palette, spacing } from '@cbhq/cds-web/tokens';
 import { paletteValueToCssVar } from '@cbhq/cds-web/utils/palette';
 
+import { TOKENS } from '../theme/tokens';
 import css from '../utils/css';
 
 import { baseVariables, darkVariables, lightVariables } from './variables';
@@ -74,11 +74,7 @@ export default css`
     --ifm-tabs-color-active: ${palette.primary} !important;
     --ifm-tabs-color-active-border: ${palette.primary} !important;
 
-    --ifm-code-font-size: 95% !important;
-    --ifm-code-border-radius: ${borderRadius.roundedSmall} !important;
-
     --ifm-badge-border-radius: ${borderRadius.roundedLarge} !important;
-    --ifm-heading-margin-bottom: ${spacing[2]} !important;
 
     --ifm-alert-border-color: ${palette.transparent} !important;
     --ifm-alert-border-width: 1px !important;
@@ -88,7 +84,9 @@ export default css`
     --ifm-alert-padding-horizontal: ${spacing[3]} !important;
     --ifm-alert-shadow: none !important;
 
-    --ifm-list-left-padding: ${spacing[1]} !important;
+    --ifm-list-left-padding: ${spacing[2]};
+    --ifm-paragraph-margin-bottom: unset !important;
+    --ifm-heading-margin-bottom: unset !important;
 
     /* Search bar */
     --search-input-height: 61px;
@@ -227,10 +225,37 @@ export default css`
     color: ${palette.foregroundMuted};
   }
 
+  /* Text paragraphs with links should be underlined */
+  p > a {
+    --ifm-link-decoration: underline;
+  }
+
+  .alert {
+    --ifm-code-background: ${palette.background} !important;
+
+    /* Alerts with links should always match primary styles */
+    & a {
+      color: ${palette.primary};
+      text-decoration-color: ${palette.primary} !important;
+    }
+
+    & code {
+      background: none;
+      border: none;
+      font-weight: 500;
+      color: ${palette.foreground};
+    }
+  }
+
   /* TODO - finish mapping all admonitions to cds colors */
   .alert--warning {
     --ifm-alert-background-color: ${red0} !important;
     --ifm-alert-foreground-color: ${red60} !important;
+    --ifm-alert-border-color: ${red60} !important;
+  }
+
+  .theme-doc-sidebar-container a:hover {
+    text-decoration: initial;
   }
 
   /* Sidebar https://docusaurus.io/docs/next/styling-layout#theme-class-names */
@@ -271,11 +296,6 @@ export default css`
 
   .docs-doc-id-home\\/home main .container {
     padding-bottom: 0 !important;
-  }
-
-  /* Anchor links */
-  a:hover {
-    text-decoration: initial;
   }
 
   .footer-link {
@@ -342,6 +362,10 @@ export default css`
     direction: ltr;
   }
 
+  .markdown h1:first-child {
+    margin-bottom: ${spacing[TOKENS.docItem.spacingVertical]};
+  }
+
   .landing-page {
     & button {
       width: fit-content;
@@ -352,11 +376,11 @@ export default css`
       font-weight: 700;
       font-size: 90px;
       line-height: 83px;
-      max-width: 670px;
+      max-width: 720px;
       color: var(--foreground);
-      padding-left: var(--spacing-${gutter});
-      padding-top: var(--spacing-6);
-      padding-bottom: var(--spacing-6);
+      padding: ${spacing[TOKENS.docItem.spacingVertical]}
+        ${spacing[TOKENS.docItem.spacingHorizontal]};
+      margin: 0;
     }
 
     & .project-categories-title {
@@ -383,5 +407,28 @@ export default css`
         width: 100%;
       }
     }
+  }
+
+  .row .col {
+    &:nth-child(2) {
+      padding-left: ${spacing[4]};
+    }
+  }
+
+  /* We handle using CDS spacing in DocItem with Box wrapper  */
+  .row > div[class*='docItemCol_'] {
+    padding: 0;
+  }
+
+  main[class*='docMainContainer_'] > .container {
+    padding-top: ${spacing[TOKENS.docItem.spacingVertical]} !important;
+  }
+
+  .markdown li:nth-child(1) > p {
+    margin-top: 0;
+  }
+
+  ul ul {
+    margin-top: ${spacing[1]};
   }
 `;

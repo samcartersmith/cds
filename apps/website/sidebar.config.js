@@ -90,7 +90,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          id: 'cds/getting-started',
+          id: 'cds/getting-started/getting-started',
           customProps: {
             kbar: { description: 'A checklist of everything you need to get up and running.' },
           },
@@ -736,6 +736,7 @@ module.exports = {
             'hooks/useSpectrumConditional',
             // TODO: 'hooks/useScale',
             'hooks/useScaleConditional',
+            'hooks/useThemeProviderStyles/useThemeProviderStyles',
             'hooks/useAccessibleForeground',
           ],
         },

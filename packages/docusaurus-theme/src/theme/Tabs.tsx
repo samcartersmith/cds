@@ -11,12 +11,12 @@ import React, {
 import { useHistory, useLocation } from '@docusaurus/router';
 import { duplicates, useScrollPositionBlocker, useTabGroupChoice } from '@docusaurus/theme-common';
 import useIsBrowser from '@docusaurus/useIsBrowser';
-import type { Props as TabItemProps } from '@theme/TabItem';
 import type { Props } from '@theme/Tabs';
 import { SpacingScale, TabNavigationProps } from '@cbhq/cds-common';
-import { pascalCase } from '@cbhq/cds-utils';
 import { Spacer, VStack } from '@cbhq/cds-web/layout';
 import { TabNavigation } from '@cbhq/cds-web/tabs';
+
+import type { TabItemProps } from './TabItem';
 
 export type TabProps = Omit<Props, 'groupId'> & {
   gap?: SpacingScale;
@@ -45,7 +45,6 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
     // minification, but we assume it won't throw in prod.
     throw new Error(
       `Docusaurus error: Bad <Tabs> child <${
-        // @ts-expect-error: guarding against unexpected cases
         typeof child.type === 'string' ? child.type : child.type.name
       }>: all children of the <Tabs> component should be <TabItem>, and every <TabItem> should have a unique "value" prop.`,
     );
@@ -149,20 +148,19 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
         onChange={handleTabChange}
         tabs={values.map((item) => ({
           id: item.value,
-          label: pascalCase(item.label ?? item.value),
+          label: item.label ?? item.value,
         }))}
       />
       <Spacer vertical={3} />
-      <VStack gap={gap}>
-        {children
-          .filter((tabItem) => tabItem.props.value === selectedValue)
-          .map((tabItem, i) =>
-            cloneElement(tabItem, {
-              key: i,
-              hidden: tabItem.props.value !== selectedValue,
-            }),
-          )}
-      </VStack>
+      {children
+        .filter((tabItem) => tabItem.props.value === selectedValue)
+        .map((tabItem, i) =>
+          cloneElement(tabItem, {
+            key: i,
+            gap,
+            hidden: tabItem.props.value !== selectedValue,
+          }),
+        )}
     </VStack>
   );
 });

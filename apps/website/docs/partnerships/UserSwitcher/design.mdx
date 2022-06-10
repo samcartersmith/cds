@@ -11,96 +11,48 @@ import mobile from ':cds-website/static/img/recipes/UserSwitcher/mobile.png';
 
 ## Principles
 
-<br />
+### Anchored
 
-<HStack gap={3}>
-  <VStack width="33%">
-    <TextTitle3 as="p">Anchored</TextTitle3>
-    <TextBody as="p">
-      Anchor the user while they are using Coinbase by showing them which account they are logged
-      into at every point in their experience.
-    </TextBody>
-  </VStack>
-  <VStack width="33%">
-    <TextTitle3 as="p">Seamless</TextTitle3>
-    <TextBody as="p">
-      Harmoniously support the navigation between multiple account types, product experiences, and
-      product-specific use cases.
-    </TextBody>
-  </VStack>
-  <VStack width="33%">
-    <TextTitle3 as="p">Connected</TextTitle3>
-    <TextBody as="p">
-      Allow for a cohesive Coinbase experience, where users can shift between their various business
-      and personal accounts in one, unified place.
-    </TextBody>
-  </VStack>
-</HStack>
+Anchor the user while they are using Coinbase by showing them which account they are logged into at every point in their experience.
 
-<br />
+### Seamless
+
+Harmoniously support the navigation between multiple account types, product experiences, and product-specific use cases.
+
+### Connected
+
+Allow for a cohesive Coinbase experience, where users can shift between their various business and personal accounts in one, unified place.
 
 ## Anatomy
 
 UserSwitcher is composed with the following elements.
 
-<br />
-
 <Image src={anatomy} options={{ width: '100%' }} />
-
-<br />
-<br />
 
 ## Placement
 
 On web, User Switcher is anchored below the App Switcher Icon Button that lives in the unified Navigation Bar. It is pinned to the top right corner of the screen.
 
-<br />
-
 <Image src={commerce} options={{ width: '100%' }} />
-
-<br />
-<br />
 
 On Mobile, User Switcher is positioned below the Navigation Bar and centered on the screen.
 
-<br />
-
 <Image src={mobile} />
-
-<br />
-<br />
 
 ## Behavior
 
-<br />
+- Opening and closing
 
-### Opening and closing
+  - When the User Switcher is triggered, a background overlay appears.
+  - User Switcher animates in from the top of the screen.
+  - Selecting an account will close the User Switcher.
 
-<br />
-
-<ul>
-  <li>When the User Switcher is triggered, a background overlay appears.</li>
-  <li>User Switcher animates in from the top of the screen.</li>
-  <li>Selecting an account will close the User Switcher.</li>
-</ul>
-
-<br />
-
-### Scrolling
-
-<br />
-
-<ul>
-  <li>
-    If there are more than three accounts, the Accounts section will clip become a vertical scroll.
-  </li>
-  <li>The active account details (header) and sign out actions (footer) will remain sticky.</li>
-</ul>
+- Scrolling
+  - If there are more than three accounts, the Accounts section will clip become a vertical scroll.
+  - The active account details (header) and sign out actions (footer) will remain sticky.
 
 <VStack width="100%" alignItems="center">
   <VStack width={359}>
     <UserSwitcherContent />
   </VStack>
 </VStack>
-
-<br />
