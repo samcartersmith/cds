@@ -3,8 +3,13 @@ import { mapValues } from '@cbhq/cds-utils/object';
 import { avatarSizes } from './configs/avatarConfig';
 import { borderRadius, borderRadiusDeprecated } from './configs/borderRadius';
 import { borderWidth } from './configs/borderWidth';
+import { displayConfig } from './configs/displayConfig';
+import { flexConfig } from './configs/flexConfig';
+import { gapConfig } from './configs/gapConfig';
 import { gridConfig } from './configs/gridConfig';
+import { responsiveConfig } from './configs/responsiveConfig';
 import { scaleConfig } from './configs/scaleConfig';
+import { visibilityConfig } from './configs/visibilityConfig';
 import { Spectrum } from './Spectrum/Spectrum';
 import { Type } from './Type/Type';
 import { buildTemplates, TemplateMap } from './utils/buildTemplates';
@@ -40,6 +45,10 @@ const web = {
     grid: gridConfig.web,
     margin: Spacing.css('margin'),
     padding: Spacing.css('padding'),
+    responsiveSpacing: responsiveConfig.spacingStyles,
+    responsiveStyles: responsiveConfig.styles,
+    visibility: visibilityConfig.web,
+    display: displayConfig.web,
     scale: mapValues(scaleConfig, (_, scale) => {
       return {
         ...Type.scaleCss[scale],
@@ -49,6 +58,8 @@ const web = {
     }),
     spectrum: Spectrum.web,
     typography: Type.css,
+    gap: gapConfig.web,
+    flex: flexConfig.web,
   },
   tokens: {
     spacing: Spacing.cssVariables,
@@ -128,8 +139,22 @@ async function main() {
           ],
         },
       },
+      {
+        dest: 'web/layout/breakpoints.ts',
+        data: {
+          deviceBreakpoints: responsiveConfig.deviceBreakpoints,
+          deviceMqs: responsiveConfig.deviceMqs,
+          deviceMqRanges: responsiveConfig.deviceMqRanges,
+        },
+      },
     ],
-    'typescript.ejs': [...TypeScript, ...gridConfig.typescript],
+    'typescript.ejs': [
+      ...TypeScript,
+      ...gridConfig.typescript,
+      ...responsiveConfig.typescript,
+      ...displayConfig.typescript,
+      ...visibilityConfig.typescript,
+    ],
   };
 
   // Palette.validate();

@@ -1,6 +1,6 @@
 import { css } from 'linaria';
 
-import { deviceBreakpoints } from '../../layout/responsive';
+import { deviceBreakpoints } from '../../layout/breakpoints';
 import { spacing } from '../../tokens';
 
 // tokens
@@ -32,7 +32,7 @@ export const contentClassName = css`
     width: 100%;
   }
 
-  @media only screen and (min-width: ${deviceBreakpoints.phoneLarge}px) {
+  @media only screen and (min-width: ${deviceBreakpoints.phoneLandscape}px) {
     margin-left: ${spacingStartSmall}px;
 
     .${primaryContentContainerClassName} {
@@ -75,7 +75,7 @@ export const headerClassName = css`
     display: flex;
   }
 
-  @media only screen and (min-width: ${deviceBreakpoints.phoneLarge}px) {
+  @media only screen and (min-width: ${deviceBreakpoints.phoneLandscape}px) {
     .${headerLogoClassName} {
       display: flex;
       width: ${spacingStartSmall}px;

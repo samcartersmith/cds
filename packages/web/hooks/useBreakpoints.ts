@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
+import { DeviceBreakpoint } from '@cbhq/cds-common/types';
 
-import { DeviceBreakpoint, deviceMqRanges } from '../layout/responsive';
+import { deviceMqRanges } from '../layout/breakpoints';
 import { getBrowserGlobals } from '../utils/browser';
 
 type BreakpointRecord = Record<string, boolean>;
 
 const booleanDeviceNames: Record<DeviceBreakpoint, string> = {
   phone: 'isPhone',
-  phoneLarge: 'isPhoneLarge',
+  phoneLandscape: 'isPhoneLandscape',
   tablet: 'isTablet',
   tabletLandscape: 'isTabletLandscape',
   desktop: 'isDesktop',

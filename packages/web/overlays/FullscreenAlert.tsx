@@ -5,7 +5,7 @@ import type { AlertActionsBaseProps, IllustrationHeroSquareNames } from '@cbhq/c
 import { Button } from '../buttons';
 import { HeroSquare } from '../illustrations';
 import { Box, VStack } from '../layout';
-import { deviceBreakpoints } from '../layout/responsive';
+import { deviceBreakpoints } from '../layout/breakpoints';
 import { spacing } from '../tokens';
 import { TextBody, TextTitle3 } from '../typography';
 
@@ -48,7 +48,7 @@ export const centerContentClassName = css`
       width: 100%;
     }
 
-    @media only screen and (min-width: ${deviceBreakpoints.phoneLarge}px) {
+    @media only screen and (min-width: ${deviceBreakpoints.phoneLandscape}px) {
       .${primaryContentContainerClassName} {
         height: auto;
       }

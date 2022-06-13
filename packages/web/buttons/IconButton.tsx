@@ -4,7 +4,7 @@ import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 
 import { Icon } from '../icons/Icon';
-import { getFlexStyles } from '../styles/flex';
+import { getFlexStyles } from '../layout/getFlexStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { useFeatureFlag } from '../system/useFeatureFlag';
 import { cx } from '../utils/linaria';

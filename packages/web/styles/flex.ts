@@ -1,12 +1,10 @@
+/**
+ * DO NOT MODIFY
+ * Generated from scripts/codegen/main.ts
+ */
 import { css } from 'linaria';
-import { FlexStyles } from '@cbhq/cds-common';
 
-import { CSSMap, Display } from '../types';
-import { cx } from '../utils/linaria';
-
-import { display as displayStyles } from './display';
-
-export const alignContent: CSSMap<FlexStyles['alignContent']> = {
+export const alignContent = {
   'flex-start': css`
     align-content: flex-start;
   `,
@@ -27,7 +25,7 @@ export const alignContent: CSSMap<FlexStyles['alignContent']> = {
   `,
 };
 
-export const alignItems: CSSMap<FlexStyles['alignItems']> = {
+export const alignItems = {
   'flex-start': css`
     align-items: flex-start;
   `,
@@ -45,7 +43,7 @@ export const alignItems: CSSMap<FlexStyles['alignItems']> = {
   `,
 };
 
-export const alignSelf: CSSMap<FlexStyles['alignSelf']> = {
+export const alignSelf = {
   'flex-start': css`
     align-self: flex-start;
   `,
@@ -58,42 +56,42 @@ export const alignSelf: CSSMap<FlexStyles['alignSelf']> = {
   stretch: css`
     align-self: stretch;
   `,
-  auto: css`
-    align-self: auto;
-  `,
   baseline: css`
     align-self: baseline;
   `,
+  auto: css`
+    align-self: auto;
+  `,
 };
 
-export const flexDirection: CSSMap<FlexStyles['flexDirection']> = {
+export const flexDirection = {
   row: css`
     flex-direction: row;
   `,
-  'row-reverse': css`
-    flex-direction: row-reverse;
-  `,
   column: css`
     flex-direction: column;
+  `,
+  'row-reverse': css`
+    flex-direction: row-reverse;
   `,
   'column-reverse': css`
     flex-direction: column-reverse;
   `,
 };
 
-export const flexWrap: CSSMap<FlexStyles['flexWrap']> = {
-  nowrap: css`
-    flex-wrap: nowrap;
-  `,
+export const flexWrap = {
   wrap: css`
     flex-wrap: wrap;
+  `,
+  nowrap: css`
+    flex-wrap: nowrap;
   `,
   'wrap-reverse': css`
     flex-wrap: wrap-reverse;
   `,
 };
 
-export const justifyContent: CSSMap<FlexStyles['justifyContent']> = {
+export const justifyContent = {
   'flex-start': css`
     justify-content: flex-start;
   `,
@@ -112,19 +110,4 @@ export const justifyContent: CSSMap<FlexStyles['justifyContent']> = {
   'space-evenly': css`
     justify-content: space-evenly;
   `,
-};
-
-export const getFlexStyles = ({
-  display = 'flex',
-  ...props
-}: FlexStyles & { display?: Display }) => {
-  return cx(
-    displayStyles[display],
-    props.alignContent && alignContent[props.alignContent],
-    props.alignItems && alignItems[props.alignItems],
-    props.alignSelf && alignSelf[props.alignSelf],
-    props.flexDirection && flexDirection[props.flexDirection],
-    props.flexWrap && flexWrap[props.flexWrap],
-    props.justifyContent && justifyContent[props.justifyContent],
-  );
 };

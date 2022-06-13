@@ -1,7 +1,7 @@
 import { css } from 'linaria';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
-import { deviceBreakpoints } from '../../layout/responsive';
+import { deviceBreakpoints } from '../../layout/breakpoints';
 import { borderRadius, spacing } from '../../tokens';
 import { cx } from '../../utils/linaria';
 

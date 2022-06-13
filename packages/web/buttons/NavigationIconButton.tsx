@@ -3,7 +3,7 @@ import { ForwardedRef, IconButtonVariant, NavigationIconName, useToggler } from 
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 
 import { NavigationIcon } from '../icons/NavigationIcon';
-import { getFlexStyles } from '../styles/flex';
+import { getFlexStyles } from '../layout/getFlexStyles';
 import { focusVisibleClassName } from '../styles/focus';
 import { Pressable } from '../system/Pressable';
 import { cx } from '../utils/linaria';

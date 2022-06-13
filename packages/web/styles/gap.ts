@@ -1,43 +1,44 @@
+/**
+ * DO NOT MODIFY
+ * Generated from scripts/codegen/main.ts
+ */
 import { css } from 'linaria';
-import type { SpacingScale } from '@cbhq/cds-common/types';
 
-import { spacing } from '../tokens';
-
-export const gap: Record<SpacingScale, string> = {
-  '0': css`
-    gap: ${spacing['0']};
+export const gap = {
+  0: css`
+    gap: var(--spacing-0);
   `,
-  '0.5': css`
-    gap: ${spacing['0.5']};
+  1: css`
+    gap: var(--spacing-1);
   `,
-  '1': css`
-    gap: ${spacing['1']};
+  2: css`
+    gap: var(--spacing-2);
   `,
-  '2': css`
-    gap: ${spacing['2']};
+  3: css`
+    gap: var(--spacing-3);
   `,
-  '3': css`
-    gap: ${spacing['3']};
+  4: css`
+    gap: var(--spacing-4);
   `,
-  '4': css`
-    gap: ${spacing['4']};
+  5: css`
+    gap: var(--spacing-5);
   `,
-  '5': css`
-    gap: ${spacing['5']};
+  6: css`
+    gap: var(--spacing-6);
   `,
-  '6': css`
-    gap: ${spacing['6']};
+  7: css`
+    gap: var(--spacing-7);
   `,
-  '7': css`
-    gap: ${spacing['7']};
+  8: css`
+    gap: var(--spacing-8);
   `,
-  '8': css`
-    gap: ${spacing['8']};
+  9: css`
+    gap: var(--spacing-9);
   `,
-  '9': css`
-    gap: ${spacing['9']};
+  10: css`
+    gap: var(--spacing-10);
   `,
-  '10': css`
-    gap: ${spacing['10']};
+  0.5: css`
+    gap: var(--spacing-0\\.5);
   `,
 };

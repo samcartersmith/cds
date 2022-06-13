@@ -7,7 +7,7 @@ import React, {
   useState,
 } from 'react';
 import { css } from 'linaria';
-import type { BoxBaseProps, ForwardedRef, Position, SharedProps } from '@cbhq/cds-common';
+import type { BoxBaseProps, Display, ForwardedRef, Position, SharedProps } from '@cbhq/cds-common';
 import { ElevationLevels } from '@cbhq/cds-common';
 import {
   ElevationChildrenProvider,
@@ -24,18 +24,18 @@ import * as backgroundColorStyles from '../styles/backgroundColor';
 import { getBorderStyles } from '../styles/border';
 import * as borderColorStyles from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
-import { getFlexStyles } from '../styles/flex';
 import {
   ArticleAccessibilityRole,
   AsideAccessibilityRole,
   CSSMap,
-  Display,
   DivAccessibilityRole,
   HeaderFooterAccessibilityRole,
   MainAccessibilityRole,
   SectionAccessibilityRole,
 } from '../types';
 import { cx } from '../utils/linaria';
+
+import { getFlexStyles } from './getFlexStyles';
 
 export type InferBoxRole<As> = As extends 'article'
   ? ArticleAccessibilityRole

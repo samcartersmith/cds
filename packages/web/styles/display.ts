@@ -1,18 +1,26 @@
+/**
+ * DO NOT MODIFY
+ * Generated from scripts/codegen/main.ts
+ */
 import { css } from 'linaria';
 
-export type Display = keyof typeof display;
-
 export const display = {
+  block: css`
+    display: block;
+  `,
+  'inline-block': css`
+    display: inline-block;
+  `,
   flex: css`
     display: flex;
   `,
   'inline-flex': css`
     display: inline-flex;
   `,
-  contents: css`
-    display: contents;
-  `,
   none: css`
     display: none;
+  `,
+  contents: css`
+    display: contents;
   `,
 };
