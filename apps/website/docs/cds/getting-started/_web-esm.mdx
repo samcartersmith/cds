@@ -1,5 +1,7 @@
 import Npmrc from './_npmrc.mdx';
 import Providers, { toc as providersToc } from './_providers-web.mdx';
+import metadata from ':docgen/web/metadata';
+import CodeBlock from '@theme/CodeBlock';
 
 export const tocOverride = [...toc, ...providersToc];
 
@@ -13,9 +15,7 @@ If your web environment does not have a css loader for node_modules (nextjs, Rem
 
 ### Install
 
-```bash
-yarn add @cbhq/cds-web@^0.40.4-esm.0
-```
+<CodeBlock language="bash">{`yarn add @cbhq/cds-web@^${metadata.version}-esm.0`}</CodeBlock>
 
 ### Add root imports
 

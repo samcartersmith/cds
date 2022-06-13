@@ -105,6 +105,14 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
       version,
     });
 
+    filesToWriteToDisk.push({
+      dest: path.join(pluginDir, path.basename(path.dirname(tsconfigPath)), `metadata.js`),
+      data: {
+        version,
+      },
+      template: 'shared/objectMap',
+    });
+
     docgenParser({ tsconfigPath, projectDir, files, onProcessDoc }).forEach(
       ({ example, ...doc }) => {
         /**
