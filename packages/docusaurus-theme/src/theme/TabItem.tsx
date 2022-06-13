@@ -12,12 +12,10 @@ export type TabItemProps = Props & {
 
 const TabItem = memo(function TabItem({ children, hidden, gap, toc }: TabItemProps): JSX.Element {
   return (
-    <>
+    <VStack gap={gap} role="tabpanel" {...{ hidden }}>
+      {children}
       {toc ? <TOCUpdater toc={toc} /> : null}
-      <VStack gap={gap} role="tabpanel" {...{ hidden }}>
-        {children}
-      </VStack>
-    </>
+    </VStack>
   );
 });
 

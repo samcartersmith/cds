@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React, { useMemo } from 'react';
-import { styled } from '@linaria/react';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
+import { emptyObject } from '@cbhq/cds-utils';
 
 type VideoOptions = {
   maxWidth?: string;
@@ -14,26 +15,23 @@ export type VideoProps = {
   options?: VideoOptions;
 };
 
-const Vid = styled.video<VideoOptions>`
-  max-width: ${({ maxWidth }) => maxWidth ?? '100%'};
-  max-height: ${({ maxHeight }) => maxHeight ?? '100%'};
-`;
-
 const defaultOptions = {
   autoPlay: true,
   loop: true,
 };
 
-export const Video: React.FC<VideoProps> = ({ light, dark, src, options: optionsProps }) => {
+export const Video: React.FC<VideoProps> = ({ light, dark, src, options }) => {
   const srcFromSpectrum = useSpectrumConditional({ light, dark });
+  const { maxWidth = '100%', maxHeight = '100%' } = options ?? (emptyObject as VideoOptions);
+  const style = useMemo(() => ({ maxWidth, maxHeight }), [maxHeight, maxWidth]);
 
-  const options = useMemo(() => ({ ...defaultOptions, ...optionsProps }), [optionsProps]);
+  const videoProps = useMemo(() => ({ ...defaultOptions, style }), [style]);
 
   if (light && dark) {
-    return <Vid {...options} src={srcFromSpectrum} />;
+    return <video {...videoProps} src={srcFromSpectrum} />;
   }
   if (src) {
-    return <Vid {...options} src={src} />;
+    return <video {...videoProps} src={src} />;
   }
-  return <Vid {...options} />;
+  return <video {...videoProps} />;
 };

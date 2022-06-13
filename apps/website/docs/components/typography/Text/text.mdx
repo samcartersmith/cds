@@ -3,28 +3,24 @@ title: Text
 slug: /components/text
 ---
 
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
 import Intro, { toc as introToc } from './_intro.mdx';
 import Design, { toc as designToc } from './_design.mdx';
 import Usage, { toc as usageToc } from './_usage.mdx';
 import A11y, { toc as a11yToc } from './_a11y.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-<Tabs groupId="page" gap={3}>
+<Tabs groupId="page">
   <TabItem value="guidelines" label="Guidelines" toc={designToc}>
     <Design />
   </TabItem>
   <TabItem
     value="implementation"
     label="Implementation"
-    toc={[...introToc, ...usageToc, ...a11yToc, ...implementationToc]}
+    toc={[...introToc, ...metadataToc, ...usageToc, ...a11yToc, ...implementationToc]}
   >
-    <Link
-      to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/typography/TextBody.tsx"
-      openInNewWindow
-    >
-      @cbhq/cds-(web|mobile)/typography/Text*
-    </Link>
     <Intro />
+    <Metadata />
     <Usage />
     <A11y />
     <Implementation />

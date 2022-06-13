@@ -2625,7 +2625,6 @@ __metadata:
     "@docusaurus/module-type-aliases": 2.0.0-beta.18
     "@linaria/babel-preset": ^3.0.0-beta.15
     "@linaria/core": ^3.0.0-beta.15
-    "@linaria/react": ^3.0.0-beta.15
     "@linaria/shaker": ^3.0.0-beta.15
     "@linaria/webpack-loader": ^3.0.0-beta.15
     antd: 4.4.1
@@ -4132,18 +4131,6 @@ __metadata:
   peerDependencies:
     "@babel/core": ">=7"
   checksum: 0bc5f8786165db87d4700dfdb75a54e98b7ae7ae6929ff37c3df265bed759398cf346ea422b6fc5de7e271e605915363d060f564aec27ba508ef8b419e55c34d
-  languageName: node
-  linkType: hard
-
-"@linaria/react@npm:^3.0.0-beta.15":
-  version: 3.0.0-beta.18
-  resolution: "@linaria/react@npm:3.0.0-beta.18"
-  dependencies:
-    "@emotion/is-prop-valid": ^0.8.8
-    "@linaria/core": ^3.0.0-beta.18
-  peerDependencies:
-    react: ">=16"
-  checksum: 5f7661d31e35bea46f9cdf2e582518c1a8d0cb85afa63b265be2e95691bd4952bb06cb400d2dd32c9d61f6c2c0920e20ea0d9de2069532b5afe2d816f518f63b
   languageName: node
   linkType: hard
 
