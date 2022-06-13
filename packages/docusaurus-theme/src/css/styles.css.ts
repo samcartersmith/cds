@@ -378,8 +378,7 @@ export default css`
       line-height: 83px;
       max-width: 720px;
       color: var(--foreground);
-      padding: ${spacing[TOKENS.docItem.spacingVertical]}
-        ${spacing[TOKENS.docItem.spacingHorizontal]};
+      padding: ${spacing[TOKENS.docItem.spacingVertical]} ${spacing[3]};
       margin: 0;
     }
 

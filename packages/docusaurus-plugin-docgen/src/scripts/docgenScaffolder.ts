@@ -9,11 +9,30 @@ import type { OutputDoc, PluginOptions, WriteFileConfig } from '@cbhq/docusaurus
 
 import { logger } from '../utils/logger';
 
-type DocgenScaffolderParams = Pick<PluginOptions, 'docsDir' | 'forceDocs'> & {
+type DocgenScaffolderParams = Pick<PluginOptions, 'docsDir' | 'forceDocs' | 'sourceFiles'> & {
   docs: Set<OutputDoc>;
 };
 
-export function docgenScaffolder({ docsDir = 'docs', forceDocs, docs }: DocgenScaffolderParams) {
+function pascalCase(str: string) {
+  return startCase(str).split(' ').join('');
+}
+
+function getTemplates(outputDir: string) {
+  return ['design', 'metadata', 'intro', 'usage', 'example', 'a11y', 'implementation']
+    .filter((item) => {
+      return fs.existsSync(path.join(outputDir, `_${item}.mdx`));
+    })
+    .map((item) => {
+      return { template: item, component: pascalCase(item), toc: `${item}Toc` };
+    });
+}
+
+export function docgenScaffolder({
+  docsDir = 'docs',
+  forceDocs,
+  sourceFiles,
+  docs,
+}: DocgenScaffolderParams) {
   const filesToWriteToDisk: WriteFileConfig[] = [];
 
   const partials = orderBy(Array.from(docs.values()), ['mdxImport.name']);
@@ -25,18 +44,16 @@ export function docgenScaffolder({ docsDir = 'docs', forceDocs, docs }: DocgenSc
     const outputDir = path.join(docsDir, subdir, maybeComponentFile ?? component);
     const kebabCaseName = kebabCase(displayName);
     const docDest = path.join(outputDir, `${kebabCaseName}.mdx`);
+    const templates = getTemplates(outputDir);
+    const hasDesign = templates.map((item) => item.template).includes('design');
 
     const addToFilesToWrite = () => {
       const data = {
         title: startCase(displayName),
         kebabCaseName,
         docs: uniqBy(dataForGroup, 'partial.name'),
-        hasA11y: fs.existsSync(path.join(outputDir, '_a11y.mdx')),
-        hasIntro: fs.existsSync(path.join(outputDir, '_intro.mdx')),
-        hasUsage: fs.existsSync(path.join(outputDir, '_usage.mdx')),
-        hasExample: fs.existsSync(path.join(outputDir, '_example.mdx')),
-        hasDesign: fs.existsSync(path.join(outputDir, '_design.mdx')),
-        hasImplementation: fs.existsSync(path.join(outputDir, '_implementation.mdx')),
+        templates,
+        hasDesign,
       };
 
       filesToWriteToDisk.push({
@@ -50,23 +67,38 @@ export function docgenScaffolder({ docsDir = 'docs', forceDocs, docs }: DocgenSc
         data,
         template: 'doc/implementation',
       });
+
+      filesToWriteToDisk.push({
+        dest: path.join(outputDir, `_metadata.mdx`),
+        data,
+        template: 'doc/metadata',
+      });
     };
 
     try {
       if (fs.existsSync(docDest)) {
-        if ((Array.isArray(forceDocs) && forceDocs.includes(displayName)) || forceDocs === true) {
+        if (Array.isArray(forceDocs) && forceDocs.includes(displayName)) {
           logger.forceIsTrue();
           addToFilesToWrite();
-        } else {
-          logger.forceIsFalse(docDest);
+        } else if (
+          forceDocs === true &&
+          sourceFiles.map((item) => path.basename(item)).includes(displayName)
+        ) {
+          logger.forceIsTrue();
+          if (fs.existsSync(path.join(outputDir, '_features.mdx'))) {
+            fs.rmSync(path.join(outputDir, '_features.mdx'));
+          }
+          addToFilesToWrite();
         }
-      } else {
+      } else if (outputDir === displayName) {
         logger.preppingDoc(displayName);
         addToFilesToWrite();
       }
     } catch (err) {
-      logger.preppingDoc(displayName);
-      addToFilesToWrite();
+      if (outputDir === displayName) {
+        logger.preppingDoc(displayName);
+        addToFilesToWrite();
+      }
     }
   });
 

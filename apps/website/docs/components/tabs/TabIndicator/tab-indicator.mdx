@@ -3,18 +3,20 @@ title: Tab Indicator
 slug: /components/tab-indicator
 ---
 
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
 import Usage, { toc as usageToc } from './_usage.mdx';
+import Example, { toc as exampleToc } from './_example.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-<Tabs groupId="page" gap={3}>
-  <TabItem value="implementation" label="Implementation" toc={[...usageToc, ...implementationToc]}>
-    <Link
-      to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/tabs/TabIndicator.tsx"
-      openInNewWindow
-    >
-      @cbhq/cds-(web|mobile)/tabs/TabIndicator
-    </Link>
+<Tabs groupId="page">
+  <TabItem
+    value="implementation"
+    label="Implementation"
+    toc={[...metadataToc, ...usageToc, ...exampleToc, ...implementationToc]}
+  >
+    <Metadata />
     <Usage />
+    <Example />
     <Implementation />
   </TabItem>
 </Tabs>

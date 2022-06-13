@@ -241,17 +241,10 @@ module.exports = {
           type: 'category',
           label: 'Logos',
           items: [
-            { type: 'doc', id: 'components/icons/logo', label: 'Logo' },
-            {
-              type: 'doc',
-              id: 'components/icons/SubBrandLogoMark/sub-brand-logo-mark',
-              label: 'Sub Brand Mark',
-            },
-            {
-              type: 'doc',
-              id: 'components/icons/SubBrandLogoWordmark/sub-brand-logo-wordmark',
-              label: 'Sub Brand Wordmark',
-            },
+            'components/icons/LogoMark/logo-mark',
+            'components/icons/LogoWordmark/logo-wordmark',
+            'components/icons/SubBrandLogoMark/sub-brand-logo-mark',
+            'components/icons/SubBrandLogoWordmark/sub-brand-logo-wordmark',
           ],
         },
       ],
@@ -718,7 +711,14 @@ module.exports = {
         {
           type: 'category',
           label: 'PortalProvider',
-          items: ['hooks/useOverlay'],
+          items: [
+            {
+              type: 'doc',
+              label: 'Provider',
+              id: 'components/overlays/PortalProvider/portal-provider',
+            },
+            'hooks/useOverlay',
+          ],
         },
         {
           type: 'category',

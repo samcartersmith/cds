@@ -124,7 +124,7 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
           },
           partial: {
             name: `${capitalize(`${projectName}`)}PropsTable`,
-            path: path.join('@docgen', destDir, 'api.mdx'),
+            path: path.join(':docgen', destDir, 'api.mdx'),
           },
           tab: { label: capitalize(projectName), value: projectName },
           slug,
@@ -171,7 +171,7 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
   logger.preppingData();
 
   if (docsDir) {
-    const scaffolds = docgenScaffolder({ docsDir, forceDocs, docs });
+    const scaffolds = docgenScaffolder({ docsDir, forceDocs, sourceFiles, docs });
     filesToWriteToDisk = [...filesToWriteToDisk, ...scaffolds];
   }
 

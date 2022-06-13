@@ -166,6 +166,7 @@ declare module '@cbhq/docusaurus-plugin-docgen' {
     | 'shared/objectMap'
     | 'doc/component'
     | 'doc/implementation'
+    | 'doc/metadata'
     | 'doc-item/api'
     | 'doc-item/example'
     | 'doc-item/import-block';

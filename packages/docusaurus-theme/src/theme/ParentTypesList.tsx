@@ -28,7 +28,7 @@ const ParentTypesList = memo(function ParentTypesList({
   const parentTypesAsArray = useMemo(() => Object.entries(parentTypes), [parentTypes]);
   if (parentTypesAsArray.length) {
     return (
-      <HStack gap={1} alignItems="center">
+      <HStack gap={1} alignItems="center" flexWrap="wrap">
         <TextBody as="p" color="foregroundMuted">
           Extends from:
         </TextBody>

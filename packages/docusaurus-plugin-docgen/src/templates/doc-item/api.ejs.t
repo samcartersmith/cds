@@ -1,8 +1,8 @@
 import ParentTypesList from '@theme/ParentTypesList';
 import PropsTable from '@theme/PropsTable';
 import { PropsTOCUpdater } from '@theme/PropsTOCManager';
-import { sharedTypeAliases } from '@docgen/_types/sharedTypeAliases';
-import { sharedParentTypes } from '@docgen/_types/sharedParentTypes';
+import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
+import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 
 import data from './data';
 

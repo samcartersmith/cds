@@ -3,18 +3,20 @@ title: Table Cell
 slug: /components/table-cell
 ---
 
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
 import Usage, { toc as usageToc } from './_usage.mdx';
+import Example, { toc as exampleToc } from './_example.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-<Tabs groupId="page" gap={3}>
-  <TabItem value="implementation" label="Implementation" toc={[...usageToc, ...implementationToc]}>
-    <Link
-      to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/tables/TableCell.tsx"
-      openInNewWindow
-    >
-      @cbhq/cds-web/tables/TableCell
-    </Link>
+<Tabs groupId="page">
+  <TabItem
+    value="implementation"
+    label="Implementation"
+    toc={[...metadataToc, ...usageToc, ...exampleToc, ...implementationToc]}
+  >
+    <Metadata />
     <Usage />
+    <Example />
     <Implementation />
   </TabItem>
 </Tabs>

@@ -3,22 +3,18 @@ title: Native Text Area
 slug: /components/native-text-area
 ---
 
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
 import Intro, { toc as introToc } from './_intro.mdx';
 import Usage, { toc as usageToc } from './_usage.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-<Tabs groupId="page" gap={3}>
+<Tabs groupId="page">
   <TabItem
     value="implementation"
     label="Implementation"
-    toc={[...introToc, ...usageToc, ...implementationToc]}
+    toc={[...metadataToc, ...introToc, ...usageToc, ...implementationToc]}
   >
-    <Link
-      to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/controls/NativeTextArea.tsx"
-      openInNewWindow
-    >
-      @cbhq/cds-web/controls/NativeTextArea
-    </Link>
+    <Metadata />
     <Intro />
     <Usage />
     <Implementation />

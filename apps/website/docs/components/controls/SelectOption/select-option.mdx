@@ -3,17 +3,17 @@ title: Select Option
 slug: /components/select-option
 ---
 
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
 import Usage, { toc as usageToc } from './_usage.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-<Tabs groupId="page" gap={3}>
-  <TabItem value="implementation" label="Implementation" toc={[...usageToc, ...implementationToc]}>
-    <Link
-      to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/controls/SelectOption.tsx"
-      openInNewWindow
-    >
-      @cbhq/cds-(web|mobile)/controls/SelectOption
-    </Link>
+<Tabs groupId="page">
+  <TabItem
+    value="implementation"
+    label="Implementation"
+    toc={[...metadataToc, ...usageToc, ...implementationToc]}
+  >
+    <Metadata />
     <Usage />
     <Implementation />
   </TabItem>

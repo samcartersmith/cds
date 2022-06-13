@@ -1,26 +1,13 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
+import WebPropsTable from ':docgen/web/icons/SubBrandLogoWordmark/api.mdx';
+import MobilePropsTable from ':docgen/mobile/icons/SubBrandLogoWordmark/api.mdx';
 
 ## Props
 
-### foreground
-
-<ApiDetails
-  componentName="SubBrandLogoWordmark"
-  propertyName="foreground"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-### type
-
-<ApiDetails
-  componentName="SubBrandLogoWordmark"
-  propertyName="type"
-  required={true}
-  defaultValue=""
-  mobileOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
-  webOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
-/>
+<Tabs groupId="platform" variant="secondary">
+  <TabItem value="web" label="Web">
+    <WebPropsTable />
+  </TabItem>
+  <TabItem value="mobile" label="Mobile">
+    <MobilePropsTable />
+  </TabItem>
+</Tabs>

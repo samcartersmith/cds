@@ -4,21 +4,23 @@ slug: /components/sidebar
 ---
 
 import Design, { toc as designToc } from './_design.mdx';
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
 import Usage, { toc as usageToc } from './_usage.mdx';
+import Example, { toc as exampleToc } from './_example.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-<Tabs groupId="page" gap={3}>
+<Tabs groupId="page">
   <TabItem value="guidelines" label="Guidelines" toc={designToc}>
     <Design />
   </TabItem>
-  <TabItem value="implementation" label="Implementation" toc={[...usageToc, ...implementationToc]}>
-    <Link
-      to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/navigation/Sidebar.tsx"
-      openInNewWindow
-    >
-      @cbhq/cds-web/navigation/Sidebar
-    </Link>
+  <TabItem
+    value="implementation"
+    label="Implementation"
+    toc={[...metadataToc, ...usageToc, ...exampleToc, ...implementationToc]}
+  >
+    <Metadata />
     <Usage />
+    <Example />
     <Implementation />
   </TabItem>
 </Tabs>

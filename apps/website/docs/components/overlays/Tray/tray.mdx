@@ -3,17 +3,17 @@ title: Tray
 slug: /components/tray
 ---
 
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
 import Usage, { toc as usageToc } from './_usage.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-<Tabs groupId="page" gap={3}>
-  <TabItem value="implementation" label="Implementation" toc={[...usageToc, ...implementationToc]}>
-    <Link
-      to="https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/overlays/Tray.tsx"
-      openInNewWindow
-    >
-      @cbhq/cds-mobile/overlays/Tray
-    </Link>
+<Tabs groupId="page">
+  <TabItem
+    value="implementation"
+    label="Implementation"
+    toc={[...metadataToc, ...usageToc, ...implementationToc]}
+  >
+    <Metadata />
     <Usage />
     <Implementation />
   </TabItem>

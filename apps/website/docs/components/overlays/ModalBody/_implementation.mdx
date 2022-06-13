@@ -1,30 +1,13 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
+import WebPropsTable from ':docgen/web/overlays/Modal/ModalBody/api.mdx';
+import MobilePropsTable from ':docgen/mobile/overlays/Modal/ModalBody/api.mdx';
 
 ## Props
 
-### alignItems <Badge variant="web" />
-
-Set the alignment of all direct children on the cross-axis.
-
-<ApiDetails
-  componentName="ModalBody"
-  propertyName="alignItems"
-  required={false}
-  defaultValue="stretch"
-  mobileOptions={[]}
-  webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
-/>
-
-### flexDirection <Badge variant="web" />
-
-Order children on the main-axis in this direction.
-
-<ApiDetails
-  componentName="ModalBody"
-  propertyName="flexDirection"
-  required={false}
-  defaultValue="column"
-  mobileOptions={[]}
-  webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
-/>
+<Tabs groupId="platform" variant="secondary">
+  <TabItem value="web" label="Web">
+    <WebPropsTable />
+  </TabItem>
+  <TabItem value="mobile" label="Mobile">
+    <MobilePropsTable />
+  </TabItem>
+</Tabs>

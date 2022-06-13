@@ -65,7 +65,7 @@ export default function plugin(
       return {
         resolve: {
           alias: {
-            [`@docgen`]: path.join(
+            [`:docgen`]: path.join(
               // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
               // @ts-ignore This is how we are able to have consumers access the docgen data with alias of their choice
               webpackConfig.resolve.alias['@generated'],

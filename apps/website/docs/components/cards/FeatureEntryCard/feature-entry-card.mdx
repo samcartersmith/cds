@@ -3,24 +3,18 @@ title: Feature Entry Card
 slug: /components/feature-entry-card
 ---
 
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
 import Usage, { toc as usageToc } from './_usage.mdx';
-import A11y, { toc as a11yToc } from './_a11y.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-<Tabs groupId="page" gap={3}>
+<Tabs groupId="page">
   <TabItem
     value="implementation"
     label="Implementation"
-    toc={[...usageToc, ...a11yToc, ...implementationToc]}
+    toc={[...metadataToc, ...usageToc, ...implementationToc]}
   >
-    <Link
-      to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/cards/FeatureEntryCard.tsx"
-      openInNewWindow
-    >
-      @cbhq/cds-(web|mobile)/cards/FeatureEntryCard
-    </Link>
+    <Metadata />
     <Usage />
-    <A11y />
     <Implementation />
   </TabItem>
 </Tabs>

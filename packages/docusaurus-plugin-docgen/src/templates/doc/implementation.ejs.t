@@ -4,8 +4,8 @@ import <%- partial.name %> from '<%- partial.path %>';
 
 ## Props
 
-<% if (data.docs.length === 2){ _%>
-<Tabs groupId="platform" variant="secondary" gap={3}>
+<% if (data.docs.length > 1){ _%>
+<Tabs groupId="platform" variant="secondary">
 <% data.docs.map(({ partial, tab }) => { _%>
 <TabItem value="<%- tab.value %>" label="<%- tab.label %>">
 <<%- partial.name %> />

@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable jsx-a11y/anchor-has-content */
 import React, { memo, useMemo } from 'react';
 import JSDocTag, { JSDOC_TAG_VARIANTS, JSDocTagVariant } from '@theme/JSDocTag';
 import ModalLink from '@theme/ModalLink';
@@ -66,18 +64,17 @@ const PropsTableRow = memo(function PropsTableRow({ prop, sharedTypeAliases }: P
   // work with docusaurus setup.
   return (
     <h2 className="anchor props-table-wrapper" id={name}>
-      <a className="hash-link" href={`#${name}`} />
       <Cell minHeight={minHeight}>
         <HStack alignItems="center" justifyContent="space-between" gap={1}>
           <VStack width="30%" gap={1} flexWrap="wrap">
             <TextBody as="div">{name}</TextBody>
-            <TextBody as="div" color="foregroundMuted" numberOfLines={4} overflow="wrap">
+            <TextBody as="div" color="foregroundMuted" overflow="wrap">
               {description}
             </TextBody>
           </VStack>
           <VStack width="10%">{tagComponents}</VStack>
           <VStack width="30%" dangerouslySetClassName="type-aliases-link">
-            <TextBody as="div" mono numberOfLines={4} overflow="wrap">
+            <TextBody as="div" mono overflow="wrap">
               {typeContent}
             </TextBody>
           </VStack>

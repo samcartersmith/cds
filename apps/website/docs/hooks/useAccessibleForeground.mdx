@@ -1,5 +1,3 @@
-import { Badge } from ':cds-website/components/Badge';
-
 > [@cbhq/cds-(web|mobile)/color/useAccessibleForeground](https://github.cbhq.net/frontend/cds/blob/master/packages/web/color/useAccessibleForeground.ts)
 
 By default does the following checks on a given color:
@@ -34,7 +32,7 @@ function Example() {
 }
 ```
 
-<h2 style={{ display: 'inline-block' }}>Using background & color: auto</h2> <Badge variant="danger" />
+## Using background with color: auto
 
 - Only use the `background` param if you absolutely have to. For example, if you are using an asset color to power the background color.
 - The `auto` prop will return white or black depending on which one has the highest contrast ratio based on the `background` color.
@@ -64,7 +62,7 @@ function Example() {
 
 ## Params
 
-### background <Badge variant="danger" />
+### background <JSDocTag variant="danger" />
 
 - Optional param. Will fallback to use the `background` color from palette when undefined.
 - Only use the `background` param if you absolutely have to - for example, if you are using an asset color to power the background color.

@@ -1,30 +1,5 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
+import WebPropsTable from ':docgen/web/tables/TableBody/api.mdx';
 
 ## Props
 
-### as <Badge variant="web" />
-
-Internal only
-
-<ApiDetails
-  componentName="TableBody"
-  propertyName="as"
-  required={false}
-  defaultValue="undefined"
-  mobileOptions={[]}
-  webOptions={['div', 'tbody', 'tfoot', 'thead']}
-/>
-
-### testID <Badge variant="web" />
-
-Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
-
-<ApiDetails
-  componentName="TableBody"
-  propertyName="testID"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['string']}
-/>
+<WebPropsTable />
