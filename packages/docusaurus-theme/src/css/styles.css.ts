@@ -361,7 +361,11 @@ export default css`
     direction: ltr;
   }
 
-  .markdown header h1:first-child {
+  .markdown h1:first-child {
+    margin-bottom: 0;
+  }
+
+  .markdown > header > h1:first-child {
     margin-bottom: ${spacing[TOKENS.docItem.spacingVertical]};
   }
 

@@ -10,7 +10,7 @@ const PropsTable = memo(function PropsTable({ props, sharedTypeAliases }: PropsT
       <Table tableLayout="fixed">
         <TableHeader>
           <TableRow>
-            <TableCell title="Name" width="35%" />
+            <TableCell title="Name" width="32%" />
             {/* Colspan won't work with fixed tableLayout so we render an empty cell */}
             <TableCell title="" />
             <TableCell title="Type" width="35%" />

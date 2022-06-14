@@ -145,6 +145,7 @@ module.exports = {
     'tabs/TabIndicator',
     'tabs/TabLabel',
     'tabs/TabNavigation',
+    'tag/Tag',
     'overlays/Toast',
     'overlays/useModal',
     'system/DevicePreferencesProvider',

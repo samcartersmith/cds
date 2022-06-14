@@ -1,0 +1,133 @@
+import { Tag } from '@cbhq/cds-web/tag/Tag';
+import { DocImage } from ':cds-website/components/DocImage';
+import { DoDont, DoExample, DontExample, Example } from ':cds-website/components/DoDont';
+import { Collection, Item } from ':cds-website/components/Collection';
+
+A 1 to 2 word text/string component used for describing, categorizing or classifying content, displaying metadata and/or highlighting sentiment.
+
+```jsx live
+<VStack gap={2}>
+  <HStack gap={2} wrap>
+    <Tag colorScheme="green">Green</Tag>
+    <Tag colorScheme="blue">Blue</Tag>
+    <Tag colorScheme="yellow">Yellow</Tag>
+    <Tag colorScheme="purple">Purple</Tag>
+    <Tag colorScheme="red">Red</Tag>
+    <Tag colorScheme="gray">Gray</Tag>
+  </HStack>
+  <HStack gap={2} wrap>
+    <Tag intent="promotional" colorScheme="green">
+      Green
+    </Tag>
+    <Tag intent="promotional" colorScheme="blue">
+      Blue
+    </Tag>
+    <Tag intent="promotional" colorScheme="yellow">
+      Yellow
+    </Tag>
+    <Tag intent="promotional" colorScheme="purple">
+      Purple
+    </Tag>
+    <Tag intent="promotional" colorScheme="red">
+      Red
+    </Tag>
+    <Tag intent="promotional" colorScheme="gray">
+      Gray
+    </Tag>
+  </HStack>
+</VStack>
+```
+
+## Overview
+
+Tags draw attention to new or important content. Specifically, they (1) draw attention to something that might otherwise be missed or (2) provide commentary or metadata about a larger component.
+
+#### Tag principles
+
+1. Intentional
+2. Concise and Scannable
+3. Trustworthy/Helpful decision-making
+4. Not a button
+
+Tags do not filter content like tags or tabs. Though they are made up of a text string, they are not hyperlinks like buttons. Tags can be accompanied by Tooltips to display overflow/truncated strings or to provide more context/definition of the tag string.
+
+### Content Design Guidelines
+
+#### Informational and Promotional Tags
+
+Informational tags are used to note a characteristic or state of an object. The relationship between the tag and the other UI component should be easy to interpret for a user. Informational tags are often used to describe the state or status of an element. It is expected that the status or state of the element will change. But the various types of states an element can have are uniform and the text will change as the status or state changes.
+Promotional tags are for editorial, ephemeral communication. Terms like “New”, “Recommended”, “Beta”, “Hot”, “Trending”, fall into this Promotional tag category. They are placed in close proximity to another larger UI component, or sometimes “badged” on top of a UI element. Promotional tags are an ephemeral UI that “disappears” or “expires” once the user has interacted with the element or once the tag’s text is no longer true. For example, a product will not stay “Beta” forever, Trends have a short lifespan, things that are “Hot” eventually cool off.
+
+> Note: For scannability and clarity, only one tag should be displayed at a time. However, if the tags are used to call out product features, multiple tags can be used. Promotional tags should be used sparingly and singularly. The usage of Promotional tags should be evaluated holistically. A screen full of Promotional tags can become overwhelming, deteriorating the value and trust of the tag.
+
+### Tag taxonomy
+
+Tag terms should be well-known/understood, part of your audience’s vernacular, tag terms should be part of a larger taxonomy rather than a one-off concept.
+
+<Collection>
+  <Item alignItems="flex-start">
+    <Tag colorScheme="purple">Informational tag examples</Tag>
+    <ul>
+      <li>
+        <b>Status/State:</b> Active, Inactive, Pending, Running, Creating, Paused, On hold, Buy,
+        Sell, Closed, Open…
+      </li>
+      <li>
+        <b>Product feature:</b> Archival, Indexer
+      </li>
+      <li>
+        <b>Metadata:</b> Full stake, Partial stake, Joined on June 01, 2020, Requires gas
+      </li>
+    </ul>
+  </Item>
+  <Item alignItems="flex-start">
+    <Tag intent="promotional" colorScheme="yellow">
+      Promotional tag examples
+    </Tag>
+    <ul>
+      <li>
+        <b>Temporal descriptors:</b> Beta, Coming soon, New, Recent addition
+      </li>
+      <li>
+        <b>Attractors:</b> Popular, Trending, Recommended, Best value
+      </li>
+    </ul>
+    <em>
+      The meaning behind this type of Promotional/editorial tag may not always be apparent to a
+      user. In that case we recommend using an info icon to clarify why something can be qualified
+      as popular, trending, etc.
+    </em>
+  </Item>
+</Collection>
+
+Tags must always include text. They cannot be empty or use a single character symbol, eg “$”. Icons should be considered a tool for accessibility and therefore should match the text.
+
+- Tags should be 1-2 words, max
+- Tags should not extend or wrap to two lines.
+- In normal scale, tags should be sentence case unless using Promotional tags.
+- Be consistent across a product with the color, style, and text of a tag.
+- Do not use the same text in two different tag types in the same user experience.
+- Do not use more than one type of tag with a single UI component.
+- When possible, limit the use of both Informational and Promotional tags on the same page and/or in the same table.
+
+> If you have questions on how to create content for a tags, sign up for [Content Design Office Hours](https://docs.google.com/spreadsheets/d/1KgQ4IlWBnwP3T1buAWtjnVkGxZamrwToszhUu1TDCkE/edit#gid=0) or use [#ask-a-writer](https://coinbase.slack.com/archives/CBNSVBDHN) on Slack.
+
+## Anatomy
+
+### Structure
+
+<DocImage format="svg" component="tag" name="anatomy" />
+
+### Accessibility
+
+- Text must be clear enough for people to be able to understand immediately without needing to rely only on color.
+- Avoid using tags for longer text. Keep tags to two words max. Using color to add meaning only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers.
+- Ensure that information denoted by the color is either obvious from the content itself (e.g. the visible text), or is included through alternative means, such as additional text hidden with the .visually-hidden class.
+
+## Resources
+
+- Want to see the UI spacing and alignment details? [Figma specs/redlines](https://www.figma.com/file/9TCCKTO5uxbuJsnrircede/CDS-Design-Intent-Library?node-id=1588%3A32507)
+- Problem with the component's Figma symbol or with the code? [File a bug](<https://jira.coinbase-corp.com/secure/CreateIssueDetails!init.jspa?pid=15203&issuetype=1&priority=3&summary=%5BBug%5D%20&description=*Where%20is%20the%20bug?%20(figma,%20cds%20package,%20etc)*%0A%0A%0A*Repro%20Steps:*%0A1.%0A2.%0A%0A*Actual%20behavior:*%0A%0AAdd%20description,%20images,%20video%20of%20what%20actually%20happened.%0A%0A*Expected%20behavior:*%0A>)
+- CDS Tags DRIs: Krishna Brown, Jake LeBoeuf, Casson Rosenblatt and Eungee Lee
+- Got feedback about this component or general feedback about CDS? [Anonymous feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdlcOr5PIS9FPuzOQaZD3RuO_AZCu9zyx9pLZx9prLITn9JdQ/viewform)
+- Slack: [#ask-cds](https://app.slack.com/client/T02Q6DY7G/C01A6PKGM3J/thread/C029SR9RN1M-1647533367.203959?cdn_fallback=2)
