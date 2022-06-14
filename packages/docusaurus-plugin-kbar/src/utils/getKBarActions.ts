@@ -97,6 +97,7 @@ export function getKBarActions(currentVersion: LoadedVersion): KBarCustomAction[
       section: 'Documentation',
       slug,
       subtitle: frontmatter?.description,
+      keywords: frontmatter?.keywords?.join(' '),
       ...item,
     };
   });
