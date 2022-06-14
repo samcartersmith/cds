@@ -7,6 +7,14 @@ export default {
   component: Box,
   title: 'Core Components/Box/Performance',
   decorators: [withPerformance],
+  excludeStories: [
+    'CDSBox',
+    'SingleDiv',
+    'HundredCDSComponents',
+    'HundredHTMLComponent',
+    'ThousandCDSComponents',
+    'ThousandHTMLComponent',
+  ],
 };
 
 export const CDSBox = () => (
