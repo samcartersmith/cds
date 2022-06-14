@@ -114,31 +114,25 @@ describe('Modal', () => {
 
   it('renders modal title', async () => {
     const title = 'Basic Modal';
-    const { getByText } = render(<MockModal visible onRequestClose={jest.fn()} title={title} />);
+    const { findByText, getByText } = render(
+      <MockModal visible onRequestClose={jest.fn()} title={title} />,
+    );
+    expect(getByText(title)).not.toBeVisible();
 
-    expect(getByText(title)).toBeTruthy();
+    expect(await findByText(title)).toBeVisible();
   });
 
   it('renders modal body', async () => {
-    const { container, getByRole, getByText } = render(
-      <MockModal visible onRequestClose={jest.fn()} />,
-    );
+    const { findByText, getByText } = render(<MockModal visible onRequestClose={jest.fn()} />);
+    expect(getByText(loremIpsum)).not.toBeVisible();
 
-    fireEvent.click(container.querySelector('button') as Element);
-    await waitFor(() => getByRole('dialog'));
-
-    expect(getByText(loremIpsum)).toBeTruthy();
+    expect(await findByText(loremIpsum)).toBeVisible();
   });
 
   it('renders modal footer', async () => {
-    const { container, getByRole, getByTestId } = render(
-      <MockModal visible onRequestClose={jest.fn()} />,
-    );
+    const { findByTestId } = render(<MockModal visible onRequestClose={jest.fn()} />);
 
-    fireEvent.click(container.querySelector('button') as Element);
-    await waitFor(() => getByRole('dialog'));
-
-    expect(getByTestId('modal-footer')).toBeTruthy();
+    expect(await findByTestId('modal-footer')).toBeVisible();
   });
 
   it('should have correct styles at the end of animation', async () => {

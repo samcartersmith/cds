@@ -1,3 +1,6 @@
+// eslint-disable-next-line jest/no-mocks-import
+import '@cbhq/cds-utils/jest/__mocks__/env.mock';
+
 import { renderHook } from '@testing-library/react-hooks';
 
 import { MotionConfigs } from '../types';

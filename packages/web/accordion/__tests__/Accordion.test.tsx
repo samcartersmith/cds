@@ -86,23 +86,27 @@ describe('Accordion', () => {
   it('renders titles', () => {
     const { getByText } = render(<MockAccordion />);
 
-    expect(getByText('Accordion #1')).toBeTruthy();
-    expect(getByText('subtitle1')).toBeTruthy();
-    expect(getByText('Accordion #2')).toBeTruthy();
-    expect(getByText('subtitle2')).toBeTruthy();
+    expect(getByText('Accordion #1')).toBeVisible();
+    expect(getByText('subtitle1')).toBeVisible();
+    expect(getByText('Accordion #2')).toBeVisible();
+    expect(getByText('subtitle2')).toBeVisible();
   });
 
   it('renders media', () => {
     const { getByTestId } = render(<MockAccordion />);
 
-    expect(getByTestId('mock-accordion-item1-media')).toBeTruthy();
-    expect(getByTestId('mock-accordion-item2-media')).toBeTruthy();
+    expect(getByTestId('mock-accordion-item1-media')).toBeVisible();
+    expect(getByTestId('mock-accordion-item2-media')).toBeVisible();
   });
 
-  it('renders children', () => {
-    const { getByText } = render(<MockAccordion />);
+  it('renders children', async () => {
+    const { getByText, findByText, getByTestId } = render(<MockAccordion />);
 
-    expect(getByText('Accordion Content1')).toBeTruthy();
-    expect(getByText('Accordion Content2')).toBeTruthy();
+    expect(getByText('Accordion Content2')).toBeVisible();
+    expect(getByText('Accordion Content1')).not.toBeVisible();
+
+    fireEvent.click(getByTestId('mock-accordion-item1-header'));
+    expect(await findByText('Accordion Content1')).toBeVisible();
+    expect(await findByText('Accordion Content2')).not.toBeVisible();
   });
 });
