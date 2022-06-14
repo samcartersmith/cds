@@ -1,9 +1,10 @@
 import Npmrc from './_npmrc.mdx';
 import Providers, { toc as providersToc } from './_providers-mobile.mdx';
+import Eslint, { toc as eslintToc } from './_eslint-mobile.mdx';
 import metadata from ':docgen/mobile/metadata';
 import CodeBlock from '@theme/CodeBlock';
 
-export const tocOverride = [...toc, ...providersToc];
+export const tocOverride = [...toc, ...providersToc, ...eslintToc];
 
 ## React Native
 
@@ -18,3 +19,7 @@ export const tocOverride = [...toc, ...providersToc];
 ### Add providers
 
 <Providers />
+
+### ESLint
+
+<Eslint />

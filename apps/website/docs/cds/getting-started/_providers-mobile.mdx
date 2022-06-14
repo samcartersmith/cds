@@ -1,9 +1,6 @@
-Add the following to the root of your React application.
+import Intro from './_providers.mdx';
 
-- [DevicePreferencesProvider](/components/device-preferences-provider) is optional. It will sync the spectrum and scale based on device settings.
-- [ThemeProvider](/components/theme-provider) is required and is responsible for handling colors and scale (font-sizes, spacing, etc).
-- PortalProvider is required if you use any portal related components such as Modal, Alert, Dropdown, etc.
-- [FeatureFlagProvider](/components/feature-flag-provider) is optional, but is likely going to be needed if you want to have access to a new brand update. We use the FeatureFlagProvider as way to rollout large updates through an opt-in model to avoid unexpected & disruptive changes. This Provider has no integration with any experimentation framework or backend. It's a very primitive, boolean based Provider to conditionally do something if a certain prop is present.
+<Intro />
 
 ```tsx
 import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePreferencesProvider';

@@ -1,9 +1,0 @@
-Utilizes React context to provide our CDS theme specific parameters. Internally the ThemeProvider includes a `div` element which is used to attach CSS variables that are needed for palette overrides.
-
-**Note**: the `ThemeProvider` component will add a `div` to the root of your app. If this is not desired, you can either:
-
-a. Pass a `display` prop to `ThemeProvider` and set it to `display="contents"`, which will visually remove the ThemeProvider's box and replace it with its content.
-
-b. Use the `useThemeProviderStyles` hook from `@cbhq/cds-web/system/useThemeProviderStyles` instead and attach the returned `className` and `style` prop to the element of your choice. If you opt to use the `useThemeProviderStyles` hook, you will need to wrap the root of your application with the `FramerMotionProvider` from `@cbhq/cds-web/animation/FramerMotionProvider` the enable animations.
-
-To use `useThemeProviderStyles` with palette, scale or spectrum overrides, you will need to add the `ContextOnlyThemeProvider` as a parent to `useThemeProviderStyles` hook. `ContextOnlyThemeProvider` will update the context values and not add a div to the DOM.

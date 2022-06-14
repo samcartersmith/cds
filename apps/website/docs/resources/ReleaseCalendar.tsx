@@ -122,7 +122,7 @@ const ReleaseCalendar = memo(function ReleaseCalendar() {
     ];
 
     const releases = dayjsRecurrence
-      .recur('06/08/2022', '06/01/2023')
+      .recur('06/15/2022', '06/01/2023')
       .every(7)
       .days()
       .all()
