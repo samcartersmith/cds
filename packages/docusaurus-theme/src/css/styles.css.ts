@@ -319,7 +319,6 @@ export default css`
       flex: 1;
     }
   }
-
   .props-table-wrapper {
     display: flex;
     align-items: center;

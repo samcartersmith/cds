@@ -1,34 +1,31 @@
 import React, { memo } from 'react';
 import type { PropsTableProps } from '@theme/PropsTable';
 import PropsTableRow from '@theme/PropsTableRow';
-import { HStack, VStack } from '@cbhq/cds-web/layout';
-import { TextHeadline } from '@cbhq/cds-web/typography';
+import { Box } from '@cbhq/cds-web/layout/Box';
+import { Table, TableBody, TableCell, TableHeader, TableRow } from '@cbhq/cds-web/tables';
 
 const PropsTable = memo(function PropsTable({ props, sharedTypeAliases }: PropsTableProps) {
   return (
-    <>
-      <HStack width="100%" alignItems="center" justifyContent="space-between">
-        <VStack width="30%">
-          <TextHeadline as="p">Name</TextHeadline>
-        </VStack>
-        <VStack width="10%" />
-        <VStack width="30%">
-          <TextHeadline as="p">Type</TextHeadline>
-        </VStack>
-        <VStack width="30%">
-          <TextHeadline as="p" align="center">
-            Default
-          </TextHeadline>
-        </VStack>
-      </HStack>
-      <VStack offsetHorizontal={3} offsetTop={1} gap={1} alignItems="flex-start">
-        {props.map((item) => {
-          return (
-            <PropsTableRow key={item.name} prop={item} sharedTypeAliases={sharedTypeAliases} />
-          );
-        })}
-      </VStack>
-    </>
+    <Box offset={2} background overflow="auto">
+      <Table tableLayout="fixed">
+        <TableHeader>
+          <TableRow>
+            <TableCell title="Name" width="35%" />
+            {/* Colspan won't work with fixed tableLayout so we render an empty cell */}
+            <TableCell title="" />
+            <TableCell title="Type" width="35%" />
+            <TableCell title="Default" alignItems="flex-end" />
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {props.map((item) => {
+            return (
+              <PropsTableRow key={item.name} prop={item} sharedTypeAliases={sharedTypeAliases} />
+            );
+          })}
+        </TableBody>
+      </Table>
+    </Box>
   );
 });
 
