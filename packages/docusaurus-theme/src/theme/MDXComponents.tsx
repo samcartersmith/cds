@@ -1,4 +1,5 @@
 import ImportBlock from '@theme/ImportBlock';
+import JSDocTag from '@theme/JSDocTag';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import { TOCUpdater } from '@theme/TOCManager';
@@ -29,6 +30,7 @@ const MDXComponentOverrides = {
   Icon,
   IconButton,
   ImportBlock,
+  JSDocTag,
   Link,
   VStack,
   Tabs,

@@ -57,7 +57,7 @@ const Playground = memo(function Playground({
   );
 
   return (
-    <VStack gap={1} spacingBottom={3}>
+    <VStack gap={1} spacingBottom={3} dangerouslySetClassName="code-playground">
       {/* @ts-expect-error - issue with LiveProvider props */}
       <LiveProvider code={code} transformCode={transformCode} theme={prismTheme} {...props}>
         <VStack borderRadius="popover" bordered overflow="hidden" spacing={3}>

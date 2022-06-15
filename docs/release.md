@@ -1,5 +1,13 @@
 # Release Workflows
 
+## Runbook
+
+https://coda.io/d/CDS-Team_dFaC-pktuzN/Release-Runbooks_suJlv#_lu-05
+
+## Process
+
+https://coda.io/d/CDS-Team_dFaC-pktuzN/Release-Process_suLmD#_luxdf
+
 CDS regularly has to cut releases to expose our library through packages or assets (via a CDN) so our consumers can use them in their applications. You will often hear CDS team members refer to retail, prime, assetHub (and others) as consumers. CDS consumers are any teams at Coinbase that leverage CDS.
 
 ## Release through Verdaccio

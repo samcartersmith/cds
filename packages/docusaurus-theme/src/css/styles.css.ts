@@ -94,7 +94,7 @@ export default css`
     --search-border-radius: ${borderRadius.roundedLarge};
   }
 
-  :root[data-theme='light'] {
+  html[data-theme='light'] {
     ${lightVariables};
     --elevation1: ${palette.background};
     --elevation2: ${palette.background};
@@ -113,7 +113,7 @@ export default css`
     --ifm-scrollbar-thumb-hover-background-color: ${palette.backgroundAlternate} !important;
   }
 
-  :root[data-theme='dark'] {
+  html[data-theme='dark'] {
     ${darkVariables};
     --elevation1: rgba(20, 21, 25, 1);
     --elevation2: rgba(30, 32, 37, 1);
@@ -143,8 +143,7 @@ export default css`
     --schedulely-border-radius: 0;
     font-family: var(--cds-font-sans);
 
-    & .default-day-sibling,
-    [data-theme='minimal'] {
+    & .default-day-sibling {
       --schedulely-sibling-month-bg-color: ${palette.backgroundAlternate};
       --schedulely-sibling-month-font-color: ${palette.foregroundMuted};
     }
@@ -361,9 +360,7 @@ export default css`
     direction: ltr;
   }
 
-  .markdown h1:first-child {
-    margin-bottom: 0;
-  }
+  /* Ensure all headings on docs have consistent margin bottoms */
 
   .markdown > header > h1:first-child {
     margin-bottom: ${spacing[TOKENS.docItem.spacingVertical]};
@@ -393,22 +390,6 @@ export default css`
       max-width: 320px;
       color: var(--foreground);
     }
-
-    /* Temporary until CDS offers underline prop on Link component  */
-    & .cds-link span {
-      position: relative;
-      width: fit-content;
-
-      &:after {
-        content: '';
-        position: absolute;
-        top: 90%;
-        left: 0;
-        background-color: var(--foreground);
-        height: 1px;
-        width: 100%;
-      }
-    }
   }
 
   .row .col {
@@ -432,5 +413,15 @@ export default css`
 
   ul ul {
     margin-top: ${spacing[1]};
+  }
+
+  /* Fix button group inheriting the docusaurus overrides to li + li elements */
+  .markdown .code-playground li + li {
+    margin: unset;
+  }
+
+  /* Fix examples with CDS Text as h1 having margin applied */
+  .markdown .code-playground h1:first-child {
+    margin: unset;
   }
 `;

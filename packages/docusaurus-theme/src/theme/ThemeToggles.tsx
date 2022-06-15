@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
+import useColorMode from '@theme/useColorMode';
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
 import { Switch } from '@cbhq/cds-web/controls';

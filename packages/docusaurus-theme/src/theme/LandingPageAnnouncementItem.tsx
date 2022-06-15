@@ -16,13 +16,7 @@ const LandingPageAnnouncementItem = memo(function LandingPageAnnouncementItem({
 }: LandingPageAnnouncementItemProps) {
   const handleOnPress = useGoToLinkHandler(href);
   return (
-    <VStack
-      gap={1}
-      alignItems="flex-start"
-      background
-      spacingVertical={6}
-      spacingHorizontal={gutter}
-    >
+    <VStack gap={1} alignItems="flex-start" spacingVertical={6} spacingHorizontal={gutter}>
       <TextTitle1 as="h2">{title}</TextTitle1>
       <TextLabel2 as="p">{description}</TextLabel2>
       {actionLabel ? (

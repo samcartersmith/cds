@@ -25,13 +25,7 @@ const LandingPageProjectCategories = memo(function LandingPageProjectCategories(
               </Box>
               <VStack>
                 {items.map((item) => (
-                  <Link
-                    key={item.label}
-                    to={item.href}
-                    variant="title4"
-                    color="foreground"
-                    openInNewWindow
-                  >
+                  <Link key={item.label} to={item.href} variant="title4" openInNewWindow underline>
                     {item.label}
                   </Link>
                 ))}

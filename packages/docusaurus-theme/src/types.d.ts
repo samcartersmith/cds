@@ -417,3 +417,13 @@ declare module '@theme/createCustomTheme' {
     palette: PartialPaletteConfig | SpectrumAwarePartialPaletteConfig,
   ): CustomThemeComponentType;
 }
+
+declare module '@theme/useColorMode' {
+  type ColorMode = import('@cbhq/cds-web').Spectrum;
+  type SetColorMode = (spectrum: ColorMode) => void;
+  export type UseColorModeReturnType = {
+    colorMode: ColorMode;
+    setColorMode: SetColorMode;
+  };
+  export default function useColorMode(): { colorMode: ColorMode; setColorMode: SetColorMode };
+}

@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
+import useColorMode from '@theme/useColorMode';
 import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
 import { useToast } from '@cbhq/cds-web/overlays/useToast';
 

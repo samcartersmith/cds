@@ -65,6 +65,11 @@ module.exports = {
           label: '#ask-cds',
           href: `slack://channel?team=${SLACK_TEAM}&id=C01A6PKGM3J`,
         },
+        {
+          type: 'link',
+          label: 'Feedback',
+          href: `https://docs.google.com/forms/d/1v9HbYPasSKxNG2m3UhiQObjDerLBeUQVgeykJ8AVhUA/edit`,
+        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Coinbase`,
     },

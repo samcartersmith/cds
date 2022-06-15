@@ -51,5 +51,12 @@ module.exports = {
       section: 'Resources',
       url: 'http://go/cds-help',
     },
+    {
+      id: 'feedback-form',
+      name: 'Feedback',
+      image: '/img/logos/gforms.png',
+      section: 'Resources',
+      url: 'https://docs.google.com/forms/d/1v9HbYPasSKxNG2m3UhiQObjDerLBeUQVgeykJ8AVhUA/edit',
+    },
   ],
 };
