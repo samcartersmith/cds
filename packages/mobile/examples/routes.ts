@@ -26,6 +26,7 @@ export const routes = {
   Drawer: () => require('../overlays/__stories__/Drawer.stories').default,
   Group: () => require('../layout/__stories__/Group.stories').default,
   HeroSquare: () => require('../illustrations/__stories__/HeroSquare.stories').default,
+  HintMotion: () => require('../motion/__stories__/HintMotion.stories').default,
   Icon: () => require('../icons/__stories__/Icon.stories').default,
   IconButton: () => require('../buttons/__stories__/IconButton.stories').default,
   InputIcon: () => require('../controls/__stories__/InputIcon.stories').default,

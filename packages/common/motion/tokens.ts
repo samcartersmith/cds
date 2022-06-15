@@ -1,4 +1,4 @@
-import type { MotionAnimation } from '../types';
+import type { MotionAnimation, MotionBaseSpec, MotionDuration, MotionEffect } from '../types';
 
 import { generateAnimToken } from './utils';
 
@@ -65,4 +65,16 @@ export const animations: MotionAnimation = {
   scaleDownXXS: generateAnimToken('scale', [1, 0.98], 'global'),
   scaleDownXS: generateAnimToken('scale', [1, 0.95], 'global'),
   scaleDownS: generateAnimToken('scale', [1, 0.9], 'global'),
+};
+
+export const createMotionConfig = (
+  effect: MotionEffect,
+  duration: MotionDuration,
+  overrides?: Partial<MotionBaseSpec>,
+) => {
+  return {
+    ...animations[effect],
+    duration,
+    ...overrides,
+  };
 };

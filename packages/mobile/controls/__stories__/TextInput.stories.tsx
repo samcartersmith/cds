@@ -71,6 +71,29 @@ export default function InputScreen() {
           placeholder="john.doe@coinbase.com"
         />
       </Example>
+      <Example inline title="TextInput ColorSurge">
+        <MockTextInput
+          label="Username"
+          helperText="username must start with an @ symbol"
+          variant="foregroundMuted"
+          placeholder="john.doe@coinbase.com"
+          enableColorSurge
+        />
+        <MockTextInput
+          label="Username"
+          helperText="username must start with an @ symbol"
+          variant="positive"
+          placeholder="john.doe@coinbase.com"
+          enableColorSurge
+        />
+        <MockTextInput
+          label="Username"
+          helperText="username must start with an @ symbol"
+          variant="negative"
+          placeholder="john.doe@coinbase.com"
+          enableColorSurge
+        />
+      </Example>
       <Example title="TextInput VStack FlexGrow">
         <VStack flexGrow={1} alignItems="flex-start">
           <MockTextInput

@@ -1,7 +1,9 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from 'linaria';
+import type { ColorSurgeBackground } from '@cbhq/cds-common';
 import { BorderWidth, ForwardedRef } from '@cbhq/cds-common';
+import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { durations } from '@cbhq/cds-common/motion/tokens';
 import { inputStackGap } from '@cbhq/cds-common/tokens/input';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
@@ -10,6 +12,7 @@ import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
 import { usePalette } from '../hooks/usePalette';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
+import { ColorSurge } from '../motion/ColorSurge';
 import { Interactable } from '../system/Interactable';
 import { borderWidth as borderWidths } from '../tokens';
 import { cx } from '../utils/linaria';
@@ -30,6 +33,7 @@ const inputBaseAreaStyles = css`
     /* stylelint-disable plugin/no-low-performance-animation-properties */
     transition: box-shadow ${durations.moderate1}ms ease-in-out;
     /* stylelint-enable plugin/no-low-performance-animation-properties */
+    overflow: hidden;
 
     &:focus-within {
       border-color: var(--border-color-focused);
@@ -82,11 +86,13 @@ export const InputStack = memo(
       borderRadius = 'input',
       height,
       disableFocusedStyle = false,
+      enableColorSurge,
       ...props
     }: InputStackProps,
     ref: ForwardedRef<HTMLElement>,
   ) {
     const palette = usePalette();
+    const focusedVariant = useInputVariant(focused, variant);
 
     // Styling
     const inputBorderRadius = useMemo(() => {
@@ -154,6 +160,9 @@ export const InputStack = memo(
               style={defaultBorderStyles}
               className={cx(inputBaseAreaStyles, focused && persistedFocusStyles)}
             >
+              {focused && enableColorSurge && (
+                <ColorSurge background={focusedVariant as ColorSurgeBackground} />
+              )}
               {!!startNode && <>{startNode}</>}
               {inputNode}
               {!!endNode && <>{endNode}</>}

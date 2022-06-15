@@ -19,6 +19,7 @@ import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 
 import { Button, IconButton } from '../buttons';
 import { Box, HStack } from '../layout';
+import { ColorSurge } from '../motion/ColorSurge';
 import { useMotionProps } from '../motion/useMotionProps';
 import { ThemeProvider } from '../system';
 import { spacing } from '../tokens';
@@ -114,6 +115,8 @@ export const Toast: React.FC<ToastProps> = memo(
                   borderRadius="standard"
                   alignItems="center"
                   maxWidth={550}
+                  position="relative"
+                  overflow="hidden"
                 >
                   {/* avoid pushing contents off screen */}
                   <Box flexShrink={1} spacingEnd={2} spacingVertical={1} role="alert">
@@ -121,6 +124,7 @@ export const Toast: React.FC<ToastProps> = memo(
                       {text}
                     </TextHeadline>
                   </Box>
+                  <ColorSurge />
                   <HStack>
                     {!!action && (
                       <Button

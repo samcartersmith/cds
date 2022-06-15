@@ -12,6 +12,7 @@ import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { Button } from '../buttons';
 import { useSpacingScale } from '../hooks/useSpacingScale';
 import { Box, HStack } from '../layout';
+import { ColorSurge } from '../motion/ColorSurge';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { TextHeadline } from '../typography';
 
@@ -89,12 +90,14 @@ export const Toast: React.FC<ToastProps> = memo(
                 background
                 borderRadius="standard"
                 alignItems="center"
+                overflow="hidden"
                 dangerouslySetStyle={{
                   opacity,
                   transform: [{ translateY: bottom }, ...panResponderAnimation],
                 }}
                 {...panHandlers}
               >
+                <ColorSurge />
                 {/* avoid pushing contents off screen */}
                 <Box flexShrink={1} spacingEnd={2} spacingVertical={1}>
                   <TextHeadline>{text}</TextHeadline>

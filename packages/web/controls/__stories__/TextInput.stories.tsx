@@ -85,6 +85,24 @@ export const Variants = function Variants() {
   );
 };
 
+export const ColorSurge = function ColorSurge() {
+  const variants = ['positive', 'negative', 'foregroundMuted'] as const;
+
+  return (
+    <>
+      {variants.map((variant) => (
+        <TextInput
+          label={`Label: ${variant}`}
+          placeholder="placeholder"
+          helperText="helperText"
+          variant={variant}
+          enableColorSurge
+        />
+      ))}
+    </>
+  );
+};
+
 export const Width = function Width() {
   const widths = ['100%', '30%', '75%', '10%'] as const;
 

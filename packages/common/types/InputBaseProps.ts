@@ -62,6 +62,11 @@ export type InputStackBaseProps = {
    * @default false
    */
   disableFocusedStyle?: boolean;
+  /**
+   * Enable Color Surge motion
+   * @default false
+   */
+  enableColorSurge?: boolean;
 } & SharedProps;
 
 export type SharedInputProps = {

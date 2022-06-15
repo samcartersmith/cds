@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { memo, useMemo } from 'react';
 import { Animated, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import type { ColorSurgeBackground } from '@cbhq/cds-common';
 import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common/tokens/border';
 import { focusedInputBorderWidth, inputBorderWidth } from '@cbhq/cds-common/tokens/input';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
@@ -10,6 +11,7 @@ import { useLayout } from '../hooks/useLayout';
 import { usePalette } from '../hooks/usePalette';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
+import { ColorSurge } from '../motion/ColorSurge';
 import { DangerouslySetStyle } from '../types';
 
 export type InputStackProps = {
@@ -37,6 +39,7 @@ export const InputStack = memo(function InputStack({
   borderRadius = 'input',
   borderFocusedStyle,
   focused,
+  enableColorSurge,
   ...props
 }: InputStackProps) {
   const palette = usePalette();
@@ -65,6 +68,7 @@ export const InputStack = memo(function InputStack({
       flexGrow: 1,
       backgroundColor: palette.background,
       borderRadius: borderRadiusTokens[borderRadius],
+      overflow: 'hidden',
       ...inputBorderRadius,
     };
   }, [palette, prependNode, appendNode, variant, borderRadius]);
@@ -110,6 +114,9 @@ export const InputStack = memo(function InputStack({
             testID={testID && `${testID}-input-area`}
             style={inputAreaStyles}
           >
+            {focused && enableColorSurge && (
+              <ColorSurge background={variant as ColorSurgeBackground} />
+            )}
             {!!startNode && <>{startNode}</>}
             {inputNode}
             {!!endNode && <>{endNode}</>}

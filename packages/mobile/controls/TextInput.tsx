@@ -58,6 +58,7 @@ export const TextInput = memo(
         suffix = '',
         accessibilityLabel,
         borderRadius,
+        enableColorSurge = false,
         ...editableInputProps
       }: TextInputProps,
       ref: ForwardedRef<RNTextInput>,
@@ -108,6 +109,7 @@ export const TextInput = memo(
           borderStyle={borderUnfocusedStyle}
           borderFocusedStyle={borderFocusedStyle}
           focused={focused}
+          enableColorSurge={enableColorSurge}
           inputNode={
             <NativeInput
               containerSpacing={start ? startSpacing : {}}
