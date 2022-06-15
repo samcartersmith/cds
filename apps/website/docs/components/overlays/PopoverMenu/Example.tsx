@@ -33,6 +33,7 @@ const PopoverMenuExample = () => {
           openMenu={toggleMenuVisibility.toggleOn}
           closeMenu={toggleMenuVisibility.toggleOff}
           width={300}
+          disablePortal
         >
           <PopoverTrigger>
             <IconButton variant="secondary" name="more" />
