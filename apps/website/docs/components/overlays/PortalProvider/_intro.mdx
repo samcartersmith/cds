@@ -1,0 +1,17 @@
+`PortalProvider` is a convenient way for adding anything to the CDS portal.
+The CDS portal is what CDS uses to centralize all elements that need a portal and handles the zIndex of those pieces.
+It also enables you to programmatically control the components using hooks like [useModal](/hooks/useModal/) and [useAlert](/hooks/useAlert/).
+
+CDS [Modal](/components/modal), [Alert](/components/alert), [Toast](/components/toast),
+and [Tooltip](/components/tooltip) has Portal enabled by default.
+You can opt out of Portal by using the `disablePortal` prop on those components.
+
+#### Mobile
+
+[Portal](https://reactjs.org/docs/portals.html) is a **Web** only feature based on DOM, but why do we have `PortalProvider` on mobile?
+
+Two reasons:
+
+- Programatically control Modals using [useModal](/hooks/useModal/). Same as the Web API.
+- React Native has a [known issue](https://github.com/react-native-modal/react-native-modal/issues/30) where multiple Modals needs to be nested if you want to open one above another.
+  PortalProvider manages this internally so you can just call `openModal` without any concern.
