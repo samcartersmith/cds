@@ -129,4 +129,5 @@ steps:
             - 'PERCY_TOKEN'
             - 'STORYBOOK_SKIP_ANIMATION'
             - 'PERCY_TARGET_BRANCH'
+            - 'OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH'
       - file:///buildkite/plugins/cache: *cache_plugin

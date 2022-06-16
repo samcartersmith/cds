@@ -656,11 +656,11 @@ __metadata:
   linkType: hard
 
 "@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.1.6, @babel/parser@npm:^7.11.5, @babel/parser@npm:^7.12.11, @babel/parser@npm:^7.12.7, @babel/parser@npm:^7.13.16, @babel/parser@npm:^7.14.0, @babel/parser@npm:^7.14.4, @babel/parser@npm:^7.14.7, @babel/parser@npm:^7.16.7, @babel/parser@npm:^7.17.8, @babel/parser@npm:^7.18.0":
-  version: 7.18.4
-  resolution: "@babel/parser@npm:7.18.4"
+  version: 7.18.3
+  resolution: "@babel/parser@npm:7.18.3"
   bin:
     parser: ./bin/babel-parser.js
-  checksum: e05b2dc720c4b200e088258f3c2a2de5041c140444edc38181d1217b10074e881a7133162c5b62356061f26279f08df5a06ec14c5842996ee8601ad03c57a44f
+  checksum: 6894b3266f84b6c6b52bf09e7f61526efc35d8afa72ff0ad9aecb27a4b6de02d1ebc7f61fc3ae7c0fd8ecb5ac17083d1f27c1b3176e5eac41131d7160a9a7d88
   languageName: node
   linkType: hard
 
