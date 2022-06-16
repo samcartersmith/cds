@@ -34,6 +34,7 @@
     "codeowners": "mono-pipeline sync-codeowners",
     "dep-graph": "yarn nx dep-graph",
     "diagnose": "mono-env diagnose --group common web",
+    "docker.debug": "./tools/ci/docker-debug.sh",
     "help": "yarn nx help",
     "postinstall": "./setup.sh",
     "setup": "./setup.sh && mono-env setup --group common",

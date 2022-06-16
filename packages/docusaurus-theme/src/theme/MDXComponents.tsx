@@ -5,6 +5,7 @@ import Tabs from '@theme/Tabs';
 import { TOCUpdater } from '@theme/TOCManager';
 import MDXComponents from '@theme-init/MDXComponents';
 import { Button, ButtonGroup, IconButton } from '@cbhq/cds-web/buttons';
+import { ListCell } from '@cbhq/cds-web/cells/ListCell';
 import { Icon } from '@cbhq/cds-web/icons';
 import { Box, Divider, Group, HStack, VStack } from '@cbhq/cds-web/layout';
 import {
@@ -32,6 +33,7 @@ const MDXComponentOverrides = {
   ImportBlock,
   JSDocTag,
   Link,
+  ListCell,
   VStack,
   Tabs,
   TabItem,

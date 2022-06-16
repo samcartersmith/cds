@@ -1,13 +1,3 @@
-import { Method, ParentType } from 'react-docgen-typescript/lib/parser';
-
-/* -------------------------------------------------------------------------- */
-/*                        Overrides for narrower types                        */
-/* -------------------------------------------------------------------------- */
-
-declare module 'react-docgen-typescript' {
-  export function withCustomConfig(): { parse: (files: string[]) => Doc[] };
-}
-
 declare module '@cbhq/docusaurus-plugin-docgen' {
   export type Plugin = import('@docusaurus/types').Plugin;
 
@@ -30,6 +20,11 @@ declare module '@cbhq/docusaurus-plugin-docgen' {
      * @default true
      */
     enabled?: boolean;
+    /**
+     * If plugin should generate changelog data for each doc
+     * @default false
+     */
+    changelog?: boolean;
     /**
      * Absolute paths to tsconfig.json's for any projects that sourceFiles belong to.
      * When the plugin is run it will loop through each tsconfig and determine
@@ -89,10 +84,10 @@ declare module '@cbhq/docusaurus-plugin-docgen' {
 
   export type PropItem = {
     name: string;
-    declarations?: ParentType[];
+    declarations?: import('react-docgen-typescript/lib/parser').ParentType[];
     defaultValue: null | { value: string };
     description: string;
-    parent?: ParentType;
+    parent?: import('react-docgen-typescript/lib/parser').ParentType;
     required: boolean;
     tags?: PropItemTags;
     type: PropType;
@@ -112,7 +107,7 @@ declare module '@cbhq/docusaurus-plugin-docgen' {
     displayName: string;
     filePath: string;
     props: Record<string, PropItem>;
-    methods?: Method[];
+    methods?: import('react-docgen-typescript/lib/parser').Method[];
     tags?: DocTags;
   };
 
@@ -151,11 +146,14 @@ declare module '@cbhq/docusaurus-plugin-docgen' {
   /* -------------------------------------------------------------------------- */
 
   export type OutputDoc = Omit<ProcessedDoc, 'example'> & {
+    cacheDirectory: string;
+    repoUrl?: string;
     /**
      * Format mdx partials in codegenerated docs to use uppercase format of path
      * i.e. `accordion/mobile/accordionItem.mdx` -> `MobileAccordionItem`
      */
-    partial: { name: string; path: string };
+    apiPartial: { name: string; path: string };
+    changelogPartial: { name: string; path: string };
     /** This displays the info about where to import the component or util from, with a "copy to clipboard" button */
     importBlock: { name: string; path: string };
     tab: { label: string; value: string };
@@ -164,10 +162,13 @@ declare module '@cbhq/docusaurus-plugin-docgen' {
 
   export type Template =
     | 'shared/objectMap'
+    | 'doc/changelog'
     | 'doc/component'
     | 'doc/implementation'
     | 'doc/metadata'
     | 'doc-item/api'
+    | 'doc-item/changelog'
+    | 'doc-item/changelog-placeholder'
     | 'doc-item/example'
     | 'doc-item/import-block';
 
@@ -222,6 +223,7 @@ declare module '@cbhq/docusaurus-plugin-docgen' {
     label: string;
     name: string;
     version: string;
+    cacheDirectory: string;
   };
 
   export type PluginData = {
@@ -232,10 +234,22 @@ declare module '@cbhq/docusaurus-plugin-docgen' {
   export type PluginContent = {
     filesToWrite: WriteFileConfig[];
     projects: Projects;
+    parsedDocs: OutputDoc[];
   };
 
   export default function plugin(
     context: import('@docusaurus/types').LoadContext,
     options: PluginOptions,
   ): Promise<Plugin<PluginContent | undefined>>;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                        Overrides for narrower types                        */
+/* -------------------------------------------------------------------------- */
+
+declare module 'react-docgen-typescript' {
+  export function withCustomConfig(
+    path: string,
+    params: import('react-docgen-typescript/lib/parser').ParserOptions,
+  ): { parse: (files: string[]) => import('@cbhq/docusaurus-plugin-docgen').Doc[] };
 }

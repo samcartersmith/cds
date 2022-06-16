@@ -5,6 +5,7 @@ import keyBy from 'lodash/keyBy';
 import mapValues from 'lodash/mapValues';
 import uniqBy from 'lodash/uniqBy';
 import path from 'path';
+import { PackageJson } from 'type-fest';
 import type {
   OutputDoc,
   PluginContent,
@@ -17,6 +18,7 @@ import type {
 import { getPackageJsonFromTsconfig } from '../utils/getPackageJsonFromTsconfig';
 import { logger } from '../utils/logger';
 
+import { docgenChangelogBuilder } from './docgenChangelogBuilder';
 import { docgenParser, sharedParentTypesCache, sharedTypeAliasesCache } from './docgenParser';
 import { docgenScaffolder } from './docgenScaffolder';
 
@@ -27,6 +29,21 @@ type DocgenRunnerParams = PluginOptions & {
 function getTempDirForDoc({ projectDir, doc }: { projectDir: string; doc: ProcessedDoc }) {
   const relativeFilePath = doc.filePath.replace(`${path.dirname(projectDir)}/`, '');
   return relativeFilePath.replace(path.extname(relativeFilePath), '');
+}
+
+function getRepoUrl(repository: PackageJson['repository']) {
+  const repoUrl = typeof repository === 'string' ? repository : repository?.url;
+  if (repoUrl) {
+    /** We need to change to https url */
+    if (repoUrl.includes('.git')) {
+      /** git@github.cbhq.net:frontend/cds.git */
+      const [domain, project] = repoUrl.replace('git@', '').split(':');
+      const [user, repo] = project.replace('.git', '').split('/');
+      return `https://${domain}/${user}/${repo}`;
+    }
+    return repoUrl;
+  }
+  return undefined;
 }
 
 /**
@@ -42,6 +59,7 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
     forceDocs,
     pluginDir,
     onProcessDoc,
+    changelog,
   } = params;
   let filesToWriteToDisk: WriteFileConfig[] = [];
   const parsedProjects: Projects = [];
@@ -85,8 +103,13 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
   );
 
   projects.forEach(({ tsconfigPath, projectDir, files }) => {
-    const { name: packageNameWithScope = '', version } = getPackageJsonFromTsconfig(tsconfigPath);
+    const {
+      name: packageNameWithScope = '',
+      version,
+      repository,
+    } = getPackageJsonFromTsconfig(tsconfigPath);
     const [maybeScope, packageNameWithoutScope = maybeScope] = packageNameWithScope.split('/');
+    const repoUrl = getRepoUrl(repository);
 
     /**
      * If a component is associated with multiple packages, such as web and mobile, we want
@@ -99,14 +122,17 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
     const projectName = formatPackageName?.(packageNameWithoutScope) ?? packageNameWithoutScope;
 
     // Include anything you want to be accessible client side via usePluginData here.
-    parsedProjects.push({
+    const projectData = {
       label: projectName,
       name: packageNameWithScope,
       version,
-    });
+      cacheDirectory: path.join(pluginDir, path.basename(path.dirname(tsconfigPath))),
+    };
+
+    parsedProjects.push(projectData);
 
     filesToWriteToDisk.push({
-      dest: path.join(pluginDir, path.basename(path.dirname(tsconfigPath)), `metadata.js`),
+      dest: path.join(projectData.cacheDirectory, `metadata.js`),
       data: {
         version,
       },
@@ -126,13 +152,19 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
 
         const data: OutputDoc = {
           ...doc,
+          cacheDirectory: path.join(pluginDir, destDir),
+          repoUrl,
           importBlock: {
             name: doc.displayName,
             path: path.join(packageNameWithScope, slug),
           },
-          partial: {
+          apiPartial: {
             name: `${capitalize(`${projectName}`)}PropsTable`,
             path: path.join(':docgen', destDir, 'api.mdx'),
+          },
+          changelogPartial: {
+            name: `${capitalize(`${projectName}`)}Changelog`,
+            path: path.join(':docgen', destDir, 'changelog.mdx'),
           },
           tab: { label: capitalize(projectName), value: projectName },
           slug,
@@ -154,7 +186,7 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
 
         filesToWriteToDisk.push({
           data: data.props.map((item) => ({ id: item.name, level: 3, value: item.name })),
-          dest: path.join(pluginDir, destDir, 'toc.js'),
+          dest: path.join(pluginDir, destDir, 'toc-props.js'),
           template: 'shared/objectMap',
         });
 
@@ -183,6 +215,22 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
     filesToWriteToDisk = [...filesToWriteToDisk, ...scaffolds];
   }
 
+  if (changelog) {
+    logger.preppingChangelog();
+    const changelogs = await docgenChangelogBuilder(docs);
+    filesToWriteToDisk = [...filesToWriteToDisk, ...changelogs];
+  } else {
+    logger.skippingChangelog();
+    filesToWriteToDisk = [
+      ...filesToWriteToDisk,
+      {
+        dest: `${pluginDir}/_placeholders/changelog.mdx`,
+        data: {},
+        template: 'doc-item/changelog-placeholder',
+      },
+    ];
+  }
+
   /** Output all shared parentTypes to object. We group by parent name, i.e SpacingProps
    * and transform to an object, where each prop for that parent type is defined.
    */
@@ -208,5 +256,6 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
       },
     ],
     projects: parsedProjects,
+    parsedDocs: Array.from(docs.values()),
   };
 }

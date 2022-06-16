@@ -5,12 +5,14 @@ RUN apt-get update && apt-get install -y zip
 WORKDIR /repo
 
 COPY . .
+COPY .git .git
 
 # Install dependencies
 RUN yarn --immutable
 
 # Build the app with nx
 ENV NODE_ENV=development
+ENV CODEFLOW=true
 RUN yarn nx run website:build
 
 # Zip the app for deploy

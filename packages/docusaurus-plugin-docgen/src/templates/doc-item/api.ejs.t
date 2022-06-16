@@ -10,4 +10,4 @@ import data from './data';
 
 <PropsTable props={data.props} sharedTypeAliases={sharedTypeAliases}  />
 
-<PropsTOCUpdater toc={require('./toc')} />
+<PropsTOCUpdater toc={require('./toc-props')} />
