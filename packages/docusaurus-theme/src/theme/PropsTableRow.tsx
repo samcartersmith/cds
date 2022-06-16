@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import JSDocTag, { JSDOC_TAG_VARIANTS, JSDocTagVariant } from '@theme/JSDocTag';
 import ModalLink from '@theme/ModalLink';
 import type { PropsTableRowProps, TypeAliasModalContentProps } from '@theme/PropsTableRow';
-import { HStack, VStack } from '@cbhq/cds-web/layout';
+import { VStack } from '@cbhq/cds-web/layout';
 import { TableCell, TableRow } from '@cbhq/cds-web/tables';
 import { TextBody, TextLabel2 } from '@cbhq/cds-web/typography';
 import type { PropItemTags } from '@cbhq/docusaurus-plugin-docgen';
@@ -49,11 +49,9 @@ const PropsTableRow = memo(function PropsTableRow({ prop, sharedTypeAliases }: P
       );
     }
     return (
-      <HStack overflow="scroll" width="inherit">
-        <TextBody as="p" mono overflow="break">
-          {type}
-        </TextBody>
-      </HStack>
+      <TextBody as="p" mono overflow="break">
+        {type}
+      </TextBody>
     );
   }, [type, sharedTypeAliases]);
 
