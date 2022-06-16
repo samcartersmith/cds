@@ -1,23 +1,25 @@
-import React, { useCallback, useState } from 'react';
+import React, { ReactNode, useCallback, useState } from 'react';
 
 import { BoxBaseProps, ButtonBaseProps, ColorSurgeBaseProps, TextBaseProps } from '../types';
 
-export type CreateColorSurgeProps = {
+export type CreateHintMotionProps = {
   VStack: React.ComponentType<BoxBaseProps & { gap: number }>;
-  Box: React.ComponentType<BoxBaseProps & { overflow: string }>;
+  Box: React.ComponentType<BoxBaseProps & { overflow?: string }>;
   Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
-  ColorSurge: React.ComponentType<ColorSurgeBaseProps>;
   TextBody: React.ComponentType<TextBaseProps & { as?: string }>;
+  ColorSurge: React.ComponentType<ColorSurgeBaseProps>;
+  Shake: React.ComponentType;
 };
 
-export function colorSurgeBuilder({
+export function hintMotionBuilder({
   VStack,
   Button,
   Box,
   ColorSurge: ColorSurgeComponent,
+  Shake: ShakeComponent,
   TextBody,
-}: CreateColorSurgeProps) {
-  const ColorSurge = () => {
+}: CreateHintMotionProps) {
+  const ReRenderer = ({ children }: { children: ReactNode }) => {
     const [num, setNum] = useState(0);
 
     const reRender = useCallback(() => {
@@ -29,6 +31,14 @@ export function colorSurgeBuilder({
         <Button compact onPress={reRender}>
           Re-render
         </Button>
+        {children}
+      </VStack>
+    );
+  };
+
+  const ColorSurge = () => {
+    return (
+      <ReRenderer>
         <Box spacing={3} borderRadius="rounded" overflow="hidden" position="relative" bordered>
           <ColorSurgeComponent />
           <TextBody as="p">Default</TextBody>
@@ -41,11 +51,24 @@ export function colorSurgeBuilder({
           <ColorSurgeComponent background="negative" />
           <TextBody as="p">Negative</TextBody>
         </Box>
-      </VStack>
+      </ReRenderer>
+    );
+  };
+
+  const Shake = () => {
+    return (
+      <ReRenderer>
+        <ShakeComponent>
+          <Box spacing={3} borderRadius="rounded" bordered>
+            <TextBody as="p">Shaking Box</TextBody>
+          </Box>
+        </ShakeComponent>
+      </ReRenderer>
     );
   };
 
   return {
     ColorSurge,
+    Shake,
   };
 }

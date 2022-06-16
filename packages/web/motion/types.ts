@@ -1,5 +1,5 @@
 import type { TargetAndTransition, Transition, Variant } from 'framer-motion';
-import type { MotionBaseSpec, MotionCurve, MotionDuration } from '@cbhq/cds-common';
+import type { MotionBaseSpec, MotionTransition as MotionBaseTransition } from '@cbhq/cds-common';
 
 export type MotionSpec = {
   toValue: MotionBaseSpec['toValue'] | string; // allow string values like scale(0.5)
@@ -16,13 +16,4 @@ export type MotionConfigs =
   | MotionSpec[]
   | { tokens: MotionSpec[]; transitionEnd?: TargetAndTransition['transitionEnd'] };
 
-export type MotionTransition = {
-  /**
-   * CDS motion easing token
-   */
-  easing?: MotionCurve;
-  /**
-   * CDS motion duration token
-   */
-  duration?: MotionDuration;
-} & Transition;
+export type MotionTransition = Partial<MotionBaseTransition> & Transition;
