@@ -1,42 +1,15 @@
 import React, { memo } from 'react';
-import type { LandingPageFocusAreaItemProps } from '@theme/LandingPageFocusAreaItem';
-import type { IllustrationNames } from '@cbhq/cds-common';
-import { CardBody } from '@cbhq/cds-web/alpha/CardBody';
-import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
-import { Box } from '@cbhq/cds-web/layout/Box';
-
-import useGoToLinkHandler from './useGoToLinkHandler';
-
-type LandingIllustrationProps = { name: IllustrationNames };
-
-function LandingIllustration({ name }: LandingIllustrationProps) {
-  return (
-    <Box spacingStart={3}>
-      <Illustration name={name} dimension="48x48" />
-    </Box>
-  );
-}
+import { LandingPageFocusAreaItemProps } from '@theme/LandingPageFocusAreaItem';
+import { Link } from '@cbhq/cds-web/typography/Link';
 
 const LandingPageFocusAreaItem = memo(function LandingPageFocusAreaItem({
-  title,
-  description,
-  illustration,
-  actionLabel,
-  href,
+  label,
+  url,
 }: LandingPageFocusAreaItemProps) {
-  const handlePress = useGoToLinkHandler(href);
   return (
-    <Box width="100%">
-      <CardBody
-        title={title}
-        description={description}
-        mediaPlacement="above"
-        media={<LandingIllustration name={illustration} />}
-        actionLabel={actionLabel}
-        justifyContent="space-between"
-        onActionPress={handlePress}
-      />
-    </Box>
+    <Link key={label} to={url} variant="title4" openInNewWindow underline>
+      {label}
+    </Link>
   );
 });
 

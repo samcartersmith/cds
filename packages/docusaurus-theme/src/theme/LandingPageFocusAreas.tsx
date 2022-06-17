@@ -1,24 +1,25 @@
 import React, { memo } from 'react';
-import LandingPageFocusAreaItem from '@theme/LandingPageFocusAreaItem';
-import { LandingPageFocusAreasProps } from '@theme/LandingPageFocusAreas';
-import { CardGroup } from '@cbhq/cds-web/alpha/CardGroup';
-import { Divider } from '@cbhq/cds-web/layout/Divider';
+import type { FocusAreaSectionFields } from '@theme/LandingPageFocusAreas';
+import { CMSContent } from '@cb/cms';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { Box } from '@cbhq/cds-web/layout/Box';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
 
-function VerticalDivider() {
-  return <Divider direction="vertical" />;
-}
-
-const FocusAreas = memo(function FocusAreas({ focusAreas }: LandingPageFocusAreasProps) {
-  if (focusAreas) {
-    return (
-      <CardGroup divider={VerticalDivider} direction="horizontal" justifyContent="space-between">
-        {focusAreas.map((item) => (
-          <LandingPageFocusAreaItem key={item.title} {...item} />
-        ))}
-      </CardGroup>
-    );
-  }
-  return null;
+const LandingPageFocusAreas = memo(function LandingPageFocusAreas({
+  label,
+  focusAreas,
+}: FocusAreaSectionFields) {
+  return (
+    <HStack minHeight={600}>
+      <Box spacing={gutter} width="50%" borderedEnd>
+        <h3 className="project-categories-title">{label}</h3>
+      </Box>
+      <VStack spacing={gutter} gap={gutter} width="50%">
+        <CMSContent content={focusAreas} />
+      </VStack>
+    </HStack>
+  );
 });
 
-export default FocusAreas;
+export default LandingPageFocusAreas;

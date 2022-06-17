@@ -98,4 +98,12 @@ module.exports = {
     // Must run last!
     webpackConfig,
   ],
+  customFields: {
+    contentful: {
+      accessToken: 'qc2teuIgEZgdYwzyoADTo2WxiMMLKirc6XvrG8GBZ5Q',
+      space: 'w5g94q9p2q4k',
+      clientKey: 'home',
+      host: 'contentful.coinbase.com',
+    },
+  },
 };

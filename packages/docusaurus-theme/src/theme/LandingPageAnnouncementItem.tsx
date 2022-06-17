@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import type { LandingPageAnnouncementItemProps } from '@theme/LandingPageAnnouncementItem';
+import type { AnnouncementFields } from '@theme/LandingPageAnnouncementItem';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
@@ -13,7 +13,7 @@ const LandingPageAnnouncementItem = memo(function LandingPageAnnouncementItem({
   description,
   href,
   actionLabel,
-}: LandingPageAnnouncementItemProps) {
+}: AnnouncementFields) {
   const handleOnPress = useGoToLinkHandler(href);
   return (
     <VStack gap={1} alignItems="flex-start" spacingVertical={6} spacingHorizontal={gutter}>

@@ -14,6 +14,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@cb/cms": "^0.1.4",
     "@cbhq/cds-web": "workspace:*",
     "@docusaurus/core": "2.0.0-beta.18",
     "@docusaurus/theme-classic": "2.0.0-beta.18",
