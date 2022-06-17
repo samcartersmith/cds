@@ -1,6 +1,8 @@
 import { ResponsiveProps } from '@cbhq/cds-common/types/ResponsiveProps';
 
 import { HStack } from '../../layout/HStack';
+import { VStack } from '../../layout/VStack';
+import { DefaultToDeviceProvider } from '../../system/DefaultToDeviceProvider';
 import { TextHeadline } from '../../typography';
 import { useBreakpoints } from '../useBreakpoints';
 
@@ -51,6 +53,16 @@ type PlaygroundProps = {
 };
 
 export const Playground = (props: PlaygroundProps) => <Example {...props} />;
+
+export const DefaultToDevice = () => {
+  return (
+    <VStack gap={2}>
+      <DefaultToDeviceProvider device="phone">
+        <Example />
+      </DefaultToDeviceProvider>
+    </VStack>
+  );
+};
 
 export default {
   title: 'Hooks/useBreakpoints',

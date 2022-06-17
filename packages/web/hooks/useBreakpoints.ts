@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
-import { DeviceBreakpoint } from '@cbhq/cds-common/types';
+import { DeviceBreakpoint, ResponsivePropsDevices } from '@cbhq/cds-common/types';
 
 import { deviceMqRanges } from '../layout/breakpoints';
+import { useDefaultToDeviceContext } from '../system/DefaultToDeviceProvider';
 import { getBrowserGlobals } from '../utils/browser';
+import { addMatchMediaListener, removeMatchMediaListener } from '../utils/globalMatchMediaListener';
 
 type BreakpointRecord = Record<string, boolean>;
 
@@ -16,6 +18,36 @@ const booleanDeviceNames: Record<DeviceBreakpoint, string> = {
   extraWide: 'isExtraWide',
 };
 
+export const defaultDeviceMatchesMap: Record<ResponsivePropsDevices, BreakpointRecord> = {
+  phone: {
+    isPhone: true,
+    isPhoneLandscape: false,
+    isTablet: false,
+    isTabletLandscape: false,
+    isDesktop: false,
+    isDesktopLarge: false,
+    isExtraWide: false,
+  },
+  tablet: {
+    isPhone: false,
+    isPhoneLandscape: false,
+    isTablet: true,
+    isTabletLandscape: false,
+    isDesktop: false,
+    isDesktopLarge: false,
+    isExtraWide: false,
+  },
+  desktop: {
+    isPhone: false,
+    isPhoneLandscape: false,
+    isTablet: false,
+    isTabletLandscape: false,
+    isDesktop: true,
+    isDesktopLarge: false,
+    isExtraWide: false,
+  },
+};
+
 const deviceKeys = Object.keys(deviceMqRanges) as DeviceBreakpoint[];
 
 /**
@@ -23,14 +55,11 @@ const deviceKeys = Object.keys(deviceMqRanges) as DeviceBreakpoint[];
  * Please use useIsMobile instead
  */
 export const useBreakpoints = (): BreakpointRecord => {
-  const window = getBrowserGlobals()?.window;
+  const defaultDevice = useDefaultToDeviceContext();
 
-  const matchesMediaQuery = useCallback(
-    (mediaQuery: string) => {
-      return window?.matchMedia(mediaQuery);
-    },
-    [window],
-  );
+  const matchesMediaQuery = useCallback((mediaQuery: string) => {
+    return getBrowserGlobals()?.window?.matchMedia(mediaQuery);
+  }, []);
 
   const getMatches = useCallback(() => {
     const matches: BreakpointRecord = {};
@@ -41,7 +70,10 @@ export const useBreakpoints = (): BreakpointRecord => {
     return matches;
   }, [matchesMediaQuery]);
 
-  const [deviceMatches, setDeviceMatches] = useState<BreakpointRecord>(getMatches());
+  const initialMatches = getMatches();
+  const initialState = defaultDevice ? defaultDeviceMatchesMap[defaultDevice] : initialMatches;
+
+  const [deviceMatches, setDeviceMatches] = useState<BreakpointRecord>(initialState);
 
   const setMatches = useCallback(() => {
     const matches = getMatches();
@@ -49,15 +81,9 @@ export const useBreakpoints = (): BreakpointRecord => {
   }, [getMatches]);
 
   useEffect(() => {
-    deviceKeys.forEach((device) => {
-      const deviceQuery = deviceMqRanges[device];
-      matchesMediaQuery(deviceQuery)?.addEventListener('change', setMatches);
-    });
+    deviceKeys.forEach((device) => addMatchMediaListener(deviceMqRanges[device], setMatches));
     return () => {
-      deviceKeys.forEach((device) => {
-        const deviceQuery = deviceMqRanges[device];
-        matchesMediaQuery(deviceQuery)?.removeEventListener('change', setMatches);
-      });
+      deviceKeys.forEach((device) => removeMatchMediaListener(deviceMqRanges[device], setMatches));
     };
   }, [getMatches, matchesMediaQuery, setMatches]);
 
