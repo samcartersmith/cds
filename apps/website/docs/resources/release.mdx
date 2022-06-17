@@ -7,10 +7,29 @@ import ReleaseCalendar from './ReleaseCalendar';
 
 <ReleaseCalendar />
 
-Release notes:
+## Release notes
 
 - [@cds/web](https://github.cbhq.net/frontend/cds/blob/master/packages/web/CHANGELOG.md)
 - [@cds/mobile](https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/CHANGELOG.md)
+
+## Release process
+
+CDS runs a 2 week, rolling release cycle. A healthy release is made up of 3 major milestones.
+
+- Release Cut - This is done every Wednesday at 4 EST.
+- Bake Week - The week following the release cut, the build is released with a `-beta.x` tag and distributed to NPM. This provides CDS partner teams early access to the next release as it Bakes.
+- Production release - CDS packages are release to our production NPM instance (Verdaccio).
+- Because we run a rolling release cycle, build processes overlap each other (note: you can use the release calendar to track which release we’re on at any given time).
+
+In a perfect world, this would mean a new build (which was cut the Wednesday before last) would be rolled out each Wednesday to new customers after baking for a week.
+
+## Release communication
+
+Release communication is usually posted in the [#announcements-cds](https://coinbase.slack.com/archives/C018PD8E6JG) channel with a message and notifying the @cds-eng-adopters group (which [you can self-add yourself to in Slack](https://app.slack.com/client/T02Q6DY7G/browse-user-groups/user_groups/S01PBTCMDNK)).
+
+The same information is available in this doc for historical purposes (not as an up-to-date source of truth).
+
+## Versioning
 
 **Major** versions will be released at the start of each quarter. If there are no breaking changes or active deprecations, no major will be released.
 
@@ -19,16 +38,27 @@ Release notes:
 - Will provide a migration guide with each major release.
 - If needed, will also provide a codemod to automate migrations.
 
-**Minor** and **patch** versions will be released at the start of each week.
+**Minor** versions will be released bi-weekly.
 
 - Based on unreleased changelog items.
 - Will always be backwards compatible.
 - Will only include updates which add new functionality or fix existing functionality.
-- Will sometimes release if no changes to keep dependencies synchronized on latest.
 
-At the end of each week.
+**Patch** versions will be released ad hoc, at any time.
 
-- Include a list of release updates for the current week.
+- Hotfixes / Bugfixes identified as P0 - P1 bugs are considered a hotfix.
+- Will always be backwards compatible.
+- Will only include a fix for existing functionality.
+
+**Alpha** versions can be release ad-hoc by CDS to test a specific feature.
+
+- Alpha releases can be deployed from any PR
+- These are _not_ meant for external consumption, but for testing individual features
+
+**Beta** versions will be released bi-weekly (alternating with the minor release).
+
+- Beta releases will bake for 1 week before the release is publushed to production
+- Will allow consuming teams early access to a release to ensure it's stable and begin work locally
 
 ## Breaking changes
 
@@ -64,7 +94,7 @@ When multiple props change on a component, or styles/visuals are completely rede
 
 ### Visual updates
 
-When any CDS code change causes a change in the rendered UI. This can be caused by but not limited to CSS style updates, codegen style updates, any CDS token updates, default style prop value updates, and responsive design media query changes. Usually, the visual change should show up in the percy screenshot tests.
+When any CDS code change causes a change in the rendered UI. This can be caused by but not limited to CSS style updates, codegen style updates, any CDS token updates, default style prop value updates, and responsive design media query changes. The visual change should show up in the percy screenshot tests.
 
 ## Deprecations
 
@@ -74,48 +104,60 @@ A deprecation notice consists of:
 
 - Adding a JSDOC `@deprecated` comment to the feature (prop, function, method, etc).
 - Logging a warning to the console with a deprecation/migration message.
-- Implementing a codemod to ease the migration.
+- For more involved migrations, CDS will provide a codemod to ease the migration.
 
-## Pre-release requirements
+## PR requirements to support our release workflow
 
 - Ensure every PR has a changelog entry.
-  - Use conventional commits-like format to determine semver changes.
-  - Define a checklist that all PRs should follow.
+  - Use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) style format to determine semver changes, ie: `[trivial] feat(Tag): Create Tag component for web and mobile`.
+    - Major
+      - breaking
+    - Minor
+      - feat
+      - change
+      - new
+      - update
+    - Patch
+      - fix
+      - patch
+      - chore
+      - types
+    - Noop
+      - internal
+      - docs
+      - tests
+      - release
 - Provides a web and mobile implementation.
-- Accessibility support integrated.
+- Accessibility support integrated and passing in storybook.
 - Unit tests written with adequate code coverage.
 - Linting and other tests pass.
 
-## Icon-release procedure
+## Definitions
 
-If there are any changes to CDS's Icon inventory, these releases will be released on a Wednesday.
+**Build** A distributable bundle for our Coinbase application.
 
-Below describes the procedures for how designers and engineers will have to collaborate to update the Icons.
+**Build Cut / Release Cut** The process by which we create a release branch off of develop, from which we produce a build for the next release. Build cuts are done on Wednesday at 4pm EST.
 
-Steps required for all types of changes to icons:
+**Release Branch** A branch which contains code necessary to generate a build for a release.
 
-1. Send a heads up to #design-system-team
+**Release** The formal distribution of a build to NPM.
 
-Steps for **Adding** icons:
+**Alpha release** A build built and distributed anytime someone merges new code to develop. Alpha builds are only available on our npm dev environment.
 
-2. Eng opens PR
-3. Run make prepare.icons
-4. Update changelog
-5. bump common (the IconName typescript changes), web and mobile packages
-6. Eng updates thread that PR has been merged
-7. Run plugin
+**Beta release** The distribution to our beta group (partner teams) and internal testers (CDS).
 
-Steps for **editing** icons:
+**Production release** The distribution to our production customers.
 
-2. 🚨 Included a mapping of oldName -> newName 🚨 (i.e closeHeavy -> close)
-3. Eng opens PR
-4. Update name in eng/shared/design-system/codegen/icons/manifest.ts
-5. Run make prepare.icons
-6. Update changelog
-7. bump common (the IconName typescript changes), web and mobile packages
-8. Eng updates thread that PR has been merged
-9. Run plugin
+**Rolling release** A process by which a new Build Cut for a 2 week release cycle is generated every 1 week.
 
-Steps for **deleting** icons:
+**Burn release** The failure to provide a stable production release. In event that this happens, the release will be discarded in favor of the next regularly scheduled release. All work in the burned release will be included in the subsequent release (because we branch off of develop).
 
-2. We should not be doing this, but if we do, follow steps in Edit
+**Bug Bash** A process by which a set of tested flows are run through by CDS. All work should go through Bug Bash before being included in the release.
+
+**QA** A process by which a set of manually tested flows are run through by identified partner teams.
+
+**Bake Week** The week of time after a Build is cut, but before a production release. During this time a beta release is done and the build is sent to QA. This week is used to ensure stability for our Production release.
+
+**Betafix** An emergency patch to the Beta release during bake week.
+
+**Hotfix** An emergency production release. Here a single change is applied to the active Production release (master). Hotfixes do not bake or go through QA. Hotfixes must also be betafixed into the baking Beta release AND merged into develop.
