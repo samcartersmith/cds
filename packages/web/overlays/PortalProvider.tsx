@@ -1,12 +1,14 @@
 import React, { memo, useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
-import { ToastProvider } from '@cbhq/cds-common/overlays/ToastProvider';
+import { ToastProvider, ToastProviderProps } from '@cbhq/cds-common/overlays/ToastProvider';
 import { PortalNode, usePortalState } from '@cbhq/cds-common/overlays/usePortalState';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { ThemeProvider } from '../system';
 import { MountComponent } from '../system/MountComponent';
+
+export type PortalProviderProps = ToastProviderProps;
 
 export const portalRootId = 'portalRoot';
 export const modalContainerId = 'modalsContainer';
@@ -58,18 +60,20 @@ const PortalHost = memo(() => {
   );
 });
 
-export const PortalProvider: React.FC = memo(({ children }) => {
-  const portalState = usePortalState();
+export const PortalProvider: React.FC<PortalProviderProps> = memo(
+  ({ children, toastBottomOffset = 0 }) => {
+    const portalState = usePortalState();
 
-  return (
-    <PortalContext.Provider value={portalState}>
-      <ToastProvider>
-        <MountComponent>
-          <PortalHost />
-        </MountComponent>
-        {portalState.nodes.map((node: PortalNode) => node.element)}
-        {children}
-      </ToastProvider>
-    </PortalContext.Provider>
-  );
-});
+    return (
+      <PortalContext.Provider value={portalState}>
+        <ToastProvider toastBottomOffset={toastBottomOffset}>
+          <MountComponent>
+            <PortalHost />
+          </MountComponent>
+          {portalState.nodes.map((node: PortalNode) => node.element)}
+          {children}
+        </ToastProvider>
+      </PortalContext.Provider>
+    );
+  },
+);

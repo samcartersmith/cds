@@ -1,13 +1,10 @@
 import React, { memo } from 'react';
 import { Platform } from 'react-native';
-import { DimensionValue } from '@cbhq/cds-common';
 import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
-import { ToastProvider } from '@cbhq/cds-common/overlays/ToastProvider';
+import { ToastProvider, ToastProviderProps } from '@cbhq/cds-common/overlays/ToastProvider';
 import { PortalNode, usePortalState } from '@cbhq/cds-common/overlays/usePortalState';
 
-export type PortalProviderProps = {
-  toastBottomOffset?: DimensionValue;
-};
+export type PortalProviderProps = ToastProviderProps;
 
 type PortalHostProps = { nodes: PortalNode[] };
 

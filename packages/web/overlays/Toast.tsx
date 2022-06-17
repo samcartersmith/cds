@@ -21,6 +21,7 @@ import { Button, IconButton } from '../buttons';
 import { Box, HStack } from '../layout';
 import { useMotionProps } from '../motion/useMotionProps';
 import { ThemeProvider } from '../system';
+import { spacing } from '../tokens';
 import { TextHeadline } from '../typography';
 
 import { ModalProps } from './Modal/Modal';
@@ -48,15 +49,18 @@ export const Toast: React.FC<ToastProps> = memo(
         disablePortal = false,
         hideCloseButton = false,
         testID,
+        bottomOffset = spacing[4],
       },
       ref,
     ) => {
       const { pauseTimer, resumeTimer } = useContext(ToastContext);
       const animationControls = useAnimation();
+
       const motionProps = useMotionProps({
         enterConfigs: [animateInOpacityConfig, animateInBottomConfig],
         exitConfigs: [animateOutOpacityConfig, animateOutBottomConfig],
         animate: animationControls,
+        style: { bottom: bottomOffset },
       });
 
       useEffect(() => {

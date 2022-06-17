@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 
 import { useToast } from '../overlays/useToast';
-import type { ButtonBaseProps, ToastBaseProps } from '../types';
+import type { BoxBaseProps, ButtonBaseProps, StackBaseProps, ToastBaseProps } from '../types';
 
 const onActionPressConsole = () => console.log('action pressed');
 
@@ -13,6 +13,7 @@ export type CreateToastProps = {
   Toast: React.ComponentType<ToastBaseProps>;
   Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
   PortalProvider?: React.ComponentType;
+  Stack: React.ComponentType<BoxBaseProps & StackBaseProps>;
 };
 
 type UseToastProps = {
@@ -20,7 +21,7 @@ type UseToastProps = {
   disablePortal?: boolean;
 };
 
-export function toastBuilder({ Toast, Button, PortalProvider }: CreateToastProps) {
+export function toastBuilder({ Toast, Button, PortalProvider, Stack }: CreateToastProps) {
   const BasicToast = () => {
     const toast = useToast<UseToastProps>(Toast);
 
@@ -35,19 +36,26 @@ export function toastBuilder({ Toast, Button, PortalProvider }: CreateToastProps
       });
     }, [toast]);
 
-    return <Button onPress={handleShow}>Show Toast</Button>;
-  };
-
-  const MultilineToast = () => {
-    const toast = useToast(Toast);
-
-    const handleShow = useCallback(() => {
-      toast.show('Very very very very very long toast copy', {
+    const handleShowMultiline = useCallback(() => {
+      toast.show(`Very${' very'.repeat(30)} long toast copy`, {
         action: { label: 'Action', onPress: onActionPressConsole },
       });
     }, [toast]);
 
-    return <Button onPress={handleShow}>Multiline Toast</Button>;
+    const handleShowBottomOffset = useCallback(() => {
+      toast.show('Toast copy', {
+        action: { label: 'Action', onPress: onActionPressConsole },
+        bottomOffset: 100,
+      });
+    }, [toast]);
+
+    return (
+      <Stack gap={3}>
+        <Button onPress={handleShow}>Show Toast</Button>
+        <Button onPress={handleShowMultiline}>Multiline Toast</Button>
+        <Button onPress={handleShowBottomOffset}>Bottom Offset Toast</Button>
+      </Stack>
+    );
   };
 
   const Wrapper = PortalProvider ?? React.Fragment;
@@ -56,11 +64,6 @@ export function toastBuilder({ Toast, Button, PortalProvider }: CreateToastProps
     BasicToast: () => (
       <Wrapper>
         <BasicToast />
-      </Wrapper>
-    ),
-    MultilineToast: () => (
-      <Wrapper>
-        <MultilineToast />
       </Wrapper>
     ),
   };
