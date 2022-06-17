@@ -13,7 +13,7 @@ import {
   SharedProps,
 } from '@cbhq/cds-common';
 
-import { CellProps } from '../../cells/Cell';
+import { CellProps, CellSharedProps } from '../../cells/Cell';
 import { TextProps } from '../../typography';
 
 export type TableCellTag = 'td' | 'th' | 'div';
@@ -89,6 +89,8 @@ type TableCellBaseProps = {
    * @default { spacingHorizontal: 0 }
    */
   innerSpacing?: CellProps['innerSpacing'];
+  /** Specify spacing styles by device breakpoint */
+  responsiveStyles?: CellSharedProps['responsiveStyles'];
 } & TableCellSharedProps;
 
 type TableCellPropsWithInputs = {

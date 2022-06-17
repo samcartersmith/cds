@@ -4,11 +4,15 @@ import type { ElevationLevels } from './ElevationLevels';
 import type { GroupBaseProps } from './GroupBaseProps';
 import type { IllustrationVariant } from './IllustrationNames';
 import type { PaletteBackground } from './Palette';
+import { ResponsiveProps } from './ResponsiveProps';
 import type { SharedProps } from './SharedProps';
 import type { OffsetProps, SpacingProps } from './SpacingProps';
 
 export type CardVariant = 'announcement' | 'feed' | 'feature';
-export type CardBoxProps = SharedProps &
+export type CardBoxProps = {
+  /** Specify styles by device breakpoint */
+  responsiveStyles?: ResponsiveProps;
+} & SharedProps &
   SpacingProps &
   FlexStyles &
   OffsetProps &

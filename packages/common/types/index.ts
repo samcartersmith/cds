@@ -62,6 +62,7 @@ export * from './React';
 export * from './RemoteImageBaseProps';
 export * from './RemoteImageGroupBaseProps';
 export * from './Responsive';
+export * from './ResponsiveProps';
 export * from './Scale';
 export * from './SearchInputBaseProps';
 export * from './SelectBaseProps';

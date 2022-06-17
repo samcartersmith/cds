@@ -1,5 +1,10 @@
 import { MouseEventHandler, MutableRefObject, ReactNode } from 'react';
-import { PaletteBackground, PaletteForeground, SharedProps } from '@cbhq/cds-common';
+import {
+  PaletteBackground,
+  PaletteForeground,
+  ResponsiveCellSpacingProps,
+  SharedProps,
+} from '@cbhq/cds-common';
 
 import { TableCellProps } from './tableCellTypes';
 
@@ -49,4 +54,9 @@ export type TableRowProps = {
    * Will only take effect when fullWidth is set to true
    */
   innerSpacing?: TableCellProps['innerSpacing'];
+  /**
+   * Specify styles by device breakpoint
+   *  Can only be used when TableRow is fullWidth
+   */
+  responsiveStyles?: ResponsiveCellSpacingProps;
 } & SharedProps;

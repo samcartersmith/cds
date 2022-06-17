@@ -1,10 +1,11 @@
 import React, { ForwardedRef, forwardRef, memo } from 'react';
 import { css } from 'linaria';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
-import type { CellBaseProps } from '@cbhq/cds-common/types';
+import type { CellBaseProps, ResponsiveCellSpacingProps } from '@cbhq/cds-common/types';
 import { hasCellPriority } from '@cbhq/cds-common/utils/cell';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
+import { useResponsiveCellSpacingStyles } from '../hooks/useResponsiveCellSpacing';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { LinkableProps, Pressable } from '../system/Pressable';
@@ -54,6 +55,8 @@ export type CellSharedProps = {
   /** The type of outer wrapping element. */
   as?: 'div' | 'li';
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
+  /** Specify spacing styles by device breakpoint */
+  responsiveStyles?: ResponsiveCellSpacingProps;
 } & LinkableProps;
 
 export type CellProps = {
@@ -94,6 +97,7 @@ export const Cell = memo(
        *
        * */
       shouldOverflow,
+      responsiveStyles,
       /** Props for useCellSpacing */
       ...spacingProps
     }: CellProps,
@@ -101,6 +105,8 @@ export const Cell = memo(
   ) {
     const spacing = useCellSpacing(spacingProps);
     const offsetClassName = useOffsetStyles({ offsetHorizontal: spacing.inner.offsetHorizontal });
+    const { responsiveInnerSpacing, responsiveOuterSpacing } =
+      useResponsiveCellSpacingStyles(responsiveStyles);
     const linkable = Boolean(onPress ?? to);
     const maybeTruncateClassName = cx(
       cellStaticClassName,
@@ -118,6 +124,7 @@ export const Cell = memo(
         width="100%"
         testID={testID}
         {...spacing.inner}
+        dangerouslySetClassName={responsiveInnerSpacing}
         offsetHorizontal={linkable ? undefined : spacing.inner.offsetHorizontal}
       >
         {media && (
@@ -199,6 +206,7 @@ export const Cell = memo(
         minHeight={minHeight}
         maxHeight={maxHeight}
         {...spacing.outer}
+        dangerouslySetClassName={responsiveOuterSpacing}
         ref={ref}
       >
         {content}
