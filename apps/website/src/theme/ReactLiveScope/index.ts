@@ -54,6 +54,7 @@ import { MenuItem } from '@cbhq/cds-web/dropdown/MenuItem';
 import { useA11yControlledVisibility } from '@cbhq/cds-web/hooks/useA11yControlledVisibility';
 import { useCheckboxGroupState } from '@cbhq/cds-web/hooks/useCheckboxGroupState';
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
+import { useDimensions } from '@cbhq/cds-web/hooks/useDimensions';
 import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
 import * as CDSIcons from '@cbhq/cds-web/icons';
 import * as CDSIllustrations from '@cbhq/cds-web/illustrations';
@@ -137,6 +138,7 @@ const ReactLiveScope: unknown = {
   usePaletteConfig,
   usePaletteValueToRgbaString,
   useDeviceSpectrum,
+  useDimensions,
   useScale,
   useScaleConditional,
   useSparklinePath,
