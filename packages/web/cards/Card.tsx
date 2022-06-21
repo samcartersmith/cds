@@ -1,7 +1,12 @@
 import React, { memo, useCallback } from 'react';
 import { css } from 'linaria';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
-import type { BorderWidth, CardBaseProps, ElevationLevels } from '@cbhq/cds-common/types';
+import type {
+  BorderWidth,
+  CardBaseProps,
+  ElevationLevels,
+  ResponsiveProps,
+} from '@cbhq/cds-common/types';
 
 import { usePinStyles } from '../hooks/usePinStyles';
 import { VStack } from '../layout/VStack';
@@ -13,7 +18,11 @@ const cardPressableStyles = css`
   padding: 0;
 `;
 
-export type CardProps = CardBaseProps & LinkableProps;
+export type CardProps = {
+  /** Specify styles by device breakpoint */
+  responsiveStyles?: ResponsiveProps;
+} & CardBaseProps &
+  LinkableProps;
 
 export const Card: React.FC<CardProps> = memo(
   ({
