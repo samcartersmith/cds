@@ -59,7 +59,11 @@ export type MotionTransition = {
   /**
    * CDS motion duration token
    */
-  duration: MotionDuration;
+  duration?: MotionDuration;
+  /**
+   * One-off duration in ms
+   */
+  oneOffDuration?: number;
 };
 
 export type MotionBaseSpec = {

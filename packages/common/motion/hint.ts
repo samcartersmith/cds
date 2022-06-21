@@ -10,3 +10,13 @@ export const shakeTransitionConfig: MotionTransition = {
   easing: 'enterFunctional',
   duration: 'slow2',
 };
+
+export const pulseTransitionConfig: MotionTransition = {
+  easing: 'linear',
+  oneOffDuration: 2000,
+};
+export const pulseVariantOpacity = {
+  moderate: 0.7,
+  subtle: 0.9,
+  heavy: 0.5,
+};

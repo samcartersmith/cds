@@ -9,15 +9,17 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box, VStack } from '../../layout';
 import { TextBody } from '../../typography';
 import { ColorSurge as ColorSurgeComponent } from '../ColorSurge';
+import { Pulse as PulseComponent } from '../Pulse';
 import { Shake as ShakeComponent } from '../Shake';
 
-const { ColorSurge, Shake } = hintMotionBuilder({
+const { ColorSurge, Shake, Pulse } = hintMotionBuilder({
   VStack,
   Button,
   Box,
   TextBody,
   ColorSurge: ColorSurgeComponent,
   Shake: ShakeComponent,
+  Pulse: PulseComponent,
 } as CreateHintMotionProps);
 
 const HintMotionScreen = () => {
@@ -28,6 +30,9 @@ const HintMotionScreen = () => {
       </Example>
       <Example title="Shake">
         <Shake />
+      </Example>
+      <Example title="Pulse">
+        <Pulse />
       </Example>
     </ExampleScreen>
   );

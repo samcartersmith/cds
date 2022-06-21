@@ -58,6 +58,7 @@ export * from './ProgressBarBaseProps';
 export * from './ProgressBaseProps';
 export * from './ProgressCircleBaseProps';
 export * from './ProgressContainerWithButtonsProps';
+export * from './PulseBaseProps';
 export * from './RadioGroupBaseProps';
 export * from './React';
 export * from './RemoteImageBaseProps';

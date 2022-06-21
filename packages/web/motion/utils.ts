@@ -9,9 +9,12 @@ import type { MotionConfigs, MotionSpec, MotionTransition } from './types';
  * @link https://www.framer.com/docs/animation/##transitions
  */
 export const convertTransition = (transition: MotionTransition) => {
-  const { easing, duration, delay, ...rest } = transition;
+  const { easing, oneOffDuration, duration, delay, ...rest } = transition;
 
-  const convertedDuration = duration ? durations[duration] / 1000 : undefined;
+  let convertedDuration;
+  if (duration) convertedDuration = duration && durations[duration] / 1000;
+  if (oneOffDuration) convertedDuration = oneOffDuration / 1000;
+
   const convertedEasing = easing ? curves[easing] : undefined;
 
   const skipAnimation = isStorybook() || isTest();

@@ -19,12 +19,13 @@ export const convertMotionConfig = ({
   easing,
   duration,
   useNativeDriver = true,
+  oneOffDuration,
 }: MotionSpec): Animated.TimingAnimationConfig => {
   return {
     toValue,
     delay,
     easing: mobileCurves[easing],
-    duration: durations[duration],
+    duration: oneOffDuration ?? (duration && durations[duration]),
     useNativeDriver,
   };
 };

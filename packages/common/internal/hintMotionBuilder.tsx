@@ -1,14 +1,21 @@
 import React, { ReactNode, useCallback, useState } from 'react';
 
-import { BoxBaseProps, ButtonBaseProps, ColorSurgeBaseProps, TextBaseProps } from '../types';
+import {
+  BoxBaseProps,
+  ButtonBaseProps,
+  ColorSurgeBaseProps,
+  PulseBaseProps,
+  TextBaseProps,
+} from '../types';
 
 export type CreateHintMotionProps = {
-  VStack: React.ComponentType<BoxBaseProps & { gap: number }>;
+  VStack: React.ComponentType<BoxBaseProps & { gap?: number }>;
   Box: React.ComponentType<BoxBaseProps & { overflow?: string }>;
   Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
   TextBody: React.ComponentType<TextBaseProps & { as?: string }>;
   ColorSurge: React.ComponentType<ColorSurgeBaseProps>;
   Shake: React.ComponentType;
+  Pulse: React.ComponentType<PulseBaseProps>;
 };
 
 export function hintMotionBuilder({
@@ -17,6 +24,7 @@ export function hintMotionBuilder({
   Box,
   ColorSurge: ColorSurgeComponent,
   Shake: ShakeComponent,
+  Pulse: PulseComponent,
   TextBody,
 }: CreateHintMotionProps) {
   const ReRenderer = ({ children }: { children: ReactNode }) => {
@@ -67,8 +75,34 @@ export function hintMotionBuilder({
     );
   };
 
+  const Pulse = () => {
+    return (
+      <VStack>
+        <PulseComponent variant="subtle">
+          <TextBody as="p">Subtle</TextBody>
+          <Box width={50} height={50} background="primary" />
+          <Box width={50} height={50} background="negative" />
+          <Box width={50} height={50} background="positive" />
+        </PulseComponent>
+        <PulseComponent>
+          <TextBody as="p">Moderate</TextBody>
+          <Box width={50} height={50} background="primary" />
+          <Box width={50} height={50} background="negative" />
+          <Box width={50} height={50} background="positive" />
+        </PulseComponent>
+        <PulseComponent variant="heavy">
+          <TextBody as="p">Heavy</TextBody>
+          <Box width={50} height={50} background="primary" />
+          <Box width={50} height={50} background="negative" />
+          <Box width={50} height={50} background="positive" />
+        </PulseComponent>
+      </VStack>
+    );
+  };
+
   return {
     ColorSurge,
     Shake,
+    Pulse,
   };
 }
