@@ -1,0 +1,60 @@
+## Responsive Styles
+
+**Web only** You can create responsive layouts by passing a configuration object to a HStack and specify unique styles for phones, tablets, or desktops.
+
+Please note, there are no default responsive styles for HStack. This is an additive feature that you will need to configure yourself.
+
+### Supported Properties
+
+- Spacing
+- Offset spacing
+- Gap
+- Flex styles (justify content, align content, align items, align self, flex direction, and flex wrap)
+- Display
+- Visibility
+
+### Usage
+
+Always hoist or memoize your responsive style configurations.
+
+```jsx live
+function ResponsiveHStack() {
+  const responsiveStylesConfig = useMemo(
+    () => ({
+      phone: {
+        spacing: 4,
+        gap: 0.5,
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end',
+      },
+      tablet: {
+        spacing: 3,
+        gap: 2,
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+      },
+      desktop: {
+        spacing: 2,
+        gap: 3,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+    }),
+    [],
+  );
+
+  return (
+    <HStack responsiveStyles={responsiveStylesConfig}>
+      <HStack background spacing={1}>
+        <TextBody as="p">First</TextBody>
+      </HStack>
+      <HStack background="backgroundAlternate" spacing={1}>
+        <TextBody as="p">Second</TextBody>
+      </HStack>
+      <HStack background="backgroundOverlay" spacing={1}>
+        <TextBody as="p">Third</TextBody>
+      </HStack>
+    </HStack>
+  );
+}
+```
