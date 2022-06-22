@@ -203,7 +203,7 @@ export const ActiveProject = memo(() => {
           <Button variant="secondary" compact onPress={setAllExpanded}>
             {allExpanded ? 'Collapse all' : 'Expand all'}
           </Button>
-          <Link to={`adoption-tracker/${id}`}>
+          <Link to={`/adoption-tracker/${id}`}>
             <Button variant="primary" compact>
               View details
             </Button>
