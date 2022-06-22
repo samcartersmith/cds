@@ -64,6 +64,9 @@ import * as CDSIllustrations from '@cbhq/cds-web/illustrations';
 import * as CDSLayout from '@cbhq/cds-web/layout';
 import * as CDSLoaders from '@cbhq/cds-web/loaders';
 import * as CDSMedia from '@cbhq/cds-web/media';
+import { ColorSurge } from '@cbhq/cds-web/motion/ColorSurge';
+import { Pulse } from '@cbhq/cds-web/motion/Pulse';
+import { Shake } from '@cbhq/cds-web/motion/Shake';
 import * as CDSNavigation from '@cbhq/cds-web/navigation';
 import * as CDSOverlays from '@cbhq/cds-web/overlays';
 import { Tooltip as DeprecatedTooltip } from '@cbhq/cds-web/overlays/Deprecated/Tooltip';
@@ -94,6 +97,7 @@ import { ButtonSheet } from ':cds-website/components/ButtonSheet';
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleBox } from ':cds-website/components/ExampleBox';
 import { PaletteSheet } from ':cds-website/components/PaletteSheet';
+import { Rerenderer } from ':cds-website/components/Rerenderer';
 import { ResponsiveExample } from ':cds-website/components/ResponsiveExample';
 import { TypographySheet } from ':cds-website/components/TypographySheet';
 import { LottieExample } from ':cds-website/docs/components/animation/Lottie/LottieExample';
@@ -188,6 +192,9 @@ const ReactLiveScope: unknown = {
   ...CDSTypography,
   ...CDSIllustrations,
   ...CDSVisualizations,
+  Shake,
+  Pulse,
+  ColorSurge,
   Cell,
   Dropdown,
   MenuItem,

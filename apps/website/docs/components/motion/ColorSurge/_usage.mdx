@@ -1,0 +1,29 @@
+Place the `ColorSurge` component inside the container that you want to have color surge.
+CDS components using ColorSurge: [Toast](/components/toast), [TextInput](/components/text-input/?page=implementation#enableColorSurge)
+
+**A few gotchas:**
+
+- Make sure the component is placed before other Interactables to avoid overlapping.
+- You may need to add `overflow:hidden` to the parent container if it has border radius.
+- You may need to add `position:relative` or `position:absolute` to the parent container to make `ColorSurge` fill.
+
+See examples below:
+
+```jsx live
+<Rerenderer>
+  <VStack gap={3}>
+    <Box spacing={3} borderRadius="rounded" overflow="hidden" position="relative" bordered>
+      <ColorSurge />
+      <TextBody as="p">Default</TextBody>
+    </Box>
+    <Box spacing={3} borderRadius="rounded" overflow="hidden" position="relative" bordered>
+      <ColorSurge background="positive" />
+      <TextBody as="p">Positive</TextBody>
+    </Box>
+    <Box spacing={3} borderRadius="rounded" overflow="hidden" position="relative" bordered>
+      <ColorSurge background="negative" />
+      <TextBody as="p">Negative</TextBody>
+    </Box>
+  </VStack>
+</Rerenderer>
+```

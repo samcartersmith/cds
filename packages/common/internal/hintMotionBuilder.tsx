@@ -27,16 +27,16 @@ export function hintMotionBuilder({
   Pulse: PulseComponent,
   TextBody,
 }: CreateHintMotionProps) {
-  const ReRenderer = ({ children }: { children: ReactNode }) => {
+  const Rerenderer = ({ children }: { children: ReactNode }) => {
     const [num, setNum] = useState(0);
 
-    const reRender = useCallback(() => {
+    const rerender = useCallback(() => {
       setNum((prevNum) => prevNum + 1);
     }, [setNum]);
 
     return (
       <VStack gap={3} key={num}>
-        <Button compact onPress={reRender}>
+        <Button compact onPress={rerender}>
           Re-render
         </Button>
         {children}
@@ -46,7 +46,7 @@ export function hintMotionBuilder({
 
   const ColorSurge = () => {
     return (
-      <ReRenderer>
+      <Rerenderer>
         <Box spacing={3} borderRadius="rounded" overflow="hidden" position="relative" bordered>
           <ColorSurgeComponent />
           <TextBody as="p">Default</TextBody>
@@ -59,19 +59,19 @@ export function hintMotionBuilder({
           <ColorSurgeComponent background="negative" />
           <TextBody as="p">Negative</TextBody>
         </Box>
-      </ReRenderer>
+      </Rerenderer>
     );
   };
 
   const Shake = () => {
     return (
-      <ReRenderer>
+      <Rerenderer>
         <ShakeComponent>
           <Box spacing={3} borderRadius="rounded" bordered>
             <TextBody as="p">Shaking Box</TextBody>
           </Box>
         </ShakeComponent>
-      </ReRenderer>
+      </Rerenderer>
     );
   };
 

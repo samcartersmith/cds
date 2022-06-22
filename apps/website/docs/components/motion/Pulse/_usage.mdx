@@ -1,0 +1,24 @@
+Wrap any component with `Pulse` to apply pulse animation to it.
+
+```jsx live
+<VStack>
+  <Pulse variant="subtle">
+    <TextBody as="p">Subtle</TextBody>
+    <Box width={50} height={50} background="primary" />
+    <Box width={50} height={50} background="negative" />
+    <Box width={50} height={50} background="positive" />
+  </Pulse>
+  <Pulse>
+    <TextBody as="p">Moderate</TextBody>
+    <Box width={50} height={50} background="primary" />
+    <Box width={50} height={50} background="negative" />
+    <Box width={50} height={50} background="positive" />
+  </Pulse>
+  <Pulse variant="heavy">
+    <TextBody as="p">Heavy</TextBody>
+    <Box width={50} height={50} background="primary" />
+    <Box width={50} height={50} background="negative" />
+    <Box width={50} height={50} background="positive" />
+  </Pulse>
+</VStack>
+```

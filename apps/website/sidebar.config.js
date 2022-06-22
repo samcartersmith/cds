@@ -416,6 +416,15 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Motion',
+          items: [
+            'components/motion/ColorSurge/color-surge',
+            'components/motion/Pulse/pulse',
+            'components/motion/Shake/shake',
+          ],
+        },
+        {
+          type: 'category',
           label: 'Navigation Bar',
           items: [
             {
