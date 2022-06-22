@@ -54,6 +54,7 @@ module.exports = {
         { type: 'doc', id: 'adoption-tracker/retail-mobile', label: 'Retail Mobile' },
         { type: 'doc', id: 'adoption-tracker/retail-web-logged-in', label: 'Retail Web Logged In' },
         { type: 'doc', id: 'adoption-tracker/retail-web-shared', label: 'Retail Web Shared' },
+        { type: 'doc', id: 'adoption-tracker/wallet-extension', label: 'Wallet Chrome Extension' },
         { type: 'doc', id: 'adoption-tracker/wallet-react-native', label: 'Wallet React Native' },
       ],
     },
