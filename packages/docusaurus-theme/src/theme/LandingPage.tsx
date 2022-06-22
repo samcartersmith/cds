@@ -12,6 +12,8 @@ import { CMSProvider, ComponentMapValue, initContentfulClient } from '@cb/cms';
 import { Divider } from '@cbhq/cds-web/layout/Divider';
 import { Group } from '@cbhq/cds-web/layout/Group';
 
+import LandingPageAnnouncementsFallback from './LandingPageAnnouncementsFallback';
+import LandingPageFocusAreasFallback from './LandingPageFocusAreasFallback';
 import { TOKENS } from './tokens';
 
 type ContentfulOptions = {
@@ -57,7 +59,9 @@ const LandingPage = memo(function LandingPage({ title, categories }: LandingPage
     return (
       <Group position="relative" divider={HorizontalDivider} dangerouslySetClassName="landing-page">
         <h1 className="hero-title">{title}</h1>
+        <LandingPageAnnouncementsFallback />
         <LandingPageCategories categories={categories} />
+        <LandingPageFocusAreasFallback />
       </Group>
     );
   }
