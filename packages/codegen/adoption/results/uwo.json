@@ -35,24 +35,38 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 3,
-      "totalCallSites": 1,
+      "totalInstances": 6,
+      "totalCallSites": 4,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
       "callSites": {
-        "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 3
+        "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 3,
+        "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
       },
       "propsWithCallSites": {
-        "as": { "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 3 },
+        "as": {
+          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 3,
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
         "spacingHorizontal": {
           "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 1
         },
         "color": {
-          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 2
+          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 2,
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
         },
         "spacingBottom": {
-          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 2
+          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 2,
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
         },
-        "key": { "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 1 }
+        "key": { "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 1 },
+        "disabled": {
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        }
       }
     },
     {
@@ -67,6 +81,483 @@
       "propsWithCallSites": {
         "as": { "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 2 },
         "key": { "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 1 }
+      }
+    },
+    {
+      "name": "Group",
+      "sourceFile": "@cbhq/cds-web/layout/Group",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/layout/Group",
+      "callSites": {
+        "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "justifyContent": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "gap": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "direction": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "minHeight": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "width": {
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "VStack",
+      "sourceFile": "@cbhq/cds-web/layout/VStack",
+      "totalInstances": 12,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-web/layout/VStack",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx",
+          "callSites": ["@uwo/commonScenes/shared/components/CollapsibleSidebarCDS.tsx"]
+        }
+      ],
+      "callSites": {
+        "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 3,
+        "@uwo/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1,
+        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 2,
+        "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1,
+        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 3,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 2
+      },
+      "propsWithCallSites": {
+        "maxWidth": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "spacingBottom": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 2,
+          "@uwo/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "display": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "gap": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 2,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "bordered": { "@uwo/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1 },
+        "borderRadius": { "@uwo/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1 },
+        "borderColor": { "@uwo/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1 },
+        "spacingTop": {
+          "@uwo/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1,
+          "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1
+        },
+        "alignItems": { "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1 },
+        "position": { "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1 },
+        "spacingHorizontal": { "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1 }
+      }
+    },
+    {
+      "name": "HStack",
+      "sourceFile": "@cbhq/cds-web/layout/HStack",
+      "totalInstances": 6,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/layout/HStack",
+      "callSites": {
+        "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+        "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1,
+        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "gap": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "spacingBottom": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "justifyContent": { "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1 },
+        "testID": { "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1 }
+      }
+    },
+    {
+      "name": "ProgressBar",
+      "sourceFile": "@cbhq/cds-web/visualizations/ProgressBar",
+      "totalInstances": 12,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/visualizations/ProgressBar",
+      "callSites": {
+        "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 3,
+        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3,
+        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 3,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 3
+      },
+      "propsWithCallSites": {
+        "progress": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 3,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 3,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 3
+        }
+      }
+    },
+    {
+      "name": "TextTitle1",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/typography/TextTitle1",
+      "callSites": {
+        "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextBody",
+      "sourceFile": "@cbhq/cds-web/typography/TextBody",
+      "totalInstances": 7,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/typography/TextBody",
+      "callSites": {
+        "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3,
+        "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1,
+        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3,
+          "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "color": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3,
+          "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "spacingBottom": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
+        },
+        "key": { "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1 },
+        "overflow": { "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1 }
+      }
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 18,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "callSites": {
+        "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 2,
+        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 8,
+        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 3,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 5
+      },
+      "propsWithCallSites": {
+        "spacingBottom": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 4,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 3
+        },
+        "justifyContent": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "spacingTop": {
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 2,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "TextInput",
+      "sourceFile": "@cbhq/cds-web/controls/TextInput",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/controls/TextInput",
+      "callSites": {
+        "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "label": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "data-testid": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
+        },
+        "required": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
+        },
+        "value": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "onChange": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "placeholder": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "name": {
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "onBlur": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 },
+        "helperText": {
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "variant": {
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "testID": {
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "autoComplete": {
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Button",
+      "sourceFile": "@cbhq/cds-web/buttons/Button",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/buttons/Button",
+      "callSites": {
+        "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "type": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "disabled": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "block": { "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1 },
+        "onPress": { "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1 },
+        "testID": {
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1
+        },
+        "loading": {
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "name": {
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextLegal",
+      "sourceFile": "@cbhq/cds-web/typography/TextLegal",
+      "totalInstances": 5,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/typography/TextLegal",
+      "callSites": {
+        "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+        "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1,
+        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 3
+      },
+      "propsWithCallSites": {
+        "as": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 3
+        },
+        "color": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+          "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 3
+        },
+        "spacingVertical": { "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1 }
+      }
+    },
+    {
+      "name": "HeroSquare",
+      "sourceFile": "@cbhq/cds-web/illustrations/HeroSquare",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/illustrations/HeroSquare",
+      "propsWithCallSites": {
+        "name": { "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "Link",
+      "sourceFile": "@cbhq/cds-web/typography/Link",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/typography/Link",
+      "callSites": {
+        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 2,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onClick": {
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 2,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Spinner",
+      "sourceFile": "@cbhq/cds-web/loaders/Spinner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/loaders/Spinner",
+      "propsWithCallSites": {
+        "color": { "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1 },
+        "size": { "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "Collapsible",
+      "sourceFile": "@cbhq/cds-web/collapsible/Collapsible",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/collapsible/Collapsible",
+      "propsWithCallSites": {
+        "collapsed": { "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1 },
+        "spacingTop": { "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1 }
+      }
+    },
+    {
+      "name": "Divider",
+      "sourceFile": "@cbhq/cds-web/layout/Divider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/layout/Divider",
+      "propsWithCallSites": {
+        "key": { "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1 },
+        "spacingTop": { "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1 }
+      }
+    },
+    {
+      "name": "Select",
+      "sourceFile": "@cbhq/cds-web/controls/Select",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/controls/Select",
+      "propsWithCallSites": {
+        "width": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 },
+        "onChange": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 },
+        "value": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 },
+        "valueLabel": {
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1
+        },
+        "label": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "SelectOption",
+      "sourceFile": "@cbhq/cds-web/controls/SelectOption",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/controls/SelectOption",
+      "propsWithCallSites": {
+        "key": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 },
+        "value": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 },
+        "title": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "Interactable",
+      "sourceFile": "@cbhq/cds-web/system/Interactable",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/system/Interactable",
+      "propsWithCallSites": {
+        "backgroundColor": {
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "as": {
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "disabled": {
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "onClick": {
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        },
+        "testID": {
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        }
       }
     }
   ],
@@ -112,253 +603,6 @@
         "requirementAnswers": { "@uwo/businessApplicationScenes/SceneLayout.tsx": 1 },
         "submitButtonDetails": { "@uwo/businessApplicationScenes/SceneLayout.tsx": 1 }
       }
-    },
-    {
-      "name": "GridWrapper",
-      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/FirstNameLastNameWrapper.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "AnswerCollapsible",
-      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalElement": "CollapsibleWrapper",
-      "callSites": {
-        "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
-        "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
-        },
-        "description": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
-        },
-        "onEdit": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
-        },
-        "onRemove": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "BottomDivider",
-      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/BottomDivider",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalElement": "BottomDividerContainer",
-      "callSites": {
-        "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
-        "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
-      }
-    },
-    {
-      "name": "StyledScrollRef",
-      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span",
-      "propsWithCallSites": {
-        "ref": { "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1 },
-        "data-testid": { "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1 }
-      }
-    },
-    {
-      "name": "VStack",
-      "sourceFile": "@uwo/components/common/VStack",
-      "totalInstances": 19,
-      "totalCallSites": 12,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "@uwo/components/common/form/Date/DateFields.tsx" }
-      ],
-      "callSites": {
-        "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
-        "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
-        "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 2,
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2,
-        "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-        "@uwo/businessApplicationScenes/FormComponents/FileUploadWrapper/FileUploadWrapper.tsx": 1,
-        "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1,
-        "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-        "@uwo/components/common/form/Date/DateFields.tsx": 1,
-        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
-        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacing": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
-          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 2,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2,
-          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/businessApplicationScenes/FormComponents/FileUploadWrapper/FileUploadWrapper.tsx": 1,
-          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/components/common/form/Date/DateFields.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "key": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3
-        },
-        "id": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
-          "@uwo/businessApplicationScenes/FormComponents/FileUploadWrapper/FileUploadWrapper.tsx": 1,
-          "@uwo/components/common/form/Date/DateFields.tsx": 1
-        },
-        "dangerouslySetStyle": {
-          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 2,
-          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/components/common/form/Date/DateFields.tsx": 1
-        },
-        "width": {
-          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 1
-        },
-        "className": { "@uwo/components/common/form/Date/DateFields.tsx": 1 },
-        "flexGrow": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 },
-        "minWidth": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 }
-      }
-    },
-    {
-      "name": "LargeLabel",
-      "sourceFile": "@uwo/components/common/primitives/typography/LargeLabel",
-      "totalInstances": 10,
-      "totalCallSites": 6,
-      "presentationalElement": "Text",
-      "callSites": {
-        "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
-        "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
-        "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-        "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
-        "@uwo/components/common/interactables/inputs/Select.tsx": 1,
-        "@uwo/components/common/interactables/inputs/TextInput.tsx": 1
-      },
-      "propsWithCallSites": {
-        "color": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
-          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
-          "@uwo/components/common/interactables/inputs/Select.tsx": 1,
-          "@uwo/components/common/interactables/inputs/TextInput.tsx": 1
-        },
-        "data-testid": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3
-        }
-      }
-    },
-    {
-      "name": "Markdown",
-      "sourceFile": "@uwo/components/common/layout/Markdown",
-      "totalInstances": 11,
-      "totalCallSites": 7,
-      "presentationalElement": "List",
-      "callSites": {
-        "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
-        "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
-        "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
-        "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-        "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
-        "@uwo/components/common/interactables/inputs/Select.tsx": 1,
-        "@uwo/components/common/interactables/inputs/TextInput.tsx": 1
-      }
-    },
-    {
-      "name": "AddLink",
-      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AddLink",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalElement": "Link",
-      "callSites": {
-        "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
-        "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
-      },
-      "propsWithCallSites": {
-        "key": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
-        },
-        "questionId": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
-        },
-        "answerName": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
-        },
-        "onClick": {
-          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
-          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "StyledScrollRef",
-      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span",
-      "propsWithCallSites": {
-        "ref": { "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1 },
-        "data-testid": { "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1 }
-      }
-    },
-    {
-      "name": "HStack",
-      "sourceFile": "@uwo/components/common/HStack",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "@uwo/components/common/form/Date/DateFields.tsx" }
-      ],
-      "callSites": {
-        "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 1,
-        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-        "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1,
-        "@uwo/components/common/form/Date/DateFields.tsx": 1,
-        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacing": {
-          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1,
-          "@uwo/components/common/form/Date/DateFields.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1
-        },
-        "alignItems": {
-          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 1,
-          "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1
-        },
-        "dangerouslySetStyle": { "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 },
-        "className": { "@uwo/components/common/form/Date/DateFields.tsx": 1 }
-      }
-    },
-    {
-      "name": "MissingRequirementsList",
-      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ul"
-    },
-    {
-      "name": "MissingQuestionsList",
-      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
     },
     {
       "name": "Caption",
@@ -453,6 +697,59 @@
       "styledComponent": "div"
     },
     {
+      "name": "VStack",
+      "sourceFile": "@uwo/components/common/VStack",
+      "totalInstances": 16,
+      "totalCallSites": 10,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "@uwo/components/common/form/Date/DateFields.tsx" }
+      ],
+      "callSites": {
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2,
+        "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+        "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
+        "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
+        "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 2,
+        "@uwo/businessApplicationScenes/FormComponents/FileUploadWrapper/FileUploadWrapper.tsx": 1,
+        "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1,
+        "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+        "@uwo/components/common/form/Date/DateFields.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacing": {
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2,
+          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
+          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 2,
+          "@uwo/businessApplicationScenes/FormComponents/FileUploadWrapper/FileUploadWrapper.tsx": 1,
+          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+          "@uwo/components/common/form/Date/DateFields.tsx": 1
+        },
+        "dangerouslySetStyle": {
+          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 2,
+          "@uwo/components/common/form/Date/DateFields.tsx": 1
+        },
+        "key": {
+          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3
+        },
+        "id": {
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
+          "@uwo/businessApplicationScenes/FormComponents/FileUploadWrapper/FileUploadWrapper.tsx": 1,
+          "@uwo/components/common/form/Date/DateFields.tsx": 1
+        },
+        "width": {
+          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 1
+        },
+        "className": { "@uwo/components/common/form/Date/DateFields.tsx": 1 }
+      }
+    },
+    {
       "name": "AccessoryContainer",
       "sourceFile": "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
       "totalInstances": 1,
@@ -488,8 +785,8 @@
     {
       "name": "Text",
       "sourceFile": "@uwo/components/common/Text",
-      "totalInstances": 12,
-      "totalCallSites": 7,
+      "totalInstances": 8,
+      "totalCallSites": 5,
       "presentationalProps": [
         {
           "prop": "style",
@@ -505,9 +802,7 @@
         "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 2,
         "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
         "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
-        "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1,
-        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 3,
-        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
       },
       "propsWithCallSites": {
         "color": {
@@ -515,14 +810,11 @@
           "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1,
           "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
           "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
-          "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 3,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+          "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
         },
         "style": {
           "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 2
-        },
-        "spacing": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 }
+        }
       }
     },
     {
@@ -556,6 +848,35 @@
       "styledComponent": "div",
       "propsWithCallSites": {
         "style": { "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "HStack",
+      "sourceFile": "@uwo/components/common/HStack",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "@uwo/components/common/form/Date/DateFields.tsx" }
+      ],
+      "callSites": {
+        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+        "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 1,
+        "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1,
+        "@uwo/components/common/form/Date/DateFields.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacing": {
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1,
+          "@uwo/components/common/form/Date/DateFields.tsx": 1
+        },
+        "dangerouslySetStyle": { "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 },
+        "alignItems": {
+          "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1
+        },
+        "className": { "@uwo/components/common/form/Date/DateFields.tsx": 1 }
       }
     },
     {
@@ -683,6 +1004,163 @@
       }
     },
     {
+      "name": "GridWrapper",
+      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/FirstNameLastNameWrapper.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "AnswerCollapsible",
+      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "CollapsibleWrapper",
+      "callSites": {
+        "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
+        "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
+        },
+        "description": {
+          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
+        },
+        "onEdit": {
+          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
+        },
+        "onRemove": {
+          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BottomDivider",
+      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/BottomDivider",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "BottomDividerContainer",
+      "callSites": {
+        "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
+        "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
+      }
+    },
+    {
+      "name": "StyledScrollRef",
+      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span",
+      "propsWithCallSites": {
+        "ref": { "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1 },
+        "data-testid": { "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1 }
+      }
+    },
+    {
+      "name": "LargeLabel",
+      "sourceFile": "@uwo/components/common/primitives/typography/LargeLabel",
+      "totalInstances": 10,
+      "totalCallSites": 6,
+      "presentationalElement": "Text",
+      "callSites": {
+        "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
+        "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
+        "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
+        "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
+        "@uwo/components/common/interactables/inputs/Select.tsx": 1,
+        "@uwo/components/common/interactables/inputs/TextInput.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": {
+          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
+          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
+          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
+          "@uwo/components/common/interactables/inputs/Select.tsx": 1,
+          "@uwo/components/common/interactables/inputs/TextInput.tsx": 1
+        },
+        "data-testid": {
+          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3
+        }
+      }
+    },
+    {
+      "name": "Markdown",
+      "sourceFile": "@uwo/components/common/layout/Markdown",
+      "totalInstances": 11,
+      "totalCallSites": 7,
+      "presentationalElement": "List",
+      "callSites": {
+        "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 3,
+        "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 3,
+        "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
+        "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
+        "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
+        "@uwo/components/common/interactables/inputs/Select.tsx": 1,
+        "@uwo/components/common/interactables/inputs/TextInput.tsx": 1
+      }
+    },
+    {
+      "name": "AddLink",
+      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AddLink",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "Link",
+      "callSites": {
+        "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
+        "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
+      },
+      "propsWithCallSites": {
+        "key": {
+          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
+        },
+        "questionId": {
+          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
+        },
+        "answerName": {
+          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
+        },
+        "onClick": {
+          "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "StyledScrollRef",
+      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span",
+      "propsWithCallSites": {
+        "ref": { "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1 },
+        "data-testid": { "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1 }
+      }
+    },
+    {
+      "name": "MissingRequirementsList",
+      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ul"
+    },
+    {
+      "name": "MissingQuestionsList",
+      "sourceFile": "@uwo/businessApplicationScenes/FormComponents/MissingRequirementsBanner.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "ResponsiveTwoColumnReverseLayout",
       "sourceFile": "@uwo/components/common/layout/ResponsiveTwoColumnReverseLayout",
       "totalInstances": 11,
@@ -748,6 +1226,13 @@
       "styledComponent": "div"
     },
     {
+      "name": "CollapsibleWrapper",
+      "sourceFile": "@uwo/commonScenes/shared/components/CollapsibleSidebarCDS.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "SecureAccountCheckpoint",
       "sourceFile": "@uwo/assets/icons/SecureAccountCheckpoint",
       "totalInstances": 1,
@@ -803,44 +1288,6 @@
       }
     },
     {
-      "name": "Body",
-      "sourceFile": "@uwo/components/common/primitives/typography/Body",
-      "totalInstances": 13,
-      "totalCallSites": 9,
-      "presentationalElement": "Text",
-      "callSites": {
-        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 4,
-        "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureConfirmText.tsx": 2,
-        "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureInstructions.tsx": 1,
-        "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1,
-        "@uwo/experiences/idv/scenes/components/UploadInstructions.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-        "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
-        "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
-      },
-      "propsWithCallSites": {
-        "color": {
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3,
-          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureInstructions.tsx": 1,
-          "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1,
-          "@uwo/experiences/idv/scenes/components/UploadInstructions.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
-        },
-        "align": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 },
-        "spacing": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 },
-        "surface": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 }
-      }
-    },
-    {
-      "name": "EmailImage",
-      "sourceFile": "@uwo/assets/images/EmailImage",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg"
-    },
-    {
       "name": "TextWrapper",
       "sourceFile": "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx",
       "totalInstances": 1,
@@ -848,24 +1295,36 @@
       "styledComponent": "div"
     },
     {
+      "name": "ButtonWrapper",
+      "sourceFile": "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "CollapsibleWrapper",
+      "sourceFile": "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "Headline",
       "sourceFile": "@uwo/components/common/primitives/typography/Headline",
-      "totalInstances": 5,
-      "totalCallSites": 4,
+      "totalInstances": 4,
+      "totalCallSites": 3,
       "presentationalElement": "Text",
       "callSites": {
-        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
         "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
         "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
         "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1
       },
       "propsWithCallSites": {
+        "key": { "@uwo/components/common/core/collapsible/Collapsible.tsx": 1 },
         "spacing": {
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
           "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
           "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2
         },
-        "key": { "@uwo/components/common/core/collapsible/Collapsible.tsx": 1 },
         "dangerouslySetStyle": { "@uwo/components/common/core/collapsible/Collapsible.tsx": 1 },
         "color": {
           "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
@@ -884,57 +1343,6 @@
       }
     },
     {
-      "name": "ButtonWrapper",
-      "sourceFile": "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "StyledVisibility",
-      "sourceFile": "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "styledComponent": "Visibility",
-      "callSites": { "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3 },
-      "propsWithCallSites": {
-        "visible": { "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3 }
-      }
-    },
-    {
-      "name": "CollapsibleWrapper",
-      "sourceFile": "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Text",
-      "sourceFile": "@uwo/components/common/primitives/typography/Text",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalElement": "ParentTag",
-      "callSites": {
-        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-        "@uwo/components/common/primitives/typography/Link.tsx": 1
-      },
-      "propsWithCallSites": {
-        "color": {
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-          "@uwo/components/common/primitives/typography/Link.tsx": 1
-        },
-        "dangerouslySetStyle": { "@uwo/components/common/primitives/typography/Link.tsx": 1 },
-        "as": { "@uwo/components/common/primitives/typography/Link.tsx": 1 }
-      }
-    },
-    {
-      "name": "CollapsibleWrapper",
-      "sourceFile": "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "ToggleWrapper",
       "sourceFile": "@uwo/components/common/core/collapsible/Collapsible.tsx",
       "totalInstances": 1,
@@ -944,25 +1352,36 @@
     {
       "name": "CarrotUp",
       "sourceFile": "@uwo/assets/icons/CarrotUp",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg",
-      "propsWithCallSites": {
-        "data-testid": { "@uwo/components/common/core/collapsible/Collapsible.tsx": 1 }
-      }
-    },
-    {
-      "name": "CarrotDown",
-      "sourceFile": "@uwo/assets/icons/CarrotDown",
       "totalInstances": 2,
       "totalCallSites": 2,
       "presentationalElement": "svg",
       "callSites": {
         "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
+        "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1
+      },
+      "propsWithCallSites": {
+        "data-testid": {
+          "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
+          "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CarrotDown",
+      "sourceFile": "@uwo/assets/icons/CarrotDown",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "presentationalElement": "svg",
+      "callSites": {
+        "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
+        "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1,
         "@uwo/components/common/interactables/inputs/Select.tsx": 1
       },
       "propsWithCallSites": {
-        "data-testid": { "@uwo/components/common/core/collapsible/Collapsible.tsx": 1 },
+        "data-testid": {
+          "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
+          "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1
+        },
         "fill": { "@uwo/components/common/interactables/inputs/Select.tsx": 1 },
         "stroke": { "@uwo/components/common/interactables/inputs/Select.tsx": 1 }
       }
@@ -988,8 +1407,8 @@
       "callSites": {
         "@uwo/components/common/core/collapsible/Collapsible.tsx": 2,
         "@uwo/components/common/primitives/typography/Bullet.tsx": 1,
-        "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
+        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1
       },
       "propsWithCallSites": {
         "display": { "@uwo/components/common/primitives/typography/Bullet.tsx": 1 },
@@ -998,8 +1417,8 @@
           "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1
         },
         "spacing": {
-          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1
         },
         "italic": { "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1 }
       }
@@ -1014,6 +1433,13 @@
         "key": { "@uwo/components/common/core/collapsible/Collapsible.tsx": 1 },
         "ref": { "@uwo/components/common/core/collapsible/Collapsible.tsx": 1 }
       }
+    },
+    {
+      "name": "ToggleWrapper",
+      "sourceFile": "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "InfoElement",
@@ -1056,6 +1482,30 @@
       }
     },
     {
+      "name": "input",
+      "sourceFile": "@uwo/components/common/form/FileUpload/FileUploadButton.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "input",
+      "propsWithCallSites": {
+        "data-testid": { "@uwo/components/common/form/FileUpload/FileUploadButton.tsx": 1 }
+      }
+    },
+    {
+      "name": "GreenCheckmark",
+      "sourceFile": "@uwo/assets/icons/GreenCheckmark",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg"
+    },
+    {
+      "name": "SmallTitle",
+      "sourceFile": "@uwo/components/common/primitives/typography/SmallTitle",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "Text"
+    },
+    {
       "name": "IconWrapper",
       "sourceFile": "@uwo/components/common/form/Date/DateFields.tsx",
       "totalInstances": 1,
@@ -1088,30 +1538,6 @@
         "errorMessage": { "@uwo/components/common/form/Date/DateFields.tsx": 1 },
         "className": { "@uwo/components/common/form/Date/DateFields.tsx": 1 }
       }
-    },
-    {
-      "name": "input",
-      "sourceFile": "@uwo/components/common/form/FileUpload/FileUploadButton.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "input",
-      "propsWithCallSites": {
-        "data-testid": { "@uwo/components/common/form/FileUpload/FileUploadButton.tsx": 1 }
-      }
-    },
-    {
-      "name": "GreenCheckmark",
-      "sourceFile": "@uwo/assets/icons/GreenCheckmark",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg"
-    },
-    {
-      "name": "SmallTitle",
-      "sourceFile": "@uwo/components/common/primitives/typography/SmallTitle",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "Text"
     },
     {
       "name": "button",
@@ -1509,6 +1935,18 @@
       }
     },
     {
+      "name": "Text",
+      "sourceFile": "@uwo/components/common/primitives/typography/Text",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "ParentTag",
+      "propsWithCallSites": {
+        "color": { "@uwo/components/common/primitives/typography/Link.tsx": 1 },
+        "dangerouslySetStyle": { "@uwo/components/common/primitives/typography/Link.tsx": 1 },
+        "as": { "@uwo/components/common/primitives/typography/Link.tsx": 1 }
+      }
+    },
+    {
       "name": "div",
       "sourceFile": "@uwo/components/common/primitives/typography/Text.tsx",
       "totalInstances": 1,
@@ -1679,6 +2117,71 @@
       }
     },
     {
+      "name": "MobileUploadExplainerImage",
+      "sourceFile": "@uwo/assets/images/MobileUploadExplainerImage",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg"
+    },
+    {
+      "name": "DriversLicense",
+      "sourceFile": "@uwo/assets/icons/DriversLicense",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "svg",
+      "callSites": {
+        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1
+      },
+      "propsWithCallSites": {
+        "width": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 },
+        "height": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 }
+      }
+    },
+    {
+      "name": "Passport",
+      "sourceFile": "@uwo/assets/icons/Passport",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg"
+    },
+    {
+      "name": "IdCard",
+      "sourceFile": "@uwo/assets/icons/IdCard",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg"
+    },
+    {
+      "name": "Body",
+      "sourceFile": "@uwo/components/common/primitives/typography/Body",
+      "totalInstances": 9,
+      "totalCallSites": 8,
+      "presentationalElement": "Text",
+      "callSites": {
+        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureConfirmText.tsx": 2,
+        "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureInstructions.tsx": 1,
+        "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1,
+        "@uwo/experiences/idv/scenes/components/UploadInstructions.tsx": 1,
+        "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
+        "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": {
+          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureInstructions.tsx": 1,
+          "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1,
+          "@uwo/experiences/idv/scenes/components/UploadInstructions.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+        },
+        "align": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 },
+        "spacing": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 },
+        "surface": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 }
+      }
+    },
+    {
       "name": "MobileCamera",
       "sourceFile": "@uwo/assets/icons/MobileCamera",
       "totalInstances": 1,
@@ -1700,25 +2203,11 @@
       "presentationalElement": "svg"
     },
     {
-      "name": "MobileUploadExplainerImage",
-      "sourceFile": "@uwo/assets/images/MobileUploadExplainerImage",
+      "name": "VerifyIDExplainerImage",
+      "sourceFile": "@uwo/assets/images/VerifyIDExplainerImage",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "svg"
-    },
-    {
-      "name": "SelectBoxWrapper",
-      "sourceFile": "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "CollapsibleWrapper",
-      "sourceFile": "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
     },
     {
       "name": "FaceCaptureCameraDisplay",
@@ -1812,21 +2301,6 @@
       }
     },
     {
-      "name": "DriversLicense",
-      "sourceFile": "@uwo/assets/icons/DriversLicense",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalElement": "svg",
-      "callSites": {
-        "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-      },
-      "propsWithCallSites": {
-        "width": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 },
-        "height": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 }
-      }
-    },
-    {
       "name": "LicenseBack",
       "sourceFile": "@uwo/assets/icons/LicenseBack",
       "totalInstances": 1,
@@ -1864,55 +2338,6 @@
         "ref": { "@uwo/experiences/idv/scenes/components/Video.tsx": 1 },
         "id": { "@uwo/experiences/idv/scenes/components/Video.tsx": 1 }
       }
-    },
-    {
-      "name": "VerifyIDExplainerImage",
-      "sourceFile": "@uwo/assets/images/VerifyIDExplainerImage",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg"
-    },
-    {
-      "name": "Passport",
-      "sourceFile": "@uwo/assets/icons/Passport",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg"
-    },
-    {
-      "name": "IdCard",
-      "sourceFile": "@uwo/assets/icons/IdCard",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg"
-    },
-    {
-      "name": "ResetButton",
-      "sourceFile": "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "AccessibleButtonBase",
-      "propsWithCallSites": {
-        "onClick": {
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "data-testid": {
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "name": {
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "disabled": {
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "CollapsibleWrapper",
-      "sourceFile": "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
     },
     {
       "name": "CoinbaseApp",
@@ -2086,21 +2511,15 @@
     {
       "name": "Spinner",
       "sourceFile": "@uwo/components/common/Spinner",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "callSites": {
         "@uwo/UWO.tsx": 1,
-        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
         "@uwo/components/common/interactables/inputs/Select.tsx": 1
       },
       "propsWithCallSites": {
-        "size": {
-          "@uwo/UWO.tsx": 1,
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-          "@uwo/components/common/interactables/inputs/Select.tsx": 1
-        },
-        "center": { "@uwo/UWO.tsx": 1 },
-        "color": { "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1 }
+        "size": { "@uwo/UWO.tsx": 1, "@uwo/components/common/interactables/inputs/Select.tsx": 1 },
+        "center": { "@uwo/UWO.tsx": 1 }
       }
     },
     { "name": "UWO", "sourceFile": "@uwo/UWO", "totalInstances": 1, "totalCallSites": 1 },
@@ -2116,20 +2535,17 @@
     {
       "name": "ResponsiveTwoColumnLayout",
       "sourceFile": "@uwo/components/common/layout/ResponsiveTwoColumnLayout",
-      "totalInstances": 11,
-      "totalCallSites": 11,
+      "totalInstances": 8,
+      "totalCallSites": 8,
       "callSites": {
         "@uwo/businessApplicationScenes/SceneLayout.tsx": 1,
         "@uwo/businessApplicationScenes/SceneLayoutV2.tsx": 1,
         "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
         "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
         "@uwo/commonScenes/shared/components/AddressSceneLayout.tsx": 1,
-        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
         "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
         "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
@@ -2138,12 +2554,9 @@
           "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
           "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
           "@uwo/commonScenes/shared/components/AddressSceneLayout.tsx": 1,
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
           "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
           "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
         },
         "progressBar": {
           "@uwo/businessApplicationScenes/SceneLayout.tsx": 1,
@@ -2151,12 +2564,9 @@
           "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
           "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
           "@uwo/commonScenes/shared/components/AddressSceneLayout.tsx": 1,
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
           "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
           "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
         }
       }
     },
@@ -2169,8 +2579,8 @@
     {
       "name": "Body",
       "sourceFile": "@uwo/components/common/Body",
-      "totalInstances": 23,
-      "totalCallSites": 15,
+      "totalInstances": 21,
+      "totalCallSites": 13,
       "callSites": {
         "@uwo/businessApplicationScenes/SceneLayout.tsx": 1,
         "@uwo/businessApplicationScenes/SceneLayoutV2.tsx": 1,
@@ -2184,9 +2594,7 @@
         "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 5,
         "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 4,
         "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerPresentation.tsx": 2,
-        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1
       },
       "propsWithCallSites": {
         "data-test-id": { "@uwo/businessApplicationScenes/SceneLayout.tsx": 1 },
@@ -2203,9 +2611,7 @@
           "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 5,
           "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 4,
           "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerPresentation.tsx": 2,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1
         },
         "spacing": {
           "@uwo/businessApplicationScenes/SceneLayout.tsx": 1,
@@ -2272,6 +2678,669 @@
         "clearSubmissionError": { "@uwo/businessApplicationScenes/SceneLayoutV2.tsx": 1 },
         "missingRequirements": { "@uwo/businessApplicationScenes/SceneLayoutV2.tsx": 1 },
         "missingQuestions": { "@uwo/businessApplicationScenes/SceneLayoutV2.tsx": 1 }
+      }
+    },
+    {
+      "name": "TextInput",
+      "sourceFile": "@uwo/components/common/interactables/inputs/TextInput",
+      "totalInstances": 17,
+      "totalCallSites": 9,
+      "callSites": {
+        "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 4,
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
+        "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
+        "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
+        "@uwo/components/common/form/Address/Address.tsx": 3,
+        "@uwo/components/common/form/Date/Day.tsx": 1,
+        "@uwo/components/common/form/Date/Year.tsx": 1,
+        "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1
+      },
+      "propsWithCallSites": {
+        "testID": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1
+        },
+        "name": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 4,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
+          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
+          "@uwo/components/common/form/Address/Address.tsx": 3,
+          "@uwo/components/common/form/Date/Day.tsx": 1,
+          "@uwo/components/common/form/Date/Year.tsx": 1
+        },
+        "placeholder": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 4,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
+          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
+          "@uwo/components/common/form/Address/Address.tsx": 3,
+          "@uwo/components/common/form/Date/Day.tsx": 1,
+          "@uwo/components/common/form/Date/Year.tsx": 1
+        },
+        "label": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
+          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1
+        },
+        "tabIndex": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 4,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
+          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
+          "@uwo/components/common/form/Address/Address.tsx": 3,
+          "@uwo/components/common/form/Date/Day.tsx": 1,
+          "@uwo/components/common/form/Date/Year.tsx": 1
+        },
+        "onlyNumbers": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
+          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
+          "@uwo/components/common/form/Date/Day.tsx": 1,
+          "@uwo/components/common/form/Date/Year.tsx": 1
+        },
+        "maxLength": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
+          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
+          "@uwo/components/common/form/Address/Address.tsx": 1,
+          "@uwo/components/common/form/Date/Day.tsx": 1,
+          "@uwo/components/common/form/Date/Year.tsx": 1
+        },
+        "value": {
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
+          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
+          "@uwo/components/common/form/Address/Address.tsx": 3,
+          "@uwo/components/common/form/Date/Day.tsx": 1,
+          "@uwo/components/common/form/Date/Year.tsx": 1,
+          "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1
+        },
+        "onChange": {
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
+          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
+          "@uwo/components/common/form/Address/Address.tsx": 3,
+          "@uwo/components/common/form/Date/Day.tsx": 1,
+          "@uwo/components/common/form/Date/Year.tsx": 1,
+          "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1
+        },
+        "autoFocus": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "suppressMarginBottom": {
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
+          "@uwo/components/common/form/Address/Address.tsx": 3,
+          "@uwo/components/common/form/Date/Day.tsx": 1,
+          "@uwo/components/common/form/Date/Year.tsx": 1,
+          "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1
+        },
+        "variant": {
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
+          "@uwo/components/common/form/Address/Address.tsx": 3,
+          "@uwo/components/common/form/Date/Day.tsx": 1,
+          "@uwo/components/common/form/Date/Year.tsx": 1
+        },
+        "onFocus": { "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2 },
+        "onBlur": {
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
+          "@uwo/components/common/form/Address/Address.tsx": 3,
+          "@uwo/components/common/form/Date/Day.tsx": 1,
+          "@uwo/components/common/form/Date/Year.tsx": 1
+        },
+        "labelIcon": { "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1 },
+        "description": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
+        "error": {
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
+          "@uwo/components/common/form/Address/Address.tsx": 3
+        },
+        "isTextarea": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
+        "isConcealed": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
+        "step": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
+        "decimalPrecision": {
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1
+        },
+        "min": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
+        "max": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
+        "isDecimal": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
+        "dangerouslySetContainerStyle": {
+          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1
+        },
+        "id": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
+        "data-testid": {
+          "@uwo/components/common/form/Address/Address.tsx": 3,
+          "@uwo/components/common/form/Date/Day.tsx": 1,
+          "@uwo/components/common/form/Date/Year.tsx": 1
+        },
+        "errorTestID": { "@uwo/components/common/form/Address/Address.tsx": 3 },
+        "ref": { "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1 },
+        "suppressFocusStyles": { "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1 },
+        "icon": { "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1 },
+        "dangerouslySetStyle": { "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1 }
+      }
+    },
+    {
+      "name": "Select",
+      "sourceFile": "@uwo/components/common/interactables/inputs/Select",
+      "totalInstances": 11,
+      "totalCallSites": 11,
+      "callSites": {
+        "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+        "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+        "@uwo/businessApplicationScenes/FormComponents/MultiSelectWrapper.tsx": 1,
+        "@uwo/businessApplicationScenes/FormComponents/SelectWrapper.tsx": 1,
+        "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+        "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
+        "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
+        "@uwo/components/common/form/Address/StateSelect.tsx": 1,
+        "@uwo/components/common/form/Date/Month.tsx": 1,
+        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+      },
+      "propsWithCallSites": {
+        "placeholder": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
+          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
+          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
+          "@uwo/components/common/form/Date/Month.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "selectedValue": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
+          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
+          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
+          "@uwo/components/common/form/Date/Month.tsx": 1
+        },
+        "onChange": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+          "@uwo/components/common/form/Date/Month.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "options": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/MultiSelectWrapper.tsx": 1,
+          "@uwo/businessApplicationScenes/FormComponents/SelectWrapper.tsx": 1,
+          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
+          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
+          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
+          "@uwo/components/common/form/Date/Month.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "tabIndex": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
+          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
+          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
+          "@uwo/components/common/form/Date/Month.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "variant": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/components/common/form/Date/Month.tsx": 1
+        },
+        "isMulti": { "@uwo/businessApplicationScenes/FormComponents/MultiSelectWrapper.tsx": 1 },
+        "disabled": { "@uwo/components/common/form/Address/CountrySelect.tsx": 1 },
+        "suppressMarginBottom": {
+          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
+          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
+          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
+          "@uwo/components/common/form/Date/Month.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "testID": {
+          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
+          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
+          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
+          "@uwo/components/common/form/Date/Month.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "errorTestID": {
+          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
+          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
+          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "Option": {
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "onBlur": {
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "onInputChange": {
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "inputValue": {
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "label": {
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "loadOptions": {
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "error": {
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "shouldDisableAutocomplete": {
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "shouldHideSingleValue": {
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Button",
+      "sourceFile": "@uwo/components/common/interactables/buttons/Button",
+      "totalInstances": 17,
+      "totalCallSites": 16,
+      "callSites": {
+        "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+        "@uwo/experiences/onboardingComplete/OnboardingCompletePresentation.tsx": 1,
+        "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+        "@uwo/components/common/form/FileUpload/FileUploadButton.tsx": 1,
+        "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
+        "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 1,
+        "@uwo/experiences/edp/scenes/VerifyIdentityCheckpoint/VerifyIdentityCheckpointPresentation.tsx": 1,
+        "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
+        "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
+        "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
+        "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "isLoading": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
+          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
+          "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1
+        },
+        "name": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/VerifyIdentityCheckpoint/VerifyIdentityCheckpointPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
+          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+        },
+        "data-testid": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/VerifyIdentityCheckpoint/VerifyIdentityCheckpointPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+        },
+        "type": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+          "@uwo/components/common/form/FileUpload/FileUploadButton.tsx": 1,
+          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1
+        },
+        "disabled": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1
+        },
+        "spacing": {
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/VerifyIdentityCheckpoint/VerifyIdentityCheckpointPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+        },
+        "onClick": {
+          "@uwo/experiences/onboardingComplete/OnboardingCompletePresentation.tsx": 1,
+          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
+          "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/VerifyIdentityCheckpoint/VerifyIdentityCheckpointPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
+          "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+        },
+        "testID": {
+          "@uwo/experiences/onboardingComplete/OnboardingCompletePresentation.tsx": 1,
+          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 1
+        },
+        "tabIndex": {
+          "@uwo/components/common/form/FileUpload/FileUploadButton.tsx": 1,
+          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1
+        },
+        "variant": { "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1 },
+        "eventData": {
+          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AddressSceneLayout",
+      "sourceFile": "@uwo/commonScenes/shared/components/AddressSceneLayout",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "sceneTitle": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+        },
+        "sceneBody": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+        },
+        "addressCollapsibleTitle": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+        },
+        "addressCollapsibleBody": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AddressDetailsFields",
+      "sourceFile": "@uwo/commonScenes/AddressDetails/AddressDetailsFields",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "label": { "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "Label",
+      "sourceFile": "@uwo/components/common/Label",
+      "totalInstances": 6,
+      "totalCallSites": 5,
+      "callSites": {
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2,
+        "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+        "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+        "@uwo/components/common/form/Date/DateFields.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "data-testid": { "@uwo/components/common/form/Date/DateFields.tsx": 1 }
+      }
+    },
+    {
+      "name": "SettingCellContainer",
+      "sourceFile": "@uwo/components/common/core/SettingCellContainer",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+        "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+      }
+    },
+    {
+      "name": "AddressAutocompleteItem",
+      "sourceFile": "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onClick": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "key": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "name": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "predictionStructuredFormatting": {
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "data-testid": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "accessory": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "SettingCell",
+      "sourceFile": "@uwo/components/common/core/SettingCell",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
+        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1
+      },
+      "propsWithCallSites": {
+        "key": {
+          "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "data-testid": {
+          "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "title": {
+          "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1
+        },
+        "spacing": {
+          "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "onClick": {
+          "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "name": {
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "icon": {
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "subtitle": {
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "caret": {
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "captionColor": {
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CollapsibleContainer",
+      "sourceFile": "@uwo/components/common/core/CollapsibleContainer",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 1,
+        "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+      }
+    },
+    {
+      "name": "Collapsible",
+      "sourceFile": "@uwo/components/common/core/Collapsible",
+      "totalInstances": 8,
+      "totalCallSites": 4,
+      "callSites": {
+        "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
+        "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 3,
+        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
+          "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 3,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "key": {
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
+          "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1
+        },
+        "name": {
+          "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 3,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "form",
+      "sourceFile": "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onSubmit": { "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "IconWrapper",
+      "sourceFile": "@uwo/commonScenes/PersonalInfo/sharedStyling/IconWrapper",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+        "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1
+      }
+    },
+    {
+      "name": "SsnField",
+      "sourceFile": "@uwo/commonScenes/PersonalInfo/SsnField",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onChange": { "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 },
+        "value": { "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "PersonalInfoCollapsible",
+      "sourceFile": "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "VStack",
+      "sourceFile": "@uwo/components/common/primitives/VStack",
+      "totalInstances": 14,
+      "totalCallSites": 10,
+      "callSites": {
+        "@uwo/components/common/Banner.tsx": 2,
+        "@uwo/components/common/core/listCell/ListCell.tsx": 4,
+        "@uwo/components/common/form/Address/Address.tsx": 1,
+        "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
+        "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
+        "@uwo/components/common/interactables/inputs/Select.tsx": 1,
+        "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1,
+        "@uwo/components/common/interactables/inputs/TextInput.tsx": 1,
+        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1,
+        "@uwo/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacing": {
+          "@uwo/components/common/Banner.tsx": 2,
+          "@uwo/components/common/core/listCell/ListCell.tsx": 4,
+          "@uwo/components/common/form/Address/Address.tsx": 1,
+          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
+          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
+          "@uwo/components/common/interactables/inputs/Select.tsx": 1,
+          "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1,
+          "@uwo/components/common/interactables/inputs/TextInput.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1,
+          "@uwo/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1
+        },
+        "alignItems": {
+          "@uwo/components/common/Banner.tsx": 1,
+          "@uwo/components/common/core/listCell/ListCell.tsx": 1
+        },
+        "width": { "@uwo/components/common/Banner.tsx": 1 },
+        "flexGrow": { "@uwo/components/common/core/listCell/ListCell.tsx": 1 },
+        "flexShrink": { "@uwo/components/common/core/listCell/ListCell.tsx": 1 },
+        "overflow": { "@uwo/components/common/core/listCell/ListCell.tsx": 1 },
+        "dangerouslySetStyle": {
+          "@uwo/components/common/core/listCell/ListCell.tsx": 1,
+          "@uwo/components/common/interactables/inputs/TextInput.tsx": 1
+        },
+        "data-testid": {
+          "@uwo/components/common/form/Address/Address.tsx": 1,
+          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1
+        },
+        "id": {
+          "@uwo/components/common/form/Address/Address.tsx": 1,
+          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
+          "@uwo/components/common/interactables/inputs/Select.tsx": 1,
+          "@uwo/components/common/interactables/inputs/TextInput.tsx": 1
+        },
+        "maxWidth": { "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1 },
+        "alignSelf": { "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1 }
       }
     },
     {
@@ -2373,6 +3442,7 @@
           "@uwo/businessApplicationScenes/FormComponents/FormFields.tsx": 1,
           "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1
         },
+        "decimalPrecision": { "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1 },
         "onBlur": { "@uwo/businessApplicationScenes/FormComponents/FormFieldsV2.tsx": 1 }
       }
     },
@@ -2714,730 +3784,15 @@
       }
     },
     {
-      "name": "Select",
-      "sourceFile": "@uwo/components/common/interactables/inputs/Select",
-      "totalInstances": 12,
-      "totalCallSites": 12,
-      "callSites": {
-        "@uwo/businessApplicationScenes/FormComponents/MultiSelectWrapper.tsx": 1,
-        "@uwo/businessApplicationScenes/FormComponents/SelectWrapper.tsx": 1,
-        "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-        "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-        "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-        "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
-        "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
-        "@uwo/components/common/form/Address/StateSelect.tsx": 1,
-        "@uwo/components/common/form/Date/Month.tsx": 1,
-        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-      },
-      "propsWithCallSites": {
-        "options": {
-          "@uwo/businessApplicationScenes/FormComponents/MultiSelectWrapper.tsx": 1,
-          "@uwo/businessApplicationScenes/FormComponents/SelectWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
-          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
-          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
-          "@uwo/components/common/form/Date/Month.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "isMulti": { "@uwo/businessApplicationScenes/FormComponents/MultiSelectWrapper.tsx": 1 },
-        "placeholder": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
-          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
-          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
-          "@uwo/components/common/form/Date/Month.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "selectedValue": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
-          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
-          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
-          "@uwo/components/common/form/Date/Month.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1
-        },
-        "onChange": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/components/common/form/Date/Month.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "tabIndex": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
-          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
-          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
-          "@uwo/components/common/form/Date/Month.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "variant": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/components/common/form/Date/Month.tsx": 1
-        },
-        "disabled": { "@uwo/components/common/form/Address/CountrySelect.tsx": 1 },
-        "suppressMarginBottom": {
-          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
-          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
-          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
-          "@uwo/components/common/form/Date/Month.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "testID": {
-          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
-          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
-          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
-          "@uwo/components/common/form/Date/Month.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "errorTestID": {
-          "@uwo/components/common/form/Address/CountrySelect.tsx": 1,
-          "@uwo/components/common/form/Address/ProvinceSelect.tsx": 1,
-          "@uwo/components/common/form/Address/StateSelect.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "label": {
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "Option": {
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "onBlur": {
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "onInputChange": {
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "inputValue": {
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "loadOptions": {
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "error": {
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "shouldDisableAutocomplete": {
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "shouldHideSingleValue": {
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextInput",
-      "sourceFile": "@uwo/components/common/interactables/inputs/TextInput",
-      "totalInstances": 19,
-      "totalCallSites": 11,
-      "callSites": {
-        "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-        "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 4,
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
-        "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
-        "@uwo/components/common/form/Address/Address.tsx": 3,
-        "@uwo/components/common/form/Date/Day.tsx": 1,
-        "@uwo/components/common/form/Date/Year.tsx": 1,
-        "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1,
-        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onBlur": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
-          "@uwo/components/common/form/Address/Address.tsx": 3,
-          "@uwo/components/common/form/Date/Day.tsx": 1,
-          "@uwo/components/common/form/Date/Year.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1
-        },
-        "onChange": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
-          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
-          "@uwo/components/common/form/Address/Address.tsx": 3,
-          "@uwo/components/common/form/Date/Day.tsx": 1,
-          "@uwo/components/common/form/Date/Year.tsx": 1,
-          "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "value": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
-          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
-          "@uwo/components/common/form/Address/Address.tsx": 3,
-          "@uwo/components/common/form/Date/Day.tsx": 1,
-          "@uwo/components/common/form/Date/Year.tsx": 1,
-          "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "description": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
-        "error": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/components/common/form/Address/Address.tsx": 3,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "name": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 4,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
-          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
-          "@uwo/components/common/form/Address/Address.tsx": 3,
-          "@uwo/components/common/form/Date/Day.tsx": 1,
-          "@uwo/components/common/form/Date/Year.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "placeholder": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 4,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
-          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
-          "@uwo/components/common/form/Address/Address.tsx": 3,
-          "@uwo/components/common/form/Date/Day.tsx": 1,
-          "@uwo/components/common/form/Date/Year.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "label": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
-          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "tabIndex": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 4,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
-          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
-          "@uwo/components/common/form/Address/Address.tsx": 3,
-          "@uwo/components/common/form/Date/Day.tsx": 1,
-          "@uwo/components/common/form/Date/Year.tsx": 1
-        },
-        "testID": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "variant": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
-          "@uwo/components/common/form/Address/Address.tsx": 3,
-          "@uwo/components/common/form/Date/Day.tsx": 1,
-          "@uwo/components/common/form/Date/Year.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "isTextarea": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
-        "isConcealed": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
-        "onlyNumbers": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
-          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
-          "@uwo/components/common/form/Date/Day.tsx": 1,
-          "@uwo/components/common/form/Date/Year.tsx": 1
-        },
-        "step": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
-        "min": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
-        "max": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
-        "isDecimal": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
-        "dangerouslySetContainerStyle": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1
-        },
-        "suppressMarginBottom": {
-          "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/components/common/form/Address/Address.tsx": 3,
-          "@uwo/components/common/form/Date/Day.tsx": 1,
-          "@uwo/components/common/form/Date/Year.tsx": 1,
-          "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1
-        },
-        "id": { "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
-        "autoFocus": {
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1
-        },
-        "maxLength": {
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
-          "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
-          "@uwo/components/common/form/Date/Day.tsx": 1,
-          "@uwo/components/common/form/Date/Year.tsx": 1
-        },
-        "onFocus": { "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2 },
-        "labelIcon": { "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1 },
-        "data-testid": {
-          "@uwo/components/common/form/Address/Address.tsx": 3,
-          "@uwo/components/common/form/Date/Day.tsx": 1,
-          "@uwo/components/common/form/Date/Year.tsx": 1
-        },
-        "errorTestID": { "@uwo/components/common/form/Address/Address.tsx": 3 },
-        "ref": { "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1 },
-        "suppressFocusStyles": { "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1 },
-        "icon": { "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1 },
-        "dangerouslySetStyle": { "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1 },
-        "autocomplete": {
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Button",
-      "sourceFile": "@uwo/components/common/interactables/buttons/Button",
-      "totalInstances": 20,
-      "totalCallSites": 19,
-      "callSites": {
-        "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-        "@uwo/experiences/onboardingComplete/OnboardingCompletePresentation.tsx": 1,
-        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-        "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-        "@uwo/components/common/form/FileUpload/FileUploadButton.tsx": 1,
-        "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-        "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 1,
-        "@uwo/experiences/edp/scenes/VerifyIdentityCheckpoint/VerifyIdentityCheckpointPresentation.tsx": 1,
-        "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
-        "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1,
-        "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
-        "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
-      },
-      "propsWithCallSites": {
-        "isLoading": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
-          "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "name": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/VerifyIdentityCheckpoint/VerifyIdentityCheckpointPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
-        },
-        "data-testid": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/VerifyIdentityCheckpoint/VerifyIdentityCheckpointPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
-        },
-        "type": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/components/common/form/FileUpload/FileUploadButton.tsx": 1,
-          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "disabled": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "spacing": {
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/VerifyIdentityCheckpoint/VerifyIdentityCheckpointPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
-        },
-        "onClick": {
-          "@uwo/experiences/onboardingComplete/OnboardingCompletePresentation.tsx": 1,
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-          "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/VerifyIdentityCheckpoint/VerifyIdentityCheckpointPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
-          "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
-        },
-        "testID": {
-          "@uwo/experiences/onboardingComplete/OnboardingCompletePresentation.tsx": 1,
-          "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 1
-        },
-        "tabIndex": {
-          "@uwo/components/common/form/FileUpload/FileUploadButton.tsx": 1,
-          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1
-        },
-        "variant": { "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1 },
-        "eventData": {
-          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AddressSceneLayout",
-      "sourceFile": "@uwo/commonScenes/shared/components/AddressSceneLayout",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
-      },
-      "propsWithCallSites": {
-        "sceneTitle": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
-        },
-        "sceneBody": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
-        },
-        "addressCollapsibleTitle": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
-        },
-        "addressCollapsibleBody": {
-          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AddressDetailsFields",
-      "sourceFile": "@uwo/commonScenes/AddressDetails/AddressDetailsFields",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "label": { "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1 }
-      }
-    },
-    {
-      "name": "Label",
-      "sourceFile": "@uwo/components/common/Label",
-      "totalInstances": 6,
-      "totalCallSites": 5,
-      "callSites": {
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2,
-        "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-        "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-        "@uwo/components/common/form/Date/DateFields.tsx": 1
-      },
-      "propsWithCallSites": {
-        "color": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "data-testid": { "@uwo/components/common/form/Date/DateFields.tsx": 1 }
-      }
-    },
-    {
-      "name": "SettingCellContainer",
-      "sourceFile": "@uwo/components/common/core/SettingCellContainer",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-        "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-      }
-    },
-    {
-      "name": "AddressAutocompleteItem",
-      "sourceFile": "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onClick": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "key": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "name": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "predictionStructuredFormatting": {
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "data-testid": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "accessory": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 }
-      }
-    },
-    {
-      "name": "SettingCell",
-      "sourceFile": "@uwo/components/common/core/SettingCell",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1
-      },
-      "propsWithCallSites": {
-        "key": {
-          "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-        },
-        "data-testid": {
-          "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-        },
-        "title": {
-          "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1
-        },
-        "spacing": {
-          "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-        },
-        "onClick": {
-          "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-        },
-        "name": {
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-        },
-        "icon": {
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-        },
-        "subtitle": {
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-        },
-        "caret": {
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-        },
-        "captionColor": {
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "CollapsibleContainer",
-      "sourceFile": "@uwo/components/common/core/CollapsibleContainer",
-      "totalInstances": 6,
-      "totalCallSites": 6,
-      "callSites": {
-        "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 1,
-        "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-      }
-    },
-    {
-      "name": "Collapsible",
-      "sourceFile": "@uwo/components/common/core/Collapsible",
-      "totalInstances": 11,
-      "totalCallSites": 6,
-      "callSites": {
-        "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
-        "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
-        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 3,
-        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": {
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
-          "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 3,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "key": {
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
-          "@uwo/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "name": {
-          "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 3,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "form",
-      "sourceFile": "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onSubmit": { "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 }
-      }
-    },
-    {
-      "name": "IconWrapper",
-      "sourceFile": "@uwo/commonScenes/PersonalInfo/sharedStyling/IconWrapper",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-        "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1
-      }
-    },
-    {
-      "name": "SsnField",
-      "sourceFile": "@uwo/commonScenes/PersonalInfo/SsnField",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onChange": { "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 },
-        "value": { "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 }
-      }
-    },
-    {
-      "name": "PersonalInfoCollapsible",
-      "sourceFile": "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "VStack",
-      "sourceFile": "@uwo/components/common/primitives/VStack",
-      "totalInstances": 14,
-      "totalCallSites": 10,
-      "callSites": {
-        "@uwo/components/common/Banner.tsx": 2,
-        "@uwo/components/common/core/listCell/ListCell.tsx": 4,
-        "@uwo/components/common/form/Address/Address.tsx": 1,
-        "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-        "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
-        "@uwo/components/common/interactables/inputs/Select.tsx": 1,
-        "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1,
-        "@uwo/components/common/interactables/inputs/TextInput.tsx": 1,
-        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1,
-        "@uwo/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacing": {
-          "@uwo/components/common/Banner.tsx": 2,
-          "@uwo/components/common/core/listCell/ListCell.tsx": 4,
-          "@uwo/components/common/form/Address/Address.tsx": 1,
-          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
-          "@uwo/components/common/interactables/inputs/Select.tsx": 1,
-          "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1,
-          "@uwo/components/common/interactables/inputs/TextInput.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1,
-          "@uwo/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1
-        },
-        "alignItems": {
-          "@uwo/components/common/Banner.tsx": 1,
-          "@uwo/components/common/core/listCell/ListCell.tsx": 1
-        },
-        "width": { "@uwo/components/common/Banner.tsx": 1 },
-        "flexGrow": { "@uwo/components/common/core/listCell/ListCell.tsx": 1 },
-        "flexShrink": { "@uwo/components/common/core/listCell/ListCell.tsx": 1 },
-        "overflow": { "@uwo/components/common/core/listCell/ListCell.tsx": 1 },
-        "dangerouslySetStyle": {
-          "@uwo/components/common/core/listCell/ListCell.tsx": 1,
-          "@uwo/components/common/interactables/inputs/TextInput.tsx": 1
-        },
-        "data-testid": {
-          "@uwo/components/common/form/Address/Address.tsx": 1,
-          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1
-        },
-        "id": {
-          "@uwo/components/common/form/Address/Address.tsx": 1,
-          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
-          "@uwo/components/common/interactables/inputs/Select.tsx": 1,
-          "@uwo/components/common/interactables/inputs/TextInput.tsx": 1
-        },
-        "maxWidth": { "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1 },
-        "alignSelf": { "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1 }
-      }
-    },
-    {
       "name": "ScrollToTop",
       "sourceFile": "@uwo/components/ScrollToTop",
       "totalInstances": 9,
       "totalCallSites": 9,
       "callSites": {
         "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
-        "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1,
         "@uwo/experiences/edp/EDPExperience.tsx": 1,
         "@uwo/experiences/email/EmailExperience.tsx": 1,
+        "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1,
         "@uwo/experiences/idv/IDVExperience.tsx": 1,
         "@uwo/experiences/nationality/NationalityExperience.tsx": 1,
         "@uwo/experiences/onboardingComplete/OnboardingCompleteExperience.tsx": 1,
@@ -3446,21 +3801,26 @@
       }
     },
     {
-      "name": "SceneLayout",
-      "sourceFile": "@uwo/businessApplicationScenes/SceneLayout",
+      "name": "form",
+      "sourceFile": "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "analyticsInfo": {
-          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
-        },
-        "progressBarData": {
-          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
-        },
         "onSubmit": {
           "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
         },
-        "submitButtonContent": {
+        "data-testid": {
+          "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CollapsibleSidebarCDS",
+      "sourceFile": "@uwo/commonScenes/shared/components/CollapsibleSidebar/CollapsibleSidebarCDS",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "data": {
           "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
         }
       }
@@ -3471,16 +3831,16 @@
       "totalInstances": 5,
       "totalCallSites": 5,
       "callSites": {
-        "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1,
         "@uwo/experiences/edp/EDPExperience.tsx": 1,
+        "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1,
         "@uwo/experiences/idv/IDVExperience.tsx": 1,
         "@uwo/experiences/phone/PhoneExperience.tsx": 1,
         "@uwo/experiences/verificationStatus/VerificationStatusExperience.tsx": 1
       },
       "propsWithCallSites": {
         "history": {
-          "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1,
           "@uwo/experiences/edp/EDPExperience.tsx": 1,
+          "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1,
           "@uwo/experiences/idv/IDVExperience.tsx": 1,
           "@uwo/experiences/phone/PhoneExperience.tsx": 1,
           "@uwo/experiences/verificationStatus/VerificationStatusExperience.tsx": 1
@@ -3493,8 +3853,8 @@
       "totalInstances": 5,
       "totalCallSites": 5,
       "callSites": {
-        "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1,
         "@uwo/experiences/edp/EDPExperience.tsx": 1,
+        "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1,
         "@uwo/experiences/idv/IDVExperience.tsx": 1,
         "@uwo/experiences/phone/PhoneExperience.tsx": 1,
         "@uwo/experiences/verificationStatus/VerificationStatusExperience.tsx": 1
@@ -3506,48 +3866,25 @@
       "totalInstances": 32,
       "totalCallSites": 5,
       "callSites": {
-        "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 2,
         "@uwo/experiences/edp/EDPExperience.tsx": 10,
+        "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 2,
         "@uwo/experiences/idv/IDVExperience.tsx": 14,
         "@uwo/experiences/phone/PhoneExperience.tsx": 4,
         "@uwo/experiences/verificationStatus/VerificationStatusExperience.tsx": 2
       },
       "propsWithCallSites": {
-        "path": {
-          "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 2,
-          "@uwo/experiences/edp/EDPExperience.tsx": 9,
-          "@uwo/experiences/idv/IDVExperience.tsx": 13,
-          "@uwo/experiences/phone/PhoneExperience.tsx": 3,
-          "@uwo/experiences/verificationStatus/VerificationStatusExperience.tsx": 1
-        },
         "exact": {
           "@uwo/experiences/edp/EDPExperience.tsx": 9,
           "@uwo/experiences/idv/IDVExperience.tsx": 13,
           "@uwo/experiences/phone/PhoneExperience.tsx": 3,
           "@uwo/experiences/verificationStatus/VerificationStatusExperience.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Industry",
-      "sourceFile": "@uwo/experiences/customerDueDiligence/scenes/Industry/IndustryScene",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "routeToNextScene": {
-          "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TradeAmount",
-      "sourceFile": "@uwo/experiences/customerDueDiligence/scenes/TradeAmount/TradeAmountScene",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "submit": { "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1 },
-        "routeToNextScene": {
-          "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1
+        },
+        "path": {
+          "@uwo/experiences/edp/EDPExperience.tsx": 9,
+          "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 2,
+          "@uwo/experiences/idv/IDVExperience.tsx": 13,
+          "@uwo/experiences/phone/PhoneExperience.tsx": 3,
+          "@uwo/experiences/verificationStatus/VerificationStatusExperience.tsx": 1
         }
       }
     },
@@ -3638,6 +3975,29 @@
       "propsWithCallSites": {
         "scene": { "@uwo/experiences/email/EmailExperience.tsx": 1 },
         "resetExperience": { "@uwo/experiences/email/EmailExperience.tsx": 1 }
+      }
+    },
+    {
+      "name": "Industry",
+      "sourceFile": "@uwo/experiences/customerDueDiligence/scenes/Industry/IndustryScene",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "routeToNextScene": {
+          "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TradeAmount",
+      "sourceFile": "@uwo/experiences/customerDueDiligence/scenes/TradeAmount/TradeAmountScene",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "submit": { "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1 },
+        "routeToNextScene": {
+          "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1
+        }
       }
     },
     {
@@ -3798,6 +4158,64 @@
       }
     },
     {
+      "name": "CollapsibleContainer",
+      "sourceFile": "@uwo/components/common/core/collapsible/CollapsibleContainer",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
+        "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
+        "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
+      }
+    },
+    {
+      "name": "Collapsible",
+      "sourceFile": "@uwo/components/common/core/collapsible/Collapsible",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
+        "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
+        "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
+          "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
+          "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
+        },
+        "key": {
+          "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
+          "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
+          "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
+        },
+        "name": { "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1 }
+      }
+    },
+    {
+      "name": "CollapsibleCDS",
+      "sourceFile": "@uwo/components/common/core/collapsible/CollapsibleCDS",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "title": { "@uwo/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1 },
+        "key": { "@uwo/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1 },
+        "name": { "@uwo/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1 },
+        "description": { "@uwo/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1 }
+      }
+    },
+    {
+      "name": "Columns",
+      "sourceFile": "@uwo/components/common/primitives/Columns",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "columnsByWidth": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 },
+        "gridColumnGap": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 },
+        "gridRowGap": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 }
+      }
+    },
+    {
       "name": "FileUploadPrompt",
       "sourceFile": "@uwo/components/common/FileUploadPrompt",
       "totalInstances": 1,
@@ -3838,144 +4256,50 @@
     {
       "name": "Link",
       "sourceFile": "@uwo/components/common/Link",
-      "totalInstances": 5,
-      "totalCallSites": 3,
+      "totalInstances": 3,
+      "totalCallSites": 2,
       "callSites": {
         "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 2,
-        "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 2
+        "@uwo/experiences/edp/scenes/EDPFailure/EDPFailurePresentation.tsx": 1
       },
       "propsWithCallSites": {
         "spacing": {
-          "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 2,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+          "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 2
         },
         "onClick": {
-          "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 2,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+          "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 2
         },
         "color": {
           "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1
-        },
-        "display": {
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
         }
       }
     },
     {
-      "name": "CollapsibleContainer",
-      "sourceFile": "@uwo/components/common/core/collapsible/CollapsibleContainer",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "name": "FormattedMessage",
+      "sourceFile": "react-intl/FormattedMessage",
+      "totalInstances": 5,
+      "totalCallSites": 2,
       "callSites": {
-        "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
-        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-        "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
-        "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
-      }
-    },
-    {
-      "name": "Collapsible",
-      "sourceFile": "@uwo/components/common/core/collapsible/Collapsible",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
-        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-        "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
-        "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
+        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 2
       },
       "propsWithCallSites": {
-        "title": {
-          "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-          "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
-          "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
+        "defaultMessage": {
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 2
         },
-        "key": {
-          "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1,
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-          "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
-          "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
+        "id": {
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 2
         },
-        "name": { "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx": 1 }
-      }
-    },
-    {
-      "name": "Columns",
-      "sourceFile": "@uwo/components/common/primitives/Columns",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "columnsByWidth": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 },
-        "gridColumnGap": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 },
-        "gridRowGap": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 }
-      }
-    },
-    {
-      "name": "VStack",
-      "sourceFile": "@uwo/components/common/primitives/spacing/VStack",
-      "totalInstances": 11,
-      "totalCallSites": 8,
-      "callSites": {
-        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-        "@uwo/components/common/core/collapsible/Collapsible.tsx": 2,
-        "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
-        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 2,
-        "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-      },
-      "propsWithCallSites": {
-        "alignItems": {
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1
+        "description": {
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 2
         },
-        "maxWidth": { "@uwo/components/common/core/collapsible/Collapsible.tsx": 1 },
-        "spacing": {
-          "@uwo/components/common/core/collapsible/Collapsible.tsx": 2,
-          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 2,
-          "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
-        },
-        "dangerouslySetStyle": {
-          "@uwo/components/common/core/collapsible/Collapsible.tsx": 2,
-          "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1
-        },
-        "width": { "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1 },
-        "justifyContent": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 },
-        "height": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 }
-      }
-    },
-    {
-      "name": "HStack",
-      "sourceFile": "@uwo/components/common/primitives/spacing/HStack",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-        "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
-        "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1,
-        "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTitle.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacing": {
-          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-          "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
-          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1,
-          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTitle.tsx": 1
-        },
-        "justifyContent": {
-          "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
-          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1,
-          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTitle.tsx": 1
-        },
-        "data-testid": { "@uwo/components/common/core/collapsible/Collapsible.tsx": 1 }
+        "values": {
+          "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 3,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 2
+        }
       }
     },
     {
@@ -3985,30 +4309,21 @@
       "totalCallSites": 1
     },
     {
-      "name": "AccessibleButtonBase",
-      "sourceFile": "@uwo/components/common/interactables/buttons/AccessibleButtonBase",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "name": "CollapsibleSidebarCDS",
+      "sourceFile": "@uwo/commonScenes/shared/components/CollapsibleSidebarCDS",
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "callSites": {
         "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-        "@uwo/components/common/core/collapsible/Collapsible.tsx": 1
+        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
       },
       "propsWithCallSites": {
-        "name": { "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1 },
-        "onClick": {
+        "data": {
           "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1,
-          "@uwo/components/common/core/collapsible/Collapsible.tsx": 1
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
         }
-      }
-    },
-    {
-      "name": "Link",
-      "sourceFile": "@uwo/components/common/primitives/typography/Link",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 2 },
-      "propsWithCallSites": {
-        "onClick": { "@uwo/experiences/email/VerifyEmail/VerifyEmailPresentation.tsx": 1 }
       }
     },
     {
@@ -4049,6 +4364,84 @@
       "sourceFile": "@uwo/experiences/nationality/Nationality/NationalityCollapsible",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "VStack",
+      "sourceFile": "@uwo/components/common/primitives/spacing/VStack",
+      "totalInstances": 10,
+      "totalCallSites": 7,
+      "callSites": {
+        "@uwo/components/common/core/collapsible/Collapsible.tsx": 2,
+        "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
+        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 2,
+        "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1
+      },
+      "propsWithCallSites": {
+        "maxWidth": { "@uwo/components/common/core/collapsible/Collapsible.tsx": 1 },
+        "spacing": {
+          "@uwo/components/common/core/collapsible/Collapsible.tsx": 2,
+          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 2,
+          "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1
+        },
+        "dangerouslySetStyle": {
+          "@uwo/components/common/core/collapsible/Collapsible.tsx": 2,
+          "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1
+        },
+        "alignItems": {
+          "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1
+        },
+        "width": { "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1 },
+        "justifyContent": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 },
+        "height": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 }
+      }
+    },
+    {
+      "name": "AccessibleButtonBase",
+      "sourceFile": "@uwo/components/common/interactables/buttons/AccessibleButtonBase",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
+        "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onClick": {
+          "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
+          "@uwo/components/common/core/collapsible/CollapsibleCDS.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "HStack",
+      "sourceFile": "@uwo/components/common/primitives/spacing/HStack",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
+        "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1,
+        "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTitle.tsx": 1
+      },
+      "propsWithCallSites": {
+        "justifyContent": {
+          "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
+          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1,
+          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTitle.tsx": 1
+        },
+        "spacing": {
+          "@uwo/components/common/core/collapsible/Collapsible.tsx": 1,
+          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 1,
+          "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTitle.tsx": 1
+        },
+        "data-testid": { "@uwo/components/common/core/collapsible/Collapsible.tsx": 1 }
+      }
     },
     {
       "name": "Divider",
@@ -4148,6 +4541,34 @@
       }
     },
     {
+      "name": "div",
+      "sourceFile": "@uwo/components/common/form/FileUpload/FileUploadButton.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "data-testid": { "@uwo/components/common/form/FileUpload/FileUploadButton.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "FileUploadButton",
+      "sourceFile": "@uwo/components/common/form/FileUpload/FileUploadButton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isLoading": { "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1 },
+        "onUpload": { "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1 },
+        "onError": { "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1 },
+        "isRetry": { "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1 },
+        "tabIndex": { "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1 }
+      }
+    },
+    {
       "name": "Month",
       "sourceFile": "@uwo/components/common/form/Date/Month",
       "totalInstances": 1,
@@ -4186,34 +4607,6 @@
         "value": { "@uwo/components/common/form/Date/DateFields.tsx": 1 },
         "hasError": { "@uwo/components/common/form/Date/DateFields.tsx": 1 },
         "tabIndex": { "@uwo/components/common/form/Date/DateFields.tsx": 1 }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "@uwo/components/common/form/FileUpload/FileUploadButton.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "data-testid": { "@uwo/components/common/form/FileUpload/FileUploadButton.tsx": 1 }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "FileUploadButton",
-      "sourceFile": "@uwo/components/common/form/FileUpload/FileUploadButton",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isLoading": { "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1 },
-        "onUpload": { "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1 },
-        "onError": { "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1 },
-        "isRetry": { "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1 },
-        "tabIndex": { "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1 }
       }
     },
     {
@@ -4457,21 +4850,6 @@
       }
     },
     {
-      "name": "AddressSearchPresentation",
-      "sourceFile": "@uwo/commonScenes/AddressSearch/AddressSearchPresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onClickAddManually": {
-          "@uwo/experiences/edp/scenes/AddressSearch/AddressSearchScene.tsx": 1
-        },
-        "onClickSuggestion": {
-          "@uwo/experiences/edp/scenes/AddressSearch/AddressSearchScene.tsx": 1
-        },
-        "labels": { "@uwo/experiences/edp/scenes/AddressSearch/AddressSearchScene.tsx": 1 }
-      }
-    },
-    {
       "name": "QuestionScene",
       "sourceFile": "@uwo/commonScenes/KYCQuestion/QuestionScene",
       "totalInstances": 6,
@@ -4546,6 +4924,21 @@
       "propsWithCallSites": {
         "onUseSelected": { "@uwo/experiences/edp/scenes/CoinbaseUse/CoinbaseUseScene.tsx": 1 },
         "answers": { "@uwo/experiences/edp/scenes/CoinbaseUse/CoinbaseUseScene.tsx": 1 }
+      }
+    },
+    {
+      "name": "AddressSearchPresentation",
+      "sourceFile": "@uwo/commonScenes/AddressSearch/AddressSearchPresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClickAddManually": {
+          "@uwo/experiences/edp/scenes/AddressSearch/AddressSearchScene.tsx": 1
+        },
+        "onClickSuggestion": {
+          "@uwo/experiences/edp/scenes/AddressSearch/AddressSearchScene.tsx": 1
+        },
+        "labels": { "@uwo/experiences/edp/scenes/AddressSearch/AddressSearchScene.tsx": 1 }
       }
     },
     {
@@ -4658,6 +5051,17 @@
       }
     },
     {
+      "name": "CollapsibleWrapper",
+      "sourceFile": "@uwo/experiences/edp/shared/components/CollapsibleWrapper",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
+        "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
+      }
+    },
+    {
       "name": "IndustryPresentation",
       "sourceFile": "@uwo/experiences/customerDueDiligence/scenes/Industry/IndustryPresentation",
       "totalInstances": 1,
@@ -4681,17 +5085,6 @@
         "answers": {
           "@uwo/experiences/customerDueDiligence/scenes/TradeAmount/TradeAmountScene.tsx": 1
         }
-      }
-    },
-    {
-      "name": "CollapsibleWrapper",
-      "sourceFile": "@uwo/experiences/edp/shared/components/CollapsibleWrapper",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@uwo/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
-        "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1
       }
     },
     {
@@ -4909,6 +5302,29 @@
       }
     },
     {
+      "name": "MobileUploadExplainerPresentation",
+      "sourceFile": "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerPresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "phone": {
+          "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerScene.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SelectIDTypePresentation",
+      "sourceFile": "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "handleSelection": {
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypeScene.tsx": 1
+        },
+        "idTypes": { "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypeScene.tsx": 1 }
+      }
+    },
+    {
       "name": "CollapsibleWrapper",
       "sourceFile": "@uwo/components/common/core/CollapsibleWrapper",
       "totalInstances": 1,
@@ -4925,17 +5341,6 @@
         },
         "uploadMethods": {
           "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodScene.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MobileUploadExplainerPresentation",
-      "sourceFile": "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerPresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "phone": {
-          "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerScene.tsx": 1
         }
       }
     },
@@ -4963,32 +5368,6 @@
         "handleFileAdded": { "@uwo/experiences/idv/scenes/UploadScene/UploadScene.tsx": 1 },
         "resetPhoto": { "@uwo/experiences/idv/scenes/UploadScene/UploadScene.tsx": 1 },
         "isLoading": { "@uwo/experiences/idv/scenes/UploadScene/UploadScene.tsx": 1 }
-      }
-    },
-    {
-      "name": "form",
-      "sourceFile": "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onSubmit": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 }
-      }
-    },
-    {
-      "name": "PhoneNumberPresentation",
-      "sourceFile": "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "userCountryCode": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberScene.tsx": 1 },
-        "submitPhoneNumber": {
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberScene.tsx": 1
-        },
-        "countriesList": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberScene.tsx": 1 },
-        "progressBarValue": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberScene.tsx": 1 },
-        "shouldUseBusinessUserCopy": {
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberScene.tsx": 1
-        }
       }
     },
     {
@@ -5023,15 +5402,29 @@
       }
     },
     {
-      "name": "SelectIDTypePresentation",
-      "sourceFile": "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation",
+      "name": "form",
+      "sourceFile": "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "handleSelection": {
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypeScene.tsx": 1
+        "onSubmit": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "PhoneNumberPresentation",
+      "sourceFile": "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "userCountryCode": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberScene.tsx": 1 },
+        "submitPhoneNumber": {
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberScene.tsx": 1
         },
-        "idTypes": { "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypeScene.tsx": 1 }
+        "countriesList": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberScene.tsx": 1 },
+        "progressBarValue": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberScene.tsx": 1 },
+        "shouldUseBusinessUserCopy": {
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberScene.tsx": 1
+        }
       }
     },
     {
@@ -5052,29 +5445,18 @@
       }
     },
     {
+      "name": "span",
+      "sourceFile": "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "form",
       "sourceFile": "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
         "onSubmit": {
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Headline",
-      "sourceFile": "@uwo/components/common/Headline",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "color": {
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "dangerouslySetStyle": {
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
-        },
-        "spacing": {
           "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
         }
       }
