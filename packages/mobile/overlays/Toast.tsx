@@ -23,6 +23,11 @@ const toastPalette = {
   background: defaultPalette.backgroundAlternate,
 } as const;
 
+const toastActionPalette = {
+  light: { transparent: ['gray0', 0] },
+  dark: { transparent: ['gray5', 0] },
+} as const;
+
 export type ToastProps = ToastBaseProps;
 
 export const Toast: React.FC<ToastProps> = memo(
@@ -103,14 +108,17 @@ export const Toast: React.FC<ToastProps> = memo(
                   <TextHeadline>{text}</TextHeadline>
                 </Box>
                 {!!action && (
-                  <Button
-                    onPress={handleActionPress}
-                    testID={action.testID ?? 'toast-action'}
-                    compact
-                    transparent
-                  >
-                    {action.label}
-                  </Button>
+                  // TODO: remove once fixed globally on mobile
+                  <ThemeProvider name="toastAction" palette={toastActionPalette}>
+                    <Button
+                      onPress={handleActionPress}
+                      testID={action.testID ?? 'toast-action'}
+                      compact
+                      transparent
+                    >
+                      {action.label}
+                    </Button>
+                  </ThemeProvider>
                 )}
               </HStack>
             </Box>
