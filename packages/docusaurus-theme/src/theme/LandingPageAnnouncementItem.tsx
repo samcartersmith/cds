@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
-import type { AnnouncementFields } from '@theme/LandingPageAnnouncementItem';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import type { LandingPageAnnouncementItemProps } from '@theme/LandingPageAnnouncementItem';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { TextLabel2 } from '@cbhq/cds-web/typography/TextLabel2';
@@ -11,12 +10,12 @@ import useGoToLinkHandler from './useGoToLinkHandler';
 const LandingPageAnnouncementItem = memo(function LandingPageAnnouncementItem({
   title,
   description,
-  href,
+  actionUrl,
   actionLabel,
-}: AnnouncementFields) {
-  const handleOnPress = useGoToLinkHandler(href);
+}: LandingPageAnnouncementItemProps) {
+  const handleOnPress = useGoToLinkHandler(actionUrl);
   return (
-    <VStack gap={1} alignItems="flex-start" spacingVertical={6} spacingHorizontal={gutter}>
+    <VStack gap={1} alignItems="flex-start">
       <TextTitle1 as="h2">{title}</TextTitle1>
       <TextLabel2 as="p">{description}</TextLabel2>
       {actionLabel ? (

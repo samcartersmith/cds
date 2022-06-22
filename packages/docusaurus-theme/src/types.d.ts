@@ -35,22 +35,26 @@ declare module '@theme/LandingPage' {
   export default function LandingPage(props: LandingPageProps): JSX.Element;
 }
 
+type AnnouncementFields = {
+  title: string;
+  description: string;
+  actionLabel?: string;
+  actionUrl?: string;
+};
+
 declare module '@theme/LandingPageAnnouncementItem' {
-  export type AnnouncementFields = {
-    title: string;
-    description: string;
-    actionLabel?: string;
-    href?: string;
-  };
+  export type LandingPageAnnouncementItemProps = AnnouncementFields;
 
   export default function LandingPageAnnouncementItem(
-    props: import('contentful').Entry<AnnouncementFields>,
+    props: LandingPageAnnouncementItemProps,
   ): JSX.Element;
 }
 
 declare module '@theme/LandingPageAnnouncements' {
+  export type ContentfulAnnouncements = import('contentful').Entry<AnnouncementFields>[];
+
   export type LandingPageAnnouncementsProps = {
-    announcements?: import('contentful').Entry<AnnouncementFields>[];
+    announcements: ContentfulAnnouncements | undefined | null;
   };
 
   export default function LandingPageAnnouncements(
@@ -439,6 +443,19 @@ declare module '@theme/Calendar' {
   export type CalendarProps = import('schedulely').SchedulelyProps;
   export type CalendarEvent = import('schedulely').CalendarEvent;
   export default function Calendar(props: CalendarProps): JSX.Element;
+}
+
+declare module '@theme/ScrollSnapCarousel' {
+  type BoxProps = import('@cbhq/cds-web/layout/Box').BoxProps;
+
+  export type ScrollSnapCarouselProps = {
+    cards: unknown[] | undefined | null;
+    renderCards: (cards: unknown[]) => JSX.Element;
+    loading?: boolean;
+    dismissableCards?: boolean;
+  } & BoxProps;
+
+  export default function ScrollSnapCarousel(props: ScrollSnapCarouselProps): JSX.Element;
 }
 
 /* -------------------------------------------------------------------------- */

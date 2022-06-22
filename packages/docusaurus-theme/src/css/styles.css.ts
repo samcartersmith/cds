@@ -392,6 +392,25 @@ export default css`
     }
   }
 
+  .scroll-snap-carousel {
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & > * {
+      scroll-snap-align: start;
+      min-width: 100%;
+
+      &:not(:last-child) {
+        margin-right: ${spacing[3]};
+      }
+    }
+  }
+
   .row .col {
     &:nth-child(2) {
       padding-left: ${spacing[4]};
