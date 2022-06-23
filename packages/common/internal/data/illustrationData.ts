@@ -105,9 +105,6 @@ export const spotRectangleNames = [
   'downloadCoinbaseWalletArrow',
   'downloadingStatement',
   'emptyNfts',
-  'emptyStateCheckBackLater',
-  'emptyStateNft404Page',
-  'emptyStateNftSoldOut',
   'emptyTradingSpotRectangle',
   'eth2SellSend',
   'ethAddress',
@@ -401,6 +398,7 @@ export const heroSquareNames = [
 
 export const pictogramNames = [
   '2fa',
+  'apyInterest',
   'accountsNavigation',
   'add',
   'addCard',

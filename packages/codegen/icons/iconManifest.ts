@@ -5164,16 +5164,415 @@ export const iconManifest = {
     description: 'chat, bot, agent, person, help, support, 💬, 👩‍💼, 🧑‍💼, 👨‍💼',
     documentationLinks: [],
   },
+  '8781:835': {
+    key: 'ccfc2110f3bda3b3dbb2168c806c26f2d72ad77d',
+    name: 'Icon/chatBotAgent_24',
+    description: 'chat, bot, agent, person, help, support, 💬, 👩‍💼, 🧑‍💼, 👨‍💼',
+    documentationLinks: [],
+  },
   '8781:836': {
     key: '46ff0464e9c842a0e2d4de060adcacd25154c9a5',
     name: 'Icon/chatBotAgent_16',
     description: 'chat, bot, agent, person, help, support, 💬, 👩‍💼, 🧑‍💼, 👨‍💼',
     documentationLinks: [],
   },
-  '8781:835': {
-    key: 'ccfc2110f3bda3b3dbb2168c806c26f2d72ad77d',
-    name: 'Icon/chatBotAgent_24',
-    description: 'chat, bot, agent, person, help, support, 💬, 👩‍💼, 🧑‍💼, 👨‍💼',
+  '8877:840': {
+    key: 'a1e37117f1a9800a8ab854774c767bf55474508d',
+    name: 'NavigationIcon/heartNav_24/inactive',
+    description: 'navigation, specialty, heart, like, special, ❤️, ',
+    documentationLinks: [],
+  },
+  '8877:865': {
+    key: '2c52bc9ff76dce0bf61695549fd9d65da4913782',
+    name: 'NavigationIcon/heartNav_16/inactive',
+    description: 'navigation, specialty, heart, like, special, ❤️, ',
+    documentationLinks: [],
+  },
+  '8877:862': {
+    key: 'b97e99facbfee09175c361fed0082e8b331e6f31',
+    name: 'NavigationIcon/heartNav_12/inactive',
+    description: 'navigation, specialty, heart, like, special, ❤️, ',
+    documentationLinks: [],
+  },
+  '8877:859': {
+    key: '86b906115abf364a5f39d4c52ae536f5c4c1323a',
+    name: 'NavigationIcon/heartNav_24/active',
+    description: 'navigation, specialty, heart, like, special, ❤️, ',
+    documentationLinks: [],
+  },
+  '8877:857': {
+    key: '67988c9951d03930834a46bec85c8f43e435be2d',
+    name: 'NavigationIcon/heartNav_16/active',
+    description: 'navigation, specialty, heart, like, special, ❤️, ',
+    documentationLinks: [],
+  },
+  '8877:855': {
+    key: '2bd4ee2207d712e292926c41d4bdc33f03a3523f',
+    name: 'NavigationIcon/heartNav_12/active',
+    description: 'navigation, specialty, heart, like, special, ❤️, ',
+    documentationLinks: [],
+  },
+  '8877:854': {
+    key: '90024ba82000f65d0e59e4d9cc7cae8730b04837',
+    name: 'NavigationIcon/hammer_16/inactive',
+    description:
+      'navigation, specialty, minting, creating, making, building, mint, pickaxe, 🔨, ⚒, ⚒️',
+    documentationLinks: [],
+  },
+  '8877:851': {
+    key: '5722cad40b246e927acf2be75c0fe9bb3cecb8a6',
+    name: 'NavigationIcon/hammer_16/inactive',
+    description:
+      'navigation, specialty, minting, creating, making, building, mint, pickaxe, 🔨, ⚒, ⚒️',
+    documentationLinks: [],
+  },
+  '8877:848': {
+    key: 'c8aedbb84d1aa5f366e4f7b0f7de74987922a1ae',
+    name: 'NavigationIcon/hammer_12/inactive',
+    description:
+      'navigation, specialty, minting, creating, making, building, mint, pickaxe, 🔨, ⚒, ⚒️',
+    documentationLinks: [],
+  },
+  '8877:866': {
+    key: '13e1ce371e3c042e0222e0ef44561ceb13201c45',
+    name: 'NavigationIcon/hammer_24/active',
+    description:
+      'navigation, specialty, minting, creating, making, building, mint, pickaxe, 🔨, ⚒, ⚒️',
+    documentationLinks: [],
+  },
+  '8877:863': {
+    key: 'dce949a5881e7faf7864e87d7cc5a7f31b97a373',
+    name: 'NavigationIcon/hammer_16/active',
+    description:
+      'navigation, specialty, minting, creating, making, building, mint, pickaxe, 🔨, ⚒, ⚒️',
+    documentationLinks: [],
+  },
+  '8877:847': {
+    key: '974ed5243163ff84a4ad97dd3c355314314f9e51',
+    name: 'NavigationIcon/hammer_12/active',
+    description:
+      'navigation, specialty, minting, creating, making, building, mint, pickaxe, 🔨, ⚒, ⚒️',
+    documentationLinks: [],
+  },
+  '8877:846': {
+    key: '359d18587e8c58786de90f140638f242bb04e25e',
+    name: 'NavigationIcon/collection_24/inactive',
+    description:
+      'navigation, specialty collection, gallery, library, artworks, picture, frame, 🖼, 📸',
+    documentationLinks: [],
+  },
+  '8877:845': {
+    key: 'be613f6414def9b2182ec59ece24aa5067680737',
+    name: 'NavigationIcon/collection_16/inactive',
+    description:
+      'navigation, specialty collection, gallery, library, artworks, picture, frame, 🖼, 📸',
+    documentationLinks: [],
+  },
+  '8877:844': {
+    key: '5611eae1503acedcb27d075ac3de9f8b88f4090d',
+    name: 'NavigationIcon/collection_12/inactive',
+    description:
+      'navigation, specialty collection, gallery, library, artworks, picture, frame, 🖼, 📸',
+    documentationLinks: [],
+  },
+  '8877:843': {
+    key: 'f5e9b040813af8bd4064e9d90d66683d5f1c9192',
+    name: 'NavigationIcon/collection_24/active',
+    description:
+      'navigation, specialty collection, gallery, library, artworks, picture, frame, 🖼, 📸',
+    documentationLinks: [],
+  },
+  '8877:842': {
+    key: 'dcbe1226df6de250885b19cc6b28e21c4a3044ef',
+    name: 'NavigationIcon/collection_16/active',
+    description:
+      'navigation, specialty collection, gallery, library, artworks, picture, frame, 🖼, 📸',
+    documentationLinks: [],
+  },
+  '8877:841': {
+    key: '34340699002ca19a0d9177ce3d4d0edca753303a',
+    name: 'NavigationIcon/collection_12/active',
+    description:
+      'navigation, specialty collection, gallery, library, artworks, picture, frame, 🖼, 📸',
+    documentationLinks: [],
+  },
+  '8877:864': {
+    key: '3c36d4e49b164bbf0b9c58945bd7f24371527013',
+    name: 'NavigationIcon/drops_24/inactive',
+    description: 'navigation, specialty, sparkles, drops, special, rare, ✨',
+    documentationLinks: [],
+  },
+  '8877:861': {
+    key: '39765b12d6c8f694b3927af127f24d62737d8607',
+    name: 'NavigationIcon/drops_16/inactive',
+    description: 'navigation, specialty, sparkles, drops, special, rare, ✨',
+    documentationLinks: [],
+  },
+  '8877:860': {
+    key: 'fd3a0c212e5c80bf695549dcd688c7f4bd8e0657',
+    name: 'NavigationIcon/drops_12/inactive',
+    description: 'navigation, specialty, sparkles, drops, special, rare, ✨',
+    documentationLinks: [],
+  },
+  '8877:858': {
+    key: '50cea2e2f29f6864d78d59635112534bf3a4e923',
+    name: 'NavigationIcon/drops_24/active',
+    description: 'navigation, specialty, sparkles, drops, special, rare, ✨',
+    documentationLinks: [],
+  },
+  '8877:856': {
+    key: '732674efbe15c28aa5622f932fa7eeb4a9a438d7',
+    name: 'NavigationIcon/drops_16/active',
+    description: 'navigation, specialty, sparkles, drops, special, rare, ✨',
+    documentationLinks: [],
+  },
+  '8877:853': {
+    key: '53314c4bfaecac244fd1f1073c74d9ecb8435103',
+    name: 'NavigationIcon/drops_12/active',
+    description: 'navigation, specialty, sparkles, drops, special, rare, ✨',
+    documentationLinks: [],
+  },
+  '8877:850': {
+    key: 'd1f4a63c4156ec5d5f8ecb3b5b032d5a56de29c3',
+    name: 'NavigationIcon/diamond_24/inactive',
+    description: 'navigation, specialty, diamond, rare, crystal, gem, hold, 💎',
+    documentationLinks: [],
+  },
+  '8877:839': {
+    key: 'c5809213d7848b6c69bb2bc7ae79b1738a57fe5a',
+    name: 'NavigationIcon/diamond_16/inactive',
+    description: 'navigation, specialty, diamond, rare, crystal, gem, hold, 💎',
+    documentationLinks: [],
+  },
+  '8877:837': {
+    key: 'a96c69d9cad483b33d8397d5f68940806002a003',
+    name: 'NavigationIcon/diamond_12/inactive',
+    description: 'navigation, specialty, diamond, rare, crystal, gem, hold, 💎',
+    documentationLinks: [],
+  },
+  '8877:836': {
+    key: '6648895ab23bd118a4dfb76cc1321eec647fc98a',
+    name: 'NavigationIcon/diamond_24/active',
+    description: 'navigation, specialty, diamond, rare, crystal, gem, hold, 💎',
+    documentationLinks: [],
+  },
+  '8877:835': {
+    key: 'a80eb25f7d29d741ed8932f157a6bbdd032ad4ba',
+    name: 'NavigationIcon/diamond_16/active',
+    description: 'navigation, specialty, diamond, rare, crystal, gem, hold, 💎',
+    documentationLinks: [],
+  },
+  '8877:834': {
+    key: 'c33e3722af8047b1df3954b3d0346eca0ac2e0f1',
+    name: 'NavigationIcon/diamond_12/active',
+    description: 'navigation, specialty, diamond, rare, crystal, gem, hold, 💎',
+    documentationLinks: [],
+  },
+  '8877:833': {
+    key: 'acfdde0661baf5dc46557104edb007dd537c2ed8',
+    name: 'NavigationIcon/commentNav_24/inactive',
+    description: 'navigation, speciality, chat, comment, speak, bubble, thread, message, 💬, 🗣',
+    documentationLinks: [],
+  },
+  '8877:832': {
+    key: '7b35783903457713c8190976bfd0edea1f72fcc9',
+    name: 'NavigationIcon/commentNav_16/inactive',
+    description: 'navigation, speciality, chat, comment, speak, bubble, thread, message, 💬, 🗣',
+    documentationLinks: [],
+  },
+  '8877:831': {
+    key: '2fdab9cbdda576a882dc30e20740795992ded3a2',
+    name: 'NavigationIcon/commentNav_12/inactive',
+    description: 'navigation, speciality, chat, comment, speak, bubble, thread, message, 💬, 🗣',
+    documentationLinks: [],
+  },
+  '8877:830': {
+    key: '85a8d86f66cab15ace05d8c4aecf9491f7a6dbac',
+    name: 'NavigationIcon/commentNav_24/active',
+    description: 'navigation, speciality, chat, comment, speak, bubble, thread, message, 💬, 🗣',
+    documentationLinks: [],
+  },
+  '8877:829': {
+    key: '7f6f633353d3e38f6e31838851dace4340e0c55d',
+    name: 'NavigationIcon/commentNav_16/active',
+    description: 'navigation, speciality, chat, comment, speak, bubble, thread, message, 💬, 🗣',
+    documentationLinks: [],
+  },
+  '8877:828': {
+    key: '81d6e9dd5be1802a7e47324a871233de9e7ea312',
+    name: 'NavigationIcon/commentNav_12/active',
+    description: 'navigation, speciality, chat, comment, speak, bubble, thread, message, 💬, 🗣',
+    documentationLinks: [],
+  },
+  '8877:827': {
+    key: 'd8aef6cce77911c4db4da2ebcaf270ad118e27fd',
+    name: 'NavigationIcon/hiddenEye_24/inactive',
+    description: 'navigation, speciality, closed, eye, unwatch, not visible, 👀, 👁, inactive',
+    documentationLinks: [],
+  },
+  '8877:826': {
+    key: '57c2aabb17852d2a242604db69ed1fd472123512',
+    name: 'NavigationIcon/hiddenEye_16/inactive',
+    description: 'navigation, speciality, closed, eye, unwatch, not visible, 👀, 👁, inactive',
+    documentationLinks: [],
+  },
+  '8877:825': {
+    key: 'e61f4bbe0100e7906d4a2e8d6f13a89770eeb4aa',
+    name: 'NavigationIcon/hiddenEye_12/inactive',
+    description: 'navigation, speciality, closed, eye, unwatch, not visible, 👀, 👁, inactive',
+    documentationLinks: [],
+  },
+  '8877:852': {
+    key: 'd172f2ec5d7a1e6214ef0cd978dc86c69be29d82',
+    name: 'NavigationIcon/hiddenEye_24/active',
+    description: 'navigation, speciality, closed, eye, unwatch, not visible, 👀, 👁, inactive',
+    documentationLinks: [],
+  },
+  '8877:849': {
+    key: '7573fff269eda232e0780b0e0f1c54dfdb51e459',
+    name: 'NavigationIcon/hiddenEye_16/active',
+    description: 'navigation, speciality, closed, eye, unwatch, not visible, 👀, 👁, inactive',
+    documentationLinks: [],
+  },
+  '8877:838': {
+    key: '7363194a63367422689cc3e741476c1f8db46834',
+    name: 'NavigationIcon/hiddenEye_12/active',
+    description: 'navigation, speciality, closed, eye, unwatch, not visible, 👀, 👁, inactive',
+    documentationLinks: [],
+  },
+  '8871:824': {
+    key: 'f6e54dcac142372a6b481e5dab57daaf7e69633a',
+    name: 'Icon/bridging_24',
+    description: 'bridge, send, exchange, change, 🌁, 🌉',
+    documentationLinks: [],
+  },
+  '8871:823': {
+    key: 'f4749f9772d4b81c4e50ef6a65531563624df462',
+    name: 'Icon/bridging_16',
+    description: 'bridge, send, exchange, change, 🌁, 🌉',
+    documentationLinks: [],
+  },
+  '8871:820': {
+    key: '023f4dfb100bcb45a9e716ef2de72fb40899f54c',
+    name: 'Icon/bridging_12',
+    description: 'bridge, send, exchange, change, 🌁, 🌉',
+    documentationLinks: [],
+  },
+  '8871:819': {
+    key: '0de7828bda20420052cd9ea234177bbaa2bd5593',
+    name: 'Icon/cashBrazillianReal_12',
+    description: 'currency, international, money,  🇧🇷, 💵, 💸, 🪙',
+    documentationLinks: [],
+  },
+  '8871:822': {
+    key: '87874753dec6808a02855adaa855fe43800318ca',
+    name: 'Icon/cashBrazillianReal_16',
+    description: 'currency, international, money,  🇧🇷, 💵, 💸, 🪙',
+    documentationLinks: [],
+  },
+  '8871:821': {
+    key: '6d28674c4b6c37f41d7ac9ae750b232e47238b7c',
+    name: 'Icon/cashBrazilianReal_24',
+    description: 'currency, international, money,  🇧🇷, 💵, 💸, 🪙',
+    documentationLinks: [],
+  },
+  '8920:791': {
+    key: 'ef5a0a2f1102aecbf0bd069b4c1050507c531275',
+    name: 'NavigationIcon/pencil_24/active',
+    description:
+      'navigation, specialty, pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️',
+    documentationLinks: [],
+  },
+  '8920:792': {
+    key: 'ba9e5ff609f6fb5671f718cf897f2650c36911cd',
+    name: 'NavigationIcon/pencil_16/active',
+    description:
+      'navigation, specialty, pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️',
+    documentationLinks: [],
+  },
+  '8920:793': {
+    key: '58bb6aa226a776f05743272efc91e7442888e71a',
+    name: 'NavigationIcon/pencil_12/active',
+    description:
+      'navigation, specialty, pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️',
+    documentationLinks: [],
+  },
+  '8920:788': {
+    key: '6d0162d6cd062f506af3bda17cf8ed6844e731d7',
+    name: 'NavigationIcon/pencil_24/inactive',
+    description:
+      'navigation, specialty, pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️',
+    documentationLinks: [],
+  },
+  '8920:789': {
+    key: '44d6b51988d6765c4b9fc4879ae3490a5b8bf01a',
+    name: 'NavigationIcon/pencil_16/inactive',
+    description:
+      'navigation, specialty, pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️',
+    documentationLinks: [],
+  },
+  '8920:790': {
+    key: '5c02f09ad43fdba10c309ed3f9dd8b7376af27ee',
+    name: 'NavigationIcon/pencil_12/inactive',
+    description:
+      'navigation, specialty, pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️',
+    documentationLinks: [],
+  },
+  '8922:738': {
+    key: '3c292e34cf20acbbe4b81006a0b2784129ac8a10',
+    name: 'Icon/diamond_24/active',
+    description: 'special, unique, diamond, rare, limited, scarce, crystal, gem, hold, active, 💎',
+    documentationLinks: [],
+  },
+  '8922:739': {
+    key: 'e0b4b52a34222679a06a44e608a9c11b53ba3825',
+    name: 'Icon/diamond_16/active',
+    description: 'special, unique, diamond, rare, limited, scarce, crystal, gem, hold, active, 💎',
+    documentationLinks: [],
+  },
+  '8922:740': {
+    key: 'de0a1c368f3ada1ca567818202e4b86235ab9715',
+    name: 'Icon/diamond_12/active',
+    description: 'special, unique, diamond, rare, limited, scarce, crystal, gem, hold, active, 💎',
+    documentationLinks: [],
+  },
+  '8922:735': {
+    key: 'd56105f6de6d7373faf09bcd056e3d035323d6c6',
+    name: 'Icon/diamond_24/inactive',
+    description:
+      'special, unique, diamond, rare, limited, scarce, crystal, gem, hold, inactive, 💎',
+    documentationLinks: [],
+  },
+  '8922:736': {
+    key: 'db25e2f45e27593566e0ef002db15da35545cb15',
+    name: 'Icon/diamond_16/inactive',
+    description:
+      'special, unique, diamond, rare, limited, scarce, crystal, gem, hold, inactive, 💎',
+    documentationLinks: [],
+  },
+  '8922:737': {
+    key: '7a670729627565224bb1d20cefd319f6c761a93e',
+    name: 'Icon/diamond_12/inactive',
+    description:
+      'special, unique, diamond, rare, limited, scarce, crystal, gem, hold, inactive, 💎',
+    documentationLinks: [],
+  },
+  '8922:752': {
+    key: '41ad0c22204cab7231513e62c0d9e872c91494a2',
+    name: 'Icon/comment_24/active',
+    description: 'chat bubble, speech, communication, social, interaction, message, active, 💬',
+    documentationLinks: [],
+  },
+  '8922:751': {
+    key: 'cb94b0bbcb76cc3965ff71d48f4cb76110bb008d',
+    name: 'Icon/comment_16/active',
+    description: 'comments, thread, message, chat, speak, bubble, active, 💬',
+    documentationLinks: [],
+  },
+  '8922:750': {
+    key: 'a1dd05bb32bb79d60b1d974bfb00863c92c05695',
+    name: 'Icon/comment_12/active',
+    description: 'comments, thread, message, chat, speak, bubble, active, 💬',
     documentationLinks: [],
   },
 };

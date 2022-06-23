@@ -155,25 +155,4 @@ describe('Modal', () => {
       });
     });
   });
-
-  it('should have correct styles at the end of animation', async () => {
-    const { container, getByTestId } = render(<MockModal />);
-
-    fireEvent.click(container.querySelector('button') as Element);
-    // initial styles
-    expect(getByTestId('modal-overlay-motion')).toHaveStyle({ opacity: 0 });
-    expect(getByTestId('modal-dialog-motion')).toHaveStyle({ opacity: 0 });
-    expect(getByTestId('modal-dialog-motion')).toHaveStyle({
-      transform: 'scale(0.98) translateZ(0)',
-    });
-
-    // animated styles
-    await waitFor(() => {
-      expect(getByTestId('modal-overlay-motion')).toHaveStyle({ opacity: 1 });
-      expect(getByTestId('modal-dialog-motion')).toHaveStyle({ opacity: 1 });
-      expect(getByTestId('modal-dialog-motion')).toHaveStyle({
-        transform: 'none',
-      });
-    });
-  });
 });

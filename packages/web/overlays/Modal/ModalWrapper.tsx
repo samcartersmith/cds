@@ -6,7 +6,6 @@ import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibi
 import { NoopFn } from '../..';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
 import { Box, BoxProps } from '../../layout';
-import { useMotionProps } from '../../motion/useMotionProps';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal, PortalProps } from '../Portal';
 import { modalContainerId } from '../PortalProvider';

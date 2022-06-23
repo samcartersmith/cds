@@ -37,9 +37,6 @@
     "@cbhq/cds-tools": "workspace:*",
     "concurrently": "^7.2.1"
   },
-  "devDependencies": {
-    "@cbhq/cds-tools": "workspace:*"
-  },
   "browserslist": {
     "production": [
       ">0.5%",

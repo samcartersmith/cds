@@ -106,9 +106,6 @@ export type IllustrationSpotRectangleNames =
   | 'downloadCoinbaseWalletArrow'
   | 'downloadingStatement'
   | 'emptyNfts'
-  | 'emptyStateCheckBackLater'
-  | 'emptyStateNft404Page'
-  | 'emptyStateNftSoldOut'
   | 'emptyTradingSpotRectangle'
   | 'eth2SellSend'
   | 'ethAddress'
@@ -400,6 +397,7 @@ export type IllustrationHeroSquareNames =
 
 export type IllustrationPictogramNames =
   | '2fa'
+  | 'apyInterest'
   | 'accountsNavigation'
   | 'add'
   | 'addCard'

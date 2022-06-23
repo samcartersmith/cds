@@ -61,9 +61,6 @@ export default function plugin(
       }
       return undefined;
     },
-    getPathsToWatch() {
-      return flatten(Object.values(options.sourceFiles));
-    },
     configureWebpack(webpackConfig) {
       return {
         resolve: {
@@ -80,7 +77,7 @@ export default function plugin(
         },
       };
     },
-    async contentLoaded({ content }): Promise<void> {
+    async contentLoaded({ content, actions }): Promise<void> {
       if (content) {
         const { projects, filesToWrite } = content;
         await docgenWriter(filesToWrite);

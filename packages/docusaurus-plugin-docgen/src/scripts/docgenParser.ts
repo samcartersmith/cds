@@ -160,7 +160,7 @@ export function docgenParser({
   /** React docgen integration */
   return withCustomConfig(params.tsconfigPath, {
     savePropValueAsString: true,
-    shouldExtractValuesFromUnion: false,
+    shouldExtractValuesFromUnion: true,
     shouldExtractLiteralValuesFromEnum: true,
     shouldRemoveUndefinedFromOptional: true,
     shouldIncludePropTagMap: true,
