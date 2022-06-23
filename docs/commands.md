@@ -3,7 +3,7 @@
 ## Commands (overview)
 
 | Command                         | Description                                                  |
-| ------------------------------- | ------------------------------------------------------------ |
+|---------------------------------|--------------------------------------------------------------|
 | yarn build                      | Build all packages.                                          |
 | yarn format                     | Format all of the affected packages                          |
 | yarn lint                       | Lint all of the affected packages                            |
@@ -120,7 +120,7 @@ The alias of the workspace name can be obtained in Table 1.0. The script can be 
 **Table 1.0**
 
 | Workspace name         | Alias      |
-| ---------------------- | ---------- |
+|------------------------|------------|
 | @cbhq/cds-common       | common     |
 | @cbhq/cds-fonts        | fonts      |
 | @cbhq/cds-lottie-files | lottie     |

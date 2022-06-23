@@ -35,7 +35,9 @@ function DefaultDrawer() {
 
 `Drawer`s do not allow scrolling by default, to allow for pan gestures to work. However, you can enable scrolling by passing `disableCapturePanGestureToDismiss` and wrapping `children` in a `ScrollView`.
 
-**Please note:** when `disableCapturePanGestureToDismiss` is enabled, you will not be able to use pan gestures to close the `Drawer` within the `Drawer` container. However, you can still use the `HandleBar` and `StatusBar` to drag to close.
+**NOTE**: If the children of a `ScrollView` are not interactable/pressable, you will need to wrap them in a `PressableOpacity` in order for scroll events to be captured by the `ScrollView`.
+
+There is one caveat with this prop, since `disableCapturePanGestureToDismiss` stops event propagation from interactables within a `Drawer`, you lose the swipe to close functionality. But good news, is the `HandleBar` and `StatusBar` will still capture swipe to close gestures.
 
 ```jsx
 function ScrollableDrawer() {
@@ -45,14 +47,17 @@ function ScrollableDrawer() {
       <Button onPress={toggleOn}>Open</Button>
       {visible && (
         <Drawer pin={pin} onCloseComplete={toggleOff} disableCapturePanGestureToDismiss>
-          {({ handleClose }) => (
+          <VStack height={120} spacingHorizontal={3} spacingBottom={1}>
             <ScrollView>
-              <VStack spacing={2}>
-                <LoremIpsum />
-                <Button onPress={handleClose}>Close Drawer</Button>
-              </VStack>
+              {/* Wrap non interactable content in a ScrollView with PressableOpacity */}
+              <PressableOpacity noScaleOnPress>
+                <LoremIpsum repeat={2} />
+              </PressableOpacity>
             </ScrollView>
-          )}
+          </VStack>
+          <Menu value={value} onChange={setValue}>
+            <FlatList data={lotsOfOptions} renderItem={renderItem} />
+          </Menu>
         </Drawer>
       )}
     </>

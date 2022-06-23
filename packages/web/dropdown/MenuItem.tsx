@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, ReactNode, useCallback } from 'react';
-import { ForwardedRef } from '@cbhq/cds-common';
+import { ForwardedRef, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common';
 
 import { SelectOptionProps } from '../controls';
 import { useSelectContext } from '../controls/selectContext';
@@ -11,7 +11,9 @@ export type MenuItemProps = {
 } & Pick<
   SelectOptionProps,
   'disableCloseOnOptionChange' | 'onPress' | 'onKeyPress' | 'to' | 'value' | 'tabIndex'
->;
+> &
+  SharedProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
 
 export const MenuItem = memo(
   forwardRef(

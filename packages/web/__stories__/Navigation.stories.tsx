@@ -11,10 +11,7 @@ import {
   SidebarItem,
   SidebarMoreMenu,
 } from '../navigation';
-import {
-  items as sidebarItems,
-  moreMenuOptions,
-} from '../navigation/__stories__/NavigationStorySetup';
+import { items } from '../navigation/__stories__/NavigationStorySetup';
 import { PortalProvider } from '../overlays/PortalProvider';
 import { FeatureFlagProvider } from '../system';
 import { useToggler } from '..';
@@ -22,15 +19,18 @@ import { useToggler } from '..';
 import { AppSwitcher } from './AppSwitcher.stories';
 import { UserSwitcher } from './UserSwitcher.stories';
 
+const sidebarItems = items.slice(0, 4);
+const moreMenuOptions = items.slice(4);
 export const NavigationRecipe = () => {
   const [isCollapsed, handleToggleCollapsed] = useToggler(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);
-  const moreMenuIndex = 4;
 
   const handleMoreMenuChange = useCallback(
     (newValue: string) => {
-      setActiveIndex(moreMenuIndex);
+      const moreIndex =
+        moreMenuOptions.findIndex((option) => option.title === newValue) + sidebarItems.length;
+      setActiveIndex(moreIndex);
       setMoreMenuValue(newValue);
     },
     [setActiveIndex, setMoreMenuValue],
@@ -44,16 +44,12 @@ export const NavigationRecipe = () => {
     [setActiveIndex, setMoreMenuValue],
   );
 
-  const handleSidebarMoreMenuPress = useCallback(() => {
-    setActiveIndex(moreMenuIndex);
-  }, [setActiveIndex]);
-
   return (
     <PortalProvider>
       <FeatureFlagProvider frontierColor frontierButton>
         <HStack>
           <Sidebar collapsed={isCollapsed} logo={<LogoMark />}>
-            {sidebarItems.slice(0, 4).map((props, index) => (
+            {sidebarItems.map((props, index) => (
               <SidebarItem
                 key={`sidebar-item--${props.title}`}
                 active={index === activeIndex}
@@ -66,15 +62,14 @@ export const NavigationRecipe = () => {
             <SidebarMoreMenu
               onChange={handleMoreMenuChange}
               value={moreMenuValue}
-              active={activeIndex === moreMenuIndex}
-              onPress={handleSidebarMoreMenuPress}
+              active={activeIndex >= sidebarItems.length}
               tooltipContent="More"
             >
               {moreMenuOptions.map((item) => (
                 <SelectOption
-                  key={`sidebar-more-menu-item--${item.value}`}
-                  value={item.value}
-                  description={item.label}
+                  key={`sidebar-more-menu-item--${item.title}`}
+                  value={item.title}
+                  description={item.title}
                   media={<NavigationIcon name={item.icon} />}
                 />
               ))}
@@ -89,7 +84,7 @@ export const NavigationRecipe = () => {
                 </HStack>
               }
             >
-              <NavigationTitle>{sidebarItems[activeIndex].title}</NavigationTitle>
+              <NavigationTitle>{[...items, ...moreMenuOptions][activeIndex].title}</NavigationTitle>
             </NavigationBar>
             <HStack
               justifyContent="center"

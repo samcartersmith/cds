@@ -114,31 +114,46 @@ describe('Modal', () => {
 
   it('renders modal title', async () => {
     const title = 'Basic Modal';
-    const { getByText } = render(<MockModal visible onRequestClose={jest.fn()} title={title} />);
+    const { findByText, getByText } = render(
+      <MockModal visible onRequestClose={jest.fn()} title={title} />,
+    );
+    expect(getByText(title)).not.toBeVisible();
 
-    expect(getByText(title)).toBeTruthy();
+    expect(await findByText(title)).toBeVisible();
   });
 
   it('renders modal body', async () => {
-    const { container, getByRole, getByText } = render(
-      <MockModal visible onRequestClose={jest.fn()} />,
-    );
+    const { findByText, getByText } = render(<MockModal visible onRequestClose={jest.fn()} />);
+    expect(getByText(loremIpsum)).not.toBeVisible();
 
-    fireEvent.click(container.querySelector('button') as Element);
-    await waitFor(() => getByRole('dialog'));
-
-    expect(getByText(loremIpsum)).toBeTruthy();
+    expect(await findByText(loremIpsum)).toBeVisible();
   });
 
   it('renders modal footer', async () => {
-    const { container, getByRole, getByTestId } = render(
-      <MockModal visible onRequestClose={jest.fn()} />,
-    );
+    const { findByTestId } = render(<MockModal visible onRequestClose={jest.fn()} />);
+
+    expect(await findByTestId('modal-footer')).toBeVisible();
+  });
+
+  it('should have correct styles at the end of animation', async () => {
+    const { container, getByTestId } = render(<MockModal />);
 
     fireEvent.click(container.querySelector('button') as Element);
-    await waitFor(() => getByRole('dialog'));
+    // initial styles
+    expect(getByTestId('modal-overlay-motion')).toHaveStyle({ opacity: 0 });
+    expect(getByTestId('modal-dialog-motion')).toHaveStyle({ opacity: 0 });
+    expect(getByTestId('modal-dialog-motion')).toHaveStyle({
+      transform: 'scale(0.98) translateZ(0)',
+    });
 
-    expect(getByTestId('modal-footer')).toBeTruthy();
+    // animated styles
+    await waitFor(() => {
+      expect(getByTestId('modal-overlay-motion')).toHaveStyle({ opacity: 1 });
+      expect(getByTestId('modal-dialog-motion')).toHaveStyle({ opacity: 1 });
+      expect(getByTestId('modal-dialog-motion')).toHaveStyle({
+        transform: 'none',
+      });
+    });
   });
 
   it('should have correct styles at the end of animation', async () => {

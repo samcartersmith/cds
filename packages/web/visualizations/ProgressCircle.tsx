@@ -1,4 +1,5 @@
-import React, { forwardRef, memo, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, memo, useRef } from 'react';
+import { m as motion } from 'framer-motion';
 import { css } from 'linaria';
 import { ForwardedRef } from '@cbhq/cds-common';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
@@ -12,9 +13,9 @@ import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
 import { getProgressCircleParams } from '@cbhq/cds-common/visualizations/getProgressCircleParams';
 import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
 
-import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { usePalette } from '../hooks/usePalette';
 import { Box } from '../layout';
+import { useMotionProps } from '../motion/useMotionProps';
 
 import { ProgressTextLabel } from './ProgressTextLabel';
 import { VisualizationContainer } from './VisualizationContainer';
@@ -22,17 +23,6 @@ import { VisualizationContainer } from './VisualizationContainer';
 const svgClassName = css`
   display: block;
   max-width: 100%;
-`;
-
-const { easing, duration } = convertMotionConfig({
-  toValue: 0,
-  ...animateProgressBaseSpec,
-});
-
-const innerSvgCircleClassName = css`
-  transform: rotate(-90deg);
-  transform-origin: center;
-  transition: stroke-dashoffset ${duration}ms ${easing};
 `;
 
 const ProgressCircleText: React.FC<ProgressCircleTextBaseProps> = memo(({ progress, disabled }) => {
@@ -55,25 +45,26 @@ const ProgressCircleInner: React.FC<ProgressInnerCircleBaseProps> = memo(
 
     const circumference = getCircumference(getRadius(size, strokeWidth));
 
-    const [offset, setOffset] = useState(circumference);
-    useEffect(() => {
-      const progressOffset = (1 - progress) * circumference;
+    const progressOffset = (1 - progress) * circumference;
 
-      // If you have multiple circle progresses then this is required to animate them in parallel.
-      // The browser can struggle to perform css transitions in parallel, this should be rare
-      requestAnimationFrame(() => {
-        setOffset(progressOffset);
-      });
-    }, [setOffset, circumference, progress]);
+    const motionProps = useMotionProps({
+      style: {
+        rotate: -90,
+      },
+      animate: {
+        strokeDashoffset: progressOffset,
+      },
+      transition: animateProgressBaseSpec,
+      initial: { strokeDashoffset: circumference },
+    });
 
     return (
-      <circle
+      <motion.circle
         data-testid="cds-progress-circle-inner"
         ref={circleRef}
-        className={innerSvgCircleClassName}
         strokeDasharray={circumference}
-        strokeDashoffset={offset}
         strokeLinecap="round"
+        {...motionProps}
         {...getProgressCircleParams({
           size,
           strokeWidth,

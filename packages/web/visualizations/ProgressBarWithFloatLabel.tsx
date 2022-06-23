@@ -1,4 +1,5 @@
 import React, { memo, useCallback, useRef } from 'react';
+import { m as motion, MotionStyle, useAnimation } from 'framer-motion';
 import { css } from 'linaria';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
@@ -9,10 +10,10 @@ import {
 import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
 import { isStorybook } from '@cbhq/cds-utils';
 
-import { Animated } from '../animation/Animated';
 import { useDimensions } from '../hooks/useDimensions';
 import { useIsoEffect } from '../hooks/useIsoEffect';
 import { Box, VStack } from '../layout';
+import { convertTransition } from '../motion/utils';
 import { isRtl } from '../utils/isRtl';
 
 import { ProgressTextLabel } from './ProgressTextLabel';
@@ -23,11 +24,14 @@ const floatingTextContainerClassName = css`
   align-items: center;
 `;
 
+const motionStyle: MotionStyle = { originX: isRtl() ? 'left' : 'right' };
+
 const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFloatLabelProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const textContainerRef = useRef<HTMLDivElement>(null);
   const { getPreviousValue: getPreviousPercent, addPreviousValue: addPreviousPercent } =
     usePreviousValues<number>([0]);
+  const animationControls = useAnimation();
 
   addPreviousPercent(progress);
   const previousPercent = getPreviousPercent() ?? 0;
@@ -52,16 +56,10 @@ const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFl
         ? Math.min(containerWidth - textContainerWidth, containerWidth - containerWidth * progress)
         : Math.max(0, containerWidth * progress - textContainerWidth);
 
-      textContainerRef.current.style.transformOrigin = isRtl() ? 'left' : 'right';
-
-      void Animated.timing(textContainerRef, {
-        property: 'transform',
-        fromValue: `translateX(${startLeftTranslate}px)`,
-        toValue: `translateX(${endLeftTranslate}px)`,
-        ...animateProgressBaseSpec,
-      })?.start();
-
-      textContainerRef.current.style.transform = `translateX(${endLeftTranslate}px)`;
+      void animationControls.start({
+        x: [startLeftTranslate, endLeftTranslate],
+        transition: convertTransition(animateProgressBaseSpec),
+      });
     }
   }, [progress, cWidth, cHeight, previousPercent]);
 
@@ -80,10 +78,12 @@ const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFl
       testID="cds-progress-label-container"
       width="100%"
     >
-      <div
+      <motion.div
         className={floatingTextContainerClassName}
         data-testid="cds-progress-bar-float-label"
         ref={textContainerRef}
+        animate={animationControls}
+        style={motionStyle}
       >
         <ProgressTextLabel
           value={labelNum}
@@ -91,7 +91,7 @@ const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFl
           disabled={disabled}
           color="foregroundMuted"
         />
-      </div>
+      </motion.div>
     </Box>
   );
 });

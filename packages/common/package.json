@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-common",
-  "version": "0.39.4",
+  "version": "1.0.0-beta.1",
   "description": "Coinbase Design System - Common",
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "keywords": [
@@ -35,5 +35,8 @@
   },
   "react-native": "./index.ts",
   "main": "index",
-  "typings": "index.d.ts"
+  "typings": "index.d.ts",
+  "devDependencies": {
+    "jest-date-mock": "^1.0.8"
+  }
 }

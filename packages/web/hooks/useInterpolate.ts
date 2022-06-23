@@ -1,5 +1,12 @@
 import { MotionValue, useTransform } from 'framer-motion';
-import { TransformOptions } from 'framer-motion/types/utils/transform';
+
+export type Easing = (v: number) => number;
+
+export type TransformOptions<T> = {
+  clamp?: boolean;
+  ease?: Easing | Easing[];
+  mixer?: (from: T, to: T) => (v: number) => unknown;
+};
 
 type UseInterpolateParams = {
   inputRange: number[];

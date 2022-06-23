@@ -1,16 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import type { LoadContext, Plugin } from '@docusaurus/types';
 import { DEFAULT_PLUGIN_ID } from '@docusaurus/utils';
-import { flatten } from 'lodash';
 import path from 'path';
+import type { PluginContent, PluginOptions } from '@cbhq/docusaurus-plugin-docgen';
 
 import { docgenRunner } from './scripts/docgenRunner';
-import { docgenWriter, WriteFileConfig } from './scripts/docgenWriter';
-import { DocgenPluginOptions } from './scripts/types';
+import { docgenWriter } from './scripts/docgenWriter';
 import { getMinutesBetweenDates } from './utils/getMinutesBetweenDates';
 import { logger } from './utils/logger';
 
-const PLUGIN_ID = 'docusaurus-plugin-docgen';
+const PLUGIN_ID = '@cbhq/docusaurus-plugin-docgen';
 
 /**
  * Persist build state as a global, since the plugin is re-evaluated every hot reload.
@@ -31,8 +30,8 @@ if (!global.docgenBuild) {
 
 export default function plugin(
   { generatedFilesDir }: LoadContext,
-  { alias = '@docgen', enabled = true, watchInterval = 5, ...options }: DocgenPluginOptions,
-): Plugin<WriteFileConfig[] | undefined> {
+  { enabled = true, watchInterval = 5, ...options }: PluginOptions,
+): Plugin<PluginContent | undefined> {
   /**
    * The directory where we want to output docgen data and components.
    * If running on website, this will be in .docusaurus/docusaurus-plugin-docgen/default
@@ -55,7 +54,7 @@ export default function plugin(
         logger.initStatus(shouldUpdate);
 
         if (shouldUpdate) {
-          return docgenRunner({ ...options, alias, pluginDir });
+          return docgenRunner({ ...options, pluginDir });
         }
       } else {
         logger.enabledOff();
@@ -69,7 +68,7 @@ export default function plugin(
       return {
         resolve: {
           alias: {
-            [alias]: path.join(
+            [`:docgen`]: path.join(
               // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
               // @ts-ignore This is how we are able to have consumers access the docgen data with alias of their choice
               webpackConfig.resolve.alias['@generated'],
@@ -83,7 +82,9 @@ export default function plugin(
     },
     async contentLoaded({ content }): Promise<void> {
       if (content) {
-        await docgenWriter(content);
+        const { projects, filesToWrite } = content;
+        await docgenWriter(filesToWrite);
+        actions.setGlobalData({ enabled: true, projects });
         logger.pluginComplete();
 
         global.docgenBuild = {
@@ -91,6 +92,8 @@ export default function plugin(
           lastRun: new Date(),
           isRunning: false,
         };
+      } else {
+        actions.setGlobalData({ enabled: false, projects: [] });
       }
     },
   };

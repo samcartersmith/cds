@@ -1,7 +1,6 @@
-import { ReactElement, useEffect, useMemo } from 'react';
-import { useToggler } from '@cbhq/cds-common';
+import { ReactElement } from 'react';
 
-import { isBrowser } from '../utils/browser';
+import { useHasMounted } from '../hooks/useHasMounted';
 
 export type MountComponentProps = {
   children: ReactElement;
@@ -12,14 +11,7 @@ export type MountComponentProps = {
  * @link https://www.joshwcomeau.com/react/the-perils-of-rehydration/#abstractions
  */
 export const MountComponent = ({ children }: MountComponentProps) => {
-  const [hasMounted, toggleHasMounted] = useToggler(false);
-
-  useEffect(() => {
-    toggleHasMounted.toggleOn();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const componentShouldMount = useMemo(() => hasMounted && isBrowser(), [hasMounted]);
+  const componentShouldMount = useHasMounted();
 
   return componentShouldMount ? children : null;
 };

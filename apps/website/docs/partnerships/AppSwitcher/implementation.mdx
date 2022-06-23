@@ -1,45 +1,28 @@
-<br />
-
 This page demonstrates the recipes that CDS recommends consumers adopt in order to build out an AppSwitcher component.
 
 These Recipes are intentionally NOT API-driven and simply serve as guidance on how to implement an AppSwitcher. It is a product team's responsibility to turn these recipes into reusable components.
 
-<br />
-
 We have also added demo data to show a more realistic example; note that this is for demo purposes only, we anticipate the consumer will need to modify the content component to work with Relay/GraphQL.
 
-<br />
-
-## CDS Components
-
-<br />
+## Anatomy
 
 The App Switcher recipe is composed of the following CDS components:
 
-- [Dropdown](../components/dropdown)
-- [NavigationIconButton](../components/navigation-icon-button)
-- [TileButton](../components/tile-button)
-- [SectionTitle](../components/section-title)
-
-<br />
+- [Dropdown](/components/dropdown)
+- [NavigationIconButton](/components/navigation-icon-button)
+- [TileButton](/components/tile-button)
+- [SectionTitle](/components/section-title)
 
 Some key details about the abstractions in this recipe:
 
-<br />
+- Dropdown
 
-Dropdown
+  - Dropdown contains the prescriptive layout/overlay logic shared between App and UserSwitcher.
 
-- Dropdown contains the prescriptive layout/overlay logic shared between App and UserSwitcher.
-
-<br />
-
-AppSwitcherContent
-
-- This is a component that was built simply for demonstration purposes.
-- We technically consider this component more of a recipe and is demo'd in the second example.
-- CDS will not expose a component like this, however we expect Identity will implement a product component very similar to this.
-
-<br />
+- AppSwitcherContent
+  - This is a component that was built simply for demonstration purposes.
+  - We technically consider this component more of a recipe and is demo'd in the second example.
+  - CDS will not expose a component like this, however we expect Identity will implement a product component very similar to this.
 
 ```jsx live
 function AppSwitcherRecipeExample() {
@@ -122,18 +105,12 @@ function AppSwitcherRecipeExample() {
 }
 ```
 
-<br />
-
-## AppSwitcherContent Recipe
-
-<br />
+## Recipe
 
 Above we encapsulated the content code into a component to cleanly demonstrate the high level architecture of the AppSwitcher Recipe.
 
 The below example is meant to expose the AppSwitcherContent Recipe because we have no intention of exposing the AppSwitcherContent component.
 `AppSwitcherContent` was simply built out for demonstration purposes and we expect it will be different when consumers implement it with GraphQL etc.
-
-<br />
 
 ```jsx live
 function AppSwitcherContentRecipeExample() {

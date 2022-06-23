@@ -1,0 +1,37 @@
+---
+title: Memoization
+---
+
+import { InlineIcon } from ':cds-website/components/InlineIcons';
+
+## [Why we memo all the things](https://docs.google.com/document/d/1TF3Dw3BKwMUw4bqanVCSWHNMGoTnjB4oiBogt9jWMes/edit)
+
+### No rest props as dependency of memoized context values [[CDS-1824]](https://jira.coinbase-corp.com/browse/CDS-1824)
+
+#### Do <InlineIcon name="checkmark" color="positive" />
+
+```jsx
+const Provider = memo(({ children, value1, value2 }) => {
+  const contextValue = useMemo(() => ({
+    value1,
+    value2,
+  }), [value1, value2]);
+
+  return <Context.Provider value={contextValue}>{children}<Context.Provider>;
+});
+```
+
+#### Don't <InlineIcon name="close" color="negative" />
+
+```jsx
+const Provider = memo(({ children, ...props }) => {
+  const contextValue = useMemo(() => props, [props]);
+
+  return <Context.Provider value={contextValue}>{children}<Context.Provider>;
+});
+```
+
+#### Reason
+
+The rested `props` object gets regenerated every time on component re-render even if the values inside the object didn't change.
+This will cause the `useMemo` to re-run which then re-generates the context values, and eventually causes all context consumers to unnecessarily re-render.

@@ -1,14 +1,17 @@
-import React, { forwardRef, memo, useEffect, useRef } from 'react';
+import React, { forwardRef, memo } from 'react';
+import { m as motion } from 'framer-motion';
 import { ForwardedRef } from '@cbhq/cds-common';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import { ProgressBaseProps } from '@cbhq/cds-common/types/ProgressBaseProps';
 import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
 
-import { Animated } from '../animation/Animated';
 import { usePalette } from '../hooks/usePalette';
 import { Box, HStack, VStack } from '../layout';
+import { useMotionProps } from '../motion/useMotionProps';
 import { isRtl } from '../utils/isRtl';
+
+const MotionBox = motion(Box);
 
 export const ProgressBar = memo(
   forwardRef(
@@ -30,29 +33,19 @@ export const ProgressBar = memo(
 
       addPreviousPercent(progress);
       const previousPercent = getPreviousPercent() ?? 0;
+      const translateXStart = isRtl() ? 100 - previousPercent * 100 : -100 + previousPercent * 100;
+      const translateXEnd = isRtl() ? 100 - progress * 100 : -100 + progress * 100;
 
-      const innerBarRef = useRef<HTMLElement>(null);
-
-      useEffect(() => {
-        if (innerBarRef.current) {
-          innerBarRef.current.style.transformOrigin = isRtl() ? 'right' : 'left';
-
-          const translateXStart = isRtl()
-            ? 100 - previousPercent * 100
-            : -100 + previousPercent * 100;
-
-          const translateXEnd = isRtl() ? 100 - progress * 100 : -100 + progress * 100;
-          void Animated.timing(innerBarRef, {
-            property: 'transform',
-            fromValue: `translateX(${translateXStart}%)`,
-            toValue: `translateX(${translateXEnd}%)`,
-            ...animateProgressBaseSpec,
-          })?.start();
-
-          innerBarRef.current.style.transform = `translateX(${translateXEnd}%)`;
-          innerBarRef.current.style.opacity = '1';
-        }
-      }, [previousPercent, progress]);
+      const motionProps = useMotionProps({
+        style: {
+          originX: isRtl() ? 'right' : 'left',
+        },
+        animate: {
+          x: [`${translateXStart}%`, `${translateXEnd}%`],
+          opacity: 1,
+        },
+        transition: animateProgressBaseSpec,
+      });
 
       return (
         <VStack flexGrow={1} flexShrink={0} testID={testID} ref={forwardedRef}>
@@ -68,8 +61,7 @@ export const ProgressBar = memo(
               borderRadius="standard"
               overflow="hidden"
             >
-              <Box
-                ref={innerBarRef}
+              <MotionBox
                 testID="cds-progress-bar-inner-bar"
                 alignItems="center"
                 justifyContent="flex-start"
@@ -80,6 +72,9 @@ export const ProgressBar = memo(
                 opacity={0}
                 borderRadius="standard"
                 dangerouslySetBackground={!disabled ? palette[color] : palette.lineHeavy}
+                animate={motionProps.animate}
+                transition={motionProps.transition}
+                style={motionProps.style}
               />
             </Box>
           </HStack>

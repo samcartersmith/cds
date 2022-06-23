@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from 'linaria';
-import { Separator } from 'reakit/Separator';
+import { Separator } from 'reakit';
 import { DividerBaseProps } from '@cbhq/cds-common';
 
 import { palette } from '../tokens';

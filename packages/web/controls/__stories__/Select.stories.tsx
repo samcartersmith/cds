@@ -10,6 +10,12 @@ import { SelectOption } from '../SelectOption';
 export default {
   title: 'Core Components/Inputs/Select',
   component: Select,
+  excludeStories: [
+    'HundredCDSSelectComponents',
+    'HundredNativeSelectComponents',
+    'ThousandCDSSelectComponents',
+    'ThousandNativeSelectComponents',
+  ],
 };
 
 const components = {

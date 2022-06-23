@@ -1,0 +1,36 @@
+---
+title: Tag
+slug: /components/tag
+draft: true
+keywords:
+  - chip
+  - badge
+  - label
+  - lozenge
+  - pill
+  - flag
+  - notice
+  - pending
+  - status
+  - indicator
+---
+
+import Guidelines, { toc as guidelinesToc } from './_guidelines.mdx';
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
+import Implementation, { toc as implementationToc } from './_implementation.mdx';
+import Usage, { toc as usageToc } from './_usage.mdx';
+
+<Tabs groupId="page" gap={3}>
+  <TabItem value="guidelines" label="Guidelines" toc={guidelinesToc}>
+    <Guidelines />
+  </TabItem>
+  <TabItem
+    value="implementation"
+    label="Implementation"
+    toc={[...metadataToc, ...usageToc, ...implementationToc]}
+  >
+    <Metadata />
+    <Usage />
+    <Implementation />
+  </TabItem>
+</Tabs>

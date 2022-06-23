@@ -28,7 +28,7 @@ export const animateOutOpacityConfig: MotionBaseSpec = {
 };
 
 export const animateInYConfig: MotionBaseSpec = {
-  property: 'transform',
+  property: 'y',
   ...baseAnimation,
   easing: 'enterFunctional',
   toValue: tooltipVisibleY,
@@ -36,7 +36,7 @@ export const animateInYConfig: MotionBaseSpec = {
 };
 
 export const animateOutYConfig: MotionBaseSpec = {
-  property: 'transform',
+  property: 'y',
   ...baseAnimation,
   easing: 'exitFunctional',
   toValue: tooltipHiddenY,

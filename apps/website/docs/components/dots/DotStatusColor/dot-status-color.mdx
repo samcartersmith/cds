@@ -1,38 +1,24 @@
 ---
-title: DotStatusColor
+title: Dot Status Color
 slug: /components/dot-status-color
-hide_title: true
 ---
 
-import { VStack } from '@cbhq/cds-web/alpha/VStack';
-import { Link } from '@cbhq/cds-web/typography/Link';
-import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Design, { toc as designToc } from './_design.mdx';
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
+import Usage, { toc as usageToc } from './_usage.mdx';
+import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-import Design from './_design.mdx';
-import Usage from './_usage.mdx';
-import Props from './_implementation.mdx';
-
-<VStack gap={3}>
-  <TextDisplay3 as="h1">DotStatusColor</TextDisplay3>
-  <Link
-    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/dots/DotStatusColor.tsx"
-    openInNewWindow
+<Tabs groupId="page">
+  <TabItem value="guidelines" label="Guidelines" toc={designToc}>
+    <Design />
+  </TabItem>
+  <TabItem
+    value="implementation"
+    label="Implementation"
+    toc={[...metadataToc, ...usageToc, ...implementationToc]}
   >
-    @cbhq/cds-(web|mobile)/dots/DotStatusColor
-  </Link>
-  <Tabs>
-    <TabItem value="guidelines" label="Guidelines">
-      <VStack gap={3}>
-        <Design />
-      </VStack>
-    </TabItem>
-    <TabItem value="implementation" label="Implementation" default>
-      <VStack gap={3}>
-        <Usage />
-        <Props />
-      </VStack>
-    </TabItem>
-  </Tabs>
-</VStack>
+    <Metadata />
+    <Usage />
+    <Implementation />
+  </TabItem>
+</Tabs>

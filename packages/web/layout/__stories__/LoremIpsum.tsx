@@ -1,4 +1,5 @@
 import React from 'react';
+import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 import { PaletteForeground } from '@cbhq/cds-common/types';
 
 import { TextBody, TextLabel1 } from '../../typography';
@@ -9,9 +10,6 @@ export type LoremIpsumProps = {
   concise?: boolean;
   repeat?: number;
 };
-
-export const loremIpsum =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo nulla. Nam eu blandit dui, a dignissim mi.';
 
 export const LoremIpsum = ({ color, concise, title, repeat }: LoremIpsumProps) => {
   return (

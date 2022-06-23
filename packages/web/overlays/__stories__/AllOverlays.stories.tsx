@@ -6,7 +6,7 @@ import { Select, SelectOption } from '../../controls';
 import { DropdownProps } from '../../dropdown';
 import { Default as DropdownExample } from '../../dropdown/__stories__/Dropdown.stories';
 import { VStack } from '../../layout';
-import { SidebarWithMoreMenuExample } from '../../navigation/__stories__/NavigationStorySetup';
+import { SidebarExample } from '../../navigation/__stories__/NavigationStorySetup';
 import { TextBody } from '../../typography';
 import { Alert, Modal, ModalBody, ModalFooter, ModalHeader } from '../index';
 import { PortalProvider } from '../PortalProvider';
@@ -84,9 +84,9 @@ const CompositeOverlays = ({ disablePortal = false }: Pick<DropdownProps, 'disab
   ]);
 
   return (
-    <SidebarWithMoreMenuExample disablePortal={disablePortal}>
+    <SidebarExample disablePortal={disablePortal}>
       <Button onPress={handleModalTriggerPress}>Open Modal</Button>
-    </SidebarWithMoreMenuExample>
+    </SidebarExample>
   );
 };
 

@@ -34,6 +34,14 @@ type Parameters<Props, WrapperProps, Wrapper extends React.ComponentType<Wrapper
     /**  An array of additional snapshots to take of this story */
     additionalSnapshots?: { args?: Props }[];
   };
+  a11y?: {
+    /**  Boolean indicating whether or not to skip the a11y test for this story. */
+    skip?: boolean;
+  };
+  storyshots?: {
+    /**  Boolean indicating whether or not to skip the a11y test for this story. */
+    disable?: boolean;
+  };
   // add types for parameters within addons that we want to support here
 };
 
@@ -176,7 +184,12 @@ export function storyBuilder<StoryBuilderArgs, WrapperProps>(
         { args },
         customConfig,
       ) as unknown as StoryBuilderConfig<PropsWithoutChildren, WrapperProps>;
-      Template.parameters = mergedConfig.parameters;
+      Template.parameters = {
+        ...mergedConfig.parameters,
+        storyshots: {
+          disable: mergedConfig?.parameters?.a11y?.skip,
+        },
+      };
       Template.args = mergedConfig.args;
       Template.argTypes = mergedConfig.argTypes;
       storiesSet.add(Template);
@@ -216,6 +229,9 @@ export function storyBuilder<StoryBuilderArgs, WrapperProps>(
       Template.argTypes = merge({}, mergedConfig.argTypes, stories[0].argTypes);
       Template.parameters = {
         ...mergedConfig.parameters,
+        storyshots: {
+          disable: mergedConfig.parameters.a11y?.skip,
+        },
         stories,
       };
       return Template;

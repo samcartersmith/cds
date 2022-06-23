@@ -47,17 +47,17 @@
       "import": "./babel/*.ts",
       "types": "./babel/*.ts"
     },
-    "./jest/*": {
-      "node": "./dist/jest/*.js",
-      "require": "./dist/jest/*.js",
-      "import": "./jest/*.ts",
-      "types": "./jest/*.ts"
+    "./jest": {
+      "node": "./dist/jest/index.js",
+      "require": "./dist/jest/index.js",
+      "import": "./jest/index.ts",
+      "types": "./jest/index.ts"
     },
-    "./monorepo/*": {
-      "node": "./dist/monorepo/*.js",
-      "require": "./dist/monorepo/*.js",
-      "import": "./monorepo/*.ts",
-      "types": "./monorepo/*.ts"
+    "./monorepo": {
+      "node": "./dist/monorepo/index.js",
+      "require": "./dist/monorepo/index.js",
+      "import": "./monorepo/index.ts",
+      "types": "./monorepo/index.ts"
     }
   }
 }

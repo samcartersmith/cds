@@ -1,109 +1,13 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import WebPropsTable from ':docgen/web/system/FeatureFlagProvider/api.mdx';
+import MobilePropsTable from ':docgen/mobile/system/FeatureFlagProvider/api.mdx';
 
-<RightSidebar toc={toc} />
+## Props
 
-### flexGap
-
-Web only - Leverages the CSS flex gap property instead of inserting extra DOM nodes.
-
-**https://developer.mozilla.org/en-US/docs/Web/CSS/gap**
-
-<ApiDetails
-  componentName="FeatureFlagProvider"
-  propertyName="flexGap"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-### frontier
-
-Conventiently toggle all the Frontier flags at once.
-
-<ApiDetails
-  componentName="FeatureFlagProvider"
-  propertyName="frontier"
-  required={false}
-  defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-### frontierButton
-
-Replace rounded border radius with pill style.
-
-<ApiDetails
-  componentName="FeatureFlagProvider"
-  propertyName="frontierButton"
-  required={false}
-  defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-### frontierCard
-
-Remove rounded border radius and elevation.
-
-<ApiDetails
-  componentName="FeatureFlagProvider"
-  propertyName="frontierCard"
-  required={false}
-  defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-### frontierColor
-
-Change secondary palette from gray0 to gray60 at 10%.
-
-<ApiDetails
-  componentName="FeatureFlagProvider"
-  propertyName="frontierColor"
-  required={false}
-  defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-### frontierSparkline
-
-Dotted sparkline fills
-
-<ApiDetails
-  componentName="FeatureFlagProvider"
-  propertyName="frontierSparkline"
-  required={false}
-  defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-### frontierTypography
-
-Reduce Display2 fontSize/lineHeight. Add Display3 and Title4 components.
-
-<ApiDetails
-  componentName="FeatureFlagProvider"
-  propertyName="frontierTypography"
-  required={false}
-  defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-### onChange
-
-<ApiDetails
-  componentName="FeatureFlagProvider"
-  propertyName="onChange"
-  required={false}
-  defaultValue=""
-  mobileOptions={['FeatureFlagsOnChange']}
-  webOptions={['FeatureFlagsOnChange']}
-/>
+<Tabs groupId="platform" variant="secondary">
+  <TabItem value="web" label="Web">
+    <WebPropsTable />
+  </TabItem>
+  <TabItem value="mobile" label="Mobile">
+    <MobilePropsTable />
+  </TabItem>
+</Tabs>

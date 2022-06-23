@@ -1,7 +1,8 @@
-import { styled } from '@linaria/react';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
+
+import { Image } from ':cds-website/components/Image';
 
 type ImageOptions = {
   maxWidth?: string;
@@ -17,22 +18,17 @@ export type ImageProps = {
   format?: 'jpg' | 'png';
 };
 
-const Img = styled.img<ImageOptions>`
-  max-width: ${({ maxWidth }) => maxWidth ?? '100%'};
-  max-height: ${({ maxHeight }) => maxHeight ?? '100%'};
-`;
-
 export const DocImage: React.FC<ImageProps> = ({ component, name, options, format = 'jpg' }) => {
   const spectrumOpts = {
     light: `/img/components/${component}/${name}_light.${format}`,
     dark: `/img/components/${component}/${name}_dark.${format}`,
   };
-  const spectrum = useSpectrumConditional(spectrumOpts);
+  const src = useSpectrumConditional(spectrumOpts);
 
   return (
     <VStack spacingVertical={2}>
       <Box justifyContent="center" elevation={0} borderRadius="standard" overflow="hidden">
-        <Img {...options} src={spectrum} />
+        <Image {...options} src={src} />
       </Box>
     </VStack>
   );

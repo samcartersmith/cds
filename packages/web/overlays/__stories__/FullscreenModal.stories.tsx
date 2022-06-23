@@ -1,4 +1,5 @@
 import { useToggler } from '@cbhq/cds-common';
+import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 
 import { Accordion, AccordionItem } from '../../accordion';
 import { IconButton } from '../../buttons';
@@ -6,7 +7,6 @@ import { Button } from '../../buttons/Button';
 import { FeedCard } from '../../cards/FeedCard';
 import { ListCell } from '../../cells';
 import { Box, VStack } from '../../layout';
-import { loremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { TextBody, TextTitle1 } from '../../typography';
 import { FullscreenModal } from '../Modal/FullscreenModal';
 

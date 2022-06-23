@@ -1,0 +1,2 @@
+#!/bin/bash
+concurrently "yarn workspace @cbhq/docusaurus-plugin-docgen build" "yarn workspace @cbhq/docusaurus-plugin-kbar build" "yarn workspace @cbhq/docusaurus-theme build" "yarn workspace @cbhq/docusaurus-preset build"

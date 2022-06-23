@@ -1,6 +1,6 @@
 import { Image } from ':cds-website/components/Image';
 import { Divider } from '@cbhq/cds-web/layout';
-import { VStack, HStack } from '@cbhq/cds-web/layout';
+import { VStack, HStack, Box } from '@cbhq/cds-web/layout';
 
 import definition from ':cds-website/static/img/components/overlays/Tooltip/definition.png';
 import anatomy_a1 from ':cds-website/static/img/components/overlays/Tooltip/anatomy_a1.jpg';
@@ -28,7 +28,9 @@ Tooltip is a floating text label that displays information related to an element
 
 The content of Tooltip is contextual, useful, and nonessential. The element paired with Tooltip may or may not have a visual indicator like an info-circle on desktop.
 
-<Image src={definition} options={{ maxHeight: '448px' }} />
+<Box width="100%" justifyContent="center">
+  <Image src={definition} options={{ maxHeight: '50%', maxWidth: '50%' }} />
+</Box>
 <br />
 <br />
 

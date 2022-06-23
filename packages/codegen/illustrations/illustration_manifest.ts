@@ -9107,7 +9107,7 @@ export const manifestData: Record<
       versionNum: 0,
     },
     '7691:2400': {
-      variant: 'heroSquare',
+      variant: 'spotRectangle',
       description:
         'nft, cat, vortex, sparkle, empty state, coin, party, lets go, lfg, 404, error, ✨, ❇️,  🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼',
       name: 'emptyStateNft404Page',
@@ -9115,7 +9115,7 @@ export const manifestData: Record<
       versionNum: 0,
     },
     '7691:2401': {
-      variant: 'heroSquare',
+      variant: 'spotRectangle',
       description:
         'nft, swirl, cat, browser, empty state, fun, vibes, big energy, shapes, movement, 🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼, 📱, 🔴',
       name: 'emptyStateCheckBackLater',
@@ -9123,7 +9123,7 @@ export const manifestData: Record<
       versionNum: 0,
     },
     '7691:2399': {
-      variant: 'heroSquare',
+      variant: 'spotRectangle',
       description:
         'nft, cat, distinguished, artwork, gallery, painting, moment, notice me, mona lisa, mona cat, cat in a hat, 🎩, 🖼, 🎨, 🖌,  ✨, ❇️,  🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼',
       name: 'emptyStateNftSoldOut',
@@ -9131,7 +9131,7 @@ export const manifestData: Record<
       versionNum: 0,
     },
     '7691:2542': {
-      variant: 'heroSquare',
+      variant: 'spotRectangle',
       description:
         'nft, cat, vortex, sparkle, empty state, coin, party, lets go, lfg, 404, error, ✨, ❇️,  🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼',
       name: 'emptyStateNft404Page',
@@ -9139,7 +9139,7 @@ export const manifestData: Record<
       versionNum: 0,
     },
     '7691:2543': {
-      variant: 'heroSquare',
+      variant: 'spotRectangle',
       description:
         'nft, cat, distinguished, artwork, gallery, painting, moment, notice me, mona lisa, mona cat, cat in a hat, 🎩, 🖼, 🎨, 🖌,  ✨, ❇️,  🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼',
       name: 'emptyStateNftSoldOut',
@@ -9147,7 +9147,7 @@ export const manifestData: Record<
       versionNum: 0,
     },
     '7691:2541': {
-      variant: 'heroSquare',
+      variant: 'spotRectangle',
       description:
         'nft, swirl, cat, browser, empty state, fun, vibes, big energy, shapes, movement, 🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼, 📱, 🔴',
       name: 'emptyStateCheckBackLater',
@@ -9212,267 +9212,6 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'delegateNavigation',
       spectrum: 'dark',
-      versionNum: 0,
-    },
-    '7825:2297': {
-      variant: 'spotRectangle',
-      description: 'no transaction, coin, arrow, warning, crypto, send',
-      name: 'noTransactions',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '7825:2298': {
-      variant: 'spotRectangle',
-      description: 'no transaction, coin, arrow, warning, crypto, send',
-      name: 'noTransactions',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '7827:2327': {
-      variant: 'spotSquare',
-      description: 'asset, star, token, crypto, cryptocurrency, currency, unsupported',
-      name: 'unsupportedAsset',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '7827:2328': {
-      variant: 'spotSquare',
-      description: 'asset, star, token, crypto, cryptocurrency, currency, unsupported',
-      name: 'unsupportedAsset',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8005:2495': {
-      variant: 'pictogram',
-      description: 'drops, NFT, special, apart, exclusive, limited, release, unique,🖼,✨',
-      name: 'apartOfDropsNft',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8005:2496': {
-      variant: 'pictogram',
-      description: 'NFT, picture, upload, select, add, mint, collection, apart,🖼,✨',
-      name: 'selectAddNft',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8005:2497': {
-      variant: 'pictogram',
-      description:
-        'special, add, magic, rabbit, hat, NFT, limited, sparkles, unique, mint, minted,🖼,✨',
-      name: 'mintedNft',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8005:2498': {
-      variant: 'pictogram',
-      description:
-        'searching, search, NFT, picture, magnifying, magnifyGlass, special, missing, unfound, clear, filter, 🖼,✨',
-      name: 'noNftFound',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8005:2504': {
-      variant: 'pictogram',
-      description:
-        'APY, interest, growth, graph, chart, yield, coin, arrow, trending, value, increase, growing, 📈',
-      name: 'apyInterest',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8005:2505': {
-      variant: 'pictogram',
-      description: 'world, send, sending, anytime, now, money, sell, selling, market, staking',
-      name: 'sellSendAnytime',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8005:2508': {
-      variant: 'pictogram',
-      description:
-        'exclamation, risk, caution, wrapping, ETH, staking, graph, growth, chart, value, market',
-      name: 'riskStaking',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8005:2499': {
-      variant: 'pictogram',
-      description: 'drops, NFT, special, apart, exclusive, limited, release, unique,🖼,✨',
-      name: 'apartOfDropsNft',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8005:2500': {
-      variant: 'pictogram',
-      description: 'NFT, picture, upload, select, add, mint, collection, apart,🖼,✨',
-      name: 'selectAddNft',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8005:2501': {
-      variant: 'pictogram',
-      description:
-        'special, add, magic, rabbit, hat, NFT, limited, sparkles, unique, mint, minted,🖼,✨',
-      name: 'mintedNft',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8005:2502': {
-      variant: 'pictogram',
-      description:
-        'searching, search, NFT, picture, magnifying, magnifyGlass, special, missing, unfound, clear, filter, 🖼,✨',
-      name: 'noNftFound',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8005:2503': {
-      variant: 'pictogram',
-      description:
-        'APY, interest, growth, graph, chart, yield, coin, arrow, trending, value, increase, growing, 📈',
-      name: 'apyInterest',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8005:2506': {
-      variant: 'pictogram',
-      description: 'world, send, sending, anytime, now, money, sell, selling, market, staking',
-      name: 'sellSendAnytime',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8005:2507': {
-      variant: 'pictogram',
-      description:
-        'exclamation, risk, caution, wrapping, ETH, staking, graph, growth, chart, value, market',
-      name: 'riskStaking',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8019:2157': {
-      variant: 'pictogram',
-      description: 'navigation illustration, app switcher, logged out, logo',
-      name: 'walletLogoNavigation',
-      spectrum: 'light',
-      versionNum: -1,
-    },
-    '8019:2159': {
-      variant: 'pictogram',
-      description: 'drops, NFT, special, apart, exclusive, limited, release, unique,🖼,✨',
-      name: 'apartOfDropsNft',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8019:2170': {
-      variant: 'pictogram',
-      description: 'NFT, picture, upload, select, add, mint, collection, apart,🖼,✨',
-      name: 'selectAddNft',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8019:2179': {
-      variant: 'pictogram',
-      description:
-        'special, add, magic, rabbit, hat, NFT, limited, sparkles, unique, mint, minted,🖼,✨',
-      name: 'mintedNft',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8019:2195': {
-      variant: 'pictogram',
-      description:
-        'searching, search, NFT, picture, magnifying, magnifyGlass, special, missing, unfound, clear, filter, 🖼,✨',
-      name: 'noNftFound',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8019:2203': {
-      variant: 'pictogram',
-      description:
-        'APY, interest, growth, graph, chart, yield, coin, arrow, trending, value, increase, growing, 📈',
-      name: 'apyInterest',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8019:2215': {
-      variant: 'pictogram',
-      description: 'world, send, sending, anytime, now, money, sell, selling, market, staking',
-      name: 'sellSendAnytime',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8019:2223': {
-      variant: 'pictogram',
-      description:
-        'exclamation, risk, caution, wrapping, ETH, staking, graph, growth, chart, value, market',
-      name: 'riskStaking',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8019:2279': {
-      variant: 'pictogram',
-      description:
-        'APY, interest, growth, graph, chart, yield, coin, arrow, trending, value, increase, growing, 📈',
-      name: 'apyInterest',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8019:2290': {
-      variant: 'pictogram',
-      description: 'world, send, sending, anytime, now, money, sell, selling, market, staking',
-      name: 'sellSendAnytime',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8019:2298': {
-      variant: 'pictogram',
-      description:
-        'exclamation, risk, caution, wrapping, ETH, staking, graph, growth, chart, value, market',
-      name: 'riskStaking',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8018:2178': {
-      variant: 'pictogram',
-      description: 'navigation illustration, app switcher, logged out, logo',
-      name: 'walletLogoNavigation',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8018:2201': {
-      variant: 'pictogram',
-      description: 'navigation illustration, app switcher, logged out, logo',
-      name: 'walletLogoNavigation',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8052:2155': {
-      variant: 'spotSquare',
-      description: 'dappwallet, wallet, 🌐, web3',
-      name: 'dappWallet',
-      spectrum: 'light',
-      versionNum: 0,
-    },
-    '8052:2154': {
-      variant: 'spotSquare',
-      description: 'dappwallet, wallet, 🌐, web3',
-      name: 'dappWallet',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8062:2315': {
-      variant: 'spotSquare',
-      description:
-        'coinbase, card, spend, crypto, currency, coin, credit, sparkle, excitement, debit, boost, boosted',
-      name: 'boostedCard',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
-    '8062:2314': {
-      variant: 'spotSquare',
-      description:
-        'coinbase, card, spend, crypto, currency, coin, credit, sparkle, excitement, debit, boost, boosted',
-      name: 'boostedCard',
-      spectrum: 'light',
       versionNum: 0,
     },
   },

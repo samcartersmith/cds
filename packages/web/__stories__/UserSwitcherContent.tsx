@@ -7,11 +7,11 @@ import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { Button } from '../buttons/Button';
 import { ListCell } from '../cells/ListCell';
-import { CollapseArrow } from '../collapsible/CollapseArrow';
 import { Collapsible } from '../collapsible/Collapsible';
 import { useSpacingValue } from '../hooks/useSpacingValue';
 import { Divider, HStack, VStack } from '../layout';
 import { Avatar } from '../media/Avatar';
+import { AnimatedCaret } from '../motion/AnimatedCaret';
 import { SectionTitle } from '../overlays/PopoverMenu/SectionTitle';
 import { insetFocusRing } from '../styles/focus';
 import { PressableOpacity } from '../system/PressableOpacity';
@@ -73,7 +73,7 @@ const UserAccountListCell = ({ name, email, authenticated, avatarUri }: UserSwit
         <ListCell
           title={name}
           description={email}
-          action={<CollapseArrow degrees={90} collapsed={collapsed} />}
+          action={<AnimatedCaret rotate={collapsed ? 90 : 180} />}
           outerSpacing={userCellOuterSpacingConfig}
           intermediary={!authenticated && <TextLegal as="span">Signed out</TextLegal>}
           priority={cellPriority}
@@ -81,7 +81,7 @@ const UserAccountListCell = ({ name, email, authenticated, avatarUri }: UserSwit
           compact
         />
       </PressableOpacity>
-      <Collapsible collapsed={collapsed} dangerouslyDisableOverflowHidden>
+      <Collapsible collapsed={collapsed}>
         <HStack spacingTop={0.5} spacingBottom={1} spacingStart={8} gap={0.5}>
           <Button compact>Sign in</Button>
           <Button compact transparent variant="secondary">

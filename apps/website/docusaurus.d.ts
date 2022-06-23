@@ -4,3 +4,9 @@
 /// <reference types="@docusaurus/plugin-content-docs" />
 /// <reference types="@docusaurus/plugin-content-pages" />
 /// <reference types="@docusaurus/theme-classic" />
+
+/// <reference types="@cbhq/docusaurus-plugin-docgen" />
+/// <reference types="@cbhq/docusaurus-plugin-kbar" />
+/// <reference types="@cbhq/docusaurus-theme" />
+
+declare module 'dayjs-recur';

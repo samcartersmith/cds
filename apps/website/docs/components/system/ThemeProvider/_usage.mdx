@@ -1,7 +1,92 @@
-Import and render the provider at the root of your application.
+import UseThemeProvider from ':cds-website/docs/hooks/useThemeProviderStyles/_usage.mdx';
+
+Utilizes React context to provide our CDS theme specific parameters.
 
 ```jsx
 <ThemeProvider>
   <App />
+</ThemeProvider>
+```
+
+:::note
+
+The ThemeProvider component will add a div to the root of your app with default div styles.
+
+If this is not desired you can use [display prop](#display-contents) or [useThemeProviderStyles](#use-theme-provider-styles) hook.
+
+:::
+
+### display prop {#display-contents}
+
+Uses the CSS display: contents property to avoid applying block level styles.
+
+```jsx live
+function Example() {
+  const [isOn, { toggle }] = useToggler(true);
+  return (
+    <VStack gap={3}>
+      <HStack gap={2}>
+        <Button compact variant="secondary" onPress={toggle}>
+          Toggle
+        </Button>
+        <TextBody as="p">
+          {isOn ? `<ThemeProvider display='contents' />` : `<ThemeProvider />`}
+        </TextBody>
+      </HStack>
+      <HStack gap={2}>
+        <ThemeProvider display={isOn ? 'contents' : undefined}>
+          <Box background="primary" spacing={5} />
+          <Box background={isOn ? 'primary' : 'negative'} spacing={5} />
+        </ThemeProvider>
+      </HStack>
+    </VStack>
+  );
+}
+```
+
+### useThemeProviderStyles {#use-theme-provider-styles}
+
+<UseThemeProvider />
+
+## Tips
+
+### Nesting
+
+You can nest ThemeProviders to override a palette alias
+
+```jsx live
+<ThemeProvider
+  palette={{
+    foreground: 'gray100',
+    foregroundMuted: 'gray60',
+    background: 'gray0',
+    backgroundAlternate: 'gray5',
+    backgroundOverlay: ['gray80', 0.33],
+    line: ['gray60', 0.2],
+    lineHeavy: ['gray60', 0.66],
+    primary: 'blue60',
+    primaryForeground: 'gray0',
+    negative: 'red60',
+    negativeForeground: 'gray0',
+    positive: 'green60',
+    positiveForeground: 'gray0',
+    secondary: 'gray0',
+    secondaryForeground: 'gray100',
+  }}
+>
+  <div>
+    <Box background="primary">
+      <TextDisplay2 as="h2" color="primaryForeground">
+        Primary set to blue60
+      </TextDisplay2>
+    </Box>
+    <ThemeProvider palette={{ primary: 'pink60' }}>
+      <Box background="primary">
+        <TextDisplay2 as="h2" color="primaryForeground">
+          Primary set to pink60
+        </TextDisplay2>
+      </Box>
+    </ThemeProvider>
+  </div>
 </ThemeProvider>
 ```

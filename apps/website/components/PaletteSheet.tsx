@@ -1,12 +1,11 @@
 import { Fragment } from 'react';
+import ExampleWithThemeToggles from '@theme/ExampleWithThemeToggles';
 import { css } from 'linaria';
 import { usePaletteConfig } from '@cbhq/cds-common';
 import { paletteValueToTuple } from '@cbhq/cds-common/palette/paletteValueToTuple';
 import { entries, wordCase } from '@cbhq/cds-utils';
 import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
 import { TextHeadline, TextLabel1 } from '@cbhq/cds-web/typography';
-
-import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 
 const tile = css`
   padding: 12px 16px;

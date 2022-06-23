@@ -1205,36 +1205,16 @@
       }
     },
     {
-      "name": "Divider",
-      "sourceFile": "@cbhq/cds-mobile/layout/Divider",
-      "totalInstances": 8,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-mobile/layout/Divider",
+      "name": "TextLabel2",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextLabel2",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/typography/TextLabel2",
       "callSites": {
-        "@prime-mobile/navigation/BottomNav.tsx": 1,
-        "@prime-mobile/components/layout/ModalLayout.tsx": 1,
-        "@prime-mobile/components/loading/LoadingPortfolio.tsx": 2,
-        "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 2,
-        "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 2
+        "@prime-mobile/deprecated/UI/CopyableField.tsx": 1,
+        "@prime-mobile/screens/permissions/PermissionsTable.tsx": 1
       },
-      "propsWithCallSites": {
-        "spacingBottom": { "@prime-mobile/components/layout/ModalLayout.tsx": 1 },
-        "direction": {
-          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "NavigationIcon",
-      "sourceFile": "@cbhq/cds-mobile/icons/NavigationIcon",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/icons/NavigationIcon",
-      "propsWithCallSites": {
-        "name": { "@prime-mobile/navigation/TabBar.tsx": 1 },
-        "active": { "@prime-mobile/navigation/TabBar.tsx": 1 },
-        "size": { "@prime-mobile/navigation/TabBar.tsx": 1 }
-      }
+      "propsWithCallSites": { "spacing": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 } }
     },
     {
       "name": "TextLabel2",
@@ -2176,36 +2156,6 @@
     {
       "name": "PushTokenProvider",
       "sourceFile": "@prime-mobile/hooks/usePushToken/PushTokenProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "TabBar",
-      "sourceFile": "@prime-mobile/navigation/TabBar",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "AuthedProviders",
-      "sourceFile": "@prime-mobile/providers/AuthedProviders",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "LoginErrorBoundary",
-      "sourceFile": "@prime-mobile/screens/error/LoginErrorBoundary",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "LoginScreen",
-      "sourceFile": "@prime-mobile/screens/login/LoginScreen",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "BottomNav",
-      "sourceFile": "@prime-mobile/navigation/BottomNav",
       "totalInstances": 1,
       "totalCallSites": 1
     },

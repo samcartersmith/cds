@@ -1,28 +1,23 @@
 ---
-title: UserSwitcher
+title: User Switcher
 slug: /recipes/user-switcher
 ---
 
 import { RecipeTabs } from ':cds-website/components/Recipes/RecipeTabs';
 
-import Design from './design.mdx';
-import Implementation from './implementation.mdx';
+import Design, { toc as designToc } from './design.mdx';
+import Implementation, { toc as implementationToc } from './implementation.mdx';
 import { UserSwitcherExample } from './Example';
 
-<VStack spacingVertical={2} gap={2}>
-  <UserSwitcherExample />
-</VStack>
-<RecipeTabs
-  values={[
-    {
-      label: 'Design',
-      id: 'design',
-      content: <Design />,
-    },
-    {
-      label: 'Implementation',
-      id: 'implementation',
-      content: <Implementation />,
-    },
-  ]}
-/>
+User Switcher is a global component that lives in the Navigation Header that enables customers to switch between various accounts (emails) with active sessions, and sign in and out of all their Coinbase accounts.
+
+<UserSwitcherExample />
+
+<Tabs groupId="page" defaultTab="implementation">
+  <TabItem value="guidelines" label="Guidelines" toc={designToc}>
+    <Design />
+  </TabItem>
+  <TabItem value="implementation" label="Implementation" toc={implementationToc}>
+    <Implementation />
+  </TabItem>
+</Tabs>

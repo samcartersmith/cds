@@ -1,5 +1,6 @@
 import { Target, TargetAndTransition } from 'framer-motion';
-import { curves, durations } from '@cbhq/cds-common/tokens/motion';
+import { curves, durations } from '@cbhq/cds-common/motion/tokens';
+import { isStorybook, isTest } from '@cbhq/cds-utils';
 
 import type { MotionConfigs, MotionSpec, MotionTransition } from './types';
 
@@ -9,11 +10,17 @@ import type { MotionConfigs, MotionSpec, MotionTransition } from './types';
  */
 export const convertTransition = (transition: MotionTransition) => {
   const { easing, duration, delay, ...rest } = transition;
+
+  const convertedDuration = duration ? durations[duration] / 1000 : undefined;
+  const convertedEasing = easing ? curves[easing] : undefined;
+
+  const skipAnimation = isStorybook() || isTest();
+
   return {
     ...rest,
-    ease: easing ? curves[easing] : undefined,
-    duration: duration ? durations[duration] / 1000 : undefined,
-    delay: delay && delay / 1000,
+    ease: convertedEasing,
+    duration: skipAnimation ? 0 : convertedDuration,
+    delay: skipAnimation ? 0 : delay && delay / 1000,
   };
 };
 

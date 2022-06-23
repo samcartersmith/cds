@@ -1,30 +1,18 @@
 ---
-title: ModalFooter
+title: Modal Footer
 slug: /components/modal-footer
-hide_title: true
 ---
 
-import { VStack } from '@cbhq/cds-web/alpha/VStack';
-import { Link } from '@cbhq/cds-web/typography/Link';
-import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
+import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-import Props from './_implementation.mdx';
-
-<VStack gap={3}>
-  <TextDisplay3 as="h1">ModalFooter</TextDisplay3>
-  <Link
-    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/ModalFooter.tsx"
-    openInNewWindow
+<Tabs groupId="page">
+  <TabItem
+    value="implementation"
+    label="Implementation"
+    toc={[...metadataToc, ...implementationToc]}
   >
-    @cbhq/cds-(web|mobile)/overlays/ModalFooter
-  </Link>
-  <Tabs>
-    <TabItem value="implementation" label="Implementation" default>
-      <VStack gap={3}>
-        <Props />
-      </VStack>
-    </TabItem>
-  </Tabs>
-</VStack>
+    <Metadata />
+    <Implementation />
+  </TabItem>
+</Tabs>

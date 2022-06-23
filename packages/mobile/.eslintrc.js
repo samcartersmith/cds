@@ -10,7 +10,7 @@ module.exports = {
             forbid: [
               {
                 propName: 'adjustsFontSizeToFit',
-                message: 'You must interact with this prop via getAdjustsFontSizeToFitProp',
+                message: 'Interact with this prop via the getAdjustsFontSizeToFitProp helper.',
               },
             ],
           },

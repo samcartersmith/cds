@@ -1,9 +1,9 @@
+import React from 'react';
+import ExampleWithThemeToggles from '@theme/ExampleWithThemeToggles';
 import { useAccessibleForeground } from '@cbhq/cds-web/color/useAccessibleForeground';
 import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
 import { TextCaption } from '@cbhq/cds-web/typography/TextCaption';
 import { paletteValueToCssVar } from '@cbhq/cds-web/utils/palette';
-
-import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 
 import styles from './styles.module.css';
 
@@ -25,7 +25,7 @@ export const Spectrum = () => {
   const getAccessibleForeground = useAccessibleForeground();
   const getRgbaString = usePaletteValueToRgbaString();
   return (
-    <ExampleWithThemeToggles showFrontier hideDense>
+    <ExampleWithThemeToggles>
       <div className={styles.hueGrid}>
         {hueNames.map((hue) => {
           return (

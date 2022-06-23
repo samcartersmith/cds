@@ -1,10 +1,9 @@
 /* eslint-disable no-restricted-globals */
 import { withCustomConfig } from 'react-docgen-typescript';
-import { omit } from 'lodash';
 import mapValues from 'lodash/mapValues';
+import omit from 'lodash/omit';
 import orderBy from 'lodash/orderBy';
 import path from 'path';
-
 import type {
   Doc,
   OnProcessDoc,
@@ -13,8 +12,7 @@ import type {
   ProcessedDoc,
   ProcessedPropItem,
   PropItem,
-  PropValue,
-} from './types';
+} from '@cbhq/docusaurus-plugin-docgen';
 
 export const sharedParentTypesCache = new Set<ProcessedPropItem>();
 export const sharedTypeAliasesCache: Map<string, unknown> = new Map();
@@ -24,7 +22,7 @@ export const sharedTypeAliasesCache: Map<string, unknown> = new Map();
 /* -------------------------------------------------------------------------- */
 
 export function formatString(str: string) {
-  return str.replace(/['"]+/g, '').replace(/\n/g, ' ').replace(/`/g, '');
+  return str.replaceAll(/['"]+/g, '').replaceAll(/\n/g, ' ').replaceAll(/`/g, '');
 }
 
 function getDocParent({ declarations = [], parent }: PropItem) {
@@ -55,10 +53,7 @@ function getDocExample(doc: Doc) {
       '```tsx live\n' + doc.tags.example + '\n```';
 }
 
-function formatPropItemType(value: string | PropValue[]) {
-  if (Array.isArray(value)) {
-    return formatString(value.map((item) => item.value).join(' | '));
-  }
+function formatPropItemType(value: string) {
   switch (value) {
     case 'ReactElement<any, string | JSXElementConstructor<any>>':
       return 'ReactElement';
@@ -116,15 +111,11 @@ function preProcessDoc(doc: Doc): PreProcessedDoc {
 /*                                   Process                                  */
 /* -------------------------------------------------------------------------- */
 function processPropItem(prop: PreProcessedPropItem | ProcessedPropItem): ProcessedPropItem {
-  const propCopy = { ...prop };
-  if (process.env.NODE_ENV === 'production') {
-    if (prop.declarations) {
-      delete propCopy.declarations;
-    }
-  }
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  const { declarations: _declarations, tags: _tags, ...restOfProp } = prop;
   return {
-    ...propCopy,
-    type: formatPropItemType(typeof prop.type === 'string' ? prop.type : prop.type.value),
+    ...restOfProp,
+    type: formatPropItemType(typeof prop.type === 'string' ? prop.type : prop.type.raw),
   };
 }
 
@@ -162,7 +153,7 @@ export function docgenParser({
 }: DocgenParamsParams): ProcessedDoc[] {
   const filesToParse = params.files.map((file) => path.join(params.projectDir, file));
 
-  function addToSharedTypeAliases(alias: string, value: PreProcessedPropItem['type']['value']) {
+  function addToSharedTypeAliases(alias: string, value: string) {
     sharedTypeAliasesCache.set(alias, formatPropItemType(value));
   }
 

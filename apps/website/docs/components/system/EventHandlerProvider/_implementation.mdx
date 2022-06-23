@@ -1,16 +1,13 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import WebPropsTable from ':docgen/web/system/EventHandlerProvider/api.mdx';
+import MobilePropsTable from ':docgen/mobile/system/EventHandlerProvider/api.mdx';
 
-<RightSidebar toc={toc} />
+## Props
 
-### config
-
-<ApiDetails
-  componentName="EventHandlerProvider"
-  propertyName="config"
-  required={false}
-  defaultValue=""
-  mobileOptions={['EventHandlerConfig']}
-  webOptions={['EventHandlerConfig']}
-/>
+<Tabs groupId="platform" variant="secondary">
+  <TabItem value="web" label="Web">
+    <WebPropsTable />
+  </TabItem>
+  <TabItem value="mobile" label="Mobile">
+    <MobilePropsTable />
+  </TabItem>
+</Tabs>

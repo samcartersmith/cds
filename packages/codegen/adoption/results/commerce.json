@@ -16,8 +16,8 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 112,
-      "totalCallSites": 71,
+      "totalInstances": 129,
+      "totalCallSites": 75,
       "cds": "@cbhq/cds-web/layout/HStack",
       "aliasedCdsComponents": [
         {
@@ -195,31 +195,35 @@
         "@commerce/frontend/components/Form/CheckboxGroupInput/CheckboxGroupInput.tsx": 1,
         "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 2,
         "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 3,
-        "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
         "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 2,
+        "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 1,
         "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
         "@commerce/frontend/pages/shared/SignInByLoginType/SignInByLoginType.tsx": 2,
         "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedSidebar/CoinbaseManagedExtendedSidebar.tsx": 1,
         "@commerce/frontend/app/segments/selfManaged/SelfManagedSidebar/SelfManagedExtendedSidebar.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 11,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 2,
         "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/MfaCodeSignIn/MfaCodeSignIn.tsx": 2,
-        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 2,
         "@commerce/frontend/pages/shared/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 2,
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 2,
+        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 4,
         "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 2,
         "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionInformationBodyRow.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3,
         "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccount.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/ChangePassword/ChangePassword.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 3,
+        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 3,
         "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 2,
@@ -262,6 +266,8 @@
           "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 2,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 2,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 1,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
           "@commerce/frontend/pages/shared/SignInByLoginType/SignInByLoginType.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 1,
@@ -272,6 +278,7 @@
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/MfaCodeSignIn/MfaCodeSignIn.tsx": 2,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 3,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 3,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 3,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 2,
@@ -291,18 +298,20 @@
           "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1,
           "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 2,
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
-          "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 2,
           "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedSidebar/CoinbaseManagedExtendedSidebar.tsx": 1,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedSidebar/SelfManagedExtendedSidebar.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 5,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 2,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3,
@@ -334,20 +343,25 @@
           "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx": 1,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1,
           "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
-          "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 1,
           "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedSidebar/CoinbaseManagedExtendedSidebar.tsx": 1,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedSidebar/SelfManagedExtendedSidebar.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 3,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 2,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccount.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/ChangePassword/ChangePassword.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 5,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBodyRow.tsx": 2,
@@ -367,6 +381,7 @@
         },
         "background": {
           "@commerce/frontend/components/AuthHeader/AuthHeader.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1
         },
         "height": {
@@ -389,14 +404,16 @@
           "@commerce/frontend/components/Footer/Footer.tsx": 1,
           "@commerce/frontend/components/Form/CheckboxGroupInput/CheckboxGroupInput.tsx": 1,
           "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 1,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 3,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1,
@@ -423,6 +440,7 @@
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 2,
           "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedSidebar/CoinbaseManagedExtendedSidebar.tsx": 1,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedSidebar/SelfManagedExtendedSidebar.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 4,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
@@ -445,21 +463,25 @@
         "spacingTop": {
           "@commerce/frontend/components/Footer/Footer.tsx": 1,
           "@commerce/frontend/components/ListTable/ListTableItem.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 2
         },
         "spacingBottom": {
           "@commerce/frontend/components/Footer/Footer.tsx": 1,
           "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1
         },
         "bordered": {
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1
         },
         "borderRadius": {
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1
@@ -475,6 +497,18 @@
           "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedSidebar/CoinbaseManagedExtendedSidebar.tsx": 1,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedSidebar/SelfManagedExtendedSidebar.tsx": 1
         },
+        "spacingStart": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 3,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccount.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/ChangePassword/ChangePassword.tsx": 1,
+          "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
+          "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 3,
+          "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 2,
+          "@commerce/frontend/pages/shared/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
+          "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1
+        },
         "spacingVertical": {
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 3,
@@ -486,34 +520,24 @@
         "testID": {
           "@commerce/frontend/pages/shared/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1
         },
+        "key": {
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1
+        },
         "maxWidth": {
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 1
-        },
-        "spacingStart": {
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccount.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/ChangePassword/ChangePassword.tsx": 1,
-          "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
-          "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 3,
-          "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 2,
-          "@commerce/frontend/pages/shared/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
-          "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1
         },
         "flexBasis": {
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBodyRow.tsx": 1
-        },
-        "key": {
-          "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1
         }
       }
     },
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 151,
-      "totalCallSites": 76,
+      "totalInstances": 149,
+      "totalCallSites": 75,
       "cds": "@cbhq/cds-web/layout/Box",
       "aliasedCdsComponents": [
         {
@@ -578,15 +602,20 @@
         {
           "aliasPath": "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentsTable/CoinbaseManagedPaymentsTable.tsx",
           "callSites": [
+            "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx",
             "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx"
           ]
         },
         {
           "aliasPath": "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx",
-          "callSites": ["@commerce/frontend/pages/selfManaged/Balances/Balances.tsx"]
+          "callSites": ["@commerce/frontend/pages/selfManaged/Balances/BalancesPageTables.tsx"]
         },
         {
           "aliasPath": "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsTable.tsx",
+          "callSites": ["@commerce/frontend/pages/selfManaged/Balances/BalancesPageTables.tsx"]
+        },
+        {
+          "aliasPath": "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx",
           "callSites": ["@commerce/frontend/pages/selfManaged/Balances/Balances.tsx"]
         },
         {
@@ -595,7 +624,7 @@
         },
         {
           "aliasPath": "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalsTable.tsx",
-          "callSites": ["@commerce/frontend/pages/selfManaged/Balances/Balances.tsx"]
+          "callSites": ["@commerce/frontend/pages/selfManaged/Balances/BalancesPageTables.tsx"]
         },
         {
           "aliasPath": "@commerce/frontend/pages/selfManaged/Payments/PaymentsTable/SelfManagedPaymentsTable.tsx",
@@ -657,7 +686,6 @@
         "@commerce/frontend/app/segments/selfManaged/SelfManagedSegment.tsx": 1,
         "@commerce/frontend/components/Form/CheckboxGroupInput/CheckboxGroupInput.tsx": 1,
         "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 2,
-        "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
         "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 3,
         "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
         "@commerce/frontend/pages/shared/ConfirmSupportEmail/ConfirmSupportEmail.tsx": 1,
@@ -667,7 +695,7 @@
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 2,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 2,
         "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsTable.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 5,
+        "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 4,
         "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Payments/PaymentsTable/SelfManagedPaymentsTable.tsx": 1,
         "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 3,
@@ -686,10 +714,10 @@
         "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 3,
+        "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformation.tsx": 2,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 2,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 2,
-        "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformation.tsx": 2,
         "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 4,
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 4,
         "@commerce/frontend/pages/shared/Invoices/NewInvoice/NewInvoiceForm/NewInvoiceForm.tsx": 1,
@@ -753,7 +781,7 @@
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 2,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/EditCheckout/EditCheckout.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckout.tsx": 1,
@@ -805,8 +833,8 @@
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 2,
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformation.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 2,
           "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 3,
@@ -840,10 +868,7 @@
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBody.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 2
         },
-        "minWidth": {
-          "@commerce/frontend/components/AuthHeader/AuthHeader.tsx": 1,
-          "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1
-        },
+        "minWidth": { "@commerce/frontend/components/AuthHeader/AuthHeader.tsx": 1 },
         "spacingBottom": {
           "@commerce/frontend/components/Footer/Footer.tsx": 6,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 2,
@@ -861,9 +886,9 @@
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 2,
           "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 2,
+          "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformation.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 1,
-          "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformation.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 2,
@@ -879,7 +904,6 @@
           "@commerce/frontend/components/ModalContent/ModalSuspenseFallback.tsx": 1,
           "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedSegment.tsx": 1,
-          "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 2,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
           "@commerce/frontend/pages/shared/ConfirmSupportEmail/ConfirmSupportEmail.tsx": 1,
@@ -888,7 +912,7 @@
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsTable.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Payments/PaymentsTable/SelfManagedPaymentsTable.tsx": 1,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
@@ -899,9 +923,9 @@
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 2,
           "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
+          "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformation.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 2,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 1,
-          "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformation.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 3,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
@@ -923,8 +947,8 @@
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 3,
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformation.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 1
         },
@@ -942,6 +966,7 @@
         },
         "testID": {
           "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1
         },
         "zIndex": {
@@ -1047,8 +1072,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 184,
-      "totalCallSites": 98,
+      "totalInstances": 193,
+      "totalCallSites": 102,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -1089,8 +1114,8 @@
           "callSites": [
             "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx",
             "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx",
-            "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/AccountInformation.tsx",
             "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx",
+            "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/AccountInformation.tsx",
             "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx",
             "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/AccountInformation/AccountInformation.tsx",
             "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccount.tsx",
@@ -1256,6 +1281,13 @@
           "callSites": ["@commerce/frontend/app/segments/selfManaged/SelfManagedSegment.tsx"]
         },
         {
+          "aliasPath": "@commerce/frontend/pages/selfManaged/Balances/BalancesPageTables.tsx",
+          "callSites": [
+            "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx",
+            "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx"
+          ]
+        },
+        {
           "aliasPath": "@commerce/frontend/pages/selfManaged/Payments/SelfManagedPayments.tsx",
           "callSites": ["@commerce/frontend/app/segments/selfManaged/SelfManagedSegment.tsx"]
         },
@@ -1302,6 +1334,12 @@
           ]
         },
         {
+          "aliasPath": "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx",
+          "callSites": [
+            "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutDetails.tsx"
+          ]
+        },
+        {
           "aliasPath": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx",
           "callSites": [
             "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx"
@@ -1310,12 +1348,6 @@
         {
           "aliasPath": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx",
           "callSites": ["@commerce/frontend/app/segments/selfManaged/SelfManagedSegment.tsx"]
-        },
-        {
-          "aliasPath": "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx",
-          "callSites": [
-            "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutDetails.tsx"
-          ]
         },
         {
           "aliasPath": "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx",
@@ -1398,8 +1430,9 @@
         "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
         "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 2,
         "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 1,
-        "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 1,
+        "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesPageTables.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Payments/SelfManagedPayments.tsx": 1,
         "@commerce/frontend/pages/selfManaged/PointOfSale/PointOfSale.tsx": 1,
         "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 4,
@@ -1409,8 +1442,11 @@
         "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedSidebar/CoinbaseManagedExtendedSidebar.tsx": 1,
         "@commerce/frontend/app/segments/selfManaged/SelfManagedSidebar/SelfManagedExtendedSidebar.tsx": 1,
         "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 4,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 4,
         "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 1,
@@ -1419,21 +1455,21 @@
         "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPassword.tsx": 2,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/BackupCodeSignIn/BackupCodeSignIn.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/MfaCodeSignIn/MfaCodeSignIn.tsx": 2,
-        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 2,
         "@commerce/frontend/pages/shared/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
         "@commerce/frontend/pages/shared/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 1,
-        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
+        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 3,
         "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 3,
         "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 6,
+        "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx": 2,
+        "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 3,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 2,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 4,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 3,
-        "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx": 2,
-        "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 3,
         "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 2,
         "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 2,
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 1,
@@ -1484,9 +1520,13 @@
           "@commerce/frontend/components/Form/SelectInput/SelectInput.tsx": 1,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 2,
           "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 1,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PointOfSale.tsx": 1,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 3,
           "@commerce/frontend/pages/shared/SignInByLoginType/SignInByLoginType.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 2,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 3,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPassword.tsx": 1,
@@ -1520,8 +1560,9 @@
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPassword.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/EnabledCryptocurrencies/EnabledCryptocurrencies.tsx": 1
         },
         "width": {
@@ -1539,8 +1580,9 @@
           "@commerce/frontend/components/Form/NumberInput/NumberInput.tsx": 1,
           "@commerce/frontend/components/Form/SelectInput/SelectInput.tsx": 1,
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesPageTables.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Payments/SelfManagedPayments.tsx": 1,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PointOfSale.tsx": 1,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 2,
@@ -1558,12 +1600,12 @@
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 4,
+          "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx": 1,
+          "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 2,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 2,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 2,
-          "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx": 1,
-          "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 2,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 2,
@@ -1578,6 +1620,8 @@
           "@commerce/frontend/app/navigation/AppNavigation.tsx": 1,
           "@commerce/frontend/components/AuthPageLayout/AuthPageLayout.tsx": 1,
           "@commerce/frontend/components/NoSearchResults/NoSearchResults.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 1,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
@@ -1616,7 +1660,9 @@
           "@commerce/frontend/components/Form/SelectInput/SelectInput.tsx": 1,
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 2,
-          "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesPageTables.tsx": 1,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 3,
           "@commerce/frontend/pages/shared/SignInByLoginType/SignInByLoginType.tsx": 1,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
@@ -1631,13 +1677,14 @@
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 2,
           "@commerce/frontend/pages/shared/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 2,
+          "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 3,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 2,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 3,
-          "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 3,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 2,
@@ -1680,8 +1727,9 @@
           "@commerce/frontend/components/AccountingReports/AccountingReportsModal.tsx": 1,
           "@commerce/frontend/components/AccountingReports/ConfirmationView.tsx": 1,
           "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenuItems.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/CoinbaseAccountSelection/CoinbaseAccountSelection.tsx": 1,
@@ -1706,11 +1754,13 @@
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
           "@commerce/frontend/pages/shared/SignInByLoginType/SignInByLoginType.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 2,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/BackupCodeSignIn/BackupCodeSignIn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/MfaCodeSignIn/MfaCodeSignIn.tsx": 2,
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 4,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 1,
@@ -1727,6 +1777,7 @@
           "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
           "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 2,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentActivities/PaymentActivities.tsx": 1,
@@ -1747,8 +1798,9 @@
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentActivities/PaymentActivities.tsx": 1
         },
@@ -1771,6 +1823,7 @@
         "minWidth": {
           "@commerce/frontend/components/Form/NumberInput/NumberInput.tsx": 1,
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesPageTables.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 1,
@@ -1778,17 +1831,25 @@
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 2
         },
+        "alignSelf": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/BackupCodes/ViewBackupCodesModal/BackupCodesList.tsx": 1
+        },
         "elevation": {
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1
         },
+        "spacingEnd": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1
+        },
         "overflow": {
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1
         },
-        "position": {
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/BackupCodes/ViewBackupCodesModal/BackupCodesList.tsx": 1
+        "id": {
+          "@commerce/frontend/pages/shared/Settings/PaymentSettings/EnabledCryptocurrencies/EnabledCryptocurrencies.tsx": 1
         },
-        "alignSelf": {
+        "position": {
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/BackupCodes/ViewBackupCodesModal/BackupCodesList.tsx": 1
         }
       }
@@ -1807,14 +1868,15 @@
     {
       "name": "Divider",
       "sourceFile": "@cbhq/cds-web/layout/Divider",
-      "totalInstances": 54,
-      "totalCallSites": 19,
+      "totalInstances": 56,
+      "totalCallSites": 20,
       "cds": "@cbhq/cds-web/layout/Divider",
       "callSites": {
         "@commerce/frontend/app/navigation/NavigationBar.tsx": 1,
         "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
         "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedSidebar/CoinbaseManagedExtendedSidebar.tsx": 2,
         "@commerce/frontend/app/segments/selfManaged/SelfManagedSidebar/SelfManagedExtendedSidebar.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 2,
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyAmounts.tsx": 4,
         "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 6,
@@ -1838,6 +1900,7 @@
         },
         "direction": {
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentActivities/PaymentActivities.tsx": 1
@@ -1861,7 +1924,7 @@
     {
       "name": "IconButton",
       "sourceFile": "@cbhq/cds-web/buttons/IconButton",
-      "totalInstances": 17,
+      "totalInstances": 16,
       "totalCallSites": 13,
       "cds": "@cbhq/cds-web/buttons/IconButton",
       "callSites": {
@@ -1871,9 +1934,9 @@
         "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx": 2,
         "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 2,
         "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
-        "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 2,
         "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedSidebar/CoinbaseManagedExtendedSidebar.tsx": 1,
         "@commerce/frontend/app/segments/selfManaged/SelfManagedSidebar/SelfManagedExtendedSidebar.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/AbsolutePaymentSettings.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 1,
@@ -1888,9 +1951,9 @@
           "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx": 2,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 2,
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
-          "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 2,
           "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedSidebar/CoinbaseManagedExtendedSidebar.tsx": 1,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedSidebar/SelfManagedExtendedSidebar.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/AbsolutePaymentSettings.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 1,
@@ -1909,6 +1972,7 @@
           "@commerce/frontend/components/CopyButton/CopyButton.tsx": 1,
           "@commerce/frontend/components/SearchInput/SearchInput.tsx": 1,
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/AbsolutePaymentSettings.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 1
         },
@@ -1916,7 +1980,7 @@
           "@commerce/frontend/components/CopyButton/CopyButton.tsx": 1,
           "@commerce/frontend/components/SearchInput/SearchInput.tsx": 1,
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
-          "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 2
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1
         },
         "onPress": {
           "@commerce/frontend/components/CopyButton/CopyButton.tsx": 1,
@@ -1924,17 +1988,19 @@
           "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx": 2,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 2,
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
-          "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 2,
           "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedSidebar/CoinbaseManagedExtendedSidebar.tsx": 1,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedSidebar/SelfManagedExtendedSidebar.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/AbsolutePaymentSettings.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/BackupCodes/ViewBackupCodesModal/BackupCodesList.tsx": 1
         },
-        "accessibilityLabel": { "@commerce/frontend/components/SearchInput/SearchInput.tsx": 1 },
+        "accessibilityLabel": {
+          "@commerce/frontend/components/SearchInput/SearchInput.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1
+        },
         "disabled": {
-          "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/AbsolutePaymentSettings.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 1
         }
@@ -1998,7 +2064,7 @@
     {
       "name": "TextLabel1",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
-      "totalInstances": 18,
+      "totalInstances": 17,
       "totalCallSites": 13,
       "cds": "@cbhq/cds-web/typography/TextLabel1",
       "callSites": {
@@ -2006,7 +2072,7 @@
         "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
         "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenuItems.tsx": 4,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 2,
-        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
@@ -2022,7 +2088,7 @@
           "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
           "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenuItems.tsx": 4,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 2,
-          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
@@ -2040,7 +2106,6 @@
         "color": {
           "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenuItems.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
         },
@@ -2074,8 +2139,8 @@
     {
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
-      "totalInstances": 60,
-      "totalCallSites": 36,
+      "totalInstances": 62,
+      "totalCallSites": 37,
       "cds": "@cbhq/cds-web/typography/TextLabel2",
       "aliasedCdsComponents": [
         {
@@ -2102,15 +2167,16 @@
         "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
         "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
         "@commerce/frontend/pages/shared/SignInByLoginType/SignInByLoginType.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 3,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 4,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/MfaCodeSignIn/MfaCodeSignIn.tsx": 2,
-        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 2,
         "@commerce/frontend/pages/shared/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 2,
         "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 2,
-        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 3,
         "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 3,
         "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 3,
         "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
@@ -2141,15 +2207,16 @@
           "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
           "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
           "@commerce/frontend/pages/shared/SignInByLoginType/SignInByLoginType.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 3,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 4,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/MfaCodeSignIn/MfaCodeSignIn.tsx": 2,
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 2,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 2,
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 3,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 3,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 3,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
@@ -2204,8 +2271,8 @@
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 3,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 3,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 2,
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 2,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 2,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
@@ -2222,7 +2289,8 @@
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 1
         },
         "spacingEnd": {
-          "@commerce/frontend/components/ListTable/ListTableSettingsItemHeader.tsx": 1
+          "@commerce/frontend/components/ListTable/ListTableSettingsItemHeader.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2
         },
         "testID": {
           "@commerce/frontend/components/StackedLabels/StackedLabels.tsx": 1,
@@ -2280,8 +2348,8 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 105,
-      "totalCallSites": 53,
+      "totalInstances": 115,
+      "totalCallSites": 58,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "@commerce/frontend/components/AccountingReports/AccountingReportsModal.tsx": 1,
@@ -2300,7 +2368,10 @@
         "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 4,
         "@commerce/frontend/pages/shared/Error/ErrorPage.tsx": 1,
         "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 3,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 2,
         "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 1,
         "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 3,
@@ -2310,22 +2381,24 @@
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 1,
         "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
+        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 5,
         "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 5,
         "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionInformationBodyRow.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 4,
         "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
+        "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 2,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 4,
-        "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 1,
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 1,
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 1,
         "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 14,
         "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBodyRow.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 1,
+        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccountModal/CloseAccount.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccountModal/ConfirmPassword.tsx": 2,
         "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/RemoveLinkedCoinbaseAccountModal/RemoveLinkedCoinbaseAccountModal.tsx": 1,
@@ -2356,7 +2429,10 @@
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 4,
           "@commerce/frontend/pages/shared/Error/ErrorPage.tsx": 1,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 3,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 1,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 3,
@@ -2366,22 +2442,24 @@
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 5,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 5,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 4,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
+          "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 2,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 4,
-          "@commerce/frontend/pages/shared/Checkouts/CheckoutForm/CustomizeContributionsPanel/CustomizeContributionsPanel.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 14,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccountModal/CloseAccount.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccountModal/ConfirmPassword.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/RemoveLinkedCoinbaseAccountModal/RemoveLinkedCoinbaseAccountModal.tsx": 1,
@@ -2417,6 +2495,7 @@
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 4,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
@@ -2426,6 +2505,7 @@
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 3,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/RemoveLinkedCoinbaseAccountModal/RemoveLinkedCoinbaseAccountModal.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 2,
@@ -2443,7 +2523,9 @@
           "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 1,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 3,
           "@commerce/frontend/pages/shared/Error/ErrorPage.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
@@ -2455,6 +2537,7 @@
         },
         "spacingBottom": {
           "@commerce/frontend/components/AccountingReports/ConfirmationView.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
@@ -2473,12 +2556,14 @@
         "spacingEnd": {
           "@commerce/frontend/components/ListTable/ListTableItem.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 3,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBodyRow.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBodyRow.tsx": 1
@@ -2495,6 +2580,9 @@
           "@commerce/frontend/components/Form/DropdownInput/DropdownInput.tsx": 1,
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 1
+        },
+        "spacing": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1
         },
         "spacingVertical": {
           "@commerce/frontend/pages/selfManaged/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1
@@ -2526,8 +2614,8 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 99,
-      "totalCallSites": 68,
+      "totalInstances": 102,
+      "totalCallSites": 71,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
         "@commerce/frontend/components/AccountingReports/AccountingReportsModal.tsx": 1,
@@ -2538,28 +2626,31 @@
         "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/Checkouts.tsx": 1,
         "@commerce/frontend/pages/shared/ConfirmSupportEmail/ConfirmSupportEmail.tsx": 1,
-        "@commerce/frontend/pages/shared/Error/ErrorPage.tsx": 1,
         "@commerce/frontend/pages/shared/Invoices/Invoices.tsx": 1,
+        "@commerce/frontend/pages/shared/Error/ErrorPage.tsx": 1,
         "@commerce/frontend/pages/shared/SignInByLoginType/SignInByLoginType.tsx": 1,
         "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 2,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/BackupCodeSignIn/BackupCodeSignIn.tsx": 2,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/MfaCodeSignIn/MfaCodeSignIn.tsx": 2,
-        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutDetails.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
         "@commerce/frontend/pages/shared/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
         "@commerce/frontend/pages/shared/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 2,
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
         "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 2,
+        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 3,
-        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 2,
-        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 2,
         "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccount.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/ChangePassword/ChangePassword.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 1,
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 3,
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 2,
         "@commerce/frontend/pages/shared/Invoices/NewInvoice/NewInvoiceForm/NewInvoiceForm.tsx": 1,
@@ -2603,14 +2694,15 @@
         "disabled": {
           "@commerce/frontend/components/AccountingReports/AccountingReportsModal.tsx": 1,
           "@commerce/frontend/pages/shared/SignInByLoginType/SignInByLoginType.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/BackupCodeSignIn/BackupCodeSignIn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/MfaCodeSignIn/MfaCodeSignIn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccount.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccount.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/NewInvoice/NewInvoiceForm/NewInvoiceForm.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 1,
@@ -2633,9 +2725,11 @@
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/Checkouts.tsx": 1,
           "@commerce/frontend/pages/shared/ConfirmSupportEmail/ConfirmSupportEmail.tsx": 1,
-          "@commerce/frontend/pages/shared/Error/ErrorPage.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/Invoices.tsx": 1,
+          "@commerce/frontend/pages/shared/Error/ErrorPage.tsx": 1,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/BackupCodeSignIn/BackupCodeSignIn.tsx": 1,
@@ -2645,12 +2739,13 @@
           "@commerce/frontend/pages/shared/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 2,
           "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 2,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 2,
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccount.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/ChangePassword/ChangePassword.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 2,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 3,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/WebhookSubscriptionItem.tsx": 1,
@@ -2688,6 +2783,7 @@
           "@commerce/frontend/components/AccountingReports/ConfirmationView.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 1,
           "@commerce/frontend/pages/shared/SignInByLoginType/SignInByLoginType.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 2,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/BackupCodeSignIn/BackupCodeSignIn.tsx": 2,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/MfaCodeSignIn/MfaCodeSignIn.tsx": 2,
@@ -2733,10 +2829,12 @@
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/Checkouts.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/Invoices.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutDetails.tsx": 2,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccount.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/ChangePassword/ChangePassword.tsx": 1,
@@ -2774,6 +2872,8 @@
         "variant": {
           "@commerce/frontend/components/AuthHeader/AuthHeader.tsx": 2,
           "@commerce/frontend/pages/shared/Error/ErrorPage.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/BackupCodeSignIn/BackupCodeSignIn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/MfaCodeSignIn/MfaCodeSignIn.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutDetails.tsx": 1,
@@ -2798,8 +2898,10 @@
         "transparent": {
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 1,
@@ -2844,8 +2946,8 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 18,
-      "totalCallSites": 18,
+      "totalInstances": 19,
+      "totalCallSites": 19,
       "cds": "@cbhq/cds-web/typography/TextTitle3",
       "callSites": {
         "@commerce/frontend/components/AccountingReports/ConfirmationView.tsx": 1,
@@ -2856,6 +2958,7 @@
         "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 1,
         "@commerce/frontend/pages/shared/ConfirmSupportEmail/ConfirmSupportEmail.tsx": 1,
         "@commerce/frontend/pages/shared/Error/ErrorPage.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
         "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
@@ -2877,6 +2980,7 @@
           "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 1,
           "@commerce/frontend/pages/shared/ConfirmSupportEmail/ConfirmSupportEmail.tsx": 1,
           "@commerce/frontend/pages/shared/Error/ErrorPage.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
@@ -2964,12 +3068,13 @@
     {
       "name": "TextTitle2",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle2",
-      "totalInstances": 6,
-      "totalCallSites": 5,
+      "totalInstances": 7,
+      "totalCallSites": 6,
       "cds": "@cbhq/cds-web/typography/TextTitle2",
       "callSites": {
         "@commerce/frontend/components/AuthPageLayout/AuthPageLayout.tsx": 1,
         "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 2
@@ -2983,6 +3088,7 @@
         "as": {
           "@commerce/frontend/components/AuthPageLayout/AuthPageLayout.tsx": 1,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 2
@@ -2995,8 +3101,8 @@
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 33,
-      "totalCallSites": 20,
+      "totalInstances": 34,
+      "totalCallSites": 21,
       "cds": "@cbhq/cds-web/typography/Link",
       "callSites": {
         "@commerce/frontend/components/AuthPageLayout/AuthPageLayout.tsx": 2,
@@ -3011,6 +3117,7 @@
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/MfaCodeSignIn/MfaCodeSignIn.tsx": 2,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 2,
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
+        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/WebhookSubscriptionItem.tsx": 1,
@@ -3090,6 +3197,7 @@
         },
         "href": {
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/WebhookSubscriptionItem.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomainsItem/WhitelistedDomainsItem.tsx": 1
         },
@@ -3102,27 +3210,6 @@
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/WebhookSubscriptionItem.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentActivities/PaymentActivity/PaymentActivity.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomainsItem/WhitelistedDomainsItem.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "RadioGroup",
-      "sourceFile": "@cbhq/cds-web/controls/RadioGroup",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/controls/RadioGroup",
-      "propsWithCallSites": {
-        "name": {
-          "@commerce/frontend/components/CoinbaseAccountSelector/CoinbaseAccountSelector.tsx": 1
-        },
-        "options": {
-          "@commerce/frontend/components/CoinbaseAccountSelector/CoinbaseAccountSelector.tsx": 1
-        },
-        "onChange": {
-          "@commerce/frontend/components/CoinbaseAccountSelector/CoinbaseAccountSelector.tsx": 1
-        },
-        "selectedValue": {
-          "@commerce/frontend/components/CoinbaseAccountSelector/CoinbaseAccountSelector.tsx": 1
         }
       }
     },
@@ -3193,12 +3280,34 @@
       }
     },
     {
+      "name": "RadioGroup",
+      "sourceFile": "@cbhq/cds-web/controls/RadioGroup",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/controls/RadioGroup",
+      "propsWithCallSites": {
+        "name": {
+          "@commerce/frontend/components/CoinbaseAccountSelector/CoinbaseAccountSelector.tsx": 1
+        },
+        "options": {
+          "@commerce/frontend/components/CoinbaseAccountSelector/CoinbaseAccountSelector.tsx": 1
+        },
+        "onChange": {
+          "@commerce/frontend/components/CoinbaseAccountSelector/CoinbaseAccountSelector.tsx": 1
+        },
+        "selectedValue": {
+          "@commerce/frontend/components/CoinbaseAccountSelector/CoinbaseAccountSelector.tsx": 1
+        }
+      }
+    },
+    {
       "name": "RemoteImage",
       "sourceFile": "@cbhq/cds-web/media/RemoteImage",
       "totalInstances": 1,
       "totalCallSites": 1,
       "cds": "@cbhq/cds-web/media/RemoteImage",
       "propsWithCallSites": {
+        "testID": { "@commerce/frontend/components/CryptoIcon/CryptoIcon.tsx": 1 },
         "source": { "@commerce/frontend/components/CryptoIcon/CryptoIcon.tsx": 1 },
         "width": { "@commerce/frontend/components/CryptoIcon/CryptoIcon.tsx": 1 },
         "height": { "@commerce/frontend/components/CryptoIcon/CryptoIcon.tsx": 1 },
@@ -3210,19 +3319,21 @@
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 21,
-      "totalCallSites": 16,
+      "totalInstances": 24,
+      "totalCallSites": 18,
       "cds": "@cbhq/cds-web/icons/Icon",
       "callSites": {
         "@commerce/frontend/components/Deposit/Deposit.tsx": 1,
         "@commerce/frontend/components/SearchInput/SearchInput.tsx": 1,
         "@commerce/frontend/components/Toast/Toast.tsx": 3,
         "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 2,
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 1,
+        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
         "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 1,
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1,
@@ -3237,6 +3348,7 @@
           "@commerce/frontend/components/SearchInput/SearchInput.tsx": 1,
           "@commerce/frontend/components/Toast/Toast.tsx": 3,
           "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 1,
@@ -3254,11 +3366,13 @@
           "@commerce/frontend/components/SearchInput/SearchInput.tsx": 1,
           "@commerce/frontend/components/Toast/Toast.tsx": 3,
           "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 2,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1,
@@ -3272,11 +3386,13 @@
           "@commerce/frontend/components/SearchInput/SearchInput.tsx": 1,
           "@commerce/frontend/components/Toast/Toast.tsx": 3,
           "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 2,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1,
@@ -3294,6 +3410,9 @@
           "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1
+        },
+        "testID": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyRow.tsx": 1
         }
       }
     },
@@ -3339,8 +3458,8 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 33,
-      "totalCallSites": 26,
+      "totalInstances": 36,
+      "totalCallSites": 28,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
       "callSites": {
         "@commerce/frontend/components/ExtendedSidebarItem/ExtendedSidebarItem.tsx": 1,
@@ -3351,8 +3470,9 @@
         "@commerce/frontend/components/Form/DropdownInput/DropdownInput.tsx": 1,
         "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
         "@commerce/frontend/components/Table/Cells/ProductNameCell.tsx": 1,
-        "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsTable.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 2,
@@ -3361,6 +3481,7 @@
         "@commerce/frontend/pages/shared/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 2,
         "@commerce/frontend/pages/shared/Payments/PaymentActions/ResolvePayment.tsx": 1,
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
+        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 1,
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1,
@@ -3380,8 +3501,9 @@
           "@commerce/frontend/components/Form/DropdownInput/DropdownInput.tsx": 1,
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
           "@commerce/frontend/components/Table/Cells/ProductNameCell.tsx": 1,
-          "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsTable.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 2,
@@ -3390,6 +3512,7 @@
           "@commerce/frontend/pages/shared/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 2,
           "@commerce/frontend/pages/shared/Payments/PaymentActions/ResolvePayment.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
           "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1,
@@ -3401,7 +3524,6 @@
         },
         "color": {
           "@commerce/frontend/components/ExtendedSidebarItem/ExtendedSidebarItem.tsx": 1,
-          "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/ShopifyMigrationBanner/ShopifyMigrationBanner.tsx": 1,
@@ -3418,7 +3540,8 @@
         },
         "align": {
           "@commerce/frontend/components/NoSearchResults/NoSearchResults.tsx": 1,
-          "@commerce/frontend/components/StackedLabels/StackedLabels.tsx": 1
+          "@commerce/frontend/components/StackedLabels/StackedLabels.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1
         },
         "testID": {
           "@commerce/frontend/components/StackedLabels/StackedLabels.tsx": 1,
@@ -3435,6 +3558,9 @@
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1
+        },
+        "spacingStart": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2
         },
         "overflow": {
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1
@@ -3531,6 +3657,8 @@
             "@commerce/frontend/components/Modal/Modal.tsx",
             "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx",
             "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx",
+            "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx",
+            "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx",
             "@commerce/frontend/pages/shared/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx",
             "@commerce/frontend/pages/shared/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx",
             "@commerce/frontend/pages/shared/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx",
@@ -3670,12 +3798,22 @@
     {
       "name": "Tooltip",
       "sourceFile": "@cbhq/cds-web/overlays/Tooltip",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 3,
+      "totalCallSites": 2,
       "cds": "@cbhq/cds-web/overlays/Tooltip",
+      "callSites": {
+        "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2
+      },
       "propsWithCallSites": {
-        "content": { "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1 },
-        "placement": { "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1 }
+        "content": {
+          "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2
+        },
+        "placement": { "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1 },
+        "disablePortal": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2
+        }
       }
     },
     {
@@ -3807,17 +3945,19 @@
     {
       "name": "HeroSquare",
       "sourceFile": "@cbhq/cds-web/illustrations/HeroSquare",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-web/illustrations/HeroSquare",
       "callSites": {
         "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 1,
-        "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 1
+        "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 1,
-          "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 1
+          "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1
         }
       }
     },
@@ -3911,26 +4051,120 @@
     {
       "name": "TextLegal",
       "sourceFile": "@cbhq/cds-web/typography/TextLegal",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 6,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-web/typography/TextLegal",
       "callSites": {
         "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 4,
         "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 4,
           "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1
         },
         "color": {
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1
         },
         "align": {
-          "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1
+          "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1
         },
         "spacingTop": {
-          "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1
+          "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1
+        },
+        "dangerouslySetColor": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CardGroup",
+      "sourceFile": "@cbhq/cds-web/cards/CardGroup",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/cards/CardGroup",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentsNuxCards/PaymentsNuxCards.tsx",
+          "callSites": [
+            "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx"
+          ]
+        },
+        {
+          "aliasPath": "@commerce/frontend/pages/selfManaged/Balances/BalancesNuxCards/BalancesNuxCards.tsx",
+          "callSites": ["@commerce/frontend/pages/selfManaged/Balances/Balances.tsx"]
+        }
+      ],
+      "callSites": {
+        "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentsNuxCards/PaymentsNuxCards.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesNuxCards/BalancesNuxCards.tsx": 1
+      },
+      "propsWithCallSites": {
+        "gap": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentsNuxCards/PaymentsNuxCards.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesNuxCards/BalancesNuxCards.tsx": 1
+        },
+        "maxWidth": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentsNuxCards/PaymentsNuxCards.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesNuxCards/BalancesNuxCards.tsx": 1
+        },
+        "testID": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentsNuxCards/PaymentsNuxCards.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesNuxCards/BalancesNuxCards.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "FeatureEntryCard",
+      "sourceFile": "@cbhq/cds-web/cards/FeatureEntryCard",
+      "totalInstances": 6,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/cards/FeatureEntryCard",
+      "callSites": {
+        "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentsNuxCards/PaymentsNuxCards.tsx": 3,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesNuxCards/BalancesNuxCards.tsx": 3
+      },
+      "propsWithCallSites": {
+        "title": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentsNuxCards/PaymentsNuxCards.tsx": 3,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesNuxCards/BalancesNuxCards.tsx": 3
+        },
+        "description": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentsNuxCards/PaymentsNuxCards.tsx": 3,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesNuxCards/BalancesNuxCards.tsx": 3
+        },
+        "spotSquare": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentsNuxCards/PaymentsNuxCards.tsx": 3,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesNuxCards/BalancesNuxCards.tsx": 3
+        },
+        "onActionPress": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentsNuxCards/PaymentsNuxCards.tsx": 3,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesNuxCards/BalancesNuxCards.tsx": 3
+        },
+        "action": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentsNuxCards/PaymentsNuxCards.tsx": 3,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesNuxCards/BalancesNuxCards.tsx": 3
+        }
+      }
+    },
+    {
+      "name": "Spinner",
+      "sourceFile": "@cbhq/cds-web/loaders/Spinner",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/loaders/Spinner",
+      "callSites": {
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1
+      },
+      "propsWithCallSites": {
+        "size": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1
         }
       }
     },
@@ -3978,18 +4212,6 @@
         "active": { "@commerce/frontend/pages/shared/Invoices/InvoicesTable/InvoicesTable.tsx": 4 },
         "label": { "@commerce/frontend/pages/shared/Invoices/InvoicesTable/InvoicesTable.tsx": 4 },
         "onPress": { "@commerce/frontend/pages/shared/Invoices/InvoicesTable/InvoicesTable.tsx": 4 }
-      }
-    },
-    {
-      "name": "Spinner",
-      "sourceFile": "@cbhq/cds-web/loaders/Spinner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/loaders/Spinner",
-      "propsWithCallSites": {
-        "size": {
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1
-        }
       }
     },
     {
@@ -4478,26 +4700,14 @@
     {
       "name": "TableCell",
       "sourceFile": "@material-ui/core/TableCell",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "presentationalLibrary": "@material-ui/core/TableCell",
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx"
-        }
-      ],
       "callSites": {
         "@commerce/frontend/components/Table/Table.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1
       },
-      "propsWithCallSites": {
-        "colSpan": { "@commerce/frontend/components/Table/Table.tsx": 1 },
-        "style": {
-          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1
-        }
-      }
+      "propsWithCallSites": { "colSpan": { "@commerce/frontend/components/Table/Table.tsx": 1 } }
     },
     {
       "name": "TableColumnHeaderRow",
@@ -4531,6 +4741,13 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalLibrary": "@material-ui/core/TableFooter"
+    },
+    {
+      "name": "TablePagination",
+      "sourceFile": "@commerce/frontend/components/Table/TablePagination/TablePagination",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "PaginationContainer"
     },
     {
       "name": "StyledTextField",
@@ -4712,41 +4929,14 @@
       "styledComponent": "div"
     },
     {
-      "name": "TwoColumnLayout",
-      "sourceFile": "@commerce/frontend/components/TwoColumnLayout",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "presentationalElement": "Container",
-      "callSites": {
-        "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
-        "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
-        "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutDetails.tsx": 1
-      },
-      "propsWithCallSites": {
-        "mainColumn": {
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
-          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
-          "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutDetails.tsx": 1
-        },
-        "sideColumn": {
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
-          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
-          "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutDetails.tsx": 1
-        }
-      }
-    },
-    {
       "name": "HeaderCell",
       "sourceFile": "@commerce/frontend/components/Table/Cells/HeaderCell",
-      "totalInstances": 30,
+      "totalInstances": 33,
       "totalCallSites": 7,
       "presentationalElement": "StyledCell",
       "callSites": {
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentsTable/CoinbaseManagedPaymentsTable.tsx": 7,
-        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 5,
         "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsTable.tsx": 3,
         "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 3,
         "@commerce/frontend/pages/selfManaged/Payments/PaymentsTable/SelfManagedPaymentsTable.tsx": 6,
@@ -4756,7 +4946,7 @@
       "propsWithCallSites": {
         "text": {
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentsTable/CoinbaseManagedPaymentsTable.tsx": 7,
-          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 5,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsTable.tsx": 3,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 3,
           "@commerce/frontend/pages/selfManaged/Payments/PaymentsTable/SelfManagedPaymentsTable.tsx": 6,
@@ -4765,12 +4955,15 @@
         },
         "align": {
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentsTable/CoinbaseManagedPaymentsTable.tsx": 2,
-          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 3,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsTable.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Payments/PaymentsTable/SelfManagedPaymentsTable.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/InvoicesTable/InvoicesTable.tsx": 1
+        },
+        "tooltip": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1
         }
       }
     },
@@ -4888,6 +5081,33 @@
       }
     },
     {
+      "name": "TwoColumnLayout",
+      "sourceFile": "@commerce/frontend/components/TwoColumnLayout",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "presentationalElement": "Container",
+      "callSites": {
+        "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
+        "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
+        "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutDetails.tsx": 1
+      },
+      "propsWithCallSites": {
+        "mainColumn": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
+          "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutDetails.tsx": 1
+        },
+        "sideColumn": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
+          "@commerce/frontend/pages/shared/Checkouts/CheckoutDetails/CheckoutDetails.tsx": 1
+        }
+      }
+    },
+    {
       "name": "form",
       "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx",
       "totalInstances": 1,
@@ -4948,24 +5168,6 @@
       }
     },
     {
-      "name": "form",
-      "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "style": { "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1 },
-        "onSubmit": {
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TextCell",
       "sourceFile": "@commerce/frontend/components/Table/Cells/TextCell",
       "totalInstances": 2,
@@ -5022,6 +5224,24 @@
       "propsWithCallSites": {
         "checkoutId": {
           "@commerce/frontend/pages/shared/Checkouts/EditCheckout/EditCheckout.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "form",
+      "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "style": { "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1 },
+        "onSubmit": {
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1
         }
       }
     },
@@ -5426,6 +5646,26 @@
       "propsWithCallSites": { "history": { "@commerce/frontend/index.tsx": 1 } }
     },
     {
+      "name": "ExperimentProvider",
+      "sourceFile": "@cbhq/experiments/ExperimentProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "experiments": { "@commerce/frontend/contexts/ExperimentsProvider.tsx": 1 },
+        "trackExposure": { "@commerce/frontend/contexts/ExperimentsProvider.tsx": 1 }
+      }
+    },
+    {
+      "name": "Toast",
+      "sourceFile": "@commerce/frontend/components/Toast",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "toastMessage": { "@commerce/frontend/contexts/ToastsContext.tsx": 1 },
+        "onClose": { "@commerce/frontend/contexts/ToastsContext.tsx": 1 }
+      }
+    },
+    {
       "name": "StrictMode",
       "sourceFile": "react/StrictMode",
       "totalInstances": 1,
@@ -5606,6 +5846,12 @@
       }
     },
     {
+      "name": "ExperimentsProvider",
+      "sourceFile": "@commerce/frontend/contexts/ExperimentsProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "SegmentLoader",
       "sourceFile": "@commerce/frontend/app/SegmentLoader",
       "totalInstances": 1,
@@ -5658,16 +5904,6 @@
       "sourceFile": "@commerce/frontend/app/SegmentLoader.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "Toast",
-      "sourceFile": "@commerce/frontend/components/Toast",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "toastMessage": { "@commerce/frontend/contexts/ToastsContext.tsx": 1 },
-        "onClose": { "@commerce/frontend/contexts/ToastsContext.tsx": 1 }
-      }
     },
     {
       "name": "Fallback",
@@ -5842,13 +6078,15 @@
     {
       "name": "Modal",
       "sourceFile": "@commerce/frontend/components/Modal",
-      "totalInstances": 24,
-      "totalCallSites": 23,
+      "totalInstances": 26,
+      "totalCallSites": 25,
       "callSites": {
         "@commerce/frontend/components/AccountingReports/AccountingReportsModal.tsx": 1,
         "@commerce/frontend/components/LinkCoinbaseAccountModal/LinkCoinbaseAccountModal.tsx": 1,
         "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 1,
         "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
         "@commerce/frontend/pages/shared/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
         "@commerce/frontend/pages/shared/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 1,
@@ -5875,6 +6113,7 @@
           "@commerce/frontend/components/LinkCoinbaseAccountModal/LinkCoinbaseAccountModal.tsx": 1,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 1,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 1,
@@ -5899,6 +6138,8 @@
           "@commerce/frontend/components/LinkCoinbaseAccountModal/LinkCoinbaseAccountModal.tsx": 1,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 1,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 1,
@@ -5924,6 +6165,8 @@
           "@commerce/frontend/components/LinkCoinbaseAccountModal/LinkCoinbaseAccountModal.tsx": 1,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/RequireCoinbaseAccountModal.tsx": 1,
           "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/shared/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/shared/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/shared/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 1,
@@ -5960,6 +6203,10 @@
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccountModal/CloseAccount.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccountModal/ConfirmPassword.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/ChangePassword/ChangePasswordModal/ChangePasswordModal.tsx": 1
+        },
+        "dangerouslySetWidth": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal.tsx": 1
         },
         "onBackButtonPress": {
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 1,
@@ -6039,6 +6286,11 @@
           "@commerce/frontend/components/Amount/Amount.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyAmounts.tsx": 4
         },
+        "boldPrimary": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 2,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyAmounts.tsx": 4
+        },
         "testID": {
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 1,
@@ -6061,10 +6313,6 @@
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3,
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 3,
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 3
-        },
-        "boldPrimary": {
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBodyAmounts.tsx": 4
         }
       }
     },
@@ -6168,12 +6416,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "key": { "@commerce/frontend/components/Table/Table.tsx": 1 } }
-    },
-    {
-      "name": "TablePagination",
-      "sourceFile": "@commerce/frontend/components/Table/TablePagination/TablePagination",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "RequireCoinbaseAccountModal",
@@ -6710,7 +6952,7 @@
     {
       "name": "BasicCell",
       "sourceFile": "@commerce/frontend/components/Table/Cells/BasicCell",
-      "totalInstances": 19,
+      "totalInstances": 21,
       "totalCallSites": 17,
       "callSites": {
         "@commerce/frontend/components/Table/Cells/ActionCell.tsx": 1,
@@ -6722,16 +6964,17 @@
         "@commerce/frontend/components/Table/Cells/PaymentStatusCell.tsx": 1,
         "@commerce/frontend/components/Table/Cells/ProductNameCell.tsx": 1,
         "@commerce/frontend/components/Table/Cells/WithdrawalStatusCell.tsx": 1,
-        "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentsTable/CoinbaseManagedPaymentsTable.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 2,
         "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 3,
         "@commerce/frontend/pages/selfManaged/Payments/PaymentsTable/SelfManagedPaymentsTable.tsx": 1,
         "@commerce/frontend/pages/shared/Invoices/InvoicesTable/InvoicesTable.tsx": 1
       },
       "propsWithCallSites": {
+        "align": { "@commerce/frontend/components/Table/Cells/ActionCell.tsx": 1 },
         "data-testid": {
           "@commerce/frontend/components/Table/Cells/ActionCell.tsx": 1,
           "@commerce/frontend/components/Table/Cells/AmountCell.tsx": 1,
@@ -6741,10 +6984,13 @@
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceActionColumn.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 2,
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 2
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 3
         },
         "onClick": { "@commerce/frontend/components/Table/Cells/ActionCell.tsx": 1 },
-        "colSpan": { "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1 }
+        "width": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceAmountColumn.tsx": 1
+        }
       }
     },
     {
@@ -6898,8 +7144,23 @@
       }
     },
     {
+      "name": "PaymentsNuxCards",
+      "sourceFile": "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentsNuxCards/PaymentsNuxCards",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "CoinbaseManagedPaymentsTable",
       "sourceFile": "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentsTable/CoinbaseManagedPaymentsTable",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPayments.tsx": 2
+      }
+    },
+    {
+      "name": "BalancesNuxCards",
+      "sourceFile": "@commerce/frontend/pages/selfManaged/Balances/BalancesNuxCards/BalancesNuxCards",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -6911,6 +7172,13 @@
       "propsWithCallSites": {
         "dismissBanner": { "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 1 }
       }
+    },
+    {
+      "name": "BalancesPageTables",
+      "sourceFile": "@commerce/frontend/pages/selfManaged/Balances/BalancesPageTables",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "@commerce/frontend/pages/selfManaged/Balances/Balances.tsx": 2 }
     },
     {
       "name": "BalancesTable",
@@ -7020,8 +7288,8 @@
         "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ConfirmResetPassword/ConfirmResetPassword.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/BackupCodeSignIn/BackupCodeSignIn.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/MfaCodeSignIn/MfaCodeSignIn.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/EditCheckout/EditCheckout.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/SignIn.tsx": 1,
         "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckout.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedResetPassword/ResetPassword/SelfManagedResetPasswordForm/SelfManagedResetPasswordForm.tsx": 1,
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1,
@@ -7204,51 +7472,6 @@
       "callSites": {
         "@commerce/frontend/components/WithdrawCryptoModal/RequireCoinbaseAccountModal/CoinbaseAccountSelectionModal/CoinbaseAccountSelectionModal.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/CoinbaseAccountSelection/CoinbaseAccountSelection.tsx": 1
-      }
-    },
-    {
-      "name": "PaymentInformation",
-      "sourceFile": "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
-        "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1
-      },
-      "propsWithCallSites": {
-        "payment": {
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
-          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DepositInformation",
-      "sourceFile": "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "payment": {
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PaymentActivities",
-      "sourceFile": "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentActivities/PaymentActivities",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
-        "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1
-      },
-      "propsWithCallSites": {
-        "payment": {
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
-          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1
-        }
       }
     },
     {
@@ -7492,6 +7715,51 @@
       }
     },
     {
+      "name": "PaymentInformation",
+      "sourceFile": "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
+        "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1
+      },
+      "propsWithCallSites": {
+        "payment": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DepositInformation",
+      "sourceFile": "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "payment": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PaymentActivities",
+      "sourceFile": "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentActivities/PaymentActivities",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
+        "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1
+      },
+      "propsWithCallSites": {
+        "payment": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/CoinbaseManagedPaymentDetails.tsx": 1,
+          "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1
+        }
+      }
+    },
+    {
       "name": "AccountInformation",
       "sourceFile": "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/AccountInformation",
       "totalInstances": 1,
@@ -7575,6 +7843,30 @@
       }
     },
     {
+      "name": "CryptoIcon",
+      "sourceFile": "@commerce/frontend/components/CryptoIcon/CryptoIcon",
+      "totalInstances": 7,
+      "totalCallSites": 6,
+      "callSites": {
+        "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/PaymentSettings/EnabledCryptocurrencies/CryptocurrencyRow.tsx": 1
+      },
+      "propsWithCallSites": {
+        "currency": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal.tsx": 2,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/PaymentSettings/EnabledCryptocurrencies/CryptocurrencyRow.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ActionCell",
       "sourceFile": "@commerce/frontend/components/Table/Cells/ActionCell",
       "totalInstances": 4,
@@ -7605,24 +7897,36 @@
       "totalCallSites": 1
     },
     {
-      "name": "CryptoIcon",
-      "sourceFile": "@commerce/frontend/components/CryptoIcon/CryptoIcon",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "callSites": {
-        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/PaymentSettings/EnabledCryptocurrencies/CryptocurrencyRow.tsx": 1
-      },
+      "name": "BalanceDetailsModal",
+      "sourceFile": "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/BalanceDetailsModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
       "propsWithCallSites": {
-        "currency": {
-          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceCryptocurrencyColumn.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionDetailsModal.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/PaymentSettings/EnabledCryptocurrencies/CryptocurrencyRow.tsx": 1
+        "balance": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1
+        },
+        "onProcessFunds": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1
+        },
+        "isOpen": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1
+        },
+        "onClose": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ProcessFundsRequestConfirmationModal",
+      "sourceFile": "@commerce/frontend/pages/selfManaged/Balances/BalanceDetailsModal/ProcessFundsConfirmationModal/ProcessFundsRequestConfirmationModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isOpen": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1
+        },
+        "onClose": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell.tsx": 1
         }
       }
     },
@@ -7636,6 +7940,20 @@
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1
         },
         "currency": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BalanceProcessingCell",
+      "sourceFile": "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalanceProcessingCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "currency": {
+          "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1
+        },
+        "testID": {
           "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTable.tsx": 1
         }
       }
@@ -7797,6 +8115,17 @@
       }
     },
     {
+      "name": "PaymentInformation",
+      "sourceFile": "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "payment": {
+          "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1
+        }
+      }
+    },
+    {
       "name": "RefundPaymentModal",
       "sourceFile": "@commerce/frontend/pages/selfManaged/Payments/RefundPaymentModal/RefundPaymentModal",
       "totalInstances": 2,
@@ -7821,17 +8150,6 @@
         "onClose": {
           "@commerce/frontend/pages/selfManaged/Payments/PaymentActions/RefundPayment.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PaymentInformation",
-      "sourceFile": "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "payment": {
-          "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentDetails.tsx": 1
         }
       }
     },
@@ -7982,6 +8300,35 @@
       }
     },
     {
+      "name": "InvoiceInformation",
+      "sourceFile": "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "invoice": {
+          "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceDetails.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "InvoiceStatusCell",
+      "sourceFile": "@commerce/frontend/components/Table/Cells/InvoiceStatusCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "cellTestID": {
+          "@commerce/frontend/pages/shared/Invoices/InvoicesTable/InvoicesTable.tsx": 1
+        },
+        "status": { "@commerce/frontend/pages/shared/Invoices/InvoicesTable/InvoicesTable.tsx": 1 }
+      }
+    },
+    {
+      "name": "NewInvoiceForm",
+      "sourceFile": "@commerce/frontend/pages/shared/Invoices/NewInvoice/NewInvoiceForm/NewInvoiceForm",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "ErrorPage",
       "sourceFile": "@commerce/frontend/pages/shared/Error/ErrorPage",
       "totalInstances": 3,
@@ -8013,35 +8360,6 @@
           "@commerce/frontend/pages/shared/Error/NotFound/NotFound.tsx": 1
         }
       }
-    },
-    {
-      "name": "InvoiceInformation",
-      "sourceFile": "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "invoice": {
-          "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceDetails.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "InvoiceStatusCell",
-      "sourceFile": "@commerce/frontend/components/Table/Cells/InvoiceStatusCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "cellTestID": {
-          "@commerce/frontend/pages/shared/Invoices/InvoicesTable/InvoicesTable.tsx": 1
-        },
-        "status": { "@commerce/frontend/pages/shared/Invoices/InvoicesTable/InvoicesTable.tsx": 1 }
-      }
-    },
-    {
-      "name": "NewInvoiceForm",
-      "sourceFile": "@commerce/frontend/pages/shared/Invoices/NewInvoice/NewInvoiceForm/NewInvoiceForm",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "ResolvePaymentModal",
@@ -8097,6 +8415,9 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
+        "feeRate": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation.tsx": 1
+        },
         "deposit": {
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation.tsx": 1
         },
@@ -8128,8 +8449,8 @@
       "callSites": {
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
         "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
-        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/AccountInformation.tsx": 1,
         "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
+        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/AccountInformation.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/AccountInformation/AccountInformation.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccount.tsx": 1,
@@ -8206,6 +8527,74 @@
         },
         "exchangeRate": {
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1
+        },
+        "feeRate": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ListTableSettingsItem",
+      "sourceFile": "@commerce/frontend/components/ListTable/ListTableSettingsItem",
+      "totalInstances": 20,
+      "totalCallSites": 17,
+      "callSites": {
+        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailLanguagePreference/EmailLanguagePreference.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailMarketingPreferences/EmailMarketingPreferences.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 4,
+        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/AccountInformation/LocalCurrency/LocalCurrency.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/CoinbaseAccountSelection/CoinbaseAccountSelection.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/LinkCoinbaseAccount/LinkCoinbaseAccount.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/SeedPhraseBackup/GoogleDriveBackup/GoogleDriveBackup.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/BackupCodes/BackupCodes.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/SecondaryAuthentication/SecondaryAuthentication.tsx": 1,
+        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/TwoFactorVerificationStatus/TwoFactorVerificationStatus.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailLanguagePreference/EmailLanguagePreference.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailMarketingPreferences/EmailMarketingPreferences.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 4,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/AccountInformation/LocalCurrency/LocalCurrency.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/CoinbaseAccountSelection/CoinbaseAccountSelection.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/LinkCoinbaseAccount/LinkCoinbaseAccount.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/SeedPhraseBackup/GoogleDriveBackup/GoogleDriveBackup.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/BackupCodes/BackupCodes.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/SecondaryAuthentication/SecondaryAuthentication.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/TwoFactorVerificationStatus/TwoFactorVerificationStatus.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
+        },
+        "description": {
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailLanguagePreference/EmailLanguagePreference.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailMarketingPreferences/EmailMarketingPreferences.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 4,
+          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/AccountInformation/LocalCurrency/LocalCurrency.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/CoinbaseAccountSelection/CoinbaseAccountSelection.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/LinkCoinbaseAccount/LinkCoinbaseAccount.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/SeedPhraseBackup/GoogleDriveBackup/GoogleDriveBackup.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/BackupCodes/BackupCodes.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/SecondaryAuthentication/SecondaryAuthentication.tsx": 1,
+          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/TwoFactorVerificationStatus/TwoFactorVerificationStatus.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
         }
       }
     },
@@ -8278,71 +8667,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "ListTableSettingsItem",
-      "sourceFile": "@commerce/frontend/components/ListTable/ListTableSettingsItem",
-      "totalInstances": 20,
-      "totalCallSites": 17,
-      "callSites": {
-        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailLanguagePreference/EmailLanguagePreference.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailMarketingPreferences/EmailMarketingPreferences.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 4,
-        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/AccountInformation/LocalCurrency/LocalCurrency.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/CoinbaseAccountSelection/CoinbaseAccountSelection.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/LinkCoinbaseAccount/LinkCoinbaseAccount.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/SeedPhraseBackup/GoogleDriveBackup/GoogleDriveBackup.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/BackupCodes/BackupCodes.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/SecondaryAuthentication/SecondaryAuthentication.tsx": 1,
-        "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/TwoFactorVerificationStatus/TwoFactorVerificationStatus.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": {
-          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailLanguagePreference/EmailLanguagePreference.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailMarketingPreferences/EmailMarketingPreferences.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 4,
-          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/AccountInformation/LocalCurrency/LocalCurrency.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/CoinbaseAccountSelection/CoinbaseAccountSelection.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/LinkCoinbaseAccount/LinkCoinbaseAccount.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/SeedPhraseBackup/GoogleDriveBackup/GoogleDriveBackup.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/BackupCodes/BackupCodes.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/SecondaryAuthentication/SecondaryAuthentication.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/TwoFactorVerificationStatus/TwoFactorVerificationStatus.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
-        },
-        "description": {
-          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailLanguagePreference/EmailLanguagePreference.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailMarketingPreferences/EmailMarketingPreferences.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 4,
-          "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/AccountInformation/LocalCurrency/LocalCurrency.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/CoinbaseAccountSelection/CoinbaseAccountSelection.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/LinkCoinbaseAccount/LinkCoinbaseAccount.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/SeedPhraseBackup/GoogleDriveBackup/GoogleDriveBackup.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/BackupCodes/BackupCodes.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/SecondaryAuthentication/SecondaryAuthentication.tsx": 1,
-          "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/TwoFactorVerificationStatus/TwoFactorVerificationStatus.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
-        }
-      }
-    },
-    {
       "name": "CryptoConversionInformationBodyRow",
       "sourceFile": "@commerce/frontend/pages/selfManaged/Balances/CryptoConversionsTable/CryptoConversionsDetailsModal/CryptoConversionInformationBodyRow",
       "totalInstances": 7,
@@ -8367,73 +8691,6 @@
       "propsWithCallSites": {
         "description": {
           "@commerce/frontend/pages/selfManaged/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 7
-        }
-      }
-    },
-    {
-      "name": "QRCode",
-      "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/qrcode.react/QRCode",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "size": {
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1
-        },
-        "level": {
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1
-        },
-        "value": {
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TfaSetupInstructions",
-      "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isDesktopView": {
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1
-        },
-        "totpSeed": {
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1
-        },
-        "onSuccess": {
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TfaQrCode",
-      "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "totpSeed": {
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TfaRecoveryCodes",
-      "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isDesktopView": {
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "form",
-      "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onSubmit": {
-          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 1
         }
       }
     },
@@ -8627,6 +8884,73 @@
         "width": {
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 2,
           "@commerce/frontend/pages/shared/Invoices/NewInvoice/NewInvoiceForm/NewInvoiceForm.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "QRCode",
+      "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/qrcode.react/QRCode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "size": {
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1
+        },
+        "level": {
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1
+        },
+        "value": {
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TfaSetupInstructions",
+      "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isDesktopView": {
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1
+        },
+        "totpSeed": {
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1
+        },
+        "onSuccess": {
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TfaQrCode",
+      "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaQrCode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "totpSeed": {
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TfaRecoveryCodes",
+      "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaRecoveryCodes",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isDesktopView": {
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetup.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "form",
+      "sourceFile": "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onSubmit": {
+          "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 1
         }
       }
     },
@@ -8835,18 +9159,6 @@
       }
     },
     {
-      "name": "EmailLanguagePreference",
-      "sourceFile": "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailLanguagePreference",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "EmailMarketingPreferences",
-      "sourceFile": "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailMarketingPreferences",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "EditModal",
       "sourceFile": "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal",
       "totalInstances": 1,
@@ -8914,6 +9226,18 @@
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/WebhookSubscriptionItem.tsx": 1
         }
       }
+    },
+    {
+      "name": "EmailLanguagePreference",
+      "sourceFile": "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailLanguagePreference",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "EmailMarketingPreferences",
+      "sourceFile": "@commerce/frontend/pages/shared/Settings/NotificationSettings/EmailMarketingPreferences",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "SharedSecretModal",

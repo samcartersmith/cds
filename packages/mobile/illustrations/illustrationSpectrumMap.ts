@@ -402,6 +402,18 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/emptyNfts-0').content,
     dark: () => require('./images/dark/emptyNfts-0').content,
   },
+  emptyStateCheckBackLater: {
+    light: () => require('./images/light/emptyStateCheckBackLater-0').content,
+    dark: () => require('./images/dark/emptyStateCheckBackLater-0').content,
+  },
+  emptyStateNft404Page: {
+    light: () => require('./images/light/emptyStateNft404Page-0').content,
+    dark: () => require('./images/dark/emptyStateNft404Page-0').content,
+  },
+  emptyStateNftSoldOut: {
+    light: () => require('./images/light/emptyStateNftSoldOut-0').content,
+    dark: () => require('./images/dark/emptyStateNftSoldOut-0').content,
+  },
   emptyTradingSpotRectangle: {
     light: () => require('./images/light/emptyTradingSpotRectangle-0').content,
     dark: () => require('./images/dark/emptyTradingSpotRectangle-0').content,
@@ -1546,10 +1558,6 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/2fa-1').content,
     dark: () => require('./images/dark/2fa-1').content,
   },
-  apyInterest: {
-    light: () => require('./images/light/apyInterest-0').content,
-    dark: () => require('./images/dark/apyInterest-0').content,
-  },
   accountsNavigation: {
     light: () => require('./images/light/accountsNavigation-0').content,
     dark: () => require('./images/dark/accountsNavigation-0').content,
@@ -1601,10 +1609,6 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   analyticsNavigation: {
     light: () => require('./images/light/analyticsNavigation-1').content,
     dark: () => require('./images/dark/analyticsNavigation-1').content,
-  },
-  apartOfDropsNft: {
-    light: () => require('./images/light/apartOfDropsNft-0').content,
-    dark: () => require('./images/dark/apartOfDropsNft-0').content,
   },
   applyForHigherLimits: {
     light: () => require('./images/light/applyForHigherLimits-1').content,
@@ -2513,10 +2517,6 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   walletLinkNavigation: {
     light: () => require('./images/light/walletLinkNavigation-1').content,
     dark: () => require('./images/dark/walletLinkNavigation-1').content,
-  },
-  walletLogoNavigation: {
-    light: () => require('./images/light/walletLogoNavigation-0').content,
-    dark: () => require('./images/dark/walletLogoNavigation-0').content,
   },
   walletNavigation: {
     light: () => require('./images/light/walletNavigation-1').content,

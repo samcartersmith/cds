@@ -1,6 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
 import { ScrollView, View, ViewStyle } from 'react-native';
-import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
@@ -8,7 +7,7 @@ import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
 import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
 import { useFeatureFlagToggler } from '@cbhq/cds-common/system/useFeatureFlagToggler';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
-import type { PaletteForeground, SpacingProps } from '@cbhq/cds-common/types';
+import type { SpacingProps } from '@cbhq/cds-common/types';
 
 import { Switch } from '../controls/Switch';
 import { usePalette } from '../hooks/usePalette';
@@ -16,31 +15,7 @@ import { Box, BoxProps } from '../layout/Box';
 import { Divider } from '../layout/Divider';
 import { VStack } from '../layout/VStack';
 import { useFeatureFlags } from '../system/useFeatureFlags';
-import { TextBody } from '../typography/TextBody';
-import { TextLabel1 } from '../typography/TextLabel1';
 import { TextTitle3 } from '../typography/TextTitle3';
-
-type LoremIpsumProps = {
-  title?: string;
-  color?: PaletteForeground;
-  concise?: boolean;
-  repeat?: number;
-};
-
-export const LoremIpsum = ({ title, color, concise, repeat }: LoremIpsumProps) => {
-  return (
-    <>
-      <TextLabel1 color={color} spacingBottom={1}>
-        {title}
-      </TextLabel1>
-      {concise ? null : (
-        <TextBody color={color} spacingBottom={3}>
-          {repeat ? loremIpsum.repeat(repeat) : loremIpsum}
-        </TextBody>
-      )}
-    </>
-  );
-};
 
 export type ExampleProps = {
   children: React.ReactNode;

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "cli": "nx",
+  "properties": {
+    "args": {
+      "triggerProjects": "array",
+      "description": "An array of projects that will trigger the run of the target"
+    },
+    "target": {
+      "type": "string",
+      "description": "The nx target to run"
+    }
+  }
+}

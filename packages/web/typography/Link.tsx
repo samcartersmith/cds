@@ -90,6 +90,7 @@ export const Link = memo(
       color = 'primary',
       mono,
       dangerouslySetClassName,
+      underline = false,
       ...props
     }: LinkProps,
     ref: ForwardedRef<HTMLElement>,
@@ -112,6 +113,7 @@ export const Link = memo(
           as="span"
           color={color}
           mono={mono}
+          underline={underline}
           dangerouslySetClassName={linkContainerClassName}
         >
           {children}

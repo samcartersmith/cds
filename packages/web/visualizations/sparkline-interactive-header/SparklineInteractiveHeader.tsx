@@ -7,14 +7,11 @@ import {
 } from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
 import { interpolateSubHeadText } from '@cbhq/cds-common/visualizations/interpolateSubHeadText';
 
-import { useDimensions } from '../../hooks/useDimensions';
 import { usePalette } from '../../hooks/usePalette';
-import { HStack } from '../../layout';
+import { VStack } from '../../layout';
 import { TextDisplay3, TextHeadline, TextTitle4 } from '../../typography';
 
 export * from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
-
-const mobileLayoutBreakpoint = 650;
 
 const SparklineInteractiveHeaderStable = memo(
   forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderProps>(
@@ -25,9 +22,6 @@ const SparklineInteractiveHeaderStable = memo(
       const subHeadRef = useRef<HTMLSpanElement>(null);
       const subHeadAccessoryRef = useRef<HTMLSpanElement>(null);
       const palette = usePalette();
-      const { observe: containerRef, width: containerWidth } = useDimensions();
-
-      const isMobileLayout = containerWidth > 0 && containerWidth < mobileLayoutBreakpoint;
 
       const valuesRef = useRef<SparklineInteractiveHeaderValues>({
         title: defaultTitle,
@@ -140,19 +134,16 @@ const SparklineInteractiveHeaderStable = memo(
       );
 
       const title = (
-        <>
-          <HStack spacing={0} alignItems="baseline">
-            <TextDisplay3 tabularNumbers as="div" color="foreground" spacingEnd={1}>
-              <span ref={titleRef}>{defaultTitle}</span>
-            </TextDisplay3>
-            {!isMobileLayout && subHead}
-          </HStack>
-          {isMobileLayout && subHead}
-        </>
+        <VStack spacing={0} alignItems="baseline">
+          <TextDisplay3 tabularNumbers as="div" color="foreground" spacingEnd={1}>
+            <span ref={titleRef}>{defaultTitle}</span>
+          </TextDisplay3>
+          {subHead}
+        </VStack>
       );
 
       return (
-        <div data-testid={testID} ref={containerRef} style={{ width: '100%' }}>
+        <div data-testid={testID} style={{ width: '100%' }}>
           {labelNode ?? label}
           {title}
         </div>

@@ -6,7 +6,6 @@ import { VStack } from '@cbhq/cds-web/layout';
 import { PopoverContentPositionConfig } from '@cbhq/cds-web/overlays/popover/PopoverProps';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { FeatureFlagProvider } from '@cbhq/cds-web/system/FeatureFlagProvider';
-import { TextBody } from '@cbhq/cds-web/typography/TextBody';
 
 const switcherPositionConfig: PopoverContentPositionConfig = {
   placement: 'bottom',
@@ -32,22 +31,16 @@ export const AppSwitcherExample = () => {
   return (
     <FeatureFlagProvider frontierColor frontierButton>
       <PortalProvider>
-        <VStack spacingVertical={2}>
-          <TextBody as="p" spacingBottom={2}>
-            App Switcher is a global component that lives in the Navigation Header that enables
-            users to switch between all Coinbase products without having to log in again.
-          </TextBody>
-          <VStack
-            alignItems="center"
-            justifyContent="center"
-            spacingVertical={4}
-            bordered
-            borderRadius="standard"
-          >
-            <AppSwitcherRecipe>
-              <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
-            </AppSwitcherRecipe>
-          </VStack>
+        <VStack
+          alignItems="center"
+          justifyContent="center"
+          spacingVertical={4}
+          bordered
+          borderRadius="standard"
+        >
+          <AppSwitcherRecipe>
+            <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
+          </AppSwitcherRecipe>
         </VStack>
       </PortalProvider>
     </FeatureFlagProvider>

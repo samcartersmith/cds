@@ -1,16 +1,13 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import WebPropsTable from ':docgen/web/icons/SubBrandLogoMark/api.mdx';
+import MobilePropsTable from ':docgen/mobile/icons/SubBrandLogoMark/api.mdx';
 
-<RightSidebar toc={toc} />
+## Props
 
-### type
-
-<ApiDetails
-  componentName="SubBrandLogoMark"
-  propertyName="type"
-  required={true}
-  defaultValue=""
-  mobileOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
-  webOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
-/>
+<Tabs groupId="platform" variant="secondary">
+  <TabItem value="web" label="Web">
+    <WebPropsTable />
+  </TabItem>
+  <TabItem value="mobile" label="Mobile">
+    <MobilePropsTable />
+  </TabItem>
+</Tabs>

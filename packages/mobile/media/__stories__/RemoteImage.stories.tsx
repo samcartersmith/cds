@@ -1,9 +1,12 @@
 import React from 'react';
 import { assets, svgs } from '@cbhq/cds-common/internal/data/assets';
+import { remoteImageBuilder } from '@cbhq/cds-common/internal/remoteImageBuilder';
 import { entries } from '@cbhq/cds-utils';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';
+import { VStack } from '../../layout/VStack';
+import { TextBody } from '../../typography/TextBody';
 import { getSource, RemoteImage } from '../RemoteImage';
 
 const sharedProps = {
@@ -15,6 +18,20 @@ const sharedProps = {
 
 const mockItems = Array.from({ length: 4 });
 const images = entries(assets).map(([, { imageUrl }]) => imageUrl);
+const {
+  AvatarSizesWithCircle,
+  AvatarSizesWithSquircle,
+  BorderColorImg,
+  BorderColorSvgs,
+  CircleFallback,
+  RectangleFallback,
+  SquareFallback,
+} = remoteImageBuilder({
+  RemoteImage,
+  VStack,
+  HStack,
+  TextBody: (props) => <TextBody {...props} />,
+});
 
 const RemoteImageScreen = () => {
   return (
@@ -84,6 +101,27 @@ const RemoteImageScreen = () => {
             />
           ))}
         </HStack>
+      </Example>
+      <Example title="Avatar Sizes with Circle">
+        <AvatarSizesWithCircle />
+      </Example>
+      <Example title="Avatar Sizes with Squircle">
+        <AvatarSizesWithSquircle />
+      </Example>
+      <Example title="Border Color Imgs">
+        <BorderColorImg />
+      </Example>
+      <Example title="Border Color Svgs">
+        <BorderColorSvgs />
+      </Example>
+      <Example title="Circle Fallback">
+        <CircleFallback />
+      </Example>
+      <Example title="Rectangle Fallback">
+        <RectangleFallback />
+      </Example>
+      <Example title="Square Fallback">
+        <SquareFallback />
       </Example>
     </ExampleScreen>
   );

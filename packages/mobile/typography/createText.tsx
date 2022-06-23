@@ -11,6 +11,7 @@ import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { useTextAlign } from '../hooks/useTextAlign';
 import { DangerouslySetStyle, OmitStyle } from '../types';
+import { getAdjustsFontSizeToFitProp } from '../utils/getAdjustsFontSizeToFitProp';
 
 import { useTypographyStyles } from './useTypographyStyles';
 
@@ -61,6 +62,7 @@ export const createText = (name: Typography, overrides?: TextProps) => {
     animated = overrides?.animated,
     dangerouslySetStyle = overrides?.dangerouslySetStyle,
     deprecatedLineHeight = overrides?.deprecatedLineHeight,
+    adjustsFontSizeToFit = overrides?.adjustsFontSizeToFit,
     // TODO: replace with glyph. This is not implemented yet
     slashedZero,
     selectable = overrides?.selectable ?? 'none',
@@ -166,6 +168,7 @@ export const createText = (name: Typography, overrides?: TextProps) => {
         selectable={selectable !== 'none'}
         style={style as TextStyle}
         {...fontScaleProps}
+        {...getAdjustsFontSizeToFitProp({ enabled: adjustsFontSizeToFit })}
       >
         {children}
       </TextComp>

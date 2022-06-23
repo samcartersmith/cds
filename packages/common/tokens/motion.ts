@@ -1,5 +1,6 @@
 export type EasingArray = [number, number, number, number];
 
+/** @deprecated Import from common/motion/tokens instead */
 export const curves = {
   global: [0.6, 0, 0.15, 1] as EasingArray,
   enterExpressive: [0.33, 0, 0, 1] as EasingArray,
@@ -9,6 +10,7 @@ export const curves = {
   linear: [0, 0, 1, 1] as EasingArray,
 } as const;
 
+/** @deprecated Import from common/motion/tokens instead */
 export const durations = {
   quick: 33,
   /** Buttons, Toggles, Text, Icons, Selection Controls */

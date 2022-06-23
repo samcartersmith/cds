@@ -1,4 +1,4 @@
-import { durations } from '../tokens/motion';
+import { durations } from '../motion/tokens';
 import { CollapsibleDirection, MotionBaseSpec } from '../types';
 
 type CollapsibleMotionSpec = Record<CollapsibleDirection, MotionBaseSpec>;

@@ -8,25 +8,6 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## 0.45.4 (6/22/2022, 02:14 PM PST)
-
-#### 🐞 Fixes
-
-- **[illustrations]** Publish 06/22/22 [mm/dd/yy] Illo. [#704](https://github.cbhq.net/frontend/cds/pull/704)
-- **[Icons]** Publish Icons June 22nd, 2022. [#702](https://github.cbhq.net/frontend/cds/pull/702)
-
-## 0.45.3 (6/8/2022, 01:19 PM PST)
-
-#### 🐞 Fixes
-
-- **[illustrations]** Publish 06/08/22 [mm/dd/yy] Illo. [#627](https://github.cbhq.net/frontend/cds/pull/627)
-
-## 0.45.2 (6/3/2022, 10:04 AM PST)
-
-#### 🐞 Fixes
-
-- Rollback gesture handler version. [#593](https://github.cbhq.net/frontend/cds/pull/593)
-
 ## 0.45.1 (6/1/2022, 02:00 PM PST)
 
 #### 🐞 Fixes
@@ -45,8 +26,9 @@ All notable changes to this project will be documented in this file.
 
 #### 🐞 Fixes
 
-- **[Illustrations]** Publish May 25 2022 Illustrations. [#500](https://github.cbhq.net/frontend/cds/pull/500)
 - Fix merge conflicts. [#420](https://github.cbhq.net/frontend/cds/pull/420)
+- **[Illustration]** Publish Illustrations May 12th, 2022 (#393). [#397](https://github.cbhq.net/frontend/cds/pull/397)
+- **[Icons]** Publish May 5th 2022 icons. [#353](https://github.cbhq.net/frontend/cds/pull/353)
 - Add TextInput height. [#337](https://github.cbhq.net/frontend/cds/pull/337)
 - **[isValidUrl]** Top-level-domain should be considered valid as long as its 2-63 chars long in isValidUrl. [#338](https://github.cbhq.net/frontend/cds/pull/338)
 - **[Interactable]** Resolve anti-aliasing issue on Interactables. [#234](https://github.cbhq.net/frontend/cds/pull/234), [CDS-2063](https://jira.coinbase-corp.com/browse/CDS-2063)
@@ -57,44 +39,6 @@ All notable changes to this project will be documented in this file.
 
 - **[Modal]** Refactor Modal to use the useMotionProps hook. [#410](https://github.cbhq.net/frontend/cds/pull/410)
 - Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
-
-## 0.44.7 (5/23/2022, 10:04 AM PST)
-
-#### 🚀 Updates
-
-- **[Illustrations]** Re-add SpotSquare 120x120 and Pictogram 96x96. Deprecate illustration sizes instead. Will remove these sizes in next major release. [#461](https://github.cbhq.net/frontend/cds/pull/461)
-
-## 0.44.6 (5/19/2022, 09:03 AM PST)
-
-#### 🐞 Fixes
-
-- Hidden controls should still take up space and be clickable. [#446](https://github.cbhq.net/frontend/cds/pull/446)
-
-## 0.44.5 (5/18/2022, 08:36 AM PST)
-
-#### 🐞 Fixes
-
-- **[icons]** Publish 05/17/22 [mm/dd/yy] Icons. [#422](https://github.cbhq.net/frontend/cds/pull/422)
-
-## 0.44.4 (5/12/2022, 04:03 PM PST)
-
-#### 🐞 Fixes
-
-- **[Illustration]** Publish Illustrations May 12th, 2022. [#393](https://github.cbhq.net/frontend/cds/pull/393)
-
-#### 📘 Misc
-
-- Upgrade @cbhq/mono-pipeline from ^0.4.3->^0.5.10. [#394](https://github.cbhq.net/frontend/cds/pull/394)
-
-## 0.44.3 (5/6/2022, 02:32 PM PST)
-
-#### 🐞 Fixes
-
-- **[Icons]** Publish May 5th 2022 icons. [#351](https://github.cbhq.net/frontend/cds/pull/351)
-
-## 0.44.2 (5/5/2022, 01:35 PM PST)
-
-#### 🚀 Updates
 
 ## 0.44.1 (4/22/2022, 11:49 AM PST)
 

@@ -14,7 +14,10 @@
       "path": "../../packages/web"
     },
     {
-      "path": "../../packages/docusaurus-plugin-docgen"
+      "path": "../../packages/docusaurus-preset"
+    },
+    {
+      "path": "../../packages/docusaurus-theme"
     }
   ]
 }

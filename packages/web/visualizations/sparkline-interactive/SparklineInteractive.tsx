@@ -8,6 +8,7 @@ import {
   SparklineInteractiveDefaultFallback,
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { VisualizationContainerDimension } from '@cbhq/cds-common/types/VisualizationContainerBaseProps';
+import { debounce } from '@cbhq/cds-common/utils/debounce';
 import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
 import { chartFallbackNegative, chartFallbackPositive } from '@cbhq/cds-lottie-files';
 import { emptyArray, isStorybook, noop } from '@cbhq/cds-utils';
@@ -17,6 +18,7 @@ import { useDimensions } from '../../hooks/useDimensions';
 import { usePalette } from '../../hooks/usePalette';
 import { Box } from '../../layout/Box';
 import { ThemeProvider } from '../../system';
+import { getBrowserGlobals } from '../../utils/browser';
 import { VisualizationContainer } from '../VisualizationContainer';
 
 import { InnerSparklineInteractiveProvider } from './InnerSparklineInteractiveProvider';
@@ -250,8 +252,27 @@ function SparklineInteractiveWithGeneric<Period extends string>({
   compact,
   ...props
 }: SparklineInteractiveBaseProps<Period>) {
+  const [resizeKey, setResizeKey] = useState(0);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const resizeHandler = useCallback(
+    debounce(() => {
+      // no resizing on percy
+      if (!isStorybook()) {
+        setResizeKey((prev) => prev + 1);
+      }
+    }, 300),
+    [],
+  );
+
+  useEffect(() => {
+    getBrowserGlobals()?.window?.addEventListener('resize', resizeHandler);
+    return () => {
+      getBrowserGlobals()?.window?.removeEventListener('resize', resizeHandler);
+    };
+  }, [resizeHandler]);
+
   return (
-    <SparklineInteractiveProvider compact={compact}>
+    <SparklineInteractiveProvider key={resizeKey} compact={compact}>
       <SparklineInteractiveContent compact={compact} {...props} />
     </SparklineInteractiveProvider>
   );

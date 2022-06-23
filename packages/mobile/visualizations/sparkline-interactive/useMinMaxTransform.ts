@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import { Animated, LayoutRectangle } from 'react-native';
-import { durations } from '@cbhq/cds-common/tokens/motion';
+import { durations } from '@cbhq/cds-common/motion/tokens';
 
+import { useSpacingScale } from '../../hooks/useSpacingScale';
+
+import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
 type MinMaxTransformParams = {
@@ -12,10 +15,13 @@ type MinMaxTransformParams = {
 };
 
 export function useMinMaxTransform({ minMaxLayout, x, transform, opacity }: MinMaxTransformParams) {
+  const spacing = useSpacingScale();
   const { height, width } = minMaxLayout;
   const { SparklineInteractiveMinMaxLabelHeight, chartWidth } = useSparklineInteractiveConstants(
     {},
   );
+
+  const { gutter } = useSparklineInteractiveContext();
 
   useEffect(() => {
     // If onLayout has not finished we don't want to show min/max
@@ -24,11 +30,17 @@ export function useMinMaxTransform({ minMaxLayout, x, transform, opacity }: MinM
       opacity.setValue(0);
       return;
     }
+
+    // if we have no gutter the min/max label needs some space so it's not right up against the edge of the screen
+    const minGutter = gutter === 0 ? spacing['1'] : 0;
+
     // Position min or max at center of the desired x coordinate when possible.
     // If this is not possible, ensure that it's never positioned outside of chart container.
     // This means the x transform should never be less than 0 or greater than chartWidth - labelWidth
     const idealX = x - width / 2;
-    const translateX = Math.round(Math.max(0, Math.min(idealX, chartWidth - width)));
+    const translateX = Math.round(
+      Math.max(minGutter, Math.min(idealX, chartWidth - width - minGutter)),
+    );
     // Vertically center the min/max label within SparklineInteractiveMinMaxLabelHeight.
     // This is the area between the vertical dotted line and the top or bottom
     // of sparkline where min/max is displayed
@@ -40,5 +52,15 @@ export function useMinMaxTransform({ minMaxLayout, x, transform, opacity }: MinM
       duration: durations.moderate1,
       useNativeDriver: true,
     }).start();
-  }, [SparklineInteractiveMinMaxLabelHeight, chartWidth, height, opacity, transform, width, x]);
+  }, [
+    SparklineInteractiveMinMaxLabelHeight,
+    chartWidth,
+    gutter,
+    height,
+    opacity,
+    spacing,
+    transform,
+    width,
+    x,
+  ]);
 }

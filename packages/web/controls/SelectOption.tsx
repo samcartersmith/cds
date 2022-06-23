@@ -77,6 +77,8 @@ export const SelectOption = memo(
     onPress,
     onKeyPress,
     tabIndex,
+    accessibilityLabel,
+    testID,
     ...props
   }: SelectOptionProps) => {
     const selectOptionRef = useRef<HTMLButtonElement | null>(null);
@@ -132,6 +134,8 @@ export const SelectOption = memo(
         ref={selectOptionRef}
         role="menuitem"
         noScaleOnPress
+        accessibilityLabel={accessibilityLabel}
+        testID={testID}
       >
         <Cell
           {...selectCellSpacingConfig}

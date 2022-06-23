@@ -3,8 +3,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 60,
-      "totalCallSites": 24,
+      "totalInstances": 68,
+      "totalCallSites": 26,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -17,25 +17,28 @@
         "views/YieldCenter/components/AllAssetsOwnedSection/AllAssetsOwnedSection.tsx": 3,
         "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 3,
         "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
-        "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+        "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 3,
         "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 4,
         "views/YieldCenter/components/EarningAssetModal/EarningAssetModalManageInterest.tsx": 2,
         "views/YieldCenter/components/EarningAssetModal/InterestChangeConfirmation.tsx": 1,
+        "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
         "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 3,
         "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 4,
         "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 3,
         "views/YieldCenter/components/MoreSection/MoreSection.tsx": 7,
         "views/YieldCenter/components/MoreSection/MoreSectionFallback.tsx": 1,
+        "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 2,
         "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1,
+        "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 5,
         "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 2,
         "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1,
-        "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 3,
-        "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 4,
         "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 2,
         "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 3,
         "views/YieldCenter/flows/SsnPromptFlow/steps/SsnPromptStep.tsx": 2,
         "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 2,
-        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 4,
+        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 5,
+        "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 3,
+        "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 4,
         "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1
       },
       "propsWithCallSites": {
@@ -43,7 +46,9 @@
           "views/YieldCenter/YieldCenterContent.tsx": 2,
           "views/YieldCenter/components/EarningAssetModal/InterestChangeConfirmation.tsx": 1,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 2,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
           "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 3
         },
         "width": {
@@ -53,15 +58,17 @@
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 2,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 3,
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1,
-          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1,
-          "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 2
+          "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 2,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1,
+          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
         },
         "justifyContent": {
           "views/YieldCenter/components/AllAssetsOwnedSection/AllAssetsOwnedSection.tsx": 3,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 2,
-          "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1
+          "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1
         },
         "flexBasis": {
           "views/YieldCenter/components/AllAssetsOwnedSection/AllAssetsOwnedSection.tsx": 2
@@ -71,16 +78,17 @@
           "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 1,
           "views/YieldCenter/components/EarningAssetModal/EarningAssetModalManageInterest.tsx": 2,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 2,
-          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 2,
           "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 2,
           "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 3,
           "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 2,
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 2
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 2,
+          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 2
         },
         "spacingVertical": {
           "views/YieldCenter/components/AllAssetsOwnedSection/AllAssetsOwnedSection.tsx": 1,
-          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
           "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1,
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1,
           "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
         },
@@ -94,18 +102,19 @@
           "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 2
         },
         "spacingHorizontal": {
-          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
           "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1,
           "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
         },
         "spacing": {
           "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 2,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 2,
-          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 2,
           "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/SsnPromptStep.tsx": 1,
-          "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1
+          "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
+          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 2
         },
         "spacingTop": {
           "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 3,
@@ -113,7 +122,7 @@
         },
         "minHeight": {
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 2
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1
         },
         "spacingStart": {
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
@@ -122,6 +131,7 @@
         "bordered": {
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSectionFallback.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1,
           "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
@@ -129,6 +139,7 @@
         "borderRadius": {
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSectionFallback.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1,
           "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
@@ -136,6 +147,7 @@
         "background": {
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSectionFallback.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1,
           "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
@@ -143,9 +155,9 @@
         "overflow": {
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSectionFallback.tsx": 1,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
-          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1,
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1
+          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
         },
         "height": {
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1,
@@ -153,6 +165,9 @@
         },
         "borderedBottom": {
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1
+        },
+        "flexShrink": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
         },
         "alignContent": {
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1
@@ -162,8 +177,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 26,
-      "totalCallSites": 14,
+      "totalInstances": 27,
+      "totalCallSites": 15,
       "cds": "@cbhq/cds-web/layout/Box",
       "callSites": {
         "views/YieldCenter/YieldCenterNUX.tsx": 1,
@@ -174,12 +189,13 @@
         "views/YieldCenter/components/MoreSection/MoreSectionFallback.tsx": 3,
         "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 4,
         "views/YieldCenter/components/SsnRequiredCard/SsnRequiredCard.tsx": 1,
+        "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1,
         "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1,
-        "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
-        "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 2,
         "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 2,
         "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
-        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 2
+        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 2,
+        "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
+        "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 2
       },
       "propsWithCallSites": {
         "spacingVertical": {
@@ -194,8 +210,8 @@
         "justifyContent": {
           "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
-          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1,
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 2
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 2,
+          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
         },
         "alignItems": {
           "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1,
@@ -206,9 +222,9 @@
         "spacing": {
           "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
-          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 1,
-          "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1
+          "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
+          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
         },
         "flexGrow": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 2 },
         "flexShrink": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 2 },
@@ -222,7 +238,10 @@
           "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
         },
         "flexDirection": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 },
-        "spacingStart": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 },
+        "spacingStart": {
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
         "spacingEnd": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 },
         "spacingBottom": {
           "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
@@ -238,7 +257,10 @@
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1,
           "views/YieldCenter/components/SsnRequiredCard/SsnRequiredCard.tsx": 1
         },
-        "offsetTop": { "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1 },
+        "offsetTop": {
+          "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1
+        },
         "bordered": { "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1 },
         "borderRadius": { "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1 },
         "background": { "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1 },
@@ -277,55 +299,76 @@
     {
       "name": "Divider",
       "sourceFile": "@cbhq/cds-web/layout/Divider",
-      "totalInstances": 10,
-      "totalCallSites": 8,
+      "totalInstances": 12,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-web/layout/Divider",
       "callSites": {
         "views/YieldCenter/components/AllAssetsOwnedSection/AllAssetsOwnedSection.tsx": 1,
-        "views/YieldCenter/components/EligibleRewardCell/EligibleRewardCell.tsx": 1,
         "views/YieldCenter/components/EarningAssetModal/EarningAssetModalManageInterest.tsx": 1,
+        "views/YieldCenter/components/EligibleRewardCell/EligibleRewardCell.tsx": 1,
         "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
         "views/YieldCenter/components/MoreSection/MoreSectionFallback.tsx": 1,
+        "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1,
+        "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1,
         "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
         "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 2,
         "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
       },
       "propsWithCallSites": {
         "direction": {
-          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalManageInterest.tsx": 1
+          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalManageInterest.tsx": 1,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
         }
       }
     },
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 25,
-      "totalCallSites": 16,
+      "totalInstances": 32,
+      "totalCallSites": 19,
       "cds": "@cbhq/cds-web/layout/HStack",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx",
+          "callSites": [
+            "views/YieldCenter/YieldCenterContent.tsx",
+            "views/YieldCenter/YieldCenterContent.tsx"
+          ]
+        },
+        {
+          "aliasPath": "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/RisksFooter.tsx",
+          "callSites": ["views/YieldCenter/flows/DefiInterestOptInFlow/steps/IntroStep.tsx"]
+        }
+      ],
       "callSites": {
         "views/YieldCenter/components/AllAssetsOwnedSection/AllAssetsOwnedSection.tsx": 1,
         "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 4,
         "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+        "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 4,
         "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 3,
         "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 4,
         "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
         "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
         "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
         "views/YieldCenter/components/MoreSection/MoreSectionFallback.tsx": 1,
+        "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1,
         "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1,
         "views/YieldCenter/components/SsnRequiredCard/SsnRequiredCard.tsx": 1,
+        "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 5,
         "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
         "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1,
-        "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1,
         "views/YieldCenter/flows/DefiInterestOptInFlow/steps/RateDetailsStep.tsx": 1,
-        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1
+        "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1,
+        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1,
+        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/RisksFooter.tsx": 1
       },
       "propsWithCallSites": {
         "gap": {
           "views/YieldCenter/components/AllAssetsOwnedSection/AllAssetsOwnedSection.tsx": 1,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
           "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1,
-          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
+          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/RisksFooter.tsx": 1
         },
         "spacingVertical": {
           "views/YieldCenter/components/AllAssetsOwnedSection/AllAssetsOwnedSection.tsx": 1,
@@ -342,14 +385,30 @@
           "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 3,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
           "views/YieldCenter/components/SsnRequiredCard/SsnRequiredCard.tsx": 1,
-          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1,
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/RateDetailsStep.tsx": 1
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/RateDetailsStep.tsx": 1,
+          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
         },
         "flexWrap": {
           "views/YieldCenter/components/AllAssetsOwnedSection/AllAssetsOwnedSection.tsx": 1,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1,
           "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
+        },
+        "borderRadius": {
+          "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2
+        },
+        "spacing": {
+          "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1,
+          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
+        },
+        "background": {
+          "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2
         },
         "spacingTop": {
           "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 3,
@@ -359,14 +418,9 @@
           "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
-          "views/YieldCenter/components/MoreSection/MoreSectionFallback.tsx": 1
+          "views/YieldCenter/components/MoreSection/MoreSectionFallback.tsx": 1,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 3
         },
-        "borderRadius": { "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1 },
-        "spacing": {
-          "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
-        },
-        "background": { "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1 },
         "width": {
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1,
@@ -379,12 +433,31 @@
         "spacingHorizontal": {
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
-          "views/YieldCenter/components/SsnRequiredCard/SsnRequiredCard.tsx": 1
+          "views/YieldCenter/components/SsnRequiredCard/SsnRequiredCard.tsx": 1,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
         },
         "height": { "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1 },
+        "bordered": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2
+        },
+        "borderColor": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2
+        },
+        "alignSelf": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
+        "spacingStart": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
+        "onClick": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
         "spacingBottom": {
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/RateDetailsStep.tsx": 1,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1
+        },
+        "flexGrow": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/RisksFooter.tsx": 1
         }
       }
     },
@@ -411,8 +484,8 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 14,
-      "totalCallSites": 9,
+      "totalInstances": 17,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
       "callSites": {
         "views/YieldCenter/components/AllAssetsOwnedSection/AllAssetsOwnedSection.tsx": 1,
@@ -421,6 +494,7 @@
         "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
         "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
         "views/YieldCenter/components/PrincipalInsolvencyPreferencesModal/PrincipalInsolvencyPreferencesModal.tsx": 1,
+        "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 3,
         "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
         "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1,
         "views/YieldCenter/flows/DefiInterestOptInFlow/steps/RateDetailsStep.tsx": 1
@@ -433,6 +507,7 @@
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
           "views/YieldCenter/components/PrincipalInsolvencyPreferencesModal/PrincipalInsolvencyPreferencesModal.tsx": 1,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 3,
           "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/RateDetailsStep.tsx": 1
@@ -446,7 +521,16 @@
         "spacingVertical": {
           "views/YieldCenter/components/PrincipalInsolvencyPreferencesModal/PrincipalInsolvencyPreferencesModal.tsx": 1
         },
-        "color": { "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1 },
+        "color": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
+          "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
+        },
+        "testID": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2
+        },
+        "spacingBottom": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
         "tabularNumbers": { "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1 },
         "dangerouslySetClassName": { "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1 }
       }
@@ -461,6 +545,7 @@
         "views/YieldCenter/components/AllAssetsOwnedSection/AllAssetsOwnedSection.tsx": 1,
         "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
         "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+        "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
         "views/YieldCenter/components/EarningAssetModal/RewardsPreferenceOptionCell.tsx": 1,
         "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 2,
         "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
@@ -470,6 +555,7 @@
           "views/YieldCenter/components/AllAssetsOwnedSection/AllAssetsOwnedSection.tsx": 1,
           "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
           "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
           "views/YieldCenter/components/EarningAssetModal/RewardsPreferenceOptionCell.tsx": 1,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 2,
           "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
@@ -505,8 +591,8 @@
         }
       ],
       "callSites": {
-        "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
         "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+        "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
         "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
         "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
         "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
@@ -515,39 +601,28 @@
         "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
       },
       "propsWithCallSites": {
-        "as": {
+        "onPress": {
+          "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
           "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
           "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
+          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
+        },
+        "noScaleOnPress": {
+          "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
+          "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
+          "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
+          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1,
           "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
         },
         "backgroundColor": {
+          "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
           "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
-          "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
-          "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
-          "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
-          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
-        },
-        "onPress": {
-          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
-          "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
-          "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
-          "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
-          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
-        },
-        "borderWidth": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 },
-        "borderRadius": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 },
-        "borderColor": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 },
-        "noScaleOnPress": {
-          "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
           "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
@@ -559,6 +634,17 @@
           "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
           "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
         },
+        "as": {
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
+          "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
+          "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
+          "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
+        },
+        "borderWidth": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 },
+        "borderRadius": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 },
+        "borderColor": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 },
         "width": {
           "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
@@ -572,26 +658,32 @@
     {
       "name": "TextLabel1",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
-      "totalInstances": 5,
-      "totalCallSites": 4,
+      "totalInstances": 6,
+      "totalCallSites": 5,
       "cds": "@cbhq/cds-web/typography/TextLabel1",
       "callSites": {
-        "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
         "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+        "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
         "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 2,
+        "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1,
         "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
-          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
           "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 2,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1,
+          "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
+        },
+        "color": {
+          "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1,
           "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
         },
         "spacing": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 },
-        "color": {
-          "views/YieldCenter/components/BoostPromotion/BoostPromotion.tsx": 1,
-          "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
+        "spacingBottom": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
         }
       }
     },
@@ -613,9 +705,13 @@
     {
       "name": "Spacer",
       "sourceFile": "@cbhq/cds-web/layout/Spacer",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "cds": "@cbhq/cds-web/layout/Spacer",
+      "callSites": {
+        "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
+        "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+      },
       "propsWithCallSites": {
         "horizontal": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 }
       }
@@ -650,64 +746,6 @@
       }
     },
     {
-      "name": "ListCellFallback",
-      "sourceFile": "@cbhq/cds-web/cells/ListCellFallback",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/cells/ListCellFallback",
-      "callSites": {
-        "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-        "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
-      },
-      "propsWithCallSites": {
-        "media": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
-        },
-        "description": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
-        },
-        "detail": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
-        },
-        "subdetail": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ListCell",
-      "sourceFile": "@cbhq/cds-web/cells/ListCell",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/cells/ListCell",
-      "callSites": {
-        "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-        "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
-        },
-        "description": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
-        },
-        "detail": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
-        },
-        "subdetail": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
-        },
-        "media": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
-        }
-      }
-    },
-    {
       "name": "ButtonGroup",
       "sourceFile": "@cbhq/cds-web/buttons/ButtonGroup",
       "totalInstances": 1,
@@ -725,35 +763,39 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 15,
-      "totalCallSites": 11,
+      "totalInstances": 19,
+      "totalCallSites": 13,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
         "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 3,
         "views/YieldCenter/components/EarningAssetModal/EarningAssetModalManageInterest.tsx": 1,
         "views/YieldCenter/components/EarningAssetModal/InterestChangeConfirmation.tsx": 2,
+        "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
         "views/YieldCenter/components/PrincipalInsolvencyPreferencesModal/PrincipalInsolvencyPreferencesModal.tsx": 1,
         "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 2,
         "views/YieldCenter/components/SsnRequiredCard/SsnRequiredCard.tsx": 1,
         "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 1,
         "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 1,
         "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
-        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1,
-        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1
+        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 2,
+        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1,
+        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/RisksFooter.tsx": 2
       },
       "propsWithCallSites": {
         "onPress": {
           "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 3,
           "views/YieldCenter/components/EarningAssetModal/EarningAssetModalManageInterest.tsx": 1,
           "views/YieldCenter/components/EarningAssetModal/InterestChangeConfirmation.tsx": 2,
+          "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
           "views/YieldCenter/components/PrincipalInsolvencyPreferencesModal/PrincipalInsolvencyPreferencesModal.tsx": 1,
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 2,
           "views/YieldCenter/components/SsnRequiredCard/SsnRequiredCard.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1,
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 2,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/RisksFooter.tsx": 2
         },
         "variant": {
           "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 3,
@@ -761,17 +803,23 @@
           "views/YieldCenter/components/EarningAssetModal/InterestChangeConfirmation.tsx": 2,
           "views/YieldCenter/components/PrincipalInsolvencyPreferencesModal/PrincipalInsolvencyPreferencesModal.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 1,
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1,
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 2,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/RisksFooter.tsx": 2
         },
         "disabled": {
           "views/YieldCenter/components/EarningAssetModal/InterestChangeConfirmation.tsx": 2
+        },
+        "compact": {
+          "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+          "views/YieldCenter/components/SsnRequiredCard/SsnRequiredCard.tsx": 1
         },
         "block": {
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 1,
-          "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1
+          "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/RisksFooter.tsx": 2
         },
         "accessibilityLabel": {
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 2,
@@ -780,20 +828,21 @@
           "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1
         },
-        "compact": { "views/YieldCenter/components/SsnRequiredCard/SsnRequiredCard.tsx": 1 },
         "loading": {
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx": 1,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/RisksFooter.tsx": 1
         },
         "testID": {
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/RisksFooter.tsx": 1
         }
       }
     },
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 26,
-      "totalCallSites": 13,
+      "totalInstances": 28,
+      "totalCallSites": 14,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 6,
@@ -802,6 +851,7 @@
         "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
         "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
         "views/YieldCenter/components/PrincipalInsolvencyPreferencesModal/PrincipalInsolvencyPreferencesModal.tsx": 1,
+        "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
         "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 1,
         "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 1,
         "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
@@ -818,6 +868,7 @@
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
           "views/YieldCenter/components/PrincipalInsolvencyPreferencesModal/PrincipalInsolvencyPreferencesModal.tsx": 1,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
           "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
@@ -844,6 +895,7 @@
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
           "views/YieldCenter/components/PrincipalInsolvencyPreferencesModal/PrincipalInsolvencyPreferencesModal.tsx": 1,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
           "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
@@ -852,7 +904,11 @@
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/RateDetailsStep.tsx": 1,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
         },
+        "testID": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
         "spacingBottom": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
@@ -874,31 +930,33 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 9,
-      "totalCallSites": 9,
+      "totalInstances": 10,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-web/typography/TextTitle3",
       "callSites": {
         "views/YieldCenter/components/EarningAssetModal/InterestChangeConfirmation.tsx": 1,
         "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
-        "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
+        "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1,
         "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 1,
         "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 1,
         "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
         "views/YieldCenter/flows/DefiInterestOptInFlow/steps/ConfirmationStep.tsx": 1,
         "views/YieldCenter/flows/DefiInterestOptInFlow/steps/IntroStep.tsx": 1,
-        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
+        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1,
+        "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
           "views/YieldCenter/components/EarningAssetModal/InterestChangeConfirmation.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
-          "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep.tsx": 1,
           "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep.tsx": 1,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/ConfirmationStep.tsx": 1,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/IntroStep.tsx": 1,
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1,
+          "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1
         },
         "spacingEnd": {
           "views/YieldCenter/components/EarningAssetModal/InterestChangeConfirmation.tsx": 1
@@ -964,6 +1022,73 @@
       }
     },
     {
+      "name": "ListCellFallback",
+      "sourceFile": "@cbhq/cds-web/cells/ListCellFallback",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/cells/ListCellFallback",
+      "callSites": {
+        "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+        "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+        "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+      },
+      "propsWithCallSites": {
+        "media": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+        },
+        "description": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+        },
+        "detail": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
+        },
+        "subdetail": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
+        },
+        "title": { "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1 }
+      }
+    },
+    {
+      "name": "ListCell",
+      "sourceFile": "@cbhq/cds-web/cells/ListCell",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/cells/ListCell",
+      "callSites": {
+        "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+        "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+        "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+        },
+        "description": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+        },
+        "detail": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
+        },
+        "subdetail": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
+        },
+        "media": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+        },
+        "action": { "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1 }
+      }
+    },
+    {
       "name": "TextDisplay2",
       "sourceFile": "@cbhq/cds-web/typography/TextDisplay2",
       "totalInstances": 2,
@@ -982,13 +1107,14 @@
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 6,
-      "totalCallSites": 4,
+      "totalInstances": 8,
+      "totalCallSites": 5,
       "cds": "@cbhq/cds-web/icons/Icon",
       "callSites": {
         "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
         "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
         "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 2,
+        "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
         "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
       },
       "propsWithCallSites": {
@@ -996,37 +1122,49 @@
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 2,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
         },
         "color": {
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 2,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
         },
         "name": {
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 2,
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 2,
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
         },
-        "spacingStart": { "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1 }
+        "spacingStart": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
+        },
+        "testID": { "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1 }
       }
     },
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 4,
-      "totalCallSites": 3,
+      "totalInstances": 8,
+      "totalCallSites": 4,
       "cds": "@cbhq/cds-web/typography/Link",
       "callSites": {
         "views/YieldCenter/components/PrincipalInsolvencyPreferencesModal/PrincipalInsolvencyPreferencesModal.tsx": 1,
+        "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
         "views/YieldCenter/flows/DefiInterestOptInFlow/steps/IntroStep.tsx": 1,
-        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 2
+        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 4
       },
       "propsWithCallSites": {
         "href": {
           "views/YieldCenter/components/PrincipalInsolvencyPreferencesModal/PrincipalInsolvencyPreferencesModal.tsx": 1
+        },
+        "onClick": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
         },
         "to": {
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/IntroStep.tsx": 1,
@@ -1036,8 +1174,10 @@
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/IntroStep.tsx": 1,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
         },
-        "variant": { "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 2 },
-        "onClick": { "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1 }
+        "variant": { "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 4 },
+        "testID": { "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1 },
+        "key": { "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 2 },
+        "onPress": { "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 2 }
       }
     },
     {
@@ -1086,16 +1226,97 @@
       "cds": "@cbhq/cds-web/cards/CardFooter"
     },
     {
-      "name": "TextTitle1",
-      "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
+      "name": "Modal",
+      "sourceFile": "@cbhq/cds-web/overlays/Modal",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/typography/TextTitle1",
+      "cds": "@cbhq/cds-web/overlays/Modal",
       "propsWithCallSites": {
-        "as": { "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1 },
-        "color": { "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1 },
+        "onRequestClose": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
+        "visible": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
+        "hideDividers": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ModalHeader",
+      "sourceFile": "@cbhq/cds-web/overlays/ModalHeader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/overlays/ModalHeader"
+    },
+    {
+      "name": "ModalBody",
+      "sourceFile": "@cbhq/cds-web/overlays/ModalBody",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/overlays/ModalBody"
+    },
+    {
+      "name": "Pictogram",
+      "sourceFile": "@cbhq/cds-web/illustrations/Pictogram",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/illustrations/Pictogram",
+      "propsWithCallSites": {
+        "name": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
+        "dimension": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
+        "scaleMultiplier": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextTitle1",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/typography/TextTitle1",
+      "callSites": {
+        "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
+        "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2,
+          "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
+        },
+        "color": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1,
+          "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
+        },
+        "testID": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
         "dangerouslySetClassName": { "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1 },
         "tabularNumbers": { "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1 }
+      }
+    },
+    {
+      "name": "SpotSquare",
+      "sourceFile": "@cbhq/cds-web/illustrations/SpotSquare",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/illustrations/SpotSquare",
+      "callSites": {
+        "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2
+      },
+      "propsWithCallSites": {
+        "name": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2
+        },
+        "dimension": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 2
+        }
       }
     },
     {
@@ -1172,61 +1393,30 @@
     {
       "name": "TextLegal",
       "sourceFile": "@cbhq/cds-web/typography/TextLegal",
-      "totalInstances": 3,
+      "totalInstances": 4,
       "totalCallSites": 2,
       "cds": "@cbhq/cds-web/typography/TextLegal",
       "callSites": {
-        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 2,
+        "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 3,
         "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1
       },
       "propsWithCallSites": {
         "spacingBottom": {
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 2,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1
         },
         "color": {
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 2,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 3,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1
         },
         "as": {
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 2,
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 3,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/LegalTermsSection.tsx": 1
         }
       }
     }
   ],
   "presentational": [
-    {
-      "name": "Image",
-      "sourceFile": "@cb/shared/Image",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/Image",
-      "propsWithCallSites": {
-        "width": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 },
-        "height": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 },
-        "src": { "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1 }
-      }
-    },
-    {
-      "name": "EarningAssetModalContent",
-      "sourceFile": "views/YieldCenter/components/EarningAssetModal/EarningAssetModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "@cb/shared/Transitioner"
-    },
-    {
-      "name": "EarningAssetModalContent",
-      "sourceFile": "views/YieldCenter/components/EarningAssetModal/EarningAssetModal/EarningAssetModalContent",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "@cb/shared/Transitioner",
-      "propsWithCallSites": {
-        "fragmentRef": {
-          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDeepLink.tsx": 1
-        }
-      }
-    },
     {
       "name": "Link",
       "sourceFile": "@cb/shared/Link",
@@ -1693,7 +1883,11 @@
       "name": "LoadingFallback",
       "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerRef": { "views/YieldCenter/YieldCenterContent.tsx": 1 },
+        "subscriptionInfo": { "views/YieldCenter/YieldCenterContent.tsx": 1 }
+      }
     },
     {
       "name": "LoadingProvider",
@@ -1702,10 +1896,43 @@
       "totalCallSites": 1
     },
     {
-      "name": "DefiInterestOptInFlow",
-      "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx",
+      "name": "SubscriptionBoostedRatesCard",
+      "sourceFile": "views/YieldCenter/components/SubscriptionBoostedRatesCard",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "views/YieldCenter/YieldCenterContent.tsx": 2 },
+      "propsWithCallSites": { "viewerRef": { "views/YieldCenter/YieldCenterContent.tsx": 2 } }
+    },
+    {
+      "name": "MoreSection",
+      "sourceFile": "views/YieldCenter/components/MoreSection",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "WrappedAssetFaqEntrypoint",
+      "sourceFile": "components/WrappedAsset/components/WrappedAssetFaqEntrypoint",
       "totalInstances": 1,
       "totalCallSites": 1,
+      "propsWithCallSites": { "viewerRef": { "views/YieldCenter/YieldCenterContent.tsx": 1 } }
+    },
+    {
+      "name": "FirstStakeIncentiveYieldCenterPrompt",
+      "sourceFile": "components/YieldPromotions/eth2/Eth2Stake/steps/FirstStakeIncentiveYieldCenterPrompt",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "onClose": { "views/YieldCenter/YieldCenterContent.tsx": 1 } }
+    },
+    {
+      "name": "SsnPromptFlow",
+      "sourceFile": "views/YieldCenter/flows/SsnPromptFlow",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "views/YieldCenter/YieldCenterContent.tsx": 1,
+        "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1,
+        "views/YieldCenter/components/SsnRequiredCard/SsnRequiredCard.tsx": 1
+      },
       "propsWithCallSites": {
         "assetSymbol": {
           "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
@@ -1746,102 +1973,276 @@
           "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
           "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
         },
-        "fallback": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
-          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+        "mobileSpacingBottom": {
+          "views/YieldCenter/YieldCenterContent.tsx": 1,
+          "views/YieldCenter/components/YieldSummary/YieldSummaryFallback.tsx": 1
         }
       }
     },
     {
-      "name": "EarnedYieldCenterCellContent",
-      "sourceFile": "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx",
+      "name": "SsnRequiredBanner",
+      "sourceFile": "views/YieldCenter/components/SsnRequiredBanner",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
-      "name": "EarningAssetModal",
-      "sourceFile": "views/YieldCenter/components/EarningAssetModal/EarningAssetModal",
+      "name": "YieldChart",
+      "sourceFile": "views/YieldCenter/YieldCenterContent.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "assetUuid": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
-        },
-        "rewardsPreferences": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
-        },
-        "fragmentRef": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
-        }
+        "viewerRef": { "views/YieldCenter/YieldCenterContent.tsx": 1 },
+        "currency": { "views/YieldCenter/YieldCenterContent.tsx": 1 },
+        "averageRate": { "views/YieldCenter/YieldCenterContent.tsx": 1 }
       }
     },
     {
-      "name": "RewardTicker",
-      "sourceFile": "components/RewardTicker",
-      "totalInstances": 7,
-      "totalCallSites": 4,
-      "callSites": {
-        "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 2,
-        "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 2,
-        "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 2,
-        "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1
-      },
+      "name": "YieldSummary",
+      "sourceFile": "views/YieldCenter/components/YieldSummary",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "viewerRef": { "views/YieldCenter/YieldCenterContent.tsx": 1 } }
+    },
+    {
+      "name": "MoreWaysToEarnSection",
+      "sourceFile": "views/YieldCenter/components/MoreWaysToEarnSection",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "viewerRef": { "views/YieldCenter/YieldCenterContent.tsx": 1 } }
+    },
+    {
+      "name": "UnearnedRewardsSection",
+      "sourceFile": "views/YieldCenter/components/UnearnedRewardsSection",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "viewerRef": { "views/YieldCenter/YieldCenterContent.tsx": 1 } }
+    },
+    {
+      "name": "Suspense",
+      "sourceFile": "react/Suspense",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "fallback": { "views/YieldCenter/YieldCenterContent.tsx": 1 } }
+    },
+    {
+      "name": "FirstStakeIncentiveUpsellSection",
+      "sourceFile": "components/YieldPromotions/eth2/Eth2Stake/FirstStakeIncentive/FirstStakeIncentiveUpsellSection",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "IntroSteps",
+      "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/steps/IntroSteps",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 2 },
       "propsWithCallSites": {
-        "inFiat": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 2,
-          "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 2,
-          "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1
+        "viewerAssetRef": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 2
         },
-        "assetId": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 2,
-          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 2
-        },
-        "assetSymbol": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 2,
-          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 2
-        },
-        "exponent": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 2
-        },
-        "includeUnrealized": {
-          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 1,
-          "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 1
-        },
-        "includeRealized": {
-          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 1,
-          "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 1
-        },
-        "isAnimated": {
-          "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1
+        "initialSlideIndex": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
         }
       }
     },
     {
-      "name": "CurrencyIcon",
-      "sourceFile": "components/CurrencyIcon",
+      "name": "BuySteps",
+      "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/steps/BuySteps",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerAssetRef": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SummaryStep",
+      "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerAssetRef": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "RateDetailsStep",
+      "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/steps/RateDetailsStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerAssetRef": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "LegalTermsStep",
+      "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/steps/LegalTermsStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerAssetRef": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ConfirmationStep",
+      "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/steps/ConfirmationStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerAssetRef": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DefiInterestOptInFlowContent",
+      "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "fragmentRef": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
+        },
+        "defaultStep": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Redirect",
+      "sourceFile": "react-router-dom/Redirect",
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
-        "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-        "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+        "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1,
+        "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDeepLink.tsx": 1
       },
       "propsWithCallSites": {
-        "symbol": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
-        },
-        "size": {
-          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
-          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+        "to": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1,
+          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDeepLink.tsx": 1
         }
       }
     },
     {
-      "name": "OptInYieldCenterCell",
-      "sourceFile": "views/YieldCenter/components/OptInYieldCenterCell",
+      "name": "Modal",
+      "sourceFile": "components/Modal",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1,
+        "views/YieldCenter/components/EarningAssetModal/EarningAssetModal.tsx": 1,
+        "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDeepLink.tsx": 1,
+        "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "topAligned": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
+        },
+        "close": { "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1 },
+        "width": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1,
+          "views/YieldCenter/components/EarningAssetModal/EarningAssetModal.tsx": 1,
+          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDeepLink.tsx": 1,
+          "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ModalBoundary",
+      "sourceFile": "components/ModalBoundary",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1,
+        "views/YieldCenter/components/EarningAssetModal/EarningAssetModal.tsx": 1,
+        "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDeepLink.tsx": 1
+      },
+      "propsWithCallSites": {
+        "loadingFallback": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
+        },
+        "boundaryName": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1,
+          "views/YieldCenter/components/EarningAssetModal/EarningAssetModal.tsx": 1,
+          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDeepLink.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "LoadingFallback",
+      "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "LoadingProvider",
+      "sourceFile": "components/LoadingProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "DefiInterestOptInFlow",
+      "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "assetSymbol": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
+        },
+        "defaultStep": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/DefiInterestOptInFlow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "IntroStep",
+      "sourceFile": "views/YieldCenter/flows/SsnPromptFlow/steps/IntroStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClose": { "views/YieldCenter/flows/SsnPromptFlow/SsnPromptFlow.tsx": 1 }
+      }
+    },
+    {
+      "name": "SsnPromptStep",
+      "sourceFile": "views/YieldCenter/flows/SsnPromptFlow/steps/SsnPromptStep",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SuccessStep",
+      "sourceFile": "views/YieldCenter/flows/SsnPromptFlow/steps/SuccessStep",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "FailedStep",
+      "sourceFile": "views/YieldCenter/flows/SsnPromptFlow/steps/FailedStep",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "views/YieldCenter/flows/SsnPromptFlow/SsnPromptFlow.tsx": 2 }
+    },
+    {
+      "name": "WidgetModalWithBoundary",
+      "sourceFile": "components/WidgetComponents/WidgetModalWithBoundary",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "fallback": { "views/YieldCenter/flows/SsnPromptFlow/SsnPromptFlow.tsx": 1 },
+        "width": { "views/YieldCenter/flows/SsnPromptFlow/SsnPromptFlow.tsx": 1 },
+        "name": { "views/YieldCenter/flows/SsnPromptFlow/SsnPromptFlow.tsx": 1 }
+      }
+    },
+    {
+      "name": "SsnPromptFlowContent",
+      "sourceFile": "views/YieldCenter/flows/SsnPromptFlow/SsnPromptFlow.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -1994,6 +2395,49 @@
       }
     },
     {
+      "name": "RewardTicker",
+      "sourceFile": "components/RewardTicker",
+      "totalInstances": 7,
+      "totalCallSites": 4,
+      "callSites": {
+        "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 2,
+        "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 2,
+        "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 2,
+        "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1
+      },
+      "propsWithCallSites": {
+        "inFiat": {
+          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 2,
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 2,
+          "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1
+        },
+        "assetId": {
+          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 2,
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 2
+        },
+        "assetSymbol": {
+          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 2,
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 2
+        },
+        "includeUnrealized": {
+          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 1,
+          "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 1
+        },
+        "includeRealized": {
+          "views/YieldCenter/components/EarningAssetModal/EarningAssetModalDetails.tsx": 1,
+          "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 1
+        },
+        "exponent": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/InterestStatusModal/InterestStatusModal.tsx": 2
+        },
+        "isAnimated": {
+          "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1
+        }
+      }
+    },
+    {
       "name": "RewardPromotion",
       "sourceFile": "components/YieldPromotions/RewardPromotion",
       "totalInstances": 1,
@@ -2080,6 +2524,115 @@
       }
     },
     {
+      "name": "Boundary",
+      "sourceFile": "components/Boundary",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+        "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
+        "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+        "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+        },
+        "fallback": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/InterestStatusSection/InterestStatusSection.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "EarnedYieldCenterCellContent",
+      "sourceFile": "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "EarningAssetModal",
+      "sourceFile": "views/YieldCenter/components/EarningAssetModal/EarningAssetModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "assetUuid": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
+        },
+        "rewardsPreferences": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
+        },
+        "fragmentRef": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CurrencyIcon",
+      "sourceFile": "components/CurrencyIcon",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+        "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+        "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+      },
+      "propsWithCallSites": {
+        "symbol": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+        },
+        "size": {
+          "views/YieldCenter/components/EarnedYieldCenterCell/EarnedYieldCenterCell.tsx": 1,
+          "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx": 1,
+          "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "OptInYieldCenterCell",
+      "sourceFile": "views/YieldCenter/components/OptInYieldCenterCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "fragmentRef": {
+          "views/YieldCenter/components/EligibleRewardCell/EligibleRewardCell.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BoostPromotion",
+      "sourceFile": "views/YieldCenter/components/BoostPromotion",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "views/YieldCenter/components/EligibleRewardCell/EligibleRewardCell.tsx": 2 },
+      "propsWithCallSites": {
+        "fragmentRef": {
+          "views/YieldCenter/components/EligibleRewardCell/EligibleRewardCell.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "EarnedYieldCenterCell",
+      "sourceFile": "views/YieldCenter/components/EarnedYieldCenterCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "rewardsPreferences": {
+          "views/YieldCenter/components/EligibleRewardCell/EligibleRewardCell.tsx": 1
+        },
+        "fragmentRef": {
+          "views/YieldCenter/components/EligibleRewardCell/EligibleRewardCell.tsx": 1
+        }
+      }
+    },
+    {
       "name": "InterestStatusModal",
       "sourceFile": "views/YieldCenter/components/InterestStatusModal",
       "totalInstances": 2,
@@ -2128,6 +2681,29 @@
       "totalCallSites": 1
     },
     {
+      "name": "MoreWaysToEarnCellContent",
+      "sourceFile": "views/YieldCenter/components/MoreWaysToEarnCell/MoreWaysToEarnCell.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "MoreWaysToEarnCell",
+      "sourceFile": "views/YieldCenter/components/MoreWaysToEarnCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": {
+          "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1
+        },
+        "rewardRef": {
+          "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1
+        },
+        "isEnrolledInStandardRewards": {
+          "views/YieldCenter/components/MoreWaysToEarnSection/MoreWaysToEarnSection.tsx": 1
+        }
+      }
+    },
+    {
       "name": "OptInYieldCenterCellContent",
       "sourceFile": "views/YieldCenter/components/OptInYieldCenterCell/OptInYieldCenterCell.tsx",
       "totalInstances": 1,
@@ -2152,6 +2728,17 @@
       "propsWithCallSites": {
         "openSsnPromptModal": {
           "views/YieldCenter/components/SsnRequiredBanner/SsnRequiredBanner.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SubscriptionYieldRatesTable",
+      "sourceFile": "views/Settings/views/Subscription/components/SubscriptionYieldRatesTable",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerRef": {
+          "views/YieldCenter/components/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
         }
       }
     },
@@ -2218,35 +2805,6 @@
       }
     },
     {
-      "name": "InterestStatusSection",
-      "sourceFile": "views/YieldCenter/components/InterestStatusSection",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "EligibleRewardCell",
-      "sourceFile": "views/YieldCenter/components/EligibleRewardCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1 },
-        "rewardAndIsPromotion": { "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1 },
-        "rewardsPreferences": { "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1 }
-      }
-    },
-    {
-      "name": "LearnAboutInterestListCell",
-      "sourceFile": "views/YieldCenter/components/LearnAboutInterestListCell",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "AllAssetsOwnedSection",
-      "sourceFile": "views/YieldCenter/components/AllAssetsOwnedSection",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "LazyIdology",
       "sourceFile": "components/Idology/LazyIdology",
       "totalInstances": 1,
@@ -2310,15 +2868,26 @@
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/RateDetailsStep.tsx": 1,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
         },
-        "isStaticHeight": {
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/LegalTermsStep.tsx": 1,
-          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/RateDetailsStep.tsx": 1
+        "footerOverride": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/IntroStep.tsx": 1
         },
         "loading": {
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/LegalTermsStep.tsx": 1,
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
         },
-        "handleBack": { "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1 }
+        "secondaryCta": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1
+        },
+        "disableBack": { "views/YieldCenter/flows/DefiInterestOptInFlow/steps/SummaryStep.tsx": 1 }
+      }
+    },
+    {
+      "name": "RisksFooter",
+      "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/steps/Components/RisksFooter",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerAssetRef": { "views/YieldCenter/flows/DefiInterestOptInFlow/steps/IntroStep.tsx": 1 }
       }
     },
     {
@@ -2340,6 +2909,9 @@
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/IntroSteps.tsx": 1
         },
         "viewerAssetRef": {
+          "views/YieldCenter/flows/DefiInterestOptInFlow/steps/IntroSteps.tsx": 1
+        },
+        "initialSlideIndex": {
           "views/YieldCenter/flows/DefiInterestOptInFlow/steps/IntroSteps.tsx": 1
         }
       }
@@ -2381,6 +2953,35 @@
     {
       "name": "ProgressDotsContainer",
       "sourceFile": "views/YieldCenter/flows/DefiInterestOptInFlow/steps/StepWithHeroAndCta.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "InterestStatusSection",
+      "sourceFile": "views/YieldCenter/components/InterestStatusSection",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "EligibleRewardCell",
+      "sourceFile": "views/YieldCenter/components/EligibleRewardCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1 },
+        "rewardRef": { "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1 },
+        "viewerRef": { "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1 }
+      }
+    },
+    {
+      "name": "LearnAboutInterestListCell",
+      "sourceFile": "views/YieldCenter/components/LearnAboutInterestListCell",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "AllAssetsOwnedSection",
+      "sourceFile": "views/YieldCenter/components/AllAssetsOwnedSection",
       "totalInstances": 1,
       "totalCallSites": 1
     }

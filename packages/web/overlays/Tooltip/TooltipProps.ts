@@ -1,7 +1,6 @@
 import {
   BaseTooltipPlacement,
   GapSpacing,
-  NoopFn,
   PositionStyles,
   TooltipBaseProps,
 } from '@cbhq/cds-common/types';
@@ -26,5 +25,4 @@ export type TooltipProps = {
 
 export type PopperTooltipProps = {
   gap: GapSpacing;
-  animateIn: NoopFn;
 } & Pick<TooltipProps, 'content' | 'testID' | 'zIndex'>;

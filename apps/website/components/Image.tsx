@@ -1,5 +1,6 @@
-import { styled } from '@linaria/react';
+import { useMemo } from 'react';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
+import { emptyObject } from '@cbhq/cds-utils';
 
 type ImageOptions = {
   maxWidth?: string;
@@ -13,19 +14,18 @@ export type ImageProps = {
   options?: ImageOptions;
 };
 
-const Img = styled.img<ImageOptions>`
-  max-width: ${({ maxWidth }) => maxWidth ?? '100%'};
-  max-height: ${({ maxHeight }) => maxHeight ?? '100%'};
-`;
-
 export const Image: React.FC<ImageProps> = ({ light, dark, src, options }) => {
   const spectrum = useSpectrumConditional({ light, dark });
+  const { maxWidth = '100%', maxHeight = '100%' } = options ?? (emptyObject as ImageOptions);
+  const style = useMemo(() => ({ maxWidth, maxHeight }), [maxHeight, maxWidth]);
 
   if (light && dark) {
-    return <Img {...options} src={spectrum} />;
+    // eslint-disable-next-line jsx-a11y/alt-text
+    return <img style={style} {...options} src={spectrum} />;
   }
   if (src) {
-    return <Img {...options} src={src} />;
+    // eslint-disable-next-line jsx-a11y/alt-text
+    return <img style={style} {...options} src={src} />;
   }
-  return <Img {...options} />;
+  return null;
 };

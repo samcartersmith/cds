@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 
 import { render } from '@testing-library/react';
+import { withTimeTravel } from '@cbhq/cds-common/jest/timeTravel';
 import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
 import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
@@ -48,35 +49,42 @@ describe('ProgressCircle tests', () => {
   });
 
   it('handles 50 percent', () => {
-    const size = 100;
-    const { getByTestId, getAllByText } = render(<ProgressCircle progress={0.5} size={size} />);
+    withTimeTravel((timeTravel) => {
+      const size = 100;
+      const { getByTestId, getAllByText } = render(<ProgressCircle progress={0.5} size={size} />);
 
-    const circumference = getCircumference(getRadius(size, 4));
-    const innerCircle = getByTestId('cds-progress-circle-inner');
-    expect(innerCircle).toBeTruthy();
-    expect(innerCircle).toHaveAttribute('stroke-dashoffset', `${circumference * 0.5}`);
+      const circumference = getCircumference(getRadius(size, 4));
+      const innerCircle = getByTestId('cds-progress-circle-inner');
+      expect(innerCircle).toBeTruthy();
+      timeTravel(1000);
+      expect(innerCircle).toHaveAttribute('stroke-dashoffset', `${circumference * 0.5}`);
 
-    expect(innerCircle).toHaveAttribute('stroke-dasharray', `${circumference}`);
+      expect(innerCircle).toHaveAttribute('stroke-dasharray', `${circumference}`);
 
-    expect(innerCircle).toHaveAttribute('stroke', palette.primary);
+      expect(innerCircle).toHaveAttribute('stroke', palette.primary);
 
-    expect(getAllByText('50%')).toHaveLength(2);
+      expect(getAllByText('50%')).toHaveLength(2);
+    });
   });
 
   it('handles 100 percent', () => {
-    const size = 100;
-    const { getByTestId, getAllByText } = render(<ProgressCircle progress={1} size={size} />);
+    withTimeTravel((timeTravel) => {
+      const size = 100;
+      const { getByTestId, getAllByText } = render(<ProgressCircle progress={1} size={size} />);
 
-    const circumference = getCircumference(getRadius(size, 4));
-    const innerCircle = getByTestId('cds-progress-circle-inner');
-    expect(innerCircle).toBeTruthy();
-    expect(innerCircle).toHaveAttribute('stroke-dashoffset', '0');
+      const circumference = getCircumference(getRadius(size, 4));
+      const innerCircle = getByTestId('cds-progress-circle-inner');
+      expect(innerCircle).toBeTruthy();
 
-    expect(innerCircle).toHaveAttribute('stroke-dasharray', `${circumference}`);
+      timeTravel(1000);
+      expect(innerCircle).toHaveAttribute('stroke-dashoffset', '0');
 
-    expect(innerCircle).toHaveAttribute('stroke', palette.primary);
+      expect(innerCircle).toHaveAttribute('stroke-dasharray', `${circumference}`);
 
-    expect(getAllByText('100%')).toHaveLength(2);
+      expect(innerCircle).toHaveAttribute('stroke', palette.primary);
+
+      expect(getAllByText('100%')).toHaveLength(2);
+    });
   });
 
   it('handles heavy weight', () => {

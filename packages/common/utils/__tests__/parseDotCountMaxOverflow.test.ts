@@ -12,4 +12,8 @@ describe('parseDotCountMaxOverflow', () => {
   it(`102 > ${MAX_OVERFLOW_COUNT} should equal 99+`, () => {
     expect(parseDotCountMaxOverflow(102)).toBe('99+');
   });
+
+  it(`11 > passed max value should equal to {max passed value}+`, () => {
+    expect(parseDotCountMaxOverflow(11, 9)).toBe('9+');
+  });
 });

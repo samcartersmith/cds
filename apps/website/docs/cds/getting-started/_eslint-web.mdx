@@ -1,0 +1,29 @@
+import Intro from './_eslint.mdx';
+
+<Intro />
+
+```js .eslintrc.js
+const path = require('path');
+const app = path.join(__dirname);
+const cds = path.join(app, 'node_modules/@cbhq/cds-web');
+
+module.exports = {
+  // ...
+
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        'import/no-extraneous-dependencies': [
+          'error',
+          {
+            packageDir: [app, cds],
+          },
+        ],
+      },
+    },
+  ],
+
+  // ...
+};
+```

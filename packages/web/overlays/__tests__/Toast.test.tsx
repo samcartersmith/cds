@@ -1,11 +1,7 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { Animated } from '../../animation/Animated';
 import { Toast } from '../Toast';
-
-const animationParallelSpy = jest.spyOn(Animated, 'parallel');
-const animationTimingSpy = jest.spyOn(Animated, 'timing');
 
 const mockAction = {
   label: 'Action',
@@ -18,12 +14,12 @@ describe('Toast', () => {
     expect(await renderA11y(<Toast text="toast copy" />)).toHaveNoViolations();
   });
 
-  it('renders text and close button', () => {
+  it('renders text and close button', async () => {
     const text = 'Toast copy';
-    const { getByText, getByTestId } = render(<Toast text={text} />);
+    const { findByText, findByTestId } = render(<Toast text={text} />);
 
-    expect(getByText(text)).toBeTruthy();
-    expect(getByTestId('toast-close-button')).toBeTruthy();
+    expect(await findByText(text)).toBeVisible();
+    expect(await findByTestId('toast-close-button')).toBeVisible();
   });
 
   it('renders action', () => {
@@ -35,11 +31,12 @@ describe('Toast', () => {
     expect(mockAction.onPress).toHaveBeenCalledTimes(1);
   });
 
-  it('triggers animation', () => {
+  it('has correct styles at the end of animation', async () => {
     const text = 'Toast copy';
-    render(<Toast text={text} />);
+    const { getByTestId } = render(<Toast text={text} action={mockAction} testID="mock-toast" />);
 
-    expect(animationParallelSpy).toHaveBeenCalled();
-    expect(animationTimingSpy).toHaveBeenCalled();
+    await waitFor(() =>
+      expect(getByTestId('mock-toast-motion')).toHaveStyle({ opacity: 1, transform: 'none' }),
+    );
   });
 });

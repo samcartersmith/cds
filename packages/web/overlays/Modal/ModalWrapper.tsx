@@ -1,9 +1,5 @@
 import React, { AriaRole, ForwardedRef, forwardRef, memo, useEffect } from 'react';
-import { AnimatePresence, m as motion } from 'framer-motion';
-import {
-  animateInOpacityConfig,
-  animateOutOpacityConfig,
-} from '@cbhq/cds-common/animation/overlay';
+import { AnimatePresence } from 'framer-motion';
 import { ModalBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
@@ -67,12 +63,6 @@ export const ModalWrapper = memo(
       testID,
       role = 'dialog',
     } = props;
-    const motionProps = useMotionProps({
-      enterConfigs: [animateInOpacityConfig],
-      exitConfigs: [animateOutOpacityConfig],
-      exit: 'exit',
-    });
-
     const blockScroll = useScrollBlocker();
 
     // prevent body scroll when modal is open
@@ -106,17 +96,14 @@ export const ModalWrapper = memo(
               ref={ref}
             >
               {!hideOverlay && (
-                <motion.div {...motionProps} data-testid="modal-overlay-motion">
-                  <Overlay
-                    onPress={disableOverlayPress ? undefined : onOverlayPress}
-                    dangerouslySetClassName={
-                      !dangerouslyDisableResponsiveness
-                        ? modalOverlayResponsiveClassName
-                        : undefined
-                    }
-                    testID="modal-overlay"
-                  />
-                </motion.div>
+                <Overlay
+                  onPress={disableOverlayPress ? undefined : onOverlayPress}
+                  dangerouslySetClassName={
+                    !dangerouslyDisableResponsiveness ? modalOverlayResponsiveClassName : undefined
+                  }
+                  testID="modal-overlay"
+                  animated
+                />
               )}
               {/* NOTE: Add position or zIndex to children to avoid displaying under overlay
                * https://www.freecodecamp.org/news/z-index-explained-how-to-stack-elements-using-css-7c5aa0f179b3/

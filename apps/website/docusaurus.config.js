@@ -1,8 +1,8 @@
-const docgenConfig = require('./docgen/config');
-const webpackPlugin = require('./webpackPlugin');
+const docgenConfig = require('./docgen.config');
+const kbarConfig = require('./kbar.config');
+const webpackConfig = require('./webpack.config');
 
 const SLACK_TEAM = 'T02Q6DY7G';
-const hasThemeRefresh = process.env.THEME === 'refresh';
 
 module.exports = {
   title: 'Coinbase Design System',
@@ -10,10 +10,12 @@ module.exports = {
   url: process.env.NODE_ENV === 'production' ? 'https://cds.cbhq.net' : 'https://cds-dev.cbhq.net',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'throw',
+  onDuplicateRoutes: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'frontend',
   projectName: 'cds',
+  trailingSlash: true,
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -63,6 +65,11 @@ module.exports = {
           label: '#ask-cds',
           href: `slack://channel?team=${SLACK_TEAM}&id=C01A6PKGM3J`,
         },
+        {
+          type: 'link',
+          label: 'Feedback',
+          href: `https://docs.google.com/forms/d/1v9HbYPasSKxNG2m3UhiQObjDerLBeUQVgeykJ8AVhUA/edit`,
+        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Coinbase`,
     },
@@ -70,44 +77,25 @@ module.exports = {
   // https://docusaurus.io/docs/using-plugins#docusauruspreset-classic
   presets: [
     [
-      'classic',
+      '@cbhq/docusaurus-preset',
       {
         gtag: {
           trackingID: 'G-369GEFT8FG',
         },
         docs: {
-          exclude: hasThemeRefresh ? undefined : ['debug/**/*'],
-          breadcrumbs: !hasThemeRefresh,
+          breadcrumbs: false,
           routeBasePath: '/',
-          sidebarPath: hasThemeRefresh
-            ? require.resolve('./sidebarsRefresh.js')
-            : require.resolve('./sidebars.js'),
-          editUrl: hasThemeRefresh
-            ? undefined
-            : 'https://github.cbhq.net/frontend/cds/tree/master/apps/website/',
+          sidebarPath: require.resolve('./sidebar.config.js'),
+          editUrl: undefined,
           sidebarCollapsible: true,
         },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-        blog: false,
+        docgen: docgenConfig,
+        kbar: kbarConfig,
       },
     ],
   ],
   plugins: [
-    '@docusaurus/theme-live-codeblock',
-    ['@cbhq/docusaurus-plugin-docgen', docgenConfig],
-    [
-      '@cmfcmf/docusaurus-search-local',
-      {
-        language: 'en',
-        indexBlog: false,
-        indexDocs: true,
-        indexDocSidebarParentCategories: 2,
-      },
-    ],
     // Must run last!
-    webpackPlugin,
+    webpackConfig,
   ],
-  clientModules: [require.resolve('./global.ts')],
 };

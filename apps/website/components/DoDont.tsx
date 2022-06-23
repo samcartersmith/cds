@@ -1,7 +1,6 @@
-import { styled } from '@linaria/react';
 import { SpacingScale } from '@cbhq/cds-common';
 import { Box, HStack, VStack } from '@cbhq/cds-web/layout';
-import { palette } from '@cbhq/cds-web/tokens';
+import { Divider } from '@cbhq/cds-web/layout/Divider';
 import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
 
 import { Image, ImageProps } from './Image';
@@ -20,16 +19,6 @@ type ExampleProps = {
   type: 'do' | 'dont';
 } & DoExampleProps;
 
-type LineProps = {
-  color: 'positive' | 'negative';
-};
-
-const Line = styled.div<LineProps>`
-  height: 4px;
-  width: 100%;
-  background: ${({ color }) => (color === 'positive' ? palette.positive : palette.negative)};
-`;
-
 export const DoDont: React.FC<Props> = ({ children = [], spacingVertical = 10 }) => {
   return (
     <HStack spacingVertical={spacingVertical} gap={2}>
@@ -44,7 +33,8 @@ export const Example: React.FC<ExampleProps> = ({ img, children, type }) => {
       <Box minHeight="200px" justifyContent="center" alignItems="center" spacingBottom={1}>
         <Image {...img} />
       </Box>
-      <Line color={type === 'dont' ? 'negative' : 'positive'} />
+      {/* @ts-expect-error These palette colors will work fine */}
+      <Divider height={4} color={type === 'dont' ? 'negative' : 'positive'} />
       <TextHeadline as="p" color={type === 'dont' ? 'negative' : 'positive'}>
         {type === 'dont' ? 'DO NOT' : 'DO'}
       </TextHeadline>

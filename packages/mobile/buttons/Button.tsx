@@ -1,17 +1,10 @@
-import React, { memo, useCallback, useMemo } from 'react';
-import {
-  ActivityIndicator,
-  GestureResponderEvent,
-  StyleSheet,
-  View,
-  ViewStyle,
-} from 'react-native';
-import { ButtonBaseProps, ComponentEventHandlerProps } from '@cbhq/cds-common';
+import React, { memo, useMemo } from 'react';
+import { ActivityIndicator, StyleSheet, View, ViewStyle } from 'react-native';
+import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
-import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
 
 import { Button as FrontierButton } from '../alpha/Button';
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
@@ -24,8 +17,7 @@ import { useFeatureFlag } from '../system/useFeatureFlag';
 import { TextHeadline } from '../typography/TextHeadline';
 
 export type ButtonProps = ButtonBaseProps &
-  PressableProps &
-  ComponentEventHandlerProps & {
+  PressableProps & {
     /**
      * When provided the Button text will not truncate and will wrap until the number of lines provided is met.
      * @default 1
@@ -46,7 +38,6 @@ export const DeprecatedButton = memo(function DeprecatedButton({
   variant = 'primary',
   numberOfLines = 1,
   noScaleOnPress,
-  eventConfig,
   ...props
 }: ButtonProps) {
   const palette = usePalette();
@@ -68,15 +59,6 @@ export const DeprecatedButton = memo(function DeprecatedButton({
   const startIconStyles = useSpacingStyles({ spacingEnd: 1 });
   const endIconStyles = useSpacingStyles({ spacingStart: 1 });
 
-  const onPressEvent = useEventHandler('Button', 'onPress', eventConfig);
-  const handleOnPress = useCallback(
-    (event: GestureResponderEvent) => {
-      onPressEvent();
-      props.onPress?.(event);
-    },
-    [onPressEvent, props],
-  );
-
   return (
     <Pressable
       transparentWhileInactive={transparent}
@@ -89,7 +71,6 @@ export const DeprecatedButton = memo(function DeprecatedButton({
       loading={loading}
       style={pressableStyles}
       noScaleOnPress={noScaleOnPress}
-      onPress={handleOnPress}
       {...props}
     >
       <View style={buttonStyles}>

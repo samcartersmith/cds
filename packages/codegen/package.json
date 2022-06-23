@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "adoption": "nx run codegen:prepare_adoption",
-    "all": "nx run codegen:codegen && nx run codegen:docgen",
+    "all": "nx run codegen:codegen",
+    "codegen": "nx run codegen:codegen",
     "cli": "ts-node ./bin.ts",
     "docs.internal": "yarn cli website/docs-internal",
-    "docs": "nx run codegen:docgen",
     "format": "nx run codegen:format",
     "icons": "nx run codegen:sync_icons && svgo ../common/internal/data/iconSvgs/*.svg --config=configs/svgo.config.js && nx run codegen:build_icons && nx run codegen:docgen",
     "illustrations": "nx run codegen:build_illustrations && nx run codegen:docgen && yarn format",
@@ -15,6 +15,7 @@
     "lint.fix": "nx codegen:lint --fix",
     "routes": "nx run codegen:prepare_mobile_routes",
     "release": "nx run codegen:release",
+    "release.beta": "nx run codegen:release.beta",
     "test": "jest",
     "typecheck": "nx run codegen:typecheck"
   },

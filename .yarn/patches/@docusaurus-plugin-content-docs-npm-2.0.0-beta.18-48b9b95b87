@@ -1,0 +1,12 @@
+diff --git a/package.json b/package.json
+index dff2d74e2915af34ced739d7bd2b9df60e11c9c1..170f7d4060d0a3bdbc1e8ebd00a7c68ee4fead9b 100644
+--- a/package.json
++++ b/package.json
+@@ -6,6 +6,7 @@
+   "exports": {
+     "./client": "./lib/client/index.js",
+     "./server": "./lib/server-export.js",
++    "./options": "./lib/options.js",
+     ".": "./lib/index.js"
+   },
+   "types": "src/plugin-content-docs.d.ts",

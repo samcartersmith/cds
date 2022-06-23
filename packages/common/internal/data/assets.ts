@@ -62,7 +62,23 @@ export const assets = {
     imageUrl:
       'https://dynamic-assets.coinbase.com/ae4087fcfeef11ad77d8875405ba933b9d623bcc8c483f280d3a15f2782de980349076c4f7b4616cc350c3727010d736448194829c4409e2824f710ee8f9832d/asset_icons/32d85085a6a6193b483ea8a9a23d4bf1384269d44c724a0349f0e0bd757f7427.png',
   },
+  polygon: {
+    symbol: 'MATIC',
+    name: 'Polygon',
+    color: '#222222',
+    imageUrl:
+      'https://dynamic-assets.coinbase.com/085ce26e1eba2ccb210ea85df739a0ca2ef782747e47d618c64e92b168b94512df469956de1b667d93b2aa05ce77947e7bf1b4e0c7276371aa88ef9406036166/asset_icons/57f28803aad363f419a950a5f5b99acfd4fba8b683c01b9450baab43c9fa97ea.png',
+  },
 };
+
+export const squareAssets = {
+  human1: 'https://avatars3.githubusercontent.com/u/100200?s=460&v=4',
+  human2: 'https://bit.ly/kent-c-dodds',
+  human3: 'https://bit.ly/dan-abramov',
+  human4: 'https://bit.ly/code-beast',
+  human5: 'https://bit.ly/ryan-florence',
+  human6: 'https://bit.ly/prosper-baba',
+} as const;
 
 export const assetColors = Object.entries(assets).map(([, value]) => value.color);
 export const assetImages = Object.entries(assets).map(([, value]) => value.imageUrl);

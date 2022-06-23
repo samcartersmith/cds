@@ -5,23 +5,28 @@ import React, {
   useContext,
   useEffect,
   useImperativeHandle,
-  useRef,
 } from 'react';
-import { createPortal } from 'react-dom';
+import { m as motion, useAnimation } from 'framer-motion';
 import { ToastBaseProps, ToastRefBaseProps } from '@cbhq/cds-common';
+import {
+  animateInBottomConfig,
+  animateInOpacityConfig,
+  animateOutBottomConfig,
+  animateOutOpacityConfig,
+} from '@cbhq/cds-common/animation/toast';
 import { ToastContext } from '@cbhq/cds-common/overlays/ToastProvider';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 
 import { Button, IconButton } from '../buttons';
 import { Box, HStack } from '../layout';
+import { useMotionProps } from '../motion/useMotionProps';
 import { ThemeProvider } from '../system';
 import { TextHeadline } from '../typography';
-import { getBrowserGlobals, isSSR } from '../utils/browser';
 
 import { ModalProps } from './Modal/Modal';
+import { Portal } from './Portal';
 import { toastContainerId } from './PortalProvider';
 import { toastClassName } from './toastStyles';
-import { useToastAnimation } from './useToastAnimation';
 
 export type ToastProps = {
   /**
@@ -35,23 +40,35 @@ export type ToastProps = {
 export const Toast: React.FC<ToastProps> = memo(
   forwardRef<ToastRefBaseProps, React.PropsWithChildren<ToastProps>>(
     (
-      { text, action, onWillHide, onDidHide, disablePortal = false, hideCloseButton = false },
+      {
+        text,
+        action,
+        onWillHide,
+        onDidHide,
+        disablePortal = false,
+        hideCloseButton = false,
+        testID,
+      },
       ref,
     ) => {
-      const toastRef = useRef<HTMLElement>(null);
-      const { animateIn, animateOut } = useToastAnimation(toastRef);
       const { pauseTimer, resumeTimer } = useContext(ToastContext);
+      const animationControls = useAnimation();
+      const motionProps = useMotionProps({
+        enterConfigs: [animateInOpacityConfig, animateInBottomConfig],
+        exitConfigs: [animateOutOpacityConfig, animateOutBottomConfig],
+        animate: animationControls,
+      });
 
       useEffect(() => {
-        void animateIn.start();
-      }, [animateIn]);
+        void animationControls.start('enter');
+      }, [animationControls]);
 
       const handleClose = useCallback(async (): Promise<boolean> => {
         onWillHide?.();
-        await animateOut.start();
+        await animationControls.start('exit');
         onDidHide?.();
         return true;
-      }, [onWillHide, onDidHide, animateOut]);
+      }, [onWillHide, onDidHide, animationControls]);
 
       useImperativeHandle(
         ref,
@@ -66,65 +83,67 @@ export const Toast: React.FC<ToastProps> = memo(
         void handleClose();
       }, [action, handleClose]);
 
-      const toastNode = (
-        // toast does not react to density as per design guideline
-        <ThemeProvider scale={DEFAULT_SCALE}>
-          <Box
-            dangerouslySetClassName={toastClassName}
-            spacing={2}
-            ref={toastRef}
-            // persist toast when hovering
-            onMouseEnter={pauseTimer}
-            onMouseLeave={resumeTimer}
-          >
-            <HStack
-              spacingVertical={1}
-              spacingStart={3}
-              spacingEnd={1}
-              elevation={2}
-              background="backgroundAlternate"
-              borderRadius="standard"
-              alignItems="center"
-              maxWidth={550}
+      return (
+        <Portal disablePortal={disablePortal} containerId={toastContainerId}>
+          {/* toast does not respond to density as per design guideline */}
+          <ThemeProvider scale={DEFAULT_SCALE}>
+            <motion.div
+              {...motionProps}
+              className={toastClassName}
+              data-testid={`${testID}-motion`}
             >
-              {/* avoid pushing contents off screen */}
-              <Box flexShrink={1} spacingEnd={2} spacingVertical={1} role="alert">
-                <TextHeadline as="p" tabIndex={0}>
-                  {text}
-                </TextHeadline>
+              <Box
+                width="100%"
+                justifyContent="center"
+                spacing={2}
+                // persist toast when hovering
+                onMouseEnter={pauseTimer}
+                onMouseLeave={resumeTimer}
+                testID={testID}
+              >
+                <HStack
+                  spacingVertical={1}
+                  spacingStart={3}
+                  spacingEnd={1}
+                  elevation={2}
+                  background="backgroundAlternate"
+                  borderRadius="standard"
+                  alignItems="center"
+                  maxWidth={550}
+                >
+                  {/* avoid pushing contents off screen */}
+                  <Box flexShrink={1} spacingEnd={2} spacingVertical={1} role="alert">
+                    <TextHeadline as="p" tabIndex={0}>
+                      {text}
+                    </TextHeadline>
+                  </Box>
+                  <HStack>
+                    {!!action && (
+                      <Button
+                        onPress={handleActionPress}
+                        testID={action.testID ?? 'toast-action'}
+                        compact
+                        transparent
+                      >
+                        {action.label}
+                      </Button>
+                    )}
+                    {!hideCloseButton && (
+                      <IconButton
+                        name="close"
+                        variant="foregroundMuted"
+                        onPress={handleClose}
+                        testID="toast-close-button"
+                        transparent
+                      />
+                    )}
+                  </HStack>
+                </HStack>
               </Box>
-              <HStack>
-                {!!action && (
-                  <Button
-                    onPress={handleActionPress}
-                    testID={action.testID ?? 'toast-action'}
-                    compact
-                    transparent
-                  >
-                    {action.label}
-                  </Button>
-                )}
-                {!hideCloseButton && (
-                  <IconButton
-                    name="close"
-                    variant="foregroundMuted"
-                    onPress={handleClose}
-                    testID="toast-close-button"
-                    transparent
-                  />
-                )}
-              </HStack>
-            </HStack>
-          </Box>
-        </ThemeProvider>
+            </motion.div>
+          </ThemeProvider>
+        </Portal>
       );
-
-      const document = getBrowserGlobals()?.document;
-      if (disablePortal || isSSR() || !document?.getElementById(toastContainerId)) {
-        return toastNode;
-      }
-
-      return createPortal(toastNode, document?.getElementById(toastContainerId) as HTMLElement);
     },
   ),
 );

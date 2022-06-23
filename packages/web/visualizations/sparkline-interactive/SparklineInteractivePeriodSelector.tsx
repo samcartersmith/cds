@@ -66,7 +66,7 @@ export const SparklineInteractivePeriodSelector = <Period extends string>({
   });
 
   return (
-    <HStack justifyContent="space-between" width="100%" spacing={0}>
+    <HStack justifyContent="space-between" width="100%" spacing={0} spacingHorizontal={1}>
       {periods.map((period) => (
         <SparklineInteractivePeriod
           key={period.value}

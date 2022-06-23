@@ -5,6 +5,11 @@
       "schema": "./dist/executors/build-css/schema.json",
       "description": "Aggregates all of the cds css"
     },
+    "build-docusaurus-plugin": {
+      "implementation": "./dist/executors/build-docusaurus-plugin/impl",
+      "schema": "./dist/executors/build-docusaurus-plugin/schema.json",
+      "description": "Builds a docusaurus plugin"
+    },
     "build-package": {
       "implementation": "./dist/executors/build-package/impl",
       "schema": "./dist/executors/build-package/schema.json",
@@ -29,6 +34,16 @@
       "implementation": "./dist/executors/build-package-esm/impl",
       "schema": "./dist/executors/build-package-esm/schema.json",
       "description": "Builds an esm compliant CDS npm package"
+    },
+    "a11y": {
+      "implementation": "./dist/executors/a11y/impl",
+      "schema": "./dist/executors/a11y/schema.json",
+      "description": "Build storbook and run a11y tests"
+    },
+    "run-conditional": {
+      "implementation": "./dist/executors/run-conditional/impl",
+      "schema": "./dist/executors/run-conditional/schema.json",
+      "description": "Conditionally runs percy"
     }
   }
 }

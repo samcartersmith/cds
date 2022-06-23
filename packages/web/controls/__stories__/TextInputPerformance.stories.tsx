@@ -8,6 +8,14 @@ export default {
   title: 'Core Components/Inputs/TextInputPerformance',
   component: TextInput,
   decorators: [withPerformance],
+  excludeStories: [
+    'CDSTextInput',
+    'HTMLInput',
+    'HundredCDSComponents',
+    'HundredHTMLComponent',
+    'ThousandCDSComponents',
+    'ThousandHTMLComponent',
+  ],
 };
 
 const borderStyle = css`

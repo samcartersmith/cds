@@ -1,96 +1,13 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import WebPropsTable from ':docgen/web/visualizations/ProgressCircle/api.mdx';
+import MobilePropsTable from ':docgen/mobile/visualizations/ProgressCircle/api.mdx';
 
-<RightSidebar toc={toc} />
+## Props
 
-### color
-
-Custom progress color.
-
-<ApiDetails
-  componentName="ProgressCircle"
-  propertyName="color"
-  required={false}
-  defaultValue="primary"
-  mobileOptions={['foreground', 'negative', 'positive', 'primary']}
-  webOptions={['foreground', 'negative', 'positive', 'primary']}
-/>
-
-### disabled
-
-Toggle used to show a disabled progress visualization
-
-<ApiDetails
-  componentName="ProgressCircle"
-  propertyName="disabled"
-  required={false}
-  defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-### hideText
-
-Toggle used to hide the inner circle percentage
-
-<ApiDetails
-  componentName="ProgressCircle"
-  propertyName="hideText"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-### progress
-
-Number between 0-1 representing the progress percentage
-
-<ApiDetails
-  componentName="ProgressCircle"
-  propertyName="progress"
-  required={true}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
-/>
-
-### size
-
-Optional size in px for the visualization. This is useful if the visualization is used in an HStack. If this is omitted the visualization will fill the parent width or height. Since its a circular visualization it will fill the smaller of the parent width or height.
-
-<ApiDetails
-  componentName="ProgressCircle"
-  propertyName="size"
-  required={false}
-  defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
-/>
-
-### testID
-
-Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
-
-<ApiDetails
-  componentName="ProgressCircle"
-  propertyName="testID"
-  required={false}
-  defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
-/>
-
-### weight
-
-Toggle used to show a thicker progress visualization
-
-<ApiDetails
-  componentName="ProgressCircle"
-  propertyName="weight"
-  required={false}
-  defaultValue="normal"
-  mobileOptions={['heavy', 'normal']}
-  webOptions={['heavy', 'normal']}
-/>
+<Tabs groupId="platform" variant="secondary">
+  <TabItem value="web" label="Web">
+    <WebPropsTable />
+  </TabItem>
+  <TabItem value="mobile" label="Mobile">
+    <MobilePropsTable />
+  </TabItem>
+</Tabs>

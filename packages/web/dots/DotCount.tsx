@@ -28,12 +28,14 @@ export const DotCount = memo(
     pin,
     variant = 'negative',
     count,
+    max,
     testID,
     accessibilityLabel,
+    overlap,
     ...props
   }: DotCountBaseProps) => {
     const palette = usePalette();
-    const pinStyles = getTransform(pin);
+    const pinStyles = getTransform(pin, overlap);
 
     const styles = useMemo(() => {
       return {
@@ -60,7 +62,7 @@ export const DotCount = memo(
             onClick={handlePreventPropagation}
           >
             <TextCaption align="center" as="p" color="primaryForeground">
-              {parseDotCountMaxOverflow(count)}
+              {parseDotCountMaxOverflow(count, max)}
             </TextCaption>
           </div>
         )}

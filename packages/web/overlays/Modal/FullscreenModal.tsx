@@ -123,7 +123,8 @@ export const FullscreenModal = memo(function FullscreenModal({
   );
 
   const content = (
-    <div className={cx(contentClassName, dangerouslySetContentClassName)}>
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+    <div className={cx(contentClassName, dangerouslySetContentClassName)} tabIndex={0}>
       <div className={primaryContentContainerClassName}>{primaryContent}</div>
       {!!secondaryContent && (
         <div className={secondaryContentContainerClassName}>{secondaryContent}</div>
