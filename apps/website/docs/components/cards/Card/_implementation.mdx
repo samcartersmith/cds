@@ -1,5 +1,13 @@
 import WebPropsTable from ':docgen/web/cards/Card/api.mdx';
+import MobilePropsTable from ':docgen/mobile/cards/Card/api.mdx';
 
 ## Props
 
-<WebPropsTable />
+<Tabs groupId="platform" variant="secondary">
+  <TabItem value="web" label="Web">
+    <WebPropsTable />
+  </TabItem>
+  <TabItem value="mobile" label="Mobile">
+    <MobilePropsTable />
+  </TabItem>
+</Tabs>

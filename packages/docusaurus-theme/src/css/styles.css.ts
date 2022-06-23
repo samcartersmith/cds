@@ -424,4 +424,9 @@ export default css`
   .markdown .code-playground h1:first-child {
     margin: unset;
   }
+
+  /* Avoid showing anchor styles on hover of Changelog list cells */
+  .changelog-list a {
+    text-decoration: none;
+  }
 `;

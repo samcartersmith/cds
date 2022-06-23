@@ -1,0 +1,15 @@
+import WebChangelog from ':docgen/web/system/EventHandlerProvider/changelog.mdx';
+import MobileChangelog from ':docgen/mobile/system/EventHandlerProvider/changelog.mdx';
+import CommonChangelog from ':docgen/common/system/EventHandlerProvider/changelog.mdx';
+
+<Tabs groupId="platform" variant="secondary">
+  <TabItem value="web" label="Web">
+    <WebChangelog />
+  </TabItem>
+  <TabItem value="mobile" label="Mobile">
+    <MobileChangelog />
+  </TabItem>
+  <TabItem value="common" label="Common">
+    <CommonChangelog />
+  </TabItem>
+</Tabs>

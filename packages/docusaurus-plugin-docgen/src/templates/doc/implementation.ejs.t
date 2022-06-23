@@ -1,19 +1,19 @@
-<% data.docs.map(({partial}) => { _%>
-import <%- partial.name %> from '<%- partial.path %>';
+<% data.apiPartials.map(({apiPartial}) => { _%>
+import <%- apiPartial.name %> from '<%- apiPartial.path %>';
 <% }) _%>
 
 ## Props
 
-<% if (data.docs.length > 1){ _%>
+<% if (data.apiPartials.length > 1){ _%>
 <Tabs groupId="platform" variant="secondary">
-<% data.docs.map(({ partial, tab }) => { _%>
+<% data.apiPartials.map(({ apiPartial, tab }) => { _%>
 <TabItem value="<%- tab.value %>" label="<%- tab.label %>">
-<<%- partial.name %> />
+<<%- apiPartial.name %> />
 </TabItem>
 <% }) _%>
 </Tabs>
 <% } else { _%>
-<% data.docs.map(({ partial }) => { _%>
-<<%- partial.name %> />
+<% data.apiPartials.map(({ apiPartial }) => { _%>
+<<%- apiPartial.name %> />
 <% }) _%>
 <% } _%>

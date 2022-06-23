@@ -14,6 +14,7 @@ module.exports = {
    * @default true
    */
   enabled: true,
+  changelog: process.env.CODEFLOW === 'true',
   // forceDocs: true,
   /**
    * Absolute paths to tsconfig.json's for any projects that sourceFiles belong to.

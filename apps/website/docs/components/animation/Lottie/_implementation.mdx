@@ -1,5 +1,13 @@
 import WebPropsTable from ':docgen/web/animation/Lottie/api.mdx';
+import MobilePropsTable from ':docgen/mobile/animation/Lottie/api.mdx';
 
 ## Props
 
-<WebPropsTable />
+<Tabs groupId="platform" variant="secondary">
+  <TabItem value="web" label="Web">
+    <WebPropsTable />
+  </TabItem>
+  <TabItem value="mobile" label="Mobile">
+    <MobilePropsTable />
+  </TabItem>
+</Tabs>

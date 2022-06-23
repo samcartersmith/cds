@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import type { LoadContext, Plugin } from '@docusaurus/types';
 import { DEFAULT_PLUGIN_ID } from '@docusaurus/utils';
 import path from 'path';
@@ -61,19 +60,50 @@ export default function plugin(
       }
       return undefined;
     },
-    configureWebpack(webpackConfig) {
+    configureWebpack(_webpackConfig, _isServer, _utils, content) {
+      let metadataAliases = {};
+      let apiAliases = {};
+      let changelogAliases = {};
+      if (content) {
+        /**
+         * If changelog is false but app references those files via webpack alias,
+         * then we need to create webpack aliases to point to a placeholder mdx file so website will still run properly.
+         */
+        changelogAliases = Object.fromEntries(
+          content.parsedDocs.map((item) => [
+            path.join(':docgen', path.relative(pluginDir, item.cacheDirectory), 'changelog.mdx'),
+            options.changelog
+              ? path.join(item.cacheDirectory, 'changelog.mdx')
+              : path.join(pluginDir, '_placeholders', 'changelog.mdx'),
+          ]),
+        );
+
+        apiAliases = Object.fromEntries(
+          content.parsedDocs.map((item) => [
+            path.join(':docgen', path.relative(pluginDir, item.cacheDirectory), 'api.mdx'),
+            path.join(item.cacheDirectory, 'api.mdx'),
+          ]),
+        );
+
+        metadataAliases = Object.fromEntries(
+          content.projects.map((item) => [
+            path.join(':docgen', path.relative(pluginDir, item.cacheDirectory), 'metadata'),
+            path.join(item.cacheDirectory, 'metadata.js'),
+          ]),
+        );
+      }
+
+      const aliases = {
+        ...apiAliases,
+        ...changelogAliases,
+        ...metadataAliases,
+        [`:docgen/_types/sharedTypeAliases`]: path.join(pluginDir, '_types/sharedTypeAliases'),
+        [`:docgen/_types/sharedParentTypes`]: path.join(pluginDir, '_types/sharedParentTypes'),
+      };
+
       return {
         resolve: {
-          alias: {
-            [`:docgen`]: path.join(
-              // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
-              // @ts-ignore This is how we are able to have consumers access the docgen data with alias of their choice
-              webpackConfig.resolve.alias['@generated'],
-              PLUGIN_ID,
-              // id gets replaced with doc version if applicable
-              options?.id ?? DEFAULT_PLUGIN_ID,
-            ),
-          },
+          alias: aliases,
         },
       };
     },

@@ -323,10 +323,29 @@ declare module '@theme/PropsTOCManager' {
   export const PropsTOCUpdater: typeof import('@theme/createTOCManager').TOCUpdater;
 }
 
+declare module '@theme/ChangelogTOCManager' {
+  export const useChangelogTOC: typeof import('@theme/createTOCManager').useTOC;
+  export const ChangelogTOCProvider: typeof import('@theme/createTOCManager').TOCProvider;
+  export const ChangelogTOCUpdater: typeof import('@theme/createTOCManager').TOCUpdater;
+}
+
 declare module '@theme/TOCManager' {
   export const useTOC: typeof import('@theme/createTOCManager').useTOC;
   export const TOCProvider: typeof import('@theme/createTOCManager').TOCProvider;
   export const TOCUpdater: typeof import('@theme/createTOCManager').TOCUpdater;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  Changelog                                 */
+/* -------------------------------------------------------------------------- */
+declare module '@theme/ChangelogList' {
+  export type ChangelogListProps = import('@cbhq/cds-web/layout/VStack').VStackProps;
+  export default function ChangelogList(): JSX.Element;
+}
+
+declare module '@theme/ChangelogListCell' {
+  export type ChangelogListCellProps = import('@cbhq/cds-web/cells/ListCell').ListCellProps;
+  export default function ChangelogListCell(): JSX.Element;
 }
 
 /* -------------------------------------------------------------------------- */

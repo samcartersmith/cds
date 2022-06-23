@@ -3,10 +3,10 @@ title: <%- data.title %>
 slug: /components/<%- data.kebabCaseName %>
 ---
 <% const engTemplates = data.templates.filter(item => item.template !== 'design'); %>
-
 <% data.templates.map((item) => { _%>
 import <%- item.component %>, { toc as <%- item.toc %>  } from './_<%- item.template %>.mdx';
 <% }) _%>
+import Changelog, { toc as changelogToc } from './_changelog.mdx';
 
 <Tabs groupId="page">
 <% if (data.hasDesign){ _%>
@@ -22,5 +22,8 @@ import <%- item.component %>, { toc as <%- item.toc %>  } from './_<%- item.temp
   <% engTemplates.map((item) => { _%>
     <<%- item.component %> />
   <% }) _%>
+  </TabItem>
+  <TabItem value="changelog" label="Changelog" toc={changelogToc}>
+    <Changelog />
   </TabItem>
 </Tabs>

@@ -51,7 +51,8 @@ export function docgenScaffolder({
       const data = {
         title: startCase(displayName),
         kebabCaseName,
-        docs: uniqBy(dataForGroup, 'partial.name'),
+        apiPartials: uniqBy(dataForGroup, 'apiPartial.name'),
+        changelogPartials: uniqBy(dataForGroup, 'changelogPartial.name'),
         templates,
         hasDesign,
       };
@@ -72,6 +73,12 @@ export function docgenScaffolder({
         dest: path.join(outputDir, `_metadata.mdx`),
         data,
         template: 'doc/metadata',
+      });
+
+      filesToWriteToDisk.push({
+        dest: path.join(outputDir, `_changelog.mdx`),
+        data,
+        template: 'doc/changelog',
       });
     };
 

@@ -8,6 +8,7 @@ import Metadata, { toc as metadataToc } from './_metadata.mdx';
 import Intro, { toc as introToc } from './_intro.mdx';
 import Usage, { toc as usageToc } from './_usage.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
+import Changelog, { toc as changelogToc } from './_changelog.mdx';
 
 <Tabs groupId="page">
   <TabItem value="guidelines" label="Guidelines" toc={designToc}>
@@ -22,5 +23,8 @@ import Implementation, { toc as implementationToc } from './_implementation.mdx'
     <Intro />
     <Usage />
     <Implementation />
+  </TabItem>
+  <TabItem value="changelog" label="Changelog" toc={changelogToc}>
+    <Changelog />
   </TabItem>
 </Tabs>
