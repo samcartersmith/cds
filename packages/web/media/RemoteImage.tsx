@@ -1,8 +1,19 @@
 import React, { memo, useMemo } from 'react';
 import { css } from 'linaria';
-import { AspectRatio, FixedValue, Shape, SharedProps } from '@cbhq/cds-common';
+import {
+  AspectRatio,
+  AvatarSize,
+  FixedValue,
+  RemoteImageBaseProps,
+  SharedProps,
+  useSpectrum,
+} from '@cbhq/cds-common';
 import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
+import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
+import { getRemoteImageWidthAndHeight } from '@cbhq/cds-common/utils/getRemoteImageWidthAndHeight';
 
+import { useRemoteImageSrc } from '../hooks/useRemoteImageSrc';
+import { palette } from '../tokens';
 import { cx } from '../utils/linaria';
 
 const resizeModes = {
@@ -31,19 +42,17 @@ const imageRatio = css`
 `;
 
 type BaseRemoteImageProps = {
-  aspectRatio?: AspectRatio;
-  height?: FixedValue;
-  shape?: Shape;
-  width?: FixedValue;
   alt?: string;
-  source: string;
+  /** Absolute url to the image that should be shown in the RemoteImage. If no source is provided then a generic fallback image is used. */
+  source?: string;
   dangerouslySetClassName?: string;
   resizeMode?: keyof typeof resizeModes;
 } & Omit<
   React.ImgHTMLAttributes<HTMLImageElement>,
   'className' | 'style' | 'height' | 'width' | 'source'
 > &
-  SharedProps;
+  SharedProps &
+  RemoteImageBaseProps;
 
 type RemoteImagePropsWithWidth = {
   width: FixedValue;
@@ -60,10 +69,15 @@ type RemoteImagePropsWidthAndHeight = {
   height: FixedValue;
 } & BaseRemoteImageProps;
 
+type RemoteImagePropsSize = {
+  size: AvatarSize;
+} & BaseRemoteImageProps;
+
 export type RemoteImageProps =
   | RemoteImagePropsWithWidth
   | RemoteImagePropsWithHeight
-  | RemoteImagePropsWidthAndHeight;
+  | RemoteImagePropsWidthAndHeight
+  | RemoteImagePropsSize;
 
 export const RemoteImage = memo(function RemoteImage({
   width,
@@ -75,17 +89,30 @@ export const RemoteImage = memo(function RemoteImage({
   dangerouslySetClassName,
   resizeMode = 'cover',
   testID,
+  size,
+  borderColor,
   ...props
-}: RemoteImageProps) {
+}: BaseRemoteImageProps) {
   const borderRadius = useShapeToBorderRadiusSize(shape);
+  const avatarSize = useAvatarSize(size ?? 'm');
+  const spectrum = useSpectrum();
+  const imageSrc = useRemoteImageSrc(spectrum, source);
+
+  const { width: finalWidth, height: finalHeight } = getRemoteImageWidthAndHeight({
+    size,
+    width,
+    height,
+    avatarSize,
+  });
 
   const styles = useMemo(
     () =>
       ({
         borderRadius,
         '--image-aspect-ratio': aspectRatio ? aspectRatio.join(' / ') : undefined,
+        border: borderColor ? `2px solid ${palette[borderColor]}` : undefined,
       } as const),
-    [aspectRatio, borderRadius],
+    [aspectRatio, borderColor, borderRadius],
   );
 
   return (
@@ -93,9 +120,9 @@ export const RemoteImage = memo(function RemoteImage({
       data-testid={testID}
       alt={alt ?? ''}
       {...props}
-      src={source}
-      width={width}
-      height={height}
+      src={imageSrc}
+      width={finalWidth}
+      height={finalHeight}
       className={cx(
         image,
         aspectRatio && imageRatio,

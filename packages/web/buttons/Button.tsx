@@ -1,13 +1,11 @@
-import React, { forwardRef, useCallback, useMemo } from 'react';
-import { ButtonProps as ReakitButtonProps } from 'reakit/Button';
+import React, { forwardRef, useMemo } from 'react';
+import { ButtonProps as ReakitButtonProps } from 'reakit';
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useButtonSpacing as useSharedButtonSpacing } from '@cbhq/cds-common/hooks/useButtonSpacing';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
-import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
-import { ComponentEventHandlerProps } from '@cbhq/cds-common/types/ComponentEventHandlerProps';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { useFlushStyles } from '../hooks/useFlushStyles';
@@ -23,7 +21,6 @@ import * as buttonStyles from './buttonStyles';
 
 export type ButtonProps = ButtonBaseProps &
   PressableProps &
-  ComponentEventHandlerProps &
   Omit<
     ReakitButtonProps,
     | 'children'
@@ -37,7 +34,7 @@ export type ButtonProps = ButtonBaseProps &
     | 'wrapElement'
   >;
 
-export const Button = forwardRef(function Button(
+const BaseButton = forwardRef(function Button(
   {
     accessibilityLabel,
     block,
@@ -54,7 +51,6 @@ export const Button = forwardRef(function Button(
     type = 'button',
     variant = 'primary',
     noScaleOnPress,
-    eventConfig,
     numberOfLines,
     ...props
   }: ButtonProps,
@@ -72,16 +68,6 @@ export const Button = forwardRef(function Button(
   const style = useMemo(
     () => ({ '--interactable-height': `${height}px`, ...flushStyles }),
     [height, flushStyles],
-  );
-
-  const onPressEvent = useEventHandler('Button', 'onPress', eventConfig);
-
-  const handlePress = useCallback(
-    (event: React.MouseEvent) => {
-      onPressEvent();
-      onPress?.(event);
-    },
-    [onPressEvent, onPress],
   );
 
   return (
@@ -105,7 +91,7 @@ export const Button = forwardRef(function Button(
       )}
       loading={loading}
       disabled={disabled}
-      onPress={handlePress}
+      onPress={onPress}
       style={style}
       type={type}
       ref={ref}
@@ -137,3 +123,7 @@ export const Button = forwardRef(function Button(
     </Pressable>
   );
 });
+
+// We need to override the props, otherwise they are not compatible with
+// TypeScript 4.7's new "nodenext" module resolution.
+export const Button = BaseButton as React.ForwardRefExoticComponent<ButtonProps>;

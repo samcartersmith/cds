@@ -19,9 +19,20 @@
     "build": {
       "executor": "@cbhq/mono-tasks:build-storybook"
     },
+    "a11y": {
+      "executor": "@cbhq/cds-tools:a11y",
+      "dependsOn": [{ "target": "build", "projects": "self" }]
+    },
     "percy": {
       "executor": "@cbhq/mono-tasks:run-percy",
       "dependsOn": [{ "target": "build", "projects": "self" }]
+    },
+    "run-a11y": {
+      "executor": "@cbhq/cds-tools:run-conditional",
+      "options": {
+        "triggerProjects": ["web", "common", "utils", "fonts", "lottie-files"],
+        "target": "storybook:a11y"
+      }
     }
   }
 }

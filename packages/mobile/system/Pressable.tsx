@@ -6,6 +6,8 @@ import {
   PressableProps as BasePressableProps,
   View,
 } from 'react-native';
+import { ComponentEventHandlerProps } from '@cbhq/cds-common';
+import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
 import { emptyArray } from '@cbhq/cds-utils';
 
 import { usePressAnimation } from '../hooks/usePressAnimation';
@@ -37,6 +39,7 @@ export type PressableProps = {
   BasePressableProps,
   'delayLongPress' | 'hitSlop' | 'onLongPress' | 'onPress' | 'pressRetentionOffset' | 'testID'
 > &
+  ComponentEventHandlerProps &
   AccessibilityProps;
 
 export type PressableInternalProps = {
@@ -76,12 +79,15 @@ export const Pressable = memo(
       style = emptyArray,
       contentStyle,
       transparentWhileInactive,
+      eventConfig,
       ...props
     }: PressableInternalProps,
     forwardedRef: ForwardedRef<View>,
   ) {
     const [pressIn, pressOut, pressScale] = usePressAnimation();
     const [pressed, setPressed] = useState(false);
+
+    const onEventHandler = useEventHandler('Button', 'onPress', eventConfig);
 
     const onPressHandler = useMemo(
       () => (event: GestureResponderEvent) => {
@@ -93,11 +99,10 @@ export const Pressable = memo(
           void Haptics.heavyImpact();
         }
 
-        if (onPress) {
-          onPress(event);
-        }
+        onPress?.(event);
+        onEventHandler();
       },
-      [feedback, onPress],
+      [feedback, onEventHandler, onPress],
     );
 
     const debouncedOnPressHandler = useMemo(() => debounce(onPressHandler), [onPressHandler]);
@@ -110,7 +115,7 @@ export const Pressable = memo(
           onPressHandler(event);
         }
       },
-      [debouncedOnPressHandler, onPressHandler, disableDebounce],
+      [disableDebounce, debouncedOnPressHandler, onPressHandler],
     );
 
     const handlePressIn = useCallback(

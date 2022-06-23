@@ -4,31 +4,31 @@ import { useIconSize } from '@cbhq/cds-common';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
 
+import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
 import { useLayout } from '../hooks/useLayout';
 import { usePalette } from '../hooks/usePalette';
 
 import { getTransform } from './dotStyles';
 
 export const DotStatusColor = memo(
-  ({ variant, pin, size = 's', children, ...props }: DotBaseProps) => {
+  ({ variant, pin, size = 's', children, overlap, ...props }: DotBaseProps) => {
     const palette = usePalette();
     const { iconSize } = useIconSize(size);
-    const [layoutSize, onLayout] = useLayout();
+    const [childrenSize, onLayout] = useLayout();
+
+    const transforms = useDotPinStyles(childrenSize, iconSize, overlap);
 
     const pinStyles = useMemo(() => {
-      // If pin placement exist, we compute the right
-      // position to pin the dot
       if (pin) {
         const [vertical, horizontal] = (pin as string).split('-');
 
-        return getTransform({
-          translateX: horizontal === 'end' ? layoutSize.width - iconSize / 2 : -(iconSize / 2),
-          translateY: vertical === 'bottom' ? layoutSize.height - iconSize / 2 : -(iconSize / 2),
-        });
+        return getTransform(
+          transforms[horizontal as DotPinStylesKey],
+          transforms[vertical as DotPinStylesKey],
+        );
       }
-
       return {};
-    }, [iconSize, layoutSize.height, layoutSize.width, pin]);
+    }, [pin, transforms]);
 
     const dotContentStyles: ViewStyle = useMemo(() => {
       return {

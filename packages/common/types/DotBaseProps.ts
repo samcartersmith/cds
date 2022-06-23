@@ -11,17 +11,23 @@ export type DotVariant = Extract<
   'positive' | 'negative' | 'primary' | 'foregroundMuted'
 >;
 
+// There is only one type of overlap right now,
+// but could potentially have more overlap types
+export type DotOverlap = 'circular';
+
 export type DotSize = IconSize;
 
 export type DotBaseProps = {
   /** Position of dot relative to its parent */
   pin?: PinPlacement;
-  /** background color of dot */
+  /** Background color of dot */
   variant: DotVariant;
-  /** children of where the dot will anchor to */
+  /** Children of where the dot will anchor to */
   children?: ReactNode;
   /** Size of dot */
   size?: DotSize;
+  /** Indicates what shape Dot is overlapping */
+  overlap?: DotOverlap;
 } & SharedProps &
   Pick<
     SharedAccessibilityProps,

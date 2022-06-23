@@ -1,0 +1,6 @@
+Add the following to the root of your React application.
+
+- [DevicePreferencesProvider](/components/device-preferences-provider) (**optional**) - Will sync the spectrum and scale based on device settings.
+- [ThemeProvider](/components/theme-provider) (**required**) - is responsible for handling colors and scale (font-sizes, spacing, etc).
+- [PortalProvider](/components/portal-provider) (**required**) - if you use any portal related components such as Modal, Alert, Dropdown, etc.
+- [FeatureFlagProvider](/components/feature-flag-provider) (**required**) - needed for coinbase wide brand updates. We use the FeatureFlagProvider as way to rollout large updates through an opt-in model to avoid unexpected & disruptive breaking changes. This Provider has no integration with any experimentation framework or backend. It's a very primitive, boolean based Provider to conditionally do something if a certain prop is present.

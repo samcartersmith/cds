@@ -1,6 +1,43 @@
 jest.mock('framer-motion', () => ({
   ...jest.requireActual('framer-motion'),
   m: jest.requireActual('framer-motion')?.motion,
-  // this will skip all animations in test which boosts test speed
   useReducedMotion: () => true,
+  LazyMotion: ({ children = null }) => children,
+  AnimatePresence: ({ children = null }) => children,
 }));
+
+/* -------------------------------------------------------------------------- */
+/*                                 matchMedia                                 */
+/* -------------------------------------------------------------------------- */
+// grab the min width value
+const queryMinWidth = (query) => {
+  const q = query.split(' ');
+  if (q.length < 2) return false;
+
+  return parseInt(q[1].split('px')[0]);
+};
+
+// eslint-disable-next-line no-undef
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: jest.fn().mockImplementation((query) => {
+    return {
+      // eslint-disable-next-line no-undef
+      matches: query ? window.innerWidth >= queryMinWidth(query) : false,
+      media: query,
+      onchange: null,
+      addListener: jest.fn(), // Deprecated
+      removeListener: jest.fn(), // Deprecated
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      dispatchEvent: jest.fn(),
+    };
+  }),
+});
+
+/* -------------------------------------------------------------------------- */
+/*                              getComputedStyle                              */
+/* -------------------------------------------------------------------------- */
+const { getComputedStyle } = global.window;
+// eslint-disable-next-line no-undef
+window.getComputedStyle = (eletm, select) => getComputedStyle(eletm, select);

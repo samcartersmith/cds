@@ -9,6 +9,7 @@ export type CollapseArrowProps = {
   collapsed?: boolean;
 };
 
+/** @deprecated Please use the AnimatedCaret component from @cbhq/cds-web/motion/AnimatedCaret */
 export const CollapseArrow = memo(function CollapseArrow({
   degrees = 180,
   collapsed,

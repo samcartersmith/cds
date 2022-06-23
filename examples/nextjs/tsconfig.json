@@ -4,6 +4,7 @@
     "outDir": "../../.nx/dist/examples/nextjs",
     "noEmit": false,
     "jsx": "preserve",
+    "moduleResolution": "node",
     "rootDir": ".",
     "paths": {}
   },

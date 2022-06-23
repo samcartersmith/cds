@@ -17,8 +17,9 @@ function RenderNativeTextArea() {
   return (
     <Box spacing={1}>
       <TextInput
-        inputNode={<NativeTextArea style={customNativeTextAreaCSS} rows={7} cols={5} />}
-        onChange={onChange}
+        inputNode={
+          <NativeTextArea onChange={onChange} style={customNativeTextAreaCSS} rows={7} cols={5} />
+        }
         helperText={inputText}
         label="Message Area"
       />

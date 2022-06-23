@@ -29,6 +29,9 @@ const links = typographies.map((typography) => (
     <Link variant={typography} to="https://www.coinbase.com/">
       {capitalize(typography)}
     </Link>
+    <Link underline variant={typography} to="https://www.coinbase.com/">
+      {capitalize(typography)}
+    </Link>
   </Example>
 ));
 
@@ -99,6 +102,9 @@ const LinkScreen = function LinkScreen() {
       <Example inline>
         <TextHeadline>Testing color</TextHeadline>
         <Link variant="title1" to="https://www.coinbase.com/" color="negative">
+          Go to Coinbase
+        </Link>
+        <Link underline variant="title1" to="https://www.coinbase.com/" color="negative">
           Go to Coinbase
         </Link>
       </Example>

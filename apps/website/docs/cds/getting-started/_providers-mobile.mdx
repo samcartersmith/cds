@@ -1,0 +1,28 @@
+import Intro from './_providers.mdx';
+
+<Intro />
+
+```tsx
+import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePreferencesProvider';
+import { FeatureFlagProvider } from '@cbhq/cds-mobile/system/FeatureFlagProvider';
+import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
+import { PortalProvider } from '@cbhq/cds-mobile/overlays/PortalProvider';
+
+function App() {
+  return (
+    <FeatureFlagProvider>
+      <DevicePreferencesProvider>
+        // ThemeProvider must be a child of FeatureFlagProvider & DevicePreferencesProvider.
+        <ThemeProvider name="default">
+          // PortalProvider must be a child of ThemeProvider
+          <PortalProvider>
+            <ErrorBoundary>
+              <AppRoutes />
+            </ErrorBoundary>
+          </PortalProvider>
+        </ThemeProvider>
+      </DevicePreferencesProvider>
+    </FeatureFlagProvider>
+  );
+}
+```

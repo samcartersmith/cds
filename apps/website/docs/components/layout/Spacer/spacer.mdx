@@ -3,26 +3,16 @@ title: Spacer
 slug: /components/spacer
 ---
 
-import { Badge } from ':cds-website/components/Badge';
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
+import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-> [@cbhq/cds-(web|mobile)/layout/Spacer](https://github.cbhq.net/frontend/cds/blob/master/packages/web/layout/Spacer.tsx)
-
-A specialized flexbox element that will automatically grow or shrink to fill available space, pushing sibling elements on their axis.
-
-## Usage
-
-The spacer is very situational, but is useful for pushing around siblings to ensure elements are in an ideal location (especially for mobile devices).
-
-```jsx live
-<VStack height={250}>
-  <Box spacing={1} background>
-    Top
-  </Box>
-
-  <Spacer />
-
-  <Box spacing={1} background>
-    Bottom
-  </Box>
-</VStack>
-```
+<Tabs groupId="page">
+  <TabItem
+    value="implementation"
+    label="Implementation"
+    toc={[...metadataToc, ...implementationToc]}
+  >
+    <Metadata />
+    <Implementation />
+  </TabItem>
+</Tabs>

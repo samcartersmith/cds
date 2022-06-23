@@ -93,9 +93,15 @@ export const InputStack = memo(function InputStack({
   }, [borderFocusedStyle, inputAreaSize, inputAreaStyle]);
 
   return (
-    <VStack testID={testID} width={width} gap={0.5} {...props}>
+    <VStack
+      testID={testID}
+      width={width}
+      gap={0.5}
+      opacity={disabled ? opacityDisabled : 1}
+      {...props}
+    >
       {!!labelNode && <>{labelNode}</>}
-      <HStack opacity={disabled ? opacityDisabled : 1}>
+      <HStack>
         {!!prependNode && <>{prependNode}</>}
         <View style={styles.inputAreaContainerStyle}>
           {focused && <Animated.View style={borderFocusedStyles} />}

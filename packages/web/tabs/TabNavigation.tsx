@@ -219,7 +219,9 @@ export const TabNavigation = memo(
                   {tabLabels}
                 </HStack>
               )}
-              {isPrimary && <TabIndicator background={background} {...activeTabLayout} />}
+              {isPrimary && activeTabLayout?.width > 0 && (
+                <TabIndicator background={background} {...activeTabLayout} />
+              )}
             </VStack>
           </HStack>
           <Paddle

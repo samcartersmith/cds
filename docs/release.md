@@ -1,5 +1,13 @@
 # Release Workflows
 
+## Runbook
+
+https://coda.io/d/CDS-Team_dFaC-pktuzN/Release-Runbooks_suJlv#_lu-05
+
+## Process
+
+https://coda.io/d/CDS-Team_dFaC-pktuzN/Release-Process_suLmD#_luxdf
+
 CDS regularly has to cut releases to expose our library through packages or assets (via a CDN) so our consumers can use them in their applications. You will often hear CDS team members refer to retail, prime, assetHub (and others) as consumers. CDS consumers are any teams at Coinbase that leverage CDS.
 
 ## Release through Verdaccio
@@ -69,4 +77,8 @@ Sometimes we want to test updates to the `@cbhq/cds-mobile` package in the `reac
 
 1. Run `yarn codegen icons`
 2. Run both android and iOS and make sure the new illustrations didn't break either build.
-3. Verify that the icons maatch what it on go/icon-illo-release-history
+3. Verify that the icons match what's on go/icon-illo-release-history.
+
+## Releasing New Features
+
+CDS should only release a new feature once it has been bug bashed and documented. If a feature does not meet both criteria, it should be gated behind a `@deprecated` JSDoc.

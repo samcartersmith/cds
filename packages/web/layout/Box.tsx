@@ -103,6 +103,11 @@ export type BoxProps<As extends BoxElement = 'div'> = {
    * @danger There may be times when you need to dynamically set styles. This comes at a performance cost, so use with caution.
    */
   dangerouslySetStyle?: React.CSSProperties;
+  /**
+   * Necessary to control roving tabindex for accessibility
+   * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
+   * */
+  tabIndex?: number;
 } & Omit<BoxBaseProps, 'position'> &
   SharedProps &
   React.AriaAttributes &

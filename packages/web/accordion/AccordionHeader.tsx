@@ -1,5 +1,9 @@
 import React, { ForwardedRef, forwardRef, memo, useCallback } from 'react';
 import { useAccordionParent } from '@cbhq/cds-common/accordion/AccordionParentContext';
+import {
+  accordionIconHiddenRotate,
+  accordionIconVisibleRotate,
+} from '@cbhq/cds-common/animation/accordion';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { listHeight } from '@cbhq/cds-common/tokens/cell';
@@ -11,13 +15,12 @@ import type {
 } from '@cbhq/cds-common/types';
 
 import { overflowClassName, truncateClassName } from '../cells/Cell';
-import { Icon } from '../icons';
 import { Box, HStack, VStack } from '../layout';
+import { AnimatedCaret } from '../motion/AnimatedCaret';
 import { Pressable } from '../system/Pressable';
 import { TextBody, TextHeadline } from '../typography';
 import { typographyResets } from '../typography/createText';
 
-import { iconStyles } from './accordionStyles';
 import { getAccordionHeaderId, getAccordionPanelId } from './utils';
 
 export type AccordionHeaderProps = AccordionHeaderBaseProps;
@@ -53,14 +56,13 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
   </Box>
 ));
 
-export const AccordionIcon = memo(({ collapsed }: AccordionIconBaseProps) => (
-  <Box
-    justifyContent="flex-end"
-    dangerouslySetClassName={collapsed ? iconStyles.collapsed : iconStyles.expanded}
-  >
-    <Icon name="caretDown" size="s" color="foregroundMuted" />
-  </Box>
-));
+export const AccordionIcon = memo(({ collapsed }: AccordionIconBaseProps) => {
+  return (
+    <Box justifyContent="flex-end">
+      <AnimatedCaret rotate={collapsed ? accordionIconHiddenRotate : accordionIconVisibleRotate} />
+    </Box>
+  );
+});
 
 export const AccordionHeader = memo(
   forwardRef(

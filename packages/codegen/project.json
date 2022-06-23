@@ -16,12 +16,6 @@
     "typecheck": {
       "executor": "@cbhq/cds-tools:typecheck"
     },
-    "docgen": {
-      "executor": "@cbhq/cds-tools:ts-script",
-      "options": {
-        "scriptPath": "packages/codegen/website/build.ts"
-      }
-    },
     "codegen": {
       "executor": "@cbhq/cds-tools:ts-script",
       "options": {
@@ -33,6 +27,13 @@
       "options": {
         "scriptPath": "packages/codegen/releasePackages.ts",
         "args": ["--packages=fonts|web|lottie-files|mobile|utils|common"]
+      }
+    },
+    "release.beta": {
+      "executor": "@cbhq/cds-tools:ts-script",
+      "options": {
+        "scriptPath": "packages/codegen/releasePackages.ts",
+        "args": ["--packages=fonts|web|lottie-files|mobile|utils|common", "--beta"]
       }
     },
     "sync_icons": {

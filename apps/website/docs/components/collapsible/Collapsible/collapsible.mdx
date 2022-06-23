@@ -1,32 +1,20 @@
 ---
 title: Collapsible
 slug: /components/collapsible
-hide_title: true
 ---
 
-import { VStack } from '@cbhq/cds-web/alpha/VStack';
-import { Link } from '@cbhq/cds-web/typography/Link';
-import { TextDisplay3 } from '@cbhq/cds-web/typography/TextDisplay3';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
+import Usage, { toc as usageToc } from './_usage.mdx';
+import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-import Usage from './_usage.mdx';
-import Props from './_implementation.mdx';
-
-<VStack gap={3}>
-  <TextDisplay3 as="h1">Collapsible</TextDisplay3>
-  <Link
-    to="https://github.cbhq.net/frontend/cds/blob/master/packages/web/collapsible/Collapsible.tsx"
-    openInNewWindow
+<Tabs groupId="page">
+  <TabItem
+    value="implementation"
+    label="Implementation"
+    toc={[...metadataToc, ...usageToc, ...implementationToc]}
   >
-    @cbhq/cds-(web|mobile)/collapsible/Collapsible
-  </Link>
-  <Tabs>
-    <TabItem value="implementation" label="Implementation" default>
-      <VStack gap={3}>
-        <Usage />
-        <Props />
-      </VStack>
-    </TabItem>
-  </Tabs>
-</VStack>
+    <Metadata />
+    <Usage />
+    <Implementation />
+  </TabItem>
+</Tabs>

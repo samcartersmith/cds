@@ -1,7 +1,7 @@
 import { RefObject } from 'react';
 import { Target, TargetAndTransition } from 'framer-motion';
 import { MotionBaseSpec } from '@cbhq/cds-common';
-import { curves, durations } from '@cbhq/cds-common/tokens/motion';
+import { curves, durations } from '@cbhq/cds-common/motion/tokens';
 import { isStorybook } from '@cbhq/cds-utils';
 
 import { convertMotionConfig } from './convertMotionConfig';
@@ -29,6 +29,7 @@ type TransitionReturnValue = {
   transition: string;
 };
 
+/** @deprecated Use Framer motion and the useMotionProps hook */
 export class Animated {
   static timing(ref: RefObject<HTMLElement>, specs: MotionSpec): TimingReturnValues | null {
     const { property, ...restSpecs } = specs;

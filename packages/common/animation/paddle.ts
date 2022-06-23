@@ -4,7 +4,7 @@ export const paddleHidden = 0;
 export const paddleVisible = 1;
 
 export const animateGradientScaleConfig: Omit<MotionBaseSpec, 'toValue' | 'fromValue'> = {
-  property: 'transform',
+  property: 'scale',
   easing: 'global',
   duration: 'fast1',
 };
@@ -16,7 +16,7 @@ export const animatePaddleOpacityConfig: Omit<MotionBaseSpec, 'toValue' | 'fromV
 };
 
 export const animatePaddleScaleConfig: Omit<MotionBaseSpec, 'toValue' | 'fromValue'> = {
-  property: 'transform',
+  property: 'scale',
   easing: 'global',
   duration: 'moderate1',
 };

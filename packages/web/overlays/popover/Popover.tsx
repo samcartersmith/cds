@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { memo, MouseEvent, useCallback, useMemo } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { css } from 'linaria';
 import { useScale } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
@@ -47,7 +48,6 @@ export const Popover = memo(
     children,
     disablePortal,
     showOverlay = false,
-    overlayRef,
     onPressSubject,
     onClose,
     onMouseEnter,
@@ -150,24 +150,29 @@ export const Popover = memo(
         >
           {children}
         </div>
-        {visible ? (
-          <Portal disablePortal={disablePortal} containerId={tooltipContainerId}>
-            <ThemeProvider scale={scale} spectrum={invertPopoverSpectrum ? invertedSpectrum : null}>
-              {showOverlay ? (
-                <Box
-                  position="fixed"
-                  pin="all"
-                  zIndex={zIndex.overlays.portal + zIndex.overlays.modal}
-                >
-                  <Overlay onPress={handleClose} ref={overlayRef} />
-                  {memoizedContent}
-                </Box>
-              ) : (
-                renderContent
-              )}
-            </ThemeProvider>
-          </Portal>
-        ) : undefined}
+        <AnimatePresence>
+          {visible ? (
+            <Portal disablePortal={disablePortal} containerId={tooltipContainerId}>
+              <ThemeProvider
+                scale={scale}
+                spectrum={invertPopoverSpectrum ? invertedSpectrum : null}
+              >
+                {showOverlay ? (
+                  <Box
+                    position="fixed"
+                    pin="all"
+                    zIndex={zIndex.overlays.portal + zIndex.overlays.modal}
+                  >
+                    <Overlay onPress={handleClose} animated />
+                    {memoizedContent}
+                  </Box>
+                ) : (
+                  renderContent
+                )}
+              </ThemeProvider>
+            </Portal>
+          ) : undefined}
+        </AnimatePresence>
       </div>
     );
   },

@@ -3,11 +3,11 @@ import { css } from 'linaria';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { SharedProps } from '@cbhq/cds-common/types';
+import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
 
 import { useDimensions } from '../hooks/useDimensions';
 import { VStack } from '../layout';
-import { breakpoints } from '../layout/responsive';
+import { deviceBreakpoints } from '../layout/responsive';
 import { ThemeProvider } from '../system/ThemeProvider';
 
 import { SidebarProvider } from './SidebarContext';
@@ -23,7 +23,7 @@ const breakpointObserverClassName = css`
 type BreakpointProps = { collapsed: number; expanded: number };
 const WIDTH: BreakpointProps = { collapsed: 87, expanded: 240 };
 const BREAKPOINT_CONFIG = {
-  breakpoints: { collapsed: 0, expanded: breakpoints.tablet },
+  breakpoints: { collapsed: 0, expanded: deviceBreakpoints.tablet },
   updateOnBreakpointChange: true,
 };
 
@@ -48,10 +48,19 @@ export type SidebarProps = {
    * @default false
    */
   autoCollapse?: boolean;
-} & SharedProps;
+} & SharedProps &
+  SharedAccessibilityProps;
 
 export const Sidebar: React.FC<SidebarProps> = memo(
-  ({ logo, children, collapsed, autoCollapse, testID }) => {
+  ({
+    logo,
+    children,
+    collapsed,
+    autoCollapse,
+    testID,
+    accessibilityLabel = 'Sidebar',
+    ...rest
+  }) => {
     const { ref, currentBreakpoint } = useDimensions(BREAKPOINT_CONFIG);
     /**
      * Calculates collapsed state which will be passed to the Sidebar Context Provider
@@ -59,8 +68,14 @@ export const Sidebar: React.FC<SidebarProps> = memo(
      * Next, do what is set explicitly on Sidebar. And finally if autoCollapse is
      * set and we're within or outside the defined breakpoint, collapse or expand
      * */
-    const computedCollapse = collapsed || (autoCollapse && currentBreakpoint === 'collapsed');
-    const computedWidth = computedCollapse ? WIDTH.collapsed : WIDTH.expanded;
+    const computedCollapse = useMemo(
+      () => collapsed || (autoCollapse && currentBreakpoint === 'collapsed'),
+      [autoCollapse, collapsed, currentBreakpoint],
+    );
+    const computedWidth = useMemo(
+      () => (computedCollapse ? WIDTH.collapsed : WIDTH.expanded),
+      [computedCollapse],
+    );
     const sidebarContext = useMemo(() => ({ collapsed: computedCollapse }), [computedCollapse]);
 
     return (
@@ -81,11 +96,13 @@ export const Sidebar: React.FC<SidebarProps> = memo(
             spacingTop={2}
             zIndex={zIndex.navigation}
             testID={testID}
+            accessibilityLabel={accessibilityLabel}
+            {...rest}
           >
             <VStack spacingTop={1} spacingStart={1} spacingBottom={4}>
               {logo}
             </VStack>
-            <VStack gap={0.5} offsetStart={0.5}>
+            <VStack gap={0.5} offsetStart={0.5} role="group">
               {children}
             </VStack>
           </VStack>

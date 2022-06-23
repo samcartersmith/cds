@@ -1,6 +1,8 @@
+import ExtractedModal from './_extracted-modal.mdx';
+
 ### Get Started
 
-1. Add `PortalProvider` to the root of your app. Import it from `import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';`.
+1. Add [PortalProvider](/components/portal-provider) to the root of your app. Import it from `import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';`.
 2. Compose `Modal` with `ModalHeader`, `ModalBody`, and `ModalFooter` like below for consistency.
 
 ```
@@ -111,41 +113,4 @@ Most likely you'd want to extract your Modal into a separate component.
 You can do that by adding a `visible: boolean` prop to your extracted Modal component and pass the prop to `Modal`.
 See example below:
 
-```jsx live
-function PortalModalExample() {
-  function ExtractedModal({ visible, closeModal }) {
-    return (
-      <Modal visible={visible} onRequestClose={closeModal}>
-        <ModalHeader title="Basic Modal" />
-        <ModalBody>
-          <TextBody as="p">{loremIpsum}</TextBody>
-        </ModalBody>
-        <ModalFooter primaryAction={<Button onPress={closeModal}>Save</Button>} />
-      </Modal>
-    );
-  }
-
-  function PortalModal() {
-    const { openModal, closeModal } = useModal();
-
-    const handlePress = useCallback(
-      () => openModal(<ExtractedModal closeModal={closeModal} />),
-      [openModal, closeModal],
-    );
-
-    return (
-      <Box>
-        <Button onPress={handlePress}>Open Modal</Button>
-      </Box>
-    );
-  }
-
-  return (
-    <PortalProvider>
-      <ExampleWithThemeToggles>
-        <PortalModal />
-      </ExampleWithThemeToggles>
-    </PortalProvider>
-  );
-}
-```
+<ExtractedModal />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Placement } from '@popperjs/core';
-import { Tooltip as TooltipPopover, TooltipReference, useTooltipState } from 'reakit/Tooltip';
+import { Tooltip as TooltipPopover, TooltipReference, useTooltipState } from 'reakit';
 
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { TextLabel2 } from '../../typography/TextLabel2';

@@ -58,6 +58,7 @@ describe('TextInput', () => {
         accessibilityLabel="Text input field"
         value={value}
         testID={testID}
+        onChange={jest.fn()}
       />,
     );
     const input = result.getByTestId(testID) as HTMLInputElement;

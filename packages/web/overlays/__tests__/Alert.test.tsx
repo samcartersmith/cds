@@ -39,18 +39,18 @@ describe('Alert', () => {
     expect(alert).toBeTruthy();
   });
 
-  it('renders title', () => {
+  it('renders title', async () => {
     const title = 'Test title';
-    const { getByText } = render(<MockAlert visible title={title} />);
+    const { findByText } = render(<MockAlert visible title={title} />);
 
-    expect(getByText(title)).toBeTruthy();
+    expect(await findByText(title)).toBeVisible();
   });
 
-  it('renders body', () => {
+  it('renders body', async () => {
     const body = 'Test body';
-    const { getByText } = render(<MockAlert visible body={body} />);
+    const { findByText } = render(<MockAlert visible body={body} />);
 
-    expect(getByText(body)).toBeTruthy();
+    expect(await findByText(body)).toBeVisible();
   });
 
   it('renders preferred action', () => {
@@ -71,13 +71,13 @@ describe('Alert', () => {
     expect(onPreferredActionPress).toHaveBeenCalledTimes(1);
   });
 
-  it('renders dismiss action', () => {
+  it('renders dismiss action', async () => {
     const onRequestClose = jest.fn();
 
-    const { getByText } = render(
+    const { findByText } = render(
       <MockAlert visible dismissActionLabel="Cancel" onRequestClose={onRequestClose} />,
     );
 
-    expect(getByText('Cancel')).toBeTruthy();
+    expect(await findByText('Cancel')).toBeTruthy();
   });
 });

@@ -4,7 +4,6 @@ import { Popover } from '../popover/Popover';
 
 import { TooltipContent, tooltipId } from './TooltipContent';
 import { TooltipProps } from './TooltipProps';
-import { useTooltipAnimation } from './useTooltipAnimation';
 import { useTooltipState } from './useTooltipState';
 
 const preventMouseDown = (event: React.MouseEvent) => {
@@ -21,10 +20,8 @@ export const Tooltip = ({
   testID,
   zIndex,
 }: TooltipProps) => {
-  const { popperAnimationRef, animateIn, animateOut } = useTooltipAnimation();
-
   const { isOpen, handleOnMouseEnter, handleOnMouseLeave, handleOnFocus, handleOnBlur } =
-    useTooltipState(animateOut);
+    useTooltipState();
 
   const clonedChild = useMemo(() => {
     return cloneElement(children, {
@@ -50,16 +47,7 @@ export const Tooltip = ({
       onMouseDown={preventMouseDown}
       invertPopoverSpectrum
       visible={isOpen}
-      content={
-        <TooltipContent
-          ref={popperAnimationRef}
-          content={content}
-          gap={gap}
-          animateIn={animateIn}
-          testID={testID}
-          zIndex={zIndex}
-        />
-      }
+      content={<TooltipContent content={content} gap={gap} testID={testID} zIndex={zIndex} />}
     >
       {clonedChild}
     </Popover>

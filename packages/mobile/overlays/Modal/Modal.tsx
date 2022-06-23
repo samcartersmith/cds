@@ -18,7 +18,7 @@ import { VStack } from '../../layout';
 import { useModalAnimation } from './useModalAnimation';
 
 export type ModalProps = ModalBaseProps &
-  Omit<RNModalProps, 'children' | 'visible' | 'onRequestClose'>;
+  Omit<RNModalProps, 'children' | 'visible' | 'onRequestClose' | 'animationType'>;
 
 export const Modal = memo(
   forwardRef<ModalRefBaseProps, React.PropsWithChildren<ModalProps>>((props, ref) => {
@@ -73,10 +73,11 @@ export const Modal = memo(
         statusBarTranslucent
         hardwareAccelerated
         transparent
-        animationType="none"
         visible={internalVisible}
         onRequestClose={onRequestClose}
         {...restProps}
+        // prevent animation from overridden
+        animationType="none"
       >
         <VStack
           animated

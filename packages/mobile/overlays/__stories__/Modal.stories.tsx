@@ -3,7 +3,8 @@ import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/internal/modalB
 
 import { Button } from '../../buttons/Button';
 import { TextInput } from '../../controls/TextInput';
-import { Example, ExampleScreen, LoremIpsum } from '../../examples/ExampleScreen';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Modal } from '../Modal/Modal';
 import { ModalBody } from '../Modal/ModalBody';
 import { ModalFooter } from '../Modal/ModalFooter';

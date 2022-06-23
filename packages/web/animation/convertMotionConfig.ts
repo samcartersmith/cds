@@ -1,4 +1,4 @@
-import { curves, durations } from '@cbhq/cds-common/tokens/motion';
+import { curves, durations } from '@cbhq/cds-common/motion/tokens';
 import type { MotionBaseSpec as DefaultMotionSpec, MotionCurve } from '@cbhq/cds-common/types';
 
 export const webCurves = {

@@ -20,7 +20,10 @@ export const useToastQueue = () => {
   const [activeToast, setActiveToast] = useState<ToastNode>();
   const toastQueue = useRef<ToastNode[]>([]);
   const activeToastRef = useRef<ToastRefBaseProps | null>(null);
+  const hasActiveToast = useRef(false);
   const timer = useTimer();
+
+  hasActiveToast.current = !!activeToast;
 
   const removeToast = useCallback(
     async (shouldTriggerAnimation = true) => {
@@ -31,7 +34,7 @@ export const useToastQueue = () => {
       timer.clear();
       setActiveToast(undefined);
     },
-    [timer, setActiveToast, activeToastRef],
+    [timer, setActiveToast],
   );
 
   const setToast = useCallback(
@@ -56,13 +59,13 @@ export const useToastQueue = () => {
   const addToast = useCallback(
     (element: ToastNode['element'], duration: number) => {
       const toast = { element, duration };
-      if (activeToast) {
+      if (hasActiveToast.current) {
         toastQueue.current.push(toast);
       } else {
         setToast(toast);
       }
     },
-    [toastQueue, setToast, activeToast],
+    [setToast],
   );
 
   useEffect(() => {
@@ -70,7 +73,7 @@ export const useToastQueue = () => {
     if (activeToast === undefined && toastQueue.current.length > 0) {
       setToast(toastQueue.current.shift());
     }
-  }, [activeToast, toastQueue, setToast]);
+  }, [activeToast, setToast]);
 
   const clearToastQueue = useCallback(async () => {
     await removeToast();

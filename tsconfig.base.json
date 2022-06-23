@@ -8,7 +8,10 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
     "isolatedModules": true,
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -17,22 +20,63 @@
     "strict": true,
     "target": "ES6",
     "paths": {
-      ":cds-website/*": ["apps/website/*"],
-      "@cbhq/cds-common": ["packages/common"],
-      "@cbhq/cds-common/*": ["packages/common/*"],
-      "@cbhq/cds-fonts": ["packages/fonts"],
-      "@cbhq/cds-fonts/*": ["packages/fonts/*"],
-      "@cbhq/cds-lottie-files": ["packages/lottie-files"],
-      "@cbhq/cds-lottie-files/*": ["packages/lottie-files/*"],
-      "@cbhq/cds-mobile": ["packages/mobile"],
-      "@cbhq/cds-mobile/*": ["packages/mobile/*"],
-      "@cbhq/cds-utils": ["packages/utils"],
-      "@cbhq/cds-utils/*": ["packages/utils/*"],
-      "@cbhq/cds-web": ["packages/web"],
-      "@cbhq/cds-web/*": ["packages/web/*"],
-      "@cbhq/cds-web-utils": ["packages/web-utils"],
-      "@cbhq/cds-web-utils/*": ["packages/web-utils/*"],
-      "@cbhq/docusaurus-plugin-docgen": ["packages/docusaurus-plugin-docgen"]
+      ":cds-website/*": [
+        "apps/website/*"
+      ],
+      "@cbhq/cds-common": [
+        "packages/common"
+      ],
+      "@cbhq/cds-common/*": [
+        "packages/common/*"
+      ],
+      "@cbhq/cds-fonts": [
+        "packages/fonts"
+      ],
+      "@cbhq/cds-fonts/*": [
+        "packages/fonts/*"
+      ],
+      "@cbhq/cds-lottie-files": [
+        "packages/lottie-files"
+      ],
+      "@cbhq/cds-lottie-files/*": [
+        "packages/lottie-files/*"
+      ],
+      "@cbhq/cds-mobile": [
+        "packages/mobile"
+      ],
+      "@cbhq/cds-mobile/*": [
+        "packages/mobile/*"
+      ],
+      "@cbhq/cds-utils": [
+        "packages/utils"
+      ],
+      "@cbhq/cds-utils/*": [
+        "packages/utils/*"
+      ],
+      "@cbhq/cds-web": [
+        "packages/web"
+      ],
+      "@cbhq/cds-web-utils": [
+        "packages/web-utils"
+      ],
+      "@cbhq/cds-web-utils/*": [
+        "packages/web-utils/*"
+      ],
+      "@cbhq/cds-web/*": [
+        "packages/web/*"
+      ],
+      "@cbhq/docusaurus-plugin-docgen": [
+        "packages/docusaurus-plugin-docgen"
+      ],
+      "@cbhq/docusaurus-plugin-kbar": [
+        "packages/docusaurus-plugin-kbar"
+      ],
+      "@cbhq/docusaurus-preset": [
+        "packages/docusaurus-preset"
+      ],
+      "@cbhq/docusaurus-theme": [
+        "packages/docusaurus-theme"
+      ]
     }
   }
 }

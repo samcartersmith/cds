@@ -14,7 +14,6 @@ import { NoopFn, SpacingScale } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { dropdownMaxHeight } from '@cbhq/cds-common/tokens/menu';
 
-import { Animated } from '../animation/Animated';
 import { SelectProvider } from '../controls/selectContext';
 import { useA11yControlledVisibility } from '../hooks/useA11yControlledVisibility';
 import { useBoundingClientRect } from '../hooks/useBoundingClientRect';
@@ -29,7 +28,6 @@ import { getBrowserGlobals, isSSR } from '../utils/browser';
 
 import { DropdownContent } from './DropdownContent';
 import { DropdownProps, DropdownRefProps } from './DropdownProps';
-import { useDropdownAnimation } from './useDropdownAnimation';
 
 type DropdownVisibilityProps = {
   visible: boolean;
@@ -162,7 +160,7 @@ const useResponsiveHeight = ({
     }
   }, [windowHeight, verticalBreakpoint, responsivePopoverMenuHeight, visible]);
 
-  return { dropdownHeight };
+  return { dropdownHeight: dropdownHeight.current };
 };
 
 const PopoverDropdown = memo(
@@ -203,68 +201,31 @@ const PopoverDropdown = memo(
         visible,
       });
 
-      const {
-        animatePopoverOverlayOut,
-        animatePopoverTranslateOut,
-        animateOverlayOut,
-        overlayRef,
-        animateIn,
-      } = useDropdownAnimation(dropdownRef, contentPosition.placement, showOverlay);
-
-      const animateOutAndCloseMenu = useCallback(async () => {
-        if (showOverlay) {
-          await Animated.parallel([
-            animatePopoverOverlayOut,
-            animatePopoverTranslateOut,
-            animateOverlayOut(),
-          ]).start(({ finished }) => {
-            if (finished) {
-              onCloseMenu?.();
-            }
-          });
-        } else {
-          await Animated.parallel([animatePopoverOverlayOut, animatePopoverTranslateOut]).start(
-            ({ finished }) => {
-              if (finished) {
-                onCloseMenu?.();
-              }
-            },
-          );
-        }
-      }, [
-        showOverlay,
-        animatePopoverOverlayOut,
-        animatePopoverTranslateOut,
-        animateOverlayOut,
-        onCloseMenu,
-      ]);
-
       const context = useMemo(
         () => ({
           onChange,
           value,
-          handleCloseMenu: !disableCloseOnOptionChange ? animateOutAndCloseMenu : undefined,
+          handleCloseMenu: !disableCloseOnOptionChange ? onCloseMenu : undefined,
         }),
-        [onChange, value, disableCloseOnOptionChange, animateOutAndCloseMenu],
+        [onChange, value, disableCloseOnOptionChange, onCloseMenu],
       );
 
       const memoizedContent = useMemo(() => {
         return (
           <DropdownContent
             ref={dropdownRef}
-            onOpen={animateIn}
             width={block ? subjectRect.width : width}
             minWidth={minWidth}
             maxWidth={maxWidth}
-            height={dropdownHeight.current}
+            height={dropdownHeight}
             maxHeight={maxHeight}
             value={value}
+            placement={contentPosition.placement}
           >
             {content}
           </DropdownContent>
         );
       }, [
-        animateIn,
         block,
         content,
         dropdownHeight,
@@ -274,6 +235,7 @@ const PopoverDropdown = memo(
         subjectRect.width,
         value,
         width,
+        contentPosition,
       ]);
 
       useImperativeHandle(
@@ -290,11 +252,10 @@ const PopoverDropdown = memo(
           <Popover
             // DropdownContent will handle exit animation on menu blur, including pressing the subject again to close
             onPressSubject={!visible ? onOpenMenu : undefined}
-            onClose={animateOutAndCloseMenu}
+            onClose={onCloseMenu}
             visible={visible}
             content={memoizedContent}
             showOverlay={showOverlay}
-            overlayRef={overlayRef}
             contentPosition={contentPosition ?? defaultPopoverContentPositionConfig}
             testID={testID}
             disablePortal={disablePortal}
@@ -325,7 +286,7 @@ export const Dropdown = memo(
       }: DropdownProps,
       ref: ForwardedRef<DropdownRefProps>,
     ) => {
-      const isMobileWeb = useIsMobile();
+      const isMobile = useIsMobile();
       const [visible, { toggleOn, toggleOff }] = useToggler();
 
       const handleOpenMenu = useCallback(() => {
@@ -338,7 +299,7 @@ export const Dropdown = memo(
         onCloseMenu?.();
       }, [onCloseMenu, toggleOff]);
 
-      return isMobileWeb && enableMobileModal ? (
+      return isMobile && enableMobileModal ? (
         <ModalDropdown
           maxHeight={maxHeight}
           visible={visible}

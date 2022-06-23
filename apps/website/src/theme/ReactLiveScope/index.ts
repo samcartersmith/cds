@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useColorMode } from '@docusaurus/theme-common';
+import ExampleWithThemeToggles from '@theme/ExampleWithThemeToggles';
+import ThemeToggles from '@theme/ThemeToggles';
 import { join, useToggler } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { accounts } from '@cbhq/cds-common/internal/data/accounts';
-import { assetColors, assetImages, assets } from '@cbhq/cds-common/internal/data/assets';
+import {
+  assetColors,
+  assetImages,
+  assets,
+  squareAssets,
+} from '@cbhq/cds-common/internal/data/assets';
 import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 import { prices } from '@cbhq/cds-common/internal/data/prices';
 import { product } from '@cbhq/cds-common/internal/data/product';
@@ -23,6 +30,7 @@ import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
+import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common/tokens/dot';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
@@ -64,8 +72,10 @@ import * as CDSSystem from '@cbhq/cds-web/system';
 import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
 import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
+import { useThemeProviderStyles } from '@cbhq/cds-web/system/useThemeProviderStyles';
 import * as CDSTables from '@cbhq/cds-web/tables';
 import * as CDSTabs from '@cbhq/cds-web/tabs';
+import { Tag } from '@cbhq/cds-web/tag/Tag';
 import { palette } from '@cbhq/cds-web/tokens';
 import * as CDSTypography from '@cbhq/cds-web/typography';
 import { getZIndexFromRow } from '@cbhq/cds-web/utils/overflow';
@@ -78,10 +88,8 @@ import { SparklineArea } from '@cbhq/cds-web/visualizations/SparklineArea';
 import { ButtonSheet } from ':cds-website/components/ButtonSheet';
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleBox } from ':cds-website/components/ExampleBox';
-import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 import { PaletteSheet } from ':cds-website/components/PaletteSheet';
 import { ResponsiveExample } from ':cds-website/components/ResponsiveExample';
-import { ThemeToggles } from ':cds-website/components/ThemeToggles';
 import { TypographySheet } from ':cds-website/components/TypographySheet';
 import { LottieExample } from ':cds-website/docs/components/animation/Lottie/LottieExample';
 import { LottieSheet } from ':cds-website/docs/components/animation/Lottie/LottieSheet';
@@ -116,10 +124,13 @@ const ReactLiveScope: unknown = {
   ...React,
   // Docusaurus
   useColorMode,
+  // CDS Tokens
+  palette,
+  avatarDotSizeMap,
+  avatarIconSizeMap,
   // CDS
   join,
   lottieFiles,
-  palette,
   useAccessibleForeground,
   useCheckboxGroupState,
   usePalette,
@@ -139,6 +150,7 @@ const ReactLiveScope: unknown = {
   useFeatureFlags,
   useFeatureFlag,
   useFeatureFlagUpdater,
+  useThemeProviderStyles,
   useAlert,
   useOverlay,
   useToast,
@@ -170,12 +182,14 @@ const ReactLiveScope: unknown = {
   Cell,
   Dropdown,
   MenuItem,
+  Tag,
   // context
   PortalProvider,
   // Utils
   loremIpsum,
   ReactRouterLink,
   assets,
+  squareAssets,
   assetColors,
   prices,
   mocks,

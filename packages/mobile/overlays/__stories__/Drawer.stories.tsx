@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, ScrollView } from 'react-native';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { prices } from '@cbhq/cds-common/internal/data/prices';
 import type { DrawerBaseProps, DrawerRefBaseProps, IconName, NoopFn } from '@cbhq/cds-common/types';
@@ -7,10 +7,12 @@ import type { DrawerBaseProps, DrawerRefBaseProps, IconName, NoopFn } from '@cbh
 import { Button } from '../../buttons/Button';
 import { ListCell } from '../../cells/ListCell';
 import { Menu, SelectOption } from '../../controls';
-import { Example, ExampleScreen, LoremIpsum } from '../../examples/ExampleScreen';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons/Icon';
 import { Fallback, Spacer, VStack } from '../../layout';
+import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Avatar } from '../../media/Avatar';
+import { PressableOpacity } from '../../system';
 import { TextTitle3 } from '../../typography';
 import { Drawer } from '../Drawer/Drawer';
 
@@ -145,6 +147,7 @@ const SideDrawerScrollableContent = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pi
     },
     [handleOptionPress],
   );
+
   return (
     <>
       <Button onPress={toggleOn}>Open</Button>
@@ -155,6 +158,13 @@ const SideDrawerScrollableContent = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pi
           onCloseComplete={toggleOff}
           ref={drawerRef}
         >
+          <VStack height={120} spacingHorizontal={3} spacingBottom={1}>
+            <ScrollView>
+              <PressableOpacity noScaleOnPress>
+                <LoremIpsum repeat={2} />
+              </PressableOpacity>
+            </ScrollView>
+          </VStack>
           <Menu value={value} onChange={setValue}>
             <FlatList data={lotsOfOptions} renderItem={renderItem} />
           </Menu>

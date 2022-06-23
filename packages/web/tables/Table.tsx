@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React, { memo, useMemo } from 'react';
 
 import { cx } from '../utils/linaria';
@@ -26,7 +27,7 @@ export const Table = memo(
     return (
       <TableContext.Provider value={value}>
         <div className={variantStyles}>
-          <table className={tableStyles} data-testid={testID} {...rest}>
+          <table className={tableStyles} data-testid={testID} {...rest} tabIndex={0}>
             {children}
           </table>
         </div>

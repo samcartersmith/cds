@@ -28,7 +28,7 @@ const Subject = ({ title, description }: SwitcherSubjectProps) => {
               {title}
             </TextLabel1>
           ) : (
-            <TextHeadline overflow="truncate" as="h3">
+            <TextHeadline overflow="truncate" as="span">
               {title}
             </TextHeadline>
           )}

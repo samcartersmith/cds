@@ -1,4 +1,4 @@
-import React, { ReactNode, RefObject } from 'react';
+import React, { ReactNode } from 'react';
 import { Placement } from '@popperjs/core';
 import { SharedAccessibilityProps, SharedProps, SpacingScale } from '@cbhq/cds-common/types';
 
@@ -32,8 +32,6 @@ export type PopoverProps = {
    * @default false
    */
   showOverlay?: boolean;
-  /** Ref passed to Overlay used to control animations */
-  overlayRef?: RefObject<HTMLElement>;
   /** Callback that fires when the subject is pressed */
   onPressSubject?: () => void;
   /** Callback that is fired after the content animates out */

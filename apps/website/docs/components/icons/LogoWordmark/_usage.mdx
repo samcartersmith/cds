@@ -1,0 +1,17 @@
+```jsx live
+<VStack>
+  <Box width={200} spacingBottom={2}>
+    <LogoWordmark />
+  </Box>
+  <ThemeProvider spectrum="light">
+    <Box background width={200} spacingBottom={2}>
+      <LogoWordmark foreground />
+    </Box>
+  </ThemeProvider>
+  <ThemeProvider spectrum="dark">
+    <Box background width={200}>
+      <LogoWordmark foreground />
+    </Box>
+  </ThemeProvider>
+</VStack>
+```

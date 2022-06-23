@@ -1,0 +1,28 @@
+---
+id: getting-started
+title: Getting started
+---
+
+import Figma, { toc as figmaToc } from './_figma.mdx';
+import Web, { tocOverride as webToc } from './_web.mdx';
+import WebEsm, { tocOverride as webEsmToc } from './_web-esm.mdx';
+import Mobile, { toc as mobileToc } from './_mobile.mdx';
+import Faq, { toc as faqToc } from './_faq.mdx';
+
+<Figma />
+
+## Packages
+
+<Tabs groupId="getting-started">
+  <TabItem value="@cbhq/cds-web" toc={[...figmaToc, ...webToc, ...faqToc]}>
+    <Web />
+  </TabItem>
+  <TabItem value="@cbhq/cds-web-esm" toc={[...figmaToc, ...webEsmToc, ...faqToc]}>
+    <WebEsm />
+  </TabItem>
+  <TabItem value="@cbhq/cds-mobile" toc={[...figmaToc, ...mobileToc, ...faqToc]}>
+    <Mobile />
+  </TabItem>
+</Tabs>
+
+<Faq />

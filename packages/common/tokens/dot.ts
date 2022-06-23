@@ -1,4 +1,23 @@
+import type { DotSize } from '../types';
+import type { AvatarSize } from '../types/AvatarSize';
+
 import { borderRadius, borderWidth } from './border';
+
+export const avatarIconSizeMap: Record<AvatarSize, DotSize> = {
+  xxxl: 's',
+  xxl: 's',
+  xl: 's',
+  l: 'xs',
+  m: 'xs',
+} as const;
+
+export const avatarDotSizeMap: Record<AvatarSize, DotSize> = {
+  xxxl: 'm',
+  xxl: 'm',
+  xl: 'm',
+  l: 's',
+  m: 'xs',
+} as const;
 
 export const dotOuterContainerStyles = {
   alignItems: 'center',

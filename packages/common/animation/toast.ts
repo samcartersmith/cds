@@ -23,7 +23,7 @@ export const animateOutOpacityConfig: MotionBaseSpec = {
 };
 
 export const animateInBottomConfig: MotionBaseSpec = {
-  property: 'transform',
+  property: 'y',
   easing: 'enterFunctional',
   duration: 'moderate3',
   toValue: toastVisibleBottom,
@@ -31,7 +31,7 @@ export const animateInBottomConfig: MotionBaseSpec = {
 };
 
 export const animateOutBottomConfig: MotionBaseSpec = {
-  property: 'transform',
+  property: 'y',
   easing: 'exitFunctional',
   duration: 'moderate3',
   toValue: toastHiddenBottom,

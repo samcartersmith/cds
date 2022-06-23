@@ -2,9 +2,8 @@
  * DO NOT MODIFY
  * Generated from yarn storybook a11y
  */
-
 export const a11yReport = {
-  timestamp: '2022-04-26T00:33:33.142Z',
+  timestamp: '2022-06-08T20:03:02.893Z',
   report: [
     {
       id: 'icon--sheet-0',
@@ -52,115 +51,6 @@ export const a11yReport = {
       title: 'Icon',
       kind: 'Icon',
       passes: 10,
-      violations: [],
-    },
-    {
-      id: 'components-cards--announcement-card',
-      name: 'Announcement Card',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 13,
-      violations: [],
-    },
-    {
-      id: 'components-cards--announcement-cards',
-      name: 'Announcement Cards',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 16,
-      violations: [
-        {
-          id: 'nested-interactive',
-          impact: 'serious',
-          tags: ['cat.keyboard', 'wcag2a', 'wcag412'],
-          description:
-            'Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies',
-          help: 'Interactive controls must not be nested',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'no-focusable-content',
-                  data: null,
-                  relatedNodes: [
-                    {
-                      html: '<button type="button" data-testid="card-body-action" class="i1mid3m6 iqamtvt ixq3qcz tnurl35 t106q4en b19rrrfi fxvgl8z ppscynd bs74mpw b1idwjgh _12x2frn _czghws _jf348 _1os04ly _jf348" style="--interactable-height:40px; margin-left: calc(var(--spacing-2) * -1); margin-right: 0px; min-width: unset; --interactable-opacity-hovered:0.98; --interactable-opacity-pressed:0.92; --interactable-overlay:var(--gray0); --interactable-underlay:var(--foreground); --interactable-border-radius:4px;">',
-                      target: [
-                        '.cys9fvs:nth-child(3) > .p1qbvwwp > .c1wa27ul.f13ygna6 > .c1omxyrd.r45vtfp.s19f9ocl > .f1g4ii86.c1wa27ul.f13ygna6 > .ixq3qcz.b19rrrfi.bs74mpw',
-                      ],
-                    },
-                  ],
-                  impact: 'serious',
-                  message: 'Element has focusable descendants',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<button type="button" class="i1mid3m6 iqamtvt tnurl35 t106q4en fxvgl8z p1qbvwwp" style="--interactable-opacity-hovered:0.98; --interactable-opacity-pressed:0.92; --interactable-underlay:var(--foreground); --interactable-border-radius:0px;">',
-              target: ['.cys9fvs:nth-child(3) > .p1qbvwwp'],
-              failureSummary: 'Fix any of the following:\n  Element has focusable descendants',
-            },
-            {
-              any: [
-                {
-                  id: 'no-focusable-content',
-                  data: null,
-                  relatedNodes: [
-                    {
-                      html: '<button type="button" data-testid="card-body-action" class="i1mid3m6 iqamtvt ixq3qcz tnurl35 t106q4en b19rrrfi fxvgl8z ppscynd bs74mpw b1idwjgh _12x2frn _czghws _jf348 _1os04ly _jf348" style="--interactable-height:40px; margin-left: calc(var(--spacing-2) * -1); margin-right: 0px; min-width: unset; --interactable-opacity-hovered:0.98; --interactable-opacity-pressed:0.92; --interactable-overlay:var(--gray0); --interactable-underlay:var(--foreground); --interactable-border-radius:4px;">',
-                      target: [
-                        '.cys9fvs:nth-child(5) > .p1qbvwwp > .c1wa27ul.f13ygna6 > .c1omxyrd.r45vtfp.s19f9ocl > .f1g4ii86.c1wa27ul.f13ygna6 > .ixq3qcz.b19rrrfi.bs74mpw',
-                      ],
-                    },
-                  ],
-                  impact: 'serious',
-                  message: 'Element has focusable descendants',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<button type="button" class="i1mid3m6 iqamtvt tnurl35 t106q4en fxvgl8z p1qbvwwp" style="--interactable-opacity-hovered:0.98; --interactable-opacity-pressed:0.92; --interactable-underlay:var(--foreground); --interactable-border-radius:0px;">',
-              target: ['.cys9fvs:nth-child(5) > .p1qbvwwp'],
-              failureSummary: 'Fix any of the following:\n  Element has focusable descendants',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: 'components-cards--data-card',
-      name: 'Data Card',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 9,
-      violations: [],
-    },
-    {
-      id: 'components-cards--data-cards',
-      name: 'Data Cards',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 13,
-      violations: [],
-    },
-    {
-      id: 'components-cards--feature-entry-card',
-      name: 'Feature Entry Card',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 13,
-      violations: [],
-    },
-    {
-      id: 'components-cards--feature-entry-cards',
-      name: 'Feature Entry Cards',
-      title: 'components/Cards',
-      kind: 'components/Cards',
-      passes: 16,
       violations: [],
     },
     {
@@ -248,12 +138,20 @@ export const a11yReport = {
       name: 'Default',
       title: 'Core Components/Buttons/Button (Frontier)',
       kind: 'Core Components/Buttons/Button (Frontier)',
-      passes: 7,
+      passes: 8,
       violations: [],
     },
     {
       id: 'core-components-buttons-button-frontier--html-button',
       name: 'Html Button',
+      title: 'Core Components/Buttons/Button (Frontier)',
+      kind: 'Core Components/Buttons/Button (Frontier)',
+      passes: 8,
+      violations: [],
+    },
+    {
+      id: 'core-components-buttons-button-frontier--number-of-lines',
+      name: 'Number Of Lines',
       title: 'Core Components/Buttons/Button (Frontier)',
       kind: 'Core Components/Buttons/Button (Frontier)',
       passes: 8,
@@ -280,7 +178,7 @@ export const a11yReport = {
       name: 'Tile Button Pictogram',
       title: 'Core Components/Buttons/TileButton',
       kind: 'Core Components/Buttons/TileButton',
-      passes: 10,
+      passes: 11,
       violations: [],
     },
     {
@@ -496,7 +394,7 @@ export const a11yReport = {
       name: 'Basic Collapsible',
       title: 'Core Components/Collapsible',
       kind: 'Core Components/Collapsible',
-      passes: 7,
+      passes: 8,
       violations: [],
     },
     {
@@ -512,7 +410,7 @@ export const a11yReport = {
       name: 'Horizontal',
       title: 'Core Components/Collapsible',
       kind: 'Core Components/Collapsible',
-      passes: 7,
+      passes: 8,
       violations: [],
     },
     {
@@ -520,7 +418,7 @@ export const a11yReport = {
       name: 'Reveal Top',
       title: 'Core Components/Collapsible',
       kind: 'Core Components/Collapsible',
-      passes: 7,
+      passes: 8,
       violations: [],
     },
     {
@@ -528,7 +426,7 @@ export const a11yReport = {
       name: 'Scroll',
       title: 'Core Components/Collapsible',
       kind: 'Core Components/Collapsible',
-      passes: 7,
+      passes: 8,
       violations: [],
     },
     {
@@ -760,7 +658,7 @@ export const a11yReport = {
       name: 'Basic',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 14,
+      passes: 15,
       violations: [],
     },
     {
@@ -768,7 +666,7 @@ export const a11yReport = {
       name: 'Borderless',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -776,7 +674,7 @@ export const a11yReport = {
       name: 'Compact',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -784,7 +682,7 @@ export const a11yReport = {
       name: 'Custom Ref',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -800,7 +698,7 @@ export const a11yReport = {
       name: 'Display Value',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -808,7 +706,7 @@ export const a11yReport = {
       name: 'Hide Start Icon',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -816,7 +714,7 @@ export const a11yReport = {
       name: 'Hide Start Icon Search Example',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 14,
+      passes: 15,
       violations: [],
     },
     {
@@ -824,7 +722,7 @@ export const a11yReport = {
       name: 'On Blur',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -832,7 +730,7 @@ export const a11yReport = {
       name: 'On Change Example',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -840,7 +738,7 @@ export const a11yReport = {
       name: 'On Clear',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -848,7 +746,7 @@ export const a11yReport = {
       name: 'On Focus',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -856,7 +754,7 @@ export const a11yReport = {
       name: 'On Search',
       title: 'Core Components/Inputs/SearchInput',
       kind: 'Core Components/Inputs/SearchInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -864,7 +762,7 @@ export const a11yReport = {
       name: 'Compact',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 12,
+      passes: 10,
       violations: [],
     },
     {
@@ -872,7 +770,7 @@ export const a11yReport = {
       name: 'Dark Compact',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 12,
+      passes: 10,
       violations: [],
     },
     {
@@ -880,15 +778,64 @@ export const a11yReport = {
       name: 'Dark Disabled',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 12,
-      violations: [],
+      passes: 10,
+      violations: [
+        {
+          id: 'color-contrast',
+          impact: 'serious',
+          tags: ['cat.color', 'wcag2aa', 'wcag143'],
+          description:
+            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
+          help: 'Elements must have sufficient color contrast',
+          helpUrl:
+            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
+          nodes: [
+            {
+              any: [
+                {
+                  id: 'color-contrast',
+                  data: {
+                    fgColor: '#1c1e22',
+                    bgColor: '#0a0b0d',
+                    contrastRatio: 1.18,
+                    fontSize: '12.0pt (16px)',
+                    fontWeight: 'normal',
+                    messageKey: null,
+                    expectedContrastRatio: '4.5:1',
+                  },
+                  relatedNodes: [
+                    {
+                      html: '<span data-testid="input-interactable-area" class="i8vpxbw te9avau t106q4en iku8viz dbp6ii7 ieg5chz" disabled="" style="--border-color-unfocused:var(--line-heavy); --border-color-focused:var(--primary); --border-width-focused:var(--border-width-input); --interactable-border-radius:8px; --interactable-background:var(--background); --interactable-hovered-background:rgb(15, 16, 18); --interactable-hovered-opacity:0.98; --interactable-pressed-background:rgb(30, 31, 32); --interactable-pressed-opacity:0.92; --interactable-disabled-background:rgb(10, 11, 13);">',
+                      target: ['.iku8viz'],
+                    },
+                    {
+                      html: '<div class="f13ygna6 c1wa27ul bfumyc1 _1vh1yhf" style="min-height: 100px;">',
+                      target: ['.bfumyc1'],
+                    },
+                  ],
+                  impact: 'serious',
+                  message:
+                    'Element has insufficient color contrast of 1.18 (foreground color: #1c1e22, background color: #0a0b0d, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<p class="t160640o bw3lfah f1o033nd t5418vf sjo1exx t41rhkw">Choose an amount</p>',
+              target: ['.bw3lfah'],
+              failureSummary:
+                'Fix any of the following:\n  Element has insufficient color contrast of 1.18 (foreground color: #1c1e22, background color: #0a0b0d, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 'core-components-inputs-select--dark-input-stack-options',
       name: 'Dark Input Stack Options',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 12,
+      passes: 10,
       violations: [],
     },
     {
@@ -896,7 +843,7 @@ export const a11yReport = {
       name: 'Dark Mode',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 10,
+      passes: 9,
       violations: [],
     },
     {
@@ -904,7 +851,7 @@ export const a11yReport = {
       name: 'Dark Variants',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 12,
+      passes: 10,
       violations: [],
     },
     {
@@ -912,7 +859,7 @@ export const a11yReport = {
       name: 'Default',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 10,
+      passes: 9,
       violations: [],
     },
     {
@@ -920,7 +867,7 @@ export const a11yReport = {
       name: 'Dense',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 10,
+      passes: 9,
       violations: [],
     },
     {
@@ -928,7 +875,7 @@ export const a11yReport = {
       name: 'Dense Compact',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 12,
+      passes: 10,
       violations: [],
     },
     {
@@ -936,15 +883,64 @@ export const a11yReport = {
       name: 'Dense Disabled',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 12,
-      violations: [],
+      passes: 10,
+      violations: [
+        {
+          id: 'color-contrast',
+          impact: 'serious',
+          tags: ['cat.color', 'wcag2aa', 'wcag143'],
+          description:
+            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
+          help: 'Elements must have sufficient color contrast',
+          helpUrl:
+            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
+          nodes: [
+            {
+              any: [
+                {
+                  id: 'color-contrast',
+                  data: {
+                    fgColor: '#e7e8ea',
+                    bgColor: '#ffffff',
+                    contrastRatio: 1.22,
+                    fontSize: '10.5pt (14px)',
+                    fontWeight: 'normal',
+                    messageKey: null,
+                    expectedContrastRatio: '4.5:1',
+                  },
+                  relatedNodes: [
+                    {
+                      html: '<span data-testid="input-interactable-area" class="i8vpxbw te9avau t106q4en iku8viz dbp6ii7 ieg5chz" disabled="" style="--border-color-unfocused:var(--line-heavy); --border-color-focused:var(--primary); --border-width-focused:var(--border-width-input); --interactable-border-radius:8px; --interactable-background:var(--background); --interactable-hovered-background:rgb(250, 250, 250); --interactable-hovered-opacity:0.98; --interactable-pressed-background:rgb(235, 235, 236); --interactable-pressed-opacity:0.92; --interactable-disabled-background:rgb(255, 255, 255);">',
+                      target: ['.iku8viz'],
+                    },
+                    {
+                      html: '<div class="f13ygna6 c1wa27ul bfumyc1 _1vh1yhf" style="min-height: 100px;">',
+                      target: ['.bfumyc1'],
+                    },
+                  ],
+                  impact: 'serious',
+                  message:
+                    'Element has insufficient color contrast of 1.22 (foreground color: #e7e8ea, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<p class="t160640o bw3lfah f1o033nd t5418vf sjo1exx t41rhkw">Choose an amount</p>',
+              target: ['.fuo9819 > .bw3lfah.f1o033nd.t160640o'],
+              failureSummary:
+                'Fix any of the following:\n  Element has insufficient color contrast of 1.22 (foreground color: #e7e8ea, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 'core-components-inputs-select--dense-input-stack-options',
       name: 'Dense Input Stack Options',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 12,
+      passes: 10,
       violations: [],
     },
     {
@@ -952,7 +948,7 @@ export const a11yReport = {
       name: 'Dense Variants',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 12,
+      passes: 10,
       violations: [],
     },
     {
@@ -960,15 +956,64 @@ export const a11yReport = {
       name: 'Disabled',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 12,
-      violations: [],
+      passes: 10,
+      violations: [
+        {
+          id: 'color-contrast',
+          impact: 'serious',
+          tags: ['cat.color', 'wcag2aa', 'wcag143'],
+          description:
+            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
+          help: 'Elements must have sufficient color contrast',
+          helpUrl:
+            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
+          nodes: [
+            {
+              any: [
+                {
+                  id: 'color-contrast',
+                  data: {
+                    fgColor: '#e7e8ea',
+                    bgColor: '#ffffff',
+                    contrastRatio: 1.22,
+                    fontSize: '12.0pt (16px)',
+                    fontWeight: 'normal',
+                    messageKey: null,
+                    expectedContrastRatio: '4.5:1',
+                  },
+                  relatedNodes: [
+                    {
+                      html: '<span data-testid="input-interactable-area" class="i8vpxbw te9avau t106q4en iku8viz dbp6ii7 ieg5chz" disabled="" style="--border-color-unfocused:var(--line-heavy); --border-color-focused:var(--primary); --border-width-focused:var(--border-width-input); --interactable-border-radius:8px; --interactable-background:var(--background); --interactable-hovered-background:rgb(250, 250, 250); --interactable-hovered-opacity:0.98; --interactable-pressed-background:rgb(235, 235, 236); --interactable-pressed-opacity:0.92; --interactable-disabled-background:rgb(255, 255, 255);">',
+                      target: ['.iku8viz'],
+                    },
+                    {
+                      html: '<div class="f13ygna6 c1wa27ul bfumyc1 _1vh1yhf" style="min-height: 100px;">',
+                      target: ['.bfumyc1'],
+                    },
+                  ],
+                  impact: 'serious',
+                  message:
+                    'Element has insufficient color contrast of 1.22 (foreground color: #e7e8ea, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<p class="t160640o bw3lfah f1o033nd t5418vf sjo1exx t41rhkw">Choose an amount</p>',
+              target: ['.bw3lfah'],
+              failureSummary:
+                'Fix any of the following:\n  Element has insufficient color contrast of 1.22 (foreground color: #e7e8ea, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 'core-components-inputs-select--input-stack-options',
       name: 'Input Stack Options',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 12,
+      passes: 10,
       violations: [],
     },
     {
@@ -976,7 +1021,7 @@ export const a11yReport = {
       name: 'Variants',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 12,
+      passes: 10,
       violations: [],
     },
     {
@@ -1024,7 +1069,7 @@ export const a11yReport = {
       name: 'Compact Input',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 12,
+      passes: 13,
       violations: [],
     },
     {
@@ -1032,7 +1077,7 @@ export const a11yReport = {
       name: 'Compact Input End',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 14,
+      passes: 15,
       violations: [],
     },
     {
@@ -1040,7 +1085,7 @@ export const a11yReport = {
       name: 'Compact Input Start',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 16,
+      passes: 17,
       violations: [],
     },
     {
@@ -1048,7 +1093,7 @@ export const a11yReport = {
       name: 'Compact Input Suffix',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 12,
+      passes: 13,
       violations: [],
     },
     {
@@ -1104,7 +1149,7 @@ export const a11yReport = {
       name: 'No Label',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 11,
+      passes: 12,
       violations: [],
     },
     {
@@ -1204,6 +1249,14 @@ export const a11yReport = {
       violations: [],
     },
     {
+      id: 'core-components-dots-dotcount--dot-count-overlap',
+      name: 'Dot Count Overlap',
+      title: 'Core Components/Dots/DotCount',
+      kind: 'Core Components/Dots/DotCount',
+      passes: 8,
+      violations: [],
+    },
+    {
       id: 'core-components-dots-dotcount--dot-count-placements',
       name: 'Dot Count Placements',
       title: 'Core Components/Dots/DotCount',
@@ -1225,6 +1278,14 @@ export const a11yReport = {
       title: 'Core Components/Dots/DotStatusColor',
       kind: 'Core Components/Dots/DotStatusColor',
       passes: 5,
+      violations: [],
+    },
+    {
+      id: 'core-components-dots-dotstatuscolor--dot-status-color-overlap',
+      name: 'Dot Status Color Overlap',
+      title: 'Core Components/Dots/DotStatusColor',
+      kind: 'Core Components/Dots/DotStatusColor',
+      passes: 10,
       violations: [],
     },
     {
@@ -1252,6 +1313,22 @@ export const a11yReport = {
       violations: [],
     },
     {
+      id: 'core-components-dots-dotsymbol--dot-symbol-icon',
+      name: 'Dot Symbol Icon',
+      title: 'Core Components/Dots/DotSymbol',
+      kind: 'Core Components/Dots/DotSymbol',
+      passes: 10,
+      violations: [],
+    },
+    {
+      id: 'core-components-dots-dotsymbol--dot-symbol-overlap',
+      name: 'Dot Symbol Overlap',
+      title: 'Core Components/Dots/DotSymbol',
+      kind: 'Core Components/Dots/DotSymbol',
+      passes: 10,
+      violations: [],
+    },
+    {
       id: 'core-components-dots-dotsymbol--dot-symbol-placements',
       name: 'Dot Symbol Placements',
       title: 'Core Components/Dots/DotSymbol',
@@ -1268,6 +1345,70 @@ export const a11yReport = {
       violations: [],
     },
     {
+      id: 'core-components-dropdown--custom-options',
+      name: 'Custom Options',
+      title: 'Core Components/Dropdown',
+      kind: 'Core Components/Dropdown',
+      passes: 7,
+      violations: [],
+    },
+    {
+      id: 'core-components-dropdown--default',
+      name: 'Default',
+      title: 'Core Components/Dropdown',
+      kind: 'Core Components/Dropdown',
+      passes: 9,
+      violations: [],
+    },
+    {
+      id: 'core-components-dropdown--mobile-modal',
+      name: 'Mobile Modal',
+      title: 'Core Components/Dropdown',
+      kind: 'Core Components/Dropdown',
+      passes: 9,
+      violations: [],
+    },
+    {
+      id: 'core-components-dropdown--show-overlay',
+      name: 'Show Overlay',
+      title: 'Core Components/Dropdown',
+      kind: 'Core Components/Dropdown',
+      passes: 9,
+      violations: [],
+    },
+    {
+      id: 'core-components-dropdown--sub-menu',
+      name: 'Sub Menu',
+      title: 'Core Components/Dropdown',
+      kind: 'Core Components/Dropdown',
+      passes: 9,
+      violations: [],
+    },
+    {
+      id: 'core-components-dropdown--wrapped',
+      name: 'Wrapped',
+      title: 'Core Components/Dropdown',
+      kind: 'Core Components/Dropdown',
+      passes: 8,
+      violations: [],
+    },
+    {
+      id: 'core-components-dropdown--wrapped-mobile-modal',
+      name: 'Wrapped Mobile Modal',
+      title: 'Core Components/Dropdown',
+      kind: 'Core Components/Dropdown',
+      passes: 8,
+      violations: [],
+    },
+    {
+      id: 'hooks-usebreakpoints--playground',
+      name: 'Playground',
+      title: 'Hooks/useBreakpoints',
+      kind: 'Hooks/useBreakpoints',
+      passes: 8,
+      violations: [],
+    },
+    {
       id: 'core-components-logo-sheet--logo-sheet',
       name: 'Logo Sheet',
       title: 'Core Components/Logo Sheet',
@@ -1276,19 +1417,27 @@ export const a11yReport = {
       violations: [],
     },
     {
+      id: 'core-components-card--dark-mode-non-clickable-cards',
+      name: 'Dark Mode Non Clickable Cards',
+      title: 'Core Components/Card',
+      kind: 'Core Components/Card',
+      passes: 9,
+      violations: [],
+    },
+    {
+      id: 'core-components-card--dark-mode-non-clickable-colored-cards',
+      name: 'Dark Mode Non Clickable Colored Cards',
+      title: 'Core Components/Card',
+      kind: 'Core Components/Card',
+      passes: 7,
+      violations: [],
+    },
+    {
       id: 'core-components-card--dark-mode-pinned-bottom-card',
       name: 'Dark Mode Pinned Bottom Card',
       title: 'Core Components/Card',
       kind: 'Core Components/Card',
       passes: 6,
-      violations: [],
-    },
-    {
-      id: 'core-components-illustration--list-illustrations',
-      name: 'List Illustrations',
-      title: 'Core Components/Illustration',
-      kind: 'Core Components/Illustration',
-      passes: 10,
       violations: [],
     },
     {
@@ -1320,7 +1469,7 @@ export const a11yReport = {
       name: 'Dark Mode Pressable Cards',
       title: 'Core Components/Card',
       kind: 'Core Components/Card',
-      passes: 8,
+      passes: 9,
       violations: [],
     },
     {
@@ -1328,7 +1477,7 @@ export const a11yReport = {
       name: 'Dark Mode Pressable Colored Cards',
       title: 'Core Components/Card',
       kind: 'Core Components/Card',
-      passes: 8,
+      passes: 9,
       violations: [],
     },
     {
@@ -1392,7 +1541,7 @@ export const a11yReport = {
       name: 'Pressable Cards',
       title: 'Core Components/Card',
       kind: 'Core Components/Card',
-      passes: 8,
+      passes: 9,
       violations: [],
     },
     {
@@ -1400,7 +1549,7 @@ export const a11yReport = {
       name: 'Pressable Colored Cards',
       title: 'Core Components/Card',
       kind: 'Core Components/Card',
-      passes: 8,
+      passes: 9,
       violations: [],
     },
     {
@@ -1409,6 +1558,22 @@ export const a11yReport = {
       title: 'Core Components/Card',
       kind: 'Core Components/Card',
       passes: 12,
+      violations: [],
+    },
+    {
+      id: 'core-components-fallback--basic',
+      name: 'Basic',
+      title: 'Core Components/Fallback',
+      kind: 'Core Components/Fallback',
+      passes: 7,
+      violations: [],
+    },
+    {
+      id: 'core-components-fallback--height-as-css-var',
+      name: 'Height As CSS Var',
+      title: 'Core Components/Fallback',
+      kind: 'Core Components/Fallback',
+      passes: 5,
       violations: [],
     },
     {
@@ -1436,11 +1601,27 @@ export const a11yReport = {
       violations: [],
     },
     {
+      id: 'core-components-remoteimage-remoteimagegroup--all',
+      name: 'All',
+      title: 'Core Components/RemoteImage/RemoteImageGroup',
+      kind: 'Core Components/RemoteImage/RemoteImageGroup',
+      passes: 9,
+      violations: [],
+    },
+    {
+      id: 'core-components-animatedcaret--basic-animated-caret',
+      name: 'Basic Animated Caret',
+      title: 'Core Components/AnimatedCaret',
+      kind: 'Core Components/AnimatedCaret',
+      passes: 8,
+      violations: [],
+    },
+    {
       id: 'core-components-alert--basic-alert',
       name: 'Basic Alert',
       title: 'Core Components/Alert',
       kind: 'Core Components/Alert',
-      passes: 7,
+      passes: 8,
       violations: [],
     },
     {
@@ -1448,7 +1629,7 @@ export const a11yReport = {
       name: 'Portal Alert',
       title: 'Core Components/Alert',
       kind: 'Core Components/Alert',
-      passes: 7,
+      passes: 8,
       violations: [],
     },
     {
@@ -1456,7 +1637,7 @@ export const a11yReport = {
       name: 'Single Action Alert',
       title: 'Core Components/Alert',
       kind: 'Core Components/Alert',
-      passes: 7,
+      passes: 8,
       violations: [],
     },
     {
@@ -1472,153 +1653,31 @@ export const a11yReport = {
       name: 'Composite Overlays With Portal',
       title: 'Core Components/Overlays',
       kind: 'Core Components/Overlays',
-      passes: 17,
-      violations: [
-        {
-          id: 'heading-order',
-          impact: 'moderate',
-          tags: ['cat.semantics', 'best-practice'],
-          description: 'Ensures the order of headings is semantically correct',
-          help: 'Heading levels should only increase by one',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'heading-order',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'moderate',
-                  message: 'Heading order invalid',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'moderate',
-              html: '<h3 class="t160640o h1hmspdn f1eacfne t5418vf sjo1exx">Learn AMP. Earn $3 in AMP.</h3>',
-              target: ['h3'],
-              failureSummary: 'Fix any of the following:\n  Heading order invalid',
-            },
-          ],
-        },
-        {
-          id: 'landmark-unique',
-          impact: 'moderate',
-          tags: ['cat.semantics', 'best-practice'],
-          help: 'Ensures landmarks are unique',
-          description:
-            'Landmarks should have a unique role or role/label/title (i.e. accessible name) combination',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'landmark-is-unique',
-                  data: { role: 'navigation', accessibleText: null },
-                  relatedNodes: [
-                    {
-                      html: '<nav class="f13ygna6 f1g4ii86 r45vtfp s19f9ocl bfumyc1 bt8hyoi _jf348 _1os04ly _15bc7a9 _1o6rgns s151si4t" style="min-height: 80px; width: 100%; position: sticky; left: 0px; right: 0px; top: 0px; z-index: 2;">',
-                      target: ['.bt8hyoi'],
-                    },
-                  ],
-                  impact: 'moderate',
-                  message:
-                    'The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'moderate',
-              html: '<nav class="f13ygna6 c1wa27ul bfumyc1 b1lhdz7t _jf348 _1os04ly _15bc7a9 _1o6rgns s151si4t" style="height: 100%; min-width: 240px; width: 240px; position: sticky; left: 0px; top: 0px; z-index: 2;">',
-              target: ['.b1lhdz7t'],
-              failureSummary:
-                'Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable',
-            },
-          ],
-        },
-      ],
+      passes: 16,
+      violations: [],
     },
     {
       id: 'core-components-overlays--composite-overlays-without-portal',
       name: 'Composite Overlays Without Portal',
       title: 'Core Components/Overlays',
       kind: 'Core Components/Overlays',
-      passes: 17,
-      violations: [
-        {
-          id: 'heading-order',
-          impact: 'moderate',
-          tags: ['cat.semantics', 'best-practice'],
-          description: 'Ensures the order of headings is semantically correct',
-          help: 'Heading levels should only increase by one',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'heading-order',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'moderate',
-                  message: 'Heading order invalid',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'moderate',
-              html: '<h3 class="t160640o h1hmspdn f1eacfne t5418vf sjo1exx">Learn AMP. Earn $3 in AMP.</h3>',
-              target: ['h3'],
-              failureSummary: 'Fix any of the following:\n  Heading order invalid',
-            },
-          ],
-        },
-        {
-          id: 'landmark-unique',
-          impact: 'moderate',
-          tags: ['cat.semantics', 'best-practice'],
-          help: 'Ensures landmarks are unique',
-          description:
-            'Landmarks should have a unique role or role/label/title (i.e. accessible name) combination',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'landmark-is-unique',
-                  data: { role: 'navigation', accessibleText: null },
-                  relatedNodes: [
-                    {
-                      html: '<nav class="f13ygna6 f1g4ii86 r45vtfp s19f9ocl bfumyc1 bt8hyoi _jf348 _1os04ly _15bc7a9 _1o6rgns s151si4t" style="min-height: 80px; width: 100%; position: sticky; left: 0px; right: 0px; top: 0px; z-index: 2;">',
-                      target: ['.bt8hyoi'],
-                    },
-                  ],
-                  impact: 'moderate',
-                  message:
-                    'The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'moderate',
-              html: '<nav class="f13ygna6 c1wa27ul bfumyc1 b1lhdz7t _jf348 _1os04ly _15bc7a9 _1o6rgns s151si4t" style="height: 100%; min-width: 240px; width: 240px; position: sticky; left: 0px; top: 0px; z-index: 2;">',
-              target: ['.b1lhdz7t'],
-              failureSummary:
-                'Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable',
-            },
-          ],
-        },
-      ],
+      passes: 16,
+      violations: [],
+    },
+    {
+      id: 'core-components-focustrap--playground',
+      name: 'Playground',
+      title: 'Core Components/FocusTrap',
+      kind: 'Core Components/FocusTrap',
+      passes: 18,
+      violations: [],
     },
     {
       id: 'core-components-fullscreenalert--basic',
       name: 'Basic',
       title: 'Core Components/FullscreenAlert',
       kind: 'Core Components/FullscreenAlert',
-      passes: 15,
+      passes: 18,
       violations: [],
     },
     {
@@ -1626,7 +1685,7 @@ export const a11yReport = {
       name: 'Single Action',
       title: 'Core Components/FullscreenAlert',
       kind: 'Core Components/FullscreenAlert',
-      passes: 15,
+      passes: 18,
       violations: [],
     },
     {
@@ -1634,187 +1693,39 @@ export const a11yReport = {
       name: 'Basic',
       title: 'Core Components/FullscreenModal',
       kind: 'Core Components/FullscreenModal',
-      passes: 13,
-      violations: [
-        {
-          id: 'scrollable-region-focusable',
-          impact: 'moderate',
-          tags: ['cat.keyboard', 'wcag2a', 'wcag211'],
-          description: 'Ensure elements that have scrollable content are accessible by keyboard',
-          help: 'Scrollable region must have keyboard access',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'focusable-content',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'moderate',
-                  message: 'Element should have focusable content',
-                },
-                {
-                  id: 'focusable-element',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'moderate',
-                  message: 'Element should be focusable',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'moderate',
-              html: '<div class="c156wrku">',
-              target: ['.c156wrku'],
-              failureSummary:
-                'Fix any of the following:\n  Element should have focusable content\n  Element should be focusable',
-            },
-          ],
-        },
-      ],
+      passes: 17,
+      violations: [],
     },
     {
       id: 'core-components-fullscreenmodal--example',
       name: 'Example',
       title: 'Core Components/FullscreenModal',
       kind: 'Core Components/FullscreenModal',
-      passes: 20,
-      violations: [
-        {
-          id: 'heading-order',
-          impact: 'moderate',
-          tags: ['cat.semantics', 'best-practice'],
-          description: 'Ensures the order of headings is semantically correct',
-          help: 'Heading levels should only increase by one',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'heading-order',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'moderate',
-                  message: 'Heading order invalid',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'moderate',
-              html: '<h3 class="t160640o h1hmspdn f1eacfne t5418vf sjo1exx">Learn AMP. Earn $3 in AMP.</h3>',
-              target: ['h3'],
-              failureSummary: 'Fix any of the following:\n  Heading order invalid',
-            },
-          ],
-        },
-      ],
+      passes: 22,
+      violations: [],
     },
     {
       id: 'core-components-fullscreenmodal--no-secondary',
       name: 'No Secondary',
       title: 'Core Components/FullscreenModal',
       kind: 'Core Components/FullscreenModal',
-      passes: 13,
-      violations: [
-        {
-          id: 'scrollable-region-focusable',
-          impact: 'moderate',
-          tags: ['cat.keyboard', 'wcag2a', 'wcag211'],
-          description: 'Ensure elements that have scrollable content are accessible by keyboard',
-          help: 'Scrollable region must have keyboard access',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'focusable-content',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'moderate',
-                  message: 'Element should have focusable content',
-                },
-                {
-                  id: 'focusable-element',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'moderate',
-                  message: 'Element should be focusable',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'moderate',
-              html: '<div class="c156wrku">',
-              target: ['.c156wrku'],
-              failureSummary:
-                'Fix any of the following:\n  Element should have focusable content\n  Element should be focusable',
-            },
-          ],
-        },
-      ],
+      passes: 17,
+      violations: [],
     },
     {
       id: 'core-components-fullscreenmodal--no-title',
       name: 'No Title',
       title: 'Core Components/FullscreenModal',
       kind: 'Core Components/FullscreenModal',
-      passes: 11,
-      violations: [
-        {
-          id: 'scrollable-region-focusable',
-          impact: 'moderate',
-          tags: ['cat.keyboard', 'wcag2a', 'wcag211'],
-          description: 'Ensure elements that have scrollable content are accessible by keyboard',
-          help: 'Scrollable region must have keyboard access',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'focusable-content',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'moderate',
-                  message: 'Element should have focusable content',
-                },
-                {
-                  id: 'focusable-element',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'moderate',
-                  message: 'Element should be focusable',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'moderate',
-              html: '<div class="c156wrku">',
-              target: ['.c156wrku'],
-              failureSummary:
-                'Fix any of the following:\n  Element should have focusable content\n  Element should be focusable',
-            },
-          ],
-        },
-      ],
+      passes: 14,
+      violations: [],
     },
     {
       id: 'core-components-modal--basic-modal',
       name: 'Basic Modal',
       title: 'Core Components/Modal',
       kind: 'Core Components/Modal',
-      passes: 7,
-      violations: [],
-    },
-    {
-      id: 'core-components-modal--dark-modal',
-      name: 'Dark Modal',
-      title: 'Core Components/Modal',
-      kind: 'Core Components/Modal',
-      passes: 7,
+      passes: 14,
       violations: [],
     },
     {
@@ -1822,7 +1733,7 @@ export const a11yReport = {
       name: 'Long Modal',
       title: 'Core Components/Modal',
       kind: 'Core Components/Modal',
-      passes: 7,
+      passes: 15,
       violations: [],
     },
     {
@@ -1830,7 +1741,7 @@ export const a11yReport = {
       name: 'Modal Without Portal',
       title: 'Core Components/Modal',
       kind: 'Core Components/Modal',
-      passes: 7,
+      passes: 14,
       violations: [],
     },
     {
@@ -1838,7 +1749,7 @@ export const a11yReport = {
       name: 'Portal Modal',
       title: 'Core Components/Modal',
       kind: 'Core Components/Modal',
-      passes: 7,
+      passes: 8,
       violations: [],
     },
     {
@@ -1846,7 +1757,7 @@ export const a11yReport = {
       name: 'Visible Modal',
       title: 'Core Components/Modal',
       kind: 'Core Components/Modal',
-      passes: 12,
+      passes: 14,
       violations: [],
     },
     {
@@ -1894,7 +1805,7 @@ export const a11yReport = {
       name: 'Basic Toast',
       title: 'Core Components/Toast',
       kind: 'Core Components/Toast',
-      passes: 7,
+      passes: 8,
       violations: [],
     },
     {
@@ -1902,516 +1813,64 @@ export const a11yReport = {
       name: 'Multiline Toast',
       title: 'Core Components/Toast',
       kind: 'Core Components/Toast',
+      passes: 8,
+      violations: [],
+    },
+    {
+      id: 'core-components-tooltip--default',
+      name: 'Default',
+      title: 'Core Components/Tooltip',
+      kind: 'Core Components/Tooltip',
+      passes: 13,
+      violations: [],
+    },
+    {
+      id: 'core-components-tooltip--tooltip-long-content',
+      name: 'Tooltip Long Content',
+      title: 'Core Components/Tooltip',
+      kind: 'Core Components/Tooltip',
+      passes: 13,
+      violations: [],
+    },
+    {
+      id: 'core-components-tooltipcontent--default',
+      name: 'Default',
+      title: 'Core Components/TooltipContent',
+      kind: 'Core Components/TooltipContent',
       passes: 7,
       violations: [],
     },
     {
-      id: 'core-components-tooltipv2--default',
-      name: 'Default',
-      title: 'Core Components/TooltipV2',
-      kind: 'Core Components/TooltipV2',
-      passes: 14,
-      violations: [
-        {
-          id: 'aria-allowed-attr',
-          impact: 'critical',
-          tags: ['cat.aria', 'wcag2a', 'wcag412'],
-          description: "Ensures ARIA attributes are allowed for an element's role",
-          help: 'Elements must only use allowed ARIA attributes',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="tjqlht1p9x" aria-haspopup="dialog">',
-              target: ['div[aria-controls="tjqlht1p9x"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="su8q9kul27" aria-haspopup="dialog">',
-              target: ['div[aria-controls="su8q9kul27"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="msi0wadawy" aria-haspopup="dialog">',
-              target: ['div[aria-controls="msi0wadawy"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="jg1w9krg47e" aria-haspopup="dialog">',
-              target: ['div[aria-controls="jg1w9krg47e"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="l3y3zh8f0cd" aria-haspopup="dialog">',
-              target: ['div[aria-controls="l3y3zh8f0cd"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="2z3f5fzd8e8" aria-haspopup="dialog">',
-              target: ['div[aria-controls="2z3f5fzd8e8"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="qc36owuhg0c" aria-haspopup="dialog">',
-              target: ['div[aria-controls="qc36owuhg0c"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="1cx9uf7f6g2" aria-haspopup="dialog">',
-              target: ['div[aria-controls="1cx9uf7f6g2"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="fiymtmlm3kg" aria-haspopup="dialog">',
-              target: ['div[aria-controls="fiymtmlm3kg"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="8s04kxhly0f" aria-haspopup="dialog"><p aria-describedby="tooltipId" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">Default</p></div>',
-              target: ['div[aria-controls="8s04kxhly0f"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="a2kilhxn4nj" aria-haspopup="dialog">',
-              target: ['div[aria-controls="a2kilhxn4nj"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="ioy79n8kgio" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">right</p></div></div>',
-              target: ['div[aria-controls="ioy79n8kgio"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="pklq5xv5jao" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">bottom</p></div></div>',
-              target: ['div[aria-controls="pklq5xv5jao"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-          ],
-        },
-      ],
+      id: 'core-components-tooltipcontent--h-stack-node-content',
+      name: 'H Stack Node Content',
+      title: 'Core Components/TooltipContent',
+      kind: 'Core Components/TooltipContent',
+      passes: 8,
+      violations: [],
     },
     {
-      id: 'core-components-tooltipv2--tooltip-long-content',
+      id: 'core-components-tooltipcontent--tooltip-long-content',
       name: 'Tooltip Long Content',
-      title: 'Core Components/TooltipV2',
-      kind: 'Core Components/TooltipV2',
-      passes: 14,
-      violations: [
-        {
-          id: 'aria-allowed-attr',
-          impact: 'critical',
-          tags: ['cat.aria', 'wcag2a', 'wcag412'],
-          description: "Ensures ARIA attributes are allowed for an element's role",
-          help: 'Elements must only use allowed ARIA attributes',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="4jjt5x3uhig" aria-haspopup="dialog">',
-              target: ['div[aria-controls="4jjt5x3uhig"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="wbsb5siduyf" aria-haspopup="dialog">',
-              target: ['div[aria-controls="wbsb5siduyf"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="ir1m6l8qz" aria-haspopup="dialog">',
-              target: ['div[aria-controls="ir1m6l8qz"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="axjk36s9rph" aria-haspopup="dialog">',
-              target: ['div[aria-controls="axjk36s9rph"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="odu08emo3x" aria-haspopup="dialog">',
-              target: ['div[aria-controls="odu08emo3x"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="789bzrvgc93" aria-haspopup="dialog">',
-              target: ['div[aria-controls="789bzrvgc93"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="x5pxzjofnjj" aria-haspopup="dialog">',
-              target: ['div[aria-controls="x5pxzjofnjj"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="femqnui7kme" aria-haspopup="dialog">',
-              target: ['div[aria-controls="femqnui7kme"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="ac4vx94lkhv" aria-haspopup="dialog">',
-              target: ['div[aria-controls="ac4vx94lkhv"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="5fpuadpics2" aria-haspopup="dialog"><p aria-describedby="tooltipId" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">Default</p></div>',
-              target: ['div[aria-controls="5fpuadpics2"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="y2n2xt6ghlc" aria-haspopup="dialog">',
-              target: ['div[aria-controls="y2n2xt6ghlc"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="1x2wjosbubb" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">right</p></div></div>',
-              target: ['div[aria-controls="1x2wjosbubb"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-            {
-              any: [
-                {
-                  id: 'aria-allowed-attr',
-                  data: ['aria-expanded="false"'],
-                  relatedNodes: [],
-                  impact: 'critical',
-                  message: 'ARIA attribute is not allowed: aria-expanded="false"',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'critical',
-              html: '<div class="sfo71e8" aria-expanded="false" aria-controls="h0s686anuzf" aria-haspopup="dialog"><div aria-describedby="tooltipId" class="f13ygna6 c1wa27ul _1vh1yhf"><p class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx">bottom</p></div></div>',
-              target: ['div[aria-controls="h0s686anuzf"]'],
-              failureSummary:
-                'Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded="false"',
-            },
-          ],
-        },
-      ],
+      title: 'Core Components/TooltipContent',
+      kind: 'Core Components/TooltipContent',
+      passes: 8,
+      violations: [],
+    },
+    {
+      id: 'core-components-tooltipcontent--tooltip-long-word-content',
+      name: 'Tooltip Long Word Content',
+      title: 'Core Components/TooltipContent',
+      kind: 'Core Components/TooltipContent',
+      passes: 8,
+      violations: [],
+    },
+    {
+      id: 'core-components-tooltipcontent--v-stack-node-content',
+      name: 'V Stack Node Content',
+      title: 'Core Components/TooltipContent',
+      kind: 'Core Components/TooltipContent',
+      passes: 8,
+      violations: [],
     },
     {
       id: 'core-components-table-table--fixed-layout-example',
@@ -2434,7 +1893,7 @@ export const a11yReport = {
       name: 'Sorting Example',
       title: 'Core Components/Table/Table',
       kind: 'Core Components/Table/Table',
-      passes: 15,
+      passes: 16,
       violations: [],
     },
     {
@@ -2442,52 +1901,15 @@ export const a11yReport = {
       name: 'Cell Spacing',
       title: 'Core Components/Table/TableCell',
       kind: 'Core Components/Table/TableCell',
-      passes: 10,
-      violations: [
-        {
-          id: 'scrollable-region-focusable',
-          impact: 'moderate',
-          tags: ['cat.keyboard', 'wcag2a', 'wcag211'],
-          description: 'Ensure elements that have scrollable content are accessible by keyboard',
-          help: 'Scrollable region must have keyboard access',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'focusable-content',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'moderate',
-                  message: 'Element should have focusable content',
-                },
-                {
-                  id: 'focusable-element',
-                  data: null,
-                  relatedNodes: [],
-                  impact: 'moderate',
-                  message: 'Element should be focusable',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'moderate',
-              html: '<div class="t1suoejk t19xe4r7 tm8z8h3">',
-              target: ['.t1suoejk'],
-              failureSummary:
-                'Fix any of the following:\n  Element should have focusable content\n  Element should be focusable',
-            },
-          ],
-        },
-      ],
+      passes: 11,
+      violations: [],
     },
     {
       id: 'core-components-table-tablecell--sample-cells',
       name: 'Sample Cells',
       title: 'Core Components/Table/TableCell',
       kind: 'Core Components/Table/TableCell',
-      passes: 16,
+      passes: 17,
       violations: [],
     },
     {
@@ -2495,7 +1917,7 @@ export const a11yReport = {
       name: 'Sample Fixed Layout',
       title: 'Core Components/Table/TableCell',
       kind: 'Core Components/Table/TableCell',
-      passes: 16,
+      passes: 17,
       violations: [],
     },
     {
@@ -2503,7 +1925,7 @@ export const a11yReport = {
       name: 'Table Cell Fallback Example',
       title: 'Core Components/Table/TableCellFallback',
       kind: 'Core Components/Table/TableCellFallback',
-      passes: 22,
+      passes: 23,
       violations: [],
     },
     {
@@ -2511,7 +1933,7 @@ export const a11yReport = {
       name: 'Table Row Example',
       title: 'Core Components/Table/TableRow',
       kind: 'Core Components/Table/TableRow',
-      passes: 13,
+      passes: 14,
       violations: [],
     },
     {
@@ -2519,7 +1941,7 @@ export const a11yReport = {
       name: 'Loading State Example',
       title: 'Core Components/Table/TableSection',
       kind: 'Core Components/Table/TableSection',
-      passes: 12,
+      passes: 13,
       violations: [],
     },
     {
@@ -2527,7 +1949,7 @@ export const a11yReport = {
       name: 'Sample Table Section',
       title: 'Core Components/Table/TableSection',
       kind: 'Core Components/Table/TableSection',
-      passes: 10,
+      passes: 11,
       violations: [],
     },
     {
@@ -2535,7 +1957,7 @@ export const a11yReport = {
       name: 'Section Flow Control',
       title: 'Core Components/Table/TableSection',
       kind: 'Core Components/Table/TableSection',
-      passes: 10,
+      passes: 11,
       violations: [],
     },
     {
@@ -2543,7 +1965,7 @@ export const a11yReport = {
       name: 'Default',
       title: 'Core Components/Tabs/TabIndicator',
       kind: 'Core Components/Tabs/TabIndicator',
-      passes: 8,
+      passes: 9,
       violations: [],
     },
     {
@@ -2584,6 +2006,46 @@ export const a11yReport = {
       title: 'Core Components/Tabs/TabNavigation',
       kind: 'Core Components/Tabs/TabNavigation',
       passes: 16,
+      violations: [],
+    },
+    {
+      id: 'core-components-tag--all',
+      name: 'All',
+      title: 'Core Components/Tag',
+      kind: 'Core Components/Tag',
+      passes: 7,
+      violations: [],
+    },
+    {
+      id: 'core-components-tag--default',
+      name: 'Default',
+      title: 'Core Components/Tag',
+      kind: 'Core Components/Tag',
+      passes: 6,
+      violations: [],
+    },
+    {
+      id: 'core-components-tag--html-tag',
+      name: 'Html Tag',
+      title: 'Core Components/Tag',
+      kind: 'Core Components/Tag',
+      passes: 6,
+      violations: [],
+    },
+    {
+      id: 'core-components-tag--truncated',
+      name: 'Truncated',
+      title: 'Core Components/Tag',
+      kind: 'Core Components/Tag',
+      passes: 7,
+      violations: [],
+    },
+    {
+      id: 'core-components-tag--wildcard',
+      name: 'Wildcard',
+      title: 'Core Components/Tag',
+      kind: 'Core Components/Tag',
+      passes: 7,
       violations: [],
     },
     {
@@ -2641,8 +2103,8 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1o033nd d1bntmt1 t5418vf e5jiys6 tb1lqn8 n1pjz25m">$2,486</span>',
-              target: ['.v1427yu5 > .d1bntmt1.l1rottxd.f1o033nd'],
+              html: '<span class="t160640o l1rottxd f1o033nd dbp6ii7 t5418vf e5jiys6 tb1lqn8 n1pjz25m">$2,486</span>',
+              target: ['.v1427yu5 > .dbp6ii7.l1rottxd.f1o033nd'],
               failureSummary:
                 'Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
             },
@@ -2655,7 +2117,7 @@ export const a11yReport = {
       name: 'Default',
       title: 'Core Components/ProgressBar',
       kind: 'Core Components/ProgressBar',
-      passes: 8,
+      passes: 9,
       violations: [],
     },
     {
@@ -2697,7 +2159,7 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1eacfne d1bntmt1 t5418vf e5jiys6 tb1lqn8 n1pjz25m">0%</span>',
+              html: '<span class="t160640o l1rottxd f1eacfne dbp6ii7 t5418vf e5jiys6 tb1lqn8 n1pjz25m">0%</span>',
               target: [
                 '.c1wa27ul.f13ygna6:nth-child(3) > .n1uq5gfe.c1omxyrd.f13ygna6 > ._14apokp.f13ygna6 > .c1kq2fue > .v1427yu5 > .f1eacfne.t160640o.l1rottxd',
               ],
@@ -2726,7 +2188,7 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1eacfne d1bntmt1 t5418vf e5jiys6 tb1lqn8 n1pjz25m">0%</span>',
+              html: '<span class="t160640o l1rottxd f1eacfne dbp6ii7 t5418vf e5jiys6 tb1lqn8 n1pjz25m">0%</span>',
               target: [
                 '.c1wa27ul.f13ygna6:nth-child(5) > .n1uq5gfe.c1omxyrd.f13ygna6 > ._14apokp.f13ygna6 > .c1kq2fue > .v1427yu5 > .f1eacfne.t160640o.l1rottxd',
               ],
@@ -2755,7 +2217,7 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1eacfne d1bntmt1 t5418vf e5jiys6 tb1lqn8 n1pjz25m">2%</span>',
+              html: '<span class="t160640o l1rottxd f1eacfne dbp6ii7 t5418vf e5jiys6 tb1lqn8 n1pjz25m">3%</span>',
               target: [
                 '.c1wa27ul.f13ygna6:nth-child(7) > .n1uq5gfe.c1omxyrd.f13ygna6 > ._14apokp.f13ygna6 > .c1kq2fue > .v1427yu5 > .f1eacfne.t160640o.l1rottxd',
               ],
@@ -2784,7 +2246,7 @@ export const a11yReport = {
               all: [],
               none: [],
               impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1o033nd d1bntmt1 t5418vf e5jiys6 tb1lqn8 n1pjz25m">3%</span>',
+              html: '<span class="t160640o l1rottxd f1o033nd dbp6ii7 t5418vf e5jiys6 tb1lqn8 n1pjz25m">4%</span>',
               target: ['.v1427yu5 > .f1o033nd.t160640o.l1rottxd'],
               failureSummary:
                 'Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
@@ -2798,7 +2260,7 @@ export const a11yReport = {
       name: 'Heavy',
       title: 'Core Components/ProgressBar',
       kind: 'Core Components/ProgressBar',
-      passes: 8,
+      passes: 9,
       violations: [],
     },
     {
@@ -2846,7 +2308,7 @@ export const a11yReport = {
       name: 'Default',
       title: 'Core Components/ProgressCircle',
       kind: 'Core Components/ProgressCircle',
-      passes: 8,
+      passes: 9,
       violations: [],
     },
     {
@@ -2862,7 +2324,7 @@ export const a11yReport = {
       name: 'Fill Parent',
       title: 'Core Components/ProgressCircle',
       kind: 'Core Components/ProgressCircle',
-      passes: 8,
+      passes: 9,
       violations: [],
     },
     {
@@ -2870,7 +2332,7 @@ export const a11yReport = {
       name: 'Heavy',
       title: 'Core Components/ProgressCircle',
       kind: 'Core Components/ProgressCircle',
-      passes: 8,
+      passes: 9,
       violations: [],
     },
     {
@@ -2878,7 +2340,7 @@ export const a11yReport = {
       name: 'No Text',
       title: 'Core Components/ProgressCircle',
       kind: 'Core Components/ProgressCircle',
-      passes: 8,
+      passes: 9,
       violations: [],
     },
     {
@@ -2946,6 +2408,22 @@ export const a11yReport = {
       violations: [],
     },
     {
+      id: 'core-components-sparklineinteractive--hover-data',
+      name: 'Hover Data',
+      title: 'Core Components/SparklineInteractive',
+      kind: 'Core Components/SparklineInteractive',
+      passes: 8,
+      violations: [],
+    },
+    {
+      id: 'core-components-sparklineinteractive--hover-data-with-fill',
+      name: 'Hover Data With Fill',
+      title: 'Core Components/SparklineInteractive',
+      kind: 'Core Components/SparklineInteractive',
+      passes: 8,
+      violations: [],
+    },
+    {
       id: 'core-components-sparklineinteractive--no-hover-date',
       name: 'No Hover Date',
       title: 'Core Components/SparklineInteractive',
@@ -2983,47 +2461,7 @@ export const a11yReport = {
       title: 'Core Components/SparklineInteractiveHeader',
       kind: 'Core Components/SparklineInteractiveHeader',
       passes: 9,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#efc0ad',
-                    bgColor: '#ffffff',
-                    contrastRatio: 1.63,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 1.63 (foreground color: #efc0ad, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['button:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #efc0ad, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-sparklineinteractiveheader--default',
@@ -3031,58 +2469,11 @@ export const a11yReport = {
       title: 'Core Components/SparklineInteractiveHeader',
       kind: 'Core Components/SparklineInteractiveHeader',
       passes: 8,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#e8a589',
-                    bgColor: '#ffffff',
-                    contrastRatio: 2.06,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _t5amyn _1nih5fh _jf348 _1os04ly" style="color: rgb(207, 71, 14);">1D</span>',
-              target: ['button:nth-child(2) > .l194pyb5._1nih5fh._jf348'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #e8a589, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
   ],
-  critical: [{ id: 'aria-allowed-attr', count: 2 }],
-  moderate: [
-    { id: 'heading-order', count: 3 },
-    { id: 'landmark-unique', count: 2 },
-    { id: 'scrollable-region-focusable', count: 4 },
-  ],
+  critical: [],
+  moderate: [],
   minor: [],
-  serious: [
-    { id: 'nested-interactive', count: 1 },
-    { id: 'color-contrast', count: 4 },
-  ],
+  serious: [{ id: 'color-contrast', count: 5 }],
 } as const;

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { breakpoints } from '../layout/responsive';
+import { deviceBreakpoints } from '../layout/responsive';
 import { getBrowserGlobals, isSSR } from '../utils/browser';
 
 export const useIsMobile = () => {
@@ -19,5 +19,5 @@ export const useIsMobile = () => {
     };
   }, [handleWindowSizeChange]);
 
-  return width && width <= breakpoints.phone;
+  return width && width <= deviceBreakpoints.phoneLarge;
 };

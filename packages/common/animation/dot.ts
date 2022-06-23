@@ -1,4 +1,4 @@
-import { durations } from '../tokens/motion';
+import { durations } from '../motion/tokens';
 import { MotionBaseSpec } from '../types';
 
 export const dotHidden = 0;

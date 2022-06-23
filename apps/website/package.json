@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "build": "nx run website:build",
-    "build.plugin": "yarn workspace @cbhq/docusaurus-plugin-docgen build",
     "format": "nx format website",
     "lint": "nx run website:lint",
     "lint.fix": "nx run website:lint --fix",
-    "serve": "yarn docusaurus serve --dir ../../.nx/outs/projects/apps/website/docusaurus",
+    "serve": "docusaurus serve --dir ../../.nx/outs/projects/apps/website/docusaurus",
+    "setup": "./plugins-setup.sh",
     "start": "yarn docusaurus start --port 3000",
-    "start.refresh": "THEME=refresh yarn start",
+    "start.all": "concurrently -r \"./plugins-watch.sh\" \"yarn start\"",
     "stylelint": "nx run website:lint-styles",
     "stylelint.fix": "nx run website:lint-styles --fix",
     "typecheck": "nx run website:typecheck"
@@ -18,24 +18,24 @@
   "dependencies": {
     "@cbhq/cds-common": "workspace:*",
     "@cbhq/cds-web": "workspace:*",
-    "@cbhq/docusaurus-plugin-docgen": "workspace:*",
-    "@cmfcmf/docusaurus-search-local": "^0.10.0",
+    "@cbhq/docusaurus-preset": "workspace:*",
     "@docusaurus/core": "2.0.0-beta.18",
     "@docusaurus/module-type-aliases": "2.0.0-beta.18",
-    "@docusaurus/preset-classic": "2.0.0-beta.18",
-    "@docusaurus/theme-live-codeblock": "2.0.0-beta.18",
     "@linaria/babel-preset": "^3.0.0-beta.15",
     "@linaria/core": "^3.0.0-beta.15",
-    "@linaria/react": "^3.0.0-beta.15",
     "@linaria/shaker": "^3.0.0-beta.15",
     "@linaria/webpack-loader": "^3.0.0-beta.15",
     "antd": "4.4.1",
+    "dayjs": "^1.11.3",
+    "dayjs-recur": "^1.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-virtualized": "^9.22.3"
+    "react-virtualized": "^9.22.3",
+    "semver": "^7.3.7"
   },
   "devDependencies": {
-    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-tools": "workspace:*",
+    "concurrently": "^7.2.1"
   },
   "browserslist": {
     "production": [

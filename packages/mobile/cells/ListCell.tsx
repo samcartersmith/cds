@@ -5,7 +5,6 @@ import { compactListHeight, listHeight } from '@cbhq/cds-common/tokens/cell';
 
 import { VStack } from '../layout/VStack';
 import { TextBody, TextHeadline } from '../typography';
-import { getAdjustsFontSizeToFitProp } from '../utils/getAdjustsFontSizeToFitProp';
 
 import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
@@ -52,7 +51,8 @@ export const ListCell = memo(function ListCell({
         action ||
         (hasDetails && (
           <CellDetail
-            {...getAdjustsFontSizeToFitProp({ enabled: !!detailWidth })}
+            // eslint-disable-next-line react/forbid-component-props
+            adjustsFontSizeToFit={!!detailWidth}
             detail={detail}
             subdetail={subdetail}
             variant={variant}
