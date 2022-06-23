@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 61139,
+  lastUnicode: 61239,
   unicodeMap: {
     cashUSD: { '8': 'uE966', '12': 'uE967', '16': 'uE968', '24': 'uE969', '32': 'uE96A' },
     cashGBP: { '8': 'uE96B', '12': 'uE96C', '16': 'uE96D', '24': 'uE96E', '32': 'uE96F' },
@@ -416,5 +416,43 @@ export const manifest = {
     group: { '8': 'uEEC5', '12': 'uEEC6', '16': 'uEEC7', '24': 'uEEC8', '32': 'uEEC9' },
     thumbsDownOutline: { '8': 'uEECA', '12': 'uEECB', '16': 'uEECC', '24': 'uEECD', '32': 'uEECE' },
     chatBotAgent: { '8': 'uEECF', '12': 'uEED0', '16': 'uEED1', '24': 'uEED2', '32': 'uEED3' },
+    heartNavInactive: { '8': 'uEED4', '12': 'uEED5', '16': 'uEED6', '24': 'uEED7', '32': 'uEED8' },
+    heartNavActive: { '8': 'uEED9', '12': 'uEEDA', '16': 'uEEDB', '24': 'uEEDC', '32': 'uEEDD' },
+    hammerInactive: { '8': 'uEEDE', '12': 'uEEDF', '16': 'uEEE0', '24': 'uEEE1', '32': 'uEEE2' },
+    hammerActive: { '8': 'uEEE3', '12': 'uEEE4', '16': 'uEEE5', '24': 'uEEE6', '32': 'uEEE7' },
+    collectionInactive: {
+      '8': 'uEEE8',
+      '12': 'uEEE9',
+      '16': 'uEEEA',
+      '24': 'uEEEB',
+      '32': 'uEEEC',
+    },
+    collectionActive: { '8': 'uEEED', '12': 'uEEEE', '16': 'uEEEF', '24': 'uEEF0', '32': 'uEEF1' },
+    dropsInactive: { '8': 'uEEF2', '12': 'uEEF3', '16': 'uEEF4', '24': 'uEEF5', '32': 'uEEF6' },
+    dropsActive: { '8': 'uEEF7', '12': 'uEEF8', '16': 'uEEF9', '24': 'uEEFA', '32': 'uEEFB' },
+    diamondInactive: { '8': 'uEEFC', '12': 'uEEFD', '16': 'uEEFE', '24': 'uEEFF', '32': 'uEF00' },
+    diamondActive: { '8': 'uEF01', '12': 'uEF02', '16': 'uEF03', '24': 'uEF04', '32': 'uEF05' },
+    commentNavInactive: {
+      '8': 'uEF06',
+      '12': 'uEF07',
+      '16': 'uEF08',
+      '24': 'uEF09',
+      '32': 'uEF0A',
+    },
+    commentNavActive: { '8': 'uEF0B', '12': 'uEF0C', '16': 'uEF0D', '24': 'uEF0E', '32': 'uEF0F' },
+    hiddenEyeInactive: { '8': 'uEF10', '12': 'uEF11', '16': 'uEF12', '24': 'uEF13', '32': 'uEF14' },
+    hiddenEyeActive: { '8': 'uEF15', '12': 'uEF16', '16': 'uEF17', '24': 'uEF18', '32': 'uEF19' },
+    bridging: { '8': 'uEF1A', '12': 'uEF1B', '16': 'uEF1C', '24': 'uEF1D', '32': 'uEF1E' },
+    cashBrazillianReal: {
+      '8': 'uEF1F',
+      '12': 'uEF20',
+      '16': 'uEF21',
+      '24': 'uEF22',
+      '32': 'uEF23',
+    },
+    cashBrazilianReal: { '8': 'uEF24', '12': 'uEF25', '16': 'uEF26', '24': 'uEF27', '32': 'uEF28' },
+    pencilActive: { '8': 'uEF29', '12': 'uEF2A', '16': 'uEF2B', '24': 'uEF2C', '32': 'uEF2D' },
+    pencilInactive: { '8': 'uEF2E', '12': 'uEF2F', '16': 'uEF30', '24': 'uEF31', '32': 'uEF32' },
+    commentActive: { '8': 'uEF33', '12': 'uEF34', '16': 'uEF35', '24': 'uEF36', '32': 'uEF37' },
   },
 };

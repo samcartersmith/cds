@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import chalk from 'chalk';
 import fs from 'fs';
 import ora from 'ora';
@@ -112,9 +112,45 @@ async function syncIcons() {
       console.error(imageError);
       return;
     }
-    spinner.text = 'Download svg images from urls in parallel.';
-    const requests = Object.values(images).map(async (url) => axios.get(url));
-    const responses = await Promise.all(requests);
+    spinner.text = `Download svg images from urls in parallel.`;
+    const requests = Object.values(images).map((url) => {
+      return async () => axios.get(url);
+    });
+    spinner.text = `Requesting ${requests.length}`;
+
+    // request 5 images at a time
+    let responses: AxiosResponse[] = [];
+    let count = 0;
+    const throttleCount = 10;
+    await new Promise((resolve) => {
+      async function throttle() {
+        spinner.text = `Requesting ${Math.min(requests.length, count + throttleCount)}/${
+          requests.length
+        }`;
+
+        const lResponses = await Promise.all(
+          requests
+            .slice(count, Math.min(requests.length, count + throttleCount))
+            .map(async (requestFn) => requestFn()),
+        );
+
+        responses = responses.concat(lResponses);
+
+        count += throttleCount;
+
+        if (count >= requests.length) {
+          resolve(null);
+          return;
+        }
+
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
+        throttle();
+      }
+
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
+      throttle();
+    });
+
     spinner.text = 'Write svg icons to files.';
     const OUT_DIR = await getSourcePath('common/internal/data/iconSvgs');
     if (fs.existsSync(OUT_DIR)) {

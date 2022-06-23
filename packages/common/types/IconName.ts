@@ -195,7 +195,13 @@ export type IconName =
   | 'taxesReceipt'
   | 'visibleFilled'
   | 'group'
-  | 'chatBotAgent';
+  | 'chatBotAgent'
+  | 'bridging'
+  | 'cashBrazillianReal'
+  | 'cashBrazilianReal'
+  | 'diamondActive'
+  | 'diamondInactive'
+  | 'commentActive';
 
 export type NavigationIconName =
   | 'account'
@@ -241,7 +247,15 @@ export type NavigationIconName =
   | 'sun'
   | 'light'
   | 'astronautHelmet'
-  | 'peopleGroup';
+  | 'peopleGroup'
+  | 'heartNav'
+  | 'hammer'
+  | 'collection'
+  | 'drops'
+  | 'diamond'
+  | 'commentNav'
+  | 'hiddenEye'
+  | 'pencil';
 
 export type NavigationIconInternalName =
   | 'accountInactive'
@@ -331,4 +345,20 @@ export type NavigationIconInternalName =
   | 'astronautHelmetInactive'
   | 'astronautHelmetActive'
   | 'peopleGroupInactive'
-  | 'peopleGroupActive';
+  | 'peopleGroupActive'
+  | 'heartNavInactive'
+  | 'heartNavActive'
+  | 'hammerInactive'
+  | 'hammerActive'
+  | 'collectionInactive'
+  | 'collectionActive'
+  | 'dropsInactive'
+  | 'dropsActive'
+  | 'diamondInactive'
+  | 'diamondActive'
+  | 'commentNavInactive'
+  | 'commentNavActive'
+  | 'hiddenEyeInactive'
+  | 'hiddenEyeActive'
+  | 'pencilActive'
+  | 'pencilInactive';
