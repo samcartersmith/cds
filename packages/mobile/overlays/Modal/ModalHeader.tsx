@@ -32,8 +32,8 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({ title, onBackButtonPre
           />
         )}
       </Box>
-      <Box flexGrow={1} flexBasis={0} alignItems="center" justifyContent="center">
-        <TextHeadline>{title}</TextHeadline>
+      <Box flexGrow={6} flexBasis={0} alignItems="center" justifyContent="center">
+        <TextHeadline align="center">{title}</TextHeadline>
       </Box>
       <Box flexGrow={1} flexBasis={0} alignItems="flex-end">
         {!hideCloseButton && (
