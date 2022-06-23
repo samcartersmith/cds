@@ -1,0 +1,77 @@
+> [@cbhq/cds-web/hooks/useBreakpoints](https://github.cbhq.net/frontend/cds/blob/master/packages/web/hooks/useBreakpoints.ts)
+
+In some cases, you may want to conditionally render a component or tree of components. In that case, we recommend that you use the `useBreakpoints` hook.
+
+CDS does not recommend using `useBreakpoints` for responsive styles, instead we strongly advise that you use the responsive style props as they use native CSS instead of Javascript to render styles. We recommend that you only use `useBreakpoints` to conditionally render components that make network calls or large components trees.
+
+You should only use `useBreakpoints` as a last resort. For example, if a style prop is not supported by responsive styles you should use `useBreakpoints`. Make sure you always specify default styles for each responsive style prop which will be used for initial hydration.
+
+### Usage
+
+```jsx live
+function Example() {
+  const result = useBreakpoints();
+  const deviceArr = [];
+
+  const deviceMap = {
+    isPhone: 'a phone',
+    isPhoneLarge: 'a large phone',
+    isTablet: 'a tablet',
+    isTabletLandscape: 'a tablet in landscape',
+    isDesktop: 'a desktop',
+    isDesktopLarge: 'a large desktop',
+    isExtraWide: 'an extra wide desktop',
+  };
+
+  const getDeviceName = () => {
+    for (const device in result) {
+      if (result[device]) {
+        deviceArr.push(deviceMap[device]);
+      }
+    }
+    if (deviceArr.length === 1) {
+      return deviceArr[0];
+    }
+    if (deviceArr.length) {
+      return deviceArr.join(' and ');
+    }
+    return 'no device breakpoints';
+  };
+
+  return (
+    <HStack background="backgroundAlternate" spacing={3} borderColor="line" borderRadius="standard">
+      <TextHeadline as="h3">I am as wide as {getDeviceName()}</TextHeadline>
+    </HStack>
+  );
+}
+```
+
+### Risks of Using Javascript for Responsive Styles
+
+Using Javascript for responsive styles can lead to flashes on initial hydration in SSR and SSG environments: the default styles will render on first paint until the screen width can be measured, and then the device-specific styles will render.
+
+`useBreakpoints` can also lead to cumulative layout shifts (CLS) if the default styles differ from a user’s device and there are responsive styles specified for that device, eg: the default styles are for desktops, after initial paint the window will be measured and that device’s specified styles will be rendered causing the layout to shift suddenly.
+
+## Two Pass Rendering
+
+You can prevent CLS by using the [useHasMounted](/hooks/useHasMounted) hook to wait for the component to mount before rendering any content. This is called two pass rendering and ensures that the component has been mounted and the window object is present before painting the DOM. This is the preferred pattern for using `useBreakpoints` in SSR and SSG environments.
+
+```jsx
+const { isPhone } = useBreakpoints();
+const hasMounted = useHasMounted();
+
+// in component render
+{
+  hasMounted && isPhone && <TextHeadline as="h3">Welcome {username}!</TextHeadline>;
+}
+```
+
+### Default Device
+
+Alternatively, you can instantiate `useBreakpoints` with a default device using the [DefaultToDeviceProvider](/components/default-to-device-provider) and passing it a device name: `phone`, `tablet`, or `desktop`. On window resize, `useBreakpoints` will recalculate the current breakpoint and update the styles accordingly. `DefaultToDeviceProvider` can be used to prevent server/DOM mimsmatches.
+
+```jsx
+<DefaultToDeviceProvider device="phone">
+  <Box responsiveStyles={responsiveStylesConfig} />
+</DefaultToDeviceProvider>
+```

@@ -1,0 +1,171 @@
+import { DoDont, DoExample, DontExample } from ':cds-website/components/DoDont';
+import { DocImage } from ':cds-website/components/DocImage';
+
+Establish a consistent rhythm in our product. An edge-to-edge system using 0px margins and gutters with spacing built into sections and components
+
+<DocImage category="foundation" component="layout" name="grid" format="gif" />
+
+## Anatomy
+
+<DocImage category="foundation" component="layout" name="anatomy" format="png" />
+
+1. **Sidebar**
+
+   - Part of app frame
+   - Fixed width of 240px when expanded, 88px when collapsed
+   - Product teams can choose to set their sidebars to be expanded or collapsed but are advised to remember the user’s choice and not flip back and forth based on product
+
+2. **Navigation Bar**
+
+   - Part of app frame
+   - Fluid
+
+3. **Page**
+
+   - Area in which sections sit in
+   - Each section can be fixed or fluid
+
+### Section
+
+<DocImage category="foundation" component="layout" name="anatomy_section" format="png" />
+
+A page is made up of sections. Sections are made up of these elements:
+
+1. **Section**
+
+   - Parent layout container without padding
+
+2. **Border**
+
+   - Border should usually be on the right and/or bottom
+
+3. **Spacing**
+
+   - Also known as padding
+   - Currently has a value of spacing 3
+
+4. **Content**
+
+## Types
+
+### Layouts
+
+#### Primary and Secondary Layout
+
+- Most common layout for consumer
+- 2-column layout with primary and secondary widths
+- Primary (⅔ of page)
+- Secondary (⅓ of page)
+
+<DocImage category="foundation" component="layout" name="primarysecondarylayout" format="png" />
+
+<DoDont>
+  <DoExample category="foundation" component="layout" name="primarysecondary_do" format="png">
+    - Primary and secondary section are both fluid - Primary and secondary section are both fixed -
+    Primary section is fluid and secondary section is fixed
+  </DoExample>
+  <DontExample category="foundation" component="layout" name="primarysecondary_dont" format="png">
+    - Secondary section should never be fluid while the primary section is fixed
+  </DontExample>
+</DoDont>
+
+#### Primary/Secondary/Tertiary Layout
+
+- Most common for dense layouts such as dashboards
+- 3-column layout with sections of varying widths
+
+<DocImage
+  category="foundation"
+  component="layout"
+  name="primarysecondarytertiarylayout"
+  format="png"
+/>
+
+Recommendation is to allow for all three sections to be fluid.
+
+<DocImage
+  category="foundation"
+  component="layout"
+  name="primarysecondarytertiarylayout_fluid"
+  format="png"
+/>
+
+### Fixed and Fluid
+
+Depending on the product’s needs, sections that live on the page can be fixed or fluid. Fluid layouts should be reserved for dense layouts or single-column layouts with tables.
+
+<DocImage category="foundation" component="layout" name="fixedfluid" format="png" />
+
+**Mix and match**
+On a single page, sections can be fixed or fluid. It’s okay to mix and match.
+
+<DocImage category="foundation" component="layout" name="mixmatch1_do" format="png" />
+
+### Alignment
+
+If you decide to left-align or center-align, keep alignment consistent throughout your page and flow.
+
+<DoDont>
+  <DoExample category="foundation" component="layout" name="alignment_do" format="png">
+    - Keep alignment consistent throughout the page, flow, and/or entire product.
+  </DoExample>
+  <DontExample category="foundation" component="layout" name="alignment_dont" format="png">
+    - Don’t mix and match alignment.
+  </DontExample>
+</DoDont>
+
+### Dividers
+
+Dividers go edge-to-edge to divide each section.
+
+<DocImage category="foundation" component="layout" name="dividers" format="png" />
+
+If there is a sidebar and sections have max values (versus fluid), the page should be left-aligned and a divider should be added to the far right to contain the page.
+
+<DocImage category="foundation" component="layout" name="dividers_1920" format="png" />
+
+If there is no sidebar and sections have max values, the page should be centered with divider lines on the left and right of the page.
+
+<DocImage category="foundation" component="layout" name="dividers_center" format="png" />
+
+### Length of text
+
+Be mindful of the length of text in a fluid layout. Ideally there should be up to 40–60 characters per line or 13 English words per line. Anything more will negatively impact the design. The suggested max width for the body section is 800px.
+
+<DoDont>
+  <DoExample category="foundation" component="layout" name="textlength_do" format="png">
+    - There should be up to 40–60 characters per line. The suggested max width for the body section
+    is 800px.
+  </DoExample>
+  <DontExample category="foundation" component="layout" name="textlength_dont" format="png">
+    - Don’t let text run longer than 13 English words.
+  </DontExample>
+</DoDont>
+
+### Breakpoints
+
+<DocImage category="foundation" component="layout" name="breakpoints" format="png" />
+
+| Device          | Range     | Columns | Spacing | Notes                                |
+| --------------- | --------- | ------- | ------- | ------------------------------------ |
+| Phone           | 0–559     | 4       | 3       | Designers use 375px artboard         |
+| PhoneLandscape  | 560–767   | 4       | 3       |                                      |
+| Tablet          | 768–1023  | 12      | 3       | Designers use 768px artboard         |
+| TabletLandscape | 1024–1279 | 12      | 3       | Sidebar collapses at this breakpoint |
+| Desktop         | 1280–1439 | 24      | 3       |                                      |
+| DesktopLarge    | 1440–1559 | 24      | 3       | Designers use 1440px artboard        |
+| ExtraWide       | 1600+     | 24      | 3       |                                      |
+
+Read more about Spacing in the "Spacing" tab at the top of the page.
+
+## Behavior
+
+### Adaptive sections
+
+<DocImage category="foundation" component="layout" name="adaptive" format="png" />
+
+Sections and components can reflow and reposition.
+
+### Scrolling
+
+The recommendation is to employ a single scrollbar for the entire page.

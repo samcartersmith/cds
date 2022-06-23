@@ -10,18 +10,29 @@ type ImageOptions = {
 };
 
 export type ImageProps = {
+  /**
+   * @default components
+   * The img src must resolve to /website/static/img/<category>/<component>/<name>
+   */
+  category?: string;
   /* The img src must resolve to /website/static/img/components/<component>/<name> */
   component?: string;
   /* The img src must resolve to /website/static/img/components/<component>/<name> */
   name?: string;
   options?: ImageOptions;
-  format?: 'jpg' | 'png';
+  format?: 'jpg' | 'png' | 'gif';
 };
 
-export const DocImage: React.FC<ImageProps> = ({ component, name, options, format = 'jpg' }) => {
+export const DocImage: React.FC<ImageProps> = ({
+  category = 'components',
+  component,
+  name,
+  options,
+  format = 'jpg',
+}) => {
   const spectrumOpts = {
-    light: `/img/components/${component}/${name}_light.${format}`,
-    dark: `/img/components/${component}/${name}_dark.${format}`,
+    light: `/img/${category}/${component}/${name}_light.${format}`,
+    dark: `/img/${category}/${component}/${name}_dark.${format}`,
   };
   const src = useSpectrumConditional(spectrumOpts);
 

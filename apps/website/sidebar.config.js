@@ -124,7 +124,7 @@ module.exports = {
         },
         {
           type: 'doc',
-          id: 'foundation/layout',
+          id: 'foundation/layout/layout',
           customProps: { kbar: { description: 'Deliver clear, functional layouts.' } },
         },
         {
@@ -718,6 +718,11 @@ module.exports = {
         },
         { type: 'doc', id: 'components/system/Interactable/interactable', label: 'Interactable' },
         {
+          type: 'doc',
+          id: 'components/system/MountComponent/mount-component',
+          label: 'MountComponent',
+        },
+        {
           type: 'category',
           label: 'PortalProvider',
           items: [
@@ -727,6 +732,19 @@ module.exports = {
               id: 'components/overlays/PortalProvider/portal-provider',
             },
             'hooks/useOverlay',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Responsive',
+          items: [
+            {
+              type: 'doc',
+              id: 'components/system/DefaultToDeviceProvider/default-to-device-provider',
+              label: 'DefaultToDeviceProvider',
+            },
+            'hooks/useBreakpoints',
+            'hooks/useHasMounted',
           ],
         },
         {

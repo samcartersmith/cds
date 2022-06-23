@@ -53,9 +53,10 @@ import * as CDSDots from '@cbhq/cds-web/dots';
 import { Dropdown } from '@cbhq/cds-web/dropdown/Dropdown';
 import { MenuItem } from '@cbhq/cds-web/dropdown/MenuItem';
 import { useA11yControlledVisibility } from '@cbhq/cds-web/hooks/useA11yControlledVisibility';
+import { useBreakpoints } from '@cbhq/cds-web/hooks/useBreakpoints';
 import { useCheckboxGroupState } from '@cbhq/cds-web/hooks/useCheckboxGroupState';
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
-import { useDimensions } from '@cbhq/cds-web/hooks/useDimensions';
+import { useHasMounted } from '@cbhq/cds-web/hooks/useHasMounted';
 import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
 import * as CDSIcons from '@cbhq/cds-web/icons';
 import * as CDSIllustrations from '@cbhq/cds-web/illustrations';
@@ -71,6 +72,7 @@ import { useModal } from '@cbhq/cds-web/overlays/useModal';
 import { useToast } from '@cbhq/cds-web/overlays/useToast';
 import { insetFocusRing } from '@cbhq/cds-web/styles/focus';
 import * as CDSSystem from '@cbhq/cds-web/system';
+import { MountComponent } from '@cbhq/cds-web/system/MountComponent';
 import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
 import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
@@ -134,12 +136,13 @@ const ReactLiveScope: unknown = {
   join,
   lottieFiles,
   useAccessibleForeground,
+  useBreakpoints,
   useCheckboxGroupState,
   usePalette,
   usePaletteConfig,
   usePaletteValueToRgbaString,
   useDeviceSpectrum,
-  useDimensions,
+  useHasMounted,
   useScale,
   useScaleConditional,
   useSparklinePath,
@@ -219,6 +222,7 @@ const ReactLiveScope: unknown = {
   AppSwitcherContent,
   UserSwitcherContent,
   insetFocusRing,
+  MountComponent,
 };
 
 export default ReactLiveScope;

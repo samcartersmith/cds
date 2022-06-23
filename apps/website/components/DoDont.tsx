@@ -1,8 +1,10 @@
 import { SpacingScale } from '@cbhq/cds-common';
+import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { Box, HStack, VStack } from '@cbhq/cds-web/layout';
 import { Divider } from '@cbhq/cds-web/layout/Divider';
 import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
 
+import { ImageProps as DocImageProps } from './DocImage';
 import { Image, ImageProps } from './Image';
 
 type Props = {
@@ -13,7 +15,7 @@ type Props = {
 type DoExampleProps = {
   img?: ImageProps;
   children: React.ReactNode;
-};
+} & DocImageProps;
 
 type ExampleProps = {
   type: 'do' | 'dont';
@@ -27,11 +29,27 @@ export const DoDont: React.FC<Props> = ({ children = [], spacingVertical = 10 })
   );
 };
 
-export const Example: React.FC<ExampleProps> = ({ img, children, type }) => {
+export const Example: React.FC<ExampleProps> = ({
+  img,
+  children,
+  type,
+  category = 'components',
+  component,
+  name,
+  format = 'png',
+}) => {
+  const spectrumOpts = {
+    light: `/img/${category}/${component}/${name}_light.${format}`,
+    dark: `/img/${category}/${component}/${name}_dark.${format}`,
+  };
+  const docImgSrc = useSpectrumConditional(spectrumOpts);
+
+  const imgSrc = img ?? { src: docImgSrc };
+
   return (
     <VStack flexGrow={1} flexBasis={0} minWidth="200px" height="100%" spacingVertical={10} gap={1}>
       <Box minHeight="200px" justifyContent="center" alignItems="center" spacingBottom={1}>
-        <Image {...img} />
+        <Image {...imgSrc} />
       </Box>
       {/* @ts-expect-error These palette colors will work fine */}
       <Divider height={4} color={type === 'dont' ? 'negative' : 'positive'} />

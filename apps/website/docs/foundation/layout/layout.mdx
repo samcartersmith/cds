@@ -1,0 +1,24 @@
+---
+id: layout
+title: Layout
+keywords:
+  - responsive
+  - spacing
+  - layout
+---
+
+import Overview, { toc as overviewToc } from './_overview.mdx';
+import Spacing, { toc as spacingToc } from './_spacing.mdx';
+import Responsive, { toc as responsiveToc } from './_responsive.mdx';
+
+<Tabs groupId="layout">
+  <TabItem value="Overview" toc={overviewToc}>
+    <Overview />
+  </TabItem>
+  <TabItem value="Spacing" toc={spacingToc}>
+    <Spacing />
+  </TabItem>
+  <TabItem value="Responsive" toc={responsiveToc}>
+    <Responsive />
+  </TabItem>
+</Tabs>
