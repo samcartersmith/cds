@@ -8,7 +8,30 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.0.0 (6/22/2022, 09:55 PM PST)
+
+#### 🐞 Fixes
+
+- [EXC-231, EXC-232] CDS/CCA integration: added new EventDelegation and button integration with CCA. [#268](https://github.cbhq.net/frontend/cds/pull/268)
+
+#### 📘 Misc
+
+- Update ejs version to fix yarn audit. [#295](https://github.cbhq.net/frontend/cds/pull/295)
+- Add typescript paths to suppot package auto complete. [#259](https://github.cbhq.net/frontend/cds/pull/259)
+
+## 0.3.1 (6/8/2022, 01:19 PM PST)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 06/08/22 [mm/dd/yy] Illo. [#627](https://github.cbhq.net/frontend/cds/pull/627)
+
 ## 0.3.0 (5/17/2022, 01:24 PM PST)
+
+#### 📘 Misc
+
+- Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
+
+## 0.2.27 (5/5/2022, 01:35 PM PST)
 
 #### 🐞 Fixes
 
@@ -16,7 +39,6 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
-- Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
 - Update ejs version to fix yarn audit. [#295](https://github.cbhq.net/frontend/cds/pull/295)
 
 ## 0.2.26 (4/22/2022, 11:49 AM PST)

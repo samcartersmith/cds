@@ -8,7 +8,32 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.0.0 (6/22/2022, 09:55 PM PST)
+
+#### 🐞 Fixes
+
+- **[linting]** Imports and react fragment lint rule. [#170](https://github.cbhq.net/frontend/cds/pull/170)
+
+#### 📘 Misc
+
+- Add typescript paths to suppot package auto complete. [#259](https://github.cbhq.net/frontend/cds/pull/259)
+- Downgrade storybook to fix percy. [#196](https://github.cbhq.net/frontend/cds/pull/196)
+- Remove yarn setup from Dockerfiles. [#67](https://github.cbhq.net/frontend/cds/pull/67)
+- Yarn commands and readme update. [#65](https://github.cbhq.net/frontend/cds/pull/65)
+
+## 0.6.1 (6/8/2022, 01:19 PM PST)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 06/08/22 [mm/dd/yy] Illo. [#627](https://github.cbhq.net/frontend/cds/pull/627)
+
 ## 0.6.0 (5/17/2022, 01:24 PM PST)
+
+#### 📘 Misc
+
+- Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
+
+## 0.5.4 (5/5/2022, 01:35 PM PST)
 
 #### 🐞 Fixes
 
@@ -16,7 +41,6 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
-- Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
 - Add typescript paths to suppot package auto complete. [#259](https://github.cbhq.net/frontend/cds/pull/259)
 - Downgrade storybook to fix percy. [#196](https://github.cbhq.net/frontend/cds/pull/196)
 

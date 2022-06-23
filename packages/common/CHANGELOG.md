@@ -8,6 +8,46 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.0.0 (6/22/2022, 09:55 PM PST)
+
+#### 🚀 Updates
+
+- **[Link]** Add underline prop to Link component. [#440](https://github.cbhq.net/frontend/cds/pull/440), [CDS-1815](https://jira.coinbase-corp.com/browse/CDS-1815)
+- **[Motion]** Add Animation Tokens. [#611](https://github.cbhq.net/frontend/cds/pull/611)
+- **[getLottieMarkers]** Add option to convert frame to milliseconds. [#625](https://github.cbhq.net/frontend/cds/pull/625)
+- **[DotCount]** Add max prop to DotCount. [#562](https://github.cbhq.net/frontend/cds/pull/562)
+- **[Tag]** Update the purple colorScheme to match design update. [#608](https://github.cbhq.net/frontend/cds/pull/608)
+- **[Tag]** Tags for web and mobile. [#556](https://github.cbhq.net/frontend/cds/pull/556)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 06/22/22 [mm/dd/yy] Illo. [#704](https://github.cbhq.net/frontend/cds/pull/704)
+- **[Icons]** Publish Icons June 22nd, 2022. [#702](https://github.cbhq.net/frontend/cds/pull/702)
+- **[illustrations]** Publish 06/08/22 [mm/dd/yy] Illo. [#627](https://github.cbhq.net/frontend/cds/pull/627)
+
+#### 📘 Misc
+
+- **[A11y]** Generate new a11y report. [#525](https://github.cbhq.net/frontend/cds/pull/525)
+
+## 0.39.4 (6/22/2022, 02:14 PM PST)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 06/22/22 [mm/dd/yy] Illo. [#704](https://github.cbhq.net/frontend/cds/pull/704)
+- **[Icons]** Publish Icons June 22nd, 2022. [#702](https://github.cbhq.net/frontend/cds/pull/702)
+
+## 0.39.3 (6/8/2022, 01:19 PM PST)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 06/08/22 [mm/dd/yy] Illo. [#627](https://github.cbhq.net/frontend/cds/pull/627)
+
+## 0.39.2 (6/3/2022, 10:04 AM PST)
+
+#### 🐞 Fixes
+
+- Rollback gesture handler version. [#593](https://github.cbhq.net/frontend/cds/pull/593)
+
 ## 0.39.1 (6/1/2022, 02:00 PM PST)
 
 #### 🐞 Fixes
@@ -18,6 +58,7 @@ All notable changes to this project will be documented in this file.
 
 #### 🚀 Updates
 
+- **[Illustrations]** Re-add SpotSquare 120x120 and Pictogram 96x96. Deprecate illustration sizes instead. Will remove these sizes in next major release #461. [#479](https://github.cbhq.net/frontend/cds/pull/479)
 - Add new border radius aliases. [#372](https://github.cbhq.net/frontend/cds/pull/372)
 - **[borders]** Leverage new codegen templates & move to css variables. [#354](https://github.cbhq.net/frontend/cds/pull/354)
 - Removed menu item and replaced with select context. [#313](https://github.cbhq.net/frontend/cds/pull/313)
@@ -31,6 +72,8 @@ All notable changes to this project will be documented in this file.
 
 #### 🐞 Fixes
 
+- **[Illustrations]** Publish May 25 2022 Illustrations. [#500](https://github.cbhq.net/frontend/cds/pull/500)
+- **[Fallback]** Add string support for height in Fallback component (#480). [#487](https://github.cbhq.net/frontend/cds/pull/487)
 - Fix merge conflicts. [#420](https://github.cbhq.net/frontend/cds/pull/420)
 - Updated EventHandlerCallback type and updated documentation. [#416](https://github.cbhq.net/frontend/cds/pull/416)
 - **[Illustration]** Publish Illustrations May 12th, 2022 (#393). [#397](https://github.cbhq.net/frontend/cds/pull/397)
@@ -45,6 +88,50 @@ All notable changes to this project will be documented in this file.
 - **[Modal]** Refactor Modal to use the useMotionProps hook. [#410](https://github.cbhq.net/frontend/cds/pull/410)
 - Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
 - **[Illustrations]** Autogenerate illustrations release history and output to website. [#214](https://github.cbhq.net/frontend/cds/pull/214)
+
+## 0.38.7 (5/23/2022, 10:04 AM PST)
+
+#### 🚀 Updates
+
+- **[Illustrations]** Re-add SpotSquare 120x120 and Pictogram 96x96. Deprecate illustration sizes instead. Will remove these sizes in next major release. [#461](https://github.cbhq.net/frontend/cds/pull/461)
+
+## 0.38.6 (5/19/2022, 09:03 AM PST)
+
+#### 🐞 Fixes
+
+- Hidden controls should still take up space and be clickable. [#446](https://github.cbhq.net/frontend/cds/pull/446)
+
+## 0.38.5 (5/18/2022, 08:36 AM PST)
+
+#### 🐞 Fixes
+
+- **[icons]** Publish 05/17/22 [mm/dd/yy] Icons. [#422](https://github.cbhq.net/frontend/cds/pull/422)
+
+## 0.38.4 (5/12/2022, 04:03 PM PST)
+
+#### 🐞 Fixes
+
+- **[Illustration]** Publish Illustrations May 12th, 2022. [#393](https://github.cbhq.net/frontend/cds/pull/393)
+
+#### 📘 Misc
+
+- Upgrade @cbhq/mono-pipeline from ^0.4.3->^0.5.10. [#394](https://github.cbhq.net/frontend/cds/pull/394)
+
+## 0.38.3 (5/6/2022, 02:32 PM PST)
+
+#### 🐞 Fixes
+
+- **[Icons]** Publish May 5th 2022 icons. [#351](https://github.cbhq.net/frontend/cds/pull/351)
+
+## 0.38.2 (5/5/2022, 01:35 PM PST)
+
+#### 🚀 Updates
+
+- **[Motion]** Update motion tokens. [#299](https://github.cbhq.net/frontend/cds/pull/299)
+- Renamed EventDelegationProvider and corresponding components to EventHandlerProvider. [#300](https://github.cbhq.net/frontend/cds/pull/300), [EXC-252](https://jira.coinbase-corp.com/browse/EXC-252)
+- **[FullscreenModal]** Update exit duration to moderate1. [#297](https://github.cbhq.net/frontend/cds/pull/297)
+- Add types to SparklineInteractiveSubHead to show new increase/decrease symbol. [#294](https://github.cbhq.net/frontend/cds/pull/294), [CDS-2277](https://jira.coinbase-corp.com/browse/CDS-2277)
+- **[SparklineInteractive]** Add dual time series functionality for web SparklineInteractive on hover. [#290](https://github.cbhq.net/frontend/cds/pull/290)
 
 ## 0.38.1 (4/22/2022, 11:49 AM PST)
 

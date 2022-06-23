@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## 0.4.0 (5/17/2022, 01:24 PM PST)
+## 1.0.0 (6/22/2022, 09:55 PM PST)
+
+#### 🚀 Updates
+
+- Formatting fixes and adding it to pipeline script. [#227](https://github.cbhq.net/frontend/cds/pull/227)
 
 #### 🐞 Fixes
 
@@ -16,7 +20,32 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Add typescript paths to suppot package auto complete. [#259](https://github.cbhq.net/frontend/cds/pull/259)
+- Add env checks to prevent errors in SSR for website. [#242](https://github.cbhq.net/frontend/cds/pull/242), [CDS-1850](https://jira.coinbase-corp.com/browse/CDS-1850)
+- Fix items in CHANGELOG that has incorrect formats. [#210](https://github.cbhq.net/frontend/cds/pull/210)
+- Fix figma access token error. [#198](https://github.cbhq.net/frontend/cds/pull/198)
+- Downgrade storybook to fix percy. [#196](https://github.cbhq.net/frontend/cds/pull/196)
+
+## 0.4.1 (6/8/2022, 01:19 PM PST)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 06/08/22 [mm/dd/yy] Illo. [#627](https://github.cbhq.net/frontend/cds/pull/627)
+
+## 0.4.0 (5/17/2022, 01:24 PM PST)
+
+#### 📘 Misc
+
 - Cds-tools as workspace package and simplify setup script. [#358](https://github.cbhq.net/frontend/cds/pull/358)
+
+## 0.3.7 (5/5/2022, 01:35 PM PST)
+
+#### 🐞 Fixes
+
+- Block imports from current package. [#288](https://github.cbhq.net/frontend/cds/pull/288)
+
+#### 📘 Misc
+
 - Add typescript paths to suppot package auto complete. [#259](https://github.cbhq.net/frontend/cds/pull/259)
 - Add env checks to prevent errors in SSR for website. [#242](https://github.cbhq.net/frontend/cds/pull/242), [CDS-1850](https://jira.coinbase-corp.com/browse/CDS-1850)
 
