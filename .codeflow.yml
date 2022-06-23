@@ -10,6 +10,7 @@ secure:
     - alpha-cca-jun-8
     - alpha-banners
     - alpha-hint-motion
+    - alpha-tables
 build:
   engines:
     # Apps
