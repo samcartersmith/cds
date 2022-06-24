@@ -94,6 +94,10 @@ declare module '@cbhq/docusaurus-plugin-docgen' {
   };
 
   export type DocTags = {
+    /**
+     * Comma separated list of files, relative to source file, which we should also include when running git log for component changelog.
+     */
+    changelog?: string;
     danger?: string;
     deprecated?: string;
     description?: string;
