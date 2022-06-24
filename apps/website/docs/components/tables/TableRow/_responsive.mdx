@@ -1,17 +1,13 @@
 ## Responsive Styles
 
-**Web only** You can create responsive layouts by passing a configuration object to a TableRow and specify unique styles for phones, tablets, or desktops.
+**Web only** You can create responsive layouts by passing a configuration object to a TableRow and specify unique styles for phones, tablets, or desktops. Responsive styles are only supported when a TableRow is `fullWidth`.
 
 Please note, there are no default responsive styles for TableRow. This is an additive feature that you will need to configure yourself.
 
 ### Supported Properties
 
-- Spacing
-- Offset spacing
-- Gap
-- Flex styles (justify content, align content, align items, align self, flex direction, and flex wrap)
-- Display
-- Visibility
+- innerSpacing
+- outerSpacing
 
 ### Usage
 
@@ -44,7 +40,7 @@ function ResponsiveTableRow() {
   return (
     <Table>
       <TableBody>
-        <TableRow responsiveStyles={responsiveStylesConfig}>
+        <TableRow responsiveStyles={responsiveStylesConfig} fullWidth>
           <TableCell
             direction="horizontal"
             title="TableRow with responsive spacing"
