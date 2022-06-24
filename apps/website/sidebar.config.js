@@ -593,7 +593,14 @@ module.exports = {
             { type: 'doc', id: 'components/tables/TableRow/table-row', label: 'Table Row' },
           ],
         },
-        { type: 'doc', id: 'components/tag/tag', label: 'Tag' },
+        {
+          type: 'doc',
+          id: 'components/tag/tag',
+          label: 'Tag',
+          customProps: {
+            tag: 'new',
+          },
+        },
         { type: 'doc', id: 'components/typography/Text/text', label: 'Text' },
         { type: 'doc', id: 'components/controls/TextInput/text-input', label: 'Text Input' },
         {
