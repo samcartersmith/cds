@@ -5,7 +5,7 @@ import { NoopFn as MockNoop } from '@cbhq/cds-common/utils/mockUtils';
 export type SelectContextType = {
   handleCloseMenu?: NoopFn;
 } & Pick<SelectBaseProps, 'onChange' | 'value'>;
-const defaultContext = {
+export const defaultContext = {
   onChange: MockNoop,
   value: undefined,
   handleCloseMenu: undefined,

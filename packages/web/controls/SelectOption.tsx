@@ -79,6 +79,7 @@ export const SelectOption = memo(
     tabIndex,
     accessibilityLabel,
     testID,
+    disabled,
     ...props
   }: SelectOptionProps) => {
     const selectOptionRef = useRef<HTMLButtonElement | null>(null);
@@ -136,6 +137,7 @@ export const SelectOption = memo(
         noScaleOnPress
         accessibilityLabel={accessibilityLabel}
         testID={testID}
+        disabled={disabled}
       >
         <Cell
           {...selectCellSpacingConfig}
