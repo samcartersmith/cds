@@ -26,6 +26,34 @@
     },
     "typecheck": {
       "executor": "@cbhq/cds-tools:typecheck"
+    },
+    "build-ios-e2e": {
+      "executor": "@cbhq/mono-tasks:build-ios",
+      "outputs": ["ios/build"],
+      "options": {
+        "buildType": "e2e",
+        "detoxConfig": "ios.release"
+      },
+      "configurations": {
+        "debug": {
+          "detoxConfig": "ios.debug"
+        }
+      }
+    },
+    "ios-e2e": {
+      "executor": "@cbhq/mono-tasks:test-detox",
+      "options": {
+        "config": "ios.release",
+        "record": true
+      },
+      "configurations": {
+        "ci": {},
+        "debug": {
+          "config": "ios.debug",
+          "debug": true,
+          "detoxArgs": ["--debug-synchronization", "500"]
+        }
+      }
     }
   },
   "tags": []

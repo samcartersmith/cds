@@ -1,6 +1,6 @@
 {
   "maxWorkers": 1,
-  "testEnvironment": "./environment",
+  "testEnvironment": "./e2e/environment",
   "testRunner": "jest-circus/runner",
   "testTimeout": 120000,
   "testRegex": "\\.spec\\.ts$",

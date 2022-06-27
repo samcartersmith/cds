@@ -1,6 +1,7 @@
 name: MobilePlayground
 configs:
   Debug: debug
+  Release: release
 targets:
   MobilePlayground:
     type: application
@@ -21,10 +22,21 @@ targets:
         CODE_SIGN_STYLE: Manual
         PRODUCT_NAME: 'MobilePlayground'
         # SWIFT_OBJC_BRIDGING_HEADER: app/Bridging-Header.h
+        # RCT_NO_LAUNCH_PACKAGER: true
         'EXCLUDED_ARCHS[sdk=iphonesimulator*]': arm64
+        CLANG_ENABLE_OBJC_ARC: true
+        APP_DISPLAY_NAME: MobilePlayground
+        PRODUCT_BUNDLE_IDENTIFIER: com.coinbase.mobileplayground
       configs:
         Debug:
           DEBUG: true
-          CLANG_ENABLE_OBJC_ARC: true
-          APP_DISPLAY_NAME: MobilePlayground
-          PRODUCT_BUNDLE_IDENTIFIER: com.coinbase.mobileplayground
+        Release:
+          DEBUG: false
+          # RELEASE_STAGE: production
+          ENABLE_BITCODE: true
+    postBuildScripts:
+      - name: Bundle React Native code and images
+        script: |
+          export NODE_BINARY=node
+          export PROJECT_ROOT="$PWD/.."
+          ../../../node_modules/react-native/scripts/react-native-xcode.sh $PROJECT_ROOT/src/main.tsx

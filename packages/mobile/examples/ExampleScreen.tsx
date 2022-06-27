@@ -63,6 +63,7 @@ const Screen: React.FC = ({ children }) => {
     <ScrollView
       style={{ backgroundColor: palette.background, height: '100%' }}
       keyboardShouldPersistTaps="always"
+      testID="example_screen_scrollview"
     >
       {children}
     </ScrollView>

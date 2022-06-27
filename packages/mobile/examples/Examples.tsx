@@ -257,6 +257,7 @@ export function Examples({ navigation: { navigate } }: ExamplesProps) {
   return (
     <Box background flexGrow={1}>
       <FlatList
+        testID="cds_home_flatlist"
         data={data}
         renderItem={renderItem}
         ItemSeparatorComponent={null}
