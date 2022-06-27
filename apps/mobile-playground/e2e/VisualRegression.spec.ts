@@ -1,12 +1,13 @@
-/* eslint-disable @typescript-eslint/await-thenable */
+import { logTestStep, pressButton, screenShouldAppear } from '@cbhq/detox-utils';
 
-import { logTestStep, pressButton } from '@cbhq/detox-utils';
-
-import { launchApp } from './utils';
+import { buildFinalize, initializeVisualRegressionTests } from './detox-percy/detoxPercy';
+import { routesNames } from './routeNames';
+import { launchApp, takeRouteScreenshots } from './utils';
 
 describe('Example', () => {
   beforeAll(async () => {
     await launchApp();
+    initializeVisualRegressionTests();
   });
 
   beforeEach(async () => {
@@ -15,10 +16,12 @@ describe('Example', () => {
 
   afterAll(async () => {
     logTestStep('In After All; finalizing build.');
+    buildFinalize();
   });
 
-  it.each(['Accordion', 'Alert'])('%p Visual Diff Test.', async (name: string) => {
+  it.each(routesNames)('%p Visual Diff Test.', async (name: string) => {
     await pressButton(name, 'cds_home_flatlist');
-    await expect(element(by.id('example_screen_scrollview'))).toBeVisible();
+    await screenShouldAppear('example_screen_scrollview');
+    await takeRouteScreenshots(name);
   });
 });

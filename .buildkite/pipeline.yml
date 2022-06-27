@@ -28,6 +28,37 @@ _shared_step: &shared_step
     automatic:
       limit: 1
 
+_if_develop_branch: &if_develop_branch
+  if: |
+    build.branch == 'develop'
+
+_if_pull_request: &if_pull_request
+  if: |
+    build.pull_request.base_branch != null
+
+_percy_ios_shared: &percy_ios_shared
+  parallelism: 1
+  commands:
+    - tools/ci/setup.sh
+    - export LANG=en_US.UTF-8
+    - mkdir -p artifacts
+    # Planning to switch to Prod percy projcet with new key once config service ready:
+    - export PERCY_TOKEN=f9352495e18834b6a0aa61d3ca8f9f9f8e58f587c94cf03ac7380e9c0eb89052
+    - rando=percyNonce_$(openssl rand -base64 21)
+    - echo $rando
+    - export PERCY_PARALLEL_NONCE="$rando"
+    - yarn nx run mobile-playground:build-ios-e2e
+    - yarn nx run mobile-playground:run-ios-e2e
+  env:
+    CONFIG_SERVICE_CONTEXT: percy-cds
+    STORYBOOK_SKIP_ANIMATION: true
+    OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: develop
+    PERCY_TARGET_BRANCH: develop
+  artifact_paths:
+    - artifacts/**/*
+  agents:
+    queue: macos-metal
+
 steps:
   - label: Validate
     <<: *shared_step
@@ -108,7 +139,7 @@ steps:
             - 'STORYBOOK_SKIP_ANIMATION'
       - file:///buildkite/plugins/cache: *cache_plugin
 
-  - label: 'Percy.io - CDS visual diff tests'
+  - label: 'Percy (Web)'
     <<: *shared_step
     parallelism: 1
     commands:
@@ -131,3 +162,17 @@ steps:
             - 'PERCY_TARGET_BRANCH'
             - 'OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH'
       - file:///buildkite/plugins/cache: *cache_plugin
+
+  - input: 'Manually Run iOS Percy! :rocket:'
+    <<: *if_pull_request
+    key: run-ios-percy
+    prompt: 'Manually Run iOS Percy?'
+
+  - label: 'Manual iOS Percy'
+    <<: *if_pull_request
+    <<: *percy_ios_shared
+    depends_on: run-ios-percy
+
+  - label: 'iOS Percy'
+    <<: *if_develop_branch
+    <<: *percy_ios_shared

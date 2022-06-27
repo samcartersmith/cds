@@ -54,6 +54,13 @@
           "detoxArgs": ["--debug-synchronization", "500"]
         }
       }
+    },
+    "run-ios-e2e": {
+      "executor": "@cbhq/cds-tools:run-conditional",
+      "options": {
+        "triggerProjects": ["mobile", "common", "utils", "fonts", "lottie-files"],
+        "target": "mobile-playground:ios-e2e"
+      }
     }
   },
   "tags": []
