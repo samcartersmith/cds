@@ -1,11 +1,15 @@
 import React, { createContext, memo } from 'react';
-import type { ModalLinkProps } from '@theme/ModalLink';
 import { useToggler } from '@cbhq/cds-web';
 import { Modal } from '@cbhq/cds-web/overlays/Modal/Modal';
 import { ModalBody } from '@cbhq/cds-web/overlays/Modal/ModalBody';
 import { ModalHeader } from '@cbhq/cds-web/overlays/Modal/ModalHeader';
-import { Link } from '@cbhq/cds-web/typography/Link';
+import { Link, LinkProps } from '@cbhq/cds-web/typography/Link';
 import { TextBody } from '@cbhq/cds-web/typography/TextBody';
+
+export type ModalLinkProps = {
+  children: string;
+  content: React.ReactNode;
+} & LinkProps;
 
 /**
  * Gives us the ability to determine if a component is child of Modal.

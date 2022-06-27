@@ -313,18 +313,9 @@ declare module '@theme/PropsTableListCell' {
 }
 
 declare module '@theme/PropsTableRow' {
-  type ProcessedPropItem = import('@cbhq/docusaurus-plugin-docgen').ProcessedPropItem;
-  type SharedTypeAliases = import('@cbhq/docusaurus-plugin-docgen').SharedTypeAliases;
-  export type TypeAliasModalContentProps = {
-    typeAlias: string;
-  };
-
-  export type PropsTableRowProps = {
-    prop: ProcessedPropItem;
-    sharedTypeAliases: SharedTypeAliases;
-  };
-
-  export default function PropsTableRow(props: PropsTableRowProps): JSX.Element;
+  export const TypeAliasModalContent: typeof import('./theme/PropsTableRow').TypeAliasModalContent;
+  const PropsTableRow: typeof import('./theme/PropsTableRow').default;
+  export default PropsTableRow;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -417,14 +408,8 @@ declare module '@theme/JSDocTag' {
 }
 
 declare module '@theme/ModalLink' {
-  type LinkProps = import('@cbhq/cds-web/typography/Link').LinkProps;
-
-  export type ModalLinkProps = {
-    children: string;
-    content: React.ReactNode;
-  } & LinkProps;
-
-  export default function ModalLink(props: ModalLinkProps): JSX.Element;
+  const ModaLink: typeof import('./theme/ModalLink').default;
+  export default ModaLink;
 }
 
 declare module '@theme/NavbarPortal' {
