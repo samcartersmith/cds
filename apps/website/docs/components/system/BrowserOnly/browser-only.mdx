@@ -1,0 +1,24 @@
+---
+title: BrowserOnly
+slug: /components/browser-only
+keywords:
+  - ssr
+  - ssg
+  - server
+---
+
+import Usage from './_usage.mdx';
+
+<Tabs groupId="platform" variant="secondary">
+  <TabItem value="web" label="Web">
+    <ImportBlock name="BrowserOnly" from="@cbhq/cds-web/system/BrowserOnly" />
+  </TabItem>
+</Tabs>
+
+<br />
+
+Children of `BrowserOnly` will _only_ be rendered on the client, not on the server.
+
+`BrowserOnly` checks if its children have been mounted to the DOM and triggers a rerender so SSR UI's can hydrate properly (see [Perils of Rehydration](https://www.joshwcomeau.com/react/the-perils-of-rehydration/)). It can be used to prevent cumulative layout shifts (CLS) in server side rendered environments when content is dynamic.
+
+<Usage />

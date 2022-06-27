@@ -6,7 +6,7 @@ import { PortalNode, usePortalState } from '@cbhq/cds-common/overlays/usePortalS
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { ThemeProvider } from '../system';
-import { MountComponent } from '../system/MountComponent';
+import { BrowserOnly } from '../system/BrowserOnly';
 
 export type PortalProviderProps = ToastProviderProps;
 
@@ -67,9 +67,9 @@ export const PortalProvider: React.FC<PortalProviderProps> = memo(
     return (
       <PortalContext.Provider value={portalState}>
         <ToastProvider toastBottomOffset={toastBottomOffset}>
-          <MountComponent>
+          <BrowserOnly>
             <PortalHost />
-          </MountComponent>
+          </BrowserOnly>
           {portalState.nodes.map((node: PortalNode) => node.element)}
           {children}
         </ToastProvider>

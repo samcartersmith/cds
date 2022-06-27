@@ -719,8 +719,8 @@ module.exports = {
         { type: 'doc', id: 'components/system/Interactable/interactable', label: 'Interactable' },
         {
           type: 'doc',
-          id: 'components/system/MountComponent/mount-component',
-          label: 'MountComponent',
+          id: 'components/system/BrowserOnly/browser-only',
+          label: 'BrowserOnly',
         },
         {
           type: 'category',
@@ -745,6 +745,7 @@ module.exports = {
             },
             'hooks/useBreakpoints',
             'hooks/useHasMounted',
+            'hooks/useIsBrowser',
           ],
         },
         {

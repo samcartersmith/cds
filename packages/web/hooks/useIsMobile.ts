@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { deviceBreakpoints } from '../layout/breakpoints';
 import { getBrowserGlobals, isSSR } from '../utils/browser';
 
+/** @deprecated Please use the useBreakpoints hook instead */
 export const useIsMobile = () => {
   const [width, setWidth] = useState<number | undefined>(
     !isSSR() ? getBrowserGlobals()?.window.innerWidth : undefined,

@@ -91,7 +91,7 @@ All notable changes to this project will be documented in this file.
 #### 🐞 Fixes
 
 - [EXC-231, EXC-232] CDS/CCA integration: added new EventDelegation and button integration with CCA. [#268](https://github.cbhq.net/frontend/cds/pull/268)
-- Add MountComponent HOC to fix console errors for PortalHost rendering before hydration. [#276](https://github.cbhq.net/frontend/cds/pull/276), [CDS-2178](https://jira.coinbase-corp.com/browse/CDS-2178)
+- Add BrowserOnly component to fix console errors for PortalHost rendering before hydration. [#276](https://github.cbhq.net/frontend/cds/pull/276), [CDS-2178](https://jira.coinbase-corp.com/browse/CDS-2178)
 
 #### 📘 Misc
 

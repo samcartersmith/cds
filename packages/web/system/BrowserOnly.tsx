@@ -1,17 +1,18 @@
 import { ReactElement } from 'react';
 
-import { useHasMounted } from '../hooks/useHasMounted';
+import { useIsBrowser } from '../hooks/useIsBrowser';
 
-export type MountComponentProps = {
+export type BrowserOnlyProps = {
   children: ReactElement;
 };
 
 /**
  * Checks if component has mounted and triggers a rerender so SSR UI's can hydrate properly
  * @link https://www.joshwcomeau.com/react/the-perils-of-rehydration/#abstractions
+ * Does not render component on the server
  */
-export const MountComponent = ({ children }: MountComponentProps) => {
-  const componentShouldMount = useHasMounted();
+export const BrowserOnly = ({ children }: BrowserOnlyProps) => {
+  const componentShouldMount = useIsBrowser();
 
   return componentShouldMount ? children : null;
 };
