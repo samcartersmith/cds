@@ -99,7 +99,11 @@ const ScrollSnapCarousel = memo(function ScrollSnapCarousel({
   }
 
   return (
-    <VStack spacingHorizontal={spacingHorizontal} spacingVertical={spacingVertical} {...props}>
+    <VStack
+      spacingHorizontal={spacingHorizontal}
+      spacingVertical={currentCards.length === 1 ? 6 : spacingVertical}
+      {...props}
+    >
       {(currentCards.length > 1 || dismissableCards) && (
         <HStack
           spacingBottom={1}
