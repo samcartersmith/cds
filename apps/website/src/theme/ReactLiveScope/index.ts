@@ -4,6 +4,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import ExampleWithThemeToggles from '@theme/ExampleWithThemeToggles';
 import ThemeToggles from '@theme/ThemeToggles';
 import { join, useToggler } from '@cbhq/cds-common';
+import { useSort } from '@cbhq/cds-common/hooks/useSort';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { accounts } from '@cbhq/cds-common/internal/data/accounts';
 import {
@@ -146,6 +147,7 @@ const ReactLiveScope: unknown = {
   useSpectrum,
   useSpectrumConditional,
   useStatusButtons,
+  useSort,
   useToggler,
   useModal,
   useA11yControlledVisibility,
