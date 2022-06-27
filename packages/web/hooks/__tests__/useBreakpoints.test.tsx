@@ -2,18 +2,15 @@ import { ReactNode } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { breakpoints } from '../../layout/responsive';
-import {
-  DefaultToDeviceProps,
-  DefaultToDeviceProvider,
-} from '../../system/DefaultToDeviceProvider';
+import { BreakpointsProvider, BreakpointsProviderProps } from '../../system/BreakpointsProvider';
 import { defaultDeviceMatchesMap, useBreakpoints } from '../useBreakpoints';
 
 type WrapperProps = {
   children?: ReactNode;
-} & Omit<DefaultToDeviceProps, 'children'>;
+} & Omit<BreakpointsProviderProps, 'children'>;
 
 const wrapper = ({ children, device }: WrapperProps) => (
-  <DefaultToDeviceProvider device={device}>{children}</DefaultToDeviceProvider>
+  <BreakpointsProvider device={device}>{children}</BreakpointsProvider>
 );
 
 describe('useBreakpoints hook', () => {

@@ -2,7 +2,7 @@ import { ResponsiveProps } from '@cbhq/cds-common/types/ResponsiveProps';
 
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { DefaultToDeviceProvider } from '../../system/DefaultToDeviceProvider';
+import { BreakpointsProvider } from '../../system/BreakpointsProvider';
 import { TextHeadline } from '../../typography';
 import { useBreakpoints } from '../useBreakpoints';
 
@@ -57,9 +57,9 @@ export const Playground = (props: PlaygroundProps) => <Example {...props} />;
 export const DefaultToDevice = () => {
   return (
     <VStack gap={2}>
-      <DefaultToDeviceProvider device="phone">
+      <BreakpointsProvider device="phone">
         <Example />
-      </DefaultToDeviceProvider>
+      </BreakpointsProvider>
     </VStack>
   );
 };

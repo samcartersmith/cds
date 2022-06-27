@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { DeviceBreakpoint, ResponsivePropsDevices } from '@cbhq/cds-common/types';
 
 import { deviceMqRanges } from '../layout/breakpoints';
-import { useDefaultToDeviceContext } from '../system/DefaultToDeviceProvider';
+import { useDefaultBreakpointContext } from '../system/BreakpointsProvider';
 import { getBrowserGlobals } from '../utils/browser';
 import { addMatchMediaListener, removeMatchMediaListener } from '../utils/globalMatchMediaListener';
 
@@ -55,7 +55,7 @@ const deviceKeys = Object.keys(deviceMqRanges) as DeviceBreakpoint[];
  * Please use useIsMobile instead
  */
 export const useBreakpoints = (): BreakpointRecord => {
-  const defaultDevice = useDefaultToDeviceContext();
+  const defaultDevice = useDefaultBreakpointContext();
 
   const matchesMediaQuery = useCallback((mediaQuery: string) => {
     return getBrowserGlobals()?.window?.matchMedia(mediaQuery);

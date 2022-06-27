@@ -1,0 +1,25 @@
+---
+title: BreakpointsProvider
+slug: /components/breakpoints-provider
+keywords:
+  - breakpoints
+  - responsive
+---
+
+import Usage from './_usage.mdx';
+
+<Tabs groupId="platform" variant="secondary">
+  <TabItem value="web" label="Web">
+    <ImportBlock name="BreakpointsProvider" from="@cbhq/cds-web/system/BreakpointsProvider" />
+  </TabItem>
+</Tabs>
+
+<br />
+
+`BreakpointsProvider` is used to initialize the [useBreakpoints](/hooks/useBreakpoints) hook with a default device: `phone`, `tablet`, or `desktop`. On window resize, `useBreakpoints` will recalculate the current breakpoint and update the styles accordingly.
+
+`BreakpointsProvider` can be used to prevent server/DOM mimsmatches. However, please keep in mind that if the user's device does not match the default device there will be cumulative layout shift (CLS) once `useBreakpoints` is able to determine the user's window size and will repaint the DOM is the component has components or styles that are conditionally rendered at that breakpoint.
+
+Alternatively, you can use the [useIsBrowser](/hooks/useIsBrowser) hook to wait for the component to mount before calculating the window size and then conditionally render your component.
+
+<Usage />

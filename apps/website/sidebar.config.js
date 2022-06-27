@@ -740,8 +740,8 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              id: 'components/system/DefaultToDeviceProvider/default-to-device-provider',
-              label: 'DefaultToDeviceProvider',
+              id: 'components/system/BreakpointsProvider/breakpoints-provider',
+              label: 'BreakpointsProvider',
             },
             'hooks/useBreakpoints',
             'hooks/useHasMounted',

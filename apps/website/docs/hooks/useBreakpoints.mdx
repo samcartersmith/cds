@@ -74,10 +74,10 @@ const hasMounted = useHasMounted();
 
 ### Default Device
 
-Alternatively, you can instantiate `useBreakpoints` with a default device using the [DefaultToDeviceProvider](/components/default-to-device-provider) and passing it a device name: `phone`, `tablet`, or `desktop`. On window resize, `useBreakpoints` will recalculate the current breakpoint and update the styles accordingly. `DefaultToDeviceProvider` can be used to prevent server/DOM mimsmatches.
+Alternatively, you can instantiate `useBreakpoints` with a default device using the [BreakpointsProvider](/components/breakpoints-provider) and passing it a device name: `phone`, `tablet`, or `desktop`. On window resize, `useBreakpoints` will recalculate the current breakpoint and update the styles accordingly. `BreakpointsProvider` can be used to prevent server/DOM mimsmatches.
 
 ```jsx
-<DefaultToDeviceProvider device="phone">
+<BreakpointsProvider device="phone">
   <Box responsiveStyles={responsiveStylesConfig} />
-</DefaultToDeviceProvider>
+</BreakpointsProvider>
 ```
