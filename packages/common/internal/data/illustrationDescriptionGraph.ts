@@ -6064,6 +6064,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'coinbaseOneLogoSpotSquare',
     'coinbaseOneLogoPictogram',
     'walletLogoNavigation',
+    'coinbaseLogoNavigation',
   ],
   logomark: [
     'coinbaseOneLogoHeroSquare',
@@ -6415,6 +6416,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'payNavigation',
     'delegateNavigation',
     'walletLogoNavigation',
+    'coinbaseLogoNavigation',
   ],
   'app switcher': [
     'participateNavigation',
@@ -6449,6 +6451,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'payNavigation',
     'delegateNavigation',
     'walletLogoNavigation',
+    'coinbaseLogoNavigation',
   ],
   'logged out': [
     'participateNavigation',
@@ -6483,6 +6486,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'payNavigation',
     'delegateNavigation',
     'walletLogoNavigation',
+    'coinbaseLogoNavigation',
   ],
   restricted: ['restrictedCountry'],
   country: ['restrictedCountry'],

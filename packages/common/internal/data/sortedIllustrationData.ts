@@ -1269,4 +1269,6 @@ export const sortedImg = [
   'dappWallet-dark',
   'boostedCard-dark',
   'boostedCard-light',
+  'coinbaseLogoNavigation-light',
+  'coinbaseLogoNavigation-dark',
 ] as const;

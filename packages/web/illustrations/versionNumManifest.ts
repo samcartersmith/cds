@@ -1269,4 +1269,6 @@ export const versionNumManifest: Record<string, number> = {
   'dappWallet-dark': 0,
   'boostedCard-dark': 0,
   'boostedCard-light': 0,
+  'coinbaseLogoNavigation-light': 0,
+  'coinbaseLogoNavigation-dark': 0,
 };
