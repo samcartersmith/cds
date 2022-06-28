@@ -7,9 +7,11 @@ secure:
     - beta-june-29-2022
     - release-june-2-master-gesture-handler
     - alpha-responsive-development
+    - alpha-responsive
     - alpha-cca-jun-8
     - alpha-banners
     - alpha-hint-motion
+    - alpha-tables-m2
 build:
   engines:
     # Apps
