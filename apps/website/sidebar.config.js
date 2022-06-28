@@ -386,6 +386,7 @@ module.exports = {
             },
           ],
         },
+        { type: 'doc', id: 'components/dropdown/MenuItem/menu-item', label: 'MenuItem' },
         {
           type: 'category',
           label: 'Modal',
