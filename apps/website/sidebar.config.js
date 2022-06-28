@@ -698,6 +698,31 @@ module.exports = {
       items: [
         {
           type: 'category',
+          label: 'Breakpoints',
+          items: [
+            {
+              type: 'doc',
+              label: 'BreakpointsProvider',
+              id: 'components/system/BreakpointsProvider/breakpoints-provider',
+            },
+            'hooks/useBreakpoints',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'BrowserOnly',
+          items: [
+            {
+              type: 'doc',
+              label: 'BrowserOnly',
+              id: 'components/system/BrowserOnly/browser-only',
+            },
+            'hooks/useHasMounted',
+            'hooks/useIsBrowser',
+          ],
+        },
+        {
+          type: 'category',
           label: 'DevicePreferencesProvider',
           items: [
             {
@@ -727,11 +752,6 @@ module.exports = {
         },
         { type: 'doc', id: 'components/system/Interactable/interactable', label: 'Interactable' },
         {
-          type: 'doc',
-          id: 'components/system/BrowserOnly/browser-only',
-          label: 'BrowserOnly',
-        },
-        {
           type: 'category',
           label: 'PortalProvider',
           items: [
@@ -741,20 +761,6 @@ module.exports = {
               id: 'components/overlays/PortalProvider/portal-provider',
             },
             'hooks/useOverlay',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Responsive',
-          items: [
-            {
-              type: 'doc',
-              id: 'components/system/BreakpointsProvider/breakpoints-provider',
-              label: 'BreakpointsProvider',
-            },
-            'hooks/useBreakpoints',
-            'hooks/useHasMounted',
-            'hooks/useIsBrowser',
           ],
         },
         {

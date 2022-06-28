@@ -52,15 +52,17 @@ function Example() {
 }
 ```
 
+## SSR Considerations
+
 ### Risks of Using Javascript for Responsive Styles
 
 Using Javascript for responsive styles can lead to flashes on initial hydration in SSR and SSG environments: the default styles will render on first paint until the screen width can be measured, and then the device-specific styles will render.
 
 `useBreakpoints` can also lead to cumulative layout shifts (CLS) if the default styles differ from a user’s device and there are responsive styles specified for that device, eg: the default styles are for desktops, after initial paint the window will be measured and that device’s specified styles will be rendered causing the layout to shift suddenly.
 
-## Two Pass Rendering
+### Two Pass Rendering
 
-You can prevent CLS by using the [useHasMounted](/hooks/useHasMounted) hook to wait for the component to mount before rendering any content. This is called two pass rendering and ensures that the component has been mounted and the window object is present before painting the DOM. This is the preferred pattern for using `useBreakpoints` in SSR and SSG environments.
+You can prevent CLS by using the [useHasMounted](/hooks/useHasMounted) hook to wait for the component to mount before rendering any content. You can also conditionally render the component only on the client with [useIsBrowser](/hooks/useIsBrowser); this is called two pass rendering and ensures that the component has been mounted and the window object is present before painting the DOM. Two pass rendering is the preferred pattern for using `useBreakpoints` in SSR and SSG environments.
 
 ```jsx
 const { isPhone } = useBreakpoints();
@@ -74,7 +76,9 @@ const hasMounted = useHasMounted();
 
 ### Default Device
 
-Alternatively, you can instantiate `useBreakpoints` with a default device using the [BreakpointsProvider](/components/breakpoints-provider) and passing it a device name: `phone`, `tablet`, or `desktop`. On window resize, `useBreakpoints` will recalculate the current breakpoint and update the styles accordingly. `BreakpointsProvider` can be used to prevent server/DOM mimsmatches.
+Alternatively, you can instantiate `useBreakpoints` with a default device using the [BreakpointsProvider](/components/breakpoints-provider) and passing it a device name: `phone`, `tablet`, or `desktop`. You can initialize the default value using request headers to detect the user agent on the server so that the DOM snapshot on the server will always match that of the initial paint on the client; preventing client/server mismatches.
+
+On window resize, `useBreakpoints` will recalculate the current breakpoint and update the styles accordingly.
 
 ```jsx
 <BreakpointsProvider device="phone">
