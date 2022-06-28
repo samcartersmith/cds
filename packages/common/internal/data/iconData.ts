@@ -206,6 +206,15 @@ export const iconNames = [
   'diamondActive',
   'diamondInactive',
   'commentActive',
+  'cashThaiBaht',
+  'cashPhilippinePeso',
+  'cashIndonesianRupiah',
+  'cashVietnameseDong',
+  'cashTurkishLira',
+  'cashSwissFranc',
+  'cashPolishZłoty',
+  'cashUaeDirham',
+  'cashAustralianDollar',
 ] as const;
 
 export const navigationIconNames = [
@@ -616,4 +625,25 @@ export const unicodeMap = {
   pencilActive: { '8': 'uEF29', '12': 'uEF2A', '16': 'uEF2B', '24': 'uEF2C', '32': 'uEF2D' },
   pencilInactive: { '8': 'uEF2E', '12': 'uEF2F', '16': 'uEF30', '24': 'uEF31', '32': 'uEF32' },
   commentActive: { '8': 'uEF33', '12': 'uEF34', '16': 'uEF35', '24': 'uEF36', '32': 'uEF37' },
+  cashThaiBaht: { '8': 'uEF38', '12': 'uEF39', '16': 'uEF3A', '24': 'uEF3B', '32': 'uEF3C' },
+  cashPhilippinePeso: { '8': 'uEF3D', '12': 'uEF3E', '16': 'uEF3F', '24': 'uEF40', '32': 'uEF41' },
+  cashIndonesianRupiah: {
+    '8': 'uEF42',
+    '12': 'uEF43',
+    '16': 'uEF44',
+    '24': 'uEF45',
+    '32': 'uEF46',
+  },
+  cashVietnameseDong: { '8': 'uEF47', '12': 'uEF48', '16': 'uEF49', '24': 'uEF4A', '32': 'uEF4B' },
+  cashTurkishLira: { '8': 'uEF4C', '12': 'uEF4D', '16': 'uEF4E', '24': 'uEF4F', '32': 'uEF50' },
+  cashSwissFranc: { '8': 'uEF51', '12': 'uEF52', '16': 'uEF53', '24': 'uEF54', '32': 'uEF55' },
+  cashPolishZłoty: { '8': 'uEF56', '12': 'uEF57', '16': 'uEF58', '24': 'uEF59', '32': 'uEF5A' },
+  cashUaeDirham: { '8': 'uEF5B', '12': 'uEF5C', '16': 'uEF5D', '24': 'uEF5E', '32': 'uEF5F' },
+  cashAustralianDollar: {
+    '8': 'uEF60',
+    '12': 'uEF61',
+    '16': 'uEF62',
+    '24': 'uEF63',
+    '32': 'uEF64',
+  },
 } as const;
