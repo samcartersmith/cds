@@ -14,7 +14,7 @@ import { useElevationStyles } from '../hooks/useElevationStyles';
 import { usePalette } from '../hooks/usePalette';
 import * as borderColors from '../styles/borderColor';
 import * as borderWidths from '../styles/borderWidth';
-import { disabledState } from '../styles/disabledState';
+import { disabledBorder, disabledState } from '../styles/disabledState';
 import { focusRing } from '../styles/focus';
 import { cx } from '../utils/linaria';
 
@@ -143,9 +143,10 @@ export const InteractableContent = forwardRef(function InteractableContent(
   const className = cx(
     interactable,
     !wrapWithLayeredElements && transparentChildren,
+    disabled ? disabledState : focusRing,
+    disabled && borderColor === 'transparent' ? disabledBorder : null,
     transparentWhileInactive ? borderColors.transparent : borderColors[borderColor],
     borderWidth && borderWidths[borderWidth],
-    disabled ? disabledState : focusRing,
     block && fullWidth,
     customClassName,
   );
