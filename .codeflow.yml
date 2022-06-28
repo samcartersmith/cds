@@ -12,6 +12,7 @@ secure:
     - alpha-banners
     - alpha-hint-motion
     - alpha-tables-m2
+    - alpha-banner-final
 build:
   engines:
     # Apps
