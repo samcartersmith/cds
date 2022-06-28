@@ -1,24 +1,111 @@
-Wrap any component with `Pulse` to apply pulse animation to it.
+:::caution
+
+Please consult with the motion team in #ask-motion before using this component.
+
+:::
+
+### How to
+
+Simply wrap any component with `Pulse` and specify the [variant](#variant) which controls the opacity of the pulse animation.
+
+```jsx
+<Pulse variant="heavy">
+  <Component />
+</Pulse>
+```
+
+### Animate on mount
+
+By default, the animation starts on component mount and loops infinitely until component unmounts.
+You can disable this behaviour using the `disableAnimateOnMount` prop and trigger the animation using the [imperative method](#imperative-trigger).
 
 ```jsx live
-<VStack>
-  <Pulse variant="subtle">
-    <TextBody as="p">Subtle</TextBody>
-    <Box width={50} height={50} background="primary" />
-    <Box width={50} height={50} background="negative" />
-    <Box width={50} height={50} background="positive" />
-  </Pulse>
-  <Pulse>
-    <TextBody as="p">Moderate</TextBody>
-    <Box width={50} height={50} background="primary" />
-    <Box width={50} height={50} background="negative" />
-    <Box width={50} height={50} background="positive" />
-  </Pulse>
+<VStack gap={3}>
   <Pulse variant="heavy">
     <TextBody as="p">Heavy</TextBody>
     <Box width={50} height={50} background="primary" />
     <Box width={50} height={50} background="negative" />
     <Box width={50} height={50} background="positive" />
   </Pulse>
+  <Pulse variant="moderate">
+    <TextBody as="p">Moderate</TextBody>
+    <Box width={50} height={50} background="primary" />
+    <Box width={50} height={50} background="negative" />
+    <Box width={50} height={50} background="positive" />
+  </Pulse>
+  <Pulse variant="subtle">
+    <TextBody as="p">Subtle</TextBody>
+    <Box width={50} height={50} background="primary" />
+    <Box width={50} height={50} background="negative" />
+    <Box width={50} height={50} background="positive" />
+  </Pulse>
 </VStack>
+```
+
+### Imperative Trigger
+
+You can use the `play` method to imperatively trigger the animation and `stop` method to stop the animation at any time.
+It also accepts pulse variant as the argument.
+
+- If no variant is specificed as argument,
+  it will use the variant from the `variant` prop.
+- If no `variant` prop is specificed, it will use the default variant which is `moderate`.
+
+```jsx live
+function BasicPulse() {
+  const ref = useRef();
+
+  const handlePulseHeavy = useCallback(() => ref.current.play(), []);
+  const handlePulseModerate = useCallback(() => ref.current.play('moderate'), []);
+  const handlePulseSubtle = useCallback(() => ref.current.play('subtle'), []);
+  const handleStop = useCallback(() => ref.current.stop(), []);
+
+  return (
+    <VStack gap={3}>
+      <Pulse variant="heavy" ref={ref} disableAnimateOnMount>
+        <Box width={50} height={50} background="primary" />
+        <Box width={50} height={50} background="negative" />
+        <Box width={50} height={50} background="positive" />
+      </Pulse>
+      <HStack gap={3}>
+        <Button onPress={handlePulseHeavy}>Pulse - Heavy</Button>
+        <Button onPress={handlePulseModerate}>Pulse - Moderate</Button>
+        <Button onPress={handlePulseSubtle}>Pulse - Subtle</Button>
+        <Button onPress={handleStop}>Stop</Button>
+      </HStack>
+    </VStack>
+  );
+}
+```
+
+### Usage Examples
+
+#### Live Auction Pulse
+
+```jsx live
+<Box
+  width={50}
+  height={50}
+  borderColor="negative"
+  borderRadius="round"
+  alignItems="center"
+  justifyContent="center"
+>
+  <Pulse variant="heavy">
+    <TextCaption as="p" color="negative">
+      LIVE
+    </TextCaption>
+  </Pulse>
+</Box>
+```
+
+#### Live Price Pulse
+
+```jsx live
+<Box alignItems="center" justifyContent="center">
+  <Pulse variant="heavy">
+    <Box width={30} height={30} borderRadius="round" background="primary" opacity={0.3} />
+  </Pulse>
+  <Box width={12} height={12} borderRadius="round" background="primary" position="absolute" />
+</Box>
 ```

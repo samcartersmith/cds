@@ -97,7 +97,6 @@ import { ButtonSheet } from ':cds-website/components/ButtonSheet';
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleBox } from ':cds-website/components/ExampleBox';
 import { PaletteSheet } from ':cds-website/components/PaletteSheet';
-import { Rerenderer } from ':cds-website/components/Rerenderer';
 import { ResponsiveExample } from ':cds-website/components/ResponsiveExample';
 import { TypographySheet } from ':cds-website/components/TypographySheet';
 import { LottieExample } from ':cds-website/docs/components/animation/Lottie/LottieExample';

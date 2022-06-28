@@ -99,6 +99,37 @@ with a TypeAhead component.
 </ExampleWithThemeToggles>
 ```
 
+### Color Surge Enabled
+
+```jsx live
+<ExampleWithThemeToggles>
+  <VStack gap={3}>
+    <TextInput
+      label="Default Color Surge"
+      placeholder="Focus me"
+      helperText="This won't be displayed to user"
+      enableColorSurge
+    />
+
+    <TextInput
+      label="Positive Color Surge"
+      placeholder="Focus me"
+      helperText="Valid BTC address"
+      variant="positive"
+      enableColorSurge
+    />
+
+    <TextInput
+      label="Negative Color Surge"
+      placeholder="Focus me"
+      helperText="Invalid BTC address"
+      variant="negative"
+      enableColorSurge
+    />
+  </VStack>
+</ExampleWithThemeToggles>
+```
+
 ### Content Alignment
 
 ```jsx live
