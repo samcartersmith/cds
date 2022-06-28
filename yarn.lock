@@ -8034,7 +8034,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-router-dom@npm:*, @types/react-router-dom@npm:^5.1.5":
+"@types/react-router-dom@npm:*, @types/react-router-dom@npm:^5.2.0":
   version: 5.3.3
   resolution: "@types/react-router-dom@npm:5.3.3"
   dependencies:
@@ -13570,7 +13570,7 @@ __metadata:
     "@types/react-dom": ^17.0.2
     "@types/react-is": ^17.0.2
     "@types/react-native": ^0.66.8
-    "@types/react-router-dom": ^5.1.5
+    "@types/react-router-dom": ^5.2.0
     "@types/react-virtualized": ^9.21.13
     "@types/semver": 7.3.4
     "@types/svgo": ^2.3.0
@@ -26919,19 +26919,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^6.0.0":
-  version: 6.2.1
-  resolution: "react-router-dom@npm:6.2.1"
-  dependencies:
-    history: ^5.2.0
-    react-router: 6.2.1
-  peerDependencies:
-    react: ">=16.8"
-    react-dom: ">=16.8"
-  checksum: fa0edc69fddf0cb1313bcb3dbd5eb2b2ff24a75ee03ba928995e16a6a251585750f91d966612e868eb68a5aebc4a5240be40fd96c4acf1d8d48d33f54ad3f4e2
-  languageName: node
-  linkType: hard
-
 "react-router@npm:5.3.3, react-router@npm:^5.2.0":
   version: 5.3.3
   resolution: "react-router@npm:5.3.3"
@@ -26952,7 +26939,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router@npm:6.2.1, react-router@npm:^6.0.0":
+"react-router@npm:^6.0.0":
   version: 6.2.1
   resolution: "react-router@npm:6.2.1"
   dependencies:
