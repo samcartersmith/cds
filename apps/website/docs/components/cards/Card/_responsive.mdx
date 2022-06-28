@@ -19,7 +19,7 @@ Always hoist or memoize your responsive style configurations.
 
 ```jsx live
 function ResponsiveCard() {
-  const responsiveStylesConfig = useMemo(
+  const responsiveConfig = useMemo(
     () => ({
       phone: {
         spacing: 2,
@@ -42,7 +42,7 @@ function ResponsiveCard() {
   );
 
   return (
-    <Card responsiveStyles={responsiveStylesConfig}>
+    <Card responsiveConfig={responsiveConfig}>
       <CardBody
         title="Title/Headline"
         description="You can fit up to fifty two characters on 2 lines"

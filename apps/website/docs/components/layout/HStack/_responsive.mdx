@@ -19,7 +19,7 @@ Always hoist or memoize your responsive style configurations.
 
 ```jsx live
 function ResponsiveHStack() {
-  const responsiveStylesConfig = useMemo(
+  const responsiveConfig = useMemo(
     () => ({
       phone: {
         spacing: 4,
@@ -44,7 +44,7 @@ function ResponsiveHStack() {
   );
 
   return (
-    <HStack responsiveStyles={responsiveStylesConfig}>
+    <HStack responsiveConfig={responsiveConfig}>
       <HStack background spacing={1}>
         <TextBody as="p">First</TextBody>
       </HStack>

@@ -15,7 +15,7 @@ Always hoist or memoize your responsive style configurations.
 
 ```jsx live
 function ResponsiveTableCell() {
-  const responsiveStylesConfig = useMemo(
+  const responsiveConfig = useMemo(
     () => ({
       phone: {
         innerSpacing: {
@@ -41,7 +41,7 @@ function ResponsiveTableCell() {
     <Table>
       <TableBody>
         <TableRow>
-          <TableCell responsiveStyles={responsiveStylesConfig} direction="horizontal">
+          <TableCell responsiveConfig={responsiveConfig} direction="horizontal">
             <TextHeadline as="h2">TableCell with responsive spacing</TextHeadline>
             <Button variant="secondary" compact onPress={() => console.log('Pressed')}>
               Export

@@ -26,7 +26,7 @@ import { emptyObject } from '@cbhq/cds-utils';
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
-import { useResponsiveStyles } from '../hooks/useResponsiveStyles';
+import { useResponsiveConfig } from '../hooks/useResponsiveConfig';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as backgroundColorStyles from '../styles/backgroundColor';
 import { getBorderStyles } from '../styles/border';
@@ -111,8 +111,8 @@ export type BoxProps<As extends BoxElement = 'div'> = {
    * @danger There may be times when you need to dynamically set styles. This comes at a performance cost, so use with caution.
    */
   dangerouslySetStyle?: React.CSSProperties;
-  /** Specify styles by device breakpoint */
-  responsiveStyles?: ResponsiveProps;
+  /** Specify props by device breakpoint */
+  responsiveConfig?: ResponsiveProps;
   /**
    * Necessary to control roving tabindex for accessibility
    * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
@@ -211,12 +211,12 @@ export const BoxInner = forwardRef(
       dangerouslySetBackground,
       dangerouslySetClassName,
       dangerouslySetStyle = emptyObject,
-      responsiveStyles,
+      responsiveConfig,
       // A11y
       ...restProps
     } = props;
 
-    const responsiveStyleClassNames = useResponsiveStyles(responsiveStyles);
+    const responsiveStyleClassNames = useResponsiveConfig(responsiveConfig);
 
     const borderRadiusStyles = usePinBorderRadiusStyles(pin, borderRadius);
 

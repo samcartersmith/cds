@@ -19,8 +19,8 @@ const cardPressableStyles = css`
 `;
 
 export type CardProps = {
-  /** Specify styles by device breakpoint */
-  responsiveStyles?: ResponsiveProps;
+  /** Specify props by device breakpoint */
+  responsiveConfig?: ResponsiveProps;
 } & CardBaseProps &
   LinkableProps;
 

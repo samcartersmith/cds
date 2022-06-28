@@ -46,7 +46,7 @@ const web = {
     margin: Spacing.css('margin'),
     padding: Spacing.css('padding'),
     responsiveSpacing: responsiveConfig.spacingStyles,
-    responsiveStyles: responsiveConfig.styles,
+    responsiveConfig: responsiveConfig.styles,
     visibility: visibilityConfig.web,
     display: displayConfig.web,
     scale: mapValues(scaleConfig, (_, scale) => {

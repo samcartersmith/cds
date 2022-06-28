@@ -34,7 +34,7 @@ export const TableCell = memo(
     width,
     innerSpacing,
     outerSpacing,
-    responsiveStyles,
+    responsiveConfig,
     ...props
   }: TableCellProps) => {
     const tableSectionType = useTableSectionTag();
@@ -100,7 +100,7 @@ export const TableCell = memo(
           shouldOverflow={!overflow}
           outerSpacing={outerSpacing ?? tableCellSpacing?.outer}
           innerSpacing={innerSpacing ?? tableCellSpacing?.inner}
-          responsiveStyles={responsiveStyles}
+          responsiveConfig={responsiveConfig}
         >
           {children ? (
             <TextComponent

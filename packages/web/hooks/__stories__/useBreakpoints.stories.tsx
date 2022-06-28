@@ -49,7 +49,7 @@ const Example = (props: PlaygroundProps) => {
 };
 
 type PlaygroundProps = {
-  responsiveStyles?: ResponsiveProps;
+  responsiveConfig?: ResponsiveProps;
 };
 
 export const Playground = (props: PlaygroundProps) => <Example {...props} />;

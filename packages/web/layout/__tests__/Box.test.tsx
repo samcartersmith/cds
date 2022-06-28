@@ -307,7 +307,7 @@ describe('Box', () => {
       },
     };
     it('renders flex classNames for styles at each device breakpoint', () => {
-      const { container } = render(<Box responsiveStyles={responsiveFlexStylesConfig}>Child</Box>);
+      const { container } = render(<Box responsiveConfig={responsiveFlexStylesConfig}>Child</Box>);
       const classNames = getClassNamesForResponsiveProps(
         responsiveFlexStylesConfig,
         'justifyContent',
@@ -328,7 +328,7 @@ describe('Box', () => {
 
   it('renders visibility classNames for styles at each device breakpoint', () => {
     const { container } = render(
-      <Box responsiveStyles={responsiveVisibilityStylesConfig}>Child</Box>,
+      <Box responsiveConfig={responsiveVisibilityStylesConfig}>Child</Box>,
     );
     const classNames = getClassNamesForResponsiveProps(
       responsiveVisibilityStylesConfig,

@@ -90,7 +90,7 @@ type TableCellBaseProps = {
    */
   innerSpacing?: CellProps['innerSpacing'];
   /** Specify spacing styles by device breakpoint */
-  responsiveStyles?: CellSharedProps['responsiveStyles'];
+  responsiveConfig?: CellSharedProps['responsiveConfig'];
 } & TableCellSharedProps;
 
 type TableCellPropsWithInputs = {

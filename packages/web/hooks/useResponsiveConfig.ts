@@ -54,7 +54,7 @@ const getDeviceStyles = (deviceConfig: ResponsiveStyles, device: ResponsiveProps
   return classNames;
 };
 
-export const useResponsiveStyles = (responsiveConfig?: ResponsiveProps) => {
+export const useResponsiveConfig = (responsiveConfig?: ResponsiveProps) => {
   const classNames: string[] = useMemo(() => [], []);
 
   if (responsiveConfig) {

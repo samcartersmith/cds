@@ -55,8 +55,8 @@ export type TableRowProps = {
    */
   innerSpacing?: TableCellProps['innerSpacing'];
   /**
-   * Specify styles by device breakpoint
+   * Specify props by device breakpoint
    *  Can only be used when TableRow is fullWidth
    */
-  responsiveStyles?: ResponsiveCellSpacingProps;
+  responsiveConfig?: ResponsiveCellSpacingProps;
 } & SharedProps;

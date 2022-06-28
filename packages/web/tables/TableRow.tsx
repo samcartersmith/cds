@@ -22,7 +22,7 @@ export const TableRow = memo(
     onPress,
     outerSpacing,
     innerSpacing,
-    responsiveStyles,
+    responsiveConfig,
     ...rest
   }: TableRowProps) => {
     const tableSectionType = useTableSectionTag();
@@ -58,7 +58,7 @@ export const TableRow = memo(
             colSpan={1000}
             outerSpacing={outerSpacing}
             innerSpacing={innerSpacing}
-            responsiveStyles={responsiveStyles}
+            responsiveConfig={responsiveConfig}
           >
             {children}
           </TableCell>

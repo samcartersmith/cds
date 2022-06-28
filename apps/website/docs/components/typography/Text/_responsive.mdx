@@ -19,7 +19,7 @@ Always hoist or memoize your responsive style configurations.
 
 ```jsx live
 function ResponsiveTypography() {
-  const responsiveStylesConfig = useMemo(
+  const responsiveConfig = useMemo(
     () => ({
       phone: {
         spacing: 4,
@@ -36,10 +36,10 @@ function ResponsiveTypography() {
 
   return (
     <VStack>
-      <TextHeadline responsiveStyles={responsiveStylesConfig} as="p">
+      <TextHeadline responsiveConfig={responsiveConfig} as="p">
         Headline
       </TextHeadline>
-      <TextBody responsiveStyles={responsiveStylesConfig} as="p">
+      <TextBody responsiveConfig={responsiveConfig} as="p">
         Body
       </TextBody>
     </VStack>

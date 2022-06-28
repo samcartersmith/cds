@@ -27,8 +27,8 @@ export type TextProps = {
   dangerouslySetClassName?: string;
   /** Used to associate a label with a control */
   id?: string;
-  /** Specify styles by device breakpoint */
-  responsiveStyles?: ResponsiveProps;
+  /** Specify props by device breakpoint */
+  responsiveConfig?: ResponsiveProps;
 } & TextBaseProps &
   SharedProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy'>;

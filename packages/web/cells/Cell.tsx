@@ -56,7 +56,7 @@ export type CellSharedProps = {
   as?: 'div' | 'li';
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
   /** Specify spacing styles by device breakpoint */
-  responsiveStyles?: ResponsiveCellSpacingProps;
+  responsiveConfig?: ResponsiveCellSpacingProps;
 } & LinkableProps;
 
 export type CellProps = {
@@ -97,7 +97,7 @@ export const Cell = memo(
        *
        * */
       shouldOverflow,
-      responsiveStyles,
+      responsiveConfig,
       /** Props for useCellSpacing */
       ...spacingProps
     }: CellProps,
@@ -106,7 +106,7 @@ export const Cell = memo(
     const spacing = useCellSpacing(spacingProps);
     const offsetClassName = useOffsetStyles({ offsetHorizontal: spacing.inner.offsetHorizontal });
     const { responsiveInnerSpacing, responsiveOuterSpacing } =
-      useResponsiveCellSpacingStyles(responsiveStyles);
+      useResponsiveCellSpacingStyles(responsiveConfig);
     const linkable = Boolean(onPress ?? to);
     const maybeTruncateClassName = cx(
       cellStaticClassName,

@@ -5,7 +5,7 @@ import { useTextTransform } from '@cbhq/cds-common/hooks/useTextTransform';
 import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { emptyObject, pascalCase } from '@cbhq/cds-utils';
 
-import { useResponsiveStyles } from '../hooks/useResponsiveStyles';
+import { useResponsiveConfig } from '../hooks/useResponsiveConfig';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { disabledState } from '../styles/disabledState';
 import * as foregroundStyles from '../styles/foregroundColor';
@@ -76,7 +76,7 @@ export const createText = <
     accessibilityLabel = overrides?.accessibilityLabel,
     accessibilityLabelledBy = overrides?.accessibilityLabelledBy,
     id = overrides?.id,
-    responsiveStyles,
+    responsiveConfig,
     ...props
   }: DynamicElement<
     TextProps,
@@ -96,7 +96,7 @@ export const createText = <
       spacingHorizontal,
     });
 
-    const responsiveStyleClassNames = useResponsiveStyles(responsiveStyles);
+    const responsiveStyleClassNames = useResponsiveConfig(responsiveConfig);
 
     const textStyles = useMemo(() => {
       const style: React.CSSProperties = {};

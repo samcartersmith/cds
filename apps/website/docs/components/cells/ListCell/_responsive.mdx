@@ -15,7 +15,7 @@ Always hoist or memoize your responsive style configurations.
 
 ```jsx live
 function ResponsiveListCell() {
-  const responsiveStylesConfig = useMemo(
+  const responsiveConfig = useMemo(
     () => ({
       phone: {
         innerSpacing: {
@@ -39,7 +39,7 @@ function ResponsiveListCell() {
 
   return (
     <ListCell
-      responsiveStyles={responsiveStylesConfig}
+      responsiveConfig={responsiveConfig}
       onPress={() => console.log('Pressed')}
       title="Title"
       description="Description"

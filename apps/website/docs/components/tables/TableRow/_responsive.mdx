@@ -15,7 +15,7 @@ Always hoist or memoize your responsive style configurations.
 
 ```jsx live
 function ResponsiveTableRow() {
-  const responsiveStylesConfig = useMemo(
+  const responsiveConfig = useMemo(
     () => ({
       phone: {
         innerSpacing: {
@@ -40,7 +40,7 @@ function ResponsiveTableRow() {
   return (
     <Table>
       <TableBody>
-        <TableRow responsiveStyles={responsiveStylesConfig} fullWidth>
+        <TableRow responsiveConfig={responsiveConfig} fullWidth>
           <TableCell
             direction="horizontal"
             title="TableRow with responsive spacing"
