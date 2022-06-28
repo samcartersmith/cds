@@ -1,6 +1,18 @@
-import React, { memo } from 'react';
-import { m as motion } from 'framer-motion';
-import type { ColorSurgeBaseProps } from '@cbhq/cds-common';
+import React, {
+  ForwardedRef,
+  forwardRef,
+  memo,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useState,
+} from 'react';
+import { m as motion, useAnimation } from 'framer-motion';
+import type {
+  ColorSurgeBackground,
+  ColorSurgeBaseProps,
+  ColorSurgeRefBaseProps,
+} from '@cbhq/cds-common';
 import { colorSurgeEnterConfig, colorSurgeExitConfig } from '@cbhq/cds-common/motion/hint';
 
 import { Box } from '../layout';
@@ -11,19 +23,57 @@ export type ColorSurgeTypes = ColorSurgeBaseProps;
 
 const MotionBox = motion(Box);
 
-export const ColorSurge = memo(function ColorSurge({ background = 'primary' }: ColorSurgeTypes) {
-  const motionProps = useMotionProps({
-    enterConfigs: [colorSurgeEnterConfig],
-    exitConfigs: [colorSurgeExitConfig],
-  });
+/**
+ * Please consult with the motion team in #ask-motion before using this component.
+ */
+export const ColorSurge = memo(
+  forwardRef(function ColorSurge(
+    { background = 'primary', disableAnimateOnMount = false }: ColorSurgeTypes,
+    ref: ForwardedRef<ColorSurgeRefBaseProps>,
+  ) {
+    const [backgroundState, setBackgroundState] = useState<ColorSurgeBackground>(background);
 
-  return (
-    <MotionBox
-      variants={motionProps.variants}
-      animate="exit"
-      initial="enter"
-      background={background}
-      pin="all"
-    />
-  );
-});
+    const controls = useAnimation();
+
+    const motionProps = useMotionProps({
+      enterConfigs: [colorSurgeEnterConfig],
+      exitConfigs: [colorSurgeExitConfig],
+      animate: controls,
+    });
+
+    const playAnimation = useCallback(
+      async (backgroundParam?: ColorSurgeBackground) => {
+        if (backgroundParam) {
+          setBackgroundState(backgroundParam);
+        }
+        controls.set('enter');
+        await controls.start('exit');
+      },
+      [controls],
+    );
+
+    useEffect(() => {
+      if (!disableAnimateOnMount) {
+        void playAnimation();
+      }
+    }, [playAnimation, disableAnimateOnMount]);
+
+    useImperativeHandle(
+      ref,
+      () => ({
+        play: playAnimation,
+      }),
+      [playAnimation],
+    );
+
+    return (
+      <MotionBox
+        variants={motionProps.variants}
+        animate={controls}
+        initial={disableAnimateOnMount ? 'exit' : 'enter'}
+        background={backgroundState}
+        pin="all"
+      />
+    );
+  }),
+);
