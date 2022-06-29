@@ -6,20 +6,35 @@ slug: /components/table
 import Metadata, { toc as metadataToc } from './_metadata.mdx';
 import Usage, { toc as usageToc } from './_usage.mdx';
 import Example, { toc as exampleToc } from './_example.mdx';
+import CompactExample, { toc as compactExampleToc } from './_compactExample.mdx';
+import StickyExample, { toc as stickyExampleToc } from './_stickyExample.mdx';
+import DomExample, { toc as domExampleToc } from './_domExample.mdx';
 import A11Y, { toc as a11yToc } from './_a11y.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
 import Changelog, { toc as changelogToc } from './_changelog.mdx';
 
 <Tabs groupId="page">
+  <TabItem value="guidelines" label="Guidelines" toc={[...usageToc, ...a11yToc]}>
+    <Usage />
+    <A11Y />
+  </TabItem>
   <TabItem
     value="implementation"
     label="Implementation"
-    toc={[...metadataToc, ...usageToc, ...exampleToc, ...a11yToc, ...implementationToc]}
+    toc={[
+      ...metadataToc,
+      ...exampleToc,
+      ...compactExampleToc,
+      ...stickyExampleToc,
+      ...domExampleToc,
+      ...implementationToc,
+    ]}
   >
     <Metadata />
-    <Usage />
     <Example />
-    <A11Y />
+    <CompactExample />
+    <StickyExample />
+    <DomExample />
     <Implementation />
   </TabItem>
   <TabItem value="changelog" label="Changelog" toc={changelogToc}>

@@ -4,6 +4,7 @@ import { TableContext } from '../context/TableContext';
 import { TableSectionContext } from '../context/TableSectionContext';
 import { TableCellTag } from '../types/tableCellTypes';
 import { TableSectionTag } from '../types/tableSectionTypes';
+import { TableCellSpacing } from '../types/tableTypes';
 
 const CELL_TAG_MAP: Record<TableSectionTag, TableCellTag> = {
   thead: 'th',
@@ -12,15 +13,24 @@ const CELL_TAG_MAP: Record<TableSectionTag, TableCellTag> = {
   div: 'div',
 };
 
-const useTableContext = () => {
+export const defaultCellSpacing: TableCellSpacing = {
+  outer: { spacingHorizontal: 2 },
+  inner: { spacingHorizontal: 2 },
+};
+export const compactCellSpacing: TableCellSpacing = {
+  outer: { spacingHorizontal: 2, spacingVertical: 0 },
+  inner: { spacingHorizontal: 1, spacingVertical: 1 },
+};
+
+export const useTableContext = () => {
   const { as } = useContext(TableSectionContext);
-  const { cellSpacing } = useContext(TableContext);
+  const { cellSpacing, compact } = useContext(TableContext);
 
   if (!as) {
     throw new Error('This component must be wrapped in a TableHeader, TableBody or TableFooter.');
   }
 
-  return { as, cellSpacing };
+  return { as, cellSpacing, compact };
 };
 
 export const useTableCellTag = () => {
@@ -36,7 +46,9 @@ export const useTableSectionTag = () => {
 };
 
 export const useTableCellSpacing = () => {
-  const { cellSpacing } = useTableContext();
+  const { cellSpacing, compact } = useTableContext();
+  if (cellSpacing) return cellSpacing;
+  if (compact) return compactCellSpacing;
 
-  return cellSpacing;
+  return defaultCellSpacing;
 };

@@ -37,7 +37,7 @@ type TableCellBaseProps = {
    * Use titleColor and subtitleColor if you need to be more specific
    * @default undefined
    */
-  color?: PaletteForeground;
+  color?: PaletteForeground | 'currentColor';
   /**
    * This prop us useful for right-aligning the last column
    * @default 'flex-start'
@@ -104,14 +104,14 @@ type TableCellPropsWithInputs = {
    * @default undefined
    */
   title: string;
-  titleColor?: PaletteForeground;
+  titleColor?: PaletteForeground | 'currentColor';
   /**
    * A subtitle will appear below the title.
    * Type is set with TextLabel2
    * @default undefined
    */
   subtitle?: string;
-  subtitleColor?: PaletteForeground;
+  subtitleColor?: PaletteForeground | 'currentColor';
 } & TableCellBaseProps;
 type TableCellPropsWithChildren = {
   /**

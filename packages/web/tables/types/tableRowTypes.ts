@@ -59,4 +59,5 @@ export type TableRowProps = {
    *  Can only be used when TableRow is fullWidth
    */
   responsiveConfig?: ResponsiveCellSpacingProps;
-} & SharedProps;
+} & SharedProps &
+  Omit<React.HTMLAttributes<HTMLTableRowElement>, 'dangerouslySetInnerHTML'>;

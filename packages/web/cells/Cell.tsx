@@ -1,7 +1,11 @@
 import React, { ForwardedRef, forwardRef, memo } from 'react';
 import { css } from 'linaria';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
-import type { CellBaseProps, ResponsiveCellSpacingProps } from '@cbhq/cds-common/types';
+import type {
+  CellBaseProps,
+  ResponsiveCellSpacingProps,
+  StackBaseProps,
+} from '@cbhq/cds-common/types';
 import { hasCellPriority } from '@cbhq/cds-common/utils/cell';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
@@ -65,6 +69,7 @@ export type CellProps = {
    * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
    * */
   tabIndex?: number;
+  gap?: StackBaseProps['gap'];
 } & CellBaseProps &
   CellSharedProps;
 
@@ -79,6 +84,7 @@ export const Cell = memo(
       detail,
       detailWidth,
       disabled,
+      gap = 2,
       intermediary,
       media,
       minHeight,
@@ -120,7 +126,7 @@ export const Cell = memo(
         background={selected ? 'backgroundAlternate' : undefined}
         borderRadius={borderRadius}
         alignItems={alignItems}
-        gap={2}
+        gap={gap}
         width="100%"
         testID={testID}
         {...spacing.inner}

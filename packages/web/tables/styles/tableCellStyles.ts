@@ -16,3 +16,10 @@ export const tableHeaderCell = css`
 export const tableFooterCell = css`
   color: ${palette.foregroundMuted};
 `;
+
+// Required to handle truncation - this looks whack, but
+// the table behavior will override this. We use `width`
+// to explicitly define a table columns width
+export const tableOverflowWidth = css`
+  max-width: 0;
+`;
