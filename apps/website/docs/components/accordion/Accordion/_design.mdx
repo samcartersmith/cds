@@ -1,8 +1,3 @@
-import { Image } from ':cds-website/components/Image';
-import { Collection, Item } from ':cds-website/components/Collection';
-import { DoDont, DontExample } from ':cds-website/components/DoDont';
-import { Box } from '@cbhq/cds-web/layout';
-
 A vertical list of collapsed header items, where each header can expand to reveal related content.
 
 <Image src="/img/components/accordion/hero_accordion.gif" />
@@ -12,50 +7,33 @@ A vertical list of collapsed header items, where each header can expand to revea
 Accordions are a cross-platform component used for displaying auxiliary (not vital) content to the end-user. Similar components are:
 
 <Collection spacingVertical={0}>
-  <Item
-    img={{
-      src: '/img/components/accordion/related_01.png',
-    }}
-  />
-  <Item
-    img={{
-      src: '/img/components/accordion/related_02.png',
-    }}
-  />
-  <Item
-    img={{
-      src: '/img/components/accordion/related_03.png',
-    }}
-  />
+  <CollectionItem media={<Image src="/img/components/accordion/related_01.png" />} />
+  <CollectionItem media={<Image src="/img/components/accordion/related_02.png" />} />
+  <CollectionItem media={<Image src="/img/components/accordion/related_03.png" />} />
 </Collection>
 
 ### Principles
 
 <Collection spacingVertical={0}>
-  <Item
-    img={{
-      src: '/img/components/accordion/principles_01.png',
-    }}
+  <CollectionItem
+    media={<Image src="/img/components/accordion/principles_01.png" />}
     textAlign="flex-start"
     title="Complementary"
     description="Accordions are best used to support or enhance the user experience. There when you need it.; out of the way when it is not."
   />
-  <Item
-    img={{
-      src: '/img/components/accordion/principles_02.png',
-    }}
+  <CollectionItem
+    media={<Image src="/img/components/accordion/principles_02.png" />}
     textAlign="flex-start"
     title="Concise"
     description="Expanded content is informative but not overwhelming. A progressive, easily digestible, amount of content should be revealed in the expanded accordion."
   />
-  <Item
-    img={{
-      src: '/img/components/accordion/principles_03.png',
-    }}
+  <CollectionItem
+    media={<Image src="/img/components/accordion/principles_03.png" />}
     textAlign="flex-start"
     title="Ergonomic Comfortable"
     description="Accordion is comfy and convenient for humans to interact with when needed"
-  />
+/>
+
 </Collection>
 
 #### When to use accordions
@@ -87,23 +65,15 @@ Accordions hide content from the user. Not all users will notice accordions or u
 <Image src="/img/components/accordion/anatomy_01_single.png" />
 
 <Collection spacingVertical={0}>
-  <Item title="1. Title" />
-  <Item title="2. “Zippy” chevron collapsed state by default" />
-  <Item title="3. Zippy chevron expanded state" />
-  <Item title="4. Expanded Accordion item" />
+  <CollectionItem title="1. Title" />
+  <CollectionItem title="2. “Zippy” chevron collapsed state by default" />
+  <CollectionItem title="3. Zippy chevron expanded state" />
+  <CollectionItem title="4. Expanded Accordion item" />
 </Collection>
 
 <Collection spacingVertical={0}>
-  <Item
-    img={{
-      src: '/img/components/accordion/anatomy_head.png',
-    }}
-  />
-  <Item
-    img={{
-      src: '/img/components/accordion/anatomy_body.png',
-    }}
-  />
+  <CollectionItem media={<Image src="/img/components/accordion/anatomy_head.png" />} />
+  <CollectionItem media={<Image src="/img/components/accordion/anatomy_body.png" />} />
 </Collection>
 
 <Divider />
@@ -113,44 +83,28 @@ Accordions hide content from the user. Not all users will notice accordions or u
 <Image src="/img/components/accordion/anatomy_02_single.png" />
 
 <Collection spacingVertical={0}>
-  <Item
+  <CollectionItem
     title="1. Title + Zippy (Default)"
     description="A title and the zippy icon on the right are required"
     textAlign="flex-start"
   />
-  <Item title="2. Default + SubTitle" textAlign="flex-start" />
-  <Item
+  <CollectionItem title="2. Default + SubTitle" textAlign="flex-start" />
+  <CollectionItem
     title="3. Default + Media"
     description="An icon can be added on the left of Title/text block"
     textAlign="flex-start"
   />
-  <Item title="4. Default + SubTitle + Media" textAlign="flex-start" />
+  <CollectionItem title="4. Default + SubTitle + Media" textAlign="flex-start" />
 </Collection>
 
 <Collection spacingVertical={0}>
-  <Item
-    img={{
-      src: '/img/components/accordion/accordion_item_01a.png',
-    }}
-  />
-  <Item
-    img={{
-      src: '/img/components/accordion/accordion_item_01b.png',
-    }}
-  />
+  <CollectionItem media={<Image src="/img/components/accordion/accordion_item_01a.png" />} />
+  <CollectionItem media={<Image src="/img/components/accordion/accordion_item_01b.png" />} />
 </Collection>
 
 <Collection spacingVertical={3}>
-  <Item
-    img={{
-      src: '/img/components/accordion/accordion_item_02a.png',
-    }}
-  />
-  <Item
-    img={{
-      src: '/img/components/accordion/accordion_item_02b.png',
-    }}
-  />
+  <CollectionItem media={<Image src="/img/components/accordion/accordion_item_02a.png" />} />
+  <CollectionItem media={<Image src="/img/components/accordion/accordion_item_02b.png" />} />
 </Collection>
 
 > **Note:** Bottom-border divider line only appears **between** Accordion Items. The bottom-divider does not appear at the bottom of a list of accordion items. Or if there is only a single accordion item displayed a bottom border will not appear..
@@ -165,16 +119,8 @@ The Accordion header is designed for 2-lines max:
 - 2-line Title, text wrapping is supported.
 
 <Collection spacingVertical={0}>
-  <Item
-    img={{
-      src: '/img/components/accordion/text_01.png',
-    }}
-  />
-  <Item
-    img={{
-      src: '/img/components/accordion/text_02.png',
-    }}
-  />
+  <CollectionItem media={<Image src="/img/components/accordion/text_01.png" />} />
+  <CollectionItem media={<Image src="/img/components/accordion/text_02.png" />} />
 </Collection>
 
 > **Note:** Truncation is not supported in the Accordion Header, as it forces people to interact with the UI to reveal the accordion item’s context. This should be communicated concisely, and in its entirety, in the header.
@@ -184,12 +130,12 @@ The Accordion header is designed for 2-lines max:
 <Image src="/img/components/accordion/anatomy_03_scrolling.png" />
 
 <Collection spacingVertical={0}>
-  <Item
+  <CollectionItem
     title="1. Accordion Item - Expanded | Max height = 400"
     description="The expanded area’s height will grow with the content up to a max height of 400 (In Dense this scales to 200)"
     textAlign="flex-start"
   />
-  <Item
+  <CollectionItem
     title="2. Accordion Item - Expanded w/scroll bar"
     description="Scroll bar  is triggered if  content in the expanded area exceeds the max height"
     textAlign="flex-start"
@@ -197,16 +143,8 @@ The Accordion header is designed for 2-lines max:
 </Collection>
 
 <Collection spacingVertical={0}>
-  <Item
-    img={{
-      src: '/img/components/accordion/scrolling_01.png',
-    }}
-  />
-  <Item
-    img={{
-      src: '/img/components/accordion/scrolling_02.png',
-    }}
-  />
+  <CollectionItem media={<Image src="/img/components/accordion/scrolling_01.png" />} />
+  <CollectionItem media={<Image src="/img/components/accordion/scrolling_02.png" />} />
 </Collection>
 
 ### Interaction Variants
@@ -214,12 +152,12 @@ The Accordion header is designed for 2-lines max:
 <Image src="/img/components/accordion/anatomy_04_multi.png" />
 
 <Collection spacingVertical={0} spacingBottom={3}>
-  <Item
+  <CollectionItem
     title="1. Accordion Item - Collapsed by default"
     description="Accordion items are collapsed by default. However one accordion item can be expanded onLoad."
     textAlign="flex-start"
   />
-  <Item
+  <CollectionItem
     title="2. Accordion Item - Expanded"
     description="One, and only one, accordion item can be expanded by default. This is for use cases where there is content in an accordion item that has temporarily become vital in providing context to the user. For example the status of an asset may have changed, the related status accordion item is expanded to provide context"
     textAlign="flex-start"
@@ -229,21 +167,13 @@ The Accordion header is designed for 2-lines max:
 > **Note: Only one accordion item can be opened at a time.** Selecting a collapsed accordion item will close an expanded accordion item.
 
 <Collection spacingVertical={0}>
-  <Item
-    img={{
-      src: '/img/components/accordion/lists_1a.png',
-    }}
-  />
-  <Item
-    img={{
-      src: '/img/components/accordion/lists_1b.png',
-    }}
-  />
+  <CollectionItem media={<Image src="/img/components/accordion/lists_1a.png" />} />
+  <CollectionItem media={<Image src="/img/components/accordion/lists_1b.png" />} />
 </Collection>
 
 <Collection spacingVertical={0} spacingBottom={6}>
-  <Item description="Example of an Accordion list where all Accordion Items are collapsed by default" />
-  <Item description="Example of an Accordion list where one Accordion Item is expanded onLoad. One Accordion Item can be opened/expanded by default." />
+  <CollectionItem description="Example of an Accordion list where all Accordion Items are collapsed by default" />
+  <CollectionItem description="Example of an Accordion list where one Accordion Item is expanded onLoad. One Accordion Item can be opened/expanded by default." />
 </Collection>
 
 ### Scaling and Adaptation
@@ -255,31 +185,15 @@ CDS Accordions is a cross-platform responsive component. By default, Accordion's
 - Min-height = 64 in dense
 
 <Collection spacingVertical={0}>
-  <Item
-    img={{
-      src: '/img/components/accordion/min_width_01.png',
-    }}
-  />
-  <Item
-    img={{
-      src: '/img/components/accordion/min_width_02.png',
-    }}
-  />
+  <CollectionItem media={<Image src="/img/components/accordion/min_width_01.png" />} />
+  <CollectionItem media={<Image src="/img/components/accordion/min_width_02.png" />} />
 </Collection>
 
 _Normal scale_
 
 <Collection spacingVertical={0}>
-  <Item
-    img={{
-      src: '/img/components/accordion/min_width_03.png',
-    }}
-  />
-  <Item
-    img={{
-      src: '/img/components/accordion/min_width_04.png',
-    }}
-  />
+  <CollectionItem media={<Image src="/img/components/accordion/min_width_03.png" />} />
+  <CollectionItem media={<Image src="/img/components/accordion/min_width_04.png" />} />
 </Collection>
 
 _Dense scale_
@@ -289,20 +203,20 @@ _Dense scale_
 ### Dont's
 
 <DoDont spacingVertical={0}>
-  <DontExample img={{ src: '/img/components/accordion/dont_01.png' }}>
+  <DontExample media={<Image src="/img/components/accordion/dont_01.png" />}>
     Mix and match variants and syntax styles (questions vs statements) in an Accordion List. Follow
     one format for your lists.
   </DontExample>
-  <DontExample img={{ src: '/img/components/accordion/dont_02.png' }}>
+  <DontExample media={<Image src="/img/components/accordion/dont_02.png" />}>
     Have a wordy header. And do not avoid a 1-word body.
   </DontExample>
 </DoDont>
 
 <DoDont spacingVertical={0}>
-  <DontExample img={{ src: '/img/components/accordion/dont_03.png' }}>
+  <DontExample media={<Image src="/img/components/accordion/dont_03.png" />}>
     Nest accordions inside of accordions
   </DontExample>
-  <DontExample img={{ src: '/img/components/accordion/dont_04.png' }}>
+  <DontExample media={<Image src="/img/components/accordion/dont_04.png" />}>
     Create hyperlinks in the header text.
   </DontExample>
 </DoDont>
@@ -317,16 +231,12 @@ AccordionItems inherit focus states built into ListItems. When an accordion head
 - The background color of the accordion header changes on hover distinguishing it from the other accordion buttons that are not focused.
 
 <Collection spacingVertical={0} spacingBottom={10}>
-  <Item
-    img={{
-      src: '/img/components/accordion/state_hover.png',
-    }}
+  <CollectionItem
+    media={<Image src="/img/components/accordion/state_hover.png" />}
     title="Hover state"
   />
-  <Item
-    img={{
-      src: '/img/components/accordion/state_focus.png',
-    }}
+  <CollectionItem
+    media={<Image src="/img/components/accordion/state_focus.png" />}
     title="Focus state"
   />
 </Collection>
@@ -342,12 +252,7 @@ Accordions work best for simple content and links. Ideally, an accordion would h
 Do not use accordions as a junk drawer. Although the content is condensed by an accordion, the presence of the accordion still increases the number of interactions on a screen which can burden a user.
 
 <Box justifyContent="center" spacingBottom={6}>
-  <Image
-    src="/img/components/accordion/content_design_example.png"
-    options={{
-      maxWidth: '50%',
-    }}
-  />
+  <Image src="/img/components/accordion/content_design_example.png" maxWidth="50%" />
 </Box>
 
 **Header** → AccordionItem - Collapsed

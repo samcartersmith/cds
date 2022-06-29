@@ -1,6 +1,3 @@
-import { DoDont, DoExample, DontExample } from ':cds-website/components/DoDont';
-import { DocImage } from ':cds-website/components/DocImage';
-
 :::note
 
 Full bleed layouts are currently on hold. Stay tuned!
@@ -9,11 +6,17 @@ Full bleed layouts are currently on hold. Stay tuned!
 
 Establish a consistent rhythm in our product. An edge-to-edge system using 0px margins and gutters with spacing built into sections and components
 
-<DocImage category="foundation" component="layout" name="grid" format="gif" />
+<Image
+  srcLight="/img/foundation/layout/grid_light.gif"
+  srcDark="/img/foundation/layout/grid_dark.gif"
+/>
 
 ## Anatomy
 
-<DocImage category="foundation" component="layout" name="anatomy" format="png" />
+<Image
+  srcLight="/img/foundation/layout/anatomy_light.png"
+  srcDark="/img/foundation/layout/anatomy_dark.png"
+/>
 
 1. **Sidebar**
 
@@ -33,7 +36,10 @@ Establish a consistent rhythm in our product. An edge-to-edge system using 0px m
 
 ### Section
 
-<DocImage category="foundation" component="layout" name="anatomy_section" format="png" />
+<Image
+  srcLight="/img/foundation/layout/anatomy_section_light.png"
+  srcDark="/img/foundation/layout/anatomy_section_dark.png"
+/>
 
 A page is made up of sections. Sections are made up of these elements:
 
@@ -63,14 +69,31 @@ A page is made up of sections. Sections are made up of these elements:
 - Primary (⅔ of page)
 - Secondary (⅓ of page)
 
-<DocImage category="foundation" component="layout" name="primarysecondarylayout" format="png" />
+<Image
+  srcLight="/img/foundation/layout/primarysecondarylayout_light.png"
+  srcDark="/img/foundation/layout/primarysecondarylayout_dark.png"
+/>
 
 <DoDont spacingVertical={0}>
-  <DoExample category="foundation" component="layout" name="primarysecondary_do" format="png">
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/foundation/layout/primarysecondary_do_light.png"
+        srcDark="/img/foundation/layout/primarysecondary_do_dark.png"
+      />
+    }
+  >
     Primary and secondary section are both fluid - Primary and secondary section are both fixed -
     Primary section is fluid and secondary section is fixed
   </DoExample>
-  <DontExample category="foundation" component="layout" name="primarysecondary_dont" format="png">
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/foundation/layout/primarysecondary_dont_light.png"
+        srcDark="/img/foundation/layout/primarysecondary_dont_dark.png"
+      />
+    }
+  >
     Secondary section should never be fluid while the primary section is fixed
   </DontExample>
 </DoDont>
@@ -80,42 +103,59 @@ A page is made up of sections. Sections are made up of these elements:
 - Most common for dense layouts such as dashboards
 - 3-column layout with sections of varying widths
 
-<DocImage
-  category="foundation"
-  component="layout"
-  name="primarysecondarytertiarylayout"
-  format="png"
+<Image
+  srcLight="/img/foundation/layout/primarysecondarytertiarylayout_light.png"
+  srcDark="/img/foundation/layout/primarysecondarytertiarylayout_dark.png"
 />
 
 Recommendation is to allow for all three sections to be fluid.
 
-<DocImage
-  category="foundation"
-  component="layout"
-  name="primarysecondarytertiarylayout_fluid"
-  format="png"
+<Image
+  srcLight="/img/foundation/layout/primarysecondarytertiarylayout_fluid_light.png"
+  srcDark="/img/foundation/layout/primarysecondarytertiarylayout_fluid_dark.png"
 />
 
 ### Fixed and Fluid
 
 Depending on the product’s needs, sections that live on the page can be fixed or fluid. Fluid layouts should be reserved for dense layouts or single-column layouts with tables.
 
-<DocImage category="foundation" component="layout" name="fixedfluid" format="png" />
+<Image
+  srcLight="/img/foundation/layout/fixedfluid_light.png"
+  srcDark="/img/foundation/layout/fixedfluid_dark.png"
+/>
 
 **Mix and match**
+
 On a single page, sections can be fixed or fluid. It’s okay to mix and match.
 
-<DocImage category="foundation" component="layout" name="mixmatch1_do" format="png" />
+<Image
+  srcLight="/img/foundation/layout/mixmatch1_do_light.png"
+  srcDark="/img/foundation/layout/mixmatch1_do_dark.png"
+/>
 
 ### Alignment
 
 If you decide to left-align or center-align, keep alignment consistent throughout your page and flow.
 
 <DoDont spacingVertical={0}>
-  <DoExample category="foundation" component="layout" name="alignment_do" format="png">
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/foundation/layout/alignment_do_light.png"
+        srcDark="/img/foundation/layout/alignment_do_dark.png"
+      />
+    }
+  >
     Keep alignment consistent throughout the page, flow, and/or entire product.
   </DoExample>
-  <DontExample category="foundation" component="layout" name="alignment_dont" format="png">
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/foundation/layout/alignment_dont_light.png"
+        srcDark="/img/foundation/layout/alignment_dont_dark.png"
+      />
+    }
+  >
     Don’t mix and match alignment.
   </DontExample>
 </DoDont>
@@ -124,33 +164,59 @@ If you decide to left-align or center-align, keep alignment consistent throughou
 
 Dividers go edge-to-edge to divide each section.
 
-<DocImage category="foundation" component="layout" name="dividers" format="png" />
+<Image
+  srcLight="/img/foundation/layout/dividers_light.png"
+  srcDark="/img/foundation/layout/dividers_dark.png"
+/>
 
 If there is a sidebar and sections have max values (versus fluid), the page should be left-aligned and a divider should be added to the far right to contain the page.
 
-<DocImage category="foundation" component="layout" name="dividers_1920" format="png" />
+<Image
+  srcLight="/img/foundation/layout/dividers_1920_light.png"
+  srcDark="/img/foundation/layout/dividers_1920_dark.png"
+/>
 
 If there is no sidebar and sections have max values, the page should be centered with divider lines on the left and right of the page.
 
-<DocImage category="foundation" component="layout" name="dividers_center" format="png" />
+<Image
+  srcLight="/img/foundation/layout/dividers_center_light.png"
+  srcDark="/img/foundation/layout/dividers_center_dark.png"
+/>
 
 ### Length of text
 
 Be mindful of the length of text in a fluid layout. Ideally there should be up to 40–60 characters per line or 13 English words per line. Anything more will negatively impact the design. The suggested max width for the body section is 800px.
 
 <DoDont spacingVertical={0}>
-  <DoExample category="foundation" component="layout" name="textlength_do" format="png">
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/foundation/layout/textlength_do_light.png"
+        srcDark="/img/foundation/layout/textlength_do_dark.png"
+      />
+    }
+  >
     There should be up to 40–60 characters per line. The suggested max width for the body section is
     800px.
   </DoExample>
-  <DontExample category="foundation" component="layout" name="textlength_dont" format="png">
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/foundation/layout/textlength_dont_light.png"
+        srcDark="/img/foundation/layout/textlength_dont_dark.png"
+      />
+    }
+  >
     Don’t let text run longer than 13 English words.
   </DontExample>
 </DoDont>
 
 ### Breakpoints
 
-<DocImage category="foundation" component="layout" name="breakpoints" format="png" />
+<Image
+  srcLight="/img/foundation/layout/breakpoints_light.png"
+  srcDark="/img/foundation/layout/breakpoints_dark.png"
+/>
 
 | Device          | Range     | Columns | Spacing | Notes                                |
 | --------------- | --------- | ------- | ------- | ------------------------------------ |
@@ -168,7 +234,10 @@ Read more about Spacing in the "Spacing" tab at the top of the page.
 
 ### Adaptive sections
 
-<DocImage category="foundation" component="layout" name="adaptive" format="png" />
+<Image
+  srcLight="/img/foundation/layout/adaptive_light.png"
+  srcDark="/img/foundation/layout/adaptive_dark.png"
+/>
 
 Sections and components can reflow and reposition.
 

@@ -5,8 +5,6 @@ import {
   DotCountExample,
   PaddleExample,
 } from './Examples.tsx';
-import { DocImage } from ':cds-website/components/DocImage';
-import { DoDont, DoExample, DontExample, Example } from ':cds-website/components/DoDont';
 
 <IntroExample />
 
@@ -51,7 +49,10 @@ Tabs organize and allow navigation between groups of content that are related an
 
 ### Primary tabs on Web
 
-<DocImage format="svg" component="Tabs" name="primary_anatomy_web" />
+<Image
+  srcLight="/img/components/Tabs/primary_anatomy_web_light.svg"
+  srcDark="/img/components/Tabs/primary_anatomy_web_dark.svg"
+/>
 
 > 1. **Label**
 > 2. **Active Indicator**
@@ -61,7 +62,10 @@ Tabs organize and allow navigation between groups of content that are related an
 
 ### Primary tabs on Mobile
 
-<DocImage format="svg" component="Tabs" name="primary_anatomy_mobile" />
+<Image
+  srcLight="/img/components/Tabs/primary_anatomy_mobile_light.svg"
+  srcDark="/img/components/Tabs/primary_anatomy_mobile_dark.svg"
+/>
 
 > 1. **Label**
 > 2. **Active Indicator**
@@ -70,7 +74,10 @@ Tabs organize and allow navigation between groups of content that are related an
 
 ### Secondary tabs on Web
 
-<DocImage format="svg" component="Tabs" name="secondary_anatomy_web" />
+<Image
+  srcLight="/img/components/Tabs/secondary_anatomy_web_light.svg"
+  srcDark="/img/components/Tabs/secondary_anatomy_web_dark.svg"
+/>
 
 > 1. **Label**
 > 2. **Active tab**
@@ -79,7 +86,10 @@ Tabs organize and allow navigation between groups of content that are related an
 
 ### Secondary tabs on Mobile
 
-<DocImage format="svg" component="Tabs" name="secondary_anatomy_mobile" />
+<Image
+  srcLight="/img/components/Tabs/secondary_anatomy_mobile_light.svg"
+  srcDark="/img/components/Tabs/secondary_anatomy_mobile_dark.svg"
+/>
 
 > 1. **Label**
 > 2. **Active tab**
@@ -87,7 +97,10 @@ Tabs organize and allow navigation between groups of content that are related an
 
 ### Overflow on web
 
-<DocImage format="svg" component="Tabs" name="paddle" />
+<Image
+  srcLight="/img/components/Tabs/paddle_light.svg"
+  srcDark="/img/components/Tabs/paddle_dark.svg"
+/>
 
 The overflow fade is 80px wide (spacer 10).
 
@@ -104,19 +117,23 @@ The active indicator extends to [DotCount](/components/dot-count), and horizonta
 <DoDont spacingVertical={0}>
   <DoExample
     bordered
-    img={{
-      light: '/img/components/Tabs/label_do_light.svg',
-      dark: '/img/components/Tabs/label_do_dark.svg',
-    }}
+    media={
+      <Image
+        srcLight="/img/components/Tabs/label_do_light.svg"
+        srcDark="/img/components/Tabs/label_do_dark.svg"
+      />
+    }
   >
     Make your whole label visible.
   </DoExample>
   <DontExample
     bordered
-    img={{
-      light: '/img/components/Tabs/label_dont_light.svg',
-      dark: '/img/components/Tabs/label_dont_dark.svg',
-    }}
+    media={
+      <Image
+        srcLight="/img/components/Tabs/label_dont_light.svg"
+        srcDark="/img/components/Tabs/label_dont_dark.svg"
+      />
+    }
   >
     Don’t truncate your label.
   </DontExample>
@@ -124,19 +141,23 @@ The active indicator extends to [DotCount](/components/dot-count), and horizonta
 <DoDont spacingVertical={0}>
   <DoExample
     bordered
-    img={{
-      light: '/img/components/Tabs/mixmatch_do_light.svg',
-      dark: '/img/components/Tabs/mixmatch_do_dark.svg',
-    }}
+    media={
+      <Image
+        srcLight="/img/components/Tabs/mixmatch_do_light.svg"
+        srcDark="/img/components/Tabs/mixmatch_do_dark.svg"
+      />
+    }
   >
     Use one tab type per group.
   </DoExample>
   <DontExample
     bordered
-    img={{
-      light: '/img/components/Tabs/mixmatch_dont_light.svg',
-      dark: '/img/components/Tabs/mixmatch_dont_dark.svg',
-    }}
+    media={
+      <Image
+        srcLight="/img/components/Tabs/mixmatch_dont_light.svg"
+        srcDark="/img/components/Tabs/mixmatch_dont_dark.svg"
+      />
+    }
   >
     Don’t mix and match tab types.
   </DontExample>
@@ -144,13 +165,19 @@ The active indicator extends to [DotCount](/components/dot-count), and horizonta
 
 ## Sizing & Scaling
 
-<DocImage format="svg" component="Tabs" name="sizing" />
+<Image
+  srcLight="/img/components/Tabs/sizing_light.svg"
+  srcDark="/img/components/Tabs/sizing_dark.svg"
+/>
 
 ## Behavior
 
 ### Primary tab states
 
-<DocImage format="svg" component="Tabs" name="primary_interaction" />
+<Image
+  srcLight="/img/components/Tabs/primary_interaction_light.svg"
+  srcDark="/img/components/Tabs/primary_interaction_dark.svg"
+/>
 
 > 1. **Default**
 > 2. **Focus**
@@ -160,7 +187,10 @@ The active indicator extends to [DotCount](/components/dot-count), and horizonta
 
 ### Secondary tab states
 
-<DocImage format="svg" component="Tabs" name="secondary_interaction" />
+<Image
+  srcLight="/img/components/Tabs/secondary_interaction_light.svg"
+  srcDark="/img/components/Tabs/secondary_interaction_dark.svg"
+/>
 
 > 1. **Default**
 > 2. **Focus**
@@ -174,25 +204,32 @@ The active indicator extends to [DotCount](/components/dot-count), and horizonta
 
 Primary tabs should live at the top of the page, above page contents and below the top bar. Primary tabs can also be appended to the `page title`, and also live below `navlink`.
 
-<DocImage format="svg" component="Tabs" name="primary_position" />
+<Image
+  srcLight="/img/components/Tabs/primary_position_light.svg"
+  srcDark="/img/components/Tabs/primary_position_dark.svg"
+/>
 
 <DoExample
   bordered
   spacingVertical={1}
-  img={{
-    light: '/img/components/Tabs/primary_position_do_light.svg',
-    dark: '/img/components/Tabs/primary_position_do_dark.svg',
-  }}
+  media={
+    <Image
+      srcLight="/img/components/Tabs/primary_position_do_light.svg"
+      srcDark="/img/components/Tabs/primary_position_do_dark.svg"
+    />
+  }
 >
   Place primary tabs above page contents.
 </DoExample>
 <DontExample
   bordered
   spacingVertical={1}
-  img={{
-    light: '/img/components/Tabs/primary_position_dont_light.svg',
-    dark: '/img/components/Tabs/primary_position_dont_dark.svg',
-  }}
+  media={
+    <Image
+      srcLight="/img/components/Tabs/primary_position_dont_light.svg"
+      srcDark="/img/components/Tabs/primary_position_dont_dark.svg"
+    />
+  }
 >
   Don’t place primary tabs inline.
 </DontExample>
@@ -201,7 +238,10 @@ Primary tabs should live at the top of the page, above page contents and below t
 
 Secondary tabs should live at the top of the container, above container contents. Secondary tabs have a relationship to other container titles. Secondary tabs can also be nested in trays or cards.
 
-<DocImage format="svg" component="Tabs" name="secondary_position" />
+<Image
+  srcLight="/img/components/Tabs/secondary_position_light.svg"
+  srcDark="/img/components/Tabs/secondary_position_dark.svg"
+/>
 
 ### Scrolling
 

@@ -1,7 +1,3 @@
-import { Image } from ':cds-website/components/Image';
-import { Divider } from '@cbhq/cds-web/layout';
-import { VStack, HStack, Box } from '@cbhq/cds-web/layout';
-
 import definition from ':cds-website/static/img/components/overlays/Tooltip/definition.png';
 import anatomy_a1 from ':cds-website/static/img/components/overlays/Tooltip/anatomy_a1.jpg';
 import anatomy_a2 from ':cds-website/static/img/components/overlays/Tooltip/anatomy_a2.jpg';
@@ -21,23 +17,15 @@ import size_2 from ':cds-website/static/img/components/overlays/Tooltip/size_2.j
 
 # Definition
 
-<Divider />
-<br />
-
 Tooltip is a floating text label that displays information related to an element.
 
 The content of Tooltip is contextual, useful, and nonessential. The element paired with Tooltip may or may not have a visual indicator like an info-circle on desktop.
 
 <Box width="100%" justifyContent="center">
-  <Image src={definition} options={{ maxHeight: '50%', maxWidth: '50%' }} />
+  <Image src={definition} maxHeight="50%" maxWidth="50%" />
 </Box>
-<br />
-<br />
 
 # Guidelines
-
-<Divider />
-<br />
 
 <VStack>
 
@@ -83,13 +71,7 @@ The content of Tooltip is contextual, useful, and nonessential. The element pair
 </HStack>
 </VStack>
 
-<br />
-<br />
-
 # Best Practices
-
-<Divider />
-<br />
 
 <HStack gap={3}>
   <VStack width="50%">
@@ -107,20 +89,14 @@ The content of Tooltip is contextual, useful, and nonessential. The element pair
 </HStack>
 <HStack>
   <VStack width="50%">
-    <Image src={bestPractices_1} options={{ maxHeight: '448px' }} />
+    <Image src={bestPractices_1} maxHeight="448px" />
   </VStack>
   <VStack width="50%">
-    <Image src={bestPractices_2} options={{ maxHeight: '448px' }} />
+    <Image src={bestPractices_2} maxHeight="448px" />
   </VStack>
 </HStack>
 
-<br />
-<br />
-
 # Behavior
-
-<Divider />
-<br />
 
 <HStack>
   <VStack width="50%">
@@ -130,9 +106,6 @@ The content of Tooltip is contextual, useful, and nonessential. The element pair
     </TextHeadline>
   </VStack>
 </HStack>
-
-<br />
-<br />
 
 <HStack gap={3}>
   <VStack width="50%">
@@ -155,55 +128,35 @@ The content of Tooltip is contextual, useful, and nonessential. The element pair
   </VStack>
 </HStack>
 
-<br />
-<br />
-
 # Anatomy
-
-<Divider />
-<br />
 
 Tooltip is comprised of a container (wrapper) with a nested description. It does not have elevation.
 
 <HStack gap={3}>
   <VStack width="50%">
-    <Image src={anatomy_a1} options={{ maxHeight: '448px' }} />
+    <Image src={anatomy_a1} maxHeight="448px" />
   </VStack>
   <VStack width="50%">
-    <Image src={anatomy_b1} options={{ maxHeight: '448px' }} />
+    <Image src={anatomy_b1} maxHeight="448px" />
   </VStack>
 </HStack>
-
-<br />
 
 <HStack gap={3}>
   <VStack width="50%">
-    <Image src={anatomy_a2} options={{ maxHeight: '448px' }} />
+    <Image src={anatomy_a2} maxHeight="448px" />
   </VStack>
   <VStack width="50%">
-    <Image src={anatomy_b} options={{ maxHeight: '448px' }} />
+    <Image src={anatomy_b} maxHeight="448px" />
   </VStack>
 </HStack>
 
-<br />
-<br />
-
 # Padding
 
-<Divider />
-<br />
-
 <VStack width="50%">
-  <Image src={anatomy_a3} options={{ maxHeight: '448px' }} />
+  <Image src={anatomy_a3} maxHeight="448px" />
 </VStack>
 
-<br />
-<br />
-
 # Size Variant
-
-<Divider />
-<br />
 
 <HStack gap={3}>
   <VStack width="50%">
@@ -212,8 +165,6 @@ Tooltip is comprised of a container (wrapper) with a nested description. It does
     </TextHeadline>
   </VStack>
 </HStack>
-
-<br />
 
 <HStack gap={3}>
   <VStack width="50%">
@@ -237,30 +188,20 @@ Tooltip is comprised of a container (wrapper) with a nested description. It does
   </VStack>
 </HStack>
 
-<br />
-
 <HStack gap={3}>
   <VStack width="50%">
-    <Image src={size_1} options={{ maxHeight: '448px' }} />
+    <Image src={size_1} maxHeight="448px" />
   </VStack>
   <VStack width="50%">
-    <Image src={size_2} options={{ maxHeight: '448px' }} />
+    <Image src={size_2} maxHeight="448px" />
   </VStack>
 </HStack>
 
-<br />
-<br />
-
 # Placement
-
-<Divider />
-<br />
 
 <VStack width="50%">
   <TextHeadline as="p">Make sure Tooltip never gets cropped.</TextHeadline>
 </VStack>
-
-<br />
 
 <VStack width="50%">
   <ul>
@@ -276,7 +217,7 @@ Tooltip is comprised of a container (wrapper) with a nested description. It does
 </VStack>
 
 <VStack width="50%">
-  <Image src={placement_1} options={{ maxHeight: '448px' }} />
+  <Image src={placement_1} maxHeight="448px" />
 </VStack>
 
 <VStack width="50%">
@@ -305,8 +246,6 @@ Tooltip is comprised of a container (wrapper) with a nested description. It does
   </VStack>
 </HStack>
 
-<br />
-
 <HStack gap={8}>
   <VStack width="50%">
     <Image src={placement_3} />
@@ -315,6 +254,3 @@ Tooltip is comprised of a container (wrapper) with a nested description. It does
     <Image src={placement_4} />
   </VStack>
 </HStack>
-
-<br />
-<br />

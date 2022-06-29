@@ -1,7 +1,4 @@
 import { Tag } from '@cbhq/cds-web/tag/Tag';
-import { DocImage } from ':cds-website/components/DocImage';
-import { DoDont, DoExample, DontExample, Example } from ':cds-website/components/DoDont';
-import { Collection, Item } from ':cds-website/components/Collection';
 
 A 1 to 2 word text/string component used for describing, categorizing or classifying content, displaying metadata and/or highlighting sentiment.
 
@@ -65,7 +62,7 @@ Promotional tags are for editorial, ephemeral communication. Terms like “New�
 Tag terms should be well-known/understood, part of your audience’s vernacular, tag terms should be part of a larger taxonomy rather than a one-off concept.
 
 <Collection>
-  <Item alignItems="flex-start">
+  <CollectionItem alignItems="flex-start">
     <Tag colorScheme="purple">Informational tag examples</Tag>
     <ul>
       <li>
@@ -79,8 +76,8 @@ Tag terms should be well-known/understood, part of your audience’s vernacular,
         <b>Metadata:</b> Full stake, Partial stake, Joined on June 01, 2020, Requires gas
       </li>
     </ul>
-  </Item>
-  <Item alignItems="flex-start">
+  </CollectionItem>
+  <CollectionItem alignItems="flex-start">
     <Tag intent="promotional" colorScheme="yellow">
       Promotional tag examples
     </Tag>
@@ -97,7 +94,7 @@ Tag terms should be well-known/understood, part of your audience’s vernacular,
       user. In that case we recommend using an info icon to clarify why something can be qualified
       as popular, trending, etc.
     </em>
-  </Item>
+  </CollectionItem>
 </Collection>
 
 Tags must always include text. They cannot be empty or use a single character symbol, eg “$”. Icons should be considered a tool for accessibility and therefore should match the text.
@@ -116,7 +113,10 @@ Tags must always include text. They cannot be empty or use a single character sy
 
 ### Structure
 
-<DocImage format="svg" component="tag" name="anatomy" />
+<Image
+  srcLight="/img/components/Tabs/anatomy_light.svg"
+  srcDark="/img/components/Tabs/anatomy_dark.svg"
+/>
 
 ### Accessibility
 

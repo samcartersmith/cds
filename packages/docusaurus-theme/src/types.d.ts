@@ -382,12 +382,45 @@ declare module '@theme/ChangelogListCell' {
 /*                                    Misc                                    */
 /* -------------------------------------------------------------------------- */
 
+declare module '@theme/Collection' {
+  export type CollectionProps = import('./theme/Collection').CollectionProps;
+  const Collection: typeof import('./theme/Collection').default;
+  export default Collection;
+}
+
+declare module '@theme/CollectionItem' {
+  export type CollectionItemProps = import('./theme/CollectionItem').CollectionItemProps;
+  const CollectionItem: typeof import('./theme/CollectionItem').default;
+  export default CollectionItem;
+}
+
+declare module '@theme/DoDont' {
+  export const DontExample: typeof import('./theme/DoDont').DontExample;
+  export const DoExample: typeof import('./theme/DoDont').DoExample;
+
+  export type DoDontProps = import('./theme/DoDont').DoDontProps;
+  const DoDont: typeof import('./theme/DoDont').default;
+  export default DoDont;
+}
+
+declare module '@theme/Image' {
+  export type ImageProps = import('./theme/Image').ImageProps;
+  const Image: typeof import('./theme/Image').default;
+  export default Image;
+}
+
 declare module '@theme/ExampleWithThemeToggles' {
   export type ExampleWithThemeTogglesProps = {
     children?: import('react').ReactNode;
   };
 
   export default function ExampleWithThemeToggles(props: ExampleWithThemeTogglesProps): JSX.Element;
+}
+
+declare module '@theme/Image' {
+  export type ImageProps = import('./theme/Image').ImageProps;
+  const Image: typeof import('./theme/Image').default;
+  export default Image;
 }
 
 declare module '@theme/ImportBlock' {
@@ -441,6 +474,12 @@ declare module '@theme/ScrollSnapCarousel' {
   } & BoxProps;
 
   export default function ScrollSnapCarousel(props: ScrollSnapCarouselProps): JSX.Element;
+}
+
+declare module '@theme/Video' {
+  export type VideoProps = import('./theme/Video').VideoProps;
+  const Video: typeof import('./theme/Video').default;
+  export default Video;
 }
 
 /* -------------------------------------------------------------------------- */

@@ -1,49 +1,20 @@
-import React, { useCallback } from 'react';
-import type { FlexAlignCommon, SpacingScale } from '@cbhq/cds-common';
-import { HStack, VStack } from '@cbhq/cds-web/layout';
-import { PressableOpacity } from '@cbhq/cds-web/system';
+import React, { memo } from 'react';
+import type { FlexAlignCommon } from '@cbhq/cds-common';
+import { VStack } from '@cbhq/cds-web/layout';
 import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
-import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
 
-import { Image, ImageProps } from './Image';
-import { Video, VideoProps } from './Video';
-
-type CollectionProps = {
-  children: React.ReactNode;
-  spacingVertical?: SpacingScale;
-};
-
-type ItemProps = {
-  img?: ImageProps;
-  vid?: VideoProps;
+export type CollectionItemProps = {
+  media?: JSX.Element;
   title?: string;
   description?: string | string[];
   flexGrow?: number;
   textAlign?: FlexAlignCommon;
   href?: string;
+  children?: React.ReactNode;
 };
 
-export const Collection: React.FC<CollectionProps> = ({
-  children,
-  spacingVertical = 6,
-  ...props
-}) => {
-  return (
-    <HStack
-      spacingVertical={spacingVertical}
-      flexWrap="wrap"
-      justifyContent="flex-start"
-      alignItems="flex-start"
-      {...props}
-    >
-      {children}
-    </HStack>
-  );
-};
-
-export const Item: React.FC<ItemProps> = ({
-  img,
-  vid,
+const CollectionItem = memo(function CollectionItem({
+  media,
   title,
   description,
   flexGrow = 1,
@@ -51,7 +22,7 @@ export const Item: React.FC<ItemProps> = ({
   textAlign = 'center',
   href,
   ...rest
-}) => {
+}: CollectionItemProps) {
   const renderDescription = () => {
     if (Array.isArray(description)) {
       return (
@@ -71,11 +42,6 @@ export const Item: React.FC<ItemProps> = ({
       </TextLabel2>
     );
   };
-  const handlePress = useCallback(() => {
-    if (href) {
-      getBrowserGlobals()?.window.open(href, '_blank');
-    }
-  }, [href]);
 
   return (
     <VStack
@@ -90,12 +56,7 @@ export const Item: React.FC<ItemProps> = ({
     >
       {children ?? (
         <VStack flexGrow={0} flexBasis={0} alignItems={textAlign} justifyContent="flex-start">
-          {img && (
-            <PressableOpacity onPress={handlePress}>
-              <Image {...img} />
-            </PressableOpacity>
-          )}
-          {vid && <Video {...vid} />}
+          {media}
           <VStack flexGrow={1} spacingTop={2} alignItems={textAlign} justifyContent="center">
             {!!title && (
               <TextLabel1 as="p" noWrap spacingBottom={1}>
@@ -108,4 +69,8 @@ export const Item: React.FC<ItemProps> = ({
       )}
     </VStack>
   );
-};
+});
+
+CollectionItem.displayName = 'CollectionItem';
+
+export default CollectionItem;

@@ -3,7 +3,7 @@
 ## Commands (overview)
 
 | Command                         | Description                                                  |
-|---------------------------------|--------------------------------------------------------------|
+| ------------------------------- | ------------------------------------------------------------ |
 | yarn build                      | Build all packages.                                          |
 | yarn format                     | Format all of the affected packages                          |
 | yarn lint                       | Lint all of the affected packages                            |
@@ -17,7 +17,7 @@
 | yarn codegen adoption           | Prepare adoption numbers                                     |
 | yarn codegen adoption --DEBUG=1 | Debug adoption tracker script                                |
 | yarn codegen all                | Generate code in design system.                              |
-| yarn codegen docs               | Generate docs for CDS website.                               |
+| yarn codegen docs.internal      | Copy CHANGELOG.md from packages to website.                  |
 | yarn codegen format             | Format the `codegen` project.                                |
 | yarn codegen icons              | Prepare icons                                                |
 | yarn codegen illustrations      | Prepare illustrations                                        |
@@ -69,7 +69,9 @@
 | yarn website build              | Build website.                                               |
 | yarn website format             | Format the `website`                                         |
 | yarn website lint               | Lint the `website`.                                          |
+| yarn website setup              | Setup website and prebuild icons.                            |
 | yarn website start              | Start website local dev server.                              |
+| yarn website start.all          | Start website local dev server and watch plugins.            |
 | yarn website stylelint          | Stylelint website                                            |
 | yarn website stylelint.fix      | Stylelint website and fix errors.                            |
 | ----                            | ----                                                         |
@@ -120,7 +122,7 @@ The alias of the workspace name can be obtained in Table 1.0. The script can be 
 **Table 1.0**
 
 | Workspace name         | Alias      |
-|------------------------|------------|
+| ---------------------- | ---------- |
 | @cbhq/cds-common       | common     |
 | @cbhq/cds-fonts        | fonts      |
 | @cbhq/cds-lottie-files | lottie     |

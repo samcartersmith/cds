@@ -1,46 +1,37 @@
-import { Image } from ':cds-website/components/Image';
-
-import { Collection, Item } from ':cds-website/components/Collection';
-import { DoDont, DoExample, DontExample } from ':cds-website/components/DoDont';
-import { Table, TableBody, TableRow, TableCell, TableHeader } from '@cbhq/cds-web/tables';
-import { TextHeadline, TextBody } from '@cbhq/cds-web/typography';
-
 Alert dialogs are specific types of modal overlay that communicate critical information and block the user from completing a task until a specific action is taken.
 Alerts are highly disruptive and should be used sparingly, especially with high-risk actions that might have negative or destructive consequences.
 Alert dialogs are different but related to other types of user feedback and communication patterns like Banners, Callouts, Inline Validation, and Trays.
 
 ## Usage
 
-**Critical error** <br />
+**Critical error**
 Something bad happened, requires user action to proceed
 
-**Warning**<br />
+**Warning**
 High importance information requiring user acceptance
 
-**Confirmation**<br />
+**Confirmation**
 Yes/No confirmation before destructive or consequential action
 
-**Alert Action Button Layout**<br />
+**Alert Action Button Layout**
 
 - Generally, use two-button alerts. Two-button alerts provide an easy choice between two alternatives. Single-button alerts inform, but give no control over the situation. Alerts with three or more buttons create complexity, which is a bad user experience.
 - Include a Cancel button that provides a clear, safe way out of a dialog and returns the computer to the state it was in before the dialog appeared. The Esc (Escape) key is mapped to the Cancel button.
 - For the two button option, try to fit the label in the “Side-by-Side” variant. If the label doesn’t fit, use “Stacked”.
 
 <Image
-  light="/img/components/overlays/alert/usage1_light.png"
-  dark="/img/components/overlays/alert/usage1_dark.png"
+  srcLight="/img/components/overlays/alert/usage1_light.png"
+  srcDark="/img/components/overlays/alert/usage1_dark.png"
 />
 
 <Image
-  light="/img/components/overlays/alert/usage2_light.png"
-  dark="/img/components/overlays/alert/usage2_dark.png"
+  srcLight="/img/components/overlays/alert/usage2_light.png"
+  srcDark="/img/components/overlays/alert/usage2_dark.png"
 />
 
 ## Anatomy
 
 <Image src="/img/components/overlays/alert/anatomy.png" />
-
-<span>&nbsp;</span>
 
 **Width:**
 Max width of 318px with 24px margin and 24px outside margin.
@@ -76,27 +67,24 @@ For more guidelines on writing alerts, including examples, check out [Alerts and
 ## Placement
 
 <Collection>
-  <Item
-    img={{
-      src: '/img/components/overlays/alert/placement_center.png',
-    }}
+  <CollectionItem
+    media={<Image src='/img/components/overlays/alert/placement_center.png' />}
     description="The alert is centered within the viewport and is displayed with a scrim."
-  />
-  <Item
-    img={{
-      src: '/img/components/overlays/alert/placement_modal.png',
-    }}
-    description={[
-      'If the alert is being triggered from an action related to a modal, the alert is displayed as a child of the modal by being aligned to the top of the modal with an y-offset of 24pt',
-      'When the alert is displayed like this, it will maintain its own scrim. Double scrim! :)',
-    ]}
-  />
-  <Item
-    img={{
-      src: '/img/components/overlays/alert/placement_modal_phone.png',
-    }}
-    description="If the alert is triggered over a full screen modal, it’s centered."
-  />
+/>
+
+<CollectionItem
+  media={<Image src="/img/components/overlays/alert/placement_modal.png" />}
+  description={[
+    'If the alert is being triggered from an action related to a modal, the alert is displayed as a child of the modal by being aligned to the top of the modal with an y-offset of 24pt',
+    'When the alert is displayed like this, it will maintain its own scrim. Double scrim! :)',
+  ]}
+/>
+
+<CollectionItem
+  media={<Image src="/img/components/overlays/alert/placement_modal_phone.png" />}
+  description="If the alert is triggered over a full screen modal, it’s centered."
+/>
+
 </Collection>
 
 ## Behaviour
@@ -117,11 +105,14 @@ Use alert errors sparingly. Alerts disrupt the user experience and should only b
 
 <DoDont>
   <DontExample
-    img={{
-      light: '/img/components/overlays/alert/dont_light.png',
-      dark: '/img/components/overlays/alert/dont_dark.png',
-      options: { maxWidth: '70%', maxHeight: '70%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/components/overlays/alert/dont_light.png"
+        srcDark="/img/components/overlays/alert/dont_dark.png"
+      />
+    }
+    maxWidth="70%"
+    maxHeight="70%"
   >
     Confuse destructive messages as error messages.
   </DontExample>
@@ -129,18 +120,22 @@ Use alert errors sparingly. Alerts disrupt the user experience and should only b
 
 <DoDont>
   <DoExample
-    img={{
-      light: '/img/components/overlays/alert/do_1_light.png',
-      dark: '/img/components/overlays/alert/do_1_dark.png',
-    }}
+    media={
+      <Image
+        srcLight="/img/components/overlays/alert/do_1_light.png"
+        srcDark="/img/components/overlays/alert/do_1_dark.png"
+      />
+    }
   >
     Use specific, actionable error messages
   </DoExample>
   <DontExample
-    img={{
-      light: '/img/components/overlays/alert/dont_1_light.png',
-      dark: '/img/components/overlays/alert/dont_1_dark.png',
-    }}
+    media={
+      <Image
+        srcLight="/img/components/overlays/alert/dont_1_light.png"
+        srcDark="/img/components/overlays/alert/dont_1_dark.png"
+      />
+    }
   >
     Only state the error
   </DontExample>
@@ -148,18 +143,22 @@ Use alert errors sparingly. Alerts disrupt the user experience and should only b
 
 <DoDont>
   <DoExample
-    img={{
-      light: '/img/components/overlays/alert/do_2_light.png',
-      dark: '/img/components/overlays/alert/do_2_dark.png',
-    }}
+    media={
+      <Image
+        srcLight="/img/components/overlays/alert/do_2_light.png"
+        srcDark="/img/components/overlays/alert/do_2_dark.png"
+      />
+    }
   >
     State the problem in the headline and the solution in the body copy
   </DoExample>
   <DontExample
-    img={{
-      light: '/img/components/overlays/alert/dont_2_light.png',
-      dark: '/img/components/overlays/alert/dont_2_dark.png',
-    }}
+    media={
+      <Image
+        srcLight="/img/components/overlays/alert/dont_2_light.png"
+        srcDark="/img/components/overlays/alert/dont_2_dark.png"
+      />
+    }
   >
     State the solution in the headline
   </DontExample>
