@@ -382,7 +382,7 @@ const sidebars = {
               label: 'Navigation Icon',
             },
             {
-              type: 'ref',
+              type: 'doc',
               id: 'components/buttons/NavigationIconButton/navigation-icon-button',
               label: 'Navigation Icon Button',
             },
