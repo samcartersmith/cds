@@ -642,7 +642,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Breakpoints',
+          label: 'BreakpointsProvider',
           customProps: { tag: 'new' },
           items: [
             {
