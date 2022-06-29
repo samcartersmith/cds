@@ -70,8 +70,7 @@
 | yarn website format             | Format the `website`                                         |
 | yarn website lint               | Lint the `website`.                                          |
 | yarn website setup              | Setup website and prebuild icons.                            |
-| yarn website start              | Start website local dev server.                              |
-| yarn website start.all          | Start website local dev server and watch plugins.            |
+| yarn website start              | Start website local dev server and watch plugins.            |
 | yarn website stylelint          | Stylelint website                                            |
 | yarn website stylelint.fix      | Stylelint website and fix errors.                            |
 | ----                            | ----                                                         |

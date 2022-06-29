@@ -13,7 +13,7 @@ import { TextBody, TextCaption } from '@cbhq/cds-web/typography';
 
 export type PropSidebarItem = PropSidebarItemLink | PropSidebarItemCategory;
 
-type CustomProps = {
+export type SidebarItemCustomProps = {
   hidden?: boolean;
   tag?: JSDocTagVariant;
 };
@@ -25,7 +25,7 @@ type PropSidebarItemCategory = {
   collapsible: boolean;
   items: PropSidebarItem[];
   href?: string;
-  customProps?: CustomProps;
+  customProps?: SidebarItemCustomProps;
 };
 
 type PropSidebarItemLink = {
@@ -33,7 +33,7 @@ type PropSidebarItemLink = {
   type: 'link';
   href: string;
   label: string;
-  customProps?: CustomProps;
+  customProps?: SidebarItemCustomProps;
 };
 
 export type DocSidebarItemProps = {
@@ -90,8 +90,7 @@ function CollapsibleCategory({
   level,
   parentLevel = 0,
 }: CollapsibleCategoryProps) {
-  const [expanded, { toggle }] = useToggler(level === 1);
-  const collapsed = !expanded;
+  const [collapsed, { toggle }] = useToggler(item.collapsed ?? true);
   return (
     <VStack spacingHorizontal={0}>
       <Pressable
@@ -152,7 +151,7 @@ export default function DocSidebarItem({
 }: DocSidebarItemProps): JSX.Element | null {
   switch (item.type) {
     case 'category':
-      return <CollapsibleCategory item={item} {...props} />;
+      return item.customProps?.hidden ? null : <CollapsibleCategory item={item} {...props} />;
     case 'link':
     default: {
       return item.customProps?.hidden ? null : <SidebarItemLink item={item} {...props} />;

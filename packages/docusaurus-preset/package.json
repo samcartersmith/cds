@@ -18,7 +18,8 @@
     "@cbhq/docusaurus-plugin-kbar": "workspace:*",
     "@cbhq/docusaurus-theme": "workspace:*",
     "@docusaurus/preset-classic": "2.0.0-beta.18",
-    "@docusaurus/theme-live-codeblock": "2.0.0-beta.18"
+    "@docusaurus/theme-live-codeblock": "2.0.0-beta.18",
+    "type-fest": "1.2.0"
   },
   "devDependencies": {
     "@cbhq/cds-tools": "workspace:*",

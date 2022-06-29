@@ -9,8 +9,7 @@
     "lint.fix": "nx run website:lint --fix",
     "serve": "docusaurus serve --dir ../../.nx/outs/projects/apps/website/docusaurus",
     "setup": "./plugins-setup.sh",
-    "start": "yarn docusaurus start --port 3000",
-    "start.all": "concurrently -r \"./plugins-watch.sh\" \"yarn start\"",
+    "start": "concurrently -r \"./plugins-watch.sh\" \"yarn docusaurus start --port 3000\"",
     "stylelint": "nx run website:lint-styles",
     "stylelint.fix": "nx run website:lint-styles --fix",
     "typecheck": "nx run website:typecheck"

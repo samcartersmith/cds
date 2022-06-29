@@ -12,7 +12,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "javascript.validate.enable": false,
+  "javascript.validate.enable": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.preferences.importModuleSpecifier": "project-relative",
   "typescript.preferences.quoteStyle": "single",

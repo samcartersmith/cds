@@ -522,3 +522,7 @@ declare module '@theme/useColorMode' {
   };
   export default function useColorMode(): { colorMode: ColorMode; setColorMode: SetColorMode };
 }
+
+declare module '@cbhq/docusaurus-theme' {
+  export type SidebarItemCustomProps = import('./theme/DocSidebarItem').SidebarItemCustomProps;
+}
