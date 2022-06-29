@@ -699,6 +699,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Breakpoints',
+          customProps: { tag: 'new' },
           items: [
             {
               type: 'doc',
@@ -711,6 +712,7 @@ module.exports = {
         {
           type: 'category',
           label: 'BrowserOnly',
+          customProps: { tag: 'new' },
           items: [
             {
               type: 'doc',
