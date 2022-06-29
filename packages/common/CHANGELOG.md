@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.0.1 (6/28/2022, 02:35 PM PST)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 06/28/22 Illo. [#790](https://github.cbhq.net/frontend/cds/pull/790)
+- **[Icons]** Publish Icons June 28nd, 2022. [#785](https://github.cbhq.net/frontend/cds/pull/785)
+
 ## 1.0.0 (6/22/2022, 09:55 PM PST)
 
 #### 🚀 Updates
