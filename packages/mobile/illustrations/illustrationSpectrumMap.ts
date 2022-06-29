@@ -1742,6 +1742,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/coinShare-0').content,
     dark: () => require('./images/dark/coinShare-0').content,
   },
+  coinbaseLogoNavigation: {
+    light: () => require('./images/light/coinbaseLogoNavigation-0').content,
+    dark: () => require('./images/dark/coinbaseLogoNavigation-0').content,
+  },
   coinbaseOneAuthenticator: {
     light: () => require('./images/light/coinbaseOneAuthenticator-2').content,
     dark: () => require('./images/dark/coinbaseOneAuthenticator-2').content,

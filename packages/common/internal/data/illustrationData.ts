@@ -447,6 +447,7 @@ export const pictogramNames = [
   'cloudNavigation',
   'coinFocus',
   'coinShare',
+  'coinbaseLogoNavigation',
   'coinbaseOneAuthenticator',
   'coinbaseOneChat',
   'coinbaseOneEarnCoins',

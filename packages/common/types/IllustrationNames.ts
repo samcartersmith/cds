@@ -446,6 +446,7 @@ export type IllustrationPictogramNames =
   | 'cloudNavigation'
   | 'coinFocus'
   | 'coinShare'
+  | 'coinbaseLogoNavigation'
   | 'coinbaseOneAuthenticator'
   | 'coinbaseOneChat'
   | 'coinbaseOneEarnCoins'

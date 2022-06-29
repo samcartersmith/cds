@@ -9475,5 +9475,19 @@ export const manifestData: Record<
       spectrum: 'light',
       versionNum: 0,
     },
+    '8145:2172': {
+      variant: 'pictogram',
+      description: 'navigation illustration, app switcher, logged out, logo',
+      name: 'coinbaseLogoNavigation',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8145:2171': {
+      variant: 'pictogram',
+      description: 'navigation illustration, app switcher, logged out, logo',
+      name: 'coinbaseLogoNavigation',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
   },
 };

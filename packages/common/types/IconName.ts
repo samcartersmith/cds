@@ -201,7 +201,16 @@ export type IconName =
   | 'cashBrazilianReal'
   | 'diamondActive'
   | 'diamondInactive'
-  | 'commentActive';
+  | 'commentActive'
+  | 'cashThaiBaht'
+  | 'cashPhilippinePeso'
+  | 'cashIndonesianRupiah'
+  | 'cashVietnameseDong'
+  | 'cashTurkishLira'
+  | 'cashSwissFranc'
+  | 'cashPolishZłoty'
+  | 'cashUaeDirham'
+  | 'cashAustralianDollar';
 
 export type NavigationIconName =
   | 'account'
