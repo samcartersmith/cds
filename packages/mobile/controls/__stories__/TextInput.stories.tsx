@@ -293,6 +293,7 @@ export default function InputScreen() {
       </Example>
       <Example inline title="CompactTextInput 50%">
         <MockCompactTextInput label="Bitcoin" width="50%" placeholder="190" />
+        <MockCompactTextInput />
       </Example>
       <Example inline title="CompactTextInput Disabled">
         <MockCompactTextInput label="Bitcoin" disabled />

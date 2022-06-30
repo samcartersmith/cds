@@ -134,7 +134,7 @@ export const TextInput = memo(
             !compact && !!label && <InputLabel testID={testIDMap?.label ?? ''}>{label}</InputLabel>
           }
           startNode={
-            (compact || !!start) && (
+            ((compact && !!label) || !!start) && (
               <Box justifyContent="center" alignItems="center" testID={testIDMap?.start}>
                 <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
                   <HStack>
