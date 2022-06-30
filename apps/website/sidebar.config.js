@@ -206,7 +206,17 @@ const sidebars = {
         {
           type: 'category',
           label: 'Alert',
-          items: ['components/overlays/Alert/alert', 'hooks/useAlert'],
+          items: [
+            'components/overlays/Alert/alert',
+            {
+              type: 'doc',
+              id: 'components/overlays/FullscreenAlert/fullscreen-alert',
+              customProps: {
+                tag: 'new',
+              },
+            },
+            'hooks/useAlert',
+          ],
         },
         {
           type: 'category',
@@ -361,6 +371,9 @@ const sidebars = {
         {
           type: 'category',
           label: 'Motion',
+          customProps: {
+            tag: 'new',
+          },
           items: [
             'components/motion/ColorSurge/color-surge',
             'components/motion/Pulse/pulse',
