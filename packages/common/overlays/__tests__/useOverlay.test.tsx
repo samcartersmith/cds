@@ -15,4 +15,14 @@ describe('useOverlay', () => {
 
     expect(result.current.open(<div>dummy element</div>).split('_')[0]).toBe('modal');
   });
+
+  it('returns stable id', () => {
+    const { result } = renderHook(() => useOverlay('modal_'));
+
+    const firstId = result.current.open(<div>dummy element</div>);
+    result.current.close();
+    const secondId = result.current.open(<div>dummy element</div>);
+
+    expect(firstId).toBe(secondId);
+  });
 });
