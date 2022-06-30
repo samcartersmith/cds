@@ -1,10 +1,11 @@
 import { ExecutorContext } from '@nrwl/devkit';
 import chalk from 'chalk';
+import glob from "fast-glob";
 import fs from 'fs';
 import path from 'path';
 
 import { BuildPackageOptions } from '../../types';
-import { createDir, deleteDir, runLocalCommand } from '../utils';
+import {compressCssFiles, createDir, deleteDir, runLocalCommand} from '../utils';
 
 type PackageArgs = {
   /*
@@ -284,6 +285,21 @@ export default async function buildPackage(
   if (replacePackageJson) {
     await replacePackageVersions(context, destinationDir);
   }
+
+  // compress css
+  // Extract CSS from web package first
+  const cssFiles = new Set(
+    await glob(`${dist}/**/*.css`, {
+      absolute: true,
+      onlyFiles: true,
+    }),
+  );
+
+  console.log("Compressing css files: ", cssFiles.size);
+
+  success = success
+    ? await compressCssFiles(context, Array.from(cssFiles)) && true
+    : success;
 
   return Promise.resolve({ success });
 }

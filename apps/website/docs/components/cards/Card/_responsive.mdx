@@ -1,0 +1,58 @@
+## Responsive Styles
+
+**Web only** You can create responsive layouts by passing a configuration object to a Card and specify unique styles for phones, tablets, or desktops.
+
+Please note, there are no default responsive styles for Card. This is an additive feature that you will need to configure yourself.
+
+### Supported Properties
+
+- Spacing
+- Offset spacing
+- Gap
+- Flex styles (justify content, align content, align items, align self, flex direction, and flex wrap)
+- Display
+- Visibility
+
+### Usage
+
+Always hoist or memoize your responsive style configurations.
+
+```jsx live
+function ResponsiveCard() {
+  const responsiveConfig = useMemo(
+    () => ({
+      phone: {
+        spacing: 2,
+        gap: 0.5,
+      },
+      tablet: {
+        spacing: 3,
+        gap: 1,
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end',
+      },
+      desktop: {
+        spacing: 4,
+        gap: 2,
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+      },
+    }),
+    [],
+  );
+
+  return (
+    <Card responsiveConfig={responsiveConfig}>
+      <CardBody
+        title="Title/Headline"
+        description="You can fit up to fifty two characters on 2 lines"
+      />
+      <CardFooter>
+        <Button compact transparent flush="end" endIcon="forwardArrow">
+          Action
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+}
+```

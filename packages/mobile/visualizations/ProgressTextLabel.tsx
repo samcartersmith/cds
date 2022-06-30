@@ -1,4 +1,5 @@
 import React, { memo, useCallback } from 'react';
+import { MotionDuration } from '@cbhq/cds-common';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import { durations } from '@cbhq/cds-common/motion/tokens';
@@ -42,7 +43,7 @@ export const ProgressTextLabel = memo(
         startNum={getPreviousValue() ?? 0}
         renderNum={renderNum}
         endNum={value}
-        durationInMillis={durations[animateProgressBaseSpec.duration]}
+        durationInMillis={durations[animateProgressBaseSpec.duration as MotionDuration]}
       />
     );
   },

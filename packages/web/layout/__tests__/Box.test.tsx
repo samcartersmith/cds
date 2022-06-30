@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import { ResponsiveProps, ResponsivePropsDevices } from '@cbhq/cds-common';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { display } from '../../styles/display';
@@ -278,5 +279,62 @@ describe('Box', () => {
 
       expect(container.firstChild).toHaveAttribute('style', 'opacity: 0.4; padding: 2px 4px;');
     });
+  });
+
+  const getClassNamesForResponsiveProps = (config: ResponsiveProps, style: string) => {
+    const classNames: string[] = [];
+
+    classNames.push(DEFAULT_CLASS);
+
+    (Object.keys(config) as ResponsivePropsDevices[]).forEach((device) => {
+      // @ts-expect-error PITA to type this
+      classNames.push(config[device]?.[style] as string);
+    });
+
+    return classNames.join(' ');
+  };
+
+  describe('responsive styles', () => {
+    const responsiveFlexStylesConfig: ResponsiveProps = {
+      phone: {
+        justifyContent: 'flex-start',
+      },
+      tablet: {
+        justifyContent: 'space-around',
+      },
+      desktop: {
+        justifyContent: 'flex-end',
+      },
+    };
+    it('renders flex classNames for styles at each device breakpoint', () => {
+      const { container } = render(<Box responsiveConfig={responsiveFlexStylesConfig}>Child</Box>);
+      const classNames = getClassNamesForResponsiveProps(
+        responsiveFlexStylesConfig,
+        'justifyContent',
+      );
+
+      expect(container.firstChild).toHaveAttribute('class', classNames);
+    });
+  });
+
+  const responsiveVisibilityStylesConfig: ResponsiveProps = {
+    phone: {
+      visibility: 'hidden',
+    },
+    tablet: {
+      visibility: 'visible',
+    },
+  };
+
+  it('renders visibility classNames for styles at each device breakpoint', () => {
+    const { container } = render(
+      <Box responsiveConfig={responsiveVisibilityStylesConfig}>Child</Box>,
+    );
+    const classNames = getClassNamesForResponsiveProps(
+      responsiveVisibilityStylesConfig,
+      'visibility',
+    );
+
+    expect(container.firstChild).toHaveAttribute('class', classNames);
   });
 });

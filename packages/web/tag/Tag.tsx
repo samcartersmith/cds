@@ -2,12 +2,14 @@ import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
 import { TagBaseProps } from '@cbhq/cds-common';
 import { tagColorMap } from '@cbhq/cds-common/tokens/tags';
 
-import { Box } from '../layout';
+import { Box, BoxProps } from '../layout';
 import { TextCaption, TextLabel1 } from '../typography';
+import { cx } from '../utils/linaria';
 import { setPaletteConfigToCssVars } from '../utils/palette';
 
 import { tagSpacingStyles } from './tagSpacingStyles';
 
+export const tagStaticClassName = 'cds-tag';
 export const Tag = memo(
   forwardRef(
     (
@@ -17,9 +19,12 @@ export const Tag = memo(
         colorScheme = 'blue',
         dangerouslySetBackground,
         dangerouslySetColor,
+        display = 'inline-flex',
+        alignItems = 'center',
+        justifyContent = 'center',
         testID = 'cds-tag',
         ...props
-      }: TagBaseProps,
+      }: TagBaseProps & Omit<BoxProps, 'background' | 'backgroundColor' | 'children'>,
       forwardedRef: ForwardedRef<HTMLDivElement>,
     ) => {
       const spacingClassName = useMemo(() => tagSpacingStyles[intent], [intent]);
@@ -44,13 +49,14 @@ export const Tag = memo(
       return (
         <Box
           ref={forwardedRef}
-          dangerouslySetClassName={spacingClassName}
+          dangerouslySetClassName={cx(tagStaticClassName, spacingClassName)}
           dangerouslySetStyle={styleOverride}
-          background="background"
-          alignItems="center"
-          justifyContent="center"
           borderRadius={borderRadius}
           data-testid={testID}
+          background="background"
+          alignItems={alignItems}
+          justifyContent={justifyContent}
+          display={display}
           {...props}
         >
           <Text as="span" color="foreground" overflow="truncate" data-testid={`${testID}--text`}>

@@ -1,14 +1,9 @@
-import { Image } from ':cds-website/components/Image';
-
 import searchDetachedLight from ':cds-website/static/img/components/controls/SearchInput/search_detached_light.png';
 import search_attached_light from ':cds-website/static/img/components/controls/SearchInput/search_attached_light.png';
 import search_embedded_light from ':cds-website/static/img/components/controls/SearchInput/search_embedded_light.png';
 import search_anatomy_light from ':cds-website/static/img/components/controls/SearchInput/search_anatomy_light.png';
 import search_section_light from ':cds-website/static/img/components/controls/SearchInput/search_section_light.png';
 import search_header_light from ':cds-website/static/img/components/controls/SearchInput/search_header_light.png';
-
-import { Video } from ':cds-website/components/Video';
-import { TextHeadline, TextBody } from '@cbhq/cds-web/typography';
 
 <TOCUpdater toc={toc} />
 
@@ -109,13 +104,13 @@ There are a couple ways search results can be displayed.
 
 The main difference between Search on Mobile vs. Web is exiting the Search input.
 
-On Web, users can simply click out or press tab to exit search.<br />On Mobile, the Search icon will animate to a backArrow icon. Clicking on the backArrow icon will exit the search page.
+On Web, users can simply click out or press tab to exit search. On Mobile, the Search icon will animate to a backArrow icon. Clicking on the backArrow icon will exit the search page.
 
 <div style={{ display: 'flex', paddingTop: 20 }}>
   <div style={{ width: '50%', margin: 16 }}>
     <Video
-      light="/video/lightmode/Search/search_exiting_web.mp4"
-      dark="/video/lightmode/Search/search_exiting_web.mp4"
+      srcLight="/video/lightmode/Search/search_exiting_web.mp4"
+      srcDark="/video/lightmode/Search/search_exiting_web.mp4"
     />
     <TextHeadline as="p" spacingBottom={2}>
       Web
@@ -123,8 +118,8 @@ On Web, users can simply click out or press tab to exit search.<br />On Mobile, 
   </div>
   <div style={{ width: '50%', margin: 16 }}>
     <Video
-      light="/video/lightmode/Search/search_exiting_mobile.mp4"
-      dark="/video/lightmode/Search/search_exiting_mobile.mp4"
+      srcLight="/video/lightmode/Search/search_exiting_mobile.mp4"
+      srcDark="/video/lightmode/Search/search_exiting_mobile.mp4"
     />
     <TextHeadline as="p" spacingBottom={2}>
       Mobile

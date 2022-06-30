@@ -1,13 +1,8 @@
-import { Image } from ':cds-website/components/Image';
-import { Collection, Item } from ':cds-website/components/Collection';
-import { Table, TableHeader, TableRow, TableCell, TableBody } from '@cbhq/cds-web/tables';
-import { TextBody, TextHeadline, Link } from '@cbhq/cds-web/typography';
-
 Full-screen modals fill the entire screen and are used to contain actions that may require a series of steps to complete.
 
 <Image
-  light="/img/components/overlays/FullscreenModal/hero_light.png"
-  dark="/img/components/overlays/FullscreenModal/hero_dark.png"
+  srcLight="/img/components/overlays/FullscreenModal/hero_light.png"
+  srcDark="/img/components/overlays/FullscreenModal/hero_dark.png"
 />
 
 ## Usage
@@ -42,25 +37,31 @@ Primary content is where the core of the task or information should live. Second
 Once a layout is chosen, the primary content must remain in a consistent location through out the flow. For example, primary content should not be left-aligned on one step and then center-aligned on the next.
 
 <Collection>
-  <Item
-    img={{
-      light: '/img/components/overlays/FullscreenModal/layout1_light.png',
-      dark: '/img/components/overlays/FullscreenModal/layout1_dark.png',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/components/overlays/FullscreenModal/layout1_light.png"
+        srcDark="/img/components/overlays/FullscreenModal/layout1_dark.png"
+      />
+    }
     title="Primary and secondary content"
   />
-  <Item
-    img={{
-      light: '/img/components/overlays/FullscreenModal/layout2_light.png',
-      dark: '/img/components/overlays/FullscreenModal/layout2_dark.png',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/components/overlays/FullscreenModal/layout2_light.png"
+        srcDark="/img/components/overlays/FullscreenModal/layout2_dark.png"
+      />
+    }
     title="Primary content, secondary content off, left aligned"
   />
-  <Item
-    img={{
-      light: '/img/components/overlays/FullscreenModal/layout3_light.png',
-      dark: '/img/components/overlays/FullscreenModal/layout3_dark.png',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/components/overlays/FullscreenModal/layout3_light.png"
+        srcDark="/img/components/overlays/FullscreenModal/layout3_dark.png"
+      />
+    }
     title="Primary content centered"
   />
 </Collection>
@@ -70,8 +71,8 @@ Once a layout is chosen, the primary content must remain in a consistent locatio
 If multiple steps are being hosted in the full screen modal, CDS recommends that breadcrumbs, progress tracker, or a back button live above the primary content. Please note that CDS currently does not have breadcrumbs or a progress tracker and will need to be provided by the product team.
 
 <Image
-  light="/img/components/overlays/FullscreenModal/breadcrumbs_light.png"
-  dark="/img/components/overlays/FullscreenModal/breadcrumbs_dark.png"
+  srcLight="/img/components/overlays/FullscreenModal/breadcrumbs_light.png"
+  srcDark="/img/components/overlays/FullscreenModal/breadcrumbs_dark.png"
 />
 
 ### Cross-Platform
@@ -79,8 +80,8 @@ If multiple steps are being hosted in the full screen modal, CDS recommends that
 How headers translate across desktop and mobile.
 
 <Image
-  light="/img/components/overlays/FullscreenModal/headers_light.png"
-  dark="/img/components/overlays/FullscreenModal/headers_dark.png"
+  srcLight="/img/components/overlays/FullscreenModal/headers_light.png"
+  srcDark="/img/components/overlays/FullscreenModal/headers_dark.png"
 />
 
 ## Anatomy
@@ -88,8 +89,8 @@ How headers translate across desktop and mobile.
 ### Desktop
 
 <Image
-  light="/img/components/overlays/FullscreenModal/desktop_anatomy_light.png"
-  dark="/img/components/overlays/FullscreenModal/desktop_anatomy_dark.png"
+  srcLight="/img/components/overlays/FullscreenModal/desktop_anatomy_light.png"
+  srcDark="/img/components/overlays/FullscreenModal/desktop_anatomy_dark.png"
 />
 
 1. Container
@@ -103,8 +104,8 @@ How headers translate across desktop and mobile.
 ### Mobile
 
 <Image
-  light="/img/components/overlays/FullscreenModal/mobile_anatomy_light.png"
-  dark="/img/components/overlays/FullscreenModal/mobile_anatomy_dark.png"
+  srcLight="/img/components/overlays/FullscreenModal/mobile_anatomy_light.png"
+  srcDark="/img/components/overlays/FullscreenModal/mobile_anatomy_dark.png"
 />
 
 1. Container
@@ -117,8 +118,8 @@ How headers translate across desktop and mobile.
 ### Header
 
 <Image
-  light="/img/components/overlays/FullscreenModal/header_anatomy_light.png"
-  dark="/img/components/overlays/FullscreenModal/header_anatomy_dark.png"
+  srcLight="/img/components/overlays/FullscreenModal/header_anatomy_light.png"
+  srcDark="/img/components/overlays/FullscreenModal/header_anatomy_dark.png"
 />
 
 1. Start → logo → mandatory on desktop, optional on mobile
@@ -135,8 +136,8 @@ The logo is mandatory on the top left corner of the full screen modal on desktop
 ### Design specs
 
 <Image
-  light="/img/components/overlays/FullscreenModal/specs_light.png"
-  dark="/img/components/overlays/FullscreenModal/specs_dark.png"
+  srcLight="/img/components/overlays/FullscreenModal/specs_light.png"
+  srcDark="/img/components/overlays/FullscreenModal/specs_dark.png"
 />
 
 ### Breakpoints
@@ -144,8 +145,8 @@ The logo is mandatory on the top left corner of the full screen modal on desktop
 At this point in time, full screen modals will be following Retail's breaking points.
 
 <Image
-  light="/img/components/overlays/FullscreenModal/breakpoints_light.png"
-  dark="/img/components/overlays/FullscreenModal/breakpoints_dark.png"
+  srcLight="/img/components/overlays/FullscreenModal/breakpoints_light.png"
+  srcDark="/img/components/overlays/FullscreenModal/breakpoints_dark.png"
 />
 
 <Table bordered>
@@ -185,8 +186,8 @@ System errors that prevent the app from working can inform the user of the probl
 **Example:** User is blocked due to the app's inability to connect to the server, and must take action to acknowledge the error but it may not fix the system error.
 
 <Image
-  light="/img/components/overlays/FullscreenModal/error_light.png"
-  dark="/img/components/overlays/FullscreenModal/error_dark.png"
+  srcLight="/img/components/overlays/FullscreenModal/error_light.png"
+  srcDark="/img/components/overlays/FullscreenModal/error_dark.png"
 />
 
 <Table bordered>

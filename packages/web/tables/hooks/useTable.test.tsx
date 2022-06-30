@@ -1,13 +1,24 @@
+import '@testing-library/jest-dom';
+
 import { PropsWithChildren } from 'react';
+import { render } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { defaultCellSpacing } from '../context/TableContext';
+import { tableHeaderStaticClassName, tableStickyClassName } from '../styles/tableStyles';
 import { Table } from '../Table';
 import { TableBody } from '../TableBody';
+import { TableCell } from '../TableCell';
 import { TableFooter } from '../TableFooter';
 import { TableHeader } from '../TableHeader';
+import { TableRow } from '../TableRow';
 
-import { useTableCellSpacing, useTableCellTag, useTableSectionTag } from './useTable';
+import {
+  compactCellSpacing,
+  defaultCellSpacing,
+  useTableCellSpacing,
+  useTableCellTag,
+  useTableSectionTag,
+} from './useTable';
 
 const HOOK_ERROR = Error(
   'This component must be wrapped in a TableHeader, TableBody or TableFooter.',
@@ -95,5 +106,70 @@ describe('useTableTag', () => {
     const { result } = renderHook(() => useTableCellSpacing(), { wrapper });
 
     expect(result.current).toBe(defaultCellSpacing);
+  });
+
+  it('Get compact cell spacing', async () => {
+    const wrapper = ({ children }: PropsWithChildren<unknown>) => (
+      <Table compact>
+        <TableBody>{children}</TableBody>
+      </Table>
+    );
+    const { result } = renderHook(() => useTableCellSpacing(), { wrapper });
+
+    expect(result.current).toBe(compactCellSpacing);
+  });
+
+  it('TableHeader with sticky gets proper className', async () => {
+    const TEST_ID = 'table-header';
+
+    const { getByTestId } = render(
+      <Table>
+        <TableHeader sticky testID={TEST_ID}>
+          <TableRow>
+            <TableCell title="Header 1" />
+            <TableCell title="Header 2" />
+            <TableCell title="Header 3" />
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell title="Header 1" />
+            <TableCell title="Header 2" />
+            <TableCell title="Header 3" />
+          </TableRow>
+        </TableBody>
+      </Table>,
+    );
+
+    const tableHeader: HTMLElement | null = getByTestId(TEST_ID);
+    expect(tableHeader).toHaveClass(tableHeaderStaticClassName);
+    expect(tableHeader).toHaveClass(tableStickyClassName);
+  });
+
+  it('TableHeader without sticky gets proper className', async () => {
+    const TEST_ID = 'table-header';
+
+    const { getByTestId } = render(
+      <Table>
+        <TableHeader testID={TEST_ID}>
+          <TableRow>
+            <TableCell title="Header 1" />
+            <TableCell title="Header 2" />
+            <TableCell title="Header 3" />
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell title="Header 1" />
+            <TableCell title="Header 2" />
+            <TableCell title="Header 3" />
+          </TableRow>
+        </TableBody>
+      </Table>,
+    );
+
+    const tableHeader: HTMLElement | null = getByTestId(TEST_ID);
+    expect(tableHeader).toHaveClass(tableHeaderStaticClassName);
+    expect(tableHeader).not.toHaveClass(tableStickyClassName);
   });
 });

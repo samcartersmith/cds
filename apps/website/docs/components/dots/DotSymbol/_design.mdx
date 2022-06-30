@@ -1,9 +1,3 @@
-import { Image } from ':cds-website/components/Image';
-import { DoDont, DoExample, DontExample } from ':cds-website/components/DoDont';
-import { Divider, HStack } from '@cbhq/cds-web/layout';
-import { TextLabel2 } from '@cbhq/cds-web/typography';
-import { Collection, Item } from ':cds-website/components/Collection';
-
 # Dots
 
 **Dots are component adornments,** typically used to communicate a numerical value or indicate the status or identity of a component to the end-user.
@@ -32,20 +26,20 @@ Use of Dots should follow the rule of being meaningful, specific and discernible
 - Accompanies text that spells out its meaning in order to avoid making the end-user interpret the Dots intent.
 - Displays symbols to communicate an element's identity or attribute
   <DoDont spacingVertical={0}>
-    <DoExample img={{ src: '/img/components/dots/Do_01a.png' }}>
+    <DoExample media={<Image src="/img/components/dots/Do_01a.png" />}>
       Use Dot Count to communicate the count of notifications available to the end-user.
     </DoExample>
-    <DontExample img={{ src: '/img/components/dots/Dont_01b.png' }}>
+    <DontExample media={<Image src="/img/components/dots/Dont_01b.png" />}>
       This Dot does not communicate anything significant or meaningful. It is not clear what is the
       purpose of this Dot. And the use of Red, (a semantic color for a negative, a problem, a
       warning, a failure) further dilutes its purpose.
     </DontExample>
   </DoDont>
   <DoDont spacingVertical={0}>
-    <DoExample img={{ src: '/img/components/dots/Do_02a.png' }}>
+    <DoExample media={<Image src="/img/components/dots/Do_02a.png" />}>
       When applicable, do show the # of items.
     </DoExample>
-    <DontExample img={{ src: '/img/components/dots/Dont_02b.png' }}>
+    <DontExample media={<Image src="/img/components/dots/Dont_02b.png" />}>
       A dot next to text, Notifications, fails to communicate its purpose without displaying the
       count.
     </DontExample>
@@ -75,16 +69,8 @@ Dot Symbol comes in 4 sizes in Normal and Dense scales: Large, Medium, Small, Ex
 _Prime_
 
 <Collection spacingVertical={0}>
-  <Item
-    img={{
-      src: '/img/components/dots/Example_Dot_Symbol_04.png',
-    }}
-  />
-  <Item
-    img={{
-      src: '/img/components/dots/Example_Dot_Symbol_05.png',
-    }}
-  />
+  <CollectionItem media={<Image src="/img/components/dots/Example_Dot_Symbol_04.png" />} />
+  <CollectionItem media={<Image src="/img/components/dots/Example_Dot_Symbol_05.png" />} />
 </Collection>
 
 _Core Trade : DeFi_

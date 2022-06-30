@@ -5,19 +5,14 @@ hide_title: true
 hide_table_of_contents: true
 ---
 
-import { Image } from ':cds-website/components/Image';
-import { Table, TableHeader, TableBody, TableRow, TableCell } from '@cbhq/cds-web/tables';
-import { Box } from '@cbhq/cds-web/layout/Box';
-import { DoDont, DoExample, DontExample } from ':cds-website/components/DoDont';
-import { Collection, Item } from ':cds-website/components/Collection';
-
 # Creating and Maintaining Iconography
 
 <Box justifyContent="center" spacingTop={5}>
   <Image
-    light="/img/foundation/create_and_maintain/overview_light.png"
-    dark="/img/foundation/create_and_maintain/overview_dark.png"
-    options={{ maxWidth: '80%', maxHeight: '80%' }}
+    srcLight="/img/foundation/create_and_maintain/overview_light.png"
+    srcDark="/img/foundation/create_and_maintain/overview_dark.png"
+    maxWidth="80%"
+    maxHeight="80%"
   />
 </Box>
 
@@ -31,38 +26,47 @@ This guideline and contribution model is aimed for non-illustrators to create an
 
 When measuring the speed of comprehension of icons can be unpacked in three parts:
 
-<!-- |<Image light="/img/foundation/create_and_maintain/familiar_light.png" dark="/img/foundation/create_and_maintain/familiar_dark.png" options={{ maxWidth: "50%", maxHeight: "50%" }} />|<Image light="/img/foundation/create_and_maintain/meaningful_light.png" dark="/img/foundation/create_and_maintain/meaningful_dark.png" options={{ maxWidth: "50%", maxHeight: "50%" }}/>|<Image light="/img/foundation/create_and_maintain/complexity_light.png" dark="/img/foundation/create_and_maintain/complexity_dark.png" options={{ maxWidth: "50%", maxHeight: "50%" }}/>|
+<!-- |<Image srcLight="/img/foundation/create_and_maintain/familiar_light.png" srcDark="/img/foundation/create_and_maintain/familiar_dark.png" maxWidth="50%" maxHeight="50%" />|<Image srcLight="/img/foundation/create_and_maintain/meaningful_light.png" srcDark="/img/foundation/create_and_maintain/meaningful_dark.png" maxWidth="50%" maxHeight="50%" />|<Image srcLight="/img/foundation/create_and_maintain/complexity_light.png" srcDark="/img/foundation/create_and_maintain/complexity_dark.png" maxWidth="50%" maxHeight="50%" />|
 | ----------- | ----------- | ----------- |
 | **Familiarity** | **Meaningful**  | **Complexity** |
 | Has the user seen this symbol before?   | What is the role and meaning of this icon?       | Is the icon simple? | -->
 
 <Collection>
-  <Item
+  <CollectionItem
     title="Familiarity"
     description="Has the user seen this symbol before?"
-    img={{
-      light: '/img/foundation/create_and_maintain/familiar_light.png',
-      dark: '/img/foundation/create_and_maintain/familiar_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/familiar_light.png"
+        srcDark="/img/foundation/create_and_maintain/familiar_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Meaningful"
     description="What is the role and meaning of this icon?"
-    img={{
-      light: '/img/foundation/create_and_maintain/meaningful_light.png',
-      dark: '/img/foundation/create_and_maintain/meaningful_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/meaningful_light.png"
+        srcDark="/img/foundation/create_and_maintain/meaningful_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Complexity"
     description="Is the icon simple?"
-    img={{
-      light: '/img/foundation/create_and_maintain/complexity_light.png',
-      dark: '/img/foundation/create_and_maintain/complexity_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/complexity_light.png"
+        srcDark="/img/foundation/create_and_maintain/complexity_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
@@ -81,40 +85,47 @@ When making icons, you need to create them for all sizes to contribute back to C
 Here are some tips that have been helpful with creating icons:
 
 <Collection>
-  <Item
+  <CollectionItem
     title="Turning on the grid at 1px will help snap elements into place."
     description="In this example, the ‘protection’ icon fits perfectly onto the grid system."
-    img={{
-      light: '/img/foundation/create_and_maintain/1px_grid_light.png',
-      dark: '/img/foundation/create_and_maintain/1px_grid_dark.png',
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/1px_grid_light.png"
+        srcDark="/img/foundation/create_and_maintain/1px_grid_dark.png"
+      />
+    }
   />
 </Collection>
 
 <span>&nbsp;</span>
 
 <Collection>
-  <Item
+  <CollectionItem
     title="Putting icons into context screens will give you a sense check if it works well with other icons or within the UI."
     description="This example shows the Navigation icons in a contextual screen for the web."
-    img={{
-      light: '/img/foundation/create_and_maintain/contextisking_light.png',
-      dark: '/img/foundation/create_and_maintain/contextisking_dark.png',
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/contextisking_light.png"
+        srcDark="/img/foundation/create_and_maintain/contextisking_dark.png"
+      />
+    }
   />
 </Collection>
 
 <span>&nbsp;</span>
 
 <Collection>
-  <Item
+  <CollectionItem
     title="User test if possible, even if it's just one icon. It is incredibly insightful to how users interact and perceive an icon.*"
     description="We did a user test with these 4 icons for the ‘For You’ page for Navigation in the example above. The most successful and recognizable icon for this page was the 4th icon. It was simple and the most familiar to users. "
-    img={{
-      light: '/img/foundation/create_and_maintain/usertesting_light.png',
-      dark: '/img/foundation/create_and_maintain/usertesting_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/usertesting_light.png"
+        srcDark="/img/foundation/create_and_maintain/usertesting_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
@@ -123,50 +134,65 @@ Here are some tips that have been helpful with creating icons:
 Coinbase’s product iconography can be broken down into these elements.
 
 <Collection>
-  <Item
+  <CollectionItem
     title="Pixel Grid"
     description="By using the grid, it helps the icon look crisp and clear on mobile and web."
-    img={{
-      light: '/img/foundation/create_and_maintain/pixelgrid_light.png',
-      dark: '/img/foundation/create_and_maintain/pixelgrid_dark.png',
-      options: { maxWidth: '70%', maxHeight: '70%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/pixelgrid_light.png"
+        srcDark="/img/foundation/create_and_maintain/pixelgrid_dark.png"
+        maxWidth="70%"
+        maxHeight="70%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Key shapes"
     description="The basic shapes that give guidance to how our icons are made."
-    img={{
-      light: '/img/foundation/create_and_maintain/keyshapes_light.png',
-      dark: '/img/foundation/create_and_maintain/keyshapes_dark.png',
-      options: { maxWidth: '70%', maxHeight: '70%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/keyshapes_light.png"
+        srcDark="/img/foundation/create_and_maintain/keyshapes_dark.png"
+        maxWidth="70%"
+        maxHeight="70%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Safe area / Trim area "
     description="Inside of the safe area is where the content should live."
-    img={{
-      light: '/img/foundation/create_and_maintain/safearea_light.png',
-      dark: '/img/foundation/create_and_maintain/safearea_dark.png',
-      options: { maxWidth: '70%', maxHeight: '70%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/safearea_light.png"
+        srcDark="/img/foundation/create_and_maintain/safearea_dark.png"
+        maxWidth="70%"
+        maxHeight="70%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Diagonals"
     description="These give guidance to any diagonal related icons that we create."
-    img={{
-      light: '/img/foundation/create_and_maintain/diagonals_light.png',
-      dark: '/img/foundation/create_and_maintain/diagonals_dark.png',
-      options: { maxWidth: '70%', maxHeight: '70%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/diagonals_light.png"
+        srcDark="/img/foundation/create_and_maintain/diagonals_dark.png"
+        maxWidth="70%"
+        maxHeight="70%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Everything"
     description="When you combine these elements, it creates the Coinbase product icon anatomy."
-    img={{
-      light: '/img/foundation/create_and_maintain/anatomy_light.png',
-      dark: '/img/foundation/create_and_maintain/anatomy_dark.png',
-      options: { maxWidth: '70%', maxHeight: '70%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/anatomy_light.png"
+        srcDark="/img/foundation/create_and_maintain/anatomy_dark.png"
+        maxWidth="70%"
+        maxHeight="70%"
+      />
+    }
   />
 </Collection>
 
@@ -175,32 +201,41 @@ Coinbase’s product iconography can be broken down into these elements.
 We illustrate icons at 3 sizes:
 
 <Collection>
-  <Item
+  <CollectionItem
     title="Medium (M)"
     description="24px"
-    img={{
-      light: '/img/foundation/create_and_maintain/grid_large_light.png',
-      dark: '/img/foundation/create_and_maintain/grid_large_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/grid_large_light.png"
+        srcDark="/img/foundation/create_and_maintain/grid_large_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Small (S)"
     description="16px"
-    img={{
-      light: '/img/foundation/create_and_maintain/grid_medium_light.png',
-      dark: '/img/foundation/create_and_maintain/grid_medium_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/grid_medium_light.png"
+        srcDark="/img/foundation/create_and_maintain/grid_medium_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Extra Small (XS)"
     description="12px"
-    img={{
-      light: '/img/foundation/create_and_maintain/grid_small_light.png',
-      dark: '/img/foundation/create_and_maintain/grid_small_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/grid_small_light.png"
+        srcDark="/img/foundation/create_and_maintain/grid_small_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
@@ -213,74 +248,98 @@ We illustrate icons at 3 sizes:
 The keyline shapes provide visual consistency across product iconography. We recommend using these shapes whenever possible.
 
 <Collection>
-  <Item
+  <CollectionItem
     title="Square"
-    img={{
-      light: '/img/foundation/create_and_maintain/keyline_square_light.png',
-      dark: '/img/foundation/create_and_maintain/keyline_square_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/keyline_square_light.png"
+        srcDark="/img/foundation/create_and_maintain/keyline_square_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Circle"
-    img={{
-      light: '/img/foundation/create_and_maintain/keyline_circle_light.png',
-      dark: '/img/foundation/create_and_maintain/keyline_circle_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/keyline_circle_light.png"
+        srcDark="/img/foundation/create_and_maintain/keyline_circle_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Portrait"
-    img={{
-      light: '/img/foundation/create_and_maintain/keyline_portrait_light.png',
-      dark: '/img/foundation/create_and_maintain/keyline_portrait_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/keyline_portrait_light.png"
+        srcDark="/img/foundation/create_and_maintain/keyline_portrait_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Landscape"
-    img={{
-      light: '/img/foundation/create_and_maintain/keyline_landscape_light.png',
-      dark: '/img/foundation/create_and_maintain/keyline_landscape_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/keyline_landscape_light.png"
+        srcDark="/img/foundation/create_and_maintain/keyline_landscape_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
 <span>&nbsp;</span>
 
 <Collection>
-  <Item
+  <CollectionItem
     title="Square"
-    img={{
-      light: '/img/foundation/create_and_maintain/square_example_light.png',
-      dark: '/img/foundation/create_and_maintain/square_example_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/square_example_light.png"
+        srcDark="/img/foundation/create_and_maintain/square_example_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Circle"
-    img={{
-      light: '/img/foundation/create_and_maintain/circle_example_light.png',
-      dark: '/img/foundation/create_and_maintain/circle_example_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/circle_example_light.png"
+        srcDark="/img/foundation/create_and_maintain/circle_example_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Portrait"
-    img={{
-      light: '/img/foundation/create_and_maintain/portrait_example_light.png',
-      dark: '/img/foundation/create_and_maintain/portrait_example_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/portrait_example_light.png"
+        srcDark="/img/foundation/create_and_maintain/portrait_example_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     title="Landscape"
-    img={{
-      light: '/img/foundation/create_and_maintain/landscape_example_light.png',
-      dark: '/img/foundation/create_and_maintain/landscape_example_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/landscape_example_light.png"
+        srcDark="/img/foundation/create_and_maintain/landscape_example_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
@@ -291,13 +350,16 @@ With each size of the icon, it's essential to align to the pixel grid (the actio
 You can turn on the Pixel Grid tool on Figma (⌘’).
 
 <Collection>
-  <Item
+  <CollectionItem
     description="When you use the grid system, you can see how the icon fits within the grid and how it all snaps into place.  "
-    img={{
-      light: '/img/foundation/create_and_maintain/pixelfit_light.png',
-      dark: '/img/foundation/create_and_maintain/pixelfit_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/pixelfit_light.png"
+        srcDark="/img/foundation/create_and_maintain/pixelfit_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
@@ -313,13 +375,16 @@ The choice to use diagonals comes down to two things:
 We also gravitate towards the use of the diagonal to be on the left.
 
 <Collection>
-  <Item
+  <CollectionItem
     description="‘Fullscreen’, ‘Tag’, and ‘Pin’ are some of our best examples in using diagonals."
-    img={{
-      light: '/img/foundation/create_and_maintain/diagonals_example_light.png',
-      dark: '/img/foundation/create_and_maintain/diagonals_example_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/diagonals_example_light.png"
+        srcDark="/img/foundation/create_and_maintain/diagonals_example_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
@@ -332,13 +397,16 @@ Our core product iconography style is sharp and bold, always aiming for clarity 
 We default our icons to be filled with light use of linework unless you are creating in-active and active icons.
 
 <Collection>
-  <Item
+  <CollectionItem
     description="We always aim for our icons to be solid / filled with touches of outline when needed."
-    img={{
-      light: '/img/foundation/create_and_maintain/solid_light.png',
-      dark: '/img/foundation/create_and_maintain/solid_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/solid_light.png"
+        srcDark="/img/foundation/create_and_maintain/solid_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
@@ -347,13 +415,16 @@ We default our icons to be filled with light use of linework unless you are crea
 We do allow linework / strokes; we have to know when and where we use it. At times we use linework to have the appearance of something that is “filled” or “solid”.
 
 <Collection>
-  <Item
+  <CollectionItem
     description="‘SoundOn’, ‘Airdrop’, ‘Clock’, etc are great examples of using linework that have the appearance of being filled, it feels naturally part of the icon. "
-    img={{
-      light: '/img/foundation/create_and_maintain/lineworkfilled_example_light.png',
-      dark: '/img/foundation/create_and_maintain/lineworkfilled_example_dark.pngg',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/lineworkfilled_example_light.png"
+        srcDark="/img/foundation/create_and_maintain/lineworkfilled_example_dark.pngg"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
@@ -362,13 +433,16 @@ We do allow linework / strokes; we have to know when and where we use it. At tim
 We also use linework because of the nature of the icon. At times the universal symbolism of the icon can’t have a filled / solid look and feel.
 
 <Collection>
-  <Item
+  <CollectionItem
     description="Our graphs, ‘Search’, and ‘Filter’ icon use linework because of the nature of it’s universal symbolism."
-    img={{
-      light: '/img/foundation/create_and_maintain/linework_example_light.png',
-      dark: '/img/foundation/create_and_maintain/linework_example_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/linework_example_light.png"
+        srcDark="/img/foundation/create_and_maintain/linework_example_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
@@ -387,13 +461,16 @@ When using linework within the icons, the guide goes as follows:
 In some use cases, we require some icons to have an ‘active’ and ‘inactive’ state meaning a filled (solid) and unfilled (outline) icon. It implies when something is switched on or off within the experience.
 
 <Collection>
-  <Item
+  <CollectionItem
     description="Examples of 'inactive' and 'active' icons are ‘bookmark/unbookmark’, ‘heart/unheart’ and ‘favorite/unfavorite’. "
-    img={{
-      light: '/img/foundation/create_and_maintain/activeinactive_light.png',
-      dark: '/img/foundation/create_and_maintain/activeinactive_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/activeinactive_light.png"
+        srcDark="/img/foundation/create_and_maintain/activeinactive_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
@@ -406,13 +483,16 @@ As we scale down each icon, the details are stripped back, and as we scale up, m
 If we don’t consider these efforts, we begin to lose visual comprehension of these icons. Scaling is essential to the iconography creation process.
 
 <Collection>
-  <Item
+  <CollectionItem
     description="The ‘NFT’ icon is a great example that showcases stripping back as we scale down, and adding details as we scale up. It’s important to allow the icon to still be recognizable and readable at all sizes."
-    img={{
-      light: '/img/foundation/create_and_maintain/scaling_light.png',
-      dark: '/img/foundation/create_and_maintain/scaling_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/scaling_light.png"
+        srcDark="/img/foundation/create_and_maintain/scaling_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
@@ -421,13 +501,16 @@ If we don’t consider these efforts, we begin to lose visual comprehension of t
 Icons are simple and should tell a singular concept. By removing the distracting details, we can focus on the most crucial part of the icon.
 
 <Collection>
-  <Item
+  <CollectionItem
     description="The ‘lightbulb’ icon (part of our Navigation Icon speciality set), was stripped back significantly in the design phase. We still wanted to keep the characteristic cue which was the bulb part of the icon to hold that quick visual comprehension."
-    img={{
-      light: '/img/foundation/create_and_maintain/simple_light.png',
-      dark: '/img/foundation/create_and_maintain/simple_dark.png',
-      options: { maxWidth: '80%', maxHeight: '80%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/simple_light.png"
+        srcDark="/img/foundation/create_and_maintain/simple_dark.png"
+        maxWidth="80%"
+        maxHeight="80%"
+      />
+    }
   />
 </Collection>
 
@@ -436,29 +519,38 @@ Icons are simple and should tell a singular concept. By removing the distracting
 As our principles mention, we draw from universal symbolism; first, this is closely tied with drawing with icon characteristic cues. It is how we can connect and identify with icons visually. If these cues are missing or hard to notice, the cognitive load lessens. It is important to draw these cues and make them intentional when drawing icons.
 
 <Collection>
-  <Item
+  <CollectionItem
     description="The ‘chatbubble’ characteristic cue is the tail of the bubble. "
-    img={{
-      light: '/img/foundation/create_and_maintain/chatbubble_light.png',
-      dark: '/img/foundation/create_and_maintain/chatbubble_dark.png',
-      options: { maxWidth: '50%', maxHeight: '50%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/chatbubble_light.png"
+        srcDark="/img/foundation/create_and_maintain/chatbubble_dark.png"
+        maxWidth="50%"
+        maxHeight="50%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     description="The ‘lock’ characteristic cue is the keyhole."
-    img={{
-      light: '/img/foundation/create_and_maintain/lock_light.png',
-      dark: '/img/foundation/create_and_maintain/lock_dark.png',
-      options: { maxWidth: '50%', maxHeight: '50%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/lock_light.png"
+        srcDark="/img/foundation/create_and_maintain/lock_dark.png"
+        maxWidth="50%"
+        maxHeight="50%"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     description="The ‘gear’ characteristic cue are the cog teeth."
-    img={{
-      light: '/img/foundation/create_and_maintain/gear_light.png',
-      dark: '/img/foundation/create_and_maintain/gear_dark.png',
-      options: { maxWidth: '50%', maxHeight: '50%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/gear_light.png"
+        srcDark="/img/foundation/create_and_maintain/gear_dark.png"
+        maxWidth="50%"
+        maxHeight="50%"
+      />
+    }
   />
 </Collection>
 
@@ -472,21 +564,27 @@ When there is a key geometric shape, the icon should be aligned to the shape's c
 
 <DoDont>
   <DoExample
-    img={{
-      light: '/img/foundation/create_and_maintain/opticalweight_do_light.png',
-      dark: '/img/foundation/create_and_maintain/opticalweight_do_dark.png',
-      options: { maxWidth: '50%', maxHeight: '50%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/opticalweight_do_light.png"
+        srcDark="/img/foundation/create_and_maintain/opticalweight_do_dark.png"
+        maxWidth="50%"
+        maxHeight="50%"
+      />
+    }
   >
     Center with the core shape of the icon. For the ‘Refresh’ icon, the core shape is the circle, so
     align center-wise with that to the grid.
   </DoExample>
   <DontExample
-    img={{
-      light: '/img/foundation/create_and_maintain/opticalweight_dont_light.png',
-      dark: '/img/foundation/create_and_maintain/opticalweight_dont_dark.png',
-      options: { maxWidth: '50%', maxHeight: '50%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/opticalweight_dont_light.png"
+        srcDark="/img/foundation/create_and_maintain/opticalweight_dont_dark.png"
+        maxWidth="50%"
+        maxHeight="50%"
+      />
+    }
   >
     Avoid centering with the overall icon, it will lean towards one side.
   </DontExample>
@@ -498,20 +596,26 @@ When an icon is unevenly weighted on one side, it can feel like it is not center
 
 <DoDont>
   <DoExample
-    img={{
-      light: '/img/foundation/create_and_maintain/opticalalignment_do_light.png',
-      dark: '/img/foundation/create_and_maintain/opticalalignment_do_dark.png',
-      options: { maxWidth: '50%', maxHeight: '50%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/opticalalignment_do_light.png"
+        srcDark="/img/foundation/create_and_maintain/opticalalignment_do_dark.png"
+        maxWidth="50%"
+        maxHeight="50%"
+      />
+    }
   >
     Once you see the ‘Play’ icon touching the edge of the circle it appears more optically aligned.
   </DoExample>
   <DontExample
-    img={{
-      light: '/img/foundation/create_and_maintain/opticalalignment_dont_light.png',
-      dark: '/img/foundation/create_and_maintain/opticalalignment_dont_dark.png',
-      options: { maxWidth: '50%', maxHeight: '50%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/opticalalignment_dont_light.png"
+        srcDark="/img/foundation/create_and_maintain/opticalalignment_dont_dark.png"
+        maxWidth="50%"
+        maxHeight="50%"
+      />
+    }
   >
     When you center the icon within the grid, without the circle, it feels heavy on left side.
   </DontExample>
@@ -527,21 +631,27 @@ Compare and contrast with the other icons in our library. There should be an opt
 
 <DoDont>
   <DoExample
-    img={{
-      light: '/img/foundation/create_and_maintain/balance_do_light.png',
-      dark: '/img/foundation/create_and_maintain/balance_do_dark.png',
-      options: { maxWidth: '50%', maxHeight: '50%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/balance_do_light.png"
+        srcDark="/img/foundation/create_and_maintain/balance_do_dark.png"
+        maxWidth="50%"
+        maxHeight="50%"
+      />
+    }
   >
     Added the detail inside of the ‘Fire’ icon, so it still felt like it was part of the larger icon
     language.
   </DoExample>
   <DontExample
-    img={{
-      light: '/img/foundation/create_and_maintain/balance_dont_light.png',
-      dark: '/img/foundation/create_and_maintain/balance_dont_dark.png',
-      options: { maxWidth: '50%', maxHeight: '50%' },
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/create_and_maintain/balance_dont_light.png"
+        srcDark="/img/foundation/create_and_maintain/balance_dont_dark.png"
+        maxWidth="50%"
+        maxHeight="50%"
+      />
+    }
   >
     When the ‘Fire’ icon was filled it felt too visually heavy amongst the rest of the icon library.
   </DontExample>

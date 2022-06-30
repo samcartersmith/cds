@@ -4,7 +4,7 @@ import { LayoutRectangle } from 'react-native';
 import { useDimensions } from '../../../hooks/useDimensions';
 import { SubjectLayout } from '../TooltipProps';
 
-const galaxyScreenDimensions: ReturnType<typeof useDimensions> = {
+export const galaxyScreenDimensions: ReturnType<typeof useDimensions> = {
   screenHeight: 779.3777777777777,
   screenWidth: 384,
   statusBarHeight: 25.955554962158203,

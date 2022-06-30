@@ -41,6 +41,12 @@ function ToastExample() {
 
     const handleTextOnly = () => toast.show(toastText, { hideCloseButton: true });
 
+    const handleBottomOffset = () => {
+      toast.show('Toast copy', {
+        bottomOffset: 100,
+      });
+    };
+
     return (
       <>
         <Box spacingBottom={3}>
@@ -56,6 +62,7 @@ function ToastExample() {
           <Button onPress={handleNoAction}>No Action</Button>
           <Button onPress={handleNoClose}>No Close</Button>
           <Button onPress={handleTextOnly}>Text Only</Button>
+          <Button onPress={handleBottomOffset}>Bottom Offset</Button>
         </HStack>
       </>
     );

@@ -1,10 +1,5 @@
-import { DocImage } from ':cds-website/components/DocImage';
 import { Principles } from ':cds-website/components/Principles';
-import { Collection, Item } from ':cds-website/components/Collection';
-import { HStack } from '@cbhq/cds-web/layout/HStack';
-import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { Pictogram } from '@cbhq/cds-web/illustrations';
-import { TextBody, TextTitle3 } from '@cbhq/cds-web/typography';
 
 ### Principles
 
@@ -22,7 +17,10 @@ import { TextBody, TextTitle3 } from '@cbhq/cds-web/typography';
 
 ### Anatomy
 
-<DocImage component="Select" name="anatomy" format="png" />
+<Image
+  srcLight="/img/components/Select/anatomy_light.png"
+  srcDark="/img/components/Select/anatomy_dark.png"
+/>
 
 1. **Select Input**: Tapping or clicking on the Input will trigger the [Popover Menu](/components/popover-menu) for Web or [Tray](/components/tray) for Mobile.
 2. **Popover Menu**: When triggered, a list of options will appear.
@@ -33,23 +31,27 @@ import { TextBody, TextTitle3 } from '@cbhq/cds-web/typography';
 The expanded state of Select differs based on platform. The collapsed state should be the same regardless of platform.
 
 <Collection>
-  <Item
+  <CollectionItem
     textAlign="left"
-    vid={{
-      light: '/img/components/Select/web_light.mp4',
-      dark: '/img/components/Select/web_dark.mp4',
-      options: { autoPlay: true, controls: false },
-    }}
+    media={
+      <Video
+        srcLight="/img/components/Select/web_light.mp4"
+        srcDark="/img/components/Select/web_dark.mp4"
+        autoPlay
+      />
+    }
     title="Web"
     description="On Web, the expanded state will reveal a Popover Menu that appears directly under the Select."
   />
-  <Item
+  <CollectionItem
     textAlign="left"
-    vid={{
-      light: '/img/components/Select/mobile_light.mp4',
-      dark: '/img/components/Select/mobile_dark.mp4',
-      options: { autoPlay: true, controls: false },
-    }}
+    media={
+      <Video
+        srcLight="/img/components/Select/mobile_light.mp4"
+        srcDark="/img/components/Select/mobile_dark.mp4"
+        autoPlay
+      />
+    }
     title="Mobile"
     description="On Mobile, the expanded state will trigger a Background Overlay and Tray that animates  from the bottom of the screen."
   />
@@ -61,7 +63,10 @@ The expanded state of Select differs based on platform. The collapsed state shou
 
 Place this component in line with other form and control components. Use Spacing 3 when stacking form elements.
 
-<DocImage component="Select" name="position" format="png" />
+<Image
+  srcLight="/img/components/Select/position_light.png"
+  srcDark="/img/components/Select/position_dark.png"
+/>
 
 #### Scrolling
 
@@ -77,13 +82,15 @@ There are two states of Select: collapsed and expanded.
 - A check mark icon placed on the right of the list item indicates which value is currently selected.
 - Tapping an option in the list of values closes the Select Menu and populates the input with the new value, collapsing the Select to its default state.
 
-<Item
+<CollectionItem
   flexGrow={1}
-  vid={{
-    light: '/img/components/Select/interaction_web_light.mp4',
-    dark: '/img/components/Select/interaction_web_dark.mp4',
-    options: { autoPlay: true, controls: false },
-  }}
+  media={
+    <Video
+      srcLight="/img/components/Select/interaction_web_light.mp4"
+      srcDark="/img/components/Select/interaction_web_dark.mp4"
+      autoPlay
+    />
+  }
 />
 
 ### Content

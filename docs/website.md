@@ -14,12 +14,6 @@ As you implement CDS components it will be expected that you will contribute to 
 yarn website start
 ```
 
-`starts.all` - starts local development server and watches plugins
-
-```console
-yarn website start.all
-```
-
 ## Build
 
 ```console
@@ -85,8 +79,7 @@ module.exports = {
 
 ## Step 2. Start website
 
-- Run `yarn website start` to start website
-- Run `yarn website start.all` to run website and watch plugins if you plan to update any of the plugins source code used in website.
+- Run `yarn website start` to start the website and watch plugins.
 - You will now have access to the API data for components in docgen.config.js.
 
 ## Step 3. Create mdx files
@@ -201,6 +194,14 @@ import Implementation, { toc as implementationToc } from './_implementation.mdx'
 
 ```
 
+### Adding additional partials
+
+Partials at tab level - If you compose your design or implementation tab content using additional partials, don't forget to import in the `toc` from the partial and spread into the TabItem's `toc` prop. The order matters here so the order the items are spread should reflect the order the partials are rendered on the page.
+
+Partials within partials - There's really no good way to handle this at the moment, but one workaround would be to export a toc const with a new name, like `export const customToc = [...toc, ...someOtherPartialToc];`. Unfortunately, since the toc within a partial is a const, you can't override that value and would have to choose a new const name which does not collide with `toc` when exporting.
+
+The Table of Contents section below has more details about why this is necessary.
+
 ## Step 4. Update sidbear
 
 Add doc to [sidbar.config.js](../apps/website/sidebar.config.js)
@@ -261,10 +262,47 @@ For adding new imports, simply import in the same file and add it to the `ReactL
 
 # Sidebar
 
+## Component docs
+
+Our component folder structure no longer reflects the sidebar structure we want to display to users.
+
+Until we update our docs directory structure to match our sidebar structure, we will have to explicitly define each sidebar item in order for it to appear on the website. This will not happen automatically.
+
+## Organization
+
+Most component docs are at the root of the "Components" category, however, there are some components where it makes more sense to bucket them under a family or some base component. For example, RemoteImageGroup is a child of the RemoteImage category. As our library grows, going completely flat is going to get too overwhelming.
+
+Here are some questions to consider when planning:
+
+- How independent/standalone is this component?
+- Does this component's existence dependent on anothers? (i.e. InputIcon or AccordionItem)
+- Are there any hooks or subcomponents that are specific to this component?
+
+You should work with your design partner to align on _both_ naming/api proposals, and also where the component will live on the website. It's often during these conversations that you might reconsider the component name entirely.
+
+## Sorting
+
+Within each category they follow varying degrees of sorting, but if we were to define some logic it would be:
+
+- Content progression/importance takes priority
+  - For example, Getting started is first under foundations.
+- Then alphabetize
+  - Each added item or category should be alphabetized unless the doc is somewhat supplementary info.
+  - For example, under Illustrations we put the component doc pages and then any additional.
+- Then any supplementary content (this can vary depending on content also)
+
+## Adding content other than component docs
+
+The categories we currently have were purposfally organized in this way and we want to be more purposeful of any changes to this organization moving forward.
+
+Please do not add new categories/re-organize the main sections without talking with leads first.
+
 ## Hide page from sidebar
 
+As mentioned above, no component docs will show up unless explicitly added in this config.
+
 - Option 1: Exclude from [sidebar.config.js](../apps/website/sidebar.config.js)
-- Option 2: Add `draft: true` to doc's frontmatter
+- Option 2: Add `hidden: true` to the customProps of sidebar item.
 
 # Plugins
 

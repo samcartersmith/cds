@@ -20,7 +20,7 @@ export default {
       href: '/cds/getting-started',
     },
   ],
-  focusAreas: [
+  categories: [
     {
       title: 'Assets',
       description: 'Illustration, icons, and logos for building immersive experiences',
@@ -50,7 +50,7 @@ export default {
       href: '/recipes/app-switcher',
     },
   ],
-  categories: [
+  focusAreas: [
     {
       type: 'category',
       label: 'Our Q2 Focus Areas',

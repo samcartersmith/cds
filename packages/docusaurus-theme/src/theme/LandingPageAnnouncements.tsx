@@ -1,20 +1,20 @@
-import React, { memo } from 'react';
-import LandingPageAnnouncementItem from '@theme/LandingPageAnnouncementItem';
-import type { LandingPageAnnouncementsProps } from '@theme/LandingPageAnnouncements';
+import React, { memo, useCallback } from 'react';
+import type {
+  ContentfulAnnouncements,
+  LandingPageAnnouncementsProps,
+} from '@theme/LandingPageAnnouncements';
+import ScrollSnapCarousel from '@theme/ScrollSnapCarousel';
+import { CMSContent } from '@cb/cms';
 
 const LandingPageAnnouncements = memo(function LandingPageAnnouncements({
   announcements,
 }: LandingPageAnnouncementsProps) {
-  if (announcements) {
-    return (
-      <>
-        {announcements.map((item) => (
-          <LandingPageAnnouncementItem key={item.title} {...item} />
-        ))}
-      </>
-    );
-  }
-  return null;
+  const renderCards = useCallback(
+    (cards) => <CMSContent content={cards as ContentfulAnnouncements} />,
+    [],
+  );
+
+  return <ScrollSnapCarousel cards={announcements} renderCards={renderCards} />;
 });
 
 export default LandingPageAnnouncements;

@@ -1,8 +1,12 @@
+Most likely you'd want to extract your Modal into a separate component.
+You can do that by adding a `visible: boolean` and `onDidClose: () => void` prop to your extracted component and pass through those props to `Modal`.
+See example below:
+
 ```jsx live
 function PortalModalExample() {
-  function ExtractedModal({ visible, closeModal }) {
+  function ExtractedModal({ visible, closeModal, onDidClose }) {
     return (
-      <Modal visible={visible} onRequestClose={closeModal}>
+      <Modal visible={visible} onRequestClose={closeModal} onDidClose={onDidClose}>
         <ModalHeader title="Basic Modal" />
         <ModalBody>
           <TextBody as="p">{loremIpsum}</TextBody>

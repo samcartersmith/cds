@@ -1,14 +1,23 @@
 import React, { memo, useMemo } from 'react';
-import { css } from 'linaria';
-import { isProduction } from '@cbhq/cds-utils';
+import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Cell, truncateClassName } from '../cells/Cell';
 import { HStack, VStack } from '../layout';
 import { TextBody, TextHeadline, TextLabel2 } from '../typography';
 import { cx } from '../utils/linaria';
 
-import { useTableCellSpacing, useTableCellTag, useTableSectionTag } from './hooks/useTable';
-import { tableCell, tableFooterCell, tableHeaderCell } from './styles/tableCellStyles';
+import {
+  useTableCellSpacing,
+  useTableCellTag,
+  useTableContext,
+  useTableSectionTag,
+} from './hooks/useTable';
+import {
+  tableCell,
+  tableFooterCell,
+  tableHeaderCell,
+  tableOverflowWidth,
+} from './styles/tableCellStyles';
 import { TableCellProps } from './types/tableCellTypes';
 
 export type { TableCellProps } from './types/tableCellTypes';
@@ -17,7 +26,7 @@ export const TableCell = memo(
     alignItems,
     children,
     colSpan = 1,
-    color,
+    color = 'currentColor',
     direction = 'vertical',
     end,
     justifyContent,
@@ -34,52 +43,98 @@ export const TableCell = memo(
     width,
     innerSpacing,
     outerSpacing,
+    responsiveConfig,
     ...props
   }: TableCellProps) => {
-    const tableSectionType = useTableSectionTag();
-    const tableCellSpacing = useTableCellSpacing();
-    const TableCellComponent = useTableCellTag();
-    const isInBody = tableSectionType === 'tbody';
-    const TextComponent = TableCellComponent === 'th' ? TextHeadline : TextBody;
-    const Stack = direction === 'vertical' ? VStack : HStack;
-
-    // Setup alignment
-    const defaultAlignItems = direction === 'vertical' ? 'flex-start' : 'center';
-    const smartAlignItems = alignItems ?? defaultAlignItems;
-    // Setup justification
-    const defaultJustifyContent = direction === 'vertical' ? 'flex-start' : 'space-between';
-    const smartJustifyContent = justifyContent ?? defaultJustifyContent;
-    // Setup default text colors
-    const defaultTitleColor = isInBody ? 'foreground' : 'foregroundMuted';
-    const smartTitleColor = titleColor ?? color ?? defaultTitleColor;
-    const shouldHandleOverflow = !!overflow && !width;
-
-    if (!isProduction()) {
+    // THROW WANRING IN DEVELOPMENT
+    if (isDevelopment()) {
       if (children && (title || subtitle)) {
         throw new Error('TableCell: Cannot use `title` or `subtitle` with `children`.');
       }
     }
 
-    // Required to handle truncation - this looks whack, but
-    // the table behavior will override this. We use `width`
-    // to explicitly define a table columns width
-    const overflowWidth = css`
-      max-width: 0;
-    `;
+    /**
+     * ===================================================
+     * SIMPLE PROP DRIVEN VARIABLES
+     * These variables get their default value from
+     * component props, which are memoized
+     * ===================================================
+     */
+    const stackClassName = overflow ? truncateClassName : undefined;
+    const defaultJustifyContent = direction === 'vertical' ? 'flex-start' : 'space-between';
+    const defaultAlignItems = direction === 'vertical' ? 'flex-start' : 'center';
+    const shouldHandleOverflow = !!overflow && !width;
 
-    const inlineStyles = useMemo(
-      () => ({
-        width,
-        maxWidth: width,
-      }),
-      [width],
+    /**
+     * ===================================================
+     * CONDITIONALS COMPONENTS
+     * These variables get their default value from a hook
+     * so need to be memoized and computed here
+     * ===================================================
+     */
+    const TableCellComponent = useTableCellTag();
+    const Stack = useMemo(() => (direction === 'vertical' ? VStack : HStack), [direction]);
+    const TextComponent = useMemo(
+      () => (TableCellComponent === 'th' ? TextHeadline : TextBody),
+      [TableCellComponent],
     );
 
+    /**
+     * ===================================================
+     * CONDITIONALS VARIABLES
+     * These variables get their default value from a hook
+     * so need to be memoized and computed here
+     * ===================================================
+     */
+    // Depending on compact value
+    const { compact } = useTableContext();
+    const textSpacingTop = useMemo(() => (!compact && title ? 0.5 : 0), [compact, title]);
+    const cellGap = useMemo(() => (compact ? 0.5 : 1), [compact]);
+
+    // Depends on tableSectionType value
+    const tableSectionType = useTableSectionTag();
+    const isInBody = useMemo(() => tableSectionType === 'tbody', [tableSectionType]);
+    const defaultTitleColor = useMemo(
+      () => (isInBody ? 'foreground' : 'foregroundMuted'),
+      [isInBody],
+    );
+    const smartTitleColor = useMemo(
+      () => titleColor ?? color ?? defaultTitleColor,
+      [color, defaultTitleColor, titleColor],
+    );
+
+    // Depends on tableSpacing value
+    const tableCellSpacing = useTableCellSpacing();
+    const cellOuterSpacing = useMemo(
+      () => outerSpacing ?? tableCellSpacing?.outer,
+      [outerSpacing, tableCellSpacing?.outer],
+    );
+    const cellInnerSpacing = useMemo(
+      () => innerSpacing ?? tableCellSpacing?.inner,
+      [innerSpacing, tableCellSpacing?.inner],
+    );
+
+    // Depends on prop infered variables
+    const smartAlignItems = useMemo(
+      () => alignItems ?? defaultAlignItems,
+      [alignItems, defaultAlignItems],
+    );
+    const smartJustifyContent = useMemo(
+      () => justifyContent ?? defaultJustifyContent,
+      [defaultJustifyContent, justifyContent],
+    );
+
+    /**
+     * ===================================================
+     * STYLES
+     * ===================================================
+     */
+    const inlineStyles = useMemo(() => ({ width, maxWidth: width }), [width]);
     const tableCellClass = cx(
       tableCell,
       tableSectionType === 'thead' && tableHeaderCell,
       tableSectionType === 'tfoot' && tableFooterCell,
-      shouldHandleOverflow && overflowWidth,
+      shouldHandleOverflow && tableOverflowWidth,
     );
 
     return (
@@ -97,16 +152,13 @@ export const TableCell = memo(
           media={start}
           accessory={end}
           shouldOverflow={!overflow}
-          outerSpacing={outerSpacing ?? tableCellSpacing?.outer}
-          innerSpacing={innerSpacing ?? tableCellSpacing?.inner}
+          outerSpacing={cellOuterSpacing}
+          innerSpacing={cellInnerSpacing}
+          responsiveConfig={responsiveConfig}
+          gap={cellGap}
         >
           {children ? (
-            <TextComponent
-              as="div"
-              noWrap={!!overflow}
-              color={color ?? 'currentColor'}
-              overflow={overflow}
-            >
+            <TextComponent as="div" noWrap={!!overflow} color={color} overflow={overflow}>
               <Stack
                 flexGrow={1}
                 flexShrink={1}
@@ -121,7 +173,7 @@ export const TableCell = memo(
             <Stack
               flexGrow={1}
               flexShrink={1}
-              dangerouslySetClassName={overflow ? truncateClassName : undefined}
+              dangerouslySetClassName={stackClassName}
               justifyContent={smartJustifyContent}
               alignItems={smartAlignItems}
             >
@@ -135,9 +187,9 @@ export const TableCell = memo(
               </TextComponent>
               {subtitle ? (
                 <TextLabel2
-                  color={subtitleColor ?? color ?? 'currentColor'}
+                  color={subtitleColor}
                   as="div"
-                  spacingTop={title ? 0.5 : 0}
+                  spacingTop={textSpacingTop}
                   overflow={overflow}
                 >
                   {subtitle}

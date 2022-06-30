@@ -1,8 +1,10 @@
 import { css } from 'linaria';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { borderRadius, borderWidth, palette } from '../../tokens';
 
 const TABLE_BORDER = `${borderWidth.card} solid ${palette.line}`;
+export const tableHeaderStaticClassName = 'cds-table-header';
 
 export const table = css`
   display: table;
@@ -26,6 +28,8 @@ export const tableFixed = css`
 `;
 
 export const tableVariantBase = css`
+  overflow: auto;
+  width: 100%;
   table {
     background-color: ${palette.background};
     color: ${palette.foreground};
@@ -43,10 +47,14 @@ export const tableVariantGraph = css`
 
     & > tr > td,
     & > tbody > tr > td,
-    & > thead > tr > th,
     & > thead > .table-row,
     & > tfoot > tr > td {
       border-bottom: ${TABLE_BORDER};
+      border-right: ${TABLE_BORDER};
+    }
+
+    & > thead > tr > th {
+      box-shadow: inset 0px -1px 0px 0px ${palette.line};
       border-right: ${TABLE_BORDER};
     }
 
@@ -72,9 +80,12 @@ export const tableVariantRuled = css`
 
     & > tr > td,
     & > tbody > tr > td,
-    & > thead > tr > th,
     & > tfoot > tr > td {
       border-bottom: ${TABLE_BORDER};
+    }
+
+    & > thead > tr > th {
+      box-shadow: inset 0px -1px 0px 0px ${palette.line};
     }
 
     & > tbody > tr:last-child > td,
@@ -85,7 +96,14 @@ export const tableVariantRuled = css`
 `;
 
 export const tableBorder = css`
-  overflow: auto;
   border: ${TABLE_BORDER};
   border-radius: ${borderRadius.standard};
+`;
+
+export const tableStickyClassName = css`
+  &.${tableHeaderStaticClassName} {
+    position: sticky;
+    top: 0;
+    z-index: ${zIndex.interactable};
+  }
 `;

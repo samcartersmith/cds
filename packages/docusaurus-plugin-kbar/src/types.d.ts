@@ -12,6 +12,8 @@ declare module '@docusaurus/plugin-content-docs/options' {
 }
 
 declare module '@cbhq/docusaurus-plugin-kbar' {
+  import type { SetOptional } from 'type-fest';
+
   export type Plugin = import('@docusaurus/types').Plugin;
   export type DocsPluginOptions = import('@docusaurus/plugin-content-docs').PluginOptions;
 
@@ -23,14 +25,16 @@ declare module '@cbhq/docusaurus-plugin-kbar' {
     image?: string;
   };
 
+  export type SidebarItemCustomProps = {
+    kbar?: SetOptional<KBarCustomAction, 'id' | 'name'> & {
+      illustration?: import('@cbhq/cds-common').IllustrationNames;
+      description?: string;
+    };
+  };
+
   export type SidebarItem =
     import('@docusaurus/plugin-content-docs/lib/sidebars/types').SidebarItem & {
-      customProps?: {
-        kbar?: KBarAction & {
-          illustration?: import('@cbhq/cds-common').IllustrationNames;
-          description?: string;
-        };
-      };
+      customProps?: SidebarItemCustomProps;
     };
 
   export type PluginData = {

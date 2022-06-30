@@ -1,4 +1,4 @@
-import { cloneElement, useCallback, useMemo } from 'react';
+import { cloneElement, useCallback, useMemo, useRef } from 'react';
 import { generateRandomId } from '@cbhq/cds-utils';
 
 import { usePortal } from './usePortal';
@@ -7,7 +7,7 @@ import { PortalNode } from './usePortalState';
 export const useOverlay = (idPrefix?: string) => {
   const { addNode, removeNode } = usePortal();
 
-  const id = generateRandomId(idPrefix);
+  const id = useRef(generateRandomId(idPrefix)).current;
 
   const open = useCallback(
     (content: PortalNode['element']): string => {

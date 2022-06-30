@@ -28,6 +28,109 @@ _shared_step: &shared_step
     automatic:
       limit: 1
 
+_if_master_branch: &if_master_branch
+  if: |
+    build.branch == 'master'
+
+_if_pull_request: &if_pull_request
+  if: |
+    build.pull_request.base_branch != null
+
+_upload_nonce: &upload_nonce
+  commands:
+    - mkdir -p percy-artifacts
+    - randomNonce=percyNonce_$(openssl rand -base64 21)
+    - echo $randomNonce
+    - echo "$randomNonce" > "percy-artifacts/$$PERCY_NONCE_FILE_NAME"
+  env:
+    OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
+  artifact_paths:
+    - percy-artifacts/**/*
+  agents:
+    queue: macos-metal
+
+_percy_ios_shared: &percy_ios_shared
+  parallelism: 1
+  commands:
+    - tools/ci/setup.sh
+    - export LANG=en_US.UTF-8
+    - mkdir -p percy-artifacts
+    - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
+    - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
+    - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
+    - yarn nx run mobile-playground:build-ios-e2e
+    - yarn nx run mobile-playground:run-ios-e2e
+  env:
+    OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
+  agents:
+    queue: macos-metal
+  retry:
+    automatic:
+      limit: 1
+
+_percy_android_shared: &percy_android_shared
+  parallelism: 1
+  commands:
+    - tools/ci/setup.sh
+    - export LANG=en_US.UTF-8
+    - randomNonce=percyNonce_$(openssl rand -base64 21)
+    - export PERCY_PARALLEL_NONCE="$randomNonce"
+    # Planning to delete this project and switch to Prod percy project that uses aws secret manager:
+    - export PERCY_TOKEN=009f22725cb0eabbabc45b436934192c83538f4599fc339bf0c30fc249ef9298
+    - yarn nx run mobile-playground:e2e-android-emulator
+    - yarn nx run mobile-playground:build-android-e2e
+    - yarn nx run mobile-playground:e2e-android
+    - cd apps/mobile-playground
+    - yarn percy:finalize
+  plugins: &android_plugins
+    - file:///buildkite/plugins/cache: &cache_plugin
+        key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
+        paths:
+          - ./.yarn/cache
+          - ./.yarn/install-state.gz
+    - file:///buildkite/plugins/docker: &docker_plugin
+        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:android
+        wait-network: true
+        privileged: true
+        always-pull: true
+        propagate-environment: true
+        propagate-uid-gid: true
+        volumes:
+          # Allow git operations to work
+          - ${HOME}/.ssh:/root/.ssh
+          - ${HOME}/.git:/root/.git
+        environment:
+          - PLAYSTORE_AUTH
+          - KEY_PASSWORD
+          - KEY_ALIAS
+          - BUGSNAG_KEY
+          - ANDROID_KEYSTORE
+          - PLAYSTORE_PACKAGE_NAME
+          - BUILDKITE_API_TOKEN
+          - GOOGLE_APPLICATION_CREDENTIALS_JSON
+          - 'BUILDKITE_API_TOKEN'
+          - 'PERCY_TOKEN'
+          - 'STORYBOOK_SKIP_ANIMATION'
+          - 'PERCY_TARGET_BRANCH'
+  timeout_in_minutes: 60
+  env:
+    OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
+    DETOX_TOTAL_JOBS: 1
+    DETOX_JOB_NUMBER: 1
+  agents:
+    queue: metal
+  retry:
+    automatic:
+      limit: 2
+
+env:
+  LANG: en_US.UTF-8
+  CI: true
+  NX_CAPTURE_METRICS: true
+  NX_CAPTURE_TEST_METRICS: true
+  OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
+  ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
+
 steps:
   - label: Validate
     <<: *shared_step
@@ -85,7 +188,12 @@ steps:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci typecheck
 
+  # **************************************************
+  # **************************************************
   # Steps described below this line will not run in parallel. They will wait for the steps above to finish before running
+  # **************************************************
+  # **************************************************
+
   - wait
 
   - label: 'A11y'
@@ -108,7 +216,7 @@ steps:
             - 'STORYBOOK_SKIP_ANIMATION'
       - file:///buildkite/plugins/cache: *cache_plugin
 
-  - label: 'Percy.io - CDS visual diff tests'
+  - label: 'Percy (Web)'
     <<: *shared_step
     parallelism: 1
     commands:
@@ -131,3 +239,145 @@ steps:
             - 'PERCY_TARGET_BRANCH'
             - 'OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH'
       - file:///buildkite/plugins/cache: *cache_plugin
+
+  # **************************************************
+  # **************************************************
+  #                   Percy (iOS)
+  # **************************************************
+  # **************************************************
+
+  - group: 'Percy (iOS)'
+    key: 'percy-ios-group'
+    steps:
+      - label: 'Create Percy (iOS) Nonce'
+        <<: *upload_nonce
+        key: 'create-ios-nonce'
+        env:
+          PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
+
+      # Only run iOS tests if nonce is successfully created
+      - wait
+
+      - label: 'Percy (iOS) 1'
+        key: 'percy-ios-1'
+        <<: *percy_ios_shared
+        env:
+          DETOX_JOB_NUMBER: 1
+          DETOX_TOTAL_JOBS: 8
+          PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+
+      - label: 'Percy (iOS) 2'
+        key: 'percy-ios-2'
+        <<: *percy_ios_shared
+        env:
+          DETOX_JOB_NUMBER: 2
+          DETOX_TOTAL_JOBS: 8
+          PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+
+      - label: 'Percy (iOS) 3'
+        key: 'percy-ios-3'
+        <<: *percy_ios_shared
+        env:
+          DETOX_JOB_NUMBER: 3
+          DETOX_TOTAL_JOBS: 8
+          PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+
+      - label: 'Percy (iOS) 4'
+        key: 'percy-ios-4'
+        <<: *percy_ios_shared
+        env:
+          DETOX_JOB_NUMBER: 4
+          DETOX_TOTAL_JOBS: 8
+          PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+
+      - label: 'Percy (iOS) 5'
+        key: 'percy-ios-5'
+        <<: *percy_ios_shared
+        env:
+          DETOX_JOB_NUMBER: 5
+          DETOX_TOTAL_JOBS: 8
+          PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+
+      - label: 'Percy (iOS) 6'
+        key: 'percy-ios-6'
+        <<: *percy_ios_shared
+        env:
+          DETOX_JOB_NUMBER: 6
+          DETOX_TOTAL_JOBS: 8
+          PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+
+      - label: 'Percy (iOS) 7'
+        key: 'percy-ios-7'
+        <<: *percy_ios_shared
+        env:
+          DETOX_JOB_NUMBER: 7
+          DETOX_TOTAL_JOBS: 8
+          PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+
+      - label: 'Percy (iOS) 8'
+        key: 'percy-ios-8'
+        <<: *percy_ios_shared
+        env:
+          DETOX_JOB_NUMBER: 8
+          DETOX_TOTAL_JOBS: 8
+          PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+
+      - label: 'Finish Percy (iOS)'
+        allow_dependency_failure: true
+        parallelism: 1
+        depends_on:
+          - 'percy-ios-1'
+          - 'percy-ios-2'
+          - 'percy-ios-3'
+          - 'percy-ios-4'
+          - 'percy-ios-5'
+          - 'percy-ios-6'
+          - 'percy-ios-7'
+          - 'percy-ios-8'
+        commands:
+          - tools/ci/setup.sh
+          - export LANG=en_US.UTF-8
+          - mkdir -p percy-artifacts
+          - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
+          - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
+          - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
+          - cd apps/mobile-playground
+          - yarn percy:finalize
+        env:
+          OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
+          PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+        agents:
+          queue: macos-metal
+
+  # **************************************************
+  # **************************************************
+  #                   Percy (Android)
+  # **************************************************
+  # **************************************************
+
+  - group: Percy (Android)
+    key: 'percy-android-group'
+    steps:
+      - input: 'Manually Run Android Percy! :rocket:'
+        <<: *if_pull_request
+        key: run-android-percy
+        prompt: 'Manually Run Android Percy?'
+
+      - label: 'Manual Percy (Android)'
+        depends_on: run-android-percy
+        soft_fail: true
+        <<: *if_pull_request
+        <<: *percy_android_shared
+
+      - label: 'Percy (Android)'
+        <<: *if_master_branch
+        <<: *percy_android_shared

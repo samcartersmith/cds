@@ -3,8 +3,8 @@ import { ButtonBaseProps, ForwardedRef, SharedProps } from '@cbhq/cds-common';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { AvatarBaseProps } from '@cbhq/cds-common/types/AvatarBaseProps';
 
+import { getFlexStyles } from '../layout/getFlexStyles';
 import { Avatar } from '../media';
-import { getFlexStyles } from '../styles/flex';
 import { PressableOpacity, PressableProps } from '../system';
 import { cx } from '../utils/linaria';
 

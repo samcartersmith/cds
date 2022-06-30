@@ -5,7 +5,7 @@ import { horizontalSpacing, tagColorMap } from '@cbhq/cds-common/tokens/tags';
 
 import { usePaletteValueToRgbaString } from '../color/usePaletteValueToRgbaString';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import { Box } from '../layout';
+import { Box, BoxProps } from '../layout';
 import { TextCaption, TextLabel1 } from '../typography';
 
 export const Tag = memo(
@@ -17,9 +17,11 @@ export const Tag = memo(
         colorScheme = 'blue',
         dangerouslySetBackground,
         dangerouslySetColor,
+        alignItems = 'center',
+        justifyContent = 'center',
         testID = 'cds-tag',
         ...props
-      }: TagBaseProps,
+      }: TagBaseProps & Omit<BoxProps, 'background' | 'backgroundColor' | 'children'>,
       forwardedRef: ForwardedRef<View>,
     ) => {
       const { background, foreground } = useMemo(
@@ -42,8 +44,8 @@ export const Tag = memo(
           dangerouslySetStyle={style}
           dangerouslySetBackground={backgroundColor}
           background="background"
-          alignItems="center"
-          justifyContent="center"
+          alignItems={alignItems}
+          justifyContent={justifyContent}
           borderRadius={borderRadius}
           testID={testID}
           {...props}

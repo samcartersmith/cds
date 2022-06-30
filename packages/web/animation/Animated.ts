@@ -85,7 +85,7 @@ export class Animated {
           ...acc,
           [config.property]: config.toValue,
           transition: `${acc.transition} ${config.property} ${
-            durations[config.duration]
+            config.duration && durations[config.duration]
           }ms cubic-bezier(${curves[config.easing].join(',')}) ${isLast ? '' : ','}`,
         };
       },
@@ -115,7 +115,7 @@ export class Animated {
           ...acc.transition,
           [config.property]: {
             ease: curves[config.easing],
-            duration: durations[config.duration] / 1000,
+            duration: config.duration && durations[config.duration] / 1000,
             delay: config.delay && config.delay / 1000,
           },
         };

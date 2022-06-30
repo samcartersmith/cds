@@ -3,7 +3,7 @@ import React, { memo, useMemo } from 'react';
 
 import { cx } from '../utils/linaria';
 
-import { defaultCellSpacing, TableContext } from './context/TableContext';
+import { TableContext } from './context/TableContext';
 import { useTableStyles } from './hooks/useTableStyles';
 import { table, tableFixed } from './styles/tableStyles';
 import { TableProps } from './types/tableTypes';
@@ -14,19 +14,32 @@ export const Table = memo(
     children,
     variant = 'default',
     bordered,
-    cellSpacing = defaultCellSpacing,
+    cellSpacing,
     testID,
     tableLayout,
+    compact,
+    maxHeight,
+    height,
     ...rest
   }: TableProps) => {
     const variantStyles = useTableStyles({ variant, bordered });
-    const value = useMemo(() => ({ variant, cellSpacing }), [variant, cellSpacing]);
+    const value = useMemo(
+      () => ({ variant, cellSpacing, compact }),
+      [variant, cellSpacing, compact],
+    );
     const fixed = tableLayout === 'fixed';
     const tableStyles = cx(table, fixed && tableFixed);
+    const containerStyles = useMemo(
+      () => ({
+        height,
+        maxHeight,
+      }),
+      [height, maxHeight],
+    );
 
     return (
       <TableContext.Provider value={value}>
-        <div className={variantStyles}>
+        <div className={variantStyles} style={containerStyles}>
           <table className={tableStyles} data-testid={testID} {...rest} tabIndex={0}>
             {children}
           </table>

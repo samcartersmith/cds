@@ -6,7 +6,7 @@ import { HStack } from '../layout';
 import { Tooltip } from '../overlays/Tooltip/Tooltip';
 import { TooltipProps } from '../overlays/Tooltip/TooltipProps';
 import { Pressable } from '../system';
-import { TextHeadline } from '../typography';
+import { LinkProps, TextHeadline } from '../typography';
 
 import { useSidebarContext } from './SidebarContext';
 
@@ -26,6 +26,14 @@ export type SidebarItemProps = {
    */
   onPress?: () => void;
   /**
+   * Render as custom React Node like React Routers Link component
+   */
+  as?: 'a' | 'button' | React.ComponentType<React.HTMLAttributes<HTMLElement>>;
+  /**
+   *  URL that this links to when pressed. When set, the pressabel will render as a link
+   */
+  to?: string;
+  /**
    * Use collapsed to show only the logo
    * @default false
    */
@@ -38,7 +46,9 @@ export type SidebarItemProps = {
   /** Label or content to display when Sidebar is collapsed and side bar more menu is hovered */
   tooltipContent?: ReactNode;
 } & SharedProps &
-  Pick<TooltipProps, 'disablePortal'>;
+  Pick<TooltipProps, 'disablePortal'> &
+  Pick<React.AllHTMLAttributes<Element>, 'target'> &
+  Pick<LinkProps, 'openInNewWindow'>;
 
 export const SidebarItem = memo(
   forwardRef(
@@ -47,11 +57,13 @@ export const SidebarItem = memo(
         icon,
         title,
         onPress,
+        to,
         collapsed,
         active,
         testID,
         tooltipContent,
         disablePortal,
+        ...rest
       }: SidebarItemProps,
       ref: ForwardedRef<HTMLButtonElement>,
     ) => {
@@ -65,11 +77,12 @@ export const SidebarItem = memo(
             backgroundColor="primaryWash"
             borderRadius="round"
             transparentWhileInactive={!active}
-            as="button"
             onPress={onPress}
+            to={to}
             width="100%"
             ref={ref}
             testID={testID}
+            {...rest}
           >
             <HStack gap={2} spacing={2} alignItems="center" justifyContent="flex-start">
               <NavigationIcon name={icon} active={active} />
@@ -81,7 +94,7 @@ export const SidebarItem = memo(
             </HStack>
           </Pressable>
         ),
-        [active, color, icon, testID, ref, title, isCollapsed, onPress],
+        [active, onPress, to, ref, testID, rest, icon, isCollapsed, color, title],
       );
 
       return tooltipContent && isCollapsed ? (

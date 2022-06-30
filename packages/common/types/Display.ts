@@ -1,0 +1,6 @@
+/**
+ * DO NOT MODIFY
+ * Generated from scripts/codegen/main.ts
+ */
+
+export type Display = 'block' | 'inline-block' | 'flex' | 'inline-flex' | 'none' | 'contents';

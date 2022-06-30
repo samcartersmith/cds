@@ -1,10 +1,14 @@
+import { ResponsiveProps } from '@cbhq/cds-common/types/ResponsiveProps';
+
 import { HStack } from '../../layout/HStack';
+import { VStack } from '../../layout/VStack';
+import { BreakpointsProvider } from '../../system/BreakpointsProvider';
 import { TextHeadline } from '../../typography';
 import { useBreakpoints } from '../useBreakpoints';
 
 const deviceMap: Record<string, string> = {
   isPhone: 'a phone',
-  isPhoneLarge: 'a large phone',
+  isPhoneLandscape: 'a phone in landscape',
   isTablet: 'a tablet',
   isTabletLandscape: 'a tablet in landscape',
   isDesktop: 'a desktop',
@@ -12,7 +16,7 @@ const deviceMap: Record<string, string> = {
   isExtraWide: 'an extra wide desktop',
 };
 
-const Example = () => {
+const Example = (props: PlaygroundProps) => {
   const result = useBreakpoints();
   const deviceArr: string[] = [];
 
@@ -32,13 +36,33 @@ const Example = () => {
   };
 
   return (
-    <HStack background="backgroundAlternate" spacing={3} borderColor="line" borderRadius="standard">
+    <HStack
+      background="backgroundAlternate"
+      spacing={3}
+      borderColor="line"
+      borderRadius="standard"
+      {...props}
+    >
       <TextHeadline as="h3">I am as wide as {deviceName()}</TextHeadline>
     </HStack>
   );
 };
 
-export const Playground = () => <Example />;
+type PlaygroundProps = {
+  responsiveConfig?: ResponsiveProps;
+};
+
+export const Playground = (props: PlaygroundProps) => <Example {...props} />;
+
+export const DefaultToDevice = () => {
+  return (
+    <VStack gap={2}>
+      <BreakpointsProvider device="phone">
+        <Example />
+      </BreakpointsProvider>
+    </VStack>
+  );
+};
 
 export default {
   title: 'Hooks/useBreakpoints',

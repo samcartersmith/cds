@@ -1,12 +1,28 @@
 import React, { memo } from 'react';
 
+import { cx } from '../utils/linaria';
+
+import { tableHeaderStaticClassName, tableStickyClassName } from './styles/tableStyles';
 import { TableSectionProps } from './types/tableSectionTypes';
 import { TableSection } from './TableSection';
 
-export type TableHeaderProps = TableSectionProps;
-export const TableHeader = memo(({ children, testID, ...rest }: TableHeaderProps) => {
+export type TableHeaderProps = TableSectionProps & {
+  /**
+   * Use to make a header stick to the top of the table when scrolled
+   * This will require setting a height or maxHeight on the Table or it's parent
+   * @default false
+   */
+  sticky?: boolean;
+};
+
+export const TableHeader = memo(({ children, sticky, testID, ...rest }: TableHeaderProps) => {
   return (
-    <TableSection as="thead" data-testid={testID} {...rest}>
+    <TableSection
+      as="thead"
+      dangerouslySetClassName={cx(tableHeaderStaticClassName, sticky && tableStickyClassName)}
+      data-testid={testID}
+      {...rest}
+    >
       {children}
     </TableSection>
   );

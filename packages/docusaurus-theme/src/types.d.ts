@@ -9,54 +9,41 @@
 declare module '@theme/LandingPage' {
   type LandingPageAnnouncementsProps =
     import('@theme/LandingPageAnnouncements').LandingPageAnnouncementsProps;
+  type LandingPageCategoriesProps =
+    import('@theme/LandingPageCategories').LandingPageCategoriesProps;
+
   type LandingPageFocusAreasProps =
     import('@theme/LandingPageFocusAreas').LandingPageFocusAreasProps;
 
-  type LandingPageProjectCategoriesProps =
-    import('@theme/LandingPageProjectCategories').LandingPageProjectCategoriesProps;
-
   export type LandingPageProps = import('@cbhq/cds-web').Expand<
     LandingPageAnnouncementsProps &
-      LandingPageFocusAreasProps & {
+      LandingPageCategoriesProps & {
         title?: string;
-        quickLinks?: import('@theme/LandingPageQuickLink').LandingPageQuickLinkProps[];
-        categories: LandingPageProjectCategoriesProps[];
+        categories: LandingPageCategoriesProps[];
       }
   >;
+
+  export type LandingPageFields = {
+    announcements: import('contentful').Entry<
+      import('@theme/LandingPageAnnouncementItem').AnnouncementFields
+    >[];
+    focusAreas: import('contentful').Entry<
+      import('@theme/LandingPageFocusAreas').FocusAreaSectionFields
+    >[];
+  };
 
   export default function LandingPage(props: LandingPageProps): JSX.Element;
 }
 
-declare module '@theme/LandingPageProjectCategories' {
-  export type Project = {
-    label: string;
-    href: string;
-  };
-
-  export type ProjectCategory = {
-    label: string;
-    items: Project[];
-    type: 'category';
-  };
-
-  export type LandingPageProjectCategoriesProps = {
-    label: string;
-    items: ProjectCategory[];
-    type: 'category';
-  };
-
-  export default function LandingPageProjectCategories(
-    props: LandingPageProjectCategoriesProps,
-  ): JSX.Element;
-}
+type AnnouncementFields = {
+  title: string;
+  description: string;
+  actionLabel?: string;
+  actionUrl?: string;
+};
 
 declare module '@theme/LandingPageAnnouncementItem' {
-  export type LandingPageAnnouncementItemProps = {
-    title: string;
-    description: string;
-    actionLabel?: string;
-    href?: string;
-  };
+  export type LandingPageAnnouncementItemProps = AnnouncementFields;
 
   export default function LandingPageAnnouncementItem(
     props: LandingPageAnnouncementItemProps,
@@ -64,8 +51,10 @@ declare module '@theme/LandingPageAnnouncementItem' {
 }
 
 declare module '@theme/LandingPageAnnouncements' {
+  export type ContentfulAnnouncements = import('contentful').Entry<AnnouncementFields>[];
+
   export type LandingPageAnnouncementsProps = {
-    announcements?: import('@theme/LandingPageAnnouncementItem').LandingPageAnnouncementItemProps[];
+    announcements: ContentfulAnnouncements | undefined | null;
   };
 
   export default function LandingPageAnnouncements(
@@ -88,8 +77,8 @@ declare module '@theme/LandingPageQuickLink' {
   export default function LandingPageQuickLink(props: LandingPageQuickLinkProps): JSX.Element;
 }
 
-declare module '@theme/LandingPageFocusAreaItem' {
-  export type LandingPageFocusAreaItemProps = {
+declare module '@theme/LandingPageCategoryItem' {
+  export type LandingPageCategoryItemProps = {
     title: string;
     description: string;
     illustration: import('@cbhq/cds-common').IllustrationNames;
@@ -97,17 +86,67 @@ declare module '@theme/LandingPageFocusAreaItem' {
     href: string;
   };
 
+  export default function LandingPageCategoryItem(props: LandingPageCategoryItemProps): JSX.Element;
+}
+
+declare module '@theme/LandingPageCategories' {
+  export type LandingPageCategoriesProps = {
+    categories?: import('@theme/LandingPageCategoryItem').LandingPageCategoryItemProps[];
+  };
+
+  export default function LandingPageCategories(props: LandingPageCategoriesProps): JSX.Element;
+}
+
+declare module '@theme/LandingPageFocusAreaItem' {
+  export type LandingPageFocusAreaItemProps = {
+    label: string;
+    url: string;
+  };
+
   export default function LandingPageFocusAreaItem(
     props: LandingPageFocusAreaItemProps,
   ): JSX.Element;
 }
 
-declare module '@theme/LandingPageFocusAreas' {
-  export type LandingPageFocusAreasProps = {
-    focusAreas?: import('@theme/LandingPageFocusAreaItem').LandingPageFocusAreaItemProps[];
+declare module '@theme/LandingPageFocusAreaGroup' {
+  export type LandingPageFocusAreaGroupProps = {
+    label: string;
+    items: import('contentful').Entry<
+      import('@theme/LandingPageFocusAreaItem').LandingPageFocusAreaItemProps
+    >[];
   };
 
-  export default function LandingPageFocusAreas(props: LandingPageFocusAreasProps): JSX.Element;
+  export default function LandingPageFocusAreaGroup(
+    props: LandingPageFocusAreaGroupProps,
+  ): JSX.Element;
+}
+
+declare module '@theme/LandingPageFocusAreas' {
+  export type FocusAreaSectionFields = {
+    label: string;
+    focusAreas: import('contentful').Entry<
+      import('@theme/LandingPageFocusAreaGroup').LandingPageFocusAreaGroupProps
+    >[];
+  };
+
+  export default function LandingPageFocusAreas(props: FocusAreaSectionFields): JSX.Element;
+}
+
+declare module '@theme/useComposePage' {
+  export type ComposePageData = {
+    pageData: import('@cb/cms').ComposePage<unknown> | null;
+    handleError: (error: Error | string) => void;
+  };
+  export type FilterOptions = {
+    route: string;
+    spaceId: string;
+    clientKey?: string;
+  };
+  export default function useComposePage({
+    route,
+    spaceId,
+    clientKey,
+  }: FilterOptions): ComposePageData;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -274,18 +313,9 @@ declare module '@theme/PropsTableListCell' {
 }
 
 declare module '@theme/PropsTableRow' {
-  type ProcessedPropItem = import('@cbhq/docusaurus-plugin-docgen').ProcessedPropItem;
-  type SharedTypeAliases = import('@cbhq/docusaurus-plugin-docgen').SharedTypeAliases;
-  export type TypeAliasModalContentProps = {
-    typeAlias: string;
-  };
-
-  export type PropsTableRowProps = {
-    prop: ProcessedPropItem;
-    sharedTypeAliases: SharedTypeAliases;
-  };
-
-  export default function PropsTableRow(props: PropsTableRowProps): JSX.Element;
+  export const TypeAliasModalContent: typeof import('./theme/PropsTableRow').TypeAliasModalContent;
+  const PropsTableRow: typeof import('./theme/PropsTableRow').default;
+  export default PropsTableRow;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -352,12 +382,45 @@ declare module '@theme/ChangelogListCell' {
 /*                                    Misc                                    */
 /* -------------------------------------------------------------------------- */
 
+declare module '@theme/Collection' {
+  export type CollectionProps = import('./theme/Collection').CollectionProps;
+  const Collection: typeof import('./theme/Collection').default;
+  export default Collection;
+}
+
+declare module '@theme/CollectionItem' {
+  export type CollectionItemProps = import('./theme/CollectionItem').CollectionItemProps;
+  const CollectionItem: typeof import('./theme/CollectionItem').default;
+  export default CollectionItem;
+}
+
+declare module '@theme/DoDont' {
+  export const DontExample: typeof import('./theme/DoDont').DontExample;
+  export const DoExample: typeof import('./theme/DoDont').DoExample;
+
+  export type DoDontProps = import('./theme/DoDont').DoDontProps;
+  const DoDont: typeof import('./theme/DoDont').default;
+  export default DoDont;
+}
+
+declare module '@theme/Image' {
+  export type ImageProps = import('./theme/Image').ImageProps;
+  const Image: typeof import('./theme/Image').default;
+  export default Image;
+}
+
 declare module '@theme/ExampleWithThemeToggles' {
   export type ExampleWithThemeTogglesProps = {
     children?: import('react').ReactNode;
   };
 
   export default function ExampleWithThemeToggles(props: ExampleWithThemeTogglesProps): JSX.Element;
+}
+
+declare module '@theme/Image' {
+  export type ImageProps = import('./theme/Image').ImageProps;
+  const Image: typeof import('./theme/Image').default;
+  export default Image;
 }
 
 declare module '@theme/ImportBlock' {
@@ -378,14 +441,8 @@ declare module '@theme/JSDocTag' {
 }
 
 declare module '@theme/ModalLink' {
-  type LinkProps = import('@cbhq/cds-web/typography/Link').LinkProps;
-
-  export type ModalLinkProps = {
-    children: string;
-    content: React.ReactNode;
-  } & LinkProps;
-
-  export default function ModalLink(props: ModalLinkProps): JSX.Element;
+  const ModaLink: typeof import('./theme/ModalLink').default;
+  export default ModaLink;
 }
 
 declare module '@theme/NavbarPortal' {
@@ -404,6 +461,25 @@ declare module '@theme/Calendar' {
   export type CalendarProps = import('schedulely').SchedulelyProps;
   export type CalendarEvent = import('schedulely').CalendarEvent;
   export default function Calendar(props: CalendarProps): JSX.Element;
+}
+
+declare module '@theme/ScrollSnapCarousel' {
+  type BoxProps = import('@cbhq/cds-web/layout/Box').BoxProps;
+
+  export type ScrollSnapCarouselProps = {
+    cards: unknown[] | undefined | null;
+    renderCards: (cards: unknown[]) => JSX.Element;
+    loading?: boolean;
+    dismissableCards?: boolean;
+  } & BoxProps;
+
+  export default function ScrollSnapCarousel(props: ScrollSnapCarouselProps): JSX.Element;
+}
+
+declare module '@theme/Video' {
+  export type VideoProps = import('./theme/Video').VideoProps;
+  const Video: typeof import('./theme/Video').default;
+  export default Video;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -445,4 +521,8 @@ declare module '@theme/useColorMode' {
     setColorMode: SetColorMode;
   };
   export default function useColorMode(): { colorMode: ColorMode; setColorMode: SetColorMode };
+}
+
+declare module '@cbhq/docusaurus-theme' {
+  export type SidebarItemCustomProps = import('./theme/DocSidebarItem').SidebarItemCustomProps;
 }

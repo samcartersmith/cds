@@ -112,6 +112,13 @@ export const selectBuilder = ({
             helperText={helperText}
             onBlur={onBlur}
           >
+            <SelectOption
+              value="disabled"
+              key="Disabled"
+              title="Disabled"
+              description="BTC"
+              disabled
+            />
             {exampleOptions.map((option) => (
               <SelectOption
                 value={option}

@@ -5,20 +5,7 @@ hide_title: true
 hide_table_of_contents: true
 ---
 
-import { Video } from ':cds-website/components/Video';
-import { Collection, Item } from ':cds-website/components/Collection';
 import { Cell } from ':cds-website/components/Cell';
-import { VStack, HStack as Row, Divider, Box } from '@cbhq/cds-web/layout';
-import {
-  TextDisplay1,
-  TextDisplay2,
-  TextTitle2,
-  TextTitle3,
-  Link,
-  TextTitle1,
-  TextLabel2,
-  TextLabel1,
-} from '@cbhq/cds-web/typography';
 
 <TextDisplay1 as="h1">Timing</TextDisplay1>
 
@@ -35,8 +22,8 @@ import {
 
 <Box spacingVertical={10}>
   <Video
-    light="/video/lightmode/02_timing/cds_lm_easing_grid_01.mp4"
-    dark="/video/darkmode/02_timing/cds_dm_easing_grid_01.mp4"
+    srcLight="/video/lightmode/02_timing/cds_lm_easing_grid_01.mp4"
+    srcDark="/video/darkmode/02_timing/cds_dm_easing_grid_01.mp4"
   />
 </Box>
 
@@ -51,8 +38,8 @@ import {
 
 <Box spacingVertical={10}>
   <Video
-    light="/video/lightmode/02_timing/cds_lm_easing_dots_01.mp4"
-    dark="/video/darkmode/02_timing/cds_dm_easing_dots_01.mp4"
+    srcLight="/video/lightmode/02_timing/cds_lm_easing_dots_01.mp4"
+    srcDark="/video/darkmode/02_timing/cds_dm_easing_dots_01.mp4"
   />
 </Box>
 
@@ -68,21 +55,24 @@ import {
   Global
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       Global is the most common type of easing. It’s used for objects that move within a view
       between point A and point B. Objects such as buttons, toggles, and selection controls use
       Global to emphasize the start and end of a transition by accelerating quickly and gradually
       slowing down.
     </TextLabel2>
-  </Item>
-  <Item
+  </CollectionItem>
+  <CollectionItem
     flexGrow={2}
-    vid={{
-      light: '/video/lightmode/02_timing/cds_lm_globalTimingMaster.mp4',
-      dark: '/video/darkmode/02_timing/cds_dm_globalTimingMaster.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+    media={
+      <Video
+        srcLight="/video/lightmode/02_timing/cds_lm_globalTimingMaster.mp4"
+        srcDark="/video/darkmode/02_timing/cds_dm_globalTimingMaster.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
   />
 </Collection>
 
@@ -90,20 +80,23 @@ import {
   Enter
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       Enter is a type of easing used for objects that animate into view. Objects come into frame at
       peak velocity and decelerate afterwards. Enter is used for objects such as modals, trays, and
       notifications.
     </TextLabel2>
-  </Item>
-  <Item
+  </CollectionItem>
+  <CollectionItem
     flexGrow={2}
-    vid={{
-      light: '/video/lightmode/02_timing/cds_lm_enterTimingMaster.mp4',
-      dark: '/video/darkmode/02_timing/cds_dm_enterTimingMaster.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+    media={
+      <Video
+        srcLight="/video/lightmode/02_timing/cds_lm_enterTimingMaster.mp4"
+        srcDark="/video/darkmode/02_timing/cds_dm_enterTimingMaster.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
   />
 </Collection>
 
@@ -111,20 +104,23 @@ import {
   Exit
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       Exit is a type of easing used for objects that leave the view. Objects gradually acclerate
       before leaving the view at peak velocity. Exit is used for objects such as modals, trays, and
       notifications.
     </TextLabel2>
-  </Item>
-  <Item
+  </CollectionItem>
+  <CollectionItem
     flexGrow={2}
-    vid={{
-      light: '/video/lightmode/02_timing/cds_lm_exitTimingMaster.mp4',
-      dark: '/video/darkmode/02_timing/cds_dm_exitTimingMaster.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+    media={
+      <Video
+        srcLight="/video/lightmode/02_timing/cds_lm_exitTimingMaster.mp4"
+        srcDark="/video/darkmode/02_timing/cds_dm_exitTimingMaster.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
   />
 </Collection>
 
@@ -132,28 +128,31 @@ import {
   Expressive
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       Expressive is a stylized version of Global easing. It exaggerates the sense of speed to give
       extra attention to an animation. It’s used for objects that move within a view between point A
       and point B.
     </TextLabel2>
-  </Item>
-  <Item
+  </CollectionItem>
+  <CollectionItem
     flexGrow={2}
-    vid={{
-      light: '/video/lightmode/02_timing/cds_lm_expressiveTimingMaster.mp4',
-      dark: '/video/darkmode/02_timing/cds_dm_expressiveTimingMaster.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+    media={
+      <Video
+        srcLight="/video/lightmode/02_timing/cds_lm_expressiveTimingMaster.mp4"
+        srcDark="/video/darkmode/02_timing/cds_dm_expressiveTimingMaster.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
   />
 </Collection>
 
 <Collection spacingVertical={10}>
-  <Item alignItems="flex-start">
+  <CollectionItem alignItems="flex-start">
     <Video
-      light="/video/lightmode/02_timing/cds_lm_correct_01.mp4"
-      dark="/video/darkmode/02_timing/cds_dm_correct_01.mp4"
+      srcLight="/video/lightmode/02_timing/cds_lm_correct_01.mp4"
+      srcDark="/video/darkmode/02_timing/cds_dm_correct_01.mp4"
     />
     <TextLabel1 color="primary" as="p">
       CDS
@@ -162,11 +161,11 @@ import {
       CDS motion helps our UI feel lightweight and easy to use. It mimics the physical world.
       Objects speed up quickly and resolve gradually.
     </TextLabel2>
-  </Item>
-  <Item alignItems="flex-start">
+  </CollectionItem>
+  <CollectionItem alignItems="flex-start">
     <Video
-      light="/video/lightmode/02_timing/cds_lm_dont_linear_01.mp4"
-      dark="/video/darkmode/02_timing/cds_dm_dont_linear_01.mp4"
+      srcLight="/video/lightmode/02_timing/cds_lm_dont_linear_01.mp4"
+      srcDark="/video/darkmode/02_timing/cds_dm_dont_linear_01.mp4"
     />
     <TextLabel1 color="negative" as="p">
       Linear
@@ -175,11 +174,11 @@ import {
       We avoid linear motion, which feels unnatural. It makes objects and transitions feel stiff and
       mechnical.
     </TextLabel2>
-  </Item>
-  <Item alignItems="flex-start">
+  </CollectionItem>
+  <CollectionItem alignItems="flex-start">
     <Video
-      light="/video/lightmode/02_timing/cds_lm_dont_bounce_01.mp4"
-      dark="/video/darkmode/02_timing/cds_dm_dont_bounce_01.mp4"
+      srcLight="/video/lightmode/02_timing/cds_lm_dont_bounce_01.mp4"
+      srcDark="/video/darkmode/02_timing/cds_dm_dont_bounce_01.mp4"
     />
     <TextLabel1 color="negative" as="p">
       Spring & Bounce
@@ -188,7 +187,7 @@ import {
       We avoid spring and bounce, which is decorative rather than efficient. Motion should be
       accessible, reduce tap target issues, and prevent motion sickness.
     </TextLabel2>
-  </Item>
+  </CollectionItem>
 </Collection>
 
 <Divider />
@@ -197,87 +196,87 @@ import {
   Easing Tokens
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       A token is a pre-defined pattern that provides UI and transition consistency.
     </TextLabel2>
     <TextLabel2 as="p">
       For easy implementation, there are currently 3 CDS tokens available to use.
     </TextLabel2>
-  </Item>
-  <Item flexGrow={2}>
+  </CollectionItem>
+  <CollectionItem flexGrow={2}>
     <VStack width="100%">
-      <Row>
+      <HStack>
         <Cell>Curves</Cell>
         <Cell>Application</Cell>
         <Cell>Token</Cell>
-      </Row>
+      </HStack>
       <Divider />
-      <Row>
+      <HStack>
         <Cell>Global</Cell>
         <Cell>React Native</Cell>
         <Cell>globalFunctional</Cell>
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell />
         <Cell>CSS</Cell>
         <Cell>cubic-bezier(0.60, 0.00, 0.15, 1.00)</Cell>
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell />
         <Cell>After Effects</Cell>
         <Cell>outgoing 85%, incoming 60%</Cell>
-      </Row>
+      </HStack>
       <Divider />
-      <Row>
+      <HStack>
         <Cell>Enter</Cell>
         <Cell>React Native</Cell>
         <Cell>enterFunctional</Cell>
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell />
         <Cell>CSS</Cell>
         <Cell>cubic-bezier(0.33, 0.00, 0.00, 1.00)</Cell>
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell />
         <Cell>After Effects</Cell>
         <Cell>incoming 100%, outgoing 33%</Cell>
-      </Row>
+      </HStack>
       <Divider />
-      <Row>
+      <HStack>
         <Cell>Exit</Cell>
         <Cell>React Native</Cell>
         <Cell>exitFunctional</Cell>
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell />
         <Cell>CSS</Cell>
         <Cell>cubic-bezier(0.60, 0.00, 1.00, 1.00)</Cell>
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell />
         <Cell>After Effects</Cell>
         <Cell>incoming 0%, outgoing 85%</Cell>
-      </Row>
+      </HStack>
       <Divider />
-      <Row>
+      <HStack>
         <Cell>Expressive</Cell>
         <Cell>React Native</Cell>
         <Cell>globalExpressive</Cell>
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell />
         <Cell>CSS</Cell>
         <Cell>cubic-bezier(0.60, 0.00, 0.15, 1.00)</Cell>
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell />
         <Cell>After Effects</Cell>
         <Cell>incoming 100%, outgoing 33%</Cell>
-      </Row>
+      </HStack>
     </VStack>
-  </Item>
+  </CollectionItem>
 </Collection>
 
 <Divider spacingTop={3} />
@@ -292,8 +291,8 @@ import {
 
 <Box spacingVertical={10}>
   <Video
-    light="/video/lightmode/02_timing/cds_lm_duration_hero_01.mp4"
-    dark="/video/darkmode/02_timing/cds_dm_duration_hero_01.mp4"
+    srcLight="/video/lightmode/02_timing/cds_lm_duration_hero_01.mp4"
+    srcDark="/video/darkmode/02_timing/cds_dm_duration_hero_01.mp4"
   />
 </Box>
 
@@ -305,26 +304,32 @@ import {
 </TextTitle2>
 
 <Collection spacingVertical={10}>
-  <Item
+  <CollectionItem
     description="Elements that transition across a small surface — such as buttons, toggles, and selection controls — use micro durations."
-    vid={{
-      light: '/video/lightmode/02_timing/cds_lm_micro_01.mp4',
-      dark: '/video/darkmode/02_timing/cds_dm_micro_01.mp4',
-    }}
+    media={
+      <Video
+        srcLight="/video/lightmode/02_timing/cds_lm_micro_01.mp4"
+        srcDark="/video/darkmode/02_timing/cds_dm_micro_01.mp4"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     description="Elements that transition across a larger surface — such as cards and trays — have medium durations."
-    vid={{
-      light: '/video/lightmode/02_timing/cds_lm_medium_01.mp4',
-      dark: '/video/darkmode/02_timing/cds_dm_medium_01.mp4',
-    }}
+    media={
+      <Video
+        srcLight="/video/lightmode/02_timing/cds_lm_medium_01.mp4"
+        srcDark="/video/darkmode/02_timing/cds_dm_medium_01.mp4"
+      />
+    }
   />
-  <Item
+  <CollectionItem
     description="Elements that transition across the majority of the surface — such as full screen modals and page transitions — have the longest (“macro”) durations."
-    vid={{
-      light: '/video/lightmode/02_timing/cds_lm_macro_01.mp4',
-      dark: '/video/darkmode/02_timing/cds_dm_macro_01.mp4',
-    }}
+    media={
+      <Video
+        srcLight="/video/lightmode/02_timing/cds_lm_macro_01.mp4"
+        srcDark="/video/darkmode/02_timing/cds_dm_macro_01.mp4"
+      />
+    }
   />
 </Collection>
 
@@ -332,22 +337,28 @@ import {
   Size
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6} alignItems="flex-start">
+  <CollectionItem spacingHorizontal={0} spacingEnd={6} alignItems="flex-start">
     <TextLabel2 as="p">Small objects have a shorter duration than larger ones.</TextLabel2>
-  </Item>
-  <Item
-    vid={{
-      light: '/video/lightmode/02_timing/cds_lm_200ms.mp4',
-      dark: '/video/darkmode/02_timing/cds_dm_200ms.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+  </CollectionItem>
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/02_timing/cds_lm_200ms.mp4"
+        srcDark="/video/darkmode/02_timing/cds_dm_200ms.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
   />
-  <Item
-    vid={{
-      light: '/video/lightmode/02_timing/cds_lm_300ms.mp4',
-      dark: '/video/darkmode/02_timing/cds_dm_300ms.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/02_timing/cds_lm_300ms.mp4"
+        srcDark="/video/darkmode/02_timing/cds_dm_300ms.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
   />
 </Collection>
 
@@ -355,25 +366,31 @@ import {
   Distance
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       Objects that transition across a small surface area have a shorter duration than objects that
       travel over a large surface area.
     </TextLabel2>
-  </Item>
-  <Item
-    vid={{
-      light: '/video/lightmode/02_timing/cds_lm_switch_200ms.mp4',
-      dark: '/video/darkmode/02_timing/cds_dm_switch_200ms.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+  </CollectionItem>
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/02_timing/cds_lm_switch_200ms.mp4"
+        srcDark="/video/darkmode/02_timing/cds_dm_switch_200ms.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
   />
-  <Item
-    vid={{
-      light: '/video/lightmode/02_timing/cds_lm_expand_300ms.mp4',
-      dark: '/video/darkmode/02_timing/cds_dm_expand_300ms.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/02_timing/cds_lm_expand_300ms.mp4"
+        srcDark="/video/darkmode/02_timing/cds_dm_expand_300ms.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
   />
 </Collection>
 
@@ -381,7 +398,7 @@ import {
   Duration Tokens
 </TextTitle1>
 <Collection>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       Duration Tokens are a set of patterns that give motion consistency to interfaces and
       transitions.
@@ -393,72 +410,72 @@ import {
       Each duration token has 3 levels of speed, allowing flexibility for a wide range of component
       sizes and screen transitions.
     </TextLabel2>
-  </Item>
-  <Item flexGrow={3}>
+  </CollectionItem>
+  <CollectionItem flexGrow={3}>
     <VStack width="100%">
-      <Row>
+      <HStack>
         <Cell>Tokens</Cell>
         <Cell>Type</Cell>
         <Cell>Duration (MS)</Cell>
         <Cell>Components</Cell>
-      </Row>
+      </HStack>
       <Divider />
-      <Row>
+      <HStack>
         <Cell>Fast-1</Cell>
         <Cell>Micro</Cell>
         <Cell>100ms</Cell>
         <Cell>Buttons, Toggles, Text, Icons, Selection Controls</Cell>
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell>Fast-2</Cell>
         <Cell>Micro</Cell>
         <Cell>133ms</Cell>
         <Cell />
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell>Fast-3</Cell>
         <Cell>Micro</Cell>
         <Cell>150ms</Cell>
         <Cell />
-      </Row>
+      </HStack>
       <Divider />
-      <Row>
+      <HStack>
         <Cell>Moderate-1</Cell>
         <Cell>Medium</Cell>
         <Cell>200ms</Cell>
         <Cell>Short distance movements, System Messaging, Navigation Drawer, Modals</Cell>
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell>Moderate-2</Cell>
         <Cell>Medium</Cell>
         <Cell>250ms</Cell>
         <Cell />
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell>Moderate-3</Cell>
         <Cell>Medium</Cell>
         <Cell>300ms</Cell>
         <Cell />
-      </Row>
+      </HStack>
       <Divider />
-      <Row>
+      <HStack>
         <Cell>Slow-1</Cell>
         <Cell>Macro</Cell>
         <Cell>350ms</Cell>
         <Cell>Large distance movements, Page Transitions, Full screen dialogue</Cell>
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell>Slow-2</Cell>
         <Cell>Macro</Cell>
         <Cell>400ms</Cell>
         <Cell />
-      </Row>
-      <Row>
+      </HStack>
+      <HStack>
         <Cell>Slow-3</Cell>
         <Cell>Macro</Cell>
         <Cell>500ms</Cell>
         <Cell />
-      </Row>
+      </HStack>
     </VStack>
-  </Item>
+  </CollectionItem>
 </Collection>

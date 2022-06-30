@@ -3,22 +3,17 @@ id: elevation
 title: Elevation
 ---
 
-import { DoDont, DoExample, DontExample } from ':cds-website/components/DoDont';
-import { Image } from ':cds-website/components/Image';
-import { Collection, Item } from ':cds-website/components/Collection';
-import { Box } from '@cbhq/cds-web/layout';
-
 <Image
-  light="/img/foundation/elevation/hero_light.svg"
-  dark="/img/foundation/elevation/hero_dark.svg"
+  srcLight="/img/foundation/elevation/hero_light.svg"
+  srcDark="/img/foundation/elevation/hero_dark.svg"
 />
 
 Elevation is the distance along the z-axis or the depth of an interface. By using elevation, we're able
 to help users understand the relationship and importance of different components on the screen.
 
 <Image
-  light="/img/foundation/elevation/zaxis_light.svg"
-  dark="/img/foundation/elevation/zaxis_dark.svg"
+  srcLight="/img/foundation/elevation/zaxis_light.svg"
+  srcDark="/img/foundation/elevation/zaxis_dark.svg"
 />
 
 ## Concept
@@ -34,8 +29,8 @@ In Dark Mode, we alter the metaphor slightly. We can't rely on shadows because o
 CDS's elevation is presented with a combination of visual treatments: shadows, backgrounds (for dark mode only), and strokes.
 
 <Image
-  light="/img/foundation/elevation/light_source_light.svg"
-  dark="/img/foundation/elevation/light_source_dark.svg"
+  srcLight="/img/foundation/elevation/light_source_light.svg"
+  srcDark="/img/foundation/elevation/light_source_dark.svg"
 />
 
 ## Levels
@@ -45,49 +40,58 @@ Levels refer to the placement on the z-axis or how far above it is from the back
 We support three levels (including zero) in CDS.
 
 <Collection>
-  <Item
-    img={{
-      light: '/img/foundation/elevation/level_0_light.svg',
-      dark: '/img/foundation/elevation/level_0_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/elevation/level_0_light.svg"
+        srcDark="/img/foundation/elevation/level_0_dark.svg"
+      />
+    }
     title="Level 0"
     description="Refers to the background of an interface. By default, elements are on level 0."
-    />
-  <Item
-    img={{
-      light: '/img/foundation/elevation/level_1_light.svg',
-      dark: '/img/foundation/elevation/level_1_dark.svg',
-    }}
+  />
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/elevation/level_1_light.svg"
+        srcDark="/img/foundation/elevation/level_1_dark.svg"
+      />
+    }
     title="Level 1"
     description="Appears just above the interface. Typically has a relationship with a background element."
-    />
-  <Item
-    img={{
-      light: '/img/foundation/elevation/level_2_light.svg',
-      dark: '/img/foundation/elevation/level_2_dark.svg',
-    }}
+  />
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/elevation/level_2_light.svg"
+        srcDark="/img/foundation/elevation/level_2_dark.svg"
+      />
+    }
     title="Level 2"
     description="Highest elevation. Reserved for elements out of context or requiring focus"
-    />
-
+  />
 </Collection>
 
 <DoDont>
 
 <DoExample
-  img={{
-    light: '/img/foundation/elevation/do_use_line.svg',
-    dark: '/img/foundation/elevation/do_use_line_dark.svg',
-  }}
+  media={
+    <Image
+      srcLight="/img/foundation/elevation/do_use_line.svg"
+      srcDark="/img/foundation/elevation/do_use_line_dark.sv"
+    />
+  }
 >
   Always apply a <b>Line</b> border on any elevated element
 </DoExample>
 
 <DontExample
-  img={{
-    light: '/img/foundation/elevation/dont_use_line.svg',
-    dark: '/img/foundation/elevation/dont_use_line_dark.svg',
-  }}
+  media={
+    <Image
+      srcLight="/img/foundation/elevation/dont_use_line.svg"
+      srcDark="/img/foundation/elevation/dont_use_line_dark.sv"
+    />
+  }
 >
   We do not use any elevation without borders
 </DontExample>
@@ -97,8 +101,8 @@ We support three levels (including zero) in CDS.
 ## Background Overlay
 
 <Image
-  light="/img/foundation/elevation/background_overlay_light.svg"
-  dark="/img/foundation/elevation/background_overlay_dark.svg"
+  srcLight="/img/foundation/elevation/background_overlay_light.svg"
+  srcDark="/img/foundation/elevation/background_overlay_dark.svg"
 />
 
 Background overlays help users further focus on a task by visually diminishing and preventing interactions with anything behind it.
@@ -108,19 +112,23 @@ We recommend adding Background Overlay to elements with an elevation of Level 2.
 <DoDont>
 
 <DoExample
-  img={{
-    light: '/img/foundation/elevation/do_background_overlay.svg',
-    dark: '/img/foundation/elevation/do_background_overlay_dark.svg',
-  }}
+  media={
+    <Image
+      srcLight="/img/foundation/elevation/do_background_overlay.svg"
+      srcDark="/img/foundation/elevation/do_background_overlay_dark.sv"
+    />
+  }
 >
   Use Level 2 with Background Overlay
 </DoExample>
 
 <DontExample
-  img={{
-    light: '/img/foundation/elevation/dont_background_overlay.svg',
-    dark: '/img/foundation/elevation/dont_background_overlay_dark.svg',
-  }}
+  media={
+    <Image
+      srcLight="/img/foundation/elevation/dont_background_overlay.svg"
+      srcDark="/img/foundation/elevation/dont_background_overlay_dark.sv"
+    />
+  }
 >
   Use Level 1 with Background Overlay.
 </DontExample>
@@ -154,10 +162,7 @@ Because elevation is an abstract concept with multiple visual treatments, design
 ### Color
 
 <Box width="100%" justifyContent="center" spacingVertical={10}>
-  <Image
-    src="/img/foundation/elevation/background_aliases_figma.png"
-    options={{ maxHeight: '448px' }}
-  />
+  <Image src="/img/foundation/elevation/background_aliases_figma.png" maxHeight="448px" />
 </Box>
 
 We've included Background, Background - Level 1, and Background - Level 2 to help communicate elevation with the background color changes in Dark Mode. Engineers will just need to set it to background and elevation to `0, 1, 2`.
@@ -165,7 +170,7 @@ We've included Background, Background - Level 1, and Background - Level 2 to hel
 ### Shadows
 
 <Box width="100%" justifyContent="center" spacingVertical={10}>
-  <Image src="/img/foundation/elevation/effects_figma.png" options={{ maxHeight: '448px' }} />
+  <Image src="/img/foundation/elevation/effects_figma.png" maxHeight="448px" />
 </Box>
 
 We've included Levels 0, 1, 2 in the Effects style to communicate the shadow changes in elevation.
@@ -173,7 +178,7 @@ We've included Levels 0, 1, 2 in the Effects style to communicate the shadow cha
 ### Stroke
 
 <Box width="100%" justifyContent="center" spacingVertical={10}>
-  <Image src="/img/foundation/elevation/line_figma.png" options={{ maxHeight: '448px' }} />
+  <Image src="/img/foundation/elevation/line_figma.png" maxHeight="448px" />
 </Box>
 
 When using Level 1, please set the stroke to `Line`.

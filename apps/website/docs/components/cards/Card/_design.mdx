@@ -1,14 +1,11 @@
-import { Image } from ':cds-website/components/Image';
-import { DocImage } from ':cds-website/components/DocImage';
-import { HStack } from '@cbhq/cds-web/layout/HStack';
-import { VStack } from '@cbhq/cds-web/layout/VStack';
-import { TextHeadline, TextBody } from '@cbhq/cds-web/typography';
-
 <TOCUpdater toc={toc} />
 
 Cards are containers that showcase content and actions related to a singular topic. By design, Cards organize, highlight, and bundle information. They encourage people to focus on a singular topic and take action if needed. Keep Cards concise, focused, and engaging.
 
-<DocImage format="png" component="card" name="hero" />
+<Image
+  srcLight="/img/components/card/hero_light.png"
+  srcDark="/img/components/card/hero_dark.png"
+/>
 
 ## Usage
 
@@ -38,7 +35,10 @@ Cards are containers that showcase content and actions related to a singular top
 
 ## Anatomy of Cards
 
-<DocImage format="png" component="card" name="anatomy" />
+<Image
+  srcLight="/img/components/card/anatomy_light.png"
+  srcDark="/img/components/card/anatomy_dark.png"
+/>
 
 > Card has the following building blocks: _Header_, _Body_, and _Footer_.
 
@@ -49,11 +49,8 @@ Cards are containers that showcase content and actions related to a singular top
     </TextHeadline>
     <TextBody as="p">
       Header provides high level information about the Card such as the author avatar, author name,
-      and metadata.
-      <br />
-      <br />
-      This is also the space for supplementary actions like viewing an overflow Menu or dismissing a
-      Card.
+      and metadata. This is also the space for supplementary actions like viewing an overflow Menu
+      or dismissing a Card.
     </TextBody>
   </VStack>
   <VStack>
@@ -111,20 +108,29 @@ Cards are containers that showcase content and actions related to a singular top
 
 The Card itself is typically the primary action. However, we recommend placing a Button in the Footer to encourage engagement or to make the Card feel more actionable. Buttons in the Footer should callout the main CTA of the Card.
 
-<DocImage format="png" component="card" name="actions" />
+<Image
+  srcLight="/img/components/card/actions_light.png"
+  srcDark="/img/components/card/actions_dark.png"
+/>
 
 Cards can also have supplementary actions in the Header or Footer such as:
 
 - **More actions**: This triggers a Select Menu. Use a More icon.
 - **Dismissible**: This closes the Card. Use a Close icon.
 
-<DocImage format="png" component="card" name="examples" />
+<Image
+  srcLight="/img/components/card/examples_light.png"
+  srcDark="/img/components/card/examples_dark.png"
+/>
 
 ## Card Carousel
 
 Annoucement Cards carousel when there are more than one Card. This enables users to swipe through or “carousel” through the Cards.
 
-<DocImage format="png" component="card" name="carousel" />
+<Image
+  srcLight="/img/components/card/carousel_light.png"
+  srcDark="/img/components/card/carousel_dark.png"
+/>
 
 ## Dividers
 

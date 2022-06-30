@@ -5,7 +5,7 @@ import type { AlertActionsBaseProps, IllustrationHeroSquareNames } from '@cbhq/c
 import { Button } from '../buttons';
 import { HeroSquare } from '../illustrations';
 import { Box, VStack } from '../layout';
-import { deviceBreakpoints } from '../layout/responsive';
+import { deviceBreakpoints } from '../layout/breakpoints';
 import { spacing } from '../tokens';
 import { TextBody, TextTitle3 } from '../typography';
 
@@ -48,7 +48,7 @@ export const centerContentClassName = css`
       width: 100%;
     }
 
-    @media only screen and (min-width: ${deviceBreakpoints.phoneLarge}px) {
+    @media only screen and (min-width: ${deviceBreakpoints.phoneLandscape}px) {
       .${primaryContentContainerClassName} {
         height: auto;
       }
@@ -92,18 +92,13 @@ export const FullscreenAlert = memo(function FullscreenAlert({
       </VStack>
       <Box dangerouslySetClassName={actionsContainerClassName}>
         {!!dismissActionLabel && (
-          // need to set minWidth to 0 to make actions equal width
-          <Box flexGrow={1} flexBasis={0} minWidth={0}>
-            <Button onPress={onDismissActionPress} block variant="secondary">
-              {dismissActionLabel}
-            </Button>
-          </Box>
-        )}
-        <Box flexGrow={1} flexBasis={0} minWidth={0}>
-          <Button onPress={onPreferredActionPress} block variant={preferredActionVariant}>
-            {preferredActionLabel}
+          <Button onPress={onDismissActionPress} variant="secondary">
+            {dismissActionLabel}
           </Button>
-        </Box>
+        )}
+        <Button onPress={onPreferredActionPress} variant={preferredActionVariant}>
+          {preferredActionLabel}
+        </Button>
       </Box>
     </VStack>
   );

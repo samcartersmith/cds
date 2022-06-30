@@ -13,6 +13,11 @@ export const tableRow = css`
     padding: 0;
     border: 0;
   }
+
+  // Ensure sticky headers display properly
+  > th {
+    background-color: inherit;
+  }
 `;
 
 export const tableRowHover = css`

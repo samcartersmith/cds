@@ -94,6 +94,10 @@ declare module '@cbhq/docusaurus-plugin-docgen' {
   };
 
   export type DocTags = {
+    /**
+     * Comma separated list of files, relative to source file, which we should also include when running git log for component changelog.
+     */
+    changelog?: string;
     danger?: string;
     deprecated?: string;
     description?: string;
@@ -252,4 +256,12 @@ declare module 'react-docgen-typescript' {
     path: string,
     params: import('react-docgen-typescript/lib/parser').ParserOptions,
   ): { parse: (files: string[]) => import('@cbhq/docusaurus-plugin-docgen').Doc[] };
+}
+
+declare module ':docgen/_types/sharedParentTypes' {
+  export const sharedParentTypes: import('@cbhq/docusaurus-plugin-docgen').SharedParentTypes;
+}
+
+declare module ':docgen/_types/sharedTypeAliases' {
+  export const sharedTypeAliases: import('@cbhq/docusaurus-plugin-docgen').SharedTypeAliases;
 }

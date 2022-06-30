@@ -16,7 +16,7 @@ export type MotionBaseSpec = {
 } & Omit<DefaultMotionSpec, 'toValue' | 'fromValue' | 'property'> &
   Pick<EffectTiming, 'fill'>;
 
-export type MotionConfigOutput = { easing: string; duration: number } & EffectTiming &
+export type MotionConfigOutput = { easing: string; duration?: number } & EffectTiming &
   Pick<MotionBaseSpec, 'toValue' | 'fromValue' | 'fill'>;
 
 export function cubicBezier(easing: MotionCurve) {
@@ -29,6 +29,7 @@ export const convertMotionConfig = ({
   delay,
   easing,
   duration,
+  oneOffDuration,
   /**
    * Retain styles after animation has completed
    * @link https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/fill
@@ -39,7 +40,7 @@ export const convertMotionConfig = ({
     toValue,
     fromValue,
     easing: cubicBezier(easing),
-    duration: durations[duration],
+    duration: oneOffDuration ?? (duration && durations[duration]),
     delay,
     fill,
   };

@@ -5,19 +5,6 @@ hide_title: true
 hide_table_of_contents: true
 ---
 
-import { Video } from ':cds-website/components/Video';
-import { Collection, Item } from ':cds-website/components/Collection';
-import {
-  TextDisplay1,
-  TextDisplay2,
-  TextTitle2,
-  TextTitle3,
-  TextTitle1,
-  TextLabel2,
-  TextLabel1,
-} from '@cbhq/cds-web/typography';
-import { Divider, Box } from '@cbhq/cds-web/layout';
-
 <TextDisplay1 as="h1">Motion Engineering</TextDisplay1>
 
 <TextTitle3 as="h2">Overview</TextTitle3>
@@ -26,10 +13,15 @@ import { Divider, Box } from '@cbhq/cds-web/layout';
   engineering. It provides necessary information for engineers to nail the implementation details.
 </TextDisplay2>
 
+<TextTitle1 as="h1">
+  Checkout engineering guideline{' '}
+  <Link to="https://coda.io/d/CDS-Team_dFaC-pktuzN/CDS-Development_su4x1">here</Link>
+</TextTitle1>
+
 <Box spacingVertical={10}>
   <Video
-    light="/video/lightmode/03_handoff/cds_lm_handoff_hero_01.mp4"
-    dark="/video/darkmode/03_handoff/cds_dm_handoff_hero_01.mp4"
+    srcLight="/video/lightmode/03_handoff/cds_lm_handoff_hero_01.mp4"
+    srcDark="/video/darkmode/03_handoff/cds_dm_handoff_hero_01.mp4"
   />
 </Box>
 
@@ -43,7 +35,7 @@ import { Divider, Box } from '@cbhq/cds-web/layout';
 </TextTitle2>
 
 <Collection>
-  <Item alignItems="flex-start">
+  <CollectionItem alignItems="flex-start">
     <VStack flexGrow={1} spacingTop={2} alignItems="center" justifyContent="flex-start">
       <TextTitle1 as="h1">Simplified Spec</TextTitle1>
       <TextLabel2 as="p">A -> B</TextLabel2>
@@ -53,13 +45,15 @@ import { Divider, Box } from '@cbhq/cds-web/layout';
       <TextLabel2 as="p">0.0 -> 1.0</TextLabel2>
       <TextLabel2 as="p">0 -> 360\u00B0 (1x+90\u00B0)</TextLabel2>
     </VStack>
-  </Item>
-  <Item
+  </CollectionItem>
+  <CollectionItem
     flexGrow={2}
-    vid={{
-      light: '/video/lightmode/03_handoff/cds_lm_motion_spec_01.mp4',
-      dark: '/video/darkmode/03_handoff/cds_dm_motion_spec_01.mp4',
-    }}
+    media={
+      <Video
+        srcLight="/video/lightmode/03_handoff/cds_lm_motion_spec_01.mp4"
+        srcDark="/video/darkmode/03_handoff/cds_dm_motion_spec_01.mp4"
+      />
+    }
   />
 </Collection>
 
@@ -72,7 +66,7 @@ import { Divider, Box } from '@cbhq/cds-web/layout';
 </TextTitle2>
 
 <Collection>
-  <Item alignItems="flex-start">
+  <CollectionItem alignItems="flex-start">
     <VStack flexGrow={1} spacingTop={2} alignItems="center" justifyContent="flex-start">
       <TextTitle1 as="h1">Component</TextTitle1>
       <TextLabel1 as="p" spacingBottom={1}>
@@ -105,18 +99,20 @@ import { Divider, Box } from '@cbhq/cds-web/layout';
         Curve: Enter.Func
       </TextLabel2>
     </VStack>
-  </Item>
-  <Item
+  </CollectionItem>
+  <CollectionItem
     flexGrow={2}
-    vid={{
-      light: '/video/lightmode/03_handoff/cds_lm_handoff_component_01.mp4',
-      dark: '/video/darkmode/03_handoff/cds_dm_handoff_component_01.mp4',
-    }}
+    media={
+      <Video
+        srcLight="/video/lightmode/03_handoff/cds_lm_handoff_component_01.mp4"
+        srcDark="/video/darkmode/03_handoff/cds_dm_handoff_component_01.mp4"
+      />
+    }
   />
 </Collection>
 
 <Collection spacingVertical={3}>
-  <Item alignItems="flex-start">
+  <CollectionItem alignItems="flex-start">
     <VStack flexGrow={1} spacingTop={2} alignItems="center" justifyContent="flex-start">
       <TextTitle1 as="h1">Page transition</TextTitle1>
       <TextLabel1 as="p" spacingBottom={1}>
@@ -153,12 +149,14 @@ import { Divider, Box } from '@cbhq/cds-web/layout';
         CDS Duration: Token
       </TextLabel2>
     </VStack>
-  </Item>
-  <Item
+  </CollectionItem>
+  <CollectionItem
     flexGrow={2}
-    vid={{
-      light: '/video/lightmode/03_handoff/cds_lm_handoff_component_02.mp4',
-      dark: '/video/darkmode/03_handoff/cds_dm_handoff_component_02.mp4',
-    }}
+    media={
+      <Video
+        srcLight="/video/lightmode/03_handoff/cds_lm_handoff_component_02.mp4"
+        srcDark="/video/darkmode/03_handoff/cds_dm_handoff_component_02.mp4"
+      />
+    }
   />
 </Collection>

@@ -67,6 +67,8 @@ const localsDefaults = {
   partial: {
     css: path.join(templates, `partials/css.ejs.t`),
     cssMap: path.join(templates, `partials/cssMap.ejs.t`),
+    cssDeviceMap: path.join(templates, `partials/cssDeviceMap.ejs.t`),
+    cssSpacingDeviceMap: path.join(templates, `partials/cssSpacingDeviceMap.ejs.t`),
     objectMap: path.join(templates, `partials/objectMap.ejs.t`),
     typescript: path.join(templates, `partials/typescript.ejs.t`),
   },

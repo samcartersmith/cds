@@ -30,7 +30,8 @@ export type ToastBaseOptions = {
    */
   action?: ToastAction;
   /**
-   * Bottom offset postion
+   * Bottom offset position
+   * @default spacing2(Mobile)/spacing4(Web)
    */
   bottomOffset?: DimensionValue;
 } & Pick<OverlayLifecycleProps, 'onWillHide' | 'onDidHide'>;

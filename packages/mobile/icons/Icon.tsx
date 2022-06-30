@@ -7,6 +7,9 @@ export type IconProps = {
   name: IconName;
 } & IconBaseMobileProps;
 
+/**
+ * @changelog ./iconGlyphMap.ts, ./IconBase.tsx
+ */
 export const Icon = memo(function Icon(props: IconProps) {
   return <IconBase {...props} />;
 });

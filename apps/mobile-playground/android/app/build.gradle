@@ -6,10 +6,16 @@ import com.android.build.OutputFile
 def topLevel = "$project.rootDir/../../.."
 def nodeModulesPath = "$topLevel/node_modules"
 
+
 project.ext.react = [
-    root: topLevel,
-    cliPath: "$nodeModulesPath/react-native/cli.js",
-    enableHermes: false,  // clean and rebuild if changing
+    // Helpful in configuring RN with monorepos: https://github.com/react-native-community/cli/issues/877
+    entryFile                    : "src/main.tsx",
+    root                         : "$project.rootDir/..",
+    reactRoot                    : topLevel,
+    cliPath                      : "$nodeModulesPath/react-native/cli.js",
+    composeSourceMapsPath        : "$nodeModulesPath/react-native/scripts/compose-source-maps.js",
+    enableHermes                 : false,  // clean and rebuild if changing
+    bundleInFunctionalTestRelease: true,
 ]
 
 apply from: "$nodeModulesPath/react-native/react.gradle"
@@ -70,6 +76,8 @@ android {
 
         testBuildType System.getProperty('testBuildType', 'debug')
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -86,6 +94,7 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+
         // In production, you need to generate your own keystore file.
         // See: https://reactnative.dev/docs/signed-apk-android
         // release {
@@ -106,13 +115,15 @@ android {
                 }
             }
         }
-        release {
-            // Caution! In production, you need to generate your own keystore file.
-            // see https://reactnative.dev/docs/signed-apk-android.
+
+        productionRelease {
+            matchingFallbacks = ['release']
             signingConfig signingConfigs.debug
-            // signingConfig signingConfigs.release
-            minifyEnabled enableProguardInReleaseBuilds
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+
+        functionalTestRelease {
+            initWith productionRelease
+            signingConfig signingConfigs.debug
         }
     }
 

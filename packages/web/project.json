@@ -74,7 +74,7 @@
         ],
         "typescriptConfig": "packages/web/tsconfig.build.json",
         "fontsOutputDir": "packages/fonts",
-        "maxFileSizeInKb": 90
+        "maxFileSizeInKb": 115
       },
       "dependsOn": [
         {

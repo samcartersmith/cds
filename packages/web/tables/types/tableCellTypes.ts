@@ -13,7 +13,7 @@ import {
   SharedProps,
 } from '@cbhq/cds-common';
 
-import { CellProps } from '../../cells/Cell';
+import { CellProps, CellSharedProps } from '../../cells/Cell';
 import { TextProps } from '../../typography';
 
 export type TableCellTag = 'td' | 'th' | 'div';
@@ -37,7 +37,7 @@ type TableCellBaseProps = {
    * Use titleColor and subtitleColor if you need to be more specific
    * @default undefined
    */
-  color?: PaletteForeground;
+  color?: PaletteForeground | 'currentColor';
   /**
    * This prop us useful for right-aligning the last column
    * @default 'flex-start'
@@ -89,6 +89,8 @@ type TableCellBaseProps = {
    * @default { spacingHorizontal: 0 }
    */
   innerSpacing?: CellProps['innerSpacing'];
+  /** Specify spacing styles by device breakpoint */
+  responsiveConfig?: CellSharedProps['responsiveConfig'];
 } & TableCellSharedProps;
 
 type TableCellPropsWithInputs = {
@@ -102,14 +104,14 @@ type TableCellPropsWithInputs = {
    * @default undefined
    */
   title: string;
-  titleColor?: PaletteForeground;
+  titleColor?: PaletteForeground | 'currentColor';
   /**
    * A subtitle will appear below the title.
    * Type is set with TextLabel2
    * @default undefined
    */
   subtitle?: string;
-  subtitleColor?: PaletteForeground;
+  subtitleColor?: PaletteForeground | 'currentColor';
 } & TableCellBaseProps;
 type TableCellPropsWithChildren = {
   /**

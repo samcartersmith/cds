@@ -1,0 +1,38 @@
+Because CDS Tables extend the [HTML Table spec](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table), any attr's available on [table](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table), [td](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td), [tr](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr), [th](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th), [tbody](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody), [thead](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead) and [tfoot](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot) are available to you. This means you can build complex tables as you would HTML Tables.
+
+```jsx live
+<Table variant="graph" bordered>
+  <TableHeader>
+    <TableRow>
+      <TableCell title="Transfer type" rowSpan={2} />
+      <TableCell title="Conditions" colSpan={3} />
+      <TableCell title="Outcomes" colSpan={2} />
+    </TableRow>
+    <TableRow>
+      <TableCell title="Destination" />
+      <TableCell title="Currency" />
+      <TableCell title="Transaction size" />
+      <TableCell title="Consensus approvals" />
+      <TableCell title="Video approvals" />
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell title="Vault withdrawal" />
+      <TableCell title="External address" />
+      <TableCell title="Crypto" />
+      <TableCell title="Up to 0.1 BTC" />
+      <TableCell title="2 in 24h" />
+      <TableCell title="1" />
+    </TableRow>
+    <TableRow>
+      <TableCell title="Another row" />
+      <TableCell title="Addy" />
+      <TableCell title="Fiat" />
+      <TableCell title="> $100,000" />
+      <TableCell title="1 in 6mo" />
+      <TableCell title="0" />
+    </TableRow>
+  </TableBody>
+</Table>
+```

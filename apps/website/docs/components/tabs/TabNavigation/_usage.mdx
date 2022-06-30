@@ -1,4 +1,3 @@
-import { Collection, Item } from ':cds-website/components/Collection';
 import IntroExample from './_example.mdx';
 
 <IntroExample />
@@ -9,7 +8,7 @@ If you're migrating to CDS Tabs for mobile or web, these demos step through a si
 hopefully making your life easier!
 
 <Collection spacingVertical={0} gap={2}>
-  <Item
+  <CollectionItem
     href="https://drive.google.com/file/d/1xmQYZjS77XI2HE4LJ30elJHwhtk7GOAx/view?usp=sharing"
     title="Mobile demo (Wallet RN)"
     description={
@@ -23,11 +22,10 @@ hopefully making your life easier!
     }
     textAlign="flex-start"
     spacingHorizontal={0}
-    img={{
-      src: '/img/components/Tabs/cds-tabs--mobile.jpg',
-    }}
-  />
-  <Item
+    media={<Image src='/img/components/Tabs/cds-tabs--mobile.jpg' />}
+/>
+
+  <CollectionItem
     href="https://drive.google.com/file/d/1EHI1q8dB8uwlh2jwOL0oD5sSBCVbq4Rl/view?usp=sharing"
     title="Web demo (Wallet Extension)"
     description="Migrating to CDS Tabs in the Wallet extension"
@@ -42,8 +40,6 @@ hopefully making your life easier!
     }
     textAlign="flex-start"
     spacingHorizontal={0}
-    img={{
-      src: '/img/components/Tabs/cds-tabs--web.jpg',
-    }}
+    media={<Image src='/img/components/Tabs/cds-tabs--web.jpg' />}
   />
 </Collection>

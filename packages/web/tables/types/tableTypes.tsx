@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { CellSpacing, SharedProps } from '@cbhq/cds-common';
+import { CellSpacing, DimensionValue, SharedProps } from '@cbhq/cds-common';
 
 /**
  * The table variant will be provided via context and available
@@ -13,10 +13,7 @@ export type TableCellSpacing = {
   outer?: CellSpacing;
 };
 
-export type TableCtx = {
-  variant?: TableVariant;
-  cellSpacing?: TableCellSpacing;
-};
+export type TableCtx = Pick<TableProps, 'variant' | 'cellSpacing' | 'compact'>;
 
 export type TableProps = {
   /**
@@ -42,4 +39,10 @@ export type TableProps = {
   tableLayout?: TableLayout;
   /** Provide custom cell spacing for all child TableCells */
   cellSpacing?: TableCellSpacing;
+  /** Use compact cell spacing. If set, cellSpacing will override these defaults */
+  compact?: boolean;
+  /** Set a fixed height. */
+  height?: DimensionValue;
+  /** Set a maximum height. */
+  maxHeight?: DimensionValue;
 } & SharedProps;

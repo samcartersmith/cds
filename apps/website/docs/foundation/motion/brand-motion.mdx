@@ -5,19 +5,6 @@ hide_title: true
 hide_table_of_contents: true
 ---
 
-import { Divider, Box, HStack, VStack } from '@cbhq/cds-web/layout';
-import { Video } from ':cds-website/components/Video';
-import { Collection, Item } from ':cds-website/components/Collection';
-import {
-  TextDisplay1,
-  TextDisplay2,
-  TextTitle2,
-  TextTitle3,
-  Link,
-  TextTitle1,
-  TextLabel2,
-  TextLabel1,
-} from '@cbhq/cds-web/typography';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 
 <TextDisplay1 as="h1">Brand Motion</TextDisplay1>
@@ -34,10 +21,7 @@ import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 
 <TextDisplay2 as="h2">Hype-Reel</TextDisplay2>
 
-<Video
-  src="/video/lightmode/04_brand/Coinbase_HypeReel.mp4"
-  options={{ autoPlay: false, controls: true }}
-/>
+<Video src="/video/lightmode/04_brand/Coinbase_HypeReel.mp4" autoPlay={false} controls />
 
 <Divider spacingTop={4} />
 
@@ -48,36 +32,28 @@ import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 </TextTitle2>
 
 <Collection spacingVertical={3}>
-  <Item
+  <CollectionItem
     title="Exchange"
     description="Transitioning between states is seen as an exchange of data & information. We combine the vertical divisions created by the Global Grid and positional shifts to achieve this effect."
-    vid={{
-      src: '/video/lightmode/04_brand/02_four_pillars/exchange_01.mp4',
-    }}
+    media={<Video src="/video/lightmode/04_brand/02_four_pillars/exchange_01.mp4" />}
     textAlign="flex-start"
   />
-  <Item
+  <CollectionItem
     title="Orbit"
     description="The circle plays a large role in the Coinbase identity, not only as a graphic device that references the shape of a coin, but also in its connection to the global themes of the identity. The orbitting motion reflects this connection to the globe and it’s natural movement."
-    vid={{
-      src: '/video/lightmode/04_brand/02_four_pillars/orbit_01.mp4',
-    }}
+    media={<Video src="/video/lightmode/04_brand/02_four_pillars/orbit_01.mp4" />}
     textAlign="flex-start"
   />
-  <Item
+  <CollectionItem
     title="Roll"
     description="In this instance, the rolling of a coin inspires animated moments which can help graphics and text to enter and exit screen dynamically."
-    vid={{
-      src: '/video/lightmode/04_brand/02_four_pillars/roll_01.mp4',
-    }}
+    media={<Video src="/video/lightmode/04_brand/02_four_pillars/roll_01.mp4" />}
     textAlign="flex-start"
   />
-  <Item
+  <CollectionItem
     title="Flip"
     description="The flip is the most lighthearted movement within the motion language. It acts as a ‘wink’ and sits in contrast to some of the more serious and precise moments of the first three pillars."
-    vid={{
-      src: '/video/lightmode/04_brand/02_four_pillars/flip_01.mp4',
-    }}
+    media={<Video src="/video/lightmode/04_brand/02_four_pillars/flip_01.mp4" />}
     textAlign="flex-start"
   />
 </Collection>
@@ -88,26 +64,29 @@ import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
   Exchange
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       Transitioning between states is seen as an exchange of data & information. We combine the
       vertical divisions created by the Global Grid and positional shifts to achieve this effect.
     </TextLabel2>
-  </Item>
-  <Item
-    vid={{
-      light: '/video/lightmode/04_brand/cds_lm_brand_exchange_01.mp4',
-      dark: '/video/darkmode/04_brand/cds_dm_brand_exchange_01.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+  </CollectionItem>
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/04_brand/cds_lm_brand_exchange_01.mp4"
+        srcDark="/video/darkmode/04_brand/cds_dm_brand_exchange_01.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
     flexGrow={2}
   />
 </Collection>
 
 <Box spacingVertical={10}>
   <Video
-    light="/video/lightmode/04_brand/cds_lm_brand_exchange_collage_01.mp4"
-    dark="/video/darkmode/04_brand/cds_dm_brand_exchange_collage_01.mp4"
+    srcLight="/video/lightmode/04_brand/cds_lm_brand_exchange_collage_01.mp4"
+    srcDark="/video/darkmode/04_brand/cds_dm_brand_exchange_collage_01.mp4"
   />
 </Box>
 
@@ -117,18 +96,21 @@ import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
   Orbit: Constant
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       Transitioning between states is seen as an exchange of data & information. We combine the
       vertical divisions created by the Global Grid and positional shifts to achieve this effect.
     </TextLabel2>
-  </Item>
-  <Item
-    vid={{
-      light: '/video/lightmode/04_brand/cds_lm_brand_orbit_01.mp4',
-      dark: '/video/darkmode/04_brand/cds_dm_brand_orbit_01.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+  </CollectionItem>
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/04_brand/cds_lm_brand_orbit_01.mp4"
+        srcDark="/video/darkmode/04_brand/cds_dm_brand_orbit_01.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
     flexGrow={2}
   />
 </Collection>
@@ -137,26 +119,29 @@ import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
   Orbit: In/Out
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       Transitioning between states is seen as an exchange of data & information. We combine the
       vertical divisions created by the Global Grid and positional shifts to achieve this effect.
     </TextLabel2>
-  </Item>
-  <Item
-    vid={{
-      light: '/video/lightmode/04_brand/cds_lm_brand_orbit_inout_02.mp4',
-      dark: '/video/darkmode/04_brand/cds_dm_brand_orbit_inout_02.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+  </CollectionItem>
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/04_brand/cds_lm_brand_orbit_inout_02.mp4"
+        srcDark="/video/darkmode/04_brand/cds_dm_brand_orbit_inout_02.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
     flexGrow={2}
   />
 </Collection>
 
 <Box spacingVertical={10}>
   <Video
-    light="/video/lightmode/04_brand/cds_lm_brand_orbit_collage_02.mp4"
-    dark="/video/darkmode/04_brand/cds_dm_brand_orbit_collage_02.mp4"
+    srcLight="/video/lightmode/04_brand/cds_lm_brand_orbit_collage_02.mp4"
+    srcDark="/video/darkmode/04_brand/cds_dm_brand_orbit_collage_02.mp4"
   />
 </Box>
 
@@ -166,26 +151,29 @@ import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
   Roll
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       Transitioning between states is seen as an exchange of data & information. We combine the
       vertical divisions created by the Global Grid and positional shifts to achieve this effect.
     </TextLabel2>
-  </Item>
-  <Item
-    vid={{
-      light: '/video/lightmode/04_brand/cds_lm_brand_roll_01.mp4',
-      dark: '/video/darkmode/04_brand/cds_dm_brand_roll_01.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+  </CollectionItem>
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/04_brand/cds_lm_brand_roll_01.mp4"
+        srcDark="/video/darkmode/04_brand/cds_dm_brand_roll_01.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
     flexGrow={2}
   />
 </Collection>
 
 <Box spacingVertical={10}>
   <Video
-    light="/video/lightmode/04_brand/cds_lm_brand_roll_collage_01.mp4"
-    dark="/video/darkmode/04_brand/cds_dm_brand_roll_collage_01.mp4"
+    srcLight="/video/lightmode/04_brand/cds_lm_brand_roll_collage_01.mp4"
+    srcDark="/video/darkmode/04_brand/cds_dm_brand_roll_collage_01.mp4"
   />
 </Box>
 
@@ -195,18 +183,21 @@ import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
   Flip: Singluar
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       Transitioning between states is seen as an exchange of data & information. We combine the
       vertical divisions created by the Global Grid and positional shifts to achieve this effect.
     </TextLabel2>
-  </Item>
-  <Item
-    vid={{
-      light: '/video/lightmode/04_brand/cds_lm_brand_flip_01.mp4',
-      dark: '/video/darkmode/04_brand/cds_dm_brand_flip_01.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+  </CollectionItem>
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/04_brand/cds_lm_brand_flip_01.mp4"
+        srcDark="/video/darkmode/04_brand/cds_dm_brand_flip_01.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
     flexGrow={2}
   />
 </Collection>
@@ -217,26 +208,29 @@ import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
   Flip: Group
 </TextTitle1>
 <Collection spacingVertical={0}>
-  <Item spacingHorizontal={0} spacingEnd={6}>
+  <CollectionItem spacingHorizontal={0} spacingEnd={6}>
     <TextLabel2 as="p">
       Transitioning between states is seen as an exchange of data & information. We combine the
       vertical divisions created by the Global Grid and positional shifts to achieve this effect.
     </TextLabel2>
-  </Item>
-  <Item
-    vid={{
-      light: '/video/lightmode/04_brand/cds_lm_brand_flip_group_01.mp4',
-      dark: '/video/darkmode/04_brand/cds_dm_brand_flip_group_01.mp4',
-      options: { autoPlay: false, controls: true },
-    }}
+  </CollectionItem>
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/04_brand/cds_lm_brand_flip_group_01.mp4"
+        srcDark="/video/darkmode/04_brand/cds_dm_brand_flip_group_01.mp4"
+        autoPlay={false}
+        controls
+      />
+    }
     flexGrow={2}
   />
 </Collection>
 
 <Box spacingVertical={10}>
   <Video
-    light="/video/lightmode/04_brand/cds_lm_brand_flip_collage_01.mp4"
-    dark="/video/darkmode/04_brand/cds_dm_brand_flip_collage_01.mp4"
+    srcLight="/video/lightmode/04_brand/cds_lm_brand_flip_collage_01.mp4"
+    srcDark="/video/darkmode/04_brand/cds_dm_brand_flip_collage_01.mp4"
   />
 </Box>
 

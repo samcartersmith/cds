@@ -1,4 +1,9 @@
-import type { PaletteForeground, SharedProps, TextBaseProps } from '@cbhq/cds-common';
+import type {
+  PaletteForeground,
+  ResponsiveProps,
+  SharedProps,
+  TextBaseProps,
+} from '@cbhq/cds-common';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
 export type TextProps = {
@@ -22,6 +27,8 @@ export type TextProps = {
   dangerouslySetClassName?: string;
   /** Used to associate a label with a control */
   id?: string;
+  /** Specify props by device breakpoint */
+  responsiveConfig?: ResponsiveProps;
 } & TextBaseProps &
   SharedProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy'>;

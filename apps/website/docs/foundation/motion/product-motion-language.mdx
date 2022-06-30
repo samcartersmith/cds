@@ -5,18 +5,6 @@ hide_title: true
 hide_table_of_contents: true
 ---
 
-import { Video } from ':cds-website/components/Video';
-import { Collection, Item } from ':cds-website/components/Collection';
-import { Divider, Box } from '@cbhq/cds-web/layout';
-import {
-  TextDisplay1,
-  TextDisplay2,
-  TextBody,
-  TextTitle2,
-  TextTitle3,
-  Link,
-} from '@cbhq/cds-web/typography';
-
 <TextDisplay1 as="h1">Coinbase Motion Language</TextDisplay1>
 
 <TextTitle3 as="h2">Overview</TextTitle3>
@@ -28,8 +16,8 @@ import {
 
 <Box spacingVertical={10}>
   <Video
-    light="/video/lightmode/01_product/cds_lm_intro_01.mp4"
-    dark="/video/darkmode/01_product/cds_dm_intro_01.mp4"
+    srcLight="/video/lightmode/01_product/cds_lm_intro_01.mp4"
+    srcDark="/video/darkmode/01_product/cds_dm_intro_01.mp4"
   />
 </Box>
 
@@ -42,38 +30,46 @@ import {
 </TextTitle2>
 
 <Collection spacingVertical={8}>
-  <Item
-    vid={{
-      light: '/video/lightmode/01_product/cds_lm_principle_assist_01.mp4',
-      dark: '/video/darkmode/01_product/cds_dm_principle_assist_01.mp4',
-    }}
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/01_product/cds_lm_principle_assist_01.mp4"
+        srcDark="/video/darkmode/01_product/cds_dm_principle_assist_01.mp4"
+      />
+    }
     title="Assistive"
     description="Motion helps users orient themselves within the interface. It allows them to understand the relationship between different parts of the app."
     textAlign="flex-start"
   />
-  <Item
-    vid={{
-      light: '/video/lightmode/01_product/cds_lm_principle_highlight_01.mp4',
-      dark: '/video/darkmode/01_product/cds_dm_principle_highlight_01.mp4',
-    }}
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/01_product/cds_lm_principle_highlight_01.mp4"
+        srcDark="/video/darkmode/01_product/cds_dm_principle_highlight_01.mp4"
+      />
+    }
     title="Highlight"
     description="Motion draws users’ attention to specific areas, or helps to distract from it."
     textAlign="flex-start"
   />
-  <Item
-    vid={{
-      light: '/video/lightmode/01_product/cds_lm_principle_cohesive_01.mp4',
-      dark: '/video/darkmode/01_product/cds_dm_principle_cohesive_01.mp4',
-    }}
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/01_product/cds_lm_principle_cohesive_01.mp4"
+        srcDark="/video/darkmode/01_product/cds_dm_principle_cohesive_01.mp4"
+      />
+    }
     title="Cohesive"
     description="Motion gives users a unified experience throughout the app through consistent speed, responsiveness, and clear directionality."
     textAlign="flex-start"
   />
-  <Item
-    vid={{
-      light: '/video/lightmode/01_product/cds_lm_principle_expressive_01.mp4',
-      dark: '/video/darkmode/01_product/cds_dm_principle_expressive_01.mp4',
-    }}
+  <CollectionItem
+    media={
+      <Video
+        srcLight="/video/lightmode/01_product/cds_lm_principle_expressive_01.mp4"
+        srcDark="/video/darkmode/01_product/cds_dm_principle_expressive_01.mp4"
+      />
+    }
     title="Expressive"
     description="Motion adheres to the principles of the physical world. Conveying energy, speed and weight that make the experience feel fluid and natural."
     textAlign="flex-start"

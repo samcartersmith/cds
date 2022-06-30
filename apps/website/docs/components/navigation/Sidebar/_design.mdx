@@ -1,6 +1,7 @@
-import { DocImage } from ':cds-website/components/DocImage';
-
-<DocImage component="Sidebar" name="hero" />
+<Image
+  srcLight="/img/components/Sidebar/hero_light.png"
+  srcDark="/img/components/Sidebar/hero_dark.png"
+/>
 
 ## Intro
 
@@ -21,7 +22,10 @@ The Sidebar is our primary navigation component. It provides access to the main 
 
 The Sidebar supports an unlimited number of items and will be scrollable if the list expands beyond the visible area. We generally recommend keeping the primary navigation as simple as possible and limited to the most important features though.
 
-<DocImage component="Sidebar" name="anatomy" />
+<Image
+  srcLight="/img/components/Sidebar/anatomy_light.jpg"
+  srcDark="/img/components/Sidebar/anatomy_dark.jpg"
+/>
 
 > 1. **Start** (i.e. logomark)
 > 2. **SidebarItem**
@@ -32,7 +36,10 @@ The Sidebar supports an unlimited number of items and will be scrollable if the 
 
 The Sidebar comes in two sizes: _Extended_ and _Collapsed_. By default, we will display the extended variant if the screen or window size is larger than 768px, and the collapsed variant for smaller screen or window sizes below that size.
 
-<DocImage component="Sidebar" name="collapsed" />
+<Image
+  srcLight="/img/components/Sidebar/collapsed_light.jpg"
+  srcDark="/img/components/Sidebar/collapsed_dark.jpg"
+/>
 
 In rare cases in which you’re dealing with extraordinarily complex or dense layouts, you can decide to overwrite this behavior and force the condensed variant on a particular screen, e.g. if your product feature includes a particular complex or dense user interface (e.g. advanced trading features). Please only do this if absolutely necessary to keep the general behavior as consistent as possible.
 

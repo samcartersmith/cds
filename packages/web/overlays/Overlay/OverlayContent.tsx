@@ -43,7 +43,7 @@ export const OverlayContent = forwardRef<HTMLElement, OverlayProps>(
         {content}
       </motion.div>
     ) : (
-      <div style={style}>content</div>
+      <div style={style}>{content}</div>
     );
   },
 );

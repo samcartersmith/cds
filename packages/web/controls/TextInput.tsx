@@ -70,6 +70,7 @@ export const TextInput = memo(
       height,
       inputNode,
       bordered = true,
+      enableColorSurge = false,
       ...htmlInputElmProps
     }: TextInputProps,
     ref: ForwardedRef<HTMLInputElement>,
@@ -170,9 +171,11 @@ export const TextInput = memo(
           borderRadius={borderRadius}
           height={height}
           borderWidth={bordered ? 'input' : 'none'}
+          focused={focused}
           // If bordered is true, we want disableFocusedStyle = false
           // If bordered is false, we want disableFocusedStyle = true
           disableFocusedStyle={!bordered}
+          enableColorSurge={enableColorSurge}
           labelNode={
             !compact &&
             !!label && (

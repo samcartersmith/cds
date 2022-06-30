@@ -1,10 +1,15 @@
 import React, { ForwardedRef, forwardRef, memo } from 'react';
 import { css } from 'linaria';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
-import type { CellBaseProps } from '@cbhq/cds-common/types';
+import type {
+  CellBaseProps,
+  ResponsiveCellSpacingProps,
+  StackBaseProps,
+} from '@cbhq/cds-common/types';
 import { hasCellPriority } from '@cbhq/cds-common/utils/cell';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
+import { useResponsiveCellSpacingStyles } from '../hooks/useResponsiveCellSpacing';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { LinkableProps, Pressable } from '../system/Pressable';
@@ -54,6 +59,8 @@ export type CellSharedProps = {
   /** The type of outer wrapping element. */
   as?: 'div' | 'li';
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
+  /** Specify spacing styles by device breakpoint */
+  responsiveConfig?: ResponsiveCellSpacingProps;
 } & LinkableProps;
 
 export type CellProps = {
@@ -62,6 +69,7 @@ export type CellProps = {
    * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
    * */
   tabIndex?: number;
+  gap?: StackBaseProps['gap'];
 } & CellBaseProps &
   CellSharedProps;
 
@@ -76,6 +84,7 @@ export const Cell = memo(
       detail,
       detailWidth,
       disabled,
+      gap = 2,
       intermediary,
       media,
       minHeight,
@@ -94,6 +103,7 @@ export const Cell = memo(
        *
        * */
       shouldOverflow,
+      responsiveConfig,
       /** Props for useCellSpacing */
       ...spacingProps
     }: CellProps,
@@ -101,6 +111,8 @@ export const Cell = memo(
   ) {
     const spacing = useCellSpacing(spacingProps);
     const offsetClassName = useOffsetStyles({ offsetHorizontal: spacing.inner.offsetHorizontal });
+    const { responsiveInnerSpacing, responsiveOuterSpacing } =
+      useResponsiveCellSpacingStyles(responsiveConfig);
     const linkable = Boolean(onPress ?? to);
     const maybeTruncateClassName = cx(
       cellStaticClassName,
@@ -114,10 +126,11 @@ export const Cell = memo(
         background={selected ? 'backgroundAlternate' : undefined}
         borderRadius={borderRadius}
         alignItems={alignItems}
-        gap={2}
+        gap={gap}
         width="100%"
         testID={testID}
         {...spacing.inner}
+        dangerouslySetClassName={responsiveInnerSpacing}
         offsetHorizontal={linkable ? undefined : spacing.inner.offsetHorizontal}
       >
         {media && (
@@ -199,6 +212,7 @@ export const Cell = memo(
         minHeight={minHeight}
         maxHeight={maxHeight}
         {...spacing.outer}
+        dangerouslySetClassName={responsiveOuterSpacing}
         ref={ref}
       >
         {content}

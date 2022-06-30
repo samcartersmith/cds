@@ -1,8 +1,6 @@
-import { MotionBaseSpec } from '../types';
+import { MotionTransition } from '../types';
 
-type ProgressMotionBaseSpec = Pick<MotionBaseSpec, 'easing' | 'duration'>;
-
-export const animateProgressBaseSpec: ProgressMotionBaseSpec = {
+export const animateProgressBaseSpec: MotionTransition = {
   easing: 'global',
   duration: 'slow3',
 };

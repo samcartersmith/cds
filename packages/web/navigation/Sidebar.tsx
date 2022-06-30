@@ -7,7 +7,7 @@ import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
 
 import { useDimensions } from '../hooks/useDimensions';
 import { VStack } from '../layout';
-import { deviceBreakpoints } from '../layout/responsive';
+import { deviceBreakpoints } from '../layout/breakpoints';
 import { ThemeProvider } from '../system/ThemeProvider';
 
 import { SidebarProvider } from './SidebarContext';

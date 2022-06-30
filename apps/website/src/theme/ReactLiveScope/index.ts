@@ -4,6 +4,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import ExampleWithThemeToggles from '@theme/ExampleWithThemeToggles';
 import ThemeToggles from '@theme/ThemeToggles';
 import { join, useToggler } from '@cbhq/cds-common';
+import { useSort } from '@cbhq/cds-common/hooks/useSort';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { accounts } from '@cbhq/cds-common/internal/data/accounts';
 import {
@@ -52,14 +53,20 @@ import * as CDSDots from '@cbhq/cds-web/dots';
 import { Dropdown } from '@cbhq/cds-web/dropdown/Dropdown';
 import { MenuItem } from '@cbhq/cds-web/dropdown/MenuItem';
 import { useA11yControlledVisibility } from '@cbhq/cds-web/hooks/useA11yControlledVisibility';
+import { useBreakpoints } from '@cbhq/cds-web/hooks/useBreakpoints';
 import { useCheckboxGroupState } from '@cbhq/cds-web/hooks/useCheckboxGroupState';
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
+import { useHasMounted } from '@cbhq/cds-web/hooks/useHasMounted';
+import { useIsBrowser } from '@cbhq/cds-web/hooks/useIsBrowser';
 import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
 import * as CDSIcons from '@cbhq/cds-web/icons';
 import * as CDSIllustrations from '@cbhq/cds-web/illustrations';
 import * as CDSLayout from '@cbhq/cds-web/layout';
 import * as CDSLoaders from '@cbhq/cds-web/loaders';
 import * as CDSMedia from '@cbhq/cds-web/media';
+import { ColorSurge } from '@cbhq/cds-web/motion/ColorSurge';
+import { Pulse } from '@cbhq/cds-web/motion/Pulse';
+import { Shake } from '@cbhq/cds-web/motion/Shake';
 import * as CDSNavigation from '@cbhq/cds-web/navigation';
 import * as CDSOverlays from '@cbhq/cds-web/overlays';
 import { Tooltip as DeprecatedTooltip } from '@cbhq/cds-web/overlays/Deprecated/Tooltip';
@@ -69,6 +76,7 @@ import { useModal } from '@cbhq/cds-web/overlays/useModal';
 import { useToast } from '@cbhq/cds-web/overlays/useToast';
 import { insetFocusRing } from '@cbhq/cds-web/styles/focus';
 import * as CDSSystem from '@cbhq/cds-web/system';
+import { BrowserOnly } from '@cbhq/cds-web/system/BrowserOnly';
 import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
 import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
@@ -132,11 +140,13 @@ const ReactLiveScope: unknown = {
   join,
   lottieFiles,
   useAccessibleForeground,
+  useBreakpoints,
   useCheckboxGroupState,
   usePalette,
   usePaletteConfig,
   usePaletteValueToRgbaString,
   useDeviceSpectrum,
+  useHasMounted,
   useScale,
   useScaleConditional,
   useSparklinePath,
@@ -144,6 +154,7 @@ const ReactLiveScope: unknown = {
   useSpectrum,
   useSpectrumConditional,
   useStatusButtons,
+  useSort,
   useToggler,
   useModal,
   useA11yControlledVisibility,
@@ -156,6 +167,7 @@ const ReactLiveScope: unknown = {
   useToast,
   getZIndexFromRow,
   useEventHandler,
+  useIsBrowser,
   // CDS Components
   Text: CDSTypography.TextBody,
   ...CDSAccordion,
@@ -179,6 +191,9 @@ const ReactLiveScope: unknown = {
   ...CDSTypography,
   ...CDSIllustrations,
   ...CDSVisualizations,
+  Shake,
+  Pulse,
+  ColorSurge,
   Cell,
   Dropdown,
   MenuItem,
@@ -215,6 +230,7 @@ const ReactLiveScope: unknown = {
   AppSwitcherContent,
   UserSwitcherContent,
   insetFocusRing,
+  BrowserOnly,
 };
 
 export default ReactLiveScope;

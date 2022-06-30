@@ -2,12 +2,43 @@ import { arrayToObject, mapValues, toCssVarFn } from '@cbhq/cds-utils/index';
 
 import { spacingConfig, spacingDirections, spacingScale } from './configs/spacingConfig';
 
-const escape = <T extends number>(input: T) => String(input).replace('.', '\\\\.') as `${T}`;
+export const escape = <T extends number>(input: T) => String(input).replace('.', '\\\\.') as `${T}`;
 
 // JSON.stringify in objectMap double escapes escaped strings so have to escape with only 2 backslashes
 const cssVariables = mapValues(arrayToObject(spacingScale), (_, key) =>
   toCssVarFn(`spacing-${key}`).replace('.', '\\.'),
 );
+
+export const paddingStylesForDevice = (device: string) => {
+  return {
+    padding: mapValues(arrayToObject(spacingDirections), (direction) => {
+      return mapValues(arrayToObject(spacingScale), (spacing) => {
+        const fullAttribute = `padding${direction === 'all' ? '' : `-${direction}`}`;
+        const escapedPadding = `var(--spacing-${escape(spacing)})`;
+        return `
+          @media (${device}) {
+            ${[fullAttribute]}: ${escapedPadding}
+          }
+        `;
+      });
+    }),
+  };
+};
+export const marginStylesForDevice = (device: string) => {
+  return {
+    margin: mapValues(arrayToObject(spacingDirections), (direction) => {
+      return mapValues(arrayToObject(spacingScale), (spacing) => {
+        const fullAttribute = `margin${direction === 'all' ? '' : `-${direction}`}` as const;
+        const escapedMargin = `calc(-1 * var(--spacing-${escape(spacing)}))` as const;
+        return `
+          @media (${device}) {
+            ${[fullAttribute]}: ${escapedMargin}
+          }
+        `;
+      });
+    }),
+  };
+};
 
 export const Spacing = {
   css: (attribute: 'padding' | 'margin') => {

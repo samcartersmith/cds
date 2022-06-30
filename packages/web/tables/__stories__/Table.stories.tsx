@@ -3,11 +3,13 @@ import { useMemo, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 import startCase from 'lodash/startCase';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { CellMediaType } from '@cbhq/cds-common/types';
 
 import { Button } from '../../buttons';
+import { CellMedia } from '../../cells';
 import { Switch } from '../../controls/Switch';
 import { Icon } from '../../icons';
-import { HStack } from '../../layout';
+import { HStack, VStack } from '../../layout';
 import { TextDisplay2 } from '../../typography';
 import { assetHubMock } from '../__mocks__';
 import { Table, TableBody, TableCell, TableHeader, TableRow, TableVariant } from '..';
@@ -79,15 +81,15 @@ export const SampleTable: Story = () => {
   );
 };
 
-const SortableIconHelper = ({
-  direction,
-  color,
-}: {
-  direction?: 'DESC' | 'ASC';
-  color: 'primary' | 'foregroundMuted';
-}) => {
+const SortableIconHelper = ({ direction }: { direction?: 'DESC' | 'ASC' }) => {
+  const up = useMemo(() => (direction === 'ASC' ? 'primary' : 'foregroundMuted'), [direction]);
+  const down = useMemo(() => (direction === 'DESC' ? 'primary' : 'foregroundMuted'), [direction]);
+
   return (
-    <Icon color={color} name={direction === 'DESC' ? 'sortUpCenter' : 'sortDownCenter'} size="s" />
+    <VStack>
+      <Icon color={up} name="sortUpCenter" size="s" />
+      <Icon color={down} name="sortDownCenter" size="s" />
+    </VStack>
   );
 };
 
@@ -115,8 +117,8 @@ export const SortingExample: Story = () => {
   };
 
   return (
-    <Table bordered variant="ruled">
-      <TableHeader>
+    <Table bordered variant="ruled" maxHeight={500}>
+      <TableHeader sticky>
         <TableRow fullWidth>
           <HStack alignItems="center" justifyContent="space-between" flexGrow={1}>
             <TextDisplay2 as="h2">Your assets</TextDisplay2>
@@ -130,33 +132,20 @@ export const SortingExample: Story = () => {
             onPress={() => sortTable('name')}
             color={sortBy === 'name' ? 'primary' : 'foregroundMuted'}
             title="Asset"
-            end={
-              <SortableIconHelper
-                color={sortBy === 'name' ? 'primary' : 'foregroundMuted'}
-                direction={sortBy === 'name' ? sortDirection : undefined}
-              />
-            }
+            end={<SortableIconHelper direction={sortBy === 'name' ? sortDirection : undefined} />}
           />
           <TableCell
             onPress={() => sortTable('ticker')}
             color={sortBy === 'ticker' ? 'primary' : 'foregroundMuted'}
             title="Ticker"
-            end={
-              <SortableIconHelper
-                color={sortBy === 'ticker' ? 'primary' : 'foregroundMuted'}
-                direction={sortBy === 'ticker' ? sortDirection : undefined}
-              />
-            }
+            end={<SortableIconHelper direction={sortBy === 'ticker' ? sortDirection : undefined} />}
           />
           <TableCell
             onPress={() => sortTable('appStatus')}
             color={sortBy === 'appStatus' ? 'primary' : 'foregroundMuted'}
             title="Application Status"
             end={
-              <SortableIconHelper
-                color={sortBy === 'appStatus' ? 'primary' : 'foregroundMuted'}
-                direction={sortBy === 'appStatus' ? sortDirection : undefined}
-              />
+              <SortableIconHelper direction={sortBy === 'appStatus' ? sortDirection : undefined} />
             }
           />
         </TableRow>
@@ -227,5 +216,73 @@ export const FixedLayoutExample: Story = () => {
         </TableBody>
       </Table>
     </>
+  );
+};
+
+const COMPACT_LABELS = ['name', 'ticker', 'appStatus'];
+const mediaTypes: CellMediaType[] = ['asset', 'avatar', 'icon', 'image', 'pictogram'];
+export const CompactExample: Story = () => {
+  const [compact, { toggle }] = useToggler(true);
+  const data = assetHubMock.slice(0, 20);
+
+  return (
+    <Table variant="ruled" bordered compact={compact}>
+      <TableHeader>
+        <TableRow fullWidth>
+          <HStack alignItems="center" justifyContent="space-between" flexGrow={1}>
+            <TextDisplay2 as="h2">Compact Table</TextDisplay2>
+            <Switch onChange={toggle} checked={compact}>
+              Compact
+            </Switch>
+          </HStack>
+        </TableRow>
+        <TableRow backgroundColor="backgroundAlternate">
+          {COMPACT_LABELS.map((label) => (
+            <TableCell key={`header-cell-${label}`} title={label} />
+          ))}
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow>
+          <TableCell title="Title" />
+          <TableCell title="Title" />
+          <TableCell title="Title" />
+        </TableRow>
+        <TableRow>
+          <TableCell title="Title" subtitle="A description" />
+          <TableCell title="Title" subtitle="A description" />
+          <TableCell title="Title" subtitle="A description" />
+        </TableRow>
+        {data.map((row, index) => (
+          <TableRow key={`row-${row.name}--${row.appSubmittedAt}`}>
+            {Object.entries(row)
+              .filter(([label]) => COMPACT_LABELS.includes(label))
+              .map(([key, val]) => {
+                const mediaType = mediaTypes[index % mediaTypes.length];
+                return (
+                  <TableCell
+                    key={`cell-${key}`}
+                    title={`${val}`}
+                    subtitle="Some subtitle"
+                    start={
+                      mediaType === 'image' ? (
+                        <CellMedia
+                          type="image"
+                          source="https://via.placeholder.com/200/0000ff/ffffff.webp?text=CDS"
+                        />
+                      ) : (
+                        <CellMedia
+                          type="avatar"
+                          source="https://via.placeholder.com/200/0000ff/ffffff.webp?text=CDS"
+                        />
+                      )
+                    }
+                  />
+                );
+              })}
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
   );
 };

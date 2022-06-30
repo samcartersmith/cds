@@ -7,35 +7,43 @@ import React, {
   useState,
 } from 'react';
 import { css } from 'linaria';
-import type { BoxBaseProps, ForwardedRef, Position, SharedProps } from '@cbhq/cds-common';
-import { ElevationLevels } from '@cbhq/cds-common';
 import {
   ElevationChildrenProvider,
   ElevationProvider,
 } from '@cbhq/cds-common/context/ElevationProvider';
 import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
+import {
+  BoxBaseProps,
+  Display,
+  ElevationLevels,
+  ForwardedRef,
+  Position,
+  ResponsiveProps,
+  SharedProps,
+} from '@cbhq/cds-common/types';
 import { emptyObject } from '@cbhq/cds-utils';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
+import { useResponsiveConfig } from '../hooks/useResponsiveConfig';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as backgroundColorStyles from '../styles/backgroundColor';
 import { getBorderStyles } from '../styles/border';
 import * as borderColorStyles from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
-import { getFlexStyles } from '../styles/flex';
 import {
   ArticleAccessibilityRole,
   AsideAccessibilityRole,
   CSSMap,
-  Display,
   DivAccessibilityRole,
   HeaderFooterAccessibilityRole,
   MainAccessibilityRole,
   SectionAccessibilityRole,
 } from '../types';
 import { cx } from '../utils/linaria';
+
+import { getFlexStyles } from './getFlexStyles';
 
 export type InferBoxRole<As> = As extends 'article'
   ? ArticleAccessibilityRole
@@ -103,6 +111,8 @@ export type BoxProps<As extends BoxElement = 'div'> = {
    * @danger There may be times when you need to dynamically set styles. This comes at a performance cost, so use with caution.
    */
   dangerouslySetStyle?: React.CSSProperties;
+  /** Specify props by device breakpoint */
+  responsiveConfig?: ResponsiveProps;
   /**
    * Necessary to control roving tabindex for accessibility
    * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
@@ -201,9 +211,12 @@ export const BoxInner = forwardRef(
       dangerouslySetBackground,
       dangerouslySetClassName,
       dangerouslySetStyle = emptyObject,
+      responsiveConfig,
       // A11y
       ...restProps
     } = props;
+
+    const responsiveStyleClassNames = useResponsiveConfig(responsiveConfig);
 
     const borderRadiusStyles = usePinBorderRadiusStyles(pin, borderRadius);
 
@@ -267,6 +280,7 @@ export const BoxInner = forwardRef(
             offsetVertical,
           }),
           usePinStyles(pin, position),
+          responsiveStyleClassNames,
           dangerouslySetClassName,
         ),
         role,

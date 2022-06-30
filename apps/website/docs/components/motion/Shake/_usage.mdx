@@ -1,0 +1,87 @@
+:::caution
+
+Please consult with the motion team in #ask-motion before using this component.
+
+:::
+
+### How to
+
+Simply wrap any component with `Shake` to make it shakable.
+
+```jsx
+<Shake>
+  <Component />
+</Shake>
+```
+
+### Animate on mount
+
+By default, the animation plays once on component mount.
+You can disable this behaviour using the `disableAnimateOnMount` prop and trigger the animation using the [imperative method](#imperative-trigger).
+
+```jsx live
+<Shake>
+  <Box spacing={3} borderRadius="rounded" bordered>
+    <TextBody as="p">Shaking Box</TextBody>
+  </Box>
+</Shake>
+```
+
+### Imperative Trigger
+
+You can use the `play` method to imperatively trigger the animation.
+
+```jsx live
+function BasicShake() {
+  const ref = useRef();
+
+  const handleShake = useCallback(() => ref.current.play(), []);
+
+  return (
+    <VStack gap={3}>
+      <Shake ref={ref} disableAnimateOnMount>
+        <Box spacing={3} borderRadius="rounded" bordered>
+          <TextBody as="p">Shaking Box</TextBody>
+        </Box>
+      </Shake>
+      <Button onPress={handleShake}>Shake</Button>
+    </VStack>
+  );
+}
+```
+
+### Usage Examples
+
+#### Shaking Text Input
+
+```jsx live
+function ShakingInput() {
+  const inputRef = useRef();
+  const [value, setValue] = useState();
+  const [inputVariant, setInputVariant] = useState();
+  const [inputHelperText, setInputHelperText] = useState();
+
+  const handleShake = useCallback(() => {
+    if (Number(value) < 10000000) {
+      setInputVariant('negative');
+      setInputHelperText('Not enough balance');
+      inputRef.current.play();
+    }
+  }, [value]);
+
+  return (
+    <VStack gap={3}>
+      <Shake ref={inputRef} disableAnimateOnMount>
+        <TextInput
+          placeholder="Enter a small number and press Preview Buy"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          variant={inputVariant}
+          helperText={inputHelperText}
+        />
+      </Shake>
+      <Button onPress={handleShake}>Preview Buy</Button>
+    </VStack>
+  );
+}
+```

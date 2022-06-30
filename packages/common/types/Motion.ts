@@ -51,13 +51,26 @@ export type MotionAnimation = Record<
   }
 >;
 
+export type MotionTransition = {
+  /**
+   * CDS motion easing token
+   */
+  easing: MotionCurve;
+  /**
+   * CDS motion duration token
+   */
+  duration?: MotionDuration;
+  /**
+   * One-off duration in ms
+   */
+  oneOffDuration?: number;
+};
+
 export type MotionBaseSpec = {
   // TODO: use MotionProperty
   property: string;
   toValue: number;
-  easing: MotionCurve;
-  duration: MotionDuration;
   fromValue?: number;
   delay?: number;
   useNativeDriver?: boolean;
-};
+} & MotionTransition;

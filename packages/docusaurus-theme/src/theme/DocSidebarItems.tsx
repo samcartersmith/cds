@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { DocSidebarItemsExpandedStateProvider } from '@docusaurus/theme-common';
 import DocSidebarItem from '@theme/DocSidebarItem';
 import type { SpacingScale } from '@cbhq/cds-common';
-import { Divider, Group } from '@cbhq/cds-web/layout';
+import { Divider, Group, RenderGroupItem } from '@cbhq/cds-web/layout';
 
 import type { PropSidebarItem } from './DocSidebarItem';
 
@@ -18,13 +18,28 @@ function DividerWithGap() {
   return <Divider offsetHorizontal={sidebarHorizontalSpacing} spacingVertical={1} />;
 }
 
+const renderItem: RenderGroupItem = function renderItem({ item, Wrapper, isLast }) {
+  return (
+    <Wrapper>
+      {item}
+      {isLast && <Divider spacingTop={1} />}
+    </Wrapper>
+  );
+};
+
 // TODO this item should probably not receive the "activePath" props
 // TODO this triggers whole sidebar re-renders on navigation
 function DocSidebarItems({ items, ...props }: DocSidebarItemsProps): JSX.Element {
   const filteredItems = useMemo(() => items.filter((item) => !item.customProps?.hidden), [items]);
   return (
     <DocSidebarItemsExpandedStateProvider>
-      <Group divider={DividerWithGap} spacingVertical={1} spacingHorizontal={1} spacingBottom={3}>
+      <Group
+        divider={DividerWithGap}
+        renderItem={renderItem}
+        spacingVertical={1}
+        spacingHorizontal={1}
+        spacingBottom={3}
+      >
         {filteredItems.map((item, index) => (
           <DocSidebarItem
             // eslint-disable-next-line react/no-array-index-key

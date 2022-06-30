@@ -1,0 +1,48 @@
+## Responsive Styles
+
+**Web only** You can create responsive layouts by passing a configuration object to a Typography component and specify unique styles for phones, tablets, or desktops.
+
+Please note, there are no default responsive styles for Typography components. This is an additive feature that you will need to configure yourself.
+
+### Supported Properties
+
+- Spacing
+- Offset spacing
+- Gap
+- Flex styles (justify content, align content, align items, align self, flex direction, and flex wrap)
+- Display
+- Visibility
+
+### Usage
+
+Always hoist or memoize your responsive style configurations.
+
+```jsx live
+function ResponsiveTypography() {
+  const responsiveConfig = useMemo(
+    () => ({
+      phone: {
+        spacing: 4,
+      },
+      tablet: {
+        spacing: 3,
+      },
+      desktop: {
+        spacing: 2,
+      },
+    }),
+    [],
+  );
+
+  return (
+    <VStack>
+      <TextHeadline responsiveConfig={responsiveConfig} as="p">
+        Headline
+      </TextHeadline>
+      <TextBody responsiveConfig={responsiveConfig} as="p">
+        Body
+      </TextBody>
+    </VStack>
+  );
+}
+```

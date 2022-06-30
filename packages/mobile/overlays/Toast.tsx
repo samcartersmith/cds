@@ -12,6 +12,7 @@ import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { Button } from '../buttons';
 import { useSpacingScale } from '../hooks/useSpacingScale';
 import { Box, HStack } from '../layout';
+import { ColorSurge } from '../motion/ColorSurge';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { TextHeadline } from '../typography';
 
@@ -20,6 +21,11 @@ import { useToastPanResponder } from './useToastPanResponder';
 
 const toastPalette = {
   background: defaultPalette.backgroundAlternate,
+} as const;
+
+const toastActionPalette = {
+  light: { transparent: ['gray0', 0] },
+  dark: { transparent: ['gray5', 0] },
 } as const;
 
 export type ToastProps = ToastBaseProps;
@@ -72,7 +78,7 @@ export const Toast: React.FC<ToastProps> = memo(
               spacing={2}
               position="absolute"
               alignSelf="center"
-              bottom={bottomOffset ?? spacing['2']}
+              bottom={bottomOffset ?? spacing[2]}
               zIndex={zIndex.overlays.portal}
               maxWidth="100%"
               dangerouslySetStyle={{
@@ -89,25 +95,30 @@ export const Toast: React.FC<ToastProps> = memo(
                 background
                 borderRadius="standard"
                 alignItems="center"
+                overflow="hidden"
                 dangerouslySetStyle={{
                   opacity,
                   transform: [{ translateY: bottom }, ...panResponderAnimation],
                 }}
                 {...panHandlers}
               >
+                <ColorSurge />
                 {/* avoid pushing contents off screen */}
                 <Box flexShrink={1} spacingEnd={2} spacingVertical={1}>
                   <TextHeadline>{text}</TextHeadline>
                 </Box>
                 {!!action && (
-                  <Button
-                    onPress={handleActionPress}
-                    testID={action.testID ?? 'toast-action'}
-                    compact
-                    transparent
-                  >
-                    {action.label}
-                  </Button>
+                  // TODO: remove once fixed globally on mobile
+                  <ThemeProvider name="toastAction" palette={toastActionPalette}>
+                    <Button
+                      onPress={handleActionPress}
+                      testID={action.testID ?? 'toast-action'}
+                      compact
+                      transparent
+                    >
+                      {action.label}
+                    </Button>
+                  </ThemeProvider>
                 )}
               </HStack>
             </Box>

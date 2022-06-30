@@ -4,7 +4,7 @@ import { TableSectionContext } from './context/TableSectionContext';
 import { TableSectionCtx, TableSectionProps } from './types/tableSectionTypes';
 
 export const TableSection = memo(
-  ({ as = 'tbody', children, testID, ...rest }: TableSectionProps) => {
+  ({ as = 'tbody', children, testID, dangerouslySetClassName, ...rest }: TableSectionProps) => {
     const value: TableSectionCtx = useMemo(() => ({ as }), [as]);
     const TableSectionComponent = as;
 
@@ -12,7 +12,7 @@ export const TableSection = memo(
     // be smart about how to render their content.
     return (
       <TableSectionContext.Provider value={value}>
-        <TableSectionComponent data-testid={testID} {...rest}>
+        <TableSectionComponent data-testid={testID} className={dangerouslySetClassName} {...rest}>
           {Children.map(children, (child: ReactNode) => {
             // extra whitespace in table sections causes DOM validation errors
             // so we need to filter out empty children

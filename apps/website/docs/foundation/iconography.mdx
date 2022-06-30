@@ -3,17 +3,11 @@ id: iconography
 title: Iconography
 ---
 
-import { DoDont, DoExample, DontExample } from ':cds-website/components/DoDont';
-import { Image } from ':cds-website/components/Image';
-import { Collection, Item } from ':cds-website/components/Collection';
-import { HStack } from '@cbhq/cds-web/layout';
-import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
-
 import { Card } from '@cbhq/cds-web/cards/Card';
 
 <Image
-  light="/img/foundation/iconography/overview.svg"
-  dark="/img/foundation/iconography/overview_dark.svg"
+  srcLight="/img/foundation/iconography/overview.svg"
+  srcDark="/img/foundation/iconography/overview_dark.svg"
 />
 
 We use iconography as both an expression of the brand and a navigation tool. We define successful iconography as symbols that are recognized immediately, internationally, and without prior study.
@@ -38,35 +32,43 @@ We provide our product iconography sizes at 4 sizes:
 #### Normal
 
 <Collection>
-  <Item
-    img={{
-      light: '/img/foundation/iconography/grid_large.svg',
-      dark: '/img/foundation/iconography/grid_large_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/grid_large.svg"
+        srcDark="/img/foundation/iconography/grid_large_dark.svg"
+      />
+    }
     title="Large (L)"
     description="32px"
   />
-  <Item
-    img={{
-      light: '/img/foundation/iconography/grid_medium.svg',
-      dark: '/img/foundation/iconography/grid_medium_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/grid_medium.svg"
+        srcDark="/img/foundation/iconography/grid_medium_dark.svg"
+      />
+    }
     title="Medium (M)"
     description="24px"
   />
-  <Item
-    img={{
-      light: '/img/foundation/iconography/grid_small.svg',
-      dark: '/img/foundation/iconography/grid_small_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/grid_small.svg"
+        srcDark="/img/foundation/iconography/grid_small_dark.svg"
+      />
+    }
     title="Small (S)"
     description="16px"
   />
-  <Item
-    img={{
-      light: '/img/foundation/iconography/grid_extrasmall.svg',
-      dark: '/img/foundation/iconography/grid_extrasmall_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/grid_extrasmall.svg"
+        srcDark="/img/foundation/iconography/grid_extrasmall_dark.svg"
+      />
+    }
     title="Extra Small (XS)"
     description="12px"
   />
@@ -75,35 +77,43 @@ We provide our product iconography sizes at 4 sizes:
 #### Dense
 
 <Collection>
-  <Item
-    img={{
-      light: '/img/foundation/iconography/dense_large.svg',
-      dark: '/img/foundation/iconography/dense_large_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/dense_large.svg"
+        srcDark="/img/foundation/iconography/dense_large_dark.svg"
+      />
+    }
     title="Large (L)"
     description="24px"
   />
-  <Item
-    img={{
-      light: '/img/foundation/iconography/dense_medium.svg',
-      dark: '/img/foundation/iconography/dense_medium_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/dense_medium.svg"
+        srcDark="/img/foundation/iconography/dense_medium_dark.svg"
+      />
+    }
     title="Medium (M)"
     description="16px"
   />
-  <Item
-    img={{
-      light: '/img/foundation/iconography/dense_small.svg',
-      dark: '/img/foundation/iconography/dense_small_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/dense_small.svg"
+        srcDark="/img/foundation/iconography/dense_small_dark.svg"
+      />
+    }
     title="Small (S)"
     description="12px"
   />
-  <Item
-    img={{
-      light: '/img/foundation/iconography/dense_extrasmall.svg',
-      dark: '/img/foundation/iconography/dense_extrasmall_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/dense_extrasmall.svg"
+        srcDark="/img/foundation/iconography/dense_extrasmall_dark.svg"
+      />
+    }
     title="Extra Small (XS)"
     description="8px"
   />
@@ -119,32 +129,40 @@ We provide our product iconography sizes at 4 sizes:
 The keyline shapes provide visual consistency across product iconography.
 
 <Collection>
-  <Item
-    img={{
-      light: '/img/foundation/iconography/keyline_square.svg',
-      dark: '/img/foundation/iconography/keyline_square_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/keyline_square.svg"
+        srcDark="/img/foundation/iconography/keyline_square_dark.svg"
+      />
+    }
     title="Square"
   />
-  <Item
-    img={{
-      light: '/img/foundation/iconography/keyline_circle.svg',
-      dark: '/img/foundation/iconography/keyline_circle_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/keyline_circle.svg"
+        srcDark="/img/foundation/iconography/keyline_circle_dark.svg"
+      />
+    }
     title="Circle"
   />
-  <Item
-    img={{
-      light: '/img/foundation/iconography/keyline_portrait.svg',
-      dark: '/img/foundation/iconography/keyline_portrait_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/keyline_portrait.svg"
+        srcDark="/img/foundation/iconography/keyline_portrait_dark.svg"
+      />
+    }
     title="Portrait"
   />
-  <Item
-    img={{
-      light: '/img/foundation/iconography/keyline_landscape.svg',
-      dark: '/img/foundation/iconography/keyline_landscape_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/keyline_landscape.svg"
+        srcDark="/img/foundation/iconography/keyline_landscape_dark.svg"
+      />
+    }
     title="Landscape"
   />
 </Collection>
@@ -158,28 +176,52 @@ Misused iconography can reduce usability. Try to avoid the following when using 
 Icons as an ornamental element / too many icons on one screen, try without icons or limit the key interactions.
 
 <DoDont>
-<DoExample img={{light:"/img/foundation/iconography/ornamental_do.svg", dark:"/img/foundation/iconography/ornamental_do_dark.svg"}} >
-  By removing the icons in the form fields, it allows the support copy to shine, and give focus to the right parts of the experience.
-
-</DoExample>
-<DontExample img={{light:"/img/foundation/iconography/ornamental_dont.svg", dark:"/img/foundation/iconography/ornamental_dont_dark.svg"}}>
-  Icons in form fields can be decorational if not interactable, additionally the icons can add more unnecessary visual weight.
-</DontExample>
-
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/ornamental_do.svg"
+        srcDark="/img/foundation/iconography/ornamental_do_dark.svg"
+      />
+    }
+  >
+    By removing the icons in the form fields, it allows the support copy to shine, and give focus to
+    the right parts of the experience.
+  </DoExample>
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/ornamental_dont.svg"
+        srcDark="/img/foundation/iconography/ornamental_dont_dark.svg"
+      />
+    }
+  >
+    Icons in form fields can be decorational if not interactable, additionally the icons can add
+    more unnecessary visual weight.
+  </DontExample>
 </DoDont>
-
-Icons and illustrations should not be together on a single screen, choose either the illustration or the icon.
-
+Icons and illustrations should not be together on a single screen, choose either the illustration or
+the icon.
 <DoDont>
-<DoExample img={{light:"/img/foundation/iconography/illustration_do.svg", dark:"/img/foundation/iconography/illustration_do_dark.svg" }}>
-Choosing either illustration or iconography to communicate the feature offers more focus.
-
-</DoExample>
-<DontExample img={{light:"/img/foundation/iconography/illustration_dont.svg", dark:"/img/foundation/iconography/illustration_dont_dark.svg" }}>
-By having both an illustration and iconography can be distracting.
-
-</DontExample>
-
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/illustration_do.svg"
+        srcDark="/img/foundation/iconography/illustration_do_dark.svg"
+      />
+    }
+  >
+    Choosing either illustration or iconography to communicate the feature offers more focus.
+  </DoExample>
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/illustration_dont.svg"
+        srcDark="/img/foundation/iconography/illustration_dont_dark.svg"
+      />
+    }
+  >
+    By having both an illustration and iconography can be distracting.
+  </DontExample>
 </DoDont>
 
 ## Labels
@@ -188,18 +230,22 @@ We recommend labels to be paired with iconography as much as possible. As much a
 
 <DoDont>
   <DoExample
-    img={{
-      light: '/img/foundation/iconography/labels_do.svg',
-      dark: '/img/foundation/iconography/labels_do_dark.svg',
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/labels_do.svg"
+        srcDark="/img/foundation/iconography/labels_do_dark.svg"
+      />
+    }
   >
     Adding labels to icons offers a sense of clarity and accessibility for users.
   </DoExample>
   <DontExample
-    img={{
-      light: '/img/foundation/iconography/labels_dont.svg',
-      dark: '/img/foundation/iconography/labels_dont_dark.svg',
-    }}
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/labels_dont.svg"
+        srcDark="/img/foundation/iconography/labels_dont_dark.svg"
+      />
+    }
   >
     Icons without labels struggle with glanceability and visual comprehension.
   </DontExample>
@@ -208,8 +254,8 @@ We recommend labels to be paired with iconography as much as possible. As much a
 Labels can be removed when paired with icons; we recommend this for only universal icons. Universal icons are rare since they need to have a shared understanding across many cultures, ages, languages, or locations.
 
 <Image
-  light="/img/foundation/iconography/labels_universal.svg"
-  dark="/img/foundation/iconography/labels_universal_dark.svg"
+  srcLight="/img/foundation/iconography/labels_universal.svg"
+  srcDark="/img/foundation/iconography/labels_universal_dark.svg"
 />
 
 Examples of universal icons are the favorite (star), like (heart), hamburger (three lines) and edit (pencil) icon. As these icons are a rarity, we still recommend using a label whenever possible.
@@ -219,14 +265,27 @@ Examples of universal icons are the favorite (star), like (heart), hamburger (th
 The default color for icons is ‘foreground’, unless interactable or tied with particular color semantics.
 
 <DoDont>
-<DoExample img={{light:"/img/foundation/iconography/color_do.svg", dark:"/img/foundation/iconography/color_do_dark.svg" }}>
-The color of the icon should align with the associated text.
-
-</DoExample>
-<DontExample img={{light:"/img/foundation/iconography/color_dont.svg", dark:"/img/foundation/iconography/color_dont_dark.svg" }}>
-Icons do become visually elevated with color; however, it does deter the UI and can be distracting.
-
-</DontExample>
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/color_do.svg"
+        srcDark="/img/foundation/iconography/color_do_dark.svg"
+      />
+    }
+  >
+    The color of the icon should align with the associated text.
+  </DoExample>
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/color_dont.svg"
+        srcDark="/img/foundation/iconography/color_dont_dark.svg"
+      />
+    }
+  >
+    Icons do become visually elevated with color; however, it does deter the UI and can be
+    distracting.
+  </DontExample>
 </DoDont>
 
 ## Color Semantics
@@ -234,17 +293,21 @@ Icons do become visually elevated with color; however, it does deter the UI and 
 Icons that are tied with color semantics can be changed with the CDS Spectrum. ‘CDS Negative’ represents alert, ‘CDS Primary’ represents CTAs, ‘CDS Positive’ represents success.
 
 <Collection>
-  <Item
-    img={{
-      light: '/img/foundation/iconography/color_semantics_info.svg',
-      dark: '/img/foundation/iconography/color_semantics_info_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/color_semantics_info.svg"
+        srcDark="/img/foundation/iconography/color_semantics_info_dark.svg"
+      />
+    }
   />
-  <Item
-    img={{
-      light: '/img/foundation/iconography/color_semantics_alert.svg',
-      dark: '/img/foundation/iconography/color_semantics_alert_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/color_semantics_alert.svg"
+        srcDark="/img/foundation/iconography/color_semantics_alert_dark.svg"
+      />
+    }
   />
 </Collection>
 
@@ -253,18 +316,22 @@ Icons that are tied with color semantics can be changed with the CDS Spectrum. �
 We offer two colors: ‘primary’ and ‘foregroundMuted’ for interactable icons. For CTA type icons you should use ‘primary’, while for secondary interactions you should use ‘foregroundMuted’.
 
 <Collection>
-  <Item
-    img={{
-      light: '/img/foundation/iconography/color_intereactable_foregroundMuted.svg',
-      dark: '/img/foundation/iconography/color_intereactable_foregroundMuted_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/color_intereactable_foregroundMuted.svg"
+        srcDark="/img/foundation/iconography/color_intereactable_foregroundMuted_dark.svg"
+      />
+    }
     description="‘foregroundMuted’ is suitable for info tooltips. It shouldn’t be too bold, or enforce a visually CTA moment, rather it’s secondary and an option for users to discover more if needed."
   />
-  <Item
-    img={{
-      light: '/img/foundation/iconography/color_intereactable_primary.svg',
-      dark: '/img/foundation/iconography/color_intereactable_primary_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/color_intereactable_primary.svg"
+        srcDark="/img/foundation/iconography/color_intereactable_primary_dark.svg"
+      />
+    }
     description="‘primary’ is used in our speciality set of icons for Navigation. They help offer additional focus on the active state alongside the change of text color and filled icon style."
   />
 </Collection>
@@ -274,14 +341,26 @@ We offer two colors: ‘primary’ and ‘foregroundMuted’ for interactable ic
 When pairing icons with UI, it's essential to keep the color contrast ratio to at least 3:1. Especially as you scale and add color to iconography, it's crucial to keep this ratio in mind.
 
 <DoDont>
-<DoExample img={{light:"/img/foundation/iconography/coloraccessibility_do.svg", dark:"/img/foundation/iconography/coloraccessibility_do_dark.svg" }}>
-The use of gray here passes color contrast at 5.13:1.
-
-</DoExample>
-<DontExample img={{light:"/img/foundation/iconography/coloraccessibility_dont.svg", dark:"/img/foundation/iconography/coloraccessibility_dont_dark.svg" }}>
-The use of gray here fails color contrast at, 1.51:1.
-
-</DontExample>
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/coloraccessibility_do.svg"
+        srcDark="/img/foundation/iconography/coloraccessibility_do_dark.svg"
+      />
+    }
+  >
+    The use of gray here passes color contrast at 5.13:1.
+  </DoExample>
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/coloraccessibility_dont.svg"
+        srcDark="/img/foundation/iconography/coloraccessibility_dont_dark.svg"
+      />
+    }
+  >
+    The use of gray here fails color contrast at, 1.51:1.
+  </DontExample>
 </DoDont>
 
 ## Bordered / Container Icons
@@ -289,11 +368,13 @@ The use of gray here fails color contrast at, 1.51:1.
 Icons in borders should be used sparingly, as it optically shrinks the icon inside of the shape, and when overused it can be overly decorative. In most cases we recommend just the icon. Although, effective use of icons and borders is our contacts list.
 
 <Collection>
-  <Item
-    img={{
-      light: '/img/foundation/iconography/bordered_icons.svg',
-      dark: '/img/foundation/iconography/bordered_icons_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/bordered_icons.svg"
+        srcDark="/img/foundation/iconography/bordered_icons_dark.svg"
+      />
+    }
   />
 </Collection>
 
@@ -306,14 +387,26 @@ Adding icons to a list helps with parsing information in a glanceable and scanna
 We've designed our icons to match the headline to carry the same visual weight when reading down the list; we recommend our default size of 24px. The icon can be a different size; it's essential to refer to the list item's headline's visual weight.
 
 <DoDont>
-<DoExample img={{light:"/img/foundation/iconography/list_do.svg", dark:"/img/foundation/iconography/list_do_dark.svg" }}>
-Use consistent visual weight.
-
-</DoExample>
-<DontExample img={{light:"/img/foundation/iconography/list_dont.svg", dark:"/img/foundation/iconography/list_dont_dark.svg" }}>
-Use inconsistent visual weight.
-
-</DontExample>
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/list_do.svg"
+        srcDark="/img/foundation/iconography/list_do_dark.svg"
+      />
+    }
+  >
+    Use consistent visual weight.
+  </DoExample>
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/list_dont.svg"
+        srcDark="/img/foundation/iconography/list_dont_dark.svg"
+      />
+    }
+  >
+    Use inconsistent visual weight.
+  </DontExample>
 </DoDont>
 
 ### Alignment
@@ -321,14 +414,26 @@ Use inconsistent visual weight.
 The icon should be top-aligned with the headline to serve the readability best. If the icon is in the middle of the headline and body text, it will create tension when reading down the list.
 
 <DoDont>
-<DoExample img={{light:"/img/foundation/iconography/alignment_do.svg", dark:"/img/foundation/iconography/alignment_do_dark.svg" }}>
-Easy read from icon to headline and rest of the copy.
-
-</DoExample>
-<DontExample img={{light:"/img/foundation/iconography/alignment_dont.svg", dark:"/img/foundation/iconography/alignment_dont_dark.svg" }}>
-Misalignment when reading the icon with the rest of the copy.
-
-</DontExample>
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/alignment_do.svg"
+        srcDark="/img/foundation/iconography/alignment_do_dark.svg"
+      />
+    }
+  >
+    Easy read from icon to headline and rest of the copy.
+  </DoExample>
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/alignment_dont.svg"
+        srcDark="/img/foundation/iconography/alignment_dont_dark.svg"
+      />
+    }
+  >
+    Misalignment when reading the icon with the rest of the copy.
+  </DontExample>
 </DoDont>
 
 ### The Number of Icons
@@ -336,14 +441,26 @@ Misalignment when reading the icon with the rest of the copy.
 When referring to a list of icons, users can only contain between 3-5 items of information.
 
 <DoDont>
-<DoExample img={{light:"/img/foundation/iconography/numberoficons_do.svg", dark:"/img/foundation/iconography/numberoficons_do_dark.svg" }}>
-Simple and easy for users to consume.
-
-</DoExample>
-<DontExample img={{light:"/img/foundation/iconography/numberoficons_dont.svg", dark:"/img/foundation/iconography/numberoficons_dont_dark.svg" }}>
-Too many icons doesn’t offer glanceability, and can overwhelm users when consuming content.
-
-</DontExample>
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/numberoficons_do.svg"
+        srcDark="/img/foundation/iconography/numberoficons_do_dark.svg"
+      />
+    }
+  >
+    Simple and easy for users to consume.
+  </DoExample>
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/numberoficons_dont.svg"
+        srcDark="/img/foundation/iconography/numberoficons_dont_dark.svg"
+      />
+    }
+  >
+    Too many icons doesn’t offer glanceability, and can overwhelm users when consuming content.
+  </DontExample>
 </DoDont>
 
 ## Information or Question Mark Icon
@@ -351,8 +468,8 @@ Too many icons doesn’t offer glanceability, and can overwhelm users when consu
 When thinking about sharing helpful information with users, there are two icons that we can use: the information or question mark icon. However, both carry two distinct use cases.
 
 <Image
-  light="/img/foundation/iconography/info_questionmark.svg"
-  dark="/img/foundation/iconography/info_questionmark_dark.svg"
+  srcLight="/img/foundation/iconography/info_questionmark.svg"
+  srcDark="/img/foundation/iconography/info_questionmark_dark.svg"
 />
 
 ### Information
@@ -368,14 +485,26 @@ When users need more in-depth information (i.e. documentation, FAQs, support pag
 Icons are sized, scaled and designed for these particular contexts to help communicate with the limited space provided. With this in mind, we recommend using universal icons in a concise manner in these contexts, as there isn't room for a label to accompany the icon.
 
 <DoDont>
-<DoExample img={{light:"/img/foundation/iconography/dense_do.svg", dark:"/img/foundation/iconography/dense_do_dark.svg" }}>
-Keep the icon universal and simple to allow the icon to thrive in the dense information area.
-
-</DoExample>
-<DontExample img={{light:"/img/foundation/iconography/dense_dont.svg", dark:"/img/foundation/iconography/dense_dont_dark.svg" }}>
-Detailed or unfamiliar icons are not visual comprehensible when used in a dense space.
-
-</DontExample>
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/dense_do.svg"
+        srcDark="/img/foundation/iconography/dense_do_dark.svg"
+      />
+    }
+  >
+    Keep the icon universal and simple to allow the icon to thrive in the dense information area.
+  </DoExample>
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/dense_dont.svg"
+        srcDark="/img/foundation/iconography/dense_dont_dark.svg"
+      />
+    }
+  >
+    Detailed or unfamiliar icons are not visual comprehensible when used in a dense space.
+  </DontExample>
 </DoDont>
 
 ## Specialty
@@ -387,22 +516,26 @@ These icons are offered for special use cases within our system.
 Navigation Icons are part of a unique icon bundle within our Product Iconography. They live as their own entity, and become their own aesthetic within our ‘Navigation’ component.
 
 <Collection>
-  <Item
-    img={{
-      light: '/img/foundation/iconography/speciality_navigation.svg',
-      dark: '/img/foundation/iconography/speciality_navigation_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/speciality_navigation.svg"
+        srcDark="/img/foundation/iconography/speciality_navigation_dark.svg"
+      />
+    }
   />
 </Collection>
 
 These icons are crisp, geometric, and simple. Their versatility comes into play as we provide both an outline and solid style for ‘active’ and ‘inactive’ states.
 
 <Collection>
-  <Item
-    img={{
-      light: '/img/foundation/iconography/active_and_inactive_states.svg',
-      dark: '/img/foundation/iconography/active_and_inactive_states_dark.svg',
-    }}
+  <CollectionItem
+    media={
+      <Image
+        srcLight="/img/foundation/iconography/active_and_inactive_states.svg"
+        srcDark="/img/foundation/iconography/active_and_inactive_states_dark.svg"
+      />
+    }
   />
 </Collection>
 

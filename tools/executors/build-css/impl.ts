@@ -3,8 +3,8 @@ import glob from 'fast-glob';
 import fs from 'fs';
 import path from 'path';
 
-import { createDir, deleteDir, getProjectPath } from '../utils';
 import { BuildCssOptions } from '../../types';
+import { compressCssFile, createDir, deleteDir, getProjectPath } from '../utils';
 
 async function readCss(files: string[]): Promise<string> {
   const css = await Promise.all(files.map(async (file) => fs.promises.readFile(file, 'utf8')));
@@ -67,14 +67,16 @@ async function writeCssToOut(
     filename = `version-${packageVersion}`;
   }
 
+  const cssPath = path.join(outputDir, `${filename}.css`);
+  const cssPathNoFonts = path.join(outputDir, `${filename}-no-fonts.css`);
+
   await Promise.all([
-    fs.promises.writeFile(path.join(outputDir, `${filename}.css`), css.replace(/\n/g, ''), 'utf8'),
-    fs.promises.writeFile(
-      path.join(outputDir, `${filename}-no-fonts.css`),
-      cssNoFonts.replace(/\n/g, ''),
-      'utf8',
-    ),
+    fs.promises.writeFile(cssPath, css.replace(/\n/g, ''), 'utf8'),
+    fs.promises.writeFile(cssPathNoFonts, cssNoFonts.replace(/\n/g, ''), 'utf8'),
   ]);
+
+  await compressCssFile(context, cssPath);
+  await compressCssFile(context, cssPathNoFonts);
 }
 
 export default async function buildCss(options: BuildCssOptions, context: ExecutorContext) {

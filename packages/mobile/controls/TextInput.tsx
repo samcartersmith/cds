@@ -58,6 +58,7 @@ export const TextInput = memo(
         suffix = '',
         accessibilityLabel,
         borderRadius,
+        enableColorSurge = false,
         ...editableInputProps
       }: TextInputProps,
       ref: ForwardedRef<RNTextInput>,
@@ -108,6 +109,7 @@ export const TextInput = memo(
           borderStyle={borderUnfocusedStyle}
           borderFocusedStyle={borderFocusedStyle}
           focused={focused}
+          enableColorSurge={enableColorSurge}
           inputNode={
             <NativeInput
               containerSpacing={start ? startSpacing : {}}
@@ -132,7 +134,7 @@ export const TextInput = memo(
             !compact && !!label && <InputLabel testID={testIDMap?.label ?? ''}>{label}</InputLabel>
           }
           startNode={
-            (compact || !!start) && (
+            ((compact && !!label) || !!start) && (
               <Box justifyContent="center" alignItems="center" testID={testIDMap?.start}>
                 <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
                   <HStack>

@@ -4,14 +4,16 @@ import { CreateToastProps, toastBuilder } from '@cbhq/cds-common/internal/toastB
 import { Button } from '../../buttons/Button';
 import { TextInput } from '../../controls/TextInput';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { VStack } from '../../layout';
 import { Link } from '../../typography/Link';
 import { Toast } from '../Toast';
 
-const { BasicToast, MultilineToast } = toastBuilder({
+const { BasicToast } = toastBuilder({
   Toast,
   Link,
   Button,
   TextInput,
+  Stack: VStack,
 } as CreateToastProps);
 
 const ToastScreen = () => {
@@ -19,9 +21,6 @@ const ToastScreen = () => {
     <ExampleScreen>
       <Example title="Basic Toast">
         <BasicToast />
-      </Example>
-      <Example title="Multiline Toast">
-        <MultilineToast />
       </Example>
     </ExampleScreen>
   );

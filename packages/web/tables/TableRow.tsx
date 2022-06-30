@@ -16,12 +16,13 @@ export const TableRow = memo(
     fullWidth,
     disableHoverIndicator,
     children,
-    backgroundColor,
+    backgroundColor = 'background',
     color,
     testID,
     onPress,
     outerSpacing,
     innerSpacing,
+    responsiveConfig,
     ...rest
   }: TableRowProps) => {
     const tableSectionType = useTableSectionTag();
@@ -35,7 +36,7 @@ export const TableRow = memo(
     const inlineStyles = useMemo(() => {
       return {
         color: color && palette[color],
-        backgroundColor: backgroundColor && palette[backgroundColor],
+        backgroundColor: palette[backgroundColor],
         cursor: onPress ? 'pointer' : 'default',
       };
     }, [backgroundColor, color, onPress]);
@@ -57,6 +58,7 @@ export const TableRow = memo(
             colSpan={1000}
             outerSpacing={outerSpacing}
             innerSpacing={innerSpacing}
+            responsiveConfig={responsiveConfig}
           >
             {children}
           </TableCell>
