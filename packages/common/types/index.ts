@@ -6,6 +6,7 @@ export * from './AvatarBaseProps';
 export * from './AvatarSize';
 export * from './BadgeBaseProps';
 export * from './BadgeDotBaseProps';
+export * from './BannerBaseProps';
 export * from './BorderRadius';
 export * from './BorderWidth';
 export * from './BoxBaseProps';

@@ -6,6 +6,9 @@
 apps/website/docs/**/*.json
 apps/website/static/**/*.json
 
+# Codegen 
+packages/docusaurus-theme/src/theme/**/*.d.ts
+
 # Nx
 dist/
 lib/

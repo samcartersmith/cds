@@ -11,6 +11,7 @@ export const routes = {
   AnimatedCaret: () => require('../motion/__stories__/AnimatedCaret.stories').default,
   Avatar: () => require('../media/__stories__/Avatar.stories').default,
   AvatarButton: () => require('../buttons/__stories__/AvatarButton.stories').default,
+  Banner: () => require('../banner/__stories__/Banner.stories').default,
   Box: () => require('../layout/__stories__/Box.stories').default,
   Button: () => require('../buttons/__stories__/Button.stories').default,
   ButtonGroup: () => require('../buttons/__stories__/ButtonGroup.stories').default,
