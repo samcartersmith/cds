@@ -92,18 +92,13 @@ export const FullscreenAlert = memo(function FullscreenAlert({
       </VStack>
       <Box dangerouslySetClassName={actionsContainerClassName}>
         {!!dismissActionLabel && (
-          // need to set minWidth to 0 to make actions equal width
-          <Box flexGrow={1} flexBasis={0} minWidth={0}>
-            <Button onPress={onDismissActionPress} block variant="secondary">
-              {dismissActionLabel}
-            </Button>
-          </Box>
-        )}
-        <Box flexGrow={1} flexBasis={0} minWidth={0}>
-          <Button onPress={onPreferredActionPress} block variant={preferredActionVariant}>
-            {preferredActionLabel}
+          <Button onPress={onDismissActionPress} variant="secondary">
+            {dismissActionLabel}
           </Button>
-        </Box>
+        )}
+        <Button onPress={onPreferredActionPress} variant={preferredActionVariant}>
+          {preferredActionLabel}
+        </Button>
       </Box>
     </VStack>
   );
