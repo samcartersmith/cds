@@ -13,8 +13,10 @@ export type BannerBaseProps = {
   startIcon: IconName;
   /** A callback fired when banner is dismissed */
   onClose?: () => void;
-  /** Provide a CDS Link component. It will inherit colors depending on the provided variant */
-  action?: React.ReactNode;
+  /** Provide a CDS Link component to be used as a primary action. It will inherit colors depending on the provided variant */
+  primaryAction?: React.ReactNode;
+  /** Provide a CDS Link component to be used as a secondary action. It will inherit colors depending on the provided tone */
+  secondaryAction?: React.ReactNode;
   /** Title of banner. Indicates the intent of this banner */
   title: string;
   /** Message of banner */

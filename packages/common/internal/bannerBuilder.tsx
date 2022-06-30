@@ -60,12 +60,14 @@ export function bannerBuilder(
   }) => {
     let longTextChild = null;
     let actionChild = null;
+    let multipleActionsChild = null;
     let longTextActionChild = null;
     let actionDismissChild = null;
     let dismissableChild = null;
     let longTextActionDismissChild = null;
 
-    const action = <Link to="https://www.coinbase.com">Action</Link>;
+    const primaryAction = <Link to="https://www.coinbase.com">Primary</Link>;
+    const secondaryAction = <Link to="https://www.coinbase.com">Secondary</Link>;
 
     if (React.isValidElement(children)) {
       longTextChild = React.cloneElement(children, {
@@ -77,23 +79,29 @@ export function bannerBuilder(
       });
 
       actionChild = React.cloneElement(children, {
-        action,
+        primaryAction,
       });
 
       longTextActionChild = React.cloneElement(children, {
-        action,
+        primaryAction,
         children: longMessage,
       });
 
       actionDismissChild = React.cloneElement(children, {
-        action,
+        primaryAction,
         showDismiss: true,
       });
 
       longTextActionDismissChild = React.cloneElement(children, {
-        action,
+        primaryAction,
         children: longMessage,
         showDismiss: true,
+      });
+
+      multipleActionsChild = React.cloneElement(children, {
+        primaryAction,
+        secondaryAction,
+        children: longMessage,
       });
     }
 
@@ -109,6 +117,9 @@ export function bannerBuilder(
             <Spacer />
             <TextTitle1>{title} with showDismiss</TextTitle1>
             {dismissableChild}
+            <Spacer />
+            <TextTitle1>{title} with multiple Actions</TextTitle1>
+            {multipleActionsChild}
             <Spacer />
             <TextTitle1>{title} with Action</TextTitle1>
             {actionChild}

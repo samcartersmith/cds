@@ -5,7 +5,8 @@ type BannerVariantStyle = {
   background: PaletteBackground | undefined;
   iconColor: PaletteForeground;
   textColor: PaletteForeground;
-  actionColor: PaletteForeground;
+  primaryActionColor: PaletteForeground;
+  secondaryActionColor: PaletteForeground;
   iconButtonColor: PaletteForeground;
   borderColor: PaletteBorder | undefined;
 };
@@ -17,7 +18,8 @@ export const variants: BannerVariantConfig = {
     background: 'primaryWash',
     iconColor: 'primary',
     textColor: 'foreground',
-    actionColor: 'primary',
+    primaryActionColor: 'primary',
+    secondaryActionColor: 'foreground',
     iconButtonColor: 'foregroundMuted',
     borderColor: undefined,
   },
@@ -25,7 +27,8 @@ export const variants: BannerVariantConfig = {
     background: 'background',
     iconColor: 'primary',
     textColor: 'foreground',
-    actionColor: 'primary',
+    primaryActionColor: 'primary',
+    secondaryActionColor: 'foreground',
     iconButtonColor: 'foregroundMuted',
     borderColor: 'line',
   },
@@ -33,7 +36,8 @@ export const variants: BannerVariantConfig = {
     background: 'negative',
     iconColor: 'negativeForeground',
     textColor: 'negativeForeground',
-    actionColor: 'negativeForeground',
+    primaryActionColor: 'negativeForeground',
+    secondaryActionColor: 'negativeForeground',
     iconButtonColor: 'negativeForeground',
     borderColor: 'negative',
   },
@@ -41,7 +45,8 @@ export const variants: BannerVariantConfig = {
     background: 'background',
     iconColor: 'negative',
     textColor: 'foreground',
-    actionColor: 'foreground',
+    primaryActionColor: 'foreground',
+    secondaryActionColor: 'foreground',
     iconButtonColor: 'foregroundMuted',
     borderColor: undefined,
   },

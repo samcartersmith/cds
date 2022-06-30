@@ -51,7 +51,9 @@ const checkSpacing = ({
 } & InternalSpacingProps) => {
   // eslint-disable-next-line jest/require-top-level-describe
   it(`${testID} has correct spacings ${stringify(spacings as never, ', ')}`, () => {
-    const { queryByTestId } = render(<MockBanner action={withAction ? action : undefined} />);
+    const { queryByTestId } = render(
+      <MockBanner primaryAction={withAction ? action : undefined} />,
+    );
     // The above is the spacing that the test requires
     // Root Container has a start spacing of 2
     const { result } = renderHook(() => useInternalSpacingStyles(spacings));
@@ -136,7 +138,6 @@ describe('Banner testing with narrow screen configurations (screen size < 724)',
 
   checkSpacing({
     testID: `${TEST_ID}-action`,
-    top: 1,
   });
 });
 

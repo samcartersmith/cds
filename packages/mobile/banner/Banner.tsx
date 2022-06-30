@@ -14,7 +14,7 @@ import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Pressable } from '../system/Pressable';
-import { Link } from '../typography';
+import { Link, LinkProps } from '../typography';
 import { TextBody } from '../typography/TextBody';
 import { TextHeadline } from '../typography/TextHeadline';
 
@@ -51,7 +51,8 @@ export const Banner = memo(
       variant,
       startIcon,
       onClose,
-      action,
+      primaryAction,
+      secondaryAction,
       title,
       children,
       showDismiss = false,
@@ -71,7 +72,10 @@ export const Banner = memo(
     const shouldUseVStack = useMemo(() => !isWide || showDismiss, [isWide, showDismiss]);
     // The nested Stack is referred to as Stack
     const Stack = useMemo(() => (shouldUseVStack ? VStack : HStack), [shouldUseVStack]);
-    const stackGap: SpacingScale = useMemo(() => (isWide && action ? 2 : 1), [isWide, action]);
+    const stackGap: SpacingScale = useMemo(
+      () => (isWide && primaryAction ? 3 : 1),
+      [isWide, primaryAction],
+    );
     const stackAlignment = useMemo(
       () => (shouldUseVStack ? 'flex-start' : 'center'),
       [shouldUseVStack],
@@ -85,31 +89,57 @@ export const Banner = memo(
 
     // Spacing for a few regions is dynamic - we need dynamic configs
     const spacingBottom: SpacingScale = useMemo(
-      () => (!isWide && action ? 1 : 2),
-      [action, isWide],
+      () => (!isWide && primaryAction ? 1 : 2),
+      [primaryAction, isWide],
     );
 
     // Setup color configs
-    const { iconColor, textColor, background, actionColor, iconButtonColor, borderColor } =
-      variants[variant];
+    const {
+      iconColor,
+      textColor,
+      background,
+      primaryActionColor,
+      secondaryActionColor,
+      iconButtonColor,
+      borderColor,
+    } = variants[variant];
 
-    // Ensure actions are themed to match the variant
-    const clonedAction = useMemo(() => {
-      if (isValidElement(action) && action?.type === Link) {
-        return React.cloneElement(action, {
+    // Ensure primaryActions are themed to match the variant
+    const clonedPrimaryAction = useMemo(() => {
+      if (isValidElement(primaryAction) && primaryAction?.type === Link) {
+        return React.cloneElement(primaryAction, {
           variant: 'headline',
-          color: actionColor,
+          color: primaryActionColor,
+          testID: `${testID}-action--primary`,
+          ...(primaryAction.props as LinkProps),
         });
       }
 
       // Throw warning in dev
-      if (isValidElement(action) && isDevelopment()) {
+      if (isValidElement(primaryAction) && isDevelopment()) {
         // eslint-disable-next-line no-console
-        console.error('Banner action needs to be a CDS Link component');
+        console.error('Banner primaryAction needs to be a CDS Link component');
       }
 
-      return action;
-    }, [action, actionColor]);
+      return primaryAction;
+    }, [primaryAction, primaryActionColor, testID]);
+    const clonedSecondaryAction = useMemo(() => {
+      if (isValidElement(secondaryAction) && secondaryAction.type === Link) {
+        return React.cloneElement(secondaryAction, {
+          variant: 'headline',
+          color: secondaryActionColor,
+          testID: `${testID}-action--secondary`,
+          ...(secondaryAction.props as LinkProps),
+        });
+      }
+
+      if (isValidElement(secondaryAction) && isDevelopment()) {
+        // eslint-disable-next-line no-console
+        console.error('Banner secondaryAction needs to be a CDS Link component');
+      }
+
+      return secondaryAction;
+    }, [secondaryAction, secondaryActionColor, testID]);
 
     // The first HStack is referred to as root
     const rootStyle = useMemo(() => {
@@ -160,10 +190,11 @@ export const Banner = memo(
               </TextBody>
             </VStack>
             {/** Actions */}
-            {!!clonedAction && (
-              <Box testID={`${testID}-action`} spacingVertical={1} justifyContent="center">
-                {clonedAction}
-              </Box>
+            {(!!clonedPrimaryAction || !!clonedSecondaryAction) && (
+              <HStack testID={`${testID}-action`} spacingVertical={1} alignItems="center" gap={4}>
+                {clonedPrimaryAction}
+                {clonedSecondaryAction}
+              </HStack>
             )}
           </Stack>
           {/** Dismissable action */}
