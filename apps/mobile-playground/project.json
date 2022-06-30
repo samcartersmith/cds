@@ -58,8 +58,87 @@
     "run-ios-e2e": {
       "executor": "@cbhq/cds-tools:run-conditional",
       "options": {
-        "triggerProjects": ["mobile", "common", "utils", "fonts", "lottie-files"],
+        "triggerProjects": [
+          "mobile-playground",
+          "mobile",
+          "common",
+          "utils",
+          "fonts",
+          "lottie-files"
+        ],
         "target": "mobile-playground:ios-e2e"
+      }
+    },
+    "run-android-e2e": {
+      "executor": "@cbhq/cds-tools:run-conditional",
+      "options": {
+        "triggerProjects": [
+          "mobile-playground",
+          "mobile",
+          "common",
+          "utils",
+          "fonts",
+          "lottie-files"
+        ],
+        "target": "mobile-playground:e2e-android"
+      }
+    },
+    "build-android-e2e": {
+      "executor": "@cbhq/mono-tasks:build-android",
+      "outputs": ["android/build", "android/app/build"],
+      "options": {
+        "buildType": "e2e",
+        "detoxConfig": "android.functionalTest"
+      },
+      "configurations": {
+        "debug": {
+          "detoxConfig": "android.debug"
+        }
+      },
+      "dependsOn": [
+        {
+          "target": "dist",
+          "projects": "dependencies"
+        }
+      ]
+    },
+    "e2e-android": {
+      "executor": "@cbhq/mono-tasks:test-detox",
+      "options": {
+        "config": "android.functionalTest",
+        "detoxArgs": ["--device-name", "Pixel_3a_API_30"],
+        "record": true
+      },
+      "configurations": {
+        "ci": {
+          "detoxArgs": [
+            "--device-name",
+            "Pixel_3a_API_30",
+            "--device-boot-args='-skin 1080x1920'",
+            "--headless"
+          ]
+        },
+        "debug": {
+          "config": "android.debug"
+        }
+      }
+    },
+    "e2e-android-emulator": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose 'system-images;android-30;google_apis;x86'",
+          "echo no | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name Pixel_3a_API_30 --package 'system-images;android-30;google_apis;x86'"
+        ],
+        "parallel": false
+      },
+      "configurations": {
+        "m1": {
+          "commands": [
+            "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose 'system-images;android-30;google_apis;arm64-v8a'",
+            "echo no | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name Pixel_3a_API_30 --package 'system-images;android-30;google_apis;arm64-v8a'"
+          ]
+        }
       }
     }
   },

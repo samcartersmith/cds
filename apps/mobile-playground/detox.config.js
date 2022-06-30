@@ -8,7 +8,10 @@ const config = createConfig({
   universal: false,
 });
 
-// Instead of Pixel_3a_API_30
-config.devices.emulator.device.avdName = 'Pixel_3a_XL_API_29';
+/**
+ * Required in order to run Android emulator on CI.
+ * https://android.stackexchange.com/questions/190913/cannot-start-android-emulator64-due-to-qt-unable-to-load-xcb
+ */
+config.devices.emulator.bootArgs = '-writable-system -no-window';
 
 module.exports = config;

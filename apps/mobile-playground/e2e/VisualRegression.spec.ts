@@ -1,8 +1,12 @@
-import { logTestStep, pressButton, screenShouldAppear } from '@cbhq/detox-utils';
+import {
+  logTestStep,
+  pressButton,
+  screenShouldAppear,
+  textShouldAppearWithTimeout,
+} from '@cbhq/detox-utils';
 
-import { buildFinalize, initializeVisualRegressionTests } from './detox-percy/detoxPercy';
-import { routesNames } from './routeNames';
-import { launchApp, takeRouteScreenshots } from './utils';
+import { cleanUpScreenshots, initializeVisualRegressionTests } from './detox-percy/detoxPercy';
+import { getRoutes, launchApp, takeRouteScreenshots } from './utils';
 
 describe('Example', () => {
   beforeAll(async () => {
@@ -16,10 +20,11 @@ describe('Example', () => {
 
   afterAll(async () => {
     logTestStep('In After All; finalizing build.');
-    buildFinalize();
+    cleanUpScreenshots();
   });
 
-  it.each(routesNames)('%p Visual Diff Test.', async (name: string) => {
+  it.each(getRoutes())('%p Visual Diff Test.', async (name: string) => {
+    await textShouldAppearWithTimeout('CDS');
     await pressButton(name, 'cds_home_flatlist');
     await screenShouldAppear('example_screen_scrollview');
     await takeRouteScreenshots(name);

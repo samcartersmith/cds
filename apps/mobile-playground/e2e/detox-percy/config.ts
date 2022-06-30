@@ -1,3 +1,4 @@
-import { isExpectedSimulator } from './utils';
+import { isExpectedIosDevice } from './utils';
 
-export const defaultPixelsToScroll = isExpectedSimulator() ? 700 : 500; // TODO: get exact heights by device.
+export const iOSDefaultPixelsToScroll = isExpectedIosDevice() ? 700 : 500;
+export const androidDefaultPixelsToScroll = isExpectedIosDevice() ? 600 : 500;

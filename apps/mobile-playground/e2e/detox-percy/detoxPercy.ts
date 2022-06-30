@@ -4,7 +4,7 @@ import path from 'path';
 
 import config from '../../detox.config';
 
-import { isExpectedSimulator, runCmd } from './utils';
+import { isExpectedAndroidDevice, isExpectedIosDevice, runCmd } from './utils';
 
 function setDemoMode() {
   if (device.getPlatform() === 'ios') {
@@ -32,11 +32,18 @@ function setDemoMode() {
 }
 
 export function initializeVisualRegressionTests() {
-  if (!isExpectedSimulator()) {
+  if (!isExpectedIosDevice()) {
     throw Error(
-      'Detox is using the wrong simulator. This is important to ensure the properly sized screenshots are taken.',
+      'Detox is using the wrong iOS Simulator. This is important to ensure the properly sized screenshots are taken.',
     );
   }
+
+  if (!isExpectedAndroidDevice()) {
+    throw Error(
+      'Detox is using the wrong Android emulator. This is important to ensure the properly sized screenshots are taken.',
+    );
+  }
+
   setDemoMode();
 }
 
