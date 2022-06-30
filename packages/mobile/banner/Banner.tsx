@@ -2,7 +2,7 @@ import React, { forwardRef, isValidElement, memo, useCallback, useMemo, useState
 import { useWindowDimensions, View } from 'react-native';
 import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
-import { tones } from '@cbhq/cds-common/tokens/banner';
+import { variants } from '@cbhq/cds-common/tokens/banner';
 import { BannerBaseProps } from '@cbhq/cds-common/types/BannerBaseProps';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { SpacingScale } from '@cbhq/cds-common/types/SpacingScale';
@@ -24,7 +24,7 @@ import { TextHeadline } from '../typography/TextHeadline';
 const customSpacing = { paddingTop: 2 };
 
 // TODO use a system like tokens/tags.ts#tagColorMap
-const stylesForTone = {
+const stylesForVariant = {
   warning: {
     light: {
       backgroundColor: paletteValueToRgbaString('red0', 'light', true),
@@ -48,7 +48,7 @@ const stylesForTone = {
 export const Banner = memo(
   forwardRef(function Banner(
     {
-      tone,
+      variant,
       startIcon,
       onClose,
       action,
@@ -91,9 +91,9 @@ export const Banner = memo(
 
     // Setup color configs
     const { iconColor, textColor, background, actionColor, iconButtonColor, borderColor } =
-      tones[tone];
+      variants[variant];
 
-    // Ensure actions are themed to match the tone
+    // Ensure actions are themed to match the variant
     const clonedAction = useMemo(() => {
       if (isValidElement(action) && action?.type === Link) {
         return React.cloneElement(action, {
@@ -113,11 +113,11 @@ export const Banner = memo(
 
     // The first HStack is referred to as root
     const rootStyle = useMemo(() => {
-      const shouldOverride = tone === 'warning' || tone === 'informational';
-      if (shouldOverride) return stylesForTone[tone][spectrum];
+      const shouldOverride = variant === 'warning' || variant === 'informational';
+      if (shouldOverride) return stylesForVariant[variant][spectrum];
 
       return undefined;
-    }, [spectrum, tone]);
+    }, [spectrum, variant]);
 
     return (
       <Collapsible testID={`${testID}-collapsible`} collapsed={isCollapsed} ref={forwardedRef}>

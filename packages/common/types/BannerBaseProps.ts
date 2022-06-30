@@ -4,16 +4,16 @@ import { BorderRadiusAlpha } from './BorderRadius';
 import { IconName } from './IconName';
 import { SharedProps } from './SharedProps';
 
-export type BannerTone = 'severe' | 'warning' | 'promotional' | 'informational';
+export type BannerVariant = 'danger' | 'warning' | 'promotional' | 'informational';
 
 export type BannerBaseProps = {
-  /** Sets the tone of the banner */
-  tone: BannerTone;
+  /** Sets the variant of the banner - which is responsible for foreground and background color assignment */
+  variant: BannerVariant;
   /** Name of icon to be shown in the banner */
   startIcon: IconName;
   /** A callback fired when banner is dismissed */
   onClose?: () => void;
-  /** Provide a CDS Link component. It will inherit colors depending on the provided tone */
+  /** Provide a CDS Link component. It will inherit colors depending on the provided variant */
   action?: React.ReactNode;
   /** Title of banner. Indicates the intent of this banner */
   title: string;

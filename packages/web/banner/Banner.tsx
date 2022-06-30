@@ -1,7 +1,7 @@
 import React, { forwardRef, isValidElement, memo, useCallback, useMemo, useState } from 'react';
 import { css } from 'linaria';
 import { ForwardedRef, SpacingScale } from '@cbhq/cds-common';
-import { tones } from '@cbhq/cds-common/tokens/banner';
+import { variants } from '@cbhq/cds-common/tokens/banner';
 import { BannerBaseProps } from '@cbhq/cds-common/types/BannerBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
@@ -60,7 +60,7 @@ export const Banner = memo(
   forwardRef(
     (
       {
-        tone,
+        variant,
         startIcon,
         onClose,
         action,
@@ -88,11 +88,11 @@ export const Banner = memo(
       const stackClassName = useMemo(
         () =>
           cx(
-            tone === 'warning' ? warningClassName : undefined,
-            tone === 'informational' ? informationalClassName : undefined,
+            variant === 'warning' ? warningClassName : undefined,
+            variant === 'informational' ? informationalClassName : undefined,
             dangerouslySetClassName,
           ),
-        [dangerouslySetClassName, tone],
+        [dangerouslySetClassName, variant],
       );
       const stackAlignment = useMemo(
         () => (shouldUseVStack ? 'flex-start' : 'center'),
@@ -114,9 +114,9 @@ export const Banner = memo(
 
       // Setup color configs
       const { iconColor, textColor, background, actionColor, iconButtonColor, borderColor } =
-        tones[tone];
+        variants[variant];
 
-      // Ensure actions are themed to match the tone
+      // Ensure actions are themed to match the variant
       const clonedAction = useMemo(() => {
         if (isValidElement(action) && action.type === Link) {
           return React.cloneElement(action, {

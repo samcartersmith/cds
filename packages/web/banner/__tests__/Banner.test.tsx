@@ -60,7 +60,7 @@ describe('Banner', () => {
       <Banner
         testID={TEST_ID}
         dangerouslySetClassName={customClassName}
-        tone="warning"
+        variant="warning"
         startIcon="cashUSD"
         title=""
       >
@@ -82,7 +82,7 @@ describe('Banner', () => {
       <Banner
         testID={TEST_ID}
         dangerouslySetStyle={customClassName}
-        tone="warning"
+        variant="warning"
         startIcon="cashUSD"
         title=""
       >

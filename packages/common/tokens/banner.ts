@@ -1,7 +1,7 @@
 import { PaletteBackground, PaletteBorder, PaletteForeground } from '../types';
-import { BannerTone } from '../types/BannerBaseProps';
+import { BannerVariant } from '../types/BannerBaseProps';
 
-type BannerToneStyle = {
+type BannerVariantStyle = {
   background: PaletteBackground | undefined;
   iconColor: PaletteForeground;
   textColor: PaletteForeground;
@@ -10,9 +10,9 @@ type BannerToneStyle = {
   borderColor: PaletteBorder | undefined;
 };
 
-export type BannerToneConfig = Record<BannerTone, BannerToneStyle>;
+export type BannerVariantConfig = Record<BannerVariant, BannerVariantStyle>;
 
-export const tones: BannerToneConfig = {
+export const variants: BannerVariantConfig = {
   informational: {
     background: 'primaryWash',
     iconColor: 'primary',
@@ -29,7 +29,7 @@ export const tones: BannerToneConfig = {
     iconButtonColor: 'foregroundMuted',
     borderColor: 'line',
   },
-  severe: {
+  danger: {
     background: 'negative',
     iconColor: 'negativeForeground',
     textColor: 'negativeForeground',

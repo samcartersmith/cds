@@ -12,29 +12,29 @@ const longMessage = `${loremIpsum}${loremIpsum}${loremIpsum}`;
 
 const sharedProps = {
   title: 'Failure Message',
-  tone: 'warning',
+  variant: 'warning',
   startIcon: 'error',
   children: shortMessage,
 } as const;
 
 const styleProps = [
   {
-    tone: 'warning',
+    variant: 'warning',
     title: 'Warning message',
     startIcon: 'error',
   },
   {
-    tone: 'severe',
-    title: 'Severe message',
+    variant: 'danger',
+    title: 'Danger message',
     startIcon: 'error',
   },
   {
-    tone: 'informational',
+    variant: 'informational',
     title: 'Informative message',
     startIcon: 'info',
   },
   {
-    tone: 'promotional',
+    variant: 'promotional',
     title: 'Promotional message',
     startIcon: 'pencil',
   },
@@ -135,11 +135,11 @@ export function bannerBuilder(
     );
   };
 
-  const Tones = () => {
+  const Variants = () => {
     return (
       <>
         {styleProps.map((props) => (
-          <Container key={`styles-${props.tone}-long-message`} title={props.tone}>
+          <Container key={`styles-${props.variant}-long-message`} title={props.variant}>
             <Banner {...props}>{shortMessage}</Banner>
           </Container>
         ))}
@@ -150,7 +150,7 @@ export function bannerBuilder(
   const FullBleed = () => {
     return (
       <Container gap={2} title="FullBleed">
-        <Banner borderRadius="roundedNone" bordered={false} {...sharedProps} tone="severe" />
+        <Banner borderRadius="roundedNone" bordered={false} {...sharedProps} variant="danger" />
       </Container>
     );
   };
@@ -158,7 +158,7 @@ export function bannerBuilder(
   const LongTitle = () => {
     return (
       <Container showVariations={false} gap={2} title="LongTitle">
-        <Banner {...sharedProps} tone="severe" title={longMessage} />
+        <Banner {...sharedProps} variant="danger" title={longMessage} />
       </Container>
     );
   };
@@ -166,7 +166,7 @@ export function bannerBuilder(
   const BannerWithLink = () => {
     return (
       <Container showVariations={false} gap={2} title="BannerWithLink">
-        <Banner showDismiss startIcon="pencil" tone="promotional" title="Banner with a Link">
+        <Banner showDismiss startIcon="pencil" variant="promotional" title="Banner with a Link">
           {shortMessage}
           {shortMessage} <Link to="https://www.coinbase.com">Learn more</Link>
         </Banner>
@@ -183,7 +183,7 @@ export function bannerBuilder(
       <Container showVariations={false} gap={2} title="OnClose">
         <Banner
           {...sharedProps}
-          tone="severe"
+          variant="danger"
           showDismiss
           title="Close the banner"
           onClose={handleOnClose}
@@ -196,7 +196,7 @@ export function bannerBuilder(
     return (
       <VStack gap={2}>
         <Basic />
-        <Tones />
+        <Variants />
         <FullBleed />
         <LongTitle />
         <OnClose />
@@ -208,11 +208,11 @@ export function bannerBuilder(
   const MockBanner = ({
     title = 'Failure Message',
     startIcon = 'info',
-    tone = 'warning',
+    variant = 'warning',
     testID,
     ...props
   }: Partial<BannerBaseProps>) => (
-    <Banner title={title} startIcon={startIcon} tone={tone} testID={testID} {...props}>
+    <Banner title={title} startIcon={startIcon} variant={variant} testID={testID} {...props}>
       Banner content
     </Banner>
   );

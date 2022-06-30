@@ -23,11 +23,11 @@ const wideScreenDimensions: ReturnType<typeof useDimensions> = {
 const MockBanner = ({
   title = 'Failure Message',
   startIcon = 'info',
-  tone = 'warning',
+  variant = 'warning',
   testID = TEST_ID,
   ...props
 }: Partial<BannerBaseProps>) => (
-  <Banner title={title} startIcon={startIcon} tone={tone} testID={testID} {...props}>
+  <Banner title={title} startIcon={startIcon} variant={variant} testID={testID} {...props}>
     <TextBody>Banner content</TextBody>
   </Banner>
 );
@@ -175,7 +175,7 @@ describe('Banner actions', () => {
   it('Banner forwardRef works as expected', () => {
     const ref = React.createRef<View>();
     const { getByTestId } = render(
-      <Banner ref={ref} tone="warning" testID={TEST_ID} startIcon="cashUSD" title="Banner title">
+      <Banner ref={ref} variant="warning" testID={TEST_ID} startIcon="cashUSD" title="Banner title">
         <TextBody>Content</TextBody>
       </Banner>,
     );
