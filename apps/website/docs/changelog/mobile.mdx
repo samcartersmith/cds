@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.1.0 (6/30/2022, 01:09 PM PST)
+
+#### 🚀 Updates
+
+- **[Banner]** Introduce a secondaryAction. [#819](https://github.cbhq.net/frontend/cds/pull/819)
+- **[Banner]** Update prop name tone to variant. [#817](https://github.cbhq.net/frontend/cds/pull/817)
+- **[Banner]** Update banner layout and props. [#813](https://github.cbhq.net/frontend/cds/pull/813)
+- **[HintMotion]** HintMotion imperative trigger and disableAnimateOnMount. [#738](https://github.cbhq.net/frontend/cds/pull/738)
+- **[Motion]** Create Pulse component. [#685](https://github.cbhq.net/frontend/cds/pull/685)
+- **[Motion]** Create Shake component. [#679](https://github.cbhq.net/frontend/cds/pull/679)
+- **[Motion]** Create ColorSurge component and apply to Toast and TextInput. [#656](https://github.cbhq.net/frontend/cds/pull/656)
+
+#### 🐞 Fixes
+
+- **[TextInput]**: TextInput is incorrect height in compact mode with no label. [#814](https://github.cbhq.net/frontend/cds/pull/814)
+- **[Toast]** Toast mobile action transparency. [#696](https://github.cbhq.net/frontend/cds/pull/696)
+- **[illustrations]** Publish 06/28/22 Illo. [#790](https://github.cbhq.net/frontend/cds/pull/790)
+- **[Icons]** Publish Icons June 28nd, 2022. [#785](https://github.cbhq.net/frontend/cds/pull/785)
+- **[ModalHeader]** Increase flexGrow on ModalHeader mobile for longer title. [#729](https://github.cbhq.net/frontend/cds/pull/729)
+
 ## 1.0.1 (6/28/2022, 02:35 PM PST)
 
 #### 🐞 Fixes

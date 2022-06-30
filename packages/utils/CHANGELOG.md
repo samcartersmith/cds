@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.1.0 (6/30/2022, 01:09 PM PST)
+
+#### 🐞 Fixes
+
+- **[Tag]** Extend all Box props for Tag. [#694](https://github.cbhq.net/frontend/cds/pull/694)
+
 ## 1.0.0 (6/22/2022, 09:55 PM PST)
 
 #### 🚀 Updates

@@ -8,6 +8,27 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.1.0 (6/30/2022, 01:09 PM PST)
+
+#### 🚀 Updates
+
+- **[Banner]** Introduce a secondaryAction. [#819](https://github.cbhq.net/frontend/cds/pull/819)
+- **[Banner]** Update prop name tone to variant. [#817](https://github.cbhq.net/frontend/cds/pull/817)
+- **[Banner]** Update banner layout and props. [#813](https://github.cbhq.net/frontend/cds/pull/813)
+- **[HintMotion]** HintMotion imperative trigger and disableAnimateOnMount. [#738](https://github.cbhq.net/frontend/cds/pull/738)
+- **[Motion]** Create Pulse component. [#685](https://github.cbhq.net/frontend/cds/pull/685)
+- **[Motion]** Create Shake component. [#679](https://github.cbhq.net/frontend/cds/pull/679)
+- **[Motion]** Create ColorSurge component and apply to Toast and TextInput. [#656](https://github.cbhq.net/frontend/cds/pull/656)
+- **[useSort]** Create a useSort hook to use with tables. [#754](https://github.cbhq.net/frontend/cds/pull/754)
+
+#### 🐞 Fixes
+
+- **[useOverlay]** Store overlay id in ref to stabilize the hook methods. [#811](https://github.cbhq.net/frontend/cds/pull/811), [CDS-2335](https://jira.coinbase-corp.com/browse/CDS-2335)
+- **[illustrations]** Publish 06/28/22 Illo. [#790](https://github.cbhq.net/frontend/cds/pull/790)
+- **[Icons]** Publish Icons June 28nd, 2022. [#785](https://github.cbhq.net/frontend/cds/pull/785)
+- Moved responsive styles to web only. [#693](https://github.cbhq.net/frontend/cds/pull/693)
+- **[SelectOption]** Move disabled to Pressable wrapping SelectOption Cell. [#743](https://github.cbhq.net/frontend/cds/pull/743), [CDS-2330](https://jira.coinbase-corp.com/browse/CDS-2330)
+
 ## 1.0.1 (6/28/2022, 02:35 PM PST)
 
 #### 🐞 Fixes

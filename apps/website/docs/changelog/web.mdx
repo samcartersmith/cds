@@ -8,6 +8,35 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.1.0 (6/30/2022, 01:09 PM PST)
+
+#### 🚀 Updates
+
+- **[Banner]** Introduce a secondaryAction. [#819](https://github.cbhq.net/frontend/cds/pull/819)
+- **[Banner]** Update prop name tone to variant. [#817](https://github.cbhq.net/frontend/cds/pull/817)
+- **[Banner]** Update banner layout and props. [#813](https://github.cbhq.net/frontend/cds/pull/813)
+- **[Tables]** 🏓 Tables M2 updates. [#798](https://github.cbhq.net/frontend/cds/pull/798)
+- **[HintMotion]** HintMotion imperative trigger and disableAnimateOnMount. [#738](https://github.cbhq.net/frontend/cds/pull/738)
+- **[Motion]** Create Pulse component. [#685](https://github.cbhq.net/frontend/cds/pull/685)
+- **[Motion]** Create Shake component. [#679](https://github.cbhq.net/frontend/cds/pull/679)
+- **[Motion]** Create ColorSurge component and apply to Toast and TextInput. [#656](https://github.cbhq.net/frontend/cds/pull/656)
+- Adds css compression. [#639](https://github.cbhq.net/frontend/cds/pull/639)
+- **[Responsive]** Rework useBreakpoints to achieve parity with Retail. [#659](https://github.cbhq.net/frontend/cds/pull/659)
+- **[SidebarItem]** Support link props 'to', 'target' and 'openInNewWindow'. [#675](https://github.cbhq.net/frontend/cds/pull/675)
+
+#### 🐞 Fixes
+
+- **[FullscreenAlert]** Remove button text wrapping. [#816](https://github.cbhq.net/frontend/cds/pull/816)
+- **[Overlay]** Fix Overlay to render correct component. [#812](https://github.cbhq.net/frontend/cds/pull/812)
+- **[illustrations]** Publish 06/28/22 Illo. [#790](https://github.cbhq.net/frontend/cds/pull/790)
+- **[Icons]** Publish Icons June 28nd, 2022. [#785](https://github.cbhq.net/frontend/cds/pull/785)
+- **[Responsive]** Renamed responsiveStyles to responsiveConfig. [#762](https://github.cbhq.net/frontend/cds/pull/762)
+- **[Responsive]** Rename DefaultToDeviceProvider to BreakpointsProvider. [#758](https://github.cbhq.net/frontend/cds/pull/758)
+- **[Responsive]** Renamed MountComponent to BrowserOnly and added hook version useIsBrowser. [#753](https://github.cbhq.net/frontend/cds/pull/753)
+- Moved responsive styles to web only. [#693](https://github.cbhq.net/frontend/cds/pull/693)
+- **[Interactable]** CDS Button with disable variant on Safari are not visible. [#756](https://github.cbhq.net/frontend/cds/pull/756), [CDS-2327](https://jira.coinbase-corp.com/browse/CDS-2327)
+- **[SelectOption]** Move disabled to Pressable wrapping SelectOption Cell. [#743](https://github.cbhq.net/frontend/cds/pull/743), [CDS-2330](https://jira.coinbase-corp.com/browse/CDS-2330)
+
 ## 1.0.1 (6/28/2022, 02:35 PM PST)
 
 #### 🐞 Fixes
