@@ -1,6 +1,7 @@
 import type { PaletteForeground } from './Palette';
 import type { Placement } from './Placement';
 import type { ProgressBaseProps } from './ProgressBaseProps';
+import type { SpacingProps } from './SpacingProps';
 
 export type ProgressBarLabel =
   | number
@@ -36,13 +37,14 @@ export type ProgressBarWithFloatLabelProps = {
 
 export type ProgressBarFloatLabelProps = Pick<
   ProgressBarWithFloatLabelProps,
-  'label' | 'progress' | 'disabled'
+  'label' | 'progress' | 'disabled' | 'labelPlacement'
 >;
 
 export type ProgressBarFixedLabelContainerProps = Omit<
   ProgressBarWithFixedLabelsProps,
   'labelPlacement' | 'progress'
->;
+> &
+  Pick<SpacingProps, 'spacingBottom' | 'spacingTop'>;
 
 export type ProgressBarFixedLabelBesideProps = {
   label: ProgressBarLabel;

@@ -38,7 +38,7 @@ const ProgressBarFixedLabel: React.FC<ProgressBarFixedLabelProps> = memo(
 );
 
 const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerProps> = memo(
-  ({ startLabel, endLabel, disabled }) => {
+  ({ startLabel, endLabel, disabled, spacingBottom, spacingTop }) => {
     const nodes: React.ReactElement[] = [];
 
     if (typeof startLabel !== 'undefined') {
@@ -80,6 +80,8 @@ const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerPro
         alignItems="center"
         justifyContent="space-between"
         width="100%"
+        spacingBottom={spacingBottom}
+        spacingTop={spacingTop}
       >
         {nodes}
       </Box>
@@ -111,6 +113,7 @@ export const ProgressBarWithFixedLabels: React.FC<ProgressBarWithFixedLabelsProp
             disabled={disabled}
             startLabel={startLabel}
             endLabel={endLabel}
+            spacingBottom={1}
           />
         )}
 
@@ -125,6 +128,7 @@ export const ProgressBarWithFixedLabels: React.FC<ProgressBarWithFixedLabelsProp
             disabled={disabled}
             startLabel={startLabel}
             endLabel={endLabel}
+            spacingTop={1}
           />
         )}
       </VStack>
