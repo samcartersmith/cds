@@ -10,6 +10,7 @@ const currencyIcon: CurrencyIcon = {
   JPY: 'cashJPY',
   EUR: 'cashEUR',
   GBP: 'cashGBP',
+  BRL: 'cashBrazilianReal',
 };
 
 type FiatIconProps = {

@@ -92,6 +92,7 @@ const IconScreen = () => {
           <FiatIcon currencyCode="EUR" />
           <FiatIcon currencyCode="GBP" />
           <FiatIcon currencyCode="JPY" />
+          <FiatIcon currencyCode="BRL" />
         </HStack>
       </Example>
       <Example title="Animated Icon">
