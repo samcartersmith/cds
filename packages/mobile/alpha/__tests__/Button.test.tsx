@@ -1,9 +1,11 @@
 import { Animated, Pressable } from 'react-native';
 import { fireEvent, render } from '@testing-library/react-native';
+import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
 
 import { debounce } from '../../utils/debounce';
 import { Button } from '../Button';
 
+jest.mock('@cbhq/cds-common/system/useEventHandler');
 jest.mock('../../utils/debounce');
 
 describe('Button', () => {
@@ -17,6 +19,16 @@ describe('Button', () => {
     const result = render(<Button>Child</Button>);
 
     expect(result.UNSAFE_queryAllByType(Pressable)).toHaveLength(1);
+  });
+
+  it('renders a pressable with eventConfig', () => {
+    const mockEventConfig = {
+      actions: ['click'],
+      componentName: 'test',
+    };
+    render(<Button eventConfig={mockEventConfig}>Child</Button>);
+
+    expect(useEventHandler).toHaveBeenCalledWith('Button', 'onPress', mockEventConfig);
   });
 
   it('renders children text', () => {

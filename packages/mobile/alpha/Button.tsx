@@ -31,7 +31,6 @@ export const Button = memo(function Button({
   variant = 'primary',
   numberOfLines = 1,
   noScaleOnPress,
-  eventConfig,
   ...props
 }: ButtonProps) {
   const palette = usePalette();
