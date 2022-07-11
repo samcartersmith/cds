@@ -676,8 +676,8 @@ const sidebars = {
               label: 'BrowserOnly',
               id: 'components/system/BrowserOnly/browser-only',
             },
-            'hooks/useHasMounted',
             'hooks/useIsBrowser',
+            'hooks/useHasMounted',
           ],
         },
         {

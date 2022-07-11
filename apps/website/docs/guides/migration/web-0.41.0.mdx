@@ -15,12 +15,12 @@ import { Banner } from ':cds-website/components/Banner';
 <Banner
   icon="error"
   title="PopoverMenu is being replaced by Dropdown"
-  description="PopoverMenu is being deprecated in favor of Dropdown. This work has introduced breaking changes to components that consume PopoverMenu."
+  description="PopoverMenu is being deprecated in favor of Dropdown. We strongly recommend that you migrate instances of PopoverMenu to Dropdown, however migration is not required in order to upgrade to later versions of CDS web."
 />
 
-CDS completely reworked PopoverMenu into an entirely new component called Dropdown, which introduces a new API and some new paradigms which make it more reusable. Because of this work, migration is not 1:1, so please review the following breaking changes carefully.
+CDS completely reworked PopoverMenu into an entirely new component called Dropdown, which introduces a new API and paradigms which make it more reusable. Because of this work, migration is not 1:1, so please review the following breaking changes carefully.
 
-This biggest change is that Dropdown does not have controlled visibility. Rather, you can use methods exposed on a Dropdown ref to programmatically control visibility (openMenu and closeMenu, the same names as the visibility handlers on PopoverMenu).
+The biggest change is that Dropdown does not have controlled visibility. Rather, you can use methods exposed on a Dropdown ref to programmatically control visibility (openMenu and closeMenu, the same names as the visibility handlers on PopoverMenu).
 
 <TextTitle4 as="h4">Removed Props</TextTitle4>
 
