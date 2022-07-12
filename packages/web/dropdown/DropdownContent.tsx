@@ -14,7 +14,6 @@ import { DimensionValue, NoopFn } from '@cbhq/cds-common/types';
 
 import { VStack } from '../layout/VStack';
 import { useMotionProps } from '../motion/useMotionProps';
-import { transparentScrollbar } from '../styles/scrollbar';
 import { isBrowser } from '../utils/browser';
 import { cx } from '../utils/linaria';
 
@@ -75,11 +74,7 @@ export const DropdownContent = memo(
           borderRadius="popover"
           zIndex={zIndex.overlays.dropdown}
           role="menu"
-          dangerouslySetClassName={cx(
-            dropdownStaticClassName,
-            dropdownStyleOverrides,
-            transparentScrollbar,
-          )}
+          dangerouslySetClassName={cx(dropdownStaticClassName, dropdownStyleOverrides)}
           {...props}
           {...(motionProps as AnimationProps)}
         >

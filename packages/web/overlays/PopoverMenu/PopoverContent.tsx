@@ -2,7 +2,6 @@ import React, { memo, ReactNode, useMemo } from 'react';
 import { css } from 'linaria';
 
 import { VStack } from '../../layout/VStack';
-import { transparentScrollbar } from '../../styles/scrollbar';
 import { cx } from '../../utils/linaria';
 import { FocusTrap } from '../FocusTrap';
 
@@ -68,11 +67,7 @@ export const PopoverContent = memo(({ children }: PopoverContentProps) => {
         maxHeight={maxHeight}
         minWidth={minWidth}
         maxWidth={maxWidth}
-        dangerouslySetClassName={cx(
-          popoverMenuStaticClassName,
-          popoverStyleOverrides,
-          transparentScrollbar,
-        )}
+        dangerouslySetClassName={cx(popoverMenuStaticClassName, popoverStyleOverrides)}
         onBlur={handlePopoverMenuBlur}
       >
         {/* NOTE: this is a temp fix since we're deprecating this component but 
