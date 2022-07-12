@@ -1,0 +1,114 @@
+_if_master_branch: &if_master_branch
+  if: |
+    build.branch == 'master'
+
+_if_feature_branch: &if_feature_branch
+  if: |
+    build.branch != 'master'
+
+_percy_android_shared: &percy_android_shared
+  parallelism: 1
+  commands:
+    - tools/ci/setup.sh
+    - export LANG=en_US.UTF-8
+    - mkdir -p percy-artifacts
+    - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
+    - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
+    - yarn nx run mobile-playground:e2e-android-emulator
+    - yarn nx run mobile-playground:build-android-e2e
+    - yarn nx run mobile-playground:e2e-android
+  plugins: &android_plugins
+    - file:///buildkite/plugins/cache: &cache_plugin
+        key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
+        paths:
+          - ./.yarn/cache
+          - ./.yarn/install-state.gz
+    - file:///buildkite/plugins/docker: &docker_plugin
+        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:android
+        wait-network: true
+        privileged: true
+        always-pull: true
+        propagate-environment: true
+        propagate-uid-gid: true
+        volumes:
+          # Allow git operations to work
+          - ${HOME}/.ssh:/root/.ssh
+          - ${HOME}/.git:/root/.git
+        environment:
+          - PLAYSTORE_AUTH
+          - KEY_PASSWORD
+          - KEY_ALIAS
+          - BUGSNAG_KEY
+          - ANDROID_KEYSTORE
+          - PLAYSTORE_PACKAGE_NAME
+          - 'PERCY_TOKEN'
+          - 'PERCY_TARGET_BRANCH'
+    - ssh://git@github.cbhq.net/frontend/aws-sm-buildkite-plugin:
+        env:
+          PERCY_TOKEN: infra/buildkite/cds-percy-token-android
+  timeout_in_minutes: 60
+  env:
+    OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
+    DETOX_TOTAL_JOBS: 1
+    DETOX_JOB_NUMBER: 1
+  agents:
+    queue: metal
+  retry:
+    automatic:
+      limit: 2
+
+_finish_percy_android_shared: &finish_percy_android_shared
+  parallelism: 1
+  commands:
+    - tools/ci/setup.sh
+    - export LANG=en_US.UTF-8
+    - mkdir -p percy-artifacts
+    - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
+    - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
+    - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
+    - cd apps/mobile-playground
+    - yarn percy:finalize
+  env:
+    OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
+    PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-android'
+  agents:
+    queue: macos-metal
+
+env:
+  LANG: en_US.UTF-8
+  CI: true
+  NX_CAPTURE_METRICS: true
+  NX_CAPTURE_TEST_METRICS: true
+  OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
+  ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
+  PERCY_NONCE_FILE_NAME: 'percy_nonce.txt'
+
+steps:
+  - group: Manual Percy Tests (Android)
+    <<: *if_feature_branch
+    steps:
+      - input: 'Manually Run Android Percy! :rocket:'
+        key: 'run-android-percy'
+        prompt: 'Manually Run Android Percy?'
+
+      - label: 'Manual Percy Tests (Android)'
+        key: 'manual-android-percy-tests'
+        depends_on: run-android-percy
+        <<: *percy_android_shared
+
+      - label: 'Finish Manual Percy (Android)'
+        depends_on: 'manual-android-percy-tests'
+        allow_dependency_failure: true
+        <<: *finish_percy_android_shared
+
+  - group: Percy Tests (Android)
+    <<: *if_master_branch
+    steps:
+      - label: 'Percy Tests (Android) '
+        key: 'master-android-percy-run'
+        <<: *percy_android_shared
+
+      - label: 'Finish Percy (Android)'
+        depends_on: 'master-android-percy-run'
+        allow_dependency_failure: true
+        <<: *finish_percy_android_shared

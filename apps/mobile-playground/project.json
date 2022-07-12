@@ -55,7 +55,7 @@
         }
       }
     },
-    "run-ios-e2e": {
+    "conditional-init-percy-mobile": {
       "executor": "@cbhq/cds-tools:run-conditional",
       "options": {
         "triggerProjects": [
@@ -66,7 +66,14 @@
           "fonts",
           "lottie-files"
         ],
-        "target": "mobile-playground:ios-e2e"
+        "target": "mobile-playground:init-percy-mobile"
+      }
+    },
+    "init-percy-mobile": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["./tools/ci/runPercyMobileTests.sh"],
+        "parallel": false
       }
     },
     "run-android-e2e": {
