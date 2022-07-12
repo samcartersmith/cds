@@ -75,13 +75,16 @@ _percy_android_shared: &percy_android_shared
     - export LANG=en_US.UTF-8
     - randomNonce=percyNonce_$(openssl rand -base64 21)
     - export PERCY_PARALLEL_NONCE="$randomNonce"
-    # Planning to delete this project and switch to Prod percy project that uses aws secret manager:
-    - export PERCY_TOKEN=009f22725cb0eabbabc45b436934192c83538f4599fc339bf0c30fc249ef9298
     - yarn nx run mobile-playground:e2e-android-emulator
     - yarn nx run mobile-playground:build-android-e2e
     - yarn nx run mobile-playground:e2e-android
     - cd apps/mobile-playground
     - yarn percy:finalize
+  env:
+    OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
+    PERCY_TARGET_BRANCH: master
+    DETOX_TOTAL_JOBS: 1
+    DETOX_JOB_NUMBER: 1
   plugins: &android_plugins
     - file:///buildkite/plugins/cache: &cache_plugin
         key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
@@ -107,16 +110,12 @@ _percy_android_shared: &percy_android_shared
           - ANDROID_KEYSTORE
           - PLAYSTORE_PACKAGE_NAME
           - BUILDKITE_API_TOKEN
-          - GOOGLE_APPLICATION_CREDENTIALS_JSON
-          - 'BUILDKITE_API_TOKEN'
-          - 'PERCY_TOKEN'
-          - 'STORYBOOK_SKIP_ANIMATION'
-          - 'PERCY_TARGET_BRANCH'
+          - PERCY_TOKEN
+          - PERCY_TARGET_BRANCH
+    - ssh://git@github.cbhq.net/frontend/aws-sm-buildkite-plugin:
+        env:
+          PERCY_TOKEN: infra/buildkite/cds-percy-token-android
   timeout_in_minutes: 60
-  env:
-    OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
-    DETOX_TOTAL_JOBS: 1
-    DETOX_JOB_NUMBER: 1
   agents:
     queue: metal
   retry:
@@ -265,7 +264,7 @@ steps:
           DETOX_JOB_NUMBER: 1
           DETOX_TOTAL_JOBS: 8
           PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
-          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
 
       - label: 'Percy (iOS) 2'
         key: 'percy-ios-2'
@@ -274,7 +273,7 @@ steps:
           DETOX_JOB_NUMBER: 2
           DETOX_TOTAL_JOBS: 8
           PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
-          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
 
       - label: 'Percy (iOS) 3'
         key: 'percy-ios-3'
@@ -283,7 +282,7 @@ steps:
           DETOX_JOB_NUMBER: 3
           DETOX_TOTAL_JOBS: 8
           PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
-          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
 
       - label: 'Percy (iOS) 4'
         key: 'percy-ios-4'
@@ -292,7 +291,7 @@ steps:
           DETOX_JOB_NUMBER: 4
           DETOX_TOTAL_JOBS: 8
           PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
-          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
 
       - label: 'Percy (iOS) 5'
         key: 'percy-ios-5'
@@ -301,7 +300,7 @@ steps:
           DETOX_JOB_NUMBER: 5
           DETOX_TOTAL_JOBS: 8
           PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
-          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
 
       - label: 'Percy (iOS) 6'
         key: 'percy-ios-6'
@@ -310,7 +309,7 @@ steps:
           DETOX_JOB_NUMBER: 6
           DETOX_TOTAL_JOBS: 8
           PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
-          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
 
       - label: 'Percy (iOS) 7'
         key: 'percy-ios-7'
@@ -319,7 +318,7 @@ steps:
           DETOX_JOB_NUMBER: 7
           DETOX_TOTAL_JOBS: 8
           PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
-          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
 
       - label: 'Percy (iOS) 8'
         key: 'percy-ios-8'
@@ -328,7 +327,7 @@ steps:
           DETOX_JOB_NUMBER: 8
           DETOX_TOTAL_JOBS: 8
           PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
-          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
 
       - label: 'Finish Percy (iOS)'
         allow_dependency_failure: true
@@ -354,7 +353,7 @@ steps:
         env:
           OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
           PERCY_NONCE_FILE_NAME: 'ios_percy_nonce.txt'
-          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/test-cds-percy-token-ios'
+          PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
         agents:
           queue: macos-metal
 
