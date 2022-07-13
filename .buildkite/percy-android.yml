@@ -110,5 +110,6 @@ steps:
 
       - label: 'Finish Percy (Android)'
         depends_on: 'master-android-percy-run'
+        # TODO: Remove once Android is stable:
         allow_dependency_failure: true
         <<: *finish_percy_android_shared

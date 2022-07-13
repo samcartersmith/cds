@@ -78,7 +78,6 @@ steps:
           DETOX_JOB_NUMBER: 8
 
       - label: 'Finish Percy (iOS)'
-        allow_dependency_failure: true
         parallelism: 1
         depends_on:
           - 'percy-ios-1'
