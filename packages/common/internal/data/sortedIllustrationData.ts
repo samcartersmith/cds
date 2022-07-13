@@ -1271,4 +1271,8 @@ export const sortedImg = [
   'boostedCard-light',
   'coinbaseLogoNavigation-light',
   'coinbaseLogoNavigation-dark',
+  'learningRewardsNavigation-dark',
+  'learningRewardsNavigation-light',
+  'derivativesNavigation-light',
+  'derivativesNavigation-dark',
 ] as const;
