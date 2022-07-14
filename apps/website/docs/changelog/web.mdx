@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.1.1 (7/13/2022, 04:39 PM PST)
+
+#### 🚀 Updates
+
+- Removed transparent scrollbar. [#829](https://github.cbhq.net/frontend/cds/pull/829)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 07/13/22 Illos. [#835](https://github.cbhq.net/frontend/cds/pull/835)
+- **[ProgressBar]** Add 1 spacing above and below floating labels. [#825](https://github.cbhq.net/frontend/cds/pull/825)
+
 ## 1.1.0 (6/30/2022, 01:09 PM PST)
 
 #### 🚀 Updates

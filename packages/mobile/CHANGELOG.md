@@ -8,6 +8,23 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.1.1 (7/13/2022, 04:39 PM PST)
+
+#### 🚀 Updates
+
+- **[FiatIcon]** Add BRL Icon to FiatIcon component. [#826](https://github.cbhq.net/frontend/cds/pull/826)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 07/13/22 Illos. [#835](https://github.cbhq.net/frontend/cds/pull/835)
+- Clean up pipeline and run Mobile Percy tests conditionally. [#820](https://github.cbhq.net/frontend/cds/pull/820)
+- **[Button]** Fix eventConfig prop not being passed from Button to Pressable. [#827](https://github.cbhq.net/frontend/cds/pull/827)
+- **[ProgressBar]** Add 1 spacing above and below floating labels. [#825](https://github.cbhq.net/frontend/cds/pull/825)
+
+#### 📘 Misc
+
+- **[Mobile Visual Regression Tests]** Use Percy production project secrets. [#830](https://github.cbhq.net/frontend/cds/pull/830)
+
 ## 1.1.0 (6/30/2022, 01:09 PM PST)
 
 #### 🚀 Updates
