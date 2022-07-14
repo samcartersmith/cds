@@ -1,8 +1,8 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Commerce
-sidebar_label: Commerce
+title: Commerce Merchant
+sidebar_label: Commerce Merchant
 ---
 
 import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
@@ -10,9 +10,13 @@ import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTrack
 import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
 import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
-<AdopterStatsProvider {...require('@site/static/data/adoption/commerce/stats.json')}>
-  <AdopterProjectInfoProvider {...require('@site/static/data/adoption/commerce/project.json')}>
-    <AdopterComponentsProvider {...require('@site/static/data/adoption/commerce/components.json')}>
+<AdopterStatsProvider {...require('@site/static/data/adoption/commerce-merchant/stats.json')}>
+  <AdopterProjectInfoProvider
+    {...require('@site/static/data/adoption/commerce-merchant/project.json')}
+  >
+    <AdopterComponentsProvider
+      {...require('@site/static/data/adoption/commerce-merchant/components.json')}
+    >
       <AdopterDetails />
     </AdopterComponentsProvider>
   </AdopterProjectInfoProvider>

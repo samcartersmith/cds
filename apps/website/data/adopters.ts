@@ -6,7 +6,6 @@
 export const adopters = [
   { id: 'assethub-web', pillar: 'Ecosystem' },
   { id: 'assethub-admin', pillar: 'Ecosystem' },
-  { id: 'commerce', pillar: 'Ecosystem' },
   { id: 'yield-mobile', pillar: 'Ecosystem' },
   { id: 'yield-web', pillar: 'Ecosystem' },
   { id: 'prime-mobile', pillar: 'Institutional' },
@@ -20,6 +19,8 @@ export const adopters = [
   { id: 'unified-login', pillar: 'Platform' },
   { id: 'two-factor-web', pillar: 'Platform' },
   { id: 'tax-center', pillar: 'Platform' },
+  { id: 'commerce-merchant', pillar: 'Retail' },
+  { id: 'commerce-payer', pillar: 'Retail' },
   { id: 'retail-mobile', pillar: 'Retail' },
   { id: 'retail-web-logged-in', pillar: 'Retail' },
   { id: 'retail-web-shared', pillar: 'Retail' },

@@ -14,6 +14,7 @@ const walletGit = 'wallet/wallet-mobile';
 const unifiedAccountsGit = 'frontend/unified-identity-accounts';
 const mauiGit = 'frontend/maui';
 const primeMobileGit = 'prime/mobile';
+const commercePayerGit = 'commerce/www';
 
 const monorepoConfig = {
   root: path.join(tempDir, monorepoGit),
@@ -41,13 +42,6 @@ export const config: AdoptersConfig[] = [
         id: 'assethub-admin',
         label: 'AssetHub Admin',
         projectTsAliases: ['@assethub/admin', '@assethub/shared/components'],
-        type: 'doc',
-      },
-      {
-        ...monorepoConfig,
-        id: 'commerce',
-        label: 'Commerce',
-        projectTsAliases: ['@commerce/frontend'],
         type: 'doc',
       },
       {
@@ -180,6 +174,21 @@ export const config: AdoptersConfig[] = [
     label: 'Retail',
     collapsed: true,
     items: [
+      {
+        ...monorepoConfig,
+        id: 'commerce-merchant',
+        label: 'Commerce Merchant',
+        projectTsAliases: ['@commerce/frontend'],
+        type: 'doc',
+      },
+      {
+        root: path.join(tempDir, commercePayerGit),
+        github: commercePayerGit,
+        tsconfigFileName: 'tsconfig.json',
+        id: 'commerce-payer',
+        label: 'Commerce Payer',
+        type: 'doc',
+      },
       {
         root: path.join(tempDir, retailMobileGit),
         github: retailMobileGit,

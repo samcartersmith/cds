@@ -218,11 +218,12 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-mobile/typography/TextTitle3",
-      "totalInstances": 9,
-      "totalCallSites": 9,
+      "totalInstances": 10,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-mobile/typography/TextTitle3",
       "callSites": {
         "@app/screens/YieldCenter/AllAssetsOwnedSection.tsx": 1,
+        "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
         "@app/screens/YieldCenter/NuxHeaderSection.tsx": 1,
         "@app/screens/YieldCenter/SubscriptionBoostedRatesCard.tsx": 1,
         "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1,
@@ -240,6 +241,13 @@
           "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
         },
+        "adjustsFontSizeToFit": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 },
+        "color": {
+          "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
+          "@app/screens/YieldCenter/Trays/SubscriptionYieldCenterRewardsModal.tsx": 1
+        },
+        "numberOfLines": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 },
+        "tabularNumbers": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 },
         "spacingBottom": {
           "@app/screens/YieldCenter/NuxHeaderSection.tsx": 1,
           "@app/screens/YieldCenter/SubscriptionBoostedRatesCard.tsx": 1,
@@ -249,7 +257,6 @@
           "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
         },
-        "color": { "@app/screens/YieldCenter/Trays/SubscriptionYieldCenterRewardsModal.tsx": 1 },
         "testID": { "@app/screens/YieldCenter/Trays/SubscriptionYieldCenterRewardsModal.tsx": 1 }
       }
     },
@@ -423,18 +430,6 @@
         "onPress": { "@app/screens/YieldCenter/SubscriptionBoostedRatesCard.tsx": 1 },
         "testID": { "@app/screens/YieldCenter/SubscriptionBoostedRatesCard.tsx": 1 },
         "spacingEnd": { "@app/screens/YieldCenter/Trays/AssetDrawerTray.tsx": 1 }
-      }
-    },
-    {
-      "name": "TextTitle2",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle2",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/typography/TextTitle2",
-      "propsWithCallSites": {
-        "color": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 },
-        "numberOfLines": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 },
-        "tabularNumbers": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 }
       }
     },
     {
