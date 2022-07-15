@@ -53,9 +53,9 @@ export const NavigationBar = memo(({ start, children, end, bottom }: NavigationB
         zIndex={zIndex.navigation}
         width="100%"
       >
-        <HStack alignItems="flex-start" justifyContent="space-between">
+        <HStack alignItems="center" justifyContent="space-between">
           <VStack>
-            <HStack alignItems="flex-start" justifyContent="flex-start">
+            <HStack alignItems="center" justifyContent="flex-start">
               <Collapsible collapsed={!start} direction="horizontal">
                 <Box spacingEnd={3}>{startNode}</Box>
               </Collapsible>
