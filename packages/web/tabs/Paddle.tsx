@@ -10,12 +10,14 @@ import {
   paddleVisible,
 } from '@cbhq/cds-common/animation/paddle';
 import { durations } from '@cbhq/cds-common/motion/tokens';
+import { tabsPaddleSpacing } from '@cbhq/cds-common/tokens/tabs';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { IconButton } from '../buttons/IconButton';
 import { usePalette } from '../hooks/usePalette';
 import { useMotionProps } from '../motion/useMotionProps';
-import { gradient } from '../styles/gradient';
+import { gradient, staticClassName as gradientStaticClassName } from '../styles/gradient';
+import { spacing } from '../tokens';
 import { cx } from '../utils/linaria';
 
 import { tabLabelSpacingClassName } from './TabLabel';
@@ -28,6 +30,14 @@ export type PaddleProps = {
   onPress: () => void;
 };
 
+export const paddleStaticClassName = 'cds-paddle';
+const gradientClassName = css`
+  &.${gradientStaticClassName} {
+    &.${paddleStaticClassName} {
+      width: calc(80px + ${spacing[tabsPaddleSpacing]});
+    }
+  }
+`;
 const paddleClassName = css`
   display: block;
   position: absolute;
@@ -42,10 +52,14 @@ const buttonClassName = css`
   z-index: ${zIndex.navigation};
 `;
 const paddleLeftClassName = css`
-  left: 0;
+  left: calc(${spacing[tabsPaddleSpacing]} * -1);
+  padding-left: ${spacing[tabsPaddleSpacing]};
+  padding-right: ${spacing[tabsPaddleSpacing]};
 `;
 const paddleRightClassName = css`
-  right: 0;
+  right: calc(${spacing[tabsPaddleSpacing]} * -1);
+  padding-left: ${spacing[tabsPaddleSpacing]};
+  padding-right: ${spacing[tabsPaddleSpacing]};
 `;
 
 export const Paddle = ({
@@ -62,6 +76,7 @@ export const Paddle = ({
     direction === 'left' ? paddleLeftClassName : paddleRightClassName,
     show ? null : noEventsClassName,
   );
+  const paddleGradientClassName = cx(paddleStaticClassName, gradient[direction], gradientClassName);
 
   const buttonMotionProps = useMotionProps({
     enterConfigs: [
@@ -92,7 +107,7 @@ export const Paddle = ({
               variant="secondary"
             />
           </motion.span>
-          <motion.span className={gradient[direction]} {...gradientMotionProps} />
+          <motion.span className={paddleGradientClassName} {...gradientMotionProps} />
         </span>
       )}
     </AnimatePresence>

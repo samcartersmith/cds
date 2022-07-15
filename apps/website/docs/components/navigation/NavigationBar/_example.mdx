@@ -18,19 +18,31 @@ function NavigationWithPress() {
       label: 'Gainers',
       count: 2,
     },
+    {
+      id: 'losers',
+      label: 'Losers',
+    },
+    {
+      id: 'trending',
+      label: 'Trending',
+    },
+    {
+      id: 'other',
+      label: 'Other',
+    },
   ];
   const handlePress = (name) => alert(`Pressed ${name}`);
   const [value, setValue] = useState(tabs[1].id);
   const { name, avatar } = mocks.users.find(({ name }) => name === 'Donna');
+  const showBackButton = useMemo(() => value !== tabs[0].id, [value]);
+  const handleBackPress = useCallback(() => {
+    setValue(tabs[0].id);
+  }, []);
 
   return (
     <ExampleWithThemeToggles>
       <NavigationBar
-        start={
-          value !== tabs[0].id ? (
-            <IconButton name="backArrow" onPress={() => setValue(tabs[0].id)} />
-          ) : undefined
-        }
+        start={showBackButton && <IconButton name="backArrow" onPress={handleBackPress} />}
         end={
           <HStack gap={1} alignItems="center">
             <IconButton name="bell" onPress={() => handlePress('Notifications')} />

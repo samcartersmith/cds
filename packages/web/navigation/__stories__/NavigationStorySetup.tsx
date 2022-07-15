@@ -1,5 +1,5 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { css } from 'linaria';
 
 import { AvatarButton, IconButton } from '../../buttons/index';
@@ -59,12 +59,29 @@ const tabs = [
     id: 'gainers',
     label: 'Gainers',
   },
+  {
+    id: 'losers',
+    label: 'Losers',
+  },
+  {
+    id: 'trending',
+    label: 'Trending',
+  },
+  {
+    id: 'schill',
+    label: 'Schill',
+  },
 ];
 export const NavigationBarFullExample: React.FC = () => {
   const [value, setValue] = useState(tabs[0].id);
+  const showBackButton = useMemo(() => value !== tabs[0].id, [value]);
+  const handleBackPress = useCallback(() => {
+    setValue(tabs[0].id);
+  }, []);
+
   return (
     <NavigationBar
-      start={<IconButton name="backArrow" onPress={() => handlePress('Back')} />}
+      start={showBackButton && <IconButton name="backArrow" onPress={handleBackPress} />}
       end={
         <HStack gap={1} alignItems="center">
           <IconButton name="bell" onPress={() => handlePress('Notifications')} />
@@ -76,9 +93,9 @@ export const NavigationBarFullExample: React.FC = () => {
           </Pressable>
         </HStack>
       }
+      bottom={<TabNavigation tabs={tabs} value={value} onChange={setValue} />}
     >
       <NavigationTitle>{`Personal Portfolio (${value})`}</NavigationTitle>
-      <TabNavigation tabs={tabs} value={value} onChange={setValue} />
     </NavigationBar>
   );
 };

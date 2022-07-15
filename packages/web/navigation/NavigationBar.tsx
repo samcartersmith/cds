@@ -1,9 +1,11 @@
-import React, { memo, ReactNode } from 'react';
+import React, { memo, ReactNode, useMemo } from 'react';
+import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { navigationBarMinHeight } from '@cbhq/cds-common/tokens/navigation';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
-import { HStack, VStack } from '../layout';
+import { Collapsible } from '../collapsible/Collapsible';
+import { Box, HStack, VStack } from '../layout';
 import { ThemeProvider } from '../system/ThemeProvider';
 
 export type NavigationBarProps = {
@@ -30,9 +32,12 @@ export type NavigationBarProps = {
 };
 
 export const NavigationBar = memo(({ start, children, end, bottom }: NavigationBarProps) => {
+  const prevStart = usePreviousValue<NavigationBarProps['start']>(start);
+  const startNode = useMemo(() => (!start ? prevStart : start), [start, prevStart]);
+
   return (
     <ThemeProvider scale={DEFAULT_SCALE} display="contents">
-      <HStack
+      <VStack
         as="nav"
         position="sticky"
         top={0}
@@ -41,23 +46,26 @@ export const NavigationBar = memo(({ start, children, end, bottom }: NavigationB
         background
         borderedBottom
         spacingHorizontal={2}
-        spacingTop={2}
-        spacingBottom={bottom ? undefined : 2}
-        width="100%"
         minHeight={navigationBarMinHeight}
-        alignItems="flex-start"
-        justifyContent="space-between"
+        spacingTop={2}
+        gap={2}
+        spacingBottom={bottom ? undefined : 2}
         zIndex={zIndex.navigation}
+        width="100%"
       >
-        <VStack>
-          <HStack gap={2} alignItems="flex-start" justifyContent="flex-start">
-            {start}
-            <VStack gap={2}>{children}</VStack>
-          </HStack>
-          {bottom}
-        </VStack>
-        {end}
-      </HStack>
+        <HStack alignItems="flex-start" justifyContent="space-between">
+          <VStack>
+            <HStack alignItems="flex-start" justifyContent="flex-start">
+              <Collapsible collapsed={!start} direction="horizontal">
+                <Box spacingEnd={3}>{startNode}</Box>
+              </Collapsible>
+              <VStack gap={2}>{children}</VStack>
+            </HStack>
+          </VStack>
+          {end}
+        </HStack>
+        {bottom}
+      </VStack>
     </ThemeProvider>
   );
 });
