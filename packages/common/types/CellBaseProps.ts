@@ -55,6 +55,10 @@ export type CellAccessoryType = 'arrow' | 'more' | 'selected';
 export type CellAccessoryProps = {
   /** Type of accessory to display at the end. */
   type: CellAccessoryType;
+  /**
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   */
+  dangerouslySetClassName?: string;
 } & SpacingProps;
 
 export type CellDetailVariant = Extract<

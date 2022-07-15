@@ -8,6 +8,7 @@ import { Cell, overflowClassName } from '../cells/Cell';
 import { CellAccessory } from '../cells/CellAccessory';
 import { VStack } from '../layout/VStack';
 import { insetFocusRing } from '../styles/focus';
+import { visibility } from '../styles/visibility';
 import { Pressable, PressableProps } from '../system';
 import { borderRadius } from '../tokens';
 import { TextBody, TextHeadline } from '../typography';
@@ -144,7 +145,12 @@ export const SelectOption = memo(
           borderRadius="none"
           minHeight={minHeight}
           maxHeight={maxHeight}
-          accessory={selected ? <CellAccessory type="selected" /> : undefined}
+          accessory={
+            <CellAccessory
+              type="selected"
+              dangerouslySetClassName={selected ? visibility.visible : visibility.hidden}
+            />
+          }
           selected={selected}
           {...props}
         >

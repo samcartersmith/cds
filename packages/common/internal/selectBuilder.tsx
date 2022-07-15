@@ -84,6 +84,7 @@ export const selectBuilder = ({
     onPress,
     helperText,
     onBlur,
+    width,
   }: Pick<
     SelectProps,
     | 'variant'
@@ -94,12 +95,13 @@ export const selectBuilder = ({
     | 'onPress'
     | 'helperText'
     | 'onBlur'
+    | 'width'
   >) => {
     const [value, setValue] = useState<string | undefined>('');
 
     return (
       <ThemeProvider spectrum={spectrum} scale={scale}>
-        <VStack spacing={2} background minHeight={600}>
+        <VStack spacing={2} background>
           <Select
             value={value}
             variant={variant}
@@ -111,6 +113,7 @@ export const selectBuilder = ({
             onPress={onPress}
             helperText={helperText}
             onBlur={onBlur}
+            width={width}
           >
             <SelectOption
               value="disabled"

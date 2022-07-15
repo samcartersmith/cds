@@ -228,7 +228,7 @@ export const CustomOptions = () => {
   );
 
   return (
-    <Dropdown width={190} content={content} value={value} onChange={onChange}>
+    <Dropdown maxWidth={190} content={content} value={value} onChange={onChange}>
       <PressableOpacity>
         <TextTitle2 as="p">{currentGlyph}</TextTitle2>
       </PressableOpacity>

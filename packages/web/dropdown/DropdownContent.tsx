@@ -22,6 +22,7 @@ import { DropdownProps } from './DropdownProps';
 const dropdownStyleOverrides = css`
   overflow-y: auto;
   overflow-x: hidden;
+  min-width: min-content;
 `;
 
 const dropdownStaticClassName = 'cds-dropdown';

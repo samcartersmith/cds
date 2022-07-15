@@ -30,6 +30,8 @@ export const { Default, InputStackOptions, Disabled, Compact, Variants } = selec
   components as unknown as CreateSelectStoriesProps,
 );
 
+export const SmallSelect = () => <Default width={80} />;
+
 export const {
   Default: DarkMode,
   InputStackOptions: DarkInputStackOptions,
