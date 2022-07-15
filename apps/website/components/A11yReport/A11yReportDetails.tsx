@@ -12,61 +12,69 @@ import { TextBody, TextHeadline, TextLabel1, TextTitle2 } from '@cbhq/cds-web/ty
 
 import { BetaCell } from ':cds-website/components/BetaCell';
 import { a11yReport } from ':cds-website/data/a11yReport';
+import { a11yReport as originalA11yReport } from ':cds-website/data/a11yReport_original';
 
 import { SplitScreenStack } from '../SplitScreenStack';
 
-type A11yComponent = typeof a11yReport.report[number];
+const combinedData = { ...a11yReport, ...originalA11yReport };
+export type ReportDoc = typeof combinedData;
+type Report = ReportDoc['report'];
+type A11yComponent = Report[number] | Report[number];
 type SetActiveComponent = SetState<A11yComponent['id']>;
 type ProjectCellProps = {
   id: A11yComponent['id'];
   active: boolean;
   setActiveComponent: SetActiveComponent;
+  report: Report;
 };
 type Props = {
   impact: string;
+  reportDoc: ReportDoc;
 };
-const getItem = (id: A11yComponent['id']) => {
-  const item = a11yReport.report.find((i) => i.id === id) ?? a11yReport.report[0];
+const getItem = (id: A11yComponent['id'], report: Report) => {
+  const item = report.find((i) => i.id === id) ?? report[0];
   return item;
 };
-export const ComponentCell = memo(({ id, active, setActiveComponent }: ProjectCellProps) => {
-  const item: A11yComponent = getItem(id);
-  const totalTests = Number(item.violations.length) + Number(item.passes);
-  const status = item.violations.length ? 'fail' : 'pass';
-  const color: CellDetailVariant = status === 'pass' ? 'positive' : 'negative';
+export const ComponentCell = memo(
+  ({ id, active, setActiveComponent, report }: ProjectCellProps) => {
+    const item: A11yComponent = getItem(id, report);
+    const totalTests = Number(item.violations.length) + Number(item.passes);
+    const status = item.violations.length ? 'fail' : 'pass';
+    const color: CellDetailVariant = status === 'pass' ? 'positive' : 'negative';
 
-  const start = (
-    <VStack>
-      <TextHeadline as="p" overflow="truncate">
-        {item?.title.replace('Core Components/', '')}: {item.name}
-      </TextHeadline>
-    </VStack>
-  );
+    const start = (
+      <VStack>
+        <TextHeadline as="p" overflow="truncate">
+          {item?.title.replace('Core Components/', '')}: {item.name}
+        </TextHeadline>
+      </VStack>
+    );
 
-  const end = (
-    <TextBody as="p" align="end" color={color} spacingStart={0}>
-      {item.passes} / {totalTests}
-    </TextBody>
-  );
+    const end = (
+      <TextBody as="p" align="end" color={color} spacingStart={0}>
+        {item.passes} / {totalTests}
+      </TextBody>
+    );
 
-  const handlePress = useCallback(() => setActiveComponent(id), [id, setActiveComponent]);
+    const handlePress = useCallback(() => setActiveComponent(id), [id, setActiveComponent]);
 
-  return (
-    <BetaCell
-      key={`project-cell-${id}`}
-      priority="end"
-      offsetHorizontal={1}
-      start={start}
-      end={end}
-      selected={active}
-      endAccessory={<CellAccessory type={active ? 'selected' : 'arrow'} />}
-      onPress={handlePress}
-    />
-  );
-});
+    return (
+      <BetaCell
+        key={`project-cell-${id}`}
+        priority="end"
+        offsetHorizontal={1}
+        start={start}
+        end={end}
+        selected={active}
+        endAccessory={<CellAccessory type={active ? 'selected' : 'arrow'} />}
+        onPress={handlePress}
+      />
+    );
+  },
+);
 
-const Passes = ({ id }: { id: A11yComponent['id'] }) => {
-  const item = getItem(id);
+const Passes = ({ id, report }: { id: A11yComponent['id']; report: Report }) => {
+  const item = getItem(id, report);
   const total = item.passes;
 
   return (
@@ -77,9 +85,9 @@ const Passes = ({ id }: { id: A11yComponent['id'] }) => {
     </VStack>
   );
 };
-const Violations = ({ id }: { id: A11yComponent['id'] }) => {
+const Violations = ({ id, report }: { id: A11yComponent['id']; report: Report }) => {
   const [isCollapsed, { toggle }] = useToggler(true);
-  const item = getItem(id);
+  const item = getItem(id, report);
   const total = item.violations.length;
   const getDetailsHtml = useCallback((details: string) => ({ __html: details }), []);
 
@@ -122,8 +130,8 @@ const Violations = ({ id }: { id: A11yComponent['id'] }) => {
               <TextBody as="p">
                 {help}. <Link href={helpUrl}>Learn more</Link>
               </TextBody>
-              {nodes.map(({ failureSummary, target }) => (
-                <TextLabel1 as="p">
+              {nodes.map(({ failureSummary, target, impact }) => (
+                <TextLabel1 as="p" key={`key--${target}-${impact}`}>
                   Target: <code>{target}</code>
                   <br />
                   <span dangerouslySetInnerHTML={getDetailsHtml(failureSummary)} />
@@ -157,18 +165,24 @@ const ImpactDetails = ({ impact = 'all' }) => {
   return <TextBody as="p">📃 A full list of all components and their a11y score</TextBody>;
 };
 
-export const A11yReportDetails = memo(({ impact = 'critical' }: Props) => {
-  const report = useMemo(
+export const A11yReportDetails = memo(({ impact = 'critical', reportDoc }: Props) => {
+  const filteredReport = useMemo<Report>(
     () =>
-      a11yReport.report.filter((r) => {
+      // @ts-expect-error TODO fix types
+      reportDoc.report.filter((r) => {
         return impact === 'all' ? true : r.violations.some((v) => v.impact === impact);
       }),
-    [impact],
+    [impact, reportDoc],
   );
-  const [activeComponentId, setActiveComponentId] = useState<A11yComponent['id']>(report[0].id);
-  const item = useMemo(() => getItem(activeComponentId), [activeComponentId]);
+  const [activeComponentId, setActiveComponentId] = useState<A11yComponent['id']>(
+    filteredReport[0].id,
+  );
+  const item = useMemo(
+    () => getItem(activeComponentId, filteredReport),
+    [activeComponentId, filteredReport],
+  );
 
-  useEffect(() => setActiveComponentId(report[0].id), [report]);
+  useEffect(() => setActiveComponentId(filteredReport[0].id), [filteredReport]);
 
   const start = useMemo(
     () => (
@@ -179,16 +193,18 @@ export const A11yReportDetails = memo(({ impact = 'critical' }: Props) => {
             Learn more about the rating sytem
           </Link>
         </VStack>
-        {report.map(({ id }) => (
+        {filteredReport.map(({ id }) => (
           <ComponentCell
             id={id}
+            key={id}
+            report={filteredReport}
             active={activeComponentId === id}
             setActiveComponent={setActiveComponentId}
           />
         ))}
       </VStack>
     ),
-    [activeComponentId, impact, report],
+    [activeComponentId, impact, filteredReport],
   );
 
   const end = useMemo(
@@ -202,11 +218,11 @@ export const A11yReportDetails = memo(({ impact = 'critical' }: Props) => {
             {item.name}
           </TextTitle2>
         </span>
-        <Passes id={activeComponentId} />
-        <Violations id={activeComponentId} />
+        <Passes id={activeComponentId} report={filteredReport as unknown as Report} />
+        <Violations id={activeComponentId} report={filteredReport} />
       </VStack>
     ),
-    [activeComponentId, item],
+    [activeComponentId, filteredReport, item.name, item.title],
   );
 
   return (
