@@ -1,0 +1,19 @@
+{
+  "root": "packages/mobile-accessibility-engine",
+  "sourceRoot": "packages/mobile-accessibility-engine",
+  "projectType": "library",
+  "targets": {
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/cds-tools:typecheck"
+    }
+  }
+}

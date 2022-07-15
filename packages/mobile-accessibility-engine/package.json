@@ -1,0 +1,57 @@
+{
+  "name": "@cbhq/mobile-accessibility-engine",
+  "version": "1.0.0",
+  "description": "Make accessibility-related assertions on React Native code using React Test Renderer",
+  "main": "src/index",
+  "types": "src/index",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "react-native-accessibility-engine.podspec",
+    "!lib/typescript/example",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/*.test.ts",
+    "!**/*.test.tsx"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react-native",
+    "jest",
+    "testing",
+    "testing-library",
+    "a11y",
+    "accessibility",
+    "ios",
+    "android"
+  ],
+  "repository": "git@github.cbhq.net:frontend/cds.git",
+  "devDependencies": {
+    "@react-native-community/slider": "4.2.0",
+    "@testing-library/jest-native": "4.0.4",
+    "@testing-library/react-native": "9.0.0",
+    "@types/lodash.groupby": "4.6.6",
+    "@types/react": "^17.0.3",
+    "@types/react-native": "0.66.8",
+    "@types/react-test-renderer": "17.0.1",
+    "react": "17.0.2",
+    "react-native": "0.66.3"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "dependencies": {
+    "jest-matcher-utils": "^24.0.0",
+    "lodash.groupby": "^4.6.0",
+    "react-test-renderer": "^17.0.2"
+  }
+}

@@ -78,3 +78,5 @@ export const SelectOption = memo(function SelectOption({
     </Cell>
   );
 });
+
+SelectOption.displayName = 'SelectOption';

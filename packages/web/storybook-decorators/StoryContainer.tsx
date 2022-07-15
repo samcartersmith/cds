@@ -36,6 +36,8 @@ export function StoryContainer<Props>(
 ) {
   const isDarkMode = useDarkMode();
   const stories = context.parameters?.stories;
+
+  // eslint-disable-next-line react/no-unstable-nested-components
   const Container = memo(() => {
     const contents = useMemo(() => {
       if (stories) {

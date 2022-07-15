@@ -156,6 +156,7 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
         .filter((tabItem) => tabItem.props.value === selectedValue)
         .map((tabItem, i) =>
           cloneElement(tabItem, {
+            // eslint-disable-next-line react/no-array-index-key
             key: i,
             gap,
             hidden: tabItem.props.value !== selectedValue,

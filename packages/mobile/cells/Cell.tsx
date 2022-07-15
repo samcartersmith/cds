@@ -133,6 +133,8 @@ export const Cell = memo(function Cell({
   );
 });
 
+Cell.displayName = 'Cell';
+
 // Since Pressable and Interactable wraps with another `View`,
 // we need to apply flex styles to those wrappers!
 const pressStyles = {

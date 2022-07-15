@@ -16,6 +16,7 @@
     "web": "packages/web",
     "web-utils": "packages/web-utils",
     "website": "apps/website",
-    "nextjs-example": "examples/nextjs"
+    "nextjs-example": "examples/nextjs",
+    "mobile-accessibility-engine": "packages/mobile-accessibility-engine"
   }
 }
