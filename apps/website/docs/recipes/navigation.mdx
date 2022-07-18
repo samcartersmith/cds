@@ -13,8 +13,9 @@ function NavigationRecipe() {
   const [isCollapsed, toggleCollapsed] = useToggler(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [moreMenuValue, setMoreMenuValue] = useState(undefined);
-  const moreMenuIndex = 4;
 
+  // Sidebar config
+  const SIDEBAR_ITEMS_TO_SHOW = 4;
   const sidebarItems = [
     { title: 'Assets', icon: 'chartPie' },
     { title: 'Trade', icon: 'trading' },
@@ -24,29 +25,58 @@ function NavigationRecipe() {
     { title: 'Borrow', icon: 'cash' },
     { title: 'DeFi', icon: 'defi' },
   ];
+  const navItems = sidebarItems.slice(0, SIDEBAR_ITEMS_TO_SHOW);
+  const moreMenuOptions = sidebarItems.slice(SIDEBAR_ITEMS_TO_SHOW);
 
-  const moreMenuOptions = [
+  // Tabs config
+  const tabs = [
     {
-      value: 'earn',
-      label: 'Earn',
-      icon: 'earn',
+      id: 'all',
+      label: 'All',
     },
     {
-      value: 'borrow',
-      label: 'Borrow',
-      icon: 'cash',
+      id: 'watchlist',
+      label: 'Watchlist',
     },
     {
-      value: 'defi',
-      label: 'DeFi',
-      icon: 'defi',
+      id: 'tradable',
+      label: 'Tradable',
+    },
+    {
+      id: 'gainers',
+      label: 'Gainers',
+      count: 2,
+    },
+    {
+      id: 'losers',
+      label: 'Losers',
+    },
+    {
+      id: 'trending',
+      label: 'Trending',
+    },
+    {
+      id: 'other',
+      label: 'Other',
     },
   ];
+
+  const [value, setValue] = useState(tabs[1].id);
+  const showBackButton = useMemo(() => value !== tabs[0].id, [value]);
+  const handleBackPress = useCallback(() => {
+    setValue(tabs[0].id);
+  }, []);
 
   // NOTE: This is for example purposes only. Identity will create a UserSwitcher component.
   const UserSwitcherSubject = ({ title, description }) => {
     return (
-      <Pressable noScaleOnPress backgroundColor="transparent" as="button" borderRadius="standard">
+      <Pressable
+        as="button"
+        backgroundColor="transparent"
+        block
+        borderRadius="standard"
+        noScaleOnPress
+      >
         <HStack gap={1} alignItems="center">
           <Avatar size="xl" alt="Test" />
           <VStack maxWidth={172} minWidth={0}>
@@ -71,7 +101,9 @@ function NavigationRecipe() {
   };
 
   const handleMoreMenuChange = (newValue) => {
-    setActiveIndex(moreMenuIndex);
+    const moreIndex =
+      moreMenuOptions.findIndex((option) => option.title === newValue) + navItems.length;
+    setActiveIndex(moreIndex);
     setMoreMenuValue(newValue);
   };
 
@@ -90,7 +122,7 @@ function NavigationRecipe() {
       <FeatureFlagProvider frontierColor frontierButton>
         <HStack>
           <Sidebar collapsed={isCollapsed} logo={<LogoMark />}>
-            {sidebarItems.slice(0, 4).map((props, index) => (
+            {navItems.map((props, index) => (
               <SidebarItem
                 key={`sidebar-item--${props.title}`}
                 active={index === activeIndex}
@@ -102,15 +134,14 @@ function NavigationRecipe() {
             <SidebarMoreMenu
               onChange={handleMoreMenuChange}
               value={moreMenuValue}
-              active={activeIndex === moreMenuIndex}
-              onPress={() => setActiveIndex(moreMenuIndex)}
+              active={activeIndex >= navItems.length}
               tooltipContent="More"
             >
               {moreMenuOptions.map((item) => (
                 <SelectOption
-                  key={`sidebar-more-menu-item--${item.value}`}
-                  value={item.value}
-                  description={item.label}
+                  key={`sidebar-more-menu-item--${item.title}`}
+                  value={item.title}
+                  description={item.title}
                   media={<NavigationIcon name={item.icon} />}
                 />
               ))}
@@ -118,6 +149,7 @@ function NavigationRecipe() {
           </Sidebar>
           <VStack width="100%">
             <NavigationBar
+              start={showBackButton && <IconButton name="backArrow" onPress={handleBackPress} />}
               end={
                 <HStack alignItems="center" justifyContent="flex-end" gap={1}>
                   {/* NOTE: this is for example purposes only. Identity will create the AppSwitcher components and own them. */}
@@ -147,6 +179,7 @@ function NavigationRecipe() {
                   </Dropdown>
                 </HStack>
               }
+              bottom={<TabNavigation tabs={tabs} value={value} onChange={setValue} />}
             >
               <NavigationTitle>{sidebarItems[activeIndex].title}</NavigationTitle>
             </NavigationBar>
