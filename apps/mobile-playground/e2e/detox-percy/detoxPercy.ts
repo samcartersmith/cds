@@ -1,4 +1,4 @@
-import { execSync, ExecSyncOptions } from 'child_process';
+import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
@@ -61,11 +61,6 @@ export function uploadImages(pathStr: string, skipStartLocalPercy = false) {
   runCmd(cmd);
 }
 
-const OPTIONS: ExecSyncOptions = {
-  timeout: 10000,
-  killSignal: 'SIGKILL',
-};
-
 function ensureDirExists(fullPath: string) {
   const dir = path.dirname(fullPath);
 
@@ -74,23 +69,17 @@ function ensureDirExists(fullPath: string) {
   }
 }
 
-const screenshotTempDir = '../../artifacts/percyTempScreenshots'; // TODO: make robust.
+// TODO: make robust by using absolute path rather than relative path
+const screenshotTempDir = '../../artifacts/temp-visual-regression-screenshots';
 
-export function takeScreenshot(filename: string) {
-  if (device.getPlatform() === 'android') {
-    const androidFilename = `${filename}-android.png`;
-    const fullAndroidPath = `${screenshotTempDir}/${androidFilename}`;
-    ensureDirExists(fullAndroidPath);
+export async function takeScreenshot(filename: string) {
+  const fullFilename = `${filename}-${device.getPlatform()}`;
+  const fullFilePath = `${screenshotTempDir}/${fullFilename}.png`;
+  ensureDirExists(fullFilePath);
+  const tempFilePath = await device.takeScreenshot(fullFilename);
 
-    execSync(`adb exec-out screencap -p > ${fullAndroidPath}`, OPTIONS);
-    return fullAndroidPath;
-  }
-  const iosFilename = `${filename}-ios.png`;
-  const fullIosPath = `${screenshotTempDir}/${iosFilename}`;
-  ensureDirExists(fullIosPath);
-
-  execSync(`xcrun simctl io booted screenshot ${fullIosPath}`, OPTIONS);
-  return fullIosPath;
+  execSync(`mv ${tempFilePath} ${fullFilePath}`);
+  return fullFilePath;
 }
 
 export async function percySnapshot(
@@ -111,8 +100,4 @@ export function cleanUpScreenshots() {
 
 export function buildFinalize() {
   runCmd('percy build:finalize');
-}
-
-export function takeIosScreenshot() {
-  runCmd('xcrun simctl io booted screenshot Screenshot.png');
 }

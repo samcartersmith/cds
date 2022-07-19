@@ -88,6 +88,8 @@ steps:
           - 'percy-ios-6'
           - 'percy-ios-7'
           - 'percy-ios-8'
+        # TODO: Remove once iOS is stable
+        allow_dependency_failure: true
         commands:
           - tools/ci/setup.sh
           - export LANG=en_US.UTF-8

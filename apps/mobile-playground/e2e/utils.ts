@@ -31,7 +31,7 @@ export async function takeRouteScreenshots(name: string) {
   let count = 0;
 
   while (!atEnd) {
-    takeScreenshot(`${name}/${count}_${name}`);
+    await takeScreenshot(`${name}/${count}_${name}`);
     atEnd = await scrollToEnd('example_screen_scrollview');
     count += 1;
   }
