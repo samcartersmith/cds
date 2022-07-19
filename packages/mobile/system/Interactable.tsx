@@ -31,6 +31,7 @@ export const Interactable = memo(function Interactable({
   style = emptyArray,
   contentStyle,
   transparentWhileInactive,
+  transparentWhilePressed,
   testID,
 }: InteractableProps) {
   const themeConfig = useThemeConfig().activeConfig;
@@ -62,10 +63,10 @@ export const Interactable = memo(function Interactable({
       block && { flexGrow: 1 },
       ...style,
       wrapperStyles.static,
-      pressed && wrapperStyles.pressed,
+      !transparentWhilePressed && pressed && wrapperStyles.pressed,
       disabled && wrapperStyles.disabled,
     ],
-    [block, wrapperStyles, style, pressed, disabled],
+    [block, wrapperStyles, style, pressed, disabled, transparentWhilePressed],
   );
 
   const mergedContentStyles = useMemo(

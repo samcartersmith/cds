@@ -79,6 +79,7 @@ export const Pressable = memo(
       style = emptyArray,
       contentStyle,
       transparentWhileInactive,
+      transparentWhilePressed,
       eventConfig,
       ...props
     }: PressableInternalProps,
@@ -171,6 +172,7 @@ export const Pressable = memo(
           style={!noScaleOnPress ? scaleOnPressStyle : undefined}
           contentStyle={contentStyle}
           transparentWhileInactive={transparentWhileInactive}
+          transparentWhilePressed={transparentWhilePressed}
         >
           {children}
         </Interactable>

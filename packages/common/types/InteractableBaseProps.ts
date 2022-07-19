@@ -22,4 +22,6 @@ export type InteractableBaseProps = {
   pressed?: boolean;
   /** Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc). */
   transparentWhileInactive?: boolean;
+  /** Mark the background and border as transparent even while element is interacted with (elevation underlay issue). */
+  transparentWhilePressed?: boolean;
 };

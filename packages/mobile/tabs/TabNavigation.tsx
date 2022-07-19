@@ -114,6 +114,7 @@ export const TabNavigation = memo(
                   accessibilityLabel={accessibilityLabel}
                   accessibilityHint={accessibilityLabel}
                   onPress={getTabPressHandler({ id, onPress })}
+                  transparentWhilePressed
                 >
                   <TabLabel active={id === value} variant={variant} count={count}>
                     {label}
