@@ -66,6 +66,9 @@ const createCategorizedNameType = (): Record<string, string[]> => {
   return toCategoryArrMap;
 };
 
+// throttles images url lookup and downloads
+const THROTTLE_COUNT = 50;
+
 async function syncIcons() {
   const { nameSet, sizeMap } = createIconSet();
   const spinner = ora(
@@ -102,41 +105,70 @@ async function syncIcons() {
     });
     createCategorizedNameType();
 
+    let imageUrls: string[] = [];
     const iconIds = Object.keys(iconsInfo);
-    spinner.text = `GET image urls for ${iconIds.length} icons in the figma node.`;
-    const {
-      data: { err: imageError, images },
-    } = await figmaClient.fileImages(ICONS_FILE_ID, iconIds);
-    if (imageError) {
-      spinner.fail(`${chalk.redBright('error')} Failed to get images from the figma API.`);
-      console.error(imageError);
-      return;
-    }
+    let count = 0;
+    await new Promise((resolve, reject) => {
+      async function throttle() {
+        spinner.text = `Requesting image urls ${Math.min(iconIds.length, count + THROTTLE_COUNT)}/${
+          iconIds.length
+        }`;
+
+        const {
+          data: { err: imageError, images },
+        } = await figmaClient.fileImages(
+          ICONS_FILE_ID,
+          iconIds.slice(count, Math.min(iconIds.length, count + THROTTLE_COUNT)),
+        );
+        if (imageError) {
+          spinner.fail(`${chalk.redBright('error')} Failed to get images from the figma API.`);
+          console.error(imageError);
+          reject();
+          return;
+        }
+
+        imageUrls = imageUrls.concat(Object.values(images));
+
+        count += THROTTLE_COUNT;
+
+        if (count >= iconIds.length) {
+          resolve(null);
+          return;
+        }
+
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
+        throttle();
+      }
+
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
+      throttle();
+    });
+
+    console.log('imageUrls', imageUrls);
+
     spinner.text = `Download svg images from urls in parallel.`;
-    const requests = Object.values(images).map((url) => {
+    const requests = imageUrls.map((url) => {
       return async () => axios.get(url);
     });
     spinner.text = `Requesting ${requests.length}`;
 
-    // request 5 images at a time
     let responses: AxiosResponse[] = [];
-    let count = 0;
-    const throttleCount = 10;
+    count = 0;
     await new Promise((resolve) => {
       async function throttle() {
-        spinner.text = `Requesting ${Math.min(requests.length, count + throttleCount)}/${
+        spinner.text = `Requesting ${Math.min(requests.length, count + THROTTLE_COUNT)}/${
           requests.length
         }`;
 
         const lResponses = await Promise.all(
           requests
-            .slice(count, Math.min(requests.length, count + throttleCount))
+            .slice(count, Math.min(requests.length, count + THROTTLE_COUNT))
             .map(async (requestFn) => requestFn()),
         );
 
         responses = responses.concat(lResponses);
 
-        count += throttleCount;
+        count += THROTTLE_COUNT;
 
         if (count >= requests.length) {
           resolve(null);

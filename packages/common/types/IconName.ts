@@ -264,7 +264,10 @@ export type NavigationIconName =
   | 'diamond'
   | 'commentNav'
   | 'hiddenEye'
-  | 'pencil';
+  | 'pencil'
+  | 'cloud'
+  | 'participate'
+  | 'queryTransact';
 
 export type NavigationIconInternalName =
   | 'accountInactive'
@@ -370,4 +373,10 @@ export type NavigationIconInternalName =
   | 'hiddenEyeInactive'
   | 'hiddenEyeActive'
   | 'pencilActive'
-  | 'pencilInactive';
+  | 'pencilInactive'
+  | 'cloudInactive'
+  | 'cloudActive'
+  | 'participateInactive'
+  | 'participateActive'
+  | 'queryTransactInactive'
+  | 'queryTransactActive';

@@ -5737,4 +5737,118 @@ export const iconManifest = {
     description: 'currency, international, money, dollarydoos, 🇦🇺, 🐨, 🦘, 🍻, 💵, 💸, 🪙',
     documentationLinks: [],
   },
+  '9145:942': {
+    key: '84c42bde9aee2f8a31b8e679b7a14051ab3b1d70',
+    name: 'NavigationIcon/cloud_16/inactive',
+    description:
+      'navigation, specialty, cloud, condensation, water, droplets, vapor, science rules, nature, ☁️, 🌤, 🌥, ⛅️, 🌧, 🌨, ⛈, 🌩, 💦, 💧',
+    documentationLinks: [],
+  },
+  '9145:941': {
+    key: '8bcfee12c9992b433201171a9530a7e0854aa6d9',
+    name: 'NavigationIcon/cloud_16/active',
+    description:
+      'navigation, specialty, cloud, condensation, water, droplets, vapor, science rules, nature, ☁️, 🌤, 🌥, ⛅️, 🌧, 🌨, ⛈, 🌩, 💦, 💧',
+    documentationLinks: [],
+  },
+  '9145:940': {
+    key: 'f3c3205cbdd61ad42ffe7857ce19d4d1ea7f50cf',
+    name: 'NavigationIcon/cloud_24/inactive',
+    description:
+      'navigation, specialty, cloud, condensation, water, droplets, vapor, science rules, nature, ☁️, 🌤, 🌥, ⛅️, 🌧, 🌨, ⛈, 🌩, 💦, 💧',
+    documentationLinks: [],
+  },
+  '9145:939': {
+    key: '42297ee32ca1ef92adc8c7b592b37e9d8fbf77a6',
+    name: 'NavigationIcon/cloud_24/active',
+    description:
+      'navigation, specialty, cloud, condensation, water, droplets, vapor, science rules, nature, ☁️, 🌤, 🌥, ⛅️, 🌧, 🌨, ⛈, 🌩, 💦, 💧',
+    documentationLinks: [],
+  },
+  '9145:937': {
+    key: '884054c60a548c719b4092b63ba0b22c1a9c173d',
+    name: 'NavigationIcon/cloud_12/inactive',
+    description:
+      'navigation, specialty, cloud, condensation, water, droplets, vapor, science rules, nature, ☁️, 🌤, 🌥, ⛅️, 🌧, 🌨, ⛈, 🌩, 💦, 💧',
+    documentationLinks: [],
+  },
+  '9145:938': {
+    key: 'cc109d58a4d4498d2bf91581dd0e5f7c08030738',
+    name: 'NavigationIcon/cloud_12/active',
+    description:
+      'navigation, specialty, cloud, condensation, water, droplets, vapor, science rules, nature, ☁️, 🌤, 🌥, ⛅️, 🌧, 🌨, ⛈, 🌩, 💦, 💧',
+    documentationLinks: [],
+  },
+  '9145:898': {
+    key: '8ef8fe04752b838b149ce02bb28e349a392c293f',
+    name: 'NavigationIcon/participate_16/inactive',
+    description: 'navigation, specialty, cloud, vibes, hexagon, developer',
+    documentationLinks: [],
+  },
+  '9145:895': {
+    key: 'fd2917aca807afef04b05efe57560e71182100c6',
+    name: 'NavigationIcon/participate_16/active',
+    description: 'navigation, specialty, cloud, vibes, hexagon, developer',
+    documentationLinks: [],
+  },
+  '9145:897': {
+    key: 'b4de971a5edddf952b8a0a5159a17e2c10710b49',
+    name: 'NavigationIcon/participate_24/inactive',
+    description: 'navigation, specialty, cloud, vibes, hexagon, developer',
+    documentationLinks: [],
+  },
+  '9145:896': {
+    key: '6789175a341c84f0b4cb70ea2fb053203c7e30f0',
+    name: 'NavigationIcon/participate_24/active',
+    description: 'navigation, specialty, cloud, vibes, hexagon, developer',
+    documentationLinks: [],
+  },
+  '9145:894': {
+    key: '3651d86c88d1457ece343f782381c1e5bd7d6866',
+    name: 'NavigationIcon/participate_12/inactive',
+    description: 'navigation, specialty, cloud, vibes, hexagon, developer',
+    documentationLinks: [],
+  },
+  '9145:893': {
+    key: '5e5a613d69d034fdc7cff26927680b582e4f6c91',
+    name: 'NavigationIcon/participate_12/active',
+    description: 'navigation, specialty, cloud, vibes, hexagon, developer',
+    documentationLinks: [],
+  },
+  '9145:912': {
+    key: '206a15cbfe5c31b26fca5259b28ce226bea02fba',
+    name: 'NavigationIcon/queryTransact_16/inactive',
+    description: 'navigation, specialty, cloud, query, transact, diamond, vibes',
+    documentationLinks: [],
+  },
+  '9145:920': {
+    key: '3e7c942af3472701e9f9bf21027abfe7bf4bb94b',
+    name: 'NavigationIcon/queryTransact_16/active',
+    description: 'navigation, specialty, cloud, query, transact, diamond, vibes',
+    documentationLinks: [],
+  },
+  '9145:911': {
+    key: '9968b2bca6725da9b9d55920cd1f58626422ab09',
+    name: 'NavigationIcon/queryTransact_24/inactive',
+    description: 'navigation, specialty, cloud, query, transact, diamond, vibes',
+    documentationLinks: [],
+  },
+  '9145:919': {
+    key: 'e2ca1072a9395f7890814a9245c3487be482d684',
+    name: 'NavigationIcon/queryTransact_24/active',
+    description: 'navigation, specialty, cloud, query, transact, diamond, vibes',
+    documentationLinks: [],
+  },
+  '9145:910': {
+    key: '31e43875e71fad2b674b3330d73da90adda9284f',
+    name: 'NavigationIcon/queryTransact_12/inactive',
+    description: 'navigation, specialty, cloud, query, transact, diamond, vibes',
+    documentationLinks: [],
+  },
+  '9145:918': {
+    key: '66b4da671715723ab92c4cd2cb15a4ddf014590c',
+    name: 'NavigationIcon/queryTransact_12/active',
+    description: 'navigation, specialty, cloud, query, transact, diamond, vibes',
+    documentationLinks: [],
+  },
 };

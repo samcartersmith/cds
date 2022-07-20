@@ -270,6 +270,9 @@ export const navigationIconNames = [
   'commentNav',
   'hiddenEye',
   'pencil',
+  'cloud',
+  'participate',
+  'queryTransact',
 ] as const;
 
 export const unicodeMap = {
@@ -646,4 +649,16 @@ export const unicodeMap = {
     '24': 'uEF63',
     '32': 'uEF64',
   },
+  cloudInactive: { '8': 'uEF65', '12': 'uEF66', '16': 'uEF67', '24': 'uEF68', '32': 'uEF69' },
+  cloudActive: { '8': 'uEF6A', '12': 'uEF6B', '16': 'uEF6C', '24': 'uEF6D', '32': 'uEF6E' },
+  participateInactive: { '8': 'uEF6F', '12': 'uEF70', '16': 'uEF71', '24': 'uEF72', '32': 'uEF73' },
+  participateActive: { '8': 'uEF74', '12': 'uEF75', '16': 'uEF76', '24': 'uEF77', '32': 'uEF78' },
+  queryTransactInactive: {
+    '8': 'uEF79',
+    '12': 'uEF7A',
+    '16': 'uEF7B',
+    '24': 'uEF7C',
+    '32': 'uEF7D',
+  },
+  queryTransactActive: { '8': 'uEF7E', '12': 'uEF7F', '16': 'uEF80', '24': 'uEF81', '32': 'uEF82' },
 } as const;
