@@ -9434,5 +9434,237 @@ export const manifestData: Record<
       spectrum: 'dark',
       versionNum: 0,
     },
+    '8311:2845': {
+      variant: 'heroSquare',
+      description:
+        'crypto, currency, trading, cryptocurrency, advanced, retail, RAT, web, education, UI, trade',
+      name: 'webRAT',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2847': {
+      variant: 'heroSquare',
+      description:
+        'crypto, currency, trading, cryptocurrency, advanced, retail, RAT, web, education, UI, trade',
+      name: 'webRAT',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2846': {
+      variant: 'spotRectangle',
+      description:
+        'coinbase, card, boosted, rewards, coin, crypto, chip, visa, select, award, money',
+      name: 'cardBoostedRectangle',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2831': {
+      variant: 'spotRectangle',
+      description:
+        'coinbase, card, boosted, rewards, coin, crypto, chip, visa, select, award, money',
+      name: 'cardBoostedRectangle',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2826': {
+      variant: 'heroSquare',
+      description:
+        'coinbase, card, boosted, rewards, coin, crypto, chip, visa, select, award, money',
+      name: 'cardBoosted',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2832': {
+      variant: 'heroSquare',
+      description:
+        'coinbase, card, boosted, rewards, coin, crypto, chip, visa, select, award, money',
+      name: 'cardBoosted',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2836': {
+      variant: 'heroSquare',
+      description: 'governance, vote, staking, proposal, ballot, box, yes, no, maybe, so, coin',
+      name: 'governance',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2841': {
+      variant: 'spotRectangle',
+      description: 'governance, vote, staking, proposal, ballot, box, yes, no, maybe, so, coin',
+      name: 'governanceRectangle',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2825': {
+      variant: 'spotRectangle',
+      description: 'governance, vote, staking, proposal, ballot, box, yes, no, maybe, so, coin',
+      name: 'governanceRectangle',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2828': {
+      variant: 'heroSquare',
+      description: 'governance, vote, staking, proposal, ballot, box, yes, no, maybe, so, coin',
+      name: 'governance',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2835': {
+      variant: 'heroSquare',
+      description:
+        'futures, trading, future, buy, sell, put, short, hedge, balance, risk, clock, coin, plus, arrow',
+      name: 'futuresHeroSquare',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2833': {
+      variant: 'heroSquare',
+      description:
+        'futures, trading, future, buy, sell, put, short, hedge, balance, risk, clock, coin, plus, arrow',
+      name: 'futuresHeroSquare',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2830': {
+      variant: 'spotRectangle',
+      description:
+        'leverage, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
+      name: 'leverageRectangle',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2837': {
+      variant: 'spotRectangle',
+      description:
+        'leverage, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
+      name: 'leverageRectangle',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2829': {
+      variant: 'spotRectangle',
+      description:
+        'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
+      name: 'marginRectangle',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2838': {
+      variant: 'spotRectangle',
+      description:
+        'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
+      name: 'marginRectangle',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2848': {
+      variant: 'spotRectangle',
+      description:
+        'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk, warning, clock',
+      name: 'marginWarningRectangle',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2827': {
+      variant: 'spotRectangle',
+      description:
+        'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk, warning, clock',
+      name: 'marginWarningRectangle',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2842': {
+      variant: 'spotRectangle',
+      description:
+        'futures, trading, future, buy, sell, put, short, hedge, balance, risk, clock, coin, plus, arrow',
+      name: 'futuresRectangle',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2844': {
+      variant: 'spotRectangle',
+      description:
+        'futures, trading, future, buy, sell, put, short, hedge, balance, risk, clock, coin, plus, arrow',
+      name: 'futuresRectangle',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2839': {
+      variant: 'heroSquare',
+      description:
+        'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
+      name: 'marginHeroSquare',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2824': {
+      variant: 'heroSquare',
+      description:
+        'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
+      name: 'marginHeroSquare',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2823': {
+      variant: 'heroSquare',
+      description:
+        'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk, warning, clock',
+      name: 'marginWarningHeroSquare',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2834': {
+      variant: 'heroSquare',
+      description:
+        'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk, warning, clock',
+      name: 'marginWarningHeroSquare',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2822': {
+      variant: 'heroSquare',
+      description:
+        'leverage, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
+      name: 'leverageHeroSquare',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2821': {
+      variant: 'heroSquare',
+      description:
+        'leverage, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
+      name: 'leverageHeroSquare',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8311:2843': {
+      variant: 'pictogram',
+      description: 'governance, vote, staking, proposal, ballot, box, yes, no, maybe, so, coin',
+      name: 'governancePictogram',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8311:2840': {
+      variant: 'pictogram',
+      description: 'governance, vote, staking, proposal, ballot, box, yes, no, maybe, so, coin',
+      name: 'governancePictogram',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '8318:2139': {
+      variant: 'pictogram',
+      description: '',
+      name: 'advancedTradingRebates',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '8318:2166': {
+      variant: 'pictogram',
+      description: '',
+      name: 'advancedTradingRebates',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
   },
 };
