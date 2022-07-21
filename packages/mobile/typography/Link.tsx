@@ -89,6 +89,7 @@ export const Link = memo(
 
     return (
       <TextComponent
+        accessibilityRole="link"
         accessibilityHint={accessibilityLabel}
         accessibilityLabel={accessibilityLabel}
         testID={testID}

@@ -59,6 +59,8 @@ export const AccordionHeader = memo(
       return (
         <Pressable
           accessibilityRole="button"
+          accessibilityLabel={title}
+          accessibilityHint="Expands or collapses the accordion"
           noScaleOnPress
           transparentWhileInactive
           backgroundColor="background"

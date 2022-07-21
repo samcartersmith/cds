@@ -22,7 +22,13 @@ export const AvatarButton = memo(function AvatarButton({
   const height = useInteractableHeight(compact);
 
   return (
-    <PressableOpacity aria-label={accessibilityLabel} feedback={feedback} {...props}>
+    <PressableOpacity
+      accessibilityLabel={accessibilityLabel ?? alt}
+      accessibilityHint={accessibilityLabel ?? alt}
+      aria-label={accessibilityLabel}
+      feedback={feedback}
+      {...props}
+    >
       <Avatar src={src} alt={alt} dangerouslySetSize={height} />
     </PressableOpacity>
   );

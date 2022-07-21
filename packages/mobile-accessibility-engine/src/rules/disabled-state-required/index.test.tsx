@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
-import Slider from '@react-native-community/slider';
 
 import { TestAssets } from '../../__tests__/assets';
 import check from '../../engine';
@@ -113,37 +112,6 @@ describe('buttons', () => {
       );
 
       expect(() => run(<Button />)).not.toThrow(rule.help.problem);
-    });
-  });
-});
-
-describe('sliders', () => {
-  describe('if disabeld prop is defined', () => {
-    it("throws if 'accessibilityState' prop not defined", () => {
-      const Wrapper = () => <Slider disabled={false} />;
-      expect(() => run(<Wrapper />)).toThrow(rule.help.problem);
-    });
-
-    it("throws if 'accessibilityState' prop equals empty object'", () => {
-      const Wrapper = () => <Slider disabled={false} accessibilityState={{}} />;
-      expect(() => run(<Wrapper />)).toThrow(rule.help.problem);
-    });
-
-    it("throws if 'accessibilityState' prop equals an object that doesn't contain 'disabled' key", () => {
-      const Wrapper = () => <Slider disabled={false} accessibilityState={{ expanded: true }} />;
-
-      expect(() => run(<Wrapper />)).toThrow(rule.help.problem);
-    });
-
-    it("doesn't throw if 'accessibilityState' equals an object that contains the 'disabled = true' key-value pair", () => {
-      const Wrapper = () => <Slider disabled accessibilityState={{ disabled: true }} />;
-
-      expect(() => run(<Wrapper />)).not.toThrow(rule.help.problem);
-    });
-
-    it("doesn't throw if 'accessibilityState' equals an object that contains the 'disabled = false' key-value pair", () => {
-      const Wrapper = () => <Slider disabled={false} accessibilityState={{ disabled: false }} />;
-      expect(() => run(<Wrapper />)).not.toThrow(rule.help.problem);
     });
   });
 });

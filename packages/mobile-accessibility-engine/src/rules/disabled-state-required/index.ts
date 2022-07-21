@@ -1,9 +1,9 @@
-import { canBeDisabled } from '../../helpers';
+import { canBeDisabled, isPressable } from '../../helpers';
 import type { Rule } from '../../types';
 
 const rule: Rule = {
   id: 'disabled-state-required',
-  matcher: (node) => canBeDisabled(node),
+  matcher: (node) => canBeDisabled(node) && isPressable(node.type),
   assertion: (node) => node.props.accessibilityState?.disabled !== undefined,
   help: {
     problem: "This component has a disabled state but it isn't exposed to the user",
