@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.1.2 (7/21/2022, 01:20 PM PST)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 07/21/22 Illo. [#867](https://github.cbhq.net/frontend/cds/pull/867)
+- **[icons]** Publish Jul 20, 2022. [#862](https://github.cbhq.net/frontend/cds/pull/862)
+- **[Icons]** Publish Icons July 20th, 2022. [#857](https://github.cbhq.net/frontend/cds/pull/857)
+- Ensure Pressable can be transparent while pressed in a container with elevation. [#853](https://github.cbhq.net/frontend/cds/pull/853), [CDS-2337](https://jira.coinbase-corp.com/browse/CDS-2337)
+- **[Select]** Fix clipping of menu content when trigger is smaller than menu. [#848](https://github.cbhq.net/frontend/cds/pull/848), [CDS-2321](https://jira.coinbase-corp.com/browse/CDS-2321)
+- **[NavigationBar]** Update layout to properly handle long bottom nodes. [#841](https://github.cbhq.net/frontend/cds/pull/841), [CDS-2340](https://jira.coinbase-corp.com/browse/CDS-2340)
+
+#### 📘 Misc
+
+- **[A11y Report]** Include the original data in the report. [#847](https://github.cbhq.net/frontend/cds/pull/847)
+
 ## 1.1.1 (7/13/2022, 04:39 PM PST)
 
 #### 🐞 Fixes
