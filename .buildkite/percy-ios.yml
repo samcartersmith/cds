@@ -1,6 +1,9 @@
 _percy_ios_shared: &percy_ios_shared
   parallelism: 1
   commands:
+    # TODO: Remove the first line once the macos-metal agent upgrade is implemented
+    # https://coinbase.slack.com/archives/C02QNP7BLER/p1658527386390829
+    - nvm install 16.16.0 && nvm use 16.16.0
     - tools/ci/setup.sh
     - export LANG=en_US.UTF-8
     - mkdir -p percy-artifacts

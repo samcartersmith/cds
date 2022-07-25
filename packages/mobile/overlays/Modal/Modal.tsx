@@ -6,8 +6,14 @@ import React, {
   useImperativeHandle,
   useMemo,
 } from 'react';
-import { Modal as RNModal, ModalProps as RNModalProps, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {
+  Modal as RNModal,
+  ModalProps as RNModalProps,
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+} from 'react-native';
 import { useToggler } from '@cbhq/cds-common';
 import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
@@ -99,5 +105,6 @@ export const Modal = memo(
 const styles = StyleSheet.create({
   safeAreaContainer: {
     flex: 1,
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
 });
