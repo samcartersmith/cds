@@ -73,10 +73,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
 
   // TODO: create a custom hook to initialize animated values so that they are not called on every render
   const animatedBoxValue = useRef(new Animated.Value(checked ? 1 : 0)).current;
-  const animatedScaleValue = useRef(
-    /* android needs 0.1 */
-    new Animated.Value(checked ? 1 : 0.1),
-  ).current;
+  const animatedScaleValue = useRef(new Animated.Value(checked ? 1 : 0)).current;
 
   const pressDisabled = disabled || readOnly;
 
