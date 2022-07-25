@@ -11,6 +11,7 @@ export const Tooltip = memo(
     content,
     placement = 'top',
     onCloseTooltip,
+    onOpenTooltip,
     gap = 1,
     yShiftByStatusBarHeight,
     testID,
@@ -37,8 +38,9 @@ export const Tooltip = memo(
           pageOffsetY,
         });
         setIsOpen(true);
+        onOpenTooltip?.();
       });
-    }, []);
+    }, [onOpenTooltip]);
 
     return (
       <View collapsable={false} ref={subjectRef}>

@@ -9,6 +9,8 @@ export type TooltipProps = {
   placement?: TooltipPlacement;
   /** This callback executes when the tooltip is closed; either by press outside the toolip or on back button press for android. */
   onCloseTooltip?: NoopFn;
+  /** This callback executes when the tooltip is opened */
+  onOpenTooltip?: NoopFn;
   /**
    * @danger
    * This prop only takes affect on Android and should only be used for a very specific measurement edge case described here. There is a known RN Modal bug where screen measurements are offset by the status bar when statusBarTranslucent=false.
