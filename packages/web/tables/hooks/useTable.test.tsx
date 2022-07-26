@@ -4,6 +4,7 @@ import { PropsWithChildren } from 'react';
 import { render } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
+import { ThemeProvider } from '../../system/ThemeProvider';
 import { tableHeaderStaticClassName, tableStickyClassName } from '../styles/tableStyles';
 import { Table } from '../Table';
 import { TableBody } from '../TableBody';
@@ -15,6 +16,7 @@ import { TableRow } from '../TableRow';
 import {
   compactCellSpacing,
   defaultCellSpacing,
+  defaultDenseCellSpacing,
   useTableCellSpacing,
   useTableCellTag,
   useTableSectionTag,
@@ -106,6 +108,19 @@ describe('useTableTag', () => {
     const { result } = renderHook(() => useTableCellSpacing(), { wrapper });
 
     expect(result.current).toBe(defaultCellSpacing);
+  });
+
+  it('Get default cell spacing dense', async () => {
+    const wrapper = ({ children }: PropsWithChildren<unknown>) => (
+      <ThemeProvider spectrum="light" scale="xSmall">
+        <Table>
+          <TableBody>{children}</TableBody>
+        </Table>
+      </ThemeProvider>
+    );
+    const { result } = renderHook(() => useTableCellSpacing(), { wrapper });
+
+    expect(result.current).toBe(defaultDenseCellSpacing);
   });
 
   it('Get compact cell spacing', async () => {

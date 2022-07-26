@@ -84,6 +84,14 @@ export const SampleCells: Story = () => {
   );
 };
 
+export const SampleCellsDense = () => {
+  return (
+    <ThemeProvider scale="xSmall">
+      <SampleCells />
+    </ThemeProvider>
+  );
+};
+
 export const SampleFixedLayout: Story = () => {
   return (
     <ThemeProvider spectrum="light">

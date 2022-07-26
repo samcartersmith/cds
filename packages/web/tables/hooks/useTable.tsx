@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 
 import { TableContext } from '../context/TableContext';
 import { TableSectionContext } from '../context/TableSectionContext';
@@ -16,6 +17,10 @@ const CELL_TAG_MAP: Record<TableSectionTag, TableCellTag> = {
 export const defaultCellSpacing: TableCellSpacing = {
   outer: { spacingHorizontal: 2 },
   inner: { spacingHorizontal: 2 },
+};
+export const defaultDenseCellSpacing: TableCellSpacing = {
+  outer: { spacingVertical: 0.5 },
+  inner: { spacingVertical: 0.5 },
 };
 export const compactCellSpacing: TableCellSpacing = {
   outer: { spacingHorizontal: 2, spacingVertical: 0 },
@@ -47,8 +52,13 @@ export const useTableSectionTag = () => {
 
 export const useTableCellSpacing = () => {
   const { cellSpacing, compact } = useTableContext();
+  const defaultCellSpacingWithScale = useScaleConditional({
+    dense: defaultDenseCellSpacing,
+    normal: defaultCellSpacing,
+  });
+
   if (cellSpacing) return cellSpacing;
   if (compact) return compactCellSpacing;
 
-  return defaultCellSpacing;
+  return defaultCellSpacingWithScale;
 };
