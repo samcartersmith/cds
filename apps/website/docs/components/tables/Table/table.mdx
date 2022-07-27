@@ -1,6 +1,21 @@
 ---
 title: Table
 slug: /components/table
+keywords:
+  - Table
+  - TableCell
+  - data
+  - filtering
+  - th
+  - td
+  - tr
+  - thead
+  - tbody
+  - tfoot
+  - aria-sort
+  - Sorting
+  - useSort
+  - useSortableCell
 ---
 
 import Metadata, { toc as metadataToc } from './_metadata.mdx';
@@ -8,6 +23,7 @@ import Usage, { toc as usageToc } from './_usage.mdx';
 import Example, { toc as exampleToc } from './_example.mdx';
 import CompactExample, { toc as compactExampleToc } from './_compactExample.mdx';
 import StickyExample, { toc as stickyExampleToc } from './_stickyExample.mdx';
+import SortingExample, { toc as sortingExampleToc } from './_sortingExample.mdx';
 import DomExample, { toc as domExampleToc } from './_domExample.mdx';
 import A11Y, { toc as a11yToc } from './_a11y.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
@@ -27,6 +43,7 @@ import Changelog, { toc as changelogToc } from './_changelog.mdx';
       ...compactExampleToc,
       ...stickyExampleToc,
       ...domExampleToc,
+      ...sortingExampleToc,
       ...implementationToc,
     ]}
   >
@@ -35,6 +52,7 @@ import Changelog, { toc as changelogToc } from './_changelog.mdx';
     <CompactExample />
     <StickyExample />
     <DomExample />
+    <SortingExample />
     <Implementation />
   </TabItem>
   <TabItem value="changelog" label="Changelog" toc={changelogToc}>

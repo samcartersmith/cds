@@ -1,17 +1,18 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
-import { useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 import startCase from 'lodash/startCase';
+import { useSort } from '@cbhq/cds-common/hooks/useSort';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { CellMediaType } from '@cbhq/cds-common/types';
 
+import { HStack } from '../../alpha/HStack';
 import { Button } from '../../buttons';
 import { CellMedia } from '../../cells';
 import { Switch } from '../../controls/Switch';
-import { Icon } from '../../icons';
-import { HStack, VStack } from '../../layout';
 import { TextDisplay2 } from '../../typography';
 import { assetHubMock } from '../__mocks__';
+import { useSortableCell, UseSortableCellProps } from '../hooks/useSortableCell';
 import { Table, TableBody, TableCell, TableHeader, TableRow, TableVariant } from '..';
 
 const LABELS = ['name', 'ticker', 'appStatus', 'type', 'bookmarked'];
@@ -81,40 +82,26 @@ export const SampleTable: Story = () => {
   );
 };
 
-const SortableIconHelper = ({ direction }: { direction?: 'DESC' | 'ASC' }) => {
-  const up = useMemo(() => (direction === 'ASC' ? 'primary' : 'foregroundMuted'), [direction]);
-  const down = useMemo(() => (direction === 'DESC' ? 'primary' : 'foregroundMuted'), [direction]);
-
-  return (
-    <VStack>
-      <Icon color={up} name="sortUpCenter" size="s" />
-      <Icon color={down} name="sortDownCenter" size="s" />
-    </VStack>
-  );
-};
-
+type Columns = 'name' | 'ticker' | 'appStatus';
 export const SortingExample: Story = () => {
   const [{ sortBy, sortDirection }, setSort] = useState<{
-    sortBy: 'name' | 'ticker' | 'appStatus';
-    sortDirection: 'ASC' | 'DESC';
+    sortBy: Columns;
+    sortDirection: UseSortableCellProps['sortDirection'];
   }>({
     sortBy: 'name',
-    sortDirection: 'ASC',
+    sortDirection: 'ascending',
   });
 
-  const data = useMemo(() => {
-    return assetHubMock.slice().sort((a, b) => {
-      if (sortDirection === 'ASC') {
-        return b[sortBy] > a[sortBy] ? -1 : 1;
-      }
-      return b[sortBy] < a[sortBy] ? -1 : 1;
-    });
-  }, [sortBy, sortDirection]);
-
-  const sortTable = (by: 'name' | 'ticker' | 'appStatus') => {
-    const flipSort = by === sortBy && sortDirection === 'ASC';
-    setSort({ sortBy: by, sortDirection: flipSort ? 'DESC' : 'ASC' });
-  };
+  // Config to handle sortiing
+  const data = useSort({ data: assetHubMock, sortDirection, sortBy });
+  const onChange = useCallback(
+    (by: Columns) => {
+      const flipSort = by === sortBy && sortDirection === 'ascending';
+      setSort({ sortBy: by, sortDirection: flipSort ? 'descending' : 'ascending' });
+    },
+    [sortBy, sortDirection],
+  );
+  const getSortableProps = useSortableCell({ sortBy, sortDirection, onChange });
 
   return (
     <Table bordered variant="ruled" maxHeight={500}>
@@ -128,26 +115,9 @@ export const SortingExample: Story = () => {
           </HStack>
         </TableRow>
         <TableRow backgroundColor="backgroundAlternate">
-          <TableCell
-            onPress={() => sortTable('name')}
-            color={sortBy === 'name' ? 'primary' : 'foregroundMuted'}
-            title="Asset"
-            end={<SortableIconHelper direction={sortBy === 'name' ? sortDirection : undefined} />}
-          />
-          <TableCell
-            onPress={() => sortTable('ticker')}
-            color={sortBy === 'ticker' ? 'primary' : 'foregroundMuted'}
-            title="Ticker"
-            end={<SortableIconHelper direction={sortBy === 'ticker' ? sortDirection : undefined} />}
-          />
-          <TableCell
-            onPress={() => sortTable('appStatus')}
-            color={sortBy === 'appStatus' ? 'primary' : 'foregroundMuted'}
-            title="Application Status"
-            end={
-              <SortableIconHelper direction={sortBy === 'appStatus' ? sortDirection : undefined} />
-            }
-          />
+          <TableCell title="Asset" {...getSortableProps('name')} />
+          <TableCell title="Ticker" {...getSortableProps('name')} />
+          <TableCell title="Application Status" />
         </TableRow>
       </TableHeader>
       <TableBody>

@@ -3,8 +3,8 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useSort } from '../useSort';
 
 const EXPECTED = {
-  asc: ['apes', 'punks', 'trolls', 'zombies'],
-  desc: ['zombies', 'trolls', 'punks', 'apes'],
+  ascending: ['apes', 'punks', 'trolls', 'zombies'],
+  descending: ['zombies', 'trolls', 'punks', 'apes'],
   nested: [
     { name: 'zombies', floor: 4 },
     { name: 'trolls', floor: 8 },
@@ -77,17 +77,21 @@ const MOCKS = {
 describe('useSort', () => {
   it('Returns a list in ascending order by default', () => {
     const { result } = renderHook(() => useSort({ data: MOCKS.default }));
-    expect(result.current).toEqual(EXPECTED.asc);
+    expect(result.current).toEqual(EXPECTED.ascending);
   });
 
   it('Returns a list in ascending order', () => {
-    const { result } = renderHook(() => useSort({ data: MOCKS.default, sortDirection: 'ASC' }));
-    expect(result.current).toEqual(EXPECTED.asc);
+    const { result } = renderHook(() =>
+      useSort({ data: MOCKS.default, sortDirection: 'ascending' }),
+    );
+    expect(result.current).toEqual(EXPECTED.ascending);
   });
 
   it('Returns a list in descending order', () => {
-    const { result } = renderHook(() => useSort({ data: MOCKS.default, sortDirection: 'DESC' }));
-    expect(result.current).toEqual(EXPECTED.desc);
+    const { result } = renderHook(() =>
+      useSort({ data: MOCKS.default, sortDirection: 'descending' }),
+    );
+    expect(result.current).toEqual(EXPECTED.descending);
   });
 
   it('Handles a nested object', () => {
@@ -101,7 +105,7 @@ describe('useSort', () => {
   });
 
   it('Does not mutate original data', () => {
-    const { result } = renderHook(() => useSort({ data: EXPECTED.asc }));
-    expect(result.current).not.toBe(EXPECTED.asc);
+    const { result } = renderHook(() => useSort({ data: EXPECTED.ascending }));
+    expect(result.current).not.toBe(EXPECTED.ascending);
   });
 });

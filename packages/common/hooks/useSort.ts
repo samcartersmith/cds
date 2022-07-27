@@ -1,4 +1,5 @@
-import { useMemo } from 'react';
+/* eslint-disable no-param-reassign */
+import { TdHTMLAttributes, useMemo } from 'react';
 import get from 'lodash/get';
 
 import { RecursiveKeyOf } from '../types/Helpers';
@@ -14,17 +15,23 @@ type UseSortParams<T> = Readonly<{
   sortBy?: RecursiveKeyOf<T>;
   /**
    * The direction to sort items.
-   * @default 'ASC'
+   * @default ascending
    */
-  sortDirection?: 'ASC' | 'DESC';
+  sortDirection?: TdHTMLAttributes<HTMLTableCellElement>['aria-sort'];
 }>;
 
 export const useSort = <T>({ data, sortBy, sortDirection }: UseSortParams<T>) => {
+  // TODO remove in the next major bump
+  // @ts-expect-error ensure old implementations don't fail
+  if (sortDirection === 'ASC') sortDirection = 'ascending';
+  // @ts-expect-error ensure old implementations don't fail
+  if (sortDirection === 'DESC') sortDirection = 'descending';
+
   return useMemo(() => {
     // Spread to avoid overwriting in place
     return [...data].sort((a, b) => {
       // Descending
-      if (sortDirection === 'DESC') {
+      if (sortDirection === 'descending') {
         return (sortBy ? get(a, sortBy) : a) > (sortBy ? get(b, sortBy) : b) ? -1 : 1;
       }
 

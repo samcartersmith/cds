@@ -82,6 +82,7 @@ import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
 import { useThemeProviderStyles } from '@cbhq/cds-web/system/useThemeProviderStyles';
 import * as CDSTables from '@cbhq/cds-web/tables';
+import { useSortableCell } from '@cbhq/cds-web/tables/hooks/useSortableCell';
 import * as CDSTabs from '@cbhq/cds-web/tabs';
 import { Tag } from '@cbhq/cds-web/tag/Tag';
 import { palette } from '@cbhq/cds-web/tokens';
@@ -155,6 +156,7 @@ const ReactLiveScope: unknown = {
   useSpectrumConditional,
   useStatusButtons,
   useSort,
+  useSortableCell,
   useToggler,
   useModal,
   useA11yControlledVisibility,
