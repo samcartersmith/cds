@@ -126,9 +126,15 @@ export const Carousel = memo(
           return function handleDismissItem() {
             setDismissedItems((prev) => new Set(prev).add(id));
             onDismissItem?.(id);
+
+            // if you dismiss the last item you have to scroll to the new end position on Android.
+            // The ScrollView does not automatically do this
+            if (id === visibleItems[visibleItems.length - 1].id) {
+              scrollToEnd();
+            }
           };
         },
-        [onDismissItem],
+        [onDismissItem, scrollToEnd, visibleItems],
       );
 
       const getOnDismissLastItemHandler = useCallback(
