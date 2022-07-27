@@ -78,6 +78,8 @@ export const LikeButton = memo(function LikeButton({
   return (
     <Pressable
       backgroundColor="transparent"
+      accessibilityLabel="Like button"
+      accessibilityHint="Click to like"
       style={pressableStyles}
       onPress={handleOnPress}
       feedback="light"

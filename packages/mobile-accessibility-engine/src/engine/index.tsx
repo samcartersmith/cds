@@ -18,6 +18,8 @@ type Options = {
   rules?: Rule[];
   // Return the violation array instead of an error
   returnViolations?: boolean;
+  // optional rule id's to ignore for certain accessibility checks
+  rulesToIgnore?: Set<string>;
 };
 
 const engine = (
@@ -28,8 +30,12 @@ const engine = (
     ? treeOrTestInstance
     : TestRenderer.create(treeOrTestInstance).root;
 
-  const rules = options?.rules ?? allRules;
+  let rules = options?.rules ?? allRules;
   const violations: Violation[] = [];
+
+  if (options?.rulesToIgnore) {
+    rules = rules.filter((rule: Rule) => !options?.rulesToIgnore?.has(rule.id));
+  }
 
   // For every rule
   for (const rule of rules) {

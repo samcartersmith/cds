@@ -40,7 +40,11 @@ export default function SelectScreen() {
         <ScrollableSelect label="Amt. to deposit" compact hasDescription compactSelectOption />
       </Example>
       <Example title="Start Node">
-        <DefaultSelect startNode={<InputIcon name="cashUSD" />} />
+        <DefaultSelect
+          accessibilityLabel="USD Cash"
+          accessibilityHint="Select cash amount"
+          startNode={<InputIcon name="cashUSD" />}
+        />
       </Example>
       <Example title="Start Node with Compact Label">
         <DefaultSelect

@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, memo, useCallback, useEffect } from 'react';
+import React, { ForwardedRef, forwardRef, memo, useCallback, useEffect, useMemo } from 'react';
 import { TouchableWithoutFeedback } from 'react-native';
 import { animateCaretInConfig, animateCaretOutConfig } from '@cbhq/cds-common/animation/select';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
@@ -82,15 +82,19 @@ export const Select = memo(
         toggleSelectTray.toggleOn();
       }, [onPress, toggleSelectTray]);
 
+      const accessibilityState = useMemo(() => ({ disabled: !!disabled }), [disabled]);
+
       return (
         <TextInputFocusVariantContext.Provider value={focusedVariant}>
           <SelectProvider value={context}>
             <TouchableWithoutFeedback
+              accessibilityRole="menu"
               onPress={handleOnSubjectPress}
               testID={testID}
-              accessibilityLabel={accessibilityLabel ?? label}
-              accessibilityHint={accessibilityHint ?? label}
+              accessibilityLabel={accessibilityLabel ?? label ?? placeholder}
+              accessibilityHint={accessibilityHint ?? label ?? placeholder}
               disabled={disabled}
+              accessibilityState={accessibilityState}
               ref={ref}
             >
               <InputStack

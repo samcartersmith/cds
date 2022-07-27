@@ -415,7 +415,13 @@ export const selectBuilderMobile = ({
       <VStack gap={2} minHeight={400} background="background">
         <TextInput label="Account number" />
         <TextInput label="Re-enter account number" />
-        <Select value={accountType} onPress={handleTrayVisibility.toggle} onChange={setAccountType}>
+        <Select
+          accessibilityLabel="Account number"
+          accessibilityHint="Enter account number"
+          value={accountType}
+          onPress={handleTrayVisibility.toggle}
+          onChange={setAccountType}
+        >
           {visible && (
             <Tray onCloseComplete={handleTrayVisibility.toggleOff}>
               {({ handleClose }) =>

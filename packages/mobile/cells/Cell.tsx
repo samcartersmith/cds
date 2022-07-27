@@ -33,6 +33,8 @@ export const Cell = memo(function Cell({
   priority,
   selected,
   testID,
+  accessibilityLabel,
+  accessibilityHint,
   /** Props for useCellSpacing */
   ...spacingProps
 }: CellProps) {
@@ -103,6 +105,8 @@ export const Cell = memo(function Cell({
     content = (
       <Pressable
         accessibilityRole="button"
+        accessibilityLabel={accessibilityLabel}
+        accessibilityHint={accessibilityHint ?? accessibilityLabel}
         noScaleOnPress
         transparentWhileInactive
         backgroundColor="background"

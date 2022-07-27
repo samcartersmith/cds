@@ -10,6 +10,24 @@ import { CellAccessory } from './CellAccessory';
 
 export type ContentCellProps = ContentCellBaseProps & CellSharedProps;
 
+function generateAccessibilityLabels(
+  userLabel?: string,
+  title?: React.ReactNode,
+  subtitle?: React.ReactNode,
+) {
+  let computedLabel = userLabel ?? '';
+  if (computedLabel === '') {
+    // title has higher priority
+    if (typeof title === 'string') {
+      computedLabel = title;
+    } else if (typeof subtitle === 'string') {
+      computedLabel = subtitle;
+    }
+  }
+
+  return computedLabel;
+}
+
 export const ContentCell = memo(function ContentCell({
   accessory,
   title,
@@ -19,6 +37,8 @@ export const ContentCell = memo(function ContentCell({
   meta,
   selected,
   subtitle,
+  accessibilityLabel,
+  accessibilityHint,
   ...props
 }: ContentCellProps) {
   if (!isProduction()) {
@@ -32,6 +52,13 @@ export const ContentCell = memo(function ContentCell({
   const hasTitles = Boolean(title || subtitle);
   const accessoryType = selected ? 'selected' : accessory;
 
+  const computedAccessibilityLabel = generateAccessibilityLabels(
+    accessibilityLabel,
+    title,
+    subtitle,
+  );
+  const computedAccessibilityHint = generateAccessibilityLabels(accessibilityHint, title, subtitle);
+
   return (
     <Cell
       {...props}
@@ -42,6 +69,8 @@ export const ContentCell = memo(function ContentCell({
       media={media}
       disabled={disabled}
       selected={selected}
+      accessibilityLabel={computedAccessibilityLabel}
+      accessibilityHint={computedAccessibilityHint}
     >
       <VStack>
         {hasTitles && (
