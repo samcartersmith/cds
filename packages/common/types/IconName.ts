@@ -210,7 +210,24 @@ export type IconName =
   | 'cashSwissFranc'
   | 'cashPolishZłoty'
   | 'cashUaeDirham'
-  | 'cashAustralianDollar';
+  | 'cashAustralianDollar'
+  | 'nftSaleInactive'
+  | 'nftSaleActive'
+  | 'nftBuyInactive'
+  | 'nftBuyActive'
+  | 'ghostInactive'
+  | 'ghostActive'
+  | 'royaltyInactive'
+  | 'royaltyActive'
+  | 'hammerInactive'
+  | 'hammerActive'
+  | 'nftOfferInactive'
+  | 'nftOfferActive'
+  | 'dropsInactive'
+  | 'dropsActive'
+  | 'taxesReceiptInactive'
+  | 'directDepositIconActive'
+  | 'directDepositIconInactive';
 
 export type NavigationIconName =
   | 'account'
@@ -258,7 +275,7 @@ export type NavigationIconName =
   | 'astronautHelmet'
   | 'peopleGroup'
   | 'heartNav'
-  | 'hammer'
+  | 'hammerNav'
   | 'collection'
   | 'drops'
   | 'diamond'
@@ -267,7 +284,10 @@ export type NavigationIconName =
   | 'pencil'
   | 'cloud'
   | 'participate'
-  | 'queryTransact';
+  | 'queryTransact'
+  | 'activityNav'
+  | 'ghostNav'
+  | 'royaltyNav';
 
 export type NavigationIconInternalName =
   | 'accountInactive'
@@ -360,8 +380,8 @@ export type NavigationIconInternalName =
   | 'peopleGroupActive'
   | 'heartNavInactive'
   | 'heartNavActive'
-  | 'hammerInactive'
-  | 'hammerActive'
+  | 'hammerNavInactive'
+  | 'hammerNavActive'
   | 'collectionInactive'
   | 'collectionActive'
   | 'dropsInactive'
@@ -379,4 +399,10 @@ export type NavigationIconInternalName =
   | 'participateInactive'
   | 'participateActive'
   | 'queryTransactInactive'
-  | 'queryTransactActive';
+  | 'queryTransactActive'
+  | 'activityNavInactive'
+  | 'ghostNavInactive'
+  | 'ghostNavActive'
+  | 'activityNavActive'
+  | 'royaltyNavInactive'
+  | 'royaltyNavActive';
