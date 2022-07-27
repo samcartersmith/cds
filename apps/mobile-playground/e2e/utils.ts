@@ -4,10 +4,10 @@ import { androidDefaultPixelsToScroll, iOSDefaultPixelsToScroll } from './detox-
 import { percySnapshot, takeScreenshot } from './detox-percy/detoxPercy';
 import { largeTests, routesNames } from './routeNames';
 
-export async function launchApp(permisions: Detox.DevicePermissions = {}) {
+export async function launchApp(permissions: Detox.DevicePermissions = {}) {
   await device.launchApp({
     newInstance: true,
-    permissions: { notifications: 'NO', ...permisions },
+    permissions: { notifications: 'NO', ...permissions },
     launchArgs: {
       ConnectHardwareKeyboard: 'NO',
     },
@@ -26,13 +26,13 @@ async function scrollToEnd(
   return false;
 }
 
-export async function takeRouteScreenshots(name: string) {
+export async function takeRouteScreenshots(name: string, scrollViewId: string) {
   let atEnd = false;
   let count = 0;
 
   while (!atEnd) {
-    await takeScreenshot(`${name}/${count}_${name}`);
-    atEnd = await scrollToEnd('example_screen_scrollview');
+    await takeScreenshot(`${name}/${count}_${name}`, scrollViewId);
+    atEnd = await scrollToEnd(scrollViewId);
     count += 1;
   }
 

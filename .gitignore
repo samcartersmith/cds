@@ -118,6 +118,10 @@ buck-out/
 */fastlane/Preview.html
 */fastlane/screenshots
 
+## Detox
+
+apps/mobile-playground/artifacts
+
 ## Bundle artifact
 *.jsbundle
 

@@ -27,6 +27,6 @@ describe('Example', () => {
     await textShouldAppearWithTimeout('CDS');
     await pressButton(name, 'cds_home_flatlist');
     await screenShouldAppear('example_screen_scrollview');
-    await takeRouteScreenshots(name);
+    await takeRouteScreenshots(name, 'example_screen_scrollview');
   });
 });

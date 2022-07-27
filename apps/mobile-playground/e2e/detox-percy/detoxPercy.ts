@@ -2,16 +2,10 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
-import config from '../../detox.config';
-
 import { isExpectedAndroidDevice, isExpectedIosDevice, runCmd } from './utils';
 
 function setDemoMode() {
-  if (device.getPlatform() === 'ios') {
-    execSync(
-      `xcrun simctl status_bar "${config.devices.simulator.device.type}" override --time "12:00" --batteryState charged --batteryLevel 100 --wifiBars 3 --cellularMode active --cellularBars 4`,
-    );
-  } else {
+  if (device.getPlatform() === 'android') {
     // enter demo mode
     execSync('adb shell settings put global sysui_demo_allowed 1');
     // display time 12:00
@@ -48,11 +42,11 @@ export function initializeVisualRegressionTests() {
 }
 
 export function startLocalPercyServer() {
-  runCmd('exec:start');
+  runCmd('percy exec:start');
 }
 
 export function stopLocalPercyServer() {
-  runCmd('exec:stop');
+  runCmd('percy exec:stop');
 }
 
 export function uploadImages(pathStr: string, skipStartLocalPercy = false) {
@@ -72,11 +66,21 @@ function ensureDirExists(fullPath: string) {
 // TODO: make robust by using absolute path rather than relative path
 const screenshotTempDir = '../../artifacts/temp-visual-regression-screenshots';
 
-export async function takeScreenshot(filename: string) {
-  const fullFilename = `${filename}-${device.getPlatform()}`;
+export async function takeScreenshot(filename: string, scrollViewId: string) {
+  const platform = device.getPlatform();
+  const fullFilename = `${filename}-${platform}`;
   const fullFilePath = `${screenshotTempDir}/${fullFilename}.png`;
+
   ensureDirExists(fullFilePath);
-  const tempFilePath = await device.takeScreenshot(fullFilename);
+
+  // using detox's element level snapshots on iOS to remove device level flake
+  // element level snapshots don't work well with ScrollView on Android
+  // passing the file name into element level takeScreenshot causes detox to lose track of the image,
+  // but setting a file name isn't required for this use case
+  const tempFilePath =
+    platform === 'ios'
+      ? await element(by.id(scrollViewId)).takeScreenshot('')
+      : await device.takeScreenshot(fullFilename);
 
   execSync(`mv ${tempFilePath} ${fullFilePath}`);
   return fullFilePath;
