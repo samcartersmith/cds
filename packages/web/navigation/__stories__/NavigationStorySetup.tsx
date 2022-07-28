@@ -81,10 +81,18 @@ export const NavigationBarFullExample: React.FC = () => {
 
   return (
     <NavigationBar
-      start={showBackButton && <IconButton name="backArrow" onPress={handleBackPress} />}
+      start={
+        showBackButton && (
+          <IconButton name="backArrow" onPress={handleBackPress} accessibilityLabel="Back" />
+        )
+      }
       end={
         <HStack gap={1} alignItems="center">
-          <IconButton name="bell" onPress={() => handlePress('Notifications')} />
+          <IconButton
+            name="bell"
+            onPress={() => handlePress('Notifications')}
+            accessibilityLabel="Notifications"
+          />
           <Pressable backgroundColor="transparent" onPress={() => handlePress('Avatar group')}>
             <HStack gap={1} alignItems="center">
               <Avatar alt="Andy" size="xl" />
@@ -105,7 +113,11 @@ export const NavigationBarTitle: React.FC = () => {
     <NavigationBar
       end={
         <HStack gap={1} alignItems="center">
-          <IconButton name="bell" onPress={() => handlePress('Notifications')} />
+          <IconButton
+            name="bell"
+            onPress={() => handlePress('Notifications')}
+            accessibilityLabel="Notifications"
+          />
           <AvatarButton alt="Donna" onPress={() => handlePress('Avatar')} compact />
         </HStack>
       }

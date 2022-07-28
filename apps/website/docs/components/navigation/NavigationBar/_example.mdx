@@ -45,10 +45,14 @@ function NavigationWithPress() {
         start={showBackButton && <IconButton name="backArrow" onPress={handleBackPress} />}
         end={
           <HStack gap={1} alignItems="center">
-            <IconButton name="bell" onPress={() => handlePress('Notifications')} />
+            <IconButton
+              name="bell"
+              onPress={() => handlePress('Notifications')}
+              accessibilityLabel="Back"
+            />
             <Pressable backgroundColor="transparent" onPress={() => handlePress('Avatar group')}>
               <HStack gap={1} alignItems="center">
-                <Avatar alt={name} src={avatar} size="xl" />
+                <Avatar alt="" src={avatar} size="xl" />
                 <TextHeadline as="h2">{name}</TextHeadline>
               </HStack>
             </Pressable>
