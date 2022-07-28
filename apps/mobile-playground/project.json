@@ -4,19 +4,19 @@
   "projectType": "application",
   "targets": {
     "start-android": {
-      "executor": "@cbhq/mono-tasks:start-android"
+      "executor": "@cbhq/mono-tasks-mobile:start-android"
     },
     "build-android": {
-      "executor": "@cbhq/mono-tasks:build-android"
+      "executor": "@cbhq/mono-tasks-mobile:build-android"
     },
     "start-ios": {
-      "executor": "@cbhq/mono-tasks:start-ios"
+      "executor": "@cbhq/mono-tasks-mobile:start-ios"
     },
     "build-ios": {
-      "executor": "@cbhq/mono-tasks:build-ios"
+      "executor": "@cbhq/mono-tasks-mobile:build-ios"
     },
     "start-metro": {
-      "executor": "@cbhq/mono-tasks:start-metro"
+      "executor": "@cbhq/mono-tasks-mobile:start-metro"
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -28,7 +28,7 @@
       "executor": "@cbhq/cds-tools:typecheck"
     },
     "build-ios-e2e": {
-      "executor": "@cbhq/mono-tasks:build-ios",
+      "executor": "@cbhq/mono-tasks-mobile:build-ios",
       "outputs": ["ios/build"],
       "options": {
         "buildType": "e2e",
@@ -91,7 +91,7 @@
       }
     },
     "build-android-e2e": {
-      "executor": "@cbhq/mono-tasks:build-android",
+      "executor": "@cbhq/mono-tasks-mobile:build-android",
       "outputs": ["android/build", "android/app/build"],
       "options": {
         "buildType": "e2e",

@@ -4,11 +4,11 @@
 
 [Design System Storybook (master)](https://cds-storybook.cbhq.net/?path=/docs/) (go/cds-story)
 
-## Get Started
+## Getting Started
 
 CDS has two integration paths depending on whether your client is in this `mono/repo`.
 
-### Inside mono/repo
+### Inside the mono/repo
 
 Import the code directly using the path alias `@cbhq/cds-web` defined in the root `tsconfig.json`. Use root imports only.
 
