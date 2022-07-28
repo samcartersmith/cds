@@ -1,5 +1,10 @@
 import React, { memo } from 'react';
-import { NavigationIconInternalName, SharedProps, SpacingProps } from '@cbhq/cds-common';
+import {
+  NavigationIconInternalName,
+  SharedAccessibilityProps,
+  SharedProps,
+  SpacingProps,
+} from '@cbhq/cds-common';
 import { NavigationBaseIconProps } from '@cbhq/cds-common/types/NavigationBaseIconProps';
 
 import type { IconBaseWebProps } from './IconBase';
@@ -8,7 +13,8 @@ import { IconBase } from './IconBase';
 export type NavigationIconProps = NavigationBaseIconProps &
   Omit<IconBaseWebProps, 'color'> &
   SpacingProps &
-  SharedProps;
+  SharedProps &
+  SharedAccessibilityProps;
 
 export const NavigationIcon = memo(
   ({ name, size = 'm', active = false, ...props }: NavigationIconProps) => {

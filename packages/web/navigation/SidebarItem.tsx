@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, ReactNode, useMemo } from 'react';
-import { ForwardedRef, SharedProps } from '@cbhq/cds-common/types';
+import { ForwardedRef, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
 
 import { NavigationIcon, NavigationIconProps } from '../icons';
 import { HStack } from '../layout';
@@ -46,6 +46,7 @@ export type SidebarItemProps = {
   /** Label or content to display when Sidebar is collapsed and side bar more menu is hovered */
   tooltipContent?: ReactNode;
 } & SharedProps &
+  SharedAccessibilityProps &
   Pick<TooltipProps, 'disablePortal'> &
   Pick<React.AllHTMLAttributes<Element>, 'target'> &
   Pick<LinkProps, 'openInNewWindow'>;
@@ -63,6 +64,7 @@ export const SidebarItem = memo(
         testID,
         tooltipContent,
         disablePortal,
+        accessibilityLabel = title,
         ...rest
       }: SidebarItemProps,
       ref: ForwardedRef<HTMLButtonElement>,
@@ -82,6 +84,7 @@ export const SidebarItem = memo(
             width="100%"
             ref={ref}
             testID={testID}
+            accessibilityLabel={isCollapsed ? accessibilityLabel : undefined}
             {...rest}
           >
             <HStack gap={2} spacing={2} alignItems="center" justifyContent="flex-start">
@@ -94,7 +97,19 @@ export const SidebarItem = memo(
             </HStack>
           </Pressable>
         ),
-        [active, onPress, to, ref, testID, rest, icon, isCollapsed, color, title],
+        [
+          active,
+          onPress,
+          to,
+          ref,
+          testID,
+          rest,
+          icon,
+          accessibilityLabel,
+          isCollapsed,
+          color,
+          title,
+        ],
       );
 
       return tooltipContent && isCollapsed ? (
