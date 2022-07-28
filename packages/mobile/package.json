@@ -23,7 +23,6 @@
     "@cbhq/cds-fonts": "workspace:*",
     "@cbhq/cds-lottie-files": "workspace:*",
     "@cbhq/cds-utils": "workspace:*",
-    "@react-native-community/netinfo": "^7.1.7",
     "d3-interpolate-path": "^2.2.2",
     "lodash": "^4.17.21",
     "type-fest": "^1.2.0"
@@ -44,6 +43,7 @@
   },
   "devDependencies": {
     "@cbhq/cds-tools": "workspace:*",
+    "@react-native-community/netinfo": "^7.1.7",
     "@react-navigation/stack": "5.12.8",
     "d3-shape": "^2.1.0",
     "lottie-ios": "3.2.3",
