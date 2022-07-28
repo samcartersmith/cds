@@ -142,7 +142,7 @@ export const ComposedSystem: React.FC = () => {
           />
         ))}
       </Sidebar>
-      <VStack>
+      <VStack overflow="clip">
         <NavigationBarFullExample />
         <VStack spacing={4}>
           <TextDisplay2 as="h2" spacingBottom={1}>

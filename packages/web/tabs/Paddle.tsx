@@ -20,7 +20,7 @@ import { gradient, staticClassName as gradientStaticClassName } from '../styles/
 import { spacing } from '../tokens';
 import { cx } from '../utils/linaria';
 
-import { tabLabelSpacingClassName } from './TabLabel';
+import { tabLabelVerticalSpacing } from './TabLabel';
 
 export type PaddleProps = {
   direction?: 'left' | 'right';
@@ -61,9 +61,15 @@ const paddleRightClassName = css`
   padding-left: ${spacing[tabsPaddleSpacing]};
   padding-right: ${spacing[tabsPaddleSpacing]};
 `;
+// TODO: come up with a better system for handling these custom px values
+// Using px are flakey, but I can't think of a more deterministic way to calculate this diff
+const tablabelOffset = '7px';
+const paddleOffsetClassName = css`
+  padding-top: calc(${spacing[tabLabelVerticalSpacing]} - ${tablabelOffset});
+  padding-bottom: calc(${spacing[tabLabelVerticalSpacing]} - ${tablabelOffset});
+`;
 
 export const Paddle = ({
-  variant = 'primary',
   direction = 'left',
   show,
   background = 'background',
@@ -72,7 +78,7 @@ export const Paddle = ({
   const palette = usePalette();
   const className = cx(
     paddleClassName,
-    variant === 'primary' && tabLabelSpacingClassName,
+    paddleOffsetClassName,
     direction === 'left' ? paddleLeftClassName : paddleRightClassName,
     show ? null : noEventsClassName,
   );

@@ -4,8 +4,10 @@ import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { navigationBarMinHeight } from '@cbhq/cds-common/tokens/navigation';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
+import { HStack } from '../alpha/HStack';
+import { VStack } from '../alpha/VStack';
 import { Collapsible } from '../collapsible/Collapsible';
-import { Box, HStack, VStack } from '../layout';
+import { Box } from '../layout';
 import { ThemeProvider } from '../system/ThemeProvider';
 
 export type NavigationBarProps = {

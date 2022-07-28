@@ -147,7 +147,7 @@ function NavigationRecipe() {
               ))}
             </SidebarMoreMenu>
           </Sidebar>
-          <VStack width="100%">
+          <VStack overflow="clip">
             <NavigationBar
               start={showBackButton && <IconButton name="backArrow" onPress={handleBackPress} />}
               end={

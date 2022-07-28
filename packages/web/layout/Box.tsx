@@ -86,6 +86,11 @@ const overflowStyles: CSSMap<BoxProps['overflow']> = {
   auto: css`
     overflow: auto;
   `,
+  clip: css`
+    /* Fallback for safari */
+    overflow: hidden;
+    overflow: clip;
+  `,
 };
 
 export type BoxProps<As extends BoxElement = 'div'> = {
@@ -97,8 +102,10 @@ export type BoxProps<As extends BoxElement = 'div'> = {
   display?: Display;
   /** Semantic role whole using a non-semantic element. */
   role?: InferBoxRole<As>;
-  /** Control how the content should overflow. */
-  overflow?: 'visible' | 'hidden' | 'scroll' | 'auto';
+  /** Control how the content should overflow.
+   *  Note: Until Safari has better coverage for `clip`, it will fallback to `hidden`
+   */
+  overflow?: 'visible' | 'hidden' | 'scroll' | 'auto' | 'clip';
   /** How to position the box within its parent. */
   position?: Position;
   /** Sets the opacity of the box */

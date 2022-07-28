@@ -11,9 +11,12 @@ import { HStack } from '../layout';
 import { spacing } from '../tokens';
 import { TextHeadline, TextProps, TextTitle3, TextTitle4 } from '../typography';
 
+export const tabLabelVerticalSpacing = 2;
 export const tabLabelSpacingClassName = css`
-  padding-top: ${spacing[2]};
-  padding-bottom: calc(${spacing[2]} - 2px); // Account for the 2px TabIndicator
+  padding-top: ${spacing[tabLabelVerticalSpacing]};
+  padding-bottom: calc(
+    ${spacing[tabLabelVerticalSpacing]} - 2px
+  ); // Account for the 2px TabIndicator
 `;
 const containerClassName = css`
   position: relative;
