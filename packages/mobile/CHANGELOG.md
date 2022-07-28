@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.2.0 (7/28/2022, 12:54 PM PST)
+
+#### 🚀 Updates
+
+- **[Tooltip]** Add onOpenTooltip callback prop. [#855](https://github.cbhq.net/frontend/cds/pull/855), [CDS-2396](https://jira.coinbase-corp.com/browse/CDS-2396)
+
+#### 🐞 Fixes
+
+- **[Icons]** Publish icons jul 26 2022. [#883](https://github.cbhq.net/frontend/cds/pull/883)
+- **[Carousel]** Dismissing the last item shows blank on Android. [#884](https://github.cbhq.net/frontend/cds/pull/884), [CDS-2400](https://jira.coinbase-corp.com/browse/CDS-2400)
+- Mobile accessibility updates. [#864](https://github.cbhq.net/frontend/cds/pull/864)
+- **[Reanimated]** Bumped to v2. [#874](https://github.cbhq.net/frontend/cds/pull/874)
+- **[Control]** Set initial animated value to 0. [#859](https://github.cbhq.net/frontend/cds/pull/859), [CDS-2304](https://jira.coinbase-corp.com/browse/CDS-2304)
+- **[Modal]** Replace the SafeAreaView in Modal with the RN version. [#872](https://github.cbhq.net/frontend/cds/pull/872)
+
+#### 📘 Misc
+
+- Upgrade DevX Tooling (mono-tasks, mono-tasks-mobile, mono-env, mono-pipeline, mono-templates). [#885](https://github.cbhq.net/frontend/cds/pull/885)
+- **[Mobile Visual Regression Tests]** Fix iOS home indicator flake. [#881](https://github.cbhq.net/frontend/cds/pull/881)
+
 ## 1.1.2 (7/21/2022, 01:20 PM PST)
 
 #### 🚀 Updates

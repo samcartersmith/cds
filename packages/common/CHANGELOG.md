@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.2.0 (7/28/2022, 12:54 PM PST)
+
+#### 🚀 Updates
+
+- **[useSortableCell]** Introduce a new hook as a convenience to support sortable table UI's. [#865](https://github.cbhq.net/frontend/cds/pull/865), [CDS-2378](https://jira.coinbase-corp.com/browse/CDS-2378)
+
+#### 🐞 Fixes
+
+- **[Icons]** Publish icons jul 26 2022. [#883](https://github.cbhq.net/frontend/cds/pull/883)
+- Mobile accessibility updates. [#864](https://github.cbhq.net/frontend/cds/pull/864)
+
 ## 1.1.2 (7/21/2022, 01:20 PM PST)
 
 #### 🐞 Fixes

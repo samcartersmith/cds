@@ -8,6 +8,23 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.2.0 (7/28/2022, 12:54 PM PST)
+
+#### 🚀 Updates
+
+- **[useSortableCell]** Introduce a new hook as a convenience to support sortable table UI's. [#865](https://github.cbhq.net/frontend/cds/pull/865), [CDS-2378](https://jira.coinbase-corp.com/browse/CDS-2378)
+
+#### 🐞 Fixes
+
+- Fix(TabNavigation & NavigationBar): Ensure TabNavigation aligns with the NavigationBar. [#886](https://github.cbhq.net/frontend/cds/pull/886), [CDS-2405](https://jira.coinbase-corp.com/browse/CDS-2405)
+- **[NavigationBar]** Update aria labels in all our examples. [#887](https://github.cbhq.net/frontend/cds/pull/887), [CDS-2385](https://jira.coinbase-corp.com/browse/CDS-2385)
+- **[Icons]** Publish icons jul 26 2022. [#883](https://github.cbhq.net/frontend/cds/pull/883)
+- **[Table]** Table cell dense scale padding is incorrect. [#876](https://github.cbhq.net/frontend/cds/pull/876), [CDS-1897](https://jira.coinbase-corp.com/browse/CDS-1897)
+
+#### 📘 Misc
+
+- Upgrade DevX Tooling (mono-tasks, mono-tasks-mobile, mono-env, mono-pipeline, mono-templates). [#885](https://github.cbhq.net/frontend/cds/pull/885)
+
 ## 1.1.2 (7/21/2022, 01:20 PM PST)
 
 #### 🚀 Updates
