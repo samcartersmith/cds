@@ -18,7 +18,6 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
   const { checked } = props;
   return (
     <Control
-      role="switch"
       type="checkbox"
       label={children}
       aria-label={props.accessibilityLabel}
