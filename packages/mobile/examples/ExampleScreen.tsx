@@ -102,24 +102,26 @@ export const ExampleScreen: React.FC = ({ children }) => {
   }, [toggleFeatureFlag]);
 
   return (
-    <Screen>
-      <ScaleProvider value="xSmall">
-        <VStack>
-          <VStack gap={1} spacingVertical={3} spacingHorizontal={gutter} background>
-            <Switch onChange={toggleDark} checked={isDarkEnabled}>
-              Dark Spectrum
-            </Switch>
-            <Switch onChange={toggleDense} checked={isDenseEnabled}>
-              Dense Scale
-            </Switch>
-            <Switch onChange={toggleFrontier} checked={frontier}>
-              Frontier
-            </Switch>
+    <VStack testID="mobile-playground-screen">
+      <Screen>
+        <ScaleProvider value="xSmall">
+          <VStack>
+            <VStack gap={1} spacingVertical={3} spacingHorizontal={gutter} background>
+              <Switch onChange={toggleDark} checked={isDarkEnabled}>
+                Dark Spectrum
+              </Switch>
+              <Switch onChange={toggleDense} checked={isDenseEnabled}>
+                Dense Scale
+              </Switch>
+              <Switch onChange={toggleFrontier} checked={frontier}>
+                Frontier
+              </Switch>
+            </VStack>
+            <Divider />
           </VStack>
-          <Divider />
-        </VStack>
-      </ScaleProvider>
-      {children}
-    </Screen>
+        </ScaleProvider>
+        {children}
+      </Screen>
+    </VStack>
   );
 };

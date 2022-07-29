@@ -80,7 +80,7 @@ export async function takeScreenshot(filename: string, scrollViewId: string) {
   const tempFilePath =
     platform === 'ios'
       ? await element(by.id(scrollViewId)).takeScreenshot('')
-      : await device.takeScreenshot(fullFilename);
+      : await element(by.id('mobile-playground-screen')).takeScreenshot('');
 
   execSync(`mv ${tempFilePath} ${fullFilePath}`);
   return fullFilePath;
