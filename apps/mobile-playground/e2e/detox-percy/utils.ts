@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import chalk from 'chalk';
 import { execSync } from 'child_process';
 
@@ -5,11 +6,11 @@ import config from '../../detox.config';
 
 export const runCmd = (cmd: string) => {
   try {
-    chalk.gray('runCmd:\n', cmd);
+    console.log(chalk.gray('runCmd:\n', cmd));
     const output = execSync(cmd, { encoding: 'utf-8' }); // the default is 'buffer'
-    chalk.gray('Output was:\n', output);
+    console.log(chalk.gray('Output was:\n', output));
   } catch (err) {
-    chalk.red(`Error was:\n${err}`);
+    console.log(chalk.red(`Error was:\n${err}`));
   }
 };
 

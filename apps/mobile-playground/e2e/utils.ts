@@ -1,13 +1,16 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-restricted-globals */
+
 import { androidDefaultPixelsToScroll, iOSDefaultPixelsToScroll } from './detox-percy/config';
 import { percySnapshot, takeScreenshot } from './detox-percy/detoxPercy';
 import { largeTests, routesNames } from './routeNames';
 
-export async function launchApp(permissions: Detox.DevicePermissions = {}) {
+export const endOfExampleScrollView = 'end_of_example_scrollview';
+
+export async function launchApp(permisions: Detox.DevicePermissions = {}) {
   await device.launchApp({
     newInstance: true,
-    permissions: { notifications: 'NO', ...permissions },
+    permissions: { notifications: 'NO', ...permisions },
     launchArgs: {
       ConnectHardwareKeyboard: 'NO',
     },
@@ -26,13 +29,27 @@ async function scrollToEnd(
   return false;
 }
 
+async function swipeToEnd(scrollViewId: string) {
+  try {
+    await element(by.id(scrollViewId)).swipe('up', 'slow', 0.95);
+    // eslint-disable-next-line @typescript-eslint/await-thenable
+    await expect(element(by.id(endOfExampleScrollView))).toBeVisible();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export async function takeRouteScreenshots(name: string, scrollViewId: string) {
   let atEnd = false;
   let count = 0;
 
   while (!atEnd) {
     await takeScreenshot(`${name}/${count}_${name}`, scrollViewId);
-    atEnd = await scrollToEnd(scrollViewId);
+    atEnd =
+      device.getPlatform() === 'ios'
+        ? await scrollToEnd(scrollViewId)
+        : await swipeToEnd(scrollViewId);
     count += 1;
   }
 

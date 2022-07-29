@@ -95,6 +95,7 @@
       "outputs": ["android/build", "android/app/build"],
       "options": {
         "buildType": "e2e",
+        "clean": true,
         "detoxConfig": "android.functionalTest"
       },
       "configurations": {
@@ -134,16 +135,16 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
-          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose 'system-images;android-30;google_apis;x86'",
-          "echo no | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name Pixel_3a_API_30 --package 'system-images;android-30;google_apis;x86'"
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose 'system-images;android-30;default;x86_64'",
+          "echo no | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name Pixel_3a_API_30 --package 'system-images;android-30;default;x86_64'"
         ],
         "parallel": false
       },
       "configurations": {
         "m1": {
           "commands": [
-            "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose 'system-images;android-30;google_apis;arm64-v8a'",
-            "echo no | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name Pixel_3a_API_30 --package 'system-images;android-30;google_apis;arm64-v8a'"
+            "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose 'system-images;android-30;default;arm64-v8a'",
+            "echo no | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name Pixel_3a_API_30 --package 'system-images;android-30;default;arm64-v8a'"
           ]
         }
       }

@@ -1,6 +1,6 @@
 import { routes } from '@cbhq/cds-mobile/examples/routes';
 
-const badTests = ['Alerts', 'TooltipV2', 'Tray'];
+const pointlessTests = ['Alerts', 'TooltipV2', 'Tray'];
 export const largeTests = [
   'HeroSquare' /** 29 scrolls @ 500 px scroll */,
   'Pictogram' /** 29 scrolls @ 500 px scroll */,
@@ -8,7 +8,7 @@ export const largeTests = [
   'SpotSquare' /** 41 scrolls @ 500 px scroll */,
 ];
 
-const broken = [
+const removed = [
   'Card' /** Not sure */,
   'Carousel' /** Uses random images so order changes */,
   'ContentCellFallback' /** Animation */,
@@ -32,9 +32,14 @@ const broken = [
   'TextInput' /** Scroll selects the input text box */,
 ];
 
+const androidRemoved = ['Accordion', 'Select'];
+
 export const routesNames = Object.values(routes)
-  .filter(({ name }) => !broken.includes(name)) /** Remove broken routes */
-  .filter(({ name }) => !badTests.includes(name)) /** Remove pointless tests */
+  .filter(({ name }) => !removed.includes(name)) /** Remove issue routes */
+  .filter(({ name }) =>
+    device.getPlatform() === 'android' ? !androidRemoved.includes(name) : true,
+  ) /** Remove android issue routes */
+  .filter(({ name }) => !pointlessTests.includes(name)) /** Remove pointless tests */
   .filter(
     ({ name }) => !largeTests.includes(name),
   ) /** Remove really big tests that should be own run. */

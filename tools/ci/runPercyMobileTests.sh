@@ -6,7 +6,6 @@ randomNonce=percyNonce_$(openssl rand -base64 21)
 echo $randomNonce
 echo "$randomNonce" > "percy-artifacts/$PERCY_NONCE_FILE_NAME"
 
-# If we do not exit and nonce is succesfully created; we run iOS and Android tests
+# If we do not exit and nonce is succesfully created; we run iOS and Android percy tests
 buildkite-agent pipeline upload .buildkite/percy-ios.yml
-# Add back when not flaky:
-# buildkite-agent pipeline upload .buildkite/percy-android.yml
+buildkite-agent pipeline upload .buildkite/percy-android.yml

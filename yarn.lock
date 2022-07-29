@@ -2711,7 +2711,7 @@ __metadata:
     "@react-native-community/masked-view": ^0.1.10
     "@react-navigation/native": ^5.9.8
     "@react-navigation/stack": ^5.12.8
-    detox: ^19.5.7
+    detox: ^19.7.1
     intl: ^1.2.5
     jest: 27.2.5
     lottie-ios: 3.2.3
@@ -2724,7 +2724,7 @@ __metadata:
     react-native-inappbrowser-reborn: 3.6.3
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.1
-    react-native-reanimated: 1.13.1
+    react-native-reanimated: 1.13.4
     react-native-safe-area-context: ^3.2.0
     react-native-screens: ^3.12.0
     react-native-svg: 12.1.0
@@ -14092,7 +14092,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detox@npm:^19.5.7":
+"detox@npm:^19.7.1":
   version: 19.7.1
   resolution: "detox@npm:19.7.1"
   dependencies:
@@ -27433,6 +27433,18 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 689d6edeae9720437c41179c398c0f152a51ec6e54a100eedbbaef5d4ae7df225791314311b0feb79834c207e420b92077559c4d6a352da9a97a6bf4df885787
+  languageName: node
+  linkType: hard
+
+"react-native-reanimated@npm:1.13.4":
+  version: 1.13.4
+  resolution: "react-native-reanimated@npm:1.13.4"
+  dependencies:
+    fbjs: ^1.0.0
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: b2c3e599729f80a6339889daf872f64206ca7960c10b5f4a3ac12a047690b27ec4e19abf73c9069411b6987fdad8fea15c79acbb61332342b9e959f69f84c217
   languageName: node
   linkType: hard
 

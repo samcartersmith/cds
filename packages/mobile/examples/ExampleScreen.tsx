@@ -65,9 +65,13 @@ const Screen: React.FC = ({ children }) => {
       style={{ backgroundColor: palette.background, height: '100%' }}
       keyboardShouldPersistTaps="always"
       testID="example_screen_scrollview"
+      persistentScrollbar={false}
+      showsVerticalScrollIndicator={false}
     >
       {children}
-      <TextBody testID="end_of_example_scrollview">End of Example</TextBody>
+      <VStack>
+        <TextBody testID="end_of_example_scrollview">End of Example</TextBody>
+      </VStack>
     </ScrollView>
   );
 };

@@ -32,49 +32,49 @@ env:
 steps:
   - group: 'Percy Tests (iOS)'
     steps:
-      - label: 'Percy (iOS) 1'
+      - label: 'Percy (iOS) Test 1'
         key: 'percy-ios-1'
         <<: *percy_ios_shared
         env:
           DETOX_JOB_NUMBER: 1
 
-      - label: 'Percy (iOS) 2'
+      - label: 'Percy (iOS) Test 2'
         key: 'percy-ios-2'
         <<: *percy_ios_shared
         env:
           DETOX_JOB_NUMBER: 2
 
-      - label: 'Percy (iOS) 3'
+      - label: 'Percy (iOS) Test 3'
         key: 'percy-ios-3'
         <<: *percy_ios_shared
         env:
           DETOX_JOB_NUMBER: 3
 
-      - label: 'Percy (iOS) 4'
+      - label: 'Percy (iOS) Test 4'
         key: 'percy-ios-4'
         <<: *percy_ios_shared
         env:
           DETOX_JOB_NUMBER: 4
 
-      - label: 'Percy (iOS) 5'
+      - label: 'Percy (iOS) Test 5'
         key: 'percy-ios-5'
         <<: *percy_ios_shared
         env:
           DETOX_JOB_NUMBER: 5
 
-      - label: 'Percy (iOS) 6'
+      - label: 'Percy (iOS) Test 6'
         key: 'percy-ios-6'
         <<: *percy_ios_shared
         env:
           DETOX_JOB_NUMBER: 6
 
-      - label: 'Percy (iOS) 7'
+      - label: 'Percy (iOS) Test 7'
         key: 'percy-ios-7'
         <<: *percy_ios_shared
         env:
           DETOX_JOB_NUMBER: 7
 
-      - label: 'Percy (iOS) 8'
+      - label: 'Percy (iOS) Test 8'
         key: 'percy-ios-8'
         <<: *percy_ios_shared
         env:

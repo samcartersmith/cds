@@ -1,14 +1,9 @@
-_if_master_branch: &if_master_branch
-  if: |
-    build.branch == 'master'
-
-_if_feature_branch: &if_feature_branch
-  if: |
-    build.branch != 'master'
-
 _percy_android_shared: &percy_android_shared
   parallelism: 1
   commands:
+    # TODO: Remove the first line once the macos-metal agent upgrade is implemented
+    # https://coinbase.slack.com/archives/C02QNP7BLER/p1658527386390829
+    - nvm install 16.16.0 && nvm use 16.16.0 && npm install -g yarn
     - tools/ci/setup.sh
     - export LANG=en_US.UTF-8
     - mkdir -p percy-artifacts
@@ -82,34 +77,68 @@ env:
   OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
   ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
   PERCY_NONCE_FILE_NAME: 'percy_nonce.txt'
+  DETOX_TOTAL_JOBS: 8
 
 steps:
-  - group: Manual Percy Tests (Android)
-    <<: *if_feature_branch
-    steps:
-      - input: 'Manually Run Android Percy! :rocket:'
-        key: 'run-android-percy'
-        prompt: 'Manually Run Android Percy?'
-
-      - label: 'Manual Percy Tests (Android)'
-        key: 'manual-android-percy-tests'
-        depends_on: run-android-percy
-        <<: *percy_android_shared
-
-      - label: 'Finish Manual Percy (Android)'
-        depends_on: 'manual-android-percy-tests'
-        allow_dependency_failure: true
-        <<: *finish_percy_android_shared
-
   - group: Percy Tests (Android)
-    <<: *if_master_branch
     steps:
-      - label: 'Percy Tests (Android) '
-        key: 'master-android-percy-run'
+      - label: 'Percy (Android) Test 1'
+        key: 'percy-android-1'
         <<: *percy_android_shared
+        env:
+          DETOX_JOB_NUMBER: 1
+
+      - label: 'Percy (Android) Test 2'
+        key: 'percy-android-2'
+        <<: *percy_android_shared
+        env:
+          DETOX_JOB_NUMBER: 2
+
+      - label: 'Percy (Android) Test 3'
+        key: 'percy-android-3'
+        <<: *percy_android_shared
+        env:
+          DETOX_JOB_NUMBER: 3
+
+      - label: 'Percy (Android) Test 4'
+        key: 'percy-android-4'
+        <<: *percy_android_shared
+        env:
+          DETOX_JOB_NUMBER: 4
+
+      - label: 'Percy (Android) Test 5'
+        key: 'percy-android-5'
+        <<: *percy_android_shared
+        env:
+          DETOX_JOB_NUMBER: 5
+
+      - label: 'Percy (Android) Test 6'
+        key: 'percy-android-6'
+        <<: *percy_android_shared
+        env:
+          DETOX_JOB_NUMBER: 6
+
+      - label: 'Percy (Android) Test 7'
+        key: 'percy-android-7'
+        <<: *percy_android_shared
+        env:
+          DETOX_JOB_NUMBER: 7
+
+      - label: 'Percy (Android) Test 8'
+        key: 'percy-android-8'
+        <<: *percy_android_shared
+        env:
+          DETOX_JOB_NUMBER: 8
 
       - label: 'Finish Percy (Android)'
-        depends_on: 'master-android-percy-run'
-        # TODO: Remove once Android is stable:
+        depends_on:
+          - 'percy-android-1'
+          - 'percy-android-2'
+          - 'percy-android-3'
+          - 'percy-android-4'
+          - 'percy-android-5'
+          - 'percy-android-6'
+          - 'percy-android-7'
+          - 'percy-android-8'
         allow_dependency_failure: true
         <<: *finish_percy_android_shared
