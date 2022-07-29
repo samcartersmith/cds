@@ -21,6 +21,7 @@ const removed = [
   'RemoteImage' /**  Main Queue jammed - looked like image networking */,
   'RemoteImageGroup' /**  Main Queue jammed - looked like image networking */,
   'Sparkline' /**  Main Queue jammed - looked like image networking */,
+  'Tabs' /** Non-determistic animation */,
   'Text' /** Not sure */,
   'TextCaption' /** Not sure */,
   'SparklineInteractive',

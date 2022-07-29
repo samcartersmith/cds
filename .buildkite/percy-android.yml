@@ -9,9 +9,9 @@ _percy_android_shared: &percy_android_shared
     - mkdir -p percy-artifacts
     - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
     - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
-    - yarn nx run mobile-playground:e2e-android-emulator
+    - yarn nx run mobile-playground:android-e2e-emulator
     - yarn nx run mobile-playground:build-android-e2e
-    - yarn nx run mobile-playground:e2e-android
+    - yarn nx run mobile-playground:android-e2e
   plugins: &android_plugins
     - file:///buildkite/plugins/cache: &cache_plugin
         key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1

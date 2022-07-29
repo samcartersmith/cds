@@ -27,6 +27,27 @@
     "typecheck": {
       "executor": "@cbhq/cds-tools:typecheck"
     },
+    "conditional-init-percy-mobile": {
+      "executor": "@cbhq/cds-tools:run-conditional",
+      "options": {
+        "triggerProjects": [
+          "mobile-playground",
+          "mobile",
+          "common",
+          "utils",
+          "fonts",
+          "lottie-files"
+        ],
+        "target": "mobile-playground:init-percy-mobile"
+      }
+    },
+    "init-percy-mobile": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["./tools/ci/runPercyMobileTests.sh"],
+        "parallel": false
+      }
+    },
     "build-ios-e2e": {
       "executor": "@cbhq/mono-tasks-mobile:build-ios",
       "outputs": ["ios/build"],
@@ -55,41 +76,6 @@
         }
       }
     },
-    "conditional-init-percy-mobile": {
-      "executor": "@cbhq/cds-tools:run-conditional",
-      "options": {
-        "triggerProjects": [
-          "mobile-playground",
-          "mobile",
-          "common",
-          "utils",
-          "fonts",
-          "lottie-files"
-        ],
-        "target": "mobile-playground:init-percy-mobile"
-      }
-    },
-    "init-percy-mobile": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "commands": ["./tools/ci/runPercyMobileTests.sh"],
-        "parallel": false
-      }
-    },
-    "run-android-e2e": {
-      "executor": "@cbhq/cds-tools:run-conditional",
-      "options": {
-        "triggerProjects": [
-          "mobile-playground",
-          "mobile",
-          "common",
-          "utils",
-          "fonts",
-          "lottie-files"
-        ],
-        "target": "mobile-playground:e2e-android"
-      }
-    },
     "build-android-e2e": {
       "executor": "@cbhq/mono-tasks-mobile:build-android",
       "outputs": ["android/build", "android/app/build"],
@@ -110,7 +96,7 @@
         }
       ]
     },
-    "e2e-android": {
+    "android-e2e": {
       "executor": "@cbhq/mono-tasks:test-detox",
       "options": {
         "config": "android.functionalTest",
@@ -131,7 +117,7 @@
         }
       }
     },
-    "e2e-android-emulator": {
+    "android-e2e-emulator": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
