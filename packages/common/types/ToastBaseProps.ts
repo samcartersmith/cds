@@ -1,6 +1,7 @@
 import { DimensionValue } from './DimensionStyles';
 import { NoopFn } from './Helpers';
 import { OverlayLifecycleProps } from './OverlayLifecycleProps';
+import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
 
 export type ToastText = string;
@@ -38,7 +39,9 @@ export type ToastBaseOptions = {
 
 export type ToastOptions = ToastBaseOptions & ToastDuration;
 
-export type ToastBaseProps = { text: ToastText } & ToastBaseOptions & SharedProps;
+export type ToastBaseProps = { text: ToastText } & ToastBaseOptions &
+  SharedProps &
+  SharedAccessibilityProps;
 
 export type ToastHandleClose = () => Promise<boolean>;
 

@@ -32,7 +32,7 @@ export type ToastProps = ToastBaseProps;
 
 export const Toast: React.FC<ToastProps> = memo(
   forwardRef<ToastRefBaseProps, React.PropsWithChildren<ToastProps>>(
-    ({ text, action, onWillHide, onDidHide, bottomOffset }, ref) => {
+    ({ text, action, onWillHide, onDidHide, bottomOffset, ...rest }, ref) => {
       const [{ opacity, bottom }, animateIn, animateOut] = useToastAnimation();
       const spacing = useSpacingScale();
 
@@ -85,6 +85,8 @@ export const Toast: React.FC<ToastProps> = memo(
                 // display on android
                 elevation: zIndex.overlays.portal,
               }}
+              // A11y props
+              {...rest}
             >
               <HStack
                 animated

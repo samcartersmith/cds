@@ -7,7 +7,7 @@ import React, {
   useImperativeHandle,
 } from 'react';
 import { m as motion, useAnimation } from 'framer-motion';
-import { ToastBaseProps, ToastRefBaseProps } from '@cbhq/cds-common';
+import { SharedAccessibilityProps, ToastBaseProps, ToastRefBaseProps } from '@cbhq/cds-common';
 import {
   animateInBottomConfig,
   animateInOpacityConfig,
@@ -36,8 +36,20 @@ export type ToastProps = {
    * @default false
    */
   hideCloseButton?: boolean;
+  /**
+   * Accessibility props are provided to ensure i18n
+   * support for all relevant a11y props
+   * @default { accessibilityLabel: "close" }
+   */
+  closeButtonAccessibilityProps?: SharedAccessibilityProps;
 } & ToastBaseProps &
+  SharedAccessibilityProps &
   Pick<ModalProps, 'disablePortal'>;
+
+// Note: ensure any updates here are reflected in the jsdoc above
+const closeButtonAccessibilityDefaults: ToastProps['closeButtonAccessibilityProps'] = {
+  accessibilityLabel: 'close',
+};
 
 export const Toast: React.FC<ToastProps> = memo(
   forwardRef<ToastRefBaseProps, React.PropsWithChildren<ToastProps>>(
@@ -49,8 +61,10 @@ export const Toast: React.FC<ToastProps> = memo(
         onDidHide,
         disablePortal = false,
         hideCloseButton = false,
-        testID,
+        testID = 'cds-toast',
         bottomOffset = spacing[4],
+        closeButtonAccessibilityProps = closeButtonAccessibilityDefaults,
+        ...rest
       },
       ref,
     ) => {
@@ -105,6 +119,7 @@ export const Toast: React.FC<ToastProps> = memo(
                 onMouseEnter={pauseTimer}
                 onMouseLeave={resumeTimer}
                 testID={testID}
+                {...rest}
               >
                 <HStack
                   spacingVertical={1}
@@ -141,8 +156,9 @@ export const Toast: React.FC<ToastProps> = memo(
                         name="close"
                         variant="foregroundMuted"
                         onPress={handleClose}
-                        testID="toast-close-button"
+                        testID={`${testID}-close-button`}
                         transparent
+                        {...closeButtonAccessibilityProps}
                       />
                     )}
                   </HStack>
