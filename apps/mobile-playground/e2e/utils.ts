@@ -7,10 +7,10 @@ import { largeTests, routesNames } from './routeNames';
 
 export const endOfExampleScrollView = 'end_of_example_scrollview';
 
-export async function launchApp(permisions: Detox.DevicePermissions = {}) {
+export async function launchApp(permissions: Detox.DevicePermissions = {}) {
   await device.launchApp({
     newInstance: true,
-    permissions: { notifications: 'NO', ...permisions },
+    permissions: { notifications: 'NO', ...permissions },
     launchArgs: {
       ConnectHardwareKeyboard: 'NO',
     },
