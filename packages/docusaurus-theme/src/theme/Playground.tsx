@@ -14,6 +14,8 @@ import { TextCaption } from '@cbhq/cds-web/typography/TextCaption';
 
 type PlaygroundProps = LiveProviderProps & {
   children: string;
+  borderless?: boolean;
+  hideControls?: boolean;
 };
 
 const transformCodeFallback = (code: unknown) => `${code};`;
@@ -21,6 +23,8 @@ const transformCodeFallback = (code: unknown) => `${code};`;
 const Playground = memo(function Playground({
   children,
   transformCode: transformCodeProp = transformCodeFallback,
+  borderless,
+  hideControls,
   ...props
 }: PlaygroundProps): JSX.Element {
   const prismTheme = usePrismTheme();
@@ -60,39 +64,46 @@ const Playground = memo(function Playground({
     <VStack gap={1} spacingBottom={3} dangerouslySetClassName="code-playground">
       {/* @ts-expect-error - issue with LiveProvider props */}
       <LiveProvider code={code} transformCode={transformCode} theme={prismTheme} {...props}>
-        <VStack borderRadius="popover" bordered overflow="hidden" spacing={3}>
+        <VStack
+          borderRadius="popover"
+          bordered={!borderless}
+          overflow={!borderless ? 'hidden' : undefined}
+          spacing={borderless ? 0 : 3}
+        >
           <BrowserOnly fallback={<div>Loading...</div>}>{preview}</BrowserOnly>
         </VStack>
-        <HStack gap={0.5} alignItems="center" offsetHorizontal={1}>
-          <Pressable
-            backgroundColor="background"
-            borderRadius="popover"
-            onPress={toggle}
-            noScaleOnPress
-            transparentWhileInactive
-          >
-            <HStack gap={1} spacing={1} width={112} alignItems="center">
-              <Icon name={collapsed ? 'caretDown' : 'caretUp'} size="xs" color="primary" />
-              <TextCaption transform="none" as="p" color="primary">
-                {collapsed ? 'Show code' : 'Hide code'}
-              </TextCaption>
-            </HStack>
-          </Pressable>
-          <Pressable
-            backgroundColor="background"
-            borderRadius="round"
-            noScaleOnPress
-            onPress={handleCopyToClipboard}
-            transparentWhileInactive
-          >
-            <HStack gap={1} spacing={1} alignItems="center">
-              <Icon name="copy" size="xs" color="primary" />
-              <TextCaption transform="none" as="p" color="primary">
-                Copy code
-              </TextCaption>
-            </HStack>
-          </Pressable>
-        </HStack>
+        {!hideControls && (
+          <HStack gap={0.5} alignItems="center" offsetHorizontal={1}>
+            <Pressable
+              backgroundColor="background"
+              borderRadius="popover"
+              onPress={toggle}
+              noScaleOnPress
+              transparentWhileInactive
+            >
+              <HStack gap={1} spacing={1} width={112} alignItems="center">
+                <Icon name={collapsed ? 'caretDown' : 'caretUp'} size="xs" color="primary" />
+                <TextCaption transform="none" as="p" color="primary">
+                  {collapsed ? 'Show code' : 'Hide code'}
+                </TextCaption>
+              </HStack>
+            </Pressable>
+            <Pressable
+              backgroundColor="background"
+              borderRadius="round"
+              noScaleOnPress
+              onPress={handleCopyToClipboard}
+              transparentWhileInactive
+            >
+              <HStack gap={1} spacing={1} alignItems="center">
+                <Icon name="copy" size="xs" color="primary" />
+                <TextCaption transform="none" as="p" color="primary">
+                  Copy code
+                </TextCaption>
+              </HStack>
+            </Pressable>
+          </HStack>
+        )}
         <Collapsible collapsed={collapsed}>
           <VStack width="100%" borderRadius="popover" overflow="hidden">
             <LiveEditor

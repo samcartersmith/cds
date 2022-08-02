@@ -15,15 +15,6 @@ export type BannerVariantConfig = Record<BannerVariant, BannerVariantStyle>;
 
 export const variants: BannerVariantConfig = {
   informational: {
-    background: 'primaryWash',
-    iconColor: 'primary',
-    textColor: 'foreground',
-    primaryActionColor: 'primary',
-    secondaryActionColor: 'foreground',
-    iconButtonColor: 'foregroundMuted',
-    borderColor: undefined,
-  },
-  promotional: {
     background: 'background',
     iconColor: 'primary',
     textColor: 'foreground',
@@ -31,6 +22,15 @@ export const variants: BannerVariantConfig = {
     secondaryActionColor: 'foreground',
     iconButtonColor: 'foregroundMuted',
     borderColor: 'line',
+  },
+  promotional: {
+    background: 'primaryWash',
+    iconColor: 'primary',
+    textColor: 'foreground',
+    primaryActionColor: 'primary',
+    secondaryActionColor: 'foreground',
+    iconButtonColor: 'foregroundMuted',
+    borderColor: undefined,
   },
   danger: {
     background: 'negative',

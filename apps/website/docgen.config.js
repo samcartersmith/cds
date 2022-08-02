@@ -54,6 +54,7 @@ module.exports = {
     'animation/LottieStatusAnimation',
     'animation/useLottie',
     'animation/useLottieColorFilters',
+    'banner/Banner',
     'buttons/AvatarButton',
     'buttons/Button',
     'buttons/ButtonGroup',

@@ -1,0 +1,150 @@
+Banners display an important, concise message that provides actions for users to address or dismiss the banner. They should be displayed at the top of a screen, always below the top navigation bar. Banners persist until they are dismissed by the user or the product/system issue has been resolved.
+
+<Image
+  srcLight="/img/components/banner/types_light.png"
+  srcDark="/img/components/banner/types_dark.png"
+/>
+
+## Usage
+
+CDS recommends one banner should be displayed at a time
+
+- **Actions**: Banners can contain up to two actions or none at all
+- **Dismissal**: Inset banners can be dismissed via action or “x” affordance. Blocking fixed full width banners aren’t dismissible and content scrolls below the Banner.
+- **Icons**: Banners must contain an icon that best supports variant type
+- **Links**: Banners can support in-line links in the body text
+
+### Banner types
+
+The four types of banners are:
+
+- **Informational**: Inset, passive and informational
+- **Promotional**: Inset and full width, promotional
+- **Warning**: Inset, warning or error
+- **Danger**: Inset and full width, severe warning or error
+
+```jsx live borderless hideControls
+function InformationalExample() {
+  return (
+    <ResponsiveExample>
+      <VStack gap={2}>
+        <Tag colorScheme="blue">Informational</Tag>
+        <Banner title="Updates in progress" variant="informational" startIcon="info">
+          Additional changes can’t be made at this time.
+        </Banner>
+        <Banner
+          title="Where’s my interest?"
+          variant="informational"
+          startIcon="info"
+          primaryAction={<Link to="/components/banner">Learn more</Link>}
+        />
+        <Banner
+          title="Where’s my interest?"
+          variant="informational"
+          startIcon="info"
+          primaryAction={<Link to="/components/banner">Learn more</Link>}
+        >
+          cbETH is a token that represents ETH staked on Coinbase. The underlying interest you earn
+          on cbETH is reflected in cbETH’s price, rather than as an APR.
+        </Banner>
+      </VStack>
+    </ResponsiveExample>
+  );
+}
+```
+
+```jsx live borderless hideControls
+function PromotionalExample() {
+  return (
+    <ResponsiveExample>
+      <VStack gap={3}>
+        <Tag colorScheme="blue">Promotional</Tag>
+        <Banner
+          title="Trade like a Pro, right here on Coinbase"
+          variant="promotional"
+          startIcon="info"
+          primaryAction={<Link to="/components/banner">Transfer funds</Link>}
+        >
+          Coinbase Pro’s trading tools are now on Coinbase. Transfer your funds to access powerful
+          charts, limit orders, low fees, and more.
+        </Banner>
+        <Banner
+          title="Want to increase your account limits?"
+          variant="promotional"
+          startIcon="info"
+          primaryAction={<Link to="/components/banner">Increase limits</Link>}
+        >
+          Your account may be eligible for higher trading limits
+        </Banner>
+      </VStack>
+    </ResponsiveExample>
+  );
+}
+```
+
+```jsx live borderless hideControls
+function WarningExample() {
+  return (
+    <ResponsiveExample>
+      <VStack gap={3}>
+        <Tag colorScheme="red">Warning</Tag>
+        <Banner title="No nodes in sync" variant="warning" startIcon="error">
+          You must wait to send requests to your cluster until at least one node is in sync with the
+          head of the chain.
+        </Banner>
+      </VStack>
+    </ResponsiveExample>
+  );
+}
+```
+
+```jsx live borderless hideControls
+function DangerExample() {
+  return (
+    <ResponsiveExample>
+      <VStack gap={3}>
+        <Tag colorScheme="red">Danger</Tag>
+        <Banner
+          title="Account disconnected."
+          variant="danger"
+          startIcon="error"
+          primaryAction={<Link to="/components/banner">Update now</Link>}
+        />
+      </VStack>
+    </ResponsiveExample>
+  );
+}
+```
+
+### When to use
+
+Use a Banner when a general notification or error has occurred for the system or product and a specific task isn’t necessary.
+
+### Cross-Platform
+
+**Web vs React Native:** The only difference is on web where actions move below the body text when the presence of dismiss “x” is needed within the banner.
+
+## Anatomy
+
+<Image
+  srcLight="/img/components/banner/anatomy_light.png"
+  srcDark="/img/components/banner/anatomy_dark.png"
+/>
+
+## Sizing & Scaling
+
+Banners do react to [density](/foundation/scale) changes.
+
+## Content guidelines
+
+- Keep it concise, use short, declarative copy
+- Avoid going over over one line for the Headline, three lines for body copy but can be overridden
+- Actions should be 1-3 words
+
+## Resources
+
+- Want to see the UI spacing and alignment details? [Figma specs/redlines](https://www.figma.com/file/Ypz1PfuSLBsNlNmLalDzsQ/CDS-Banner?node-id=1277%3A64904)
+- Problem with the component's Figma symbol or with the code? [File a bug](<https://jira.coinbase-corp.com/secure/CreateIssueDetails!init.jspa?pid=15203&issuetype=1&priority=3&summary=%5BBug%5D%20&description=*Where%20is%20the%20bug?%20(figma,%20cds%20package,%20etc)*%0A%0A%0A*Repro%20Steps:*%0A1.%0A2.%0A%0A*Actual%20behavior:*%0A%0AAdd%20description,%20images,%20video%20of%20what%20actually%20happened.%0A%0A*Expected%20behavior:*%0A>)
+- CDS Banners DRIs: Garrett Olinger, Jennifer Liu
+- Got feedback about this component or general feedback about CDS? [Anonymous feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdlcOr5PIS9FPuzOQaZD3RuO_AZCu9zyx9pLZx9prLITn9JdQ/viewform)
+- Slack: [#ask-cds](https://app.slack.com/client/T02Q6DY7G/C01A6PKGM3J/thread/C029SR9RN1M-1647533367.203959?cdn_fallback=2)

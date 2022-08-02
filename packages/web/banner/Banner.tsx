@@ -3,6 +3,7 @@ import { css } from 'linaria';
 import { ForwardedRef, SpacingScale } from '@cbhq/cds-common';
 import { variants } from '@cbhq/cds-common/tokens/banner';
 import { BannerBaseProps } from '@cbhq/cds-common/types/BannerBaseProps';
+import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { HStack } from '../alpha/HStack';
@@ -11,6 +12,7 @@ import { Collapsible } from '../collapsible';
 import { useDimensions } from '../hooks/useDimensions';
 import { Icon } from '../icons';
 import { Box } from '../layout/Box';
+import { deviceBreakpoints } from '../layout/breakpoints';
 import { Pressable } from '../system/Pressable';
 import { Link, LinkProps } from '../typography';
 import { TextBody } from '../typography/TextBody';
@@ -24,7 +26,7 @@ const warningClassName = css`
   }
 `;
 
-const informationalClassName = css`
+const promotionalClassName = css`
   && {
     border-color: rgb(var(--blue10));
   }
@@ -36,6 +38,12 @@ const informationalClassName = css`
 const customSpacing = css`
   && {
     padding-top: 4px;
+  }
+`;
+
+const actionContainerStyle = css`
+  && {
+    white-space: nowrap;
   }
 `;
 
@@ -51,7 +59,9 @@ export type WebBannerProps = {
 } & BannerBaseProps;
 
 const breakpointConfig = {
-  breakpoints: { wide: 724 },
+  breakpoints: {
+    wide: deviceBreakpoints.phoneLandscape,
+  },
   // Ensure we only update on change, not for every resize event
   updateOnBreakpointChange: true,
 };
@@ -85,6 +95,7 @@ export const Banner = memo(
       const shouldUseVStack = useMemo(() => !isWide || showDismiss, [isWide, showDismiss]);
       // The nested Stack is referred to as Stack
       const Stack = useMemo(() => (shouldUseVStack ? VStack : HStack), [shouldUseVStack]);
+      const spacingStart: SpacingScale = useMemo(() => (isWide ? 4 : 2), [isWide]);
       const stackGap: SpacingScale = useMemo(
         () => (isWide && primaryAction && !showDismiss ? 3 : 1),
         [isWide, primaryAction, showDismiss],
@@ -93,7 +104,7 @@ export const Banner = memo(
         () =>
           cx(
             variant === 'warning' ? warningClassName : undefined,
-            variant === 'informational' ? informationalClassName : undefined,
+            variant === 'promotional' ? promotionalClassName : undefined,
             dangerouslySetClassName,
           ),
         [dangerouslySetClassName, variant],
@@ -163,14 +174,14 @@ export const Banner = memo(
       }, [secondaryAction, secondaryActionColor, testID]);
 
       return (
-        <Collapsible testID={`${testID}-collapsible`} collapsed={isCollapsed} ref={forwardedRef}>
+        <Collapsible testID={`${testID}-collapsible`} collapsed={isCollapsed} ref={observe}>
           <HStack
-            ref={observe}
+            ref={forwardedRef}
             // Consistent props
             width="100%"
             gap={2}
             spacingTop={2}
-            spacingStart={4}
+            spacingStart={spacingStart}
             spacingEnd={3}
             // Dynamic props
             spacingBottom={spacingBottom}
@@ -179,11 +190,16 @@ export const Banner = memo(
             bordered={bordered}
             background={background}
             borderColor={borderColor}
+            alignItems={isChildrenFalsy(children) && isWide ? 'center' : undefined}
             dangerouslySetClassName={stackClassName}
             dangerouslySetStyle={dangerouslySetStyle}
           >
             {/** Start */}
-            <Box dangerouslySetClassName={customSpacing}>
+            <Box
+              dangerouslySetClassName={
+                isChildrenFalsy(children) && isWide ? undefined : customSpacing
+              }
+            >
               <Icon testID={`${testID}-icon`} name={startIcon} size="s" color={iconColor} />
             </Box>
             <Stack
@@ -204,7 +220,13 @@ export const Banner = memo(
               </VStack>
               {/** Actions */}
               {(!!clonedPrimaryAction || !!clonedSecondaryAction) && (
-                <HStack testID={`${testID}-action`} spacingVertical={1} alignItems="center" gap={4}>
+                <HStack
+                  testID={`${testID}-action`}
+                  spacingVertical={1}
+                  alignItems="center"
+                  gap={4}
+                  dangerouslySetClassName={actionContainerStyle}
+                >
                   {clonedPrimaryAction}
                   {clonedSecondaryAction}
                 </HStack>

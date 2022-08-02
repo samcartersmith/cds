@@ -35,7 +35,7 @@ const stylesForVariant = {
       borderColor: paletteValueToRgbaString('red10', 'dark', true),
     },
   },
-  informational: {
+  promotional: {
     light: {
       borderColor: paletteValueToRgbaString('blue10', 'light', true),
     },
@@ -143,7 +143,7 @@ export const Banner = memo(
 
     // The first HStack is referred to as root
     const rootStyle = useMemo(() => {
-      const shouldOverride = variant === 'warning' || variant === 'informational';
+      const shouldOverride = variant === 'warning' || variant === 'promotional';
       if (shouldOverride) return stylesForVariant[variant][spectrum];
 
       return undefined;

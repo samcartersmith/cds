@@ -244,6 +244,14 @@ const sidebars = {
         },
         { type: 'doc', id: 'components/layout/Box/box', label: 'Box' },
         {
+          type: 'doc',
+          id: 'components/banner/banner',
+          label: 'Banner',
+          customProps: {
+            tag: 'new',
+          },
+        },
+        {
           type: 'category',
           label: 'Button',
           items: [

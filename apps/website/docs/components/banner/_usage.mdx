@@ -1,0 +1,83 @@
+## Banner examples
+
+These are a handful of common patterns you'll use when composing Banners with CDS. This list is not exhaustive, but should be a good starting point
+
+```jsx live borderless
+<Banner
+  title="A compeling informational title (not exceeding two lines)"
+  variant="informational"
+  startIcon="info"
+  primaryAction={<Link>Primary</Link>}
+  secondaryAction={<Link>Secondary</Link>}
+>
+  Banner body content that can run over up to three lines maximum.
+</Banner>
+```
+
+```jsx live borderless
+<Banner
+  title="A compeling informational title (not exceeding two lines)"
+  variant="informational"
+  startIcon="info"
+  primaryAction={<Link>Primary</Link>}
+  secondaryAction={<Link>Secondary</Link>}
+  showDismiss
+>
+  Banner body content that can run over up to three lines maximum.
+</Banner>
+```
+
+```jsx live borderless
+<Banner
+  title="Nice, chill promotional title"
+  variant="promotional"
+  startIcon="info"
+  primaryAction={<Link>Primary</Link>}
+>
+  Banner body content that can run over up to three lines maximum.
+</Banner>
+```
+
+```jsx live borderless
+<Banner title="Here is another you can dismiss" variant="promotional" startIcon="info" showDismiss>
+  Banner body content that can run over up to three lines maximum.
+</Banner>
+```
+
+```jsx live borderless
+<Banner
+  title="Kinda scary... use a warning variant when you mean business"
+  variant="warning"
+  startIcon="error"
+  primaryAction={<Link>Primary</Link>}
+>
+  Banner body content that can run over up to three lines maximum.
+</Banner>
+```
+
+```jsx live borderless
+<Banner
+  title="Woahhhh... Now we're not playing around. Somethings got to be broken, right?"
+  variant="danger"
+  startIcon="error"
+  primaryAction={<Link>Primary</Link>}
+  secondaryAction={<Link>Secondary</Link>}
+>
+  Banner body content that can run over up to three lines maximum.
+</Banner>
+```
+
+```jsx live borderless
+<Banner
+  title="This banner is full-width, meaning it has no border or border-radius"
+  variant="promotional"
+  startIcon="pencil"
+  bordered={false}
+  borderRadius="borderedNone"
+  showDismiss
+  primaryAction={<Link>Primary</Link>}
+>
+  It will fit nicely into your existing containers. Banner body content that can run over up to
+  three lines maximum.
+</Banner>
+```

@@ -41,6 +41,7 @@ import { AppSwitcherContent } from '@cbhq/cds-web/__stories__/AppSwitcherContent
 import { UserSwitcherContent } from '@cbhq/cds-web/__stories__/UserSwitcherContent';
 import * as CDSAccordion from '@cbhq/cds-web/accordion';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
+import * as CDSBanner from '@cbhq/cds-web/banner/Banner';
 import * as CDSButtons from '@cbhq/cds-web/buttons';
 import * as CDSCardElements from '@cbhq/cds-web/cards';
 import * as CDSCells from '@cbhq/cds-web/cells';
@@ -56,6 +57,7 @@ import { useA11yControlledVisibility } from '@cbhq/cds-web/hooks/useA11yControll
 import { useBreakpoints } from '@cbhq/cds-web/hooks/useBreakpoints';
 import { useCheckboxGroupState } from '@cbhq/cds-web/hooks/useCheckboxGroupState';
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
+import { useDimensions } from '@cbhq/cds-web/hooks/useDimensions';
 import { useHasMounted } from '@cbhq/cds-web/hooks/useHasMounted';
 import { useIsBrowser } from '@cbhq/cds-web/hooks/useIsBrowser';
 import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
@@ -142,6 +144,7 @@ const ReactLiveScope: unknown = {
   lottieFiles,
   useAccessibleForeground,
   useBreakpoints,
+  useDimensions,
   useCheckboxGroupState,
   usePalette,
   usePaletteConfig,
@@ -174,6 +177,7 @@ const ReactLiveScope: unknown = {
   Text: CDSTypography.TextBody,
   ...CDSAccordion,
   ...CDSAnimation,
+  ...CDSBanner,
   ...CDSButtons,
   ...CDSCardElements,
   ...CDSCells,
