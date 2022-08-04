@@ -48,8 +48,10 @@ export const DotCount = memo(
     }, [palette, pinStyles, variant]);
 
     return (
-      <View onLayout={onChildrenLayout} {...props}>
-        {children}
+      <View {...props}>
+        <View testID={`${props.testID}-children`} onLayout={onChildrenLayout}>
+          {children}
+        </View>
         {count > 0 && (
           <View
             testID="dotcount-inner-container"

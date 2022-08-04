@@ -87,7 +87,7 @@ describe('DotCount', () => {
     );
 
     // Trigger onLayout for the icon
-    fireEvent(getByTestId(DOTCOUNT_TESTID), 'layout', {
+    fireEvent(getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
       nativeEvent: { layout: { height: iconSize, width: iconSize } },
     });
 

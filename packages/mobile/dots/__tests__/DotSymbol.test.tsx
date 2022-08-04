@@ -37,7 +37,7 @@ describe('DotSymbol', () => {
     );
 
     // Trigger onLayout for the icon
-    fireEvent(getByTestId(DOTSYMBOL_TESTID), 'layout', {
+    fireEvent(getByTestId(`${DOTSYMBOL_TESTID}-children`), 'layout', {
       nativeEvent: { layout: { height: iconSize, width: iconSize } },
     });
 

@@ -59,8 +59,10 @@ export const DotSymbol = memo(
     }, []);
 
     return (
-      <View onLayout={onChildrenLayout} {...props}>
-        {children}
+      <View {...props}>
+        <View testID={`${props.testID}-children`} onLayout={onChildrenLayout}>
+          {children}
+        </View>
         <View testID="dotsymbol-inner-container" style={pinStyles}>
           {source !== undefined && (
             <RemoteImage

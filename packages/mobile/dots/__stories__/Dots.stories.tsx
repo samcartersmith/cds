@@ -5,6 +5,7 @@ import { dotBuilder } from '@cbhq/cds-common/internal/dotBuilder';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons/Icon';
 import { Box } from '../../layout/Box';
+import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { Avatar } from '../../media/Avatar';
 import { TextLegal } from '../../typography';
@@ -18,6 +19,7 @@ const {
   DotCountVariant,
   DotCountPlacements,
   DotCountOverlap,
+  DotCountComplex,
   DotStatusColorBasic,
   DotStatusColorVariant,
   DotStatusColorSizes,
@@ -27,6 +29,7 @@ const {
   DotSymbolIcon,
   DotSymbolOverlap,
   DotSymbolSizes,
+  DotSymbolComplex,
 } = dotBuilder(
   DotCount,
   DotStatusColor,
@@ -37,6 +40,7 @@ const {
   TextLegal,
   Icon,
   VStack,
+  HStack,
 );
 
 const DotScreen = () => {
@@ -53,6 +57,9 @@ const DotScreen = () => {
       </Example>
       <Example inline title="DotCount Overlap">
         <DotCountOverlap />
+      </Example>
+      <Example inline title="DotCount Complex">
+        <DotCountComplex />
       </Example>
       <Example inline title="DotStatusColor Basic">
         <DotStatusColorBasic />
@@ -83,6 +90,9 @@ const DotScreen = () => {
       </Example>
       <Example inline title="DotSymbol Overlap">
         <DotSymbolOverlap />
+      </Example>
+      <Example inline title="DotSymbol Complex">
+        <DotSymbolComplex />
       </Example>
     </ExampleScreen>
   );

@@ -1,7 +1,7 @@
 import { dotBuilder } from '@cbhq/cds-common/internal/dotBuilder';
 
 import { Icon } from '../../icons/Icon';
-import { Box, VStack } from '../../layout';
+import { Box, HStack, VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
 import { TextLegal } from '../../typography';
 import { TextLabel1 } from '../../typography/TextLabel1';
@@ -13,7 +13,7 @@ export default {
   component: DotCount,
 };
 
-export const { DotCountBasic, DotCountOverlap, DotCountVariant, DotCountPlacements } = dotBuilder(
+export const { AllDotCount } = dotBuilder(
   DotCount,
   DotStatusColor,
   DotSymbol,
@@ -23,4 +23,5 @@ export const { DotCountBasic, DotCountOverlap, DotCountVariant, DotCountPlacemen
   (props) => <TextLegal as="p" {...props} />,
   Icon,
   (props) => <VStack {...props} />,
+  (props) => <HStack {...props} />,
 );

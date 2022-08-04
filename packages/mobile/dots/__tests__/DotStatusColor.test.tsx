@@ -57,7 +57,7 @@ describe('DotStatusColor', () => {
     );
 
     // Trigger onLayout for the icon
-    fireEvent(getByTestId(DOTSTATUSCOLOR_TESTID), 'layout', {
+    fireEvent(getByTestId(`${DOTSTATUSCOLOR_TESTID}-children`), 'layout', {
       nativeEvent: { layout: { height: iconSize, width: iconSize } },
     });
 

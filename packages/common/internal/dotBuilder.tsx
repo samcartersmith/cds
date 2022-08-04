@@ -1,6 +1,6 @@
 import React, { ComponentType } from 'react';
 
-import { avatarIconSizeMap } from '../tokens/dot';
+import { avatarDotSizeMap, avatarIconSizeMap } from '../tokens/dot';
 import type {
   AvatarBaseProps,
   BoxBaseProps,
@@ -35,7 +35,9 @@ export function dotBuilder(
   TextLegal: ComponentType<TextBaseProps>,
   Icon: ComponentType<IconBaseProps & { name: IconName }>,
   VStack: ComponentType<BoxBaseProps & StackBaseProps>,
+  HStack: ComponentType<BoxBaseProps & StackBaseProps>,
 ) {
+  /** START DOTCOUNT */
   const DotCountBasic = () => {
     const counts = [1, 100, 30, 2, 0, 99];
     return (
@@ -50,10 +52,6 @@ export function dotBuilder(
         </Box>
       </>
     );
-  };
-
-  const DotStatusColorBasic = () => {
-    return <DotStatusColor variant="positive" />;
   };
 
   const DotCountVariant = () => {
@@ -108,6 +106,46 @@ export function dotBuilder(
         </DotCount>
       </VStack>
     );
+  };
+
+  /**
+   * This is test that when the Dot is placed next to other
+   * items, the position of the pinning is still correct
+   */
+  const DotCountComplex = () => {
+    return (
+      <HStack gap={2}>
+        <DotCount count={2} overlap="circular" pin="top-end">
+          <Avatar shape="circle" size="xxxl" alt="Sneezy" />
+        </DotCount>
+        <VStack>
+          <TextLabel1>Hello Hello</TextLabel1>
+          <TextLabel1>Hello Hello</TextLabel1>
+          <TextLabel1>Hello Hello</TextLabel1>
+          <TextLabel1>Hello Hello</TextLabel1>
+          <TextLabel1>Hello Hello</TextLabel1>
+          <TextLabel1>Hello Hello</TextLabel1>
+        </VStack>
+      </HStack>
+    );
+  };
+
+  const AllDotCount = () => {
+    return (
+      <VStack gap={2}>
+        <DotCountBasic />
+        <DotCountVariant />
+        <DotCountOverlap />
+        <DotCountPlacements />
+        <DotCountComplex />
+      </VStack>
+    );
+  };
+
+  /** START DOTSTATUS */
+
+  const DotStatusColorBasic = () => {
+    return <DotStatusColor variant="positive" />;
   };
 
   const DotStatusColorVariant = () => {
@@ -185,6 +223,20 @@ export function dotBuilder(
       </>
     );
   };
+
+  const AllDotStatusColor = () => {
+    return (
+      <VStack gap={2}>
+        <DotStatusColorBasic />
+        <DotStatusColorVariant />
+        <DotStatusColorSizes />
+        <DotStatusColorPlacements />
+        <DotStatusColorOverlap />
+      </VStack>
+    );
+  };
+
+  /** START DOTSYMBOL */
 
   const DotSymbolPlacements = () => {
     return (
@@ -286,19 +338,63 @@ export function dotBuilder(
     );
   };
 
+  /**
+   * This is test that when the Dot is placed next to other
+   * items, the position of the pinning is still correct
+   */
+  const DotSymbolComplex = () => {
+    return (
+      <HStack gap={2}>
+        <DotSymbol
+          overlap="circular"
+          pin="bottom-end"
+          source={assets.polygon.imageUrl}
+          size={avatarDotSizeMap.xxxl}
+        >
+          <Avatar shape="square" size="xxl" alt="Sneezy" />
+        </DotSymbol>
+        <VStack>
+          <TextLabel1>Hello Hello</TextLabel1>
+          <TextLabel1>Hello Hello</TextLabel1>
+          <TextLabel1>Hello Hello</TextLabel1>
+          <TextLabel1>Hello Hello</TextLabel1>
+          <TextLabel1>Hello Hello</TextLabel1>
+          <TextLabel1>Hello Hello</TextLabel1>
+        </VStack>
+      </HStack>
+    );
+  };
+
+  const AllDotSymbol = () => {
+    return (
+      <VStack gap={2}>
+        <DotSymbolPlacements />
+        <DotSymbolSizes />
+        <DotSymbolIcon />
+        <DotSymbolOverlap />
+        <DotSymbolComplex />
+      </VStack>
+    );
+  };
+
   return {
     DotCountBasic,
     DotCountVariant,
     DotCountOverlap,
     DotCountPlacements,
+    DotCountComplex,
+    AllDotCount,
     DotStatusColorBasic,
     DotStatusColorVariant,
     DotStatusColorSizes,
     DotStatusColorPlacements,
     DotStatusColorOverlap,
+    AllDotStatusColor,
     DotSymbolPlacements,
     DotSymbolSizes,
     DotSymbolIcon,
     DotSymbolOverlap,
+    DotSymbolComplex,
+    AllDotSymbol,
   };
 }

@@ -43,8 +43,10 @@ export const DotStatusColor = memo(
     }, [iconSize, palette, pinStyles, variant]);
 
     return (
-      <View onLayout={onLayout} {...props}>
-        {children}
+      <View {...props}>
+        <View testID={`${props.testID}-children`} onLayout={onLayout}>
+          {children}
+        </View>
         <View testID="dotstatuscolor-inner-container" style={dotContentStyles} />
       </View>
     );

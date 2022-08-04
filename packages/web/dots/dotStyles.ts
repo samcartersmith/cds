@@ -4,6 +4,7 @@ import { DotOverlap, PinPlacement } from '@cbhq/cds-common';
 export const dotRootContainerStyles = css`
   && {
     width: fit-content;
+    height: fit-content;
     position: relative;
   }
 `;
