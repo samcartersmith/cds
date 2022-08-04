@@ -101,7 +101,17 @@ export const IllustrationSheet = function IllustrationSheet({
 }) {
   const [query, setQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const options = ['all', 'navigation illustration', 'app switcher', 'logged out'];
+  const options = [
+    'all',
+    'navigation illustration',
+    'app switcher',
+    'logged out',
+    'success state',
+    'warning state',
+    'error state',
+    'system error',
+    'empty state',
+  ];
   const names = variantToNamesMap[variant];
   const dimensions = illustrationDimensions[variant];
   const defaultVal = illustrationDimensionDefaults[variant];
