@@ -10,7 +10,7 @@ export type HStackProps<As extends BoxElement> = Omit<BoxProps<As>, 'flexDirecti
 
 export const HStack = memo(
   forwardRef(function HStack<As extends BoxElement = 'div'>(
-    { as, children, gap: gapProp, dangerouslySetClassName, ...props }: HStackProps<As>,
+    { children, gap: gapProp, dangerouslySetClassName, ...props }: HStackProps<As>,
     forwardedRef: ForwardedRef<HTMLElement>,
   ) {
     return (

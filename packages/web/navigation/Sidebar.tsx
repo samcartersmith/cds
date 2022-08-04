@@ -1,23 +1,32 @@
-import React, { memo, ReactElement, ReactNode, useMemo } from 'react';
+import React, { Children, memo, ReactElement, ReactNode, useMemo } from 'react';
 import { css } from 'linaria';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
 
+import { VStack } from '../alpha/VStack';
 import { useDimensions } from '../hooks/useDimensions';
-import { VStack } from '../layout';
 import { deviceBreakpoints } from '../layout/breakpoints';
 import { ThemeProvider } from '../system/ThemeProvider';
 
 import { SidebarProvider } from './SidebarContext';
 
+// STYLES
 const breakpointObserverClassName = css`
   width: 100%;
   position: fixed;
   visibility: hidden;
   pointer-events: none;
   height: 0;
+`;
+const liClassName = css`
+  list-style: none;
+`;
+const ulClassName = css`
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
 `;
 
 type BreakpointProps = { collapsed: number; expanded: number };
@@ -78,6 +87,14 @@ export const Sidebar: React.FC<SidebarProps> = memo(
     );
     const sidebarContext = useMemo(() => ({ collapsed: computedCollapse }), [computedCollapse]);
 
+    const liWrappedChildren = useMemo(
+      () =>
+        Children.map(children, (child) => {
+          return <li className={liClassName}>{child}</li>;
+        }),
+      [children],
+    );
+
     return (
       <ThemeProvider scale={DEFAULT_SCALE} display="contents">
         <SidebarProvider value={sidebarContext}>
@@ -102,8 +119,8 @@ export const Sidebar: React.FC<SidebarProps> = memo(
             <VStack spacingTop={1} spacingStart={1} spacingBottom={4}>
               {logo}
             </VStack>
-            <VStack gap={0.5} offsetStart={0.5} role="group">
-              {children}
+            <VStack gap={0.5} offsetStart={0.5} as="ul" dangerouslySetClassName={ulClassName}>
+              {liWrappedChildren}
             </VStack>
           </VStack>
           <span className={breakpointObserverClassName} ref={ref} />

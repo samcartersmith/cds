@@ -10,7 +10,7 @@ export type VStackProps<As extends BoxElement> = Omit<BoxProps<As>, 'flexDirecti
 
 export const VStack = memo(
   forwardRef(function VStack<As extends BoxElement = 'div'>(
-    { as, children, gap: gapProp, dangerouslySetClassName, ...props }: VStackProps<As>,
+    { children, gap: gapProp, dangerouslySetClassName, ...props }: VStackProps<As>,
     forwardedRef: ForwardedRef<HTMLElement>,
   ) {
     return (
