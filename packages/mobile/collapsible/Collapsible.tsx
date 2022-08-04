@@ -75,7 +75,12 @@ export const Collapsible = memo(
       );
 
       return (
-        <Animated.View testID={testID} style={containerStyles} ref={forwardedRef}>
+        <Animated.View
+          testID={testID}
+          style={containerStyles}
+          ref={forwardedRef}
+          aria-expanded={!collapsed}
+        >
           <ScrollView
             horizontal={horizontal}
             scrollEnabled={shouldEnableScroll}

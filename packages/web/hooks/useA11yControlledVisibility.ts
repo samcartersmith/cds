@@ -3,6 +3,15 @@ import { generateRandomId } from '@cbhq/cds-utils';
 
 export type AriaHasPopupType = 'false' | 'true' | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
 
+export type Options = {
+  accessibilityLabel?: string;
+  hasPopupType?: AriaHasPopupType;
+};
+const defaultOptions: Options = {
+  accessibilityLabel: undefined,
+  hasPopupType: undefined,
+};
+
 export type AccessibleControlledReturnType = {
   triggerAccessibilityProps: {
     'aria-expanded': boolean;
@@ -18,7 +27,7 @@ export type AccessibleControlledReturnType = {
 /** hook that generates unique aria labels and attributes for trigger element that controls the visibility of another controlled element */
 export const useA11yControlledVisibility = (
   isVisible: boolean,
-  accessibilityLabel?: string,
+  { accessibilityLabel, hasPopupType = 'dialog' }: Options | undefined = defaultOptions,
 ): AccessibleControlledReturnType => {
   const uniqueId = useMemo(() => generateRandomId(accessibilityLabel), [accessibilityLabel]);
 
@@ -26,9 +35,9 @@ export const useA11yControlledVisibility = (
     () => ({
       'aria-expanded': isVisible,
       'aria-controls': uniqueId,
-      'aria-haspopup': 'dialog' as AriaHasPopupType,
+      'aria-haspopup': hasPopupType,
     }),
-    [isVisible, uniqueId],
+    [hasPopupType, isVisible, uniqueId],
   );
 
   const controlledElementAccessibilityProps = useMemo(

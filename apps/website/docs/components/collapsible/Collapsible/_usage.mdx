@@ -2,14 +2,29 @@ You can basically put anything inside the `Collapsible` component to make it exp
 
 ### Basic Collapsible
 
+:::note a11y for web
+
+In order to ensure Collapsible components are accessible on the web, we need to setup the trigger and Collapsible to reference eachother correctly. The `useA11yControlledVisibility` is ideal for this, but you can also wire up each `aria-*` attr manually following the [aria-expanded](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-expanded) spec.
+
+:::
+
 ```jsx live
 function BasicCollapsible() {
   const [collapsed, { toggle }] = useToggler(true);
 
+  // Web only a11y configuration
+  const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
+    useA11yControlledVisibility(!collapsed, {
+      accessibilityLabel: 'cds-collapsible',
+      hasPopupType: 'true',
+    });
+
   return (
     <ExampleWithThemeToggles>
-      <Button onPress={toggle}>Click me!</Button>
-      <Collapsible collapsed={collapsed} spacing={3}>
+      <Button onPress={toggle} {...triggerAccessibilityProps}>
+        Click me!
+      </Button>
+      <Collapsible collapsed={collapsed} spacing={3} {...controlledElementAccessibilityProps}>
         <FeatureEntryCard
           title="Send a crypto gift"
           description="Share the gift of crypto this holiday season"
@@ -29,7 +44,6 @@ Place `Collapsible` above the trigger to expand top.
 ```jsx live
 function ExpandTop() {
   const [collapsed, { toggle }] = useToggler(true);
-
   return (
     <ExampleWithThemeToggles>
       <Collapsible collapsed={collapsed}>

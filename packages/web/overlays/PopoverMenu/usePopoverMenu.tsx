@@ -36,7 +36,7 @@ export const usePopoverMenu = ({
 
   // used to generate unique aria labels and attributes
   const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
-    useA11yControlledVisibility(visible, accessibilityLabel);
+    useA11yControlledVisibility(visible, { accessibilityLabel });
 
   // if a min or max width is declared, we don't want to instantiate width with the default of 100%
   const width = minWidth || maxWidth ? undefined : customWidth ?? '100%';

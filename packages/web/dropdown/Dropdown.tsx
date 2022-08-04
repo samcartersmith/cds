@@ -56,7 +56,7 @@ export const ModalDropdown = memo(
       ref: ForwardedRef<DropdownRefProps>,
     ) => {
       const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
-        useA11yControlledVisibility(visible, accessibilityLabel);
+        useA11yControlledVisibility(visible, { accessibilityLabel });
 
       const context = useMemo(
         () => ({

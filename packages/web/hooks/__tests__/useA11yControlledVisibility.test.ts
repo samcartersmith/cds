@@ -16,10 +16,18 @@ describe('useA11yControlledVisibility', () => {
     expect(result.current.triggerAccessibilityProps['aria-haspopup']).toBe('dialog');
   });
   it('expect trigger aria-controls prop and controlled element id to contain accessibility label when provided', () => {
-    const { result } = renderHook(() => useA11yControlledVisibility(false, mockAccessibilityLabel));
+    const { result } = renderHook(() =>
+      useA11yControlledVisibility(false, { accessibilityLabel: mockAccessibilityLabel }),
+    );
     expect(result.current.triggerAccessibilityProps['aria-controls']).toContain(
       mockAccessibilityLabel,
     );
     expect(result.current.controlledElementAccessibilityProps.id).toContain(mockAccessibilityLabel);
+  });
+  it('expect trigger aria-controls prop and controlled element id to contain correct hasPopupType when provided', () => {
+    const { result } = renderHook(() =>
+      useA11yControlledVisibility(false, { hasPopupType: 'true' }),
+    );
+    expect(result.current.triggerAccessibilityProps['aria-haspopup']).toBe('true');
   });
 });

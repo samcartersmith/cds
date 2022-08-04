@@ -37,6 +37,7 @@ import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineAr
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import { nux } from '@cbhq/cds-lottie-files';
+import { generateRandomId } from '@cbhq/cds-utils/string';
 import { AppSwitcherContent } from '@cbhq/cds-web/__stories__/AppSwitcherContent';
 import { UserSwitcherContent } from '@cbhq/cds-web/__stories__/UserSwitcherContent';
 import * as CDSAccordion from '@cbhq/cds-web/accordion';
@@ -171,6 +172,7 @@ const ReactLiveScope: unknown = {
   useOverlay,
   useToast,
   getZIndexFromRow,
+  generateRandomId,
   useEventHandler,
   useIsBrowser,
   // CDS Components

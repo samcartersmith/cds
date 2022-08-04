@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { generateRandomId } from '@cbhq/cds-utils/string';
 
 import { useToggler } from '../hooks/useToggler';
 import type {
@@ -12,8 +13,13 @@ import type {
 import { loremIpsum } from './data/loremIpsum';
 
 export type CreateCollapsibleProps = {
-  Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
-  Collapsible: React.ComponentType<CollapsibleBaseProps>;
+  Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void; id?: string }>;
+  Collapsible: React.ComponentType<
+    CollapsibleBaseProps & {
+      id?: string;
+      accessibilityLabelledBy?: string;
+    }
+  >;
   TextBody: React.ComponentType<TextBaseProps & { as?: string }>;
   DotCount: React.ComponentType<DotCountBaseProps>;
   HStack: React.ComponentType<BoxBaseProps>;
@@ -28,11 +34,21 @@ export function collapsibleBuilder({
 }: CreateCollapsibleProps) {
   const BasicCollapsible = () => {
     const [collapsed, { toggle }] = useToggler(true);
+    // Use the useA11yControlledVisibility to setup the collapsible a11y props more easily
+    const triggerId = useMemo(() => generateRandomId('trigger-id--'), []);
+    const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
 
     return (
       <>
-        <Button onPress={toggle}>Click me!</Button>
-        <Collapsible collapsed={collapsed}>
+        <Button
+          onPress={toggle}
+          aria-controls={collapsibleId}
+          id={triggerId}
+          aria-expanded={!collapsed}
+        >
+          Click me!
+        </Button>
+        <Collapsible collapsed={collapsed} accessibilityLabelledBy={triggerId} id={collapsibleId}>
           <TextBody as="p">{loremIpsum}</TextBody>
         </Collapsible>
       </>
@@ -41,24 +57,37 @@ export function collapsibleBuilder({
 
   const RevealTop = () => {
     const [collapsed, { toggle }] = useToggler(true);
+    const triggerId = useMemo(() => generateRandomId('trigger-id--'), []);
+    const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
 
     return (
       <>
-        <Collapsible collapsed={collapsed}>
+        <Collapsible collapsed={collapsed} accessibilityLabelledBy={triggerId} id={collapsibleId}>
           <TextBody as="p">{loremIpsum}</TextBody>
         </Collapsible>
-        <Button onPress={toggle}>Click me!</Button>
+        <Button onPress={toggle} aria-controls={collapsibleId} id={triggerId}>
+          Click me!
+        </Button>
       </>
     );
   };
 
   const DefaultExpanded = () => {
     const [collapsed, { toggle }] = useToggler(false);
+    const triggerId = useMemo(() => generateRandomId('trigger-id--'), []);
+    const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
 
     return (
       <>
-        <Button onPress={toggle}>Click me!</Button>
-        <Collapsible collapsed={collapsed}>
+        <Button
+          onPress={toggle}
+          aria-controls={collapsibleId}
+          id={triggerId}
+          aria-expanded={!collapsed}
+        >
+          Click me!
+        </Button>
+        <Collapsible collapsed={collapsed} accessibilityLabelledBy={triggerId} id={collapsibleId}>
           <TextBody as="p">{loremIpsum}</TextBody>
         </Collapsible>
       </>
@@ -67,11 +96,25 @@ export function collapsibleBuilder({
 
   const Scroll = () => {
     const [collapsed, { toggle }] = useToggler(true);
+    const triggerId = useMemo(() => generateRandomId('trigger-id--'), []);
+    const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
 
     return (
       <>
-        <Button onPress={toggle}>Click me!</Button>
-        <Collapsible collapsed={collapsed} maxHeight={400}>
+        <Button
+          onPress={toggle}
+          aria-controls={collapsibleId}
+          id={triggerId}
+          aria-expanded={!collapsed}
+        >
+          Click me!
+        </Button>
+        <Collapsible
+          collapsed={collapsed}
+          maxHeight={400}
+          accessibilityLabelledBy={triggerId}
+          id={collapsibleId}
+        >
           <TextBody as="p">{loremIpsum.repeat(10)}</TextBody>
         </Collapsible>
       </>
@@ -80,11 +123,26 @@ export function collapsibleBuilder({
 
   const Horizontal = () => {
     const [collapsed, { toggle }] = useToggler(true);
+    const triggerId = useMemo(() => generateRandomId('trigger-id--'), []);
+    const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
 
     return (
       <HStack alignItems="center">
-        <Button onPress={toggle}>Click me!</Button>
-        <Collapsible collapsed={collapsed} direction="horizontal">
+        <Button
+          onPress={toggle}
+          aria-controls={collapsibleId}
+          id={triggerId}
+          aria-expanded={!collapsed}
+        >
+          Click me!
+        </Button>
+        <Collapsible
+          id={collapsibleId}
+          accessibilityLabelledBy={triggerId}
+          direction="horizontal"
+          maxHeight={400}
+          collapsed={collapsed}
+        >
           <DotCount count={100} />
           <DotCount count={1} />
           <DotCount count={99} />
@@ -95,11 +153,25 @@ export function collapsibleBuilder({
 
   const MockCollapsible = () => {
     const [collapsed, { toggle }] = useToggler(true);
+    const triggerId = useMemo(() => generateRandomId('trigger-id--'), []);
+    const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
 
     return (
       <>
-        <Button onPress={toggle}>Click me!</Button>
-        <Collapsible collapsed={collapsed} testID="mock-collapse">
+        <Button
+          onPress={toggle}
+          aria-controls={collapsibleId}
+          id={triggerId}
+          aria-expanded={!collapsed}
+        >
+          Click me!
+        </Button>
+        <Collapsible
+          id={collapsibleId}
+          accessibilityLabelledBy={triggerId}
+          collapsed={collapsed}
+          testID="mock-collapse"
+        >
           <TextBody as="p">Collapsible Content</TextBody>
         </Collapsible>
       </>

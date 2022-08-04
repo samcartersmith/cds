@@ -28,7 +28,7 @@ export const Collapsible = memo(
         direction = 'vertical',
         testID,
         id,
-        role,
+        role = 'region',
         dangerouslyDisableOverflowHidden = false,
         // Spacing
         spacing,
@@ -73,11 +73,12 @@ export const Collapsible = memo(
       return (
         <motion.div
           {...styles}
-          aria-labelledby={accessibilityLabelledBy}
           data-testid={testID}
-          id={id}
-          role={role}
           ref={forwardedRef}
+          // A11y props
+          id={id}
+          aria-labelledby={accessibilityLabelledBy}
+          role={role}
         >
           <div className={outerSpacing}>
             <Stack
