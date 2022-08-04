@@ -83,7 +83,7 @@ type TableCellBaseProps = {
   /**
    * The spacing to use on the parent wrapper of Cell
    */
-  outerSpacing?: CellProps['innerSpacing'];
+  outerSpacing?: CellProps['outerSpacing'];
   /**
    * The spacing to use on the inner content of Cell
    * @default { spacingHorizontal: 0 }
@@ -91,6 +91,12 @@ type TableCellBaseProps = {
   innerSpacing?: CellProps['innerSpacing'];
   /** Specify spacing styles by device breakpoint */
   responsiveConfig?: CellSharedProps['responsiveConfig'];
+  /**
+   * Use as="th" to mark this cell as a header for screen readers
+   * @example: https://go/cds-table-cell-a11y
+   * @default `th` when rendered inside a TableHeader, `td` when rendered inside a TableBody or TableFooter
+   */
+  as?: 'td' | 'th';
 } & TableCellSharedProps;
 
 type TableCellPropsWithInputs = {

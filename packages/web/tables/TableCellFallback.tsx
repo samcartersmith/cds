@@ -11,8 +11,19 @@ import type { TableCellFallbackProps } from './types/tableCellFallbackTypes';
 export type { TableCellFallbackProps };
 
 export const TableCellFallback = memo(
-  ({ title, start, end, subtitle, testID, ...rest }: TableCellFallbackProps) => {
-    const TableCellComponent = useTableCellTag();
+  ({
+    title,
+    start,
+    end,
+    subtitle,
+    testID,
+    as,
+    outerSpacing,
+    innerSpacing,
+    responsiveConfig,
+    ...rest
+  }: TableCellFallbackProps) => {
+    const TableCellComponent = useTableCellTag(as);
     // Depending on compact value
     const { compact } = useTableContext();
     const textSpacingTop = useMemo(() => (!compact && title ? 1 : 0.5), [compact, title]);
@@ -20,6 +31,14 @@ export const TableCellFallback = memo(
 
     // Depends on tableSpacing value
     const tableCellSpacing = useTableCellSpacing();
+    const cellOuterSpacing = useMemo(
+      () => outerSpacing ?? tableCellSpacing?.outer,
+      [outerSpacing, tableCellSpacing?.outer],
+    );
+    const cellInnerSpacing = useMemo(
+      () => innerSpacing ?? tableCellSpacing?.inner,
+      [innerSpacing, tableCellSpacing?.inner],
+    );
 
     return (
       <TableCellComponent data-testid={testID} className={tableCell} {...rest}>
@@ -28,8 +47,9 @@ export const TableCellFallback = memo(
           reduceHorizontalSpacing
           accessory={end && <MediaFallback type={end} />}
           media={start && <MediaFallback type={start} />}
-          outerSpacing={tableCellSpacing.outer}
-          innerSpacing={tableCellSpacing.inner}
+          outerSpacing={cellOuterSpacing}
+          innerSpacing={cellInnerSpacing}
+          responsiveConfig={responsiveConfig}
         >
           {title && <Fallback height={24} width={45} percentage />}
           {subtitle && <Fallback height={16} width={35} spacingTop={textSpacingTop} percentage />}

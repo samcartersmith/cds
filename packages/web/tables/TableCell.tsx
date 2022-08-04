@@ -44,6 +44,7 @@ export const TableCell = memo(
     innerSpacing,
     outerSpacing,
     responsiveConfig,
+    as,
     ...props
   }: TableCellProps) => {
     // THROW WANRING IN DEVELOPMENT
@@ -64,20 +65,6 @@ export const TableCell = memo(
     const defaultJustifyContent = direction === 'vertical' ? 'flex-start' : 'space-between';
     const defaultAlignItems = direction === 'vertical' ? 'flex-start' : 'center';
     const shouldHandleOverflow = !!overflow && !width;
-
-    /**
-     * ===================================================
-     * CONDITIONALS COMPONENTS
-     * These variables get their default value from a hook
-     * so need to be memoized and computed here
-     * ===================================================
-     */
-    const TableCellComponent = useTableCellTag();
-    const Stack = useMemo(() => (direction === 'vertical' ? VStack : HStack), [direction]);
-    const TextComponent = useMemo(
-      () => (TableCellComponent === 'th' ? TextHeadline : TextBody),
-      [TableCellComponent],
-    );
 
     /**
      * ===================================================
@@ -126,6 +113,25 @@ export const TableCell = memo(
 
     /**
      * ===================================================
+     * CONDITIONALS COMPONENTS
+     * These variables get their default value from a hook
+     * so need to be memoized and computed here
+     * ===================================================
+     */
+    const TableCellComponent = useTableCellTag(as);
+    const cellScope = useMemo(() => {
+      if (TableCellComponent !== 'th') return undefined;
+
+      return tableSectionType === 'thead' ? 'row' : 'col';
+    }, [TableCellComponent, tableSectionType]);
+    const Stack = useMemo(() => (direction === 'vertical' ? VStack : HStack), [direction]);
+    const TextComponent = useMemo(
+      () => (tableSectionType === 'thead' ? TextHeadline : TextBody),
+      [tableSectionType],
+    );
+
+    /**
+     * ===================================================
      * STYLES
      * ===================================================
      */
@@ -144,6 +150,7 @@ export const TableCell = memo(
         colSpan={colSpan}
         width={dangerouslySetHtmlWidth}
         style={inlineStyles}
+        scope={cellScope}
         {...props}
       >
         <Cell

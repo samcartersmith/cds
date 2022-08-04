@@ -47,23 +47,27 @@ export const tableVariantGraph = css`
 
     & > tr > td,
     & > tbody > tr > td,
+    & > tbody > tr > th,
     & > thead > .table-row,
     & > tfoot > tr > td {
       border-bottom: ${TABLE_BORDER};
       border-right: ${TABLE_BORDER};
     }
 
+    & > tbody > tr > th,
     & > thead > tr > th {
       box-shadow: inset 0px -1px 0px 0px ${palette.line};
       border-right: ${TABLE_BORDER};
     }
 
+    & > tbody > tr:last-child > th,
     & > tbody > tr:last-child > td,
     & > tfoot > tr:last-child > td {
       border-bottom: none;
     }
 
     & > thead > tr > th:last-child,
+    & > tbody > tr > th:last-child,
     & > tbody > tr > td:last-child,
     & > thead > .table-row:last-child,
     & > tfoot > tr > td:last-child {
@@ -79,6 +83,7 @@ export const tableVariantRuled = css`
     }
 
     & > tr > td,
+    & > tbody > tr > th,
     & > tbody > tr > td,
     & > tfoot > tr > td {
       border-bottom: ${TABLE_BORDER};
@@ -88,6 +93,7 @@ export const tableVariantRuled = css`
       box-shadow: inset 0px -1px 0px 0px ${palette.line};
     }
 
+    & > tbody > tr:last-child > th,
     & > tbody > tr:last-child > td,
     & > tfoot > tr:last-child > td {
       border: none;

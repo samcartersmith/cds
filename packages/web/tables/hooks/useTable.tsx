@@ -3,7 +3,7 @@ import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional'
 
 import { TableContext } from '../context/TableContext';
 import { TableSectionContext } from '../context/TableSectionContext';
-import { TableCellTag } from '../types/tableCellTypes';
+import { TableCellProps, TableCellTag } from '../types/tableCellTypes';
 import { TableSectionTag } from '../types/tableSectionTypes';
 import { TableCellSpacing } from '../types/tableTypes';
 
@@ -38,8 +38,10 @@ export const useTableContext = () => {
   return { as, cellSpacing, compact };
 };
 
-export const useTableCellTag = () => {
+export const useTableCellTag = (asProp?: TableCellProps['as']) => {
   const { as = 'div' } = useTableContext();
+
+  if (asProp) return asProp;
 
   return CELL_TAG_MAP[as];
 };

@@ -11,9 +11,5 @@ export type TableCellFallbackProps = {
   start?: CellMediaType;
   /** Display end shimmer with a shape according to type. */
   end?: CellMediaType;
-  /**
-   * HTML width attribute to help with column layout
-   * @default undefined
-   */
-  width?: TableCellProps['width'];
-} & SharedProps;
+} & SharedProps &
+  Pick<TableCellProps, 'width' | 'outerSpacing' | 'innerSpacing' | 'responsiveConfig' | 'as'>;

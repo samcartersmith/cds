@@ -83,6 +83,13 @@ describe('useTableTag', () => {
     expect(result.current).toBe('td');
   });
 
+  it('Get proper cell tag in TableBody when using the as prop', async () => {
+    const wrapper = ({ children }: PropsWithChildren<unknown>) => <TableBody>{children}</TableBody>;
+    const { result } = renderHook(() => useTableCellTag('th'), { wrapper });
+
+    expect(result.current).toBe('th');
+  });
+
   it('Get proper cell spacing', async () => {
     const cellSpacing = {
       outer: { spacingVertical: 0, spacingHorizontal: 0 },
