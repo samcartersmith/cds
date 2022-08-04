@@ -163,8 +163,12 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     dark: () => require('./images/dark/fileYourCryptoTaxesOther-2').content,
   },
   frameEmpty: {
-    light: () => require('./images/light/frameEmpty-0').content,
-    dark: () => require('./images/dark/frameEmpty-0').content,
+    light: () => require('./images/light/frameEmpty-1').content,
+    dark: () => require('./images/dark/frameEmpty-1').content,
+  },
+  futuresSpotSquare: {
+    light: () => require('./images/light/futuresSpotSquare-0').content,
+    dark: () => require('./images/dark/futuresSpotSquare-0').content,
   },
   giftBoxCrypto: {
     light: () => require('./images/light/giftBoxCrypto-1').content,
@@ -243,8 +247,8 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     dark: () => require('./images/dark/nuxRecurringBuys-2').content,
   },
   offersEmpty: {
-    light: () => require('./images/light/offersEmpty-0').content,
-    dark: () => require('./images/dark/offersEmpty-0').content,
+    light: () => require('./images/light/offersEmpty-1').content,
+    dark: () => require('./images/dark/offersEmpty-1').content,
   },
   performanceSpotSquare: {
     light: () => require('./images/light/performanceSpotSquare-0').content,
@@ -459,8 +463,8 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     dark: () => require('./images/dark/highFees-1').content,
   },
   ledgerFailed: {
-    light: () => require('./images/light/ledgerFailed-0').content,
-    dark: () => require('./images/dark/ledgerFailed-0').content,
+    light: () => require('./images/light/ledgerFailed-1').content,
+    dark: () => require('./images/dark/ledgerFailed-1').content,
   },
   ledgerSignatureRejected: {
     light: () => require('./images/light/ledgerSignatureRejected-0').content,
@@ -483,8 +487,8 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     dark: () => require('./images/dark/marginRectangle-0').content,
   },
   marginWarningRectangle: {
-    light: () => require('./images/light/marginWarningRectangle-0').content,
-    dark: () => require('./images/dark/marginWarningRectangle-0').content,
+    light: () => require('./images/light/marginWarningRectangle-1').content,
+    dark: () => require('./images/dark/marginWarningRectangle-1').content,
   },
   nftSpotRectangle: {
     light: () => require('./images/light/nftSpotRectangle-0').content,
@@ -535,8 +539,8 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     dark: () => require('./images/dark/ratMigration-0').content,
   },
   ratMigrationerror: {
-    light: () => require('./images/light/ratMigrationerror-0').content,
-    dark: () => require('./images/dark/ratMigrationerror-0').content,
+    light: () => require('./images/light/ratMigrationerror-1').content,
+    dark: () => require('./images/dark/ratMigrationerror-1').content,
   },
   referralsBitcoinRect: {
     light: () => require('./images/light/referralsBitcoinRect-0').content,
@@ -634,9 +638,17 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/advancedTradingUi-1').content,
     dark: () => require('./images/dark/advancedTradingUi-1').content,
   },
+  alienDonutSystemError: {
+    light: () => require('./images/light/alienDonutSystemError-0').content,
+    dark: () => require('./images/dark/alienDonutSystemError-0').content,
+  },
   appTrackingTransparency: {
     light: () => require('./images/light/appTrackingTransparency-2').content,
     dark: () => require('./images/dark/appTrackingTransparency-0').content,
+  },
+  artFrameEmptyState: {
+    light: () => require('./images/light/artFrameEmptyState-0').content,
+    dark: () => require('./images/dark/artFrameEmptyState-0').content,
   },
   automaticPayments: {
     light: () => require('./images/light/automaticPayments-1').content,
@@ -682,6 +694,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/brdGift-0').content,
     dark: () => require('./images/dark/brdGift-0').content,
   },
+  browseDecentralizedApps: {
+    light: () => require('./images/light/browseDecentralizedApps-0').content,
+    dark: () => require('./images/dark/browseDecentralizedApps-0').content,
+  },
   browserExtension: {
     light: () => require('./images/light/browserExtension-0').content,
     dark: () => require('./images/dark/browserExtension-0').content,
@@ -702,6 +718,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/cardBoosted-0').content,
     dark: () => require('./images/dark/cardBoosted-0').content,
   },
+  cardError: {
+    light: () => require('./images/light/cardError-0').content,
+    dark: () => require('./images/dark/cardError-0').content,
+  },
   cardReloadFunds: {
     light: () => require('./images/light/cardReloadFunds-0').content,
     dark: () => require('./images/dark/cardReloadFunds-0').content,
@@ -709,6 +729,18 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   cashExcitement: {
     light: () => require('./images/light/cashExcitement-1').content,
     dark: () => require('./images/dark/cashExcitement-1').content,
+  },
+  catHoldingWalletEmptyState: {
+    light: () => require('./images/light/catHoldingWalletEmptyState-0').content,
+    dark: null,
+  },
+  catLostSystemError: {
+    light: () => require('./images/light/catLostSystemError-0').content,
+    dark: () => require('./images/dark/catLostSystemError-0').content,
+  },
+  chickenFishSystemError: {
+    light: () => require('./images/light/chickenFishSystemError-0').content,
+    dark: () => require('./images/dark/chickenFishSystemError-0').content,
   },
   coinCheckmark: {
     light: () => require('./images/light/coinCheckmark-0').content,
@@ -823,8 +855,8 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     dark: () => require('./images/dark/congratulationsOnEarningCrypto-0').content,
   },
   contactsListWarning: {
-    light: () => require('./images/light/contactsListWarning-1').content,
-    dark: () => require('./images/dark/contactsListWarning-1').content,
+    light: () => require('./images/light/contactsListWarning-2').content,
+    dark: () => require('./images/dark/contactsListWarning-2').content,
   },
   crossBorderPayments: {
     light: () => require('./images/light/crossBorderPayments-0').content,
@@ -1066,6 +1098,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/ethereumToWallet-0').content,
     dark: () => require('./images/dark/ethereumToWallet-0').content,
   },
+  exchangeEmptyState: {
+    light: () => require('./images/light/exchangeEmptyState-0').content,
+    dark: () => require('./images/dark/exchangeEmptyState-0').content,
+  },
   exploreDecentralizedApps: {
     light: () => require('./images/light/exploreDecentralizedApps-1').content,
     dark: () => require('./images/dark/exploreDecentralizedApps-1').content,
@@ -1137,6 +1173,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   holdingCrypto: {
     light: () => require('./images/light/holdingCrypto-1').content,
     dark: () => require('./images/dark/holdingCrypto-1').content,
+  },
+  iceCreamMeltingSystemError: {
+    light: () => require('./images/light/iceCreamMeltingSystemError-0').content,
+    dark: () => require('./images/dark/iceCreamMeltingSystemError-0').content,
   },
   idAngles: {
     light: () => require('./images/light/idAngles-1').content,
@@ -1257,6 +1297,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   notificationsAndUpdates: {
     light: () => require('./images/light/notificationsAndUpdates-2').content,
     dark: () => require('./images/dark/notificationsAndUpdates-1').content,
+  },
+  octopusFloatSystemError: {
+    light: () => require('./images/light/octopusFloatSystemError-0').content,
+    dark: () => require('./images/dark/octopusFloatSystemError-0').content,
   },
   onTheList: {
     light: () => require('./images/light/onTheList-1').content,
@@ -1387,8 +1431,8 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     dark: () => require('./images/dark/remittances-0').content,
   },
   restrictedCountry: {
-    light: () => require('./images/light/restrictedCountry-0').content,
-    dark: () => require('./images/dark/restrictedCountry-0').content,
+    light: () => require('./images/light/restrictedCountry-1').content,
+    dark: () => require('./images/dark/restrictedCountry-1').content,
   },
   reviewInfo: {
     light: () => require('./images/light/reviewInfo-0').content,
@@ -1446,6 +1490,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/sendToUsername-1').content,
     dark: () => require('./images/dark/sendToUsername-1').content,
   },
+  serverCatSystemError: {
+    light: () => require('./images/light/serverCatSystemError-0').content,
+    dark: () => require('./images/dark/serverCatSystemError-0').content,
+  },
   shareOnSocialMedia: {
     light: () => require('./images/light/shareOnSocialMedia-0').content,
     dark: () => require('./images/dark/shareOnSocialMedia-0').content,
@@ -1457,6 +1505,14 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   slippageTolerance: {
     light: () => require('./images/light/slippageTolerance-1').content,
     dark: () => require('./images/dark/slippageTolerance-1').content,
+  },
+  spacedOutSystemError: {
+    light: () => require('./images/light/spacedOutSystemError-0').content,
+    dark: () => require('./images/dark/spacedOutSystemError-0').content,
+  },
+  squidEmptyState: {
+    light: () => require('./images/light/squidEmptyState-0').content,
+    dark: () => require('./images/dark/squidEmptyState-0').content,
   },
   stableValue: {
     light: () => require('./images/light/stableValue-0').content,
@@ -1557,6 +1613,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   walletAsset: {
     light: () => require('./images/light/walletAsset-0').content,
     dark: () => require('./images/dark/walletAsset-0').content,
+  },
+  walletFlyEmptyState: {
+    light: () => require('./images/light/walletFlyEmptyState-0').content,
+    dark: () => require('./images/dark/walletFlyEmptyState-0').content,
   },
   walletLoading: {
     light: () => require('./images/light/walletLoading-2').content,
@@ -1759,16 +1819,20 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     dark: () => require('./images/dark/candleSticksGraph-0').content,
   },
   cardBlocked: {
-    light: () => require('./images/light/cardBlocked-1').content,
-    dark: () => require('./images/dark/cardBlocked-1').content,
+    light: () => require('./images/light/cardBlocked-2').content,
+    dark: () => require('./images/dark/cardBlocked-2').content,
   },
   cardDeclined: {
-    light: () => require('./images/light/cardDeclined-1').content,
-    dark: () => require('./images/dark/cardDeclined-1').content,
+    light: () => require('./images/light/cardDeclined-2').content,
+    dark: () => require('./images/dark/cardDeclined-2').content,
   },
   cardNavigation: {
     light: () => require('./images/light/cardNavigation-1').content,
     dark: () => require('./images/dark/cardNavigation-1').content,
+  },
+  cardSuccess: {
+    light: () => require('./images/light/cardSuccess-0').content,
+    dark: () => require('./images/dark/cardSuccess-0').content,
   },
   chart: {
     light: () => require('./images/light/chart-1').content,
@@ -2190,9 +2254,21 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/mobileCharts-1').content,
     dark: () => require('./images/dark/mobileCharts-1').content,
   },
+  mobileError: {
+    light: () => require('./images/light/mobileError-0').content,
+    dark: () => require('./images/dark/mobileError-0').content,
+  },
   mobileNotifcation: {
     light: () => require('./images/light/mobileNotifcation-1').content,
     dark: () => require('./images/dark/mobileNotifcation-1').content,
+  },
+  mobileSuccess: {
+    light: () => require('./images/light/mobileSuccess-0').content,
+    dark: () => require('./images/dark/mobileSuccess-0').content,
+  },
+  mobileWarning: {
+    light: () => require('./images/light/mobileWarning-0').content,
+    dark: () => require('./images/dark/mobileWarning-0').content,
   },
   moneyEarn: {
     light: () => require('./images/light/moneyEarn-1').content,
@@ -2225,6 +2301,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   musicAndSounds: {
     light: () => require('./images/light/musicAndSounds-0').content,
     dark: () => require('./images/dark/musicAndSounds-0').content,
+  },
+  myNumberCard: {
+    light: () => require('./images/light/myNumberCard-0').content,
+    dark: () => require('./images/dark/myNumberCard-0').content,
   },
   newUserChecklistBuyCrypto: {
     light: () => require('./images/light/newUserChecklistBuyCrypto-1').content,
@@ -2578,6 +2658,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/walletDeposit-1').content,
     dark: () => require('./images/dark/walletDeposit-1').content,
   },
+  walletError: {
+    light: () => require('./images/light/walletError-0').content,
+    dark: () => require('./images/dark/walletError-0').content,
+  },
   walletExchange: {
     light: () => require('./images/light/walletExchange-1').content,
     dark: () => require('./images/dark/walletExchange-1').content,
@@ -2598,13 +2682,17 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/walletPassword-0').content,
     dark: () => require('./images/dark/walletPassword-0').content,
   },
+  walletSuccess: {
+    light: () => require('./images/light/walletSuccess-0').content,
+    dark: () => require('./images/dark/walletSuccess-0').content,
+  },
   walletWarning: {
-    light: () => require('./images/light/walletWarning-1').content,
-    dark: () => require('./images/dark/walletWarning-1').content,
+    light: () => require('./images/light/walletWarning-2').content,
+    dark: () => require('./images/dark/walletWarning-2').content,
   },
   warning: {
-    light: () => require('./images/light/warning-1').content,
-    dark: () => require('./images/dark/warning-1').content,
+    light: () => require('./images/light/warning-2').content,
+    dark: () => require('./images/dark/warning-2').content,
   },
   worldwide: {
     light: () => require('./images/light/worldwide-1').content,

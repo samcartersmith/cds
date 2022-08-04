@@ -297,6 +297,8 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'taxesDetails',
     'nftLibrary',
     'taxesArrangement',
+    'squidEmptyState',
+    'walletFlyEmptyState',
   ],
   form: [
     'protectedNotes',
@@ -589,6 +591,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'futuresHeroSquare',
     'futuresRectangle',
     'governancePictogram',
+    'futuresSpotSquare',
   ],
   crypto: [
     'transferCoins',
@@ -681,6 +684,8 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'webRAT',
     'cardBoostedRectangle',
     'cardBoosted',
+    'futuresSpotSquare',
+    'browseDecentralizedApps',
   ],
   '🪙': [
     'transferCoins',
@@ -737,6 +742,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'addPayment',
     'transferSend',
     'higherLimits',
+    'walletError',
   ],
   '💵': [
     'transferCoins',
@@ -765,6 +771,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'addPayment',
     'transferSend',
     'higherLimits',
+    'walletError',
   ],
   '💶': [
     'transferCoins',
@@ -849,6 +856,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'moneyEarn',
     'transferSend',
     'higherLimits',
+    'walletError',
   ],
   '✨': [
     'transferCoins',
@@ -1033,6 +1041,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'apyInterest',
     'futuresHeroSquare',
     'futuresRectangle',
+    'futuresSpotSquare',
   ],
   safe: ['coinbaseOneSavingFunds', 'safe', 'add2Fa'],
   funds: [
@@ -1111,6 +1120,11 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'emptyNfts',
     'referralsWalletPhones',
     'dappWallet',
+    'browseDecentralizedApps',
+    'walletSuccess',
+    'walletError',
+    'catHoldingWalletEmptyState',
+    'exchangeEmptyState',
   ],
   insufficient: ['coinbaseOneInsufficientWallet', 'insufficientBalance'],
   red: [
@@ -1123,6 +1137,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'performanceSpotSquare',
     'advancedTradingChartsIndicatorsCandles',
     'candleSticksGraph',
+    'walletError',
   ],
   add: [
     'coinbaseOneCardWarning',
@@ -1204,6 +1219,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'cardBlockedSpot',
     'addCardSpot',
     'boostedCard',
+    'cardSuccess',
   ],
   card: [
     'coinbaseOneCardWarning',
@@ -1246,6 +1262,8 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'boostedCard',
     'cardBoostedRectangle',
     'cardBoosted',
+    'myNumberCard',
+    'cardSuccess',
   ],
   plastic: [
     'coinbaseOneCardWarning',
@@ -1421,6 +1439,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'emptyNfts',
     'cbEth',
     'referralsWalletPhones',
+    'mobileSuccess',
   ],
   lighting: ['coinbaseOnePhoneLightning'],
   fast: [
@@ -1629,6 +1648,9 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'taxesArrangement',
     'timingCheck',
     'decentralizedIdentity',
+    'cardSuccess',
+    'mobileSuccess',
+    'walletSuccess',
   ],
   mark: ['fileYourCryptoTaxesCheck', 'success', 'coinCheckmark', 'fileYourCryptoTaxesCheckOther'],
   checkmark: [
@@ -1658,6 +1680,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'confirmSocialSecurity',
     'confirmEmail',
     'primeOrderConfirmation',
+    'cardSuccess',
   ],
   '✅': [
     'fileYourCryptoTaxesCheck',
@@ -1677,6 +1700,9 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'checkmark',
     'fileYourCryptoTaxesCheckOther',
     'doneGray',
+    'cardSuccess',
+    'mobileSuccess',
+    'walletSuccess',
   ],
   p2p: ['p2pGifting'],
   gifting: ['p2pGifting'],
@@ -1709,6 +1735,10 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'emptyStateNft404Page',
     'emptyStateCheckBackLater',
     'emptyStateNftSoldOut',
+    'catLostSystemError',
+    'serverCatSystemError',
+    'catHoldingWalletEmptyState',
+    'exchangeEmptyState',
   ],
   avatar: [
     'collectableNfts',
@@ -1736,8 +1766,9 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'emptyCollection',
     'nftSpotRectangle',
     'hiddenCollection',
+    'artFrameEmptyState',
   ],
-  artwork: ['collectableNfts', 'nftSpotRectangle', 'emptyStateNftSoldOut'],
+  artwork: ['collectableNfts', 'nftSpotRectangle', 'emptyStateNftSoldOut', 'artFrameEmptyState'],
   '🖼': [
     'collectableNfts',
     'nftSpotRectangle',
@@ -1746,6 +1777,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'selectAddNft',
     'mintedNft',
     'noNftFound',
+    'artFrameEmptyState',
   ],
   flowers: ['collectableNfts'],
   '': [
@@ -1778,7 +1810,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   ],
   decktop: ['desktopAuthorized'],
   authorized: ['desktopAuthorized'],
-  laptop: ['desktopAuthorized', 'laptopVideo', 'laptopCharts'],
+  laptop: ['desktopAuthorized', 'laptopVideo', 'laptopCharts', 'iceCreamMeltingSystemError'],
   '💻': [
     'desktopAuthorized',
     'ratDashboard',
@@ -1786,6 +1818,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'multiPlatform',
     'laptopVideo',
     'laptopCharts',
+    'iceCreamMeltingSystemError',
   ],
   hand: [
     'borrow',
@@ -1861,6 +1894,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'marginHeroSquare',
     'marginWarningHeroSquare',
     'leverageHeroSquare',
+    'futuresSpotSquare',
   ],
   candlesticks: [
     'slippageTolerance',
@@ -1937,8 +1971,14 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   moon: ['cryptoAndMore', 'rocket', 'darkModeIntroduction', 'emptyCrypto'],
   load: ['walletLoading'],
   loading: ['walletLoading', 'polling'],
-  apps: ['cryptoAppsWallet', 'cryptoApps', 'linkCoinbaseWallet', 'linkCoinbaseWalletSmall'],
-  gather: ['cryptoAppsWallet'],
+  apps: [
+    'cryptoAppsWallet',
+    'cryptoApps',
+    'linkCoinbaseWallet',
+    'linkCoinbaseWalletSmall',
+    'browseDecentralizedApps',
+  ],
+  gather: ['cryptoAppsWallet', 'browseDecentralizedApps'],
   ghost: ['cryptoApps'],
   unicorn: ['cryptoApps'],
   charts: [
@@ -2078,6 +2118,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'marginWarningRectangle',
     'futuresRectangle',
     'marginWarningHeroSquare',
+    'futuresSpotSquare',
   ],
   order: [
     'orderBooks',
@@ -2354,6 +2395,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'strongWarning',
     'warning',
     'ledgerFailed',
+    'walletError',
   ],
   '🔔': ['notificationsAlt', 'noNotificationsGray', 'alerts'],
   '🔕': ['notificationsAlt'],
@@ -2373,6 +2415,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'done',
     'checkmark',
     'doneGray',
+    'cardSuccess',
   ],
   open: ['openEmail'],
   email: ['openEmail', 'emailNotification', 'verifyEmail', 'envelope', 'confirmEmail'],
@@ -2436,6 +2479,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'tryAgainLater',
     'waitingForConsensus',
     'coinbaseOneWaitlist',
+    'iceCreamMeltingSystemError',
   ],
   timer: ['pending', 'getStartedInMinutes', 'quickAndSimple', 'getStarted', 'timingCheck'],
   soon: ['pending'],
@@ -2455,6 +2499,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'multiPlatformMobileAppBrowserExtension',
     'browserMultiPlatform',
     'emptyStateCheckBackLater',
+    'browseDecentralizedApps',
   ],
   window: [
     'coinbaseIsDownMobile',
@@ -2531,6 +2576,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'securedAssets',
     'securityCoinShield',
     'globalTransactions',
+    'cardSuccess',
   ],
   safu: ['coinbaseIsDownMobile', 'coinbaseIsDown'],
   security: [
@@ -2571,6 +2617,9 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     '2fa',
     'multiPlatformMobileAppBrowserExtension',
     'browserMultiPlatform',
+    'mobileSuccess',
+    'mobileWarning',
+    'mobileError',
   ],
   '⚠️': [
     'coinbaseIsDownMobile',
@@ -2587,6 +2636,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'verifyInfo',
     'walletWarning',
     'cardDeclined',
+    'walletError',
   ],
   refresh: [
     'errorRefresh',
@@ -2618,6 +2668,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'emptyNftSpotSquare',
     'unsupportedAsset',
     'webRAT',
+    'futuresSpotSquare',
   ],
   sparkles: [
     'coinbaseCardSpendCrypto',
@@ -2646,6 +2697,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'addCard',
     'addPayment',
     'cryptoCard',
+    'cardSuccess',
   ],
   issue: [
     'coinbaseCardIssue',
@@ -3006,6 +3058,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'contactInfo',
     'identityCard',
     'idVerification',
+    'myNumberCard',
   ],
   identity: [
     'twoIdVerify',
@@ -3067,6 +3120,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'idVerification',
     'referralsAvatars',
     'referralsBitcoin',
+    'myNumberCard',
   ],
   checking: ['accountUnderReview'],
   confirming: ['accountUnderReview'],
@@ -3345,7 +3399,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   Pay: ['sendToUsername'],
   Back: ['sendToUsername'],
   rocket: ['rocket'],
-  space: ['rocket'],
+  space: ['rocket', 'alienDonutSystemError', 'spacedOutSystemError'],
   blast: ['rocket'],
   off: ['rocket'],
   party: ['rocket', 'emptyStateNft404Page'],
@@ -3509,6 +3563,8 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     '2fa',
     'hardwareWallet',
     'referralsWalletPhones',
+    'mobileWarning',
+    'mobileError',
   ],
   support: [
     'coinbaseOnePhoneLightningAlt',
@@ -3620,7 +3676,12 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   '🧮': ['fileYourCryptoTaxesCheckAlt', 'fileYourCryptoTaxesAlt', 'taxes'],
   '🗄': ['fileYourCryptoTaxesCheckAlt', 'fileYourCryptoTaxesAlt'],
   '🗃': ['fileYourCryptoTaxesCheckAlt', 'fileYourCryptoTaxesAlt'],
-  '📁': ['fileYourCryptoTaxesCheckAlt', 'fileYourCryptoTaxesAlt'],
+  '📁': [
+    'fileYourCryptoTaxesCheckAlt',
+    'fileYourCryptoTaxesAlt',
+    'squidEmptyState',
+    'walletFlyEmptyState',
+  ],
   '📂': ['fileYourCryptoTaxesCheckAlt', 'fileYourCryptoTaxesAlt'],
   '🗂': ['fileYourCryptoTaxesCheckAlt', 'fileYourCryptoTaxesAlt'],
   offer: ['sendingCrypto'],
@@ -3634,6 +3695,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👧': [
     'sendingCrypto',
@@ -3645,6 +3707,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧒': [
     'sendingCrypto',
@@ -3656,6 +3719,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👦': [
     'sendingCrypto',
@@ -3667,6 +3731,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩': [
     'sendingCrypto',
@@ -3678,6 +3743,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑': [
     'sendingCrypto',
@@ -3689,6 +3755,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨': [
     'sendingCrypto',
@@ -3700,6 +3767,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🦱': [
     'sendingCrypto',
@@ -3711,6 +3779,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🦱': [
     'sendingCrypto',
@@ -3722,6 +3791,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🦱': [
     'sendingCrypto',
@@ -3733,6 +3803,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🦰': [
     'sendingCrypto',
@@ -3744,6 +3815,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🦰': [
     'sendingCrypto',
@@ -3755,6 +3827,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🦰': [
     'sendingCrypto',
@@ -3766,6 +3839,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👱‍♀️': [
     'sendingCrypto',
@@ -3777,6 +3851,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👱': [
     'sendingCrypto',
@@ -3788,6 +3863,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👱‍♂️': [
     'sendingCrypto',
@@ -3799,6 +3875,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🦳': [
     'sendingCrypto',
@@ -3810,6 +3887,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🦳': [
     'sendingCrypto',
@@ -3821,6 +3899,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🦳': [
     'sendingCrypto',
@@ -3832,6 +3911,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🦲': [
     'sendingCrypto',
@@ -3843,6 +3923,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🦲': [
     'sendingCrypto',
@@ -3854,6 +3935,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🦲': [
     'sendingCrypto',
@@ -3865,6 +3947,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧔': [
     'sendingCrypto',
@@ -3876,6 +3959,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👵': [
     'sendingCrypto',
@@ -3887,6 +3971,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧓': [
     'sendingCrypto',
@@ -3898,6 +3983,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👴': [
     'sendingCrypto',
@@ -3909,6 +3995,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👲': [
     'sendingCrypto',
@@ -3920,6 +4007,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👳‍♀️': [
     'sendingCrypto',
@@ -3931,6 +4019,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👳': [
     'sendingCrypto',
@@ -3942,6 +4031,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👳‍♂️': [
     'sendingCrypto',
@@ -3953,6 +4043,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧕': [
     'sendingCrypto',
@@ -3964,6 +4055,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👮‍♀️': [
     'sendingCrypto',
@@ -3975,6 +4067,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👮': [
     'sendingCrypto',
@@ -3986,6 +4079,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👮‍♂️': [
     'sendingCrypto',
@@ -3997,6 +4091,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👷‍♀️': [
     'sendingCrypto',
@@ -4008,6 +4103,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👷': [
     'sendingCrypto',
@@ -4019,6 +4115,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👷‍♂️': [
     'sendingCrypto',
@@ -4030,6 +4127,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '💂‍♀️': [
     'sendingCrypto',
@@ -4041,6 +4139,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '💂': [
     'sendingCrypto',
@@ -4052,6 +4151,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '💂‍♂️': [
     'sendingCrypto',
@@ -4063,6 +4163,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🕵️‍♀️': [
     'sendingCrypto',
@@ -4079,6 +4180,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'idVerification',
     'explore',
     'ethAddress',
+    'myNumberCard',
   ],
   '🕵️': [
     'sendingCrypto',
@@ -4095,6 +4197,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'idVerification',
     'explore',
     'ethAddress',
+    'myNumberCard',
   ],
   '🕵️‍♂️': [
     'sendingCrypto',
@@ -4111,6 +4214,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'idVerification',
     'explore',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍⚕️': [
     'sendingCrypto',
@@ -4122,6 +4226,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍⚕️': [
     'sendingCrypto',
@@ -4133,6 +4238,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍⚕️': [
     'sendingCrypto',
@@ -4144,6 +4250,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🌾': [
     'sendingCrypto',
@@ -4155,6 +4262,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🌾': [
     'sendingCrypto',
@@ -4166,6 +4274,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🌾': [
     'sendingCrypto',
@@ -4177,6 +4286,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🍳': [
     'sendingCrypto',
@@ -4188,6 +4298,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🍳': [
     'sendingCrypto',
@@ -4199,6 +4310,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🍳': [
     'sendingCrypto',
@@ -4210,6 +4322,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🎓': [
     'sendingCrypto',
@@ -4221,6 +4334,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🎓': [
     'sendingCrypto',
@@ -4232,6 +4346,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🎓': [
     'sendingCrypto',
@@ -4243,6 +4358,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🎤': [
     'sendingCrypto',
@@ -4254,6 +4370,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🎤': [
     'sendingCrypto',
@@ -4265,6 +4382,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🎤': [
     'sendingCrypto',
@@ -4276,6 +4394,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🏫': [
     'sendingCrypto',
@@ -4287,6 +4406,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🏫': [
     'sendingCrypto',
@@ -4298,6 +4418,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🏫': [
     'sendingCrypto',
@@ -4309,6 +4430,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🏭': [
     'sendingCrypto',
@@ -4320,6 +4442,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🏭': [
     'sendingCrypto',
@@ -4331,6 +4454,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🏭': [
     'sendingCrypto',
@@ -4342,6 +4466,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍💻': [
     'sendingCrypto',
@@ -4358,6 +4483,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'laptopVideo',
     'laptopCharts',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍💻': [
     'sendingCrypto',
@@ -4374,6 +4500,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'laptopVideo',
     'laptopCharts',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍💻': [
     'sendingCrypto',
@@ -4390,6 +4517,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'laptopVideo',
     'laptopCharts',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍💼': [
     'sendingCrypto',
@@ -4401,6 +4529,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍💼': [
     'sendingCrypto',
@@ -4412,6 +4541,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍💼': [
     'sendingCrypto',
@@ -4423,6 +4553,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🔧': [
     'sendingCrypto',
@@ -4434,6 +4565,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🔧': [
     'sendingCrypto',
@@ -4445,6 +4577,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🔧': [
     'sendingCrypto',
@@ -4456,6 +4589,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🔬': [
     'sendingCrypto',
@@ -4467,6 +4601,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🔬': [
     'sendingCrypto',
@@ -4478,6 +4613,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🔬': [
     'sendingCrypto',
@@ -4489,6 +4625,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🎨': [
     'sendingCrypto',
@@ -4500,6 +4637,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🎨': [
     'sendingCrypto',
@@ -4511,6 +4649,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🎨': [
     'sendingCrypto',
@@ -4522,6 +4661,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🚒': [
     'sendingCrypto',
@@ -4533,6 +4673,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🚒': [
     'sendingCrypto',
@@ -4544,6 +4685,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🚒': [
     'sendingCrypto',
@@ -4555,6 +4697,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍✈️': [
     'sendingCrypto',
@@ -4566,6 +4709,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍✈️': [
     'sendingCrypto',
@@ -4577,6 +4721,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍✈️': [
     'sendingCrypto',
@@ -4588,6 +4733,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍🚀': [
     'sendingCrypto',
@@ -4599,6 +4745,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🚀': [
     'sendingCrypto',
@@ -4610,6 +4757,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👨‍🚀': [
     'sendingCrypto',
@@ -4621,6 +4769,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👩‍⚖️': [
     'sendingCrypto',
@@ -4632,6 +4781,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🤵‍♀️': [
     'sendingCrypto',
@@ -4643,6 +4793,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🤵': [
     'sendingCrypto',
@@ -4654,6 +4805,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🤵‍♂️': [
     'sendingCrypto',
@@ -4665,6 +4817,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '👸': [
     'sendingCrypto',
@@ -4676,6 +4829,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🤴': [
     'sendingCrypto',
@@ -4687,6 +4841,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🥷': [
     'sendingCrypto',
@@ -4698,6 +4853,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🦸‍♀️': [
     'sendingCrypto',
@@ -4709,6 +4865,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🦸': [
     'sendingCrypto',
@@ -4720,6 +4877,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🦸‍♂️': [
     'sendingCrypto',
@@ -4731,6 +4889,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🦹‍♀️': [
     'sendingCrypto',
@@ -4742,6 +4901,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🦹': [
     'sendingCrypto',
@@ -4753,6 +4913,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🦹‍♂️': [
     'sendingCrypto',
@@ -4764,6 +4925,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🤶': [
     'sendingCrypto',
@@ -4775,6 +4937,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧑‍🎄': [
     'sendingCrypto',
@@ -4786,6 +4949,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🎅': [
     'sendingCrypto',
@@ -4797,6 +4961,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧙‍♀️': [
     'sendingCrypto',
@@ -4810,6 +4975,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'idVerification',
     'ethAddress',
     'emptyNft',
+    'myNumberCard',
   ],
   '🧙': [
     'sendingCrypto',
@@ -4823,6 +4989,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'idVerification',
     'ethAddress',
     'emptyNft',
+    'myNumberCard',
   ],
   '🧙‍♂️': [
     'sendingCrypto',
@@ -4836,6 +5003,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'idVerification',
     'ethAddress',
     'emptyNft',
+    'myNumberCard',
   ],
   '🧝‍♀️': [
     'sendingCrypto',
@@ -4847,6 +5015,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧝': [
     'sendingCrypto',
@@ -4858,6 +5027,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧝‍♂️': [
     'sendingCrypto',
@@ -4869,6 +5039,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧛‍♀️': [
     'sendingCrypto',
@@ -4880,6 +5051,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧛': [
     'sendingCrypto',
@@ -4891,6 +5063,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   '🧛‍♂️': [
     'sendingCrypto',
@@ -4902,6 +5075,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'identityCard',
     'idVerification',
     'ethAddress',
+    'myNumberCard',
   ],
   fund: ['addBank', 'currency', 'coinbaseOneFiat', 'fiat', 'institutions'],
   stock: ['addBank', 'focusLimitOrdersAlt', 'currency', 'coinbaseOneFiat', 'fiat', 'institutions'],
@@ -4932,6 +5106,11 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'emptyTradingSpotRectangle',
     'emptyStateNft404Page',
     'emptyStateCheckBackLater',
+    'octopusFloatSystemError',
+    'squidEmptyState',
+    'walletFlyEmptyState',
+    'artFrameEmptyState',
+    'exchangeEmptyState',
   ],
   recommendation: [
     'referralsBonusGray',
@@ -4939,7 +5118,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'recommendInvest',
     'recommendInvestments',
   ],
-  human: ['referralsBonusGray', 'referralsBonus', 'identityCard', 'idVerification'],
+  human: ['referralsBonusGray', 'referralsBonus', 'identityCard', 'idVerification', 'myNumberCard'],
   invitation: ['referralsBonusGray', 'referralsBonus'],
   invite: ['referralsBonusGray', 'referralsBonus'],
   request: ['referralsBonusGray', 'referralsBonus'],
@@ -5235,6 +5414,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'secureStorage',
     'hardwareWallets',
     'securedAssets',
+    'walletError',
   ],
   paycheck: ['directDepositExcitement'],
   roll: ['directDepositExcitement'],
@@ -5473,6 +5653,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'strongWarning',
     'warning',
     'supportChat',
+    'walletError',
   ],
   aid: ['support'],
   assist: ['support'],
@@ -5503,8 +5684,22 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'wallet',
   ],
   'exclamation mark': ['walletWarning', 'strongWarning', 'warning'],
-  crucial: ['walletWarning', 'cardBlocked', 'cardDeclined', 'strongWarning', 'warning'],
-  indication: ['walletWarning', 'cardBlocked', 'cardDeclined', 'strongWarning', 'warning'],
+  crucial: [
+    'walletWarning',
+    'cardBlocked',
+    'cardDeclined',
+    'strongWarning',
+    'warning',
+    'walletError',
+  ],
+  indication: [
+    'walletWarning',
+    'cardBlocked',
+    'cardDeclined',
+    'strongWarning',
+    'warning',
+    'walletError',
+  ],
   yellow: [
     'walletWarning',
     'warning',
@@ -5653,11 +5848,19 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'explore',
     'reviewInfo',
     'videoReview',
+    'catLostSystemError',
   ],
   look: ['exploreGray', 'reviewAndAdd', 'priceTracking', 'explore'],
   computer: ['advancedTradingDesktop', 'laptopVideo', 'laptopCharts', 'login'],
   '🔖': ['commerceCheckout'],
-  '🆔': ['newUserChecklistVerifyId', 'contactInfo', 'identityCard', 'idVerification'],
+  '🆔': [
+    'newUserChecklistVerifyId',
+    'contactInfo',
+    'identityCard',
+    'idVerification',
+    'myNumberCard',
+    'cardSuccess',
+  ],
   users: [
     'newUserChecklistCompleteAccount',
     'newUserChecklistBuyCrypto',
@@ -5779,8 +5982,8 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   margherita: ['bitcoinPizza', 'pizza'],
   hawaiian: ['bitcoinPizza', 'pizza'],
   '🍕': ['bitcoinPizza', 'pizza'],
-  'identity card': ['contactInfo', 'identityCard', 'idVerification'],
-  personal: ['contactInfo', 'identityCard', 'idVerification'],
+  'identity card': ['contactInfo', 'identityCard', 'idVerification', 'myNumberCard'],
+  personal: ['contactInfo', 'identityCard', 'idVerification', 'myNumberCard'],
   'phone numbers': ['addressBook'],
   names: ['addressBook'],
   '📕': ['addressBook'],
@@ -5896,7 +6099,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   '🎥': ['laptopVideo'],
   '📹': ['laptopVideo'],
   '▶️': ['laptopVideo'],
-  cellphone: ['mobileCharts'],
+  cellphone: ['mobileCharts', 'mobileWarning', 'mobileError'],
   factor: [
     'addPhone',
     'browser',
@@ -5976,6 +6179,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'lightbulbLearn',
     'findYourSelection',
     'crypto101',
+    'futuresSpotSquare',
   ],
   blue: [
     'strongInfo',
@@ -6300,7 +6504,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   word: ['seedPhrase'],
   code: ['seedPhrase', 'ethAddress'],
   unique: ['seedPhrase', 'ethAddress', 'apartOfDropsNft', 'mintedNft'],
-  empty: ['transferFundsGray', 'emptyNfts'],
+  empty: ['transferFundsGray', 'emptyNfts', 'catHoldingWalletEmptyState'],
   state: ['transferFundsGray', 'emptyNfts'],
   API: ['apiKey'],
   unlock: ['apiKey'],
@@ -6452,7 +6656,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   loss: ['gainsAndLosses', 'assetMeasurements'],
   bulb: ['earnToLearn', 'lightbulbLearn'],
   palette: ['dappsArts', 'creative'],
-  folder: ['cryptoPortfolio', 'cryptoFolder'],
+  folder: ['cryptoPortfolio', 'cryptoFolder', 'squidEmptyState', 'walletFlyEmptyState'],
   sequence: ['blockchain', 'blockchainConnection'],
   indicator: ['advancedTradingChartsIndicatorsCandles', 'candleSticksGraph'],
   '≈': ['gasFeesNetworkFees'],
@@ -6647,7 +6851,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   speedy: ['quickBuy'],
   currencies: ['quickBuy'],
   spider: ['emptyCollection'],
-  museum: ['emptyCollection'],
+  museum: ['emptyCollection', 'artFrameEmptyState'],
   '➡️': ['eth2SendSell', 'eth2SellSend'],
   minus: ['cbEth'],
   wrap: ['ethStakeOrWrap', 'wrapEth'],
@@ -6686,9 +6890,25 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   vortex: ['emptyStateNft404Page'],
   'lets go': ['emptyStateNft404Page'],
   lfg: ['emptyStateNft404Page'],
-  '🐈‍⬛': ['emptyStateNft404Page', 'emptyStateCheckBackLater', 'emptyStateNftSoldOut'],
+  '🐈‍⬛': [
+    'emptyStateNft404Page',
+    'emptyStateCheckBackLater',
+    'emptyStateNftSoldOut',
+    'catLostSystemError',
+    'serverCatSystemError',
+    'catHoldingWalletEmptyState',
+    'exchangeEmptyState',
+  ],
   '🙀': ['emptyStateNft404Page', 'emptyStateCheckBackLater', 'emptyStateNftSoldOut'],
-  '🐱': ['emptyStateNft404Page', 'emptyStateCheckBackLater', 'emptyStateNftSoldOut'],
+  '🐱': [
+    'emptyStateNft404Page',
+    'emptyStateCheckBackLater',
+    'emptyStateNftSoldOut',
+    'catLostSystemError',
+    'serverCatSystemError',
+    'catHoldingWalletEmptyState',
+    'exchangeEmptyState',
+  ],
   '😹': ['emptyStateNft404Page', 'emptyStateCheckBackLater', 'emptyStateNftSoldOut'],
   '😽': ['emptyStateNft404Page', 'emptyStateCheckBackLater', 'emptyStateNftSoldOut'],
   '😸': ['emptyStateNft404Page', 'emptyStateCheckBackLater', 'emptyStateNftSoldOut'],
@@ -6734,7 +6954,7 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   minted: ['mintedNft'],
   searching: ['noNftFound'],
   magnifyGlass: ['noNftFound'],
-  missing: ['noNftFound'],
+  missing: ['noNftFound', 'walletFlyEmptyState'],
   unfound: ['noNftFound'],
   clear: ['noNftFound'],
   filter: ['noNftFound'],
@@ -6766,8 +6986,8 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   ballot: ['governance', 'governanceRectangle', 'governancePictogram'],
   maybe: ['governance', 'governanceRectangle', 'governancePictogram'],
   so: ['governance', 'governanceRectangle', 'governancePictogram'],
-  futures: ['futuresHeroSquare', 'futuresRectangle'],
-  future: ['futuresHeroSquare', 'futuresRectangle'],
+  futures: ['futuresHeroSquare', 'futuresRectangle', 'futuresSpotSquare'],
+  future: ['futuresHeroSquare', 'futuresRectangle', 'futuresSpotSquare'],
   put: [
     'futuresHeroSquare',
     'leverageRectangle',
@@ -6802,4 +7022,74 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'marginHeroSquare',
     'marginWarningHeroSquare',
   ],
+  'success state': ['cardSuccess', 'mobileSuccess', 'walletSuccess'],
+  'warning state': ['mobileWarning', 'walletWarning'],
+  'error state': [
+    'mobileError',
+    'walletError',
+    'spacedOutSystemError',
+    'octopusFloatSystemError',
+    'cardError',
+  ],
+  'system error': [
+    'catLostSystemError',
+    'chickenFishSystemError',
+    'alienDonutSystemError',
+    'iceCreamMeltingSystemError',
+    'serverCatSystemError',
+    'spacedOutSystemError',
+  ],
+  '🐈': [
+    'catLostSystemError',
+    'serverCatSystemError',
+    'catHoldingWalletEmptyState',
+    'exchangeEmptyState',
+  ],
+  'chicken fish': ['chickenFishSystemError'],
+  merge: ['chickenFishSystemError'],
+  'uh oh': ['chickenFishSystemError', 'spacedOutSystemError', 'cardError'],
+  wtf: ['chickenFishSystemError'],
+  '🐟': ['chickenFishSystemError'],
+  '🐠': ['chickenFishSystemError'],
+  '🍣': ['chickenFishSystemError'],
+  '🎣': ['chickenFishSystemError'],
+  '🐡': ['chickenFishSystemError'],
+  '🐓': ['chickenFishSystemError'],
+  '🐔': ['chickenFishSystemError'],
+  alien: ['alienDonutSystemError'],
+  donut: ['alienDonutSystemError'],
+  'take a break': ['alienDonutSystemError'],
+  relax: ['alienDonutSystemError'],
+  '👽': ['alienDonutSystemError'],
+  '🪐': ['alienDonutSystemError', 'spacedOutSystemError'],
+  '🛸': ['alienDonutSystemError'],
+  '🍩': ['alienDonutSystemError'],
+  'ice cream': ['iceCreamMeltingSystemError'],
+  melt: ['iceCreamMeltingSystemError'],
+  homage: ['iceCreamMeltingSystemError'],
+  "we don't like waiting": ['iceCreamMeltingSystemError'],
+  '🍦': ['iceCreamMeltingSystemError'],
+  '🍨': ['iceCreamMeltingSystemError'],
+  server: ['serverCatSystemError'],
+  'get out': ['serverCatSystemError'],
+  'cat being a cat': ['serverCatSystemError'],
+  gateway: ['spacedOutSystemError'],
+  door: ['spacedOutSystemError'],
+  'empty feeling': ['spacedOutSystemError'],
+  glimpse: ['spacedOutSystemError'],
+  'oh no': ['spacedOutSystemError'],
+  octopus: ['octopusFloatSystemError'],
+  floating: ['octopusFloatSystemError'],
+  ocean: ['octopusFloatSystemError'],
+  sea: ['octopusFloatSystemError'],
+  angry: ['octopusFloatSystemError'],
+  '🐙': ['octopusFloatSystemError'],
+  '🛟': ['octopusFloatSystemError'],
+  '🌊': ['octopusFloatSystemError'],
+  squid: ['squidEmptyState'],
+  '🦑': ['squidEmptyState'],
+  cute: ['catHoldingWalletEmptyState', 'exchangeEmptyState'],
+  fly: ['walletFlyEmptyState'],
+  '🪰': ['walletFlyEmptyState'],
+  'credit card': ['cardError'],
 };
