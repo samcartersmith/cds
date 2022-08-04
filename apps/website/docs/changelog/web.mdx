@@ -8,6 +8,27 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.3.0 (8/4/2022, 11:30 AM PST)
+
+#### 🚀 Updates
+
+- **[FullscreenModal]** Make logo an optional prop for fullscreen modal. [#913](https://github.cbhq.net/frontend/cds/pull/913)
+- **[TableCell a11y]** Support TableCell as a "th" element to help screen readers. [#907](https://github.cbhq.net/frontend/cds/pull/907), [CDS-2377](https://jira.coinbase-corp.com/browse/CDS-2377)
+
+#### 🐞 Fixes
+
+- **[Dots]** Dots used with overlap="circular" calculate is incorrect when placed next to element with bigger height. [#912](https://github.cbhq.net/frontend/cds/pull/912)
+- **[illustrations]** Publish 08/03/22 [mm/dd/yy] Illo. [#915](https://github.cbhq.net/frontend/cds/pull/915)
+- **[Sparkline]** Use a live region to announce changes. [#909](https://github.cbhq.net/frontend/cds/pull/909), [CDS-2342](https://jira.coinbase-corp.com/browse/CDS-2342)
+- **[SparklineHeader]** Add a11y support to the interactive sparkline header. [#902](https://github.cbhq.net/frontend/cds/pull/902), [CDS-2343](https://jira.coinbase-corp.com/browse/CDS-2343)
+- **[Checkbox]** Remove 'switch' role. [#893](https://github.cbhq.net/frontend/cds/pull/893), [CDS-2365](https://jira.coinbase-corp.com/browse/CDS-2365)
+- **[Toast a11y]** Ensure close button has an accessible name. [#894](https://github.cbhq.net/frontend/cds/pull/894), [CDS-2387](https://jira.coinbase-corp.com/browse/CDS-2387)
+- **[SidebarItem]** Use accessibilityLabel when collapsed. [#892](https://github.cbhq.net/frontend/cds/pull/892), [CDS-2348](https://jira.coinbase-corp.com/browse/CDS-2348)
+
+#### 📘 Misc
+
+- **[Banner]** Banners documentation. [#882](https://github.cbhq.net/frontend/cds/pull/882)
+
 ## 1.2.0 (7/28/2022, 12:54 PM PST)
 
 #### 🚀 Updates

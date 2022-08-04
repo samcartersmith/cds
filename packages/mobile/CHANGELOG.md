@@ -8,6 +8,29 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.3.0 (8/4/2022, 11:30 AM PST)
+
+#### 🚀 Updates
+
+- Reanimated package bump in CDS. [#906](https://github.cbhq.net/frontend/cds/pull/906)
+- Remove @react-native-community/netinfo from mobile deps. [#891](https://github.cbhq.net/frontend/cds/pull/891)
+
+#### 🐞 Fixes
+
+- **[Dots]** Dots used with overlap="circular" calculate is incorrect when placed next to element with bigger height. [#912](https://github.cbhq.net/frontend/cds/pull/912)
+- **[illustrations]** Publish 08/03/22 [mm/dd/yy] Illo. [#915](https://github.cbhq.net/frontend/cds/pull/915)
+- **[Sparkline]** Use a live region to announce changes. [#909](https://github.cbhq.net/frontend/cds/pull/909), [CDS-2342](https://jira.coinbase-corp.com/browse/CDS-2342)
+- **[SparklineHeader]** Add a11y support to the interactive sparkline header. [#902](https://github.cbhq.net/frontend/cds/pull/902), [CDS-2343](https://jira.coinbase-corp.com/browse/CDS-2343)
+- **[Toast a11y]** Ensure close button has an accessible name. [#894](https://github.cbhq.net/frontend/cds/pull/894), [CDS-2387](https://jira.coinbase-corp.com/browse/CDS-2387)
+
+#### 📘 Misc
+
+- **[Banner]** Banners documentation. [#882](https://github.cbhq.net/frontend/cds/pull/882)
+- **[Mobile Visual Regression Tests]** Clean up. [#901](https://github.cbhq.net/frontend/cds/pull/901)
+- **[Mobile Visual Regression Tests]** Fix Demo mode Flake on Android. [#898](https://github.cbhq.net/frontend/cds/pull/898)
+- Spelling fast-follow. [#897](https://github.cbhq.net/frontend/cds/pull/897)
+- **[Mobile Visual Regression Tests]** Parallelize and stabilize Android Percy tests. [#833](https://github.cbhq.net/frontend/cds/pull/833)
+
 ## 1.2.0 (7/28/2022, 12:54 PM PST)
 
 #### 🚀 Updates
