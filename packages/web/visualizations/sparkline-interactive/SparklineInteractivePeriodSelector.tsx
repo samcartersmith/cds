@@ -1,4 +1,5 @@
 import React, { memo, useCallback, useMemo } from 'react';
+import { periodLabelMap } from '@cbhq/cds-common/tokens/sparkline';
 import {
   SparklineInteractivePeriodProps,
   SparklineInteractivePeriodSelectorProps,
@@ -16,6 +17,9 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
   setSelectedPeriod,
   color,
 }: SparklineInteractivePeriodProps<Period>) {
+  const periodLabel = periodLabelMap[period.label] ?? period.label;
+  const isSelected = period.value === selectedPeriod;
+
   const handleOnPress = useCallback(() => {
     setSelectedPeriod(period.value);
   }, [period, setSelectedPeriod]);
@@ -23,9 +27,9 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
 
   const backgroundStyle = useMemo(
     () => ({
-      backgroundColor: period.value === selectedPeriod ? colors.primaryWash : undefined,
+      backgroundColor: isSelected ? colors.primaryWash : undefined,
     }),
-    [colors.primaryWash, period.value, selectedPeriod],
+    [colors.primaryWash, isSelected],
   );
 
   return (
@@ -37,11 +41,15 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
       dangerouslySetStyle={backgroundStyle}
       height="fit-content"
     >
-      <PressableOpacity onPress={handleOnPress}>
+      <PressableOpacity
+        onPress={handleOnPress}
+        accessibilityLabel={periodLabel}
+        aria-pressed={isSelected}
+      >
         <TextLabel1
           as="span"
           spacingHorizontal={2}
-          dangerouslySetColor={period.value === selectedPeriod ? color : colors.foregroundMuted}
+          dangerouslySetColor={isSelected ? color : colors.foregroundMuted}
         >
           {period.label}
         </TextLabel1>

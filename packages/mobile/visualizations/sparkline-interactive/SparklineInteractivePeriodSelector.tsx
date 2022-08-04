@@ -1,5 +1,6 @@
 import React, { memo, useCallback, useMemo } from 'react';
 import { Animated } from 'react-native';
+import { periodLabelMap } from '@cbhq/cds-common/tokens/sparkline';
 import {
   SparklineInteractivePeriodProps,
   SparklineInteractivePeriodSelectorProps,
@@ -56,6 +57,16 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
   setSelectedPeriod,
   color,
 }: SparklineInteractivePeriodProps<Period>) {
+  const isSelected = period.value === selectedPeriod;
+  const periodLabel = periodLabelMap[period.label] ?? period.label;
+  const periodHint = useMemo(
+    () =>
+      isSelected
+        ? `Currently showing data for the ${periodLabel} timeframe`
+        : `Show data for the ${periodLabel} timeframe`,
+    [isSelected, periodLabel],
+  );
+
   const handleOnPress = useCallback(() => {
     void Haptics.lightImpact();
     setSelectedPeriod(period.value);
@@ -64,16 +75,16 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
 
   const backgroundStyle = useMemo(
     () => ({
-      backgroundColor: period.value === selectedPeriod ? colors.primaryWash : undefined,
+      backgroundColor: isSelected ? colors.primaryWash : undefined,
     }),
-    [colors.primaryWash, period.value, selectedPeriod],
+    [colors.primaryWash, isSelected],
   );
 
   const textStyle = useMemo(
     () => ({
-      color: period.value === selectedPeriod ? color : colors.foregroundMuted,
+      color: isSelected ? color : colors.foregroundMuted,
     }),
-    [color, colors.foregroundMuted, period.value, selectedPeriod],
+    [color, colors.foregroundMuted, isSelected],
   );
 
   return (
@@ -84,7 +95,12 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
         justifyContent="center"
         dangerouslySetStyle={backgroundStyle}
       >
-        <PressableOpacity onPress={handleOnPress}>
+        <PressableOpacity
+          onPress={handleOnPress}
+          accessibilityLabel={periodLabel}
+          accessibilityHint={periodHint}
+          aria-pressed={isSelected}
+        >
           <TextLabel1 spacingHorizontal={2} spacingVertical={1} dangerouslySetStyle={textStyle}>
             {period.label}
           </TextLabel1>
