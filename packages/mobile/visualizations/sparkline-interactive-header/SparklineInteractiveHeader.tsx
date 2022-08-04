@@ -211,7 +211,15 @@ const SparklineInteractiveHeaderStable = memo(
       );
 
       return (
-        <HStack testID={testID} spacing={0} justifyContent="space-between">
+        <HStack
+          testID={testID}
+          spacing={0}
+          justifyContent="space-between"
+          aria-live="polite"
+          accessibilityRole="header"
+          accessibilityLabel="Asset summary"
+          accessibilityHint="The price and difference for this time period"
+        >
           <VStack spacing={0} flexShrink={1}>
             {labelNode ?? label}
             {title}

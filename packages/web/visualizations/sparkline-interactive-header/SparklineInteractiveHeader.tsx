@@ -143,7 +143,13 @@ const SparklineInteractiveHeaderStable = memo(
       );
 
       return (
-        <div data-testid={testID} style={{ width: '100%' }}>
+        <div
+          data-testid={testID}
+          style={{ width: '100%' }}
+          aria-live="polite"
+          role="region"
+          aria-label="Asset summary"
+        >
           {labelNode ?? label}
           {title}
         </div>
