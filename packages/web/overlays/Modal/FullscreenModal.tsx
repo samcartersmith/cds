@@ -33,6 +33,10 @@ import { ModalWrapper } from './ModalWrapper';
 
 export type FullscreenModalProps = {
   /**
+   * The logo to display
+   */
+  logo?: ReactElement;
+  /**
    * Title displayed in the Fullscreen Modal header.
    */
   title?: string;
@@ -66,6 +70,7 @@ export type FullscreenModalProps = {
 >;
 
 export const FullscreenModal = memo(function FullscreenModal({
+  logo,
   visible,
   onRequestClose,
   primaryContent,
@@ -105,7 +110,7 @@ export const FullscreenModal = memo(function FullscreenModal({
       alignItems="center"
     >
       <Box spacingEnd={3} dangerouslySetClassName={headerLogoClassName}>
-        <LogoMark size={32} />
+        {logo ?? <LogoMark size={32} />}
       </Box>
       <Box flexGrow={1}>
         {title ? (
