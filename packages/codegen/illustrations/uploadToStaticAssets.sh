@@ -65,12 +65,12 @@ getRootPath() {
 	ROOT_LEN=${#ROOT[@]}
 	SLASH="/"
 
-	rootPath="/"
+	rootPath=""
 	for (( i=1; i<$(expr $ROOT_LEN - 1); i++ ))
 	do
-		rootPath="$rootPath${ROOT[i]}${SLASH}"
+		rootPath="$rootPath${SLASH}${ROOT[i]}"
 	done
-	echo "$rootPath"
+	echo "$rootPath/packages/codegen/illustrations"
 }
 
 compressPNGs() {
@@ -140,8 +140,8 @@ fi
 echo "FLAGS --- BRANCHNAME: ${BRANCHNAME}, ROOTDIRPATH: ${ROOTDIRPATH}, USERNAME: ${USERNAME}, CREATEDIRFLAG: ${CREATEDIRFLAG}, OPENPRFLAG: ${OPENPRFLAG}, DELREPO: ${DELREPO}."
 
 # Optimize PNGs so they are smallest size possible
-pngLight=`compressPNGs "${ROOTDIRPATH}/illustrations/images/png-light/"`
-pngDark=`compressPNGs "${ROOTDIRPATH}/illustrations/images/png-dark/"`
+pngLight=`compressPNGs "${ROOTDIRPATH}/images/png-light/"`
+pngDark=`compressPNGs "${ROOTDIRPATH}/images/png-dark/"`
 echo $pngLight
 echo $pngDark
 
@@ -160,7 +160,7 @@ then
 fi
 
 echo "Copying images to static-assets..."
-cp -rf "${ROOTDIRPATH}/illustrations/images/" "${ROOTDIRPATH}/illustrations/static-assets/assets/design-system/illustrations/"
+cp -rf "${ROOTDIRPATH}/images/" "${ROOTDIRPATH}/static-assets/assets/design-system/illustrations/"
 
 echo "Pushing changes to static-assets"
 git add -A &&  git ci -m "Update Illustration" && git push --set-upstream origin "${USERNAME}/${BRANCHNAME}" 
