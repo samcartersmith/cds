@@ -543,8 +543,8 @@
         "components/Earn/components/CampaignCard/CampaignCardCTA.tsx": 1,
         "components/Earn/components/CampaignEndCards/CampaignEndCards.tsx": 2,
         "components/Earn/components/JoinCTAContent/ClaimEarn.tsx": 1,
-        "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
         "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 2,
+        "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
         "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 2,
         "components/Earn/components/Lesson/EarnStories/StorySuccess.tsx": 3,
         "components/Earn/components/Lesson/AdvancedTask/steps/EducationStep.tsx": 1,
@@ -560,8 +560,8 @@
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
           "components/Earn/components/CampaignEndCards/CampaignEndCards.tsx": 1,
           "components/Earn/components/JoinCTAContent/ClaimEarn.tsx": 1,
-          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
           "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
           "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1,
           "components/Earn/components/Lesson/EarnStories/StorySuccess.tsx": 2
         },
@@ -590,8 +590,8 @@
           "components/AssetPage/components/AssetStats/AssetStatsInfoModal.tsx": 1,
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
           "components/Earn/components/CampaignEndCards/CampaignEndCards.tsx": 2,
-          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
           "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 2,
+          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
           "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 2,
           "components/Earn/components/Lesson/EarnStories/StorySuccess.tsx": 3,
           "components/Earn/components/Lesson/AdvancedTask/steps/EducationStep.tsx": 1,
@@ -3794,63 +3794,6 @@
       "styledComponent": "Flex"
     },
     {
-      "name": "SliderContainer",
-      "sourceFile": "components/Slider/Slider.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "ref": { "components/Slider/Slider.tsx": 1 },
-        "onMouseDown": { "components/Slider/Slider.tsx": 1 },
-        "onTouchStart": { "components/Slider/Slider.tsx": 1 },
-        "disabled": { "components/Slider/Slider.tsx": 1 }
-      }
-    },
-    {
-      "name": "Bar",
-      "sourceFile": "components/Slider/SliderBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "style", "callSite": "components/Slider/SliderBar.tsx" }],
-      "styledComponent": "div",
-      "propsWithCallSites": { "style": { "components/Slider/SliderBar.tsx": 1 } }
-    },
-    {
-      "name": "SliderDot",
-      "sourceFile": "components/Slider/SliderDots.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "style", "callSite": "components/Slider/SliderDots.tsx" }],
-      "styledComponent": "div",
-      "propsWithCallSites": { "style": { "components/Slider/SliderDots.tsx": 1 } }
-    },
-    {
-      "name": "Handle",
-      "sourceFile": "components/Slider/SliderHandle.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "style", "callSite": "components/Slider/SliderHandle.tsx" }
-      ],
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "ref": { "components/Slider/SliderHandle.tsx": 1 },
-        "style": { "components/Slider/SliderHandle.tsx": 1 },
-        "disabled": { "components/Slider/SliderHandle.tsx": 1 },
-        "isMouseDown": { "components/Slider/SliderHandle.tsx": 1 },
-        "onFocus": { "components/Slider/SliderHandle.tsx": 1 },
-        "onBlur": { "components/Slider/SliderHandle.tsx": 1 },
-        "tabIndex": { "components/Slider/SliderHandle.tsx": 1 }
-      }
-    },
-    {
-      "name": "TooltipFiller",
-      "sourceFile": "components/Slider/SliderTooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "Wrapper",
       "sourceFile": "components/SelectListItem/SelectListItem.tsx",
       "totalInstances": 1,
@@ -3969,6 +3912,63 @@
         "disabled": { "components/SimpleInput/SimpleInput.tsx": 1 },
         "readOnly": { "components/SimpleInput/SimpleInput.tsx": 1 }
       }
+    },
+    {
+      "name": "SliderContainer",
+      "sourceFile": "components/Slider/Slider.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "ref": { "components/Slider/Slider.tsx": 1 },
+        "onMouseDown": { "components/Slider/Slider.tsx": 1 },
+        "onTouchStart": { "components/Slider/Slider.tsx": 1 },
+        "disabled": { "components/Slider/Slider.tsx": 1 }
+      }
+    },
+    {
+      "name": "Bar",
+      "sourceFile": "components/Slider/SliderBar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [{ "prop": "style", "callSite": "components/Slider/SliderBar.tsx" }],
+      "styledComponent": "div",
+      "propsWithCallSites": { "style": { "components/Slider/SliderBar.tsx": 1 } }
+    },
+    {
+      "name": "SliderDot",
+      "sourceFile": "components/Slider/SliderDots.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [{ "prop": "style", "callSite": "components/Slider/SliderDots.tsx" }],
+      "styledComponent": "div",
+      "propsWithCallSites": { "style": { "components/Slider/SliderDots.tsx": 1 } }
+    },
+    {
+      "name": "Handle",
+      "sourceFile": "components/Slider/SliderHandle.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "style", "callSite": "components/Slider/SliderHandle.tsx" }
+      ],
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "ref": { "components/Slider/SliderHandle.tsx": 1 },
+        "style": { "components/Slider/SliderHandle.tsx": 1 },
+        "disabled": { "components/Slider/SliderHandle.tsx": 1 },
+        "isMouseDown": { "components/Slider/SliderHandle.tsx": 1 },
+        "onFocus": { "components/Slider/SliderHandle.tsx": 1 },
+        "onBlur": { "components/Slider/SliderHandle.tsx": 1 },
+        "tabIndex": { "components/Slider/SliderHandle.tsx": 1 }
+      }
+    },
+    {
+      "name": "TooltipFiller",
+      "sourceFile": "components/Slider/SliderTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "Svg",
@@ -4186,6 +4186,13 @@
       }
     },
     {
+      "name": "Font",
+      "sourceFile": "components/Text/Text.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
       "name": "StyledTextArea",
       "sourceFile": "components/TextArea/TextArea.tsx",
       "totalInstances": 1,
@@ -4197,13 +4204,6 @@
         "style": { "components/TextArea/TextArea.tsx": 1 },
         "onChange": { "components/TextArea/TextArea.tsx": 1 }
       }
-    },
-    {
-      "name": "Font",
-      "sourceFile": "components/Text/Text.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
     },
     {
       "name": "Container",
@@ -4294,6 +4294,20 @@
       }
     },
     {
+      "name": "NoWrap",
+      "sourceFile": "components/TrailingIcon/TrailingIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "components/TrailingIcon/TrailingIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
       "name": "StepStyles",
       "sourceFile": "components/Transitioner/Transitioner.demo.tsx",
       "totalInstances": 1,
@@ -4316,20 +4330,6 @@
         "hasMultipleSteps": { "components/Transitioner/Transitioner.tsx": 1 },
         "style": { "components/Transitioner/Transitioner.tsx": 1 }
       }
-    },
-    {
-      "name": "NoWrap",
-      "sourceFile": "components/TrailingIcon/TrailingIcon.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
-    },
-    {
-      "name": "Icon",
-      "sourceFile": "components/TrailingIcon/TrailingIcon.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
     },
     {
       "name": "FidoAuthentication",
@@ -5064,13 +5064,6 @@
       "styledComponent": "span"
     },
     {
-      "name": "StyledClose",
-      "sourceFile": "components/MultiInput/InputValueButton/InputValueButton.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Close"
-    },
-    {
       "name": "svg",
       "sourceFile": "components/Modal/components/ModalHeader.tsx",
       "totalInstances": 1,
@@ -5082,6 +5075,13 @@
         "height": { "components/Modal/components/ModalHeader.tsx": 1 },
         "viewBox": { "components/Modal/components/ModalHeader.tsx": 1 }
       }
+    },
+    {
+      "name": "StyledClose",
+      "sourceFile": "components/MultiInput/InputValueButton/InputValueButton.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Close"
     },
     {
       "name": "Wrapper",
@@ -5568,33 +5568,6 @@
       }
     },
     {
-      "name": "EmptyChartIcon",
-      "sourceFile": "components/Chart/components/EmptyChart/EmptyChart.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Icon",
-      "callSites": { "components/Chart/components/EmptyChart/EmptyChart.tsx": 2 }
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/Chart/components/EmptyChart/EmptyChart.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Item",
-      "sourceFile": "components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Caps",
-      "propsWithCallSites": {
-        "key": { "components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1 },
-        "color": { "components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1 },
-        "visible": { "components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1 }
-      }
-    },
-    {
       "name": "Container",
       "sourceFile": "components/Chart/components/HoverIndicator/HoverIndicator.tsx",
       "totalInstances": 1,
@@ -5637,6 +5610,34 @@
         "color": { "components/Chart/components/HoverIndicator/HoverPoint.tsx": 1 },
         "r": { "components/Chart/components/HoverIndicator/HoverPoint.tsx": 1 }
       }
+    },
+    {
+      "name": "PriceText",
+      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
+      "name": "DateText",
+      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Caption"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "BottomIndicator",
+      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "SelectorContainer",
@@ -5686,32 +5687,31 @@
       }
     },
     {
-      "name": "PriceText",
-      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
-      "totalInstances": 1,
+      "name": "EmptyChartIcon",
+      "sourceFile": "components/Chart/components/EmptyChart/EmptyChart.tsx",
+      "totalInstances": 2,
       "totalCallSites": 1,
-      "styledComponent": "span"
-    },
-    {
-      "name": "DateText",
-      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Caption"
+      "styledComponent": "Icon",
+      "callSites": { "components/Chart/components/EmptyChart/EmptyChart.tsx": 2 }
     },
     {
       "name": "Container",
-      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "sourceFile": "components/Chart/components/EmptyChart/EmptyChart.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
     },
     {
-      "name": "BottomIndicator",
-      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "name": "Item",
+      "sourceFile": "components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "div"
+      "styledComponent": "Caps",
+      "propsWithCallSites": {
+        "key": { "components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1 },
+        "color": { "components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1 },
+        "visible": { "components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1 }
+      }
     },
     {
       "name": "Modal",
@@ -5723,8 +5723,8 @@
         "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
         "components/Earn/components/JoinModal/JoinModal.tsx": 1,
         "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1,
-        "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
         "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+        "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
         "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
       },
       "propsWithCallSites": {
@@ -5732,8 +5732,8 @@
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
           "components/Earn/components/JoinModal/JoinModal.tsx": 1,
           "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1,
-          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
           "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
           "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
         },
         "isOpen": {
@@ -5908,20 +5908,6 @@
     },
     {
       "name": "Container",
-      "sourceFile": "components/Earn/components/ClaimEarnBalanceBanner/ClaimEarnBalanceBanner.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Space",
-      "sourceFile": "components/Earn/components/ClaimEarnBalanceBanner/ClaimEarnBalanceBanner.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Container",
       "sourceFile": "components/Earn/components/Common/Button.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -5949,6 +5935,20 @@
       "totalCallSites": 1,
       "styledComponent": "Flex",
       "propsWithCallSites": { "align": { "components/Earn/components/Common/Button.tsx": 1 } }
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/Earn/components/ClaimEarnBalanceBanner/ClaimEarnBalanceBanner.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Space",
+      "sourceFile": "components/Earn/components/ClaimEarnBalanceBanner/ClaimEarnBalanceBanner.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "DisclaimerContainer",
@@ -6156,55 +6156,6 @@
       "styledComponent": "div"
     },
     {
-      "name": "ModalContainerStyled",
-      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ModalContainer"
-    },
-    {
-      "name": "ModalBodyStyled",
-      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ModalBody"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "IconAccelerate",
-      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "iconAccelerate"
-    },
-    {
-      "name": "Heading",
-      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "H3"
-    },
-    {
-      "name": "Subtitle",
-      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Normal"
-    },
-    {
-      "name": "Buttons",
-      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "Container",
       "sourceFile": "components/Earn/components/Lesson/Head.tsx",
       "totalInstances": 1,
@@ -6367,6 +6318,104 @@
       }
     },
     {
+      "name": "ModalContainerStyled",
+      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ModalContainer"
+    },
+    {
+      "name": "ModalBodyStyled",
+      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ModalBody"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "IconAccelerate",
+      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "iconAccelerate"
+    },
+    {
+      "name": "Heading",
+      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "H3"
+    },
+    {
+      "name": "Subtitle",
+      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Normal"
+    },
+    {
+      "name": "Buttons",
+      "sourceFile": "components/Earn/components/JoinModal/JoinModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ModalContainerStyled",
+      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ModalContainer"
+    },
+    {
+      "name": "ModalBodyStyled",
+      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ModalBody"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "icon"
+    },
+    {
+      "name": "Heading",
+      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "H3"
+    },
+    {
+      "name": "Text",
+      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Normal"
+    },
+    {
+      "name": "Buttons",
+      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "Container",
       "sourceFile": "components/Earn/components/LinkBanner/LinkBanner.tsx",
       "totalInstances": 1,
@@ -6447,76 +6496,6 @@
       }
     },
     {
-      "name": "ModalContainerStyled",
-      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ModalContainer"
-    },
-    {
-      "name": "ModalBodyStyled",
-      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ModalBody"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Icon",
-      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "icon"
-    },
-    {
-      "name": "Heading",
-      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "H3"
-    },
-    {
-      "name": "Text",
-      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Normal"
-    },
-    {
-      "name": "Buttons",
-      "sourceFile": "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "StyledModalContainer",
-      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ModalContainer"
-    },
-    {
-      "name": "StyledModalBody",
-      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ModalBody"
-    },
-    {
-      "name": "Description",
-      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "StyledModalContainer",
       "sourceFile": "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx",
       "totalInstances": 1,
@@ -6540,6 +6519,27 @@
     {
       "name": "Container",
       "sourceFile": "components/Earn/components/PageLoading/PageLoading.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "StyledModalContainer",
+      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ModalContainer"
+    },
+    {
+      "name": "StyledModalBody",
+      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ModalBody"
+    },
+    {
+      "name": "Description",
+      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
@@ -6748,64 +6748,6 @@
       }
     },
     {
-      "name": "button",
-      "sourceFile": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "button",
-      "propsWithCallSites": {
-        "onClick": {
-          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "className",
-          "callSite": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx"
-        }
-      ],
-      "styledComponent": "Flex",
-      "propsWithCallSites": {
-        "justify": {
-          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
-        },
-        "align": {
-          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
-        },
-        "className": {
-          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
-        },
-        "noBorder": {
-          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "IconWrapper",
-      "sourceFile": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "TextWrapper",
-      "sourceFile": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "propsWithCallSites": {
-        "column": {
-          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
-        }
-      }
-    },
-    {
       "name": "CodeInput",
       "sourceFile": "components/TwoFactorAuth/components/TwoFactorAuthForm/TwoFactorAuthForm.tsx",
       "totalInstances": 1,
@@ -6923,6 +6865,64 @@
         },
         "entered": {
           "components/TwoFactorAuth/components/TwoFactorAuthForm/TwoFactorAuthForm.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "button",
+      "sourceFile": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "button",
+      "propsWithCallSites": {
+        "onClick": {
+          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "className",
+          "callSite": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx"
+        }
+      ],
+      "styledComponent": "Flex",
+      "propsWithCallSites": {
+        "justify": {
+          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
+        },
+        "align": {
+          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
+        },
+        "className": {
+          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
+        },
+        "noBorder": {
+          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "IconWrapper",
+      "sourceFile": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "TextWrapper",
+      "sourceFile": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
+      "propsWithCallSites": {
+        "column": {
+          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
         }
       }
     },
@@ -10973,6 +10973,13 @@
       }
     },
     {
+      "name": "span",
+      "sourceFile": "components/AssetPage/components/AssetStatPrice/AssetStatPrice.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "components/AssetPage/components/AssetStatPrice/AssetStatPrice.tsx": 3 }
+    },
+    {
       "name": "AssetStatMobile",
       "sourceFile": "components/AssetPage/components/AssetStat/AssetStatMobile",
       "totalInstances": 1,
@@ -11126,13 +11133,6 @@
         "assetSymbol": { "components/AssetPage/components/AssetStats/useStatsList.tsx": 1 },
         "inline": { "components/AssetPage/components/AssetStats/useStatsList.tsx": 1 }
       }
-    },
-    {
-      "name": "span",
-      "sourceFile": "components/AssetPage/components/AssetStatPrice/AssetStatPrice.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "components/AssetPage/components/AssetStatPrice/AssetStatPrice.tsx": 3 }
     },
     {
       "name": "BoxedContainer",
@@ -11373,18 +11373,6 @@
       }
     },
     {
-      "name": "LoadingContainer",
-      "sourceFile": "components/Chart/components/EmptyChart/EmptyChart.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "HoverPoint",
       "sourceFile": "components/Chart/components/HoverIndicator/HoverPoint",
       "totalInstances": 1,
@@ -11423,6 +11411,18 @@
       }
     },
     {
+      "name": "LoadingContainer",
+      "sourceFile": "components/Chart/components/EmptyChart/EmptyChart.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "ModalHeader",
       "sourceFile": "components/Modal/ModalHeader",
       "totalInstances": 6,
@@ -11431,8 +11431,8 @@
         "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
         "components/Earn/components/JoinModal/JoinModal.tsx": 1,
         "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1,
-        "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
         "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+        "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
         "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
       },
       "propsWithCallSites": {
@@ -11440,20 +11440,20 @@
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
           "components/Earn/components/JoinModal/JoinModal.tsx": 1,
           "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1,
-          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
           "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
           "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
         },
         "title": {
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
-          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
           "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
           "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
         },
         "center": {
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
-          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
           "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
           "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
         },
         "close": {
@@ -11802,22 +11802,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "ButtonAccount",
-      "sourceFile": "components/Earn/components/Common/ButtonAccount",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/Earn/components/JoinModal/JoinModal.tsx": 1,
-        "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onClick": {
-          "components/Earn/components/JoinModal/JoinModal.tsx": 1,
-          "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1
-        }
-      }
-    },
-    {
       "name": "ErrorBoundary",
       "sourceFile": "components/ErrorBoundary",
       "totalInstances": 7,
@@ -12008,6 +11992,22 @@
       }
     },
     {
+      "name": "ButtonAccount",
+      "sourceFile": "components/Earn/components/Common/ButtonAccount",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/Earn/components/JoinModal/JoinModal.tsx": 1,
+        "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onClick": {
+          "components/Earn/components/JoinModal/JoinModal.tsx": 1,
+          "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Hr",
       "sourceFile": "components/Earn/components/Common/Hr",
       "totalInstances": 2,
@@ -12036,12 +12036,6 @@
       }
     },
     {
-      "name": "Component",
-      "sourceFile": "components/Earn/components/StatusAnimation/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "StatusAnimation",
       "sourceFile": "components/Earn/components/StatusAnimation",
       "totalInstances": 1,
@@ -12058,6 +12052,12 @@
         "inverted": { "components/Earn/components/Result/Result.tsx": 1 },
         "onClick": { "components/Earn/components/Result/Result.tsx": 1 }
       }
+    },
+    {
+      "name": "Component",
+      "sourceFile": "components/Earn/components/StatusAnimation/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "FastlaneProvider",
@@ -12188,32 +12188,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "Icon",
-      "sourceFile": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": {
-        "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 2
-      },
-      "propsWithCallSites": {
-        "size": {
-          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
-        },
-        "width": {
-          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
-        },
-        "height": {
-          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "form",
       "sourceFile": "components/TwoFactorAuth/components/TwoFactorAuthForm/TwoFactorAuthForm.tsx",
       "totalInstances": 1,
@@ -12248,6 +12222,32 @@
           "components/TwoFactorAuth/components/TwoFactorAuthForm/TwoFactorAuthForm.tsx": 1
         }
       }
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 2
+      },
+      "propsWithCallSites": {
+        "size": {
+          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
+        },
+        "width": {
+          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
+        },
+        "height": {
+          "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/TwoFactorAuth/components/FidoAuthentication/FidoAuthentication.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "AssetChartAmountContents",

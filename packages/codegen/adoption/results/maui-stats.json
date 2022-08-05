@@ -1,15 +1,16 @@
 {
   "latest": {
     "date": "8/5/2022",
-    "cdsPercent": 0.29073756432247,
+    "cdsPercent": 0.2908622908622909,
     "cds": 678,
-    "presentational": 1654,
-    "totalCdsAndPresentational": 2332,
-    "totalOther": 1336
+    "presentational": 1653,
+    "totalCdsAndPresentational": 2331,
+    "totalOther": 1334
   },
   "previous": [
     {
-      "date": "End of Q4",
+      "date": "12/15/2021",
+      "period": "Q4:2021",
       "cdsPercent": 0.15714285714285714,
       "cds": 44,
       "presentational": 236,
@@ -49,28 +50,12 @@
       "totalOther": 504
     },
     {
-      "date": "2/16/2022",
-      "cdsPercent": 0.15514809590973203,
-      "cds": 110,
-      "presentational": 599,
-      "totalCdsAndPresentational": 709,
-      "totalOther": 504
-    },
-    {
       "date": "3/1/2022",
       "cdsPercent": 0.1619718309859155,
       "cds": 115,
       "presentational": 595,
       "totalCdsAndPresentational": 710,
       "totalOther": 537
-    },
-    {
-      "date": "3/10/2022",
-      "cdsPercent": 0.15940054495912806,
-      "cds": 117,
-      "presentational": 617,
-      "totalCdsAndPresentational": 734,
-      "totalOther": 563
     },
     {
       "date": "3/10/2022",
@@ -90,6 +75,7 @@
     },
     {
       "date": "3/23/2022",
+      "period": "Q1:2022",
       "cdsPercent": 0.18810679611650485,
       "cds": 155,
       "presentational": 669,
@@ -106,14 +92,7 @@
     },
     {
       "date": "6/22/2022",
-      "cdsPercent": 0.21247429746401644,
-      "cds": 310,
-      "presentational": 1149,
-      "totalCdsAndPresentational": 1459,
-      "totalOther": 1005
-    },
-    {
-      "date": "6/22/2022",
+      "period": "Q2:2022",
       "cdsPercent": 0.21247429746401644,
       "cds": 310,
       "presentational": 1149,
@@ -127,14 +106,6 @@
       "presentational": 1343,
       "totalCdsAndPresentational": 1763,
       "totalOther": 1144
-    },
-    {
-      "date": "7/14/2022",
-      "cdsPercent": 0.23850085178875638,
-      "cds": 420,
-      "presentational": 1341,
-      "totalCdsAndPresentational": 1761,
-      "totalOther": 1149
     }
   ]
 }

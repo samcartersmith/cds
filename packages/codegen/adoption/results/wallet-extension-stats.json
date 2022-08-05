@@ -1,15 +1,16 @@
 {
   "latest": {
     "date": "8/5/2022",
-    "cdsPercent": 0.8928850664581705,
-    "cds": 2284,
-    "presentational": 274,
-    "totalCdsAndPresentational": 2558,
-    "totalOther": 1203
+    "cdsPercent": 0.8930793157076206,
+    "cds": 2297,
+    "presentational": 275,
+    "totalCdsAndPresentational": 2572,
+    "totalOther": 1208
   },
   "previous": [
     {
-      "date": "End of Q4",
+      "date": "12/15/2021",
+      "period": "Q4:2021",
       "cdsPercent": 0.7914046121593291,
       "cds": 755,
       "presentational": 199,
@@ -57,7 +58,8 @@
       "totalOther": 593
     },
     {
-      "date": "3/1/2022",
+      "date": "3/23/2022",
+      "period": "Q1:2022",
       "cdsPercent": 0.8687350835322196,
       "cds": 1092,
       "presentational": 165,
@@ -66,27 +68,12 @@
     },
     {
       "date": "6/22/2022",
+      "period": "Q2:2022",
       "cdsPercent": 0.8821138211382114,
       "cds": 1953,
       "presentational": 261,
       "totalCdsAndPresentational": 2214,
       "totalOther": 1095
-    },
-    {
-      "date": "6/22/2022",
-      "cdsPercent": 0.8821138211382114,
-      "cds": 1953,
-      "presentational": 261,
-      "totalCdsAndPresentational": 2214,
-      "totalOther": 1095
-    },
-    {
-      "date": "7/14/2022",
-      "cdsPercent": 0.888520513883133,
-      "cds": 2144,
-      "presentational": 269,
-      "totalCdsAndPresentational": 2413,
-      "totalOther": 1128
     },
     {
       "date": "7/14/2022",

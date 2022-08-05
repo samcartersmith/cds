@@ -21,6 +21,7 @@ export type AdopterStatsItem = {
   presentational: number;
   totalCdsAndPresentational: number;
   totalOther: number;
+  period?: `Q${number}:${number}`;
 };
 
 export type AdopterStats = {

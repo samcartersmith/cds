@@ -10,7 +10,7 @@ export const statsFallback = {
     presentational: 0,
     totalCdsAndPresentational: 0,
     totalOther: 0,
-  },
+  } as AdopterStatsItem,
   previous: [] as AdopterStatsItem[],
 };
 

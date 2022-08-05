@@ -9,7 +9,8 @@
   },
   "previous": [
     {
-      "date": "End of Q4",
+      "date": "12/15/2021",
+      "period": "Q4:2021",
       "cdsPercent": 0.8178391959798995,
       "cds": 651,
       "presentational": 145,
@@ -90,6 +91,7 @@
     },
     {
       "date": "3/23/2022",
+      "period": "Q1:2022",
       "cdsPercent": 0.8631368631368631,
       "cds": 864,
       "presentational": 137,
@@ -114,6 +116,7 @@
     },
     {
       "date": "6/22/2022",
+      "period": "Q2:2022",
       "cdsPercent": 0.8742857142857143,
       "cds": 1071,
       "presentational": 154,

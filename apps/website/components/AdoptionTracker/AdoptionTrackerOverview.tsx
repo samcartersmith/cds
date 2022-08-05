@@ -38,14 +38,21 @@ function useProject(id: Adopter) {
   return useMemo(() => ({ projectInfo, stats }), [projectInfo, stats]);
 }
 
-function useQ3StartStat() {
+// Get the last period marker or the first entry recorded
+function useStatForLastPeriod() {
   const { previous } = useAdopterStats();
-  return getFirst(previous) ?? statsFallback?.latest;
+  const fallback = getFirst(previous) ?? statsFallback?.latest;
+  return (
+    previous
+      .slice()
+      .reverse()
+      .find((prev) => Boolean(prev.period)) ?? fallback
+  );
 }
 
 function usePercentChange() {
   const { latest } = useAdopterStats();
-  const statToCompare = useQ3StartStat();
+  const statToCompare = useStatForLastPeriod();
   return useMemo(() => {
     let changeVariant: CellDetailVariant = 'foregroundMuted';
     let change: string | undefined;
@@ -67,14 +74,35 @@ function usePercentChange() {
   }, [latest, statToCompare]);
 }
 
-const PercentChange = memo(({ showParenthesis }: { showParenthesis?: boolean }) => {
-  const { change, changeVariant } = usePercentChange();
-  return (
-    <TextBody as="p" align="end" color={changeVariant} spacingStart={showParenthesis ? 1 : 0}>
-      {showParenthesis ? `(${change})` : change}
-    </TextBody>
-  );
-});
+const PercentChange = memo(
+  ({
+    showParenthesis,
+    showComparisonTime,
+  }: {
+    showParenthesis?: boolean;
+    showComparisonTime?: boolean;
+  }) => {
+    const { change, changeVariant } = usePercentChange();
+    const statToCompare = useStatForLastPeriod();
+    const comparisonTime = useMemo(
+      () => `${statToCompare.period ?? statToCompare.date}`,
+      [statToCompare.date, statToCompare.period],
+    );
+
+    return (
+      <HStack gap={0.5} spacingStart={showParenthesis ? 1 : 0} alignSelf="flex-end">
+        <TextBody as="p" color={changeVariant}>
+          {showParenthesis ? `(${change})` : change}
+        </TextBody>
+        {showComparisonTime && (
+          <TextBody as="p" color="foregroundMuted">
+            ({comparisonTime})
+          </TextBody>
+        )}
+      </HStack>
+    );
+  },
+);
 
 export const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps) => {
   const { label, id } = useAdopterProjectInfo();
@@ -93,7 +121,7 @@ export const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps)
       <TextBody as="p" align="end" overflow="truncate">
         {`${getPercentageText(latest.cdsPercent)} CDS`}
       </TextBody>
-      <PercentChange />
+      <PercentChange showComparisonTime />
     </VStack>
   );
 
@@ -130,6 +158,7 @@ const DetailStatCell = memo(
     presentational,
     totalCdsAndPresentational,
     date,
+    period,
     percentChange,
   }: AdopterStatsItem & { allExpanded?: boolean; percentChange?: React.ReactNode }) => {
     const { id } = useAdopterProjectInfo();
@@ -157,7 +186,7 @@ const DetailStatCell = memo(
           offsetHorizontal={1}
           start={
             <TextBody as="p" overflow="truncate">
-              {date}
+              {date} {period && `(End of ${period})`}
             </TextBody>
           }
           end={
@@ -215,6 +244,7 @@ export const ActiveProject = memo(() => {
         percentChange={<PercentChange showParenthesis />}
         {...latest}
       />
+      <Divider direction="horizontal" spacingVertical={1} />
       {previousStats}
     </VStack>
   );

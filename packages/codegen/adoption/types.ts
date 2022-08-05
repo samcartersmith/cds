@@ -50,6 +50,7 @@ export type AdopterConfig = {
   tsconfigFileName?: string;
   type: 'doc';
   pillar?: string;
+  period?: string;
 };
 
 export type AdoptersConfig = {

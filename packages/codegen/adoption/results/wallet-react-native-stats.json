@@ -49,23 +49,7 @@
       "totalOther": 0
     },
     {
-      "date": "2/16/2022",
-      "cdsPercent": null,
-      "cds": 0,
-      "presentational": 0,
-      "totalCdsAndPresentational": 0,
-      "totalOther": 0
-    },
-    {
       "date": "3/1/2022",
-      "cdsPercent": null,
-      "cds": 0,
-      "presentational": 0,
-      "totalCdsAndPresentational": 0,
-      "totalOther": 0
-    },
-    {
-      "date": "3/10/2022",
       "cdsPercent": null,
       "cds": 0,
       "presentational": 0,
@@ -90,6 +74,7 @@
     },
     {
       "date": "3/23/2022",
+      "period": "Q1:2022",
       "cdsPercent": null,
       "cds": 0,
       "presentational": 0,
@@ -105,28 +90,13 @@
       "totalOther": 0
     },
     {
-      "date": "6/22/2022",
-      "cdsPercent": 0.9584487534626038,
-      "cds": 2076,
-      "presentational": 90,
-      "totalCdsAndPresentational": 2166,
-      "totalOther": 572
-    },
-    {
-      "date": "6/22/2022",
+      "date": "3/23/2022",
+      "period": "Q1:2022",
       "cdsPercent": 0.9585635359116023,
       "cds": 2082,
       "presentational": 90,
       "totalCdsAndPresentational": 2172,
       "totalOther": 572
-    },
-    {
-      "date": "7/14/2022",
-      "cdsPercent": 0.9584040747028862,
-      "cds": 2258,
-      "presentational": 98,
-      "totalCdsAndPresentational": 2356,
-      "totalOther": 604
     },
     {
       "date": "7/14/2022",
