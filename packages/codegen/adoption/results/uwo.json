@@ -2354,31 +2354,6 @@
       "presentationalElement": "svg"
     },
     {
-      "name": "StyledProgressBarItem",
-      "sourceFile": "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "backgroundColor": {
-          "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1
-        },
-        "height": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 }
-      }
-    },
-    {
-      "name": "AnimatedBarFillItem",
-      "sourceFile": "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "width": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 },
-        "height": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 },
-        "fillColor": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 }
-      }
-    },
-    {
       "name": "CheckmarkWrapper",
       "sourceFile": "@uwo/components/common/navigation/steps/StepStatus/StepStatus.tsx",
       "totalInstances": 2,
@@ -2401,6 +2376,31 @@
       "styledComponent": "div",
       "propsWithCallSites": {
         "active": { "@uwo/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1 }
+      }
+    },
+    {
+      "name": "StyledProgressBarItem",
+      "sourceFile": "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "backgroundColor": {
+          "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1
+        },
+        "height": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 }
+      }
+    },
+    {
+      "name": "AnimatedBarFillItem",
+      "sourceFile": "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "width": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 },
+        "height": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 },
+        "fillColor": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 }
       }
     }
   ],
@@ -3791,8 +3791,8 @@
       "callSites": {
         "@uwo/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
         "@uwo/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1,
-        "@uwo/experiences/edp/EDPExperience.tsx": 1,
         "@uwo/experiences/email/EmailExperience.tsx": 1,
+        "@uwo/experiences/edp/EDPExperience.tsx": 1,
         "@uwo/experiences/idv/IDVExperience.tsx": 1,
         "@uwo/experiences/nationality/NationalityExperience.tsx": 1,
         "@uwo/experiences/onboardingComplete/OnboardingCompleteExperience.tsx": 1,
@@ -3912,6 +3912,16 @@
       }
     },
     {
+      "name": "VerifyEmail",
+      "sourceFile": "@uwo/experiences/email/VerifyEmail",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "scene": { "@uwo/experiences/email/EmailExperience.tsx": 1 },
+        "resetExperience": { "@uwo/experiences/email/EmailExperience.tsx": 1 }
+      }
+    },
+    {
       "name": "KBA",
       "sourceFile": "@uwo/experiences/edp/scenes/KBA/KBAScene",
       "totalInstances": 1,
@@ -3988,16 +3998,6 @@
       "propsWithCallSites": {
         "routeToNextScene": { "@uwo/experiences/edp/EDPExperience.tsx": 1 },
         "scene": { "@uwo/experiences/edp/EDPExperience.tsx": 1 }
-      }
-    },
-    {
-      "name": "VerifyEmail",
-      "sourceFile": "@uwo/experiences/email/VerifyEmail",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "scene": { "@uwo/experiences/email/EmailExperience.tsx": 1 },
-        "resetExperience": { "@uwo/experiences/email/EmailExperience.tsx": 1 }
       }
     },
     {
@@ -4844,8 +4844,8 @@
         "@uwo/experiences/customerDueDiligence/scenes/TradeAmount/TradeAmountPresentation.tsx": 1,
         "@uwo/experiences/edp/scenes/CoinbaseUse/CoinbaseUsePresentation.tsx": 1,
         "@uwo/experiences/edp/scenes/EmploymentStatus/EmploymentStatusPresentation.tsx": 1,
-        "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation.tsx": 1,
-        "@uwo/experiences/edp/scenes/KBA/KBAPresentation.tsx": 1
+        "@uwo/experiences/edp/scenes/KBA/KBAPresentation.tsx": 1,
+        "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation.tsx": 1
       },
       "propsWithCallSites": {
         "Collapsible": {
@@ -4853,40 +4853,40 @@
           "@uwo/experiences/customerDueDiligence/scenes/TradeAmount/TradeAmountPresentation.tsx": 1,
           "@uwo/experiences/edp/scenes/CoinbaseUse/CoinbaseUsePresentation.tsx": 1,
           "@uwo/experiences/edp/scenes/EmploymentStatus/EmploymentStatusPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/KBA/KBAPresentation.tsx": 1
+          "@uwo/experiences/edp/scenes/KBA/KBAPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation.tsx": 1
         },
         "onSelected": {
           "@uwo/experiences/customerDueDiligence/scenes/Industry/IndustryPresentation.tsx": 1,
           "@uwo/experiences/customerDueDiligence/scenes/TradeAmount/TradeAmountPresentation.tsx": 1,
           "@uwo/experiences/edp/scenes/CoinbaseUse/CoinbaseUsePresentation.tsx": 1,
           "@uwo/experiences/edp/scenes/EmploymentStatus/EmploymentStatusPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/KBA/KBAPresentation.tsx": 1
+          "@uwo/experiences/edp/scenes/KBA/KBAPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation.tsx": 1
         },
         "answers": {
           "@uwo/experiences/customerDueDiligence/scenes/Industry/IndustryPresentation.tsx": 1,
           "@uwo/experiences/customerDueDiligence/scenes/TradeAmount/TradeAmountPresentation.tsx": 1,
           "@uwo/experiences/edp/scenes/CoinbaseUse/CoinbaseUsePresentation.tsx": 1,
           "@uwo/experiences/edp/scenes/EmploymentStatus/EmploymentStatusPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/KBA/KBAPresentation.tsx": 1
+          "@uwo/experiences/edp/scenes/KBA/KBAPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation.tsx": 1
         },
         "title": {
           "@uwo/experiences/customerDueDiligence/scenes/Industry/IndustryPresentation.tsx": 1,
           "@uwo/experiences/customerDueDiligence/scenes/TradeAmount/TradeAmountPresentation.tsx": 1,
           "@uwo/experiences/edp/scenes/CoinbaseUse/CoinbaseUsePresentation.tsx": 1,
           "@uwo/experiences/edp/scenes/EmploymentStatus/EmploymentStatusPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/KBA/KBAPresentation.tsx": 1
+          "@uwo/experiences/edp/scenes/KBA/KBAPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation.tsx": 1
         },
         "subtitle": {
           "@uwo/experiences/customerDueDiligence/scenes/Industry/IndustryPresentation.tsx": 1,
           "@uwo/experiences/customerDueDiligence/scenes/TradeAmount/TradeAmountPresentation.tsx": 1,
           "@uwo/experiences/edp/scenes/CoinbaseUse/CoinbaseUsePresentation.tsx": 1,
           "@uwo/experiences/edp/scenes/EmploymentStatus/EmploymentStatusPresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation.tsx": 1,
-          "@uwo/experiences/edp/scenes/KBA/KBAPresentation.tsx": 1
+          "@uwo/experiences/edp/scenes/KBA/KBAPresentation.tsx": 1,
+          "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation.tsx": 1
         }
       }
     },
@@ -5001,16 +5001,6 @@
       }
     },
     {
-      "name": "IncomeSourcePresentation",
-      "sourceFile": "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onSourceSelected": { "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourceScene.tsx": 1 },
-        "answers": { "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourceScene.tsx": 1 }
-      }
-    },
-    {
       "name": "KBAQuestionsCollapsible",
       "sourceFile": "@uwo/experiences/edp/shared/components/KBAQuestionsCollapsible",
       "totalInstances": 1,
@@ -5024,6 +5014,16 @@
       "propsWithCallSites": {
         "question": { "@uwo/experiences/edp/scenes/KBA/KBAScene.tsx": 1 },
         "onSelected": { "@uwo/experiences/edp/scenes/KBA/KBAScene.tsx": 1 }
+      }
+    },
+    {
+      "name": "IncomeSourcePresentation",
+      "sourceFile": "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourcePresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onSourceSelected": { "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourceScene.tsx": 1 },
+        "answers": { "@uwo/experiences/edp/scenes/IncomeSource/IncomeSourceScene.tsx": 1 }
       }
     },
     {
@@ -5385,6 +5385,23 @@
       }
     },
     {
+      "name": "SecureAccountCheckpointImage",
+      "sourceFile": "@uwo/components/Images/SecureAccountCheckpointImage",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SecureAccountCheckpointPresentation",
+      "sourceFile": "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClick": {
+          "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointScene.tsx": 1
+        }
+      }
+    },
+    {
       "name": "form",
       "sourceFile": "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx",
       "totalInstances": 1,
@@ -5407,40 +5424,6 @@
         "progressBarValue": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberScene.tsx": 1 },
         "shouldUseBusinessUserCopy": {
           "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberScene.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SecureAccountCheckpointImage",
-      "sourceFile": "@uwo/components/Images/SecureAccountCheckpointImage",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SecureAccountCheckpointPresentation",
-      "sourceFile": "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onClick": {
-          "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointScene.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SecureAccountExplainerImage",
-      "sourceFile": "@uwo/components/Images/SecureAccountExplainerImage",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SecureAccountExplainerPresentation",
-      "sourceFile": "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onClick": {
-          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerScene.tsx": 1
         }
       }
     },
@@ -5487,6 +5470,23 @@
         },
         "progressBarValue": {
           "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberScene.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SecureAccountExplainerImage",
+      "sourceFile": "@uwo/components/Images/SecureAccountExplainerImage",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SecureAccountExplainerPresentation",
+      "sourceFile": "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClick": {
+          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerScene.tsx": 1
         }
       }
     },

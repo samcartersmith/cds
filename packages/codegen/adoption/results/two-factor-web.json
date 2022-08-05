@@ -1260,6 +1260,15 @@
       }
     },
     {
+      "name": "BaseTwoFactorGlobalConfigProvider",
+      "sourceFile": "@cbhq/two-factor-web/contexts/TwoFactorGlobalConfigContext.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "target": { "@cbhq/two-factor-web/contexts/TwoFactorGlobalConfigContext.tsx": 1 }
+      }
+    },
+    {
       "name": "FetchableResourceProvider",
       "sourceFile": "@instant-api-hooks/core/fetch/hooks/FetchableResourceProvider",
       "totalInstances": 1,
@@ -1278,15 +1287,6 @@
         "isProd": { "@cbhq/two-factor-web/providers/IntlProvider.tsx": 1 },
         "onLoadMessages": { "@cbhq/two-factor-web/providers/IntlProvider.tsx": 1 },
         "awaitLoadMessages": { "@cbhq/two-factor-web/providers/IntlProvider.tsx": 1 }
-      }
-    },
-    {
-      "name": "BaseTwoFactorConfigProvider",
-      "sourceFile": "@cbhq/two-factor-web/contexts/TwoFactorConfigContext.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "target": { "@cbhq/two-factor-web/contexts/TwoFactorConfigContext.tsx": 1 }
       }
     },
     {

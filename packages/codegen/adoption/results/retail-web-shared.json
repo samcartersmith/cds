@@ -18,8 +18,8 @@
         "components/TwoFactorAuth/components/TwoFactorAuthForm/TwoFactorAuthForm.tsx": 1,
         "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 1,
         "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 1,
-        "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 4,
         "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 4,
         "components/Earn/components/Community/SharePortfolio/SharePortfolioTable/components/SharePortfolioTableHeader.tsx": 1,
         "components/Earn/components/Community/SharePortfolio/SharePortfolioTable/components/SharePortfolioTableRow.tsx": 3,
         "components/Earn/components/Lesson/AdvancedTask/steps/OverviewStep/OverviewStep.tsx": 1
@@ -111,8 +111,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 55,
-      "totalCallSites": 30,
+      "totalInstances": 56,
+      "totalCallSites": 31,
       "cds": "@cbhq/cds-web/layout/Box",
       "extendedStyledComponents": [
         {
@@ -134,6 +134,7 @@
         "components/WalletDeeplink/DownloadWallet.tsx": 2,
         "components/AdvocacyNews/components/AdvocacyCTAButton.tsx": 2,
         "components/AdvocacyNews/components/AdvocacyNewsContent.tsx": 3,
+        "components/Footer/components/CDSFooterLink.tsx": 1,
         "components/AssetPage/components/AssetStat/AssetStatDesktop.tsx": 3,
         "components/AssetPage/components/AssetStats/AssetStats.tsx": 1,
         "components/AssetPage/components/AssetStats/AssetStatsFallback.tsx": 1,
@@ -145,12 +146,12 @@
         "components/TwoFactorAuth/components/TwoFactorAuthForm/TwoFactorAuthForm.tsx": 1,
         "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 10,
         "components/Earn/components/Community/AssetCommunityFeed/AssetFeedImage.tsx": 1,
+        "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 1,
+        "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
         "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 1,
         "components/Earn/components/Lesson/EarnStories/StoryEndCards.tsx": 1,
         "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
         "components/Earn/components/Lesson/EarnStories/StorySuccess.tsx": 3,
-        "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
-        "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 1,
         "components/Earn/components/Lesson/AdvancedTask/steps/EducationStep.tsx": 2,
         "components/Earn/components/Lesson/AdvancedTask/steps/GetWalletStep.tsx": 1,
         "components/Earn/components/Lesson/AdvancedTask/steps/PollingButtonStep.tsx": 1,
@@ -204,9 +205,9 @@
           "components/AdvocacyNews/components/AdvocacyNewsContent.tsx": 1,
           "components/Earn/components/Lesson/Lesson.tsx": 1,
           "components/Earn/components/Community/AssetCommunityFeed/AssetFeedImage.tsx": 1,
+          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
           "components/Earn/components/Lesson/EarnStories/StoryEndCards.tsx": 1,
           "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
           "components/Earn/components/Lesson/AdvancedTask/steps/GetWalletStep.tsx": 1,
           "components/Earn/components/Community/SharePortfolio/SharePortfolioTable/components/SharePortfolioTableHeader.tsx": 2,
           "components/Earn/components/Community/SharePortfolio/SharePortfolioTable/components/SharePortfolioTableRow.tsx": 1
@@ -227,14 +228,15 @@
           "components/Earn/components/Lesson/Lesson.tsx": 1,
           "components/TwoFactorAuth/components/TwoFactorAuthForm/TwoFactorAuthForm.tsx": 1,
           "components/Earn/components/Community/AssetCommunityFeed/AssetFeedImage.tsx": 1,
+          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
           "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 1,
           "components/Earn/components/Lesson/EarnStories/StoryEndCards.tsx": 1,
           "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
           "components/Earn/components/Community/SharePortfolio/SharePortfolioTable/components/SharePortfolioTableRow.tsx": 1
         },
         "as": {
           "components/AdvocacyNews/components/AdvocacyNewsContent.tsx": 1,
+          "components/Footer/components/CDSFooterLink.tsx": 1,
           "components/Earn/components/Quiz/Quiz.tsx": 1,
           "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 1
         },
@@ -303,9 +305,9 @@
           "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 1
         },
         "minHeight": {
+          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
           "components/Earn/components/Lesson/EarnStories/StoryEndCards.tsx": 1,
           "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
           "components/Earn/components/Lesson/AdvancedTask/steps/EducationStep.tsx": 1
         },
         "maxHeight": { "components/Earn/components/Lesson/EarnStories/StoryEndCards.tsx": 1 },
@@ -321,8 +323,8 @@
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 9,
-      "totalCallSites": 8,
+      "totalInstances": 10,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-web/typography/Link",
       "aliasedCdsComponents": [
         {
@@ -338,6 +340,7 @@
         "components/WalletDeeplink/DownloadWallet.tsx": 1,
         "components/WalletDeeplink/LearnMoreLink.tsx": 1,
         "components/AdvocacyNews/components/AdvocacyCTAButton.tsx": 1,
+        "components/Footer/components/CDSFooterLink.tsx": 1,
         "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
         "components/Earn/components/CampaignEndCards/CampaignEndCard.tsx": 1,
         "components/Earn/components/EarnTcFooter/EarnTcFooter.tsx": 1,
@@ -349,11 +352,13 @@
           "components/WalletDeeplink/DownloadWallet.tsx": 1,
           "components/WalletDeeplink/LearnMoreLink.tsx": 1,
           "components/AdvocacyNews/components/AdvocacyCTAButton.tsx": 1,
+          "components/Footer/components/CDSFooterLink.tsx": 1,
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
           "components/Earn/components/CampaignEndCards/CampaignEndCard.tsx": 1
         },
         "color": {
           "components/ClipboardTrigger/ClipboardTrigger.tsx": 1,
+          "components/Footer/components/CDSFooterLink.tsx": 1,
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
           "components/Earn/components/EarnTcFooter/EarnTcFooter.tsx": 1
         },
@@ -374,13 +379,15 @@
           "components/Earn/components/CampaignEndCards/CampaignEndCard.tsx": 1
         },
         "accessibilityLabel": { "components/AdvocacyNews/components/AdvocacyCTAButton.tsx": 1 },
-        "key": {
-          "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1
-        },
         "to": {
+          "components/Footer/components/CDSFooterLink.tsx": 1,
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
           "components/Earn/components/EarnTcFooter/EarnTcFooter.tsx": 1,
           "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 2
+        },
+        "renderContainer": { "components/Footer/components/CDSFooterLink.tsx": 1 },
+        "key": {
+          "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1
         },
         "aria-label": { "components/Earn/components/CampaignEndCards/CampaignEndCard.tsx": 1 },
         "rel": { "components/Earn/components/CampaignEndCards/CampaignEndCard.tsx": 1 },
@@ -397,8 +404,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 29,
-      "totalCallSites": 19,
+      "totalInstances": 36,
+      "totalCallSites": 22,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -409,8 +416,8 @@
         {
           "aliasPath": "components/Earn/components/Quiz/Quiz.tsx",
           "callSites": [
-            "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx",
-            "components/Earn/components/Lesson/VideoLesson/Prompts.tsx"
+            "components/Earn/components/Lesson/VideoLesson/Prompts.tsx",
+            "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx"
           ]
         },
         {
@@ -424,6 +431,7 @@
       ],
       "callSites": {
         "components/EmailEntryWithError/EmailMultiInputField.tsx": 1,
+        "components/Footer/Footer.tsx": 4,
         "components/SocialShareDrawer/SocialShareDrawer.tsx": 1,
         "components/UpsellBanner/UpsellBanner.tsx": 1,
         "components/WalletDeeplink/DownloadWallet.tsx": 1,
@@ -436,29 +444,36 @@
         "components/Earn/components/CampaignEndCards/CampaignEndCard.tsx": 1,
         "components/Earn/components/CampaignEndCards/CampaignEndCards.tsx": 4,
         "components/Earn/components/Quiz/Quiz.tsx": 2,
+        "components/Footer/components/columns/BrandColumn.tsx": 1,
+        "components/Footer/components/columns/FooterColumn.tsx": 2,
         "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 1,
         "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 3,
+        "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 3,
         "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 1,
         "components/Earn/components/Lesson/EarnStories/StorySuccess.tsx": 1,
-        "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 3,
         "components/Earn/components/Community/SharePortfolio/SharePortfolioTable/components/SharePortfolioTableRow.tsx": 2
       },
       "propsWithCallSites": {
         "spacingBottom": {
           "components/EmailEntryWithError/EmailMultiInputField.tsx": 1,
+          "components/Footer/Footer.tsx": 3,
           "components/WalletDeeplink/TradeOnWallet.tsx": 1,
-          "components/SocialShareDrawer/Tray/Tray.tsx": 1
+          "components/SocialShareDrawer/Tray/Tray.tsx": 1,
+          "components/Footer/components/columns/BrandColumn.tsx": 1
         },
         "minWidth": { "components/EmailEntryWithError/EmailMultiInputField.tsx": 1 },
-        "maxWidth": { "components/UpsellBanner/UpsellBanner.tsx": 1 },
         "gap": {
+          "components/Footer/Footer.tsx": 4,
           "components/UpsellBanner/UpsellBanner.tsx": 1,
           "components/Earn/components/CampaignEndCards/CampaignEndCards.tsx": 3,
+          "components/Footer/components/columns/FooterColumn.tsx": 1,
           "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 1
         },
+        "maxWidth": { "components/UpsellBanner/UpsellBanner.tsx": 1 },
         "spacing": {
           "components/WalletDeeplink/DownloadWallet.tsx": 1,
           "components/WalletDeeplink/WalletDeeplinkMobile.tsx": 1,
+          "components/Footer/components/columns/FooterColumn.tsx": 1,
           "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 1
         },
         "height": {
@@ -483,6 +498,21 @@
         "flexGrow": { "components/Earn/components/CampaignEndCards/CampaignEndCard.tsx": 1 },
         "testID": { "components/Earn/components/CampaignEndCards/CampaignEndCards.tsx": 1 },
         "borderedTop": { "components/Earn/components/Quiz/Quiz.tsx": 1 },
+        "spacingStart": {
+          "components/Footer/components/columns/BrandColumn.tsx": 1,
+          "components/Footer/components/columns/FooterColumn.tsx": 1,
+          "components/Earn/components/Community/SharePortfolio/SharePortfolioTable/components/SharePortfolioTableRow.tsx": 1
+        },
+        "spacingEnd": {
+          "components/Footer/components/columns/BrandColumn.tsx": 1,
+          "components/Footer/components/columns/FooterColumn.tsx": 1
+        },
+        "as": {
+          "components/Footer/components/columns/FooterColumn.tsx": 1,
+          "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 2
+        },
+        "offsetTop": { "components/Footer/components/columns/FooterColumn.tsx": 1 },
+        "offsetBottom": { "components/Footer/components/columns/FooterColumn.tsx": 1 },
         "alignItems": {
           "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 2,
           "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 1,
@@ -491,30 +521,31 @@
         "minHeight": {
           "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 2
         },
-        "as": { "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 2 },
-        "key": { "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 2 },
-        "spacingStart": {
-          "components/Earn/components/Community/SharePortfolio/SharePortfolioTable/components/SharePortfolioTableRow.tsx": 1
-        }
+        "key": { "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 2 }
       }
     },
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 17,
-      "totalCallSites": 14,
+      "totalInstances": 25,
+      "totalCallSites": 19,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
         "components/EmailEntryWithError/EmailMultiInputField.tsx": 1,
+        "components/MiniChartGrid/MiniChartGrid.tsx": 2,
         "components/SocialShareDrawer/SocialShareDrawer.tsx": 1,
         "components/WalletDeeplink/DownloadWallet.tsx": 1,
         "components/WalletDeeplink/TradeOnWallet.tsx": 1,
         "components/WalletDeeplink/WalletDeeplinkMobile.tsx": 1,
         "components/AdvocacyNews/components/AdvocacyCTAButton.tsx": 1,
         "components/AssetPage/components/AssetStats/AssetStatsInfoModal.tsx": 1,
+        "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
         "components/Earn/components/CampaignCard/CampaignCardCTA.tsx": 1,
         "components/Earn/components/CampaignEndCards/CampaignEndCards.tsx": 2,
         "components/Earn/components/JoinCTAContent/ClaimEarn.tsx": 1,
+        "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
+        "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 2,
+        "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 2,
         "components/Earn/components/Lesson/EarnStories/StorySuccess.tsx": 3,
         "components/Earn/components/Lesson/AdvancedTask/steps/EducationStep.tsx": 1,
         "components/Earn/components/Community/SharePortfolio/SharePortfolioTable/components/SharePortfolioTableRow.tsx": 1,
@@ -524,9 +555,14 @@
         "type": { "components/EmailEntryWithError/EmailMultiInputField.tsx": 1 },
         "variant": {
           "components/EmailEntryWithError/EmailMultiInputField.tsx": 1,
+          "components/MiniChartGrid/MiniChartGrid.tsx": 2,
           "components/SocialShareDrawer/SocialShareDrawer.tsx": 1,
+          "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
           "components/Earn/components/CampaignEndCards/CampaignEndCards.tsx": 1,
           "components/Earn/components/JoinCTAContent/ClaimEarn.tsx": 1,
+          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
+          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+          "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1,
           "components/Earn/components/Lesson/EarnStories/StorySuccess.tsx": 2
         },
         "disabled": {
@@ -552,7 +588,11 @@
           "components/WalletDeeplink/WalletDeeplinkMobile.tsx": 1,
           "components/AdvocacyNews/components/AdvocacyCTAButton.tsx": 1,
           "components/AssetPage/components/AssetStats/AssetStatsInfoModal.tsx": 1,
+          "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
           "components/Earn/components/CampaignEndCards/CampaignEndCards.tsx": 2,
+          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
+          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 2,
+          "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 2,
           "components/Earn/components/Lesson/EarnStories/StorySuccess.tsx": 3,
           "components/Earn/components/Lesson/AdvancedTask/steps/EducationStep.tsx": 1,
           "components/Earn/components/Community/SharePortfolio/SharePortfolioTable/components/SharePortfolioTableRow.tsx": 1,
@@ -583,15 +623,18 @@
     {
       "name": "Spacer",
       "sourceFile": "@cbhq/cds-web/layout/Spacer",
-      "totalInstances": 8,
-      "totalCallSites": 5,
+      "totalInstances": 12,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-web/layout/Spacer",
       "callSites": {
         "components/HeroLayout/HeroLayout.tsx": 2,
         "components/SpotRectangleLayout/SpotRectangleLayout.tsx": 2,
         "components/WalletDeeplink/DownloadWallet.tsx": 2,
         "components/WalletDeeplink/TradeOnWallet.tsx": 1,
-        "components/WalletDeeplink/WalletDeeplinkMobile.tsx": 1
+        "components/WalletDeeplink/WalletDeeplinkMobile.tsx": 1,
+        "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1,
+        "components/Footer/components/columns/FooterColumn.tsx": 1,
+        "components/Footer/components/columns/SupportColumn.tsx": 2
       },
       "propsWithCallSites": {
         "vertical": {
@@ -599,7 +642,10 @@
           "components/SpotRectangleLayout/SpotRectangleLayout.tsx": 2,
           "components/WalletDeeplink/DownloadWallet.tsx": 2,
           "components/WalletDeeplink/TradeOnWallet.tsx": 1,
-          "components/WalletDeeplink/WalletDeeplinkMobile.tsx": 1
+          "components/WalletDeeplink/WalletDeeplinkMobile.tsx": 1,
+          "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1,
+          "components/Footer/components/columns/FooterColumn.tsx": 1,
+          "components/Footer/components/columns/SupportColumn.tsx": 2
         }
       }
     },
@@ -616,8 +662,8 @@
         "components/Earn/components/Quiz/Quiz.tsx": 1,
         "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 1,
         "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 1,
-        "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 4,
-        "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 1
+        "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 4
       },
       "propsWithCallSites": {
         "as": {
@@ -627,8 +673,8 @@
           "components/Earn/components/Quiz/Quiz.tsx": 1,
           "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 1,
           "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 1,
-          "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 4,
-          "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 1
+          "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 1,
+          "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 4
         },
         "align": {
           "components/HeroLayout/HeroLayout.tsx": 1,
@@ -641,8 +687,8 @@
         "color": {
           "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 1
         },
-        "spacingVertical": { "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 4 },
-        "key": { "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 1 }
+        "key": { "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 1 },
+        "spacingVertical": { "components/Earn/components/Lesson/EarnStories/StoryDebugger.tsx": 4 }
       }
     },
     {
@@ -672,9 +718,9 @@
         "components/Earn/components/Quiz/Quiz.tsx": 1,
         "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 1,
         "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 2,
+        "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 2,
         "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
         "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1,
-        "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 2,
         "components/Earn/components/Lesson/AdvancedTask/steps/EducationStep.tsx": 1,
         "components/Earn/components/Lesson/AdvancedTask/steps/GetWalletStep.tsx": 2,
         "components/Earn/components/Lesson/AdvancedTask/steps/PollingButtonStep.tsx": 2,
@@ -698,9 +744,9 @@
           "components/Earn/components/Quiz/Quiz.tsx": 1,
           "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 1,
           "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 2,
+          "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 2,
           "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
           "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1,
-          "components/Earn/components/Lesson/AdvancedTask/RichText.tsx": 2,
           "components/Earn/components/Lesson/AdvancedTask/steps/EducationStep.tsx": 1,
           "components/Earn/components/Lesson/AdvancedTask/steps/GetWalletStep.tsx": 2,
           "components/Earn/components/Lesson/AdvancedTask/steps/PollingButtonStep.tsx": 2,
@@ -840,8 +886,8 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 17,
-      "totalCallSites": 9,
+      "totalInstances": 18,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
       "callSites": {
         "components/PercentBarBuying/PercentBarBuying.tsx": 1,
@@ -851,6 +897,7 @@
         "components/AssetPage/components/AssetStats/AssetStats.tsx": 1,
         "components/Earn/components/CampaignEndCards/CampaignEndCard.tsx": 2,
         "components/Earn/components/Lesson/LessonButtonCompleted.tsx": 1,
+        "components/Footer/components/columns/FooterColumn.tsx": 1,
         "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 4,
         "components/Earn/components/Community/SharePortfolio/SharePortfolioTable/components/SharePortfolioTableRow.tsx": 1
       },
@@ -863,6 +910,7 @@
           "components/AssetPage/components/AssetStats/AssetStats.tsx": 1,
           "components/Earn/components/CampaignEndCards/CampaignEndCard.tsx": 2,
           "components/Earn/components/Lesson/LessonButtonCompleted.tsx": 1,
+          "components/Footer/components/columns/FooterColumn.tsx": 1,
           "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 4,
           "components/Earn/components/Community/SharePortfolio/SharePortfolioTable/components/SharePortfolioTableRow.tsx": 1
         },
@@ -1260,6 +1308,44 @@
       }
     },
     {
+      "name": "ButtonGroup",
+      "sourceFile": "@cbhq/cds-web/buttons/ButtonGroup",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/buttons/ButtonGroup",
+      "callSites": {
+        "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+        "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "accessibilityLabel": {
+          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+          "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
+        },
+        "vertical": {
+          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+          "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ThemeProvider",
+      "sourceFile": "@cbhq/cds-web/system/ThemeProvider",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/system/ThemeProvider",
+      "callSites": {
+        "components/Footer/components/columns/FooterColumn.tsx": 1,
+        "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1
+      },
+      "propsWithCallSites": {
+        "scale": {
+          "components/Footer/components/columns/FooterColumn.tsx": 1,
+          "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Divider",
       "sourceFile": "@cbhq/cds-web/layout/Divider",
       "totalInstances": 4,
@@ -1290,16 +1376,6 @@
         "shape": { "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 1 },
         "src": { "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 1 },
         "size": { "components/Earn/components/Community/SharePortfolio/SharePortfolio.tsx": 1 }
-      }
-    },
-    {
-      "name": "ThemeProvider",
-      "sourceFile": "@cbhq/cds-web/system/ThemeProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/system/ThemeProvider",
-      "propsWithCallSites": {
-        "scale": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 }
       }
     },
     {
@@ -2373,6 +2449,34 @@
       }
     },
     {
+      "name": "Container",
+      "sourceFile": "components/Footer/Footer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "FooterWrapper",
+      "sourceFile": "components/Footer/Footer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "PageLinksColumns",
+      "sourceFile": "components/Footer/Footer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "JapanDisclosure",
+      "sourceFile": "components/Footer/components/JapanDisclosure",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "DisclosureList"
+    },
+    {
       "name": "input",
       "sourceFile": "components/Form/TestSupports.tsx",
       "totalInstances": 1,
@@ -3247,67 +3351,6 @@
       "styledComponent": "RightCaretOutline"
     },
     {
-      "name": "PaginationList",
-      "sourceFile": "components/Pagination/PaginationBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ol"
-    },
-    {
-      "name": "MobilePaginationBarText",
-      "sourceFile": "components/Pagination/PaginationBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text"
-    },
-    {
-      "name": "Wrapper",
-      "sourceFile": "components/Pagination/PaginationBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "PaginationContainer",
-      "sourceFile": "components/Pagination/PaginationBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Results",
-      "sourceFile": "components/Pagination/PaginationBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text",
-      "propsWithCallSites": {
-        "color": { "components/Pagination/PaginationBar.tsx": 1 },
-        "size": { "components/Pagination/PaginationBar.tsx": 1 }
-      }
-    },
-    {
-      "name": "ItemWrapper",
-      "sourceFile": "components/Pagination/PaginationBarItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "li"
-    },
-    {
-      "name": "Ellipsis",
-      "sourceFile": "components/Pagination/PaginationBarItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text"
-    },
-    {
-      "name": "PageLinkText",
-      "sourceFile": "components/Pagination/PaginationBarItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text",
-      "propsWithCallSites": { "isActive": { "components/Pagination/PaginationBarItem.tsx": 1 } }
-    },
-    {
       "name": "Container",
       "sourceFile": "components/PercentBarBuying/PercentBarBuying.tsx",
       "totalInstances": 1,
@@ -3393,7 +3436,10 @@
         { "prop": "style", "callSite": "components/PriceTicker/PriceTickerChar.tsx" }
       ],
       "callSites": { "components/PriceTicker/PriceTickerChar.tsx": 2 },
-      "propsWithCallSites": { "style": { "components/PriceTicker/PriceTickerChar.tsx": 2 } }
+      "propsWithCallSites": {
+        "transition": { "components/PriceTicker/PriceTickerChar.tsx": 2 },
+        "style": { "components/PriceTicker/PriceTickerChar.tsx": 2 }
+      }
     },
     {
       "name": "Values",
@@ -3404,7 +3450,10 @@
         { "prop": "style", "callSite": "components/PriceTicker/PriceTickerChar.tsx" }
       ],
       "styledComponent": "div",
-      "propsWithCallSites": { "style": { "components/PriceTicker/PriceTickerChar.tsx": 1 } }
+      "propsWithCallSites": {
+        "transition": { "components/PriceTicker/PriceTickerChar.tsx": 1 },
+        "style": { "components/PriceTicker/PriceTickerChar.tsx": 1 }
+      }
     },
     {
       "name": "LinkContainer",
@@ -3537,7 +3586,8 @@
       "sourceFile": "components/ProgressDots/ProgressDots.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "div"
+      "styledComponent": "div",
+      "propsWithCallSites": { "data-testid": { "components/ProgressDots/ProgressDots.tsx": 1 } }
     },
     {
       "name": "Wrapper",
@@ -3558,6 +3608,21 @@
       "totalCallSites": 1,
       "styledComponent": "div",
       "propsWithCallSites": { "ratio": { "components/RatioBlock/RatioBlock.tsx": 1 } }
+    },
+    {
+      "name": "Wrapper",
+      "sourceFile": "components/Search/SearchBar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Search/SearchBar.tsx" }
+      ],
+      "styledComponent": "section",
+      "propsWithCallSites": {
+        "type": { "components/Search/SearchBar.tsx": 1 },
+        "role": { "components/Search/SearchBar.tsx": 1 },
+        "className": { "components/Search/SearchBar.tsx": 1 }
+      }
     },
     {
       "name": "SearchIcon",
@@ -3729,19 +3794,61 @@
       "styledComponent": "Flex"
     },
     {
-      "name": "Wrapper",
-      "sourceFile": "components/Search/SearchBar.tsx",
+      "name": "SliderContainer",
+      "sourceFile": "components/Slider/Slider.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "ref": { "components/Slider/Slider.tsx": 1 },
+        "onMouseDown": { "components/Slider/Slider.tsx": 1 },
+        "onTouchStart": { "components/Slider/Slider.tsx": 1 },
+        "disabled": { "components/Slider/Slider.tsx": 1 }
+      }
+    },
+    {
+      "name": "Bar",
+      "sourceFile": "components/Slider/SliderBar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [{ "prop": "style", "callSite": "components/Slider/SliderBar.tsx" }],
+      "styledComponent": "div",
+      "propsWithCallSites": { "style": { "components/Slider/SliderBar.tsx": 1 } }
+    },
+    {
+      "name": "SliderDot",
+      "sourceFile": "components/Slider/SliderDots.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [{ "prop": "style", "callSite": "components/Slider/SliderDots.tsx" }],
+      "styledComponent": "div",
+      "propsWithCallSites": { "style": { "components/Slider/SliderDots.tsx": 1 } }
+    },
+    {
+      "name": "Handle",
+      "sourceFile": "components/Slider/SliderHandle.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "className", "callSite": "components/Search/SearchBar.tsx" }
+        { "prop": "style", "callSite": "components/Slider/SliderHandle.tsx" }
       ],
-      "styledComponent": "section",
+      "styledComponent": "div",
       "propsWithCallSites": {
-        "type": { "components/Search/SearchBar.tsx": 1 },
-        "role": { "components/Search/SearchBar.tsx": 1 },
-        "className": { "components/Search/SearchBar.tsx": 1 }
+        "ref": { "components/Slider/SliderHandle.tsx": 1 },
+        "style": { "components/Slider/SliderHandle.tsx": 1 },
+        "disabled": { "components/Slider/SliderHandle.tsx": 1 },
+        "isMouseDown": { "components/Slider/SliderHandle.tsx": 1 },
+        "onFocus": { "components/Slider/SliderHandle.tsx": 1 },
+        "onBlur": { "components/Slider/SliderHandle.tsx": 1 },
+        "tabIndex": { "components/Slider/SliderHandle.tsx": 1 }
       }
+    },
+    {
+      "name": "TooltipFiller",
+      "sourceFile": "components/Slider/SliderTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "Wrapper",
@@ -3862,63 +3969,6 @@
         "disabled": { "components/SimpleInput/SimpleInput.tsx": 1 },
         "readOnly": { "components/SimpleInput/SimpleInput.tsx": 1 }
       }
-    },
-    {
-      "name": "SliderContainer",
-      "sourceFile": "components/Slider/Slider.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "ref": { "components/Slider/Slider.tsx": 1 },
-        "onMouseDown": { "components/Slider/Slider.tsx": 1 },
-        "onTouchStart": { "components/Slider/Slider.tsx": 1 },
-        "disabled": { "components/Slider/Slider.tsx": 1 }
-      }
-    },
-    {
-      "name": "Bar",
-      "sourceFile": "components/Slider/SliderBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "style", "callSite": "components/Slider/SliderBar.tsx" }],
-      "styledComponent": "div",
-      "propsWithCallSites": { "style": { "components/Slider/SliderBar.tsx": 1 } }
-    },
-    {
-      "name": "SliderDot",
-      "sourceFile": "components/Slider/SliderDots.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "style", "callSite": "components/Slider/SliderDots.tsx" }],
-      "styledComponent": "div",
-      "propsWithCallSites": { "style": { "components/Slider/SliderDots.tsx": 1 } }
-    },
-    {
-      "name": "Handle",
-      "sourceFile": "components/Slider/SliderHandle.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "style", "callSite": "components/Slider/SliderHandle.tsx" }
-      ],
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "ref": { "components/Slider/SliderHandle.tsx": 1 },
-        "style": { "components/Slider/SliderHandle.tsx": 1 },
-        "disabled": { "components/Slider/SliderHandle.tsx": 1 },
-        "isMouseDown": { "components/Slider/SliderHandle.tsx": 1 },
-        "onFocus": { "components/Slider/SliderHandle.tsx": 1 },
-        "onBlur": { "components/Slider/SliderHandle.tsx": 1 },
-        "tabIndex": { "components/Slider/SliderHandle.tsx": 1 }
-      }
-    },
-    {
-      "name": "TooltipFiller",
-      "sourceFile": "components/Slider/SliderTooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
     },
     {
       "name": "Svg",
@@ -4136,13 +4186,6 @@
       }
     },
     {
-      "name": "Font",
-      "sourceFile": "components/Text/Text.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
-    },
-    {
       "name": "StyledTextArea",
       "sourceFile": "components/TextArea/TextArea.tsx",
       "totalInstances": 1,
@@ -4156,15 +4199,11 @@
       }
     },
     {
-      "name": "Arrow",
-      "sourceFile": "components/Tooltip/Tooltip.tsx",
+      "name": "Font",
+      "sourceFile": "components/Text/Text.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "position": { "components/Tooltip/Tooltip.tsx": 1 },
-        "align": { "components/Tooltip/Tooltip.tsx": 1 }
-      }
+      "styledComponent": "span"
     },
     {
       "name": "Container",
@@ -4244,18 +4283,15 @@
       }
     },
     {
-      "name": "NoWrap",
-      "sourceFile": "components/TrailingIcon/TrailingIcon.tsx",
+      "name": "Arrow",
+      "sourceFile": "components/Tooltip/Tooltip.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "span"
-    },
-    {
-      "name": "Icon",
-      "sourceFile": "components/TrailingIcon/TrailingIcon.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "position": { "components/Tooltip/Tooltip.tsx": 1 },
+        "align": { "components/Tooltip/Tooltip.tsx": 1 }
+      }
     },
     {
       "name": "StepStyles",
@@ -4280,6 +4316,20 @@
         "hasMultipleSteps": { "components/Transitioner/Transitioner.tsx": 1 },
         "style": { "components/Transitioner/Transitioner.tsx": 1 }
       }
+    },
+    {
+      "name": "NoWrap",
+      "sourceFile": "components/TrailingIcon/TrailingIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "components/TrailingIcon/TrailingIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
     },
     {
       "name": "FidoAuthentication",
@@ -4781,16 +4831,6 @@
       }
     },
     {
-      "name": "ModalButton",
-      "sourceFile": "components/Footer/components/CookiePreferences.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "button",
-      "propsWithCallSites": {
-        "onClick": { "components/Footer/components/CookiePreferences.tsx": 1 }
-      }
-    },
-    {
       "name": "Copyright",
       "sourceFile": "components/Footer/components/Copyright.tsx",
       "totalInstances": 1,
@@ -5024,6 +5064,13 @@
       "styledComponent": "span"
     },
     {
+      "name": "StyledClose",
+      "sourceFile": "components/MultiInput/InputValueButton/InputValueButton.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Close"
+    },
+    {
       "name": "svg",
       "sourceFile": "components/Modal/components/ModalHeader.tsx",
       "totalInstances": 1,
@@ -5035,13 +5082,6 @@
         "height": { "components/Modal/components/ModalHeader.tsx": 1 },
         "viewBox": { "components/Modal/components/ModalHeader.tsx": 1 }
       }
-    },
-    {
-      "name": "StyledClose",
-      "sourceFile": "components/MultiInput/InputValueButton/InputValueButton.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Close"
     },
     {
       "name": "Wrapper",
@@ -5083,21 +5123,6 @@
       "styledComponent": "span"
     },
     {
-      "name": "div",
-      "sourceFile": "components/AssetPage/components/AssetChart/AssetChart.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "className",
-          "callSite": "components/AssetPage/components/AssetChart/AssetChart.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "className": { "components/AssetPage/components/AssetChart/AssetChart.tsx": 1 }
-      }
-    },
-    {
       "name": "Description",
       "sourceFile": "components/AssetPage/components/AssetArticles/AssetArticles.tsx",
       "totalInstances": 1,
@@ -5122,6 +5147,21 @@
         "isMobile": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 1 },
         "key": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 1 },
         "rank": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/AssetPage/components/AssetChart/AssetChart.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "className",
+          "callSite": "components/AssetPage/components/AssetChart/AssetChart.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "className": { "components/AssetPage/components/AssetChart/AssetChart.tsx": 1 }
       }
     },
     {
@@ -5599,34 +5639,6 @@
       }
     },
     {
-      "name": "PriceText",
-      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
-    },
-    {
-      "name": "DateText",
-      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Caption"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "BottomIndicator",
-      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "SelectorContainer",
       "sourceFile": "components/Chart/components/PeriodSelector/PeriodSelector.tsx",
       "totalInstances": 1,
@@ -5674,6 +5686,34 @@
       }
     },
     {
+      "name": "PriceText",
+      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
+      "name": "DateText",
+      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Caption"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "BottomIndicator",
+      "sourceFile": "components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "Modal",
       "sourceFile": "components/Modal",
       "totalInstances": 6,
@@ -5683,8 +5723,8 @@
         "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
         "components/Earn/components/JoinModal/JoinModal.tsx": 1,
         "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1,
-        "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
         "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
+        "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
         "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
       },
       "propsWithCallSites": {
@@ -5692,8 +5732,8 @@
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
           "components/Earn/components/JoinModal/JoinModal.tsx": 1,
           "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1,
-          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
           "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
+          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
           "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
         },
         "isOpen": {
@@ -5722,21 +5762,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
-    },
-    {
-      "name": "IgnoreButton",
-      "sourceFile": "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "onClick": {
-          "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1
-        },
-        "type": {
-          "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1
-        }
-      }
     },
     {
       "name": "Container",
@@ -6472,67 +6497,45 @@
     },
     {
       "name": "StyledModalContainer",
-      "sourceFile": "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx",
+      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "ModalContainer"
     },
     {
       "name": "StyledModalBody",
-      "sourceFile": "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx",
+      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "ModalBody"
     },
     {
       "name": "Description",
-      "sourceFile": "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx",
+      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
-    },
-    {
-      "name": "IgnoreButton",
-      "sourceFile": "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "onClick": { "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1 },
-        "type": { "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1 }
-      }
     },
     {
       "name": "StyledModalContainer",
-      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
+      "sourceFile": "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "ModalContainer"
     },
     {
       "name": "StyledModalBody",
-      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
+      "sourceFile": "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "ModalBody"
     },
     {
       "name": "Description",
-      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
+      "sourceFile": "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
-    },
-    {
-      "name": "IgnoreButton",
-      "sourceFile": "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "onClick": { "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1 },
-        "type": { "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1 }
-      }
     },
     {
       "name": "Container",
@@ -6643,17 +6646,6 @@
       "styledComponent": "div"
     },
     {
-      "name": "IgnoreButton",
-      "sourceFile": "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "onClick": { "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1 },
-        "type": { "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1 }
-      }
-    },
-    {
       "name": "InnerWrapper",
       "sourceFile": "components/Footer/components/columns/BrandColumn.tsx",
       "totalInstances": 1,
@@ -6675,6 +6667,13 @@
       }
     },
     {
+      "name": "JapanAddress",
+      "sourceFile": "components/Footer/components/JapanAddress",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "AddressLine"
+    },
+    {
       "name": "BrandInfo",
       "sourceFile": "components/Footer/components/columns/BrandColumn.tsx",
       "totalInstances": 1,
@@ -6682,47 +6681,6 @@
       "styledComponent": "Flex",
       "propsWithCallSites": {
         "column": { "components/Footer/components/columns/BrandColumn.tsx": 1 }
-      }
-    },
-    {
-      "name": "FooterLink",
-      "sourceFile": "components/Footer/components/FooterLink",
-      "totalInstances": 69,
-      "totalCallSites": 7,
-      "presentationalElement": "LinkWrapper",
-      "callSites": {
-        "components/Footer/components/columns/BusinessesColumn.tsx": 4,
-        "components/Footer/components/columns/CompanyColumn.tsx": 12,
-        "components/Footer/components/columns/DevelopersColumn.tsx": 10,
-        "components/Footer/components/columns/IndividualsColumn.tsx": 6,
-        "components/Footer/components/columns/JapanDisclosureColumn.tsx": 15,
-        "components/Footer/components/columns/LearnColumn.tsx": 11,
-        "components/Footer/components/columns/SupportColumn.tsx": 11
-      },
-      "propsWithCallSites": {
-        "title": {
-          "components/Footer/components/columns/BusinessesColumn.tsx": 4,
-          "components/Footer/components/columns/CompanyColumn.tsx": 12,
-          "components/Footer/components/columns/DevelopersColumn.tsx": 10,
-          "components/Footer/components/columns/IndividualsColumn.tsx": 6,
-          "components/Footer/components/columns/JapanDisclosureColumn.tsx": 15,
-          "components/Footer/components/columns/LearnColumn.tsx": 11,
-          "components/Footer/components/columns/SupportColumn.tsx": 11
-        },
-        "href": {
-          "components/Footer/components/columns/BusinessesColumn.tsx": 4,
-          "components/Footer/components/columns/CompanyColumn.tsx": 12,
-          "components/Footer/components/columns/DevelopersColumn.tsx": 10,
-          "components/Footer/components/columns/IndividualsColumn.tsx": 6,
-          "components/Footer/components/columns/JapanDisclosureColumn.tsx": 15,
-          "components/Footer/components/columns/LearnColumn.tsx": 11,
-          "components/Footer/components/columns/SupportColumn.tsx": 11
-        },
-        "routeInternally": {
-          "components/Footer/components/columns/CompanyColumn.tsx": 4,
-          "components/Footer/components/columns/LearnColumn.tsx": 11
-        },
-        "onClick": { "components/Footer/components/columns/LearnColumn.tsx": 1 }
       }
     },
     {
@@ -7140,6 +7098,120 @@
           "components/Earn/components/Community/AssetCommunityFeed/AssetFeedImage.tsx": 1
         }
       }
+    },
+    {
+      "name": "Content",
+      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Card"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/Header.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "visible": { "components/Earn/components/Lesson/AdvancedTask/Header.tsx": 1 }
+      }
+    },
+    {
+      "name": "Left",
+      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/Header.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "BackIcon",
+      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/Header.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "BackIconSvg",
+      "propsWithCallSites": {
+        "onClick": { "components/Earn/components/Lesson/AdvancedTask/Header.tsx": 1 }
+      }
+    },
+    {
+      "name": "CloseIcon",
+      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/Header.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "CloseIconSvg",
+      "propsWithCallSites": {
+        "onClick": { "components/Earn/components/Lesson/AdvancedTask/Header.tsx": 1 }
+      }
+    },
+    {
+      "name": "QuizIcon",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Prompts.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ContentCard",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Task.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Bottom",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "VideoPlayer",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "TextContainer",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "LessonNumber",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "LessonNumberIcon",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "lessonNumberIcon"
+    },
+    {
+      "name": "LessonNumberText",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Detail"
+    },
+    {
+      "name": "Content",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Card"
+    },
+    {
+      "name": "Notice",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "StyledButton",
@@ -7561,120 +7633,6 @@
       "styledComponent": "div"
     },
     {
-      "name": "QuizIcon",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Prompts.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ContentCard",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Task.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Bottom",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "VideoPlayer",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "TextContainer",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "LessonNumber",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "LessonNumberIcon",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "lessonNumberIcon"
-    },
-    {
-      "name": "LessonNumberText",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Detail"
-    },
-    {
-      "name": "Content",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Card"
-    },
-    {
-      "name": "Notice",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Content",
-      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Card"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/Header.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "visible": { "components/Earn/components/Lesson/AdvancedTask/Header.tsx": 1 }
-      }
-    },
-    {
-      "name": "Left",
-      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/Header.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "BackIcon",
-      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/Header.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "BackIconSvg",
-      "propsWithCallSites": {
-        "onClick": { "components/Earn/components/Lesson/AdvancedTask/Header.tsx": 1 }
-      }
-    },
-    {
-      "name": "CloseIcon",
-      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/Header.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "CloseIconSvg",
-      "propsWithCallSites": {
-        "onClick": { "components/Earn/components/Lesson/AdvancedTask/Header.tsx": 1 }
-      }
-    },
-    {
       "name": "ToastContainer",
       "sourceFile": "components/Earn/components/Lesson/AdvancedTask/steps/GetWalletStep.tsx",
       "totalInstances": 1,
@@ -7855,11 +7813,10 @@
       "name": "ThemeProvider",
       "sourceFile": "styled-components/ThemeProvider",
       "totalInstances": 14,
-      "totalCallSites": 13,
+      "totalCallSites": 12,
       "callSites": {
         "components/Wrapper.tsx": 1,
-        "utils/setupJest.js": 1,
-        "utils/tests.tsx": 2,
+        "utils/tests.tsx": 3,
         "components/Dropdown/Dropdown-demo.tsx": 1,
         "components/EndlessMenu/EndlessMenu-demo.tsx": 1,
         "components/HeaderMobileMenu/HeaderMobileMenu.tsx": 1,
@@ -7874,8 +7831,7 @@
       "propsWithCallSites": {
         "theme": {
           "components/Wrapper.tsx": 1,
-          "utils/setupJest.js": 1,
-          "utils/tests.tsx": 2,
+          "utils/tests.tsx": 3,
           "components/Dropdown/Dropdown-demo.tsx": 1,
           "components/EndlessMenu/EndlessMenu-demo.tsx": 1,
           "components/HeaderMobileMenu/HeaderMobileMenu.tsx": 1,
@@ -7905,10 +7861,10 @@
       "name": "IntlProvider",
       "sourceFile": "react-intl/IntlProvider",
       "totalInstances": 3,
-      "totalCallSites": 2,
-      "callSites": { "utils/setupJest.js": 1, "utils/tests.tsx": 2 },
+      "totalCallSites": 1,
+      "callSites": { "utils/tests.tsx": 3 },
       "propsWithCallSites": {
-        "locale": { "utils/setupJest.js": 1, "utils/tests.tsx": 1 },
+        "locale": { "utils/tests.tsx": 2 },
         "messages": { "utils/tests.tsx": 1 }
       }
     },
@@ -8245,8 +8201,8 @@
         "components/Earn/components/Common/Button.tsx": 1,
         "components/Earn/components/Lesson/Lesson.tsx": 1,
         "components/Earn/components/PageLoading/PageLoading.tsx": 1,
-        "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-        "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1
+        "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1
       },
       "propsWithCallSites": {
         "data-testid": { "components/Button/Button.tsx": 1 },
@@ -8514,14 +8470,24 @@
       }
     },
     {
+      "name": "SelectList",
+      "sourceFile": "components/SelectList",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "name": { "components/CountrySelect/CountrySelect.tsx": 1 },
+        "onSearch": { "components/CountrySelect/CountrySelect.tsx": 1 },
+        "value": { "components/CountrySelect/CountrySelect.tsx": 1 }
+      }
+    },
+    {
       "name": "Text",
       "sourceFile": "components/Text",
-      "totalInstances": 8,
-      "totalCallSites": 6,
+      "totalInstances": 7,
+      "totalCallSites": 5,
       "callSites": {
         "components/CountrySelect/CountrySelect.tsx": 1,
         "components/Input/Input.tsx": 1,
-        "components/Pagination/PaginationBar.tsx": 1,
         "components/SelectList/SelectList.tsx": 1,
         "components/Borrow/Loan/components/BorrowNmlsLink.tsx": 2,
         "components/TwoFactorAuth/components/TwoFactorAuthForm/TwoFactorAuthForm.tsx": 2
@@ -8531,22 +8497,10 @@
           "components/Input/Input.tsx": 1,
           "components/Borrow/Loan/components/BorrowNmlsLink.tsx": 2
         },
-        "weight": { "components/Pagination/PaginationBar.tsx": 1 },
         "size": {
           "components/Borrow/Loan/components/BorrowNmlsLink.tsx": 2,
           "components/TwoFactorAuth/components/TwoFactorAuthForm/TwoFactorAuthForm.tsx": 2
         }
-      }
-    },
-    {
-      "name": "SelectList",
-      "sourceFile": "components/SelectList",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "name": { "components/CountrySelect/CountrySelect.tsx": 1 },
-        "onSearch": { "components/CountrySelect/CountrySelect.tsx": 1 },
-        "value": { "components/CountrySelect/CountrySelect.tsx": 1 }
       }
     },
     {
@@ -8771,6 +8725,57 @@
       }
     },
     {
+      "name": "BrandColumn",
+      "sourceFile": "components/Footer/components/columns/BrandColumn",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "themeMode": { "components/Footer/Footer.tsx": 1 } }
+    },
+    {
+      "name": "CompanyColumn",
+      "sourceFile": "components/Footer/components/columns/CompanyColumn",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "routeExternally": { "components/Footer/Footer.tsx": 1 } }
+    },
+    {
+      "name": "LearnColumn",
+      "sourceFile": "components/Footer/components/columns/LearnColumn",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "routeExternally": { "components/Footer/Footer.tsx": 1 } }
+    },
+    {
+      "name": "IndividualsColumn",
+      "sourceFile": "components/Footer/components/columns/IndividualsColumn",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "BusinessesColumn",
+      "sourceFile": "components/Footer/components/columns/BusinessesColumn",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "DevelopersColumn",
+      "sourceFile": "components/Footer/components/columns/DevelopersColumn",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "JapanDisclosureColumn",
+      "sourceFile": "components/Footer/components/columns/JapanDisclosureColumn",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SupportColumn",
+      "sourceFile": "components/Footer/components/columns/SupportColumn",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "Provider",
       "sourceFile": "components/Form/FormControl/Provider",
       "totalInstances": 1,
@@ -8783,6 +8788,13 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "onSubmit": { "components/Form/Form.tsx": 1 } }
+    },
+    {
+      "name": "TestHelper",
+      "sourceFile": "components/Form/Form.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "store": { "components/Form/Form.tsx": 1 } }
     },
     {
       "name": "Component",
@@ -9099,26 +9111,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "Button",
-      "sourceFile": "components/Button",
-      "totalInstances": 7,
-      "totalCallSites": 4,
-      "callSites": {
-        "components/MiniChartGrid/MiniChartGrid.tsx": 2,
-        "components/TooltipTrigger/TooltipTrigger-demo.tsx": 3,
-        "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
-        "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
-      },
-      "propsWithCallSites": {
-        "type": { "components/MiniChartGrid/MiniChartGrid.tsx": 2 },
-        "size": { "components/MiniChartGrid/MiniChartGrid.tsx": 2 },
-        "onClick": {
-          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
-          "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
-        }
-      }
-    },
-    {
       "name": "InputValueButton",
       "sourceFile": "components/MultiInput/InputValueButton",
       "totalInstances": 1,
@@ -9154,46 +9146,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "PaginationBarItem",
-      "sourceFile": "components/Pagination/PaginationBarItem",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "components/Pagination/PaginationBar.tsx": 1 },
-        "value": { "components/Pagination/PaginationBar.tsx": 1 },
-        "isActive": { "components/Pagination/PaginationBar.tsx": 1 },
-        "onClick": { "components/Pagination/PaginationBar.tsx": 1 },
-        "getPageUrl": { "components/Pagination/PaginationBar.tsx": 1 }
-      }
-    },
-    {
-      "name": "PageLink",
-      "sourceFile": "components/PageLink",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "components/Pagination/PaginationBar.tsx": 2 },
-      "propsWithCallSites": {
-        "isPrevPage": { "components/Pagination/PaginationBar.tsx": 2 },
-        "href": { "components/Pagination/PaginationBar.tsx": 2 },
-        "onClick": { "components/Pagination/PaginationBar.tsx": 2 },
-        "historyUpdateMethod": { "components/Pagination/PaginationBar.tsx": 1 },
-        "label": { "components/Pagination/PaginationBar.tsx": 2 }
-      }
-    },
-    {
-      "name": "PseudoLink",
-      "sourceFile": "components/AssetsList/components/PseudoLink/PseudoLink",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": { "components/Pagination/PaginationBarItem.tsx": 1 },
-        "onClick": { "components/Pagination/PaginationBarItem.tsx": 1 },
-        "historyUpdateMethod": { "components/Pagination/PaginationBarItem.tsx": 1 },
-        "aria-label": { "components/Pagination/PaginationBarItem.tsx": 1 },
-        "data-testid": { "components/Pagination/PaginationBarItem.tsx": 1 }
-      }
-    },
-    {
       "name": "FormattedPercentChange",
       "sourceFile": "components/PercentChange/PercentChange.tsx",
       "totalInstances": 1,
@@ -9210,6 +9162,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
+        "transition": { "components/PriceTicker/PriceTicker.tsx": 1 },
         "key": { "components/PriceTicker/PriceTicker.tsx": 1 },
         "stripValueIndex": { "components/PriceTicker/PriceTicker.tsx": 1 },
         "width": { "components/PriceTicker/PriceTicker.tsx": 1 },
@@ -9288,6 +9241,28 @@
       }
     },
     {
+      "name": "SimpleInput",
+      "sourceFile": "components/SimpleInput",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "icon": { "components/Search/SearchBar.tsx": 1 },
+        "type": { "components/Search/SearchBar.tsx": 1 },
+        "placeholder": { "components/Search/SearchBar.tsx": 1 },
+        "onChange": { "components/Search/SearchBar.tsx": 1 },
+        "onBlur": { "components/Search/SearchBar.tsx": 1 },
+        "onFocus": { "components/Search/SearchBar.tsx": 1 },
+        "value": { "components/Search/SearchBar.tsx": 1 }
+      }
+    },
+    {
+      "name": "Search",
+      "sourceFile": "assets/icons/Search",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "aria-hidden": { "components/Search/SearchBar.tsx": 1 } }
+    },
+    {
       "name": "div",
       "sourceFile": "components/SelectList/SelectList.tsx",
       "totalInstances": 1,
@@ -9344,28 +9319,6 @@
           "components/ValidatedInput/ValidatedInput.tsx": 1
         }
       }
-    },
-    {
-      "name": "SimpleInput",
-      "sourceFile": "components/SimpleInput",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "icon": { "components/Search/SearchBar.tsx": 1 },
-        "type": { "components/Search/SearchBar.tsx": 1 },
-        "placeholder": { "components/Search/SearchBar.tsx": 1 },
-        "onChange": { "components/Search/SearchBar.tsx": 1 },
-        "onBlur": { "components/Search/SearchBar.tsx": 1 },
-        "onFocus": { "components/Search/SearchBar.tsx": 1 },
-        "value": { "components/Search/SearchBar.tsx": 1 }
-      }
-    },
-    {
-      "name": "Search",
-      "sourceFile": "assets/icons/Search",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "aria-hidden": { "components/Search/SearchBar.tsx": 1 } }
     },
     {
       "name": "SliderBar",
@@ -9523,9 +9476,9 @@
         "components/WalletDeeplink/WalletDeeplink.tsx": 1,
         "components/AssetPage/components/AssetChart/AssetChart.tsx": 1,
         "components/AssetPage/components/AssetStat/AssetStatMobile.tsx": 1,
-        "components/Earn/components/Lesson/EarnStories/EarnStoryContent.tsx": 1,
+        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
         "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1,
-        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+        "components/Earn/components/Lesson/EarnStories/EarnStoryContent.tsx": 1
       },
       "propsWithCallSites": {
         "step": {
@@ -9533,9 +9486,9 @@
           "components/WalletDeeplink/WalletDeeplink.tsx": 1,
           "components/AssetPage/components/AssetChart/AssetChart.tsx": 1,
           "components/AssetPage/components/AssetStat/AssetStatMobile.tsx": 1,
-          "components/Earn/components/Lesson/EarnStories/EarnStoryContent.tsx": 1,
+          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
           "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1,
-          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+          "components/Earn/components/Lesson/EarnStories/EarnStoryContent.tsx": 1
         },
         "speed": { "components/SuspenseWithTransition/SuspenseWithTransition.tsx": 1 },
         "stickySteps": { "components/SuspenseWithTransition/SuspenseWithTransition.tsx": 1 },
@@ -9551,9 +9504,9 @@
         "components/SuspenseWithTransition/SuspenseWithTransition.tsx": 1,
         "components/HeaderLoggedout/components/HeaderProductLinks.tsx": 2,
         "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 1,
+        "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
         "components/Earn/components/Lesson/EarnStories/StoryEndCards.tsx": 1,
-        "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-        "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1
+        "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1
       },
       "propsWithCallSites": {
         "key": { "components/SuspenseWithTransition/SuspenseWithTransition.tsx": 1 },
@@ -9561,9 +9514,9 @@
           "components/SuspenseWithTransition/SuspenseWithTransition.tsx": 1,
           "components/HeaderLoggedout/components/HeaderProductLinks.tsx": 2,
           "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 1,
+          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
           "components/Earn/components/Lesson/EarnStories/StoryEndCards.tsx": 1,
-          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1
+          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1
         }
       }
     },
@@ -9604,18 +9557,6 @@
       }
     },
     {
-      "name": "TipComponent",
-      "sourceFile": "components/Tooltip/Tooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isSmall": { "components/Tooltip/Tooltip.tsx": 1 },
-        "wrapContent": { "components/Tooltip/Tooltip.tsx": 1 },
-        "data-tip-content-centered": { "components/Tooltip/Tooltip.tsx": 1 },
-        "tooltipWidthMaxContent": { "components/Tooltip/Tooltip.tsx": 1 }
-      }
-    },
-    {
       "name": "Toggler",
       "sourceFile": "components/Toggler/Toggler",
       "totalInstances": 1,
@@ -9639,6 +9580,13 @@
       }
     },
     {
+      "name": "Button",
+      "sourceFile": "components/Button",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "components/TooltipTrigger/TooltipTrigger-demo.tsx": 3 }
+    },
+    {
       "name": "span",
       "sourceFile": "components/TooltipTrigger/TooltipTrigger-demo.tsx",
       "totalInstances": 3,
@@ -9660,6 +9608,18 @@
         "position": { "components/TooltipTrigger/TooltipTrigger.tsx": 1 },
         "align": { "components/TooltipTrigger/TooltipTrigger.tsx": 1 },
         "tooltipWidthMaxContent": { "components/TooltipTrigger/TooltipTrigger.tsx": 1 }
+      }
+    },
+    {
+      "name": "TipComponent",
+      "sourceFile": "components/Tooltip/Tooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isSmall": { "components/Tooltip/Tooltip.tsx": 1 },
+        "wrapContent": { "components/Tooltip/Tooltip.tsx": 1 },
+        "data-tip-content-centered": { "components/Tooltip/Tooltip.tsx": 1 },
+        "tooltipWidthMaxContent": { "components/Tooltip/Tooltip.tsx": 1 }
       }
     },
     {
@@ -10015,6 +9975,13 @@
       "totalCallSites": 1
     },
     {
+      "name": "Link",
+      "sourceFile": "react-router-dom/Link",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "to": { "components/Footer/components/CDSFooterLink.tsx": 1 } }
+    },
+    {
       "name": "CookiePreferencesModal",
       "sourceFile": "@cb/cookie-manager/CookiePreferencesModal",
       "totalInstances": 1,
@@ -10025,10 +9992,48 @@
       }
     },
     {
-      "name": "li",
-      "sourceFile": "components/Footer/components/CookiePreferences.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
+      "name": "CDSFooterLink",
+      "sourceFile": "components/Footer/components/CDSFooterLink",
+      "totalInstances": 69,
+      "totalCallSites": 8,
+      "callSites": {
+        "components/Footer/components/CookiePreferences.tsx": 1,
+        "components/Footer/components/columns/BusinessesColumn.tsx": 4,
+        "components/Footer/components/columns/CompanyColumn.tsx": 12,
+        "components/Footer/components/columns/DevelopersColumn.tsx": 10,
+        "components/Footer/components/columns/IndividualsColumn.tsx": 6,
+        "components/Footer/components/columns/JapanDisclosureColumn.tsx": 14,
+        "components/Footer/components/columns/LearnColumn.tsx": 11,
+        "components/Footer/components/columns/SupportColumn.tsx": 11
+      },
+      "propsWithCallSites": {
+        "onPress": {
+          "components/Footer/components/CookiePreferences.tsx": 1,
+          "components/Footer/components/columns/LearnColumn.tsx": 1
+        },
+        "href": {
+          "components/Footer/components/columns/BusinessesColumn.tsx": 4,
+          "components/Footer/components/columns/CompanyColumn.tsx": 12,
+          "components/Footer/components/columns/DevelopersColumn.tsx": 10,
+          "components/Footer/components/columns/IndividualsColumn.tsx": 6,
+          "components/Footer/components/columns/JapanDisclosureColumn.tsx": 14,
+          "components/Footer/components/columns/LearnColumn.tsx": 10,
+          "components/Footer/components/columns/SupportColumn.tsx": 11
+        },
+        "accessibilityLabel": {
+          "components/Footer/components/columns/BusinessesColumn.tsx": 4,
+          "components/Footer/components/columns/CompanyColumn.tsx": 12,
+          "components/Footer/components/columns/DevelopersColumn.tsx": 1,
+          "components/Footer/components/columns/IndividualsColumn.tsx": 4,
+          "components/Footer/components/columns/LearnColumn.tsx": 1,
+          "components/Footer/components/columns/SupportColumn.tsx": 11
+        },
+        "routeInternally": {
+          "components/Footer/components/columns/CompanyColumn.tsx": 4,
+          "components/Footer/components/columns/LearnColumn.tsx": 11
+        },
+        "to": { "components/Footer/components/columns/LearnColumn.tsx": 1 }
+      }
     },
     {
       "name": "DisclosureListItem",
@@ -10578,6 +10583,33 @@
       "totalCallSites": 1
     },
     {
+      "name": "Card",
+      "sourceFile": "components/AssetPage/components/AssetArticles/AssetArticles.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isMobile": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 1 }
+      }
+    },
+    {
+      "name": "TransitionGroup",
+      "sourceFile": "react-transition-group/TransitionGroup",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "CSSTransition",
+      "sourceFile": "react-transition-group/CSSTransition",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 2 },
+      "propsWithCallSites": {
+        "key": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 2 },
+        "timeout": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 2 },
+        "classNames": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 2 }
+      }
+    },
+    {
       "name": "AssetChartHeader",
       "sourceFile": "components/AssetPage/components/AssetChart/components/AssetChartHeader",
       "totalInstances": 1,
@@ -10633,33 +10665,6 @@
       }
     },
     {
-      "name": "Card",
-      "sourceFile": "components/AssetPage/components/AssetArticles/AssetArticles.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isMobile": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 1 }
-      }
-    },
-    {
-      "name": "TransitionGroup",
-      "sourceFile": "react-transition-group/TransitionGroup",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "CSSTransition",
-      "sourceFile": "react-transition-group/CSSTransition",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 2 },
-      "propsWithCallSites": {
-        "key": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 2 },
-        "timeout": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 2 },
-        "classNames": { "components/AssetPage/components/AssetArticles/AssetArticles.tsx": 2 }
-      }
-    },
-    {
       "name": "ReactComponent",
       "sourceFile": "components/AssetPage/components/AssetInfo/icons/white_paper.svg/ReactComponent",
       "totalInstances": 2,
@@ -10698,7 +10703,10 @@
         "components/AssetPage/components/AssetInfo/AssetInfoNew.tsx": 1
       },
       "propsWithCallSites": {
-        "data-testid": { "components/AssetPage/components/AssetInfo/AssetInfoFallback.tsx": 1 }
+        "data-testid": {
+          "components/AssetPage/components/AssetInfo/AssetInfoFallback.tsx": 1,
+          "components/AssetPage/components/AssetInfo/AssetInfoNew.tsx": 1
+        }
       }
     },
     {
@@ -11050,13 +11058,6 @@
       }
     },
     {
-      "name": "span",
-      "sourceFile": "components/AssetPage/components/AssetStatPrice/AssetStatPrice.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "components/AssetPage/components/AssetStatPrice/AssetStatPrice.tsx": 3 }
-    },
-    {
       "name": "AssetStat",
       "sourceFile": "components/AssetPage/components/AssetStat",
       "totalInstances": 1,
@@ -11125,6 +11126,13 @@
         "assetSymbol": { "components/AssetPage/components/AssetStats/useStatsList.tsx": 1 },
         "inline": { "components/AssetPage/components/AssetStats/useStatsList.tsx": 1 }
       }
+    },
+    {
+      "name": "span",
+      "sourceFile": "components/AssetPage/components/AssetStatPrice/AssetStatPrice.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "components/AssetPage/components/AssetStatPrice/AssetStatPrice.tsx": 3 }
     },
     {
       "name": "BoxedContainer",
@@ -11423,8 +11431,8 @@
         "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
         "components/Earn/components/JoinModal/JoinModal.tsx": 1,
         "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1,
-        "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
         "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
+        "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
         "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
       },
       "propsWithCallSites": {
@@ -11432,20 +11440,20 @@
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
           "components/Earn/components/JoinModal/JoinModal.tsx": 1,
           "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1,
-          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
           "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
+          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
           "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
         },
         "title": {
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
-          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
           "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
+          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
           "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
         },
         "center": {
           "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
-          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
           "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
+          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
           "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
         },
         "close": {
@@ -11818,23 +11826,23 @@
         "components/Earn/components/Lesson/Lesson.tsx": 1,
         "components/AssetPage/components/AssetChart/components/AssetChartAmount.tsx": 1,
         "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 1,
-        "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
-        "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
+        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
         "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
-        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+        "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1
       },
       "propsWithCallSites": {
         "fallback": {
           "components/AssetPage/components/AssetChart/components/AssetChartAmount.tsx": 1,
           "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 1,
+          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
           "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
-          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1
         },
         "onCatch": {
           "components/Earn/components/Community/AssetCommunityFeed/AssetCommunityFeed.tsx": 1,
-          "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
-          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
+          "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1
         }
       }
     },
@@ -11933,19 +11941,19 @@
       "totalCallSites": 3,
       "callSites": {
         "components/Earn/components/Lesson/Lesson.tsx": 1,
-        "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
-        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1
       },
       "propsWithCallSites": {
         "isLoading": {
           "components/Earn/components/Lesson/Lesson.tsx": 1,
-          "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
-          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
+          "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1
         },
         "render": {
           "components/Earn/components/Lesson/Lesson.tsx": 1,
-          "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
-          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
+          "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1
         }
       }
     },
@@ -12028,6 +12036,12 @@
       }
     },
     {
+      "name": "Component",
+      "sourceFile": "components/Earn/components/StatusAnimation/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "StatusAnimation",
       "sourceFile": "components/Earn/components/StatusAnimation",
       "totalInstances": 1,
@@ -12044,12 +12058,6 @@
         "inverted": { "components/Earn/components/Result/Result.tsx": 1 },
         "onClick": { "components/Earn/components/Result/Result.tsx": 1 }
       }
-    },
-    {
-      "name": "Component",
-      "sourceFile": "components/Earn/components/StatusAnimation/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "FastlaneProvider",
@@ -12083,28 +12091,6 @@
       "propsWithCallSites": { "key": { "components/Earn/pages/Lesson/Lesson.tsx": 1 } }
     },
     {
-      "name": "Column",
-      "sourceFile": "components/Footer/Footer/Column",
-      "totalInstances": 8,
-      "totalCallSites": 8,
-      "callSites": {
-        "components/Footer/components/columns/BrandColumn.tsx": 1,
-        "components/Footer/components/columns/BusinessesColumn.tsx": 1,
-        "components/Footer/components/columns/CompanyColumn.tsx": 1,
-        "components/Footer/components/columns/DevelopersColumn.tsx": 1,
-        "components/Footer/components/columns/IndividualsColumn.tsx": 1,
-        "components/Footer/components/columns/JapanDisclosureColumn.tsx": 1,
-        "components/Footer/components/columns/LearnColumn.tsx": 1,
-        "components/Footer/components/columns/SupportColumn.tsx": 1
-      }
-    },
-    {
-      "name": "JapanAddress",
-      "sourceFile": "components/Footer/components/JapanAddress",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "LanguageSelector",
       "sourceFile": "components/LanguageSelector",
       "totalInstances": 1,
@@ -12123,8 +12109,8 @@
       "totalCallSites": 1
     },
     {
-      "name": "ColumnHeading",
-      "sourceFile": "components/Footer/Footer/ColumnHeading",
+      "name": "FooterColumn",
+      "sourceFile": "components/Footer/components/columns/FooterColumn",
       "totalInstances": 7,
       "totalCallSites": 7,
       "callSites": {
@@ -12135,21 +12121,17 @@
         "components/Footer/components/columns/JapanDisclosureColumn.tsx": 1,
         "components/Footer/components/columns/LearnColumn.tsx": 1,
         "components/Footer/components/columns/SupportColumn.tsx": 1
-      }
-    },
-    {
-      "name": "LinksUL",
-      "sourceFile": "components/Footer/Footer/LinksUL",
-      "totalInstances": 7,
-      "totalCallSites": 7,
-      "callSites": {
-        "components/Footer/components/columns/BusinessesColumn.tsx": 1,
-        "components/Footer/components/columns/CompanyColumn.tsx": 1,
-        "components/Footer/components/columns/DevelopersColumn.tsx": 1,
-        "components/Footer/components/columns/IndividualsColumn.tsx": 1,
-        "components/Footer/components/columns/JapanDisclosureColumn.tsx": 1,
-        "components/Footer/components/columns/LearnColumn.tsx": 1,
-        "components/Footer/components/columns/SupportColumn.tsx": 1
+      },
+      "propsWithCallSites": {
+        "heading": {
+          "components/Footer/components/columns/BusinessesColumn.tsx": 1,
+          "components/Footer/components/columns/CompanyColumn.tsx": 1,
+          "components/Footer/components/columns/DevelopersColumn.tsx": 1,
+          "components/Footer/components/columns/IndividualsColumn.tsx": 1,
+          "components/Footer/components/columns/JapanDisclosureColumn.tsx": 1,
+          "components/Footer/components/columns/LearnColumn.tsx": 1,
+          "components/Footer/components/columns/SupportColumn.tsx": 1
+        }
       }
     },
     {
@@ -12429,28 +12411,18 @@
       }
     },
     {
-      "name": "ModalGetStarted",
-      "sourceFile": "components/Earn/components/ModalGetStarted",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "close": { "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1 },
-        "assetSymbol": { "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1 }
-      }
-    },
-    {
       "name": "VerifyIdentityModal",
       "sourceFile": "components/Earn/components/VerifyIdentityModal",
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
-        "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
-        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1
       },
       "propsWithCallSites": {
         "close": {
-          "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
-          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
+          "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1
         }
       }
     },
@@ -12460,13 +12432,13 @@
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
-        "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
-        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1
       },
       "propsWithCallSites": {
         "close": {
-          "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
-          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
+          "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1
         }
       }
     },
@@ -12476,14 +12448,389 @@
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
-        "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
-        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1
       },
       "propsWithCallSites": {
         "close": {
-          "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
+          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
+          "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TaskContainer",
+      "sourceFile": "components/Earn/components/Common/TaskContainer",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
+        "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/EarnStoryContent.tsx": 1
+      }
+    },
+    {
+      "name": "Header",
+      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/Header",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClose": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "showClose": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 }
+      }
+    },
+    {
+      "name": "OverviewStep",
+      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/steps/OverviewStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "displayDataRef": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "authedLessonData": {
+          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
+        },
+        "errorMessage": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "onStart": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "isLoading": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "viewLessonWithoutEarning": {
           "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
         }
+      }
+    },
+    {
+      "name": "EducationStep",
+      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/steps/EducationStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "displayData": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "onNext": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 }
+      }
+    },
+    {
+      "name": "GetWalletStep",
+      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/steps/GetWalletStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "errorMessage": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "onNext": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "displayData": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "slug": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "campaignSlug": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "currentStepIndex": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 }
+      }
+    },
+    {
+      "name": "PollingButtonStep",
+      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/steps/PollingButtonStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "errorMessage": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "onPoll": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "displayData": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "slug": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "campaignSlug": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "currentStepIndex": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 }
+      }
+    },
+    {
+      "name": "SuccessStep",
+      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/steps/SuccessStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "onDone": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
+        "displayData": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 }
+      }
+    },
+    {
+      "name": "ErrorMessage",
+      "sourceFile": "components/Earn/components/Lesson/EarnStories/ErrorMessage",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1
+      }
+    },
+    {
+      "name": "ImageWithRatio",
+      "sourceFile": "components/ImageWithRatio",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/Earn/components/Lesson/AdvancedTask/AdvancedTaskMedia.tsx": 1,
+        "components/Earn/components/Lesson/AdvancedTask/steps/OverviewStep/OverviewStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "ratio": {
+          "components/Earn/components/Lesson/AdvancedTask/AdvancedTaskMedia.tsx": 1,
+          "components/Earn/components/Lesson/AdvancedTask/steps/OverviewStep/OverviewStep.tsx": 1
+        },
+        "src": {
+          "components/Earn/components/Lesson/AdvancedTask/AdvancedTaskMedia.tsx": 1,
+          "components/Earn/components/Lesson/AdvancedTask/steps/OverviewStep/OverviewStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Quiz",
+      "sourceFile": "components/Earn/components/Quiz",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1
+      },
+      "propsWithCallSites": {
+        "earnQuizRef": {
+          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
+          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1
+        },
+        "assetSymbol": {
+          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
+          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1
+        },
+        "reward": {
+          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
+          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1
+        },
+        "onSubmit": {
+          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1,
+          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "LoadingSpinner",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Prompts.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "PromptsContent",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Prompts.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "slug": { "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1 },
+        "currency": { "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1 },
+        "index": { "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1 },
+        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1 },
+        "metaDataRef": { "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1 },
+        "submitPrompt": { "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1 }
+      }
+    },
+    {
+      "name": "TaskResult",
+      "sourceFile": "components/Earn/components/Result/TaskResult",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "campaign": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
+        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
+        "task": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
+        "status": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
+        "error": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
+        "title": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
+        "text": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
+        "tryAgain": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Task.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Prompts",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Prompts",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "slug": { "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1 },
+        "currency": { "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1 },
+        "submitPrompt": { "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1 },
+        "index": { "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1 },
+        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1 },
+        "metaDataRef": { "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1 }
+      }
+    },
+    {
+      "name": "EarnDisclaimer",
+      "sourceFile": "components/Earn/components/EarnDisclaimer",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1
+      },
+      "propsWithCallSites": {
+        "currency": {
+          "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1,
+          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "LessonButtonAvailable",
+      "sourceFile": "components/Earn/components/Lesson/LessonButtonAvailable",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "campaign": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 },
+        "lesson": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 },
+        "task": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 },
+        "disabled": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 },
+        "onClick": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 }
+      }
+    },
+    {
+      "name": "LessonButtonJoin",
+      "sourceFile": "components/Earn/components/Lesson/LessonButtonJoin",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "campaign": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 }
+      }
+    },
+    {
+      "name": "LessonButtonClaimed",
+      "sourceFile": "components/Earn/components/Lesson/LessonButtonClaimed",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "campaign": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 }
+      }
+    },
+    {
+      "name": "LessonButtonCompleted",
+      "sourceFile": "components/Earn/components/Lesson/LessonButtonCompleted",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "campaign": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 },
+        "task": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 }
+      }
+    },
+    {
+      "name": "LessonError",
+      "sourceFile": "components/Earn/components/Lesson/LessonError",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Video",
+      "sourceFile": "components/Video/Video",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "ratio": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
+        "src": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
+        "previewImageUrl": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 }
+      }
+    },
+    {
+      "name": "TaskStatusBanner",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "campaign": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
+        "task": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
+        "lesson": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
+        "onClickEligible": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 }
+      }
+    },
+    {
+      "name": "Task",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Task",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "assetRef": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
+        "metaDataRef": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
+        "submitPrompt": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
+        "contentIndex": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
+        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
+        "authedLessonData": {
+          "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Head",
+      "sourceFile": "components/Earn/components/Lesson/Head",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "campaignRef": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "assetRef": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "lessonIndex": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "enabled": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "showBack": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "showNext": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "onClick": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 }
+      }
+    },
+    {
+      "name": "VideoContainer",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "displayDataRef": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "campaign": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "task": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "lesson": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "assetRef": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "metaDataRef": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "campaignRef": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "authedLessonData": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "goToLesson": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "submitPrompt": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 }
+      }
+    },
+    {
+      "name": "Result",
+      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Result",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "campaign": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "task": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "submitting": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "error": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
+        "tryAgain": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 }
+      }
+    },
+    {
+      "name": "ModalGetStarted",
+      "sourceFile": "components/Earn/components/ModalGetStarted",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "close": { "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1 },
+        "assetSymbol": { "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1 }
       }
     },
     {
@@ -12502,27 +12849,6 @@
         "metaDataRef": { "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1 },
         "campaignRef": { "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1 },
         "authedLessonData": { "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1 }
-      }
-    },
-    {
-      "name": "ErrorMessage",
-      "sourceFile": "components/Earn/components/Lesson/EarnStories/ErrorMessage",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/Earn/components/Lesson/EarnStories/EarnStories.tsx": 1,
-        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
-      }
-    },
-    {
-      "name": "TaskContainer",
-      "sourceFile": "components/Earn/components/Common/TaskContainer",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "components/Earn/components/Lesson/EarnStories/EarnStoryContent.tsx": 1,
-        "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1,
-        "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
       }
     },
     {
@@ -12714,50 +13040,6 @@
       "callSites": { "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 2 }
     },
     {
-      "name": "Quiz",
-      "sourceFile": "components/Earn/components/Quiz",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-        "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1
-      },
-      "propsWithCallSites": {
-        "earnQuizRef": {
-          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1
-        },
-        "assetSymbol": {
-          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1
-        },
-        "reward": {
-          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1
-        },
-        "onSubmit": {
-          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-          "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "EarnDisclaimer",
-      "sourceFile": "components/Earn/components/EarnDisclaimer",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-        "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1
-      },
-      "propsWithCallSites": {
-        "currency": {
-          "components/Earn/components/Lesson/EarnStories/StoryQuiz.tsx": 1,
-          "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1
-        }
-      }
-    },
-    {
       "name": "StoryQuizError",
       "sourceFile": "components/Earn/components/Lesson/EarnStories/StoryQuizError",
       "totalInstances": 1,
@@ -12815,306 +13097,6 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "onPress": { "components/Earn/components/Lesson/EarnStories/StorySuccess.tsx": 1 }
-      }
-    },
-    {
-      "name": "LoadingSpinner",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Prompts.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PromptsContent",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Prompts.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "slug": { "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1 },
-        "currency": { "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1 },
-        "index": { "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1 },
-        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1 },
-        "metaDataRef": { "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1 },
-        "submitPrompt": { "components/Earn/components/Lesson/VideoLesson/Prompts.tsx": 1 }
-      }
-    },
-    {
-      "name": "TaskResult",
-      "sourceFile": "components/Earn/components/Result/TaskResult",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "campaign": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
-        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
-        "task": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
-        "status": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
-        "error": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
-        "title": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
-        "text": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 },
-        "tryAgain": { "components/Earn/components/Lesson/VideoLesson/Result.tsx": 1 }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Task.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Prompts",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Prompts",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "slug": { "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1 },
-        "currency": { "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1 },
-        "submitPrompt": { "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1 },
-        "index": { "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1 },
-        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1 },
-        "metaDataRef": { "components/Earn/components/Lesson/VideoLesson/Task.tsx": 1 }
-      }
-    },
-    {
-      "name": "LessonButtonAvailable",
-      "sourceFile": "components/Earn/components/Lesson/LessonButtonAvailable",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "campaign": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 },
-        "lesson": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 },
-        "task": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 },
-        "disabled": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 },
-        "onClick": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 }
-      }
-    },
-    {
-      "name": "LessonButtonJoin",
-      "sourceFile": "components/Earn/components/Lesson/LessonButtonJoin",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "campaign": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 }
-      }
-    },
-    {
-      "name": "LessonButtonClaimed",
-      "sourceFile": "components/Earn/components/Lesson/LessonButtonClaimed",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "campaign": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 }
-      }
-    },
-    {
-      "name": "LessonButtonCompleted",
-      "sourceFile": "components/Earn/components/Lesson/LessonButtonCompleted",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "campaign": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 },
-        "task": { "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner.tsx": 1 }
-      }
-    },
-    {
-      "name": "LessonError",
-      "sourceFile": "components/Earn/components/Lesson/LessonError",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "div",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Video",
-      "sourceFile": "components/Video/Video",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "ratio": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
-        "src": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
-        "previewImageUrl": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 }
-      }
-    },
-    {
-      "name": "TaskStatusBanner",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/TaskStatusBanner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "campaign": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
-        "task": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
-        "lesson": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
-        "onClickEligible": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 }
-      }
-    },
-    {
-      "name": "Task",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Task",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "assetRef": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
-        "metaDataRef": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
-        "submitPrompt": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
-        "contentIndex": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
-        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1 },
-        "authedLessonData": {
-          "components/Earn/components/Lesson/VideoLesson/VideoContainer.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Head",
-      "sourceFile": "components/Earn/components/Lesson/Head",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "campaignRef": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "assetRef": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "lessonIndex": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "enabled": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "showBack": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "showNext": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "onClick": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 }
-      }
-    },
-    {
-      "name": "VideoContainer",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/VideoContainer",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "displayDataRef": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "campaign": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "task": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "lesson": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "assetRef": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "metaDataRef": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "campaignRef": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "authedLessonData": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "goToLesson": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "submitPrompt": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 }
-      }
-    },
-    {
-      "name": "Result",
-      "sourceFile": "components/Earn/components/Lesson/VideoLesson/Result",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "campaign": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "campaignSlug": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "task": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "submitting": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "error": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 },
-        "tryAgain": { "components/Earn/components/Lesson/VideoLesson/VideoLesson.tsx": 1 }
-      }
-    },
-    {
-      "name": "Header",
-      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/Header",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onClose": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "showClose": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 }
-      }
-    },
-    {
-      "name": "OverviewStep",
-      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/steps/OverviewStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "displayDataRef": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "authedLessonData": {
-          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
-        },
-        "errorMessage": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "onStart": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "isLoading": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "viewLessonWithoutEarning": {
-          "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "EducationStep",
-      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/steps/EducationStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "displayData": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "onNext": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 }
-      }
-    },
-    {
-      "name": "GetWalletStep",
-      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/steps/GetWalletStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "errorMessage": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "onNext": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "displayData": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "slug": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "campaignSlug": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "currentStepIndex": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 }
-      }
-    },
-    {
-      "name": "PollingButtonStep",
-      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/steps/PollingButtonStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "errorMessage": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "onPoll": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "displayData": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "slug": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "campaignSlug": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "currentStepIndex": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 }
-      }
-    },
-    {
-      "name": "SuccessStep",
-      "sourceFile": "components/Earn/components/Lesson/AdvancedTask/steps/SuccessStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "onDone": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 },
-        "displayData": { "components/Earn/components/Lesson/AdvancedTask/AdvancedTask.tsx": 1 }
-      }
-    },
-    {
-      "name": "ImageWithRatio",
-      "sourceFile": "components/ImageWithRatio",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/Earn/components/Lesson/AdvancedTask/AdvancedTaskMedia.tsx": 1,
-        "components/Earn/components/Lesson/AdvancedTask/steps/OverviewStep/OverviewStep.tsx": 1
-      },
-      "propsWithCallSites": {
-        "ratio": {
-          "components/Earn/components/Lesson/AdvancedTask/AdvancedTaskMedia.tsx": 1,
-          "components/Earn/components/Lesson/AdvancedTask/steps/OverviewStep/OverviewStep.tsx": 1
-        },
-        "src": {
-          "components/Earn/components/Lesson/AdvancedTask/AdvancedTaskMedia.tsx": 1,
-          "components/Earn/components/Lesson/AdvancedTask/steps/OverviewStep/OverviewStep.tsx": 1
-        }
       }
     },
     {
