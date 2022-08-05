@@ -2,7 +2,7 @@ import React, { cloneElement, useMemo } from 'react';
 
 import { Popover } from '../popover/Popover';
 
-import { TooltipContent, tooltipId } from './TooltipContent';
+import { TooltipContent } from './TooltipContent';
 import { TooltipProps } from './TooltipProps';
 import { useTooltipState } from './useTooltipState';
 
@@ -20,14 +20,14 @@ export const Tooltip = ({
   testID,
   zIndex,
 }: TooltipProps) => {
-  const { isOpen, handleOnMouseEnter, handleOnMouseLeave, handleOnFocus, handleOnBlur } =
+  const { isOpen, handleOnMouseEnter, handleOnMouseLeave, handleOnFocus, handleOnBlur, tooltipId } =
     useTooltipState();
 
   const clonedChild = useMemo(() => {
     return cloneElement(children, {
       'aria-describedby': tooltipId,
     });
-  }, [children]);
+  }, [children, tooltipId]);
 
   const contentPosition = useMemo(
     () => ({
@@ -47,7 +47,15 @@ export const Tooltip = ({
       onMouseDown={preventMouseDown}
       invertPopoverSpectrum
       visible={isOpen}
-      content={<TooltipContent content={content} gap={gap} testID={testID} zIndex={zIndex} />}
+      content={
+        <TooltipContent
+          tooltipId={tooltipId}
+          content={content}
+          gap={gap}
+          testID={testID}
+          zIndex={zIndex}
+        />
+      }
     >
       {clonedChild}
     </Popover>

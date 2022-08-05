@@ -21,8 +21,12 @@ export type TooltipProps = {
    * @default 4
    * */
   zIndex?: PositionStyles['zIndex'];
+  /**
+   * A unique ID used to ensure tooltips are accessible
+   */
+  tooltipId?: string;
 } & TooltipBaseProps;
 
 export type PopperTooltipProps = {
   gap: GapSpacing;
-} & Pick<TooltipProps, 'content' | 'testID' | 'zIndex'>;
+} & Pick<TooltipProps, 'content' | 'testID' | 'zIndex' | 'tooltipId'>;

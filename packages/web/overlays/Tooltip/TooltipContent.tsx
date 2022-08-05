@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, useMemo } from 'react';
+import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
 import { m as motion } from 'framer-motion';
 import {
   animateInOpacityConfig,
@@ -16,45 +16,48 @@ import { TextLabel2 } from '../../typography';
 
 import { PopperTooltipProps } from './TooltipProps';
 
-export const tooltipId = 'tooltipId';
+export const TooltipContent = memo(
+  forwardRef(
+    (
+      { content, gap, testID, zIndex, tooltipId }: PopperTooltipProps,
+      ref: ForwardedRef<HTMLDivElement>,
+    ) => {
+      const outerStyle = useMemo(
+        () => ({
+          padding: spacing[gap],
+          zIndex: zIndex ?? cdsZIndex.overlays.tooltip,
+        }),
+        [gap, zIndex],
+      );
 
-export const TooltipContent = forwardRef(
-  ({ content, gap, testID, zIndex }: PopperTooltipProps, ref: ForwardedRef<HTMLDivElement>) => {
-    const outerStyle = useMemo(
-      () => ({
-        padding: spacing[gap],
-        zIndex: zIndex ?? cdsZIndex.overlays.tooltip,
-      }),
-      [gap, zIndex],
-    );
+      const motionProps = useMotionProps({
+        style: outerStyle,
+        enterConfigs: [animateInOpacityConfig, animateInYConfig],
+        exitConfigs: [animateOutOpacityConfig, animateOutYConfig],
+        exit: 'exit',
+      });
 
-    const motionProps = useMotionProps({
-      style: outerStyle,
-      enterConfigs: [animateInOpacityConfig, animateInYConfig],
-      exitConfigs: [animateOutOpacityConfig, animateOutYConfig],
-      exit: 'exit',
-    });
-
-    return (
-      <motion.div {...motionProps} data-testid={`${testID}-motion`}>
-        <Box
-          ref={ref}
-          spacingHorizontal={spacingHorizontal}
-          spacingVertical={spacingVertical}
-          background="background"
-          borderRadius="tooltipV2"
-          maxWidth={maxWidth}
-          testID={testID}
-        >
-          {typeof content === 'string' ? (
-            <TextLabel2 as="p" overflow="break" id={tooltipId} accessibilityLabel={content}>
-              {content}
-            </TextLabel2>
-          ) : (
-            <div id={tooltipId}>{content}</div>
-          )}
-        </Box>
-      </motion.div>
-    );
-  },
+      return (
+        <motion.div {...motionProps} data-testid={`${testID}-motion`}>
+          <Box
+            ref={ref}
+            spacingHorizontal={spacingHorizontal}
+            spacingVertical={spacingVertical}
+            background="background"
+            borderRadius="tooltipV2"
+            maxWidth={maxWidth}
+            testID={testID}
+          >
+            {typeof content === 'string' ? (
+              <TextLabel2 as="p" overflow="break" id={tooltipId} accessibilityLabel={content}>
+                {content}
+              </TextLabel2>
+            ) : (
+              <div id={tooltipId}>{content}</div>
+            )}
+          </Box>
+        </motion.div>
+      );
+    },
+  ),
 );
