@@ -4,25 +4,13 @@
   "files": [],
   "references": [
     {
-      "path": "packages/web"
+      "path": "examples/nextjs"
     },
     {
       "path": "packages/codegen"
     },
     {
-      "path": "packages/lottie-files"
-    },
-    {
-      "path": "packages/fonts"
-    },
-    {
       "path": "packages/common"
-    },
-    {
-      "path": "packages/utils"
-    },
-    {
-      "path": "packages/mobile"
     },
     {
       "path": "packages/docusaurus-plugin-docgen"
@@ -37,13 +25,28 @@
       "path": "packages/docusaurus-theme"
     },
     {
-      "path": "examples/nextjs"
+      "path": "packages/fonts"
     },
     {
-      "path": "tools"
+      "path": "packages/lottie-files"
+    },
+    {
+      "path": "packages/mobile"
+    },
+    {
+      "path": "packages/ui-mobile-playground"
+    },
+    {
+      "path": "packages/utils"
+    },
+    {
+      "path": "packages/web"
     },
     {
       "path": "packages/web-utils"
+    },
+    {
+      "path": "tools"
     }
   ]
 }

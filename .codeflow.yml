@@ -43,3 +43,6 @@ build:
     - BaldurNode:
         name: package-cds-web-esm
         path: ./packages/web/publish-esm.Dockerfile
+    - BaldurNode:
+        name: package-ui-mobile-playground
+        path: ./packages/ui-mobile-playground/publish.Dockerfile

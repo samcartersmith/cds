@@ -1,0 +1,20 @@
+{
+  "name": "@cbhq/ui-mobile-playground",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "types": "./dts/index.d.ts",
+  "main": "./lib/index.js",
+  "packemon": {
+    "format": "lib",
+    "platform": "native"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "react-native": "./lib/index.js",
+      "default": "./lib/index.js"
+    }
+  }
+}

@@ -2676,6 +2676,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground"
+  languageName: unknown
+  linkType: soft
+
 "@cds/codegen@workspace:packages/codegen":
   version: 0.0.0-use.local
   resolution: "@cds/codegen@workspace:packages/codegen"
