@@ -1,5 +1,6 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { memo, useCallback, useMemo, useRef } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';
 
 import { Button } from '../../buttons';
@@ -146,13 +147,15 @@ const DynamicItemsExample = () => {
 
 const CarouselScreen = () => {
   return (
-    <ExampleScreen>
-      <ProgressBarsExample />
-      <DynamicItemsExample />
-      <SimpleExample />
-      <UpdateOnMountExample />
-      <TriggerViaButton />
-    </ExampleScreen>
+    <SafeAreaProvider>
+      <ExampleScreen>
+        <ProgressBarsExample />
+        <DynamicItemsExample />
+        <SimpleExample />
+        <UpdateOnMountExample />
+        <TriggerViaButton />
+      </ExampleScreen>
+    </SafeAreaProvider>
   );
 };
 
