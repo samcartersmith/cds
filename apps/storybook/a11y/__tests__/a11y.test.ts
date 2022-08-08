@@ -3,15 +3,9 @@ import '../__mocks__/matchMedia.mock';
 
 import initStoryshots from '@storybook/addon-storyshots';
 import { render } from '@testing-library/react';
-import path from 'path';
 
+import { REGEX, storybookUrl } from '../a11y.config';
 import { a11yTest } from '../a11yTest';
-
-const relativePathToStorybook = '../../../../.nx/outs/projects/apps/storybook/storybook';
-const storybookUrl = `file://${path.resolve(__dirname, relativePathToStorybook)}`;
-
-// Skip stories that blow up the test runner
-const REGEX = /^(?!.*(thousand|hundred|performance|switchers|recipes|illustrations)).*$/gim;
 
 initStoryshots({
   framework: 'react',

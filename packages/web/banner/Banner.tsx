@@ -9,6 +9,7 @@ import { isDevelopment } from '@cbhq/cds-utils';
 import { HStack } from '../alpha/HStack';
 import { VStack } from '../alpha/VStack';
 import { Collapsible } from '../collapsible';
+import { useA11yId } from '../hooks/useA11yId';
 import { useDimensions } from '../hooks/useDimensions';
 import { Icon } from '../icons';
 import { Box } from '../layout/Box';
@@ -88,6 +89,7 @@ export const Banner = memo(
       forwardedRef: ForwardedRef<HTMLDivElement>,
     ) => {
       const [isCollapsed, setIsCollapsed] = useState(false);
+      const titleId = useA11yId('cds-banner-');
 
       // Measure and configure layout
       const { observe, currentBreakpoint } = useDimensions(breakpointConfig);
@@ -174,7 +176,13 @@ export const Banner = memo(
       }, [secondaryAction, secondaryActionColor, testID]);
 
       return (
-        <Collapsible testID={`${testID}-collapsible`} collapsed={isCollapsed} ref={observe}>
+        <Collapsible
+          testID={`${testID}-collapsible`}
+          collapsed={isCollapsed}
+          ref={observe}
+          accessibilityLabelledBy={titleId}
+          id={`${titleId}--controller`}
+        >
           <HStack
             ref={forwardedRef}
             // Consistent props
@@ -211,7 +219,7 @@ export const Banner = memo(
             >
               {/** Middle */}
               <VStack testID={`${testID}-content-box`} gap={0.5}>
-                <TextHeadline as="p" numberOfLines={2} color={textColor}>
+                <TextHeadline as="p" numberOfLines={2} color={textColor} id={titleId}>
                   {title}
                 </TextHeadline>
                 <TextBody as="p" numberOfLines={numberOfLines} color={textColor}>

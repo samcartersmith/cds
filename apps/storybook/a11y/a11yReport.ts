@@ -17,7 +17,7 @@ import {
   rulesToIgnoreForStoryKind,
   storiesToIgnoreByKind,
   storiesToIgnoreByName,
-} from './a11.config';
+} from './a11y.config';
 
 type Report = {
   id?: string;
@@ -147,7 +147,9 @@ export const a11yReport = (customConfig: Partial<AxeConfig> = {}) => {
         const total = chalk[filteredViolations.length ? 'redBright' : 'greenBright'](
           `${passes.length}/${passes.length + filteredViolations.length}`,
         );
-        spinner[filteredViolations.length ? 'fail' : 'succeed'](`${total} - ${context.name}`);
+        spinner[filteredViolations.length ? 'fail' : 'succeed'](
+          `${total} - ${context.kind}: ${context.name}`,
+        );
       } catch (error) {
         if (error instanceof Error) {
           spinner.fail(`Something went wrong while trying to get a report for ${context.name}`);

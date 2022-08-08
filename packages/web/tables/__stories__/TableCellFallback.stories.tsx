@@ -68,12 +68,12 @@ export const TableCellFallbackExample: Story = () => {
                         mediaType === 'image' ? (
                           <CellMedia
                             type="image"
-                            source="https://via.placeholder.com/200/0000ff/ffffff.webp?text=CDS"
+                            source="https://images.coinbase.com/avatar?s=56"
                           />
                         ) : (
                           <CellMedia
                             type="avatar"
-                            source="https://via.placeholder.com/200/0000ff/ffffff.webp?text=CDS"
+                            source="https://images.coinbase.com/avatar?s=56"
                           />
                         )
                       }

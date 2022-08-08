@@ -3,56 +3,8 @@
  * Generated from yarn storybook a11y
  */
 export const a11yReport = {
-  timestamp: '2022-06-08T20:03:02.893Z',
+  timestamp: '2022-08-08T19:53:36.982Z',
   report: [
-    {
-      id: 'icon--sheet-0',
-      name: 'Sheet 0',
-      title: 'Icon',
-      kind: 'Icon',
-      passes: 10,
-      violations: [],
-    },
-    {
-      id: 'icon--sheet-1',
-      name: 'Sheet 1',
-      title: 'Icon',
-      kind: 'Icon',
-      passes: 10,
-      violations: [],
-    },
-    {
-      id: 'icon--sheet-2',
-      name: 'Sheet 2',
-      title: 'Icon',
-      kind: 'Icon',
-      passes: 10,
-      violations: [],
-    },
-    {
-      id: 'icon--sheet-3',
-      name: 'Sheet 3',
-      title: 'Icon',
-      kind: 'Icon',
-      passes: 10,
-      violations: [],
-    },
-    {
-      id: 'icon--sheet-4',
-      name: 'Sheet 4',
-      title: 'Icon',
-      kind: 'Icon',
-      passes: 10,
-      violations: [],
-    },
-    {
-      id: 'icon--sheet-5',
-      name: 'Sheet 5',
-      title: 'Icon',
-      kind: 'Icon',
-      passes: 10,
-      violations: [],
-    },
     {
       id: 'components-cards--feed-card',
       name: 'Feed Card',
@@ -107,6 +59,14 @@ export const a11yReport = {
       title: 'Core Components/Accordion',
       kind: 'Core Components/Accordion',
       passes: 16,
+      violations: [],
+    },
+    {
+      id: 'core-components-banner--all',
+      name: 'All',
+      title: 'Core Components/Banner',
+      kind: 'Core Components/Banner',
+      passes: 18,
       violations: [],
     },
     {
@@ -394,7 +354,7 @@ export const a11yReport = {
       name: 'Basic Collapsible',
       title: 'Core Components/Collapsible',
       kind: 'Core Components/Collapsible',
-      passes: 8,
+      passes: 12,
       violations: [],
     },
     {
@@ -402,7 +362,7 @@ export const a11yReport = {
       name: 'Default Expanded',
       title: 'Core Components/Collapsible',
       kind: 'Core Components/Collapsible',
-      passes: 8,
+      passes: 13,
       violations: [],
     },
     {
@@ -410,7 +370,7 @@ export const a11yReport = {
       name: 'Horizontal',
       title: 'Core Components/Collapsible',
       kind: 'Core Components/Collapsible',
-      passes: 8,
+      passes: 12,
       violations: [],
     },
     {
@@ -418,7 +378,7 @@ export const a11yReport = {
       name: 'Reveal Top',
       title: 'Core Components/Collapsible',
       kind: 'Core Components/Collapsible',
-      passes: 8,
+      passes: 12,
       violations: [],
     },
     {
@@ -426,7 +386,7 @@ export const a11yReport = {
       name: 'Scroll',
       title: 'Core Components/Collapsible',
       kind: 'Core Components/Collapsible',
-      passes: 8,
+      passes: 12,
       violations: [],
     },
     {
@@ -778,7 +738,7 @@ export const a11yReport = {
       name: 'Dark Disabled',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 10,
+      passes: 9,
       violations: [
         {
           id: 'color-contrast',
@@ -795,9 +755,41 @@ export const a11yReport = {
                 {
                   id: 'color-contrast',
                   data: {
-                    fgColor: '#1c1e22',
+                    fgColor: '#676869',
                     bgColor: '#0a0b0d',
-                    contrastRatio: 1.18,
+                    contrastRatio: 3.51,
+                    fontSize: '10.5pt (14px)',
+                    fontWeight: 'normal',
+                    messageKey: null,
+                    expectedContrastRatio: '4.5:1',
+                  },
+                  relatedNodes: [
+                    {
+                      html: '<div class="fys9fvs c9zqtir bfumyc1 _1vh1yhf" style="min-height: 100px;">',
+                      target: ['.bfumyc1'],
+                    },
+                  ],
+                  impact: 'serious',
+                  message:
+                    'Element has insufficient color contrast of 3.51 (foreground color: #676869, background color: #0a0b0d, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<label id="a11y-id-6f8sukmu9dr" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx t41rhkw _1sule6t _1biu4r0 l1eomst9">How many would you like?</label>',
+              target: ['#a11y-id-6f8sukmu9dr'],
+              failureSummary:
+                'Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #676869, background color: #0a0b0d, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+            },
+            {
+              any: [
+                {
+                  id: 'color-contrast',
+                  data: {
+                    fgColor: '#3b3e44',
+                    bgColor: '#0a0b0d',
+                    contrastRatio: 1.83,
                     fontSize: '12.0pt (16px)',
                     fontWeight: 'normal',
                     messageKey: null,
@@ -805,17 +797,13 @@ export const a11yReport = {
                   },
                   relatedNodes: [
                     {
-                      html: '<span data-testid="input-interactable-area" class="i8vpxbw te9avau t106q4en iku8viz dbp6ii7 ieg5chz" disabled="" style="--border-color-unfocused:var(--line-heavy); --border-color-focused:var(--primary); --border-width-focused:var(--border-width-input); --interactable-border-radius:8px; --interactable-background:var(--background); --interactable-hovered-background:rgb(15, 16, 18); --interactable-hovered-opacity:0.98; --interactable-pressed-background:rgb(30, 31, 32); --interactable-pressed-opacity:0.92; --interactable-disabled-background:rgb(10, 11, 13);">',
-                      target: ['.iku8viz'],
-                    },
-                    {
-                      html: '<div class="f13ygna6 c1wa27ul bfumyc1 _1vh1yhf" style="min-height: 100px;">',
-                      target: ['.bfumyc1'],
+                      html: '<span data-testid="input-interactable-area" class="i8vpxbw te9avau dbp6ii7 d1nr0tur t106q4en iku8viz ieg5chz" disabled="" style="--border-color-unfocused:var(--line-heavy); --border-color-focused:var(--primary); --border-width-focused:var(--border-width-input); --interactable-border-radius:8px; --interactable-background:var(--background); --interactable-hovered-background:rgb(15, 16, 18); --interactable-hovered-opacity:0.98; --interactable-pressed-background:rgb(30, 31, 32); --interactable-pressed-opacity:0.92; --interactable-disabled-background:rgb(10, 11, 13);">',
+                      target: ['.dbp6ii7'],
                     },
                   ],
                   impact: 'serious',
                   message:
-                    'Element has insufficient color contrast of 1.18 (foreground color: #1c1e22, background color: #0a0b0d, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
+                    'Element has insufficient color contrast of 1.83 (foreground color: #3b3e44, background color: #0a0b0d, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
                 },
               ],
               all: [],
@@ -824,7 +812,39 @@ export const a11yReport = {
               html: '<p class="t160640o bw3lfah f1o033nd t5418vf sjo1exx t41rhkw">Choose an amount</p>',
               target: ['.bw3lfah'],
               failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 1.18 (foreground color: #1c1e22, background color: #0a0b0d, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
+                'Fix any of the following:\n  Element has insufficient color contrast of 1.83 (foreground color: #3b3e44, background color: #0a0b0d, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
+            },
+            {
+              any: [
+                {
+                  id: 'color-contrast',
+                  data: {
+                    fgColor: '#3b3e44',
+                    bgColor: '#0a0b0d',
+                    contrastRatio: 1.83,
+                    fontSize: '10.5pt (14px)',
+                    fontWeight: 'normal',
+                    messageKey: null,
+                    expectedContrastRatio: '4.5:1',
+                  },
+                  relatedNodes: [
+                    {
+                      html: '<div class="fys9fvs c9zqtir bfumyc1 _1vh1yhf" style="min-height: 100px;">',
+                      target: ['.bfumyc1'],
+                    },
+                  ],
+                  impact: 'serious',
+                  message:
+                    'Element has insufficient color contrast of 1.83 (foreground color: #3b3e44, background color: #0a0b0d, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<p id="a11y-id-ujldq0soyb" class="t160640o l1rottxd f1o033nd t5418vf sjo1exx t41rhkw">You can only choose one option</p>',
+              target: ['#a11y-id-ujldq0soyb'],
+              failureSummary:
+                'Fix any of the following:\n  Element has insufficient color contrast of 1.83 (foreground color: #3b3e44, background color: #0a0b0d, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
             },
           ],
         },
@@ -883,7 +903,7 @@ export const a11yReport = {
       name: 'Dense Disabled',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 10,
+      passes: 9,
       violations: [
         {
           id: 'color-contrast',
@@ -900,9 +920,41 @@ export const a11yReport = {
                 {
                   id: 'color-contrast',
                   data: {
-                    fgColor: '#e7e8ea',
+                    fgColor: '#a2a2a3',
                     bgColor: '#ffffff',
-                    contrastRatio: 1.22,
+                    contrastRatio: 2.54,
+                    fontSize: '8.3pt (11px)',
+                    fontWeight: 'normal',
+                    messageKey: null,
+                    expectedContrastRatio: '4.5:1',
+                  },
+                  relatedNodes: [
+                    {
+                      html: '<div class="fys9fvs c9zqtir bfumyc1 _1vh1yhf" style="min-height: 100px;">',
+                      target: ['.bfumyc1'],
+                    },
+                  ],
+                  impact: 'serious',
+                  message:
+                    'Element has insufficient color contrast of 2.54 (foreground color: #a2a2a3, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<label id="a11y-id-xk3kmxbdv9p" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx t41rhkw u1wiqjpt _1sule6t _1biu4r0 l1eomst9">How many would you like?</label>',
+              target: ['#a11y-id-xk3kmxbdv9p'],
+              failureSummary:
+                'Fix any of the following:\n  Element has insufficient color contrast of 2.54 (foreground color: #a2a2a3, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1',
+            },
+            {
+              any: [
+                {
+                  id: 'color-contrast',
+                  data: {
+                    fgColor: '#c1c3c8',
+                    bgColor: '#ffffff',
+                    contrastRatio: 1.76,
                     fontSize: '10.5pt (14px)',
                     fontWeight: 'normal',
                     messageKey: null,
@@ -910,17 +962,13 @@ export const a11yReport = {
                   },
                   relatedNodes: [
                     {
-                      html: '<span data-testid="input-interactable-area" class="i8vpxbw te9avau t106q4en iku8viz dbp6ii7 ieg5chz" disabled="" style="--border-color-unfocused:var(--line-heavy); --border-color-focused:var(--primary); --border-width-focused:var(--border-width-input); --interactable-border-radius:8px; --interactable-background:var(--background); --interactable-hovered-background:rgb(250, 250, 250); --interactable-hovered-opacity:0.98; --interactable-pressed-background:rgb(235, 235, 236); --interactable-pressed-opacity:0.92; --interactable-disabled-background:rgb(255, 255, 255);">',
-                      target: ['.iku8viz'],
-                    },
-                    {
-                      html: '<div class="f13ygna6 c1wa27ul bfumyc1 _1vh1yhf" style="min-height: 100px;">',
-                      target: ['.bfumyc1'],
+                      html: '<span data-testid="input-interactable-area" class="i8vpxbw te9avau dbp6ii7 d1nr0tur t106q4en iku8viz ieg5chz" disabled="" style="--border-color-unfocused:var(--line-heavy); --border-color-focused:var(--primary); --border-width-focused:var(--border-width-input); --interactable-border-radius:8px; --interactable-background:var(--background); --interactable-hovered-background:rgb(250, 250, 250); --interactable-hovered-opacity:0.98; --interactable-pressed-background:rgb(235, 235, 236); --interactable-pressed-opacity:0.92; --interactable-disabled-background:rgb(255, 255, 255);">',
+                      target: ['.dbp6ii7'],
                     },
                   ],
                   impact: 'serious',
                   message:
-                    'Element has insufficient color contrast of 1.22 (foreground color: #e7e8ea, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                    'Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
                 },
               ],
               all: [],
@@ -929,7 +977,39 @@ export const a11yReport = {
               html: '<p class="t160640o bw3lfah f1o033nd t5418vf sjo1exx t41rhkw">Choose an amount</p>',
               target: ['.fuo9819 > .bw3lfah.f1o033nd.t160640o'],
               failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 1.22 (foreground color: #e7e8ea, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                'Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+            },
+            {
+              any: [
+                {
+                  id: 'color-contrast',
+                  data: {
+                    fgColor: '#c1c3c8',
+                    bgColor: '#ffffff',
+                    contrastRatio: 1.76,
+                    fontSize: '10.5pt (14px)',
+                    fontWeight: 'normal',
+                    messageKey: null,
+                    expectedContrastRatio: '4.5:1',
+                  },
+                  relatedNodes: [
+                    {
+                      html: '<div class="fys9fvs c9zqtir bfumyc1 _1vh1yhf" style="min-height: 100px;">',
+                      target: ['.bfumyc1'],
+                    },
+                  ],
+                  impact: 'serious',
+                  message:
+                    'Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<p id="a11y-id-qjyfvgnzt1" class="t160640o bw3lfah f1o033nd t5418vf sjo1exx t41rhkw">You can only choose one option</p>',
+              target: ['#a11y-id-qjyfvgnzt1'],
+              failureSummary:
+                'Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
             },
           ],
         },
@@ -956,7 +1036,7 @@ export const a11yReport = {
       name: 'Disabled',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
-      passes: 10,
+      passes: 9,
       violations: [
         {
           id: 'color-contrast',
@@ -973,9 +1053,41 @@ export const a11yReport = {
                 {
                   id: 'color-contrast',
                   data: {
-                    fgColor: '#e7e8ea',
+                    fgColor: '#a2a2a3',
                     bgColor: '#ffffff',
-                    contrastRatio: 1.22,
+                    contrastRatio: 2.54,
+                    fontSize: '10.5pt (14px)',
+                    fontWeight: 'normal',
+                    messageKey: null,
+                    expectedContrastRatio: '4.5:1',
+                  },
+                  relatedNodes: [
+                    {
+                      html: '<div class="fys9fvs c9zqtir bfumyc1 _1vh1yhf" style="min-height: 100px;">',
+                      target: ['.bfumyc1'],
+                    },
+                  ],
+                  impact: 'serious',
+                  message:
+                    'Element has insufficient color contrast of 2.54 (foreground color: #a2a2a3, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<label id="a11y-id-55fcm18qv1a" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx t41rhkw _1sule6t _1biu4r0 l1eomst9">How many would you like?</label>',
+              target: ['#a11y-id-55fcm18qv1a'],
+              failureSummary:
+                'Fix any of the following:\n  Element has insufficient color contrast of 2.54 (foreground color: #a2a2a3, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+            },
+            {
+              any: [
+                {
+                  id: 'color-contrast',
+                  data: {
+                    fgColor: '#c1c3c8',
+                    bgColor: '#ffffff',
+                    contrastRatio: 1.76,
                     fontSize: '12.0pt (16px)',
                     fontWeight: 'normal',
                     messageKey: null,
@@ -983,17 +1095,13 @@ export const a11yReport = {
                   },
                   relatedNodes: [
                     {
-                      html: '<span data-testid="input-interactable-area" class="i8vpxbw te9avau t106q4en iku8viz dbp6ii7 ieg5chz" disabled="" style="--border-color-unfocused:var(--line-heavy); --border-color-focused:var(--primary); --border-width-focused:var(--border-width-input); --interactable-border-radius:8px; --interactable-background:var(--background); --interactable-hovered-background:rgb(250, 250, 250); --interactable-hovered-opacity:0.98; --interactable-pressed-background:rgb(235, 235, 236); --interactable-pressed-opacity:0.92; --interactable-disabled-background:rgb(255, 255, 255);">',
-                      target: ['.iku8viz'],
-                    },
-                    {
-                      html: '<div class="f13ygna6 c1wa27ul bfumyc1 _1vh1yhf" style="min-height: 100px;">',
-                      target: ['.bfumyc1'],
+                      html: '<span data-testid="input-interactable-area" class="i8vpxbw te9avau dbp6ii7 d1nr0tur t106q4en iku8viz ieg5chz" disabled="" style="--border-color-unfocused:var(--line-heavy); --border-color-focused:var(--primary); --border-width-focused:var(--border-width-input); --interactable-border-radius:8px; --interactable-background:var(--background); --interactable-hovered-background:rgb(250, 250, 250); --interactable-hovered-opacity:0.98; --interactable-pressed-background:rgb(235, 235, 236); --interactable-pressed-opacity:0.92; --interactable-disabled-background:rgb(255, 255, 255);">',
+                      target: ['.dbp6ii7'],
                     },
                   ],
                   impact: 'serious',
                   message:
-                    'Element has insufficient color contrast of 1.22 (foreground color: #e7e8ea, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
+                    'Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
                 },
               ],
               all: [],
@@ -1002,7 +1110,39 @@ export const a11yReport = {
               html: '<p class="t160640o bw3lfah f1o033nd t5418vf sjo1exx t41rhkw">Choose an amount</p>',
               target: ['.bw3lfah'],
               failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 1.22 (foreground color: #e7e8ea, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
+                'Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1',
+            },
+            {
+              any: [
+                {
+                  id: 'color-contrast',
+                  data: {
+                    fgColor: '#c1c3c8',
+                    bgColor: '#ffffff',
+                    contrastRatio: 1.76,
+                    fontSize: '10.5pt (14px)',
+                    fontWeight: 'normal',
+                    messageKey: null,
+                    expectedContrastRatio: '4.5:1',
+                  },
+                  relatedNodes: [
+                    {
+                      html: '<div class="fys9fvs c9zqtir bfumyc1 _1vh1yhf" style="min-height: 100px;">',
+                      target: ['.bfumyc1'],
+                    },
+                  ],
+                  impact: 'serious',
+                  message:
+                    'Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<p id="a11y-id-3051vfff27g" class="t160640o l1rottxd f1o033nd t5418vf sjo1exx t41rhkw">You can only choose one option</p>',
+              target: ['#a11y-id-3051vfff27g'],
+              failureSummary:
+                'Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
             },
           ],
         },
@@ -1017,11 +1157,27 @@ export const a11yReport = {
       violations: [],
     },
     {
+      id: 'core-components-inputs-select--small-select',
+      name: 'Small Select',
+      title: 'Core Components/Inputs/Select',
+      kind: 'Core Components/Inputs/Select',
+      passes: 9,
+      violations: [],
+    },
+    {
       id: 'core-components-inputs-select--variants',
       name: 'Variants',
       title: 'Core Components/Inputs/Select',
       kind: 'Core Components/Inputs/Select',
       passes: 10,
+      violations: [],
+    },
+    {
+      id: 'core-components-inputs-selectoption--stories',
+      name: 'Stories',
+      title: 'Core Components/Inputs/SelectOption',
+      kind: 'Core Components/Inputs/SelectOption',
+      passes: 12,
       violations: [],
     },
     {
@@ -1051,6 +1207,14 @@ export const a11yReport = {
     {
       id: 'core-components-inputs-textinput--borderless',
       name: 'Borderless',
+      title: 'Core Components/Inputs/TextInput',
+      kind: 'Core Components/Inputs/TextInput',
+      passes: 15,
+      violations: [],
+    },
+    {
+      id: 'core-components-inputs-textinput--color-surge',
+      name: 'Color Surge',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
       passes: 15,
@@ -1181,8 +1345,75 @@ export const a11yReport = {
       name: 'Render Input Disabled',
       title: 'Core Components/Inputs/TextInput',
       kind: 'Core Components/Inputs/TextInput',
-      passes: 13,
-      violations: [],
+      passes: 12,
+      violations: [
+        {
+          id: 'color-contrast',
+          impact: 'serious',
+          tags: ['cat.color', 'wcag2aa', 'wcag143'],
+          description:
+            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
+          help: 'Elements must have sufficient color contrast',
+          helpUrl:
+            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
+          nodes: [
+            {
+              any: [
+                {
+                  id: 'color-contrast',
+                  data: {
+                    fgColor: '#a2a2a3',
+                    bgColor: '#ffffff',
+                    contrastRatio: 2.54,
+                    fontSize: '10.5pt (14px)',
+                    fontWeight: 'normal',
+                    messageKey: null,
+                    expectedContrastRatio: '4.5:1',
+                  },
+                  relatedNodes: [],
+                  impact: 'serious',
+                  message:
+                    'Element has insufficient color contrast of 2.54 (foreground color: #a2a2a3, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<label for="Label" data-testid="" class="t160640o l194pyb5 f1eacfne t5418vf sjo1exx _1sule6t _1biu4r0 l1eomst9">Label</label>',
+              target: ['label'],
+              failureSummary:
+                'Fix any of the following:\n  Element has insufficient color contrast of 2.54 (foreground color: #a2a2a3, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+            },
+            {
+              any: [
+                {
+                  id: 'color-contrast',
+                  data: {
+                    fgColor: '#c1c3c8',
+                    bgColor: '#ffffff',
+                    contrastRatio: 1.76,
+                    fontSize: '10.5pt (14px)',
+                    fontWeight: 'normal',
+                    messageKey: null,
+                    expectedContrastRatio: '4.5:1',
+                  },
+                  relatedNodes: [],
+                  impact: 'serious',
+                  message:
+                    'Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+                },
+              ],
+              all: [],
+              none: [],
+              impact: 'serious',
+              html: '<p data-testid="" aria-label="Test" id="cds-textinput-description-kda47jnapqa" class="t160640o l1rottxd f1o033nd t5418vf sjo1exx">Test</p>',
+              target: ['#cds-textinput-description-kda47jnapqa'],
+              failureSummary:
+                'Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 'core-components-inputs-textinput--render-native-text-area',
@@ -1241,107 +1472,27 @@ export const a11yReport = {
       violations: [],
     },
     {
-      id: 'core-components-dots-dotcount--dot-count-basic',
-      name: 'Dot Count Basic',
-      title: 'Core Components/Dots/DotCount',
-      kind: 'Core Components/Dots/DotCount',
-      passes: 6,
-      violations: [],
-    },
-    {
-      id: 'core-components-dots-dotcount--dot-count-overlap',
-      name: 'Dot Count Overlap',
-      title: 'Core Components/Dots/DotCount',
-      kind: 'Core Components/Dots/DotCount',
-      passes: 8,
-      violations: [],
-    },
-    {
-      id: 'core-components-dots-dotcount--dot-count-placements',
-      name: 'Dot Count Placements',
+      id: 'core-components-dots-dotcount--all-dot-count',
+      name: 'All Dot Count',
       title: 'Core Components/Dots/DotCount',
       kind: 'Core Components/Dots/DotCount',
       passes: 10,
       violations: [],
     },
     {
-      id: 'core-components-dots-dotcount--dot-count-variant',
-      name: 'Dot Count Variant',
-      title: 'Core Components/Dots/DotCount',
-      kind: 'Core Components/Dots/DotCount',
-      passes: 6,
-      violations: [],
-    },
-    {
-      id: 'core-components-dots-dotstatuscolor--dot-status-color-basic',
-      name: 'Dot Status Color Basic',
-      title: 'Core Components/Dots/DotStatusColor',
-      kind: 'Core Components/Dots/DotStatusColor',
-      passes: 5,
-      violations: [],
-    },
-    {
-      id: 'core-components-dots-dotstatuscolor--dot-status-color-overlap',
-      name: 'Dot Status Color Overlap',
+      id: 'core-components-dots-dotstatuscolor--all-dot-status-color',
+      name: 'All Dot Status Color',
       title: 'Core Components/Dots/DotStatusColor',
       kind: 'Core Components/Dots/DotStatusColor',
       passes: 10,
       violations: [],
     },
     {
-      id: 'core-components-dots-dotstatuscolor--dot-status-color-placements',
-      name: 'Dot Status Color Placements',
-      title: 'Core Components/Dots/DotStatusColor',
-      kind: 'Core Components/Dots/DotStatusColor',
-      passes: 10,
-      violations: [],
-    },
-    {
-      id: 'core-components-dots-dotstatuscolor--dot-status-color-sizes',
-      name: 'Dot Status Color Sizes',
-      title: 'Core Components/Dots/DotStatusColor',
-      kind: 'Core Components/Dots/DotStatusColor',
-      passes: 5,
-      violations: [],
-    },
-    {
-      id: 'core-components-dots-dotstatuscolor--dot-status-color-variant',
-      name: 'Dot Status Color Variant',
-      title: 'Core Components/Dots/DotStatusColor',
-      kind: 'Core Components/Dots/DotStatusColor',
-      passes: 5,
-      violations: [],
-    },
-    {
-      id: 'core-components-dots-dotsymbol--dot-symbol-icon',
-      name: 'Dot Symbol Icon',
+      id: 'core-components-dots-dotsymbol--all-dot-symbol',
+      name: 'All Dot Symbol',
       title: 'Core Components/Dots/DotSymbol',
       kind: 'Core Components/Dots/DotSymbol',
       passes: 10,
-      violations: [],
-    },
-    {
-      id: 'core-components-dots-dotsymbol--dot-symbol-overlap',
-      name: 'Dot Symbol Overlap',
-      title: 'Core Components/Dots/DotSymbol',
-      kind: 'Core Components/Dots/DotSymbol',
-      passes: 10,
-      violations: [],
-    },
-    {
-      id: 'core-components-dots-dotsymbol--dot-symbol-placements',
-      name: 'Dot Symbol Placements',
-      title: 'Core Components/Dots/DotSymbol',
-      kind: 'Core Components/Dots/DotSymbol',
-      passes: 10,
-      violations: [],
-    },
-    {
-      id: 'core-components-dots-dotsymbol--dot-symbol-sizes',
-      name: 'Dot Symbol Sizes',
-      title: 'Core Components/Dots/DotSymbol',
-      kind: 'Core Components/Dots/DotSymbol',
-      passes: 7,
       violations: [],
     },
     {
@@ -1401,19 +1552,19 @@ export const a11yReport = {
       violations: [],
     },
     {
-      id: 'hooks-usebreakpoints--playground',
-      name: 'Playground',
+      id: 'hooks-usebreakpoints--default-to-device',
+      name: 'Default To Device',
       title: 'Hooks/useBreakpoints',
       kind: 'Hooks/useBreakpoints',
       passes: 8,
       violations: [],
     },
     {
-      id: 'core-components-logo-sheet--logo-sheet',
-      name: 'Logo Sheet',
-      title: 'Core Components/Logo Sheet',
-      kind: 'Core Components/Logo Sheet',
-      passes: 9,
+      id: 'hooks-usebreakpoints--playground',
+      name: 'Playground',
+      title: 'Hooks/useBreakpoints',
+      kind: 'Hooks/useBreakpoints',
+      passes: 8,
       violations: [],
     },
     {
@@ -1577,6 +1728,62 @@ export const a11yReport = {
       violations: [],
     },
     {
+      id: 'core-components-responsive-props--hide-on-mobile',
+      name: 'Hide On Mobile',
+      title: 'Core Components/Responsive Props',
+      kind: 'Core Components/Responsive Props',
+      passes: 8,
+      violations: [],
+    },
+    {
+      id: 'core-components-responsive-props--responsive-box',
+      name: 'Responsive Box',
+      title: 'Core Components/Responsive Props',
+      kind: 'Core Components/Responsive Props',
+      passes: 8,
+      violations: [],
+    },
+    {
+      id: 'core-components-responsive-props--responsive-card',
+      name: 'Responsive Card',
+      title: 'Core Components/Responsive Props',
+      kind: 'Core Components/Responsive Props',
+      passes: 11,
+      violations: [],
+    },
+    {
+      id: 'core-components-responsive-props--responsive-cells',
+      name: 'Responsive Cells',
+      title: 'Core Components/Responsive Props',
+      kind: 'Core Components/Responsive Props',
+      passes: 14,
+      violations: [],
+    },
+    {
+      id: 'core-components-responsive-props--responsive-stacks',
+      name: 'Responsive Stacks',
+      title: 'Core Components/Responsive Props',
+      kind: 'Core Components/Responsive Props',
+      passes: 6,
+      violations: [],
+    },
+    {
+      id: 'core-components-responsive-props--responsive-table',
+      name: 'Responsive Table',
+      title: 'Core Components/Responsive Props',
+      kind: 'Core Components/Responsive Props',
+      passes: 14,
+      violations: [],
+    },
+    {
+      id: 'core-components-responsive-props--responsive-typography',
+      name: 'Responsive Typography',
+      title: 'Core Components/Responsive Props',
+      kind: 'Core Components/Responsive Props',
+      passes: 8,
+      violations: [],
+    },
+    {
       id: 'core-components-avatar--fallback',
       name: 'Fallback',
       title: 'Core Components/Avatar',
@@ -1609,11 +1816,43 @@ export const a11yReport = {
       violations: [],
     },
     {
-      id: 'core-components-animatedcaret--basic-animated-caret',
+      id: 'core-components-motion-animatedcaret--basic-animated-caret',
       name: 'Basic Animated Caret',
-      title: 'Core Components/AnimatedCaret',
-      kind: 'Core Components/AnimatedCaret',
+      title: 'Core Components/Motion/AnimatedCaret',
+      kind: 'Core Components/Motion/AnimatedCaret',
       passes: 8,
+      violations: [],
+    },
+    {
+      id: 'core-components-motion-hintmotion--color-surge',
+      name: 'Color Surge',
+      title: 'Core Components/Motion/HintMotion',
+      kind: 'Core Components/Motion/HintMotion',
+      passes: 9,
+      violations: [],
+    },
+    {
+      id: 'core-components-motion-hintmotion--pulse',
+      name: 'Pulse',
+      title: 'Core Components/Motion/HintMotion',
+      kind: 'Core Components/Motion/HintMotion',
+      passes: 9,
+      violations: [],
+    },
+    {
+      id: 'core-components-motion-hintmotion--shake',
+      name: 'Shake',
+      title: 'Core Components/Motion/HintMotion',
+      kind: 'Core Components/Motion/HintMotion',
+      passes: 9,
+      violations: [],
+    },
+    {
+      id: 'core-components-motion-tokens--animation-tokens',
+      name: 'Animation Tokens',
+      title: 'Core Components/Motion/Tokens',
+      kind: 'Core Components/Motion/Tokens',
+      passes: 11,
       violations: [],
     },
     {
@@ -1653,7 +1892,7 @@ export const a11yReport = {
       name: 'Composite Overlays With Portal',
       title: 'Core Components/Overlays',
       kind: 'Core Components/Overlays',
-      passes: 16,
+      passes: 18,
       violations: [],
     },
     {
@@ -1661,7 +1900,7 @@ export const a11yReport = {
       name: 'Composite Overlays Without Portal',
       title: 'Core Components/Overlays',
       kind: 'Core Components/Overlays',
-      passes: 16,
+      passes: 18,
       violations: [],
     },
     {
@@ -1677,7 +1916,7 @@ export const a11yReport = {
       name: 'Basic',
       title: 'Core Components/FullscreenAlert',
       kind: 'Core Components/FullscreenAlert',
-      passes: 18,
+      passes: 17,
       violations: [],
     },
     {
@@ -1701,7 +1940,7 @@ export const a11yReport = {
       name: 'Example',
       title: 'Core Components/FullscreenModal',
       kind: 'Core Components/FullscreenModal',
-      passes: 22,
+      passes: 21,
       violations: [],
     },
     {
@@ -1709,7 +1948,7 @@ export const a11yReport = {
       name: 'No Secondary',
       title: 'Core Components/FullscreenModal',
       kind: 'Core Components/FullscreenModal',
-      passes: 17,
+      passes: 16,
       violations: [],
     },
     {
@@ -1805,15 +2044,7 @@ export const a11yReport = {
       name: 'Basic Toast',
       title: 'Core Components/Toast',
       kind: 'Core Components/Toast',
-      passes: 8,
-      violations: [],
-    },
-    {
-      id: 'core-components-toast--multiline-toast',
-      name: 'Multiline Toast',
-      title: 'Core Components/Toast',
-      kind: 'Core Components/Toast',
-      passes: 8,
+      passes: 9,
       violations: [],
     },
     {
@@ -1853,7 +2084,7 @@ export const a11yReport = {
       name: 'Tooltip Long Content',
       title: 'Core Components/TooltipContent',
       kind: 'Core Components/TooltipContent',
-      passes: 8,
+      passes: 7,
       violations: [],
     },
     {
@@ -1870,6 +2101,14 @@ export const a11yReport = {
       title: 'Core Components/TooltipContent',
       kind: 'Core Components/TooltipContent',
       passes: 8,
+      violations: [],
+    },
+    {
+      id: 'core-components-table-table--compact-example',
+      name: 'Compact Example',
+      title: 'Core Components/Table/Table',
+      kind: 'Core Components/Table/Table',
+      passes: 23,
       violations: [],
     },
     {
@@ -1893,7 +2132,7 @@ export const a11yReport = {
       name: 'Sorting Example',
       title: 'Core Components/Table/Table',
       kind: 'Core Components/Table/Table',
-      passes: 16,
+      passes: 20,
       violations: [],
     },
     {
@@ -1907,6 +2146,14 @@ export const a11yReport = {
     {
       id: 'core-components-table-tablecell--sample-cells',
       name: 'Sample Cells',
+      title: 'Core Components/Table/TableCell',
+      kind: 'Core Components/Table/TableCell',
+      passes: 17,
+      violations: [],
+    },
+    {
+      id: 'core-components-table-tablecell--sample-cells-dense',
+      name: 'Sample Cells Dense',
       title: 'Core Components/Table/TableCell',
       kind: 'Core Components/Table/TableCell',
       passes: 17,
@@ -1941,7 +2188,7 @@ export const a11yReport = {
       name: 'Loading State Example',
       title: 'Core Components/Table/TableSection',
       kind: 'Core Components/Table/TableSection',
-      passes: 13,
+      passes: 14,
       violations: [],
     },
     {
@@ -1973,7 +2220,7 @@ export const a11yReport = {
       name: 'Default',
       title: 'Core Components/Tabs/TabLabel',
       kind: 'Core Components/Tabs/TabLabel',
-      passes: 11,
+      passes: 13,
       violations: [],
     },
     {
@@ -2070,47 +2317,7 @@ export const a11yReport = {
       title: 'Core Components/ProgressBar',
       kind: 'Core Components/ProgressBar',
       passes: 9,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#c1c3c8',
-                    bgColor: '#ffffff',
-                    contrastRatio: 1.76,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1o033nd dbp6ii7 t5418vf e5jiys6 tb1lqn8 n1pjz25m">$2,486</span>',
-              target: ['.v1427yu5 > .dbp6ii7.l1rottxd.f1o033nd'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-progressbar--default',
@@ -2126,134 +2333,7 @@ export const a11yReport = {
       title: 'Core Components/ProgressBar',
       kind: 'Core Components/ProgressBar',
       passes: 6,
-      violations: [
-        {
-          id: 'color-contrast',
-          impact: 'serious',
-          tags: ['cat.color', 'wcag2aa', 'wcag143'],
-          description:
-            'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds',
-          help: 'Elements must have sufficient color contrast',
-          helpUrl:
-            'https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axe-puppeteer',
-          nodes: [
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#a2a2a3',
-                    bgColor: '#ffffff',
-                    contrastRatio: 2.54,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 2.54 (foreground color: #a2a2a3, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1eacfne dbp6ii7 t5418vf e5jiys6 tb1lqn8 n1pjz25m">0%</span>',
-              target: [
-                '.c1wa27ul.f13ygna6:nth-child(3) > .n1uq5gfe.c1omxyrd.f13ygna6 > ._14apokp.f13ygna6 > .c1kq2fue > .v1427yu5 > .f1eacfne.t160640o.l1rottxd',
-              ],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 2.54 (foreground color: #a2a2a3, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#a2a2a3',
-                    bgColor: '#ffffff',
-                    contrastRatio: 2.54,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 2.54 (foreground color: #a2a2a3, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1eacfne dbp6ii7 t5418vf e5jiys6 tb1lqn8 n1pjz25m">0%</span>',
-              target: [
-                '.c1wa27ul.f13ygna6:nth-child(5) > .n1uq5gfe.c1omxyrd.f13ygna6 > ._14apokp.f13ygna6 > .c1kq2fue > .v1427yu5 > .f1eacfne.t160640o.l1rottxd',
-              ],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 2.54 (foreground color: #a2a2a3, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#a2a2a3',
-                    bgColor: '#ffffff',
-                    contrastRatio: 2.54,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 2.54 (foreground color: #a2a2a3, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1eacfne dbp6ii7 t5418vf e5jiys6 tb1lqn8 n1pjz25m">3%</span>',
-              target: [
-                '.c1wa27ul.f13ygna6:nth-child(7) > .n1uq5gfe.c1omxyrd.f13ygna6 > ._14apokp.f13ygna6 > .c1kq2fue > .v1427yu5 > .f1eacfne.t160640o.l1rottxd',
-              ],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 2.54 (foreground color: #a2a2a3, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-            {
-              any: [
-                {
-                  id: 'color-contrast',
-                  data: {
-                    fgColor: '#c1c3c8',
-                    bgColor: '#ffffff',
-                    contrastRatio: 1.76,
-                    fontSize: '10.5pt (14px)',
-                    fontWeight: 'normal',
-                    messageKey: null,
-                    expectedContrastRatio: '4.5:1',
-                  },
-                  relatedNodes: [],
-                  impact: 'serious',
-                  message:
-                    'Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-                },
-              ],
-              all: [],
-              none: [],
-              impact: 'serious',
-              html: '<span class="t160640o l1rottxd f1o033nd dbp6ii7 t5418vf e5jiys6 tb1lqn8 n1pjz25m">4%</span>',
-              target: ['.v1427yu5 > .f1o033nd.t160640o.l1rottxd'],
-              failureSummary:
-                'Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #c1c3c8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
-            },
-          ],
-        },
-      ],
+      violations: [],
     },
     {
       id: 'core-components-progressbar--heavy',
@@ -2348,7 +2428,7 @@ export const a11yReport = {
       name: 'Compact',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 11,
       violations: [],
     },
     {
@@ -2356,7 +2436,7 @@ export const a11yReport = {
       name: 'Default',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 11,
       violations: [],
     },
     {
@@ -2364,7 +2444,7 @@ export const a11yReport = {
       name: 'Disable Scrubbing',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 11,
       violations: [],
     },
     {
@@ -2372,7 +2452,7 @@ export const a11yReport = {
       name: 'Fallback Compact',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 11,
       violations: [],
     },
     {
@@ -2380,7 +2460,7 @@ export const a11yReport = {
       name: 'Fallback Negative',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 11,
       violations: [],
     },
     {
@@ -2388,7 +2468,7 @@ export const a11yReport = {
       name: 'Fallback Positive',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 11,
       violations: [],
     },
     {
@@ -2396,7 +2476,7 @@ export const a11yReport = {
       name: 'Fill',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 11,
       violations: [],
     },
     {
@@ -2412,7 +2492,7 @@ export const a11yReport = {
       name: 'Hover Data',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 11,
       violations: [],
     },
     {
@@ -2420,7 +2500,7 @@ export const a11yReport = {
       name: 'Hover Data With Fill',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 11,
       violations: [],
     },
     {
@@ -2428,7 +2508,7 @@ export const a11yReport = {
       name: 'No Hover Date',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 11,
       violations: [],
     },
     {
@@ -2436,7 +2516,7 @@ export const a11yReport = {
       name: 'Time Period Gutter',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 11,
       violations: [],
     },
     {
@@ -2444,7 +2524,7 @@ export const a11yReport = {
       name: 'With Header Node',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 12,
       violations: [],
     },
     {
@@ -2452,7 +2532,7 @@ export const a11yReport = {
       name: 'Y Axis Scaling',
       title: 'Core Components/SparklineInteractive',
       kind: 'Core Components/SparklineInteractive',
-      passes: 8,
+      passes: 11,
       violations: [],
     },
     {
@@ -2460,7 +2540,7 @@ export const a11yReport = {
       name: 'Custom Label',
       title: 'Core Components/SparklineInteractiveHeader',
       kind: 'Core Components/SparklineInteractiveHeader',
-      passes: 9,
+      passes: 13,
       violations: [],
     },
     {
@@ -2468,12 +2548,12 @@ export const a11yReport = {
       name: 'Default',
       title: 'Core Components/SparklineInteractiveHeader',
       kind: 'Core Components/SparklineInteractiveHeader',
-      passes: 8,
+      passes: 12,
       violations: [],
     },
   ],
   critical: [],
   moderate: [],
   minor: [],
-  serious: [{ id: 'color-contrast', count: 5 }],
+  serious: [{ id: 'color-contrast', count: 4 }],
 } as const;

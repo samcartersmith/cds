@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 import sample from 'lodash/sample';
+import { Spectrum, TabLabelProps } from '@cbhq/cds-common';
 
 import { Button } from '../../buttons/Button';
 import { HStack, VStack } from '../../layout';
@@ -12,7 +13,12 @@ export default {
   component: TabLabel,
 } as Meta;
 
-export const Default: Story = () => {
+type ExampleProps = {
+  variant: TabLabelProps['variant'];
+  spectrum: Spectrum;
+};
+
+const Example = ({ variant, spectrum }: ExampleProps) => {
   const [count, setCount] = useState(1);
 
   const updateCount = useCallback(() => {
@@ -20,70 +26,31 @@ export const Default: Story = () => {
   }, [count]);
 
   return (
+    <ThemeProvider spectrum={spectrum}>
+      <VStack spacing={4} gap={2} background="background">
+        <Button onPress={updateCount} block>
+          Randomize count: {variant} ({spectrum})
+        </Button>
+        <HStack gap={2}>
+          <TabLabel count={count} variant={variant} active>
+            All
+          </TabLabel>
+          <TabLabel variant={variant}>Tradable</TabLabel>
+          <TabLabel variant={variant}>Watchlist</TabLabel>
+          <TabLabel variant={variant}>Trending</TabLabel>
+        </HStack>
+      </VStack>
+    </ThemeProvider>
+  );
+};
+
+export const Default: Story = () => {
+  return (
     <>
-      <ThemeProvider spectrum="light">
-        <VStack spacing={4} gap={2} background="background">
-          <Button onPress={updateCount} block>
-            Randomize
-          </Button>
-          <HStack gap={2}>
-            <TabLabel count={count} active>
-              All
-            </TabLabel>
-            <TabLabel>Tradable</TabLabel>
-            <TabLabel>Watchlist</TabLabel>
-            <TabLabel>Trending</TabLabel>
-          </HStack>
-          <HStack gap={2}>
-            <TabLabel count={count} variant="secondary" active>
-              All
-            </TabLabel>
-            <TabLabel variant="secondary">Tradable</TabLabel>
-            <TabLabel variant="secondary">Watchlist</TabLabel>
-            <TabLabel variant="secondary">Trending</TabLabel>
-          </HStack>
-        </VStack>
-      </ThemeProvider>
-      <ThemeProvider spectrum="light" scale="xSmall">
-        <VStack spacing={4} gap={2} background="background">
-          <HStack gap={2}>
-            <TabLabel count={count} active>
-              All
-            </TabLabel>
-            <TabLabel>Tradable</TabLabel>
-            <TabLabel>Watchlist</TabLabel>
-            <TabLabel>Trending</TabLabel>
-          </HStack>
-          <HStack gap={2}>
-            <TabLabel count={count} variant="secondary" active>
-              All
-            </TabLabel>
-            <TabLabel variant="secondary">Tradable</TabLabel>
-            <TabLabel variant="secondary">Watchlist</TabLabel>
-            <TabLabel variant="secondary">Trending</TabLabel>
-          </HStack>
-        </VStack>
-      </ThemeProvider>
-      <ThemeProvider spectrum="dark">
-        <VStack spacing={4} gap={2} background="background">
-          <HStack gap={2}>
-            <TabLabel count={count} active>
-              All
-            </TabLabel>
-            <TabLabel>Tradable</TabLabel>
-            <TabLabel>Watchlist</TabLabel>
-            <TabLabel>Trending</TabLabel>
-          </HStack>
-          <HStack gap={2}>
-            <TabLabel count={count} variant="secondary" active>
-              All
-            </TabLabel>
-            <TabLabel variant="secondary">Tradable</TabLabel>
-            <TabLabel variant="secondary">Watchlist</TabLabel>
-            <TabLabel variant="secondary">Trending</TabLabel>
-          </HStack>
-        </VStack>
-      </ThemeProvider>
+      <Example spectrum="light" variant="primary" />
+      <Example spectrum="light" variant="secondary" />
+      <Example spectrum="dark" variant="primary" />
+      <Example spectrum="dark" variant="secondary" />
     </>
   );
 };

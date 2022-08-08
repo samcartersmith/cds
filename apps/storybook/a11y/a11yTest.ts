@@ -16,7 +16,7 @@ import {
   storiesToIgnoreByKind,
   storiesToIgnoreByName,
   TEST_FAILURES_TO_ALLOW,
-} from './a11.config';
+} from './a11y.config';
 
 let failedTests = 0;
 

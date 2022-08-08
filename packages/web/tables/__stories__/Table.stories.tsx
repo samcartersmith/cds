@@ -236,15 +236,9 @@ export const CompactExample: Story = () => {
                     subtitle="Some subtitle"
                     start={
                       mediaType === 'image' ? (
-                        <CellMedia
-                          type="image"
-                          source="https://via.placeholder.com/200/0000ff/ffffff.webp?text=CDS"
-                        />
+                        <CellMedia type="image" source="https://images.coinbase.com/avatar?s=350" />
                       ) : (
-                        <CellMedia
-                          type="avatar"
-                          source="https://via.placeholder.com/200/0000ff/ffffff.webp?text=CDS"
-                        />
+                        <CellMedia type="avatar" source="https://images.coinbase.com/avatar?s=56" />
                       )
                     }
                   />

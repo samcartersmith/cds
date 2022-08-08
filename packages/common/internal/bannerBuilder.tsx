@@ -72,36 +72,43 @@ export function bannerBuilder(
     if (React.isValidElement(children)) {
       longTextChild = React.cloneElement(children, {
         children: longMessage,
+        title: `${title} (Long text)`,
       });
 
       dismissableChild = React.cloneElement(children, {
         showDismiss: true,
+        title: `${title} (Dismissable)`,
       });
 
       actionChild = React.cloneElement(children, {
         primaryAction,
+        title: `${title} (Primary action)`,
       });
 
       longTextActionChild = React.cloneElement(children, {
         primaryAction,
         children: longMessage,
+        title: `${title} (Primary action + long)`,
       });
 
       actionDismissChild = React.cloneElement(children, {
         primaryAction,
         showDismiss: true,
+        title: `${title} (Action + Dismissable)`,
       });
 
       longTextActionDismissChild = React.cloneElement(children, {
         primaryAction,
         children: longMessage,
         showDismiss: true,
+        title: `${title} (Long Text + Action + Dismissable)`,
       });
 
       multipleActionsChild = React.cloneElement(children, {
         primaryAction,
         secondaryAction,
         children: longMessage,
+        title: `${title} (Multiple actions)`,
       });
     }
 
@@ -161,7 +168,13 @@ export function bannerBuilder(
   const FullBleed = () => {
     return (
       <Container gap={2} title="FullBleed">
-        <Banner borderRadius="roundedNone" bordered={false} {...sharedProps} variant="danger" />
+        <Banner
+          borderRadius="roundedNone"
+          bordered={false}
+          {...sharedProps}
+          variant="danger"
+          title={`${sharedProps.title}(Full bleed)`}
+        />
       </Container>
     );
   };
