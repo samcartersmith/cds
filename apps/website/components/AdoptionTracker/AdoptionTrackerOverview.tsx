@@ -15,6 +15,7 @@ import { TextBody, TextDisplay2, TextHeadline, TextTitle2 } from '@cbhq/cds-web/
 
 import { BetaCell } from ':cds-website/components/BetaCell';
 import { adopters } from ':cds-website/data/adopters';
+import { hiddenAdopters } from ':cds-website/data/hidden-adopters';
 
 import { SplitScreenStack } from '../SplitScreenStack';
 
@@ -250,24 +251,31 @@ export const ActiveProject = memo(() => {
   );
 });
 
-export const AdoptionTrackerOverview = memo(() => {
-  const [activeProjectId, setActiveProject] = useState<Adopter>(adopters[0].id);
+export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) => {
+  const scopedAdopters = hidden ? hiddenAdopters : adopters;
+  const [activeProjectId, setActiveProject] = useState<Adopter>(scopedAdopters[0].id);
   const start = useMemo(() => {
-    return toPairs(groupBy(adopters, 'pillar')).map(([pillar, projects]) => {
+    return toPairs(groupBy(scopedAdopters, 'pillar')).map(([pillar, projects]) => {
       return (
         <VStack key={pillar} gap={1} spacingBottom={5}>
           <TextTitle2 as="h2" spacingBottom={2}>
             {pillar}
           </TextTitle2>
-          {projects.map(({ id }) => (
-            <Project key={id} id={id}>
-              <ProjectCell active={activeProjectId === id} setActiveProject={setActiveProject} />
-            </Project>
-          ))}
+          {projects.map(
+            ({
+              // @ts-expect-error id issue
+              id,
+            }) => (
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              <Project key={id} id={id}>
+                <ProjectCell active={activeProjectId === id} setActiveProject={setActiveProject} />
+              </Project>
+            ),
+          )}
         </VStack>
       );
     });
-  }, [activeProjectId]);
+  }, [activeProjectId, scopedAdopters]);
 
   const end = (
     <Project id={activeProjectId}>

@@ -261,3 +261,11 @@ export const adoptersWithPillar = adopters
     id: item.id,
     pillar: item.pillar,
   }));
+
+/** Allows us to access these metrics without publishing them. */
+export const hiddenAdoptersWithPillar = adopters
+  .filter((item) => hiddenProjects.includes(item.id))
+  .map((item) => ({
+    id: item.id,
+    pillar: item.pillar,
+  }));

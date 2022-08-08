@@ -6,7 +6,7 @@ import { writeFile } from '../utils/writeFile';
 import { ProjectParser } from './parsers/ProjectParser';
 import { getPreviousStats } from './utils/getPreviousStats';
 import { cleanup, getTempRepos } from './utils/getTempRepos';
-import { adopters, adoptersSidebar, adoptersWithPillar } from './config';
+import { adopters, adoptersSidebar, adoptersWithPillar, hiddenAdoptersWithPillar } from './config';
 
 async function preCleanup() {
   const [TEMP_DIR, DOCS_DIR, DOCS_DATA_DIR] = await Promise.all([
@@ -84,6 +84,11 @@ async function prepare() {
       template: 'objectMap.ejs',
       data: { adopters: adoptersWithPillar },
       dest: `../apps/website/data/adopters.ts`,
+    });
+    await writeFile({
+      template: 'objectMap.ejs',
+      data: { hiddenAdopters: hiddenAdoptersWithPillar },
+      dest: `../apps/website/data/hidden-adopters.ts`,
     });
     // Required to for website sidebar.
     await writeFile({
