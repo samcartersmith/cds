@@ -34,8 +34,9 @@ export type TableRowProps = {
    */
   color?: PaletteForeground;
   /**
-   * When set, we'll set a hover background color
-   * of palette.backgroundAlternate for the row.
+   * By default, we set a hover background color of
+   * palette.backgroundAlternate on hover for the row.
+   * Use this prop to disable this behavior
    * @default false
    */
   disableHoverIndicator?: boolean;

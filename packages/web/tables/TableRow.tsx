@@ -16,7 +16,7 @@ export const TableRow = memo(
     fullWidth,
     disableHoverIndicator,
     children,
-    backgroundColor = 'background',
+    backgroundColor,
     color,
     testID,
     onPress,
@@ -36,7 +36,7 @@ export const TableRow = memo(
     const inlineStyles = useMemo(() => {
       return {
         color: color && palette[color],
-        backgroundColor: palette[backgroundColor],
+        backgroundColor: backgroundColor && palette[backgroundColor],
         cursor: onPress ? 'pointer' : 'default',
       };
     }, [backgroundColor, color, onPress]);
