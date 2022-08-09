@@ -19,6 +19,9 @@ const LogoScreen = () => {
             <LogoMark size={16} />
           </Box>
           <Box spacingEnd={2}>
+            <LogoMark size={24} />
+          </Box>
+          <Box spacingEnd={2}>
             <LogoMark size={32} />
           </Box>
         </HStack>
