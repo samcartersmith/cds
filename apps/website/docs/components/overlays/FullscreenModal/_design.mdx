@@ -1,3 +1,5 @@
+import { DataTable } from ':cds-website/components/DataTable';
+
 Full-screen modals fill the entire screen and are used to contain actions that may require a series of steps to complete.
 
 <Image
@@ -65,6 +67,34 @@ Once a layout is chosen, the primary content must remain in a consistent locatio
     title="Primary content centered"
   />
 </Collection>
+
+## Types
+
+### Error
+
+<Image srcLight="/img/error/fullscreen_light.png" srcDark="/img/error/fullscreen_dark.png" />
+
+System errors that prevent the app from working can inform the user of the problem with a full-screen modal. The user should be told what went wrong in the headline, updated on any progress or solution in the body copy, and given options for what to do next through a button or link.
+
+**Example:**
+User is blocked due to the app’s inability to connect to the server, and must take action to acknowledge the error but it may not fix the system error.
+
+### Warning
+
+<Image srcLight="/img/warning/fullscreen_light.png" srcDark="/img/warning/fullscreen_dark.png" />
+
+Critical warnings create friction in the user experience in order to ensure the user does not accidentally or unknowingly perform a destructive or potentially harmful action. It should provide clear reasoning why the user is receiving the message and the best action to prevent danger. However, it should allow the user to continue with the potentially dangerous action if the user wants to.
+
+<DataTable
+  data={{
+    Severity: 'High',
+    'When are full screen modal warnings triggered?':
+      'Prevent user from doing something dangerous.',
+    Dismiss: 'xx',
+    Content:
+      'The full screen modal should state the dangerous nature of the action, why the user is being warned, and the safest course of action.',
+  }}
+/>
 
 ### Multi-step workflows
 

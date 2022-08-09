@@ -119,12 +119,28 @@ export const Placeholder = () => {
   return <TextInput label="Label" placeholder="Placeholder" />;
 };
 
+export const Informational = () => {
+  return <TextInput label="Label" helperText="Assitive message" value="Input text" />;
+};
+
 export const DefaultSentiment = () => {
   return (
     <TextInput
       label="Campaign title"
       placeholder="Title"
       helperText="This won't be displayed to user"
+    />
+  );
+};
+
+export const Success = () => {
+  return (
+    <TextInput
+      enableColorSurge
+      label="Label"
+      variant="positive"
+      helperText="Positive message"
+      value="Input text"
     />
   );
 };
@@ -141,6 +157,17 @@ export const PositiveSentiment = () => {
   );
 };
 
+export const Error = () => {
+  return (
+    <TextInput
+      label="Address"
+      variant="negative"
+      helperText="Negative message"
+      value="HaeJiWplJohn6W42eCq0Qqft0"
+      enableColorSurge
+    />
+  );
+};
 export const NegativeSentiment = () => {
   return (
     <TextInput

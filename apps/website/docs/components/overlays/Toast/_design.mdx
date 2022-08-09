@@ -1,3 +1,5 @@
+import { DataTable } from ':cds-website/components/DataTable';
+
 `Toasts` inform users of a process that an app has performed or will perform. They appear temporarily, towards the bottom of the screen. They shouldn’t interrupt the user experience, and they don’t require user input to disappear.
 
 ## Anatomy
@@ -14,6 +16,59 @@ A toast can contain a single action.
 
 **Web vs React Native**
 The only difference is the presence of a dismiss “x” on the web version. The react native version can be swiped away sideways or down.
+
+## Types
+
+### Error
+
+<Image
+  srcDark="/img/components/overlays/toast/error_dark.gif"
+  srcLight="/img/components/overlays/toast/error_light.gif"
+/>
+
+Error toasts alert a user to the failure of a non-critical action. They should not disrupt the user experience but should be noticeable. Because a problem has occurred, the toast should be persistent but dismissable.
+
+<DataTable
+  data={{
+    'When are error toasts triggered?': 'Low impact task failed.',
+    Content:
+      'Use short phrase that clearly states which specific action a user took has failed. No punctuation necessary.',
+  }}
+/>
+
+### Informational
+
+<Image
+  srcDark="/img/components/overlays/toast/inform_dark.gif"
+  srcLight="/img/components/overlays/toast/inform_light.gif"
+/>
+
+An informational toast is similar to a success toast. It should focus on confirming a user action has been completed but remain out of the way of a user taking their next action.
+
+<DataTable
+  data={{
+    'When are error toasts triggered?': 'Confirm user action.',
+    Content:
+      'Use short phrase that clearly states which specific action a user took has succeeded or finished. No punctuation necessary.',
+  }}
+/>
+
+### Success
+
+<Image
+  srcDark="/img/components/overlays/toast/success_dark.gif"
+  srcLight="/img/components/overlays/toast/success_light.gif"
+/>
+
+A success toast is similar to an informational toast. Success toasts are more appropriate for key moments in a user journey rather than a simple repeatable action.
+
+<DataTable
+  data={{
+    'When are error toasts triggered?': 'User action successfully processed.',
+    Content:
+      'Use a short phrase that clearly states which specific action a user took has succeeded or finished. No punctuation necessary.',
+  }}
+/>
 
 ## Content
 

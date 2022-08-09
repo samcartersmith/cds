@@ -1,0 +1,393 @@
+---
+id: error
+title: Error
+---
+
+import { DataTable } from ':cds-website/components/DataTable';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
+
+<TOCUpdater
+  toc={[
+    {
+      value: 'General guidelines',
+      id: 'general-guidelines',
+      level: 2,
+    },
+    {
+      value: 'Look',
+      id: 'look',
+      level: 3,
+    },
+    {
+      value: 'Sound',
+      id: 'sound',
+      level: 3,
+    },
+    {
+      value: 'Feel',
+      id: 'feel',
+      level: 3,
+    },
+    {
+      value: 'Common components',
+      id: 'common-components',
+      level: 2,
+    },
+    {
+      value: 'Alert',
+      id: 'alert',
+      level: 3,
+    },
+    {
+      value: 'Banner',
+      id: 'banner',
+      level: 3,
+    },
+    {
+      value: 'Full screen modal',
+      id: 'full-screen-modal',
+      level: 3,
+    },
+    {
+      value: 'Modal',
+      id: 'modal',
+      level: 3,
+    },
+    {
+      value: 'Textinput error',
+      id: 'textinput-error',
+      level: 3,
+    },
+    {
+      value: 'Toast',
+      id: 'toast',
+      level: 3,
+    },
+    {
+      value: 'Common errors',
+      id: 'common-errors',
+      level: 2,
+    },
+    {
+      value: 'Illustration and system error pairings',
+      id: 'illustration-and-system-error-pairings',
+      level: 3,
+    },
+    {
+      value: 'Examples of system errors',
+      id: 'examples-of-system-errors',
+      level: 3,
+    },
+  ]}
+/>
+
+<br />
+An error state is a screen that is shown when things go wrong. It is an example of a situation where
+the user is getting something other than their desired state. Every error, regardless of cause, becomes
+a point of friction for your users and blocks them from moving forward in their experience.
+
+<br />
+<br />
+
+<iframe
+  width="100%"
+  height="600"
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F69N9LpbkWLLUF2XTLdkTCQ%2FCDS-Messaging-States-Decision-Trees%3Fnode-id%3D2%253A18579"
+  allowfullscreen
+></iframe>
+
+## General guidelines
+
+Error messages range in severity and differ by origination. The way we communicate to the user through the content and the visual treatment of the error can help users better understand why the error is occurring and what to do next.
+
+<Link to="https://coda.io/d/CDS-Team_dFaC-pktuzN/Messaging-States-Research_suRy8">
+  Read Error Messaging research →
+</Link>
+
+### Look
+
+- Do not solely use color to signify error. Add an error message or an illustration (sparingly).
+  - Use the color red sparingly
+- An error should almost always have copy and, occasionally, an illustration.
+  - Illustrations can reduce confusion and frustration, putting a user at ease when things aren't working as desired. Use error state illustrations sparingly but with intent. Consider how many error state illustrations appear on a singular screen. These illustrations set the tone that something is wrong.
+  - Search for these illustrations in our search with the name of the error (e.g. "404", "500", etc.) or "error" in the search bar. We have an ‘error’ icon which is in its name.
+- The larger the component, the more visual noise it creates on a page.
+
+<Link to="/components/hero-square">CDS HeroSquare Illustrations</Link>
+<br />
+<Link to="/components/pictogram">CDS Pictogram Illustrations</Link>
+<br />
+<Link to="/components/icon">CDS Iconography</Link>
+
+### Sound
+
+- Error messages should be clear, concise, and use consistent vocabulary.
+- Error messages should be written according to local standards and guidelines.
+- Use sentence case capitalization.
+- If we know what action the user needs to resolve the problem detailed in the error, calls to action should be specific to that action (e.g. use ‘Refresh the page’ rather than ‘Try Again’).
+
+<Link to="https://docs.google.com/document/d/1QnxOOjhqUb8ENrGt3hQTTDCDxnCPRyEfkO-U-ftm4uc/edit#heading=h.xo750yt3a4gs">
+  Coinbase Content Design Guide →
+</Link>
+
+### Feel
+
+- Error messages should focus a user’s attention on the problem at hand and how it can be resolved.
+- Use animation consistently to set clear expectations for the user.
+- Always consider the user's emotional and psychological state. Seeing an error message, particularly certain colors and symbols/icons, can be concerning as visual alerts set the tone for how a user perceives an incident.
+- Only use dramatic animation for urgent messages.
+- Use hint motion sparingly and with intent. It should be applied to components or surfaces that need immediate attention. Adding or combining various hint systems in a single view can control the severity of the tone. Overstacking can cause a negative experience.
+- Origination of the error can be clarified with both color and writing. System errors can leverage red to communicate errors originating from Coinbase. Where applicable, refer to us as Coinbase rather than “we”.
+
+## Common components
+
+### Alert
+
+<Image
+  spacingVertical={0}
+  srcLight="/img/error/alert_light.png"
+  srcDark="/img/error/alert_dark.png"
+/>
+<VStack spacingTop={2}>
+  <Link to="/components/alert/?page=guidelines#error">Go to Alerts →</Link>
+</VStack>
+
+<br />
+<br />
+
+### Banner
+
+<Image
+  spacingVertical={0}
+  srcLight="/img/error/banner_light.png"
+  srcDark="/img/error/banner_dark.png"
+/>
+<VStack spacingTop={2}>
+  <Link to="/components/alert/?page=guidelines#error">Go to Banner →</Link>
+</VStack>
+
+<br />
+<br />
+
+### Full screen modal
+
+<Image
+  spacingVertical={0}
+  srcLight="/img/error/fullscreen_light.png"
+  srcDark="/img/error/fullscreen_dark.png"
+/>
+<VStack spacingTop={2}>
+  <TextBody as="p">
+    Attention required or Coinbase is unavailable so experience is blocked.
+  </TextBody>
+  <Link to="/components/fullscreen-modal/?page=guidelines#error">Go to Full screen modal →</Link>
+</VStack>
+
+<br />
+<br />
+
+### Modal
+
+<Image
+  spacingVertical={0}
+  srcLight="/img/error/modal_light.png"
+  srcDark="/img/error/modal_dark.png"
+/>
+<VStack spacingTop={2}>
+  <TextBody as="p">Attention required so experience is blocked.</TextBody>
+  <Link to="/components/modal/?page=guidelines#error">Go to Modal →</Link>
+</VStack>
+
+<br />
+<br />
+
+### TextInput Error
+
+<Image
+  spacingVertical={0}
+  srcLight="/img/components/inputs/TextInput/error_animation_light.gif"
+  srcDark="/img/components/inputs/TextInput/error_animation_dark.gif"
+/>
+<VStack spacingTop={2}>
+  <Link to="/components/text-input/?page=guidelines#error">Go to Text Input →</Link>
+</VStack>
+
+<br />
+<br />
+
+### Toast
+
+<Image
+  spacingVertical={0}
+  srcLight="/img/components/overlays/toast/error_light.gif"
+  srcDark="/img/components/overlays/toast/error_dark.gif"
+/>
+<VStack spacingTop={2}>
+  <TextBody as="p">Low impact task failed.</TextBody>
+  <Link to="/components/toast/?page=guidelines#error">Go to Toast →</Link>
+</VStack>
+
+<br />
+<br />
+
+### Tray
+
+<Image
+  spacingVertical={0}
+  srcLight="/img/error/tray_light.png"
+  srcDark="/img/error/tray_dark.png"
+/>
+<VStack spacingTop={2}>
+  <Link to="/components/tray">Go to Tray →</Link>
+</VStack>
+
+## Common errors
+
+<DataTable
+  data={{
+    '400 - Bad Request':
+      'A general error indicating the user sent a bad request that the website server is unable to understand.',
+    '403 – Forbidden':
+      'A specific error indicating a user sent a request to see a page on a website that they are not permitted to see.',
+    '404 – Not Found':
+      'A specific error indicating that the page/file requested does not exist in the location the user put in the request. This condition may be temporary or permanent.',
+    '408 - Request Time-Out':
+      'A specific error indicating the user’s connection took too long sending its request and the server timed out before it could send a response. Usually occurs because the user has a slow connection.',
+    '410 – Gone':
+      'A specific error indicating that the page/file requested has been removed from the location requested. This condition is permanent.',
+    '502 – Bad Gateway': 'A specific error indicating there was an issue on the server side of',
+    '503 – Service Temporarily Unavailable':
+      'You see the Service Temporarily Unavailable (sometimes Out of Resources) message any time there’s a temporary overload on the server, or when it’s going through a scheduled maintenance.',
+    '504 – Gateway Time-Out':
+      'There is a server-server communication problem behind the Gateway Time-Out error message, just like behind the 502 Bad Gateway error code.',
+  }}
+/>
+
+<br />
+
+### Illustration and system error pairings
+
+We offer a library of illustrations dedicated to system error illustrations that live in the
+
+[HeroSquare section →](/components/hero-square) <br />
+
+It’s always important to consider the tone and emotional state of the user when choosing the illustration paired with the copy. We recommend working with your content designer when writing these.
+
+<VStack>
+  <TextHeadline as="h4">Illustration for 404, 408, 410 errors</TextHeadline>
+</VStack>
+
+```jsx live
+function Illustration1() {
+  return (
+    <VStack>
+      <HeroSquare name="catLostSystemError" />
+    </VStack>
+  );
+}
+```
+
+<VStack>
+  <TextHeadline as="h4">Illustration for 400, 403, 404, 503, 504, 404 errors</TextHeadline>
+</VStack>
+
+```jsx live
+function Illustration2() {
+  return (
+    <VStack>
+      <HeroSquare name="chickenFishSystemError" />
+    </VStack>
+  );
+}
+```
+
+<VStack>
+  <TextHeadline as="h4">Illustration for 400, 403, 404, 408, 410 errors</TextHeadline>
+</VStack>
+
+```jsx live
+function Illustration3() {
+  return (
+    <VStack>
+      <HeroSquare name="alienDonutSystemError" />
+    </VStack>
+  );
+}
+```
+
+<VStack>
+  <TextHeadline as="h4">Illustration for 400, 404, 408, 410, 502, 503 errors</TextHeadline>
+</VStack>
+
+```jsx live
+function Illustration4() {
+  return (
+    <VStack>
+      <HeroSquare name="iceCreamMeltingSystemError" />
+    </VStack>
+  );
+}
+```
+
+<VStack>
+  <TextHeadline as="h4">Illustration for 400, 404, 410, 502, 503 errors</TextHeadline>
+</VStack>
+
+```jsx live
+function Illustration5() {
+  return (
+    <VStack>
+      <HeroSquare name="serverCatSystemError" />
+    </VStack>
+  );
+}
+```
+
+<VStack>
+  <TextHeadline as="h4">Illustration for 400, 403, 404, 410, 408 errors</TextHeadline>
+</VStack>
+
+```jsx live
+function Illustration6() {
+  return (
+    <VStack>
+      <HeroSquare name="spacedOutSystemError" />
+    </VStack>
+  );
+}
+```
+
+<VStack>
+  <TextHeadline as="h4">Illustration for 400, 403, 404, 408, 410 errors</TextHeadline>
+</VStack>
+
+```jsx live
+function Illustration7() {
+  return (
+    <VStack>
+      <HeroSquare name="octopusFloatSystemError" />
+    </VStack>
+  );
+}
+```
+
+### Examples of system errors
+
+<VStack>
+  <TextHeadline as="h4">404</TextHeadline>
+  <Image srcLight="/img/error/404example_light.png" srcDark="/img/error/404example_dark.png" />
+</VStack>
+
+<br />
+
+<VStack>
+  <TextHeadline as="h4">500</TextHeadline>
+  <Image srcLight="/img/error/500example_light.png" srcDark="/img/error/500example_dark.png" />
+</VStack>
+
+<br />
+
+<VStack>
+  <TextHeadline as="h4">503</TextHeadline>
+  <Image srcLight="/img/error/503example_light.png" srcDark="/img/error/503example_dark.png" />
+</VStack>

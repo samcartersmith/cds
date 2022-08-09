@@ -1,4 +1,5 @@
 import * as Input from './TextInputSheet';
+import { DataTable } from ':cds-website/components/DataTable';
 
 <Input.TextInputSheet />
 
@@ -21,10 +22,81 @@ Use Text Fields for free form responses or when we can’t predict a user’s an
 4. **Start**: Add an Icon, Asset, Text, Link, or Icon Button to the start of an Input
 5. **End**: Add an Icon, Asset, Text, Link, or Icon Button to the start of an Input
 
-## Guidance
+## Usage
 
 - Use Text Inputs for free form responses or when we can’t predict a user’s answer.
 - Use another component like Select, Date Input, or one of our Group Selection Control components if a user is selecting from a set of options.
+
+## Types
+
+### Error
+
+<Input.Error />
+
+When a user enters invalid data, they’re prevented from continuing through the experience. An error message is displayed below the text input.
+
+<DoDont>
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/components/inputs/TextInput/error_do_light.png"
+        srcDark="/img/components/inputs/TextInput/error_do_dark.png"
+      />
+    }
+  >
+    State a solution
+  </DoExample>
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/components/inputs/TextInput/error_dont_light.png"
+        srcDark="/img/components/inputs/TextInput/error_dont_dark.png"
+      />
+    }
+  >
+    Explain what went wrong
+  </DontExample>
+</DoDont>
+
+<DataTable
+  data={{
+    'When are alerts triggered?': 'A user entered information incorrectly',
+    Where: 'Requires correction before the user can progress in the flow.',
+    Dismiss:
+      'State a solution rather than explaining what went wrong. Don’t add a period unless there are multiple sentences. Use sentence case capitalization.',
+  }}
+/>
+
+### Success
+
+<Input.Success />
+
+These messages should confirm that the text inputted is correct.
+
+<DataTable
+  data={{
+    'When are alerts triggered?': 'xx',
+    Where: 'xx',
+    Dismiss:
+      'The phrase should be clear and concise. It should focus on what was inputted and relay that is valid. No punctuation necessary. ',
+  }}
+/>
+
+### Informational
+
+<Input.Informational />
+
+This phrase should provide assistance to the user in knowing what type of input is needed and the correct
+format. The goal is to reduce confusion and frustration on the part of the customer.
+
+<DataTable
+  data={{
+    'When are alerts triggered?': 'Use Helper Text to show hints, formatting, and requirements. ',
+    Where: 'Not dismissable',
+    Dismiss:
+      'In general, use phrases without punctuation that are clear and concise. Focus on answering questions we know a user may have about the content needed or its appropriate formatting.',
+  }}
+/>
 
 ## Content Guidelines
 
@@ -49,68 +121,6 @@ When stacking inputs, use spacing 3.
 </Box>
 
 Heights are predetermined and based on scale. Please avoid customizing the height of the input unless necessary. The height value has been selected to align with our Button components.
-
-## Behavior
-
-### Error States
-
-When a user enters invalid data, they’re prevented from continuing through the experience. An error message is displayed below the text input.
-
-<DoDont>
-  <DoExample
-    srcLight="/img/components/inputs/TextInput/error_do_light.png"
-    srcDark="/img/components/inputs/TextInput/error_do_dark.png"
-  >
-    State a solution
-  </DoExample>
-  <DontExample
-    srcLight="/img/components/inputs/TextInput/error_dont_light.png"
-    srcDark="/img/components/inputs/TextInput/error_dont_dark.png"
-  >
-    Explain what went wrong
-  </DontExample>
-</DoDont>
-
-<Table variant="graph" bordered>
-  <TableHeader>
-    <TableRow fullWidth backgroundColor="backgroundAlternate">
-      <TableCell>
-        <TextHeadline as="h1">Severity</TextHeadline>
-      </TableCell>
-      <TableCell>
-        <TextBody as="p">Low</TextBody>
-      </TableCell>
-    </TableRow>
-  </TableHeader>
-  <TableBody>
-    {/* Row 1 */}
-    <TableRow>
-      <TableCell>
-        <TextHeadline as="h1">When are alerts triggered?</TextHeadline>
-      </TableCell>
-      <TableCell>
-        <TextBody as="p">A user entered information incorrectly</TextBody>
-      </TableCell>
-    </TableRow>
-    {/* Row 2 */}
-    <TableRow>
-      <TableCell>
-        <TextHeadline as="h1">Where</TextHeadline>
-      </TableCell>
-      <TableCell>Requires correction before the user can progress in the flow. </TableCell>
-    </TableRow>
-    {/* Row 3 */}
-    <TableRow>
-      <TableCell>
-        <TextHeadline as="h1">Dismiss</TextHeadline>
-      </TableCell>
-      <TableCell>
-        State a solution rather than explaining what went wrong. Don’t add a period unless there are
-        multiple sentences. Use sentence case capitalization.
-      </TableCell>
-    </TableRow>
-  </TableBody>
-</Table>
 
 ## Best Practices
 

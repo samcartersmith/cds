@@ -618,7 +618,13 @@ const sidebars = {
     {
       type: 'category',
       label: 'Patterns',
-      items: ['concepts/messaging/errors'],
+      items: [
+        {
+          type: 'category',
+          label: 'Messaging',
+          items: ['patterns/messaging/overview', 'patterns/messaging/error'],
+        },
+      ],
       customProps: {
         kbar: {
           illustration: 'participateNavigation',

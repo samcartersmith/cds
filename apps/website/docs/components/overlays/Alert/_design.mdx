@@ -1,3 +1,5 @@
+import { DataTable } from ':cds-website/components/DataTable';
+
 Alert dialogs are specific types of modal overlay that communicate critical information and block the user from completing a task until a specific action is taken.
 Alerts are highly disruptive and should be used sparingly, especially with high-risk actions that might have negative or destructive consequences.
 Alert dialogs are different but related to other types of user feedback and communication patterns like Banners, Callouts, Inline Validation, and Trays.
@@ -27,6 +29,123 @@ Yes/No confirmation before destructive or consequential action
 <Image
   srcLight="/img/components/overlays/alert/usage2_light.png"
   srcDark="/img/components/overlays/alert/usage2_dark.png"
+/>
+
+## Types
+
+### Error
+
+<Image srcLight="/img/error/alert_light.png" srcDark="/img/error/alert_dark.png" />
+
+Human or system errors prevent the app from working or the user from continuing.
+
+Alert errors convey important or urgent information related to the state of the app or the device. A potential blocker in the flow (user cannot progress any further).
+
+Use alert errors sparingly. Alerts disrupt the user experience and should only be used in important situations like notifying people about problems. The infrequency of alerts helps ensure that people take them seriously.
+
+<Table variant="graph" bordered>
+  <TableBody>
+    {/* Row 1 */}
+    <TableRow>
+      <TableCell>
+        <TextHeadline as="h1">When do error alerts appear?</TextHeadline>
+      </TableCell>
+      <TableCell>
+        <TextBody as="p">
+          Blocker in the flow (cannot progress any further). Action required or in need of immediate
+          attention.
+        </TextBody>
+        <Spacer />
+        <TextBody as="p">
+          Disrupt the user and should only be used in important situations like notifying people
+          about problems. Infrequency helps ensure that people take them seriously.
+        </TextBody>
+      </TableCell>
+    </TableRow>
+    {/* Row 2 */}
+    <TableRow>
+      <TableCell>
+        <TextHeadline as="h1">Dismiss</TextHeadline>
+      </TableCell>
+      <TableCell>User taps the action or acknowledgment button, or remedies the error.</TableCell>
+    </TableRow>
+    {/* Row 3 */}
+    <TableRow>
+      <TableCell>
+        <TextHeadline as="h1">Content</TextHeadline>
+      </TableCell>
+      <TableCell>
+        <TextBody as="p">Use specific, actionable error messages when possible.</TextBody>
+        <Spacer />
+        <TextBody as="p">
+          The user should be told what went wrong in the headline, be updated on any progress or
+          solution in the body copy, and given options for what to do next through a button or link.
+          Headlines should not have punctuation.
+        </TextBody>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+<DoDont>
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/components/overlays/alert/do_1_light.png"
+        srcDark="/img/components/overlays/alert/do_1_dark.png"
+      />
+    }
+  >
+    Use specific, actionable error messages
+  </DoExample>
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/components/overlays/alert/dont_1_light.png"
+        srcDark="/img/components/overlays/alert/dont_1_dark.png"
+      />
+    }
+  >
+    Only state the error
+  </DontExample>
+</DoDont>
+
+<DoDont>
+  <DoExample
+    media={
+      <Image
+        srcLight="/img/components/overlays/alert/do_2_light.png"
+        srcDark="/img/components/overlays/alert/do_2_dark.png"
+      />
+    }
+  >
+    State the problem in the headline and the solution in the body copy
+  </DoExample>
+  <DontExample
+    media={
+      <Image
+        srcLight="/img/components/overlays/alert/dont_2_light.png"
+        srcDark="/img/components/overlays/alert/dont_2_dark.png"
+      />
+    }
+  >
+    State the solution in the headline
+  </DontExample>
+</DoDont>
+
+### Warning
+
+<Image srcLight="/img/warning/alert_light.png" srcDark="/img/warning/alert_dark.png" />
+
+Warning alerts create friction in a user flow in order to confirm the user is aware of the consequences of their action. They are often triggered because these consequences could be unwanted or destructive and we want to be sure the action was not taken accidentally. Warning alerts allow for the user to continue as originally intended but buttons often emphasize what we perceive as the least destructive action.
+
+<DataTable
+  data={{
+    'When do warning alerts appear?': 'Urgent acknowledgment required.',
+    Dismiss: 'Dismissable by choosing an action.',
+    Content:
+      'Be clear about the consequences of the action attempted, confirm the user understands if the action is reversible, and help the user quickly continue if desired.',
+  }}
 />
 
 ## Anatomy
@@ -94,126 +213,3 @@ For more guidelines on writing alerts, including examples, check out [Alerts and
 - When appearing, the alert modal moves down 16pt and fades from 0 to 100 opacity.
 - When disappearing, it simply fades out.
 - An alert can only be dismissed using the provided actions buttons or the escape key. The escape key It can’t be dismissed with an “x” or by clicking outside of the modal.
-
-### Error states
-
-Human or system errors prevent the app from working or the user from continuing.
-
-Alert errors convey important information related to the state of the app or the device. A potential blocker in the flow (user cannot progress any further)
-
-Use alert errors sparingly. Alerts disrupt the user experience and should only be used in important situations like notifying people about problems. The infrequency of alerts helps ensure that people take them seriously.
-
-<DoDont>
-  <DontExample
-    media={
-      <Image
-        srcLight="/img/components/overlays/alert/dont_light.png"
-        srcDark="/img/components/overlays/alert/dont_dark.png"
-      />
-    }
-    maxWidth="70%"
-    maxHeight="70%"
-  >
-    Confuse destructive messages as error messages.
-  </DontExample>
-</DoDont>
-
-<DoDont>
-  <DoExample
-    media={
-      <Image
-        srcLight="/img/components/overlays/alert/do_1_light.png"
-        srcDark="/img/components/overlays/alert/do_1_dark.png"
-      />
-    }
-  >
-    Use specific, actionable error messages
-  </DoExample>
-  <DontExample
-    media={
-      <Image
-        srcLight="/img/components/overlays/alert/dont_1_light.png"
-        srcDark="/img/components/overlays/alert/dont_1_dark.png"
-      />
-    }
-  >
-    Only state the error
-  </DontExample>
-</DoDont>
-
-<DoDont>
-  <DoExample
-    media={
-      <Image
-        srcLight="/img/components/overlays/alert/do_2_light.png"
-        srcDark="/img/components/overlays/alert/do_2_dark.png"
-      />
-    }
-  >
-    State the problem in the headline and the solution in the body copy
-  </DoExample>
-  <DontExample
-    media={
-      <Image
-        srcLight="/img/components/overlays/alert/dont_2_light.png"
-        srcDark="/img/components/overlays/alert/dont_2_dark.png"
-      />
-    }
-  >
-    State the solution in the headline
-  </DontExample>
-</DoDont>
-
-<Table variant="graph" bordered>
-  <TableHeader>
-    <TableRow fullWidth backgroundColor="backgroundAlternate">
-      <TableCell>
-        <TextHeadline as="h1">Severity</TextHeadline>
-      </TableCell>
-      <TableCell>
-        <TextBody as="p">Medium</TextBody>
-      </TableCell>
-    </TableRow>
-  </TableHeader>
-  <TableBody>
-    {/* Row 1 */}
-    <TableRow>
-      <TableCell>
-        <TextHeadline as="h1">When are alerts triggered?</TextHeadline>
-      </TableCell>
-      <TableCell>
-        <TextBody as="p">
-          Blocker in the flow (cannot progress any further). Disrupt the user and should only be
-          used in important situations like notifying people about problems. Infrequency helps
-          ensure that people take them seriously.
-        </TextBody>
-      </TableCell>
-    </TableRow>
-    {/* Row 2 */}
-    <TableRow>
-      <TableCell>
-        <TextHeadline as="h1">Where</TextHeadline>
-      </TableCell>
-      <TableCell>Appears on the center of the screen with a background overlay.</TableCell>
-    </TableRow>
-    {/* Row 3 */}
-    <TableRow>
-      <TableCell>
-        <TextHeadline as="h1">Dismiss</TextHeadline>
-      </TableCell>
-      <TableCell>User taps action or acknowledgment button, or remedies the error.</TableCell>
-    </TableRow>
-    {/* Row 4 */}
-    <TableRow>
-      <TableCell>
-        <TextHeadline as="h1">Content</TextHeadline>
-      </TableCell>
-      <TableCell>
-        For medium severity errors, as seen mostly in alerts, use specific, actionable error
-        messages when possible. The user should be told what went wrong in the headline, updated on
-        any progress or solution in the body copy, and given options for what to do next through a
-        button or link. Headlines should no have punctuation.
-      </TableCell>
-    </TableRow>
-  </TableBody>
-</Table>

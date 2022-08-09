@@ -1,4 +1,5 @@
 import React, { memo, useMemo } from 'react';
+import { SpacingScale } from '@theme/LandingPageQuickLink';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { VStack } from '@cbhq/cds-web/alpha/VStack';
 import { Box } from '@cbhq/cds-web/layout/Box';
@@ -9,6 +10,7 @@ export type ImageProps = {
   src?: string;
   maxWidth?: string;
   maxHeight?: string;
+  spacingVertical?: SpacingScale;
 };
 
 const Image = memo(function Image({
@@ -17,12 +19,13 @@ const Image = memo(function Image({
   srcDark = src,
   maxWidth = '100%',
   maxHeight = '100%',
+  spacingVertical = 2,
 }: ImageProps) {
   const srcFromSpectrum = useSpectrumConditional({ light: srcLight, dark: srcDark });
   const style = useMemo(() => ({ maxWidth, maxHeight }), [maxHeight, maxWidth]);
 
   return (
-    <VStack spacingVertical={2}>
+    <VStack spacingVertical={spacingVertical}>
       <Box justifyContent="center" elevation={0} borderRadius="rounded" overflow="hidden">
         {/* eslint-disable-next-line jsx-a11y/alt-text */}
         <img style={style} src={srcFromSpectrum} />
