@@ -1,12 +1,86 @@
 Icon buttons must have a name (which determines the icon), and can use variants to denote intent and importance.
 
+:::tip Accessibility tip
+
+To ensure your `IconButton` implementation is accessible, it must have an `accessibilityLabel` that describes the purpose of the button.
+
+<br />
+
+In cases where you're composing a button next to a label or some text that describes the buttons
+action, you can setup your system using `accessibilityLabelledBy` prop mapping to the `id` on the
+label node (See [Composed example](#composed-example)).
+
+:::
+
 ```jsx live
-<div>
-  <IconButton name="orderHistory" onPress={console.log} variant="primary" />
-  <IconButton name="gear" onPress={console.log} variant="secondary" />
-  <IconButton name="checkmark" onPress={console.log} variant="foregroundMuted" />
-  <IconButton name="orderHistory" onPress={console.log} variant="primary" transparent />
-  <IconButton name="gear" onPress={console.log} variant="secondary" transparent />
-  <IconButton name="checkmark" onPress={console.log} variant="foregroundMuted" transparent />
-</div>
+<HStack gap={2}>
+  <IconButton
+    name="orderHistory"
+    accessibilityLabel="View transaction history"
+    variant="primary"
+    onPress={console.log}
+  />
+  <IconButton
+    name="gear"
+    accessibilityLabel="View settings"
+    variant="secondary"
+    onPress={console.log}
+  />
+  <IconButton
+    name="checkmark"
+    accessibilityLabel="Approve transaction"
+    variant="foregroundMuted"
+    onPress={console.log}
+  />
+  <IconButton
+    name="orderHistory"
+    accessibilityLabel="View past order history"
+    variant="primary"
+    transparent
+    onPress={console.log}
+  />
+  <IconButton
+    name="gear"
+    accessibilityLabel="Update settings"
+    variant="secondary"
+    transparent
+    onPress={console.log}
+  />
+  <IconButton
+    name="checkmark"
+    accessibilityLabel="Verify your identity"
+    variant="foregroundMuted"
+    transparent
+    onPress={console.log}
+  />
+</HStack>
+```
+
+### Composed example
+
+As referenced above, if you're building a composed system, use the `accessibilityLabelledBy` prop and an `id` on the text node.
+
+```jsx live
+function composedExample() {
+  const [active, { toggle }] = useToggler(false);
+  const name = useMemo(() => (active ? 'dropsActive' : 'dropsInactive'), [active]);
+  const variant = useMemo(() => (active ? 'primary' : 'foregroundMuted'), [active]);
+  const label = useMemo(() => (active ? 'Reject drop' : 'Claim drop'), [active]);
+
+  return (
+    <HStack gap={2} alignItems="center">
+      <IconButton
+        name={name}
+        variant={variant}
+        onPress={toggle}
+        // Accessibility props
+        id="my-icon--id"
+        accessibilityLabelledBy="my-label--id"
+      />
+      <TextLabel1 as="label" htmlFor="my-icon--id" id="my-label--id">
+        {label}
+      </TextLabel1>
+    </HStack>
+  );
+}
 ```
