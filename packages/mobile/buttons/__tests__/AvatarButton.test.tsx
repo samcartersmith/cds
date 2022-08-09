@@ -40,7 +40,7 @@ describe('AvatarButton', () => {
     (debounce as jest.Mock).mockImplementation(() => spy);
     const result = render(<AvatarButton testID="avatar-button" alt="Sneezy" onPress={spy} />);
 
-    fireEvent.press(result.getByTestId('avatar-button').findByProps({ alt: 'Sneezy' }));
+    fireEvent.press(result.getByTestId('avatar-button'));
 
     expect(spy).toHaveBeenCalled();
   });

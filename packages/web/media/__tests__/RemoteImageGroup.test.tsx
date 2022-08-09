@@ -5,6 +5,7 @@ import { RemoteImageGroupBaseProps } from '@cbhq/cds-common/types/RemoteImageGro
 import { Shape } from '@cbhq/cds-common/types/Shape';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
+import { borderRadiusVariables } from '../../styles/borderRadius';
 import { RemoteImage } from '../RemoteImage';
 import { RemoteImageGroup } from '../RemoteImageGroup';
 
@@ -13,9 +14,9 @@ const TEST_ID = 'remote-image-test-id';
 const SIZE = 40;
 
 const SHAPE_TO_BORDERRADIUS_MAP = {
-  circle: '100px',
-  squircle: '8px',
-  square: '0',
+  circle: borderRadiusVariables['--border-radius-rounded-full'],
+  squircle: borderRadiusVariables['--border-radius-rounded'],
+  square: borderRadiusVariables['--border-radius-rounded-small'],
   rectangle: '0',
 } as const;
 

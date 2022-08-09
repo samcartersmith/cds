@@ -16,8 +16,13 @@ describe('getAccessibleForeground', () => {
     expect(color).toBe('yellow50');
   });
 
-  it('returns gray100 for non accessible gray colors', () => {
+  it('returns black for non accessible gray foreground colors if black foreground has a higher contrast ratio than white', () => {
     const color = getAccessibleForeground('#ffffff', '#dddddd', 'graphic', transformFn);
-    expect(color).toBe('gray100');
+    expect(color).toBe('rgb(0,0,0)');
+  });
+
+  it('returns white for non accessible gray foreground colors if white foreground has a higher contrast ratio than black', () => {
+    const color = getAccessibleForeground('#000000', '#333333', 'graphic', transformFn);
+    expect(color).toBe('rgb(255,255,255)');
   });
 });

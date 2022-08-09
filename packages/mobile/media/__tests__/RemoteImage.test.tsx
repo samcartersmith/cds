@@ -2,6 +2,7 @@ import { render } from '@testing-library/react-native';
 import { normalScaleMap, PaletteBorder } from '@cbhq/cds-common';
 import { paletteBorders } from '@cbhq/cds-common/palette/constants';
 import { paletteAliasToRgbaString } from '@cbhq/cds-common/palette/paletteAliasToRgbaString';
+import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
 
 import { ThemeProvider } from '../../system';
 import { RemoteImage } from '../RemoteImage';
@@ -35,7 +36,7 @@ describe('RemoteImage', () => {
 
     const image = queryByTestId('remoteimage');
     expect(image).toHaveStyle({
-      borderRadius: 0,
+      borderRadius: borderRadius.roundedSmall,
     });
   });
 

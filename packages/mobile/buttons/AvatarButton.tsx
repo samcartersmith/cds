@@ -6,10 +6,10 @@ import { AvatarBaseProps } from '@cbhq/cds-common/types/AvatarBaseProps';
 import { Avatar } from '../media';
 import { PressableOpacity, PressableProps } from '../system';
 
-type AvatarButtonProps = PressableProps &
+export type AvatarButtonProps = PressableProps &
   SharedProps &
   Pick<ButtonBaseProps, 'accessibilityLabel' | 'compact'> &
-  Pick<AvatarBaseProps, 'alt' | 'src'>;
+  Pick<AvatarBaseProps, 'alt' | 'src' | 'shape' | 'colorScheme' | 'borderColor' | 'name'>;
 
 export const AvatarButton = memo(function AvatarButton({
   accessibilityLabel,
@@ -17,6 +17,10 @@ export const AvatarButton = memo(function AvatarButton({
   alt,
   src,
   compact,
+  shape,
+  colorScheme,
+  borderColor,
+  name,
   ...props
 }: AvatarButtonProps) {
   const height = useInteractableHeight(compact);
@@ -29,7 +33,15 @@ export const AvatarButton = memo(function AvatarButton({
       feedback={feedback}
       {...props}
     >
-      <Avatar src={src} alt={alt} dangerouslySetSize={height} />
+      <Avatar
+        src={src}
+        dangerouslySetSize={height}
+        shape={shape}
+        colorScheme={colorScheme}
+        borderColor={borderColor}
+        name={name}
+        alt={alt}
+      />
     </PressableOpacity>
   );
 });

@@ -9,8 +9,8 @@ import { usePaletteValueToRgbaString } from './usePaletteValueToRgbaString';
 function useAccessibleForeground(params: AccessibleForegroundParams): string;
 function useAccessibleForeground(params?: undefined): AccessibleForegroundFn;
 function useAccessibleForeground(params?: AccessibleForegroundParams) {
-  const paletteConfig = usePaletteConfig();
-  const backgroundFromPalette = usePaletteValueToRgbaString(paletteConfig.background);
+  const { background: paletteBackground } = usePaletteConfig();
+  const backgroundFromPalette = usePaletteValueToRgbaString(paletteBackground);
   const transformFn = usePaletteValueToRgbaString();
   const convert = useCallback(
     ({ background, color, usage }: AccessibleForegroundParams) =>

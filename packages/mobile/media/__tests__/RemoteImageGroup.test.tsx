@@ -1,5 +1,6 @@
 import { render, waitFor } from '@testing-library/react-native';
 import { normalScaleMap } from '@cbhq/cds-common';
+import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
 import { RemoteImageGroupBaseProps } from '@cbhq/cds-common/types/RemoteImageGroupBaseProps';
 
 import * as scaleStyles from '../../styles/scale';
@@ -85,7 +86,7 @@ describe('RemoteImageGroup', () => {
       const remoteImage = getByTestId(`${TEST_ID}-image-${index}`);
 
       expect(remoteImage).toHaveStyle({
-        borderRadius: 100,
+        borderRadius: borderRadius.roundedFull,
       });
     });
   });

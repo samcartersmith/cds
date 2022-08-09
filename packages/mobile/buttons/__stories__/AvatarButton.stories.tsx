@@ -1,13 +1,29 @@
 import React, { useCallback, useState } from 'react';
 import { Text, View } from 'react-native';
+import { useAvatarFallbackColors } from '@cbhq/cds-common/media/useAvatarFallbackColors';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { AvatarButton } from '../AvatarButton';
+import { AvatarButton, AvatarButtonProps } from '../AvatarButton';
 
 const avatarImageUrl =
   'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg';
+const names = ['Sneezy', 'Happy', 'Sleepy', 'Doc', 'Bashful', 'Grumpy', 'Dopey', 'Lilo', 'Stitch'];
+
+const FallbackColoredBase = ({
+  dense = true,
+  ...props
+}: Pick<AvatarButtonProps, 'shape' | 'loading' | 'compact'> & { dense?: boolean }) => {
+  const avatarFallbackColors = useAvatarFallbackColors(names.length);
+  return (
+    <HStack gap={dense ? 0.5 : 2} alignItems="center" flexWrap="wrap">
+      {names.map((name, idx) => (
+        <AvatarButton alt="" name={name} colorScheme={avatarFallbackColors[idx]} {...props} />
+      ))}
+    </HStack>
+  );
+};
 
 const AvatarButtonScreen = () => {
   const [numPresses, setNumPresses] = useState(0);
@@ -45,6 +61,21 @@ const AvatarButtonScreen = () => {
             <AvatarButton alt="Sneezy" onPress={handlePress} loading compact />
           </HStack>
         </VStack>
+      </Example>
+      <Example title="Colored Fallback">
+        <FallbackColoredBase />
+      </Example>
+      <Example title="Colored Fallback Loading">
+        <FallbackColoredBase loading />
+      </Example>
+      <Example title="Colored Fallback Compact">
+        <FallbackColoredBase compact />
+      </Example>
+      <Example title="Colored Fallback Compact Loading">
+        <FallbackColoredBase compact loading />
+      </Example>
+      <Example title="Colored Fallback Square">
+        <FallbackColoredBase shape="square" />
       </Example>
     </ExampleScreen>
   );

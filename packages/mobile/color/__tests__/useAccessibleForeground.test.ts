@@ -39,10 +39,10 @@ describe('useAccessibleForeground', () => {
   });
 
   it('returns the correct spectrum color if trying to render a dark color on dark background', () => {
-    const { normalText, largeText, graphic } = checkAllUsages('#000000', 'dark');
-    expect(normalText).toBe('rgba(255,255,255,1)');
-    expect(largeText).toBe('rgba(255,255,255,1)');
-    expect(graphic).toBe('rgba(255,255,255,1)');
+    const { normalText, largeText, graphic } = checkAllUsages('rgb(59, 52, 34)', 'dark');
+    expect(normalText).toBe('rgb(255,255,255)');
+    expect(largeText).toBe('rgb(255,255,255)');
+    expect(graphic).toBe('rgb(255,255,255)');
   });
 
   it('returns the closest spectrum color if it does not meet accessibility requirements', () => {
@@ -52,17 +52,24 @@ describe('useAccessibleForeground', () => {
     expect(graphic).toBe('rgba(188,141,27,1)');
   });
 
-  it('returns gray100 for non accessible gray colors', () => {
+  it('returns the correct color spectrum color if trying to render a light gray color on a light background', () => {
     const { normalText, largeText, graphic } = checkAllUsages('#dddddd');
-    expect(normalText).toBe('rgba(10,11,13,1)');
-    expect(largeText).toBe('rgba(10,11,13,1)');
-    expect(graphic).toBe('rgba(10,11,13,1)');
+    expect(normalText).toBe('rgb(0,0,0)');
+    expect(largeText).toBe('rgb(0,0,0)');
+    expect(graphic).toBe('rgb(0,0,0)');
   });
 
-  it('returns value for graphic if it meets accessibility requirements', () => {
+  it('returns the correct color spectrum color if trying to render a dark gray color on a dark background', () => {
+    const { normalText, largeText, graphic } = checkAllUsages('#222222', 'dark');
+    expect(normalText).toBe('rgb(255,255,255)');
+    expect(largeText).toBe('rgb(255,255,255)');
+    expect(graphic).toBe('rgb(255,255,255)');
+  });
+
+  it('returns passed in foreground value for graphic if it meets accessibility requirements', () => {
     const { normalText, largeText, graphic } = checkAllUsages('#EC7030');
-    expect(normalText).toBe('rgba(207,71,14,1)');
-    expect(largeText).toBe('rgba(207,71,14,1)');
+    expect(normalText).toBe('rgba(207,71,14,1)'); // doesn't meet color contrast so returns closest palette alias
+    expect(largeText).toBe('#EC7030');
     expect(graphic).toBe('#EC7030');
   });
 });

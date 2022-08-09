@@ -31,8 +31,8 @@ describe('getAccessibleForegroundGradient', () => {
     });
     // In dark mode we disable gradient so these two colors are the same.
     expect(output).toEqual([
-      { color: 'gray100', offset: '0%' },
-      { color: 'gray100', offset: '100%' },
+      { color: 'rgb(255,255,255)', offset: '0%' },
+      { color: 'rgb(255,255,255)', offset: '100%' },
     ]);
   });
 

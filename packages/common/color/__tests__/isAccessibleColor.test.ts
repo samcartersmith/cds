@@ -1,39 +1,90 @@
 import { isAccessibleColor } from '../isAccessibleColor';
 
 describe('isAccessibleColor', () => {
-  it('passes for graphic but not normal or large text if white background with orange40 foreground', () => {
-    expect(isAccessibleColor('white', '#EC7030', 'graphic')).toBe(true);
-    expect(isAccessibleColor('white', '#EC7030', 'largeText')).toBe(false);
-    expect(isAccessibleColor('white', '#EC7030', 'normalText')).toBe(false);
+  it('passes for graphic but not normal or large text if white background with orange40 foreground if enhanced is set to true', () => {
+    expect(
+      isAccessibleColor({
+        background: 'white',
+        foreground: '#EC7030',
+        usage: 'graphic',
+        enhanced: true,
+      }),
+    ).toBe(true);
+    expect(
+      isAccessibleColor({
+        background: 'white',
+        foreground: '#EC7030',
+        usage: 'largeText',
+        enhanced: true,
+      }),
+    ).toBe(false);
+    expect(
+      isAccessibleColor({
+        background: 'white',
+        foreground: '#EC7030',
+        usage: 'normalText',
+        enhanced: true,
+      }),
+    ).toBe(false);
   });
 
   it('passes for all usages if white background with blue foreground', () => {
-    expect(isAccessibleColor('white', 'blue', 'graphic')).toBe(true);
-    expect(isAccessibleColor('white', 'blue', 'largeText')).toBe(true);
-    expect(isAccessibleColor('white', 'blue', 'normalText')).toBe(true);
+    expect(isAccessibleColor({ background: 'white', foreground: 'blue', usage: 'graphic' })).toBe(
+      true,
+    );
+    expect(isAccessibleColor({ background: 'white', foreground: 'blue', usage: 'largeText' })).toBe(
+      true,
+    );
+    expect(
+      isAccessibleColor({ background: 'white', foreground: 'blue', usage: 'normalText' }),
+    ).toBe(true);
   });
 
   it('fails for any usages if white background with yellow foreground', () => {
-    expect(isAccessibleColor('white', 'yellow', 'graphic')).toBe(false);
-    expect(isAccessibleColor('white', 'yellow', 'largeText')).toBe(false);
-    expect(isAccessibleColor('white', 'yellow', 'normalText')).toBe(false);
+    expect(isAccessibleColor({ background: 'white', foreground: 'yellow', usage: 'graphic' })).toBe(
+      false,
+    );
+    expect(
+      isAccessibleColor({ background: 'white', foreground: 'yellow', usage: 'largeText' }),
+    ).toBe(false);
+    expect(
+      isAccessibleColor({ background: 'white', foreground: 'yellow', usage: 'normalText' }),
+    ).toBe(false);
   });
 
   it('fails for any usages if orange background with yellow foreground', () => {
-    expect(isAccessibleColor('orange', 'yellow', 'graphic')).toBe(false);
-    expect(isAccessibleColor('orange', 'yellow', 'largeText')).toBe(false);
-    expect(isAccessibleColor('orange', 'yellow', 'normalText')).toBe(false);
+    expect(
+      isAccessibleColor({ background: 'orange', foreground: 'yellow', usage: 'graphic' }),
+    ).toBe(false);
+    expect(
+      isAccessibleColor({ background: 'orange', foreground: 'yellow', usage: 'largeText' }),
+    ).toBe(false);
+    expect(
+      isAccessibleColor({ background: 'orange', foreground: 'yellow', usage: 'normalText' }),
+    ).toBe(false);
   });
 
   it('fails for any usages if blue background with gray foreground', () => {
-    expect(isAccessibleColor('blue', 'gray', 'graphic')).toBe(false);
-    expect(isAccessibleColor('blue', 'gray', 'largeText')).toBe(false);
-    expect(isAccessibleColor('blue', 'gray', 'normalText')).toBe(false);
+    expect(isAccessibleColor({ background: 'blue', foreground: 'gray', usage: 'graphic' })).toBe(
+      false,
+    );
+    expect(isAccessibleColor({ background: 'blue', foreground: 'gray', usage: 'largeText' })).toBe(
+      false,
+    );
+    expect(isAccessibleColor({ background: 'blue', foreground: 'gray', usage: 'normalText' })).toBe(
+      false,
+    );
   });
 
   it('passes for all usages if blue background with white foreground', () => {
-    expect(isAccessibleColor('blue', 'white', 'graphic')).toBe(true);
-    expect(isAccessibleColor('blue', 'white', 'largeText')).toBe(true);
-    expect(isAccessibleColor('blue', 'white', 'normalText')).toBe(true);
+    expect(isAccessibleColor({ background: 'blue', foreground: 'white', usage: 'graphic' })).toBe(
+      true,
+    );
+    expect(isAccessibleColor({ background: 'blue', foreground: 'white', usage: 'largeText' })).toBe(
+      true,
+    );
+    expect(
+      isAccessibleColor({ background: 'blue', foreground: 'white', usage: 'normalText' }),
+    ).toBe(true);
   });
 });
