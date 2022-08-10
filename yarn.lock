@@ -2701,9 +2701,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground":
+"@cbhq/ui-mobile-playground@workspace:*, @cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground":
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground"
+  dependencies:
+    "@cbhq/cds-common": "workspace:*"
+    "@cbhq/cds-mobile": "workspace:*"
+    "@cbhq/cds-utils": "workspace:*"
+    lodash: ^4.17.21
+  peerDependencies:
+    "@react-navigation/native": ^5.9.8
+    "@react-navigation/stack": ^5.12.8
+    react: ">=17.0.2"
+    react-native: ">=0.65.2"
+    react-native-safe-area-context: ">=3.1.9"
   languageName: unknown
   linkType: soft
 
@@ -2732,6 +2743,7 @@ __metadata:
     "@cbhq/cds-common": "workspace:*"
     "@cbhq/cds-mobile": "workspace:*"
     "@cbhq/detox-utils": ^0.2.2
+    "@cbhq/ui-mobile-playground": "workspace:*"
     "@percy/cli": ^1.2.1
     "@percy/client": ^1.2.1
     "@percy/sdk-utils": ^1.2.1

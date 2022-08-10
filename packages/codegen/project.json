@@ -54,11 +54,18 @@
         "scriptPath": "packages/codegen/illustrations/build.ts"
       }
     },
+    "prepare_new_mobile_routes": {
+      "executor": "@cbhq/cds-tools:ts-script",
+      "options": {
+        "scriptPath": "packages/codegen/playground/prepareNewRoutes.ts"
+      }
+    },
     "prepare_mobile_routes": {
       "executor": "@cbhq/cds-tools:ts-script",
       "options": {
         "scriptPath": "packages/codegen/playground/prepareRoutes.ts"
-      }
+      },
+      "dependsOn": [{ "target": "prepare_new_mobile_routes", "projects": "self" }]
     },
     "prepare_adoption": {
       "executor": "@cbhq/cds-tools:ts-script",

@@ -1,0 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable global-require */
+
+export const routes = [
+  <% data.routes.map((route) => { %>
+    {
+      'key': '<%- route.name %>',
+      'getComponent': () => require("../<%- route.path %>").default,
+    },
+  <% }) %>
+];

@@ -36,7 +36,8 @@
           "common",
           "utils",
           "fonts",
-          "lottie-files"
+          "lottie-files",
+          "ui-mobile-playground"
         ],
         "target": "mobile-playground:init-visreg-mobile"
       }

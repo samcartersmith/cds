@@ -4,5 +4,16 @@
     "outDir": "dts"
   },
   "include": ["src"],
-  "exclude": ["cjs", "dts", "lib"]
+  "exclude": ["cjs", "dts", "lib"],
+  "references": [
+    {
+      "path": "../mobile"
+    },
+    {
+      "path": "../common"
+    },
+    {
+      "path": "../utils"
+    }
+  ]
 }

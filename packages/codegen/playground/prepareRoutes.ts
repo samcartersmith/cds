@@ -26,13 +26,22 @@ async function getRoutes() {
   }
 }
 
-async function prepare() {
+export async function prepare({ useNewTemplate }: { useNewTemplate: boolean }) {
+  // Will update once we migrate retail to use @cbhq/ui-mobile-playground
+  const templateConfig = useNewTemplate
+    ? {
+        template: 'newMobileRoutes.ejs',
+        dest: `mobile/examples/newRoutes.ts`,
+      }
+    : {
+        template: 'mobileRoutes.ejs',
+        dest: `mobile/examples/routes.ts`,
+      };
   try {
     const routes = await getRoutes();
     await writeFile({
-      template: 'mobileRoutes.ejs',
       data: { routes },
-      dest: `mobile/examples/routes.ts`,
+      ...templateConfig,
     });
   } catch (err) {
     if (err instanceof Error) {
@@ -43,4 +52,4 @@ async function prepare() {
   }
 }
 
-void prepare();
+void prepare({ useNewTemplate: false });
