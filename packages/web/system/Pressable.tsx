@@ -105,13 +105,14 @@ export const Pressable = forwardRef(function Pressable(
   return (
     <Interactable
       aria-busy={loading}
-      aria-disabled={isDisabled}
       as={as ?? ButtonOrLink}
       onClick={onClick}
       onKeyPress={onKeyPress}
       {...props}
       className={cx(!noScaleOnPress && scaledDownState, className, resetStyles)}
       disabled={isDisabled}
+      // Reakit adds this prop, but it's bad practice - https://jira.coinbase-corp.com/browse/CDS-2392
+      aria-disabled={undefined}
       ref={ref}
       tabIndex={tabIndex}
     >
