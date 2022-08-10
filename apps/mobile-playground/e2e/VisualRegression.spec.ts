@@ -1,32 +1,20 @@
 import {
-  logTestStep,
-  pressButton,
-  screenShouldAppear,
-  textShouldAppearWithTimeout,
-} from '@cbhq/detox-utils';
-
-import { cleanUpScreenshots, initializeVisualRegressionTests } from './detox-percy/detoxPercy';
-import { getRoutes, launchApp, takeRouteScreenshots } from './utils';
+  assertVisualDiffsForPlayground,
+  finishVisregTests,
+  getPlaygroundRoutes,
+  initializeVisregTests,
+} from './visual-regression-testing';
 
 describe('Example', () => {
   beforeAll(async () => {
-    await launchApp();
-    initializeVisualRegressionTests();
+    await initializeVisregTests();
   });
 
-  beforeEach(async () => {
-    await device.reloadReactNative();
+  afterAll(() => {
+    finishVisregTests();
   });
 
-  afterAll(async () => {
-    logTestStep('In After All; finalizing build.');
-    cleanUpScreenshots();
-  });
-
-  it.each(getRoutes())('%p Visual Diff Test.', async (name: string) => {
-    await textShouldAppearWithTimeout('CDS');
-    await pressButton(name, 'cds_home_flatlist');
-    await screenShouldAppear('example_screen_scrollview');
-    await takeRouteScreenshots(name, 'example_screen_scrollview');
+  it.each(getPlaygroundRoutes())('%p Visual Diff Test.', async (routeName: string) => {
+    await assertVisualDiffsForPlayground(routeName);
   });
 });

@@ -1,0 +1,141 @@
+_visreg_android_shared: &visreg_android_shared
+  parallelism: 1
+  commands:
+    # TODO: First line can be removed if macos-metal agents get upgraded
+    # https://docs.google.com/document/d/1bN53rawPd_A6WjZIAAwG_r_uSy7APaxz3pNz3aqIB-k/edit?usp=sharing
+    - nvm install 16.16.0 && nvm use 16.16.0 && npm install -g yarn
+    - tools/ci/setup.sh
+    - export LANG=en_US.UTF-8
+    - mkdir -p percy-artifacts
+    - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
+    - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
+    - yarn nx run mobile-playground:android-e2e-emulator
+    - yarn nx run mobile-playground:build-android-e2e
+    - yarn nx run mobile-playground:android-e2e
+  plugins: &android_plugins
+    - file:///buildkite/plugins/cache: &cache_plugin
+        key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
+        paths:
+          - ./.yarn/cache
+          - ./.yarn/install-state.gz
+    - file:///buildkite/plugins/docker: &docker_plugin
+        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:android
+        wait-network: true
+        privileged: true
+        always-pull: true
+        propagate-environment: true
+        propagate-uid-gid: true
+        volumes:
+          # Allow git operations to work
+          - ${HOME}/.ssh:/root/.ssh
+          - ${HOME}/.git:/root/.git
+        environment:
+          - PLAYSTORE_AUTH
+          - KEY_PASSWORD
+          - KEY_ALIAS
+          - BUGSNAG_KEY
+          - ANDROID_KEYSTORE
+          - PLAYSTORE_PACKAGE_NAME
+          - PERCY_TOKEN
+          - PERCY_TARGET_BRANCH
+    - ssh://git@github.cbhq.net/frontend/aws-sm-buildkite-plugin:
+        env:
+          PERCY_TOKEN: infra/buildkite/cds-percy-token-android
+  timeout_in_minutes: 60
+  env:
+    OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
+    VISREG_TOTAL_JOBS: 1
+    VISREG_JOB_NUMBER: 1
+  agents:
+    queue: metal
+  retry:
+    automatic:
+      limit: 2
+
+env:
+  LANG: en_US.UTF-8
+  CI: true
+  NX_CAPTURE_METRICS: true
+  NX_CAPTURE_TEST_METRICS: true
+  OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
+  ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
+  PERCY_NONCE_FILE_NAME: 'percy_nonce.txt'
+  PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-android'
+  VISREG_TOTAL_JOBS: 8
+
+steps:
+  - group: Visreg Tests (Android)
+    steps:
+      - label: 'Visreg Test (Android) 1'
+        key: 'visreg-android-1'
+        <<: *visreg_android_shared
+        env:
+          VISREG_JOB_NUMBER: 1
+
+      - label: 'Visreg Test (Android) 2'
+        key: 'visreg-android-2'
+        <<: *visreg_android_shared
+        env:
+          VISREG_JOB_NUMBER: 2
+
+      - label: 'Visreg Test (Android) 3'
+        key: 'visreg-android-3'
+        <<: *visreg_android_shared
+        env:
+          VISREG_JOB_NUMBER: 3
+
+      - label: 'Visreg Test (Android) 4'
+        key: 'visreg-android-4'
+        <<: *visreg_android_shared
+        env:
+          VISREG_JOB_NUMBER: 4
+
+      - label: 'Visreg Test (Android) 5'
+        key: 'visreg-android-5'
+        <<: *visreg_android_shared
+        env:
+          VISREG_JOB_NUMBER: 5
+
+      - label: 'Visreg Test (Android) 6'
+        key: 'visreg-android-6'
+        <<: *visreg_android_shared
+        env:
+          VISREG_JOB_NUMBER: 6
+
+      - label: 'Visreg Test (Android) 7'
+        key: 'visreg-android-7'
+        <<: *visreg_android_shared
+        env:
+          VISREG_JOB_NUMBER: 7
+
+      - label: 'Visreg Test (Android) 8'
+        key: 'visreg-android-8'
+        <<: *visreg_android_shared
+        env:
+          VISREG_JOB_NUMBER: 8
+
+      - label: 'Finish Visreg Tests (Android)'
+        parallelism: 1
+        depends_on:
+          - 'visreg-android-1'
+          - 'visreg-android-2'
+          - 'visreg-android-3'
+          - 'visreg-android-4'
+          - 'visreg-android-5'
+          - 'visreg-android-6'
+          - 'visreg-android-7'
+          - 'visreg-android-8'
+        allow_dependency_failure: true
+        commands:
+          - tools/ci/setup.sh
+          - export LANG=en_US.UTF-8
+          - mkdir -p percy-artifacts
+          - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
+          - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
+          - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
+          - cd apps/mobile-playground
+          - yarn visreg:finalize
+        env:
+          OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
+        agents:
+          queue: macos-metal

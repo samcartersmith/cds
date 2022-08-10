@@ -1,8 +1,8 @@
-_percy_ios_shared: &percy_ios_shared
+_visreg_ios_shared: &visreg_ios_shared
   parallelism: 1
   commands:
-    # TODO: Remove the first line once the macos-metal agent upgrade is implemented
-    # https://coinbase.slack.com/archives/C02QNP7BLER/p1658527386390829
+    # TODO: First line can be removed if macos-metal agents get upgraded
+    # https://docs.google.com/document/d/1bN53rawPd_A6WjZIAAwG_r_uSy7APaxz3pNz3aqIB-k/edit?usp=sharing
     - nvm install 16.16.0 && nvm use 16.16.0 && npm install -g yarn
     - tools/ci/setup.sh
     - export LANG=en_US.UTF-8
@@ -27,71 +27,70 @@ env:
   ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
   PERCY_NONCE_FILE_NAME: 'percy_nonce.txt'
   PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
-  DETOX_TOTAL_JOBS: 8
+  VISREG_TOTAL_JOBS: 8
 
 steps:
-  - group: 'Percy Tests (iOS)'
+  - group: 'Visreg Tests (iOS)'
     steps:
-      - label: 'Percy (iOS) Test 1'
-        key: 'percy-ios-1'
-        <<: *percy_ios_shared
+      - label: 'Visreg Test (iOS) 1'
+        key: 'visreg-ios-1'
+        <<: *visreg_ios_shared
         env:
-          DETOX_JOB_NUMBER: 1
+          VISREG_JOB_NUMBER: 1
 
-      - label: 'Percy (iOS) Test 2'
-        key: 'percy-ios-2'
-        <<: *percy_ios_shared
+      - label: 'Visreg Test (iOS) 2'
+        key: 'visreg-ios-2'
+        <<: *visreg_ios_shared
         env:
-          DETOX_JOB_NUMBER: 2
+          VISREG_JOB_NUMBER: 2
 
-      - label: 'Percy (iOS) Test 3'
-        key: 'percy-ios-3'
-        <<: *percy_ios_shared
+      - label: 'Visreg Test (iOS) 3'
+        key: 'visreg-ios-3'
+        <<: *visreg_ios_shared
         env:
-          DETOX_JOB_NUMBER: 3
+          VISREG_JOB_NUMBER: 3
 
-      - label: 'Percy (iOS) Test 4'
-        key: 'percy-ios-4'
-        <<: *percy_ios_shared
+      - label: 'Visreg Test (iOS) 4'
+        key: 'visreg-ios-4'
+        <<: *visreg_ios_shared
         env:
-          DETOX_JOB_NUMBER: 4
+          VISREG_JOB_NUMBER: 4
 
-      - label: 'Percy (iOS) Test 5'
-        key: 'percy-ios-5'
-        <<: *percy_ios_shared
+      - label: 'Visreg Test (iOS) 5'
+        key: 'visreg-ios-5'
+        <<: *visreg_ios_shared
         env:
-          DETOX_JOB_NUMBER: 5
+          VISREG_JOB_NUMBER: 5
 
-      - label: 'Percy (iOS) Test 6'
-        key: 'percy-ios-6'
-        <<: *percy_ios_shared
+      - label: 'Visreg Test (iOS) 6'
+        key: 'visreg-ios-6'
+        <<: *visreg_ios_shared
         env:
-          DETOX_JOB_NUMBER: 6
+          VISREG_JOB_NUMBER: 6
 
-      - label: 'Percy (iOS) Test 7'
-        key: 'percy-ios-7'
-        <<: *percy_ios_shared
+      - label: 'Visreg Test (iOS) 7'
+        key: 'visreg-ios-7'
+        <<: *visreg_ios_shared
         env:
-          DETOX_JOB_NUMBER: 7
+          VISREG_JOB_NUMBER: 7
 
-      - label: 'Percy (iOS) Test 8'
-        key: 'percy-ios-8'
-        <<: *percy_ios_shared
+      - label: 'Visreg Test (iOS) 8'
+        key: 'visreg-ios-8'
+        <<: *visreg_ios_shared
         env:
-          DETOX_JOB_NUMBER: 8
+          VISREG_JOB_NUMBER: 8
 
-      - label: 'Finish Percy (iOS)'
+      - label: 'Finish Visreg Tests (iOS)'
         parallelism: 1
         depends_on:
-          - 'percy-ios-1'
-          - 'percy-ios-2'
-          - 'percy-ios-3'
-          - 'percy-ios-4'
-          - 'percy-ios-5'
-          - 'percy-ios-6'
-          - 'percy-ios-7'
-          - 'percy-ios-8'
-        # TODO: Remove once iOS is stable
+          - 'visreg-ios-1'
+          - 'visreg-ios-2'
+          - 'visreg-ios-3'
+          - 'visreg-ios-4'
+          - 'visreg-ios-5'
+          - 'visreg-ios-6'
+          - 'visreg-ios-7'
+          - 'visreg-ios-8'
         allow_dependency_failure: true
         commands:
           - tools/ci/setup.sh
@@ -101,7 +100,7 @@ steps:
           - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
           - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
           - cd apps/mobile-playground
-          - yarn percy:finalize
+          - yarn visreg:finalize
         env:
           OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
         agents:

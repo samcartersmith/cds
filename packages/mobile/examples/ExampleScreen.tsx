@@ -15,7 +15,6 @@ import { Box, BoxProps } from '../layout/Box';
 import { Divider } from '../layout/Divider';
 import { VStack } from '../layout/VStack';
 import { useFeatureFlags } from '../system/useFeatureFlags';
-import { TextBody } from '../typography/TextBody';
 import { TextTitle3 } from '../typography/TextTitle3';
 
 export type ExampleProps = {
@@ -64,14 +63,12 @@ const Screen: React.FC = ({ children }) => {
     <ScrollView
       style={{ backgroundColor: palette.background, height: '100%' }}
       keyboardShouldPersistTaps="always"
-      testID="example_screen_scrollview"
+      testID="mobile-playground-scrollview"
       persistentScrollbar={false}
       showsVerticalScrollIndicator={false}
     >
       {children}
-      <VStack>
-        <TextBody testID="end_of_example_scrollview">End of Example</TextBody>
-      </VStack>
+      <Divider testID="mobile-playground-scrollview-end" />
     </ScrollView>
   );
 };

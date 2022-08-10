@@ -146,11 +146,11 @@ steps:
             - 'OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH'
       - file:///buildkite/plugins/cache: *cache_plugin
 
-  - label: 'Percy (Mobile)'
+  - label: 'Visreg Tests (Mobile)'
     <<: *shared_step
     commands:
       - tools/ci/setup.sh
-      - yarn nx run mobile-playground:conditional-init-percy-mobile
+      - yarn nx run mobile-playground:conditional-init-visreg-mobile
     env:
       OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
     artifact_paths:

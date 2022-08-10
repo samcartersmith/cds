@@ -255,9 +255,9 @@ export function Examples({ navigation: { navigate } }: ExamplesProps) {
     });
 
   return (
-    <Box background flexGrow={1}>
+    <Box background flexGrow={1} testID="mobile-playground-home-screen">
       <FlatList
-        testID="cds_home_flatlist"
+        testID="mobile-playground-home-flatlist"
         data={data}
         renderItem={renderItem}
         ItemSeparatorComponent={null}

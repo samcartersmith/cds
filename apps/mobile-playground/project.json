@@ -27,7 +27,7 @@
     "typecheck": {
       "executor": "@cbhq/cds-tools:typecheck"
     },
-    "conditional-init-percy-mobile": {
+    "conditional-init-visreg-mobile": {
       "executor": "@cbhq/cds-tools:run-conditional",
       "options": {
         "triggerProjects": [
@@ -38,13 +38,13 @@
           "fonts",
           "lottie-files"
         ],
-        "target": "mobile-playground:init-percy-mobile"
+        "target": "mobile-playground:init-visreg-mobile"
       }
     },
-    "init-percy-mobile": {
+    "init-visreg-mobile": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": ["./tools/ci/runPercyMobileTests.sh"],
+        "commands": ["./tools/ci/runVisregMobileTests.sh"],
         "parallel": false
       }
     },
