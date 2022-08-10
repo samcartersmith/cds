@@ -2705,11 +2705,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground"
   dependencies:
-    "@cbhq/cds-common": "workspace:*"
-    "@cbhq/cds-mobile": "workspace:*"
-    "@cbhq/cds-utils": "workspace:*"
     lodash: ^4.17.21
   peerDependencies:
+    "@cbhq/cds-common": ">=1.0.0"
+    "@cbhq/cds-mobile": ">=1.1.2"
+    "@cbhq/cds-utils": ">=1.0.0"
     "@react-navigation/native": ^5.9.8
     "@react-navigation/stack": ^5.12.8
     react: ">=17.0.2"
