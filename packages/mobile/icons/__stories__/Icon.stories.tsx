@@ -96,7 +96,12 @@ const IconScreen = () => {
         </HStack>
       </Example>
       <Example title="Animated Icon">
-        <PressableOpacity onPress={toggle} noScaleOnPress>
+        <PressableOpacity
+          accessibilityLabel="rating a product"
+          accessibilityHint="hit star to rate the product"
+          onPress={toggle}
+          noScaleOnPress
+        >
           <HStack gap={1}>
             {animatedIcon}
             {animatedIcon}

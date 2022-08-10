@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { ListCellBaseProps } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { compactListHeight, listHeight } from '@cbhq/cds-common/tokens/cell';
@@ -35,12 +35,35 @@ export const ListCell = memo(function ListCell({
   subdetail,
   variant,
   onPress,
+  accessibilityLabel,
+  accessibilityHint,
   ...props
 }: ListCellProps) {
   const minHeight = useScaleConditional(compact ? compactListHeight : listHeight);
   const accessoryType = selected ? 'selected' : accessory;
   // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   const hasDetails = Boolean(detail || subdetail);
+
+  // Obtain accessibility props
+  // The accessibilityLabel will default to title. The accessibilityHint will
+  // default to detail. If detail does not exist, it will default to subdetail
+  const accessibilityProps = useMemo(() => {
+    const detailIsStr = typeof detail === 'string';
+    const subdetailIsStr = typeof subdetail === 'string';
+
+    const subdetailOrDetail = () => {
+      if (detailIsStr) return detail;
+
+      if (subdetailIsStr) return subdetail;
+
+      return undefined;
+    };
+
+    return {
+      accessibilityLabel: typeof title === 'string' ? title : accessibilityLabel,
+      accessibilityHint: hasDetails ? subdetailOrDetail() : accessibilityHint,
+    };
+  }, [accessibilityHint, accessibilityLabel, detail, hasDetails, subdetail, title]);
 
   return (
     <Cell
@@ -65,6 +88,7 @@ export const ListCell = memo(function ListCell({
       minHeight={minHeight}
       selected={selected}
       onPress={onPress}
+      {...accessibilityProps}
     >
       <VStack justifyContent="center">
         {!!title && (

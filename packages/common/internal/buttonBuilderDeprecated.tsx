@@ -104,32 +104,74 @@ export function buttonBuilderDeprecated({ Button, VStack, frontier }: CreateButt
     </FeatureFlagProvider>
   );
 
+  /**
+   * If you have endIcon/startIcon, it cannot automatically infer the the
+   * accessibilityLabel based on child text. You have to specify
+   * the accesibilityLabel
+   * */
   const Icons = () => (
     <FeatureFlagProvider frontier={frontier}>
       <VStack background alignItems="flex-start" width="100%" gap={3}>
-        <Button startIcon="arrowLeft">With start icon</Button>
-        <Button compact startIcon="arrowLeft">
+        <Button accessibilityLabel="Button with an arrow left start icon" startIcon="arrowLeft">
+          With start icon
+        </Button>
+        <Button
+          accessibilityLabel="Compact button with an arrow left start icon"
+          compact
+          startIcon="arrowLeft"
+        >
           With start icon
         </Button>
 
-        <Button endIcon="arrowRight" variant="secondary">
+        <Button
+          accessibilityLabel="Button with an arrow right end icon"
+          endIcon="arrowRight"
+          variant="secondary"
+        >
           With end icon
         </Button>
-        <Button compact endIcon="arrowRight" variant="secondary">
+        <Button
+          accessibilityLabel="Compact Button with an arrow right end icon"
+          compact
+          endIcon="arrowRight"
+          variant="secondary"
+        >
           With end icon
         </Button>
 
-        <Button startIcon="wireTransfer" endIcon="questionMark" variant="positive">
+        <Button
+          accessibilityLabel="Button with start and end icon"
+          startIcon="wireTransfer"
+          endIcon="questionMark"
+          variant="positive"
+        >
           With both icons
         </Button>
-        <Button compact startIcon="wireTransfer" endIcon="questionMark" variant="positive">
+        <Button
+          accessibilityLabel="Compact button with start and end icon"
+          compact
+          startIcon="wireTransfer"
+          endIcon="questionMark"
+          variant="positive"
+        >
           With both icons
         </Button>
 
-        <Button disabled endIcon="sparkle" variant="negative">
+        <Button
+          accessibilityLabel="Disabled button with end icon"
+          disabled
+          endIcon="sparkle"
+          variant="negative"
+        >
           When disabled
         </Button>
-        <Button compact disabled startIcon="identityCard" variant="negative">
+        <Button
+          accessibilityLabel="Disabled compact button with start icon"
+          compact
+          disabled
+          startIcon="identityCard"
+          variant="negative"
+        >
           When disabled
         </Button>
       </VStack>
@@ -139,31 +181,63 @@ export function buttonBuilderDeprecated({ Button, VStack, frontier }: CreateButt
   const BlockWithIcons = () => (
     <FeatureFlagProvider frontier={frontier}>
       <VStack background alignItems="flex-start" width="100%" gap={3}>
-        <Button block startIcon="chatBubble">
+        <Button accessibilityLabel="With start icon" block startIcon="chatBubble">
           With start icon
         </Button>
-        <Button block compact startIcon="chatBubble">
+        <Button accessibilityLabel="With start icon compact" block compact startIcon="chatBubble">
           With start icon
         </Button>
 
-        <Button block endIcon="forwardArrow" variant="secondary">
+        <Button accessibilityLabel="With end icon" block endIcon="forwardArrow" variant="secondary">
           With end icon
         </Button>
-        <Button block compact endIcon="forwardArrow" variant="secondary">
+        <Button
+          accessibilityLabel="With end icon compact"
+          block
+          compact
+          endIcon="forwardArrow"
+          variant="secondary"
+        >
           With end icon
         </Button>
 
-        <Button block startIcon="chatBubble" endIcon="forwardArrow" variant="positive">
+        <Button
+          accessibilityLabel="With both icons block"
+          block
+          startIcon="chatBubble"
+          endIcon="forwardArrow"
+          variant="positive"
+        >
           With both icons
         </Button>
-        <Button block compact startIcon="chatBubble" endIcon="forwardArrow" variant="positive">
+        <Button
+          accessibilityLabel="With both icons block"
+          block
+          compact
+          startIcon="chatBubble"
+          endIcon="forwardArrow"
+          variant="positive"
+        >
           With both icons
         </Button>
 
-        <Button block disabled endIcon="forwardArrow" variant="negative">
+        <Button
+          accessibilityLabel="When disabled"
+          block
+          disabled
+          endIcon="forwardArrow"
+          variant="negative"
+        >
           When disabled
         </Button>
-        <Button block compact disabled startIcon="chatBubble" variant="negative">
+        <Button
+          accessibilityLabel="When disabled compact"
+          block
+          compact
+          disabled
+          startIcon="chatBubble"
+          variant="negative"
+        >
           When disabled
         </Button>
       </VStack>

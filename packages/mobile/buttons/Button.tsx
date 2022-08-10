@@ -38,6 +38,8 @@ export const DeprecatedButton = memo(function DeprecatedButton({
   variant = 'primary',
   numberOfLines = 1,
   noScaleOnPress,
+  accessibilityHint,
+  accessibilityLabel,
   ...props
 }: ButtonProps) {
   const palette = usePalette();
@@ -71,6 +73,8 @@ export const DeprecatedButton = memo(function DeprecatedButton({
       loading={loading}
       style={pressableStyles}
       noScaleOnPress={noScaleOnPress}
+      accessibilityLabel={loading ? 'loading' : accessibilityLabel}
+      accessibilityHint={loading ? 'Button is loading' : accessibilityHint}
       {...props}
     >
       <View style={buttonStyles}>

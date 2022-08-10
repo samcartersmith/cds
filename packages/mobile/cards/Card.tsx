@@ -27,6 +27,8 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
   width: widthProps,
   height: heightProps,
   testID,
+  accessibilityLabel,
+  accessibilityHint,
   ...props
 }) {
   const width = widthProps ?? cardSizes[size].width;
@@ -66,6 +68,8 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
       borderWidth="card"
       elevation={elevation}
       onPress={onPress}
+      accessibilityLabel={accessibilityLabel}
+      accessibilityHint={accessibilityHint}
       style={{ ...pinStyles, width, height }}
     >
       {content}

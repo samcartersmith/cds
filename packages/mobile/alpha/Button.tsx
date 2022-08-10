@@ -31,6 +31,8 @@ export const Button = memo(function Button({
   variant = 'primary',
   numberOfLines = 1,
   noScaleOnPress,
+  accessibilityLabel,
+  accessibilityHint,
   ...props
 }: ButtonProps) {
   const palette = usePalette();
@@ -73,6 +75,8 @@ export const Button = memo(function Button({
       loading={loading}
       style={pressableStyles}
       noScaleOnPress={noScaleOnPress}
+      accessibilityLabel={loading ? 'loading' : accessibilityLabel}
+      accessibilityHint={loading ? 'Button is loading' : accessibilityHint}
       {...props}
     >
       <HStack

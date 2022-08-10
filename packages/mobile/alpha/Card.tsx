@@ -18,7 +18,18 @@ export type CardProps = {
 
 export const Card = memo(
   forwardRef<View, CardProps>(function Card(
-    { children, onPress, dangerouslySetStyle, width, height, testID, pressableProps, ...props },
+    {
+      children,
+      onPress,
+      dangerouslySetStyle,
+      width,
+      height,
+      testID,
+      pressableProps,
+      accessibilityLabel,
+      accessibilityHint,
+      ...props
+    },
     ref,
   ) {
     const pressableStyles = useMemo(
@@ -47,6 +58,8 @@ export const Card = memo(
         onPress={onPress}
         style={pressableStyles}
         noScaleOnPress
+        accessibilityLabel={accessibilityLabel}
+        accessibilityHint={accessibilityHint}
         {...pressableProps}
       >
         {content}

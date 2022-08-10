@@ -4,6 +4,7 @@ import type { ElevationLevels } from './ElevationLevels';
 import type { GroupBaseProps } from './GroupBaseProps';
 import type { IllustrationVariant } from './IllustrationNames';
 import type { PaletteBackground } from './Palette';
+import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import type { SharedProps } from './SharedProps';
 import type { OffsetProps, SpacingProps } from './SpacingProps';
 
@@ -14,7 +15,8 @@ export type CardBoxProps = SharedProps &
   OffsetProps &
   DimensionStyles &
   StackBaseProps &
-  BorderedStyles;
+  BorderedStyles &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
 
 export type CardBaseProps = {
   /** Set the background color of the Card. Passing `true` will enable the default background, otherwise a custom palette alias can be passed. */

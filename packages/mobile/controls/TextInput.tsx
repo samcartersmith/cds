@@ -136,7 +136,12 @@ export const TextInput = memo(
           startNode={
             ((compact && !!label) || !!start) && (
               <Box justifyContent="center" alignItems="center" testID={testIDMap?.start}>
-                <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
+                <Pressable
+                  accessibilityElementsHidden
+                  accessibilityRole="button"
+                  disabled={disabled}
+                  onPress={handleNodePress}
+                >
                   <HStack>
                     {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
                     {!!start && (
@@ -157,7 +162,12 @@ export const TextInput = memo(
                 gap={2}
                 testID={testIDMap?.end ?? ''}
               >
-                <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
+                <Pressable
+                  accessibilityElementsHidden
+                  accessibilityRole="button"
+                  disabled={disabled}
+                  onPress={handleNodePress}
+                >
                   <HStack>
                     {suffix !== '' && (
                       <TextLabel1 spacingEnd={2} color="foregroundMuted">

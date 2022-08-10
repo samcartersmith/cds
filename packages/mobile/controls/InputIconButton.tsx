@@ -22,6 +22,8 @@ export const InputIconButton = memo(function InputIconButton({
   disableInheritFocusStyle = false,
   testID,
   variant = 'primary',
+  accessibilityLabel,
+  accessibilityHint,
   ...props
 }: InputIconButtonProps) {
   const contextVariant = useContext(TextInputFocusVariantContext) ?? variant;
@@ -32,6 +34,8 @@ export const InputIconButton = memo(function InputIconButton({
     <Box spacingStart={1} spacingEnd={0.5} testID={testID}>
       <IconButton
         transparent
+        accessibilityLabel={accessibilityLabel ?? props.name}
+        accessibilityHint={accessibilityHint ?? props.name}
         variant={disableInheritFocusStyle ? variant : (transformedVariant as IconButtonVariant)}
         {...props}
       />

@@ -195,7 +195,12 @@ export default function InputScreen() {
       <Example inline title="TextInput start/end Node">
         <MockTextInput
           end={
-            <TextBody spacingEnd={2} color="foregroundMuted">
+            <TextBody
+              accessibilityHint="Cancel"
+              accessibilityLabel="Cancel"
+              spacingEnd={2}
+              color="foregroundMuted"
+            >
               Cancel
             </TextBody>
           }
@@ -219,7 +224,12 @@ export default function InputScreen() {
         <MockTextInput
           disabled
           end={
-            <TextBody spacingEnd={2} color="foregroundMuted">
+            <TextBody
+              accessibilityHint="Cancel"
+              accessibilityLabel="Cancel"
+              spacingEnd={2}
+              color="foregroundMuted"
+            >
               Cancel
             </TextBody>
           }
@@ -244,7 +254,7 @@ export default function InputScreen() {
           variant="foregroundMuted"
           label="Compact Start Node"
           start={
-            <HStack>
+            <HStack accessibilityHint="Start Node" accessibilityLabel="Start Node">
               <TextBody>Start Node</TextBody>
             </HStack>
           }
@@ -263,7 +273,11 @@ export default function InputScreen() {
         <MockCompactTextInput
           variant="foregroundMuted"
           label="Compact Suffix"
-          end={<TextBody>End Node</TextBody>}
+          end={
+            <TextBody accessibilityHint="Cancel" accessibilityLabel="Cancel">
+              End Node
+            </TextBody>
+          }
           placeholder="189-280-1111"
         />
       </Example>

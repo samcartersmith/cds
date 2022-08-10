@@ -57,6 +57,7 @@ export function createCardBody<OnPressFn>({
     numberOfLines = 3,
     maxWidth = !!illustration || !!image || !!mediaProp ? '70%' : undefined,
     minHeight = !!illustration || !!image || !!mediaProp ? defaultMediaSize.height : undefined,
+    accessibilityLabel,
     ...props
   }: CardBodyBaseProps<OnPressFn>) {
     const action = useMemo(() => {
@@ -66,13 +67,14 @@ export function createCardBody<OnPressFn>({
             onPress={onActionPress}
             endIcon="forwardArrow"
             testID={`${testID}-action`}
+            accessibilityLabel={accessibilityLabel ?? actionLabel}
           >
             {actionLabel}
           </CardBodyAction>
         );
       }
       return actionProp;
-    }, [actionLabel, actionProp, onActionPress, testID]);
+    }, [accessibilityLabel, actionLabel, actionProp, onActionPress, testID]);
 
     const media = useMemo(() => {
       if (mediaProp) return mediaProp;

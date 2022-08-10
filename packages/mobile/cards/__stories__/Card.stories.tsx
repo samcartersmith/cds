@@ -35,7 +35,7 @@ const {
 } = cardBuilder({
   Box,
   Button,
-  Card,
+  Card: (props) => <Card accessibilityLabel="Card" accessibilityHint="Card" {...props} />,
   IconButton,
   VStack,
   ListCell,

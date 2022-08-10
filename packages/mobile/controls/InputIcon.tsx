@@ -1,4 +1,5 @@
 import React, { memo, useContext } from 'react';
+import { SharedAccessibilityProps } from '@cbhq/cds-common';
 import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
 
 import { Icon, IconProps } from '../icons/Icon';
@@ -14,7 +15,8 @@ export type InputIconProps = {
   disableInheritFocusStyle?: boolean;
   compact?: boolean;
 } & Omit<IconProps, 'size'> &
-  SharedProps;
+  SharedProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
 
 export const InputIcon = memo(
   ({
@@ -22,12 +24,19 @@ export const InputIcon = memo(
     testID,
     color = 'foreground',
     compact,
+    accessibilityLabel,
+    accessibilityHint,
     ...props
   }: InputIconProps) => {
     const variant = useContext(TextInputFocusVariantContext) ?? color;
 
     return (
-      <Box spacingHorizontal={compact ? 1 : 2} testID={testID}>
+      <Box
+        accessibilityLabel={accessibilityLabel ?? props.name}
+        accessibilityHint={accessibilityHint ?? props.name}
+        spacingHorizontal={compact ? 1 : 2}
+        testID={testID}
+      >
         <Icon color={disableInheritFocusStyle ? color : variant} size="s" {...props} />
       </Box>
     );

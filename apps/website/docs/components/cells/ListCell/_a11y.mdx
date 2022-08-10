@@ -1,5 +1,7 @@
 ## A11y
 
+Accessibility is by default baked into ListCell on mobile. The accessibilityLabel will default to title if it is not provided. The accessibilityHint will default to detail if it is not provided. If detail does not exist, it will default to subdetail. If these accessibilityLabel requirements aren't enough, you can customize it by passing your own accessibilityLabel and accessibilityHint to ListCell.
+
 When displaying a list of cells, wrap them in a `ul` and mark them as an `li`. These can both be accomplished with the `as` prop.
 
 ```jsx

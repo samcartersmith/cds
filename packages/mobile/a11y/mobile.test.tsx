@@ -7,7 +7,7 @@ import { DevicePreferencesProvider, FeatureFlagProvider, ThemeProvider } from '.
 
 describe('accessibility test', () => {
   entries(routes)
-    /* .filter(([name, Story]) => name === 'Select') */
+    // .filter(([name]) => name === 'Card')
     .forEach(([name, Story]) => {
       // eslint-disable-next-line jest/no-disabled-tests
       it.skip(`${name} accessibility`, () => {
