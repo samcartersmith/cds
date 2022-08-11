@@ -138,15 +138,19 @@ declare module '@theme/useComposePage' {
     handleError: (error: Error | string) => void;
   };
   export type FilterOptions = {
-    route: string;
-    spaceId: string;
+    slug: string;
+  };
+  export default function useComposePage({ slug }: FilterOptions): ComposePageData;
+}
+
+declare module '@theme/useContentfulConfig' {
+  export type ContentfulOptions = {
+    accessToken: string;
+    space: string;
+    host: string;
     clientKey?: string;
   };
-  export default function useComposePage({
-    route,
-    spaceId,
-    clientKey,
-  }: FilterOptions): ComposePageData;
+  export default function useContentfulConfig(): ContentfulOptions;
 }
 
 /* -------------------------------------------------------------------------- */
