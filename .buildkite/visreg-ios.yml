@@ -10,7 +10,7 @@ _visreg_ios_shared: &visreg_ios_shared
     - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
     - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
     - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
-    - yarn nx run mobile-playground:build-ios-e2e
+    - yarn nx run mobile-playground:build-ios-e2e | xcpretty
     - yarn nx run mobile-playground:ios-e2e
   agents:
     queue: macos-metal
