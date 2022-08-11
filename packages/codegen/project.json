@@ -29,13 +29,6 @@
         "args": ["--packages=fonts|web|lottie-files|mobile|utils|common"]
       }
     },
-    "release.beta": {
-      "executor": "@cbhq/cds-tools:ts-script",
-      "options": {
-        "scriptPath": "packages/codegen/releasePackages.ts",
-        "args": ["--packages=fonts|web|lottie-files|mobile|utils|common", "--beta"]
-      }
-    },
     "sync_icons": {
       "executor": "@cbhq/cds-tools:ts-script",
       "options": {

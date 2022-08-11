@@ -15,7 +15,6 @@
     "lint.fix": "nx codegen:lint --fix",
     "routes": "nx run codegen:prepare_mobile_routes",
     "release": "nx run codegen:release",
-    "release.beta": "nx run codegen:release.beta",
     "test": "jest",
     "typecheck": "nx run codegen:typecheck"
   },
