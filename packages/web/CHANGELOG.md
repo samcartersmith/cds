@@ -8,6 +8,25 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.4.0 (8/10/2022, 06:06 PM PST)
+
+#### 🚀 Updates
+
+- **[Avatar]** Added colored fallbacks. [#868](https://github.cbhq.net/frontend/cds/pull/868)
+
+#### 🐞 Fixes
+
+- **[Button]** Ensure aria-disabled never gets set on a Button. [#934](https://github.cbhq.net/frontend/cds/pull/934), [DS-2392](https://jira.coinbase-corp.com/browse/DS-2392)
+- Update jsdoc comment. [#930](https://github.cbhq.net/frontend/cds/pull/930)
+- **[a11y]** Update accessibility report. [#928](https://github.cbhq.net/frontend/cds/pull/928)
+- **[Tooltip]** Ensure id's are unique. [#917](https://github.cbhq.net/frontend/cds/pull/917), [CDS-2357](https://jira.coinbase-corp.com/browse/CDS-2357)
+- **[SidebarItem]** Use semantic HTML elements over ARIA roles. [#916](https://github.cbhq.net/frontend/cds/pull/916), [CDS-2350](https://jira.coinbase-corp.com/browse/CDS-2350)
+- Handle collapsible aria states. [#911](https://github.cbhq.net/frontend/cds/pull/911), [CDS-2388](https://jira.coinbase-corp.com/browse/CDS-2388)
+
+#### 📘 Misc
+
+- **[Mobile Visual Regression Tests]** Migrate cds playground to leverage @cbhq/ui-mobile-playground. [#927](https://github.cbhq.net/frontend/cds/pull/927)
+
 ## 1.3.0 (8/4/2022, 11:30 AM PST)
 
 #### 🚀 Updates

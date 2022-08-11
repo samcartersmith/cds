@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.4.0 (8/10/2022, 06:06 PM PST)
+
+#### 🚀 Updates
+
+- **[Avatar]** Added colored fallbacks. [#868](https://github.cbhq.net/frontend/cds/pull/868)
+- **[LogoMark]** Add size 24 to LogoMark component. [#931](https://github.cbhq.net/frontend/cds/pull/931), [CDS-2409](https://jira.coinbase-corp.com/browse/CDS-2409)
+
+#### 🐞 Fixes
+
+- **[Accessibility]** Fix broken tests for Mobile Accessibility test engine. (Fixed Card, Button, TextInput, Icon, ListCell). [#896](https://github.cbhq.net/frontend/cds/pull/896)
+- **[Carousel]** Fix Carousel mobile accessibility error. Wrapped stories in SafeAreaProvider. [#925](https://github.cbhq.net/frontend/cds/pull/925)
+- Handle collapsible aria states. [#911](https://github.cbhq.net/frontend/cds/pull/911), [CDS-2388](https://jira.coinbase-corp.com/browse/CDS-2388)
+
+#### 📘 Misc
+
+- **[Mobile Visual Regression Tests]** Migrate cds playground to leverage @cbhq/ui-mobile-playground. [#927](https://github.cbhq.net/frontend/cds/pull/927)
+- **[Mobile Visual Regression Tests]** Refactor SDK to make ready for publishing. [#910](https://github.cbhq.net/frontend/cds/pull/910)
+
 ## 1.3.0 (8/4/2022, 11:30 AM PST)
 
 #### 🚀 Updates
