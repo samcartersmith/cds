@@ -44,6 +44,17 @@ describe('Radio', () => {
     expect(result.queryAllByA11yState({ disabled: true })).toHaveLength(1);
   });
 
+  it('Can set custom accessibility label and hints', async () => {
+    const result = render(
+      <Radio accessibilityHint="Custom hint" accessibilityLabel="Custom label">
+        Checkbox
+      </Radio>,
+    );
+
+    expect(result.getByA11yLabel('Custom label')).toBeTruthy();
+    expect(result.getByA11yHint('Custom hint')).toBeTruthy();
+  });
+
   it('fires `onChange` when pressed and not disabled', () => {
     const spy = jest.fn();
     const result = render(<Radio onChange={spy}>Radio</Radio>);

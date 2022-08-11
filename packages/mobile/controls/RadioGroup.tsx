@@ -1,6 +1,7 @@
 import React, { forwardRef, memo } from 'react';
 import { AccessibilityProps, Animated, StyleSheet, View } from 'react-native';
 import { SharedProps, useScale } from '@cbhq/cds-common';
+import { useChildrenAsAccessibilityProps } from '@cbhq/cds-common/accessibility/useChildrenAsAccessibilityProps';
 import type { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import type { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
 import { entries } from '@cbhq/cds-utils';
@@ -48,11 +49,24 @@ const RadioIcon: React.FC<ControlIconProps> = ({
 };
 
 const RadioWithRef = forwardRef(function Radio<T extends string>(
-  { children, ...props }: RadioProps<T>,
+  { children, accessibilityHint, accessibilityLabel, ...props }: RadioProps<T>,
   ref: React.ForwardedRef<View>,
 ) {
+  const accessibilityProps = useChildrenAsAccessibilityProps({
+    children,
+    accessibilityLabel,
+    accessibilityHint,
+  });
+
   return (
-    <Control<T> {...props} accessibilityRole="radio" label={children} ref={ref} hitSlop={5}>
+    <Control<T>
+      {...props}
+      {...accessibilityProps}
+      accessibilityRole="radio"
+      label={children}
+      ref={ref}
+      hitSlop={5}
+    >
       {RadioIcon}
     </Control>
   );
@@ -71,16 +85,39 @@ export type RadioGroupProps<T extends string> = {
   SharedProps;
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
-  { label, selectedValue, onChange, options, testID, ...restProps }: RadioGroupProps<T>,
+  {
+    label,
+    selectedValue,
+    onChange,
+    options,
+    testID,
+    accessibilityLabel,
+    accessibilityHint,
+    ...restProps
+  }: RadioGroupProps<T>,
   ref: React.ForwardedRef<View>,
 ) {
+  const accessibilityProps = useChildrenAsAccessibilityProps({
+    children: label,
+    accessibilityLabel,
+    accessibilityHint,
+  });
+
   return (
-    <View accessibilityRole="radiogroup" ref={ref} testID={testID} {...restProps}>
+    <View
+      accessibilityRole="radiogroup"
+      ref={ref}
+      testID={testID}
+      {...restProps}
+      {...accessibilityProps}
+    >
       {label}
       {entries<RadioGroupProps<T>['options']>(options).map(([value, optionLabel]) => (
         <Radio<T>
           key={value}
           value={value}
+          accessibilityLabel={optionLabel}
+          accessibilityHint={optionLabel}
           checked={selectedValue === value}
           onChange={onChange}
           testID={testID ? `${testID}-${value}` : undefined}

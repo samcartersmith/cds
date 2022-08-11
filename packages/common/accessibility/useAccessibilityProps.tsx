@@ -1,6 +1,6 @@
 import { isValidElement, ReactNode, useMemo } from 'react';
 
-type AccessibilityProps = {
+export type AccessibilityProps = {
   accessibilityLabel?: string;
   accessibilityHint?: string;
 };
