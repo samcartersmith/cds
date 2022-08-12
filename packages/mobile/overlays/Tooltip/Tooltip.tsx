@@ -1,5 +1,6 @@
 import React, { memo, useCallback, useRef, useState } from 'react';
 import { Modal as RNModal, TouchableOpacity, View } from 'react-native';
+import { useChildrenAsAccessibilityProps } from '@cbhq/cds-common/accessibility/useChildrenAsAccessibilityProps';
 
 import { InternalTooltip } from './InternalTooltip';
 import { SubjectLayout, TooltipProps } from './TooltipProps';
@@ -15,6 +16,10 @@ export const Tooltip = memo(
     gap = 1,
     yShiftByStatusBarHeight,
     testID,
+    accessibilityLabel,
+    accessibilityHint,
+    accessibilityLabelForContent,
+    accessibilityHintForContent,
   }: TooltipProps) => {
     const subjectRef = useRef<View | null>(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -42,9 +47,27 @@ export const Tooltip = memo(
       });
     }, [onOpenTooltip]);
 
+    // The accessibility props for the trigger component. Trigger component
+    // equals the component where when you click on it, it will show the tooltip
+    const accessibilityPropsForTrigger = useChildrenAsAccessibilityProps({
+      children,
+      accessibilityLabel,
+      accessibilityHint,
+    });
+
+    const accessibilityPropsForContent = useChildrenAsAccessibilityProps({
+      children: content,
+      accessibilityLabel: accessibilityLabelForContent,
+      accessibilityHint: accessibilityHintForContent,
+    });
+
     return (
       <View collapsable={false} ref={subjectRef}>
-        <TouchableOpacity accessibilityRole="button" onPress={handlePressSubject}>
+        <TouchableOpacity
+          {...accessibilityPropsForTrigger}
+          accessibilityRole="button"
+          onPress={handlePressSubject}
+        >
           {children}
         </TouchableOpacity>
 
@@ -57,6 +80,7 @@ export const Tooltip = memo(
         >
           <TouchableOpacity
             accessibilityRole="button"
+            accessibilityElementsHidden
             onPress={handleRequestClose}
             style={{ flex: 1 }}
             activeOpacity={1}
@@ -71,6 +95,7 @@ export const Tooltip = memo(
             gap={gap}
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}
             testID={testID}
+            {...accessibilityPropsForContent}
           />
         </RNModal>
       </View>

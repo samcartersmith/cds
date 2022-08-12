@@ -1,5 +1,5 @@
 import { Animated, LayoutRectangle } from 'react-native';
-import { NoopFn } from '@cbhq/cds-common';
+import { NoopFn, SharedAccessibilityProps } from '@cbhq/cds-common';
 import { BaseTooltipPlacement, TooltipBaseProps } from '@cbhq/cds-common/types/TooltipBaseProps';
 
 export type TooltipPlacement = Extract<BaseTooltipPlacement, 'bottom' | 'top'>;
@@ -18,6 +18,30 @@ export type TooltipProps = {
    * @default false
    */
   yShiftByStatusBarHeight?: boolean;
+  /**
+   * If the children of the trigger is not a string, then you have
+   * to set your own accessibilityLabel to ensure that the tooltip
+   * is read correctly for voice-overs.
+   */
+  accessibilityLabel?: SharedAccessibilityProps['accessibilityLabel'];
+  /**
+   * The accessibilityLabel for the content of the tooltip. If content is
+   * a string, this is not required as accessibilityHint would be set to the
+   * content. Otherwise, this is required
+   */
+  accessibilityLabelForContent?: SharedAccessibilityProps['accessibilityLabel'];
+  /**
+   * The accessibilityHint for the content of the tooltip. If content is
+   * a string, this is not required as accessibilityHint would be set to the
+   * content. Otherwise, this is required
+   */
+  accessibilityHintForContent?: SharedAccessibilityProps['accessibilityHint'];
+  /**
+   * If the children of the trigger is not a string, then you have
+   * to set your own accessibilityHint to ensure that the tooltip
+   * is read correctly for voice-overs.
+   */
+  accessibilityHint?: SharedAccessibilityProps['accessibilityHint'];
 } & TooltipBaseProps;
 
 /** The Subject is the element that the tooltip is referencing. */
@@ -33,7 +57,8 @@ export type InternalTooltipProps = {
   opacity: Animated.Value;
   animateIn: Animated.CompositeAnimation;
   translateY: Animated.Value;
-} & Pick<TooltipProps, 'content' | 'placement' | 'gap' | 'testID' | 'yShiftByStatusBarHeight'>;
+} & Pick<TooltipProps, 'content' | 'placement' | 'gap' | 'testID' | 'yShiftByStatusBarHeight'> &
+  SharedAccessibilityProps;
 
 export type UseTooltipPositionParams = {
   subjectLayout: SubjectLayout | undefined;

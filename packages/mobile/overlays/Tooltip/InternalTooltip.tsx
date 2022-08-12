@@ -21,6 +21,7 @@ export const InternalTooltip = memo(function InternalTooltip({
   gap,
   yShiftByStatusBarHeight,
   testID,
+  ...props
 }: InternalTooltipProps) {
   const didMount = useRef(false);
   const tooltipExternalGap = useSpacingStyles({ spacingVertical: gap });
@@ -71,6 +72,7 @@ export const InternalTooltip = memo(function InternalTooltip({
         }}
         maxWidth={maxWidth}
         testID={testID}
+        {...props}
       >
         {typeof content === 'string' ? (
           <TextLabel2 dangerouslySetColor={foregroundColor}>{content}</TextLabel2>
