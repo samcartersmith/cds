@@ -9,7 +9,7 @@ import { CardHeader } from '../../cards';
 import { Card } from '../../cards/Card';
 import { CellMedia, ContentCell, ListCell } from '../../cells';
 import { Table, TableBody, TableCell, TableRow } from '../../tables';
-import { TextBody, TextDisplay1, TextTitle1 } from '../../typography';
+import { TextBody, TextDisplay1, TextDisplay2, TextTitle1 } from '../../typography';
 import { TextHeadline } from '../../typography/TextHeadline';
 import { Box } from '../Box';
 import { Divider } from '../Divider';
@@ -49,31 +49,54 @@ const itemProps: BoxBaseProps = {
   justifyContent: 'center',
   alignItems: 'center',
   height: 100,
-  borderRadius: 'standard',
   background: 'backgroundAlternate',
-  width: 100,
+  spacingHorizontal: 3,
+};
+
+const ratioItem1Config: ResponsiveProps = {
+  phone: {
+    flexGrow: 1,
+  },
+  tablet: {
+    flexGrow: 2,
+  },
+  desktop: {
+    flexGrow: 3,
+  },
 };
 
 export const ResponsiveBox = ({
   responsiveConfig = responsiveConfigHoisted,
 }: ResponsiveBoxType) => {
   return (
-    <Box
-      minHeight={200}
-      responsiveConfig={responsiveConfig}
-      borderColor="line"
-      dangerouslySetClassName={animationStyles}
-    >
-      <HStack {...itemProps}>
-        <TextHeadline as="h3">Item 1</TextHeadline>
+    <VStack gap={2}>
+      <TextDisplay2 as="h2">Responsive Flex Props</TextDisplay2>
+      <Box
+        minHeight={200}
+        responsiveConfig={responsiveConfig}
+        borderColor="line"
+        dangerouslySetClassName={animationStyles}
+      >
+        <HStack {...itemProps}>
+          <TextHeadline as="h3">Item 1</TextHeadline>
+        </HStack>
+        <HStack {...itemProps}>
+          <TextHeadline as="h3">Item 2</TextHeadline>
+        </HStack>
+        <HStack {...itemProps}>
+          <TextHeadline as="h3">Item 3</TextHeadline>
+        </HStack>
+      </Box>
+      <TextDisplay2 as="h2">Responsive Ratio Layout</TextDisplay2>
+      <HStack spacing={1} gap={1} borderColor="line">
+        <HStack background="backgroundAlternate" responsiveConfig={ratioItem1Config} {...itemProps}>
+          <TextHeadline as="h3">Item 1</TextHeadline>
+        </HStack>
+        <HStack background="backgroundAlternate" flexGrow={1} {...itemProps}>
+          <TextHeadline as="h3">Item 2</TextHeadline>
+        </HStack>
       </HStack>
-      <HStack {...itemProps}>
-        <TextHeadline as="h3">Item 2</TextHeadline>
-      </HStack>
-      <HStack {...itemProps}>
-        <TextHeadline as="h3">Item 3</TextHeadline>
-      </HStack>
-    </Box>
+    </VStack>
   );
 };
 

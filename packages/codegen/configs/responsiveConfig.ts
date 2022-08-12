@@ -99,6 +99,8 @@ const deviceClassNames = internalResponsivePropsDevices.reduce(
       flexStylesForDevice(deviceMqs[device], 'justifyContent'),
       flexStylesForDevice(deviceMqs[device], 'flexDirection'),
       flexStylesForDevice(deviceMqs[device], 'flexWrap'),
+      flexStylesForDevice(deviceMqs[device], 'flexShrink'),
+      flexStylesForDevice(deviceMqs[device], 'flexGrow'),
       displayStylesForDevice(deviceMqs[device]),
       visibilityStylesForDevice(deviceMqs[device]),
     ) as ClassNamesType;

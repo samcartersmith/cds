@@ -9,6 +9,10 @@ import { SpacingScale } from './SpacingScale';
 export type FlexAxisValue = 'flex-start' | 'flex-end' | 'center';
 export type FlexAlignCommon = FlexAxisValue | 'stretch';
 export type FlexSpaceCommon = 'space-between' | 'space-around';
+/** @link https://www.w3.org/TR/css-flexbox/#main-size */
+type FlexMainSize = 1 | 2 | 3;
+export type FlexShrink = { flexShrink?: FlexMainSize };
+export type FlexGrow = { flexGrow?: FlexMainSize };
 
 export type FlexStyles = {
   /**

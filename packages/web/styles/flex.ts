@@ -111,3 +111,27 @@ export const justifyContent = {
     justify-content: space-evenly;
   `,
 };
+
+export const flexShrink = {
+  1: css`
+    flex-shrink: 1;
+  `,
+  2: css`
+    flex-shrink: 2;
+  `,
+  3: css`
+    flex-shrink: 3;
+  `,
+};
+
+export const flexGrow = {
+  1: css`
+    flex-grow: 1;
+  `,
+  2: css`
+    flex-grow: 2;
+  `,
+  3: css`
+    flex-grow: 3;
+  `,
+};

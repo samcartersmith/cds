@@ -1,4 +1,4 @@
-import { FlexStyles, StackBaseProps } from './BoxBaseProps';
+import { FlexGrow, FlexShrink, FlexStyles, StackBaseProps } from './BoxBaseProps';
 import { CellSpacingConfig } from './CellBaseProps';
 import { Display } from './Display';
 import { ResponsivePropsDevices } from './Responsive';
@@ -22,7 +22,9 @@ export type ResponsiveStyles = DisplayProps &
   SpacingProps &
   OffsetProps &
   StackBaseProps &
-  VisibilityProps;
+  VisibilityProps &
+  FlexGrow &
+  FlexShrink;
 
 export type ResponsiveProps = Partial<Record<ResponsivePropsDevices, ResponsiveStyles>>;
 
