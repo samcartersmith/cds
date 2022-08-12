@@ -3,3 +3,13 @@ Each checkbox should have a visible label or `aria-labelledBy` attribute associa
 ```jsx
 <Checkbox checked>Accessible</Checkbox>
 ```
+
+On mobile, the default accessibilityHint and accessibilityLabel
+is set based on the children, if the children is a text
+
+For the example, if no accessibilityLabel and accessibilityLabel were provided, the accessibilityHint and accessibilityLabel for the example below would be "Accessible".
+You can override that value though.
+
+```jsx
+<Checkbox checked>Accessible</Checkbox>
+```

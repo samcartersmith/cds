@@ -53,6 +53,24 @@ describe('Checkbox', () => {
     expect(spy).toHaveBeenCalled();
   });
 
+  it('if children is a string, the accessibilityLabel and accessibilityHint is set to its children by default', () => {
+    const result = render(<Checkbox>Checkbox</Checkbox>);
+
+    expect(result.queryByA11yLabel('Checkbox')).toBeTruthy();
+    expect(result.queryByA11yHint('Checkbox')).toBeTruthy();
+  });
+
+  it('if children is a string, you can still override the accessibilityLabel and accessibilityHint', () => {
+    const result = render(
+      <Checkbox accessibilityHint="Custom Checkbox" accessibilityLabel="Custom Checkbox">
+        Checkbox
+      </Checkbox>,
+    );
+
+    expect(result.queryByA11yLabel('Custom Checkbox')).toBeTruthy();
+    expect(result.queryByA11yHint('Custom Checkbox')).toBeTruthy();
+  });
+
   it('does not fires `onChange` when disabled and pressed', () => {
     const spy = jest.fn();
     const result = render(

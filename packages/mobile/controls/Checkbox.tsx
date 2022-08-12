@@ -1,6 +1,7 @@
 import React, { forwardRef, memo } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 import { ControlBaseProps, useScale } from '@cbhq/cds-common';
+import { useChildrenAsAccessibilityProps } from '@cbhq/cds-common/accessibility/useChildrenAsAccessibilityProps';
 
 import { Icon } from '../icons/Icon';
 import * as scaleStyles from '../styles/scale';
@@ -44,12 +45,19 @@ const CheckboxIcon: React.FC<ControlIconProps> = ({
 };
 
 const CheckboxWithRef = forwardRef(function Checkbox<T extends string>(
-  { children, ...props }: CheckboxProps<T>,
+  { children, accessibilityLabel, accessibilityHint, ...props }: CheckboxProps<T>,
   ref: React.ForwardedRef<View>,
 ) {
+  const accessibilityProps = useChildrenAsAccessibilityProps({
+    children,
+    accessibilityLabel,
+    accessibilityHint,
+  });
+
   return (
     <Control<T>
       {...props}
+      {...accessibilityProps}
       accessible
       accessibilityRole="switch"
       label={children}
