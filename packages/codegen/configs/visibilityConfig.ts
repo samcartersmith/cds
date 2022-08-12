@@ -1,13 +1,17 @@
 import { arrayToObject } from '@cbhq/cds-utils/array';
 import { mapValues } from '@cbhq/cds-utils/object';
 
+import { responsiveClassName } from './constants';
+
 const visibilityValues = ['hidden', 'visible'];
 
 export const visibilityStylesForDevice = (deviceMq: string) => ({
   visibility: mapValues(arrayToObject(visibilityValues), (value) => {
     return `
             @media (${deviceMq}) {
-              visibility: ${value}
+              &.${responsiveClassName} {
+                visibility: ${value}
+              }
             }
           `;
   }),

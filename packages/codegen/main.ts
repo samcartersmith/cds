@@ -3,6 +3,7 @@ import { mapValues } from '@cbhq/cds-utils/object';
 import { avatarSizes } from './configs/avatarConfig';
 import { borderRadius, borderRadiusDeprecated } from './configs/borderRadius';
 import { borderWidth } from './configs/borderWidth';
+import { responsiveClassName } from './configs/constants';
 import { displayConfig } from './configs/displayConfig';
 import { flexConfig } from './configs/flexConfig';
 import { gapConfig } from './configs/gapConfig';
@@ -47,6 +48,7 @@ const web = {
     padding: Spacing.css('padding'),
     responsiveSpacing: responsiveConfig.spacingStyles,
     responsiveConfig: responsiveConfig.styles,
+    responsiveClassName,
     visibility: visibilityConfig.web,
     display: displayConfig.web,
     scale: mapValues(scaleConfig, (_, scale) => {

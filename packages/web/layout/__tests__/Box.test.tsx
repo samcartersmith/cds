@@ -3,6 +3,7 @@ import { ResponsiveProps, ResponsivePropsDevices } from '@cbhq/cds-common';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { display } from '../../styles/display';
+import { responsiveClassName } from '../../styles/responsive';
 import { Box, BoxProps } from '../Box';
 
 const DEFAULT_CLASS = 'flex';
@@ -290,6 +291,8 @@ describe('Box', () => {
       // @ts-expect-error PITA to type this
       classNames.push(config[device]?.[style] as string);
     });
+
+    classNames.push(responsiveClassName);
 
     return classNames.join(' ');
   };

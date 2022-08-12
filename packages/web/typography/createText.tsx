@@ -9,6 +9,7 @@ import { useResponsiveConfig } from '../hooks/useResponsiveConfig';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { disabledState } from '../styles/disabledState';
 import * as foregroundStyles from '../styles/foregroundColor';
+import { responsiveClassName } from '../styles/responsive';
 import { getTypographyStyles } from '../styles/typography';
 import { fontFamily } from '../tokens';
 import type { DynamicElement } from '../types';
@@ -142,6 +143,7 @@ export const createText = <
           }),
           spacingStyles,
           responsiveStyleClassNames,
+          responsiveConfig && responsiveClassName,
           dangerouslySetClassName,
         ),
       },

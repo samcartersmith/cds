@@ -1,5 +1,6 @@
 import { marginStylesForDevice, paddingStylesForDevice } from '../Spacing';
 
+import { responsiveClassName } from './constants';
 import { displayStylesForDevice } from './displayConfig';
 import { flexStylesForDevice } from './flexConfig';
 import { gapStylesForDevice } from './gapConfig';
@@ -117,6 +118,7 @@ export const responsiveConfig = {
   deviceBreakpoints,
   deviceMqs,
   deviceMqRanges,
+  responsiveClassName,
   typescript: [
     {
       dest: 'common/types/Responsive.ts',

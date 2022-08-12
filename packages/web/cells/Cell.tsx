@@ -12,6 +12,7 @@ import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { useResponsiveCellSpacingStyles } from '../hooks/useResponsiveCellSpacing';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
+import { responsiveClassName } from '../styles/responsive';
 import { LinkableProps, Pressable } from '../system/Pressable';
 import { cx } from '../utils/linaria';
 
@@ -130,7 +131,10 @@ export const Cell = memo(
         width="100%"
         testID={testID}
         {...spacing.inner}
-        dangerouslySetClassName={responsiveInnerSpacing}
+        dangerouslySetClassName={cx(
+          responsiveInnerSpacing,
+          responsiveConfig && responsiveClassName,
+        )}
         offsetHorizontal={linkable ? undefined : spacing.inner.offsetHorizontal}
       >
         {media && (
@@ -212,7 +216,10 @@ export const Cell = memo(
         minHeight={minHeight}
         maxHeight={maxHeight}
         {...spacing.outer}
-        dangerouslySetClassName={responsiveOuterSpacing}
+        dangerouslySetClassName={cx(
+          responsiveOuterSpacing,
+          responsiveConfig && responsiveClassName,
+        )}
         ref={ref}
       >
         {content}

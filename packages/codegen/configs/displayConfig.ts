@@ -1,6 +1,8 @@
 import { arrayToObject } from '@cbhq/cds-utils/array';
 import { mapValues } from '@cbhq/cds-utils/object';
 
+import { responsiveClassName } from './constants';
+
 /**
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/display
  * support all display values except for two-value syntax, flow, revert, and unset
@@ -11,7 +13,9 @@ export const displayStylesForDevice = (deviceMq: string) => ({
   display: mapValues(arrayToObject(displayValues), (value) => {
     return `
             @media (${deviceMq}) {
-              display: ${value}
+              &.${responsiveClassName} {
+                display: ${value}
+              }
             }
           `;
   }),

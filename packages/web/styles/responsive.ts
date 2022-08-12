@@ -8,73 +8,97 @@ export const desktopStyles = {
   gap: {
     0: css`
       @media (min-width: 1280px) {
-        gap: var(--spacing-0);
+        &.cds-responsive {
+          gap: var(--spacing-0);
+        }
       }
     `,
 
     1: css`
       @media (min-width: 1280px) {
-        gap: var(--spacing-1);
+        &.cds-responsive {
+          gap: var(--spacing-1);
+        }
       }
     `,
 
     2: css`
       @media (min-width: 1280px) {
-        gap: var(--spacing-2);
+        &.cds-responsive {
+          gap: var(--spacing-2);
+        }
       }
     `,
 
     3: css`
       @media (min-width: 1280px) {
-        gap: var(--spacing-3);
+        &.cds-responsive {
+          gap: var(--spacing-3);
+        }
       }
     `,
 
     4: css`
       @media (min-width: 1280px) {
-        gap: var(--spacing-4);
+        &.cds-responsive {
+          gap: var(--spacing-4);
+        }
       }
     `,
 
     5: css`
       @media (min-width: 1280px) {
-        gap: var(--spacing-5);
+        &.cds-responsive {
+          gap: var(--spacing-5);
+        }
       }
     `,
 
     6: css`
       @media (min-width: 1280px) {
-        gap: var(--spacing-6);
+        &.cds-responsive {
+          gap: var(--spacing-6);
+        }
       }
     `,
 
     7: css`
       @media (min-width: 1280px) {
-        gap: var(--spacing-7);
+        &.cds-responsive {
+          gap: var(--spacing-7);
+        }
       }
     `,
 
     8: css`
       @media (min-width: 1280px) {
-        gap: var(--spacing-8);
+        &.cds-responsive {
+          gap: var(--spacing-8);
+        }
       }
     `,
 
     9: css`
       @media (min-width: 1280px) {
-        gap: var(--spacing-9);
+        &.cds-responsive {
+          gap: var(--spacing-9);
+        }
       }
     `,
 
     10: css`
       @media (min-width: 1280px) {
-        gap: var(--spacing-10);
+        &.cds-responsive {
+          gap: var(--spacing-10);
+        }
       }
     `,
 
     0.5: css`
       @media (min-width: 1280px) {
-        gap: var(--spacing-0\\.5);
+        &.cds-responsive {
+          gap: var(--spacing-0\\.5);
+        }
       }
     `,
   },
@@ -82,31 +106,41 @@ export const desktopStyles = {
   alignItems: {
     'flex-start': css`
       @media (min-width: 1280px) {
-        align-items: flex-start;
+        &.cds-responsive {
+          align-items: flex-start;
+        }
       }
     `,
 
     'flex-end': css`
       @media (min-width: 1280px) {
-        align-items: flex-end;
+        &.cds-responsive {
+          align-items: flex-end;
+        }
       }
     `,
 
     center: css`
       @media (min-width: 1280px) {
-        align-items: center;
+        &.cds-responsive {
+          align-items: center;
+        }
       }
     `,
 
     stretch: css`
       @media (min-width: 1280px) {
-        align-items: stretch;
+        &.cds-responsive {
+          align-items: stretch;
+        }
       }
     `,
 
     baseline: css`
       @media (min-width: 1280px) {
-        align-items: baseline;
+        &.cds-responsive {
+          align-items: baseline;
+        }
       }
     `,
   },
@@ -114,37 +148,49 @@ export const desktopStyles = {
   alignContent: {
     'flex-start': css`
       @media (min-width: 1280px) {
-        align-content: flex-start;
+        &.cds-responsive {
+          align-content: flex-start;
+        }
       }
     `,
 
     'flex-end': css`
       @media (min-width: 1280px) {
-        align-content: flex-end;
+        &.cds-responsive {
+          align-content: flex-end;
+        }
       }
     `,
 
     center: css`
       @media (min-width: 1280px) {
-        align-content: center;
+        &.cds-responsive {
+          align-content: center;
+        }
       }
     `,
 
     stretch: css`
       @media (min-width: 1280px) {
-        align-content: stretch;
+        &.cds-responsive {
+          align-content: stretch;
+        }
       }
     `,
 
     'space-between': css`
       @media (min-width: 1280px) {
-        align-content: space-between;
+        &.cds-responsive {
+          align-content: space-between;
+        }
       }
     `,
 
     'space-around': css`
       @media (min-width: 1280px) {
-        align-content: space-around;
+        &.cds-responsive {
+          align-content: space-around;
+        }
       }
     `,
   },
@@ -152,37 +198,49 @@ export const desktopStyles = {
   alignSelf: {
     'flex-start': css`
       @media (min-width: 1280px) {
-        align-self: flex-start;
+        &.cds-responsive {
+          align-self: flex-start;
+        }
       }
     `,
 
     'flex-end': css`
       @media (min-width: 1280px) {
-        align-self: flex-end;
+        &.cds-responsive {
+          align-self: flex-end;
+        }
       }
     `,
 
     center: css`
       @media (min-width: 1280px) {
-        align-self: center;
+        &.cds-responsive {
+          align-self: center;
+        }
       }
     `,
 
     stretch: css`
       @media (min-width: 1280px) {
-        align-self: stretch;
+        &.cds-responsive {
+          align-self: stretch;
+        }
       }
     `,
 
     baseline: css`
       @media (min-width: 1280px) {
-        align-self: baseline;
+        &.cds-responsive {
+          align-self: baseline;
+        }
       }
     `,
 
     auto: css`
       @media (min-width: 1280px) {
-        align-self: auto;
+        &.cds-responsive {
+          align-self: auto;
+        }
       }
     `,
   },
@@ -190,37 +248,49 @@ export const desktopStyles = {
   justifyContent: {
     'flex-start': css`
       @media (min-width: 1280px) {
-        justify-content: flex-start;
+        &.cds-responsive {
+          justify-content: flex-start;
+        }
       }
     `,
 
     'flex-end': css`
       @media (min-width: 1280px) {
-        justify-content: flex-end;
+        &.cds-responsive {
+          justify-content: flex-end;
+        }
       }
     `,
 
     center: css`
       @media (min-width: 1280px) {
-        justify-content: center;
+        &.cds-responsive {
+          justify-content: center;
+        }
       }
     `,
 
     'space-between': css`
       @media (min-width: 1280px) {
-        justify-content: space-between;
+        &.cds-responsive {
+          justify-content: space-between;
+        }
       }
     `,
 
     'space-around': css`
       @media (min-width: 1280px) {
-        justify-content: space-around;
+        &.cds-responsive {
+          justify-content: space-around;
+        }
       }
     `,
 
     'space-evenly': css`
       @media (min-width: 1280px) {
-        justify-content: space-evenly;
+        &.cds-responsive {
+          justify-content: space-evenly;
+        }
       }
     `,
   },
@@ -228,25 +298,33 @@ export const desktopStyles = {
   flexDirection: {
     row: css`
       @media (min-width: 1280px) {
-        flex-direction: row;
+        &.cds-responsive {
+          flex-direction: row;
+        }
       }
     `,
 
     column: css`
       @media (min-width: 1280px) {
-        flex-direction: column;
+        &.cds-responsive {
+          flex-direction: column;
+        }
       }
     `,
 
     'row-reverse': css`
       @media (min-width: 1280px) {
-        flex-direction: row-reverse;
+        &.cds-responsive {
+          flex-direction: row-reverse;
+        }
       }
     `,
 
     'column-reverse': css`
       @media (min-width: 1280px) {
-        flex-direction: column-reverse;
+        &.cds-responsive {
+          flex-direction: column-reverse;
+        }
       }
     `,
   },
@@ -254,19 +332,25 @@ export const desktopStyles = {
   flexWrap: {
     wrap: css`
       @media (min-width: 1280px) {
-        flex-wrap: wrap;
+        &.cds-responsive {
+          flex-wrap: wrap;
+        }
       }
     `,
 
     nowrap: css`
       @media (min-width: 1280px) {
-        flex-wrap: nowrap;
+        &.cds-responsive {
+          flex-wrap: nowrap;
+        }
       }
     `,
 
     'wrap-reverse': css`
       @media (min-width: 1280px) {
-        flex-wrap: wrap-reverse;
+        &.cds-responsive {
+          flex-wrap: wrap-reverse;
+        }
       }
     `,
   },
@@ -314,37 +398,49 @@ export const desktopStyles = {
   display: {
     block: css`
       @media (min-width: 1280px) {
-        display: block;
+        &.cds-responsive {
+          display: block;
+        }
       }
     `,
 
     'inline-block': css`
       @media (min-width: 1280px) {
-        display: inline-block;
+        &.cds-responsive {
+          display: inline-block;
+        }
       }
     `,
 
     flex: css`
       @media (min-width: 1280px) {
-        display: flex;
+        &.cds-responsive {
+          display: flex;
+        }
       }
     `,
 
     'inline-flex': css`
       @media (min-width: 1280px) {
-        display: inline-flex;
+        &.cds-responsive {
+          display: inline-flex;
+        }
       }
     `,
 
     none: css`
       @media (min-width: 1280px) {
-        display: none;
+        &.cds-responsive {
+          display: none;
+        }
       }
     `,
 
     contents: css`
       @media (min-width: 1280px) {
-        display: contents;
+        &.cds-responsive {
+          display: contents;
+        }
       }
     `,
   },
@@ -352,13 +448,17 @@ export const desktopStyles = {
   visibility: {
     hidden: css`
       @media (min-width: 1280px) {
-        visibility: hidden;
+        &.cds-responsive {
+          visibility: hidden;
+        }
       }
     `,
 
     visible: css`
       @media (min-width: 1280px) {
-        visibility: visible;
+        &.cds-responsive {
+          visibility: visible;
+        }
       }
     `,
   },
@@ -368,73 +468,97 @@ export const tabletStyles = {
   gap: {
     0: css`
       @media (max-width: 1279px) {
-        gap: var(--spacing-0);
+        &.cds-responsive {
+          gap: var(--spacing-0);
+        }
       }
     `,
 
     1: css`
       @media (max-width: 1279px) {
-        gap: var(--spacing-1);
+        &.cds-responsive {
+          gap: var(--spacing-1);
+        }
       }
     `,
 
     2: css`
       @media (max-width: 1279px) {
-        gap: var(--spacing-2);
+        &.cds-responsive {
+          gap: var(--spacing-2);
+        }
       }
     `,
 
     3: css`
       @media (max-width: 1279px) {
-        gap: var(--spacing-3);
+        &.cds-responsive {
+          gap: var(--spacing-3);
+        }
       }
     `,
 
     4: css`
       @media (max-width: 1279px) {
-        gap: var(--spacing-4);
+        &.cds-responsive {
+          gap: var(--spacing-4);
+        }
       }
     `,
 
     5: css`
       @media (max-width: 1279px) {
-        gap: var(--spacing-5);
+        &.cds-responsive {
+          gap: var(--spacing-5);
+        }
       }
     `,
 
     6: css`
       @media (max-width: 1279px) {
-        gap: var(--spacing-6);
+        &.cds-responsive {
+          gap: var(--spacing-6);
+        }
       }
     `,
 
     7: css`
       @media (max-width: 1279px) {
-        gap: var(--spacing-7);
+        &.cds-responsive {
+          gap: var(--spacing-7);
+        }
       }
     `,
 
     8: css`
       @media (max-width: 1279px) {
-        gap: var(--spacing-8);
+        &.cds-responsive {
+          gap: var(--spacing-8);
+        }
       }
     `,
 
     9: css`
       @media (max-width: 1279px) {
-        gap: var(--spacing-9);
+        &.cds-responsive {
+          gap: var(--spacing-9);
+        }
       }
     `,
 
     10: css`
       @media (max-width: 1279px) {
-        gap: var(--spacing-10);
+        &.cds-responsive {
+          gap: var(--spacing-10);
+        }
       }
     `,
 
     0.5: css`
       @media (max-width: 1279px) {
-        gap: var(--spacing-0\\.5);
+        &.cds-responsive {
+          gap: var(--spacing-0\\.5);
+        }
       }
     `,
   },
@@ -442,31 +566,41 @@ export const tabletStyles = {
   alignItems: {
     'flex-start': css`
       @media (max-width: 1279px) {
-        align-items: flex-start;
+        &.cds-responsive {
+          align-items: flex-start;
+        }
       }
     `,
 
     'flex-end': css`
       @media (max-width: 1279px) {
-        align-items: flex-end;
+        &.cds-responsive {
+          align-items: flex-end;
+        }
       }
     `,
 
     center: css`
       @media (max-width: 1279px) {
-        align-items: center;
+        &.cds-responsive {
+          align-items: center;
+        }
       }
     `,
 
     stretch: css`
       @media (max-width: 1279px) {
-        align-items: stretch;
+        &.cds-responsive {
+          align-items: stretch;
+        }
       }
     `,
 
     baseline: css`
       @media (max-width: 1279px) {
-        align-items: baseline;
+        &.cds-responsive {
+          align-items: baseline;
+        }
       }
     `,
   },
@@ -474,37 +608,49 @@ export const tabletStyles = {
   alignContent: {
     'flex-start': css`
       @media (max-width: 1279px) {
-        align-content: flex-start;
+        &.cds-responsive {
+          align-content: flex-start;
+        }
       }
     `,
 
     'flex-end': css`
       @media (max-width: 1279px) {
-        align-content: flex-end;
+        &.cds-responsive {
+          align-content: flex-end;
+        }
       }
     `,
 
     center: css`
       @media (max-width: 1279px) {
-        align-content: center;
+        &.cds-responsive {
+          align-content: center;
+        }
       }
     `,
 
     stretch: css`
       @media (max-width: 1279px) {
-        align-content: stretch;
+        &.cds-responsive {
+          align-content: stretch;
+        }
       }
     `,
 
     'space-between': css`
       @media (max-width: 1279px) {
-        align-content: space-between;
+        &.cds-responsive {
+          align-content: space-between;
+        }
       }
     `,
 
     'space-around': css`
       @media (max-width: 1279px) {
-        align-content: space-around;
+        &.cds-responsive {
+          align-content: space-around;
+        }
       }
     `,
   },
@@ -512,37 +658,49 @@ export const tabletStyles = {
   alignSelf: {
     'flex-start': css`
       @media (max-width: 1279px) {
-        align-self: flex-start;
+        &.cds-responsive {
+          align-self: flex-start;
+        }
       }
     `,
 
     'flex-end': css`
       @media (max-width: 1279px) {
-        align-self: flex-end;
+        &.cds-responsive {
+          align-self: flex-end;
+        }
       }
     `,
 
     center: css`
       @media (max-width: 1279px) {
-        align-self: center;
+        &.cds-responsive {
+          align-self: center;
+        }
       }
     `,
 
     stretch: css`
       @media (max-width: 1279px) {
-        align-self: stretch;
+        &.cds-responsive {
+          align-self: stretch;
+        }
       }
     `,
 
     baseline: css`
       @media (max-width: 1279px) {
-        align-self: baseline;
+        &.cds-responsive {
+          align-self: baseline;
+        }
       }
     `,
 
     auto: css`
       @media (max-width: 1279px) {
-        align-self: auto;
+        &.cds-responsive {
+          align-self: auto;
+        }
       }
     `,
   },
@@ -550,37 +708,49 @@ export const tabletStyles = {
   justifyContent: {
     'flex-start': css`
       @media (max-width: 1279px) {
-        justify-content: flex-start;
+        &.cds-responsive {
+          justify-content: flex-start;
+        }
       }
     `,
 
     'flex-end': css`
       @media (max-width: 1279px) {
-        justify-content: flex-end;
+        &.cds-responsive {
+          justify-content: flex-end;
+        }
       }
     `,
 
     center: css`
       @media (max-width: 1279px) {
-        justify-content: center;
+        &.cds-responsive {
+          justify-content: center;
+        }
       }
     `,
 
     'space-between': css`
       @media (max-width: 1279px) {
-        justify-content: space-between;
+        &.cds-responsive {
+          justify-content: space-between;
+        }
       }
     `,
 
     'space-around': css`
       @media (max-width: 1279px) {
-        justify-content: space-around;
+        &.cds-responsive {
+          justify-content: space-around;
+        }
       }
     `,
 
     'space-evenly': css`
       @media (max-width: 1279px) {
-        justify-content: space-evenly;
+        &.cds-responsive {
+          justify-content: space-evenly;
+        }
       }
     `,
   },
@@ -588,25 +758,33 @@ export const tabletStyles = {
   flexDirection: {
     row: css`
       @media (max-width: 1279px) {
-        flex-direction: row;
+        &.cds-responsive {
+          flex-direction: row;
+        }
       }
     `,
 
     column: css`
       @media (max-width: 1279px) {
-        flex-direction: column;
+        &.cds-responsive {
+          flex-direction: column;
+        }
       }
     `,
 
     'row-reverse': css`
       @media (max-width: 1279px) {
-        flex-direction: row-reverse;
+        &.cds-responsive {
+          flex-direction: row-reverse;
+        }
       }
     `,
 
     'column-reverse': css`
       @media (max-width: 1279px) {
-        flex-direction: column-reverse;
+        &.cds-responsive {
+          flex-direction: column-reverse;
+        }
       }
     `,
   },
@@ -614,19 +792,25 @@ export const tabletStyles = {
   flexWrap: {
     wrap: css`
       @media (max-width: 1279px) {
-        flex-wrap: wrap;
+        &.cds-responsive {
+          flex-wrap: wrap;
+        }
       }
     `,
 
     nowrap: css`
       @media (max-width: 1279px) {
-        flex-wrap: nowrap;
+        &.cds-responsive {
+          flex-wrap: nowrap;
+        }
       }
     `,
 
     'wrap-reverse': css`
       @media (max-width: 1279px) {
-        flex-wrap: wrap-reverse;
+        &.cds-responsive {
+          flex-wrap: wrap-reverse;
+        }
       }
     `,
   },
@@ -674,37 +858,49 @@ export const tabletStyles = {
   display: {
     block: css`
       @media (max-width: 1279px) {
-        display: block;
+        &.cds-responsive {
+          display: block;
+        }
       }
     `,
 
     'inline-block': css`
       @media (max-width: 1279px) {
-        display: inline-block;
+        &.cds-responsive {
+          display: inline-block;
+        }
       }
     `,
 
     flex: css`
       @media (max-width: 1279px) {
-        display: flex;
+        &.cds-responsive {
+          display: flex;
+        }
       }
     `,
 
     'inline-flex': css`
       @media (max-width: 1279px) {
-        display: inline-flex;
+        &.cds-responsive {
+          display: inline-flex;
+        }
       }
     `,
 
     none: css`
       @media (max-width: 1279px) {
-        display: none;
+        &.cds-responsive {
+          display: none;
+        }
       }
     `,
 
     contents: css`
       @media (max-width: 1279px) {
-        display: contents;
+        &.cds-responsive {
+          display: contents;
+        }
       }
     `,
   },
@@ -712,13 +908,17 @@ export const tabletStyles = {
   visibility: {
     hidden: css`
       @media (max-width: 1279px) {
-        visibility: hidden;
+        &.cds-responsive {
+          visibility: hidden;
+        }
       }
     `,
 
     visible: css`
       @media (max-width: 1279px) {
-        visibility: visible;
+        &.cds-responsive {
+          visibility: visible;
+        }
       }
     `,
   },
@@ -728,73 +928,97 @@ export const phoneStyles = {
   gap: {
     0: css`
       @media (max-width: 767px) {
-        gap: var(--spacing-0);
+        &.cds-responsive {
+          gap: var(--spacing-0);
+        }
       }
     `,
 
     1: css`
       @media (max-width: 767px) {
-        gap: var(--spacing-1);
+        &.cds-responsive {
+          gap: var(--spacing-1);
+        }
       }
     `,
 
     2: css`
       @media (max-width: 767px) {
-        gap: var(--spacing-2);
+        &.cds-responsive {
+          gap: var(--spacing-2);
+        }
       }
     `,
 
     3: css`
       @media (max-width: 767px) {
-        gap: var(--spacing-3);
+        &.cds-responsive {
+          gap: var(--spacing-3);
+        }
       }
     `,
 
     4: css`
       @media (max-width: 767px) {
-        gap: var(--spacing-4);
+        &.cds-responsive {
+          gap: var(--spacing-4);
+        }
       }
     `,
 
     5: css`
       @media (max-width: 767px) {
-        gap: var(--spacing-5);
+        &.cds-responsive {
+          gap: var(--spacing-5);
+        }
       }
     `,
 
     6: css`
       @media (max-width: 767px) {
-        gap: var(--spacing-6);
+        &.cds-responsive {
+          gap: var(--spacing-6);
+        }
       }
     `,
 
     7: css`
       @media (max-width: 767px) {
-        gap: var(--spacing-7);
+        &.cds-responsive {
+          gap: var(--spacing-7);
+        }
       }
     `,
 
     8: css`
       @media (max-width: 767px) {
-        gap: var(--spacing-8);
+        &.cds-responsive {
+          gap: var(--spacing-8);
+        }
       }
     `,
 
     9: css`
       @media (max-width: 767px) {
-        gap: var(--spacing-9);
+        &.cds-responsive {
+          gap: var(--spacing-9);
+        }
       }
     `,
 
     10: css`
       @media (max-width: 767px) {
-        gap: var(--spacing-10);
+        &.cds-responsive {
+          gap: var(--spacing-10);
+        }
       }
     `,
 
     0.5: css`
       @media (max-width: 767px) {
-        gap: var(--spacing-0\\.5);
+        &.cds-responsive {
+          gap: var(--spacing-0\\.5);
+        }
       }
     `,
   },
@@ -802,31 +1026,41 @@ export const phoneStyles = {
   alignItems: {
     'flex-start': css`
       @media (max-width: 767px) {
-        align-items: flex-start;
+        &.cds-responsive {
+          align-items: flex-start;
+        }
       }
     `,
 
     'flex-end': css`
       @media (max-width: 767px) {
-        align-items: flex-end;
+        &.cds-responsive {
+          align-items: flex-end;
+        }
       }
     `,
 
     center: css`
       @media (max-width: 767px) {
-        align-items: center;
+        &.cds-responsive {
+          align-items: center;
+        }
       }
     `,
 
     stretch: css`
       @media (max-width: 767px) {
-        align-items: stretch;
+        &.cds-responsive {
+          align-items: stretch;
+        }
       }
     `,
 
     baseline: css`
       @media (max-width: 767px) {
-        align-items: baseline;
+        &.cds-responsive {
+          align-items: baseline;
+        }
       }
     `,
   },
@@ -834,37 +1068,49 @@ export const phoneStyles = {
   alignContent: {
     'flex-start': css`
       @media (max-width: 767px) {
-        align-content: flex-start;
+        &.cds-responsive {
+          align-content: flex-start;
+        }
       }
     `,
 
     'flex-end': css`
       @media (max-width: 767px) {
-        align-content: flex-end;
+        &.cds-responsive {
+          align-content: flex-end;
+        }
       }
     `,
 
     center: css`
       @media (max-width: 767px) {
-        align-content: center;
+        &.cds-responsive {
+          align-content: center;
+        }
       }
     `,
 
     stretch: css`
       @media (max-width: 767px) {
-        align-content: stretch;
+        &.cds-responsive {
+          align-content: stretch;
+        }
       }
     `,
 
     'space-between': css`
       @media (max-width: 767px) {
-        align-content: space-between;
+        &.cds-responsive {
+          align-content: space-between;
+        }
       }
     `,
 
     'space-around': css`
       @media (max-width: 767px) {
-        align-content: space-around;
+        &.cds-responsive {
+          align-content: space-around;
+        }
       }
     `,
   },
@@ -872,37 +1118,49 @@ export const phoneStyles = {
   alignSelf: {
     'flex-start': css`
       @media (max-width: 767px) {
-        align-self: flex-start;
+        &.cds-responsive {
+          align-self: flex-start;
+        }
       }
     `,
 
     'flex-end': css`
       @media (max-width: 767px) {
-        align-self: flex-end;
+        &.cds-responsive {
+          align-self: flex-end;
+        }
       }
     `,
 
     center: css`
       @media (max-width: 767px) {
-        align-self: center;
+        &.cds-responsive {
+          align-self: center;
+        }
       }
     `,
 
     stretch: css`
       @media (max-width: 767px) {
-        align-self: stretch;
+        &.cds-responsive {
+          align-self: stretch;
+        }
       }
     `,
 
     baseline: css`
       @media (max-width: 767px) {
-        align-self: baseline;
+        &.cds-responsive {
+          align-self: baseline;
+        }
       }
     `,
 
     auto: css`
       @media (max-width: 767px) {
-        align-self: auto;
+        &.cds-responsive {
+          align-self: auto;
+        }
       }
     `,
   },
@@ -910,37 +1168,49 @@ export const phoneStyles = {
   justifyContent: {
     'flex-start': css`
       @media (max-width: 767px) {
-        justify-content: flex-start;
+        &.cds-responsive {
+          justify-content: flex-start;
+        }
       }
     `,
 
     'flex-end': css`
       @media (max-width: 767px) {
-        justify-content: flex-end;
+        &.cds-responsive {
+          justify-content: flex-end;
+        }
       }
     `,
 
     center: css`
       @media (max-width: 767px) {
-        justify-content: center;
+        &.cds-responsive {
+          justify-content: center;
+        }
       }
     `,
 
     'space-between': css`
       @media (max-width: 767px) {
-        justify-content: space-between;
+        &.cds-responsive {
+          justify-content: space-between;
+        }
       }
     `,
 
     'space-around': css`
       @media (max-width: 767px) {
-        justify-content: space-around;
+        &.cds-responsive {
+          justify-content: space-around;
+        }
       }
     `,
 
     'space-evenly': css`
       @media (max-width: 767px) {
-        justify-content: space-evenly;
+        &.cds-responsive {
+          justify-content: space-evenly;
+        }
       }
     `,
   },
@@ -948,25 +1218,33 @@ export const phoneStyles = {
   flexDirection: {
     row: css`
       @media (max-width: 767px) {
-        flex-direction: row;
+        &.cds-responsive {
+          flex-direction: row;
+        }
       }
     `,
 
     column: css`
       @media (max-width: 767px) {
-        flex-direction: column;
+        &.cds-responsive {
+          flex-direction: column;
+        }
       }
     `,
 
     'row-reverse': css`
       @media (max-width: 767px) {
-        flex-direction: row-reverse;
+        &.cds-responsive {
+          flex-direction: row-reverse;
+        }
       }
     `,
 
     'column-reverse': css`
       @media (max-width: 767px) {
-        flex-direction: column-reverse;
+        &.cds-responsive {
+          flex-direction: column-reverse;
+        }
       }
     `,
   },
@@ -974,19 +1252,25 @@ export const phoneStyles = {
   flexWrap: {
     wrap: css`
       @media (max-width: 767px) {
-        flex-wrap: wrap;
+        &.cds-responsive {
+          flex-wrap: wrap;
+        }
       }
     `,
 
     nowrap: css`
       @media (max-width: 767px) {
-        flex-wrap: nowrap;
+        &.cds-responsive {
+          flex-wrap: nowrap;
+        }
       }
     `,
 
     'wrap-reverse': css`
       @media (max-width: 767px) {
-        flex-wrap: wrap-reverse;
+        &.cds-responsive {
+          flex-wrap: wrap-reverse;
+        }
       }
     `,
   },
@@ -1034,37 +1318,49 @@ export const phoneStyles = {
   display: {
     block: css`
       @media (max-width: 767px) {
-        display: block;
+        &.cds-responsive {
+          display: block;
+        }
       }
     `,
 
     'inline-block': css`
       @media (max-width: 767px) {
-        display: inline-block;
+        &.cds-responsive {
+          display: inline-block;
+        }
       }
     `,
 
     flex: css`
       @media (max-width: 767px) {
-        display: flex;
+        &.cds-responsive {
+          display: flex;
+        }
       }
     `,
 
     'inline-flex': css`
       @media (max-width: 767px) {
-        display: inline-flex;
+        &.cds-responsive {
+          display: inline-flex;
+        }
       }
     `,
 
     none: css`
       @media (max-width: 767px) {
-        display: none;
+        &.cds-responsive {
+          display: none;
+        }
       }
     `,
 
     contents: css`
       @media (max-width: 767px) {
-        display: contents;
+        &.cds-responsive {
+          display: contents;
+        }
       }
     `,
   },
@@ -1072,14 +1368,20 @@ export const phoneStyles = {
   visibility: {
     hidden: css`
       @media (max-width: 767px) {
-        visibility: hidden;
+        &.cds-responsive {
+          visibility: hidden;
+        }
       }
     `,
 
     visible: css`
       @media (max-width: 767px) {
-        visibility: visible;
+        &.cds-responsive {
+          visibility: visible;
+        }
       }
     `,
   },
 };
+
+export const responsiveClassName = 'cds-responsive';

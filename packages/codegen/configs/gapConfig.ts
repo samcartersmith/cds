@@ -3,6 +3,7 @@ import { mapValues } from '@cbhq/cds-utils/object';
 
 import { escape } from '../Spacing';
 
+import { responsiveClassName } from './constants';
 import { spacingScale } from './spacingConfig';
 
 export const gapStylesForDevice = (deviceMq: string) => ({
@@ -10,7 +11,9 @@ export const gapStylesForDevice = (deviceMq: string) => ({
     const escapedPadding = `var(--spacing-${escape(spacing)})`;
     return `
             @media (${deviceMq}) {
-              gap: ${escapedPadding}
+              &.${responsiveClassName}{
+                gap: ${escapedPadding}
+              }
             }
           `;
   }),

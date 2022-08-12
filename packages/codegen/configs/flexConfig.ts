@@ -1,6 +1,8 @@
 import { arrayToObject, kebabCase } from '@cbhq/cds-utils';
 import { mapValues } from '@cbhq/cds-utils/object';
 
+import { responsiveClassName } from './constants';
+
 const flexStyles = [
   'alignContent',
   'alignItems',
@@ -44,7 +46,9 @@ export const flexStylesForDevice = <T extends string | number>(
   [style]: mapValues(arrayToObject(flexStyleMap[style] as T[]), (value) => {
     return `
             @media (${deviceMq}) {
-             ${[kebabCase(style)]}: ${value}
+             &.${responsiveClassName} {
+               ${[kebabCase(style)]}: ${value}
+             }
             }
           `;
   }),

@@ -32,6 +32,7 @@ import * as backgroundColorStyles from '../styles/backgroundColor';
 import { getBorderStyles } from '../styles/border';
 import * as borderColorStyles from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
+import { responsiveClassName } from '../styles/responsive';
 import {
   ArticleAccessibilityRole,
   AsideAccessibilityRole,
@@ -288,6 +289,7 @@ export const BoxInner = forwardRef(
           }),
           usePinStyles(pin, position),
           responsiveStyleClassNames,
+          responsiveConfig && responsiveClassName,
           dangerouslySetClassName,
         ),
         role,
