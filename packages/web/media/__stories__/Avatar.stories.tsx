@@ -1,5 +1,5 @@
 import { ThemeProviderBaseProps } from '@cbhq/cds-common';
-import { useAvatarFallbackColors } from '@cbhq/cds-common/media/useAvatarFallbackColors';
+import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
 import { AvatarSize } from '@cbhq/cds-common/types/AvatarSize';
 
 import { HStack, VStack } from '../../layout';
@@ -45,19 +45,22 @@ const FallbackColoredBase = ({
   size,
   dense,
 }: Pick<AvatarWebProps, 'selected' | 'shape' | 'size'> & { dense?: boolean }) => {
-  const avatarFallbackColors = useAvatarFallbackColors(names.length);
   return (
     <HStack gap={dense ? 0.5 : 2} alignItems="center" flexWrap="wrap">
-      {names.map((name, idx) => (
-        <Avatar
-          alt=""
-          name={name}
-          colorScheme={avatarFallbackColors[idx]}
-          selected={selected}
-          shape={shape}
-          size={size}
-        />
-      ))}
+      {names.map((name, idx) => {
+        const avatarFallbackColor = getAvatarFallbackColor(name);
+        return (
+          <Avatar
+            key={name}
+            alt=""
+            name={name}
+            colorScheme={idx === 0 ? 'blue' : avatarFallbackColor}
+            selected={selected}
+            shape={shape}
+            size={size}
+          />
+        );
+      })}
     </HStack>
   );
 };

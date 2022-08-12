@@ -1,6 +1,6 @@
 import React from 'react';
 import { AvatarBaseProps, AvatarSize } from '@cbhq/cds-common';
-import { useAvatarFallbackColors } from '@cbhq/cds-common/media/useAvatarFallbackColors';
+import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';
@@ -16,18 +16,21 @@ const FallbackColoredBase = ({
   size,
   dense = true,
 }: Pick<AvatarBaseProps, 'shape' | 'size'> & { dense?: boolean }) => {
-  const avatarFallbackColors = useAvatarFallbackColors(names.length);
   return (
     <HStack gap={dense ? 0.5 : 2} alignItems="center" flexWrap="wrap">
-      {names.map((name, idx) => (
-        <Avatar
-          alt=""
-          name={name}
-          colorScheme={avatarFallbackColors[idx]}
-          shape={shape}
-          size={size}
-        />
-      ))}
+      {names.map((name, idx) => {
+        const avatarFallbackColor = getAvatarFallbackColor(name);
+        return (
+          <Avatar
+            alt=""
+            key={name}
+            name={name}
+            colorScheme={idx === 0 ? 'blue' : avatarFallbackColor}
+            shape={shape}
+            size={size}
+          />
+        );
+      })}
     </HStack>
   );
 };
