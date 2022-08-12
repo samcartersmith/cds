@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { TextTitle1 } from '../../typography';
 import { SelectOption } from '../SelectOption';
 
 export default function SelectOptionScreen() {
@@ -25,6 +26,17 @@ export default function SelectOptionScreen() {
           value="Title"
           title="Title"
           description="Description"
+          onPress={handleOptionPress}
+        />
+      </Example>
+      {/** I have an example here to test that title and description can take reactNode. If they take reactNode, we must specify the accessibilityLabel and accessibilityHint */}
+      <Example title="Set title and description to be ReactNodes">
+        <SelectOption
+          value="Title"
+          accessibilityLabel="Title"
+          accessibilityHint="Hint"
+          title={<TextTitle1>Title</TextTitle1>}
+          description={<TextTitle1>Description</TextTitle1>}
           onPress={handleOptionPress}
         />
       </Example>

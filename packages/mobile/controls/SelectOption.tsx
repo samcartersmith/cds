@@ -1,8 +1,14 @@
 import React, { memo, useCallback } from 'react';
 import { GestureResponderEvent } from 'react-native';
+import { useChildrenAsAccessibilityProps } from '@cbhq/cds-common/accessibility/useChildrenAsAccessibilityProps';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { selectCellMobileSpacingConfig } from '@cbhq/cds-common/tokens/select';
-import { NoopFn, ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
+import {
+  NoopFn,
+  ScaleDensity,
+  SelectOptionBaseProps,
+  SharedAccessibilityProps,
+} from '@cbhq/cds-common/types';
 
 import { Cell } from '../cells/Cell';
 import { CellAccessory } from '../cells/CellAccessory';
@@ -23,7 +29,8 @@ const selectOptionMaxHeight: Record<ScaleDensity, number> = {
 
 export type SelectOptionProps = {
   onPress?: NoopFn | ((event: GestureResponderEvent) => void);
-} & Omit<SelectOptionBaseProps, 'compact'>;
+} & Omit<SelectOptionBaseProps, 'compact'> &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
 
 export const SelectOption = memo(function SelectOption({
   title,
@@ -46,6 +53,17 @@ export const SelectOption = memo(function SelectOption({
     },
     [onPress, onChange, value],
   );
+
+  const { accessibilityLabel } = useChildrenAsAccessibilityProps({
+    children: title,
+    accessibilityLabel: props.accessibilityLabel,
+  });
+
+  const { accessibilityHint } = useChildrenAsAccessibilityProps({
+    children: description,
+    accessibilityHint: props.accessibilityHint,
+  });
+
   return (
     <Cell
       {...selectCellMobileSpacingConfig}
@@ -54,6 +72,8 @@ export const SelectOption = memo(function SelectOption({
       maxHeight={maxHeight}
       accessory={selected ? <CellAccessory type="selected" /> : undefined}
       selected={selected}
+      accessibilityLabel={accessibilityLabel}
+      accessibilityHint={accessibilityHint}
       onPress={handlePress}
       {...props}
     >
