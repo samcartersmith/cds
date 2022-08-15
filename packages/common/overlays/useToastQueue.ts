@@ -25,17 +25,12 @@ export const useToastQueue = () => {
 
   hasActiveToast.current = !!activeToast;
 
-  const removeToast = useCallback(
-    async (shouldTriggerAnimation = true) => {
-      if (shouldTriggerAnimation) {
-        // wait for animation to finish
-        await activeToastRef.current?.hide();
-      }
-      timer.clear();
-      setActiveToast(undefined);
-    },
-    [timer, setActiveToast],
-  );
+  const hideToast = useCallback(() => activeToastRef.current?.hide(), [activeToastRef]);
+
+  const removeToast = useCallback(() => {
+    timer.clear();
+    setActiveToast(undefined);
+  }, [timer, setActiveToast]);
 
   const setToast = useCallback(
     (toast?: ToastNode) => {
@@ -50,10 +45,10 @@ export const useToastQueue = () => {
 
       // remove toast after duration
       timer.start(() => {
-        void removeToast();
+        void hideToast();
       }, toast.duration);
     },
-    [timer, removeToast],
+    [timer, hideToast],
   );
 
   const addToast = useCallback(
@@ -76,7 +71,7 @@ export const useToastQueue = () => {
   }, [activeToast, setToast]);
 
   const clearToastQueue = useCallback(async () => {
-    await removeToast();
+    removeToast();
     toastQueue.current.length = 0;
   }, [removeToast]);
 
@@ -84,6 +79,7 @@ export const useToastQueue = () => {
     activeToast,
     addToast,
     removeToast,
+    hideToast,
     clearToastQueue,
     pauseTimer: timer.pause,
     resumeTimer: timer.resume,

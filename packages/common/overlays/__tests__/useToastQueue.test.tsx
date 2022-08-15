@@ -36,7 +36,7 @@ describe('useToastQueue', () => {
     });
 
     await act(async () => {
-      await result.current.removeToast();
+      result.current.removeToast();
     });
 
     // TODO migration fix incorrect 3 calls

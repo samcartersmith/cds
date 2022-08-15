@@ -7,7 +7,8 @@ import { ToastNode, useToastQueue } from './useToastQueue';
 export type ToastProviderStates = {
   activeToast?: ToastNode;
   addToast: (element: ToastNode['element'], duration: number) => void;
-  removeToast: (shouldTriggerAnimation?: boolean) => Promise<void>;
+  removeToast: () => void;
+  hideToast: () => void;
   clearToastQueue: NoopFn;
   pauseTimer: NoopFn;
   resumeTimer: NoopFn;
@@ -20,15 +21,23 @@ export type ToastProviderProps = {
 export const ToastContext = createContext<ToastProviderStates>({
   activeToast: undefined,
   addToast: () => {},
-  removeToast: async () => Promise.resolve(),
+  removeToast: () => {},
+  hideToast: () => {},
   clearToastQueue: () => {},
   pauseTimer: () => {},
   resumeTimer: () => {},
 });
 
 export const ToastProvider: React.FC<ToastProviderProps> = ({ children, toastBottomOffset }) => {
-  const { activeToast, addToast, removeToast, clearToastQueue, pauseTimer, resumeTimer } =
-    useToastQueue();
+  const {
+    activeToast,
+    addToast,
+    removeToast,
+    hideToast,
+    clearToastQueue,
+    pauseTimer,
+    resumeTimer,
+  } = useToastQueue();
 
   const element = activeToast?.element;
 
@@ -36,11 +45,12 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({ children, toastBot
     () => ({
       addToast,
       removeToast,
+      hideToast,
       clearToastQueue,
       pauseTimer,
       resumeTimer,
     }),
-    [addToast, removeToast, clearToastQueue, pauseTimer, resumeTimer],
+    [addToast, removeToast, hideToast, clearToastQueue, pauseTimer, resumeTimer],
   );
 
   return (

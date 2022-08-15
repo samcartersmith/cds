@@ -11,14 +11,15 @@ import { ToastBaseProps, ToastOptions, ToastText } from '../types';
 import { ToastContext } from './ToastProvider';
 
 export const useToast = <T,>(Toast: ComponentType<ToastBaseProps>) => {
-  const { addToast, removeToast, clearToastQueue } = useContext(ToastContext);
+  const { addToast, removeToast, hideToast, clearToastQueue } = useContext(ToastContext);
 
   const showToast = useCallback(
     (text: ToastText, options?: ToastOptions & T) => {
       // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
       const onDidHide = () => {
         options?.onDidHide?.();
-        void removeToast(false);
+        // unmount toast when using gesture or close button
+        removeToast();
       };
 
       const calculateDuration = () => {
@@ -41,7 +42,7 @@ export const useToast = <T,>(Toast: ComponentType<ToastBaseProps>) => {
   );
 
   return useMemo(
-    () => ({ show: showToast, hide: removeToast, clearQueue: clearToastQueue }),
-    [showToast, removeToast, clearToastQueue],
+    () => ({ show: showToast, hide: hideToast, clearQueue: clearToastQueue }),
+    [showToast, clearToastQueue, hideToast],
   );
 };
