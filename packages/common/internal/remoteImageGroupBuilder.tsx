@@ -53,14 +53,14 @@ export const remoteImageGroupBuilder = ({
   const CircleAvatarSize = () => (
     <>
       {avatarSizes.map((size) => (
-        <>
+        <VStack key={`circle-avatar-size-${size}`}>
           <TextLabel1>Circle Avatar Size: {size}</TextLabel1>
           <RemoteImageGroup shape="circle" size={size}>
             <RemoteImage source={assets.eth.imageUrl} />
             <RemoteImage source={assets.btc.imageUrl} />
             <RemoteImage source={assets.dai.imageUrl} />
           </RemoteImageGroup>
-        </>
+        </VStack>
       ))}
     </>
   );
@@ -71,7 +71,7 @@ export const remoteImageGroupBuilder = ({
     return (
       <>
         {avatarSizes.map((avatarSize) => (
-          <>
+          <VStack key={`circle-max-${avatarSize}`}>
             {maxSizes.map((maxSize) => (
               <VStack key={`remote-image-group-circle-max-size-${maxSize}-${avatarSize}`}>
                 <TextLabel1>
@@ -92,7 +92,7 @@ export const remoteImageGroupBuilder = ({
                 </RemoteImageGroup>
               </VStack>
             ))}
-          </>
+          </VStack>
         ))}
       </>
     );
@@ -151,14 +151,14 @@ export const remoteImageGroupBuilder = ({
   const SquircleAvatarSize = () => (
     <>
       {avatarSizes.map((size) => (
-        <>
+        <VStack key={`squircle-avatar-size-${size}`}>
           <TextLabel1>Sqcircle Avatar Size: {size}</TextLabel1>
           <RemoteImageGroup size={size} shape="squircle">
             <RemoteImage source={squareAssets.human1} />
             <RemoteImage source={squareAssets.human2} />
             <RemoteImage source={squareAssets.human1} />
           </RemoteImageGroup>
-        </>
+        </VStack>
       ))}
     </>
   );
@@ -169,7 +169,7 @@ export const remoteImageGroupBuilder = ({
     return (
       <>
         {avatarSizes.map((avatarSize) => (
-          <>
+          <VStack key={`squircle-max-${avatarSize}`}>
             {maxSizes.map((maxSize) => (
               <VStack key={`remote-image-group-squircle-max-size-${maxSize}-${avatarSize}`}>
                 <TextLabel1>
@@ -183,7 +183,7 @@ export const remoteImageGroupBuilder = ({
                 </RemoteImageGroup>
               </VStack>
             ))}
-          </>
+          </VStack>
         ))}
       </>
     );

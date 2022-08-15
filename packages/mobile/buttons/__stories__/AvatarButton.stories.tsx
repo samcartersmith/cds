@@ -11,8 +11,11 @@ const avatarImageUrl =
   'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg';
 const names = ['Sneezy', 'Happy', 'Sleepy', 'Doc', 'Bashful', 'Grumpy', 'Dopey', 'Lilo', 'Stitch'];
 
-const FallbackColoredBase = ({
+const FallbackColoredForAvatarButtonBase = ({
   dense = true,
+  shape,
+  compact,
+  loading,
   ...props
 }: Pick<AvatarButtonProps, 'shape' | 'loading' | 'compact'> & { dense?: boolean }) => {
   return (
@@ -71,19 +74,19 @@ const AvatarButtonScreen = () => {
         </VStack>
       </Example>
       <Example title="Colored Fallback">
-        <FallbackColoredBase />
+        <FallbackColoredForAvatarButtonBase />
       </Example>
       <Example title="Colored Fallback Loading">
-        <FallbackColoredBase loading />
+        <FallbackColoredForAvatarButtonBase loading />
       </Example>
       <Example title="Colored Fallback Compact">
-        <FallbackColoredBase compact />
+        <FallbackColoredForAvatarButtonBase compact />
       </Example>
       <Example title="Colored Fallback Compact Loading">
-        <FallbackColoredBase compact loading />
+        <FallbackColoredForAvatarButtonBase compact loading />
       </Example>
       <Example title="Colored Fallback Square">
-        <FallbackColoredBase shape="square" />
+        <FallbackColoredForAvatarButtonBase shape="square" />
       </Example>
     </ExampleScreen>
   );

@@ -73,7 +73,7 @@ const AvatarScreen = () => {
       </Example>
       <Example title="Fallback Sizes">
         {sizes.map((size) => (
-          <FallbackColoredBase size={size} />
+          <FallbackColoredBase key={`fallback-sizes-${size}`} size={size} />
         ))}
       </Example>
     </ExampleScreen>

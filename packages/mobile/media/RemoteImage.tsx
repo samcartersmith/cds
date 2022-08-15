@@ -182,6 +182,7 @@ export const RemoteImage = memo(function RemoteImage({
     <Image
       accessibilityIgnoresInvertColors
       source={transformedSource as ImageSourcePropType}
+      accessibilityRole="image"
       {...props}
       style={styles}
     />
