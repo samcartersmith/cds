@@ -22,6 +22,7 @@ export type TabProps = Omit<Props, 'groupId'> & {
   gap?: SpacingScale;
   groupId: string;
   variant?: TabNavigationProps['variant'];
+  spacerHeight?: SpacingScale;
 };
 
 // A very rough duck type, but good enough to guard against mistakes while allowing customization
@@ -36,6 +37,7 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
     variant = 'primary',
     gap = 3,
     groupId,
+    spacerHeight = 3,
   } = props;
   const children = React.Children.map(props.children, (child) => {
     if (isValidElement(child) && isTabItem(child)) {
@@ -151,7 +153,7 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
           label: item.label ?? item.value,
         }))}
       />
-      <Spacer vertical={3} />
+      <Spacer vertical={spacerHeight} />
       {children
         .filter((tabItem) => tabItem.props.value === selectedValue)
         .map((tabItem, i) =>
