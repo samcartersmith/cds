@@ -135,6 +135,33 @@
           ]
         }
       }
+    },
+    "prebuild-android": {
+      "executor": "@cbhq/mono-tasks-mobile:prebuild",
+      "options": {
+        "platform": "android",
+        "buildType": "debug",
+        "arch": "universal"
+      }
+    },
+    "prebuild-android-e2e": {
+      "executor": "@cbhq/mono-tasks-mobile:prebuild",
+      "options": {
+        "platform": "android",
+        "buildType": "e2e"
+      }
+    },
+    "android-cli": {
+      "executor": "@cbhq/mono-tasks-mobile:start-prebuild",
+      "options": {
+        "platform": "android"
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "dependencies"
+        }
+      ]
     }
   },
   "tags": []

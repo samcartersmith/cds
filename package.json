@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "description": "Coinbase design system",
-  "repository": "git@github.cbhq.net:frontend/cds.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git"
+  },
   "scripts": {
     "____apps____": "✨✨✨ run 'yarn {app} {script}', i.e. yarn website start. scripts are in apps/{app}/package.json ✨✨✨",
     "codegen": "yarn workspace @cds/codegen",

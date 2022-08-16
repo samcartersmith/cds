@@ -1,3 +1,31 @@
+_prebuild_shared_step: &prebuild_shared_step
+  commands:
+    - tools/ci/setup.sh
+  plugins:
+    - file:///buildkite/plugins/cache: &cache_plugin
+        key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
+        paths:
+          - ./.yarn/cache
+          - ./.yarn/install-state.gz
+    - file:///buildkite/plugins/docker: &docker_plugin
+        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:android
+        always-pull: true
+        propagate-environment: true
+        propagate-uid-gid: true
+        volumes:
+          # Allow git operations to work
+          - ${HOME}/.ssh:/root/.ssh
+          - ${HOME}/.git:/root/.git
+        environment:
+          - BUILDKITE_API_TOKEN
+  timeout_in_minutes: 45
+  retry:
+    automatic: true
+  artifact_paths:
+    - 'artifacts/**/*'
+  agents:
+    queue: metal
+
 _visreg_android_shared: &visreg_android_shared
   parallelism: 1
   commands:
@@ -7,10 +35,10 @@ _visreg_android_shared: &visreg_android_shared
     - tools/ci/setup.sh
     - export LANG=en_US.UTF-8
     - mkdir -p percy-artifacts
+    - tools/ci/android-visreg-nx.sh artifacts/cds-playground-android-app.tar.gz
     - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
     - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
     - yarn nx run mobile-playground:android-e2e-emulator
-    - yarn nx run mobile-playground:build-android-e2e
     - yarn nx run mobile-playground:android-e2e
   plugins: &android_plugins
     - file:///buildkite/plugins/cache: &cache_plugin
@@ -64,7 +92,18 @@ env:
   VISREG_TOTAL_JOBS: 8
 
 steps:
+  - label: Android - Prebuild - visreg
+    <<: *prebuild_shared_step
+    key: build-android-visreg
+    commands:
+      - export SYSTEM_VERSION_COMPAT=0
+      - tools/ci/setup.sh
+      - mkdir -p $(pwd)/artifacts
+      - yarn nx run mobile-playground:prebuild-android-e2e cds-playground --destination $(pwd)/artifacts/cds-playground-android-app.tar.gz
+
   - group: Visreg Tests (Android)
+    depends_on:
+      - build-android-visreg
     steps:
       - label: 'Visreg Test (Android) 1'
         key: 'visreg-android-1'
