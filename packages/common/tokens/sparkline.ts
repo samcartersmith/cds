@@ -9,9 +9,9 @@ export const fadeDuration = durations.moderate1;
 
 // This list may not be exhaustive, but callsites use period.label as a fallback
 export const periodLabelMap: Record<string, string> = {
+  '1H': '1 hour',
   '1D': '1 day',
   '1W': '1 week',
   '1M': '1 month',
   '1Y': '1 year',
-  All: 'All time',
 };

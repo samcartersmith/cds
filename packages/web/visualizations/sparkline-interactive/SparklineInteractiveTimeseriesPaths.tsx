@@ -37,7 +37,6 @@ const TimeseriesPath = memo(
 
     useEffect(() => {
       playAnimation();
-
       onRender?.({
         path: newPath,
         area: newArea as string,

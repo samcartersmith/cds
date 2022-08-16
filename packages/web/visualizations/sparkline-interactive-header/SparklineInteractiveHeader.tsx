@@ -19,6 +19,7 @@ const SparklineInteractiveHeaderStable = memo(
       const labelRef = useRef<HTMLSpanElement>(null);
       const titleRef = useRef<HTMLSpanElement>(null);
       const subHeadIconRef = useRef<HTMLSpanElement>(null);
+      const subHeadA11yRef = useRef<HTMLDivElement>(null);
       const subHeadRef = useRef<HTMLSpanElement>(null);
       const subHeadAccessoryRef = useRef<HTMLSpanElement>(null);
       const palette = usePalette();
@@ -70,6 +71,12 @@ const SparklineInteractiveHeaderStable = memo(
               subHeadAccessoryRef.current.innerText = subHead.accessoryText ?? '';
             }
 
+            if (subHeadA11yRef.current) {
+              subHeadA11yRef.current.ariaLabel = `${
+                subHead.accessibilityLabel
+              } ${interpolateSubHeadText(subHead)}`;
+            }
+
             valuesRef.current = { ...valuesRef.current, subHead };
           }
         },
@@ -116,7 +123,7 @@ const SparklineInteractiveHeaderStable = memo(
         : {};
 
       const subHead = !!defaultSubHead && (
-        <div>
+        <div ref={subHeadA11yRef}>
           <TextTitle4 tabularNumbers as="span">
             <span ref={subHeadIconRef} style={subHeadColorStyles}>
               {defaultSubHead.sign}

@@ -192,6 +192,10 @@ function generateSubHead(
     )}%`,
     sign: increase ? '\u2197 ' : '\u2198 ',
     variant: increase ? 'positive' : 'negative',
+    // NOTE: Ensure this string is localized in your product implementation
+    accessibilityLabel: increase
+      ? 'Price increase in the amount of'
+      : 'Price reduction in the amount of',
     priceChange: `$${numToLocaleString(Math.abs(point.value - firstPoint.value))}`,
   };
 

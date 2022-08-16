@@ -23,7 +23,14 @@ export const SparklineInteractiveHoverDate = memo(() => {
   );
 
   return (
-    <TextLabel2 tabularNumbers as="div">
+    <TextLabel2
+      tabularNumbers
+      as="div"
+      // a11y
+      aria-live="polite"
+      role="status"
+      accessibilityLabel="Selected date"
+    >
       <span ref={setupTextRef} className={cx(resetFadeClassName, textClassName)}>
         {/* prevent the container vertical jump by stubbing out a date with no opacity */}
         {new Date().toLocaleString()}

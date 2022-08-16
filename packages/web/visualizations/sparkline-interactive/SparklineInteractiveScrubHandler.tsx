@@ -1,4 +1,12 @@
-import React, { memo, MouseEvent, useCallback, useRef } from 'react';
+import React, {
+  KeyboardEvent,
+  memo,
+  MouseEvent,
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { css } from 'linaria';
 import { ChartGetMarker } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
@@ -7,9 +15,13 @@ import {
   SparklineInteractiveBaseProps,
   SparklineInteractiveScrubHandlerProps,
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+import { debounce } from '@cbhq/cds-common/utils/debounce';
 import { noop } from '@cbhq/cds-utils';
 
 import { cubicBezier } from '../../animation/convertMotionConfig';
+import { useDimensions } from '../../hooks/useDimensions';
+import { insetFocusRing } from '../../styles/focus';
+import { cx } from '../../utils/linaria';
 
 import { fadeIn, fadeOut } from './fade';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
@@ -61,6 +73,10 @@ const fadeOutMaskClassName = css`
   }
 `;
 
+// Number of steps for keyboard users to navigate through the sparkline
+const STEPS = 100;
+const STEPS_ARRAY = Array.from(Array(STEPS).keys());
+
 function fadeOutMask(domNode?: HTMLElement | null) {
   domNode?.classList.remove(fadeInMaskClassName);
   domNode?.classList.add(fadeOutMaskClassName);
@@ -91,22 +107,36 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
   const { lineDOMNode, maskDOMNode, hoverDateDOMNode } = useSparklineInteractiveScrubContext();
   const { width: chartWidth } = useSparklineInteractiveContext();
   const padding = useScaleConditional({ dense: 4, normal: 8 });
+  const scrubHandlerClassNameWithFocus = cx(scrubHandlerClassName, insetFocusRing);
+  const [xPos, setXPos] = useState<number>(0);
+  const { width, observe } = useDimensions();
+  const steps = useMemo(() => {
+    const sparklineSteps = STEPS_ARRAY.map((step) => {
+      return Math.floor((Number(width) / STEPS) * step) || 1;
+    });
 
-  const handleMouseEnter = useCallback(() => {
-    onScrubStart?.();
+    // Make sure each step is within the sparkline container
+    sparklineSteps[0] = 1;
+    sparklineSteps[STEPS] = Math.floor(width) - 1;
 
-    fadeIn(lineDOMNode);
-    fadeInMask(maskDOMNode);
-  }, [lineDOMNode, maskDOMNode, onScrubStart]);
+    return sparklineSteps;
+  }, [width]);
 
-  const handleMouseMove = useCallback(
-    (event: MouseEvent) => {
-      const xPos = Math.max(
-        0,
-        event.clientX - (containerRef.current?.getBoundingClientRect().left ?? 0),
-      );
+  const debouncedUpdatePositionHandler = useMemo(
+    () =>
+      debounce((position: number) => {
+        setXPos(position);
+      }, 20),
+    [setXPos],
+  );
+  const safelyUpdatePosition = useCallback(debouncedUpdatePositionHandler, [
+    debouncedUpdatePositionHandler,
+  ]);
 
-      const dataPoint = getMarker(xPos);
+  // This method is used by mouseMove and keyboard events
+  const updateScrubber = useCallback(
+    (position: number) => {
+      const dataPoint = getMarker(position);
 
       if (dataPoint) {
         onScrub?.({
@@ -115,10 +145,10 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
         });
 
         if (lineDOMNode) {
-          lineDOMNode.style.transform = `translateX(${xPos}px)`;
+          lineDOMNode.style.transform = `translateX(${position}px)`;
         }
         if (maskDOMNode) {
-          maskDOMNode.style.transform = `translateX(${xPos}px)`;
+          maskDOMNode.style.transform = `translateX(${position}px)`;
         }
         if (hoverDateDOMNode && formatHoverDate) {
           fadeIn(hoverDateDOMNode);
@@ -126,16 +156,23 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
 
           const textWidth = hoverDateDOMNode.offsetWidth;
           const halfTextWidth = textWidth / 2;
-          let textPos = xPos - halfTextWidth;
+          let textPos = position - halfTextWidth;
           textPos = Math.max(padding, textPos);
           textPos = Math.min(textPos, chartWidth - textWidth - padding);
 
           hoverDateDOMNode.style.transform = `translateX(${textPos}px)`;
         }
       }
+
+      /**
+       *  Keep track of the position for a seamless
+       *  transition from MouseMove to Keyboard interaction
+       */
+      safelyUpdatePosition(position);
     },
     [
       getMarker,
+      safelyUpdatePosition,
       onScrub,
       selectedPeriod,
       lineDOMNode,
@@ -145,6 +182,75 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
       padding,
       chartWidth,
     ],
+  );
+
+  // Show the scrub UI
+  const handleMouseEnter = useCallback(() => {
+    onScrubStart?.();
+
+    fadeIn(lineDOMNode);
+    fadeInMask(maskDOMNode);
+  }, [lineDOMNode, maskDOMNode, onScrubStart]);
+
+  const handleMouseMove = useCallback(
+    (event: MouseEvent) => {
+      const xPosition = Math.max(
+        0,
+        event.clientX - (containerRef.current?.getBoundingClientRect().left ?? 0),
+      );
+
+      // Update UI
+      updateScrubber(xPosition);
+    },
+    [updateScrubber],
+  );
+
+  const getPosition = useCallback(
+    (direction: 'next' | 'previous', multiSkip?: boolean) => {
+      // Use the xPos to find the nearest step
+      const closestStep = steps.reduce((prev, curr) => {
+        return Math.abs(curr - xPos) < Math.abs(prev - xPos) ? curr : prev;
+      });
+      // The index of the closest step
+      const currentIndex = steps.findIndex((pos) => pos === closestStep);
+      // Holding the shift key allows users to jump 10 steps
+      const stepIncrement = multiSkip ? 10 : 1;
+
+      // The location to move to
+      const nextLocation = currentIndex + (direction === 'next' ? stepIncrement : -stepIncrement);
+
+      // return the location if we're within bounds of the chart
+      return nextLocation > 0 && nextLocation < STEPS ? nextLocation : null;
+    },
+    [steps, xPos],
+  );
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLSpanElement>) => {
+      const multiSkip = !!e.shiftKey;
+
+      // Go to the correct step
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        const nextStep = getPosition('next', multiSkip) ?? STEPS;
+        updateScrubber(steps[nextStep] - 1);
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const previousStep = getPosition('previous', multiSkip) ?? 0;
+        updateScrubber(steps[previousStep]);
+      }
+
+      // Jump to beginning or end
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        updateScrubber(steps[STEPS] - 1);
+      }
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        updateScrubber(0);
+      }
+    },
+    [getPosition, updateScrubber, steps],
   );
 
   const handleMouseLeave = useCallback(() => {
@@ -160,10 +266,17 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
       {children}
       {!disabled && (
         <div
+          ref={observe}
+          role="none"
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+          tabIndex={0}
+          onKeyDown={handleKeyDown}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onMouseMove={handleMouseMove}
-          className={scrubHandlerClassName}
+          onBlur={handleMouseLeave}
+          onFocus={handleMouseEnter}
+          className={scrubHandlerClassNameWithFocus}
         />
       )}
     </div>

@@ -51,6 +51,22 @@ export type SparklineInteractiveSubHead = {
    * The accessoryText to show after the price and / or percentage change. An example is "All time"
    */
   accessoryText?: string;
+  /**
+   * The accessibilityLabel to show for the price and / or percentage change. This should be localized
+   * @example
+   * // First, configure your i18n strings
+   * const messages = defineMessages({
+   *   subHeadPrefix: {
+   *     id: `${i18nKey}.subHeadPrefix`,
+   *     defaultMessage: 'Price increase in the amount of',
+   *     description: 'A prefix to make it clear which direction the price action was moving',
+   *   }
+   * });
+   *
+   * // then  provide the translated string the accessibilityLabel prop
+   * messages.subHeadPrefix
+   */
+  accessibilityLabel?: string;
 };
 
 export type SparklineInteractiveHeaderValues = {

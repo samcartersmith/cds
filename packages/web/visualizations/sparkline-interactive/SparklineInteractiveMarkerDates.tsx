@@ -14,7 +14,7 @@ const SparklineInteractiveMarkerDate: FunctionComponent<{
   getFormattedDate: (xPosition: number) => string;
 }> = memo(({ getFormattedDate }) => {
   const [xPos, setXPos] = useState<number>(0);
-  const setupRef = useCallback((ref: HTMLSpanElement) => {
+  const setupRef = useCallback((ref: HTMLSpanElement | null) => {
     if (ref) {
       setXPos(ref.offsetLeft + ref.offsetWidth / 2);
     }
