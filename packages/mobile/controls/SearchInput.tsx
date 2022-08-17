@@ -47,11 +47,12 @@ export const SearchInput = memo(
         disabled,
         disableBackArrow = false,
         hideStartIcon = false,
+        startIcon,
         ...props
       }: SearchInputProps,
       ref: ForwardedRef<RNTextInput>,
     ) => {
-      const [startIconName, setStartIconName] = useState<IconName>('search');
+      const [startIconName, setStartIconName] = useState<IconName>(startIcon ?? 'search');
       const internalRef = useRef<RNTextInput>(null);
       const refs = useMergedRef(ref, internalRef);
 
@@ -59,19 +60,22 @@ export const SearchInput = memo(
         (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
           onFocus?.(e);
 
-          if (!disableBackArrow) {
+          if (!disableBackArrow && startIcon === undefined) {
             setStartIconName('backArrow');
           }
         },
-        [disableBackArrow, onFocus],
+        [disableBackArrow, onFocus, startIcon],
       );
 
       const handleOnBlur = useCallback(
         (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
           onBlur?.(e);
-          setStartIconName('search');
+
+          if (startIcon === undefined) {
+            setStartIconName('search');
+          }
         },
-        [onBlur],
+        [onBlur, startIcon],
       );
 
       /**

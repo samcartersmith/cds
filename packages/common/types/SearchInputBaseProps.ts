@@ -11,6 +11,15 @@ export type SearchInputBaseProps = {
    * @default false
    */
   hideStartIcon?: boolean;
+  /**
+   * Set the start icon. You can only
+   * set it to search | backArrow icon. If
+   * you set this, the icon would not toggle
+   * between search and backArrow depending on
+   * the focus state
+   * @default search
+   */
+  startIcon?: 'search' | 'backArrow';
 } & Omit<
   TextInputBaseProps,
   | 'helperText'

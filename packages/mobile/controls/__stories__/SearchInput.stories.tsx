@@ -69,6 +69,46 @@ export const DisableBackArrow = () => {
   );
 };
 
+const SetCustomSearchStartIcon = () => {
+  const [text, setText] = useState('');
+
+  const handleOnSearch = useCallback((str: string) => {
+    console.log(str);
+  }, []);
+
+  return (
+    <>
+      <SearchInput
+        value={text}
+        startIcon="search"
+        onSearch={handleOnSearch}
+        onChangeText={setText}
+      />
+      <TextLabel1>{text}</TextLabel1>
+    </>
+  );
+};
+
+const SetCustomBackArrowStartIcon = () => {
+  const [text, setText] = useState('');
+
+  const handleOnSearch = useCallback((str: string) => {
+    console.log(str);
+  }, []);
+
+  return (
+    <>
+      <SearchInput
+        value={text}
+        startIcon="backArrow"
+        onSearch={handleOnSearch}
+        onChangeText={setText}
+      />
+      <TextLabel1>{text}</TextLabel1>
+    </>
+  );
+};
+
 const SearchInputScreen = () => {
   return (
     <ExampleScreen>
@@ -107,6 +147,12 @@ const SearchInputScreen = () => {
       </Example>
       <Example title="DisplayValue">
         <DisplayValue />
+      </Example>
+      <Example title="Custom Start Icon - Search">
+        <SetCustomSearchStartIcon />
+      </Example>
+      <Example title="Custom Start Icon - Back arrow">
+        <SetCustomBackArrowStartIcon />
       </Example>
     </ExampleScreen>
   );
