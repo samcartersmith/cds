@@ -19,6 +19,199 @@
       ]
     },
     {
+      "name": "ThemeProvider",
+      "sourceFile": "@cbhq/cds-web/system/ThemeProvider",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/system/ThemeProvider",
+      "callSites": {
+        "checkout/embedded/CheckoutApp.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/hosted/HostedTestCharge.tsx": 1,
+        "scenes/Receipts/Receipts.tsx": 1
+      }
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "@cbhq/cds-web/icons/Icon",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/icons/Icon",
+      "callSites": {
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+        "checkout/components/CollectUserInfo.tsx": 1,
+        "checkout/components/OAuthPaymentSummaryRow.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/OAuthPaymentSummaryRow.tsx": 1
+        },
+        "name": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/OAuthPaymentSummaryRow.tsx": 1
+        },
+        "size": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/OAuthPaymentSummaryRow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 32,
+      "totalCallSites": 13,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "checkout/components/OrganizationDetails.tsx",
+          "callSites": [
+            "checkout/components/CustomerCharge.tsx",
+            "checkout/components/CustomerCharge.tsx",
+            "checkout/components/OrderDetails.tsx",
+            "checkout/components/ProductCheckout.tsx"
+          ]
+        },
+        { "aliasPath": "checkout/components/PriceSection.tsx", "callSites": [] }
+      ],
+      "callSites": {
+        "checkout/embedded/WidgetHeader.tsx": 2,
+        "checkout/components/CollectUserInfo.tsx": 2,
+        "checkout/components/CustomerCharge.tsx": 4,
+        "checkout/components/ExpireTimerV2.tsx": 1,
+        "checkout/components/InformationRow.tsx": 1,
+        "checkout/components/InvoiceDetails.tsx": 3,
+        "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
+        "checkout/components/OrderDetails.tsx": 2,
+        "checkout/components/OrganizationDetails.tsx": 5,
+        "checkout/components/PaymentOptions.tsx": 6,
+        "checkout/components/PaymentStatus.tsx": 3,
+        "checkout/components/PriceSection.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1
+      },
+      "propsWithCallSites": {
+        "width": {
+          "checkout/embedded/WidgetHeader.tsx": 2,
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/CustomerCharge.tsx": 2,
+          "checkout/components/OrganizationDetails.tsx": 4,
+          "checkout/components/PaymentOptions.tsx": 1,
+          "checkout/components/PriceSection.tsx": 1
+        },
+        "height": {
+          "checkout/embedded/WidgetHeader.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "alignItems": {
+          "checkout/embedded/WidgetHeader.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/CustomerCharge.tsx": 3,
+          "checkout/components/InformationRow.tsx": 1,
+          "checkout/components/InvoiceDetails.tsx": 3,
+          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
+          "checkout/components/OrderDetails.tsx": 2,
+          "checkout/components/OrganizationDetails.tsx": 2,
+          "checkout/components/PaymentOptions.tsx": 5,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "justifyContent": {
+          "checkout/embedded/WidgetHeader.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 2,
+          "checkout/components/CustomerCharge.tsx": 3,
+          "checkout/components/InvoiceDetails.tsx": 3,
+          "checkout/components/OrderDetails.tsx": 2,
+          "checkout/components/OrganizationDetails.tsx": 4,
+          "checkout/components/PaymentOptions.tsx": 4,
+          "checkout/components/PriceSection.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "borderedBottom": {
+          "checkout/embedded/WidgetHeader.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 1
+        },
+        "spacing": {
+          "checkout/embedded/WidgetHeader.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 1
+        },
+        "spacingHorizontal": {
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/CustomerCharge.tsx": 2,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/components/PaymentOptions.tsx": 3,
+          "checkout/components/PaymentStatus.tsx": 1,
+          "checkout/components/PriceSection.tsx": 1
+        },
+        "spacingBottom": {
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/CustomerCharge.tsx": 1,
+          "checkout/components/InvoiceDetails.tsx": 1,
+          "checkout/components/OrganizationDetails.tsx": 1,
+          "checkout/components/PaymentStatus.tsx": 1,
+          "checkout/components/PriceSection.tsx": 1
+        },
+        "spacingVertical": { "checkout/components/CustomerCharge.tsx": 2 },
+        "minHeight": {
+          "checkout/components/CustomerCharge.tsx": 2,
+          "checkout/components/InvoiceDetails.tsx": 2,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/components/OrganizationDetails.tsx": 2
+        },
+        "spacingTop": {
+          "checkout/components/InvoiceDetails.tsx": 1,
+          "checkout/components/OrganizationDetails.tsx": 1,
+          "checkout/components/PaymentStatus.tsx": 2
+        },
+        "spacingStart": {
+          "checkout/components/InvoiceDetails.tsx": 2,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/components/OrganizationDetails.tsx": 1
+        },
+        "spacingEnd": {
+          "checkout/components/InvoiceDetails.tsx": 2,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/components/OrganizationDetails.tsx": 1,
+          "checkout/components/PaymentOptions.tsx": 1
+        },
+        "flexGrow": {
+          "checkout/components/InvoiceDetails.tsx": 1,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/components/OrganizationDetails.tsx": 1
+        },
+        "flexDirection": {
+          "checkout/components/InvoiceDetails.tsx": 1,
+          "checkout/components/OrderDetails.tsx": 1
+        },
+        "overflow": { "checkout/components/OrderDetails.tsx": 1 }
+      }
+    },
+    {
+      "name": "LogoWordmark",
+      "sourceFile": "@cbhq/cds-web/icons/LogoWordmark",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/icons/LogoWordmark"
+    },
+    {
+      "name": "IconButton",
+      "sourceFile": "@cbhq/cds-web/buttons/IconButton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/buttons/IconButton",
+      "propsWithCallSites": {
+        "onPress": { "checkout/embedded/WidgetHeader.tsx": 1 },
+        "variant": { "checkout/embedded/WidgetHeader.tsx": 1 },
+        "name": { "checkout/embedded/WidgetHeader.tsx": 1 }
+      }
+    },
+    {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
       "totalInstances": 42,
@@ -167,134 +360,6 @@
       }
     },
     {
-      "name": "Box",
-      "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 32,
-      "totalCallSites": 13,
-      "cds": "@cbhq/cds-web/layout/Box",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "checkout/components/OrganizationDetails.tsx",
-          "callSites": [
-            "checkout/components/CustomerCharge.tsx",
-            "checkout/components/CustomerCharge.tsx",
-            "checkout/components/OrderDetails.tsx",
-            "checkout/components/ProductCheckout.tsx"
-          ]
-        },
-        { "aliasPath": "checkout/components/PriceSection.tsx", "callSites": [] }
-      ],
-      "callSites": {
-        "checkout/components/CollectUserInfo.tsx": 2,
-        "checkout/components/CustomerCharge.tsx": 4,
-        "checkout/components/ExpireTimerV2.tsx": 1,
-        "checkout/components/InformationRow.tsx": 1,
-        "checkout/components/InvoiceDetails.tsx": 3,
-        "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-        "checkout/components/OrderDetails.tsx": 2,
-        "checkout/components/OrganizationDetails.tsx": 5,
-        "checkout/components/PaymentOptions.tsx": 6,
-        "checkout/components/PaymentStatus.tsx": 3,
-        "checkout/components/PriceSection.tsx": 1,
-        "checkout/embedded/WidgetHeader.tsx": 2,
-        "checkout/hosted/HostedCheckout.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacing": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/embedded/WidgetHeader.tsx": 1
-        },
-        "borderedBottom": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/embedded/WidgetHeader.tsx": 1
-        },
-        "justifyContent": {
-          "checkout/components/CollectUserInfo.tsx": 2,
-          "checkout/components/CustomerCharge.tsx": 3,
-          "checkout/components/InvoiceDetails.tsx": 3,
-          "checkout/components/OrderDetails.tsx": 2,
-          "checkout/components/OrganizationDetails.tsx": 4,
-          "checkout/components/PaymentOptions.tsx": 4,
-          "checkout/components/PriceSection.tsx": 1,
-          "checkout/embedded/WidgetHeader.tsx": 1,
-          "checkout/hosted/HostedCheckout.tsx": 1
-        },
-        "alignItems": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 3,
-          "checkout/components/InformationRow.tsx": 1,
-          "checkout/components/InvoiceDetails.tsx": 3,
-          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-          "checkout/components/OrderDetails.tsx": 2,
-          "checkout/components/OrganizationDetails.tsx": 2,
-          "checkout/components/PaymentOptions.tsx": 5,
-          "checkout/embedded/WidgetHeader.tsx": 1,
-          "checkout/hosted/HostedCheckout.tsx": 1
-        },
-        "width": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 2,
-          "checkout/components/OrganizationDetails.tsx": 4,
-          "checkout/components/PaymentOptions.tsx": 1,
-          "checkout/components/PriceSection.tsx": 1,
-          "checkout/embedded/WidgetHeader.tsx": 2
-        },
-        "spacingHorizontal": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 2,
-          "checkout/components/OrderDetails.tsx": 1,
-          "checkout/components/PaymentOptions.tsx": 3,
-          "checkout/components/PaymentStatus.tsx": 1,
-          "checkout/components/PriceSection.tsx": 1
-        },
-        "spacingBottom": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 1,
-          "checkout/components/InvoiceDetails.tsx": 1,
-          "checkout/components/OrganizationDetails.tsx": 1,
-          "checkout/components/PaymentStatus.tsx": 1,
-          "checkout/components/PriceSection.tsx": 1
-        },
-        "spacingVertical": { "checkout/components/CustomerCharge.tsx": 2 },
-        "minHeight": {
-          "checkout/components/CustomerCharge.tsx": 2,
-          "checkout/components/InvoiceDetails.tsx": 2,
-          "checkout/components/OrderDetails.tsx": 1,
-          "checkout/components/OrganizationDetails.tsx": 2
-        },
-        "spacingTop": {
-          "checkout/components/InvoiceDetails.tsx": 1,
-          "checkout/components/OrganizationDetails.tsx": 1,
-          "checkout/components/PaymentStatus.tsx": 2
-        },
-        "spacingStart": {
-          "checkout/components/InvoiceDetails.tsx": 2,
-          "checkout/components/OrderDetails.tsx": 1,
-          "checkout/components/OrganizationDetails.tsx": 1
-        },
-        "spacingEnd": {
-          "checkout/components/InvoiceDetails.tsx": 2,
-          "checkout/components/OrderDetails.tsx": 1,
-          "checkout/components/OrganizationDetails.tsx": 1,
-          "checkout/components/PaymentOptions.tsx": 1
-        },
-        "flexGrow": {
-          "checkout/components/InvoiceDetails.tsx": 1,
-          "checkout/components/OrderDetails.tsx": 1,
-          "checkout/components/OrganizationDetails.tsx": 1
-        },
-        "flexDirection": {
-          "checkout/components/InvoiceDetails.tsx": 1,
-          "checkout/components/OrderDetails.tsx": 1
-        },
-        "overflow": { "checkout/components/OrderDetails.tsx": 1 },
-        "height": {
-          "checkout/embedded/WidgetHeader.tsx": 1,
-          "checkout/hosted/HostedCheckout.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
       "totalInstances": 4,
@@ -356,39 +421,6 @@
           "checkout/components/CollectUserInfo.tsx": 1,
           "checkout/components/ExpireTimerV2.tsx": 1,
           "checkout/components/OAuthPaymentSummaryRow.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Icon",
-      "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "cds": "@cbhq/cds-web/icons/Icon",
-      "callSites": {
-        "checkout/components/CollectUserInfo.tsx": 1,
-        "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-        "checkout/embedded/CustomerChargeWidget.tsx": 1,
-        "checkout/embedded/ProductCheckoutWidget.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1
-        },
-        "size": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1
-        },
-        "color": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1
         }
       }
     },
@@ -760,38 +792,6 @@
       }
     },
     {
-      "name": "ThemeProvider",
-      "sourceFile": "@cbhq/cds-web/system/ThemeProvider",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "cds": "@cbhq/cds-web/system/ThemeProvider",
-      "callSites": {
-        "checkout/embedded/CheckoutApp.tsx": 1,
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/hosted/HostedTestCharge.tsx": 1,
-        "scenes/Receipts/Receipts.tsx": 1
-      }
-    },
-    {
-      "name": "LogoWordmark",
-      "sourceFile": "@cbhq/cds-web/icons/LogoWordmark",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/icons/LogoWordmark"
-    },
-    {
-      "name": "IconButton",
-      "sourceFile": "@cbhq/cds-web/buttons/IconButton",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/buttons/IconButton",
-      "propsWithCallSites": {
-        "onPress": { "checkout/embedded/WidgetHeader.tsx": 1 },
-        "variant": { "checkout/embedded/WidgetHeader.tsx": 1 },
-        "name": { "checkout/embedded/WidgetHeader.tsx": 1 }
-      }
-    },
-    {
       "name": "TextTitle1",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
       "totalInstances": 2,
@@ -821,9 +821,10 @@
     {
       "name": "SpinnerWrapper",
       "sourceFile": "index.tsx",
-      "totalInstances": 1,
+      "totalInstances": 2,
       "totalCallSites": 1,
-      "styledComponent": "div"
+      "styledComponent": "div",
+      "callSites": { "index.tsx": 2 }
     },
     {
       "name": "Header",
@@ -1056,6 +1057,8 @@
         "components/Withdrawal/components/Transaction.tsx": 3,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/PointOfSale/components/PaymentScreen.tsx": 1,
+        "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
+        "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/Settings/components/ApiKeyPanel.tsx": 3,
         "scenes/Settings/components/CloseAccountModal.tsx": 2,
         "scenes/Settings/components/CloudBackupPanel.tsx": 1,
@@ -1069,8 +1072,6 @@
         "scenes/Settings/components/WebhookTestModal.tsx": 3,
         "scenes/Settings/components/WidgetOriginModal.tsx": 1,
         "scenes/Settings/components/WidgetOriginsPanel.tsx": 1,
-        "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
-        "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/static/Faq/Faq.tsx": 2,
         "scenes/static/Integrate/Integrate.tsx": 3,
         "scenes/static/Integrate/IntegrationCard.tsx": 3,
@@ -1115,11 +1116,11 @@
           "components/BackupCodesModal.tsx": 4,
           "components/PageControl.tsx": 1,
           "scenes/Signin/Signin.tsx": 2,
+          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
           "scenes/Settings/components/WebhookEventModal.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
-          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
           "scenes/static/Faq/Faq.tsx": 2,
           "scenes/static/Integrate/Integrate.tsx": 1,
           "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1
@@ -1239,7 +1240,6 @@
         "components/Withdrawal/WithdrawalDetails.tsx": 2,
         "scenes/MaintenanceMode/MaintenanceMode.tsx": 1,
         "scenes/Signin/Signin.tsx": 3,
-        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
         "components/Layouts/AuthLayout/AuthComponents.tsx": 1,
         "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
         "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
@@ -1247,14 +1247,15 @@
         "components/ProductFlow/components/ProductDetails.tsx": 6,
         "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 1,
         "components/ProductFlow/components/ProductTypeForm.tsx": 1,
+        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
         "components/TotpSetupModal/components/Completed.tsx": 1,
         "components/Withdrawal/components/Transaction.tsx": 1,
+        "scenes/TfaReset/components/ShowBackupCodes.tsx": 3,
         "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
         "scenes/Settings/components/WebhookEventModal.tsx": 3,
         "scenes/Settings/components/WebhookModal.tsx": 4,
         "scenes/Settings/components/WebhookTestModal.tsx": 4,
         "scenes/Settings/components/WidgetOriginModal.tsx": 2,
-        "scenes/TfaReset/components/ShowBackupCodes.tsx": 3,
         "scenes/static/Faq/Faq.tsx": 2,
         "scenes/static/Integrate/IntegrationCard.tsx": 5,
         "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3,
@@ -1294,8 +1295,8 @@
         },
         "mt": {
           "components/BackupCodesModal.tsx": 1,
-          "scenes/Settings/components/WebhookModal.tsx": 1,
-          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1
+          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
+          "scenes/Settings/components/WebhookModal.tsx": 1
         },
         "onClick": { "components/Modal.tsx": 1 },
         "className": { "components/Modal.tsx": 1 },
@@ -1979,6 +1980,115 @@
       "propsWithCallSites": { "style": { "utils/i18n.tsx": 1 } }
     },
     {
+      "name": "AppWrapper",
+      "sourceFile": "checkout/embedded/CheckoutApp.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "BlurBackground",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": { "id": { "checkout/embedded/CustomerChargeWidget.tsx": 1 } }
+    },
+    {
+      "name": "PromptText",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": { "checkout/embedded/CustomerChargeWidget.tsx": 2 }
+    },
+    {
+      "name": "PromptOption",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Link",
+      "callSites": { "checkout/embedded/CustomerChargeWidget.tsx": 2 },
+      "propsWithCallSites": { "onClick": { "checkout/embedded/CustomerChargeWidget.tsx": 2 } }
+    },
+    {
+      "name": "ResponsiveCloseButton",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": { "onClick": { "checkout/embedded/CustomerChargeWidget.tsx": 1 } }
+    },
+    {
+      "name": "ResponsiveChargeWidgetV2",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "IndeterminateProgress",
+      "sourceFile": "checkout/components/IndeterminateProgress",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "Wrapper",
+      "callSites": {
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1
+      }
+    },
+    {
+      "name": "ResponsiveWidgetWrapperV2",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ResponsiveCloseButton",
+      "sourceFile": "checkout/embedded/ProductCheckoutWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": { "onClick": { "checkout/embedded/ProductCheckoutWidget.tsx": 1 } }
+    },
+    {
+      "name": "ResponsiveCheckoutWidget",
+      "sourceFile": "checkout/embedded/ProductCheckoutWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ResponsiveWidgetWrapper",
+      "sourceFile": "checkout/embedded/ProductCheckoutWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ResponsiveCloseButton",
+      "sourceFile": "checkout/embedded/WidgetHeader.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "SpinnerWrapper",
+      "sourceFile": "checkout/embedded/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "div",
+      "sourceFile": "checkout/embedded/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [{ "prop": "className", "callSite": "checkout/embedded/index.tsx" }],
+      "propsWithCallSites": { "className": { "checkout/embedded/index.tsx": 1 } }
+    },
+    {
       "name": "Input",
       "sourceFile": "checkout/components/CollectUserInfo.tsx",
       "totalInstances": 1,
@@ -2057,7 +2167,7 @@
       },
       "propsWithCallSites": {
         "product": { "checkout/components/CustomerCharge.tsx": 1 },
-        "networks": {
+        "currencies": {
           "checkout/components/CustomerCharge.tsx": 1,
           "checkout/hosted/HostedTestCharge.tsx": 1
         },
@@ -3048,115 +3158,6 @@
       }
     },
     {
-      "name": "AppWrapper",
-      "sourceFile": "checkout/embedded/CheckoutApp.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "BlurBackground",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": { "id": { "checkout/embedded/CustomerChargeWidget.tsx": 1 } }
-    },
-    {
-      "name": "PromptText",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "callSites": { "checkout/embedded/CustomerChargeWidget.tsx": 2 }
-    },
-    {
-      "name": "PromptOption",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Link",
-      "callSites": { "checkout/embedded/CustomerChargeWidget.tsx": 2 },
-      "propsWithCallSites": { "onClick": { "checkout/embedded/CustomerChargeWidget.tsx": 2 } }
-    },
-    {
-      "name": "ResponsiveCloseButton",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": { "onClick": { "checkout/embedded/CustomerChargeWidget.tsx": 1 } }
-    },
-    {
-      "name": "ResponsiveChargeWidgetV2",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "IndeterminateProgress",
-      "sourceFile": "checkout/components/IndeterminateProgress",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalElement": "Wrapper",
-      "callSites": {
-        "checkout/embedded/CustomerChargeWidget.tsx": 1,
-        "checkout/hosted/HostedCheckout.tsx": 1
-      }
-    },
-    {
-      "name": "ResponsiveWidgetWrapperV2",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ResponsiveCloseButton",
-      "sourceFile": "checkout/embedded/ProductCheckoutWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": { "onClick": { "checkout/embedded/ProductCheckoutWidget.tsx": 1 } }
-    },
-    {
-      "name": "ResponsiveCheckoutWidget",
-      "sourceFile": "checkout/embedded/ProductCheckoutWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ResponsiveWidgetWrapper",
-      "sourceFile": "checkout/embedded/ProductCheckoutWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ResponsiveCloseButton",
-      "sourceFile": "checkout/embedded/WidgetHeader.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "SpinnerWrapper",
-      "sourceFile": "checkout/embedded/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "div",
-      "sourceFile": "checkout/embedded/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "className", "callSite": "checkout/embedded/index.tsx" }],
-      "propsWithCallSites": { "className": { "checkout/embedded/index.tsx": 1 } }
-    },
-    {
       "name": "TwoColumnLayout",
       "sourceFile": "checkout/hosted/TwoColumnLayout",
       "totalInstances": 1,
@@ -3258,6 +3259,32 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "AppWrapper"
+    },
+    {
+      "name": "HeaderWrapper",
+      "sourceFile": "components/AccountingReports/AccountingReportsModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ConfirmationView",
+      "sourceFile": "components/AccountingReports/ConfirmationView",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "@material-ui/core/Box",
+      "propsWithCallSites": {
+        "email": { "components/AccountingReports/AccountingReportsModal.tsx": 1 },
+        "handleDoneButtonClick": { "components/AccountingReports/AccountingReportsModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "DownloadErrorView",
+      "sourceFile": "components/AccountingReports/DownloadErrorView",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "Container",
+      "propsWithCallSites": { "message": { "components/AccountingReports/DownloadView.tsx": 1 } }
     },
     {
       "name": "PanelEmptyState",
@@ -3511,32 +3538,6 @@
         "onMouseLeave": { "components/AccountsList/WithdrawIcon.tsx": 1 },
         "disabled": { "components/AccountsList/WithdrawIcon.tsx": 1 }
       }
-    },
-    {
-      "name": "HeaderWrapper",
-      "sourceFile": "components/AccountingReports/AccountingReportsModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ConfirmationView",
-      "sourceFile": "components/AccountingReports/ConfirmationView",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "@material-ui/core/Box",
-      "propsWithCallSites": {
-        "email": { "components/AccountingReports/AccountingReportsModal.tsx": 1 },
-        "handleDoneButtonClick": { "components/AccountingReports/AccountingReportsModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "DownloadErrorView",
-      "sourceFile": "components/AccountingReports/DownloadErrorView",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "Container",
-      "propsWithCallSites": { "message": { "components/AccountingReports/DownloadView.tsx": 1 } }
     },
     {
       "name": "SupportEmailPanel",
@@ -5448,59 +5449,6 @@
       }
     },
     {
-      "name": "Container",
-      "sourceFile": "components/ActivationPanel/components/CheckoutMethod.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "propsWithCallSites": {
-        "onClick": { "components/ActivationPanel/components/CheckoutMethod.tsx": 1 }
-      }
-    },
-    {
-      "name": "Header",
-      "sourceFile": "components/ActivationPanel/components/CheckoutMethod.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Heading"
-    },
-    {
-      "name": "Description",
-      "sourceFile": "components/ActivationPanel/components/CheckoutMethod.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "callSites": { "components/ActivationPanel/components/IntegrationsModal.tsx": 2 },
-      "propsWithCallSites": {
-        "innerRef": { "components/ActivationPanel/components/IntegrationsModal.tsx": 2 },
-        "integrationView": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "Integrations",
-      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "BackButton",
-      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "onClick": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
-      }
-    },
-    {
       "name": "AuthLayoutBox",
       "sourceFile": "components/Layouts/AuthLayout/AuthLayout.tsx",
       "totalInstances": 1,
@@ -5995,6 +5943,59 @@
       "callSites": { "components/ProductFlow/components/ProductTypeForm.tsx": 2 },
       "propsWithCallSites": {
         "name": { "components/ProductFlow/components/ProductTypeForm.tsx": 2 }
+      }
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/ActivationPanel/components/CheckoutMethod.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
+      "propsWithCallSites": {
+        "onClick": { "components/ActivationPanel/components/CheckoutMethod.tsx": 1 }
+      }
+    },
+    {
+      "name": "Header",
+      "sourceFile": "components/ActivationPanel/components/CheckoutMethod.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Heading"
+    },
+    {
+      "name": "Description",
+      "sourceFile": "components/ActivationPanel/components/CheckoutMethod.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Text"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": { "components/ActivationPanel/components/IntegrationsModal.tsx": 2 },
+      "propsWithCallSites": {
+        "innerRef": { "components/ActivationPanel/components/IntegrationsModal.tsx": 2 },
+        "integrationView": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "Integrations",
+      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "BackButton",
+      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "propsWithCallSites": {
+        "onClick": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
       }
     },
     {
@@ -6612,6 +6613,111 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "strong"
+    },
+    {
+      "name": "SkipButton",
+      "sourceFile": "scenes/TfaReset/components/GenerateBackupCodes.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "propsWithCallSites": {
+        "disabled": { "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1 },
+        "onClick": { "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1 }
+      }
+    },
+    {
+      "name": "StorageStatus",
+      "sourceFile": "scenes/TfaReset/components/ResetComplete.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
+      "callSites": { "scenes/TfaReset/components/ResetComplete.tsx": 2 }
+    },
+    {
+      "name": "CheckboxLabel",
+      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Text"
+    },
+    {
+      "name": "BackupCodesContainer",
+      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "BackupCode",
+      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Text",
+      "callSites": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
+      "propsWithCallSites": {
+        "align": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
+        "key": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 }
+      }
+    },
+    {
+      "name": "BackupButton",
+      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "callSites": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
+      "propsWithCallSites": {
+        "onClick": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
+        "fullWidth": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
+        "mr": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 1 }
+      }
+    },
+    {
+      "name": "List",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ol"
+    },
+    {
+      "name": "ListItem",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "styledComponent": "li",
+      "callSites": { "scenes/TfaReset/components/TfaVerification.tsx": 4 }
+    },
+    {
+      "name": "InputForm",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "form",
+      "propsWithCallSites": { "onSubmit": { "scenes/TfaReset/components/TfaVerification.tsx": 1 } }
+    },
+    {
+      "name": "QRText",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Text"
+    },
+    {
+      "name": "HelperText",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Text",
+      "callSites": { "scenes/TfaReset/components/TfaVerification.tsx": 2 }
+    },
+    {
+      "name": "KeyText",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "span",
+      "callSites": { "scenes/TfaReset/components/TfaVerification.tsx": 2 },
+      "propsWithCallSites": { "onClick": { "scenes/TfaReset/components/TfaVerification.tsx": 2 } }
     },
     {
       "name": "ApiKey",
@@ -7483,111 +7589,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "p"
-    },
-    {
-      "name": "SkipButton",
-      "sourceFile": "scenes/TfaReset/components/GenerateBackupCodes.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "disabled": { "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1 },
-        "onClick": { "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1 }
-      }
-    },
-    {
-      "name": "StorageStatus",
-      "sourceFile": "scenes/TfaReset/components/ResetComplete.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "callSites": { "scenes/TfaReset/components/ResetComplete.tsx": 2 }
-    },
-    {
-      "name": "CheckboxLabel",
-      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text"
-    },
-    {
-      "name": "BackupCodesContainer",
-      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "BackupCode",
-      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Text",
-      "callSites": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
-      "propsWithCallSites": {
-        "align": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
-        "key": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 }
-      }
-    },
-    {
-      "name": "BackupButton",
-      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "callSites": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
-      "propsWithCallSites": {
-        "onClick": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
-        "fullWidth": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
-        "mr": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 1 }
-      }
-    },
-    {
-      "name": "List",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ol"
-    },
-    {
-      "name": "ListItem",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "styledComponent": "li",
-      "callSites": { "scenes/TfaReset/components/TfaVerification.tsx": 4 }
-    },
-    {
-      "name": "InputForm",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "form",
-      "propsWithCallSites": { "onSubmit": { "scenes/TfaReset/components/TfaVerification.tsx": 1 } }
-    },
-    {
-      "name": "QRText",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text"
-    },
-    {
-      "name": "HelperText",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Text",
-      "callSites": { "scenes/TfaReset/components/TfaVerification.tsx": 2 }
-    },
-    {
-      "name": "KeyText",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "span",
-      "callSites": { "scenes/TfaReset/components/TfaVerification.tsx": 2 },
-      "propsWithCallSites": { "onClick": { "scenes/TfaReset/components/TfaVerification.tsx": 2 } }
     },
     {
       "name": "StaticContainer",
@@ -8544,19 +8545,19 @@
     {
       "name": "Spinner",
       "sourceFile": "components/Spinner",
-      "totalInstances": 40,
+      "totalInstances": 41,
       "totalCallSites": 36,
       "callSites": {
-        "index.tsx": 1,
+        "index.tsx": 2,
         "components/BackupCodesModal.tsx": 1,
         "components/CreateInvoiceModalForm.tsx": 1,
         "components/Panel.tsx": 1,
         "scenes/App.tsx": 1,
-        "checkout/components/CustomerCharge.tsx": 1,
-        "checkout/components/LoadingCheckout.tsx": 1,
         "checkout/embedded/CustomerChargeWidget.tsx": 1,
         "checkout/embedded/ProductCheckoutWidget.tsx": 1,
         "checkout/embedded/index.tsx": 1,
+        "checkout/components/CustomerCharge.tsx": 1,
+        "checkout/components/LoadingCheckout.tsx": 1,
         "checkout/hosted/HostedCheckout.tsx": 1,
         "checkout/hosted/HostedTestCharge.tsx": 1,
         "checkout/hosted/InvoiceReceiptRedirect.tsx": 1,
@@ -8575,9 +8576,9 @@
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 2,
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 2,
-        "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
         "scenes/TfaReset/components/TfaVerification.tsx": 2,
+        "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/PointOfSale/components/desktop/NetworkPicker.tsx": 1,
         "scenes/PointOfSale/components/desktop/OrderSummary.tsx": 1,
         "scenes/PointOfSale/components/desktop/ProductsList.tsx": 1,
@@ -8586,7 +8587,7 @@
       },
       "propsWithCallSites": {
         "size": {
-          "index.tsx": 1,
+          "index.tsx": 2,
           "components/CreateInvoiceModalForm.tsx": 1,
           "checkout/embedded/index.tsx": 1,
           "checkout/hosted/HostedCheckout.tsx": 1,
@@ -8597,18 +8598,18 @@
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-          "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/TfaVerification.tsx": 1,
+          "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderSummary.tsx": 1
         },
         "inverted": {
           "components/Signup/LightSignupForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-          "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/TfaVerification.tsx": 1,
+          "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderSummary.tsx": 1
         }
       }
@@ -8798,6 +8799,7 @@
         "components/CreateInvoiceModalSend.tsx": 3,
         "components/FullPageErrorBoundary.tsx": 2,
         "oauth/OauthCallback.tsx": 4,
+        "checkout/embedded/CustomerChargeWidget.tsx": 4,
         "checkout/components/CollectUserInfo.tsx": 4,
         "checkout/components/CustomerCharge.tsx": 6,
         "checkout/components/ErrorCheckout.tsx": 2,
@@ -8821,9 +8823,8 @@
         "checkout/components/SuccessfulPayment.tsx": 12,
         "checkout/components/TransactionsOAuthTotpModal.tsx": 8,
         "checkout/components/WaitingForConfirmations.tsx": 7,
-        "checkout/embedded/CustomerChargeWidget.tsx": 4,
-        "components/AccountsList/AccountsList.tsx": 22,
         "components/AccountingReports/AccountingReportsModal.tsx": 1,
+        "components/AccountsList/AccountsList.tsx": 22,
         "components/ActivationPanel/ActivationPanel.tsx": 3,
         "components/Invoice/InvoiceDetailModal.tsx": 9,
         "components/Invoice/InvoiceList.tsx": 2,
@@ -8867,8 +8868,6 @@
         "scenes/ResendConfirmation/ResendConfirmation.tsx": 4,
         "scenes/Signin/Signin.tsx": 12,
         "checkout/components/SendsOAuthTotpModal/SendsTotpModal.tsx": 8,
-        "components/ActivationPanel/components/CheckoutMethod.tsx": 12,
-        "components/ActivationPanel/components/IntegrationsModal.tsx": 3,
         "components/Layouts/AuthLayout/Footer.tsx": 2,
         "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
         "components/Layouts/DashboardLayout/Footer.tsx": 5,
@@ -8880,6 +8879,8 @@
         "components/ProductFlow/components/ProductDetails.tsx": 18,
         "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 4,
         "components/ProductFlow/components/ProductTypeForm.tsx": 5,
+        "components/ActivationPanel/components/CheckoutMethod.tsx": 12,
+        "components/ActivationPanel/components/IntegrationsModal.tsx": 3,
         "components/Withdrawal/components/Transaction.tsx": 9,
         "scenes/Onboarding/components/EmailVerified.tsx": 3,
         "scenes/Onboarding/components/TfaEnabled.tsx": 6,
@@ -8889,6 +8890,10 @@
         "scenes/PointOfSale/components/PaymentScreen.tsx": 13,
         "scenes/ResetPassword/components/CompletePasswordReset.tsx": 9,
         "scenes/ResetPassword/components/RequestPasswordReset.tsx": 7,
+        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 4,
+        "scenes/TfaReset/components/ResetComplete.tsx": 4,
+        "scenes/TfaReset/components/ShowBackupCodes.tsx": 6,
+        "scenes/TfaReset/components/TfaVerification.tsx": 10,
         "scenes/Settings/components/ApiKeyPanel.tsx": 7,
         "scenes/Settings/components/BrandingPanel.tsx": 1,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 4,
@@ -8918,10 +8923,6 @@
         "scenes/Settings/components/WebhookTestModal.tsx": 7,
         "scenes/Settings/components/WidgetOriginModal.tsx": 5,
         "scenes/Settings/components/WidgetOriginsPanel.tsx": 5,
-        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 4,
-        "scenes/TfaReset/components/ResetComplete.tsx": 4,
-        "scenes/TfaReset/components/ShowBackupCodes.tsx": 6,
-        "scenes/TfaReset/components/TfaVerification.tsx": 10,
         "scenes/static/Faq/Faq.tsx": 103,
         "scenes/static/Integrate/Integrate.tsx": 2,
         "scenes/static/Integrate/IntegrationCard.tsx": 2,
@@ -8979,6 +8980,7 @@
           "scenes/PointOfSale/components/PaymentScreen.tsx": 4,
           "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/CloseAccountPanel.tsx": 1,
           "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
@@ -8987,7 +8989,6 @@
           "scenes/Settings/components/ProfilePanelEmailChange.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WebhookTestModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/static/Faq/Faq.tsx": 18,
           "scenes/static/Integrate/WooCommerce.tsx": 5,
           "scenes/PointOfSale/components/desktop/OrderLayout.tsx": 1,
@@ -9053,15 +9054,19 @@
         "scenes/Products/Products.tsx": 1,
         "scenes/Reconfirm/Reconfirm.tsx": 1,
         "scenes/Signin/Signin.tsx": 1,
-        "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
         "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
         "components/ProductFlow/components/ProductDetails.tsx": 5,
+        "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
         "scenes/Onboarding/components/EmailVerified.tsx": 1,
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/PointOfSale/components/PaymentScreen.tsx": 1,
         "scenes/ResetPassword/components/CompletePasswordReset.tsx": 3,
         "scenes/ResetPassword/components/RequestPasswordReset.tsx": 2,
+        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
+        "scenes/TfaReset/components/ResetComplete.tsx": 1,
+        "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
+        "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 1,
         "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/Settings/components/CloseAccountModal.tsx": 1,
@@ -9079,10 +9084,6 @@
         "scenes/Settings/components/WebhookSecretModal.tsx": 1,
         "scenes/Settings/components/WebhookTestModal.tsx": 1,
         "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
-        "scenes/TfaReset/components/ResetComplete.tsx": 1,
-        "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
-        "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/static/Weipay/Weipay.tsx": 1
       },
       "propsWithCallSites": {
@@ -9109,6 +9110,10 @@
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/CompletePasswordReset.tsx": 3,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 2,
+          "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
+          "scenes/TfaReset/components/ResetComplete.tsx": 1,
+          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/CloudBackupPanel.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
@@ -9123,10 +9128,6 @@
           "scenes/Settings/components/WebhookSecretModal.tsx": 1,
           "scenes/Settings/components/WebhookTestModal.tsx": 1,
           "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
-          "scenes/TfaReset/components/ResetComplete.tsx": 1,
-          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/static/Weipay/Weipay.tsx": 1
         },
         "children": {
@@ -9201,6 +9202,9 @@
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
+          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
           "scenes/Settings/components/EmailChangeModal.tsx": 1,
           "scenes/Settings/components/FlexiblePaymentAcceptancePanel.tsx": 1,
@@ -9209,10 +9213,7 @@
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WebhookSecretModal.tsx": 1,
           "scenes/Settings/components/WebhookTestModal.tsx": 1,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
-          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "radius": {
           "checkout/components/NetworkPicker.tsx": 1,
@@ -9297,6 +9298,7 @@
         "scenes/Signin/Signin.tsx": 2,
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
         "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1,
+        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 1,
         "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/Settings/components/CloseAccountModal.tsx": 1,
@@ -9306,8 +9308,7 @@
         "scenes/Settings/components/ProfilePanelEmailLocale.tsx": 1,
         "scenes/Settings/components/ProfilePanelLocalCurrency.tsx": 1,
         "scenes/Settings/components/WebhookEventModal.tsx": 1,
-        "scenes/Settings/components/WebhookTestModal.tsx": 2,
-        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1
+        "scenes/Settings/components/WebhookTestModal.tsx": 2
       },
       "propsWithCallSites": {
         "m": {
@@ -9434,9 +9435,9 @@
         "components/TotpSetupModal/TotpSetupModal.tsx": 1,
         "components/Withdrawal/ConversionsModal.tsx": 1,
         "components/Withdrawal/WithdrawalDetails.tsx": 1,
-        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
         "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
         "components/ProductFlow/components/ProductDetails.tsx": 1,
+        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
         "scenes/PointOfSale/components/CustomAmountModal.tsx": 1,
         "scenes/Settings/components/CloseAccountModal.tsx": 1,
         "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
@@ -9470,9 +9471,9 @@
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/ConversionsModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
@@ -9503,9 +9504,9 @@
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/ConversionsModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "scenes/PointOfSale/components/CustomAmountModal.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
@@ -9556,9 +9557,9 @@
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/ConversionsModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "scenes/PointOfSale/components/CustomAmountModal.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
@@ -9585,8 +9586,8 @@
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/ConversionsModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "scenes/PointOfSale/components/CustomAmountModal.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
@@ -9608,9 +9609,9 @@
           "components/ProductFlow/ProductFlow.tsx": 1,
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "scenes/PointOfSale/components/CustomAmountModal.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
@@ -10086,8 +10087,8 @@
         "components/Layouts/AuthLayout/AuthComponents.tsx": 1,
         "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
         "scenes/Onboarding/components/Stepper.tsx": 2,
-        "scenes/Settings/components/CloudBackupPanel.tsx": 1,
         "scenes/TfaReset/components/ResetComplete.tsx": 2,
+        "scenes/Settings/components/CloudBackupPanel.tsx": 1,
         "scenes/static/Integrate/Shopify.tsx": 1,
         "scenes/static/Integrate/WooCommerce.tsx": 1,
         "scenes/static/Jaxx/Jaxx.tsx": 6
@@ -10098,8 +10099,8 @@
           "scenes/TfaReset/TfaReset.tsx": 1,
           "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
           "scenes/Onboarding/components/Stepper.tsx": 2,
-          "scenes/Settings/components/CloudBackupPanel.tsx": 1,
           "scenes/TfaReset/components/ResetComplete.tsx": 2,
+          "scenes/Settings/components/CloudBackupPanel.tsx": 1,
           "scenes/static/Integrate/Shopify.tsx": 1,
           "scenes/static/Integrate/WooCommerce.tsx": 1,
           "scenes/static/Jaxx/Jaxx.tsx": 6
@@ -10138,8 +10139,8 @@
           "scenes/Settings/components/CloudBackupPanel.tsx": 1
         },
         "mr": {
-          "scenes/Settings/components/CloudBackupPanel.tsx": 1,
-          "scenes/TfaReset/components/ResetComplete.tsx": 2
+          "scenes/TfaReset/components/ResetComplete.tsx": 2,
+          "scenes/Settings/components/CloudBackupPanel.tsx": 1
         }
       }
     },
@@ -10195,17 +10196,17 @@
         "components/Withdrawal/ConversionsNuxModal.tsx": 3,
         "components/Withdrawal/WithdrawalsList.tsx": 1,
         "scenes/NotFound/NotFound.tsx": 1,
-        "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
-        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
         "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
         "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
+        "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
+        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
         "scenes/Onboarding/components/EmailVerified.tsx": 1,
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
-        "scenes/Settings/components/BrandingPanelLogo.tsx": 1,
-        "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
         "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
         "scenes/TfaReset/components/ResetComplete.tsx": 1,
         "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
+        "scenes/Settings/components/BrandingPanelLogo.tsx": 1,
+        "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
         "scenes/PointOfSale/components/desktop/OrderLayout.tsx": 1,
         "scenes/PointOfSale/components/desktop/OrderList.tsx": 1,
         "scenes/PointOfSale/components/desktop/ProductsList.tsx": 1,
@@ -10232,17 +10233,17 @@
           "components/Withdrawal/ConversionsNuxModal.tsx": 3,
           "components/Withdrawal/WithdrawalsList.tsx": 1,
           "scenes/NotFound/NotFound.tsx": 1,
-          "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
           "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
+          "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "scenes/Onboarding/components/EmailVerified.tsx": 1,
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
-          "scenes/Settings/components/BrandingPanelLogo.tsx": 1,
-          "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/ResetComplete.tsx": 1,
           "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
+          "scenes/Settings/components/BrandingPanelLogo.tsx": 1,
+          "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderLayout.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderList.tsx": 1,
           "scenes/PointOfSale/components/desktop/ProductsList.tsx": 1,
@@ -10268,16 +10269,16 @@
           "components/Withdrawal/ConversionsNuxModal.tsx": 3,
           "components/Withdrawal/WithdrawalsList.tsx": 1,
           "scenes/NotFound/NotFound.tsx": 1,
-          "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
           "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
+          "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "scenes/Onboarding/components/EmailVerified.tsx": 1,
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
-          "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/ResetComplete.tsx": 1,
           "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
+          "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderLayout.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderList.tsx": 1,
           "scenes/PointOfSale/components/desktop/ProductsList.tsx": 1,
@@ -10303,16 +10304,16 @@
           "components/Withdrawal/ConversionsNuxModal.tsx": 3,
           "components/Withdrawal/WithdrawalsList.tsx": 1,
           "scenes/NotFound/NotFound.tsx": 1,
-          "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
           "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
+          "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "scenes/Onboarding/components/EmailVerified.tsx": 1,
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
-          "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/ResetComplete.tsx": 1,
           "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
+          "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderLayout.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderList.tsx": 1,
           "scenes/PointOfSale/components/desktop/ProductsList.tsx": 1,
@@ -10325,8 +10326,8 @@
         "mb": {
           "components/FullPageErrorBoundary.tsx": 1,
           "scenes/NotFound/NotFound.tsx": 1,
-          "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
-          "components/Layouts/DashboardLayout/Sidebar.tsx": 1
+          "components/Layouts/DashboardLayout/Sidebar.tsx": 1,
+          "components/ActivationPanel/components/CheckoutMethod.tsx": 1
         },
         "onClick": { "components/ProductFlow/ProductFlow.tsx": 2 },
         "mr": {
@@ -10363,8 +10364,8 @@
       "callSites": {
         "components/Input.tsx": 1,
         "components/Modal.tsx": 1,
-        "checkout/components/LoadingCheckout.tsx": 1,
         "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/components/LoadingCheckout.tsx": 1,
         "components/OrdersList/OrdersList.tsx": 1,
         "scenes/Dashboard/Dashboard.tsx": 1,
         "components/ProductFlow/components/EditForm.tsx": 1,
@@ -10375,15 +10376,15 @@
         "scenes/PointOfSale/components/PaymentScreen.tsx": 1,
         "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2,
         "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 2,
+        "scenes/TfaReset/components/ResetComplete.tsx": 1,
+        "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
+        "scenes/TfaReset/components/TfaVerification.tsx": 3,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 1,
         "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/Settings/components/CloseAccountModal.tsx": 2,
         "scenes/Settings/components/PasswordChangeModal.tsx": 1,
         "scenes/Settings/components/ProfilePanelEmailChange.tsx": 1,
-        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 2,
-        "scenes/TfaReset/components/ResetComplete.tsx": 1,
-        "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
-        "scenes/TfaReset/components/TfaVerification.tsx": 3,
         "scenes/PointOfSale/components/desktop/OrderSummary.tsx": 1,
         "scenes/PointOfSale/components/mobile/NetworkPicker.tsx": 1,
         "scenes/PointOfSale/components/mobile/OrderSummary.tsx": 1,
@@ -10709,6 +10710,169 @@
       "propsWithCallSites": { "onClick": { "utils/tracking.tsx": 1 } }
     },
     {
+      "name": "DesignFeatureFlagProvider",
+      "sourceFile": "providers/DesignFeatureFlagProvider",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "checkout/embedded/CheckoutApp.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/hosted/HostedTestCharge.tsx": 1,
+        "scenes/Receipts/Receipts.tsx": 1
+      },
+      "propsWithCallSites": {
+        "frontier": {
+          "checkout/embedded/CheckoutApp.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "OAuthProvider",
+      "sourceFile": "providers/OAuthProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Prompt",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "checkout/embedded/CustomerChargeWidget.tsx": 2 },
+      "propsWithCallSites": { "id": { "checkout/embedded/CustomerChargeWidget.tsx": 2 } }
+    },
+    {
+      "name": "CustomerCharge",
+      "sourceFile": "checkout/components/CustomerCharge",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1
+      },
+      "propsWithCallSites": {
+        "store": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "checkout": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "blur": { "checkout/embedded/CustomerChargeWidget.tsx": 1 }
+      }
+    },
+    {
+      "name": "ErrorCheckout",
+      "sourceFile": "checkout/components/ErrorCheckout",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/hosted/HostedTestCharge.tsx": 1
+      },
+      "propsWithCallSites": {
+        "checkout": { "checkout/embedded/CustomerChargeWidget.tsx": 1 },
+        "onRetry": { "checkout/embedded/CustomerChargeWidget.tsx": 1 },
+        "error": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "WidgetHeader",
+      "sourceFile": "checkout/embedded/WidgetHeader",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/embedded/ProductCheckoutWidget.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onClose": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Footer",
+      "sourceFile": "checkout/components/Footer",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "scenes/Receipts/Receipts.tsx": 1
+      },
+      "propsWithCallSites": {
+        "extendedDescription": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        },
+        "shouldShowPrivacyDisclaimerForCollectedInfo": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ProductCheckout",
+      "sourceFile": "checkout/components/ProductCheckout",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1
+      },
+      "propsWithCallSites": {
+        "store": {
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "isEmbedded": { "checkout/embedded/ProductCheckoutWidget.tsx": 1 }
+      }
+    },
+    {
+      "name": "CheckoutApp",
+      "sourceFile": "checkout/embedded/CheckoutApp",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Route",
+      "sourceFile": "react-router-dom/Route",
+      "totalInstances": 5,
+      "totalCallSites": 2,
+      "callSites": { "checkout/embedded/index.tsx": 2, "components/Route/Route.tsx": 3 },
+      "propsWithCallSites": {
+        "path": { "checkout/embedded/index.tsx": 2 },
+        "exact": { "checkout/embedded/index.tsx": 2 },
+        "component": { "checkout/embedded/index.tsx": 2 },
+        "render": { "components/Route/Route.tsx": 3 }
+      }
+    },
+    {
+      "name": "CheckoutAppWrapper",
+      "sourceFile": "checkout/embedded/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "Progress",
       "sourceFile": "checkout/components/CircularProgress.tsx",
       "totalInstances": 1,
@@ -10749,7 +10913,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "network": { "checkout/components/CustomerCharge.tsx": 1 },
+        "currencyName": { "checkout/components/CustomerCharge.tsx": 1 },
         "address": { "checkout/components/CustomerCharge.tsx": 1 },
         "localPrice": { "checkout/components/CustomerCharge.tsx": 1 },
         "cryptoPrice": { "checkout/components/CustomerCharge.tsx": 1 },
@@ -10963,17 +11127,17 @@
         "components/Withdrawal/ConversionWithdrawalDetails.tsx": 1,
         "components/Withdrawal/WithdrawalDetails.tsx": 1,
         "scenes/Receipts/ReceiptView.tsx": 1,
-        "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
         "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
         "components/Layouts/AuthLayout/Footer.tsx": 2,
         "components/Layouts/DashboardLayout/Footer.tsx": 5,
+        "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
+        "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/Settings/components/ApiKeyPanel.tsx": 1,
         "scenes/Settings/components/DepositPanel.tsx": 1,
         "scenes/Settings/components/WebhookPanel.tsx": 2,
         "scenes/Settings/components/WidgetOriginsPanel.tsx": 1,
-        "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/static/Faq/Faq.tsx": 18,
         "scenes/static/Integrate/IntegrationCard.tsx": 1,
         "scenes/static/Jaxx/Jaxx.tsx": 2
@@ -10986,17 +11150,17 @@
           "components/Withdrawal/ConversionWithdrawalDetails.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
           "scenes/Receipts/ReceiptView.tsx": 1,
-          "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
           "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
           "components/Layouts/AuthLayout/Footer.tsx": 2,
           "components/Layouts/DashboardLayout/Footer.tsx": 5,
+          "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/ApiKeyPanel.tsx": 1,
           "scenes/Settings/components/DepositPanel.tsx": 1,
           "scenes/Settings/components/WebhookPanel.tsx": 2,
           "scenes/Settings/components/WidgetOriginsPanel.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/static/Faq/Faq.tsx": 18,
           "scenes/static/Jaxx/Jaxx.tsx": 2
         },
@@ -11277,8 +11441,8 @@
       "propsWithCallSites": {
         "disabled": { "checkout/components/PaymentOptions.tsx": 1 },
         "key": { "checkout/components/PaymentOptions.tsx": 1 },
-        "network": { "checkout/components/PaymentOptions.tsx": 1 },
-        "currency": { "checkout/components/PaymentOptions.tsx": 1 }
+        "currencyName": { "checkout/components/PaymentOptions.tsx": 1 },
+        "currencySymbol": { "checkout/components/PaymentOptions.tsx": 1 }
       }
     },
     {
@@ -11302,7 +11466,8 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "size": { "checkout/components/PaymentStatus.tsx": 1 },
-        "value": { "checkout/components/PaymentStatus.tsx": 1 }
+        "value": { "checkout/components/PaymentStatus.tsx": 1 },
+        "imageSettings": { "checkout/components/PaymentStatus.tsx": 1 }
       }
     },
     {
@@ -11445,169 +11610,6 @@
     {
       "name": "b",
       "sourceFile": "checkout/components/WaitingForConfirmations.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "DesignFeatureFlagProvider",
-      "sourceFile": "providers/DesignFeatureFlagProvider",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "checkout/embedded/CheckoutApp.tsx": 1,
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/hosted/HostedTestCharge.tsx": 1,
-        "scenes/Receipts/Receipts.tsx": 1
-      },
-      "propsWithCallSites": {
-        "frontier": {
-          "checkout/embedded/CheckoutApp.tsx": 1,
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "OAuthProvider",
-      "sourceFile": "providers/OAuthProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Prompt",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "checkout/embedded/CustomerChargeWidget.tsx": 2 },
-      "propsWithCallSites": { "id": { "checkout/embedded/CustomerChargeWidget.tsx": 2 } }
-    },
-    {
-      "name": "CustomerCharge",
-      "sourceFile": "checkout/components/CustomerCharge",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/embedded/CustomerChargeWidget.tsx": 1,
-        "checkout/hosted/HostedCheckout.tsx": 1
-      },
-      "propsWithCallSites": {
-        "store": {
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/hosted/HostedCheckout.tsx": 1
-        },
-        "checkout": {
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/hosted/HostedCheckout.tsx": 1
-        },
-        "blur": { "checkout/embedded/CustomerChargeWidget.tsx": 1 }
-      }
-    },
-    {
-      "name": "ErrorCheckout",
-      "sourceFile": "checkout/components/ErrorCheckout",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/embedded/CustomerChargeWidget.tsx": 1,
-        "checkout/hosted/HostedTestCharge.tsx": 1
-      },
-      "propsWithCallSites": {
-        "checkout": { "checkout/embedded/CustomerChargeWidget.tsx": 1 },
-        "onRetry": { "checkout/embedded/CustomerChargeWidget.tsx": 1 },
-        "error": {
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "WidgetHeader",
-      "sourceFile": "checkout/embedded/WidgetHeader",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/embedded/CustomerChargeWidget.tsx": 1,
-        "checkout/embedded/ProductCheckoutWidget.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onClose": {
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Footer",
-      "sourceFile": "checkout/components/Footer",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "checkout/embedded/CustomerChargeWidget.tsx": 1,
-        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "scenes/Receipts/Receipts.tsx": 1
-      },
-      "propsWithCallSites": {
-        "extendedDescription": {
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        },
-        "shouldShowPrivacyDisclaimerForCollectedInfo": {
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ProductCheckout",
-      "sourceFile": "checkout/components/ProductCheckout",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
-        "checkout/hosted/HostedCheckout.tsx": 1
-      },
-      "propsWithCallSites": {
-        "store": {
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
-          "checkout/hosted/HostedCheckout.tsx": 1
-        },
-        "isEmbedded": { "checkout/embedded/ProductCheckoutWidget.tsx": 1 }
-      }
-    },
-    {
-      "name": "CheckoutApp",
-      "sourceFile": "checkout/embedded/CheckoutApp",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Route",
-      "sourceFile": "react-router-dom/Route",
-      "totalInstances": 5,
-      "totalCallSites": 2,
-      "callSites": { "checkout/embedded/index.tsx": 2, "components/Route/Route.tsx": 3 },
-      "propsWithCallSites": {
-        "path": { "checkout/embedded/index.tsx": 2 },
-        "exact": { "checkout/embedded/index.tsx": 2 },
-        "component": { "checkout/embedded/index.tsx": 2 },
-        "render": { "components/Route/Route.tsx": 3 }
-      }
-    },
-    {
-      "name": "CheckoutAppWrapper",
-      "sourceFile": "checkout/embedded/index.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -13368,8 +13370,8 @@
         "scenes/MaintenanceMode/MaintenanceMode.tsx": 2,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-        "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
         "scenes/TfaReset/components/TfaVerification.tsx": 1,
+        "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
         "scenes/static/Integrate/Shopify.tsx": 1
       }
     },
@@ -13379,6 +13381,12 @@
       "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": { "scenes/Downtime/Downtime.tsx": 2 }
+    },
+    {
+      "name": "br",
+      "sourceFile": "scenes/MaintenanceMode/MaintenanceMode.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "InvoiceList",
@@ -13409,12 +13417,6 @@
         "selectedTab": { "scenes/Invoice/InvoiceScene.tsx": 1 },
         "onTabSelect": { "scenes/Invoice/InvoiceScene.tsx": 1 }
       }
-    },
-    {
-      "name": "br",
-      "sourceFile": "scenes/MaintenanceMode/MaintenanceMode.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "br",
@@ -13519,10 +13521,10 @@
         "components/ProductFlow/components/EditForm.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+        "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/Settings/components/WebhookModal.tsx": 1,
         "scenes/Settings/components/WebhookSecretModal.tsx": 1,
-        "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-        "scenes/TfaReset/components/TfaVerification.tsx": 1
+        "scenes/Settings/components/WidgetOriginModal.tsx": 1
       },
       "propsWithCallSites": {
         "onChange": {
@@ -13531,10 +13533,10 @@
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WebhookSecretModal.tsx": 1,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "placeholder": {
           "scenes/PointOfSale/PairingScreen.tsx": 1,
@@ -13542,10 +13544,10 @@
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WebhookSecretModal.tsx": 1,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "value": {
           "scenes/PointOfSale/PairingScreen.tsx": 1,
@@ -13553,9 +13555,9 @@
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "autoFocus": {
           "scenes/PointOfSale/PairingScreen.tsx": 1,
@@ -13563,9 +13565,9 @@
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "autoComplete": {
           "scenes/PointOfSale/PairingScreen.tsx": 1,
@@ -13660,8 +13662,8 @@
         "scenes/PosSetup/PosSetup.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-        "scenes/Settings/components/WebhookSecretModal.tsx": 1,
-        "scenes/TfaReset/components/TfaVerification.tsx": 1
+        "scenes/TfaReset/components/TfaVerification.tsx": 1,
+        "scenes/Settings/components/WebhookSecretModal.tsx": 1
       },
       "propsWithCallSites": {
         "w": { "scenes/PosSetup/PosSetup.tsx": 1 },
@@ -13669,8 +13671,8 @@
           "scenes/PosSetup/PosSetup.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-          "scenes/Settings/components/WebhookSecretModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
+          "scenes/Settings/components/WebhookSecretModal.tsx": 1
         },
         "mb": {
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
@@ -14010,68 +14012,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "IntegrationCard",
-      "sourceFile": "scenes/static/Integrate/IntegrationCard",
-      "totalInstances": 4,
-      "totalCallSites": 3,
-      "callSites": {
-        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
-        "scenes/static/Integrate/Integrate.tsx": 1,
-        "scenes/static/Integrate/IntegrationCarousel.tsx": 2
-      },
-      "propsWithCallSites": {
-        "key": {
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
-          "scenes/static/Integrate/Integrate.tsx": 1,
-          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
-        },
-        "integration": {
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
-          "scenes/static/Integrate/Integrate.tsx": 1,
-          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
-        },
-        "my": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 },
-        "mx": {
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
-          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
-        },
-        "isModal": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 },
-        "onClick": {
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
-          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
-        },
-        "ref": { "scenes/static/Integrate/IntegrationCarousel.tsx": 1 }
-      }
-    },
-    {
-      "name": "DarthFader",
-      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "components/ActivationPanel/components/IntegrationsModal.tsx": 2 },
-      "propsWithCallSites": {
-        "h": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "Shopify",
-      "sourceFile": "scenes/static/Integrate/Shopify",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isInModalView": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "WooCommerce",
-      "sourceFile": "scenes/static/Integrate/WooCommerce",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isInModalView": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
-      }
-    },
-    {
       "name": "TermsOfService",
       "sourceFile": "components/Layouts/AuthLayout/Footer.tsx",
       "totalInstances": 1,
@@ -14254,6 +14194,68 @@
       "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": { "components/ProductFlow/components/ProductDetails.tsx": 2 }
+    },
+    {
+      "name": "IntegrationCard",
+      "sourceFile": "scenes/static/Integrate/IntegrationCard",
+      "totalInstances": 4,
+      "totalCallSites": 3,
+      "callSites": {
+        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+        "scenes/static/Integrate/Integrate.tsx": 1,
+        "scenes/static/Integrate/IntegrationCarousel.tsx": 2
+      },
+      "propsWithCallSites": {
+        "key": {
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+          "scenes/static/Integrate/Integrate.tsx": 1,
+          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
+        },
+        "integration": {
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+          "scenes/static/Integrate/Integrate.tsx": 1,
+          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
+        },
+        "my": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 },
+        "mx": {
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
+        },
+        "isModal": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 },
+        "onClick": {
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
+        },
+        "ref": { "scenes/static/Integrate/IntegrationCarousel.tsx": 1 }
+      }
+    },
+    {
+      "name": "DarthFader",
+      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/ActivationPanel/components/IntegrationsModal.tsx": 2 },
+      "propsWithCallSites": {
+        "h": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "Shopify",
+      "sourceFile": "scenes/static/Integrate/Shopify",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isInModalView": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "WooCommerce",
+      "sourceFile": "scenes/static/Integrate/WooCommerce",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isInModalView": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
+      }
     },
     {
       "name": "DetailBlock",
@@ -14540,6 +14542,63 @@
       "sourceFile": "components/Layouts/AuthLayout/AuthCenteredFooter",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "TfaVerification",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
+        "user": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 }
+      }
+    },
+    {
+      "name": "GenerateBackupCodes",
+      "sourceFile": "scenes/TfaReset/components/GenerateBackupCodes",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 } }
+    },
+    {
+      "name": "ShowBackupCodes",
+      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
+        "backupCodes": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
+        "accepted": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 }
+      }
+    },
+    {
+      "name": "ResetComplete",
+      "sourceFile": "scenes/TfaReset/components/ResetComplete",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
+        "user": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
+        "generatedBackupCodes": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 }
+      }
+    },
+    {
+      "name": "QRWrapper",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "textView": { "scenes/TfaReset/components/TfaVerification.tsx": 1 } }
+    },
+    {
+      "name": "QRCode",
+      "sourceFile": "scenes/TfaReset/components/qrcode.react/QRCode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "size": { "scenes/TfaReset/components/TfaVerification.tsx": 1 },
+        "level": { "scenes/TfaReset/components/TfaVerification.tsx": 1 },
+        "value": { "scenes/TfaReset/components/TfaVerification.tsx": 1 }
+      }
     },
     {
       "name": "BusinessName",
@@ -15103,63 +15162,6 @@
       "propsWithCallSites": {
         "store": { "scenes/Settings/components/WidgetOriginsPanel.tsx": 1 },
         "close": { "scenes/Settings/components/WidgetOriginsPanel.tsx": 1 }
-      }
-    },
-    {
-      "name": "TfaVerification",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
-        "user": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 }
-      }
-    },
-    {
-      "name": "GenerateBackupCodes",
-      "sourceFile": "scenes/TfaReset/components/GenerateBackupCodes",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 } }
-    },
-    {
-      "name": "ShowBackupCodes",
-      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
-        "backupCodes": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
-        "accepted": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 }
-      }
-    },
-    {
-      "name": "ResetComplete",
-      "sourceFile": "scenes/TfaReset/components/ResetComplete",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
-        "user": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
-        "generatedBackupCodes": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 }
-      }
-    },
-    {
-      "name": "QRWrapper",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "textView": { "scenes/TfaReset/components/TfaVerification.tsx": 1 } }
-    },
-    {
-      "name": "QRCode",
-      "sourceFile": "scenes/TfaReset/components/qrcode.react/QRCode",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "size": { "scenes/TfaReset/components/TfaVerification.tsx": 1 },
-        "level": { "scenes/TfaReset/components/TfaVerification.tsx": 1 },
-        "value": { "scenes/TfaReset/components/TfaVerification.tsx": 1 }
       }
     },
     {

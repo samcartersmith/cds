@@ -255,8 +255,8 @@
         {
           "aliasPath": "@cbhq/two-factor-web/components/Loader.tsx",
           "callSites": [
-            "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx",
-            "@cbhq/two-factor-web/contexts/LoadingContext.tsx"
+            "@cbhq/two-factor-web/contexts/LoadingContext.tsx",
+            "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx"
           ]
         },
         {
@@ -946,8 +946,8 @@
       "totalCallSites": 6,
       "callSites": {
         "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-        "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/components/StepView.tsx": 1
@@ -955,21 +955,21 @@
       "propsWithCallSites": {
         "loading": {
           "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1
         },
         "onReload": {
           "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1
         },
         "error": {
           "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1
         },
@@ -992,8 +992,8 @@
       "totalCallSites": 3,
       "callSites": {
         "@cbhq/two-factor-web/ConfirmTwoFactor/index.tsx": 1,
-        "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1,
-        "@cbhq/two-factor-web/contexts/LoadingContext.tsx": 1
+        "@cbhq/two-factor-web/contexts/LoadingContext.tsx": 1,
+        "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1
       },
       "propsWithCallSites": {
         "testID": { "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1 }
@@ -1034,6 +1034,37 @@
       "sourceFile": "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "Loader",
+      "sourceFile": "@cbhq/two-factor-web/components/Loader",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@cbhq/two-factor-web/contexts/LoadingContext.tsx": 1,
+        "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1
+      },
+      "propsWithCallSites": {
+        "testID": {
+          "@cbhq/two-factor-web/contexts/LoadingContext.tsx": 1,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1
+        },
+        "position": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
+        "left": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
+        "right": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
+        "bottom": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
+        "top": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
+        "background": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 }
+      }
+    },
+    {
+      "name": "BaseTwoFactorGlobalConfigProvider",
+      "sourceFile": "@cbhq/two-factor-web/contexts/TwoFactorGlobalConfigContext.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "target": { "@cbhq/two-factor-web/contexts/TwoFactorGlobalConfigContext.tsx": 1 }
+      }
     },
     {
       "name": "HelpMenuOption",
@@ -1176,28 +1207,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "Loader",
-      "sourceFile": "@cbhq/two-factor-web/components/Loader",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
-        "@cbhq/two-factor-web/contexts/LoadingContext.tsx": 1
-      },
-      "propsWithCallSites": {
-        "position": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "left": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "right": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "bottom": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "top": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "background": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "testID": {
-          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
-          "@cbhq/two-factor-web/contexts/LoadingContext.tsx": 1
-        }
-      }
-    },
-    {
       "name": "DrawerView",
       "sourceFile": "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx",
       "totalInstances": 2,
@@ -1257,15 +1266,6 @@
         "toggleText": { "@cbhq/two-factor-web/components/ViewWithHelpDrawer.tsx": 1 },
         "toggleType": { "@cbhq/two-factor-web/components/ViewWithHelpDrawer.tsx": 1 },
         "responsive": { "@cbhq/two-factor-web/components/ViewWithHelpDrawer.tsx": 1 }
-      }
-    },
-    {
-      "name": "BaseTwoFactorGlobalConfigProvider",
-      "sourceFile": "@cbhq/two-factor-web/contexts/TwoFactorGlobalConfigContext.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "target": { "@cbhq/two-factor-web/contexts/TwoFactorGlobalConfigContext.tsx": 1 }
       }
     },
     {

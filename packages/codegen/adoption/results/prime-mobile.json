@@ -63,8 +63,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-mobile/layout/Box",
-      "totalInstances": 73,
-      "totalCallSites": 38,
+      "totalInstances": 83,
+      "totalCallSites": 41,
       "cds": "@cbhq/cds-mobile/layout/Box",
       "aliasedCdsComponents": [
         { "aliasPath": "@prime-mobile/components/Badge.tsx", "callSites": [] },
@@ -93,6 +93,7 @@
             "@prime-mobile/components/OrgSwitcher.tsx",
             "@prime-mobile/components/OrgSwitcher.tsx",
             "@prime-mobile/components/OrgSwitcher.tsx",
+            "@prime-mobile/components/Web3ActionItem.tsx",
             "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx",
             "@prime-mobile/components/layout/ModalLayout.tsx",
             "@prime-mobile/components/loading/LoadingApp.tsx",
@@ -100,7 +101,8 @@
             "@prime-mobile/screens/hierarchy-switcher/HierarchyHeader.tsx",
             "@prime-mobile/screens/login/PreLoginScreen.tsx",
             "@prime-mobile/screens/settings/SettingsScreen.tsx",
-            "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx"
+            "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx",
+            "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx"
           ]
         },
         {
@@ -136,6 +138,7 @@
         "@prime-mobile/components/Overlay.tsx": 1,
         "@prime-mobile/components/Pill.tsx": 1,
         "@prime-mobile/components/ProfilePhotoPlaceholder.tsx": 1,
+        "@prime-mobile/components/Web3ActionItem.tsx": 4,
         "@prime-mobile/navigation/BottomNav.tsx": 1,
         "@prime-mobile/components/errors/ErrorTray.tsx": 4,
         "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
@@ -161,6 +164,8 @@
         "@prime-mobile/screens/video-statement/VideoStatementRecord.tsx": 4,
         "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 4,
         "@prime-mobile/screens/video-statement/VideoStatementUpload.tsx": 4,
+        "@prime-mobile/screens/web3/Web3Screen.tsx": 3,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 3,
         "@prime-mobile/screens/video-statement/components/CloseIcon.tsx": 1,
         "@prime-mobile/screens/video-statement/components/Countdown.tsx": 2,
         "@prime-mobile/screens/video-statement/components/FloatingCue.tsx": 2,
@@ -177,7 +182,9 @@
           "@prime-mobile/screens/developer/DeveloperScreen.tsx": 1,
           "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
           "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
-          "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1
+          "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3Screen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
         },
         "spacingHorizontal": {
           "@prime-mobile/components/Badge.tsx": 1,
@@ -193,6 +200,8 @@
           "@prime-mobile/screens/permissions/PermissionErrorScreen.tsx": 1,
           "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1,
           "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3Screen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 2,
           "@prime-mobile/screens/video-statement/components/FloatingCue.tsx": 1,
           "@prime-mobile/screens/video-statement/components/TimeTicker.tsx": 1,
           "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1,
@@ -228,10 +237,12 @@
         "flexGrow": {
           "@prime-mobile/components/ButtonToggle.tsx": 1,
           "@prime-mobile/components/OrgSwitcher.tsx": 3,
+          "@prime-mobile/components/Web3ActionItem.tsx": 2,
           "@prime-mobile/components/layout/Header.tsx": 3,
           "@prime-mobile/screens/login/LoginScreen.tsx": 1,
           "@prime-mobile/screens/permissions/PermissionsTable.tsx": 2,
           "@prime-mobile/screens/video-statement/VideoStatementUpload.tsx": 1,
+          "@prime-mobile/screens/web3/Web3Screen.tsx": 2,
           "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 3
         },
         "alignItems": {
@@ -247,11 +258,14 @@
           "@prime-mobile/screens/permissions/PermissionErrorScreen.tsx": 1,
           "@prime-mobile/screens/permissions/PermissionsTable.tsx": 1,
           "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1,
+          "@prime-mobile/screens/web3/Web3Screen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
           "@prime-mobile/screens/video-statement/components/Countdown.tsx": 1,
           "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 2
         },
         "spacing": {
           "@prime-mobile/components/ButtonToggle.tsx": 1,
+          "@prime-mobile/components/Web3ActionItem.tsx": 1,
           "@prime-mobile/screens/developer/DeveloperScreen.tsx": 1,
           "@prime-mobile/screens/permissions/PermissionsTable.tsx": 2,
           "@prime-mobile/screens/video-statement/components/CloseIcon.tsx": 1,
@@ -263,6 +277,7 @@
           "@prime-mobile/components/DisplayKeyValue.tsx": 2,
           "@prime-mobile/components/Overlay.tsx": 1,
           "@prime-mobile/components/ProfilePhotoPlaceholder.tsx": 1,
+          "@prime-mobile/components/Web3ActionItem.tsx": 2,
           "@prime-mobile/components/errors/ErrorTray.tsx": 2,
           "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
           "@prime-mobile/components/loading/SkeletonBox.tsx": 1,
@@ -287,10 +302,12 @@
           "@prime-mobile/components/OrgSwitcher.tsx": 1,
           "@prime-mobile/components/Overlay.tsx": 1,
           "@prime-mobile/components/ProfilePhotoPlaceholder.tsx": 1,
+          "@prime-mobile/components/Web3ActionItem.tsx": 1,
           "@prime-mobile/components/layout/Header.tsx": 1,
           "@prime-mobile/screens/error/ErrorFallbackScreen.tsx": 1,
           "@prime-mobile/screens/login/LoginScreen.tsx": 1,
           "@prime-mobile/screens/permissions/PermissionsTable.tsx": 1,
+          "@prime-mobile/screens/web3/Web3Screen.tsx": 1,
           "@prime-mobile/screens/video-statement/components/Countdown.tsx": 1,
           "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1
         },
@@ -337,16 +354,8 @@
           "@prime-mobile/screens/video-statement/VideoStatementUpload.tsx": 1
         },
         "borderColor": { "@prime-mobile/components/Pill.tsx": 1 },
-        "spacingTop": {
-          "@prime-mobile/components/errors/ErrorTray.tsx": 1,
-          "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
-          "@prime-mobile/screens/developer/DeveloperScreen.tsx": 1,
-          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 1,
-          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
-          "@prime-mobile/screens/permissions/PermissionErrorScreen.tsx": 2,
-          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 4
-        },
         "spacingBottom": {
+          "@prime-mobile/components/Web3ActionItem.tsx": 1,
           "@prime-mobile/components/errors/ErrorTray.tsx": 2,
           "@prime-mobile/components/toast/SingleToast.tsx": 1,
           "@prime-mobile/components/toast/Toaster.tsx": 1,
@@ -355,6 +364,16 @@
           "@prime-mobile/screens/permissions/PermissionErrorScreen.tsx": 1,
           "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1,
           "@prime-mobile/screens/video-statement/components/FloatingCue.tsx": 1
+        },
+        "spacingTop": {
+          "@prime-mobile/components/errors/ErrorTray.tsx": 1,
+          "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
+          "@prime-mobile/screens/developer/DeveloperScreen.tsx": 1,
+          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 1,
+          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
+          "@prime-mobile/screens/permissions/PermissionErrorScreen.tsx": 2,
+          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 4,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
         },
         "spacingStart": {
           "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
@@ -379,6 +398,7 @@
           "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1
         },
         "top": { "@prime-mobile/screens/video-statement/VideoStatementRecord.tsx": 1 },
+        "borderedBottom": { "@prime-mobile/screens/web3/Web3Screen.tsx": 1 },
         "right": { "@prime-mobile/screens/video-statement/components/CloseIcon.tsx": 1 },
         "bottom": { "@prime-mobile/screens/video-statement/components/Countdown.tsx": 1 }
       }
@@ -454,6 +474,7 @@
             "@prime-mobile/screens/portfolio/PortfolioScreen.tsx",
             "@prime-mobile/screens/portfolio/PortfolioScreen.tsx",
             "@prime-mobile/screens/web3/Web3Screen.tsx",
+            "@prime-mobile/screens/web3/Web3Screen.tsx",
             "@prime-mobile/screens/web3/Web3Screen.tsx"
           ]
         }
@@ -487,8 +508,8 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
-      "totalInstances": 27,
-      "totalCallSites": 21,
+      "totalInstances": 29,
+      "totalCallSites": 22,
       "cds": "@cbhq/cds-mobile/typography/TextHeadline",
       "callSites": {
         "@prime-mobile/components/ButtonToggle.tsx": 1,
@@ -510,6 +531,7 @@
         "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
         "@prime-mobile/screens/video-statement/VideoStatementInfoTray.tsx": 3,
         "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 2,
         "@prime-mobile/screens/video-statement/components/Countdown.tsx": 1,
         "@prime-mobile/screens/video-statement/components/FloatingCue.tsx": 1
       },
@@ -555,15 +577,16 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-mobile/layout/HStack",
-      "totalInstances": 30,
-      "totalCallSites": 21,
+      "totalInstances": 29,
+      "totalCallSites": 20,
       "cds": "@cbhq/cds-mobile/layout/HStack",
       "aliasedCdsComponents": [
         {
           "aliasPath": "@prime-mobile/components/DisplayKeyValue.tsx",
           "callSites": [
             "@prime-mobile/screens/consensus/ActivityDetailsView.tsx",
-            "@prime-mobile/screens/consensus/ActivityDetailsView.tsx"
+            "@prime-mobile/screens/consensus/ActivityDetailsView.tsx",
+            "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx"
           ]
         },
         {
@@ -576,11 +599,11 @@
         "@prime-mobile/components/DisplayKeyValue.tsx": 1,
         "@prime-mobile/components/OrgSwitcher.tsx": 1,
         "@prime-mobile/navigation/BottomNav.tsx": 1,
-        "@prime-mobile/deprecated/UI/CopyableField.tsx": 2,
         "@prime-mobile/components/errors/ErrorBanner.tsx": 1,
         "@prime-mobile/components/errors/ErrorTray.tsx": 2,
         "@prime-mobile/components/loading/LoadingPortfolio.tsx": 1,
         "@prime-mobile/components/toast/Toast.tsx": 1,
+        "@prime-mobile/deprecated/UI/CopyableField.tsx": 2,
         "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1,
         "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
         "@prime-mobile/screens/consensus/ActivityTimelineView.tsx": 1,
@@ -591,7 +614,6 @@
         "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 3,
         "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 2,
         "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 3,
-        "@prime-mobile/screens/web3/Web3Screen.tsx": 1,
         "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 1
       },
       "propsWithCallSites": {
@@ -605,16 +627,15 @@
           "@prime-mobile/components/ButtonToggle.tsx": 1,
           "@prime-mobile/components/DisplayKeyValue.tsx": 1,
           "@prime-mobile/components/OrgSwitcher.tsx": 1,
-          "@prime-mobile/deprecated/UI/CopyableField.tsx": 2,
           "@prime-mobile/components/errors/ErrorBanner.tsx": 1,
           "@prime-mobile/components/errors/ErrorTray.tsx": 1,
           "@prime-mobile/components/toast/Toast.tsx": 1,
+          "@prime-mobile/deprecated/UI/CopyableField.tsx": 2,
           "@prime-mobile/screens/consensus/ActivityTimelineView.tsx": 1,
           "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 2,
           "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1,
           "@prime-mobile/screens/permissions/PermissionsTable.tsx": 1,
           "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 2,
-          "@prime-mobile/screens/web3/Web3Screen.tsx": 1,
           "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 1
         },
         "borderRadius": {
@@ -658,8 +679,7 @@
           "@prime-mobile/components/errors/ErrorTray.tsx": 1,
           "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1,
           "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 2,
-          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1,
-          "@prime-mobile/screens/web3/Web3Screen.tsx": 1
+          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1
         },
         "spacingHorizontal": {
           "@prime-mobile/navigation/BottomNav.tsx": 1,
@@ -667,18 +687,15 @@
           "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1,
           "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 2,
           "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 2,
-          "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
-          "@prime-mobile/screens/web3/Web3Screen.tsx": 1
+          "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1
         },
         "spacingTop": {
           "@prime-mobile/navigation/BottomNav.tsx": 1,
           "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1,
           "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 2,
           "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1,
-          "@prime-mobile/screens/web3/Web3Screen.tsx": 1,
           "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 1
         },
-        "spacing": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 },
         "elevation": { "@prime-mobile/components/errors/ErrorBanner.tsx": 1 },
         "dangerouslySetStyle": { "@prime-mobile/components/toast/Toast.tsx": 1 },
         "bordered": { "@prime-mobile/components/toast/Toast.tsx": 1 },
@@ -686,6 +703,7 @@
           "@prime-mobile/components/toast/Toast.tsx": 1,
           "@prime-mobile/screens/permissions/PermissionsTable.tsx": 1
         },
+        "spacing": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 },
         "key": {
           "@prime-mobile/screens/consensus/ActivityTimelineView.tsx": 1,
           "@prime-mobile/screens/login/PreLoginScreen.tsx": 1
@@ -699,8 +717,8 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-mobile/typography/TextBody",
-      "totalInstances": 49,
-      "totalCallSites": 26,
+      "totalInstances": 51,
+      "totalCallSites": 29,
       "cds": "@cbhq/cds-mobile/typography/TextBody",
       "aliasedCdsComponents": [
         {
@@ -715,12 +733,13 @@
       "callSites": {
         "@prime-mobile/components/DisplayKeyValue.tsx": 1,
         "@prime-mobile/components/PercentageText.tsx": 1,
-        "@prime-mobile/deprecated/UI/CopyableField.tsx": 1,
+        "@prime-mobile/components/Web3ActionItem.tsx": 1,
         "@prime-mobile/components/errors/ErrorTray.tsx": 1,
         "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
         "@prime-mobile/components/errors/NoReadAccessFallback.tsx": 1,
+        "@prime-mobile/deprecated/UI/CopyableField.tsx": 1,
         "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1,
-        "@prime-mobile/screens/developer/DeveloperScreen.tsx": 5,
+        "@prime-mobile/screens/developer/DeveloperScreen.tsx": 4,
         "@prime-mobile/screens/consensus/ActivityConfirmation.tsx": 3,
         "@prime-mobile/screens/consensus/ActivityDetails.tsx": 5,
         "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1,
@@ -737,6 +756,8 @@
         "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 4,
         "@prime-mobile/screens/video-statement/VideoStatementSuccess.tsx": 2,
         "@prime-mobile/screens/video-statement/VideoStatementUpload.tsx": 1,
+        "@prime-mobile/screens/web3/Web3Screen.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
         "@prime-mobile/screens/video-statement/components/TimeTicker.tsx": 1,
         "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1
       },
@@ -744,6 +765,7 @@
         "color": {
           "@prime-mobile/components/DisplayKeyValue.tsx": 1,
           "@prime-mobile/components/PercentageText.tsx": 1,
+          "@prime-mobile/components/Web3ActionItem.tsx": 1,
           "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
           "@prime-mobile/components/errors/NoReadAccessFallback.tsx": 1,
           "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1,
@@ -755,7 +777,17 @@
           "@prime-mobile/screens/video-statement/NeedDevicePermissions.tsx": 4,
           "@prime-mobile/screens/video-statement/VideoStatementRequest.tsx": 1,
           "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1,
+          "@prime-mobile/screens/web3/Web3Screen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
           "@prime-mobile/screens/video-statement/components/TimeTicker.tsx": 1
+        },
+        "spacingBottom": {
+          "@prime-mobile/components/Web3ActionItem.tsx": 1,
+          "@prime-mobile/screens/consensus/ActivityConfirmation.tsx": 3,
+          "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 1,
+          "@prime-mobile/screens/video-statement/VideoStatementInfoTray.tsx": 1,
+          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1,
+          "@prime-mobile/screens/web3/Web3Screen.tsx": 1
         },
         "spacing": {
           "@prime-mobile/deprecated/UI/CopyableField.tsx": 1,
@@ -775,13 +807,6 @@
           "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
           "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1
         },
-        "spacingBottom": {
-          "@prime-mobile/screens/developer/DeveloperScreen.tsx": 1,
-          "@prime-mobile/screens/consensus/ActivityConfirmation.tsx": 3,
-          "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 1,
-          "@prime-mobile/screens/video-statement/VideoStatementInfoTray.tsx": 1,
-          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1
-        },
         "align": { "@prime-mobile/screens/login/PreLoginScreen.tsx": 1 },
         "spacingStart": {
           "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1,
@@ -798,11 +823,12 @@
     {
       "name": "IconButton",
       "sourceFile": "@cbhq/cds-mobile/buttons/IconButton",
-      "totalInstances": 16,
-      "totalCallSites": 11,
+      "totalInstances": 19,
+      "totalCallSites": 13,
       "cds": "@cbhq/cds-mobile/buttons/IconButton",
       "callSites": {
         "@prime-mobile/components/OrgSwitcher.tsx": 5,
+        "@prime-mobile/components/Web3ActionItem.tsx": 2,
         "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
         "@prime-mobile/components/layout/ModalLayout.tsx": 1,
         "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
@@ -811,12 +837,14 @@
         "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
         "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
         "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
         "@prime-mobile/screens/video-statement/components/CloseIcon.tsx": 1,
         "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 2
       },
       "propsWithCallSites": {
         "name": {
           "@prime-mobile/components/OrgSwitcher.tsx": 5,
+          "@prime-mobile/components/Web3ActionItem.tsx": 2,
           "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
           "@prime-mobile/components/layout/ModalLayout.tsx": 1,
           "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
@@ -825,11 +853,13 @@
           "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
           "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
           "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
           "@prime-mobile/screens/video-statement/components/CloseIcon.tsx": 1,
           "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 2
         },
         "onPress": {
           "@prime-mobile/components/OrgSwitcher.tsx": 5,
+          "@prime-mobile/components/Web3ActionItem.tsx": 2,
           "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
           "@prime-mobile/components/layout/ModalLayout.tsx": 1,
           "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
@@ -838,11 +868,13 @@
           "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
           "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
           "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
           "@prime-mobile/screens/video-statement/components/CloseIcon.tsx": 1,
           "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 2
         },
         "transparent": {
           "@prime-mobile/components/OrgSwitcher.tsx": 5,
+          "@prime-mobile/components/Web3ActionItem.tsx": 2,
           "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
           "@prime-mobile/components/layout/ModalLayout.tsx": 1,
           "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
@@ -851,6 +883,7 @@
           "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
           "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
           "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
           "@prime-mobile/screens/video-statement/components/CloseIcon.tsx": 1,
           "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 2
         },
@@ -861,8 +894,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-mobile/layout/VStack",
-      "totalInstances": 50,
-      "totalCallSites": 30,
+      "totalInstances": 51,
+      "totalCallSites": 31,
       "cds": "@cbhq/cds-mobile/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -925,7 +958,6 @@
       "callSites": {
         "@prime-mobile/components/OrgSwitcher.tsx": 2,
         "@prime-mobile/navigation/TabBar.tsx": 1,
-        "@prime-mobile/deprecated/UI/CopyableField.tsx": 1,
         "@prime-mobile/components/errors/ErrorTray.tsx": 1,
         "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
         "@prime-mobile/components/errors/NoReadAccessFallback.tsx": 1,
@@ -935,8 +967,9 @@
         "@prime-mobile/components/loading/LoadingPortfolio.tsx": 2,
         "@prime-mobile/components/toast/SingleToast.tsx": 1,
         "@prime-mobile/components/toast/Toaster.tsx": 1,
+        "@prime-mobile/deprecated/UI/CopyableField.tsx": 1,
         "@prime-mobile/screens/activity/ActivityListScreen.tsx": 2,
-        "@prime-mobile/screens/developer/DeveloperScreen.tsx": 4,
+        "@prime-mobile/screens/developer/DeveloperScreen.tsx": 3,
         "@prime-mobile/screens/consensus/ActivityConfirmation.tsx": 1,
         "@prime-mobile/screens/consensus/ActivityDetails.tsx": 2,
         "@prime-mobile/screens/consensus/ActivityDetailsView.tsx": 1,
@@ -950,6 +983,7 @@
         "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 2,
         "@prime-mobile/screens/settings/SettingsScreen.tsx": 7,
         "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 2,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 2,
         "@prime-mobile/deprecated/interactables/drawer/Tray.tsx": 1,
         "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 1,
         "@prime-mobile/screens/video-statement/components/VideoFloatingCues.tsx": 1
@@ -975,13 +1009,6 @@
           "@prime-mobile/screens/settings/SettingsScreen.tsx": 2,
           "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1
         },
-        "spacingEnd": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 },
-        "flexShrink": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 },
-        "flexGrow": {
-          "@prime-mobile/deprecated/UI/CopyableField.tsx": 1,
-          "@prime-mobile/components/errors/NoReadAccessFallback.tsx": 1,
-          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1
-        },
         "justifyContent": {
           "@prime-mobile/components/errors/ErrorTray.tsx": 1,
           "@prime-mobile/components/errors/NoReadAccessFallback.tsx": 1,
@@ -1004,7 +1031,13 @@
           "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 1,
           "@prime-mobile/screens/settings/SettingsScreen.tsx": 2,
           "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 2,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
           "@prime-mobile/deprecated/interactables/drawer/Tray.tsx": 1
+        },
+        "flexGrow": {
+          "@prime-mobile/components/errors/NoReadAccessFallback.tsx": 1,
+          "@prime-mobile/deprecated/UI/CopyableField.tsx": 1,
+          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1
         },
         "spacingBottom": {
           "@prime-mobile/components/layout/ModalLayout.tsx": 1,
@@ -1014,6 +1047,7 @@
           "@prime-mobile/screens/permissions/PermissionsTable.tsx": 1,
           "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 1,
           "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
           "@prime-mobile/screens/video-statement/components/VideoFloatingCues.tsx": 1
         },
         "gap": {
@@ -1027,6 +1061,7 @@
           "@prime-mobile/screens/permissions/PermissionErrorScreen.tsx": 1,
           "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
           "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
           "@prime-mobile/deprecated/interactables/drawer/Tray.tsx": 1
         },
         "position": {
@@ -1052,23 +1087,24 @@
           "@prime-mobile/components/toast/Toaster.tsx": 1,
           "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 1
         },
-        "width": {
-          "@prime-mobile/screens/developer/DeveloperScreen.tsx": 1,
-          "@prime-mobile/screens/video-statement/components/VideoFloatingCues.tsx": 1
-        },
+        "spacingEnd": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 },
+        "flexShrink": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 },
         "height": {
           "@prime-mobile/screens/error/LoginErrorBoundary.tsx": 1,
           "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
           "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 1
         },
-        "background": { "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 1 }
+        "background": {
+          "@prime-mobile/screens/video-statement/components/VideoControllers.tsx": 1
+        },
+        "width": { "@prime-mobile/screens/video-statement/components/VideoFloatingCues.tsx": 1 }
       }
     },
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-mobile/typography/TextTitle3",
-      "totalInstances": 13,
-      "totalCallSites": 11,
+      "totalInstances": 14,
+      "totalCallSites": 12,
       "cds": "@cbhq/cds-mobile/typography/TextTitle3",
       "callSites": {
         "@prime-mobile/components/OrgSwitcher.tsx": 2,
@@ -1081,6 +1117,7 @@
         "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 1,
         "@prime-mobile/screens/settings/SettingsScreen.tsx": 2,
         "@prime-mobile/screens/video-statement/VideoStatementInfoTray.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
         "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1
       },
       "propsWithCallSites": {
@@ -1110,11 +1147,12 @@
     {
       "name": "ListCell",
       "sourceFile": "@cbhq/cds-mobile/cells/ListCell",
-      "totalInstances": 8,
-      "totalCallSites": 6,
+      "totalInstances": 9,
+      "totalCallSites": 7,
       "cds": "@cbhq/cds-mobile/cells/ListCell",
       "callSites": {
         "@prime-mobile/components/OrgSwitcher.tsx": 3,
+        "@prime-mobile/components/Web3WalletRow.tsx": 1,
         "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
         "@prime-mobile/screens/consensus/ActivityTimelineView.tsx": 1,
         "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
@@ -1124,6 +1162,7 @@
       "propsWithCallSites": {
         "compact": {
           "@prime-mobile/components/OrgSwitcher.tsx": 3,
+          "@prime-mobile/components/Web3WalletRow.tsx": 1,
           "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
           "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
           "@prime-mobile/screens/portfolio/PortfolioRow.tsx": 1
@@ -1134,6 +1173,7 @@
         },
         "title": {
           "@prime-mobile/components/OrgSwitcher.tsx": 3,
+          "@prime-mobile/components/Web3WalletRow.tsx": 1,
           "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
           "@prime-mobile/screens/consensus/ActivityTimelineView.tsx": 1,
           "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
@@ -1142,6 +1182,7 @@
         },
         "description": {
           "@prime-mobile/components/OrgSwitcher.tsx": 3,
+          "@prime-mobile/components/Web3WalletRow.tsx": 1,
           "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
           "@prime-mobile/screens/consensus/ActivityTimelineView.tsx": 1,
           "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
@@ -1157,6 +1198,7 @@
         },
         "media": {
           "@prime-mobile/components/OrgSwitcher.tsx": 1,
+          "@prime-mobile/components/Web3WalletRow.tsx": 1,
           "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
           "@prime-mobile/screens/consensus/ActivityTimelineView.tsx": 1,
           "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
@@ -1180,17 +1222,219 @@
       }
     },
     {
+      "name": "TextTitle1",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle1",
+      "totalInstances": 6,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-mobile/typography/TextTitle1",
+      "callSites": {
+        "@prime-mobile/components/Web3ActionItem.tsx": 1,
+        "@prime-mobile/components/loading/LoadingPortfolio.tsx": 1,
+        "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1,
+        "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1,
+        "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
+        "@prime-mobile/screens/web3/Web3Screen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacingBottom": {
+          "@prime-mobile/components/Web3ActionItem.tsx": 1,
+          "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1
+        },
+        "spacingTop": { "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1 },
+        "spacingHorizontal": { "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1 },
+        "spacingEnd": { "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "Button",
+      "sourceFile": "@cbhq/cds-mobile/buttons/Button",
+      "totalInstances": 36,
+      "totalCallSites": 22,
+      "cds": "@cbhq/cds-mobile/buttons/Button",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "@prime-mobile/deprecated/interactables/SmallButton.tsx",
+          "callSites": ["@prime-mobile/deprecated/UI/CopyableField.tsx"]
+        },
+        {
+          "aliasPath": "@prime-mobile/screens/consensus/RecordVideoStatementButton.tsx",
+          "callSites": ["@prime-mobile/screens/consensus/ActivityDetailsActions.tsx"]
+        },
+        {
+          "aliasPath": "@prime-mobile/screens/video-statement/components/RecordButton.tsx",
+          "callSites": ["@prime-mobile/screens/video-statement/components/VideoControllers.tsx"]
+        }
+      ],
+      "callSites": {
+        "@prime-mobile/components/Web3ActionItem.tsx": 2,
+        "@prime-mobile/components/errors/ErrorTray.tsx": 3,
+        "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 2,
+        "@prime-mobile/components/errors/NoReadAccessFallback.tsx": 2,
+        "@prime-mobile/deprecated/interactables/SmallButton.tsx": 1,
+        "@prime-mobile/screens/developer/DeveloperScreen.tsx": 2,
+        "@prime-mobile/screens/consensus/ActivityConfirmation.tsx": 2,
+        "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 3,
+        "@prime-mobile/screens/consensus/RecordVideoStatementButton.tsx": 1,
+        "@prime-mobile/screens/error/LoginErrorBoundary.tsx": 1,
+        "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
+        "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
+        "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+        "@prime-mobile/screens/video-statement/NeedDevicePermissions.tsx": 2,
+        "@prime-mobile/screens/video-statement/VideoStatementInfoTray.tsx": 1,
+        "@prime-mobile/screens/video-statement/VideoStatementRequest.tsx": 1,
+        "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 2,
+        "@prime-mobile/screens/video-statement/VideoStatementSuccess.tsx": 1,
+        "@prime-mobile/screens/web3/Web3Screen.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 2,
+        "@prime-mobile/screens/video-statement/components/RecordButton.tsx": 3,
+        "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1
+      },
+      "propsWithCallSites": {
+        "block": {
+          "@prime-mobile/components/Web3ActionItem.tsx": 2,
+          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 1,
+          "@prime-mobile/screens/consensus/RecordVideoStatementButton.tsx": 1,
+          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
+          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
+          "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1
+        },
+        "onPress": {
+          "@prime-mobile/components/Web3ActionItem.tsx": 2,
+          "@prime-mobile/components/errors/ErrorTray.tsx": 3,
+          "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 2,
+          "@prime-mobile/components/errors/NoReadAccessFallback.tsx": 2,
+          "@prime-mobile/deprecated/interactables/SmallButton.tsx": 1,
+          "@prime-mobile/screens/developer/DeveloperScreen.tsx": 2,
+          "@prime-mobile/screens/consensus/ActivityConfirmation.tsx": 2,
+          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 3,
+          "@prime-mobile/screens/consensus/RecordVideoStatementButton.tsx": 1,
+          "@prime-mobile/screens/error/LoginErrorBoundary.tsx": 1,
+          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
+          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
+          "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+          "@prime-mobile/screens/video-statement/NeedDevicePermissions.tsx": 2,
+          "@prime-mobile/screens/video-statement/VideoStatementInfoTray.tsx": 1,
+          "@prime-mobile/screens/video-statement/VideoStatementRequest.tsx": 1,
+          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 2,
+          "@prime-mobile/screens/video-statement/VideoStatementSuccess.tsx": 1,
+          "@prime-mobile/screens/web3/Web3Screen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 2,
+          "@prime-mobile/screens/video-statement/components/RecordButton.tsx": 3,
+          "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1
+        },
+        "variant": {
+          "@prime-mobile/components/Web3ActionItem.tsx": 1,
+          "@prime-mobile/components/errors/ErrorTray.tsx": 3,
+          "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
+          "@prime-mobile/components/errors/NoReadAccessFallback.tsx": 2,
+          "@prime-mobile/deprecated/interactables/SmallButton.tsx": 1,
+          "@prime-mobile/screens/consensus/ActivityConfirmation.tsx": 1,
+          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 2,
+          "@prime-mobile/screens/consensus/RecordVideoStatementButton.tsx": 1,
+          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
+          "@prime-mobile/screens/video-statement/VideoStatementInfoTray.tsx": 1,
+          "@prime-mobile/screens/video-statement/VideoStatementSuccess.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
+          "@prime-mobile/screens/video-statement/components/RecordButton.tsx": 3,
+          "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1
+        },
+        "compact": { "@prime-mobile/deprecated/interactables/SmallButton.tsx": 1 },
+        "loading": {
+          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 3,
+          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1
+        },
+        "disabled": {
+          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 2,
+          "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1
+        },
+        "transparent": {
+          "@prime-mobile/screens/error/LoginErrorBoundary.tsx": 1,
+          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1,
+          "@prime-mobile/screens/video-statement/components/RecordButton.tsx": 1,
+          "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "@cbhq/cds-mobile/icons/Icon",
+      "totalInstances": 13,
+      "totalCallSites": 11,
+      "cds": "@cbhq/cds-mobile/icons/Icon",
+      "callSites": {
+        "@prime-mobile/components/Web3WalletRow.tsx": 1,
+        "@prime-mobile/components/errors/ErrorBanner.tsx": 1,
+        "@prime-mobile/components/errors/ErrorTray.tsx": 1,
+        "@prime-mobile/components/toast/Toast.tsx": 1,
+        "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
+        "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
+        "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
+        "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1,
+        "@prime-mobile/screens/permissions/PermissionsTable.tsx": 2,
+        "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 2,
+        "@prime-mobile/screens/settings/SettingsScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "@prime-mobile/components/Web3WalletRow.tsx": 1,
+          "@prime-mobile/components/errors/ErrorBanner.tsx": 1,
+          "@prime-mobile/components/errors/ErrorTray.tsx": 1,
+          "@prime-mobile/components/toast/Toast.tsx": 1,
+          "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
+          "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
+          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
+          "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1,
+          "@prime-mobile/screens/permissions/PermissionsTable.tsx": 2,
+          "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 2,
+          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1
+        },
+        "color": {
+          "@prime-mobile/components/Web3WalletRow.tsx": 1,
+          "@prime-mobile/components/errors/ErrorBanner.tsx": 1,
+          "@prime-mobile/components/errors/ErrorTray.tsx": 1,
+          "@prime-mobile/components/toast/Toast.tsx": 1,
+          "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
+          "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
+          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
+          "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1,
+          "@prime-mobile/screens/permissions/PermissionsTable.tsx": 2,
+          "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 1,
+          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1
+        },
+        "size": {
+          "@prime-mobile/components/Web3WalletRow.tsx": 1,
+          "@prime-mobile/components/errors/ErrorBanner.tsx": 1,
+          "@prime-mobile/components/errors/ErrorTray.tsx": 1,
+          "@prime-mobile/components/toast/Toast.tsx": 1,
+          "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
+          "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
+          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
+          "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1,
+          "@prime-mobile/screens/permissions/PermissionsTable.tsx": 2,
+          "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 2,
+          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1
+        },
+        "bordered": {
+          "@prime-mobile/components/errors/ErrorBanner.tsx": 1,
+          "@prime-mobile/components/errors/ErrorTray.tsx": 1
+        },
+        "spacingTop": { "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1 }
+      }
+    },
+    {
       "name": "Divider",
       "sourceFile": "@cbhq/cds-mobile/layout/Divider",
-      "totalInstances": 8,
-      "totalCallSites": 5,
+      "totalInstances": 9,
+      "totalCallSites": 6,
       "cds": "@cbhq/cds-mobile/layout/Divider",
       "callSites": {
         "@prime-mobile/navigation/BottomNav.tsx": 1,
         "@prime-mobile/components/layout/ModalLayout.tsx": 1,
         "@prime-mobile/components/loading/LoadingPortfolio.tsx": 2,
         "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 2,
-        "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 2
+        "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 2,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
       },
       "propsWithCallSites": {
         "spacingBottom": { "@prime-mobile/components/layout/ModalLayout.tsx": 1 },
@@ -1247,183 +1491,6 @@
       }
     },
     {
-      "name": "TextLabel2",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextLabel2",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-mobile/typography/TextLabel2",
-      "callSites": {
-        "@prime-mobile/deprecated/UI/CopyableField.tsx": 1,
-        "@prime-mobile/screens/permissions/PermissionsTable.tsx": 1
-      },
-      "propsWithCallSites": { "spacing": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 } }
-    },
-    {
-      "name": "Button",
-      "sourceFile": "@cbhq/cds-mobile/buttons/Button",
-      "totalInstances": 31,
-      "totalCallSites": 19,
-      "cds": "@cbhq/cds-mobile/buttons/Button",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "@prime-mobile/deprecated/interactables/SmallButton.tsx",
-          "callSites": ["@prime-mobile/deprecated/UI/CopyableField.tsx"]
-        },
-        {
-          "aliasPath": "@prime-mobile/screens/consensus/RecordVideoStatementButton.tsx",
-          "callSites": ["@prime-mobile/screens/consensus/ActivityDetailsActions.tsx"]
-        },
-        {
-          "aliasPath": "@prime-mobile/screens/video-statement/components/RecordButton.tsx",
-          "callSites": ["@prime-mobile/screens/video-statement/components/VideoControllers.tsx"]
-        }
-      ],
-      "callSites": {
-        "@prime-mobile/deprecated/interactables/SmallButton.tsx": 1,
-        "@prime-mobile/components/errors/ErrorTray.tsx": 3,
-        "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 2,
-        "@prime-mobile/components/errors/NoReadAccessFallback.tsx": 2,
-        "@prime-mobile/screens/developer/DeveloperScreen.tsx": 2,
-        "@prime-mobile/screens/consensus/ActivityConfirmation.tsx": 2,
-        "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 3,
-        "@prime-mobile/screens/consensus/RecordVideoStatementButton.tsx": 1,
-        "@prime-mobile/screens/error/LoginErrorBoundary.tsx": 1,
-        "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
-        "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
-        "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
-        "@prime-mobile/screens/video-statement/NeedDevicePermissions.tsx": 2,
-        "@prime-mobile/screens/video-statement/VideoStatementInfoTray.tsx": 1,
-        "@prime-mobile/screens/video-statement/VideoStatementRequest.tsx": 1,
-        "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 2,
-        "@prime-mobile/screens/video-statement/VideoStatementSuccess.tsx": 1,
-        "@prime-mobile/screens/video-statement/components/RecordButton.tsx": 3,
-        "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1
-      },
-      "propsWithCallSites": {
-        "variant": {
-          "@prime-mobile/deprecated/interactables/SmallButton.tsx": 1,
-          "@prime-mobile/components/errors/ErrorTray.tsx": 3,
-          "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
-          "@prime-mobile/components/errors/NoReadAccessFallback.tsx": 2,
-          "@prime-mobile/screens/developer/DeveloperScreen.tsx": 1,
-          "@prime-mobile/screens/consensus/ActivityConfirmation.tsx": 1,
-          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 2,
-          "@prime-mobile/screens/consensus/RecordVideoStatementButton.tsx": 1,
-          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
-          "@prime-mobile/screens/video-statement/VideoStatementInfoTray.tsx": 1,
-          "@prime-mobile/screens/video-statement/VideoStatementSuccess.tsx": 1,
-          "@prime-mobile/screens/video-statement/components/RecordButton.tsx": 3,
-          "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1
-        },
-        "compact": { "@prime-mobile/deprecated/interactables/SmallButton.tsx": 1 },
-        "onPress": {
-          "@prime-mobile/deprecated/interactables/SmallButton.tsx": 1,
-          "@prime-mobile/components/errors/ErrorTray.tsx": 3,
-          "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 2,
-          "@prime-mobile/components/errors/NoReadAccessFallback.tsx": 2,
-          "@prime-mobile/screens/developer/DeveloperScreen.tsx": 2,
-          "@prime-mobile/screens/consensus/ActivityConfirmation.tsx": 2,
-          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 3,
-          "@prime-mobile/screens/consensus/RecordVideoStatementButton.tsx": 1,
-          "@prime-mobile/screens/error/LoginErrorBoundary.tsx": 1,
-          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
-          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
-          "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
-          "@prime-mobile/screens/video-statement/NeedDevicePermissions.tsx": 2,
-          "@prime-mobile/screens/video-statement/VideoStatementInfoTray.tsx": 1,
-          "@prime-mobile/screens/video-statement/VideoStatementRequest.tsx": 1,
-          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 2,
-          "@prime-mobile/screens/video-statement/VideoStatementSuccess.tsx": 1,
-          "@prime-mobile/screens/video-statement/components/RecordButton.tsx": 3,
-          "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1
-        },
-        "loading": {
-          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 3,
-          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1
-        },
-        "disabled": {
-          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 2,
-          "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
-          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1
-        },
-        "block": {
-          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 1,
-          "@prime-mobile/screens/consensus/RecordVideoStatementButton.tsx": 1,
-          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
-          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
-          "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1
-        },
-        "transparent": {
-          "@prime-mobile/screens/error/LoginErrorBoundary.tsx": 1,
-          "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1,
-          "@prime-mobile/screens/video-statement/components/RecordButton.tsx": 1,
-          "@prime-mobile/screens/video-statement/components/VideoAcknowledgement.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Icon",
-      "sourceFile": "@cbhq/cds-mobile/icons/Icon",
-      "totalInstances": 12,
-      "totalCallSites": 10,
-      "cds": "@cbhq/cds-mobile/icons/Icon",
-      "callSites": {
-        "@prime-mobile/components/errors/ErrorBanner.tsx": 1,
-        "@prime-mobile/components/errors/ErrorTray.tsx": 1,
-        "@prime-mobile/components/toast/Toast.tsx": 1,
-        "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
-        "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
-        "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
-        "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1,
-        "@prime-mobile/screens/permissions/PermissionsTable.tsx": 2,
-        "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 2,
-        "@prime-mobile/screens/settings/SettingsScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "@prime-mobile/components/errors/ErrorBanner.tsx": 1,
-          "@prime-mobile/components/errors/ErrorTray.tsx": 1,
-          "@prime-mobile/components/toast/Toast.tsx": 1,
-          "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
-          "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
-          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
-          "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1,
-          "@prime-mobile/screens/permissions/PermissionsTable.tsx": 2,
-          "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 2,
-          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1
-        },
-        "color": {
-          "@prime-mobile/components/errors/ErrorBanner.tsx": 1,
-          "@prime-mobile/components/errors/ErrorTray.tsx": 1,
-          "@prime-mobile/components/toast/Toast.tsx": 1,
-          "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
-          "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
-          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
-          "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1,
-          "@prime-mobile/screens/permissions/PermissionsTable.tsx": 2,
-          "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 1,
-          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1
-        },
-        "bordered": {
-          "@prime-mobile/components/errors/ErrorBanner.tsx": 1,
-          "@prime-mobile/components/errors/ErrorTray.tsx": 1
-        },
-        "size": {
-          "@prime-mobile/components/errors/ErrorBanner.tsx": 1,
-          "@prime-mobile/components/errors/ErrorTray.tsx": 1,
-          "@prime-mobile/components/toast/Toast.tsx": 1,
-          "@prime-mobile/screens/activity/ActivityListRow.tsx": 1,
-          "@prime-mobile/screens/consensus/ConsensusRow.tsx": 1,
-          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
-          "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1,
-          "@prime-mobile/screens/permissions/PermissionsTable.tsx": 2,
-          "@prime-mobile/screens/portfolio/PortfolioFilterTray.tsx": 2,
-          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1
-        },
-        "spacingTop": { "@prime-mobile/screens/permissions/PermissionsGuide.tsx": 1 }
-      }
-    },
-    {
       "name": "ListCellFallback",
       "sourceFile": "@cbhq/cds-mobile/cells/ListCellFallback",
       "totalInstances": 11,
@@ -1458,48 +1525,50 @@
       }
     },
     {
-      "name": "TextTitle1",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle1",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-mobile/typography/TextTitle1",
+      "name": "TextLabel2",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextLabel2",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/typography/TextLabel2",
       "callSites": {
-        "@prime-mobile/components/loading/LoadingPortfolio.tsx": 1,
-        "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1,
-        "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1,
-        "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
-        "@prime-mobile/screens/web3/Web3Screen.tsx": 1
+        "@prime-mobile/deprecated/UI/CopyableField.tsx": 1,
+        "@prime-mobile/screens/permissions/PermissionsTable.tsx": 1
       },
-      "propsWithCallSites": {
-        "spacingTop": { "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1 },
-        "spacingBottom": { "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1 },
-        "spacingHorizontal": { "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1 },
-        "spacingEnd": {
-          "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1,
-          "@prime-mobile/screens/web3/Web3Screen.tsx": 1
-        }
-      }
+      "propsWithCallSites": { "spacing": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 } }
     },
     {
       "name": "TextTitle2",
       "sourceFile": "@cbhq/cds-mobile/typography/TextTitle2",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "cds": "@cbhq/cds-mobile/typography/TextTitle2",
       "callSites": {
         "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
-        "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1
-      }
+        "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
+        "@prime-mobile/screens/web3/Web3Screen.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+      },
+      "propsWithCallSites": { "color": { "@prime-mobile/screens/web3/Web3Screen.tsx": 1 } }
     },
     {
       "name": "ButtonGroup",
       "sourceFile": "@cbhq/cds-mobile/buttons/ButtonGroup",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "cds": "@cbhq/cds-mobile/buttons/ButtonGroup",
+      "callSites": {
+        "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+      },
       "propsWithCallSites": {
-        "accessibilityLabel": { "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 1 },
-        "block": { "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 1 }
+        "accessibilityLabel": {
+          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+        },
+        "block": {
+          "@prime-mobile/screens/consensus/ActivityDetailsActions.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+        }
       }
     },
     {
@@ -1710,8 +1779,8 @@
     {
       "name": "Loading",
       "sourceFile": "@prime-mobile/components/Loading",
-      "totalInstances": 8,
-      "totalCallSites": 7,
+      "totalInstances": 11,
+      "totalCallSites": 10,
       "presentationalElement": "View",
       "callSites": {
         "@prime-mobile/navigation/AuthedStackNavigator.tsx": 1,
@@ -1720,7 +1789,10 @@
         "@prime-mobile/screens/logout/LogoutScreen.tsx": 1,
         "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
         "@prime-mobile/screens/video-statement/VideoStatementFlow.tsx": 1,
-        "@prime-mobile/screens/video-statement/VideoStatementUpload.tsx": 1
+        "@prime-mobile/screens/video-statement/VideoStatementUpload.tsx": 1,
+        "@prime-mobile/screens/web3/Web3OnboardingFlow.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignFlow.tsx": 1
       }
     },
     {
@@ -2033,6 +2105,82 @@
       }
     },
     {
+      "name": "Screen",
+      "sourceFile": "@prime-mobile/components/layout/Screen",
+      "totalInstances": 17,
+      "totalCallSites": 12,
+      "callSites": {
+        "@prime-mobile/components/Web3ActionItem.tsx": 1,
+        "@prime-mobile/screens/activity/ActivityListScreen.tsx": 2,
+        "@prime-mobile/screens/developer/DeveloperScreen.tsx": 1,
+        "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 2,
+        "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 2,
+        "@prime-mobile/screens/video-statement/VideoStatementRecord.tsx": 1,
+        "@prime-mobile/screens/video-statement/VideoStatementRequest.tsx": 1,
+        "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1,
+        "@prime-mobile/screens/video-statement/VideoStatementSuccess.tsx": 1,
+        "@prime-mobile/screens/video-statement/VideoStatementUpload.tsx": 1,
+        "@prime-mobile/screens/web3/Web3Screen.tsx": 3,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+      }
+    },
+    {
+      "name": "Header",
+      "sourceFile": "@prime-mobile/components/layout/Header",
+      "totalInstances": 10,
+      "totalCallSites": 10,
+      "callSites": {
+        "@prime-mobile/components/Web3ActionItem.tsx": 1,
+        "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
+        "@prime-mobile/components/layout/ModalLayout.tsx": 1,
+        "@prime-mobile/components/loading/LoadingApp.tsx": 1,
+        "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
+        "@prime-mobile/screens/hierarchy-switcher/HierarchyHeader.tsx": 1,
+        "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
+        "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
+        "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacingHorizontal": {
+          "@prime-mobile/components/Web3ActionItem.tsx": 1,
+          "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
+          "@prime-mobile/components/loading/LoadingApp.tsx": 1,
+          "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
+          "@prime-mobile/screens/hierarchy-switcher/HierarchyHeader.tsx": 1,
+          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
+          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
+          "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+        },
+        "left": {
+          "@prime-mobile/components/Web3ActionItem.tsx": 1,
+          "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
+          "@prime-mobile/components/loading/LoadingApp.tsx": 1,
+          "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
+          "@prime-mobile/screens/hierarchy-switcher/HierarchyHeader.tsx": 1,
+          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
+          "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+        },
+        "right": {
+          "@prime-mobile/components/Web3ActionItem.tsx": 1,
+          "@prime-mobile/components/layout/ModalLayout.tsx": 1,
+          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1
+        },
+        "center": {
+          "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
+          "@prime-mobile/components/layout/ModalLayout.tsx": 1,
+          "@prime-mobile/components/loading/LoadingApp.tsx": 1,
+          "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
+          "@prime-mobile/screens/hierarchy-switcher/HierarchyHeader.tsx": 1,
+          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
+          "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+        }
+      }
+    },
+    {
       "name": "TabBar",
       "sourceFile": "@prime-mobile/navigation/TabBar",
       "totalInstances": 1,
@@ -2041,8 +2189,8 @@
     {
       "name": "Suspense",
       "sourceFile": "react/Suspense",
-      "totalInstances": 10,
-      "totalCallSites": 8,
+      "totalInstances": 13,
+      "totalCallSites": 11,
       "callSites": {
         "@prime-mobile/navigation/AuthedStackNavigator.tsx": 1,
         "@prime-mobile/providers/DataCacheProviders.tsx": 1,
@@ -2051,7 +2199,10 @@
         "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1,
         "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
         "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
-        "@prime-mobile/screens/video-statement/VideoStatementFlow.tsx": 1
+        "@prime-mobile/screens/video-statement/VideoStatementFlow.tsx": 1,
+        "@prime-mobile/screens/web3/Web3OnboardingFlow.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignFlow.tsx": 1
       },
       "propsWithCallSites": {
         "fallback": {
@@ -2062,7 +2213,10 @@
           "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1,
           "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
           "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
-          "@prime-mobile/screens/video-statement/VideoStatementFlow.tsx": 1
+          "@prime-mobile/screens/video-statement/VideoStatementFlow.tsx": 1,
+          "@prime-mobile/screens/web3/Web3OnboardingFlow.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignFlow.tsx": 1
         }
       }
     },
@@ -2099,6 +2253,12 @@
     {
       "name": "ApplicationStateProvider",
       "sourceFile": "@prime-mobile/hooks/useApplicationState/ApplicationStateProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "BiometricsProvider",
+      "sourceFile": "@prime-mobile/hooks/useBiometrics/BiometricsProvider",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -2202,22 +2362,22 @@
       "totalCallSites": 1
     },
     {
-      "name": "BiometricsProvider",
-      "sourceFile": "@prime-mobile/hooks/useBiometrics/BiometricsProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "ErrorBoundary",
       "sourceFile": "@prime-mobile/screens/error/ErrorBoundary",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
         "@prime-mobile/providers/Providers.tsx": 1,
-        "@prime-mobile/screens/video-statement/VideoStatementFlow.tsx": 1
+        "@prime-mobile/screens/video-statement/VideoStatementFlow.tsx": 1,
+        "@prime-mobile/screens/web3/Web3OnboardingFlow.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignFlow.tsx": 1
       },
       "propsWithCallSites": {
-        "fallback": { "@prime-mobile/screens/video-statement/VideoStatementFlow.tsx": 1 }
+        "fallback": {
+          "@prime-mobile/screens/video-statement/VideoStatementFlow.tsx": 1,
+          "@prime-mobile/screens/web3/Web3OnboardingFlow.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignFlow.tsx": 1
+        }
       }
     },
     {
@@ -2231,16 +2391,6 @@
       "sourceFile": "@prime-mobile/hooks/usePushToken/PushTokenProvider",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "SmallButton",
-      "sourceFile": "@prime-mobile/deprecated/interactables/SmallButton",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onPress": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 },
-        "variant": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 }
-      }
     },
     {
       "name": "ErrorBanner",
@@ -2332,54 +2482,6 @@
         "noIcon": { "@prime-mobile/components/errors/LoadingErrorFallback.tsx": 1 },
         "onRelaunch": { "@prime-mobile/components/errors/LoadingErrorFallback.tsx": 1 },
         "onErrorTrayButtonPress": { "@prime-mobile/components/toast/Toaster.tsx": 1 }
-      }
-    },
-    {
-      "name": "Header",
-      "sourceFile": "@prime-mobile/components/layout/Header",
-      "totalInstances": 8,
-      "totalCallSites": 8,
-      "callSites": {
-        "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
-        "@prime-mobile/components/layout/ModalLayout.tsx": 1,
-        "@prime-mobile/components/loading/LoadingApp.tsx": 1,
-        "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
-        "@prime-mobile/screens/hierarchy-switcher/HierarchyHeader.tsx": 1,
-        "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
-        "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
-        "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacingHorizontal": {
-          "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
-          "@prime-mobile/components/loading/LoadingApp.tsx": 1,
-          "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
-          "@prime-mobile/screens/hierarchy-switcher/HierarchyHeader.tsx": 1,
-          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
-          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
-          "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1
-        },
-        "left": {
-          "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
-          "@prime-mobile/components/loading/LoadingApp.tsx": 1,
-          "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
-          "@prime-mobile/screens/hierarchy-switcher/HierarchyHeader.tsx": 1,
-          "@prime-mobile/screens/login/PreLoginScreen.tsx": 1,
-          "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1
-        },
-        "center": {
-          "@prime-mobile/components/errors/NoPortfolioErrorFallback.tsx": 1,
-          "@prime-mobile/components/layout/ModalLayout.tsx": 1,
-          "@prime-mobile/components/loading/LoadingApp.tsx": 1,
-          "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
-          "@prime-mobile/screens/hierarchy-switcher/HierarchyHeader.tsx": 1,
-          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1,
-          "@prime-mobile/screens/tos/TermsOfServiceScreen.tsx": 1
-        },
-        "right": {
-          "@prime-mobile/components/layout/ModalLayout.tsx": 1,
-          "@prime-mobile/screens/settings/SettingsScreen.tsx": 1
-        }
       }
     },
     {
@@ -2515,6 +2617,16 @@
       }
     },
     {
+      "name": "SmallButton",
+      "sourceFile": "@prime-mobile/deprecated/interactables/SmallButton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onPress": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 },
+        "variant": { "@prime-mobile/deprecated/UI/CopyableField.tsx": 1 }
+      }
+    },
+    {
       "name": "Pill",
       "sourceFile": "@prime-mobile/components/Pill",
       "totalInstances": 2,
@@ -2607,12 +2719,13 @@
     {
       "name": "FlatList",
       "sourceFile": "@prime-mobile/components/layout/FlatList",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
         "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1,
         "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1,
-        "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1
+        "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
+        "@prime-mobile/screens/web3/Web3Screen.tsx": 1
       },
       "propsWithCallSites": {
         "contentContainerStyle": {
@@ -2622,66 +2735,51 @@
         "keyExtractor": {
           "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1,
           "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1,
-          "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1
+          "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3Screen.tsx": 1
         },
         "data": {
           "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1,
           "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1,
-          "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1
+          "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3Screen.tsx": 1
         },
         "onEndReached": { "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1 },
         "onEndReachedThreshold": { "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1 },
         "renderItem": {
           "@prime-mobile/screens/activity/ActivityListScreen.tsx": 1,
           "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1,
-          "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1
+          "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1,
+          "@prime-mobile/screens/web3/Web3Screen.tsx": 1
         },
         "ListEmptyComponent": { "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 1 },
         "ListHeaderComponent": { "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 1 }
       }
     },
     {
-      "name": "Screen",
-      "sourceFile": "@prime-mobile/components/layout/Screen",
-      "totalInstances": 14,
-      "totalCallSites": 10,
-      "callSites": {
-        "@prime-mobile/screens/activity/ActivityListScreen.tsx": 2,
-        "@prime-mobile/screens/developer/DeveloperScreen.tsx": 1,
-        "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 2,
-        "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 2,
-        "@prime-mobile/screens/video-statement/VideoStatementRecord.tsx": 1,
-        "@prime-mobile/screens/video-statement/VideoStatementRequest.tsx": 1,
-        "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 1,
-        "@prime-mobile/screens/video-statement/VideoStatementSuccess.tsx": 1,
-        "@prime-mobile/screens/video-statement/VideoStatementUpload.tsx": 1,
-        "@prime-mobile/screens/web3/Web3Screen.tsx": 2
-      }
-    },
-    {
       "name": "HierarchyHeader",
       "sourceFile": "@prime-mobile/screens/hierarchy-switcher/HierarchyHeader",
-      "totalInstances": 9,
+      "totalInstances": 10,
       "totalCallSites": 5,
       "callSites": {
         "@prime-mobile/screens/activity/ActivityListScreen.tsx": 2,
         "@prime-mobile/screens/developer/DeveloperScreen.tsx": 1,
         "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 2,
         "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 2,
-        "@prime-mobile/screens/web3/Web3Screen.tsx": 2
+        "@prime-mobile/screens/web3/Web3Screen.tsx": 3
       }
     },
     {
       "name": "OrgSwitcher",
       "sourceFile": "@prime-mobile/components/OrgSwitcher",
-      "totalInstances": 9,
+      "totalInstances": 10,
       "totalCallSites": 5,
       "callSites": {
         "@prime-mobile/screens/activity/ActivityListScreen.tsx": 2,
         "@prime-mobile/screens/developer/DeveloperScreen.tsx": 1,
         "@prime-mobile/screens/consensus/ConsensusScreen.tsx": 2,
         "@prime-mobile/screens/portfolio/PortfolioScreen.tsx": 2,
-        "@prime-mobile/screens/web3/Web3Screen.tsx": 2
+        "@prime-mobile/screens/web3/Web3Screen.tsx": 3
       }
     },
     {
@@ -2841,12 +2939,25 @@
     {
       "name": "ButtonToggle",
       "sourceFile": "@prime-mobile/components/ButtonToggle",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+      },
       "propsWithCallSites": {
-        "items": { "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1 },
-        "selectedItem": { "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1 },
-        "onToggle": { "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1 }
+        "items": {
+          "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+        },
+        "selectedItem": {
+          "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+        },
+        "onToggle": {
+          "@prime-mobile/screens/consensus/ActivityDetails.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+        }
       }
     },
     {
@@ -2900,13 +3011,25 @@
     {
       "name": "DisplayKeyValue",
       "sourceFile": "@prime-mobile/components/DisplayKeyValue",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "@prime-mobile/screens/consensus/ActivityDetailsView.tsx": 2 },
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "callSites": {
+        "@prime-mobile/screens/consensus/ActivityDetailsView.tsx": 2,
+        "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+      },
       "propsWithCallSites": {
-        "displayKey": { "@prime-mobile/screens/consensus/ActivityDetailsView.tsx": 2 },
-        "value": { "@prime-mobile/screens/consensus/ActivityDetailsView.tsx": 2 },
-        "key": { "@prime-mobile/screens/consensus/ActivityDetailsView.tsx": 1 }
+        "displayKey": {
+          "@prime-mobile/screens/consensus/ActivityDetailsView.tsx": 2,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+        },
+        "value": {
+          "@prime-mobile/screens/consensus/ActivityDetailsView.tsx": 2,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+        },
+        "key": {
+          "@prime-mobile/screens/consensus/ActivityDetailsView.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivityDetails.tsx": 1
+        }
       }
     },
     {
@@ -3275,6 +3398,43 @@
       "propsWithCallSites": {
         "text": { "@prime-mobile/screens/video-statement/VideoStatementReviewAndSubmit.tsx": 6 }
       }
+    },
+    {
+      "name": "Web3ActionItem",
+      "sourceFile": "@prime-mobile/components/Web3ActionItem",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "@prime-mobile/screens/web3/Web3Biometrics.tsx": 1,
+        "@prime-mobile/screens/web3/Web3GenerateKeys.tsx": 1,
+        "@prime-mobile/screens/web3/Web3SignActivitySuccess.tsx": 1,
+        "@prime-mobile/screens/web3/Web3Success.tsx": 1
+      },
+      "propsWithCallSites": {
+        "actionItem": {
+          "@prime-mobile/screens/web3/Web3Biometrics.tsx": 1,
+          "@prime-mobile/screens/web3/Web3GenerateKeys.tsx": 1,
+          "@prime-mobile/screens/web3/Web3SignActivitySuccess.tsx": 1,
+          "@prime-mobile/screens/web3/Web3Success.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Web3WalletRow",
+      "sourceFile": "@prime-mobile/components/Web3WalletRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "@prime-mobile/screens/web3/Web3Screen.tsx": 1 },
+        "wallet": { "@prime-mobile/screens/web3/Web3Screen.tsx": 1 }
+      }
+    },
+    {
+      "name": "Web3Wallets",
+      "sourceFile": "@prime-mobile/screens/web3/Web3Screen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "portfolioId": { "@prime-mobile/screens/web3/Web3Screen.tsx": 1 } }
     },
     {
       "name": "Modal",
