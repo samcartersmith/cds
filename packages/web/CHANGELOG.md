@@ -8,6 +8,19 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.5.0 (8/18/2022, 06:19 AM PST)
+
+#### 🚀 Updates
+
+- **[Avatar]** Wrote a better algorithm for calculating avatar fallback color. [#935](https://github.cbhq.net/frontend/cds/pull/935)
+- **[Responsive]** Added flexGrow and flexShrink to responsiveConfig. [#941](https://github.cbhq.net/frontend/cds/pull/941)
+
+#### 🐞 Fixes
+
+- Update sidebar to use span instead of headings. [#970](https://github.cbhq.net/frontend/cds/pull/970)
+- **[⌨️ Sparkline]**: Support keyboard interactions. [#960](https://github.cbhq.net/frontend/cds/pull/960), [CDS-2341](https://jira.coinbase-corp.com/browse/CDS-2341)
+- **[Responsive]** Fixed specificity issue with responsiveConfig. [#956](https://github.cbhq.net/frontend/cds/pull/956)
+
 ## 1.4.0 (8/10/2022, 06:06 PM PST)
 
 #### 🚀 Updates

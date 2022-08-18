@@ -8,6 +8,22 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.5.0 (8/18/2022, 06:19 AM PST)
+
+#### 🚀 Updates
+
+- **[SearchInput]** Add startIcon prop. This will allow disabling startIcon from toggling between search and backArrow. [#972](https://github.cbhq.net/frontend/cds/pull/972)
+- **[Avatar]** Wrote a better algorithm for calculating avatar fallback color. [#935](https://github.cbhq.net/frontend/cds/pull/935)
+
+#### 🐞 Fixes
+
+- **[⌨️ Sparkline]**: Support keyboard interactions. [#960](https://github.cbhq.net/frontend/cds/pull/960), [CDS-2341](https://jira.coinbase-corp.com/browse/CDS-2341)
+- **[Mobile-Accessibility]** Fix remaining issues with a11y/mobile.test.tsx. [#959](https://github.cbhq.net/frontend/cds/pull/959)
+- **[TooltipV2]** Add accessibilityLabel, accessibilityHint, accessibilityLabelForContent, accessibilityHintForContent props. [#954](https://github.cbhq.net/frontend/cds/pull/954)
+- **[Checkbox]** If typeof children = string, then the children value should be the value of accessibilityLabel and accessibilityHint. [#952](https://github.cbhq.net/frontend/cds/pull/952)
+- **[SelectOption]** Set title and description as default value for accessibilityLabel and accessibilityHint. [#951](https://github.cbhq.net/frontend/cds/pull/951)
+- **[RadioGroup]** Fix RadioGroup mobile accessibility issue. [#937](https://github.cbhq.net/frontend/cds/pull/937)
+
 ## 1.4.0 (8/10/2022, 06:06 PM PST)
 
 #### 🚀 Updates
