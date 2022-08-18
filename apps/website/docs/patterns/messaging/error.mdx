@@ -255,7 +255,8 @@ Error messages range in severity and differ by origination. The way we communica
       'A specific error indicating the user’s connection took too long sending its request and the server timed out before it could send a response. Usually occurs because the user has a slow connection.',
     '410 – Gone':
       'A specific error indicating that the page/file requested has been removed from the location requested. This condition is permanent.',
-    '502 – Bad Gateway': 'A specific error indicating there was an issue on the server side of',
+    '502 – Bad Gateway':
+      'A specific error indicating there was an issue on the server side, wherein the server you contacted was acting as a proxy for another server that had a bad response.',
     '503 – Service Temporarily Unavailable':
       'You see the Service Temporarily Unavailable (sometimes Out of Resources) message any time there’s a temporary overload on the server, or when it’s going through a scheduled maintenance.',
     '504 – Gateway Time-Out':
@@ -381,7 +382,7 @@ function Illustration7() {
 <br />
 
 <VStack>
-  <TextHeadline as="h4">500</TextHeadline>
+  <TextHeadline as="h4">502</TextHeadline>
   <Image srcLight="/img/error/500example_light.png" srcDark="/img/error/500example_dark.png" />
 </VStack>
 
