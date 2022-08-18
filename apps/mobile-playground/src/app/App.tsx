@@ -8,7 +8,7 @@ import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePrefere
 import { FeatureFlagProvider } from '@cbhq/cds-mobile/system/FeatureFlagProvider';
 import { StatusBar } from '@cbhq/cds-mobile/system/StatusBar';
 import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
-import { Playground } from '@cbhq/ui-mobile-playground/src/Playground';
+import { PlaygroundWithNavContainer } from '@cbhq/ui-mobile-playground/src/Playground';
 
 import { routes } from '../../visreg.config';
 
@@ -32,7 +32,7 @@ const App = memo(() => {
           <CdsSafeAreaProvider>
             <PortalProvider>
               <StatusBar />
-              <Playground routes={routes} />
+              <PlaygroundWithNavContainer routes={routes} />
             </PortalProvider>
           </CdsSafeAreaProvider>
         </ThemeProvider>

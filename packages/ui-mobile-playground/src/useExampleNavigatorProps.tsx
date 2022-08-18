@@ -4,7 +4,7 @@
 import React, { useContext, useMemo } from 'react';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { StackHeaderProps } from '@react-navigation/stack';
+import { StackHeaderProps, StackNavigationOptions } from '@react-navigation/stack';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { IconButton } from '@cbhq/cds-mobile/buttons/IconButton';
 import { TextInput } from '@cbhq/cds-mobile/controls/TextInput';
@@ -18,14 +18,7 @@ import { TextHeadline } from '@cbhq/cds-mobile/typography/TextHeadline';
 import { SetSearchFilterContext } from './ExamplesSearchProvider';
 import { initialRouteName, searchRouteName } from './staticRoutes';
 
-const safeAreaInsets = {
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-};
-
-export function useExampleScreenOptions() {
+export function useExampleNavigatorProps() {
   const palette = usePalette();
   const { top } = useSafeAreaInsets();
   const [headerSize, onLayout] = useLayout();
@@ -35,7 +28,7 @@ export function useExampleScreenOptions() {
   const style = useMemo(() => ({ marginTop: top }), [top]);
 
   const header = useMemo(() => {
-    return ({ navigation, scene, styleInterpolator }: StackHeaderProps) => {
+    return ({ navigation, route, options, progress, styleInterpolator }: StackHeaderProps) => {
       const isFocused = navigation.isFocused();
       const canGoBack = navigation.canGoBack();
       const goBack = () => {
@@ -43,12 +36,12 @@ export function useExampleScreenOptions() {
         setFilter('');
       };
       const goToSearch = () => navigation.navigate(searchRouteName);
-      const routeName = scene.route.name;
-      const titleForScene = scene.descriptor.options.title;
+      const routeName = route.name;
+      const titleForScene = options.title;
       const isSearch = routeName === searchRouteName;
       const { titleStyle } = styleInterpolator({
-        current: { progress: scene.progress.current },
-        next: scene.progress.next && { progress: scene.progress.next },
+        current: { progress: progress.current },
+        next: progress.next && { progress: progress.next },
         layouts: {
           header: headerSize,
           title: headerSize,
@@ -118,25 +111,25 @@ export function useExampleScreenOptions() {
     };
   }, [headerSize, iconButtonHeight, onLayout, setFilter, style]);
 
-  return useMemo(
-    () =>
-      ({
-        initialRouteName,
-        screenOptions: {
-          headerBackAllowFontScaling: false,
-          headerBackTitleVisible: false,
-          headerTitleAllowFontScaling: false,
-          headerStyle: {
-            backgroundColor: palette.background,
-            borderWidth: 0,
-            shadowColor: 'transparent',
-            height: headerSize.height,
-          },
-          safeAreaInsets,
-          header,
-          gestureDirection: 'horizontal',
-        },
-      } as const),
-    [header, headerSize.height, palette.background],
-  );
+  return useMemo(() => {
+    const screenOptions: StackNavigationOptions = {
+      headerBackAllowFontScaling: false,
+      headerBackTitleVisible: false,
+      headerTitleAllowFontScaling: false,
+      headerMode: 'float',
+      headerStyle: {
+        backgroundColor: palette.background,
+        borderWidth: 0,
+        shadowColor: 'transparent',
+        height: headerSize.height,
+      },
+      header,
+      gestureDirection: 'horizontal',
+    };
+
+    return {
+      initialRouteName,
+      screenOptions,
+    };
+  }, [header, headerSize.height, palette.background]);
 }

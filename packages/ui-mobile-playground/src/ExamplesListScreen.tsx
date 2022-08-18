@@ -15,7 +15,7 @@ export function ExamplesListScreen() {
 
   // React Navigation Route Param typing is not clean because our routes are dynamic
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const routeKeys = (useRoute().params as any).routeKeys as string[];
+  const routeKeys = ((useRoute().params as any)?.routeKeys as string[]) ?? [];
   const { navigate } = useNavigation();
 
   const renderItem: ListRenderItem<string> = useCallback(
@@ -23,7 +23,8 @@ export function ExamplesListScreen() {
       // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
       const handlePress = () => {
         setFilter('');
-        navigate({ name: keyToRouteName(item), params: {} });
+        // typing not clean due to dynamic routes
+        navigate(keyToRouteName(item) as never, {} as never);
       };
 
       return (
