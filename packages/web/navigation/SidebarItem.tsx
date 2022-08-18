@@ -90,7 +90,7 @@ export const SidebarItem = memo(
             <HStack gap={2} spacing={2} alignItems="center" justifyContent="flex-start">
               <NavigationIcon name={icon} active={active} />
               {!isCollapsed && (
-                <TextHeadline as="h2" color={color}>
+                <TextHeadline as="span" color={color}>
                   {title}
                 </TextHeadline>
               )}
