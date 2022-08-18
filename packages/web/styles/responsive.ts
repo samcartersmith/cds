@@ -358,19 +358,25 @@ export const desktopStyles = {
   flexShrink: {
     1: css`
       @media (min-width: 1280px) {
-        flex-shrink: 1;
+        &.cds-responsive {
+          flex-shrink: 1;
+        }
       }
     `,
 
     2: css`
       @media (min-width: 1280px) {
-        flex-shrink: 2;
+        &.cds-responsive {
+          flex-shrink: 2;
+        }
       }
     `,
 
     3: css`
       @media (min-width: 1280px) {
-        flex-shrink: 3;
+        &.cds-responsive {
+          flex-shrink: 3;
+        }
       }
     `,
   },
@@ -378,19 +384,25 @@ export const desktopStyles = {
   flexGrow: {
     1: css`
       @media (min-width: 1280px) {
-        flex-grow: 1;
+        &.cds-responsive {
+          flex-grow: 1;
+        }
       }
     `,
 
     2: css`
       @media (min-width: 1280px) {
-        flex-grow: 2;
+        &.cds-responsive {
+          flex-grow: 2;
+        }
       }
     `,
 
     3: css`
       @media (min-width: 1280px) {
-        flex-grow: 3;
+        &.cds-responsive {
+          flex-grow: 3;
+        }
       }
     `,
   },
@@ -818,19 +830,25 @@ export const tabletStyles = {
   flexShrink: {
     1: css`
       @media (max-width: 1279px) {
-        flex-shrink: 1;
+        &.cds-responsive {
+          flex-shrink: 1;
+        }
       }
     `,
 
     2: css`
       @media (max-width: 1279px) {
-        flex-shrink: 2;
+        &.cds-responsive {
+          flex-shrink: 2;
+        }
       }
     `,
 
     3: css`
       @media (max-width: 1279px) {
-        flex-shrink: 3;
+        &.cds-responsive {
+          flex-shrink: 3;
+        }
       }
     `,
   },
@@ -838,19 +856,25 @@ export const tabletStyles = {
   flexGrow: {
     1: css`
       @media (max-width: 1279px) {
-        flex-grow: 1;
+        &.cds-responsive {
+          flex-grow: 1;
+        }
       }
     `,
 
     2: css`
       @media (max-width: 1279px) {
-        flex-grow: 2;
+        &.cds-responsive {
+          flex-grow: 2;
+        }
       }
     `,
 
     3: css`
       @media (max-width: 1279px) {
-        flex-grow: 3;
+        &.cds-responsive {
+          flex-grow: 3;
+        }
       }
     `,
   },
@@ -1278,19 +1302,25 @@ export const phoneStyles = {
   flexShrink: {
     1: css`
       @media (max-width: 767px) {
-        flex-shrink: 1;
+        &.cds-responsive {
+          flex-shrink: 1;
+        }
       }
     `,
 
     2: css`
       @media (max-width: 767px) {
-        flex-shrink: 2;
+        &.cds-responsive {
+          flex-shrink: 2;
+        }
       }
     `,
 
     3: css`
       @media (max-width: 767px) {
-        flex-shrink: 3;
+        &.cds-responsive {
+          flex-shrink: 3;
+        }
       }
     `,
   },
@@ -1298,19 +1328,25 @@ export const phoneStyles = {
   flexGrow: {
     1: css`
       @media (max-width: 767px) {
-        flex-grow: 1;
+        &.cds-responsive {
+          flex-grow: 1;
+        }
       }
     `,
 
     2: css`
       @media (max-width: 767px) {
-        flex-grow: 2;
+        &.cds-responsive {
+          flex-grow: 2;
+        }
       }
     `,
 
     3: css`
       @media (max-width: 767px) {
-        flex-grow: 3;
+        &.cds-responsive {
+          flex-grow: 3;
+        }
       }
     `,
   },
