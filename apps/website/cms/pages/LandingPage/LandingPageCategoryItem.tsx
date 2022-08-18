@@ -1,11 +1,17 @@
 import React, { memo } from 'react';
-import type { LandingPageCategoryItemProps } from '@theme/LandingPageCategoryItem';
 import type { IllustrationNames } from '@cbhq/cds-common';
 import { CardBody } from '@cbhq/cds-web/alpha/CardBody';
 import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
 import { Box } from '@cbhq/cds-web/layout/Box';
+import useGoToLinkHandler from '@cbhq/docusaurus-theme/src/theme/useGoToLinkHandler';
 
-import useGoToLinkHandler from './useGoToLinkHandler';
+export type LandingPageCategoryItemProps = {
+  title: string;
+  description: string;
+  illustration: IllustrationNames;
+  actionLabel: string;
+  href: string;
+};
 
 type LandingIllustrationProps = { name: IllustrationNames };
 

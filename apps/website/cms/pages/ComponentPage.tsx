@@ -1,6 +1,5 @@
 import React, { memo, ReactElement } from 'react';
 import { Document } from '@contentful/rich-text-types';
-import { useLocation } from '@docusaurus/router';
 import { TOCItems } from '@theme/createTOCManager';
 import TabItem from '@theme-original/TabItem';
 import Tabs from '@theme-original/Tabs';
@@ -61,10 +60,7 @@ const componentsMap = {
 } as unknown as Record<string, ComponentMapValue>;
 
 export const ComponentPage = memo(function CMS({ changelog, propsTable, metadata }: CMSProps) {
-  const location = useLocation();
-  const { pageData, space, handleError } = useComposePage<PageFields>({
-    slug: location.pathname,
-  });
+  const { pageData, space, handleError } = useComposePage<PageFields>();
 
   if (!pageData?.content?.fields) {
     // TODO: add fallback

@@ -1,6 +1,10 @@
 import React, { memo } from 'react';
-import { LandingPageFocusAreaItemProps } from '@theme/LandingPageFocusAreaItem';
 import { Link } from '@cbhq/cds-web/typography/Link';
+
+export type LandingPageFocusAreaItemProps = {
+  label: string;
+  url: string;
+};
 
 const LandingPageFocusAreaItem = memo(function LandingPageFocusAreaItem({
   label,

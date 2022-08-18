@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useLocation } from '@docusaurus/router';
 import { ComposePage as CbComposePage, getComposePage } from '@cb/cms';
 
 import { useContentfulConfig } from './useContentfulConfig';
@@ -7,11 +8,9 @@ export type ComposePage<T> = {
   title?: string;
 } & CbComposePage<T>;
 
-export type UseComposePageOptions = {
-  slug: string;
-};
+export function useComposePage<T>(slug?: string) {
+  const location = useLocation();
 
-export function useComposePage<T>({ slug }: UseComposePageOptions) {
   const [pageData, setPageData] = useState<ComposePage<T> | null>(null);
   const { space, clientKey } = useContentfulConfig();
 
@@ -21,10 +20,12 @@ export function useComposePage<T>({ slug }: UseComposePageOptions) {
     console.error(`Contentful error: ${error}`);
   }, []);
 
+  const route = slug ?? location.pathname;
+
   useEffect(() => {
     async function getContentfulEntry() {
       const composePageResult = await getComposePage<T>(
-        slug,
+        route,
         {
           // eslint-disable-next-line no-console
           onError: (error) => console.error(error),
@@ -39,11 +40,11 @@ export function useComposePage<T>({ slug }: UseComposePageOptions) {
         setPageData(composePageResult.result);
       }
     }
-    if (slug) {
+    if (route) {
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       getContentfulEntry();
     }
-  }, [slug, space, clientKey, handleError]);
+  }, [route, space, clientKey, handleError]);
 
   return { pageData, space, handleError };
 }

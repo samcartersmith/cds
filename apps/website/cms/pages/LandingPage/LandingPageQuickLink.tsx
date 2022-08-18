@@ -1,12 +1,20 @@
 import React, { memo } from 'react';
-import type { LandingPageQuickLinkProps } from '@theme/LandingPageQuickLink';
+import { SpacingScale } from '@cbhq/cds-common';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { BoxProps } from '@cbhq/cds-web/layout';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
-import { Pressable } from '@cbhq/cds-web/system/Pressable';
+import { OnPress, Pressable } from '@cbhq/cds-web/system/Pressable';
 import { TextCaption } from '@cbhq/cds-web/typography/TextCaption';
 import { TextTitle2 } from '@cbhq/cds-web/typography/TextTitle2';
+import useGoToLinkHandler from '@cbhq/docusaurus-theme/src/theme/useGoToLinkHandler';
 
-import useGoToLinkHandler from './useGoToLinkHandler';
+export type LandingPageQuickLinkProps = {
+  href?: string;
+  onPress?: OnPress;
+  caption?: string;
+  title: string;
+  gap?: SpacingScale;
+} & BoxProps;
 
 const LandingPageQuickLink = memo(function LandingPageQuickLink({
   caption,

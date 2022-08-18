@@ -1,11 +1,18 @@
 import React, { memo } from 'react';
-import type { LandingPageAnnouncementItemProps } from '@theme/LandingPageAnnouncementItem';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { TextLabel2 } from '@cbhq/cds-web/typography/TextLabel2';
 import { TextTitle1 } from '@cbhq/cds-web/typography/TextTitle1';
+import useGoToLinkHandler from '@cbhq/docusaurus-theme/src/theme/useGoToLinkHandler';
 
-import useGoToLinkHandler from './useGoToLinkHandler';
+export type AnnouncementFields = {
+  title: string;
+  description: string;
+  actionLabel?: string;
+  actionUrl?: string;
+};
+
+export type LandingPageAnnouncementItemProps = AnnouncementFields;
 
 const LandingPageAnnouncementItem = memo(function LandingPageAnnouncementItem({
   title,

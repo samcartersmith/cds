@@ -1,8 +1,12 @@
 import React, { memo } from 'react';
-import { LandingPageCategoriesProps } from '@theme/LandingPageCategories';
-import LandingPageCategoryItem from '@theme/LandingPageCategoryItem';
 import { CardGroup } from '@cbhq/cds-web/alpha/CardGroup';
 import { Divider } from '@cbhq/cds-web/layout/Divider';
+
+import LandingPageCategoryItem, { LandingPageCategoryItemProps } from './LandingPageCategoryItem';
+
+export type LandingPageCategoriesProps = {
+  categories?: LandingPageCategoryItemProps[];
+};
 
 function VerticalDivider() {
   return <Divider direction="vertical" />;

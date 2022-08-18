@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
-import { SpacingScale } from '@theme/LandingPageQuickLink';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
+import { SpacingScale } from '@cbhq/cds-web';
 import { VStack } from '@cbhq/cds-web/alpha/VStack';
 import { Box } from '@cbhq/cds-web/layout/Box';
 

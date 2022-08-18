@@ -1,20 +1,37 @@
 import React, { memo } from 'react';
-import type { LandingPageFields, LandingPageProps } from '@theme/LandingPage';
-import LandingPageAnnouncementItem from '@theme/LandingPageAnnouncementItem';
-import LandingPageAnnouncements from '@theme/LandingPageAnnouncements';
-import LandingPageCategories from '@theme/LandingPageCategories';
-import LandingPageFocusAreaGroup from '@theme/LandingPageFocusAreaGroup';
-import LandingPageFocusAreaItem from '@theme/LandingPageFocusAreaItem';
-import LandingPageFocusAreas from '@theme/LandingPageFocusAreas';
-import useComposePage from '@theme/useComposePage';
-import useContentfulConfig from '@theme/useContentfulConfig';
+import type { Entry } from 'contentful';
 import { CMSProvider, ComponentMapValue } from '@cb/cms';
+import { Expand } from '@cbhq/cds-web';
 import { Divider } from '@cbhq/cds-web/layout/Divider';
 import { Group } from '@cbhq/cds-web/layout/Group';
+import { TOKENS } from '@cbhq/docusaurus-theme/src/theme/tokens';
 
+import { useComposePage } from '../../useComposePage';
+import { useContentfulConfig } from '../../useContentfulConfig';
+
+import LandingPageAnnouncementItem, { AnnouncementFields } from './LandingPageAnnouncementItem';
+import LandingPageAnnouncements, {
+  LandingPageAnnouncementsProps,
+} from './LandingPageAnnouncements';
 import LandingPageAnnouncementsFallback from './LandingPageAnnouncementsFallback';
+import LandingPageCategories, { LandingPageCategoriesProps } from './LandingPageCategories';
+import LandingPageFocusAreaGroup from './LandingPageFocusAreaGroup';
+import LandingPageFocusAreaItem from './LandingPageFocusAreaItem';
+import LandingPageFocusAreas, { FocusAreaSectionFields } from './LandingPageFocusAreas';
 import LandingPageFocusAreasFallback from './LandingPageFocusAreasFallback';
-import { TOKENS } from './tokens';
+
+export type LandingPageFields = {
+  announcements: Entry<AnnouncementFields>[];
+  focusAreas: Entry<FocusAreaSectionFields>[];
+};
+
+export type LandingPageProps = Expand<
+  LandingPageAnnouncementsProps &
+    LandingPageCategoriesProps & {
+      title?: string;
+      categories: LandingPageCategoriesProps[];
+    }
+>;
 
 const componentsMap = {
   landingPageAnnouncements: LandingPageAnnouncementItem,
@@ -28,10 +45,7 @@ function HorizontalDivider() {
 
 const LandingPage = memo(function LandingPage({ title, categories }: LandingPageProps) {
   const { space } = useContentfulConfig();
-
-  const { pageData, handleError } = useComposePage({
-    slug: 'docs-landing-page',
-  });
+  const { pageData, handleError } = useComposePage<LandingPageFields>();
 
   if (!pageData?.content?.fields) {
     return (
@@ -44,7 +58,7 @@ const LandingPage = memo(function LandingPage({ title, categories }: LandingPage
     );
   }
 
-  const { announcements, focusAreas } = pageData.content.fields as LandingPageFields;
+  const { announcements, focusAreas } = pageData.content.fields;
 
   return (
     <CMSProvider spaceId={space} locale="en" onError={handleError} components={componentsMap}>
@@ -60,4 +74,4 @@ const LandingPage = memo(function LandingPage({ title, categories }: LandingPage
   );
 });
 
-export default LandingPage;
+export { LandingPage };
