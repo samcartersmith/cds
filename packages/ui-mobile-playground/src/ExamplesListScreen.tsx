@@ -14,8 +14,7 @@ export function ExamplesListScreen() {
   const setFilter = useContext(SetSearchFilterContext);
 
   // React Navigation Route Param typing is not clean because our routes are dynamic
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const routeKeys = ((useRoute().params as any)?.routeKeys as string[]) ?? [];
+  const routeKeys = (useRoute().params as { routeKeys: string[] } | undefined)?.routeKeys ?? [];
   const { navigate } = useNavigation();
 
   const renderItem: ListRenderItem<string> = useCallback(
