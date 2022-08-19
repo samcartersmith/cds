@@ -1,4 +1,4 @@
-import React, { forwardRef, memo } from 'react';
+import React, { forwardRef, memo, useMemo } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 import { ControlBaseProps, useScale } from '@cbhq/cds-common';
 import { useChildrenAsAccessibilityProps } from '@cbhq/cds-common/accessibility/useChildrenAsAccessibilityProps';
@@ -11,38 +11,46 @@ import { Control, ControlIconProps, ControlProps } from './Control';
 
 export type CheckboxProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;
 
-const CheckboxIcon: React.FC<ControlIconProps> = ({
-  pressed,
-  checked,
-  disabled,
-  animatedScaleValue,
-  testID,
-}) => {
-  const cdsScale = useScale();
-  const { checkboxSize } = scaleStyles[cdsScale].control;
+const CheckboxIcon: React.FC<ControlIconProps> = memo(
+  ({ pressed, checked, disabled, animatedScaleValue, testID }) => {
+    const cdsScale = useScale();
+    const { checkboxSize } = scaleStyles[cdsScale].control;
+    const backgroundColor = useMemo(() => {
+      return checked ? 'primary' : 'background';
+    }, [checked]);
 
-  return (
-    <Interactable
-      testID={testID}
-      pressed={pressed}
-      backgroundColor={checked ? 'primary' : 'background'}
-      borderColor={checked ? 'primary' : 'lineHeavy'}
-      borderWidth="checkbox"
-      disabled={disabled}
-      style={[
-        styles.box,
-        {
-          width: checkboxSize,
-          height: checkboxSize,
-        },
-      ]}
-    >
-      <Animated.View style={{ transform: [{ scale: animatedScaleValue }] }}>
-        <Icon size="s" name="checkmark" color="primaryForeground" />
-      </Animated.View>
-    </Interactable>
-  );
-};
+    const borderColor = useMemo(() => {
+      // Checked + Disabled buttons need a transparent border
+      if (disabled) {
+        return checked ? 'transparent' : 'lineHeavy';
+      }
+
+      return checked ? 'primary' : 'lineHeavy';
+    }, [checked, disabled]);
+
+    return (
+      <Interactable
+        testID={testID}
+        pressed={pressed}
+        backgroundColor={backgroundColor}
+        borderColor={borderColor}
+        borderWidth="checkbox"
+        disabled={disabled}
+        style={[
+          styles.box,
+          {
+            width: checkboxSize,
+            height: checkboxSize,
+          },
+        ]}
+      >
+        <Animated.View style={{ transform: [{ scale: animatedScaleValue }] }}>
+          <Icon size="s" name="checkmark" color="primaryForeground" />
+        </Animated.View>
+      </Interactable>
+    );
+  },
+);
 
 const CheckboxWithRef = forwardRef(function Checkbox<T extends string>(
   { children, accessibilityLabel, accessibilityHint, ...props }: CheckboxProps<T>,

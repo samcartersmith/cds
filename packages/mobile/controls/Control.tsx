@@ -72,7 +72,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   const isMounted = useRef(false);
 
   // TODO: create a custom hook to initialize animated values so that they are not called on every render
-  const animatedBoxValue = useRef(new Animated.Value(checked ? 1 : 0)).current;
+  const animatedBoxValue = useRef(new Animated.Value(checked && !disabled ? 1 : 0)).current;
   const animatedScaleValue = useRef(new Animated.Value(checked ? 1 : 0)).current;
 
   const pressDisabled = disabled || readOnly;
@@ -81,7 +81,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     if (isMounted.current) {
       Animated.parallel([
         Animated.timing(animatedBoxValue, {
-          toValue: checked ? 1 : 0,
+          toValue: checked && !disabled ? 1 : 0,
           duration: 150,
           useNativeDriver: false,
         }),
@@ -94,7 +94,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     } else {
       isMounted.current = true;
     }
-  }, [checked, animatedBoxValue, animatedScaleValue]);
+  }, [checked, animatedBoxValue, animatedScaleValue, disabled]);
 
   const handlePress = useCallback(() => {
     void Haptics.lightImpact();

@@ -26,6 +26,9 @@ const CheckboxScreen = () => {
       <Example title="States" inline>
         <Checkbox checked>Selected</Checkbox>
         <Checkbox disabled>Disabled</Checkbox>
+        <Checkbox disabled checked>
+          Checked and disabled
+        </Checkbox>
         <Checkbox readOnly>Read Only</Checkbox>
         <Checkbox accessibilityLabel="checkbox with no label" />
         <Checkbox>
