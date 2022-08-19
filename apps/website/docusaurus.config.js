@@ -104,6 +104,7 @@ module.exports = {
       space: 'w5g94q9p2q4k',
       clientKey: 'home',
       host: 'contentful.coinbase.com',
+      environment: process.env.NODE_ENV,
     },
   },
 };

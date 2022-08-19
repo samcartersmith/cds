@@ -11,8 +11,8 @@ import { Divider } from '../components/Divider';
 
 export type CodeExampleFields = {
   title: string;
-  description: string;
-  code: EntryFields.RichText;
+  description?: string;
+  code?: EntryFields.RichText;
 };
 
 const getCode = (code: CodeExampleFields['code']) => {
@@ -27,10 +27,16 @@ export const CodeExample = memo(function CodeExample({
   return (
     <VStack gap={2}>
       <Heading as="h3">{title}</Heading>
-      <TextBody as="p" color="foregroundMuted">
-        {description}
-      </TextBody>
-      <Playground scope={ReactLiveScope as LiveProviderProps['scope']}>{getCode(code)}</Playground>
+      {description && (
+        <TextBody as="p" color="foregroundMuted">
+          {description}
+        </TextBody>
+      )}
+      {code && (
+        <Playground scope={ReactLiveScope as LiveProviderProps['scope']}>
+          {getCode(code)}
+        </Playground>
+      )}
       <Divider
         spacingTop={2} // <Playground /> has spacing bottom 4 + gap 2
       />

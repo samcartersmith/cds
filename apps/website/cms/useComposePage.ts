@@ -12,6 +12,7 @@ export function useComposePage<T>(slug?: string) {
   const location = useLocation();
 
   const [pageData, setPageData] = useState<ComposePage<T> | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const { space, clientKey } = useContentfulConfig();
 
   const handleError = useCallback((error: Error | string) => {
@@ -39,12 +40,14 @@ export function useComposePage<T>(slug?: string) {
       if (composePageResult.type === 'SUCCESS') {
         setPageData(composePageResult.result);
       }
+      setIsLoading(false);
     }
+
     if (route) {
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       getContentfulEntry();
     }
   }, [route, space, clientKey, handleError]);
 
-  return { pageData, space, handleError };
+  return { pageData, space, isLoading, handleError };
 }

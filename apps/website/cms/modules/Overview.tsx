@@ -12,11 +12,11 @@ import storybookIcon from '../static/images/storybook.png';
 
 export type OverviewFields = {
   title: string;
-  description: string;
-  figmaLink: string;
-  storybookLink: string;
-  relatedComponents: Entry<LinkFields>[];
-  heroImage: Entry<MediaAssetFields>;
+  description?: string;
+  figmaLink?: string;
+  storybookLink?: string;
+  relatedComponents?: Entry<LinkFields>[];
+  heroImage?: Entry<MediaAssetFields>;
 };
 
 export const Overview = memo(function Overview({
@@ -28,22 +28,28 @@ export const Overview = memo(function Overview({
 }: OverviewFields) {
   return (
     <VStack spacingBottom={9}>
-      <TextTitle2 as="h2" color="foregroundMuted" spacingTop={2}>
-        {description}
-      </TextTitle2>
+      {description && (
+        <TextTitle2 as="h2" color="foregroundMuted" spacingTop={2}>
+          {description}
+        </TextTitle2>
+      )}
       <HStack gap={3} spacingTop={6}>
-        <HStack gap={1} alignItems="center">
-          <img src={figmaIcon} alt="figma icon" />
-          <Link to={figmaLink} variant="headline" openInNewWindow>
-            Figma
-          </Link>
-        </HStack>
-        <HStack gap={1} alignItems="center">
-          <img src={storybookIcon} alt="storybook icon" />
-          <Link to={storybookLink} variant="headline" openInNewWindow>
-            Storybook
-          </Link>
-        </HStack>
+        {figmaLink && (
+          <HStack gap={1} alignItems="center">
+            <img src={figmaIcon} alt="figma icon" />
+            <Link to={figmaLink} variant="headline" openInNewWindow>
+              Figma
+            </Link>
+          </HStack>
+        )}
+        {storybookLink && (
+          <HStack gap={1} alignItems="center">
+            <img src={storybookIcon} alt="storybook icon" />
+            <Link to={storybookLink} variant="headline" openInNewWindow>
+              Storybook
+            </Link>
+          </HStack>
+        )}
       </HStack>
       {relatedComponents && (
         <HStack spacingTop={5}>
@@ -59,10 +65,12 @@ export const Overview = memo(function Overview({
           </TextBody>
         </HStack>
       )}
-      <Box spacingTop={4}>
-        {/* ID: miscMediaAsset */}
-        <CMSContent content={heroImage} />
-      </Box>
+      {heroImage && (
+        <Box spacingTop={4}>
+          {/* ID: miscMediaAsset */}
+          <CMSContent content={heroImage} />
+        </Box>
+      )}
     </VStack>
   );
 });

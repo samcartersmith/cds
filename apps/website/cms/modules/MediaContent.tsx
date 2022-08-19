@@ -17,12 +17,13 @@ export const MediaContent = memo(function MediaContent({
   layout,
   media,
 }: MediaContentFields) {
-  const Stack = layout === 'vertical' ? VStack : HStack;
+  const isHorizontal = layout === 'horizontal';
+  const Stack = isHorizontal ? HStack : VStack;
 
   return (
     <Stack gap={4}>
-      <TextBlock title={title} description={description} width="30%" />
-      <VStack width="70%">
+      <TextBlock title={title} description={description} width={isHorizontal ? '30%' : 'auto'} />
+      <VStack width={isHorizontal ? '70%' : 'auto'}>
         {media?.map((asset) => (
           // ID: miscMediaAsset
           <CMSContent key={asset.sys.id} content={asset} />

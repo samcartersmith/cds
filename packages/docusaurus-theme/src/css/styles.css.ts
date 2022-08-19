@@ -363,7 +363,8 @@ export default css`
   /* Ensure all headings on docs have consistent margin bottoms */
 
   .markdown > header > h1:first-child {
-    margin-bottom: ${spacing[TOKENS.docItem.spacingVertical]};
+    /* reset margin bottom as padding is added in Heading.tsx */
+    margin-bottom: 0;
   }
 
   .landing-page {

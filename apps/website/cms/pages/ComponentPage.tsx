@@ -5,8 +5,8 @@ import TabItem from '@theme-original/TabItem';
 import Tabs from '@theme-original/Tabs';
 import { Entry } from 'contentful';
 import { CMSContent, CMSProvider, ComponentMapValue } from '@cb/cms';
-import { HStack, VStack } from '@cbhq/cds-web/layout';
-import { TextDisplay1 } from '@cbhq/cds-web/typography';
+import { Box, HStack, VStack } from '@cbhq/cds-web/layout';
+import { Spinner } from '@cbhq/cds-web/loaders';
 
 import { Divider } from '../components/Divider';
 import { RichText } from '../components/RichText';
@@ -30,6 +30,10 @@ export type CMSProps = {
   changelog?: DocgenProps;
   propsTable?: DocgenProps;
   metadata?: DocgenProps;
+  /**
+   * Fallback component when CMS response is not available
+   */
+  fallback?: ReactElement;
 };
 
 export type PageFields = {
@@ -59,12 +63,29 @@ const componentsMap = {
   moduleOverview: Overview,
 } as unknown as Record<string, ComponentMapValue>;
 
-export const ComponentPage = memo(function CMS({ changelog, propsTable, metadata }: CMSProps) {
-  const { pageData, space, handleError } = useComposePage<PageFields>();
+export const ComponentPage = memo(function CMS({
+  changelog,
+  propsTable,
+  metadata,
+  fallback,
+}: CMSProps) {
+  const { pageData, isLoading, space, handleError } = useComposePage<PageFields>();
 
+  if (isLoading) {
+    return (
+      <Box alignItems="center" justifyContent="center">
+        <Spinner size={5} color="primary" />
+      </Box>
+    );
+  }
+
+  // no API response
   if (!pageData?.content?.fields) {
-    // TODO: add fallback
-    return <div>loading...</div>;
+    if (fallback) {
+      return fallback;
+    }
+
+    return null;
   }
 
   const {
@@ -81,83 +102,95 @@ export const ComponentPage = memo(function CMS({ changelog, propsTable, metadata
     others,
   } = pageData.content.fields;
 
-  return (
-    <CMSProvider spaceId={space} locale="en" onError={handleError} components={componentsMap}>
-      <TextDisplay1 as="h1" spacingTop={3}>
-        {pageData.title}
-      </TextDisplay1>
-      {overview && <CMSContent content={overview} />}
-      <Tabs groupId="page" gap={0} spacerHeight={8}>
-        <TabItem
-          value="examples"
-          label="Examples"
-          toc={populateExamplesToc({ metadata, propsTable, codeExamples })}
-        >
-          <Section title="Examples">
-            {codeExamples && <CMSContent content={codeExamples} />}
+  const tabItems = [
+    <TabItem
+      key="examples"
+      value="examples"
+      label="Examples"
+      toc={populateExamplesToc({ metadata, propsTable, codeExamples })}
+    >
+      <Section title="Examples">
+        {codeExamples && <CMSContent content={codeExamples} />}
+        {metadata?.element && (
+          <>
             {metadata?.element}
             <Divider />
-            {propsTable?.element}
-          </Section>
-        </TabItem>
-        <TabItem
-          value="guidelines"
-          label="Guidelines"
-          toc={populateGuidelinesToc(pageData.content.fields)}
-        >
-          {principles && (
-            <Section title="Principles">
-              <HStack gap={6}>
-                <CMSContent content={principles} />
-              </HStack>
-            </Section>
-          )}
-          {usage && (
-            <Section title="Usage">
-              <CMSContent content={usage} />
-            </Section>
-          )}
-          {anatomy && (
-            <Section title="Anatomy">
-              <CMSContent content={anatomy} />
-            </Section>
-          )}
-          {spacing && (
-            <Section title="Spacing">
-              <VStack gap={3}>
-                <CMSContent content={spacing} />
-              </VStack>
-            </Section>
-          )}
-          {sizing && (
-            <Section title="Sizing">
-              <VStack gap={3}>
-                <CMSContent content={sizing} />
-              </VStack>
-            </Section>
-          )}
-          {behavior && (
-            <Section title="Behavior">
-              <VStack gap={3}>
-                <CMSContent content={behavior} />
-              </VStack>
-            </Section>
-          )}
-          {content && (
-            <Section title="Content">
-              <CMSContent content={content} />
-            </Section>
-          )}
-          {motion && (
-            <Section title="Motion">
-              <RichText content={motion} />
-            </Section>
-          )}
-          <RichText content={others} />
-        </TabItem>
-        <TabItem value="changelog" label="Changelog" toc={changelog?.toc}>
-          {changelog?.element}
-        </TabItem>
+          </>
+        )}
+        {propsTable?.element}
+      </Section>
+    </TabItem>,
+    <TabItem
+      key="guidelines"
+      value="guidelines"
+      label="Guidelines"
+      toc={populateGuidelinesToc(pageData.content.fields)}
+    >
+      {principles && (
+        <Section title="Principles">
+          <HStack gap={6}>
+            <CMSContent content={principles} />
+          </HStack>
+        </Section>
+      )}
+      {usage && (
+        <Section title="Usage">
+          <CMSContent content={usage} />
+        </Section>
+      )}
+      {anatomy && (
+        <Section title="Anatomy">
+          <CMSContent content={anatomy} />
+        </Section>
+      )}
+      {spacing && (
+        <Section title="Spacing">
+          <VStack gap={3}>
+            <CMSContent content={spacing} />
+          </VStack>
+        </Section>
+      )}
+      {sizing && (
+        <Section title="Sizing">
+          <VStack gap={3}>
+            <CMSContent content={sizing} />
+          </VStack>
+        </Section>
+      )}
+      {behavior && (
+        <Section title="Behavior">
+          <VStack gap={3}>
+            <CMSContent content={behavior} />
+          </VStack>
+        </Section>
+      )}
+      {content && (
+        <Section title="Content">
+          <CMSContent content={content} />
+        </Section>
+      )}
+      {motion && (
+        <Section title="Motion">
+          <RichText content={motion} />
+        </Section>
+      )}
+      <RichText content={others} />
+    </TabItem>,
+  ];
+
+  if (changelog) {
+    tabItems.push(
+      <TabItem key="changelog" value="changelog" label="Changelog" toc={changelog?.toc}>
+        {changelog?.element}
+      </TabItem>,
+    );
+  }
+
+  return (
+    <CMSProvider spaceId={space} locale="en" onError={handleError} components={componentsMap}>
+      {overview && <CMSContent content={overview} />}
+      <Tabs groupId="page" gap={0} spacerHeight={8}>
+        {tabItems}
       </Tabs>
     </CMSProvider>
   );

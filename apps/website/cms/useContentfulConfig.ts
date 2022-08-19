@@ -5,6 +5,7 @@ type ContentfulOptions = {
   space: string;
   host: string;
   clientKey?: string;
+  environment?: string;
 };
 
 export function useContentfulConfig() {

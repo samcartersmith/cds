@@ -38,13 +38,16 @@ export function populateExamplesToc({
   }
 
   if (codeExamples) {
-    const codeExamplesToc = codeExamples.map(
-      (example): TOCItem => ({
-        id: slugify(example.fields.title),
-        level: 3,
-        value: example.fields.title,
-      }),
-    );
+    const codeExamplesToc = codeExamples
+      // in case the code example is empty
+      .filter((example) => example.fields?.title)
+      .map(
+        (example): TOCItem => ({
+          id: slugify(example.fields.title),
+          level: 3,
+          value: example.fields.title,
+        }),
+      );
 
     temp = [{ id: 'examples', level: 2, value: 'Examples' }, ...codeExamplesToc, ...temp];
   }
