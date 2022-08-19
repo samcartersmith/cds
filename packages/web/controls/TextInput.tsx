@@ -80,6 +80,8 @@ export const TextInput = memo(
     const internalRef = useRef<HTMLInputElement>();
     const refs = useMergedRef(ref, internalRef);
     const helperTextId = useA11yId('cds-textinput-description-');
+    // TODO surface this as a prop
+    const hasError = variant === 'negative';
 
     const handleOnFocus = useCallback(
       (e: React.FocusEvent<HTMLInputElement>) => {
@@ -122,6 +124,7 @@ export const TextInput = memo(
           onBlur: handleOnBlur,
           ref: refs,
           'aria-label': accessibilityLabel ?? label,
+          'aria-invalid': hasError,
           disabled,
         });
 
@@ -142,6 +145,7 @@ export const TextInput = memo(
           testID={testID}
           ref={refs}
           id={label}
+          aria-invalid={hasError}
           {...htmlInputElmProps}
         />
       );
@@ -150,7 +154,6 @@ export const TextInput = memo(
       align,
       accessibilityLabel,
       label,
-      testID,
       helperTextId,
       start,
       startSpacing,
@@ -158,7 +161,9 @@ export const TextInput = memo(
       handleOnBlur,
       disabled,
       compact,
+      testID,
       refs,
+      hasError,
       htmlInputElmProps,
     ]);
 

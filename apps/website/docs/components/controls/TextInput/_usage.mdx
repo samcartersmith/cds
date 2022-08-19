@@ -34,6 +34,47 @@ Default composition of Inputs.
 </ExampleWithThemeToggles>
 ```
 
+### Accessible Text Inputs
+
+:::tip Accessibility tip
+
+Like any component system, much of responsibility for building accessible UI's is in your hands as the consumer to properly implement the component composition. We'll do our best to provide sane fallbacks, but here's the biggest gotcha for `TextInput`'s you can watch out for'.
+
+<br />
+
+#### `aria-*` attr overrides
+
+Any time you use `variant='negative'`, we assume you're showing an error state. If for some reason this is _not_ the case, you will want to use `aria-invalid={false}` to override the default configuration.
+
+<br />
+
+#### Message format
+
+It's also advised you always format `helperText` with `Error: ${erroMessage}`. We'd do that for you, but _i18n_ isn't baked into CDS. Take a look at the example below:
+
+:::
+
+```jsx live
+<ExampleWithThemeToggles>
+  <VStack gap={4}>
+    <TextInput
+      label="Text Input rendered in an errored state"
+      placeholder="Enter a color"
+      helperText="Error: Your favorite color is not orange"
+      variant="negative"
+    />
+    <TextInput
+      label="Text Input that's red but not in an errored state"
+      placeholder="Enter a color"
+      helperText="You like red?"
+      variant="negative"
+      // Override the default behavior when variant="negative"
+      aria-invalid={false}
+    />
+  </VStack>
+</ExampleWithThemeToggles>
+```
+
 ### Placeholder Text
 
 ```jsx live
