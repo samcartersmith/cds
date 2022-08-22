@@ -1,7 +1,7 @@
 import { css } from 'linaria';
 
 import { deviceBreakpoints } from '../../layout/breakpoints';
-import { spacing } from '../../tokens';
+import { palette, spacing } from '../../tokens';
 
 // tokens
 const gutter = spacing[4];
@@ -12,9 +12,15 @@ const spacingStartLarge = 240;
 
 export const primaryContentContainerClassName = 'fsm-primary-content-container';
 export const secondaryContentContainerClassName = 'fsm-secondary-content-container';
+export const secondaryContentDividerClassName = 'fsm-secondary-content-divider';
 
 export const containerClassName = css`
   width: 100%;
+  height: 100%;
+`;
+
+export const contentScrollContainer = css`
+  overflow: auto;
   height: 100%;
 `;
 
@@ -22,7 +28,7 @@ export const contentClassName = css`
   display: flex;
   flex-direction: column;
   padding: ${gutter};
-  overflow: auto;
+  min-height: 100%;
 
   .${primaryContentContainerClassName} {
     margin-bottom: ${gutter};
@@ -46,15 +52,24 @@ export const contentClassName = css`
   }
 
   @media only screen and (min-width: ${deviceBreakpoints.tablet}px) {
+    padding: 0 ${gutter};
     flex-direction: row;
 
     .${primaryContentContainerClassName} {
+      padding: ${gutter} 0;
       margin-right: ${gutter};
       margin-bottom: 0;
     }
 
-    .fsm-secondary-content-container {
+    .${secondaryContentContainerClassName} {
       width: ${secondaryContentWidth}px;
+      padding: ${gutter} 0 0 0;
+
+      &.${secondaryContentDividerClassName} {
+        width: calc(${secondaryContentWidth}px + ${gutter});
+        padding: ${gutter} 0 0 ${gutter};
+        border-left: 1px solid ${palette.line};
+      }
     }
   }
 

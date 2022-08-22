@@ -22,11 +22,13 @@ import { Overlay } from '../Overlay/Overlay';
 import {
   containerClassName,
   contentClassName,
+  contentScrollContainer,
   headerClassName,
   headerLogoClassName,
   headerLogoInnerClassName,
   primaryContentContainerClassName,
   secondaryContentContainerClassName,
+  secondaryContentDividerClassName,
 } from './fullscreenModalStyles';
 import { ModalProps } from './Modal';
 import { ModalWrapper } from './ModalWrapper';
@@ -57,6 +59,11 @@ export type FullscreenModalProps = {
    * @default false
    */
   hideDivider?: boolean;
+  /**
+   * Show divider between primary and secondary content
+   * @default false
+   */
+  showSecondaryContentDivider?: boolean;
 } & Pick<
   ModalProps,
   | 'visible'
@@ -81,6 +88,7 @@ export const FullscreenModal = memo(function FullscreenModal({
   disablePortal,
   dangerouslySetContentClassName,
   hideDivider = false,
+  showSecondaryContentDivider = false,
   role,
 }: FullscreenModalProps) {
   const pinStyles = usePinStyles('all');
@@ -129,11 +137,21 @@ export const FullscreenModal = memo(function FullscreenModal({
 
   const content = (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-    <div className={cx(contentClassName, dangerouslySetContentClassName)} tabIndex={0}>
-      <div className={primaryContentContainerClassName}>{primaryContent}</div>
-      {!!secondaryContent && (
-        <div className={secondaryContentContainerClassName}>{secondaryContent}</div>
-      )}
+    <div className={contentScrollContainer} tabIndex={0}>
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
+      <div className={cx(contentClassName, dangerouslySetContentClassName)} tabIndex={0}>
+        <div className={primaryContentContainerClassName}>{primaryContent}</div>
+        {!!secondaryContent && (
+          <div
+            className={cx(
+              secondaryContentContainerClassName,
+              showSecondaryContentDivider && secondaryContentDividerClassName,
+            )}
+          >
+            {secondaryContent}
+          </div>
+        )}
+      </div>
     </div>
   );
 
