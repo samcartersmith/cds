@@ -35,6 +35,15 @@ const link = css`
   }
 `;
 
+// Used to enforce underlines when nested in a paragraph tag
+export const linkInParagraph = css`
+  :global() {
+    p a.${linkClassName} span {
+      text-decoration: underline;
+    }
+  }
+`;
+
 const TYPOGRAPHY_MAP: Record<
   LinkTypography,
   React.ComponentType<
@@ -90,7 +99,7 @@ export const Link = memo(
       color = 'primary',
       mono,
       dangerouslySetClassName,
-      underline = false,
+      underline,
       ...props
     }: LinkProps,
     ref: ForwardedRef<HTMLElement>,

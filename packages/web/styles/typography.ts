@@ -101,6 +101,12 @@ const underline = css`
   text-decoration: underline;
 `;
 
+const noUnderline = css`
+  && {
+    text-decoration: none;
+  }
+`;
+
 const noWrap = css`
   white-space: nowrap;
 `;
@@ -121,6 +127,7 @@ export const getTypographyStyles = (props: Omit<TextProps, 'children'>) => {
     props.slashedZero && slashedZero,
     props.selectable && userSelect[props.selectable],
     props.underline && underline,
+    props.underline === false && noUnderline, // If underline={false} is explicitly set, use underline: none
     props.noWrap && noWrap,
     props.numberOfLines && numberOfLines,
     props.overflow && overflow[props.overflow],

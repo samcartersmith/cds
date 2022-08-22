@@ -24,7 +24,7 @@ export type LinkBaseProps = {
   /**
    * Set text decoration to underline.
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) | [React Native Docs](https://reactnative.dev/docs/text-style-props#textdecorationline)
-   * @default false
+   * @default false (unless nested inside a paragraph tag)
    */
   underline?: boolean;
 };

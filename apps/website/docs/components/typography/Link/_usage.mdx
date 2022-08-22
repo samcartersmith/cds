@@ -1,8 +1,32 @@
+import MobileA11y from './_mobileA11y.mdx';
+import WebA11y from './_webA11y.mdx';
+
 Default Link text will inherit parent text styles.
 
 ```jsx live
 <Link>Default is inherited text</Link>
 ```
+
+## Accessibility
+
+:::tip Accessibility tip
+
+[WCAG 2.0](https://webaim.org/standards/wcag/checklist) has 2 requirements for body text links that are not underlined by default:
+
+<br />
+
+_The link text must have a 3:1 contrast ratio from the surrounding non-link text. The link must present a "non-color designator" (typically the introduction of the underline) on both mouse hover and keyboard focus. These two requirements help ensure that all users can differentiate links from non-link text, even if they have low vision, color deficiency, or have overridden page colors._
+
+:::
+
+<Tabs groupId="platform" variant="secondary">
+  <TabItem value="web" label="Web">
+    <WebA11y />
+  </TabItem>
+  <TabItem value="mobile" label="Mobile">
+    <MobileA11y />
+  </TabItem>
+</Tabs>
 
 ```jsx live
 <VStack alignItems="flex-start" gap={3}>

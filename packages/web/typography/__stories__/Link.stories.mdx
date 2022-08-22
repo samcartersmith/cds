@@ -57,6 +57,26 @@ import { Link } from '../Link';
   </Story>
 </Canvas>
 
+## Nested in TextBody or a `<p />` tag
+
+<Canvas isColumn withToolbar>
+  <Story name="In a paragraph" decorators={[withStoryLabel('In a paragraph')]}>
+    <Type.TextBody as="p">
+      This is a paragraph, and we can include inline links{' '}
+      <Link to="https://www.coinbase.com">with underlines</Link> by default. You don't have to do
+      anything to get them!
+    </Type.TextBody>
+    <Type.TextBody as="p">
+      This one however... It is a paragraph, but we can still set underline="false" to opt out of
+      the a11y support{' '}
+      <Link to="https://www.coinbase.com" underline={false}>
+        without underlines
+      </Link>
+      . But why? Please don't do this
+    </Type.TextBody>
+  </Story>
+</Canvas>
+
 ## Nested with other Components
 
 <Canvas isColumn withToolbar>
