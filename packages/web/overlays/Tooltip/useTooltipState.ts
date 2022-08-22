@@ -2,11 +2,11 @@ import { useCallback, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common';
 import { generateRandomId } from '@cbhq/cds-utils';
 
-export const useTooltipState = () => {
+export const useTooltipState = (id?: string) => {
   const [isHovered, { toggleOn: handleOnMouseEnter, toggleOff: toggleOffIsHovered }] =
     useToggler(false);
   const [isFocused, { toggleOn: handleOnFocus, toggleOff: toggleOffIsFocused }] = useToggler(false);
-  const tooltipId = useMemo(() => generateRandomId('tooltip--'), []);
+  const tooltipId = useMemo(() => id ?? generateRandomId('tooltip--'), [id]);
 
   const handleOnBlur = useCallback(() => {
     toggleOffIsFocused();
