@@ -1,10 +1,11 @@
-import React, { forwardRef, InputHTMLAttributes, memo, useRef } from 'react';
+import React, { forwardRef, InputHTMLAttributes, memo, useMemo, useRef } from 'react';
 import { css } from 'linaria';
 import { SharedProps } from '@cbhq/cds-common';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { isDevelopment } from '@cbhq/cds-utils';
 
+import { useA11yId } from '../hooks/useA11yId';
 import { Box, Spacer } from '../layout';
 import { Interactable, InteractableProps } from '../system/Interactable';
 import { FilteredHTMLAttributes } from '../types';
@@ -83,66 +84,105 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       `Please provide an aria label for the control component ${value} either through the children or aria-labelledby prop.`,
     );
   }
+  // Setup a11y IDs
+  const randomLabelId = useA11yId('cds-checkbox-label--');
+  const randomInputId = useA11yId('cds-checkbox-input--');
+  const labelId = useMemo(() => ariaLabelledby ?? randomLabelId, [ariaLabelledby, randomLabelId]);
+  const inputId = useMemo(() => htmlProps.id ?? randomInputId, [htmlProps.id, randomInputId]);
+
   const internalInputRef = useRef<HTMLInputElement>();
   const inputRef = useMergedRef(ref, internalInputRef);
 
-  const inputProps = {
-    ref: inputRef,
-    type,
-    checked,
-    disabled,
-    readOnly,
-    required,
-    value,
-    'aria-checked': checked,
-    'aria-readonly': readOnly,
-    'aria-required': type !== 'checkbox' ? required : undefined,
-    'data-testid': testID,
-    ...htmlProps,
-  };
-
-  const iconNode = (
-    <Interactable
-      as="div"
-      backgroundColor={backgroundColor ?? (checked ? 'primary' : 'background')}
-      borderColor={borderColor}
-      borderRadius={borderRadius}
-      borderWidth={borderWidth}
-      disabled={disabled || readOnly}
-      testID={testID ? `${testID}-parent` : undefined}
-      transparentWhileInactive
-      wrapWithLayeredElements
-      className={interactableContainer}
-    >
-      <>
-        <input className={cx(controlInput, pointer)} {...inputProps} />
-        {children}
-      </>
-    </Interactable>
+  const inputProps = useMemo(
+    () => ({
+      ref: inputRef,
+      type,
+      checked,
+      disabled,
+      readOnly,
+      required,
+      value,
+      id: inputId,
+      'aria-labelledby': labelId,
+      'aria-checked': checked,
+      'aria-readonly': readOnly,
+      'aria-required': type !== 'checkbox' ? required : undefined,
+      'data-testid': testID,
+      ...htmlProps,
+    }),
+    [
+      checked,
+      disabled,
+      htmlProps,
+      inputId,
+      inputRef,
+      labelId,
+      readOnly,
+      required,
+      testID,
+      type,
+      value,
+    ],
   );
 
-  return label ? (
-    // eslint-disable-next-line jsx-a11y/label-has-associated-control
-    <label className={pointer}>
-      <Box alignItems="flex-start" flexDirection={isRtl() ? 'row-reverse' : 'row'}>
-        {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
-        <Box role="presentation" height="var(--body-line-height)" alignItems="center">
-          {iconNode}
+  const iconNode = useMemo(
+    () => (
+      <Interactable
+        as="div"
+        backgroundColor={backgroundColor ?? (checked ? 'primary' : 'background')}
+        borderColor={borderColor}
+        borderRadius={borderRadius}
+        borderWidth={borderWidth}
+        disabled={disabled || readOnly}
+        testID={testID ? `${testID}-parent` : undefined}
+        transparentWhileInactive
+        wrapWithLayeredElements
+        className={interactableContainer}
+      >
+        <>
+          <input className={cx(controlInput, pointer)} {...inputProps} />
+          {children}
+        </>
+      </Interactable>
+    ),
+    [
+      backgroundColor,
+      borderColor,
+      borderRadius,
+      borderWidth,
+      checked,
+      children,
+      disabled,
+      inputProps,
+      readOnly,
+      testID,
+    ],
+  );
+  const InternalLabel = useMemo(
+    () => (
+      <label className={pointer} htmlFor={inputId}>
+        <Box alignItems="flex-start" flexDirection={isRtl() ? 'row-reverse' : 'row'}>
+          {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
+          <Box role="presentation" height="var(--body-line-height)" alignItems="center">
+            {iconNode}
+          </Box>
+          <Spacer horizontal={1} />
+          <TextBody
+            as="span"
+            color={checked ? 'foreground' : 'foregroundMuted'}
+            disabled={disabled || readOnly}
+            id={labelId}
+          >
+            {label}
+          </TextBody>
         </Box>
-        <Spacer horizontal={1} />
-        <TextBody
-          as="span"
-          color={checked ? 'foreground' : 'foregroundMuted'}
-          disabled={disabled || readOnly}
-        >
-          {label}
-        </TextBody>
-      </Box>
-    </label>
-  ) : (
-    // If no label (children) is provided, consumer should wrap the checkbox with <label> or provide a value for the aria-labelledby prop.
-    iconNode
+      </label>
+    ),
+    [checked, disabled, iconNode, inputId, label, labelId, readOnly],
   );
+
+  // If no label (children) is provided, consumer should wrap the checkbox with <label> or provide a value for the aria-labelledby prop.
+  return label ? InternalLabel : iconNode;
 }) as <T extends string>(
   props: ControlInternalProps<T> & React.RefAttributes<HTMLInputElement>,
 ) => React.ReactElement;
