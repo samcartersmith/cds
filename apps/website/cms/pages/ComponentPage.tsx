@@ -4,21 +4,17 @@ import { TOCItems } from '@theme/createTOCManager';
 import TabItem from '@theme-original/TabItem';
 import Tabs from '@theme-original/Tabs';
 import { Entry } from 'contentful';
-import { CMSContent, CMSProvider, ComponentMapValue } from '@cb/cms';
-import { Box, HStack, VStack } from '@cbhq/cds-web/layout';
-import { Spinner } from '@cbhq/cds-web/loaders';
+import { CMSContent } from '@cb/cms';
+import { HStack, VStack } from '@cbhq/cds-web/layout';
 
 import { Divider } from '../components/Divider';
 import { RichText } from '../components/RichText';
 import { Section } from '../components/Section';
-import { Link } from '../misc/Link';
-import { MediaAsset } from '../misc/MediaAsset';
-import { TextBlock, TextBlockFields } from '../misc/TextBlock';
-import { CodeExample, CodeExampleFields } from '../modules/CodeExample';
-import { DoDont, DoDontFields } from '../modules/DoDont';
-import { MediaContent, MediaContentFields } from '../modules/MediaContent';
-import { Overview, OverviewFields } from '../modules/Overview';
-import { useComposePage } from '../useComposePage';
+import { TextBlockFields } from '../misc/TextBlock';
+import { CodeExampleFields } from '../modules/CodeExample';
+import { DoDontFields } from '../modules/DoDont';
+import { MediaContentFields } from '../modules/MediaContent';
+import { OverviewFields } from '../modules/Overview';
 import { populateExamplesToc, populateGuidelinesToc } from '../utils';
 
 type DocgenProps = {
@@ -26,17 +22,14 @@ type DocgenProps = {
   toc?: TOCItems;
 };
 
-export type CMSProps = {
+export type ComponentPageProps = {
   changelog?: DocgenProps;
   propsTable?: DocgenProps;
   metadata?: DocgenProps;
-  /**
-   * Fallback component when CMS response is not available
-   */
-  fallback?: ReactElement;
+  content: ComponentPageFields;
 };
 
-export type PageFields = {
+export type ComponentPageFields = {
   name: string;
   description: string;
   codeExamples: Entry<CodeExampleFields>[];
@@ -52,42 +45,11 @@ export type PageFields = {
   others?: Document;
 };
 
-// keys are content IDs from contentful
-const componentsMap = {
-  miscLink: Link,
-  miscMediaAsset: MediaAsset,
-  miscTextBlock: TextBlock,
-  moduleCodeExample: CodeExample,
-  moduleDoDont: DoDont,
-  moduleMediaContent: MediaContent,
-  moduleOverview: Overview,
-} as unknown as Record<string, ComponentMapValue>;
-
-export const ComponentPage = memo(function CMS({
-  changelog,
-  propsTable,
+export const ComponentPage = memo(function ComponentPage({
+  content: contentData,
   metadata,
-  fallback,
-}: CMSProps) {
-  const { pageData, isLoading, space, handleError } = useComposePage<PageFields>();
-
-  if (isLoading) {
-    return (
-      <Box alignItems="center" justifyContent="center">
-        <Spinner size={5} color="primary" />
-      </Box>
-    );
-  }
-
-  // no API response
-  if (!pageData?.content?.fields) {
-    if (fallback) {
-      return fallback;
-    }
-
-    return null;
-  }
-
+  propsTable,
+}: ComponentPageProps) {
   const {
     codeExamples,
     overview,
@@ -100,7 +62,7 @@ export const ComponentPage = memo(function CMS({
     content,
     motion,
     others,
-  } = pageData.content.fields;
+  } = contentData;
 
   const tabItems = [
     <TabItem
@@ -124,7 +86,7 @@ export const ComponentPage = memo(function CMS({
       key="guidelines"
       value="guidelines"
       label="Guidelines"
-      toc={populateGuidelinesToc(pageData.content.fields)}
+      toc={populateGuidelinesToc(contentData)}
     >
       {principles && (
         <Section title="Principles">
@@ -178,20 +140,12 @@ export const ComponentPage = memo(function CMS({
     </TabItem>,
   ];
 
-  if (changelog) {
-    tabItems.push(
-      <TabItem key="changelog" value="changelog" label="Changelog" toc={changelog?.toc}>
-        {changelog?.element}
-      </TabItem>,
-    );
-  }
-
   return (
-    <CMSProvider spaceId={space} locale="en" onError={handleError} components={componentsMap}>
+    <>
       {overview && <CMSContent content={overview} />}
       <Tabs groupId="page" gap={0} spacerHeight={8}>
         {tabItems}
       </Tabs>
-    </CMSProvider>
+    </>
   );
 });

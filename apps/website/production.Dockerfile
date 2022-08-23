@@ -12,6 +12,7 @@ RUN yarn --immutable
 
 # Build the app with nx
 ENV NODE_ENV=production
+ENV CONTENTFUL_ENV=production
 ENV CODEFLOW=true
 RUN yarn nx run website:build
 

@@ -1,10 +1,12 @@
 import React, { memo } from 'react';
+import { BLOCKS, Document } from '@contentful/rich-text-types';
 import { Entry } from 'contentful';
 import { CMSContent } from '@cb/cms';
 import { join } from '@cbhq/cds-common';
 import { Box, HStack, VStack } from '@cbhq/cds-web/layout';
 import { Link, TextBody, TextTitle2 } from '@cbhq/cds-web/typography';
 
+import { RichText, RichTextProps } from '../components/RichText';
 import { LinkFields } from '../misc/Link';
 import { MediaAssetFields } from '../misc/MediaAsset';
 import figmaIcon from '../static/images/figma.png';
@@ -12,11 +14,21 @@ import storybookIcon from '../static/images/storybook.png';
 
 export type OverviewFields = {
   title: string;
-  description?: string;
+  description?: Document;
   figmaLink?: string;
   storybookLink?: string;
   relatedComponents?: Entry<LinkFields>[];
   heroImage?: Entry<MediaAssetFields>;
+};
+
+const richTextOptions: RichTextProps['options'] = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (_node, children) => (
+      <TextTitle2 as="h2" color="foregroundMuted" spacingTop={2}>
+        {children}
+      </TextTitle2>
+    ),
+  },
 };
 
 export const Overview = memo(function Overview({
@@ -28,11 +40,7 @@ export const Overview = memo(function Overview({
 }: OverviewFields) {
   return (
     <VStack spacingBottom={9}>
-      {description && (
-        <TextTitle2 as="h2" color="foregroundMuted" spacingTop={2}>
-          {description}
-        </TextTitle2>
-      )}
+      <RichText options={richTextOptions} content={description} />
       <HStack gap={3} spacingTop={6}>
         {figmaLink && (
           <HStack gap={1} alignItems="center">

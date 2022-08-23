@@ -1,9 +1,9 @@
 import { TOCItem } from '@docusaurus/types';
 import slugify from '@cbhq/docusaurus-theme/src/utils/slugify';
 
-import type { CMSProps, PageFields } from './pages/ComponentPage';
+import type { ComponentPageFields, ComponentPageProps } from './pages/ComponentPage';
 
-export function populateGuidelinesToc(fields: PageFields) {
+export function populateGuidelinesToc(fields: ComponentPageFields) {
   const toc = ['Principles', 'Usage', 'Anatomy', 'Spacing', 'Sizing'];
 
   if (fields.behavior) {
@@ -27,7 +27,8 @@ export function populateExamplesToc({
   metadata,
   propsTable,
   codeExamples,
-}: Pick<CMSProps, 'metadata' | 'propsTable'> & Pick<PageFields, 'codeExamples'>) {
+}: Pick<ComponentPageProps, 'metadata' | 'propsTable'> &
+  Pick<ComponentPageFields, 'codeExamples'>) {
   let temp = [] as TOCItem[];
   if (metadata?.toc) {
     temp = [...metadata.toc, ...temp];
