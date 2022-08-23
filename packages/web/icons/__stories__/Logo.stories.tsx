@@ -12,16 +12,29 @@ export default {
 
 export const LogoSheet = () => {
   return (
-    <VStack>
+    <VStack gap={3}>
       <HStack>
         <Box spacingEnd={2}>
           <LogoMark size={16} />
         </Box>
         <Box spacingEnd={2}>
+          <LogoMark size={24} />
+        </Box>
+        <Box spacingEnd={2}>
           <LogoMark size={32} />
         </Box>
       </HStack>
-
+      <HStack>
+        <Box spacingEnd={2}>
+          <LogoMark size={16} foreground />
+        </Box>
+        <Box spacingEnd={2}>
+          <LogoMark size={24} foreground />
+        </Box>
+        <Box spacingEnd={2}>
+          <LogoMark size={32} foreground />
+        </Box>
+      </HStack>
       <VStack>
         <Box height={30} spacing={1}>
           <LogoWordmark />

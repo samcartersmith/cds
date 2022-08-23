@@ -5,8 +5,8 @@ import { iconStyles } from './iconStyles';
 
 export type LogoMarkProps = LogoMarkParams;
 
-export const LogoMark = memo(({ size }: LogoMarkProps) => {
-  const { viewBox, width, height, path, color } = useLogoMark({ size });
+export const LogoMark = memo(({ size, foreground }: LogoMarkProps) => {
+  const { viewBox, width, height, path, color } = useLogoMark({ size, foreground });
 
   return (
     <svg

@@ -8,6 +8,7 @@ export const white = '#FFFFFF';
 
 export type LogoMarkParams = {
   size?: 16 | 24 | 32;
+  foreground?: boolean;
 };
 
 export type LogoWordmarkParams = {
@@ -44,9 +45,9 @@ export const useLogoWordmark = ({ foreground }: LogoWordmarkParams) => {
   }, [color]);
 };
 
-export const useLogoMark = ({ size = 32 }: LogoMarkParams) => {
+export const useLogoMark = ({ size = 32, foreground }: LogoMarkParams) => {
   const { viewBox, path } = logoMarkData[size];
-  const color = useSpectrumConditional({ light: blue, dark: white });
+  const color = useSpectrumConditional({ light: foreground ? black : blue, dark: white });
   return useMemo(() => {
     return {
       color,
