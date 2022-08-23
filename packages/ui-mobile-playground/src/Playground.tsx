@@ -1,7 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
-import { routes as codegenRoutes } from '@cbhq/cds-mobile/examples/newRoutes';
 
 import { ExamplesListScreen } from './ExamplesListScreen';
 import { ExamplesSearchProvider } from './ExamplesSearchProvider';
@@ -17,7 +16,7 @@ type PlaygroundProps = {
   listScreenTitle?: string;
 };
 
-const PlaygroundContent = memo(({ routes = codegenRoutes, listScreenTitle }: PlaygroundProps) => {
+const PlaygroundContent = memo(({ routes = [], listScreenTitle }: PlaygroundProps) => {
   const navigatorProps = useExampleNavigatorProps();
 
   const routeKeys = useMemo(() => {
