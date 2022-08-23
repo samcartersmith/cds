@@ -67,7 +67,15 @@ export const Modal = memo(
       [onRequestClose],
     );
 
-    const modalData = useMemo(() => ({ ...props, onRequestClose }), [onRequestClose, props]);
+    const modalData = useMemo(
+      () => ({
+        visible,
+        onRequestClose,
+        hideDividers,
+        hideCloseButton,
+      }),
+      [visible, onRequestClose, hideDividers, hideCloseButton],
+    );
 
     const renderChildrenProps = useMemo(
       () => ({ closeModal: () => onRequestClose?.() }),

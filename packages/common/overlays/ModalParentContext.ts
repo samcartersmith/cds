@@ -4,7 +4,9 @@ import { noop } from '@cbhq/cds-utils';
 import type { ModalBaseProps } from '../types';
 
 export const ModalParentContext = createContext<
-  Omit<ModalBaseProps, 'children'> & { accessibilityLabelledBy?: string }
+  Pick<ModalBaseProps, 'visible' | 'onRequestClose' | 'hideCloseButton' | 'hideDividers'> & {
+    accessibilityLabelledBy?: string;
+  }
 >({
   visible: false,
   onRequestClose: noop,

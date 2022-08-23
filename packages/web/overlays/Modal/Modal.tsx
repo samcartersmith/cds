@@ -57,7 +57,10 @@ export const Modal = memo(
       id,
       testID,
       role,
+      hideCloseButton,
+      hideDividers,
     } = props;
+
     const motionProps = useMotionProps({
       enterConfigs: [animateInOpacityConfig, animateInScaleConfig],
       exitConfigs: [animateOutOpacityConfig, animateOutScaleConfig],
@@ -77,8 +80,14 @@ export const Modal = memo(
     );
 
     const modalData = useMemo(
-      () => ({ ...props, onRequestClose: handleClose }),
-      [handleClose, props],
+      () => ({
+        visible,
+        onRequestClose: handleClose,
+        accessibilityLabelledBy,
+        hideCloseButton,
+        hideDividers,
+      }),
+      [visible, handleClose, accessibilityLabelledBy, hideCloseButton, hideDividers],
     );
 
     // TODO: remove render props as we no longer need the method to close modal
