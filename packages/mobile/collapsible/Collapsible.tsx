@@ -1,5 +1,5 @@
 import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
-import { Animated, ScrollView, View, ViewStyle } from 'react-native';
+import { Animated, ScrollView, ScrollViewProps, View, ViewStyle } from 'react-native';
 import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
 
 import { useContentSize } from '../hooks/useContentSize';
@@ -9,7 +9,12 @@ import { useCollapsibleAnimation } from './useCollapsibleAnimation';
 import { useCollapsibleDirection } from './useCollapsibleDirection';
 import { useToggleAnimation } from './useToggleAnimation';
 
-export type CollapseProps = CollapsibleBaseProps;
+export type CollapseProps = CollapsibleBaseProps & {
+  /**
+   * RN ScrollView props. Use with caution as it might break default settings.
+   */
+  scrollViewProps?: ScrollViewProps;
+};
 
 export const Collapsible = memo(
   forwardRef(
@@ -29,6 +34,7 @@ export const Collapsible = memo(
         spacingStart,
         spacingTop,
         spacingVertical,
+        scrollViewProps,
       }: CollapseProps,
       forwardedRef: ForwardedRef<View>,
     ) => {
@@ -89,6 +95,7 @@ export const Collapsible = memo(
             nestedScrollEnabled
             style={scrollViewStyles}
             contentContainerStyle={restPadding}
+            {...scrollViewProps}
           >
             {children}
           </ScrollView>
