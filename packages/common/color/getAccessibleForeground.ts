@@ -28,17 +28,19 @@ export const getAccessibleForeground = (
   usage: A11yColorUsage,
   /** Function to transform a paletteValue (blue60 or [blue60, 1]) into a valid color value. */
   transformFn: PaletteValueToRgbaStringFn,
+  /** Use enhanced ratio. */
+  enhanced?: boolean,
 ) => {
   if (foreground === 'auto') {
     return isAccessibleColor({ background, foreground: 'white', usage })
       ? 'rgb(255,255,255)'
       : 'rgb(0,0,0)';
   }
-  const isAccessibleForeground = isAccessibleColor({ background, foreground, usage });
+  const isAccessibleForeground = isAccessibleColor({ background, foreground, usage, enhanced });
   if (isAccessibleForeground) {
     return foreground;
   }
-  const spectrumAlias = colorToSpectrumAlias(foreground, usage);
+  const spectrumAlias = colorToSpectrumAlias(foreground, usage, enhanced);
   const darkestGrayContrastRatio = getContrastRatio(background, 'rgb(0,0,0)');
   const lightestGrayContrastRatio = getContrastRatio(background, 'rgb(255,255,255)');
 

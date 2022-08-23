@@ -35,6 +35,8 @@ export type AccessibleForegroundParams = {
   color: Exclude<string, PaletteCssVariableValue> | 'auto';
   /** Where the foreground color is being applied. */
   usage: A11yColorUsage;
+  /** Use enhanced ratio. */
+  enhanced?: boolean;
 };
 export type AccessibleForegroundFn = (params: AccessibleForegroundParams) => string;
 export type AccessibleForegroundGradientFn = (params: AccessibleForegroundParams) => GradientArray;

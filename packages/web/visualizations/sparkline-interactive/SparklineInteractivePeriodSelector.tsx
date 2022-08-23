@@ -71,6 +71,7 @@ export const SparklineInteractivePeriodSelector = <Period extends string>({
   const accessibleForeground = useAccessibleForeground({
     color,
     usage: 'normalText',
+    enhanced: true,
   });
 
   return (

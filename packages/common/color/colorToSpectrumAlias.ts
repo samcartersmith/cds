@@ -1,15 +1,32 @@
 import { hsl } from 'd3-color';
 
-import type { A11yColorUsage, SpectrumAlias } from '../types';
+import type { A11yColorUsage, SpectrumAlias, SpectrumHueStep } from '../types';
 import { between } from '../utils/between';
 
 import { isGray } from './isGray';
 
+const colorStepMap: Record<string, Record<A11yColorUsage, SpectrumHueStep>> = {
+  minimum: {
+    normalText: 60,
+    largeText: 60,
+    graphic: 50,
+  },
+  enhanced: {
+    normalText: 70,
+    largeText: 70,
+    graphic: 60,
+  },
+};
+
 /**
  * Take a non-CDS color and return the closest equivalent from CDS spectrum colors.
  */
-export const colorToSpectrumAlias = (color: string, usage?: A11yColorUsage): SpectrumAlias => {
-  const step = usage === 'graphic' ? 50 : 60;
+export const colorToSpectrumAlias = (
+  color: string,
+  usage: A11yColorUsage = 'normalText',
+  enhanced?: boolean,
+): SpectrumAlias => {
+  const step = colorStepMap[enhanced ? 'enhanced' : 'minimum'][usage];
   const hslColor = hsl(color);
   const hue = Math.round(hslColor.h);
   if (isGray(hslColor)) return 'gray100';
