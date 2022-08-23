@@ -222,10 +222,10 @@
             "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx",
             "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx",
             "@trust_and_safety/pages/Username/UsernamePage.tsx",
-            "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx",
             "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx",
+            "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx",
             "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx",
-            "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx"
+            "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx"
           ]
         },
         {
@@ -268,10 +268,10 @@
         "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
         "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
         "@trust_and_safety/risk/components/Stepper/Stepper.tsx": 1,
-        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 2,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2
+        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
         "alignItems": {
@@ -287,8 +287,8 @@
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "justifyContent": {
           "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 1,
@@ -325,10 +325,10 @@
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 2,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "spacingHorizontal": {
           "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 1,
@@ -398,10 +398,10 @@
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
         "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
         "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
@@ -421,10 +421,10 @@
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "spacingBottom": {
           "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 1,
@@ -435,10 +435,10 @@
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "align": {
           "@trust_and_safety/components/ResetConfirmationModal/ResetConfirmationModal.tsx": 1,
@@ -470,10 +470,10 @@
         "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
         "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
         "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 3,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2
+        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
@@ -489,10 +489,10 @@
           "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 3,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2
+          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "color": {
           "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 1,
@@ -504,9 +504,9 @@
           "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 3,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "align": {
           "@trust_and_safety/components/ResetConfirmationModal/ResetConfirmationModal.tsx": 1,
@@ -514,8 +514,8 @@
           "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
           "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
-          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "spacingVertical": { "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1 },
         "spacingBottom": {
@@ -716,181 +716,6 @@
       }
     },
     {
-      "name": "Box",
-      "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 29,
-      "totalCallSites": 17,
-      "cds": "@cbhq/cds-web/layout/Box",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "@trust_and_safety/components/Layout/PageLayout.tsx",
-          "callSites": [
-            "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx",
-            "@trust_and_safety/components/Sidebar/SidebarStory.tsx",
-            "@trust_and_safety/pages/Blocked/BlockedPage.tsx",
-            "@trust_and_safety/pages/Dev/DevPage.tsx",
-            "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx",
-            "@trust_and_safety/pages/Error/ErrorFallback.tsx",
-            "@trust_and_safety/pages/Error/ErrorPageDefault.tsx",
-            "@trust_and_safety/pages/Error/OAuthErrorPage.tsx",
-            "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx",
-            "@trust_and_safety/pages/Logout/LogoutPage.tsx",
-            "@trust_and_safety/pages/Password/PasswordPage.tsx",
-            "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx",
-            "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx",
-            "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx",
-            "@trust_and_safety/pages/Username/UsernamePage.tsx",
-            "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx",
-            "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx",
-            "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx",
-            "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx"
-          ]
-        },
-        {
-          "aliasPath": "@trust_and_safety/components/PasswordStrength/PasswordStrength.tsx",
-          "callSites": ["@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx"]
-        },
-        {
-          "aliasPath": "@trust_and_safety/components/ThemePicker/ThemePicker.tsx",
-          "callSites": ["@trust_and_safety/components/Layout/PageLayout.tsx"]
-        }
-      ],
-      "callSites": {
-        "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
-        "@trust_and_safety/components/Layout/PageLayout.tsx": 2,
-        "@trust_and_safety/components/PasswordStrength/PasswordStrength.tsx": 1,
-        "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
-        "@trust_and_safety/components/ThemePicker/ThemePicker.tsx": 1,
-        "@trust_and_safety/components/Toast/Toast.tsx": 2,
-        "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 2,
-        "@trust_and_safety/pages/Error/ErrorFallback.tsx": 2,
-        "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 3,
-        "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 2,
-        "@trust_and_safety/pages/Password/PasswordPage.tsx": 2,
-        "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 3,
-        "@trust_and_safety/pages/Username/UsernamePage.tsx": 2,
-        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2
-      },
-      "propsWithCallSites": {
-        "flexDirection": {
-          "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
-          "@trust_and_safety/components/Layout/PageLayout.tsx": 1
-        },
-        "justifyContent": {
-          "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
-          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
-          "@trust_and_safety/components/Toast/Toast.tsx": 1,
-          "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
-        },
-        "alignItems": {
-          "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
-          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
-          "@trust_and_safety/components/PasswordStrength/PasswordStrength.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
-        },
-        "minHeight": {
-          "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
-          "@trust_and_safety/components/Layout/PageLayout.tsx": 1
-        },
-        "width": {
-          "@trust_and_safety/components/Layout/PageLayout.tsx": 2,
-          "@trust_and_safety/components/Toast/Toast.tsx": 1,
-          "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 1,
-          "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
-          "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 2
-        },
-        "spacingTop": {
-          "@trust_and_safety/components/Layout/PageLayout.tsx": 2,
-          "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
-          "@trust_and_safety/components/ThemePicker/ThemePicker.tsx": 1,
-          "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 1,
-          "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
-          "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
-          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
-        },
-        "spacingHorizontal": { "@trust_and_safety/components/Layout/PageLayout.tsx": 2 },
-        "background": {
-          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
-          "@trust_and_safety/components/Toast/Toast.tsx": 1
-        },
-        "borderRadius": {
-          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
-          "@trust_and_safety/components/Toast/Toast.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
-        },
-        "bordered": {
-          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
-        },
-        "position": {
-          "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
-          "@trust_and_safety/components/Toast/Toast.tsx": 1
-        },
-        "maxWidth": { "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1 },
-        "dangerouslySetClassName": { "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1 },
-        "ref": {
-          "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
-          "@trust_and_safety/components/Toast/Toast.tsx": 1
-        },
-        "overflow": { "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1 },
-        "elevation": { "@trust_and_safety/components/Toast/Toast.tsx": 1 },
-        "spacing": {
-          "@trust_and_safety/components/Toast/Toast.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
-        },
-        "left": { "@trust_and_safety/components/Toast/Toast.tsx": 1 },
-        "zIndex": { "@trust_and_safety/components/Toast/Toast.tsx": 1 },
-        "borderedStart": { "@trust_and_safety/components/Toast/Toast.tsx": 1 },
-        "spacingStart": { "@trust_and_safety/components/Toast/Toast.tsx": 1 },
-        "height": { "@trust_and_safety/components/Toast/Toast.tsx": 1 },
-        "spacingBottom": {
-          "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 2,
-          "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
-          "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
-          "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
-          "@trust_and_safety/pages/Password/PasswordPage.tsx": 2,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2
-        },
-        "spacingVertical": { "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 2 },
-        "offset": { "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1 },
-        "offsetStart": { "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1 },
-        "flexWrap": { "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1 },
-        "alignSelf": {
-          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Spinner",
-      "sourceFile": "@cbhq/cds-web/loaders/Spinner",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/loaders/Spinner",
-      "callSites": {
-        "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
-        "@trust_and_safety/components/TwoFactor/TwoFactor.tsx": 1,
-        "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1
-      },
-      "propsWithCallSites": {
-        "size": {
-          "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
-          "@trust_and_safety/components/TwoFactor/TwoFactor.tsx": 1,
-          "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1
-        },
-        "color": {
-          "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
-          "@trust_and_safety/components/TwoFactor/TwoFactor.tsx": 1,
-          "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Pressable",
       "sourceFile": "@cbhq/cds-web/system/Pressable",
       "totalInstances": 2,
@@ -988,6 +813,181 @@
       }
     },
     {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 29,
+      "totalCallSites": 17,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "@trust_and_safety/components/Layout/PageLayout.tsx",
+          "callSites": [
+            "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx",
+            "@trust_and_safety/components/Sidebar/SidebarStory.tsx",
+            "@trust_and_safety/pages/Blocked/BlockedPage.tsx",
+            "@trust_and_safety/pages/Dev/DevPage.tsx",
+            "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx",
+            "@trust_and_safety/pages/Error/ErrorFallback.tsx",
+            "@trust_and_safety/pages/Error/ErrorPageDefault.tsx",
+            "@trust_and_safety/pages/Error/OAuthErrorPage.tsx",
+            "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx",
+            "@trust_and_safety/pages/Logout/LogoutPage.tsx",
+            "@trust_and_safety/pages/Password/PasswordPage.tsx",
+            "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx",
+            "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx",
+            "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx",
+            "@trust_and_safety/pages/Username/UsernamePage.tsx",
+            "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx",
+            "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx",
+            "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx",
+            "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx"
+          ]
+        },
+        {
+          "aliasPath": "@trust_and_safety/components/PasswordStrength/PasswordStrength.tsx",
+          "callSites": ["@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx"]
+        },
+        {
+          "aliasPath": "@trust_and_safety/components/ThemePicker/ThemePicker.tsx",
+          "callSites": ["@trust_and_safety/components/Layout/PageLayout.tsx"]
+        }
+      ],
+      "callSites": {
+        "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
+        "@trust_and_safety/components/Layout/PageLayout.tsx": 2,
+        "@trust_and_safety/components/PasswordStrength/PasswordStrength.tsx": 1,
+        "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
+        "@trust_and_safety/components/ThemePicker/ThemePicker.tsx": 1,
+        "@trust_and_safety/components/Toast/Toast.tsx": 2,
+        "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 2,
+        "@trust_and_safety/pages/Error/ErrorFallback.tsx": 2,
+        "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 3,
+        "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 2,
+        "@trust_and_safety/pages/Password/PasswordPage.tsx": 2,
+        "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 3,
+        "@trust_and_safety/pages/Username/UsernamePage.tsx": 2,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "flexDirection": {
+          "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
+          "@trust_and_safety/components/Layout/PageLayout.tsx": 1
+        },
+        "justifyContent": {
+          "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
+          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
+          "@trust_and_safety/components/Toast/Toast.tsx": 1,
+          "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+        },
+        "alignItems": {
+          "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
+          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
+          "@trust_and_safety/components/PasswordStrength/PasswordStrength.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
+        },
+        "minHeight": {
+          "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
+          "@trust_and_safety/components/Layout/PageLayout.tsx": 1
+        },
+        "width": {
+          "@trust_and_safety/components/Layout/PageLayout.tsx": 2,
+          "@trust_and_safety/components/Toast/Toast.tsx": 1,
+          "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 1,
+          "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
+          "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 2
+        },
+        "spacingTop": {
+          "@trust_and_safety/components/Layout/PageLayout.tsx": 2,
+          "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
+          "@trust_and_safety/components/ThemePicker/ThemePicker.tsx": 1,
+          "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 1,
+          "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
+          "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
+          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
+        },
+        "spacingHorizontal": { "@trust_and_safety/components/Layout/PageLayout.tsx": 2 },
+        "background": {
+          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
+          "@trust_and_safety/components/Toast/Toast.tsx": 1
+        },
+        "borderRadius": {
+          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
+          "@trust_and_safety/components/Toast/Toast.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+        },
+        "bordered": {
+          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+        },
+        "position": {
+          "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
+          "@trust_and_safety/components/Toast/Toast.tsx": 1
+        },
+        "maxWidth": { "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1 },
+        "dangerouslySetClassName": { "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1 },
+        "ref": {
+          "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
+          "@trust_and_safety/components/Toast/Toast.tsx": 1
+        },
+        "overflow": { "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1 },
+        "elevation": { "@trust_and_safety/components/Toast/Toast.tsx": 1 },
+        "spacing": {
+          "@trust_and_safety/components/Toast/Toast.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+        },
+        "left": { "@trust_and_safety/components/Toast/Toast.tsx": 1 },
+        "zIndex": { "@trust_and_safety/components/Toast/Toast.tsx": 1 },
+        "borderedStart": { "@trust_and_safety/components/Toast/Toast.tsx": 1 },
+        "spacingStart": { "@trust_and_safety/components/Toast/Toast.tsx": 1 },
+        "height": { "@trust_and_safety/components/Toast/Toast.tsx": 1 },
+        "spacingBottom": {
+          "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 2,
+          "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
+          "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
+          "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
+          "@trust_and_safety/pages/Password/PasswordPage.tsx": 2,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2
+        },
+        "spacingVertical": { "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 2 },
+        "offset": { "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1 },
+        "offsetStart": { "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1 },
+        "flexWrap": { "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1 },
+        "alignSelf": {
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Spinner",
+      "sourceFile": "@cbhq/cds-web/loaders/Spinner",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/loaders/Spinner",
+      "callSites": {
+        "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
+        "@trust_and_safety/components/TwoFactor/TwoFactor.tsx": 1,
+        "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "size": {
+          "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
+          "@trust_and_safety/components/TwoFactor/TwoFactor.tsx": 1,
+          "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1
+        },
+        "color": {
+          "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
+          "@trust_and_safety/components/TwoFactor/TwoFactor.tsx": 1,
+          "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ProgressBar",
       "sourceFile": "@cbhq/cds-web/visualizations/ProgressBar",
       "totalInstances": 3,
@@ -1048,8 +1048,8 @@
         "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
         "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
         "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
-        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
@@ -1058,8 +1058,8 @@
           "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
           "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
           "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
-          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "dimension": {
           "@trust_and_safety/components/ResetConfirmationModal/ResetConfirmationModal.tsx": 1,
@@ -1067,8 +1067,8 @@
           "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
           "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
           "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
-          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         }
       }
     },
@@ -1701,10 +1701,10 @@
         "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
         "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
-        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
         "showCancelFlow": {
@@ -1852,10 +1852,10 @@
         "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
         "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
-        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       }
     },
     {
@@ -2020,6 +2020,16 @@
       }
     },
     {
+      "name": "RiskyDeviceBlockedPage",
+      "sourceFile": "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@trust_and_safety/pages/Risk/RiskPage.tsx": 1,
+        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDevicePage.tsx": 1
+      }
+    },
+    {
       "name": "Navigate",
       "sourceFile": "react-router-dom/Navigate",
       "totalInstances": 1,
@@ -2058,16 +2068,6 @@
         "showModalControl": { "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1 },
         "onConfirm": { "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1 },
         "isLoading": { "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1 }
-      }
-    },
-    {
-      "name": "RiskyDeviceBlockedPage",
-      "sourceFile": "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@trust_and_safety/pages/Risk/RiskPage.tsx": 1,
-        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDevicePage.tsx": 1
       }
     },
     {

@@ -190,6 +190,7 @@
           "components/FuturesTradingModal/steps/AnnualIncomeScreen.tsx": 1,
           "components/FuturesTradingModal/steps/NetWorthScreen.tsx": 1,
           "components/FuturesTradingModal/steps/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1,
           "steps/TwoFactorAuthentication/components/AddPhoneNumber.tsx": 1,
           "steps/TwoFactorAuthentication/components/VerifyAuthCode.tsx": 1,
           "components/Idology/components/SelectIdTypeAU/SelectIdTypeAU.tsx": 1,
@@ -228,6 +229,7 @@
           "components/FuturesTradingModal/steps/FuturesErrorScreen.tsx": 1,
           "components/FuturesTradingModal/steps/FuturesRejectionScreen.tsx": 1,
           "components/FuturesTradingModal/steps/IngressScreen.tsx": 2,
+          "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1,
           "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1,
           "steps/TwoFactorAuthentication/components/AddPhoneNumber.tsx": 1,
           "steps/TwoFactorAuthentication/components/VerifyAuthCode.tsx": 1,
@@ -261,6 +263,8 @@
           "steps/ReviewEligibility/ReviewEligibilityForm.tsx": 1,
           "steps/RiskDisclosure/RiskDisclosure.tsx": 1,
           "steps/VerifyEmail/VerifyEmail.tsx": 1,
+          "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1,
+          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1,
           "steps/TwoFactorAuthentication/components/AddPhoneNumber.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/components/ActionButtons.tsx": 1
         },
@@ -341,11 +345,11 @@
         "steps/Ineligible/Ineligible.tsx": 3,
         "steps/JapanVendorHandoff/JapanVendorHandoffForm.tsx": 2,
         "steps/ReviewEligibility/ReviewEligibilityForm.tsx": 5,
+        "components/FuturesTradingModal/components/FuturesTradingProgressIndicator.tsx": 1,
         "components/FuturesTradingModal/steps/AccountApprovedScreen.tsx": 2,
         "components/FuturesTradingModal/steps/FullSSNScreen.tsx": 2,
         "components/FuturesTradingModal/steps/IngressScreen.tsx": 3,
         "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 2,
-        "components/FuturesTradingModal/components/FuturesTradingProgressIndicator.tsx": 1,
         "components/InputCode/components/DigitInput.tsx": 1,
         "components/InputCode/components/Loader.tsx": 1,
         "steps/TwoFactorAuthentication/components/AddPhoneNumber.tsx": 1,
@@ -478,10 +482,10 @@
           "components/SuitabilityQuestionAnswers/SuitabilityReview.tsx": 1,
           "steps/Ineligible/Ineligible.tsx": 3,
           "steps/ReviewEligibility/ReviewEligibilityForm.tsx": 1,
+          "components/FuturesTradingModal/components/FuturesTradingProgressIndicator.tsx": 1,
           "components/FuturesTradingModal/steps/FullSSNScreen.tsx": 1,
           "components/FuturesTradingModal/steps/IngressScreen.tsx": 1,
           "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1,
-          "components/FuturesTradingModal/components/FuturesTradingProgressIndicator.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1,
           "components/Idology/components/SelectIdTypeAU/SelectIdTypeAU.tsx": 2
         },
@@ -579,6 +583,8 @@
         "steps/ReviewEligibility/ReviewEligibilityForm.tsx": 2,
         "steps/RiskDisclosure/RiskDisclosure.tsx": 8,
         "steps/VerifyEmail/VerifyEmail.tsx": 1,
+        "components/FuturesTradingModal/components/FuturesTradingModalHeader.tsx": 1,
+        "components/FuturesTradingModal/components/FuturesTradingProgressIndicator.tsx": 1,
         "components/FuturesTradingModal/steps/AccountApprovedScreen.tsx": 1,
         "components/FuturesTradingModal/steps/AccountUnderReviewScreen.tsx": 1,
         "components/FuturesTradingModal/steps/AnnualIncomeScreen.tsx": 1,
@@ -590,8 +596,6 @@
         "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1,
         "components/FuturesTradingModal/steps/TradingExperienceScreen.tsx": 1,
         "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1,
-        "components/FuturesTradingModal/components/FuturesTradingModalHeader.tsx": 1,
-        "components/FuturesTradingModal/components/FuturesTradingProgressIndicator.tsx": 1,
         "steps/TwoFactorAuthentication/components/AddPhoneNumber.tsx": 3,
         "steps/TwoFactorAuthentication/components/VerifyAuthCode.tsx": 2,
         "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
@@ -667,6 +671,7 @@
           "steps/RiskDisclosure/RiskDisclosure.tsx": 3,
           "steps/VerifyEmail/VerifyEmail.tsx": 1,
           "components/FuturesTradingModal/steps/IngressScreen.tsx": 1,
+          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1,
           "steps/TwoFactorAuthentication/components/AddPhoneNumber.tsx": 3,
           "steps/TwoFactorAuthentication/components/VerifyAuthCode.tsx": 2,
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 3,
@@ -737,7 +742,6 @@
           "components/FuturesTradingModal/steps/NetWorthScreen.tsx": 1,
           "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1,
           "components/FuturesTradingModal/steps/TradingExperienceScreen.tsx": 1,
-          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1,
           "components/IdCapture/components/Intro/Intro.tsx": 1,
           "components/IdCapture/components/VerificationFallback/VerificationFallback.tsx": 1,
           "components/Idology/components/SelectIdTypeAU/SelectIdTypeAU.tsx": 1
@@ -935,8 +939,8 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 62,
-      "totalCallSites": 43,
+      "totalInstances": 66,
+      "totalCallSites": 44,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "components/ContactUsView/ContactUsView.tsx": 1,
@@ -970,6 +974,7 @@
         "components/FuturesTradingModal/steps/FuturesErrorScreen.tsx": 1,
         "components/FuturesTradingModal/steps/FuturesRejectionScreen.tsx": 1,
         "components/FuturesTradingModal/steps/IngressScreen.tsx": 1,
+        "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 4,
         "steps/TwoFactorAuthentication/components/AddPhoneNumber.tsx": 1,
         "steps/TwoFactorAuthentication/components/VerifyAuthCode.tsx": 1,
         "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 2,
@@ -1016,6 +1021,7 @@
           "components/FuturesTradingModal/steps/FuturesErrorScreen.tsx": 1,
           "components/FuturesTradingModal/steps/FuturesRejectionScreen.tsx": 1,
           "components/FuturesTradingModal/steps/IngressScreen.tsx": 1,
+          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 4,
           "steps/TwoFactorAuthentication/components/AddPhoneNumber.tsx": 1,
           "steps/TwoFactorAuthentication/components/VerifyAuthCode.tsx": 1,
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 2,
@@ -1077,6 +1083,7 @@
           "components/FuturesTradingModal/steps/FuturesErrorScreen.tsx": 1,
           "components/FuturesTradingModal/steps/FuturesRejectionScreen.tsx": 1,
           "components/FuturesTradingModal/steps/IngressScreen.tsx": 1,
+          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 4,
           "steps/TwoFactorAuthentication/components/AddPhoneNumber.tsx": 1,
           "steps/TwoFactorAuthentication/components/VerifyAuthCode.tsx": 1,
           "components/IdCapture/components/IdTypeV2/IdTypeV2.tsx": 2,
@@ -1646,15 +1653,14 @@
     {
       "name": "TextLegal",
       "sourceFile": "@cbhq/cds-web/typography/TextLegal",
-      "totalInstances": 8,
-      "totalCallSites": 6,
+      "totalInstances": 7,
+      "totalCallSites": 5,
       "cds": "@cbhq/cds-web/typography/TextLegal",
       "callSites": {
         "components/IDVStepsIntro/IDVerificationIntro.tsx": 1,
         "components/IdentityDetailsForm/BirthdayField.tsx": 2,
         "components/RfiPep/MultiHitForm.tsx": 1,
         "steps/RiskDisclosure/RiskDisclosure.tsx": 2,
-        "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1,
         "components/Idology/components/VendorVerification/VendorVerification.tsx": 1
       },
       "propsWithCallSites": {
@@ -1663,7 +1669,6 @@
           "components/IdentityDetailsForm/BirthdayField.tsx": 2,
           "components/RfiPep/MultiHitForm.tsx": 1,
           "steps/RiskDisclosure/RiskDisclosure.tsx": 2,
-          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1,
           "components/Idology/components/VendorVerification/VendorVerification.tsx": 1
         },
         "color": {
@@ -1675,10 +1680,7 @@
         "spacingStart": { "components/IDVStepsIntro/IDVerificationIntro.tsx": 1 },
         "spacingVertical": { "components/IdentityDetailsForm/BirthdayField.tsx": 2 },
         "testID": { "components/IdentityDetailsForm/BirthdayField.tsx": 1 },
-        "align": {
-          "steps/RiskDisclosure/RiskDisclosure.tsx": 2,
-          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1
-        },
+        "align": { "steps/RiskDisclosure/RiskDisclosure.tsx": 2 },
         "spacing": { "components/Idology/components/VendorVerification/VendorVerification.tsx": 1 }
       }
     },
@@ -1805,41 +1807,39 @@
     {
       "name": "Checkbox",
       "sourceFile": "@cbhq/cds-web/controls/Checkbox",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 7,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-web/controls/Checkbox",
       "callSites": {
         "components/IdentityDetailsForm/Fields.tsx": 1,
-        "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1
+        "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1,
+        "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 5
       },
       "propsWithCallSites": {
-        "checked": { "components/IdentityDetailsForm/Fields.tsx": 1 },
-        "onChange": { "components/IdentityDetailsForm/Fields.tsx": 1 },
+        "checked": {
+          "components/IdentityDetailsForm/Fields.tsx": 1,
+          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 5
+        },
+        "onChange": {
+          "components/IdentityDetailsForm/Fields.tsx": 1,
+          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 5
+        },
         "key": { "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1 },
-        "value": { "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1 }
-      }
-    },
-    {
-      "name": "Tooltip",
-      "sourceFile": "@cbhq/cds-web/overlays/Tooltip/Tooltip",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/overlays/Tooltip/Tooltip",
-      "propsWithCallSites": {
-        "content": { "components/LabelWithHelpText/LabelWithHelpText.tsx": 1 },
-        "placement": { "components/LabelWithHelpText/LabelWithHelpText.tsx": 1 }
+        "value": { "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1 },
+        "testID": { "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 5 }
       }
     },
     {
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
-      "totalInstances": 10,
-      "totalCallSites": 8,
+      "totalInstances": 11,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-web/typography/TextLabel2",
       "callSites": {
         "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
         "components/RfiPep/InfoBox.tsx": 1,
         "components/FuturesTradingModal/steps/FullSSNScreen.tsx": 1,
+        "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1,
         "steps/TwoFactorAuthentication/components/AddPhoneNumber.tsx": 1,
         "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
         "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 3,
@@ -1851,6 +1851,7 @@
           "components/KYCRefresh/KYCRefreshScreen.tsx": 1,
           "components/RfiPep/InfoBox.tsx": 1,
           "components/FuturesTradingModal/steps/FullSSNScreen.tsx": 1,
+          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1,
           "steps/TwoFactorAuthentication/components/AddPhoneNumber.tsx": 1,
           "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1,
           "components/IdCapture/components/ImageUploadV2/ImageUploadV2.tsx": 3,
@@ -1869,9 +1870,21 @@
         },
         "spacingStart": { "components/KYCRefresh/KYCRefreshScreen.tsx": 1 },
         "display": { "components/RfiPep/InfoBox.tsx": 1 },
+        "spacingBottom": { "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1 },
         "spacingVertical": { "components/IdCapture/components/ImageUpload/ImageUpload.tsx": 1 },
         "spacingTop": { "components/IdCapture/components/UploadMethodV2/UploadMethodV2.tsx": 1 },
         "align": { "components/IdCapture/components/ImageUploadV2/components/DropImage.tsx": 1 }
+      }
+    },
+    {
+      "name": "Tooltip",
+      "sourceFile": "@cbhq/cds-web/overlays/Tooltip/Tooltip",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/overlays/Tooltip/Tooltip",
+      "propsWithCallSites": {
+        "content": { "components/LabelWithHelpText/LabelWithHelpText.tsx": 1 },
+        "placement": { "components/LabelWithHelpText/LabelWithHelpText.tsx": 1 }
       }
     },
     {
@@ -2130,14 +2143,15 @@
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 9,
-      "totalCallSites": 5,
+      "totalInstances": 17,
+      "totalCallSites": 6,
       "cds": "@cbhq/cds-web/typography/Link",
       "callSites": {
         "steps/BlockedOnboarding/BlockedOnboarding.tsx": 1,
         "steps/Ineligible/Ineligible.tsx": 1,
         "steps/JapanVendorHandoff/JapanVendorHandoffForm.tsx": 1,
         "steps/RiskDisclosure/RiskDisclosure.tsx": 4,
+        "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 8,
         "components/Idology/components/SelectIdTypeAU/SelectIdTypeAU.tsx": 2
       },
       "propsWithCallSites": {
@@ -2146,13 +2160,16 @@
           "steps/Ineligible/Ineligible.tsx": 1,
           "steps/JapanVendorHandoff/JapanVendorHandoffForm.tsx": 1,
           "steps/RiskDisclosure/RiskDisclosure.tsx": 4,
+          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 8,
           "components/Idology/components/SelectIdTypeAU/SelectIdTypeAU.tsx": 2
         },
         "openInNewWindow": {
           "steps/JapanVendorHandoff/JapanVendorHandoffForm.tsx": 1,
           "steps/RiskDisclosure/RiskDisclosure.tsx": 2,
+          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 8,
           "components/Idology/components/SelectIdTypeAU/SelectIdTypeAU.tsx": 2
-        }
+        },
+        "variant": { "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 8 }
       }
     },
     {
@@ -2179,10 +2196,23 @@
       }
     },
     {
+      "name": "ModalHeader",
+      "sourceFile": "@cbhq/cds-web/overlays/ModalHeader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/overlays/ModalHeader",
+      "propsWithCallSites": {
+        "title": { "components/FuturesTradingModal/components/FuturesTradingModalHeader.tsx": 1 },
+        "onBackButtonPress": {
+          "components/FuturesTradingModal/components/FuturesTradingModalHeader.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ModalBody",
       "sourceFile": "@cbhq/cds-web/overlays/Modal/ModalBody",
-      "totalInstances": 10,
-      "totalCallSites": 9,
+      "totalInstances": 11,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-web/overlays/Modal/ModalBody",
       "callSites": {
         "components/FuturesTradingModal/steps/AccountApprovedScreen.tsx": 1,
@@ -2193,21 +2223,23 @@
         "components/FuturesTradingModal/steps/FuturesRejectionScreen.tsx": 1,
         "components/FuturesTradingModal/steps/NetWorthScreen.tsx": 1,
         "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 2,
-        "components/FuturesTradingModal/steps/TradingExperienceScreen.tsx": 1
+        "components/FuturesTradingModal/steps/TradingExperienceScreen.tsx": 1,
+        "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1
       }
     },
     {
       "name": "ModalFooter",
       "sourceFile": "@cbhq/cds-web/overlays/Modal/ModalFooter",
-      "totalInstances": 5,
-      "totalCallSites": 5,
+      "totalInstances": 6,
+      "totalCallSites": 6,
       "cds": "@cbhq/cds-web/overlays/Modal/ModalFooter",
       "callSites": {
         "components/FuturesTradingModal/steps/AnnualIncomeScreen.tsx": 1,
         "components/FuturesTradingModal/steps/FullSSNScreen.tsx": 1,
         "components/FuturesTradingModal/steps/NetWorthScreen.tsx": 1,
         "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1,
-        "components/FuturesTradingModal/steps/TradingExperienceScreen.tsx": 1
+        "components/FuturesTradingModal/steps/TradingExperienceScreen.tsx": 1,
+        "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1
       },
       "propsWithCallSites": {
         "primaryAction": {
@@ -2215,7 +2247,8 @@
           "components/FuturesTradingModal/steps/FullSSNScreen.tsx": 1,
           "components/FuturesTradingModal/steps/NetWorthScreen.tsx": 1,
           "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1,
-          "components/FuturesTradingModal/steps/TradingExperienceScreen.tsx": 1
+          "components/FuturesTradingModal/steps/TradingExperienceScreen.tsx": 1,
+          "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1
         }
       }
     },
@@ -2244,19 +2277,15 @@
     {
       "name": "ModalBody",
       "sourceFile": "@cbhq/cds-web/overlays/ModalBody",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 1,
+      "totalCallSites": 1,
       "cds": "@cbhq/cds-web/overlays/ModalBody",
       "aliasedCdsComponents": [
         {
           "aliasPath": "components/FuturesTradingModal/steps/IngressScreen.tsx",
           "callSites": ["components/FuturesTradingModal/FuturesTradingModal.tsx"]
         }
-      ],
-      "callSites": {
-        "components/FuturesTradingModal/steps/IngressScreen.tsx": 1,
-        "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1
-      }
+      ]
     },
     {
       "name": "CheckboxGroup",
@@ -2269,29 +2298,6 @@
         "name": { "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1 },
         "selectedValues": { "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1 },
         "onChange": { "components/FuturesTradingModal/steps/QuestionnaireScreen.tsx": 1 }
-      }
-    },
-    {
-      "name": "ModalFooter",
-      "sourceFile": "@cbhq/cds-web/overlays/ModalFooter",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/overlays/ModalFooter",
-      "propsWithCallSites": {
-        "primaryAction": { "components/FuturesTradingModal/steps/TradingTermsScreen.tsx": 1 }
-      }
-    },
-    {
-      "name": "ModalHeader",
-      "sourceFile": "@cbhq/cds-web/overlays/ModalHeader",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/overlays/ModalHeader",
-      "propsWithCallSites": {
-        "title": { "components/FuturesTradingModal/components/FuturesTradingModalHeader.tsx": 1 },
-        "onBackButtonPress": {
-          "components/FuturesTradingModal/components/FuturesTradingModalHeader.tsx": 1
-        }
       }
     },
     {
@@ -2793,8 +2799,8 @@
         "components/JapanIDVPending/Error.tsx": 2,
         "components/JapanIDVPending/Pending.tsx": 2,
         "components/JapanIDVPending/Success.tsx": 2,
-        "steps/KYCRefresh/KYCRefresh.tsx": 1,
         "steps/KYC/KYCForm.tsx": 1,
+        "steps/KYCRefresh/KYCRefresh.tsx": 1,
         "steps/ConfirmEmail/components/ConfirmEmail.tsx": 3,
         "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
         "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 2,
@@ -2909,8 +2915,8 @@
         "steps/BasicKYC/BasicKYCForm.tsx": 1,
         "steps/IDV/IDV.tsx": 1,
         "steps/KBA/KBAForm.tsx": 1,
-        "steps/KYCRefresh/KYCRefresh.tsx": 1,
         "steps/KYC/KYCForm.tsx": 1,
+        "steps/KYCRefresh/KYCRefresh.tsx": 1,
         "components/IdCapture/components/Capture/Capture.tsx": 1,
         "components/IdCapture/components/MobileUpload/MobileUpload.tsx": 1,
         "components/IdCapture/components/Verification/Verification.tsx": 1,
@@ -3176,8 +3182,8 @@
         "steps/Birthplace/Birthplace.tsx": 1,
         "steps/CDD/CDD.tsx": 1,
         "steps/KBA/KBAForm.tsx": 1,
-        "steps/KYCRefresh/KYCRefresh.tsx": 1,
         "steps/KYC/KYCForm.tsx": 1,
+        "steps/KYCRefresh/KYCRefresh.tsx": 1,
         "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
         "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
         "components/GDPR/steps/Emails/Emails.tsx": 2,
@@ -3195,8 +3201,8 @@
           "steps/Birthplace/Birthplace.tsx": 1,
           "steps/CDD/CDD.tsx": 1,
           "steps/KBA/KBAForm.tsx": 1,
-          "steps/KYCRefresh/KYCRefresh.tsx": 1,
           "steps/KYC/KYCForm.tsx": 1,
+          "steps/KYCRefresh/KYCRefresh.tsx": 1,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
           "components/GDPR/steps/Emails/Emails.tsx": 2,
@@ -3248,8 +3254,8 @@
           "steps/Birthplace/Birthplace.tsx": 1,
           "steps/CDD/CDD.tsx": 1,
           "steps/KBA/KBAForm.tsx": 1,
-          "steps/KYCRefresh/KYCRefresh.tsx": 1,
           "steps/KYC/KYCForm.tsx": 1,
+          "steps/KYCRefresh/KYCRefresh.tsx": 1,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 1,
           "components/GDPR/steps/Emails/Emails.tsx": 2,
@@ -3491,13 +3497,6 @@
       }
     },
     {
-      "name": "IconWrapper",
-      "sourceFile": "components/LabelWithHelpText/LabelWithHelpText.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "StyledButton",
       "sourceFile": "components/KYCRefresh/KYCRClickableByStatus.tsx",
       "totalInstances": 1,
@@ -3615,6 +3614,13 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "span"
+    },
+    {
+      "name": "IconWrapper",
+      "sourceFile": "components/LabelWithHelpText/LabelWithHelpText.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "Instructions",
@@ -4755,112 +4761,6 @@
     },
     {
       "name": "AutoWidthStep",
-      "sourceFile": "steps/RemediationAlert/RemediationAlert.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Step",
-      "propsWithCallSites": { "title": { "steps/RemediationAlert/RemediationAlert.tsx": 1 } }
-    },
-    {
-      "name": "LoadingContainer",
-      "sourceFile": "steps/RemediationAlert/RemediationAlert.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "AutoWidthStep",
-      "sourceFile": "steps/TOS/TOS.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Step",
-      "propsWithCallSites": {
-        "title": { "steps/TOS/TOS.tsx": 1 },
-        "hideBackLink": { "steps/TOS/TOS.tsx": 1 }
-      }
-    },
-    {
-      "name": "TOSTextContainer",
-      "sourceFile": "steps/TOS/TOS.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "TOSText",
-      "sourceFile": "steps/TOS/TOS.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "dangerouslySetInnerHTML": { "steps/TOS/TOS.tsx": 1 },
-        "onScroll": { "steps/TOS/TOS.tsx": 1 }
-      }
-    },
-    {
-      "name": "AcceptButton",
-      "sourceFile": "steps/TOS/TOS.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "onClick": { "steps/TOS/TOS.tsx": 1 },
-        "loading": { "steps/TOS/TOS.tsx": 1 }
-      }
-    },
-    {
-      "name": "ReviewLaterText",
-      "sourceFile": "steps/TOS/TOS.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text"
-    },
-    {
-      "name": "ReviewLaterLink",
-      "sourceFile": "steps/TOS/TOS.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Link",
-      "propsWithCallSites": {
-        "color": { "steps/TOS/TOS.tsx": 1 },
-        "href": { "steps/TOS/TOS.tsx": 1 }
-      }
-    },
-    {
-      "name": "LoadingContainer",
-      "sourceFile": "steps/KYCRefresh/KYCRefresh.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "AutoWidthStep",
-      "sourceFile": "steps/KYCRefresh/KYCRefresh.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Step",
-      "callSites": { "steps/KYCRefresh/KYCRefresh.tsx": 2 },
-      "propsWithCallSites": {
-        "title": { "steps/KYCRefresh/KYCRefresh.tsx": 2 },
-        "subTitle": { "steps/KYCRefresh/KYCRefresh.tsx": 1 }
-      }
-    },
-    {
-      "name": "MarginBottom",
-      "sourceFile": "steps/KYCRefresh/KYCRefresh.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "KYCRefreshScreen",
-      "sourceFile": "components/KYCRefresh/KYCRefreshScreen",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "StyledButton"
-    },
-    {
-      "name": "AutoWidthStep",
       "sourceFile": "steps/KYC/KYC.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -4989,6 +4889,112 @@
           "steps/KYC/KYCForm.tsx": 1,
           "components/Idology/components/IdentityForm/IdentityForm.tsx": 1
         }
+      }
+    },
+    {
+      "name": "LoadingContainer",
+      "sourceFile": "steps/KYCRefresh/KYCRefresh.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "AutoWidthStep",
+      "sourceFile": "steps/KYCRefresh/KYCRefresh.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Step",
+      "callSites": { "steps/KYCRefresh/KYCRefresh.tsx": 2 },
+      "propsWithCallSites": {
+        "title": { "steps/KYCRefresh/KYCRefresh.tsx": 2 },
+        "subTitle": { "steps/KYCRefresh/KYCRefresh.tsx": 1 }
+      }
+    },
+    {
+      "name": "MarginBottom",
+      "sourceFile": "steps/KYCRefresh/KYCRefresh.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "KYCRefreshScreen",
+      "sourceFile": "components/KYCRefresh/KYCRefreshScreen",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "StyledButton"
+    },
+    {
+      "name": "AutoWidthStep",
+      "sourceFile": "steps/RemediationAlert/RemediationAlert.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Step",
+      "propsWithCallSites": { "title": { "steps/RemediationAlert/RemediationAlert.tsx": 1 } }
+    },
+    {
+      "name": "LoadingContainer",
+      "sourceFile": "steps/RemediationAlert/RemediationAlert.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "AutoWidthStep",
+      "sourceFile": "steps/TOS/TOS.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Step",
+      "propsWithCallSites": {
+        "title": { "steps/TOS/TOS.tsx": 1 },
+        "hideBackLink": { "steps/TOS/TOS.tsx": 1 }
+      }
+    },
+    {
+      "name": "TOSTextContainer",
+      "sourceFile": "steps/TOS/TOS.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "TOSText",
+      "sourceFile": "steps/TOS/TOS.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "dangerouslySetInnerHTML": { "steps/TOS/TOS.tsx": 1 },
+        "onScroll": { "steps/TOS/TOS.tsx": 1 }
+      }
+    },
+    {
+      "name": "AcceptButton",
+      "sourceFile": "steps/TOS/TOS.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "propsWithCallSites": {
+        "onClick": { "steps/TOS/TOS.tsx": 1 },
+        "loading": { "steps/TOS/TOS.tsx": 1 }
+      }
+    },
+    {
+      "name": "ReviewLaterText",
+      "sourceFile": "steps/TOS/TOS.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Text"
+    },
+    {
+      "name": "ReviewLaterLink",
+      "sourceFile": "steps/TOS/TOS.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Link",
+      "propsWithCallSites": {
+        "color": { "steps/TOS/TOS.tsx": 1 },
+        "href": { "steps/TOS/TOS.tsx": 1 }
       }
     },
     {
@@ -6430,14 +6436,14 @@
         "steps/JapanIDV/JapanIDV.tsx": 1,
         "steps/JapanIDVPending/JapanIDVPending.tsx": 2,
         "steps/KBA/KBAForm.tsx": 1,
+        "steps/KYC/KYC.tsx": 1,
+        "steps/KYC/KYCForm.tsx": 7,
+        "steps/KYCRefresh/KYCRefresh.tsx": 5,
         "steps/PendingDocuments/PendingDocuments.tsx": 1,
         "steps/PhoneNumber/PhoneNumber.tsx": 2,
         "steps/Suitability/Suitability.tsx": 1,
         "steps/TOS/TOS.tsx": 4,
         "steps/TaxForm/TaxForm.tsx": 1,
-        "steps/KYCRefresh/KYCRefresh.tsx": 5,
-        "steps/KYC/KYC.tsx": 1,
-        "steps/KYC/KYCForm.tsx": 7,
         "steps/ConfirmEmail/components/ConfirmEmail.tsx": 4,
         "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 3,
         "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 2,
@@ -6495,13 +6501,13 @@
           "steps/JapanIDV/JapanIDV.tsx": 1,
           "steps/JapanIDVPending/JapanIDVPending.tsx": 2,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYC.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 7,
           "steps/PendingDocuments/PendingDocuments.tsx": 1,
           "steps/PhoneNumber/PhoneNumber.tsx": 2,
           "steps/Suitability/Suitability.tsx": 1,
           "steps/TOS/TOS.tsx": 4,
           "steps/TaxForm/TaxForm.tsx": 1,
-          "steps/KYC/KYC.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 7,
           "steps/ConfirmEmail/components/ConfirmEmail.tsx": 4,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 3,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 2,
@@ -6558,13 +6564,13 @@
           "steps/JapanIDV/JapanIDV.tsx": 1,
           "steps/JapanIDVPending/JapanIDVPending.tsx": 2,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYC.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 7,
           "steps/PendingDocuments/PendingDocuments.tsx": 1,
           "steps/PhoneNumber/PhoneNumber.tsx": 2,
           "steps/Suitability/Suitability.tsx": 1,
           "steps/TOS/TOS.tsx": 4,
           "steps/TaxForm/TaxForm.tsx": 1,
-          "steps/KYC/KYC.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 7,
           "steps/ConfirmEmail/components/ConfirmEmail.tsx": 4,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 3,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 2,
@@ -6621,13 +6627,13 @@
           "steps/JapanIDV/JapanIDV.tsx": 1,
           "steps/JapanIDVPending/JapanIDVPending.tsx": 2,
           "steps/KBA/KBAForm.tsx": 1,
+          "steps/KYC/KYC.tsx": 1,
+          "steps/KYC/KYCForm.tsx": 7,
           "steps/PendingDocuments/PendingDocuments.tsx": 1,
           "steps/PhoneNumber/PhoneNumber.tsx": 2,
           "steps/Suitability/Suitability.tsx": 1,
           "steps/TOS/TOS.tsx": 4,
           "steps/TaxForm/TaxForm.tsx": 1,
-          "steps/KYC/KYC.tsx": 1,
-          "steps/KYC/KYCForm.tsx": 7,
           "steps/ConfirmEmail/components/ConfirmEmail.tsx": 4,
           "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 3,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberForm.tsx": 2,
@@ -6655,9 +6661,9 @@
           "components/FailureView/FailureView.tsx": 1,
           "components/Idology/IdologyStore.tsx": 1,
           "steps/BasicKYC/BasicKYCForm.tsx": 2,
-          "steps/TOS/TOS.tsx": 1,
-          "steps/KYCRefresh/KYCRefresh.tsx": 1,
           "steps/KYC/KYCForm.tsx": 2,
+          "steps/KYCRefresh/KYCRefresh.tsx": 1,
+          "steps/TOS/TOS.tsx": 1,
           "steps/ConfirmEmail/components/ConfirmEmail.tsx": 1,
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberFormContainer.tsx": 1,
           "components/GDPR/steps/Privacy/Privacy.tsx": 1,
@@ -6937,7 +6943,8 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "client": { "components/FuturesTradingModal/FuturesTrading.tsx": 1 },
-        "onContinue": { "components/FuturesTradingModal/FuturesTrading.tsx": 1 }
+        "onContinue": { "components/FuturesTradingModal/FuturesTrading.tsx": 1 },
+        "onError": { "components/FuturesTradingModal/FuturesTrading.tsx": 1 }
       }
     },
     {
@@ -6966,7 +6973,9 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "onContinue": { "components/FuturesTradingModal/FuturesTrading.tsx": 1 }
+        "client": { "components/FuturesTradingModal/FuturesTrading.tsx": 1 },
+        "onContinue": { "components/FuturesTradingModal/FuturesTrading.tsx": 1 },
+        "onError": { "components/FuturesTradingModal/FuturesTrading.tsx": 1 }
       }
     },
     {
@@ -7001,11 +7010,18 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "client": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 },
-        "onSubmitW9": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 },
         "onClose": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 },
         "onSubmitQuestionnaire": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 },
-        "restrictions": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 }
+        "restrictions": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 },
+        "onError": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 },
+        "onLastStepCompleted": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 }
       }
+    },
+    {
+      "name": "FuturesRejectionScreen",
+      "sourceFile": "components/FuturesTradingModal/steps/FuturesRejectionScreen",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "AccountUnderReviewScreen",
@@ -7019,6 +7035,15 @@
     {
       "name": "AccountApprovedScreen",
       "sourceFile": "components/FuturesTradingModal/steps/AccountApprovedScreen",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onContinue": { "components/FuturesTradingModal/FuturesTradingModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "FuturesErrorScreen",
+      "sourceFile": "components/FuturesTradingModal/steps/FuturesErrorScreen",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -7098,7 +7123,6 @@
         "isInUS": { "components/IdCapture/IdCapture.tsx": 1 },
         "onSelect": { "components/IdCapture/IdCapture.tsx": 1 },
         "supportedIdTypes": { "components/IdCapture/IdCapture.tsx": 1 },
-        "track": { "components/IdCapture/IdCapture.tsx": 1 },
         "hidePrivacyPolicy": { "components/IdCapture/IdCapture.tsx": 1 }
       }
     },
@@ -7284,6 +7308,31 @@
       "totalCallSites": 1
     },
     {
+      "name": "Capture",
+      "sourceFile": "components/IdCapture/components/Capture",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "track": { "components/IdCapture/IdCapture.tsx": 1 },
+        "webcam": { "components/IdCapture/IdCapture.tsx": 1 },
+        "webcamActive": { "components/IdCapture/IdCapture.tsx": 1 },
+        "idType": { "components/IdCapture/IdCapture.tsx": 1 },
+        "side": { "components/IdCapture/IdCapture.tsx": 1 },
+        "preview": { "components/IdCapture/IdCapture.tsx": 1 },
+        "previewImage": { "components/IdCapture/IdCapture.tsx": 1 },
+        "guide": { "components/IdCapture/IdCapture.tsx": 1 },
+        "onCapture": { "components/IdCapture/IdCapture.tsx": 1 },
+        "onGuideAccept": { "components/IdCapture/IdCapture.tsx": 1 },
+        "captureSteps": { "components/IdCapture/IdCapture.tsx": 1 },
+        "timer": { "components/IdCapture/IdCapture.tsx": 1 },
+        "continueCapture": { "components/IdCapture/IdCapture.tsx": 1 },
+        "retryCapture": { "components/IdCapture/IdCapture.tsx": 1 },
+        "showBlurryMessage": { "components/IdCapture/IdCapture.tsx": 1 },
+        "facematchType": { "components/IdCapture/IdCapture.tsx": 1 },
+        "isSubmitting": { "components/IdCapture/IdCapture.tsx": 1 }
+      }
+    },
+    {
       "name": "ImageUpload",
       "sourceFile": "components/IdCapture/components/ImageUpload",
       "totalInstances": 1,
@@ -7303,33 +7352,6 @@
         "onSubmit": { "components/IdCapture/IdCapture.tsx": 1 },
         "onGoBack": { "components/IdCapture/IdCapture.tsx": 1 },
         "isSubmitting": { "components/IdCapture/IdCapture.tsx": 1 }
-      }
-    },
-    {
-      "name": "ImageUploadV2",
-      "sourceFile": "components/IdCapture/components/ImageUploadV2",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "track": { "components/IdCapture/IdCapture.tsx": 1 },
-        "idType": { "components/IdCapture/IdCapture.tsx": 1 },
-        "backImageRequired": { "components/IdCapture/IdCapture.tsx": 1 },
-        "facematchType": { "components/IdCapture/IdCapture.tsx": 1 },
-        "frontImage": { "components/IdCapture/IdCapture.tsx": 1 },
-        "backImage": { "components/IdCapture/IdCapture.tsx": 1 },
-        "showFrontBlurryMessage": { "components/IdCapture/IdCapture.tsx": 1 },
-        "allowContinue": { "components/IdCapture/IdCapture.tsx": 1 },
-        "allowSubmit": { "components/IdCapture/IdCapture.tsx": 1 },
-        "onCapture": { "components/IdCapture/IdCapture.tsx": 1 },
-        "onUpload": { "components/IdCapture/IdCapture.tsx": 1 },
-        "onUploadReject": { "components/IdCapture/IdCapture.tsx": 1 },
-        "onSubmit": { "components/IdCapture/IdCapture.tsx": 1 },
-        "onExit": { "components/IdCapture/IdCapture.tsx": 1 },
-        "previewImage": { "components/IdCapture/IdCapture.tsx": 1 },
-        "retryCapture": { "components/IdCapture/IdCapture.tsx": 1 },
-        "isSubmitting": { "components/IdCapture/IdCapture.tsx": 1 },
-        "webcam": { "components/IdCapture/IdCapture.tsx": 1 },
-        "webcamActive": { "components/IdCapture/IdCapture.tsx": 1 }
       }
     },
     {
@@ -7364,31 +7386,6 @@
         "track": { "components/IdCapture/IdCapture.tsx": 1 },
         "recoveryUrl": { "components/IdCapture/IdCapture.tsx": 1 },
         "onGoBack": { "components/IdCapture/IdCapture.tsx": 1 }
-      }
-    },
-    {
-      "name": "Capture",
-      "sourceFile": "components/IdCapture/components/Capture",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "track": { "components/IdCapture/IdCapture.tsx": 1 },
-        "webcam": { "components/IdCapture/IdCapture.tsx": 1 },
-        "webcamActive": { "components/IdCapture/IdCapture.tsx": 1 },
-        "idType": { "components/IdCapture/IdCapture.tsx": 1 },
-        "side": { "components/IdCapture/IdCapture.tsx": 1 },
-        "preview": { "components/IdCapture/IdCapture.tsx": 1 },
-        "previewImage": { "components/IdCapture/IdCapture.tsx": 1 },
-        "guide": { "components/IdCapture/IdCapture.tsx": 1 },
-        "onCapture": { "components/IdCapture/IdCapture.tsx": 1 },
-        "onGuideAccept": { "components/IdCapture/IdCapture.tsx": 1 },
-        "captureSteps": { "components/IdCapture/IdCapture.tsx": 1 },
-        "timer": { "components/IdCapture/IdCapture.tsx": 1 },
-        "continueCapture": { "components/IdCapture/IdCapture.tsx": 1 },
-        "retryCapture": { "components/IdCapture/IdCapture.tsx": 1 },
-        "showBlurryMessage": { "components/IdCapture/IdCapture.tsx": 1 },
-        "facematchType": { "components/IdCapture/IdCapture.tsx": 1 },
-        "isSubmitting": { "components/IdCapture/IdCapture.tsx": 1 }
       }
     },
     {
@@ -7911,12 +7908,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "span",
-      "sourceFile": "components/LabelWithHelpText/LabelWithHelpText.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "SSNSecurityDiscs",
       "sourceFile": "assets/icons/SSNSecurityDiscs",
       "totalInstances": 1,
@@ -7935,6 +7926,12 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "field": { "components/KYCRefresh/KYCRefreshScreen.tsx": 1 } }
+    },
+    {
+      "name": "span",
+      "sourceFile": "components/LabelWithHelpText/LabelWithHelpText.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "div",
@@ -8262,9 +8259,9 @@
         "steps/Nationality/Nationality.tsx": 1,
         "steps/PendingDocuments/PendingDocuments.tsx": 1,
         "steps/PhoneNumber/PhoneNumber.tsx": 1,
+        "steps/RfiPep/RfiPepStep.tsx": 1,
         "steps/RiskDisclosure/RiskDisclosure.tsx": 1,
         "steps/Suitability/Suitability.tsx": 1,
-        "steps/RfiPep/RfiPepStep.tsx": 1,
         "steps/TaxForm/TaxForm.tsx": 1,
         "steps/ConfirmEmail/components/ConfirmEmail.tsx": 1
       },
@@ -8279,8 +8276,8 @@
           "steps/Nationality/Nationality.tsx": 1,
           "steps/PendingDocuments/PendingDocuments.tsx": 1,
           "steps/PhoneNumber/PhoneNumber.tsx": 1,
-          "steps/Suitability/Suitability.tsx": 1,
           "steps/RfiPep/RfiPepStep.tsx": 1,
+          "steps/Suitability/Suitability.tsx": 1,
           "steps/TaxForm/TaxForm.tsx": 1,
           "steps/ConfirmEmail/components/ConfirmEmail.tsx": 1
         },
@@ -8847,246 +8844,6 @@
       }
     },
     {
-      "name": "CountrySelect",
-      "sourceFile": "components/CountrySelect",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "activeCountry": { "steps/Nationality/Nationality.tsx": 1 },
-        "onSelectCountry": { "steps/Nationality/Nationality.tsx": 1 }
-      }
-    },
-    {
-      "name": "DocumentVerificationsWidget",
-      "sourceFile": "components/DocumentVerificationsWidget",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onTryAgain": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
-        "onSuccess": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
-        "onApiError": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
-        "client": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
-        "nameDobMismatchSource": { "steps/PendingDocuments/PendingDocuments.tsx": 1 }
-      }
-    },
-    {
-      "name": "AddPhoneNumber",
-      "sourceFile": "components/AddPhoneNumber",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "client": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
-        "getExperimentGroup": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
-        "initialPhoneValue": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
-        "onApiError": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
-        "onPhoneNumberAdded": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
-        "onPhoneNumberReset": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
-        "onSuccess": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
-        "sendTwoFactorAuthCode": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
-        "showEnterAuthenticationCodeMessage": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
-        "track": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
-        "twoFactorMethod": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
-        "user": { "steps/PhoneNumber/PhoneNumber.tsx": 1 }
-      }
-    },
-    {
-      "name": "LazyLoadedTwoFactorAuthentication",
-      "sourceFile": "steps/PhoneNumber/RenderPhoneNumber.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "LazyLoadedPhoneNumber",
-      "sourceFile": "steps/PhoneNumber/RenderPhoneNumber.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ReviewEligibilityForm",
-      "sourceFile": "steps/ReviewEligibility/ReviewEligibilityForm",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "refresh": { "steps/ReviewEligibility/ReviewEligibility.tsx": 1 },
-        "addApiError": { "steps/ReviewEligibility/ReviewEligibility.tsx": 1 },
-        "client": { "steps/ReviewEligibility/ReviewEligibility.tsx": 1 }
-      }
-    },
-    {
-      "name": "EligibilityButtonGroup",
-      "sourceFile": "components/EligibilityButtonGroup",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "callSites": { "steps/ReviewEligibility/ReviewEligibilityForm.tsx": 4 },
-      "propsWithCallSites": {
-        "onClick": { "steps/ReviewEligibility/ReviewEligibilityForm.tsx": 4 },
-        "button1Variant": { "steps/ReviewEligibility/ReviewEligibilityForm.tsx": 4 },
-        "button2Variant": { "steps/ReviewEligibility/ReviewEligibilityForm.tsx": 4 }
-      }
-    },
-    {
-      "name": "span",
-      "sourceFile": "steps/RiskDisclosure/RiskDisclosure.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ExisitingUserLayout",
-      "sourceFile": "steps/RiskDisclosure/RiskDisclosure.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "NewUserLayout",
-      "sourceFile": "steps/RiskDisclosure/RiskDisclosure.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "LazyLoadedJapanSuitability",
-      "sourceFile": "steps/Suitability/RenderSuitability.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "LazyLoadedSuitability",
-      "sourceFile": "steps/Suitability/RenderSuitability.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SuitabilityFormManager",
-      "sourceFile": "components/SuitabilityFormManager",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "client": { "steps/Suitability/Suitability.tsx": 1 },
-        "onSuccess": { "steps/Suitability/Suitability.tsx": 1 },
-        "onError": { "steps/Suitability/Suitability.tsx": 1 },
-        "track": { "steps/Suitability/Suitability.tsx": 1 }
-      }
-    },
-    {
-      "name": "LazySuitabilityContent",
-      "sourceFile": "steps/Suitability/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Switch",
-      "sourceFile": "react-router-dom/Switch",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Route",
-      "sourceFile": "react-router-dom/Route",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "callSites": { "steps/RfiPep/RfiPepStep.tsx": 5 },
-      "propsWithCallSites": { "path": { "steps/RfiPep/RfiPepStep.tsx": 5 } }
-    },
-    {
-      "name": "SingleHitScreen",
-      "sourceFile": "components/RfiPep/SingleHitScreen",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onContinue": { "steps/RfiPep/RfiPepStep.tsx": 1 },
-        "loading": { "steps/RfiPep/RfiPepStep.tsx": 1 }
-      }
-    },
-    {
-      "name": "MultiHitScreen",
-      "sourceFile": "components/RfiPep/MultiHitScreen",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onContinue": { "steps/RfiPep/RfiPepStep.tsx": 1 },
-        "loading": { "steps/RfiPep/RfiPepStep.tsx": 1 }
-      }
-    },
-    {
-      "name": "MultiHitForm",
-      "sourceFile": "components/RfiPep/MultiHitForm",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onContinue": { "steps/RfiPep/RfiPepStep.tsx": 1 },
-        "loading": { "steps/RfiPep/RfiPepStep.tsx": 1 }
-      }
-    },
-    {
-      "name": "RfiPepAccountRestricted",
-      "sourceFile": "components/RfiPep/RfiPepAccountRestricted",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onContinue": { "steps/RfiPep/RfiPepStep.tsx": 1 },
-        "loading": { "steps/RfiPep/RfiPepStep.tsx": 1 }
-      }
-    },
-    {
-      "name": "RfiPepSuccess",
-      "sourceFile": "components/RfiPep/RfiPepSuccess",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "onContinue": { "steps/RfiPep/RfiPepStep.tsx": 1 } }
-    },
-    {
-      "name": "TaxFormFrame",
-      "sourceFile": "components/TaxFormFrame",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "client": { "steps/TaxForm/TaxForm.tsx": 1 },
-        "onError": { "steps/TaxForm/TaxForm.tsx": 1 }
-      }
-    },
-    {
-      "name": "VerifyAuthCode",
-      "sourceFile": "steps/TwoFactorAuthentication/components/VerifyAuthCode",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "disableResend": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
-        "verifyApiLoading": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
-        "phoneNumber": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
-        "verifyCode": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
-        "resendAuthCode": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
-        "authCodeError": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 }
-      }
-    },
-    {
-      "name": "AddPhoneNumber",
-      "sourceFile": "steps/TwoFactorAuthentication/components/AddPhoneNumber",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "initialPhoneNumber": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
-        "userCountryCode": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
-        "sendAuthCode": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
-        "sendingAuthCode": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 }
-      }
-    },
-    {
-      "name": "Heading",
-      "sourceFile": "steps/VerifyEmail/VerifyEmail.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "as": { "steps/VerifyEmail/VerifyEmail.tsx": 1 },
-        "spacingTop": { "steps/VerifyEmail/VerifyEmail.tsx": 1 },
-        "align": { "steps/VerifyEmail/VerifyEmail.tsx": 1 }
-      }
-    },
-    {
-      "name": "b",
-      "sourceFile": "steps/VerifyEmail/VerifyEmail.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "KYCForm",
       "sourceFile": "steps/KYC/KYCForm",
       "totalInstances": 1,
@@ -9259,6 +9016,276 @@
       }
     },
     {
+      "name": "CountrySelect",
+      "sourceFile": "components/CountrySelect",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "activeCountry": { "steps/Nationality/Nationality.tsx": 1 },
+        "onSelectCountry": { "steps/Nationality/Nationality.tsx": 1 }
+      }
+    },
+    {
+      "name": "DocumentVerificationsWidget",
+      "sourceFile": "components/DocumentVerificationsWidget",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onTryAgain": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
+        "onSuccess": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
+        "onApiError": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
+        "client": { "steps/PendingDocuments/PendingDocuments.tsx": 1 },
+        "nameDobMismatchSource": { "steps/PendingDocuments/PendingDocuments.tsx": 1 }
+      }
+    },
+    {
+      "name": "AddPhoneNumber",
+      "sourceFile": "components/AddPhoneNumber",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "client": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
+        "getExperimentGroup": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
+        "initialPhoneValue": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
+        "onApiError": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
+        "onPhoneNumberAdded": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
+        "onPhoneNumberReset": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
+        "onSuccess": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
+        "sendTwoFactorAuthCode": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
+        "showEnterAuthenticationCodeMessage": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
+        "track": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
+        "twoFactorMethod": { "steps/PhoneNumber/PhoneNumber.tsx": 1 },
+        "user": { "steps/PhoneNumber/PhoneNumber.tsx": 1 }
+      }
+    },
+    {
+      "name": "LazyLoadedTwoFactorAuthentication",
+      "sourceFile": "steps/PhoneNumber/RenderPhoneNumber.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "LazyLoadedPhoneNumber",
+      "sourceFile": "steps/PhoneNumber/RenderPhoneNumber.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ReviewEligibilityForm",
+      "sourceFile": "steps/ReviewEligibility/ReviewEligibilityForm",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "refresh": { "steps/ReviewEligibility/ReviewEligibility.tsx": 1 },
+        "addApiError": { "steps/ReviewEligibility/ReviewEligibility.tsx": 1 },
+        "client": { "steps/ReviewEligibility/ReviewEligibility.tsx": 1 }
+      }
+    },
+    {
+      "name": "EligibilityButtonGroup",
+      "sourceFile": "components/EligibilityButtonGroup",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": { "steps/ReviewEligibility/ReviewEligibilityForm.tsx": 4 },
+      "propsWithCallSites": {
+        "onClick": { "steps/ReviewEligibility/ReviewEligibilityForm.tsx": 4 },
+        "button1Variant": { "steps/ReviewEligibility/ReviewEligibilityForm.tsx": 4 },
+        "button2Variant": { "steps/ReviewEligibility/ReviewEligibilityForm.tsx": 4 }
+      }
+    },
+    {
+      "name": "Switch",
+      "sourceFile": "react-router-dom/Switch",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Route",
+      "sourceFile": "react-router-dom/Route",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "callSites": { "steps/RfiPep/RfiPepStep.tsx": 5 },
+      "propsWithCallSites": { "path": { "steps/RfiPep/RfiPepStep.tsx": 5 } }
+    },
+    {
+      "name": "SingleHitScreen",
+      "sourceFile": "components/RfiPep/SingleHitScreen",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onContinue": { "steps/RfiPep/RfiPepStep.tsx": 1 },
+        "loading": { "steps/RfiPep/RfiPepStep.tsx": 1 }
+      }
+    },
+    {
+      "name": "MultiHitScreen",
+      "sourceFile": "components/RfiPep/MultiHitScreen",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onContinue": { "steps/RfiPep/RfiPepStep.tsx": 1 },
+        "loading": { "steps/RfiPep/RfiPepStep.tsx": 1 }
+      }
+    },
+    {
+      "name": "MultiHitForm",
+      "sourceFile": "components/RfiPep/MultiHitForm",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onContinue": { "steps/RfiPep/RfiPepStep.tsx": 1 },
+        "loading": { "steps/RfiPep/RfiPepStep.tsx": 1 }
+      }
+    },
+    {
+      "name": "RfiPepAccountRestricted",
+      "sourceFile": "components/RfiPep/RfiPepAccountRestricted",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onContinue": { "steps/RfiPep/RfiPepStep.tsx": 1 },
+        "loading": { "steps/RfiPep/RfiPepStep.tsx": 1 }
+      }
+    },
+    {
+      "name": "RfiPepSuccess",
+      "sourceFile": "components/RfiPep/RfiPepSuccess",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "onContinue": { "steps/RfiPep/RfiPepStep.tsx": 1 } }
+    },
+    {
+      "name": "span",
+      "sourceFile": "steps/RiskDisclosure/RiskDisclosure.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ExisitingUserLayout",
+      "sourceFile": "steps/RiskDisclosure/RiskDisclosure.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "NewUserLayout",
+      "sourceFile": "steps/RiskDisclosure/RiskDisclosure.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "LazyLoadedJapanSuitability",
+      "sourceFile": "steps/Suitability/RenderSuitability.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "LazyLoadedSuitability",
+      "sourceFile": "steps/Suitability/RenderSuitability.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SuitabilityFormManager",
+      "sourceFile": "components/SuitabilityFormManager",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "client": { "steps/Suitability/Suitability.tsx": 1 },
+        "onSuccess": { "steps/Suitability/Suitability.tsx": 1 },
+        "onError": { "steps/Suitability/Suitability.tsx": 1 },
+        "track": { "steps/Suitability/Suitability.tsx": 1 }
+      }
+    },
+    {
+      "name": "LazySuitabilityContent",
+      "sourceFile": "steps/Suitability/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "TaxFormFrame",
+      "sourceFile": "components/TaxFormFrame",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "client": { "steps/TaxForm/TaxForm.tsx": 1 },
+        "onError": { "steps/TaxForm/TaxForm.tsx": 1 }
+      }
+    },
+    {
+      "name": "VerifyAuthCode",
+      "sourceFile": "steps/TwoFactorAuthentication/components/VerifyAuthCode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "disableResend": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
+        "verifyApiLoading": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
+        "phoneNumber": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
+        "verifyCode": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
+        "resendAuthCode": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
+        "authCodeError": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 }
+      }
+    },
+    {
+      "name": "AddPhoneNumber",
+      "sourceFile": "steps/TwoFactorAuthentication/components/AddPhoneNumber",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "initialPhoneNumber": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
+        "userCountryCode": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
+        "sendAuthCode": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 },
+        "sendingAuthCode": { "steps/TwoFactorAuthentication/TwoFactorAuthentication.tsx": 1 }
+      }
+    },
+    {
+      "name": "Heading",
+      "sourceFile": "steps/VerifyEmail/VerifyEmail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "as": { "steps/VerifyEmail/VerifyEmail.tsx": 1 },
+        "spacingTop": { "steps/VerifyEmail/VerifyEmail.tsx": 1 },
+        "align": { "steps/VerifyEmail/VerifyEmail.tsx": 1 }
+      }
+    },
+    {
+      "name": "b",
+      "sourceFile": "steps/VerifyEmail/VerifyEmail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "FuturesTradingProgressIndicator",
+      "sourceFile": "components/FuturesTradingModal/components/FuturesTradingProgressIndicator",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "step": { "components/FuturesTradingModal/components/FuturesTradingModalHeader.tsx": 1 },
+        "totalSteps": {
+          "components/FuturesTradingModal/components/FuturesTradingModalHeader.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "List",
+      "sourceFile": "components/FuturesTradingModal/steps/TradingTermsScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "br",
+      "sourceFile": "components/FuturesTradingModal/steps/TradingTermsScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "OtherDisclosures",
+      "sourceFile": "components/FuturesTradingModal/steps/TradingTermsScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "W9Form",
       "sourceFile": "@cbhq/w-forms/W9Form",
       "totalInstances": 2,
@@ -9278,18 +9305,6 @@
         "onStepChange": {
           "components/FuturesTradingModal/steps/W9CertificationScreen.tsx": 1,
           "components/FuturesTradingModal/steps/W9FormScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "FuturesTradingProgressIndicator",
-      "sourceFile": "components/FuturesTradingModal/components/FuturesTradingProgressIndicator",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "step": { "components/FuturesTradingModal/components/FuturesTradingModalHeader.tsx": 1 },
-        "totalSteps": {
-          "components/FuturesTradingModal/components/FuturesTradingModalHeader.tsx": 1
         }
       }
     },
@@ -9351,15 +9366,10 @@
       }
     },
     {
-      "name": "TestHelper",
-      "sourceFile": "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx",
+      "name": "SelectBox",
+      "sourceFile": "components/ContentLayout/components/SelectBox/SelectBox.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "store": {
-          "components/AddPhoneNumber/components/AddPhoneNumberForm/AddPhoneNumberForm.tsx": 1
-        }
-      }
+      "totalCallSites": 1
     },
     {
       "name": "Transition",
@@ -9397,12 +9407,6 @@
           "components/AddPhoneNumber/components/VerifyPhoneNumberForm/VerifyPhoneNumberFormContainer.tsx": 1
         }
       }
-    },
-    {
-      "name": "SelectBox",
-      "sourceFile": "components/ContentLayout/components/SelectBox/SelectBox.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "SelectBoxContainer",

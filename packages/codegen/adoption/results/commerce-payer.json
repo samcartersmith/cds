@@ -1240,6 +1240,7 @@
         "components/Withdrawal/WithdrawalDetails.tsx": 2,
         "scenes/MaintenanceMode/MaintenanceMode.tsx": 1,
         "scenes/Signin/Signin.tsx": 3,
+        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
         "components/Layouts/AuthLayout/AuthComponents.tsx": 1,
         "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
         "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
@@ -1247,7 +1248,6 @@
         "components/ProductFlow/components/ProductDetails.tsx": 6,
         "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 1,
         "components/ProductFlow/components/ProductTypeForm.tsx": 1,
-        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
         "components/TotpSetupModal/components/Completed.tsx": 1,
         "components/Withdrawal/components/Transaction.tsx": 1,
         "scenes/TfaReset/components/ShowBackupCodes.tsx": 3,
@@ -3254,13 +3254,6 @@
       "propsWithCallSites": { "className": { "checkout/hosted/entry.tsx": 1 } }
     },
     {
-      "name": "MarketingApp",
-      "sourceFile": "entry/marketing/MarketingApp",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "AppWrapper"
-    },
-    {
       "name": "HeaderWrapper",
       "sourceFile": "components/AccountingReports/AccountingReportsModal.tsx",
       "totalInstances": 1,
@@ -4999,6 +4992,13 @@
       "styledComponent": "Box"
     },
     {
+      "name": "MarketingApp",
+      "sourceFile": "entry/marketing/MarketingApp",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "AppWrapper"
+    },
+    {
       "name": "AccountingReportsBanner",
       "sourceFile": "components/AccountingReports/AnnouncementBanner/AccountingReportsBanner",
       "totalInstances": 1,
@@ -5446,6 +5446,59 @@
         "mt": { "checkout/components/SendsOAuthTotpModal/SendsTotpModal.tsx": 1 },
         "mb": { "checkout/components/SendsOAuthTotpModal/SendsTotpModal.tsx": 1 },
         "key": { "checkout/components/SendsOAuthTotpModal/SendsTotpModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/ActivationPanel/components/CheckoutMethod.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
+      "propsWithCallSites": {
+        "onClick": { "components/ActivationPanel/components/CheckoutMethod.tsx": 1 }
+      }
+    },
+    {
+      "name": "Header",
+      "sourceFile": "components/ActivationPanel/components/CheckoutMethod.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Heading"
+    },
+    {
+      "name": "Description",
+      "sourceFile": "components/ActivationPanel/components/CheckoutMethod.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Text"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": { "components/ActivationPanel/components/IntegrationsModal.tsx": 2 },
+      "propsWithCallSites": {
+        "innerRef": { "components/ActivationPanel/components/IntegrationsModal.tsx": 2 },
+        "integrationView": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "Integrations",
+      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "BackButton",
+      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "propsWithCallSites": {
+        "onClick": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
       }
     },
     {
@@ -5943,59 +5996,6 @@
       "callSites": { "components/ProductFlow/components/ProductTypeForm.tsx": 2 },
       "propsWithCallSites": {
         "name": { "components/ProductFlow/components/ProductTypeForm.tsx": 2 }
-      }
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/ActivationPanel/components/CheckoutMethod.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "propsWithCallSites": {
-        "onClick": { "components/ActivationPanel/components/CheckoutMethod.tsx": 1 }
-      }
-    },
-    {
-      "name": "Header",
-      "sourceFile": "components/ActivationPanel/components/CheckoutMethod.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Heading"
-    },
-    {
-      "name": "Description",
-      "sourceFile": "components/ActivationPanel/components/CheckoutMethod.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "callSites": { "components/ActivationPanel/components/IntegrationsModal.tsx": 2 },
-      "propsWithCallSites": {
-        "innerRef": { "components/ActivationPanel/components/IntegrationsModal.tsx": 2 },
-        "integrationView": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "Integrations",
-      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "BackButton",
-      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "onClick": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
       }
     },
     {
@@ -8868,6 +8868,8 @@
         "scenes/ResendConfirmation/ResendConfirmation.tsx": 4,
         "scenes/Signin/Signin.tsx": 12,
         "checkout/components/SendsOAuthTotpModal/SendsTotpModal.tsx": 8,
+        "components/ActivationPanel/components/CheckoutMethod.tsx": 12,
+        "components/ActivationPanel/components/IntegrationsModal.tsx": 3,
         "components/Layouts/AuthLayout/Footer.tsx": 2,
         "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
         "components/Layouts/DashboardLayout/Footer.tsx": 5,
@@ -8879,8 +8881,6 @@
         "components/ProductFlow/components/ProductDetails.tsx": 18,
         "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 4,
         "components/ProductFlow/components/ProductTypeForm.tsx": 5,
-        "components/ActivationPanel/components/CheckoutMethod.tsx": 12,
-        "components/ActivationPanel/components/IntegrationsModal.tsx": 3,
         "components/Withdrawal/components/Transaction.tsx": 9,
         "scenes/Onboarding/components/EmailVerified.tsx": 3,
         "scenes/Onboarding/components/TfaEnabled.tsx": 6,
@@ -9054,9 +9054,9 @@
         "scenes/Products/Products.tsx": 1,
         "scenes/Reconfirm/Reconfirm.tsx": 1,
         "scenes/Signin/Signin.tsx": 1,
+        "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
         "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
         "components/ProductFlow/components/ProductDetails.tsx": 5,
-        "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
         "scenes/Onboarding/components/EmailVerified.tsx": 1,
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
@@ -9435,9 +9435,9 @@
         "components/TotpSetupModal/TotpSetupModal.tsx": 1,
         "components/Withdrawal/ConversionsModal.tsx": 1,
         "components/Withdrawal/WithdrawalDetails.tsx": 1,
+        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
         "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
         "components/ProductFlow/components/ProductDetails.tsx": 1,
-        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
         "scenes/PointOfSale/components/CustomAmountModal.tsx": 1,
         "scenes/Settings/components/CloseAccountModal.tsx": 1,
         "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
@@ -9471,9 +9471,9 @@
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/ConversionsModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
@@ -9504,9 +9504,9 @@
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/ConversionsModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "scenes/PointOfSale/components/CustomAmountModal.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
@@ -9557,9 +9557,9 @@
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/ConversionsModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "scenes/PointOfSale/components/CustomAmountModal.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
@@ -9586,8 +9586,8 @@
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/ConversionsModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
-          "components/ProductFlow/components/ProductDetails.tsx": 1,
           "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+          "components/ProductFlow/components/ProductDetails.tsx": 1,
           "scenes/PointOfSale/components/CustomAmountModal.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
@@ -9609,9 +9609,9 @@
           "components/ProductFlow/ProductFlow.tsx": 1,
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "scenes/PointOfSale/components/CustomAmountModal.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
@@ -10196,10 +10196,10 @@
         "components/Withdrawal/ConversionsNuxModal.tsx": 3,
         "components/Withdrawal/WithdrawalsList.tsx": 1,
         "scenes/NotFound/NotFound.tsx": 1,
-        "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
-        "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
         "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
         "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+        "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
+        "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
         "scenes/Onboarding/components/EmailVerified.tsx": 1,
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
         "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
@@ -10233,10 +10233,10 @@
           "components/Withdrawal/ConversionsNuxModal.tsx": 3,
           "components/Withdrawal/WithdrawalsList.tsx": 1,
           "scenes/NotFound/NotFound.tsx": 1,
-          "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
-          "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
           "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
           "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+          "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
+          "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
           "scenes/Onboarding/components/EmailVerified.tsx": 1,
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
@@ -10269,10 +10269,10 @@
           "components/Withdrawal/ConversionsNuxModal.tsx": 3,
           "components/Withdrawal/WithdrawalsList.tsx": 1,
           "scenes/NotFound/NotFound.tsx": 1,
-          "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
-          "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
           "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
           "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+          "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
+          "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
           "scenes/Onboarding/components/EmailVerified.tsx": 1,
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
@@ -10304,10 +10304,10 @@
           "components/Withdrawal/ConversionsNuxModal.tsx": 3,
           "components/Withdrawal/WithdrawalsList.tsx": 1,
           "scenes/NotFound/NotFound.tsx": 1,
-          "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
-          "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
           "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
           "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+          "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
+          "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
           "scenes/Onboarding/components/EmailVerified.tsx": 1,
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
@@ -10326,8 +10326,8 @@
         "mb": {
           "components/FullPageErrorBoundary.tsx": 1,
           "scenes/NotFound/NotFound.tsx": 1,
-          "components/Layouts/DashboardLayout/Sidebar.tsx": 1,
-          "components/ActivationPanel/components/CheckoutMethod.tsx": 1
+          "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
+          "components/Layouts/DashboardLayout/Sidebar.tsx": 1
         },
         "onClick": { "components/ProductFlow/ProductFlow.tsx": 2 },
         "mr": {
@@ -11127,10 +11127,10 @@
         "components/Withdrawal/ConversionWithdrawalDetails.tsx": 1,
         "components/Withdrawal/WithdrawalDetails.tsx": 1,
         "scenes/Receipts/ReceiptView.tsx": 1,
+        "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
         "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
         "components/Layouts/AuthLayout/Footer.tsx": 2,
         "components/Layouts/DashboardLayout/Footer.tsx": 5,
-        "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
         "scenes/TfaReset/components/TfaVerification.tsx": 1,
@@ -11150,10 +11150,10 @@
           "components/Withdrawal/ConversionWithdrawalDetails.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
           "scenes/Receipts/ReceiptView.tsx": 1,
+          "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
           "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
           "components/Layouts/AuthLayout/Footer.tsx": 2,
           "components/Layouts/DashboardLayout/Footer.tsx": 5,
-          "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
           "scenes/TfaReset/components/TfaVerification.tsx": 1,
@@ -11675,17 +11675,6 @@
       "sourceFile": "checkout/hosted/entry.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "Route",
-      "sourceFile": "react-router/Route",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "callSites": { "entry/marketing/index.tsx": 5 },
-      "propsWithCallSites": {
-        "path": { "entry/marketing/index.tsx": 5 },
-        "component": { "entry/marketing/index.tsx": 5 }
-      }
     },
     {
       "name": "TooltipIcon",
@@ -13212,6 +13201,17 @@
       "propsWithCallSites": { "ref": { "components/Withdrawal/WithdrawalsList.tsx": 1 } }
     },
     {
+      "name": "Route",
+      "sourceFile": "react-router/Route",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "callSites": { "entry/marketing/index.tsx": 5 },
+      "propsWithCallSites": {
+        "path": { "entry/marketing/index.tsx": 5 },
+        "component": { "entry/marketing/index.tsx": 5 }
+      }
+    },
+    {
       "name": "DashboardLayout",
       "sourceFile": "components/Layouts/DashboardLayout",
       "totalInstances": 7,
@@ -13383,12 +13383,6 @@
       "callSites": { "scenes/Downtime/Downtime.tsx": 2 }
     },
     {
-      "name": "br",
-      "sourceFile": "scenes/MaintenanceMode/MaintenanceMode.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "InvoiceList",
       "sourceFile": "components/Invoice/InvoiceList",
       "totalInstances": 1,
@@ -13417,6 +13411,12 @@
         "selectedTab": { "scenes/Invoice/InvoiceScene.tsx": 1 },
         "onTabSelect": { "scenes/Invoice/InvoiceScene.tsx": 1 }
       }
+    },
+    {
+      "name": "br",
+      "sourceFile": "scenes/MaintenanceMode/MaintenanceMode.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "br",
@@ -13771,25 +13771,6 @@
       }
     },
     {
-      "name": "AuthLayout",
-      "sourceFile": "components/Layouts/AuthLayout/AuthLayout",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "CompletePasswordReset",
-      "sourceFile": "scenes/ResetPassword/components/CompletePasswordReset",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "token": { "scenes/ResetPassword/ResetPassword.tsx": 1 } }
-    },
-    {
-      "name": "RequestPasswordReset",
-      "sourceFile": "scenes/ResetPassword/components/RequestPasswordReset",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "ProfilePanel",
       "sourceFile": "scenes/Settings/components/ProfilePanel",
       "totalInstances": 1,
@@ -13884,6 +13865,25 @@
     {
       "name": "LinkCoinbasePanel",
       "sourceFile": "components/LinkCoinbase/SettingsPanelUnlinked/LinkCoinbasePanel",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "AuthLayout",
+      "sourceFile": "components/Layouts/AuthLayout/AuthLayout",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "CompletePasswordReset",
+      "sourceFile": "scenes/ResetPassword/components/CompletePasswordReset",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "token": { "scenes/ResetPassword/ResetPassword.tsx": 1 } }
+    },
+    {
+      "name": "RequestPasswordReset",
+      "sourceFile": "scenes/ResetPassword/components/RequestPasswordReset",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -14010,6 +14010,68 @@
       "sourceFile": "checkout/components/SendsOAuthTotpModal/SendsTotpModal.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "IntegrationCard",
+      "sourceFile": "scenes/static/Integrate/IntegrationCard",
+      "totalInstances": 4,
+      "totalCallSites": 3,
+      "callSites": {
+        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+        "scenes/static/Integrate/Integrate.tsx": 1,
+        "scenes/static/Integrate/IntegrationCarousel.tsx": 2
+      },
+      "propsWithCallSites": {
+        "key": {
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+          "scenes/static/Integrate/Integrate.tsx": 1,
+          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
+        },
+        "integration": {
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+          "scenes/static/Integrate/Integrate.tsx": 1,
+          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
+        },
+        "my": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 },
+        "mx": {
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
+        },
+        "isModal": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 },
+        "onClick": {
+          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
+        },
+        "ref": { "scenes/static/Integrate/IntegrationCarousel.tsx": 1 }
+      }
+    },
+    {
+      "name": "DarthFader",
+      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/ActivationPanel/components/IntegrationsModal.tsx": 2 },
+      "propsWithCallSites": {
+        "h": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "Shopify",
+      "sourceFile": "scenes/static/Integrate/Shopify",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isInModalView": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "WooCommerce",
+      "sourceFile": "scenes/static/Integrate/WooCommerce",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isInModalView": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
+      }
     },
     {
       "name": "TermsOfService",
@@ -14194,68 +14256,6 @@
       "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": { "components/ProductFlow/components/ProductDetails.tsx": 2 }
-    },
-    {
-      "name": "IntegrationCard",
-      "sourceFile": "scenes/static/Integrate/IntegrationCard",
-      "totalInstances": 4,
-      "totalCallSites": 3,
-      "callSites": {
-        "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
-        "scenes/static/Integrate/Integrate.tsx": 1,
-        "scenes/static/Integrate/IntegrationCarousel.tsx": 2
-      },
-      "propsWithCallSites": {
-        "key": {
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
-          "scenes/static/Integrate/Integrate.tsx": 1,
-          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
-        },
-        "integration": {
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
-          "scenes/static/Integrate/Integrate.tsx": 1,
-          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
-        },
-        "my": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 },
-        "mx": {
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
-          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
-        },
-        "isModal": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 },
-        "onClick": {
-          "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
-          "scenes/static/Integrate/IntegrationCarousel.tsx": 2
-        },
-        "ref": { "scenes/static/Integrate/IntegrationCarousel.tsx": 1 }
-      }
-    },
-    {
-      "name": "DarthFader",
-      "sourceFile": "components/ActivationPanel/components/IntegrationsModal.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "components/ActivationPanel/components/IntegrationsModal.tsx": 2 },
-      "propsWithCallSites": {
-        "h": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "Shopify",
-      "sourceFile": "scenes/static/Integrate/Shopify",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isInModalView": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "WooCommerce",
-      "sourceFile": "scenes/static/Integrate/WooCommerce",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isInModalView": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
-      }
     },
     {
       "name": "DetailBlock",
