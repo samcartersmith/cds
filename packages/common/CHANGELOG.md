@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.6.0 (8/24/2022, 02:41 PM PST)
+
+#### 🚀 Updates
+
+- **[LogoMark]** Add black logo mark. [#992](https://github.cbhq.net/frontend/cds/pull/992), [CDS-2423](https://jira.coinbase-corp.com/browse/CDS-2423)
+- **[Link]** Use 'underline' when rendered inside a paragraph. [#984](https://github.cbhq.net/frontend/cds/pull/984), [CDS-2383](https://jira.coinbase-corp.com/browse/CDS-2383)
+
+#### 🐞 Fixes
+
+- **[Icons]** Publish icons Aug 23 2022. [#999](https://github.cbhq.net/frontend/cds/pull/999)
+- **[Illustrations]** Publish illustrations Aug 23 2022. [#1003](https://github.cbhq.net/frontend/cds/pull/1003)
+- **[Modal]** Omit children from Modal context values. [#991](https://github.cbhq.net/frontend/cds/pull/991)
+- **[Sparkline]** Ensure date labels meet minimum contrast ratio of 4.5:1. [#982](https://github.cbhq.net/frontend/cds/pull/982), [CDS-2344](https://jira.coinbase-corp.com/browse/CDS-2344)
+
 ## 1.5.0 (8/18/2022, 06:19 AM PST)
 
 #### 🚀 Updates

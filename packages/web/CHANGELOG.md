@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.6.0 (8/24/2022, 02:41 PM PST)
+
+#### 🚀 Updates
+
+- **[LogoMark]** Add black logo mark. [#992](https://github.cbhq.net/frontend/cds/pull/992), [CDS-2423](https://jira.coinbase-corp.com/browse/CDS-2423)
+- **[Link]** Use 'underline' when rendered inside a paragraph. [#984](https://github.cbhq.net/frontend/cds/pull/984), [CDS-2383](https://jira.coinbase-corp.com/browse/CDS-2383)
+- **[FullscreenModal]** Add secondary content divider prop. [#983](https://github.cbhq.net/frontend/cds/pull/983)
+
+#### 🐞 Fixes
+
+- **[Icons]** Publish icons Aug 23 2022. [#999](https://github.cbhq.net/frontend/cds/pull/999)
+- **[Illustrations]** Publish illustrations Aug 23 2022. [#1003](https://github.cbhq.net/frontend/cds/pull/1003)
+- **[Modal]** Omit children from Modal context values. [#991](https://github.cbhq.net/frontend/cds/pull/991)
+- **[Sparkline]** Ensure date labels meet minimum contrast ratio of 4.5:1. [#982](https://github.cbhq.net/frontend/cds/pull/982), [CDS-2344](https://jira.coinbase-corp.com/browse/CDS-2344)
+- **[Tooltip]** Used the provided tooltipId. [#985](https://github.cbhq.net/frontend/cds/pull/985)
+- **[Checkbox]** Ensure speech dictation is supported. [#986](https://github.cbhq.net/frontend/cds/pull/986), [CDS-2366](https://jira.coinbase-corp.com/browse/CDS-2366)
+- **[TextInput]** TextInput should use aria-invalid when using the negative variant. [#978](https://github.cbhq.net/frontend/cds/pull/978), [CDS-2352](https://jira.coinbase-corp.com/browse/CDS-2352)
+
 ## 1.5.0 (8/18/2022, 06:19 AM PST)
 
 #### 🚀 Updates

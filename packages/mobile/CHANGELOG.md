@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.6.0 (8/24/2022, 02:41 PM PST)
+
+#### 🚀 Updates
+
+- **[LogoMark]** Add black logo mark. [#992](https://github.cbhq.net/frontend/cds/pull/992), [CDS-2423](https://jira.coinbase-corp.com/browse/CDS-2423)
+- **[Link]** Use 'underline' when rendered inside a paragraph. [#984](https://github.cbhq.net/frontend/cds/pull/984), [CDS-2383](https://jira.coinbase-corp.com/browse/CDS-2383)
+
+#### 🐞 Fixes
+
+- **[Icons]** Publish icons Aug 23 2022. [#999](https://github.cbhq.net/frontend/cds/pull/999)
+- **[Illustrations]** Publish illustrations Aug 23 2022. [#1003](https://github.cbhq.net/frontend/cds/pull/1003)
+- **[Collapsible]** Pass through ScrollView props. [#996](https://github.cbhq.net/frontend/cds/pull/996)
+- **[Modal]** Omit children from Modal context values. [#991](https://github.cbhq.net/frontend/cds/pull/991)
+- **[Checkbox]** Properly handle checked + disabled state for mobile. [#981](https://github.cbhq.net/frontend/cds/pull/981), [CDS-2418](https://jira.coinbase-corp.com/browse/CDS-2418)
+
+#### 📘 Misc
+
+- **[Mobile Visual Regression Tests]** Remove TestStepper and DiffProcessing Configs. [#995](https://github.cbhq.net/frontend/cds/pull/995)
+- **[Mobile Visual Regression Tests]** Update SDK for Retail/Wallet integration. [#968](https://github.cbhq.net/frontend/cds/pull/968)
+
 ## 1.5.0 (8/18/2022, 06:19 AM PST)
 
 #### 🚀 Updates
