@@ -1,8 +1,8 @@
 /* eslint-disable no-restricted-globals */
 import { routes } from '@cbhq/cds-mobile/examples/routes';
 
+import getDevicePlatform from './detox/getDevicePlatform';
 import config from './config';
-import { getDevicePlatform } from './helpers';
 
 const routeNames = Object.values(routes)
   .filter(

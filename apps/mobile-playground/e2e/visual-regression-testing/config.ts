@@ -1,8 +1,6 @@
 import { merge } from 'lodash';
 
 export type VisregConfig = {
-  visualDiffMechanism: 'percy';
-  testStepperMechanism: 'detox';
   deviceScrollOffset: {
     ios: number;
   };
@@ -28,9 +26,6 @@ export type VisregConfig = {
 };
 
 const defaultConfig: VisregConfig = {
-  visualDiffMechanism: 'percy',
-  testStepperMechanism: 'detox',
-  // TODO: should these device scroll/swipe offsets be exposed?
   deviceScrollOffset: {
     ios: 700,
   },

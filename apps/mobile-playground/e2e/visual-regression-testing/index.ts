@@ -1,16 +1,18 @@
-import { PercyScreenshotOptions } from './percy/processScreenshots';
+import { execSync } from 'child_process';
+
+import processScreenshots, { PercyScreenshotOptions } from './percy/processScreenshots';
 import config from './config';
 import {
+  getDevicePlatform,
   isExpectedAndroidDevice,
   isExpectedIosDevice,
   launchApp,
   navigateToRoute,
-  processScreenshots,
   reloadApp,
-  takeRouteScreenshots,
-  takeScreenshot,
-} from './helpers';
-import { removeAllFilesFromDir } from './utils';
+  takeRouteScreenshots as takeDetoxRouteScreenshots,
+  takeScreenshot as takeDetoxScreenshot,
+} from './detox';
+import { ensureDirExists, removeAllFilesFromDir } from './utils';
 
 /**
  * Ensures the test environment is properly set up for visual regression (Visreg) tests. This primarily includes
@@ -37,6 +39,32 @@ export async function initializeVisregTests(
   }
 }
 
+async function takeScreenshot(
+  dirPath: string,
+  testName: string,
+  elementId: string,
+  options: {
+    filenamePrefix?: string | number;
+  } = {},
+) {
+  const { filenamePrefix } = options;
+  const prefix = filenamePrefix !== undefined ? `${filenamePrefix}_` : '';
+  const filename = `${prefix}${testName}-${getDevicePlatform()}.png`;
+  const filePath = `${dirPath}/${filename}`;
+
+  const tempFilePath = await takeDetoxScreenshot(elementId);
+
+  ensureDirExists(filePath);
+  execSync(`mv ${tempFilePath} ${filePath}`);
+}
+
+async function takeRouteScreenshots(dirPath: string, routeName: string) {
+  const fullDirPath = `${dirPath}/${routeName}`;
+
+  await takeDetoxRouteScreenshots(fullDirPath, routeName, config, takeScreenshot);
+  return fullDirPath;
+}
+
 /**
  * Navigates to the provided route in the Mobile Playground and asserts all visual diffs
  *    on the set of associated screenshots. This is what CDS uses and is a convenience method for those who choose
@@ -47,7 +75,7 @@ export async function initializeVisregTests(
  */
 export async function assertVisualDiffsForPlayground(routeName: string) {
   await reloadApp();
-  await navigateToRoute(routeName);
+  await navigateToRoute(routeName, config.playgroundTestIds);
 
   const parentDir = `${config.screenshotArtifacts.baseDir}/${config.screenshotArtifacts.playgroundDir}`;
   const screenshotsDir = await takeRouteScreenshots(parentDir, routeName);
@@ -90,13 +118,14 @@ export async function takeComponentScreenshot(
  *    If not provided, the processor will look for screenshots in the base artifacts directory.
  * @param {Object} [options.processingOptions] Options to configure underlying screenshot processor.
  */
-export function processScreenshotsForVisualDiffs(
-  options: { screenshotsDir?: string; processingOptions?: PercyScreenshotOptions } = {},
-) {
+export function processScreenshotsForVisualDiffs(options: {
+  screenshotsDir?: string;
+  processingOptions?: PercyScreenshotOptions;
+}) {
   const screenshotsDir = options.screenshotsDir ? `/${options.screenshotsDir}` : '';
   const fullDirPath = `${config.screenshotArtifacts.baseDir}${screenshotsDir}`;
 
-  processScreenshots(fullDirPath, options.processingOptions);
+  processScreenshots(fullDirPath, options.processingOptions ?? {});
 }
 
 /**
