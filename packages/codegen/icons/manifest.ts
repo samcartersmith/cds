@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 61424,
+  lastUnicode: 61484,
   unicodeMap: {
     cashUSD: { '8': 'uE966', '12': 'uE967', '16': 'uE968', '24': 'uE969', '32': 'uE96A' },
     cashGBP: { '8': 'uE96B', '12': 'uE96C', '16': 'uE96D', '24': 'uE96E', '32': 'uE96F' },
@@ -562,5 +562,29 @@ export const manifest = {
       '32': 'uEFEB',
     },
     activityNavActive: { '8': 'uEFEC', '12': 'uEFED', '16': 'uEFEE', '24': 'uEFEF', '32': 'uEFF0' },
+    generalCharacter: { '8': 'uEFF1', '12': 'uEFF2', '16': 'uEFF3', '24': 'uEFF4', '32': 'uEFF5' },
+    magnifyingGlassInactive: {
+      '8': 'uEFF6',
+      '12': 'uEFF7',
+      '16': 'uEFF8',
+      '24': 'uEFF9',
+      '32': 'uEFFA',
+    },
+    magnifyingGlassActive: {
+      '8': 'uEFFB',
+      '12': 'uEFFC',
+      '16': 'uEFFD',
+      '24': 'uEFFE',
+      '32': 'uEFFF',
+    },
+    collectibles: { '8': 'uF000', '12': 'uF001', '16': 'uF002', '24': 'uF003', '32': 'uF004' },
+    pFPS: { '8': 'uF005', '12': 'uF006', '16': 'uF007', '24': 'uF008', '32': 'uF009' },
+    artwork: { '8': 'uF00A', '12': 'uF00B', '16': 'uF00C', '24': 'uF00D', '32': 'uF00E' },
+    ultility: { '8': 'uF00F', '12': 'uF010', '16': 'uF011', '24': 'uF012', '32': 'uF013' },
+    games: { '8': 'uF014', '12': 'uF015', '16': 'uF016', '24': 'uF017', '32': 'uF018' },
+    metaverse: { '8': 'uF019', '12': 'uF01A', '16': 'uF01B', '24': 'uF01C', '32': 'uF01D' },
+    music: { '8': 'uF01E', '12': 'uF01F', '16': 'uF020', '24': 'uF021', '32': 'uF022' },
+    save: { '8': 'uF023', '12': 'uF024', '16': 'uF025', '24': 'uF026', '32': 'uF027' },
+    breifcase: { '8': 'uF028', '12': 'uF029', '16': 'uF02A', '24': 'uF02B', '32': 'uF02C' },
   },
 };
