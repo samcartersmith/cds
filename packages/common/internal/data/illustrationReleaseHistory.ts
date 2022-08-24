@@ -6,6 +6,38 @@
 import { ReleasedIllustrationsTypes } from '../../types/IllustrationProps';
 
 export const illustrationReleaseHistory: Record<string, ReleasedIllustrationsTypes> = {
+  'Wed Aug 24 2022': {
+    newIllustrations: [
+      'heroSquare/coinbaseOneWalletWarning-dark',
+      'heroSquare/coinbaseOneWalletWarning-light',
+      'pictogram/driversLicense-dark',
+      'pictogram/driversLicense-light',
+      'pictogram/driversLicenseWheel-dark',
+      'pictogram/driversLicenseWheel-light',
+      'pictogram/genericCountryIDCard-dark',
+      'pictogram/genericCountryIDCard-light',
+      'pictogram/ssnCard-dark',
+      'pictogram/ssnCard-light',
+      'pictogram/walletWarning-dark',
+      'pictogram/walletWarning-light',
+      'spotRectangle/emptyStateClawMachinePig-dark',
+      'spotRectangle/emptyStateClawMachinePig-light',
+      'spotRectangle/emptyStateRatFoundWallet-dark',
+      'spotRectangle/emptyStateRatFoundWallet-light',
+      'spotSquare/cbEthWrappingUnavailable-dark',
+      'spotSquare/cbEthWrappingUnavailable-light',
+      'spotSquare/coinbaseOneWelcome-dark',
+      'spotSquare/coinbaseOneWelcome-light',
+      'spotSquare/dappsL2Support-dark',
+      'spotSquare/dappsL2Support-light',
+      'spotSquare/pixBankDeposits-dark',
+      'spotSquare/pixBankDeposits-light',
+      'spotSquare/pixDeposits-dark',
+      'spotSquare/pixDeposits-light',
+    ],
+    modifiedIllustrations: [],
+    deletedIllustrations: [],
+  },
   'Wed Aug 03 2022': {
     newIllustrations: [
       'heroSquare/alienDonutSystemError-dark',
