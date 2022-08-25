@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { LiveProviderProps } from 'react-live';
-import { EntryFields } from 'contentful';
+import { Entry, EntryFields } from 'contentful';
+import { CMSContent } from '@cb/cms';
 import { VStack } from '@cbhq/cds-web/layout';
 import { TextBody } from '@cbhq/cds-web/typography';
 import Heading from '@cbhq/docusaurus-theme/src/theme/Heading';
@@ -8,11 +9,13 @@ import Playground from '@cbhq/docusaurus-theme/src/theme/Playground';
 
 import ReactLiveScope from '../../src/theme/ReactLiveScope';
 import { Divider } from '../components/Divider';
+import type { MediaAssetFields } from '../misc/MediaAsset';
 
 export type CodeExampleFields = {
   title: string;
   description?: string;
   code?: EntryFields.RichText;
+  image?: Entry<MediaAssetFields>[];
 };
 
 const getCode = (code: CodeExampleFields['code']) => {
@@ -23,6 +26,7 @@ export const CodeExample = memo(function CodeExample({
   title,
   description,
   code,
+  image,
 }: CodeExampleFields) {
   return (
     <VStack gap={2}>
@@ -37,6 +41,7 @@ export const CodeExample = memo(function CodeExample({
           {getCode(code)}
         </Playground>
       )}
+      {image && <CMSContent content={image} />}
       <Divider
         spacingTop={2} // <Playground /> has spacing bottom 4 + gap 2
       />

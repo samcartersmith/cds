@@ -8,7 +8,6 @@ import { CMSContent } from '@cb/cms';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 
 import { Divider } from '../components/Divider';
-import { RichText } from '../components/RichText';
 import { Section } from '../components/Section';
 import { TextBlockFields } from '../misc/TextBlock';
 import { CodeExampleFields } from '../modules/CodeExample';
@@ -40,9 +39,10 @@ export type ComponentPageFields = {
   anatomy: Entry<MediaContentFields>[];
   sizing: Entry<MediaContentFields>[];
   behavior?: Entry<MediaContentFields>[];
+  illustration?: Entry<MediaContentFields>[];
   content?: Entry<DoDontFields>[];
-  motion?: Document;
-  others?: Document;
+  callToAction?: Entry<Document>[];
+  motion?: Entry<Document>[];
 };
 
 export const ComponentPage = memo(function ComponentPage({
@@ -59,9 +59,10 @@ export const ComponentPage = memo(function ComponentPage({
     anatomy,
     sizing,
     behavior,
+    illustration,
     content,
+    callToAction,
     motion,
-    others,
   } = contentData;
 
   const tabItems = [
@@ -126,17 +127,26 @@ export const ComponentPage = memo(function ComponentPage({
           </VStack>
         </Section>
       )}
+      {illustration && (
+        <Section title="Illustration">
+          <CMSContent content={illustration} />
+        </Section>
+      )}
       {content && (
         <Section title="Content">
           <CMSContent content={content} />
         </Section>
       )}
-      {motion && (
-        <Section title="Motion">
-          <RichText content={motion} />
+      {callToAction && (
+        <Section title="Call to Action">
+          <CMSContent content={callToAction} />
         </Section>
       )}
-      <RichText content={others} />
+      {motion && (
+        <Section title="Motion">
+          <CMSContent content={motion} />
+        </Section>
+      )}
     </TabItem>,
   ];
 

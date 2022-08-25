@@ -624,6 +624,7 @@ const sidebars = {
           label: 'Messaging',
           items: ['patterns/messaging/overview', 'patterns/messaging/error'],
         },
+        'patterns/empty-states',
       ],
       customProps: {
         kbar: {
