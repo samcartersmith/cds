@@ -8,6 +8,7 @@ import { Default as DropdownExample } from '../../dropdown/__stories__/Dropdown.
 import { VStack } from '../../layout';
 import { SidebarExample } from '../../navigation/__stories__/NavigationStorySetup';
 import { TextBody } from '../../typography';
+import { enableJavascript } from '../../utils/storybookParams/percy';
 import { Alert, Modal, ModalBody, ModalFooter, ModalHeader } from '../index';
 import { PortalProvider } from '../PortalProvider';
 import { Tooltip } from '../Tooltip/Tooltip';
@@ -89,14 +90,17 @@ const CompositeOverlays = ({ disablePortal = false }: Pick<DropdownProps, 'disab
     </SidebarExample>
   );
 };
+CompositeOverlays.parameters = { percy: enableJavascript };
 
 export const CompositeOverlaysWithPortal = () => (
   <PortalProvider>
     <CompositeOverlays />
   </PortalProvider>
 );
+CompositeOverlaysWithPortal.parameters = { percy: enableJavascript };
 
 export const CompositeOverlaysWithoutPortal = () => <CompositeOverlays disablePortal />;
+CompositeOverlaysWithoutPortal.parameters = { percy: enableJavascript };
 
 export default {
   title: 'Core Components/Overlays',

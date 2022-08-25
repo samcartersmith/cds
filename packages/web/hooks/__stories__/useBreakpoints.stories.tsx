@@ -4,6 +4,7 @@ import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { BreakpointsProvider } from '../../system/BreakpointsProvider';
 import { TextHeadline } from '../../typography';
+import { enableJavascript } from '../../utils/storybookParams/percy';
 import { useBreakpoints } from '../useBreakpoints';
 
 const deviceMap: Record<string, string> = {
@@ -53,6 +54,7 @@ type PlaygroundProps = {
 };
 
 export const Playground = (props: PlaygroundProps) => <Example {...props} />;
+Playground.parameters = { percy: enableJavascript };
 
 export const DefaultToDevice = () => {
   return (
@@ -63,6 +65,7 @@ export const DefaultToDevice = () => {
     </VStack>
   );
 };
+DefaultToDevice.parameters = { percy: enableJavascript };
 
 export default {
   title: 'Hooks/useBreakpoints',

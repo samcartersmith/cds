@@ -8,6 +8,7 @@ import { Select, SelectOption } from '../../controls';
 import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system';
 import { TextHeadline } from '../../typography';
+import { enableJavascript } from '../../utils/storybookParams/percy';
 import { TabNavigation } from '../TabNavigation';
 
 const longTabs: TabProps[] = [
@@ -94,12 +95,14 @@ export const Default: Story = () => {
     </>
   );
 };
+Default.parameters = { percy: enableJavascript };
 
 export const WithPaddles: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
 
   return <TabNavigation value={value} tabs={longTabs} onChange={setValue} />;
 };
+WithPaddles.parameters = { percy: enableJavascript };
 
 export const WithDotCountChange: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
@@ -200,3 +203,4 @@ export const Secondary: Story = () => {
     </>
   );
 };
+Secondary.parameters = { percy: enableJavascript };

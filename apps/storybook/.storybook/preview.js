@@ -1,4 +1,5 @@
 // These have been expanded from './globalStyles'
+import './polyfills';
 import 'focus-visible';
 import '@cbhq/cds-fonts/fonts.css';
 import '@cbhq/cds-web/styles/icon-font.css';
@@ -7,6 +8,7 @@ import { withPerformance } from 'storybook-addon-performance';
 import { StoryContainer } from '@cbhq/cds-web/storybook-decorators/StoryContainer';
 import { withDesign } from 'storybook-addon-designs';
 import { themes } from '@storybook/theming';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 export const decorators = [StoryContainer, withPerformance, withDesign];
 
@@ -26,6 +28,25 @@ export const parameters = {
   previewTabs: {
     'storybook/docs/panel': {
       hidden: true,
+    },
+  },
+  viewport: {
+    viewports: {
+      PercyMobile: {
+        name: 'Percy Mobile',
+        styles: {
+          width: '375px',
+          height: '812px',
+        },
+      },
+      PercyDesktop: {
+        name: 'Percy Desktop',
+        styles: {
+          width: '1280px',
+          height: '800px',
+        },
+      },
+      ...INITIAL_VIEWPORTS,
     },
   },
   globalStyles, // linaria requires usage to generate the styles

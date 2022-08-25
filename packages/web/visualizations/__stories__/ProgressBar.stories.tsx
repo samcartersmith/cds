@@ -1,6 +1,7 @@
 import { VStack } from '../../layout';
 import { ThemeProvider } from '../../system';
 import { TextLabel2, TextTitle3 } from '../../typography';
+import { enableJavascript } from '../../utils/storybookParams/percy';
 import { ProgressBar } from '../ProgressBar';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
 import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
@@ -25,6 +26,7 @@ export const Default = () => {
     </ProgressContainerWithButtons>
   );
 };
+Default.parameters = { percy: enableJavascript };
 
 export const Heavy = () => {
   return (
@@ -38,6 +40,7 @@ export const Heavy = () => {
     </ProgressContainerWithButtons>
   );
 };
+Heavy.parameters = { percy: enableJavascript };
 
 export const LabelAbove = () => {
   return (
@@ -63,6 +66,7 @@ export const LabelAbove = () => {
     </ProgressContainerWithButtons>
   );
 };
+LabelAbove.parameters = { percy: enableJavascript };
 
 export const LabelBelow = () => {
   return (
@@ -88,6 +92,7 @@ export const LabelBelow = () => {
     </ProgressContainerWithButtons>
   );
 };
+LabelBelow.parameters = { percy: enableJavascript };
 
 export const LabelAtBoundsBelow = () => {
   return (
@@ -112,6 +117,7 @@ export const LabelAtBoundsBelow = () => {
     </ProgressContainerWithButtons>
   );
 };
+LabelAtBoundsBelow.parameters = { percy: enableJavascript };
 
 export const LabelBeside = () => {
   return (
@@ -136,6 +142,7 @@ export const LabelBeside = () => {
     </ProgressContainerWithButtons>
   );
 };
+LabelBeside.parameters = { percy: enableJavascript };
 
 export const Disabled = () => {
   return (
@@ -160,6 +167,7 @@ export const Disabled = () => {
     </ThemeProvider>
   );
 };
+Disabled.parameters = { percy: enableJavascript };
 
 export const Colors = () => {
   return (
@@ -174,6 +182,7 @@ export const Colors = () => {
     </ThemeProvider>
   );
 };
+Colors.parameters = { percy: enableJavascript };
 
 const renderStartLabelNum = (num: number) => {
   return <TextTitle3 as="span">${num.toLocaleString()}</TextTitle3>;
@@ -241,3 +250,4 @@ export const CustomStringLabel = () => {
     </ProgressContainerWithButtons>
   );
 };
+CustomStringLabel.parameters = { percy: enableJavascript };

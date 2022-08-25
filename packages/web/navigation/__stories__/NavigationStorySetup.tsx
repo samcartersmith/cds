@@ -13,6 +13,7 @@ import { Pressable } from '../../system';
 import { TabNavigation } from '../../tabs';
 import { palette } from '../../tokens';
 import { TextDisplay2, TextHeadline } from '../../typography';
+import { enableJavascript } from '../../utils/storybookParams/percy';
 import {
   NavigationBar,
   NavigationTitle,
@@ -127,7 +128,7 @@ export const NavigationBarTitle: React.FC = () => {
   );
 };
 
-export const ComposedSystem: React.FC = () => {
+export const ComposedSystem = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -154,6 +155,7 @@ export const ComposedSystem: React.FC = () => {
     </HStack>
   );
 };
+ComposedSystem.parameters = { percy: enableJavascript };
 
 const testOverrideClass = css`
   &.${navLinkClassName} {
@@ -246,3 +248,4 @@ export const SidebarExample = ({ children, ...props }: SidebarMoreMenuProps) => 
     </PortalProvider>
   );
 };
+SidebarExample.parameters = { percy: enableJavascript };

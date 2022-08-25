@@ -5,6 +5,7 @@ import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizatio
 import { Icon } from '../../../icons';
 import { HStack } from '../../../layout';
 import { TextTitle3 } from '../../../typography';
+import { enableJavascript } from '../../../utils/storybookParams/percy';
 import { SparklineInteractive } from '../../sparkline-interactive/SparklineInteractive';
 import { SparklineInteractiveHeader } from '../SparklineInteractiveHeader';
 
@@ -33,6 +34,7 @@ export const Default = () => {
     <SparklineInteractiveWithHeaderBuild data={sparklineInteractiveData} strokeColor="#F7931A" />
   );
 };
+Default.parameters = { percy: enableJavascript };
 
 export const CustomLabel = () => {
   return (
@@ -43,3 +45,4 @@ export const CustomLabel = () => {
     />
   );
 };
+CustomLabel.parameters = { percy: enableJavascript };

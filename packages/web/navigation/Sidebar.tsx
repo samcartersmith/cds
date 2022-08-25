@@ -88,10 +88,7 @@ export const Sidebar: React.FC<SidebarProps> = memo(
     const sidebarContext = useMemo(() => ({ collapsed: computedCollapse }), [computedCollapse]);
 
     const liWrappedChildren = useMemo(
-      () =>
-        Children.map(children, (child) => {
-          return <li className={liClassName}>{child}</li>;
-        }),
+      () => Children.map(children, (child) => <li className={liClassName}>{child}</li>),
       [children],
     );
 

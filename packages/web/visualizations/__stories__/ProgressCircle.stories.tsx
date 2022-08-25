@@ -1,4 +1,5 @@
 import { HStack } from '../../layout';
+import { enableJavascript } from '../../utils/storybookParams/percy';
 import { ProgressCircle } from '../ProgressCircle';
 import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
 
@@ -94,3 +95,4 @@ export const FillParent = () => {
     </ProgressContainerWithButtons>
   );
 };
+FillParent.parameters = { percy: enableJavascript };

@@ -15,7 +15,8 @@
   "dependencies": {
     "@cbhq/cds-fonts": "workspace:*",
     "@cbhq/cds-web": "workspace:*",
-    "@cbhq/docusaurus-plugin-docgen": "workspace:*"
+    "@cbhq/docusaurus-plugin-docgen": "workspace:*",
+    "@juggle/resize-observer": "^3.4.0"
   },
   "peerDependencies": {
     "react": ">=17.0.0",
@@ -24,8 +25,8 @@
   "devDependencies": {
     "@cbhq/cds-tools": "workspace:*",
     "@cbhq/cds-web-utils": "workspace:*",
-    "@percy/cli": "^1.0.0-beta.75",
-    "@percy/storybook": "^4.1.0",
+    "@percy/cli": "^1.10.0",
+    "@percy/storybook": "^4.3.0",
     "@storybook/addon-a11y": "6.3.13",
     "@storybook/addon-actions": "6.3.13",
     "@storybook/addon-backgrounds": "6.3.13",

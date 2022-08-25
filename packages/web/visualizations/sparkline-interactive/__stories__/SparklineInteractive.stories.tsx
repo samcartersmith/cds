@@ -8,6 +8,7 @@ import {
   sparklineInteractiveHoverData,
 } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 
+import { enableJavascript } from '../../../utils/storybookParams/percy';
 import { SparklineInteractiveHeader } from '../../sparkline-interactive-header/SparklineInteractiveHeader';
 import { SparklineInteractive } from '../SparklineInteractive';
 
@@ -33,10 +34,12 @@ export const Default = () => (
     <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
   </React.StrictMode>
 );
+Default.parameters = { percy: enableJavascript };
 
 export const Compact = () => (
   <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} compact />
 );
+Compact.parameters = { percy: enableJavascript };
 
 export const DisableScrubbing = () => (
   <SparklineInteractiveBuild
@@ -45,6 +48,7 @@ export const DisableScrubbing = () => (
     disableScrubbing
   />
 );
+DisableScrubbing.parameters = { percy: enableJavascript };
 
 export const HidePeriodSelector = () => (
   <SparklineInteractiveBuild
@@ -53,6 +57,7 @@ export const HidePeriodSelector = () => (
     hidePeriodSelector
   />
 );
+HidePeriodSelector.parameters = { percy: enableJavascript };
 
 export const yAxisScaling = () => (
   <SparklineInteractiveBuild
@@ -61,14 +66,17 @@ export const yAxisScaling = () => (
     yAxisScalingFactor={0.1}
   />
 );
+yAxisScaling.parameters = { percy: enableJavascript };
 
 export const Fill = () => (
   <React.StrictMode>
     <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} fill />
   </React.StrictMode>
 );
+Fill.parameters = { percy: enableJavascript };
 
 export const FallbackPositive = () => <SparklineInteractiveBuild strokeColor={strokeColor} />;
+
 export const FallbackNegative = () => (
   <SparklineInteractiveBuild fallbackType="negative" strokeColor={strokeColor} />
 );
@@ -85,12 +93,14 @@ export const NoHoverDate = () => (
     hideHoverDate
   />
 );
+NoHoverDate.parameters = { percy: enableJavascript };
 
 export const WithHeaderNode = () => {
   return (
     <SparklineInteractiveWithHeaderBuild data={sparklineInteractiveData} strokeColor="#F7931A" />
   );
 };
+WithHeaderNode.parameters = { percy: enableJavascript };
 
 export const TimePeriodGutter = () => {
   return (
@@ -101,6 +111,7 @@ export const TimePeriodGutter = () => {
     />
   );
 };
+TimePeriodGutter.parameters = { percy: enableJavascript };
 
 export const HoverData = () => {
   return (
@@ -111,6 +122,7 @@ export const HoverData = () => {
     />
   );
 };
+HoverData.parameters = { percy: enableJavascript };
 
 export const HoverDataWithFill = () => {
   return (
@@ -122,3 +134,4 @@ export const HoverDataWithFill = () => {
     />
   );
 };
+HoverDataWithFill.parameters = { percy: enableJavascript };

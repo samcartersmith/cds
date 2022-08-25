@@ -134,11 +134,11 @@ export const baseConfig = {
     percy: {
       additionalSnapshots: [
         { prefix: '[Dark mode] ', args: { spectrum: 'dark' } },
-        { prefix: '[xSmall scale] ', args: { scale: 'xSmall' } },
-        { prefix: '[small mode] ', args: { scale: 'small' } },
-        { prefix: '[medium mode] ', args: { scale: 'medium' } },
-        { prefix: '[xLarge mode] ', args: { scale: 'xLarge' } },
-        { prefix: '[xxxLarge mode] ', args: { scale: 'xxxLarge' } },
+        { prefix: '[xSmall scale] ', args: { scale: 'xSmall', spectrum: 'light' } },
+        { prefix: '[small mode] ', args: { scale: 'small', spectrum: 'light' } },
+        { prefix: '[medium mode] ', args: { scale: 'medium', spectrum: 'light' } },
+        { prefix: '[xLarge mode] ', args: { scale: 'xLarge', spectrum: 'light' } },
+        { prefix: '[xxxLarge mode] ', args: { scale: 'xxxLarge', spectrum: 'light' } },
       ],
     },
   },
