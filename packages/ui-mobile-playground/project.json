@@ -5,7 +5,7 @@
   "targets": {
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": ["dts", "lib"]
+      "outputs": ["cjs", "dts"]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

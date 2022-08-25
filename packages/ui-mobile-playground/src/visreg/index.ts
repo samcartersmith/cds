@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 
 import processScreenshots, { PercyScreenshotOptions } from './percy/processScreenshots';
-import config from './config';
+import { baseDir, playgroundDir } from './constants';
 import {
   getDevicePlatform,
   isExpectedAndroidDevice,
@@ -12,6 +12,7 @@ import {
   takeRouteScreenshots as takeDetoxRouteScreenshots,
   takeScreenshot as takeDetoxScreenshot,
 } from './detox';
+import { DetoxConfig } from './detoxConfig';
 import { ensureDirExists, removeAllFilesFromDir } from './utils';
 
 /**
@@ -22,17 +23,18 @@ import { ensureDirExists, removeAllFilesFromDir } from './utils';
  * @param {Object} [options.launchOptions] Options to configure underlying app launcher.
  */
 export async function initializeVisregTests(
+  detoxConfig: DetoxConfig,
   options: { launchOptions?: Detox.DevicePermissions } = {},
 ) {
   await launchApp(options.launchOptions);
 
-  if (!isExpectedIosDevice()) {
+  if (!isExpectedIosDevice(detoxConfig)) {
     throw Error(
       'The wrong iOS simulator is being used. This is important to ensure properly sized screenshots are taken.',
     );
   }
 
-  if (!isExpectedAndroidDevice()) {
+  if (!isExpectedAndroidDevice(detoxConfig)) {
     throw Error(
       'The wrong Android emulator is being used. This is important to ensure properly sized screenshots are taken.',
     );
@@ -61,7 +63,7 @@ async function takeScreenshot(
 async function takeRouteScreenshots(dirPath: string, routeName: string) {
   const fullDirPath = `${dirPath}/${routeName}`;
 
-  await takeDetoxRouteScreenshots(fullDirPath, routeName, config, takeScreenshot);
+  await takeDetoxRouteScreenshots(fullDirPath, routeName, takeScreenshot);
   return fullDirPath;
 }
 
@@ -75,9 +77,9 @@ async function takeRouteScreenshots(dirPath: string, routeName: string) {
  */
 export async function assertVisualDiffsForPlayground(routeName: string) {
   await reloadApp();
-  await navigateToRoute(routeName, config.playgroundTestIds);
+  await navigateToRoute(routeName);
 
-  const parentDir = `${config.screenshotArtifacts.baseDir}/${config.screenshotArtifacts.playgroundDir}`;
+  const parentDir = `${baseDir}/${playgroundDir}`;
   const screenshotsDir = await takeRouteScreenshots(parentDir, routeName);
 
   processScreenshots(screenshotsDir, { parallelPercy: true });
@@ -103,7 +105,7 @@ export async function takeComponentScreenshot(
   } = {},
 ) {
   const screenshotDir = options.screenshotDir ? `/${options.screenshotDir}` : '';
-  const fullDirPath = `${config.screenshotArtifacts.baseDir}${screenshotDir}`;
+  const fullDirPath = `${baseDir}${screenshotDir}`;
 
   await takeScreenshot(fullDirPath, testName, componentId, {
     filenamePrefix: options.filenamePrefix,
@@ -123,7 +125,7 @@ export function processScreenshotsForVisualDiffs(options: {
   processingOptions?: PercyScreenshotOptions;
 }) {
   const screenshotsDir = options.screenshotsDir ? `/${options.screenshotsDir}` : '';
-  const fullDirPath = `${config.screenshotArtifacts.baseDir}${screenshotsDir}`;
+  const fullDirPath = `${baseDir}${screenshotsDir}`;
 
   processScreenshots(fullDirPath, options.processingOptions ?? {});
 }
@@ -133,7 +135,7 @@ export function processScreenshotsForVisualDiffs(options: {
  *    or after all tests are run depending on the context.
  */
 export function finishVisregTests() {
-  removeAllFilesFromDir(config.screenshotArtifacts.baseDir);
+  removeAllFilesFromDir(baseDir);
 }
 
-export { default as getPlaygroundRoutes } from './getPlaygroundRoutes';
+export { getPlaygroundRoutes } from './getPlaygroundRoutes';

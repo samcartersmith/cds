@@ -1,13 +1,17 @@
 /* eslint-disable no-await-in-loop */
 import { findElementById } from '@cbhq/detox-utils';
 
-import { VisregConfig } from '../config';
+import {
+  androidDeviceSwipeOffset,
+  iosDeviceScrolDistance,
+  screen,
+  scrollView,
+  scrollViewEnd,
+} from '../constants';
 
 import getDevicePlatform from './getDevicePlatform';
 
-async function scrollToEnd(config: VisregConfig) {
-  const { scrollView, scrollViewEnd } = config.playgroundTestIds;
-
+async function scrollToEnd() {
   try {
     // eslint-disable-next-line @typescript-eslint/await-thenable
     await expect(findElementById(scrollViewEnd)).not.toBeVisible();
@@ -15,9 +19,9 @@ async function scrollToEnd(config: VisregConfig) {
     // detox scroll on Android and swipe on iOS are not deterministic,
     // so we need to maintain a different method for each device
     if (getDevicePlatform() === 'ios') {
-      await findElementById(scrollView).scroll(config.deviceScrollOffset.ios, 'down');
+      await findElementById(scrollView).scroll(iosDeviceScrolDistance, 'down');
     } else {
-      await findElementById(scrollView).swipe('up', 'slow', config.deviceSwipeOffset.android);
+      await findElementById(scrollView).swipe('up', 'slow', androidDeviceSwipeOffset);
     }
   } catch {
     return true;
@@ -29,7 +33,6 @@ async function scrollToEnd(config: VisregConfig) {
 export default async function takeRouteScreenshots(
   fullDirPath: string,
   routeName: string,
-  config: VisregConfig,
   takeScreenshotCb: (
     dirPath: string,
     testName: string,
@@ -43,10 +46,10 @@ export default async function takeRouteScreenshots(
   let count = 0;
 
   while (!atEnd) {
-    await takeScreenshotCb(fullDirPath, routeName, config.playgroundTestIds.screen, {
+    await takeScreenshotCb(fullDirPath, routeName, screen, {
       filenamePrefix: count,
     });
-    atEnd = await scrollToEnd(config);
+    atEnd = await scrollToEnd();
     count += 1;
   }
 }

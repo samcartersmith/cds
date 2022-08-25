@@ -6,6 +6,9 @@
   "references": [
     {
       "path": "../../packages/mobile"
+    },
+    {
+      "path": "../../packages/ui-mobile-playground"
     }
   ],
   "include": ["**/*"],

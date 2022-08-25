@@ -1,22 +1,28 @@
 /* eslint-disable no-restricted-globals */
-import { routes } from '@cbhq/cds-mobile/examples/routes';
-
-import getDevicePlatform from './detox/getDevicePlatform';
-import config from './config';
-
-const routeNames = Object.values(routes)
-  .filter(
-    ({ name }) => !config.playgroundRoutesToExclude.always.includes(name),
-  ) /** Remove issue routes */
-  .filter(
-    ({ name }) => !config.playgroundRoutesToExclude[getDevicePlatform()].includes(name),
-  ) /** Remove device issue routes */
-  .map((route) => route.name);
+import { routes as codegenRoutes } from '@cbhq/cds-mobile/examples/newRoutes';
 
 /**
  * Gets non-blacklisted route names from the Mobile Playground
  */
-export default function getPlaygroundRoutes() {
+export function getPlaygroundRoutes({
+  routes,
+  disabledRoutes = [],
+  iosDisabledRoutes = [],
+  androidDisabledRoutes = [],
+}: {
+  routes: typeof codegenRoutes;
+  disabledRoutes: string[];
+  iosDisabledRoutes: string[];
+  androidDisabledRoutes: string[];
+}) {
+  const routeNames = routes
+    .filter(({ key }) => !disabledRoutes.includes(key)) /** Remove issue routes */
+    .filter(
+      ({ key }) =>
+        !(device.getPlatform() === 'ios' ? iosDisabledRoutes : androidDisabledRoutes).includes(key),
+    ) /** Remove device issue routes */
+    .map((route) => route.key);
+
   const totalJobs = process?.env?.VISREG_TOTAL_JOBS as unknown as number;
 
   if (totalJobs === undefined) {

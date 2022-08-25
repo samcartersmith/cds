@@ -2705,11 +2705,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground"
   dependencies:
+    "@cbhq/detox-utils": ^0.2.2
+    "@percy/cli": ^1.2.1
+    "@percy/client": ^1.2.1
+    "@percy/sdk-utils": ^1.2.1
+    "@percy/storybook": ^4.2.1
+    detox: ^19.9.1
     lodash: ^4.17.21
   peerDependencies:
     "@cbhq/cds-common": ^1.1.2
     "@cbhq/cds-mobile": ^1.1.2
-    "@cbhq/cds-utils": ^1.1.0
     "@react-navigation/native": ^6.0.11
     "@react-navigation/stack": ^6.2.2
     react: ^17.0.2
@@ -14226,9 +14231,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detox@npm:^19.7.1":
-  version: 19.7.1
-  resolution: "detox@npm:19.7.1"
+"detox@npm:^19.7.1, detox@npm:^19.9.1":
+  version: 19.10.0
+  resolution: "detox@npm:19.10.0"
   dependencies:
     ajv: ^8.6.3
     bunyan: ^1.8.12
@@ -14266,7 +14271,7 @@ __metadata:
       optional: true
   bin:
     detox: local-cli/cli.js
-  checksum: 6f82c2642f1be771de719cda5b9ac4afea2688ece7dd6d5b83488b7ea814bde52fd2d6730be1a5be59391d5c99a944b8721535f9d79d075a307ea8864ac7f840
+  checksum: 911be0a138bfed9b855d624310b57eb5fe966a71474070b7936ed23adc1833dafcb3d7b213bd201b66722c86e7dd8afe7d2a700005f75664625ba40634cede15
   languageName: node
   linkType: hard
 

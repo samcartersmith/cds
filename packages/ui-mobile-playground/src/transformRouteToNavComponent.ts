@@ -1,5 +1,4 @@
 import { HeaderStyleInterpolators, StackNavigationOptions } from '@react-navigation/stack';
-import { emptyObject } from '@cbhq/cds-utils/object';
 
 import { keyToRouteName } from './keyToRouteName';
 import { PlaygroundRoute } from './PlaygroundRoute';
@@ -17,7 +16,7 @@ type TransformRouteToNavComponentParams = {
 
 export function transformRouteToNavComponent({
   route: { key, getComponent },
-  options = emptyObject,
+  options = {},
 }: TransformRouteToNavComponentParams) {
   return {
     key,

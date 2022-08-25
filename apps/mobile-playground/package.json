@@ -15,7 +15,9 @@
     "start.ios": "nx run codegen:prepare_mobile_routes && nx run mobile-playground:start-ios",
     "start.metro": "nx run mobile-playground:start-metro",
     "typecheck": "nx run mobile-playground:typecheck",
-    "visreg:finalize": "percy build:finalize"
+    "visreg:finalize": "percy build:finalize",
+    "visreg.ios": "nx run mobile-playground:build-ios-e2e && nx run mobile-playground:ios-e2e | xcpretty",
+    "visreg.android": "nx run mobile-playground:build-android-e2e && nx run mobile-playground:android-e2e"
   },
   "dependencies": {
     "@cbhq/cds-common": "workspace:*",

@@ -1,9 +1,9 @@
 {
   "maxWorkers": 1,
-  "testEnvironment": "./e2e/environment",
+  "testEnvironment": "./visreg/environment",
   "testRunner": "jest-circus/runner",
   "testTimeout": 120000,
-  "testRegex": "\\.spec\\.ts$",
+  "testRegex": "\\.visreg\\.ts$",
   "reporters": ["detox/runners/jest/streamlineReporter"],
   "verbose": true
 }
