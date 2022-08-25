@@ -222,9 +222,9 @@
             "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx",
             "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx",
             "@trust_and_safety/pages/Username/UsernamePage.tsx",
+            "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx",
             "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx",
             "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx",
-            "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx",
             "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx"
           ]
         },
@@ -264,13 +264,13 @@
         "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
         "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 4,
-        "@trust_and_safety/risk/components/ManualReviewProcessingStepper/ManualReviewProcessingStepper.tsx": 1,
         "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
+        "@trust_and_safety/risk/components/ManualReviewProcessingStepper/ManualReviewProcessingStepper.tsx": 1,
         "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
         "@trust_and_safety/risk/components/Stepper/Stepper.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 2,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
@@ -325,9 +325,9 @@
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 2,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
           "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "spacingHorizontal": {
@@ -398,9 +398,9 @@
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
         "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
         "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
@@ -421,9 +421,9 @@
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
           "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "spacingBottom": {
@@ -435,9 +435,9 @@
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
           "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "align": {
@@ -470,9 +470,9 @@
         "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
         "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
         "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 3,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
@@ -489,9 +489,9 @@
           "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 3,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
           "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "color": {
@@ -504,8 +504,8 @@
           "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 3,
           "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 3,
           "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "align": {
@@ -569,11 +569,11 @@
         "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
         "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 3,
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 2,
-        "@trust_and_safety/utils/testing/RenderWithContext.tsx": 1,
         "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 2,
         "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
+        "@trust_and_safety/utils/testing/RenderWithContext.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
       },
       "propsWithCallSites": {
         "onPress": {
@@ -585,11 +585,11 @@
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 2,
           "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 3,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 2,
-          "@trust_and_safety/utils/testing/RenderWithContext.tsx": 1,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 2,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
+          "@trust_and_safety/utils/testing/RenderWithContext.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
         },
         "variant": {
           "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 1,
@@ -601,8 +601,8 @@
           "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
         },
         "testID": {
           "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 1,
@@ -612,8 +612,8 @@
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 2,
           "@trust_and_safety/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 2,
           "@trust_and_safety/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
         },
         "loading": {
           "@trust_and_safety/components/ResetConfirmationModal/ResetConfirmationModal.tsx": 2,
@@ -716,103 +716,6 @@
       }
     },
     {
-      "name": "Pressable",
-      "sourceFile": "@cbhq/cds-web/system/Pressable",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/system/Pressable",
-      "presentationalProps": [
-        {
-          "prop": "className",
-          "callSite": "@trust_and_safety/components/EmailButton/EmailButton.tsx"
-        }
-      ],
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "@trust_and_safety/components/EmailButton/EmailButton.tsx",
-          "callSites": ["@trust_and_safety/pages/Password/PasswordPage.tsx"]
-        }
-      ],
-      "callSites": {
-        "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
-        "@trust_and_safety/components/Toast/Toast.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onPress": {
-          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
-          "@trust_and_safety/components/Toast/Toast.tsx": 1
-        },
-        "backgroundColor": {
-          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
-          "@trust_and_safety/components/Toast/Toast.tsx": 1
-        },
-        "borderColor": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
-        "borderWidth": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
-        "borderRadius": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
-        "width": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
-        "className": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 }
-      }
-    },
-    {
-      "name": "HStack",
-      "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-web/layout/HStack",
-      "callSites": {
-        "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
-        "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
-        "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
-        "@trust_and_safety/components/Toast/Toast.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
-      },
-      "propsWithCallSites": {
-        "alignItems": {
-          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
-          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
-          "@trust_and_safety/components/Toast/Toast.tsx": 1
-        },
-        "gap": {
-          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
-          "@trust_and_safety/components/Toast/Toast.tsx": 1
-        },
-        "spacing": {
-          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
-          "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1
-        },
-        "width": {
-          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
-          "@trust_and_safety/components/Toast/Toast.tsx": 1
-        },
-        "justifyContent": {
-          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
-          "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
-        },
-        "spacingVertical": {
-          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextHeadline",
-      "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/typography/TextHeadline",
-      "callSites": {
-        "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
-        "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
-          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1
-        },
-        "overflow": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 }
-      }
-    },
-    {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
       "totalInstances": 29,
@@ -837,9 +740,9 @@
             "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx",
             "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx",
             "@trust_and_safety/pages/Username/UsernamePage.tsx",
+            "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx",
             "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx",
             "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx",
-            "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx",
             "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx"
           ]
         },
@@ -857,8 +760,8 @@
         "@trust_and_safety/components/Layout/PageLayout.tsx": 2,
         "@trust_and_safety/components/PasswordStrength/PasswordStrength.tsx": 1,
         "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
-        "@trust_and_safety/components/ThemePicker/ThemePicker.tsx": 1,
         "@trust_and_safety/components/Toast/Toast.tsx": 2,
+        "@trust_and_safety/components/ThemePicker/ThemePicker.tsx": 1,
         "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 2,
         "@trust_and_safety/pages/Error/ErrorFallback.tsx": 2,
         "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 3,
@@ -866,9 +769,9 @@
         "@trust_and_safety/pages/Password/PasswordPage.tsx": 2,
         "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 3,
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 2,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
@@ -985,6 +888,103 @@
           "@trust_and_safety/components/TwoFactor/TwoFactor.tsx": 1,
           "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1
         }
+      }
+    },
+    {
+      "name": "Pressable",
+      "sourceFile": "@cbhq/cds-web/system/Pressable",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/system/Pressable",
+      "presentationalProps": [
+        {
+          "prop": "className",
+          "callSite": "@trust_and_safety/components/EmailButton/EmailButton.tsx"
+        }
+      ],
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "@trust_and_safety/components/EmailButton/EmailButton.tsx",
+          "callSites": ["@trust_and_safety/pages/Password/PasswordPage.tsx"]
+        }
+      ],
+      "callSites": {
+        "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
+        "@trust_and_safety/components/Toast/Toast.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onPress": {
+          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
+          "@trust_and_safety/components/Toast/Toast.tsx": 1
+        },
+        "backgroundColor": {
+          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
+          "@trust_and_safety/components/Toast/Toast.tsx": 1
+        },
+        "borderColor": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
+        "borderWidth": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
+        "borderRadius": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
+        "width": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
+        "className": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 }
+      }
+    },
+    {
+      "name": "HStack",
+      "sourceFile": "@cbhq/cds-web/layout/HStack",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/layout/HStack",
+      "callSites": {
+        "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
+        "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
+        "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
+        "@trust_and_safety/components/Toast/Toast.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "alignItems": {
+          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
+          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
+          "@trust_and_safety/components/Toast/Toast.tsx": 1
+        },
+        "gap": {
+          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
+          "@trust_and_safety/components/Toast/Toast.tsx": 1
+        },
+        "spacing": {
+          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
+          "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1
+        },
+        "width": {
+          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
+          "@trust_and_safety/components/Toast/Toast.tsx": 1
+        },
+        "justifyContent": {
+          "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
+          "@trust_and_safety/components/Sidebar/SidebarItem.tsx": 1,
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+        },
+        "spacingVertical": {
+          "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextHeadline",
+      "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/typography/TextHeadline",
+      "callSites": {
+        "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
+        "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1
+        },
+        "overflow": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 }
       }
     },
     {
@@ -1633,6 +1633,48 @@
       }
     },
     {
+      "name": "PageLayout",
+      "sourceFile": "@trust_and_safety/components/Layout/PageLayout",
+      "totalInstances": 19,
+      "totalCallSites": 19,
+      "callSites": {
+        "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
+        "@trust_and_safety/components/Sidebar/SidebarStory.tsx": 1,
+        "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 1,
+        "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
+        "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
+        "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
+        "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
+        "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
+        "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
+        "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1,
+        "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+        "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
+        "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
+        "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
+        "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
+        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "showCancelFlow": {
+          "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
+          "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+          "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
+          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
+          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Logo",
+      "sourceFile": "@trust_and_safety/components/HeaderLogo/HeaderLogo.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "Router",
       "sourceFile": "react-router-dom/Router",
       "totalInstances": 1,
@@ -1677,48 +1719,6 @@
     {
       "name": "RiskPage",
       "sourceFile": "@trust_and_safety/routing/SigninRoutes.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PageLayout",
-      "sourceFile": "@trust_and_safety/components/Layout/PageLayout",
-      "totalInstances": 19,
-      "totalCallSites": 19,
-      "callSites": {
-        "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
-        "@trust_and_safety/components/Sidebar/SidebarStory.tsx": 1,
-        "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 1,
-        "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
-        "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
-        "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
-        "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
-        "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
-        "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
-        "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1,
-        "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
-        "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
-        "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
-        "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-        "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
-      },
-      "propsWithCallSites": {
-        "showCancelFlow": {
-          "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
-          "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
-          "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
-          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-          "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Logo",
-      "sourceFile": "@trust_and_safety/components/HeaderLogo/HeaderLogo.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -1852,9 +1852,9 @@
         "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx": 1,
         "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
         "@trust_and_safety/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
-        "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       }
     },
@@ -2020,16 +2020,6 @@
       }
     },
     {
-      "name": "RiskyDeviceBlockedPage",
-      "sourceFile": "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@trust_and_safety/pages/Risk/RiskPage.tsx": 1,
-        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDevicePage.tsx": 1
-      }
-    },
-    {
       "name": "Navigate",
       "sourceFile": "react-router-dom/Navigate",
       "totalInstances": 1,
@@ -2071,6 +2061,16 @@
       }
     },
     {
+      "name": "RiskyDeviceBlockedPage",
+      "sourceFile": "@trust_and_safety/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@trust_and_safety/pages/Risk/RiskPage.tsx": 1,
+        "@trust_and_safety/risk/pages/RiskyDevice/RiskyDevicePage.tsx": 1
+      }
+    },
+    {
       "name": "form",
       "sourceFile": "@trust_and_safety/pages/Skip2FA/TrustDevicePage.tsx",
       "totalInstances": 1,
@@ -2093,24 +2093,6 @@
         "onSubmit": { "@trust_and_safety/pages/Username/UsernamePage.tsx": 1 },
         "noValidate": { "@trust_and_safety/pages/Username/UsernamePage.tsx": 1 }
       }
-    },
-    {
-      "name": "div",
-      "sourceFile": "@trust_and_safety/utils/testing/RenderWithContext.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "BrowserRouter",
-      "sourceFile": "react-router-dom/BrowserRouter",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ToastContextTest",
-      "sourceFile": "@trust_and_safety/utils/testing/RenderWithContext.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "Stepper",
@@ -2147,6 +2129,24 @@
     {
       "name": "ManualReviewApprovedPage",
       "sourceFile": "@trust_and_safety/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "div",
+      "sourceFile": "@trust_and_safety/utils/testing/RenderWithContext.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "BrowserRouter",
+      "sourceFile": "react-router-dom/BrowserRouter",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ToastContextTest",
+      "sourceFile": "@trust_and_safety/utils/testing/RenderWithContext.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },

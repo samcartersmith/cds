@@ -30,8 +30,8 @@
             "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx",
             "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx",
             "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx",
-            "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx",
-            "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx"
+            "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx",
+            "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx"
           ]
         },
         {
@@ -59,14 +59,14 @@
         { "aliasPath": "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx", "callSites": [] },
         { "aliasPath": "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx", "callSites": [] },
         {
-          "aliasPath": "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx",
-          "callSites": ["@cbhq/two-factor-web/flows/idv/IDVFlow.tsx"]
-        },
-        {
           "aliasPath": "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx",
           "callSites": [
             "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveRecoveryCode.tsx"
           ]
+        },
+        {
+          "aliasPath": "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx",
+          "callSites": ["@cbhq/two-factor-web/flows/idv/IDVFlow.tsx"]
         },
         {
           "aliasPath": "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx",
@@ -94,8 +94,8 @@
         "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
         "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 4,
+        "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/Status/Failed.tsx": 2,
         "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
@@ -114,8 +114,8 @@
           "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/Status/Pending.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/Status/components/BaseStatus.tsx": 1
         },
@@ -1311,8 +1311,8 @@
         "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
         "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
         "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
+        "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+        "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
@@ -1322,8 +1322,8 @@
           "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
+          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
         },
         "description": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
@@ -1332,8 +1332,8 @@
           "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
+          "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
         },
         "align": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1
