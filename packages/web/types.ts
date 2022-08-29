@@ -107,3 +107,12 @@ export type SectionAccessibilityRole =
 // EVENTS
 
 export type OnPress<T> = React.MouseEventHandler<T>;
+
+export type Overflow = {
+  /**
+   * Control how the content should overflow.
+   * @description Until Safari has better coverage for `clip`, it will fallback to `hidden`
+   * @link https://caniuse.com/?search=overflow%3A%20clip
+   */
+  overflow?: 'visible' | 'hidden' | 'scroll' | 'auto' | 'clip';
+};

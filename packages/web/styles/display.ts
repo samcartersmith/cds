@@ -23,4 +23,7 @@ export const display = {
   contents: css`
     display: contents;
   `,
+  grid: css`
+    display: grid;
+  `,
 };

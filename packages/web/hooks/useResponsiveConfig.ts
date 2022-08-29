@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import {
   OffsetProps,
+  ResponsiveGridProps,
+  ResponsiveGridStyles,
   ResponsiveProps,
   ResponsivePropsDevices,
   ResponsiveStyles,
@@ -21,9 +23,10 @@ const deviceStyles: Record<ResponsivePropsDevices, unknown> = {
 
 type OffsetKeys = keyof OffsetProps;
 type SpacingKeys = keyof SpacingProps;
-type ResponsiveStylesKeys = KeysOfUnion<ResponsiveStyles>;
+type ResponsiveStylesKeys = KeysOfUnion<ResponsiveStyles & ResponsiveGridStyles>;
+type ResponsiveStylesType = ResponsiveStyles & ResponsiveGridStyles;
 
-const getDeviceStyles = (deviceConfig: ResponsiveStyles, device: ResponsivePropsDevices) => {
+const getDeviceStyles = (deviceConfig: ResponsiveStylesType, device: ResponsivePropsDevices) => {
   const classNames: string[] = [];
   const styleKeys = Object.keys(deviceConfig) as ResponsiveStylesKeys[];
 
@@ -44,6 +47,10 @@ const getDeviceStyles = (deviceConfig: ResponsiveStyles, device: ResponsiveProps
         true,
       );
       classNames.push(deviceOffsetClasses);
+    } else if (style === 'columns') {
+      // @ts-expect-error  Can't index every possible phone style
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      classNames.push(deviceStyles[device][style][`columns-${value}`]);
     } else {
       // @ts-expect-error  Can't index every possible phone style
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
@@ -54,14 +61,14 @@ const getDeviceStyles = (deviceConfig: ResponsiveStyles, device: ResponsiveProps
   return classNames;
 };
 
-export const useResponsiveConfig = (responsiveConfig?: ResponsiveProps) => {
+export const useResponsiveConfig = (responsiveConfig?: ResponsiveProps | ResponsiveGridProps) => {
   const classNames: string[] = useMemo(() => [], []);
 
   if (responsiveConfig) {
     const deviceKeys = Object.keys(responsiveConfig) as ResponsivePropsDevices[];
 
     deviceKeys?.forEach((device) => {
-      classNames.push(...getDeviceStyles(responsiveConfig[device] as ResponsiveStyles, device));
+      classNames.push(...getDeviceStyles(responsiveConfig[device] as ResponsiveStylesType, device));
     });
   }
 

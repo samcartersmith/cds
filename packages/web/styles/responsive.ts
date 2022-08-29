@@ -455,6 +455,14 @@ export const desktopStyles = {
         }
       }
     `,
+
+    grid: css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          display: grid;
+        }
+      }
+    `,
   },
 
   visibility: {
@@ -470,6 +478,104 @@ export const desktopStyles = {
       @media (min-width: 1280px) {
         &.cds-responsive {
           visibility: visible;
+        }
+      }
+    `,
+  },
+
+  columns: {
+    'columns-1': css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-2': css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-3': css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-4': css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-5': css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-6': css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-7': css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(7, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-8': css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(8, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-9': css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(9, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-10': css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(10, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-11': css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(11, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-12': css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(12, minmax(0, 1fr));
         }
       }
     `,
@@ -927,6 +1033,14 @@ export const tabletStyles = {
         }
       }
     `,
+
+    grid: css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          display: grid;
+        }
+      }
+    `,
   },
 
   visibility: {
@@ -942,6 +1056,104 @@ export const tabletStyles = {
       @media (max-width: 1279px) {
         &.cds-responsive {
           visibility: visible;
+        }
+      }
+    `,
+  },
+
+  columns: {
+    'columns-1': css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-2': css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-3': css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-4': css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-5': css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-6': css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-7': css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(7, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-8': css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(8, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-9': css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(9, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-10': css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(10, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-11': css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(11, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-12': css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(12, minmax(0, 1fr));
         }
       }
     `,
@@ -1399,6 +1611,14 @@ export const phoneStyles = {
         }
       }
     `,
+
+    grid: css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          display: grid;
+        }
+      }
+    `,
   },
 
   visibility: {
@@ -1414,6 +1634,104 @@ export const phoneStyles = {
       @media (max-width: 767px) {
         &.cds-responsive {
           visibility: visible;
+        }
+      }
+    `,
+  },
+
+  columns: {
+    'columns-1': css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-2': css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-3': css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-4': css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-5': css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-6': css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-7': css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(7, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-8': css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(8, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-9': css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(9, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-10': css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(10, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-11': css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(11, minmax(0, 1fr));
+        }
+      }
+    `,
+
+    'columns-12': css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          grid-template-columns: repeat(12, minmax(0, 1fr));
         }
       }
     `,

@@ -1,13 +1,13 @@
 import { arrayToObject } from '@cbhq/cds-utils/array';
-import { mapValues } from '@cbhq/cds-utils/object';
+import { mapKeys, mapValues } from '@cbhq/cds-utils/object';
 
 import { responsiveClassName } from './constants';
 
 const numberOfColumns = 12;
 const numberOfColumnsAsArray = Array.from({ length: numberOfColumns }).map((_, index) => index + 1);
 
-export const gridStylesForDevice = (deviceMq: string) => ({
-  columns: mapValues(arrayToObject(numberOfColumnsAsArray), (value) => {
+const responsiveGridClassNames = (deviceMq: string) =>
+  mapValues(arrayToObject(numberOfColumnsAsArray), (value) => {
     return `
             @media (${deviceMq}) {
               &.${responsiveClassName} {
@@ -15,15 +15,24 @@ export const gridStylesForDevice = (deviceMq: string) => ({
               }
             }
           `;
-  }),
+  });
+
+export const gridStylesForDevice = (deviceMq: string) => ({
+  columns: mapKeys(responsiveGridClassNames(deviceMq), (_, key) => `'columns-${key}'`),
 });
+
+const gridClassNames = mapValues(
+  arrayToObject(numberOfColumnsAsArray),
+  (value) => `grid-template-columns: repeat(${value}, minmax(0, 1fr));`,
+);
+mapValues(
+  arrayToObject(numberOfColumnsAsArray),
+  (value) => `grid-template-columns: repeat(${value}, minmax(0, 1fr));`,
+);
 
 export const gridConfig = {
   web: {
-    columns: mapValues(
-      arrayToObject(numberOfColumnsAsArray),
-      (value) => `grid-template-columns: repeat(${value}, minmax(0, 1fr));`,
-    ),
+    columns: mapKeys(gridClassNames, (_, key) => `'columns-${key}'`),
   },
   typescript: [
     {

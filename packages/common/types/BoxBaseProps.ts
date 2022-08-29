@@ -5,6 +5,7 @@ import { PaletteBackground, PaletteBorder } from './Palette';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { OffsetProps, SpacingProps } from './SpacingProps';
 import { SpacingScale } from './SpacingScale';
+import { Visibility } from './Visibility';
 
 export type FlexAxisValue = 'flex-start' | 'flex-end' | 'center';
 export type FlexAlignCommon = FlexAxisValue | 'stretch';
@@ -106,6 +107,10 @@ export type BoxBackgroundProps = {
   dangerouslySetBackground?: string;
 };
 
+type VisibilityProps = {
+  visibility?: Visibility;
+};
+
 export type BoxBaseProps = {
   /** Content to render within the box. */
   children?: React.ReactNode;
@@ -120,7 +125,8 @@ export type BoxBaseProps = {
   PositionStyles &
   BorderedStyles &
   BoxA11yProps &
-  BoxBackgroundProps;
+  BoxBackgroundProps &
+  VisibilityProps;
 
 export type StackBaseProps = {
   /** Gap to insert between siblings. */

@@ -7,7 +7,7 @@ import { responsiveClassName } from './constants';
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/display
  * support all display values except for two-value syntax, flow, revert, and unset
  */
-const displayValues = ['block', 'inline-block', 'flex', 'inline-flex', 'none', 'contents'];
+const displayValues = ['block', 'inline-block', 'flex', 'inline-flex', 'none', 'contents', 'grid'];
 
 export const displayStylesForDevice = (deviceMq: string) => ({
   display: mapValues(arrayToObject(displayValues), (value) => {

@@ -6,7 +6,6 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { css } from 'linaria';
 import {
   ElevationChildrenProvider,
   ElevationProvider,
@@ -32,14 +31,16 @@ import * as backgroundColorStyles from '../styles/backgroundColor';
 import { getBorderStyles } from '../styles/border';
 import * as borderColorStyles from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
+import { overflow as overflowStyles } from '../styles/overflow';
 import { responsiveClassName } from '../styles/responsive';
+import { visibility as visibilityStyles } from '../styles/visibility';
 import {
   ArticleAccessibilityRole,
   AsideAccessibilityRole,
-  CSSMap,
   DivAccessibilityRole,
   HeaderFooterAccessibilityRole,
   MainAccessibilityRole,
+  Overflow,
   SectionAccessibilityRole,
 } from '../types';
 import { cx } from '../utils/linaria';
@@ -74,42 +75,21 @@ export type BoxElement =
   | 'ol'
   | 'li';
 
-const overflowStyles: CSSMap<BoxProps['overflow']> = {
-  hidden: css`
-    overflow: hidden;
-  `,
-  scroll: css`
-    overflow: scroll;
-  `,
-  visible: css`
-    overflow: visible;
-  `,
-  auto: css`
-    overflow: auto;
-  `,
-  clip: css`
-    /* Fallback for safari */
-    overflow: hidden;
-    overflow: clip;
-  `,
-};
-
 export type BoxProps<As extends BoxElement = 'div'> = {
-  /** The semantic element to render the box as. Is necessary for accessibility support and assistive technologies. */
+  /**
+   * The semantic element your component will render as. Is necessary for accessibility support and assistive technologies.
+   * @default div
+   */
   as?: As;
-  /** The display value to uss in CSS display attribute.
+  /** The display value to use in CSS display attribute.
    * @default flex
    */
   display?: Display;
-  /** Semantic role whole using a non-semantic element. */
+  /** Semantic role while using a non-semantic element. */
   role?: InferBoxRole<As>;
-  /** Control how the content should overflow.
-   *  Note: Until Safari has better coverage for `clip`, it will fallback to `hidden`
-   */
-  overflow?: 'visible' | 'hidden' | 'scroll' | 'auto' | 'clip';
   /** How to position the box within its parent. */
   position?: Position;
-  /** Sets the opacity of the box */
+  /** Sets the opacity of the element */
   opacity?: number;
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
@@ -129,14 +109,15 @@ export type BoxProps<As extends BoxElement = 'div'> = {
 } & Omit<BoxBaseProps, 'position'> &
   SharedProps &
   React.AriaAttributes &
-  React.DOMAttributes<Element>;
+  React.DOMAttributes<Element> &
+  Overflow;
 
 type ElevationStylesContainerProps = {
   elevation: ElevationLevels;
   setElevationStyles: Dispatch<SetStateAction<React.CSSProperties>>;
 };
 
-const ElevationStylesContainer = ({
+export const ElevationStylesContainer = ({
   elevation,
   setElevationStyles,
 }: ElevationStylesContainerProps) => {
@@ -163,6 +144,7 @@ export const BoxInner = forwardRef(
       elevation,
       overflow,
       opacity,
+      visibility,
       role,
       testID,
       // Flex
@@ -288,6 +270,7 @@ export const BoxInner = forwardRef(
             offsetVertical,
           }),
           usePinStyles(pin, position),
+          visibility && visibilityStyles[visibility],
           responsiveStyleClassNames,
           responsiveConfig && responsiveClassName,
           dangerouslySetClassName,

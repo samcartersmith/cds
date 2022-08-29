@@ -32,6 +32,7 @@ export * from './ElevationLevels';
 export * from './FallbackBaseProps';
 export * from './ForwardedRef';
 export * from './Grid';
+export * from './GridBaseProps';
 export * from './GroupBaseProps';
 export * from './Helpers';
 export * from './IconBaseProps';
