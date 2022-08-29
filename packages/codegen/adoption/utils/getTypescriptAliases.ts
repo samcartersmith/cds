@@ -1,12 +1,11 @@
 import path from 'path';
-
-import { TypescriptConfig } from './getTypescriptConfig';
+import { Except, TsConfigJson } from 'type-fest';
 
 function removeTrailingSlashAndWildcard(str: string) {
   return str.replace(/\/\*$/, '');
 }
 
-export function getTypescriptAliases(rootDir: string, tsconfig?: TypescriptConfig) {
+export function getTypescriptAliases(rootDir: string, tsconfig?: Except<TsConfigJson, 'extends'>) {
   const absoluteAliases: Record<string, string> = {};
   const relativeAliases: Record<string, string> = {};
   if (tsconfig?.compilerOptions?.paths) {

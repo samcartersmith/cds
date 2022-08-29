@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+import { parseTsconfig } from 'get-tsconfig';
 import { countBy, flattenDeep, fromPairs, map, mapValues, partition, pickBy, uniq } from 'lodash';
 import ora from 'ora';
 import path from 'path';
@@ -9,7 +10,6 @@ import { getPackageJson } from '../utils/getPackageJson';
 import { getProjectFiles } from '../utils/getProjectFiles';
 import { getStats } from '../utils/getStats';
 import { getMatchingDirectory, getTypescriptAliases } from '../utils/getTypescriptAliases';
-import { getTypescriptConfig } from '../utils/getTypescriptConfig';
 import { fromId, toId } from '../utils/id';
 
 import { FileParser } from './FileParser';
@@ -459,9 +459,11 @@ export class ProjectParser {
       this.spinner = ora(
         `Running CDS Adoption Tracker for ${chalk.bold.blueBright(this.id)}...`,
       ).start();
-      const tsconfig = await getTypescriptConfig(path.join(this.root, this.tsconfigFileName));
+      const tsconfig = parseTsconfig(path.join(this.root, this.tsconfigFileName));
       this.dependencies = (await getPackageJson(this.root)).dependencies;
-      this.root = path.resolve(this.root, tsconfig.compilerOptions.baseUrl);
+      this.root = path.resolve(this.root, tsconfig.compilerOptions?.baseUrl ?? '.');
+
+      // @ts-expect-error The tsconfig is fine.
       const { absoluteAliases, relativeAliases } = getTypescriptAliases(this.root, tsconfig);
       this.tsAliases = absoluteAliases;
       this.tsAliasesRelative = relativeAliases;

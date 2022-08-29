@@ -5,12 +5,6 @@ import type { AdoptionStats } from './utils/getStats';
 export type ObjectString = Record<string, string>;
 export type TSAliasRecord = ObjectString;
 
-export type TSConfig = {
-  compilerOptions: {
-    paths: TSAliasRecord;
-  };
-};
-
 export type PackageJson = {
   dependencies: ObjectString;
 };

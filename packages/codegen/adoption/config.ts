@@ -209,7 +209,6 @@ export const config: AdoptersConfig[] = [
         github: retailWebGit,
         id: 'uwo',
         label: 'Unified Web Onboarding',
-        projectTsAliases: ['@uwo'],
         type: 'doc',
       },
       {

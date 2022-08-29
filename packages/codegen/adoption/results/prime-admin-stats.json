@@ -1,11 +1,11 @@
 {
   "latest": {
-    "date": "8/25/2022",
-    "cdsPercent": 0.8521118237928114,
-    "cds": 7041,
-    "presentational": 1222,
-    "totalCdsAndPresentational": 8263,
-    "totalOther": 4980
+    "date": "8/29/2022",
+    "cdsPercent": 0.8516856657773466,
+    "cds": 7023,
+    "presentational": 1223,
+    "totalCdsAndPresentational": 8246,
+    "totalOther": 5013
   },
   "previous": [
     {
@@ -105,6 +105,14 @@
       "presentational": 1223,
       "totalCdsAndPresentational": 8232,
       "totalOther": 4939
+    },
+    {
+      "date": "8/25/2022",
+      "cdsPercent": 0.8521118237928114,
+      "cds": 7041,
+      "presentational": 1222,
+      "totalCdsAndPresentational": 8263,
+      "totalOther": 4980
     }
   ]
 }

@@ -101,6 +101,7 @@
             "@app/screens/YieldCenter/YieldCenterScreen.tsx",
             "@app/screens/YieldCenter/YieldCenterScreen.tsx",
             "@app/screens/YieldCenter/YieldCenterScreen.tsx",
+            "@app/screens/YieldCenter/YieldCenterScreen.tsx",
             "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx"
           ]
         },
@@ -216,8 +217,8 @@
         "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1,
         "@app/screens/YieldCenter/YieldCenterNuxScreen.tsx": 1,
         "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
-        "@app/screens/YieldCenter/Trays/SubscriptionYieldCenterRewardsModal.tsx": 1,
         "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
+        "@app/screens/YieldCenter/Trays/SubscriptionYieldCenterRewardsModal.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
       },
@@ -261,8 +262,8 @@
         "@app/screens/YieldCenter/UnearnedSection.tsx": 1,
         "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1,
         "@app/screens/YieldCenter/YieldCenterNuxScreen.tsx": 1,
-        "@app/screens/YieldCenter/Trays/SubscriptionYieldCenterRewardsModal.tsx": 1,
         "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
+        "@app/screens/YieldCenter/Trays/SubscriptionYieldCenterRewardsModal.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1,
         "@app/screens/DefiBoost/components/DefiBoostEnrollmentRateDetailsTray.tsx": 2
@@ -282,8 +283,8 @@
           "@app/screens/YieldCenter/UnearnedSection.tsx": 1,
           "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1,
           "@app/screens/YieldCenter/YieldCenterNuxScreen.tsx": 1,
-          "@app/screens/YieldCenter/Trays/SubscriptionYieldCenterRewardsModal.tsx": 1,
           "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
+          "@app/screens/YieldCenter/Trays/SubscriptionYieldCenterRewardsModal.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1,
           "@app/screens/DefiBoost/components/DefiBoostEnrollmentRateDetailsTray.tsx": 1
@@ -311,6 +312,7 @@
         "spacingTop": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 },
         "spacingBottom": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 },
         "size": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 2 },
+        "testID": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 },
         "onPress": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 },
         "spacingVertical": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 }
       }
@@ -318,7 +320,7 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-mobile/layout/HStack",
-      "totalInstances": 13,
+      "totalInstances": 14,
       "totalCallSites": 10,
       "cds": "@cbhq/cds-mobile/layout/HStack",
       "aliasedCdsComponents": [
@@ -335,7 +337,7 @@
         { "aliasPath": "@app/screens/YieldCenter/Trays/SubscriberNotice.tsx", "callSites": [] }
       ],
       "callSites": {
-        "@app/screens/YieldCenter/AssetAPYCard.tsx": 3,
+        "@app/screens/YieldCenter/AssetAPYCard.tsx": 4,
         "@app/screens/YieldCenter/DefiBoostPromotion.tsx": 1,
         "@app/screens/YieldCenter/HeaderSection.tsx": 1,
         "@app/screens/YieldCenter/UnearnedSection.tsx": 1,
@@ -352,8 +354,17 @@
           "@app/screens/YieldCenter/Trays/SubscriberNotice.tsx": 1
         },
         "spacingTop": {
-          "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
+          "@app/screens/YieldCenter/AssetAPYCard.tsx": 2,
           "@app/screens/YieldCenter/UnearnedSection.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
+          "@app/screens/DefiBoost/components/DefiBoostEnrollmentRateDetailsTray.tsx": 1
+        },
+        "alignItems": {
+          "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1,
+          "@app/screens/YieldCenter/Trays/SubscriberNotice.tsx": 1
         },
         "spacing": {
           "@app/screens/YieldCenter/DefiBoostPromotion.tsx": 1,
@@ -382,18 +393,11 @@
         "borderColor": {
           "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1
         },
-        "alignItems": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1,
-          "@app/screens/YieldCenter/Trays/SubscriberNotice.tsx": 1
-        },
         "background": { "@app/screens/YieldCenter/Trays/SubscriberNotice.tsx": 1 },
         "borderRadius": { "@app/screens/YieldCenter/Trays/SubscriberNotice.tsx": 1 },
         "gap": { "@app/screens/YieldCenter/Trays/SubscriberNotice.tsx": 1 },
         "spacingHorizontal": { "@app/screens/YieldCenter/Trays/SubscriberNotice.tsx": 1 },
-        "flexShrink": { "@app/screens/YieldCenter/Trays/SubscriberNotice.tsx": 1 },
-        "spacingBottom": {
-          "@app/screens/DefiBoost/components/DefiBoostEnrollmentRateDetailsTray.tsx": 1
-        }
+        "flexShrink": { "@app/screens/YieldCenter/Trays/SubscriberNotice.tsx": 1 }
       }
     },
     {
@@ -462,6 +466,61 @@
           "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1
         },
         "spacingBottom": { "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "TextHeadline",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-mobile/typography/TextHeadline",
+      "callSites": {
+        "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
+        "@app/screens/YieldCenter/YieldEarnedChartHeader.tsx": 1,
+        "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1,
+        "@app/screens/DefiBoost/components/DefiBoostEnrollmentRateDetailsTray.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": {
+          "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
+          "@app/screens/YieldCenter/YieldEarnedChartHeader.tsx": 1
+        },
+        "spacingEnd": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 },
+        "align": { "@app/screens/YieldCenter/YieldEarnedChartHeader.tsx": 1 },
+        "spacingBottom": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "@cbhq/cds-mobile/icons/Icon",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-mobile/icons/Icon",
+      "callSites": {
+        "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
+        "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
+        "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
+          "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
+        },
+        "size": {
+          "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
+          "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
+        },
+        "color": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
+          "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
+        },
+        "spacingStart": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1
+        }
       }
     },
     {
@@ -614,12 +673,12 @@
     {
       "name": "Divider",
       "sourceFile": "@cbhq/cds-mobile/layout/Divider",
-      "totalInstances": 5,
+      "totalInstances": 6,
       "totalCallSites": 4,
       "cds": "@cbhq/cds-mobile/layout/Divider",
       "callSites": {
         "@app/screens/YieldCenter/HeaderSection.tsx": 1,
-        "@app/screens/YieldCenter/YieldCenterScreen.tsx": 2,
+        "@app/screens/YieldCenter/YieldCenterScreen.tsx": 3,
         "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentTermsScreen.tsx": 1
       }
@@ -803,25 +862,6 @@
       "cds": "@cbhq/cds-mobile/typography/TextTitle1"
     },
     {
-      "name": "TextHeadline",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-mobile/typography/TextHeadline",
-      "callSites": {
-        "@app/screens/YieldCenter/YieldEarnedChartHeader.tsx": 1,
-        "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1,
-        "@app/screens/DefiBoost/components/DefiBoostEnrollmentRateDetailsTray.tsx": 1
-      },
-      "propsWithCallSites": {
-        "align": { "@app/screens/YieldCenter/YieldEarnedChartHeader.tsx": 1 },
-        "color": { "@app/screens/YieldCenter/YieldEarnedChartHeader.tsx": 1 },
-        "spacingBottom": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Carousel",
       "sourceFile": "@cbhq/cds-mobile/media/Carousel",
       "totalInstances": 1,
@@ -850,34 +890,6 @@
         "subtitle": { "@app/screens/YieldCenter/ManageInterest/ManageInterestCell.tsx": 1 },
         "detail": { "@app/screens/YieldCenter/ManageInterest/ManageInterestCell.tsx": 1 },
         "detailWidth": { "@app/screens/YieldCenter/ManageInterest/ManageInterestCell.tsx": 1 }
-      }
-    },
-    {
-      "name": "Icon",
-      "sourceFile": "@cbhq/cds-mobile/icons/Icon",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-mobile/icons/Icon",
-      "callSites": {
-        "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
-        "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
-          "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
-        },
-        "size": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
-          "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
-        },
-        "color": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
-          "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
-        },
-        "spacingStart": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1
-        }
       }
     },
     {
@@ -1458,9 +1470,9 @@
     {
       "name": "Gutter",
       "sourceFile": "@app/screens/YieldCenter/YieldCenterScreen.tsx",
-      "totalInstances": 4,
+      "totalInstances": 5,
       "totalCallSites": 1,
-      "callSites": { "@app/screens/YieldCenter/YieldCenterScreen.tsx": 4 }
+      "callSites": { "@app/screens/YieldCenter/YieldCenterScreen.tsx": 5 }
     },
     {
       "name": "Header",
@@ -1733,6 +1745,78 @@
       }
     },
     {
+      "name": "StatusAlertCard",
+      "sourceFile": "@app/components/StatusAlertCard",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "testID": { "@app/screens/YieldCenter/SSNPrompt/SSNPromptCard.tsx": 1 },
+        "message": { "@app/screens/YieldCenter/SSNPrompt/SSNPromptCard.tsx": 1 },
+        "onPrimaryPress": { "@app/screens/YieldCenter/SSNPrompt/SSNPromptCard.tsx": 1 },
+        "onDismiss": { "@app/screens/YieldCenter/SSNPrompt/SSNPromptCard.tsx": 1 }
+      }
+    },
+    {
+      "name": "PromotionCard",
+      "sourceFile": "@app/components/PromotionCard",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "promotion": { "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1 },
+        "layout": { "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1 },
+        "onPress": { "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1 },
+        "testID": { "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1 }
+      }
+    },
+    {
+      "name": "SuccessScreenLayout",
+      "sourceFile": "@app/components/SuccessScreenLayout",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
+        "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "image": {
+          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
+          "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
+        },
+        "top": {
+          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
+          "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
+        },
+        "bottom": {
+          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
+          "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
+        },
+        "buttonText": {
+          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
+          "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
+        },
+        "onButtonPress": {
+          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
+          "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Lottie",
+      "sourceFile": "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "autoplay": { "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1 },
+        "width": { "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "SSNVerificationSuccessScreenContent",
+      "sourceFile": "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "BottomSheetModalContainer",
       "sourceFile": "@app/components/BottomSheetModalContainer",
       "totalInstances": 1,
@@ -1809,78 +1893,6 @@
         "symbol": { "@app/screens/YieldCenter/Trays/YieldCenterTrays.tsx": 1 },
         "turnOff": { "@app/screens/YieldCenter/Trays/YieldCenterTrays.tsx": 1 }
       }
-    },
-    {
-      "name": "StatusAlertCard",
-      "sourceFile": "@app/components/StatusAlertCard",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "testID": { "@app/screens/YieldCenter/SSNPrompt/SSNPromptCard.tsx": 1 },
-        "message": { "@app/screens/YieldCenter/SSNPrompt/SSNPromptCard.tsx": 1 },
-        "onPrimaryPress": { "@app/screens/YieldCenter/SSNPrompt/SSNPromptCard.tsx": 1 },
-        "onDismiss": { "@app/screens/YieldCenter/SSNPrompt/SSNPromptCard.tsx": 1 }
-      }
-    },
-    {
-      "name": "PromotionCard",
-      "sourceFile": "@app/components/PromotionCard",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "promotion": { "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1 },
-        "layout": { "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1 },
-        "onPress": { "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1 },
-        "testID": { "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1 }
-      }
-    },
-    {
-      "name": "SuccessScreenLayout",
-      "sourceFile": "@app/components/SuccessScreenLayout",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
-        "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "image": {
-          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
-          "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
-        },
-        "top": {
-          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
-          "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
-        },
-        "bottom": {
-          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
-          "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
-        },
-        "buttonText": {
-          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
-          "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
-        },
-        "onButtonPress": {
-          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
-          "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Lottie",
-      "sourceFile": "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "autoplay": { "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1 },
-        "width": { "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1 }
-      }
-    },
-    {
-      "name": "SSNVerificationSuccessScreenContent",
-      "sourceFile": "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "DefiBoostEnrollmentHeaderLink",
