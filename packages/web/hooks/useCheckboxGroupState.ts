@@ -8,6 +8,8 @@ export type CheckboxGroupStateProps<T extends string> = {
   isAllSelected: GroupToggleState<T>['isAllSelected'];
 };
 
+type CheckboxGroupStateHandlerParams = Partial<React.ChangeEvent<HTMLInputElement>>;
+
 /**
  *
  * @param values - An array of all possible options. Make sure the array doesn't change if it's the same values so that the handlers will also stay the same.
@@ -29,23 +31,23 @@ export const useCheckboxGroupState = <T extends string>(
   const [state, { select: doSelect, unselect: doUnselect, toggle: doToggle, isAllSelected }] =
     useGroupToggler(values, initialState);
 
-  const select = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
-    (event) => {
-      doSelect(event?.target.value as T);
+  const select = useCallback(
+    (event: CheckboxGroupStateHandlerParams) => {
+      doSelect(event?.target?.value as T);
     },
     [doSelect],
   );
 
-  const unselect = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
-    (event) => {
-      doUnselect(event?.target.value as T);
+  const unselect = useCallback(
+    (event: CheckboxGroupStateHandlerParams) => {
+      doUnselect(event?.target?.value as T);
     },
     [doUnselect],
   );
 
-  const toggle = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
-    (event) => {
-      doToggle(event?.target.value as T);
+  const toggle = useCallback(
+    (event: CheckboxGroupStateHandlerParams) => {
+      doToggle(event?.target?.value as T);
     },
     [doToggle],
   );
