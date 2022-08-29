@@ -2269,6 +2269,7 @@ __metadata:
     "@cbhq/cds-lottie-files": "workspace:*"
     "@cbhq/cds-tools": "workspace:*"
     "@cbhq/cds-utils": "workspace:*"
+    "@cbhq/ui-mobile-a11y-engine": "workspace:*"
     "@react-native-community/netinfo": ^7.1.7
     "@react-navigation/stack": 5.12.8
     d3-interpolate-path: ^2.2.2
@@ -2554,28 +2555,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/mobile-accessibility-engine@workspace:packages/mobile-accessibility-engine":
-  version: 0.0.0-use.local
-  resolution: "@cbhq/mobile-accessibility-engine@workspace:packages/mobile-accessibility-engine"
-  dependencies:
-    "@react-native-community/slider": 4.2.0
-    "@testing-library/jest-native": 4.0.4
-    "@testing-library/react-native": 9.0.0
-    "@types/lodash.groupby": 4.6.6
-    "@types/react": ^17.0.3
-    "@types/react-native": 0.66.8
-    "@types/react-test-renderer": 17.0.1
-    jest-matcher-utils: ^24.0.0
-    lodash.groupby: ^4.6.0
-    react: 17.0.2
-    react-native: 0.66.3
-    react-test-renderer: ^17.0.2
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  languageName: unknown
-  linkType: soft
-
 "@cbhq/mono-env@npm:^0.2.15":
   version: 0.2.15
   resolution: "@cbhq/mono-env@npm:0.2.15"
@@ -2715,6 +2694,28 @@ __metadata:
   checksum: 4256526bf71adbcc71e8ca6883c00bd240e9ef2843417cbfe07d9844c7a958b4146c6c9f8c1327cf94cbe0ae39db818a68ffc82879734f068daf769609a29f8a
   languageName: node
   linkType: hard
+
+"@cbhq/ui-mobile-a11y-engine@workspace:*, @cbhq/ui-mobile-a11y-engine@workspace:packages/ui-mobile-a11y-engine":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/ui-mobile-a11y-engine@workspace:packages/ui-mobile-a11y-engine"
+  dependencies:
+    "@react-native-community/slider": 4.2.0
+    "@testing-library/jest-native": 4.0.4
+    "@testing-library/react-native": 9.0.0
+    "@types/lodash.groupby": 4.6.6
+    "@types/react": ^17.0.3
+    "@types/react-native": 0.66.8
+    "@types/react-test-renderer": 17.0.1
+    jest-matcher-utils: ^24.0.0
+    lodash.groupby: ^4.6.0
+    react: 17.0.2
+    react-native: 0.66.3
+    react-test-renderer: ^17.0.2
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  languageName: unknown
+  linkType: soft
 
 "@cbhq/ui-mobile-playground@workspace:*, @cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground":
   version: 0.0.0-use.local

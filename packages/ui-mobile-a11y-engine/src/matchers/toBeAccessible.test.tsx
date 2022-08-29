@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 
-import { TestAssets } from '../__tests__/assets';
+import { TestAssets } from '../assets';
 
 const NonAccessibleButton = () => (
   <TouchableOpacity accessible={false}>

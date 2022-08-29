@@ -1,8 +1,12 @@
 {
-  "root": "packages/mobile-accessibility-engine",
-  "sourceRoot": "packages/mobile-accessibility-engine",
+  "root": "packages/ui-mobile-a11y-engine",
+  "sourceRoot": "packages/ui-mobile-a11y-engine/src",
   "projectType": "library",
   "targets": {
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": ["dts", "lib"]
+    },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
     },
@@ -13,7 +17,7 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/cds-tools:typecheck"
+      "executor": "@cbhq/mono-tasks:typecheck"
     }
   }
 }

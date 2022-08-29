@@ -1,9 +1,9 @@
 {
-  "name": "@cbhq/mobile-accessibility-engine",
-  "version": "1.0.0",
+  "name": "@cbhq/ui-mobile-a11y-engine",
+  "version": "0.0.0",
   "description": "Make accessibility-related assertions on React Native code using React Test Renderer",
-  "main": "src/index",
-  "types": "src/index",
+  "types": "./dts/index.d.ts",
+  "main": "./lib/index.js",
   "react-native": "src/index",
   "source": "src/index",
   "files": [
@@ -33,6 +33,18 @@
     "ios",
     "android"
   ],
+  "packemon": {
+    "format": "lib",
+    "platform": "native"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "react-native": "./lib/index.js",
+      "default": "./lib/index.js"
+    }
+  },
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "devDependencies": {
     "@react-native-community/slider": "4.2.0",

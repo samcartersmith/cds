@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.buildOptions.json",
+  "compilerOptions": {
+    "outDir": "dts"
+  },
+  "include": ["src"],
+  "exclude": ["cjs", "dts", "esm", "lib"],
+  "references": [
+    {
+      "path": "../mobile"
+    },
+    {
+      "path": "../common"
+    },
+    {
+      "path": "../utils"
+    }
+  ]
+}

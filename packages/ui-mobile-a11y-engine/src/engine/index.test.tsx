@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import { render } from '@testing-library/react-native';
 
-import { TestAssets } from '../__tests__/assets';
+import { TestAssets } from '../assets';
 
 import check from '.';
 

@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.projectOptions.json",
+  "compilerOptions": {
+    "outDir": "../../.nx/dist/packages/ui-mobile-a11y-engine",
+    "rootDir": "./"
+  },
+  "include": ["**/*", "package.json"],
+  "exclude": ["babel.config.js", "cjs", "dist", "dts", "esm", "jest.config.js", "lib"],
+  "references": []
+}
