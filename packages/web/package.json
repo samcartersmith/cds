@@ -27,6 +27,7 @@
     "stylelint": "nx run web:lint-styles",
     "stylelint.fix": "nx run web:lint-styles --fix",
     "test": "jest",
+    "test.coverage": "jest --collect-coverage",
     "typecheck": "nx run web:typecheck"
   },
   "dependencies": {

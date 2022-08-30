@@ -30,6 +30,7 @@
 | yarn common lint                | Lint the `common` package.                                   |
 | yarn common lint.fix            | Lint the `common` package and fix errors.                    |
 | yarn common test                | Test the `common` package.                                   |
+| yarn common test.coverage       | Test the `common` package with coverage report               |
 | yarn common typecheck           | Typecheck the `common` package.                              |
 | ----                            | ----                                                         |
 | yarn fonts build                | Build the `fonts` package.                                   |
@@ -47,6 +48,7 @@
 | yarn mobile lint                | Lint the `mobile` package.                                   |
 | yarn mobile lint.fix            | Lint the `mobile` package and fix errors.                    |
 | yarn mobile test                | Test the `mobile` package.                                   |
+| yarn mobile test.coverage       | Test the `mobile` package with coverage report               |
 | yarn mobile typecheck           | Typecheck the `mobile` package.                              |
 | ----                            | ----                                                         |
 | yarn utils build                | Build the `utils` package.                                   |
@@ -64,6 +66,7 @@
 | yarn web stylelint              | Stylelint the `web` package                                  |
 | yarn web stylelint.fix          | Stylelint and fix the `web` package                          |
 | yarn web test                   | Test the `web` package.                                      |
+| yarn web test.coverage          | Test the `web` package with coverage report                  |
 | yarn web typecheck              | Typecheck the `web` package.                                 |
 | ----                            | ----                                                         |
 | yarn website build              | Build website.                                               |
