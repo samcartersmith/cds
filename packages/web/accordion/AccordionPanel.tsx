@@ -2,18 +2,24 @@ import React, { ForwardedRef, forwardRef, memo } from 'react';
 import { accordionVisibleMaxHeight } from '@cbhq/cds-common/animation/accordion';
 import { useAccordionSpacing } from '@cbhq/cds-common/hooks/useAccordionSpacing';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import type { AccordionPanelBaseProps } from '@cbhq/cds-common/types';
+import type { AccordionPanelBaseProps, DimensionValue } from '@cbhq/cds-common/types';
 
 import { Collapsible } from '../collapsible';
 
 import { getAccordionHeaderId, getAccordionPanelId } from './utils';
 
-export type AccordionPanelProps = AccordionPanelBaseProps;
+export type AccordionPanelProps = AccordionPanelBaseProps & { maxHeight?: DimensionValue };
 
 export const AccordionPanel = memo(
   forwardRef(
     (
-      { children, collapsed = true, itemKey, testID }: AccordionPanelProps,
+      {
+        children,
+        collapsed = true,
+        itemKey,
+        testID,
+        maxHeight: maxHeightParam,
+      }: AccordionPanelProps,
       forwardedRef: ForwardedRef<HTMLDivElement>,
     ) => {
       const maxHeight = useScaleConditional(accordionVisibleMaxHeight);
@@ -23,7 +29,7 @@ export const AccordionPanel = memo(
         <Collapsible
           collapsed={collapsed}
           testID={testID}
-          maxHeight={maxHeight}
+          maxHeight={maxHeightParam ?? maxHeight}
           ref={forwardedRef}
           {...spacing}
           // a11y guideline: https://www.w3.org/TR/wai-aria-practices/#accordion

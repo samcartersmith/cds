@@ -14,6 +14,14 @@ export type CollapseProps = CollapsibleBaseProps & {
    * RN ScrollView props. Use with caution as it might break default settings.
    */
   scrollViewProps?: ScrollViewProps;
+  /**
+   * Max height of the content. Overflow content will be scrollable.
+   */
+  maxHeight?: number;
+  /**
+   * Max width of the content. Overflow content will be scrollable.
+   */
+  maxWidth?: number;
 };
 
 export const Collapsible = memo(

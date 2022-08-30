@@ -1,6 +1,6 @@
 import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
 import { m as motion } from 'framer-motion';
-import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
+import type { CollapsibleBaseProps, DimensionValue } from '@cbhq/cds-common/types';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Box, BoxProps, HStack } from '../layout';
@@ -13,6 +13,14 @@ export type CollapsibleProps = {
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslyDisableOverflowHidden?: boolean;
+  /**
+   * Max height of the content. Overflow content will be scrollable.
+   */
+  maxHeight?: DimensionValue;
+  /**
+   * Max width of the content. Overflow content will be scrollable.
+   */
+  maxWidth?: DimensionValue;
 } & CollapsibleBaseProps &
   Pick<BoxProps, 'role' | 'id' | 'accessibilityLabelledBy'>;
 

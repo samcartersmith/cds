@@ -1,4 +1,4 @@
-import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
+import type { CollapseProps } from './Collapsible';
 
 export type UseCollapsibleDirectionReturn = ReturnType<typeof useCollapsibleDirection>;
 
@@ -8,7 +8,7 @@ export const useCollapsibleDirection = ({
   maxWidth,
   contentWidth,
   contentHeight,
-}: Pick<CollapsibleBaseProps, 'direction' | 'maxHeight' | 'maxWidth'> & {
+}: Pick<CollapseProps, 'direction' | 'maxHeight' | 'maxWidth'> & {
   contentWidth: number;
   contentHeight: number;
 }) => {

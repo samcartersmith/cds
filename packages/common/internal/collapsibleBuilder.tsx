@@ -18,6 +18,7 @@ export type CreateCollapsibleProps = {
     CollapsibleBaseProps & {
       id?: string;
       accessibilityLabelledBy?: string;
+      maxHeight?: number;
     }
   >;
   TextBody: React.ComponentType<TextBaseProps & { as?: string }>;

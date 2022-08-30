@@ -6,12 +6,13 @@ import type { AccordionItemBaseProps } from '@cbhq/cds-common/types';
 import { VStack } from '../layout';
 
 import { AccordionHeader } from './AccordionHeader';
-import { AccordionPanel } from './AccordionPanel';
+import { AccordionPanel, AccordionPanelProps } from './AccordionPanel';
 
 export type AccordionItemProps = {
   headerRef?: RefObject<HTMLButtonElement>;
   panelRef?: RefObject<HTMLDivElement>;
-} & AccordionItemBaseProps;
+} & AccordionItemBaseProps &
+  Pick<AccordionPanelProps, 'maxHeight'>;
 
 export const AccordionItem = memo(
   ({
@@ -24,6 +25,7 @@ export const AccordionItem = memo(
     testID,
     headerRef,
     panelRef,
+    maxHeight,
   }: AccordionItemProps) => {
     const { activeKey } = useAccordionParent();
     const collapsed = activeKey !== itemKey;
@@ -45,6 +47,7 @@ export const AccordionItem = memo(
           itemKey={itemKey}
           testID={testID && `${testID}-panel`}
           ref={panelRef}
+          maxHeight={maxHeight}
         >
           {children}
         </AccordionPanel>
