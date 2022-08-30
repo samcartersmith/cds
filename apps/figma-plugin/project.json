@@ -1,0 +1,14 @@
+{
+  "root": "apps/figma-plugin",
+  "sourceRoot": "apps/figma-plugin",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@cbhq/mono-tasks:run-package-script",
+      "options": {
+        "script": "build"
+      }
+    }
+  }
+}
