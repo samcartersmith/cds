@@ -104,6 +104,7 @@ module.exports = {
       space: 'w5g94q9p2q4k',
       clientKey: 'home',
       host: 'contentful.coinbase.com',
+      // contentful environment aliases
       environment: process.env.CONTENTFUL_ENV ?? 'develop',
     },
   },

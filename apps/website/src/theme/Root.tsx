@@ -12,8 +12,7 @@ const Root = memo(({ children }) => {
       accessToken,
       space,
       host,
-      // contentful environment aliases
-      environment: environment === 'production' ? 'master' : 'develop',
+      environment,
     },
     clientKey,
   );
