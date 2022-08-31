@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.8.0 (8/31/2022, 10:51 AM PST)
+
+#### 🚀 Updates
+
+- Updating SparklineInteractive and SparklineInteractiveHeader to accept compact and periodSelectorPlacement props. [#1022](https://github.cbhq.net/frontend/cds/pull/1022)
+
+#### 📘 Misc
+
+- **[Mobile Visual Regression Tests]** Bump version to test in wallet. [#1040](https://github.cbhq.net/frontend/cds/pull/1040)
+
 ## 1.7.0 (8/30/2022, 05:42 PM PST)
 
 #### 🚀 Updates

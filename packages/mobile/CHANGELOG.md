@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.8.0 (8/31/2022, 10:51 AM PST)
+
+#### 📘 Misc
+
+- **[chore]** Manually bump version to match web and common.
+
 ## 1.7.0 (8/30/2022, 05:42 PM PST)
 
 #### 🚀 Updates

@@ -14,11 +14,11 @@
     "@cbhq/cds-tools": "workspace:*"
   },
   "scripts": {
-    "build": "nx run fonts:build",
-    "lint": "nx run fonts:lint",
-    "lint.fix": "nx run fonts:lint --fix",
-    "stylelint": "nx run fonts:lint-styles",
-    "stylelint.fix": "nx run fonts:lint-styles --fix",
-    "typecheck": "nx run fonts:typecheck"
+    "build": "yarn nx run fonts:build",
+    "lint": "yarn nx run fonts:lint",
+    "lint.fix": "yarn nx run fonts:lint --fix",
+    "stylelint": "yarn nx run fonts:lint-styles",
+    "stylelint.fix": "yarn nx run fonts:lint-styles --fix",
+    "typecheck": "yarn nx run fonts:typecheck"
   }
 }
