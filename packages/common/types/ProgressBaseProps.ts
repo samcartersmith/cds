@@ -11,7 +11,7 @@ export type ProgressBaseProps = {
   /** Number between 0-1 representing the progress percentage */
   progress: number;
 
-  /** Toggle used to show a thicker progress visualization
+  /** Toggle used to change thickness of progress visualization
    * @default normal
    * */
   weight?: Weight;

@@ -28,6 +28,20 @@ export const Default = () => {
 };
 Default.parameters = { percy: enableJavascript };
 
+export const Thin = () => {
+  return (
+    <ProgressContainerWithButtons>
+      {({ calculateProgress }) => (
+        <VStack gap={2}>
+          <ProgressBar weight="thin" progress={calculateProgress(0)} />
+          <ProgressBar weight="thin" progress={calculateProgress(0.2)} />
+        </VStack>
+      )}
+    </ProgressContainerWithButtons>
+  );
+};
+Thin.parameters = { percy: enableJavascript };
+
 export const Heavy = () => {
   return (
     <ProgressContainerWithButtons>
