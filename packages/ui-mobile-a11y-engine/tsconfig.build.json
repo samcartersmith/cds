@@ -3,17 +3,13 @@
   "compilerOptions": {
     "outDir": "dts"
   },
-  "include": ["src"],
-  "exclude": ["cjs", "dts", "esm", "lib"],
-  "references": [
-    {
-      "path": "../mobile"
-    },
-    {
-      "path": "../common"
-    },
-    {
-      "path": "../utils"
-    }
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "babel.config.js",
+    "cjs",
+    "dts",
+    "jest.config.js"
   ]
 }

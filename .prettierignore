@@ -12,7 +12,11 @@ packages/docusaurus-theme/src/theme/**/*.d.ts
 # Nx
 dist/
 lib/
+cjs/
+dts/
 package.json
+tsconfig.json
+tsconfig.build.json
 .docusaurus
 .nx
 

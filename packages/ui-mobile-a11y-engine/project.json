@@ -1,11 +1,11 @@
 {
   "root": "packages/ui-mobile-a11y-engine",
-  "sourceRoot": "packages/ui-mobile-a11y-engine/src",
+  "sourceRoot": "packages/ui-mobile-a11y-engine",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": ["dts", "lib"]
+      "outputs": ["cjs", "dts"]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

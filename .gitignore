@@ -41,6 +41,7 @@ local.properties
 
 # Nx/Builds
 .nx
+cjs/
 dts/
 lib/
 esm/

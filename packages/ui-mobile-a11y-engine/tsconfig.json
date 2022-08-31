@@ -4,7 +4,14 @@
     "outDir": "../../.nx/dist/packages/ui-mobile-a11y-engine",
     "rootDir": "./"
   },
-  "include": ["**/*", "package.json"],
-  "exclude": ["babel.config.js", "cjs", "dist", "dts", "esm", "jest.config.js", "lib"],
-  "references": []
+  "include": [
+    "src",
+    "package.json"
+  ],
+  "exclude": [
+    "babel.config.js",
+    "cjs",
+    "dts",
+    "jest.config.js"
+  ]
 }

@@ -1,4 +1,4 @@
-import '@cbhq/ui-mobile-a11y-engine/src';
+import '@cbhq/ui-mobile-a11y-engine';
 import 'react-native-gesture-handler/jestSetup';
 
 jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
