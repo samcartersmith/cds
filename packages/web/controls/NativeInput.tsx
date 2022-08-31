@@ -79,8 +79,12 @@ const nativeInputBaseStyle = css`
   }
   /* stylelint-enable a11y/no-display-none */
 
-  &:-webkit-autofill {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
     border-radius: ${borderRadius.input};
+    transition: background-color 0s ease-in-out 5000s;
   }
 `;
 
