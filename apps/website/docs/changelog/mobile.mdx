@@ -8,6 +8,22 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.7.0 (8/30/2022, 05:42 PM PST)
+
+#### 🚀 Updates
+
+- **[AccordionItem]** Allow setting maxHeight. [#1012](https://github.cbhq.net/frontend/cds/pull/1012)
+- **[ui-mobile-a11y-engine]** Create ui-mobile-a11y-engine package. [#961](https://github.cbhq.net/frontend/cds/pull/961)
+
+#### 🐞 Fixes
+
+- **[icons]** Publish 08/30/22 [mm/dd/yy] Icons. [#1026](https://github.cbhq.net/frontend/cds/pull/1026)
+
+#### 📘 Misc
+
+- **[Testing]** Set up unit testing coverage. [#1030](https://github.cbhq.net/frontend/cds/pull/1030)
+- **[Mobile Visual Regression Tests]** Migrate remainder of visreg test runner to @cbhq/ui-mobile-playground. [#1000](https://github.cbhq.net/frontend/cds/pull/1000)
+
 ## 1.6.0 (8/24/2022, 02:41 PM PST)
 
 #### 🚀 Updates

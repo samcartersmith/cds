@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.7.0 (8/30/2022, 05:42 PM PST)
+
+#### 🚀 Updates
+
+- **[AccordionItem]** Allow setting maxHeight. [#1012](https://github.cbhq.net/frontend/cds/pull/1012)
+- **[Grid]** Added Grid prototype and explicit + implicit columns. [#955](https://github.cbhq.net/frontend/cds/pull/955)
+
+#### 🐞 Fixes
+
+- **[icons]** Publish 08/30/22 [mm/dd/yy] Icons. [#1026](https://github.cbhq.net/frontend/cds/pull/1026)
+- **[Checkbox]** Made state handler arguments optional. [#1017](https://github.cbhq.net/frontend/cds/pull/1017)
+- Run adoption tracker update. [#1009](https://github.cbhq.net/frontend/cds/pull/1009)
+
+#### 📘 Misc
+
+- **[Testing]** Set up unit testing coverage. [#1030](https://github.cbhq.net/frontend/cds/pull/1030)
+- Percy should handle resize events. [#994](https://github.cbhq.net/frontend/cds/pull/994), [CDS-2424](https://jira.coinbase-corp.com/browse/CDS-2424)
+
 ## 1.6.0 (8/24/2022, 02:41 PM PST)
 
 #### 🚀 Updates
