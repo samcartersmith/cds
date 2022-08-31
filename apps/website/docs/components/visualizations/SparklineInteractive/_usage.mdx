@@ -72,3 +72,17 @@ The scaling factor is usually used when you want to show less variance in the ch
   />
 </Box>
 ```
+
+#### Period selector placement
+
+`periodSelectorPlacement` can be used to place the period selector in different positions (`above` or `below`).
+
+```jsx live
+<Box spacing={3} width="100%">
+  <SparklineInteractivePrice
+    data={sparklineInteractiveData}
+    strokeColor="#F7931A"
+    periodSelectorPlacement="below"
+  />
+</Box>
+```

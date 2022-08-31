@@ -46,3 +46,28 @@ export const CustomLabel = () => {
   );
 };
 CustomLabel.parameters = { percy: enableJavascript };
+
+export const Compact = () => {
+  return (
+    <SparklineInteractiveWithHeaderBuild
+      compact
+      data={sparklineInteractiveData}
+      strokeColor="#F7931A"
+    />
+  );
+};
+
+Compact.parameters = { percy: enableJavascript };
+
+export const BottomPeriodSelector = () => {
+  return (
+    <SparklineInteractiveWithHeaderBuild
+      data={sparklineInteractiveData}
+      compact
+      strokeColor="#F7931A"
+      periodSelectorPlacement="below"
+    />
+  );
+};
+
+BottomPeriodSelector.parameters = { percy: enableJavascript };

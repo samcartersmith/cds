@@ -22,6 +22,11 @@ export type SparklineInteractiveHeaderProps = {
    * Adds a label node that allows React components. If you use this node then you cannot use the text based label that supports updates.
    */
   labelNode?: ReactNode;
+
+  /**
+   * Reduce the font size used for the header itself.
+   */
+  compact?: boolean;
 } & SharedProps;
 
 export type SparklineInteractiveHeaderVariant = 'foregroundMuted' | 'positive' | 'negative';

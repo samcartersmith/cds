@@ -223,7 +223,7 @@ export const sparklineInteractiveWithHeaderBuilder = ({
   });
 
   return memo((props: SparklineInteractivePriceProps) => {
-    const { data: sparklineData, trailing, labelNode } = props;
+    const { data: sparklineData, trailing, labelNode, compact } = props;
     const sparklineInteractiveData = sparklineData as Record<SparklinePeriod, ChartData>;
     const headerRef = useRef<SparklineInteractiveHeaderRef | null>(null);
     const [currentPeriod, setCurrentPeriod] = useState<SparklinePeriod>(DEFAULT_PERIOD);
@@ -270,6 +270,7 @@ export const sparklineInteractiveWithHeaderBuilder = ({
         defaultSubHead={generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData)}
         trailing={trailing}
         labelNode={labelNode}
+        compact={compact}
       />
     );
 

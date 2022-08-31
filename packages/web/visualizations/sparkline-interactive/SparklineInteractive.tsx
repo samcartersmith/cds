@@ -19,8 +19,10 @@ import { usePalette } from '../../hooks/usePalette';
 import { Box } from '../../layout/Box';
 import { ThemeProvider } from '../../system';
 import { getBrowserGlobals } from '../../utils/browser';
+import { cx } from '../../utils/linaria';
 import { VisualizationContainer } from '../VisualizationContainer';
 
+import { fadeInClassName, fadeOutClassName } from './fade';
 import { InnerSparklineInteractiveProvider } from './InnerSparklineInteractiveProvider';
 import { SparklineInteractiveHoverDate } from './SparklineInteractiveHoverDate';
 import { SparklineInteractiveLineVertical } from './SparklineInteractiveLineVertical';
@@ -75,8 +77,10 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   fallbackType = 'positive',
   timePeriodGutter,
   hoverData,
+  periodSelectorPlacement = 'above',
 }: SparklineInteractiveBaseProps<Period>) {
   const [isScrubbing, setIsScrubbing] = useState(false);
+  const [isMarkerDateVisible, setIsMarkerDateVisible] = useState(false);
   const innerSparklineInteractiveHeight = compact ? chartCompactHeight : chartHeight;
   const { isFallbackVisible, showFallback } = useSparklineInteractiveContext();
   const { observe: containerRef, width: containerWidth } = useDimensions();
@@ -99,6 +103,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
       setIsScrubbing(true);
     }
 
+    setIsMarkerDateVisible(true);
     onScrubStart?.();
   }, [hoverData, onScrubStart]);
 
@@ -107,6 +112,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
       setIsScrubbing(false);
     }
 
+    setIsMarkerDateVisible(false);
     onScrubEnd?.();
   }, [hoverData, onScrubEnd]);
 
@@ -158,6 +164,22 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     );
   }
 
+  const animatedFeatureClassName = useMemo(
+    () => ({
+      periodSelector: cx(
+        periodSelectorPlacement === 'below' && !isMarkerDateVisible
+          ? fadeInClassName
+          : fadeOutClassName,
+      ),
+      markerDates: cx(
+        periodSelectorPlacement === 'above' || isMarkerDateVisible
+          ? fadeInClassName
+          : fadeOutClassName,
+      ),
+    }),
+    [isMarkerDateVisible, periodSelectorPlacement],
+  );
+
   const periodSelector = (
     <SparklineInteractivePeriodSelector
       periods={periods}
@@ -171,14 +193,16 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     <div ref={containerRef} style={{ width: '100%' }}>
       {(!hidePeriodSelector || !!headerNode) && (
         <>
-          {isMobileLayout && (
+          {isMobileLayout && periodSelectorPlacement === 'above' && (
             <Box spacingBottom={2} width="100%">
               {periodSelector}
             </Box>
           )}
           <Box justifyContent="space-between" spacingBottom={2} alignItems="center">
             {header ?? <div />}
-            {!isMobileLayout && <Box flexGrow={0}>{periodSelector}</Box>}
+            {!isMobileLayout && periodSelectorPlacement === 'above' && (
+              <Box flexGrow={0}>{periodSelector}</Box>
+            )}
           </Box>
         </>
       )}
@@ -233,12 +257,24 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
           )}
         </VisualizationContainer>
       </SparklineInteractiveScrubProvider>
-      <SparklineInteractiveMarkerDates
-        getMarker={getMarker}
-        formatDate={formatDate}
-        selectedPeriod={selectedPeriod}
-        timePeriodGutter={timePeriodGutter}
-      />
+      <Box width="100%" position="relative">
+        <Box
+          width="100%"
+          spacingTop={1}
+          zIndex={1}
+          dangerouslySetClassName={animatedFeatureClassName.periodSelector}
+        >
+          {periodSelector}
+        </Box>
+        <Box width="100%" dangerouslySetClassName={animatedFeatureClassName.markerDates} pin="left">
+          <SparklineInteractiveMarkerDates
+            getMarker={getMarker}
+            formatDate={formatDate}
+            selectedPeriod={selectedPeriod}
+            timePeriodGutter={timePeriodGutter}
+          />
+        </Box>
+      </Box>
     </div>
   );
 }

@@ -9,13 +9,14 @@ import { interpolateSubHeadText } from '@cbhq/cds-common/visualizations/interpol
 
 import { usePalette } from '../../hooks/usePalette';
 import { VStack } from '../../layout';
-import { TextDisplay3, TextHeadline, TextTitle4 } from '../../typography';
+import { TextHeadline } from '../../typography';
+import { createText } from '../../typography/createText';
 
 export * from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
 
 const SparklineInteractiveHeaderStable = memo(
   forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderProps>(
-    ({ defaultLabel, defaultTitle, defaultSubHead, testID, labelNode }, forwardedRef) => {
+    ({ defaultLabel, defaultTitle, defaultSubHead, testID, labelNode, compact }, forwardedRef) => {
       const labelRef = useRef<HTMLSpanElement>(null);
       const titleRef = useRef<HTMLSpanElement>(null);
       const subHeadIconRef = useRef<HTMLSpanElement>(null);
@@ -122,29 +123,31 @@ const SparklineInteractiveHeaderStable = memo(
         ? { color: palette[defaultSubHead.variant] }
         : {};
 
+      const TextSubHead = createText(compact ? 'label1' : 'title4');
       const subHead = !!defaultSubHead && (
         <div ref={subHeadA11yRef}>
-          <TextTitle4 tabularNumbers as="span">
+          <TextSubHead tabularNumbers as="span">
             <span ref={subHeadIconRef} style={subHeadColorStyles}>
               {defaultSubHead.sign}
             </span>
             <span ref={subHeadRef} style={subHeadColorStyles}>
               {interpolateSubHeadText(defaultSubHead)}
             </span>
-          </TextTitle4>
+          </TextSubHead>
           {!!defaultSubHead.accessoryText && (
-            <TextTitle4 tabularNumbers as="span" color="foregroundMuted" spacingStart={1}>
+            <TextSubHead tabularNumbers as="span" color="foregroundMuted" spacingStart={1}>
               <span ref={subHeadAccessoryRef}>{defaultSubHead.accessoryText}</span>
-            </TextTitle4>
+            </TextSubHead>
           )}
         </div>
       );
 
+      const TextTitle = createText(compact ? 'title1' : 'display3');
       const title = (
         <VStack spacing={0} alignItems="baseline">
-          <TextDisplay3 tabularNumbers as="div" color="foreground" spacingEnd={1}>
+          <TextTitle tabularNumbers as="div" color="foreground" spacingEnd={1}>
             <span ref={titleRef}>{defaultTitle}</span>
-          </TextDisplay3>
+          </TextTitle>
           {subHead}
         </VStack>
       );
@@ -166,7 +169,7 @@ const SparklineInteractiveHeaderStable = memo(
 );
 export const SparklineInteractiveHeader = memo(
   forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderProps>(
-    ({ defaultLabel, defaultTitle, defaultSubHead, testID, labelNode }, ref) => {
+    ({ defaultLabel, defaultTitle, defaultSubHead, testID, labelNode, compact }, ref) => {
       return (
         <SparklineInteractiveHeaderStable
           ref={ref}
@@ -179,6 +182,7 @@ export const SparklineInteractiveHeader = memo(
           defaultSubHead={useRef(defaultSubHead).current}
           testID={testID}
           labelNode={labelNode}
+          compact={compact}
         />
       );
     },

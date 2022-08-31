@@ -135,3 +135,15 @@ export const HoverDataWithFill = () => {
   );
 };
 HoverDataWithFill.parameters = { percy: enableJavascript };
+
+export const BottomPeriodSelector = () => {
+  return (
+    <SparklineInteractiveBuild
+      data={sparklineInteractiveData}
+      strokeColor={strokeColor}
+      periodSelectorPlacement="below"
+    />
+  );
+};
+
+BottomPeriodSelector.parameters = { percy: enableJavascript };

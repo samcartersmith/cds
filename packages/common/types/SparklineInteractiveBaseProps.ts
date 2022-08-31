@@ -11,6 +11,7 @@ import type {
   ChartTimeseries,
   ChartXFunction,
 } from './Chart';
+import { Placement } from './Placement';
 import { SpacingScale } from './SpacingScale';
 import type { SparklineScalingBaseProps } from './SparklineBaseProps';
 
@@ -119,6 +120,11 @@ export type SparklineInteractiveBaseProps<Period extends string> = {
    * Optional gutter to add to the Period selector. This is useful if you choose to use the full screen width for the chart
    */
   timePeriodGutter?: SpacingScale;
+
+  /**
+   * Optional placement prop that position the period selector component above or below the chart
+   */
+  periodSelectorPlacement?: Extract<Placement, 'above' | 'below'>;
 } & SparklineScalingBaseProps;
 
 export type SparklineInteractiveContentProps<Period extends string> = Omit<
