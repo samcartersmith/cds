@@ -30,7 +30,14 @@
           "linaria.config.js",
           "tsconfig.json",
           "tsconfig.build.json",
-          "project.json"
+          "tsconfig.build-esm.json",
+          "project.json",
+          "cssupload-development.Dockerfile",
+          "cssupload-production.Dockerfile",
+          "publish-esm.Dockerfile",
+          "publish.Dockerfile",
+          "__stories__",
+          "jest"
         ],
         "babelConfig": "./packages/web/babel.build.config.js",
         "babelExtensions": [".ts", ".tsx"],
@@ -61,7 +68,14 @@
           "linaria.config.js",
           "tsconfig.json",
           "tsconfig.build.json",
-          "project.json"
+          "tsconfig.build-esm.json",
+          "project.json",
+          "cssupload-development.Dockerfile",
+          "cssupload-production.Dockerfile",
+          "publish-esm.Dockerfile",
+          "publish.Dockerfile",
+          "__stories__",
+          "jest"
         ],
         "babelConfig": "./packages/web/babel.build.config.js",
         "babelExtensions": [".ts", ".tsx"],
@@ -72,7 +86,7 @@
           "**/*.stories.tsx",
           "storybook-decorators"
         ],
-        "typescriptConfig": "packages/web/tsconfig.build.json",
+        "typescriptConfig": "packages/web/tsconfig.build-esm.json",
         "fontsOutputDir": "packages/fonts",
         "maxFileSizeInKb": 115
       },

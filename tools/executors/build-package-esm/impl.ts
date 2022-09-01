@@ -2,7 +2,7 @@
 // remove useless global styles
 
 import { ExecutorContext } from '@nrwl/devkit';
-import fs from "fs";
+import fs from 'fs';
 import path from 'path';
 
 import { BuildCssOptions, BuildPackageOptions } from '../../types';
@@ -10,22 +10,22 @@ import buildCss from '../build-css/impl';
 import buildPackage from '../build-package/impl';
 import { deleteDir, deleteFile, getFileSizeInKb } from '../utils';
 
-type BuildPackageEsmOptions =  BuildPackageOptions &
+type BuildPackageEsmOptions = BuildPackageOptions &
   Pick<BuildCssOptions, 'fontsOutputDir'> & {
-  maxFileSizeInKb: number;
-};
+    maxFileSizeInKb: number;
+  };
 
 type PackageJson = {
-  version: string;
-}
+  name: string;
+  sideEffects: string[];
+};
 
-async function addPackageTag(pkgJsonPath: string) {
+async function updatePackageJson(pkgJsonPath: string) {
   const pkgJson = JSON.parse(await fs.promises.readFile(pkgJsonPath, 'utf8')) as PackageJson;
 
-  const { version } = pkgJson;
-
-  const newVersion = `${version}-esm.0`;
-  pkgJson.version = newVersion;
+  const newName = `${pkgJson.name}-esm`;
+  pkgJson.name = newName;
+  pkgJson.sideEffects = ['*.css', 'globalImports.js'];
 
   await fs.promises.writeFile(pkgJsonPath, JSON.stringify(pkgJson, null, 2));
 }
@@ -73,7 +73,7 @@ export default async function buildPackageEsm(
   await deleteFile(path.join(destinationDir, 'globalStyles.js'));
   await deleteFile(path.join(destinationDir, 'globalStyles.d.ts'));
 
-  await addPackageTag(path.join(destinationDir, 'package.json'));
+  await updatePackageJson(path.join(destinationDir, 'package.json'));
 
   // validate file size
   const cssFile = path.join(distDir, 'main.css');
