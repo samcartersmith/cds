@@ -13,7 +13,8 @@ RUN yarn --immutable
 RUN yarn nx run ui-mobile-a11y-engine:build
 
 # Prepare the package for publish
-RUN cd /repo/.nx/dist/packages/ui-mobile-a11y-engine && npm pack
-RUN mv /repo/.nx/dist/packages/ui-mobile-a11y-engine /shared
+RUN cd packages/ui-mobile-a11y-engine && npm pack
+RUN mv /repo/packages/ui-mobile-a11y-engine /shared
+
 
 WORKDIR /shared
