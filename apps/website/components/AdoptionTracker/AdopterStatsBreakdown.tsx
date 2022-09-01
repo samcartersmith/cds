@@ -1,27 +1,21 @@
 import { memo } from 'react';
-import { VStack } from '@cbhq/cds-web/layout';
+import { HStack } from '@cbhq/cds-web/alpha/HStack';
+import { VStack } from '@cbhq/cds-web/alpha/VStack';
 import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
 
 import { useAdopterComponents } from ':cds-website/components/AdoptionTracker/hooks/useAdopterComponents';
-import { BetaCell } from ':cds-website/components/BetaCell';
 
 export const AdopterStatsBreakdownCell = memo(
   ({ title, detail }: { title: string; detail: number }) => {
     return (
-      <BetaCell
-        priority="end"
-        offsetHorizontal={1}
-        start={
-          <TextLabel1 as="p" overflow="truncate">
-            {title}
-          </TextLabel1>
-        }
-        end={
-          <TextLabel2 as="p" align="end">
-            {`${detail} instances`}
-          </TextLabel2>
-        }
-      />
+      <HStack justifyContent="space-between" gap={1} spacingTop={1}>
+        <TextLabel1 as="p" overflow="truncate">
+          {title}
+        </TextLabel1>
+        <TextLabel2 as="p" align="end">
+          {`${detail} instances`}
+        </TextLabel2>
+      </HStack>
     );
   },
 );

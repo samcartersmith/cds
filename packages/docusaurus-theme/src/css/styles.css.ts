@@ -449,4 +449,12 @@ export default css`
   .changelog-list a {
     text-decoration: none;
   }
+
+  /* Prevent buttons as links showing an underline on hover */
+  a[type='button'] {
+    text-decoration: none;
+  }
+  a[type='button']:hover {
+    text-decoration: none;
+  }
 `;

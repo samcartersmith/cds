@@ -1,9 +1,18 @@
 ---
-hide_table_of_contents: true
+# hide_table_of_contents: true
 title: Overview
 sidebar_label: Overview
+hide_title: true
 ---
 
-import { AdoptionTrackerOverview } from ':cds-website/components/AdoptionTracker/AdoptionTrackerOverview';
+import { TOCUpdater } from '@theme/TOCManager';
+import {
+  AdoptionTrackerOverview,
+  tableOfContents,
+} from ':cds-website/components/AdoptionTracker/AdoptionTrackerOverview';
+import groupBy from 'lodash/groupBy';
+import toPairs from 'lodash/toPairs';
+import { adopters } from ':cds-website/data/adopters';
 
 <AdoptionTrackerOverview />
+<TOCUpdater toc={tableOfContents} />

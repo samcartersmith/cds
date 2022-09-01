@@ -5,6 +5,7 @@ import { spacing } from '../tokens';
 export const LOADERSIZE = 24;
 
 export const button = css`
+  text-decoration: none;
   display: inline-flex;
   text-align: center;
   vertical-align: middle;
