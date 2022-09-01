@@ -37,14 +37,21 @@ export const CodeExample = memo(function CodeExample({
         </TextBody>
       )}
       {code && (
-        <Playground scope={ReactLiveScope as LiveProviderProps['scope']}>
-          {getCode(code)}
-        </Playground>
+        <>
+          <Playground scope={ReactLiveScope as LiveProviderProps['scope']}>
+            {getCode(code)}
+          </Playground>
+          <Divider
+            spacingTop={2} // <Playground /> has spacing bottom 4 + gap 2
+          />
+        </>
       )}
-      {image && <CMSContent content={image} />}
-      <Divider
-        spacingTop={2} // <Playground /> has spacing bottom 4 + gap 2
-      />
+      {image && (
+        <>
+          <CMSContent content={image} />
+          <Divider />
+        </>
+      )}
     </VStack>
   );
 });

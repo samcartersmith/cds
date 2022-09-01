@@ -74,7 +74,7 @@ export const ComponentPage = memo(function ComponentPage({
       label="Examples"
       toc={populateExamplesToc({ metadata, propsTable, codeExamples })}
     >
-      <Section title="Examples">
+      <Section title="Examples" hideDivider={!propsTable}>
         {codeExamples && <CMSContent content={codeExamples} />}
         {metadata?.element && (
           <>
