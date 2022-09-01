@@ -31,13 +31,7 @@
           "tsconfig.json",
           "tsconfig.build.json",
           "tsconfig.build-esm.json",
-          "project.json",
-          "cssupload-development.Dockerfile",
-          "cssupload-production.Dockerfile",
-          "publish-esm.Dockerfile",
-          "publish.Dockerfile",
-          "__stories__",
-          "jest"
+          "project.json"
         ],
         "babelConfig": "./packages/web/babel.build.config.js",
         "babelExtensions": [".ts", ".tsx"],
@@ -69,13 +63,7 @@
           "tsconfig.json",
           "tsconfig.build.json",
           "tsconfig.build-esm.json",
-          "project.json",
-          "cssupload-development.Dockerfile",
-          "cssupload-production.Dockerfile",
-          "publish-esm.Dockerfile",
-          "publish.Dockerfile",
-          "__stories__",
-          "jest"
+          "project.json"
         ],
         "babelConfig": "./packages/web/babel.build.config.js",
         "babelExtensions": [".ts", ".tsx"],
