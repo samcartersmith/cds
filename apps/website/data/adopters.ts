@@ -8,6 +8,8 @@ export const adopters = [
   { id: 'assethub-admin', pillar: 'Ecosystem' },
   { id: 'yield-mobile', pillar: 'Ecosystem' },
   { id: 'yield-web', pillar: 'Ecosystem' },
+  { id: 'wallet-extension', pillar: 'Ecosystem' },
+  { id: 'wallet-react-native', pillar: 'Ecosystem' },
   { id: 'prime-mobile', pillar: 'Institutional' },
   { id: 'prime-web', pillar: 'Institutional' },
   { id: 'prime-admin', pillar: 'Institutional' },
@@ -24,7 +26,5 @@ export const adopters = [
   { id: 'retail-web-shared', pillar: 'Retail' },
   { id: 'umo', pillar: 'Retail' },
   { id: 'uwo', pillar: 'Retail' },
-  { id: 'wallet-extension', pillar: 'Retail' },
-  { id: 'wallet-react-native', pillar: 'Retail' },
-  { id: 'retail-web-logged-out', pillar: 'Growth' },
+  { id: 'retail-web-logged-out', pillar: 'Retail' },
 ] as const;

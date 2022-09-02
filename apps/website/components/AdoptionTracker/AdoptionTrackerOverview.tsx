@@ -37,7 +37,7 @@ import { useAdopterProjectInfo } from './hooks/useAdopterProjectInfo';
 import { useAdopterStats } from './hooks/useAdopterStats';
 import { getPercentageText } from './utils/getPercentageText';
 import { AdopterStatsBreakdownCell } from './AdopterStatsBreakdown';
-import type { Adopter, AdopterStatsItem } from './types';
+import type { Adopter, Adopters, AdopterStatsItem } from './types';
 import { AdopterProjectInfo, AdopterStats } from './types';
 
 const TARGET_ADOPTION_PERCENTAGE = 0.8;
@@ -70,26 +70,34 @@ function useStatForLastPeriod() {
       .find((prev) => Boolean(prev.period)) ?? fallback
   );
 }
+const getProjects = (pillar?: string) => {
+  return adopters.filter((adopter) => adopter.pillar === pillar || !pillar);
+};
 
-const getAveragePercentage = (pillar?: string) => {
-  const projects = adopters.filter((adopter) => adopter.pillar === pillar || !pillar);
+const getStats = (project: ProjectProps) => {
+  return require(`@site/static/data/adoption/${project.id}/stats.json`) as AdopterStats;
+};
+
+type PercentageGetterProps = { pillar?: string; average?: boolean };
+const getPercentage = ({ pillar, average }: PercentageGetterProps) => {
+  const projects = getProjects(pillar);
   const change =
     projects.reduce((acc, project) => {
-      const stats = require(`@site/static/data/adoption/${project.id}/stats.json`) as AdopterStats;
-      const stat = stats.latest ?? statsFallback?.latest;
-      return acc + stat.cdsPercent;
-    }, 0) / projects.length;
+      const stats = getStats(project);
+      const latestStat = stats.latest ?? statsFallback?.latest;
+      return acc + latestStat.cdsPercent;
+    }, 0) / (average ? projects.length : 1);
   const variant = Number(change) >= TARGET_ADOPTION_PERCENTAGE ? 'positive' : 'negative';
   const percentage = `${getPercentageText(change)}`;
 
   return { variant, percentage } as const;
 };
 
-const getPercentageChange = (pillar?: string) => {
-  const change = adopters
-    .filter((adopter) => adopter.pillar === pillar || !pillar)
-    .reduce((acc, project) => {
-      const stats = require(`@site/static/data/adoption/${project.id}/stats.json`) as AdopterStats;
+const getPercentageChange = ({ pillar, average }: PercentageGetterProps) => {
+  const projects = getProjects(pillar);
+  const change =
+    projects.reduce((acc, project) => {
+      const stats = getStats(project);
       const fallback = getFirst(stats.previous) ?? statsFallback?.latest;
       const statToCompare =
         stats.previous
@@ -98,12 +106,36 @@ const getPercentageChange = (pillar?: string) => {
           .find((prev) => Boolean(prev.period)) ?? fallback;
 
       return acc + (stats.latest.cdsPercent - (statToCompare?.cdsPercent ?? 0));
-    }, 0);
+    }, 0) / (average ? projects.length : 1);
   const variant = Number(change) > 0 ? 'positive' : 'negative';
   const percentage = `${getPercentageText(change)}`;
 
   return { variant, percentage } as const;
 };
+
+const getSortedProjectPairs = (adoptersJson: Adopters) =>
+  toPairs(groupBy(adoptersJson, 'pillar'))
+    .sort(([pillarA], [pillarB]) => {
+      // Sort projects by their total adoption percentage
+      const { percentage: percentageA } = getPercentage({ pillar: pillarA, average: true });
+      const { percentage: percentageB } = getPercentage({ pillar: pillarB, average: true });
+
+      return Number(percentageA.replace('%', '')) - Number(percentageB.replace('%', ''));
+    })
+    .map(([pillar, projectsInPillar]) => {
+      return [
+        pillar,
+        (projectsInPillar as ProjectProps[]).sort((a, b) => {
+          // Sort projects by their total adoption percentage
+          const statsA = getStats(a);
+          const statsB = getStats(b);
+          const latestStatA = statsA.latest ?? statsFallback?.latest;
+          const latestStatB = statsB.latest ?? statsFallback?.latest;
+
+          return latestStatA.cdsPercent - latestStatB.cdsPercent;
+        }),
+      ] as const;
+    });
 
 function usePercentChange() {
   const { latest } = useAdopterStats();
@@ -321,8 +353,11 @@ export const ActiveProject = memo(() => {
 });
 
 const ProjectTitle = ({ pillar }: { pillar: string }) => {
-  const { percentage } = getAveragePercentage(pillar);
-  const { variant: changedVariant, percentage: changePercentage } = getPercentageChange(pillar);
+  const { percentage } = getPercentage({ pillar, average: true });
+  const { variant: changedVariant, percentage: changePercentage } = getPercentageChange({
+    pillar,
+    average: true,
+  });
   return (
     <VStack spacingBottom={2} gap={1}>
       <TextCaption as="span" color="foregroundMuted" id={pillar}>
@@ -347,27 +382,24 @@ const ProjectTitle = ({ pillar }: { pillar: string }) => {
 };
 
 export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) => {
-  const scopedAdopters = hidden ? hiddenAdopters : adopters;
-  const { variant, percentage } = getAveragePercentage();
-  const { variant: changedVariant, percentage: changePercentage } = getPercentageChange();
+  const scopedAdopters = getSortedProjectPairs(hidden ? hiddenAdopters : adopters);
+  // Sort projects by pillar adoption, and make sure projects are also sorted
+  const { variant, percentage } = getPercentage({ average: true });
+  const { variant: changedVariant, percentage: changePercentage } = getPercentageChange({
+    average: true,
+  });
   const direction = changedVariant === 'negative' ? 'Down' : 'Up';
-  const [activeProjectId, setActiveProject] = useState<Adopter>(scopedAdopters[0].id);
+  const [activeProjectId, setActiveProject] = useState<Adopter>(scopedAdopters[0][1][0].id);
   const projects = useMemo(() => {
-    return toPairs(groupBy(scopedAdopters, 'pillar')).map(([pillar, projectsInPillar]) => {
+    return scopedAdopters.map(([pillar, projectsInPillar]) => {
       return (
         <VStack key={pillar} gap={1} spacingBottom={5}>
           <ProjectTitle pillar={pillar} />
-          {projectsInPillar.map(
-            ({
-              // @ts-expect-error id issue
-              id,
-            }) => (
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-              <Project key={id} id={id}>
-                <ProjectCell active={activeProjectId === id} setActiveProject={setActiveProject} />
-              </Project>
-            ),
-          )}
+          {projectsInPillar.map(({ id }) => (
+            <Project key={id} id={id}>
+              <ProjectCell active={activeProjectId === id} setActiveProject={setActiveProject} />
+            </Project>
+          ))}
           <Divider direction="horizontal" offsetEnd={3} offsetStart={1} spacingTop={5} />
         </VStack>
       );
@@ -378,7 +410,7 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
     <VStack gap={2} spacingEnd={3}>
       <VStack gap={2} spacingVertical={4} spacingTop={7}>
         <HStack gap={2} justifyContent="space-between" alignItems="center">
-          <TextDisplay3 as="h2">Leaderboard</TextDisplay3>
+          <TextDisplay3 as="h2">Scoreboard</TextDisplay3>
           <Pictogram name="congratulations" />
         </HStack>
         <TextBody as="p" color="foregroundMuted">

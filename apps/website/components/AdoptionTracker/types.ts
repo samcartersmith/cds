@@ -1,6 +1,7 @@
 import { adopters } from ':cds-website/data/adopters';
 import { hiddenAdopters } from ':cds-website/data/hidden-adopters';
 
+export type Adopters = typeof adopters | typeof hiddenAdopters;
 export type Adopter = typeof adopters[number]['id'] | typeof hiddenAdopters[number]['id'];
 
 export type AdopterProjectInfo = {

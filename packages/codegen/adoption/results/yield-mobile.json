@@ -124,8 +124,8 @@
         "@app/screens/YieldCenter/YieldCenterScreen.tsx": 1,
         "@app/screens/YieldCenter/YieldEarnedChart.tsx": 1,
         "@app/screens/YieldCenter/YieldUpsellSection.tsx": 3,
-        "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
         "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1,
+        "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 4,
         "@app/screens/DefiBoost/DefiBoostEnrollmentTermsScreen.tsx": 1,
         "@app/screens/DefiBoost/components/DefiBoostEnrollmentHeaderLink.tsx": 1,
@@ -216,8 +216,8 @@
         "@app/screens/YieldCenter/NuxHeaderSection.tsx": 1,
         "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1,
         "@app/screens/YieldCenter/YieldCenterNuxScreen.tsx": 1,
-        "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
         "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
+        "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
         "@app/screens/YieldCenter/Trays/SubscriptionYieldCenterRewardsModal.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
@@ -242,8 +242,8 @@
           "@app/screens/YieldCenter/NuxHeaderSection.tsx": 1,
           "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1,
           "@app/screens/YieldCenter/YieldCenterNuxScreen.tsx": 1,
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
           "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
         },
@@ -899,19 +899,19 @@
       "totalCallSites": 2,
       "cds": "@cbhq/cds-mobile/illustrations/SpotSquare",
       "callSites": {
-        "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
-        "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1
+        "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1,
+        "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
-          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1
-        },
-        "dimension": {
+          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1,
           "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1
         },
         "scaleMultiplier": {
           "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1
+        },
+        "dimension": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1
         }
       }
     },
@@ -1709,42 +1709,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "Gutter",
-      "sourceFile": "@app/screens/YieldCenter/YieldCenterScreen/Gutter",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "spacingBottom": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "OptInVariant",
-      "sourceFile": "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "optInNavigation": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
-        },
-        "ratesNavigation": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "EarningVariant",
-      "sourceFile": "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "viewerRef": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
-        }
-      }
-    },
-    {
       "name": "StatusAlertCard",
       "sourceFile": "@app/components/StatusAlertCard",
       "totalInstances": 1,
@@ -1815,6 +1779,42 @@
       "sourceFile": "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "Gutter",
+      "sourceFile": "@app/screens/YieldCenter/YieldCenterScreen/Gutter",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "spacingBottom": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "OptInVariant",
+      "sourceFile": "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "optInNavigation": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
+        "ratesNavigation": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "EarningVariant",
+      "sourceFile": "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerRef": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        }
+      }
     },
     {
       "name": "BottomSheetModalContainer",

@@ -1058,6 +1058,9 @@
         "components/Withdrawal/components/Transaction.tsx": 3,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/PointOfSale/components/PaymentScreen.tsx": 1,
+        "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
+        "scenes/TfaReset/components/TfaVerification.tsx": 1,
+        "scenes/static/Faq/Faq.tsx": 2,
         "scenes/Settings/components/ApiKeyPanel.tsx": 3,
         "scenes/Settings/components/CloseAccountModal.tsx": 2,
         "scenes/Settings/components/CloudBackupPanel.tsx": 1,
@@ -1071,9 +1074,6 @@
         "scenes/Settings/components/WebhookTestModal.tsx": 3,
         "scenes/Settings/components/WidgetOriginModal.tsx": 1,
         "scenes/Settings/components/WidgetOriginsPanel.tsx": 1,
-        "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
-        "scenes/TfaReset/components/TfaVerification.tsx": 1,
-        "scenes/static/Faq/Faq.tsx": 2,
         "scenes/static/Integrate/Integrate.tsx": 3,
         "scenes/static/Integrate/IntegrationCard.tsx": 3,
         "scenes/static/Integrate/IntegrationDetail.tsx": 1,
@@ -1117,12 +1117,12 @@
           "components/BackupCodesModal.tsx": 4,
           "components/PageControl.tsx": 1,
           "scenes/Signin/Signin.tsx": 2,
+          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
+          "scenes/static/Faq/Faq.tsx": 2,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
           "scenes/Settings/components/WebhookEventModal.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
-          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
-          "scenes/static/Faq/Faq.tsx": 2,
           "scenes/static/Integrate/Integrate.tsx": 1,
           "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1
         },
@@ -1147,6 +1147,8 @@
           "scenes/Settings/components/WidgetOriginsPanel.tsx": 1,
           "scenes/PointOfSale/components/mobile/NetworkPicker.tsx": 1
         },
+        "mx": { "scenes/static/Faq/Faq.tsx": 1, "scenes/static/Integrate/Integrate.tsx": 2 },
+        "mb": { "scenes/static/Faq/Faq.tsx": 2, "scenes/static/Integrate/Integrate.tsx": 1 },
         "data-api-key": { "scenes/Settings/components/ApiKeyPanel.tsx": 1 },
         "mt": {
           "scenes/Settings/components/WebhookEventModal.tsx": 1,
@@ -1164,8 +1166,6 @@
           "scenes/static/Integrate/IntegrationDetail.tsx": 1
         },
         "data-origin": { "scenes/Settings/components/WidgetOriginsPanel.tsx": 1 },
-        "mx": { "scenes/static/Faq/Faq.tsx": 1, "scenes/static/Integrate/Integrate.tsx": 2 },
-        "mb": { "scenes/static/Faq/Faq.tsx": 2, "scenes/static/Integrate/Integrate.tsx": 1 },
         "width": { "scenes/static/Integrate/Integrate.tsx": 1 },
         "bg": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1 }
       }
@@ -1251,13 +1251,13 @@
         "components/ProductFlow/components/ProductTypeForm.tsx": 1,
         "components/TotpSetupModal/components/Completed.tsx": 1,
         "components/Withdrawal/components/Transaction.tsx": 1,
+        "scenes/TfaReset/components/ShowBackupCodes.tsx": 3,
+        "scenes/static/Faq/Faq.tsx": 2,
         "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
         "scenes/Settings/components/WebhookEventModal.tsx": 3,
         "scenes/Settings/components/WebhookModal.tsx": 4,
         "scenes/Settings/components/WebhookTestModal.tsx": 4,
         "scenes/Settings/components/WidgetOriginModal.tsx": 2,
-        "scenes/TfaReset/components/ShowBackupCodes.tsx": 3,
-        "scenes/static/Faq/Faq.tsx": 2,
         "scenes/static/Integrate/IntegrationCard.tsx": 5,
         "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3,
         "scenes/PointOfSale/components/mobile/MobileLayout.tsx": 1
@@ -1296,8 +1296,8 @@
         },
         "mt": {
           "components/BackupCodesModal.tsx": 1,
-          "scenes/Settings/components/WebhookModal.tsx": 1,
-          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1
+          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
+          "scenes/Settings/components/WebhookModal.tsx": 1
         },
         "onClick": { "components/Modal.tsx": 1 },
         "className": { "components/Modal.tsx": 1 },
@@ -1979,13 +1979,6 @@
       "totalCallSites": 1,
       "presentationalProps": [{ "prop": "style", "callSite": "utils/i18n.tsx" }],
       "propsWithCallSites": { "style": { "utils/i18n.tsx": 1 } }
-    },
-    {
-      "name": "MarketingApp",
-      "sourceFile": "entry/marketing/MarketingApp",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "AppWrapper"
     },
     {
       "name": "AppWrapper",
@@ -3260,6 +3253,13 @@
       "totalCallSites": 1,
       "presentationalProps": [{ "prop": "className", "callSite": "checkout/hosted/entry.tsx" }],
       "propsWithCallSites": { "className": { "checkout/hosted/entry.tsx": 1 } }
+    },
+    {
+      "name": "MarketingApp",
+      "sourceFile": "entry/marketing/MarketingApp",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "AppWrapper"
     },
     {
       "name": "HeaderWrapper",
@@ -6616,6 +6616,191 @@
       "presentationalElement": "strong"
     },
     {
+      "name": "SkipButton",
+      "sourceFile": "scenes/TfaReset/components/GenerateBackupCodes.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "propsWithCallSites": {
+        "disabled": { "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1 },
+        "onClick": { "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1 }
+      }
+    },
+    {
+      "name": "StorageStatus",
+      "sourceFile": "scenes/TfaReset/components/ResetComplete.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
+      "callSites": { "scenes/TfaReset/components/ResetComplete.tsx": 2 }
+    },
+    {
+      "name": "CheckboxLabel",
+      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Text"
+    },
+    {
+      "name": "BackupCodesContainer",
+      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "BackupCode",
+      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Text",
+      "callSites": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
+      "propsWithCallSites": {
+        "align": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
+        "key": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 }
+      }
+    },
+    {
+      "name": "BackupButton",
+      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "callSites": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
+      "propsWithCallSites": {
+        "onClick": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
+        "fullWidth": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
+        "mr": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 1 }
+      }
+    },
+    {
+      "name": "List",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ol"
+    },
+    {
+      "name": "ListItem",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "styledComponent": "li",
+      "callSites": { "scenes/TfaReset/components/TfaVerification.tsx": 4 }
+    },
+    {
+      "name": "InputForm",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "form",
+      "propsWithCallSites": { "onSubmit": { "scenes/TfaReset/components/TfaVerification.tsx": 1 } }
+    },
+    {
+      "name": "QRText",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Text"
+    },
+    {
+      "name": "HelperText",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Text",
+      "callSites": { "scenes/TfaReset/components/TfaVerification.tsx": 2 }
+    },
+    {
+      "name": "KeyText",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "span",
+      "callSites": { "scenes/TfaReset/components/TfaVerification.tsx": 2 },
+      "propsWithCallSites": { "onClick": { "scenes/TfaReset/components/TfaVerification.tsx": 2 } }
+    },
+    {
+      "name": "StaticContainer",
+      "sourceFile": "scenes/static/StaticLayout/StaticContainer",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "presentationalProps": [
+        { "prop": "style", "callSite": "scenes/static/Faq/Faq.tsx" },
+        { "prop": "style", "callSite": "scenes/static/Integrate/Integrate.tsx" }
+      ],
+      "callSites": {
+        "scenes/static/Faq/Faq.tsx": 1,
+        "scenes/static/Integrate/Integrate.tsx": 1,
+        "scenes/static/Integrate/IntegrationDetail.tsx": 1
+      },
+      "propsWithCallSites": {
+        "pt": {
+          "scenes/static/Faq/Faq.tsx": 1,
+          "scenes/static/Integrate/Integrate.tsx": 1,
+          "scenes/static/Integrate/IntegrationDetail.tsx": 1
+        },
+        "style": { "scenes/static/Faq/Faq.tsx": 1, "scenes/static/Integrate/Integrate.tsx": 1 }
+      }
+    },
+    {
+      "name": "Header",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "h1"
+    },
+    {
+      "name": "Link",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "a",
+      "callSites": { "scenes/static/Faq/Faq.tsx": 2 },
+      "propsWithCallSites": { "href": { "scenes/static/Faq/Faq.tsx": 2 } }
+    },
+    {
+      "name": "FaqContainer",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "QuestionSection",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Box",
+      "callSites": { "scenes/static/Faq/Faq.tsx": 2 }
+    },
+    {
+      "name": "SubHeader",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "h3",
+      "callSites": { "scenes/static/Faq/Faq.tsx": 2 },
+      "propsWithCallSites": { "id": { "scenes/static/Faq/Faq.tsx": 2 } }
+    },
+    {
+      "name": "Question",
+      "sourceFile": "scenes/static/Faq/Question",
+      "totalInstances": 36,
+      "totalCallSites": 1,
+      "presentationalElement": "Container",
+      "callSites": { "scenes/static/Faq/Faq.tsx": 36 },
+      "propsWithCallSites": { "title": { "scenes/static/Faq/Faq.tsx": 36 } }
+    },
+    {
+      "name": "QuestionSectionHeader",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 8,
+      "totalCallSites": 1,
+      "styledComponent": "h5",
+      "callSites": { "scenes/static/Faq/Faq.tsx": 8 }
+    },
+    {
       "name": "ApiKey",
       "sourceFile": "scenes/Settings/components/ApiKeyPanel.tsx",
       "totalInstances": 1,
@@ -7485,191 +7670,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "p"
-    },
-    {
-      "name": "SkipButton",
-      "sourceFile": "scenes/TfaReset/components/GenerateBackupCodes.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "disabled": { "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1 },
-        "onClick": { "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1 }
-      }
-    },
-    {
-      "name": "StorageStatus",
-      "sourceFile": "scenes/TfaReset/components/ResetComplete.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "callSites": { "scenes/TfaReset/components/ResetComplete.tsx": 2 }
-    },
-    {
-      "name": "CheckboxLabel",
-      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text"
-    },
-    {
-      "name": "BackupCodesContainer",
-      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "BackupCode",
-      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Text",
-      "callSites": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
-      "propsWithCallSites": {
-        "align": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
-        "key": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 }
-      }
-    },
-    {
-      "name": "BackupButton",
-      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "callSites": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
-      "propsWithCallSites": {
-        "onClick": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
-        "fullWidth": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 2 },
-        "mr": { "scenes/TfaReset/components/ShowBackupCodes.tsx": 1 }
-      }
-    },
-    {
-      "name": "List",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ol"
-    },
-    {
-      "name": "ListItem",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "styledComponent": "li",
-      "callSites": { "scenes/TfaReset/components/TfaVerification.tsx": 4 }
-    },
-    {
-      "name": "InputForm",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "form",
-      "propsWithCallSites": { "onSubmit": { "scenes/TfaReset/components/TfaVerification.tsx": 1 } }
-    },
-    {
-      "name": "QRText",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text"
-    },
-    {
-      "name": "HelperText",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Text",
-      "callSites": { "scenes/TfaReset/components/TfaVerification.tsx": 2 }
-    },
-    {
-      "name": "KeyText",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "span",
-      "callSites": { "scenes/TfaReset/components/TfaVerification.tsx": 2 },
-      "propsWithCallSites": { "onClick": { "scenes/TfaReset/components/TfaVerification.tsx": 2 } }
-    },
-    {
-      "name": "StaticContainer",
-      "sourceFile": "scenes/static/StaticLayout/StaticContainer",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "presentationalProps": [
-        { "prop": "style", "callSite": "scenes/static/Faq/Faq.tsx" },
-        { "prop": "style", "callSite": "scenes/static/Integrate/Integrate.tsx" }
-      ],
-      "callSites": {
-        "scenes/static/Faq/Faq.tsx": 1,
-        "scenes/static/Integrate/Integrate.tsx": 1,
-        "scenes/static/Integrate/IntegrationDetail.tsx": 1
-      },
-      "propsWithCallSites": {
-        "pt": {
-          "scenes/static/Faq/Faq.tsx": 1,
-          "scenes/static/Integrate/Integrate.tsx": 1,
-          "scenes/static/Integrate/IntegrationDetail.tsx": 1
-        },
-        "style": { "scenes/static/Faq/Faq.tsx": 1, "scenes/static/Integrate/Integrate.tsx": 1 }
-      }
-    },
-    {
-      "name": "Header",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "h1"
-    },
-    {
-      "name": "Link",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "a",
-      "callSites": { "scenes/static/Faq/Faq.tsx": 2 },
-      "propsWithCallSites": { "href": { "scenes/static/Faq/Faq.tsx": 2 } }
-    },
-    {
-      "name": "FaqContainer",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "QuestionSection",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Box",
-      "callSites": { "scenes/static/Faq/Faq.tsx": 2 }
-    },
-    {
-      "name": "SubHeader",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "h3",
-      "callSites": { "scenes/static/Faq/Faq.tsx": 2 },
-      "propsWithCallSites": { "id": { "scenes/static/Faq/Faq.tsx": 2 } }
-    },
-    {
-      "name": "Question",
-      "sourceFile": "scenes/static/Faq/Question",
-      "totalInstances": 36,
-      "totalCallSites": 1,
-      "presentationalElement": "Container",
-      "callSites": { "scenes/static/Faq/Faq.tsx": 36 },
-      "propsWithCallSites": { "title": { "scenes/static/Faq/Faq.tsx": 36 } }
-    },
-    {
-      "name": "QuestionSectionHeader",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 8,
-      "totalCallSites": 1,
-      "styledComponent": "h5",
-      "callSites": { "scenes/static/Faq/Faq.tsx": 8 }
     },
     {
       "name": "Header",
@@ -8577,9 +8577,9 @@
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 2,
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 2,
-        "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
         "scenes/TfaReset/components/TfaVerification.tsx": 2,
+        "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/PointOfSale/components/desktop/NetworkPicker.tsx": 1,
         "scenes/PointOfSale/components/desktop/OrderSummary.tsx": 1,
         "scenes/PointOfSale/components/desktop/ProductsList.tsx": 1,
@@ -8599,18 +8599,18 @@
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-          "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/TfaVerification.tsx": 1,
+          "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderSummary.tsx": 1
         },
         "inverted": {
           "components/Signup/LightSignupForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-          "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/TfaVerification.tsx": 1,
+          "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderSummary.tsx": 1
         }
       }
@@ -8622,8 +8622,8 @@
       "totalCallSites": 4,
       "callSites": {
         "index.tsx": 1,
-        "entry/marketing/index.tsx": 1,
         "checkout/hosted/entry.tsx": 1,
+        "entry/marketing/index.tsx": 1,
         "scenes/PointOfSale/entry.tsx": 1
       }
     },
@@ -8635,9 +8635,9 @@
       "callSites": {
         "index.tsx": 1,
         "oauth/entry.tsx": 1,
-        "entry/marketing/index.tsx": 1,
         "checkout/embedded/index.tsx": 1,
         "checkout/hosted/entry.tsx": 1,
+        "entry/marketing/index.tsx": 1,
         "scenes/PointOfSale/entry.tsx": 1
       }
     },
@@ -8656,9 +8656,9 @@
       "totalCallSites": 5,
       "callSites": {
         "index.tsx": 1,
-        "entry/marketing/index.tsx": 1,
         "checkout/embedded/index.tsx": 1,
         "checkout/hosted/entry.tsx": 1,
+        "entry/marketing/index.tsx": 1,
         "scenes/PointOfSale/entry.tsx": 1
       }
     },
@@ -8706,17 +8706,17 @@
       "totalCallSites": 5,
       "callSites": {
         "index.tsx": 1,
-        "entry/marketing/index.tsx": 1,
         "checkout/embedded/index.tsx": 1,
         "checkout/hosted/entry.tsx": 1,
+        "entry/marketing/index.tsx": 1,
         "scenes/PointOfSale/entry.tsx": 1
       },
       "propsWithCallSites": {
         "history": {
           "index.tsx": 1,
-          "entry/marketing/index.tsx": 1,
           "checkout/embedded/index.tsx": 1,
           "checkout/hosted/entry.tsx": 1,
+          "entry/marketing/index.tsx": 1,
           "scenes/PointOfSale/entry.tsx": 1
         }
       }
@@ -8891,6 +8891,11 @@
         "scenes/PointOfSale/components/PaymentScreen.tsx": 13,
         "scenes/ResetPassword/components/CompletePasswordReset.tsx": 9,
         "scenes/ResetPassword/components/RequestPasswordReset.tsx": 7,
+        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 4,
+        "scenes/TfaReset/components/ResetComplete.tsx": 4,
+        "scenes/TfaReset/components/ShowBackupCodes.tsx": 6,
+        "scenes/TfaReset/components/TfaVerification.tsx": 10,
+        "scenes/static/Faq/Faq.tsx": 103,
         "scenes/Settings/components/ApiKeyPanel.tsx": 7,
         "scenes/Settings/components/BrandingPanel.tsx": 1,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 4,
@@ -8920,11 +8925,6 @@
         "scenes/Settings/components/WebhookTestModal.tsx": 7,
         "scenes/Settings/components/WidgetOriginModal.tsx": 5,
         "scenes/Settings/components/WidgetOriginsPanel.tsx": 5,
-        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 4,
-        "scenes/TfaReset/components/ResetComplete.tsx": 4,
-        "scenes/TfaReset/components/ShowBackupCodes.tsx": 6,
-        "scenes/TfaReset/components/TfaVerification.tsx": 10,
-        "scenes/static/Faq/Faq.tsx": 103,
         "scenes/static/Integrate/Integrate.tsx": 2,
         "scenes/static/Integrate/IntegrationCard.tsx": 2,
         "scenes/static/Integrate/IntegrationDetailFooter.tsx": 2,
@@ -8981,6 +8981,8 @@
           "scenes/PointOfSale/components/PaymentScreen.tsx": 4,
           "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
+          "scenes/static/Faq/Faq.tsx": 18,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/CloseAccountPanel.tsx": 1,
           "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
@@ -8989,8 +8991,6 @@
           "scenes/Settings/components/ProfilePanelEmailChange.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WebhookTestModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
-          "scenes/static/Faq/Faq.tsx": 18,
           "scenes/static/Integrate/WooCommerce.tsx": 5,
           "scenes/PointOfSale/components/desktop/OrderLayout.tsx": 1,
           "scenes/PointOfSale/components/mobile/OrderSummary.tsx": 1
@@ -9064,6 +9064,10 @@
         "scenes/PointOfSale/components/PaymentScreen.tsx": 1,
         "scenes/ResetPassword/components/CompletePasswordReset.tsx": 3,
         "scenes/ResetPassword/components/RequestPasswordReset.tsx": 2,
+        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
+        "scenes/TfaReset/components/ResetComplete.tsx": 1,
+        "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
+        "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 1,
         "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/Settings/components/CloseAccountModal.tsx": 1,
@@ -9081,10 +9085,6 @@
         "scenes/Settings/components/WebhookSecretModal.tsx": 1,
         "scenes/Settings/components/WebhookTestModal.tsx": 1,
         "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
-        "scenes/TfaReset/components/ResetComplete.tsx": 1,
-        "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
-        "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/static/Weipay/Weipay.tsx": 1
       },
       "propsWithCallSites": {
@@ -9111,6 +9111,10 @@
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/CompletePasswordReset.tsx": 3,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 2,
+          "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
+          "scenes/TfaReset/components/ResetComplete.tsx": 1,
+          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/CloudBackupPanel.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
@@ -9125,10 +9129,6 @@
           "scenes/Settings/components/WebhookSecretModal.tsx": 1,
           "scenes/Settings/components/WebhookTestModal.tsx": 1,
           "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
-          "scenes/TfaReset/components/ResetComplete.tsx": 1,
-          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/static/Weipay/Weipay.tsx": 1
         },
         "children": {
@@ -9203,6 +9203,9 @@
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
+          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
           "scenes/Settings/components/EmailChangeModal.tsx": 1,
           "scenes/Settings/components/FlexiblePaymentAcceptancePanel.tsx": 1,
@@ -9211,10 +9214,7 @@
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WebhookSecretModal.tsx": 1,
           "scenes/Settings/components/WebhookTestModal.tsx": 1,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
-          "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "radius": {
           "checkout/components/NetworkPicker.tsx": 1,
@@ -9299,6 +9299,7 @@
         "scenes/Signin/Signin.tsx": 2,
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
         "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1,
+        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 1,
         "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/Settings/components/CloseAccountModal.tsx": 1,
@@ -9308,8 +9309,7 @@
         "scenes/Settings/components/ProfilePanelEmailLocale.tsx": 1,
         "scenes/Settings/components/ProfilePanelLocalCurrency.tsx": 1,
         "scenes/Settings/components/WebhookEventModal.tsx": 1,
-        "scenes/Settings/components/WebhookTestModal.tsx": 2,
-        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1
+        "scenes/Settings/components/WebhookTestModal.tsx": 2
       },
       "propsWithCallSites": {
         "m": {
@@ -9671,8 +9671,8 @@
       "totalCallSites": 11,
       "callSites": {
         "components/ConfirmEmailRedirect.tsx": 1,
-        "scenes/Confirm/Confirm.tsx": 1,
         "scenes/Confirmation/Confirmation.tsx": 1,
+        "scenes/Confirm/Confirm.tsx": 1,
         "scenes/Downtime/Downtime.tsx": 1,
         "scenes/MaintenanceMode/MaintenanceMode.tsx": 1,
         "scenes/PointOfSale/PairingScreen.tsx": 1,
@@ -9690,8 +9690,8 @@
       "totalCallSites": 12,
       "callSites": {
         "components/ConfirmEmailRedirect.tsx": 1,
-        "scenes/Confirm/Confirm.tsx": 3,
         "scenes/Confirmation/Confirmation.tsx": 1,
+        "scenes/Confirm/Confirm.tsx": 3,
         "scenes/Downtime/Downtime.tsx": 1,
         "scenes/PointOfSale/PairingScreen.tsx": 1,
         "scenes/Reconfirm/Reconfirm.tsx": 2,
@@ -9717,8 +9717,8 @@
       "totalCallSites": 12,
       "callSites": {
         "components/ConfirmEmailRedirect.tsx": 1,
-        "scenes/Confirm/Confirm.tsx": 3,
         "scenes/Confirmation/Confirmation.tsx": 1,
+        "scenes/Confirm/Confirm.tsx": 3,
         "scenes/Downtime/Downtime.tsx": 1,
         "scenes/MaintenanceMode/MaintenanceMode.tsx": 1,
         "scenes/PointOfSale/PairingScreen.tsx": 1,
@@ -10088,8 +10088,8 @@
         "components/Layouts/AuthLayout/AuthComponents.tsx": 1,
         "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
         "scenes/Onboarding/components/Stepper.tsx": 2,
-        "scenes/Settings/components/CloudBackupPanel.tsx": 1,
         "scenes/TfaReset/components/ResetComplete.tsx": 2,
+        "scenes/Settings/components/CloudBackupPanel.tsx": 1,
         "scenes/static/Integrate/Shopify.tsx": 1,
         "scenes/static/Integrate/WooCommerce.tsx": 1,
         "scenes/static/Jaxx/Jaxx.tsx": 6
@@ -10100,8 +10100,8 @@
           "scenes/TfaReset/TfaReset.tsx": 1,
           "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
           "scenes/Onboarding/components/Stepper.tsx": 2,
-          "scenes/Settings/components/CloudBackupPanel.tsx": 1,
           "scenes/TfaReset/components/ResetComplete.tsx": 2,
+          "scenes/Settings/components/CloudBackupPanel.tsx": 1,
           "scenes/static/Integrate/Shopify.tsx": 1,
           "scenes/static/Integrate/WooCommerce.tsx": 1,
           "scenes/static/Jaxx/Jaxx.tsx": 6
@@ -10140,8 +10140,8 @@
           "scenes/Settings/components/CloudBackupPanel.tsx": 1
         },
         "mr": {
-          "scenes/Settings/components/CloudBackupPanel.tsx": 1,
-          "scenes/TfaReset/components/ResetComplete.tsx": 2
+          "scenes/TfaReset/components/ResetComplete.tsx": 2,
+          "scenes/Settings/components/CloudBackupPanel.tsx": 1
         }
       }
     },
@@ -10203,11 +10203,11 @@
         "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
         "scenes/Onboarding/components/EmailVerified.tsx": 1,
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
-        "scenes/Settings/components/BrandingPanelLogo.tsx": 1,
-        "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
         "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
         "scenes/TfaReset/components/ResetComplete.tsx": 1,
         "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
+        "scenes/Settings/components/BrandingPanelLogo.tsx": 1,
+        "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
         "scenes/PointOfSale/components/desktop/OrderLayout.tsx": 1,
         "scenes/PointOfSale/components/desktop/OrderList.tsx": 1,
         "scenes/PointOfSale/components/desktop/ProductsList.tsx": 1,
@@ -10240,11 +10240,11 @@
           "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
           "scenes/Onboarding/components/EmailVerified.tsx": 1,
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
-          "scenes/Settings/components/BrandingPanelLogo.tsx": 1,
-          "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/ResetComplete.tsx": 1,
           "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
+          "scenes/Settings/components/BrandingPanelLogo.tsx": 1,
+          "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderLayout.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderList.tsx": 1,
           "scenes/PointOfSale/components/desktop/ProductsList.tsx": 1,
@@ -10276,10 +10276,10 @@
           "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
           "scenes/Onboarding/components/EmailVerified.tsx": 1,
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
-          "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/ResetComplete.tsx": 1,
           "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
+          "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderLayout.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderList.tsx": 1,
           "scenes/PointOfSale/components/desktop/ProductsList.tsx": 1,
@@ -10311,10 +10311,10 @@
           "components/Layouts/DashboardLayout/Sidebar.tsx": 2,
           "scenes/Onboarding/components/EmailVerified.tsx": 1,
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
-          "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/ResetComplete.tsx": 1,
           "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
+          "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderLayout.tsx": 1,
           "scenes/PointOfSale/components/desktop/OrderList.tsx": 1,
           "scenes/PointOfSale/components/desktop/ProductsList.tsx": 1,
@@ -10377,15 +10377,15 @@
         "scenes/PointOfSale/components/PaymentScreen.tsx": 1,
         "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2,
         "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 2,
+        "scenes/TfaReset/components/ResetComplete.tsx": 1,
+        "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
+        "scenes/TfaReset/components/TfaVerification.tsx": 3,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 1,
         "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/Settings/components/CloseAccountModal.tsx": 2,
         "scenes/Settings/components/PasswordChangeModal.tsx": 1,
         "scenes/Settings/components/ProfilePanelEmailChange.tsx": 1,
-        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 2,
-        "scenes/TfaReset/components/ResetComplete.tsx": 1,
-        "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
-        "scenes/TfaReset/components/TfaVerification.tsx": 3,
         "scenes/PointOfSale/components/desktop/OrderSummary.tsx": 1,
         "scenes/PointOfSale/components/mobile/NetworkPicker.tsx": 1,
         "scenes/PointOfSale/components/mobile/OrderSummary.tsx": 1,
@@ -10576,37 +10576,6 @@
       "callSites": { "components/ToggleSwitch.tsx": 3 }
     },
     {
-      "name": "ExperimentProvider",
-      "sourceFile": "@cbhq/experiments/ExperimentProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "experiments": { "providers/ExperimentProvider.tsx": 1 },
-        "trackExposure": { "providers/ExperimentProvider.tsx": 1 }
-      }
-    },
-    {
-      "name": "IntlProvider",
-      "sourceFile": "react-intl/IntlProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "locale": { "providers/I18NProvider.tsx": 1 },
-        "messages": { "providers/I18NProvider.tsx": 1 }
-      }
-    },
-    {
-      "name": "Provider",
-      "sourceFile": "mobx-react/Provider",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "providers/MobxI18nProvider.tsx": 1,
-        "checkout/embedded/index.tsx": 1,
-        "checkout/hosted/entry.tsx": 1
-      }
-    },
-    {
       "name": "Downtime",
       "sourceFile": "scenes/Downtime",
       "totalInstances": 2,
@@ -10676,6 +10645,37 @@
       "totalCallSites": 1
     },
     {
+      "name": "ExperimentProvider",
+      "sourceFile": "@cbhq/experiments/ExperimentProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "experiments": { "providers/ExperimentProvider.tsx": 1 },
+        "trackExposure": { "providers/ExperimentProvider.tsx": 1 }
+      }
+    },
+    {
+      "name": "IntlProvider",
+      "sourceFile": "react-intl/IntlProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "locale": { "providers/I18NProvider.tsx": 1 },
+        "messages": { "providers/I18NProvider.tsx": 1 }
+      }
+    },
+    {
+      "name": "Provider",
+      "sourceFile": "mobx-react/Provider",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "providers/MobxI18nProvider.tsx": 1,
+        "checkout/embedded/index.tsx": 1,
+        "checkout/hosted/entry.tsx": 1
+      }
+    },
+    {
       "name": "BaseFormattedMessageFixed",
       "sourceFile": "utils/i18n.tsx",
       "totalInstances": 1,
@@ -10709,29 +10709,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "onClick": { "utils/tracking.tsx": 1 } }
-    },
-    {
-      "name": "Route",
-      "sourceFile": "react-router/Route",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "callSites": { "entry/marketing/index.tsx": 5 },
-      "propsWithCallSites": {
-        "path": { "entry/marketing/index.tsx": 5 },
-        "component": { "entry/marketing/index.tsx": 5 }
-      }
-    },
-    {
-      "name": "Redirect",
-      "sourceFile": "react-router/Redirect",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "callSites": { "entry/marketing/index.tsx": 1, "checkout/hosted/Redirects.tsx": 2 },
-      "propsWithCallSites": {
-        "strict": { "entry/marketing/index.tsx": 1 },
-        "from": { "entry/marketing/index.tsx": 1 },
-        "to": { "entry/marketing/index.tsx": 1, "checkout/hosted/Redirects.tsx": 2 }
-      }
     },
     {
       "name": "DesignFeatureFlagProvider",
@@ -11157,12 +11134,12 @@
         "components/Layouts/DashboardLayout/Footer.tsx": 5,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
+        "scenes/TfaReset/components/TfaVerification.tsx": 1,
+        "scenes/static/Faq/Faq.tsx": 18,
         "scenes/Settings/components/ApiKeyPanel.tsx": 1,
         "scenes/Settings/components/DepositPanel.tsx": 1,
         "scenes/Settings/components/WebhookPanel.tsx": 2,
         "scenes/Settings/components/WidgetOriginsPanel.tsx": 1,
-        "scenes/TfaReset/components/TfaVerification.tsx": 1,
-        "scenes/static/Faq/Faq.tsx": 18,
         "scenes/static/Integrate/IntegrationCard.tsx": 1,
         "scenes/static/Jaxx/Jaxx.tsx": 2
       },
@@ -11180,12 +11157,12 @@
           "components/Layouts/DashboardLayout/Footer.tsx": 5,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
+          "scenes/static/Faq/Faq.tsx": 18,
           "scenes/Settings/components/ApiKeyPanel.tsx": 1,
           "scenes/Settings/components/DepositPanel.tsx": 1,
           "scenes/Settings/components/WebhookPanel.tsx": 2,
           "scenes/Settings/components/WidgetOriginsPanel.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
-          "scenes/static/Faq/Faq.tsx": 18,
           "scenes/static/Jaxx/Jaxx.tsx": 2
         },
         "is": { "checkout/components/FailedPayment.tsx": 3 },
@@ -11689,10 +11666,33 @@
       }
     },
     {
+      "name": "Redirect",
+      "sourceFile": "react-router/Redirect",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "callSites": { "checkout/hosted/Redirects.tsx": 2, "entry/marketing/index.tsx": 1 },
+      "propsWithCallSites": {
+        "to": { "checkout/hosted/Redirects.tsx": 2, "entry/marketing/index.tsx": 1 },
+        "strict": { "entry/marketing/index.tsx": 1 },
+        "from": { "entry/marketing/index.tsx": 1 }
+      }
+    },
+    {
       "name": "HostedAppWrapper",
       "sourceFile": "checkout/hosted/entry.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "Route",
+      "sourceFile": "react-router/Route",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "callSites": { "entry/marketing/index.tsx": 5 },
+      "propsWithCallSites": {
+        "path": { "entry/marketing/index.tsx": 5 },
+        "component": { "entry/marketing/index.tsx": 5 }
+      }
     },
     {
       "name": "TooltipIcon",
@@ -13377,8 +13377,8 @@
         "scenes/MaintenanceMode/MaintenanceMode.tsx": 2,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-        "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
         "scenes/TfaReset/components/TfaVerification.tsx": 1,
+        "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
         "scenes/static/Integrate/Shopify.tsx": 1
       }
     },
@@ -13424,6 +13424,13 @@
       "sourceFile": "scenes/MaintenanceMode/MaintenanceMode.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "br",
+      "sourceFile": "scenes/NotFound/NotFound.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "scenes/NotFound/NotFound.tsx": 2 }
     },
     {
       "name": "OnboardingLayout",
@@ -13498,13 +13505,6 @@
       }
     },
     {
-      "name": "br",
-      "sourceFile": "scenes/NotFound/NotFound.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "scenes/NotFound/NotFound.tsx": 2 }
-    },
-    {
       "name": "PointOfSale",
       "sourceFile": "scenes/PointOfSale/PointOfSale",
       "totalInstances": 1,
@@ -13528,10 +13528,10 @@
         "components/ProductFlow/components/EditForm.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+        "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/Settings/components/WebhookModal.tsx": 1,
         "scenes/Settings/components/WebhookSecretModal.tsx": 1,
-        "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-        "scenes/TfaReset/components/TfaVerification.tsx": 1
+        "scenes/Settings/components/WidgetOriginModal.tsx": 1
       },
       "propsWithCallSites": {
         "onChange": {
@@ -13540,10 +13540,10 @@
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WebhookSecretModal.tsx": 1,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "placeholder": {
           "scenes/PointOfSale/PairingScreen.tsx": 1,
@@ -13551,10 +13551,10 @@
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WebhookSecretModal.tsx": 1,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "value": {
           "scenes/PointOfSale/PairingScreen.tsx": 1,
@@ -13562,9 +13562,9 @@
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "autoFocus": {
           "scenes/PointOfSale/PairingScreen.tsx": 1,
@@ -13572,9 +13572,9 @@
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "autoComplete": {
           "scenes/PointOfSale/PairingScreen.tsx": 1,
@@ -13669,8 +13669,8 @@
         "scenes/PosSetup/PosSetup.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-        "scenes/Settings/components/WebhookSecretModal.tsx": 1,
-        "scenes/TfaReset/components/TfaVerification.tsx": 1
+        "scenes/TfaReset/components/TfaVerification.tsx": 1,
+        "scenes/Settings/components/WebhookSecretModal.tsx": 1
       },
       "propsWithCallSites": {
         "w": { "scenes/PosSetup/PosSetup.tsx": 1 },
@@ -13678,8 +13678,8 @@
           "scenes/PosSetup/PosSetup.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-          "scenes/Settings/components/WebhookSecretModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
+          "scenes/Settings/components/WebhookSecretModal.tsx": 1
         },
         "mb": {
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
@@ -13901,13 +13901,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "TfaResetProcess",
-      "sourceFile": "scenes/TfaReset/components/TfaResetProcess",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "user": { "scenes/TfaReset/TfaReset.tsx": 1 } }
-    },
-    {
       "name": "form",
       "sourceFile": "scenes/Signin/Signin.tsx",
       "totalInstances": 3,
@@ -13972,6 +13965,13 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "setModal": { "scenes/Signin/Signin.tsx": 1 } }
+    },
+    {
+      "name": "TfaResetProcess",
+      "sourceFile": "scenes/TfaReset/components/TfaResetProcess",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "user": { "scenes/TfaReset/TfaReset.tsx": 1 } }
     },
     {
       "name": "div",
@@ -14551,6 +14551,136 @@
       "totalCallSites": 1
     },
     {
+      "name": "TfaVerification",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
+        "user": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 }
+      }
+    },
+    {
+      "name": "GenerateBackupCodes",
+      "sourceFile": "scenes/TfaReset/components/GenerateBackupCodes",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 } }
+    },
+    {
+      "name": "ShowBackupCodes",
+      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
+        "backupCodes": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
+        "accepted": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 }
+      }
+    },
+    {
+      "name": "ResetComplete",
+      "sourceFile": "scenes/TfaReset/components/ResetComplete",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
+        "user": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
+        "generatedBackupCodes": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 }
+      }
+    },
+    {
+      "name": "QRWrapper",
+      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "textView": { "scenes/TfaReset/components/TfaVerification.tsx": 1 } }
+    },
+    {
+      "name": "QRCode",
+      "sourceFile": "scenes/TfaReset/components/qrcode.react/QRCode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "size": { "scenes/TfaReset/components/TfaVerification.tsx": 1 },
+        "level": { "scenes/TfaReset/components/TfaVerification.tsx": 1 },
+        "value": { "scenes/TfaReset/components/TfaVerification.tsx": 1 }
+      }
+    },
+    {
+      "name": "StaticLayout",
+      "sourceFile": "scenes/static/StaticLayout",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "scenes/static/Faq/Faq.tsx": 1,
+        "scenes/static/Integrate/Integrate.tsx": 1,
+        "scenes/static/Integrate/IntegrationDetail.tsx": 1
+      },
+      "propsWithCallSites": { "bg": { "scenes/static/Integrate/IntegrationDetail.tsx": 1 } }
+    },
+    {
+      "name": "meta",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "name": { "scenes/static/Faq/Faq.tsx": 1 },
+        "content": { "scenes/static/Faq/Faq.tsx": 1 }
+      }
+    },
+    {
+      "name": "link",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "href": { "scenes/static/Faq/Faq.tsx": 1 },
+        "rel": { "scenes/static/Faq/Faq.tsx": 1 }
+      }
+    },
+    {
+      "name": "title",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "br",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 35,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Faq/Faq.tsx": 35 }
+    },
+    {
+      "name": "b",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Faq/Faq.tsx": 2 }
+    },
+    {
+      "name": "ul",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 6,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Faq/Faq.tsx": 6 }
+    },
+    {
+      "name": "li",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 21,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Faq/Faq.tsx": 21 }
+    },
+    {
+      "name": "ol",
+      "sourceFile": "scenes/static/Faq/Faq.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Faq/Faq.tsx": 2 }
+    },
+    {
       "name": "BusinessName",
       "sourceFile": "scenes/Settings/components/BrandingPanelBusinessName",
       "totalInstances": 1,
@@ -15113,136 +15243,6 @@
         "store": { "scenes/Settings/components/WidgetOriginsPanel.tsx": 1 },
         "close": { "scenes/Settings/components/WidgetOriginsPanel.tsx": 1 }
       }
-    },
-    {
-      "name": "TfaVerification",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
-        "user": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 }
-      }
-    },
-    {
-      "name": "GenerateBackupCodes",
-      "sourceFile": "scenes/TfaReset/components/GenerateBackupCodes",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 } }
-    },
-    {
-      "name": "ShowBackupCodes",
-      "sourceFile": "scenes/TfaReset/components/ShowBackupCodes",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
-        "backupCodes": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
-        "accepted": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 }
-      }
-    },
-    {
-      "name": "ResetComplete",
-      "sourceFile": "scenes/TfaReset/components/ResetComplete",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "store": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
-        "user": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 },
-        "generatedBackupCodes": { "scenes/TfaReset/components/TfaResetProcess.tsx": 1 }
-      }
-    },
-    {
-      "name": "QRWrapper",
-      "sourceFile": "scenes/TfaReset/components/TfaVerification.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "textView": { "scenes/TfaReset/components/TfaVerification.tsx": 1 } }
-    },
-    {
-      "name": "QRCode",
-      "sourceFile": "scenes/TfaReset/components/qrcode.react/QRCode",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "size": { "scenes/TfaReset/components/TfaVerification.tsx": 1 },
-        "level": { "scenes/TfaReset/components/TfaVerification.tsx": 1 },
-        "value": { "scenes/TfaReset/components/TfaVerification.tsx": 1 }
-      }
-    },
-    {
-      "name": "StaticLayout",
-      "sourceFile": "scenes/static/StaticLayout",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "scenes/static/Faq/Faq.tsx": 1,
-        "scenes/static/Integrate/Integrate.tsx": 1,
-        "scenes/static/Integrate/IntegrationDetail.tsx": 1
-      },
-      "propsWithCallSites": { "bg": { "scenes/static/Integrate/IntegrationDetail.tsx": 1 } }
-    },
-    {
-      "name": "meta",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "name": { "scenes/static/Faq/Faq.tsx": 1 },
-        "content": { "scenes/static/Faq/Faq.tsx": 1 }
-      }
-    },
-    {
-      "name": "link",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": { "scenes/static/Faq/Faq.tsx": 1 },
-        "rel": { "scenes/static/Faq/Faq.tsx": 1 }
-      }
-    },
-    {
-      "name": "title",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "br",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 35,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Faq/Faq.tsx": 35 }
-    },
-    {
-      "name": "b",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Faq/Faq.tsx": 2 }
-    },
-    {
-      "name": "ul",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 6,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Faq/Faq.tsx": 6 }
-    },
-    {
-      "name": "li",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 21,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Faq/Faq.tsx": 21 }
-    },
-    {
-      "name": "ol",
-      "sourceFile": "scenes/static/Faq/Faq.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Faq/Faq.tsx": 2 }
     },
     {
       "name": "link",
