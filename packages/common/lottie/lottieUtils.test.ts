@@ -1,6 +1,11 @@
 import { LottieSource } from '../types';
 
-import { getLottieFrameToMs, getLottieMarkers } from './lottieUtils';
+import {
+  getLottieDuration,
+  getLottieFrameRate,
+  getLottieFrameToMs,
+  getLottieMarkers,
+} from './lottieUtils';
 
 describe('lottieUtils', () => {
   it('getLottieFrameToMs - frame / frameRate and multiply by 1000 to convert to milliseconds', () => {
@@ -24,5 +29,32 @@ describe('lottieUtils', () => {
     ).toEqual({
       marker1: 10,
     });
+
+    expect(
+      getLottieMarkers(
+        {
+          fr: 20,
+          markers: [
+            {
+              // Animation frame of marker
+              tm: 10,
+              // Marker name
+              cm: 'marker1',
+            },
+          ],
+        } as LottieSource,
+        { ms: true },
+      ),
+    ).toEqual({
+      marker1: 500,
+    });
+  });
+
+  it('getLottieFrameRate', () => {
+    expect(getLottieFrameRate({ fr: 30 } as LottieSource)).toBe(30);
+  });
+
+  it('getLottieDuration', () => {
+    expect(getLottieDuration({ fr: 60, op: 30 } as LottieSource)).toBe(500);
   });
 });

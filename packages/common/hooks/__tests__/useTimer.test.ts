@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useTimer } from '../useTimer';
 
-jest.useFakeTimers('legacy');
+jest.useFakeTimers();
 jest.spyOn(global, 'setTimeout');
 jest.spyOn(global, 'clearTimeout');
 
@@ -28,6 +28,8 @@ describe('useTimer', () => {
 
     act(() => result.current.start(callback, duration));
 
+    expect(callback).not.toHaveBeenCalled();
+
     jest.advanceTimersByTime(duration);
 
     expect(setTimeout).toHaveBeenCalledTimes(1);
@@ -38,36 +40,36 @@ describe('useTimer', () => {
   it('pauses timer and returns remaining time', () => {
     const { result } = renderHook(() => useTimer());
     const callback = jest.fn();
-    const duration = 500;
-    const timeout = 200;
+    const duration = 1000;
+    const timeout = 500;
     const expectedRemainingTime = duration - timeout;
+    let remainingTime;
 
-    act(() => result.current.start(callback, duration));
+    act(() => {
+      result.current.start(callback, duration);
+      jest.advanceTimersByTime(timeout);
+      remainingTime = result.current.pause();
+    });
 
-    setTimeout(() => {
-      expect(result.current.pause()).toBe(expectedRemainingTime);
-      expect(clearTimeout).toHaveBeenCalledTimes(1);
-    }, timeout);
+    expect(remainingTime).toBe(expectedRemainingTime);
+    expect(clearTimeout).toHaveBeenCalledTimes(2);
   });
 
   it('resumes timer', () => {
     const { result } = renderHook(() => useTimer());
     const callback = jest.fn();
     const duration = 500;
-    let remainingTime: number;
+    let remainingTime;
 
-    act(() => result.current.start(callback, duration));
+    act(() => {
+      result.current.start(callback, duration);
+      jest.advanceTimersByTime(200);
+      remainingTime = result.current.pause();
+      result.current.resume();
+    });
 
-    setTimeout(() => {
-      act(() => {
-        remainingTime = result.current.pause();
-        result.current.resume();
-      });
-
-      expect(setTimeout).toHaveBeenCalledTimes(1);
-      expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), remainingTime);
-      expect(callback).toHaveBeenCalledTimes(1);
-    }, 200);
+    expect(setTimeout).toHaveBeenCalledTimes(3);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), remainingTime);
   });
 
   it('clears timer', () => {
@@ -77,11 +79,9 @@ describe('useTimer', () => {
 
     act(() => {
       result.current.start(callback, duration);
+      result.current.clear();
     });
 
-    setTimeout(() => {
-      result.current.clear();
-      expect(clearTimeout).toHaveBeenCalledTimes(1);
-    }, 200);
+    expect(clearTimeout).toHaveBeenCalledTimes(2);
   });
 });
