@@ -27,7 +27,6 @@ const DEFAULT_PRESENTATIONAL_LIBRARIES = [
   'react-modal',
   'react-native-linear-gradient',
   'react-native-reanimated',
-  'react-native-svg',
   'react-select',
   'antd',
 ];
@@ -38,6 +37,7 @@ const DEFAULT_PRESENTATIONAL_ELEMENTS = [
   'select',
   'strong',
   'svg',
+  'Svg',
   'table',
   'thead',
   'tr',

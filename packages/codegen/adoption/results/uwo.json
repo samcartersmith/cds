@@ -838,211 +838,6 @@
       "styledComponent": "div"
     },
     {
-      "name": "Container",
-      "sourceFile": "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "AccessoryContainer",
-      "sourceFile": "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "CarrotRight",
-      "sourceFile": "src/assets/icons/CarrotRight",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalElement": "svg",
-      "callSites": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2 }
-    },
-    {
-      "name": "AddManuallyButton",
-      "sourceFile": "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "AccessibleButtonBase",
-      "propsWithCallSites": {
-        "onClick": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "data-testid": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 }
-      }
-    },
-    {
-      "name": "Caption",
-      "sourceFile": "src/components/common/Caption",
-      "totalInstances": 5,
-      "totalCallSites": 4,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "src/components/common/form/Date/FieldGroupError.tsx" }
-      ],
-      "callSites": {
-        "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-        "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
-        "src/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-        "src/components/common/form/Date/FieldGroupError.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacing": { "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1 },
-        "color": {
-          "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
-          "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-          "src/components/common/form/Date/FieldGroupError.tsx": 1
-        },
-        "dangerouslySetStyle": { "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 },
-        "data-testid": { "src/components/common/form/Date/FieldGroupError.tsx": 1 },
-        "className": { "src/components/common/form/Date/FieldGroupError.tsx": 1 }
-      }
-    },
-    {
-      "name": "Form",
-      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "form",
-      "propsWithCallSites": {
-        "onSubmit": { "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1 }
-      }
-    },
-    {
-      "name": "TopInputRow",
-      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Row"
-    },
-    {
-      "name": "LabelOffseter",
-      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "BottomInputRow",
-      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Row"
-    },
-    {
-      "name": "SelectBoxWrapper",
-      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "MobileStateErrorWrapper",
-      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "DesktopStateErrorWrapper",
-      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Row",
-      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "CollapsibleWrapper",
-      "sourceFile": "src/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Text",
-      "sourceFile": "src/components/common/Text",
-      "totalInstances": 8,
-      "totalCallSites": 5,
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "src/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx"
-        },
-        {
-          "prop": "style",
-          "callSite": "src/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx"
-        }
-      ],
-      "callSites": {
-        "src/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
-        "src/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 2,
-        "src/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
-        "src/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
-        "src/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
-      },
-      "propsWithCallSites": {
-        "color": {
-          "src/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
-          "src/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1,
-          "src/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
-          "src/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
-          "src/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
-        },
-        "style": {
-          "src/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 2
-        }
-      }
-    },
-    {
-      "name": "ResponsiveInputWrapper",
-      "sourceFile": "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx"
-        }
-      ],
-      "styledComponent": "div",
-      "callSites": { "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2 },
-      "propsWithCallSites": {
-        "style": { "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 }
-      }
-    },
-    {
-      "name": "InputWrapper",
-      "sourceFile": "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx"
-        }
-      ],
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "style": { "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 }
-      }
-    },
-    {
-      "name": "Lock",
-      "sourceFile": "src/assets/icons/Lock",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "presentationalElement": "svg",
-      "callSites": {
-        "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-        "src/commonScenes/PersonalInfo/SsnField.tsx": 1,
-        "src/components/common/form/Date/DateFields.tsx": 1
-      }
-    },
-    {
       "name": "StyledDiamond",
       "sourceFile": "src/components/Tooltip/Tooltip.tsx",
       "totalInstances": 1,
@@ -1155,6 +950,211 @@
       }
     },
     {
+      "name": "Caption",
+      "sourceFile": "src/components/common/Caption",
+      "totalInstances": 5,
+      "totalCallSites": 4,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "src/components/common/form/Date/FieldGroupError.tsx" }
+      ],
+      "callSites": {
+        "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+        "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
+        "src/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+        "src/components/common/form/Date/FieldGroupError.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacing": { "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1 },
+        "color": {
+          "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+          "src/components/common/form/Date/FieldGroupError.tsx": 1
+        },
+        "dangerouslySetStyle": { "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 },
+        "data-testid": { "src/components/common/form/Date/FieldGroupError.tsx": 1 },
+        "className": { "src/components/common/form/Date/FieldGroupError.tsx": 1 }
+      }
+    },
+    {
+      "name": "Form",
+      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "form",
+      "propsWithCallSites": {
+        "onSubmit": { "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1 }
+      }
+    },
+    {
+      "name": "TopInputRow",
+      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Row"
+    },
+    {
+      "name": "LabelOffseter",
+      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "BottomInputRow",
+      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Row"
+    },
+    {
+      "name": "SelectBoxWrapper",
+      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "MobileStateErrorWrapper",
+      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "DesktopStateErrorWrapper",
+      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Row",
+      "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "AccessoryContainer",
+      "sourceFile": "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "CarrotRight",
+      "sourceFile": "src/assets/icons/CarrotRight",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalElement": "svg",
+      "callSites": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2 }
+    },
+    {
+      "name": "AddManuallyButton",
+      "sourceFile": "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "AccessibleButtonBase",
+      "propsWithCallSites": {
+        "onClick": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "data-testid": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "CollapsibleWrapper",
+      "sourceFile": "src/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Text",
+      "sourceFile": "src/components/common/Text",
+      "totalInstances": 8,
+      "totalCallSites": 5,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "src/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "src/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx"
+        }
+      ],
+      "callSites": {
+        "src/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
+        "src/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 2,
+        "src/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
+        "src/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
+        "src/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": {
+          "src/commonScenes/PersonalInfo/PersonalInfoCollapsible.tsx": 3,
+          "src/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1,
+          "src/experiences/nationality/Nationality/NationalityCollapsible.tsx": 1,
+          "src/experiences/edp/shared/components/EDPQuestionsCollapsible.tsx": 1,
+          "src/experiences/edp/shared/components/KBAQuestionsCollapsible.tsx": 1
+        },
+        "style": {
+          "src/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "ResponsiveInputWrapper",
+      "sourceFile": "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx"
+        }
+      ],
+      "styledComponent": "div",
+      "callSites": { "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2 },
+      "propsWithCallSites": {
+        "style": { "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "InputWrapper",
+      "sourceFile": "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx"
+        }
+      ],
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "style": { "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "Lock",
+      "sourceFile": "src/assets/icons/Lock",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "presentationalElement": "svg",
+      "callSites": {
+        "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+        "src/commonScenes/PersonalInfo/SsnField.tsx": 1,
+        "src/components/common/form/Date/DateFields.tsx": 1
+      }
+    },
+    {
       "name": "ResponsiveTwoColumnReverseLayout",
       "sourceFile": "src/components/common/layout/ResponsiveTwoColumnReverseLayout",
       "totalInstances": 11,
@@ -1213,29 +1213,15 @@
       "presentationalElement": "svg"
     },
     {
-      "name": "CollapsibleWrapper",
-      "sourceFile": "src/commonScenes/shared/components/CollapsibleSidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "CollapsibleWrapper",
-      "sourceFile": "src/commonScenes/shared/components/CollapsibleSidebarCDS.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "SecureAccountExplainer",
-      "sourceFile": "src/assets/icons/SecureAccountExplainer",
+      "name": "SecureAccountCheckpoint",
+      "sourceFile": "src/assets/icons/SecureAccountCheckpoint",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "svg"
     },
     {
-      "name": "SecureAccountCheckpoint",
-      "sourceFile": "src/assets/icons/SecureAccountCheckpoint",
+      "name": "SecureAccountExplainer",
+      "sourceFile": "src/assets/icons/SecureAccountExplainer",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "svg"
@@ -1280,6 +1266,20 @@
       "propsWithCallSites": {
         "hideRightOnMobile": { "src/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 }
       }
+    },
+    {
+      "name": "CollapsibleWrapper",
+      "sourceFile": "src/commonScenes/shared/components/CollapsibleSidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "CollapsibleWrapper",
+      "sourceFile": "src/commonScenes/shared/components/CollapsibleSidebarCDS.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "TextWrapper",
@@ -1577,6 +1577,43 @@
       }
     },
     {
+      "name": "Close",
+      "sourceFile": "src/components/common/interactables/toasts/Toast.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "onClick": { "src/components/common/interactables/toasts/Toast.tsx": 1 }
+      }
+    },
+    {
+      "name": "ToastClose",
+      "sourceFile": "src/assets/icons/ToastClose",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg"
+    },
+    {
+      "name": "Space",
+      "sourceFile": "src/components/common/interactables/toasts/ToastContainer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "ref": { "src/components/common/interactables/toasts/ToastContainer.tsx": 1 },
+        "fadeOutHeight": { "src/components/common/interactables/toasts/ToastContainer.tsx": 1 },
+        "shouldFadeOut": { "src/components/common/interactables/toasts/ToastContainer.tsx": 1 },
+        "hasRendered": { "src/components/common/interactables/toasts/ToastContainer.tsx": 1 }
+      }
+    },
+    {
+      "name": "Container",
+      "sourceFile": "src/components/common/interactables/toasts/Toasts.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "AsyncSelect",
       "sourceFile": "react-select/async/AsyncSelect",
       "totalInstances": 1,
@@ -1821,43 +1858,6 @@
       "propsWithCallSites": {
         "testID": { "src/components/common/interactables/inputs/TextInput.tsx": 1 }
       }
-    },
-    {
-      "name": "Close",
-      "sourceFile": "src/components/common/interactables/toasts/Toast.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "onClick": { "src/components/common/interactables/toasts/Toast.tsx": 1 }
-      }
-    },
-    {
-      "name": "ToastClose",
-      "sourceFile": "src/assets/icons/ToastClose",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg"
-    },
-    {
-      "name": "Space",
-      "sourceFile": "src/components/common/interactables/toasts/ToastContainer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "ref": { "src/components/common/interactables/toasts/ToastContainer.tsx": 1 },
-        "fadeOutHeight": { "src/components/common/interactables/toasts/ToastContainer.tsx": 1 },
-        "shouldFadeOut": { "src/components/common/interactables/toasts/ToastContainer.tsx": 1 },
-        "hasRendered": { "src/components/common/interactables/toasts/ToastContainer.tsx": 1 }
-      }
-    },
-    {
-      "name": "Container",
-      "sourceFile": "src/components/common/interactables/toasts/Toasts.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
     },
     {
       "name": "Container",
@@ -3236,8 +3236,8 @@
       "totalCallSites": 9,
       "callSites": {
         "src/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-        "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
         "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 4,
+        "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
         "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
         "src/commonScenes/PersonalInfo/SsnField.tsx": 1,
         "src/components/common/form/Address/Address.tsx": 3,
@@ -3280,8 +3280,8 @@
         },
         "name": {
           "src/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 4,
+          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
           "src/commonScenes/PersonalInfo/SsnField.tsx": 1,
           "src/components/common/form/Address/Address.tsx": 3,
@@ -3299,8 +3299,8 @@
         },
         "label": {
           "src/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
           "src/commonScenes/PersonalInfo/SsnField.tsx": 1
         },
@@ -3315,8 +3315,8 @@
         },
         "testID": {
           "src/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1
+          "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
         },
         "variant": {
           "src/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
@@ -3354,7 +3354,6 @@
           "src/components/common/interactables/inputs/SelectBox.tsx": 1
         },
         "id": { "src/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1 },
-        "autoFocus": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
         "maxLength": {
           "src/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
           "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
@@ -3363,6 +3362,7 @@
           "src/components/common/form/Date/Day.tsx": 1,
           "src/components/common/form/Date/Year.tsx": 1
         },
+        "autoFocus": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
         "onFocus": { "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2 },
         "labelIcon": { "src/commonScenes/PersonalInfo/SsnField.tsx": 1 },
         "data-testid": {
@@ -3378,141 +3378,59 @@
       }
     },
     {
-      "name": "AddressSceneLayout",
-      "sourceFile": "src/commonScenes/shared/components/AddressSceneLayout",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "name": "VStack",
+      "sourceFile": "src/components/common/primitives/VStack",
+      "totalInstances": 14,
+      "totalCallSites": 10,
       "callSites": {
-        "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-        "src/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1
+        "src/components/common/Banner.tsx": 2,
+        "src/components/common/core/listCell/ListCell.tsx": 4,
+        "src/components/common/form/Address/Address.tsx": 1,
+        "src/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
+        "src/components/common/interactables/inputs/PickSelect.tsx": 1,
+        "src/components/common/interactables/inputs/Select.tsx": 1,
+        "src/components/common/interactables/inputs/SelectBox.tsx": 1,
+        "src/components/common/interactables/inputs/TextInput.tsx": 1,
+        "src/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1,
+        "src/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1
       },
       "propsWithCallSites": {
-        "sceneTitle": {
-          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "src/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1
+        "spacing": {
+          "src/components/common/Banner.tsx": 2,
+          "src/components/common/core/listCell/ListCell.tsx": 4,
+          "src/components/common/form/Address/Address.tsx": 1,
+          "src/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
+          "src/components/common/interactables/inputs/PickSelect.tsx": 1,
+          "src/components/common/interactables/inputs/Select.tsx": 1,
+          "src/components/common/interactables/inputs/SelectBox.tsx": 1,
+          "src/components/common/interactables/inputs/TextInput.tsx": 1,
+          "src/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1,
+          "src/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1
         },
-        "sceneBody": {
-          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "src/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1
+        "alignItems": {
+          "src/components/common/Banner.tsx": 1,
+          "src/components/common/core/listCell/ListCell.tsx": 1
         },
-        "addressCollapsibleTitle": {
-          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "src/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1
-        },
-        "addressCollapsibleBody": {
-          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "src/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Label",
-      "sourceFile": "src/components/common/Label",
-      "totalInstances": 6,
-      "totalCallSites": 5,
-      "callSites": {
-        "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2,
-        "src/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-        "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-        "src/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-        "src/components/common/form/Date/DateFields.tsx": 1
-      },
-      "propsWithCallSites": {
-        "color": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "data-testid": { "src/components/common/form/Date/DateFields.tsx": 1 }
-      }
-    },
-    {
-      "name": "SettingCellContainer",
-      "sourceFile": "src/components/common/core/SettingCellContainer",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-        "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-        "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-        "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
-      }
-    },
-    {
-      "name": "AddressAutocompleteItem",
-      "sourceFile": "src/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-        "src/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onClick": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "key": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "name": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "predictionStructuredFormatting": {
-          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "src/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "data-testid": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "accessory": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 }
-      }
-    },
-    {
-      "name": "SettingCell",
-      "sourceFile": "src/components/common/core/SettingCell",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-        "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-        "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-        "src/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1
-      },
-      "propsWithCallSites": {
-        "key": {
-          "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        "width": { "src/components/common/Banner.tsx": 1 },
+        "flexGrow": { "src/components/common/core/listCell/ListCell.tsx": 1 },
+        "flexShrink": { "src/components/common/core/listCell/ListCell.tsx": 1 },
+        "overflow": { "src/components/common/core/listCell/ListCell.tsx": 1 },
+        "dangerouslySetStyle": {
+          "src/components/common/core/listCell/ListCell.tsx": 1,
+          "src/components/common/interactables/inputs/TextInput.tsx": 1
         },
         "data-testid": {
-          "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+          "src/components/common/form/Address/Address.tsx": 1,
+          "src/components/common/interactables/inputs/PickSelect.tsx": 1
         },
-        "title": {
-          "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
-          "src/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1
+        "id": {
+          "src/components/common/form/Address/Address.tsx": 1,
+          "src/components/common/interactables/inputs/PickSelect.tsx": 1,
+          "src/components/common/interactables/inputs/Select.tsx": 1,
+          "src/components/common/interactables/inputs/TextInput.tsx": 1
         },
-        "spacing": {
-          "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
-        },
-        "onClick": {
-          "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
-        },
-        "name": {
-          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
-        },
-        "icon": {
-          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
-        },
-        "subtitle": {
-          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
-        },
-        "caret": {
-          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
-        },
-        "captionColor": {
-          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
-        }
+        "maxWidth": { "src/components/common/interactables/inputs/PickSelect.tsx": 1 },
+        "alignSelf": { "src/components/common/interactables/inputs/PickSelect.tsx": 1 }
       }
     },
     {
@@ -3626,12 +3544,150 @@
       }
     },
     {
+      "name": "AddressSceneLayout",
+      "sourceFile": "src/commonScenes/shared/components/AddressSceneLayout",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+        "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "sceneTitle": {
+          "src/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+        },
+        "sceneBody": {
+          "src/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+        },
+        "addressCollapsibleTitle": {
+          "src/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+        },
+        "addressCollapsibleBody": {
+          "src/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+        }
+      }
+    },
+    {
       "name": "AddressDetailsFields",
       "sourceFile": "src/commonScenes/AddressDetails/AddressDetailsFields",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
         "label": { "src/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "Label",
+      "sourceFile": "src/components/common/Label",
+      "totalInstances": 6,
+      "totalCallSites": 5,
+      "callSites": {
+        "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2,
+        "src/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+        "src/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+        "src/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+        "src/components/common/form/Date/DateFields.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "data-testid": { "src/components/common/form/Date/DateFields.tsx": 1 }
+      }
+    },
+    {
+      "name": "SettingCellContainer",
+      "sourceFile": "src/components/common/core/SettingCellContainer",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+        "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+        "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+        "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+      }
+    },
+    {
+      "name": "AddressAutocompleteItem",
+      "sourceFile": "src/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+        "src/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onClick": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "key": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "name": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "predictionStructuredFormatting": {
+          "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+          "src/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "data-testid": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "accessory": { "src/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "SettingCell",
+      "sourceFile": "src/components/common/core/SettingCell",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+        "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+        "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
+        "src/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1
+      },
+      "propsWithCallSites": {
+        "key": {
+          "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "data-testid": {
+          "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "title": {
+          "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
+          "src/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1
+        },
+        "spacing": {
+          "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "onClick": {
+          "src/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "name": {
+          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "icon": {
+          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "subtitle": {
+          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "caret": {
+          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        },
+        "captionColor": {
+          "src/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+          "src/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+        }
       }
     },
     {
@@ -3711,124 +3767,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "VStack",
-      "sourceFile": "src/components/common/primitives/VStack",
-      "totalInstances": 14,
-      "totalCallSites": 10,
-      "callSites": {
-        "src/components/common/Banner.tsx": 2,
-        "src/components/common/core/listCell/ListCell.tsx": 4,
-        "src/components/common/form/Address/Address.tsx": 1,
-        "src/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-        "src/components/common/interactables/inputs/PickSelect.tsx": 1,
-        "src/components/common/interactables/inputs/Select.tsx": 1,
-        "src/components/common/interactables/inputs/SelectBox.tsx": 1,
-        "src/components/common/interactables/inputs/TextInput.tsx": 1,
-        "src/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1,
-        "src/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacing": {
-          "src/components/common/Banner.tsx": 2,
-          "src/components/common/core/listCell/ListCell.tsx": 4,
-          "src/components/common/form/Address/Address.tsx": 1,
-          "src/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-          "src/components/common/interactables/inputs/PickSelect.tsx": 1,
-          "src/components/common/interactables/inputs/Select.tsx": 1,
-          "src/components/common/interactables/inputs/SelectBox.tsx": 1,
-          "src/components/common/interactables/inputs/TextInput.tsx": 1,
-          "src/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1,
-          "src/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1
-        },
-        "alignItems": {
-          "src/components/common/Banner.tsx": 1,
-          "src/components/common/core/listCell/ListCell.tsx": 1
-        },
-        "width": { "src/components/common/Banner.tsx": 1 },
-        "flexGrow": { "src/components/common/core/listCell/ListCell.tsx": 1 },
-        "flexShrink": { "src/components/common/core/listCell/ListCell.tsx": 1 },
-        "overflow": { "src/components/common/core/listCell/ListCell.tsx": 1 },
-        "dangerouslySetStyle": {
-          "src/components/common/core/listCell/ListCell.tsx": 1,
-          "src/components/common/interactables/inputs/TextInput.tsx": 1
-        },
-        "data-testid": {
-          "src/components/common/form/Address/Address.tsx": 1,
-          "src/components/common/interactables/inputs/PickSelect.tsx": 1
-        },
-        "id": {
-          "src/components/common/form/Address/Address.tsx": 1,
-          "src/components/common/interactables/inputs/PickSelect.tsx": 1,
-          "src/components/common/interactables/inputs/Select.tsx": 1,
-          "src/components/common/interactables/inputs/TextInput.tsx": 1
-        },
-        "maxWidth": { "src/components/common/interactables/inputs/PickSelect.tsx": 1 },
-        "alignSelf": { "src/components/common/interactables/inputs/PickSelect.tsx": 1 }
-      }
-    },
-    {
-      "name": "ScrollToTop",
-      "sourceFile": "src/components/ScrollToTop",
-      "totalInstances": 9,
-      "totalCallSites": 9,
-      "callSites": {
-        "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
-        "src/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1,
-        "src/experiences/edp/EDPExperience.tsx": 1,
-        "src/experiences/email/EmailExperience.tsx": 1,
-        "src/experiences/idv/IDVExperience.tsx": 1,
-        "src/experiences/nationality/NationalityExperience.tsx": 1,
-        "src/experiences/onboardingComplete/OnboardingCompleteExperience.tsx": 1,
-        "src/experiences/phone/PhoneExperience.tsx": 1,
-        "src/experiences/verificationStatus/VerificationStatusExperience.tsx": 1
-      }
-    },
-    {
-      "name": "form",
-      "sourceFile": "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onSubmit": {
-          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
-        },
-        "data-testid": {
-          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "CollapsibleSidebarCDS",
-      "sourceFile": "src/commonScenes/shared/components/CollapsibleSidebar/CollapsibleSidebarCDS",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "data": {
-          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "iframe",
-      "sourceFile": "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "hidden": {
-          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
-        },
-        "src": {
-          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
-        },
-        "data-testid": {
-          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
-        },
-        "title": {
-          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Router",
       "sourceFile": "react-router-dom/Router",
       "totalInstances": 5,
@@ -3848,6 +3786,23 @@
           "src/experiences/phone/PhoneExperience.tsx": 1,
           "src/experiences/verificationStatus/VerificationStatusExperience.tsx": 1
         }
+      }
+    },
+    {
+      "name": "ScrollToTop",
+      "sourceFile": "src/components/ScrollToTop",
+      "totalInstances": 9,
+      "totalCallSites": 9,
+      "callSites": {
+        "src/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1,
+        "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1,
+        "src/experiences/edp/EDPExperience.tsx": 1,
+        "src/experiences/email/EmailExperience.tsx": 1,
+        "src/experiences/idv/IDVExperience.tsx": 1,
+        "src/experiences/nationality/NationalityExperience.tsx": 1,
+        "src/experiences/onboardingComplete/OnboardingCompleteExperience.tsx": 1,
+        "src/experiences/phone/PhoneExperience.tsx": 1,
+        "src/experiences/verificationStatus/VerificationStatusExperience.tsx": 1
       }
     },
     {
@@ -3911,6 +3866,51 @@
         "submit": { "src/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1 },
         "routeToNextScene": {
           "src/experiences/customerDueDiligence/CustomerDueDiligenceExperience.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "form",
+      "sourceFile": "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onSubmit": {
+          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
+        },
+        "data-testid": {
+          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CollapsibleSidebarCDS",
+      "sourceFile": "src/commonScenes/shared/components/CollapsibleSidebar/CollapsibleSidebarCDS",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "data": {
+          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "iframe",
+      "sourceFile": "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "hidden": {
+          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
+        },
+        "src": {
+          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
+        },
+        "data-testid": {
+          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
+        },
+        "title": {
+          "src/experiences/businessOrganizationInfo/BusinessOrganizationInfoExperience.tsx": 1
         }
       }
     },
@@ -4220,6 +4220,17 @@
       }
     },
     {
+      "name": "Columns",
+      "sourceFile": "src/components/common/primitives/Columns",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "columnsByWidth": { "src/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 },
+        "gridColumnGap": { "src/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 },
+        "gridRowGap": { "src/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 }
+      }
+    },
+    {
       "name": "CollapsibleContainer",
       "sourceFile": "src/components/common/core/collapsible/CollapsibleContainer",
       "totalInstances": 3,
@@ -4264,17 +4275,6 @@
         "key": { "src/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1 },
         "name": { "src/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1 },
         "description": { "src/commonScenes/shared/components/CollapsibleSidebarCDS.tsx": 1 }
-      }
-    },
-    {
-      "name": "Columns",
-      "sourceFile": "src/components/common/primitives/Columns",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "columnsByWidth": { "src/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 },
-        "gridColumnGap": { "src/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 },
-        "gridRowGap": { "src/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 }
       }
     },
     {
@@ -4633,6 +4633,42 @@
       }
     },
     {
+      "name": "ToastContainer",
+      "sourceFile": "src/components/common/interactables/toasts/ToastContainer",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "type": { "src/components/common/interactables/toasts/Toast.tsx": 1 },
+        "shouldFadeOut": { "src/components/common/interactables/toasts/Toast.tsx": 1 }
+      }
+    },
+    {
+      "name": "Container",
+      "sourceFile": "src/components/common/interactables/toasts/ToastContainer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "type": { "src/components/common/interactables/toasts/ToastContainer.tsx": 1 },
+        "colors": { "src/components/common/interactables/toasts/ToastContainer.tsx": 1 }
+      }
+    },
+    {
+      "name": "Toasts",
+      "sourceFile": "src/components/common/interactables/toasts/Toasts",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ChildToast",
+      "sourceFile": "src/components/common/interactables/toasts/Toast/ChildToast",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "src/components/common/interactables/toasts/Toasts.tsx": 1 },
+        "toast": { "src/components/common/interactables/toasts/Toasts.tsx": 1 }
+      }
+    },
+    {
       "name": "CellComponent",
       "sourceFile": "src/components/common/interactables/inputs/PickSelect.tsx",
       "totalInstances": 1,
@@ -4783,42 +4819,6 @@
       "propsWithCallSites": {
         "spacing": { "src/components/common/interactables/inputs/Select.tsx": 1 },
         "banners": { "src/components/common/interactables/inputs/Select.tsx": 1 }
-      }
-    },
-    {
-      "name": "ToastContainer",
-      "sourceFile": "src/components/common/interactables/toasts/ToastContainer",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "type": { "src/components/common/interactables/toasts/Toast.tsx": 1 },
-        "shouldFadeOut": { "src/components/common/interactables/toasts/Toast.tsx": 1 }
-      }
-    },
-    {
-      "name": "Container",
-      "sourceFile": "src/components/common/interactables/toasts/ToastContainer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "type": { "src/components/common/interactables/toasts/ToastContainer.tsx": 1 },
-        "colors": { "src/components/common/interactables/toasts/ToastContainer.tsx": 1 }
-      }
-    },
-    {
-      "name": "Toasts",
-      "sourceFile": "src/components/common/interactables/toasts/Toasts",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ChildToast",
-      "sourceFile": "src/components/common/interactables/toasts/Toast/ChildToast",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "src/components/common/interactables/toasts/Toasts.tsx": 1 },
-        "toast": { "src/components/common/interactables/toasts/Toasts.tsx": 1 }
       }
     },
     {

@@ -1,6 +1,6 @@
 {
   "latest": {
-    "date": "9/2/2022",
+    "date": "9/6/2022",
     "cdsPercent": 0.876750700280112,
     "cds": 2191,
     "presentational": 308,
@@ -154,6 +154,14 @@
       "presentational": 307,
       "totalCdsAndPresentational": 2498,
       "totalOther": 1504
+    },
+    {
+      "date": "9/2/2022",
+      "cdsPercent": 0.876750700280112,
+      "cds": 2191,
+      "presentational": 308,
+      "totalCdsAndPresentational": 2499,
+      "totalOther": 1505
     }
   ]
 }
