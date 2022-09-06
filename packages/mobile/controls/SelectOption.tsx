@@ -69,7 +69,7 @@ export const SelectOption = memo(function SelectOption({
       {...selectCellMobileSpacingConfig}
       borderRadius="none"
       minHeight={minHeight}
-      maxHeight={maxHeight}
+      maxHeight={multiline ? undefined : maxHeight}
       accessory={selected ? <CellAccessory type="selected" /> : undefined}
       selected={selected}
       accessibilityLabel={accessibilityLabel}

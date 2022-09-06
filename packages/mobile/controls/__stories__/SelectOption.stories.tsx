@@ -40,6 +40,14 @@ export default function SelectOptionScreen() {
           onPress={handleOptionPress}
         />
       </Example>
+      <Example title="Multi line">
+        <SelectOption
+          multiline
+          title="Title"
+          description="This is a really long description that will be multiple lines long"
+          value="test"
+        />
+      </Example>
     </ExampleScreen>
   );
 }

@@ -144,7 +144,7 @@ export const SelectOption = memo(
           {...selectCellSpacingConfig}
           borderRadius="none"
           minHeight={minHeight}
-          maxHeight={maxHeight}
+          maxHeight={multiline ? undefined : maxHeight}
           accessory={
             <CellAccessory
               type="selected"

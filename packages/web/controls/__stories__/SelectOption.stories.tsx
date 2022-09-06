@@ -31,7 +31,6 @@ export const Stories = () => {
             title="Title"
             description="This is a really long description that will be multiple lines long"
             value="test"
-            minHeight={150}
           />
         </VStack>
       </VStack>
