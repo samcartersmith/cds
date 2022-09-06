@@ -1,10 +1,12 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable no-undef */
 import { routes } from '@cbhq/cds-mobile/examples/newRoutes';
 import {
   assertVisualDiffsForPlayground,
   finishVisregTests,
   getPlaygroundRoutes,
   initializeVisregTests,
-} from '@cbhq/ui-mobile-playground/src/visreg';
+} from '@cbhq/ui-mobile-playground/visreg';
 
 import config from '../detox.config';
 
@@ -19,7 +21,7 @@ describe('All Playground Routes', () => {
 
   it.each(getPlaygroundRoutes({ routes, ...config.disabledRoutes }))(
     '%p Visual Diff Test.',
-    async (routeName: string) => {
+    async (routeName) => {
       await assertVisualDiffsForPlayground(routeName);
     },
   );

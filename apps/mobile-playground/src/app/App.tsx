@@ -9,7 +9,7 @@ import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePrefere
 import { FeatureFlagProvider } from '@cbhq/cds-mobile/system/FeatureFlagProvider';
 import { StatusBar } from '@cbhq/cds-mobile/system/StatusBar';
 import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
-import { PlaygroundWithNavContainer } from '@cbhq/ui-mobile-playground/src/Playground';
+import { PlaygroundWithNavContainer } from '@cbhq/ui-mobile-playground';
 
 // this code allows the use of toLocaleString() on Android
 if (Platform.OS === 'android') {

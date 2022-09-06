@@ -3,17 +3,20 @@
   "compilerOptions": {
     "outDir": "dts"
   },
-  "include": ["src"],
-  "exclude": ["cjs", "dts", "lib"],
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "cjs",
+    "dts",
+    "lib"
+  ],
   "references": [
     {
       "path": "../mobile"
     },
     {
       "path": "../common"
-    },
-    {
-      "path": "../utils"
     }
   ]
 }

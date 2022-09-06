@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.3.3 (9/6/2022 PST)
+
+#### 🚀 Updates
+
+- Make imports correct, now can import directly to /visreg path for tests. This is a breaking change but not incrementing because in alpha. [[#1063](https://github.cbhq.net/frontend/cds/pull/1063)]
+
 ## 0.3.2 (8/31/2022 PST)
 
 #### 🚀 Updates

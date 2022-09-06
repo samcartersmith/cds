@@ -3,17 +3,20 @@
   "compilerOptions": {
     "outDir": "../../.nx/dts/packages/ui-mobile-playground"
   },
-  "include": ["**/*"],
-  "exclude": ["cjs", "dts", "lib"],
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "cjs",
+    "dts",
+    "lib"
+  ],
   "references": [
     {
       "path": "../mobile"
     },
     {
       "path": "../common"
-    },
-    {
-      "path": "../utils"
     }
   ]
 }

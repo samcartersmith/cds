@@ -1,4 +1,4 @@
-import { add } from '../src/add';
+import { add } from '../src/components/add';
 
 describe('add()', () => {
   it('adds numbers', () => {

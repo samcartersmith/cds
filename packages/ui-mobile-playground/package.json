@@ -1,17 +1,19 @@
 {
   "name": "@cbhq/ui-mobile-playground",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "",
   "keywords": [],
-  "types": "./dts/index.d.ts",
-  "main": "./cjs/index.cjs",
   "packemon": {
-    "format": "cjs",
-    "platform": "node"
+    "format": "lib",
+    "platform": "node",
+    "inputs": {
+      "index": "src/index.ts",
+      "visreg": "src/visreg.ts"
+    }
   },
   "peerDependencies": {
-    "@cbhq/cds-common": "^1.1.2",
-    "@cbhq/cds-mobile": "^1.1.2",
+    "@cbhq/cds-common": "*",
+    "@cbhq/cds-mobile": "*",
     "@react-navigation/native": "^6.0.11",
     "@react-navigation/stack": "^6.2.2",
     "react": "^17.0.2",
@@ -29,21 +31,19 @@
     "@percy/storybook": "^4.2.1",
     "detox": "^19.9.1"
   },
-  "type": "commonjs",
+  "types": "./dts/index.d.ts",
+  "main": "./lib/index.js",
   "exports": {
     "./package.json": "./package.json",
     "./*": {
       "types": "./dts/*.d.ts",
-      "node": {
-        "require": "./cjs/*.cjs"
-      }
+      "node": "./lib/*.js",
+      "default": "./lib/*.js"
     },
     ".": {
       "types": "./dts/index.d.ts",
-      "node": {
-        "import": "./cjs/index-wrapper.mjs",
-        "require": "./cjs/index.cjs"
-      }
+      "node": "./lib/index.js",
+      "default": "./lib/index.js"
     }
   }
 }

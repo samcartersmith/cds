@@ -1,3 +1,1 @@
-export * from './add';
-export * from './Playground';
-export * from './visreg/index';
+export * from './components';
