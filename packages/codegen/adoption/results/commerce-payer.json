@@ -10,13 +10,206 @@
         {
           "aliasPath": "providers/DesignFeatureFlagProvider.tsx",
           "callSites": [
+            "checkout/embedded/CheckoutApp.tsx",
             "checkout/hosted/HostedCheckout.tsx",
             "checkout/hosted/HostedTestCharge.tsx",
-            "checkout/embedded/CheckoutApp.tsx",
             "scenes/Receipts/Receipts.tsx"
           ]
         }
       ]
+    },
+    {
+      "name": "ThemeProvider",
+      "sourceFile": "@cbhq/cds-web/system/ThemeProvider",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/system/ThemeProvider",
+      "callSites": {
+        "checkout/embedded/CheckoutApp.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/hosted/HostedTestCharge.tsx": 1,
+        "scenes/Receipts/Receipts.tsx": 1
+      }
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "@cbhq/cds-web/icons/Icon",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/icons/Icon",
+      "callSites": {
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+        "checkout/components/CollectUserInfo.tsx": 1,
+        "checkout/components/OAuthPaymentSummaryRow.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/OAuthPaymentSummaryRow.tsx": 1
+        },
+        "name": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/OAuthPaymentSummaryRow.tsx": 1
+        },
+        "size": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/OAuthPaymentSummaryRow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 32,
+      "totalCallSites": 13,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "checkout/components/OrganizationDetails.tsx",
+          "callSites": [
+            "checkout/components/CustomerCharge.tsx",
+            "checkout/components/CustomerCharge.tsx",
+            "checkout/components/OrderDetails.tsx",
+            "checkout/components/ProductCheckout.tsx"
+          ]
+        },
+        { "aliasPath": "checkout/components/PriceSection.tsx", "callSites": [] }
+      ],
+      "callSites": {
+        "checkout/embedded/WidgetHeader.tsx": 2,
+        "checkout/components/CollectUserInfo.tsx": 2,
+        "checkout/components/CustomerCharge.tsx": 4,
+        "checkout/components/ExpireTimerV2.tsx": 1,
+        "checkout/components/InformationRow.tsx": 1,
+        "checkout/components/InvoiceDetails.tsx": 3,
+        "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
+        "checkout/components/OrderDetails.tsx": 2,
+        "checkout/components/OrganizationDetails.tsx": 5,
+        "checkout/components/PaymentOptions.tsx": 6,
+        "checkout/components/PaymentStatus.tsx": 3,
+        "checkout/components/PriceSection.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1
+      },
+      "propsWithCallSites": {
+        "width": {
+          "checkout/embedded/WidgetHeader.tsx": 2,
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/CustomerCharge.tsx": 2,
+          "checkout/components/OrganizationDetails.tsx": 4,
+          "checkout/components/PaymentOptions.tsx": 1,
+          "checkout/components/PriceSection.tsx": 1
+        },
+        "height": {
+          "checkout/embedded/WidgetHeader.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "alignItems": {
+          "checkout/embedded/WidgetHeader.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/CustomerCharge.tsx": 3,
+          "checkout/components/InformationRow.tsx": 1,
+          "checkout/components/InvoiceDetails.tsx": 3,
+          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
+          "checkout/components/OrderDetails.tsx": 2,
+          "checkout/components/OrganizationDetails.tsx": 2,
+          "checkout/components/PaymentOptions.tsx": 5,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "justifyContent": {
+          "checkout/embedded/WidgetHeader.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 2,
+          "checkout/components/CustomerCharge.tsx": 3,
+          "checkout/components/InvoiceDetails.tsx": 3,
+          "checkout/components/OrderDetails.tsx": 2,
+          "checkout/components/OrganizationDetails.tsx": 4,
+          "checkout/components/PaymentOptions.tsx": 4,
+          "checkout/components/PriceSection.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "borderedBottom": {
+          "checkout/embedded/WidgetHeader.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 1
+        },
+        "spacing": {
+          "checkout/embedded/WidgetHeader.tsx": 1,
+          "checkout/components/CollectUserInfo.tsx": 1
+        },
+        "spacingHorizontal": {
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/CustomerCharge.tsx": 2,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/components/PaymentOptions.tsx": 3,
+          "checkout/components/PaymentStatus.tsx": 1,
+          "checkout/components/PriceSection.tsx": 1
+        },
+        "spacingBottom": {
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/CustomerCharge.tsx": 1,
+          "checkout/components/InvoiceDetails.tsx": 1,
+          "checkout/components/OrganizationDetails.tsx": 1,
+          "checkout/components/PaymentStatus.tsx": 1,
+          "checkout/components/PriceSection.tsx": 1
+        },
+        "spacingVertical": { "checkout/components/CustomerCharge.tsx": 2 },
+        "minHeight": {
+          "checkout/components/CustomerCharge.tsx": 2,
+          "checkout/components/InvoiceDetails.tsx": 2,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/components/OrganizationDetails.tsx": 2
+        },
+        "spacingTop": {
+          "checkout/components/InvoiceDetails.tsx": 1,
+          "checkout/components/OrganizationDetails.tsx": 1,
+          "checkout/components/PaymentStatus.tsx": 2
+        },
+        "spacingStart": {
+          "checkout/components/InvoiceDetails.tsx": 2,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/components/OrganizationDetails.tsx": 1
+        },
+        "spacingEnd": {
+          "checkout/components/InvoiceDetails.tsx": 2,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/components/OrganizationDetails.tsx": 1,
+          "checkout/components/PaymentOptions.tsx": 1
+        },
+        "flexGrow": {
+          "checkout/components/InvoiceDetails.tsx": 1,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/components/OrganizationDetails.tsx": 1
+        },
+        "flexDirection": {
+          "checkout/components/InvoiceDetails.tsx": 1,
+          "checkout/components/OrderDetails.tsx": 1
+        },
+        "overflow": { "checkout/components/OrderDetails.tsx": 1 }
+      }
+    },
+    {
+      "name": "LogoWordmark",
+      "sourceFile": "@cbhq/cds-web/icons/LogoWordmark",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/icons/LogoWordmark"
+    },
+    {
+      "name": "IconButton",
+      "sourceFile": "@cbhq/cds-web/buttons/IconButton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/buttons/IconButton",
+      "propsWithCallSites": {
+        "onPress": { "checkout/embedded/WidgetHeader.tsx": 1 },
+        "variant": { "checkout/embedded/WidgetHeader.tsx": 1 },
+        "name": { "checkout/embedded/WidgetHeader.tsx": 1 }
+      }
     },
     {
       "name": "VStack",
@@ -167,134 +360,6 @@
       }
     },
     {
-      "name": "Box",
-      "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 32,
-      "totalCallSites": 13,
-      "cds": "@cbhq/cds-web/layout/Box",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "checkout/components/OrganizationDetails.tsx",
-          "callSites": [
-            "checkout/components/CustomerCharge.tsx",
-            "checkout/components/CustomerCharge.tsx",
-            "checkout/components/OrderDetails.tsx",
-            "checkout/components/ProductCheckout.tsx"
-          ]
-        },
-        { "aliasPath": "checkout/components/PriceSection.tsx", "callSites": [] }
-      ],
-      "callSites": {
-        "checkout/components/CollectUserInfo.tsx": 2,
-        "checkout/components/CustomerCharge.tsx": 4,
-        "checkout/components/ExpireTimerV2.tsx": 1,
-        "checkout/components/InformationRow.tsx": 1,
-        "checkout/components/InvoiceDetails.tsx": 3,
-        "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-        "checkout/components/OrderDetails.tsx": 2,
-        "checkout/components/OrganizationDetails.tsx": 5,
-        "checkout/components/PaymentOptions.tsx": 6,
-        "checkout/components/PaymentStatus.tsx": 3,
-        "checkout/components/PriceSection.tsx": 1,
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/embedded/WidgetHeader.tsx": 2
-      },
-      "propsWithCallSites": {
-        "spacing": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/embedded/WidgetHeader.tsx": 1
-        },
-        "borderedBottom": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/embedded/WidgetHeader.tsx": 1
-        },
-        "justifyContent": {
-          "checkout/components/CollectUserInfo.tsx": 2,
-          "checkout/components/CustomerCharge.tsx": 3,
-          "checkout/components/InvoiceDetails.tsx": 3,
-          "checkout/components/OrderDetails.tsx": 2,
-          "checkout/components/OrganizationDetails.tsx": 4,
-          "checkout/components/PaymentOptions.tsx": 4,
-          "checkout/components/PriceSection.tsx": 1,
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/WidgetHeader.tsx": 1
-        },
-        "alignItems": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 3,
-          "checkout/components/InformationRow.tsx": 1,
-          "checkout/components/InvoiceDetails.tsx": 3,
-          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-          "checkout/components/OrderDetails.tsx": 2,
-          "checkout/components/OrganizationDetails.tsx": 2,
-          "checkout/components/PaymentOptions.tsx": 5,
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/WidgetHeader.tsx": 1
-        },
-        "width": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 2,
-          "checkout/components/OrganizationDetails.tsx": 4,
-          "checkout/components/PaymentOptions.tsx": 1,
-          "checkout/components/PriceSection.tsx": 1,
-          "checkout/embedded/WidgetHeader.tsx": 2
-        },
-        "spacingHorizontal": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 2,
-          "checkout/components/OrderDetails.tsx": 1,
-          "checkout/components/PaymentOptions.tsx": 3,
-          "checkout/components/PaymentStatus.tsx": 1,
-          "checkout/components/PriceSection.tsx": 1
-        },
-        "spacingBottom": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 1,
-          "checkout/components/InvoiceDetails.tsx": 1,
-          "checkout/components/OrganizationDetails.tsx": 1,
-          "checkout/components/PaymentStatus.tsx": 1,
-          "checkout/components/PriceSection.tsx": 1
-        },
-        "spacingVertical": { "checkout/components/CustomerCharge.tsx": 2 },
-        "minHeight": {
-          "checkout/components/CustomerCharge.tsx": 2,
-          "checkout/components/InvoiceDetails.tsx": 2,
-          "checkout/components/OrderDetails.tsx": 1,
-          "checkout/components/OrganizationDetails.tsx": 2
-        },
-        "spacingTop": {
-          "checkout/components/InvoiceDetails.tsx": 1,
-          "checkout/components/OrganizationDetails.tsx": 1,
-          "checkout/components/PaymentStatus.tsx": 2
-        },
-        "spacingStart": {
-          "checkout/components/InvoiceDetails.tsx": 2,
-          "checkout/components/OrderDetails.tsx": 1,
-          "checkout/components/OrganizationDetails.tsx": 1
-        },
-        "spacingEnd": {
-          "checkout/components/InvoiceDetails.tsx": 2,
-          "checkout/components/OrderDetails.tsx": 1,
-          "checkout/components/OrganizationDetails.tsx": 1,
-          "checkout/components/PaymentOptions.tsx": 1
-        },
-        "flexGrow": {
-          "checkout/components/InvoiceDetails.tsx": 1,
-          "checkout/components/OrderDetails.tsx": 1,
-          "checkout/components/OrganizationDetails.tsx": 1
-        },
-        "flexDirection": {
-          "checkout/components/InvoiceDetails.tsx": 1,
-          "checkout/components/OrderDetails.tsx": 1
-        },
-        "overflow": { "checkout/components/OrderDetails.tsx": 1 },
-        "height": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/WidgetHeader.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
       "totalInstances": 4,
@@ -356,39 +421,6 @@
           "checkout/components/CollectUserInfo.tsx": 1,
           "checkout/components/ExpireTimerV2.tsx": 1,
           "checkout/components/OAuthPaymentSummaryRow.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Icon",
-      "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "cds": "@cbhq/cds-web/icons/Icon",
-      "callSites": {
-        "checkout/components/CollectUserInfo.tsx": 1,
-        "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-        "checkout/embedded/CustomerChargeWidget.tsx": 1,
-        "checkout/embedded/ProductCheckoutWidget.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1
-        },
-        "size": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1
-        },
-        "color": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1
         }
       }
     },
@@ -761,19 +793,6 @@
       }
     },
     {
-      "name": "ThemeProvider",
-      "sourceFile": "@cbhq/cds-web/system/ThemeProvider",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "cds": "@cbhq/cds-web/system/ThemeProvider",
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/hosted/HostedTestCharge.tsx": 1,
-        "checkout/embedded/CheckoutApp.tsx": 1,
-        "scenes/Receipts/Receipts.tsx": 1
-      }
-    },
-    {
       "name": "TextTitle1",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
       "totalInstances": 2,
@@ -785,25 +804,6 @@
       },
       "propsWithCallSites": {
         "as": { "checkout/hosted/HostedTestCharge.tsx": 1, "scenes/Receipts/ReceiptView.tsx": 1 }
-      }
-    },
-    {
-      "name": "LogoWordmark",
-      "sourceFile": "@cbhq/cds-web/icons/LogoWordmark",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/icons/LogoWordmark"
-    },
-    {
-      "name": "IconButton",
-      "sourceFile": "@cbhq/cds-web/buttons/IconButton",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/buttons/IconButton",
-      "propsWithCallSites": {
-        "onPress": { "checkout/embedded/WidgetHeader.tsx": 1 },
-        "variant": { "checkout/embedded/WidgetHeader.tsx": 1 },
-        "name": { "checkout/embedded/WidgetHeader.tsx": 1 }
       }
     },
     {
@@ -935,8 +935,8 @@
         "components/CreateInvoiceModalBusinessName.tsx": 1,
         "components/LinkCoinbase/OAuthConnectModal.tsx": 1,
         "scenes/Reconfirm/Reconfirm.tsx": 1,
-        "components/ProductFlow/components/ProductDetails.tsx": 2,
         "components/Layouts/DashboardLayout/SidebarItem.tsx": 1,
+        "components/ProductFlow/components/ProductDetails.tsx": 2,
         "scenes/Settings/components/ApiKeyPanel.tsx": 2,
         "scenes/Settings/components/ProfilePanelEmailChange.tsx": 1,
         "scenes/Settings/components/WebhookPanel.tsx": 1,
@@ -1227,30 +1227,30 @@
         "checkout/components/SuccessfulPayment.tsx": 1,
         "checkout/components/WaitingForConfirmations.tsx": 1,
         "components/AccountsList/AccountsList.tsx": 2,
+        "components/Invoice/InvoiceStatus.tsx": 1,
         "components/OrdersList/OrderDetails.tsx": 4,
         "components/OrdersList/OrdersList.tsx": 1,
         "components/OrdersList/ResolveModal.tsx": 1,
         "components/ProductFlow/ProductFlow.tsx": 4,
-        "components/Invoice/InvoiceStatus.tsx": 1,
         "components/Signup/LightSignupForm.tsx": 2,
         "components/TablePagination/TablePagination.tsx": 1,
-        "components/TotpSetupModal/TotpSetupModal.tsx": 4,
         "components/Timeline/Timeline.tsx": 1,
+        "components/TotpSetupModal/TotpSetupModal.tsx": 4,
         "components/Withdrawal/ConversionDetails.tsx": 2,
         "components/Withdrawal/ConversionWithdrawalDetails.tsx": 4,
         "components/Withdrawal/WithdrawalDetails.tsx": 2,
         "scenes/MaintenanceMode/MaintenanceMode.tsx": 1,
         "scenes/Signin/Signin.tsx": 3,
         "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
+        "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
+        "components/Layouts/AuthLayout/AuthComponents.tsx": 1,
         "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
         "components/ProductFlow/components/EditForm.tsx": 2,
         "components/ProductFlow/components/ProductDetails.tsx": 6,
         "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 1,
         "components/ProductFlow/components/ProductTypeForm.tsx": 1,
-        "components/Layouts/AuthLayout/AuthComponents.tsx": 1,
-        "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
-        "components/TotpSetupModal/components/Completed.tsx": 1,
         "components/Withdrawal/components/Transaction.tsx": 1,
+        "components/TotpSetupModal/components/Completed.tsx": 1,
         "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
         "scenes/Settings/components/WebhookEventModal.tsx": 3,
         "scenes/Settings/components/WebhookModal.tsx": 4,
@@ -1324,12 +1324,12 @@
           "components/Withdrawal/ConversionDetails.tsx": 1,
           "components/Withdrawal/ConversionWithdrawalDetails.tsx": 3
         },
+        "role": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 },
         "pt": {
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1
         },
         "id": { "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 1 },
-        "role": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 },
         "mr": { "scenes/static/Faq/Faq.tsx": 1 },
         "style": {
           "scenes/static/Integrate/IntegrationCard.tsx": 1,
@@ -1987,6 +1987,115 @@
       "totalCallSites": 1,
       "presentationalProps": [{ "prop": "style", "callSite": "utils/i18n.tsx" }],
       "propsWithCallSites": { "style": { "utils/i18n.tsx": 1 } }
+    },
+    {
+      "name": "AppWrapper",
+      "sourceFile": "checkout/embedded/CheckoutApp.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "BlurBackground",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": { "id": { "checkout/embedded/CustomerChargeWidget.tsx": 1 } }
+    },
+    {
+      "name": "PromptText",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": { "checkout/embedded/CustomerChargeWidget.tsx": 2 }
+    },
+    {
+      "name": "PromptOption",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Link",
+      "callSites": { "checkout/embedded/CustomerChargeWidget.tsx": 2 },
+      "propsWithCallSites": { "onClick": { "checkout/embedded/CustomerChargeWidget.tsx": 2 } }
+    },
+    {
+      "name": "ResponsiveCloseButton",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": { "onClick": { "checkout/embedded/CustomerChargeWidget.tsx": 1 } }
+    },
+    {
+      "name": "ResponsiveChargeWidgetV2",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "IndeterminateProgress",
+      "sourceFile": "checkout/components/IndeterminateProgress",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "Wrapper",
+      "callSites": {
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1
+      }
+    },
+    {
+      "name": "ResponsiveWidgetWrapperV2",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ResponsiveCloseButton",
+      "sourceFile": "checkout/embedded/ProductCheckoutWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": { "onClick": { "checkout/embedded/ProductCheckoutWidget.tsx": 1 } }
+    },
+    {
+      "name": "ResponsiveCheckoutWidget",
+      "sourceFile": "checkout/embedded/ProductCheckoutWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ResponsiveWidgetWrapper",
+      "sourceFile": "checkout/embedded/ProductCheckoutWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ResponsiveCloseButton",
+      "sourceFile": "checkout/embedded/WidgetHeader.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "SpinnerWrapper",
+      "sourceFile": "checkout/embedded/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "div",
+      "sourceFile": "checkout/embedded/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [{ "prop": "className", "callSite": "checkout/embedded/index.tsx" }],
+      "propsWithCallSites": { "className": { "checkout/embedded/index.tsx": 1 } }
     },
     {
       "name": "Input",
@@ -3058,218 +3167,6 @@
       }
     },
     {
-      "name": "IndeterminateProgress",
-      "sourceFile": "checkout/components/IndeterminateProgress",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalElement": "Wrapper",
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/embedded/CustomerChargeWidget.tsx": 1
-      }
-    },
-    {
-      "name": "TwoColumnLayout",
-      "sourceFile": "checkout/hosted/TwoColumnLayout",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "Container",
-      "propsWithCallSites": {
-        "mainColumn": { "checkout/hosted/HostedCheckout.tsx": 1 },
-        "sideColumn": { "checkout/hosted/HostedCheckout.tsx": 1 }
-      }
-    },
-    {
-      "name": "ResponsiveMargin",
-      "sourceFile": "checkout/hosted/HostedCheckout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "callSites": { "checkout/hosted/HostedTestCharge.tsx": 2 }
-    },
-    {
-      "name": "Overlay",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Header",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ButtonContainer",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "MarkPaidButton",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": { "onClick": { "checkout/hosted/HostedTestCharge.tsx": 1 } }
-    },
-    {
-      "name": "MarkFailedButton",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ButtonOutline",
-      "propsWithCallSites": { "onClick": { "checkout/hosted/HostedTestCharge.tsx": 1 } }
-    },
-    {
-      "name": "Layout",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "TwoColumnLayout",
-      "propsWithCallSites": {
-        "mainColumn": { "checkout/hosted/HostedTestCharge.tsx": 1 },
-        "sideColumn": { "checkout/hosted/HostedTestCharge.tsx": 1 }
-      }
-    },
-    {
-      "name": "SpinnerWrapper",
-      "sourceFile": "checkout/hosted/entry.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "HostedApp",
-      "sourceFile": "checkout/hosted/HostedApp",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "AppWrapper"
-    },
-    {
-      "name": "div",
-      "sourceFile": "checkout/hosted/entry.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "className", "callSite": "checkout/hosted/entry.tsx" }],
-      "propsWithCallSites": { "className": { "checkout/hosted/entry.tsx": 1 } }
-    },
-    {
-      "name": "AppWrapper",
-      "sourceFile": "checkout/embedded/CheckoutApp.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "BlurBackground",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": { "id": { "checkout/embedded/CustomerChargeWidget.tsx": 1 } }
-    },
-    {
-      "name": "PromptText",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "callSites": { "checkout/embedded/CustomerChargeWidget.tsx": 2 }
-    },
-    {
-      "name": "PromptOption",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Link",
-      "callSites": { "checkout/embedded/CustomerChargeWidget.tsx": 2 },
-      "propsWithCallSites": { "onClick": { "checkout/embedded/CustomerChargeWidget.tsx": 2 } }
-    },
-    {
-      "name": "ResponsiveCloseButton",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": { "onClick": { "checkout/embedded/CustomerChargeWidget.tsx": 1 } }
-    },
-    {
-      "name": "ResponsiveChargeWidgetV2",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ResponsiveWidgetWrapperV2",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ResponsiveCloseButton",
-      "sourceFile": "checkout/embedded/ProductCheckoutWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": { "onClick": { "checkout/embedded/ProductCheckoutWidget.tsx": 1 } }
-    },
-    {
-      "name": "ResponsiveCheckoutWidget",
-      "sourceFile": "checkout/embedded/ProductCheckoutWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ResponsiveWidgetWrapper",
-      "sourceFile": "checkout/embedded/ProductCheckoutWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ResponsiveCloseButton",
-      "sourceFile": "checkout/embedded/WidgetHeader.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "SpinnerWrapper",
-      "sourceFile": "checkout/embedded/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "div",
-      "sourceFile": "checkout/embedded/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "className", "callSite": "checkout/embedded/index.tsx" }],
-      "propsWithCallSites": { "className": { "checkout/embedded/index.tsx": 1 } }
-    },
-    {
-      "name": "MarketingApp",
-      "sourceFile": "entry/marketing/MarketingApp",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "AppWrapper"
-    },
-    {
       "name": "HeaderWrapper",
       "sourceFile": "components/AccountingReports/AccountingReportsModal.tsx",
       "totalInstances": 1,
@@ -3586,6 +3483,359 @@
       "totalCallSites": 1,
       "styledComponent": "div",
       "propsWithCallSites": { "onClick": { "components/ActivationPanel/ActivationPanel.tsx": 1 } }
+    },
+    {
+      "name": "TwoColumnLayout",
+      "sourceFile": "checkout/hosted/TwoColumnLayout",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "Container",
+      "propsWithCallSites": {
+        "mainColumn": { "checkout/hosted/HostedCheckout.tsx": 1 },
+        "sideColumn": { "checkout/hosted/HostedCheckout.tsx": 1 }
+      }
+    },
+    {
+      "name": "ResponsiveMargin",
+      "sourceFile": "checkout/hosted/HostedCheckout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": { "checkout/hosted/HostedTestCharge.tsx": 2 }
+    },
+    {
+      "name": "Overlay",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Header",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ButtonContainer",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "MarkPaidButton",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "propsWithCallSites": { "onClick": { "checkout/hosted/HostedTestCharge.tsx": 1 } }
+    },
+    {
+      "name": "MarkFailedButton",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ButtonOutline",
+      "propsWithCallSites": { "onClick": { "checkout/hosted/HostedTestCharge.tsx": 1 } }
+    },
+    {
+      "name": "Layout",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "TwoColumnLayout",
+      "propsWithCallSites": {
+        "mainColumn": { "checkout/hosted/HostedTestCharge.tsx": 1 },
+        "sideColumn": { "checkout/hosted/HostedTestCharge.tsx": 1 }
+      }
+    },
+    {
+      "name": "SpinnerWrapper",
+      "sourceFile": "checkout/hosted/entry.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "HostedApp",
+      "sourceFile": "checkout/hosted/HostedApp",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "AppWrapper"
+    },
+    {
+      "name": "div",
+      "sourceFile": "checkout/hosted/entry.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [{ "prop": "className", "callSite": "checkout/hosted/entry.tsx" }],
+      "propsWithCallSites": { "className": { "checkout/hosted/entry.tsx": 1 } }
+    },
+    {
+      "name": "RowWrapper",
+      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "RowWrapperSytle"
+    },
+    {
+      "name": "Modal",
+      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "DefaultModal",
+      "propsWithCallSites": {
+        "heading": { "components/Invoice/InvoiceDetailModal.tsx": 1 },
+        "body": { "components/Invoice/InvoiceDetailModal.tsx": 1 },
+        "footer": { "components/Invoice/InvoiceDetailModal.tsx": 1 },
+        "close": { "components/Invoice/InvoiceDetailModal.tsx": 1 },
+        "w": { "components/Invoice/InvoiceDetailModal.tsx": 1 },
+        "h": { "components/Invoice/InvoiceDetailModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "CryptoAmount",
+      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "GrayText",
+      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": { "components/Invoice/InvoiceDetailModal.tsx": 3 }
+    },
+    {
+      "name": "BusinessName",
+      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "StatusTagContainer",
+      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "InvoiceIdField",
+      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "CopyButtonContainer",
+      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "CopyButtonWrapper"
+    },
+    {
+      "name": "MemoTextContainer",
+      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ModalBlock",
+      "propsWithCallSites": { "border": { "components/Invoice/InvoiceDetailModal.tsx": 1 } }
+    },
+    {
+      "name": "TableWrapper",
+      "sourceFile": "components/Table/TableWrapper",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "Panel",
+      "propsWithCallSites": {
+        "tableTitle": { "components/Invoice/InvoiceList.tsx": 1 },
+        "panelId": { "components/Invoice/InvoiceList.tsx": 1 },
+        "isLoading": { "components/Invoice/InvoiceList.tsx": 1 },
+        "error": { "components/Invoice/InvoiceList.tsx": 1 },
+        "isEmpty": { "components/Invoice/InvoiceList.tsx": 1 },
+        "emptyTableMessage": { "components/Invoice/InvoiceList.tsx": 1 },
+        "errorTableMessage": { "components/Invoice/InvoiceList.tsx": 1 },
+        "createButton": { "components/Invoice/InvoiceList.tsx": 1 },
+        "buttonWidth": { "components/Invoice/InvoiceList.tsx": 1 }
+      }
+    },
+    {
+      "name": "InvoiceTable",
+      "sourceFile": "components/Invoice/InvoiceTable",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "PanelRow",
+      "propsWithCallSites": {
+        "onInvoiceClick": { "components/Invoice/InvoiceList.tsx": 1 },
+        "invoices": { "components/Invoice/InvoiceList.tsx": 1 },
+        "hideStatusColumn": { "components/Invoice/InvoiceList.tsx": 1 }
+      }
+    },
+    {
+      "name": "InvoiceDetailModal",
+      "sourceFile": "components/Invoice/InvoiceDetailModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "ModalFooter",
+      "propsWithCallSites": {
+        "onShowDetails": { "components/Invoice/InvoiceModals.tsx": 1 },
+        "onCancel": { "components/Invoice/InvoiceModals.tsx": 1 },
+        "onShare": { "components/Invoice/InvoiceModals.tsx": 1 },
+        "invoice": { "components/Invoice/InvoiceModals.tsx": 1 },
+        "onClose": { "components/Invoice/InvoiceModals.tsx": 1 }
+      }
+    },
+    {
+      "name": "VoidRequestLoadingModal",
+      "sourceFile": "components/Invoice/VoidInvoiceStatusModal/VoidRequestLoadingModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "LoadingModalWrapper"
+    },
+    {
+      "name": "Modal",
+      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "DefaultModal",
+      "propsWithCallSites": {
+        "heading": { "components/Invoice/VoidInvoiceModal.tsx": 1 },
+        "body": { "components/Invoice/VoidInvoiceModal.tsx": 1 },
+        "footer": { "components/Invoice/VoidInvoiceModal.tsx": 1 },
+        "close": { "components/Invoice/VoidInvoiceModal.tsx": 1 },
+        "w": { "components/Invoice/VoidInvoiceModal.tsx": 1 },
+        "h": { "components/Invoice/VoidInvoiceModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "BackButtonStyle",
+      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "BackButton",
+      "propsWithCallSites": { "onClick": { "components/Invoice/VoidInvoiceModal.tsx": 1 } }
+    },
+    {
+      "name": "QuestionTitle",
+      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "h3"
+    },
+    {
+      "name": "QuestionDescription",
+      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "InvoiceSummary",
+      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "InvoiceIcon",
+      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "InvoiceHeader",
+      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "h5"
+    },
+    {
+      "name": "InvoiceDate",
+      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "InvoicePrice",
+      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Modal",
+      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "styledComponent": "DefaultModal",
+      "callSites": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 },
+      "propsWithCallSites": {
+        "heading": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 },
+        "body": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 },
+        "footer": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 },
+        "hideClose": { "components/Invoice/VoidInvoiceStatusModal.tsx": 1 },
+        "close": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 },
+        "w": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 },
+        "h": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 }
+      }
+    },
+    {
+      "name": "VoidModalWrapper",
+      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ModalContent"
+    },
+    {
+      "name": "StatusWrapper",
+      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 }
+    },
+    {
+      "name": "SuccessIcon",
+      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "StatusMessage",
+      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "h5",
+      "callSites": { "components/Invoice/VoidInvoiceStatusModal.tsx": 2 }
+    },
+    {
+      "name": "ErrorIcon",
+      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "StatusDescription",
+      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "h5"
     },
     {
       "name": "HeaderWrapper",
@@ -3991,6 +4241,31 @@
       }
     },
     {
+      "name": "PaymentDetailBlock",
+      "sourceFile": "components/PaymentDetail/PaymentDetail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
+    },
+    {
+      "name": "PaymentDetailHeading",
+      "sourceFile": "components/PaymentDetail/PaymentDetail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
+    },
+    {
+      "name": "ActivityBox",
+      "sourceFile": "components/PaymentDetail/PaymentDetail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Link",
+      "propsWithCallSites": {
+        "id": { "components/PaymentDetail/PaymentDetail.tsx": 1 },
+        "onClick": { "components/PaymentDetail/PaymentDetail.tsx": 1 }
+      }
+    },
+    {
       "name": "Footer",
       "sourceFile": "components/OrdersList/OrderDetails.tsx",
       "totalInstances": 1,
@@ -4211,31 +4486,6 @@
       "styledComponent": "Box"
     },
     {
-      "name": "PaymentDetailBlock",
-      "sourceFile": "components/PaymentDetail/PaymentDetail.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
-    },
-    {
-      "name": "PaymentDetailHeading",
-      "sourceFile": "components/PaymentDetail/PaymentDetail.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
-    },
-    {
-      "name": "ActivityBox",
-      "sourceFile": "components/PaymentDetail/PaymentDetail.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Link",
-      "propsWithCallSites": {
-        "id": { "components/PaymentDetail/PaymentDetail.tsx": 1 },
-        "onClick": { "components/PaymentDetail/PaymentDetail.tsx": 1 }
-      }
-    },
-    {
       "name": "PayableTypes",
       "sourceFile": "components/ProductFlow/components/PayableTypes",
       "totalInstances": 1,
@@ -4258,263 +4508,6 @@
       "totalCallSites": 1,
       "styledComponent": "Box",
       "callSites": { "components/ProductFlow/ProductFlow.tsx": 2 }
-    },
-    {
-      "name": "RowWrapper",
-      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "RowWrapperSytle"
-    },
-    {
-      "name": "Modal",
-      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "DefaultModal",
-      "propsWithCallSites": {
-        "heading": { "components/Invoice/InvoiceDetailModal.tsx": 1 },
-        "body": { "components/Invoice/InvoiceDetailModal.tsx": 1 },
-        "footer": { "components/Invoice/InvoiceDetailModal.tsx": 1 },
-        "close": { "components/Invoice/InvoiceDetailModal.tsx": 1 },
-        "w": { "components/Invoice/InvoiceDetailModal.tsx": 1 },
-        "h": { "components/Invoice/InvoiceDetailModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "CryptoAmount",
-      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "GrayText",
-      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "callSites": { "components/Invoice/InvoiceDetailModal.tsx": 3 }
-    },
-    {
-      "name": "BusinessName",
-      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "StatusTagContainer",
-      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "InvoiceIdField",
-      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "CopyButtonContainer",
-      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "CopyButtonWrapper"
-    },
-    {
-      "name": "MemoTextContainer",
-      "sourceFile": "components/Invoice/InvoiceDetailModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ModalBlock",
-      "propsWithCallSites": { "border": { "components/Invoice/InvoiceDetailModal.tsx": 1 } }
-    },
-    {
-      "name": "TableWrapper",
-      "sourceFile": "components/Table/TableWrapper",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "Panel",
-      "propsWithCallSites": {
-        "tableTitle": { "components/Invoice/InvoiceList.tsx": 1 },
-        "panelId": { "components/Invoice/InvoiceList.tsx": 1 },
-        "isLoading": { "components/Invoice/InvoiceList.tsx": 1 },
-        "error": { "components/Invoice/InvoiceList.tsx": 1 },
-        "isEmpty": { "components/Invoice/InvoiceList.tsx": 1 },
-        "emptyTableMessage": { "components/Invoice/InvoiceList.tsx": 1 },
-        "errorTableMessage": { "components/Invoice/InvoiceList.tsx": 1 },
-        "createButton": { "components/Invoice/InvoiceList.tsx": 1 },
-        "buttonWidth": { "components/Invoice/InvoiceList.tsx": 1 }
-      }
-    },
-    {
-      "name": "InvoiceTable",
-      "sourceFile": "components/Invoice/InvoiceTable",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "PanelRow",
-      "propsWithCallSites": {
-        "onInvoiceClick": { "components/Invoice/InvoiceList.tsx": 1 },
-        "invoices": { "components/Invoice/InvoiceList.tsx": 1 },
-        "hideStatusColumn": { "components/Invoice/InvoiceList.tsx": 1 }
-      }
-    },
-    {
-      "name": "InvoiceDetailModal",
-      "sourceFile": "components/Invoice/InvoiceDetailModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "ModalFooter",
-      "propsWithCallSites": {
-        "onShowDetails": { "components/Invoice/InvoiceModals.tsx": 1 },
-        "onCancel": { "components/Invoice/InvoiceModals.tsx": 1 },
-        "onShare": { "components/Invoice/InvoiceModals.tsx": 1 },
-        "invoice": { "components/Invoice/InvoiceModals.tsx": 1 },
-        "onClose": { "components/Invoice/InvoiceModals.tsx": 1 }
-      }
-    },
-    {
-      "name": "VoidRequestLoadingModal",
-      "sourceFile": "components/Invoice/VoidInvoiceStatusModal/VoidRequestLoadingModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "LoadingModalWrapper"
-    },
-    {
-      "name": "Modal",
-      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "DefaultModal",
-      "propsWithCallSites": {
-        "heading": { "components/Invoice/VoidInvoiceModal.tsx": 1 },
-        "body": { "components/Invoice/VoidInvoiceModal.tsx": 1 },
-        "footer": { "components/Invoice/VoidInvoiceModal.tsx": 1 },
-        "close": { "components/Invoice/VoidInvoiceModal.tsx": 1 },
-        "w": { "components/Invoice/VoidInvoiceModal.tsx": 1 },
-        "h": { "components/Invoice/VoidInvoiceModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "BackButtonStyle",
-      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "BackButton",
-      "propsWithCallSites": { "onClick": { "components/Invoice/VoidInvoiceModal.tsx": 1 } }
-    },
-    {
-      "name": "QuestionTitle",
-      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "h3"
-    },
-    {
-      "name": "QuestionDescription",
-      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "InvoiceSummary",
-      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "InvoiceIcon",
-      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "InvoiceHeader",
-      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "h5"
-    },
-    {
-      "name": "InvoiceDate",
-      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "InvoicePrice",
-      "sourceFile": "components/Invoice/VoidInvoiceModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Modal",
-      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "styledComponent": "DefaultModal",
-      "callSites": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 },
-      "propsWithCallSites": {
-        "heading": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 },
-        "body": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 },
-        "footer": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 },
-        "hideClose": { "components/Invoice/VoidInvoiceStatusModal.tsx": 1 },
-        "close": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 },
-        "w": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 },
-        "h": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 }
-      }
-    },
-    {
-      "name": "VoidModalWrapper",
-      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ModalContent"
-    },
-    {
-      "name": "StatusWrapper",
-      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "callSites": { "components/Invoice/VoidInvoiceStatusModal.tsx": 3 }
-    },
-    {
-      "name": "SuccessIcon",
-      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "StatusMessage",
-      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "h5",
-      "callSites": { "components/Invoice/VoidInvoiceStatusModal.tsx": 2 }
-    },
-    {
-      "name": "ErrorIcon",
-      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "StatusDescription",
-      "sourceFile": "components/Invoice/VoidInvoiceStatusModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "h5"
     },
     {
       "name": "NewProductButton",
@@ -4581,6 +4574,13 @@
       "totalCallSites": 1,
       "styledComponent": "PanelHeader",
       "propsWithCallSites": { "id": { "components/ProductsList/ProductsList.tsx": 1 } }
+    },
+    {
+      "name": "FlexBox",
+      "sourceFile": "components/Table/Pagination.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "StyledExternalLink",
@@ -4678,13 +4678,6 @@
       "propsWithCallSites": { "href": { "components/Signup/LightSignupForm.tsx": 1 } }
     },
     {
-      "name": "FlexBox",
-      "sourceFile": "components/Table/Pagination.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "PaginationWrapper",
       "sourceFile": "components/TablePagination/TablePagination.tsx",
       "totalInstances": 1,
@@ -4726,52 +4719,6 @@
         "onClick": { "components/TablePagination/TablePagination.tsx": 1 },
         "disabled": { "components/TablePagination/TablePagination.tsx": 1 }
       }
-    },
-    {
-      "name": "MySpinner",
-      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Spinner"
-    },
-    {
-      "name": "Text",
-      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "styledComponent": "Box",
-      "callSites": { "components/TotpSetupModal/TotpSetupModal.tsx": 4 }
-    },
-    {
-      "name": "TokenInput",
-      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Input",
-      "callSites": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-      "propsWithCallSites": {
-        "type": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-        "placeholder": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-        "value": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-        "onChange": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-        "disabled": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 },
-        "autoFocus": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-        "autoComplete": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "QRCodeContainer",
-      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
-    },
-    {
-      "name": "KeyText",
-      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
     },
     {
       "name": "TimelineAmount",
@@ -4833,6 +4780,52 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "Box"
+    },
+    {
+      "name": "MySpinner",
+      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Spinner"
+    },
+    {
+      "name": "Text",
+      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "styledComponent": "Box",
+      "callSites": { "components/TotpSetupModal/TotpSetupModal.tsx": 4 }
+    },
+    {
+      "name": "TokenInput",
+      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Input",
+      "callSites": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+      "propsWithCallSites": {
+        "type": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+        "placeholder": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+        "value": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+        "onChange": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+        "disabled": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 },
+        "autoFocus": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+        "autoComplete": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "QRCodeContainer",
+      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
+    },
+    {
+      "name": "KeyText",
+      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
     },
     {
       "name": "ConversionRow",
@@ -5008,6 +5001,13 @@
       "styledComponent": "Box"
     },
     {
+      "name": "MarketingApp",
+      "sourceFile": "entry/marketing/MarketingApp",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "AppWrapper"
+    },
+    {
       "name": "AccountingReportsBanner",
       "sourceFile": "components/AccountingReports/AnnouncementBanner/AccountingReportsBanner",
       "totalInstances": 1,
@@ -5135,6 +5135,35 @@
       "styledComponent": "div"
     },
     {
+      "name": "Container",
+      "sourceFile": "scenes/PosSetup/PosSetup.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "Header",
+      "sourceFile": "scenes/PosSetup/PosSetup.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Heading"
+    },
+    {
+      "name": "Blurb",
+      "sourceFile": "scenes/PosSetup/PosSetup.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Text",
+      "callSites": { "scenes/PosSetup/PosSetup.tsx": 2 }
+    },
+    {
+      "name": "PairingCode",
+      "sourceFile": "scenes/PosSetup/PosSetup.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Text"
+    },
+    {
       "name": "Icon",
       "sourceFile": "scenes/Receipts/ReceiptView.tsx",
       "totalInstances": 1,
@@ -5223,35 +5252,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "scenes/PosSetup/PosSetup.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "Header",
-      "sourceFile": "scenes/PosSetup/PosSetup.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Heading"
-    },
-    {
-      "name": "Blurb",
-      "sourceFile": "scenes/PosSetup/PosSetup.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Text",
-      "callSites": { "scenes/PosSetup/PosSetup.tsx": 2 }
-    },
-    {
-      "name": "PairingCode",
-      "sourceFile": "scenes/PosSetup/PosSetup.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text"
     },
     {
       "name": "TotpInput",
@@ -5509,6 +5509,203 @@
       "propsWithCallSites": {
         "onClick": { "components/ActivationPanel/components/IntegrationsModal.tsx": 1 }
       }
+    },
+    {
+      "name": "SignoutLink",
+      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Link",
+      "propsWithCallSites": {
+        "id": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 },
+        "onClick": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 },
+        "href": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 }
+      }
+    },
+    {
+      "name": "SignoutIcon",
+      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Image",
+      "propsWithCallSites": {
+        "src": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 }
+      }
+    },
+    {
+      "name": "SignoutText",
+      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
+      "name": "AppBar",
+      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "Header",
+      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "header",
+      "propsWithCallSites": {
+        "role": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 }
+      }
+    },
+    {
+      "name": "HeaderText",
+      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Heading",
+      "propsWithCallSites": {
+        "id": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 }
+      }
+    },
+    {
+      "name": "DashboardWrapper",
+      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "Main",
+      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "innerRef": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 }
+      }
+    },
+    {
+      "name": "ServiceBanner",
+      "sourceFile": "components/Layouts/DashboardLayout/ServiceBanner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "Banner",
+      "propsWithCallSites": {
+        "close": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 }
+      }
+    },
+    {
+      "name": "DashboardContent",
+      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
+    },
+    {
+      "name": "Wrapper",
+      "sourceFile": "components/Layouts/DashboardLayout/Footer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
+    },
+    {
+      "name": "FooterWrapper",
+      "sourceFile": "components/Layouts/DashboardLayout/Footer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "LeftAlignBox",
+      "sourceFile": "components/Layouts/DashboardLayout/Footer.tsx",
+      "totalInstances": 6,
+      "totalCallSites": 1,
+      "styledComponent": "Box",
+      "callSites": { "components/Layouts/DashboardLayout/Footer.tsx": 6 }
+    },
+    {
+      "name": "NewProductButton",
+      "sourceFile": "components/Layouts/DashboardLayout/Sidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "propsWithCallSites": {
+        "id": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 },
+        "w": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 },
+        "disabled": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 },
+        "onClick": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 }
+      }
+    },
+    {
+      "name": "SidebarContainer",
+      "sourceFile": "components/Layouts/DashboardLayout/Sidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
+      "propsWithCallSites": { "role": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 } }
+    },
+    {
+      "name": "NavIcon",
+      "sourceFile": "components/Layouts/DashboardLayout/SidebarItem.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Icon",
+      "propsWithCallSites": {
+        "name": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 },
+        "active": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 },
+        "preload": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 }
+      }
+    },
+    {
+      "name": "Label",
+      "sourceFile": "components/Layouts/DashboardLayout/SidebarItem.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Layouts/DashboardLayout/SidebarItem.tsx" }
+      ],
+      "styledComponent": "Box",
+      "propsWithCallSites": {
+        "className": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 }
+      }
+    },
+    {
+      "name": "AuthLayoutBox",
+      "sourceFile": "components/Layouts/AuthLayout/AuthLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Layouts/AuthLayout/AuthLayout.tsx" }
+      ],
+      "styledComponent": "Flex",
+      "propsWithCallSites": { "className": { "components/Layouts/AuthLayout/AuthLayout.tsx": 1 } }
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/Layouts/AuthLayout/AuthLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
+    },
+    {
+      "name": "FooterWrapper",
+      "sourceFile": "components/Layouts/AuthLayout/Footer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "PrivacyPolicy",
+      "sourceFile": "components/Layouts/AuthLayout/Footer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
+    },
+    {
+      "name": "Logo",
+      "sourceFile": "components/Layouts/AuthLayout/Footer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
     },
     {
       "name": "DescriptionInput",
@@ -5811,218 +6008,6 @@
       }
     },
     {
-      "name": "AuthLayoutBox",
-      "sourceFile": "components/Layouts/AuthLayout/AuthLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Layouts/AuthLayout/AuthLayout.tsx" }
-      ],
-      "styledComponent": "Flex",
-      "propsWithCallSites": { "className": { "components/Layouts/AuthLayout/AuthLayout.tsx": 1 } }
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/Layouts/AuthLayout/AuthLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
-    },
-    {
-      "name": "FooterWrapper",
-      "sourceFile": "components/Layouts/AuthLayout/Footer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "PrivacyPolicy",
-      "sourceFile": "components/Layouts/AuthLayout/Footer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
-    },
-    {
-      "name": "Logo",
-      "sourceFile": "components/Layouts/AuthLayout/Footer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
-    },
-    {
-      "name": "SignoutLink",
-      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Link",
-      "propsWithCallSites": {
-        "id": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 },
-        "onClick": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 },
-        "href": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 }
-      }
-    },
-    {
-      "name": "SignoutIcon",
-      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Image",
-      "propsWithCallSites": {
-        "src": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 }
-      }
-    },
-    {
-      "name": "SignoutText",
-      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
-    },
-    {
-      "name": "AppBar",
-      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "Header",
-      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "header",
-      "propsWithCallSites": {
-        "role": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 }
-      }
-    },
-    {
-      "name": "HeaderText",
-      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Heading",
-      "propsWithCallSites": {
-        "id": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 }
-      }
-    },
-    {
-      "name": "DashboardWrapper",
-      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "Main",
-      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "innerRef": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 }
-      }
-    },
-    {
-      "name": "ServiceBanner",
-      "sourceFile": "components/Layouts/DashboardLayout/ServiceBanner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "Banner",
-      "propsWithCallSites": {
-        "close": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 }
-      }
-    },
-    {
-      "name": "DashboardContent",
-      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
-    },
-    {
-      "name": "Wrapper",
-      "sourceFile": "components/Layouts/DashboardLayout/Footer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
-    },
-    {
-      "name": "FooterWrapper",
-      "sourceFile": "components/Layouts/DashboardLayout/Footer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "LeftAlignBox",
-      "sourceFile": "components/Layouts/DashboardLayout/Footer.tsx",
-      "totalInstances": 6,
-      "totalCallSites": 1,
-      "styledComponent": "Box",
-      "callSites": { "components/Layouts/DashboardLayout/Footer.tsx": 6 }
-    },
-    {
-      "name": "NewProductButton",
-      "sourceFile": "components/Layouts/DashboardLayout/Sidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "id": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 },
-        "w": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 },
-        "disabled": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 },
-        "onClick": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 }
-      }
-    },
-    {
-      "name": "SidebarContainer",
-      "sourceFile": "components/Layouts/DashboardLayout/Sidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "propsWithCallSites": { "role": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 } }
-    },
-    {
-      "name": "NavIcon",
-      "sourceFile": "components/Layouts/DashboardLayout/SidebarItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Icon",
-      "propsWithCallSites": {
-        "name": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 },
-        "active": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 },
-        "preload": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 }
-      }
-    },
-    {
-      "name": "Label",
-      "sourceFile": "components/Layouts/DashboardLayout/SidebarItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Layouts/DashboardLayout/SidebarItem.tsx" }
-      ],
-      "styledComponent": "Box",
-      "propsWithCallSites": {
-        "className": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 }
-      }
-    },
-    {
-      "name": "CompletedIcon",
-      "sourceFile": "components/TotpSetupModal/components/Completed.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Icon",
-      "propsWithCallSites": { "name": { "components/TotpSetupModal/components/Completed.tsx": 1 } }
-    },
-    {
-      "name": "Description",
-      "sourceFile": "components/TotpSetupModal/components/Completed.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
-    },
-    {
       "name": "FieldRow",
       "sourceFile": "components/Withdrawal/components/Transaction.tsx",
       "totalInstances": 8,
@@ -6067,6 +6052,21 @@
       "totalCallSites": 1,
       "styledComponent": "Box",
       "propsWithCallSites": { "ml": { "components/Withdrawal/components/Transaction.tsx": 1 } }
+    },
+    {
+      "name": "CompletedIcon",
+      "sourceFile": "components/TotpSetupModal/components/Completed.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Icon",
+      "propsWithCallSites": { "name": { "components/TotpSetupModal/components/Completed.tsx": 1 } }
+    },
+    {
+      "name": "Description",
+      "sourceFile": "components/TotpSetupModal/components/Completed.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
     },
     {
       "name": "WalletIFrame",
@@ -8562,16 +8562,16 @@
         "components/CreateInvoiceModalForm.tsx": 1,
         "components/Panel.tsx": 1,
         "scenes/App.tsx": 1,
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+        "checkout/embedded/index.tsx": 1,
         "checkout/components/CustomerCharge.tsx": 1,
         "checkout/components/LoadingCheckout.tsx": 1,
+        "components/AccountsList/AccountsList.tsx": 2,
         "checkout/hosted/HostedCheckout.tsx": 1,
         "checkout/hosted/HostedTestCharge.tsx": 1,
         "checkout/hosted/InvoiceReceiptRedirect.tsx": 1,
         "checkout/hosted/entry.tsx": 1,
-        "checkout/embedded/CustomerChargeWidget.tsx": 1,
-        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
-        "checkout/embedded/index.tsx": 1,
-        "components/AccountsList/AccountsList.tsx": 2,
         "components/LinkCoinbase/OAuthConnectModal.tsx": 1,
         "components/OrdersList/RefundModal.tsx": 1,
         "components/Signup/LightSignupForm.tsx": 1,
@@ -8579,8 +8579,8 @@
         "scenes/PointOfSale/PairingScreen.tsx": 1,
         "scenes/PointOfSale/entry.tsx": 1,
         "scenes/Receipts/Receipts.tsx": 1,
-        "scenes/SignOut/SignOut.tsx": 1,
         "scenes/ShopifyLink/ShopifyLink.tsx": 1,
+        "scenes/SignOut/SignOut.tsx": 1,
         "components/ProductFlow/components/EditForm.tsx": 1,
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 2,
@@ -8598,10 +8598,10 @@
         "size": {
           "index.tsx": 2,
           "components/CreateInvoiceModalForm.tsx": 1,
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/entry.tsx": 1,
           "checkout/embedded/index.tsx": 1,
           "components/AccountsList/AccountsList.tsx": 2,
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/entry.tsx": 1,
           "components/Signup/LightSignupForm.tsx": 1,
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
@@ -8643,8 +8643,8 @@
       "callSites": {
         "index.tsx": 1,
         "oauth/entry.tsx": 1,
-        "checkout/hosted/entry.tsx": 1,
         "checkout/embedded/index.tsx": 1,
+        "checkout/hosted/entry.tsx": 1,
         "entry/marketing/index.tsx": 1,
         "scenes/PointOfSale/entry.tsx": 1
       }
@@ -8664,8 +8664,8 @@
       "totalCallSites": 5,
       "callSites": {
         "index.tsx": 1,
-        "checkout/hosted/entry.tsx": 1,
         "checkout/embedded/index.tsx": 1,
+        "checkout/hosted/entry.tsx": 1,
         "entry/marketing/index.tsx": 1,
         "scenes/PointOfSale/entry.tsx": 1
       }
@@ -8677,8 +8677,8 @@
       "totalCallSites": 4,
       "callSites": {
         "index.tsx": 1,
-        "checkout/hosted/entry.tsx": 1,
         "checkout/embedded/index.tsx": 1,
+        "checkout/hosted/entry.tsx": 1,
         "scenes/PointOfSale/entry.tsx": 1
       }
     },
@@ -8714,16 +8714,16 @@
       "totalCallSites": 5,
       "callSites": {
         "index.tsx": 1,
-        "checkout/hosted/entry.tsx": 1,
         "checkout/embedded/index.tsx": 1,
+        "checkout/hosted/entry.tsx": 1,
         "entry/marketing/index.tsx": 1,
         "scenes/PointOfSale/entry.tsx": 1
       },
       "propsWithCallSites": {
         "history": {
           "index.tsx": 1,
-          "checkout/hosted/entry.tsx": 1,
           "checkout/embedded/index.tsx": 1,
+          "checkout/hosted/entry.tsx": 1,
           "entry/marketing/index.tsx": 1,
           "scenes/PointOfSale/entry.tsx": 1
         }
@@ -8808,6 +8808,7 @@
         "components/CreateInvoiceModalSend.tsx": 3,
         "components/FullPageErrorBoundary.tsx": 2,
         "oauth/OauthCallback.tsx": 4,
+        "checkout/embedded/CustomerChargeWidget.tsx": 4,
         "checkout/components/CollectUserInfo.tsx": 4,
         "checkout/components/CustomerCharge.tsx": 6,
         "checkout/components/ErrorCheckout.tsx": 2,
@@ -8831,34 +8832,33 @@
         "checkout/components/SuccessfulPayment.tsx": 12,
         "checkout/components/TransactionsOAuthTotpModal.tsx": 8,
         "checkout/components/WaitingForConfirmations.tsx": 7,
-        "checkout/embedded/CustomerChargeWidget.tsx": 4,
         "components/AccountingReports/AccountingReportsModal.tsx": 1,
         "components/AccountsList/AccountsList.tsx": 22,
         "components/ActivationPanel/ActivationPanel.tsx": 3,
+        "components/Invoice/InvoiceDetailModal.tsx": 9,
+        "components/Invoice/InvoiceList.tsx": 2,
+        "components/Invoice/InvoiceTableColumns.tsx": 3,
+        "components/Invoice/VoidInvoiceModal.tsx": 7,
+        "components/Invoice/VoidInvoiceStatusModal.tsx": 9,
         "components/LinkCoinbase/OAuthConnectModal.tsx": 5,
         "components/LinkCoinbase/RemoveAccountModal.tsx": 5,
         "components/LinkCoinbase/RemoveAccountSuccessModal.tsx": 4,
         "components/LinkCoinbase/SettingsPanelLinked.tsx": 4,
         "components/LinkCoinbase/SettingsPanelUnlinked.tsx": 4,
         "components/LinkCoinbase/UpdateAccountModal.tsx": 4,
+        "components/PaymentDetail/PaymentDetail.tsx": 8,
         "components/OrdersList/OrderDetails.tsx": 21,
         "components/OrdersList/OrdersList.tsx": 10,
         "components/OrdersList/RefundModal.tsx": 1,
         "components/OrdersList/ResolveModal.tsx": 5,
-        "components/PaymentDetail/PaymentDetail.tsx": 8,
         "components/ProductFlow/ProductFlow.tsx": 7,
-        "components/Invoice/InvoiceDetailModal.tsx": 9,
-        "components/Invoice/InvoiceList.tsx": 2,
-        "components/Invoice/InvoiceTableColumns.tsx": 3,
-        "components/Invoice/VoidInvoiceModal.tsx": 7,
-        "components/Invoice/VoidInvoiceStatusModal.tsx": 9,
         "components/ProductsList/ProductsList.tsx": 7,
-        "components/Signup/LightSignupForm.tsx": 7,
         "components/Table/EmptyTableMessage.tsx": 2,
         "components/Table/Pagination.tsx": 1,
+        "components/Signup/LightSignupForm.tsx": 7,
         "components/TablePagination/TablePagination.tsx": 1,
-        "components/TotpSetupModal/TotpSetupModal.tsx": 9,
         "components/Timeline/Timeline.tsx": 1,
+        "components/TotpSetupModal/TotpSetupModal.tsx": 9,
         "components/Withdrawal/ConversionDetails.tsx": 2,
         "components/Withdrawal/ConversionWithdrawalDetails.tsx": 6,
         "components/Withdrawal/ConversionsList.tsx": 2,
@@ -8870,15 +8870,19 @@
         "scenes/MaintenanceMode/MaintenanceMode.tsx": 2,
         "scenes/NotFound/NotFound.tsx": 2,
         "scenes/PointOfSale/PairingScreen.tsx": 3,
+        "scenes/PosSetup/PosSetup.tsx": 3,
         "scenes/Receipts/ReceiptView.tsx": 16,
         "scenes/Receipts/ReceiptViewEmail.tsx": 3,
-        "scenes/PosSetup/PosSetup.tsx": 3,
         "scenes/Reconfirm/Reconfirm.tsx": 3,
         "scenes/ResendConfirmation/ResendConfirmation.tsx": 4,
         "scenes/Signin/Signin.tsx": 12,
         "checkout/components/SendsOAuthTotpModal/SendsTotpModal.tsx": 8,
         "components/ActivationPanel/components/CheckoutMethod.tsx": 12,
         "components/ActivationPanel/components/IntegrationsModal.tsx": 3,
+        "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
+        "components/Layouts/DashboardLayout/Footer.tsx": 5,
+        "components/Layouts/DashboardLayout/Sidebar.tsx": 8,
+        "components/Layouts/AuthLayout/Footer.tsx": 2,
         "components/ProductFlow/components/DeleteProductSuccess.tsx": 5,
         "components/ProductFlow/components/EditForm.tsx": 1,
         "components/ProductFlow/components/Header.tsx": 1,
@@ -8886,10 +8890,6 @@
         "components/ProductFlow/components/ProductDetails.tsx": 18,
         "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 4,
         "components/ProductFlow/components/ProductTypeForm.tsx": 5,
-        "components/Layouts/AuthLayout/Footer.tsx": 2,
-        "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
-        "components/Layouts/DashboardLayout/Footer.tsx": 5,
-        "components/Layouts/DashboardLayout/Sidebar.tsx": 8,
         "components/Withdrawal/components/Transaction.tsx": 9,
         "scenes/Onboarding/components/EmailVerified.tsx": 3,
         "scenes/Onboarding/components/TfaEnabled.tsx": 6,
@@ -8964,14 +8964,14 @@
           "checkout/components/TransactionsOAuthTotpModal.tsx": 3,
           "checkout/components/WaitingForConfirmations.tsx": 3,
           "components/AccountsList/AccountsList.tsx": 2,
+          "components/Invoice/VoidInvoiceModal.tsx": 1,
           "components/LinkCoinbase/OAuthConnectModal.tsx": 1,
           "components/LinkCoinbase/RemoveAccountModal.tsx": 2,
           "components/LinkCoinbase/UpdateAccountModal.tsx": 1,
           "components/OrdersList/OrderDetails.tsx": 1,
           "components/OrdersList/ResolveModal.tsx": 1,
-          "components/Invoice/VoidInvoiceModal.tsx": 1,
-          "components/Signup/LightSignupForm.tsx": 1,
           "components/Table/Pagination.tsx": 1,
+          "components/Signup/LightSignupForm.tsx": 1,
           "components/TablePagination/TablePagination.tsx": 1,
           "components/Withdrawal/ConversionDetails.tsx": 1,
           "components/Withdrawal/ConversionWithdrawalDetails.tsx": 1,
@@ -9051,13 +9051,13 @@
         "checkout/components/FailedPayment.tsx": 1,
         "checkout/components/NetworkPicker.tsx": 1,
         "checkout/components/SuccessfulPayment.tsx": 1,
+        "components/Invoice/InvoiceList.tsx": 1,
+        "components/Invoice/VoidInvoiceModal.tsx": 1,
+        "components/Invoice/VoidInvoiceStatusModal.tsx": 2,
         "components/LinkCoinbase/UpdateAccountModal.tsx": 1,
         "components/OrdersList/OrderDetails.tsx": 2,
         "components/OrdersList/ResolveModal.tsx": 2,
         "components/ProductFlow/ProductFlow.tsx": 1,
-        "components/Invoice/InvoiceList.tsx": 1,
-        "components/Invoice/VoidInvoiceModal.tsx": 1,
-        "components/Invoice/VoidInvoiceStatusModal.tsx": 2,
         "components/TotpSetupModal/TotpSetupModal.tsx": 1,
         "scenes/PointOfSale/PairingScreen.tsx": 1,
         "scenes/Products/Products.tsx": 1,
@@ -9104,13 +9104,13 @@
           "checkout/components/FailedPayment.tsx": 1,
           "checkout/components/NetworkPicker.tsx": 1,
           "checkout/components/SuccessfulPayment.tsx": 1,
+          "components/Invoice/InvoiceList.tsx": 1,
+          "components/Invoice/VoidInvoiceModal.tsx": 1,
+          "components/Invoice/VoidInvoiceStatusModal.tsx": 2,
           "components/LinkCoinbase/UpdateAccountModal.tsx": 1,
           "components/OrdersList/OrderDetails.tsx": 2,
           "components/OrdersList/ResolveModal.tsx": 2,
           "components/ProductFlow/ProductFlow.tsx": 1,
-          "components/Invoice/InvoiceList.tsx": 1,
-          "components/Invoice/VoidInvoiceModal.tsx": 1,
-          "components/Invoice/VoidInvoiceStatusModal.tsx": 2,
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 5,
@@ -9158,9 +9158,9 @@
           "checkout/components/ErrorCheckout.tsx": 1,
           "checkout/components/ErrorCheckoutV2.tsx": 1,
           "checkout/components/SuccessfulPayment.tsx": 1,
+          "components/Invoice/InvoiceList.tsx": 1,
           "components/LinkCoinbase/UpdateAccountModal.tsx": 1,
           "components/OrdersList/ResolveModal.tsx": 2,
-          "components/Invoice/InvoiceList.tsx": 1,
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "scenes/Reconfirm/Reconfirm.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
@@ -9236,6 +9236,11 @@
           "scenes/Signin/Signin.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1
         },
+        "border": {
+          "components/Invoice/InvoiceList.tsx": 1,
+          "components/Invoice/VoidInvoiceModal.tsx": 1,
+          "components/Invoice/VoidInvoiceStatusModal.tsx": 2
+        },
         "h": {
           "components/LinkCoinbase/UpdateAccountModal.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
@@ -9258,11 +9263,6 @@
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WebhookSecretModal.tsx": 1,
           "scenes/Settings/components/WidgetOriginModal.tsx": 1
-        },
-        "border": {
-          "components/Invoice/InvoiceList.tsx": 1,
-          "components/Invoice/VoidInvoiceModal.tsx": 1,
-          "components/Invoice/VoidInvoiceStatusModal.tsx": 2
         },
         "type": {
           "scenes/PointOfSale/PairingScreen.tsx": 1,
@@ -9355,12 +9355,12 @@
         "components/LinkCoinbase/SettingsPanelLinked.tsx": 1,
         "components/ProductsList/ProductsList.tsx": 1,
         "scenes/Products/Products.tsx": 1,
-        "components/ProductFlow/components/Header.tsx": 1,
-        "components/ProductFlow/components/ProductDetails.tsx": 4,
-        "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 3,
         "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
         "components/Layouts/DashboardLayout/Footer.tsx": 1,
         "components/Layouts/DashboardLayout/Sidebar.tsx": 1,
+        "components/ProductFlow/components/Header.tsx": 1,
+        "components/ProductFlow/components/ProductDetails.tsx": 4,
+        "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 3,
         "scenes/Settings/components/ApiKeyPanel.tsx": 3,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 2,
         "scenes/Settings/components/BrandingPanelColorPicker.tsx": 2,
@@ -9382,12 +9382,12 @@
           "components/LinkCoinbase/SettingsPanelLinked.tsx": 1,
           "components/ProductsList/ProductsList.tsx": 1,
           "scenes/Products/Products.tsx": 1,
-          "components/ProductFlow/components/Header.tsx": 1,
-          "components/ProductFlow/components/ProductDetails.tsx": 4,
-          "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 3,
           "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1,
           "components/Layouts/DashboardLayout/Footer.tsx": 1,
           "components/Layouts/DashboardLayout/Sidebar.tsx": 1,
+          "components/ProductFlow/components/Header.tsx": 1,
+          "components/ProductFlow/components/ProductDetails.tsx": 4,
+          "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 3,
           "scenes/Settings/components/ApiKeyPanel.tsx": 3,
           "scenes/Settings/components/BrandingPanelBusinessName.tsx": 2,
           "scenes/Settings/components/BrandingPanelColorPicker.tsx": 2,
@@ -9431,8 +9431,8 @@
         "components/CreateInvoiceModalBusinessName.tsx": 1,
         "components/CreateInvoiceModalForm.tsx": 1,
         "components/CreateInvoiceModalSend.tsx": 1,
-        "checkout/hosted/HostedTestCharge.tsx": 1,
         "components/AccountingReports/AccountingReportsModal.tsx": 1,
+        "checkout/hosted/HostedTestCharge.tsx": 1,
         "components/LinkCoinbase/OAuthConnectModal.tsx": 1,
         "components/LinkCoinbase/RemoveAccountModal.tsx": 1,
         "components/LinkCoinbase/RemoveAccountSuccessModal.tsx": 1,
@@ -9467,8 +9467,8 @@
           "components/CreateInvoiceModalBusinessName.tsx": 1,
           "components/CreateInvoiceModalForm.tsx": 1,
           "components/CreateInvoiceModalSend.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1,
           "components/AccountingReports/AccountingReportsModal.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1,
           "components/LinkCoinbase/OAuthConnectModal.tsx": 1,
           "components/LinkCoinbase/RemoveAccountModal.tsx": 1,
           "components/LinkCoinbase/RemoveAccountSuccessModal.tsx": 1,
@@ -9500,8 +9500,8 @@
           "components/CreateInvoiceModalBusinessName.tsx": 1,
           "components/CreateInvoiceModalForm.tsx": 1,
           "components/CreateInvoiceModalSend.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1,
           "components/AccountingReports/AccountingReportsModal.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1,
           "components/LinkCoinbase/OAuthConnectModal.tsx": 1,
           "components/LinkCoinbase/RemoveAccountModal.tsx": 1,
           "components/LinkCoinbase/RemoveAccountSuccessModal.tsx": 1,
@@ -9553,8 +9553,8 @@
           "components/CreateInvoiceModalBusinessName.tsx": 1,
           "components/CreateInvoiceModalForm.tsx": 1,
           "components/CreateInvoiceModalSend.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1,
           "components/AccountingReports/AccountingReportsModal.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1,
           "components/LinkCoinbase/OAuthConnectModal.tsx": 1,
           "components/LinkCoinbase/RemoveAccountModal.tsx": 1,
           "components/LinkCoinbase/RemoveAccountSuccessModal.tsx": 1,
@@ -10196,9 +10196,9 @@
         "checkout/components/FailedPayment.tsx": 1,
         "checkout/components/Image.tsx": 1,
         "checkout/components/OAuthError.tsx": 1,
-        "components/ProductFlow/ProductFlow.tsx": 2,
         "components/Invoice/InvoiceTableMessages.tsx": 1,
         "components/Invoice/VoidInvoiceModal.tsx": 1,
+        "components/ProductFlow/ProductFlow.tsx": 2,
         "components/ProductsList/ProductsList.tsx": 2,
         "components/Timeline/Timeline.tsx": 2,
         "components/Withdrawal/ConversionsList.tsx": 1,
@@ -10233,9 +10233,9 @@
           "checkout/components/FailedPayment.tsx": 1,
           "checkout/components/Image.tsx": 1,
           "checkout/components/OAuthError.tsx": 1,
-          "components/ProductFlow/ProductFlow.tsx": 2,
           "components/Invoice/InvoiceTableMessages.tsx": 1,
           "components/Invoice/VoidInvoiceModal.tsx": 1,
+          "components/ProductFlow/ProductFlow.tsx": 2,
           "components/ProductsList/ProductsList.tsx": 2,
           "components/Timeline/Timeline.tsx": 2,
           "components/Withdrawal/ConversionsList.tsx": 1,
@@ -10269,9 +10269,9 @@
           "checkout/components/FailedPayment.tsx": 1,
           "checkout/components/Image.tsx": 1,
           "checkout/components/OAuthError.tsx": 1,
-          "components/ProductFlow/ProductFlow.tsx": 2,
           "components/Invoice/InvoiceTableMessages.tsx": 1,
           "components/Invoice/VoidInvoiceModal.tsx": 1,
+          "components/ProductFlow/ProductFlow.tsx": 2,
           "components/ProductsList/ProductsList.tsx": 2,
           "components/Timeline/Timeline.tsx": 2,
           "components/Withdrawal/ConversionsList.tsx": 1,
@@ -10304,9 +10304,9 @@
           "checkout/components/FailedPayment.tsx": 1,
           "checkout/components/Image.tsx": 1,
           "checkout/components/OAuthError.tsx": 1,
-          "components/ProductFlow/ProductFlow.tsx": 2,
           "components/Invoice/InvoiceTableMessages.tsx": 1,
           "components/Invoice/VoidInvoiceModal.tsx": 1,
+          "components/ProductFlow/ProductFlow.tsx": 2,
           "components/ProductsList/ProductsList.tsx": 2,
           "components/Timeline/Timeline.tsx": 2,
           "components/Withdrawal/ConversionsList.tsx": 1,
@@ -10373,8 +10373,8 @@
       "callSites": {
         "components/Input.tsx": 1,
         "components/Modal.tsx": 1,
-        "checkout/components/LoadingCheckout.tsx": 1,
         "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/components/LoadingCheckout.tsx": 1,
         "components/OrdersList/OrdersList.tsx": 1,
         "scenes/Dashboard/Dashboard.tsx": 1,
         "components/ProductFlow/components/EditForm.tsx": 1,
@@ -10603,8 +10603,8 @@
       "totalCallSites": 3,
       "callSites": {
         "providers/MobxI18nProvider.tsx": 1,
-        "checkout/hosted/entry.tsx": 1,
-        "checkout/embedded/index.tsx": 1
+        "checkout/embedded/index.tsx": 1,
+        "checkout/hosted/entry.tsx": 1
       }
     },
     {
@@ -10710,6 +10710,169 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "onClick": { "utils/tracking.tsx": 1 } }
+    },
+    {
+      "name": "DesignFeatureFlagProvider",
+      "sourceFile": "providers/DesignFeatureFlagProvider",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "checkout/embedded/CheckoutApp.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/hosted/HostedTestCharge.tsx": 1,
+        "scenes/Receipts/Receipts.tsx": 1
+      },
+      "propsWithCallSites": {
+        "frontier": {
+          "checkout/embedded/CheckoutApp.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "OAuthProvider",
+      "sourceFile": "providers/OAuthProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Prompt",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "checkout/embedded/CustomerChargeWidget.tsx": 2 },
+      "propsWithCallSites": { "id": { "checkout/embedded/CustomerChargeWidget.tsx": 2 } }
+    },
+    {
+      "name": "CustomerCharge",
+      "sourceFile": "checkout/components/CustomerCharge",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1
+      },
+      "propsWithCallSites": {
+        "store": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "checkout": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "blur": { "checkout/embedded/CustomerChargeWidget.tsx": 1 }
+      }
+    },
+    {
+      "name": "ErrorCheckout",
+      "sourceFile": "checkout/components/ErrorCheckout",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/hosted/HostedTestCharge.tsx": 1
+      },
+      "propsWithCallSites": {
+        "checkout": { "checkout/embedded/CustomerChargeWidget.tsx": 1 },
+        "onRetry": { "checkout/embedded/CustomerChargeWidget.tsx": 1 },
+        "error": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "WidgetHeader",
+      "sourceFile": "checkout/embedded/WidgetHeader",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/embedded/ProductCheckoutWidget.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onClose": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Footer",
+      "sourceFile": "checkout/components/Footer",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "scenes/Receipts/Receipts.tsx": 1
+      },
+      "propsWithCallSites": {
+        "extendedDescription": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        },
+        "shouldShowPrivacyDisclaimerForCollectedInfo": {
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ProductCheckout",
+      "sourceFile": "checkout/components/ProductCheckout",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1
+      },
+      "propsWithCallSites": {
+        "store": {
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "isEmbedded": { "checkout/embedded/ProductCheckoutWidget.tsx": 1 }
+      }
+    },
+    {
+      "name": "CheckoutApp",
+      "sourceFile": "checkout/embedded/CheckoutApp",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Route",
+      "sourceFile": "react-router-dom/Route",
+      "totalInstances": 5,
+      "totalCallSites": 2,
+      "callSites": { "checkout/embedded/index.tsx": 2, "components/Route/Route.tsx": 3 },
+      "propsWithCallSites": {
+        "path": { "checkout/embedded/index.tsx": 2 },
+        "exact": { "checkout/embedded/index.tsx": 2 },
+        "component": { "checkout/embedded/index.tsx": 2 },
+        "render": { "components/Route/Route.tsx": 3 }
+      }
+    },
+    {
+      "name": "CheckoutAppWrapper",
+      "sourceFile": "checkout/embedded/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "Progress",
@@ -10967,9 +11130,9 @@
         "components/Withdrawal/WithdrawalDetails.tsx": 1,
         "scenes/Receipts/ReceiptView.tsx": 1,
         "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
+        "components/Layouts/DashboardLayout/Footer.tsx": 5,
         "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
         "components/Layouts/AuthLayout/Footer.tsx": 2,
-        "components/Layouts/DashboardLayout/Footer.tsx": 5,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
         "scenes/Settings/components/ApiKeyPanel.tsx": 1,
@@ -10990,9 +11153,9 @@
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
           "scenes/Receipts/ReceiptView.tsx": 1,
           "components/ActivationPanel/components/CheckoutMethod.tsx": 1,
+          "components/Layouts/DashboardLayout/Footer.tsx": 5,
           "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
           "components/Layouts/AuthLayout/Footer.tsx": 2,
-          "components/Layouts/DashboardLayout/Footer.tsx": 5,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
           "scenes/Settings/components/ApiKeyPanel.tsx": 1,
@@ -11013,8 +11176,8 @@
           "components/Withdrawal/ConversionWithdrawalDetails.tsx": 1
         },
         "children": {
-          "components/Layouts/AuthLayout/Footer.tsx": 2,
           "components/Layouts/DashboardLayout/Footer.tsx": 5,
+          "components/Layouts/AuthLayout/Footer.tsx": 2,
           "scenes/Settings/components/WebhookPanel.tsx": 1,
           "scenes/Settings/components/WidgetOriginsPanel.tsx": 1
         },
@@ -11459,243 +11622,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "CustomerCharge",
-      "sourceFile": "checkout/components/CustomerCharge",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/embedded/CustomerChargeWidget.tsx": 1
-      },
-      "propsWithCallSites": {
-        "store": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1
-        },
-        "checkout": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1
-        },
-        "blur": { "checkout/embedded/CustomerChargeWidget.tsx": 1 }
-      }
-    },
-    {
-      "name": "ProductCheckout",
-      "sourceFile": "checkout/components/ProductCheckout",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/embedded/ProductCheckoutWidget.tsx": 1
-      },
-      "propsWithCallSites": {
-        "store": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1
-        },
-        "isEmbedded": { "checkout/embedded/ProductCheckoutWidget.tsx": 1 }
-      }
-    },
-    {
-      "name": "DesignFeatureFlagProvider",
-      "sourceFile": "providers/DesignFeatureFlagProvider",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/hosted/HostedTestCharge.tsx": 1,
-        "checkout/embedded/CheckoutApp.tsx": 1,
-        "scenes/Receipts/Receipts.tsx": 1
-      },
-      "propsWithCallSites": {
-        "frontier": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "checkout/embedded/CheckoutApp.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "InvoiceDetails",
-      "sourceFile": "checkout/components/InvoiceDetails",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "invoice": { "checkout/hosted/HostedCheckout.tsx": 1 },
-        "organizationName": { "checkout/hosted/HostedCheckout.tsx": 1 },
-        "brandLogoUrl": { "checkout/hosted/HostedCheckout.tsx": 1 },
-        "brandColor": { "checkout/hosted/HostedCheckout.tsx": 1 }
-      }
-    },
-    {
-      "name": "OrderDetails",
-      "sourceFile": "checkout/components/OrderDetails",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/hosted/HostedTestCharge.tsx": 1
-      },
-      "propsWithCallSites": {
-        "productName": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1
-        },
-        "productDescription": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1
-        },
-        "productImageUrl": { "checkout/hosted/HostedCheckout.tsx": 1 },
-        "organizationName": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1
-        },
-        "brandLogoUrl": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1
-        },
-        "brandColor": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Footer",
-      "sourceFile": "checkout/components/Footer",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/embedded/CustomerChargeWidget.tsx": 1,
-        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
-        "scenes/Receipts/Receipts.tsx": 1
-      },
-      "propsWithCallSites": {
-        "extendedDescription": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        },
-        "shouldShowPrivacyDisclaimerForCollectedInfo": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ErrorCheckout",
-      "sourceFile": "checkout/components/ErrorCheckout",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/hosted/HostedTestCharge.tsx": 1,
-        "checkout/embedded/CustomerChargeWidget.tsx": 1
-      },
-      "propsWithCallSites": {
-        "error": {
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1
-        },
-        "checkout": { "checkout/embedded/CustomerChargeWidget.tsx": 1 },
-        "onRetry": { "checkout/embedded/CustomerChargeWidget.tsx": 1 }
-      }
-    },
-    {
-      "name": "Redirect",
-      "sourceFile": "react-router/Redirect",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "callSites": { "checkout/hosted/Redirects.tsx": 2, "entry/marketing/index.tsx": 1 },
-      "propsWithCallSites": {
-        "to": { "checkout/hosted/Redirects.tsx": 2, "entry/marketing/index.tsx": 1 },
-        "strict": { "entry/marketing/index.tsx": 1 },
-        "from": { "entry/marketing/index.tsx": 1 }
-      }
-    },
-    {
-      "name": "HostedAppWrapper",
-      "sourceFile": "checkout/hosted/entry.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "OAuthProvider",
-      "sourceFile": "providers/OAuthProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Prompt",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "checkout/embedded/CustomerChargeWidget.tsx": 2 },
-      "propsWithCallSites": { "id": { "checkout/embedded/CustomerChargeWidget.tsx": 2 } }
-    },
-    {
-      "name": "WidgetHeader",
-      "sourceFile": "checkout/embedded/WidgetHeader",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/embedded/CustomerChargeWidget.tsx": 1,
-        "checkout/embedded/ProductCheckoutWidget.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onClose": {
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "checkout/embedded/CustomerChargeWidget.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "CheckoutApp",
-      "sourceFile": "checkout/embedded/CheckoutApp",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Route",
-      "sourceFile": "react-router-dom/Route",
-      "totalInstances": 5,
-      "totalCallSites": 2,
-      "callSites": { "checkout/embedded/index.tsx": 2, "components/Route/Route.tsx": 3 },
-      "propsWithCallSites": {
-        "path": { "checkout/embedded/index.tsx": 2 },
-        "exact": { "checkout/embedded/index.tsx": 2 },
-        "component": { "checkout/embedded/index.tsx": 2 },
-        "render": { "components/Route/Route.tsx": 3 }
-      }
-    },
-    {
-      "name": "CheckoutAppWrapper",
-      "sourceFile": "checkout/embedded/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Route",
-      "sourceFile": "react-router/Route",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "callSites": { "entry/marketing/index.tsx": 5 },
-      "propsWithCallSites": {
-        "path": { "entry/marketing/index.tsx": 5 },
-        "component": { "entry/marketing/index.tsx": 5 }
-      }
-    },
-    {
       "name": "TooltipIcon",
       "sourceFile": "components/TooltipIcon",
       "totalInstances": 5,
@@ -11873,500 +11799,67 @@
       "propsWithCallSites": { "onClose": { "components/ActivationPanel/ActivationPanel.tsx": 1 } }
     },
     {
-      "name": "img",
-      "sourceFile": "components/LinkCoinbase/OAuthConnectModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Image",
-      "sourceFile": "components/LinkCoinbase/OAuthConnectModal.tsx",
+      "name": "InvoiceDetails",
+      "sourceFile": "checkout/components/InvoiceDetails",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "src": { "components/LinkCoinbase/OAuthConnectModal.tsx": 1 },
-        "mx": { "components/LinkCoinbase/OAuthConnectModal.tsx": 1 },
-        "animationState": { "components/LinkCoinbase/OAuthConnectModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "p",
-      "sourceFile": "components/LinkCoinbase/OAuthConnectModal.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "components/LinkCoinbase/OAuthConnectModal.tsx": 2 }
-    },
-    {
-      "name": "ModalHeader",
-      "sourceFile": "components/LinkCoinbase/OAuthConnectModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ModalBody",
-      "sourceFile": "components/LinkCoinbase/OAuthConnectModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ModalHeader",
-      "sourceFile": "components/LinkCoinbase/RemoveAccountModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ModalBody",
-      "sourceFile": "components/LinkCoinbase/RemoveAccountModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ModalHeader",
-      "sourceFile": "components/LinkCoinbase/RemoveAccountSuccessModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ModalBody",
-      "sourceFile": "components/LinkCoinbase/RemoveAccountSuccessModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "RowTitle",
-      "sourceFile": "scenes/Settings/components/common/RowTitle",
-      "totalInstances": 15,
-      "totalCallSites": 12,
-      "callSites": {
-        "components/LinkCoinbase/SettingsPanelLinked.tsx": 1,
-        "components/LinkCoinbase/SettingsPanelUnlinked.tsx": 1,
-        "scenes/Settings/components/BrandingPanelBusinessName.tsx": 1,
-        "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
-        "scenes/Settings/components/BrandingPanelLogo.tsx": 1,
-        "scenes/Settings/components/CloudBackupPanel.tsx": 1,
-        "scenes/Settings/components/EmailPreferencePanel.tsx": 2,
-        "scenes/Settings/components/ProfilePanelEmailChange.tsx": 1,
-        "scenes/Settings/components/ProfilePanelEmailLocale.tsx": 1,
-        "scenes/Settings/components/ProfilePanelLocalCurrency.tsx": 1,
-        "scenes/Settings/components/ProfilePanelPassword.tsx": 1,
-        "scenes/Settings/components/TwoFactorPanel.tsx": 3
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "components/LinkCoinbase/SettingsPanelUnlinked.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "components/LinkCoinbase/SettingsPanelUnlinked.tsx": 2 }
-    },
-    {
-      "name": "ModalHeader",
-      "sourceFile": "components/LinkCoinbase/UpdateAccountModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ModalBody",
-      "sourceFile": "components/LinkCoinbase/UpdateAccountModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "span",
-      "sourceFile": "components/OrdersList/OrderDetails.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "id": { "components/OrdersList/OrderDetails.tsx": 1 } }
-    },
-    {
-      "name": "DetailBlock",
-      "sourceFile": "components/OrdersList/OrderDetails.tsx",
-      "totalInstances": 6,
-      "totalCallSites": 1,
-      "callSites": { "components/OrdersList/OrderDetails.tsx": 6 },
-      "propsWithCallSites": {
-        "pb": { "components/OrdersList/OrderDetails.tsx": 3 },
-        "mb": { "components/OrdersList/OrderDetails.tsx": 1 },
-        "pt": { "components/OrdersList/OrderDetails.tsx": 3 },
-        "border": { "components/OrdersList/OrderDetails.tsx": 1 }
-      }
-    },
-    {
-      "name": "br",
-      "sourceFile": "components/OrdersList/OrderDetails.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "components/OrdersList/OrderDetails.tsx": 2 }
-    },
-    {
-      "name": "small",
-      "sourceFile": "components/OrdersList/OrderDetails.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "components/OrdersList/OrderDetails.tsx": 2 }
-    },
-    {
-      "name": "GreyButton",
-      "sourceFile": "components/GreyButton",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "callSites": { "components/OrdersList/OrderDetails.tsx": 4 },
-      "propsWithCallSites": {
-        "id": { "components/OrdersList/OrderDetails.tsx": 2 },
-        "onClick": { "components/OrdersList/OrderDetails.tsx": 4 }
-      }
-    },
-    {
-      "name": "FieldValue",
-      "sourceFile": "components/OrdersList/OrderDetails.tsx",
-      "totalInstances": 8,
-      "totalCallSites": 1,
-      "callSites": { "components/OrdersList/OrderDetails.tsx": 8 },
-      "propsWithCallSites": { "id": { "components/OrdersList/OrderDetails.tsx": 2 } }
-    },
-    {
-      "name": "StatusTag",
-      "sourceFile": "components/StatusTag",
-      "totalInstances": 4,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/OrdersList/OrderDetails.tsx": 3,
-        "components/OrdersList/OrdersList.tsx": 1
-      },
-      "propsWithCallSites": {
-        "id": { "components/OrdersList/OrderDetails.tsx": 3 },
-        "charge": {
-          "components/OrdersList/OrderDetails.tsx": 3,
-          "components/OrdersList/OrdersList.tsx": 1
-        },
-        "ml": { "components/OrdersList/OrdersList.tsx": 1 }
-      }
-    },
-    {
-      "name": "DataWell",
-      "sourceFile": "components/DataWell",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/OrdersList/OrderDetails.tsx": 1,
-        "scenes/Settings/components/WebhookTestModal.tsx": 1
-      },
-      "propsWithCallSites": { "bg": { "components/OrdersList/OrderDetails.tsx": 1 } }
-    },
-    {
-      "name": "pre",
-      "sourceFile": "components/OrdersList/OrderDetails.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "InvoiceModals",
-      "sourceFile": "components/Invoice/InvoiceModals",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/OrdersList/OrdersList.tsx": 1,
-        "scenes/Invoice/InvoiceScene.tsx": 1
-      },
-      "propsWithCallSites": {
-        "setInvoice": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "scenes/Invoice/InvoiceScene.tsx": 1
-        },
-        "invoice": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "scenes/Invoice/InvoiceScene.tsx": 1
-        },
-        "onSuccess": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "scenes/Invoice/InvoiceScene.tsx": 1
-        }
+        "invoice": { "checkout/hosted/HostedCheckout.tsx": 1 },
+        "organizationName": { "checkout/hosted/HostedCheckout.tsx": 1 },
+        "brandLogoUrl": { "checkout/hosted/HostedCheckout.tsx": 1 },
+        "brandColor": { "checkout/hosted/HostedCheckout.tsx": 1 }
       }
     },
     {
       "name": "OrderDetails",
-      "sourceFile": "components/OrdersList/OrderDetails",
+      "sourceFile": "checkout/components/OrderDetails",
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
-        "components/OrdersList/OrdersList.tsx": 1,
-        "components/Invoice/InvoicePaymentDetailsModal.tsx": 1
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/hosted/HostedTestCharge.tsx": 1
       },
       "propsWithCallSites": {
-        "store": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1
+        "productName": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
         },
-        "order": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1
+        "productDescription": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
         },
-        "user": { "components/Invoice/InvoicePaymentDetailsModal.tsx": 1 },
-        "onClose": { "components/Invoice/InvoicePaymentDetailsModal.tsx": 1 },
-        "onInvoiceClick": { "components/Invoice/InvoicePaymentDetailsModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "ResolveModal",
-      "sourceFile": "components/OrdersList/ResolveModal",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/OrdersList/OrdersList.tsx": 1,
-        "components/Invoice/InvoicePaymentDetailsModal.tsx": 1
-      },
-      "propsWithCallSites": {
-        "store": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1
+        "productImageUrl": { "checkout/hosted/HostedCheckout.tsx": 1 },
+        "organizationName": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
         },
-        "code": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1
+        "brandLogoUrl": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
         },
-        "onResolve": { "components/Invoice/InvoicePaymentDetailsModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "RefundModal",
-      "sourceFile": "components/OrdersList/RefundModal",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/OrdersList/OrdersList.tsx": 1,
-        "components/Invoice/InvoicePaymentDetailsModal.tsx": 1
-      },
-      "propsWithCallSites": {
-        "order": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1
-        },
-        "onClose": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1
-        },
-        "onBack": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1
+        "brandColor": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
         }
       }
     },
     {
-      "name": "PanelLoading",
-      "sourceFile": "components/Panel/PanelLoading",
-      "totalInstances": 7,
-      "totalCallSites": 7,
-      "callSites": {
-        "components/OrdersList/OrdersList.tsx": 1,
-        "components/ProductsList/ProductsList.tsx": 1,
-        "components/Withdrawal/ConversionsList.tsx": 1,
-        "components/Withdrawal/WithdrawalsList.tsx": 1,
-        "scenes/Settings/components/ApiKeyPanel.tsx": 1,
-        "scenes/Settings/components/WebhookPanel.tsx": 1,
-        "scenes/Settings/components/WidgetOriginsPanel.tsx": 1
-      }
-    },
-    {
-      "name": "TablePagination",
-      "sourceFile": "components/TablePagination",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "components/OrdersList/OrdersList.tsx": 1,
-        "components/ProductsList/ProductsList.tsx": 1,
-        "components/Withdrawal/ConversionsList.tsx": 1,
-        "components/Withdrawal/WithdrawalsList.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "components/ProductsList/ProductsList.tsx": 1,
-          "components/Withdrawal/ConversionsList.tsx": 1,
-          "components/Withdrawal/WithdrawalsList.tsx": 1
-        },
-        "store": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "components/ProductsList/ProductsList.tsx": 1,
-          "components/Withdrawal/ConversionsList.tsx": 1,
-          "components/Withdrawal/WithdrawalsList.tsx": 1
-        },
-        "getResource": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "components/ProductsList/ProductsList.tsx": 1,
-          "components/Withdrawal/ConversionsList.tsx": 1,
-          "components/Withdrawal/WithdrawalsList.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PanelFooter",
-      "sourceFile": "components/Panel/PanelFooter",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "callSites": {
-        "components/OrdersList/OrdersList.tsx": 1,
-        "components/ProductsList/ProductsList.tsx": 1,
-        "scenes/Settings/components/ApiKeyPanel.tsx": 1,
-        "scenes/Settings/components/WebhookPanel.tsx": 1,
-        "scenes/Settings/components/WidgetOriginsPanel.tsx": 1
-      },
-      "propsWithCallSites": {
-        "selectable": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "components/ProductsList/ProductsList.tsx": 1
-        },
-        "align": {
-          "scenes/Settings/components/ApiKeyPanel.tsx": 1,
-          "scenes/Settings/components/WebhookPanel.tsx": 1,
-          "scenes/Settings/components/WidgetOriginsPanel.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ArrowLink",
-      "sourceFile": "components/ArrowLink",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/OrdersList/OrdersList.tsx": 1,
-        "components/ProductsList/ProductsList.tsx": 1
-      },
-      "propsWithCallSites": {
-        "href": {
-          "components/OrdersList/OrdersList.tsx": 1,
-          "components/ProductsList/ProductsList.tsx": 1
-        },
-        "children": { "components/OrdersList/OrdersList.tsx": 1 }
-      }
-    },
-    {
-      "name": "ColumnDescription",
-      "sourceFile": "components/OrdersList/OrdersList.tsx",
+      "name": "Redirect",
+      "sourceFile": "react-router/Redirect",
       "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "components/OrdersList/OrdersList.tsx": 3 },
-      "propsWithCallSites": { "align": { "components/OrdersList/OrdersList.tsx": 2 } }
-    },
-    {
-      "name": "WalletPortal",
-      "sourceFile": "components/WalletPortal",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "callSites": {
-        "components/OrdersList/RefundModal.tsx": 1,
-        "components/Withdrawal/ConversionsModal.tsx": 1,
-        "components/Withdrawal/Withdrawal.tsx": 1,
-        "scenes/Settings/components/CloudBackupModal.tsx": 1,
-        "scenes/Settings/components/EnableCurrencyModal.tsx": 1
-      },
-      "propsWithCallSites": {
-        "src": {
-          "components/OrdersList/RefundModal.tsx": 1,
-          "components/Withdrawal/ConversionsModal.tsx": 1,
-          "components/Withdrawal/Withdrawal.tsx": 1,
-          "scenes/Settings/components/CloudBackupModal.tsx": 1,
-          "scenes/Settings/components/EnableCurrencyModal.tsx": 1
-        },
-        "onMessageReceived": {
-          "components/OrdersList/RefundModal.tsx": 1,
-          "components/Withdrawal/ConversionsModal.tsx": 1,
-          "components/Withdrawal/Withdrawal.tsx": 1,
-          "scenes/Settings/components/CloudBackupModal.tsx": 1,
-          "scenes/Settings/components/EnableCurrencyModal.tsx": 1
-        },
-        "query": {
-          "components/Withdrawal/ConversionsModal.tsx": 1,
-          "scenes/Settings/components/EnableCurrencyModal.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ExactDetails",
-      "sourceFile": "components/PaymentDetail/PaymentDetail.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "onClick": { "components/PaymentDetail/PaymentDetail.tsx": 1 } }
-    },
-    {
-      "name": "ProductTypeForm",
-      "sourceFile": "components/ProductFlow/components/ProductTypeForm",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "draft": { "components/ProductFlow/ProductFlow.tsx": 1 },
-        "onSelect": { "components/ProductFlow/ProductFlow.tsx": 1 }
-      }
-    },
-    {
-      "name": "EditForm",
-      "sourceFile": "components/ProductFlow/components/EditForm",
-      "totalInstances": 2,
       "totalCallSites": 2,
-      "callSites": {
-        "components/ProductFlow/ProductFlow.tsx": 1,
-        "components/ProductFlow/components/ProductDetails.tsx": 1
-      },
+      "callSites": { "checkout/hosted/Redirects.tsx": 2, "entry/marketing/index.tsx": 1 },
       "propsWithCallSites": {
-        "product": {
-          "components/ProductFlow/ProductFlow.tsx": 1,
-          "components/ProductFlow/components/ProductDetails.tsx": 1
-        },
-        "draft": {
-          "components/ProductFlow/ProductFlow.tsx": 1,
-          "components/ProductFlow/components/ProductDetails.tsx": 1
-        },
-        "logo": {
-          "components/ProductFlow/ProductFlow.tsx": 1,
-          "components/ProductFlow/components/ProductDetails.tsx": 1
-        }
+        "to": { "checkout/hosted/Redirects.tsx": 2, "entry/marketing/index.tsx": 1 },
+        "strict": { "entry/marketing/index.tsx": 1 },
+        "from": { "entry/marketing/index.tsx": 1 }
       }
     },
     {
-      "name": "ProductRequestedInfoForm",
-      "sourceFile": "components/ProductFlow/components/ProductRequestedInfoForm",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/ProductFlow/ProductFlow.tsx": 1,
-        "components/ProductFlow/components/ProductDetails.tsx": 1
-      },
-      "propsWithCallSites": {
-        "draft": {
-          "components/ProductFlow/ProductFlow.tsx": 1,
-          "components/ProductFlow/components/ProductDetails.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PageControl",
-      "sourceFile": "components/PageControl",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "components/ProductFlow/ProductFlow.tsx": 2 },
-      "propsWithCallSites": {
-        "progress": { "components/ProductFlow/ProductFlow.tsx": 2 },
-        "total": { "components/ProductFlow/ProductFlow.tsx": 2 }
-      }
-    },
-    {
-      "name": "ProductDetails",
-      "sourceFile": "components/ProductFlow/components/ProductDetails",
+      "name": "HostedAppWrapper",
+      "sourceFile": "checkout/hosted/entry.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "store": { "components/ProductFlow/ProductFlow.tsx": 1 },
-        "product": { "components/ProductFlow/ProductFlow.tsx": 1 }
-      }
-    },
-    {
-      "name": "DeleteProductSuccess",
-      "sourceFile": "components/ProductFlow/components/DeleteProductSuccess",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "pricingType": { "components/ProductFlow/ProductFlow.tsx": 1 },
-        "onClose": { "components/ProductFlow/ProductFlow.tsx": 1 }
-      }
+      "totalCallSites": 1
     },
     {
       "name": "ModalBlock",
@@ -12514,6 +12007,74 @@
       }
     },
     {
+      "name": "ResolveModal",
+      "sourceFile": "components/OrdersList/ResolveModal",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/Invoice/InvoicePaymentDetailsModal.tsx": 1,
+        "components/OrdersList/OrdersList.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onResolve": { "components/Invoice/InvoicePaymentDetailsModal.tsx": 1 },
+        "store": {
+          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1,
+          "components/OrdersList/OrdersList.tsx": 1
+        },
+        "code": {
+          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1,
+          "components/OrdersList/OrdersList.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "RefundModal",
+      "sourceFile": "components/OrdersList/RefundModal",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/Invoice/InvoicePaymentDetailsModal.tsx": 1,
+        "components/OrdersList/OrdersList.tsx": 1
+      },
+      "propsWithCallSites": {
+        "order": {
+          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1,
+          "components/OrdersList/OrdersList.tsx": 1
+        },
+        "onClose": {
+          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1,
+          "components/OrdersList/OrdersList.tsx": 1
+        },
+        "onBack": {
+          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1,
+          "components/OrdersList/OrdersList.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "OrderDetails",
+      "sourceFile": "components/OrdersList/OrderDetails",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/Invoice/InvoicePaymentDetailsModal.tsx": 1,
+        "components/OrdersList/OrdersList.tsx": 1
+      },
+      "propsWithCallSites": {
+        "user": { "components/Invoice/InvoicePaymentDetailsModal.tsx": 1 },
+        "onClose": { "components/Invoice/InvoicePaymentDetailsModal.tsx": 1 },
+        "store": {
+          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1,
+          "components/OrdersList/OrdersList.tsx": 1
+        },
+        "order": {
+          "components/Invoice/InvoicePaymentDetailsModal.tsx": 1,
+          "components/OrdersList/OrdersList.tsx": 1
+        },
+        "onInvoiceClick": { "components/Invoice/InvoicePaymentDetailsModal.tsx": 1 }
+      }
+    },
+    {
       "name": "StatusTagComponent",
       "sourceFile": "components/Invoice/InvoiceStatus.tsx",
       "totalInstances": 1,
@@ -12594,6 +12155,434 @@
       "totalCallSites": 1
     },
     {
+      "name": "img",
+      "sourceFile": "components/LinkCoinbase/OAuthConnectModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Image",
+      "sourceFile": "components/LinkCoinbase/OAuthConnectModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "src": { "components/LinkCoinbase/OAuthConnectModal.tsx": 1 },
+        "mx": { "components/LinkCoinbase/OAuthConnectModal.tsx": 1 },
+        "animationState": { "components/LinkCoinbase/OAuthConnectModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "p",
+      "sourceFile": "components/LinkCoinbase/OAuthConnectModal.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/LinkCoinbase/OAuthConnectModal.tsx": 2 }
+    },
+    {
+      "name": "ModalHeader",
+      "sourceFile": "components/LinkCoinbase/OAuthConnectModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ModalBody",
+      "sourceFile": "components/LinkCoinbase/OAuthConnectModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ModalHeader",
+      "sourceFile": "components/LinkCoinbase/RemoveAccountModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ModalBody",
+      "sourceFile": "components/LinkCoinbase/RemoveAccountModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ModalHeader",
+      "sourceFile": "components/LinkCoinbase/RemoveAccountSuccessModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ModalBody",
+      "sourceFile": "components/LinkCoinbase/RemoveAccountSuccessModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "RowTitle",
+      "sourceFile": "scenes/Settings/components/common/RowTitle",
+      "totalInstances": 15,
+      "totalCallSites": 12,
+      "callSites": {
+        "components/LinkCoinbase/SettingsPanelLinked.tsx": 1,
+        "components/LinkCoinbase/SettingsPanelUnlinked.tsx": 1,
+        "scenes/Settings/components/BrandingPanelBusinessName.tsx": 1,
+        "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
+        "scenes/Settings/components/BrandingPanelLogo.tsx": 1,
+        "scenes/Settings/components/CloudBackupPanel.tsx": 1,
+        "scenes/Settings/components/EmailPreferencePanel.tsx": 2,
+        "scenes/Settings/components/ProfilePanelEmailChange.tsx": 1,
+        "scenes/Settings/components/ProfilePanelEmailLocale.tsx": 1,
+        "scenes/Settings/components/ProfilePanelLocalCurrency.tsx": 1,
+        "scenes/Settings/components/ProfilePanelPassword.tsx": 1,
+        "scenes/Settings/components/TwoFactorPanel.tsx": 3
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/LinkCoinbase/SettingsPanelUnlinked.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/LinkCoinbase/SettingsPanelUnlinked.tsx": 2 }
+    },
+    {
+      "name": "ModalHeader",
+      "sourceFile": "components/LinkCoinbase/UpdateAccountModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ModalBody",
+      "sourceFile": "components/LinkCoinbase/UpdateAccountModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ExactDetails",
+      "sourceFile": "components/PaymentDetail/PaymentDetail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "onClick": { "components/PaymentDetail/PaymentDetail.tsx": 1 } }
+    },
+    {
+      "name": "span",
+      "sourceFile": "components/OrdersList/OrderDetails.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "id": { "components/OrdersList/OrderDetails.tsx": 1 } }
+    },
+    {
+      "name": "DetailBlock",
+      "sourceFile": "components/OrdersList/OrderDetails.tsx",
+      "totalInstances": 6,
+      "totalCallSites": 1,
+      "callSites": { "components/OrdersList/OrderDetails.tsx": 6 },
+      "propsWithCallSites": {
+        "pb": { "components/OrdersList/OrderDetails.tsx": 3 },
+        "mb": { "components/OrdersList/OrderDetails.tsx": 1 },
+        "pt": { "components/OrdersList/OrderDetails.tsx": 3 },
+        "border": { "components/OrdersList/OrderDetails.tsx": 1 }
+      }
+    },
+    {
+      "name": "br",
+      "sourceFile": "components/OrdersList/OrderDetails.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/OrdersList/OrderDetails.tsx": 2 }
+    },
+    {
+      "name": "small",
+      "sourceFile": "components/OrdersList/OrderDetails.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/OrdersList/OrderDetails.tsx": 2 }
+    },
+    {
+      "name": "GreyButton",
+      "sourceFile": "components/GreyButton",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": { "components/OrdersList/OrderDetails.tsx": 4 },
+      "propsWithCallSites": {
+        "id": { "components/OrdersList/OrderDetails.tsx": 2 },
+        "onClick": { "components/OrdersList/OrderDetails.tsx": 4 }
+      }
+    },
+    {
+      "name": "FieldValue",
+      "sourceFile": "components/OrdersList/OrderDetails.tsx",
+      "totalInstances": 8,
+      "totalCallSites": 1,
+      "callSites": { "components/OrdersList/OrderDetails.tsx": 8 },
+      "propsWithCallSites": { "id": { "components/OrdersList/OrderDetails.tsx": 2 } }
+    },
+    {
+      "name": "StatusTag",
+      "sourceFile": "components/StatusTag",
+      "totalInstances": 4,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/OrdersList/OrderDetails.tsx": 3,
+        "components/OrdersList/OrdersList.tsx": 1
+      },
+      "propsWithCallSites": {
+        "id": { "components/OrdersList/OrderDetails.tsx": 3 },
+        "charge": {
+          "components/OrdersList/OrderDetails.tsx": 3,
+          "components/OrdersList/OrdersList.tsx": 1
+        },
+        "ml": { "components/OrdersList/OrdersList.tsx": 1 }
+      }
+    },
+    {
+      "name": "DataWell",
+      "sourceFile": "components/DataWell",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/OrdersList/OrderDetails.tsx": 1,
+        "scenes/Settings/components/WebhookTestModal.tsx": 1
+      },
+      "propsWithCallSites": { "bg": { "components/OrdersList/OrderDetails.tsx": 1 } }
+    },
+    {
+      "name": "pre",
+      "sourceFile": "components/OrdersList/OrderDetails.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "InvoiceModals",
+      "sourceFile": "components/Invoice/InvoiceModals",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/OrdersList/OrdersList.tsx": 1,
+        "scenes/Invoice/InvoiceScene.tsx": 1
+      },
+      "propsWithCallSites": {
+        "setInvoice": {
+          "components/OrdersList/OrdersList.tsx": 1,
+          "scenes/Invoice/InvoiceScene.tsx": 1
+        },
+        "invoice": {
+          "components/OrdersList/OrdersList.tsx": 1,
+          "scenes/Invoice/InvoiceScene.tsx": 1
+        },
+        "onSuccess": {
+          "components/OrdersList/OrdersList.tsx": 1,
+          "scenes/Invoice/InvoiceScene.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PanelLoading",
+      "sourceFile": "components/Panel/PanelLoading",
+      "totalInstances": 7,
+      "totalCallSites": 7,
+      "callSites": {
+        "components/OrdersList/OrdersList.tsx": 1,
+        "components/ProductsList/ProductsList.tsx": 1,
+        "components/Withdrawal/ConversionsList.tsx": 1,
+        "components/Withdrawal/WithdrawalsList.tsx": 1,
+        "scenes/Settings/components/ApiKeyPanel.tsx": 1,
+        "scenes/Settings/components/WebhookPanel.tsx": 1,
+        "scenes/Settings/components/WidgetOriginsPanel.tsx": 1
+      }
+    },
+    {
+      "name": "TablePagination",
+      "sourceFile": "components/TablePagination",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "components/OrdersList/OrdersList.tsx": 1,
+        "components/ProductsList/ProductsList.tsx": 1,
+        "components/Withdrawal/ConversionsList.tsx": 1,
+        "components/Withdrawal/WithdrawalsList.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "components/OrdersList/OrdersList.tsx": 1,
+          "components/ProductsList/ProductsList.tsx": 1,
+          "components/Withdrawal/ConversionsList.tsx": 1,
+          "components/Withdrawal/WithdrawalsList.tsx": 1
+        },
+        "store": {
+          "components/OrdersList/OrdersList.tsx": 1,
+          "components/ProductsList/ProductsList.tsx": 1,
+          "components/Withdrawal/ConversionsList.tsx": 1,
+          "components/Withdrawal/WithdrawalsList.tsx": 1
+        },
+        "getResource": {
+          "components/OrdersList/OrdersList.tsx": 1,
+          "components/ProductsList/ProductsList.tsx": 1,
+          "components/Withdrawal/ConversionsList.tsx": 1,
+          "components/Withdrawal/WithdrawalsList.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PanelFooter",
+      "sourceFile": "components/Panel/PanelFooter",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "callSites": {
+        "components/OrdersList/OrdersList.tsx": 1,
+        "components/ProductsList/ProductsList.tsx": 1,
+        "scenes/Settings/components/ApiKeyPanel.tsx": 1,
+        "scenes/Settings/components/WebhookPanel.tsx": 1,
+        "scenes/Settings/components/WidgetOriginsPanel.tsx": 1
+      },
+      "propsWithCallSites": {
+        "selectable": {
+          "components/OrdersList/OrdersList.tsx": 1,
+          "components/ProductsList/ProductsList.tsx": 1
+        },
+        "align": {
+          "scenes/Settings/components/ApiKeyPanel.tsx": 1,
+          "scenes/Settings/components/WebhookPanel.tsx": 1,
+          "scenes/Settings/components/WidgetOriginsPanel.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ArrowLink",
+      "sourceFile": "components/ArrowLink",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/OrdersList/OrdersList.tsx": 1,
+        "components/ProductsList/ProductsList.tsx": 1
+      },
+      "propsWithCallSites": {
+        "href": {
+          "components/OrdersList/OrdersList.tsx": 1,
+          "components/ProductsList/ProductsList.tsx": 1
+        },
+        "children": { "components/OrdersList/OrdersList.tsx": 1 }
+      }
+    },
+    {
+      "name": "ColumnDescription",
+      "sourceFile": "components/OrdersList/OrdersList.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "components/OrdersList/OrdersList.tsx": 3 },
+      "propsWithCallSites": { "align": { "components/OrdersList/OrdersList.tsx": 2 } }
+    },
+    {
+      "name": "WalletPortal",
+      "sourceFile": "components/WalletPortal",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "callSites": {
+        "components/OrdersList/RefundModal.tsx": 1,
+        "components/Withdrawal/ConversionsModal.tsx": 1,
+        "components/Withdrawal/Withdrawal.tsx": 1,
+        "scenes/Settings/components/CloudBackupModal.tsx": 1,
+        "scenes/Settings/components/EnableCurrencyModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "src": {
+          "components/OrdersList/RefundModal.tsx": 1,
+          "components/Withdrawal/ConversionsModal.tsx": 1,
+          "components/Withdrawal/Withdrawal.tsx": 1,
+          "scenes/Settings/components/CloudBackupModal.tsx": 1,
+          "scenes/Settings/components/EnableCurrencyModal.tsx": 1
+        },
+        "onMessageReceived": {
+          "components/OrdersList/RefundModal.tsx": 1,
+          "components/Withdrawal/ConversionsModal.tsx": 1,
+          "components/Withdrawal/Withdrawal.tsx": 1,
+          "scenes/Settings/components/CloudBackupModal.tsx": 1,
+          "scenes/Settings/components/EnableCurrencyModal.tsx": 1
+        },
+        "query": {
+          "components/Withdrawal/ConversionsModal.tsx": 1,
+          "scenes/Settings/components/EnableCurrencyModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ProductTypeForm",
+      "sourceFile": "components/ProductFlow/components/ProductTypeForm",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "draft": { "components/ProductFlow/ProductFlow.tsx": 1 },
+        "onSelect": { "components/ProductFlow/ProductFlow.tsx": 1 }
+      }
+    },
+    {
+      "name": "EditForm",
+      "sourceFile": "components/ProductFlow/components/EditForm",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/ProductFlow/ProductFlow.tsx": 1,
+        "components/ProductFlow/components/ProductDetails.tsx": 1
+      },
+      "propsWithCallSites": {
+        "product": {
+          "components/ProductFlow/ProductFlow.tsx": 1,
+          "components/ProductFlow/components/ProductDetails.tsx": 1
+        },
+        "draft": {
+          "components/ProductFlow/ProductFlow.tsx": 1,
+          "components/ProductFlow/components/ProductDetails.tsx": 1
+        },
+        "logo": {
+          "components/ProductFlow/ProductFlow.tsx": 1,
+          "components/ProductFlow/components/ProductDetails.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ProductRequestedInfoForm",
+      "sourceFile": "components/ProductFlow/components/ProductRequestedInfoForm",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/ProductFlow/ProductFlow.tsx": 1,
+        "components/ProductFlow/components/ProductDetails.tsx": 1
+      },
+      "propsWithCallSites": {
+        "draft": {
+          "components/ProductFlow/ProductFlow.tsx": 1,
+          "components/ProductFlow/components/ProductDetails.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PageControl",
+      "sourceFile": "components/PageControl",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/ProductFlow/ProductFlow.tsx": 2 },
+      "propsWithCallSites": {
+        "progress": { "components/ProductFlow/ProductFlow.tsx": 2 },
+        "total": { "components/ProductFlow/ProductFlow.tsx": 2 }
+      }
+    },
+    {
+      "name": "ProductDetails",
+      "sourceFile": "components/ProductFlow/components/ProductDetails",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "store": { "components/ProductFlow/ProductFlow.tsx": 1 },
+        "product": { "components/ProductFlow/ProductFlow.tsx": 1 }
+      }
+    },
+    {
+      "name": "DeleteProductSuccess",
+      "sourceFile": "components/ProductFlow/components/DeleteProductSuccess",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "pricingType": { "components/ProductFlow/ProductFlow.tsx": 1 },
+        "onClose": { "components/ProductFlow/ProductFlow.tsx": 1 }
+      }
+    },
+    {
       "name": "GridRow",
       "sourceFile": "components/Panel/GridRow",
       "totalInstances": 1,
@@ -12634,6 +12623,57 @@
       "totalCallSites": 1,
       "callSites": { "components/Route/Route.tsx": 4 },
       "propsWithCallSites": { "to": { "components/Route/Route.tsx": 4 } }
+    },
+    {
+      "name": "PaginationWrapper",
+      "sourceFile": "components/TablePagination/PaginationWrapper",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/Table/Pagination.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Number",
+      "sourceFile": "components/TablePagination/Number",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/Table/Pagination.tsx": 2 }
+    },
+    {
+      "name": "LeftArrow",
+      "sourceFile": "components/TablePagination/LeftArrow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "src": { "components/Table/Pagination.tsx": 1 },
+        "w": { "components/Table/Pagination.tsx": 1 },
+        "h": { "components/Table/Pagination.tsx": 1 },
+        "onClick": { "components/Table/Pagination.tsx": 1 },
+        "disabled": { "components/Table/Pagination.tsx": 1 }
+      }
+    },
+    {
+      "name": "RightArrow",
+      "sourceFile": "components/TablePagination/RightArrow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "src": { "components/Table/Pagination.tsx": 1 },
+        "w": { "components/Table/Pagination.tsx": 1 },
+        "h": { "components/Table/Pagination.tsx": 1 },
+        "onClick": { "components/Table/Pagination.tsx": 1 },
+        "disabled": { "components/Table/Pagination.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/Table/TableComponents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "Recaptcha",
@@ -12727,55 +12767,21 @@
       }
     },
     {
-      "name": "PaginationWrapper",
-      "sourceFile": "components/TablePagination/PaginationWrapper",
+      "name": "TimelineRow",
+      "sourceFile": "components/Timeline/Timeline.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "div",
-      "sourceFile": "components/Table/Pagination.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Number",
-      "sourceFile": "components/TablePagination/Number",
-      "totalInstances": 2,
       "totalCallSites": 1,
-      "callSites": { "components/Table/Pagination.tsx": 2 }
+      "propsWithCallSites": { "key": { "components/Timeline/Timeline.tsx": 1 } }
     },
     {
-      "name": "LeftArrow",
-      "sourceFile": "components/TablePagination/LeftArrow",
+      "name": "TimelinePaymentAmount",
+      "sourceFile": "components/Timeline/Timeline.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "src": { "components/Table/Pagination.tsx": 1 },
-        "w": { "components/Table/Pagination.tsx": 1 },
-        "h": { "components/Table/Pagination.tsx": 1 },
-        "onClick": { "components/Table/Pagination.tsx": 1 },
-        "disabled": { "components/Table/Pagination.tsx": 1 }
+        "payment": { "components/Timeline/Timeline.tsx": 1 },
+        "status": { "components/Timeline/Timeline.tsx": 1 }
       }
-    },
-    {
-      "name": "RightArrow",
-      "sourceFile": "components/TablePagination/RightArrow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "src": { "components/Table/Pagination.tsx": 1 },
-        "w": { "components/Table/Pagination.tsx": 1 },
-        "h": { "components/Table/Pagination.tsx": 1 },
-        "onClick": { "components/Table/Pagination.tsx": 1 },
-        "disabled": { "components/Table/Pagination.tsx": 1 }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "components/Table/TableComponents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "form",
@@ -12802,23 +12808,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "text": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 } }
-    },
-    {
-      "name": "TimelineRow",
-      "sourceFile": "components/Timeline/Timeline.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "key": { "components/Timeline/Timeline.tsx": 1 } }
-    },
-    {
-      "name": "TimelinePaymentAmount",
-      "sourceFile": "components/Timeline/Timeline.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "payment": { "components/Timeline/Timeline.tsx": 1 },
-        "status": { "components/Timeline/Timeline.tsx": 1 }
-      }
     },
     {
       "name": "FailMessage",
@@ -13220,6 +13209,17 @@
       "propsWithCallSites": { "ref": { "components/Withdrawal/WithdrawalsList.tsx": 1 } }
     },
     {
+      "name": "Route",
+      "sourceFile": "react-router/Route",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "callSites": { "entry/marketing/index.tsx": 5 },
+      "propsWithCallSites": {
+        "path": { "entry/marketing/index.tsx": 5 },
+        "component": { "entry/marketing/index.tsx": 5 }
+      }
+    },
+    {
       "name": "DashboardLayout",
       "sourceFile": "components/Layouts/DashboardLayout",
       "totalInstances": 7,
@@ -13229,8 +13229,8 @@
         "scenes/Dashboard/Dashboard.tsx": 1,
         "scenes/Invoice/InvoiceScene.tsx": 1,
         "scenes/Orders/Orders.tsx": 1,
-        "scenes/Products/Products.tsx": 1,
         "scenes/PosSetup/PosSetup.tsx": 1,
+        "scenes/Products/Products.tsx": 1,
         "scenes/Settings/Settings.tsx": 1
       },
       "propsWithCallSites": {
@@ -13239,8 +13239,8 @@
           "scenes/Dashboard/Dashboard.tsx": 1,
           "scenes/Invoice/InvoiceScene.tsx": 1,
           "scenes/Orders/Orders.tsx": 1,
-          "scenes/Products/Products.tsx": 1,
           "scenes/PosSetup/PosSetup.tsx": 1,
+          "scenes/Products/Products.tsx": 1,
           "scenes/Settings/Settings.tsx": 1
         },
         "role": { "scenes/Settings/Settings.tsx": 1 }
@@ -13281,8 +13281,8 @@
         "scenes/Dashboard/Dashboard.tsx": 1,
         "scenes/Invoice/InvoiceScene.tsx": 1,
         "scenes/Orders/Orders.tsx": 1,
-        "scenes/Products/Products.tsx": 1,
         "scenes/PosSetup/PosSetup.tsx": 1,
+        "scenes/Products/Products.tsx": 1,
         "scenes/Settings/Settings.tsx": 1
       }
     },
@@ -13360,15 +13360,6 @@
       "propsWithCallSites": { "user": { "scenes/Dashboard/Dashboard.tsx": 1 } }
     },
     {
-      "name": "DownloadView",
-      "sourceFile": "components/AccountingReports/DownloadView",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "reportId": { "scenes/DownloadAccountingReport/DownloadAccountingReport.tsx": 1 }
-      }
-    },
-    {
       "name": "SafeFormattedHtmlMessage",
       "sourceFile": "utils/i18n/SafeFormattedHtmlMessage",
       "totalInstances": 11,
@@ -13389,6 +13380,15 @@
       "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": { "scenes/Downtime/Downtime.tsx": 2 }
+    },
+    {
+      "name": "DownloadView",
+      "sourceFile": "components/AccountingReports/DownloadView",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "reportId": { "scenes/DownloadAccountingReport/DownloadAccountingReport.tsx": 1 }
+      }
     },
     {
       "name": "InvoiceList",
@@ -13662,6 +13662,34 @@
       "totalCallSites": 1
     },
     {
+      "name": "CopyableInput",
+      "sourceFile": "components/CopyableInput",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "callSites": {
+        "scenes/PosSetup/PosSetup.tsx": 1,
+        "scenes/Onboarding/components/TfaVerification.tsx": 1,
+        "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
+        "scenes/Settings/components/WebhookSecretModal.tsx": 1,
+        "scenes/TfaReset/components/TfaVerification.tsx": 1
+      },
+      "propsWithCallSites": {
+        "w": { "scenes/PosSetup/PosSetup.tsx": 1 },
+        "value": {
+          "scenes/PosSetup/PosSetup.tsx": 1,
+          "scenes/Onboarding/components/TfaVerification.tsx": 1,
+          "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
+          "scenes/Settings/components/WebhookSecretModal.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1
+        },
+        "mb": {
+          "scenes/Onboarding/components/TfaVerification.tsx": 1,
+          "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1
+        }
+      }
+    },
+    {
       "name": "NewProductButton",
       "sourceFile": "scenes/Products/Products.tsx",
       "totalInstances": 1,
@@ -13698,34 +13726,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "code": { "scenes/Receipts/ReceiptView.tsx": 1 } }
-    },
-    {
-      "name": "CopyableInput",
-      "sourceFile": "components/CopyableInput",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "callSites": {
-        "scenes/PosSetup/PosSetup.tsx": 1,
-        "scenes/Onboarding/components/TfaVerification.tsx": 1,
-        "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-        "scenes/Settings/components/WebhookSecretModal.tsx": 1,
-        "scenes/TfaReset/components/TfaVerification.tsx": 1
-      },
-      "propsWithCallSites": {
-        "w": { "scenes/PosSetup/PosSetup.tsx": 1 },
-        "value": {
-          "scenes/PosSetup/PosSetup.tsx": 1,
-          "scenes/Onboarding/components/TfaVerification.tsx": 1,
-          "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-          "scenes/Settings/components/WebhookSecretModal.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
-        },
-        "mb": {
-          "scenes/Onboarding/components/TfaVerification.tsx": 1,
-          "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1
-        }
-      }
     },
     {
       "name": "Success",
@@ -13796,6 +13796,78 @@
       "sourceFile": "scenes/ResetPassword/components/RequestPasswordReset",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "div",
+      "sourceFile": "scenes/ShopifyLink/ShopifyLink.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "form",
+      "sourceFile": "scenes/Signin/Signin.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "scenes/Signin/Signin.tsx": 3 },
+      "propsWithCallSites": { "onSubmit": { "scenes/Signin/Signin.tsx": 3 } }
+    },
+    {
+      "name": "AuthHelperText",
+      "sourceFile": "components/Layouts/AuthLayout/AuthHelperText",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": { "scenes/Signin/Signin.tsx": 4 }
+    },
+    {
+      "name": "AuthHelperLink",
+      "sourceFile": "components/Layouts/AuthLayout/AuthHelperLink",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "callSites": { "scenes/Signin/Signin.tsx": 5 },
+      "propsWithCallSites": {
+        "onClick": { "scenes/Signin/Signin.tsx": 3 },
+        "href": { "scenes/Signin/Signin.tsx": 2 }
+      }
+    },
+    {
+      "name": "AuthHelperExternalLink",
+      "sourceFile": "components/Layouts/AuthLayout/AuthHelperExternalLink",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "href": { "scenes/Signin/Signin.tsx": 1 } }
+    },
+    {
+      "name": "link",
+      "sourceFile": "scenes/Signin/Signin.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "href": { "scenes/Signin/Signin.tsx": 1 },
+        "rel": { "scenes/Signin/Signin.tsx": 1 }
+      }
+    },
+    {
+      "name": "meta",
+      "sourceFile": "scenes/Signin/Signin.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "name": { "scenes/Signin/Signin.tsx": 1 },
+        "content": { "scenes/Signin/Signin.tsx": 1 }
+      }
+    },
+    {
+      "name": "title",
+      "sourceFile": "scenes/Signin/Signin.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SigninWrapper",
+      "sourceFile": "scenes/Signin/Signin.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "setModal": { "scenes/Signin/Signin.tsx": 1 } }
     },
     {
       "name": "ProfilePanel",
@@ -13892,78 +13964,6 @@
     {
       "name": "LinkCoinbasePanel",
       "sourceFile": "components/LinkCoinbase/SettingsPanelUnlinked/LinkCoinbasePanel",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "form",
-      "sourceFile": "scenes/Signin/Signin.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "scenes/Signin/Signin.tsx": 3 },
-      "propsWithCallSites": { "onSubmit": { "scenes/Signin/Signin.tsx": 3 } }
-    },
-    {
-      "name": "AuthHelperText",
-      "sourceFile": "components/Layouts/AuthLayout/AuthHelperText",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "callSites": { "scenes/Signin/Signin.tsx": 4 }
-    },
-    {
-      "name": "AuthHelperLink",
-      "sourceFile": "components/Layouts/AuthLayout/AuthHelperLink",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "callSites": { "scenes/Signin/Signin.tsx": 5 },
-      "propsWithCallSites": {
-        "onClick": { "scenes/Signin/Signin.tsx": 3 },
-        "href": { "scenes/Signin/Signin.tsx": 2 }
-      }
-    },
-    {
-      "name": "AuthHelperExternalLink",
-      "sourceFile": "components/Layouts/AuthLayout/AuthHelperExternalLink",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "href": { "scenes/Signin/Signin.tsx": 1 } }
-    },
-    {
-      "name": "link",
-      "sourceFile": "scenes/Signin/Signin.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": { "scenes/Signin/Signin.tsx": 1 },
-        "rel": { "scenes/Signin/Signin.tsx": 1 }
-      }
-    },
-    {
-      "name": "meta",
-      "sourceFile": "scenes/Signin/Signin.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "name": { "scenes/Signin/Signin.tsx": 1 },
-        "content": { "scenes/Signin/Signin.tsx": 1 }
-      }
-    },
-    {
-      "name": "title",
-      "sourceFile": "scenes/Signin/Signin.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SigninWrapper",
-      "sourceFile": "scenes/Signin/Signin.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "setModal": { "scenes/Signin/Signin.tsx": 1 } }
-    },
-    {
-      "name": "div",
-      "sourceFile": "scenes/ShopifyLink/ShopifyLink.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -14082,6 +14082,87 @@
       }
     },
     {
+      "name": "title",
+      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Sidebar",
+      "sourceFile": "components/Layouts/DashboardLayout/Sidebar",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Footer",
+      "sourceFile": "components/Layouts/DashboardLayout/Footer",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "a",
+      "sourceFile": "components/Layouts/DashboardLayout/Footer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "href": { "components/Layouts/DashboardLayout/Footer.tsx": 1 } }
+    },
+    {
+      "name": "ProductDetails",
+      "sourceFile": "components/ProductFlow/ProductDetails",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "store": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 },
+        "product": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 }
+      }
+    },
+    {
+      "name": "ProductFlow",
+      "sourceFile": "components/ProductFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "store": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 } }
+    },
+    {
+      "name": "SidebarItem",
+      "sourceFile": "components/Layouts/DashboardLayout/SidebarItem",
+      "totalInstances": 7,
+      "totalCallSites": 1,
+      "callSites": { "components/Layouts/DashboardLayout/Sidebar.tsx": 7 },
+      "propsWithCallSites": {
+        "tag": { "components/Layouts/DashboardLayout/Sidebar.tsx": 7 },
+        "children": { "components/Layouts/DashboardLayout/Sidebar.tsx": 7 },
+        "active": { "components/Layouts/DashboardLayout/Sidebar.tsx": 7 },
+        "disabled": { "components/Layouts/DashboardLayout/Sidebar.tsx": 7 },
+        "href": { "components/Layouts/DashboardLayout/Sidebar.tsx": 7 }
+      }
+    },
+    {
+      "name": "NavItem",
+      "sourceFile": "components/Layouts/DashboardLayout/SidebarItem.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "id": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 },
+        "href": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 },
+        "active": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 },
+        "disabled": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 }
+      }
+    },
+    {
+      "name": "TermsOfService",
+      "sourceFile": "components/Layouts/AuthLayout/Footer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "a",
+      "sourceFile": "components/Layouts/AuthLayout/Footer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "href": { "components/Layouts/AuthLayout/Footer.tsx": 1 } }
+    },
+    {
       "name": "Footer",
       "sourceFile": "components/ProductFlow/components/common/Footer",
       "totalInstances": 4,
@@ -14183,87 +14264,6 @@
       "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": { "components/ProductFlow/components/ProductDetails.tsx": 2 }
-    },
-    {
-      "name": "TermsOfService",
-      "sourceFile": "components/Layouts/AuthLayout/Footer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "a",
-      "sourceFile": "components/Layouts/AuthLayout/Footer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "href": { "components/Layouts/AuthLayout/Footer.tsx": 1 } }
-    },
-    {
-      "name": "title",
-      "sourceFile": "components/Layouts/DashboardLayout/DashboardLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Sidebar",
-      "sourceFile": "components/Layouts/DashboardLayout/Sidebar",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Footer",
-      "sourceFile": "components/Layouts/DashboardLayout/Footer",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "a",
-      "sourceFile": "components/Layouts/DashboardLayout/Footer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "href": { "components/Layouts/DashboardLayout/Footer.tsx": 1 } }
-    },
-    {
-      "name": "ProductDetails",
-      "sourceFile": "components/ProductFlow/ProductDetails",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "store": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 },
-        "product": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 }
-      }
-    },
-    {
-      "name": "ProductFlow",
-      "sourceFile": "components/ProductFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "store": { "components/Layouts/DashboardLayout/Sidebar.tsx": 1 } }
-    },
-    {
-      "name": "SidebarItem",
-      "sourceFile": "components/Layouts/DashboardLayout/SidebarItem",
-      "totalInstances": 7,
-      "totalCallSites": 1,
-      "callSites": { "components/Layouts/DashboardLayout/Sidebar.tsx": 7 },
-      "propsWithCallSites": {
-        "tag": { "components/Layouts/DashboardLayout/Sidebar.tsx": 7 },
-        "children": { "components/Layouts/DashboardLayout/Sidebar.tsx": 7 },
-        "active": { "components/Layouts/DashboardLayout/Sidebar.tsx": 7 },
-        "disabled": { "components/Layouts/DashboardLayout/Sidebar.tsx": 7 },
-        "href": { "components/Layouts/DashboardLayout/Sidebar.tsx": 7 }
-      }
-    },
-    {
-      "name": "NavItem",
-      "sourceFile": "components/Layouts/DashboardLayout/SidebarItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "id": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 },
-        "href": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 },
-        "active": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 },
-        "disabled": { "components/Layouts/DashboardLayout/SidebarItem.tsx": 1 }
-      }
     },
     {
       "name": "DetailBlock",

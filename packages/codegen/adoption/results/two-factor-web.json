@@ -883,159 +883,6 @@
   "presentational": [],
   "other": [
     {
-      "name": "IDVFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/idv/IDVFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PushFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/push/PushFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "No2FAFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/no2fa/No2FAFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SMSFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/sms/SMSFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "TOTPFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/totp/TOTPFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "U2FFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/u2f/U2FFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "DeviceVerificationFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "LoadError",
-      "sourceFile": "@cbhq/two-factor-web/components/LoadError",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-        "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onReload": { "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1 },
-        "event": { "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1 },
-        "error": { "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1 }
-      }
-    },
-    {
-      "name": "LoadViewWrapper",
-      "sourceFile": "@cbhq/two-factor-web/components/LoadViewWrapper",
-      "totalInstances": 6,
-      "totalCallSites": 6,
-      "callSites": {
-        "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-        "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/components/StepView.tsx": 1
-      },
-      "propsWithCallSites": {
-        "loading": {
-          "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1
-        },
-        "onReload": {
-          "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1
-        },
-        "error": {
-          "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1
-        },
-        "event": { "@cbhq/two-factor-web/flows/idv/components/StepView.tsx": 1 }
-      }
-    },
-    {
-      "name": "ClientPropsProvider",
-      "sourceFile": "@cbhq/two-factor-web/contexts/ClientPropsContext/ClientPropsProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "clientProps": { "@cbhq/two-factor-web/ConfirmTwoFactor/index.tsx": 1 }
-      }
-    },
-    {
-      "name": "ViewWrapper",
-      "sourceFile": "@cbhq/two-factor-web/components/ViewWrapper",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@cbhq/two-factor-web/ConfirmTwoFactor/index.tsx": 1,
-        "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1,
-        "@cbhq/two-factor-web/contexts/LoadingContext.tsx": 1
-      },
-      "propsWithCallSites": {
-        "testID": { "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1 }
-      }
-    },
-    {
-      "name": "LoadingProvider",
-      "sourceFile": "@cbhq/two-factor-web/contexts/LoadingContext/LoadingProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "IntlProvider",
-      "sourceFile": "@cbhq/two-factor-web/providers/IntlProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ErrorBoundary",
-      "sourceFile": "@cbhq/two-factor-web/ConfirmTwoFactor/components/ErrorBoundary",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "FetchableResourceProvider",
-      "sourceFile": "@cbhq/two-factor-web/providers/FetchableResourceProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "CurrentTwoFactorProvider",
-      "sourceFile": "@cbhq/two-factor-web/contexts/CurrentTwoFactorContext/CurrentTwoFactorProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ConfirmTwoFactor",
-      "sourceFile": "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "HelpMenuOption",
       "sourceFile": "@cbhq/two-factor-web/components/HelpMenuOption",
       "totalInstances": 1,
@@ -1146,6 +993,35 @@
         "onReloadPress": { "@cbhq/two-factor-web/components/LoadError.tsx": 1 },
         "title": { "@cbhq/two-factor-web/components/LoadError.tsx": 1 },
         "showDescription": { "@cbhq/two-factor-web/components/LoadError.tsx": 1 }
+      }
+    },
+    {
+      "name": "LoadError",
+      "sourceFile": "@cbhq/two-factor-web/components/LoadError",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1,
+        "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onReload": { "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1 },
+        "event": { "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1 },
+        "error": { "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1 }
+      }
+    },
+    {
+      "name": "ViewWrapper",
+      "sourceFile": "@cbhq/two-factor-web/components/ViewWrapper",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1,
+        "@cbhq/two-factor-web/contexts/LoadingContext.tsx": 1,
+        "@cbhq/two-factor-web/ConfirmTwoFactor/index.tsx": 1
+      },
+      "propsWithCallSites": {
+        "testID": { "@cbhq/two-factor-web/components/LoadViewWrapper.tsx": 1 }
       }
     },
     {
@@ -1288,6 +1164,130 @@
         "onLoadMessages": { "@cbhq/two-factor-web/providers/IntlProvider.tsx": 1 },
         "awaitLoadMessages": { "@cbhq/two-factor-web/providers/IntlProvider.tsx": 1 }
       }
+    },
+    {
+      "name": "IDVFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/idv/IDVFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "PushFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/push/PushFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "No2FAFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/no2fa/No2FAFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SMSFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/sms/SMSFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "TOTPFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/totp/TOTPFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "U2FFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/u2f/U2FFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "DeviceVerificationFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "LoadViewWrapper",
+      "sourceFile": "@cbhq/two-factor-web/components/LoadViewWrapper",
+      "totalInstances": 6,
+      "totalCallSites": 6,
+      "callSites": {
+        "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
+        "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/idv/components/StepView.tsx": 1
+      },
+      "propsWithCallSites": {
+        "loading": {
+          "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
+          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1
+        },
+        "onReload": {
+          "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
+          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1
+        },
+        "error": {
+          "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
+          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1
+        },
+        "event": { "@cbhq/two-factor-web/flows/idv/components/StepView.tsx": 1 }
+      }
+    },
+    {
+      "name": "ClientPropsProvider",
+      "sourceFile": "@cbhq/two-factor-web/contexts/ClientPropsContext/ClientPropsProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "clientProps": { "@cbhq/two-factor-web/ConfirmTwoFactor/index.tsx": 1 }
+      }
+    },
+    {
+      "name": "LoadingProvider",
+      "sourceFile": "@cbhq/two-factor-web/contexts/LoadingContext/LoadingProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "IntlProvider",
+      "sourceFile": "@cbhq/two-factor-web/providers/IntlProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ErrorBoundary",
+      "sourceFile": "@cbhq/two-factor-web/ConfirmTwoFactor/components/ErrorBoundary",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "FetchableResourceProvider",
+      "sourceFile": "@cbhq/two-factor-web/providers/FetchableResourceProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "CurrentTwoFactorProvider",
+      "sourceFile": "@cbhq/two-factor-web/contexts/CurrentTwoFactorContext/CurrentTwoFactorProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ConfirmTwoFactor",
+      "sourceFile": "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "Header",
@@ -1588,16 +1588,6 @@
       }
     },
     {
-      "name": "ErrorBoundary",
-      "sourceFile": "@cbhq/two-factor-common/components/ErrorBoundary",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "fallback": { "@cbhq/two-factor-web/ConfirmTwoFactor/components/ErrorBoundary.tsx": 1 },
-        "onError": { "@cbhq/two-factor-web/ConfirmTwoFactor/components/ErrorBoundary.tsx": 1 }
-      }
-    },
-    {
       "name": "VerifyInputCode",
       "sourceFile": "@cbhq/two-factor-web/components/VerifyInputCode",
       "totalInstances": 2,
@@ -1619,6 +1609,16 @@
           "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1
         }
+      }
+    },
+    {
+      "name": "ErrorBoundary",
+      "sourceFile": "@cbhq/two-factor-common/components/ErrorBoundary",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "fallback": { "@cbhq/two-factor-web/ConfirmTwoFactor/components/ErrorBoundary.tsx": 1 },
+        "onError": { "@cbhq/two-factor-web/ConfirmTwoFactor/components/ErrorBoundary.tsx": 1 }
       }
     },
     {

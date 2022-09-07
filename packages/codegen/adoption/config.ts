@@ -74,8 +74,18 @@ export const config: AdoptersConfig[] = [
         github: walletGit,
         id: 'wallet-extension',
         label: 'Wallet Chrome Extension',
+        /**
+         * https://github.cbhq.net/wallet/wallet-mobile/blob/master/workspaces/tsconfig.base.json#L24
+         * tsconfig alias :extension has path for code to parse
+         * which should point to
+         * https://github.cbhq.net/wallet/wallet-mobile/tree/master/workspaces/apps/extension/src
+         */
         projectTsAliases: [':extension'],
-        ignoreDirs: ['src/debug/**'],
+        /**
+         * ignoreDirs should be relative to project path above so this should ignore this directory
+         * https://github.cbhq.net/wallet/wallet-mobile/tree/master/workspaces/apps/extension/src/debug
+         */
+        ignoreDirs: ['debug/**'],
         type: 'doc',
       },
       {
