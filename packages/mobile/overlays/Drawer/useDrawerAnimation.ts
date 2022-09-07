@@ -11,7 +11,7 @@ import { durations } from '@cbhq/cds-common/motion/tokens';
 import {
   handleBarOffset,
   horizontalDrawerPercentageOfView,
-  verticalDrawerPercentageOfView,
+  verticalDrawerPercentageOfView as defaultVerticalDrawerPercentageOfView,
 } from '@cbhq/cds-common/tokens/drawer';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
@@ -21,7 +21,10 @@ const animateDrawer = {
   animateOut: convertMotionConfig(animateDrawerOutConfig as MotionBaseSpec),
 };
 
-export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom') => {
+export const useDrawerAnimation = (
+  pin: PinningDirection | undefined = 'bottom',
+  verticalDrawerPercentageOfView: number | undefined = defaultVerticalDrawerPercentageOfView,
+) => {
   const windowDimensions = useWindowDimensions();
 
   const isPinVertical = pin === 'top' || pin === 'bottom';

@@ -33,6 +33,12 @@ export type DrawerBaseProps = {
   disableCapturePanGestureToDismiss?: boolean;
   /** Callback fired when the overlay is pressed, or swipe to close */
   onBlur?: NoopFn;
+
+  /**
+   * Allow user of component to define maximum percentage of screen that can be taken up by the Drawer
+   * @example if you want a Drawer to take up 50% of the screen, you would pass a value of `0.5`
+   */
+  verticalDrawerPercentageOfView?: number;
 } & SharedProps;
 
 export type DrawerRefBaseProps = {

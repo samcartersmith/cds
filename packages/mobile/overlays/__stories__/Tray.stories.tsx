@@ -43,6 +43,9 @@ const TrayScreen = () => {
       <Example title="Tray with Scrollable Children">
         <ScrollableTray title="Lots of options..." />
       </Example>
+      <Example title="Tray that takes up most of the screen">
+        <ScrollableTray title="Lots of options..." verticalDrawerPercentageOfView={0.9} />
+      </Example>
       <Example title="Feed Card with Tray">
         <FeedCardTray />
       </Example>

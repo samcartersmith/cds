@@ -71,6 +71,7 @@ export type CreateTrayProps = {
 type DefaultTrayTypes = {
   title?: string;
   fallbackEnabled?: boolean;
+  verticalDrawerPercentageOfView?: number;
 };
 
 const handleNoop = () => console.log('pressed');
@@ -131,7 +132,11 @@ export const trayBuilder = ({
     );
   };
 
-  const ScrollableTray = ({ title, fallbackEnabled }: DefaultTrayTypes) => {
+  const ScrollableTray = ({
+    title,
+    fallbackEnabled,
+    verticalDrawerPercentageOfView,
+  }: DefaultTrayTypes) => {
     const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
       useToggler(false);
     const [value, setValue] = useState<string>();
@@ -182,6 +187,7 @@ export const trayBuilder = ({
             onCloseComplete={handlehandleClose}
             disableCapturePanGestureToDismiss
             ref={trayRef}
+            verticalDrawerPercentageOfView={verticalDrawerPercentageOfView}
           >
             {isLoading ? (
               <TrayFallbackContent />

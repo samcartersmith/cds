@@ -13,7 +13,7 @@ import { useSpectrum } from '@cbhq/cds-common';
 import { drawerAnimationDefaultDuration, MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
 import {
   horizontalDrawerPercentageOfView,
-  verticalDrawerPercentageOfView,
+  verticalDrawerPercentageOfView as defaultVerticalDrawerPercentageOfView,
 } from '@cbhq/cds-common/tokens/drawer';
 import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common/types';
 
@@ -39,6 +39,7 @@ export const Drawer = memo(
       hideHandleBar = false,
       disableCapturePanGestureToDismiss = false,
       onBlur,
+      verticalDrawerPercentageOfView = defaultVerticalDrawerPercentageOfView,
       ...props
     },
     ref,
@@ -51,7 +52,7 @@ export const Drawer = memo(
       animateDrawerIn,
       drawerAnimationStyles,
       animateSwipeToClose,
-    } = useDrawerAnimation(pin);
+    } = useDrawerAnimation(pin, verticalDrawerPercentageOfView);
     const [opacityAnimation, animateOverlayIn, animateOverlayOut] = useOverlayAnimation(
       drawerAnimationDefaultDuration,
     );
@@ -95,6 +96,7 @@ export const Drawer = memo(
       onBlur,
       handleSwipeToClose,
       opacityAnimation,
+      verticalDrawerPercentageOfView,
     });
 
     const isPinHorizontal = pin === 'left' || pin === 'right';
@@ -105,10 +107,10 @@ export const Drawer = memo(
       () => width * horizontalDrawerPercentageOfView + MAX_OVER_DRAG,
       [width],
     );
-    // drawer will automatically size itself based on content, but will cap at 75% of viewport height
+    // drawer will automatically size itself based on content, but will cap at 75% of viewport height (can override)
     const verticalDrawerMaxHeight = useMemo(
       () => height * verticalDrawerPercentageOfView + MAX_OVER_DRAG,
-      [height],
+      [height, verticalDrawerPercentageOfView],
     );
 
     const getPanGestureHandlers = !preventDismissGestures

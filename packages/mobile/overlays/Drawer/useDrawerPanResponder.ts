@@ -18,7 +18,7 @@ import {
   handleBarOffset,
   horizontalDrawerPercentageOfView,
   normalizeDrawerPanDistanceMultiplier,
-  verticalDrawerPercentageOfView,
+  verticalDrawerPercentageOfView as defaultVerticalDrawerPercentageOfView,
 } from '@cbhq/cds-common/tokens/drawer';
 import { modulate } from '@cbhq/cds-common/utils/modulate';
 
@@ -30,6 +30,7 @@ type UseDrawerPanResponderParams = {
   onBlur?: NoopFn;
   handleSwipeToClose: NoopFn;
   opacityAnimation: Animated.Value;
+  verticalDrawerPercentageOfView: number;
 };
 type DragDirection = 'up' | 'down' | 'left' | 'right' | undefined;
 
@@ -47,6 +48,7 @@ export const useDrawerPanResponder = ({
   onBlur,
   handleSwipeToClose,
   opacityAnimation,
+  verticalDrawerPercentageOfView = defaultVerticalDrawerPercentageOfView,
 }: UseDrawerPanResponderParams) => {
   // drawer dimensions
   const { width, height } = useWindowDimensions();
