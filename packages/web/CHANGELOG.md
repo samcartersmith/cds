@@ -8,6 +8,23 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.9.0 (9/7/2022, 05:39 PM PST)
+
+#### 🚀 Updates
+
+- **[Sparkline]** Add thin weight to progress components. [#1034](https://github.cbhq.net/frontend/cds/pull/1034)
+
+#### 🐞 Fixes
+
+- **[Icons]** Update icons. [#1071](https://github.cbhq.net/frontend/cds/pull/1071)
+- Multiline SelectOption does not overflow by default. [#1052](https://github.cbhq.net/frontend/cds/pull/1052), [CDS-2276](https://jira.coinbase-corp.com/browse/CDS-2276)
+- Ensure types are included in web-esm package. [#1046](https://github.cbhq.net/frontend/cds/pull/1046)
+
+#### 📘 Misc
+
+- **[fix]** Undo staticFilesToIgnore changes to web build options. [#1053](https://github.cbhq.net/frontend/cds/pull/1053)
+- **[Adoption Tracker]** Update Overview page. [#1023](https://github.cbhq.net/frontend/cds/pull/1023), [CDS-2419](https://jira.coinbase-corp.com/browse/CDS-2419)
+
 ## 1.8.0 (8/31/2022, 10:51 AM PST)
 
 #### 🚀 Updates

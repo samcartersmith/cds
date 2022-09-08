@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.9.0 (9/7/2022, 05:39 PM PST)
+
+#### 🚀 Updates
+
+- **[Sparkline]** Add thin weight to progress components. [#1034](https://github.cbhq.net/frontend/cds/pull/1034)
+
+#### 🐞 Fixes
+
+- **[Icons]** Update icons. [#1071](https://github.cbhq.net/frontend/cds/pull/1071)
+- Feature (WALL-12174) Add ability to override max Drawer/Tray height. [#1059](https://github.cbhq.net/frontend/cds/pull/1059)
+- Multiline SelectOption does not overflow by default. [#1052](https://github.cbhq.net/frontend/cds/pull/1052), [CDS-2276](https://jira.coinbase-corp.com/browse/CDS-2276)
+
 ## 1.8.0 (8/31/2022, 10:51 AM PST)
 
 #### 📘 Misc
