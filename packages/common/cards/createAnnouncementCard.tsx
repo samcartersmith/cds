@@ -30,7 +30,7 @@ export function createAnnouncementCard<OnPressFn>({
         testID={props.testID}
         flexShrink={0}
       >
-        <CardBody mediaPlacement="end" {...props} />
+        <CardBody mediaPlacement="end" alignItems="flex-start" {...props} />
       </Card>
     );
   });

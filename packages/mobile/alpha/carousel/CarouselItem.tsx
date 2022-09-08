@@ -169,7 +169,7 @@ export const CarouselItem: React.FC<CarouselItemProps> = memo(
                 <IconButton transparent name="close" onPress={handleDismissPress} />
               </CarouselControlsWrapper>
             ) : null}
-            {children}
+            <Box spacingTop={2}>{children}</Box>
           </Box>
         </Box>
       </CarouselItemContext.Provider>
