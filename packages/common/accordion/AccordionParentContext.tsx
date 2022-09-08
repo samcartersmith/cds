@@ -11,12 +11,7 @@ export const AccordionParentContext = createContext<{
 });
 
 export const useAccordionParent = () => {
-  const context = useContext(AccordionParentContext);
-  if (context === undefined) {
-    // eslint-disable-next-line no-console
-    console.error('useAccordionParent must be used within a AccordionParentProvider');
-  }
-  return context;
+  return useContext(AccordionParentContext);
 };
 
 export const AccordionParentProvider = ({

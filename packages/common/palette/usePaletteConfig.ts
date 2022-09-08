@@ -5,7 +5,7 @@ import { useSpectrumConditional } from '../hooks/useSpectrumConditional';
 import { useFeatureFlag } from '../system/useFeatureFlag';
 import { PaletteConfig } from '../types/Palette';
 
-import { defaultPalette, frontierSpectrumPalette } from './constants';
+import { frontierSpectrumPalette } from './constants';
 import { PaletteConfigContext } from './context';
 
 export const usePaletteConfig = (): PaletteConfig => {
@@ -15,9 +15,6 @@ export const usePaletteConfig = (): PaletteConfig => {
   const paletteToMerge = hasFrontier ? frontierPalette : emptyObject;
 
   return useMemo(() => {
-    if (!context) {
-      return merge(defaultPalette, paletteToMerge);
-    }
     return merge(context, paletteToMerge);
   }, [context, paletteToMerge]);
 };
