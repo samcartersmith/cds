@@ -4786,6 +4786,26 @@ export const iconManifest = {
     description: 'character, symbol, language, international, translation ',
     documentationLinks: [],
   },
+  '9664:816': {
+    key: 'b91114db074906ad55e958eaff23ad5bf9ac199a',
+    name: 'Icon/pencilAlt_24',
+    description: 'pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️',
+    documentationLinks: [],
+  },
+  '9664:873': {
+    key: 'd581ca80aacdeeb0979dcbf673a0d826c6cad24e',
+    name: 'Icon/rocket_24',
+    description:
+      'rocket, advance, vehicle, speed, fast, space, universe, did we really land on the moon?, 🚀',
+    documentationLinks: [],
+  },
+  '9666:914': {
+    key: 'b724464487009277ccb16d916ab154e9ec61993b',
+    name: 'Icon/qrCodeAlt_24',
+    description:
+      'rocket, advance, vehicle, speed, fast, space, universe, did we really land on the moon?, 🚀',
+    documentationLinks: [],
+  },
   '9234:743': {
     key: '71a344456fad9538ae4103bca1d408fefd1ddba2',
     name: 'Icon/directDepositIcon_24/active',
@@ -4804,6 +4824,26 @@ export const iconManifest = {
     description: 'character, symbol, language, international, translation ',
     documentationLinks: [],
   },
+  '9664:815': {
+    key: 'd97668861bb1762f43aa9a0572d103c318e9fdcc',
+    name: 'Icon/pencilAlt_16',
+    description: 'pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️',
+    documentationLinks: [],
+  },
+  '9664:872': {
+    key: '93c80ac3063b3c079cac7187c9af06f7f21bfe20',
+    name: 'Icon/rocket_16',
+    description:
+      'rocket, advance, vehicle, speed, fast, space, universe, did we really land on the moon?, 🚀',
+    documentationLinks: [],
+  },
+  '9666:913': {
+    key: '18858077d43d8045492e2b20ac5516a5baa68e09',
+    name: 'Icon/qrCodeAlt_16',
+    description:
+      'rocket, advance, vehicle, speed, fast, space, universe, did we really land on the moon?, 🚀',
+    documentationLinks: [],
+  },
   '9234:744': {
     key: 'c2ae54e8f471221b35b3edf9468fb9200329b3e0',
     name: 'Icon/directDepositIcon_16/active',
@@ -4820,6 +4860,26 @@ export const iconManifest = {
     key: '1361777edac67ebfb5eaa378742c945d01b122ca',
     name: 'Icon/generalCharacter_12',
     description: 'character, symbol, language, international, translation ',
+    documentationLinks: [],
+  },
+  '9664:814': {
+    key: '0609157e6fa157e288e6427c44ea0f44880da9ef',
+    name: 'Icon/pencilAlt_12',
+    description: 'pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️',
+    documentationLinks: [],
+  },
+  '9664:871': {
+    key: 'e2304c64a74f2383bf3e665067453abee7531296',
+    name: 'Icon/rocket_12',
+    description:
+      'rocket, advance, vehicle, speed, fast, space, universe, did we really land on the moon?, 🚀',
+    documentationLinks: [],
+  },
+  '9666:912': {
+    key: '3c8e2ce061d8f3ca8de807fb348414320e4c778d',
+    name: 'Icon/qrCodeAlt_12',
+    description:
+      'rocket, advance, vehicle, speed, fast, space, universe, did we really land on the moon?, 🚀',
     documentationLinks: [],
   },
   '9234:745': {
@@ -6482,6 +6542,42 @@ export const iconManifest = {
     key: '72f391fe292ccb373855757b1f4aba643164cca6',
     name: 'Icon/breifcase_12',
     description: 'business, briefcase, careers, work, bag, 💼',
+    documentationLinks: [],
+  },
+  '9671:850': {
+    key: 'd4077490687984043ad84c28d7320e76f4185c6b',
+    name: 'NavigationIcon/copyNav_16/inactive',
+    description: 'navigation, specialty, copy, mimic, duplicate, identical, another',
+    documentationLinks: [],
+  },
+  '9671:846': {
+    key: '5eb5d8c1355c64ecd5354201caab1711d99102b7',
+    name: 'NavigationIcon/copyNav_16/active',
+    description: 'navigation, specialty, copy, mimic, duplicate, identical, another',
+    documentationLinks: [],
+  },
+  '9671:849': {
+    key: '12b31f96e9884fa63f4cfdb0d9d66058c3a7bca1',
+    name: 'NavigationIcon/copyNav_24/inactive',
+    description: 'navigation, specialty, copy, mimic, duplicate, identical, another',
+    documentationLinks: [],
+  },
+  '9671:848': {
+    key: '0b2bef1ab4167cd6d2681b38947bab4cc48cf1ba',
+    name: 'NavigationIcon/copyNav_24/active',
+    description: 'navigation, specialty, copy, mimic, duplicate, identical, another',
+    documentationLinks: [],
+  },
+  '9671:847': {
+    key: '025783faf3fad576ac7f53ca135c66504a16af73',
+    name: 'NavigationIcon/copyNav_12/inactive',
+    description: 'navigation, specialty, copy, mimic, duplicate, identical, another',
+    documentationLinks: [],
+  },
+  '9671:845': {
+    key: '86e19c95be6644c029daebb1cae9e0bb6e350b8b',
+    name: 'NavigationIcon/copyNav_12/active',
+    description: 'navigation, specialty, copy, mimic, duplicate, identical, another',
     documentationLinks: [],
   },
 };

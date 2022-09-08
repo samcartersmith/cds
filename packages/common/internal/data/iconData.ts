@@ -151,6 +151,9 @@ export const iconNames = [
   'document',
   'directDepositIconInactive',
   'generalCharacter',
+  'pencilAlt',
+  'rocket',
+  'qrCodeAlt',
   'directDepositIconActive',
   'diamondInactive',
   'diamondActive',
@@ -304,6 +307,7 @@ export const navigationIconNames = [
   'activityNav',
   'account',
   'magnifyingGlass',
+  'copyNav',
 ] as const;
 
 export const unicodeMap = {
@@ -755,4 +759,9 @@ export const unicodeMap = {
   music: { '8': 'uF01E', '12': 'uF01F', '16': 'uF020', '24': 'uF021', '32': 'uF022' },
   save: { '8': 'uF023', '12': 'uF024', '16': 'uF025', '24': 'uF026', '32': 'uF027' },
   breifcase: { '8': 'uF028', '12': 'uF029', '16': 'uF02A', '24': 'uF02B', '32': 'uF02C' },
+  pencilAlt: { '8': 'uF02D', '12': 'uF02E', '16': 'uF02F', '24': 'uF030', '32': 'uF031' },
+  rocket: { '8': 'uF032', '12': 'uF033', '16': 'uF034', '24': 'uF035', '32': 'uF036' },
+  qrCodeAlt: { '8': 'uF037', '12': 'uF038', '16': 'uF039', '24': 'uF03A', '32': 'uF03B' },
+  copyNavInactive: { '8': 'uF03C', '12': 'uF03D', '16': 'uF03E', '24': 'uF03F', '32': 'uF040' },
+  copyNavActive: { '8': 'uF041', '12': 'uF042', '16': 'uF043', '24': 'uF044', '32': 'uF045' },
 } as const;

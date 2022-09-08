@@ -147,6 +147,9 @@ export type IconName =
   | 'document'
   | 'directDepositIconInactive'
   | 'generalCharacter'
+  | 'pencilAlt'
+  | 'rocket'
+  | 'qrCodeAlt'
   | 'directDepositIconActive'
   | 'diamondInactive'
   | 'diamondActive'
@@ -298,7 +301,8 @@ export type NavigationIconName =
   | 'addPeople'
   | 'activityNav'
   | 'account'
-  | 'magnifyingGlass';
+  | 'magnifyingGlass'
+  | 'copyNav';
 
 export type NavigationIconInternalName =
   | 'planetInactive'
@@ -418,4 +422,6 @@ export type NavigationIconInternalName =
   | 'accountInactive'
   | 'accountActive'
   | 'magnifyingGlassInactive'
-  | 'magnifyingGlassActive';
+  | 'magnifyingGlassActive'
+  | 'copyNavInactive'
+  | 'copyNavActive';
