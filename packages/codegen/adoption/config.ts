@@ -22,7 +22,7 @@ const monorepoConfig = {
   tsconfigFileName: 'tsconfig.options.json',
 };
 
-export const hiddenProjects = ['maui'];
+export const hiddenProjects = ['commerce-merchant', 'commerce-payer'];
 
 export const config: AdoptersConfig[] = [
   {
@@ -48,7 +48,7 @@ export const config: AdoptersConfig[] = [
         root: path.join(tempDir, mauiGit, 'maui-frontend'),
         github: mauiGit,
         id: 'maui',
-        label: 'Maui',
+        label: 'NFT',
         type: 'doc',
       },
       {
@@ -150,13 +150,6 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
-        root: path.join(tempDir, retailWebGit, 'identity'),
-        github: retailWebGit,
-        id: 'retail-web-identity',
-        label: 'Identity',
-        type: 'doc',
-      },
-      {
         ...monorepoConfig,
         id: 'unified-login',
         label: 'Unified Login Web',
@@ -233,18 +226,19 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
-        root: path.join(tempDir, retailWebGit, 'packages/uwo'),
-        github: retailWebGit,
-        id: 'uwo',
-        label: 'Unified Web Onboarding',
-        type: 'doc',
-      },
-      {
         root: path.join(tempDir, retailWebGit, 'marketing'),
         github: retailWebGit,
         id: 'retail-web-logged-out',
         label: 'Retail Web Logged Out',
         type: 'doc',
+      },
+      {
+        root: path.join(tempDir, retailWebGit, 'identity'),
+        github: retailWebGit,
+        id: 'retail-onboarding',
+        label: 'Retail Onboarding',
+        type: 'doc',
+        sourceGlob: ['(components|steps)/**/*.(ts|tsx)'],
       },
     ],
   },
