@@ -16,7 +16,7 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/cds-tools:typecheck"
+      "executor": "@cbhq/mono-tasks:typecheck"
     }
   }
 }

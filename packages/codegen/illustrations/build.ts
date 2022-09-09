@@ -206,7 +206,7 @@ const loadOneImage = async (
   const imageOutFullPath = `${outDirPath}/${spectrum}/`;
   const pngOutFullPath = `${outDirPath}/png-${spectrum}/`;
   const jsOutFullPath = `${mobileImagesPath}/${spectrum}/`;
-  const svgFilesPath = await getSourcePath('codegen/illustrations/images');
+  const svgFilesPath = getSourcePath('packages/codegen/illustrations/images');
 
   try {
     if (!fs.existsSync(imageOutFullPath)) fs.mkdirSync(imageOutFullPath, { recursive: true });
@@ -593,7 +593,7 @@ const createTypes = async (names: IllustrationNamesMap, variants: string[]) => {
   try {
     await writeFile({
       template: 'typescript.ejs',
-      dest: 'common/types/IllustrationNames.ts',
+      dest: 'packages/common/types/IllustrationNames.ts',
       data: {
         types: {
           IllustrationVariant: variants,
@@ -749,9 +749,9 @@ const createIllustrationDescriptionGraph = async (destPath: string) => {
 
 const main = async (deleteImgsDir = false) => {
   try {
-    const svgOptCfgFullPath = await getSourcePath('codegen/configs/svgo.config.js');
-    const outDirPath = await getSourcePath('codegen/illustrations/images');
-    mobileImagesPath = await getSourcePath('mobile/illustrations/images');
+    const svgOptCfgFullPath = getSourcePath('packages/codegen/configs/svgo.config.js');
+    const outDirPath = getSourcePath('packages/codegen/illustrations/images');
+    mobileImagesPath = getSourcePath('packages/mobile/illustrations/images');
 
     svgOptimizerConfig = await loadConfig(svgOptCfgFullPath);
     const components = await getComponents();
@@ -769,10 +769,13 @@ const main = async (deleteImgsDir = false) => {
     await updateManifest(components);
 
     await loadImagesLocally(Object.keys(localManifestData.svg), outDirPath);
-    await genStatistics('codegen/illustrations/illustration_statistics.ts', pascalCaseNames);
+    await genStatistics(
+      'packages/codegen/illustrations/illustration_statistics.ts',
+      pascalCaseNames,
+    );
 
     const deletedIllustrationsArr = Array.from(deletedIllustrations);
-    await generateReleaseHistory('common/internal/data/illustrationReleaseHistory.ts', {
+    await generateReleaseHistory('packages/common/internal/data/illustrationReleaseHistory.ts', {
       newIllustrations,
       modifiedIllustrations,
       deletedIllustrations: deletedIllustrationsArr,
@@ -780,19 +783,19 @@ const main = async (deleteImgsDir = false) => {
 
     console.log('All images loaded');
     await createTypes(camelCaseNames, variants);
-    await createConstants(camelCaseNames, ['common/internal/data/illustrationData.ts']);
-    await createMobileSpectrumMap(camelCaseNames, 'mobile/illustrations');
-    await createManifestFile('codegen/illustrations/illustration_manifest.ts');
+    await createConstants(camelCaseNames, ['packages/common/internal/data/illustrationData.ts']);
+    await createMobileSpectrumMap(camelCaseNames, 'packages/mobile/illustrations');
+    await createManifestFile('packages/codegen/illustrations/illustration_manifest.ts');
     const versionNumManifest = await createVersionNumManifest(
-      'web/illustrations/versionNumManifest.ts',
+      'packages/web/illustrations/versionNumManifest.ts',
     );
     await createIllustrationDescriptionGraph(
-      'common/internal/data/illustrationDescriptionGraph.ts',
+      'packages/common/internal/data/illustrationDescriptionGraph.ts',
     );
     checkLightModeExistsForAllAssets(versionNumManifest);
 
     outputImgBasedOnMostRecentlyUpdated(versionNumManifest, [
-      'common/internal/data/sortedIllustrationData.ts',
+      'packages/common/internal/data/sortedIllustrationData.ts',
     ]);
   } catch (err) {
     console.error(err);

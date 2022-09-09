@@ -29,14 +29,14 @@ type GlyphData = {
  * Remove svgs after IconFonts are created
  */
 export const removeSVGs = async () => {
-  const SVGS_DIR = await getSourcePath('common/internal/data/iconSvgs');
+  const SVGS_DIR = getSourcePath('packages/common/internal/data/iconSvgs');
   fs.rmdirSync(SVGS_DIR, { recursive: true });
 };
 
 export const createIconFont = async () => {
-  const SVGS_DIR = await getSourcePath('common/internal/data/iconSvgs');
-  const MOBILE_FONTS_DIR = await getSourcePath('mobile/icons/font');
-  const WEB_FONTS_DIR = await getSourcePath('web/icons/font');
+  const SVGS_DIR = getSourcePath('packages/common/internal/data/iconSvgs');
+  const MOBILE_FONTS_DIR = getSourcePath('packages/mobile/icons/font');
+  const WEB_FONTS_DIR = getSourcePath('packages/web/icons/font');
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const font = (await webfont({
@@ -68,7 +68,7 @@ export const createIconFont = async () => {
     'iconFontFace.ejs': [
       {
         data: { fileName: webFontName },
-        dest: 'web/styles/icon-font.css',
+        dest: 'packages/web/styles/icon-font.css',
       },
     ],
   });

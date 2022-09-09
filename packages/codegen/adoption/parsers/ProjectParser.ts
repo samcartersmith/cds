@@ -3,8 +3,8 @@ import { parseTsconfig } from 'get-tsconfig';
 import { countBy, flattenDeep, fromPairs, map, mapValues, partition, pickBy, uniq } from 'lodash';
 import ora from 'ora';
 import path from 'path';
-import { argv } from 'yargs';
 
+import { tempDir } from '../config';
 import type { AdopterConfig, AdoptionStats, PreviousAdoptionStats } from '../types';
 import { getPackageJson } from '../utils/getPackageJson';
 import { getProjectFiles } from '../utils/getProjectFiles';
@@ -198,7 +198,6 @@ export class ProjectParser {
   }
 
   get projectInfo() {
-    const { tempDir } = argv as Record<string, string>;
     return JSON.stringify({
       pillar: this.pillar,
       github: this.github,

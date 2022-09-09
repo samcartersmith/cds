@@ -11,7 +11,7 @@
       "executor": "@cbhq/mono-tasks:lint"
     },
     "typecheck": {
-      "executor": "@cbhq/cds-tools:typecheck"
+      "executor": "@cbhq/mono-tasks:typecheck"
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",

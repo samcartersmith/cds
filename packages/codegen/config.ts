@@ -11,9 +11,10 @@ import { writePrettyFile } from '@cbhq/cds-web-utils';
 import { formatTemplateType } from './utils/formatTemplateType';
 import { getHeaderCommentForFileType } from './utils/getHeaderCommentForFileType';
 import { getPrettierParser } from './utils/getPrettierParser';
+import { getSourcePath } from './utils/getSourcePath';
 
-const root = path.resolve(__dirname, '../..');
-const templates = path.join(root, 'packages/codegen/templates');
+const root = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
+const templates = getSourcePath('packages/codegen/templates');
 
 type WriteFileConfig = {
   defaultExport?: boolean;

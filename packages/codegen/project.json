@@ -14,70 +14,73 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/cds-tools:typecheck"
+      "executor": "@cbhq/mono-tasks:typecheck"
     },
     "codegen": {
-      "executor": "@cbhq/cds-tools:ts-script",
+      "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "scriptPath": "packages/codegen/main.ts"
+        "script": "./main.ts"
       }
     },
     "release": {
-      "executor": "@cbhq/cds-tools:ts-script",
+      "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "scriptPath": "packages/codegen/releasePackages.ts",
+        "script": "./releasePackages.ts",
         "args": ["--packages=fonts|web|lottie-files|mobile|utils|common"]
       }
     },
     "sync_icons": {
-      "executor": "@cbhq/cds-tools:ts-script",
+      "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "scriptPath": "packages/codegen/icons/syncSvgsFromFigma.ts"
+        "script": "./icons/syncSvgsFromFigma.ts"
       }
     },
     "build_icons": {
-      "executor": "@cbhq/cds-tools:ts-script",
+      "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "scriptPath": "packages/codegen/icons/build.ts"
+        "script": "./icons/build.ts"
       }
     },
     "build_illustrations": {
-      "executor": "@cbhq/cds-tools:ts-script",
+      "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "scriptPath": "packages/codegen/illustrations/build.ts"
+        "script": "./illustrations/build.ts"
       }
     },
     "prepare_new_mobile_routes": {
-      "executor": "@cbhq/cds-tools:ts-script",
+      "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "scriptPath": "packages/codegen/playground/prepareNewRoutes.ts"
+        "script": "./playground/prepareNewRoutes.ts"
       }
     },
     "prepare_mobile_routes": {
-      "executor": "@cbhq/cds-tools:ts-script",
+      "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "scriptPath": "packages/codegen/playground/prepareRoutes.ts"
+        "script": "./playground/prepareRoutes.ts"
       },
       "dependsOn": [{ "target": "prepare_new_mobile_routes", "projects": "self" }]
     },
     "prepare_adoption": {
-      "executor": "@cbhq/cds-tools:ts-script",
+      "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "scriptPath": "packages/codegen/adoption/prepare.ts",
-        "args": ["--tempDir=packages/codegen/adoption/temp"],
-        "envs": {
-          "NODE_OPTIONS": "--trace-deprecation --abort-on-uncaught-exception --max-old-space-size=4096"
+        "script": "./adoption/prepare.ts",
+        "NODE_OPTIONS": {
+          "trace-deprecation": true,
+          "abort-on-uncaught-exception": true,
+          "max-old-space-size": 4096
         }
       }
     },
     "debug_adoption": {
-      "executor": "@cbhq/cds-tools:ts-script",
+      "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "scriptPath": "packages/codegen/adoption/prepare.ts",
-        "args": ["--tempDir=packages/codegen/adoption/temp", "debug=1"],
-        "envs": {
-          "NODE_OPTIONS": "--trace-deprecation --abort-on-uncaught-exception --max-old-space-size=4096"
-        }
+        "script": "./adoption/prepare.ts",
+        "NODE_OPTIONS": {
+          "trace-deprecation": true,
+          "abort-on-uncaught-exception": true,
+          "max-old-space-size": 4096
+        },
+        "debug": true
       }
     }
   }

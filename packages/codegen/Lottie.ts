@@ -27,7 +27,7 @@ export const lottieFiles = (() => {
     const markers = json.markers.map((marker) => marker.cm);
 
     return {
-      dest: `lottie-files/${file}/index.ts`,
+      dest: `packages/lottie-files/${file}/index.ts`,
       data: {
         file,
         type,

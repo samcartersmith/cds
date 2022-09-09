@@ -184,7 +184,7 @@ async function syncIcons() {
     });
 
     spinner.text = 'Write svg icons to files.';
-    const OUT_DIR = await getSourcePath('common/internal/data/iconSvgs');
+    const OUT_DIR = getSourcePath('packages/common/internal/data/iconSvgs');
     if (fs.existsSync(OUT_DIR)) {
       fs.rmdirSync(OUT_DIR, { recursive: true });
     }
@@ -241,7 +241,7 @@ async function syncIcons() {
     writePromises.push(
       writeFile({
         template: 'typescript.ejs',
-        dest: 'common/types/IconName.ts',
+        dest: 'packages/common/types/IconName.ts',
         data: {
           types: renameKeys(toCategoryArrMap, newTypeNamesMap('pascalCase')),
         },
@@ -259,7 +259,7 @@ async function syncIcons() {
     const templates = {
       'objectMap.ejs': [
         {
-          dest: 'common/internal/data/iconData.ts',
+          dest: 'packages/common/internal/data/iconData.ts',
           data: {
             ...iconData,
             unicodeMap,
@@ -275,7 +275,7 @@ async function syncIcons() {
         template: 'objectMap.ejs',
         data: { manifest: { lastUnicode, unicodeMap } },
         config: { disableAsConst: true },
-        dest: 'codegen/icons/manifest.ts',
+        dest: 'packages/codegen/icons/manifest.ts',
       }),
     );
 
@@ -284,7 +284,7 @@ async function syncIcons() {
         template: 'objectMap.ejs',
         data: { iconManifest: iconComponents },
         config: { disableAsConst: true },
-        dest: 'codegen/icons/iconManifest.ts',
+        dest: 'packages/codegen/icons/iconManifest.ts',
       }),
     );
 

@@ -15,21 +15,6 @@
       "schema": "./dist/executors/build-package/schema.json",
       "description": "Builds a CDS npm package"
     },
-    "lint-styles": {
-      "implementation": "./dist/executors/lint-styles/impl",
-      "schema": "./dist/executors/lint-styles/schema.json",
-      "description": "Runs stylelint"
-    },
-    "ts-script": {
-      "implementation": "./dist/executors/ts-script/impl",
-      "schema": "./dist/executors/ts-script/schema.json",
-      "description": "Runs a ts-node script"
-    },
-    "typecheck": {
-      "implementation": "./dist/executors/typecheck/impl",
-      "schema": "./dist/executors/typecheck/schema.json",
-      "description": "Runs typecheck"
-    },
     "build-package-esm": {
       "implementation": "./dist/executors/build-package-esm/impl",
       "schema": "./dist/executors/build-package-esm/schema.json",

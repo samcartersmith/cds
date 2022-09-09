@@ -1,11 +1,8 @@
-import { exec } from 'child_process';
-import * as path from 'path';
-import { promisify } from 'util';
-
-export const sh = promisify(exec);
-
-export const getSourcePath = async (dest: string) => {
-  // const { stdout: absoluteFilePath } = await sh(`readlink ${__filename}`);
-  const absoluteFilePath = __filename;
-  return path.join(absoluteFilePath, '../../..', dest);
-};
+/**
+ * Get absolute file path, relative to the root of repo.
+ * @param path - i.e. packages/mobile/package.json
+ * @returns string - Users/katherinemartinez/cds/packages/mobile/package.json
+ */
+export function getSourcePath(path: string) {
+  return `${process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT}/${path}`;
+}

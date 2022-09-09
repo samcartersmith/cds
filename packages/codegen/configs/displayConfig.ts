@@ -27,7 +27,7 @@ export const displayConfig = {
   },
   typescript: [
     {
-      dest: 'common/types/Display.ts',
+      dest: 'packages/common/types/Display.ts',
       data: {
         types: {
           Display: displayValues,

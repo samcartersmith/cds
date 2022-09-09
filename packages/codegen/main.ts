@@ -78,24 +78,24 @@ async function main() {
   const templates: TemplateMap = {
     'lottieSource.ejs': [
       {
-        dest: 'lottie-files/LottieSource.ts',
+        dest: 'packages/lottie-files/LottieSource.ts',
         data: {},
       },
       {
-        dest: 'common/types/LottieSource.ts',
+        dest: 'packages/common/types/LottieSource.ts',
         data: {},
       },
     ],
     'lottieFiles.ejs': lottieFiles,
     'fontFace.ejs': [
       {
-        dest: 'fonts/fonts.css',
+        dest: 'packages/fonts/fonts.css',
         data: Type.fontFaceCss,
       },
     ],
     'objectMap.ejs': [
       {
-        dest: 'mobile/styles/scale.ts',
+        dest: 'packages/mobile/styles/scale.ts',
         data: mapValues(scaleConfig, (_, scale) => {
           return {
             name: scale,
@@ -106,24 +106,24 @@ async function main() {
         }),
       },
       {
-        dest: 'mobile/styles/fallbackShimmer.ts',
+        dest: 'packages/mobile/styles/fallbackShimmer.ts',
         data: { fallbackShimmer: Palette.fallbackShimmer },
         config: {
           disableAsConst: true,
         },
       },
       {
-        dest: 'common/spectrum/spectrumRgbArray.ts',
+        dest: 'packages/common/spectrum/spectrumRgbArray.ts',
         data: Spectrum.native,
       },
       {
-        dest: 'mobile/tokens.ts',
+        dest: 'packages/mobile/tokens.ts',
         data: {
           fontFamily: Type.fontFamilyMobileTokens,
         },
       },
       {
-        dest: 'common/palette/constants.ts',
+        dest: 'packages/common/palette/constants.ts',
         data: {
           ...Palette.palettes,
           paletteForegrounds: Palette.paletteForegrounds,
@@ -132,7 +132,7 @@ async function main() {
         },
       },
       {
-        dest: 'common/internal/data/avatars.ts',
+        dest: 'packages/common/internal/data/avatars.ts',
         data: {
           avatarSizes,
           avatars: [
@@ -142,7 +142,7 @@ async function main() {
         },
       },
       {
-        dest: 'web/layout/breakpoints.ts',
+        dest: 'packages/web/layout/breakpoints.ts',
         data: {
           deviceBreakpoints: responsiveConfig.deviceBreakpoints,
           deviceMqs: responsiveConfig.deviceMqs,

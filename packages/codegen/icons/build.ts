@@ -32,15 +32,15 @@ async function buildIcons() {
       // the font and glyphmap are always in sync. Once all consumers are in
       // the monorepo we could move this to common
       {
-        dest: 'mobile/icons/iconGlyphMap.ts',
+        dest: 'packages/mobile/icons/iconGlyphMap.ts',
         data: { iconGlyphMap: iconData.glyphMap },
       },
       {
-        dest: 'web/icons/iconGlyphMap.ts',
+        dest: 'packages/web/icons/iconGlyphMap.ts',
         data: { iconGlyphMap: iconData.glyphMap },
       },
       {
-        dest: 'common/internal/data/iconDescriptionGraph.ts',
+        dest: 'packages/common/internal/data/iconDescriptionGraph.ts',
         data: { iconDescriptionGraph },
         types: {
           iconDescriptionGraph: 'Record<string, string[]>',
@@ -52,7 +52,7 @@ async function buildIcons() {
     ],
     'typescript.ejs': [
       {
-        dest: 'common/types/IconSize.ts',
+        dest: 'packages/common/types/IconSize.ts',
         data: {
           types: {
             IconSize: iconData.sizes,

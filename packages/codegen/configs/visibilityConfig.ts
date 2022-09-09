@@ -23,7 +23,7 @@ export const visibilityConfig = {
   },
   typescript: [
     {
-      dest: 'common/types/Visibility.ts',
+      dest: 'packages/common/types/Visibility.ts',
       data: {
         types: {
           Visibility: visibilityValues,

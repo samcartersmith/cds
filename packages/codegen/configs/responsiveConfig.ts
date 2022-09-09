@@ -123,7 +123,7 @@ export const responsiveConfig = {
   responsiveClassName,
   typescript: [
     {
-      dest: 'common/types/Responsive.ts',
+      dest: 'packages/common/types/Responsive.ts',
       data: {
         types: {
           DeviceBreakpoint: deviceKeys,

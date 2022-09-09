@@ -6,7 +6,7 @@ import type { PreviousAdoptionStats } from '../types';
 
 export async function getPreviousStats(id: string): Promise<PreviousAdoptionStats | undefined> {
   try {
-    const pathPrefix = await getSourcePath('codegen/adoption/results');
+    const pathPrefix = getSourcePath('packages/codegen/adoption/results');
     const statsPath = path.join(pathPrefix, `${id}-stats.json`);
     // New projects won't have a stats.json file associated with it
     if (fs.existsSync(statsPath)) {

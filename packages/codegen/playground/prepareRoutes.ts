@@ -6,7 +6,7 @@ import { writeFile } from '../utils/writeFile';
 
 async function getRoutes() {
   try {
-    const dir = await getSourcePath('mobile');
+    const dir = getSourcePath('packages/mobile');
     const files = await glob(['**/__stories__/*.stories.(ts|tsx|js|jsx)'], {
       ignore: ['__tests__/*'],
       onlyFiles: true,
@@ -31,11 +31,11 @@ export async function prepare({ useNewTemplate }: { useNewTemplate: boolean }) {
   const templateConfig = useNewTemplate
     ? {
         template: 'newMobileRoutes.ejs',
-        dest: `mobile/examples/newRoutes.ts`,
+        dest: `packages/mobile/examples/newRoutes.ts`,
       }
     : {
         template: 'mobileRoutes.ejs',
-        dest: `mobile/examples/routes.ts`,
+        dest: `packages/mobile/examples/routes.ts`,
       };
   try {
     const routes = await getRoutes();

@@ -5,14 +5,14 @@ import { typographyConfig } from './configs/typographyConfig';
 import { RootSpectrumPreference, Spectrum } from './Spectrum/Spectrum';
 
 const templates = {
-  'common/types/Scale.ts': {
+  'packages/common/types/Scale.ts': {
     types: {
       Scale: scales,
       ScaleDensity: ['dense', 'normal'],
       RootScalePreference,
     },
   },
-  'common/types/Spectrum.ts': {
+  'packages/common/types/Spectrum.ts': {
     types: {
       Spectrum: Spectrum.modes,
       SpectrumHue: Spectrum.hueNames,
@@ -23,17 +23,17 @@ const templates = {
       RootSpectrumPreference,
     },
   },
-  'common/types/Typography.ts': {
+  'packages/common/types/Typography.ts': {
     types: {
       Typography: Object.keys(typographyConfig),
     },
   },
-  'common/types/SpacingScale.ts': {
+  'packages/common/types/SpacingScale.ts': {
     types: {
       SpacingScale: spacingScale,
     },
   },
-  'common/types/AvatarSize.ts': {
+  'packages/common/types/AvatarSize.ts': {
     types: {
       AvatarSize: avatarSizes,
       AvatarPixelSize: avatarPixelSizes,

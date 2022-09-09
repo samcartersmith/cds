@@ -1,11 +1,12 @@
 import path from 'path';
-import { argv } from 'yargs';
+
+import { getSourcePath } from '../utils/getSourcePath';
 
 import { flattenConfig } from './utils/flattenConfig';
 import { formatSidebar } from './utils/formatSidebar';
 import type { AdoptersConfig } from './types';
 
-const { tempDir } = argv as Record<string, string>;
+export const tempDir = getSourcePath('packages/codegen/adoption/temp');
 
 const monorepoGit = 'mono/repo';
 const retailMobileGit = 'consumer/react-native';

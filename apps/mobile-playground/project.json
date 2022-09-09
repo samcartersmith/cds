@@ -25,7 +25,7 @@
       "executor": "@cbhq/mono-tasks:lint"
     },
     "typecheck": {
-      "executor": "@cbhq/cds-tools:typecheck"
+      "executor": "@cbhq/mono-tasks:typecheck"
     },
     "conditional-init-visreg-mobile": {
       "executor": "@cbhq/cds-tools:run-conditional",

@@ -36,7 +36,7 @@ export const gridConfig = {
   },
   typescript: [
     {
-      dest: 'common/types/Grid.ts',
+      dest: 'packages/common/types/Grid.ts',
       data: {
         types: {
           GridColumn: numberOfColumnsAsArray,

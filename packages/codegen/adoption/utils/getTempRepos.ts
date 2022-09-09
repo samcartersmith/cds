@@ -2,14 +2,11 @@ import { exec } from 'child_process';
 import fs from 'fs';
 import { uniq } from 'lodash';
 import { promisify } from 'util';
-import { argv } from 'yargs';
 
-import { adopters } from '../config';
+import { adopters, tempDir } from '../config';
 
 const sh = promisify(exec);
 const repos = uniq(adopters.map((item) => item.github));
-
-const { tempDir } = argv as Record<string, string>;
 
 export async function getTempRepos() {
   try {

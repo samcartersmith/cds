@@ -11,13 +11,13 @@
       "executor": "@cbhq/mono-tasks:lint"
     },
     "lint-styles": {
-      "executor": "@cbhq/cds-tools:lint-styles"
+      "executor": "@cbhq/mono-tasks:lint-styles"
     },
     "test": {
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/cds-tools:typecheck"
+      "executor": "@cbhq/mono-tasks:typecheck"
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",

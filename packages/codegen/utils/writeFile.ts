@@ -42,11 +42,11 @@ export const writeFile = async ({
 }: WriteFileParams) => {
   try {
     let contents = data as string;
-    const outFile = await getSourcePath(dest);
+    const outFile = getSourcePath(dest);
     const ext = path.extname(outFile);
 
     if (template) {
-      const templatePath = path.join(__dirname, '../templates', template);
+      const templatePath = getSourcePath(`packages/codegen/templates/${template}`);
       const code = await ejs.renderFile(templatePath, {
         data,
         format: formatTemplateType,
