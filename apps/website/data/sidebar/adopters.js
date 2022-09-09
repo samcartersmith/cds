@@ -52,14 +52,13 @@ module.exports = {
       items: [
         { type: 'doc', id: 'adoption-tracker/retail-mobile', label: 'Retail Mobile' },
         { type: 'doc', id: 'adoption-tracker/retail-web-logged-in', label: 'Retail Web Logged In' },
-        { type: 'doc', id: 'adoption-tracker/retail-web-shared', label: 'Retail Web Shared' },
         { type: 'doc', id: 'adoption-tracker/umo', label: 'Unified Mobile Onboarding' },
         {
           type: 'doc',
           id: 'adoption-tracker/retail-web-logged-out',
           label: 'Retail Web Logged Out',
         },
-        { type: 'doc', id: 'adoption-tracker/retail-onboarding', label: 'Retail Onboarding' },
+        { type: 'doc', id: 'adoption-tracker/retail-web-identity', label: 'Retail Onboarding' },
       ],
     },
   ],

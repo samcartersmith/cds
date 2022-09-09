@@ -68,7 +68,7 @@ export const config: AdoptersConfig[] = [
         id: 'yield-web',
         label: 'Yield Web',
         type: 'doc',
-        sourceGlob: ['views/YieldCenter/**/*.(ts|tsx)', 'views/YieldCenter/**/*.(ts|tsx)'],
+        sourceGlob: ['views/YieldCenter/**/*.(ts|tsx)'],
       },
       {
         root: path.join(tempDir, walletGit, 'workspaces'),
@@ -211,13 +211,6 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
-        root: path.join(tempDir, retailWebGit, 'shared'),
-        github: retailWebGit,
-        id: 'retail-web-shared',
-        label: 'Retail Web Shared',
-        type: 'doc',
-      },
-      {
         root: path.join(tempDir, retailMobileGit),
         github: retailMobileGit,
         tsconfigFileName: 'tsconfig.base.json',
@@ -236,7 +229,7 @@ export const config: AdoptersConfig[] = [
       {
         root: path.join(tempDir, retailWebGit, 'identity'),
         github: retailWebGit,
-        id: 'retail-onboarding',
+        id: 'retail-web-identity',
         label: 'Retail Onboarding',
         type: 'doc',
         sourceGlob: ['(components|steps)/**/*.(ts|tsx)'],

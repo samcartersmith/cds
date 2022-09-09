@@ -84,8 +84,8 @@
         "@cbhq/two-factor-web/components/Header.tsx": 2,
         "@cbhq/two-factor-web/components/InputCode.tsx": 1,
         "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 4,
-        "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 2,
         "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushMultipleTabsOpen.tsx": 1,
@@ -946,8 +946,8 @@
       "totalCallSites": 6,
       "callSites": {
         "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-        "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/components/StepView.tsx": 1
@@ -955,21 +955,21 @@
       "propsWithCallSites": {
         "loading": {
           "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1
         },
         "onReload": {
           "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1
         },
         "error": {
           "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
-          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1
         },
@@ -1260,15 +1260,6 @@
       }
     },
     {
-      "name": "BaseTwoFactorGlobalConfigProvider",
-      "sourceFile": "@cbhq/two-factor-web/contexts/TwoFactorGlobalConfigContext.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "target": { "@cbhq/two-factor-web/contexts/TwoFactorGlobalConfigContext.tsx": 1 }
-      }
-    },
-    {
       "name": "FetchableResourceProvider",
       "sourceFile": "@instant-api-hooks/core/fetch/hooks/FetchableResourceProvider",
       "totalInstances": 1,
@@ -1290,6 +1281,15 @@
       }
     },
     {
+      "name": "BaseTwoFactorGlobalConfigProvider",
+      "sourceFile": "@cbhq/two-factor-web/contexts/TwoFactorGlobalConfigContext.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "target": { "@cbhq/two-factor-web/contexts/TwoFactorGlobalConfigContext.tsx": 1 }
+      }
+    },
+    {
       "name": "ErrorBoundary",
       "sourceFile": "@cbhq/two-factor-common/components/ErrorBoundary",
       "totalInstances": 1,
@@ -1297,6 +1297,47 @@
       "propsWithCallSites": {
         "fallback": { "@cbhq/two-factor-web/ConfirmTwoFactor/components/ErrorBoundary.tsx": 1 },
         "onError": { "@cbhq/two-factor-web/ConfirmTwoFactor/components/ErrorBoundary.tsx": 1 }
+      }
+    },
+    {
+      "name": "IDV",
+      "sourceFile": "@cbhq/two-factor-web/flows/idv/steps/IDV/IDV",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "onContinue": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 } }
+    },
+    {
+      "name": "SaveRecoveryCode",
+      "sourceFile": "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveRecoveryCode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "onContinue": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 } }
+    },
+    {
+      "name": "InputRecoveryCode",
+      "sourceFile": "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "onContinue": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 } }
+    },
+    {
+      "name": "Status",
+      "sourceFile": "@cbhq/two-factor-web/flows/idv/steps/Status/Status",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onRetry": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 },
+        "onUpdateStatus": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 }
+      }
+    },
+    {
+      "name": "Footer",
+      "sourceFile": "@cbhq/two-factor-web/flows/idv/components/Footer",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "step": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 },
+        "status": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 }
       }
     },
     {
@@ -1529,47 +1570,6 @@
           "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
         }
-      }
-    },
-    {
-      "name": "IDV",
-      "sourceFile": "@cbhq/two-factor-web/flows/idv/steps/IDV/IDV",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "onContinue": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 } }
-    },
-    {
-      "name": "SaveRecoveryCode",
-      "sourceFile": "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveRecoveryCode",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "onContinue": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 } }
-    },
-    {
-      "name": "InputRecoveryCode",
-      "sourceFile": "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "onContinue": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 } }
-    },
-    {
-      "name": "Status",
-      "sourceFile": "@cbhq/two-factor-web/flows/idv/steps/Status/Status",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onRetry": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 },
-        "onUpdateStatus": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 }
-      }
-    },
-    {
-      "name": "Footer",
-      "sourceFile": "@cbhq/two-factor-web/flows/idv/components/Footer",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "step": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 },
-        "status": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 }
       }
     },
     {

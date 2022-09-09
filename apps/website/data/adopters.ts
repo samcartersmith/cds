@@ -21,8 +21,7 @@ export const adopters = [
   { id: 'tax-center', pillar: 'Platform' },
   { id: 'retail-mobile', pillar: 'Retail' },
   { id: 'retail-web-logged-in', pillar: 'Retail' },
-  { id: 'retail-web-shared', pillar: 'Retail' },
   { id: 'umo', pillar: 'Retail' },
   { id: 'retail-web-logged-out', pillar: 'Retail' },
-  { id: 'retail-onboarding', pillar: 'Retail' },
+  { id: 'retail-web-identity', pillar: 'Retail' },
 ] as const;
