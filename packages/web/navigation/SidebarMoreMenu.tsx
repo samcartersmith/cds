@@ -12,6 +12,11 @@ import { SidebarItem, SidebarItemProps } from './SidebarItem';
 
 export type SidebarMoreMenuProps = {
   children: ReactNode;
+  /**
+   * Title of the menu trigger. Use this prop to localize the trigger title.
+   * @default More
+   */
+  triggerTitle?: string;
 } & Pick<DropdownProps, 'value' | 'onBlur' | 'disablePortal' | 'onChange'> &
   Pick<SidebarItemProps, 'active' | 'tooltipContent' | 'onPress'> &
   SharedProps;
@@ -23,6 +28,7 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
   value,
   tooltipContent,
   disablePortal,
+  triggerTitle = 'More',
   ...props
 }: SidebarMoreMenuProps) {
   const { collapsed } = useSidebarContext();
@@ -36,8 +42,10 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
   );
 
   const baseTrigger = useMemo(
-    () => <SidebarItem onPress={onPress} title="More" icon="moreVertical" active={active} />,
-    [onPress, active],
+    () => (
+      <SidebarItem onPress={onPress} title={triggerTitle} icon="moreVertical" active={active} />
+    ),
+    [onPress, active, triggerTitle],
   );
 
   const trigger = useMemo(() => {
