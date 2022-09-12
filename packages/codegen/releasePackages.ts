@@ -9,7 +9,7 @@ import { argv } from 'yargs';
 
 import { codegen } from './codegen';
 
-const MONOREPO_ROOT = process.env.BUILD_WORKSPACE_DIRECTORY;
+const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 const PACKAGES = argv.packages as string;
 const LOG_PREFIX = /^(?:- )?(\w+)(?:\(([a-zA-Z0-9\-., ]+)\))?:/u;
 
