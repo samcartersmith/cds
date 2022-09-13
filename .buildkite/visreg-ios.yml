@@ -23,7 +23,6 @@ env:
   CI: true
   NX_CAPTURE_METRICS: true
   NX_CAPTURE_TEST_METRICS: true
-  OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
   ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
   PERCY_NONCE_FILE_NAME: 'percy_nonce.txt'
   PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
@@ -101,7 +100,5 @@ steps:
           - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
           - cd apps/mobile-playground
           - yarn visreg:finalize
-        env:
-          OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
         agents:
           queue: macos-metal

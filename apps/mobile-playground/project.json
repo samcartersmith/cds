@@ -89,13 +89,7 @@
         "debug": {
           "detoxConfig": "android.debug"
         }
-      },
-      "dependsOn": [
-        {
-          "target": "dist",
-          "projects": "dependencies"
-        }
-      ]
+      }
     },
     "android-e2e": {
       "executor": "@cbhq/mono-tasks:test-detox",

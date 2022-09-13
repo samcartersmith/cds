@@ -25,24 +25,75 @@
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
         "cacheDirectory": "./.nx/cache",
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "cacheableOperations": [
+          "a11y",
+          "build",
+          "lint",
+          "lint-styles",
+          "test",
+          "typecheck",
+          "e2e"
+        ],
         "captureStderr": true
       }
     }
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ],
-    "package": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
+  "targetDefaults": {
+    "android-e2e": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build-android-e2e": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build-ios-e2e": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "lint": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "prebuild-android-e2e": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "prebuild-ios-e2e": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "start-android": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "start-ios": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "test": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "typecheck": {
+      "dependsOn": [
+        "^build"
+      ]
+    }
   },
   "workspaceLayout": {
     "appsDir": "apps",

@@ -40,8 +40,7 @@
     "diagnose": "mono-env diagnose --group common web",
     "docker.debug": "./tools/ci/docker-debug.sh",
     "help": "yarn nx help",
-    "postinstall": "./setup.sh",
-    "setup": "./setup.sh && mono-env setup --group common",
+    "setup": "yarn workspace @cbhq/cds-tools build && yarn setup-env",
     "release": "yarn codegen release && yarn codegen all",
     "setup-env": "mono-env setup --group common web",
     "validate": "yarn nx workspace-lint"
@@ -56,7 +55,6 @@
     "@types/react-dom": "^17.0.2",
     "framer-motion@^6.2.8": "patch:framer-motion@npm:6.2.8#.yarn/patches/framer-motion-npm-6.2.8-db4a5dedad",
     "@testing-library/user-event@^14.0.4": "patch:@testing-library/user-event@npm:14.0.4#.yarn/patches/@testing-library-user-event-npm-14.0.4-109d618170",
-    "@cbhq/mono-pipeline@0.6.0": "patch:@cbhq/mono-pipeline@npm:0.6.0#.yarn/patches/@cbhq-mono-pipeline-npm-0.6.0-1eea4a3e55",
     "@docusaurus/plugin-content-docs@2.0.0-beta.18": "patch:@docusaurus/plugin-content-docs@npm:2.0.0-beta.18#.yarn/patches/@docusaurus-plugin-content-docs-npm-2.0.0-beta.18-48b9b95b87"
   },
   "workspaces": [

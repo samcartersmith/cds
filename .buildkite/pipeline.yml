@@ -1,7 +1,4 @@
 _shared_step: &shared_step
-  env:
-    OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
-    PERCY_TARGET_BRANCH: master
   commands:
     - tools/ci/setup.sh
   plugins:
@@ -33,9 +30,9 @@ env:
   CI: true
   NX_CAPTURE_METRICS: true
   NX_CAPTURE_TEST_METRICS: true
-  OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
   ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
   PERCY_NONCE_FILE_NAME: 'percy_nonce.txt'
+  PERCY_TARGET_BRANCH: master
 
 steps:
   - label: Validate
@@ -56,7 +53,6 @@ steps:
     env:
       CONFIG_SERVICE_CONTEXT: cds-build
       STORYBOOK_SKIP_ANIMATION: true
-      OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
     plugins:
       - file:///buildkite/plugins/docker:
           <<: *docker_plugin
@@ -112,7 +108,6 @@ steps:
     env:
       CONFIG_SERVICE_CONTEXT: cds-a11y
       STORYBOOK_SKIP_ANIMATION: true
-      OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
     plugins:
       - file:///buildkite/plugins/docker:
           <<: *docker_plugin
@@ -132,7 +127,6 @@ steps:
     env:
       CONFIG_SERVICE_CONTEXT: percy-cds
       STORYBOOK_SKIP_ANIMATION: true
-      OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
       PERCY_TARGET_BRANCH: master
     plugins:
       - file:///buildkite/plugins/docker:
@@ -143,7 +137,6 @@ steps:
             - 'PERCY_TOKEN'
             - 'STORYBOOK_SKIP_ANIMATION'
             - 'PERCY_TARGET_BRANCH'
-            - 'OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH'
       - file:///buildkite/plugins/cache: *cache_plugin
 
   - label: 'Visreg Tests (Mobile)'
@@ -151,8 +144,6 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn nx run mobile-playground:conditional-init-visreg-mobile
-    env:
-      OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
     artifact_paths:
       - percy-artifacts/**/*
     retry:

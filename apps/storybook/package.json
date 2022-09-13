@@ -15,7 +15,6 @@
   "dependencies": {
     "@cbhq/cds-fonts": "workspace:*",
     "@cbhq/cds-web": "workspace:*",
-    "@cbhq/docusaurus-plugin-docgen": "workspace:*",
     "@juggle/resize-observer": "^3.4.0"
   },
   "peerDependencies": {
