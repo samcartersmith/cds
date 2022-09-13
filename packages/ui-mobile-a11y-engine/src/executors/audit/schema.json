@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "cli": "nx",
+  "properties": {
+    "affected": {
+      "type": "boolean",
+      "description": "Only run on affected files."
+    },
+    "cache": {
+      "type": "boolean",
+      "description": "Cache transformations to improve testing speed.",
+      "default": true
+    },
+    "debug": {
+      "type": "boolean",
+      "description": "Debug flaky or broken tests.",
+      "default": false
+    },
+    "file": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of file paths to only test.",
+      "default": []
+    },
+    "serial": {
+      "type": "boolean",
+      "description": "Run tests in serial instead of parallel.",
+      "default": false
+    }
+  }
+}

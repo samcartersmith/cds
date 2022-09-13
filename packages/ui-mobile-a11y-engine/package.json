@@ -32,6 +32,7 @@
     "format": "cjs",
     "platform": "node"
   },
+  "executors": "./executors.json",
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -61,10 +62,13 @@
     "react-native": "0.66.3"
   },
   "peerDependencies": {
+    "@cbhq/mono-tasks": "^0.4.21",
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "typescript": "~4.7.2"
   },
   "dependencies": {
+    "execa": "^5.1.1",
     "jest-matcher-utils": "^24.0.0",
     "lodash.groupby": "^4.6.0",
     "react-test-renderer": "^17.0.2"
