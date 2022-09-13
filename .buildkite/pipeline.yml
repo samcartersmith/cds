@@ -49,9 +49,7 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci build
-      - tools/ci/uploadStorybookArtifacts.sh
     env:
-      CONFIG_SERVICE_CONTEXT: cds-build
       STORYBOOK_SKIP_ANIMATION: true
     plugins:
       - file:///buildkite/plugins/docker:
@@ -90,43 +88,14 @@ steps:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci typecheck
 
-  # **************************************************
-  # **************************************************
-  # Steps described below this line will not run in parallel. They will wait for the steps above to finish before running
-  # **************************************************
-  # **************************************************
-
-  - wait
-
   - label: 'A11y'
     <<: *shared_step
     parallelism: 1
     commands:
       - tools/ci/setup.sh
-      - tools/ci/downloadStorybookArtifacts.sh
-      - yarn nx run storybook:run-a11y
+      - yarn mono-pipeline other --targets=a11y
     env:
-      CONFIG_SERVICE_CONTEXT: cds-a11y
       STORYBOOK_SKIP_ANIMATION: true
-    plugins:
-      - file:///buildkite/plugins/docker:
-          <<: *docker_plugin
-          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16-chrome
-          environment:
-            - 'BUILDKITE_API_TOKEN'
-            - 'STORYBOOK_SKIP_ANIMATION'
-      - file:///buildkite/plugins/cache: *cache_plugin
-
-  - label: 'A11y (Mobile)'
-    <<: *shared_step
-    parallelism: 1
-    commands:
-      - tools/ci/setup.sh
-      - yarn mono-pipeline other --targets=a11y-audit
-    env:
-      CONFIG_SERVICE_CONTEXT: cds-a11y-mobile
-      STORYBOOK_SKIP_ANIMATION: true
-      OVERRIDE_BUILDKITE_PULL_REQUEST_BASE_BRANCH: master
     plugins:
       - file:///buildkite/plugins/docker:
           <<: *docker_plugin
@@ -141,12 +110,10 @@ steps:
     parallelism: 1
     commands:
       - tools/ci/setup.sh
-      - tools/ci/downloadStorybookArtifacts.sh
-      - yarn nx run web:run-percy
+      - yarn mono-pipeline run-percy storybook
     env:
       CONFIG_SERVICE_CONTEXT: percy-cds
       STORYBOOK_SKIP_ANIMATION: true
-      PERCY_TARGET_BRANCH: master
     plugins:
       - file:///buildkite/plugins/docker:
           <<: *docker_plugin
@@ -157,6 +124,14 @@ steps:
             - 'STORYBOOK_SKIP_ANIMATION'
             - 'PERCY_TARGET_BRANCH'
       - file:///buildkite/plugins/cache: *cache_plugin
+
+  # **************************************************
+  # **************************************************
+  # Steps described below this line will not run in parallel. They will wait for the steps above to finish before running
+  # **************************************************
+  # **************************************************
+
+  - wait
 
   - label: 'Visreg Tests (Mobile)'
     <<: *shared_step

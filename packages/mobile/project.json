@@ -16,8 +16,9 @@
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
     },
-    "a11y-audit": {
-      "executor": "@cbhq/ui-mobile-a11y-engine:audit"
+    "a11y": {
+      "executor": "@cbhq/ui-mobile-a11y-engine:audit",
+      "dependsOn": ["^build"]
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
