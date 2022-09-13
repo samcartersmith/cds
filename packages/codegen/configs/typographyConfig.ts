@@ -1,6 +1,6 @@
 export const fontWeights = {
   Regular: 400,
-  Medium: 500,
+  Medium: 600, // NOTE: Using > 600 here ensures JA fonts render a heavier weight than Regular
 } as const;
 
 export const xHeight = {
