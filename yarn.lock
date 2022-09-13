@@ -2229,6 +2229,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-common@workspace:packages/common"
   dependencies:
+    "@cbhq/cds-tools": "workspace:*"
     "@cbhq/cds-utils": "workspace:*"
     d3-array: ^2.3.3
     d3-color: ^2.0.0
@@ -2785,14 +2786,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cds/mobile-playground@workspace:apps/mobile-playground"
   dependencies:
-    "@cbhq/cds-common": "workspace:*"
     "@cbhq/cds-mobile": "workspace:*"
+    "@cbhq/cds-tools": "workspace:*"
     "@cbhq/detox-utils": ^0.2.2
     "@cbhq/ui-mobile-playground": "workspace:*"
     "@percy/cli": ^1.2.1
-    "@percy/client": ^1.2.1
-    "@percy/sdk-utils": ^1.2.1
-    "@percy/storybook": ^4.2.1
     "@react-native-community/cli": ^6.3.1
     "@react-native-community/cli-platform-android": ^6.3.0
     "@react-native-community/cli-platform-ios": ^6.2.0
@@ -2864,7 +2862,6 @@ __metadata:
   dependencies:
     "@cb/cms": ^0.1.4
     "@cbhq/cds-common": "workspace:*"
-    "@cbhq/cds-tools": "workspace:*"
     "@cbhq/cds-web": "workspace:*"
     "@cbhq/docusaurus-preset": "workspace:*"
     "@docusaurus/core": 2.0.0-beta.18

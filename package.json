@@ -40,7 +40,8 @@
     "diagnose": "mono-env diagnose --group common web",
     "docker.debug": "./tools/ci/docker-debug.sh",
     "help": "yarn nx help",
-    "setup": "yarn workspace @cbhq/cds-tools build && yarn setup-env",
+    "postinstall": "yarn workspace @cbhq/cds-tools build",
+    "setup": "yarn postinstall && yarn setup-env",
     "release": "yarn codegen release && yarn codegen all",
     "setup-env": "mono-env setup --group common web",
     "validate": "yarn nx workspace-lint"
