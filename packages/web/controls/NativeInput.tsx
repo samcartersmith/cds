@@ -84,6 +84,7 @@ const nativeInputBaseStyle = css`
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
     border-radius: ${borderRadius.input};
+    -webkit-text-fill-color: ${palette.foreground};
     transition: background-color 0s ease-in-out 5000s;
   }
 `;
