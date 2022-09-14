@@ -16,19 +16,29 @@ import { SharedProps } from './SharedProps';
 import { OffsetProps, SpacingProps } from './SpacingProps';
 import { Visibility } from './Visibility';
 
-type ExplicitGridProps = {
+type ExplicitGridColumnProps = {
   /**
-   * Explicitly declare the number of columns per row as either a number of columns of equal size
-   * or as a string and declare the width of each column per row, eg: '100px 20% 1fr 1rem max-content'
-   * Note: `responsiveConfig` only supports columns as a number
+   * Explicitly declare the number of columns per row
+   * columns will divide up the available space within the parent equally
+   * @note you can conditionally render different number of columns by breakpoints by passing `columns` to `responsiveConfig`
    */
-  columns: GridColumn | string;
+  columns: GridColumn;
   /**
+   * Explicitly declare the width of each column per row,
+   * @example '100px 20% 1fr 1rem max-content'
+   * @link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
+   */
+  templateColumns?: never;
+  /**
+   * if neither `columns` or `templateColumns` are declared, Grid will implicitly lay out tracks based on available space
+   * You will need to provide a minimum width for each column via `columnMin`
    * @link https://developer.mozilla.org/en-US/docs/Web/CSS/minmax
    * Grid can take a minimum column dimension that will clamp it to be no less than the value
    */
   columnMin?: never;
   /**
+   * if neither `columns` or `templateColumns` are declared, Grid will implicitly lay out tracks based on available space
+   * You can cap the maximum width of each column by passing `columnMax`
    * @link https://developer.mozilla.org/en-US/docs/Web/CSS/minmax
    * Grid can take a maximum column dimension that will clamp it to be no greater than the value
    * @default 1fr
@@ -36,19 +46,61 @@ type ExplicitGridProps = {
   columnMax?: never;
 };
 
-type ImplicitGridProps = {
+type ExplicitGridColumnStringProps = {
   /**
-   * Explicitly declare the number of columns per row as either a number of columns of equal size
-   * or as a string and declare the width of each column per row, eg: '100px 20% 1fr 1rem max-content'
-   * Note: `responsiveConfig` only supports columns as a number
+   * Explicitly declare the number of columns per row
+   * columns will divide up the available space within the parent equally
+   * @note you can conditionally render different number of columns by breakpoints by passing `columns` to `responsiveConfig`
    */
   columns?: never;
   /**
+   * Explicitly declare the width of each column per row,
+   * @example '100px 20% 1fr 1rem max-content'
+   * @link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
+   */
+  templateColumns: string;
+  /**
+   * if neither `columns` or `templateColumns` are declared, Grid will implicitly lay out tracks based on available space
+   * You will need to provide a minimum width for each column via `columnMin`
+   * @link https://developer.mozilla.org/en-US/docs/Web/CSS/minmax
+   * Grid can take a minimum column dimension that will clamp it to be no less than the value
+   */
+  columnMin?: never;
+  /**
+   * if neither `columns` or `templateColumns` are declared, Grid will implicitly lay out tracks based on available space
+   * You can cap the maximum width of each column by passing `columnMax`
+   * @link https://developer.mozilla.org/en-US/docs/Web/CSS/minmax
+   * Grid can take a maximum column dimension that will clamp it to be no greater than the value
+   * @default 1fr
+   */
+  columnMax?: never;
+};
+
+type ExplicitGridProps = ExplicitGridColumnStringProps | ExplicitGridColumnProps;
+
+type ImplicitGridProps = {
+  /**
+   * Explicitly declare the number of columns per row
+   * columns will divide up the available space within the parent equally
+   * @note you can conditionally render different number of columns by breakpoints by passing `columns` to `responsiveConfig`
+   */
+  columns?: never;
+  /**
+   * Explicitly declare the width of each column per row,
+   * @example '100px 20% 1fr 1rem max-content'
+   * @link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
+   */
+  templateColumns?: never;
+  /**
+   * if neither `columns` or `templateColumns` are declared, Grid will implicitly lay out tracks based on available space
+   * You will need to provide a minimum width for each column via `columnMin`
    * @link https://developer.mozilla.org/en-US/docs/Web/CSS/minmax
    * Grid can take a minimum column dimension that will clamp it to be no less than the value
    */
   columnMin: DimensionValue;
   /**
+   * if neither `columns` or `templateColumns` are declared, Grid will implicitly lay out tracks based on available space
+   * You can cap the maximum width of each column by passing `columnMax`
    * @link https://developer.mozilla.org/en-US/docs/Web/CSS/minmax
    * Grid can take a maximum column dimension that will clamp it to be no greater than the value
    * @default 1fr
@@ -58,7 +110,9 @@ type ImplicitGridProps = {
 
 type ResponsiveGridColumnProps = {
   /**
-   * Explicitly declare the number of columns per row as a number of columns of equal size
+   * Explicitly declare the number of columns per row
+   * columns will divide up the available space within the parent equally
+   * @note you can conditionally render different number of columns by breakpoints by passing `columns` to `responsiveConfig`
    */
   columns?: GridColumn;
 };

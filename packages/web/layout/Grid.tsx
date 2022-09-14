@@ -20,12 +20,15 @@ export type GridProps<As extends BoxElement = 'div'> = {
   React.AriaAttributes &
   React.DOMAttributes<Element>;
 
+type ColumnKey = keyof typeof columnsStyles;
+
 export const Grid = memo(
   forwardRef(function Grid<As extends BoxElement = 'div'>(
     {
       children,
       responsiveConfig,
       columns: columnsProp,
+      templateColumns,
       columnMin,
       columnMax = '1fr',
       dangerouslySetClassName,
@@ -36,32 +39,30 @@ export const Grid = memo(
     forwardedRef: ForwardedRef<HTMLElement>,
   ) {
     const responsiveStyleClassNames = useResponsiveConfig(responsiveConfig);
-    const columnsIsNumber = typeof columnsProp === 'number';
-    const columnsIsString = typeof columnsProp === 'string';
-    const columnsKey = `columns-${columnsProp}`;
-    // @ts-expect-error TODO: figure this out
-    const columnsClassName = columnsStyles[columnsKey] as string;
-    const isImplicit = !columnsProp && !!columnMin;
+    const columnsKey: ColumnKey | undefined = columnsProp && `columns-${columnsProp}`;
+    const columnsClassName = columnsKey && columnsStyles[columnsKey];
+    const isImplicit = !columnsProp && !templateColumns && !!columnMin;
 
-    const styles = useMemo(
-      () => ({
-        // explicit columns as string
-        ...(columnsIsString && columnsProp && { gridTemplateColumns: columnsProp }),
-        // implicit columns when none are provided
-        ...(isImplicit && {
+    const styles = useMemo(() => {
+      if (templateColumns) {
+        return {
+          gridTemplateColumns: templateColumns,
+        };
+      }
+      if (isImplicit) {
+        return {
           gridTemplateColumns: `repeat(auto-fill, minmax(${columnMin}, ${columnMax}))`,
-        }),
-        ...dangerouslySetStyle,
-      }),
-      [columnMax, columnMin, columnsIsString, columnsProp, dangerouslySetStyle, isImplicit],
-    );
+        };
+      }
+      return dangerouslySetStyle;
+    }, [columnMax, columnMin, dangerouslySetStyle, isImplicit, templateColumns]);
 
     return (
       <Box
         ref={forwardedRef}
         display="grid"
         dangerouslySetClassName={cx(
-          columnsProp && columnsIsNumber && columnsClassName,
+          columnsProp && columnsClassName,
           gap && gapStyles[gap],
           responsiveConfig && responsiveClassName,
           responsiveStyleClassNames,

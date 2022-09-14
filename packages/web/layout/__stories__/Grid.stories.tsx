@@ -96,7 +96,7 @@ export const GridExamples = () => {
       <VStack gap={1}>
         <TextTitle1 as="h2">Columns as String</TextTitle1>
         <TextTitle3 as="h3">100px 20% 1fr</TextTitle3>
-        <GridBase columns="100px 20% 1fr" />
+        <GridBase templateColumns="100px 20% 1fr" />
       </VStack>
       <VStack gap={1}>
         <TextTitle1 as="h2">As a List</TextTitle1>

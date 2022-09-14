@@ -363,7 +363,7 @@ export const Examples = () => {
             </TextBody>
           }
         >
-          <GridLayout columns="1fr 2fr 3fr" columnCount={3} />
+          <GridLayout templateColumns="1fr 2fr 3fr" columnCount={3} />
         </Example>
         <Example
           title="The Holy Grail Layout"
@@ -373,7 +373,7 @@ export const Examples = () => {
             </TextBody>
           }
         >
-          <GridLayout columns="200px 1fr 200px" columnCount={3} />
+          <GridLayout templateColumns="200px 1fr 200px" columnCount={3} />
         </Example>
         <Divider spacingVertical={4} />
         <VStack>
