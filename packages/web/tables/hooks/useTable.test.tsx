@@ -103,7 +103,7 @@ describe('useTableTag', () => {
     );
     const { result } = renderHook(() => useTableCellSpacing(), { wrapper });
 
-    expect(result.current).toBe(cellSpacing);
+    expect(result.current).toEqual(cellSpacing);
   });
 
   it('Get default cell spacing', async () => {
@@ -114,7 +114,7 @@ describe('useTableTag', () => {
     );
     const { result } = renderHook(() => useTableCellSpacing(), { wrapper });
 
-    expect(result.current).toBe(defaultCellSpacing);
+    expect(result.current).toEqual(defaultCellSpacing);
   });
 
   it('Get default cell spacing dense', async () => {
@@ -127,7 +127,7 @@ describe('useTableTag', () => {
     );
     const { result } = renderHook(() => useTableCellSpacing(), { wrapper });
 
-    expect(result.current).toBe(defaultDenseCellSpacing);
+    expect(result.current).toEqual(defaultDenseCellSpacing);
   });
 
   it('Get compact cell spacing', async () => {
@@ -138,7 +138,7 @@ describe('useTableTag', () => {
     );
     const { result } = renderHook(() => useTableCellSpacing(), { wrapper });
 
-    expect(result.current).toBe(compactCellSpacing);
+    expect(result.current).toEqual(compactCellSpacing);
   });
 
   it('TableHeader with sticky gets proper className', async () => {

@@ -28,12 +28,17 @@ export function useCellSpacing({
       ({
         inner: {
           ...innerDefaults,
-          spacingHorizontal: reduceHorizontalSpacing ? 1 : innerDefaults.spacingHorizontal,
+          spacingHorizontal: reduceHorizontalSpacing
+            ? 1
+            : innerSpacing?.spacing ?? innerDefaults.spacingHorizontal,
+          spacingVertical: innerSpacing?.spacing ?? innerDefaults.spacingVertical,
           ...innerSpacing,
         },
         outer: {
           ...outerDefaults,
           offsetHorizontal,
+          spacingHorizontal: outerSpacing?.spacing ?? outerDefaults.spacingHorizontal,
+          spacingVertical: outerSpacing?.spacing ?? outerDefaults.spacingVertical,
           ...outerSpacing,
         },
       } as const),

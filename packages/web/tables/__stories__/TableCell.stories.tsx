@@ -1,8 +1,10 @@
+/* eslint-disable react/jsx-handler-names */
 import { Meta, Story } from '@storybook/react';
 
+import { VStack } from '../../alpha/VStack';
 import { Avatar } from '../../media';
 import { ThemeProvider } from '../../system';
-import { TextHeadline, TextLabel2 } from '../../typography';
+import { TextBody, TextHeadline, TextLabel2 } from '../../typography';
 import { Table, TableBody, TableCell, TableFooter, TableHeader, TableRow } from '..';
 
 export default {
@@ -10,14 +12,19 @@ export default {
   component: TableCell,
 } as Meta;
 
-const cellSpacing = {
-  outer: { spacingVertical: 0, spacingHorizontal: 2 },
-  inner: { spacingVertical: 0, spacingHorizontal: 0 },
+const spacingConfig = {
+  flush: {
+    outer: { spacing: 0, spacingVertical: 0, spacingHorizontal: 2 },
+    inner: { spacing: 0, spacingVertical: 0, spacingHorizontal: 0 },
+  },
+  normal: { spacing: 2 },
+  big: { spacing: 5 },
+  huge: { spacing: 7 },
 } as const;
 
 export const CellSpacing: Story = () => {
   return (
-    <Table variant="ruled" bordered cellSpacing={cellSpacing}>
+    <Table variant="ruled" bordered cellSpacing={spacingConfig.flush}>
       <TableHeader>
         <TableRow backgroundColor="backgroundAlternate">
           <TableCell title="First Header" />
@@ -29,6 +36,91 @@ export const CellSpacing: Story = () => {
         </TableRow>
       </TableBody>
     </Table>
+  );
+};
+
+export const ComplexSpacingOverride: Story = () => {
+  return (
+    <VStack gap={2}>
+      <TextBody as="p">
+        This story is complex on purpose - it is intended to provide visgreg testing to ensure crazy
+        spacing configs do what they are supposed to do:
+      </TextBody>
+      <Table variant="ruled" bordered cellSpacing={spacingConfig.flush}>
+        <TableHeader>
+          <TableRow backgroundColor="backgroundAlternate">
+            <TableCell title="Flush first column" subtitle="Default set on Table" />
+            <TableCell title="Flush second column" subtitle="Default set on Table" />
+            <TableCell title="Flush third column" subtitle="Default set on Table" />
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell
+              onPress={console.log}
+              title="TableCell with defined innerSpacing"
+              subtitle={`innerSpacing ${JSON.stringify(spacingConfig.normal)}`}
+              innerSpacing={spacingConfig.normal}
+            />
+            <TableCell
+              onPress={console.log}
+              title="TableCell with defined innerSpacing"
+              subtitle={`innerSpacing ${JSON.stringify(spacingConfig.big)}`}
+              innerSpacing={spacingConfig.big}
+            />
+            <TableCell
+              onPress={console.log}
+              title="TableCell with defined innerSpacing"
+              subtitle={`innerSpacing ${JSON.stringify(spacingConfig.huge)}`}
+              innerSpacing={spacingConfig.huge}
+            />
+          </TableRow>
+          <TableRow backgroundColor="backgroundAlternate">
+            <TableCell
+              onPress={console.log}
+              title="TableCell with defined innerSpacing"
+              subtitle={`outerSpacing ${JSON.stringify(spacingConfig.normal)}`}
+              outerSpacing={spacingConfig.normal}
+            />
+            <TableCell
+              onPress={console.log}
+              title="TableCell with defined outerSpacing"
+              subtitle={`outerSpacing ${JSON.stringify(spacingConfig.big)}`}
+              outerSpacing={spacingConfig.big}
+            />
+            <TableCell
+              onPress={console.log}
+              title="TableCell with defined outerSpacing"
+              subtitle={`outerSpacing ${JSON.stringify(spacingConfig.huge)}`}
+              outerSpacing={spacingConfig.huge}
+            />
+          </TableRow>
+          <TableRow>
+            <TableCell
+              onPress={console.log}
+              title="TableCell with defined spacing"
+              subtitle={`innerSpacing/outerSpacing ${JSON.stringify(spacingConfig.normal)}`}
+              innerSpacing={spacingConfig.normal}
+              outerSpacing={spacingConfig.normal}
+            />
+            <TableCell
+              onPress={console.log}
+              title="TableCell with defined spacing"
+              subtitle={`innerSpacing/outerSpacing ${JSON.stringify(spacingConfig.big)}`}
+              innerSpacing={spacingConfig.big}
+              outerSpacing={spacingConfig.big}
+            />
+            <TableCell
+              onPress={console.log}
+              title="TableCell with defined spacing"
+              subtitle={`innerSpacing/outerSpacing ${JSON.stringify(spacingConfig.huge)}`}
+              innerSpacing={spacingConfig.huge}
+              outerSpacing={spacingConfig.huge}
+            />
+          </TableRow>
+        </TableBody>
+      </Table>
+    </VStack>
   );
 };
 

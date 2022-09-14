@@ -90,16 +90,8 @@ export const TableCell = memo(
       [color, defaultTitleColor, titleColor],
     );
 
-    // Depends on tableSpacing value
-    const tableCellSpacing = useTableCellSpacing();
-    const cellOuterSpacing = useMemo(
-      () => outerSpacing ?? tableCellSpacing?.outer,
-      [outerSpacing, tableCellSpacing?.outer],
-    );
-    const cellInnerSpacing = useMemo(
-      () => innerSpacing ?? tableCellSpacing?.inner,
-      [innerSpacing, tableCellSpacing?.inner],
-    );
+    // Spacing defined on the TableCell will override cellSpacing defined on the Table
+    const { outer, inner } = useTableCellSpacing({ outer: outerSpacing, inner: innerSpacing });
 
     // Depends on prop infered variables
     const smartAlignItems = useMemo(
@@ -159,8 +151,8 @@ export const TableCell = memo(
           media={start}
           accessory={end}
           shouldOverflow={!overflow}
-          outerSpacing={cellOuterSpacing}
-          innerSpacing={cellInnerSpacing}
+          outerSpacing={outer}
+          innerSpacing={inner}
           responsiveConfig={responsiveConfig}
           gap={cellGap}
         >
