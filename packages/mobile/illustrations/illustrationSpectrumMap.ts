@@ -18,6 +18,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/addCardSpot-0').content,
     dark: () => require('./images/dark/addCardSpot-0').content,
   },
+  addEth: {
+    light: () => require('./images/light/addEth-0').content,
+    dark: () => require('./images/dark/addEth-0').content,
+  },
   addMultipleCrypto: {
     light: () => require('./images/light/addMultipleCrypto-1').content,
     dark: () => require('./images/dark/addMultipleCrypto-1').content,
@@ -82,6 +86,18 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/cbEthWrappingUnavailable-0').content,
     dark: () => require('./images/dark/cbEthWrappingUnavailable-0').content,
   },
+  cbOneStakeOrWrap: {
+    light: () => require('./images/light/cbOneStakeOrWrap-0').content,
+    dark: () => require('./images/dark/cbOneStakeOrWrap-0').content,
+  },
+  cbOneStaking: {
+    light: () => require('./images/light/cbOneStaking-0').content,
+    dark: () => require('./images/dark/cbOneStaking-0').content,
+  },
+  cbOnestarToken: {
+    light: () => require('./images/light/cbOnestarToken-0').content,
+    dark: () => require('./images/dark/cbOnestarToken-0').content,
+  },
   coinbaseCardSparkle: {
     light: () => require('./images/light/coinbaseCardSparkle-2').content,
     dark: () => require('./images/dark/coinbaseCardSparkle-2').content,
@@ -89,10 +105,6 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   coinbaseOneLogoSpotSquare: {
     light: () => require('./images/light/coinbaseOneLogoSpotSquare-0').content,
     dark: () => require('./images/dark/coinbaseOneLogoSpotSquare-0').content,
-  },
-  coinbaseOneWelcome: {
-    light: () => require('./images/light/coinbaseOneWelcome-0').content,
-    dark: () => require('./images/dark/coinbaseOneWelcome-0').content,
   },
   confirmAddress: {
     light: () => require('./images/light/confirmAddress-0').content,
@@ -125,10 +137,6 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   dappWallet: {
     light: () => require('./images/light/dappWallet-0').content,
     dark: () => require('./images/dark/dappWallet-0').content,
-  },
-  dappsL2Support: {
-    light: () => require('./images/light/dappsL2Support-0').content,
-    dark: () => require('./images/dark/dappsL2Support-0').content,
   },
   darkModeIntroduction: {
     light: () => require('./images/light/darkModeIntroduction-1').content,
@@ -766,6 +774,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/catLostSystemError-0').content,
     dark: () => require('./images/dark/catLostSystemError-0').content,
   },
+  cbOneWelcome: {
+    light: () => require('./images/light/cbOneWelcome-0').content,
+    dark: () => require('./images/dark/cbOneWelcome-0').content,
+  },
   chickenFishSystemError: {
     light: () => require('./images/light/chickenFishSystemError-0').content,
     dark: () => require('./images/dark/chickenFishSystemError-0').content,
@@ -941,6 +953,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   dappsGaming: {
     light: () => require('./images/light/dappsGaming-0').content,
     dark: () => require('./images/dark/dappsGaming-0').content,
+  },
+  dappsL2Support: {
+    light: () => require('./images/light/dappsL2Support-0').content,
+    dark: () => require('./images/dark/dappsL2Support-0').content,
   },
   dappsMusic: {
     light: () => require('./images/light/dappsMusic-0').content,
@@ -1137,6 +1153,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   exploreDecentralizedApps: {
     light: () => require('./images/light/exploreDecentralizedApps-1').content,
     dark: () => require('./images/dark/exploreDecentralizedApps-1').content,
+  },
+  faceMatchReal: {
+    light: () => require('./images/light/faceMatchReal-0').content,
+    dark: () => require('./images/dark/faceMatchReal-0').content,
   },
   feeScale: {
     light: () => require('./images/light/feeScale-0').content,
@@ -2393,6 +2413,22 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   noWiFi: {
     light: () => require('./images/light/noWiFi-1').content,
     dark: () => require('./images/dark/noWiFi-1').content,
+  },
+  notificationHubAnalysis: {
+    light: () => require('./images/light/notificationHubAnalysis-0').content,
+    dark: () => require('./images/dark/notificationHubAnalysis-0').content,
+  },
+  notificationHubNews: {
+    light: () => require('./images/light/notificationHubNews-0').content,
+    dark: () => require('./images/dark/notificationHubNews-0').content,
+  },
+  notificationHubPortfolio: {
+    light: () => require('./images/light/notificationHubPortfolio-0').content,
+    dark: () => require('./images/dark/notificationHubPortfolio-0').content,
+  },
+  notificationHubSocial: {
+    light: () => require('./images/light/notificationHubSocial-0').content,
+    dark: () => require('./images/dark/notificationHubSocial-0').content,
   },
   notifications: {
     light: () => require('./images/light/notifications-1').content,

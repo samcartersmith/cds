@@ -6,6 +6,34 @@
 import { ReleasedIllustrationsTypes } from '../../types/IllustrationProps';
 
 export const illustrationReleaseHistory: Record<string, ReleasedIllustrationsTypes> = {
+  'Wed Sep 14 2022': {
+    newIllustrations: [
+      'heroSquare/cbOneWelcome-dark',
+      'heroSquare/cbOneWelcome-light',
+      'heroSquare/dappsL2Support-dark',
+      'heroSquare/dappsL2Support-light',
+      'heroSquare/faceMatchReal-dark',
+      'heroSquare/faceMatchReal-light',
+      'pictogram/notificationHubAnalysis-dark',
+      'pictogram/notificationHubAnalysis-light',
+      'pictogram/notificationHubNews-dark',
+      'pictogram/notificationHubNews-light',
+      'pictogram/notificationHubPortfolio-dark',
+      'pictogram/notificationHubPortfolio-light',
+      'pictogram/notificationHubSocial-dark',
+      'pictogram/notificationHubSocial-light',
+      'spotSquare/addEth-dark',
+      'spotSquare/addEth-light',
+      'spotSquare/cbOneStakeOrWrap-dark',
+      'spotSquare/cbOneStakeOrWrap-light',
+      'spotSquare/cbOneStaking-dark',
+      'spotSquare/cbOneStaking-light',
+      'spotSquare/cbOnestarToken-dark',
+      'spotSquare/cbOnestarToken-light',
+    ],
+    modifiedIllustrations: [],
+    deletedIllustrations: [],
+  },
   'Wed Aug 24 2022': {
     newIllustrations: [
       'heroSquare/coinbaseOneWalletWarning-dark',

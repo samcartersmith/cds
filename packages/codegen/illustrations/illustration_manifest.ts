@@ -10117,14 +10117,14 @@ export const manifestData: Record<
       versionNum: 0,
     },
     '9049:3487': {
-      variant: 'spotSquare',
+      variant: 'heroSquare',
       description: 'dapps, L2, badging, token, support, coins',
       name: 'dappsL2Support',
       spectrum: 'light',
       versionNum: 0,
     },
     '9049:3488': {
-      variant: 'spotSquare',
+      variant: 'heroSquare',
       description: 'dapps, L2, badging, token, support, coins',
       name: 'dappsL2Support',
       spectrum: 'dark',
@@ -10159,17 +10159,155 @@ export const manifestData: Record<
       versionNum: 0,
     },
     '9063:3384': {
-      variant: 'spotSquare',
+      variant: 'heroSquare',
       description: 'coinbase, welcome, coin, benefits, program',
-      name: 'coinbaseOneWelcome',
+      name: 'cbOneWelcome',
       spectrum: 'light',
       versionNum: 0,
     },
     '9063:3423': {
-      variant: 'spotSquare',
+      variant: 'heroSquare',
       description: 'coinbase, welcome, coin, benefits, program',
-      name: 'coinbaseOneWelcome',
+      name: 'cbOneWelcome',
       spectrum: 'dark',
+      versionNum: 0,
+    },
+    '9217:3425': {
+      variant: 'spotSquare',
+      description: 'stake, wrap, CB1, rush, movement, forward, exciting',
+      name: 'cbOneStakeOrWrap',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '9217:3427': {
+      variant: 'spotSquare',
+      description:
+        'CB1, nux, popular, asset, star, token, crypto, cryptocurrency, currency, sparkle, ✨',
+      name: 'cbOnestarToken',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '9217:3426': {
+      variant: 'spotSquare',
+      description:
+        'CB1, xtz, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
+      name: 'cbOneStaking',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '9217:3424': {
+      variant: 'spotSquare',
+      description: 'stake, wrap, CB1, rush, movement, forward, exciting',
+      name: 'cbOneStakeOrWrap',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '9217:3422': {
+      variant: 'spotSquare',
+      description:
+        'CB1, nux, popular, asset, star, token, crypto, cryptocurrency, currency, sparkle, ✨',
+      name: 'cbOnestarToken',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '9217:3423': {
+      variant: 'spotSquare',
+      description:
+        'CB1, xtz, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
+      name: 'cbOneStaking',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '9323:3265': {
+      variant: 'spotSquare',
+      description: '',
+      name: 'addEth',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '9323:3281': {
+      variant: 'spotSquare',
+      description: '',
+      name: 'addEth',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '9394:3379': {
+      variant: 'pictogram',
+      description:
+        'notification, hub, notify, alert, ping, red, dot, social, analysis, media, twitter, chart',
+      name: 'notificationHubSocial',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '9394:3376': {
+      variant: 'pictogram',
+      description:
+        'notification, hub, notify, alert, ping, red, dot, social, analysis, media, twitter, chart',
+      name: 'notificationHubSocial',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '9394:3375': {
+      variant: 'pictogram',
+      description: 'notification, hub, notify, alert, ping, red, dot, news, paper, doc',
+      name: 'notificationHubNews',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '9394:3374': {
+      variant: 'pictogram',
+      description: 'notification, hub, notify, alert, ping, red, dot, news, paper, doc',
+      name: 'notificationHubNews',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '9394:3377': {
+      variant: 'pictogram',
+      description:
+        'notification, hub, notify, alert, ping, red, dot, analysis, review, doc, magnifying, glass',
+      name: 'notificationHubAnalysis',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '9394:3373': {
+      variant: 'pictogram',
+      description:
+        'notification, hub, notify, alert, ping, red, dot, analysis, review, doc, magnifying, glass',
+      name: 'notificationHubAnalysis',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '9394:3372': {
+      variant: 'pictogram',
+      description:
+        'notification, hub, notify, alert, ping, red, dot, portfolio, chart, spark, graph',
+      name: 'notificationHubPortfolio',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '9394:3378': {
+      variant: 'pictogram',
+      description:
+        'notification, hub, notify, alert, ping, red, dot, portfolio, chart, spark, graph',
+      name: 'notificationHubPortfolio',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '9445:3394': {
+      variant: 'heroSquare',
+      description:
+        'Face, Match, KYC, Identity, ID, Person, Human, head, photo, checkmark, correct, positive',
+      name: 'faceMatchReal',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '9445:3395': {
+      variant: 'heroSquare',
+      description:
+        'Face, Match, KYC, Identity, ID, Person, Human, head, photo, checkmark, correct, positive',
+      name: 'faceMatchReal',
+      spectrum: 'light',
       versionNum: 0,
     },
   },
