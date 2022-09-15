@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.10.0 (9/14/2022, 05:42 PM PST)
+
+#### 🚀 Updates
+
+- Updated Grid APIs. [#1102](https://github.cbhq.net/frontend/cds/pull/1102)
+
+#### 🐞 Fixes
+
+- **[Illustrations]** Publish illustrations 09/14/22. [#1108](https://github.cbhq.net/frontend/cds/pull/1108)
+- Icons. [#1110](https://github.cbhq.net/frontend/cds/pull/1110)
+- **[CellSpacing]** Horizontal and vertical spacing props should inherit from spacing. [#1099](https://github.cbhq.net/frontend/cds/pull/1099), [CDS-1997](https://jira.coinbase-corp.com/browse/CDS-1997)
+- Move detox-utils to mobile-playground. [#1088](https://github.cbhq.net/frontend/cds/pull/1088)
+- **[Common]** Remove unnecessary context checks. [#1065](https://github.cbhq.net/frontend/cds/pull/1065)
+- **[Carousel]** Fixes top spacing with multi line titles. [#1047](https://github.cbhq.net/frontend/cds/pull/1047), [CDS-2406](https://jira.coinbase-corp.com/browse/CDS-2406)
+
+#### 📘 Misc
+
+- **[fix]** Codeflow builds failing due to missing deps. [#1095](https://github.cbhq.net/frontend/cds/pull/1095)
+- Use mono-tasks when possible. [#1075](https://github.cbhq.net/frontend/cds/pull/1075)
+
 ## 1.9.0 (9/7/2022, 05:39 PM PST)
 
 #### 🚀 Updates

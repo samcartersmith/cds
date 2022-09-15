@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.10.0 (9/14/2022, 05:42 PM PST)
+
+#### 🚀 Updates
+
+- Updated Grid APIs. [#1102](https://github.cbhq.net/frontend/cds/pull/1102)
+- **[SidebarMoreMenu]** Add triggerTitle prop for localization. [#1087](https://github.cbhq.net/frontend/cds/pull/1087)
+
+#### 🐞 Fixes
+
+- **[Illustrations]** Publish illustrations 09/14/22. [#1108](https://github.cbhq.net/frontend/cds/pull/1108)
+- Icons. [#1110](https://github.cbhq.net/frontend/cds/pull/1110)
+- **[CellSpacing]** Horizontal and vertical spacing props should inherit from spacing. [#1099](https://github.cbhq.net/frontend/cds/pull/1099), [CDS-1997](https://jira.coinbase-corp.com/browse/CDS-1997)
+- **[TextInput]** Change text-fill-color to foreground. [#1096](https://github.cbhq.net/frontend/cds/pull/1096)
+- **[Typography]** Ensure JA fonts render correct font-weight. [#1084](https://github.cbhq.net/frontend/cds/pull/1084), [CDS-2439](https://jira.coinbase-corp.com/browse/CDS-2439)
+- Move detox-utils to mobile-playground. [#1088](https://github.cbhq.net/frontend/cds/pull/1088)
+
+#### 📘 Misc
+
+- Use mono-tasks when possible. [#1075](https://github.cbhq.net/frontend/cds/pull/1075)
+
 ## 1.9.0 (9/7/2022, 05:39 PM PST)
 
 #### 🚀 Updates

@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.10.0 (9/14/2022, 05:42 PM PST)
+
+#### 🚀 Updates
+
+- **[a11y-mobile-engine]** Create an a11y audit executor to pull baseline metrics. [#1054](https://github.cbhq.net/frontend/cds/pull/1054)
+
+#### 🐞 Fixes
+
+- **[Illustrations]** Publish illustrations 09/14/22. [#1108](https://github.cbhq.net/frontend/cds/pull/1108)
+- Icons. [#1110](https://github.cbhq.net/frontend/cds/pull/1110)
+- Move detox-utils to mobile-playground. [#1088](https://github.cbhq.net/frontend/cds/pull/1088)
+- **[Carousel]** Fixes top spacing with multi line titles. [#1047](https://github.cbhq.net/frontend/cds/pull/1047), [CDS-2406](https://jira.coinbase-corp.com/browse/CDS-2406)
+
+#### 📘 Misc
+
+- **[fix]** Use mono-pipeline for a11y web and percy. [#1097](https://github.cbhq.net/frontend/cds/pull/1097)
+- Use mono-tasks when possible. [#1075](https://github.cbhq.net/frontend/cds/pull/1075)
+
 ## 1.9.0 (9/7/2022, 05:39 PM PST)
 
 #### 🚀 Updates
