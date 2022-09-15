@@ -43,13 +43,6 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>mailto</string>
-		<string>tel</string>
-		<string>facetime</string>
-		<string>sms</string>
-	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -60,19 +53,15 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Inter-Regular.otf</string>
-		<string>Graphik-Medium.otf</string>
-		<string>Graphik-Regular.otf</string>
-		<string>CoinbaseIcons.ttf</string>
-		<string>Inter-Semi-Bold.otf</string>
 		<string>CoinbaseDisplay-Medium.otf</string>
 		<string>CoinbaseDisplay-Regular.otf</string>
+		<string>CoinbaseMono-Medium.otf</string>
+		<string>CoinbaseMono-Regular.otf</string>
 		<string>CoinbaseSans-Medium.otf</string>
 		<string>CoinbaseSans-Regular.otf</string>
 		<string>CoinbaseText-Medium.otf</string>
 		<string>CoinbaseText-Regular.otf</string>
-		<string>CoinbaseMono-Medium.otf</string>
-		<string>CoinbaseMono-Regular.otf</string>
+		<string>CoinbaseIcons.ttf</string>
 	</array>
 </dict>
 </plist>

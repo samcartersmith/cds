@@ -1,11 +1,18 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/packages/mobile",
+    "outDir": "../../.nx/dts/packages/mobile",
     "rootDir": "./"
   },
-  "include": ["**/*"],
-  "exclude": ["dist", "jest.config.js", "babel.config.js", "babel.build.config.js"],
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "dist",
+    "jest.config.js",
+    "babel.config.js",
+    "babel.build.config.js"
+  ],
   "references": [
     {
       "path": "../utils"
@@ -18,6 +25,9 @@
     },
     {
       "path": "../fonts"
+    },
+    {
+      "path": "../ui-mobile-a11y-engine"
     }
   ]
 }

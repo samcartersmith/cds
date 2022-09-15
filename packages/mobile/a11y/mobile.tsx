@@ -1,4 +1,3 @@
-/* eslint-disable jest/require-top-level-describe */
 import React from 'react';
 import { NativeModules } from 'react-native'; // !this module
 import TestRenderer from 'react-test-renderer';
@@ -116,3 +115,5 @@ describe('Mobile Accessibility Test Suite - Need special mocks', () => {
     true,
   );
 });
+
+export {};

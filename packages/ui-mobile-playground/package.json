@@ -18,8 +18,8 @@
     "@react-navigation/stack": "^6.2.2",
     "detox": ">=19.0.0",
     "react": "^17.0.2",
-    "react-native": "^0.65.2",
-    "react-native-safe-area-context": "^3.1.9"
+    "react-native": "^0.68.2",
+    "react-native-safe-area-context": "^3.2.0"
   },
   "dependencies": {
     "@cbhq/detox-utils": "^0.2.3",

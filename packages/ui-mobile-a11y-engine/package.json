@@ -56,10 +56,10 @@
     "@testing-library/react-native": "9.0.0",
     "@types/lodash.groupby": "4.6.6",
     "@types/react": "^17.0.3",
-    "@types/react-native": "0.66.8",
+    "@types/react-native": "^0.68.2",
     "@types/react-test-renderer": "17.0.1",
     "react": "17.0.2",
-    "react-native": "0.66.3"
+    "react-native": "^0.68.2"
   },
   "peerDependencies": {
     "@cbhq/mono-tasks": "^0.4.21",

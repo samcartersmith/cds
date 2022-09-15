@@ -4,16 +4,20 @@
   "projectType": "application",
   "targets": {
     "start-android": {
-      "executor": "@cbhq/mono-tasks-mobile:start-android"
+      "executor": "@cbhq/mono-tasks-mobile:start-android",
+      "dependsOn": ["^build"]
     },
     "build-android": {
-      "executor": "@cbhq/mono-tasks-mobile:build-android"
+      "executor": "@cbhq/mono-tasks-mobile:build-android",
+      "dependsOn": ["^build"]
     },
     "start-ios": {
-      "executor": "@cbhq/mono-tasks-mobile:start-ios"
+      "executor": "@cbhq/mono-tasks-mobile:start-ios",
+      "dependsOn": ["^build"]
     },
     "build-ios": {
-      "executor": "@cbhq/mono-tasks-mobile:build-ios"
+      "executor": "@cbhq/mono-tasks-mobile:build-ios",
+      "dependsOn": ["^build"]
     },
     "start-metro": {
       "executor": "@cbhq/mono-tasks-mobile:start-metro"
@@ -27,27 +31,13 @@
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
     },
-    "conditional-init-visreg-mobile": {
-      "executor": "@cbhq/cds-tools:run-conditional",
-      "options": {
-        "triggerProjects": [
-          "mobile-playground",
-          "mobile",
-          "common",
-          "utils",
-          "fonts",
-          "lottie-files",
-          "ui-mobile-playground"
-        ],
-        "target": "mobile-playground:init-visreg-mobile"
-      }
-    },
-    "init-visreg-mobile": {
+    "visreg": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": ["./tools/ci/runVisregMobileTests.sh"],
         "parallel": false
-      }
+      },
+      "dependsOn": ["^build"]
     },
     "build-ios-e2e": {
       "executor": "@cbhq/mono-tasks-mobile:build-ios",
@@ -60,7 +50,8 @@
         "debug": {
           "detoxConfig": "ios.debug"
         }
-      }
+      },
+      "dependsOn": ["^build"]
     },
     "ios-e2e": {
       "executor": "@cbhq/mono-tasks:test-detox",
@@ -75,7 +66,8 @@
           "debug": true,
           "detoxArgs": ["--debug-synchronization", "500"]
         }
-      }
+      },
+      "dependsOn": [{ "target": "build-ios-e2e", "projects": "self" }]
     },
     "build-android-e2e": {
       "executor": "@cbhq/mono-tasks-mobile:build-android",
@@ -89,7 +81,8 @@
         "debug": {
           "detoxConfig": "android.debug"
         }
-      }
+      },
+      "dependsOn": ["^build"]
     },
     "android-e2e": {
       "executor": "@cbhq/mono-tasks:test-detox",
@@ -110,7 +103,8 @@
         "debug": {
           "config": "android.debug"
         }
-      }
+      },
+      "dependsOn": [{ "target": "build-android-e2e", "projects": "self" }]
     },
     "android-e2e-emulator": {
       "executor": "@nrwl/workspace:run-commands",
@@ -136,26 +130,23 @@
         "platform": "android",
         "buildType": "debug",
         "arch": "universal"
-      }
+      },
+      "dependsOn": ["^build"]
     },
     "prebuild-android-e2e": {
       "executor": "@cbhq/mono-tasks-mobile:prebuild",
       "options": {
         "platform": "android",
         "buildType": "e2e"
-      }
+      },
+      "dependsOn": ["^build"]
     },
     "android-cli": {
       "executor": "@cbhq/mono-tasks-mobile:start-prebuild",
       "options": {
         "platform": "android"
       },
-      "dependsOn": [
-        {
-          "target": "build",
-          "projects": "dependencies"
-        }
-      ]
+      "dependsOn": ["^build"]
     }
   },
   "tags": []

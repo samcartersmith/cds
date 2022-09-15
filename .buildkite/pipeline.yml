@@ -93,7 +93,7 @@ steps:
     parallelism: 1
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline other --targets=a11y
+      - yarn mono-pipeline run-ci other --targets=a11y
     env:
       STORYBOOK_SKIP_ANIMATION: true
     plugins:
@@ -125,19 +125,11 @@ steps:
             - 'PERCY_TARGET_BRANCH'
       - file:///buildkite/plugins/cache: *cache_plugin
 
-  # **************************************************
-  # **************************************************
-  # Steps described below this line will not run in parallel. They will wait for the steps above to finish before running
-  # **************************************************
-  # **************************************************
-
-  - wait
-
   - label: 'Visreg Tests (Mobile)'
     <<: *shared_step
     commands:
       - tools/ci/setup.sh
-      - yarn nx run mobile-playground:conditional-init-visreg-mobile
+      - yarn mono-pipeline run-ci other --targets=visreg
     artifact_paths:
       - percy-artifacts/**/*
     retry:

@@ -135,7 +135,13 @@ export function useExampleScreenOptions() {
             right: 0,
             bottom: 0,
           },
-          header: ({ navigation, scene, styleInterpolator }: StackHeaderProps) => {
+          header: ({
+            navigation,
+            route,
+            options,
+            progress,
+            styleInterpolator,
+          }: StackHeaderProps) => {
             const isFocused = navigation.isFocused();
             const canGoBack = navigation.canGoBack();
             const goBack = () => {
@@ -143,12 +149,12 @@ export function useExampleScreenOptions() {
               setFilter('');
             };
             const goToSearch = () => navigation.navigate(searchRouteName);
-            const routeName = scene.route.name;
-            const titleForScene = scene.descriptor.options.title;
+            const routeName = route.name;
+            const titleForScene = options.title;
             const isSearch = routeName === searchRouteName;
             const { titleStyle } = styleInterpolator({
-              current: { progress: scene.progress.current },
-              next: scene.progress.next && { progress: scene.progress.next },
+              current: { progress: progress.current },
+              next: progress.next && { progress: progress.next },
               layouts: {
                 header: headerSize,
                 title: headerSize,

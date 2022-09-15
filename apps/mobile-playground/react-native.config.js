@@ -1,17 +1,9 @@
 module.exports = {
-  project: {
-    ios: {
-      project: './ios/MobilePlayground.xcodeproj',
-    },
-    android: {
-      sourceDir: './android',
-    },
-  },
   assets: ['../../packages/fonts/native', '../../packages/mobile/icons/font'],
   mobileCli: {
     prebuildPrefix: 'cds_playground',
     metricsAppName: 'cds_playground',
-    appIndex: 'src/main.tsx',
+    appIndex: 'index.js',
     metroServerOptions: [
       // For environment variables; like retail's TARGET_ENV
     ],

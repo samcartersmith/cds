@@ -1,9 +1,18 @@
 rootProject.name = 'MobilePlayground'
 
-include ':react-native-config'
-project(':react-native-config').projectDir = new File(rootProject.projectDir, '../../../node_modules/react-native-config/android')
+def nodeModulesPath = "$rootProject.projectDir/../../../node_modules"
 
-apply from: file("../../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
-applyNativeModulesSettingsGradle(settings)
+apply from: file("$nodeModulesPath/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 
 include ':app'
+
+includeBuild("${nodeModulesPath}/react-native-gradle-plugin") {
+    dependencySubstitution {
+        substitute(module("com.facebook.react:react-native-gradle-plugin")).using(project(":"))
+    }
+}
+
+if (settings.hasProperty("newArchEnabled") && settings.newArchEnabled == "true") {
+    include(":ReactAndroid")
+    project(":ReactAndroid").projectDir = file("$nodeModulesPath/react-native/ReactAndroid")
+}

@@ -5,6 +5,7 @@
 # Apps
 apps/website/docs/**/*.json
 apps/website/static/**/*.json
+apps/mobile-playground/vendor
 
 # Codegen 
 packages/docusaurus-theme/src/theme/**/*.d.ts

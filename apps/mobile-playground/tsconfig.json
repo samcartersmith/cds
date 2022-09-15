@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/apps/mobile-playground"
+    "outDir": "../../.nx/dts/apps/mobile-playground"
   },
   "references": [
     {
@@ -11,6 +11,12 @@
       "path": "../../packages/ui-mobile-playground"
     }
   ],
-  "include": ["**/*"],
-  "exclude": ["dist/**/*", "babel.config.js", "metro.config.js"]
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "dist/**/*",
+    "babel.config.js",
+    "metro.config.js"
+  ]
 }

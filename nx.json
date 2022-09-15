@@ -32,54 +32,25 @@
           "lint-styles",
           "test",
           "typecheck",
-          "e2e"
+          "e2e",
+          "visreg"
         ],
         "captureStderr": true
       }
     }
   },
   "targetDefaults": {
-    "android-e2e": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
     "build": {
       "dependsOn": [
         "^build"
       ]
     },
-    "build-android-e2e": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "build-ios-e2e": {
+    "start": {
       "dependsOn": [
         "^build"
       ]
     },
     "lint": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "prebuild-android-e2e": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "prebuild-ios-e2e": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "start-android": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "start-ios": {
       "dependsOn": [
         "^build"
       ]
