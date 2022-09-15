@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 61509,
+  lastUnicode: 61549,
   unicodeMap: {
     cashUSD: { '8': 'uE966', '12': 'uE967', '16': 'uE968', '24': 'uE969', '32': 'uE96A' },
     cashGBP: { '8': 'uE96B', '12': 'uE96C', '16': 'uE96D', '24': 'uE96E', '32': 'uE96F' },
@@ -591,5 +591,13 @@ export const manifest = {
     qrCodeAlt: { '8': 'uF037', '12': 'uF038', '16': 'uF039', '24': 'uF03A', '32': 'uF03B' },
     copyNavInactive: { '8': 'uF03C', '12': 'uF03D', '16': 'uF03E', '24': 'uF03F', '32': 'uF040' },
     copyNavActive: { '8': 'uF041', '12': 'uF042', '16': 'uF043', '24': 'uF044', '32': 'uF045' },
+    affiliates: { '8': 'uF046', '12': 'uF047', '16': 'uF048', '24': 'uF049', '32': 'uF04A' },
+    lightbulb: { '8': 'uF04B', '12': 'uF04C', '16': 'uF04D', '24': 'uF04E', '32': 'uF04F' },
+    megaphone: { '8': 'uF050', '12': 'uF051', '16': 'uF052', '24': 'uF053', '32': 'uF054' },
+    book: { '8': 'uF055', '12': 'uF056', '16': 'uF057', '24': 'uF058', '32': 'uF059' },
+    newsletter: { '8': 'uF05A', '12': 'uF05B', '16': 'uF05C', '24': 'uF05D', '32': 'uF05E' },
+    blog: { '8': 'uF05F', '12': 'uF060', '16': 'uF061', '24': 'uF062', '32': 'uF063' },
+    institute: { '8': 'uF064', '12': 'uF065', '16': 'uF066', '24': 'uF067', '32': 'uF068' },
+    cryptobasics: { '8': 'uF069', '12': 'uF06A', '16': 'uF06B', '24': 'uF06C', '32': 'uF06D' },
   },
 };
