@@ -12,22 +12,42 @@ export type TestOptions = {
   serial?: boolean;
 };
 
+/**
+ * You can get more information about what these a11yLog represents
+ * from this TDD
+ * https://docs.google.com/document/d
+ * 1y9T3tP-40gPqMxcQAE-Ast4M08n-sK7z2tO5BaTAHMc/
+ */
 export type A11yLogType = {
+  /** Will log the date when the executor is ran */
   timestamp: Date;
-  numberOfComponentTests: number;
-  numberOfHasToBeAccessibleTests: number;
+  /**
+   * Number of components that have test. Discovered that components with
+   * render is likely to be a component
+   * */
+  totalNumberOfComponentWithTests: number;
+  /**
+   * Number of tests that have toBeAccessible jest test
+   */
+  totalNumberOfHasToBeAccessibleTests: number;
+  /**
+   * Capturing the file path for components that have test
+   * but does not have toBeAccessible
+   */
   unTestedFilePaths: string[];
+  /**
+   * Capturing tests that fail and the warning message that it generates
+   */
   testDetails: Record<string, execa.ExecaReturnValue | { success: boolean }>;
+  /**
+   * Metadata for a project
+   */
   projectMetadata: {
     projectName: string;
     projectPath: string;
     githubURL?: string;
   };
 };
-
-/**
- * Utility hooks for AST Tree Parsing
- */
 
 function parseAst(sourceFile: ts.SourceFile) {
   const data = {
@@ -51,10 +71,6 @@ function parseAst(sourceFile: ts.SourceFile) {
   ts.forEachChild(sourceFile, visit);
   return data;
 }
-
-/**
- * End Utility hooks for AST Tree Parsing
- */
 
 /**
  * This will write the a11yLog.json to an out directory
@@ -117,7 +133,7 @@ const getFiles = async (filters: string[] = []) => {
   return files;
 };
 
-async function logAudit({
+async function auditA11yCoverage({
   files,
   task,
   jestConfigs,
@@ -130,8 +146,8 @@ async function logAudit({
 
   const a11yLog: A11yLogType = {
     timestamp: new Date(),
-    numberOfComponentTests: 0,
-    numberOfHasToBeAccessibleTests: 0,
+    totalNumberOfComponentWithTests: 0,
+    totalNumberOfHasToBeAccessibleTests: 0,
     unTestedFilePaths: [],
     testDetails: {},
     projectMetadata: {
@@ -152,12 +168,10 @@ async function logAudit({
     const { isComponent, hasAccessibleTest } = parseAst(sourceFile);
 
     if (isComponent) {
-      a11yLog.numberOfComponentTests += 1;
+      a11yLog.totalNumberOfComponentWithTests += 1;
 
-      const accessibleTestExistAndIsComponent = hasAccessibleTest;
-
-      if (accessibleTestExistAndIsComponent) {
-        a11yLog.numberOfHasToBeAccessibleTests += 1;
+      if (hasAccessibleTest) {
+        a11yLog.totalNumberOfHasToBeAccessibleTests += 1;
 
         const args = [...(jestConfigs as string[]), file];
 
@@ -170,7 +184,10 @@ async function logAudit({
           preferLocal: true,
         });
 
-        await task.exec('jest', args);
+        // eslint-disable-next-line no-console
+        console.log(execResult.stderr);
+        // eslint-disable-next-line no-console
+        console.log(execResult.stdout);
 
         // Only add the output log if it fails or test results in console.warn,
         // otherwise, just return success.
@@ -222,12 +239,12 @@ const test = createTask<TestOptions>('test', async (task, options) => {
   if (options.affected) {
     const files = await getAffectedTests(task);
 
-    const log = await logAudit({ files, task, jestConfigs: args });
+    const log = await auditA11yCoverage({ files, task, jestConfigs: args });
     writeToProjectOutDir(log, task);
   } else if (options.file?.length) {
     const files = task.normalizeFileList(options.file);
 
-    const log = await logAudit({ files, task, jestConfigs: args });
+    const log = await auditA11yCoverage({ files, task, jestConfigs: args });
     writeToProjectOutDir(log, task);
   } else {
     const files = await getFiles([
@@ -235,7 +252,7 @@ const test = createTask<TestOptions>('test', async (task, options) => {
       `${task.projectRoot}/*.test.tsx`,
     ]);
 
-    const log = await logAudit({ files, task, jestConfigs: args });
+    const log = await auditA11yCoverage({ files, task, jestConfigs: args });
     writeToProjectOutDir(log, task);
   }
 
