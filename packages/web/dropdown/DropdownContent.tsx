@@ -38,7 +38,7 @@ const MotionVStack = motion(VStack);
 export const DropdownContent = memo(
   forwardRef(
     (
-      { children, value, onOpen, placement, ...props }: DropdownContentProps,
+      { children, value, onOpen, placement, minWidth, ...props }: DropdownContentProps,
       ref: ForwardedRef<HTMLElement>,
     ) => {
       // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
@@ -75,7 +75,12 @@ export const DropdownContent = memo(
           borderRadius="popover"
           zIndex={zIndex.overlays.dropdown}
           role="menu"
-          dangerouslySetClassName={cx(dropdownStaticClassName, dropdownStyleOverrides)}
+          minWidth={minWidth}
+          // if there's a custom minWidth, we don't want to override that
+          dangerouslySetClassName={cx(
+            dropdownStaticClassName,
+            !minWidth ? dropdownStyleOverrides : undefined,
+          )}
           {...props}
           {...(motionProps as AnimationProps)}
         >

@@ -1,5 +1,6 @@
 import { memo, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { listHeight } from '@cbhq/cds-common/tokens/cell';
 import { CellPriority, CellSpacing } from '@cbhq/cds-common/types';
@@ -31,8 +32,6 @@ const userSwitcherData: UserSwitcherData[] = [
     email: 'brian.armstrong@coinbase.com',
     selected: true,
     authenticated: true,
-    avatarUri:
-      'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg',
   },
   {
     name: 'Brian Armstrong',
@@ -67,6 +66,9 @@ const UserAccountListCell = ({ name, email, authenticated, avatarUri }: UserSwit
     [],
   );
 
+  // this will generate a unique hash from the name and associate it with a fallback color
+  const avatarColorScheme = getAvatarFallbackColor(name);
+
   return (
     <VStack background={collapsed ? 'background' : 'backgroundAlternate'} borderRadius="standard">
       <PressableOpacity noScaleOnPress className={insetFocusRing} onPress={toggle}>
@@ -77,7 +79,15 @@ const UserAccountListCell = ({ name, email, authenticated, avatarUri }: UserSwit
           outerSpacing={userCellOuterSpacingConfig}
           intermediary={!authenticated && <TextLegal as="span">Signed out</TextLegal>}
           priority={cellPriority}
-          media={<Avatar src={avatarUri} alt={name} />}
+          media={
+            <Avatar
+              src={avatarUri}
+              alt={name}
+              name={name}
+              // business accounts should use the gray colorScheme, all else should leverage getAvatarFallbackColor
+              colorScheme={avatarColorScheme}
+            />
+          }
           compact
         />
       </PressableOpacity>
@@ -107,7 +117,15 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
   return (
     <VStack spacingVertical={2}>
       <VStack gap={1} alignItems="center" spacingTop={1} spacingHorizontal={1}>
-        <Avatar size="xxxl" selected alt="Brian Armstrong" src={avatarUri} />
+        {/* the selected user's avatar should always use the blue colorScheme */}
+        <Avatar
+          size="xxxl"
+          selected
+          alt="Brian Armstrong"
+          src={avatarUri}
+          name={name}
+          colorScheme="blue"
+        />
         <VStack alignItems="center">
           <TextTitle3 align="center" as="h3" overflow="break">
             {name}
@@ -120,6 +138,7 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
           Manage Settings
         </Button>
       </VStack>
+      <Divider spacingTop={3} />
       <VStack spacingHorizontal={2}>
         <SectionTitle text="Your other accounts" />
       </VStack>

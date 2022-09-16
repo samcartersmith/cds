@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
 
 import { Dropdown } from '../dropdown';
 import { HStack, VStack } from '../layout';
@@ -15,13 +16,15 @@ type SwitcherSubjectProps = {
   description?: string;
 };
 
-const userSwitcherWidth = 400;
+const userSwitcherWidth = 416;
+const userSwitcherHeight = 674;
 
 const Subject = ({ title, description }: SwitcherSubjectProps) => {
+  const avatarColorScheme = getAvatarFallbackColor(title);
   return (
     <Pressable noScaleOnPress backgroundColor="transparent" as="button" borderRadius="standard">
       <HStack gap={1} alignItems="center">
-        <Avatar size="xl" alt="Test" />
+        <Avatar size="xl" alt={title} name={title} colorScheme={avatarColorScheme} />
         <VStack maxWidth={172} minWidth={0}>
           {description ? (
             <TextLabel1 overflow="truncate" as="p">
@@ -53,10 +56,11 @@ const UserSwitcherRecipe = memo(({ children }) => {
     <FeatureFlagProvider frontierColor frontierButton>
       <HStack>
         <Dropdown
-          width={400}
-          maxHeight={600}
+          width={userSwitcherWidth}
+          maxHeight={userSwitcherHeight}
+          // this forces truncation, otherwise minWidth default is min-content
+          minWidth={0}
           content={<UserSwitcherContent />}
-          maxWidth={userSwitcherWidth}
           showOverlay
           contentPosition={switcherPositionConfig}
           enableMobileModal

@@ -25,6 +25,7 @@ import {
   sparklineInteractiveData,
   sparklineInteractiveHoverData,
 } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
+import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
 import { useOverlay } from '@cbhq/cds-common/overlays/useOverlay';
 import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
@@ -175,6 +176,7 @@ const ReactLiveScope: unknown = {
   generateRandomId,
   useEventHandler,
   useIsBrowser,
+  getAvatarFallbackColor,
   // CDS Components
   Text: CDSTypography.TextBody,
   ...CDSAccordion,

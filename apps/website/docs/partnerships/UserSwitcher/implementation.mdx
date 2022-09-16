@@ -13,6 +13,7 @@ The User Switcher recipe is composed of the following CDS components:
 - [Cell](https://github.cbhq.net/frontend/cds/blob/master/packages/web/cells/Cell.tsx)
 - [Collapsible](/components/collapsible)
 - [CollapseArrow](/components/collapse-arrow)
+- [Avatar](/components/avatar)
 
 Some key details about the abstractions in this recipe:
 
@@ -33,21 +34,22 @@ function UserSwitcherRecipe({
     placement: 'bottom',
     gap: 1,
   };
+  const avatarColorScheme = getAvatarFallbackColor(title);
   return (
     <PortalProvider>
       <FeatureFlagProvider frontierColor frontierButton>
         <HStack spacing={4}>
           <Dropdown
             content={<UserSwitcherContent />}
-            width={400}
-            maxHeight={600}
+            width={416}
+            maxHeight={674}
             showOverlay
             contentPosition={switcherPositionConfig}
             showMobileModal
           >
             <Pressable backgroundColor="transparent" as="button" borderRadius="standard">
               <HStack gap={1} alignItems="center">
-                <Avatar size="xl" alt="Test" />
+                <Avatar size="xl" alt={title} name={title} colorScheme={avatarColorScheme} />
                 <VStack maxWidth={172} minWidth={0}>
                   {description ? (
                     <TextLabel1 overflow="truncate" as="p">
@@ -89,8 +91,6 @@ function UserSwitcherContentExample() {
       email: 'brian.armstrong@coinbase.com',
       selected: true,
       authenticated: true,
-      avatarUri:
-        'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg',
     },
     {
       name: 'Brian Armstrong',
@@ -133,6 +133,9 @@ function UserSwitcherContentExample() {
       [],
     );
 
+    // this will generate a fallback color based on a unique identifier (ideally use UUID, instead of name)
+    const avatarColorScheme = getAvatarFallbackColor(name);
+
     return (
       <VStack background={collapsed ? 'background' : 'backgroundAlternate'} borderRadius="standard">
         <PressableOpacity noScaleOnPress className={insetFocusRing} onPress={toggle}>
@@ -143,7 +146,9 @@ function UserSwitcherContentExample() {
             outerSpacing={userCellOuterSpacingConfig}
             intermediary={!authenticated && <TextLegal as="p">Signed out</TextLegal>}
             priority="middle"
-            media={<Avatar src={avatarUri} alt={name} />}
+            media={
+              <Avatar src={avatarUri} alt={name} name={name} colorScheme={avatarColorScheme} />
+            }
             compact
           />
         </PressableOpacity>
@@ -162,7 +167,15 @@ function UserSwitcherContentExample() {
   return (
     <FeatureFlagProvider frontierColor frontierButton>
       <VStack gap={1} alignItems="center" spacingTop={1} spacingHorizontal={1}>
-        <Avatar size="xxxl" selected alt="Brian Armstrong" src={avatarUri} />
+        {/* selected Avatar should always use the blue colorScheme */}
+        <Avatar
+          size="xxxl"
+          selected
+          alt="Brian Armstrong"
+          src={avatarUri}
+          name="Brian Armstrong"
+          colorScheme="blue"
+        />
         <VStack alignItems="center">
           <TextTitle3 align="center" as="h3" overflow="wrap">
             {name}
