@@ -37,6 +37,7 @@
 # -c (CREATEDIRFLAG) = if true, will create a design-system/illustration directory in static-asset repo. default: false
 # -o (OPENPRFLAG) = if true, will openPR using hub pull-request command. default: false
 # -d (DELREPO) = if true, will remove static-assets repo. default: true
+
 usage() {
   echo "USAGE: ./uploadToStaticAssets -r <root-dir-name> [optional flags: -b (BRANCHNAME) -u (USERNAME) -c (CREATEDIRFLAG) -o (OPENPRFLAG) -d (DELREPO)]"
 }
@@ -145,11 +146,10 @@ pngDark=`compressPNGs "${ROOTDIRPATH}/images/png-dark/"`
 echo $pngLight
 echo $pngDark
 
-# Create a fork of static-assets to current directory
+echo "Creating fork of engineering/static-assets with branchname $BRANCHNAME"
 gcf2 engineering/static-assets $BRANCHNAME
 
-# # Clone images from illustrations component to 
-# # static/assets/design-system/illustrations folder
+echo "Copying images from illustrations component to static/assets/design-system/illustrations folder"
 cd static-assets
 git pull origin "${USERNAME}/${BRANCHNAME}" 
 
@@ -163,7 +163,7 @@ echo "Copying images to static-assets..."
 cp -rf "${ROOTDIRPATH}/images/" "${ROOTDIRPATH}/static-assets/assets/design-system/illustrations/"
 
 echo "Pushing changes to static-assets"
-git add -A &&  git commit -m "Update Illustration" && git push --set-upstream origin "${USERNAME}/${BRANCHNAME}" 
+git add -A &&  git checkout -m "Update Illustration" && git push --set-upstream origin "${USERNAME}/${BRANCHNAME}" 
 if [ ${OPENPRFLAG=false} == true ]
 then
 	echo "Creating PR..."

@@ -9,19 +9,18 @@ import ReleaseCalendar from './ReleaseCalendar';
 
 ## Release notes
 
-- [@cds/web](https://github.cbhq.net/frontend/cds/blob/master/packages/web/CHANGELOG.md)
-- [@cds/mobile](https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/CHANGELOG.md)
+- [@cbhq/cds-web](https://github.cbhq.net/frontend/cds/blob/master/packages/web/CHANGELOG.md)
+- [@cbhq/cds-mobile](https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/CHANGELOG.md)
 
 ## Release process
 
-CDS runs a 2 week, rolling release cycle. A healthy release is made up of 3 major milestones.
+CDS releases every week at 4 pm EST.
 
-- Release Cut - This is done every Wednesday at 4 EST.
-- Bake Week - The week following the release cut, the build is released with a `-beta.x` tag and distributed to NPM. This provides CDS partner teams early access to the next release as it Bakes.
-- Production release - CDS packages are release to our production NPM instance (Verdaccio).
-- Because we run a rolling release cycle, build processes overlap each other (note: you can use the release calendar to track which release we’re on at any given time).
+Once the release is cut and deployed it is available in Verdaccio to all consumers.
 
-In a perfect world, this would mean a new build (which was cut the Wednesday before last) would be rolled out each Wednesday to new customers after baking for a week.
+@cbhq/cds-web on [Verdaccio](https://publish-npm.cbhq.net/-/web/detail/@cbhq/cds-web)
+
+@cbhq/cds-mobile on [Verdaccio](https://publish-npm.cbhq.net/-/web/detail/@cbhq/cds-mobile)
 
 ## Release communication
 

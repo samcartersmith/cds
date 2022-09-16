@@ -2,13 +2,12 @@
 
 To ensure the changelog is correctly generated and packages are correctly versioned and released, you must ensure your commit messages follow convention. If your PR has multiple commits, you will need to format your _squash_ commit message the following way:
 
-```
-# Without a jira ticket
-[trivial] {logType}: {message}
-
-# With one or many jira tickets
-[CDS-xxx] {logType}: {message}
-```
+| Example                 | Commit message                                                           |
+| ----------------------- | ------------------------------------------------------------------------ |
+| Template                | `[trivial] {logType}({subject}): {message}`                              |
+| With one Jira ticket    | `[CDS-123] fix(Button): Ensure Button is typed to allow 'target' prop`   |
+| With a few Jira tickets | `[CDS-123, CDS-456] Update(Modal): Allow modal to be controlled`         |
+| Without a Jira ticket   | `[trivial] internal(Adoption tracker): Move NFT under the Retail pillar` |
 
 With `logType` being one of the following:
 
