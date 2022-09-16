@@ -8,7 +8,7 @@ import React, {
   useState,
 } from 'react';
 import { Animated } from 'react-native';
-import { Value } from 'react-native-reanimated';
+import { makeMutable, SharedValue, useSharedValue } from 'react-native-reanimated';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { SpacingScale } from '@cbhq/cds-common/types/SpacingScale';
 import { noop } from '@cbhq/cds-utils';
@@ -23,8 +23,8 @@ type SparklineInteractiveProviderProps = {
 
 type SparklineInteractiveContextInterface = {
   isFallbackVisible: boolean;
-  markerXPosition: Value<number>;
-  markerGestureState: Value<0 | 1>;
+  markerXPosition: SharedValue<number>;
+  markerGestureState: SharedValue<0 | 1>;
   showFallback: () => void;
   hideFallback: () => void;
   chartOpacity: Animated.Value;
@@ -44,8 +44,8 @@ type SparklineInteractiveContextInterface = {
 
 const SparklineInteractiveContext = createContext<SparklineInteractiveContextInterface>({
   isFallbackVisible: true,
-  markerXPosition: new Value(0),
-  markerGestureState: new Value(0),
+  markerXPosition: makeMutable(0),
+  markerGestureState: makeMutable(0),
   showFallback: noop,
   hideFallback: noop,
   chartOpacity: new Animated.Value(0),
@@ -66,8 +66,8 @@ const SparklineInteractiveContext = createContext<SparklineInteractiveContextInt
 export const SparklineInteractiveProvider = memo(
   ({ children, compact = false, gutter: propGutter }: SparklineInteractiveProviderProps) => {
     const [isFallbackVisible, setIsFallbackVisible] = useState(true);
-    const markerXPosition = useRef(new Value(-1)).current;
-    const markerGestureState = useRef(new Value(0)).current;
+    const markerXPosition = useSharedValue<number>(-1);
+    const markerGestureState = useSharedValue<0 | 1>(0);
     const [chartOpacity, animateChartIn, animateChartOut] = useOpacityAnimation();
     const [markerOpacity, animateMarkerIn, animateMarkerOut] = useOpacityAnimation();
     const [minMaxOpacity, animateMinMaxIn, animateMinxMaxOut] = useOpacityAnimation();

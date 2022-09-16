@@ -39,7 +39,6 @@ import {
   useSparklineInteractiveContext,
 } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
-import { useUpdateSparklineInteractiveHeader } from './useUpdateSparklineInteractiveHeader';
 
 export * from '@cbhq/cds-common/types/Chart';
 export * from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
@@ -215,12 +214,6 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     onScrubEnd?.();
   }, [hoverData, onScrubEnd]);
 
-  useUpdateSparklineInteractiveHeader({
-    getMarker,
-    onScrub: handleScrub,
-    selectedPeriod,
-  });
-
   let header;
   if (headerNode) {
     header = <Box spacingBottom={2}>{headerNode}</Box>;
@@ -237,7 +230,10 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
       <SparklineInteractivePanGestureHandler
         onScrubEnd={handleScrubEnd}
         onScrubStart={handleScrubStart}
+        getMarker={getMarker}
+        selectedPeriod={selectedPeriod}
         disabled={disableScrubbing}
+        onScrub={handleScrub}
       >
         {!!formatHoverDate && (
           <SparklineInteractiveHoverDate

@@ -2280,7 +2280,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-mobile@workspace:*, @cbhq/cds-mobile@workspace:packages/mobile":
+"@cbhq/cds-mobile@workspace:^, @cbhq/cds-mobile@workspace:packages/mobile":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-mobile@workspace:packages/mobile"
   dependencies:
@@ -2295,7 +2295,7 @@ __metadata:
     "@types/react-native": ^0.68.2
     d3-interpolate-path: ^2.2.2
     lodash: ^4.17.21
-    react-native-gesture-handler: ^1.9.0
+    react-native-gesture-handler: ^2.5.0
     react-native-inappbrowser-reborn: 3.6.3
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.1
@@ -2311,7 +2311,7 @@ __metadata:
     lottie-react-native: ^5.1.4
     react: ">=17.0.2"
     react-native: ">=0.68.2"
-    react-native-gesture-handler: ^1.9.0
+    react-native-gesture-handler: ^2.5.0
     react-native-inappbrowser-reborn: 3.6.3
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.1
@@ -2740,7 +2740,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/ui-mobile-playground@workspace:*, @cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground":
+"@cbhq/ui-mobile-playground@workspace:^, @cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground":
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground"
   dependencies:
@@ -2786,9 +2786,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cds/mobile-playground@workspace:apps/mobile-playground"
   dependencies:
-    "@cbhq/cds-mobile": "workspace:*"
+    "@cbhq/cds-mobile": "workspace:^"
     "@cbhq/detox-utils": ^0.2.3
-    "@cbhq/ui-mobile-playground": "workspace:*"
+    "@cbhq/ui-mobile-playground": "workspace:^"
     "@percy/cli": ^1.2.1
     "@react-native-community/masked-view": ^0.1.10
     "@react-navigation/native": ^6.0.11
@@ -2802,7 +2802,7 @@ __metadata:
     react: ^17.0.2
     react-native: ^0.68.2
     react-native-asset: ^2.0.1
-    react-native-gesture-handler: ^1.9.0
+    react-native-gesture-handler: ^2.5.0
     react-native-inappbrowser-reborn: ^3.6.3
     react-native-linear-gradient: ^2.5.6
     react-native-navigation-bar-color: ^2.0.1
@@ -28409,16 +28409,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-gesture-handler@npm:^1.9.0":
-  version: 1.10.3
-  resolution: "react-native-gesture-handler@npm:1.10.3"
+"react-native-gesture-handler@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "react-native-gesture-handler@npm:2.5.0"
   dependencies:
     "@egjs/hammerjs": ^2.0.17
-    fbjs: ^3.0.0
     hoist-non-react-statics: ^3.3.0
     invariant: ^2.2.4
+    lodash: ^4.17.21
     prop-types: ^15.7.2
-  checksum: fd06147df96fe0b38752c653a2d4bf49570396922719939a31b494197fd30e6775e4c5e73f889af808204dcfbc087eb00f31a0b676c838d5a35e2b017ae9a419
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: d086f14da7f45c24c675402a4e9dec0a5c32e7279110f1af0c178cae0b6ca40dea99f878120d7034ce9c84f01465f68d0f21dcc9c3869fd527ebd18255b73432
   languageName: node
   linkType: hard
 

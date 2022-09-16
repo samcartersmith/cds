@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import { Animated as RNAnimated, StyleSheet } from 'react-native';
-import Animated from 'react-native-reanimated';
+import Animated, { useAnimatedStyle } from 'react-native-reanimated';
 import Svg, { Line } from 'react-native-svg';
 import { maskOpacity } from '@cbhq/cds-common/tokens/sparkline';
 import { SparklineInteractiveLineVerticalProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
@@ -41,25 +41,33 @@ const SparklineInteractiveDottedLine = memo(
 
     const dottedLineHeight =
       chartHeight + SparklineInteractiveMinMaxLabelHeight * (showHoverDate ? 1 : 2);
+
     const lineStyles = useMemo(() => {
       return {
         width: chartVerticalLineWidth,
         height: dottedLineHeight,
         top: showHoverDate ? 0 : -SparklineInteractiveMinMaxLabelHeight,
         zIndex: 2,
-        transform: [
-          {
-            translateX: markerXPosition,
-          },
-        ],
       };
     }, [
       SparklineInteractiveMinMaxLabelHeight,
       chartVerticalLineWidth,
       dottedLineHeight,
-      markerXPosition,
       showHoverDate,
     ]);
+
+    const animatedTranslateX = useAnimatedStyle(() => ({
+      transform: [
+        {
+          translateX: markerXPosition.value,
+        },
+      ],
+    }));
+
+    const dottedLinePositionStyles = useMemo(
+      () => [lineStyles, animatedTranslateX],
+      [lineStyles, animatedTranslateX],
+    );
 
     const maskStyles = useMemo(() => {
       return {
@@ -70,29 +78,28 @@ const SparklineInteractiveDottedLine = memo(
         backgroundColor: colors.background,
         opacity: maskOpacity,
         zIndex: 1,
-        transform: [
-          {
-            translateX: markerXPosition,
-          },
-        ],
       };
     }, [
       SparklineInteractiveMinMaxLabelHeight,
       chartWidth,
       colors.background,
       dottedLineHeight,
-      markerXPosition,
       showHoverDate,
     ]);
 
+    const maskPositionStyles = useMemo(
+      () => [maskStyles, animatedTranslateX],
+      [maskStyles, animatedTranslateX],
+    );
+
     return (
       <>
-        <Animated.View style={lineStyles}>
+        <Animated.View style={dottedLinePositionStyles}>
           <Svg>
             <Line {...lineProps} stroke={color} y2={dottedLineHeight} />
           </Svg>
         </Animated.View>
-        <Animated.View style={maskStyles} />
+        <Animated.View style={maskPositionStyles} />
       </>
     );
   },

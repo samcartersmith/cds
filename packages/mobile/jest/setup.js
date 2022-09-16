@@ -9,6 +9,20 @@ jest.mock('react-native-reanimated', () => {
   // The mock for `call` immediately calls the callback which is incorrect
   // So we override it with a no-op
   Reanimated.default.call = () => {};
+  Reanimated.default.addWhitelistedUIProps = () => {};
+
+  /*
+   * We override the internal withTiming mock because its callback can have
+   * state changing side-effects and the way it was mocked causes issues when there
+   * are side-effets.
+   * */
+  const mockedWithTiming = (animatedValue, config, cb = () => {}) => {
+    setTimeout(cb, config?.duration);
+    return animatedValue;
+  };
+  Reanimated.withTiming = mockedWithTiming;
+  // It's the same type def, takes a value and returns a SharedValue<T>
+  Reanimated.makeMutable = Reanimated.useSharedValue;
 
   return Reanimated;
 });

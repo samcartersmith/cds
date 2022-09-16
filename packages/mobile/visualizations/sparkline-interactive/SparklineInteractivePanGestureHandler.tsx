@@ -1,23 +1,8 @@
-import React, { memo } from 'react';
-import { Animated as RNAnimated, useWindowDimensions, View } from 'react-native';
-import {
-  LongPressGestureHandler,
-  LongPressGestureHandlerGestureEvent,
-  LongPressGestureHandlerStateChangeEvent,
-  State,
-} from 'react-native-gesture-handler';
-import Animated, {
-  block,
-  call,
-  cond,
-  eq,
-  event,
-  max,
-  min,
-  or,
-  set,
-  sub,
-} from 'react-native-reanimated';
+import React, { useCallback } from 'react';
+import { Animated as RNAnimated, View } from 'react-native';
+import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import Animated from 'react-native-reanimated';
+import { ChartGetMarker, ChartScrubParams } from '@cbhq/cds-common/types/Chart';
 import { SparklineInteractiveScrubHandlerProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { noop } from '@cbhq/cds-utils';
 
@@ -26,109 +11,113 @@ import { Haptics } from '../../utils/haptics';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
-export const SparklineInteractivePanGestureHandler = memo(
-  ({
-    onScrubEnd = noop,
-    onScrubStart = noop,
-    children,
-    disabled,
-  }: SparklineInteractiveScrubHandlerProps) => {
-    const { width: screenWidth } = useWindowDimensions();
-    const {
+export type SparklineInteractivePanGestureHandlerProps<Period extends string> = {
+  onScrub?: (params: ChartScrubParams<Period>) => void;
+  getMarker: ChartGetMarker;
+  selectedPeriod: Period;
+} & SparklineInteractiveScrubHandlerProps;
+
+// Generics do not work with React.memo or forwardRef
+// https://stackoverflow.com/questions/58469229/react-with-typescript-generics-while-using-react-forwardref/58473012
+export const SparklineInteractivePanGestureHandler = function SparklineInteractivePanGestureHandler<
+  Period extends string,
+>({
+  onScrubEnd = noop,
+  onScrubStart = noop,
+  onScrub = noop,
+  getMarker,
+  selectedPeriod,
+  children,
+  disabled,
+}: SparklineInteractivePanGestureHandlerProps<Period>) {
+  const {
+    markerXPosition,
+    markerGestureState,
+    animateMarkerIn,
+    animateMarkerOut,
+    animateMinMaxIn,
+    animateMinxMaxOut,
+    animateHoverDateIn,
+    animateHoverDateOut,
+  } = useSparklineInteractiveContext();
+  const { chartVerticalLineWidth, endX, startX } = useSparklineInteractiveConstants({});
+
+  const handleGestureStart = useCallback(() => {
+    void Haptics.lightImpact();
+    onScrubStart();
+    RNAnimated.parallel([animateMarkerIn, animateMinxMaxOut, animateHoverDateIn]).start();
+    markerGestureState.value = 1;
+  }, [animateHoverDateIn, animateMarkerIn, animateMinxMaxOut, markerGestureState, onScrubStart]);
+
+  const handleUpdate = useCallback(
+    (event) => {
+      const newMarkerXPosition = Math.min(
+        endX,
+        Math.max(startX, event.x - chartVerticalLineWidth / 2),
+      );
+      markerXPosition.value = newMarkerXPosition;
+      if (markerGestureState.value === 1) {
+        const dataPoint = getMarker(markerXPosition.value);
+        if (dataPoint) {
+          onScrub({
+            point: dataPoint,
+            period: selectedPeriod,
+          });
+        }
+      }
+    },
+    [
+      chartVerticalLineWidth,
+      endX,
+      getMarker,
+      markerGestureState.value,
       markerXPosition,
-      markerGestureState,
-      animateMarkerIn,
-      animateMarkerOut,
-      animateMinMaxIn,
-      animateMinxMaxOut,
-      animateHoverDateIn,
-      animateHoverDateOut,
-    } = useSparklineInteractiveContext();
-    const { chartVerticalLineWidth, endX, startX } = useSparklineInteractiveConstants({});
+      onScrub,
+      selectedPeriod,
+      startX,
+    ],
+  );
 
-    if (disabled) {
-      return <View>{children}</View>;
-    }
-
-    return (
-      <LongPressGestureHandler
-        minDurationMs={110}
-        maxDist={screenWidth}
-        onGestureEvent={event(
-          [
-            {
-              nativeEvent: ({ x }: LongPressGestureHandlerGestureEvent['nativeEvent']) => {
-                return set(
-                  markerXPosition,
-                  min(endX, max(startX, sub(x, chartVerticalLineWidth / 2))),
-                );
-              },
-            },
-          ],
-          {
-            useNativeDrive: true,
-          },
-        )}
-        shouldCancelWhenOutside={false}
-        onHandlerStateChange={event(
-          [
-            {
-              nativeEvent: ({ x, state }: LongPressGestureHandlerStateChangeEvent['nativeEvent']) =>
-                block([
-                  cond(
-                    eq(state, State.ACTIVE),
-                    block([
-                      call([], () => {
-                        void Haptics.lightImpact();
-                        onScrubStart();
-                        RNAnimated.parallel([
-                          animateMarkerIn,
-                          animateMinxMaxOut,
-                          animateHoverDateIn,
-                        ]).start();
-                      }),
-                      set(markerGestureState, 1),
-                      set(
-                        markerXPosition,
-                        min(endX, max(startX, sub(x, chartVerticalLineWidth / 2))),
-                      ),
-                    ]),
-                  ),
-                  cond(
-                    eq(state, State.END),
-                    block([
-                      call([], () => {
-                        // Dont trigger when cancelled/failed
-                        void Haptics.lightImpact();
-                      }),
-                    ]),
-                  ),
-                  cond(
-                    or(eq(state, State.END), eq(state, State.CANCELLED), eq(state, State.FAILED)),
-                    block([
-                      call([], () => {
-                        onScrubEnd();
-                        RNAnimated.parallel([
-                          animateMarkerOut,
-                          animateMinMaxIn,
-                          animateHoverDateOut,
-                        ]).start(({ finished }) => {
-                          if (finished) {
-                            markerXPosition.setValue(-1);
-                          }
-                        });
-                      }),
-                      set(markerGestureState, 0),
-                    ]),
-                  ),
-                ]),
-            },
-          ],
-          { useNativeDriver: true },
-        )}
-      >
-        <Animated.View>{children}</Animated.View>
-      </LongPressGestureHandler>
+  const handleGestureEndOrCancelled = useCallback(() => {
+    onScrubEnd();
+    RNAnimated.parallel([animateMarkerOut, animateMinMaxIn, animateHoverDateOut]).start(
+      ({ finished }) => {
+        if (finished) {
+          markerXPosition.value = -1;
+        }
+      },
     );
-  },
-);
+    markerGestureState.value = 0;
+  }, [
+    animateHoverDateOut,
+    animateMarkerOut,
+    animateMinMaxIn,
+    markerGestureState,
+    markerXPosition,
+    onScrubEnd,
+  ]);
+
+  const handleGestureEnd = useCallback(() => {
+    handleGestureEndOrCancelled();
+    // Dont trigger when cancelled/failed
+    void Haptics.lightImpact();
+  }, [handleGestureEndOrCancelled]);
+
+  if (disabled) {
+    return <View>{children}</View>;
+  }
+
+  const longPressGesture = Gesture.Pan()
+    .activateAfterLongPress(110)
+    .shouldCancelWhenOutside(true)
+    .onStart(handleGestureStart)
+    .onUpdate(handleUpdate)
+    .onEnd(handleGestureEnd)
+    .onTouchesCancelled(handleGestureEndOrCancelled);
+
+  return (
+    <GestureDetector gesture={longPressGesture}>
+      <Animated.View>{children}</Animated.View>
+    </GestureDetector>
+  );
+};
