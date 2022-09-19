@@ -51,8 +51,9 @@ export const defaultDeviceMatchesMap: Record<ResponsivePropsDevices, BreakpointR
 const deviceKeys = Object.keys(deviceMqRanges) as DeviceBreakpoint[];
 
 /**
- * @deprecated This component is unreleased and is inherently unstable
- * Please use useIsMobile instead
+ * Only use this hook to conditionally render large component trees or logic
+ * @danger do not use this hook to conditionally render styles, please use responsiveConfig instead
+ * @returns isPhone, isPhoneLandscape, isTablet, isTabletLandscape, isDesktop, isDesktopLarge, isExtraWide
  */
 export const useBreakpoints = (): BreakpointRecord => {
   const defaultDevice = useDefaultBreakpointContext();
