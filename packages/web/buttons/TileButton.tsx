@@ -3,7 +3,7 @@ import { css } from 'linaria';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { tileSize } from '@cbhq/cds-common/tokens/tile';
-import { TileBaseProps } from '@cbhq/cds-common/types';
+import { SharedProps, TileBaseProps } from '@cbhq/cds-common/types';
 
 import { focusVisibleClassName, insetFocusRing } from '../styles/focus';
 import { Pressable, PressableInternalProps } from '../system/Pressable';
@@ -30,7 +30,8 @@ const wrapperStyles = css`
 `;
 
 export type TileButtonProps = TileBaseProps &
-  Omit<PressableInternalProps, 'noScaleOnPress' | 'loading' | 'children' | 'backgroundColor'>;
+  Omit<PressableInternalProps, 'noScaleOnPress' | 'loading' | 'children' | 'backgroundColor'> &
+  SharedProps;
 
 export const TileButton = memo(
   forwardRef(function TileButton(

@@ -7,6 +7,7 @@ import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { ThemeProvider } from '../system';
 import { BrowserOnly } from '../system/BrowserOnly';
+import { getBrowserGlobals } from '../utils/browser';
 
 export type PortalProviderProps = ToastProviderProps;
 
@@ -16,20 +17,20 @@ export const alertContainerId = 'alertsContainer';
 export const toastContainerId = 'toastsContainer';
 export const tooltipContainerId = 'tooltipContainer';
 
-/* eslint-disable no-restricted-globals */
+const safeDocument = getBrowserGlobals()?.document;
 
-const PortalHost = memo(() => {
+export const PortalHost = memo(() => {
   const portalRoot = useMemo(
     // prevent duplicate portal root
-    () => document.createElement('div'),
+    () => safeDocument?.createElement('div'),
     [],
   );
 
   useEffect(() => {
-    const target = document?.body;
+    const target = safeDocument?.body;
 
     // prevent duplicate host
-    if (document?.getElementById(portalRootId) || !portalRoot) return undefined;
+    if (safeDocument?.getElementById(portalRootId) || !portalRoot) return undefined;
 
     portalRoot.id = portalRootId;
     portalRoot.style.zIndex = String(zIndex.overlays.portal);
@@ -49,12 +50,30 @@ const PortalHost = memo(() => {
     };
   }, [portalRoot]);
 
+  if (!portalRoot) return null;
+
   return createPortal(
     <ThemeProvider>
-      <div id={modalContainerId} style={{ zIndex: zIndex.overlays.modal }} />
-      <div id={toastContainerId} style={{ zIndex: zIndex.overlays.toast }} />
-      <div id={alertContainerId} style={{ zIndex: zIndex.overlays.alert }} />
-      <div id={tooltipContainerId} style={{ zIndex: zIndex.overlays.tooltip }} />
+      <div
+        id={modalContainerId}
+        style={{ zIndex: zIndex.overlays.modal }}
+        data-testid="portal-modal-container"
+      />
+      <div
+        id={toastContainerId}
+        style={{ zIndex: zIndex.overlays.toast }}
+        data-testid="portal-toast-container"
+      />
+      <div
+        id={alertContainerId}
+        style={{ zIndex: zIndex.overlays.alert }}
+        data-testid="portal-alert-container"
+      />
+      <div
+        id={tooltipContainerId}
+        style={{ zIndex: zIndex.overlays.tooltip }}
+        data-testid="portal-tooltip-container"
+      />
     </ThemeProvider>,
     portalRoot,
   );

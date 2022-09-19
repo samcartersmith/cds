@@ -12,4 +12,9 @@ describe('MaterialSpinner', () => {
     const { queryByTestId } = render(<Spinner size={60} color="primary" testID="div-spinner" />);
     expect(queryByTestId('div-spinner')).toBeTruthy();
   });
+
+  it('renders with default color', () => {
+    const { queryByTestId } = render(<Spinner size={60} testID="div-spinner" />);
+    expect(queryByTestId('div-spinner')).toBeTruthy();
+  });
 });

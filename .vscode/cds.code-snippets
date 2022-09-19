@@ -52,5 +52,20 @@
     "prefix": "awf",
     "body": ["await waitFor(() => {", "  $1", "});"],
     "description": "Wait for a test"
+  },
+  "describe": {
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": "desc",
+    "body": [
+      "import { render } from '@testing-library/react';",
+      "",
+      "describe('$TM_FILENAME_BASE', () => {",
+      "  it('$1', () => {",
+      "    const { $3 }= render($2)",
+      "  });",
+      "});",
+      ""
+    ],
+    "description": "Bolierplate for component unit test"
   }
 }

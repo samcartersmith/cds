@@ -17,5 +17,5 @@ const overflowStyles = css`
   hyphens: auto;
 `;
 
-export const useOverflowTextStyles = (expanded: boolean) =>
+export const getOverflowTextStyles = (expanded: boolean) =>
   expanded ? overflowStyles : truncatedStyles;

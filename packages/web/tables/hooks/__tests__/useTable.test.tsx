@@ -4,15 +4,14 @@ import { PropsWithChildren } from 'react';
 import { render } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { ThemeProvider } from '../../system/ThemeProvider';
-import { tableHeaderStaticClassName, tableStickyClassName } from '../styles/tableStyles';
-import { Table } from '../Table';
-import { TableBody } from '../TableBody';
-import { TableCell } from '../TableCell';
-import { TableFooter } from '../TableFooter';
-import { TableHeader } from '../TableHeader';
-import { TableRow } from '../TableRow';
-
+import { ThemeProvider } from '../../../system/ThemeProvider';
+import { tableHeaderStaticClassName, tableStickyClassName } from '../../styles/tableStyles';
+import { Table } from '../../Table';
+import { TableBody } from '../../TableBody';
+import { TableCell } from '../../TableCell';
+import { TableFooter } from '../../TableFooter';
+import { TableHeader } from '../../TableHeader';
+import { TableRow } from '../../TableRow';
 import {
   compactCellSpacing,
   defaultCellSpacing,
@@ -20,7 +19,7 @@ import {
   useTableCellSpacing,
   useTableCellTag,
   useTableSectionTag,
-} from './useTable';
+} from '../useTable';
 
 const HOOK_ERROR = Error(
   'This component must be wrapped in a TableHeader, TableBody or TableFooter.',

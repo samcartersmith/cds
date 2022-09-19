@@ -2,9 +2,8 @@ import { renderHook } from '@testing-library/react-hooks';
 import { NoopFn } from '@cbhq/cds-common';
 import { noop } from '@cbhq/cds-utils';
 
-import { TableCellSortIcon } from '../TableCellSortIcon';
-
-import { useSortableCell } from './useSortableCell';
+import { TableCellSortIcon } from '../../TableCellSortIcon';
+import { useSortableCell } from '../useSortableCell';
 
 describe('useSortableCell()', () => {
   const onPress = expect.any(Function) as NoopFn;

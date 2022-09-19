@@ -7,14 +7,14 @@ import { DotCount } from '../dots/DotCount';
 import { Pictogram } from '../illustrations';
 import { VStack } from '../layout/VStack';
 import { TextLabel2 } from '../typography';
-import { useOverflowTextStyles } from '../utils/overflow';
+import { getOverflowTextStyles } from '../utils/overflow';
 
 /**
  * @danger this component is for internal use only
  */
 export const Tile = memo(({ pictogram, title, count, showOverflow }: TileBaseProps) => {
   const [shouldOverflow, toggleShouldOverflow] = useToggler(false);
-  const overflowTextStyles = useOverflowTextStyles(shouldOverflow);
+  const overflowTextStyles = getOverflowTextStyles(shouldOverflow);
 
   const handleShowOverflow = useCallback(() => {
     toggleShouldOverflow.toggleOn();

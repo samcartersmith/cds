@@ -16,7 +16,10 @@ type OffsetKeys = keyof OffsetProps;
 type SpacingKeys = keyof SpacingProps;
 type CellSpacingKeys = KeysOfUnion<CellSpacing>;
 
-const getDeviceStyles = (deviceConfig: CellSpacingConfig, device: ResponsivePropsDevices) => {
+export const getDeviceStyles = (
+  deviceConfig: CellSpacingConfig,
+  device: ResponsivePropsDevices,
+) => {
   const innerSpacingClassNames: string[] = [];
   const outerSpacingClassNames: string[] = [];
 

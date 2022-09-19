@@ -45,14 +45,24 @@ export const TableCellFallback = memo(
         <Cell
           gap={cellGap}
           reduceHorizontalSpacing
-          accessory={end && <MediaFallback type={end} />}
-          media={start && <MediaFallback type={start} />}
+          accessory={end && <MediaFallback type={end} testID="table-cell-fallback-accessory" />}
+          media={start && <MediaFallback type={start} testID="table-cell-fallback-media" />}
           outerSpacing={cellOuterSpacing}
           innerSpacing={cellInnerSpacing}
           responsiveConfig={responsiveConfig}
         >
-          {title && <Fallback height={24} width={45} percentage />}
-          {subtitle && <Fallback height={16} width={35} spacingTop={textSpacingTop} percentage />}
+          {title && (
+            <Fallback height={24} width={45} percentage testID="table-cell-fallback-title" />
+          )}
+          {subtitle && (
+            <Fallback
+              height={16}
+              width={35}
+              spacingTop={textSpacingTop}
+              percentage
+              testID="table-cell-fallback-subtitle"
+            />
+          )}
         </Cell>
       </TableCellComponent>
     );
