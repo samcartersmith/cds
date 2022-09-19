@@ -10,7 +10,24 @@ export type TestOptions = {
   debug?: boolean;
   file?: string[];
   serial?: boolean;
+  jestCoverageSummaryPath?: string;
 };
+
+type CoveragePercentage = {
+  total: number;
+  covered: number;
+  skipped: number;
+  pct: number;
+};
+
+type CoverageAreas = {
+  lines: CoveragePercentage;
+  functions: CoveragePercentage;
+  statements: CoveragePercentage;
+  branches: CoveragePercentage;
+};
+
+type CoverageOutput = Record<string, CoverageAreas>;
 
 /**
  * You can get more information about what these a11yLog represents
@@ -47,6 +64,11 @@ export type A11yLogType = {
     projectPath: string;
     githubURL?: string;
   };
+  /**
+   * Files with zero jest coverage, and therefore zero a11y coverage
+   * 'Unknown' indicates that no jestCoverageSummaryPath option was passed, or invalid file path.
+   */
+  componentsWithZeroCoverage: string[] | 'unknown';
 };
 
 function parseAst(sourceFile: ts.SourceFile) {
@@ -86,6 +108,20 @@ const writeToProjectOutDir = (content: A11yLogType, task: Task) => {
   if (!fs.existsSync(logRootPath)) fs.mkdirSync(logRootPath);
 
   fs.writeFileSync(`${logRootPath}/a11yLog-${content.timestamp}.json`, jsonifyContent);
+};
+
+/**
+ * Reads file passed and returns JSON object or empty object if invalid file.
+ * @param fileLocation
+ * @returns CoverageOutput JSON data or empty object
+ */
+const getCoverageSummaryJSONData = (fileLocation: string): CoverageOutput => {
+  if (path.extname(fileLocation) !== '.json' || !fs.existsSync(fileLocation)) {
+    return {};
+  }
+
+  const rawData = fs.readFileSync(fileLocation, 'utf-8');
+  return JSON.parse(rawData);
 };
 
 async function getAffectedTests(task: Task): Promise<string[]> {
@@ -133,6 +169,56 @@ const getFiles = async (filters: string[] = []) => {
   return files;
 };
 
+/**
+ * Calculates which components in jest coverage report have 0 percent ("pct") coverage
+ * @param log
+ * @param coverageSummaryFileLocation
+ * @returns array of file paths, or 'unknown'
+ */
+function auditZeroJestCoverage(coverageSummaryFileLocation: string): string[] | 'unknown' {
+  const filesWithZeroCoverage: string[] = [];
+  const coverageSummaryData = getCoverageSummaryJSONData(coverageSummaryFileLocation);
+
+  if (Object.keys(coverageSummaryData).length === 0) {
+    return 'unknown';
+  }
+
+  Object.keys(coverageSummaryData).forEach((fileName) => {
+    const isReactFile = fileName.split('.')[1] === 'tsx' || fileName.split('.')[1] === 'jsx'; // component suffix for react compilers
+    const baseFileName = fileName.split('/')[fileName.split('/').length - 1]; // get file name
+    const isComponent =
+      baseFileName[0].toUpperCase() === baseFileName[0] && !baseFileName.includes('Provider'); // components are capitalized by principle, exclude Provider files from coverage
+
+    if (
+      isReactFile &&
+      isComponent &&
+      (coverageSummaryData[fileName].lines.pct === 0 ||
+        coverageSummaryData[fileName].statements.pct === 0)
+    ) {
+      filesWithZeroCoverage.push(fileName);
+    }
+  });
+
+  return filesWithZeroCoverage;
+}
+
+/**
+ * Gets the files that the audit should be run against, varies on options 'affected' and 'file'
+ *
+ * @param task
+ * @param options
+ * @returns
+ */
+async function getFilesForAudit(task: Task, options: TestOptions): Promise<string[]> {
+  if (options.affected) {
+    return getAffectedTests(task);
+  }
+  if (options.file?.length) {
+    return task.normalizeFileList(options.file);
+  }
+  return getFiles([`${task.projectRoot}/*.test.ts`, `${task.projectRoot}/*.test.tsx`]);
+}
+
 async function auditA11yCoverage({
   files,
   task,
@@ -156,6 +242,7 @@ async function auditA11yCoverage({
       // eslint-disable-next-line no-restricted-globals
       githubURL: process.env.BUILDKITE_REPO,
     },
+    componentsWithZeroCoverage: [],
   };
 
   const unresolvedPromises = files.map(async (file) => {
@@ -236,26 +323,15 @@ const test = createTask<TestOptions>('test', async (task, options) => {
     args.unshift('--preset', '@cbhq/jest-preset-mobile');
   }
 
-  if (options.affected) {
-    const files = await getAffectedTests(task);
+  const files = await getFilesForAudit(task, options);
 
-    const log = await auditA11yCoverage({ files, task, jestConfigs: args });
-    writeToProjectOutDir(log, task);
-  } else if (options.file?.length) {
-    const files = task.normalizeFileList(options.file);
+  const log = await auditA11yCoverage({ files, task, jestConfigs: args });
 
-    const log = await auditA11yCoverage({ files, task, jestConfigs: args });
-    writeToProjectOutDir(log, task);
-  } else {
-    const files = await getFiles([
-      `${task.projectRoot}/*.test.ts`,
-      `${task.projectRoot}/*.test.tsx`,
-    ]);
-
-    const log = await auditA11yCoverage({ files, task, jestConfigs: args });
-    writeToProjectOutDir(log, task);
+  if (options.jestCoverageSummaryPath) {
+    log.componentsWithZeroCoverage = auditZeroJestCoverage(options.jestCoverageSummaryPath);
   }
 
+  writeToProjectOutDir(log, task);
   return task.exec('echo', [`Finished auditing a11y log for ${task.projectName} workspace`]);
 });
 

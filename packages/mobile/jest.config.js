@@ -2,7 +2,7 @@ const preset = require('../../jest.preset');
 
 module.exports = {
   displayName: 'mobile',
-  coverageReporters: preset.coverageReporters,
+  coverageReporters: [...preset.coverageReporters, 'json-summary'],
   preset: '@cbhq/jest-preset-mobile',
   testMatch: ['**//**/*.test.(ts|tsx)'],
   setupFilesAfterEnv: ['<rootDir>/jest/setup.js'],

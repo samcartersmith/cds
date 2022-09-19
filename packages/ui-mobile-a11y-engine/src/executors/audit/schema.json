@@ -29,6 +29,10 @@
       "type": "boolean",
       "description": "Run tests in serial instead of parallel.",
       "default": false
+    },
+    "jestCoverageSummaryPath": {
+      "type": "string",
+      "description": "Generate list of components with zero jest coverage from coverage-summary.json file if included"
     }
   }
 }
