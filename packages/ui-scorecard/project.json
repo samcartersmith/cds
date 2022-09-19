@@ -1,0 +1,23 @@
+{
+  "root": "packages/ui-scorecard",
+  "sourceRoot": "packages/ui-scorecard",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": ["dts", "lib"]
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    }
+  }
+}

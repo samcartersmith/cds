@@ -19,6 +19,7 @@
     "website": "apps/website",
     "nextjs-example": "examples/nextjs",
     "ui-mobile-a11y-engine": "packages/ui-mobile-a11y-engine",
-    "ui-mobile-playground": "packages/ui-mobile-playground"
+    "ui-mobile-playground": "packages/ui-mobile-playground",
+    "ui-scorecard": "packages/ui-scorecard"
   }
 }

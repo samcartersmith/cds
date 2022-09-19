@@ -1,0 +1,64 @@
+{
+  "name": "@cbhq/ui-scorecard",
+  "version": "0.0.0",
+  "description": "UI scorecard and adoption tracking cli tool",
+  "keywords": [
+    "ui",
+    "scorecard"
+  ],
+  "main": "./lib/index.js",
+  "bin": "./lib/bin.js",
+  "packemon": {
+    "format": "lib",
+    "platform": "node",
+    "inputs": {
+      "bin": "src/bin.ts",
+      "index": "src/index.ts",
+      "adoption": "src/adoption/index.ts",
+      "s3": "src/s3/index.ts"
+    }
+  },
+  "scripts": {
+    "watch": "packemon watch --quiet --loadConfigs"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1207.0",
+    "chalk": "^4.1.2",
+    "update-notifier": "^5.1.0",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "@types/update-notifier": "^5.1.0",
+    "@types/yargs": "^17.0.11",
+    "packemon": "^2.4.0"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./bin": {
+      "types": "./dts/bin.d.ts",
+      "node": "./lib/bin.js",
+      "default": "./lib/bin.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "node": "./lib/index.js",
+      "default": "./lib/index.js"
+    },
+    "./adoption": {
+      "types": "./dts/adoption/index.d.ts",
+      "node": "./lib/adoption.js",
+      "default": "./lib/adoption.js"
+    },
+    "./s3": {
+      "types": "./dts/s3/index.d.ts",
+      "node": "./lib/s3.js",
+      "default": "./lib/s3.js"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "node": "./lib/*.js",
+      "default": "./lib/*.js"
+    }
+  },
+  "types": "./dts/index.d.ts"
+}
