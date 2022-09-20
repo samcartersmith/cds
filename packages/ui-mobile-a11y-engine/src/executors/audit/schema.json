@@ -32,7 +32,12 @@
     },
     "jestCoverageSummaryPath": {
       "type": "string",
-      "description": "Generate list of components with zero jest coverage from coverage-summary.json file if included"
+      "description": "Generates list of components with zero jest coverage from coverage-summary.json file if included"
+    },
+    "auditComponentsMissingA11yCoverage": {
+      "type": "boolean",
+      "description": "Generates list of components without a11y coverage",
+      "default": true
     }
   }
 }

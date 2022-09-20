@@ -4,13 +4,14 @@ import path from 'path';
 import ts from 'typescript';
 import { ArgsList, createTask, Task } from '@cbhq/mono-tasks';
 
-export type TestOptions = {
+type TestOptions = {
   affected?: boolean;
   cache?: boolean;
   debug?: boolean;
   file?: string[];
   serial?: boolean;
   jestCoverageSummaryPath?: string;
+  auditComponentsMissingA11yCoverage?: boolean;
 };
 
 type CoveragePercentage = {
@@ -35,7 +36,7 @@ type CoverageOutput = Record<string, CoverageAreas>;
  * https://docs.google.com/document/d
  * 1y9T3tP-40gPqMxcQAE-Ast4M08n-sK7z2tO5BaTAHMc/
  */
-export type A11yLogType = {
+type A11yLogType = {
   /** Will log the date when the executor is ran */
   timestamp: Date;
   /**
@@ -69,6 +70,14 @@ export type A11yLogType = {
    * 'Unknown' indicates that no jestCoverageSummaryPath option was passed, or invalid file path.
    */
   componentsWithZeroCoverage: string[] | 'unknown';
+  /**
+   * Test files that provide a11y coverage
+   */
+  testsWithA11yCoverage: string[];
+  /**
+   * Components missing a11y coverage
+   */
+  componentsMissingA11yCoverage: string[];
 };
 
 function parseAst(sourceFile: ts.SourceFile) {
@@ -124,43 +133,55 @@ const getCoverageSummaryJSONData = (fileLocation: string): CoverageOutput => {
   return JSON.parse(rawData);
 };
 
-async function getAffectedTests(task: Task): Promise<string[]> {
-  const testFiles: string[] = [];
+async function getAffectedFiles(task: Task, forTestingFiles: boolean): Promise<string[]> {
+  const collectedFiles: string[] = [];
   const files = await task.getAffectedFiles(/\.[j|t]sx?$/);
 
-  files.forEach((filePath) => {
-    if (filePath.includes('.test.')) {
-      testFiles.push(filePath);
+  if (forTestingFiles) {
+    files.forEach((filePath) => {
+      if (filePath.includes('.test.')) {
+        collectedFiles.push(filePath);
 
-      // We have a source file, check if theres a sibling test file
-    } else {
-      const ext = path.extname(filePath);
-      const testFile = filePath.replace(ext, `.test${ext}`);
-      const testFileName = path.basename(testFile);
-      const candidates = [
-        // src/foo.test.ts
-        testFile,
-        // src/__tests__/foo.test.ts
-        testFile.replace(testFileName, `__tests__/${testFileName}`),
-        // tests/foo.test.ts
-        testFile.replace('src/', 'tests/'),
-        // __tests__/foo.test.ts
-        testFile.replace('src/', '__tests__/'),
-      ];
+        // We have a source file, check if theres a sibling test file
+      } else {
+        const ext = path.extname(filePath);
+        const testFile = filePath.replace(ext, `.test${ext}`);
+        const testFileName = path.basename(testFile);
+        const candidates = [
+          // src/foo.test.ts
+          testFile,
+          // src/__tests__/foo.test.ts
+          testFile.replace(testFileName, `__tests__/${testFileName}`),
+          // tests/foo.test.ts
+          testFile.replace('src/', 'tests/'),
+          // __tests__/foo.test.ts
+          testFile.replace('src/', '__tests__/'),
+        ];
 
-      candidates.some((candidate) => {
-        if (task.projectRoot.append(candidate).exists()) {
-          testFiles.push(candidate);
+        candidates.some((candidate) => {
+          if (task.projectRoot.append(candidate).exists()) {
+            collectedFiles.push(candidate);
 
-          return true;
-        }
+            return true;
+          }
 
-        return false;
-      });
-    }
-  });
+          return false;
+        });
+      }
+    });
+  } else {
+    files.forEach((filePath) => {
+      if (
+        !filePath.includes('.test.') &&
+        !filePath.includes('.stores.') &&
+        !filePath.includes('.e2e.')
+      ) {
+        collectedFiles.push(filePath);
+      }
+    });
+  }
 
-  return testFiles;
+  return collectedFiles;
 }
 
 const getFiles = async (filters: string[] = []) => {
@@ -207,16 +228,104 @@ function auditZeroJestCoverage(coverageSummaryFileLocation: string): string[] | 
  *
  * @param task
  * @param options
+ * @param forTesting // determines if it should get test files, or component files
  * @returns
  */
-async function getFilesForAudit(task: Task, options: TestOptions): Promise<string[]> {
+async function getFilesForAudit(
+  task: Task,
+  options: TestOptions,
+  forTesting: boolean,
+): Promise<string[]> {
   if (options.affected) {
-    return getAffectedTests(task);
+    // forTesting toggles based on getter
+    return getAffectedFiles(task, forTesting);
   }
   if (options.file?.length) {
     return task.normalizeFileList(options.file);
   }
-  return getFiles([`${task.projectRoot}/*.test.ts`, `${task.projectRoot}/*.test.tsx`]);
+
+  return forTesting
+    ? getFiles([`${task.projectRoot}/*.test.ts`, `${task.projectRoot}/*.test.tsx`])
+    : getFiles([
+        `${task.projectRoot}/*.tsx`,
+        `:!:${task.projectRoot}/*.test.tsx`, // excludes test.tsx
+        `:!:${task.projectRoot}/*.test.ts`, // excludes test.ts
+        `:!:${task.projectRoot}/*.stories.tsx`, // excludes stories
+        `:!:${task.projectRoot}/*.e2e.tsx`, // excludes e2e
+        `:!:${task.projectRoot}/node_modules/*`, // excludes node_modules
+      ]);
+}
+
+function getComponentsMissingTestFiles(testFiles: string[], relatedFiles: string[]): string[] {
+  const difference = relatedFiles.filter((cmptFile) => {
+    const baseFileName = cmptFile.split('/')[cmptFile.split('/').length - 1];
+    const componentNameWithoutSuffix = baseFileName.split('.')[0];
+    const indexOfTestFile = testFiles.findIndex((file) =>
+      file.includes(`${componentNameWithoutSuffix}.test.tsx`),
+    );
+
+    return indexOfTestFile === -1;
+  });
+
+  return difference;
+}
+
+async function auditComponentsMissingA11yCoverage({
+  componentsWithoutTestFiles,
+  testsWithA11yCoverage,
+  jestConfigs,
+  task,
+}: {
+  componentsWithoutTestFiles: string[];
+  testsWithA11yCoverage: string[]; // files from log that have a11y coverage via tests
+  jestConfigs: ArgsList;
+  task: Task;
+}): Promise<string[]> {
+  const componentsMissingA11yCoverage: string[] = [];
+
+  await Promise.all(
+    componentsWithoutTestFiles.map(async (missingFileName: string) => {
+      const args = [
+        ...(jestConfigs as string[]),
+        '--findRelatedTests', // shows tests that cover component coverage
+        '--listTests', // this gives the list of tests that would be run without actually running them
+        '--color=false',
+        'silent=false',
+        missingFileName,
+      ];
+
+      // call jest --findRelatedFiles --listTests <missingTestFile component>
+      const execResult = await execa('jest', args, {
+        cwd: task.projectRoot.path(),
+        env: {
+          ...task.context.target?.env,
+          ...task.getEnvVars(),
+        },
+        preferLocal: true,
+      });
+
+      // Break down jest output into array
+      const arrayOfRelatedTestFiles = execResult.stdout.split(/\r?\n/);
+
+      // Iterate over related tests and see if they have accessibility coverage
+      // if tests have coverage (valid index),  missingTestFile has a11y coverage.
+      // if tests do not have coverage (index is -1), then assume missingTestFile has no a11y coverage
+      const isCovered = arrayOfRelatedTestFiles.filter((relatedTest) => {
+        const indexOfAccessibilityTest = testsWithA11yCoverage.findIndex(
+          (accessibilityTestFilePath) => relatedTest.includes(accessibilityTestFilePath),
+        );
+
+        return indexOfAccessibilityTest > -1;
+      });
+
+      // No coverage for this component, either directly or from other related components
+      if (isCovered.length === 0) {
+        componentsMissingA11yCoverage.push(missingFileName);
+      }
+    }),
+  );
+
+  return componentsMissingA11yCoverage;
 }
 
 async function auditA11yCoverage({
@@ -243,6 +352,8 @@ async function auditA11yCoverage({
       githubURL: process.env.BUILDKITE_REPO,
     },
     componentsWithZeroCoverage: [],
+    testsWithA11yCoverage: [],
+    componentsMissingA11yCoverage: [],
   };
 
   const unresolvedPromises = files.map(async (file) => {
@@ -283,6 +394,7 @@ async function auditA11yCoverage({
           a11yLog.testDetails[file] = execResult;
         } else {
           a11yLog.testDetails[file] = { success: true };
+          a11yLog.testsWithA11yCoverage.push(file);
         }
       } else {
         a11yLog.unTestedFilePaths.push(file);
@@ -323,12 +435,27 @@ const test = createTask<TestOptions>('test', async (task, options) => {
     args.unshift('--preset', '@cbhq/jest-preset-mobile');
   }
 
-  const files = await getFilesForAudit(task, options);
+  const testFiles = await getFilesForAudit(task, options, true);
 
-  const log = await auditA11yCoverage({ files, task, jestConfigs: args });
+  const log = await auditA11yCoverage({ files: testFiles, task, jestConfigs: args });
 
   if (options.jestCoverageSummaryPath) {
     log.componentsWithZeroCoverage = auditZeroJestCoverage(options.jestCoverageSummaryPath);
+  }
+
+  if (options.auditComponentsMissingA11yCoverage) {
+    const relatedFiles = await getFilesForAudit(task, options, false);
+    const componentsWithoutTestFiles = getComponentsMissingTestFiles(testFiles, relatedFiles);
+    const { testsWithA11yCoverage } = log;
+
+    const componentsMissingA11yCoverage = await auditComponentsMissingA11yCoverage({
+      componentsWithoutTestFiles,
+      testsWithA11yCoverage,
+      jestConfigs: args,
+      task,
+    });
+
+    log.componentsMissingA11yCoverage = componentsMissingA11yCoverage;
   }
 
   writeToProjectOutDir(log, task);
