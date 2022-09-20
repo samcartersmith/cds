@@ -1,269 +1,87 @@
-/** States */
-const stateStyles = {
-  b2d35a88501341f4a627726be097d969e8a0457a: {
-    name: '🌞 light/state/foreground/disabled',
-    light: 'b2d35a88501341f4a627726be097d969e8a0457a',
-    dark: '15e4320a07ae9da0b61b2304958c4e46fa601d5e',
+const background = {
+  '0a5f5fb912205eac74fb0aba173a02b703450591': {
+    dark: '86f0b0e8f0b5233052adc9082ab028614707226f',
+    light: '0a5f5fb912205eac74fb0aba173a02b703450591',
+    name: '🌞 light/palette/background',
   },
-  '1178d09b3c2dcd0e5b19dcd1006deeb102b66a53': {
-    name: '🌞 light/state/foreground/pressed',
-    light: '1178d09b3c2dcd0e5b19dcd1006deeb102b66a53',
-    dark: 'ab329fc1b49cd030c0f5ffe00f9870705a83776d',
+  '86f0b0e8f0b5233052adc9082ab028614707226f': {
+    dark: '86f0b0e8f0b5233052adc9082ab028614707226f',
+    light: '0a5f5fb912205eac74fb0aba173a02b703450591',
+    name: '🌚 dark/palette/background',
   },
-  '8b4c46a5b2a81087f738323501796df099535f20': {
-    name: '🌞 light/state/foreground/hovered',
-    light: '8b4c46a5b2a81087f738323501796df099535f20',
-    dark: 'fb7c3935888bcbadd990e89a81928e258523d574',
-  },
-  '58c4ca40adc4d7076c875197ee28ad894152e7d9': {
-    name: '🌞 light/state/foregroundMuted/disabled',
-    light: '58c4ca40adc4d7076c875197ee28ad894152e7d9',
-    dark: '89da6760e0e08970644a41997a50f87e0f9d963f',
-  },
-  b121b879ef9d6aba5bb77f2922b65a7f45431856: {
-    name: '🌞 light/state/foregroundMuted/pressed',
-    light: 'b121b879ef9d6aba5bb77f2922b65a7f45431856',
-    dark: 'b1f6087ce9b3895797e55533f8e91a0e144cb9fe',
-  },
-  f629a40537c1d26f2b233c12b45e83f0788addb1: {
-    name: '🌞 light/state/foregroundMuted/hovered',
-    light: 'f629a40537c1d26f2b233c12b45e83f0788addb1',
-    dark: '4a53f59c66a72077afe8642674169d52e1a89723',
-  },
-  ceb358b1ba206d1ce3dd6aa8e13ad66acd2917a6: {
-    name: '🌞 light/state/primary/disabled',
-    light: 'ceb358b1ba206d1ce3dd6aa8e13ad66acd2917a6',
-    dark: '0c1faf9993f8f241cbbb40cd10917dab39c85dd3',
-  },
-  dba5ca3702d61f824153a5bc2277002330e35178: {
-    name: '🌞 light/state/primary/pressed',
-    light: 'dba5ca3702d61f824153a5bc2277002330e35178',
-    dark: '2c27078651c4a45ae8cb328b834dde344c0e2eb9',
-  },
-  '5c362e254f3eacedd89909a095454a4fda722344': {
-    name: '🌞 light/state/primary/hovered',
-    light: '5c362e254f3eacedd89909a095454a4fda722344',
-    dark: '144057d473c6d3807737f2cb1f937ee439617221',
-  },
-  a28f5089abd22cafe15594f8cd5a4cacb95e1d6c: {
-    name: '🌞 light/state/primaryWash/disabled',
-    light: 'a28f5089abd22cafe15594f8cd5a4cacb95e1d6c',
-    dark: '2b89896eb40ef2cdefce886924aa7da22a8e42b6',
-  },
-  ba7f64beaa3425ee0fd061b2a8c622121c9eb773: {
-    name: '🌞 light/state/primaryWash/pressed',
-    light: 'ba7f64beaa3425ee0fd061b2a8c622121c9eb773',
-    dark: '543bdd0eceebdfa122ade1d24da3bf63a1cb87f9',
-  },
-  '44405345842cee963d10f1d71da9297760f741bf': {
-    name: '🌞 light/state/primaryWash/hovered',
-    light: '44405345842cee963d10f1d71da9297760f741bf',
-    dark: 'be526e6af1aba349d8c3603865567f09842699a3',
-  },
-  '9698ade314cd653d4c803894f3d6c97e2c89cfb6': {
-    name: '🌞 light/state/negative/disabled',
-    light: '9698ade314cd653d4c803894f3d6c97e2c89cfb6',
-    dark: 'eabf36b5e01a8eae4851de164dd0a07ac806a9ff',
-  },
-  '818a9ecae15266eac7897dfce13c40d7b8b6ac59': {
-    name: '🌞 light/state/negative/pressed',
-    light: '818a9ecae15266eac7897dfce13c40d7b8b6ac59',
-    dark: '6983639f5b419d6755992635135750a0181a53cc',
-  },
-  ecac9b15fb440c28a49bdd03c79d3b8757cb7e5d: {
-    name: '🌞 light/state/negative/hovered',
-    light: 'ecac9b15fb440c28a49bdd03c79d3b8757cb7e5d',
-    dark: '347e4380b57521d5c1464dbe0694f2d314b029a3',
-  },
-  '26551fe841b327fa657e4bcbe13e988e109e3dee': {
-    name: '🌞 light/state/positive/disabled',
-    light: '26551fe841b327fa657e4bcbe13e988e109e3dee',
-    dark: 'ddd07e5435c507616af0d560be13ba39353576c3',
-  },
-  '43acf585bfe8ef8bdbed544bdf38585b6303f74f': {
-    name: '🌞 light/state/positive/pressed',
-    light: '43acf585bfe8ef8bdbed544bdf38585b6303f74f',
-    dark: 'c0bd275e53d62b95be530beb310dd7a20f8e3ad2',
-  },
-  ee12300c5939ae14edf9f6daac4b790c85e6e289: {
-    name: '🌞 light/state/positive/hovered',
-    light: 'ee12300c5939ae14edf9f6daac4b790c85e6e289',
-    dark: 'c74a961d3e62ebf41eeadae7318fed4be669278c',
-  },
-  '239c7c2543b488ebd383cfdbfb301e9ff00430e5': {
-    name: '🌞 light/state/secondary/disabled',
-    light: '239c7c2543b488ebd383cfdbfb301e9ff00430e5',
-    dark: '4f302a515853a2900587a6670a5455301c469ebe',
-  },
-  '81ab0c4ce42964b5dd92ae35f0782336eeaadd95': {
-    name: '🌞 light/state/secondary/pressed',
-    light: '81ab0c4ce42964b5dd92ae35f0782336eeaadd95',
-    dark: '1fce25deb01e85af9cd9cd08e95d01e8e003a10b',
-  },
-  '76c6eb77eaa5baa15ba73508b1ab84046ca0f379': {
-    name: '🌞 light/state/secondary/hovered',
-    light: '76c6eb77eaa5baa15ba73508b1ab84046ca0f379',
-    dark: '77fe1a175602fd5d4fd05452c28dc66adf13d336',
-  },
+  // Disabled
   '3e7e67b9d6861f4620d640c77d06acfeee8452b7': {
     name: '🌞 light/state/background/disabled',
     light: '3e7e67b9d6861f4620d640c77d06acfeee8452b7',
     dark: '5de1aafb916bf1259b771203d1d472cdf27467e5',
-  },
-  '4127bc2525cd731916c60671222ed8d56fbdb67d': {
-    name: '🌞 light/state/background/pressed',
-    light: '4127bc2525cd731916c60671222ed8d56fbdb67d',
-    dark: '99b693ffc0047dc651e8806cd8b6a41464a99c16',
-  },
-  '07571eb6ed05886710fec1a12fa1e03f96f4ec6b': {
-    name: '🌞 light/state/background/hovered',
-    light: '07571eb6ed05886710fec1a12fa1e03f96f4ec6b',
-    dark: '0a75bf9b27b0d9ef68991ff4422879a2054809e6',
-  },
-  a8e3da58dcbbc2f82e3d3020d9d07cac7cf8f100: {
-    name: '🌞 light/state/backgroundAlternate/disabled',
-    light: 'a8e3da58dcbbc2f82e3d3020d9d07cac7cf8f100',
-    dark: '4e1487ff0ba058d5e8cced4e5c0d07e040023d90',
-  },
-  '1920f7cda9b05109a3a7a07814ff1c9a457135e1': {
-    name: '🌞 light/state/backgroundAlternate/pressed',
-    light: '1920f7cda9b05109a3a7a07814ff1c9a457135e1',
-    dark: '66df3ec50a5c140d740fcb08427dc86aa1b808c3',
-  },
-  '2169d93a2ce0e8d01818cb29e4dfe1473e2ae29b': {
-    name: '🌞 light/state/backgroundAlternate/hovered',
-    light: '2169d93a2ce0e8d01818cb29e4dfe1473e2ae29b',
-    dark: '9a2d0547d67a00b4654d1a99425fd62dd77e882c',
-  },
-  '15e4320a07ae9da0b61b2304958c4e46fa601d5e': {
-    name: '🌚 dark/state/foreground/disabled',
-    dark: '15e4320a07ae9da0b61b2304958c4e46fa601d5e',
-    light: 'b2d35a88501341f4a627726be097d969e8a0457a',
-  },
-  ab329fc1b49cd030c0f5ffe00f9870705a83776d: {
-    name: '🌚 dark/state/foreground/pressed',
-    dark: 'ab329fc1b49cd030c0f5ffe00f9870705a83776d',
-    light: '1178d09b3c2dcd0e5b19dcd1006deeb102b66a53',
-  },
-  fb7c3935888bcbadd990e89a81928e258523d574: {
-    name: '🌚 dark/state/foreground/hovered',
-    dark: 'fb7c3935888bcbadd990e89a81928e258523d574',
-    light: '8b4c46a5b2a81087f738323501796df099535f20',
-  },
-  '89da6760e0e08970644a41997a50f87e0f9d963f': {
-    name: '🌚 dark/state/foregroundMuted/disabled',
-    dark: '89da6760e0e08970644a41997a50f87e0f9d963f',
-    light: '58c4ca40adc4d7076c875197ee28ad894152e7d9',
-  },
-  b1f6087ce9b3895797e55533f8e91a0e144cb9fe: {
-    name: '🌚 dark/state/foregroundMuted/pressed',
-    dark: 'b1f6087ce9b3895797e55533f8e91a0e144cb9fe',
-    light: 'b121b879ef9d6aba5bb77f2922b65a7f45431856',
-  },
-  '4a53f59c66a72077afe8642674169d52e1a89723': {
-    name: '🌚 dark/state/foregroundMuted/hovered',
-    dark: '4a53f59c66a72077afe8642674169d52e1a89723',
-    light: 'f629a40537c1d26f2b233c12b45e83f0788addb1',
-  },
-  '0c1faf9993f8f241cbbb40cd10917dab39c85dd3': {
-    name: '🌚 dark/state/primary/disabled',
-    dark: '0c1faf9993f8f241cbbb40cd10917dab39c85dd3',
-    light: 'ceb358b1ba206d1ce3dd6aa8e13ad66acd2917a6',
-  },
-  '2c27078651c4a45ae8cb328b834dde344c0e2eb9': {
-    name: '🌚 dark/state/primary/pressed',
-    dark: '2c27078651c4a45ae8cb328b834dde344c0e2eb9',
-    light: 'dba5ca3702d61f824153a5bc2277002330e35178',
-  },
-  '144057d473c6d3807737f2cb1f937ee439617221': {
-    name: '🌚 dark/state/primary/hovered',
-    dark: '144057d473c6d3807737f2cb1f937ee439617221',
-    light: '5c362e254f3eacedd89909a095454a4fda722344',
-  },
-  '2b89896eb40ef2cdefce886924aa7da22a8e42b6': {
-    name: '🌚 dark/state/primaryWash/disabled',
-    dark: '2b89896eb40ef2cdefce886924aa7da22a8e42b6',
-    light: 'a28f5089abd22cafe15594f8cd5a4cacb95e1d6c',
-  },
-  '543bdd0eceebdfa122ade1d24da3bf63a1cb87f9': {
-    name: '🌚 dark/state/primaryWash/pressed',
-    dark: '543bdd0eceebdfa122ade1d24da3bf63a1cb87f9',
-    light: 'ba7f64beaa3425ee0fd061b2a8c622121c9eb773',
-  },
-  be526e6af1aba349d8c3603865567f09842699a3: {
-    name: '🌚 dark/state/primaryWash/hovered',
-    dark: 'be526e6af1aba349d8c3603865567f09842699a3',
-    light: '44405345842cee963d10f1d71da9297760f741bf',
-  },
-  eabf36b5e01a8eae4851de164dd0a07ac806a9ff: {
-    name: '🌚 dark/state/negative/disabled',
-    dark: 'eabf36b5e01a8eae4851de164dd0a07ac806a9ff',
-    light: '9698ade314cd653d4c803894f3d6c97e2c89cfb6',
-  },
-  '6983639f5b419d6755992635135750a0181a53cc': {
-    name: '🌚 dark/state/negative/pressed',
-    dark: '6983639f5b419d6755992635135750a0181a53cc',
-    light: '818a9ecae15266eac7897dfce13c40d7b8b6ac59',
-  },
-  '347e4380b57521d5c1464dbe0694f2d314b029a3': {
-    name: '🌚 dark/state/negative/hovered',
-    dark: '347e4380b57521d5c1464dbe0694f2d314b029a3',
-    light: 'ecac9b15fb440c28a49bdd03c79d3b8757cb7e5d',
-  },
-  ddd07e5435c507616af0d560be13ba39353576c3: {
-    name: '🌚 dark/state/positive/disabled',
-    dark: 'ddd07e5435c507616af0d560be13ba39353576c3',
-    light: '26551fe841b327fa657e4bcbe13e988e109e3dee',
-  },
-  c0bd275e53d62b95be530beb310dd7a20f8e3ad2: {
-    name: '🌚 dark/state/positive/pressed',
-    dark: 'c0bd275e53d62b95be530beb310dd7a20f8e3ad2',
-    light: '43acf585bfe8ef8bdbed544bdf38585b6303f74f',
-  },
-  c74a961d3e62ebf41eeadae7318fed4be669278c: {
-    name: '🌚 dark/state/positive/hovered',
-    dark: 'c74a961d3e62ebf41eeadae7318fed4be669278c',
-    light: 'ee12300c5939ae14edf9f6daac4b790c85e6e289',
-  },
-  '4f302a515853a2900587a6670a5455301c469ebe': {
-    name: '🌚 dark/state/secondary/disabled',
-    dark: '4f302a515853a2900587a6670a5455301c469ebe',
-    light: '239c7c2543b488ebd383cfdbfb301e9ff00430e5',
-  },
-  '1fce25deb01e85af9cd9cd08e95d01e8e003a10b': {
-    name: '🌚 dark/state/secondary/pressed',
-    dark: '1fce25deb01e85af9cd9cd08e95d01e8e003a10b',
-    light: '81ab0c4ce42964b5dd92ae35f0782336eeaadd95',
-  },
-  '77fe1a175602fd5d4fd05452c28dc66adf13d336': {
-    name: '🌚 dark/state/secondary/hovered',
-    dark: '77fe1a175602fd5d4fd05452c28dc66adf13d336',
-    light: '76c6eb77eaa5baa15ba73508b1ab84046ca0f379',
   },
   '5de1aafb916bf1259b771203d1d472cdf27467e5': {
     name: '🌚 dark/state/background/disabled',
     dark: '5de1aafb916bf1259b771203d1d472cdf27467e5',
     light: '3e7e67b9d6861f4620d640c77d06acfeee8452b7',
   },
+  // Pressed
+  '4127bc2525cd731916c60671222ed8d56fbdb67d': {
+    name: '🌞 light/state/background/pressed',
+    light: '4127bc2525cd731916c60671222ed8d56fbdb67d',
+    dark: '99b693ffc0047dc651e8806cd8b6a41464a99c16',
+  },
   '99b693ffc0047dc651e8806cd8b6a41464a99c16': {
     name: '🌚 dark/state/background/pressed',
     dark: '99b693ffc0047dc651e8806cd8b6a41464a99c16',
     light: '4127bc2525cd731916c60671222ed8d56fbdb67d',
+  },
+  // Hovered
+  '07571eb6ed05886710fec1a12fa1e03f96f4ec6b': {
+    name: '🌞 light/state/background/hovered',
+    light: '07571eb6ed05886710fec1a12fa1e03f96f4ec6b',
+    dark: '0a75bf9b27b0d9ef68991ff4422879a2054809e6',
   },
   '0a75bf9b27b0d9ef68991ff4422879a2054809e6': {
     name: '🌚 dark/state/background/hovered',
     dark: '0a75bf9b27b0d9ef68991ff4422879a2054809e6',
     light: '07571eb6ed05886710fec1a12fa1e03f96f4ec6b',
   },
+};
+
+const backgroundAlternate = {
+  '3c9043faca37b942e3f16f8a4a262dfaad0f3ad7': {
+    dark: '66fac5aa3910afcb65b6063a6ae0c9dd8928b458',
+    light: '3c9043faca37b942e3f16f8a4a262dfaad0f3ad7',
+    name: '🌞 light/palette/backgroundAlternate',
+  },
+  '66fac5aa3910afcb65b6063a6ae0c9dd8928b458': {
+    dark: '66fac5aa3910afcb65b6063a6ae0c9dd8928b458',
+    light: '3c9043faca37b942e3f16f8a4a262dfaad0f3ad7',
+    name: '🌚 dark/palette/backgroundAlternate',
+  },
+  // Disabled
+  a8e3da58dcbbc2f82e3d3020d9d07cac7cf8f100: {
+    name: '🌞 light/state/backgroundAlternate/disabled',
+    light: 'a8e3da58dcbbc2f82e3d3020d9d07cac7cf8f100',
+    dark: '4e1487ff0ba058d5e8cced4e5c0d07e040023d90',
+  },
   '4e1487ff0ba058d5e8cced4e5c0d07e040023d90': {
     name: '🌚 dark/state/backgroundAlternate/disabled',
     dark: '4e1487ff0ba058d5e8cced4e5c0d07e040023d90',
     light: 'a8e3da58dcbbc2f82e3d3020d9d07cac7cf8f100',
   },
+  // Pressed
+  '1920f7cda9b05109a3a7a07814ff1c9a457135e1': {
+    name: '🌞 light/state/backgroundAlternate/pressed',
+    light: '1920f7cda9b05109a3a7a07814ff1c9a457135e1',
+    dark: '66df3ec50a5c140d740fcb08427dc86aa1b808c3',
+  },
   '66df3ec50a5c140d740fcb08427dc86aa1b808c3': {
     name: '🌚 dark/state/backgroundAlternate/pressed',
     dark: '66df3ec50a5c140d740fcb08427dc86aa1b808c3',
     light: '1920f7cda9b05109a3a7a07814ff1c9a457135e1',
+  },
+  // Hovered
+  '2169d93a2ce0e8d01818cb29e4dfe1473e2ae29b': {
+    name: '🌞 light/state/backgroundAlternate/hovered',
+    light: '2169d93a2ce0e8d01818cb29e4dfe1473e2ae29b',
+    dark: '9a2d0547d67a00b4654d1a99425fd62dd77e882c',
   },
   '9a2d0547d67a00b4654d1a99425fd62dd77e882c': {
     name: '🌚 dark/state/backgroundAlternate/hovered',
@@ -272,8 +90,479 @@ const stateStyles = {
   },
 };
 
+const foreground = {
+  '27c82d6be9eda867d057886c01acd280474c1919': {
+    dark: 'e741bd0adda253caadcd027bf14009d16e80675d',
+    light: '27c82d6be9eda867d057886c01acd280474c1919',
+    name: '🌞 light/palette/foreground',
+  },
+  e741bd0adda253caadcd027bf14009d16e80675d: {
+    dark: 'e741bd0adda253caadcd027bf14009d16e80675d',
+    light: '27c82d6be9eda867d057886c01acd280474c1919',
+    name: '🌚 dark/palette/foreground',
+  },
+  // Disabled
+  b2d35a88501341f4a627726be097d969e8a0457a: {
+    name: '🌞 light/state/foreground/disabled',
+    light: 'b2d35a88501341f4a627726be097d969e8a0457a',
+    dark: '15e4320a07ae9da0b61b2304958c4e46fa601d5e',
+  },
+  '15e4320a07ae9da0b61b2304958c4e46fa601d5e': {
+    name: '🌚 dark/state/foreground/disabled',
+    dark: '15e4320a07ae9da0b61b2304958c4e46fa601d5e',
+    light: 'b2d35a88501341f4a627726be097d969e8a0457a',
+  },
+  // Pressed
+  '1178d09b3c2dcd0e5b19dcd1006deeb102b66a53': {
+    name: '🌞 light/state/foreground/pressed',
+    light: '1178d09b3c2dcd0e5b19dcd1006deeb102b66a53',
+    dark: 'ab329fc1b49cd030c0f5ffe00f9870705a83776d',
+  },
+  ab329fc1b49cd030c0f5ffe00f9870705a83776d: {
+    name: '🌚 dark/state/foreground/pressed',
+    dark: 'ab329fc1b49cd030c0f5ffe00f9870705a83776d',
+    light: '1178d09b3c2dcd0e5b19dcd1006deeb102b66a53',
+  },
+  // Hovered
+  '8b4c46a5b2a81087f738323501796df099535f20': {
+    name: '🌞 light/state/foreground/hovered',
+    light: '8b4c46a5b2a81087f738323501796df099535f20',
+    dark: 'fb7c3935888bcbadd990e89a81928e258523d574',
+  },
+  fb7c3935888bcbadd990e89a81928e258523d574: {
+    name: '🌚 dark/state/foreground/hovered',
+    dark: 'fb7c3935888bcbadd990e89a81928e258523d574',
+    light: '8b4c46a5b2a81087f738323501796df099535f20',
+  },
+};
+
+const foregroundMuted = {
+  c790ec72436570c85a8b34009ea1e068b6745c24: {
+    dark: '501f9fb97bc263ed4d06747f305f2f7ca8a71217',
+    light: 'c790ec72436570c85a8b34009ea1e068b6745c24',
+    name: '🌞 light/palette/foregroundMuted',
+  },
+  '501f9fb97bc263ed4d06747f305f2f7ca8a71217': {
+    dark: '501f9fb97bc263ed4d06747f305f2f7ca8a71217',
+    light: 'c790ec72436570c85a8b34009ea1e068b6745c24',
+    name: '🌚 dark/palette/foregroundMuted',
+  },
+  // Disabled
+  '58c4ca40adc4d7076c875197ee28ad894152e7d9': {
+    name: '🌞 light/state/foregroundMuted/disabled',
+    light: '58c4ca40adc4d7076c875197ee28ad894152e7d9',
+    dark: '89da6760e0e08970644a41997a50f87e0f9d963f',
+  },
+  '89da6760e0e08970644a41997a50f87e0f9d963f': {
+    name: '🌚 dark/state/foregroundMuted/disabled',
+    dark: '89da6760e0e08970644a41997a50f87e0f9d963f',
+    light: '58c4ca40adc4d7076c875197ee28ad894152e7d9',
+  },
+  // Pressed
+  b121b879ef9d6aba5bb77f2922b65a7f45431856: {
+    name: '🌞 light/state/foregroundMuted/pressed',
+    light: 'b121b879ef9d6aba5bb77f2922b65a7f45431856',
+    dark: 'b1f6087ce9b3895797e55533f8e91a0e144cb9fe',
+  },
+  b1f6087ce9b3895797e55533f8e91a0e144cb9fe: {
+    name: '🌚 dark/state/foregroundMuted/pressed',
+    dark: 'b1f6087ce9b3895797e55533f8e91a0e144cb9fe',
+    light: 'b121b879ef9d6aba5bb77f2922b65a7f45431856',
+  },
+  // Hovered
+  f629a40537c1d26f2b233c12b45e83f0788addb1: {
+    name: '🌞 light/state/foregroundMuted/hovered',
+    light: 'f629a40537c1d26f2b233c12b45e83f0788addb1',
+    dark: '4a53f59c66a72077afe8642674169d52e1a89723',
+  },
+  '4a53f59c66a72077afe8642674169d52e1a89723': {
+    name: '🌚 dark/state/foregroundMuted/hovered',
+    dark: '4a53f59c66a72077afe8642674169d52e1a89723',
+    light: 'f629a40537c1d26f2b233c12b45e83f0788addb1',
+  },
+};
+
+const backgroundOverlay = {
+  '27986058a885ed36ef26be03f20a99685d8aa6e5': {
+    dark: '61e7c95ade5b149b843af7ec651cd7d161139b1d',
+    light: '27986058a885ed36ef26be03f20a99685d8aa6e5',
+    name: '🌞 light/palette/backgroundOverlay',
+  },
+  '61e7c95ade5b149b843af7ec651cd7d161139b1d': {
+    dark: '61e7c95ade5b149b843af7ec651cd7d161139b1d',
+    light: '27986058a885ed36ef26be03f20a99685d8aa6e5',
+    name: '🌚 dark/palette/backgroundOverlay',
+  },
+};
+
+const line = {
+  '91b1c1ee4ab7e21370e71b9cf5730283337973a6': {
+    dark: 'bb9fb607cddcaabd0ac96d2ed2d586cdd7d0441f',
+    light: '91b1c1ee4ab7e21370e71b9cf5730283337973a6',
+    name: '🌞 light/palette/line',
+  },
+  bb9fb607cddcaabd0ac96d2ed2d586cdd7d0441f: {
+    dark: 'bb9fb607cddcaabd0ac96d2ed2d586cdd7d0441f',
+    light: '91b1c1ee4ab7e21370e71b9cf5730283337973a6',
+    name: '🌚 dark/palette/line',
+  },
+};
+
+const lineHeavy = {
+  '45c17c07e231dc000fc45e363d20247f4ff30acb': {
+    dark: 'ace99a822e8d325b5cda2bff74a68502750c3cbe',
+    light: '45c17c07e231dc000fc45e363d20247f4ff30acb',
+    name: '🌞 light/palette/lineHeavy',
+  },
+  ace99a822e8d325b5cda2bff74a68502750c3cbe: {
+    dark: 'ace99a822e8d325b5cda2bff74a68502750c3cbe',
+    light: '45c17c07e231dc000fc45e363d20247f4ff30acb',
+    name: '🌚 dark/palette/lineHeavy',
+  },
+};
+
+const primary = {
+  ed0d063355163cfb20e50abdd5412bfcb8c2cbc6: {
+    dark: '4ccf1fd7e1cef8a1650e18d6454f98e40c9d974b',
+    light: 'ed0d063355163cfb20e50abdd5412bfcb8c2cbc6',
+    name: '🌞 light/palette/primary',
+  },
+  '4ccf1fd7e1cef8a1650e18d6454f98e40c9d974b': {
+    dark: '4ccf1fd7e1cef8a1650e18d6454f98e40c9d974b',
+    light: 'ed0d063355163cfb20e50abdd5412bfcb8c2cbc6',
+    name: '🌚 dark/palette/primary',
+  },
+  // Disabled
+  ceb358b1ba206d1ce3dd6aa8e13ad66acd2917a6: {
+    name: '🌞 light/state/primary/disabled',
+    light: 'ceb358b1ba206d1ce3dd6aa8e13ad66acd2917a6',
+    dark: '0c1faf9993f8f241cbbb40cd10917dab39c85dd3',
+  },
+  '0c1faf9993f8f241cbbb40cd10917dab39c85dd3': {
+    name: '🌚 dark/state/primary/disabled',
+    dark: '0c1faf9993f8f241cbbb40cd10917dab39c85dd3',
+    light: 'ceb358b1ba206d1ce3dd6aa8e13ad66acd2917a6',
+  },
+  // Pressed
+  dba5ca3702d61f824153a5bc2277002330e35178: {
+    name: '🌞 light/state/primary/pressed',
+    light: 'dba5ca3702d61f824153a5bc2277002330e35178',
+    dark: '2c27078651c4a45ae8cb328b834dde344c0e2eb9',
+  },
+  '2c27078651c4a45ae8cb328b834dde344c0e2eb9': {
+    name: '🌚 dark/state/primary/pressed',
+    dark: '2c27078651c4a45ae8cb328b834dde344c0e2eb9',
+    light: 'dba5ca3702d61f824153a5bc2277002330e35178',
+  },
+  // Hovered
+  '5c362e254f3eacedd89909a095454a4fda722344': {
+    name: '🌞 light/state/primary/hovered',
+    light: '5c362e254f3eacedd89909a095454a4fda722344',
+    dark: '144057d473c6d3807737f2cb1f937ee439617221',
+  },
+  '144057d473c6d3807737f2cb1f937ee439617221': {
+    name: '🌚 dark/state/primary/hovered',
+    dark: '144057d473c6d3807737f2cb1f937ee439617221',
+    light: '5c362e254f3eacedd89909a095454a4fda722344',
+  },
+};
+
+const primaryWash = {
+  cc624e90c131629a1e771385a9959d681c27b47e: {
+    dark: '697272267c05209e5c2648dda0142eff6966bad3',
+    light: 'cc624e90c131629a1e771385a9959d681c27b47e',
+    name: '🌞 light/palette/primaryWash',
+  },
+  '697272267c05209e5c2648dda0142eff6966bad3': {
+    dark: '697272267c05209e5c2648dda0142eff6966bad3',
+    light: 'cc624e90c131629a1e771385a9959d681c27b47e',
+    name: '🌚 dark/palette/primaryWash',
+  },
+  // Disabled
+  a28f5089abd22cafe15594f8cd5a4cacb95e1d6c: {
+    name: '🌞 light/state/primaryWash/disabled',
+    light: 'a28f5089abd22cafe15594f8cd5a4cacb95e1d6c',
+    dark: '2b89896eb40ef2cdefce886924aa7da22a8e42b6',
+  },
+  '2b89896eb40ef2cdefce886924aa7da22a8e42b6': {
+    name: '🌚 dark/state/primaryWash/disabled',
+    dark: '2b89896eb40ef2cdefce886924aa7da22a8e42b6',
+    light: 'a28f5089abd22cafe15594f8cd5a4cacb95e1d6c',
+  },
+  // Pressed
+  ba7f64beaa3425ee0fd061b2a8c622121c9eb773: {
+    name: '🌞 light/state/primaryWash/pressed',
+    light: 'ba7f64beaa3425ee0fd061b2a8c622121c9eb773',
+    dark: '543bdd0eceebdfa122ade1d24da3bf63a1cb87f9',
+  },
+  '543bdd0eceebdfa122ade1d24da3bf63a1cb87f9': {
+    name: '🌚 dark/state/primaryWash/pressed',
+    dark: '543bdd0eceebdfa122ade1d24da3bf63a1cb87f9',
+    light: 'ba7f64beaa3425ee0fd061b2a8c622121c9eb773',
+  },
+  // Hovered
+  '44405345842cee963d10f1d71da9297760f741bf': {
+    name: '🌞 light/state/primaryWash/hovered',
+    light: '44405345842cee963d10f1d71da9297760f741bf',
+    dark: 'be526e6af1aba349d8c3603865567f09842699a3',
+  },
+  be526e6af1aba349d8c3603865567f09842699a3: {
+    name: '🌚 dark/state/primaryWash/hovered',
+    dark: 'be526e6af1aba349d8c3603865567f09842699a3',
+    light: '44405345842cee963d10f1d71da9297760f741bf',
+  },
+};
+
+const primaryForeground = {
+  bfc296b12cf3e8c32e228049efd3b4811e8a1c6b: {
+    dark: 'd8342838acb761cafe43496c641e80b5cce56c1b',
+    light: 'bfc296b12cf3e8c32e228049efd3b4811e8a1c6b',
+    name: '🌞 light/palette/primaryForeground',
+  },
+  d8342838acb761cafe43496c641e80b5cce56c1b: {
+    dark: 'd8342838acb761cafe43496c641e80b5cce56c1b',
+    light: 'bfc296b12cf3e8c32e228049efd3b4811e8a1c6b',
+    name: '🌚 dark/palette/primaryForeground',
+  },
+};
+
+const negative = {
+  '8040f19b47c354e070cd65889410897f19d88804': {
+    dark: 'b51584205cab75b71082a47259a353ab826bed1b',
+    light: '8040f19b47c354e070cd65889410897f19d88804',
+    name: '🌞 light/palette/negative',
+  },
+  b51584205cab75b71082a47259a353ab826bed1b: {
+    dark: 'b51584205cab75b71082a47259a353ab826bed1b',
+    light: '8040f19b47c354e070cd65889410897f19d88804',
+    name: '🌚 dark/palette/negative',
+  },
+  // Disabled
+  '9698ade314cd653d4c803894f3d6c97e2c89cfb6': {
+    name: '🌞 light/state/negative/disabled',
+    light: '9698ade314cd653d4c803894f3d6c97e2c89cfb6',
+    dark: 'eabf36b5e01a8eae4851de164dd0a07ac806a9ff',
+  },
+  eabf36b5e01a8eae4851de164dd0a07ac806a9ff: {
+    name: '🌚 dark/state/negative/disabled',
+    dark: 'eabf36b5e01a8eae4851de164dd0a07ac806a9ff',
+    light: '9698ade314cd653d4c803894f3d6c97e2c89cfb6',
+  },
+  // Pressed
+  '818a9ecae15266eac7897dfce13c40d7b8b6ac59': {
+    name: '🌞 light/state/negative/pressed',
+    light: '818a9ecae15266eac7897dfce13c40d7b8b6ac59',
+    dark: '6983639f5b419d6755992635135750a0181a53cc',
+  },
+  '6983639f5b419d6755992635135750a0181a53cc': {
+    name: '🌚 dark/state/negative/pressed',
+    dark: '6983639f5b419d6755992635135750a0181a53cc',
+    light: '818a9ecae15266eac7897dfce13c40d7b8b6ac59',
+  },
+  // Hovered
+  ecac9b15fb440c28a49bdd03c79d3b8757cb7e5d: {
+    name: '🌞 light/state/negative/hovered',
+    light: 'ecac9b15fb440c28a49bdd03c79d3b8757cb7e5d',
+    dark: '347e4380b57521d5c1464dbe0694f2d314b029a3',
+  },
+  '347e4380b57521d5c1464dbe0694f2d314b029a3': {
+    name: '🌚 dark/state/negative/hovered',
+    dark: '347e4380b57521d5c1464dbe0694f2d314b029a3',
+    light: 'ecac9b15fb440c28a49bdd03c79d3b8757cb7e5d',
+  },
+};
+
+const negativeForeground = {
+  '7f9aaa172e762c20c5e13b737295d1ee4cf569fb': {
+    dark: '3aae66a1331afb0a3f8100c7656954ad9d4711ec',
+    light: '7f9aaa172e762c20c5e13b737295d1ee4cf569fb',
+    name: '🌞 light/palette/negativeForeground',
+  },
+
+  '3aae66a1331afb0a3f8100c7656954ad9d4711ec': {
+    dark: '3aae66a1331afb0a3f8100c7656954ad9d4711ec',
+    light: '7f9aaa172e762c20c5e13b737295d1ee4cf569fb',
+    name: '🌚 dark/palette/negativeForeground',
+  },
+};
+
+const positive = {
+  a07ac0da3ce9d7c5bef0720e7a49a837fbd815d5: {
+    dark: '262b4448a2e209cbb61f065605605914626358d1',
+    light: 'a07ac0da3ce9d7c5bef0720e7a49a837fbd815d5',
+    name: '🌞 light/palette/positive',
+  },
+  '262b4448a2e209cbb61f065605605914626358d1': {
+    dark: '262b4448a2e209cbb61f065605605914626358d1',
+    light: 'a07ac0da3ce9d7c5bef0720e7a49a837fbd815d5',
+    name: '🌚 dark/palette/positive',
+  },
+  // Disabled
+  '26551fe841b327fa657e4bcbe13e988e109e3dee': {
+    name: '🌞 light/state/positive/disabled',
+    light: '26551fe841b327fa657e4bcbe13e988e109e3dee',
+    dark: 'ddd07e5435c507616af0d560be13ba39353576c3',
+  },
+  ddd07e5435c507616af0d560be13ba39353576c3: {
+    name: '🌚 dark/state/positive/disabled',
+    dark: 'ddd07e5435c507616af0d560be13ba39353576c3',
+    light: '26551fe841b327fa657e4bcbe13e988e109e3dee',
+  },
+  // Pressed
+  '43acf585bfe8ef8bdbed544bdf38585b6303f74f': {
+    name: '🌞 light/state/positive/pressed',
+    light: '43acf585bfe8ef8bdbed544bdf38585b6303f74f',
+    dark: 'c0bd275e53d62b95be530beb310dd7a20f8e3ad2',
+  },
+  c0bd275e53d62b95be530beb310dd7a20f8e3ad2: {
+    name: '🌚 dark/state/positive/pressed',
+    dark: 'c0bd275e53d62b95be530beb310dd7a20f8e3ad2',
+    light: '43acf585bfe8ef8bdbed544bdf38585b6303f74f',
+  },
+  // Hovered
+  ee12300c5939ae14edf9f6daac4b790c85e6e289: {
+    name: '🌞 light/state/positive/hovered',
+    light: 'ee12300c5939ae14edf9f6daac4b790c85e6e289',
+    dark: 'c74a961d3e62ebf41eeadae7318fed4be669278c',
+  },
+  c74a961d3e62ebf41eeadae7318fed4be669278c: {
+    name: '🌚 dark/state/positive/hovered',
+    dark: 'c74a961d3e62ebf41eeadae7318fed4be669278c',
+    light: 'ee12300c5939ae14edf9f6daac4b790c85e6e289',
+  },
+};
+
+const positiveForeground = {
+  fb55b0280fe9ea4f790ffe2712c2f5818cec1cd3: {
+    dark: '248acd05cf60490958e4a624d028af948de6fd32',
+    light: 'fb55b0280fe9ea4f790ffe2712c2f5818cec1cd3',
+    name: '🌞 light/palette/positiveForeground',
+  },
+  '248acd05cf60490958e4a624d028af948de6fd32': {
+    dark: '248acd05cf60490958e4a624d028af948de6fd32',
+    light: 'fb55b0280fe9ea4f790ffe2712c2f5818cec1cd3',
+    name: '🌚 dark/palette/positiveForeground',
+  },
+};
+
+const secondary = {
+  '27add43cf7ec027579f06ccf150f3a154ffa6e4d': {
+    dark: 'bcf073bcfa151d2424bbeda46d876df8812f0864',
+    light: '27add43cf7ec027579f06ccf150f3a154ffa6e4d',
+    name: '🌞 light/palette/secondary',
+  },
+  bcf073bcfa151d2424bbeda46d876df8812f0864: {
+    dark: 'bcf073bcfa151d2424bbeda46d876df8812f0864',
+    light: '27add43cf7ec027579f06ccf150f3a154ffa6e4d',
+    name: '🌚 dark/palette/secondary',
+  },
+  // Disabled
+  '239c7c2543b488ebd383cfdbfb301e9ff00430e5': {
+    name: '🌞 light/state/secondary/disabled',
+    light: '239c7c2543b488ebd383cfdbfb301e9ff00430e5',
+    dark: '4f302a515853a2900587a6670a5455301c469ebe',
+  },
+  '4f302a515853a2900587a6670a5455301c469ebe': {
+    name: '🌚 dark/state/secondary/disabled',
+    dark: '4f302a515853a2900587a6670a5455301c469ebe',
+    light: '239c7c2543b488ebd383cfdbfb301e9ff00430e5',
+  },
+  // Pressed
+  '81ab0c4ce42964b5dd92ae35f0782336eeaadd95': {
+    name: '🌞 light/state/secondary/pressed',
+    light: '81ab0c4ce42964b5dd92ae35f0782336eeaadd95',
+    dark: '1fce25deb01e85af9cd9cd08e95d01e8e003a10b',
+  },
+  '1fce25deb01e85af9cd9cd08e95d01e8e003a10b': {
+    name: '🌚 dark/state/secondary/pressed',
+    dark: '1fce25deb01e85af9cd9cd08e95d01e8e003a10b',
+    light: '81ab0c4ce42964b5dd92ae35f0782336eeaadd95',
+  },
+  // Hovered
+  '76c6eb77eaa5baa15ba73508b1ab84046ca0f379': {
+    name: '🌞 light/state/secondary/hovered',
+    light: '76c6eb77eaa5baa15ba73508b1ab84046ca0f379',
+    dark: '77fe1a175602fd5d4fd05452c28dc66adf13d336',
+  },
+  '77fe1a175602fd5d4fd05452c28dc66adf13d336': {
+    name: '🌚 dark/state/secondary/hovered',
+    dark: '77fe1a175602fd5d4fd05452c28dc66adf13d336',
+    light: '76c6eb77eaa5baa15ba73508b1ab84046ca0f379',
+  },
+};
+
+const secondaryForeground = {
+  b94294b5520ccad016e510871bbb99767d375af7: {
+    dark: '2098a9b877e0f7ca8e3ede5e81c1503dfda58a1b',
+    light: 'b94294b5520ccad016e510871bbb99767d375af7',
+    name: '🌞 light/palette/secondaryForeground',
+  },
+  '2098a9b877e0f7ca8e3ede5e81c1503dfda58a1b': {
+    dark: '2098a9b877e0f7ca8e3ede5e81c1503dfda58a1b',
+    light: 'b94294b5520ccad016e510871bbb99767d375af7',
+    name: '🌚 dark/palette/secondaryForeground',
+  },
+};
+
+const elevation1 = {
+  e7db4690698b122ce2028f052615f7576de34415: {
+    dark: '0b3c5081b2bf7cc25093ade19d88896137e07c2f',
+    light: 'e7db4690698b122ce2028f052615f7576de34415',
+    name: '🌞 light/elevation/level 1',
+  },
+  '0b3c5081b2bf7cc25093ade19d88896137e07c2f': {
+    dark: '0b3c5081b2bf7cc25093ade19d88896137e07c2f',
+    light: 'e7db4690698b122ce2028f052615f7576de34415',
+    name: '🌚 dark/elevation/level 1',
+  },
+};
+
+const elevation2 = {
+  '609dc465ce1bf15dbdbe948dddbb97c4ba2eb74b': {
+    dark: '4f611f42077922d58b87bcf2a3aba6506da479b6',
+    light: '609dc465ce1bf15dbdbe948dddbb97c4ba2eb74b',
+    name: '🌞 light/elevation/level 2',
+  },
+  '4f611f42077922d58b87bcf2a3aba6506da479b6': {
+    dark: '4f611f42077922d58b87bcf2a3aba6506da479b6',
+    light: '609dc465ce1bf15dbdbe948dddbb97c4ba2eb74b',
+    name: '🌚 dark/elevation/level 2',
+  },
+};
+
+const fade = {
+  '061ed6711ac20f7736c233f965f2a421d1a1fdf0': {
+    name: '🌞 light/palette/fade',
+    light: '061ed6711ac20f7736c233f965f2a421d1a1fdf0',
+    dark: '8c6279044e2508f34323cee64065b290b93ee445',
+  },
+  '8c6279044e2508f34323cee64065b290b93ee445': {
+    name: '🌚 dark/palette/fade',
+    light: '061ed6711ac20f7736c233f965f2a421d1a1fdf0',
+    dark: '8c6279044e2508f34323cee64065b290b93ee445',
+  },
+};
+
 export const colorStyles = {
-  ...stateStyles,
+  ...background,
+  ...backgroundAlternate,
+  ...foreground,
+  ...foregroundMuted,
+  ...backgroundOverlay,
+  ...line,
+  ...lineHeavy,
+  ...primary,
+  ...primaryWash,
+  ...primaryForeground,
+  ...negative,
+  ...negativeForeground,
+  ...positive,
+  ...positiveForeground,
+  ...secondary,
+  ...secondaryForeground,
+  ...elevation1,
+  ...elevation2,
+  ...fade,
   '7b814914df5017035fe710cfc92da21af44457c0': {
     dark: '1bfcf6fed15427759c74e58ac468b3e4a26f087c',
     light: '7b814914df5017035fe710cfc92da21af44457c0',
@@ -1314,142 +1603,6 @@ export const colorStyles = {
     spectrum: 'light',
     type: 'color',
   },
-  '27c82d6be9eda867d057886c01acd280474c1919': {
-    dark: 'e741bd0adda253caadcd027bf14009d16e80675d',
-    light: '27c82d6be9eda867d057886c01acd280474c1919',
-    name: '🌞 light/palette/foreground',
-    paletteAlias: 'foreground',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  c790ec72436570c85a8b34009ea1e068b6745c24: {
-    dark: '501f9fb97bc263ed4d06747f305f2f7ca8a71217',
-    light: 'c790ec72436570c85a8b34009ea1e068b6745c24',
-    name: '🌞 light/palette/foregroundMuted',
-    paletteAlias: 'foregroundMuted',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  '0a5f5fb912205eac74fb0aba173a02b703450591': {
-    dark: '86f0b0e8f0b5233052adc9082ab028614707226f',
-    light: '0a5f5fb912205eac74fb0aba173a02b703450591',
-    name: '🌞 light/palette/background',
-    paletteAlias: 'background',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  a88d0d4b4a6425760475a954f1054ecd671a3ffb: {
-    dark: 'd11b2a9a4a88fc61e4ff596090b15947f7b32c5f',
-    light: 'a88d0d4b4a6425760475a954f1054ecd671a3ffb',
-    name: '🌞 light/palette/backgroundAlternate',
-    paletteAlias: 'backgroundAlternate',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  '27986058a885ed36ef26be03f20a99685d8aa6e5': {
-    dark: '61e7c95ade5b149b843af7ec651cd7d161139b1d',
-    light: '27986058a885ed36ef26be03f20a99685d8aa6e5',
-    name: '🌞 light/palette/backgroundOverlay',
-    paletteAlias: 'backgroundOverlay',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  '91b1c1ee4ab7e21370e71b9cf5730283337973a6': {
-    dark: 'bb9fb607cddcaabd0ac96d2ed2d586cdd7d0441f',
-    light: '91b1c1ee4ab7e21370e71b9cf5730283337973a6',
-    name: '🌞 light/palette/line',
-    paletteAlias: 'line',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  '45c17c07e231dc000fc45e363d20247f4ff30acb': {
-    dark: 'ace99a822e8d325b5cda2bff74a68502750c3cbe',
-    light: '45c17c07e231dc000fc45e363d20247f4ff30acb',
-    name: '🌞 light/palette/lineHeavy',
-    paletteAlias: 'lineHeavy',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  ed0d063355163cfb20e50abdd5412bfcb8c2cbc6: {
-    dark: '4ccf1fd7e1cef8a1650e18d6454f98e40c9d974b',
-    light: 'ed0d063355163cfb20e50abdd5412bfcb8c2cbc6',
-    name: '🌞 light/palette/primary',
-    paletteAlias: 'primary',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  cc624e90c131629a1e771385a9959d681c27b47e: {
-    dark: '697272267c05209e5c2648dda0142eff6966bad3',
-    light: 'cc624e90c131629a1e771385a9959d681c27b47e',
-    name: '🌞 light/palette/primaryWash',
-    paletteAlias: 'primaryWash',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  bfc296b12cf3e8c32e228049efd3b4811e8a1c6b: {
-    dark: 'd8342838acb761cafe43496c641e80b5cce56c1b',
-    light: 'bfc296b12cf3e8c32e228049efd3b4811e8a1c6b',
-    name: '🌞 light/palette/primaryForeground',
-    paletteAlias: 'primaryForeground',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  '8040f19b47c354e070cd65889410897f19d88804': {
-    dark: 'b51584205cab75b71082a47259a353ab826bed1b',
-    light: '8040f19b47c354e070cd65889410897f19d88804',
-    name: '🌞 light/palette/negative',
-    paletteAlias: 'negative',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  '7f9aaa172e762c20c5e13b737295d1ee4cf569fb': {
-    dark: '3aae66a1331afb0a3f8100c7656954ad9d4711ec',
-    light: '7f9aaa172e762c20c5e13b737295d1ee4cf569fb',
-    name: '🌞 light/palette/negativeForeground',
-    paletteAlias: 'negativeForeground',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  a07ac0da3ce9d7c5bef0720e7a49a837fbd815d5: {
-    dark: '262b4448a2e209cbb61f065605605914626358d1',
-    light: 'a07ac0da3ce9d7c5bef0720e7a49a837fbd815d5',
-    name: '🌞 light/palette/positive',
-    paletteAlias: 'positive',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  fb55b0280fe9ea4f790ffe2712c2f5818cec1cd3: {
-    dark: '248acd05cf60490958e4a624d028af948de6fd32',
-    light: 'fb55b0280fe9ea4f790ffe2712c2f5818cec1cd3',
-    name: '🌞 light/palette/positiveForeground',
-    paletteAlias: 'positiveForeground',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  '27add43cf7ec027579f06ccf150f3a154ffa6e4d': {
-    dark: 'bcf073bcfa151d2424bbeda46d876df8812f0864',
-    light: '27add43cf7ec027579f06ccf150f3a154ffa6e4d',
-    name: '🌞 light/palette/secondary',
-    paletteAlias: 'secondary',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  b94294b5520ccad016e510871bbb99767d375af7: {
-    dark: '2098a9b877e0f7ca8e3ede5e81c1503dfda58a1b',
-    light: 'b94294b5520ccad016e510871bbb99767d375af7',
-    name: '🌞 light/palette/secondaryForeground',
-    paletteAlias: 'secondaryForeground',
-    spectrum: 'light',
-    type: 'palette',
-  },
-  '5041e2558363af76699a16bac6f6347b3c571342': {
-    dark: '242085b21665b120548e287ec52d395def347636',
-    light: '5041e2558363af76699a16bac6f6347b3c571342',
-    name: '🌞 light/palette/transparent',
-    paletteAlias: 'transparent',
-    spectrum: 'light',
-    type: 'palette',
-  },
   '1bfcf6fed15427759c74e58ac468b3e4a26f087c': {
     dark: '1bfcf6fed15427759c74e58ac468b3e4a26f087c',
     light: '7b814914df5017035fe710cfc92da21af44457c0',
@@ -2489,162 +2642,6 @@ export const colorStyles = {
     paletteValue: 'teal100',
     spectrum: 'dark',
     type: 'color',
-  },
-  e741bd0adda253caadcd027bf14009d16e80675d: {
-    dark: 'e741bd0adda253caadcd027bf14009d16e80675d',
-    light: '27c82d6be9eda867d057886c01acd280474c1919',
-    name: '🌚 dark/palette/foreground',
-    paletteAlias: 'foreground',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  '501f9fb97bc263ed4d06747f305f2f7ca8a71217': {
-    dark: '501f9fb97bc263ed4d06747f305f2f7ca8a71217',
-    light: 'c790ec72436570c85a8b34009ea1e068b6745c24',
-    name: '🌚 dark/palette/foregroundMuted',
-    paletteAlias: 'foregroundMuted',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  '86f0b0e8f0b5233052adc9082ab028614707226f': {
-    dark: '86f0b0e8f0b5233052adc9082ab028614707226f',
-    light: '0a5f5fb912205eac74fb0aba173a02b703450591',
-    name: '🌚 dark/palette/background',
-    paletteAlias: 'background',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  d11b2a9a4a88fc61e4ff596090b15947f7b32c5f: {
-    dark: 'd11b2a9a4a88fc61e4ff596090b15947f7b32c5f',
-    light: 'a88d0d4b4a6425760475a954f1054ecd671a3ffb',
-    name: '🌚 dark/palette/backgroundAlternate',
-    paletteAlias: 'backgroundAlternate',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  '61e7c95ade5b149b843af7ec651cd7d161139b1d': {
-    dark: '61e7c95ade5b149b843af7ec651cd7d161139b1d',
-    light: '27986058a885ed36ef26be03f20a99685d8aa6e5',
-    name: '🌚 dark/palette/backgroundOverlay',
-    paletteAlias: 'backgroundOverlay',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  bb9fb607cddcaabd0ac96d2ed2d586cdd7d0441f: {
-    dark: 'bb9fb607cddcaabd0ac96d2ed2d586cdd7d0441f',
-    light: '91b1c1ee4ab7e21370e71b9cf5730283337973a6',
-    name: '🌚 dark/palette/line',
-    paletteAlias: 'line',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  ace99a822e8d325b5cda2bff74a68502750c3cbe: {
-    dark: 'ace99a822e8d325b5cda2bff74a68502750c3cbe',
-    light: '45c17c07e231dc000fc45e363d20247f4ff30acb',
-    name: '🌚 dark/palette/lineHeavy',
-    paletteAlias: 'lineHeavy',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  '4ccf1fd7e1cef8a1650e18d6454f98e40c9d974b': {
-    dark: '4ccf1fd7e1cef8a1650e18d6454f98e40c9d974b',
-    light: 'ed0d063355163cfb20e50abdd5412bfcb8c2cbc6',
-    name: '🌚 dark/palette/primary',
-    paletteAlias: 'primary',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  '697272267c05209e5c2648dda0142eff6966bad3': {
-    dark: '697272267c05209e5c2648dda0142eff6966bad3',
-    light: 'cc624e90c131629a1e771385a9959d681c27b47e',
-    name: '🌚 dark/palette/primaryWash',
-    paletteAlias: 'primaryWash',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  d8342838acb761cafe43496c641e80b5cce56c1b: {
-    dark: 'd8342838acb761cafe43496c641e80b5cce56c1b',
-    light: 'bfc296b12cf3e8c32e228049efd3b4811e8a1c6b',
-    name: '🌚 dark/palette/primaryForeground',
-    paletteAlias: 'primaryForeground',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  b51584205cab75b71082a47259a353ab826bed1b: {
-    dark: 'b51584205cab75b71082a47259a353ab826bed1b',
-    light: '8040f19b47c354e070cd65889410897f19d88804',
-    name: '🌚 dark/palette/negative',
-    paletteAlias: 'negative',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  '3aae66a1331afb0a3f8100c7656954ad9d4711ec': {
-    dark: '3aae66a1331afb0a3f8100c7656954ad9d4711ec',
-    light: '7f9aaa172e762c20c5e13b737295d1ee4cf569fb',
-    name: '🌚 dark/palette/negativeForeground',
-    paletteAlias: 'negativeForeground',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  '262b4448a2e209cbb61f065605605914626358d1': {
-    dark: '262b4448a2e209cbb61f065605605914626358d1',
-    light: 'a07ac0da3ce9d7c5bef0720e7a49a837fbd815d5',
-    name: '🌚 dark/palette/positive',
-    paletteAlias: 'positive',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  '248acd05cf60490958e4a624d028af948de6fd32': {
-    dark: '248acd05cf60490958e4a624d028af948de6fd32',
-    light: 'fb55b0280fe9ea4f790ffe2712c2f5818cec1cd3',
-    name: '🌚 dark/palette/positiveForeground',
-    paletteAlias: 'positiveForeground',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  bcf073bcfa151d2424bbeda46d876df8812f0864: {
-    dark: 'bcf073bcfa151d2424bbeda46d876df8812f0864',
-    light: '27add43cf7ec027579f06ccf150f3a154ffa6e4d',
-    name: '🌚 dark/palette/secondary',
-    paletteAlias: 'secondary',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  '2098a9b877e0f7ca8e3ede5e81c1503dfda58a1b': {
-    dark: '2098a9b877e0f7ca8e3ede5e81c1503dfda58a1b',
-    light: 'b94294b5520ccad016e510871bbb99767d375af7',
-    name: '🌚 dark/palette/secondaryForeground',
-    paletteAlias: 'secondaryForeground',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  '242085b21665b120548e287ec52d395def347636': {
-    dark: '242085b21665b120548e287ec52d395def347636',
-    light: '5041e2558363af76699a16bac6f6347b3c571342',
-    name: '🌚 dark/palette/transparent',
-    paletteAlias: 'transparent',
-    spectrum: 'dark',
-    type: 'palette',
-  },
-  e7db4690698b122ce2028f052615f7576de34415: {
-    dark: '0b3c5081b2bf7cc25093ade19d88896137e07c2f',
-    light: 'e7db4690698b122ce2028f052615f7576de34415',
-    name: '🌞 light/elevation/level 1',
-  },
-  '0b3c5081b2bf7cc25093ade19d88896137e07c2f': {
-    dark: '0b3c5081b2bf7cc25093ade19d88896137e07c2f',
-    light: 'e7db4690698b122ce2028f052615f7576de34415',
-    name: '🌚 dark/elevation/level 1',
-  },
-  '609dc465ce1bf15dbdbe948dddbb97c4ba2eb74b': {
-    dark: '4f611f42077922d58b87bcf2a3aba6506da479b6',
-    light: '609dc465ce1bf15dbdbe948dddbb97c4ba2eb74b',
-    name: '🌞 light/elevation/level 2',
-  },
-  '4f611f42077922d58b87bcf2a3aba6506da479b6': {
-    dark: '4f611f42077922d58b87bcf2a3aba6506da479b6',
-    light: '609dc465ce1bf15dbdbe948dddbb97c4ba2eb74b',
-    name: '🌚 dark/elevation/level 2',
   },
 };
 
