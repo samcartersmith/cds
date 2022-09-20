@@ -101,6 +101,7 @@ import { SparklineArea } from '@cbhq/cds-web/visualizations/SparklineArea';
 import { ButtonSheet } from ':cds-website/components/ButtonSheet';
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleBox } from ':cds-website/components/ExampleBox';
+import { nftData, nftTagNames, NFTTile } from ':cds-website/components/NFTGridExample';
 import { PaletteSheet } from ':cds-website/components/PaletteSheet';
 import { ResponsiveExample } from ':cds-website/components/ResponsiveExample';
 import { TypographySheet } from ':cds-website/components/TypographySheet';
@@ -241,6 +242,9 @@ const ReactLiveScope: unknown = {
   UserSwitcherContent,
   insetFocusRing,
   BrowserOnly,
+  nftData,
+  NFTTile,
+  nftTagNames,
 };
 
 export default ReactLiveScope;
