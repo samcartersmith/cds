@@ -17,6 +17,7 @@
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
+      "outputs": [".nx/dist/packages/utils"],
       "options": {
         "destinationDir": ".nx/dist/packages/utils",
         "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],

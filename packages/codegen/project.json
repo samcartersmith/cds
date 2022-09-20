@@ -16,7 +16,27 @@
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
     },
-    "codegen": {
+    "icons": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "packages/codegen",
+        "commands": [
+          "ts-node ./icons/syncSvgsFromFigma.ts",
+          "svgo ../common/internal/data/iconSvgs/*.svg --config=configs/svgo.config.js",
+          "ts-node ./icons/build.ts"
+        ],
+        "parallel": false
+      }
+    },
+    "illustrations": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "packages/codegen",
+        "commands": ["ts-node ./illustrations/build.ts", "nx run codegen:format"],
+        "parallel": false
+      }
+    },
+    "all": {
       "executor": "@cbhq/mono-tasks:run-script",
       "options": {
         "script": "./main.ts"
@@ -29,38 +49,18 @@
         "args": ["--packages=fonts|web|lottie-files|mobile|utils|common"]
       }
     },
-    "sync_icons": {
-      "executor": "@cbhq/mono-tasks:run-script",
+    "mobile-routes": {
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "script": "./icons/syncSvgsFromFigma.ts"
+        "cwd": "packages/codegen",
+        "commands": [
+          "ts-node ./playground/prepareRoutes.ts",
+          "ts-node ./playground/prepareNewRoutes.ts"
+        ],
+        "parallel": true
       }
     },
-    "build_icons": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "options": {
-        "script": "./icons/build.ts"
-      }
-    },
-    "build_illustrations": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "options": {
-        "script": "./illustrations/build.ts"
-      }
-    },
-    "prepare_new_mobile_routes": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "options": {
-        "script": "./playground/prepareNewRoutes.ts"
-      }
-    },
-    "prepare_mobile_routes": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "options": {
-        "script": "./playground/prepareRoutes.ts"
-      },
-      "dependsOn": [{ "target": "prepare_new_mobile_routes", "projects": "self" }]
-    },
-    "prepare_adoption": {
+    "adoption": {
       "executor": "@cbhq/mono-tasks:run-script",
       "options": {
         "script": "./adoption/prepare.ts",
@@ -69,18 +69,6 @@
           "abort-on-uncaught-exception": true,
           "max-old-space-size": 4096
         }
-      }
-    },
-    "debug_adoption": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "options": {
-        "script": "./adoption/prepare.ts",
-        "NODE_OPTIONS": {
-          "trace-deprecation": true,
-          "abort-on-uncaught-exception": true,
-          "max-old-space-size": 4096
-        },
-        "debug": true
       }
     }
   }

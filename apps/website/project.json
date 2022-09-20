@@ -3,6 +3,19 @@
   "sourceRoot": "apps/website",
   "projectType": "application",
   "targets": {
+    "start": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "apps/website",
+        "commands": [
+          "nx run docusaurus-plugin-docgen:watch",
+          "nx run docusaurus-plugin-kbar:watch",
+          "nx run docusaurus-theme:watch",
+          "nx run docusaurus-preset:watch",
+          "docusaurus start --port 3000"
+        ]
+      }
+    },
     "build": {
       "executor": "@cbhq/mono-tasks:build-docusaurus"
     },

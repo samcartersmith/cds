@@ -15,6 +15,7 @@
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
+      "outputs": ["{projectRoot}/dist"],
       "options": {
         "destinationDir": "packages/web-utils/dist",
         "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],

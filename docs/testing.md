@@ -4,18 +4,40 @@ When you build anything at CDS, you should at least create 1 test case for each 
 
 ## **Running Test Cases**
 
-**Test Mobile**: To run tests on mobile, run the command `yarn mobile test`.
+**Test Mobile**: To run tests on mobile, run the command `yarn nx run mobile:test`.
 
-**Test Web**: To run tests on web, run the command `yarn web test`.
+**Test Web**: To run tests on web, run the command `yarn nx run web:test`.
 
-**Both**: You can run all tests by running the command `yarn test`
+**Both**: You can run all tests by running the command `yarn nx affected --target=test`
 
-By default, these commands will run every test that exist. You can configure it such that it only run tests that you care about.
+## Test individual file(s)
+
+By default, these commands will run every test that exist. You can configure it such that it only run tests that you care with the following syntax.
+
+```
+yarn nx run web:test --file <file name>
+```
+
+Example
+
+```
+yarn nx run web:test --file packages/web/layout/__tests__/Box.test.tsx
+```
+
+## Watch mode
+
+To run test in watch mode you can add `--watch` args
+
+Example
+
+```
+yarn nx run web:test --file packages/web/layout/__tests__/Box.test.tsx --watch
+```
 
 ## **Testing Locally on external projects**
 
-- Build your project and any dependencies of that project with `yarn run build`.
-- The output of the packages above will be in `.nx/dist/packages`. For example, `cds-mobile` would be in `.nx/dist/packages/mobile`
+- Build your project and any dependencies of that project with `yarn nx run affected --target=build`.
+- The output of the packages above will be in `.nx/dist/packages` or `packages/<package name>/lib`. This output path varies depending on setup. The package.json > main field should show where the transpiled files are output to. For example, `cds-mobile` would be in `.nx/dist/packages/mobile`
 - Copy the absolute path to your package
 - In the external project add to dependencies and resolution portion of package.json to guarantee everything is pulling from your local packages:
 

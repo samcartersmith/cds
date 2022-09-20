@@ -10,7 +10,7 @@ Now lets release the illustrations:
 
 1. Checkout a branch called `<lastName>/illos-mm-dd-yyyy` with pr title `[trivial] chore(Illustrations): Publish illustrations mm/ddyyyy`. [Exmaple for titling](https://github.cbhq.net/frontend/cds/pull/1108)
 
-2. Run `yarn codegen illustrations`
+2. Run `yarn nx run codegen:illustrations`
 3. Verify that the generated illustrations match what is in the illustrations section at [go/icon-illo-release-history](https://docs.google.com/document/d/19N5EpYixyttCbmi2pbO0DsC0waL14v77MrwR7OQrwJQ/edit#heading=h.v54y1yynd69b)
 4. Next you need to deploy the assets. Run `cd packages/codegen/illustrations` because the script expects this to be the cwd (current working directory).
 5. Run `./uploadToStaticAssets.sh` to upload the images

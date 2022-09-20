@@ -171,6 +171,6 @@ steps:
           - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
           - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
           - cd apps/mobile-playground
-          - yarn visreg:finalize
+          - $(yarn bin percy) build:finalize
         agents:
           queue: macos-metal

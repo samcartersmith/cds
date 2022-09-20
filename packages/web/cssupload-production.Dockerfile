@@ -11,8 +11,6 @@ RUN yarn --immutable
 
 # Build the app with nx
 ENV NODE_ENV=production
-RUN yarn nx run fonts:build
-RUN yarn nx run web:build
 RUN yarn nx run web:build-css
 
 # Zip the app for deploy

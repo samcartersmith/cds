@@ -7,6 +7,18 @@
       "executor": "@cbhq/cds-tools:build-docusaurus-plugin",
       "options": {
         "postbuild": "./scripts/postbuild.ts"
+      },
+      "outputs": ["{projectRoot}/lib"]
+    },
+    "watch": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "packages/docusaurus-theme",
+        "commands": [
+          "yarn docusaurus-plugin watch",
+          "nodemon --watch 'src/**/*.ts' --watch 'src/**/*.tsx' --exec ts-node ./scripts/postbuild.ts"
+        ],
+        "parallel": true
       }
     },
     "format": {

@@ -5,7 +5,7 @@
   "targets": {
     "start-android": {
       "executor": "@cbhq/mono-tasks-mobile:start-android",
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "^mobile-routes"]
     },
     "build-android": {
       "executor": "@cbhq/mono-tasks-mobile:build-android",
@@ -13,7 +13,7 @@
     },
     "start-ios": {
       "executor": "@cbhq/mono-tasks-mobile:start-ios",
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "^mobile-routes"]
     },
     "build-ios": {
       "executor": "@cbhq/mono-tasks-mobile:build-ios",

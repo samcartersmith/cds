@@ -8,11 +8,6 @@
   ],
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "authors": "Coinbase",
-  "scripts": {
-    "build": "yarn docusaurus-plugin build && ts-node ./scripts/postbuild.ts",
-    "watch": "concurrently \"yarn docusaurus-plugin watch\" \"nodemon --watch 'src/**/*.ts' --watch 'src/**/*.tsx' --exec ts-node ./scripts/postbuild.ts\"",
-    "test": "jest"
-  },
   "dependencies": {
     "@cb/cms": "^0.1.4",
     "@cbhq/cds-web": "workspace:*",

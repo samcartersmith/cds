@@ -4,6 +4,9 @@
   "projectType": "library",
   "tags": [],
   "targets": {
+    "start": {
+      "executor": "@cbhq/mono-tasks:start-storybook"
+    },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
     },

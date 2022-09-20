@@ -10,12 +10,6 @@
   ],
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "authors": "Coinbase",
-  "scripts": {
-    "debug": "node ./lib/scripts/debug.js",
-    "build": "yarn docusaurus-plugin build",
-    "watch": "yarn docusaurus-plugin watch",
-    "test": "jest"
-  },
   "dependencies": {
     "@cbhq/eslint-plugin": "^1.5.0",
     "@docusaurus/logger": "^2.0.0-beta.20",

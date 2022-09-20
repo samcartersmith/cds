@@ -9,13 +9,6 @@
     "lottie files",
     "animations"
   ],
-  "scripts": {
-    "build": "nx run lottie-files:build",
-    "format": "nx run lottie-files:format",
-    "lint": "nx run lottie-files:lint",
-    "lint.fix": "nx run lottie-files:lint --fix",
-    "typecheck": "nx run lottie-files:typecheck"
-  },
   "main": "./index",
   "typings": "index.d.ts",
   "react-native": "./index.ts",

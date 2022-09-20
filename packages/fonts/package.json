@@ -12,13 +12,5 @@
   "main": "./index",
   "devDependencies": {
     "@cbhq/cds-tools": "workspace:*"
-  },
-  "scripts": {
-    "build": "yarn nx run fonts:build",
-    "lint": "yarn nx run fonts:lint",
-    "lint.fix": "yarn nx run fonts:lint --fix",
-    "stylelint": "yarn nx run fonts:lint-styles",
-    "stylelint.fix": "yarn nx run fonts:lint-styles --fix",
-    "typecheck": "yarn nx run fonts:typecheck"
   }
 }

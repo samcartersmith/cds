@@ -4,7 +4,22 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@cbhq/cds-tools:build-docusaurus-plugin"
+      "executor": "@cbhq/cds-tools:build-docusaurus-plugin",
+      "outputs": ["{projectRoot}/lib"]
+    },
+    "debug": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "packages/docusaurus-plugin-docgen",
+        "commands": ["node /lib/scripts/debug.js"]
+      }
+    },
+    "watch": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "packages/docusaurus-plugin-docgen",
+        "commands": ["yarn docusaurus-plugin watch"]
+      }
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

@@ -28,6 +28,8 @@
         "cacheableOperations": [
           "a11y",
           "build",
+          "build-css",
+          "build-esm",
           "lint",
           "lint-styles",
           "test",

@@ -21,6 +21,7 @@
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
+      "outputs": [".nx/dist/packages/web"],
       "options": {
         "destinationDir": ".nx/dist/packages/web",
         "staticFilesToIgnore": [
@@ -42,17 +43,13 @@
           "**/*.stories.tsx",
           "storybook-decorators"
         ],
-        "typescriptConfig": "packages/web/tsconfig.build.json"
-      },
-      "dependsOn": [
-        {
-          "target": "build-esm",
-          "projects": "self"
-        }
-      ]
+        "typescriptConfig": "packages/web/tsconfig.build.json",
+        "dependsOn": ["^build", "build-esm"]
+      }
     },
     "build-esm": {
       "executor": "@cbhq/cds-tools:build-package-esm",
+      "outputs": [".nx/dist/packages/web-esm"],
       "options": {
         "destinationDir": ".nx/dist/packages/web-esm",
         "staticFilesToIgnore": [
@@ -78,12 +75,7 @@
         "fontsOutputDir": "packages/fonts",
         "maxFileSizeInKb": 115
       },
-      "dependsOn": [
-        {
-          "target": "build",
-          "projects": "dependencies"
-        }
-      ]
+      "dependsOn": ["^build"]
     },
     "run-percy": {
       "executor": "@cbhq/cds-tools:run-conditional",
@@ -94,11 +86,13 @@
     },
     "build-css": {
       "executor": "@cbhq/cds-tools:build-css",
+      "outputs": [".nx/dist/cloud/css"],
       "options": {
         "fontsOutputDir": ".nx/dist/packages/fonts",
         "webOutputDir": ".nx/dist/packages/web",
         "outputDir": ".nx/dist/cloud/css"
-      }
+      },
+      "dependsOn": ["build"]
     }
   }
 }

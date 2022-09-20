@@ -2,19 +2,11 @@
   "name": "@cds/storybook",
   "version": "0.0.0",
   "scripts": {
-    "build": "nx run storybook:build",
-    "lint": "nx run storybook:lint",
-    "lint.fix": "nx run storybook:lint --fix",
-    "start": "start-storybook -p 6006",
-    "stylelint": "nx run storybook:lint-styles",
-    "stylelint.fix": "nx run storybook:lint-styles --fix",
-    "typecheck": "nx run storybook:typecheck",
-    "a11y": "nx run storybook:a11y",
     "a11y.report": "nx run storybook:a11y --report"
   },
   "dependencies": {
-    "@cbhq/cds-fonts": "workspace:*",
-    "@cbhq/cds-web": "workspace:*",
+    "@cbhq/cds-fonts": "workspace:^",
+    "@cbhq/cds-web": "workspace:^",
     "@juggle/resize-observer": "^3.4.0"
   },
   "peerDependencies": {
@@ -22,8 +14,8 @@
     "react-dom": ">=17.0.0"
   },
   "devDependencies": {
-    "@cbhq/cds-tools": "workspace:*",
-    "@cbhq/cds-web-utils": "workspace:*",
+    "@cbhq/cds-tools": "workspace:^",
+    "@cbhq/cds-web-utils": "workspace:^",
     "@percy/cli": "^1.10.0",
     "@percy/storybook": "^4.3.0",
     "@storybook/addon-a11y": "6.3.13",

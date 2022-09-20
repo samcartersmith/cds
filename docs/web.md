@@ -5,7 +5,7 @@
 Please run codegen before running anything else to create necessary code including icons.
 
 ```
-yarn codegen all
+yarn nx run codegen:all
 ```
 
 ## CDS-Web Development Workflow
@@ -19,13 +19,13 @@ Storybook is the best place to add and iterate on new CDS components for web. Th
 ### Run Storybook Local Dev Server
 
 ```bash
-yarn storybook start
+yarn nx run storybook:start
 ```
 
 ### Build Storybook
 
 ```bash
-yarn storybook build
+yarn nx run storybook:build
 ```
 
 ### Storybook Deployment

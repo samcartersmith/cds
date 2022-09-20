@@ -22,6 +22,7 @@
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
+      "outputs": [".nx/dist/packages/mobile"],
       "options": {
         "destinationDir": ".nx/dist/packages/mobile",
         "staticFilesToIgnore": [

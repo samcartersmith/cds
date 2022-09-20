@@ -79,7 +79,7 @@ module.exports = {
 
 ## Step 2. Start website
 
-- Run `yarn website start` to start the website and watch plugins.
+- Run `yarn nx run website:start` to start the website and watch plugins.
 - You will now have access to the API data for components in docgen.config.js.
 
 ## Step 3. Create mdx files
@@ -312,7 +312,7 @@ Docusaurus' implementation of the plugins system provides us with a convenient w
 
 Plugin code and theme code never directly import each other: they only communicate through protocols (in our case, through JSON temp files and calls to addRoute).
 
-When you run `yarn website start` you should see a [.docusaurus folder](../apps/website/.docusaurus). This is the `temp` directory the Docusaurus offers for plugins to output content to.
+When you run `yarn nx run website:start` you should see a [.docusaurus folder](../apps/website/.docusaurus). This is the `temp` directory the Docusaurus offers for plugins to output content to.
 
 ## Docgen plugin
 

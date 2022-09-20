@@ -17,20 +17,6 @@
     "globalStyles.js",
     "styles/global.js"
   ],
-  "scripts": {
-    "build": "nx run web:build",
-    "build.css": "nx run web:build-css",
-    "build.ssr": "CSS_BUILD=true nx run web:build",
-    "format": "nx run web:format",
-    "lint": "nx run web:lint",
-    "lint.fix": "nx run web:lint --fix",
-    "stylelint": "nx run web:lint-styles",
-    "stylelint.fix": "nx run web:lint-styles --fix",
-    "test": "jest",
-    "test.coverage": "jest --collect-coverage",
-    "test.watch": "jest --watch",
-    "typecheck": "nx run web:typecheck"
-  },
   "dependencies": {
     "@cbhq/cds-common": "workspace:*",
     "@cbhq/cds-fonts": "workspace:*",

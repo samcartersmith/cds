@@ -2235,7 +2235,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/cds-common@workspace:*, @cbhq/cds-common@workspace:packages/common":
+"@cbhq/cds-common@workspace:*, @cbhq/cds-common@workspace:^, @cbhq/cds-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-common@workspace:packages/common"
   dependencies:
@@ -2274,7 +2274,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-fonts@workspace:*, @cbhq/cds-fonts@workspace:packages/fonts":
+"@cbhq/cds-fonts@workspace:*, @cbhq/cds-fonts@workspace:^, @cbhq/cds-fonts@workspace:packages/fonts":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-fonts@workspace:packages/fonts"
   dependencies:
@@ -2332,7 +2332,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-tools@workspace:*, @cbhq/cds-tools@workspace:tools":
+"@cbhq/cds-tools@workspace:*, @cbhq/cds-tools@workspace:^, @cbhq/cds-tools@workspace:tools":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-tools@workspace:tools"
   languageName: unknown
@@ -2348,7 +2348,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-web-utils@workspace:*, @cbhq/cds-web-utils@workspace:packages/web-utils":
+"@cbhq/cds-web-utils@workspace:*, @cbhq/cds-web-utils@workspace:^, @cbhq/cds-web-utils@workspace:packages/web-utils":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-web-utils@workspace:packages/web-utils"
   dependencies:
@@ -2377,7 +2377,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-web@workspace:*, @cbhq/cds-web@workspace:packages/web":
+"@cbhq/cds-web@workspace:*, @cbhq/cds-web@workspace:^, @cbhq/cds-web@workspace:packages/web":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-web@workspace:packages/web"
   dependencies:
@@ -2472,7 +2472,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/docusaurus-preset@workspace:*, @cbhq/docusaurus-preset@workspace:packages/docusaurus-preset":
+"@cbhq/docusaurus-preset@workspace:^, @cbhq/docusaurus-preset@workspace:packages/docusaurus-preset":
   version: 0.0.0-use.local
   resolution: "@cbhq/docusaurus-preset@workspace:packages/docusaurus-preset"
   dependencies:
@@ -2789,7 +2789,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cds/codegen@workspace:packages/codegen":
+"@cds/codegen@workspace:^, @cds/codegen@workspace:packages/codegen":
   version: 0.0.0-use.local
   resolution: "@cds/codegen@workspace:packages/codegen"
   dependencies:
@@ -2815,6 +2815,7 @@ __metadata:
     "@cbhq/cds-mobile": "workspace:^"
     "@cbhq/detox-utils": ^0.2.3
     "@cbhq/ui-mobile-playground": "workspace:^"
+    "@cds/codegen": "workspace:^"
     "@percy/cli": ^1.2.1
     "@react-native-community/masked-view": ^0.1.10
     "@react-navigation/native": ^6.0.11
@@ -2843,10 +2844,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cds/storybook@workspace:apps/storybook"
   dependencies:
-    "@cbhq/cds-fonts": "workspace:*"
-    "@cbhq/cds-tools": "workspace:*"
-    "@cbhq/cds-web": "workspace:*"
-    "@cbhq/cds-web-utils": "workspace:*"
+    "@cbhq/cds-fonts": "workspace:^"
+    "@cbhq/cds-tools": "workspace:^"
+    "@cbhq/cds-web": "workspace:^"
+    "@cbhq/cds-web-utils": "workspace:^"
     "@juggle/resize-observer": ^3.4.0
     "@percy/cli": ^1.10.0
     "@percy/storybook": ^4.3.0
@@ -2883,9 +2884,9 @@ __metadata:
   resolution: "@cds/website@workspace:apps/website"
   dependencies:
     "@cb/cms": ^0.1.4
-    "@cbhq/cds-common": "workspace:*"
-    "@cbhq/cds-web": "workspace:*"
-    "@cbhq/docusaurus-preset": "workspace:*"
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-web": "workspace:^"
+    "@cbhq/docusaurus-preset": "workspace:^"
     "@docusaurus/core": 2.0.0-beta.18
     "@docusaurus/module-type-aliases": 2.0.0-beta.18
     "@linaria/babel-preset": ^3.0.0-beta.15

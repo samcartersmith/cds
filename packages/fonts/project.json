@@ -6,6 +6,7 @@
   "targets": {
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
+      "outputs": [".nx/dist/packages/fonts"],
       "options": {
         "destinationDir": ".nx/dist/packages/fonts",
         "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],

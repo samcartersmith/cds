@@ -9,14 +9,6 @@
   ],
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "authors": "Coinbase",
-  "scripts": {
-    "build": "nx run utils:build",
-    "format": "nx run utils:format",
-    "lint": "nx run utils:lint",
-    "lint.fix": "nx run utils:lint --fix",
-    "test": "jest",
-    "typecheck": "nx run utils:typecheck"
-  },
   "dependencies": {
     "humps": "^2.0.1",
     "type-fest": "^1.2.0"
