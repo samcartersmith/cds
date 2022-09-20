@@ -33,6 +33,7 @@ export const routes = {
   InputIcon: () => require('../controls/__stories__/InputIcon.stories').default,
   InputIconButton: () => require('../controls/__stories__/InputIconButton.stories').default,
   InputStack: () => require('../controls/__stories__/InputStack.stories').default,
+  LinearGradient: () => require('../gradients/__stories__/LinearGradient.stories').default,
   Link: () => require('../typography/__stories__/Link.stories').default,
   ListCell: () => require('../cells/__stories__/ListCell.stories').default,
   ListCellFallback: () => require('../cells/__stories__/ListCellFallback.stories').default,

@@ -1,8 +1,8 @@
 import React, { memo, useMemo } from 'react';
 import { StyleSheet, ViewStyle } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import { PinningDirection, SharedProps } from '@cbhq/cds-common';
 
+import { LinearGradient } from '../gradients/LinearGradient';
 import { usePalette } from '../hooks/usePalette';
 import { usePinStyles } from '../hooks/usePinStyles';
 

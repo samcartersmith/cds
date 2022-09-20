@@ -115,6 +115,10 @@ export const routes = [
     getComponent: () => require('../controls/__stories__/InputStack.stories').default,
   },
   {
+    key: 'LinearGradient',
+    getComponent: () => require('../gradients/__stories__/LinearGradient.stories').default,
+  },
+  {
     key: 'Link',
     getComponent: () => require('../typography/__stories__/Link.stories').default,
   },

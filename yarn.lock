@@ -2831,7 +2831,6 @@ __metadata:
     react-native-asset: ^2.0.1
     react-native-gesture-handler: ^2.5.0
     react-native-inappbrowser-reborn: ^3.6.3
-    react-native-linear-gradient: ^2.5.6
     react-native-navigation-bar-color: ^2.0.1
     react-native-reanimated: ^2.9.1
     react-native-safe-area-context: ^3.2.0
@@ -28559,16 +28558,6 @@ __metadata:
   peerDependencies:
     react-native: ">=0.55"
   checksum: 7848eff1dfdb219123303de1b62daa6ba7e669700506985b770cff542052fb70815627fb42e5c189f5a6c9f17c740d0067c0d917cd2fab883f1b860419a2496d
-  languageName: node
-  linkType: hard
-
-"react-native-linear-gradient@npm:^2.5.6":
-  version: 2.6.2
-  resolution: "react-native-linear-gradient@npm:2.6.2"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: dd0e27d3ddffa239d46919fd397f1ad68cdb6bcaa48c11ec9b01a0f54f0ad383f203a2245f2f06206e63aa4443fe7b2b1cc105ee262bf9a84ee62dabad6028ad
   languageName: node
   linkType: hard
 

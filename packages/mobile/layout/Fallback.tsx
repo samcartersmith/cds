@@ -1,11 +1,11 @@
 // Simplified version of https://github.com/tomzaku/react-native-shimmer-placeholder/blob/master/lib/ShimmerPlaceholder.js
 import React, { memo, useEffect, useMemo, useRef } from 'react';
 import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import { FallbackBaseProps } from '@cbhq/cds-common';
 import { useFallbackShape } from '@cbhq/cds-common/hooks/useFallbackShape';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 
+import { LinearGradient } from '../gradients/LinearGradient';
 import { fallbackShimmer } from '../styles/fallbackShimmer';
 
 import { Box, BoxProps } from './Box';
@@ -87,7 +87,7 @@ export const Fallback = memo(function Fallback({
             colors={shimmerColor}
             start={gradStart}
             end={gradEnd}
-            locations={gradLocations}
+            stops={gradLocations}
           />
         </Animated.View>
       </View>

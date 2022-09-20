@@ -1,7 +1,7 @@
 import { Animated, Text, View } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import { render, waitFor } from '@testing-library/react-native';
 
+import { LinearGradient } from '../../gradients/LinearGradient';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { Box as BoxComponent, BoxProps } from '../Box';
 

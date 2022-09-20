@@ -71,6 +71,14 @@ const BoxScreen = () => {
         </Box>
       </Example>
 
+      <Example title="Overflow Gradient">
+        <Box spacing={1} alignItems="flex-end" overflow="gradient" background="backgroundAlternate">
+          <TextBody>
+            Some large text that should fill the screen so we can see the gradient
+          </TextBody>
+        </Box>
+      </Example>
+
       <Example title="Opacity">
         <Box spacing={1} opacity={0.1} background="backgroundAlternate">
           <TextBody>Custom Opacity</TextBody>
