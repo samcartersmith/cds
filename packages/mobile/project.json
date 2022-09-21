@@ -18,7 +18,7 @@
     },
     "a11y": {
       "executor": "@cbhq/ui-mobile-a11y-engine:audit",
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "test"]
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",

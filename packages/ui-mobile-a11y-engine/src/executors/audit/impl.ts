@@ -10,7 +10,7 @@ type TestOptions = {
   debug?: boolean;
   file?: string[];
   serial?: boolean;
-  jestCoverageSummaryPath?: string;
+  includeZeroCoverageAudit?: boolean;
   auditComponentsMissingA11yCoverage?: boolean;
 };
 
@@ -113,10 +113,10 @@ function parseAst(sourceFile: ts.SourceFile) {
 const writeToProjectOutDir = (content: A11yLogType, task: Task) => {
   const jsonifyContent = JSON.stringify(content);
 
-  const logRootPath = `${task.projectRoot}/ui-mobile_a11y_engine_out`;
+  const logRootPath = `${task.cache.getOutputPath('coverage')}/ui-mobile_a11y_engine_out`;
   if (!fs.existsSync(logRootPath)) fs.mkdirSync(logRootPath);
 
-  fs.writeFileSync(`${logRootPath}/a11yLog-${content.timestamp}.json`, jsonifyContent);
+  fs.writeFileSync(`${logRootPath}/a11y-mobile-log-${content.timestamp}.json`, jsonifyContent);
 };
 
 /**
@@ -196,9 +196,10 @@ const getFiles = async (filters: string[] = []) => {
  * @param coverageSummaryFileLocation
  * @returns array of file paths, or 'unknown'
  */
-function auditZeroJestCoverage(coverageSummaryFileLocation: string): string[] | 'unknown' {
+function auditZeroJestCoverage(task: Task): string[] | 'unknown' {
+  const coveragePath = task.cache.getOutputPath('coverage').toString();
   const filesWithZeroCoverage: string[] = [];
-  const coverageSummaryData = getCoverageSummaryJSONData(coverageSummaryFileLocation);
+  const coverageSummaryData = getCoverageSummaryJSONData(`${coveragePath}/coverage-summary.json`);
 
   if (Object.keys(coverageSummaryData).length === 0) {
     return 'unknown';
@@ -351,7 +352,7 @@ async function auditA11yCoverage({
       // eslint-disable-next-line no-restricted-globals
       githubURL: process.env.BUILDKITE_REPO,
     },
-    componentsWithZeroCoverage: [],
+    componentsWithZeroCoverage: 'unknown',
     testsWithA11yCoverage: [],
     componentsMissingA11yCoverage: [],
   };
@@ -371,6 +372,7 @@ async function auditA11yCoverage({
       if (hasAccessibleTest) {
         a11yLog.totalNumberOfHasToBeAccessibleTests += 1;
 
+        // executes the jest test to capture failures & warnings
         const args = [...(jestConfigs as string[]), file];
 
         const execResult = await execa('jest', args, {
@@ -396,9 +398,9 @@ async function auditA11yCoverage({
           a11yLog.testDetails[file] = { success: true };
           a11yLog.testsWithA11yCoverage.push(file);
         }
-      } else {
-        a11yLog.unTestedFilePaths.push(file);
       }
+    } else {
+      a11yLog.unTestedFilePaths.push(file);
     }
   });
 
@@ -407,7 +409,7 @@ async function auditA11yCoverage({
   return a11yLog;
 }
 
-const test = createTask<TestOptions>('test', async (task, options) => {
+const test = createTask<TestOptions>('audit', async (task, options) => {
   const args: ArgsList = ['--color', '--passWithNoTests'];
 
   if (options.cache) {
@@ -439,8 +441,8 @@ const test = createTask<TestOptions>('test', async (task, options) => {
 
   const log = await auditA11yCoverage({ files: testFiles, task, jestConfigs: args });
 
-  if (options.jestCoverageSummaryPath) {
-    log.componentsWithZeroCoverage = auditZeroJestCoverage(options.jestCoverageSummaryPath);
+  if (options.includeZeroCoverageAudit) {
+    log.componentsWithZeroCoverage = auditZeroJestCoverage(task);
   }
 
   if (options.auditComponentsMissingA11yCoverage) {
@@ -459,6 +461,7 @@ const test = createTask<TestOptions>('test', async (task, options) => {
   }
 
   writeToProjectOutDir(log, task);
+
   return task.exec('echo', [`Finished auditing a11y log for ${task.projectName} workspace`]);
 });
 

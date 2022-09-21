@@ -74,12 +74,18 @@ steps:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci format
 
-  - label: Test
+  - label: Test & A11y
     <<: *shared_step
     parallelism: 1
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci test
+      - STORYBOOK_SKIP_ANIMATION=1 yarn mono-pipeline run-ci other --targets=a11y
+    plugins:
+      - file:///buildkite/plugins/docker:
+          <<: *docker_plugin
+          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16-chrome
+      - file:///buildkite/plugins/cache: *cache_plugin
 
   - label: Typecheck
     <<: *shared_step
@@ -87,23 +93,6 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci typecheck
-
-  - label: 'A11y'
-    <<: *shared_step
-    parallelism: 1
-    commands:
-      - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci other --targets=a11y
-    env:
-      STORYBOOK_SKIP_ANIMATION: true
-    plugins:
-      - file:///buildkite/plugins/docker:
-          <<: *docker_plugin
-          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16-chrome
-          environment:
-            - 'BUILDKITE_API_TOKEN'
-            - 'STORYBOOK_SKIP_ANIMATION'
-      - file:///buildkite/plugins/cache: *cache_plugin
 
   - label: 'Percy (Web)'
     <<: *shared_step
