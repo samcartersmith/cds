@@ -1,4 +1,4 @@
-import { Scale } from '@cbhq/cds-common';
+import type { Scale } from './scaleConfig';
 
 const dense = {
   checkboxSize: 16,

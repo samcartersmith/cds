@@ -2,7 +2,7 @@
   "root": "packages/codegen",
   "sourceRoot": "packages/codegen",
   "projectType": "library",
-  "tags": [],
+  "implicitDependencies": ["!web", "!common", "!utils", "!web-utils"],
   "targets": {
     "format": {
       "executor": "@cbhq/mono-tasks:format"

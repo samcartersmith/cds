@@ -10,3 +10,14 @@
 /// <reference types="@cbhq/docusaurus-theme" />
 
 declare module 'dayjs-recur';
+
+declare module '@site/static/data/illustration/releaseHistory.json' {
+  type ReleaseHistory = {
+    newIllustrations: string[];
+    modifiedIllustrations: string[];
+    deletedIllustrations: string[];
+  };
+
+  const data: Record<string, ReleaseHistory>;
+  export default data;
+}

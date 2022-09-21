@@ -775,7 +775,7 @@ const main = async (deleteImgsDir = false) => {
     );
 
     const deletedIllustrationsArr = Array.from(deletedIllustrations);
-    await generateReleaseHistory('packages/common/internal/data/illustrationReleaseHistory.ts', {
+    await generateReleaseHistory('apps/website/static/data/illustration/releaseHistory.json', {
       newIllustrations,
       modifiedIllustrations,
       deletedIllustrations: deletedIllustrationsArr,

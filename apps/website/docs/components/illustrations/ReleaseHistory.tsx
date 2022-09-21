@@ -1,9 +1,8 @@
 import { useCallback, useMemo } from 'react';
+import illustrationReleaseHistory from '@site/static/data/illustration/releaseHistory.json';
 import { css } from 'linaria';
 import { useToggler } from '@cbhq/cds-common';
-import { illustrationReleaseHistory } from '@cbhq/cds-common/internal/data/illustrationReleaseHistory';
 import { illustrationDimensionDefaults } from '@cbhq/cds-common/tokens/illustrations';
-import { ReleasedIllustrationsTypes } from '@cbhq/cds-common/types/IllustrationProps';
 import { Button } from '@cbhq/cds-web/buttons';
 import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
@@ -14,6 +13,8 @@ import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
 const blackBackground = css`
   background-color: black;
 `;
+
+type ReleasedIllustrationsTypes = typeof illustrationReleaseHistory[string];
 
 type HistoryDetailsType = {
   info: ReleasedIllustrationsTypes;

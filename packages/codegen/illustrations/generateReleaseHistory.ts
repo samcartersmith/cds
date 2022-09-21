@@ -1,36 +1,38 @@
-import { illustrationReleaseHistory } from '@cbhq/cds-common/internal/data/illustrationReleaseHistory';
-import { ReleasedIllustrationsTypes } from '@cbhq/cds-common/types/IllustrationProps';
+import fs from 'fs';
+import { writePrettyFile } from '@cbhq/cds-web-utils';
 
-import { writeFile } from '../utils/writeFile';
+import { getSourcePath } from '../utils/getSourcePath';
+
+type ReleasedIllustrationsTypes = {
+  newIllustrations: string[];
+  modifiedIllustrations: string[];
+  deletedIllustrations: string[];
+};
 
 export const generateReleaseHistory = async (
   dest: string,
   releasedIllustrations: ReleasedIllustrationsTypes,
 ) => {
   const today = new Date().toDateString();
+  const absoluteDest = getSourcePath(dest);
 
   try {
-    await writeFile({
-      template: 'objectMap.ejs',
-      data: {
-        illustrationReleaseHistory: {
-          [today]: releasedIllustrations,
-          ...illustrationReleaseHistory,
-        },
-      },
-      config: {
-        disableAsConst: true,
-        imports: [
-          {
-            func: '{ ReleasedIllustrationsTypes }',
-            module: '../../types/IllustrationProps',
-          },
-        ],
-      },
-      types: {
-        illustrationReleaseHistory: 'Record<string, ReleasedIllustrationsTypes>',
-      },
-      dest,
+    const prevHistoryAsString = await fs.promises.readFile(absoluteDest, 'utf-8');
+    const prevHistory = JSON.parse(prevHistoryAsString) as Record<
+      string,
+      ReleasedIllustrationsTypes
+    >;
+
+    const newHistory = JSON.stringify({
+      [today]: releasedIllustrations,
+      ...prevHistory,
+    });
+
+    await writePrettyFile({
+      outFile: absoluteDest,
+      contents: newHistory,
+      logInfo: dest,
+      parser: 'json',
     });
   } catch (err) {
     throw new Error((err as Error).message);

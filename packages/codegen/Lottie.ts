@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import { LottieSource } from '@cbhq/cds-common/types/LottieSource';
 
 const LOTTIE_FILES_DIR = path.resolve(__dirname, '..', 'lottie-files');
 const IGNORE_FILES = ['basepackage', 'package', 'index'];
@@ -20,7 +19,11 @@ export const lottieFiles = (() => {
 
   return lottieFileNames.map((src) => {
     const contents = fs.readFileSync(lottiePath(src), 'utf-8');
-    const json = JSON.parse(contents) as LottieSource;
+    const json = JSON.parse(contents) as {
+      markers: {
+        cm: string;
+      }[];
+    };
 
     const file = path.basename(src, 'json');
     const type = `${file.charAt(0).toUpperCase() + file.substring(1)}Lottie`;
