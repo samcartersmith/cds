@@ -59,7 +59,9 @@ describe('if element is not hidden', () => {
   });
 
   it("doesn't throw if the button has accessibilityLabel", () => {
-    const Button = () => <TouchableOpacity accessibilityLabel="Test" />;
+    const Button = () => (
+      <TouchableOpacity accessibilityLabel="Test" accessibilityHint="Test button" />
+    );
     expect(() => run(<Button />)).not.toThrow();
   });
 
@@ -125,13 +127,19 @@ describe('if element is hidden', () => {
   });
 
   it("doesn't throw if the button has accessibilityLabel", () => {
-    const Button = () => <TouchableOpacity accessibilityLabel="Test" {...hidden} />;
+    const Button = () => (
+      <TouchableOpacity accessibilityLabel="Test" accessibilityHint="Test button" {...hidden} />
+    );
     expect(() => run(<Button />)).not.toThrow();
   });
 
   it("doesn't throw if the button only has non-text content but has accessibilityLabel", () => {
     const Button = () => (
-      <TouchableOpacity accessibilityLabel="Image button" {...hidden}>
+      <TouchableOpacity
+        accessibilityLabel="Image button"
+        accessibilityHint="test image button"
+        {...hidden}
+      >
         {}
         <Image accessibilityIgnoresInvertColors source={TestAssets.heart['32px']} />
       </TouchableOpacity>

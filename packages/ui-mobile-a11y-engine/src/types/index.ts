@@ -5,6 +5,7 @@ export type { default as Violation } from './Violation';
 
 declare global {
   namespace jest {
+    // this is required based on the jest test structure
     // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
     interface Matchers<R> {
       /**

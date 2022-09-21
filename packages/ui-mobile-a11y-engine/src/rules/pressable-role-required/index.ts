@@ -7,7 +7,7 @@ const allowedRolesMessage = allowedRoles.join(' or ');
 const rule: Rule = {
   id: 'pressable-role-required',
   matcher: (node) => isPressable(node.type),
-  assertion: (node) => allowedRoles.includes(node.props.accessibilityRole),
+  assertion: (node) => allowedRoles.includes(node.props.accessibilityRole as string),
   help: {
     problem:
       "This component is pressable but the user hasn't been informed that it behaves like a button/link/radio/switch/menu",

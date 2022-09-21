@@ -2,12 +2,14 @@ import React from 'react';
 import type { ReactTestInstance } from 'react-test-renderer';
 import { create } from 'react-test-renderer';
 
-const testInstancePrototype = Object.getPrototypeOf(create(React.createElement('div')).root);
+const testInstancePrototype = Object.getPrototypeOf(
+  create(React.createElement('div')).root,
+) as Record<string, string>;
 
-export default function isReactTestInstance(candiate: unknown): candiate is ReactTestInstance {
+export default function isReactTestInstance(candidate: unknown): candidate is ReactTestInstance {
   return (
-    !!candiate &&
-    typeof candiate === 'object' &&
-    Object.getPrototypeOf(candiate) === testInstancePrototype
+    !!candidate &&
+    typeof candidate === 'object' &&
+    Object.getPrototypeOf(candidate) === testInstancePrototype
   );
 }

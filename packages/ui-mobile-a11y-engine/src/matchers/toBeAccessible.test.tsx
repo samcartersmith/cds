@@ -32,12 +32,10 @@ describe('toBeAccessible tests', () => {
   });
 
   it('should report error if component is not accessible', () => {
-    // eslint-disable-next-line jest/require-to-throw-message
-    expect(() => expect(<NonAccessibleButton />).toBeAccessible()).toThrow();
+    expect(() => expect(<NonAccessibleButton />).toBeAccessible()).toThrow('');
   });
 
   it('should not report error if component is accessible', () => {
-    // eslint-disable-next-line jest/require-to-throw-message
-    expect(() => expect(<Button />).not.toBeAccessible()).toThrow();
+    expect(() => expect(<Button />).not.toBeAccessible()).toThrow('');
   });
 });

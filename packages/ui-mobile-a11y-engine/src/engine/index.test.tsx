@@ -18,11 +18,11 @@ describe('engine tests', () => {
   });
 
   it('should support test instances', () => {
+    // this disable is required to utilize the react-native render getByType function
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const { UNSAFE_getByType } = render(<Button />);
     const button = UNSAFE_getByType(TouchableOpacity);
 
-    // eslint-disable-next-line jest/require-to-throw-message
-    expect(() => check(button)).toThrow();
+    expect(() => check(button)).toThrow('');
   });
 });

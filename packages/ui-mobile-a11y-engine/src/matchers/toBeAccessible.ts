@@ -3,13 +3,12 @@ import type { ReactElement } from 'react';
 import check from '../engine';
 import { generateMatcherError } from '../utils';
 
-export default function toBeAccessible(received: ReactElement) {
+export default function toBeAccessible(this: jest.MatcherContext, received: ReactElement) {
   const violations = check(received, {
     returnViolations: true,
   });
 
   if (violations.length) {
-    // @ts-expect-error
     const message = generateMatcherError(violations, this.isNot);
     return {
       pass: false,

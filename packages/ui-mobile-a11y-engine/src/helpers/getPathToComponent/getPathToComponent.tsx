@@ -1,4 +1,3 @@
-// @ts-nocheck
 import type { ReactTestInstance } from 'react-test-renderer';
 
 import getComponentName from '../getComponentName/getComponentName';
@@ -8,8 +7,10 @@ const shouldSkipComponent = (node: ReactTestInstance) => {
     return true;
   }
 
-  if (typeof node.type === 'object' && node.type.$$typeof === Symbol.for('react.forward_ref')) {
-    return true;
+  if (typeof node.type === 'object') {
+    const nodeType: Record<string, symbol> = node.type;
+
+    return nodeType.$$typeof === Symbol.for('react.forward_ref');
   }
 
   return false;
@@ -26,7 +27,6 @@ const getPathToComponent = (node: ReactTestInstance): string[] => {
     current = current?.parent;
   }
 
-  // console.log(path.reverse());
   return path.reverse();
 };
 

@@ -10,11 +10,11 @@ export const generateCheckError = (violations: Violation[]): string => {
     return violation.pathToComponent;
   });
 
-  for (const path in violationsGroupedByPath) {
+  for (const [path, violationsAtPath] of Object.entries(violationsGroupedByPath)) {
     // Prettify path to component
     errorString = `${path.split(',').join(' > ')}\n\n`;
 
-    for (const violation of violationsGroupedByPath[path]) {
+    for (const violation of violationsAtPath) {
       errorString += ` · ${violation.problem}\n   ↳  ${violation.solution}\n`;
     }
   }

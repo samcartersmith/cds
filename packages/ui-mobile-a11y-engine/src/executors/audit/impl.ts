@@ -130,7 +130,7 @@ const getCoverageSummaryJSONData = (fileLocation: string): CoverageOutput => {
   }
 
   const rawData = fs.readFileSync(fileLocation, 'utf-8');
-  return JSON.parse(rawData);
+  return JSON.parse(rawData) as CoverageOutput;
 };
 
 async function getAffectedFiles(task: Task, forTestingFiles: boolean): Promise<string[]> {
@@ -349,6 +349,7 @@ async function auditA11yCoverage({
     projectMetadata: {
       projectName: task.projectName,
       projectPath: task.projectPath,
+      // this disable is necessary for accessible repo variable in buildkite execution
       // eslint-disable-next-line no-restricted-globals
       githubURL: process.env.BUILDKITE_REPO,
     },
@@ -384,6 +385,7 @@ async function auditA11yCoverage({
           preferLocal: true,
         });
 
+        // These eslints are needed to capture console errors from the jest execution
         // eslint-disable-next-line no-console
         console.log(execResult.stderr);
         // eslint-disable-next-line no-console
