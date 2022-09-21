@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import {
   OffsetProps,
+  ResponsiveColumnStyles,
   ResponsiveGridProps,
   ResponsiveGridStyles,
   ResponsiveProps,
@@ -23,8 +24,10 @@ const deviceStyles: Record<ResponsivePropsDevices, unknown> = {
 
 type OffsetKeys = keyof OffsetProps;
 type SpacingKeys = keyof SpacingProps;
-type ResponsiveStylesKeys = KeysOfUnion<ResponsiveStyles & ResponsiveGridStyles>;
-type ResponsiveStylesType = ResponsiveStyles & ResponsiveGridStyles;
+type ResponsiveStylesKeys = KeysOfUnion<
+  ResponsiveStyles & ResponsiveGridStyles & ResponsiveColumnStyles
+>;
+type ResponsiveStylesType = ResponsiveStyles & ResponsiveGridStyles & ResponsiveColumnStyles;
 
 const getDeviceStyles = (deviceConfig: ResponsiveStylesType, device: ResponsivePropsDevices) => {
   const classNames: string[] = [];
@@ -51,6 +54,14 @@ const getDeviceStyles = (deviceConfig: ResponsiveStylesType, device: ResponsiveP
       // @ts-expect-error  Can't index every possible phone style
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       classNames.push(deviceStyles[device][style][`columns-${value}`]);
+    } else if (style === 'colStart') {
+      // @ts-expect-error  Can't index every possible phone style
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      classNames.push(deviceStyles[device][style][`colStart-${value}`]);
+    } else if (style === 'colEnd') {
+      // @ts-expect-error  Can't index every possible phone style
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      classNames.push(deviceStyles[device][style][`colEnd-${value}`]);
     } else {
       // @ts-expect-error  Can't index every possible phone style
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument

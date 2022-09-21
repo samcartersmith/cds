@@ -107,6 +107,8 @@ module.exports = {
     'layout/Box',
     'layout/Divider',
     'layout/Fallback',
+    'layout/Grid',
+    'layout/GridColumn',
     'layout/Group',
     'layout/HStack',
     'layout/Spacer',

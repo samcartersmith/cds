@@ -33,6 +33,7 @@ export * from './FallbackBaseProps';
 export * from './ForwardedRef';
 export * from './Grid';
 export * from './GridBaseProps';
+export * from './GridColumnBaseProps';
 export * from './GroupBaseProps';
 export * from './Helpers';
 export * from './IconBaseProps';

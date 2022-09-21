@@ -4,7 +4,7 @@ import { responsiveClassName } from './constants';
 import { displayStylesForDevice } from './displayConfig';
 import { flexStylesForDevice } from './flexConfig';
 import { gapStylesForDevice } from './gapConfig';
-import { gridStylesForDevice } from './gridConfig';
+import { columnStylesForDevice, gridStylesForDevice } from './gridConfig';
 import { visibilityStylesForDevice } from './visibilityConfig';
 
 // Please don't change the order! smaller queries need to be lower in the stylesheet to maintain specificity
@@ -106,6 +106,8 @@ const deviceClassNames = internalResponsivePropsDevices.reduce(
       displayStylesForDevice(deviceMqs[device]),
       visibilityStylesForDevice(deviceMqs[device]),
       gridStylesForDevice(deviceMqs[device]),
+      columnStylesForDevice(deviceMqs[device], 'Start'),
+      columnStylesForDevice(deviceMqs[device], 'End'),
     ) as ClassNamesType;
     const deviceName = responsivePropsDeviceNameMap[device];
     acc[deviceName] = styles;

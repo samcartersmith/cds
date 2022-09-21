@@ -3,6 +3,7 @@ export * from './Card';
 export * from './Divider';
 export * from './Fallback';
 export * from './Grid';
+export * from './GridColumn';
 export * from './Group';
 export * from './HStack';
 export * from './Spacer';

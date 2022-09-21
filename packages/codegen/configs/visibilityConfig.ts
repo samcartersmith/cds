@@ -3,7 +3,7 @@ import { mapValues } from '@cbhq/cds-utils/object';
 
 import { responsiveClassName } from './constants';
 
-const visibilityValues = ['hidden', 'visible'];
+const visibilityValues = ['hidden', 'visible'] as const;
 
 export const visibilityStylesForDevice = (deviceMq: string) => ({
   visibility: mapValues(arrayToObject(visibilityValues), (value) => {
@@ -27,6 +27,11 @@ export const visibilityConfig = {
       data: {
         types: {
           Visibility: visibilityValues,
+        },
+        typeOfUnion: {
+          VisibilityProps: {
+            visibility: visibilityValues,
+          },
         },
       },
     },

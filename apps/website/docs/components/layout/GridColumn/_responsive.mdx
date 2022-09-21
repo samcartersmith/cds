@@ -1,0 +1,47 @@
+## Responsive Styles
+
+You can create responsive layouts by passing a configuration object to a Grid and specify unique styles for phones, tablets, or desktops.
+
+Please note, there are no default responsive styles for Grid. This is an additive feature that you will need to configure yourself.
+
+### Supported Properties
+
+- `columns`
+- `gap`
+- Spacing
+- Offset spacing
+- Flex styles (justify content, align content, align items, align self, flex direction, and flex wrap)
+- Visibility
+
+### Usage
+
+Always hoist or memoize your responsive style configurations.
+
+```jsx live
+function ResponsiveColumnExample() {
+  const responsiveColumnConfig = (idx) => ({
+    phone: {
+      colStart: idx + 1,
+      colEnd: idx + 6 > 13 ? -1 : idx + 6,
+    },
+    tablet: {
+      colStart: idx + 1,
+      colEnd: idx + 4 > 13 ? -1 : idx + 4,
+    },
+  });
+  return (
+    <Grid gap={0.5} columns={12}>
+      {Array.from({ length: 12 }).map((_, idx) => (
+        <GridColumn
+          background="primary"
+          spacing={2}
+          colStart={1}
+          colEnd={idx + 2}
+          key={idx}
+          responsiveConfig={responsiveColumnConfig(idx)}
+        />
+      ))}
+    </Grid>
+  );
+}
+```

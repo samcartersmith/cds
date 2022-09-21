@@ -14,6 +14,7 @@ import {
 import { BoxElement } from '../Box';
 import { Divider } from '../Divider';
 import { Grid, GridProps } from '../Grid';
+import { GridColumn } from '../GridColumn';
 import { HStack, HStackProps } from '../HStack';
 import { VStack } from '../VStack';
 
@@ -107,7 +108,7 @@ const HolyGrailLayout = () => {
 const FlexboxImplicitLayout = () => {
   return (
     <HStack flexWrap="wrap" {...sharedWrapperProps}>
-      {Array.from({ length: 20 }).map((_, idx) => (
+      {Array.from({ length: 12 }).map((_, idx) => (
         <Item
           key={idx}
           flexBasis={idx % 2 ? '200px' : '100px'}
@@ -175,11 +176,33 @@ const GridLayout = ({
 const GridImplicitLayout = () => {
   return (
     <Grid columnMin="100px" columnMax="1fr" {...sharedWrapperProps}>
-      {Array.from({ length: 20 }).map((_, idx) => (
+      {Array.from({ length: 12 }).map((_, idx) => (
         <Item key={idx} width="100px" background="backgroundAlternate">
           <TextBody as="p">{idx + 1}</TextBody>
         </Item>
       ))}
+    </Grid>
+  );
+};
+
+const GridTwelveColLayout = () => {
+  return (
+    <Grid columns={12} {...sharedWrapperProps}>
+      {Array.from({ length: 12 }).map((_, idx) => (
+        <Item key={idx} background={idx === 0 || idx === 11 ? 'background' : 'backgroundAlternate'}>
+          <TextBody as="p">{idx + 1}</TextBody>
+        </Item>
+      ))}
+    </Grid>
+  );
+};
+
+const FullBleedGrid = () => {
+  return (
+    <Grid columns={12} {...sharedWrapperProps}>
+      <GridColumn colSpan={12} background="backgroundAlternate">
+        <TextBody as="p">Full Bleed</TextBody>
+      </GridColumn>
     </Grid>
   );
 };
@@ -374,6 +397,12 @@ export const Examples = () => {
           }
         >
           <GridLayout templateColumns="200px 1fr 200px" columnCount={3} />
+        </Example>
+        <Example title="Twelve Column Layout">
+          <GridTwelveColLayout />
+        </Example>
+        <Example title="Full Bleed Layout">
+          <FullBleedGrid />
         </Example>
         <Divider spacingVertical={4} />
         <VStack>

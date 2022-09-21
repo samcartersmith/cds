@@ -4,6 +4,7 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { responsiveClassName } from '../../styles/responsive';
 import { Grid, GridProps } from '../Grid';
+import { GridColumn } from '../GridColumn';
 
 const DEFAULT_CLASS = 'grid';
 
@@ -228,7 +229,8 @@ describe('explicit columns', () => {
   it('renders columns className', () => {
     const { container } = render(<Grid columns={12}>Child</Grid>);
 
-    expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} columns-12`);
+    expect(container.firstChild).toHaveClass('columns-12');
+    expect(container.firstChild).toHaveClass(DEFAULT_CLASS);
   });
 });
 
@@ -346,5 +348,36 @@ describe('responsive styles', () => {
     const classNames = getClassNamesForResponsiveGridProps(responsiveColumnsConfig, 'columns');
 
     expect(container.firstChild).toHaveAttribute('class', classNames);
+  });
+});
+
+const DEFAULT_COLUMN_CLASS = 'flex';
+
+describe('GridColumn', () => {
+  it('renders the colStart className', () => {
+    const { container } = render(<GridColumn colStart={2}>Child</GridColumn>);
+
+    expect(container.firstChild).toHaveAttribute(
+      'class',
+      `${DEFAULT_COLUMN_CLASS} colStart-2 colEnd-auto`,
+    );
+  });
+  it('renders the colEnd className', () => {
+    const { container } = render(<GridColumn colEnd={2}>Child</GridColumn>);
+
+    expect(container.firstChild).toHaveAttribute(
+      'class',
+      `${DEFAULT_COLUMN_CLASS} colStart-auto colEnd-2`,
+    );
+  });
+  it('renders the colSpan style', () => {
+    const { container } = render(<GridColumn colSpan={2}>Child</GridColumn>);
+
+    expect(container.firstChild).toHaveStyle('grid-column: auto / span 2');
+  });
+  it('renders the gridColumn style', () => {
+    const { container } = render(<GridColumn gridColumn="2 / 4">Child</GridColumn>);
+
+    expect(container.firstChild).toHaveStyle('grid-column: 2 / 4');
   });
 });

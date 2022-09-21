@@ -1,21 +1,26 @@
 import React from 'react';
-import { ResponsiveGridProps } from '@cbhq/cds-common';
+import {
+  GridColumn as GridColumnType,
+  ResponsiveColumnProps,
+  ResponsiveGridProps,
+} from '@cbhq/cds-common';
 
 import { TextBody, TextTitle1, TextTitle3 } from '../../typography';
 import { BoxElement } from '../Box';
 import { Grid, GridProps } from '../Grid';
+import { GridColumn } from '../GridColumn';
 import { HStack, HStackProps } from '../HStack';
 import { VStack } from '../VStack';
 
 import { LoremIpsum } from './LoremIpsum';
 
-const Item: React.FC<Pick<HStackProps<BoxElement>, 'as'>> = ({ children, as }) => (
+const Item: React.FC<HStackProps<BoxElement>> = ({ children, ...props }) => (
   <HStack
     background="backgroundAlternate"
     justifyContent="center"
     alignItems="center"
     spacing={2}
-    as={as}
+    {...props}
   >
     {children}
   </HStack>
@@ -86,6 +91,64 @@ const ImplicitGridClamped = (props: GridProps<BoxElement>) => {
   );
 };
 
+type GridColumnProps = {
+  responsive?: boolean;
+};
+
+const responsiveColumnConfig = (idx: number) =>
+  ({
+    phone: {
+      colStart: idx + 1,
+      colEnd: idx + 6 > 13 ? -1 : idx + 6,
+    },
+    tablet: {
+      colStart: idx + 1,
+      colEnd: idx + 4 > 13 ? -1 : idx + 4,
+    },
+  } as ResponsiveColumnProps);
+
+const ColumnExamples = ({ responsive }: GridColumnProps) => {
+  return (
+    <Grid gap={0.5} columns={12}>
+      {Array.from({ length: 12 }).map((_, idx) => (
+        <GridColumn
+          background="primary"
+          spacing={2}
+          colStart={1}
+          colEnd={(idx + 2) as GridColumnType}
+          // eslint-disable-next-line react/no-array-index-key
+          key={idx}
+          responsiveConfig={responsive ? responsiveColumnConfig(idx) : undefined}
+        />
+      ))}
+    </Grid>
+  );
+};
+
+const FullBleedExample = () => {
+  return (
+    <Grid gap={0.5} templateColumns="100px 1fr 100px">
+      <Item background="background">
+        <TextBody as="p">Gutter</TextBody>
+      </Item>
+      <Item>
+        <TextBody as="p">Body</TextBody>
+      </Item>
+      <Item background="background">
+        <TextBody as="p">Gutter</TextBody>
+      </Item>
+      <GridColumn
+        justifyContent="center"
+        background="backgroundAlternate"
+        spacing={2}
+        gridColumn="1 / -1"
+      >
+        <TextBody as="p">Full Bleed</TextBody>
+      </GridColumn>
+    </Grid>
+  );
+};
+
 export const GridExamples = () => {
   return (
     <VStack gap={4}>
@@ -109,6 +172,18 @@ export const GridExamples = () => {
       <VStack gap={1}>
         <TextTitle1 as="h2">Implicit Grid with Clamps</TextTitle1>
         <ImplicitGridClamped columnMin="min-content" columnMax="200px" />
+      </VStack>
+      <VStack gap={1}>
+        <TextTitle1 as="h2">Column Span</TextTitle1>
+        <ColumnExamples />
+      </VStack>
+      <VStack gap={1}>
+        <TextTitle1 as="h2">Responsive Column Span</TextTitle1>
+        <ColumnExamples responsive />
+      </VStack>
+      <VStack gap={1}>
+        <TextTitle1 as="h2">Full Bleed</TextTitle1>
+        <FullBleedExample />
       </VStack>
     </VStack>
   );

@@ -331,6 +331,18 @@ const sidebars = {
           },
         },
         { type: 'doc', id: 'components/layout/Fallback/fallback', label: 'Fallback' },
+        {
+          type: 'category',
+          label: 'Grid',
+          items: [
+            { type: 'doc', id: 'components/layout/Grid/grid', label: 'Grid' },
+            {
+              type: 'doc',
+              id: 'components/layout/GridColumn/grid-column',
+              label: 'GridColumn',
+            },
+          ],
+        },
         { type: 'doc', id: 'components/layout/Group/group', label: 'Group' },
         { type: 'doc', id: 'components/layout/HStack/h-stack', label: 'HStack' },
         { type: 'ref', id: 'components/icons/Icon/icon', label: 'Icon' },
