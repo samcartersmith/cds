@@ -1,30 +1,75 @@
-The `HStack` works exactly like `Box` but with children being automatically renderes as columns. Because of this, be sure that direct children are all block level elements.
+The HStack is essentially the same component as [Box](/components/box) where it uses [flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) to lay content out in a row. Where it differs is HStack also allows for gaps between children via the `gap` prop.
+
+You should use HStack when:
+
+- you want to lay content out in columns that are sized to their content
+- you want to add gaps between columns
+- you want to lay content out in columns that fill the available space within the parent container
+- you need columns of proportionate size to each other (also known as a ratio-based layout)
+
+:::note
+If you want to lay out children in equal width columns, or with repeated rows of columns of custom sizes, you should use [Grid](/components/grid) instead.
+:::
+
+#### Columns Sized to Content
 
 ```jsx live
 <HStack>
-  <Box spacing={1} background>
+  <Box spacing={3} background="backgroundAlternate">
     First
   </Box>
-  <Box spacing={1} background="backgroundAlternate">
+  <Box spacing={3} background="backgroundAlternate">
     Second
   </Box>
-  <Box spacing={1} background="backgroundOverlay">
+  <Box spacing={3} background="backgroundAlternate">
     Third
   </Box>
 </HStack>
 ```
 
-Can provide a `gap` prop to inject spacing between each child.
+#### Columns with Gaps
 
 ```jsx live
 <HStack gap={1}>
-  <Box spacing={1} background>
+  <Box spacing={3} background="backgroundAlternate">
     First
   </Box>
-  <Box spacing={1} background="backgroundAlternate">
+  <Box spacing={3} background="backgroundAlternate">
     Second
   </Box>
-  <Box spacing={1} background="backgroundOverlay">
+  <Box spacing={3} background="backgroundAlternate">
+    Third
+  </Box>
+</HStack>
+```
+
+#### Columns that Fill the Available Space
+
+```jsx live
+<HStack gap={1}>
+  <Box spacing={3} flexGrow={1} background="backgroundAlternate">
+    First
+  </Box>
+  <Box spacing={3} flexGrow={1} background="backgroundAlternate">
+    Second
+  </Box>
+  <Box spacing={3} flexGrow={1} background="backgroundAlternate">
+    Third
+  </Box>
+</HStack>
+```
+
+#### Columns that Have Proportionate Sizes
+
+```jsx live
+<HStack gap={1}>
+  <Box spacing={3} flexGrow={1} background="backgroundAlternate">
+    First
+  </Box>
+  <Box spacing={3} flexGrow={2} background="backgroundAlternate">
+    Second
+  </Box>
+  <Box spacing={3} flexGrow={3} background="backgroundAlternate">
     Third
   </Box>
 </HStack>

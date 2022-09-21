@@ -1,4 +1,10 @@
-The box is a powerful component as it provides primitives for everything layout related: background colors (coupled to our palette), borders, spacing (inner and outer), positioning, dimensions, elevation/shadows, and much more.
+The Box is a powerful component as it provides primitives for everything layout related: background colors (coupled to our palette), borders, spacing (inner and outer), positioning, dimensions, elevation/shadows, and much more.
+
+:::note
+By default, Box has [flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) enabled (`display: flex`), but you can use a Box for any kind of layout via the `display` prop.
+:::
+
+If you want to lay your content out in columns you should reach for [HStack](/components/h-stack) (a specialized Box that also allows for gaps between children). When you want to compose more complex layouts with columns of equal size or custom configurations you should use [Grid](/components/grid) (which leverages [CSS grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)). If you want to lay out content in a single column, you should use [VStack](/components/v-stack).
 
 ```jsx live
 <Box
