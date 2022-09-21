@@ -1,4 +1,4 @@
 module.exports = {
   displayName: 'codegen',
-  preset: '../../jest.preset.js',
+  preset: '@cbhq/jest-preset',
 };

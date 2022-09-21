@@ -1,7 +1,8 @@
 module.exports = {
   displayName: 'web',
-  preset: '../../jest.preset.js',
-  setupFiles: ['./jest/setup.js'],
+  preset: '@cbhq/jest-preset',
+  setupFiles: ['<rootDir>/jest/setup.js'],
+  coverageReporters: ['text-summary', 'text', 'json-summary'],
   coveragePathIgnorePatterns: [
     '<rootDir>/styles',
     '<rootDir>/storybook-decorators',

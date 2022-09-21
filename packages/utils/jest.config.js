@@ -1,4 +1,5 @@
 module.exports = {
   displayName: 'utils',
-  preset: '../../jest.preset.js',
+  preset: '@cbhq/jest-preset',
+  coverageReporters: ['text-summary', 'text', 'json-summary'],
 };
