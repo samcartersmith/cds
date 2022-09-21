@@ -4,14 +4,20 @@ import { CMSProvider, ComponentMapValue } from '@cb/cms';
 import { Box } from '@cbhq/cds-web/layout';
 import { Spinner } from '@cbhq/cds-web/loaders';
 
-import { RichText } from '../components/RichText';
+import { Accordion } from '../misc/Accordion';
+import { Embedded } from '../misc/Embedded';
 import { Link } from '../misc/Link';
 import { MediaAsset } from '../misc/MediaAsset';
+import { RichText } from '../misc/RichText';
 import { TextBlock } from '../misc/TextBlock';
+import { Card, CardList } from '../modules/Card';
 import { CodeExample } from '../modules/CodeExample';
 import { DoDont } from '../modules/DoDont';
 import { MediaContent } from '../modules/MediaContent';
 import { Overview } from '../modules/Overview';
+import { StaticReadme } from '../modules/StaticReadme';
+import { TabItem } from '../modules/TabItem';
+import { Tabs } from '../modules/Tabs';
 import { useComposePage } from '../useComposePage';
 
 import { ComponentPage, ComponentPageFields } from './ComponentPage';
@@ -42,6 +48,13 @@ const componentsMap = {
   moduleMediaContent: MediaContent,
   moduleOverview: Overview,
   miscRichText: RichText,
+  miscAccordion: Accordion,
+  miscEmbedded: Embedded,
+  moduleStaticReadme: StaticReadme,
+  moduleTabs: Tabs,
+  moduleTabItem: TabItem,
+  moduleCardList: CardList,
+  moduleCard: Card,
 } as unknown as Record<string, ComponentMapValue>;
 
 export const Page = memo(function CMS({ fallback, ...props }: CMSProps) {

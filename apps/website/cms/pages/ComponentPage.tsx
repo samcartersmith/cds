@@ -1,11 +1,11 @@
 import React, { memo, ReactElement } from 'react';
 import { Document } from '@contentful/rich-text-types';
 import { TOCItems } from '@theme/createTOCManager';
-import TabItem from '@theme-original/TabItem';
-import Tabs from '@theme-original/Tabs';
+import TabItemOriginal from '@theme-original/TabItem';
+import TabsOriginal from '@theme-original/Tabs';
 import { Entry } from 'contentful';
 import { CMSContent } from '@cb/cms';
-import { HStack, VStack } from '@cbhq/cds-web/layout';
+import { Group } from '@cbhq/cds-web/layout';
 
 import { Divider } from '../components/Divider';
 import { Section } from '../components/Section';
@@ -67,35 +67,36 @@ export const ComponentPage = memo(function ComponentPage({
     accessibility,
   } = contentData;
 
+  const shouldShowExamplesTab = codeExamples || metadata || propsTable;
+
   const tabItems = [
-    <TabItem
-      key="examples"
-      value="examples"
-      label="Examples"
-      toc={populateExamplesToc({ metadata, propsTable, codeExamples })}
-    >
-      <Section title="Examples" hideDivider={!propsTable}>
-        {codeExamples && <CMSContent content={codeExamples} />}
-        {metadata?.element && (
-          <>
+    shouldShowExamplesTab && (
+      <TabItemOriginal
+        key="examples"
+        value="examples"
+        label="Examples"
+        toc={populateExamplesToc({ metadata, propsTable, codeExamples })}
+      >
+        <Section title="Examples">
+          <Group divider={Divider}>
+            {codeExamples?.map((codeExample) => (
+              <CMSContent key={codeExample.sys.id} content={codeExample} />
+            ))}
             {metadata?.element}
-            <Divider />
-          </>
-        )}
-        {propsTable?.element}
-      </Section>
-    </TabItem>,
-    <TabItem
+            {propsTable?.element}
+          </Group>
+        </Section>
+      </TabItemOriginal>
+    ),
+    <TabItemOriginal
       key="guidelines"
       value="guidelines"
       label="Guidelines"
       toc={populateGuidelinesToc(contentData)}
     >
       {principles && (
-        <Section title="Principles">
-          <HStack gap={6}>
-            <CMSContent content={principles} />
-          </HStack>
+        <Section title="Principles" gap={6} direction="horizontal">
+          <CMSContent content={principles} />
         </Section>
       )}
       {usage && (
@@ -110,23 +111,17 @@ export const ComponentPage = memo(function ComponentPage({
       )}
       {spacing && (
         <Section title="Spacing">
-          <VStack gap={3}>
-            <CMSContent content={spacing} />
-          </VStack>
+          <CMSContent content={spacing} />
         </Section>
       )}
       {sizing && (
         <Section title="Sizing">
-          <VStack gap={3}>
-            <CMSContent content={sizing} />
-          </VStack>
+          <CMSContent content={sizing} />
         </Section>
       )}
       {behavior && (
         <Section title="Behavior">
-          <VStack gap={3}>
-            <CMSContent content={behavior} />
-          </VStack>
+          <CMSContent content={behavior} />
         </Section>
       )}
       {illustration && (
@@ -154,15 +149,15 @@ export const ComponentPage = memo(function ComponentPage({
           <CMSContent content={accessibility} />
         </Section>
       )}
-    </TabItem>,
-  ];
+    </TabItemOriginal>,
+  ].filter(Boolean);
 
   return (
     <>
       {overview && <CMSContent content={overview} />}
-      <Tabs groupId="page" gap={0} spacerHeight={8}>
+      <TabsOriginal groupId="page" gap={0} spacerHeight={8}>
         {tabItems}
-      </Tabs>
+      </TabsOriginal>
     </>
   );
 });

@@ -2886,6 +2886,7 @@ __metadata:
     "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-web": "workspace:^"
     "@cbhq/docusaurus-preset": "workspace:^"
+    "@contentful/rich-text-plain-text-renderer": ^15.12.1
     "@docusaurus/core": 2.0.0-beta.18
     "@docusaurus/module-type-aliases": 2.0.0-beta.18
     "@linaria/babel-preset": ^3.0.0-beta.15
@@ -2917,6 +2918,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@contentful/rich-text-plain-text-renderer@npm:^15.12.1":
+  version: 15.12.1
+  resolution: "@contentful/rich-text-plain-text-renderer@npm:15.12.1"
+  dependencies:
+    "@contentful/rich-text-types": ^15.12.1
+  checksum: 7adeb08259654d6cc6ecf1bb57fe1b2da75415479cc9731a20da6c4cd54ae3f61f5a922bca05e41467d5cea3e0e031d3d7f21a214708756d6e63ab4589222fb4
+  languageName: node
+  linkType: hard
+
 "@contentful/rich-text-react-renderer@npm:^14.1.1":
   version: 14.1.3
   resolution: "@contentful/rich-text-react-renderer@npm:14.1.3"
@@ -2933,6 +2943,13 @@ __metadata:
   version: 14.1.2
   resolution: "@contentful/rich-text-types@npm:14.1.2"
   checksum: 9323587118a90171f59809c1a0375f0d85a0e100347df870f3c14535440baf78dff2b6065661999341eddab08c9fcb06a7791f22644d97d9d76e90f23d2760ce
+  languageName: node
+  linkType: hard
+
+"@contentful/rich-text-types@npm:^15.12.1":
+  version: 15.12.1
+  resolution: "@contentful/rich-text-types@npm:15.12.1"
+  checksum: 2a0f7b2e39f04dcf00847a61b8497fe8849033180adc76102aed1fa84db9ce0523c9b2321b7949cfa2c0ed7b698d727c44d6be3cd720d5687aeff147e1db085b
   languageName: node
   linkType: hard
 

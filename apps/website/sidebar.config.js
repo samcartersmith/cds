@@ -85,6 +85,7 @@ const sidebars = {
             { type: 'doc', id: 'foundation/motion/product-motion-language', label: 'Product' },
             { type: 'doc', id: 'foundation/motion/timing', label: 'Timing' },
             { type: 'doc', id: 'foundation/motion/motion-handoff', label: 'Handoff' },
+            'foundation/motion/a11y-motion',
           ],
         },
         {
@@ -637,6 +638,7 @@ const sidebars = {
           items: ['patterns/messaging/overview', 'patterns/messaging/error'],
         },
         'patterns/empty-states',
+        'patterns/forms',
       ],
       customProps: {
         kbar: {
@@ -801,6 +803,7 @@ const sidebars = {
             { type: 'doc', id: 'changelog/web', label: '@cbhq/cds-web' },
           ],
         },
+        'resources/contribution',
         'resources/release',
         { type: 'doc', id: 'guides/migration/overview', label: 'Migration Guides' },
         'cds/support',

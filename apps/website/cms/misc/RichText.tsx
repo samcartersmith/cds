@@ -1,6 +1,7 @@
 import React, { memo, ReactElement, useMemo } from 'react';
 import { Options } from '@contentful/rich-text-react-renderer';
 import { Block, BLOCKS, Document, Inline, INLINES, MARKS, Text } from '@contentful/rich-text-types';
+import CodeBlock from '@theme/CodeBlock';
 import { Entry } from 'contentful';
 import cloneDeep from 'lodash/cloneDeep';
 import merge from 'lodash/merge';
@@ -10,9 +11,9 @@ import { Table, TableBody, TableCell, TableHeader, TableRow } from '@cbhq/cds-we
 import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
 import Heading from '@cbhq/docusaurus-theme/src/theme/Heading';
 
-import { Link } from '../misc/Link';
+import { Divider } from '../components/Divider';
 
-import { Divider } from './Divider';
+import { Link } from './Link';
 
 export type RichTextProps = {
   content?: Document;
@@ -22,6 +23,7 @@ export type RichTextProps = {
 const defaultOptions: Options = {
   renderMark: {
     [MARKS.BOLD]: (text) => <TextHeadline as="span">{text}</TextHeadline>,
+    [MARKS.CODE]: (text) => !!text && <CodeBlock>{text as string | ReactElement}</CodeBlock>,
   },
   renderNode: {
     [BLOCKS.PARAGRAPH]: (_node, children) => (

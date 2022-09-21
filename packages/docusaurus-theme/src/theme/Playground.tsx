@@ -16,6 +16,7 @@ type PlaygroundProps = LiveProviderProps & {
   children: string;
   borderless?: boolean;
   hideControls?: boolean;
+  hidePreview?: boolean;
 };
 
 const transformCodeFallback = (code: unknown) => `${code};`;
@@ -25,6 +26,7 @@ const Playground = memo(function Playground({
   transformCode: transformCodeProp = transformCodeFallback,
   borderless,
   hideControls,
+  hidePreview,
   ...props
 }: PlaygroundProps): JSX.Element {
   const prismTheme = usePrismTheme();
@@ -64,14 +66,16 @@ const Playground = memo(function Playground({
     <VStack gap={1} spacingBottom={3} dangerouslySetClassName="code-playground">
       {/* @ts-expect-error - issue with LiveProvider props */}
       <LiveProvider code={code} transformCode={transformCode} theme={prismTheme} {...props}>
-        <VStack
-          borderRadius="popover"
-          bordered={!borderless}
-          overflow={!borderless ? 'hidden' : undefined}
-          spacing={borderless ? 0 : 3}
-        >
-          <BrowserOnly fallback={<div>Loading...</div>}>{preview}</BrowserOnly>
-        </VStack>
+        {!hidePreview && (
+          <VStack
+            borderRadius="popover"
+            bordered={!borderless}
+            overflow={!borderless ? 'hidden' : undefined}
+            spacing={borderless ? 0 : 3}
+          >
+            <BrowserOnly fallback={<div>Loading...</div>}>{preview}</BrowserOnly>
+          </VStack>
+        )}
         {!hideControls && (
           <HStack gap={0.5} alignItems="center" offsetHorizontal={1}>
             <Pressable

@@ -1,6 +1,8 @@
 import React, { memo } from 'react';
 import { LiveProviderProps } from 'react-live';
-import { Entry, EntryFields } from 'contentful';
+import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
+import { Document } from '@contentful/rich-text-types';
+import { Entry } from 'contentful';
 import { CMSContent } from '@cb/cms';
 import { VStack } from '@cbhq/cds-web/layout';
 import { TextBody } from '@cbhq/cds-web/typography';
@@ -8,18 +10,14 @@ import Heading from '@cbhq/docusaurus-theme/src/theme/Heading';
 import Playground from '@cbhq/docusaurus-theme/src/theme/Playground';
 
 import ReactLiveScope from '../../src/theme/ReactLiveScope';
-import { Divider } from '../components/Divider';
 import type { MediaAssetFields } from '../misc/MediaAsset';
 
 export type CodeExampleFields = {
   title: string;
   description?: string;
-  code?: EntryFields.RichText;
+  code?: Document;
   image?: Entry<MediaAssetFields>[];
-};
-
-const getCode = (code: CodeExampleFields['code']) => {
-  return code?.content?.[0].content?.[0].value ?? '';
+  readOnly?: boolean;
 };
 
 export const CodeExample = memo(function CodeExample({
@@ -27,6 +25,7 @@ export const CodeExample = memo(function CodeExample({
   description,
   code,
   image,
+  readOnly = false,
 }: CodeExampleFields) {
   return (
     <VStack gap={2}>
@@ -37,21 +36,18 @@ export const CodeExample = memo(function CodeExample({
         </TextBody>
       )}
       {code && (
-        <>
-          <Playground scope={ReactLiveScope as LiveProviderProps['scope']}>
-            {getCode(code)}
+        // <Playground /> has spacing bottom 3 + gap 1, offset it to have consistent spacing
+        <VStack offsetBottom={4}>
+          <Playground
+            scope={ReactLiveScope as LiveProviderProps['scope']}
+            disabled={readOnly}
+            hidePreview={readOnly}
+          >
+            {documentToPlainTextString(code, '\n')}
           </Playground>
-          <Divider
-            spacingTop={2} // <Playground /> has spacing bottom 4 + gap 2
-          />
-        </>
+        </VStack>
       )}
-      {image && (
-        <>
-          <CMSContent content={image} />
-          <Divider />
-        </>
-      )}
+      {image && <CMSContent content={image} />}
     </VStack>
   );
 });

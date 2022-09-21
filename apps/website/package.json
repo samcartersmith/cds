@@ -7,6 +7,7 @@
     "@cbhq/cds-common": "workspace:^",
     "@cbhq/cds-web": "workspace:^",
     "@cbhq/docusaurus-preset": "workspace:^",
+    "@contentful/rich-text-plain-text-renderer": "^15.12.1",
     "@docusaurus/core": "2.0.0-beta.18",
     "@docusaurus/module-type-aliases": "2.0.0-beta.18",
     "@linaria/babel-preset": "^3.0.0-beta.15",

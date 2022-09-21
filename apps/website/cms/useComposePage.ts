@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useLocation } from '@docusaurus/router';
 import { ComposePage as CbComposePage, getComposePage } from '@cb/cms';
+import { isProduction } from '@cbhq/cds-utils';
 
 import { useContentfulConfig } from './useContentfulConfig';
 
@@ -17,8 +18,10 @@ export function useComposePage<T>(slug?: string) {
 
   const handleError = useCallback((error: Error | string) => {
     // TODO: replace with Bugsnag
-    // eslint-disable-next-line no-console
-    console.error(`Contentful error: ${error}`);
+    if (!isProduction()) {
+      // eslint-disable-next-line no-console
+      console.error(`Contentful error: ${error}`);
+    }
   }, []);
 
   const route = slug ?? location.pathname;

@@ -8,3 +8,9 @@
 declare module '*.mdx' {
   export default MDXComponent as React.FC;
 }
+
+declare module '@contentful/rich-text-plain-text-renderer' {
+  export * from '@contentful/rich-text-plain-text-renderer/dist/types/index';
+}
+
+declare module '*.md';

@@ -6,9 +6,9 @@ import { join } from '@cbhq/cds-common';
 import { Box, HStack, VStack } from '@cbhq/cds-web/layout';
 import { Link, TextBody, TextTitle2 } from '@cbhq/cds-web/typography';
 
-import { RichText, RichTextProps } from '../components/RichText';
 import { LinkFields } from '../misc/Link';
 import { MediaAssetFields } from '../misc/MediaAsset';
+import { RichText, RichTextProps } from '../misc/RichText';
 import figmaIcon from '../static/images/figma.png';
 import storybookIcon from '../static/images/storybook.png';
 
@@ -41,24 +41,26 @@ export const Overview = memo(function Overview({
   return (
     <VStack spacingBottom={9}>
       <RichText options={richTextOptions} content={description} />
-      <HStack gap={3} spacingTop={6}>
-        {figmaLink && (
-          <HStack gap={1} alignItems="center">
-            <img src={figmaIcon} alt="figma icon" />
-            <Link to={figmaLink} variant="headline" openInNewWindow>
-              Figma
-            </Link>
-          </HStack>
-        )}
-        {storybookLink && (
-          <HStack gap={1} alignItems="center">
-            <img src={storybookIcon} alt="storybook icon" />
-            <Link to={storybookLink} variant="headline" openInNewWindow>
-              Storybook
-            </Link>
-          </HStack>
-        )}
-      </HStack>
+      {(figmaLink || storybookLink) && (
+        <HStack gap={3} spacingTop={6}>
+          {figmaLink && (
+            <HStack gap={1} alignItems="center">
+              <img src={figmaIcon} alt="figma icon" />
+              <Link to={figmaLink} variant="headline" openInNewWindow>
+                Figma
+              </Link>
+            </HStack>
+          )}
+          {storybookLink && (
+            <HStack gap={1} alignItems="center">
+              <img src={storybookIcon} alt="storybook icon" />
+              <Link to={storybookLink} variant="headline" openInNewWindow>
+                Storybook
+              </Link>
+            </HStack>
+          )}
+        </HStack>
+      )}
       {relatedComponents && (
         <HStack spacingTop={5}>
           <TextBody as="p" color="foregroundMuted">

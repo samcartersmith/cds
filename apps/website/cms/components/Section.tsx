@@ -1,25 +1,29 @@
 import React, { memo, ReactNode } from 'react';
-import { VStack } from '@cbhq/cds-web/layout';
+import { HStack, VStack } from '@cbhq/cds-web/layout';
 import Heading from '@cbhq/docusaurus-theme/src/theme/Heading';
+
+import type { SectionFields } from '../modules/TabItem';
 
 import { Divider } from './Divider';
 
 export type SectionProps = {
-  title: string;
+  title?: string;
   children: ReactNode;
-  hideDivider?: boolean;
-};
+} & Pick<SectionFields, 'gap' | 'direction'>;
 
 export const Section = memo(function Section({
   title,
   children,
-  hideDivider = false,
+  direction = 'vertical',
+  gap = 3,
 }: SectionProps) {
+  const Stack = direction === 'horizontal' ? HStack : VStack;
+
   return (
     <VStack>
       <Heading as="h2">{title}</Heading>
-      {children}
-      {!hideDivider && <Divider />}
+      <Stack gap={gap}>{children}</Stack>
+      <Divider />
     </VStack>
   );
 });
