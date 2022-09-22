@@ -8,7 +8,7 @@ export type PortalProviderProps = ToastProviderProps;
 
 type PortalHostProps = { nodes: PortalNode[] };
 
-const PortalHost = memo(({ nodes }: PortalHostProps) => {
+export const PortalHost = memo(({ nodes }: PortalHostProps) => {
   if (!nodes.length) return null;
 
   const isAndroid = Platform.OS === 'android';
@@ -18,7 +18,10 @@ const PortalHost = memo(({ nodes }: PortalHostProps) => {
   if (elements.length > 1) {
     // multiple modal doesn't work if they are at the same level
     // insert node into previous node as children to avoid it
-    return elements.reduce((parent, child) => {
+    return elements.reduce((parent, child, index) => {
+      // avoid injecting into itself
+      if (index === 0) return parent;
+
       return React.cloneElement(parent, {
         children: (
           <>
@@ -28,7 +31,7 @@ const PortalHost = memo(({ nodes }: PortalHostProps) => {
           </>
         ),
       });
-    }, nodes[0].element);
+    }, elements[0]);
   }
 
   // eslint-disable-next-line react/jsx-no-useless-fragment
