@@ -8,6 +8,31 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.0.0 (9/22/2022, 09:28 AM PST)
+
+#### 💥 Breaking
+
+- Upgrade RN to 0.68 (without prebuild). [#1107](https://github.cbhq.net/frontend/cds/pull/1107)
+
+#### 🚀 Updates
+
+- **[A11y Engine]** Optimize jest coverage pipeline & audit output. [#1131](https://github.cbhq.net/frontend/cds/pull/1131)
+- LinearGradient component for mobile. [#1119](https://github.cbhq.net/frontend/cds/pull/1119)
+- **[a11y-mobile-engine]** Add option to audit for zero coverage. [#1121](https://github.cbhq.net/frontend/cds/pull/1121)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 09/21/22 Illo. [#1142](https://github.cbhq.net/frontend/cds/pull/1142)
+- **[icons]** Publish 09/20/22 Icons. [#1130](https://github.cbhq.net/frontend/cds/pull/1130)
+- Revert change to this file to original content. [#1126](https://github.cbhq.net/frontend/cds/pull/1126)
+- **[Reanimated]** Migrate to Reanimated V2 and Gesture Handler V2. [#988](https://github.cbhq.net/frontend/cds/pull/988), [RA-152](https://jira.coinbase-corp.com/browse/RA-152)
+
+#### 📘 Misc
+
+- Remove root level jest config and preset. [#1133](https://github.cbhq.net/frontend/cds/pull/1133)
+- Remove yarn scripts in favor of nx commands. [#1125](https://github.cbhq.net/frontend/cds/pull/1125)
+- Improve Docs to make onboarding easier. [#1086](https://github.cbhq.net/frontend/cds/pull/1086)
+
 ## 1.10.0 (9/14/2022, 05:42 PM PST)
 
 #### 🚀 Updates

@@ -8,6 +8,23 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.0.0 (9/22/2022, 09:28 AM PST)
+
+#### 🚀 Updates
+
+- **[GridColumn]** Added GridColumn component. [#1074](https://github.cbhq.net/frontend/cds/pull/1074)
+
+#### 🐞 Fixes
+
+- **[icons]** Publish 09/20/22 Icons. [#1130](https://github.cbhq.net/frontend/cds/pull/1130)
+
+#### 📘 Misc
+
+- Remove root level jest config and preset. [#1133](https://github.cbhq.net/frontend/cds/pull/1133)
+- Exclude cds packages from implicitDependencies in codegen. [#1132](https://github.cbhq.net/frontend/cds/pull/1132)
+- Remove yarn scripts in favor of nx commands. [#1125](https://github.cbhq.net/frontend/cds/pull/1125)
+- Improve Docs to make onboarding easier. [#1086](https://github.cbhq.net/frontend/cds/pull/1086)
+
 ## 1.10.0 (9/14/2022, 05:42 PM PST)
 
 #### 🚀 Updates

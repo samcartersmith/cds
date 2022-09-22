@@ -8,6 +8,27 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.0.0 (9/22/2022, 09:28 AM PST)
+
+#### 🚀 Updates
+
+- **[GridColumn]** Added GridColumn component. [#1074](https://github.cbhq.net/frontend/cds/pull/1074)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 09/21/22 Illo. [#1142](https://github.cbhq.net/frontend/cds/pull/1142)
+- **[icons]** Publish 09/20/22 Icons. [#1130](https://github.cbhq.net/frontend/cds/pull/1130)
+- Undeprecate useBreakpoints and add jsdoc comments. [#1116](https://github.cbhq.net/frontend/cds/pull/1116)
+
+#### 📘 Misc
+
+- Remove root level jest config and preset. [#1133](https://github.cbhq.net/frontend/cds/pull/1133)
+- **[Grid]** Added layout examples. [#1123](https://github.cbhq.net/frontend/cds/pull/1123)
+- Remove yarn scripts in favor of nx commands. [#1125](https://github.cbhq.net/frontend/cds/pull/1125)
+- **[Testing]** Consolidate Web unit tests. [#1077](https://github.cbhq.net/frontend/cds/pull/1077)
+- Updated user switcher docs. [#1104](https://github.cbhq.net/frontend/cds/pull/1104)
+- Improve Docs to make onboarding easier. [#1086](https://github.cbhq.net/frontend/cds/pull/1086)
+
 ## 1.10.0 (9/14/2022, 05:42 PM PST)
 
 #### 🚀 Updates
