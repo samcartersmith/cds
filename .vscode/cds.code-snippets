@@ -53,15 +53,45 @@
     "body": ["await waitFor(() => {", "  $1", "});"],
     "description": "Wait for a test"
   },
-  "describe": {
+  "testWeb": {
     "scope": "typescript,typescriptreact,javascript,javascriptreact",
-    "prefix": "desc",
+    "prefix": "test-web",
     "body": [
       "import { render } from '@testing-library/react';",
       "",
       "describe('$TM_FILENAME_BASE', () => {",
-      "  it('$1', () => {",
+      "  it('renders $1', () => {",
       "    const { $3 }= render($2)",
+      "  });",
+      "});",
+      ""
+    ],
+    "description": "Bolierplate for component unit test"
+  },
+  "testReactNative": {
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": "test-mobile",
+    "body": [
+      "import { render } from '@testing-library/react-native';",
+      "",
+      "describe('$TM_FILENAME_BASE', () => {",
+      "  it('renders $1', () => {",
+      "    const { $3 }= render($2)",
+      "  });",
+      "});",
+      ""
+    ],
+    "description": "Bolierplate for component unit test"
+  },
+  "testHook": {
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": "test-hook",
+    "body": [
+      "import { renderHook } from '@testing-library/react-hooks';",
+      "",
+      "describe('$TM_FILENAME_BASE', () => {",
+      "  it('$1', () => {",
+      "    const { result }= renderHook($2)",
       "  });",
       "});",
       ""

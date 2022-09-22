@@ -89,6 +89,15 @@ describe('Modal', () => {
     expect(getByText(loremIpsum)).toBeTruthy();
   });
 
+  it('renders modal body without dividers', async () => {
+    const { getByText } = render(<MockModal hideDividers />);
+
+    fireEvent.press(getByText('Open Modal'));
+
+    await waitFor(() => getByText(loremIpsum));
+    expect(getByText(loremIpsum)).toBeTruthy();
+  });
+
   it('renders modal footer', () => {
     const { getByText, getByTestId } = render(<MockModal />);
 

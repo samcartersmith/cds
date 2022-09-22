@@ -154,6 +154,7 @@ const SparklineInteractiveHeaderStable = memo(
           style={styles.label}
           defaultValue={defaultLabel}
           pointerEvents="none"
+          testID="SparklineInteractiveHeaderLabel"
           {...fontScaleProps}
         />
       );

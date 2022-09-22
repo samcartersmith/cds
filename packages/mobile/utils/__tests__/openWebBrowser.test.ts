@@ -259,4 +259,18 @@ describe('openWebBrowser', () => {
 
     expect(onInvalidURL).toHaveBeenCalledTimes(1);
   });
+
+  it('should throw error', async () => {
+    jest.spyOn(InAppBrowser, 'open').mockRejectedValueOnce(new Error('test error'));
+    const closeSpy = jest.spyOn(InAppBrowser, 'close').mockImplementation();
+    const logSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    await openWebBrowser('https://www.google.com', {
+      spectrum: 'dark',
+      preventRedirectionIntoApp: true,
+    });
+
+    expect(logSpy).toHaveBeenCalledWith('An error occurred: Error: test error');
+    expect(closeSpy).toHaveBeenCalledTimes(1);
+  });
 });

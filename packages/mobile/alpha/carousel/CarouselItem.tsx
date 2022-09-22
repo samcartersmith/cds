@@ -166,7 +166,12 @@ export const CarouselItem: React.FC<CarouselItemProps> = memo(
                 spacingEnd={0.5}
                 dangerouslySetStyle={dismissButtonStyles}
               >
-                <IconButton transparent name="close" onPress={handleDismissPress} />
+                <IconButton
+                  transparent
+                  name="close"
+                  onPress={handleDismissPress}
+                  testID={`CarouselItemDismiss-${id}`}
+                />
               </CarouselControlsWrapper>
             ) : null}
             <Box spacingTop={2}>{children}</Box>

@@ -30,17 +30,22 @@ export function modalBuilder({
   TextInput, // test keyboard avoiding on mobile
   LoremIpsum,
 }: CreateModalProps) {
-  const BasicModalExample: React.FC<{ disablePortal?: boolean; visible?: boolean }> = ({
-    children,
-    disablePortal,
-    visible: defaultVisible,
-  }) => {
+  const BasicModalExample: React.FC<{
+    disablePortal?: boolean;
+    visible?: boolean;
+    hideDividers?: boolean;
+  }> = ({ children, disablePortal, visible: defaultVisible, hideDividers }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(defaultVisible ?? true);
 
     return (
       <>
         <Button onPress={toggleOn}>Open Modal</Button>
-        <Modal visible={visible} onRequestClose={toggleOff} disablePortal={disablePortal}>
+        <Modal
+          visible={visible}
+          onRequestClose={toggleOff}
+          disablePortal={disablePortal}
+          hideDividers={hideDividers}
+        >
           <ModalHeader title="Basic Modal" />
           <ModalBody>{children}</ModalBody>
           <ModalFooter

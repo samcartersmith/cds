@@ -20,7 +20,7 @@ type Props<Period extends string> = Pick<
   shouldTakeUpHeight: boolean;
 };
 
-function setTransform(
+export function setTransform(
   x: number,
   elWidth: number,
   containerWidth: number,

@@ -4,8 +4,8 @@ import { Animated, GestureResponderEvent } from 'react-native';
 export function usePressAnimation(
   factor = 0.02,
 ): [
-  (event: GestureResponderEvent) => void,
-  (event: GestureResponderEvent) => void,
+  (event?: GestureResponderEvent) => void,
+  (event?: GestureResponderEvent) => void,
   Animated.Value,
 ] {
   const value = useRef(new Animated.Value(1)).current;

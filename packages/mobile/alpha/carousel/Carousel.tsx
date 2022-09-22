@@ -264,6 +264,7 @@ export const Carousel = memo(
               height={progressHeight}
               alignItems="flex-end"
               opacity={indicatorsOpacity.current}
+              testID="Carousel-progress"
             >
               {progressIndicators}
             </CarouselControlsWrapper>
