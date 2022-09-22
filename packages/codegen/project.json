@@ -32,7 +32,11 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "cwd": "packages/codegen",
-        "commands": ["ts-node ./illustrations/build.ts", "nx run codegen:format"],
+        "commands": [
+          "ts-node ./illustrations/build.ts",
+          "nx run codegen:format",
+          "nx run mobile:format"
+        ],
         "parallel": false
       }
     },
