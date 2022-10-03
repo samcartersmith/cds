@@ -1,104 +1,29 @@
-_visreg_ios_shared: &visreg_ios_shared
-  parallelism: 1
-  commands:
-    # TODO: First line can be removed if macos-metal agents get upgraded
-    # https://docs.google.com/document/d/1bN53rawPd_A6WjZIAAwG_r_uSy7APaxz3pNz3aqIB-k/edit?usp=sharing
-    - nvm install 16.16.0 && nvm use 16.16.0 && npm install -g yarn
-    - tools/ci/setup.sh
-    - export LANG=en_US.UTF-8
-    - mkdir -p percy-artifacts
-    - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
-    - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
-    - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
-    - yarn nx run mobile-playground:build-ios-e2e | xcpretty
-    - yarn nx run mobile-playground:ios-e2e
-  agents:
-    queue: macos-metal
-  retry:
-    automatic:
-      limit: 1
-
 env:
   LANG: en_US.UTF-8
   CI: true
   NX_CAPTURE_METRICS: true
   NX_CAPTURE_TEST_METRICS: true
-  ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
-  PERCY_NONCE_FILE_NAME: 'percy_nonce.txt'
   PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
-  VISREG_TOTAL_JOBS: 8
 
 steps:
-  - group: 'Visreg Tests (iOS)'
-    steps:
-      - label: 'Visreg Test (iOS) 1'
-        key: 'visreg-ios-1'
-        <<: *visreg_ios_shared
-        env:
-          VISREG_JOB_NUMBER: 1
+  - label: 'Visreg Test (iOS) %n'
+    cancel_on_build_failing: true
+    key: 'visreg_ios'
+    parallelism: 8
+    agents:
+      queue: macos-metal
+    commands:
+      - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
+      - tools/ci/visreg-ios.sh
+    retry:
+      automatic:
+        limit: 1
 
-      - label: 'Visreg Test (iOS) 2'
-        key: 'visreg-ios-2'
-        <<: *visreg_ios_shared
-        env:
-          VISREG_JOB_NUMBER: 2
-
-      - label: 'Visreg Test (iOS) 3'
-        key: 'visreg-ios-3'
-        <<: *visreg_ios_shared
-        env:
-          VISREG_JOB_NUMBER: 3
-
-      - label: 'Visreg Test (iOS) 4'
-        key: 'visreg-ios-4'
-        <<: *visreg_ios_shared
-        env:
-          VISREG_JOB_NUMBER: 4
-
-      - label: 'Visreg Test (iOS) 5'
-        key: 'visreg-ios-5'
-        <<: *visreg_ios_shared
-        env:
-          VISREG_JOB_NUMBER: 5
-
-      - label: 'Visreg Test (iOS) 6'
-        key: 'visreg-ios-6'
-        <<: *visreg_ios_shared
-        env:
-          VISREG_JOB_NUMBER: 6
-
-      - label: 'Visreg Test (iOS) 7'
-        key: 'visreg-ios-7'
-        <<: *visreg_ios_shared
-        env:
-          VISREG_JOB_NUMBER: 7
-
-      - label: 'Visreg Test (iOS) 8'
-        key: 'visreg-ios-8'
-        <<: *visreg_ios_shared
-        env:
-          VISREG_JOB_NUMBER: 8
-
-      - label: 'Finish Visreg Tests (iOS)'
-        parallelism: 1
-        depends_on:
-          - 'visreg-ios-1'
-          - 'visreg-ios-2'
-          - 'visreg-ios-3'
-          - 'visreg-ios-4'
-          - 'visreg-ios-5'
-          - 'visreg-ios-6'
-          - 'visreg-ios-7'
-          - 'visreg-ios-8'
-        allow_dependency_failure: true
-        commands:
-          - tools/ci/setup.sh
-          - export LANG=en_US.UTF-8
-          - mkdir -p percy-artifacts
-          - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
-          - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
-          - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
-          - cd apps/mobile-playground
-          - $(yarn bin percy) build:finalize
-        agents:
-          queue: macos-metal
+  - label: 'Finish Visreg Tests (iOS)'
+    depends_on: 'visreg_ios'
+    allow_dependency_failure: true
+    agents:
+      queue: macos-metal
+    commands:
+      - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
+      - tools/ci/visreg-finalize.sh

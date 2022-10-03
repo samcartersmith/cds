@@ -1,6 +1,4 @@
 _prebuild_shared_step: &prebuild_shared_step
-  commands:
-    - tools/ci/setup.sh
   plugins:
     - file:///buildkite/plugins/cache: &cache_plugin
         key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
@@ -27,19 +25,6 @@ _prebuild_shared_step: &prebuild_shared_step
     queue: metal
 
 _visreg_android_shared: &visreg_android_shared
-  parallelism: 1
-  commands:
-    # TODO: First line can be removed if macos-metal agents get upgraded
-    # https://docs.google.com/document/d/1bN53rawPd_A6WjZIAAwG_r_uSy7APaxz3pNz3aqIB-k/edit?usp=sharing
-    - nvm install 16.16.0 && nvm use 16.16.0 && npm install -g yarn
-    - tools/ci/setup.sh
-    - export LANG=en_US.UTF-8
-    - mkdir -p percy-artifacts
-    - tools/ci/android-visreg-nx.sh artifacts/cds-playground-android-app.tar.gz
-    - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
-    - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
-    - yarn nx run mobile-playground:android-e2e-emulator
-    - yarn nx run mobile-playground:android-e2e
   plugins: &android_plugins
     - file:///buildkite/plugins/cache: &cache_plugin
         key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
@@ -70,9 +55,6 @@ _visreg_android_shared: &visreg_android_shared
         env:
           PERCY_TOKEN: infra/buildkite/cds-percy-token-android
   timeout_in_minutes: 60
-  env:
-    VISREG_TOTAL_JOBS: 1
-    VISREG_JOB_NUMBER: 1
   agents:
     queue: metal
   retry:
@@ -85,92 +67,33 @@ env:
   NX_CAPTURE_METRICS: true
   NX_CAPTURE_TEST_METRICS: true
   ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
-  PERCY_NONCE_FILE_NAME: 'percy_nonce.txt'
   PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-android'
-  VISREG_TOTAL_JOBS: 8
 
 steps:
   - label: Android - Prebuild - visreg
+    key: 'visreg_android_prebuild'
     <<: *prebuild_shared_step
-    key: build-android-visreg
     commands:
       - export SYSTEM_VERSION_COMPAT=0
       - tools/ci/setup.sh
       - mkdir -p $(pwd)/artifacts
       - yarn nx run mobile-playground:prebuild-android-e2e cds-playground --destination $(pwd)/artifacts/cds-playground-android-app.tar.gz
 
-  - group: Visreg Tests (Android)
-    depends_on:
-      - build-android-visreg
-    steps:
-      - label: 'Visreg Test (Android) 1'
-        key: 'visreg-android-1'
-        <<: *visreg_android_shared
-        env:
-          VISREG_JOB_NUMBER: 1
+  - label: 'Visreg Test (Android) %n'
+    <<: *visreg_android_shared
+    cancel_on_build_failing: true
+    depends_on: 'visreg_android_prebuild'
+    key: 'visreg_android'
+    parallelism: 8
+    commands:
+      - 'tools/ci/visreg-android.sh artifacts/cds-playground-android-app.tar.gz'
 
-      - label: 'Visreg Test (Android) 2'
-        key: 'visreg-android-2'
-        <<: *visreg_android_shared
-        env:
-          VISREG_JOB_NUMBER: 2
-
-      - label: 'Visreg Test (Android) 3'
-        key: 'visreg-android-3'
-        <<: *visreg_android_shared
-        env:
-          VISREG_JOB_NUMBER: 3
-
-      - label: 'Visreg Test (Android) 4'
-        key: 'visreg-android-4'
-        <<: *visreg_android_shared
-        env:
-          VISREG_JOB_NUMBER: 4
-
-      - label: 'Visreg Test (Android) 5'
-        key: 'visreg-android-5'
-        <<: *visreg_android_shared
-        env:
-          VISREG_JOB_NUMBER: 5
-
-      - label: 'Visreg Test (Android) 6'
-        key: 'visreg-android-6'
-        <<: *visreg_android_shared
-        env:
-          VISREG_JOB_NUMBER: 6
-
-      - label: 'Visreg Test (Android) 7'
-        key: 'visreg-android-7'
-        <<: *visreg_android_shared
-        env:
-          VISREG_JOB_NUMBER: 7
-
-      - label: 'Visreg Test (Android) 8'
-        key: 'visreg-android-8'
-        <<: *visreg_android_shared
-        env:
-          VISREG_JOB_NUMBER: 8
-
-      - label: 'Finish Visreg Tests (Android)'
-        parallelism: 1
-        depends_on:
-          - 'visreg-android-1'
-          - 'visreg-android-2'
-          - 'visreg-android-3'
-          - 'visreg-android-4'
-          - 'visreg-android-5'
-          - 'visreg-android-6'
-          - 'visreg-android-7'
-          - 'visreg-android-8'
-        allow_dependency_failure: true
-        commands:
-          - tools/ci/setup.sh
-          - export LANG=en_US.UTF-8
-          - mkdir -p percy-artifacts
-          - buildkite-agent artifact download "percy-artifacts/$$PERCY_NONCE_FILE_NAME" percy-artifacts/
-          - export PERCY_PARALLEL_NONCE=$(cat percy-artifacts/$$PERCY_NONCE_FILE_NAME)
-          - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
-          - cd apps/mobile-playground
-          - $(yarn bin percy) build:finalize
-        agents:
-          queue: macos-metal
+  - label: 'Finish Visreg Tests (Android)'
+    allow_dependency_failure: true
+    depends_on: 'visreg_android'
+    parallelism: 1
+    agents:
+      queue: macos-metal
+    commands:
+      - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
+      - tools/ci/visreg-finalize.sh

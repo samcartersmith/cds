@@ -1,14 +1,19 @@
 #!/bin/bash
 set -euo pipefail
 
-tools/ci/setup.sh
+echo "--- Setup job"
+# run your shell script preceded by "." (dot space).
+# This causes the script to run the instructions in the original shell. Thus the env variables still exist in the next script
+. tools/ci/visreg-setup.sh
 
 ARTIFACT_PATH=$1
 APP_PATH="apps/mobile-playground"
 
+
 echo "--- Downloading prebuild"
 mkdir -p /tmp/$BUILDKITE_JOB_ID
 buildkite-agent artifact download $ARTIFACT_PATH /tmp/$BUILDKITE_JOB_ID/.
+
 
 echo "--- Setting up test environment"
 echo "Untar patched apk and test apk..."
@@ -26,5 +31,6 @@ mkdir -p /root/.android && touch /root/.android/repositories.cfg
 echo "--- Starting adb server"
 adb start-server
 
-# echo "--- Running Android E2E tests"
-# yarn mono-pipeline run-e2e android-e2e --preTarget android-e2e-emulator -- --configuration ci
+echo "--- Running Android E2E tests"
+yarn nx run mobile-playground:android-e2e-emulator
+yarn nx run mobile-playground:android-e2e

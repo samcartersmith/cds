@@ -1,6 +1,10 @@
+env:
+  LANG: en_US.UTF-8
+  CI: true
+  NX_CAPTURE_METRICS: true
+  NX_CAPTURE_TEST_METRICS: true
+
 _shared_step: &shared_step
-  commands:
-    - tools/ci/setup.sh
   plugins:
     - file:///buildkite/plugins/docker: &docker_plugin
         image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16
@@ -25,14 +29,20 @@ _shared_step: &shared_step
     automatic:
       limit: 1
 
-env:
-  LANG: en_US.UTF-8
-  CI: true
-  NX_CAPTURE_METRICS: true
-  NX_CAPTURE_TEST_METRICS: true
-  ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
-  PERCY_NONCE_FILE_NAME: 'percy_nonce.txt'
-  PERCY_TARGET_BRANCH: master
+_chrome_step: &chrome_step
+  <<: *shared_step
+  env:
+    CONFIG_SERVICE_CONTEXT: percy-cds
+    STORYBOOK_SKIP_ANIMATION: true
+  plugins:
+    - file:///buildkite/plugins/docker:
+        <<: *docker_plugin
+        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16-chrome
+        environment:
+          - 'BUILDKITE_API_TOKEN'
+          - 'PERCY_TOKEN'
+          - 'STORYBOOK_SKIP_ANIMATION'
+    - file:///buildkite/plugins/cache: *cache_plugin
 
 steps:
   - label: Validate
@@ -45,81 +55,45 @@ steps:
 
   - label: Build
     <<: *shared_step
-    parallelism: 1
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci build
-    env:
-      STORYBOOK_SKIP_ANIMATION: true
-    plugins:
-      - file:///buildkite/plugins/docker:
-          <<: *docker_plugin
-          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16-chrome
-          environment:
-            - 'BUILDKITE_API_TOKEN'
-            - 'STORYBOOK_SKIP_ANIMATION'
-      - file:///buildkite/plugins/cache: *cache_plugin
 
   - label: Lint
     <<: *shared_step
-    parallelism: 1
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci lint
 
   - label: Format
     <<: *shared_step
-    parallelism: 1
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci format
 
-  - label: Test & A11y
+  - label: Test
     <<: *shared_step
-    parallelism: 1
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci test
-      - STORYBOOK_SKIP_ANIMATION=1 yarn mono-pipeline run-ci other --targets=a11y
-    plugins:
-      - file:///buildkite/plugins/docker:
-          <<: *docker_plugin
-          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16-chrome
-      - file:///buildkite/plugins/cache: *cache_plugin
 
   - label: Typecheck
     <<: *shared_step
-    parallelism: 1
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci typecheck
 
   - label: 'Percy (Web)'
-    <<: *shared_step
-    parallelism: 1
+    <<: *chrome_step
+    cancel_on_build_failing: true
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-percy storybook
-    env:
-      CONFIG_SERVICE_CONTEXT: percy-cds
-      STORYBOOK_SKIP_ANIMATION: true
-    plugins:
-      - file:///buildkite/plugins/docker:
-          <<: *docker_plugin
-          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16-chrome
-          environment:
-            - 'BUILDKITE_API_TOKEN'
-            - 'PERCY_TOKEN'
-            - 'STORYBOOK_SKIP_ANIMATION'
-            - 'PERCY_TARGET_BRANCH'
-      - file:///buildkite/plugins/cache: *cache_plugin
 
-  - label: 'Visreg Tests (Mobile)'
+  - label: 'Percy (Mobile)'
     <<: *shared_step
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci other --targets=visreg
-    artifact_paths:
-      - percy-artifacts/**/*
     retry:
       automatic: false
