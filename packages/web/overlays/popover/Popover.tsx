@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { memo, MouseEvent, useCallback, useMemo } from 'react';
+import React, { memo, useCallback, useMemo, useRef } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { css } from 'linaria';
 import { useScale } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
+import { useClickOutside } from '../../hooks/useClickOutside';
 import { usePopoverA11y } from '../../hooks/usePopoverA11y';
 import { Box } from '../../layout/Box';
 import { ThemeProvider } from '../../system';
@@ -66,6 +67,7 @@ export const Popover = memo(
       usePopper(contentPosition);
     const scale = useScale();
     const invertedSpectrum = useSpectrumConditional(inverseConfig);
+    const ref = useRef<HTMLElement | null>(null);
 
     const { subjectAccessibilityProps, contentAccessibilityProps } = usePopoverA11y(
       visible,
@@ -73,19 +75,13 @@ export const Popover = memo(
       accessibilityLabel,
     );
 
-    // We use this to infer that hover events are triggering the mounting/dismounting of the content
-    const hasHoverInteractions = !!onMouseEnter && !!onMouseLeave && !onPressSubject;
-
-    const handleClose = useCallback(async () => {
+    const handleClose = useCallback(() => {
       subject?.focus(); // P3: get to refocus on subject upon close.
       onClose?.();
       onBlur?.();
     }, [onBlur, onClose, subject]);
 
-    // swallow click events inside the Popover content so the overlay doesn't consider it a blur event
-    const handleCaptureEvents = useCallback((event: MouseEvent<HTMLDivElement>) => {
-      event.stopPropagation();
-    }, []);
+    useClickOutside(ref, handleClose);
 
     const memoizedContent = useMemo(
       () => (
@@ -96,7 +92,6 @@ export const Popover = memo(
             zIndex: zIndex.overlays.dropdown,
           }}
           {...popperAttributes.popper}
-          onClick={handleCaptureEvents}
         >
           <FocusTrap onEscPress={handleClose}>
             {/* Box with Horizontal spacing to ensure proper margins but still rely on popper for layout. */}
@@ -110,27 +105,11 @@ export const Popover = memo(
         setPopper,
         popperStyles.popper,
         popperAttributes.popper,
-        handleCaptureEvents,
         handleClose,
         contentAccessibilityProps,
         testID,
         content,
       ],
-    );
-
-    const renderContent = hasHoverInteractions ? (
-      memoizedContent
-    ) : (
-      <Box
-        position="fixed"
-        pin="all"
-        zIndex={zIndex.overlays.portal + zIndex.overlays.modal}
-        onClick={handleClose}
-        role="dialog"
-        aria-modal="true"
-      >
-        {memoizedContent}
-      </Box>
     );
 
     return (
@@ -167,7 +146,7 @@ export const Popover = memo(
                     {memoizedContent}
                   </Box>
                 ) : (
-                  renderContent
+                  memoizedContent
                 )}
               </ThemeProvider>
             </Portal>
