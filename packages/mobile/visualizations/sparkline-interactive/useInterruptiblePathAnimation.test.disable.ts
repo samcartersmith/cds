@@ -5,7 +5,9 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { useInterruptiblePathAnimation } from './useInterruptiblePathAnimation';
 
-jest.useFakeTimers('legacy');
+jest.useFakeTimers({
+  legacyFakeTimers: true,
+});
 
 describe('useInterruptiblePathAnimation', () => {
   const animationListenerSpy = jest.fn();

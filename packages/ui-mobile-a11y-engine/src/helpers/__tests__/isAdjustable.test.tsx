@@ -1,17 +1,15 @@
 import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
-import CommunitySlider from '@react-native-community/slider';
+import Slider from '@react-native-community/slider';
 
 import isAdjustable from '../isAdjustable';
 
 jest.spyOn(console, 'error').mockImplementation();
 
-const CustomSlider = () => <CommunitySlider minimumValue={1} maximumValue={100} />;
+const CustomSlider = () => <Slider minimumValue={1} maximumValue={100} />;
 
 describe('isAdjustable tests', () => {
   it('identifies community Slider', () => {
-    const renderedTree = TestRenderer.create(
-      <CommunitySlider maximumValue={1} minimumValue={100} />,
-    );
+    const renderedTree = TestRenderer.create(<Slider maximumValue={1} minimumValue={100} />);
 
     const matcher = (node: ReactTestInstance) => isAdjustable(node);
     const matched = renderedTree.root.findAll(matcher);

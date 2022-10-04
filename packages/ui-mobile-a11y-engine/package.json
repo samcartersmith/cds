@@ -55,8 +55,7 @@
     "@types/react": "^17.0.3",
     "@types/react-native": "^0.68.2",
     "@types/react-test-renderer": "17.0.1",
-    "react": "17.0.2",
-    "react-native": "^0.68.2"
+    "jest-transform-stub": "^2.0.0"
   },
   "peerDependencies": {
     "@cbhq/mono-tasks": "^0.4.21",
