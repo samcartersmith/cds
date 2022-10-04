@@ -7,7 +7,6 @@ env:
 
 steps:
   - label: 'Visreg Test (iOS) %n'
-    cancel_on_build_failing: true
     key: 'visreg_ios'
     parallelism: 8
     agents:

@@ -81,7 +81,6 @@ steps:
 
   - label: 'Visreg Test (Android) %n'
     <<: *visreg_android_shared
-    cancel_on_build_failing: true
     depends_on: 'visreg_android_prebuild'
     key: 'visreg_android'
     parallelism: 8
