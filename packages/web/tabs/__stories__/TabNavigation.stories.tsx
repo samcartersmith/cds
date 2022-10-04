@@ -15,6 +15,7 @@ const longTabs: TabProps[] = [
   {
     id: 'first_primary_tab',
     label: 'Tab one',
+    testID: 'customTestId',
   },
   {
     id: 'second_primary_tab',

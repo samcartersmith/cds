@@ -31,7 +31,7 @@ export const TabNavigation = memo(
         tabs,
         value = tabs[0].id,
         variant = 'primary',
-        testID,
+        testID = 'tabNavigation',
         background = 'background',
         onChange,
         ...rest
@@ -107,23 +107,35 @@ export const TabNavigation = memo(
       // Iterate over the tabs and create Pressable TabLabels
       const tabLabels = useMemo(
         () =>
-          tabs.filter(Boolean).map(({ id, onPress, label, accessibilityLabel = label, count }) => {
-            return (
-              <View key={id} onLayout={getOnLayoutHandler(id)}>
-                <PressableOpacity
-                  accessibilityLabel={accessibilityLabel}
-                  accessibilityHint={accessibilityLabel}
-                  onPress={getTabPressHandler({ id, onPress })}
-                  transparentWhilePressed
-                >
-                  <TabLabel active={id === value} variant={variant} count={count}>
-                    {label}
-                  </TabLabel>
-                </PressableOpacity>
-              </View>
-            );
-          }),
-        [tabs, getOnLayoutHandler, getTabPressHandler, value, variant],
+          tabs
+            .filter(Boolean)
+            .map(
+              ({
+                id,
+                onPress,
+                label,
+                accessibilityLabel = label,
+                count,
+                testID: tabLabelTestID = `${testID}-tabLabel--${id}`,
+              }) => {
+                return (
+                  <View key={id} onLayout={getOnLayoutHandler(id)}>
+                    <PressableOpacity
+                      accessibilityLabel={accessibilityLabel}
+                      accessibilityHint={accessibilityLabel}
+                      onPress={getTabPressHandler({ id, onPress })}
+                      transparentWhilePressed
+                      testID={tabLabelTestID}
+                    >
+                      <TabLabel active={id === value} variant={variant} count={count}>
+                        {label}
+                      </TabLabel>
+                    </PressableOpacity>
+                  </View>
+                );
+              },
+            ),
+        [tabs, testID, getOnLayoutHandler, getTabPressHandler, value, variant],
       );
 
       return (

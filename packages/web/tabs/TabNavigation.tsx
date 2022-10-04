@@ -62,7 +62,7 @@ export const TabNavigation = memo(
         tabs,
         value = tabs[0].id,
         variant = 'primary',
-        testID,
+        testID = 'tabNavigation',
         onChange = noop,
         background,
         ...rest
@@ -172,21 +172,31 @@ export const TabNavigation = memo(
         () =>
           tabs
             ?.filter(Boolean)
-            ?.map(({ id, onPress, label, accessibilityLabel = label, count }) => {
-              return createElement(
-                PressableOpacityWithoutChildren,
-                {
-                  key: `${id}--button`,
-                  role: 'tab',
-                  accessibilityLabel,
-                  accessibilityHint: accessibilityLabel,
-                  onPress: getTabPressHandler(id, onPress as (id: string) => void),
-                  className: cx(pressableClass, insetFocusRing),
-                },
-                getChildren({ id, count, label }),
-              );
-            }),
-        [tabs, getTabPressHandler, getChildren],
+            ?.map(
+              ({
+                id,
+                onPress,
+                label,
+                accessibilityLabel = label,
+                count,
+                testID: tabLabelTestID = `${testID}-tabLabel--${id}`,
+              }) => {
+                return createElement(
+                  PressableOpacityWithoutChildren,
+                  {
+                    key: `${id}--button`,
+                    role: 'tab',
+                    accessibilityLabel,
+                    accessibilityHint: accessibilityLabel,
+                    onPress: getTabPressHandler(id, onPress as (id: string) => void),
+                    className: cx(pressableClass, insetFocusRing),
+                    testID: tabLabelTestID,
+                  },
+                  getChildren({ id, count, label }),
+                );
+              },
+            ),
+        [tabs, testID, getTabPressHandler, getChildren],
       );
 
       return (
