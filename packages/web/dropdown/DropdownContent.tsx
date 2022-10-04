@@ -20,8 +20,6 @@ import { cx } from '../utils/linaria';
 import { DropdownProps } from './DropdownProps';
 
 const dropdownStyleOverrides = css`
-  overflow-y: auto;
-  overflow-x: hidden;
   min-width: min-content;
 `;
 
@@ -71,6 +69,7 @@ export const DropdownContent = memo(
         <MotionVStack
           ref={ref}
           background
+          overflow="hidden"
           elevation={2}
           borderRadius="popover"
           zIndex={zIndex.overlays.dropdown}
