@@ -114,7 +114,7 @@ const writeToProjectOutDir = (content: A11yLogType, task: Task) => {
   const jsonifyContent = JSON.stringify(content);
 
   const logRootPath = `${task.cache.getOutputPath('coverage')}/ui-mobile_a11y_engine_out`;
-  if (!fs.existsSync(logRootPath)) fs.mkdirSync(logRootPath);
+  if (!fs.existsSync(logRootPath)) fs.mkdirSync(logRootPath, { recursive: true });
 
   fs.writeFileSync(`${logRootPath}/a11y-mobile-log-${content.timestamp}.json`, jsonifyContent);
 };
@@ -286,13 +286,15 @@ async function auditComponentsMissingA11yCoverage({
 
   await Promise.all(
     componentsWithoutTestFiles.map(async (missingFileName: string) => {
+      // this is necessary to get the relative path name to correctly execute jest command on file path
+      const removePackageName = missingFileName.split(`${task.projectPath}/`)[1];
       const args = [
         ...(jestConfigs as string[]),
         '--findRelatedTests', // shows tests that cover component coverage
         '--listTests', // this gives the list of tests that would be run without actually running them
         '--color=false',
         'silent=false',
-        missingFileName,
+        removePackageName,
       ];
 
       // call jest --findRelatedFiles --listTests <missingTestFile component>

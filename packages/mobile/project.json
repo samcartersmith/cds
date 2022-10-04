@@ -16,6 +16,10 @@
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
     },
+    "a11y": {
+      "executor": "@cbhq/ui-mobile-a11y-engine:audit",
+      "dependsOn": ["^build", "test"]
+    },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
       "outputs": [".nx/dist/packages/mobile"],
