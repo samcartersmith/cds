@@ -22,7 +22,7 @@ export const IllustrationAnnouncement = function IllustrationAnnouncement() {
           </TextBody>
           <TextBody as="p" spacingBottom={1}>
             To see Illustrations released this cycle, check{' '}
-            <Link to="https://docs.google.com/document/d/19N5EpYixyttCbmi2pbO0DsC0waL14v77MrwR7OQrwJQ">
+            <Link to="https://coda.io/d/Illustration-HQ_dCaDeg02jeR/Start-New-Project_su-3z#_lu41Y">
               go/icon-illo-release-history
             </Link>
           </TextBody>
