@@ -28,5 +28,13 @@
   ],
 
   // Gitlens
-  "gitlens.remotes": [{ "domain": "github.cbhq.net", "type": "GitHub" }]
+  "gitlens.remotes": [
+    {
+      "domain": "github.cbhq.net",
+      "type": "GitHub"
+    }
+  ],
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
 }

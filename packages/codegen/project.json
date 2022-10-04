@@ -35,8 +35,17 @@
         "commands": [
           "ts-node ./illustrations/build.ts",
           "nx run codegen:format",
-          "nx run mobile:format"
+          "nx run mobile:format",
+          "nx run codegen:uploadToStaticAssets"
         ],
+        "parallel": false
+      }
+    },
+    "uploadToStaticAssets": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "packages/codegen/illustrations",
+        "commands": ["./uploadToStaticAssets"],
         "parallel": false
       }
     },
