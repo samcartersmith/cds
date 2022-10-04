@@ -50,6 +50,7 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
           as="span"
           spacingHorizontal={2}
           dangerouslySetColor={isSelected ? color : colors.foregroundMuted}
+          noWrap
         >
           {period.label}
         </TextLabel1>

@@ -27,6 +27,33 @@ type SparklineInteractivePriceProps = Omit<
 
 export const DEFAULT_PERIOD = 'day';
 
+const periodsAlt = [
+  {
+    label: '1H',
+    value: 'hour' as const,
+  },
+  {
+    label: '1D',
+    value: 'day' as const,
+  },
+  {
+    label: '1 SEM.',
+    value: 'week' as const,
+  },
+  {
+    label: '1 MÊS',
+    value: 'month' as const,
+  },
+  {
+    label: '1 ANO',
+    value: 'year' as const,
+  },
+  {
+    label: 'All',
+    value: 'all' as const,
+  },
+];
+
 const periods = [
   {
     label: '1H',
@@ -114,7 +141,8 @@ type SparklineInteractiveBuilderProps = {
   SparklineInteractive: React.ComponentType<
     SparklineInteractiveBuilderComponentProps<SparklinePeriod>
   >;
-  isMobile: boolean;
+  isMobile?: boolean;
+  alternatePeriods?: boolean;
 };
 
 function numToLocaleString(num: number) {
@@ -126,6 +154,7 @@ function numToLocaleString(num: number) {
 export const sparklineInteractiveBuilder = ({
   SparklineInteractive,
   isMobile,
+  alternatePeriods,
 }: SparklineInteractiveBuilderProps) => {
   return memo(({ defaultPeriod, hideHoverDate, ...props }: SparklineInteractivePriceProps) => {
     // not supported onAndroid
@@ -167,7 +196,7 @@ export const sparklineInteractiveBuilder = ({
     return (
       <SparklineInteractive
         {...props}
-        periods={periods}
+        periods={alternatePeriods ? periodsAlt : periods}
         formatDate={formatDateWithConfig}
         formatHoverDate={!hideHoverDate ? formatHoverDate : undefined}
         defaultPeriod={defaultPeriod ?? DEFAULT_PERIOD}
@@ -216,10 +245,12 @@ export const sparklineInteractiveWithHeaderBuilder = ({
   SparklineInteractive,
   SparklineInteractiveHeader,
   isMobile,
+  alternatePeriods,
 }: SparklineInteractiveWithHeaderBuilderProps) => {
   const SparklineInteractiveBuild = sparklineInteractiveBuilder({
     SparklineInteractive,
     isMobile,
+    alternatePeriods,
   });
 
   return memo((props: SparklineInteractivePriceProps) => {

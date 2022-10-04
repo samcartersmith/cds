@@ -71,3 +71,17 @@ export const BottomPeriodSelector = () => {
 };
 
 BottomPeriodSelector.parameters = { percy: enableJavascript };
+
+const SparklineInteractiveWithAltHeader = sparklineInteractiveWithHeaderBuilder({
+  SparklineInteractive,
+  SparklineInteractiveHeader,
+  isMobile: false,
+  alternatePeriods: true,
+});
+
+export const AlternatePeriods = () => {
+  return (
+    <SparklineInteractiveWithAltHeader data={sparklineInteractiveData} strokeColor="#F7931A" />
+  );
+};
+AlternatePeriods.parameters = { percy: enableJavascript };
