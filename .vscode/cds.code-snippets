@@ -97,5 +97,19 @@
       ""
     ],
     "description": "Bolierplate for component unit test"
+  },
+  "createStory": {
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": "create-story",
+    "body": [
+      "import { ${1:component} } from '../${1:component}';",
+      "",
+      "export default {",
+      "  title: 'Core Components/${1:component}',",
+      "  component: ${1:component},",
+      "};",
+      ""
+    ],
+    "description": "Bolierplate for a storybook story"
   }
 }

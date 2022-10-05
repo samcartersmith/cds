@@ -18,6 +18,11 @@ export type InteractableBaseProps = {
   disabled?: boolean;
   /** Is the element elevated. */
   elevation?: ElevationLevels;
+  /**
+   * Is the element currenty loading.
+   * When set to true, will disable element from press and keyboard events
+   */
+  loading?: boolean;
   /** Is the element being pressed. Primarily a mobile feature, but can be used on the web. */
   pressed?: boolean;
   /** Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc). */

@@ -9,6 +9,10 @@ import { cx } from '../utils/linaria';
 
 import { ButtonOrLink } from './ButtonOrLink';
 import { Interactable, InteractableProps } from './Interactable';
+import {
+  interactablePressedBackground,
+  interactablePressedOpacity,
+} from './interactableCSSProperties';
 
 const scaledDownState = css`
   /* Prevents layout shift - https://web.dev/cls/#animations-and-transitions */
@@ -27,6 +31,16 @@ const pressablePaddingResetStyles = css`
   padding: 0;
 `;
 
+const loadingStyles = css`
+  cursor: default;
+  pointer-events: none;
+  touch-action: none;
+  background-color: var(${interactablePressedBackground});
+  > * {
+    opacity: var(${interactablePressedOpacity});
+  }
+`;
+
 export type OnPress = React.MouseEventHandler;
 
 export type LinkableProps = {
@@ -39,8 +53,6 @@ export type LinkableProps = {
 };
 
 export type PressableProps = {
-  /** Is the element currenty loading. */
-  loading?: boolean;
   /**
    * Necessary to control roving tabindex for accessibility
    * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
@@ -50,7 +62,8 @@ export type PressableProps = {
   SharedProps &
   LinkableProps &
   ComponentEventHandlerProps &
-  Omit<SharedAccessibilityProps, 'id'>;
+  Omit<SharedAccessibilityProps, 'id'> &
+  Pick<InteractableProps, 'loading'>;
 
 export type PressableInternalProps = {
   /** Element or component to render the container as. */
@@ -69,7 +82,6 @@ export const Pressable = forwardRef(function Pressable(
     as,
     children,
     className,
-    disabled,
     loading,
     onPress,
     onKeyPress,
@@ -80,9 +92,6 @@ export const Pressable = forwardRef(function Pressable(
   }: PressableInternalProps,
   ref: React.Ref<Element>,
 ) {
-  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-  const isDisabled = disabled || loading;
-
   let resetStyles = ''; // empty string is falsy
   const { borderColor } = props;
   if (!className) {
@@ -109,12 +118,17 @@ export const Pressable = forwardRef(function Pressable(
       onClick={onClick}
       onKeyPress={onKeyPress}
       {...props}
-      className={cx(!noScaleOnPress && scaledDownState, className, resetStyles)}
-      disabled={isDisabled}
+      className={cx(
+        !noScaleOnPress && scaledDownState,
+        className,
+        resetStyles,
+        loading && loadingStyles,
+      )}
       // Reakit adds this prop, but it's bad practice - https://jira.coinbase-corp.com/browse/CDS-2392
       aria-disabled={undefined}
       ref={ref}
       tabIndex={tabIndex}
+      loading={loading}
     >
       {children}
     </Interactable>

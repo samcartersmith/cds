@@ -111,6 +111,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     className: customClassName,
     disabled,
     elevation,
+    loading,
     pressed,
     style: customStyle,
     testID,
@@ -139,6 +140,12 @@ export const InteractableContent = forwardRef(function InteractableContent(
     isWeb: true,
   })[backgroundColor];
   const borderRadiusValue = useInteractableBorderRadius(borderRadius);
+
+  /**
+   * this variable should only be used when conditionally rendering the disabled DOM attribute
+   */
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+  const shouldBeDisabled = loading || disabled;
 
   const className = cx(
     interactable,
@@ -194,7 +201,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
       'aria-describedby': accessibilityHint,
       ...props,
       className,
-      disabled,
+      disabled: shouldBeDisabled,
       style,
       ref,
     },
