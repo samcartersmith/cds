@@ -109,6 +109,7 @@ const SearchInputMenuRecipe = () => {
       disableCloseOnOptionChange
       ref={dropdownRef}
       content={content}
+      disableTypeFocus
     >
       <SearchInput
         onChangeText={setSearchValue}

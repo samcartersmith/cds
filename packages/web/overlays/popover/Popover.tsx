@@ -62,6 +62,7 @@ export const Popover = memo(
     testID,
     contentPosition = defaultContentPosition,
     block = false,
+    disableTypeFocus = false,
   }: PopoverProps) => {
     const { subject, setSubject, setPopper, popperStyles, popperAttributes } =
       usePopper(contentPosition);
@@ -93,7 +94,7 @@ export const Popover = memo(
           }}
           {...popperAttributes.popper}
         >
-          <FocusTrap onEscPress={handleClose}>
+          <FocusTrap onEscPress={handleClose} disableTypeFocus={disableTypeFocus}>
             {/* Box with Horizontal spacing to ensure proper margins but still rely on popper for layout. */}
             <Box background="transparent" {...contentAccessibilityProps} testID={testID}>
               {content}
@@ -109,6 +110,7 @@ export const Popover = memo(
         contentAccessibilityProps,
         testID,
         content,
+        disableTypeFocus,
       ],
     );
 

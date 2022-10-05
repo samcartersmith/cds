@@ -37,7 +37,10 @@ export type DropdownProps = {
    * Portal is automatically disabled for SSR
    * */
   disablePortal?: boolean;
-} & Pick<PopoverProps, 'content' | 'children' | 'showOverlay' | 'contentPosition' | 'block'> &
+} & Pick<
+  PopoverProps,
+  'content' | 'children' | 'showOverlay' | 'contentPosition' | 'block' | 'disableTypeFocus'
+> &
   SharedProps &
   Pick<
     SharedAccessibilityProps,

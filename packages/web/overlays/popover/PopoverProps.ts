@@ -55,5 +55,9 @@ export type PopoverProps = {
    * @default false
    */
   block?: boolean;
+  /**
+   * Use for editable Search Input components to ensure focus is correctly applied
+   */
+  disableTypeFocus?: boolean;
 } & Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
   SharedProps;

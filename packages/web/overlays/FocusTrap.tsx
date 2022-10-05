@@ -3,7 +3,11 @@ import { FOCUSABLE_ELEMENTS } from '@cbhq/cds-common/tokens/overlays';
 
 import { getBrowserGlobals } from '../utils/browser';
 
-export type FocusTrapProps = { children: ReactElement; onEscPress?: () => void };
+export type FocusTrapProps = {
+  children: ReactElement;
+  onEscPress?: () => void;
+  disableTypeFocus?: boolean;
+};
 
 const NAVIGATION_KEYS = ['Tab', 'ArrowDown', 'ArrowUp', 'Home', 'End'];
 const ALPHABET_KEYS = [
@@ -35,7 +39,11 @@ const ALPHABET_KEYS = [
   'z',
 ];
 
-export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: FocusTrapProps) {
+export const FocusTrap = memo(function FocusTrap({
+  children,
+  onEscPress,
+  disableTypeFocus,
+}: FocusTrapProps) {
   const isFocused = useRef(false);
   const childrenRef = useRef<HTMLElement>(null);
 
@@ -123,7 +131,7 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
         return;
       }
 
-      if (isMenuItem && ALPHABET_KEYS.includes(event.key)) {
+      if (!disableTypeFocus && isMenuItem && ALPHABET_KEYS.includes(event.key)) {
         event.preventDefault();
 
         const arrFocusableElements = Array.from(focusableElements);
@@ -165,7 +173,7 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
         focusPrevElement();
       }
     },
-    [],
+    [disableTypeFocus],
   );
 
   const handleKeyDown = useCallback(
