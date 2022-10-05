@@ -21,6 +21,7 @@ export const ProgressBar = memo(
         progress,
         color = 'primary',
         disabled = false,
+        disableAnimateOnMount = false,
         testID,
       }: ProgressBaseProps,
       forwardedRef: ForwardedRef<HTMLElement>,
@@ -29,7 +30,7 @@ export const ProgressBar = memo(
 
       const palette = usePalette();
       const { getPreviousValue: getPreviousPercent, addPreviousValue: addPreviousPercent } =
-        usePreviousValues<number>([0]);
+        usePreviousValues<number>([disableAnimateOnMount ? progress : 0]);
 
       addPreviousPercent(progress);
       const previousPercent = getPreviousPercent() ?? 0;
@@ -69,7 +70,7 @@ export const ProgressBar = memo(
                 flexShrink={0}
                 flexGrow={0}
                 width="100%"
-                opacity={0}
+                opacity={disableAnimateOnMount ? 1 : 0}
                 borderRadius="standard"
                 dangerouslySetBackground={!disabled ? palette[color] : palette.lineHeavy}
                 animate={motionProps.animate}

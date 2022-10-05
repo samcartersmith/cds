@@ -18,6 +18,7 @@ export const ProgressBar: React.FC<ProgressBaseProps> = memo(
         progress,
         color = 'primary',
         disabled = false,
+        disableAnimateOnMount = false,
         testID,
       }: ProgressBaseProps,
       forwardedRef: ForwardedRef<View>,
@@ -26,7 +27,7 @@ export const ProgressBar: React.FC<ProgressBaseProps> = memo(
       const palette = usePalette();
 
       const { getPreviousValue: getPreviousPercent, addPreviousValue: addPreviousPercent } =
-        usePreviousValues<number>([0]);
+        usePreviousValues<number>([disableAnimateOnMount ? progress : 0]);
 
       addPreviousPercent(progress);
       const previousPercent = getPreviousPercent() ?? 0;

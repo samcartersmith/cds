@@ -213,6 +213,11 @@ const ProgressBarScreen = () => {
           )}
         </ProgressContainerWithButtons>
       </Example>
+      <Example title="Disable Mount Animation">
+        <ProgressContainerWithButtons hideIncrease>
+          {() => <ProgressBar progress={0.8} disableAnimateOnMount />}
+        </ProgressContainerWithButtons>
+      </Example>
     </ExampleScreen>
   );
 };

@@ -276,3 +276,12 @@ export const CustomStringLabel = () => {
   );
 };
 CustomStringLabel.parameters = { percy: enableJavascript };
+
+export const DisableAnimateOnMount = () => {
+  return (
+    <ProgressContainerWithButtons hideIncrease>
+      {() => <ProgressBar progress={0.8} disableAnimateOnMount />}
+    </ProgressContainerWithButtons>
+  );
+};
+DisableAnimateOnMount.parameters = { percy: enableJavascript };

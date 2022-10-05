@@ -1,3 +1,4 @@
+import { HintMotionBaseProps } from './MotionBaseProps';
 import type { PaletteForeground } from './Palette';
 import type { SharedProps } from './SharedProps';
 import type { Weight } from './Weight';
@@ -27,4 +28,5 @@ export type ProgressBaseProps = {
    * @default primary
    */
   color?: ProgressColor;
-} & SharedProps;
+} & SharedProps &
+  Pick<HintMotionBaseProps, 'disableAnimateOnMount'>;
