@@ -12,15 +12,15 @@ nx run common:lint
 
 | Command                                             | Description                                                  |
 | --------------------------------------------------- | ------------------------------------------------------------ |
-| yarn nx run build                                   | Build all packages.                                          |
-| yarn nx run format                                  | Format all of the affected packages                          |
-| yarn nx run lint                                    | Lint all of the affected packages                            |
-| yarn nx run lint --fix                              | Lint all of the affected packages and fix errors             |
-| yarn nx run release                                 | Automatically update CHANGELOG based on PR titles            |
-| yarn nx run stylelint                               | Stylelint all affected packages                              |
-| yarn nx run stylelint --fix                         | Stylelint and fix all affected packages                      |
-| yarn nx run test                                    | Test all of the affected packages                            |
-| yarn nx run typecheck                               | typecheck all of the affected packages                       |
+| yarn release                                        | Automatically update CHANGELOG based on PR titles            |
+| yarn nx affected --target=build                     | Build all packages.                                          |
+| yarn nx affected --target=format                    | Format all of the affected packages                          |
+| yarn nx affected --target=lint                      | Lint all of the affected packages                            |
+| yarn nx affected --target=lint --fix                | Lint all of the affected packages and fix errors             |
+| yarn nx affected --target=lint-styles               | Stylelint all affected packages                              |
+| yarn nx affected --target=lint-styles --fix         | Stylelint and fix all affected packages                      |
+| yarn nx affected --target=test                      | Test all of the affected packages                            |
+| yarn nx affected --target=typecheck                 | typecheck all of the affected packages                       |
 | ----                                                | ----                                                         |
 | yarn nx run codegen:adoption                        | Prepare adoption numbers                                     |
 | yarn nx run codegen:adoption --DEBUG=1              | Debug adoption tracker script                                |
@@ -32,6 +32,7 @@ nx run common:lint
 | yarn nx run codegen:lint                            | Lint the `codegen` project.                                  |
 | yarn nx run codegen:lint --fix                      | Lint the `codegen` project and fix errors.                   |
 | yarn nx run codegen:routes                          | Create routes for mobile-playgrounds from screens directory. |
+| yarn nx run codegen:release                         | Automatically update CHANGELOG based on PR titles            |
 | ----                                                | ----                                                         |
 | yarn nx run common:build                            | Build the `common` package.                                  |
 | yarn nx run common:format                           | Format the `common` package.                                 |

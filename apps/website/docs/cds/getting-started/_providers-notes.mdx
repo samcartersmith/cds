@@ -1,17 +1,23 @@
 :::note
 
-If you are using versions of `create-react-app` or `react-scripts` earlier than v5.0, you will need to add a custom configuration to your webpack config.
+If you are using versions of **create-react-app** or **react-scripts** earlier than v5.0, you will need to add a custom configuration to your webpack config.
 
 :::
 
-Add the following to `module.exports` in your `webpack.config.js` file:
+Add the following to `module.rules` in your `webpack.config.js`:
 
-```js
-{
-    type: 'javascript/auto',
-    test: /\.mjs$/,
-    include: /node_modules/,
-},
+```diff title="webpack.config.js"
+module.exports = {
+  module: {
+    rules: [
++     {
++       type: 'javascript/auto',
++       test: /\.mjs$/,
++       include: /node_modules/,
++     },
+    ]
+  }
+}
 ```
 
 You may also want to update some other configs to tell TypeScript and Babel to support `*.mjs` files.
