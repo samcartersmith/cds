@@ -92,4 +92,21 @@ describe('Select', () => {
     expect(getAllByText(exampleOptions[1])).toBeDefined();
     expect(queryByText(mockPlaceholder)).toBeNull();
   });
+
+  it('trigger is in focus after interaction and menu is closed', async () => {
+    const { getByText, getAllByRole } = render(<MockSelect placeholder={mockPlaceholder} />);
+
+    const selectButton = getAllByRole('button')[0];
+    expect(selectButton).not.toHaveFocus();
+
+    fireEvent.click(selectButton);
+
+    // expect Menu and SelectOption to render
+    const firstSelectOption = await waitFor(() => getByText(exampleOptions[0]));
+
+    // select the first option
+    fireEvent.click(firstSelectOption);
+
+    expect(selectButton).toHaveFocus();
+  });
 });
