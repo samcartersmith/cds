@@ -60,6 +60,23 @@ _The link text must have a 3:1 contrast ratio from the surrounding non-link text
 </TextBody>
 ```
 
+:::caution Links nested inside Text components (Mobile only)
+
+As of React Native v0.68.2, nesting a Link inside of a Text component and applying spacing to that Text parent can result in a misalignment of the Link and its hitslop. Until the underlying alignment issues are resolved in React Native, our recommendation is to wrap your composed Text/Link in a Box component and apply any necessary spacing to that wrapper, like so:
+
+<br />
+
+```jsx live
+<Box spacingTop={5}>
+  <TextBody as="span">
+    {'Parent text '}
+    <Link to="https://www.google.com">{'link text'}</Link>
+  </TextBody>
+</Box>
+```
+
+:::
+
 ```jsx live
 <VStack alignItems="flex-start" gap={3}>
   <Link variant="title1" to="https://www.google.com/" openInNewWindow>

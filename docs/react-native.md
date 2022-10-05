@@ -119,7 +119,7 @@ Try running `sudo chown -R $(whoami):staff ~/Library/LaunchAgents` (from [this g
 
 ### Running mobile-playground in simulator
 
-\_Run the following in the terminal to run the simulator
+Run the following in the terminal to run the simulator
 
 - IOS: `yarn nx run mobile-playground:start-ios`
 - Android: `yarn nx run mobile-playground:start-android`
