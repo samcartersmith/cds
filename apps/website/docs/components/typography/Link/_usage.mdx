@@ -28,6 +28,61 @@ _The link text must have a 3:1 contrast ratio from the surrounding non-link text
   </TabItem>
 </Tabs>
 
+### Styling your link
+
+To style a `<Link />` component, simply wrap the `Link` node in the desired `Text` component, using the `as` prop for your usecase (for example, `p` for body text, `h1`/`h2`/`h3` for titles, etc). However, there may be times when a rendering a span is _exactly_ what you want. In those cases, providing a variant prop makes sense.
+
+#### Wrapping your Link in the appropriate Text element
+
+```jsx live
+<VStack alignItems="flex-start" gap={3}>
+  <TextBody as="p">
+    <Link to="https://www.google.com/" openInNewWindow>
+      body link
+    </Link>
+  </TextBody>
+  <TextCaption as="span">
+    <Link to="https://www.google.com/" openInNewWindow>
+      caption link
+    </Link>
+  </TextCaption>
+  <TextLabel1 as="label">
+    <Link to="https://www.google.com/" openInNewWindow>
+      label1 link
+    </Link>
+  </TextLabel1>
+  <TextLabel2 as="label">
+    <Link to="https://www.google.com/" openInNewWindow>
+      label2 link
+    </Link>
+  </TextLabel2>
+  <TextLegal as="span">
+    <Link to="https://www.google.com/" openInNewWindow>
+      legal link
+    </Link>
+  </TextLegal>
+  <TextTitle1 as="h1">
+    <Link to="https://www.google.com/" openInNewWindow>
+      title1 link
+    </Link>
+  </TextTitle1>
+  <TextTitle2 as="h2">
+    <Link to="https://www.google.com/" openInNewWindow>
+      title2 link
+    </Link>
+  </TextTitle2>
+  <TextTitle3 as="h3">
+    <Link to="https://www.google.com/" openInNewWindow>
+      title3 link
+    </Link>
+  </TextTitle3>
+</VStack>
+```
+
+#### Using the variant prop
+
+If you find yourself in a situation where you simply need to style a link as a Text component _without_ wrapping it in the semantically appropriate text element, reach for the `variant` prop.
+
 ```jsx live
 <VStack alignItems="flex-start" gap={3}>
   {['body', 'caption', 'label1', 'label2', 'legal', 'title1', 'title2', 'title3'].map((variant) => (
