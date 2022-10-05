@@ -6,6 +6,7 @@ import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
 
 import { Icon } from '../icons/Icon';
+import { Group } from '../layout';
 import { borderRadius, borderWidth, control, palette } from '../tokens';
 import { FilteredHTMLAttributes } from '../types';
 import { cx } from '../utils/linaria';
@@ -67,7 +68,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   const handleSelect = useHandleRadioSelect<T>(onChange);
 
   return (
-    <div role="radiogroup" ref={ref} data-testid={testID} {...restProps}>
+    <Group role="radiogroup" ref={ref} testID={testID} {...restProps}>
       {label}
       {Object.entries<string>(options).map(([value, optionLabel]) => (
         <Radio
@@ -82,7 +83,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
           {optionLabel}
         </Radio>
       ))}
-    </div>
+    </Group>
   );
 }) as <T extends string>(
   props: RadioGroupProps<T> & React.RefAttributes<HTMLInputElement>,

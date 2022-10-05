@@ -1,3 +1,6 @@
+import { BoxBaseProps } from './BoxBaseProps';
+import { GroupBaseProps } from './GroupBaseProps';
+
 export type RadioGroupBaseProps<T extends string> = {
   /**
    * Multiple choice options for the radio group. The object key represents
@@ -8,4 +11,4 @@ export type RadioGroupBaseProps<T extends string> = {
   label?: React.ReactNode;
   /** Currently selected value. */
   selectedValue?: T;
-};
+} & Pick<GroupBaseProps<BoxBaseProps>, 'direction' | 'gap'>;

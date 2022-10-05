@@ -7,6 +7,7 @@ import type { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseP
 import { entries } from '@cbhq/cds-utils';
 
 import { Icon } from '../icons/Icon';
+import { Group } from '../layout';
 import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
 
@@ -104,7 +105,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   });
 
   return (
-    <View
+    <Group
       accessibilityRole="radiogroup"
       ref={ref}
       testID={testID}
@@ -125,7 +126,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
           {optionLabel}
         </Radio>
       ))}
-    </View>
+    </Group>
   );
   // Make forwardRef result function stay generic function type
 }) as <T extends string>(

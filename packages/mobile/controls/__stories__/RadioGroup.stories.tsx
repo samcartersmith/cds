@@ -49,6 +49,7 @@ const RadioGroupScreen = () => {
           /* eslint-disable react-hooks/rules-of-hooks */
           const [group1, setGroup1] = useState<keyof typeof options1 | undefined>('btc');
           const [group2, setGroup2] = useState<keyof typeof options2>();
+          const [group3, setGroup3] = useState<keyof typeof options1>();
           /* eslint-enable react-hooks/rules-of-hooks */
 
           return (
@@ -60,13 +61,21 @@ const RadioGroupScreen = () => {
                 selectedValue={group1}
                 options={options1}
               />
-
               <RadioGroup<keyof typeof options2>
-                label={<TextHeadline>Choose as Mascot</TextHeadline>}
+                label={<TextHeadline>Choose a Mascot</TextHeadline>}
                 accessibilityLabel="Choose as mascot for your team"
                 onChange={setGroup2}
                 selectedValue={group2}
                 options={options2}
+              />
+              <TextHeadline>Select a Currency</TextHeadline>
+              <RadioGroup<keyof typeof options1>
+                accessibilityLabel="Select a currency to trade"
+                onChange={setGroup3}
+                selectedValue={group3}
+                options={options1}
+                gap={2}
+                direction="horizontal"
               />
             </>
           );
