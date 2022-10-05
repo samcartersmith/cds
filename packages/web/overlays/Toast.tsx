@@ -64,6 +64,7 @@ export const Toast: React.FC<ToastProps> = memo(
         testID = 'cds-toast',
         bottomOffset = spacing[4],
         closeButtonAccessibilityProps = closeButtonAccessibilityDefaults,
+        variant,
         ...rest
       },
       ref,
@@ -139,7 +140,7 @@ export const Toast: React.FC<ToastProps> = memo(
                       {text}
                     </TextHeadline>
                   </Box>
-                  <ColorSurge />
+                  <ColorSurge background={variant} />
                   <HStack>
                     {!!action && (
                       <Button

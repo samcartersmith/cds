@@ -32,7 +32,7 @@ export type ToastProps = ToastBaseProps;
 
 export const Toast: React.FC<ToastProps> = memo(
   forwardRef<ToastRefBaseProps, React.PropsWithChildren<ToastProps>>(
-    ({ text, action, onWillHide, onDidHide, bottomOffset, ...rest }, ref) => {
+    ({ text, action, onWillHide, onDidHide, bottomOffset, variant, ...rest }, ref) => {
       const [{ opacity, bottom }, animateIn, animateOut] = useToastAnimation();
       const spacing = useSpacingScale();
 
@@ -104,7 +104,7 @@ export const Toast: React.FC<ToastProps> = memo(
                 }}
                 {...panHandlers}
               >
-                <ColorSurge />
+                <ColorSurge background={variant} />
                 {/* avoid pushing contents off screen */}
                 <Box flexShrink={1} spacingEnd={2} spacingVertical={1}>
                   <TextHeadline>{text}</TextHeadline>

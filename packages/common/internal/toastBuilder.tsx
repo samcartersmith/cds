@@ -49,11 +49,18 @@ export function toastBuilder({ Toast, Button, PortalProvider, Stack }: CreateToa
       });
     }, [toast]);
 
+    const handleVariant = useCallback(() => {
+      toast.show('Toast copy', {
+        variant: 'negative',
+      });
+    }, [toast]);
+
     return (
       <Stack gap={3}>
         <Button onPress={handleShow}>Show Toast</Button>
         <Button onPress={handleShowMultiline}>Multiline Toast</Button>
         <Button onPress={handleShowBottomOffset}>Bottom Offset Toast</Button>
+        <Button onPress={handleVariant}>Variant</Button>
       </Stack>
     );
   };

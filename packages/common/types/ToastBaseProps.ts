@@ -1,3 +1,4 @@
+import { ColorSurgeBackground } from './ColorSurgeBaseProps';
 import { DimensionValue } from './DimensionStyles';
 import { NoopFn } from './Helpers';
 import { OverlayLifecycleProps } from './OverlayLifecycleProps';
@@ -35,6 +36,11 @@ export type ToastBaseOptions = {
    * @default spacing2(Mobile)/spacing4(Web)
    */
   bottomOffset?: DimensionValue;
+  /**
+   * Controls color surge background
+   * @default primary
+   */
+  variant?: ColorSurgeBackground;
 } & Pick<OverlayLifecycleProps, 'onWillHide' | 'onDidHide'>;
 
 export type ToastOptions = ToastBaseOptions & ToastDuration;
