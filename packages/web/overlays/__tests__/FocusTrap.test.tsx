@@ -73,6 +73,50 @@ describe('FocusTrap', () => {
     // expect second option to be focused
     expect(firstOption).toHaveFocus();
   });
+
+  it('focuses on the first matching element after a US character is typed', async () => {
+    const { getByTestId, getAllByRole } = render(<Dropdown subjectTestID={subjectTestID} />);
+
+    fireEvent.keyDown(getByTestId(subjectTestID), {
+      key: 'Enter',
+      code: 'Enter',
+    });
+
+    const menuItems = getAllByRole('menuitem');
+
+    const firstOption = await waitFor(() => menuItems[0]);
+    const lastOption = menuItems[menuItems.length - 1]; // this is an option beginning with the letter 'n'
+
+    fireEvent.keyDown(firstOption, {
+      key: 'n',
+      code: '78',
+    });
+
+    // expect the option "next option 8" option to be focused
+    expect(lastOption).toHaveFocus();
+  });
+
+  it('keeps focus on the previous element when no matching element for typed US character', async () => {
+    const { getByTestId, getAllByRole } = render(<Dropdown subjectTestID={subjectTestID} />);
+
+    fireEvent.keyDown(getByTestId(subjectTestID), {
+      key: 'Enter',
+      code: 'Enter',
+    });
+
+    const menuItems = getAllByRole('menuitem');
+
+    const firstOption = await waitFor(() => menuItems[0]);
+
+    expect(firstOption).toHaveFocus();
+
+    fireEvent.keyDown(firstOption, {
+      key: 'a',
+      code: '65',
+    });
+
+    expect(firstOption).toHaveFocus();
+  });
   it('focuses on the last menu item when End is typed', async () => {
     const { getByTestId, getAllByRole } = render(<Dropdown subjectTestID={subjectTestID} />);
 

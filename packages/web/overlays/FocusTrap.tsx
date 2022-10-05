@@ -6,6 +6,34 @@ import { getBrowserGlobals } from '../utils/browser';
 export type FocusTrapProps = { children: ReactElement; onEscPress?: () => void };
 
 const NAVIGATION_KEYS = ['Tab', 'ArrowDown', 'ArrowUp', 'Home', 'End'];
+const ALPHABET_KEYS = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z',
+];
 
 export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: FocusTrapProps) {
   const isFocused = useRef(false);
@@ -95,6 +123,23 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
         return;
       }
 
+      if (isMenuItem && ALPHABET_KEYS.includes(event.key)) {
+        event.preventDefault();
+
+        const arrFocusableElements = Array.from(focusableElements);
+
+        const elementWithMatchingFirstLetter = arrFocusableElements.find((el: Element) => {
+          const textContentFirstLetter = el.textContent?.at(0)?.toLowerCase();
+          const eventKeyLowerCase = event.key.toLowerCase();
+
+          return textContentFirstLetter === eventKeyLowerCase;
+        });
+
+        if (elementWithMatchingFirstLetter) {
+          (elementWithMatchingFirstLetter as HTMLElement).focus();
+        }
+      }
+
       if (activeElement === lastElement) {
         handleLastElement();
         return;
@@ -125,7 +170,7 @@ export const FocusTrap = memo(function FocusTrap({ children, onEscPress }: Focus
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
-      if (NAVIGATION_KEYS.includes(event.key)) {
+      if (NAVIGATION_KEYS.includes(event.key) || ALPHABET_KEYS.includes(event.key)) {
         handleKeyboardNavigation(event, childrenRef.current);
       }
 

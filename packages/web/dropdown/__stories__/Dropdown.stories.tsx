@@ -26,6 +26,7 @@ const defaultOptions = [
   'Option 5',
   'Option 6',
   'Option 7',
+  'Next Option 8',
 ];
 
 type MockDropdownProps = {
