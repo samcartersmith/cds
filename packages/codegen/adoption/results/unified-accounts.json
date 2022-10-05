@@ -3,8 +3,8 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 108,
-      "totalCallSites": 70,
+      "totalInstances": 107,
+      "totalCallSites": 69,
       "cds": "@cbhq/cds-web/buttons/Button",
       "aliasedCdsComponents": [
         {
@@ -62,11 +62,10 @@
         "@acc/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 3,
         "@acc/Statements/pages/CoinbasePro/components/GenerateProReport/GenerateProReport.tsx": 1,
-        "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 2,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 2,
+        "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 2,
-        "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
@@ -120,9 +119,8 @@
           "@acc/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
           "@acc/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 2,
-          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 2,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
+          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
@@ -183,11 +181,10 @@
           "@acc/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
           "@acc/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 3,
-          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 2,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 2,
+          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 2,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
@@ -250,7 +247,6 @@
           "@acc/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 2,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 2,
@@ -365,20 +361,20 @@
       "cds": "@cbhq/cds-web/tables/Table",
       "callSites": {
         "@acc/Applications/ApplicationList.tsx": 1,
+        "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
+        "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
         "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 1,
         "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 1,
-        "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
-        "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
         "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx": 1
       },
       "propsWithCallSites": {
         "variant": {
           "@acc/Applications/ApplicationList.tsx": 1,
+          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
           "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 1,
           "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 1,
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
-          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
           "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx": 1
         },
@@ -400,10 +396,10 @@
           "callSites": [
             "@acc/Applications/ApplicationList.tsx",
             "@acc/Applications/TableBody.tsx",
+            "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx",
+            "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx",
             "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx",
             "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx",
-            "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx",
-            "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx",
             "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx",
             "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx"
           ]
@@ -411,10 +407,10 @@
       ],
       "callSites": {
         "@acc/Applications/TableBody.tsx": 1,
+        "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
+        "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
         "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 1,
         "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 1,
-        "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
-        "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
         "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx": 1
       }
@@ -502,9 +498,9 @@
         "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 3,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 3,
+        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 4,
         "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 4,
         "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 2,
@@ -553,9 +549,9 @@
           "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 3,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 3,
+          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 4,
           "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 4,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 2,
@@ -685,28 +681,28 @@
       "callSites": {
         "@acc/Applications/TableHeaders.tsx": 1,
         "@acc/Applications/TableRow.tsx": 1,
-        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 2,
-        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 2,
+        "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
         "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
         "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
-        "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
+        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 2,
+        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 2,
         "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx": 2
       },
       "propsWithCallSites": {
         "testID": {
           "@acc/Applications/TableRow.tsx": 1,
+          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
           "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
-          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
           "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
         },
         "key": {
-          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 2,
-          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 2,
+          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
           "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
-          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
+          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 2,
+          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 2,
           "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx": 1
         }
@@ -752,9 +748,9 @@
         "@acc/components/DetailsTable/components/HelpBlock.tsx": 2,
         "@acc/components/DetailsTable/components/ReadOnlyDisplay.tsx": 1,
         "@acc/components/Layout/Navigation/NavigationRowItem.tsx": 1,
+        "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1,
         "@acc/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
         "@acc/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-        "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1,
         "@acc/TaxCenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
         "@acc/TaxCenter/pages/Reports/components/TaxForms.tsx": 2,
         "@acc/TaxCenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
@@ -763,8 +759,8 @@
         "@acc/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 2,
         "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
-        "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
         "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+        "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
         "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 4,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 1,
@@ -811,9 +807,9 @@
           "@acc/components/DetailsTable/components/HelpBlock.tsx": 2,
           "@acc/components/DetailsTable/components/ReadOnlyDisplay.tsx": 1,
           "@acc/components/Layout/Navigation/NavigationRowItem.tsx": 1,
+          "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-          "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1,
           "@acc/TaxCenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/Reports/components/TaxForms.tsx": 2,
           "@acc/TaxCenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
@@ -822,8 +818,8 @@
           "@acc/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 2,
           "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 4,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 1,
@@ -863,8 +859,8 @@
           "@acc/TaxCenter/pages/TaxForms/components/EW8Screen.tsx": 1,
           "@acc/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 2,
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 4,
           "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
@@ -906,8 +902,8 @@
         "spacingStart": {
           "@acc/TaxCenter/components/Form8949/MissingDetailsPrefilledForm8949Modal.tsx": 1,
           "@acc/components/Layout/Navigation/NavigationRowItem.tsx": 1,
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 4,
           "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 1
@@ -927,7 +923,7 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 182,
+      "totalInstances": 183,
       "totalCallSites": 91,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "aliasedCdsComponents": [
@@ -989,8 +985,8 @@
         "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 6,
         "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 3,
-        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 1,
         "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 1,
         "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 1,
         "@acc/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 1,
@@ -998,19 +994,19 @@
         "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 22,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 1,
-        "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 2,
+        "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 3,
         "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 6,
         "@acc/TaxCenter/pages/TaxSummary/components/AlternativeTurboTaxCTA/AlternativeTurboTaxCTA.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
+        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 6,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 6,
-        "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/DocumentList.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 4,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 3,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
@@ -1083,8 +1079,8 @@
           "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 6,
           "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 3,
-          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 1,
           "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 1,
           "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 1,
@@ -1092,19 +1088,19 @@
           "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 22,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 1,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 2,
+          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 3,
           "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 6,
           "@acc/TaxCenter/pages/TaxSummary/components/AlternativeTurboTaxCTA/AlternativeTurboTaxCTA.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
+          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 6,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 6,
-          "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/DocumentList.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 4,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 3,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
@@ -1156,17 +1152,17 @@
           "@acc/TaxCenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 2,
+          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 3,
           "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 6,
           "@acc/TaxCenter/pages/TaxSummary/components/AlternativeTurboTaxCTA/AlternativeTurboTaxCTA.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
+          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 6,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 6,
+          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 5,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourGLReports.tsx": 2,
@@ -1324,8 +1320,8 @@
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 67,
-      "totalCallSites": 44,
+      "totalInstances": 69,
+      "totalCallSites": 45,
       "cds": "@cbhq/cds-web/typography/Link",
       "presentationalProps": [
         {
@@ -1375,14 +1371,15 @@
         "@acc/TaxCenter/pages/Reports/components/ReportsFAQ.tsx": 2,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 2,
         "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
-        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 2,
-        "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
         "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+        "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
+        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 2,
         "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 4,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 4,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
+        "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 2,
         "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 2,
@@ -1409,9 +1406,9 @@
           "@acc/TaxCenter/components/Form8949/PrefilledForm8949Modal.tsx": 3,
           "@acc/components/Layout/Header/ProductPickerModal.tsx": 1,
           "@acc/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
-          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 2,
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
+          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 2,
           "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 4,
           "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/CoinbaseCostBasisMethod.tsx": 1,
@@ -1425,6 +1422,7 @@
           "@acc/Security/modals/SecurityKey/steps/HaveKeyReady.tsx": 1,
           "@acc/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 2,
+          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/CoinbaseCostBasisMethod.tsx": 1
         },
         "href": {
@@ -1447,8 +1445,8 @@
           "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 2,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 1,
@@ -1479,9 +1477,9 @@
           "@acc/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@acc/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 2,
-          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 2,
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
+          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 2,
           "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 4,
           "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
@@ -1525,8 +1523,9 @@
           "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 4,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
+          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 2,
           "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 2,
@@ -1540,17 +1539,21 @@
         },
         "onClick": {
           "@acc/components/Layout/Header/ProductPickerModal.tsx": 1,
+          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
         },
         "id": { "@acc/components/Layout/Header/ProductPickerModal.tsx": 1 },
-        "style": { "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1 }
+        "style": { "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1 },
+        "data-testid": {
+          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 2
+        }
       }
     },
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 335,
-      "totalCallSites": 123,
+      "totalInstances": 332,
+      "totalCallSites": 122,
       "cds": "@cbhq/cds-web/layout/Box",
       "aliasedCdsComponents": [
         {
@@ -1578,8 +1581,8 @@
             "@acc/Profile/components/ContactInfoSection.tsx",
             "@acc/Profile/components/PersonalInfoSection.tsx",
             "@acc/Profile/components/PreferenceSection.tsx",
-            "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx",
             "@acc/SecurityRetail/SendsConfiguration/SendsConfigurationList.tsx",
+            "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx",
             "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthList.tsx"
           ]
         },
@@ -1605,10 +1608,10 @@
         {
           "aliasPath": "@acc/Statements/components/MainContentContainer/MainContentContainer.tsx",
           "callSites": [
+            "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx",
+            "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx",
             "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx",
             "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx",
-            "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx",
-            "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx",
             "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx"
           ]
         },
@@ -1720,9 +1723,9 @@
         "@acc/Profile/components/PhoneNumbersManagement.tsx": 2,
         "@acc/Profile/modals/CloseAccount.tsx": 1,
         "@acc/Profile/modals/CryptoAddressModal.tsx": 2,
-        "@acc/Profile/pages/CryptoAddresses.tsx": 4,
         "@acc/Security/PhoneNumber/PhoneNumberItem.tsx": 2,
         "@acc/Security/PhoneNumber/PhoneNumberRow.tsx": 1,
+        "@acc/Profile/pages/CryptoAddresses.tsx": 4,
         "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthFidoItem.tsx": 2,
         "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthList.tsx": 2,
         "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthRow.tsx": 2,
@@ -1769,9 +1772,9 @@
         "@acc/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
         "@acc/Security/modals/SecurityKey/steps/RenameKey.tsx": 1,
         "@acc/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
+        "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1,
         "@acc/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
         "@acc/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-        "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1,
         "@acc/TaxCenter/pages/Reports/components/CoinbaseProStatements.tsx": 1,
         "@acc/TaxCenter/pages/Reports/components/GenerateReport.tsx": 8,
         "@acc/TaxCenter/pages/Reports/components/PendingOrDownload.tsx": 1,
@@ -1785,29 +1788,28 @@
         "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 12,
+        "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
         "@acc/Statements/pages/CoinbasePro/components/GenerateProReport/GenerateProReport.tsx": 1,
         "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
-        "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
         "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 4,
+        "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 2,
         "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
         "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
-        "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 2,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 2,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 4,
-        "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 3,
         "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 8,
         "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 4,
+        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 4,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 5,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/ContextAwareCTA.tsx": 2,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 6,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 2,
         "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 2,
         "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 2,
-        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 4,
-        "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 2,
         "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 3,
+        "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 2,
         "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 3,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 2,
@@ -1864,8 +1866,8 @@
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 2,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/CoinbaseCostBasisMethod.tsx": 1,
@@ -1913,8 +1915,8 @@
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 2,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 4,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
@@ -1969,8 +1971,8 @@
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 2,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
@@ -2017,10 +2019,10 @@
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 3,
+          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 2,
@@ -2100,7 +2102,6 @@
           "@acc/TaxCenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
           "@acc/TaxCenter/pages/TaxForms/components/ReviewScreen.tsx": 2,
           "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 4,
           "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 3,
@@ -2160,7 +2161,6 @@
           "@acc/components/DetailsTable/modals/DiscardChangesConfirmationModal.tsx": 1,
           "@acc/components/Layout/Navigation/NavigationList.tsx": 1,
           "@acc/TaxCenter/pages/Reports/components/GenerateReport.tsx": 1,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/ModifiedList.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/NeedsReviewList.tsx": 1
         },
@@ -2206,8 +2206,8 @@
           "@acc/TaxCenter/pages/Reports/components/GenerateReport.tsx": 3,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
+          "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 2,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
@@ -2349,8 +2349,8 @@
           "@acc/Statements/components/FilterStatements/FilterStatements.tsx": 2,
           "@acc/Statements/components/GenerateReport/GenerateReport.tsx": 2,
           "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
+          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
         },
         "spacingStart": {
@@ -2365,15 +2365,14 @@
         "zIndex": { "@acc/components/Avatar/Avatar.tsx": 1 },
         "borderedBottom": {
           "@acc/components/DetailsTable/DetailsSectionHeader.tsx": 1,
-          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1
+          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1
         },
         "spacingVertical": {
           "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPDownload.tsx": 1,
           "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 2,
           "@acc/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
+          "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 2,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/HistoricalCostBasisSettings/HistoricalCostBasisSettings.tsx": 1,
@@ -2411,12 +2410,6 @@
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1
         },
         "offsetStart": { "@acc/components/Layout/Navigation/NavigationList.tsx": 1 },
-        "offsetHorizontal": {
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1
-        },
-        "offsetTop": {
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1
-        },
         "overflow": { "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1 },
         "data-active": {
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2
@@ -2561,8 +2554,8 @@
         "@acc/Profile/modals/CloseAccount.tsx": 1,
         "@acc/Profile/modals/CryptoAddressModal.tsx": 2,
         "@acc/Profile/modals/EditProfileImage.tsx": 1,
-        "@acc/Profile/pages/CryptoAddresses.tsx": 3,
         "@acc/Security/PhoneNumber/PhoneNumberItem.tsx": 1,
+        "@acc/Profile/pages/CryptoAddresses.tsx": 3,
         "@acc/SecurityRetail/SendsConfiguration/SendsConfigurationRow.tsx": 1,
         "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthFidoItem.tsx": 1,
         "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthRow.tsx": 1,
@@ -2610,9 +2603,9 @@
         "@acc/Security/modals/SecurityKey/steps/KeyInfo.tsx": 1,
         "@acc/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
         "@acc/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
+        "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1,
         "@acc/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 2,
         "@acc/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-        "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1,
         "@acc/TaxCenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
         "@acc/TaxCenter/pages/Reports/components/CoinbaseProStatements.tsx": 1,
         "@acc/TaxCenter/pages/Reports/components/GenerateReport.tsx": 3,
@@ -2626,20 +2619,20 @@
         "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 8,
         "@acc/Statements/pages/CoinbasePro/components/GenerateProReport/GenerateProReport.tsx": 1,
         "@acc/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 1,
-        "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 2,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 2,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 2,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 10,
+        "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 2,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 4,
         "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 2,
         "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 3,
         "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 2,
         "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 3,
         "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 2,
         "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 10,
@@ -2663,8 +2656,8 @@
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CollapsibleItem/CollapsibleItem.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/ConfirmModal/ConfirmModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx": 1,
-        "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CustomLabelRadioGroup/CustomLabelRadioGroup.tsx": 1,
+        "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/HistoricalCostBasisSettings/HistoricalCostBasisSettings.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/SettingsSavedModal/SettingsSavedModal.tsx": 3,
         "@acc/TaxCenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/TransactionDetails.tsx": 5,
@@ -2717,18 +2710,18 @@
           "@acc/TaxCenter/pages/TaxSummary/TaxSummary.tsx": 3,
           "@acc/TaxCenter/pages/Transactions/Transactions.tsx": 2,
           "@acc/Security/modals/SecurityKey/steps/KeyInfo.tsx": 1,
+          "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 2,
           "@acc/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-          "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1,
           "@acc/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 3,
           "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 6,
           "@acc/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 1,
-          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 2,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 7,
+          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 6,
@@ -2872,16 +2865,16 @@
           "@acc/Security/modals/SecurityKey/steps/KeyInfo.tsx": 1,
           "@acc/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
           "@acc/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
+          "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 1,
-          "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1,
           "@acc/TaxCenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@acc/TaxCenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 1,
-          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 3,
+          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 5,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 5,
@@ -3217,8 +3210,8 @@
     {
       "name": "Modal",
       "sourceFile": "@cbhq/cds-web/overlays/Modal",
-      "totalInstances": 34,
-      "totalCallSites": 30,
+      "totalInstances": 33,
+      "totalCallSites": 29,
       "cds": "@cbhq/cds-web/overlays/Modal",
       "aliasedCdsComponents": [
         {
@@ -3301,13 +3294,6 @@
         {
           "aliasPath": "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx",
           "callSites": ["@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx"]
-        },
-        {
-          "aliasPath": "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx",
-          "callSites": [
-            "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx",
-            "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx"
-          ]
         }
       ],
       "callSites": {
@@ -3335,7 +3321,6 @@
         "@acc/Security/modals/SecurityKey/steps/RenameKey.tsx": 1,
         "@acc/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 1,
-        "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/TransactionsFilters/components/DateRangeModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/ConfirmModal/ConfirmModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx": 1,
@@ -3369,7 +3354,6 @@
           "@acc/Security/modals/SecurityKey/steps/RenameKey.tsx": 1,
           "@acc/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 1,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsFilters/components/DateRangeModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/ConfirmModal/ConfirmModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx": 1,
@@ -3401,7 +3385,6 @@
           "@acc/Security/modals/SecurityKey/steps/RenameKey.tsx": 1,
           "@acc/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 1,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsFilters/components/DateRangeModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/ConfirmModal/ConfirmModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx": 1,
@@ -3425,7 +3408,6 @@
         "testID": {
           "@acc/Applications/modals/NoProductAccessModal.tsx": 1,
           "@acc/Profile/components/UserProfileRows.tsx": 1,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/SettingsSavedModal/SettingsSavedModal.tsx": 1
         },
@@ -3479,9 +3461,9 @@
         "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
         "@acc/Statements/pages/CoinbasePro/components/GenerateProReport/GenerateProReport.tsx": 1,
-        "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1,
+        "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
@@ -3542,9 +3524,9 @@
           "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
           "@acc/Statements/pages/CoinbasePro/components/GenerateProReport/GenerateProReport.tsx": 1,
-          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1,
+          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
@@ -3683,8 +3665,8 @@
         {
           "aliasPath": "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx",
           "callSites": [
-            "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx",
-            "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx"
+            "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx",
+            "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx"
           ]
         }
       ],
@@ -3728,8 +3710,8 @@
         "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 2,
         "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 10,
-        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 1,
         "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 1,
         "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 2,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
@@ -3737,10 +3719,10 @@
         "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 3,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 3,
         "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 2,
@@ -3819,13 +3801,13 @@
           "@acc/TaxCenter/pages/Reports/components/CoinbaseProStatements.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 4,
-          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 1,
           "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 1,
           "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 2,
           "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 3,
+          "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
@@ -3876,10 +3858,10 @@
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 3,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 3,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 2,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
@@ -4069,11 +4051,11 @@
         "@acc/Statements/pages/CoinbasePro/components/GenerateProReport/GenerateProReport.tsx": 1,
         "@acc/TaxCenter/pages/FilingWizard/steps/EntryPoint/TaxFilingOptions.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 2,
+        "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 2,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 3,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
@@ -4108,11 +4090,11 @@
           "@acc/Statements/pages/CoinbasePro/components/GenerateProReport/GenerateProReport.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/EntryPoint/TaxFilingOptions.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 2,
+          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 2,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 3,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
@@ -4141,8 +4123,8 @@
           "@acc/TaxCenter/components/Form8949/WizardForm8949.tsx": 1,
           "@acc/components/Layout/Header/HeaderTab.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 10,
-          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1
         },
         "spacingTop": {
@@ -4175,8 +4157,8 @@
     {
       "name": "ModalHeader",
       "sourceFile": "@cbhq/cds-web/overlays/ModalHeader",
-      "totalInstances": 30,
-      "totalCallSites": 26,
+      "totalInstances": 29,
+      "totalCallSites": 25,
       "cds": "@cbhq/cds-web/overlays/ModalHeader",
       "callSites": {
         "@acc/Applications/modals/NoProductAccessModal.tsx": 1,
@@ -4199,7 +4181,6 @@
         "@acc/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
         "@acc/Security/modals/SecurityKey/steps/RenameKey.tsx": 1,
         "@acc/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
-        "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/TransactionsFilters/components/DateRangeModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/ConfirmModal/ConfirmModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx": 1,
@@ -4228,7 +4209,6 @@
           "@acc/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
           "@acc/Security/modals/SecurityKey/steps/RenameKey.tsx": 1,
           "@acc/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsFilters/components/DateRangeModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/ConfirmModal/ConfirmModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx": 1,
@@ -4247,8 +4227,8 @@
     {
       "name": "ModalBody",
       "sourceFile": "@cbhq/cds-web/overlays/ModalBody",
-      "totalInstances": 32,
-      "totalCallSites": 28,
+      "totalInstances": 31,
+      "totalCallSites": 27,
       "cds": "@cbhq/cds-web/overlays/ModalBody",
       "callSites": {
         "@acc/Applications/modals/NoProductAccessModal.tsx": 1,
@@ -4273,7 +4253,6 @@
         "@acc/Security/modals/SecurityKey/steps/RenameKey.tsx": 1,
         "@acc/Security/modals/SecurityKey/steps/SelectOtherVerificationMethod.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 1,
-        "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/TransactionsFilters/components/DateRangeModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/ConfirmModal/ConfirmModal.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/components/CostBasisActivityModal/CostBasisActivityModal.tsx": 1,
@@ -4624,13 +4603,13 @@
         "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
-        "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
         "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+        "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
         "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 2,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
+        "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
@@ -4670,13 +4649,13 @@
           "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 2,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
+          "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
@@ -4715,13 +4694,13 @@
           "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow.tsx": 1,
           "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 2,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
+          "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
@@ -4759,8 +4738,8 @@
           "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
+          "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/OtherWaysToFile.tsx": 1,
@@ -4820,9 +4799,9 @@
         "@acc/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 1,
         "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
         "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2
       },
@@ -4842,9 +4821,9 @@
           "@acc/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2
         },
@@ -4858,9 +4837,9 @@
           "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPDownload.tsx": 1,
           "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 1,
           "@acc/TaxCenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1
+          "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1
         },
         "spacingTop": {
           "@acc/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
@@ -6049,6 +6028,16 @@
       "propsWithCallSites": { "inline": { "@acc/TaxCenter/components/IconTooltip.tsx": 1 } }
     },
     {
+      "name": "StyledSpinner",
+      "sourceFile": "@acc/contexts/userContext/UserProfileProvider.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "data-testid": { "@acc/contexts/userContext/UserProfileProvider.tsx": 1 }
+      }
+    },
+    {
       "name": "AvatarWrapper",
       "sourceFile": "@acc/components/Avatar/Avatar.tsx",
       "totalInstances": 1,
@@ -6100,6 +6089,14 @@
       "styledComponent": "tr"
     },
     {
+      "name": "input",
+      "sourceFile": "@acc/components/Dropzone/Dropzone.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "input",
+      "propsWithCallSites": { "data-testid": { "@acc/components/Dropzone/Dropzone.tsx": 1 } }
+    },
+    {
       "name": "DetailsTableRowEditable",
       "sourceFile": "@acc/components/DetailsTable/DetailsTableRowEditable",
       "totalInstances": 1,
@@ -6118,12 +6115,20 @@
       }
     },
     {
-      "name": "input",
-      "sourceFile": "@acc/components/Dropzone/Dropzone.tsx",
+      "name": "StyledNavHeader",
+      "sourceFile": "@acc/components/SubpageNav/index.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "presentationalElement": "input",
-      "propsWithCallSites": { "data-testid": { "@acc/components/Dropzone/Dropzone.tsx": 1 } }
+      "styledComponent": "div",
+      "propsWithCallSites": { "data-testid": { "@acc/components/SubpageNav/index.tsx": 1 } }
+    },
+    {
+      "name": "StyledNavItem",
+      "sourceFile": "@acc/components/SubpageNav/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": { "active": { "@acc/components/SubpageNav/index.tsx": 1 } }
     },
     {
       "name": "StyledLogoWrapper",
@@ -6159,32 +6164,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
-    },
-    {
-      "name": "StyledNavHeader",
-      "sourceFile": "@acc/components/SubpageNav/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": { "data-testid": { "@acc/components/SubpageNav/index.tsx": 1 } }
-    },
-    {
-      "name": "StyledNavItem",
-      "sourceFile": "@acc/components/SubpageNav/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": { "active": { "@acc/components/SubpageNav/index.tsx": 1 } }
-    },
-    {
-      "name": "StyledSpinner",
-      "sourceFile": "@acc/contexts/userContext/UserProfileProvider.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "data-testid": { "@acc/contexts/userContext/UserProfileProvider.tsx": 1 }
-      }
     },
     {
       "name": "StyledPhoneNumber",
@@ -6786,6 +6765,24 @@
       }
     },
     {
+      "name": "Badge",
+      "sourceFile": "@acc/TaxCenter/pages/Preferences/W9Form/components/Badge",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "Container",
+      "propsWithCallSites": {
+        "status": { "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1 }
+      }
+    },
+    {
+      "name": "StyledUL",
+      "sourceFile": "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "styledComponent": "ul",
+      "callSites": { "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 3 }
+    },
+    {
       "name": "Transformable",
       "sourceFile": "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx",
       "totalInstances": 1,
@@ -6820,24 +6817,6 @@
       }
     },
     {
-      "name": "Badge",
-      "sourceFile": "@acc/TaxCenter/pages/Preferences/W9Form/components/Badge",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "Container",
-      "propsWithCallSites": {
-        "status": { "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1 }
-      }
-    },
-    {
-      "name": "StyledUL",
-      "sourceFile": "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "styledComponent": "ul",
-      "callSites": { "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 3 }
-    },
-    {
       "name": "StyledPaperlessContainer",
       "sourceFile": "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx",
       "totalInstances": 1,
@@ -6870,6 +6849,27 @@
         "src": { "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1 },
         "alt": { "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1 }
       }
+    },
+    {
+      "name": "NegativeMargins",
+      "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "IconWrapper",
+      "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "BulletPoints",
+      "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ul"
     },
     {
       "name": "CTAButtonContainer",
@@ -6927,34 +6927,6 @@
       }
     },
     {
-      "name": "NegativeMargins",
-      "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "IconWrapper",
-      "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "BulletPoints",
-      "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ul"
-    },
-    {
-      "name": "SmallButtonContainer",
-      "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "DocumentItem",
       "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/DocumentItem",
       "totalInstances": 1,
@@ -6976,6 +6948,13 @@
         },
         "year": { "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/DocumentList.tsx": 1 }
       }
+    },
+    {
+      "name": "SmallButtonContainer",
+      "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "StyledSelect",
@@ -7409,7 +7388,7 @@
       "name": "FormattedMessage",
       "sourceFile": "react-intl/FormattedMessage",
       "totalInstances": 515,
-      "totalCallSites": 114,
+      "totalCallSites": 113,
       "callSites": {
         "@acc/Applications/ApplicationAction.tsx": 1,
         "@acc/Organization/OrganizationFooter.tsx": 1,
@@ -7449,9 +7428,9 @@
         "@acc/Security/modals/SecurityKey/steps/Enabled2FA.tsx": 1,
         "@acc/Security/modals/SecurityKey/steps/HaveKeyReady.tsx": 1,
         "@acc/Security/modals/SecurityKey/steps/KeyRestrictions.tsx": 1,
+        "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 4,
         "@acc/TaxCenter/pages/FilingWizard/steps/CostBasis.tsx": 4,
         "@acc/TaxCenter/pages/FilingWizard/steps/FiledPreviously.tsx": 4,
-        "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 4,
         "@acc/TaxCenter/pages/Reports/components/CoinTrackerCTA.tsx": 2,
         "@acc/TaxCenter/pages/Reports/components/CoinbaseProStatements.tsx": 3,
         "@acc/TaxCenter/pages/Reports/components/GenerateReport.tsx": 11,
@@ -7462,34 +7441,33 @@
         "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 11,
         "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 7,
         "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 12,
-        "@acc/Statements/pages/CoinbasePro/components/GenerateProReport/GenerateProReport.tsx": 1,
         "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 2,
+        "@acc/Statements/pages/CoinbasePro/components/GenerateProReport/GenerateProReport.tsx": 1,
         "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 6,
         "@acc/TaxCenter/pages/FilingWizard/steps/EntryPoint/TaxFilingOptions.tsx": 1,
         "@acc/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 2,
-        "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 2,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/ConfirmLeaveModal.tsx": 4,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 7,
         "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 23,
+        "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 2,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 4,
         "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 9,
-        "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 3,
-        "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1,
+        "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 4,
         "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 10,
-        "@acc/TaxCenter/pages/TaxSummary/components/AlternativeTurboTaxCTA/AlternativeTurboTaxCTA.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/AlternativeTurboTaxCTA/AlternativeTurboTaxCTA.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 2,
         "@acc/TaxCenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
+        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 11,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 8,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 7,
         "@acc/TaxCenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 3,
-        "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 2,
+        "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 3,
         "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 3,
         "@acc/TaxCenter/pages/TaxSummary/components/Support/Support.tsx": 3,
-        "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 3,
-        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 11,
-        "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 8,
         "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/DocumentList.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 2,
+        "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 8,
         "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 12,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 10,
@@ -7548,18 +7526,18 @@
           "@acc/TaxCenter/pages/Reports/components/TaxReports.tsx": 4,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/MissingDetails.tsx": 2,
-          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/W9Form/components/W9FAQ.tsx": 1,
+          "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/CostBasisSettings/CostBasisSettings.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
           "@acc/TaxCenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 3,
-          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 2,
+          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 2,
           "@acc/TaxCenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 2,
@@ -7796,10 +7774,10 @@
         "@acc/TaxCenter/TaxCenter.tsx": 2,
         "@acc/pages/SecurityRetail.tsx": 1,
         "@acc/Profile/components/UserProfile.tsx": 1,
-        "@acc/Profile/pages/CryptoAddresses.tsx": 1,
         "@acc/Security/PhoneNumber/PhoneNumberList.tsx": 1,
-        "@acc/components/Avatar/Avatar.tsx": 1,
+        "@acc/Profile/pages/CryptoAddresses.tsx": 1,
         "@acc/contexts/userContext/UserProfileProvider.tsx": 1,
+        "@acc/components/Avatar/Avatar.tsx": 1,
         "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthTOTPSteps/TwoFactorAuthTOTPSetup.tsx": 1,
         "@acc/TaxCenter/components/Form8949/DocumentsForm8949.tsx": 2,
         "@acc/TaxCenter/components/Form8949/SummaryForm8949.tsx": 2,
@@ -8678,6 +8656,36 @@
       }
     },
     {
+      "name": "PhoneNumberRow",
+      "sourceFile": "@acc/Security/PhoneNumber/PhoneNumberRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "@acc/Security/PhoneNumber/PhoneNumberList.tsx": 1 },
+        "phoneNumber": { "@acc/Security/PhoneNumber/PhoneNumberList.tsx": 1 },
+        "onRemovePhoneNumber": { "@acc/Security/PhoneNumber/PhoneNumberList.tsx": 1 },
+        "onSetPrimaryNumber": { "@acc/Security/PhoneNumber/PhoneNumberList.tsx": 1 },
+        "onVerifyPhoneNumber": { "@acc/Security/PhoneNumber/PhoneNumberList.tsx": 1 }
+      }
+    },
+    {
+      "name": "Phone",
+      "sourceFile": "@ubo/assets/icons/Phone",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "PhoneNumberItem",
+      "sourceFile": "@acc/Security/PhoneNumber/PhoneNumberItem",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "phoneNumber": { "@acc/Security/PhoneNumber/PhoneNumberRow.tsx": 1 },
+        "isPrimary": { "@acc/Security/PhoneNumber/PhoneNumberRow.tsx": 1 },
+        "isVerified": { "@acc/Security/PhoneNumber/PhoneNumberRow.tsx": 1 }
+      }
+    },
+    {
       "name": "CryptoAddressConnectionError",
       "sourceFile": "@ubo/settings/Profile/components/CryptoAddressConnectionError",
       "totalInstances": 2,
@@ -8737,33 +8745,13 @@
       "propsWithCallSites": { "accountCurrency": { "@acc/Profile/pages/CryptoAddresses.tsx": 1 } }
     },
     {
-      "name": "PhoneNumberRow",
-      "sourceFile": "@acc/Security/PhoneNumber/PhoneNumberRow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "@acc/Security/PhoneNumber/PhoneNumberList.tsx": 1 },
-        "phoneNumber": { "@acc/Security/PhoneNumber/PhoneNumberList.tsx": 1 },
-        "onRemovePhoneNumber": { "@acc/Security/PhoneNumber/PhoneNumberList.tsx": 1 },
-        "onSetPrimaryNumber": { "@acc/Security/PhoneNumber/PhoneNumberList.tsx": 1 },
-        "onVerifyPhoneNumber": { "@acc/Security/PhoneNumber/PhoneNumberList.tsx": 1 }
-      }
-    },
-    {
-      "name": "Phone",
-      "sourceFile": "@ubo/assets/icons/Phone",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PhoneNumberItem",
-      "sourceFile": "@acc/Security/PhoneNumber/PhoneNumberItem",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "phoneNumber": { "@acc/Security/PhoneNumber/PhoneNumberRow.tsx": 1 },
-        "isPrimary": { "@acc/Security/PhoneNumber/PhoneNumberRow.tsx": 1 },
-        "isVerified": { "@acc/Security/PhoneNumber/PhoneNumberRow.tsx": 1 }
+      "name": "DetailsTable",
+      "sourceFile": "@ubo/settings/components/DetailsTable/DetailsTable",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@acc/SecurityRetail/SendsConfiguration/SendsConfigurationList.tsx": 1,
+        "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthList.tsx": 1
       }
     },
     {
@@ -8772,13 +8760,17 @@
       "totalInstances": 3,
       "totalCallSites": 3,
       "callSites": {
-        "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1,
         "@acc/SecurityRetail/SendsConfiguration/SendsConfigurationList.tsx": 1,
+        "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1,
         "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthList.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
+          "@acc/SecurityRetail/SendsConfiguration/SendsConfigurationList.tsx": 1,
           "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1,
+          "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthList.tsx": 1
+        },
+        "isInTableHeader": {
           "@acc/SecurityRetail/SendsConfiguration/SendsConfigurationList.tsx": 1,
           "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthList.tsx": 1
         },
@@ -8787,35 +8779,7 @@
           "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthList.tsx": 1
         },
         "handleCta": { "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1 },
-        "ctaText": { "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1 },
-        "isInTableHeader": {
-          "@acc/SecurityRetail/SendsConfiguration/SendsConfigurationList.tsx": 1,
-          "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthList.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PasswordResetFlow",
-      "sourceFile": "@ubo/settings/Security/PasswordResetFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isOpen": { "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1 },
-        "onClose": { "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1 },
-        "primaryNumber": { "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1 },
-        "currentTwoFactor": {
-          "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DetailsTable",
-      "sourceFile": "@ubo/settings/components/DetailsTable/DetailsTable",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@acc/SecurityRetail/SendsConfiguration/SendsConfigurationList.tsx": 1,
-        "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthList.tsx": 1
+        "ctaText": { "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1 }
       }
     },
     {
@@ -8854,6 +8818,20 @@
         "showChildren": { "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthRow.tsx": 1 },
         "handleHeaderClick": { "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthRow.tsx": 1 },
         "value": { "@acc/SecurityRetail/TwoFactorAuth/TwoFactorAuthRow.tsx": 1 }
+      }
+    },
+    {
+      "name": "PasswordResetFlow",
+      "sourceFile": "@ubo/settings/Security/PasswordResetFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isOpen": { "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1 },
+        "onClose": { "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1 },
+        "primaryNumber": { "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1 },
+        "currentTwoFactor": {
+          "@acc/SecurityRetail/PasswordResetSection/PasswordResetSection.tsx": 1
+        }
       }
     },
     {
@@ -9153,6 +9131,13 @@
       }
     },
     {
+      "name": "InitSprig",
+      "sourceFile": "@ubo/utils/sprig/InitSprig",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "userId": { "@acc/contexts/userContext/UserProfileProvider.tsx": 1 } }
+    },
+    {
       "name": "AvatarTextBox",
       "sourceFile": "@acc/components/Avatar/AvatarTextBox",
       "totalInstances": 1,
@@ -9186,6 +9171,13 @@
       }
     },
     {
+      "name": "div",
+      "sourceFile": "@acc/components/Dropzone/Dropzone.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "data-testid": { "@acc/components/Dropzone/Dropzone.tsx": 1 } }
+    },
+    {
       "name": "Fragment",
       "sourceFile": "react/Fragment",
       "totalInstances": 1,
@@ -9204,47 +9196,47 @@
       }
     },
     {
-      "name": "div",
-      "sourceFile": "@acc/components/Dropzone/Dropzone.tsx",
+      "name": "SubpageNavItem",
+      "sourceFile": "@acc/components/SubpageNav/index.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "propsWithCallSites": { "data-testid": { "@acc/components/Dropzone/Dropzone.tsx": 1 } }
+      "propsWithCallSites": {
+        "key": { "@acc/components/SubpageNav/index.tsx": 1 },
+        "navItem": { "@acc/components/SubpageNav/index.tsx": 1 },
+        "active": { "@acc/components/SubpageNav/index.tsx": 1 }
+      }
     },
     {
       "name": "Link",
       "sourceFile": "react-router-dom/Link",
-      "totalInstances": 10,
-      "totalCallSites": 8,
+      "totalInstances": 9,
+      "totalCallSites": 7,
       "callSites": {
-        "@acc/components/Layout/Logo.tsx": 1,
         "@acc/components/SubpageNav/index.tsx": 1,
+        "@acc/components/Layout/Logo.tsx": 1,
         "@acc/components/Layout/Navigation/NavigationRowItem.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
-        "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2
       },
       "propsWithCallSites": {
         "to": {
-          "@acc/components/Layout/Logo.tsx": 1,
           "@acc/components/SubpageNav/index.tsx": 1,
+          "@acc/components/Layout/Logo.tsx": 1,
           "@acc/components/Layout/Navigation/NavigationRowItem.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2
         },
         "onClick": {
           "@acc/components/SubpageNav/index.tsx": 1,
-          "@acc/components/Layout/Navigation/NavigationRowItem.tsx": 1,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1
+          "@acc/components/Layout/Navigation/NavigationRowItem.tsx": 1
         },
         "data-testid": {
           "@acc/components/SubpageNav/index.tsx": 1,
           "@acc/components/Layout/Navigation/NavigationRowItem.tsx": 1,
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/TaxDocuments.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2
         },
@@ -9461,24 +9453,6 @@
         "shape": { "@acc/components/Welcome/WelcomeBanner.tsx": 1 },
         "size": { "@acc/components/Welcome/WelcomeBanner.tsx": 1 }
       }
-    },
-    {
-      "name": "SubpageNavItem",
-      "sourceFile": "@acc/components/SubpageNav/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "@acc/components/SubpageNav/index.tsx": 1 },
-        "navItem": { "@acc/components/SubpageNav/index.tsx": 1 },
-        "active": { "@acc/components/SubpageNav/index.tsx": 1 }
-      }
-    },
-    {
-      "name": "InitSprig",
-      "sourceFile": "@ubo/utils/sprig/InitSprig",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "userId": { "@acc/contexts/userContext/UserProfileProvider.tsx": 1 } }
     },
     {
       "name": "Confirm2FA",
@@ -10872,17 +10846,6 @@
       }
     },
     {
-      "name": "PaperlessDeliveryModal",
-      "sourceFile": "@taxcenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "visible": { "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1 },
-        "onRequestClose": { "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1 },
-        "onPress": { "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal.tsx": 1 }
-      }
-    },
-    {
       "name": "GenericCTACard",
       "sourceFile": "@ubo/settings/TaxCenter/components/GenericCTACard",
       "totalInstances": 3,
@@ -11327,6 +11290,69 @@
       }
     },
     {
+      "name": "StyledRow",
+      "sourceFile": "@statements/components/StyledRow/StyledRow",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 1,
+        "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 1
+      },
+      "propsWithCallSites": {
+        "direction": {
+          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
+          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 1,
+          "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MainContentContainer",
+      "sourceFile": "@statements/components/MainContentContainer",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "callSites": {
+        "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
+        "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
+        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 1,
+        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 1,
+        "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
+          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 1,
+          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 1,
+          "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        },
+        "body": {
+          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
+          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 1,
+          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 1,
+          "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        },
+        "hasMore": {
+          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
+          "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        },
+        "loadMore": {
+          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
+          "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CardTransactionRow",
+      "sourceFile": "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "HRadioGroup",
       "sourceFile": "@statements/components/HRadioGroup",
       "totalInstances": 1,
@@ -11353,41 +11379,16 @@
       }
     },
     {
-      "name": "MainContentContainer",
-      "sourceFile": "@statements/components/MainContentContainer",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "callSites": {
-        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 1,
-        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 1,
-        "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
-        "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
-        "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
-      },
+      "name": "StatementRow",
+      "sourceFile": "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
       "propsWithCallSites": {
-        "title": {
-          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 1,
-          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 1,
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
-          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
-          "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        "key": {
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1
         },
-        "body": {
-          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProAccountTable.tsx": 1,
-          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 1,
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
-          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
-          "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
-        },
-        "hasMore": {
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
-          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
-          "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
-        },
-        "loadMore": {
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1,
-          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionsTable.tsx": 1,
-          "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        "statement": {
+          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1
         }
       }
     },
@@ -11406,44 +11407,6 @@
           "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProFillTable.tsx": 2
         }
       }
-    },
-    {
-      "name": "StyledRow",
-      "sourceFile": "@statements/components/StyledRow/StyledRow",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 1,
-        "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
-        "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 1
-      },
-      "propsWithCallSites": {
-        "direction": {
-          "@acc/Statements/pages/CoinbasePro/components/ProStatementTable/ProStatementRow.tsx": 1,
-          "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow.tsx": 1,
-          "@acc/Statements/pages/Transactions/components/TransactionsTable/TransactionRow.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "StatementRow",
-      "sourceFile": "@acc/Statements/pages/Futures/components/StatementsTable/StatementRow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": {
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1
-        },
-        "statement": {
-          "@acc/Statements/pages/Futures/components/StatementsTable/StatementsTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "CardTransactionRow",
-      "sourceFile": "@acc/Statements/pages/CoinbaseCard/components/CardTransactionsTable/CardTransactionRow",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "TransactionRow",
@@ -11470,6 +11433,59 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "onSelectOption": { "@acc/TaxCenter/pages/FilingWizard/steps/EntryPoint/index.tsx": 1 }
+      }
+    },
+    {
+      "name": "PressableContainer",
+      "sourceFile": "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isPressable": {
+          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
+        },
+        "onPress": { "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1 }
+      }
+    },
+    {
+      "name": "Container",
+      "sourceFile": "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "alignItems": {
+          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
+        },
+        "justifyContent": {
+          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
+        },
+        "gap": { "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1 },
+        "bordered": {
+          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
+        },
+        "borderRadius": {
+          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
+        },
+        "spacing": { "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1 },
+        "width": { "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1 }
+      }
+    },
+    {
+      "name": "W9FormModal",
+      "sourceFile": "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "visible": { "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1 },
+        "tinMatchStatus": {
+          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
+        },
+        "onRequestClose": {
+          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
+        },
+        "onSuccess": {
+          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
+        }
       }
     },
     {
@@ -11559,59 +11575,6 @@
         "filingOption": { "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1 },
         "onFilingOptionSwitch": {
           "@acc/TaxCenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PressableContainer",
-      "sourceFile": "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isPressable": {
-          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
-        },
-        "onPress": { "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1 }
-      }
-    },
-    {
-      "name": "Container",
-      "sourceFile": "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "alignItems": {
-          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
-        },
-        "justifyContent": {
-          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
-        },
-        "gap": { "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1 },
-        "bordered": {
-          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
-        },
-        "borderRadius": {
-          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
-        },
-        "spacing": { "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1 },
-        "width": { "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1 }
-      }
-    },
-    {
-      "name": "W9FormModal",
-      "sourceFile": "@acc/TaxCenter/pages/Preferences/W9Form/W9FormModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "visible": { "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1 },
-        "tinMatchStatus": {
-          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
-        },
-        "onRequestClose": {
-          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
-        },
-        "onSuccess": {
-          "@acc/TaxCenter/pages/Preferences/W9Form/components/TaxAccountStatus.tsx": 1
         }
       }
     },
@@ -11753,43 +11716,6 @@
       }
     },
     {
-      "name": "PaperlessDeliveryModal",
-      "sourceFile": "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "visible": {
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1
-        },
-        "onPress": {
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1
-        },
-        "onRequestClose": {
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "iframe",
-      "sourceFile": "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "src": {
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1
-        },
-        "title": {
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1
-        },
-        "height": {
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1
-        },
-        "width": {
-          "@acc/TaxCenter/pages/Preferences/components/PaperlessDelivery/PaperlessDeliveryModal.tsx": 1
-        }
-      }
-    },
-    {
       "name": "CostBasisModal",
       "sourceFile": "@acc/TaxCenter/pages/Preferences/components/CostBasisModal/CostBasisModal",
       "totalInstances": 2,
@@ -11868,40 +11794,64 @@
       "totalCallSites": 4,
       "callSites": {
         "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
         "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
         "@acc/TaxCenter/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
       },
       "propsWithCallSites": {
         "tooltipContent": {
           "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
         },
         "size": {
           "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
         },
         "tooltipName": {
           "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
         },
         "inline": {
           "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
         },
         "spacingStart": {
           "@acc/TaxCenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx": 1,
           "@acc/TaxCenter/pages/Transactions/components/TransactionsTable/TransactionsTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AccordionGroup",
+      "sourceFile": "@ubo/components/Accordion/AccordionGroup",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "data-testid": { "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1 }
+      }
+    },
+    {
+      "name": "TaxFormsModal",
+      "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isGettingForms": {
+          "@acc/TaxCenter/pages/TaxSummary/components/FormsNotice/FormsNotice.tsx": 1
+        },
+        "onClose": { "@acc/TaxCenter/pages/TaxSummary/components/FormsNotice/FormsNotice.tsx": 1 },
+        "widthVariant": {
+          "@acc/TaxCenter/pages/TaxSummary/components/FormsNotice/FormsNotice.tsx": 1
         }
       }
     },
@@ -11944,6 +11894,64 @@
       }
     },
     {
+      "name": "ActivityTableHeader",
+      "sourceFile": "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTableHeader",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1
+        },
+        "name": {
+          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1
+        },
+        "tooltip": {
+          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1
+        },
+        "total": {
+          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "GainsTooltipContent",
+      "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ActivityTable",
+      "sourceFile": "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+        "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "year": {
+          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1
+        },
+        "headers": {
+          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1
+        },
+        "rows": {
+          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
+          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1
+        }
+      }
+    },
+    {
       "name": "img",
       "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx",
       "totalInstances": 2,
@@ -11981,94 +11989,11 @@
       "totalCallSites": 1
     },
     {
-      "name": "AccordionGroup",
-      "sourceFile": "@ubo/components/Accordion/AccordionGroup",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "data-testid": { "@acc/TaxCenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1 }
-      }
-    },
-    {
-      "name": "TaxFormsModal",
-      "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/TaxFormsModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isGettingForms": {
-          "@acc/TaxCenter/pages/TaxSummary/components/FormsNotice/FormsNotice.tsx": 1
-        },
-        "onClose": { "@acc/TaxCenter/pages/TaxSummary/components/FormsNotice/FormsNotice.tsx": 1 },
-        "widthVariant": {
-          "@acc/TaxCenter/pages/TaxSummary/components/FormsNotice/FormsNotice.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TooltipContent",
       "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/SummaryHeader/SummaryHeader.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
-    {
-      "name": "ActivityTableHeader",
-      "sourceFile": "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTableHeader",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": {
-          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1
-        },
-        "name": {
-          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1
-        },
-        "tooltip": {
-          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1
-        },
-        "total": {
-          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ActivityTable",
-      "sourceFile": "@ubo/settings/TaxCenter/pages/TaxSummary/components/ActivityTable",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-        "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1
-      },
-      "propsWithCallSites": {
-        "year": {
-          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1
-        },
-        "headers": {
-          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1
-        },
-        "rows": {
-          "@acc/TaxCenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
-          "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "GainsTooltipContent",
-      "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    { "name": "Title3", "sourceFile": "@cb/uwo/Title3", "totalInstances": 1, "totalCallSites": 1 },
     {
       "name": "ul",
       "sourceFile": "@acc/TaxCenter/pages/TaxSummary/components/TaxDocuments/DocumentList.tsx",
@@ -12097,6 +12022,7 @@
         }
       }
     },
+    { "name": "Title3", "sourceFile": "@cb/uwo/Title3", "totalInstances": 1, "totalCallSites": 1 },
     {
       "name": "IconContainer",
       "sourceFile": "@ubo/settings/TaxCenter/components/IconContainer",

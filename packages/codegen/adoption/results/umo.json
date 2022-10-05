@@ -20,9 +20,9 @@
         "@onboarding/components/Form/QuestionAnswerInputSelector.tsx": 1,
         "@onboarding/components/UI/NavBar.tsx": 1,
         "@onboarding/components/UI/SkipButton.tsx": 1,
-        "@onboarding/screens/idv/IDVFallbackScreen.tsx": 1,
         "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
         "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
+        "@onboarding/screens/idv/IDVFallbackScreen.tsx": 1,
         "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 3,
         "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
         "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 1,
@@ -57,8 +57,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-mobile/layout/VStack",
-      "totalInstances": 97,
-      "totalCallSites": 56,
+      "totalInstances": 96,
+      "totalCallSites": 55,
       "cds": "@cbhq/cds-mobile/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -79,13 +79,9 @@
         "@onboarding/components/UI/CaptureView.tsx": 2,
         "@onboarding/components/UI/FlatList.tsx": 1,
         "@onboarding/components/UI/NavBar.tsx": 1,
-        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 4,
         "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsScreen.tsx": 6,
-        "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
-        "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
-        "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1,
-        "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
+        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 4,
         "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 2,
         "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
         "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 5,
@@ -93,6 +89,9 @@
         "@onboarding/screens/edpc/IdTypeScreen.tsx": 2,
         "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 2,
         "@onboarding/screens/error/GenericErrorScreen.tsx": 2,
+        "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
+        "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
+        "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1,
         "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
         "@onboarding/screens/kyc/EnterAddressScreen.tsx": 1,
         "@onboarding/screens/kyc/TodoListScreen.tsx": 1,
@@ -102,10 +101,10 @@
         "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
         "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 4,
         "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
-        "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 2,
+        "@onboarding/screens/phone/TodoListScreen.tsx": 1,
         "@onboarding/screens/poa/POAReviewScreen.tsx": 2,
         "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
-        "@onboarding/screens/phone/TodoListScreen.tsx": 1,
+        "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 2,
         "@onboarding/screens/poaConfirm/POAManualReviewScreen.tsx": 1,
         "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
         "@onboarding/screens/rfiPep/InformationTray.tsx": 1,
@@ -166,12 +165,11 @@
           "@onboarding/components/UI/CaptureView.tsx": 1,
           "@onboarding/components/UI/FlatList.tsx": 1,
           "@onboarding/components/UI/NavBar.tsx": 1,
-          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
           "@onboarding/screens/attestations/AttestationsScreen.tsx": 2,
+          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
           "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
           "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
           "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
           "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
           "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
@@ -229,18 +227,6 @@
           "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 3
         },
-        "gap": {
-          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
-          "@onboarding/screens/attestations/AttestationsScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 5,
-          "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 2,
-          "@onboarding/screens/edpc/IdTypeScreen.tsx": 1,
-          "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 1,
-          "@onboarding/screens/liquid/LiquidIDVExplanationScreen.tsx": 1,
-          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
-          "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionScreen.tsx": 1
-        },
         "spacingBottom": {
           "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
           "@onboarding/screens/attestations/AttestationsScreen.tsx": 4,
@@ -252,10 +238,22 @@
           "@onboarding/screens/kyc/TodoListScreen.tsx": 1,
           "@onboarding/screens/liquid/LiquidIDVExplanationScreen.tsx": 1,
           "@onboarding/screens/liquid/ReviewingIDScreen.tsx": 1,
-          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/phone/TodoListScreen.tsx": 1,
+          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/riskDisclosure/RiskDisclosureScreen.tsx": 3,
           "@onboarding/screens/kyc/IdTypeAUScreen/SelectIdTypeAUScreen.tsx": 1
+        },
+        "gap": {
+          "@onboarding/screens/attestations/AttestationsScreen.tsx": 1,
+          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 5,
+          "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 2,
+          "@onboarding/screens/edpc/IdTypeScreen.tsx": 1,
+          "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 1,
+          "@onboarding/screens/liquid/LiquidIDVExplanationScreen.tsx": 1,
+          "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
+          "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionScreen.tsx": 1
         },
         "spacingTop": {
           "@onboarding/screens/attestations/AttestationsScreen.tsx": 4,
@@ -403,14 +401,18 @@
         "@onboarding/components/UI/CameraPermissionFallback.tsx": 1,
         "@onboarding/components/UI/CaptureView.tsx": 1,
         "@onboarding/components/UI/NavBar.tsx": 1,
-        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsScreen.tsx": 1,
+        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
         "@onboarding/screens/cdd/AnnualIncomeScreen.tsx": 1,
         "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
         "@onboarding/screens/cdd/IndustryScreen.tsx": 1,
         "@onboarding/screens/cdd/TradeAmountScreen.tsx": 1,
+        "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
+        "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
+        "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 2,
+        "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
         "@onboarding/screens/extendedCDD/ExtendedCDDScreen.tsx": 1,
         "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
         "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
@@ -421,10 +423,6 @@
         "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
         "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
         "@onboarding/screens/idv/VerifyPhotoIdScreen.tsx": 1,
-        "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
-        "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
-        "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 2,
-        "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
         "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
         "@onboarding/screens/kba/QuestionAnswerChooser.tsx": 1,
         "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
@@ -448,12 +446,12 @@
         "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
         "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
         "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
-        "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
-        "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
         "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
         "@onboarding/screens/phone/PhoneScreen.tsx": 1,
         "@onboarding/screens/phone/TodoListScreen.tsx": 1,
         "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+        "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
+        "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
         "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 1,
         "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
         "@onboarding/screens/rfiPep/InformationTray.tsx": 1,
@@ -483,10 +481,12 @@
           "@onboarding/screens/ErrorMessageScreen.tsx": 1,
           "@onboarding/components/UI/CameraPermissionFallback.tsx": 1,
           "@onboarding/components/UI/NavBar.tsx": 1,
-          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
           "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
           "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
           "@onboarding/screens/attestations/AttestationsScreen.tsx": 1,
+          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
           "@onboarding/screens/extendedCDD/ExtendedCDDScreen.tsx": 1,
           "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
           "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
@@ -497,8 +497,6 @@
           "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
           "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
           "@onboarding/screens/idv/VerifyPhotoIdScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
           "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
           "@onboarding/screens/kba/QuestionAnswerChooser.tsx": 1,
           "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
@@ -521,12 +519,12 @@
           "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
           "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
-          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
-          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
           "@onboarding/screens/phone/PhoneScreen.tsx": 1,
           "@onboarding/screens/phone/TodoListScreen.tsx": 1,
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
+          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
           "@onboarding/screens/rfiPep/InformationTray.tsx": 1,
           "@onboarding/screens/rfiPep/MultiHitForm.tsx": 1,
@@ -559,6 +557,9 @@
           "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
           "@onboarding/screens/cdd/IndustryScreen.tsx": 1,
           "@onboarding/screens/cdd/TradeAmountScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
           "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
           "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1,
@@ -568,9 +569,6 @@
           "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
           "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
           "@onboarding/screens/idv/VerifyPhotoIdScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
           "@onboarding/screens/kba/QuestionAnswerChooser.tsx": 1,
           "@onboarding/screens/liquid/LiquidErrorScreen.tsx": 1,
@@ -580,12 +578,12 @@
           "@onboarding/screens/liquid/ReviewingIDScreen.tsx": 1,
           "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
           "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
-          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
-          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
           "@onboarding/screens/phone/PhoneScreen.tsx": 1,
           "@onboarding/screens/phone/TodoListScreen.tsx": 1,
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
+          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
           "@onboarding/screens/rfiPep/RFIPepAccountRestricted.tsx": 1,
           "@onboarding/screens/rfiPep/RfiPepSuccess.tsx": 1,
@@ -602,11 +600,11 @@
         },
         "align": {
           "@onboarding/screens/ErrorMessageScreen.tsx": 1,
+          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
           "@onboarding/screens/idv/IDVFallbackScreen.tsx": 1,
           "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
           "@onboarding/screens/idv/VerifyPhotoIdScreen.tsx": 1,
-          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/kyc/KYCErrorScreen.tsx": 1,
           "@onboarding/screens/kyc/VendorVerificationScreen.tsx": 1,
           "@onboarding/screens/liquid/LiquidErrorScreen.tsx": 1,
@@ -650,15 +648,15 @@
         "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsScreen.tsx": 2,
         "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-        "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
-        "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
-        "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
-        "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
         "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
         "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 2,
         "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
         "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 1,
         "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
+        "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
+        "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
+        "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
+        "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
         "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
         "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
         "@onboarding/screens/kyc/KYCErrorScreen.tsx": 2,
@@ -676,11 +674,11 @@
         "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
         "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
         "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 4,
-        "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
         "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
         "@onboarding/screens/phone/PhoneScreen.tsx": 1,
         "@onboarding/screens/phone/TodoListScreen.tsx": 1,
         "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+        "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
         "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 1,
         "@onboarding/screens/poaConfirm/POAManualReviewScreen.tsx": 1,
         "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
@@ -710,9 +708,9 @@
         "vertical": {
           "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
           "@onboarding/components/Form/PromoCodeInput.tsx": 5,
-          "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
+          "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 3,
           "@onboarding/screens/signup/CountryPicker.tsx": 1,
           "@onboarding/screens/signup/SignUpIncentiveBox.tsx": 5,
@@ -728,8 +726,8 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-mobile/typography/TextBody",
-      "totalInstances": 141,
-      "totalCallSites": 90,
+      "totalInstances": 137,
+      "totalCallSites": 89,
       "cds": "@cbhq/cds-mobile/typography/TextBody",
       "callSites": {
         "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
@@ -738,13 +736,20 @@
         "@onboarding/components/UI/CameraPermissionFallback.tsx": 1,
         "@onboarding/components/UI/CaptureView.tsx": 1,
         "@onboarding/components/UI/NavBar.tsx": 1,
-        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 2,
         "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 3,
         "@onboarding/screens/attestations/AttestationsScreen.tsx": 3,
+        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 2,
         "@onboarding/screens/cdd/AnnualIncomeScreen.tsx": 1,
         "@onboarding/screens/cdd/IndustryScreen.tsx": 1,
         "@onboarding/screens/cdd/TradeAmountScreen.tsx": 1,
+        "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 3,
+        "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 2,
+        "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 2,
+        "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 2,
+        "@onboarding/screens/edpc/IdTypeScreen.tsx": 2,
+        "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 2,
+        "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
         "@onboarding/screens/extendedCDD/ExtendedCDDScreen.tsx": 1,
         "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
         "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
@@ -754,14 +759,6 @@
         "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 2,
         "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 2,
         "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 2,
-        "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 4,
-        "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 3,
-        "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 2,
-        "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 2,
-        "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 2,
-        "@onboarding/screens/edpc/IdTypeScreen.tsx": 2,
-        "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 2,
-        "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
         "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
         "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
         "@onboarding/screens/kyc/EmploymentStatusScreen.tsx": 4,
@@ -783,12 +780,12 @@
         "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
         "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
         "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
-        "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
-        "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
-        "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
         "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
         "@onboarding/screens/phone/PhoneScreen.tsx": 1,
         "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+        "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
+        "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
+        "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
         "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 2,
         "@onboarding/screens/poaConfirm/POAManualReviewScreen.tsx": 1,
         "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
@@ -839,6 +836,9 @@
           "@onboarding/screens/cdd/AnnualIncomeScreen.tsx": 1,
           "@onboarding/screens/cdd/IndustryScreen.tsx": 1,
           "@onboarding/screens/cdd/TradeAmountScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 2,
+          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
           "@onboarding/screens/extendedCDD/ExtendedCDDScreen.tsx": 1,
           "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
           "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
@@ -847,10 +847,6 @@
           "@onboarding/screens/idv/IDVFallbackScreen.tsx": 1,
           "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 2,
           "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 2,
-          "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
           "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
           "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
           "@onboarding/screens/kyc/EmploymentStatusScreen.tsx": 3,
@@ -872,10 +868,10 @@
           "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
           "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
-          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
-          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
           "@onboarding/screens/phone/PhoneScreen.tsx": 1,
+          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
+          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 1,
           "@onboarding/screens/rfiPep/InformationTray.tsx": 1,
           "@onboarding/screens/rfiPep/RFIPepAccountRestricted.tsx": 1,
@@ -903,6 +899,9 @@
           "@onboarding/screens/cdd/AnnualIncomeScreen.tsx": 1,
           "@onboarding/screens/cdd/IndustryScreen.tsx": 1,
           "@onboarding/screens/cdd/TradeAmountScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 2,
+          "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
+          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
           "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
           "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1,
@@ -911,10 +910,6 @@
           "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 2,
           "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
           "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 4,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 2,
-          "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
-          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
           "@onboarding/screens/liquid/LiquidErrorScreen.tsx": 2,
           "@onboarding/screens/liquid/LiquidHandoffScreen.tsx": 2,
@@ -924,11 +919,11 @@
           "@onboarding/screens/nationality/NationalityGuidanceScreen.tsx": 1,
           "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
           "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
-          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
-          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
           "@onboarding/screens/phone/PhoneScreen.tsx": 1,
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
+          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
           "@onboarding/screens/rfiPep/RFIPepAccountRestricted.tsx": 1,
           "@onboarding/screens/rfiPep/RfiPepSuccess.tsx": 1,
@@ -950,10 +945,10 @@
         },
         "align": {
           "@onboarding/screens/ErrorMessageScreen.tsx": 1,
+          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
           "@onboarding/screens/idv/IDVFallbackScreen.tsx": 1,
           "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 2,
-          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/kyc/KYCErrorScreen.tsx": 4,
           "@onboarding/screens/liquid/LiquidErrorScreen.tsx": 2,
           "@onboarding/screens/liquid/ReviewingIDScreen.tsx": 1,
@@ -988,14 +983,13 @@
           "@onboarding/screens/cdd/AnnualIncomeScreen.tsx": 1,
           "@onboarding/screens/cdd/IndustryScreen.tsx": 1,
           "@onboarding/screens/cdd/TradeAmountScreen.tsx": 1,
-          "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 4,
           "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 2,
           "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 2,
           "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 2,
           "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 2,
           "@onboarding/screens/edpc/IdTypeScreen.tsx": 2,
           "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 2,
+          "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
           "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
           "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 1,
           "@onboarding/screens/liquid/LiquidIDVExplanationScreen.tsx": 3,
@@ -1003,10 +997,10 @@
           "@onboarding/screens/liquid/ReviewingIDScreen.tsx": 1,
           "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
-          "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
-          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/phone/PhoneScreen.tsx": 1,
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
+          "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
           "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 1,
           "@onboarding/screens/riskDisclosure/RiskDisclosureScreen.tsx": 2,
           "@onboarding/screens/signup/GdprScreen.tsx": 1,
@@ -1030,8 +1024,8 @@
         },
         "spacingTop": {
           "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
-          "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
           "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
+          "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
           "@onboarding/screens/kyc/KYCErrorScreen.tsx": 2,
           "@onboarding/screens/kyc/VerifyIdentityScreen.tsx": 2,
           "@onboarding/screens/liquid/LiquidIDVIntroScreen.tsx": 1,
@@ -1041,7 +1035,6 @@
           "@onboarding/screens/signup/SignUpScreen.tsx": 1,
           "@onboarding/screens/unhandled/UnhandledRequirementScreen.tsx": 1
         },
-        "spacingStart": { "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 3 },
         "spacingVertical": {
           "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
           "@onboarding/screens/liquid/ReviewingIDScreen.tsx": 1
@@ -1051,8 +1044,8 @@
     {
       "name": "Button",
       "sourceFile": "@components/interactables/Button",
-      "totalInstances": 100,
-      "totalCallSites": 71,
+      "totalInstances": 99,
+      "totalCallSites": 70,
       "cds": "@components/interactables/Button",
       "presentationalLibrary": "@components/interactables/Button",
       "callSites": {
@@ -1060,21 +1053,20 @@
         "@onboarding/screens/ErrorMessageScreen.tsx": 1,
         "@onboarding/components/UI/CameraPermissionFallback.tsx": 1,
         "@onboarding/components/UI/NavBar.tsx": 2,
-        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 2,
         "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 2,
         "@onboarding/screens/attestations/AttestationsScreen.tsx": 2,
+        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 2,
         "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-        "@onboarding/screens/idv/FaceReviewScreen.tsx": 2,
-        "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
-        "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
-        "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 2,
-        "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
         "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
         "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
         "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
         "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 1,
         "@onboarding/screens/error/GenericErrorScreen.tsx": 2,
+        "@onboarding/screens/idv/FaceReviewScreen.tsx": 2,
+        "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
+        "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
+        "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 2,
         "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
         "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
         "@onboarding/screens/kyc/KYCErrorScreen.tsx": 4,
@@ -1091,12 +1083,12 @@
         "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
         "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 2,
         "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 2,
-        "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
-        "@onboarding/screens/poa/POAReviewScreen.tsx": 2,
         "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
         "@onboarding/screens/phone/PhoneScreen.tsx": 1,
         "@onboarding/screens/phone/TodoListScreen.tsx": 1,
         "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 2,
+        "@onboarding/screens/poa/POAReviewScreen.tsx": 2,
+        "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
         "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 3,
         "@onboarding/screens/poaConfirm/POAManualReviewScreen.tsx": 1,
         "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
@@ -1133,20 +1125,19 @@
           "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
           "@onboarding/screens/ErrorMessageScreen.tsx": 1,
           "@onboarding/components/UI/CameraPermissionFallback.tsx": 1,
-          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 2,
           "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
           "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 2,
           "@onboarding/screens/attestations/AttestationsScreen.tsx": 2,
+          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 2,
           "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/idv/FaceReviewScreen.tsx": 2,
-          "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
-          "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
-          "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 2,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
           "@onboarding/screens/error/GenericErrorScreen.tsx": 2,
+          "@onboarding/screens/idv/FaceReviewScreen.tsx": 2,
+          "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
+          "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
+          "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 2,
           "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
           "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
           "@onboarding/screens/kyc/KYCErrorScreen.tsx": 2,
@@ -1162,11 +1153,11 @@
           "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
-          "@onboarding/screens/poa/POAReviewScreen.tsx": 2,
           "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
           "@onboarding/screens/phone/PhoneScreen.tsx": 1,
           "@onboarding/screens/phone/TodoListScreen.tsx": 1,
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/poa/POAReviewScreen.tsx": 2,
           "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
           "@onboarding/screens/rfiPep/RFIPepAccountRestricted.tsx": 1,
           "@onboarding/screens/rfiPep/RfiPepSuccess.tsx": 1,
@@ -1217,21 +1208,20 @@
           "@onboarding/screens/ErrorMessageScreen.tsx": 1,
           "@onboarding/components/UI/CameraPermissionFallback.tsx": 1,
           "@onboarding/components/UI/NavBar.tsx": 2,
-          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 2,
           "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
           "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 2,
           "@onboarding/screens/attestations/AttestationsScreen.tsx": 2,
+          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 2,
           "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/idv/FaceReviewScreen.tsx": 2,
-          "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
-          "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
-          "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 2,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 1,
           "@onboarding/screens/error/GenericErrorScreen.tsx": 2,
+          "@onboarding/screens/idv/FaceReviewScreen.tsx": 2,
+          "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
+          "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
+          "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 2,
           "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
           "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
           "@onboarding/screens/kyc/KYCErrorScreen.tsx": 4,
@@ -1248,12 +1238,12 @@
           "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 2,
           "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 2,
-          "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
-          "@onboarding/screens/poa/POAReviewScreen.tsx": 2,
           "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
           "@onboarding/screens/phone/PhoneScreen.tsx": 1,
           "@onboarding/screens/phone/TodoListScreen.tsx": 1,
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 2,
+          "@onboarding/screens/poa/POAReviewScreen.tsx": 2,
+          "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
           "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 3,
           "@onboarding/screens/poaConfirm/POAManualReviewScreen.tsx": 1,
           "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
@@ -1289,15 +1279,15 @@
           "@onboarding/components/UI/CameraPermissionFallback.tsx": 1,
           "@onboarding/components/UI/NavBar.tsx": 2,
           "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
+          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
           "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
-          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/kyc/KYCErrorScreen.tsx": 2,
           "@onboarding/screens/kyc/VendorVerificationScreen.tsx": 2,
           "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
-          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
           "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 2,
           "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
           "@onboarding/screens/rfiPep/InformationTray.tsx": 1,
@@ -1319,12 +1309,11 @@
         "spacingStart": { "@onboarding/components/UI/NavBar.tsx": 1 },
         "name": {
           "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
-          "@onboarding/screens/idv/FaceReviewScreen.tsx": 2,
-          "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
+          "@onboarding/screens/idv/FaceReviewScreen.tsx": 2,
+          "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
           "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
           "@onboarding/screens/kyc/KYCErrorScreen.tsx": 3,
           "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 1,
@@ -1348,10 +1337,9 @@
         "loading": {
           "@onboarding/screens/attestations/AttestationsScreen.tsx": 2,
           "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
+          "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
           "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
           "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
           "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 1,
@@ -1361,9 +1349,9 @@
           "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 2,
           "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 2,
-          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
           "@onboarding/screens/phone/PhoneScreen.tsx": 1,
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 2,
+          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
           "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 3,
           "@onboarding/screens/riskDisclosure/RiskDisclosureScreen.tsx": 1,
           "@onboarding/screens/signup/MarketingEmailScreen.tsx": 2,
@@ -1376,12 +1364,6 @@
           "@onboarding/screens/idv/components/IDReviewButtons.tsx": 1,
           "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 1
         },
-        "spacingTop": {
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
-          "@onboarding/screens/riskDisclosure/RiskDisclosureScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpScreen.tsx": 1,
-          "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 1
-        },
         "spacingVertical": { "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1 },
         "block": {
           "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 1,
@@ -1389,27 +1371,31 @@
           "@onboarding/screens/riskDisclosure/RiskDisclosureScreen.tsx": 1,
           "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionScreen.tsx": 1,
           "@onboarding/screens/idv/components/IDReviewButtons.tsx": 2
+        },
+        "spacingTop": {
+          "@onboarding/screens/riskDisclosure/RiskDisclosureScreen.tsx": 1,
+          "@onboarding/screens/signup/SignUpScreen.tsx": 1,
+          "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 1
         }
       }
     },
     {
       "name": "HeroSquare",
       "sourceFile": "@cbhq/cds-mobile/illustrations/HeroSquare",
-      "totalInstances": 38,
-      "totalCallSites": 38,
+      "totalInstances": 37,
+      "totalCallSites": 37,
       "cds": "@cbhq/cds-mobile/illustrations/HeroSquare",
       "callSites": {
         "@onboarding/screens/ErrorMessageScreen.tsx": 1,
-        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
+        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
+        "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
         "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
         "@onboarding/screens/idv/IDVFallbackScreen.tsx": 1,
         "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
         "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
         "@onboarding/screens/idv/VerifyPhotoIdScreen.tsx": 1,
-        "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
-        "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
         "@onboarding/screens/kyc/KYCErrorScreen.tsx": 1,
         "@onboarding/screens/kyc/TodoListScreen.tsx": 1,
         "@onboarding/screens/kyc/VendorVerificationScreen.tsx": 1,
@@ -1441,16 +1427,15 @@
       "propsWithCallSites": {
         "name": {
           "@onboarding/screens/ErrorMessageScreen.tsx": 1,
-          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
           "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
           "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
+          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
+          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
           "@onboarding/screens/idv/IDVFallbackScreen.tsx": 1,
           "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
           "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
           "@onboarding/screens/idv/VerifyPhotoIdScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
-          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/kyc/KYCErrorScreen.tsx": 1,
           "@onboarding/screens/kyc/TodoListScreen.tsx": 1,
           "@onboarding/screens/kyc/VendorVerificationScreen.tsx": 1,
@@ -1483,12 +1468,12 @@
           "@onboarding/screens/ErrorMessageScreen.tsx": 1,
           "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
           "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
+          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/idv/IDVErrorScreen.tsx": 1,
           "@onboarding/screens/idv/IDVFallbackScreen.tsx": 1,
           "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
           "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
           "@onboarding/screens/idv/VerifyPhotoIdScreen.tsx": 1,
-          "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
           "@onboarding/screens/kyc/KYCErrorScreen.tsx": 1,
           "@onboarding/screens/kyc/TodoListScreen.tsx": 1,
           "@onboarding/screens/kyc/VendorVerificationScreen.tsx": 1,
@@ -1514,7 +1499,6 @@
           "@onboarding/screens/kyc/KYCRefreshAlertScreen/KYCRefreshAlertScreen.tsx": 1
         },
         "scaleMultiplier": {
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
           "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
           "@onboarding/screens/rfiPep/RFIPepAccountRestricted.tsx": 1,
           "@onboarding/screens/rfiPep/SingleHitScreen.tsx": 1
@@ -1561,8 +1545,8 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-mobile/layout/HStack",
-      "totalInstances": 58,
-      "totalCallSites": 40,
+      "totalInstances": 54,
+      "totalCallSites": 39,
       "cds": "@cbhq/cds-mobile/layout/HStack",
       "aliasedCdsComponents": [
         {
@@ -1597,7 +1581,6 @@
         "@onboarding/components/UI/NavBar.tsx": 2,
         "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 3,
         "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-        "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 4,
         "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 2,
         "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 1,
         "@onboarding/screens/edpc/IdTypeScreen.tsx": 1,
@@ -1611,9 +1594,9 @@
         "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
         "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 3,
         "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
-        "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
         "@onboarding/screens/phone/PhoneScreen.tsx": 1,
         "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+        "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
         "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
         "@onboarding/screens/rfiPep/InformationalCard.tsx": 1,
         "@onboarding/screens/rfiPep/MultiHitForm.tsx": 1,
@@ -1659,12 +1642,11 @@
           "@onboarding/components/UI/HeroImage.tsx": 1,
           "@onboarding/components/UI/NavBar.tsx": 1,
           "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
           "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 2,
           "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 3,
-          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
           "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
           "@onboarding/screens/rfiPep/RFIPepAccountRestricted.tsx": 1,
           "@onboarding/screens/rfiPep/RfiPepSuccess.tsx": 1,
@@ -1690,7 +1672,6 @@
         },
         "spacingBottom": {
           "@onboarding/components/UI/HeroImage.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 2,
           "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
           "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 1,
           "@onboarding/screens/liquid/LiquidIDVIntroScreen.tsx": 1,
@@ -1703,7 +1684,6 @@
         },
         "spacingTop": {
           "@onboarding/components/UI/HeroImage.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 2,
           "@onboarding/screens/liquid/LiquidIDVExplanationScreen.tsx": 2,
           "@onboarding/screens/liquid/LiquidIDVIntroScreen.tsx": 1,
           "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
@@ -1764,8 +1744,8 @@
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-mobile/icons/Icon",
-      "totalInstances": 33,
-      "totalCallSites": 22,
+      "totalInstances": 30,
+      "totalCallSites": 21,
       "cds": "@cbhq/cds-mobile/icons/Icon",
       "callSites": {
         "@onboarding/components/Form/PromoCodeInput.tsx": 1,
@@ -1773,7 +1753,6 @@
         "@onboarding/components/UI/NavBar.tsx": 2,
         "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
         "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-        "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 3,
         "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 2,
         "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 1,
         "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 4,
@@ -1798,7 +1777,6 @@
           "@onboarding/components/UI/NavBar.tsx": 2,
           "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
           "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 3,
           "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 2,
           "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 1,
           "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 4,
@@ -1821,7 +1799,6 @@
           "@onboarding/components/UI/NavBar.tsx": 2,
           "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
           "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 3,
           "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 2,
           "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 1,
           "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 4,
@@ -1845,7 +1822,6 @@
           "@onboarding/components/UI/NavBar.tsx": 2,
           "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
           "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 3,
           "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 2,
           "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 1,
           "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 4,
@@ -1897,8 +1873,8 @@
       "callSites": {
         "@onboarding/components/Form/PromoCodeInput.tsx": 1,
         "@onboarding/components/Layout/LinkableText.tsx": 1,
-        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsScreen.tsx": 1,
+        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
         "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 2,
         "@onboarding/screens/kyc/WhatUseOfCoinbaseScreen.tsx": 1,
         "@onboarding/screens/liquid/LiquidIDVExplanationScreen.tsx": 1,
@@ -1936,8 +1912,8 @@
         },
         "to": {
           "@onboarding/components/Layout/LinkableText.tsx": 1,
-          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
           "@onboarding/screens/attestations/AttestationsScreen.tsx": 1,
+          "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
           "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 2,
           "@onboarding/screens/kyc/WhatUseOfCoinbaseScreen.tsx": 1,
           "@onboarding/screens/liquid/LiquidIDVExplanationScreen.tsx": 1,
@@ -1953,8 +1929,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-mobile/layout/Box",
-      "totalInstances": 82,
-      "totalCallSites": 34,
+      "totalInstances": 79,
+      "totalCallSites": 33,
       "cds": "@cbhq/cds-mobile/layout/Box",
       "aliasedCdsComponents": [
         {
@@ -1976,11 +1952,10 @@
         "@onboarding/components/Form/PromoCodeInput.tsx": 1,
         "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 2,
         "@onboarding/screens/attestations/AttestationsScreen.tsx": 2,
-        "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
-        "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 3,
         "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 2,
         "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
         "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
+        "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
         "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 9,
         "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 4,
         "@onboarding/screens/kyc/VendorVerificationScreen.tsx": 3,
@@ -1988,8 +1963,8 @@
         "@onboarding/screens/liquid/LiquidIDVIntroScreen.tsx": 4,
         "@onboarding/screens/nationality/NationalityGuidanceScreen.tsx": 2,
         "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 3,
-        "@onboarding/screens/poa/POAReviewScreen.tsx": 2,
         "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 3,
+        "@onboarding/screens/poa/POAReviewScreen.tsx": 2,
         "@onboarding/screens/rfiPep/InformationalCard.tsx": 3,
         "@onboarding/screens/rfiPep/MultiHitForm.tsx": 5,
         "@onboarding/screens/signup/CountryPicker.tsx": 1,
@@ -2027,7 +2002,6 @@
         },
         "justifyContent": {
           "@onboarding/screens/attestations/AttestationsScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 3,
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
           "@onboarding/screens/rfiPep/MultiHitForm.tsx": 2,
           "@onboarding/screens/signup/CountryPicker.tsx": 1,
@@ -2038,38 +2012,26 @@
           "@onboarding/screens/suitability/SuitabilityReview.tsx": 1,
           "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshListItem.tsx": 1
         },
-        "spacing": {
-          "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
-          "@onboarding/screens/nationality/NationalityGuidanceScreen.tsx": 1,
-          "@onboarding/screens/rfiPep/InformationalCard.tsx": 1,
-          "@onboarding/screens/signup/SignUpIncentiveBox.tsx": 1
-        },
-        "background": {
-          "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/nationality/NationalityGuidanceScreen.tsx": 1,
-          "@onboarding/screens/rfiPep/InformationalCard.tsx": 1,
-          "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 1
-        },
-        "borderRadius": {
-          "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 1,
-          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
-          "@onboarding/screens/nationality/NationalityGuidanceScreen.tsx": 1,
-          "@onboarding/screens/rfiPep/InformationalCard.tsx": 1,
-          "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 1
-        },
-        "testID": { "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1 },
-        "spacingTop": {
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 3,
-          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
-          "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1
-        },
         "bordered": { "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1 },
+        "borderRadius": {
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
+          "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/nationality/NationalityGuidanceScreen.tsx": 1,
+          "@onboarding/screens/rfiPep/InformationalCard.tsx": 1,
+          "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 1
+        },
         "borderColor": { "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1 },
+        "background": {
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
+          "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 1,
+          "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
+          "@onboarding/screens/nationality/NationalityGuidanceScreen.tsx": 1,
+          "@onboarding/screens/rfiPep/InformationalCard.tsx": 1,
+          "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 1
+        },
         "spacingHorizontal": {
           "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
           "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 1,
@@ -2090,6 +2052,10 @@
           "@onboarding/screens/suitability/WhatUseOfCoinbaseSuitabilityScreen.tsx": 1,
           "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 2
         },
+        "spacingTop": {
+          "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
+          "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1
+        },
         "spacingBottom": {
           "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
           "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 5,
@@ -2100,6 +2066,13 @@
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1
         },
         "top": { "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1 },
+        "spacing": {
+          "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
+          "@onboarding/screens/nationality/NationalityGuidanceScreen.tsx": 1,
+          "@onboarding/screens/rfiPep/InformationalCard.tsx": 1,
+          "@onboarding/screens/signup/SignUpIncentiveBox.tsx": 1
+        },
+        "testID": { "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1 },
         "width": {
           "@onboarding/screens/kyc/PersonalInfoAUScreen.tsx": 4,
           "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 2,
@@ -2154,8 +2127,8 @@
         "@onboarding/screens/liquid/LiquidIDVIntroScreen.tsx": 1,
         "@onboarding/screens/nationality/NationalityGuidanceScreen.tsx": 1,
         "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
-        "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
         "@onboarding/screens/phone/PhoneScreen.tsx": 1,
+        "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
         "@onboarding/screens/signup/GdprScreen.tsx": 1,
         "@onboarding/screens/signup/SignUpScreen.tsx": 1,
         "@onboarding/screens/suitability/SuitabilityReview.tsx": 1,
@@ -2180,8 +2153,8 @@
           "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 2,
           "@onboarding/screens/liquid/LiquidIDVIntroScreen.tsx": 1,
           "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
-          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/phone/PhoneScreen.tsx": 1,
+          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/signup/GdprScreen.tsx": 1,
           "@onboarding/screens/signup/SignUpScreen.tsx": 1,
           "@onboarding/screens/suitability/SuitabilityReview.tsx": 1,
@@ -2427,12 +2400,11 @@
     {
       "name": "TextTitle1",
       "sourceFile": "@cbhq/cds-mobile/typography/TextTitle1",
-      "totalInstances": 11,
-      "totalCallSites": 9,
+      "totalInstances": 10,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-mobile/typography/TextTitle1",
       "callSites": {
         "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
-        "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
         "@onboarding/screens/liquid/LiquidIDVIntroScreen.tsx": 1,
         "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
         "@onboarding/screens/signup/SignUpThrottledScreen.tsx": 2,
@@ -2444,17 +2416,9 @@
       "propsWithCallSites": {
         "testID": {
           "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
           "@onboarding/screens/liquid/LiquidIDVIntroScreen.tsx": 1,
           "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionIntroScreen.tsx": 1,
           "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringSubmissionScreen.tsx": 1
-        },
-        "spacingBottom": {
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
-          "@onboarding/screens/signup/SignUpThrottledScreen.tsx": 1,
-          "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionIntroScreen.tsx": 1,
-          "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringSubmissionScreen.tsx": 1,
-          "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 1
         },
         "align": {
           "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
@@ -2463,6 +2427,12 @@
           "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringSubmissionScreen.tsx": 1
         },
         "color": { "@onboarding/screens/signup/SignUpThrottledScreen.tsx": 1 },
+        "spacingBottom": {
+          "@onboarding/screens/signup/SignUpThrottledScreen.tsx": 1,
+          "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionIntroScreen.tsx": 1,
+          "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringSubmissionScreen.tsx": 1,
+          "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 1
+        },
         "spacingStart": { "@onboarding/screens/signup/SignUpThrottledScreen.tsx": 1 },
         "spacingVertical": {
           "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionScreen.tsx": 1
@@ -2481,6 +2451,26 @@
         "active": { "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1 },
         "size": { "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1 },
         "name": { "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "Pictogram",
+      "sourceFile": "@cbhq/cds-mobile/illustrations/Pictogram",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-mobile/illustrations/Pictogram",
+      "callSites": {
+        "@onboarding/screens/edpc/IdTypeScreen.tsx": 1,
+        "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 1,
+        "@onboarding/screens/rfiPep/MultiHitScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "@onboarding/screens/edpc/IdTypeScreen.tsx": 1,
+          "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 1,
+          "@onboarding/screens/rfiPep/MultiHitScreen.tsx": 1
+        },
+        "dimension": { "@onboarding/screens/rfiPep/MultiHitScreen.tsx": 1 }
       }
     },
     {
@@ -2515,26 +2505,6 @@
         "spacingHorizontal": {
           "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 3
         }
-      }
-    },
-    {
-      "name": "Pictogram",
-      "sourceFile": "@cbhq/cds-mobile/illustrations/Pictogram",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-mobile/illustrations/Pictogram",
-      "callSites": {
-        "@onboarding/screens/edpc/IdTypeScreen.tsx": 1,
-        "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 1,
-        "@onboarding/screens/rfiPep/MultiHitScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "@onboarding/screens/edpc/IdTypeScreen.tsx": 1,
-          "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 1,
-          "@onboarding/screens/rfiPep/MultiHitScreen.tsx": 1
-        },
-        "dimension": { "@onboarding/screens/rfiPep/MultiHitScreen.tsx": 1 }
       }
     },
     {
@@ -2574,25 +2544,25 @@
       "totalCallSites": 4,
       "cds": "@cbhq/cds-mobile/animation/LottieStatusAnimation",
       "callSites": {
-        "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
         "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+        "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
         "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionIntroScreen.tsx": 1,
         "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringSubmissionScreen.tsx": 1
       },
       "propsWithCallSites": {
-        "key": { "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1 },
         "status": {
-          "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
           "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionIntroScreen.tsx": 1,
           "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringSubmissionScreen.tsx": 1
         },
         "height": {
-          "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
           "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+          "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1,
           "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionIntroScreen.tsx": 1,
           "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringSubmissionScreen.tsx": 1
-        }
+        },
+        "key": { "@onboarding/screens/pendingEDP/PendingEDPScreenContent.tsx": 1 }
       }
     },
     {
@@ -3402,12 +3372,11 @@
     {
       "name": "FullScreenLoader",
       "sourceFile": "@components/UI/FullScreenLoader",
-      "totalInstances": 8,
-      "totalCallSites": 8,
+      "totalInstances": 7,
+      "totalCallSites": 7,
       "presentationalLibrary": "@components/UI/FullScreenLoader",
       "callSites": {
         "@onboarding/components/UI/FlatList.tsx": 1,
-        "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
         "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
         "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
         "@onboarding/screens/phone/TodoListScreen.tsx": 1,
@@ -3418,7 +3387,6 @@
       "propsWithCallSites": {
         "loading": {
           "@onboarding/components/UI/FlatList.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 1,
           "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 1,
           "@onboarding/screens/phone/TodoListScreen.tsx": 1,
@@ -3478,25 +3446,6 @@
       }
     },
     {
-      "name": "CaptureView",
-      "sourceFile": "@onboarding/components/UI/CaptureView",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "presentationalElement": "RNCamera",
-      "callSites": {
-        "@onboarding/screens/idv/FaceCaptureScreen.tsx": 1,
-        "@onboarding/screens/idv/IDBackCaptureScreen.tsx": 1,
-        "@onboarding/screens/idv/IDFrontCaptureScreen.tsx": 1,
-        "@onboarding/screens/poa/POACaptureScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "orientation": {
-          "@onboarding/screens/idv/IDBackCaptureScreen.tsx": 1,
-          "@onboarding/screens/idv/IDFrontCaptureScreen.tsx": 1
-        }
-      }
-    },
-    {
       "name": "DateInput",
       "sourceFile": "@components/interactables/DateInput",
       "totalInstances": 3,
@@ -3552,6 +3501,25 @@
       "callSites": {
         "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
         "@onboarding/screens/signup/GdprScreen.tsx": 1
+      }
+    },
+    {
+      "name": "CaptureView",
+      "sourceFile": "@onboarding/components/UI/CaptureView",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "presentationalElement": "RNCamera",
+      "callSites": {
+        "@onboarding/screens/idv/FaceCaptureScreen.tsx": 1,
+        "@onboarding/screens/idv/IDBackCaptureScreen.tsx": 1,
+        "@onboarding/screens/idv/IDFrontCaptureScreen.tsx": 1,
+        "@onboarding/screens/poa/POACaptureScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "orientation": {
+          "@onboarding/screens/idv/IDBackCaptureScreen.tsx": 1,
+          "@onboarding/screens/idv/IDFrontCaptureScreen.tsx": 1
+        }
       }
     },
     {
@@ -3760,19 +3728,26 @@
     {
       "name": "Screen",
       "sourceFile": "@onboarding/components/Layout/Screen",
-      "totalInstances": 97,
-      "totalCallSites": 94,
+      "totalInstances": 96,
+      "totalCallSites": 93,
       "callSites": {
         "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
         "@onboarding/screens/ErrorMessageScreen.tsx": 1,
-        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsKYCIntroScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsKYCTodoListScreen.tsx": 1,
         "@onboarding/screens/attestations/AttestationsScreen.tsx": 1,
+        "@onboarding/screens/blocked/BlockedOnboardingScreen.tsx": 1,
         "@onboarding/screens/cdd/AnnualIncomeScreen.tsx": 1,
         "@onboarding/screens/cdd/BirthPlaceScreen.tsx": 1,
         "@onboarding/screens/cdd/IndustryScreen.tsx": 1,
         "@onboarding/screens/cdd/TradeAmountScreen.tsx": 1,
+        "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
+        "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
+        "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
+        "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 1,
+        "@onboarding/screens/edpc/IdTypeScreen.tsx": 1,
+        "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 1,
+        "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
         "@onboarding/screens/extendedCDD/ExtendedCDDScreen.tsx": 1,
         "@onboarding/screens/idv/FaceCaptureScreen.tsx": 1,
         "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
@@ -3786,14 +3761,6 @@
         "@onboarding/screens/idv/NameDOBMismatchErrorScreen.tsx": 1,
         "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
         "@onboarding/screens/idv/VerifyPhotoIdScreen.tsx": 1,
-        "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
-        "@onboarding/screens/edpc/EDPCAddressScreen.tsx": 1,
-        "@onboarding/screens/edpc/EDPCPersonalInfoScreen.tsx": 1,
-        "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
-        "@onboarding/screens/edpc/EDPCTipsScreen.tsx": 1,
-        "@onboarding/screens/edpc/IdTypeScreen.tsx": 1,
-        "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 1,
-        "@onboarding/screens/error/GenericErrorScreen.tsx": 1,
         "@onboarding/screens/kba/KBAInterviewScreen.tsx": 1,
         "@onboarding/screens/kba/QuestionAnswerChooser.tsx": 1,
         "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
@@ -3818,14 +3785,14 @@
         "@onboarding/screens/notifications/NotificationsPromptScreen.tsx": 2,
         "@onboarding/screens/notifications/NotificationsPromptScreenValueProps.tsx": 2,
         "@onboarding/screens/pendingDocuments/PendingDocumentsScreen.tsx": 1,
-        "@onboarding/screens/pendingEDP/PendingEDPScreen.tsx": 1,
-        "@onboarding/screens/poa/POACaptureScreen.tsx": 1,
-        "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
-        "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
         "@onboarding/screens/phone/IntroPhoneScreen.tsx": 1,
         "@onboarding/screens/phone/PhoneScreen.tsx": 1,
         "@onboarding/screens/phone/TodoListScreen.tsx": 2,
         "@onboarding/screens/phone/VerifyPhoneScreen.tsx": 1,
+        "@onboarding/screens/poa/POACaptureScreen.tsx": 1,
+        "@onboarding/screens/poa/POAReviewScreen.tsx": 1,
+        "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
+        "@onboarding/screens/pendingEDP/PendingEDPScreen.tsx": 1,
         "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 1,
         "@onboarding/screens/poaConfirm/POAManualReviewScreen.tsx": 1,
         "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
@@ -3871,20 +3838,19 @@
           "@onboarding/screens/cdd/AnnualIncomeScreen.tsx": 1,
           "@onboarding/screens/cdd/IndustryScreen.tsx": 1,
           "@onboarding/screens/cdd/TradeAmountScreen.tsx": 1,
+          "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
           "@onboarding/screens/extendedCDD/ExtendedCDDScreen.tsx": 1,
           "@onboarding/screens/idv/IntroPhotoIdScreen.tsx": 1,
           "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
-          "@onboarding/screens/edpc/EDPCReviewScreen.tsx": 1,
           "@onboarding/screens/kba/QuestionAnswerChooser.tsx": 1,
           "@onboarding/screens/kyc/EmploymentStatusScreen.tsx": 1,
           "@onboarding/screens/kyc/EnterAddressScreen.tsx": 1,
           "@onboarding/screens/kyc/EnterGenderScreen.tsx": 1,
           "@onboarding/screens/kyc/SourceOfIncomeScreen.tsx": 1,
           "@onboarding/screens/kyc/WhatUseOfCoinbaseScreen.tsx": 1,
-          "@onboarding/screens/pendingEDP/PendingEDPScreen.tsx": 1,
-          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
           "@onboarding/screens/phone/TodoListScreen.tsx": 1,
+          "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1,
+          "@onboarding/screens/pendingEDP/PendingEDPScreen.tsx": 1,
           "@onboarding/screens/rfiPep/AccountUnderReviewScreen.tsx": 1,
           "@onboarding/screens/rfiPep/MultiHitForm.tsx": 1,
           "@onboarding/screens/rfiPep/MultiHitScreen.tsx": 1,
@@ -4378,12 +4344,11 @@
     {
       "name": "LinkableText",
       "sourceFile": "@onboarding/components/Layout/LinkableText",
-      "totalInstances": 9,
-      "totalCallSites": 6,
+      "totalInstances": 8,
+      "totalCallSites": 5,
       "callSites": {
         "@onboarding/screens/attestations/AttestationsScreen.tsx": 3,
         "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
-        "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
         "@onboarding/screens/signup/GdprScreen.tsx": 1,
         "@onboarding/screens/signup/SignUpScreen.tsx": 2,
         "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionScreen.tsx": 1
@@ -4392,7 +4357,6 @@
         "text": {
           "@onboarding/screens/attestations/AttestationsScreen.tsx": 3,
           "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
           "@onboarding/screens/signup/GdprScreen.tsx": 1,
           "@onboarding/screens/signup/SignUpScreen.tsx": 2,
           "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionScreen.tsx": 1
@@ -4400,14 +4364,12 @@
         "links": {
           "@onboarding/screens/attestations/AttestationsScreen.tsx": 3,
           "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
           "@onboarding/screens/signup/GdprScreen.tsx": 1,
           "@onboarding/screens/signup/SignUpScreen.tsx": 2,
           "@onboarding/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionScreen.tsx": 1
         },
         "variant": {
           "@onboarding/screens/attestations/AttestationsScreen.tsx": 1,
-          "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
           "@onboarding/screens/signup/SignUpScreen.tsx": 1
         }
       }
@@ -4517,62 +4479,6 @@
       }
     },
     {
-      "name": "ImageView",
-      "sourceFile": "@onboarding/components/Layout/ImageView",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
-        "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
-        "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1,
-        "@onboarding/screens/poa/POAReviewScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "resizeMode": {
-          "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
-          "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
-          "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1,
-          "@onboarding/screens/poa/POAReviewScreen.tsx": 1
-        },
-        "source": {
-          "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
-          "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
-          "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1,
-          "@onboarding/screens/poa/POAReviewScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "IDReviewButtons",
-      "sourceFile": "@onboarding/screens/idv/components/IDReviewButtons",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
-        "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "side": {
-          "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
-          "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1
-        },
-        "onContinue": {
-          "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
-          "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ScrollView",
-      "sourceFile": "react-native-gesture-handler/ScrollView",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@onboarding/screens/idv-veriff/VeriffIntroScreen.tsx": 1,
-        "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 1
-      }
-    },
-    {
       "name": "JapanPrefecturePicker",
       "sourceFile": "@onboarding/screens/edpc/JapanPrefecturePicker",
       "totalInstances": 1,
@@ -4646,6 +4552,52 @@
         "onPress": { "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 2 },
         "title": { "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 2 },
         "details": { "@onboarding/screens/edpc/ResidencyStatusScreen.tsx": 2 }
+      }
+    },
+    {
+      "name": "ImageView",
+      "sourceFile": "@onboarding/components/Layout/ImageView",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
+        "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
+        "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1,
+        "@onboarding/screens/poa/POAReviewScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "resizeMode": {
+          "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
+          "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
+          "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1,
+          "@onboarding/screens/poa/POAReviewScreen.tsx": 1
+        },
+        "source": {
+          "@onboarding/screens/idv/FaceReviewScreen.tsx": 1,
+          "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
+          "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1,
+          "@onboarding/screens/poa/POAReviewScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "IDReviewButtons",
+      "sourceFile": "@onboarding/screens/idv/components/IDReviewButtons",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
+        "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "side": {
+          "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
+          "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1
+        },
+        "onContinue": {
+          "@onboarding/screens/idv/IDBackReviewScreen.tsx": 1,
+          "@onboarding/screens/idv/IDFrontReviewScreen.tsx": 1
+        }
       }
     },
     {
@@ -4806,6 +4758,12 @@
       }
     },
     {
+      "name": "Shield",
+      "sourceFile": "@components/Images/Shield",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "PendingEDPScreenContent",
       "sourceFile": "@onboarding/screens/pendingEDP/PendingEDPScreenContent",
       "totalInstances": 1,
@@ -4814,12 +4772,6 @@
         "onTryAgain": { "@onboarding/screens/pendingEDP/PendingEDPScreen.tsx": 1 },
         "status": { "@onboarding/screens/pendingEDP/PendingEDPScreen.tsx": 1 }
       }
-    },
-    {
-      "name": "Shield",
-      "sourceFile": "@components/Images/Shield",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "AlertScreen",
@@ -5197,6 +5149,12 @@
       "propsWithCallSites": {
         "status": { "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshListItem.tsx": 1 }
       }
+    },
+    {
+      "name": "ScrollView",
+      "sourceFile": "react-native-gesture-handler/ScrollView",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "KYCRefreshIdDigitsListItem",

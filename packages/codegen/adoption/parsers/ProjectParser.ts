@@ -79,6 +79,13 @@ function generateUnionRegex(strs: string[], boundaryMatch?: boolean) {
   return new RegExp(strs.map((str) => (boundaryMatch ? `^${str}$` : str)).join('|'));
 }
 
+function getPeriodInfo(date: Date) {
+  const quarter = Math.floor((date.getMonth() + 3) / 3);
+  const year = date.getFullYear();
+
+  return `Q${quarter}:${year}`;
+}
+
 export class ProjectParser {
   /** The github org and repo for the project. */
   public github: string;
@@ -293,8 +300,15 @@ export class ProjectParser {
   }
 
   get stats() {
+    // check if this report should be marked as the final report for the previous quarter
+    const lastPeriod = getPeriodInfo(
+      new Date(this.previousStats[this.previousStats.length - 1].date),
+    );
+    const currentPeriod = getPeriodInfo(new Date());
+    const period = currentPeriod !== lastPeriod ? lastPeriod : undefined;
+
     return {
-      latest: getStats(this.components),
+      latest: getStats(this.components, period),
       previous: this.previousStats,
     };
   }

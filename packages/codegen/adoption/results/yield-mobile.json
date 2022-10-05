@@ -1863,6 +1863,7 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "rewardRef": { "@app/screens/YieldCenter/Trays/YieldCenterTrays.tsx": 1 },
+        "totalsRef": { "@app/screens/YieldCenter/Trays/YieldCenterTrays.tsx": 1 },
         "currency": { "@app/screens/YieldCenter/Trays/YieldCenterTrays.tsx": 1 },
         "isVisible": { "@app/screens/YieldCenter/Trays/YieldCenterTrays.tsx": 1 },
         "onDismiss": { "@app/screens/YieldCenter/Trays/YieldCenterTrays.tsx": 1 },
