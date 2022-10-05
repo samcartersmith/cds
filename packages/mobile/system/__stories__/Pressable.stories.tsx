@@ -33,6 +33,27 @@ const PressableScreen = () => {
             <TextBody>With border</TextBody>
           </Pressable>
         </Box>
+        <Box spacing={1}>
+          <Pressable
+            accessibilityRole="button"
+            backgroundColor="primary"
+            borderRadius="pill"
+            borderWidth="button"
+          >
+            <TextBody color="negativeForeground">Primary</TextBody>
+          </Pressable>
+        </Box>
+        <Box spacing={1}>
+          <Pressable
+            accessibilityRole="button"
+            backgroundColor="primary"
+            borderRadius="pill"
+            borderWidth="button"
+            loading
+          >
+            <TextBody color="negativeForeground">Primary + Loading</TextBody>
+          </Pressable>
+        </Box>
       </Example>
 
       <Example title="Pressable (opacity only)">

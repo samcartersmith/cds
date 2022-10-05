@@ -168,10 +168,10 @@ export const Pressable = memo(
           borderColor={borderColor}
           borderRadius={borderRadius}
           borderWidth={borderWidth}
-          // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-          disabled={disabled || loading}
+          disabled={disabled}
           elevation={elevation}
-          pressed={pressed}
+          // loading shares the same styles as pressed
+          pressed={pressed || loading}
           style={!noScaleOnPress ? scaleOnPressStyle : undefined}
           contentStyle={contentStyle}
           transparentWhileInactive={transparentWhileInactive}
