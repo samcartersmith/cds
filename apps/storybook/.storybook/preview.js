@@ -14,20 +14,9 @@ export const decorators = [StoryContainer, withPerformance, withDesign];
 
 export const parameters = {
   layout: 'fullscreen',
-  controls: {
-    expanded: true,
-    hideNoControlsWarning: true,
-    sort: 'none',
-  },
   options: {
     storySort: {
       order: ['Design Tokens', 'Layout', 'Core Components', 'Icons'],
-    },
-  },
-  viewMode: 'canvas',
-  previewTabs: {
-    'storybook/docs/panel': {
-      hidden: true,
     },
   },
   viewport: {
@@ -38,6 +27,7 @@ export const parameters = {
           width: '375px',
           height: '812px',
         },
+        type: 'mobile',
       },
       PercyDesktop: {
         name: 'Percy Desktop',
@@ -45,6 +35,7 @@ export const parameters = {
           width: '1280px',
           height: '800px',
         },
+        type: 'desktop',
       },
       ...INITIAL_VIEWPORTS,
     },

@@ -77,13 +77,6 @@
       },
       "dependsOn": ["^build"]
     },
-    "run-percy": {
-      "executor": "@cbhq/cds-tools:run-conditional",
-      "options": {
-        "triggerProjects": ["web", "common", "utils", "fonts", "lottie-files"],
-        "target": "storybook:percy"
-      }
-    },
     "build-css": {
       "executor": "@cbhq/cds-tools:build-css",
       "outputs": [".nx/dist/cloud/css"],

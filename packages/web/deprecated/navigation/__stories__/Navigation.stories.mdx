@@ -34,6 +34,12 @@ import {
   <Story
     name="NO Tabs JUST displayTitle"
     decorators={[withStoryLabel('NO Tabs JUST displayTitle')]}
+    parameters={{
+      a11y: {
+        <!-- This story is deprecated so disabling all a11y checks -->
+        disable: true
+      },
+    }}
   >
     <TitleNoTabs />
   </Story>

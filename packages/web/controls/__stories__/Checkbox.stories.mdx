@@ -49,7 +49,18 @@ import { CheckboxGroup } from '../CheckboxGroup';
       );
     }}
   </Story>
-  <Story name="No label" decorators={[withStoryLabel('No label')]}>
+  <Story
+    name="No label"
+    decorators={[withStoryLabel('No label')]}
+    parameters={{
+      a11y: {
+        config: {
+          <!-- This story does not render a label on purpose -->
+          rules: [{ id: 'label', enabled: false }],
+        },
+      },
+    }}
+  >
     {() => {
       const [checked, { toggle }] = useToggler();
       return <Checkbox checked={checked} onChange={toggle} />;
@@ -68,10 +79,30 @@ import { CheckboxGroup } from '../CheckboxGroup';
       Disabled selected
     </Checkbox>
   </Story>
-  <Story name="Read-only unselected">
+  <Story
+    name="Read-only unselected"
+    parameters={{
+      a11y: {
+        config: {
+          /** Temporary override (failure "needs review"). I'm not sure if readonly using disabled styles is ok */
+          rules: [{ id: 'color-contrast', reviewOnFail: true }],
+        },
+      },
+    }}
+  >
     <Checkbox readOnly>Read-only unselected</Checkbox>
   </Story>
-  <Story name="Read-only selected">
+  <Story
+    name="Read-only selected"
+    parameters={{
+      a11y: {
+        config: {
+          /** Temporary override (failure "needs review"). I'm not sure if readonly using disabled styles is ok */
+          rules: [{ id: 'color-contrast', reviewOnFail: true }],
+        },
+      },
+    }}
+  >
     <Checkbox checked readOnly>
       Read-only selected
     </Checkbox>

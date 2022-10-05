@@ -30,6 +30,21 @@ export const { Default, InputStackOptions, Disabled, Compact, Variants } = selec
   components as unknown as CreateSelectStoriesProps,
 );
 
+Disabled.bind({});
+/** TODO: convert to CSF (Component Story Format v3) */
+// @ts-expect-error In storybook we can copy functions with bind and attach parameters.
+Disabled.parameters = {
+  a11y: {
+    config: {
+      /**
+       * Color contrast ratio doesn't need to meet 4.5:1, as the element is disabled
+       * @link https://dequeuniversity.com/rules/axe/4.3/color-contrast
+       */
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
 export const SmallSelect = () => <Default width={80} />;
 
 export const {
@@ -43,6 +58,21 @@ export const {
   spectrum: 'dark',
 } as unknown as CreateSelectStoriesProps);
 
+DarkDisabled.bind({});
+/** TODO: convert to CSF (Component Story Format v3) */
+// @ts-expect-error In storybook we can copy functions with bind and attach parameters.
+DarkDisabled.parameters = {
+  a11y: {
+    config: {
+      /**
+       * Color contrast ratio doesn't need to meet 4.5:1, as the element is disabled
+       * @link https://dequeuniversity.com/rules/axe/4.3/color-contrast
+       */
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
 export const {
   Default: Dense,
   InputStackOptions: DenseInputStackOptions,
@@ -53,6 +83,21 @@ export const {
   ...components,
   scale: 'xSmall',
 } as unknown as CreateSelectStoriesProps);
+
+DenseDisabled.bind({});
+/** TODO: convert to CSF (Component Story Format v3) */
+// @ts-expect-error In storybook we can copy functions with bind and attach parameters.
+DenseDisabled.parameters = {
+  a11y: {
+    config: {
+      /**
+       * Color contrast ratio doesn't need to meet 4.5:1, as the element is disabled
+       * @link https://dequeuniversity.com/rules/axe/4.3/color-contrast
+       */
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 const NativeSelect = () => {
   return (

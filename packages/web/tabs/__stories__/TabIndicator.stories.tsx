@@ -34,5 +34,3 @@ export const Default: Story = () => {
     </ThemeProvider>
   );
 };
-
-Default.parameters = { skipA11y: true };

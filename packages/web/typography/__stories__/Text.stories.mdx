@@ -367,14 +367,15 @@ export const MediumContainer = (props) => (
 ## Description Elements
 
 <Canvas>
-  <Story name="Description dl" args={{ as: 'dl' }}>
-    <TextBody as="dl">dl</TextBody>
-  </Story>
-  <Story name="Description dt" args={{ as: 'dt' }}>
-    <TextBody as="dt">dt</TextBody>
-  </Story>
-  <Story name="Description dd" args={{ as: 'dd' }}>
-    <TextBody as="dd">dd</TextBody>
+  <Story name="Description dl > dd">
+    <dl>
+      <TextBody as="dt">Coffee</TextBody>
+      <TextBody as="dd">Black hot drink</TextBody>
+      <div>
+        <TextBody as="dt">Milk</TextBody>
+        <TextBody as="dd">White cold drink</TextBody>
+      </div>
+    </dl>
   </Story>
 </Canvas>
 

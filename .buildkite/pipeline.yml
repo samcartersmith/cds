@@ -89,6 +89,7 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-percy storybook
+      - yarn mono-pipeline run-ci other --targets=a11y-web
 
   - label: 'Percy (Mobile)'
     <<: *shared_step

@@ -321,6 +321,19 @@ export const RenderInputDisabled = () => {
   );
 };
 
+RenderInputDisabled.bind({});
+RenderInputDisabled.parameters = {
+  a11y: {
+    config: {
+      /**
+       * Color contrast ratio doesn't need to meet 4.5:1, as the element is disabled
+       * @link https://dequeuniversity.com/rules/axe/4.3/color-contrast
+       */
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
 export const RenderInputCompact = () => {
   const [inputText, setInputText] = useState('Test');
   const ref = useRef<HTMLInputElement>(null);

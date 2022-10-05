@@ -8,7 +8,16 @@ import { ThemeProvider } from '../../system/ThemeProvider';
 import { TextHeadline } from '../../typography/TextHeadline';
 import { Radio, RadioGroup } from '../RadioGroup';
 
-<Meta title="Core Components/RadioGroup" component={RadioGroup} />
+<Meta title="Core Components/RadioGroup" component={RadioGroup} parameters={{
+  a11y: {
+    config: {
+      rules: [
+        <!-- TODO: In Control.tsx we need to remove default value for readOnly and spread in that prop only if prop is present -->
+        {id: "aria-allowed-attr", reviewOnFail: true }
+      ]
+    }
+  }
+}} />
 
 # Radio
 

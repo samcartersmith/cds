@@ -38,12 +38,14 @@ import { ToggleLoading } from './ToggleLoading';
 <Canvas withToolbar>
   <Story name="Loading" decorators={[withStoryLabel('Loading')]}>
     <div>
-      <Button loading>Button</Button>
+      <Button loading accessibilityLabel="Button">
+        Button
+      </Button>
     </div>
   </Story>
   <Story name="Loading compact" decorators={[withStoryLabel('Loading compact')]}>
     <div>
-      <Button loading compact>
+      <Button loading compact accessibilityLabel="Button">
         Button
       </Button>
     </div>

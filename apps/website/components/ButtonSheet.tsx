@@ -1,5 +1,3 @@
-// https://github.com/emotion-js/emotion/issues/693
-import {} from '@emotion/core';
 import { ButtonGroup } from '@cbhq/cds-web/buttons';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 

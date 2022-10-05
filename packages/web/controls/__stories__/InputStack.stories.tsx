@@ -11,22 +11,30 @@ export const InputStackExamples = () => (
   <InputStack
     prependNode={
       <Box background="primary">
-        <TextBody as="p">Prepend</TextBody>
+        <TextBody as="p" color="primaryForeground">
+          Prepend
+        </TextBody>
       </Box>
     }
     appendNode={
       <Box background="primary">
-        <TextBody as="p">Append</TextBody>
+        <TextBody as="p" color="primaryForeground">
+          Append
+        </TextBody>
       </Box>
     }
     startNode={
       <Box background="positive" borderRadius="input">
-        <TextBody as="p">StartContent</TextBody>
+        <TextBody as="p" color="positiveForeground">
+          StartContent
+        </TextBody>
       </Box>
     }
     endNode={
       <Box background="positive" borderRadius="input">
-        <TextBody as="p">EndContent</TextBody>
+        <TextBody as="p" color="positiveForeground">
+          EndContent
+        </TextBody>
       </Box>
     }
     inputNode={
@@ -52,17 +60,23 @@ export const Append = () => (
   <InputStack
     appendNode={
       <Box background="primary" borderRadius="input">
-        <TextBody as="p">Append</TextBody>
+        <TextBody as="p" color="primaryForeground">
+          Append
+        </TextBody>
       </Box>
     }
     startNode={
       <Box background="positive" borderRadius="input">
-        <TextBody as="p">StartContent</TextBody>
+        <TextBody as="p" color="positiveForeground">
+          StartContent
+        </TextBody>
       </Box>
     }
     endNode={
       <Box background="positive" borderRadius="input">
-        <TextBody as="p">EndContent</TextBody>
+        <TextBody as="p" color="positiveForeground">
+          EndContent
+        </TextBody>
       </Box>
     }
     inputNode={
@@ -88,17 +102,23 @@ export const Prepend = () => (
   <InputStack
     prependNode={
       <Box background="primary" borderRadius="input">
-        <TextBody as="p">Append</TextBody>
+        <TextBody as="p" color="primaryForeground">
+          Append
+        </TextBody>
       </Box>
     }
     startNode={
       <Box background="positive" borderRadius="input">
-        <TextBody as="p">StartContent</TextBody>
+        <TextBody as="p" color="positiveForeground">
+          StartContent
+        </TextBody>
       </Box>
     }
     endNode={
       <Box background="positive" borderRadius="input">
-        <TextBody as="p">EndContent</TextBody>
+        <TextBody as="p" color="positiveForeground">
+          EndContent
+        </TextBody>
       </Box>
     }
     inputNode={

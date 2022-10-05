@@ -27,10 +27,11 @@
       "options": {
         "cacheDirectory": "./.nx/cache",
         "cacheableOperations": [
-          "a11y",
+          "a11y-web",
           "build",
           "build-css",
           "build-esm",
+          "build-for-tests",
           "lint",
           "lint-styles",
           "test",

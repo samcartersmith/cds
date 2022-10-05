@@ -3,7 +3,18 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 
 import { ButtonGroup, Button, IconButton } from '..';
 
-<Meta title="Core Components/Buttons/ButtonGroup" component={ButtonGroup} />
+<Meta
+  title="Core Components/Buttons/ButtonGroup"
+  component={ButtonGroup}
+  parameters={{
+    a11y: {
+      config: {
+        <!-- TODO: Remove as="ul" from ButtonGroup. Also, we need to change the cloned buttons to be wrapped in `div` as well. -->
+        rules: [{ id: 'listitem', reviewOnFail: true }],
+      },
+    },
+  }}
+/>
 
 # ButtonGroup
 

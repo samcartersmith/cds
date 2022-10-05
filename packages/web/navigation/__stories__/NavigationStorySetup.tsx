@@ -96,7 +96,7 @@ export const NavigationBarFullExample: React.FC = () => {
           />
           <Pressable backgroundColor="transparent" onPress={() => handlePress('Avatar group')}>
             <HStack gap={1} alignItems="center">
-              <Avatar alt="Andy" size="xl" />
+              <Avatar alt="Profile pic of Andy" size="xl" />
               <TextHeadline as="h2">Andy</TextHeadline>
             </HStack>
           </Pressable>

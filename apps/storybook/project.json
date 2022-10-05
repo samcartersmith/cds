@@ -22,9 +22,19 @@
     "build": {
       "executor": "@cbhq/mono-tasks:build-storybook"
     },
+    "build-for-tests": {
+      "executor": "@cbhq/mono-tasks:build-storybook"
+    },
+    "a11y-web": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./scripts/run-a11y-tests.ts"
+      },
+      "dependsOn": ["build-for-tests"]
+    },
     "percy": {
       "executor": "@cbhq/mono-tasks:run-percy",
-      "dependsOn": [{ "target": "build", "projects": "self" }]
+      "dependsOn": ["build-for-tests"]
     }
   }
 }

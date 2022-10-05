@@ -259,10 +259,10 @@ export const Examples = () => {
       <TextDisplay1 as="h1" spacingBottom={3}>
         Explicit Layouts
       </TextDisplay1>
-      <TextHeadline as="h3" spacingBottom={4}>
+      <TextHeadline as="h2" spacingBottom={4}>
         Explicit layouts let you declare every track size to create custom layouts.
       </TextHeadline>
-      <TextDisplay2 as="h2" spacingBottom={2}>
+      <TextDisplay2 as="h3" spacingBottom={2}>
         Flexbox
       </TextDisplay2>
       <VStack gap={4}>
@@ -409,12 +409,12 @@ export const Examples = () => {
           <TextDisplay1 as="h1" spacingBottom={3}>
             Implicit Layouts
           </TextDisplay1>
-          <TextHeadline as="h3" spacingBottom={4}>
+          <TextHeadline as="h2" spacingBottom={4}>
             Implicit layouts allow the content to shape the layout. They are particularly useful
             when content size is unknown or varied.
           </TextHeadline>
           <VStack gap={4}>
-            <TextDisplay2 as="h2" spacingBottom={2}>
+            <TextDisplay2 as="h3" spacingBottom={2}>
               Flexbox
             </TextDisplay2>
             <Example
@@ -491,12 +491,12 @@ export const Examples = () => {
                       Implicit layouts are useful when you don&apos;t know how many children there
                       will be, but you know their size.
                     </TextBody>
-                    <TextBody as="p">
+                    <TextBody as="li">
                       Implicit Grids do not support different column sizes, nor do they support the
                       <code>grid-column</code> prop on children if you try to for a child to span
                       more than one column.
                     </TextBody>
-                    <TextBody as="p">
+                    <TextBody as="li">
                       It&apos; also important to not that the grid column sizes are calculated based
                       on <em>all of the children</em>, not by the children in each row. So column
                       sizes will carry over from one row to the next.

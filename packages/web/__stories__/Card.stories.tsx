@@ -14,10 +14,12 @@ import { ThemeProvider, ThemeProviderProps } from '../system';
 
 const accessToken = getFigmaAccessToken();
 const cardParameters = {
+  /**
+   * TODO: Remove this percy skip
+   */
   percy: { skip: true },
   wrapper: CardGroup,
   wrapperProps: { background: true, borderedBottom: true },
-  a11y: { skip: true },
 } as const;
 const builder = storyBuilder({ parameters: cardParameters });
 
@@ -26,7 +28,6 @@ const builder = storyBuilder({ parameters: cardParameters });
 /* -------------------------------------------------------------------------- */
 const announcementCardBuilder = builder(AnnouncementCardComponent, {
   parameters: {
-    a11y: { skip: true },
     design: {
       type: 'figspec',
       url: 'https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E?node-id=15595%3A75665',

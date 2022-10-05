@@ -10,7 +10,7 @@ export default {
 };
 
 export const NativeInputBasic = function NativeInputBasic() {
-  return <InputStack labelNode="Label" inputNode={<NativeInput />} />;
+  return <InputStack labelNode="Label" inputNode={<NativeInput accessibilityLabel="Label" />} />;
 };
 
 export const NativeInputCustomContainerSpacing = function NativeInputCustomContainerSpacing() {
@@ -22,7 +22,9 @@ export const NativeInputCustomContainerSpacing = function NativeInputCustomConta
   return (
     <InputStack
       labelNode="Label"
-      inputNode={<NativeInput containerSpacing={defaultContainerSpacing} />}
+      inputNode={
+        <NativeInput accessibilityLabel="Label" containerSpacing={defaultContainerSpacing} />
+      }
     />
   );
 };
@@ -35,7 +37,13 @@ export const NativeInputTextAlign = function NativeInputTextAlign() {
       {textAlignments.map((align) => (
         <InputStack
           labelNode="Label"
-          inputNode={<NativeInput placeholder={`${align}-placeholder`} align={align} />}
+          inputNode={
+            <NativeInput
+              accessibilityLabel="Label"
+              placeholder={`${align}-placeholder`}
+              align={align}
+            />
+          }
         />
       ))}
     </div>
@@ -63,7 +71,13 @@ export const NativeInputActions = function NativeInputOnFocus() {
     <InputStack
       labelNode="Label"
       inputNode={
-        <NativeInput onKeyDown={onKeyDown} onPress={onPress} onFocus={onFocus} onBlur={onBlur} />
+        <NativeInput
+          accessibilityLabel="Label"
+          onKeyDown={onKeyDown}
+          onPress={onPress}
+          onFocus={onFocus}
+          onBlur={onBlur}
+        />
       }
     />
   );

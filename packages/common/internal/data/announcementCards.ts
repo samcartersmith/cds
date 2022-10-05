@@ -1,7 +1,8 @@
+import { AnnouncementCardBaseProps } from '../../types/alpha/AnnouncementCardBaseProps';
+
 const onPress = () => console.log('pressed');
-export const announcementCards = [
+export const announcementCards: AnnouncementCardBaseProps<typeof onPress>[] = [
   {
-    key: 'card1',
     title: 'Crypto gifts',
     description: 'Give crypto to your family and friends',
     illustration: 'adaStaking',
@@ -9,19 +10,17 @@ export const announcementCards = [
     onActionPress: onPress,
   },
   {
-    key: 'card2',
     title: 'Want more assets?',
     description: 'Trade over 4,000 assets with Coinbase Wallet',
     illustration: 'addMultipleCrypto',
     actionLabel: 'Contact support',
-    onPress,
+    onActionPress: onPress,
   },
   {
-    key: 'card3',
     title: 'Introducing SHIB',
     description: 'Shiba Inu (SHIB) is now on Coinbase',
     illustration: 'cardShipped',
     actionLabel: 'Contact support',
-    onPress,
+    onActionPress: onPress,
   },
-] as const;
+];

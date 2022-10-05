@@ -46,7 +46,12 @@ import { Switch } from '../Switch';
       );
     }}
   </Story>
-  <Story name="No label" decorators={[withStoryLabel('No label')]}>
+  <Story
+    name="No label"
+    decorators={[withStoryLabel('No label')]}
+     <!-- This story does not render a label on purpose -->
+    parameters={{ a11y: { config: { rules: [{ id: 'label', enabled: false }] } } }}
+  >
     {() => {
       const [checked, { toggle }] = useToggler();
       return <Switch checked={checked} onChange={toggle} />;

@@ -4,6 +4,9 @@ yarn-debug.log*
 yarn-error.log*
 dist
 
+# Local env variables
+.env.local
+
 # OS ignores
 .DS_Store
 

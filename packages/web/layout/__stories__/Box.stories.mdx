@@ -4,8 +4,8 @@ import { withStoryLabel } from '../../storybook-decorators/withStoryLabel';
 import { TextBody } from '../../typography';
 import { Box } from '../Box';
 
-export const Lipsum = () => (
-  <TextBody as="p">
+export const Lipsum = (props) => (
+  <TextBody as="p" {...props}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie tellus quis sem
     suscipit molestie. In tincidunt hendrerit lectus fermentum euismod. Fusce interdum mollis
     sodales. Aenean ac nibh eu velit condimentum laoreet quis in enim. Sed ut massa at purus auctor
@@ -56,7 +56,18 @@ export const Lipsum = () => (
 # Opacity
 
 <Canvas withToolbar>
-  <Story name="Opacity" decorators={[withStoryLabel('Opacity')]}>
+  <Story
+    name="Opacity"
+    decorators={[withStoryLabel('Opacity')]}
+    parameters={{
+      a11y: {
+        config: {
+          <!-- This is just testing opacity so color contrast failure is expected -->
+          rules: [{ id: 'color-contrast', enabled: false }],
+        },
+      },
+    }}
+  >
     <Box opacity={0.1}>
       <Lipsum />
     </Box>
@@ -74,7 +85,7 @@ export const Lipsum = () => (
       alignContent="center"
     >
       <Box background="positive" alignSelf="flex-end" spacing={1}>
-        <Lipsum />
+        <Lipsum color="positiveForeground" />
       </Box>
       <Box background="backgroundAlternate" width="30%" spacing={1}>
         <Lipsum />
@@ -101,22 +112,22 @@ export const Lipsum = () => (
   </Story>
   <Story name="Primary background" decorators={[withStoryLabel('Primary background')]}>
     <Box background="primary" spacing={2}>
-      <Lipsum />
+      <Lipsum color="primaryForeground" />
     </Box>
   </Story>
   <Story name="Secondary background" decorators={[withStoryLabel('Secondary background')]}>
     <Box background="secondary" spacing={2}>
-      <Lipsum />
+      <Lipsum color="secondaryForeground" />
     </Box>
   </Story>
   <Story name="Positive background" decorators={[withStoryLabel('Positive background')]}>
     <Box background="positive" spacing={2}>
-      <Lipsum />
+      <Lipsum color="positiveForeground" />
     </Box>
   </Story>
   <Story name="Negative background" decorators={[withStoryLabel('Negative background')]}>
     <Box background="negative" spacing={2}>
-      <Lipsum />
+      <Lipsum color="negativeForeground" />
     </Box>
   </Story>
 </Canvas>

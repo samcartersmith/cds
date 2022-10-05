@@ -13,6 +13,14 @@ import { FullscreenModal } from '../Modal/FullscreenModal';
 export default {
   title: 'Core Components/FullscreenModal',
   component: FullscreenModal,
+  parameters: {
+    a11y: {
+      config: {
+        /** Heading order issue is coming from Card. We need to either fix in Card or deprecate */
+        rules: [{ id: 'heading-order', selector: '*:not(h3)' }],
+      },
+    },
+  },
 };
 
 export const Basic = () => {

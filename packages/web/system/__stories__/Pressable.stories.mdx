@@ -1,7 +1,7 @@
 import { withStoryLabel } from '../../storybook-decorators/withStoryLabel';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 
-import { Box } from '../../layout/Box';
+import { TextBody } from '../../typography';
 import { Pressable } from '../Pressable';
 
 <Meta title="Core Components/System/Pressable" component={Pressable} />
@@ -12,63 +12,95 @@ import { Pressable } from '../Pressable';
   <Story name="Default" decorators={[withStoryLabel('Default')]}>
     <div>
       <Pressable as="button" backgroundColor="background">
-        <Box spacing={1}>Pressable</Box>
+        <TextBody as="p" spacing={1}>
+          Pressable
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="background" noScaleOnPress>
-        <Box spacing={1}>Without scaling</Box>
+        <TextBody as="p" spacing={1}>
+          Without scaling
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="background" disabled>
-        <Box spacing={1}>Pressable</Box>
+        <TextBody as="p" spacing={1}>
+          Pressable
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="background" noScaleOnPress disabled>
-        <Box spacing={1}>Without scaling</Box>
+        <TextBody as="p" spacing={1}>
+          Without scaling
+        </TextBody>
       </Pressable>
       <br />
       <Pressable as="button" backgroundColor="primary" block>
-        <Box spacing={1}>Pressable full-width</Box>
+        <TextBody as="p" spacing={1} color="primaryForeground">
+          Pressable full-width
+        </TextBody>
       </Pressable>
     </div>
   </Story>
   <Story name="Background colors" decorators={[withStoryLabel('Backgrounds')]}>
     <div>
       <Pressable as="button" backgroundColor="background">
-        <Box spacing={1}>background</Box>
+        <TextBody as="p" spacing={1}>
+          background
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="backgroundAlternate">
-        <Box spacing={1}>backgroundAlternate</Box>
+        <TextBody as="p" spacing={1}>
+          backgroundAlternate
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="primary">
-        <Box spacing={1}>primary</Box>
+        <TextBody as="p" spacing={1} color="primaryForeground">
+          primary
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="secondary">
-        <Box spacing={1}>secondary</Box>
+        <TextBody as="p" spacing={1} color="secondaryForeground">
+          secondary
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="positive">
-        <Box spacing={1}>positive</Box>
+        <TextBody as="p" spacing={1} color="positiveForeground">
+          positive
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="negative">
-        <Box spacing={1}>negative</Box>
+        <TextBody as="p" spacing={1} color="negativeForeground">
+          negative
+        </TextBody>
       </Pressable>
     </div>
   </Story>
   <Story name="Transparency" decorators={[withStoryLabel('Transparency')]}>
     <div>
       <Pressable as="button" backgroundColor="transparent">
-        <Box spacing={1}>transparent</Box>
+        <TextBody as="p" spacing={1}>
+          transparent
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="primary" transparentWhileInactive>
-        <Box spacing={1}>transparentWhileInactive</Box>
+        <TextBody as="p" spacing={1} color="primaryForeground">
+          transparentWhileInactive
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="transparent" disabled>
-        <Box spacing={1}>transparent</Box>
+        <TextBody as="p" spacing={1}>
+          transparent
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="primary" transparentWhileInactive disabled>
-        <Box spacing={1}>transparentWhileInactive</Box>
+        <TextBody as="p" spacing={1} color="primaryForeground">
+          transparentWhileInactive
+        </TextBody>
       </Pressable>
     </div>
     <div>
       <Pressable as="button" backgroundColor="transparent" borderColor="positive">
-        <Box spacing={1}>transparent with borders</Box>
+        <TextBody as="p" spacing={1}>
+          transparent with borders
+        </TextBody>
       </Pressable>{' '}
       <Pressable
         as="button"
@@ -76,10 +108,14 @@ import { Pressable } from '../Pressable';
         transparentWhileInactive
         borderColor="positive"
       >
-        <Box spacing={1}>transparentWhileInactive with borders</Box>
+        <TextBody as="p" spacing={1}>
+          transparentWhileInactive with borders
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="transparent" disabled borderColor="positive">
-        <Box spacing={1}>transparent with borders</Box>
+        <TextBody as="p" spacing={1}>
+          transparent with borders
+        </TextBody>
       </Pressable>{' '}
       <Pressable
         as="button"
@@ -88,7 +124,9 @@ import { Pressable } from '../Pressable';
         disabled
         borderColor="positive"
       >
-        <Box spacing={1}>transparentWhileInactive with borders</Box>
+        <TextBody as="p" spacing={1}>
+          transparentWhileInactive with borders
+        </TextBody>
       </Pressable>
     </div>
   </Story>
@@ -100,10 +138,14 @@ import { Pressable } from '../Pressable';
         borderColor="primary"
         borderRadius="compact"
       >
-        <Box spacing={1}>primary + compact</Box>
+        <TextBody as="p" spacing={1}>
+          primary + compact
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="backgroundAlternate" borderColor="negative">
-        <Box spacing={1}>negative</Box>
+        <TextBody as="p" spacing={1}>
+          negative
+        </TextBody>
       </Pressable>{' '}
       <Pressable
         as="button"
@@ -111,7 +153,9 @@ import { Pressable } from '../Pressable';
         borderColor="positive"
         borderRadius="standard"
       >
-        <Box spacing={1}>positive + standard</Box>
+        <TextBody as="p" spacing={1} color="primaryForeground">
+          positive + standard
+        </TextBody>
       </Pressable>{' '}
       <Pressable
         as="button"
@@ -119,10 +163,14 @@ import { Pressable } from '../Pressable';
         borderColor="lineHeavy"
         borderRadius="tooltip"
       >
-        <Box spacing={1}>lineHeavy + tooltip</Box>
+        <TextBody as="p" spacing={1} color="secondaryForeground">
+          lineHeavy + tooltip
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="positive" borderColor="line" borderRadius="pill">
-        <Box spacing={1}>line + pill</Box>
+        <TextBody as="p" spacing={1} color="positiveForeground">
+          line + pill
+        </TextBody>
       </Pressable>{' '}
       <Pressable
         as="button"
@@ -130,26 +178,28 @@ import { Pressable } from '../Pressable';
         borderColor="primaryWash"
         borderRadius="round"
       >
-        <Box spacing={1}>primaryWash + round</Box>
+        <TextBody as="p" spacing={1} color="negativeForeground">
+          primaryWash + round
+        </TextBody>
       </Pressable>
     </div>
   </Story>
   <Story name="Layers" decorators={[withStoryLabel('Layers')]}>
     <div>
       <Pressable as="button" backgroundColor="background">
-        <Box background spacing={1}>
+        <TextBody as="p" background spacing={1}>
           none
-        </Box>
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="background" wrapWithLayeredElements>
-        <Box background spacing={1}>
+        <TextBody as="p" background spacing={1}>
           layered
-        </Box>
+        </TextBody>
       </Pressable>{' '}
       <Pressable as="button" backgroundColor="transparent" wrapWithLayeredElements>
-        <Box background spacing={1}>
+        <TextBody as="p" background spacing={1}>
           layered + transparent
-        </Box>
+        </TextBody>
       </Pressable>
     </div>
   </Story>
