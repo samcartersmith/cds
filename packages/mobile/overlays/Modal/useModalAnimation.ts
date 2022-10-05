@@ -27,15 +27,23 @@ export const useModalAnimation = (): [
   const modalOpacity = useRef(new Animated.Value(modalHiddenOpacity));
   const modalScale = useRef(new Animated.Value(modalHiddenScale));
 
-  const animateIn = Animated.parallel([
-    Animated.timing(modalOpacity.current, opacityInConfig),
-    Animated.timing(modalScale.current, scaleInConfig),
-  ]);
+  const animateIn = useMemo(
+    () =>
+      Animated.parallel([
+        Animated.timing(modalOpacity.current, opacityInConfig),
+        Animated.timing(modalScale.current, scaleInConfig),
+      ]),
+    [],
+  );
 
-  const animateOut = Animated.parallel([
-    Animated.timing(modalOpacity.current, opacityOutConfig),
-    Animated.timing(modalScale.current, scaleOutConfig),
-  ]);
+  const animateOut = useMemo(
+    () =>
+      Animated.parallel([
+        Animated.timing(modalOpacity.current, opacityOutConfig),
+        Animated.timing(modalScale.current, scaleOutConfig),
+      ]),
+    [],
+  );
 
   return useMemo(() => {
     return [{ opacity: modalOpacity.current, scale: modalScale.current }, animateIn, animateOut];

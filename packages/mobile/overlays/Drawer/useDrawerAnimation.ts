@@ -34,8 +34,14 @@ export const useDrawerAnimation = (
 
   const drawerAnimation = useRef(new Animated.Value(0));
 
-  const animateDrawerIn = Animated.timing(drawerAnimation.current, animateDrawer.animateIn);
-  const animateDrawerOut = Animated.timing(drawerAnimation.current, animateDrawer.animateOut);
+  const animateDrawerIn = useMemo(
+    () => Animated.timing(drawerAnimation.current, animateDrawer.animateIn),
+    [],
+  );
+  const animateDrawerOut = useMemo(
+    () => Animated.timing(drawerAnimation.current, animateDrawer.animateOut),
+    [],
+  );
 
   /** custom animation config for swipe and fling to close that has no friction and is faster */
   const animateSwipeToClose = useMemo(

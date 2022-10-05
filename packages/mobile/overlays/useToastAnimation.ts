@@ -27,15 +27,23 @@ export const useToastAnimation = (): [
   const toastOpacity = useRef(new Animated.Value(toastHiddenOpacity));
   const toastBottom = useRef(new Animated.Value(toastHiddenBottom));
 
-  const animateIn = Animated.parallel([
-    Animated.timing(toastOpacity.current, opacityInConfig),
-    Animated.timing(toastBottom.current, bottomInConfig),
-  ]);
+  const animateIn = useMemo(
+    () =>
+      Animated.parallel([
+        Animated.timing(toastOpacity.current, opacityInConfig),
+        Animated.timing(toastBottom.current, bottomInConfig),
+      ]),
+    [],
+  );
 
-  const animateOut = Animated.parallel([
-    Animated.timing(toastOpacity.current, opacityOutConfig),
-    Animated.timing(toastBottom.current, bottomOutConfig),
-  ]);
+  const animateOut = useMemo(
+    () =>
+      Animated.parallel([
+        Animated.timing(toastOpacity.current, opacityOutConfig),
+        Animated.timing(toastBottom.current, bottomOutConfig),
+      ]),
+    [],
+  );
 
   return useMemo(() => {
     return [{ opacity: toastOpacity.current, bottom: toastBottom.current }, animateIn, animateOut];

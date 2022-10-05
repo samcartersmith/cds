@@ -39,18 +39,29 @@ export const useCollapsibleAnimation = ({
     defaultExpanded.current = false;
   }
 
-  const animateIn = Animated.parallel([
-    Animated.timing(collapsibleOpacity, convertMotionConfig(animateInOpacityConfig[direction])),
-    Animated.timing(collapsibleSize, {
-      ...convertMotionConfig(animateInMaxSizeConfig[direction]),
-      toValue: animateTo,
-    }),
-  ]);
+  const animateIn = useMemo(
+    () =>
+      Animated.parallel([
+        Animated.timing(collapsibleOpacity, convertMotionConfig(animateInOpacityConfig[direction])),
+        Animated.timing(collapsibleSize, {
+          ...convertMotionConfig(animateInMaxSizeConfig[direction]),
+          toValue: animateTo,
+        }),
+      ]),
+    [animateTo, direction, collapsibleOpacity, collapsibleSize],
+  );
 
-  const animateOut = Animated.parallel([
-    Animated.timing(collapsibleOpacity, convertMotionConfig(animateOutOpacityConfig[direction])),
-    Animated.timing(collapsibleSize, convertMotionConfig(animateOutMaxSizeConfig[direction])),
-  ]);
+  const animateOut = useMemo(
+    () =>
+      Animated.parallel([
+        Animated.timing(
+          collapsibleOpacity,
+          convertMotionConfig(animateOutOpacityConfig[direction]),
+        ),
+        Animated.timing(collapsibleSize, convertMotionConfig(animateOutMaxSizeConfig[direction])),
+      ]),
+    [direction, collapsibleOpacity, collapsibleSize],
+  );
 
   return useMemo(() => {
     return {

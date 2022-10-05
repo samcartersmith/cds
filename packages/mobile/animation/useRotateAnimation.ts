@@ -22,13 +22,14 @@ export const useRotateAnimation = (
 ): SelectAnimation => {
   const rotateAnimation = useRef(new Animated.Value(0));
 
-  const animateRotateIn = Animated.timing(
-    rotateAnimation.current,
-    convertMotionConfig(animateInConfig),
+  const animateRotateIn = useMemo(
+    () => Animated.timing(rotateAnimation.current, convertMotionConfig(animateInConfig)),
+    [animateInConfig],
   );
-  const animateRotateOut = Animated.timing(
-    rotateAnimation.current,
-    convertMotionConfig(animateOutConfig),
+
+  const animateRotateOut = useMemo(
+    () => Animated.timing(rotateAnimation.current, convertMotionConfig(animateOutConfig)),
+    [animateOutConfig],
   );
 
   const translation = useMemo(() => {
