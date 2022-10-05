@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { memo, useCallback, useMemo, useRef } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { css } from 'linaria';
 import { useScale } from '@cbhq/cds-common';
@@ -64,11 +64,10 @@ export const Popover = memo(
     block = false,
     disableTypeFocus = false,
   }: PopoverProps) => {
-    const { subject, setSubject, setPopper, popperStyles, popperAttributes } =
+    const { subject, setSubject, setPopper, popperStyles, popperAttributes, popper } =
       usePopper(contentPosition);
     const scale = useScale();
     const invertedSpectrum = useSpectrumConditional(inverseConfig);
-    const ref = useRef<HTMLElement | null>(null);
 
     const { subjectAccessibilityProps, contentAccessibilityProps } = usePopoverA11y(
       visible,
@@ -82,7 +81,7 @@ export const Popover = memo(
       onBlur?.();
     }, [onBlur, onClose, subject]);
 
-    useClickOutside(ref, handleClose);
+    useClickOutside({ element: popper, callback: handleClose, enabled: visible });
 
     const memoizedContent = useMemo(
       () => (

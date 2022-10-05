@@ -1,22 +1,32 @@
-import { MutableRefObject, useCallback, useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { NoopFn } from '@cbhq/cds-common';
 
 import { getBrowserGlobals } from '../utils/browser';
 
-export const useClickOutside = (ref: MutableRefObject<HTMLElement | null>, cb: NoopFn) => {
+type ClickOutsideParams = {
+  element: HTMLElement | null;
+  callback: NoopFn | ((event: MouseEvent) => void);
+  /** @default true */
+  enabled?: boolean;
+};
+
+export const useClickOutside = ({ element, callback, enabled = true }: ClickOutsideParams) => {
   const handleClick = useCallback(
     (event: MouseEvent) => {
-      const isClickInsideElement = ref.current?.contains(event.target as Element);
+      const isClickInsideElement = element?.contains(event.target as Element);
       if (!isClickInsideElement) {
-        cb();
+        callback(event);
       }
     },
-    [cb, ref],
+    [callback, element],
   );
 
   useEffect(() => {
     const browser = getBrowserGlobals();
-    browser?.document.addEventListener('click', handleClick, true);
-    return () => browser?.document.removeEventListener('click', handleClick, true);
-  }, [handleClick]);
+    if (enabled) {
+      browser?.document.addEventListener('click', handleClick, true);
+      return () => browser?.document.removeEventListener('click', handleClick, true);
+    }
+    return () => {};
+  }, [enabled, handleClick]);
 };
