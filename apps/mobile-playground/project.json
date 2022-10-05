@@ -34,10 +34,7 @@
     "visreg": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": [
-          "buildkite-agent pipeline upload .buildkite/visreg-ios.yml",
-          "buildkite-agent pipeline upload .buildkite/visreg-android.yml"
-        ],
+        "commands": ["buildkite-agent pipeline upload .buildkite/visreg-android.yml"],
         "parallel": true
       },
       "dependsOn": ["^build"]
