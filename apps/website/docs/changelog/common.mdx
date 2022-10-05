@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.1.0 (10/5/2022, 03:33 PM PST)
+
+#### 🚀 Updates
+
+- Change button and pressable loading treatment to be more accessible. [#1171](https://github.cbhq.net/frontend/cds/pull/1171), [CDS-2478](https://jira.coinbase-corp.com/browse/CDS-2478)
+- **[Toast]** Enable positive and negative for toast color surge. [#1174](https://github.cbhq.net/frontend/cds/pull/1174)
+- **[ProgressBar]** Disable animation on mount. [#1190](https://github.cbhq.net/frontend/cds/pull/1190), [CDS-2484](https://jira.coinbase-corp.com/browse/CDS-2484)
+- **[RadioGroup]** Support gap and direction. [#1160](https://github.cbhq.net/frontend/cds/pull/1160), [CDS-2429](https://jira.coinbase-corp.com/browse/CDS-2429)
+
+#### 🐞 Fixes
+
+- Bump d3-color to resolve vulnerability issue. [#1178](https://github.cbhq.net/frontend/cds/pull/1178)
+- Ensure words don't wrap. [#1172](https://github.cbhq.net/frontend/cds/pull/1172)
+
+#### 📘 Misc
+
+- **[storybook]** Upgrade deps & replace a11y web tests. [#1154](https://github.cbhq.net/frontend/cds/pull/1154)
+- **[Upgrade Jest]** Upgrade jest from v27 to v28. [#1089](https://github.cbhq.net/frontend/cds/pull/1089)
+- **[TabNavigation]** Ensure testID's apply to each element. [#1170](https://github.cbhq.net/frontend/cds/pull/1170), [CDS-2270](https://jira.coinbase-corp.com/browse/CDS-2270)
+
 ## 2.0.0 (9/22/2022, 09:28 AM PST)
 
 #### 🚀 Updates
