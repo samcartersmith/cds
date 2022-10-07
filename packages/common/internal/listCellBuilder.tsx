@@ -9,11 +9,13 @@ import type {
   IconButtonBaseProps,
   IllustrationPictogramNames,
   ListCellBaseProps,
+  TextBaseProps,
 } from '../types';
 
 import { assets } from './data/assets';
 
 const onPressConsole = () => console.log('onPress');
+export type ListCellTextBodyProps = React.ComponentType<TextBaseProps & { as?: string }>;
 
 export function listCellBuilder(
   ListCell: React.ComponentType<
@@ -28,6 +30,7 @@ export function listCellBuilder(
   IconButton: React.ComponentType<IconButtonBaseProps>,
   Checkbox: React.ComponentType<ControlBaseProps<string> & { accessibilityLabel: string }>,
   Pictogram: React.ComponentType<{ name: IllustrationPictogramNames }>,
+  TextBody: ListCellTextBodyProps,
 ) {
   const Content = () => {
     return (
@@ -37,6 +40,13 @@ export function listCellBuilder(
         <ListCell title="Title" detail="Detail" />
 
         <ListCell title="Title" description="Description" />
+
+        <ListCell title={<TextBody as="p">Title</TextBody>} description="React node as title" />
+
+        <ListCell
+          title="React node as description"
+          description={<TextBody as="p">Description</TextBody>}
+        />
 
         <ListCell title="Title" description="Description" detail="Detail" />
 

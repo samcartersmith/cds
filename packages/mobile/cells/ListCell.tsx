@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { isValidElement, memo, useMemo } from 'react';
 import { ListCellBaseProps } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { compactListHeight, listHeight } from '@cbhq/cds-common/tokens/cell';
@@ -91,7 +91,9 @@ export const ListCell = memo(function ListCell({
       {...accessibilityProps}
     >
       <VStack justifyContent="center">
-        {!!title && (
+        {isValidElement(title) ? (
+          title
+        ) : (
           <TextHeadline
             numberOfLines={description || disableMultilineTitle ? 1 : 2}
             ellipsize="tail"
@@ -100,7 +102,9 @@ export const ListCell = memo(function ListCell({
           </TextHeadline>
         )}
 
-        {!!description && (
+        {isValidElement(description) ? (
+          description
+        ) : (
           <TextBody
             color="foregroundMuted"
             // eslint-disable-next-line no-nested-ternary
