@@ -10,11 +10,11 @@ import { Spacer } from './Spacer';
 export type HStackProps<As extends BoxElement> = Omit<BoxProps<As>, 'flexDirection'> &
   StackBaseProps;
 
-export const OldHStack = forwardRef(
-  <As extends BoxElement = 'div'>(
+export const OldHStack = memo(
+  forwardRef(function OldHStack<As extends BoxElement = 'div'>(
     { as, children, gap, ...props }: HStackProps<As>,
     forwardedRef: ForwardedRef<HTMLElement>,
-  ) => {
+  ) {
     const content = gap
       ? join(
           Children.toArray(children),
@@ -27,7 +27,7 @@ export const OldHStack = forwardRef(
         {content}
       </Box>
     );
-  },
+  }),
 );
 
 /**

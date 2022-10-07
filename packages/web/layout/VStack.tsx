@@ -10,11 +10,11 @@ import { Spacer } from './Spacer';
 export type VStackProps<As extends BoxElement> = Omit<BoxProps<As>, 'flexDirection'> &
   StackBaseProps;
 
-const OldVStack = forwardRef(
-  <As extends BoxElement = 'div'>(
+const OldVStack = memo(
+  forwardRef(function OldVStack<As extends BoxElement = 'div'>(
     { as, children, gap, ...props }: VStackProps<As>,
     forwardedRef: ForwardedRef<HTMLElement>,
-  ) => {
+  ) {
     const content = gap
       ? join(
           Children.toArray(children),
@@ -27,7 +27,7 @@ const OldVStack = forwardRef(
         {content}
       </Box>
     );
-  },
+  }),
 );
 
 /**
