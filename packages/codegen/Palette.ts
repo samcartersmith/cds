@@ -9,7 +9,7 @@ export const defaultPalette = {
   backgroundAlternate: 'gray5',
   backgroundOverlay: ['gray80', 0.33],
   line: ['gray60', 0.2],
-  lineHeavy: ['gray60', 0.66],
+  lineHeavy: ['gray60', 0.68],
   primary: 'blue60',
   primaryWash: 'blue0',
   primaryForeground: 'gray0',
@@ -48,7 +48,7 @@ const elevation2Palette = {
 } as const;
 
 const elevation2ChildrenPalette = {
-  dark: { line: ['gray60', 0.66], secondary: ['gray10', 1] },
+  dark: { line: ['gray60', 0.68], secondary: ['gray10', 1] },
 } as const;
 
 const overlayPalette = {
