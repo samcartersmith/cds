@@ -42,13 +42,17 @@ function NavigationWithPress() {
   return (
     <ExampleWithThemeToggles>
       <NavigationBar
-        start={showBackButton && <IconButton name="backArrow" onPress={handleBackPress} />}
+        start={
+          showBackButton && (
+            <IconButton name="backArrow" onPress={handleBackPress} accessibilityLabel="Back" />
+          )
+        }
         end={
           <HStack gap={1} alignItems="center">
             <IconButton
               name="bell"
               onPress={() => handlePress('Notifications')}
-              accessibilityLabel="Back"
+              accessibilityLabel="Notifications"
             />
             <Pressable backgroundColor="transparent" onPress={() => handlePress('Avatar group')}>
               <HStack gap={1} alignItems="center">
