@@ -13,8 +13,12 @@ const labelStyle = css`
   }
 `;
 
-export const InputLabel = memo(
-  ({ color = 'foreground', disabled = false, ...props }: InputLabelProps) => (
+export const InputLabel = memo(function InputLabel({
+  color = 'foreground',
+  disabled = false,
+  ...props
+}: InputLabelProps) {
+  return (
     <TextLabel1
       dangerouslySetClassName={labelStyle}
       spacingVertical={0.5}
@@ -23,5 +27,5 @@ export const InputLabel = memo(
       color={color}
       {...props}
     />
-  ),
-);
+  );
+});

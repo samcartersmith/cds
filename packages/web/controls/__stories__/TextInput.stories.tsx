@@ -358,9 +358,9 @@ export const RenderInputCompact = () => {
 };
 
 export const RenderNativeTextArea = () => {
-  const [inputText, setInputText] = useState('Test');
+  const [inputText, setInputText] = useState('');
 
-  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputText(e.target.value);
   }, []);
 
@@ -373,9 +373,16 @@ export const RenderNativeTextArea = () => {
   return (
     <div>
       <TextInput
-        inputNode={<NativeTextArea style={customNativeTextAreaCSS} rows={7} cols={5} />}
-        onChange={onChange}
-        helperText={inputText}
+        inputNode={
+          <NativeTextArea
+            value={inputText}
+            onChange={onChange}
+            style={customNativeTextAreaCSS}
+            rows={7}
+            cols={5}
+          />
+        }
+        helperText="Test"
         label="Label"
       />
     </div>
@@ -383,9 +390,9 @@ export const RenderNativeTextArea = () => {
 };
 
 export const RenderNativeTextAreaCustomSpacing = () => {
-  const [inputText, setInputText] = useState('Test');
+  const [inputText, setInputText] = useState('');
 
-  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputText(e.target.value);
   }, []);
 
@@ -404,14 +411,15 @@ export const RenderNativeTextAreaCustomSpacing = () => {
       <TextInput
         inputNode={
           <NativeTextArea
+            value={inputText}
+            onChange={onChange}
             containerSpacing={customContainerSpacing}
             style={customNativeTextAreaCSS}
             rows={7}
             cols={5}
           />
         }
-        onChange={onChange}
-        helperText={inputText}
+        helperText="Test"
         label="Label"
       />
     </div>

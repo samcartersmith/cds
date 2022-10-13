@@ -90,51 +90,49 @@ const nativeInputBaseStyle = css`
 `;
 
 export const NativeInput = memo(
-  forwardRef(
-    (
-      {
-        containerSpacing,
-        testID,
-        align = 'start',
-        onFocus,
-        onPress,
-        onBlur,
-        onKeyDown,
-        onChange,
-        accessibilityLabel,
-        accessibilityHint,
-        compact,
-        ...props
-      }: NativeInputProps,
-      ref: ForwardedRef<HTMLInputElement>,
-    ) => {
-      const defaultContainerSpacing = useSpacingStyles({
-        spacing: compact ? 1 : 2,
-      });
+  forwardRef(function NativeInput(
+    {
+      containerSpacing,
+      testID,
+      align = 'start',
+      onFocus,
+      onPress,
+      onBlur,
+      onKeyDown,
+      onChange,
+      accessibilityLabel,
+      accessibilityHint,
+      compact,
+      ...props
+    }: NativeInputProps,
+    ref: ForwardedRef<HTMLInputElement>,
+  ) {
+    const defaultContainerSpacing = useSpacingStyles({
+      spacing: compact ? 1 : 2,
+    });
 
-      const alignStyle = useMemo(() => {
-        return {
-          textAlign: align,
-        };
-      }, [align]);
+    const alignStyle = useMemo(() => {
+      return {
+        textAlign: align,
+      };
+    }, [align]);
 
-      return (
-        <input
-          style={alignStyle}
-          aria-label={accessibilityLabel}
-          aria-describedby={accessibilityHint}
-          className={cx(nativeInputBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
-          data-testid={testID}
-          tabIndex={0}
-          onClick={onPress}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          onKeyDown={onKeyDown}
-          onChange={onChange}
-          ref={ref}
-          {...props}
-        />
-      );
-    },
-  ),
+    return (
+      <input
+        style={alignStyle}
+        aria-label={accessibilityLabel}
+        aria-describedby={accessibilityHint}
+        className={cx(nativeInputBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
+        data-testid={testID}
+        tabIndex={0}
+        onClick={onPress}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onKeyDown={onKeyDown}
+        onChange={onChange}
+        ref={ref}
+        {...props}
+      />
+    );
+  }),
 );

@@ -1,8 +1,10 @@
 ### Creating a CDS TextArea or Multiline TextInput
 
-```jsx live
+```jsx live noInline
+const MAX_CHARS = 255;
+
 function RenderNativeTextArea() {
-  const [inputText, setInputText] = useState('Start writing something in the TextArea');
+  const [inputText, setInputText] = useState('');
 
   const onChange = useCallback((e) => {
     setInputText(e.target.value);
@@ -14,16 +16,31 @@ function RenderNativeTextArea() {
     };
   }, []);
 
+  const charsRemaining = useMemo(
+    () => `${MAX_CHARS - inputText.length} characters remaining`,
+    [inputText.length],
+  );
+
   return (
     <Box spacing={1}>
       <TextInput
         inputNode={
-          <NativeTextArea onChange={onChange} style={customNativeTextAreaCSS} rows={7} cols={5} />
+          <NativeTextArea
+            value={inputText}
+            onChange={onChange}
+            style={customNativeTextAreaCSS}
+            rows={7}
+            cols={5}
+            placeholder="Type something here..."
+            maxlength={MAX_CHARS}
+          />
         }
-        helperText={inputText}
-        label="Message Area"
+        helperText={charsRemaining}
+        label="TextArea with character counter"
       />
     </Box>
   );
 }
+
+render(<RenderNativeTextArea />);
 ```

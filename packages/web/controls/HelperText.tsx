@@ -11,7 +11,7 @@ export type HelperTextProps = {
   id?: string;
 } & TextProps;
 
-export const HelperText = memo(({ ...props }: HelperTextProps) => {
+export const HelperText = memo(function HelperText({ ...props }: HelperTextProps) {
   const density = useScaleDensity();
 
   if (density === 'dense') {

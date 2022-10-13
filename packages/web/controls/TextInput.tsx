@@ -124,6 +124,7 @@ export const TextInput = memo(
           onBlur: handleOnBlur,
           ref: refs,
           'aria-label': accessibilityLabel ?? label,
+          'aria-describedby': helperTextId,
           'aria-invalid': hasError,
           disabled,
         });

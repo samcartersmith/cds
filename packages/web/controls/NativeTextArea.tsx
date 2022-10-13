@@ -56,43 +56,41 @@ export type NativeTextAreaProp = {
   React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 export const NativeTextArea = memo(
-  forwardRef(
-    (
-      {
-        testID,
-        onFocus,
-        onPress,
-        onBlur,
-        onKeyDown,
-        onChange,
-        accessibilityLabel,
-        accessibilityHint,
-        compact,
-        containerSpacing,
-        ...props
-      }: NativeTextAreaProp,
-      ref: ForwardedRef<HTMLTextAreaElement>,
-    ) => {
-      const defaultContainerSpacing = useSpacingStyles({
-        spacing: compact ? 1 : 2,
-      });
+  forwardRef(function NativeTextArea(
+    {
+      testID,
+      onFocus,
+      onPress,
+      onBlur,
+      onKeyDown,
+      onChange,
+      accessibilityLabel,
+      accessibilityHint,
+      compact,
+      containerSpacing,
+      ...props
+    }: NativeTextAreaProp,
+    ref: ForwardedRef<HTMLTextAreaElement>,
+  ) {
+    const defaultContainerSpacing = useSpacingStyles({
+      spacing: compact ? 1 : 2,
+    });
 
-      return (
-        <textarea
-          aria-label={accessibilityLabel}
-          aria-describedby={accessibilityHint}
-          className={cx(nativeTextAreaBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
-          data-testid={testID}
-          tabIndex={0}
-          onClick={onPress}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          onKeyDown={onKeyDown}
-          onChange={onChange}
-          ref={ref}
-          {...props}
-        />
-      );
-    },
-  ),
+    return (
+      <textarea
+        aria-label={accessibilityLabel}
+        aria-describedby={accessibilityHint}
+        className={cx(nativeTextAreaBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
+        data-testid={testID}
+        tabIndex={0}
+        onClick={onPress}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onKeyDown={onKeyDown}
+        onChange={onChange}
+        ref={ref}
+        {...props}
+      />
+    );
+  }),
 );
