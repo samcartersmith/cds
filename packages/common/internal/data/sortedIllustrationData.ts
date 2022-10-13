@@ -1390,4 +1390,8 @@ export const sortedImg = [
   'notificationHubPortfolio-dark',
   'faceMatchReal-dark',
   'faceMatchReal-light',
+  'wrapEthSquare-light',
+  'wrapEthSquare-dark',
+  'ethStakeOrWrapRectangle-dark',
+  'ethStakeOrWrapRectangle-light',
 ] as const;

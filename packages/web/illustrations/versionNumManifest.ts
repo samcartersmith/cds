@@ -1390,4 +1390,8 @@ export const versionNumManifest: Record<string, number> = {
   'notificationHubPortfolio-dark': 0,
   'faceMatchReal-dark': 0,
   'faceMatchReal-light': 0,
+  'wrapEthSquare-light': 0,
+  'wrapEthSquare-dark': 0,
+  'ethStakeOrWrapRectangle-dark': 0,
+  'ethStakeOrWrapRectangle-light': 0,
 };

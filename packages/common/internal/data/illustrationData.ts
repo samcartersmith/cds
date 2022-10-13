@@ -93,6 +93,7 @@ export const spotSquareNames = [
   'waitlistNft',
   'waitlistSignup',
   'walletApp',
+  'wrapEthSquare',
   'yieldCenter',
   'yieldCenterUSDC',
 ] as const;
@@ -119,7 +120,7 @@ export const spotRectangleNames = [
   'emptyTradingSpotRectangle',
   'eth2SellSend',
   'ethAddress',
-  'ethStakeOrWrap',
+  'ethStakeOrWrapRectangle',
   'ethStakingMovement',
   'ethStakingRewardsHorizontal',
   'ethStakingRewardsHorizontalTwo',

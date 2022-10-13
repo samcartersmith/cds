@@ -366,6 +366,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/walletApp-1').content,
     dark: () => require('./images/dark/walletApp-1').content,
   },
+  wrapEthSquare: {
+    light: () => require('./images/light/wrapEthSquare-0').content,
+    dark: () => require('./images/dark/wrapEthSquare-0').content,
+  },
   yieldCenter: {
     light: () => require('./images/light/yieldCenter-1').content,
     dark: () => require('./images/dark/yieldCenter-1').content,
@@ -457,6 +461,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   ethAddress: {
     light: () => require('./images/light/ethAddress-0').content,
     dark: () => require('./images/dark/ethAddress-0').content,
+  },
+  ethStakeOrWrapRectangle: {
+    light: () => require('./images/light/ethStakeOrWrapRectangle-0').content,
+    dark: () => require('./images/dark/ethStakeOrWrapRectangle-0').content,
   },
   ethStakingMovement: {
     light: () => require('./images/light/ethStakingMovement-0').content,

@@ -95,6 +95,7 @@ export type IllustrationSpotSquareNames =
   | 'waitlistNft'
   | 'waitlistSignup'
   | 'walletApp'
+  | 'wrapEthSquare'
   | 'yieldCenter'
   | 'yieldCenterUSDC';
 
@@ -120,7 +121,7 @@ export type IllustrationSpotRectangleNames =
   | 'emptyTradingSpotRectangle'
   | 'eth2SellSend'
   | 'ethAddress'
-  | 'ethStakeOrWrap'
+  | 'ethStakeOrWrapRectangle'
   | 'ethStakingMovement'
   | 'ethStakingRewardsHorizontal'
   | 'ethStakingRewardsHorizontalTwo'
