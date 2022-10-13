@@ -2258,7 +2258,7 @@ __metadata:
     "@cbhq/cds-tools": "workspace:*"
     "@cbhq/cds-utils": "workspace:*"
     d3-array: ^2.3.3
-    d3-color: ^3.1.0
+    d3-color: ^2.0.0
     d3-scale: ^3.3.0
     d3-shape: ^2.1.0
     jest-date-mock: ^1.0.8
@@ -7956,10 +7956,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/d3-color@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@types/d3-color@npm:3.1.0"
-  checksum: b1856f17d6366559a68eaba0164f30727e9dc5eaf1b3a6c8844354da228860240423d19fa4de65bff9da26b4ead8843eab14b1566962665412e8fd82c3810554
+"@types/d3-color@npm:^2.0.1":
+  version: 2.0.3
+  resolution: "@types/d3-color@npm:2.0.3"
+  checksum: b4a963b15f4fe0e7e49b0898df3e51b46392d91c21038b7ec61aef0f13e04bd7bcfebf06c9fad9ee92317c9682a105e18942c9295a7e2715855622d4d6fc415a
   languageName: node
   linkType: hard
 
@@ -13629,17 +13629,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"d3-color@npm:1 - 2":
+"d3-color@npm:1 - 2, d3-color@npm:^2.0.0":
   version: 2.0.0
   resolution: "d3-color@npm:2.0.0"
   checksum: b887354aa383937abd04fbffed3e26e5d6a788472cd3737fb10735930e427763e69fe93398663bccf88c0b53ee3e638ac6fcf0c02226b00ed9e4327c2dfbf3dc
-  languageName: node
-  linkType: hard
-
-"d3-color@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "d3-color@npm:3.1.0"
-  checksum: 4931fbfda5d7c4b5cfa283a13c91a954f86e3b69d75ce588d06cde6c3628cebfc3af2069ccf225e982e8987c612aa7948b3932163ce15eb3c11cd7c003f3ee3b
   languageName: node
   linkType: hard
 
@@ -14310,7 +14303,7 @@ __metadata:
     "@testing-library/react-hooks": ^3.7.0
     "@testing-library/user-event": ^14.0.4
     "@types/d3-array": ^2.9.0
-    "@types/d3-color": ^3.1.0
+    "@types/d3-color": ^2.0.1
     "@types/d3-interpolate-path": ^2.0.0
     "@types/d3-scale": ^3.2.2
     "@types/d3-selection": ^1.4.3
