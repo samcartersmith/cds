@@ -27,6 +27,8 @@ import { fadeIn, fadeOut } from './fade';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveScrubContext } from './SparklineInteractiveScrubProvider';
 
+export const scrubHandlerStaticClassName = 'cds-sparkline--scrubhandler';
+
 const scrubHandlerContainerClassName = css`
   position: relative;
   width: 100%;
@@ -34,11 +36,13 @@ const scrubHandlerContainerClassName = css`
 `;
 
 const scrubHandlerClassName = css`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  &.${scrubHandlerStaticClassName} {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
 `;
 
 const fadeInMaskClassName = css`
@@ -107,7 +111,11 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
   const { lineDOMNode, maskDOMNode, hoverDateDOMNode } = useSparklineInteractiveScrubContext();
   const { width: chartWidth } = useSparklineInteractiveContext();
   const padding = useScaleConditional({ dense: 4, normal: 8 });
-  const scrubHandlerClassNameWithFocus = cx(scrubHandlerClassName, insetFocusRing);
+  const scrubHandlerClassNameWithFocus = cx(
+    scrubHandlerStaticClassName,
+    scrubHandlerClassName,
+    insetFocusRing,
+  );
   const [xPos, setXPos] = useState<number>(0);
   const { width, observe } = useDimensions();
   const steps = useMemo(() => {
