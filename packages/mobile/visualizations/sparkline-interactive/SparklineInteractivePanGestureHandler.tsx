@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { Animated as RNAnimated, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import Animated from 'react-native-reanimated';
+import Animated, { runOnJS } from 'react-native-reanimated';
 import { ChartGetMarker, ChartScrubParams } from '@cbhq/cds-common/types/Chart';
 import { SparklineInteractiveScrubHandlerProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { noop } from '@cbhq/cds-utils';
@@ -10,6 +10,8 @@ import { Haptics } from '../../utils/haptics';
 
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
+
+const { lightImpact } = Haptics;
 
 export type SparklineInteractivePanGestureHandlerProps<Period extends string> = {
   onScrub?: (params: ChartScrubParams<Period>) => void;
@@ -42,43 +44,23 @@ export const SparklineInteractivePanGestureHandler = function SparklineInteracti
   } = useSparklineInteractiveContext();
   const { chartVerticalLineWidth, endX, startX } = useSparklineInteractiveConstants({});
 
-  const handleGestureStart = useCallback(() => {
-    void Haptics.lightImpact();
+  const handleOnStartJsThread = useCallback(() => {
+    void lightImpact();
     onScrubStart();
     RNAnimated.parallel([animateMarkerIn, animateMinxMaxOut, animateHoverDateIn]).start();
-    markerGestureState.value = 1;
-  }, [animateHoverDateIn, animateMarkerIn, animateMinxMaxOut, markerGestureState, onScrubStart]);
+  }, [animateHoverDateIn, animateMarkerIn, animateMinxMaxOut, onScrubStart]);
 
-  const handleUpdate = useCallback(
-    (event) => {
-      const newMarkerXPosition = Math.min(
-        endX,
-        Math.max(startX, event.x - chartVerticalLineWidth / 2),
-      );
-      markerXPosition.value = newMarkerXPosition;
-      if (markerGestureState.value === 1) {
-        const dataPoint = getMarker(markerXPosition.value);
-        if (dataPoint) {
-          onScrub({
-            point: dataPoint,
-            period: selectedPeriod,
-          });
-        }
-      }
-    },
-    [
-      chartVerticalLineWidth,
-      endX,
-      getMarker,
-      markerGestureState.value,
-      markerXPosition,
-      onScrub,
-      selectedPeriod,
-      startX,
-    ],
-  );
+  const handleOnUpdateJsThread = useCallback(() => {
+    const dataPoint = getMarker(markerXPosition.value);
+    if (dataPoint) {
+      onScrub({
+        point: dataPoint,
+        period: selectedPeriod,
+      });
+    }
+  }, [getMarker, markerXPosition.value, onScrub, selectedPeriod]);
 
-  const handleGestureEndOrCancelled = useCallback(() => {
+  const handleOnEndOrCancelledJsThread = useCallback(() => {
     onScrubEnd();
     RNAnimated.parallel([animateMarkerOut, animateMinMaxIn, animateHoverDateOut]).start(
       ({ finished }) => {
@@ -87,21 +69,12 @@ export const SparklineInteractivePanGestureHandler = function SparklineInteracti
         }
       },
     );
-    markerGestureState.value = 0;
-  }, [
-    animateHoverDateOut,
-    animateMarkerOut,
-    animateMinMaxIn,
-    markerGestureState,
-    markerXPosition,
-    onScrubEnd,
-  ]);
+  }, [animateHoverDateOut, animateMarkerOut, animateMinMaxIn, markerXPosition, onScrubEnd]);
 
-  const handleGestureEnd = useCallback(() => {
-    handleGestureEndOrCancelled();
-    // Dont trigger when cancelled/failed
+  const handleOnEndJsThread = useCallback(() => {
     void Haptics.lightImpact();
-  }, [handleGestureEndOrCancelled]);
+    handleOnEndOrCancelledJsThread();
+  }, [handleOnEndOrCancelledJsThread]);
 
   if (disabled) {
     return <View>{children}</View>;
@@ -110,10 +83,28 @@ export const SparklineInteractivePanGestureHandler = function SparklineInteracti
   const longPressGesture = Gesture.Pan()
     .activateAfterLongPress(110)
     .shouldCancelWhenOutside(true)
-    .onStart(handleGestureStart)
-    .onUpdate(handleUpdate)
-    .onEnd(handleGestureEnd)
-    .onTouchesCancelled(handleGestureEndOrCancelled);
+    .onStart(function onStart() {
+      runOnJS(handleOnStartJsThread)();
+      markerGestureState.value = 1;
+    })
+    .onUpdate(function onUpdate(event) {
+      const newMarkerXPosition = Math.min(
+        endX,
+        Math.max(startX, event.x - chartVerticalLineWidth / 2),
+      );
+      markerXPosition.value = newMarkerXPosition;
+      if (markerGestureState.value === 1) {
+        runOnJS(handleOnUpdateJsThread)();
+      }
+    })
+    .onEnd(function onEnd() {
+      markerGestureState.value = 0;
+      runOnJS(handleOnEndJsThread)();
+    })
+    .onTouchesCancelled(function onTouchesCancelled() {
+      markerGestureState.value = 0;
+      runOnJS(handleOnEndOrCancelledJsThread)();
+    });
 
   return (
     <GestureDetector gesture={longPressGesture}>

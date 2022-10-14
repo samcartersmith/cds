@@ -791,7 +791,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-proposal-export-namespace-from@npm:>=7, @babel/plugin-proposal-export-namespace-from@npm:^7.17.12, @babel/plugin-proposal-export-namespace-from@npm:^7.18.9":
+"@babel/plugin-proposal-export-namespace-from@npm:>=7, @babel/plugin-proposal-export-namespace-from@npm:^7.18.9":
   version: 7.18.9
   resolution: "@babel/plugin-proposal-export-namespace-from@npm:7.18.9"
   dependencies:
@@ -2321,11 +2321,11 @@ __metadata:
     "@types/react-native": ^0.68.2
     d3-interpolate-path: ^2.2.2
     lodash: ^4.17.21
-    react-native-gesture-handler: ^2.5.0
+    react-native-gesture-handler: 2.6.2
     react-native-inappbrowser-reborn: 3.6.3
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.1
-    react-native-reanimated: ^2.9.1
+    react-native-reanimated: 2.10.0
     react-native-safe-area-context: ^3.2.0
     react-native-svg: 12.1.0
     react-test-renderer: ^17.0.2
@@ -2337,11 +2337,11 @@ __metadata:
     lottie-react-native: ^5.1.4
     react: ">=17.0.2"
     react-native: ">=0.68.2"
-    react-native-gesture-handler: ^2.5.0
+    react-native-gesture-handler: 2.6.2
     react-native-inappbrowser-reborn: 3.6.3
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.1
-    react-native-reanimated: ^2.9.1
+    react-native-reanimated: 2.10.0
     react-native-safe-area-context: ">=3.2.0"
     react-native-screens: ^3.12.0
     react-native-svg: 12.1.0
@@ -2844,10 +2844,10 @@ __metadata:
     react: ^17.0.2
     react-native: ^0.68.2
     react-native-asset: ^2.0.1
-    react-native-gesture-handler: ^2.5.0
+    react-native-gesture-handler: 2.6.2
     react-native-inappbrowser-reborn: ^3.6.3
     react-native-navigation-bar-color: ^2.0.1
-    react-native-reanimated: ^2.9.1
+    react-native-reanimated: 2.10.0
     react-native-safe-area-context: ^3.2.0
     react-native-screens: ^3.12.0
     react-native-svg: ^12.1.0
@@ -28556,9 +28556,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-gesture-handler@npm:^2.5.0":
-  version: 2.5.0
-  resolution: "react-native-gesture-handler@npm:2.5.0"
+"react-native-gesture-handler@npm:2.6.2":
+  version: 2.6.2
+  resolution: "react-native-gesture-handler@npm:2.6.2"
   dependencies:
     "@egjs/hammerjs": ^2.0.17
     hoist-non-react-statics: ^3.3.0
@@ -28568,7 +28568,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: d086f14da7f45c24c675402a4e9dec0a5c32e7279110f1af0c178cae0b6ca40dea99f878120d7034ce9c84f01465f68d0f21dcc9c3869fd527ebd18255b73432
+  checksum: 055523bbe20898cc6398d857278ad0ff54065f5afa623c6a232f661370c2383cdb1baeacf6db09b006b8fae488fb4a993c49ae6804da35a15ea66373d724991b
   languageName: node
   linkType: hard
 
@@ -28628,11 +28628,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-reanimated@npm:^2.9.1":
-  version: 2.9.1
-  resolution: "react-native-reanimated@npm:2.9.1"
+"react-native-reanimated@npm:2.10.0":
+  version: 2.10.0
+  resolution: "react-native-reanimated@npm:2.10.0"
   dependencies:
-    "@babel/plugin-proposal-export-namespace-from": ^7.17.12
     "@babel/plugin-transform-object-assign": ^7.16.7
     "@babel/preset-typescript": ^7.16.7
     "@types/invariant": ^2.2.35
@@ -28644,7 +28643,7 @@ __metadata:
     "@babel/core": ^7.0.0-0
     react: "*"
     react-native: "*"
-  checksum: 4ec8e62c86e9ac8645e9a4a6ac9c4501d48fc15eb8884bdbde0615dfa51de0cae38e2cb63d8b7521429367e34b78e1604d38280b049b5b20b44b45b82dadc99d
+  checksum: 7f01ee15e0f2d48af543370b10b8d257e22d09c3fcdbeff1d74d68bfc72f0e9cf74d0634edb10beef4671a20068d7be128678bb52d976aefdf78f5c80a0baa90
   languageName: node
   linkType: hard
 

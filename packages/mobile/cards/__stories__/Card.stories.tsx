@@ -61,7 +61,7 @@ const CardScreen = () => {
           <TextHeadline>Announcement Cards</TextHeadline>
         </Box>
         {announcementCards.map((item) => (
-          <AnnouncementCard {...item} />
+          <AnnouncementCard key={item.title} {...item} />
         ))}
         <Box spacingVertical={2} spacingHorizontal={gutter} background="backgroundAlternate">
           <TextHeadline>Feature Entry Cards</TextHeadline>
