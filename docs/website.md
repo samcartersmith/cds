@@ -11,13 +11,13 @@ As you implement CDS components it will be expected that you will contribute to 
 `start` - starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
 ```console
-yarn website start
+yarn nx run website:start
 ```
 
 ## Build
 
 ```console
-yarn website build
+yarn nx run website:build
 ```
 
 ## Serve
@@ -25,7 +25,7 @@ yarn website build
 You can serve the built website with the command below. You can use this approach if you wish to test what is deployed to https://cds.cbhq.net in your local environment.
 
 ```console
-yarn website serve
+yarn nx run website:serve
 ```
 
 ## Deploy

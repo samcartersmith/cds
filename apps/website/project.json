@@ -16,6 +16,15 @@
         ]
       }
     },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "apps/website",
+        "commands": [
+          "docusaurus serve --dir ../../.nx/outs/projects/apps/website/docusaurus --port 3000"
+        ]
+      }
+    },
     "build": {
       "executor": "@cbhq/mono-tasks:build-docusaurus"
     },
