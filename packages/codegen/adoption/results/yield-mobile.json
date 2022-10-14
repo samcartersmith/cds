@@ -3,9 +3,15 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-mobile/layout/VStack",
-      "totalInstances": 26,
-      "totalCallSites": 14,
+      "totalInstances": 27,
+      "totalCallSites": 15,
       "cds": "@cbhq/cds-mobile/layout/VStack",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx",
+          "callSites": ["@app/screens/YieldCenter/YieldCenterScreen.tsx"]
+        }
+      ],
       "callSites": {
         "@app/screens/YieldCenter/AlertSection.tsx": 1,
         "@app/screens/YieldCenter/AssetAPYCard.tsx": 2,
@@ -14,6 +20,7 @@
         "@app/screens/YieldCenter/NuxHeaderSection.tsx": 1,
         "@app/screens/YieldCenter/UnearnedSection.tsx": 3,
         "@app/screens/YieldCenter/YieldUpsellSection.tsx": 2,
+        "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1,
         "@app/screens/YieldCenter/ManageInterest/ManageInterestScreen.tsx": 2,
         "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
         "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1,
@@ -30,10 +37,16 @@
         },
         "spacingVertical": {
           "@app/screens/YieldCenter/HeaderSection.tsx": 1,
+          "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
         },
         "width": {
           "@app/screens/YieldCenter/UnearnedSection.tsx": 2,
+          "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1,
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
         },
         "alignItems": {
@@ -49,10 +62,6 @@
         },
         "background": {
           "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1
-        },
-        "spacingHorizontal": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1,
-          "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
         },
         "spacingTop": {
           "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1,
@@ -113,8 +122,8 @@
         "@app/screens/YieldCenter/YieldCenterScreen.tsx": 1,
         "@app/screens/YieldCenter/YieldEarnedChart.tsx": 1,
         "@app/screens/YieldCenter/YieldUpsellSection.tsx": 3,
-        "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1,
         "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
+        "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 4,
         "@app/screens/DefiBoost/DefiBoostEnrollmentTermsScreen.tsx": 1,
         "@app/screens/DefiBoost/components/DefiBoostEnrollmentHeaderLink.tsx": 1,
@@ -136,6 +145,7 @@
         },
         "spacingBottom": {
           "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
+          "@app/screens/YieldCenter/DefiBoostPromotion.tsx": 1,
           "@app/screens/YieldCenter/UnearnedSection.tsx": 1,
           "@app/screens/YieldCenter/YieldEarnedChart.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentTermsScreen.tsx": 1
@@ -295,16 +305,17 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-mobile/typography/TextTitle3",
-      "totalInstances": 9,
-      "totalCallSites": 9,
+      "totalInstances": 11,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-mobile/typography/TextTitle3",
       "callSites": {
         "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
         "@app/screens/YieldCenter/NuxHeaderSection.tsx": 1,
         "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1,
         "@app/screens/YieldCenter/YieldCenterNuxScreen.tsx": 1,
-        "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
+        "@app/screens/YieldCenter/YieldEarnedChartHeader.tsx": 2,
         "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
+        "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
         "@app/screens/YieldCenter/Trays/SubscriptionYieldCenterRewardsModal.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
@@ -322,8 +333,8 @@
           "@app/screens/YieldCenter/NuxHeaderSection.tsx": 1,
           "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1,
           "@app/screens/YieldCenter/YieldCenterNuxScreen.tsx": 1,
-          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
           "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
+          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentSuccessScreen.tsx": 1
         },
@@ -377,22 +388,17 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-mobile/typography/TextHeadline",
       "callSites": {
         "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
-        "@app/screens/YieldCenter/YieldEarnedChartHeader.tsx": 1,
         "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1,
         "@app/screens/DefiBoost/components/DefiBoostEnrollmentRateDetailsTray.tsx": 1
       },
       "propsWithCallSites": {
-        "color": {
-          "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
-          "@app/screens/YieldCenter/YieldEarnedChartHeader.tsx": 1
-        },
+        "color": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 },
         "spacingEnd": { "@app/screens/YieldCenter/AssetAPYCard.tsx": 1 },
-        "align": { "@app/screens/YieldCenter/YieldEarnedChartHeader.tsx": 1 },
         "spacingBottom": {
           "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant.tsx": 1
         }
@@ -612,14 +618,15 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-mobile/typography/TextBody",
-      "totalInstances": 11,
-      "totalCallSites": 9,
+      "totalInstances": 12,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-mobile/typography/TextBody",
       "callSites": {
         "@app/screens/YieldCenter/NuxHeaderSection.tsx": 2,
         "@app/screens/YieldCenter/UnearnedSection.tsx": 1,
         "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1,
         "@app/screens/YieldCenter/YieldCenterNuxScreen.tsx": 1,
+        "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1,
         "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx": 1,
         "@app/screens/YieldCenter/Trays/SubscriptionYieldCenterRewardsModal.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1,
@@ -659,10 +666,14 @@
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-mobile/typography/Link",
-      "totalInstances": 8,
-      "totalCallSites": 5,
+      "totalInstances": 9,
+      "totalCallSites": 6,
       "cds": "@cbhq/cds-mobile/typography/Link",
       "aliasedCdsComponents": [
+        {
+          "aliasPath": "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx",
+          "callSites": ["@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx"]
+        },
         {
           "aliasPath": "@app/screens/YieldCenter/Trays/YieldCenterTrays.tsx",
           "callSites": ["@app/screens/YieldCenter/YieldCenterScreen.tsx"]
@@ -671,6 +682,7 @@
       "callSites": {
         "@app/screens/YieldCenter/NuxHeaderSection.tsx": 1,
         "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1,
+        "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1,
         "@app/screens/YieldCenter/Trays/YieldCenterTrays.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 4,
         "@app/screens/DefiBoost/components/DefiBoostEnrollmentHeaderLink.tsx": 1
@@ -679,12 +691,14 @@
         "variant": {
           "@app/screens/YieldCenter/NuxHeaderSection.tsx": 1,
           "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1,
+          "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 4,
           "@app/screens/DefiBoost/components/DefiBoostEnrollmentHeaderLink.tsx": 1
         },
         "to": {
           "@app/screens/YieldCenter/NuxHeaderSection.tsx": 1,
           "@app/screens/YieldCenter/YieldCenterFirstStakeIncentiveScreen.tsx": 1,
+          "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1,
           "@app/screens/YieldCenter/Trays/YieldCenterTrays.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1
         },
@@ -828,13 +842,6 @@
       }
     },
     {
-      "name": "TextTitle1",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle1",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/typography/TextTitle1"
-    },
-    {
       "name": "Carousel",
       "sourceFile": "@cbhq/cds-mobile/media/Carousel",
       "totalInstances": 1,
@@ -846,6 +853,29 @@
         "items": { "@app/screens/YieldCenter/YieldUpsellSection.tsx": 1 },
         "onMomentumScrollEnd": { "@app/screens/YieldCenter/YieldUpsellSection.tsx": 1 },
         "overScrollMode": { "@app/screens/YieldCenter/YieldUpsellSection.tsx": 1 }
+      }
+    },
+    {
+      "name": "Banner",
+      "sourceFile": "@cbhq/cds-mobile/banner/Banner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/banner/Banner",
+      "propsWithCallSites": {
+        "title": { "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1 },
+        "variant": { "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1 },
+        "startIcon": { "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1 },
+        "primaryAction": {
+          "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1
+        },
+        "numberOfLines": {
+          "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1
+        },
+        "showDismiss": {
+          "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1
+        },
+        "onClose": { "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1 },
+        "testID": { "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx": 1 }
       }
     },
     {
@@ -872,19 +902,19 @@
       "totalCallSites": 2,
       "cds": "@cbhq/cds-mobile/illustrations/SpotSquare",
       "callSites": {
-        "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1,
-        "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1
+        "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
+        "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
-          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1,
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1
-        },
-        "scaleMultiplier": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1,
           "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1
         },
         "dimension": {
           "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant.tsx": 1
+        },
+        "scaleMultiplier": {
+          "@app/screens/YieldCenter/SSNPrompt/SSNVerificationPromotionCard.tsx": 1
         }
       }
     },
@@ -1089,10 +1119,7 @@
       "sourceFile": "@designSystem/navigation/progress/ProgressCarousel/ProgressCarouselSlide",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "presentationalLibrary": "@designSystem/navigation/progress/ProgressCarousel/ProgressCarouselSlide",
-      "propsWithCallSites": {
-        "key": { "@app/screens/DefiBoost/DefiBoostEnrollmentTutorialScreen.tsx": 1 }
-      }
+      "presentationalLibrary": "@designSystem/navigation/progress/ProgressCarousel/ProgressCarouselSlide"
     },
     {
       "name": "SmallButton",
@@ -1239,7 +1266,10 @@
       "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": { "@app/screens/YieldCenter/EarnedSection.tsx": 2 },
-      "propsWithCallSites": { "rewardRef": { "@app/screens/YieldCenter/EarnedSection.tsx": 2 } }
+      "propsWithCallSites": {
+        "rewardRef": { "@app/screens/YieldCenter/EarnedSection.tsx": 2 },
+        "isLast": { "@app/screens/YieldCenter/EarnedSection.tsx": 2 }
+      }
     },
     {
       "name": "EarnedYieldCenterCell",
@@ -1453,6 +1483,12 @@
         "spacingBottom": { "@app/screens/YieldCenter/YieldCenterScreen.tsx": 2 },
         "viewerRef": { "@app/screens/YieldCenter/YieldCenterScreen.tsx": 2 }
       }
+    },
+    {
+      "name": "LifetimeEarningCalculationUpdateBanner",
+      "sourceFile": "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate/LifetimeEarningCalculationUpdateBanner",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "SectionedScrollView",
@@ -1678,6 +1714,12 @@
       "totalCallSites": 1
     },
     {
+      "name": "LifeTimeEarningChangedLearnMoreLink",
+      "sourceFile": "@app/screens/YieldCenter/Banners/LifetimeEarningCalculationUpdate.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "ManageInterestCell",
       "sourceFile": "@app/screens/YieldCenter/ManageInterest/ManageInterestCell",
       "totalInstances": 1,
@@ -1697,6 +1739,42 @@
       "sourceFile": "@app/screens/YieldCenter/ManageInterest/ManageInterestScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "Gutter",
+      "sourceFile": "@app/screens/YieldCenter/YieldCenterScreen/Gutter",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "spacingBottom": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "OptInVariant",
+      "sourceFile": "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "optInNavigation": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        },
+        "ratesNavigation": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "EarningVariant",
+      "sourceFile": "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerRef": {
+          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
+        }
+      }
     },
     {
       "name": "StatusAlertCard",
@@ -1769,42 +1847,6 @@
       "sourceFile": "@app/screens/YieldCenter/SSNPrompt/SSNVerificationSuccessScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "Gutter",
-      "sourceFile": "@app/screens/YieldCenter/YieldCenterScreen/Gutter",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "spacingBottom": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "OptInVariant",
-      "sourceFile": "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/OptInVariant",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "optInNavigation": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
-        },
-        "ratesNavigation": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "EarningVariant",
-      "sourceFile": "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/EarningVariant",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "viewerRef": {
-          "@app/screens/YieldCenter/SubscriptionBoostedRatesCard/SubscriptionBoostedRatesCard.tsx": 1
-        }
-      }
     },
     {
       "name": "BottomSheetModalContainer",
@@ -1977,13 +2019,32 @@
       "totalCallSites": 1
     },
     {
+      "name": "ErrorBoundary",
+      "sourceFile": "@app/components/ErrorBoundary",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/DefiBoost/DefiBoostEnrollmentTermsScreen.tsx": 1,
+        "@app/screens/DefiBoost/DefiBoostEnrollmentTutorialScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "fallback": {
+          "@app/screens/DefiBoost/DefiBoostEnrollmentTermsScreen.tsx": 1,
+          "@app/screens/DefiBoost/DefiBoostEnrollmentTutorialScreen.tsx": 1
+        },
+        "key": {
+          "@app/screens/DefiBoost/DefiBoostEnrollmentTermsScreen.tsx": 1,
+          "@app/screens/DefiBoost/DefiBoostEnrollmentTutorialScreen.tsx": 1
+        }
+      }
+    },
+    {
       "name": "DefiBoostLegalDisclosureCell",
       "sourceFile": "@app/screens/DefiBoost/components/DefiBoostLegalDisclosureCell",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
         "spacingTop": { "@app/screens/DefiBoost/DefiBoostEnrollmentTermsScreen.tsx": 1 },
-        "key": { "@app/screens/DefiBoost/DefiBoostEnrollmentTermsScreen.tsx": 1 },
         "legalAgreementRef": { "@app/screens/DefiBoost/DefiBoostEnrollmentTermsScreen.tsx": 1 }
       }
     },
