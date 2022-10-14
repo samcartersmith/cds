@@ -8,18 +8,21 @@ export function contentCellFallbackBuilder(
   const Fallbacks = () => {
     return (
       <>
-        <ContentCellFallback title />
-        <ContentCellFallback title description />
-        <ContentCellFallback title meta />
-        <ContentCellFallback title subtitle />
-        <ContentCellFallback title meta description />
-        <ContentCellFallback title description meta subtitle />
-        <ContentCellFallback title media="icon" />
-        <ContentCellFallback title description media="asset" />
-        <ContentCellFallback title meta media="image" />
-        <ContentCellFallback title subtitle media="avatar" />
-        <ContentCellFallback title meta description media="icon" />
-        <ContentCellFallback title description meta subtitle media="asset" />
+        <ContentCellFallback title disableRandomRectWidth />
+        <ContentCellFallback title description disableRandomRectWidth />
+        <ContentCellFallback title meta disableRandomRectWidth />
+        <ContentCellFallback title subtitle disableRandomRectWidth />
+        <ContentCellFallback title meta description disableRandomRectWidth />
+        <ContentCellFallback title description meta subtitle disableRandomRectWidth />
+        <ContentCellFallback title media="icon" disableRandomRectWidth />
+        <ContentCellFallback title description media="asset" disableRandomRectWidth />
+        <ContentCellFallback title meta media="image" disableRandomRectWidth />
+        <ContentCellFallback title subtitle media="avatar" disableRandomRectWidth />
+        <ContentCellFallback title meta description media="icon" disableRandomRectWidth />
+        <ContentCellFallback title description meta subtitle media="asset" disableRandomRectWidth />
+        <ContentCellFallback title description meta subtitle media="asset" rectWidthVariant={0} />
+        <ContentCellFallback title description meta subtitle media="asset" rectWidthVariant={1} />
+        <ContentCellFallback title description meta subtitle media="asset" rectWidthVariant={2} />
       </>
     );
   };

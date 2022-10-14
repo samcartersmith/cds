@@ -1,4 +1,5 @@
 import React, { memo, useMemo } from 'react';
+import { getRectWidthVariant } from '@cbhq/cds-common/utils/getRectWidthVariant';
 
 import { Cell } from '../cells/Cell';
 import { MediaFallback } from '../cells/MediaFallback';
@@ -21,6 +22,8 @@ export const TableCellFallback = memo(
     outerSpacing,
     innerSpacing,
     responsiveConfig,
+    disableRandomRectWidth,
+    rectWidthVariant,
     ...rest
   }: TableCellFallbackProps) => {
     const TableCellComponent = useTableCellTag(as);
@@ -52,13 +55,22 @@ export const TableCellFallback = memo(
           responsiveConfig={responsiveConfig}
         >
           {title && (
-            <Fallback height={24} width={45} percentage testID="table-cell-fallback-title" />
+            <Fallback
+              height={24}
+              width={45}
+              disableRandomRectWidth={disableRandomRectWidth}
+              rectWidthVariant={getRectWidthVariant(rectWidthVariant, 0)}
+              percentage
+              testID="table-cell-fallback-title"
+            />
           )}
           {subtitle && (
             <Fallback
               height={16}
               width={35}
               spacingTop={textSpacingTop}
+              disableRandomRectWidth={disableRandomRectWidth}
+              rectWidthVariant={getRectWidthVariant(rectWidthVariant, 1)}
               percentage
               testID="table-cell-fallback-subtitle"
             />

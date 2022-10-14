@@ -1,4 +1,4 @@
-import { CellMediaType, SharedProps } from '@cbhq/cds-common';
+import { CellMediaType, FallbackRectWidthProps, SharedProps } from '@cbhq/cds-common';
 
 import { TableCellProps } from './tableCellTypes';
 
@@ -12,4 +12,5 @@ export type TableCellFallbackProps = {
   /** Display end shimmer with a shape according to type. */
   end?: CellMediaType;
 } & SharedProps &
+  FallbackRectWidthProps &
   Pick<TableCellProps, 'width' | 'outerSpacing' | 'innerSpacing' | 'responsiveConfig' | 'as'>;

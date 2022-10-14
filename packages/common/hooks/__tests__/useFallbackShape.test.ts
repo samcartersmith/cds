@@ -3,9 +3,9 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useFallbackShape } from '../useFallbackShape';
 
 describe('useFallbackShape()', () => {
-  it('doesnt randomize while testing', () => {
+  it('does not randomize rectangle shape width when disableRandomRectWidth is true', () => {
     const { result, rerender } = renderHook(() => {
-      return useFallbackShape('rectangle', 100);
+      return useFallbackShape('rectangle', 100, { disableRandomRectWidth: true });
     });
 
     expect(result.current).toEqual({ borderRadius: 0, width: 100 });
@@ -13,23 +13,17 @@ describe('useFallbackShape()', () => {
     expect(result.current).toEqual({ borderRadius: 0, width: 100 });
   });
 
-  it('doesnt randomize for percy', () => {
-    process.env.NODE_ENV = 'production';
-    process.env.STORYBOOK_SKIP_ANIMATION = 'yolo';
-
+  it('does not randomize rectangle shape width when baseWidth is not a number', () => {
     const { result, rerender } = renderHook(() => {
-      return useFallbackShape('rectangle', 100);
+      return useFallbackShape('rectangle', '100px');
     });
 
-    expect(result.current).toEqual({ borderRadius: 0, width: 100 });
+    expect(result.current).toEqual({ borderRadius: 0, width: '100px' });
     rerender();
-    expect(result.current).toEqual({ borderRadius: 0, width: 100 });
-
-    process.env.NODE_ENV = 'test';
-    process.env.STORYBOOK_SKIP_ANIMATION = '';
+    expect(result.current).toEqual({ borderRadius: 0, width: '100px' });
   });
 
-  it('randomize rectangle shape', () => {
+  it('randomizes rectangle shape width', () => {
     process.env.NODE_ENV = 'production';
     process.env.STORYBOOK_SKIP_ANIMATION = '';
 
@@ -42,6 +36,29 @@ describe('useFallbackShape()', () => {
     expect(result.current).toEqual({ borderRadius: 0, width: 81 });
 
     jest.spyOn(global.Math, 'random').mockRestore();
+  });
+
+  it('varies rectangle shape width deterministically when rectWidthVariant prop is set', () => {
+    const { result, rerender } = renderHook(() => {
+      return useFallbackShape('rectangle', 100, { rectWidthVariant: 3 });
+    });
+
+    expect(result.current).toEqual({ borderRadius: 0, width: 115 });
+    rerender();
+    expect(result.current).toEqual({ borderRadius: 0, width: 115 });
+  });
+
+  it('varies rectangle shape width deterministically when rectWidthVariant prop is set and disableRandomRectWidth is true', () => {
+    const { result, rerender } = renderHook(() => {
+      return useFallbackShape('rectangle', 100, {
+        rectWidthVariant: 3,
+        disableRandomRectWidth: true,
+      });
+    });
+
+    expect(result.current).toEqual({ borderRadius: 0, width: 115 });
+    rerender();
+    expect(result.current).toEqual({ borderRadius: 0, width: 115 });
   });
 
   it('returns circle shape', () => {

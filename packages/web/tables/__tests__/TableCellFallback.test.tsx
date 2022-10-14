@@ -13,7 +13,7 @@ describe('Table Cell Fallback', () => {
         <Table>
           <TableBody>
             <TableRow>
-              <TableCellFallback title subtitle />
+              <TableCellFallback title subtitle disableRandomRectWidth />
             </TableRow>
           </TableBody>
         </Table>,
@@ -26,7 +26,7 @@ describe('Table Cell Fallback', () => {
       <Table>
         <TableBody>
           <TableRow>
-            <TableCellFallback title subtitle start="image" end="image" />
+            <TableCellFallback title subtitle start="image" end="image" disableRandomRectWidth />
           </TableRow>
         </TableBody>
       </Table>,

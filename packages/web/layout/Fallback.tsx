@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import { css } from 'linaria';
 import { FallbackBaseProps } from '@cbhq/cds-common';
-import { useFallbackShape } from '@cbhq/cds-common/hooks/useFallbackShape';
+import { useFallbackShape, UseFallbackShapeOptions } from '@cbhq/cds-common/hooks/useFallbackShape';
 
 import { Box, BoxProps } from './Box';
 
@@ -49,9 +49,19 @@ export const Fallback = memo(function Fallback({
   shape = 'rectangle',
   width: baseWidth,
   percentage,
+  disableRandomRectWidth,
+  rectWidthVariant,
   ...props
 }: FallbackProps) {
-  const { width, borderRadius } = useFallbackShape(shape, baseWidth);
+  const fallbackShapeOptions = useMemo(
+    (): UseFallbackShapeOptions => ({
+      disableRandomRectWidth,
+      rectWidthVariant,
+    }),
+    [disableRandomRectWidth, rectWidthVariant],
+  );
+
+  const { width, borderRadius } = useFallbackShape(shape, baseWidth, fallbackShapeOptions);
   const backgroundSizeHeight = typeof height === 'number' ? `${height}px` : height;
 
   const style = useMemo(

@@ -2,7 +2,7 @@
 import React, { memo, useEffect, useMemo, useRef } from 'react';
 import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
 import { FallbackBaseProps } from '@cbhq/cds-common';
-import { useFallbackShape } from '@cbhq/cds-common/hooks/useFallbackShape';
+import { useFallbackShape, UseFallbackShapeOptions } from '@cbhq/cds-common/hooks/useFallbackShape';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 
 import { LinearGradient } from '../gradients/LinearGradient';
@@ -16,9 +16,19 @@ export const Fallback = memo(function Fallback({
   height,
   shape = 'rectangle',
   width: baseWidth,
+  disableRandomRectWidth,
+  rectWidthVariant,
   ...props
 }: FallbackProps) {
-  const { width, borderRadius } = useFallbackShape(shape, baseWidth);
+  const fallbackShapeOptions = useMemo(
+    (): UseFallbackShapeOptions => ({
+      disableRandomRectWidth,
+      rectWidthVariant,
+    }),
+    [disableRandomRectWidth, rectWidthVariant],
+  );
+
+  const { width, borderRadius } = useFallbackShape(shape, baseWidth, fallbackShapeOptions);
 
   const spectrum = useSpectrum();
   const shimmerColor = spectrum === 'light' ? fallbackShimmer.light : fallbackShimmer.dark;

@@ -1,6 +1,7 @@
 import { cellPriorities } from '../tokens/cell';
 
 import { BorderRadius } from './BorderRadius';
+import { FallbackRectWidthProps } from './FallbackBaseProps';
 import { IconName } from './IconName';
 import { IllustrationPictogramNames } from './IllustrationNames';
 import { PaletteForeground } from './Palette';
@@ -128,7 +129,7 @@ export type ContentCellFallbackProps = {
   subtitle?: boolean;
   /** Display title shimmer. */
   title?: boolean;
-};
+} & FallbackRectWidthProps;
 
 export type ListCellBaseProps = {
   /** Accessory to display at the end of the cell. */
@@ -159,4 +160,5 @@ export type ListCellFallbackProps = {
   subdetail?: boolean;
   /** Display title shimmer. */
   title?: boolean;
-} & Pick<CellCommonProps, 'compact'>;
+} & FallbackRectWidthProps &
+  Pick<CellCommonProps, 'compact'>;

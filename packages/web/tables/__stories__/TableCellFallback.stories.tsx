@@ -36,7 +36,11 @@ export const TableCellFallbackExample: Story = () => {
           <TableRow backgroundColor="backgroundAlternate">
             {LABELS.map((label) =>
               loading ? (
-                <TableCellFallback key={`header-fallback-cell${label}`} title />
+                <TableCellFallback
+                  key={`header-fallback-cell${label}`}
+                  title
+                  disableRandomRectWidth
+                />
               ) : (
                 <TableCell key={`header-cell-${label}`} title={label} />
               ),
@@ -44,44 +48,50 @@ export const TableCellFallbackExample: Story = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data.map((row, index) => (
-            <TableRow key={`row-${row.name}--${row.appSubmittedAt}`}>
-              {Object.entries(row)
-                .filter(([label]) => LABELS.includes(label))
-                .map(([key, val]) => {
-                  const mediaType = mediaTypes[index % mediaTypes.length];
-                  return loading ? (
-                    <TableCellFallback
-                      key={`fallback-cell-${key}`}
-                      width="33%"
-                      title
-                      subtitle
-                      start={mediaTypes[index % mediaTypes.length]}
-                    />
-                  ) : (
-                    <TableCell
-                      width="33%"
-                      key={`cell-${key}`}
-                      title={`${val}`}
-                      subtitle="Some subtitle"
-                      start={
-                        mediaType === 'image' ? (
-                          <CellMedia
-                            type="image"
-                            source="https://images.coinbase.com/avatar?s=56"
-                          />
-                        ) : (
-                          <CellMedia
-                            type="avatar"
-                            source="https://images.coinbase.com/avatar?s=56"
-                          />
-                        )
-                      }
-                    />
-                  );
-                })}
-            </TableRow>
-          ))}
+          {data.map((row, index) => {
+            const isEven = index % 2 === 0;
+
+            return (
+              <TableRow key={`row-${row.name}--${row.appSubmittedAt}`}>
+                {Object.entries(row)
+                  .filter(([label]) => LABELS.includes(label))
+                  .map(([key, val], rowIndex) => {
+                    const mediaType = mediaTypes[index % mediaTypes.length];
+                    return loading ? (
+                      <TableCellFallback
+                        key={`fallback-cell-${key}`}
+                        width="33%"
+                        title
+                        subtitle
+                        start={mediaTypes[index % mediaTypes.length]}
+                        disableRandomRectWidth={isEven}
+                        rectWidthVariant={!isEven ? index + rowIndex : undefined}
+                      />
+                    ) : (
+                      <TableCell
+                        width="33%"
+                        key={`cell-${key}`}
+                        title={`${val}`}
+                        subtitle="Some subtitle"
+                        start={
+                          mediaType === 'image' ? (
+                            <CellMedia
+                              type="image"
+                              source="https://images.coinbase.com/avatar?s=56"
+                            />
+                          ) : (
+                            <CellMedia
+                              type="avatar"
+                              source="https://images.coinbase.com/avatar?s=56"
+                            />
+                          )
+                        }
+                      />
+                    );
+                  })}
+              </TableRow>
+            );
+          })}
         </TableBody>
       </Table>
     </ThemeProvider>

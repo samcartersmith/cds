@@ -1,5 +1,36 @@
 import Example from './_example.mdx';
 
-Teams using Suspense or wanting to show a loading state can leverege the TableCellFallback component to show a loading cell.
+Teams using Suspense or wanting to show a loading state can leverage the TableCellFallback component to show a loading cell.
 
 <Example />
+
+:::tip Rectangular fallback widths
+
+This component contains rectangular fallbacks, the widths for which are randomized within a predetermined threshold by default (e.g. to add some variety when mulitple fallbacks are presented together). If this behavior is undesirable (e.g. in server-side rendered web apps), randomization can be disabled with the `disableRandomRectWidth` prop.
+
+<br />
+
+Alternatively, you may create a variant with different rectangle widths by setting a number value on the `rectWidthVariant` prop. Variants map to a predetermined set of width values, which are cycled through repeatedly when the set is exhausted. Therefore, it's still possible to achieve some variety in your fallbacks, but in a deterministic manner (i.e. safe for server-side rendering). Here's an example:
+
+<br />
+
+```jsx live
+<Table bordered variant="graph">
+  <TableBody>
+    <TableRow>
+      <TableCellFallback title subtitle start="image" rectWidthVariant={0} />
+      <TableCellFallback title subtitle end="image" rectWidthVariant={1} />
+    </TableRow>
+    <TableRow>
+      <TableCellFallback title subtitle start="asset" rectWidthVariant={2} />
+      <TableCellFallback title subtitle end="asset" rectWidthVariant={3} />
+    </TableRow>
+    <TableRow>
+      <TableCellFallback title subtitle start="avatar" rectWidthVariant={4} />
+      <TableCellFallback title subtitle end="avatar" rectWidthVariant={5} />
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+:::

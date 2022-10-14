@@ -1,5 +1,33 @@
 Supports the same structure and similar props as `ListCell`, but instead of accepting content, it accepts a boolean. This boolean determines whether to show a fallback shimmer in the desired location.
 
 ```jsx live
-<ListCellFallback title description detail media="avatar" />
+<ListCellFallback title description detail subdetail media="avatar" />
 ```
+
+:::tip Rectangular fallback widths
+
+This component contains rectangular fallbacks, the widths for which are randomized within a predetermined threshold by default (e.g. to add some variety when mulitple fallbacks are presented together). If this behavior is undesirable (e.g. in server-side rendered web apps), randomization can be disabled with the `disableRandomRectWidth` prop.
+
+<br />
+
+Alternatively, you may create a variant with different rectangle widths by setting a number value on the `rectWidthVariant` prop. Variants map to a predetermined set of width values, which are cycled through repeatedly when the set is exhausted. Therefore, it's still possible to achieve some variety in your fallbacks, but in a deterministic manner (i.e. safe for server-side rendering). Here's an example:
+
+<br />
+
+```jsx live noInline
+const items = [{}, {}, {}];
+
+function RenderListCellFallbacksInList() {
+  return (
+    <VStack gap={1}>
+      {items.map((item, i) => (
+        <ListCellFallback title description detail subdetail media="avatar" rectWidthVariant={i} />
+      ))}
+    </VStack>
+  );
+}
+
+render(<RenderListCellFallbacksInList />);
+```
+
+:::

@@ -5,6 +5,8 @@ import type {
   BoxBaseProps,
   ButtonBaseProps,
   DrawerRefBaseProps,
+  FallbackBaseProps,
+  FallbackRectWidthProps,
   FeedCardBaseProps,
   IconButtonBaseProps,
   IllustrationPictogramNames,
@@ -63,7 +65,7 @@ export type CreateTrayProps = {
   Pictogram: React.ComponentType<PictogramProps>;
   HStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
   VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
-  Fallback: React.ComponentType<BoxBaseProps & StackBaseProps>;
+  Fallback: React.ComponentType<FallbackBaseProps & FallbackRectWidthProps>;
   TextBody: React.ComponentType<TextProps>;
   Menu: React.ComponentType<React.PropsWithChildren<Pick<SelectBaseProps, 'onChange' | 'value'>>>;
 };
@@ -126,7 +128,7 @@ export const trayBuilder = ({
     return (
       <VStack gap={2} alignItems="center">
         {lotsOfOptions.map((item) => (
-          <Fallback key={item} height={30} width="90%" />
+          <Fallback key={item} height={30} width="90%" disableRandomRectWidth />
         ))}
       </VStack>
     );
