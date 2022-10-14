@@ -109,7 +109,7 @@ function parseCommitTokens(item: string) {
   let jiraMatch;
 
   // eslint-disable-next-line no-cond-assign
-  while ((jiraMatch = message.match(/\[([A-Z]+-\d+)\]/))) {
+  while ((jiraMatch = message.match(/\[([A-Za-z0-9]+-\d+)\]/))) {
     message = message.replace(jiraMatch[0], '').trim();
     jira.push(jiraMatch[1]);
   }
