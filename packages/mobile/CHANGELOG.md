@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.1.1 (10/14/2022, 10:51 AM PST)
+
+#### 🐞 Fixes
+
+- Reanimated & gesture-handler upgrade with sparkline fix. [#1215](https://github.cbhq.net/frontend/cds/pull/1215), [IM-7087](https://jira.coinbase-corp.com/browse/IM-7087)
+- **[illustrations]** Publish 10/12/22 Illo. [#1209](https://github.cbhq.net/frontend/cds/pull/1209)
+- Revert d3-color bump. [#1210](https://github.cbhq.net/frontend/cds/pull/1210)
+- **[ListCell]** Render non-text title and description. [#1206](https://github.cbhq.net/frontend/cds/pull/1206), [CDS-2307](https://jira.coinbase-corp.com/browse/CDS-2307)
+- Bump lineHeavy opacity from 0.66 to 0.68. [#1202](https://github.cbhq.net/frontend/cds/pull/1202)
+
 ## 2.1.0 (10/5/2022, 03:33 PM PST)
 
 #### 🚀 Updates
