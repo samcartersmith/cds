@@ -3,6 +3,16 @@
   "sourceRoot": "apps/mobile-playground/src",
   "projectType": "application",
   "targets": {
+    "setup": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "mono-env setup --group mobile",
+          "echo 'Visit https://frontend.cbhq.net/mobile/getting-started for additional setup details'"
+        ],
+        "parallel": false
+      }
+    },
     "start-android": {
       "executor": "@cbhq/mono-tasks-mobile:start-android",
       "dependsOn": ["^build", "^mobile-routes"]
