@@ -10,7 +10,7 @@ import { useAccessibleForeground } from '../../color/useAccessibleForeground';
 import { usePalette } from '../../hooks/usePalette';
 import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
-import { PressableOpacity } from '../../system/PressableOpacity';
+import { Pressable } from '../../system/Pressable';
 import { TextLabel1 } from '../../typography';
 import { Haptics } from '../../utils/haptics';
 
@@ -73,13 +73,6 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
   }, [period, setSelectedPeriod]);
   const colors = usePalette();
 
-  const backgroundStyle = useMemo(
-    () => ({
-      backgroundColor: isSelected ? colors.primaryWash : undefined,
-    }),
-    [colors.primaryWash, isSelected],
-  );
-
   const textStyle = useMemo(
     () => ({
       color: isSelected ? color : colors.foregroundMuted,
@@ -87,25 +80,28 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
     [color, colors.foregroundMuted, isSelected],
   );
 
+  const accessibilityState = useMemo(
+    () => ({
+      selected: isSelected,
+    }),
+    [isSelected],
+  );
+
   return (
     <Box spacingVertical={2} alignItems="center" justifyContent="center">
-      <Box
+      <Pressable
         borderRadius="round"
-        alignItems="center"
-        justifyContent="center"
-        dangerouslySetStyle={backgroundStyle}
+        backgroundColor={isSelected ? 'primaryWash' : 'background'}
+        borderColor="transparent"
+        onPress={handleOnPress}
+        accessibilityLabel={periodLabel}
+        accessibilityHint={periodHint}
+        accessibilityState={accessibilityState}
       >
-        <PressableOpacity
-          onPress={handleOnPress}
-          accessibilityLabel={periodLabel}
-          accessibilityHint={periodHint}
-          aria-pressed={isSelected}
-        >
-          <TextLabel1 spacingHorizontal={2} spacingVertical={1} dangerouslySetStyle={textStyle}>
-            {period.label}
-          </TextLabel1>
-        </PressableOpacity>
-      </Box>
+        <TextLabel1 spacingHorizontal={2} spacingVertical={1} dangerouslySetStyle={textStyle}>
+          {period.label}
+        </TextLabel1>
+      </Pressable>
     </Box>
   );
 }
