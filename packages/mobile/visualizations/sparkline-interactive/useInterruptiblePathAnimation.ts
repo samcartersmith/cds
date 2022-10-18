@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import { animatedPathConfig } from '@cbhq/cds-common/animation/sparkline';
 
@@ -25,16 +25,13 @@ export const useInterruptiblePathAnimation = ({
   const isRunning = useRef(false);
   const animationProgress = useRef(new Animated.Value(0)).current;
 
-  const animations = useMemo(
-    () => [Animated.timing(animationProgress, animationConfig)],
-    [animationProgress],
-  );
+  const animations = [Animated.timing(animationProgress, animationConfig)];
 
   if (!ignoreMinMax) {
     animations.push(animateMinMaxIn);
   }
 
-  const animation = useMemo(() => Animated.sequence(animations), [animations]);
+  const animation = Animated.sequence(animations);
 
   const onFinishAnimation = useCallback(
     ({ finished }: { finished: boolean }) => {
