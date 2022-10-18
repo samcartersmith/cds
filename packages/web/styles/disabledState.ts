@@ -1,10 +1,10 @@
 import { css } from 'linaria';
-import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
+import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 
 import { interactableDisabledBackground } from '../system/interactableCSSProperties';
 
 export const disabledState = css`
-  opacity: ${opacityDisabled};
+  opacity: ${accessibleOpacityDisabled};
   cursor: default;
   pointer-events: none;
   touch-action: none;

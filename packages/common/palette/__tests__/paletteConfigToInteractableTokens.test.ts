@@ -26,8 +26,8 @@ const config: PaletteConfig = {
 const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   foreground: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(103, 104, 105)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(133, 133, 134)',
     },
     hovered: {
       contentOpacity: 0.88,
@@ -40,8 +40,8 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   foregroundMuted: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(59, 62, 68)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(74, 78, 86)',
     },
     hovered: {
       contentOpacity: 0.92,
@@ -54,7 +54,7 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   background: {
     disabled: {
-      contentOpacity: 0.38,
+      contentOpacity: 0.5,
       backgroundColor: 'rgb(10, 11, 13)',
     },
     hovered: {
@@ -68,8 +68,8 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   backgroundAlternate: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(14, 15, 18)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(15, 16, 19)',
     },
     hovered: {
       contentOpacity: 0.98,
@@ -82,8 +82,8 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   backgroundOverlay: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(80, 82, 87)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(102, 105, 110)',
     },
     hovered: {
       contentOpacity: 0.9,
@@ -96,8 +96,8 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   line: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(59, 62, 68)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(74, 78, 86)',
     },
     hovered: {
       contentOpacity: 0.92,
@@ -110,8 +110,8 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   lineHeavy: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(59, 62, 68)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(74, 78, 86)',
     },
     hovered: {
       contentOpacity: 0.92,
@@ -124,8 +124,8 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   primary: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(27, 51, 101)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(33, 63, 129)',
     },
     hovered: {
       contentOpacity: 0.92,
@@ -138,8 +138,8 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   primaryWash: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(6, 13, 27)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(5, 14, 32)',
     },
     hovered: {
       contentOpacity: 0.98,
@@ -152,7 +152,7 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   primaryForeground: {
     disabled: {
-      contentOpacity: 0.38,
+      contentOpacity: 0.5,
       backgroundColor: 'rgb(10, 11, 13)',
     },
     hovered: {
@@ -166,8 +166,8 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   negative: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(97, 44, 49)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(125, 54, 61)',
     },
     hovered: {
       contentOpacity: 0.92,
@@ -180,7 +180,7 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   negativeForeground: {
     disabled: {
-      contentOpacity: 0.38,
+      contentOpacity: 0.5,
       backgroundColor: 'rgb(10, 11, 13)',
     },
     hovered: {
@@ -194,8 +194,8 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   positive: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(21, 73, 53)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(25, 92, 65)',
     },
     hovered: {
       contentOpacity: 0.92,
@@ -208,7 +208,7 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   positiveForeground: {
     disabled: {
-      contentOpacity: 0.38,
+      contentOpacity: 0.5,
       backgroundColor: 'rgb(10, 11, 13)',
     },
     hovered: {
@@ -222,7 +222,7 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   secondary: {
     disabled: {
-      contentOpacity: 0.38,
+      contentOpacity: 0.5,
       backgroundColor: 'rgb(10, 11, 13)',
     },
     hovered: {
@@ -236,8 +236,8 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   secondaryForeground: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(103, 104, 105)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(133, 133, 134)',
     },
     hovered: {
       contentOpacity: 0.88,
@@ -250,7 +250,7 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   },
   transparent: {
     disabled: {
-      contentOpacity: 0.38,
+      contentOpacity: 0.5,
       backgroundColor: 'transparent',
     },
     hovered: {
@@ -267,8 +267,8 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
 const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   foreground: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(162, 162, 163)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(133, 133, 134)',
     },
     hovered: {
       contentOpacity: 0.88,
@@ -281,8 +281,8 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   foregroundMuted: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(193, 195, 200)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(173, 176, 183)',
     },
     hovered: {
       contentOpacity: 0.92,
@@ -295,7 +295,7 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   background: {
     disabled: {
-      contentOpacity: 0.38,
+      contentOpacity: 0.5,
       backgroundColor: 'rgb(255, 255, 255)',
     },
     hovered: {
@@ -309,8 +309,8 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   backgroundAlternate: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(249, 249, 250)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(247, 248, 249)',
     },
     hovered: {
       contentOpacity: 0.98,
@@ -323,8 +323,8 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   backgroundOverlay: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(177, 178, 181)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(153, 154, 158)',
     },
     hovered: {
       contentOpacity: 0.9,
@@ -337,8 +337,8 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   line: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(193, 195, 200)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(173, 176, 183)',
     },
     hovered: {
       contentOpacity: 0.92,
@@ -351,8 +351,8 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   lineHeavy: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(193, 195, 200)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(173, 176, 183)',
     },
     hovered: {
       contentOpacity: 0.92,
@@ -365,8 +365,8 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   primary: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(158, 189, 255)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(128, 169, 255)',
     },
     hovered: {
       contentOpacity: 0.92,
@@ -379,8 +379,8 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   primaryWash: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(251, 252, 255)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(250, 252, 255)',
     },
     hovered: {
       contentOpacity: 0.98,
@@ -393,7 +393,7 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   primaryForeground: {
     disabled: {
-      contentOpacity: 0.38,
+      contentOpacity: 0.5,
       backgroundColor: 'rgb(255, 255, 255)',
     },
     hovered: {
@@ -407,8 +407,8 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   negative: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(237, 170, 176)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(231, 144, 151)',
     },
     hovered: {
       contentOpacity: 0.92,
@@ -421,7 +421,7 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   negativeForeground: {
     disabled: {
-      contentOpacity: 0.38,
+      contentOpacity: 0.5,
       backgroundColor: 'rgb(255, 255, 255)',
     },
     hovered: {
@@ -435,8 +435,8 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   positive: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(162, 209, 189)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(132, 194, 168)',
     },
     hovered: {
       contentOpacity: 0.92,
@@ -449,7 +449,7 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   positiveForeground: {
     disabled: {
-      contentOpacity: 0.38,
+      contentOpacity: 0.5,
       backgroundColor: 'rgb(255, 255, 255)',
     },
     hovered: {
@@ -463,7 +463,7 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   secondary: {
     disabled: {
-      contentOpacity: 0.38,
+      contentOpacity: 0.5,
       backgroundColor: 'rgb(255, 255, 255)',
     },
     hovered: {
@@ -477,8 +477,8 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   secondaryForeground: {
     disabled: {
-      contentOpacity: 0.38,
-      backgroundColor: 'rgb(162, 162, 163)',
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(133, 133, 134)',
     },
     hovered: {
       contentOpacity: 0.88,
@@ -491,7 +491,7 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   },
   transparent: {
     disabled: {
-      contentOpacity: 0.38,
+      contentOpacity: 0.5,
       backgroundColor: 'transparent',
     },
     hovered: {

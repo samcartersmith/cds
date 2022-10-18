@@ -4,7 +4,7 @@ import { Animated, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import type { ColorSurgeBackground } from '@cbhq/cds-common';
 import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common/tokens/border';
 import { focusedInputBorderWidth, inputBorderWidth } from '@cbhq/cds-common/tokens/input';
-import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
+import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
 
 import { useLayout } from '../hooks/useLayout';
@@ -101,7 +101,7 @@ export const InputStack = memo(function InputStack({
       testID={testID}
       width={width}
       gap={0.5}
-      opacity={disabled ? opacityDisabled : 1}
+      opacity={disabled ? accessibleOpacityDisabled : 1}
       {...props}
     >
       {!!labelNode && <>{labelNode}</>}

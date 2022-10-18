@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { Animated, StyleSheet, Text, TextProps as RNTextProps, TextStyle } from 'react-native';
 import { PaletteForeground, SharedProps, TextBaseProps, Typography } from '@cbhq/cds-common';
 import { useTextTransform } from '@cbhq/cds-common/hooks/useTextTransform';
-import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
+import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { pascalCase } from '@cbhq/cds-utils';
 
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   disabled: {
-    opacity: opacityDisabled,
+    opacity: accessibleOpacityDisabled,
   },
 });
 

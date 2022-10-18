@@ -1,5 +1,5 @@
 import { blendColors } from '../color/blendColors';
-import { opacityDisabled, opacityHovered, opacityPressed } from '../tokens/interactable';
+import { accessibleOpacityDisabled, opacityHovered, opacityPressed } from '../tokens/interactable';
 import { PaletteConfig, PaletteValue, Spectrum } from '../types';
 import { memoize } from '../utils/memoize';
 
@@ -9,7 +9,7 @@ import { paletteValueToRgbaArray } from './paletteValueToRgbaArray';
 import { paletteValueToTuple } from './paletteValueToTuple';
 
 const mobileTransparentTokens = {
-  disabled: { contentOpacity: opacityDisabled, backgroundColor: 'transparent' },
+  disabled: { contentOpacity: accessibleOpacityDisabled, backgroundColor: 'transparent' },
   hovered: undefined,
   pressed: { contentOpacity: opacityPressed[100], backgroundColor: 'transparent' },
 };
@@ -66,13 +66,13 @@ export const paletteValueToInteractableToken = memoize(
         : paletteValueToRgbaArray(foreground, spectrum, hasFrontier);
 
     const opacity = {
-      disabled: opacityDisabled,
+      disabled: accessibleOpacityDisabled,
       pressed: opacityPressed[hueStep],
       hovered: opacityHovered[hueStep],
     };
 
     const overlay = {
-      disabled: paletteValueToRgbaArray([overlayAlias, opacityDisabled], spectrum),
+      disabled: paletteValueToRgbaArray([overlayAlias, accessibleOpacityDisabled], spectrum),
       pressed: paletteValueToRgbaArray([overlayAlias, opacity.pressed], spectrum),
       hovered: paletteValueToRgbaArray([overlayAlias, opacity.hovered], spectrum),
     };

@@ -45,4 +45,7 @@ export const opacityPressed: Record<SpectrumHueStep, number> = {
   100: 0.82,
 } as const;
 
+/** @deprecated Please leverage common/tokens/interactable/accessibleOpacityDisabled moving forward */
 export const opacityDisabled = 0.38;
+
+export const accessibleOpacityDisabled = 0.5;

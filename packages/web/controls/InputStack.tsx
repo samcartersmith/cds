@@ -6,7 +6,7 @@ import { BorderWidth, ForwardedRef } from '@cbhq/cds-common';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { durations } from '@cbhq/cds-common/motion/tokens';
 import { inputStackGap } from '@cbhq/cds-common/tokens/input';
-import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
+import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
 
 import { usePalette } from '../hooks/usePalette';
@@ -139,7 +139,7 @@ export const InputStack = memo(
         testID={testID}
         width={width}
         gap={inputStackGap}
-        opacity={disabled ? opacityDisabled : 1}
+        opacity={disabled ? accessibleOpacityDisabled : 1}
         {...props}
       >
         {!!labelNode && (
