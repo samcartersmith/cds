@@ -58,7 +58,7 @@ esm/
 
 # Yarn
 .yarn/*
-**/.yarn
+examples/nextjs/.yarn
 !.yarn/patches
 !.yarn/releases
 !.yarn/plugins
