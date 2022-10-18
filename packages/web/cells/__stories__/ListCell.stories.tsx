@@ -1,9 +1,8 @@
-import { listCellBuilder, ListCellTextBodyProps } from '@cbhq/cds-common/internal/listCellBuilder';
+import { listCellBuilder } from '@cbhq/cds-common/internal/listCellBuilder';
 
 import { Button, IconButton } from '../../buttons';
 import { Checkbox } from '../../controls';
 import { Box } from '../../layout/Box';
-import { TextBody } from '../../typography';
 import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
@@ -23,12 +22,6 @@ export const {
   WithMedia,
   WithActions,
   WithIntermediary,
-} = listCellBuilder(
-  ListCell,
-  CellMedia,
-  Button,
-  IconButton,
-  Checkbox,
-  (props) => <Box {...props} background="backgroundAlternate" />,
-  TextBody as ListCellTextBodyProps,
-);
+} = listCellBuilder(ListCell, CellMedia, Button, IconButton, Checkbox, (props) => (
+  <Box {...props} background="backgroundAlternate" />
+));

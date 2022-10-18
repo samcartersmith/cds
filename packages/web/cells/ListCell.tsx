@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, isValidElement, memo } from 'react';
+import React, { ForwardedRef, forwardRef, memo } from 'react';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { compactListHeight, listHeight } from '@cbhq/cds-common/tokens/cell';
 import type { ListCellBaseProps } from '@cbhq/cds-common/types';
@@ -56,17 +56,13 @@ export const ListCell = memo(
         ref={ref}
       >
         <VStack>
-          {isValidElement(title) ? (
-            title
-          ) : (
+          {!!title && (
             <TextHeadline as="div" overflow="truncate">
               {title}
             </TextHeadline>
           )}
 
-          {isValidElement(description) ? (
-            description
-          ) : (
+          {!!description && (
             <TextBody
               as="div"
               color="foregroundMuted"

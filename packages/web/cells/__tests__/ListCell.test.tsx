@@ -14,30 +14,18 @@ describe('ListCell', () => {
     ).toHaveNoViolations();
   });
 
-  it('renders an element title', () => {
+  it('renders a title', () => {
     const result = render(<ListCell title={<div data-testid="title">Title</div>} />);
 
     expect(result.queryByTestId('title')).not.toBeNull();
   });
 
-  it('renders a string title', () => {
-    const result = render(<ListCell title="Title" />);
-
-    expect(result.getByText('Title')).not.toBeNull();
-  });
-
-  it('renders an element description', () => {
+  it('renders a description', () => {
     const result = render(
       <ListCell description={<div data-testid="description">Description</div>} />,
     );
 
     expect(result.queryByTestId('description')).not.toBeNull();
-  });
-
-  it('renders a string description', () => {
-    const result = render(<ListCell description="Description" />);
-
-    expect(result.getByText('Description')).not.toBeNull();
   });
 
   it('renders a detail', () => {

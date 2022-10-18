@@ -8,19 +8,10 @@ import { IconButton } from '../../buttons/IconButton';
 import { Checkbox } from '../../controls/Checkbox';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Pictogram } from '../../illustrations/Pictogram';
-import { TextBody } from '../../typography';
 import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
-const stories = listCellBuilder(
-  ListCell,
-  CellMedia,
-  Button,
-  IconButton,
-  Checkbox,
-  Pictogram,
-  TextBody,
-);
+const stories = listCellBuilder(ListCell, CellMedia, Button, IconButton, Checkbox, Pictogram);
 const titleSpacing = { spacingHorizontal: gutter } as const;
 
 const ListCellScreen = () => {

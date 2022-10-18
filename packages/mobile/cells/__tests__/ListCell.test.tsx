@@ -6,7 +6,7 @@ import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
 describe('ListCell', () => {
-  it('renders an element title', () => {
+  it('renders a title', () => {
     const result = render(
       <ListCell
         title={
@@ -20,12 +20,7 @@ describe('ListCell', () => {
     expect(result.queryByTestId('title')).not.toBeNull();
   });
 
-  it('renders a string title', () => {
-    const result = render(<ListCell title="Title" />);
-
-    expect(result.getByText('Title')).not.toBeNull();
-  });
-  it('renders an element description', () => {
+  it('renders a description', () => {
     const result = render(
       <ListCell
         description={
@@ -37,12 +32,6 @@ describe('ListCell', () => {
     );
 
     expect(result.queryByTestId('description')).not.toBeNull();
-  });
-
-  it('renders a string description', () => {
-    const result = render(<ListCell description="Description" />);
-
-    expect(result.getByText('Description')).not.toBeNull();
   });
 
   it('renders a detail', () => {
