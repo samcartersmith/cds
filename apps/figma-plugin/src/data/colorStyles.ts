@@ -1,3 +1,5 @@
+import { illustrationColorStyles } from "./illustrationColorStyles"
+
 const background = {
   '0a5f5fb912205eac74fb0aba173a02b703450591': {
     dark: '86f0b0e8f0b5233052adc9082ab028614707226f',
@@ -544,6 +546,7 @@ const fade = {
 };
 
 export const colorStyles = {
+  ...illustrationColorStyles,
   ...background,
   ...backgroundAlternate,
   ...foreground,
