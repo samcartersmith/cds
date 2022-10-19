@@ -1,3 +1,5 @@
+import { SparklineInteractiveSubHead } from '../types';
+
 import { durations } from './motion';
 
 export const chartHeight = 320;
@@ -14,4 +16,12 @@ export const periodLabelMap: Record<string, string> = {
   '1W': '1 week',
   '1M': '1 month',
   '1Y': '1 year',
+};
+
+export const subheadIconSignMap: Record<SparklineInteractiveSubHead['sign'], string> = {
+  positive: '+',
+  negative: '-',
+  upwardTrend: '\u2197',
+  downwardTrend: '\u2198',
+  '': '',
 };

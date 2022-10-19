@@ -5,7 +5,7 @@ import { SparklineInteractiveHeader } from '../SparklineInteractiveHeader';
 const defaultSubHead = {
   percent: '20%',
   priceChange: '888.88',
-  sign: '+',
+  sign: 'positive',
   variant: 'positive',
 } as const;
 

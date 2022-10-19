@@ -47,7 +47,7 @@ function getSubheadProps(prev: number, next: number): SparklineInteractiveSubHea
   const priceIncrease = prev > next;
   return {
     percent: `${percentChange}%`,
-    sign: priceIncrease ? '+' : '–',
+    sign: priceIncrease ? 'upwardTrend' : 'downwardTrend',
     variant: priceIncrease ? 'positive' : 'negative',
     priceChange: (next - prev).toLocaleString('en-US'), // replace with your app's currency formatter
   };

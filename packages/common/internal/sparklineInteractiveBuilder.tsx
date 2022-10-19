@@ -219,7 +219,7 @@ function generateSubHead(
     percent: `${numToLocaleString(
       Math.abs((point.value - firstPoint.value) / firstPoint.value) * 100,
     )}%`,
-    sign: increase ? '\u2197 ' : '\u2198 ',
+    sign: increase ? 'upwardTrend' : 'downwardTrend',
     variant: increase ? 'positive' : 'negative',
     // NOTE: Ensure this string is localized in your product implementation
     accessibilityLabel: increase

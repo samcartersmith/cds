@@ -8,6 +8,7 @@ import React, {
   useRef,
 } from 'react';
 import { TextInput, View } from 'react-native';
+import { subheadIconSignMap } from '@cbhq/cds-common/tokens/sparkline';
 import {
   SparklineInteractiveHeaderProps,
   SparklineInteractiveHeaderRef,
@@ -101,7 +102,7 @@ const SparklineInteractiveHeaderStable = memo(
 
           if (prevSubHead !== subHead) {
             subHeadIconRef.current?.setNativeProps({
-              text: subHead.sign,
+              text: subheadIconSignMap[subHead.sign],
               style: styles.subHeadIcon(subHead.variant),
             });
             subHeadRef.current?.setNativeProps({
@@ -178,7 +179,7 @@ const SparklineInteractiveHeaderStable = memo(
                 ref={subHeadIconRef}
                 editable={false}
                 style={styles.subHeadIcon(defaultSubHead.variant)}
-                defaultValue={defaultSubHead.sign}
+                defaultValue={subheadIconSignMap[defaultSubHead.sign]}
                 pointerEvents="none"
                 testID="SparklineInteractiveHeaderSubHeadIcon"
                 {...fontScaleProps}

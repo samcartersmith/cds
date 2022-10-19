@@ -1,4 +1,5 @@
 import React, { forwardRef, memo, useCallback, useImperativeHandle, useRef } from 'react';
+import { subheadIconSignMap } from '@cbhq/cds-common/tokens/sparkline';
 import {
   SparklineInteractiveHeaderProps,
   SparklineInteractiveHeaderRef,
@@ -8,6 +9,7 @@ import {
 import { interpolateSubHeadText } from '@cbhq/cds-common/visualizations/interpolateSubHeadText';
 
 import { usePalette } from '../../hooks/usePalette';
+import { useSpacingScale } from '../../hooks/useSpacingScale';
 import { VStack } from '../../layout';
 import { TextHeadline } from '../../typography';
 import { createText } from '../../typography/createText';
@@ -24,6 +26,7 @@ const SparklineInteractiveHeaderStable = memo(
       const subHeadRef = useRef<HTMLSpanElement>(null);
       const subHeadAccessoryRef = useRef<HTMLSpanElement>(null);
       const palette = usePalette();
+      const subHeadIconMarginRight = useSpacingScale(0.5);
 
       const valuesRef = useRef<SparklineInteractiveHeaderValues>({
         title: defaultTitle,
@@ -59,7 +62,7 @@ const SparklineInteractiveHeaderStable = memo(
 
           if (prevSubHead !== subHead) {
             if (subHeadIconRef.current) {
-              subHeadIconRef.current.innerText = subHead.sign;
+              subHeadIconRef.current.innerText = subheadIconSignMap[subHead.sign];
               subHeadIconRef.current.style.color = palette[subHead.variant];
             }
 
@@ -120,15 +123,15 @@ const SparklineInteractiveHeaderStable = memo(
       );
 
       const subHeadColorStyles: React.CSSProperties = defaultSubHead
-        ? { color: palette[defaultSubHead.variant] }
-        : {};
+        ? { color: palette[defaultSubHead.variant], marginRight: subHeadIconMarginRight }
+        : { marginRight: subHeadIconMarginRight };
 
       const TextSubHead = createText(compact ? 'label1' : 'title4');
       const subHead = !!defaultSubHead && (
         <div ref={subHeadA11yRef}>
           <TextSubHead tabularNumbers as="span">
             <span ref={subHeadIconRef} style={subHeadColorStyles}>
-              {defaultSubHead.sign}
+              {subheadIconSignMap[defaultSubHead.sign]}
             </span>
             <span ref={subHeadRef} style={subHeadColorStyles}>
               {interpolateSubHeadText(defaultSubHead)}
