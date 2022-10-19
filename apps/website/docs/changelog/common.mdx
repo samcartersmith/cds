@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.0.0 (10/19/2022, 02:22 PM PST)
+
+#### 💥 Breaking
+
+- **[SparklineInteractiveHeader]** Aliased subhead icon names. [#1237](https://github.cbhq.net/frontend/cds/pull/1237)
+
+#### 🐞 Fixes
+
+- Revert " fix(ListCell): Render non-text title and description (#1206)". [#1232](https://github.cbhq.net/frontend/cds/pull/1232), [CDS-2307](https://jira.coinbase-corp.com/browse/CDS-2307)
+- **[A11y]** Migrate disable opacity from .38 to .50. for all Inter-actable and components with Disabled states. [#1226](https://github.cbhq.net/frontend/cds/pull/1226)
+
 ## 2.1.1 (10/14/2022, 10:51 AM PST)
 
 #### 🐞 Fixes

@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.0.0 (10/19/2022, 02:22 PM PST)
+
+#### 💥 Breaking
+
+- **[SparklineInteractiveHeader]** Aliased subhead icon names. [#1237](https://github.cbhq.net/frontend/cds/pull/1237)
+
+#### 🐞 Fixes
+
+- **[RemoteImage]** Dimensions were not being passed to RemoteImage when Svg (mobile only). [#1236](https://github.cbhq.net/frontend/cds/pull/1236), [CDS-2514](https://jira.coinbase-corp.com/browse/CDS-2514)
+- Revert " fix(ListCell): Render non-text title and description (#1206)". [#1232](https://github.cbhq.net/frontend/cds/pull/1232), [CDS-2307](https://jira.coinbase-corp.com/browse/CDS-2307)
+- **[A11y]** Migrate disable opacity from .38 to .50. for all Inter-actable and components with Disabled states. [#1226](https://github.cbhq.net/frontend/cds/pull/1226)
+- Styles for inactive period pressables. [#1227](https://github.cbhq.net/frontend/cds/pull/1227), [CDS-2550](https://jira.coinbase-corp.com/browse/CDS-2550)
+- **[SparklineInteractive]** Fixed minmax label position and tweening. [#1228](https://github.cbhq.net/frontend/cds/pull/1228)
+
 ## 2.1.1 (10/14/2022, 10:51 AM PST)
 
 #### 🐞 Fixes
