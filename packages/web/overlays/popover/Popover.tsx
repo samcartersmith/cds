@@ -95,7 +95,11 @@ export const Popover = memo(
         >
           <FocusTrap onEscPress={handleClose} disableTypeFocus={disableTypeFocus}>
             {/* Box with Horizontal spacing to ensure proper margins but still rely on popper for layout. */}
-            <Box background="transparent" {...contentAccessibilityProps} testID={testID}>
+            <Box
+              dangerouslySetBackground="transparent"
+              {...contentAccessibilityProps}
+              testID={testID}
+            >
               {content}
             </Box>
           </FocusTrap>
