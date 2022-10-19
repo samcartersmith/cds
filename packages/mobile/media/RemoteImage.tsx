@@ -134,8 +134,6 @@ export const RemoteImage = memo(function RemoteImage({
     () =>
       [
         {
-          width: finalWidth,
-          height: finalHeight,
           aspectRatio: aspectRatio ? aspectRatio[0] / aspectRatio[1] : undefined,
           borderRadius,
         } as const,
@@ -143,15 +141,12 @@ export const RemoteImage = memo(function RemoteImage({
         darkModeStyles,
         borderStyles,
       ].filter(Boolean),
-    [
-      aspectRatio,
-      borderRadius,
-      borderStyles,
-      dangerouslySetStyle,
-      darkModeStyles,
-      finalHeight,
-      finalWidth,
-    ],
+    [aspectRatio, borderRadius, borderStyles, dangerouslySetStyle, darkModeStyles],
+  );
+
+  const stylesWithDimensions = useMemo(
+    () => [...styles, { width: finalWidth, height: finalHeight }],
+    [finalHeight, finalWidth, styles],
   );
 
   if (isSvg(transformedSource as SourceProp)) {
@@ -160,6 +155,8 @@ export const RemoteImage = memo(function RemoteImage({
         style={styles}
         uri={Image.resolveAssetSource(transformedSource as ImageSourcePropType).uri}
         {...props}
+        width={finalWidth}
+        height={finalHeight}
       />
     );
   }
@@ -174,6 +171,8 @@ export const RemoteImage = memo(function RemoteImage({
       <SvgXml
         style={styles}
         xml={spectrum === 'dark' ? darkFallback.content : lightFallback.content}
+        width={finalWidth}
+        height={finalHeight}
       />
     );
   }
@@ -184,7 +183,7 @@ export const RemoteImage = memo(function RemoteImage({
       source={transformedSource as ImageSourcePropType}
       accessibilityRole="image"
       {...props}
-      style={styles}
+      style={stylesWithDimensions}
     />
   );
 });

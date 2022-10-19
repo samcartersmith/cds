@@ -16,6 +16,14 @@ const sharedProps = {
   height: 32,
 } as const;
 
+const customDimensions = {
+  width: 220,
+  height: 40,
+} as const;
+
+const wideLogoSource =
+  'https://static-assets.coinbase.com/design-system/subBrandLogo/coinbaseOneSubBrand.svg';
+
 const mockItems = Array.from({ length: 4 });
 const images = entries(assets).map(([, { imageUrl }]) => imageUrl);
 const {
@@ -79,6 +87,24 @@ const RemoteImageScreen = () => {
             );
           })}
         </HStack>
+      </Example>
+      <Example title="Custom Dimensions">
+        <VStack gap={2}>
+          <RemoteImage source={wideLogoSource} {...customDimensions} resizeMode="cover" />
+          <RemoteImage source={wideLogoSource} {...customDimensions} resizeMode="contain" />
+          <RemoteImage
+            source={wideLogoSource}
+            width={customDimensions.width}
+            aspectRatio={[9, 1]}
+            resizeMode="contain"
+          />
+          <RemoteImage
+            source={wideLogoSource}
+            height={customDimensions.height}
+            aspectRatio={[9, 1]}
+            resizeMode="contain"
+          />
+        </VStack>
       </Example>
       <Example title="svgs">
         <HStack gap={2}>
