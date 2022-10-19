@@ -79,7 +79,14 @@ export const TextInput = memo(
     const focusedVariant = useInputVariant(focused, variant);
     const internalRef = useRef<HTMLInputElement>();
     const refs = useMergedRef(ref, internalRef);
-    const helperTextId = useA11yId('cds-textinput-description-');
+
+    // Only generate a helperTextId if helperText is defined, otherwise
+    // set it to undefined
+    const helperTextId = useA11yId({
+      prefix: 'cds-textinput-description-',
+      shouldNotGenerate: helperText === '',
+    });
+
     // TODO surface this as a prop
     const hasError = variant === 'negative';
 

@@ -51,7 +51,9 @@ export const TabLabel = memo(
     const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);
     const color = useMemo(() => COLORS[variant][active ? 'active' : 'inactive'], [active, variant]);
     const prevCount = usePreviousValue<number>(count);
-    const accessibilityLabelId = useA11yId(`cds-tag-label--`);
+    const accessibilityLabelId = useA11yId({
+      prefix: `cds-tag-label--`,
+    });
 
     const TextElement = useMemo(() => {
       if (variant === 'primary') return TextHeadline;

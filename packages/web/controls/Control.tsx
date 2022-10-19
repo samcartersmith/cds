@@ -85,8 +85,12 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     );
   }
   // Setup a11y IDs
-  const randomLabelId = useA11yId('cds-checkbox-label--');
-  const randomInputId = useA11yId('cds-checkbox-input--');
+  const randomLabelId = useA11yId({
+    prefix: 'cds-checkbox-label--',
+  });
+  const randomInputId = useA11yId({
+    prefix: 'cds-checkbox-input--',
+  });
   const labelId = useMemo(() => ariaLabelledby ?? randomLabelId, [ariaLabelledby, randomLabelId]);
   const inputId = useMemo(() => htmlProps.id ?? randomInputId, [htmlProps.id, randomInputId]);
 

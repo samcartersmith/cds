@@ -89,7 +89,9 @@ export const Banner = memo(
       forwardedRef: ForwardedRef<HTMLDivElement>,
     ) => {
       const [isCollapsed, setIsCollapsed] = useState(false);
-      const titleId = useA11yId('cds-banner-');
+      const titleId = useA11yId({
+        prefix: 'cds-banner-',
+      });
 
       // Measure and configure layout
       const { observe, currentBreakpoint } = useDimensions(breakpointConfig);
