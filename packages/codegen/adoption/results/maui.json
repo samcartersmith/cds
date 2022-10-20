@@ -54,7 +54,7 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 175,
+      "totalInstances": 176,
       "totalCallSites": 102,
       "cds": "@cbhq/cds-web/buttons/Button",
       "aliasedCdsComponents": [
@@ -156,7 +156,7 @@
         "components/Mint/InvalidAddressModal.tsx": 1,
         "components/Mint/ListCollectionButton.tsx": 1,
         "components/Mint/ManageCollection.tsx": 7,
-        "components/Mint/MintButton.tsx": 1,
+        "components/Mint/MintButton.tsx": 2,
         "components/Mint/MintCreateModal.tsx": 1,
         "components/Mint/MintDrawer.tsx": 2,
         "components/Mint/MintInProgressModal.tsx": 2,
@@ -201,8 +201,8 @@
         "components/Wallet/ConnectWalletButton.tsx": 1,
         "components/Wallet/GenericErrorView.tsx": 1,
         "components/Wallet/Wallet.tsx": 1,
-        "pages/mint/create.tsx": 1,
         "pages/internal/mediaSandbox.tsx": 1,
+        "pages/mint/create.tsx": 1,
         "components/Collections/Manage/BasicInfoForm.tsx": 4,
         "components/Collections/Manage/EditModal.tsx": 1,
         "components/Collections/Manage/OverrideForm.tsx": 1,
@@ -233,7 +233,7 @@
           "components/Listing/BulkSetPriceStep.tsx": 2,
           "components/Mint/ListCollectionButton.tsx": 1,
           "components/Mint/ManageCollection.tsx": 7,
-          "components/Mint/MintButton.tsx": 1,
+          "components/Mint/MintButton.tsx": 2,
           "components/Mint/MintCreateModal.tsx": 1,
           "components/Mint/SocialLinks.tsx": 1,
           "components/NFT/NFTGridAccessories.tsx": 2,
@@ -332,7 +332,7 @@
           "components/Mint/InvalidAddressModal.tsx": 1,
           "components/Mint/ListCollectionButton.tsx": 1,
           "components/Mint/ManageCollection.tsx": 5,
-          "components/Mint/MintButton.tsx": 1,
+          "components/Mint/MintButton.tsx": 2,
           "components/Mint/MintCreateModal.tsx": 1,
           "components/Mint/MintDrawer.tsx": 2,
           "components/Mint/MintInProgressModal.tsx": 2,
@@ -371,8 +371,8 @@
           "components/Wallet/ConnectWalletButton.tsx": 1,
           "components/Wallet/GenericErrorView.tsx": 1,
           "components/Wallet/Wallet.tsx": 1,
-          "pages/mint/create.tsx": 1,
           "pages/internal/mediaSandbox.tsx": 1,
+          "pages/mint/create.tsx": 1,
           "components/Collections/Manage/BasicInfoForm.tsx": 2,
           "components/Collections/Manage/EditModal.tsx": 1,
           "components/Collections/Manage/OverrideForm.tsx": 1,
@@ -1298,7 +1298,7 @@
     {
       "name": "Spacer",
       "sourceFile": "@cbhq/cds-web/layout/Spacer",
-      "totalInstances": 24,
+      "totalInstances": 23,
       "totalCallSites": 14,
       "cds": "@cbhq/cds-web/layout/Spacer",
       "callSites": {
@@ -1315,7 +1315,7 @@
         "components/Mint/UpdateCollectionPage.tsx": 1,
         "components/Mint/UpdateContract.tsx": 1,
         "pages/mint/create.tsx": 1,
-        "pages/drops/manage/[dropId].tsx": 5
+        "pages/drops/manage/[dropId].tsx": 4
       }
     },
     {
@@ -1799,7 +1799,7 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 41,
+      "totalInstances": 39,
       "totalCallSites": 18,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
@@ -1820,7 +1820,7 @@
         "components/Search/TypeaheadContent.tsx": 1,
         "pages/mint/create.tsx": 1,
         "pages/drops/claim/[...collectionId].tsx": 1,
-        "pages/drops/manage/[dropId].tsx": 10
+        "pages/drops/manage/[dropId].tsx": 8
       },
       "propsWithCallSites": {
         "as": {
@@ -1841,7 +1841,7 @@
           "components/Search/TypeaheadContent.tsx": 1,
           "pages/mint/create.tsx": 1,
           "pages/drops/claim/[...collectionId].tsx": 1,
-          "pages/drops/manage/[dropId].tsx": 10
+          "pages/drops/manage/[dropId].tsx": 8
         },
         "align": {
           "components/Feed/FollowingFeedEmptyState.tsx": 1,
@@ -1851,7 +1851,7 @@
           "components/Mint/DropReveal.tsx": 1,
           "components/Mint/MintCreateModal.tsx": 1,
           "pages/drops/claim/[...collectionId].tsx": 1,
-          "pages/drops/manage/[dropId].tsx": 6
+          "pages/drops/manage/[dropId].tsx": 5
         },
         "color": {
           "components/Mint/ManageCollection.tsx": 4,
@@ -1860,7 +1860,7 @@
           "components/Mint/UpdateContract.tsx": 1,
           "components/NFT/NFTSend.tsx": 1,
           "components/Search/TypeaheadContent.tsx": 1,
-          "pages/drops/manage/[dropId].tsx": 3
+          "pages/drops/manage/[dropId].tsx": 2
         },
         "spacingStart": { "components/Search/TypeaheadContent.tsx": 1 },
         "spacingVertical": { "components/Search/TypeaheadContent.tsx": 1 }
@@ -2104,7 +2104,7 @@
     {
       "name": "Card",
       "sourceFile": "@cbhq/cds-web/cards/Card",
-      "totalInstances": 11,
+      "totalInstances": 10,
       "totalCallSites": 8,
       "cds": "@cbhq/cds-web/cards/Card",
       "aliasedCdsComponents": [
@@ -2121,7 +2121,7 @@
         "components/Mint/ManageCollection.tsx": 1,
         "components/Mint/NFTUploadItem.tsx": 1,
         "components/Wallet/Wallet.tsx": 1,
-        "pages/drops/manage/[dropId].tsx": 3
+        "pages/drops/manage/[dropId].tsx": 2
       },
       "propsWithCallSites": {
         "background": {
@@ -2129,7 +2129,7 @@
           "components/Listing/AuctionInfoCard.tsx": 1,
           "components/Mint/DropReveal.tsx": 1
         },
-        "onPress": { "pages/drops/manage/[dropId].tsx": 3 }
+        "onPress": { "pages/drops/manage/[dropId].tsx": 2 }
       }
     },
     {
@@ -2239,7 +2239,7 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 46,
+      "totalInstances": 45,
       "totalCallSites": 18,
       "cds": "@cbhq/cds-web/layout/VStack",
       "callSites": {
@@ -2259,7 +2259,7 @@
         "components/NFT/PurchaseConfirmedModal.tsx": 2,
         "components/Search/TypeaheadContent.tsx": 1,
         "pages/drops/claim/[...collectionId].tsx": 1,
-        "pages/drops/manage/[dropId].tsx": 11,
+        "pages/drops/manage/[dropId].tsx": 10,
         "pages/mint/manage/[...collectionId].tsx": 1
       },
       "propsWithCallSites": {
@@ -2313,7 +2313,7 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 36,
+      "totalInstances": 35,
       "totalCallSites": 21,
       "cds": "@cbhq/cds-web/layout/HStack",
       "callSites": {
@@ -2337,7 +2337,7 @@
         "components/Offers/OfferLineItems.tsx": 1,
         "pages/mint/create.tsx": 1,
         "components/General/Text/ButtonXXS.tsx": 1,
-        "pages/drops/manage/[dropId].tsx": 7
+        "pages/drops/manage/[dropId].tsx": 6
       },
       "propsWithCallSites": {
         "gap": {
@@ -2376,7 +2376,7 @@
           "components/Offers/OfferLineItems.tsx": 1,
           "pages/mint/create.tsx": 1,
           "components/General/Text/ButtonXXS.tsx": 1,
-          "pages/drops/manage/[dropId].tsx": 5
+          "pages/drops/manage/[dropId].tsx": 4
         },
         "key": { "components/Mint/NFTUploadItem.tsx": 1 }
       }
@@ -2431,7 +2431,7 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 27,
+      "totalInstances": 26,
       "totalCallSites": 12,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
       "callSites": {
@@ -2446,7 +2446,7 @@
         "components/Mint/UpdateContract.tsx": 1,
         "components/Mint/UploadBatchDrawer.tsx": 1,
         "components/Search/TypeaheadContent.tsx": 4,
-        "pages/drops/manage/[dropId].tsx": 7
+        "pages/drops/manage/[dropId].tsx": 6
       },
       "propsWithCallSites": {
         "as": {
@@ -2461,7 +2461,7 @@
           "components/Mint/UpdateContract.tsx": 1,
           "components/Mint/UploadBatchDrawer.tsx": 1,
           "components/Search/TypeaheadContent.tsx": 4,
-          "pages/drops/manage/[dropId].tsx": 7
+          "pages/drops/manage/[dropId].tsx": 6
         },
         "color": {
           "components/Mint/ManageCollection.tsx": 1,
@@ -2482,8 +2482,8 @@
         "components/Mint/UpdateCollectionPage.tsx": 1,
         "pages/mint/create.tsx": 2,
         "pages/drops/claim/[...collectionId].tsx": 1,
-        "pages/mint/phases/[...collectionId].tsx": 1,
-        "pages/mint/manage/[...collectionId].tsx": 1
+        "pages/mint/manage/[...collectionId].tsx": 1,
+        "pages/mint/phases/[...collectionId].tsx": 1
       },
       "propsWithCallSites": {
         "as": {
@@ -2493,8 +2493,8 @@
           "components/Mint/UpdateCollectionPage.tsx": 1,
           "pages/mint/create.tsx": 2,
           "pages/drops/claim/[...collectionId].tsx": 1,
-          "pages/mint/phases/[...collectionId].tsx": 1,
-          "pages/mint/manage/[...collectionId].tsx": 1
+          "pages/mint/manage/[...collectionId].tsx": 1,
+          "pages/mint/phases/[...collectionId].tsx": 1
         }
       }
     },
@@ -4323,6 +4323,27 @@
       "propsWithCallSites": { "className": { "components/Comments/Comments.tsx": 2 } }
     },
     {
+      "name": "div",
+      "sourceFile": "components/Drawer/Step.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Drawer/Step.tsx" },
+        { "prop": "className", "callSite": "components/Drawer/Step.tsx" },
+        { "prop": "className", "callSite": "components/Drawer/Step.tsx" }
+      ],
+      "callSites": { "components/Drawer/Step.tsx": 3 },
+      "propsWithCallSites": { "className": { "components/Drawer/Step.tsx": 3 } }
+    },
+    {
+      "name": "h3",
+      "sourceFile": "components/Drawer/Step.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [{ "prop": "className", "callSite": "components/Drawer/Step.tsx" }],
+      "propsWithCallSites": { "className": { "components/Drawer/Step.tsx": 1 } }
+    },
+    {
       "name": "span",
       "sourceFile": "components/Drops/ContentDescription.tsx",
       "totalInstances": 2,
@@ -4720,27 +4741,6 @@
       ],
       "callSites": { "components/Drops/ReminderModal.tsx": 9 },
       "propsWithCallSites": { "className": { "components/Drops/ReminderModal.tsx": 9 } }
-    },
-    {
-      "name": "div",
-      "sourceFile": "components/Drawer/Step.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Drawer/Step.tsx" },
-        { "prop": "className", "callSite": "components/Drawer/Step.tsx" },
-        { "prop": "className", "callSite": "components/Drawer/Step.tsx" }
-      ],
-      "callSites": { "components/Drawer/Step.tsx": 3 },
-      "propsWithCallSites": { "className": { "components/Drawer/Step.tsx": 3 } }
-    },
-    {
-      "name": "h3",
-      "sourceFile": "components/Drawer/Step.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "className", "callSite": "components/Drawer/Step.tsx" }],
-      "propsWithCallSites": { "className": { "components/Drawer/Step.tsx": 1 } }
     },
     {
       "name": "header",
@@ -5516,6 +5516,130 @@
       "propsWithCallSites": { "className": { "components/Homepage/TrendingCollections.tsx": 1 } }
     },
     {
+      "name": "svg",
+      "sourceFile": "components/Icons/BlueCheckIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg",
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Icons/BlueCheckIcon.tsx" }
+      ],
+      "propsWithCallSites": {
+        "width": { "components/Icons/BlueCheckIcon.tsx": 1 },
+        "height": { "components/Icons/BlueCheckIcon.tsx": 1 },
+        "viewBox": { "components/Icons/BlueCheckIcon.tsx": 1 },
+        "fill": { "components/Icons/BlueCheckIcon.tsx": 1 },
+        "xmlns": { "components/Icons/BlueCheckIcon.tsx": 1 },
+        "className": { "components/Icons/BlueCheckIcon.tsx": 1 }
+      }
+    },
+    {
+      "name": "svg",
+      "sourceFile": "components/Icons/CheckIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg",
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Icons/CheckIcon.tsx" }
+      ],
+      "propsWithCallSites": {
+        "width": { "components/Icons/CheckIcon.tsx": 1 },
+        "height": { "components/Icons/CheckIcon.tsx": 1 },
+        "viewBox": { "components/Icons/CheckIcon.tsx": 1 },
+        "fill": { "components/Icons/CheckIcon.tsx": 1 },
+        "xmlns": { "components/Icons/CheckIcon.tsx": 1 },
+        "className": { "components/Icons/CheckIcon.tsx": 1 }
+      }
+    },
+    {
+      "name": "svg",
+      "sourceFile": "components/Icons/DiscordIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg",
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Icons/DiscordIcon.tsx" }
+      ],
+      "propsWithCallSites": {
+        "width": { "components/Icons/DiscordIcon.tsx": 1 },
+        "height": { "components/Icons/DiscordIcon.tsx": 1 },
+        "viewBox": { "components/Icons/DiscordIcon.tsx": 1 },
+        "fill": { "components/Icons/DiscordIcon.tsx": 1 },
+        "xmlns": { "components/Icons/DiscordIcon.tsx": 1 },
+        "className": { "components/Icons/DiscordIcon.tsx": 1 }
+      }
+    },
+    {
+      "name": "svg",
+      "sourceFile": "components/Icons/ENSIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg",
+      "presentationalProps": [{ "prop": "className", "callSite": "components/Icons/ENSIcon.tsx" }],
+      "propsWithCallSites": {
+        "width": { "components/Icons/ENSIcon.tsx": 1 },
+        "height": { "components/Icons/ENSIcon.tsx": 1 },
+        "viewBox": { "components/Icons/ENSIcon.tsx": 1 },
+        "fill": { "components/Icons/ENSIcon.tsx": 1 },
+        "xmlns": { "components/Icons/ENSIcon.tsx": 1 },
+        "className": { "components/Icons/ENSIcon.tsx": 1 }
+      }
+    },
+    {
+      "name": "svg",
+      "sourceFile": "components/Icons/InstagramIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg",
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Icons/InstagramIcon.tsx" }
+      ],
+      "propsWithCallSites": {
+        "width": { "components/Icons/InstagramIcon.tsx": 1 },
+        "height": { "components/Icons/InstagramIcon.tsx": 1 },
+        "viewBox": { "components/Icons/InstagramIcon.tsx": 1 },
+        "fill": { "components/Icons/InstagramIcon.tsx": 1 },
+        "xmlns": { "components/Icons/InstagramIcon.tsx": 1 },
+        "className": { "components/Icons/InstagramIcon.tsx": 1 }
+      }
+    },
+    {
+      "name": "svg",
+      "sourceFile": "components/Icons/TwitterIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg",
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Icons/TwitterIcon.tsx" }
+      ],
+      "propsWithCallSites": {
+        "width": { "components/Icons/TwitterIcon.tsx": 1 },
+        "height": { "components/Icons/TwitterIcon.tsx": 1 },
+        "viewBox": { "components/Icons/TwitterIcon.tsx": 1 },
+        "fill": { "components/Icons/TwitterIcon.tsx": 1 },
+        "xmlns": { "components/Icons/TwitterIcon.tsx": 1 },
+        "className": { "components/Icons/TwitterIcon.tsx": 1 }
+      }
+    },
+    {
+      "name": "svg",
+      "sourceFile": "components/Icons/WalletIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg",
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Icons/WalletIcon.tsx" }
+      ],
+      "propsWithCallSites": {
+        "width": { "components/Icons/WalletIcon.tsx": 1 },
+        "height": { "components/Icons/WalletIcon.tsx": 1 },
+        "viewBox": { "components/Icons/WalletIcon.tsx": 1 },
+        "fill": { "components/Icons/WalletIcon.tsx": 1 },
+        "xmlns": { "components/Icons/WalletIcon.tsx": 1 },
+        "className": { "components/Icons/WalletIcon.tsx": 1 }
+      }
+    },
+    {
       "name": "WideLayout",
       "sourceFile": "components/Layouts/Layout.tsx",
       "totalInstances": 1,
@@ -5849,130 +5973,6 @@
         { "prop": "className", "callSite": "components/Listing/SetDetailsStep.tsx" }
       ],
       "propsWithCallSites": { "className": { "components/Listing/SetDetailsStep.tsx": 1 } }
-    },
-    {
-      "name": "svg",
-      "sourceFile": "components/Icons/BlueCheckIcon.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg",
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Icons/BlueCheckIcon.tsx" }
-      ],
-      "propsWithCallSites": {
-        "width": { "components/Icons/BlueCheckIcon.tsx": 1 },
-        "height": { "components/Icons/BlueCheckIcon.tsx": 1 },
-        "viewBox": { "components/Icons/BlueCheckIcon.tsx": 1 },
-        "fill": { "components/Icons/BlueCheckIcon.tsx": 1 },
-        "xmlns": { "components/Icons/BlueCheckIcon.tsx": 1 },
-        "className": { "components/Icons/BlueCheckIcon.tsx": 1 }
-      }
-    },
-    {
-      "name": "svg",
-      "sourceFile": "components/Icons/CheckIcon.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg",
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Icons/CheckIcon.tsx" }
-      ],
-      "propsWithCallSites": {
-        "width": { "components/Icons/CheckIcon.tsx": 1 },
-        "height": { "components/Icons/CheckIcon.tsx": 1 },
-        "viewBox": { "components/Icons/CheckIcon.tsx": 1 },
-        "fill": { "components/Icons/CheckIcon.tsx": 1 },
-        "xmlns": { "components/Icons/CheckIcon.tsx": 1 },
-        "className": { "components/Icons/CheckIcon.tsx": 1 }
-      }
-    },
-    {
-      "name": "svg",
-      "sourceFile": "components/Icons/DiscordIcon.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg",
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Icons/DiscordIcon.tsx" }
-      ],
-      "propsWithCallSites": {
-        "width": { "components/Icons/DiscordIcon.tsx": 1 },
-        "height": { "components/Icons/DiscordIcon.tsx": 1 },
-        "viewBox": { "components/Icons/DiscordIcon.tsx": 1 },
-        "fill": { "components/Icons/DiscordIcon.tsx": 1 },
-        "xmlns": { "components/Icons/DiscordIcon.tsx": 1 },
-        "className": { "components/Icons/DiscordIcon.tsx": 1 }
-      }
-    },
-    {
-      "name": "svg",
-      "sourceFile": "components/Icons/ENSIcon.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg",
-      "presentationalProps": [{ "prop": "className", "callSite": "components/Icons/ENSIcon.tsx" }],
-      "propsWithCallSites": {
-        "width": { "components/Icons/ENSIcon.tsx": 1 },
-        "height": { "components/Icons/ENSIcon.tsx": 1 },
-        "viewBox": { "components/Icons/ENSIcon.tsx": 1 },
-        "fill": { "components/Icons/ENSIcon.tsx": 1 },
-        "xmlns": { "components/Icons/ENSIcon.tsx": 1 },
-        "className": { "components/Icons/ENSIcon.tsx": 1 }
-      }
-    },
-    {
-      "name": "svg",
-      "sourceFile": "components/Icons/InstagramIcon.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg",
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Icons/InstagramIcon.tsx" }
-      ],
-      "propsWithCallSites": {
-        "width": { "components/Icons/InstagramIcon.tsx": 1 },
-        "height": { "components/Icons/InstagramIcon.tsx": 1 },
-        "viewBox": { "components/Icons/InstagramIcon.tsx": 1 },
-        "fill": { "components/Icons/InstagramIcon.tsx": 1 },
-        "xmlns": { "components/Icons/InstagramIcon.tsx": 1 },
-        "className": { "components/Icons/InstagramIcon.tsx": 1 }
-      }
-    },
-    {
-      "name": "svg",
-      "sourceFile": "components/Icons/TwitterIcon.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg",
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Icons/TwitterIcon.tsx" }
-      ],
-      "propsWithCallSites": {
-        "width": { "components/Icons/TwitterIcon.tsx": 1 },
-        "height": { "components/Icons/TwitterIcon.tsx": 1 },
-        "viewBox": { "components/Icons/TwitterIcon.tsx": 1 },
-        "fill": { "components/Icons/TwitterIcon.tsx": 1 },
-        "xmlns": { "components/Icons/TwitterIcon.tsx": 1 },
-        "className": { "components/Icons/TwitterIcon.tsx": 1 }
-      }
-    },
-    {
-      "name": "svg",
-      "sourceFile": "components/Icons/WalletIcon.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg",
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/Icons/WalletIcon.tsx" }
-      ],
-      "propsWithCallSites": {
-        "width": { "components/Icons/WalletIcon.tsx": 1 },
-        "height": { "components/Icons/WalletIcon.tsx": 1 },
-        "viewBox": { "components/Icons/WalletIcon.tsx": 1 },
-        "fill": { "components/Icons/WalletIcon.tsx": 1 },
-        "xmlns": { "components/Icons/WalletIcon.tsx": 1 },
-        "className": { "components/Icons/WalletIcon.tsx": 1 }
-      }
     },
     {
       "name": "div",
@@ -7927,6 +7927,18 @@
       }
     },
     {
+      "name": "span",
+      "sourceFile": "components/NFTDetails/ListingsItem.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/NFTDetails/ListingsItem.tsx" },
+        { "prop": "className", "callSite": "components/NFTDetails/ListingsItem.tsx" }
+      ],
+      "callSites": { "components/NFTDetails/ListingsItem.tsx": 3 },
+      "propsWithCallSites": { "className": { "components/NFTDetails/ListingsItem.tsx": 2 } }
+    },
+    {
       "name": "div",
       "sourceFile": "components/NFTDetails/ListingsItem.tsx",
       "totalInstances": 1,
@@ -7934,17 +7946,6 @@
       "presentationalProps": [
         { "prop": "className", "callSite": "components/NFTDetails/ListingsItem.tsx" }
       ],
-      "propsWithCallSites": { "className": { "components/NFTDetails/ListingsItem.tsx": 1 } }
-    },
-    {
-      "name": "span",
-      "sourceFile": "components/NFTDetails/ListingsItem.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/NFTDetails/ListingsItem.tsx" }
-      ],
-      "callSites": { "components/NFTDetails/ListingsItem.tsx": 2 },
       "propsWithCallSites": { "className": { "components/NFTDetails/ListingsItem.tsx": 1 } }
     },
     {
@@ -10222,6 +10223,16 @@
       }
     },
     {
+      "name": "h1",
+      "sourceFile": "pages/internal/mediaSandbox.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "pages/internal/mediaSandbox.tsx" }
+      ],
+      "propsWithCallSites": { "className": { "pages/internal/mediaSandbox.tsx": 1 } }
+    },
+    {
       "name": "div",
       "sourceFile": "pages/mint/create.tsx",
       "totalInstances": 11,
@@ -10255,16 +10266,6 @@
         "href": { "pages/mint/create.tsx": 1 },
         "className": { "pages/mint/create.tsx": 1 }
       }
-    },
-    {
-      "name": "h1",
-      "sourceFile": "pages/internal/mediaSandbox.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "pages/internal/mediaSandbox.tsx" }
-      ],
-      "propsWithCallSites": { "className": { "pages/internal/mediaSandbox.tsx": 1 } }
     },
     {
       "name": "div",
@@ -10950,6 +10951,39 @@
         { "prop": "className", "callSite": "components/Drops/Edit/SaveForLaterButton.tsx" }
       ],
       "propsWithCallSites": { "className": { "components/Drops/Edit/SaveForLaterButton.tsx": 1 } }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/Drops/Edit/UserTypeahead.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Drops/Edit/UserTypeahead.tsx" }
+      ],
+      "propsWithCallSites": { "className": { "components/Drops/Edit/UserTypeahead.tsx": 1 } }
+    },
+    {
+      "name": "ul",
+      "sourceFile": "components/Drops/Edit/UserTypeahead.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Drops/Edit/UserTypeahead.tsx" }
+      ],
+      "propsWithCallSites": { "className": { "components/Drops/Edit/UserTypeahead.tsx": 1 } }
+    },
+    {
+      "name": "li",
+      "sourceFile": "components/Drops/Edit/UserTypeahead.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Drops/Edit/UserTypeahead.tsx" }
+      ],
+      "propsWithCallSites": {
+        "key": { "components/Drops/Edit/UserTypeahead.tsx": 1 },
+        "className": { "components/Drops/Edit/UserTypeahead.tsx": 1 }
+      }
     },
     {
       "name": "div",
@@ -12029,7 +12063,7 @@
     {
       "name": "div",
       "sourceFile": "pages/drops/manage/[dropId].tsx",
-      "totalInstances": 17,
+      "totalInstances": 16,
       "totalCallSites": 1,
       "presentationalProps": [
         { "prop": "className", "callSite": "pages/drops/manage/[dropId].tsx" },
@@ -12047,12 +12081,11 @@
         { "prop": "className", "callSite": "pages/drops/manage/[dropId].tsx" },
         { "prop": "className", "callSite": "pages/drops/manage/[dropId].tsx" },
         { "prop": "className", "callSite": "pages/drops/manage/[dropId].tsx" },
-        { "prop": "className", "callSite": "pages/drops/manage/[dropId].tsx" },
         { "prop": "className", "callSite": "pages/drops/manage/[dropId].tsx" }
       ],
-      "callSites": { "pages/drops/manage/[dropId].tsx": 17 },
+      "callSites": { "pages/drops/manage/[dropId].tsx": 16 },
       "propsWithCallSites": {
-        "className": { "pages/drops/manage/[dropId].tsx": 16 },
+        "className": { "pages/drops/manage/[dropId].tsx": 15 },
         "style": { "pages/drops/manage/[dropId].tsx": 1 }
       }
     },
@@ -12099,25 +12132,6 @@
     },
     {
       "name": "div",
-      "sourceFile": "pages/mint/phases/[...collectionId].tsx",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "pages/mint/phases/[...collectionId].tsx" },
-        { "prop": "className", "callSite": "pages/mint/phases/[...collectionId].tsx" },
-        { "prop": "style", "callSite": "pages/mint/phases/[...collectionId].tsx" },
-        { "prop": "className", "callSite": "pages/mint/phases/[...collectionId].tsx" },
-        { "prop": "className", "callSite": "pages/mint/phases/[...collectionId].tsx" },
-        { "prop": "className", "callSite": "pages/mint/phases/[...collectionId].tsx" }
-      ],
-      "callSites": { "pages/mint/phases/[...collectionId].tsx": 5 },
-      "propsWithCallSites": {
-        "className": { "pages/mint/phases/[...collectionId].tsx": 5 },
-        "style": { "pages/mint/phases/[...collectionId].tsx": 1 }
-      }
-    },
-    {
-      "name": "div",
       "sourceFile": "pages/mint/manage/[...collectionId].tsx",
       "totalInstances": 6,
       "totalCallSites": 1,
@@ -12134,6 +12148,25 @@
       "propsWithCallSites": {
         "className": { "pages/mint/manage/[...collectionId].tsx": 6 },
         "style": { "pages/mint/manage/[...collectionId].tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "pages/mint/phases/[...collectionId].tsx",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "pages/mint/phases/[...collectionId].tsx" },
+        { "prop": "className", "callSite": "pages/mint/phases/[...collectionId].tsx" },
+        { "prop": "style", "callSite": "pages/mint/phases/[...collectionId].tsx" },
+        { "prop": "className", "callSite": "pages/mint/phases/[...collectionId].tsx" },
+        { "prop": "className", "callSite": "pages/mint/phases/[...collectionId].tsx" },
+        { "prop": "className", "callSite": "pages/mint/phases/[...collectionId].tsx" }
+      ],
+      "callSites": { "pages/mint/phases/[...collectionId].tsx": 5 },
+      "propsWithCallSites": {
+        "className": { "pages/mint/phases/[...collectionId].tsx": 5 },
+        "style": { "pages/mint/phases/[...collectionId].tsx": 1 }
       }
     },
     {
@@ -13321,8 +13354,8 @@
         "pages/drops/claim/[...collectionId].tsx": 1,
         "pages/drops/manage/[dropId].tsx": 1,
         "pages/mint/edit/[...collectionId].tsx": 1,
-        "pages/mint/phases/[...collectionId].tsx": 1,
-        "pages/mint/manage/[...collectionId].tsx": 1
+        "pages/mint/manage/[...collectionId].tsx": 1,
+        "pages/mint/phases/[...collectionId].tsx": 1
       },
       "propsWithCallSites": {
         "onPress": {
@@ -13332,8 +13365,8 @@
           "pages/drops/claim/[...collectionId].tsx": 1,
           "pages/drops/manage/[dropId].tsx": 1,
           "pages/mint/edit/[...collectionId].tsx": 1,
-          "pages/mint/phases/[...collectionId].tsx": 1,
-          "pages/mint/manage/[...collectionId].tsx": 1
+          "pages/mint/manage/[...collectionId].tsx": 1,
+          "pages/mint/phases/[...collectionId].tsx": 1
         }
       }
     },
@@ -14275,33 +14308,36 @@
     {
       "name": "MintButton",
       "sourceFile": "@maui/components/Mint/MintButton",
-      "totalInstances": 4,
+      "totalInstances": 5,
       "totalCallSites": 4,
       "callSites": {
         "components/Collections/CollectionClaimConditions.tsx": 1,
-        "components/Drops/DropMintCta.tsx": 1,
+        "components/Drops/DropMintCta.tsx": 2,
         "components/Drops/nfts/Drop1155NFTList.tsx": 1,
         "pages/drops/claim/[...collectionId].tsx": 1
       },
       "propsWithCallSites": {
         "collectionAddress": {
           "components/Collections/CollectionClaimConditions.tsx": 1,
-          "components/Drops/DropMintCta.tsx": 1,
+          "components/Drops/DropMintCta.tsx": 2,
           "components/Drops/nfts/Drop1155NFTList.tsx": 1,
           "pages/drops/claim/[...collectionId].tsx": 1
         },
         "text": {
           "components/Collections/CollectionClaimConditions.tsx": 1,
-          "components/Drops/DropMintCta.tsx": 1
+          "components/Drops/DropMintCta.tsx": 2
         },
         "disabled": {
           "components/Collections/CollectionClaimConditions.tsx": 1,
-          "components/Drops/DropMintCta.tsx": 1,
+          "components/Drops/DropMintCta.tsx": 2,
           "pages/drops/claim/[...collectionId].tsx": 1
         },
-        "block": { "components/Drops/DropMintCta.tsx": 1 },
-        "drop": { "components/Drops/DropMintCta.tsx": 1 },
-        "tokenId": { "components/Drops/nfts/Drop1155NFTList.tsx": 1 }
+        "block": { "components/Drops/DropMintCta.tsx": 2 },
+        "drop": { "components/Drops/DropMintCta.tsx": 2 },
+        "tokenId": {
+          "components/Drops/DropMintCta.tsx": 1,
+          "components/Drops/nfts/Drop1155NFTList.tsx": 1
+        }
       }
     },
     {
@@ -14674,8 +14710,8 @@
     {
       "name": "UserCell",
       "sourceFile": "@maui/components/General/UserCell",
-      "totalInstances": 15,
-      "totalCallSites": 11,
+      "totalInstances": 16,
+      "totalCallSites": 12,
       "callSites": {
         "components/Comments/BaseComment.tsx": 1,
         "components/Drops/DropCreatorsList.tsx": 2,
@@ -14687,6 +14723,7 @@
         "components/Offers/AcceptOffer.tsx": 1,
         "components/Profile/FollowersModal.tsx": 1,
         "components/Profile/FollowingModal.tsx": 2,
+        "components/Drops/Edit/UserTypeahead.tsx": 1,
         "components/General/LikedByDialog/index.tsx": 1
       },
       "propsWithCallSites": {
@@ -14701,6 +14738,7 @@
           "components/Offers/AcceptOffer.tsx": 1,
           "components/Profile/FollowersModal.tsx": 1,
           "components/Profile/FollowingModal.tsx": 2,
+          "components/Drops/Edit/UserTypeahead.tsx": 1,
           "components/General/LikedByDialog/index.tsx": 1
         },
         "title": { "components/Comments/BaseComment.tsx": 1 },
@@ -14733,10 +14771,12 @@
         },
         "href": {
           "components/NFTDetails/ListingsItem.tsx": 2,
-          "components/Nav/NavProfilePopover.tsx": 1
+          "components/Nav/NavProfilePopover.tsx": 1,
+          "components/Drops/Edit/UserTypeahead.tsx": 1
         },
         "forceUsername": { "components/NFTDetails/ListingsItem.tsx": 2 },
-        "detail": { "components/Offers/AcceptOffer.tsx": 1 }
+        "detail": { "components/Offers/AcceptOffer.tsx": 1 },
+        "onPress": { "components/Drops/Edit/UserTypeahead.tsx": 1 }
       }
     },
     {
@@ -14948,6 +14988,12 @@
     {
       "name": "Comments",
       "sourceFile": "components/Comments/Comments.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "NotEnoughEth",
+      "sourceFile": "@maui/components/Buying/Errors/NotEnoughEth",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -15253,12 +15299,6 @@
         "experiments": { "components/Experiments/ExperimentsProvider.tsx": 1 },
         "trackExposure": { "components/Experiments/ExperimentsProvider.tsx": 1 }
       }
-    },
-    {
-      "name": "NotEnoughEth",
-      "sourceFile": "@maui/components/Buying/Errors/NotEnoughEth",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "NFTCardLarge",
@@ -19529,6 +19569,25 @@
       }
     },
     {
+      "name": "section",
+      "sourceFile": "pages/internal/mediaSandbox.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "br",
+      "sourceFile": "pages/internal/mediaSandbox.tsx",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": { "pages/internal/mediaSandbox.tsx": 4 }
+    },
+    {
+      "name": "p",
+      "sourceFile": "pages/internal/mediaSandbox.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "DeployContract",
       "sourceFile": "@maui/components/Mint/DeployContract",
       "totalInstances": 1,
@@ -19552,25 +19611,6 @@
     {
       "name": "CreateDrop",
       "sourceFile": "pages/mint/create.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "section",
-      "sourceFile": "pages/internal/mediaSandbox.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "br",
-      "sourceFile": "pages/internal/mediaSandbox.tsx",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "callSites": { "pages/internal/mediaSandbox.tsx": 4 }
-    },
-    {
-      "name": "p",
-      "sourceFile": "pages/internal/mediaSandbox.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -19968,6 +20008,16 @@
         "imagePreview": { "components/Drops/Edit/PersonalizeForm.tsx": 1 },
         "setImagePreview": { "components/Drops/Edit/PersonalizeForm.tsx": 1 },
         "onError": { "components/Drops/Edit/PersonalizeForm.tsx": 1 }
+      }
+    },
+    {
+      "name": "OwnersField",
+      "sourceFile": "@maui/components/Drops/Edit/OwnersField",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "dropOwners": { "components/Drops/Edit/PersonalizeForm.tsx": 1 },
+        "setFieldValue": { "components/Drops/Edit/PersonalizeForm.tsx": 1 }
       }
     },
     {
@@ -20733,6 +20783,12 @@
       "propsWithCallSites": { "collectionAddress": { "pages/mint/edit/[...collectionId].tsx": 1 } }
     },
     {
+      "name": "title",
+      "sourceFile": "pages/mint/manage/[...collectionId].tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "PhasesForm",
       "sourceFile": "@maui/components/Mint/PhasesForm",
       "totalInstances": 1,
@@ -20742,12 +20798,6 @@
         "date": { "pages/mint/phases/[...collectionId].tsx": 1 },
         "is1155": { "pages/mint/phases/[...collectionId].tsx": 1 }
       }
-    },
-    {
-      "name": "title",
-      "sourceFile": "pages/mint/manage/[...collectionId].tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "dl",
