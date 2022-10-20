@@ -78,7 +78,6 @@ export const NativeTextArea = memo(
 
     return (
       <textarea
-        aria-label={accessibilityLabel}
         aria-describedby={accessibilityHint}
         className={cx(nativeTextAreaBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
         data-testid={testID}

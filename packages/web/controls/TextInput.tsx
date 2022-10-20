@@ -87,6 +87,11 @@ export const TextInput = memo(
       shouldNotGenerate: helperText === '',
     });
 
+    const labelId = useA11yId({
+      prefix: 'cds-textinput-label-',
+      shouldNotGenerate: label === undefined,
+    });
+
     // TODO surface this as a prop
     const hasError = variant === 'negative';
 
@@ -130,9 +135,9 @@ export const TextInput = memo(
           onFocus: handleOnFocus,
           onBlur: handleOnBlur,
           ref: refs,
-          'aria-label': accessibilityLabel ?? label,
           'aria-describedby': helperTextId,
           'aria-invalid': hasError,
+          id: labelId,
           disabled,
         });
 
@@ -173,6 +178,7 @@ export const TextInput = memo(
       refs,
       hasError,
       htmlInputElmProps,
+      labelId,
     ]);
 
     return (
@@ -192,7 +198,7 @@ export const TextInput = memo(
           labelNode={
             !compact &&
             !!label && (
-              <InputLabel testID={testIDMap?.label ?? ''} htmlFor={label}>
+              <InputLabel testID={testIDMap?.label ?? ''} htmlFor={labelId}>
                 {label}
               </InputLabel>
             )
@@ -220,7 +226,11 @@ export const TextInput = memo(
                 justifyContent="center"
                 gap={2}
               >
-                {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
+                {compact && !!label && (
+                  <InputLabel htmlFor={labelId} spacingStart={2}>
+                    {label}
+                  </InputLabel>
+                )}
                 {!!start && <>{start}</>}
               </HStack>
             )

@@ -44,3 +44,18 @@ function RenderNativeTextArea() {
 
 render(<RenderNativeTextArea />);
 ```
+
+### Accessible NativeTextArea
+
+:::tip Accessibility tip
+
+Like any component system, much of responsibility for building accessible UIs is in your hands as the consumer to properly implement the component composition. We'll do our best to provide sane fallbacks, but here's the biggest gotcha for `NativeTextAreas` you can watch out for.
+
+<br />
+
+#### Always use NativeTextArea with InputLabel or TextInput
+
+Always pair this component with an InputLabel or use it with TextInput. It
+is not recommended to use NativeTextArea as a standalone component as it violates accessibility
+
+:::

@@ -94,4 +94,38 @@ describe('TextInput', () => {
     );
     expect(result.getByTestId(testID)).toBeDefined();
   });
+
+  it('Generates accessible id for screen reader to read label if label exists', () => {
+    const result = render(
+      <TextInput label="textinput" inputNode={<input data-testid="internal-input" />} />,
+    );
+
+    expect(result.getByTestId('internal-input')).toHaveAttribute(
+      'id',
+      expect.stringMatching(/cds-textinput-label-.*/),
+    );
+  });
+
+  it('id is undefined if label does not exist', () => {
+    const result = render(<TextInput inputNode={<input data-testid="internal-input" />} />);
+
+    expect(result.getByTestId('internal-input')).not.toHaveAttribute('id');
+  });
+
+  it('Generates accessibleHint mapping if helperText exists', () => {
+    const result = render(
+      <TextInput testID="textinput-testid" label="textinput" helperText="success" />,
+    );
+
+    expect(result.getByTestId('textinput-testid')).toHaveAttribute(
+      'aria-describedby',
+      expect.stringMatching(/cds-textinput-description-.*/),
+    );
+  });
+
+  it('accessibilityHint is undefined if label does not exist', () => {
+    const result = render(<TextInput testID="textinput-testid" label="textinput" />);
+
+    expect(result.getByTestId('textinput-testid')).not.toHaveAttribute('aria-describedby');
+  });
 });

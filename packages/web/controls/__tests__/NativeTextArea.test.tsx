@@ -2,22 +2,15 @@ import { fireEvent, render } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { NativeTextArea } from '../NativeTextArea';
+import { TextInput } from '../TextInput';
 
 const TEST_ID = 'native-textarea';
 
 describe('NativeTextArea Accessibility', () => {
-  const accessibilityLabel = 'label';
-
   it('passes accessibility', async () => {
-    expect(await renderA11y(<NativeTextArea accessibilityLabel="label" />)).toHaveNoViolations();
-  });
-
-  it('can pass `aria-label` attribute', () => {
-    const { getByTestId } = render(
-      <NativeTextArea accessibilityLabel={accessibilityLabel} testID={TEST_ID} />,
-    );
-
-    expect(getByTestId(TEST_ID)).toHaveAttribute('aria-label', accessibilityLabel);
+    expect(
+      await renderA11y(<TextInput label="label" inputNode={<NativeTextArea />} />),
+    ).toHaveNoViolations();
   });
 });
 
