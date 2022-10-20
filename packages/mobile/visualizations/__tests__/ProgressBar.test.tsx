@@ -81,7 +81,7 @@ describe('ProgressBar test', () => {
     fireTextContainerEvent(getByTestId('cds-progress-bar-float-label-container'));
 
     expect(floatLabel).toHaveStyle({
-      transform: [{}],
+      transform: [{ translateX: 0 }],
     });
 
     expect(getAllByText('0%')).toHaveLength(2);

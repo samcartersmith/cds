@@ -26,19 +26,19 @@ describe('Checkbox', () => {
     expect(result.queryAllByTestId(TEST_ID)).toHaveLength(1);
   });
 
-  it('has accessibility role checkbox', async () => {
+  it('has accessibility role checkbox', () => {
     const result = render(<Checkbox>Checkbox</Checkbox>);
 
-    expect(result.queryAllByA11yRole('switch')).toHaveLength(1);
+    expect(result.queryAllByRole('switch')).toHaveLength(1);
   });
 
-  it('has accessibility state checked when checked', async () => {
+  it('has accessibility state checked when checked', () => {
     const result = render(<Checkbox checked>Checked</Checkbox>);
 
     expect(result.queryAllByA11yState({ checked: true })).toHaveLength(1);
   });
 
-  it('has accessibility state disabled when disabled', async () => {
+  it('has accessibility state disabled when disabled', () => {
     const result = render(<Checkbox disabled>Disabled</Checkbox>);
 
     expect(result.queryAllByA11yState({ disabled: true })).toHaveLength(1);
@@ -56,7 +56,7 @@ describe('Checkbox', () => {
   it('if children is a string, the accessibilityLabel and accessibilityHint is set to its children by default', () => {
     const result = render(<Checkbox>Checkbox</Checkbox>);
 
-    expect(result.queryByA11yLabel('Checkbox')).toBeTruthy();
+    expect(result.getByLabelText('Checkbox')).toBeTruthy();
     expect(result.queryByA11yHint('Checkbox')).toBeTruthy();
   });
 
@@ -67,7 +67,7 @@ describe('Checkbox', () => {
       </Checkbox>,
     );
 
-    expect(result.queryByA11yLabel('Custom Checkbox')).toBeTruthy();
+    expect(result.getByLabelText('Custom Checkbox')).toBeTruthy();
     expect(result.queryByA11yHint('Custom Checkbox')).toBeTruthy();
   });
 

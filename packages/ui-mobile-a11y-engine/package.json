@@ -49,8 +49,8 @@
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "devDependencies": {
     "@react-native-community/slider": "4.2.0",
-    "@testing-library/jest-native": "4.0.4",
-    "@testing-library/react-native": "9.0.0",
+    "@testing-library/jest-native": "5.0.0",
+    "@testing-library/react-native": "11.3.0",
     "@types/lodash.groupby": "4.6.6",
     "@types/react": "^17.0.3",
     "@types/react-native": "^0.68.2",

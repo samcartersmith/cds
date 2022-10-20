@@ -26,32 +26,32 @@ describe('Radio', () => {
     expect(result.queryAllByTestId(TEST_ID)).toHaveLength(1);
   });
 
-  it('has accessibility role radio', async () => {
+  it('has accessibility role radio', () => {
     const result = render(<Radio>Radio</Radio>);
 
-    expect(result.queryAllByA11yRole('radio')).toHaveLength(1);
+    expect(result.queryAllByRole('radio')).toHaveLength(1);
   });
 
-  it('has accessibility state checked when checked', async () => {
+  it('has accessibility state checked when checked', () => {
     const result = render(<Radio checked>Checked</Radio>);
 
     expect(result.queryAllByA11yState({ checked: true })).toHaveLength(1);
   });
 
-  it('has accessibility state disabled when disabled', async () => {
+  it('has accessibility state disabled when disabled', () => {
     const result = render(<Radio disabled>Disabled</Radio>);
 
     expect(result.queryAllByA11yState({ disabled: true })).toHaveLength(1);
   });
 
-  it('Can set custom accessibility label and hints', async () => {
+  it('Can set custom accessibility label and hints', () => {
     const result = render(
       <Radio accessibilityHint="Custom hint" accessibilityLabel="Custom label">
         Checkbox
       </Radio>,
     );
 
-    expect(result.getByA11yLabel('Custom label')).toBeTruthy();
+    expect(result.getByLabelText('Custom label')).toBeTruthy();
     expect(result.getByA11yHint('Custom hint')).toBeTruthy();
   });
 

@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
-
-import { act, renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react-hooks';
 
 import { usePreviousValue } from '../usePreviousValue';
 import { useToggler } from '../useToggler';
@@ -20,13 +18,13 @@ describe('usePreviousValue', () => {
     const { result } = renderHook(() => useMockPreviousValue());
     expect(result.current.previousValue).toBeUndefined();
     expect(result.current.currentValue).toBe(false);
-    act(() => result.current.toggleOn());
+    result.current.toggleOn();
     expect(result.current.previousValue).toBe(false);
     expect(result.current.currentValue).toBe(true);
-    act(() => result.current.toggleOff());
+    result.current.toggleOff();
     expect(result.current.previousValue).toBe(true);
     expect(result.current.currentValue).toBe(false);
-    act(() => result.current.toggleOff());
+    result.current.toggleOff();
     expect(result.current.previousValue).toBe(false);
     expect(result.current.currentValue).toBe(false);
   });

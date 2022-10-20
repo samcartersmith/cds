@@ -10,7 +10,7 @@ describe('Accessibility', () => {
       <SelectOption testID={TEST_ID} title="Title" value="Value" description="Description" />,
     );
 
-    expect(result.queryByA11yLabel('Title')).toBeTruthy();
+    expect(result.getByLabelText('Title')).toBeTruthy();
     expect(result.queryByA11yHint('Description')).toBeTruthy();
   });
 
@@ -26,7 +26,7 @@ describe('Accessibility', () => {
       />,
     );
 
-    expect(result.queryByA11yLabel('Custom Label')).toBeTruthy();
+    expect(result.getByLabelText('Custom Label')).toBeTruthy();
     expect(result.queryByA11yHint('Custom Hint')).toBeTruthy();
   });
 });

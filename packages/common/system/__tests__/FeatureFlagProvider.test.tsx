@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react-hooks';
 
 import { defaultFeatureFlags } from '../FeatureFlagContext';
 import { FeatureFlagProvider } from '../FeatureFlagProvider';
@@ -79,9 +79,7 @@ describe('FeatureFlagProvider', () => {
       frontierTypography: false,
       frontierButton: true,
     });
-    await act(() => {
-      result.current.update({ frontierTypography: true });
-    });
+    result.current.update({ frontierTypography: true });
     expect(result.current.featureFlags).toMatchObject({
       frontierTypography: true,
       frontierButton: true, // no change
@@ -105,9 +103,7 @@ describe('FeatureFlagProvider', () => {
     );
 
     expect(result.current.featureFlags.frontierButton).toBe(true);
-    await act(() => {
-      result.current.update({ frontierButton: false });
-    });
+    result.current.update({ frontierButton: false });
     expect(result.current.featureFlags.frontierButton).toBe(false); // imperative update wins
   });
 });

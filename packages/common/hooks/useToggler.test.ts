@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
-
-import { act, renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react-hooks';
 
 import { useToggler } from './useToggler';
 
@@ -10,11 +8,11 @@ describe('useToggler', () => {
       return useToggler(false);
     });
     expect(result.current[0]).toBe(false);
-    act(() => result.current[1].toggleOn());
+    result.current[1].toggleOn();
     expect(result.current[0]).toBe(true);
-    act(() => result.current[1].toggleOff());
+    result.current[1].toggleOff();
     expect(result.current[0]).toBe(false);
-    act(() => result.current[1].toggle());
+    result.current[1].toggle();
     expect(result.current[0]).toBe(true);
   });
 });

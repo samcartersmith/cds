@@ -32,18 +32,16 @@ describe('Carousel', () => {
     expect(onReadySpy).not.toHaveBeenCalled();
     await waitFor(async () =>
       Promise.all([
-        ...Array.from({ length: itemsLength }).map(
-          async (_, i) =>
-            fireEvent(getByTestId(`CarouselItemWrapper-item${i}`), 'onLayout', {
-              nativeEvent: { layout: { x: itemSize * i } },
-            }) as Promise<void>,
-        ),
-        ...Array.from({ length: itemsLength }).map(
-          async (_, i) =>
-            fireEvent(getByTestId(`CarouselItemInner-item${i}`), 'onLayout', {
-              nativeEvent: { layout: { width: itemSize } },
-            }) as Promise<void>,
-        ),
+        ...Array.from({ length: itemsLength }).map(async (_, i) => {
+          fireEvent(getByTestId(`CarouselItemWrapper-item${i}`), 'onLayout', {
+            nativeEvent: { layout: { x: itemSize * i } },
+          });
+        }),
+        ...Array.from({ length: itemsLength }).map(async (_, i) => {
+          fireEvent(getByTestId(`CarouselItemInner-item${i}`), 'onLayout', {
+            nativeEvent: { layout: { width: itemSize } },
+          });
+        }),
       ]),
     );
     expect(onReadySpy).toHaveBeenCalled();

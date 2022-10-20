@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-floating-promises */
 
-import { act, renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react-hooks';
 
 import {
   borderBoxWarn,
@@ -95,12 +94,12 @@ describe('useDimensions', () => {
     expect(result.current.height).toBe(0);
 
     const contentBoxSize = { blockSize: 100, inlineSize: 100 };
-    act(() => triggerObserverCb({ contentBoxSize }));
+    triggerObserverCb({ contentBoxSize });
     expect(result.current.width).toBe(contentBoxSize.blockSize);
     expect(result.current.height).toBe(contentBoxSize.inlineSize);
 
     const contentRect = { width: 100, height: 100 };
-    act(() => triggerObserverCb({ contentRect }));
+    triggerObserverCb({ contentRect });
     expect(result.current.width).toBe(contentRect.width);
     expect(result.current.height).toBe(contentRect.height);
   });
@@ -109,10 +108,8 @@ describe('useDimensions', () => {
     const warn = jest.spyOn(console, 'warn').mockImplementation();
     let { result } = renderHelper({ useBorderBoxSize: true });
     const contentBoxSize = { blockSize: 100, inlineSize: 100 };
-    act(() => {
-      triggerObserverCb({ contentBoxSize });
-      triggerObserverCb({ contentBoxSize });
-    });
+    triggerObserverCb({ contentBoxSize });
+    triggerObserverCb({ contentBoxSize });
     expect(warn).toHaveBeenCalledTimes(1);
     expect(warn).toHaveBeenCalledWith(borderBoxWarn);
     expect(result.current.width).toBe(contentBoxSize.blockSize);
@@ -121,7 +118,7 @@ describe('useDimensions', () => {
     warn.mockReset();
     result = renderHelper({ useBorderBoxSize: true }).result;
     const borderBoxSize = { blockSize: 110, inlineSize: 110 };
-    act(() => triggerObserverCb({ contentBoxSize, borderBoxSize }));
+    triggerObserverCb({ contentBoxSize, borderBoxSize });
     expect(warn).not.toHaveBeenCalledWith(borderBoxWarn);
     expect(result.current.width).toBe(borderBoxSize.blockSize);
     expect(result.current.height).toBe(borderBoxSize.inlineSize);
@@ -132,20 +129,20 @@ describe('useDimensions', () => {
     expect(result.current.currentBreakpoint).toBe('');
 
     result = renderHelper({ breakpoints: { T1: 100 } }).result;
-    act(() => triggerObserverCb({ contentRect: { width: 0 } }));
+    triggerObserverCb({ contentRect: { width: 0 } });
     expect(result.current.currentBreakpoint).toBe('');
-    act(() => triggerObserverCb({ contentRect: { width: 99 } }));
+    triggerObserverCb({ contentRect: { width: 99 } });
     expect(result.current.currentBreakpoint).toBe('');
 
     result = renderHelper({ breakpoints: { T0: 0, T1: 100 } }).result;
-    act(() => triggerObserverCb({ contentRect: { width: 0 } }));
+    triggerObserverCb({ contentRect: { width: 0 } });
     expect(result.current.currentBreakpoint).toBe('T0');
-    act(() => triggerObserverCb({ contentRect: { width: 99 } }));
+    triggerObserverCb({ contentRect: { width: 99 } });
     expect(result.current.currentBreakpoint).toBe('T0');
 
-    act(() => triggerObserverCb({ contentRect: { width: 100 } }));
+    triggerObserverCb({ contentRect: { width: 100 } });
     expect(result.current.currentBreakpoint).toBe('T1');
-    act(() => triggerObserverCb({ contentRect: { width: 199 } }));
+    triggerObserverCb({ contentRect: { width: 199 } });
     expect(result.current.currentBreakpoint).toBe('T1');
   });
 
@@ -154,7 +151,7 @@ describe('useDimensions', () => {
     expect(result.current.entry).toBeUndefined();
 
     const entry = { contentRect: { width: 100, height: 100 } };
-    act(() => triggerObserverCb(entry));
+    triggerObserverCb(entry);
     expect(result.current.entry).toStrictEqual(entry);
   });
 
@@ -171,7 +168,7 @@ describe('useDimensions', () => {
     });
     renderHelper({ onResize });
     const contentRect = { width: 100, height: 100 };
-    act(() => triggerObserverCb({ contentRect }));
+    triggerObserverCb({ contentRect });
     expect(onResize).toHaveBeenCalledWith({
       currentBreakpoint: '',
       width: contentRect.width,
@@ -192,10 +189,8 @@ describe('useDimensions', () => {
     });
     renderHelper({ breakpoints: { T0: 0, T1: 100 }, onResize });
     const contentRect = { width: 50, height: 100 };
-    act(() => {
-      triggerObserverCb({ contentRect });
-      triggerObserverCb({ contentRect });
-    });
+    triggerObserverCb({ contentRect });
+    triggerObserverCb({ contentRect });
     expect(onResize).toHaveBeenCalledTimes(1);
     expect(onResize).toHaveBeenCalledWith({
       currentBreakpoint: 'T0',
@@ -215,9 +210,9 @@ describe('useDimensions', () => {
       breakpoints: { T0: 100, T1: 200 },
       updateOnBreakpointChange: true,
     });
-    act(() => triggerObserverCb({ contentRect: { width: 50 } }));
+    triggerObserverCb({ contentRect: { width: 50 } });
     expect(result.current.width).toBe(0);
-    act(() => triggerObserverCb({ contentRect: { width: 100 } }));
+    triggerObserverCb({ contentRect: { width: 100 } });
     expect(result.current.width).toBe(100);
   });
 
@@ -225,11 +220,11 @@ describe('useDimensions', () => {
     const { result } = renderHelper({
       shouldUpdate: ({ width }) => width > 300,
     });
-    act(() => triggerObserverCb({ contentRect: { width: 100 } }));
+    triggerObserverCb({ contentRect: { width: 100 } });
     expect(result.current.width).toBe(0);
-    act(() => triggerObserverCb({ contentRect: { width: 400 } }));
+    triggerObserverCb({ contentRect: { width: 400 } });
     expect(result.current.width).toBe(400);
-    act(() => triggerObserverCb({ contentRect: { width: 100 } }));
+    triggerObserverCb({ contentRect: { width: 100 } });
     expect(result.current.width).toBe(400);
   });
 
@@ -237,7 +232,7 @@ describe('useDimensions', () => {
     let { result } = renderHelper({
       updateOnBreakpointChange: true,
     });
-    act(() => triggerObserverCb({ contentRect: { width: 50 } }));
+    triggerObserverCb({ contentRect: { width: 50 } });
     expect(result.current.width).toBe(50);
 
     result = renderHelper({
@@ -245,9 +240,9 @@ describe('useDimensions', () => {
       updateOnBreakpointChange: true,
       shouldUpdate: ({ width }) => width > 300,
     }).result;
-    act(() => triggerObserverCb({ contentRect: { width: 100 } }));
+    triggerObserverCb({ contentRect: { width: 100 } });
     expect(result.current.width).toBe(0);
-    act(() => triggerObserverCb({ contentRect: { width: 400 } }));
+    triggerObserverCb({ contentRect: { width: 400 } });
     expect(result.current.width).toBe(400);
   });
 
