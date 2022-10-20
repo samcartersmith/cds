@@ -38,8 +38,6 @@ const disabledRoutes = {
     'Tabs' /** Non-deterministic animation */,
     'Text' /** Not sure */,
     'TextCaption' /** Not sure */,
-    'SparklineInteractive',
-    'SparklineInteractiveHeader',
     'Icon',
     'InputIcon' /** Scroll selects the input text box */,
     'InputIconButton' /** Scroll selects the input text box */,
@@ -47,7 +45,12 @@ const disabledRoutes = {
     'TextInput' /** Scroll selects the input text box */,
   ],
   iosDisabledRoutes: [],
-  androidDisabledRoutes: ['Accordion', 'Select'],
+  androidDisabledRoutes: [
+    'Accordion',
+    'Select',
+    'SparklineInteractive',
+    'SparklineInteractiveHeader',
+  ],
 };
 
 const config = { ...detoxConfig, disabledRoutes };
