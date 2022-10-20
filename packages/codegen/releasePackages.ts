@@ -82,7 +82,7 @@ function determineNextVersion(logs: Log[], currentVersion: string): string | nul
 }
 
 function determineVersionBump(type: LogType): LogChange['bump'] {
-  switch (type) {
+  switch (type.toLowerCase()) {
     case 'breaking':
       return 'major';
     case 'feat':
