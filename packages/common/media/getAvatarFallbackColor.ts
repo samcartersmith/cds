@@ -1,5 +1,5 @@
 /* eslint-disable no-bitwise */
-import { hsl } from 'd3-color';
+import { hsl } from '@cbhq/d3/color';
 
 import { isGray } from '../color/isGray';
 import { FallbackColor } from '../types';

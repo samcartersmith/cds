@@ -1,4 +1,4 @@
-import { color } from 'd3-color';
+import { color } from '@cbhq/d3/color';
 
 /**
  * Relative luminance is the relative brightness of any point in a colorspace, normalized to 0 for darkest black and 1 for lightest white.

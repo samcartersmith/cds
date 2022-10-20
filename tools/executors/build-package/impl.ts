@@ -1,11 +1,11 @@
 import { ExecutorContext } from '@nrwl/devkit';
 import chalk from 'chalk';
-import glob from "fast-glob";
+import glob from 'fast-glob';
 import fs from 'fs';
 import path from 'path';
 
 import { BuildPackageOptions } from '../../types';
-import {compressCssFiles, createDir, deleteDir, runLocalCommand} from '../utils';
+import { compressCssFiles, createDir, deleteDir, runLocalCommand } from '../utils';
 
 type PackageArgs = {
   /*
@@ -159,6 +159,7 @@ async function copyFiles({
 
 // packages with versions to replace in the output
 const packageVersionReplacePathMap: Record<string, string> = {
+  '@cbhq/d3': 'packages/d3',
   '@cbhq/cds-common': 'packages/common',
   '@cbhq/cds-fonts': 'packages/fonts',
   '@cbhq/cds-lottie-files': 'packages/lottie-files',
@@ -295,11 +296,9 @@ export default async function buildPackage(
     }),
   );
 
-  console.log("Compressing css files: ", cssFiles.size);
+  console.log('Compressing css files: ', cssFiles.size);
 
-  success = success
-    ? await compressCssFiles(context, Array.from(cssFiles)) && true
-    : success;
+  success = success ? (await compressCssFiles(context, Array.from(cssFiles))) && true : success;
 
   return Promise.resolve({ success });
 }

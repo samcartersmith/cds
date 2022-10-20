@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { extent } from 'd3-array';
-import { ScaleLinear, scaleLinear } from 'd3-scale';
+import { ScaleLinear, scaleLinear } from '@cbhq/d3/scale';
 
 import { getSparklineRange } from './getSparklineRange';
 import { largestTriangleThreeBucket } from './largestTriangleThreeBucket';

@@ -1,4 +1,4 @@
-import { hsl } from 'd3-color';
+import { hsl } from '@cbhq/d3/color';
 
 import type { A11yColorUsage, SpectrumAlias, SpectrumHueStep } from '../types';
 import { between } from '../utils/between';

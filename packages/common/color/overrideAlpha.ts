@@ -1,4 +1,4 @@
-import { color } from 'd3-color';
+import { color } from '@cbhq/d3/color';
 
 /**
  * Modify the alpha value of an rgba string

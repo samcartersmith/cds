@@ -3,6 +3,7 @@
   "projects": {
     "codegen": "packages/codegen",
     "common": "packages/common",
+    "d3": "packages/d3",
     "docusaurus-plugin-docgen": "packages/docusaurus-plugin-docgen",
     "docusaurus-plugin-kbar": "packages/docusaurus-plugin-kbar",
     "docusaurus-preset": "packages/docusaurus-preset",

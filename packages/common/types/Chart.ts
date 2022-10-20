@@ -1,4 +1,4 @@
-import type { ScaleTime } from 'd3-scale';
+import type { ScaleTime } from '@cbhq/d3/scale';
 
 export type ChartDataPoint = {
   value: number;

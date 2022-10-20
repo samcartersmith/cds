@@ -1,4 +1,4 @@
-import { color } from 'd3-color';
+import { color } from '@cbhq/d3/color';
 
 /**
  * @param color - any valid color value, i.e. `rgba(255, 255, 255, 1)`

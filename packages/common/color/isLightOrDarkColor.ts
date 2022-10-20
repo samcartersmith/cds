@@ -1,4 +1,4 @@
-import { color } from 'd3-color';
+import { color } from '@cbhq/d3/color';
 
 export const isLightOrDarkColor = (value: string) => {
   const rgbObject = color(value)?.rgb();

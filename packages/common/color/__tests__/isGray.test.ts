@@ -1,4 +1,4 @@
-import { hsl } from 'd3-color';
+import { hsl } from '@cbhq/d3/color';
 
 import { isGray } from '../isGray';
 

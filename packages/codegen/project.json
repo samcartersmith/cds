@@ -59,7 +59,7 @@
       "executor": "@cbhq/mono-tasks:run-script",
       "options": {
         "script": "./releasePackages.ts",
-        "args": ["--packages=fonts|web|lottie-files|mobile|utils|common"]
+        "args": ["--packages=d3|fonts|web|lottie-files|mobile|utils|common"]
       }
     },
     "mobile-routes": {

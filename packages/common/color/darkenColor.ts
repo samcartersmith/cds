@@ -1,4 +1,4 @@
-import { color } from 'd3-color';
+import { color } from '@cbhq/d3/color';
 
 export const darkenColor = (value: string) => {
   const d3Color = color(value);

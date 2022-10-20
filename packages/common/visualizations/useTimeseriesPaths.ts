@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { extent } from 'd3-array';
-import { scaleLinear, scaleTime } from 'd3-scale';
 import { area, line } from 'd3-shape';
+import { scaleLinear, scaleTime } from '@cbhq/d3/scale';
 
 import { ChartDataPoint, ChartTimeseries } from '../types/Chart';
 
