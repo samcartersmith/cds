@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.0.1 (10/20/2022, 02:12 PM PST)
+
+#### 🐞 Fixes
+
+- Update testing-library tools. [#1238](https://github.cbhq.net/frontend/cds/pull/1238), [CDS-2567](https://jira.coinbase-corp.com/browse/CDS-2567)
+
 ## 3.0.0 (10/19/2022, 02:22 PM PST)
 
 #### 💥 Breaking

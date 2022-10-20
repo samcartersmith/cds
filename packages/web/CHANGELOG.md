@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.0.1 (10/20/2022, 02:12 PM PST)
+
+#### 🐞 Fixes
+
+- Update testing-library tools. [#1238](https://github.cbhq.net/frontend/cds/pull/1238), [CDS-2567](https://jira.coinbase-corp.com/browse/CDS-2567)
+- **[A11y]** Disable color contrast on TextInput Disabled state. [#1247](https://github.cbhq.net/frontend/cds/pull/1247), [CDS-2585](https://jira.coinbase-corp.com/browse/CDS-2585)
+- Create @cbhq/d3 package to solve d3 issues. [#1235](https://github.cbhq.net/frontend/cds/pull/1235), [CDS-2501](https://jira.coinbase-corp.com/browse/CDS-2501)
+
+#### 📘 Misc
+
+- **[Icon]** Remove extra Icon.stories.tsx file. [#1230](https://github.cbhq.net/frontend/cds/pull/1230)
+
 ## 3.0.0 (10/19/2022, 02:22 PM PST)
 
 #### 💥 Breaking
