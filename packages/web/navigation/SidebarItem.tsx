@@ -85,6 +85,7 @@ export const SidebarItem = memo(
             ref={ref}
             testID={testID}
             accessibilityLabel={isCollapsed ? accessibilityLabel : undefined}
+            aria-current={active ? 'page' : undefined}
             {...rest}
           >
             <HStack gap={2} spacing={2} alignItems="center" justifyContent="flex-start">
