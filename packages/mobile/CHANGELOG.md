@@ -16,6 +16,10 @@ All notable changes to this project will be documented in this file.
 
 ## 3.0.0 (10/19/2022, 02:22 PM PST)
 
+:::caution
+This version introduces breaking changes. Please see the [migration guide](https://cds.cbhq.net/guides/migration?page=Mobile) on how to update to `@cbhq/cds-mobile@3.0.0`
+:::
+
 #### 💥 Breaking
 
 - **[SparklineInteractiveHeader]** Aliased subhead icon names. [#1237](https://github.cbhq.net/frontend/cds/pull/1237)
@@ -28,7 +32,11 @@ All notable changes to this project will be documented in this file.
 - Styles for inactive period pressables. [#1227](https://github.cbhq.net/frontend/cds/pull/1227), [CDS-2550](https://jira.coinbase-corp.com/browse/CDS-2550)
 - **[SparklineInteractive]** Fixed minmax label position and tweening. [#1228](https://github.cbhq.net/frontend/cds/pull/1228)
 
-## 2.1.1 (10/14/2022, 10:51 AM PST)
+## 2.1.1 (10/14/2022, 10:51 AM PST) DO NOT USE
+
+:::danger
+This release includes a regression, please use `@cbhq/cds-mobile@3.0.0` or higher
+:::
 
 #### 🐞 Fixes
 
@@ -38,7 +46,11 @@ All notable changes to this project will be documented in this file.
 - **[ListCell]** Render non-text title and description. [#1206](https://github.cbhq.net/frontend/cds/pull/1206), [CDS-2307](https://jira.coinbase-corp.com/browse/CDS-2307)
 - Bump lineHeavy opacity from 0.66 to 0.68. [#1202](https://github.cbhq.net/frontend/cds/pull/1202)
 
-## 2.1.0 (10/5/2022, 03:33 PM PST)
+## 2.1.0 (10/5/2022, 03:33 PM PST) DO NOT USE
+
+:::danger
+This release includes a regression, please use `@cbhq/cds-mobile@3.0.0` or higher
+:::
 
 #### 🚀 Updates
 
