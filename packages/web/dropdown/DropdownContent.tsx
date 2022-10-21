@@ -69,7 +69,7 @@ export const DropdownContent = memo(
         <MotionVStack
           ref={ref}
           background
-          overflow="auto"
+          overflow="hidden"
           elevation={2}
           borderRadius="popover"
           zIndex={zIndex.overlays.dropdown}
