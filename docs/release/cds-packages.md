@@ -6,17 +6,27 @@ The following sections describe how to push new package releases to our consumer
 
 When you're ready to cut a new release, do the following:
 
-1. Checkout a new branch with a branch name following the format `last-name/release-mm-dd-yyyy`.
+1. Announce a **CODE MERGE FREEZE** in #cds-engineering. This prevents PRs from being merged after generating the CHANGELOG, and keeps our semver aligned with what packages are released.
 
-2. Run `yarn release` in the repo root directory.
+2. Checkout a new branch with a branch name following the format `last-name/release-mm-dd-yyyy`.
+
+3. Run `yarn release` in the repo root directory.
 
 The `yarn release` script will automatically update the `CHANGELOG` with the latest version and add latest merged PR titles, links, and Jira tickets. It will also run the docgen script and lint the website files. You can see the public changelog [here](https://cds.cbhq.net/changelog/mobile/)
 
-3. Copy the title that is in the logs and use it for **BOTH** the commit and the PR title.
+4. Copy the title that is in the output logs after "Pull request title: " and use it for **BOTH** the commit and the PR title. It can be found directly about " > NX Successfully ran target release for project codegen (24s)"
 
 Note: Since this is likely a single commit, if the commit message is not the provided title, it will break the `CHANGELOG` for future commits.
 
 Your PR should like [this](https://github.cbhq.net/frontend/cds/pull/1112).
+
+5. If your release has generated a breaking change (major bump) or introduced a major library change in the changelog, **you must confirm your changes in a consumer iOS & android emulator prior to merging the release**. This is helpful for generating major bump PRs in consumer apps, confirming library versions are still compatible, and preventing high severity regression incidents. To test, follow this document on [generating a Tarball](https://docs.google.com/document/d/1yF8IkgLI53l7t9z0lq7wktbYIhxrf8ohAY3J0PCkZRY/edit#heading=h.fxzn0dxbrhom).
+
+6. If your release has a major bump, you must include a migration guide to bump to your version. [Example](https://github.cbhq.net/frontend/cds/pull/1256)
+
+7. After your release PR is merged, announce that the Code Freeze is over and merges can resume in #cds-engineering.
+
+8. Tag your release in github by going to the [release page](https://github.cbhq.net/frontend/cds/releases) and clicking 'Draft a new release'
 
 ### Updating our Consumers
 
