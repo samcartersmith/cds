@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 ## 3.0.1 (10/20/2022, 02:12 PM PST)
 
+:::danger
+This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher
+:::
+
 #### 🐞 Fixes
 
 - Update testing-library tools. [#1238](https://github.cbhq.net/frontend/cds/pull/1238), [CDS-2567](https://jira.coinbase-corp.com/browse/CDS-2567)
@@ -21,6 +25,10 @@ All notable changes to this project will be documented in this file.
 - **[Icon]** Remove extra Icon.stories.tsx file. [#1230](https://github.cbhq.net/frontend/cds/pull/1230)
 
 ## 3.0.0 (10/19/2022, 02:22 PM PST)
+
+:::danger
+This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher
+:::
 
 #### 💥 Breaking
 
@@ -35,6 +43,10 @@ All notable changes to this project will be documented in this file.
 - **[Sparkline]** Ensure focusring on sparkline has deterministic css speceficity. [#1222](https://github.cbhq.net/frontend/cds/pull/1222), [CDS-2493](https://jira.coinbase-corp.com/browse/CDS-2493)
 
 ## 2.1.1 (10/14/2022, 10:51 AM PST)
+
+:::danger
+This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher
+:::
 
 #### 🐞 Fixes
 
