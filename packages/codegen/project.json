@@ -16,6 +16,14 @@
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
     },
+    "generate-icon-stories": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "packages/codegen",
+        "commands": ["yarn ts-node ./stories/createIconStories.ts"],
+        "parallel": false
+      }
+    },
     "icons": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
@@ -23,7 +31,8 @@
         "commands": [
           "ts-node ./icons/syncSvgsFromFigma.ts",
           "svgo ../common/internal/data/iconSvgs/*.svg --config=configs/svgo.config.js",
-          "ts-node ./icons/build.ts"
+          "ts-node ./icons/build.ts",
+          "yarn nx run codegen:generate-icon-stories"
         ],
         "parallel": false
       }
