@@ -8,6 +8,19 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.0.2 (10/21/2022, 02:41 PM PST)
+
+#### 🐞 Fixes
+
+- **[Popover]** Revert Fixed overflow and useClickOutside (#1189 & #1166). [#1257](https://github.cbhq.net/frontend/cds/pull/1257), [IM-7171](https://jira.coinbase-corp.com/browse/IM-7171)
+- **[SidebarItem]** Add aria-current attr to active item. [#1252](https://github.cbhq.net/frontend/cds/pull/1252), [A11Y-188](https://jira.coinbase-corp.com/browse/A11Y-188)
+- **[NativeTextArea]** Use html for instead of aria-label for NativeTextArea. [#1164](https://github.cbhq.net/frontend/cds/pull/1164), [A11Y-200](https://jira.coinbase-corp.com/browse/A11Y-200)
+
+#### 📘 Misc
+
+- Add danger admonition for cds-web@2.1.1+. [#1258](https://github.cbhq.net/frontend/cds/pull/1258)
+- **[Storybook Upgrade]** Codegenerate Icon stories. Migrate away from using storiesOf. [#1251](https://github.cbhq.net/frontend/cds/pull/1251), [CDS-2474](https://jira.coinbase-corp.com/browse/CDS-2474)
+
 ## 3.0.1 (10/20/2022, 02:12 PM PST)
 
 :::danger
