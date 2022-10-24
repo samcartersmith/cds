@@ -24,7 +24,7 @@ All notable changes to this project will be documented in this file.
 ## 3.0.1 (10/20/2022, 02:12 PM PST)
 
 :::danger
-This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher
+🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
 :::
 
 #### 🐞 Fixes
@@ -40,7 +40,7 @@ This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher
 ## 3.0.0 (10/19/2022, 02:22 PM PST)
 
 :::danger
-This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher
+🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
 :::
 
 #### 💥 Breaking
@@ -58,7 +58,7 @@ This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher
 ## 2.1.1 (10/14/2022, 10:51 AM PST)
 
 :::danger
-This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher
+🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
 :::
 
 #### 🐞 Fixes
@@ -75,6 +75,10 @@ This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher
 - **[TabNavigation]** Add accessibilityLabels and make avatars decorative. [#1200](https://github.cbhq.net/frontend/cds/pull/1200), [A11Y-237](https://jira.coinbase-corp.com/browse/A11Y-237)
 
 ## 2.1.0 (10/5/2022, 03:33 PM PST)
+
+:::danger
+🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
+:::
 
 #### 🚀 Updates
 
