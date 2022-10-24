@@ -117,7 +117,7 @@
           "config": "android.debug"
         }
       },
-      "dependsOn": [{ "target": "build-android-e2e", "projects": "self" }]
+      "dependsOn": ["^build"]
     },
     "android-e2e-emulator": {
       "executor": "@nrwl/workspace:run-commands",
