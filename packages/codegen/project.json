@@ -24,6 +24,14 @@
         "parallel": false
       }
     },
+    "generate-illustration-stories": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "packages/codegen",
+        "commands": ["yarn ts-node ./stories/createIllustrationStories.ts"],
+        "parallel": false
+      }
+    },
     "icons": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
@@ -43,6 +51,7 @@
         "cwd": "packages/codegen",
         "commands": [
           "ts-node ./illustrations/build.ts",
+          "nx run codegen:generate-illustration-stories",
           "nx run codegen:format",
           "nx run mobile:format",
           "nx run codegen:uploadToStaticAssets"
