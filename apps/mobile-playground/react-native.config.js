@@ -15,7 +15,7 @@ module.exports = {
         pass: 'android',
         keyPass: 'android',
       },
-      e2e: {
+      detox: {
         app: './android/app/build/outputs/apk/functionalTestRelease/app-functionalTestRelease.apk',
       },
       debug: {
@@ -24,7 +24,7 @@ module.exports = {
     },
     ios: {
       bundleName: 'main.jsbundle',
-      e2e: {
+      detox: {
         app: './ios/build/Build/Products/Release-iphonesimulator/MobilePlayground.app',
       },
     },
