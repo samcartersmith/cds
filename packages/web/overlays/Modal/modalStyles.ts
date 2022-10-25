@@ -1,13 +1,13 @@
 import { css } from 'linaria';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
-import { deviceBreakpoints } from '../../layout/breakpoints';
+import { deviceMqs } from '../../layout/breakpoints';
 import { borderRadius, spacing } from '../../tokens';
 import { cx } from '../../utils/linaria';
 
 export const devices = {
-  phone: `max-width: ${deviceBreakpoints.phone}px`,
-  tablet: `max-width: ${deviceBreakpoints.tablet}px`,
+  phone: deviceMqs.phone,
+  tablet: deviceMqs.tablet,
 };
 
 export const modalTopSpacing = spacing[10];
@@ -35,8 +35,8 @@ export const modalResponsive = css`
     @media only screen and (${devices.tablet}) {
       max-width: 612px;
       width: auto;
-      right: ${spacing[3]};
-      left: ${spacing[3]};
+      margin-right: ${spacing[3]};
+      margin-left: ${spacing[3]};
     }
 
     @media only screen and (${devices.phone}) {
@@ -45,6 +45,8 @@ export const modalResponsive = css`
       bottom: 0;
       right: 0;
       left: 0;
+      margin-right: 0;
+      margin-left: 0;
     }
   }
 `;
