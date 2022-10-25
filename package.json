@@ -94,6 +94,7 @@
     "dotenv-webpack": "7.0.3",
     "eslint": "^8.7.0",
     "eslint-plugin-codegen": "^0.16.1",
+    "eslint-plugin-testing-library": "^5.9.1",
     "execa": "^5.1.1",
     "fast-glob": "^3.2.5",
     "jest": "^28.1.3",

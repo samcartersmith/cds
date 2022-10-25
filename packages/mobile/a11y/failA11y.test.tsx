@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { TextTitle1 } from '../typography';
 
@@ -9,8 +9,8 @@ import { TextTitle1 } from '../typography';
  */
 describe('Fail a11y Test', () => {
   it('Purposely fail pressable', () => {
-    const result = render(<TextTitle1 testID="hello">Hello</TextTitle1>);
+    render(<TextTitle1 testID="hello">Hello</TextTitle1>);
     console.warn('This is a test to ensure that we are capturing warnings');
-    expect(result.getByTestId('hello')).toBeAccessible();
+    expect(screen.getByTestId('hello')).toBeAccessible();
   });
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import { stringify } from 'querystring';
 import { BannerBaseProps } from '@cbhq/cds-common';
 import { InternalSpacingProps } from '@cbhq/cds-common/types/SpacingProps';
@@ -51,14 +51,12 @@ const checkSpacing = ({
 } & InternalSpacingProps) => {
   // eslint-disable-next-line jest/require-top-level-describe
   it(`${testID} has correct spacings ${stringify(spacings as never, ', ')}`, () => {
-    const { queryByTestId } = render(
-      <MockBanner primaryAction={withAction ? action : undefined} />,
-    );
+    render(<MockBanner primaryAction={withAction ? action : undefined} />);
     // The above is the spacing that the test requires
     // Root Container has a start spacing of 2
     const { result } = renderHook(() => useInternalSpacingStyles(spacings));
 
-    expect(queryByTestId(testID)).toHaveStyle(
+    expect(screen.queryByTestId(testID)).toHaveStyle(
       customStyle ?? (result.current as Record<string, unknown>),
     );
   });
@@ -70,15 +68,15 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
   });
 
   it('renders a Banner on wide screen', () => {
-    const { queryByTestId } = render(<MockBanner />);
+    render(<MockBanner />);
 
-    expect(queryByTestId(TEST_ID)).toBeTruthy();
+    expect(screen.getByTestId(TEST_ID)).toBeTruthy();
   });
 
   it('Banner bordered={false} borderRadius="none" has correct visuals', () => {
-    const { getByTestId } = render(<MockBanner bordered={false} borderRadius="roundedNone" />);
+    render(<MockBanner bordered={false} borderRadius="roundedNone" />);
 
-    const rootContainer = getByTestId(TEST_ID);
+    const rootContainer = screen.getByTestId(TEST_ID);
 
     expect(rootContainer).toHaveStyle({
       borderWidth: 0,
@@ -86,9 +84,9 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
   });
 
   it('inner-end-box should be an HStack', () => {
-    const { getByTestId } = render(<MockBanner />);
+    render(<MockBanner />);
 
-    const innerEndBox = getByTestId(`${TEST_ID}-inner-end-box`);
+    const innerEndBox = screen.getByTestId(`${TEST_ID}-inner-end-box`);
 
     expect(innerEndBox).toHaveStyle({
       flexDirection: 'row',
@@ -118,9 +116,9 @@ describe('Banner testing with narrow screen configurations (screen size < 724)',
   });
 
   it('renders a Banner on narrow screen', () => {
-    const { queryByTestId } = render(<MockBanner />);
+    render(<MockBanner />);
 
-    expect(queryByTestId(TEST_ID)).toBeTruthy();
+    expect(screen.getByTestId(TEST_ID)).toBeTruthy();
   });
 
   checkSpacing({
@@ -148,9 +146,9 @@ describe('Banner actions', () => {
 
   it('fires `onClose` when dismiss icon button is pressed', () => {
     const spy = jest.fn();
-    const { getByLabelText } = render(<MockBanner testID={TEST_ID} onClose={spy} showDismiss />);
+    render(<MockBanner testID={TEST_ID} onClose={spy} showDismiss />);
 
-    const dismissBtn = getByLabelText('close');
+    const dismissBtn = screen.getByLabelText('close');
 
     fireEvent.press(dismissBtn);
 
@@ -159,29 +157,29 @@ describe('Banner actions', () => {
 
   it('Bannner collapses when dismiss icon button is pressed', () => {
     const spy = jest.fn();
-    const result = render(<MockBanner onClose={spy} showDismiss />);
+    render(<MockBanner onClose={spy} showDismiss />);
 
-    const dismissBtn = result.getByLabelText('close');
+    const dismissBtn = screen.getByLabelText('close');
 
     // Before dismiss is pressed, banner should be visible
-    expect(result.UNSAFE_getByProps({ collapsed: false })).toBeTruthy();
+    expect(screen.UNSAFE_getByProps({ collapsed: false })).toBeTruthy();
 
     fireEvent.press(dismissBtn);
     expect(spy).toHaveBeenCalledTimes(1);
 
     // After dismiss is pressed, banner should be collapsed
-    expect(result.UNSAFE_getByProps({ collapsed: true })).toBeTruthy();
+    expect(screen.UNSAFE_getByProps({ collapsed: true })).toBeTruthy();
   });
 
   it('Banner forwardRef works as expected', () => {
     const ref = React.createRef<View>();
-    const { getByTestId } = render(
+    render(
       <Banner ref={ref} variant="warning" testID={TEST_ID} startIcon="cashUSD" title="Banner title">
         <TextBody>Content</TextBody>
       </Banner>,
     );
 
-    expect(getByTestId(TEST_ID)).toBeTruthy();
+    expect(screen.getByTestId(TEST_ID)).toBeTruthy();
   });
 
   checkSpacing({

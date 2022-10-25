@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
 
 import { Icon } from '../../icons/Icon';
@@ -10,25 +10,23 @@ const INNER_CONTAINER_TESTID = 'dotstatuscolor-inner-container';
 
 describe('DotStatusColor', () => {
   it('renders a DotStatusColor', () => {
-    const { getByTestId } = render(
-      <DotStatusColor testID={DOTSTATUSCOLOR_TESTID} variant="negative" />,
-    );
+    render(<DotStatusColor testID={DOTSTATUSCOLOR_TESTID} variant="negative" />);
 
-    expect(getByTestId(DOTSTATUSCOLOR_TESTID)).toBeDefined();
+    expect(screen.getByTestId(DOTSTATUSCOLOR_TESTID)).toBeDefined();
   });
 
   it('can change variant to negative', () => {
-    const { getByTestId } = render(<DotStatusColor variant="negative" />);
+    render(<DotStatusColor variant="negative" />);
 
-    expect(getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
+    expect(screen.getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
       backgroundColor: paletteAliasToRgbaString('negative', 'light'),
     });
   });
 
   it('can change variant to positive', () => {
-    const { getByTestId } = render(<DotStatusColor variant="positive" />);
+    render(<DotStatusColor variant="positive" />);
 
-    expect(getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
+    expect(screen.getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
       backgroundColor: paletteAliasToRgbaString('positive', 'light'),
     });
   });
@@ -36,11 +34,9 @@ describe('DotStatusColor', () => {
   it('can change size to small', () => {
     const iconSize = normalScaleMap.s;
 
-    const { getByTestId } = render(
-      <DotStatusColor testID={DOTSTATUSCOLOR_TESTID} variant="negative" size="s" />,
-    );
+    render(<DotStatusColor testID={DOTSTATUSCOLOR_TESTID} variant="negative" size="s" />);
 
-    expect(getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
+    expect(screen.getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
       width: iconSize,
       height: iconSize,
     });
@@ -50,18 +46,18 @@ describe('DotStatusColor', () => {
     const iconSize = normalScaleMap.l;
     const dotSize = 16;
 
-    const { getByTestId } = render(
+    render(
       <DotStatusColor testID={DOTSTATUSCOLOR_TESTID} pin="bottom-start" variant="negative">
         <Icon name="airdrop" size="l" />
       </DotStatusColor>,
     );
 
     // Trigger onLayout for the icon
-    fireEvent(getByTestId(`${DOTSTATUSCOLOR_TESTID}-children`), 'layout', {
+    fireEvent(screen.getByTestId(`${DOTSTATUSCOLOR_TESTID}-children`), 'layout', {
       nativeEvent: { layout: { height: iconSize, width: iconSize } },
     });
 
-    expect(getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
+    expect(screen.getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
       position: 'absolute',
       transform: [
         {

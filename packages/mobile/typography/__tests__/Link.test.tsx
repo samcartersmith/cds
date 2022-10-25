@@ -1,5 +1,5 @@
 import TestRenderer from 'react-test-renderer';
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { Link } from '../Link';
 
@@ -8,23 +8,23 @@ const URL = 'www.coinbase.com';
 
 describe('Link', () => {
   it('renders a children text', () => {
-    const result = render(
+    render(
       <Link variant="body" to="/">
         Child
       </Link>,
     );
 
-    expect(result.queryByText('Child')).not.toBeNull();
+    expect(screen.getByText('Child')).not.toBeNull();
   });
 
   it('renders a link', () => {
-    const result = render(
+    render(
       <Link to="/" testID={TEST_ID}>
         Child
       </Link>,
     );
 
-    expect(result.queryByTestId(TEST_ID)).toBeTruthy();
+    expect(screen.getByTestId(TEST_ID)).toBeTruthy();
   });
 
   it('variant prop works properly', () => {
@@ -53,13 +53,13 @@ describe('Link', () => {
 
   it('fires `onPress` when pressed', () => {
     const spy = jest.fn();
-    const result = render(
+    render(
       <Link to="/" onPress={spy} testID={TEST_ID}>
         Child
       </Link>,
     );
 
-    fireEvent.press(result.getByTestId(TEST_ID));
+    fireEvent.press(screen.getByTestId(TEST_ID));
 
     expect(spy).toHaveBeenCalled();
   });
@@ -95,21 +95,21 @@ describe('Link', () => {
   });
 
   it('removes text style when inherited', () => {
-    const { getByTestId } = render(
+    render(
       <Link variant="inherit" to={URL} testID={TEST_ID}>
         Child
       </Link>,
     );
     // specifically test text style, check line 124 in createText.tsx
-    expect(getByTestId(TEST_ID).props.style[2]).toBe(false);
+    expect(screen.getByTestId(TEST_ID).props.style[2]).toBe(false);
   });
 
   it('inherits by default', () => {
-    const { getByTestId } = render(
+    render(
       <Link to={URL} testID={TEST_ID}>
         Child
       </Link>,
     );
-    expect(getByTestId(TEST_ID).props.style[2]).toBe(false);
+    expect(screen.getByTestId(TEST_ID).props.style[2]).toBe(false);
   });
 });

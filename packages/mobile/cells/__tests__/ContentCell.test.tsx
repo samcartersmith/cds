@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native';
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { CellMedia } from '../CellMedia';
 import { ContentCell } from '../ContentCell';
@@ -18,7 +18,7 @@ describe('ContentCell', () => {
   });
 
   it('renders a title', () => {
-    const result = render(
+    render(
       <ContentCell
         title={
           <View testID="title">
@@ -28,11 +28,11 @@ describe('ContentCell', () => {
       />,
     );
 
-    expect(result.queryByTestId('title')).not.toBeNull();
+    expect(screen.getByTestId('title')).not.toBeNull();
   });
 
   it('renders a subtitle', () => {
-    const result = render(
+    render(
       <ContentCell
         subtitle={
           <View testID="subtitle">
@@ -42,11 +42,11 @@ describe('ContentCell', () => {
       />,
     );
 
-    expect(result.queryByTestId('subtitle')).not.toBeNull();
+    expect(screen.getByTestId('subtitle')).not.toBeNull();
   });
 
   it('renders a description', () => {
-    const result = render(
+    render(
       <ContentCell
         description={
           <View testID="description">
@@ -56,11 +56,11 @@ describe('ContentCell', () => {
       />,
     );
 
-    expect(result.queryByTestId('description')).not.toBeNull();
+    expect(screen.getByTestId('description')).not.toBeNull();
   });
 
   it('renders meta', () => {
-    const result = render(
+    render(
       <ContentCell
         title="Title"
         meta={
@@ -71,26 +71,24 @@ describe('ContentCell', () => {
       />,
     );
 
-    expect(result.queryByTestId('meta')).not.toBeNull();
+    expect(screen.getByTestId('meta')).not.toBeNull();
   });
 
   it('renders media', () => {
-    const result = render(
-      <ContentCell media={<CellMedia type="icon" name="add" testID="media" />} />,
-    );
+    render(<ContentCell media={<CellMedia type="icon" name="add" testID="media" />} />);
 
-    expect(result.queryByTestId('media')).not.toBeNull();
+    expect(screen.getByTestId('media')).not.toBeNull();
   });
 
   it('renders an accessory', () => {
-    const result = render(<ContentCell accessory="arrow" />);
+    render(<ContentCell accessory="arrow" />);
 
-    expect(result.queryByTestId('accessory')).not.toBeNull();
+    expect(screen.getByTestId('accessory')).not.toBeNull();
   });
 
   it('renders empty strings without crashing', () => {
-    const result = render(<ContentCell title="" subtitle="" description="" meta="" />);
+    render(<ContentCell title="" subtitle="" description="" meta="" />);
 
-    expect(result).not.toBeNull();
+    expect(screen.container).not.toBeNull();
   });
 });

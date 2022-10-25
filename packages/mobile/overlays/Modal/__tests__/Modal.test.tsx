@@ -1,6 +1,6 @@
 import React from 'react';
 import { Animated, Modal as RNModal } from 'react-native';
-import { cleanup, fireEvent, render, waitFor } from '@testing-library/react-native';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import {
   CreateLoremIpsumProps,
   loremIpsum,
@@ -34,27 +34,27 @@ describe('Modal', () => {
   afterEach(cleanup);
 
   it('renders React Native Modal', () => {
-    const result = render(<MockModal />);
+    render(<MockModal />);
 
-    expect(result.UNSAFE_queryAllByType(RNModal)).toHaveLength(1);
+    expect(screen.UNSAFE_queryAllByType(RNModal)).toHaveLength(1);
   });
 
   it('show modal on press', () => {
-    const result = render(<MockModal />);
+    render(<MockModal />);
 
-    expect(result.UNSAFE_queryByProps({ visible: false })).toBeTruthy();
+    expect(screen.UNSAFE_queryByProps({ visible: false })).toBeTruthy();
 
-    fireEvent.press(result.getByText('Open Modal'));
+    fireEvent.press(screen.getByText('Open Modal'));
 
-    expect(result.UNSAFE_queryByProps({ visible: true })).toBeTruthy();
+    expect(screen.UNSAFE_queryByProps({ visible: true })).toBeTruthy();
   });
 
   it('triggers close on close button press', async () => {
     const onRequestClose = jest.fn();
-    const result = render(<MockModal onRequestClose={onRequestClose} />);
+    render(<MockModal onRequestClose={onRequestClose} />);
 
-    fireEvent.press(result.getByText('Open Modal'));
-    fireEvent.press(result.getByTestId('modal-close-button'));
+    fireEvent.press(screen.getByText('Open Modal'));
+    fireEvent.press(screen.getByTestId('modal-close-button'));
 
     // wait for animation to finish
     await waitFor(() => expect(onRequestClose).toHaveBeenCalledTimes(1));
@@ -62,48 +62,48 @@ describe('Modal', () => {
 
   it('triggers back action on back button press', async () => {
     const onBackButtonPress = jest.fn();
-    const { getByText, getByTestId } = render(<MockModal onBackButtonPress={onBackButtonPress} />);
+    render(<MockModal onBackButtonPress={onBackButtonPress} />);
 
-    fireEvent.press(getByText('Open Modal'));
-    fireEvent.press(getByTestId('modal-back-button'));
+    fireEvent.press(screen.getByText('Open Modal'));
+    fireEvent.press(screen.getByTestId('modal-back-button'));
 
     expect(onBackButtonPress).toHaveBeenCalledTimes(1);
   });
 
   it('renders modal title', async () => {
     const title = 'Modal Title';
-    const { getByText } = render(<MockModal title={title} />);
+    render(<MockModal title={title} />);
 
-    fireEvent.press(getByText('Open Modal'));
+    fireEvent.press(screen.getByText('Open Modal'));
 
-    await waitFor(() => getByText(title));
-    expect(getByText(title)).toBeTruthy();
+    await screen.findByText(title);
+    expect(screen.getByText(title)).toBeTruthy();
   });
 
   it('renders modal body', async () => {
-    const { getByText } = render(<MockModal />);
+    render(<MockModal />);
 
-    fireEvent.press(getByText('Open Modal'));
+    fireEvent.press(screen.getByText('Open Modal'));
 
-    await waitFor(() => getByText(loremIpsum));
-    expect(getByText(loremIpsum)).toBeTruthy();
+    await screen.findByText(loremIpsum);
+    expect(screen.getByText(loremIpsum)).toBeTruthy();
   });
 
   it('renders modal body without dividers', async () => {
-    const { getByText } = render(<MockModal hideDividers />);
+    render(<MockModal hideDividers />);
 
-    fireEvent.press(getByText('Open Modal'));
+    fireEvent.press(screen.getByText('Open Modal'));
 
-    await waitFor(() => getByText(loremIpsum));
-    expect(getByText(loremIpsum)).toBeTruthy();
+    await screen.findByText(loremIpsum);
+    expect(screen.getByText(loremIpsum)).toBeTruthy();
   });
 
   it('renders modal footer', () => {
-    const { getByText, getByTestId } = render(<MockModal />);
+    render(<MockModal />);
 
-    fireEvent.press(getByText('Open Modal'));
+    fireEvent.press(screen.getByText('Open Modal'));
 
-    expect(getByTestId('modal-footer')).toBeTruthy();
+    expect(screen.getByTestId('modal-footer')).toBeTruthy();
   });
 
   it('triggers close animation on footer action press', () => {
@@ -111,10 +111,10 @@ describe('Modal', () => {
     const animationParallelSpy = jest.spyOn(Animated, 'parallel');
     const animationTimingSpy = jest.spyOn(Animated, 'timing');
 
-    const { getByTestId } = render(<MockModal visible onRequestClose={onRequestClose} />);
+    render(<MockModal visible onRequestClose={onRequestClose} />);
 
     // press on footer action
-    fireEvent.press(getByTestId('modal-footer-save'));
+    fireEvent.press(screen.getByTestId('modal-footer-save'));
 
     expect(animationParallelSpy).toHaveBeenCalled();
     expect(animationTimingSpy).toHaveBeenCalled();

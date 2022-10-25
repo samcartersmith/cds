@@ -21,17 +21,15 @@ const getPaletteColors = (colorFilters: ColorFiltersProp = []) => {
 };
 
 describe('useLottieColorFilters', () => {
-  let result: ColorFiltersProp = [];
-
-  beforeEach(() => {
-    result = renderHook(() => useLottieColorFilters(globalTradeButton)).result.current;
-  });
-
   it('ensures the color values are mapped to hex version of palette colors', () => {
+    const result = renderHook(() => useLottieColorFilters(globalTradeButton)).result.current;
+
     expect(getPaletteColors(result)).toContain(colorToHex(mockPalette.primaryForeground));
   });
 
   it('ensures the palette aliases are mapped to palette names', () => {
+    const result = renderHook(() => useLottieColorFilters(globalTradeButton)).result.current;
+
     expect(getPaletteAliases(result)).toContain('palette_primaryForeground');
   });
 });

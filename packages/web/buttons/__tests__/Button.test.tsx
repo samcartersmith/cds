@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Button } from '../Button';
@@ -9,46 +9,46 @@ describe('Button', () => {
   });
 
   it('renders a button with a type', () => {
-    const { container } = render(<Button>Child</Button>);
-    const button = container.querySelector('button');
+    render(<Button>Child</Button>);
+    const button = screen.getByRole('button');
 
     expect(button).toBeDefined();
     expect(button).toHaveAttribute('type', 'button');
   });
 
   it('renders a link with a href', () => {
-    const { container } = render(<Button to="/">Child</Button>);
-    const button = container.querySelector('a');
+    render(<Button to="/">Child</Button>);
+    const button = screen.getByRole('link');
 
     expect(button).toBeDefined();
     expect(button).toHaveAttribute('href', '/');
   });
 
   it('can mark as disabled', () => {
-    const { container } = render(<Button disabled>Child</Button>);
+    render(<Button disabled>Child</Button>);
 
-    expect(container.querySelector('button')).toHaveAttribute('disabled');
+    expect(screen.getByRole('button')).toHaveAttribute('disabled');
   });
 
   it('can change type', () => {
-    const { container } = render(<Button type="submit">Child</Button>);
+    render(<Button type="submit">Child</Button>);
 
-    expect(container.querySelector('button')).toHaveAttribute('type', 'submit');
+    expect(screen.getByRole('button')).toHaveAttribute('type', 'submit');
   });
 
   it('fires `onPress` when clicked', () => {
     const spy = jest.fn();
-    const { container } = render(<Button onPress={spy}>Child</Button>);
+    render(<Button onPress={spy}>Child</Button>);
 
-    fireEvent.click(container.querySelector('button') as Element);
+    fireEvent.click(screen.getByRole('button'));
 
     expect(spy).toHaveBeenCalled();
   });
 
   it('doesnt pass `onPress` to button element', () => {
     const spy = jest.fn();
-    const { container } = render(<Button onPress={spy}>Child</Button>);
+    render(<Button onPress={spy}>Child</Button>);
 
-    expect(container.querySelector('button')).not.toHaveAttribute('onPress');
+    expect(screen.getByRole('button')).not.toHaveAttribute('onPress');
   });
 });

@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Group } from '../Group';
@@ -9,7 +9,7 @@ describe('Group', () => {
   });
 
   it('defaults to role=group', () => {
-    const { queryByRole } = render(<Group>Child</Group>);
-    expect(queryByRole('group')).not.toBeNull();
+    render(<Group>Child</Group>);
+    expect(screen.getByRole('group')).not.toBeNull();
   });
 });

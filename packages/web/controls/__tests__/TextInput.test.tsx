@@ -1,6 +1,6 @@
 // Disabling this because its just testing
 /* eslint-disable react-perf/jsx-no-new-object-as-prop */
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { TextTitle1 } from '../../typography';
 import { TextInput } from '../TextInput';
@@ -8,19 +8,19 @@ import { TextInput } from '../TextInput';
 describe('TextInput', () => {
   it('renders a TextInput', () => {
     const testID = 'textinput-id';
-    const result = render(
+    render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
         testID={testID}
       />,
     );
-    expect(result.getByTestId(testID)).toBeDefined();
+    expect(screen.getByTestId(testID)).toBeDefined();
   });
 
   it('renders a Label', () => {
     const testID = 'label-id';
-    const result = render(
+    render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
@@ -30,12 +30,12 @@ describe('TextInput', () => {
         }}
       />,
     );
-    expect(result.getByTestId(testID)).toBeDefined();
+    expect(screen.getByTestId(testID)).toBeDefined();
   });
 
   it('renders a HelperText', () => {
     const testID = 'helpertext-id';
-    const result = render(
+    render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
@@ -45,14 +45,14 @@ describe('TextInput', () => {
         }}
       />,
     );
-    expect(result.getByTestId(testID)).toBeDefined();
+    expect(screen.getByTestId(testID)).toBeDefined();
   });
 
   it('renders an Input', () => {
     const testID = 'input-id';
     const value = 'input';
 
-    const result = render(
+    render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
@@ -61,13 +61,13 @@ describe('TextInput', () => {
         onChange={jest.fn()}
       />,
     );
-    const input = result.getByTestId(testID) as HTMLInputElement;
-    expect(input.value).toBe(value);
+    const input = screen.getByTestId(testID);
+    expect(input.getAttribute('value')).toBe(value);
   });
 
   it('renders a start node', () => {
     const testID = 'start-id';
-    const result = render(
+    render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
@@ -77,12 +77,12 @@ describe('TextInput', () => {
         start={<TextTitle1 as="h1">Hello</TextTitle1>}
       />,
     );
-    expect(result.getByTestId(testID)).toBeDefined();
+    expect(screen.getByTestId(testID)).toBeDefined();
   });
 
   it('renders an end node', () => {
     const testID = 'end-id';
-    const result = render(
+    render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
@@ -92,40 +92,36 @@ describe('TextInput', () => {
         end={<TextTitle1 as="h1">Hello</TextTitle1>}
       />,
     );
-    expect(result.getByTestId(testID)).toBeDefined();
+    expect(screen.getByTestId(testID)).toBeDefined();
   });
 
   it('Generates accessible id for screen reader to read label if label exists', () => {
-    const result = render(
-      <TextInput label="textinput" inputNode={<input data-testid="internal-input" />} />,
-    );
+    render(<TextInput label="textinput" inputNode={<input data-testid="internal-input" />} />);
 
-    expect(result.getByTestId('internal-input')).toHaveAttribute(
+    expect(screen.getByTestId('internal-input')).toHaveAttribute(
       'id',
       expect.stringMatching(/cds-textinput-label-.*/),
     );
   });
 
   it('id is undefined if label does not exist', () => {
-    const result = render(<TextInput inputNode={<input data-testid="internal-input" />} />);
+    render(<TextInput inputNode={<input data-testid="internal-input" />} />);
 
-    expect(result.getByTestId('internal-input')).not.toHaveAttribute('id');
+    expect(screen.getByTestId('internal-input')).not.toHaveAttribute('id');
   });
 
   it('Generates accessibleHint mapping if helperText exists', () => {
-    const result = render(
-      <TextInput testID="textinput-testid" label="textinput" helperText="success" />,
-    );
+    render(<TextInput testID="textinput-testid" label="textinput" helperText="success" />);
 
-    expect(result.getByTestId('textinput-testid')).toHaveAttribute(
+    expect(screen.getByTestId('textinput-testid')).toHaveAttribute(
       'aria-describedby',
       expect.stringMatching(/cds-textinput-description-.*/),
     );
   });
 
   it('accessibilityHint is undefined if label does not exist', () => {
-    const result = render(<TextInput testID="textinput-testid" label="textinput" />);
+    render(<TextInput testID="textinput-testid" label="textinput" />);
 
-    expect(result.getByTestId('textinput-testid')).not.toHaveAttribute('aria-describedby');
+    expect(screen.getByTestId('textinput-testid')).not.toHaveAttribute('aria-describedby');
   });
 });

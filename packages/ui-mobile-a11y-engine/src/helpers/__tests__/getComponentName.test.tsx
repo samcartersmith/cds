@@ -1,3 +1,8 @@
+// findByProps lint errors are false positives due to Aggressive Reporting for the linter. This is a valid, non-promise function on https://reactjs.org/docs/test-renderer.html#testinstancefindbyprops
+// however, the 'findBy*' linter from testing-library thinks this is a promise query. We should keep the aggressive reporting enabled, and just
+// disable the few functions that are 'false positives'.
+// - Emily Seibert, 10/24/2022
+/* eslint-disable testing-library/await-async-query */
 import { FunctionComponent, PropsWithChildren } from 'react';
 import {
   FlatList,

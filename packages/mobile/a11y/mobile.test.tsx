@@ -2,7 +2,7 @@
 import React from 'react';
 import { NativeModules } from 'react-native'; // !this module
 import TestRenderer from 'react-test-renderer';
-import { render, waitFor } from '@testing-library/react-native';
+import { render, screen, waitFor } from '@testing-library/react-native';
 import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
 import { entries } from '@cbhq/cds-utils';
 
@@ -95,7 +95,7 @@ describe('Mobile Accessibility Test Suite', () => {
   // out as a single component to ensure it still meets accessibility
   it('RemoteImage accessibility test', () => {
     const TEST_ID = 'remoteimage-test-id';
-    const result = render(
+    render(
       <RemoteImage
         testID={TEST_ID}
         shape="circle"
@@ -105,7 +105,7 @@ describe('Mobile Accessibility Test Suite', () => {
       />,
     );
 
-    expect(result.getByTestId(TEST_ID)).toBeAccessible();
+    expect(screen.getByTestId(TEST_ID)).toBeAccessible();
   });
 });
 

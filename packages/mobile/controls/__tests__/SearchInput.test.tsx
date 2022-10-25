@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { SearchInput } from '../SearchInput';
 
@@ -29,25 +29,25 @@ describe('Search', () => {
   });
 
   it('renders a search', () => {
-    const result = render(SearchComponent);
+    render(SearchComponent);
 
-    expect(result.getByRole(ROLE)).toBeDefined();
+    expect(screen.getByRole(ROLE)).toBeDefined();
   });
 
   it('able to set a default value', () => {
-    const result = render(SearchComponent);
+    render(SearchComponent);
 
-    expect(result.getByRole('search').props.value).toBe('value');
+    expect(screen.getByRole('search').props.value).toBe('value');
   });
 
   it('renders a backArrow icon button at the start node', () => {
-    const result = render(SearchComponent);
+    render(SearchComponent);
 
-    expect(result.getByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeDefined();
+    expect(screen.getByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeDefined();
   });
 
   it('does not render a startIcon when hideStartIcon=true', () => {
-    const result = render(
+    render(
       <SearchInput
         onChangeText={onChangeTextSpy}
         value="value"
@@ -57,27 +57,27 @@ describe('Search', () => {
       />,
     );
 
-    expect(result.queryByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeNull();
+    expect(screen.queryByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeNull();
   });
 
   it('renders a close icon button at the end node', () => {
-    const result = render(SearchComponent);
+    render(SearchComponent);
 
-    expect(result.getByTestId(`${TEST_ID}-close-iconbtn`)).toBeDefined();
+    expect(screen.getByTestId(`${TEST_ID}-close-iconbtn`)).toBeDefined();
   });
 
   it('fires `onSearch` when search btn is pressed', () => {
-    const result = render(SearchComponent);
+    render(SearchComponent);
 
-    fireEvent.press(result.getByTestId(`${TEST_ID}-searchinput-iconbtn`));
+    fireEvent.press(screen.getByTestId(`${TEST_ID}-searchinput-iconbtn`));
 
     expect(onSearchSpy).toHaveBeenCalled();
   });
 
   it('fires `onClear` when clear btn is pressed', () => {
-    const result = render(SearchComponent);
+    render(SearchComponent);
 
-    fireEvent.press(result.getByTestId(`${TEST_ID}-close-iconbtn`));
+    fireEvent.press(screen.getByTestId(`${TEST_ID}-close-iconbtn`));
 
     expect(onClearSpy).toHaveBeenCalled();
   });

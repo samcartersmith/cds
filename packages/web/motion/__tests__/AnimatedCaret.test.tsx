@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { withTimeTravel } from '@cbhq/cds-common/jest/timeTravel';
 
 import { Button } from '../../buttons';
@@ -23,13 +23,13 @@ const MockAnimatedCaret = () => {
 describe('AnimatedCaret', () => {
   it('rotates', () => {
     withTimeTravel((timeTravel) => {
-      const { getByTestId, getByText } = render(<MockAnimatedCaret />);
+      render(<MockAnimatedCaret />);
 
       for (let i = 0; i < rotates.length - 1; i += 1) {
-        fireEvent.click(getByText('Rotate'));
+        fireEvent.click(screen.getByText('Rotate'));
         timeTravel(500);
 
-        expect(getByTestId('mock-animated-caret-motion')).toHaveStyle({
+        expect(screen.getByTestId('mock-animated-caret-motion')).toHaveStyle({
           transform: `rotate(${rotates[i + 1]}deg) translateZ(0)`,
         });
       }

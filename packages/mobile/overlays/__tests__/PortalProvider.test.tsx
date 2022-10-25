@@ -1,14 +1,14 @@
 import { Text, View } from 'react-native';
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { PortalHost } from '../PortalProvider';
 
 describe('PortalProvider.test', () => {
   it('renders single portal node', () => {
     const mockNodes = [{ id: 'node1', element: <View testID="view1" key="node1" /> }];
-    const { getByTestId } = render(<PortalHost nodes={mockNodes} />);
+    render(<PortalHost nodes={mockNodes} />);
 
-    expect(getByTestId('view1')).toBeTruthy();
+    expect(screen.getByTestId('view1')).toBeTruthy();
   });
 
   it('renders multiple portal nodes', () => {
@@ -31,9 +31,9 @@ describe('PortalProvider.test', () => {
       },
     ];
 
-    const { getAllByText } = render(<PortalHost nodes={mockNodes} />);
+    render(<PortalHost nodes={mockNodes} />);
 
-    expect(getAllByText('Text1')).toHaveLength(1);
-    expect(getAllByText('Text2')).toBeTruthy();
+    expect(screen.getAllByText('Text1')).toHaveLength(1);
+    expect(screen.getAllByText('Text2')).toBeTruthy();
   });
 });

@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { AvatarButton, IconButton } from '../../buttons';
@@ -42,50 +42,46 @@ describe('PopoverMenu', () => {
     expect(await renderA11y(<MockPopoverMenu />)).toHaveNoViolations();
   });
   it('passes accessibility props to the trigger element', () => {
-    const { getByTestId } = render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
-    expect(getByTestId(mockTriggerTestID)).toHaveAttribute('aria-expanded', 'false');
-    expect(getByTestId(mockTriggerTestID)).toHaveAttribute('aria-controls');
-    expect(getByTestId(mockTriggerTestID)).toHaveAttribute('aria-haspopup', 'dialog');
+    expect(screen.getByTestId(mockTriggerTestID)).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.getByTestId(mockTriggerTestID)).toHaveAttribute('aria-controls');
+    expect(screen.getByTestId(mockTriggerTestID)).toHaveAttribute('aria-haspopup', 'dialog');
   });
   it('when the menu is opened it updates the aria props on the trigger', async () => {
-    const { getByTestId } = render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
     // open the menu
-    fireEvent.click(getByTestId(mockTriggerTestID));
+    fireEvent.click(screen.getByTestId(mockTriggerTestID));
 
-    const trigger = await waitFor(() => getByTestId(mockTriggerTestID));
+    const trigger = await screen.findByTestId(mockTriggerTestID);
     expect(trigger).toHaveAttribute('aria-expanded', 'true');
   });
   it('passes accessibility props to the menu', async () => {
-    const { getByRole, getByTestId } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
     // open the menu
-    fireEvent.click(getByTestId(mockTriggerTestID));
+    fireEvent.click(screen.getByTestId(mockTriggerTestID));
 
-    const menu = await waitFor(() => getByRole('menu'));
+    const menu = await screen.findByRole('menu');
     expect(menu).toHaveAttribute('id');
   });
   it('renders the Trigger', () => {
-    const { getByTestId } = render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
-    expect(getByTestId(mockTriggerTestID)).toBeDefined();
+    expect(screen.getByTestId(mockTriggerTestID)).toBeDefined();
   });
   it('opens the PopoverMenu when the Trigger is pressed', async () => {
-    const { getByText, getByTestId } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} testID={mockPopoverMenuTestID} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} testID={mockPopoverMenuTestID} />);
 
     // press the trigger
-    fireEvent.click(getByTestId(mockTriggerTestID));
+    fireEvent.click(screen.getByTestId(mockTriggerTestID));
 
     // expect PopoverMenu and SelectOption to render
-    await waitFor(() => expect(getByText(priceOptions[0])).toBeDefined());
+    expect(await screen.findByText(priceOptions[0])).toBeDefined();
   });
   it('closes the PopoverMenu when an option is pressed and fires onChange', async () => {
-    const { getAllByRole, getByTestId } = render(
+    render(
       <MockPopoverMenu
         triggerTestID={mockTriggerTestID}
         testID={mockPopoverMenuTestID}
@@ -94,10 +90,10 @@ describe('PopoverMenu', () => {
     );
 
     // press the trigger
-    fireEvent.click(getByTestId(mockTriggerTestID));
+    fireEvent.click(screen.getByTestId(mockTriggerTestID));
 
     // expect PopoverMenu and SelectOption to render
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
 
     // select the first option
     fireEvent.click(firstOption);
@@ -107,74 +103,64 @@ describe('PopoverMenu', () => {
   });
   // keyboard interactions to open the menu
   it('opens the menu when the trigger is focused and user types Enter', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: 'Enter',
       code: 'Enter',
     });
 
-    const menuItems = await waitFor(() => getAllByRole('menuitem')[0]);
+    const menuItems = await waitFor(() => screen.getAllByRole('menuitem')[0]);
     // expect the menu to open
     expect(menuItems).toBeDefined();
   });
   it('opens the menu when the trigger is focused and user types Space', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: ' ',
       code: 'Space',
     });
 
-    const menuItems = await waitFor(() => getAllByRole('menuitem')[0]);
+    const menuItems = await waitFor(() => screen.getAllByRole('menuitem')[0]);
     // expect the menu to open
     expect(menuItems).toBeDefined();
   });
   it('opens the menu when the trigger is focused and user types ArrowUp', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: 'ArrowUp',
       code: 'ArrowUp',
     });
 
-    const menuItems = await waitFor(() => getAllByRole('menuitem')[0]);
+    const menuItems = await waitFor(() => screen.getAllByRole('menuitem')[0]);
     // expect the menu to open
     expect(menuItems).toBeDefined();
   });
   it('opens the menu when the trigger is focused and user types ArrowDown', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: 'ArrowDown',
       code: 'ArrowDown',
     });
 
-    const menuItems = await waitFor(() => getAllByRole('menuitem')[0]);
+    const menuItems = await waitFor(() => screen.getAllByRole('menuitem')[0]);
     // expect the menu to open
     expect(menuItems).toBeDefined();
   });
   // menu item interactions
   it('focuses on the next menu item when ArrowDown is typed', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: 'Enter',
       code: 'Enter',
     });
 
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
-    const secondOption = getAllByRole('menuitem')[1];
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
+    const secondOption = screen.getAllByRole('menuitem')[1];
 
     fireEvent.keyDown(firstOption, {
       key: 'ArrowDown',
@@ -185,17 +171,15 @@ describe('PopoverMenu', () => {
     expect(secondOption).toHaveFocus();
   });
   it('focuses on the previous menu item when ArrowUp is typed', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: 'Enter',
       code: 'Enter',
     });
 
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
-    const secondOption = getAllByRole('menuitem')[1];
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
+    const secondOption = screen.getAllByRole('menuitem')[1];
 
     fireEvent.keyDown(firstOption, {
       key: 'ArrowDown',
@@ -211,17 +195,15 @@ describe('PopoverMenu', () => {
     expect(firstOption).toHaveFocus();
   });
   it('focuses on the first menu item when Home is typed', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: 'Enter',
       code: 'Enter',
     });
 
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
-    const secondOption = getAllByRole('menuitem')[1];
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
+    const secondOption = screen.getAllByRole('menuitem')[1];
 
     fireEvent.keyDown(firstOption, {
       key: 'ArrowDown',
@@ -237,18 +219,16 @@ describe('PopoverMenu', () => {
     expect(firstOption).toHaveFocus();
   });
   it('focuses on the last menu item when End is typed', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: 'Enter',
       code: 'Enter',
     });
 
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
-    const secondOption = getAllByRole('menuitem')[1];
-    const lastOption = getAllByRole('menuitem')[getAllByRole('menuitem').length - 1];
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
+    const secondOption = screen.getAllByRole('menuitem')[1];
+    const lastOption = screen.getAllByRole('menuitem')[screen.getAllByRole('menuitem').length - 1];
 
     fireEvent.keyDown(firstOption, {
       key: 'ArrowDown',
@@ -265,34 +245,30 @@ describe('PopoverMenu', () => {
 
   // initial focus
   it('focuses on the first option when the menu is opened by a keyboard interaction', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
     // open the menu
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: 'Enter',
       code: 'Enter',
     });
 
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
 
     // expect first option to be focused
     expect(firstOption).toHaveFocus();
   });
   // escape to close
   it('closes the menu when a menu item is focused and the user types Escape', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />);
 
     // open the menu
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: 'Enter',
       code: 'Enter',
     });
 
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
     expect(firstOption).toBeInTheDocument();
 
     // type escape
@@ -306,17 +282,15 @@ describe('PopoverMenu', () => {
   });
 
   it('when the first option is focused and ArrowUp is typed it focuses on the last option', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />);
 
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: 'Enter',
       code: 'Enter',
     });
 
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
-    const lastOption = getAllByRole('menuitem')[getAllByRole('menuitem').length - 1];
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
+    const lastOption = screen.getAllByRole('menuitem')[screen.getAllByRole('menuitem').length - 1];
 
     fireEvent.keyDown(firstOption, {
       key: 'ArrowUp',
@@ -326,17 +300,15 @@ describe('PopoverMenu', () => {
     expect(lastOption).toHaveFocus();
   });
   it('when the last option is focused and ArrowDown is typed it focuses on the first option', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />,
-    );
+    render(<MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />);
 
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: 'Enter',
       code: 'Enter',
     });
 
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
-    const lastOption = getAllByRole('menuitem')[getAllByRole('menuitem').length - 1];
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
+    const lastOption = screen.getAllByRole('menuitem')[screen.getAllByRole('menuitem').length - 1];
 
     fireEvent.keyDown(firstOption, {
       key: 'End',
@@ -354,38 +326,34 @@ describe('PopoverMenu', () => {
 
 describe('PopoverMenu trigger is injected with props when top level node is not the trigger (requires use of PopoverTriggerWrapper and PopoverTrigger)', () => {
   it('renders', () => {
-    const { getByTestId } = render(<AvatarButtonMenu triggerTestID={mockTriggerTestID} />);
+    render(<AvatarButtonMenu triggerTestID={mockTriggerTestID} />);
 
-    expect(getByTestId(mockTriggerTestID)).toBeDefined();
+    expect(screen.getByTestId(mockTriggerTestID)).toBeDefined();
   });
   it('receives props from PopoverMenu', () => {
-    const { getByTestId } = render(<AvatarButtonMenu triggerTestID={mockTriggerTestID} />);
+    render(<AvatarButtonMenu triggerTestID={mockTriggerTestID} />);
 
-    expect(getByTestId(mockTriggerTestID)).toHaveAttribute('aria-expanded', 'false');
-    expect(getByTestId(mockTriggerTestID)).toHaveAttribute('aria-controls');
-    expect(getByTestId(mockTriggerTestID)).toHaveAttribute('aria-haspopup', 'dialog');
+    expect(screen.getByTestId(mockTriggerTestID)).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.getByTestId(mockTriggerTestID)).toHaveAttribute('aria-controls');
+    expect(screen.getByTestId(mockTriggerTestID)).toHaveAttribute('aria-haspopup', 'dialog');
   });
   it('opens the PopoverMenu when the trigger is pressed', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <AvatarButtonMenu triggerTestID={mockTriggerTestID} />,
-    );
+    render(<AvatarButtonMenu triggerTestID={mockTriggerTestID} />);
 
-    fireEvent.click(getByTestId(mockTriggerTestID));
+    fireEvent.click(screen.getByTestId(mockTriggerTestID));
 
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
     expect(firstOption).toBeDefined();
   });
   it('opens the PopoverMenu when an enter key is pressed when the trigger is focused', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <AvatarButtonMenu triggerTestID={mockTriggerTestID} />,
-    );
+    render(<AvatarButtonMenu triggerTestID={mockTriggerTestID} />);
 
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+    fireEvent.keyDown(screen.getByTestId(mockTriggerTestID), {
       key: 'Enter',
       code: 'Enter',
     });
 
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
     expect(firstOption).toBeDefined();
   });
 });

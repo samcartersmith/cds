@@ -1,7 +1,7 @@
 /* eslint-disable react-native-a11y/has-accessibility-hint */
 
 import { Animated, Pressable } from 'react-native';
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { debounce } from '../../utils/debounce';
 import { IconButton } from '../IconButton';
@@ -12,23 +12,23 @@ const name = 'allTimeHigh';
 
 describe('IconButton', () => {
   it('renders an animated view', () => {
-    const result = render(<IconButton name={name} accessibilityLabel={name} />);
+    render(<IconButton name={name} accessibilityLabel={name} />);
 
-    expect(result.UNSAFE_queryAllByType(Animated.View)).toHaveLength(1);
+    expect(screen.UNSAFE_queryAllByType(Animated.View)).toHaveLength(1);
   });
 
   it('renders a pressable', () => {
-    const result = render(<IconButton name={name} accessibilityLabel={name} />);
+    render(<IconButton name={name} accessibilityLabel={name} />);
 
-    expect(result.UNSAFE_queryAllByType(Pressable)).toHaveLength(1);
+    expect(screen.UNSAFE_queryAllByType(Pressable)).toHaveLength(1);
   });
 
   it('fires `onPress` when pressed', () => {
     const spy = jest.fn();
     (debounce as jest.Mock).mockImplementation(() => spy);
-    const result = render(<IconButton onPress={spy} name={name} accessibilityLabel={name} />);
+    render(<IconButton onPress={spy} name={name} accessibilityLabel={name} />);
 
-    fireEvent.press(result.getByLabelText(name));
+    fireEvent.press(screen.getByLabelText(name));
 
     expect(spy).toHaveBeenCalled();
   });

@@ -1,4 +1,4 @@
-import { render, waitFor } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { CircularProgress } from '../CircularProgress';
@@ -33,7 +33,7 @@ describe('CircularProgress', () => {
   });
 
   it('should render with a svg element', async () => {
-    const { findByTestId } = render(
+    render(
       <CircularProgress
         strokeWidth={testVals.strokeWidth}
         radius={testVals.radius}
@@ -42,12 +42,12 @@ describe('CircularProgress', () => {
       />,
     );
 
-    const circularProgressNode = await findByTestId('circular-progress-svg');
+    const circularProgressNode = await screen.findByTestId('circular-progress-svg');
     expect(circularProgressNode).toBeTruthy();
   });
 
   it('radius and strokeWidths props are correctly assigned', async () => {
-    const { getByTestId } = render(
+    render(
       <CircularProgress
         strokeWidth={testVals.strokeWidth}
         radius={testVals.radius}
@@ -56,19 +56,15 @@ describe('CircularProgress', () => {
       />,
     );
 
-    await waitFor(() => getByTestId('circular-progress-svg'));
-    expect(getByTestId('circular-progress-svg').lastChild).toHaveAttribute(
-      'stroke-width',
-      testVals.strokeWidth.toString(),
-    );
-    expect(getByTestId('circular-progress-svg').lastChild).toHaveAttribute(
-      'r',
-      normalizeRadius(testVals.radius, testVals.strokeWidth),
-    );
+    const component = await screen.findByTestId('circular-progress-svg');
+    const circleSvg = within(component).getByTestId('circular-progress-svg-circle');
+
+    expect(circleSvg).toHaveAttribute('stroke-width', testVals.strokeWidth.toString());
+    expect(circleSvg).toHaveAttribute('r', normalizeRadius(testVals.radius, testVals.strokeWidth));
   });
 
   it('calling render with the same component on the same container does not remount', async () => {
-    const { getByTestId, rerender } = render(
+    const { rerender } = render(
       <CircularProgress
         strokeWidth={testVals.strokeWidth}
         radius={testVals.radius}
@@ -77,7 +73,7 @@ describe('CircularProgress', () => {
       />,
     );
 
-    await waitFor(() => getByTestId('circular-progress-svg'));
+    await screen.findByTestId('circular-progress-svg');
 
     rerender(
       <CircularProgress
@@ -88,11 +84,11 @@ describe('CircularProgress', () => {
       />,
     );
 
-    expect(getByTestId('circular-progress-svg').lastChild).toHaveAttribute(
-      'stroke-width',
-      newTestVals.strokeWidth.toString(),
-    );
-    expect(getByTestId('circular-progress-svg').lastChild).toHaveAttribute(
+    const component = await screen.findByTestId('circular-progress-svg');
+    const circleSvg = within(component).getByTestId('circular-progress-svg-circle');
+
+    expect(circleSvg).toHaveAttribute('stroke-width', newTestVals.strokeWidth.toString());
+    expect(circleSvg).toHaveAttribute(
       'r',
       normalizeRadius(newTestVals.radius, newTestVals.strokeWidth),
     );

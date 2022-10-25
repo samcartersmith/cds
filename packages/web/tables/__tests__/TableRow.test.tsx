@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { TableBody } from '../TableBody';
@@ -19,7 +19,7 @@ describe('TableRow', () => {
   });
 
   it('spreads data props', async () => {
-    const { findByTestId } = render(
+    render(
       <TableBody>
         <TableRow data-row="my-first-row" testID="first-row">
           {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
@@ -31,8 +31,8 @@ describe('TableRow', () => {
         </TableRow>
       </TableBody>,
     );
-    const firstChild = await findByTestId('first-row');
-    const secondChild = await findByTestId('second-row');
+    const firstChild = await screen.findByTestId('first-row');
+    const secondChild = await screen.findByTestId('second-row');
 
     expect(firstChild).toHaveAttribute('data-row', 'my-first-row');
     expect(secondChild).toHaveAttribute('data-row', 'my-second-row');

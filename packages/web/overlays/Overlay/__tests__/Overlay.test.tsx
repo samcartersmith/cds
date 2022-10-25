@@ -1,20 +1,22 @@
-import { render, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 
 import { Overlay } from '../Overlay';
 
 describe('Overlay', () => {
   it('renders static overlay', () => {
-    const { getByTestId } = render(<Overlay testID="overlay-content" />);
+    render(<Overlay testID="overlay-content" />);
 
-    expect(getByTestId('overlay-content')).toBeVisible();
+    expect(screen.getByTestId('overlay-content')).toBeVisible();
   });
 
   it('renders animated overlay', async () => {
-    const { getByTestId } = render(<Overlay testID="overlay-content" animated />);
+    render(<Overlay testID="overlay-content" animated />);
 
     await waitFor(() => {
-      expect(getByTestId('overlay-content-motion')).toHaveStyle({ opacity: 1 });
-      expect(getByTestId('overlay-content')).toBeVisible();
+      expect(screen.getByTestId('overlay-content-motion')).toHaveStyle({ opacity: 1 });
+    });
+    await waitFor(() => {
+      expect(screen.getByTestId('overlay-content')).toBeVisible();
     });
   });
 });

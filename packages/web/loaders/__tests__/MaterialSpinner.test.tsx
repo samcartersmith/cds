@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { usePalette } from '../../hooks/usePalette';
@@ -10,21 +10,17 @@ describe('MaterialSpinner', () => {
   });
 
   it('size and color are correctly set', async () => {
-    const { getByTestId } = render(
-      <MaterialSpinner size={60} color="primary" testID="material-spinner-svg" />,
-    );
+    render(<MaterialSpinner size={60} color="primary" testID="material-spinner-svg" />);
 
-    expect(getByTestId('material-spinner-svg')).toHaveAttribute('height', `${60}px`);
-    expect(getByTestId('material-spinner-svg')).toHaveAttribute(
+    expect(screen.getByTestId('material-spinner-svg')).toHaveAttribute('height', `${60}px`);
+    expect(screen.getByTestId('material-spinner-svg')).toHaveAttribute(
       'style',
       `stroke: ${usePalette().primary}; transform-origin: center center;`,
     );
   });
 
   it('should render with a svg element', () => {
-    const { queryByTestId } = render(
-      <MaterialSpinner size={60} color="primary" testID="material-spinner-svg" />,
-    );
-    expect(queryByTestId('material-spinner-svg')).toBeTruthy();
+    render(<MaterialSpinner size={60} color="primary" testID="material-spinner-svg" />);
+    expect(screen.getByTestId('material-spinner-svg')).toBeTruthy();
   });
 });

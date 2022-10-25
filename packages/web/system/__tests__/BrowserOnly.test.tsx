@@ -1,15 +1,15 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { BrowserOnly } from '../BrowserOnly';
 
 describe('BrowserOnly', () => {
   it('renders children in browser', () => {
-    const { getByTestId } = render(
+    render(
       <BrowserOnly>
         <div data-testid="children" />
       </BrowserOnly>,
     );
 
-    expect(getByTestId('children')).toBeTruthy();
+    expect(screen.getByTestId('children')).toBeTruthy();
   });
 });

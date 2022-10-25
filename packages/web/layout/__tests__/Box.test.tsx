@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ResponsiveProps, ResponsivePropsDevices } from '@cbhq/cds-common';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
@@ -20,13 +20,13 @@ function expectClassName<K extends keyof BoxProps>(
   values.forEach((value) => {
     // eslint-disable-next-line jest/require-top-level-describe
     it(`will set "${value}" class name for \`${prop}\` prop`, () => {
-      const { container, rerender } = render(<Box>Child</Box>);
+      const { rerender } = render(<Box>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', DEFAULT_CLASS);
+      expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(<Box {...{ [prop]: value }}>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', `${classPrefix} ${value}`.trim());
+      expect(screen.getByText('Child')).toHaveAttribute('class', `${classPrefix} ${value}`.trim());
     });
   });
 }
@@ -46,18 +46,21 @@ describe('Box', () => {
     it(`can render as a "${tag}" element using the \`as\` prop`, () => {
       const { container } = render(<Box as={tag}>Child</Box>);
 
+      // We want to check that a certain HTML element is generated, which requires DOM traversing.
+      // - Emily Seibert, 10/25/2022
+      // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
       expect(container.querySelectorAll(tag)).toHaveLength(1);
     });
   });
 
   it('can pass a `role` attribute', () => {
-    const { queryByRole } = render(
+    render(
       <Box as="main" role="main">
         Child
       </Box>,
     );
 
-    expect(queryByRole('main')).not.toBeNull();
+    expect(screen.getByRole('main')).not.toBeNull();
   });
 
   describe('background', () => {
@@ -78,49 +81,49 @@ describe('Box', () => {
 
   describe('border', () => {
     it(`will set border class name for \`bordered\` prop`, () => {
-      const { container, rerender } = render(<Box>Child</Box>);
+      const { rerender } = render(<Box>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', DEFAULT_CLASS);
+      expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(<Box bordered>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} bordered`);
+      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} bordered`);
     });
 
     it(`will set border radius class name for \`rounded\` prop`, () => {
-      const { container, rerender } = render(<Box>Child</Box>);
+      const { rerender } = render(<Box>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', DEFAULT_CLASS);
+      expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(<Box borderRadius="standard">Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} standard`);
+      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} standard`);
     });
 
     it(`will set border radius class name for \`borderRadius\` prop`, () => {
-      const { container, rerender } = render(<Box>Child</Box>);
+      const { rerender } = render(<Box>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', DEFAULT_CLASS);
+      expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(<Box borderRadius="badge">Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} badge`);
+      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} badge`);
     });
   });
 
   describe('opacity', () => {
     it('will set styles based on related props', () => {
-      const { container } = render(<Box opacity={0.4}>Child</Box>);
+      render(<Box opacity={0.4}>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('style', 'opacity: 0.4;');
+      expect(screen.getByText('Child')).toHaveAttribute('style', 'opacity: 0.4;');
     });
   });
 
   describe('width', () => {
     it('will set styles based on related props', () => {
-      const { container, rerender } = render(<Box>Child</Box>);
+      const { rerender } = render(<Box>Child</Box>);
 
-      expect(container.firstChild).not.toHaveAttribute('style');
+      expect(screen.getByText('Child')).not.toHaveAttribute('style');
 
       rerender(
         <Box width="321px" maxWidth="789rem" minWidth="66%">
@@ -128,7 +131,7 @@ describe('Box', () => {
         </Box>,
       );
 
-      expect(container.firstChild).toHaveAttribute(
+      expect(screen.getByText('Child')).toHaveAttribute(
         'style',
         'max-width: 789rem; min-width: 66%; width: 321px;',
       );
@@ -137,9 +140,9 @@ describe('Box', () => {
 
   describe('height', () => {
     it('will set styles based on related props', () => {
-      const { container, rerender } = render(<Box>Child</Box>);
+      const { rerender } = render(<Box>Child</Box>);
 
-      expect(container.firstChild).not.toHaveAttribute('style');
+      expect(screen.getByText('Child')).not.toHaveAttribute('style');
 
       rerender(
         <Box height="321px" maxHeight="789rem" minHeight="66%">
@@ -147,7 +150,7 @@ describe('Box', () => {
         </Box>,
       );
 
-      expect(container.firstChild).toHaveAttribute(
+      expect(screen.getByText('Child')).toHaveAttribute(
         'style',
         'height: 321px; max-height: 789rem; min-height: 66%;',
       );
@@ -156,9 +159,9 @@ describe('Box', () => {
 
   describe('position', () => {
     it('will set styles based on related props', () => {
-      const { container, rerender } = render(<Box>Child</Box>);
+      const { rerender } = render(<Box>Child</Box>);
 
-      expect(container.firstChild).not.toHaveAttribute('style');
+      expect(screen.getByText('Child')).not.toHaveAttribute('style');
 
       rerender(
         <Box position="absolute" top="25%" right="30px" bottom="8rem" left="1000%" zIndex={200}>
@@ -166,7 +169,7 @@ describe('Box', () => {
         </Box>,
       );
 
-      expect(container.firstChild).toHaveAttribute(
+      expect(screen.getByText('Child')).toHaveAttribute(
         'style',
         'position: absolute; bottom: 8rem; left: 1000%; right: 30px; top: 25%; z-index: 200;',
       );
@@ -175,9 +178,9 @@ describe('Box', () => {
 
   describe('flex', () => {
     it('will set styles based on related props', () => {
-      const { container, rerender } = render(<Box>Child</Box>);
+      const { rerender } = render(<Box>Child</Box>);
 
-      expect(container.firstChild).not.toHaveAttribute('style');
+      expect(screen.getByText('Child')).not.toHaveAttribute('style');
 
       rerender(
         <Box flexBasis="50%" flexGrow={2} flexShrink={3}>
@@ -185,7 +188,7 @@ describe('Box', () => {
         </Box>,
       );
 
-      expect(container.firstChild).toHaveAttribute(
+      expect(screen.getByText('Child')).toHaveAttribute(
         'style',
         'flex-basis: 50%; flex-grow: 2; flex-shrink: 3;',
       );
@@ -243,42 +246,42 @@ describe('Box', () => {
 
   describe('pin', () => {
     it('renders "top" pin', async () => {
-      const { container } = render(<Box pin="top">Child</Box>);
+      render(<Box pin="top">Child</Box>);
 
-      expect(container.firstChild).toHaveClass('top');
+      expect(screen.getByText('Child')).toHaveClass('top');
     });
 
     it('renders "bottom" pin', async () => {
-      const { container } = render(<Box pin="bottom">Child</Box>);
+      render(<Box pin="bottom">Child</Box>);
 
-      expect(container.firstChild).toHaveClass('bottom');
+      expect(screen.getByText('Child')).toHaveClass('bottom');
     });
 
     it('renders "right" pin', async () => {
-      const { container } = render(<Box pin="right">Child</Box>);
+      render(<Box pin="right">Child</Box>);
 
-      expect(container.firstChild).toHaveClass('right');
+      expect(screen.getByText('Child')).toHaveClass('right');
     });
 
     it('renders "left" pin', async () => {
-      const { container } = render(<Box pin="left">Child</Box>);
+      render(<Box pin="left">Child</Box>);
 
-      expect(container.firstChild).toHaveClass('left');
+      expect(screen.getByText('Child')).toHaveClass('left');
     });
 
     it('renders "all" pin', async () => {
-      const { container } = render(<Box pin="all">Child</Box>);
+      render(<Box pin="all">Child</Box>);
 
-      expect(container.firstChild).toHaveClass('all');
+      expect(screen.getByText('Child')).toHaveClass('all');
     });
   });
 
   describe('styles', () => {
     const style = { opacity: 0.4, padding: '2px 4px' };
     it('can be set _dangerously_', () => {
-      const { container } = render(<Box dangerouslySetStyle={style}>Child</Box>);
+      render(<Box dangerouslySetStyle={style}>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('style', 'opacity: 0.4; padding: 2px 4px;');
+      expect(screen.getByText('Child')).toHaveAttribute('style', 'opacity: 0.4; padding: 2px 4px;');
     });
   });
 
@@ -310,13 +313,13 @@ describe('Box', () => {
       },
     };
     it('renders flex classNames for styles at each device breakpoint', () => {
-      const { container } = render(<Box responsiveConfig={responsiveFlexStylesConfig}>Child</Box>);
+      render(<Box responsiveConfig={responsiveFlexStylesConfig}>Child</Box>);
       const classNames = getClassNamesForResponsiveProps(
         responsiveFlexStylesConfig,
         'justifyContent',
       );
 
-      expect(container.firstChild).toHaveAttribute('class', classNames);
+      expect(screen.getByText('Child')).toHaveAttribute('class', classNames);
     });
   });
 
@@ -330,14 +333,12 @@ describe('Box', () => {
   };
 
   it('renders visibility classNames for styles at each device breakpoint', () => {
-    const { container } = render(
-      <Box responsiveConfig={responsiveVisibilityStylesConfig}>Child</Box>,
-    );
+    render(<Box responsiveConfig={responsiveVisibilityStylesConfig}>Child</Box>);
     const classNames = getClassNamesForResponsiveProps(
       responsiveVisibilityStylesConfig,
       'visibility',
     );
 
-    expect(container.firstChild).toHaveAttribute('class', classNames);
+    expect(screen.getByText('Child')).toHaveAttribute('class', classNames);
   });
 });

@@ -1,5 +1,5 @@
 import { Animated } from 'react-native';
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { Toast } from '../Toast';
 
@@ -29,9 +29,9 @@ describe('Toast', () => {
 
   it('renders text', () => {
     const text = 'Toast copy';
-    const { getByText } = render(<Toast text={text} />);
+    render(<Toast text={text} />);
 
-    expect(getByText(text)).toBeTruthy();
+    expect(screen.getByText(text)).toBeTruthy();
   });
 
   it('renders action', () => {
@@ -43,11 +43,9 @@ describe('Toast', () => {
       onPress: jest.fn(),
       testID: 'toast-action',
     };
-    const { getByTestId } = render(
-      <Toast text={text} action={action} onWillHide={onWillHide} onDidHide={onDidHide} />,
-    );
+    render(<Toast text={text} action={action} onWillHide={onWillHide} onDidHide={onDidHide} />);
 
-    fireEvent.press(getByTestId(action.testID));
+    fireEvent.press(screen.getByTestId(action.testID));
     expect(action.onPress).toHaveBeenCalledTimes(1);
     expect(onWillHide).toHaveBeenCalledTimes(1);
     expect(onDidHide).toHaveBeenCalledTimes(1);

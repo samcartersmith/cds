@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ResponsiveGridProps, ResponsivePropsDevices } from '@cbhq/cds-common';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
@@ -16,9 +16,9 @@ function expectClassName<K extends keyof GridProps>(
   values.forEach((value) => {
     // eslint-disable-next-line jest/require-top-level-describe
     it(`will set "${value}" class name for \`${prop}\` prop`, () => {
-      const { container, rerender } = render(<Grid columnMin="0px">Child</Grid>);
+      const { rerender } = render(<Grid columnMin="0px">Child</Grid>);
 
-      expect(container.firstChild).toHaveAttribute('class', DEFAULT_CLASS);
+      expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(
         <Grid columnMin="0px" {...{ [prop]: value }}>
@@ -26,7 +26,7 @@ function expectClassName<K extends keyof GridProps>(
         </Grid>,
       );
 
-      expect(container.firstChild).toHaveAttribute('class', `${classPrefix} ${value}`.trim());
+      expect(screen.getByText('Child')).toHaveAttribute('class', `${classPrefix} ${value}`.trim());
     });
   });
 }
@@ -50,18 +50,21 @@ describe('Grid', () => {
         </Grid>,
       );
 
+      // Using DOM traversing for this test is imperative to confirm that correct HTML elements are created with the Grid `as` prop.
+      // - Emily Seibert, 10/25/2022
+      // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
       expect(container.querySelectorAll(tag)).toHaveLength(1);
     });
   });
 
   it('can pass a `role` attribute', () => {
-    const { queryByRole } = render(
+    render(
       <Grid columns={12} as="main" role="main">
         Child
       </Grid>,
     );
 
-    expect(queryByRole('main')).not.toBeNull();
+    expect(screen.getByRole('main')).not.toBeNull();
   });
 
   describe('background', () => {
@@ -78,9 +81,9 @@ describe('Grid', () => {
 
   describe('border', () => {
     it(`will set border class name for \`bordered\` prop`, () => {
-      const { container, rerender } = render(<Grid columnMin="0px">Child</Grid>);
+      const { rerender } = render(<Grid columnMin="0px">Child</Grid>);
 
-      expect(container.firstChild).toHaveAttribute('class', DEFAULT_CLASS);
+      expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(
         <Grid columnMin="0px" bordered>
@@ -88,13 +91,13 @@ describe('Grid', () => {
         </Grid>,
       );
 
-      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} bordered`);
+      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} bordered`);
     });
 
     it(`will set border radius class name for \`rounded\` prop`, () => {
-      const { container, rerender } = render(<Grid columnMin="0px">Child</Grid>);
+      const { rerender } = render(<Grid columnMin="0px">Child</Grid>);
 
-      expect(container.firstChild).toHaveAttribute('class', DEFAULT_CLASS);
+      expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(
         <Grid columnMin="0px" borderRadius="standard">
@@ -102,13 +105,13 @@ describe('Grid', () => {
         </Grid>,
       );
 
-      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} standard`);
+      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} standard`);
     });
 
     it(`will set border radius class name for \`borderRadius\` prop`, () => {
-      const { container, rerender } = render(<Grid columnMin="0px">Child</Grid>);
+      const { rerender } = render(<Grid columnMin="0px">Child</Grid>);
 
-      expect(container.firstChild).toHaveAttribute('class', DEFAULT_CLASS);
+      expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(
         <Grid columnMin="0px" borderRadius="badge">
@@ -116,27 +119,27 @@ describe('Grid', () => {
         </Grid>,
       );
 
-      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} badge`);
+      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} badge`);
     });
   });
 
   describe('opacity', () => {
     it('will set styles based on related props', () => {
-      const { container } = render(
+      render(
         <Grid columns={12} opacity={0.4}>
           Child
         </Grid>,
       );
 
-      expect(container.firstChild).toHaveAttribute('style', 'opacity: 0.4;');
+      expect(screen.getByText('Child')).toHaveAttribute('style', 'opacity: 0.4;');
     });
   });
 
   describe('width', () => {
     it('will set styles based on related props', () => {
-      const { container, rerender } = render(<Grid columns={12}>Child</Grid>);
+      const { rerender } = render(<Grid columns={12}>Child</Grid>);
 
-      expect(container.firstChild).not.toHaveAttribute('style');
+      expect(screen.getByText('Child')).not.toHaveAttribute('style');
 
       rerender(
         <Grid columns={12} width="321px" maxWidth="789rem" minWidth="66%">
@@ -144,7 +147,7 @@ describe('Grid', () => {
         </Grid>,
       );
 
-      expect(container.firstChild).toHaveAttribute(
+      expect(screen.getByText('Child')).toHaveAttribute(
         'style',
         'max-width: 789rem; min-width: 66%; width: 321px;',
       );
@@ -153,9 +156,9 @@ describe('Grid', () => {
 
   describe('height', () => {
     it('will set styles based on related props', () => {
-      const { container, rerender } = render(<Grid columns={12}>Child</Grid>);
+      const { rerender } = render(<Grid columns={12}>Child</Grid>);
 
-      expect(container.firstChild).not.toHaveAttribute('style');
+      expect(screen.getByText('Child')).not.toHaveAttribute('style');
 
       rerender(
         <Grid columns={12} height="321px" maxHeight="789rem" minHeight="66%">
@@ -163,7 +166,7 @@ describe('Grid', () => {
         </Grid>,
       );
 
-      expect(container.firstChild).toHaveAttribute(
+      expect(screen.getByText('Child')).toHaveAttribute(
         'style',
         'height: 321px; max-height: 789rem; min-height: 66%;',
       );
@@ -215,31 +218,31 @@ describe('overflow', () => {
 describe('styles', () => {
   const style = { opacity: 0.4, padding: '2px 4px' };
   it('can be set _dangerously_', () => {
-    const { container } = render(
+    render(
       <Grid columns={12} dangerouslySetStyle={style}>
         Child
       </Grid>,
     );
 
-    expect(container.firstChild).toHaveAttribute('style', 'opacity: 0.4; padding: 2px 4px;');
+    expect(screen.getByText('Child')).toHaveAttribute('style', 'opacity: 0.4; padding: 2px 4px;');
   });
 });
 
 describe('explicit columns', () => {
   it('renders columns className', () => {
-    const { container } = render(<Grid columns={12}>Child</Grid>);
+    render(<Grid columns={12}>Child</Grid>);
 
-    expect(container.firstChild).toHaveClass('columns-12');
-    expect(container.firstChild).toHaveClass(DEFAULT_CLASS);
+    expect(screen.getByText('Child')).toHaveClass('columns-12');
+    expect(screen.getByText('Child')).toHaveClass(DEFAULT_CLASS);
   });
 });
 
 describe('implicit columns', () => {
   it('applies implicit column styling when passed a columnMin', () => {
     const columnMin = '100px';
-    const { container } = render(<Grid columnMin={columnMin}>Child</Grid>);
+    render(<Grid columnMin={columnMin}>Child</Grid>);
 
-    expect(container.firstChild).toHaveAttribute(
+    expect(screen.getByText('Child')).toHaveAttribute(
       'style',
       `grid-template-columns: repeat(auto-fill, minmax(${columnMin}, 1fr));`,
     );
@@ -247,13 +250,13 @@ describe('implicit columns', () => {
   it('applies implicit column styling when passed a columnMin and columnMax', () => {
     const columnMin = '100px';
     const columnMax = '200px';
-    const { container } = render(
+    render(
       <Grid columnMin={columnMin} columnMax={columnMax}>
         Child
       </Grid>,
     );
 
-    expect(container.firstChild).toHaveAttribute(
+    expect(screen.getByText('Child')).toHaveAttribute(
       'style',
       `grid-template-columns: repeat(auto-fill, minmax(${columnMin}, ${columnMax}));`,
     );
@@ -292,7 +295,7 @@ describe('responsive styles', () => {
     },
   };
   it('renders flex classNames for styles at each device breakpoint', () => {
-    const { container } = render(
+    render(
       <Grid columnMin="0px" responsiveConfig={responsiveFlexStylesConfig}>
         Child
       </Grid>,
@@ -302,7 +305,7 @@ describe('responsive styles', () => {
       'justifyContent',
     );
 
-    expect(container.firstChild).toHaveAttribute('class', classNames);
+    expect(screen.getByText('Child')).toHaveAttribute('class', classNames);
   });
 
   const responsiveVisibilityStylesConfig: ResponsiveGridProps = {
@@ -315,7 +318,7 @@ describe('responsive styles', () => {
   };
 
   it('renders visibility classNames for styles at each device breakpoint', () => {
-    const { container } = render(
+    render(
       <Grid columnMin="0px" responsiveConfig={responsiveVisibilityStylesConfig}>
         Child
       </Grid>,
@@ -325,7 +328,7 @@ describe('responsive styles', () => {
       'visibility',
     );
 
-    expect(container.firstChild).toHaveAttribute('class', classNames);
+    expect(screen.getByText('Child')).toHaveAttribute('class', classNames);
   });
   const responsiveColumnsConfig: ResponsiveGridProps = {
     phone: {
@@ -340,14 +343,14 @@ describe('responsive styles', () => {
   };
 
   it('renders columns classNames for styles at each device breakpoint', () => {
-    const { container } = render(
+    render(
       <Grid columnMin="0px" responsiveConfig={responsiveColumnsConfig}>
         Child
       </Grid>,
     );
     const classNames = getClassNamesForResponsiveGridProps(responsiveColumnsConfig, 'columns');
 
-    expect(container.firstChild).toHaveAttribute('class', classNames);
+    expect(screen.getByText('Child')).toHaveAttribute('class', classNames);
   });
 });
 
@@ -355,29 +358,29 @@ const DEFAULT_COLUMN_CLASS = 'flex';
 
 describe('GridColumn', () => {
   it('renders the colStart className', () => {
-    const { container } = render(<GridColumn colStart={2}>Child</GridColumn>);
+    render(<GridColumn colStart={2}>Child</GridColumn>);
 
-    expect(container.firstChild).toHaveAttribute(
+    expect(screen.getByText('Child')).toHaveAttribute(
       'class',
       `${DEFAULT_COLUMN_CLASS} colStart-2 colEnd-auto`,
     );
   });
   it('renders the colEnd className', () => {
-    const { container } = render(<GridColumn colEnd={2}>Child</GridColumn>);
+    render(<GridColumn colEnd={2}>Child</GridColumn>);
 
-    expect(container.firstChild).toHaveAttribute(
+    expect(screen.getByText('Child')).toHaveAttribute(
       'class',
       `${DEFAULT_COLUMN_CLASS} colStart-auto colEnd-2`,
     );
   });
   it('renders the colSpan style', () => {
-    const { container } = render(<GridColumn colSpan={2}>Child</GridColumn>);
+    render(<GridColumn colSpan={2}>Child</GridColumn>);
 
-    expect(container.firstChild).toHaveStyle('grid-column: auto / span 2');
+    expect(screen.getByText('Child')).toHaveStyle('grid-column: auto / span 2');
   });
   it('renders the gridColumn style', () => {
-    const { container } = render(<GridColumn gridColumn="2 / 4">Child</GridColumn>);
+    render(<GridColumn gridColumn="2 / 4">Child</GridColumn>);
 
-    expect(container.firstChild).toHaveStyle('grid-column: 2 / 4');
+    expect(screen.getByText('Child')).toHaveStyle('grid-column: 2 / 4');
   });
 });

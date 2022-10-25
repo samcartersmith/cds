@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { fireEvent, render, waitFor } from '@testing-library/react-native';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 
 import { AnnouncementCard } from '../../AnnouncementCard';
 import { Carousel, CarouselRef } from '../Carousel';
@@ -30,7 +30,7 @@ describe('Carousel.test', () => {
   beforeEach(() => jest.clearAllMocks());
 
   it('renders items', () => {
-    const { getByText, queryByTestId } = render(
+    render(
       <Carousel
         onDismissItem={jest.fn()}
         onDismissLastItem={jest.fn()}
@@ -41,16 +41,16 @@ describe('Carousel.test', () => {
       />,
     );
 
-    expect(getByText('Item1 title')).toBeTruthy();
-    expect(getByText('Item1 description')).toBeTruthy();
-    expect(getByText('Item2 title')).toBeTruthy();
-    expect(getByText('Item2 description')).toBeTruthy();
-    expect(queryByTestId('Carousel-progress')).toBeNull();
-    expect(queryByTestId('CarouselItemDismiss-item1')).toBeNull();
+    expect(screen.getByText('Item1 title')).toBeTruthy();
+    expect(screen.getByText('Item1 description')).toBeTruthy();
+    expect(screen.getByText('Item2 title')).toBeTruthy();
+    expect(screen.getByText('Item2 description')).toBeTruthy();
+    expect(screen.queryByTestId('Carousel-progress')).toBeNull();
+    expect(screen.queryByTestId('CarouselItemDismiss-item1')).toBeNull();
   });
 
   it('renders progress and dismiss', () => {
-    const { getByTestId } = render(
+    render(
       <Carousel
         showDismiss
         showProgress
@@ -63,9 +63,9 @@ describe('Carousel.test', () => {
       />,
     );
 
-    expect(getByTestId('Carousel-progress')).toBeTruthy();
-    expect(getByTestId('CarouselItemDismiss-item1')).toBeTruthy();
-    expect(getByTestId('CarouselItemDismiss-item2')).toBeTruthy();
+    expect(screen.getByTestId('Carousel-progress')).toBeTruthy();
+    expect(screen.getByTestId('CarouselItemDismiss-item1')).toBeTruthy();
+    expect(screen.getByTestId('CarouselItemDismiss-item2')).toBeTruthy();
   });
 
   it('triggers onDismiss', async () => {
@@ -76,7 +76,7 @@ describe('Carousel.test', () => {
     const onDismissItem = jest.fn();
     const onDismissLastItem = jest.fn();
 
-    const { getByTestId } = render(
+    render(
       <Carousel
         showDismiss
         showProgress
@@ -90,21 +90,30 @@ describe('Carousel.test', () => {
     );
 
     // dismiss first item
-    fireEvent.press(getByTestId('CarouselItemDismiss-item1'));
+    fireEvent.press(screen.getByTestId('CarouselItemDismiss-item1'));
 
     expect(mockMeasureInWindow).toHaveBeenCalledTimes(1);
     await waitFor(() => {
       expect(onDismissItem).toHaveBeenCalledWith('item1');
+    });
+
+    await waitFor(() => {
       expect(onDismissLastItem).toHaveBeenCalledTimes(0);
     });
 
     // dismiss last item
-    fireEvent.press(getByTestId('CarouselItemDismiss-item2'));
+    fireEvent.press(screen.getByTestId('CarouselItemDismiss-item2'));
 
     expect(mockMeasureInWindow).toHaveBeenCalledTimes(2);
     await waitFor(() => {
       expect(onDismissItem).toHaveBeenCalledWith('item2');
+    });
+
+    await waitFor(() => {
       expect(onDismissLastItem).toHaveBeenCalledTimes(1);
+    });
+
+    await waitFor(() => {
       expect(mockScrollToEnd).toHaveBeenCalledTimes(1);
     });
   });

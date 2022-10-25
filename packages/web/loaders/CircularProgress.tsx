@@ -59,6 +59,7 @@ export const CircularProgress = memo(
           r={normalizedRadius}
           cx={radius}
           cy={radius}
+          data-testid={`${testID}-circle`}
         />
       </svg>
     );

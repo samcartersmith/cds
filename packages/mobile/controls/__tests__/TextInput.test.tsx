@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { TextTitle1 } from '../../typography';
 import { TextInput } from '../TextInput';
@@ -6,19 +6,19 @@ import { TextInput } from '../TextInput';
 describe('TextInput', () => {
   it('renders a TextInput', () => {
     const testID = 'textinput-id';
-    const result = render(
+    render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
         testID={testID}
       />,
     );
-    expect(result.getByTestId(testID)).toBeDefined();
+    expect(screen.getByTestId(testID)).toBeDefined();
   });
 
   it('renders a Label', () => {
     const testID = 'label-id';
-    const result = render(
+    render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
@@ -28,12 +28,12 @@ describe('TextInput', () => {
         }}
       />,
     );
-    expect(result.getByTestId(testID)).toBeDefined();
+    expect(screen.getByTestId(testID)).toBeDefined();
   });
 
   it('renders a HelperText', () => {
     const testID = 'helpertext-id';
-    const result = render(
+    render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
@@ -43,14 +43,14 @@ describe('TextInput', () => {
         }}
       />,
     );
-    expect(result.getByTestId(testID)).toBeDefined();
+    expect(screen.getByTestId(testID)).toBeDefined();
   });
 
   it('renders an Input', () => {
     const testID = 'input-id';
     const value = 'input';
 
-    const result = render(
+    render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
@@ -58,12 +58,12 @@ describe('TextInput', () => {
         value={value}
       />,
     );
-    expect(result.getByTestId(testID).props.value).toBe(value);
+    expect(screen.getByTestId(testID).props.value).toBe(value);
   });
 
   it('renders a start node', () => {
     const testID = 'start-id';
-    const result = render(
+    render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
@@ -73,12 +73,12 @@ describe('TextInput', () => {
         start={<TextTitle1>Hello</TextTitle1>}
       />,
     );
-    expect(result.getByTestId(testID)).toBeDefined();
+    expect(screen.getByTestId(testID)).toBeDefined();
   });
 
   it('renders an end node', () => {
     const testID = 'end-id';
-    const result = render(
+    render(
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
@@ -88,6 +88,6 @@ describe('TextInput', () => {
         end={<TextTitle1>Hello</TextTitle1>}
       />,
     );
-    expect(result.getByTestId(testID)).toBeDefined();
+    expect(screen.getByTestId(testID)).toBeDefined();
   });
 });

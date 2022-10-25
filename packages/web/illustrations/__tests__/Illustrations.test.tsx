@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { sortedImg } from '@cbhq/cds-common/internal/data/sortedIllustrationData';
 import { Spectrum } from '@cbhq/cds-common/types/Spectrum';
 
@@ -22,17 +22,16 @@ const images: ImageData[] = sortedImg.map((nameAndSpectrum) => {
 
 describe('illustrations have correct url and alt tag for light mode', () => {
   it.each(images)('%p-%p has correct src and alt prop', (name, spectrum, url) => {
-    let container;
     if (spectrum === 'dark') {
-      container = render(
+      render(
         <ThemeProvider spectrum="dark">
           <Illustration name={name as never} />
         </ThemeProvider>,
       );
     } else {
-      container = render(<Illustration name={name as never} />);
+      render(<Illustration name={name as never} />);
     }
 
-    expect(container.getByAltText(name)).toHaveAttribute('src', url);
+    expect(screen.getByAltText(name)).toHaveAttribute('src', url);
   });
 });

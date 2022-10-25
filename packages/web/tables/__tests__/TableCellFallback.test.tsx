@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Table } from '../Table';
@@ -22,7 +22,7 @@ describe('Table Cell Fallback', () => {
   });
 
   it('renders fallback', () => {
-    const { getByTestId } = render(
+    render(
       <Table>
         <TableBody>
           <TableRow>
@@ -32,9 +32,9 @@ describe('Table Cell Fallback', () => {
       </Table>,
     );
 
-    expect(getByTestId('table-cell-fallback-title')).toBeTruthy();
-    expect(getByTestId('table-cell-fallback-subtitle')).toBeTruthy();
-    expect(getByTestId('table-cell-fallback-media')).toBeTruthy();
-    expect(getByTestId('table-cell-fallback-accessory')).toBeTruthy();
+    expect(screen.getByTestId('table-cell-fallback-title')).toBeTruthy();
+    expect(screen.getByTestId('table-cell-fallback-subtitle')).toBeTruthy();
+    expect(screen.getByTestId('table-cell-fallback-media')).toBeTruthy();
+    expect(screen.getByTestId('table-cell-fallback-accessory')).toBeTruthy();
   });
 });

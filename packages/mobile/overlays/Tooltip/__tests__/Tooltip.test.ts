@@ -22,10 +22,9 @@ const mockPlatformAndroid = () => {
 };
 
 const createHookInstance = (options: UseTooltipPositionParams) => {
-  const hookInstance = renderHook(() => {
+  return renderHook(() => {
     return useTooltipPosition(options);
   });
-  return hookInstance;
 };
 
 describe('Tooltip', () => {

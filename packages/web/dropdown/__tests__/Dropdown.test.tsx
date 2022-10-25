@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Default as DropdownExample } from '../__stories__/Dropdown.stories';
@@ -16,34 +16,30 @@ const options = [
 
 describe('Dropdown', () => {
   it('renders a subject', () => {
-    const { getByTestId } = render(<DropdownExample subjectTestID={subjectTestID} />);
+    render(<DropdownExample subjectTestID={subjectTestID} />);
 
-    expect(getByTestId(subjectTestID)).toBeInTheDocument();
+    expect(screen.getByTestId(subjectTestID)).toBeInTheDocument();
   });
   it('passes accessibility', async () => {
     expect(await renderA11y(<DropdownExample />)).toHaveNoViolations();
   });
   it('opens the menu when the subject is pressed', async () => {
-    const { getByTestId, getByText } = render(
-      <DropdownExample subjectTestID={subjectTestID} options={options} />,
-    );
+    render(<DropdownExample subjectTestID={subjectTestID} options={options} />);
 
-    fireEvent.click(getByTestId(subjectTestID));
+    fireEvent.click(screen.getByTestId(subjectTestID));
 
     // expect to see first menu item
-    await waitFor(() => expect(getByText(options[0])).toBeDefined());
+    expect(await screen.findByText(options[0])).toBeDefined();
   });
   it('opens the menu when enter is typed when the subject is focused', async () => {
-    const { getByTestId, getByText } = render(
-      <DropdownExample subjectTestID={subjectTestID} options={options} />,
-    );
+    render(<DropdownExample subjectTestID={subjectTestID} options={options} />);
 
-    fireEvent.keyDown(getByTestId(subjectTestID), {
+    fireEvent.keyDown(screen.getByTestId(subjectTestID), {
       key: 'Enter',
       code: 'Enter',
     });
 
     // expect to see first menu item
-    await waitFor(() => expect(getByText(options[0])).toBeDefined());
+    expect(await screen.findByText(options[0])).toBeDefined();
   });
 });

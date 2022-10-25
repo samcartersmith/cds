@@ -1,16 +1,16 @@
 import { Text } from 'react-native';
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { Menu } from '../Menu';
 
 describe('Menu.test', () => {
   it('renders children', () => {
-    const { getByText } = render(
+    render(
       <Menu>
         <Text>test</Text>
       </Menu>,
     );
 
-    expect(getByText('test')).toBeTruthy();
+    expect(screen.getByText('test')).toBeTruthy();
   });
 });

@@ -46,7 +46,7 @@ module.exports = {
         '**/__tests__/*.tsx',
         '**/jest/**',
       ],
-      extends: ['plugin:@cbhq/testing', 'plugin:@cbhq/node'],
+      extends: ['plugin:@cbhq/testing', 'plugin:@cbhq/node', 'plugin:testing-library/react'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
         'react/jsx-uses-react': 0,

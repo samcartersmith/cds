@@ -1,33 +1,33 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { Switch } from '../Switch';
 
 describe('Switch.test', () => {
   it('renders label', () => {
-    const { getByText } = render(
+    render(
       <Switch onChange={jest.fn()} checked>
         test label
       </Switch>,
     );
 
-    expect(getByText('test label')).toBeTruthy();
+    expect(screen.getByText('test label')).toBeTruthy();
   });
 
   it('renders without label', () => {
-    const { getByRole } = render(<Switch onChange={jest.fn()} />);
+    render(<Switch onChange={jest.fn()} />);
 
-    expect(getByRole('switch')).toBeTruthy();
+    expect(screen.getByRole('switch')).toBeTruthy();
   });
 
   it('triggers onChange', () => {
     const onChange = jest.fn();
-    const { getByRole } = render(
+    render(
       <Switch onChange={onChange} checked>
         test label
       </Switch>,
     );
 
-    fireEvent.click(getByRole('switch'));
+    fireEvent.click(screen.getByRole('switch'));
 
     expect(onChange).toHaveBeenCalledTimes(1);
   });

@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import {
   EventHandlerConfig,
   EventHandlerCustomConfig,
@@ -41,7 +41,7 @@ describe('ButtonEventDelegation', () => {
   it('EventDelegationConfig `Button.onPress` should not be called because config is not provided to EventDelegationProvider', () => {
     const spy = jest.fn();
 
-    const { getByTestId } = render(
+    render(
       <EventHandlerProvider>
         <Button onPress={spy} testID="button">
           Child
@@ -49,7 +49,7 @@ describe('ButtonEventDelegation', () => {
       </EventHandlerProvider>,
     );
 
-    fireEvent.press(getByTestId('button'));
+    fireEvent.press(screen.getByTestId('button'));
 
     // callback should be called
     expect(spy).toHaveBeenCalled();
@@ -59,7 +59,7 @@ describe('ButtonEventDelegation', () => {
   it('EventDelegationConfig `Button.onPress` should not be called because eventConfig is not provided to `Button`', () => {
     const spy = jest.fn();
 
-    const { getByTestId } = render(
+    render(
       <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
         <Button onPress={spy} testID="button">
           Child
@@ -67,7 +67,7 @@ describe('ButtonEventDelegation', () => {
       </EventHandlerProvider>,
     );
 
-    fireEvent.press(getByTestId('button'));
+    fireEvent.press(screen.getByTestId('button'));
 
     // callback should be called
     expect(spy).toHaveBeenCalled();
@@ -83,7 +83,7 @@ describe('ButtonEventDelegation', () => {
       data: { currency: 'BTC' },
     };
 
-    const { getByTestId } = render(
+    render(
       <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
         <Button onPress={spy} eventConfig={customEventConfig} testID="button">
           Child
@@ -91,7 +91,7 @@ describe('ButtonEventDelegation', () => {
       </EventHandlerProvider>,
     );
 
-    fireEvent.press(getByTestId('button'));
+    fireEvent.press(screen.getByTestId('button'));
 
     // callback should be called
     expect(spy).toHaveBeenCalled();
@@ -107,7 +107,7 @@ describe('ButtonEventDelegation', () => {
       data: { currency: 'BTC' },
     };
 
-    const { getByTestId } = render(
+    render(
       <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
         <Button onPress={spy} eventConfig={customEventConfig} testID="button">
           Child
@@ -115,7 +115,7 @@ describe('ButtonEventDelegation', () => {
       </EventHandlerProvider>,
     );
 
-    fireEvent.press(getByTestId('button'));
+    fireEvent.press(screen.getByTestId('button'));
 
     // callback should be called
     expect(spy).toHaveBeenCalled();
@@ -131,7 +131,7 @@ describe('ButtonEventDelegation', () => {
       data: { currency: 'BTC' },
     };
 
-    const { getByTestId } = render(
+    render(
       <EventHandlerProvider config={CUSTOM_EVENT_HANDLER_WITH_MAPPING}>
         <Button onPress={spy} eventConfig={customEventConfig} testID="button">
           Child
@@ -139,7 +139,7 @@ describe('ButtonEventDelegation', () => {
       </EventHandlerProvider>,
     );
 
-    fireEvent.press(getByTestId('button'));
+    fireEvent.press(screen.getByTestId('button'));
 
     // callback should be called
     expect(spy).toHaveBeenCalled();

@@ -1,12 +1,12 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { LogoWordmark } from '../LogoWordmark';
 
 describe('LogoWordmark', () => {
   it('renders', () => {
-    const { container, getByText } = render(<LogoWordmark />);
+    render(<LogoWordmark />);
 
-    expect(container.querySelector('svg')).toBeTruthy();
-    expect(getByText('Coinbase logo')).toBeTruthy();
+    expect(screen.getByRole('img')).toBeTruthy();
+    expect(screen.getByText('Coinbase logo')).toBeTruthy();
   });
 });

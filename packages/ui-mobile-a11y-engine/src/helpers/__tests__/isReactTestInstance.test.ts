@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import TestRenderer from 'react-test-renderer';
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import isReactTestInstance from '../isReactTestInstance';
 
@@ -15,7 +15,7 @@ describe('isReactTestInstance tests', () => {
   });
 
   it('should return true when passed a ReactTestInstance from @testing-library/react-native', () => {
-    const { getByTestId } = render(React.createElement(View, { testID: 'view' }));
-    expect(isReactTestInstance(getByTestId('view'))).toBe(true);
+    render(React.createElement(View, { testID: 'view' }));
+    expect(isReactTestInstance(screen.getByTestId('view'))).toBe(true);
   });
 });

@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native';
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { Button } from '../../buttons';
 import { CellMedia } from '../CellMedia';
@@ -7,7 +7,7 @@ import { ListCell } from '../ListCell';
 
 describe('ListCell', () => {
   it('renders a title', () => {
-    const result = render(
+    render(
       <ListCell
         title={
           <View testID="title">
@@ -17,11 +17,11 @@ describe('ListCell', () => {
       />,
     );
 
-    expect(result.queryByTestId('title')).not.toBeNull();
+    expect(screen.getByTestId('title')).not.toBeNull();
   });
 
   it('renders a description', () => {
-    const result = render(
+    render(
       <ListCell
         description={
           <View testID="description">
@@ -31,11 +31,11 @@ describe('ListCell', () => {
       />,
     );
 
-    expect(result.queryByTestId('description')).not.toBeNull();
+    expect(screen.getByTestId('description')).not.toBeNull();
   });
 
   it('renders a detail', () => {
-    const result = render(
+    render(
       <ListCell
         detail={
           <View testID="detail">
@@ -45,11 +45,11 @@ describe('ListCell', () => {
       />,
     );
 
-    expect(result.queryByTestId('detail')).not.toBeNull();
+    expect(screen.getByTestId('detail')).not.toBeNull();
   });
 
   it('renders a subdetail', () => {
-    const result = render(
+    render(
       <ListCell
         title="Title"
         subdetail={
@@ -60,31 +60,31 @@ describe('ListCell', () => {
       />,
     );
 
-    expect(result.queryByTestId('subdetail')).not.toBeNull();
+    expect(screen.getByTestId('subdetail')).not.toBeNull();
   });
 
   it('renders media', () => {
-    const result = render(<ListCell media={<CellMedia type="icon" name="add" testID="media" />} />);
+    render(<ListCell media={<CellMedia type="icon" name="add" testID="media" />} />);
 
-    expect(result.queryByTestId('media')).not.toBeNull();
+    expect(screen.getByTestId('media')).not.toBeNull();
   });
 
   it('renders an accessory', () => {
-    const result = render(<ListCell accessory="arrow" />);
+    render(<ListCell accessory="arrow" />);
 
-    expect(result.queryByTestId('accessory')).not.toBeNull();
+    expect(screen.getByTestId('accessory')).not.toBeNull();
   });
 
   it('renders an action', () => {
     const button = <Button testID="button">Test</Button>;
-    const result = render(<ListCell action={button} />);
+    render(<ListCell action={button} />);
 
-    expect(result.queryByTestId('button')).not.toBeNull();
+    expect(screen.getByTestId('button')).not.toBeNull();
   });
 
   it('renders empty strings without crashing', () => {
-    const result = render(<ListCell title="" description="" detail="" subdetail="" action="" />);
+    render(<ListCell title="" description="" detail="" subdetail="" action="" />);
 
-    expect(result).not.toBeNull();
+    expect(screen.container).not.toBeNull();
   });
 });

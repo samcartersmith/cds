@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Spinner } from '../Spinner';
@@ -9,12 +9,12 @@ describe('MaterialSpinner', () => {
   });
 
   it('should render with a div element', () => {
-    const { queryByTestId } = render(<Spinner size={60} color="primary" testID="div-spinner" />);
-    expect(queryByTestId('div-spinner')).toBeTruthy();
+    render(<Spinner size={60} color="primary" testID="div-spinner" />);
+    expect(screen.getByTestId('div-spinner')).toBeTruthy();
   });
 
   it('renders with default color', () => {
-    const { queryByTestId } = render(<Spinner size={60} testID="div-spinner" />);
-    expect(queryByTestId('div-spinner')).toBeTruthy();
+    render(<Spinner size={60} testID="div-spinner" />);
+    expect(screen.getByTestId('div-spinner')).toBeTruthy();
   });
 });

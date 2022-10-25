@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { DotSymbol } from '../DotSymbol';
@@ -13,29 +13,31 @@ describe('DotSymbol', () => {
   });
 
   it('renders a DotSymbol', () => {
-    const { getByTestId } = render(<DotSymbol testID={DOTSYMBOL_TESTID} source={src} />);
+    render(<DotSymbol testID={DOTSYMBOL_TESTID} source={src} />);
 
-    expect(getByTestId(DOTSYMBOL_TESTID)).toBeTruthy();
+    expect(screen.getByTestId(DOTSYMBOL_TESTID)).toBeTruthy();
   });
 
-  it('can be attached to a children', () => {
-    const { getByTestId } = render(
+  it('can wrap & render children', () => {
+    render(
       <DotSymbol testID={DOTSYMBOL_TESTID} source={src}>
-        <div />
+        <div>Test</div>
       </DotSymbol>,
     );
 
-    expect(getByTestId(DOTSYMBOL_TESTID).firstChild).toBeTruthy();
+    const dot = screen.getByTestId(DOTSYMBOL_TESTID);
+
+    expect(within(dot).getByText('Test')).toBeTruthy();
   });
 
   it('Placed in the correct position relative to its children', () => {
-    const { getByTestId } = render(
+    render(
       <DotSymbol pin="bottom-start" source={src}>
         <div />
       </DotSymbol>,
     );
 
-    expect(getByTestId('dotsymbol-inner-container')).toHaveStyle({
+    expect(screen.getByTestId('dotsymbol-inner-container')).toHaveStyle({
       position: 'absolute',
       bottom: 0,
       left: 0,

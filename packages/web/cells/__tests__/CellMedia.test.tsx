@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { CellMedia } from '../CellMedia';
@@ -11,14 +11,14 @@ describe('CellMedia', () => {
   });
 
   it('renders an icon', () => {
-    const result = render(<CellMedia type="icon" name="arrowUp" />);
+    render(<CellMedia type="icon" name="arrowUp" />);
 
-    expect(result.getByRole('presentation')).toHaveAttribute('data-icon-name', 'arrowUp');
+    expect(screen.getByRole('presentation')).toHaveAttribute('data-icon-name', 'arrowUp');
   });
 
   it('renders an asset', () => {
-    const result = render(<CellMedia type="asset" source="some/image/path" title="Test" />);
-    const image = result.getByAltText('Test');
+    render(<CellMedia type="asset" source="some/image/path" title="Test" />);
+    const image = screen.getByAltText('Test');
 
     expect(image).toHaveAttribute('src', 'some/image/path');
     expect(image).toHaveAttribute('width', '32');
@@ -26,8 +26,8 @@ describe('CellMedia', () => {
   });
 
   it('renders an avatar', () => {
-    const result = render(<CellMedia type="avatar" source="some/image/path" title="Test" />);
-    const image = result.getByAltText('Test');
+    render(<CellMedia type="avatar" source="some/image/path" title="Test" />);
+    const image = screen.getByAltText('Test');
 
     expect(image).toHaveAttribute('src', 'some/image/path');
     expect(image).toHaveAttribute('width', '32');
@@ -35,8 +35,8 @@ describe('CellMedia', () => {
   });
 
   it('renders an image', () => {
-    const result = render(<CellMedia type="image" source="some/image/path" title="Test" />);
-    const image = result.getByAltText('Test');
+    render(<CellMedia type="image" source="some/image/path" title="Test" />);
+    const image = screen.getByAltText('Test');
 
     expect(image).toHaveAttribute('src', 'some/image/path');
     expect(image).toHaveAttribute('width', '48');

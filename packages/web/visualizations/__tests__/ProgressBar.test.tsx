@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 
-import { render, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
@@ -52,7 +52,7 @@ describe('ProgressBar test', () => {
   });
 
   it('places bar label in correct position if it flows off the left container', async () => {
-    const { getByTestId, getAllByText } = render(
+    render(
       <Box width="200">
         <ProgressBarWithFloatLabel label={0} progress={0}>
           <ProgressBar progress={0} />
@@ -60,7 +60,7 @@ describe('ProgressBar test', () => {
       </Box>,
     );
 
-    const floatLabel = getByTestId('cds-progress-bar-float-label');
+    const floatLabel = screen.getByTestId('cds-progress-bar-float-label');
 
     await waitFor(() =>
       expect(floatLabel).toHaveStyle({
@@ -68,11 +68,11 @@ describe('ProgressBar test', () => {
       }),
     );
 
-    expect(getAllByText('0%')).toHaveLength(2);
+    expect(screen.getAllByText('0%')).toHaveLength(2);
   });
 
   it('places bar label in correct position in middle', async () => {
-    const { getByTestId, getAllByText } = render(
+    render(
       <Box width="200">
         <ProgressBarWithFloatLabel label={50} progress={0.5}>
           <ProgressBar progress={0.5} />
@@ -80,7 +80,7 @@ describe('ProgressBar test', () => {
       </Box>,
     );
 
-    const floatLabel = getByTestId('cds-progress-bar-float-label');
+    const floatLabel = screen.getByTestId('cds-progress-bar-float-label');
 
     await waitFor(() => {
       expect(floatLabel).toHaveStyle({
@@ -88,14 +88,14 @@ describe('ProgressBar test', () => {
       });
     });
 
-    const floatLabelText = getAllByText('50%')[0];
+    const floatLabelText = screen.getAllByText('50%')[0];
     expect(floatLabelText).toHaveStyle({
       color: palette.foregroundMuted,
     });
   });
 
   it('renders fixed labels in correct position', () => {
-    const { getAllByText } = render(
+    render(
       <Box width="200">
         <ProgressBarWithFixedLabels startLabel={0} endLabel={50} labelPlacement="above">
           <ProgressBar progress={50} />
@@ -103,8 +103,8 @@ describe('ProgressBar test', () => {
       </Box>,
     );
 
-    const startLabelText = getAllByText('0%')[0];
-    const endLabelText = getAllByText('50%')[0];
+    const startLabelText = screen.getAllByText('0%')[0];
+    const endLabelText = screen.getAllByText('50%')[0];
 
     expect(startLabelText).toHaveStyle({
       color: palette.foreground,
@@ -115,13 +115,13 @@ describe('ProgressBar test', () => {
   });
 
   it('has correct bar width', async () => {
-    const { getByTestId } = render(
+    render(
       <Box width="200">
         <ProgressBar progress={0.77} color="positive" />
       </Box>,
     );
 
-    const bar = getByTestId('cds-progress-bar-inner-bar');
+    const bar = screen.getByTestId('cds-progress-bar-inner-bar');
     await waitFor(() => {
       expect(bar).toHaveStyle({
         backgroundColor: palette.positive,
@@ -131,20 +131,20 @@ describe('ProgressBar test', () => {
   });
 
   it('has correct bar height', () => {
-    const { getByTestId } = render(
+    render(
       <Box width="200">
         <ProgressBar progress={0.77} weight="heavy" />
       </Box>,
     );
 
-    const bar = getByTestId('cds-progress-bar-inner-bar-container');
+    const bar = screen.getByTestId('cds-progress-bar-inner-bar-container');
     expect(bar).toHaveStyle({
       height: '12px',
     });
   });
 
   it('handles disabled state correctly', async () => {
-    const { getByTestId, getAllByText } = render(
+    render(
       <Box width="200">
         <ProgressBarWithFixedLabels startLabel={0} endLabel={77} disabled>
           <ProgressBar progress={0.77} disabled />
@@ -152,9 +152,9 @@ describe('ProgressBar test', () => {
       </Box>,
     );
 
-    const bar = getByTestId('cds-progress-bar-inner-bar');
-    const startLabelText = getAllByText('0%')[0];
-    const endLabelText = getAllByText('77%')[0];
+    const bar = screen.getByTestId('cds-progress-bar-inner-bar');
+    const startLabelText = screen.getAllByText('0%')[0];
+    const endLabelText = screen.getAllByText('77%')[0];
 
     await waitFor(() => {
       expect(bar).toHaveStyle({

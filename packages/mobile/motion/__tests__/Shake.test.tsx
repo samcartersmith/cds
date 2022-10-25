@@ -1,16 +1,16 @@
 import { Text } from 'react-native';
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { Shake } from '../Shake';
 
 describe('Shake.test', () => {
   it('renders children', () => {
-    const { getByText } = render(
+    render(
       <Shake>
         <Text>test</Text>
       </Shake>,
     );
 
-    expect(getByText).toBeTruthy();
+    expect(screen.getByText).toBeTruthy();
   });
 });

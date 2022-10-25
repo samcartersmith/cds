@@ -1,6 +1,6 @@
 import { Modal } from 'react-native';
 import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context';
-import { fireEvent, render, waitFor } from '@testing-library/react-native';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import {
   CreateLoremIpsumProps,
@@ -62,46 +62,44 @@ const MockDrawerWithSafeArea = ({ ...props }) => {
 
 describe('Drawer', () => {
   it('renders the Drawer', () => {
-    const result = render(<MockDrawerWithSafeArea />);
+    render(<MockDrawerWithSafeArea />);
 
-    expect(result.UNSAFE_queryAllByType(Modal)).toBeTruthy();
+    expect(screen.UNSAFE_queryAllByType(Modal)).toBeTruthy();
   });
   it('opens the Drawer when trigger is pressed', () => {
-    const { getByTestId, getByText } = render(<MockDrawerWithSafeArea />);
+    render(<MockDrawerWithSafeArea />);
 
-    fireEvent.press(getByTestId('open-drawer-button'));
+    fireEvent.press(screen.getByTestId('open-drawer-button'));
 
-    expect(getByText(loremIpsum)).toBeTruthy();
+    expect(screen.getByText(loremIpsum)).toBeTruthy();
   });
   it('closes the Drawer when the close button is pressed', async () => {
     const onCloseComplete = jest.fn();
-    const { getByText } = render(<MockDrawerWithSafeArea onCloseComplete={onCloseComplete} />);
+    render(<MockDrawerWithSafeArea onCloseComplete={onCloseComplete} />);
 
-    fireEvent.press(getByText('Open Drawer'));
-    expect(getByText(loremIpsum)).toBeTruthy();
+    fireEvent.press(screen.getByText('Open Drawer'));
+    expect(screen.getByText(loremIpsum)).toBeTruthy();
 
-    fireEvent.press(getByText('Close Drawer'));
+    fireEvent.press(screen.getByText('Close Drawer'));
     // wait for animation to finish
     await waitFor(() => expect(onCloseComplete).toHaveBeenCalledTimes(1));
   });
   it('has a HandleBar by default for bottom pinned Drawer', () => {
-    const { getByTestId, getByText } = render(<MockDrawerWithSafeArea pin="bottom" />);
+    render(<MockDrawerWithSafeArea pin="bottom" />);
 
-    fireEvent.press(getByText('Open Drawer'));
-    expect(getByText(loremIpsum)).toBeTruthy();
+    fireEvent.press(screen.getByText('Open Drawer'));
+    expect(screen.getByText(loremIpsum)).toBeTruthy();
 
-    expect(getByTestId('handleBar')).toBeTruthy();
+    expect(screen.getByTestId('handleBar')).toBeTruthy();
   });
   it('does not close the drawer when preventDismissGestures is true', async () => {
     const onCloseComplete = jest.fn();
-    const { getByText, getByTestId } = render(
-      <MockDrawerWithSafeArea onCloseComplete={onCloseComplete} preventDismissGestures />,
-    );
+    render(<MockDrawerWithSafeArea onCloseComplete={onCloseComplete} preventDismissGestures />);
 
-    fireEvent.press(getByText('Open Drawer'));
-    expect(getByText(loremIpsum)).toBeTruthy();
+    fireEvent.press(screen.getByText('Open Drawer'));
+    expect(screen.getByText(loremIpsum)).toBeTruthy();
 
-    fireEvent.press(getByTestId('close-drawer-button'));
+    fireEvent.press(screen.getByTestId('close-drawer-button'));
 
     // wait for animation to finish
     await waitFor(() => expect(onCloseComplete).not.toHaveBeenCalled());

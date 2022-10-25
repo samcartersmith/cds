@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, waitFor } from '@testing-library/react-native';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 
 import { Box } from '../../../layout';
 import { TextBody } from '../../../typography';
@@ -22,23 +22,23 @@ describe('Carousel', () => {
   afterEach(cleanup);
 
   it('renders children', () => {
-    const { queryAllByText } = render(<MockCarousel />);
-    const items = queryAllByText('CarouselItem');
+    render(<MockCarousel />);
+    const items = screen.queryAllByText('CarouselItem');
     expect(items).toHaveLength(itemsLength);
   });
 
   it('handles onReady', async () => {
-    const { getByTestId } = render(<MockCarousel />);
+    render(<MockCarousel />);
     expect(onReadySpy).not.toHaveBeenCalled();
     await waitFor(async () =>
       Promise.all([
         ...Array.from({ length: itemsLength }).map(async (_, i) => {
-          fireEvent(getByTestId(`CarouselItemWrapper-item${i}`), 'onLayout', {
+          fireEvent(screen.getByTestId(`CarouselItemWrapper-item${i}`), 'onLayout', {
             nativeEvent: { layout: { x: itemSize * i } },
           });
         }),
         ...Array.from({ length: itemsLength }).map(async (_, i) => {
-          fireEvent(getByTestId(`CarouselItemInner-item${i}`), 'onLayout', {
+          fireEvent(screen.getByTestId(`CarouselItemInner-item${i}`), 'onLayout', {
             nativeEvent: { layout: { width: itemSize } },
           });
         }),
@@ -48,15 +48,15 @@ describe('Carousel', () => {
   });
 
   it('does apply paddingRight if it is not the last item', () => {
-    const { getByTestId } = render(<MockCarousel />);
-    expect(getByTestId(`CarouselItemInner-item0`)).toHaveStyle({
+    render(<MockCarousel />);
+    expect(screen.getByTestId(`CarouselItemInner-item0`)).toHaveStyle({
       paddingRight: 24,
     });
   });
 
   it('does not apply paddingRight to the last item', () => {
-    const { getByTestId } = render(<MockCarousel />);
-    expect(getByTestId(`CarouselItemInner-item${itemsLength - 1}`)).toHaveStyle({
+    render(<MockCarousel />);
+    expect(screen.getByTestId(`CarouselItemInner-item${itemsLength - 1}`)).toHaveStyle({
       paddingRight: 0,
     });
   });

@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 
-import { render } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import { getNormalAvatarPixelSize } from '@cbhq/cds-common/media/useAvatarSize';
 import { spectrumConfigs } from '@cbhq/cds-common/spectrum/spectrumConfigs';
 import { colorSchemeMap } from '@cbhq/cds-common/tokens/avatar';
@@ -18,18 +18,19 @@ describe('Avatar', () => {
 
   it('renders an image with alt text', () => {
     const name = 'Test Name';
-    const { queryByAltText } = render(<Avatar alt={name} src={src} />);
+    render(<Avatar alt={name} src={src} />);
 
-    const imgNode = queryByAltText(name);
+    const imgNode = screen.queryByAltText(name);
     expect(imgNode).toBeTruthy();
     expect((imgNode as HTMLImageElement).src).toEqual(src);
   });
 
   it('has a border color', () => {
-    const { container } = render(<Avatar alt="TestName" src={src} borderColor="positive" />);
-    const box = container.querySelector(`.${staticClassName}`);
+    render(<Avatar alt="TestName" src={src} borderColor="positive" testID="avatar-component" />);
+    const box = screen.getByTestId('avatar-component');
 
     expect(box).toBeTruthy();
+    expect(box).toHaveClass(staticClassName);
     expect(box?.className).toContain('positive');
     expect(box?.className).toContain('borderStyles');
   });
@@ -38,11 +39,14 @@ describe('Avatar', () => {
     function renderAvatar(size: AvatarSize) {
       const px = getNormalAvatarPixelSize(size);
 
-      const { container } = render(<Avatar alt="TestName" size={size} src={src} />);
-      const box: HTMLDivElement | null = container.querySelector(`.${staticClassName}`);
+      render(<Avatar alt="TestName" size={size} src={src} testID="avatar-component" />);
+      const box = screen.getByTestId('avatar-component');
+
       expect(box).toBeTruthy();
+      expect(box).toHaveClass(staticClassName);
       expect(box?.style.width).toBe(`${px}px`);
       expect(box?.style.height).toBe(`${px}px`);
+      cleanup();
     }
 
     for (const size of ['m', 'l', 'xl', 'xxl', 'xxxl']) {
@@ -51,41 +55,47 @@ describe('Avatar', () => {
   });
 
   it('handles shapes', () => {
-    let { container } = render(<Avatar alt="TestName" src={src} />);
+    render(<Avatar alt="TestName" src={src} testID="avatar-component" />);
 
-    let box: HTMLDivElement | null = container.querySelector(`.${staticClassName}`);
+    const box = screen.getByTestId('avatar-component');
     expect(box).toBeTruthy();
     expect(box?.className).toContain('round');
 
-    container = render(<Avatar alt="TestName" shape="square" src={src} />).container;
-    box = container.querySelector(`.${staticClassName}`);
-    expect(box).toBeTruthy();
-    expect(box?.className).not.toContain('standard');
-    expect(box?.className).toContain('roundedSmall');
+    render(<Avatar alt="TestName" shape="square" src={src} testID="avatar-square-component" />);
+    const square = screen.getByTestId('avatar-square-component');
+    expect(square).toBeTruthy();
+    expect(square?.className).not.toContain('standard');
+    expect(square?.className).toContain('roundedSmall');
   });
   it('when passed a name prop and no src is provided it shows a fallback color and first letter of name prop', () => {
-    const { container } = render(<Avatar alt="" name="TestName" colorScheme="pink" />);
+    render(<Avatar alt="" name="TestName" colorScheme="pink" testID="avatar-component" />);
     const pinkBackgroundColor = `rgb(${
       // @ts-expect-error can't index readonly type
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       spectrumConfigs.base.light[colorSchemeMap.light.pink as string].join(', ')
     })`;
+    const fallbackBox = screen.getByTestId('avatar-component-fallback');
 
-    expect(container.textContent).toBe('T');
-
-    const fallbackBox: HTMLDivElement | null = container.querySelector(
-      `.${avatarColoredFallbackClassName}`,
-    );
     expect(fallbackBox).toBeTruthy();
+    expect(fallbackBox.textContent).toBe('T');
+    expect(fallbackBox).toHaveClass(avatarColoredFallbackClassName);
     expect(fallbackBox?.style.background).toBe(pinkBackgroundColor);
   });
   it('does not render a border if there is a name prop and uses the fallback color treatment', () => {
-    const { container } = render(
-      <Avatar alt="" name="TestName" colorScheme="pink" borderColor="positive" />,
+    render(
+      <Avatar
+        alt=""
+        name="TestName"
+        colorScheme="pink"
+        borderColor="positive"
+        testID="avatar-component"
+      />,
     );
 
-    const box: HTMLDivElement | null = container.querySelector(`.${staticClassName}`);
+    const box = screen.getByTestId('avatar-component');
+
     expect(box).toBeTruthy();
+    expect(box).toHaveClass(staticClassName);
     expect(box?.className).not.toContain('borderStyles');
   });
 });

@@ -1,3 +1,8 @@
+// findByProps lint errors are false positives due to Aggressive Reporting for the linter. This is a valid, non-promise function on https://reactjs.org/docs/test-renderer.html#testinstancefindbyprops
+// however, the 'findBy*' linter from testing-library thinks this is a promise query. We should keep the aggressive reporting enabled, and just
+// disable the few functions that are 'false positives'.
+// - Emily Seibert, 10/24/2022
+/* eslint-disable testing-library/await-async-query */
 import { PropsWithChildren } from 'react';
 import { Pressable, SafeAreaView, Text, View, ViewProps } from 'react-native';
 import TestRenderer from 'react-test-renderer';
@@ -7,6 +12,7 @@ import getPathToComponent from '../getPathToComponent';
 describe('getPathToComponent tests', () => {
   it('should handle a View node with no parents', () => {
     const tree = TestRenderer.create(<View testID="test" />);
+
     const node = tree.root.findByProps({ testID: 'test' });
 
     expect(getPathToComponent(node)).toEqual(['View']);

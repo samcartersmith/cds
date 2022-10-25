@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
@@ -20,44 +20,44 @@ describe('Alert', () => {
   it('passes a11y when visible', async () => {
     expect(
       await renderA11y(<MockAlert />, {
-        async afterRender({ container, getByRole }) {
-          fireEvent.click(container.querySelector('button') as Element);
+        async afterRender() {
+          fireEvent.click(screen.getByRole('button'));
 
-          return waitFor(() => getByRole('alertdialog'));
+          return waitFor(() => screen.getByRole('alertdialog'));
         },
       }),
     ).toHaveNoViolations();
   });
 
   it('show alert on press', async () => {
-    const { getByRole, getByText } = render(<MockAlert />);
+    render(<MockAlert />);
 
-    fireEvent.click(getByText('Show Alert'));
+    fireEvent.click(screen.getByText('Show Alert'));
 
-    const alert = await waitFor(() => getByRole('alertdialog'));
+    const alert = await screen.findByRole('alertdialog');
 
     expect(alert).toBeTruthy();
   });
 
   it('renders title', async () => {
     const title = 'Test title';
-    const { findByText } = render(<MockAlert visible title={title} />);
+    render(<MockAlert visible title={title} />);
 
-    expect(await findByText(title)).toBeVisible();
+    expect(await screen.findByText(title)).toBeVisible();
   });
 
   it('renders body', async () => {
     const body = 'Test body';
-    const { findByText } = render(<MockAlert visible body={body} />);
+    render(<MockAlert visible body={body} />);
 
-    expect(await findByText(body)).toBeVisible();
+    expect(await screen.findByText(body)).toBeVisible();
   });
 
   it('renders preferred action', () => {
     const onPreferredActionPress = jest.fn();
     const onRequestClose = jest.fn();
 
-    const { getByText } = render(
+    render(
       <MockAlert
         visible
         preferredActionLabel="Save"
@@ -66,7 +66,7 @@ describe('Alert', () => {
       />,
     );
 
-    fireEvent.click(getByText('Save'));
+    fireEvent.click(screen.getByText('Save'));
 
     expect(onPreferredActionPress).toHaveBeenCalledTimes(1);
   });
@@ -74,10 +74,8 @@ describe('Alert', () => {
   it('renders dismiss action', async () => {
     const onRequestClose = jest.fn();
 
-    const { findByText } = render(
-      <MockAlert visible dismissActionLabel="Cancel" onRequestClose={onRequestClose} />,
-    );
+    render(<MockAlert visible dismissActionLabel="Cancel" onRequestClose={onRequestClose} />);
 
-    expect(await findByText('Cancel')).toBeTruthy();
+    expect(await screen.findByText('Cancel')).toBeTruthy();
   });
 });

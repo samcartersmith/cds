@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { SparklineInteractiveHeader } from '../SparklineInteractiveHeader';
 
@@ -11,7 +11,7 @@ const defaultSubHead = {
 
 describe('SparklineInteractiveHeader.test', () => {
   it('renders text', () => {
-    const { getByTestId } = render(
+    render(
       <SparklineInteractiveHeader
         defaultTitle="test title"
         defaultLabel="test label"
@@ -19,32 +19,44 @@ describe('SparklineInteractiveHeader.test', () => {
       />,
     );
 
-    expect(getByTestId('SparklineInteractiveHeaderTitle').props.defaultValue).toBe('test title');
-    expect(getByTestId('SparklineInteractiveHeaderLabel').props.defaultValue).toBe('test label');
-    expect(getByTestId('SparklineInteractiveHeaderSubHeadIcon').props.defaultValue).toBe('+');
-    expect(getByTestId('SparklineInteractiveHeaderSubHead').props.defaultValue).toBe(
+    expect(screen.getByTestId('SparklineInteractiveHeaderTitle').props.defaultValue).toBe(
+      'test title',
+    );
+    expect(screen.getByTestId('SparklineInteractiveHeaderLabel').props.defaultValue).toBe(
+      'test label',
+    );
+    expect(screen.getByTestId('SparklineInteractiveHeaderSubHeadIcon').props.defaultValue).toBe(
+      '+',
+    );
+    expect(screen.getByTestId('SparklineInteractiveHeaderSubHead').props.defaultValue).toBe(
       '888.88 (20%)',
     );
   });
 
   it('renders without default label', () => {
-    const { getByTestId } = render(
+    render(
       <SparklineInteractiveHeader defaultTitle="test title" defaultSubHead={defaultSubHead} />,
     );
 
-    expect(getByTestId('SparklineInteractiveHeaderTitle').props.defaultValue).toBe('test title');
-    expect(getByTestId('SparklineInteractiveHeaderSubHeadIcon').props.defaultValue).toBe('+');
-    expect(getByTestId('SparklineInteractiveHeaderSubHead').props.defaultValue).toBe(
+    expect(screen.getByTestId('SparklineInteractiveHeaderTitle').props.defaultValue).toBe(
+      'test title',
+    );
+    expect(screen.getByTestId('SparklineInteractiveHeaderSubHeadIcon').props.defaultValue).toBe(
+      '+',
+    );
+    expect(screen.getByTestId('SparklineInteractiveHeaderSubHead').props.defaultValue).toBe(
       '888.88 (20%)',
     );
   });
 
   it('renders without default subhead', () => {
-    const { getByTestId } = render(
-      <SparklineInteractiveHeader defaultTitle="test title" defaultLabel="test label" />,
-    );
+    render(<SparklineInteractiveHeader defaultTitle="test title" defaultLabel="test label" />);
 
-    expect(getByTestId('SparklineInteractiveHeaderTitle').props.defaultValue).toBe('test title');
-    expect(getByTestId('SparklineInteractiveHeaderLabel').props.defaultValue).toBe('test label');
+    expect(screen.getByTestId('SparklineInteractiveHeaderTitle').props.defaultValue).toBe(
+      'test title',
+    );
+    expect(screen.getByTestId('SparklineInteractiveHeaderLabel').props.defaultValue).toBe(
+      'test label',
+    );
   });
 });

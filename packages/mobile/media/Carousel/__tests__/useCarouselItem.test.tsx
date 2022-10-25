@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { useCallback } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
-import { cleanup, fireEvent, render } from '@testing-library/react-native';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react-native';
 
 import { Button } from '../../../buttons';
 import { Box } from '../../../layout';
@@ -65,11 +65,11 @@ describe('useCarouselItem', () => {
   });
 
   it('returns the correct id', () => {
-    const { queryByText } = render(<MockCarousel />);
-    expect(queryByText('carousel-item-0')).not.toBeNull();
-    expect(queryByText('carousel-item-1')).not.toBeNull();
-    expect(queryByText('carousel-item-2')).not.toBeNull();
-    expect(queryByText('carousel-item-3')).not.toBeNull();
+    render(<MockCarousel />);
+    expect(screen.getByText('carousel-item-0')).not.toBeNull();
+    expect(screen.getByText('carousel-item-1')).not.toBeNull();
+    expect(screen.getByText('carousel-item-2')).not.toBeNull();
+    expect(screen.getByText('carousel-item-3')).not.toBeNull();
   });
 
   it('handles dismiss', () => {
@@ -84,7 +84,7 @@ describe('useCarouselItem', () => {
       );
     };
 
-    const result = render(
+    render(
       <CarouselItemContext.Provider
         value={{
           id: 'item1',
@@ -94,7 +94,7 @@ describe('useCarouselItem', () => {
         <ChildWithPressable />
       </CarouselItemContext.Provider>,
     );
-    fireEvent.press(result.getByTestId('DismissButton'));
+    fireEvent.press(screen.getByTestId('DismissButton'));
     expect(dismissSpy).toHaveBeenCalled();
   });
 });

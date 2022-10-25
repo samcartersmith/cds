@@ -21,14 +21,14 @@ export async function renderA11y(
     await beforeRender();
   }
 
-  const result = render(element);
+  const view = render(element);
 
   if (afterRender) {
-    await afterRender(result);
+    await afterRender(view);
   }
 
   // @ts-expect-error mismatched types
-  const results = await runAxe(result.container, options);
+  const results = await runAxe(view.container, options);
 
   // @types/jest-axe uses v3 axe types, while axe-core/jest-axe is v4.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-return

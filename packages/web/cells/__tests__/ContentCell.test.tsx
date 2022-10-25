@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { CellMedia } from '../CellMedia';
@@ -26,42 +26,38 @@ describe('ContentCell', () => {
   });
 
   it('renders a title', () => {
-    const result = render(<ContentCell title={<div data-testid="title">Title</div>} />);
+    render(<ContentCell title={<div data-testid="title">Title</div>} />);
 
-    expect(result.queryByTestId('title')).not.toBeNull();
+    expect(screen.getByTestId('title')).not.toBeNull();
   });
 
   it('renders a subtitle', () => {
-    const result = render(<ContentCell subtitle={<div data-testid="subtitle">Subtitle</div>} />);
+    render(<ContentCell subtitle={<div data-testid="subtitle">Subtitle</div>} />);
 
-    expect(result.queryByTestId('subtitle')).not.toBeNull();
+    expect(screen.getByTestId('subtitle')).not.toBeNull();
   });
 
   it('renders a description', () => {
-    const result = render(
-      <ContentCell description={<div data-testid="description">Description</div>} />,
-    );
+    render(<ContentCell description={<div data-testid="description">Description</div>} />);
 
-    expect(result.queryByTestId('description')).not.toBeNull();
+    expect(screen.getByTestId('description')).not.toBeNull();
   });
 
   it('renders meta', () => {
-    const result = render(<ContentCell title="Title" meta={<div data-testid="meta">Meta</div>} />);
+    render(<ContentCell title="Title" meta={<div data-testid="meta">Meta</div>} />);
 
-    expect(result.queryByTestId('meta')).not.toBeNull();
+    expect(screen.getByTestId('meta')).not.toBeNull();
   });
 
   it('renders media', () => {
-    const result = render(
-      <ContentCell media={<CellMedia type="icon" name="add" testID="media" />} />,
-    );
+    render(<ContentCell media={<CellMedia type="icon" name="add" testID="media" />} />);
 
-    expect(result.queryByTestId('media')).not.toBeNull();
+    expect(screen.getByTestId('media')).not.toBeNull();
   });
 
   it('renders an accessory', () => {
-    const result = render(<ContentCell accessory="arrow" />);
+    render(<ContentCell accessory="arrow" />);
 
-    expect(result.queryByTestId('accessory')).not.toBeNull();
+    expect(screen.getByTestId('accessory')).not.toBeNull();
   });
 });

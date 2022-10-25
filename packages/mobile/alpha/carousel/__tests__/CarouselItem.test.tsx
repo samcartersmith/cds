@@ -1,6 +1,6 @@
 import React from 'react';
 import { Animated, Text, View } from 'react-native';
-import { fireEvent, render, waitFor } from '@testing-library/react-native';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 
 import { CarouselItem } from '../CarouselItem';
 
@@ -9,7 +9,7 @@ describe('CarouselItem.test', () => {
 
   it('triggers onMount', () => {
     const onMount = jest.fn();
-    const { getByTestId } = render(
+    render(
       <CarouselItem
         id="item1"
         index={0}
@@ -23,7 +23,7 @@ describe('CarouselItem.test', () => {
       </CarouselItem>,
     );
 
-    fireEvent(getByTestId('CarouselItemWrapper-item1'), 'layout', {
+    fireEvent(screen.getByTestId('CarouselItemWrapper-item1'), 'layout', {
       nativeEvent: { layout: { height: 100 } },
     });
 
@@ -38,7 +38,7 @@ describe('CarouselItem.test', () => {
     const onDismiss = jest.fn();
     const onDismissLastItem = jest.fn();
 
-    const { getByTestId } = render(
+    render(
       <CarouselItem
         id="item1"
         index={0}
@@ -56,11 +56,14 @@ describe('CarouselItem.test', () => {
       </CarouselItem>,
     );
 
-    fireEvent.press(getByTestId('CarouselItemDismiss-item1'));
+    fireEvent.press(screen.getByTestId('CarouselItemDismiss-item1'));
 
     expect(mockMeasureInWindow).toHaveBeenCalledTimes(1);
     await waitFor(() => {
       expect(onDismiss).toHaveBeenCalledTimes(1);
+    });
+
+    await waitFor(() => {
       expect(onDismissLastItem).toHaveBeenCalledTimes(0);
     });
   });
@@ -73,7 +76,7 @@ describe('CarouselItem.test', () => {
     const onDismiss = jest.fn();
     const onDismissLastItem = jest.fn();
 
-    const { getByTestId } = render(
+    render(
       <CarouselItem
         id="item1"
         index={0}
@@ -91,11 +94,13 @@ describe('CarouselItem.test', () => {
       </CarouselItem>,
     );
 
-    fireEvent.press(getByTestId('CarouselItemDismiss-item1'));
+    fireEvent.press(screen.getByTestId('CarouselItemDismiss-item1'));
 
     expect(mockMeasureInWindow).toHaveBeenCalledTimes(1);
     await waitFor(() => {
       expect(onDismiss).toHaveBeenCalledTimes(1);
+    });
+    await waitFor(() => {
       expect(onDismissLastItem).toHaveBeenCalledTimes(1);
     });
   });

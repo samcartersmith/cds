@@ -1,6 +1,6 @@
 import { TextInput as RNTextInput } from 'react-native';
 import TestRenderer from 'react-test-renderer';
-import { render, waitFor } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { InputStack, InputStackProps } from '../InputStack';
 import { NativeInput } from '../NativeInput';
@@ -48,12 +48,10 @@ describe('styles', () => {
       borderWidth: 1,
     };
 
-    const { getByTestId } = render(
-      <InputStack testID={TEST_ID} borderStyle={borderStyle} inputNode={<NativeInput />} />,
-    );
+    render(<InputStack testID={TEST_ID} borderStyle={borderStyle} inputNode={<NativeInput />} />);
 
-    await waitFor(() => getByTestId(`${TEST_ID}-input-area`));
+    await screen.findByTestId(`${TEST_ID}-input-area`);
 
-    expect(getByTestId(`${TEST_ID}-input-area`)).toHaveStyle(borderStyle);
+    expect(screen.getByTestId(`${TEST_ID}-input-area`)).toHaveStyle(borderStyle);
   });
 });

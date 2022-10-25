@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 import { collapsibleBuilder } from '@cbhq/cds-common/internal/collapsibleBuilder';
 
 import { Button } from '../../buttons';
@@ -17,10 +17,10 @@ const { MockCollapsible } = collapsibleBuilder({
 
 describe('Collapsible', () => {
   it('renders collapsed content', () => {
-    const result = render(<MockCollapsible />);
+    render(<MockCollapsible />);
 
-    expect(result.getByTestId('mock-collapse').props.style.opacity).toBe(0);
-    expect(result.UNSAFE_queryByProps({ collapsed: true })).toBeTruthy();
-    expect(result.getByText('Collapsible Content')).toBeTruthy();
+    expect(screen.getByTestId('mock-collapse').props.style.opacity).toBe(0);
+    expect(screen.UNSAFE_queryByProps({ collapsed: true })).toBeTruthy();
+    expect(screen.getByText('Collapsible Content')).toBeTruthy();
   });
 });

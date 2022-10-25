@@ -1,4 +1,4 @@
-import { render, waitFor } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 import { normalScaleMap } from '@cbhq/cds-common';
 import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
 import { RemoteImageGroupBaseProps } from '@cbhq/cds-common/types/RemoteImageGroupBaseProps';
@@ -21,24 +21,24 @@ const MockRemoteImageGroup = ({ ...props }: RemoteImageGroupBaseProps) => (
 
 describe('RemoteImageGroup', () => {
   it('renders RemoteImageGroup', () => {
-    const { getByTestId } = render(<MockRemoteImageGroup />);
+    render(<MockRemoteImageGroup />);
 
-    const imageWrapper = getByTestId(TEST_ID);
+    const imageWrapper = screen.getByTestId(TEST_ID);
 
     expect(imageWrapper).toBeTruthy();
   });
 
   it('Margin are correctly applied for size m. First one has 0, and the following ones will have 1', () => {
-    const { getByTestId } = render(<MockRemoteImageGroup />);
+    render(<MockRemoteImageGroup />);
 
-    const remoteImage1 = getByTestId(`${TEST_ID}-inner-box-0`);
+    const remoteImage1 = screen.getByTestId(`${TEST_ID}-inner-box-0`);
 
     expect(remoteImage1).toHaveStyle({
       marginRight: -0,
     });
 
     remoteImageIndices.slice(1).forEach((index) => {
-      const imageChildren = getByTestId(`${TEST_ID}-inner-box-${index}`);
+      const imageChildren = screen.getByTestId(`${TEST_ID}-inner-box-${index}`);
 
       expect(imageChildren).toHaveStyle({
         marginRight: -scaleStyles.xxLarge.spacing[1],
@@ -47,16 +47,16 @@ describe('RemoteImageGroup', () => {
   });
 
   it('Margin are correctly applied for size xxl. First one has 0, and the following ones will have 2', () => {
-    const { getByTestId } = render(<MockRemoteImageGroup size="xxl" />);
+    render(<MockRemoteImageGroup size="xxl" />);
 
-    const remoteImage1 = getByTestId(`${TEST_ID}-inner-box-0`);
+    const remoteImage1 = screen.getByTestId(`${TEST_ID}-inner-box-0`);
 
     expect(remoteImage1).toHaveStyle({
       marginRight: -0,
     });
 
     remoteImageIndices.slice(1).forEach((index) => {
-      const imageChildren = getByTestId(`${TEST_ID}-inner-box-${index}`);
+      const imageChildren = screen.getByTestId(`${TEST_ID}-inner-box-${index}`);
 
       expect(imageChildren).toHaveStyle({
         marginRight: -scaleStyles.xxLarge.spacing[2],
@@ -65,10 +65,10 @@ describe('RemoteImageGroup', () => {
   });
 
   it('default size = m', () => {
-    const { getByTestId } = render(<MockRemoteImageGroup />);
+    render(<MockRemoteImageGroup />);
 
     remoteImageIndices.forEach((index) => {
-      const remoteImage = getByTestId(`${TEST_ID}-image-${index}`);
+      const remoteImage = screen.getByTestId(`${TEST_ID}-image-${index}`);
 
       expect(remoteImage).toHaveStyle({
         width: normalScaleMap.m,
@@ -78,12 +78,12 @@ describe('RemoteImageGroup', () => {
   });
 
   it('default shape = circle', async () => {
-    const { getByTestId } = render(<MockRemoteImageGroup />);
+    render(<MockRemoteImageGroup />);
 
-    await waitFor(() => getByTestId(TEST_ID));
+    await screen.findByTestId(TEST_ID);
 
     remoteImageIndices.forEach((index) => {
-      const remoteImage = getByTestId(`${TEST_ID}-image-${index}`);
+      const remoteImage = screen.getByTestId(`${TEST_ID}-image-${index}`);
 
       expect(remoteImage).toHaveStyle({
         borderRadius: borderRadius.roundedFull,
@@ -92,18 +92,18 @@ describe('RemoteImageGroup', () => {
   });
 
   it('default max = 4', () => {
-    const { queryByTestId } = render(<MockRemoteImageGroup />);
+    render(<MockRemoteImageGroup />);
 
     // There are 4 remote images, if the default was max = 4,
     // there shall be no need for excess text
-    expect(queryByTestId(`${TEST_ID}-excess-text`)).toBeNull();
+    expect(screen.queryByTestId(`${TEST_ID}-excess-text`)).toBeNull();
   });
 
   it('size={30} prop works as expected', () => {
-    const { getByTestId } = render(<MockRemoteImageGroup size={30} />);
+    render(<MockRemoteImageGroup size={30} />);
 
     remoteImageIndices.forEach((index) => {
-      const remoteImage = getByTestId(`${TEST_ID}-image-${index}`);
+      const remoteImage = screen.getByTestId(`${TEST_ID}-image-${index}`);
 
       expect(remoteImage).toHaveStyle({
         width: 30,
@@ -113,10 +113,10 @@ describe('RemoteImageGroup', () => {
   });
 
   it('size={l} prop works as expected', () => {
-    const { getByTestId } = render(<MockRemoteImageGroup size="l" />);
+    render(<MockRemoteImageGroup size="l" />);
 
     remoteImageIndices.forEach((index) => {
-      const remoteImage = getByTestId(`${TEST_ID}-image-${index}`);
+      const remoteImage = screen.getByTestId(`${TEST_ID}-image-${index}`);
 
       expect(remoteImage).toHaveStyle({
         width: normalScaleMap.l,
@@ -126,14 +126,14 @@ describe('RemoteImageGroup', () => {
   });
 
   it('excess text shows up correctly', () => {
-    const { getByText } = render(<MockRemoteImageGroup max={2} size={50} />);
-    expect(getByText('+2')).toBeTruthy();
+    render(<MockRemoteImageGroup max={2} size={50} />);
+    expect(screen.getByText('+2')).toBeTruthy();
   });
 
   it('fontSize is proportional to dimension of RemoteImage for avatarSizes={m}', () => {
-    const { getByTestId } = render(<MockRemoteImageGroup max={2} />);
+    render(<MockRemoteImageGroup max={2} />);
 
-    const excessText = getByTestId(`${TEST_ID}-excess-text`);
+    const excessText = screen.getByTestId(`${TEST_ID}-excess-text`);
 
     expect(excessText).toHaveStyle({
       fontSize: normalScaleMap.m * 0.4,
@@ -142,9 +142,9 @@ describe('RemoteImageGroup', () => {
 
   it('fontSize is proportional to dimension of RemoteImage for number sizes', () => {
     const LOCAL_SIZE = 27;
-    const { getByTestId } = render(<MockRemoteImageGroup max={2} size={LOCAL_SIZE} />);
+    render(<MockRemoteImageGroup max={2} size={LOCAL_SIZE} />);
 
-    const excessText = getByTestId(`${TEST_ID}-excess-text`);
+    const excessText = screen.getByTestId(`${TEST_ID}-excess-text`);
 
     expect(excessText).toHaveStyle({
       fontSize: LOCAL_SIZE * 0.4,

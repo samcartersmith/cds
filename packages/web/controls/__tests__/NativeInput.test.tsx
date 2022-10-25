@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { NativeInput } from '../NativeInput';
@@ -13,60 +13,58 @@ describe('NativeInput Accessibility', () => {
   });
 
   it('can pass `aria-label` attribute', () => {
-    const { getByTestId } = render(
-      <NativeInput accessibilityLabel={accessibilityLabel} testID={TEST_ID} />,
-    );
+    render(<NativeInput accessibilityLabel={accessibilityLabel} testID={TEST_ID} />);
 
-    expect(getByTestId(TEST_ID)).toHaveAttribute('aria-label', accessibilityLabel);
+    expect(screen.getByTestId(TEST_ID)).toHaveAttribute('aria-label', accessibilityLabel);
   });
 });
 
 describe('NativeInput', () => {
   it('can change type', () => {
-    const { getByTestId } = render(<NativeInput testID={TEST_ID} type="number" />);
+    render(<NativeInput testID={TEST_ID} type="number" />);
 
-    expect(getByTestId(TEST_ID)).toHaveAttribute('type', 'number');
+    expect(screen.getByTestId(TEST_ID)).toHaveAttribute('type', 'number');
   });
 
   it('can mark as disabled', () => {
-    const { getByTestId } = render(<NativeInput disabled testID={TEST_ID} />);
+    render(<NativeInput disabled testID={TEST_ID} />);
 
-    expect(getByTestId(TEST_ID)).toHaveAttribute('disabled');
+    expect(screen.getByTestId(TEST_ID)).toHaveAttribute('disabled');
   });
 });
 
 describe('NativeInput events', () => {
   it('fires `onPress` when clicked', () => {
     const spy = jest.fn();
-    const { container } = render(<NativeInput onPress={spy} testID={TEST_ID} />);
+    render(<NativeInput onPress={spy} testID={TEST_ID} />);
 
-    fireEvent.click(container.querySelector('input') as Element);
+    fireEvent.click(screen.getByRole('textbox'));
 
     expect(spy).toHaveBeenCalled();
   });
 
   it('fires `onFocus` when clicked', () => {
     const spy = jest.fn();
-    const { container } = render(<NativeInput onFocus={spy} testID={TEST_ID} />);
+    render(<NativeInput onFocus={spy} testID={TEST_ID} />);
 
-    fireEvent.focus(container.querySelector('input') as Element);
+    fireEvent.focus(screen.getByRole('textbox'));
 
     expect(spy).toHaveBeenCalled();
   });
 
   it('fires `onBlur` when clicking outside of input', () => {
     const spy = jest.fn();
-    const { container } = render(<NativeInput onBlur={spy} testID={TEST_ID} />);
+    render(<NativeInput onBlur={spy} testID={TEST_ID} />);
 
-    fireEvent.blur(container.querySelector('input') as Element);
+    fireEvent.blur(screen.getByRole('textbox'));
 
     expect(spy).toHaveBeenCalled();
   });
 
   it('text changes with `onChange`', () => {
-    const { getByTestId } = render(<NativeInput testID={TEST_ID} />);
+    render(<NativeInput testID={TEST_ID} />);
 
-    const input = getByTestId(TEST_ID);
+    const input = screen.getByTestId(TEST_ID);
 
     fireEvent.change(input, { target: { value: 'desired text' } });
 

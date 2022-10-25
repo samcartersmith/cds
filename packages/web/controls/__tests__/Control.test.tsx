@@ -1,28 +1,28 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { Control } from '../Control';
 
 describe('Control', () => {
   it('renders label and children', () => {
-    const { getByText } = render(
+    render(
       <Control label="test label" readOnly>
         <div>test children</div>
       </Control>,
     );
 
-    expect(getByText('test label')).toBeTruthy();
-    expect(getByText('test children')).toBeTruthy();
+    expect(screen.getByText('test label')).toBeTruthy();
+    expect(screen.getByText('test children')).toBeTruthy();
   });
 
   it('triggers onChange', () => {
     const onChange = jest.fn();
-    const { getByTestId } = render(
+    render(
       <Control label="test label" type="checkbox" onChange={onChange} testID="test-control">
         <div />
       </Control>,
     );
 
-    fireEvent.click(getByTestId('test-control'));
+    fireEvent.click(screen.getByTestId('test-control'));
 
     expect(onChange).toHaveBeenCalledTimes(1);
   });

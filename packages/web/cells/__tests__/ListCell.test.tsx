@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Button } from '../../buttons';
@@ -15,48 +15,44 @@ describe('ListCell', () => {
   });
 
   it('renders a title', () => {
-    const result = render(<ListCell title={<div data-testid="title">Title</div>} />);
+    render(<ListCell title={<div data-testid="title">Title</div>} />);
 
-    expect(result.queryByTestId('title')).not.toBeNull();
+    expect(screen.getByTestId('title')).not.toBeNull();
   });
 
   it('renders a description', () => {
-    const result = render(
-      <ListCell description={<div data-testid="description">Description</div>} />,
-    );
+    render(<ListCell description={<div data-testid="description">Description</div>} />);
 
-    expect(result.queryByTestId('description')).not.toBeNull();
+    expect(screen.getByTestId('description')).not.toBeNull();
   });
 
   it('renders a detail', () => {
-    const result = render(<ListCell detail={<div data-testid="detail">Detail</div>} />);
+    render(<ListCell detail={<div data-testid="detail">Detail</div>} />);
 
-    expect(result.queryByTestId('detail')).not.toBeNull();
+    expect(screen.getByTestId('detail')).not.toBeNull();
   });
 
   it('renders a subdetail', () => {
-    const result = render(
-      <ListCell title="Title" subdetail={<div data-testid="subdetail">Subdetail</div>} />,
-    );
+    render(<ListCell title="Title" subdetail={<div data-testid="subdetail">Subdetail</div>} />);
 
-    expect(result.queryByTestId('subdetail')).not.toBeNull();
+    expect(screen.getByTestId('subdetail')).not.toBeNull();
   });
 
   it('renders media', () => {
-    const result = render(<ListCell media={<CellMedia type="icon" name="add" testID="media" />} />);
+    render(<ListCell media={<CellMedia type="icon" name="add" testID="media" />} />);
 
-    expect(result.queryByTestId('media')).not.toBeNull();
+    expect(screen.getByTestId('media')).not.toBeNull();
   });
 
   it('renders an accessory', () => {
-    const result = render(<ListCell accessory="arrow" />);
+    render(<ListCell accessory="arrow" />);
 
-    expect(result.queryByTestId('accessory')).not.toBeNull();
+    expect(screen.getByTestId('accessory')).not.toBeNull();
   });
   it('renders an action', () => {
     const button = <Button data-testid="button">Test</Button>;
-    const result = render(<ListCell action={button} />);
+    render(<ListCell action={button} />);
 
-    expect(result.queryByTestId('button')).not.toBeNull();
+    expect(screen.getByTestId('button')).not.toBeNull();
   });
 });

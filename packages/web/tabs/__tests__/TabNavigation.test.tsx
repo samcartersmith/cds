@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { TabNavigation } from '../TabNavigation';
 
@@ -62,16 +62,16 @@ describe('TabNavigation', () => {
   });
 
   it('Properly inherits testID from TabNavigation', () => {
-    const { getByTestId } = render(<MockTabNavigation testID={TEST_ID} />);
+    render(<MockTabNavigation testID={TEST_ID} />);
 
-    expect(getByTestId(TEST_ID)).toBeVisible();
-    expect(getByTestId(`${TEST_ID}-tabLabel--first-test`)).toBeVisible();
+    expect(screen.getByTestId(TEST_ID)).toBeVisible();
+    expect(screen.getByTestId(`${TEST_ID}-tabLabel--first-test`)).toBeVisible();
   });
 
   it("Properly applies custom testID's", () => {
-    const { getByTestId } = render(<MockTabNavigation testID={TEST_ID} />);
+    render(<MockTabNavigation testID={TEST_ID} />);
 
-    expect(getByTestId(TEST_ID)).toBeVisible();
-    expect(getByTestId('specialTestID')).toBeVisible();
+    expect(screen.getByTestId(TEST_ID)).toBeVisible();
+    expect(screen.getByTestId('specialTestID')).toBeVisible();
   });
 });

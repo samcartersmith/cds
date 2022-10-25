@@ -1,5 +1,5 @@
 import { Animated } from 'react-native';
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { Overlay } from '../Overlay';
 import { useOverlayAnimation } from '../useOverlayAnimation';
@@ -11,8 +11,8 @@ describe('Overlay', () => {
   };
 
   it('renders an animated view', () => {
-    const result = render(<TestComponent />);
+    render(<TestComponent />);
 
-    expect(result.UNSAFE_queryAllByType(Animated.View)).toHaveLength(1);
+    expect(screen.UNSAFE_queryAllByType(Animated.View)).toHaveLength(1);
   });
 });

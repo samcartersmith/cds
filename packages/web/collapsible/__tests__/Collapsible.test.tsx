@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import {
   collapsibleBuilder,
   CreateCollapsibleProps,
@@ -25,20 +25,24 @@ describe('Collapsible', () => {
   });
 
   it('shows and hides content', async () => {
-    const { getByTestId, getByText } = render(<MockCollapsible />);
-    expect(getByTestId('mock-collapse')).toHaveStyle('visibility: hidden');
-    expect(getByText('Collapsible Content')).not.toBeVisible();
+    render(<MockCollapsible />);
+    expect(screen.getByTestId('mock-collapse')).toHaveStyle('visibility: hidden');
+    expect(screen.getByText('Collapsible Content')).not.toBeVisible();
 
-    fireEvent.click(getByText('Click me!'));
+    fireEvent.click(screen.getByText('Click me!'));
     await waitFor(() => {
-      expect(getByTestId('mock-collapse')).toHaveStyle('visibility: visible');
-      expect(getByText('Collapsible Content')).toBeVisible();
+      expect(screen.getByTestId('mock-collapse')).toHaveStyle('visibility: visible');
+    });
+    await waitFor(() => {
+      expect(screen.getByText('Collapsible Content')).toBeVisible();
     });
 
-    fireEvent.click(getByText('Click me!'));
+    fireEvent.click(screen.getByText('Click me!'));
     await waitFor(() => {
-      expect(getByTestId('mock-collapse')).toHaveStyle('visibility: hidden');
-      expect(getByText('Collapsible Content')).not.toBeVisible();
+      expect(screen.getByTestId('mock-collapse')).toHaveStyle('visibility: hidden');
+    });
+    await waitFor(() => {
+      expect(screen.getByText('Collapsible Content')).not.toBeVisible();
     });
   });
 });

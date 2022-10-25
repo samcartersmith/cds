@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 
 import { PropsWithChildren } from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { ThemeProvider } from '../../../system/ThemeProvider';
@@ -143,7 +143,7 @@ describe('useTableTag', () => {
   it('TableHeader with sticky gets proper className', async () => {
     const TEST_ID = 'table-header';
 
-    const { getByTestId } = render(
+    render(
       <Table>
         <TableHeader sticky testID={TEST_ID}>
           <TableRow>
@@ -162,7 +162,7 @@ describe('useTableTag', () => {
       </Table>,
     );
 
-    const tableHeader: HTMLElement | null = getByTestId(TEST_ID);
+    const tableHeader: HTMLElement | null = screen.getByTestId(TEST_ID);
     expect(tableHeader).toHaveClass(tableHeaderStaticClassName);
     expect(tableHeader).toHaveClass(tableStickyClassName);
   });
@@ -170,7 +170,7 @@ describe('useTableTag', () => {
   it('TableHeader without sticky gets proper className', async () => {
     const TEST_ID = 'table-header';
 
-    const { getByTestId } = render(
+    render(
       <Table>
         <TableHeader testID={TEST_ID}>
           <TableRow>
@@ -189,7 +189,7 @@ describe('useTableTag', () => {
       </Table>,
     );
 
-    const tableHeader: HTMLElement | null = getByTestId(TEST_ID);
+    const tableHeader: HTMLElement | null = screen.getByTestId(TEST_ID);
     expect(tableHeader).toHaveClass(tableHeaderStaticClassName);
     expect(tableHeader).not.toHaveClass(tableStickyClassName);
   });

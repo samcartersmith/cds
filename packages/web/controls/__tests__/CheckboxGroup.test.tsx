@@ -1,25 +1,25 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { Checkbox } from '../Checkbox';
 import { CheckboxGroup } from '../CheckboxGroup';
 
 describe('CheckboxGroup.test', () => {
   it('renders label and children', () => {
-    const { getByText } = render(
+    render(
       <CheckboxGroup label="test label" selectedValues={new Set('1')} onChange={jest.fn()}>
         <div>test children</div>
         <div>test children2</div>
       </CheckboxGroup>,
     );
 
-    expect(getByText('test label')).toBeTruthy();
-    expect(getByText('test children')).toBeTruthy();
+    expect(screen.getByText('test label')).toBeTruthy();
+    expect(screen.getByText('test children')).toBeTruthy();
   });
 
   it('triggers onChange', () => {
     const onChange = jest.fn();
 
-    const { getByTestId } = render(
+    render(
       <CheckboxGroup selectedValues={new Set('1')} onChange={onChange} testID="test-group">
         <Checkbox value="1" id="item1">
           1
@@ -30,10 +30,10 @@ describe('CheckboxGroup.test', () => {
       </CheckboxGroup>,
     );
 
-    fireEvent.click(getByTestId('test-group-item1'));
+    fireEvent.click(screen.getByTestId('test-group-item1'));
     expect(onChange).toHaveBeenCalledTimes(1);
 
-    fireEvent.click(getByTestId('test-group-item1'));
+    fireEvent.click(screen.getByTestId('test-group-item1'));
     expect(onChange).toHaveBeenCalledTimes(2);
   });
 

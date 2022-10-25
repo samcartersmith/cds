@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { StoryExample } from '../__fixtures__/StoryExample';
@@ -11,34 +11,34 @@ describe('Tooltip', () => {
   it('passes accessibility when open', async () => {
     expect(
       await renderA11y(<StoryExample />, {
-        async afterRender({ container, getByRole }) {
-          fireEvent.mouseEnter(container.querySelector('button') as Element);
+        async afterRender() {
+          fireEvent.mouseEnter(screen.getByRole('button'));
 
-          return waitFor(() => getByRole('tooltip'));
+          return waitFor(() => screen.getByRole('tooltip'));
         },
       }),
     ).toHaveNoViolations();
   });
 
   it('renders the button with a tooltip', () => {
-    const { container, getByRole } = render(<StoryExample />);
+    render(<StoryExample />);
 
-    expect(container.querySelector('button')).toBeDefined();
-    expect(getByRole('tooltip', { hidden: true })).toBeDefined();
+    expect(screen.getByRole('button')).toBeDefined();
+    expect(screen.getByRole('tooltip', { hidden: true })).toBeDefined();
   });
 
   it('shows tooltip on hover', async () => {
-    const { container, getByRole } = render(<StoryExample />);
-    const button = container.querySelector('button');
+    render(<StoryExample />);
+    const button = screen.getByRole('button');
 
-    let tooltip = getByRole('tooltip', { hidden: true });
+    let tooltip = screen.getByRole('tooltip', { hidden: true });
 
     expect(button).toHaveAttribute('aria-describedby', tooltip.id);
     expect(tooltip).toHaveAttribute('hidden');
 
     fireEvent.mouseEnter(button as Element);
 
-    tooltip = await waitFor(() => getByRole('tooltip'));
+    tooltip = await screen.findByRole('tooltip');
 
     expect(tooltip).not.toHaveAttribute('hidden');
   });

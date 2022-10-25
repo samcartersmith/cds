@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { css } from 'linaria';
 import { bannerBuilder } from '@cbhq/cds-common/internal/bannerBuilder';
 
@@ -19,9 +19,9 @@ const TEST_ID = 'test-banner';
 describe('Banner Actions', () => {
   it('fires `onClose` when dismiss icon button is pressed', () => {
     const spy = jest.fn();
-    const { getByLabelText } = render(<MockBanner testID={TEST_ID} onClose={spy} showDismiss />);
+    render(<MockBanner testID={TEST_ID} onClose={spy} showDismiss />);
 
-    const dismissBtn = getByLabelText('close');
+    const dismissBtn = screen.getByLabelText('close');
 
     fireEvent.click(dismissBtn);
 
@@ -30,22 +30,20 @@ describe('Banner Actions', () => {
 
   it('Bannner collapses when dismiss icon button is pressed', async () => {
     const spy = jest.fn();
-    const { getByLabelText, getByTestId } = render(
-      <MockBanner testID={TEST_ID} onClose={spy} showDismiss />,
-    );
+    render(<MockBanner testID={TEST_ID} onClose={spy} showDismiss />);
     const collapsibleTestID = `${TEST_ID}-collapsible`;
 
-    const dismissBtn = getByLabelText('close');
+    const dismissBtn = screen.getByLabelText('close');
 
     // Before dismiss is pressed, banner should be visible
-    expect(getByTestId(collapsibleTestID)).toHaveStyle('visibility: visible');
+    expect(screen.getByTestId(collapsibleTestID)).toHaveStyle('visibility: visible');
 
     fireEvent.click(dismissBtn);
     expect(spy).toHaveBeenCalledTimes(1);
 
     // After dismiss is pressed, banner should be collapsed
     await waitFor(() => {
-      expect(getByTestId(collapsibleTestID)).toHaveStyle('visibility: hidden');
+      expect(screen.getByTestId(collapsibleTestID)).toHaveStyle('visibility: hidden');
     });
   });
 });
@@ -56,7 +54,7 @@ describe('Banner', () => {
       padding: 5px;
     `;
 
-    const { getByTestId } = render(
+    render(
       <Banner
         testID={TEST_ID}
         dangerouslySetClassName={customClassName}
@@ -68,7 +66,7 @@ describe('Banner', () => {
       </Banner>,
     );
 
-    expect(getByTestId(TEST_ID)).toHaveStyle({
+    expect(screen.getByTestId(TEST_ID)).toHaveStyle({
       padding: 5,
     });
   });
@@ -78,7 +76,7 @@ describe('Banner', () => {
       position: 'sticky',
     } as const;
 
-    const { getByTestId } = render(
+    render(
       <Banner
         testID={TEST_ID}
         dangerouslySetStyle={customClassName}
@@ -90,6 +88,6 @@ describe('Banner', () => {
       </Banner>,
     );
 
-    expect(getByTestId(TEST_ID)).toHaveStyle(customClassName);
+    expect(screen.getByTestId(TEST_ID)).toHaveStyle(customClassName);
   });
 });

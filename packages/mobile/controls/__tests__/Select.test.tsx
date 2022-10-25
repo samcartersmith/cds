@@ -1,6 +1,6 @@
 import { ScrollView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common/internal/selectBuilder';
 
 import { HStack, VStack } from '../../layout';
@@ -24,23 +24,23 @@ const placeholderText = 'Choose something';
 
 describe('Select Input', () => {
   it('renders the Select Input trigger', async () => {
-    const { getByText } = render(
+    render(
       <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
         <DefaultSelect placeholder={placeholderText} />
       </SafeAreaProvider>,
     );
 
-    expect(getByText(placeholderText)).toBeTruthy();
+    expect(screen.getByText(placeholderText)).toBeTruthy();
   });
   it('prevents press interactions when disabled', () => {
     const onPressSpy = jest.fn();
-    const { getByText } = render(
+    render(
       <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
         <DefaultSelect placeholder={placeholderText} onPress={onPressSpy} disabled />
       </SafeAreaProvider>,
     );
 
-    fireEvent.press(getByText(placeholderText));
+    fireEvent.press(screen.getByText(placeholderText));
 
     expect(onPressSpy).not.toHaveBeenCalled();
   });

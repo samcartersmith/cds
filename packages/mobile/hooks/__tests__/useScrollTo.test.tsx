@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { ScrollView } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
-import { cleanup, fireEvent, render } from '@testing-library/react-native';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react-native';
 
 import { Button } from '../../buttons';
 import { Box } from '../../layout';
@@ -33,9 +33,9 @@ describe('useScrollTo', () => {
         </Box>
       );
     };
-    const result = render(<MockUsage />);
-    fireEvent.press(result.getByTestId('Button'));
-    expect(result.UNSAFE_getByType(ScrollView).instance.scrollTo).toHaveBeenCalledWith({
+    render(<MockUsage />);
+    fireEvent.press(screen.getByTestId('Button'));
+    expect(screen.UNSAFE_getByType(ScrollView).instance.scrollTo).toHaveBeenCalledWith({
       x: 400,
       y: 0,
       animated: true,
@@ -57,8 +57,8 @@ describe('useScrollTo', () => {
         </Box>
       );
     };
-    const result = render(<MockUsage />);
-    fireEvent.press(result.getByTestId('Button'));
-    expect(result.UNSAFE_getByType(ScrollView).instance.scrollToEnd).toHaveBeenCalled();
+    render(<MockUsage />);
+    fireEvent.press(screen.getByTestId('Button'));
+    expect(screen.UNSAFE_getByType(ScrollView).instance.scrollToEnd).toHaveBeenCalled();
   });
 });

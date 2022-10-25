@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Toast } from '../Toast';
@@ -19,34 +19,37 @@ describe('Toast', () => {
 
   it('renders text and close button', async () => {
     const text = 'Toast copy';
-    const { findByText, findByTestId } = render(<Toast text={text} />);
+    render(<Toast text={text} />);
 
-    expect(await findByText(text)).toBeVisible();
-    expect(await findByTestId('cds-toast-close-button')).toBeVisible();
-    expect(await findByTestId('cds-toast-close-button')).toHaveAccessibleName('close');
+    expect(await screen.findByText(text)).toBeVisible();
+    expect(await screen.findByTestId('cds-toast-close-button')).toBeVisible();
+    expect(await screen.findByTestId('cds-toast-close-button')).toHaveAccessibleName('close');
   });
 
   it('renders action', () => {
     const text = 'Toast copy';
 
-    const { getByTestId } = render(<Toast text={text} action={mockAction} />);
+    render(<Toast text={text} action={mockAction} />);
 
-    fireEvent.click(getByTestId(mockAction.testID));
+    fireEvent.click(screen.getByTestId(mockAction.testID));
     expect(mockAction.onPress).toHaveBeenCalledTimes(1);
   });
 
   it('has correct styles at the end of animation', async () => {
     const text = 'Toast copy';
-    const { getByTestId } = render(<Toast text={text} action={mockAction} testID="mock-toast" />);
+    render(<Toast text={text} action={mockAction} testID="mock-toast" />);
 
     await waitFor(() =>
-      expect(getByTestId('mock-toast-motion')).toHaveStyle({ opacity: 1, transform: 'none' }),
+      expect(screen.getByTestId('mock-toast-motion')).toHaveStyle({
+        opacity: 1,
+        transform: 'none',
+      }),
     );
   });
 
   it('can provide a11y props', async () => {
     const text = 'Toast copy';
-    const { findByTestId } = render(
+    render(
       <Toast
         text={text}
         action={mockAction}
@@ -56,7 +59,9 @@ describe('Toast', () => {
       />,
     );
 
-    expect(await findByTestId('mock-toast-close-button')).toHaveAccessibleName(MOCK_CLOSE_LABEL);
-    expect(await findByTestId('mock-toast')).toHaveAccessibleName(MOCK_A11Y_LABEL);
+    expect(await screen.findByTestId('mock-toast-close-button')).toHaveAccessibleName(
+      MOCK_CLOSE_LABEL,
+    );
+    expect(await screen.findByTestId('mock-toast')).toHaveAccessibleName(MOCK_A11Y_LABEL);
   });
 });

@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import {
   CreateLoremIpsumProps,
@@ -39,21 +39,21 @@ describe('Modal', () => {
   it('passes a11y when visible', async () => {
     expect(
       await renderA11y(<MockModal />, {
-        async afterRender({ container, getByRole }) {
-          fireEvent.click(container.querySelector('button') as Element);
+        async afterRender() {
+          fireEvent.click(screen.getByRole('button'));
 
-          return waitFor(() => getByRole('dialog'));
+          return waitFor(() => screen.getByRole('dialog'));
         },
       }),
     ).toHaveNoViolations();
   });
 
   it('show modal on click', async () => {
-    const { container, getByRole } = render(<MockModal />);
+    render(<MockModal />);
 
-    fireEvent.click(container.querySelector('button') as Element);
+    fireEvent.click(screen.getByRole('button'));
 
-    const modal = await waitFor(() => getByRole('dialog'));
+    const modal = await screen.findByRole('dialog');
     expect(modal).toBeDefined();
     expect(modal).toHaveAttribute('aria-modal', 'true');
     expect(modal).toHaveAttribute('aria-labelledby', 'modal_title');
@@ -61,14 +61,12 @@ describe('Modal', () => {
 
   it('triggers close on overlay click', async () => {
     const onRequestClose = jest.fn();
-    const { container, getByRole, getByTestId } = render(
-      <MockModal onRequestClose={onRequestClose} />,
-    );
+    render(<MockModal onRequestClose={onRequestClose} />);
 
-    fireEvent.click(container.querySelector('button') as Element);
+    fireEvent.click(screen.getByRole('button'));
 
-    await waitFor(() => getByRole('dialog'));
-    fireEvent.click(getByTestId('modal-overlay'));
+    await screen.findByRole('dialog');
+    fireEvent.click(screen.getByTestId('modal-overlay'));
 
     // wait for animation to finish
     expect(onRequestClose).toHaveBeenCalledTimes(1);
@@ -76,25 +74,23 @@ describe('Modal', () => {
 
   it('triggers close on close button click', async () => {
     const onRequestClose = jest.fn();
-    const { container, getByRole, getByTestId } = render(
-      <MockModal onRequestClose={onRequestClose} />,
-    );
+    render(<MockModal onRequestClose={onRequestClose} />);
 
-    fireEvent.click(container.querySelector('button') as Element);
+    fireEvent.click(screen.getByRole('button'));
 
-    await waitFor(() => getByRole('dialog'));
-    fireEvent.click(getByTestId('modal-close-button'));
+    await screen.findByRole('dialog');
+    fireEvent.click(screen.getByTestId('modal-close-button'));
 
     expect(onRequestClose).toHaveBeenCalledTimes(1);
   });
 
   it('triggers close on ESC key press', async () => {
     const onRequestClose = jest.fn();
-    const { container, getByRole } = render(<MockModal onRequestClose={onRequestClose} />);
+    render(<MockModal onRequestClose={onRequestClose} />);
 
-    fireEvent.click(container.querySelector('button') as Element);
+    fireEvent.click(screen.getByRole('button'));
 
-    await waitFor(() => getByRole('dialog'));
+    await screen.findByRole('dialog');
     const user = userEvent.setup();
     await user.keyboard('{Escape}');
 
@@ -103,54 +99,54 @@ describe('Modal', () => {
 
   it('triggers back action on back button click', async () => {
     const onBackButtonPress = jest.fn();
-    const { getByTestId } = render(
-      <MockModal visible onRequestClose={jest.fn()} onBackButtonPress={onBackButtonPress} />,
-    );
+    render(<MockModal visible onRequestClose={jest.fn()} onBackButtonPress={onBackButtonPress} />);
 
-    fireEvent.click(getByTestId('modal-back-button'));
+    fireEvent.click(screen.getByTestId('modal-back-button'));
 
     expect(onBackButtonPress).toHaveBeenCalledTimes(1);
   });
 
   it('renders modal title', async () => {
     const title = 'Basic Modal';
-    const { findByText, getByText } = render(
-      <MockModal visible onRequestClose={jest.fn()} title={title} />,
-    );
-    expect(getByText(title)).not.toBeVisible();
+    render(<MockModal visible onRequestClose={jest.fn()} title={title} />);
+    expect(screen.getByText(title)).not.toBeVisible();
 
-    expect(await findByText(title)).toBeVisible();
+    expect(await screen.findByText(title)).toBeVisible();
   });
 
   it('renders modal body', async () => {
-    const { findByText, getByText } = render(<MockModal visible onRequestClose={jest.fn()} />);
-    expect(getByText(loremIpsum)).not.toBeVisible();
+    render(<MockModal visible onRequestClose={jest.fn()} />);
+    expect(screen.getByText(loremIpsum)).not.toBeVisible();
 
-    expect(await findByText(loremIpsum)).toBeVisible();
+    expect(await screen.findByText(loremIpsum)).toBeVisible();
   });
 
   it('renders modal footer', async () => {
-    const { findByTestId } = render(<MockModal visible onRequestClose={jest.fn()} />);
+    render(<MockModal visible onRequestClose={jest.fn()} />);
 
-    expect(await findByTestId('modal-footer')).toBeVisible();
+    expect(await screen.findByTestId('modal-footer')).toBeVisible();
   });
 
   it('should have correct styles at the end of animation', async () => {
-    const { container, getByTestId } = render(<MockModal />);
+    render(<MockModal />);
 
-    fireEvent.click(container.querySelector('button') as Element);
+    fireEvent.click(screen.getByRole('button'));
     // initial styles
-    expect(getByTestId('modal-overlay-motion')).toHaveStyle({ opacity: 0 });
-    expect(getByTestId('modal-dialog-motion')).toHaveStyle({ opacity: 0 });
-    expect(getByTestId('modal-dialog-motion')).toHaveStyle({
+    expect(screen.getByTestId('modal-overlay-motion')).toHaveStyle({ opacity: 0 });
+    expect(screen.getByTestId('modal-dialog-motion')).toHaveStyle({ opacity: 0 });
+    expect(screen.getByTestId('modal-dialog-motion')).toHaveStyle({
       transform: 'scale(0.98) translateZ(0)',
     });
 
     // animated styles
     await waitFor(() => {
-      expect(getByTestId('modal-overlay-motion')).toHaveStyle({ opacity: 1 });
-      expect(getByTestId('modal-dialog-motion')).toHaveStyle({ opacity: 1 });
-      expect(getByTestId('modal-dialog-motion')).toHaveStyle({
+      expect(screen.getByTestId('modal-overlay-motion')).toHaveStyle({ opacity: 1 });
+    });
+    await waitFor(() => {
+      expect(screen.getByTestId('modal-dialog-motion')).toHaveStyle({ opacity: 1 });
+    });
+    await waitFor(() => {
+      expect(screen.getByTestId('modal-dialog-motion')).toHaveStyle({
         transform: 'none',
       });
     });

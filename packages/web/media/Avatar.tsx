@@ -128,11 +128,12 @@ export const Avatar: React.FC<AvatarWebProps> = memo(
           alignItems="center"
           dangerouslySetStyle={styleOverrides}
           dangerouslySetClassName={avatarColoredFallbackClassName}
+          testID={`${testID}-fallback`}
         >
           {avatarText}
         </Box>
       );
-    }, [avatarText, borderRadius, styleOverrides]);
+    }, [avatarText, borderRadius, styleOverrides, testID]);
 
     return (
       <Box
@@ -153,7 +154,7 @@ export const Avatar: React.FC<AvatarWebProps> = memo(
         justifyContent="center"
         flexShrink={0}
         flexGrow={0}
-        data-testid={testID}
+        testID={testID}
       >
         {shouldShowAvatarImage ? (
           <RemoteImage width={computedSize} height={computedSize} source={avatarSrc} alt={alt} />

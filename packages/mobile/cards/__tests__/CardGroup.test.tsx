@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { AnnouncementCard } from '../../alpha/AnnouncementCard';
 import { FeatureFlagProvider } from '../../system';
@@ -6,35 +6,35 @@ import { CardGroup } from '../CardGroup';
 
 describe('CardGroup.test', () => {
   it('renders children', () => {
-    const { getByText } = render(
+    render(
       <CardGroup>
         <AnnouncementCard title="Item1 title" description="Item1 description" />
         <AnnouncementCard title="Item2 title" description="Item2 description" />
       </CardGroup>,
     );
 
-    expect(getByText('Item1 title')).toBeTruthy();
-    expect(getByText('Item1 description')).toBeTruthy();
-    expect(getByText('Item2 title')).toBeTruthy();
-    expect(getByText('Item2 description')).toBeTruthy();
+    expect(screen.getByText('Item1 title')).toBeTruthy();
+    expect(screen.getByText('Item1 description')).toBeTruthy();
+    expect(screen.getByText('Item2 title')).toBeTruthy();
+    expect(screen.getByText('Item2 description')).toBeTruthy();
   });
 
   it('renders horizontal group', () => {
-    const { getByText } = render(
+    render(
       <CardGroup horizontal>
         <AnnouncementCard title="Item1 title" description="Item1 description" />
         <AnnouncementCard title="Item2 title" description="Item2 description" />
       </CardGroup>,
     );
 
-    expect(getByText('Item1 title')).toBeTruthy();
-    expect(getByText('Item1 description')).toBeTruthy();
-    expect(getByText('Item2 title')).toBeTruthy();
-    expect(getByText('Item2 description')).toBeTruthy();
+    expect(screen.getByText('Item1 title')).toBeTruthy();
+    expect(screen.getByText('Item1 description')).toBeTruthy();
+    expect(screen.getByText('Item2 title')).toBeTruthy();
+    expect(screen.getByText('Item2 description')).toBeTruthy();
   });
 
   it('renders frontier', () => {
-    const { getByText } = render(
+    render(
       <FeatureFlagProvider frontierCard>
         <CardGroup>
           <AnnouncementCard title="Item1 title" description="Item1 description" />
@@ -43,9 +43,9 @@ describe('CardGroup.test', () => {
       </FeatureFlagProvider>,
     );
 
-    expect(getByText('Item1 title')).toBeTruthy();
-    expect(getByText('Item1 description')).toBeTruthy();
-    expect(getByText('Item2 title')).toBeTruthy();
-    expect(getByText('Item2 description')).toBeTruthy();
+    expect(screen.getByText('Item1 title')).toBeTruthy();
+    expect(screen.getByText('Item1 description')).toBeTruthy();
+    expect(screen.getByText('Item2 title')).toBeTruthy();
+    expect(screen.getByText('Item2 description')).toBeTruthy();
   });
 });

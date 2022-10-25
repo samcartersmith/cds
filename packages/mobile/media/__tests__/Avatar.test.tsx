@@ -1,4 +1,4 @@
-import { render, waitFor } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 import { getNormalAvatarPixelSize } from '@cbhq/cds-common/media/useAvatarSize';
 import { paletteValueToHex } from '@cbhq/cds-common/palette/paletteValueToHex';
 import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
@@ -11,18 +11,16 @@ const name = 'Test Name';
 describe('Avatar', () => {
   it('renders an image', () => {
     const src = 'https://images.coinbase.com/avatar?s=56';
-    const { queryByTestId, queryByText } = render(
-      <Avatar alt="" name={name} src={src} testID="avatar" />,
-    );
-    const image = queryByTestId('avatar-image');
+    render(<Avatar alt="" name={name} src={src} testID="avatar" />);
+    const image = screen.getByTestId('avatar-image');
     expect(image).toBeTruthy();
     expect(image?.props.source).toEqual({ uri: src });
 
-    expect(queryByText('T')).toBeFalsy();
+    expect(screen.queryByText('T')).toBeFalsy();
   });
 
   it('has a border color', () => {
-    const { queryByTestId } = render(
+    render(
       <Avatar
         alt=""
         borderColor="positive"
@@ -30,7 +28,7 @@ describe('Avatar', () => {
         testID="avatar"
       />,
     );
-    const box = queryByTestId('avatar');
+    const box = screen.queryByTestId('avatar');
     expect(box).toBeTruthy();
 
     expect(box).toHaveStyle({
@@ -43,7 +41,7 @@ describe('Avatar', () => {
     function renderAvatar(size: AvatarSize) {
       const px = getNormalAvatarPixelSize(size);
 
-      const { queryByTestId } = render(
+      render(
         <Avatar
           alt=""
           size={size}
@@ -53,7 +51,7 @@ describe('Avatar', () => {
         />,
       );
 
-      const box = queryByTestId('avatar');
+      const box = screen.queryByTestId('avatar');
       expect(box).toBeTruthy();
 
       expect(box).toHaveStyle({
@@ -68,7 +66,7 @@ describe('Avatar', () => {
   });
 
   it('handles shapes', () => {
-    let { queryByTestId } = render(
+    render(
       <Avatar
         alt=""
         name="TestName"
@@ -76,13 +74,13 @@ describe('Avatar', () => {
         testID="avatar"
       />,
     );
-    let box = queryByTestId('avatar');
+    let box = screen.queryByTestId('avatar');
 
     expect(box).toHaveStyle({
       borderRadius: borderRadius.roundedFull,
     });
 
-    queryByTestId = render(
+    render(
       <Avatar
         alt=""
         name="TestName"
@@ -90,8 +88,9 @@ describe('Avatar', () => {
         src="https://images.coinbase.com/avatar?s=56"
         testID="avatar"
       />,
-    ).queryByTestId;
-    box = queryByTestId('avatar');
+    );
+
+    box = screen.queryByTestId('avatar');
 
     expect(box).not.toHaveStyle({
       borderRadius: borderRadius.roundedFull,
@@ -101,18 +100,16 @@ describe('Avatar', () => {
     });
   });
   it('when passed a name prop and no src is provided it shows a fallback color and first letter of name prop', async () => {
-    const { getByTestId, getByText } = render(
-      <Avatar alt="" name="TestName" colorScheme="pink" testID="avatar" />,
-    );
+    render(<Avatar alt="" name="TestName" colorScheme="pink" testID="avatar" />);
 
     const pinkBackgroundColor = paletteValueToHex('pink60', 'light');
 
-    await waitFor(() => getByTestId(coloredFallbackTestID));
+    await screen.findByTestId(coloredFallbackTestID);
 
-    expect(getByTestId(coloredFallbackTestID)).toHaveStyle({
+    expect(screen.getByTestId(coloredFallbackTestID)).toHaveStyle({
       backgroundColor: pinkBackgroundColor,
     });
 
-    expect(getByText('T')).toBeTruthy();
+    expect(screen.getByText('T')).toBeTruthy();
   });
 });

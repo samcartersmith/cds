@@ -1,5 +1,5 @@
 import { Animated, Text } from 'react-native';
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { InternalTooltip } from '../InternalTooltip';
 
@@ -13,7 +13,7 @@ describe('InternalTooltip.test', () => {
   });
 
   it('renders content', () => {
-    const { getByText } = render(
+    render(
       <InternalTooltip
         subjectLayout={{ width: 20, height: 30, pageOffsetX: 15, pageOffsetY: 25 }}
         content={<Text>test content</Text>}
@@ -24,12 +24,12 @@ describe('InternalTooltip.test', () => {
       />,
     );
 
-    expect(getByText('test content')).toBeTruthy();
+    expect(screen.getByText('test content')).toBeTruthy();
     expect(mockAnimateIn.start).toHaveBeenCalledTimes(1);
   });
 
   it('renders string content', () => {
-    const { getByText } = render(
+    render(
       <InternalTooltip
         subjectLayout={{ width: 20, height: 30, pageOffsetX: 15, pageOffsetY: 25 }}
         content="test content"
@@ -40,7 +40,7 @@ describe('InternalTooltip.test', () => {
       />,
     );
 
-    expect(getByText('test content')).toBeTruthy();
+    expect(screen.getByText('test content')).toBeTruthy();
     expect(mockAnimateIn.start).toHaveBeenCalledTimes(1);
   });
 });

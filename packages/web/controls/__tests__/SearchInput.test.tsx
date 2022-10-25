@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { SearchInput } from '../SearchInput';
@@ -28,16 +28,14 @@ describe('Search', () => {
   });
 
   it('able to set a default value', () => {
-    const result = render(
-      <SearchInput onChangeText={onChangeTextSpy} value="value" testID={TEST_ID} />,
-    );
+    render(<SearchInput onChangeText={onChangeTextSpy} value="value" testID={TEST_ID} />);
 
-    expect(result.getByRole('searchbox')).toHaveValue('value');
+    expect(screen.getByRole('searchbox')).toHaveValue('value');
   });
 
   /** Testing for existence of components */
   it('renders a search', () => {
-    const { queryByRole } = render(
+    render(
       <SearchInput
         value="value"
         onChangeText={onChangeTextSpy}
@@ -45,12 +43,12 @@ describe('Search', () => {
         placeholder="Placeholder"
       />,
     );
-    const search = queryByRole(ROLE);
+    const search = screen.queryByRole(ROLE);
     expect(search).toBeDefined();
   });
 
   it('renders a Search IconButton at the start node', () => {
-    const { getByTestId } = render(
+    render(
       <SearchInput
         value="value"
         onChangeText={onChangeTextSpy}
@@ -58,12 +56,12 @@ describe('Search', () => {
         placeholder="Placeholder"
       />,
     );
-    const searchIconBtn = getByTestId(`${TEST_ID}-search-icon`);
+    const searchIconBtn = screen.getByTestId(`${TEST_ID}-search-icon`);
     expect(searchIconBtn).toBeDefined();
   });
 
   it('does not render a Search IconButton when hideStartIcon=true', () => {
-    const { queryByTestId } = render(
+    render(
       <SearchInput
         value="value"
         onChangeText={onChangeTextSpy}
@@ -72,11 +70,11 @@ describe('Search', () => {
         placeholder="Placeholder"
       />,
     );
-    expect(queryByTestId(`${TEST_ID}-search-icon`)).toBeNull();
+    expect(screen.queryByTestId(`${TEST_ID}-search-icon`)).toBeNull();
   });
 
   it('renders a Close IconButton at the end node when there is value', () => {
-    const { getByTestId } = render(
+    render(
       <SearchInput
         onChangeText={onChangeTextSpy}
         testID={TEST_ID}
@@ -84,13 +82,13 @@ describe('Search', () => {
         placeholder="Placeholder"
       />,
     );
-    const closeIconBtn = getByTestId(`${TEST_ID}-close-iconbtn`);
+    const closeIconBtn = screen.getByTestId(`${TEST_ID}-close-iconbtn`);
     expect(closeIconBtn).toBeDefined();
   });
 
   /** Testing for events */
   it('fires `onClear` when close icon button is pressed', () => {
-    const { getByTestId } = render(
+    render(
       <SearchInput
         onChangeText={onChangeTextSpy}
         value="value"
@@ -100,7 +98,7 @@ describe('Search', () => {
       />,
     );
 
-    fireEvent.click(getByTestId(`${TEST_ID}-close-iconbtn`).firstChild as Element);
+    fireEvent.click(screen.getByRole('button'));
 
     expect(onClearSpy).toHaveBeenCalled();
   });

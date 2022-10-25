@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { CellAccessory } from '../CellAccessory';
@@ -9,20 +9,20 @@ describe('CellAccessory', () => {
   });
 
   it('renders a more', () => {
-    const result = render(<CellAccessory type="more" />);
+    render(<CellAccessory type="more" />);
 
-    expect(result.getByRole('presentation')).toHaveAttribute('data-icon-name', 'more');
+    expect(screen.getByRole('presentation')).toHaveAttribute('data-icon-name', 'more');
   });
 
   it('renders an arrow', () => {
-    const result = render(<CellAccessory type="arrow" />);
+    render(<CellAccessory type="arrow" />);
 
-    expect(result.getByRole('presentation')).toHaveAttribute('data-icon-name', 'caretRight');
+    expect(screen.getByRole('presentation')).toHaveAttribute('data-icon-name', 'caretRight');
   });
 
   it('renders a selected', () => {
-    const result = render(<CellAccessory type="selected" />);
+    render(<CellAccessory type="selected" />);
 
-    expect(result.getByRole('presentation')).toHaveAttribute('data-icon-name', 'checkmark');
+    expect(screen.getByRole('presentation')).toHaveAttribute('data-icon-name', 'checkmark');
   });
 });

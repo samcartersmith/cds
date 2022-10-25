@@ -1,61 +1,58 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { Button } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 
 describe('ButtonGroup.test', () => {
   it('renders list', () => {
-    const { getByRole, container } = render(
+    render(
       <ButtonGroup accessibilityLabel="Group">
         <Button>Save</Button>
         <Button variant="secondary">Cancel</Button>
       </ButtonGroup>,
     );
 
-    expect(getByRole('group')).toBeTruthy();
-    expect(container.querySelector('ul')).toBeTruthy();
-    expect(container.querySelector('li')).toBeTruthy();
-    expect(container.querySelector('button')).toBeTruthy();
+    expect(screen.getByRole('group')).toBeTruthy();
+    expect(screen.getAllByRole('listitem')).toBeTruthy();
+    expect(screen.getAllByRole('button')).toBeTruthy();
   });
 
   it('renders vertical list', () => {
-    const { getByRole, container } = render(
+    render(
       <ButtonGroup vertical accessibilityLabel="Group">
         <Button>Save</Button>
         <Button variant="secondary">Cancel</Button>
       </ButtonGroup>,
     );
 
-    expect(getByRole('group')).toBeTruthy();
-    expect(container.querySelector('ul')).toBeTruthy();
-    expect(container.querySelector('li')).toBeTruthy();
-    expect(container.querySelector('button')).toBeTruthy();
+    expect(screen.getByRole('group')).toBeTruthy();
+    expect(screen.getAllByRole('listitem')).toBeTruthy();
+    expect(screen.getAllByRole('button')).toBeTruthy();
   });
 
   it('renders block buttons', () => {
-    const { getByRole, container } = render(
+    render(
       <ButtonGroup block accessibilityLabel="Group">
         <Button>Save</Button>
         <Button variant="secondary">Cancel</Button>
       </ButtonGroup>,
     );
 
-    expect(getByRole('group')).toBeTruthy();
-    expect(container.querySelector('ul')).toBeTruthy();
-    expect(container.querySelector('li')).toBeTruthy();
-    expect(container.querySelector('button')).toBeTruthy();
+    expect(screen.getByRole('group')).toBeTruthy();
+    expect(screen.getAllByRole('listitem')).toBeTruthy();
+    expect(screen.getAllByRole('button')).toBeTruthy();
   });
 
   it('renders null children', () => {
-    const { getByRole, container } = render(
+    render(
       <ButtonGroup block accessibilityLabel="Group">
         {null}
         {null}
       </ButtonGroup>,
     );
 
-    expect(getByRole('group')).toBeTruthy();
-    expect(container.querySelector('ul')).toBeTruthy();
-    expect(container.querySelector('li')).toBeNull();
+    expect(screen.getByRole('group')).toBeTruthy();
+    expect(screen.queryAllByRole('listitem')).toHaveLength(0);
+    expect(screen.queryAllByRole('button')).toHaveLength(0);
   });
 });

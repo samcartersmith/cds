@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { withTimeTravel } from '@cbhq/cds-common/jest/timeTravel';
 import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
 import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
@@ -34,10 +34,10 @@ describe('ProgressCircle tests', () => {
 
   it('handles 0 percent', () => {
     const size = 100;
-    const { getByTestId, getAllByText } = render(<ProgressCircle progress={0} size={size} />);
+    render(<ProgressCircle progress={0} size={size} />);
 
     const circumference = getCircumference(getRadius(size, 4));
-    const innerCircle = getByTestId('cds-progress-circle-inner');
+    const innerCircle = screen.getByTestId('cds-progress-circle-inner');
     expect(innerCircle).toBeTruthy();
     expect(innerCircle).toHaveAttribute('stroke-dashoffset', `${circumference}`);
 
@@ -45,16 +45,16 @@ describe('ProgressCircle tests', () => {
 
     expect(innerCircle).toHaveAttribute('stroke', palette.primary);
 
-    expect(getAllByText('0%')).toHaveLength(2);
+    expect(screen.getAllByText('0%')).toHaveLength(2);
   });
 
   it('handles 50 percent', () => {
     withTimeTravel((timeTravel) => {
       const size = 100;
-      const { getByTestId, getAllByText } = render(<ProgressCircle progress={0.5} size={size} />);
+      render(<ProgressCircle progress={0.5} size={size} />);
 
       const circumference = getCircumference(getRadius(size, 4));
-      const innerCircle = getByTestId('cds-progress-circle-inner');
+      const innerCircle = screen.getByTestId('cds-progress-circle-inner');
       expect(innerCircle).toBeTruthy();
       timeTravel(1000);
       expect(innerCircle).toHaveAttribute('stroke-dashoffset', `${circumference * 0.5}`);
@@ -63,17 +63,17 @@ describe('ProgressCircle tests', () => {
 
       expect(innerCircle).toHaveAttribute('stroke', palette.primary);
 
-      expect(getAllByText('50%')).toHaveLength(2);
+      expect(screen.getAllByText('50%')).toHaveLength(2);
     });
   });
 
   it('handles 100 percent', () => {
     withTimeTravel((timeTravel) => {
       const size = 100;
-      const { getByTestId, getAllByText } = render(<ProgressCircle progress={1} size={size} />);
+      render(<ProgressCircle progress={1} size={size} />);
 
       const circumference = getCircumference(getRadius(size, 4));
-      const innerCircle = getByTestId('cds-progress-circle-inner');
+      const innerCircle = screen.getByTestId('cds-progress-circle-inner');
       expect(innerCircle).toBeTruthy();
 
       timeTravel(1000);
@@ -83,31 +83,31 @@ describe('ProgressCircle tests', () => {
 
       expect(innerCircle).toHaveAttribute('stroke', palette.primary);
 
-      expect(getAllByText('100%')).toHaveLength(2);
+      expect(screen.getAllByText('100%')).toHaveLength(2);
     });
   });
 
   it('handles heavy weight', () => {
     const size = 100;
-    const { getByTestId } = render(<ProgressCircle progress={1} weight="heavy" size={size} />);
+    render(<ProgressCircle progress={1} weight="heavy" size={size} />);
 
-    const innerCircle = getByTestId('cds-progress-circle-inner');
+    const innerCircle = screen.getByTestId('cds-progress-circle-inner');
     expect(innerCircle).toBeTruthy();
     expect(innerCircle).toHaveAttribute('stroke-width', '12');
   });
 
   it('handles no text', () => {
     const size = 100;
-    const { queryAllByText } = render(<ProgressCircle progress={1} hideText size={size} />);
+    render(<ProgressCircle progress={1} hideText size={size} />);
 
-    expect(queryAllByText('100%')).toHaveLength(0);
+    expect(screen.queryAllByText('100%')).toHaveLength(0);
   });
 
   it('handles different color', () => {
     const size = 100;
-    const { getByTestId } = render(<ProgressCircle color="positive" progress={1} size={size} />);
+    render(<ProgressCircle color="positive" progress={1} size={size} />);
 
-    const innerCircle = getByTestId('cds-progress-circle-inner');
+    const innerCircle = screen.getByTestId('cds-progress-circle-inner');
     expect(innerCircle).toHaveAttribute('stroke', palette.positive);
   });
 });

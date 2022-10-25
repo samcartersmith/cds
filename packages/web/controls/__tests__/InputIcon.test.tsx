@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { InputVariant } from '@cbhq/cds-common';
 
 import { InputIcon } from '../InputIcon';
@@ -15,7 +15,7 @@ describe('Test InputIcon inheritFocusedVariant interaction', () => {
 
   Object.entries(variantsToFocusedColor).map(([variant, focusedColor]) => {
     return it(`${variant} TextInput will set icon to ${focusedColor} when focused`, () => {
-      const { container, getByRole } = render(
+      render(
         <TextInput
           key={`${variant}-inputicon`}
           label="Label"
@@ -25,9 +25,9 @@ describe('Test InputIcon inheritFocusedVariant interaction', () => {
         />,
       );
 
-      fireEvent.click(container.querySelector('input') as Element);
+      fireEvent.click(screen.getByRole('textbox'));
 
-      expect(getByRole('presentation')).toHaveStyle(`color: var(--${focusedColor}`);
+      expect(screen.getByRole('presentation')).toHaveStyle(`color: var(--${focusedColor}`);
     });
   });
 });
@@ -36,7 +36,7 @@ describe('InputIcon', () => {
   it(`Can override focused color provided by context.`, () => {
     const variant = 'foreground';
 
-    const { container, getByRole } = render(
+    render(
       <TextInput
         key={`${variant}-inputicon`}
         label="Label"
@@ -46,8 +46,8 @@ describe('InputIcon', () => {
       />,
     );
 
-    fireEvent.click(container.querySelector('input') as Element);
+    fireEvent.click(screen.getByRole('textbox'));
 
-    expect(getByRole('presentation')).toHaveStyle(`color: var(--${variant}`);
+    expect(screen.getByRole('presentation')).toHaveStyle(`color: var(--${variant}`);
   });
 });

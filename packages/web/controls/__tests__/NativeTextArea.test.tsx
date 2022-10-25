@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { NativeTextArea } from '../NativeTextArea';
@@ -16,44 +16,44 @@ describe('NativeTextArea Accessibility', () => {
 
 describe('NativeTextArea', () => {
   it('can mark as disabled', () => {
-    const { getByTestId } = render(<NativeTextArea disabled testID={TEST_ID} />);
+    render(<NativeTextArea disabled testID={TEST_ID} />);
 
-    expect(getByTestId(TEST_ID)).toHaveAttribute('disabled');
+    expect(screen.getByTestId(TEST_ID)).toHaveAttribute('disabled');
   });
 });
 
 describe('NativeTextArea events', () => {
   it('fires `onPress` when clicked', () => {
     const spy = jest.fn();
-    const { container } = render(<NativeTextArea onPress={spy} testID={TEST_ID} />);
+    render(<NativeTextArea onPress={spy} testID={TEST_ID} />);
 
-    fireEvent.click(container.querySelector('textarea') as Element);
+    fireEvent.click(screen.getByRole('textbox'));
 
     expect(spy).toHaveBeenCalled();
   });
 
   it('fires `onFocus` when clicked', () => {
     const spy = jest.fn();
-    const { container } = render(<NativeTextArea onFocus={spy} testID={TEST_ID} />);
+    render(<NativeTextArea onFocus={spy} testID={TEST_ID} />);
 
-    fireEvent.focus(container.querySelector('textarea') as Element);
+    fireEvent.focus(screen.getByRole('textbox'));
 
     expect(spy).toHaveBeenCalled();
   });
 
   it('fires `onBlur` when clicking outside of input', () => {
     const spy = jest.fn();
-    const { container } = render(<NativeTextArea onBlur={spy} testID={TEST_ID} />);
+    render(<NativeTextArea onBlur={spy} testID={TEST_ID} />);
 
-    fireEvent.blur(container.querySelector('textarea') as Element);
+    fireEvent.blur(screen.getByRole('textbox'));
 
     expect(spy).toHaveBeenCalled();
   });
 
   it('text changes with `onChange`', () => {
-    const { getByTestId } = render(<NativeTextArea testID={TEST_ID} />);
+    render(<NativeTextArea testID={TEST_ID} />);
 
-    const textarea = getByTestId(TEST_ID);
+    const textarea = screen.getByTestId(TEST_ID);
 
     fireEvent.change(textarea, { target: { value: 'desired text' } });
 

@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import { withTimeTravel } from '@cbhq/cds-common/jest/timeTravel';
 
 import { Button } from '../../buttons';
@@ -25,12 +25,12 @@ const MockAnimatedCaret = () => {
 describe('AnimatedCaret', () => {
   it('rotates', () => {
     withTimeTravel((timeTravel) => {
-      const { getByTestId } = render(<MockAnimatedCaret />);
+      render(<MockAnimatedCaret />);
 
       for (let i = 0; i < rotates.length - 1; i += 1) {
-        fireEvent.press(getByTestId('mock-rotate-button'));
+        fireEvent.press(screen.getByTestId('mock-rotate-button'));
         timeTravel(500);
-        expect(getByTestId('mock-animated-caret').props.style.transform).toEqual([
+        expect(screen.getByTestId('mock-animated-caret').props.style.transform).toEqual([
           { rotate: `${rotates[i + 1]}deg` },
         ]);
       }

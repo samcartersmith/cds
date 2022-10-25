@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import { TabNavigation } from '../TabNavigation';
 
@@ -23,16 +23,16 @@ describe('TabNavigation', () => {
   const TEST_ID = 'mainTabNav';
 
   it('Properly inherits testID from TabNavigation', () => {
-    const { getByTestId } = render(<MockTabNavigation testID={TEST_ID} />);
+    render(<MockTabNavigation testID={TEST_ID} />);
 
-    expect(getByTestId(TEST_ID)).not.toBeNull();
-    expect(getByTestId(`${TEST_ID}-tabLabel--first-test`)).not.toBeNull();
+    expect(screen.getByTestId(TEST_ID)).not.toBeNull();
+    expect(screen.getByTestId(`${TEST_ID}-tabLabel--first-test`)).not.toBeNull();
   });
 
   it("Properly applies custom testID's", () => {
-    const { getByTestId } = render(<MockTabNavigation testID={TEST_ID} />);
+    render(<MockTabNavigation testID={TEST_ID} />);
 
-    expect(getByTestId(TEST_ID)).not.toBeNull();
-    expect(getByTestId('specialTestID')).not.toBeNull();
+    expect(screen.getByTestId(TEST_ID)).not.toBeNull();
+    expect(screen.getByTestId('specialTestID')).not.toBeNull();
   });
 });

@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { ScrollView } from 'react-native';
-import { cleanup, fireEvent, render } from '@testing-library/react-native';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react-native';
 
 import { Button } from '../../../buttons';
 import { Box } from '../../../layout';
@@ -52,25 +52,25 @@ describe('useCarousel', () => {
 
   it('exposes length of carousel items', () => {
     const spy = jest.spyOn(console, 'log').mockImplementation();
-    const { getByTestId, rerender } = render(<MockCarousel length={3} />);
-    fireEvent.press(getByTestId('LogLength'));
+    render(<MockCarousel length={3} />);
+    fireEvent.press(screen.getByTestId('LogLength'));
     expect(spy).toHaveBeenCalledWith('Carousel length: 3');
 
-    rerender(<MockCarousel length={4} />);
+    screen.rerender(<MockCarousel length={4} />);
 
-    fireEvent.press(getByTestId('LogLength'));
+    fireEvent.press(screen.getByTestId('LogLength'));
     expect(spy).toHaveBeenCalledWith('Carousel length: 4');
   });
 
   it('exposes scrollToId', async () => {
-    const result = render(<MockCarousel length={3} />);
-    fireEvent.press(result.getByTestId('ScrollTo'));
-    expect(result.UNSAFE_getByType(ScrollView).instance.scrollTo).toHaveBeenCalled();
+    render(<MockCarousel length={3} />);
+    fireEvent.press(screen.getByTestId('ScrollTo'));
+    expect(screen.UNSAFE_getByType(ScrollView).instance.scrollTo).toHaveBeenCalled();
   });
 
   it('exposes scrollToEnd', async () => {
-    const result = render(<MockCarousel length={3} />);
-    fireEvent.press(result.getByTestId('ScrollToEnd'));
-    expect(result.UNSAFE_getByType(ScrollView).instance.scrollToEnd).toHaveBeenCalled();
+    render(<MockCarousel length={3} />);
+    fireEvent.press(screen.getByTestId('ScrollToEnd'));
+    expect(screen.UNSAFE_getByType(ScrollView).instance.scrollToEnd).toHaveBeenCalled();
   });
 });

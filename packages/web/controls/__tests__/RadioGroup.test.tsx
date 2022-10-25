@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { TextHeadline } from '../../typography';
 import { Radio, RadioGroup } from '../RadioGroup';
@@ -15,28 +15,28 @@ describe('RadioGroup.test', () => {
   beforeEach(() => jest.clearAllMocks());
 
   it('renders radio', () => {
-    const { getByTestId } = render(<Radio onChange={jest.fn()} testID="test-radio" />);
+    render(<Radio onChange={jest.fn()} testID="test-radio" />);
 
-    expect(getByTestId('test-radio')).toBeTruthy();
+    expect(screen.getByTestId('test-radio')).toBeTruthy();
   });
 
   it('renders checked radio', () => {
-    const { getByTestId } = render(<Radio checked onChange={jest.fn()} testID="test-radio" />);
+    render(<Radio checked onChange={jest.fn()} testID="test-radio" />);
 
-    expect(getByTestId('test-radio')).toBeTruthy();
+    expect(screen.getByTestId('test-radio')).toBeTruthy();
   });
 
   it('renders options', () => {
-    const { getByRole } = render(
+    render(
       <RadioGroup name="radio-group" selectedValue="btc" onChange={onChange} options={options} />,
     );
 
-    expect(getByRole('radiogroup')).toBeTruthy();
-    expect(getByRole('radiogroup').childNodes).toHaveLength(3);
+    expect(screen.getByRole('radiogroup')).toBeTruthy();
+    expect(screen.getByRole('radiogroup').childNodes).toHaveLength(3);
   });
 
   it('renders label', () => {
-    const { getByText } = render(
+    render(
       <RadioGroup
         name="radio-group"
         label={<TextHeadline as="span">Choose a currency</TextHeadline>}
@@ -46,11 +46,11 @@ describe('RadioGroup.test', () => {
       />,
     );
 
-    expect(getByText('Choose a currency')).toBeTruthy();
+    expect(screen.getByText('Choose a currency')).toBeTruthy();
   });
 
   it('triggers onChange', () => {
-    const { getByTestId } = render(
+    render(
       <RadioGroup
         name="radio-group"
         label={<TextHeadline as="span">Choose a currency</TextHeadline>}
@@ -61,7 +61,7 @@ describe('RadioGroup.test', () => {
       />,
     );
 
-    fireEvent.click(getByTestId('test-radio-group-eth'));
+    fireEvent.click(screen.getByTestId('test-radio-group-eth'));
 
     expect(onChange).toHaveBeenCalledTimes(1);
     expect(onChange).toHaveBeenCalledWith('eth');
