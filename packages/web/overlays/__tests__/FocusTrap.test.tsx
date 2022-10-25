@@ -4,6 +4,8 @@ import { Default as Dropdown } from '../../dropdown/__stories__/Dropdown.stories
 
 const subjectTestID = 'subject-test';
 
+const fruitOptions = ['Blueberry', 'Tomato', 'Apple', 'Banana', 'Pear', 'Guava', 'Pomegranate'];
+
 describe('FocusTrap', () => {
   // menu item interactions
   it('focuses on the next menu item when ArrowDown is typed', async () => {
@@ -75,7 +77,9 @@ describe('FocusTrap', () => {
   });
 
   it('focuses on the first matching element after a US character is typed', async () => {
-    const { getByTestId, getAllByRole } = render(<Dropdown subjectTestID={subjectTestID} />);
+    const { getByTestId, getAllByRole } = render(
+      <Dropdown options={fruitOptions} subjectTestID={subjectTestID} />,
+    );
 
     fireEvent.keyDown(getByTestId(subjectTestID), {
       key: 'Enter',
@@ -85,19 +89,21 @@ describe('FocusTrap', () => {
     const menuItems = getAllByRole('menuitem');
 
     const firstOption = await waitFor(() => menuItems[0]);
-    const lastOption = menuItems[menuItems.length - 1]; // this is an option beginning with the letter 'n'
+    const optionStartsWithA = menuItems[2];
 
     fireEvent.keyDown(firstOption, {
-      key: 'n',
-      code: '78',
+      key: 'a',
+      code: '65',
     });
 
-    // expect the option "next option 8" option to be focused
-    expect(lastOption).toHaveFocus();
+    // expect the option "Apple" option to be focused
+    expect(optionStartsWithA).toHaveFocus();
   });
 
   it('keeps focus on the previous element when no matching element for typed US character', async () => {
-    const { getByTestId, getAllByRole } = render(<Dropdown subjectTestID={subjectTestID} />);
+    const { getByTestId, getAllByRole } = render(
+      <Dropdown options={fruitOptions} subjectTestID={subjectTestID} />,
+    );
 
     fireEvent.keyDown(getByTestId(subjectTestID), {
       key: 'Enter',
@@ -111,8 +117,8 @@ describe('FocusTrap', () => {
     expect(firstOption).toHaveFocus();
 
     fireEvent.keyDown(firstOption, {
-      key: 'a',
-      code: '65',
+      key: 'c',
+      code: '67',
     });
 
     expect(firstOption).toHaveFocus();
