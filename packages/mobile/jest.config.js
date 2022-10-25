@@ -1,6 +1,6 @@
 module.exports = {
   coveragePathIgnorePatterns: ['<rootDir>/illustrations/images', '.stories.tsx', '__stories__'],
-  coverageReporters: ['text-summary', 'text'],
+  coverageReporters: ['text-summary', 'text', 'json-summary'],
   displayName: 'mobile',
   preset: '@cbhq/jest-preset-mobile',
   // https://docs.swmansion.com/react-native-gesture-handler/docs/guides/testing
