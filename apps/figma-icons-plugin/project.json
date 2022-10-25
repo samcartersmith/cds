@@ -1,0 +1,27 @@
+{
+  "root": "apps/figma-icons-plugin",
+  "sourceRoot": "apps/figma-icons-plugin",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "watch": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "apps/figma-icons-plugin",
+        "commands": [
+          "esbuild ./src/plugin.ts --bundle --outfile=dist/plugin.js --watch",
+          "vite build --watch"
+        ],
+        "parallel": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "apps/figma-icons-plugin",
+        "commands": ["esbuild ./src/plugin.ts --bundle --outfile=dist/plugin.js", "vite build"],
+        "parallel": true
+      }
+    }
+  }
+}
