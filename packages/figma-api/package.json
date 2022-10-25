@@ -1,0 +1,31 @@
+{
+  "name": "@cbhq/figma-api",
+  "version": "0.0.1",
+  "description": "Client for interacting with the Figma API",
+  "keywords": [
+    "figma",
+    "cds"
+  ],
+  "packemon": {
+    "format": "lib",
+    "platform": "node"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.49.0"
+  },
+  "types": "./dts/index.d.ts",
+  "main": "./lib/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "node": "./lib/*.js",
+      "default": "./lib/*.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "node": "./lib/index.js",
+      "default": "./lib/index.js"
+    }
+  }
+}

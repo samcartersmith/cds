@@ -36,6 +36,7 @@
       "@cbhq/docusaurus-plugin-kbar": ["packages/docusaurus-plugin-kbar"],
       "@cbhq/docusaurus-preset": ["packages/docusaurus-preset"],
       "@cbhq/docusaurus-theme": ["packages/docusaurus-theme"],
+      "@cbhq/figma-api": ["packages/figma-api/src"],
       "@cbhq/ui-mobile-playground": ["packages/ui-mobile-playground"],
       "@cbhq/ui-scorecard": ["packages/ui-scorecard"]
     }

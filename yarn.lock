@@ -2583,6 +2583,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cbhq/figma-api@workspace:packages/figma-api":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/figma-api@workspace:packages/figma-api"
+  dependencies:
+    "@figma/plugin-typings": ^1.49.0
+  languageName: unknown
+  linkType: soft
+
 "@cbhq/jest-preset-mobile@npm:^0.2.0":
   version: 0.2.0
   resolution: "@cbhq/jest-preset-mobile@npm:0.2.0"

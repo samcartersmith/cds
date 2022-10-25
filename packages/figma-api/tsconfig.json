@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.projectOptions.json",
+  "compilerOptions": {
+    "outDir": "../../.nx/dts/packages/figma-api"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    ".eslintrc.js",
+    "dts",
+    "lib"
+  ]
+}
