@@ -12,6 +12,7 @@ const config = {
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
+    '@storybook/addon-interactions',
     'storybook-addon-designs',
     'storybook-addon-performance/register',
     // 'storybook-addon-pseudo-states', enable when addon/docs is removed
@@ -27,6 +28,7 @@ const config = {
      * Warn when there is a pre-6.0 hierarchy separator ('.' / '|') in the story title. Will be removed in 7.0.
      */
     warnOnLegacyHierarchySeparator: true,
+    buildStoriesJson: true,
   },
   webpackFinal: async (config, { configType }) => {
     const isProduction = configType === 'PRODUCTION';

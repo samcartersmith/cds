@@ -98,3 +98,11 @@ steps:
       - yarn mono-pipeline run-ci other --targets=visreg
     retry:
       automatic: false
+
+  - label: 'Storybook E2E Test'
+    <<: *shared_step
+    commands:
+      - tools/ci/setup.sh
+      - yarn mono-pipeline run-ci other --targets=storybook-e2e-test
+    retry:
+      automatic: false

@@ -24,6 +24,7 @@
     "@cbhq/cds-utils": "workspace:*",
     "@cbhq/d3": "workspace:*",
     "@popperjs/core": "^2.9.0",
+    "@storybook/testing-library": "^0.0.13",
     "d3-interpolate-path": "^2.2.2",
     "d3-selection": "^1.4.2",
     "focus-visible": "^5.2.0",
