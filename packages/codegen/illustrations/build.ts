@@ -8,7 +8,7 @@ import { loadConfig, optimize, OptimizedSvg, OptimizeOptions } from 'svgo';
 import { camelCase, pascalCase, renameKeys } from '@cbhq/cds-utils/index';
 
 import { FileImageResponse } from '../figma/api';
-import { CDS_PERSONAL_ACCESS_TOKEN, FigmaClient } from '../figma/client';
+import { FigmaClient } from '../figma/client';
 import { createDescriptionGraph } from '../utils/createDescriptionGraph';
 import { getSourcePath } from '../utils/getSourcePath';
 import { writeFile } from '../utils/writeFile';
@@ -39,7 +39,7 @@ const FILE_FORMAT = 'svg';
 type Spectrum = 'light' | 'dark';
 type FileFormat = 'png' | 'svg' | 'js';
 
-const figmaClient = FigmaClient(CDS_PERSONAL_ACCESS_TOKEN);
+const figmaClient = FigmaClient();
 
 const localManifestData: Record<string, Record<string, IllustrationSummary>> = manifestData;
 const nameToNodeIdMap: Record<string, string> = {};

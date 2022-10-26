@@ -4,8 +4,6 @@ import * as Figma from './api';
 
 export type ExportFormat = 'jpg' | 'png' | 'svg' | 'pdf';
 
-export const CDS_PERSONAL_ACCESS_TOKEN = '224335-7b27ab1f-8dc5-4d2e-9c86-ac73e691e97a';
-
 /**
  * Make sure that scale is within the range 0.01-4, since those
  * are the only acceptable values for Figma image scales.
@@ -20,11 +18,11 @@ const validateScale = (scale: number): number => {
   return scale;
 };
 
-export const FigmaClient = (personalAccessToken: string) => {
+export const FigmaClient = (personalAccessToken?: string) => {
   const client = axios.create({
     baseURL: 'https://api.figma.com/v1/',
     headers: {
-      'X-Figma-Token': personalAccessToken,
+      'X-Figma-Token': personalAccessToken ?? process.env.FIGMA_ACCESS_TOKEN,
     },
   });
   return {

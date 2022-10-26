@@ -10,11 +10,17 @@ If you are looking for something else here are some other important links:
 
 ## Getting started
 
-To get started you can run the following commands:
+1. To get started you can run the following commands:
 
 ```sh
 yarn install
 yarn setup
+```
+
+2. Add a .env.local file at root of repo with the following:
+
+```
+FIGMA_ACCESS_TOKEN=[ask the team for shared last pass secret note]
 ```
 
 ## Organization of our Docs

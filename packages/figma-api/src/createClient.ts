@@ -1,7 +1,6 @@
 import https from 'node:https';
 import { URL } from 'node:url';
 
-const FIGMA_ACCESS_TOKEN = '224335-7b27ab1f-8dc5-4d2e-9c86-ac73e691e97a';
 type Primitive = string | boolean | number;
 
 export function createClient<ApiParams extends Record<string, Primitive>, Response>() {
@@ -22,7 +21,7 @@ export function createClient<ApiParams extends Record<string, Primitive>, Respon
           path: `${figmaUrl.pathname}?${figmaUrl.searchParams.toString()}`,
           method: 'GET',
           headers: {
-            'X-Figma-Token': FIGMA_ACCESS_TOKEN,
+            'X-Figma-Token': process.env.FIGMA_ACCESS_TOKEN,
           },
         },
         (res) => {
