@@ -2828,7 +2828,6 @@ __metadata:
     "@react-native-community/masked-view": ^0.1.10
     "@react-navigation/native": ^6.0.11
     "@react-navigation/stack": ^6.2.2
-    detox: ^19.9.1
     intl: ^1.2.5
     jest: ^28.1.0
     lottie-ios: ^3.4.1
@@ -14681,6 +14680,7 @@ __metadata:
     babel-plugin-module-resolver: ^4.1.0
     babel-plugin-replace-ts-export-assignment: ^0.0.2
     chalk: ^4.1.2
+    detox: ^19.9.1
     dotenv-webpack: 7.0.3
     eslint: ^8.7.0
     eslint-plugin-codegen: ^0.16.1

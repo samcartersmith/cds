@@ -20,7 +20,7 @@ _prebuild_shared_step: &prebuild_shared_step
   retry:
     automatic: true
   artifact_paths:
-    - 'artifacts/**/*'
+    - 'apps/mobile-playground/artifacts/**/*'
   agents:
     queue: metal
 
@@ -74,10 +74,7 @@ steps:
     key: 'visreg_android_prebuild'
     <<: *prebuild_shared_step
     commands:
-      - export SYSTEM_VERSION_COMPAT=0
-      - tools/ci/setup.sh
-      - mkdir -p $(pwd)/artifacts
-      - yarn nx run mobile-playground:prebuild-android-e2e cds-playground --destination $(pwd)/artifacts/cds-playground-android-app.tar.gz
+      - tools/ci/visreg.sh android build
 
   - label: 'Visreg Test (Android) %n'
     <<: *visreg_android_shared
@@ -85,7 +82,7 @@ steps:
     key: 'visreg_android'
     parallelism: 8
     commands:
-      - 'tools/ci/visreg-android.sh artifacts/cds-playground-android-app.tar.gz'
+      - tools/ci/visreg.sh android test
 
   - label: 'Finish Visreg Tests (Android)'
     allow_dependency_failure: true

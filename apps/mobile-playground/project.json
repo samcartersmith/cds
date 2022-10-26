@@ -3,16 +3,6 @@
   "sourceRoot": "apps/mobile-playground/src",
   "projectType": "application",
   "targets": {
-    "setup": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "commands": [
-          "mono-env setup --group mobile",
-          "echo 'Visit https://frontend.cbhq.net/mobile/getting-started for additional setup details'"
-        ],
-        "parallel": false
-      }
-    },
     "start-android": {
       "executor": "@cbhq/mono-tasks-mobile:start-android",
       "dependsOn": ["^build", "^mobile-routes"]
@@ -80,7 +70,7 @@
           "detoxArgs": ["--debug-synchronization", "500"]
         }
       },
-      "dependsOn": [{ "target": "build-ios-e2e", "projects": "self" }]
+      "dependsOn": ["^build"]
     },
     "build-android-e2e": {
       "executor": "@cbhq/mono-tasks-mobile:build-android",
@@ -137,15 +127,6 @@
         }
       }
     },
-    "prebuild-android": {
-      "executor": "@cbhq/mono-tasks-mobile:prebuild",
-      "options": {
-        "platform": "android",
-        "buildType": "debug",
-        "arch": "universal"
-      },
-      "dependsOn": ["^build"]
-    },
     "prebuild-android-e2e": {
       "executor": "@cbhq/mono-tasks-mobile:prebuild",
       "options": {
@@ -154,10 +135,11 @@
       },
       "dependsOn": ["^build"]
     },
-    "android-cli": {
-      "executor": "@cbhq/mono-tasks-mobile:start-prebuild",
+    "prebuild-ios-e2e": {
+      "executor": "@cbhq/mono-tasks-mobile:prebuild",
       "options": {
-        "platform": "android"
+        "platform": "ios",
+        "buildType": "e2e"
       },
       "dependsOn": ["^build"]
     }

@@ -1,35 +1,43 @@
 # React Native development
 
+### Prerequites:
+
+These docs assume your environment is properly setup: https://frontend.cbhq.net/mobile/getting-started
+
+Run `yarn install && yarn setup` at the root of the cds repo.
+
 ## Mobile playground
 
-| Command                                             | Description                                            |
-| --------------------------------------------------- | ------------------------------------------------------ |
-| yarn nx run mobile-playground:setup                 | Setup local environment to run the `mobile-playground` |
-| yarn nx run mobile-playground:format                | Format the `mobile-playground`                         |
-| yarn nx run mobile-playground:start-metro           | Start the playground metro server.                     |
-| yarn nx run mobile-playground:start-ios             | Start the playground ios app.                          |
-| yarn nx run mobile-playground:build-ios             | Build the playground ios app.                          |
-| yarn nx run mobile-playground:start-ios --clean     | Clean ios build                                        |
-| yarn nx run mobile-playground:start-android         | Start the playground android app.                      |
-| yarn nx run mobile-playground:build-android         | Build the playground android app.                      |
-| yarn nx run mobile-playground:start-android --clean | Clean android build                                    |
-| yarn nx run mobile-playground:ios-e2e --debug       | Run the ios e2e visreg tests in debug mode             |
-| yarn nx run mobile-playground:android-e2e --debug   | Run the android e2e visreg tests in debug mode         |
+The mobile playground is the host react native app that CDS uses to test our components.
 
-### Setup
-
-Run `yarn nx run mobile-playground:setup` to setup local environment to run ios and android locally.
-
-For additional setup details please visit https://frontend.cbhq.net/mobile/getting-started.
-
-### Start
-
-Run the following in the terminal to run the simulator
+Once you have finished the instructions in [prerequisites](#prerequites) you can run the mobile playground on iOS and android:
 
 - IOS: `yarn nx run mobile-playground:start-ios`
 - Android: `yarn nx run mobile-playground:start-android`
 
-### Adding stories
+Note: the above commands are convenience methods that run the metro bundler for you automatically. Below you will notice you can also build the native part of the app on its own then run start-metro as a second command.
+
+You can find the mobile playground commands at [Mobile-playground/project.json](/apps/mobile-playground/project.json)
+
+You should be able to get most of your development done with `yarn && yarn setup`, `yarn nx run mobile-playground:start-ios`, and `yarn nx run mobile-playground:start-android`. But the following are also often useful:
+
+| Command                                             | Description                        |
+| --------------------------------------------------- | ---------------------------------- |
+| yarn nx run mobile-playground:start-ios             | Start the playground ios app.      |
+| yarn nx run mobile-playground:start-ios --clean     | Clean ios build                    |
+| yarn nx run mobile-playground:build-ios             | Build the playground ios app.      |
+| yarn nx run mobile-playground:start-android         | Start the playground android app.  |
+| yarn nx run mobile-playground:start-android --clean | Clean android build                |
+| yarn nx run mobile-playground:build-android         | Build the playground android app.  |
+| yarn nx run mobile-playground:start-metro           | Start the playground metro server. |
+
+### Visreg Testing
+
+See the [Visreg docs](/docs/rn-visreg-testing.md) to explore the associated commands and how it works.
+
+### Adding Routes (Stories) to the Mobile Playground
+
+By adding a route to the playground Routes you can test any new component that you are working on.
 
 #### Requirements
 

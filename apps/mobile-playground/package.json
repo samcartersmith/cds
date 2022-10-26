@@ -26,7 +26,6 @@
     "@cbhq/detox-utils": "^0.2.3",
     "@cds/codegen": "workspace:^",
     "@percy/cli": "^1.2.1",
-    "detox": "^19.9.1",
     "jest": "^28.1.0",
     "metro-react-native-babel-preset": "^0.72.2",
     "react-native-asset": "^2.0.1"
