@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.0.3 (10/26/2022, 07:02 PM PST)
+
+#### 🐞 Fixes
+
+- **[E2E Test]** Add a simple TextInput interactive story. [#1203](https://github.cbhq.net/frontend/cds/pull/1203), [CDS-2449](https://jira.coinbase-corp.com/browse/CDS-2449)
+- **[Dropdown]** Fixed overflow regression. [#1275](https://github.cbhq.net/frontend/cds/pull/1275)
+- **[Modal]** Use media query and fix alignment issue. [#1277](https://github.cbhq.net/frontend/cds/pull/1277), [CDS-2647](https://jira.coinbase-corp.com/browse/CDS-2647)
+
+#### 📘 Misc
+
+- Update tests to use eslint-plugin-testing-library. [#1241](https://github.cbhq.net/frontend/cds/pull/1241), [CDS-2589](https://jira.coinbase-corp.com/browse/CDS-2589)
+- **[Storybook Upgrade]** Codegenerate Illustration stories. Migrate away from using storiesOf. [#1262](https://github.cbhq.net/frontend/cds/pull/1262), [CDS-2474](https://jira.coinbase-corp.com/browse/CDS-2474)
+- Add danger admonition to web changelog for 2.1.0 and add noop changelog for 3.0.2. [#1266](https://github.cbhq.net/frontend/cds/pull/1266), [CDS-2635](https://jira.coinbase-corp.com/browse/CDS-2635)
+- Fix android build issue and properly use android prebuild. [#1267](https://github.cbhq.net/frontend/cds/pull/1267)
+
 ## 3.0.2 (10/21/2022, 02:41 PM PST)
 
 #### 🐞 Fixes
