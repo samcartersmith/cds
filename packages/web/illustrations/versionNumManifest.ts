@@ -1394,4 +1394,8 @@ export const versionNumManifest: Record<string, number> = {
   'wrapEthSquare-dark': 0,
   'ethStakeOrWrapRectangle-dark': 0,
   'ethStakeOrWrapRectangle-light': 0,
+  'earnInterestOnCryptocurrency-light': 0,
+  'earnInterestOnCryptocurrency-dark': 0,
+  'earnCryptoInterest-light': 0,
+  'earnCryptoInterest-dark': 0,
 };

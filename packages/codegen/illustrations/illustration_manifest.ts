@@ -10324,5 +10324,33 @@ export const manifestData: Record<
       spectrum: 'light',
       versionNum: 0,
     },
+    '9788:5344': {
+      variant: 'spotSquare',
+      description: 'crypto, interest, farming, lending, percentage, growth, %',
+      name: 'earnInterestOnCryptocurrency',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '9788:5343': {
+      variant: 'spotSquare',
+      description: 'crypto, interest, farming, lending, percentage, growth, %',
+      name: 'earnInterestOnCryptocurrency',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '9788:5346': {
+      variant: 'heroSquare',
+      description: 'crypto, interest, farming, lending, percentage, growth, %',
+      name: 'earnCryptoInterest',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '9788:5345': {
+      variant: 'heroSquare',
+      description: 'crypto, interest, farming, lending, percentage, growth, %',
+      name: 'earnCryptoInterest',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
   },
 };

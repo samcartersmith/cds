@@ -1394,4 +1394,8 @@ export const sortedImg = [
   'wrapEthSquare-dark',
   'ethStakeOrWrapRectangle-dark',
   'ethStakeOrWrapRectangle-light',
+  'earnInterestOnCryptocurrency-light',
+  'earnInterestOnCryptocurrency-dark',
+  'earnCryptoInterest-light',
+  'earnCryptoInterest-dark',
 ] as const;

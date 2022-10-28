@@ -4,19 +4,17 @@
  */
 
 export const illustrationMetadata = {
-  numIllustrations: 1404,
-  spotSquareCount: 92,
+  numIllustrations: 1408,
+  spotSquareCount: 93,
   spotRectangleCount: 66,
-  heroSquareCount: 268,
+  heroSquareCount: 269,
   pictogramCount: 273,
   newIllustrations: [
-    'spotRectangle/ethStakeOrWrapRectangle-dark',
-    'spotRectangle/ethStakeOrWrapRectangle-light',
-    'spotSquare/ethStakeOrWrap-dark',
-    'spotSquare/ethStakeOrWrap-light',
-    'spotSquare/wrapEthSquare-dark',
-    'spotSquare/wrapEthSquare-light',
+    'heroSquare/earnCryptoInterest-dark',
+    'heroSquare/earnCryptoInterest-light',
+    'spotSquare/earnInterestOnCryptocurrency-dark',
+    'spotSquare/earnInterestOnCryptocurrency-light',
   ],
   modifiedIllustrations: [],
-  deletedIllustrations: ['spotRectangle/ethStakeOrWrap-dark', 'spotRectangle/ethStakeOrWrap-light'],
+  deletedIllustrations: [],
 };

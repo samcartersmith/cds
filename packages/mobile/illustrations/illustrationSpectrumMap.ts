@@ -154,6 +154,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/directDepositExcitement-1').content,
     dark: () => require('./images/dark/directDepositExcitement-1').content,
   },
+  earnInterestOnCryptocurrency: {
+    light: () => require('./images/light/earnInterestOnCryptocurrency-0').content,
+    dark: () => require('./images/dark/earnInterestOnCryptocurrency-0').content,
+  },
   emptyNftSpotSquare: {
     light: () => require('./images/light/emptyNftSpotSquare-0').content,
     dark: () => require('./images/dark/emptyNftSpotSquare-0').content,
@@ -1053,6 +1057,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   earnCryptoCard: {
     light: () => require('./images/light/earnCryptoCard-0').content,
     dark: () => require('./images/dark/earnCryptoCard-0').content,
+  },
+  earnCryptoInterest: {
+    light: () => require('./images/light/earnCryptoInterest-0').content,
+    dark: () => require('./images/dark/earnCryptoInterest-0').content,
   },
   earnGrowth: {
     light: () => require('./images/light/earnGrowth-0').content,

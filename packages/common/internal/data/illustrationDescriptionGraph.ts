@@ -107,6 +107,8 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'ethStakingUpsell',
     'apyInterest',
     'cbOneStaking',
+    'earnInterestOnCryptocurrency',
+    'earnCryptoInterest',
   ],
   growth: [
     'defiEarnAnnouncement',
@@ -128,6 +130,8 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'apyInterest',
     'riskStaking',
     'cbOneStaking',
+    'earnInterestOnCryptocurrency',
+    'earnCryptoInterest',
   ],
   money: [
     'defiEarnAnnouncement',
@@ -700,6 +704,8 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'browseDecentralizedApps',
     'cbOnestarToken',
     'cbOneStaking',
+    'earnInterestOnCryptocurrency',
+    'earnCryptoInterest',
   ],
   '🪙': [
     'transferCoins',
@@ -1580,6 +1586,8 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'fileYourCryptoTaxesCheckOther',
     'fileYourCryptoTaxesOther',
     'taxDocuments',
+    'earnInterestOnCryptocurrency',
+    'earnCryptoInterest',
   ],
   save: [
     'fileYourCryptoTaxesCheck',
@@ -3781,7 +3789,14 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
     'taxSeason',
     'recurringPurchases',
   ],
-  '%': ['fileYourCryptoTaxesCheckAlt', 'fileYourCryptoTaxesAlt', 'taxes', 'taxSeason'],
+  '%': [
+    'fileYourCryptoTaxesCheckAlt',
+    'fileYourCryptoTaxesAlt',
+    'taxes',
+    'taxSeason',
+    'earnInterestOnCryptocurrency',
+    'earnCryptoInterest',
+  ],
   '🥧': [
     'fileYourCryptoTaxesCheckAlt',
     'fileYourCryptoTaxesAlt',
@@ -6773,7 +6788,12 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   web3: ['decentralizedWebWeb3', 'decentralizedWeb3', 'dappWallet'],
   'connecting dots': ['decentralization', 'decentralizationEverything'],
   decentralization: ['decentralization', 'decentralizationEverything'],
-  lending: ['defiDecentralizedBorrowingLending', 'borrowingLending'],
+  lending: [
+    'defiDecentralizedBorrowingLending',
+    'borrowingLending',
+    'earnInterestOnCryptocurrency',
+    'earnCryptoInterest',
+  ],
   borrowing: ['defiDecentralizedBorrowingLending', 'borrowingLending'],
   economy: ['cryptoEconomy', 'economyGlobal'],
   'cross border': ['crossBorderPayments'],
@@ -7304,4 +7324,5 @@ export const illustrationDescriptionGraph: Record<string, string[]> = {
   KYC: ['faceMatchReal'],
   Human: ['faceMatchReal'],
   head: ['faceMatchReal'],
+  farming: ['earnInterestOnCryptocurrency', 'earnCryptoInterest'],
 };
