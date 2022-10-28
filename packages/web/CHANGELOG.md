@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.0.4 (10/28/2022, 03:14 PM PST)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 10/28/22 [mm/dd/yy] Illo. [#1293](https://github.cbhq.net/frontend/cds/pull/1293)
+- **[Icons]** Oct, 28th, 2022 Publish Icons. [#1287](https://github.cbhq.net/frontend/cds/pull/1287)
+- **[Storybook]** Move @storybook/testing-library from dependencies to devDependencies. [#1285](https://github.cbhq.net/frontend/cds/pull/1285), [CDS-2674](https://jira.coinbase-corp.com/browse/CDS-2674)
+
 ## 3.0.3 (10/26/2022, 07:02 PM PST)
 
 #### 🐞 Fixes
@@ -25,6 +33,10 @@ All notable changes to this project will be documented in this file.
 
 ## 3.0.2 (10/21/2022, 02:41 PM PST)
 
+:::danger
+🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.3` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
+:::
+
 #### 🐞 Fixes
 
 - **[Popover]** Revert Fixed overflow and useClickOutside (#1189 & #1166). [#1257](https://github.cbhq.net/frontend/cds/pull/1257), [IM-7171](https://jira.coinbase-corp.com/browse/IM-7171)
@@ -39,7 +51,7 @@ All notable changes to this project will be documented in this file.
 ## 3.0.1 (10/20/2022, 02:12 PM PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
+🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.3` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
 :::
 
 #### 🐞 Fixes
@@ -55,7 +67,7 @@ All notable changes to this project will be documented in this file.
 ## 3.0.0 (10/19/2022, 02:22 PM PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
+🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.3` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
 :::
 
 #### 💥 Breaking
@@ -73,7 +85,7 @@ All notable changes to this project will be documented in this file.
 ## 2.1.1 (10/14/2022, 10:51 AM PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
+🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.3` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
 :::
 
 #### 🐞 Fixes
@@ -92,7 +104,7 @@ All notable changes to this project will be documented in this file.
 ## 2.1.0 (10/5/2022, 03:33 PM PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.2` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
+🚫 This release includes a regression, please use `@cbhq/cds-web@3.0.3` or higher. Check details in [this](https://docs.google.com/document/d/1h71hJe06l8_BdmacsxEXd4rVD-NbeI22izw5t6bwazU) incident doc.
 :::
 
 #### 🚀 Updates

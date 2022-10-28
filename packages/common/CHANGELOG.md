@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.0.4 (10/28/2022, 03:14 PM PST)
+
+#### 🐞 Fixes
+
+- **[illustrations]** Publish 10/28/22 [mm/dd/yy] Illo. [#1293](https://github.cbhq.net/frontend/cds/pull/1293)
+- **[Icons]** Oct, 28th, 2022 Publish Icons. [#1287](https://github.cbhq.net/frontend/cds/pull/1287)
+
 ## 3.0.3 (10/26/2022, 07:02 PM PST)
 
 This is an artificial version bump with no new change.
