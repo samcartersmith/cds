@@ -40,7 +40,7 @@
           "ts-node ./icons/syncSvgsFromFigma.ts",
           "svgo ../common/internal/data/iconSvgs/*.svg --config=configs/svgo.config.js",
           "ts-node ./icons/build.ts",
-          "yarn nx run codegen:generate-icon-stories"
+          "nx run codegen:generate-icon-stories"
         ],
         "parallel": false
       }

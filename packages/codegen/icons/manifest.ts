@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 61549,
+  lastUnicode: 61559,
   unicodeMap: {
     cashUSD: { '8': 'uE966', '12': 'uE967', '16': 'uE968', '24': 'uE969', '32': 'uE96A' },
     cashGBP: { '8': 'uE96B', '12': 'uE96C', '16': 'uE96D', '24': 'uE96E', '32': 'uE96F' },
@@ -599,5 +599,7 @@ export const manifest = {
     blog: { '8': 'uF05F', '12': 'uF060', '16': 'uF061', '24': 'uF062', '32': 'uF063' },
     institute: { '8': 'uF064', '12': 'uF065', '16': 'uF066', '24': 'uF067', '32': 'uF068' },
     cryptobasics: { '8': 'uF069', '12': 'uF06A', '16': 'uF06B', '24': 'uF06C', '32': 'uF06D' },
+    menuInactive: { '8': 'uF06E', '12': 'uF06F', '16': 'uF070', '24': 'uF071', '32': 'uF072' },
+    menuActive: { '8': 'uF073', '12': 'uF074', '16': 'uF075', '24': 'uF076', '32': 'uF077' },
   },
 };

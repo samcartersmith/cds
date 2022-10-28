@@ -6727,4 +6727,40 @@ export const iconManifest = {
     description: 'navigation, specialty, copy, mimic, duplicate, identical, another',
     documentationLinks: [],
   },
+  '9887:885': {
+    key: 'cc8214fe956b3786a3b61454b30422e857670234',
+    name: 'NavigationIcon/menu_12/inactive',
+    description: 'hamburger, menu, navigation, 🍔, 🥪',
+    documentationLinks: [],
+  },
+  '9887:882': {
+    key: '32a18a9395473a7deef12cdeb1deceedcd555b97',
+    name: 'NavigationIcon/menu_12/active',
+    description: 'hamburger, menu, navigation, 🍔, 🥪',
+    documentationLinks: [],
+  },
+  '9887:881': {
+    key: 'f652b96285588442c0ff943b9accd408948407f2',
+    name: 'NavigationIcon/menu_16/inactive',
+    description: 'hamburger, menu, navigation, 🍔, 🥪',
+    documentationLinks: [],
+  },
+  '9887:880': {
+    key: '194b6d3096e1c25d8b27ec249c532ef8798c9bc4',
+    name: 'NavigationIcon/menu_16/active',
+    description: 'hamburger, menu, navigation, 🍔, 🥪',
+    documentationLinks: [],
+  },
+  '9887:883': {
+    key: 'e691dd88f4eb8422bedd02eafd28008d9af0bf74',
+    name: 'NavigationIcon/menu_24/inactive',
+    description: 'hamburger, menu, navigation, 🍔, 🥪',
+    documentationLinks: [],
+  },
+  '9887:884': {
+    key: '9eb2e003bc5fc25251327fb2e024922355568147',
+    name: 'NavigationIcon/menu_24/active',
+    description: 'hamburger, menu, navigation, 🍔, 🥪',
+    documentationLinks: [],
+  },
 };

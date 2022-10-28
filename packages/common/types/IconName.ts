@@ -310,7 +310,8 @@ export type NavigationIconName =
   | 'activityNav'
   | 'account'
   | 'magnifyingGlass'
-  | 'copyNav';
+  | 'copyNav'
+  | 'menu';
 
 export type NavigationIconInternalName =
   | 'planetInactive'
@@ -432,4 +433,6 @@ export type NavigationIconInternalName =
   | 'magnifyingGlassInactive'
   | 'magnifyingGlassActive'
   | 'copyNavInactive'
-  | 'copyNavActive';
+  | 'copyNavActive'
+  | 'menuInactive'
+  | 'menuActive';
