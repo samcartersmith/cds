@@ -117,7 +117,7 @@ type ElevationStylesContainerProps = {
   setElevationStyles: Dispatch<SetStateAction<React.CSSProperties>>;
 };
 
-export const ElevationStylesContainer = ({
+const ElevationStylesContainer = ({
   elevation,
   setElevationStyles,
 }: ElevationStylesContainerProps) => {
@@ -132,7 +132,7 @@ export const ElevationStylesContainer = ({
   return null;
 };
 
-export const BoxInner = forwardRef(
+const BoxInner = forwardRef(
   <As extends BoxElement = 'div'>(props: BoxProps<As>, forwardedRef: ForwardedRef<HTMLElement>) => {
     const {
       as = 'div',
