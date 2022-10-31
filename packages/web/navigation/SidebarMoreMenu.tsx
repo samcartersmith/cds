@@ -1,4 +1,4 @@
-import React, { memo, ReactNode, useMemo } from 'react';
+import React, { memo, ReactNode, useCallback, useMemo, useRef } from 'react';
 import { SharedProps, SpacingScale } from '@cbhq/cds-common';
 import { sidebarMenuMaxWidth, sidebarMenuMinWidth } from '@cbhq/cds-common/tokens/menu';
 import { sidebarGutter, sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
@@ -32,6 +32,7 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
   ...props
 }: SidebarMoreMenuProps) {
   const { collapsed } = useSidebarContext();
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const sidebarGap = (sidebarHorizontalSpacing + sidebarGutter) as SpacingScale;
   const defaultContentPosition: PopoverContentPositionConfig = useMemo(
     () => ({
@@ -43,7 +44,14 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
 
   const baseTrigger = useMemo(
     () => (
-      <SidebarItem onPress={onPress} title={triggerTitle} icon="moreVertical" active={active} />
+      <SidebarItem
+        onPress={onPress}
+        title={triggerTitle}
+        icon="moreVertical"
+        active={active}
+        ref={triggerRef}
+        testID="sidebar-more-menu-trigger"
+      />
     ),
     [onPress, active, triggerTitle],
   );
@@ -58,6 +66,10 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
     );
   }, [collapsed, tooltipContent, disablePortal, baseTrigger]);
 
+  const handleCloseMenu = useCallback(() => {
+    triggerRef.current?.focus();
+  }, []);
+
   return (
     <Dropdown
       minWidth={sidebarMenuMinWidth}
@@ -66,6 +78,7 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
       value={value}
       disablePortal={disablePortal}
       content={children}
+      onCloseMenu={handleCloseMenu}
       {...props}
     >
       {trigger}

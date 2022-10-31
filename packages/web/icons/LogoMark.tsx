@@ -12,7 +12,7 @@ export const LogoMark = memo(({ size, foreground }: LogoMarkProps) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-labelledby="Coinbase logo"
+      aria-label="Coinbase logo"
       viewBox={viewBox}
       width={width}
       height={height}
