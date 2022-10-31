@@ -35,7 +35,10 @@ const defaultOptions = [
 type MockDropdownProps = {
   subjectTestID?: string;
   options?: string[];
-} & Pick<DropdownProps, 'enableMobileModal' | 'showOverlay' | 'testID' | 'onBlur' | 'onCloseMenu'>;
+} & Pick<
+  DropdownProps,
+  'enableMobileModal' | 'showOverlay' | 'testID' | 'onBlur' | 'onCloseMenu' | 'disablePortal'
+>;
 
 export const Default = ({ options = defaultOptions, ...props }: MockDropdownProps) => {
   const [value, setValue] = useState('');

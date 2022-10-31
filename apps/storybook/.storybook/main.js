@@ -29,6 +29,7 @@ const config = {
      */
     warnOnLegacyHierarchySeparator: true,
     buildStoriesJson: true,
+    interactionsDebugger: true,
   },
   webpackFinal: async (config, { configType }) => {
     const isProduction = configType === 'PRODUCTION';

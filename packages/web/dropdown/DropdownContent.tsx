@@ -25,7 +25,7 @@ const dropdownStyleOverrides = css`
 
 const dropdownStaticClassName = 'cds-dropdown';
 
-type DropdownContentProps = {
+export type DropdownContentProps = {
   height?: DimensionValue;
   onOpen?: NoopFn;
   placement?: Placement;
@@ -57,19 +57,21 @@ export const DropdownContent = memo(
 
       // on mount focus the first option (unless there is an already selected value, then select option will focus it)
       useEffect(() => {
+        onOpen?.();
         if (!value && isBrowser() && ref && typeof ref !== 'function') {
           const focusableElements = ref.current?.querySelectorAll(FOCUSABLE_ELEMENTS);
           if (focusableElements?.length && focusableElements[0]) {
             (focusableElements[0] as HTMLElement).focus();
           }
         }
-      }, [ref, value]);
+      }, [ref, value, onOpen]);
 
       return (
         <MotionVStack
           ref={ref}
           background
           overflow="auto"
+          tabIndex={0}
           elevation={2}
           borderRadius="popover"
           zIndex={zIndex.overlays.dropdown}

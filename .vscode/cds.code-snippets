@@ -111,5 +111,32 @@
       ""
     ],
     "description": "Bolierplate for a storybook story"
+  },
+  "createInteractiveStory": {
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": "create-interactive-story",
+    "body": [
+      "import { ${1:component} } from '../${1:component}';",
+      "import { expect } from '@storybook/jest';",
+      "import { ComponentStoryObj } from '@storybook/react';",
+      "import { userEvent, within } from '@storybook/testing-library';",
+      "",
+      "export default {",
+      "  title: 'Interactive/${1:component}',",
+      "  component: ${1:component},",
+      "};",
+      "",
+      "export const Story: ComponentStoryObj<typeof ${1:component}> = {",
+      "args: {",
+      "  $2",
+      "},",
+      "play: async ({ canvasElement }) => {",
+      "const canvas = within(canvasElement);",
+      "  $3",
+      "},",
+      "};",
+      ""
+    ],
+    "description": "Boilerplate for a storybook story"
   }
 }

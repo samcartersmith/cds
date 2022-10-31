@@ -57,7 +57,7 @@ export const Popover = memo(
     onMouseDown,
     invertPopoverSpectrum,
     visible,
-    accessibilityLabel,
+    accessibilityLabel = 'popoverMenu',
     testID,
     contentPosition = defaultContentPosition,
     block = false,
@@ -117,10 +117,10 @@ export const Popover = memo(
         popperAttributes.popper,
         handleCaptureEvents,
         handleClose,
+        disableTypeFocus,
         contentAccessibilityProps,
         testID,
         content,
-        disableTypeFocus,
       ],
     );
 
@@ -134,6 +134,7 @@ export const Popover = memo(
         onClick={handleClose}
         role="dialog"
         aria-modal="true"
+        accessibilityLabel={accessibilityLabel}
       >
         {memoizedContent}
       </Box>

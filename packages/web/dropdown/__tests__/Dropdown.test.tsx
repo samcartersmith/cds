@@ -42,4 +42,12 @@ describe('Dropdown', () => {
     // expect to see first menu item
     expect(await screen.findByText(options[0])).toBeDefined();
   });
+  it('DropdownContent has overflow set to auto', async () => {
+    render(<DropdownExample subjectTestID={subjectTestID} options={options} />);
+
+    fireEvent.click(screen.getByTestId(subjectTestID));
+
+    // look for overflow: auto
+    expect(await screen.findByRole('menu')).toHaveClass('auto');
+  });
 });
