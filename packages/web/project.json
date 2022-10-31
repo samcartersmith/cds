@@ -86,6 +86,9 @@
         "outputDir": ".nx/dist/cloud/css"
       },
       "dependsOn": ["build"]
+    },
+    "danger": {
+      "executor": "@cbhq/mono-tasks:danger"
     }
   }
 }

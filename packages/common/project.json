@@ -35,6 +35,9 @@
         "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
         "typescriptConfig": "packages/common/tsconfig.build.json"
       }
+    },
+    "danger": {
+      "executor": "@cbhq/mono-tasks:danger"
     }
   }
 }
