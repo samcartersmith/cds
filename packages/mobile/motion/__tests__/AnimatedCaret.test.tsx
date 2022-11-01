@@ -23,6 +23,11 @@ const MockAnimatedCaret = () => {
 };
 
 describe('AnimatedCaret', () => {
+  it('passes a11y', () => {
+    render(<AnimatedCaret rotate={1} testID="mock-animated-caret" />);
+    expect(screen.getByTestId('mock-animated-caret')).toBeAccessible();
+  });
+
   it('rotates', () => {
     withTimeTravel((timeTravel) => {
       render(<MockAnimatedCaret />);

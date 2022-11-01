@@ -5,6 +5,10 @@ import { iconGlyphMap } from '../../icons/iconGlyphMap';
 import { Radio } from '../RadioGroup';
 
 describe('Radio', () => {
+  it('passes a11y', () => {
+    render(<Radio testID="mock-radio">Radio</Radio>);
+    expect(screen.getByTestId('mock-radio')).toBeAccessible();
+  });
   it('renders a Pressable', () => {
     render(<Radio>Radio</Radio>);
 

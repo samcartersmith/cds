@@ -9,6 +9,11 @@ const DOTSYMBOL_TESTID = 'dot-symbol-test';
 const src = 'https://images.coinbase.com/avatar?s=56';
 
 describe('DotSymbol', () => {
+  it('passes a11y', () => {
+    render(<DotSymbol testID={DOTSYMBOL_TESTID} source={{ uri: src }} />);
+    expect(screen.getByTestId(DOTSYMBOL_TESTID)).toBeAccessible();
+  });
+
   it('renders a DotSymbol', () => {
     render(<DotSymbol testID={DOTSYMBOL_TESTID} source={{ uri: src }} />);
 
@@ -24,6 +29,15 @@ describe('DotSymbol', () => {
     render(<DotSymbol source={src} />);
 
     expect(screen.getByTestId('dotsymbol-remote-image').props.source).toEqual({ uri: src });
+  });
+
+  it('passes a11y for DotSymbol that have a children', () => {
+    render(
+      <DotSymbol testID={DOTSYMBOL_TESTID} pin="bottom-start" source={src}>
+        <Icon name="airdrop" size="l" />
+      </DotSymbol>,
+    );
+    expect(screen.getByTestId(DOTSYMBOL_TESTID)).toBeAccessible();
   });
 
   it('Placed in the correct position relative to its children', () => {

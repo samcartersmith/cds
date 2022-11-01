@@ -33,6 +33,11 @@ const { MockModal } = modalBuilder({
 describe('Modal', () => {
   afterEach(cleanup);
 
+  it('passes a11y', () => {
+    render(<MockModal testID="mock-modal" />);
+    expect(screen.getByTestId('mock-modal')).toBeAccessible();
+  });
+
   it('renders React Native Modal', () => {
     render(<MockModal />);
 

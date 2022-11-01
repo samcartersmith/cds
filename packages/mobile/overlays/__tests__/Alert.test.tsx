@@ -39,32 +39,39 @@ describe('Alert', () => {
     expect(screen.UNSAFE_queryByProps({ visible: true })).toBeTruthy();
   });
 
-  it('renders title', () => {
+  it('renders title and passes a11y', () => {
     const title = 'Test title';
-    render(<MockAlert visible title={title} />);
+    render(<MockAlert testID="mock-alert" visible title={title} />);
 
     expect(screen.getByText(title)).toBeTruthy();
+
+    expect(screen.getByTestId('mock-alert')).toBeAccessible();
   });
 
-  it('renders body', () => {
+  it('renders body and passes a11y', () => {
     const body = 'Test body';
-    render(<MockAlert visible body={body} />);
+    render(<MockAlert testID="mock-alert" visible body={body} />);
 
     expect(screen.getByText(body)).toBeTruthy();
+
+    expect(screen.getByTestId('mock-alert')).toBeAccessible();
   });
 
-  it('renders preferred action', async () => {
+  it('renders preferred action and passes a11y', async () => {
     const onPreferredActionPress = jest.fn();
     const onRequestClose = jest.fn();
 
     render(
       <MockAlert
         visible
+        testID="mock-alert"
         preferredActionLabel="Save"
         onPreferredActionPress={onPreferredActionPress}
         onRequestClose={onRequestClose}
       />,
     );
+
+    expect(screen.getByTestId('mock-alert')).toBeAccessible();
 
     fireEvent.press(screen.getByText('Save'));
 
@@ -74,10 +81,19 @@ describe('Alert', () => {
     expect(animationTimingSpy).toHaveBeenCalled();
   });
 
-  it('renders dismiss action', () => {
+  it('renders dismiss action and passes a11y', () => {
     const onRequestClose = jest.fn();
 
-    render(<MockAlert visible dismissActionLabel="Cancel" onRequestClose={onRequestClose} />);
+    render(
+      <MockAlert
+        testID="mock-alert"
+        visible
+        dismissActionLabel="Cancel"
+        onRequestClose={onRequestClose}
+      />,
+    );
+
+    expect(screen.getByTestId('mock-alert')).toBeAccessible();
 
     fireEvent.press(screen.getByText('Cancel'));
 

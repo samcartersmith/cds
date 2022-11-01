@@ -8,7 +8,7 @@ import { ThemeProvider } from '../../system';
 import { RemoteImage } from '../RemoteImage';
 
 describe('RemoteImage', () => {
-  it('shouldApplyDarkModeEnhacements border styles takes precedence over custom borderColor', () => {
+  it('shouldApplyDarkModeEnhacements border styles takes precedence over custom borderColor and passes a11y', () => {
     const spectrum = 'dark';
     render(
       <ThemeProvider name="remoteimage-test-theme-provider" spectrum={spectrum}>
@@ -23,26 +23,34 @@ describe('RemoteImage', () => {
     const image = screen.queryByTestId('remoteimage');
     expect(image).toBeTruthy();
 
+    expect(image).toBeAccessible();
+
     expect(image).toHaveStyle({
       borderWidth: 1,
       borderColor: paletteAliasToRgbaString('lineHeavy', spectrum, false),
     });
   });
 
-  it('has a default shape of square', () => {
+  it('has a default shape of square and passes a11y', () => {
     render(<RemoteImage source="https://images.coinbase.com/avatar?s=56" testID="remoteimage" />);
 
     const image = screen.queryByTestId('remoteimage');
+
+    expect(image).toBeAccessible();
+
     expect(image).toHaveStyle({
       borderRadius: borderRadius.roundedSmall,
     });
   });
 
-  it('if width/height/size is not set, it will default to size = m', () => {
+  it('if width/height/size is not set, it will default to size = m. Passes a11y', () => {
     render(<RemoteImage source="https://images.coinbase.com/avatar?s=56" testID="remoteimage" />);
     const avatarSizeM = normalScaleMap.m;
 
     const image = screen.queryByTestId('remoteimage');
+
+    expect(image).toBeAccessible();
+
     expect(image).toHaveStyle({
       width: avatarSizeM,
       height: avatarSizeM,
@@ -53,7 +61,7 @@ describe('RemoteImage', () => {
     const castedColor = color as PaletteBorder;
     const rgbaString = paletteAliasToRgbaString(castedColor, 'light', false);
 
-    it(`renders correct border color of ${color} - ${rgbaString}`, () => {
+    it(`renders correct border color of ${color} - ${rgbaString} and passes a11y`, () => {
       render(
         <RemoteImage
           borderColor={castedColor}
@@ -63,6 +71,8 @@ describe('RemoteImage', () => {
       );
       const image = screen.queryByTestId('remoteimage');
       expect(image).toBeTruthy();
+
+      expect(image).toBeAccessible();
 
       expect(image).toHaveStyle({
         borderWidth: 2,

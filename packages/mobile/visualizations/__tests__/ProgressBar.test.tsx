@@ -62,10 +62,10 @@ describe('ProgressBar test', () => {
     jest.clearAllMocks();
   });
 
-  it('places bar label in correct position if it flows off the left container', async () => {
+  it('places bar label in correct position if it flows off the left container and passes a11y', async () => {
     render(
       <Box width="200">
-        <ProgressBarWithFloatLabel label={0} progress={0}>
+        <ProgressBarWithFloatLabel testID="mock-progress-bar" label={0} progress={0}>
           <ProgressBar progress={0} />
         </ProgressBarWithFloatLabel>
       </Box>,
@@ -81,12 +81,13 @@ describe('ProgressBar test', () => {
     });
 
     expect(screen.getAllByText('0%')).toHaveLength(2);
+    expect(screen.getByTestId('mock-progress-bar')).toBeAccessible();
   });
 
   it('places bar label in correct position in middle', () => {
     render(
       <Box width="200">
-        <ProgressBarWithFloatLabel label={50} progress={0.5}>
+        <ProgressBarWithFloatLabel testID="mock-progress-bar" label={50} progress={0.5}>
           <ProgressBar progress={0.5} />
         </ProgressBarWithFloatLabel>
       </Box>,
@@ -105,12 +106,18 @@ describe('ProgressBar test', () => {
     expect(floatLabelText).toHaveStyle({
       color: paletteValueToRgbaString(defaultPalette.foregroundMuted, 'light'),
     });
+    expect(screen.getByTestId('mock-progress-bar')).toBeAccessible();
   });
 
   it('renders fixed labels in correct position', () => {
     render(
       <Box width="200">
-        <ProgressBarWithFixedLabels startLabel={0} endLabel={50} labelPlacement="above">
+        <ProgressBarWithFixedLabels
+          testID="mock-progress-bar"
+          startLabel={0}
+          endLabel={50}
+          labelPlacement="above"
+        >
           <ProgressBar progress={50} />
         </ProgressBarWithFixedLabels>
       </Box>,
@@ -125,12 +132,13 @@ describe('ProgressBar test', () => {
     expect(endLabelText).toHaveStyle({
       color: paletteValueToRgbaString(defaultPalette.foreground, 'light'),
     });
+    expect(screen.getByTestId('mock-progress-bar')).toBeAccessible();
   });
 
   it('has correct bar width', () => {
     render(
       <Box width="200">
-        <ProgressBar progress={0.77} color="positive" />
+        <ProgressBar testID="mock-progress-bar" progress={0.77} color="positive" />
       </Box>,
     );
 
@@ -141,12 +149,13 @@ describe('ProgressBar test', () => {
       backgroundColor: paletteValueToRgbaString(defaultPalette.positive, 'light'),
       transform: [{ translateX: -46 }], // -1 * (200 - (200 * 0.77))
     });
+    expect(screen.getByTestId('mock-progress-bar')).toBeAccessible();
   });
 
   it('has correct bar height', () => {
     render(
       <Box width="200">
-        <ProgressBar progress={0.77} weight="heavy" />
+        <ProgressBar testID="mock-progress-bar" progress={0.77} weight="heavy" />
       </Box>,
     );
 
@@ -156,12 +165,18 @@ describe('ProgressBar test', () => {
     expect(bar).toHaveStyle({
       height: 12,
     });
+    expect(screen.getByTestId('mock-progress-bar')).toBeAccessible();
   });
 
   it('handles disabled state correctly', () => {
     render(
       <Box width="200">
-        <ProgressBarWithFixedLabels startLabel={0} endLabel={77} disabled>
+        <ProgressBarWithFixedLabels
+          testID="mock-progress-bar"
+          startLabel={0}
+          endLabel={77}
+          disabled
+        >
           <ProgressBar progress={0.77} disabled />
         </ProgressBarWithFixedLabels>
       </Box>,
@@ -184,5 +199,6 @@ describe('ProgressBar test', () => {
     expect(endLabelText).toHaveStyle({
       color: paletteValueToRgbaString(defaultPalette.foreground, 'light'),
     });
+    expect(screen.getByTestId('mock-progress-bar')).toBeAccessible();
   });
 });

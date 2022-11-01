@@ -7,6 +7,12 @@ import { AvatarButton } from '../AvatarButton';
 jest.mock('../../utils/debounce');
 
 describe('AvatarButton', () => {
+  it('passes a11y', () => {
+    render(<AvatarButton testID="avatar-button" alt="Sneezy" />);
+
+    expect(screen.getByTestId('avatar-button')).toBeAccessible();
+  });
+
   it('renders an animated view', () => {
     render(<AvatarButton alt="Sneezy" />);
 

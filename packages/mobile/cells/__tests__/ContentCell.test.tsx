@@ -31,6 +31,21 @@ describe('ContentCell', () => {
     expect(screen.getByTestId('title')).not.toBeNull();
   });
 
+  it('Cell with title passes a11y', () => {
+    render(
+      <ContentCell
+        testID="cell-with-title"
+        title={
+          <View testID="title">
+            <Text>Title</Text>
+          </View>
+        }
+      />,
+    );
+
+    expect(screen.getByTestId('cell-with-title')).toBeAccessible();
+  });
+
   it('renders a subtitle', () => {
     render(
       <ContentCell
@@ -43,6 +58,20 @@ describe('ContentCell', () => {
     );
 
     expect(screen.getByTestId('subtitle')).not.toBeNull();
+  });
+  it('Cell with subtitle passes a11y', () => {
+    render(
+      <ContentCell
+        testID="cell-with-subtitle"
+        subtitle={
+          <View testID="subtitle">
+            <Text>Subtitle</Text>
+          </View>
+        }
+      />,
+    );
+
+    expect(screen.getByTestId('cell-with-subtitle')).toBeAccessible();
   });
 
   it('renders a description', () => {
@@ -57,6 +86,20 @@ describe('ContentCell', () => {
     );
 
     expect(screen.getByTestId('description')).not.toBeNull();
+  });
+  it('Cell with description passes a11y', () => {
+    render(
+      <ContentCell
+        testID="cell-with-description"
+        description={
+          <View testID="description">
+            <Text>Description</Text>
+          </View>
+        }
+      />,
+    );
+
+    expect(screen.getByTestId('cell-with-description')).toBeAccessible();
   });
 
   it('renders meta', () => {
@@ -74,16 +117,49 @@ describe('ContentCell', () => {
     expect(screen.getByTestId('meta')).not.toBeNull();
   });
 
+  it('Cell with meta passes a11y', () => {
+    render(
+      <ContentCell
+        testID="cell-with-meta"
+        title="Title"
+        meta={
+          <View testID="meta">
+            <Text>Meta</Text>
+          </View>
+        }
+      />,
+    );
+
+    expect(screen.getByTestId('cell-with-meta')).toBeAccessible();
+  });
+
   it('renders media', () => {
     render(<ContentCell media={<CellMedia type="icon" name="add" testID="media" />} />);
 
     expect(screen.getByTestId('media')).not.toBeNull();
   });
 
+  it('Cell with media passes a11y', () => {
+    render(
+      <ContentCell
+        testID="cell-with-media"
+        media={<CellMedia type="icon" name="add" testID="media" />}
+      />,
+    );
+
+    expect(screen.getByTestId('cell-with-media')).toBeAccessible();
+  });
+
   it('renders an accessory', () => {
     render(<ContentCell accessory="arrow" />);
 
     expect(screen.getByTestId('accessory')).not.toBeNull();
+  });
+
+  it('Cell with accessory passes a11y', () => {
+    render(<ContentCell testID="cell-with-accessory" accessory="arrow" />);
+
+    expect(screen.getByTestId('cell-with-accessory')).toBeAccessible();
   });
 
   it('renders empty strings without crashing', () => {

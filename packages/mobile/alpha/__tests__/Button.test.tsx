@@ -9,6 +9,11 @@ jest.mock('@cbhq/cds-common/system/useEventHandler');
 jest.mock('../../utils/debounce');
 
 describe('Button', () => {
+  it('passes a11y', () => {
+    render(<Button testID="mock-btn">Child</Button>);
+
+    expect(screen.getByTestId('mock-btn')).toBeAccessible();
+  });
   it('renders an animated view', () => {
     render(<Button>Child</Button>);
 

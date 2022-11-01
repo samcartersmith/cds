@@ -20,12 +20,13 @@ const MockRemoteImageGroup = ({ ...props }: RemoteImageGroupBaseProps) => (
 );
 
 describe('RemoteImageGroup', () => {
-  it('renders RemoteImageGroup', () => {
+  it('renders RemoteImageGroup and passes a11y', () => {
     render(<MockRemoteImageGroup />);
 
     const imageWrapper = screen.getByTestId(TEST_ID);
 
     expect(imageWrapper).toBeTruthy();
+    expect(imageWrapper).toBeAccessible();
   });
 
   it('Margin are correctly applied for size m. First one has 0, and the following ones will have 1', () => {

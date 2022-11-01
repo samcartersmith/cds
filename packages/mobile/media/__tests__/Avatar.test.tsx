@@ -16,6 +16,8 @@ describe('Avatar', () => {
     expect(image).toBeTruthy();
     expect(image?.props.source).toEqual({ uri: src });
 
+    expect(image).toBeAccessible();
+
     expect(screen.queryByText('T')).toBeFalsy();
   });
 
@@ -30,6 +32,8 @@ describe('Avatar', () => {
     );
     const box = screen.queryByTestId('avatar');
     expect(box).toBeTruthy();
+
+    expect(box).toBeAccessible();
 
     expect(box).toHaveStyle({
       borderWidth: 2,
@@ -54,6 +58,8 @@ describe('Avatar', () => {
       const box = screen.queryByTestId('avatar');
       expect(box).toBeTruthy();
 
+      expect(box).toBeAccessible();
+
       expect(box).toHaveStyle({
         width: px,
         height: px,
@@ -75,6 +81,8 @@ describe('Avatar', () => {
       />,
     );
     let box = screen.queryByTestId('avatar');
+
+    expect(box).toBeAccessible();
 
     expect(box).toHaveStyle({
       borderRadius: borderRadius.roundedFull,
@@ -109,6 +117,8 @@ describe('Avatar', () => {
     expect(screen.getByTestId(coloredFallbackTestID)).toHaveStyle({
       backgroundColor: pinkBackgroundColor,
     });
+
+    expect(screen.getByTestId(coloredFallbackTestID)).toBeAccessible();
 
     expect(screen.getByText('T')).toBeTruthy();
   });

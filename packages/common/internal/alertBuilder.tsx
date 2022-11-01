@@ -93,6 +93,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
     preferredActionLabel,
     onPreferredActionPress,
     dismissActionLabel,
+    testID,
   }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler();
 
@@ -100,6 +101,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
       <>
         <Button onPress={toggleOn}>Show Alert</Button>
         <Alert
+          testID={testID}
           visible={externalVisible ?? visible}
           title={title ?? 'Alert title'}
           body={

@@ -5,6 +5,16 @@ import { FeatureFlagProvider } from '../../system';
 import { CardGroup } from '../CardGroup';
 
 describe('CardGroup.test', () => {
+  it('passes a11y', () => {
+    render(
+      <CardGroup testID="mock-card-group">
+        <AnnouncementCard title="Item1 title" description="Item1 description" />
+        <AnnouncementCard title="Item2 title" description="Item2 description" />
+      </CardGroup>,
+    );
+    expect(screen.getByTestId('mock-card-group')).toBeAccessible();
+  });
+
   it('renders children', () => {
     render(
       <CardGroup>

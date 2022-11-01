@@ -67,6 +67,12 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
     mockUseDimensions(wideScreenDimensions);
   });
 
+  it('passes a11y', () => {
+    render(<MockBanner />);
+
+    expect(screen.getByTestId(TEST_ID)).toBeAccessible();
+  });
+
   it('renders a Banner on wide screen', () => {
     render(<MockBanner />);
 

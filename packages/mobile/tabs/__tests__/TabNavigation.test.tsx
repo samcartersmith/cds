@@ -22,6 +22,11 @@ const MockTabNavigation = ({ testID }: { testID: string }) => {
 describe('TabNavigation', () => {
   const TEST_ID = 'mainTabNav';
 
+  it('passes a11y', () => {
+    render(<MockTabNavigation testID={TEST_ID} />);
+    expect(screen.getByTestId(TEST_ID)).toBeAccessible();
+  });
+
   it('Properly inherits testID from TabNavigation', () => {
     render(<MockTabNavigation testID={TEST_ID} />);
 

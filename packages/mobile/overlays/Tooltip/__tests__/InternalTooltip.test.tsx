@@ -12,6 +12,21 @@ describe('InternalTooltip.test', () => {
     jest.clearAllMocks();
   });
 
+  it('passes a11y', () => {
+    render(
+      <InternalTooltip
+        subjectLayout={{ width: 20, height: 30, pageOffsetX: 15, pageOffsetY: 25 }}
+        testID="mock-internal-tooltip"
+        content={<Text>test content</Text>}
+        placement="top"
+        opacity={new Animated.Value(1)}
+        animateIn={mockAnimateIn as unknown as Animated.CompositeAnimation}
+        translateY={new Animated.Value(5)}
+      />,
+    );
+    expect(screen.getByTestId('mock-internal-tooltip')).toBeAccessible();
+  });
+
   it('renders content', () => {
     render(
       <InternalTooltip

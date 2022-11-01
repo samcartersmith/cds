@@ -91,6 +91,7 @@ export function modalBuilder({
     onBackButtonPress,
     title = 'Basic Modal',
     visible: externalVisible,
+    testID,
   }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(externalVisible);
 
@@ -104,7 +105,7 @@ export function modalBuilder({
         <Button onPress={toggleOn} testID="modal-trigger">
           Open Modal
         </Button>
-        <Modal visible={visible} onRequestClose={handleClose} disablePortal>
+        <Modal testID={testID} visible={visible} onRequestClose={handleClose} disablePortal>
           <ModalHeader onBackButtonPress={onBackButtonPress} title={title} />
           <ModalBody>
             <LoremIpsum />

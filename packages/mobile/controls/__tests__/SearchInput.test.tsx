@@ -28,6 +28,12 @@ describe('Search', () => {
     jest.clearAllMocks();
   });
 
+  it('passes a11y', () => {
+    render(SearchComponent);
+
+    expect(screen.getByTestId(TEST_ID)).toBeAccessible();
+  });
+
   it('renders a search', () => {
     render(SearchComponent);
 

@@ -3,6 +3,10 @@ import { render, screen } from '@testing-library/react-native';
 import { CardBody } from '..';
 
 describe('CardBody', () => {
+  it('passes a11y', () => {
+    render(<CardBody orientation="vertical" testID="card-body" />);
+    expect(screen.getByTestId('card-body-vertical')).toBeAccessible();
+  });
   it('renders vertical stack', () => {
     render(<CardBody orientation="vertical" testID="card-body" />);
     expect(screen.getByTestId('card-body-vertical')).toBeTruthy();

@@ -5,6 +5,10 @@ import { iconGlyphMap } from '../../icons/iconGlyphMap';
 import { Checkbox } from '../Checkbox';
 
 describe('Checkbox', () => {
+  it('passes a11y', () => {
+    render(<Checkbox testID="mock-checkbox">Checkbox</Checkbox>);
+    expect(screen.getByTestId('mock-checkbox')).toBeAccessible();
+  });
   it('renders a Pressable', () => {
     render(<Checkbox>Checkbox</Checkbox>);
 
@@ -17,6 +21,14 @@ describe('Checkbox', () => {
 
     const icon = screen.getByText(iconGlyphMap.checkmark['16']);
     expect(icon).toBeTruthy();
+  });
+  it('checked Checkbox passes a11y', () => {
+    render(
+      <Checkbox testID="mock-checkbox" checked>
+        Checkbox
+      </Checkbox>,
+    );
+    expect(screen.getByTestId('mock-checkbox')).toBeAccessible();
   });
 
   it('attaches testID', () => {
@@ -42,6 +54,16 @@ describe('Checkbox', () => {
     render(<Checkbox disabled>Disabled</Checkbox>);
 
     expect(screen.queryAllByA11yState({ disabled: true })).toHaveLength(1);
+  });
+
+  it('disabled checkbox passes a11y', () => {
+    render(
+      <Checkbox testID="disabled-checkbox" disabled>
+        Disabled
+      </Checkbox>,
+    );
+
+    expect(screen.getByTestId('disabled-checkbox')).toBeAccessible();
   });
 
   it('fires `onChange` when pressed and not disabled', () => {

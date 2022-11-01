@@ -11,6 +11,11 @@ import { DotCount } from '../DotCount';
 const DOTCOUNT_TESTID = 'dot-count-test';
 
 describe('DotCount', () => {
+  it('passes a11y for single digit counter', () => {
+    render(<DotCount testID={DOTCOUNT_TESTID} variant="negative" count={1} />);
+    expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeAccessible();
+  });
+
   it('renders a DotCount', () => {
     render(<DotCount testID={DOTCOUNT_TESTID} variant="negative" count={1} />);
 
@@ -66,10 +71,20 @@ describe('DotCount', () => {
     expect(screen.queryByText('0')).toBeNull();
   });
 
+  it('passes a11y for 0 counter', () => {
+    render(<DotCount testID={DOTCOUNT_TESTID} variant="negative" count={0} />);
+    expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeAccessible();
+  });
+
   it('renders count 99+ when count > 99', () => {
     render(<DotCount variant="negative" count={120} />);
 
     expect(screen.getByText('99+')).toBeTruthy();
+  });
+
+  it('passes a11y for double or more digit counter', () => {
+    render(<DotCount testID={DOTCOUNT_TESTID} variant="negative" count={120} />);
+    expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeAccessible();
   });
 
   it('DotCount is placed in the correct position relative to its children', () => {
@@ -103,5 +118,15 @@ describe('DotCount', () => {
         },
       ],
     });
+  });
+
+  it('passes a11y when dot is placed relative to its parent', () => {
+    render(
+      <DotCount pin="top-end" testID={DOTCOUNT_TESTID} variant="negative" count={1}>
+        <Icon name="airdrop" size="l" />
+      </DotCount>,
+    );
+
+    expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeAccessible();
   });
 });

@@ -29,6 +29,22 @@ jest.mock('../../../hooks/useScrollTo', () => {
 describe('Carousel.test', () => {
   beforeEach(() => jest.clearAllMocks());
 
+  it('passes a11y', () => {
+    render(
+      <Carousel
+        onDismissItem={jest.fn()}
+        onDismissLastItem={jest.fn()}
+        testID="mock-carousel"
+        items={[
+          <AnnouncementCard key="item1" title="Item1 title" description="Item1 description" />,
+          <AnnouncementCard key="item2" title="Item2 title" description="Item2 description" />,
+        ]}
+      />,
+    );
+
+    expect(screen.getByTestId('mock-carousel')).toBeAccessible();
+  });
+
   it('renders items', () => {
     render(
       <Carousel

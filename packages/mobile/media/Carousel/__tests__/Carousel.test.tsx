@@ -21,6 +21,11 @@ describe('Carousel', () => {
 
   afterEach(cleanup);
 
+  it('passes a11y', () => {
+    render(<MockCarousel />);
+    expect(screen.getByTestId('Carousel')).toBeAccessible();
+  });
+
   it('renders children', () => {
     render(<MockCarousel />);
     const items = screen.queryAllByText('CarouselItem');

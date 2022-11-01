@@ -1,5 +1,6 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { Animated, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import { SharedProps } from '@cbhq/cds-common';
 
 import { usePalette } from '../hooks/usePalette';
 import { Box, BoxProps } from '../layout/Box';
@@ -13,11 +14,12 @@ export type ProgressIndicatorProps = {
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslySetStyle?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
-} & BoxProps;
+} & BoxProps &
+  SharedProps;
 
 export const ProgressIndicator = memo(
   forwardRef<View, ProgressIndicatorProps>(function ProgressIndicator(
-    { progress, dangerouslySetStyle, ...boxProps },
+    { progress, dangerouslySetStyle, testID, ...boxProps },
     ref,
   ) {
     const { line, foreground } = usePalette();
@@ -46,6 +48,7 @@ export const ProgressIndicator = memo(
         animated
         alignItems="center"
         justifyContent="center"
+        testID={testID}
         dangerouslySetStyle={dangerouslySetStyle}
         {...boxProps}
       >

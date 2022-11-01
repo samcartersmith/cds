@@ -14,20 +14,24 @@ const Box = (props: BoxProps) => (
 describe('Box', () => {
   it('renders a view', () => {
     render(
-      <Box>
+      <Box testID="parent">
         <Text>Child</Text>
       </Box>,
     );
+
+    expect(screen.getByTestId('parent')).toBeAccessible();
 
     expect(screen.UNSAFE_queryAllByType(View)).toHaveLength(1);
   });
 
   it('renders an animated view', () => {
     render(
-      <Box animated>
+      <Box testID="parent" animated>
         <Text>Child</Text>
       </Box>,
     );
+
+    expect(screen.getByTestId('parent')).toBeAccessible();
 
     expect(screen.UNSAFE_queryAllByType(Animated.View)).toHaveLength(1);
   });
@@ -41,6 +45,8 @@ describe('Box', () => {
 
     await screen.findByTestId('parent');
 
+    expect(screen.getByTestId('parent')).toBeAccessible();
+
     expect(screen.getByTestId('parent')).not.toHaveProperty('backgroundColor');
   });
 
@@ -52,6 +58,8 @@ describe('Box', () => {
     );
 
     await screen.findByTestId('parent');
+
+    expect(screen.getByTestId('parent')).toBeAccessible();
 
     expect(screen.getByTestId('parent')).toHaveStyle({
       backgroundColor: 'rgba(238,240,243,1)',
@@ -82,6 +90,8 @@ describe('Box', () => {
 
     await screen.findByTestId('parent');
 
+    expect(screen.getByTestId('parent')).toBeAccessible();
+
     expect(screen.getByTestId('parent')).toHaveStyle({
       borderColor: 'rgba(91,97,110,0.2)',
       borderRadius: 8,
@@ -97,6 +107,8 @@ describe('Box', () => {
     );
 
     await screen.findByTestId('parent');
+
+    expect(screen.getByTestId('parent')).toBeAccessible();
 
     expect(screen.getByTestId('parent')).toHaveStyle({
       shadowColor: '#000000',
@@ -114,6 +126,8 @@ describe('Box', () => {
 
     await screen.findByTestId('parent');
 
+    expect(screen.getByTestId('parent')).toBeAccessible();
+
     expect(screen.getByTestId('parent')).toHaveStyle({
       shadowColor: '#000000',
       shadowOpacity: 0.12,
@@ -130,6 +144,8 @@ describe('Box', () => {
 
     await screen.findByTestId('parent');
 
+    expect(screen.getByTestId('parent')).toBeAccessible();
+
     expect(screen.getByTestId('parent')).toHaveStyle({
       width: '321px',
       maxWidth: 789,
@@ -145,6 +161,8 @@ describe('Box', () => {
     );
 
     await screen.findByTestId('parent');
+
+    expect(screen.getByTestId('parent')).toBeAccessible();
 
     expect(screen.getByTestId('parent')).toHaveStyle({
       height: '321px',
@@ -169,6 +187,8 @@ describe('Box', () => {
     );
 
     await screen.findByTestId('parent');
+
+    expect(screen.getByTestId('parent')).toBeAccessible();
 
     expect(screen.getByTestId('parent')).toHaveStyle({
       bottom: '8rem',
@@ -200,6 +220,8 @@ describe('Box', () => {
 
     await screen.findByTestId('parent');
 
+    expect(screen.getByTestId('parent')).toBeAccessible();
+
     expect(screen.getByTestId('parent')).toHaveStyle({
       alignContent: 'space-around',
       alignItems: 'center',
@@ -222,6 +244,8 @@ describe('Box', () => {
 
     await screen.findByTestId('parent');
 
+    expect(screen.getByTestId('parent')).toBeAccessible();
+
     expect(screen.UNSAFE_queryAllByType(LinearGradient)).toHaveLength(1);
   });
 
@@ -234,6 +258,8 @@ describe('Box', () => {
       );
 
       await screen.findByTestId('parent');
+
+      expect(screen.getByTestId('parent')).toBeAccessible();
 
       expect(screen.getByTestId('parent')).toHaveStyle({
         paddingTop: 8,
@@ -252,6 +278,8 @@ describe('Box', () => {
 
       await screen.findByTestId('parent');
 
+      expect(screen.getByTestId('parent')).toBeAccessible();
+
       expect(screen.getByTestId('parent')).toHaveStyle({
         paddingLeft: 8,
         paddingRight: 8,
@@ -266,6 +294,8 @@ describe('Box', () => {
       );
 
       await screen.findByTestId('parent');
+
+      expect(screen.getByTestId('parent')).toBeAccessible();
 
       expect(screen.getByTestId('parent')).toHaveStyle({
         paddingTop: 8,
@@ -282,6 +312,8 @@ describe('Box', () => {
 
       await screen.findByTestId('parent');
 
+      expect(screen.getByTestId('parent')).toBeAccessible();
+
       expect(screen.getByTestId('parent')).toHaveStyle({
         paddingLeft: 8,
         paddingRight: 16,
@@ -296,6 +328,8 @@ describe('Box', () => {
       );
 
       await screen.findByTestId('parent');
+
+      expect(screen.getByTestId('parent')).toBeAccessible();
 
       expect(screen.getByTestId('parent')).toHaveStyle({
         paddingTop: 8,

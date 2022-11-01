@@ -7,6 +7,16 @@ const TEST_ID = 'link';
 const URL = 'www.coinbase.com';
 
 describe('Link', () => {
+  it('passes a11y', () => {
+    render(
+      <Link variant="body" testID={TEST_ID} to="/">
+        Child
+      </Link>,
+    );
+
+    expect(screen.getByTestId(TEST_ID)).toBeAccessible();
+  });
+
   it('renders a children text', () => {
     render(
       <Link variant="body" to="/">
@@ -27,7 +37,7 @@ describe('Link', () => {
     expect(screen.getByTestId(TEST_ID)).toBeTruthy();
   });
 
-  it('variant prop works properly', () => {
+  it('variant prop works properly and passes a11y', () => {
     const variants = [
       'body',
       'caption',
@@ -48,6 +58,7 @@ describe('Link', () => {
       );
       const linkInstance = linkRenderer.root;
       expect(linkInstance.props.variant).toEqual(variant);
+      expect(linkInstance).toBeAccessible();
     });
   });
 

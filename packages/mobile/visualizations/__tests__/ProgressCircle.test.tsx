@@ -39,10 +39,10 @@ jest.mock('@cbhq/cds-common/visualizations/useCounter', () => ({
   useCounter: ({ endNum }: UseCounterParams) => endNum,
 }));
 
-describe('ProgressCircle tests', () => {
+describe('ProgressCircle tests and passes a11y', () => {
   it('handles 0 percent', () => {
     const size = 100;
-    render(<ProgressCircle progress={0} size={size} />);
+    render(<ProgressCircle testID="mock-progress-circle" progress={0} size={size} />);
 
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
@@ -57,11 +57,13 @@ describe('ProgressCircle tests', () => {
     );
 
     expect(screen.getAllByText('0%')).toHaveLength(2);
+
+    expect(screen.getByTestId('mock-progress-circle')).toBeAccessible();
   });
 
   it('handles 50 percent', () => {
     const size = 100;
-    render(<ProgressCircle progress={0.5} size={size} />);
+    render(<ProgressCircle testID="mock-progress-circle" progress={0.5} size={size} />);
 
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
@@ -76,11 +78,12 @@ describe('ProgressCircle tests', () => {
     );
 
     expect(screen.getAllByText('50%')).toHaveLength(2);
+    expect(screen.getByTestId('mock-progress-circle')).toBeAccessible();
   });
 
   it('handles 100 percent', () => {
     const size = 100;
-    render(<ProgressCircle progress={1} size={size} />);
+    render(<ProgressCircle testID="mock-progress-circle" progress={1} size={size} />);
 
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
@@ -95,31 +98,39 @@ describe('ProgressCircle tests', () => {
     );
 
     expect(screen.getAllByText('100%')).toHaveLength(2);
+    expect(screen.getByTestId('mock-progress-circle')).toBeAccessible();
   });
 
   it('handles heavy weight', () => {
     const size = 100;
-    render(<ProgressCircle progress={1} weight="heavy" size={size} />);
+    render(
+      <ProgressCircle testID="mock-progress-circle" progress={1} weight="heavy" size={size} />,
+    );
 
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
     expect(innerCircle).toBeTruthy();
     expect(innerCircle.props.strokeWidth).toBe(12);
+    expect(screen.getByTestId('mock-progress-circle')).toBeAccessible();
   });
 
   it('handles no text', () => {
     const size = 100;
-    render(<ProgressCircle progress={1} hideText size={size} />);
+    render(<ProgressCircle testID="mock-progress-circle" progress={1} hideText size={size} />);
 
     expect(screen.queryAllByText('100%')).toHaveLength(0);
+    expect(screen.getByTestId('mock-progress-circle')).toBeAccessible();
   });
 
   it('handles different color', () => {
     const size = 100;
-    render(<ProgressCircle color="positive" progress={1} size={size} />);
+    render(
+      <ProgressCircle testID="mock-progress-circle" color="positive" progress={1} size={size} />,
+    );
 
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
     expect(innerCircle.props.stroke).toEqual(
       paletteValueToRgbaString(defaultPalette.positive, 'light'),
     );
+    expect(screen.getByTestId('mock-progress-circle')).toBeAccessible();
   });
 });

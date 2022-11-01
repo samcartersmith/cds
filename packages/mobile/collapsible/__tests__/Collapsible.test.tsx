@@ -16,6 +16,11 @@ const { MockCollapsible } = collapsibleBuilder({
 });
 
 describe('Collapsible', () => {
+  it('passes a11y', () => {
+    render(<MockCollapsible />);
+
+    expect(screen.getByTestId('mock-collapse')).toBeAccessible();
+  });
   it('renders collapsed content', () => {
     render(<MockCollapsible />);
 

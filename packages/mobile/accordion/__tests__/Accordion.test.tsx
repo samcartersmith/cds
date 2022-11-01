@@ -16,6 +16,12 @@ const { MockAccordion } = accordionBuilder({
 });
 
 describe('Accordion', () => {
+  it('passes a11y', () => {
+    render(<MockAccordion />);
+
+    expect(screen.getByTestId('mock-accordion-item1-header')).toBeAccessible();
+  });
+
   it('triggers on press', () => {
     const onItemPress = jest.fn();
     const onPress1 = jest.fn();

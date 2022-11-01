@@ -23,6 +23,14 @@ const { DefaultSelect } = selectBuilderMobile({
 const placeholderText = 'Choose something';
 
 describe('Select Input', () => {
+  it('passes a11y', () => {
+    render(
+      <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
+        <DefaultSelect testID="mock-select" placeholder={placeholderText} />
+      </SafeAreaProvider>,
+    );
+    expect(screen.getByTestId('mock-select')).toBeAccessible();
+  });
   it('renders the Select Input trigger', async () => {
     render(
       <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>

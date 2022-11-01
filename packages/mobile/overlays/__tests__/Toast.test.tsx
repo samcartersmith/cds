@@ -27,14 +27,16 @@ describe('Toast', () => {
     jest.clearAllMocks();
   });
 
-  it('renders text', () => {
+  it('renders text and passes a11y', () => {
     const text = 'Toast copy';
-    render(<Toast text={text} />);
+    render(<Toast testID="mock-toast" text={text} />);
+
+    expect(screen.getByTestId('mock-toast')).toBeAccessible();
 
     expect(screen.getByText(text)).toBeTruthy();
   });
 
-  it('renders action', () => {
+  it('renders action and passes a11y', () => {
     const onWillHide = jest.fn();
     const onDidHide = jest.fn();
     const text = 'Toast copy';
@@ -43,12 +45,22 @@ describe('Toast', () => {
       onPress: jest.fn(),
       testID: 'toast-action',
     };
-    render(<Toast text={text} action={action} onWillHide={onWillHide} onDidHide={onDidHide} />);
+    render(
+      <Toast
+        testID="mock-toast"
+        text={text}
+        action={action}
+        onWillHide={onWillHide}
+        onDidHide={onDidHide}
+      />,
+    );
 
     fireEvent.press(screen.getByTestId(action.testID));
     expect(action.onPress).toHaveBeenCalledTimes(1);
     expect(onWillHide).toHaveBeenCalledTimes(1);
     expect(onDidHide).toHaveBeenCalledTimes(1);
+
+    expect(screen.getByTestId('mock-toast')).toBeAccessible();
   });
 
   it('triggers animation', () => {

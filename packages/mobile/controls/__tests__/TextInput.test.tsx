@@ -4,6 +4,17 @@ import { TextTitle1 } from '../../typography';
 import { TextInput } from '../TextInput';
 
 describe('TextInput', () => {
+  it('passes a11y', () => {
+    const testID = 'textinput-id';
+    render(
+      <TextInput
+        accessibilityHint="Text input field"
+        accessibilityLabel="Text input field"
+        testID={testID}
+      />,
+    );
+    expect(screen.getByTestId(testID)).toBeAccessible();
+  });
   it('renders a TextInput', () => {
     const testID = 'textinput-id';
     render(

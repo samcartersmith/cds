@@ -9,16 +9,17 @@ import { Tray } from '../Tray';
 const titleText = 'Test Title';
 
 describe('Tray', () => {
-  it('renders the Tray', () => {
+  it('renders the Tray and passes a11y', () => {
     const onCloseCompleteSpy = jest.fn();
     render(
       <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <Tray onCloseComplete={onCloseCompleteSpy}>
+        <Tray testID="mock-tray" onCloseComplete={onCloseCompleteSpy}>
           <TextBody>{loremIpsum}</TextBody>
         </Tray>
       </SafeAreaProvider>,
     );
     expect(screen.getByText(loremIpsum)).toBeTruthy();
+    expect(screen.getByTestId('mock-tray')).toBeAccessible();
   });
   it('renders a title', () => {
     const onCloseCompleteSpy = jest.fn();
