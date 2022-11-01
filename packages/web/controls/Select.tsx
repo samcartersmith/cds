@@ -17,6 +17,7 @@ import { SelectBaseProps } from '@cbhq/cds-common/types';
 
 import { useRotateAnimation } from '../animation/useRotateAnimation';
 import { Dropdown } from '../dropdown/Dropdown';
+import { DropdownProps } from '../dropdown/DropdownProps';
 import { useSpacingValue } from '../hooks/useSpacingValue';
 import { HStack } from '../layout/HStack';
 import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
@@ -27,7 +28,8 @@ import { SelectTrigger } from './SelectTrigger';
 
 export type SelectProps = {
   children: ReactNode;
-} & SelectBaseProps;
+} & SelectBaseProps &
+  Pick<DropdownProps, 'disablePortal'>;
 
 export const Select = memo(
   forwardRef(function Select(
@@ -41,6 +43,7 @@ export const Select = memo(
       onPress,
       helperText,
       onChange,
+      disablePortal,
       ...props
     }: SelectProps,
     ref: ForwardedRef<HTMLButtonElement>,
@@ -155,6 +158,7 @@ export const Select = memo(
             onChange={onChange}
             onOpenMenu={onOpenMenu}
             onCloseMenu={onCloseMenu}
+            disablePortal={disablePortal}
           >
             {trigger}
           </Dropdown>
