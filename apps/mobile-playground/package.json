@@ -27,7 +27,7 @@
     "@cds/codegen": "workspace:^",
     "@percy/cli": "^1.2.1",
     "jest": "^28.1.0",
-    "metro-react-native-babel-preset": "^0.72.2",
+    "metro-react-native-babel-preset": "^0.73.3",
     "react-native-asset": "^2.0.1"
   }
 }
