@@ -1,8 +1,8 @@
 /* eslint-disable no-restricted-globals */
 
 import { danger, message, schedule, warn } from 'danger';
-import { codeCoverage } from '@cbhq/danger-plugin-code-coverage';
 import chainsmoker from 'danger/distribution/commands/utils/chainsmoker';
+import { codeCoverage } from '@cbhq/danger-plugin-code-coverage';
 
 danger.git.fileMatch = chainsmoker({
   created: danger.git.created_files,
@@ -17,6 +17,7 @@ const app = danger.git.fileMatch(
   // Add ignorable files to the bottom of this list
   // Example: "!**/*.native.(ts|tsx)" would ignore *.native.ts or *.native.tsx files
   '!**/*.test.(ts|tsx)',
+  '!**/*.stories.(ts|tsx)',
   '!**/*.d.(ts|tsx)',
   '!**/dangerfile.ts',
 );
@@ -27,17 +28,15 @@ const bodyAndTitle = (pr.body + pr.title).toLowerCase();
 // Custom modifiers for people submitting PRs to be able to say "skip this"
 const acceptedNoTests = bodyAndTitle.includes('#skip_tests');
 
-console.log(app, tests);
 // Encourage tests
 if (app.edited && !tests.edited && !acceptedNoTests) {
   warn('You have package changes without tests.');
 }
 
 // Make sure PR title follows CDS convention
-const regex = new RegExp(
-  /\[(trivial|CDS\-\d{4})\]\s(breaking|feat|change|new|update|fix|patch|chore|types|internal|docs|tests|release):.*/,
-  'i',
-);
+const regex =
+  /\[(trivial|CDS-\d{4})\]\s(breaking|feat|change|new|update|fix|patch|chore|types|internal|docs|tests|release)(\(.*\))?:.*/i;
+
 if (!regex.test(pr.title)) {
   warn(
     'Please update your PR title that follows [CDS convention](https://github.cbhq.net/frontend/cds/blob/master/docs/first-pull-request.md).',
