@@ -35,12 +35,17 @@ const defaultOptions = [
 type MockDropdownProps = {
   subjectTestID?: string;
   options?: string[];
+  containerHeight?: number | string;
 } & Pick<
   DropdownProps,
   'enableMobileModal' | 'showOverlay' | 'testID' | 'onBlur' | 'onCloseMenu' | 'disablePortal'
 >;
 
-export const Default = ({ options = defaultOptions, ...props }: MockDropdownProps) => {
+export const Default = ({
+  options = defaultOptions,
+  containerHeight,
+  ...props
+}: MockDropdownProps) => {
   const [value, setValue] = useState('');
   const dropdownRef = useRef<DropdownRefProps>(null);
 
@@ -58,7 +63,7 @@ export const Default = ({ options = defaultOptions, ...props }: MockDropdownProp
   }, []);
 
   return (
-    <HStack gap={3} spacing={4}>
+    <HStack gap={3} spacing={4} height={containerHeight}>
       <Dropdown ref={dropdownRef} onChange={setValue} content={content} value={value} {...props}>
         <IconButton name="more" variant="secondary" transparent testID={props.subjectTestID} />
       </Dropdown>

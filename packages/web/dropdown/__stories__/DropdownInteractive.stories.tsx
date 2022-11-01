@@ -2,11 +2,11 @@ import { expect } from '@storybook/jest';
 import { ComponentStoryObj } from '@storybook/react';
 import { userEvent, within } from '@storybook/testing-library';
 
-import { Default } from './Dropdown.stories';
+import { Default as DefaultStory } from './Dropdown.stories';
 
 export default {
   title: 'Interactive/Dropdown',
-  component: Default,
+  component: DefaultStory,
 };
 
 const defaultOptions = [
@@ -23,7 +23,7 @@ const defaultOptions = [
   'Option 11',
 ];
 
-export const Story: ComponentStoryObj<typeof Default> = {
+export const Default: ComponentStoryObj<typeof DefaultStory> = {
   args: {
     disablePortal: true,
   },
@@ -46,5 +46,17 @@ export const Story: ComponentStoryObj<typeof Default> = {
 
     // select the first option
     userEvent.type(await canvas.findByText(defaultOptions[0]), ' ');
+  },
+};
+
+// Make sure opening dropdown doesn't scroll the page. This will be captured in percy.
+export const ScrollContainer: ComponentStoryObj<typeof DefaultStory> = {
+  args: {
+    containerHeight: '200vh',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    // open the menu
+    userEvent.click(canvas.getByText('Open Menu'));
   },
 };
