@@ -43,7 +43,7 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({ title, onBackButtonPre
         )}
       </Box>
       <Box flexGrow={1} justifyContent="center" alignItems="center" spacingHorizontal={2}>
-        <TextHeadline as="span" align="center" id={accessibilityLabelledBy}>
+        <TextHeadline as="h2" align="center" id={accessibilityLabelledBy}>
           {title}
         </TextHeadline>
       </Box>
