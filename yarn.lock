@@ -2283,6 +2283,7 @@ __metadata:
     "@testing-library/react-native": ^11.3.0
     "@types/react-native": ^0.68.2
     d3-interpolate-path: ^2.2.2
+    eslint-plugin-reanimated: ^2.0.0
     lodash: ^4.17.21
     react-native-gesture-handler: 2.6.2
     react-native-inappbrowser-reborn: 3.6.3
@@ -9355,6 +9356,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/experimental-utils@npm:5.33.0":
+  version: 5.33.0
+  resolution: "@typescript-eslint/experimental-utils@npm:5.33.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40typescript-eslint%252fexperimental-utils%2F-%2Fexperimental-utils-5.33.0.tgz"
+  dependencies:
+    "@typescript-eslint/utils": 5.33.0
+  peerDependencies:
+    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+  checksum: 51374c63afd368e992278c321819cca64354f0a160de07780378cd30fe148e9a239676b4005869ff0dc1910575e60cc96535a36be3d509b7e22c0cec7b0eed12
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/parser@npm:^5.11.0":
   version: 5.12.0
   resolution: "@typescript-eslint/parser@npm:5.12.0"
@@ -9379,6 +9391,16 @@ __metadata:
     "@typescript-eslint/types": 5.12.0
     "@typescript-eslint/visitor-keys": 5.12.0
   checksum: 87cc4e8ab3b495293e51685566cafca6f217c7328fc1210e4a9c3a89e864c5e3a04ddde11708e07820185fd158cb448980607a93fd658fa2089c152f27a847d0
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/scope-manager@npm:5.33.0":
+  version: 5.33.0
+  resolution: "@typescript-eslint/scope-manager@npm:5.33.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40typescript-eslint%252fscope-manager%2F-%2Fscope-manager-5.33.0.tgz"
+  dependencies:
+    "@typescript-eslint/types": 5.33.0
+    "@typescript-eslint/visitor-keys": 5.33.0
+  checksum: b2cbea9abd528d01a5acb2d68a2a5be51ec6827760d3869bdd70920cf6c3a4f9f96d87c77177f8313009d9db71253e4a75f8393f38651e2abaf91ef28e60fb9d
   languageName: node
   linkType: hard
 
@@ -9415,6 +9437,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/types@npm:5.33.0":
+  version: 5.33.0
+  resolution: "@typescript-eslint/types@npm:5.33.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40typescript-eslint%252ftypes%2F-%2Ftypes-5.33.0.tgz"
+  checksum: 8bbddda84cb3adf5c659b0d42547a2d6ab87f4eea574aca5dd63a3bd85169f32796ecbddad3b27f18a609070f6b1d18a54018d488bad746ae0f6ea5c02206109
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/types@npm:5.40.1":
   version: 5.40.1
   resolution: "@typescript-eslint/types@npm:5.40.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40typescript-eslint%252ftypes%2F-%2Ftypes-5.40.1.tgz"
@@ -9437,6 +9466,24 @@ __metadata:
     typescript:
       optional: true
   checksum: 6a8e852c210b20370eb564f3beb245c425e65a4de3e78a1e2f278a241b6acf72ba43b10767df18fc1654b529453529f721fa673569406ace4011712c9c837900
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/typescript-estree@npm:5.33.0":
+  version: 5.33.0
+  resolution: "@typescript-eslint/typescript-estree@npm:5.33.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40typescript-eslint%252ftypescript-estree%2F-%2Ftypescript-estree-5.33.0.tgz"
+  dependencies:
+    "@typescript-eslint/types": 5.33.0
+    "@typescript-eslint/visitor-keys": 5.33.0
+    debug: ^4.3.4
+    globby: ^11.1.0
+    is-glob: ^4.0.3
+    semver: ^7.3.7
+    tsutils: ^3.21.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 26f9005cdfb14654125a33d90d872b926820e560dff8970c4629fd5f6f47ad2a31e4c63161564d21bb42a8fc3ced0033994854ee37336ae07d90ccf6300d702b
   languageName: node
   linkType: hard
 
@@ -9474,6 +9521,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/utils@npm:5.33.0":
+  version: 5.33.0
+  resolution: "@typescript-eslint/utils@npm:5.33.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40typescript-eslint%252futils%2F-%2Futils-5.33.0.tgz"
+  dependencies:
+    "@types/json-schema": ^7.0.9
+    "@typescript-eslint/scope-manager": 5.33.0
+    "@typescript-eslint/types": 5.33.0
+    "@typescript-eslint/typescript-estree": 5.33.0
+    eslint-scope: ^5.1.1
+    eslint-utils: ^3.0.0
+  peerDependencies:
+    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+  checksum: 6ce5ee5eabeb6d73538b24e6487f811ecb0ef3467bd366cbd15bf30d904bdedb73fc6f48cf2e2e742dda462b42999ea505e8b59255545825ec9db86f3d423ea7
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/utils@npm:^5.10.0, @typescript-eslint/utils@npm:^5.11.0, @typescript-eslint/utils@npm:^5.13.0":
   version: 5.40.1
   resolution: "@typescript-eslint/utils@npm:5.40.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40typescript-eslint%252futils%2F-%2Futils-5.40.1.tgz"
@@ -9499,6 +9562,16 @@ __metadata:
     "@typescript-eslint/types": 5.12.0
     eslint-visitor-keys: ^3.0.0
   checksum: c3774f542aae801926edf86fe6cab534c4cdac914b035730912443ed53fcc701b0f0e7b1a0d5fc959484637c55f63409fc43df5508c334e202d66d4654484d11
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/visitor-keys@npm:5.33.0":
+  version: 5.33.0
+  resolution: "@typescript-eslint/visitor-keys@npm:5.33.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40typescript-eslint%252fvisitor-keys%2F-%2Fvisitor-keys-5.33.0.tgz"
+  dependencies:
+    "@typescript-eslint/types": 5.33.0
+    eslint-visitor-keys: ^3.3.0
+  checksum: d7e3653de6bac6841e6fcc54226b93ad6bdca4aa76ebe7d83459c016c3eebcc50d4f65ee713174bc267d765295b642d1927a778c5de707b8389e3fcc052aa4a1
   languageName: node
   linkType: hard
 
@@ -16496,6 +16569,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-ft-flow@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "eslint-plugin-ft-flow@npm:2.0.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2Feslint-plugin-ft-flow%2F-%2Feslint-plugin-ft-flow-2.0.1.tgz"
+  dependencies:
+    lodash: ^4.17.21
+    string-natural-compare: ^3.0.1
+  peerDependencies:
+    "@babel/eslint-parser": ^7.12.0
+    eslint: ^8.1.0
+  checksum: f9519a9d93c6e883cb1ddf73c18aaff0d40ee555c60fa00f47f24aa73fb255fa6754217fb19a07ec0b1f244f8bc73f539389caa2189a4e9c33a1e8efbe538ec4
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-import@npm:^2.25.4":
   version: 2.25.4
   resolution: "eslint-plugin-import@npm:2.25.4"
@@ -16644,6 +16730,19 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
   checksum: 553fb9ece6beb7c14cf6f84670c786c8ac978c2918421994dcc4edd2385302022e5d5ac4a39fafdb35954e29cecddefed61758040c3c530cafcf651f674a9d51
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-reanimated@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "eslint-plugin-reanimated@npm:2.0.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2Feslint-plugin-reanimated%2F-%2Feslint-plugin-reanimated-2.0.0.tgz"
+  dependencies:
+    "@typescript-eslint/experimental-utils": 5.33.0
+    eslint-plugin-ft-flow: ^2.0.1
+  peerDependencies:
+    eslint: ">=8"
+    typescript: ">=4.1.3"
+  checksum: 207093c05d489d854f806cf4186f3a25e6a8b565d29800ef27efc390c9254679c473e43f671cfcf192987fceb361a405fbc0a789fb1004123cedc21e1edeeceb
   languageName: node
   linkType: hard
 
@@ -32829,6 +32928,13 @@ __metadata:
     char-regex: ^2.0.0
     strip-ansi: ^7.0.1
   checksum: 71f73b8c8a743e01dcd001bcf1b197db78d5e5e53b12bd898cddaf0961be09f947dfd8c429783db3694b55b05cb5a51de6406c5085ff1aaa10c4771440c8396d
+  languageName: node
+  linkType: hard
+
+"string-natural-compare@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "string-natural-compare@npm:3.0.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2Fstring-natural-compare%2F-%2Fstring-natural-compare-3.0.1.tgz"
+  checksum: 65910d9995074086e769a68728395effbba9b7186be5b4c16a7fad4f4ef50cae95ca16e3e9086e019cbb636ae8daac9c7b8fe91b5f21865c5c0f26e3c0725406
   languageName: node
   linkType: hard
 

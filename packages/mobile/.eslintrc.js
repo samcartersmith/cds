@@ -3,7 +3,9 @@ module.exports = {
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
+      plugins: ['reanimated'],
       rules: {
+        'reanimated/js-function-in-worklet': 2,
         'react/forbid-component-props': [
           'error',
           {
