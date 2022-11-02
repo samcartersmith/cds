@@ -1,5 +1,12 @@
 {
   "extends": "./tsconfig.base.json",
-  "include": ["packages/**/*", "apps/**/*", "examples/**/*", "tools/**/*", "dangerfile.ts"],
+  "include": [
+    "libs/**/*",
+    "packages/**/*",
+    "apps/**/*",
+    "examples/**/*",
+    "tools/**/*",
+    "dangerfile.ts"
+  ],
   "exclude": ["**/dist/**/*", "**/lib/**/*", "**/node_modules/**/*", "**/out/**/*"]
 }

@@ -15,6 +15,7 @@
     "lottie-files": "packages/lottie-files",
     "mobile": "packages/mobile",
     "mobile-playground": "apps/mobile-playground",
+    "script-utils": "libs/script-utils",
     "storybook": "apps/storybook",
     "utils": "packages/utils",
     "web": "packages/web",

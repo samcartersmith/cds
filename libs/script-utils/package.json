@@ -1,0 +1,14 @@
+{
+  "name": "@cbhq/script-utils",
+  "version": "0.0.0",
+  "description": "Script utils",
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "libs/script-utils"
+  },
+  "keywords": [
+    "script",
+    "utils"
+  ]
+}
