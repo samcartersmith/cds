@@ -7,6 +7,7 @@ import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
 
 import { VStack } from '../alpha/VStack';
 import { useDimensions } from '../hooks/useDimensions';
+import { Box } from '../layout';
 import { deviceBreakpoints } from '../layout/breakpoints';
 import { ThemeProvider } from '../system/ThemeProvider';
 
@@ -57,6 +58,12 @@ export type SidebarProps = {
    * @default false
    */
   autoCollapse?: boolean;
+  /**
+   * This node will be fixed to the bottom of the sidebar
+   * This is a render prop, and will provide the collapsed state
+   * @default undefined
+   */
+  renderEnd?: (isCollapsed: boolean) => ReactNode;
 } & SharedProps &
   SharedAccessibilityProps;
 
@@ -67,6 +74,7 @@ export const Sidebar: React.FC<SidebarProps> = memo(
     collapsed,
     autoCollapse,
     testID,
+    renderEnd,
     accessibilityLabel = 'Sidebar',
     ...rest
   }) => {
@@ -102,23 +110,28 @@ export const Sidebar: React.FC<SidebarProps> = memo(
             height="100%"
             position="sticky"
             top="0"
+            bottom="0"
             left="0"
             width={computedWidth}
             minWidth={computedWidth}
             spacingHorizontal={sidebarHorizontalSpacing}
             spacingBottom={2}
             spacingTop={2}
+            justifyContent="space-between"
             zIndex={zIndex.navigation}
             testID={testID}
             accessibilityLabel={accessibilityLabel}
             {...rest}
           >
-            <VStack spacingTop={1} spacingStart={1} spacingBottom={4}>
-              {logo}
+            <VStack gap={4}>
+              <VStack spacingTop={1} spacingStart={1}>
+                {logo}
+              </VStack>
+              <VStack gap={0.5} offsetStart={0.5} as="ul" dangerouslySetClassName={ulClassName}>
+                {liWrappedChildren}
+              </VStack>
             </VStack>
-            <VStack gap={0.5} offsetStart={0.5} as="ul" dangerouslySetClassName={ulClassName}>
-              {liWrappedChildren}
-            </VStack>
+            {!!renderEnd && <Box spacingTop={4}>{renderEnd(!!computedCollapse)}</Box>}
           </VStack>
           <span className={breakpointObserverClassName} ref={ref} />
         </SidebarProvider>

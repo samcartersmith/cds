@@ -2,17 +2,19 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { css } from 'linaria';
 
+import { HStack } from '../../alpha/HStack';
+import { VStack } from '../../alpha/VStack';
 import { AvatarButton, IconButton } from '../../buttons/index';
 import { SelectOption } from '../../controls/SelectOption';
 import { LogoMark, NavigationIcon } from '../../icons';
-import { HStack, VStack } from '../../layout';
+import { Pictogram } from '../../illustrations';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Avatar } from '../../media';
 import { PortalProvider } from '../../overlays/PortalProvider';
 import { Pressable } from '../../system';
 import { TabNavigation } from '../../tabs';
 import { palette } from '../../tokens';
-import { TextDisplay2, TextHeadline } from '../../typography';
+import { TextDisplay2, TextHeadline, TextLegal } from '../../typography';
 import { enableJavascript } from '../../utils/storybookParams/percy';
 import {
   NavigationBar,
@@ -185,6 +187,29 @@ export const NavLinkExample: React.FC = () => {
 
 const navItems = items.slice(0, 4);
 const moreMenuOptions = items.slice(4);
+const renderCB1 = (isCollapsed: boolean) => {
+  const spacing = isCollapsed ? 1 : 2;
+  return (
+    <Pressable
+      onPress={() => handlePress('Notifications')}
+      as="button"
+      borderRadius="roundedLarge"
+      backgroundColor="primaryWash"
+    >
+      <HStack gap={1} alignItems="center" justifyContent="center" spacing={spacing}>
+        <Pictogram name="coinbaseOneLogoPictogram" dimension="48x48" scaleMultiplier={0.8} />
+        {!isCollapsed && (
+          <VStack>
+            <TextHeadline as="span">Coinbase One</TextHeadline>
+            <TextLegal as="p" color="foregroundMuted">
+              Zero trading fees
+            </TextLegal>
+          </VStack>
+        )}
+      </HStack>
+    </Pressable>
+  );
+};
 export const SidebarExample = ({ children, ...props }: SidebarMoreMenuProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);
@@ -209,7 +234,7 @@ export const SidebarExample = ({ children, ...props }: SidebarMoreMenuProps) => 
         background="backgroundAlternate"
         overflow="hidden"
       >
-        <Sidebar logo={<LogoMark />} autoCollapse>
+        <Sidebar logo={<LogoMark />} autoCollapse renderEnd={renderCB1}>
           {navItems.map((item, index) => (
             <SidebarItem
               key={`sidebar-item--${item.title}`}
