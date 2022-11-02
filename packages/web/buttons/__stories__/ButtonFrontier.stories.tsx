@@ -19,6 +19,7 @@ export const All = buildSheet([
   { startIcon: 'backArrow', endIcon: 'forwardArrow', block: true },
   { transparent: true, flush: 'start', compact: true, endIcon: 'forwardArrow' },
   { transparent: true, flush: 'end', compact: true, endIcon: 'forwardArrow' },
+  { target: '_blank', href: 'https://coinbase.com' },
 ]);
 
 export const numberOfLines = build(

@@ -50,7 +50,7 @@ export type LinkableProps = {
   onKeyPress?: React.KeyboardEventHandler;
   /** URL that this links to when pressed. */
   to?: string;
-};
+} & Pick<React.AllHTMLAttributes<HTMLAnchorElement>, 'target' | 'href'>;
 
 export type PressableProps = {
   /**
