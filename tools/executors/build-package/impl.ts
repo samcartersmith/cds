@@ -68,7 +68,7 @@ type PackageJson = {
   'react-native': string;
 };
 
-// babel --config-file ../../babel.build.config.js  --extensions .ts,.tsx --ignore "**/*.js","**/*.test.ts","**/*.test.tsx","dist/**" --source-maps --out-dir dist ./
+// babel --config-file ../../babel.config.js  --extensions .ts,.tsx --ignore "**/*.js","**/*.test.ts","**/*.test.tsx","dist/**" --source-maps --out-dir dist ./
 async function runBabel(
   context: ExecutorContext,
   { destinationDir, srcDir }: PackageArgs,

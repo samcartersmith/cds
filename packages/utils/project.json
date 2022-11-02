@@ -21,7 +21,7 @@
       "options": {
         "destinationDir": ".nx/dist/packages/utils",
         "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],
-        "babelConfig": "./babel.build.config.js",
+        "babelConfig": "./babel.config.js",
         "babelExtensions": [".ts", ".tsx"],
         "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
         "typescriptConfig": "packages/utils/tsconfig.build.json"

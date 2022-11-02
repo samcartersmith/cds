@@ -1,4 +1,4 @@
 module.exports = {
-  extends: '../../babel.build.config.js',
+  extends: '../../babel.config.js',
   ignore: ['dist', 'node_modules'],
 };

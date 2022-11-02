@@ -19,7 +19,7 @@
       "options": {
         "destinationDir": "packages/web-utils/dist",
         "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],
-        "babelConfig": "./babel.build.config.js",
+        "babelConfig": "./babel.config.js",
         "babelExtensions": [".ts", ".tsx"],
         "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
         "typescriptConfig": "packages/web-utils/tsconfig.build.json"

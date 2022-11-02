@@ -19,7 +19,7 @@
       "options": {
         "destinationDir": ".nx/dist/packages/lottie-files",
         "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],
-        "babelConfig": "./babel.build.config.js",
+        "babelConfig": "./babel.config.js",
         "babelExtensions": [".ts", ".tsx"],
         "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
         "typescriptConfig": "packages/lottie-files/tsconfig.build.json"

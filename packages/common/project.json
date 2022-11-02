@@ -30,7 +30,7 @@
           "tsconfig.build.json",
           "project.json"
         ],
-        "babelConfig": "./babel.build.config.js",
+        "babelConfig": "./babel.config.js",
         "babelExtensions": [".ts", ".tsx"],
         "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
         "typescriptConfig": "packages/common/tsconfig.build.json"

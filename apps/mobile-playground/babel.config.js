@@ -1,6 +1,4 @@
-const baseConfig = require('../../babel.config');
+const cdsMobilePackageConfig = require('../../packages/mobile/babel.config');
 
-module.exports = {
-  presets: [...baseConfig.presets, 'module:metro-react-native-babel-preset'],
-  plugins: ['react-native-reanimated/plugin'],
-};
+// this enforces the same build & jest babel as cds-mobile to help identify mobile build errors in a local environment
+module.exports = cdsMobilePackageConfig;
