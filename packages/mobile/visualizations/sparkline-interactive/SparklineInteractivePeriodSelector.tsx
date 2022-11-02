@@ -90,7 +90,7 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
   return (
     <Box spacingVertical={2} alignItems="center" justifyContent="center">
       <Pressable
-        borderRadius="round"
+        borderRadius="roundedFull"
         backgroundColor={isSelected ? 'primaryWash' : 'background'}
         borderColor="transparent"
         onPress={handleOnPress}
