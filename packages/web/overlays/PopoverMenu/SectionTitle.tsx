@@ -13,7 +13,7 @@ export type SectionTitleProps = {
 export const SectionTitle = memo(function SectionTitle({ text }: SectionTitleProps) {
   return (
     <HStack spacingHorizontal={2} spacingVertical={2}>
-      <TextCaption as="p" color="foregroundMuted">
+      <TextCaption as="h2" color="foregroundMuted">
         {text}
       </TextCaption>
     </HStack>
