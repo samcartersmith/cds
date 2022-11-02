@@ -1,8 +1,5 @@
-/* eslint-disable no-restricted-globals */
-
-import { danger, message, schedule, warn } from 'danger';
+import { danger, message, warn } from 'danger';
 import chainsmoker from 'danger/distribution/commands/utils/chainsmoker';
-import { codeCoverage } from '@cbhq/danger-plugin-code-coverage';
 
 danger.git.fileMatch = chainsmoker({
   created: danger.git.created_files,
@@ -20,6 +17,7 @@ const app = danger.git.fileMatch(
   '!**/*.stories.(ts|tsx)',
   '!**/*.d.(ts|tsx)',
   '!**/dangerfile.ts',
+  '!**/dangerfile-coverage.ts',
 );
 const tests = danger.git.fileMatch('**/*.test.(ts|tsx)');
 const { pr } = danger.github;
@@ -48,16 +46,4 @@ if (pr.additions + pr.deletions > bigPRThreshold) {
   message(
     'Pull Request size seems relatively large. If Pull Request contains multiple changes, split each into separate PR will helps faster, easier review.',
   );
-}
-
-// Output test coverage
-if (process.env.NX_TEST_COVERAGE_DIRECTORY) {
-  schedule(
-    codeCoverage({
-      title: process.env.NX_PROJECT_NAME,
-      coverageDirectory: process.env.NX_TEST_COVERAGE_DIRECTORY,
-    }),
-  );
-} else {
-  message('No coverage directory found');
 }

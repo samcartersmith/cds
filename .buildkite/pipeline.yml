@@ -76,13 +76,22 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci test
-      - yarn mono-pipeline run-ci danger
 
   - label: Typecheck
     <<: *shared_step
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci typecheck
+
+  - label: Danger
+    <<: *shared_step
+    parallelism: 1
+    commands:
+      - tools/ci/setup.sh
+      - yarn mono-pipeline run-ci danger
+    retry:
+      automatic: false
+    soft_fail: true
 
   - label: 'Percy (Web)'
     <<: *chrome_step
