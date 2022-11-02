@@ -6,11 +6,11 @@
  * from linaria.
  *
  * import { writePrettyFile } from '@cbhq/script-utils/fs';
- * import { typescript } from '@cbhq/script-utils/taggedTemplate';
+ * import { typescriptTypesTemplate } from '@cbhq/script-utils/tagged-templates';
  *
  * const paletteNames = ['foreground', 'background']
  *
- * const paletteNameContent = typescript`
+ * const paletteNameContent = typescriptTypesTemplate`
  *  type PaletteName = ${paletteNames};
  * `
  *
@@ -21,7 +21,7 @@
  * type PaletteName = 'foreground' | 'background';
  *
  */
-export function typescript(strings: TemplateStringsArray, ...expr: unknown[]) {
+export function typescriptTypesTemplate(strings: TemplateStringsArray, ...expr: unknown[]) {
   let str = '';
   expr.forEach((item) => {
     if (item && Array.isArray(item)) {

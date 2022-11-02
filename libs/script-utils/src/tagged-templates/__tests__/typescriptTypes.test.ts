@@ -1,10 +1,10 @@
 import { prettify } from '../../format';
-import { typescript } from '../typescript';
+import { typescriptTypesTemplate } from '../typescriptTypesTemplate';
 
-describe('typescript template', () => {
+describe('typescriptTypesTemplate template', () => {
   it('correctly creates union from an array of strings', async () => {
     const mockArray = ['one', 'two', 'three'];
-    const content = typescript`
+    const content = typescriptTypesTemplate`
       export type MockArray = ${mockArray};
     `;
     const prettifiedContent = await prettify(content, 'typescript');
@@ -14,7 +14,7 @@ describe('typescript template', () => {
 
   it('correctly creates union from an array of numbers', async () => {
     const mockArray = [1, 2, 3];
-    const content = typescript`
+    const content = typescriptTypesTemplate`
       export type MockArray = ${mockArray};
     `;
     const prettifiedContent = await prettify(content, 'typescript');
