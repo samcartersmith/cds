@@ -1,12 +1,15 @@
+/* eslint-disable @typescript-eslint/await-thenable */
 import { expect } from '@storybook/jest';
 import { ComponentStoryObj } from '@storybook/react';
-import { userEvent, within } from '@storybook/testing-library';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
 
-import { Default as DefaultStory } from './Dropdown.stories';
+import { pauseStory } from '../../utils/storybook';
+
+import { Default } from './Dropdown.stories';
 
 export default {
   title: 'Interactive/Dropdown',
-  component: DefaultStory,
+  component: Default,
 };
 
 const defaultOptions = [
@@ -23,40 +26,44 @@ const defaultOptions = [
   'Option 11',
 ];
 
-export const Default: ComponentStoryObj<typeof DefaultStory> = {
+export const SimpleDropdown: ComponentStoryObj<typeof Default> = {
   args: {
     disablePortal: true,
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     // open the menu
-    userEvent.click(canvas.getByText('Open Menu'));
+    await userEvent.click(canvas.getByText('Open Menu'));
+    await pauseStory(1000);
 
     // expect to see the first option
-    expect(canvas.findByText(defaultOptions[0])).toBeDefined();
+    await waitFor(() => expect(canvas.findByText(defaultOptions[0])).toBeDefined());
 
-    // click the second option
-    userEvent.click(canvas.getByText(defaultOptions[1]));
+    // close the menu by clicking outside of it (this is hacky, but it clicks the invisible scrim)
+    await userEvent.click(canvas.getByRole('dialog'));
+    await pauseStory(1000);
 
-    // reopen the menu using keyboard navigation
-    userEvent.type(canvas.getByText('Open Menu'), ' ');
+    // open the menu again
+    await userEvent.click(canvas.getAllByRole('button')[0]);
+    await pauseStory(1000);
 
-    // expect to see the first option
-    expect(canvas.findByText(defaultOptions[0])).toBeDefined();
+    // select an option
+    await userEvent.click(canvas.getByText(defaultOptions[4]));
+    await pauseStory(1000);
 
-    // select the first option
-    userEvent.type(await canvas.findByText(defaultOptions[0]), ' ');
+    // expect menu to be dismounted
+    await waitFor(() => expect(canvas.queryByRole('dialog')).toBeNull());
   },
 };
 
 // Make sure opening dropdown doesn't scroll the page. This will be captured in percy.
-export const ScrollContainer: ComponentStoryObj<typeof DefaultStory> = {
+export const ScrollContainer: ComponentStoryObj<typeof Default> = {
   args: {
     containerHeight: '200vh',
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     // open the menu
-    userEvent.click(canvas.getByText('Open Menu'));
+    await userEvent.click(canvas.getByText('Open Menu'));
   },
 };
