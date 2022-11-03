@@ -23,6 +23,7 @@ export type CardMediaProps = {
   /** Informs how to auto-magically size the media. */
   placement: CardMediaPlacement;
   testID?: string;
+  alt?: string;
 } & (
   | {
       type: 'image';

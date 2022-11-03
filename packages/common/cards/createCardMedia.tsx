@@ -30,12 +30,22 @@ export function createCardMedia({ Illustration, CardRemoteImage }: CreateCardMed
   const CardMedia = memo(function CardMedia(props: CardMediaProps) {
     if (props.type === 'illustration') {
       return (
-        <Illustration dimension={defaultMediaDimension} name={props.name} testID={props.testID} />
+        <Illustration
+          dimension={defaultMediaDimension}
+          name={props.name}
+          testID={props.testID}
+          alt={props.alt ?? ''}
+        />
       );
     }
     if (props.type === 'image') {
       return (
-        <CardRemoteImage src={props.src} testID={props.testID} {...imageProps[props.placement]} />
+        <CardRemoteImage
+          src={props.src}
+          testID={props.testID}
+          alt={props.alt ?? ''}
+          {...imageProps[props.placement]}
+        />
       );
     }
     return null;

@@ -267,7 +267,12 @@ export const popoverMenuBuilder = ({
             visible={visible}
           >
             <PopoverTrigger>
-              <IconButton transparent name="more" variant="secondary" />
+              <IconButton
+                accessibilityLabel="More actions"
+                transparent
+                name="more"
+                variant="secondary"
+              />
             </PopoverTrigger>
             {feedCardOptions.map((option) => (
               <SelectOption

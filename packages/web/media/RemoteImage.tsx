@@ -85,7 +85,7 @@ export const RemoteImage = memo(function RemoteImage({
   aspectRatio,
   shape = 'square',
   source,
-  alt,
+  alt = '',
   dangerouslySetClassName,
   resizeMode = 'cover',
   testID,
@@ -118,7 +118,7 @@ export const RemoteImage = memo(function RemoteImage({
   return (
     <img
       data-testid={testID}
-      alt={alt ?? ''}
+      alt={alt}
       {...props}
       src={imageSrc}
       width={finalWidth}

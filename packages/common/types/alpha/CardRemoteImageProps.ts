@@ -9,6 +9,7 @@ export type CardRemoteImageProps = {
   width?: CardRemoteImageDimensionValue;
   height?: CardRemoteImageDimensionValue;
   aspectRatio?: AspectRatio;
+  alt?: string;
 } & SharedProps &
   (
     | {

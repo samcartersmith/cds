@@ -110,7 +110,14 @@ export const Example = () => {
       avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
       headerMetaData="Dec 18"
       headerDescription="Earn crypto"
-      headerActionNode={<IconButton name="more" variant="foregroundMuted" transparent />}
+      headerActionNode={
+        <IconButton
+          accessibilityLabel="More actions"
+          name="more"
+          variant="foregroundMuted"
+          transparent
+        />
+      }
       bodyTitle="Learn AMP. Earn $3 in AMP."
       bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
       bodyMediaUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"

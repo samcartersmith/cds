@@ -228,6 +228,7 @@ export const trayBuilder = ({
           headerActionNode={
             <IconButton
               name="more"
+              accessibilityLabel="More actions"
               variant="foregroundMuted"
               transparent
               onPress={handleFeedCardHeaderButtonPress}

@@ -213,7 +213,14 @@ export function cardBuilder({
           <FeedCard
             avatarUrl="https://images.coinbase.com/avatar?s=350"
             headerDescription="Earn crypto"
-            headerActionNode={<IconButton name="more" variant="foregroundMuted" transparent />}
+            headerActionNode={
+              <IconButton
+                accessibilityLabel="More actions"
+                name="more"
+                variant="foregroundMuted"
+                transparent
+              />
+            }
             bodyTitle="LEARN AMP. EARN $3 IN AMP."
             bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
             bodyMediaUrl="https://static-assets.coinbase.com/card/introduction/v2/initial_funding.png"

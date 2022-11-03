@@ -7,9 +7,10 @@ export type { CardRemoteImageProps };
 
 export const CardRemoteImage = memo(function CardRemoteImage({
   src,
+  alt = '',
   ...props
 }: CardRemoteImageProps) {
-  return <RemoteImage {...props} source={src} resizeMode="cover" />;
+  return <RemoteImage {...props} source={src} resizeMode="cover" alt={alt} />;
 });
 
 CardRemoteImage.displayName = 'CardRemoteImage';

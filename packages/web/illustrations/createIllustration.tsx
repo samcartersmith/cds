@@ -16,6 +16,7 @@ export function createIllustration<T extends IllustrationVariant>(variant?: T) {
     dimension,
     scaleMultiplier,
     testID,
+    alt = '',
   }: IllustrationBaseProps<T>) {
     const spectrum = useSpectrumConditional({ light: 'light', dark: 'dark' }) ?? 'light';
     const imgPath = useMemo(() => {
@@ -64,7 +65,7 @@ export function createIllustration<T extends IllustrationVariant>(variant?: T) {
     return (
       <img
         src={`https://static-assets.coinbase.com/design-system/illustrations/${imgPath}.svg`}
-        alt={name}
+        alt={alt}
         width={width}
         height={height}
         data-testid={testID}

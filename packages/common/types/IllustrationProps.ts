@@ -62,6 +62,10 @@ export type IllustrationBaseProps<T extends keyof IllustrationNamesMap> = {
   dimension?: IllustrationDimensionsMap[T];
   /** Multiply the width & height while maintaining aspect ratio */
   scaleMultiplier?: number;
+  /** Alt tag to apply to the img
+   * @default "" will identify the image as decorative
+   */
+  alt?: string;
 } & SharedProps;
 
 export type HeroSquareProps = IllustrationBaseProps<'heroSquare'> & {

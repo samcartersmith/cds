@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { IllustrationNames } from '@cbhq/cds-common';
 import { sortedImg } from '@cbhq/cds-common/internal/data/sortedIllustrationData';
 import { Spectrum } from '@cbhq/cds-common/types/Spectrum';
 
@@ -20,18 +21,28 @@ const images: ImageData[] = sortedImg.map((nameAndSpectrum) => {
   return [name, spectrum, url];
 });
 
+const TEST_ILLO_NAME: IllustrationNames = 'accessToAdvancedCharts';
+const TEST_ILLO_ALT = 'This is a special illustration';
+
 describe('illustrations have correct url and alt tag for light mode', () => {
   it.each(images)('%p-%p has correct src and alt prop', (name, spectrum, url) => {
     if (spectrum === 'dark') {
       render(
         <ThemeProvider spectrum="dark">
-          <Illustration name={name as never} />
+          <Illustration name={name as never} testID={name} />
         </ThemeProvider>,
       );
     } else {
-      render(<Illustration name={name as never} />);
+      render(<Illustration name={name as never} testID={name} />);
     }
 
-    expect(screen.getByAltText(name)).toHaveAttribute('src', url);
+    expect(screen.getByTestId(name)).toHaveAttribute('src', url);
+    expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+  });
+
+  it('can set a custom alt attr', () => {
+    render(<Illustration name={TEST_ILLO_NAME} testID={TEST_ILLO_NAME} alt={TEST_ILLO_ALT} />);
+
+    expect(screen.getByTestId(TEST_ILLO_NAME)).toHaveAttribute('alt', TEST_ILLO_ALT);
   });
 });
