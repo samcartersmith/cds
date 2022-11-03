@@ -8,6 +8,36 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.1.0 (11/2/2022, 06:22 PM PST)
+
+#### 🚀 Updates
+
+- **[SectionTitle]** Use a heading element. [#1311](https://github.cbhq.net/frontend/cds/pull/1311), [A11Y-235](https://jira.coinbase-corp.com/browse/A11Y-235)
+- **[Sidebar]** Add a "renderEnd" prop to Sidebar. [#1297](https://github.cbhq.net/frontend/cds/pull/1297), [CDS-2584](https://jira.coinbase-corp.com/browse/CDS-2584)
+- Add script-utils lib. [#1302](https://github.cbhq.net/frontend/cds/pull/1302), [CDS-2728](https://jira.coinbase-corp.com/browse/CDS-2728)
+- Extended disablePortal from Dropdown. [#1309](https://github.cbhq.net/frontend/cds/pull/1309)
+
+#### 🐞 Fixes
+
+- Fix header focus states. [#1320](https://github.cbhq.net/frontend/cds/pull/1320)
+- **[Button]** Include target and href props on Button. [#1103](https://github.cbhq.net/frontend/cds/pull/1103), [CDS-2421](https://jira.coinbase-corp.com/browse/CDS-2421)
+- **[ModalHeading]** Update heading to use an h2 element. [#1301](https://github.cbhq.net/frontend/cds/pull/1301), [A11y-234](https://jira.coinbase-corp.com/browse/A11y-234)
+- Removed unnecessary exports. [#1299](https://github.cbhq.net/frontend/cds/pull/1299)
+- **[SidebarMoreMenu]** Return focus to trigger after menu close. [#1288](https://github.cbhq.net/frontend/cds/pull/1288), [A11Y-186](https://jira.coinbase-corp.com/browse/A11Y-186)
+
+#### 📘 Misc
+
+- **[config]** Fix CI build target deps in web. [#1325](https://github.cbhq.net/frontend/cds/pull/1325), [CDS-2761](https://jira.coinbase-corp.com/browse/CDS-2761)
+- **[Select,Dropdown]** Added Interaction + visreg stories to Select, Dropdown, and small Select. [#1300](https://github.cbhq.net/frontend/cds/pull/1300), [CDS-2710](https://jira.coinbase-corp.com/browse/CDS-2710)
+- **[danger]** Danger improvements. [#1321](https://github.cbhq.net/frontend/cds/pull/1321)
+- Unify babel configurations across all packages. [#1304](https://github.cbhq.net/frontend/cds/pull/1304), [CDS-2577](https://jira.coinbase-corp.com/browse/CDS-2577)
+- Migrated textinput interactive test to new format. [#1308](https://github.cbhq.net/frontend/cds/pull/1308)
+- Add plugin and enforce worklet & JS threading best practices. [#1290](https://github.cbhq.net/frontend/cds/pull/1290), [CDS-2557](https://jira.coinbase-corp.com/browse/CDS-2557)
+- **[Dropdown]** Add interaction test for dropdown scroll regression. [#1303](https://github.cbhq.net/frontend/cds/pull/1303), [CDS-2682](https://jira.coinbase-corp.com/browse/CDS-2682)
+- **[Popover]** Add unit tests. [#1295](https://github.cbhq.net/frontend/cds/pull/1295), [CDS-2688](https://jira.coinbase-corp.com/browse/CDS-2688)
+- Add dangerjs integration. [#1263](https://github.cbhq.net/frontend/cds/pull/1263), [CDS-2606](https://jira.coinbase-corp.com/browse/CDS-2606)
+- **[Dropdown]** Added e2e tests and enabled interaction story debugging. [#1280](https://github.cbhq.net/frontend/cds/pull/1280), [CDS-2660](https://jira.coinbase-corp.com/browse/CDS-2660)
+
 ## 3.0.4 (10/28/2022, 03:14 PM PST)
 
 #### 🐞 Fixes
