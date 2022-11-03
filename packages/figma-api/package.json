@@ -6,6 +6,11 @@
     "figma",
     "cds"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "packages/figma-api"
+  },
   "packemon": {
     "format": "lib",
     "platform": "node"

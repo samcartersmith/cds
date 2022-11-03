@@ -3,17 +3,17 @@ import type { Style } from './getStyle';
 
 type GetFileStylesParams = never;
 
-type GetFileStylesResponse = {
+export type GetFileStylesResponse<Name extends string = string> = {
   status: number;
   error: boolean;
   meta: {
-    styles: Style[];
+    styles: Style<Name>[];
   };
 };
 
-const client = createClient<GetFileStylesParams, GetFileStylesResponse>();
-
 /** https://www.figma.com/developers/api#get-file-styles-endpoint */
-export async function getFileStyles(fileKey: string) {
-  return client(`files/${fileKey}/styles`);
+export async function getFileStyles<Name extends string = string>(fileKey: string) {
+  const client = createClient<GetFileStylesParams, GetFileStylesResponse<Name>>();
+  const data = await client(`files/${fileKey}/styles`);
+  return data.meta.styles;
 }

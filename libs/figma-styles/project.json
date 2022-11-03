@@ -1,0 +1,27 @@
+{
+  "root": "libs/figma-styles",
+  "sourceRoot": "libs/figma-styles",
+  "projectType": "library",
+  "targets": {
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "sync": {
+      "executor": "@nrwl/workspace:run-commands",
+      "dependsOn": ["^build"],
+      "options": {
+        "cwd": "libs/figma-styles",
+        "command": "ts-node scripts/sync/main.ts"
+      }
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    }
+  }
+}

@@ -1,11 +1,33 @@
 /* eslint-disable no-param-reassign */
 
-import { colorStyles } from './data/colorStyles';
-import { effectStyles } from './data/effectStyles';
+import {
+  darkKeyMap as darkIlloKeyMap,
+  lightKeyMap as lightIlloKeyMap,
+} from '@cbhq/figma-styles/__generated__/illustration-styles';
+import {
+  darkKeyMap as darkUiKeyMap,
+  lightKeyMap as lightUiKeyMap,
+} from '@cbhq/figma-styles/__generated__/ui-styles';
+
 import type { FigmaContext, FigmaMessage, Spectrum } from './types';
 
 figma.showUI(__html__);
 figma.skipInvisibleInstanceChildren = true;
+
+type StyleType = 'fill' | 'stroke' | 'effect';
+type StyleKey = keyof typeof lightKeyMap | keyof typeof darkKeyMap;
+
+const lightKeyMap: Record<string, string> = {
+  ...lightIlloKeyMap,
+  ...lightUiKeyMap,
+};
+
+const darkKeyMap: Record<string, string> = {
+  ...darkIlloKeyMap,
+  ...darkUiKeyMap,
+};
+
+const cache = new Map<string, string>();
 
 /**
  * Figma adds some weird prefix and suffix to id's depending on where they are accessed from.
@@ -18,14 +40,6 @@ function idToKey<T extends string>(id: PropertyKey) {
   return String(id).replace('S:', '').replace(/,.*/, '') as T;
 }
 
-const types = {
-  fill: colorStyles,
-  stroke: colorStyles,
-  effect: effectStyles,
-};
-
-type StyleType = keyof typeof types;
-
 async function swapStyles({
   type,
   convertTo,
@@ -35,33 +49,44 @@ async function swapStyles({
   convertTo: Spectrum;
   node: BaseNode;
 }) {
-  const styles = types[type];
-  type StyleKey = keyof typeof styles;
-
   let currentKey: StyleKey | undefined;
+  const lookupKeyMap = convertTo === 'dark' ? lightKeyMap : darkKeyMap;
 
   const isFill = type === 'fill' && 'fillStyleId' in node;
   const isStroke = type === 'stroke' && 'strokeStyleId' in node;
   const isEffect = type === 'effect' && 'effectStyleId' in node;
 
   if (isFill) {
-    currentKey = idToKey<keyof typeof styles>(node.fillStyleId);
+    currentKey = idToKey(node.fillStyleId);
   } else if (isStroke) {
-    currentKey = idToKey<keyof typeof styles>(node.strokeStyleId);
+    currentKey = idToKey(node.strokeStyleId);
   } else if (isEffect) {
-    currentKey = idToKey<keyof typeof styles>(node.effectStyleId);
+    currentKey = idToKey(node.effectStyleId);
   }
 
-  if (currentKey && currentKey in styles) {
-    const convertedKey = styles[currentKey][convertTo];
-    if (convertedKey) {
-      const { id } = await figma.importStyleByKeyAsync(convertedKey);
+  if (currentKey && currentKey in lookupKeyMap) {
+    const targetKey = lookupKeyMap[currentKey];
+    let targetId = cache.get(targetKey);
+
+    if (!targetId) {
+      try {
+        const data = await figma.importStyleByKeyAsync(targetKey);
+        if (data) {
+          targetId = data.id;
+          cache.set(targetKey, targetId);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    if (targetId) {
       if (isFill) {
-        node.fillStyleId = id;
+        node.fillStyleId = targetId;
       } else if (isStroke) {
-        node.strokeStyleId = id;
+        node.strokeStyleId = targetId;
       } else if (isEffect) {
-        node.effectStyleId = id;
+        node.effectStyleId = targetId;
       }
     }
   }

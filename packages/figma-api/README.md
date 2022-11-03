@@ -4,7 +4,7 @@ API client for interacting with the Figma API.
 
 ## How to use
 
-Import the `@cbhq/cds-figma-api` package and call one of the `get` functions to make an [API request](https://www.figma.com/developers/api).
+Import the `@cbhq/figma-api` package and call one of the `get` functions to make an [API request](https://www.figma.com/developers/api).
 
 The params and response are 1:1 with the API params accepted by the Figma api.
 

@@ -1,3 +1,5 @@
+import { light } from '@cbhq/figma-styles/__generated__/ui-styles';
+
 import type { Density, FigmaMessage } from './types';
 
 figma.showUI(__html__);
@@ -124,12 +126,12 @@ function createAliasedIconComponents({
 
 const fillStyles = {
   normal: {
-    nav: 'f9eee055d6c4f74cc9dff538a34f8d631017ae05', // blue5
-    ui: '73ff5e497830fe915c8721f40ee23549dde062aa', // yellow10
+    nav: light['color/blue/5'], // blue5
+    ui: light['color/yellow/10'], // yellow10
   },
   dense: {
-    nav: '5f7e225230c7397fde2815327ff022aa6f70041e', // purple15
-    ui: 'd70cae436c0ecd8db7f78239fd2b1f483de62ca1', // orange15
+    nav: light['color/purple/15'], // purple15
+    ui: light['color/orange/15'], // orange15
   },
 };
 
@@ -153,7 +155,7 @@ export async function createIcons({ density }: { density: Density }) {
   await Promise.all(
     sortedIconComponentSets.map(async (masterComponentSet) => {
       const isNavIcon = masterComponentSet.name.startsWith('nav');
-      const description = masterComponentSet.description;
+      const { description } = masterComponentSet;
 
       const masterIconComponents = masterComponentSet.children.filter(iconComponentFilter);
 
@@ -164,7 +166,7 @@ export async function createIcons({ density }: { density: Density }) {
         startXPosition: masterComponentSet.x,
       });
 
-      createAliasedIconComponentSet({
+      await createAliasedIconComponentSet({
         aliasedIconComponents,
         fillStyleId: isNavIcon ? navFillStyle.id : uiFillStyle.id,
         masterComponentSet,
