@@ -42,9 +42,9 @@
           "**/*.stories.tsx",
           "storybook-decorators"
         ],
-        "typescriptConfig": "packages/web/tsconfig.build.json",
-        "dependsOn": ["^build", "build-esm"]
-      }
+        "typescriptConfig": "packages/web/tsconfig.build.json"
+      },
+      "dependsOn": ["^build", "build-esm"]
     },
     "build-esm": {
       "executor": "@cbhq/cds-tools:build-package-esm",
@@ -52,7 +52,6 @@
       "options": {
         "destinationDir": ".nx/dist/packages/web-esm",
         "staticFilesToIgnore": [
-          "babel.build.config.js",
           "babel.config.js",
           "jest.config.js",
           "linaria.config.js",
@@ -61,7 +60,7 @@
           "tsconfig.build-esm.json",
           "project.json"
         ],
-        "babelConfig": "./packages/web/babel.build.config.js",
+        "babelConfig": "./packages/web/babel.config.js",
         "babelExtensions": [".ts", ".tsx"],
         "babelIgnore": [
           "**/*.js",
