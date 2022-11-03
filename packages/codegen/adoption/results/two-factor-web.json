@@ -25,11 +25,11 @@
           "aliasPath": "@cbhq/two-factor-web/components/Header.tsx",
           "callSites": [
             "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx",
-            "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx",
             "@cbhq/two-factor-web/flows/push/PushFailed.tsx",
             "@cbhq/two-factor-web/flows/push/PushPrompt.tsx",
-            "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx",
+            "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx",
             "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx",
+            "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx",
             "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx",
             "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx"
           ]
@@ -46,7 +46,6 @@
           "aliasPath": "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx",
           "callSites": []
         },
-        { "aliasPath": "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx", "callSites": [] },
         {
           "aliasPath": "@cbhq/two-factor-web/flows/push/PushFailed.tsx",
           "callSites": ["@cbhq/two-factor-web/flows/push/PushFlow.tsx"]
@@ -56,8 +55,9 @@
           "callSites": ["@cbhq/two-factor-web/flows/push/PushFlow.tsx"]
         },
         { "aliasPath": "@cbhq/two-factor-web/flows/push/PushPrompt.tsx", "callSites": [] },
-        { "aliasPath": "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx", "callSites": [] },
+        { "aliasPath": "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx", "callSites": [] },
         { "aliasPath": "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx", "callSites": [] },
+        { "aliasPath": "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx", "callSites": [] },
         {
           "aliasPath": "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx",
           "callSites": ["@cbhq/two-factor-web/flows/idv/IDVFlow.tsx"]
@@ -85,14 +85,14 @@
         "@cbhq/two-factor-web/components/InputCode.tsx": 1,
         "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 4,
         "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
-        "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
+        "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 2,
         "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushMultipleTabsOpen.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
-        "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
+        "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
         "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
+        "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 4,
@@ -106,13 +106,13 @@
           "@cbhq/two-factor-web/components/Fallback.tsx": 1,
           "@cbhq/two-factor-web/components/Header.tsx": 1,
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFAQModal.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushMultipleTabsOpen.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
+          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/IDV/IdCapture.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
@@ -374,8 +374,8 @@
           "aliasPath": "@cbhq/two-factor-web/components/ResendChallengeButton.tsx",
           "callSites": [
             "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx",
-            "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx",
-            "@cbhq/two-factor-web/flows/push/PushPrompt.tsx"
+            "@cbhq/two-factor-web/flows/push/PushPrompt.tsx",
+            "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx"
           ]
         },
         {
@@ -947,31 +947,31 @@
       "callSites": {
         "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
         "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/components/StepView.tsx": 1
       },
       "propsWithCallSites": {
         "loading": {
           "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1
         },
         "onReload": {
           "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1
         },
         "error": {
           "@cbhq/two-factor-web/ConfirmTwoFactor/ConfirmTwoFactor.tsx": 1,
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/no2fa/No2FAFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1
         },
         "event": { "@cbhq/two-factor-web/flows/idv/components/StepView.tsx": 1 }
       }
@@ -1306,32 +1306,32 @@
       "totalCallSites": 8,
       "callSites": {
         "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
-        "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
-        "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
+        "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
         "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
+        "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
         "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
+          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
         },
         "description": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFailed.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
+          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "@cbhq/two-factor-web/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
         },
@@ -1388,14 +1388,14 @@
       "totalCallSites": 3,
       "callSites": {
         "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
-        "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
-        "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1
+        "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
+        "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1
       },
       "propsWithCallSites": {
         "twoFactorType": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationConfirmation.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
-          "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1
+          "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1,
+          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1
         },
         "startWithCooldown": { "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1 }
       }
@@ -1407,39 +1407,39 @@
       "totalCallSites": 5,
       "callSites": {
         "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
+        "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
       },
       "propsWithCallSites": {
         "BaseView": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
         },
         "DrawerView": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
         },
         "toggleTestID": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
         },
         "twoFactorType": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
         }
       }
     },
@@ -1451,33 +1451,33 @@
       "callSites": {
         "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationNeedHelp.tsx": 1,
         "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-        "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
-        "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+        "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
+        "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
       },
       "propsWithCallSites": {
         "options": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
         },
         "onCloseDrawer": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
         },
         "twoFactorType": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
         },
         "testID": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
         }
       }
     },
@@ -1488,96 +1488,47 @@
       "totalCallSites": 5,
       "callSites": {
         "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationTryAnotherWay.tsx": 1,
-        "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
         "@cbhq/two-factor-web/flows/push/PushTryAnotherWay.tsx": 1,
-        "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
-        "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
+        "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
+        "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1,
+        "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1
       },
       "propsWithCallSites": {
         "onCloseDrawer": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1
         },
         "twoFactorType": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1
         },
         "alternateTwoFactorOptions": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1
         },
         "troubleshootOption": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1
         },
         "testID": {
           "@cbhq/two-factor-web/flows/deviceVerification/DeviceVerificationTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/push/PushTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1
         }
-      }
-    },
-    {
-      "name": "VerifyInputCode",
-      "sourceFile": "@cbhq/two-factor-web/components/VerifyInputCode",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
-        "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1
-      },
-      "propsWithCallSites": {
-        "codeLength": {
-          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1
-        },
-        "twoFactorType": {
-          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1
-        },
-        "errorTestID": {
-          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PushMultipleTabsOpen",
-      "sourceFile": "@cbhq/two-factor-web/flows/push/PushMultipleTabsOpen",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PushFailed",
-      "sourceFile": "@cbhq/two-factor-web/flows/push/PushFailed",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onTryAgainPress": { "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1 }
-      }
-    },
-    {
-      "name": "PushFAQModal",
-      "sourceFile": "@cbhq/two-factor-web/flows/push/PushFAQModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "visible": { "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1 },
-        "onClose": { "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1 }
       }
     },
     {
@@ -1619,6 +1570,55 @@
       "propsWithCallSites": {
         "step": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 },
         "status": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 }
+      }
+    },
+    {
+      "name": "PushMultipleTabsOpen",
+      "sourceFile": "@cbhq/two-factor-web/flows/push/PushMultipleTabsOpen",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "PushFailed",
+      "sourceFile": "@cbhq/two-factor-web/flows/push/PushFailed",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onTryAgainPress": { "@cbhq/two-factor-web/flows/push/PushFlow.tsx": 1 }
+      }
+    },
+    {
+      "name": "PushFAQModal",
+      "sourceFile": "@cbhq/two-factor-web/flows/push/PushFAQModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "visible": { "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1 },
+        "onClose": { "@cbhq/two-factor-web/flows/push/PushPrompt.tsx": 1 }
+      }
+    },
+    {
+      "name": "VerifyInputCode",
+      "sourceFile": "@cbhq/two-factor-web/components/VerifyInputCode",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
+        "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1
+      },
+      "propsWithCallSites": {
+        "codeLength": {
+          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1
+        },
+        "twoFactorType": {
+          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1
+        },
+        "errorTestID": {
+          "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1
+        }
       }
     },
     {

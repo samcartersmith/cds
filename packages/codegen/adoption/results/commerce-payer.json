@@ -19,16 +19,152 @@
       ]
     },
     {
-      "name": "ThemeProvider",
-      "sourceFile": "@cbhq/cds-web/system/ThemeProvider",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "cds": "@cbhq/cds-web/system/ThemeProvider",
+      "name": "VStack",
+      "sourceFile": "@cbhq/cds-web/layout/VStack",
+      "totalInstances": 44,
+      "totalCallSites": 18,
+      "cds": "@cbhq/cds-web/layout/VStack",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "checkout/components/InvoiceDetails.tsx",
+          "callSites": ["checkout/hosted/HostedCheckout.tsx"]
+        },
+        { "aliasPath": "checkout/components/OAuthPaymentSummary.tsx", "callSites": [] }
+      ],
       "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/components/CollectUserInfo.tsx": 2,
+        "checkout/components/CustomerCharge.tsx": 9,
+        "checkout/components/ErrorCheckoutV2.tsx": 2,
+        "checkout/components/Footer.tsx": 1,
+        "checkout/components/InformationRow.tsx": 1,
+        "checkout/components/InvoiceDetails.tsx": 1,
+        "checkout/components/OAuthPaymentSummary.tsx": 1,
+        "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
+        "checkout/components/OAuthScreen.tsx": 2,
+        "checkout/components/OrderDetails.tsx": 1,
+        "checkout/components/PaymentOptions.tsx": 2,
+        "checkout/components/PaymentStatus.tsx": 7,
+        "checkout/components/ProductCheckout.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 2,
         "checkout/hosted/HostedTestCharge.tsx": 1,
-        "checkout/embedded/CheckoutApp.tsx": 1,
+        "scenes/Receipts/ReceiptView.tsx": 7,
+        "scenes/Receipts/ReceiptViewEmail.tsx": 2,
         "scenes/Receipts/Receipts.tsx": 1
+      },
+      "propsWithCallSites": {
+        "width": {
+          "checkout/components/CollectUserInfo.tsx": 2,
+          "checkout/components/CustomerCharge.tsx": 3,
+          "checkout/components/ErrorCheckoutV2.tsx": 1,
+          "checkout/components/PaymentOptions.tsx": 1,
+          "checkout/components/PaymentStatus.tsx": 3,
+          "checkout/hosted/HostedCheckout.tsx": 2,
+          "scenes/Receipts/ReceiptView.tsx": 4,
+          "scenes/Receipts/ReceiptViewEmail.tsx": 2,
+          "scenes/Receipts/Receipts.tsx": 1
+        },
+        "spacingVertical": {
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/CustomerCharge.tsx": 2,
+          "scenes/Receipts/ReceiptView.tsx": 1
+        },
+        "gap": {
+          "checkout/components/CustomerCharge.tsx": 2,
+          "checkout/components/PaymentStatus.tsx": 1,
+          "scenes/Receipts/ReceiptView.tsx": 2,
+          "scenes/Receipts/ReceiptViewEmail.tsx": 2
+        },
+        "alignItems": {
+          "checkout/components/CustomerCharge.tsx": 4,
+          "checkout/components/ErrorCheckoutV2.tsx": 1,
+          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
+          "checkout/components/PaymentStatus.tsx": 4,
+          "checkout/hosted/HostedTestCharge.tsx": 1,
+          "scenes/Receipts/ReceiptView.tsx": 4,
+          "scenes/Receipts/ReceiptViewEmail.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        },
+        "justifyContent": {
+          "checkout/components/CustomerCharge.tsx": 4,
+          "checkout/components/ErrorCheckoutV2.tsx": 1,
+          "checkout/components/PaymentStatus.tsx": 2,
+          "checkout/hosted/HostedTestCharge.tsx": 1,
+          "scenes/Receipts/ReceiptView.tsx": 3,
+          "scenes/Receipts/ReceiptViewEmail.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        },
+        "spacing": {
+          "checkout/components/CustomerCharge.tsx": 2,
+          "checkout/components/ErrorCheckoutV2.tsx": 1,
+          "checkout/components/PaymentStatus.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1,
+          "scenes/Receipts/ReceiptView.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        },
+        "minWidth": {
+          "checkout/components/CustomerCharge.tsx": 1,
+          "checkout/components/ErrorCheckoutV2.tsx": 1,
+          "scenes/Receipts/ReceiptView.tsx": 1
+        },
+        "spacingHorizontal": {
+          "checkout/components/CustomerCharge.tsx": 2,
+          "checkout/components/OAuthScreen.tsx": 1,
+          "checkout/components/PaymentStatus.tsx": 1
+        },
+        "minHeight": {
+          "checkout/components/CustomerCharge.tsx": 3,
+          "checkout/components/OAuthScreen.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        },
+        "flexGrow": { "checkout/components/Footer.tsx": 1 },
+        "spacingTop": {
+          "checkout/components/Footer.tsx": 1,
+          "checkout/components/PaymentStatus.tsx": 1
+        },
+        "overflow": { "checkout/components/InformationRow.tsx": 1 },
+        "background": {
+          "checkout/components/InvoiceDetails.tsx": 1,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        },
+        "spacingBottom": {
+          "checkout/components/InvoiceDetails.tsx": 1,
+          "checkout/components/OAuthScreen.tsx": 1,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/components/PaymentStatus.tsx": 2,
+          "scenes/Receipts/ReceiptView.tsx": 1
+        },
+        "height": {
+          "checkout/components/InvoiceDetails.tsx": 1,
+          "checkout/components/OrderDetails.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1
+        },
+        "maxWidth": {
+          "scenes/Receipts/ReceiptView.tsx": 1,
+          "scenes/Receipts/ReceiptViewEmail.tsx": 1
+        },
+        "bordered": { "scenes/Receipts/Receipts.tsx": 1 }
+      }
+    },
+    {
+      "name": "TextLabel1",
+      "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/typography/TextLabel1",
+      "callSites": {
+        "checkout/components/CollectUserInfo.tsx": 1,
+        "checkout/components/OAuthNetworkPicker.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacingBottom": { "checkout/components/CollectUserInfo.tsx": 1 },
+        "as": {
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/OAuthNetworkPicker.tsx": 1
+        }
       }
     },
     {
@@ -50,7 +186,6 @@
         { "aliasPath": "checkout/components/PriceSection.tsx", "callSites": [] }
       ],
       "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
         "checkout/components/CollectUserInfo.tsx": 2,
         "checkout/components/CustomerCharge.tsx": 4,
         "checkout/components/ExpireTimerV2.tsx": 1,
@@ -62,37 +197,11 @@
         "checkout/components/PaymentOptions.tsx": 6,
         "checkout/components/PaymentStatus.tsx": 3,
         "checkout/components/PriceSection.tsx": 1,
+        "checkout/hosted/HostedCheckout.tsx": 1,
         "checkout/embedded/WidgetHeader.tsx": 2,
         "scenes/Receipts/ReceiptView.tsx": 1
       },
       "propsWithCallSites": {
-        "height": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/WidgetHeader.tsx": 1
-        },
-        "alignItems": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 3,
-          "checkout/components/InformationRow.tsx": 1,
-          "checkout/components/InvoiceDetails.tsx": 3,
-          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-          "checkout/components/OrderDetails.tsx": 2,
-          "checkout/components/OrganizationDetails.tsx": 2,
-          "checkout/components/PaymentOptions.tsx": 5,
-          "checkout/embedded/WidgetHeader.tsx": 1
-        },
-        "justifyContent": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/components/CollectUserInfo.tsx": 2,
-          "checkout/components/CustomerCharge.tsx": 3,
-          "checkout/components/InvoiceDetails.tsx": 3,
-          "checkout/components/OrderDetails.tsx": 2,
-          "checkout/components/OrganizationDetails.tsx": 4,
-          "checkout/components/PaymentOptions.tsx": 4,
-          "checkout/components/PriceSection.tsx": 1,
-          "checkout/embedded/WidgetHeader.tsx": 1
-        },
         "spacing": {
           "checkout/components/CollectUserInfo.tsx": 1,
           "checkout/embedded/WidgetHeader.tsx": 1
@@ -101,11 +210,34 @@
           "checkout/components/CollectUserInfo.tsx": 1,
           "checkout/embedded/WidgetHeader.tsx": 1
         },
+        "justifyContent": {
+          "checkout/components/CollectUserInfo.tsx": 2,
+          "checkout/components/CustomerCharge.tsx": 3,
+          "checkout/components/InvoiceDetails.tsx": 3,
+          "checkout/components/OrderDetails.tsx": 2,
+          "checkout/components/OrganizationDetails.tsx": 4,
+          "checkout/components/PaymentOptions.tsx": 4,
+          "checkout/components/PriceSection.tsx": 1,
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/embedded/WidgetHeader.tsx": 1
+        },
+        "alignItems": {
+          "checkout/components/CollectUserInfo.tsx": 1,
+          "checkout/components/CustomerCharge.tsx": 3,
+          "checkout/components/InformationRow.tsx": 1,
+          "checkout/components/InvoiceDetails.tsx": 3,
+          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
+          "checkout/components/OrderDetails.tsx": 2,
+          "checkout/components/OrganizationDetails.tsx": 2,
+          "checkout/components/PaymentOptions.tsx": 5,
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/embedded/WidgetHeader.tsx": 1
+        },
         "width": {
           "checkout/components/CollectUserInfo.tsx": 1,
           "checkout/components/CustomerCharge.tsx": 2,
           "checkout/components/OrganizationDetails.tsx": 4,
-          "checkout/components/PaymentOptions.tsx": 1,
+          "checkout/components/PaymentOptions.tsx": 2,
           "checkout/components/PriceSection.tsx": 1,
           "checkout/embedded/WidgetHeader.tsx": 2
         },
@@ -158,169 +290,10 @@
           "checkout/components/InvoiceDetails.tsx": 1,
           "checkout/components/OrderDetails.tsx": 1
         },
-        "overflow": { "checkout/components/OrderDetails.tsx": 1 }
-      }
-    },
-    {
-      "name": "VStack",
-      "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 44,
-      "totalCallSites": 18,
-      "cds": "@cbhq/cds-web/layout/VStack",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "checkout/components/InvoiceDetails.tsx",
-          "callSites": ["checkout/hosted/HostedCheckout.tsx"]
-        },
-        { "aliasPath": "checkout/components/OAuthPaymentSummary.tsx", "callSites": [] }
-      ],
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 2,
-        "checkout/hosted/HostedTestCharge.tsx": 1,
-        "checkout/components/CollectUserInfo.tsx": 2,
-        "checkout/components/CustomerCharge.tsx": 9,
-        "checkout/components/ErrorCheckoutV2.tsx": 2,
-        "checkout/components/Footer.tsx": 1,
-        "checkout/components/InformationRow.tsx": 1,
-        "checkout/components/InvoiceDetails.tsx": 1,
-        "checkout/components/OAuthPaymentSummary.tsx": 1,
-        "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-        "checkout/components/OAuthScreen.tsx": 2,
-        "checkout/components/OrderDetails.tsx": 1,
-        "checkout/components/PaymentOptions.tsx": 2,
-        "checkout/components/PaymentStatus.tsx": 7,
-        "checkout/components/ProductCheckout.tsx": 1,
-        "scenes/Receipts/ReceiptView.tsx": 7,
-        "scenes/Receipts/ReceiptViewEmail.tsx": 2,
-        "scenes/Receipts/Receipts.tsx": 1
-      },
-      "propsWithCallSites": {
-        "width": {
-          "checkout/hosted/HostedCheckout.tsx": 2,
-          "checkout/components/CollectUserInfo.tsx": 2,
-          "checkout/components/CustomerCharge.tsx": 3,
-          "checkout/components/ErrorCheckoutV2.tsx": 1,
-          "checkout/components/PaymentOptions.tsx": 1,
-          "checkout/components/PaymentStatus.tsx": 3,
-          "scenes/Receipts/ReceiptView.tsx": 4,
-          "scenes/Receipts/ReceiptViewEmail.tsx": 2,
-          "scenes/Receipts/Receipts.tsx": 1
-        },
-        "minHeight": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 3,
-          "checkout/components/OAuthScreen.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        },
+        "overflow": { "checkout/components/OrderDetails.tsx": 1 },
         "height": {
           "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/components/InvoiceDetails.tsx": 1,
-          "checkout/components/OrderDetails.tsx": 1
-        },
-        "background": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/components/InvoiceDetails.tsx": 1,
-          "checkout/components/OrderDetails.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        },
-        "spacing": {
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 2,
-          "checkout/components/ErrorCheckoutV2.tsx": 1,
-          "checkout/components/PaymentStatus.tsx": 1,
-          "scenes/Receipts/ReceiptView.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        },
-        "alignItems": {
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 4,
-          "checkout/components/ErrorCheckoutV2.tsx": 1,
-          "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
-          "checkout/components/PaymentStatus.tsx": 4,
-          "scenes/Receipts/ReceiptView.tsx": 4,
-          "scenes/Receipts/ReceiptViewEmail.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        },
-        "justifyContent": {
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 4,
-          "checkout/components/ErrorCheckoutV2.tsx": 1,
-          "checkout/components/PaymentStatus.tsx": 2,
-          "scenes/Receipts/ReceiptView.tsx": 3,
-          "scenes/Receipts/ReceiptViewEmail.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        },
-        "spacingVertical": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 2,
-          "scenes/Receipts/ReceiptView.tsx": 1
-        },
-        "gap": {
-          "checkout/components/CustomerCharge.tsx": 2,
-          "checkout/components/PaymentStatus.tsx": 1,
-          "scenes/Receipts/ReceiptView.tsx": 2,
-          "scenes/Receipts/ReceiptViewEmail.tsx": 2
-        },
-        "minWidth": {
-          "checkout/components/CustomerCharge.tsx": 1,
-          "checkout/components/ErrorCheckoutV2.tsx": 1,
-          "scenes/Receipts/ReceiptView.tsx": 1
-        },
-        "spacingHorizontal": {
-          "checkout/components/CustomerCharge.tsx": 2,
-          "checkout/components/OAuthScreen.tsx": 1,
-          "checkout/components/PaymentStatus.tsx": 1
-        },
-        "flexGrow": { "checkout/components/Footer.tsx": 1 },
-        "spacingTop": {
-          "checkout/components/Footer.tsx": 1,
-          "checkout/components/PaymentStatus.tsx": 1
-        },
-        "overflow": { "checkout/components/InformationRow.tsx": 1 },
-        "spacingBottom": {
-          "checkout/components/InvoiceDetails.tsx": 1,
-          "checkout/components/OAuthScreen.tsx": 1,
-          "checkout/components/OrderDetails.tsx": 1,
-          "checkout/components/PaymentStatus.tsx": 2,
-          "scenes/Receipts/ReceiptView.tsx": 1
-        },
-        "maxWidth": {
-          "scenes/Receipts/ReceiptView.tsx": 1,
-          "scenes/Receipts/ReceiptViewEmail.tsx": 1
-        },
-        "bordered": { "scenes/Receipts/Receipts.tsx": 1 }
-      }
-    },
-    {
-      "name": "TextTitle1",
-      "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/typography/TextTitle1",
-      "callSites": {
-        "checkout/hosted/HostedTestCharge.tsx": 1,
-        "scenes/Receipts/ReceiptView.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": { "checkout/hosted/HostedTestCharge.tsx": 1, "scenes/Receipts/ReceiptView.tsx": 1 }
-      }
-    },
-    {
-      "name": "TextLabel1",
-      "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/typography/TextLabel1",
-      "callSites": {
-        "checkout/components/CollectUserInfo.tsx": 1,
-        "checkout/components/OAuthNetworkPicker.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacingBottom": { "checkout/components/CollectUserInfo.tsx": 1 },
-        "as": {
-          "checkout/components/CollectUserInfo.tsx": 1,
-          "checkout/components/OAuthNetworkPicker.tsx": 1
+          "checkout/embedded/WidgetHeader.tsx": 1
         }
       }
     },
@@ -875,6 +848,33 @@
       }
     },
     {
+      "name": "ThemeProvider",
+      "sourceFile": "@cbhq/cds-web/system/ThemeProvider",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/system/ThemeProvider",
+      "callSites": {
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/hosted/HostedTestCharge.tsx": 1,
+        "checkout/embedded/CheckoutApp.tsx": 1,
+        "scenes/Receipts/Receipts.tsx": 1
+      }
+    },
+    {
+      "name": "TextTitle1",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/typography/TextTitle1",
+      "callSites": {
+        "checkout/hosted/HostedTestCharge.tsx": 1,
+        "scenes/Receipts/ReceiptView.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": { "checkout/hosted/HostedTestCharge.tsx": 1, "scenes/Receipts/ReceiptView.tsx": 1 }
+      }
+    },
+    {
       "name": "LogoWordmark",
       "sourceFile": "@cbhq/cds-web/icons/LogoWordmark",
       "totalInstances": 1,
@@ -1035,13 +1035,13 @@
         "scenes/Reconfirm/Reconfirm.tsx": 1,
         "components/Layouts/DashboardLayout/SidebarItem.tsx": 1,
         "components/ProductFlow/components/ProductDetails.tsx": 2,
+        "scenes/static/Integrate/WooCommerce.tsx": 2,
         "scenes/Settings/components/ApiKeyPanel.tsx": 2,
         "scenes/Settings/components/ProfilePanelEmailChange.tsx": 1,
         "scenes/Settings/components/WebhookPanel.tsx": 1,
         "scenes/Settings/components/WebhookSecretModal.tsx": 1,
         "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-        "scenes/Settings/components/WidgetOriginsPanel.tsx": 2,
-        "scenes/static/Integrate/WooCommerce.tsx": 2
+        "scenes/Settings/components/WidgetOriginsPanel.tsx": 2
       },
       "propsWithCallSites": {
         "onClick": {
@@ -1080,6 +1080,7 @@
         },
         "children": { "components/ProductFlow/components/ProductDetails.tsx": 2 },
         "h": { "components/ProductFlow/components/ProductDetails.tsx": 2 },
+        "external": { "scenes/static/Integrate/WooCommerce.tsx": 2 },
         "className": {
           "scenes/Settings/components/ApiKeyPanel.tsx": 1,
           "scenes/Settings/components/WebhookPanel.tsx": 1,
@@ -1089,8 +1090,7 @@
           "scenes/Settings/components/ApiKeyPanel.tsx": 2,
           "scenes/Settings/components/WebhookPanel.tsx": 1,
           "scenes/Settings/components/WidgetOriginsPanel.tsx": 2
-        },
-        "external": { "scenes/static/Integrate/WooCommerce.tsx": 2 }
+        }
       }
     },
     {
@@ -1136,9 +1136,9 @@
       "totalInstances": 63,
       "totalCallSites": 39,
       "presentationalProps": [
-        { "prop": "style", "callSite": "scenes/Settings/components/WidgetOriginModal.tsx" },
         { "prop": "style", "callSite": "scenes/static/Integrate/Integrate.tsx" },
-        { "prop": "style", "callSite": "scenes/static/Integrate/IntegrationDetail.tsx" }
+        { "prop": "style", "callSite": "scenes/static/Integrate/IntegrationDetail.tsx" },
+        { "prop": "style", "callSite": "scenes/Settings/components/WidgetOriginModal.tsx" }
       ],
       "callSites": {
         "components/AnnouncementBanner.tsx": 2,
@@ -1159,6 +1159,10 @@
         "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
         "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/static/Faq/Faq.tsx": 2,
+        "scenes/static/Integrate/Integrate.tsx": 3,
+        "scenes/static/Integrate/IntegrationCard.tsx": 3,
+        "scenes/static/Integrate/IntegrationDetail.tsx": 1,
+        "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1,
         "scenes/Settings/components/ApiKeyPanel.tsx": 3,
         "scenes/Settings/components/CloseAccountModal.tsx": 2,
         "scenes/Settings/components/CloudBackupPanel.tsx": 1,
@@ -1172,10 +1176,6 @@
         "scenes/Settings/components/WebhookTestModal.tsx": 3,
         "scenes/Settings/components/WidgetOriginModal.tsx": 1,
         "scenes/Settings/components/WidgetOriginsPanel.tsx": 1,
-        "scenes/static/Integrate/Integrate.tsx": 3,
-        "scenes/static/Integrate/IntegrationCard.tsx": 3,
-        "scenes/static/Integrate/IntegrationDetail.tsx": 1,
-        "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1,
         "scenes/PointOfSale/components/desktop/ChargeModal.tsx": 1,
         "scenes/PointOfSale/components/desktop/OrderList.tsx": 1,
         "scenes/PointOfSale/components/mobile/NetworkPicker.tsx": 1,
@@ -1217,18 +1217,18 @@
           "scenes/Signin/Signin.tsx": 2,
           "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
           "scenes/static/Faq/Faq.tsx": 2,
+          "scenes/static/Integrate/Integrate.tsx": 1,
+          "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
           "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
           "scenes/Settings/components/WebhookEventModal.tsx": 1,
-          "scenes/Settings/components/WebhookModal.tsx": 1,
-          "scenes/static/Integrate/Integrate.tsx": 1,
-          "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1
+          "scenes/Settings/components/WebhookModal.tsx": 1
         },
         "wrap": {
           "components/BackupCodesModal.tsx": 2,
-          "scenes/Settings/components/WebhookTestModal.tsx": 1,
           "scenes/static/Integrate/Integrate.tsx": 1,
-          "scenes/static/Integrate/IntegrationCard.tsx": 1
+          "scenes/static/Integrate/IntegrationCard.tsx": 1,
+          "scenes/Settings/components/WebhookTestModal.tsx": 1
         },
         "py": { "components/BackupCodesModal.tsx": 1 },
         "justify": {
@@ -1247,25 +1247,25 @@
         },
         "mx": { "scenes/static/Faq/Faq.tsx": 1, "scenes/static/Integrate/Integrate.tsx": 2 },
         "mb": { "scenes/static/Faq/Faq.tsx": 2, "scenes/static/Integrate/Integrate.tsx": 1 },
-        "data-api-key": { "scenes/Settings/components/ApiKeyPanel.tsx": 1 },
+        "width": { "scenes/static/Integrate/Integrate.tsx": 1 },
         "mt": {
+          "scenes/static/Integrate/Integrate.tsx": 1,
+          "scenes/static/Integrate/IntegrationCard.tsx": 1,
           "scenes/Settings/components/WebhookEventModal.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
-          "scenes/Settings/components/WebhookTestModal.tsx": 2,
-          "scenes/static/Integrate/Integrate.tsx": 1,
-          "scenes/static/Integrate/IntegrationCard.tsx": 1
+          "scenes/Settings/components/WebhookTestModal.tsx": 2
         },
+        "style": {
+          "scenes/static/Integrate/Integrate.tsx": 1,
+          "scenes/static/Integrate/IntegrationDetail.tsx": 1,
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
+        },
+        "bg": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1 },
+        "data-api-key": { "scenes/Settings/components/ApiKeyPanel.tsx": 1 },
         "key": { "scenes/Settings/components/WebhookEventModal.tsx": 1 },
         "column": { "scenes/Settings/components/WebhookModal.tsx": 1 },
         "data-endpoint": { "scenes/Settings/components/WebhookPanel.tsx": 1 },
-        "style": {
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/static/Integrate/Integrate.tsx": 1,
-          "scenes/static/Integrate/IntegrationDetail.tsx": 1
-        },
-        "data-origin": { "scenes/Settings/components/WidgetOriginsPanel.tsx": 1 },
-        "width": { "scenes/static/Integrate/Integrate.tsx": 1 },
-        "bg": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1 }
+        "data-origin": { "scenes/Settings/components/WidgetOriginsPanel.tsx": 1 }
       }
     },
     {
@@ -1333,10 +1333,10 @@
         "components/Signup/LightSignupForm.tsx": 2,
         "components/TablePagination/TablePagination.tsx": 1,
         "components/Timeline/Timeline.tsx": 1,
+        "components/TotpSetupModal/TotpSetupModal.tsx": 4,
         "components/Withdrawal/ConversionDetails.tsx": 2,
         "components/Withdrawal/ConversionWithdrawalDetails.tsx": 4,
         "components/Withdrawal/WithdrawalDetails.tsx": 2,
-        "components/TotpSetupModal/TotpSetupModal.tsx": 4,
         "scenes/MaintenanceMode/MaintenanceMode.tsx": 1,
         "scenes/Signin/Signin.tsx": 3,
         "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
@@ -1347,17 +1347,17 @@
         "components/ProductFlow/components/ProductDetails.tsx": 6,
         "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 1,
         "components/ProductFlow/components/ProductTypeForm.tsx": 1,
-        "components/Withdrawal/components/Transaction.tsx": 1,
         "components/TotpSetupModal/components/Completed.tsx": 1,
+        "components/Withdrawal/components/Transaction.tsx": 1,
         "scenes/TfaReset/components/ShowBackupCodes.tsx": 3,
         "scenes/static/Faq/Faq.tsx": 2,
+        "scenes/static/Integrate/IntegrationCard.tsx": 5,
+        "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3,
         "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
         "scenes/Settings/components/WebhookEventModal.tsx": 3,
         "scenes/Settings/components/WebhookModal.tsx": 4,
         "scenes/Settings/components/WebhookTestModal.tsx": 4,
         "scenes/Settings/components/WidgetOriginModal.tsx": 2,
-        "scenes/static/Integrate/IntegrationCard.tsx": 5,
-        "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3,
         "scenes/PointOfSale/components/mobile/MobileLayout.tsx": 1
       },
       "propsWithCallSites": {
@@ -1370,9 +1370,9 @@
           "components/AccountsList/AccountsList.tsx": 2,
           "components/ProductFlow/ProductFlow.tsx": 4,
           "scenes/Signin/Signin.tsx": 1,
+          "scenes/static/Integrate/IntegrationCard.tsx": 2,
           "scenes/Settings/components/WebhookModal.tsx": 1,
-          "scenes/Settings/components/WebhookTestModal.tsx": 3,
-          "scenes/static/Integrate/IntegrationCard.tsx": 2
+          "scenes/Settings/components/WebhookTestModal.tsx": 3
         },
         "my": {
           "components/BackupCodesModal.tsx": 2,
@@ -1414,13 +1414,13 @@
           "components/Withdrawal/WithdrawalDetails.tsx": 1
         },
         "pb": { "components/Signup/LightSignupForm.tsx": 1 },
-        "fontSize": {
-          "components/Withdrawal/ConversionDetails.tsx": 1,
-          "components/Withdrawal/ConversionWithdrawalDetails.tsx": 3
-        },
         "m": {
           "components/TotpSetupModal/TotpSetupModal.tsx": 3,
           "scenes/PointOfSale/components/mobile/MobileLayout.tsx": 1
+        },
+        "fontSize": {
+          "components/Withdrawal/ConversionDetails.tsx": 1,
+          "components/Withdrawal/ConversionWithdrawalDetails.tsx": 3
         },
         "role": { "components/Layouts/DashboardLayout/DashboardLayout.tsx": 1 },
         "pt": {
@@ -2087,146 +2087,6 @@
       "propsWithCallSites": { "style": { "utils/i18n.tsx": 1 } }
     },
     {
-      "name": "IndeterminateProgress",
-      "sourceFile": "checkout/components/IndeterminateProgress",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalElement": "Wrapper",
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/embedded/CustomerChargeWidget.tsx": 1
-      }
-    },
-    {
-      "name": "TwoColumnLayout",
-      "sourceFile": "checkout/hosted/TwoColumnLayout",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "Container",
-      "propsWithCallSites": {
-        "mainColumn": { "checkout/hosted/HostedCheckout.tsx": 1 },
-        "sideColumn": { "checkout/hosted/HostedCheckout.tsx": 1 }
-      }
-    },
-    {
-      "name": "ResponsiveMargin",
-      "sourceFile": "checkout/hosted/HostedCheckout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "callSites": { "checkout/hosted/HostedTestCharge.tsx": 2 }
-    },
-    {
-      "name": "Overlay",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Header",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ButtonContainer",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "MarkPaidButton",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": { "onClick": { "checkout/hosted/HostedTestCharge.tsx": 1 } }
-    },
-    {
-      "name": "MarkFailedButton",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ButtonOutline",
-      "propsWithCallSites": { "onClick": { "checkout/hosted/HostedTestCharge.tsx": 1 } }
-    },
-    {
-      "name": "Layout",
-      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "TwoColumnLayout",
-      "propsWithCallSites": {
-        "mainColumn": { "checkout/hosted/HostedTestCharge.tsx": 1 },
-        "sideColumn": { "checkout/hosted/HostedTestCharge.tsx": 1 }
-      }
-    },
-    {
-      "name": "PaymentOptions",
-      "sourceFile": "checkout/components/PaymentOptions",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalElement": "ResponsivePaymentOptions",
-      "callSites": {
-        "checkout/hosted/HostedTestCharge.tsx": 1,
-        "checkout/components/CustomerCharge.tsx": 1
-      },
-      "propsWithCallSites": {
-        "charge": {
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 1
-        },
-        "hideExpiryTimer": { "checkout/hosted/HostedTestCharge.tsx": 1 },
-        "currencies": {
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 1
-        },
-        "onCoinbaseSelect": {
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 1
-        },
-        "onSelect": {
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "checkout/components/CustomerCharge.tsx": 1
-        },
-        "product": { "checkout/components/CustomerCharge.tsx": 1 },
-        "customDonationPricing": { "checkout/components/CustomerCharge.tsx": 1 },
-        "setCustomDonationPricing": { "checkout/components/CustomerCharge.tsx": 1 }
-      }
-    },
-    {
-      "name": "SpinnerWrapper",
-      "sourceFile": "checkout/hosted/entry.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "HostedApp",
-      "sourceFile": "checkout/hosted/HostedApp",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "AppWrapper"
-    },
-    {
-      "name": "div",
-      "sourceFile": "checkout/hosted/entry.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "className", "callSite": "checkout/hosted/entry.tsx" }],
-      "propsWithCallSites": { "className": { "checkout/hosted/entry.tsx": 1 } }
-    },
-    {
       "name": "Input",
       "sourceFile": "checkout/components/CollectUserInfo.tsx",
       "totalInstances": 1,
@@ -2292,6 +2152,39 @@
       "totalCallSites": 1,
       "styledComponent": "div",
       "callSites": { "checkout/components/CustomerCharge.tsx": 6 }
+    },
+    {
+      "name": "PaymentOptions",
+      "sourceFile": "checkout/components/PaymentOptions",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "ResponsivePaymentOptions",
+      "callSites": {
+        "checkout/components/CustomerCharge.tsx": 1,
+        "checkout/hosted/HostedTestCharge.tsx": 1
+      },
+      "propsWithCallSites": {
+        "product": { "checkout/components/CustomerCharge.tsx": 1 },
+        "currencies": {
+          "checkout/components/CustomerCharge.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
+        },
+        "charge": {
+          "checkout/components/CustomerCharge.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
+        },
+        "customDonationPricing": { "checkout/components/CustomerCharge.tsx": 1 },
+        "setCustomDonationPricing": { "checkout/components/CustomerCharge.tsx": 1 },
+        "onSelect": {
+          "checkout/components/CustomerCharge.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
+        },
+        "onCoinbaseSelect": {
+          "checkout/components/CustomerCharge.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
+        },
+        "hideExpiryTimer": { "checkout/hosted/HostedTestCharge.tsx": 1 }
+      }
     },
     {
       "name": "ResponsiveButtonWrapper",
@@ -3279,6 +3172,113 @@
       }
     },
     {
+      "name": "IndeterminateProgress",
+      "sourceFile": "checkout/components/IndeterminateProgress",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "Wrapper",
+      "callSites": {
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/embedded/CustomerChargeWidget.tsx": 1
+      }
+    },
+    {
+      "name": "TwoColumnLayout",
+      "sourceFile": "checkout/hosted/TwoColumnLayout",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "Container",
+      "propsWithCallSites": {
+        "mainColumn": { "checkout/hosted/HostedCheckout.tsx": 1 },
+        "sideColumn": { "checkout/hosted/HostedCheckout.tsx": 1 }
+      }
+    },
+    {
+      "name": "ResponsiveMargin",
+      "sourceFile": "checkout/hosted/HostedCheckout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": { "checkout/hosted/HostedTestCharge.tsx": 2 }
+    },
+    {
+      "name": "Overlay",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Header",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ButtonContainer",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "MarkPaidButton",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "propsWithCallSites": { "onClick": { "checkout/hosted/HostedTestCharge.tsx": 1 } }
+    },
+    {
+      "name": "MarkFailedButton",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ButtonOutline",
+      "propsWithCallSites": { "onClick": { "checkout/hosted/HostedTestCharge.tsx": 1 } }
+    },
+    {
+      "name": "Layout",
+      "sourceFile": "checkout/hosted/HostedTestCharge.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "TwoColumnLayout",
+      "propsWithCallSites": {
+        "mainColumn": { "checkout/hosted/HostedTestCharge.tsx": 1 },
+        "sideColumn": { "checkout/hosted/HostedTestCharge.tsx": 1 }
+      }
+    },
+    {
+      "name": "SpinnerWrapper",
+      "sourceFile": "checkout/hosted/entry.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "HostedApp",
+      "sourceFile": "checkout/hosted/HostedApp",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "AppWrapper"
+    },
+    {
+      "name": "div",
+      "sourceFile": "checkout/hosted/entry.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [{ "prop": "className", "callSite": "checkout/hosted/entry.tsx" }],
+      "propsWithCallSites": { "className": { "checkout/hosted/entry.tsx": 1 } }
+    },
+    {
       "name": "AppWrapper",
       "sourceFile": "checkout/embedded/CheckoutApp.tsx",
       "totalInstances": 1,
@@ -3384,6 +3384,32 @@
       "presentationalElement": "AppWrapper"
     },
     {
+      "name": "HeaderWrapper",
+      "sourceFile": "components/AccountingReports/AccountingReportsModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ConfirmationView",
+      "sourceFile": "components/AccountingReports/ConfirmationView",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "@material-ui/core/Box",
+      "propsWithCallSites": {
+        "email": { "components/AccountingReports/AccountingReportsModal.tsx": 1 },
+        "handleDoneButtonClick": { "components/AccountingReports/AccountingReportsModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "DownloadErrorView",
+      "sourceFile": "components/AccountingReports/DownloadErrorView",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "Container",
+      "propsWithCallSites": { "message": { "components/AccountingReports/DownloadView.tsx": 1 } }
+    },
+    {
       "name": "PanelEmptyState",
       "sourceFile": "components/Panel/PanelEmptyState",
       "totalInstances": 16,
@@ -3392,8 +3418,8 @@
       "callSites": {
         "components/AccountsList/AccountsList.tsx": 3,
         "components/OrdersList/OrdersList.tsx": 2,
-        "components/Table/EmptyTableMessage.tsx": 1,
         "components/ProductsList/ProductsList.tsx": 1,
+        "components/Table/EmptyTableMessage.tsx": 1,
         "components/Withdrawal/ConversionsList.tsx": 2,
         "components/Withdrawal/WithdrawalsList.tsx": 2,
         "scenes/Settings/components/ApiKeyPanel.tsx": 1,
@@ -3405,8 +3431,8 @@
       "propsWithCallSites": {
         "title": {
           "components/OrdersList/OrdersList.tsx": 2,
-          "components/Table/EmptyTableMessage.tsx": 1,
           "components/ProductsList/ProductsList.tsx": 1,
+          "components/Table/EmptyTableMessage.tsx": 1,
           "components/Withdrawal/ConversionsList.tsx": 1,
           "components/Withdrawal/WithdrawalsList.tsx": 1,
           "scenes/PointOfSale/components/desktop/NetworkPicker.tsx": 1,
@@ -3635,32 +3661,6 @@
         "onMouseLeave": { "components/AccountsList/WithdrawIcon.tsx": 1 },
         "disabled": { "components/AccountsList/WithdrawIcon.tsx": 1 }
       }
-    },
-    {
-      "name": "HeaderWrapper",
-      "sourceFile": "components/AccountingReports/AccountingReportsModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ConfirmationView",
-      "sourceFile": "components/AccountingReports/ConfirmationView",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "@material-ui/core/Box",
-      "propsWithCallSites": {
-        "email": { "components/AccountingReports/AccountingReportsModal.tsx": 1 },
-        "handleDoneButtonClick": { "components/AccountingReports/AccountingReportsModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "DownloadErrorView",
-      "sourceFile": "components/AccountingReports/DownloadErrorView",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "Container",
-      "propsWithCallSites": { "message": { "components/AccountingReports/DownloadView.tsx": 1 } }
     },
     {
       "name": "SupportEmailPanel",
@@ -4631,6 +4631,72 @@
       "callSites": { "components/ProductFlow/ProductFlow.tsx": 2 }
     },
     {
+      "name": "NewProductButton",
+      "sourceFile": "components/ProductsList/ProductsList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "propsWithCallSites": {
+        "w": { "components/ProductsList/ProductsList.tsx": 1 },
+        "onClick": { "components/ProductsList/ProductsList.tsx": 1 }
+      }
+    },
+    {
+      "name": "InfoWrapper",
+      "sourceFile": "components/ProductsList/ProductsList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
+    },
+    {
+      "name": "Name",
+      "sourceFile": "components/ProductsList/ProductsList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/ProductsList/ProductsList.tsx" }
+      ],
+      "styledComponent": "Box",
+      "propsWithCallSites": { "className": { "components/ProductsList/ProductsList.tsx": 1 } }
+    },
+    {
+      "name": "Description",
+      "sourceFile": "components/ProductsList/ProductsList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/ProductsList/ProductsList.tsx" }
+      ],
+      "styledComponent": "Box",
+      "propsWithCallSites": { "className": { "components/ProductsList/ProductsList.tsx": 1 } }
+    },
+    {
+      "name": "Donation",
+      "sourceFile": "components/ProductsList/ProductsList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Price"
+    },
+    {
+      "name": "Price",
+      "sourceFile": "components/ProductsList/ProductsList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/ProductsList/ProductsList.tsx" }
+      ],
+      "styledComponent": "Box",
+      "propsWithCallSites": { "className": { "components/ProductsList/ProductsList.tsx": 1 } }
+    },
+    {
+      "name": "Header",
+      "sourceFile": "components/ProductsList/ProductsList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "PanelHeader",
+      "propsWithCallSites": { "id": { "components/ProductsList/ProductsList.tsx": 1 } }
+    },
+    {
       "name": "StyledExternalLink",
       "sourceFile": "components/Signup/LightSignupForm.tsx",
       "totalInstances": 2,
@@ -4731,72 +4797,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
-    },
-    {
-      "name": "NewProductButton",
-      "sourceFile": "components/ProductsList/ProductsList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "w": { "components/ProductsList/ProductsList.tsx": 1 },
-        "onClick": { "components/ProductsList/ProductsList.tsx": 1 }
-      }
-    },
-    {
-      "name": "InfoWrapper",
-      "sourceFile": "components/ProductsList/ProductsList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
-    },
-    {
-      "name": "Name",
-      "sourceFile": "components/ProductsList/ProductsList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/ProductsList/ProductsList.tsx" }
-      ],
-      "styledComponent": "Box",
-      "propsWithCallSites": { "className": { "components/ProductsList/ProductsList.tsx": 1 } }
-    },
-    {
-      "name": "Description",
-      "sourceFile": "components/ProductsList/ProductsList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/ProductsList/ProductsList.tsx" }
-      ],
-      "styledComponent": "Box",
-      "propsWithCallSites": { "className": { "components/ProductsList/ProductsList.tsx": 1 } }
-    },
-    {
-      "name": "Donation",
-      "sourceFile": "components/ProductsList/ProductsList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Price"
-    },
-    {
-      "name": "Price",
-      "sourceFile": "components/ProductsList/ProductsList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/ProductsList/ProductsList.tsx" }
-      ],
-      "styledComponent": "Box",
-      "propsWithCallSites": { "className": { "components/ProductsList/ProductsList.tsx": 1 } }
-    },
-    {
-      "name": "Header",
-      "sourceFile": "components/ProductsList/ProductsList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "PanelHeader",
-      "propsWithCallSites": { "id": { "components/ProductsList/ProductsList.tsx": 1 } }
     },
     {
       "name": "PaginationWrapper",
@@ -4901,6 +4901,52 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "Box"
+    },
+    {
+      "name": "MySpinner",
+      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Spinner"
+    },
+    {
+      "name": "Text",
+      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "styledComponent": "Box",
+      "callSites": { "components/TotpSetupModal/TotpSetupModal.tsx": 4 }
+    },
+    {
+      "name": "TokenInput",
+      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Input",
+      "callSites": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+      "propsWithCallSites": {
+        "type": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+        "placeholder": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+        "value": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+        "onChange": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+        "disabled": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 },
+        "autoFocus": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+        "autoComplete": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "QRCodeContainer",
+      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
+    },
+    {
+      "name": "KeyText",
+      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
     },
     {
       "name": "ConversionRow",
@@ -5074,52 +5120,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "Box"
-    },
-    {
-      "name": "MySpinner",
-      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Spinner"
-    },
-    {
-      "name": "Text",
-      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "styledComponent": "Box",
-      "callSites": { "components/TotpSetupModal/TotpSetupModal.tsx": 4 }
-    },
-    {
-      "name": "TokenInput",
-      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Input",
-      "callSites": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-      "propsWithCallSites": {
-        "type": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-        "placeholder": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-        "value": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-        "onChange": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-        "disabled": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 },
-        "autoFocus": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-        "autoComplete": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "QRCodeContainer",
-      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
-    },
-    {
-      "name": "KeyText",
-      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
     },
     {
       "name": "AccountingReportsBanner",
@@ -6112,6 +6112,21 @@
       }
     },
     {
+      "name": "CompletedIcon",
+      "sourceFile": "components/TotpSetupModal/components/Completed.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Icon",
+      "propsWithCallSites": { "name": { "components/TotpSetupModal/components/Completed.tsx": 1 } }
+    },
+    {
+      "name": "Description",
+      "sourceFile": "components/TotpSetupModal/components/Completed.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
+    },
+    {
       "name": "FieldRow",
       "sourceFile": "components/Withdrawal/components/Transaction.tsx",
       "totalInstances": 8,
@@ -6156,21 +6171,6 @@
       "totalCallSites": 1,
       "styledComponent": "Box",
       "propsWithCallSites": { "ml": { "components/Withdrawal/components/Transaction.tsx": 1 } }
-    },
-    {
-      "name": "CompletedIcon",
-      "sourceFile": "components/TotpSetupModal/components/Completed.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Icon",
-      "propsWithCallSites": { "name": { "components/TotpSetupModal/components/Completed.tsx": 1 } }
-    },
-    {
-      "name": "Description",
-      "sourceFile": "components/TotpSetupModal/components/Completed.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
     },
     {
       "name": "WalletIFrame",
@@ -6668,6 +6668,66 @@
       "styledComponent": "Text"
     },
     {
+      "name": "Memo",
+      "sourceFile": "scenes/ResetPassword/components/CompletePasswordReset.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "styledComponent": "AuthMessage",
+      "callSites": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 3 }
+    },
+    {
+      "name": "HiddenInput",
+      "sourceFile": "scenes/ResetPassword/components/CompletePasswordReset.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Input",
+      "propsWithCallSites": {
+        "autoComplete": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1 },
+        "value": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1 }
+      }
+    },
+    {
+      "name": "MyInput",
+      "sourceFile": "scenes/ResetPassword/components/CompletePasswordReset.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Input",
+      "callSites": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
+      "propsWithCallSites": {
+        "type": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
+        "placeholder": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
+        "autoComplete": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
+        "disabled": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
+        "value": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
+        "onChange": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
+        "minLength": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 }
+      }
+    },
+    {
+      "name": "Memo",
+      "sourceFile": "scenes/ResetPassword/components/RequestPasswordReset.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "AuthMessage"
+    },
+    {
+      "name": "CancelLink",
+      "sourceFile": "scenes/ResetPassword/components/RequestPasswordReset.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Link",
+      "propsWithCallSites": {
+        "href": { "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1 }
+      }
+    },
+    {
+      "name": "strong",
+      "sourceFile": "scenes/ResetPassword/components/RequestPasswordReset.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "strong"
+    },
+    {
       "name": "SkipButton",
       "sourceFile": "scenes/TfaReset/components/GenerateBackupCodes.tsx",
       "totalInstances": 1,
@@ -6773,66 +6833,6 @@
       "propsWithCallSites": { "onClick": { "scenes/TfaReset/components/TfaVerification.tsx": 2 } }
     },
     {
-      "name": "Memo",
-      "sourceFile": "scenes/ResetPassword/components/CompletePasswordReset.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "styledComponent": "AuthMessage",
-      "callSites": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 3 }
-    },
-    {
-      "name": "HiddenInput",
-      "sourceFile": "scenes/ResetPassword/components/CompletePasswordReset.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Input",
-      "propsWithCallSites": {
-        "autoComplete": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1 },
-        "value": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1 }
-      }
-    },
-    {
-      "name": "MyInput",
-      "sourceFile": "scenes/ResetPassword/components/CompletePasswordReset.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Input",
-      "callSites": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
-      "propsWithCallSites": {
-        "type": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
-        "placeholder": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
-        "autoComplete": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
-        "disabled": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
-        "value": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
-        "onChange": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 },
-        "minLength": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2 }
-      }
-    },
-    {
-      "name": "Memo",
-      "sourceFile": "scenes/ResetPassword/components/RequestPasswordReset.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "AuthMessage"
-    },
-    {
-      "name": "CancelLink",
-      "sourceFile": "scenes/ResetPassword/components/RequestPasswordReset.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Link",
-      "propsWithCallSites": {
-        "href": { "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1 }
-      }
-    },
-    {
-      "name": "strong",
-      "sourceFile": "scenes/ResetPassword/components/RequestPasswordReset.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "strong"
-    },
-    {
       "name": "StaticContainer",
       "sourceFile": "scenes/static/StaticLayout/StaticContainer",
       "totalInstances": 3,
@@ -6911,6 +6911,314 @@
       "totalCallSites": 1,
       "styledComponent": "h5",
       "callSites": { "scenes/static/Faq/Faq.tsx": 8 }
+    },
+    {
+      "name": "Header",
+      "sourceFile": "scenes/static/Integrate/Integrate.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "h1"
+    },
+    {
+      "name": "Text",
+      "sourceFile": "scenes/static/Integrate/Integrate.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "p"
+    },
+    {
+      "name": "CardContainer",
+      "sourceFile": "scenes/static/Integrate/IntegrationCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "scenes/static/Integrate/IntegrationCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "img",
+      "propsWithCallSites": {
+        "src": { "scenes/static/Integrate/IntegrationCard.tsx": 1 },
+        "alt": { "scenes/static/Integrate/IntegrationCard.tsx": 1 }
+      }
+    },
+    {
+      "name": "CardTitle",
+      "sourceFile": "scenes/static/Integrate/IntegrationCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "h3"
+    },
+    {
+      "name": "CardVersion",
+      "sourceFile": "scenes/static/Integrate/IntegrationCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "Blue",
+      "sourceFile": "scenes/static/Integrate/IntegrationCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
+      "name": "div",
+      "sourceFile": "scenes/static/Integrate/IntegrationCarousel.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "style", "callSite": "scenes/static/Integrate/IntegrationCarousel.tsx" }
+      ],
+      "propsWithCallSites": { "style": { "scenes/static/Integrate/IntegrationCarousel.tsx": 1 } }
+    },
+    {
+      "name": "CarouselContainer",
+      "sourceFile": "scenes/static/Integrate/IntegrationCarousel.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "Carousel",
+      "sourceFile": "scenes/static/Integrate/IntegrationCarousel.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
+      "propsWithCallSites": {
+        "w": { "scenes/static/Integrate/IntegrationCarousel.tsx": 1 },
+        "id": { "scenes/static/Integrate/IntegrationCarousel.tsx": 1 }
+      }
+    },
+    {
+      "name": "CarouselFader",
+      "sourceFile": "scenes/static/Integrate/IntegrationCarousel.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "TutorialContainer",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
+      "propsWithCallSites": { "w": { "scenes/static/Integrate/IntegrationDetail.tsx": 1 } }
+    },
+    {
+      "name": "Sticky",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
+      "propsWithCallSites": { "w": { "scenes/static/Integrate/IntegrationDetail.tsx": 1 } }
+    },
+    {
+      "name": "div",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "style", "callSite": "scenes/static/Integrate/IntegrationDetailFooter.tsx" }
+      ],
+      "propsWithCallSites": {
+        "style": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1 }
+      }
+    },
+    {
+      "name": "Title",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "h3"
+    },
+    {
+      "name": "Social",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "Brand",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box",
+      "propsWithCallSites": { "mr": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1 } }
+    },
+    {
+      "name": "SocialIcon",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "styledComponent": "a",
+      "callSites": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 },
+      "propsWithCallSites": {
+        "href": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 },
+        "rel": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 }
+      }
+    },
+    {
+      "name": "StickyPanel",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Title",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "h3"
+    },
+    {
+      "name": "Divider",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Table",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "table"
+    },
+    {
+      "name": "TableRow",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "tr",
+      "propsWithCallSites": { "key": { "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1 } }
+    },
+    {
+      "name": "td",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalElement": "td",
+      "callSites": { "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 2 }
+    },
+    {
+      "name": "DownloadButton",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button"
+    },
+    {
+      "name": "Text",
+      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "styledComponent": "span",
+      "callSites": { "scenes/static/Integrate/Shopify.tsx": 3 }
+    },
+    {
+      "name": "OrderedList",
+      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "ol",
+      "callSites": { "scenes/static/Integrate/Shopify.tsx": 2 },
+      "propsWithCallSites": { "start": { "scenes/static/Integrate/Shopify.tsx": 1 } }
+    },
+    {
+      "name": "Image",
+      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "styledComponent": "BaseImage",
+      "callSites": { "scenes/static/Integrate/Shopify.tsx": 4 },
+      "propsWithCallSites": {
+        "src": { "scenes/static/Integrate/Shopify.tsx": 4 },
+        "alt": { "scenes/static/Integrate/Shopify.tsx": 4 }
+      }
+    },
+    {
+      "name": "Image",
+      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
+      "totalInstances": 9,
+      "totalCallSites": 1,
+      "styledComponent": "BaseImage",
+      "callSites": { "scenes/static/Integrate/WooCommerce.tsx": 9 },
+      "propsWithCallSites": {
+        "src": { "scenes/static/Integrate/WooCommerce.tsx": 9 },
+        "alt": { "scenes/static/Integrate/WooCommerce.tsx": 9 }
+      }
+    },
+    {
+      "name": "Bold",
+      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
+      "name": "StaticLayoutBox",
+      "sourceFile": "scenes/static/StaticLayout/LegacyStaticLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "scenes/static/StaticLayout/LegacyStaticLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Box"
+    },
+    {
+      "name": "StaticLayoutBox",
+      "sourceFile": "scenes/static/StaticLayout/StaticLayout.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Flex",
+      "propsWithCallSites": { "bg": { "scenes/static/StaticLayout/StaticLayout.tsx": 1 } }
+    },
+    {
+      "name": "ButtonOutline",
+      "sourceFile": "scenes/static/Success/Success.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ExternalLink",
+      "propsWithCallSites": { "href": { "scenes/static/Success/Success.tsx": 1 } }
+    },
+    {
+      "name": "Body",
+      "sourceFile": "scenes/static/Weipay/Weipay.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "AuthBody"
+    },
+    {
+      "name": "MemoHeader",
+      "sourceFile": "scenes/static/Weipay/Weipay.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Memo"
+    },
+    {
+      "name": "Memo",
+      "sourceFile": "scenes/static/Weipay/Weipay.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Text"
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "scenes/static/Weipay/Weipay.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Image",
+      "propsWithCallSites": { "src": { "scenes/static/Weipay/Weipay.tsx": 1 } }
     },
     {
       "name": "ApiKey",
@@ -7784,314 +8092,6 @@
       "styledComponent": "p"
     },
     {
-      "name": "Header",
-      "sourceFile": "scenes/static/Integrate/Integrate.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "h1"
-    },
-    {
-      "name": "Text",
-      "sourceFile": "scenes/static/Integrate/Integrate.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "p"
-    },
-    {
-      "name": "CardContainer",
-      "sourceFile": "scenes/static/Integrate/IntegrationCard.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Icon",
-      "sourceFile": "scenes/static/Integrate/IntegrationCard.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "img",
-      "propsWithCallSites": {
-        "src": { "scenes/static/Integrate/IntegrationCard.tsx": 1 },
-        "alt": { "scenes/static/Integrate/IntegrationCard.tsx": 1 }
-      }
-    },
-    {
-      "name": "CardTitle",
-      "sourceFile": "scenes/static/Integrate/IntegrationCard.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "h3"
-    },
-    {
-      "name": "CardVersion",
-      "sourceFile": "scenes/static/Integrate/IntegrationCard.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "Blue",
-      "sourceFile": "scenes/static/Integrate/IntegrationCard.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
-    },
-    {
-      "name": "div",
-      "sourceFile": "scenes/static/Integrate/IntegrationCarousel.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "style", "callSite": "scenes/static/Integrate/IntegrationCarousel.tsx" }
-      ],
-      "propsWithCallSites": { "style": { "scenes/static/Integrate/IntegrationCarousel.tsx": 1 } }
-    },
-    {
-      "name": "CarouselContainer",
-      "sourceFile": "scenes/static/Integrate/IntegrationCarousel.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "Carousel",
-      "sourceFile": "scenes/static/Integrate/IntegrationCarousel.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "propsWithCallSites": {
-        "w": { "scenes/static/Integrate/IntegrationCarousel.tsx": 1 },
-        "id": { "scenes/static/Integrate/IntegrationCarousel.tsx": 1 }
-      }
-    },
-    {
-      "name": "CarouselFader",
-      "sourceFile": "scenes/static/Integrate/IntegrationCarousel.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "TutorialContainer",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetail.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "propsWithCallSites": { "w": { "scenes/static/Integrate/IntegrationDetail.tsx": 1 } }
-    },
-    {
-      "name": "Sticky",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetail.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "propsWithCallSites": { "w": { "scenes/static/Integrate/IntegrationDetail.tsx": 1 } }
-    },
-    {
-      "name": "div",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "style", "callSite": "scenes/static/Integrate/IntegrationDetailFooter.tsx" }
-      ],
-      "propsWithCallSites": {
-        "style": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1 }
-      }
-    },
-    {
-      "name": "Title",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "h3"
-    },
-    {
-      "name": "Social",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "Brand",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box",
-      "propsWithCallSites": { "mr": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 1 } }
-    },
-    {
-      "name": "SocialIcon",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "styledComponent": "a",
-      "callSites": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 },
-      "propsWithCallSites": {
-        "href": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 },
-        "rel": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 }
-      }
-    },
-    {
-      "name": "StickyPanel",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Title",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "h3"
-    },
-    {
-      "name": "Divider",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Table",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "table"
-    },
-    {
-      "name": "TableRow",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "tr",
-      "propsWithCallSites": { "key": { "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1 } }
-    },
-    {
-      "name": "td",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalElement": "td",
-      "callSites": { "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 2 }
-    },
-    {
-      "name": "DownloadButton",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button"
-    },
-    {
-      "name": "Text",
-      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "styledComponent": "span",
-      "callSites": { "scenes/static/Integrate/Shopify.tsx": 3 }
-    },
-    {
-      "name": "OrderedList",
-      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "ol",
-      "callSites": { "scenes/static/Integrate/Shopify.tsx": 2 },
-      "propsWithCallSites": { "start": { "scenes/static/Integrate/Shopify.tsx": 1 } }
-    },
-    {
-      "name": "Image",
-      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "styledComponent": "BaseImage",
-      "callSites": { "scenes/static/Integrate/Shopify.tsx": 4 },
-      "propsWithCallSites": {
-        "src": { "scenes/static/Integrate/Shopify.tsx": 4 },
-        "alt": { "scenes/static/Integrate/Shopify.tsx": 4 }
-      }
-    },
-    {
-      "name": "Image",
-      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
-      "totalInstances": 9,
-      "totalCallSites": 1,
-      "styledComponent": "BaseImage",
-      "callSites": { "scenes/static/Integrate/WooCommerce.tsx": 9 },
-      "propsWithCallSites": {
-        "src": { "scenes/static/Integrate/WooCommerce.tsx": 9 },
-        "alt": { "scenes/static/Integrate/WooCommerce.tsx": 9 }
-      }
-    },
-    {
-      "name": "Bold",
-      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
-    },
-    {
-      "name": "StaticLayoutBox",
-      "sourceFile": "scenes/static/StaticLayout/LegacyStaticLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "scenes/static/StaticLayout/LegacyStaticLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Box"
-    },
-    {
-      "name": "StaticLayoutBox",
-      "sourceFile": "scenes/static/StaticLayout/StaticLayout.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex",
-      "propsWithCallSites": { "bg": { "scenes/static/StaticLayout/StaticLayout.tsx": 1 } }
-    },
-    {
-      "name": "ButtonOutline",
-      "sourceFile": "scenes/static/Success/Success.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ExternalLink",
-      "propsWithCallSites": { "href": { "scenes/static/Success/Success.tsx": 1 } }
-    },
-    {
-      "name": "Body",
-      "sourceFile": "scenes/static/Weipay/Weipay.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "AuthBody"
-    },
-    {
-      "name": "MemoHeader",
-      "sourceFile": "scenes/static/Weipay/Weipay.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Memo"
-    },
-    {
-      "name": "Memo",
-      "sourceFile": "scenes/static/Weipay/Weipay.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text"
-    },
-    {
-      "name": "Icon",
-      "sourceFile": "scenes/static/Weipay/Weipay.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Image",
-      "propsWithCallSites": { "src": { "scenes/static/Weipay/Weipay.tsx": 1 } }
-    },
-    {
       "name": "CloseButton",
       "sourceFile": "scenes/PointOfSale/components/desktop/ChargeModal.tsx",
       "totalInstances": 1,
@@ -8666,12 +8666,12 @@
         "components/CreateInvoiceModalForm.tsx": 1,
         "components/Panel.tsx": 1,
         "scenes/App.tsx": 1,
+        "checkout/components/CustomerCharge.tsx": 1,
+        "checkout/components/LoadingCheckout.tsx": 1,
         "checkout/hosted/HostedCheckout.tsx": 1,
         "checkout/hosted/HostedTestCharge.tsx": 1,
         "checkout/hosted/InvoiceReceiptRedirect.tsx": 1,
         "checkout/hosted/entry.tsx": 1,
-        "checkout/components/CustomerCharge.tsx": 1,
-        "checkout/components/LoadingCheckout.tsx": 1,
         "checkout/embedded/CustomerChargeWidget.tsx": 1,
         "checkout/embedded/ProductCheckoutWidget.tsx": 1,
         "checkout/embedded/index.tsx": 1,
@@ -8936,8 +8936,8 @@
         "checkout/components/TransactionsOAuthTotpModal.tsx": 8,
         "checkout/components/WaitingForConfirmations.tsx": 7,
         "checkout/embedded/CustomerChargeWidget.tsx": 4,
-        "components/AccountsList/AccountsList.tsx": 22,
         "components/AccountingReports/AccountingReportsModal.tsx": 1,
+        "components/AccountsList/AccountsList.tsx": 22,
         "components/ActivationPanel/ActivationPanel.tsx": 3,
         "components/Invoice/InvoiceDetailModal.tsx": 9,
         "components/Invoice/InvoiceList.tsx": 2,
@@ -8956,19 +8956,19 @@
         "components/OrdersList/ResolveModal.tsx": 5,
         "components/PaymentDetail/PaymentDetail.tsx": 8,
         "components/ProductFlow/ProductFlow.tsx": 7,
+        "components/ProductsList/ProductsList.tsx": 7,
         "components/Signup/LightSignupForm.tsx": 7,
         "components/Table/EmptyTableMessage.tsx": 2,
         "components/Table/Pagination.tsx": 1,
-        "components/ProductsList/ProductsList.tsx": 7,
         "components/TablePagination/TablePagination.tsx": 1,
         "components/Timeline/Timeline.tsx": 1,
+        "components/TotpSetupModal/TotpSetupModal.tsx": 9,
         "components/Withdrawal/ConversionDetails.tsx": 2,
         "components/Withdrawal/ConversionWithdrawalDetails.tsx": 6,
         "components/Withdrawal/ConversionsList.tsx": 2,
         "components/Withdrawal/ConversionsNuxModal.tsx": 7,
         "components/Withdrawal/WithdrawalDetails.tsx": 9,
         "components/Withdrawal/WithdrawalsList.tsx": 2,
-        "components/TotpSetupModal/TotpSetupModal.tsx": 9,
         "scenes/Confirm/Confirm.tsx": 3,
         "scenes/Downtime/Downtime.tsx": 3,
         "scenes/MaintenanceMode/MaintenanceMode.tsx": 2,
@@ -9001,13 +9001,20 @@
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 10,
         "scenes/PointOfSale/components/CustomAmountModal.tsx": 1,
         "scenes/PointOfSale/components/PaymentScreen.tsx": 13,
+        "scenes/ResetPassword/components/CompletePasswordReset.tsx": 9,
+        "scenes/ResetPassword/components/RequestPasswordReset.tsx": 7,
         "scenes/TfaReset/components/GenerateBackupCodes.tsx": 4,
         "scenes/TfaReset/components/ResetComplete.tsx": 4,
         "scenes/TfaReset/components/ShowBackupCodes.tsx": 6,
         "scenes/TfaReset/components/TfaVerification.tsx": 10,
-        "scenes/ResetPassword/components/CompletePasswordReset.tsx": 9,
-        "scenes/ResetPassword/components/RequestPasswordReset.tsx": 7,
         "scenes/static/Faq/Faq.tsx": 105,
+        "scenes/static/Integrate/Integrate.tsx": 2,
+        "scenes/static/Integrate/IntegrationCard.tsx": 2,
+        "scenes/static/Integrate/IntegrationDetailFooter.tsx": 2,
+        "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1,
+        "scenes/static/Integrate/Shopify.tsx": 9,
+        "scenes/static/Integrate/WooCommerce.tsx": 29,
+        "scenes/static/Success/Success.tsx": 1,
         "scenes/Settings/components/ApiKeyPanel.tsx": 7,
         "scenes/Settings/components/BrandingPanel.tsx": 1,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 4,
@@ -9037,13 +9044,6 @@
         "scenes/Settings/components/WebhookTestModal.tsx": 7,
         "scenes/Settings/components/WidgetOriginModal.tsx": 5,
         "scenes/Settings/components/WidgetOriginsPanel.tsx": 5,
-        "scenes/static/Integrate/Integrate.tsx": 2,
-        "scenes/static/Integrate/IntegrationCard.tsx": 2,
-        "scenes/static/Integrate/IntegrationDetailFooter.tsx": 2,
-        "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1,
-        "scenes/static/Integrate/Shopify.tsx": 9,
-        "scenes/static/Integrate/WooCommerce.tsx": 29,
-        "scenes/static/Success/Success.tsx": 1,
         "scenes/PointOfSale/components/desktop/OrderLayout.tsx": 3,
         "scenes/PointOfSale/components/desktop/OrderSummary.tsx": 5,
         "scenes/PointOfSale/components/desktop/ProductsList.tsx": 2,
@@ -9091,10 +9091,11 @@
           "scenes/Onboarding/components/TfaVerification.tsx": 3,
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 2,
           "scenes/PointOfSale/components/PaymentScreen.tsx": 4,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/static/Faq/Faq.tsx": 18,
+          "scenes/static/Integrate/WooCommerce.tsx": 5,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/CloseAccountPanel.tsx": 1,
           "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
@@ -9103,7 +9104,6 @@
           "scenes/Settings/components/ProfilePanelEmailChange.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WebhookTestModal.tsx": 1,
-          "scenes/static/Integrate/WooCommerce.tsx": 5,
           "scenes/PointOfSale/components/desktop/OrderLayout.tsx": 1,
           "scenes/PointOfSale/components/mobile/OrderSummary.tsx": 1
         }
@@ -9174,12 +9174,13 @@
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/PointOfSale/components/PaymentScreen.tsx": 1,
+        "scenes/ResetPassword/components/CompletePasswordReset.tsx": 3,
+        "scenes/ResetPassword/components/RequestPasswordReset.tsx": 2,
         "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
         "scenes/TfaReset/components/ResetComplete.tsx": 1,
         "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
         "scenes/TfaReset/components/TfaVerification.tsx": 1,
-        "scenes/ResetPassword/components/CompletePasswordReset.tsx": 3,
-        "scenes/ResetPassword/components/RequestPasswordReset.tsx": 2,
+        "scenes/static/Weipay/Weipay.tsx": 1,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 1,
         "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/Settings/components/CloseAccountModal.tsx": 1,
@@ -9196,8 +9197,7 @@
         "scenes/Settings/components/WebhookModal.tsx": 2,
         "scenes/Settings/components/WebhookSecretModal.tsx": 1,
         "scenes/Settings/components/WebhookTestModal.tsx": 1,
-        "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-        "scenes/static/Weipay/Weipay.tsx": 1
+        "scenes/Settings/components/WidgetOriginModal.tsx": 1
       },
       "propsWithCallSites": {
         "onClick": {
@@ -9221,12 +9221,13 @@
           "scenes/Onboarding/components/EmailVerified.tsx": 1,
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
+          "scenes/ResetPassword/components/CompletePasswordReset.tsx": 3,
+          "scenes/ResetPassword/components/RequestPasswordReset.tsx": 2,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/ResetComplete.tsx": 1,
           "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
           "scenes/TfaReset/components/TfaVerification.tsx": 1,
-          "scenes/ResetPassword/components/CompletePasswordReset.tsx": 3,
-          "scenes/ResetPassword/components/RequestPasswordReset.tsx": 2,
+          "scenes/static/Weipay/Weipay.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/CloudBackupPanel.tsx": 1,
           "scenes/Settings/components/ConnectProAccountSuccessModal.tsx": 1,
@@ -9240,8 +9241,7 @@
           "scenes/Settings/components/WebhookModal.tsx": 2,
           "scenes/Settings/components/WebhookSecretModal.tsx": 1,
           "scenes/Settings/components/WebhookTestModal.tsx": 1,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/static/Weipay/Weipay.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "children": {
           "components/BackupCodesModal.tsx": 1,
@@ -9252,10 +9252,10 @@
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 5,
           "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2,
+          "scenes/static/Weipay/Weipay.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/Settings/components/EmailChangeModal.tsx": 1,
-          "scenes/Settings/components/PasswordChangeModal.tsx": 1,
-          "scenes/static/Weipay/Weipay.tsx": 1
+          "scenes/Settings/components/PasswordChangeModal.tsx": 1
         },
         "w": {
           "components/BackupCodesModal.tsx": 1,
@@ -9269,6 +9269,7 @@
           "scenes/Reconfirm/Reconfirm.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 5,
+          "scenes/static/Weipay/Weipay.tsx": 1,
           "scenes/Settings/components/BrandingPanelBusinessName.tsx": 1,
           "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
@@ -9283,8 +9284,7 @@
           "scenes/Settings/components/WebhookEventModal.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 2,
           "scenes/Settings/components/WebhookTestModal.tsx": 1,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/static/Weipay/Weipay.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "fullWidth": {
           "checkout/components/NetworkPicker.tsx": 1,
@@ -9296,12 +9296,12 @@
           "scenes/Onboarding/components/EmailVerified.tsx": 1,
           "scenes/Onboarding/components/TfaEnabled.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
+          "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1,
+          "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/ResetComplete.tsx": 1,
           "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
-          "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1,
-          "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1
+          "scenes/TfaReset/components/TfaVerification.tsx": 1
         },
         "disabled": {
           "checkout/components/NetworkPicker.tsx": 1,
@@ -9313,11 +9313,11 @@
           "scenes/Signin/Signin.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 2,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
+          "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1,
+          "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
           "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
           "scenes/TfaReset/components/ShowBackupCodes.tsx": 1,
           "scenes/TfaReset/components/TfaVerification.tsx": 1,
-          "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1,
-          "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
           "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
           "scenes/Settings/components/EmailChangeModal.tsx": 1,
           "scenes/Settings/components/FlexiblePaymentAcceptancePanel.tsx": 1,
@@ -9401,17 +9401,17 @@
         "components/BackupCodesModal.tsx": 1,
         "checkout/components/OAuthPaymentSummaryRow.tsx": 1,
         "components/Signup/LightSignupForm.tsx": 1,
+        "components/TotpSetupModal/TotpSetupModal.tsx": 2,
         "components/Withdrawal/ConversionWithdrawalDetails.tsx": 2,
         "components/Withdrawal/ConversionsList.tsx": 1,
         "components/Withdrawal/WithdrawalDetails.tsx": 2,
         "components/Withdrawal/WithdrawalsList.tsx": 1,
-        "components/TotpSetupModal/TotpSetupModal.tsx": 2,
         "scenes/PointOfSale/PairingScreen.tsx": 1,
         "scenes/Receipts/Receipts.tsx": 1,
         "scenes/Signin/Signin.tsx": 2,
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
-        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
         "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1,
+        "scenes/TfaReset/components/GenerateBackupCodes.tsx": 1,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 1,
         "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/Settings/components/CloseAccountModal.tsx": 1,
@@ -9465,6 +9465,8 @@
         "components/ProductFlow/components/Header.tsx": 1,
         "components/ProductFlow/components/ProductDetails.tsx": 4,
         "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 3,
+        "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1,
+        "scenes/static/Success/Success.tsx": 1,
         "scenes/Settings/components/ApiKeyPanel.tsx": 3,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 2,
         "scenes/Settings/components/BrandingPanelColorPicker.tsx": 2,
@@ -9474,9 +9476,7 @@
         "scenes/Settings/components/ProfilePanelPassword.tsx": 1,
         "scenes/Settings/components/TwoFactorPanel.tsx": 2,
         "scenes/Settings/components/WebhookSecretModal.tsx": 2,
-        "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-        "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1,
-        "scenes/static/Success/Success.tsx": 1
+        "scenes/Settings/components/WidgetOriginModal.tsx": 1
       },
       "propsWithCallSites": {
         "eventType": {
@@ -9492,6 +9492,8 @@
           "components/ProductFlow/components/Header.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 4,
           "components/ProductFlow/components/ProductRequestedInfoForm.tsx": 3,
+          "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1,
+          "scenes/static/Success/Success.tsx": 1,
           "scenes/Settings/components/ApiKeyPanel.tsx": 3,
           "scenes/Settings/components/BrandingPanelBusinessName.tsx": 2,
           "scenes/Settings/components/BrandingPanelColorPicker.tsx": 2,
@@ -9501,15 +9503,13 @@
           "scenes/Settings/components/ProfilePanelPassword.tsx": 1,
           "scenes/Settings/components/TwoFactorPanel.tsx": 2,
           "scenes/Settings/components/WebhookSecretModal.tsx": 2,
-          "scenes/Settings/components/WidgetOriginModal.tsx": 1,
-          "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1,
-          "scenes/static/Success/Success.tsx": 1
+          "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
         "eventProperties": {
           "components/Layouts/DashboardLayout/Footer.tsx": 1,
-          "scenes/Settings/components/CloseAccountModal.tsx": 1,
           "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1,
-          "scenes/static/Success/Success.tsx": 1
+          "scenes/static/Success/Success.tsx": 1,
+          "scenes/Settings/components/CloseAccountModal.tsx": 1
         }
       }
     },
@@ -9545,9 +9545,9 @@
         "components/OrdersList/RefundModal.tsx": 1,
         "components/OrdersList/ResolveModal.tsx": 1,
         "components/ProductFlow/ProductFlow.tsx": 1,
+        "components/TotpSetupModal/TotpSetupModal.tsx": 1,
         "components/Withdrawal/ConversionsModal.tsx": 1,
         "components/Withdrawal/WithdrawalDetails.tsx": 1,
-        "components/TotpSetupModal/TotpSetupModal.tsx": 1,
         "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
         "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
         "components/ProductFlow/components/ProductDetails.tsx": 1,
@@ -9581,9 +9581,9 @@
           "components/OrdersList/RefundModal.tsx": 1,
           "components/OrdersList/ResolveModal.tsx": 1,
           "components/ProductFlow/ProductFlow.tsx": 1,
+          "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/ConversionsModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
-          "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
@@ -9614,9 +9614,9 @@
           "components/OrdersList/RefundModal.tsx": 1,
           "components/OrdersList/ResolveModal.tsx": 1,
           "components/ProductFlow/ProductFlow.tsx": 1,
+          "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/ConversionsModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
-          "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
@@ -9638,8 +9638,8 @@
           "components/OrdersList/OrderDetails.tsx": 1,
           "components/OrdersList/ResolveModal.tsx": 1,
           "components/ProductFlow/ProductFlow.tsx": 1,
-          "components/Withdrawal/WithdrawalDetails.tsx": 1,
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
+          "components/Withdrawal/WithdrawalDetails.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
           "scenes/Settings/components/CloseAccountModal.tsx": 1,
@@ -9667,9 +9667,9 @@
           "components/OrdersList/RefundModal.tsx": 1,
           "components/OrdersList/ResolveModal.tsx": 1,
           "components/ProductFlow/ProductFlow.tsx": 1,
+          "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/ConversionsModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
-          "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
@@ -9696,9 +9696,9 @@
           "components/LinkCoinbase/RemoveAccountSuccessModal.tsx": 1,
           "components/LinkCoinbase/UpdateAccountModal.tsx": 1,
           "components/ProductFlow/ProductFlow.tsx": 1,
+          "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/Withdrawal/ConversionsModal.tsx": 1,
           "components/Withdrawal/WithdrawalDetails.tsx": 1,
-          "components/TotpSetupModal/TotpSetupModal.tsx": 1,
           "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
           "scenes/PointOfSale/components/CustomAmountModal.tsx": 1,
@@ -9720,8 +9720,8 @@
           "components/OrdersList/OrderDetails.tsx": 1,
           "components/OrdersList/ResolveModal.tsx": 1,
           "components/ProductFlow/ProductFlow.tsx": 1,
-          "components/Withdrawal/WithdrawalDetails.tsx": 1,
           "components/TotpSetupModal/TotpSetupModal.tsx": 1,
+          "components/Withdrawal/WithdrawalDetails.tsx": 1,
           "components/ActivationPanel/components/IntegrationsModal.tsx": 1,
           "components/ProductFlow/components/DeleteProductSuccess.tsx": 1,
           "components/ProductFlow/components/ProductDetails.tsx": 1,
@@ -10201,10 +10201,10 @@
         "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
         "scenes/Onboarding/components/Stepper.tsx": 2,
         "scenes/TfaReset/components/ResetComplete.tsx": 2,
-        "scenes/Settings/components/CloudBackupPanel.tsx": 1,
         "scenes/static/Integrate/Shopify.tsx": 1,
         "scenes/static/Integrate/WooCommerce.tsx": 1,
-        "scenes/static/Jaxx/Jaxx.tsx": 6
+        "scenes/static/Jaxx/Jaxx.tsx": 6,
+        "scenes/Settings/components/CloudBackupPanel.tsx": 1
       },
       "propsWithCallSites": {
         "src": {
@@ -10213,20 +10213,20 @@
           "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
           "scenes/Onboarding/components/Stepper.tsx": 2,
           "scenes/TfaReset/components/ResetComplete.tsx": 2,
-          "scenes/Settings/components/CloudBackupPanel.tsx": 1,
           "scenes/static/Integrate/Shopify.tsx": 1,
           "scenes/static/Integrate/WooCommerce.tsx": 1,
-          "scenes/static/Jaxx/Jaxx.tsx": 6
+          "scenes/static/Jaxx/Jaxx.tsx": 6,
+          "scenes/Settings/components/CloudBackupPanel.tsx": 1
         },
         "w": {
           "scenes/Onboarding/Onboarding.tsx": 1,
           "scenes/TfaReset/TfaReset.tsx": 1,
           "components/Layouts/AuthLayout/AuthLayout.tsx": 1,
           "scenes/Onboarding/components/Stepper.tsx": 2,
-          "scenes/Settings/components/CloudBackupPanel.tsx": 1,
           "scenes/static/Integrate/Shopify.tsx": 1,
           "scenes/static/Integrate/WooCommerce.tsx": 1,
-          "scenes/static/Jaxx/Jaxx.tsx": 6
+          "scenes/static/Jaxx/Jaxx.tsx": 6,
+          "scenes/Settings/components/CloudBackupPanel.tsx": 1
         },
         "height": {
           "scenes/Onboarding/Onboarding.tsx": 1,
@@ -10483,12 +10483,12 @@
         "scenes/Onboarding/components/TfaEnabled.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 3,
         "scenes/PointOfSale/components/PaymentScreen.tsx": 1,
+        "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2,
+        "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
         "scenes/TfaReset/components/GenerateBackupCodes.tsx": 2,
         "scenes/TfaReset/components/ResetComplete.tsx": 1,
         "scenes/TfaReset/components/ShowBackupCodes.tsx": 2,
         "scenes/TfaReset/components/TfaVerification.tsx": 3,
-        "scenes/ResetPassword/components/CompletePasswordReset.tsx": 2,
-        "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
         "scenes/Settings/components/BrandingPanelBusinessName.tsx": 1,
         "scenes/Settings/components/BrandingPanelColorPicker.tsx": 1,
         "scenes/Settings/components/CloseAccountModal.tsx": 2,
@@ -10677,6 +10677,37 @@
       "callSites": { "components/ToggleSwitch.tsx": 3 }
     },
     {
+      "name": "ExperimentProvider",
+      "sourceFile": "@cbhq/experiments/ExperimentProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "experiments": { "providers/ExperimentProvider.tsx": 1 },
+        "trackExposure": { "providers/ExperimentProvider.tsx": 1 }
+      }
+    },
+    {
+      "name": "IntlProvider",
+      "sourceFile": "react-intl/IntlProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "locale": { "providers/I18NProvider.tsx": 1 },
+        "messages": { "providers/I18NProvider.tsx": 1 }
+      }
+    },
+    {
+      "name": "Provider",
+      "sourceFile": "mobx-react/Provider",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "providers/MobxI18nProvider.tsx": 1,
+        "checkout/hosted/entry.tsx": 1,
+        "checkout/embedded/index.tsx": 1
+      }
+    },
+    {
       "name": "Downtime",
       "sourceFile": "scenes/Downtime",
       "totalInstances": 2,
@@ -10746,37 +10777,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "ExperimentProvider",
-      "sourceFile": "@cbhq/experiments/ExperimentProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "experiments": { "providers/ExperimentProvider.tsx": 1 },
-        "trackExposure": { "providers/ExperimentProvider.tsx": 1 }
-      }
-    },
-    {
-      "name": "IntlProvider",
-      "sourceFile": "react-intl/IntlProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "locale": { "providers/I18NProvider.tsx": 1 },
-        "messages": { "providers/I18NProvider.tsx": 1 }
-      }
-    },
-    {
-      "name": "Provider",
-      "sourceFile": "mobx-react/Provider",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "providers/MobxI18nProvider.tsx": 1,
-        "checkout/hosted/entry.tsx": 1,
-        "checkout/embedded/index.tsx": 1
-      }
-    },
-    {
       "name": "BaseFormattedMessageFixed",
       "sourceFile": "utils/i18n.tsx",
       "totalInstances": 1,
@@ -10810,171 +10810,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "onClick": { "utils/tracking.tsx": 1 } }
-    },
-    {
-      "name": "CustomerCharge",
-      "sourceFile": "checkout/components/CustomerCharge",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/embedded/CustomerChargeWidget.tsx": 1
-      },
-      "propsWithCallSites": {
-        "store": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1
-        },
-        "checkout": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1
-        },
-        "blur": { "checkout/embedded/CustomerChargeWidget.tsx": 1 }
-      }
-    },
-    {
-      "name": "ProductCheckout",
-      "sourceFile": "checkout/components/ProductCheckout",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/embedded/ProductCheckoutWidget.tsx": 1
-      },
-      "propsWithCallSites": {
-        "store": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1
-        },
-        "isEmbedded": { "checkout/embedded/ProductCheckoutWidget.tsx": 1 }
-      }
-    },
-    {
-      "name": "DesignFeatureFlagProvider",
-      "sourceFile": "providers/DesignFeatureFlagProvider",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/hosted/HostedTestCharge.tsx": 1,
-        "checkout/embedded/CheckoutApp.tsx": 1,
-        "scenes/Receipts/Receipts.tsx": 1
-      },
-      "propsWithCallSites": {
-        "frontier": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "checkout/embedded/CheckoutApp.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "InvoiceDetails",
-      "sourceFile": "checkout/components/InvoiceDetails",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "invoice": { "checkout/hosted/HostedCheckout.tsx": 1 },
-        "organizationName": { "checkout/hosted/HostedCheckout.tsx": 1 },
-        "brandLogoUrl": { "checkout/hosted/HostedCheckout.tsx": 1 },
-        "brandColor": { "checkout/hosted/HostedCheckout.tsx": 1 }
-      }
-    },
-    {
-      "name": "OrderDetails",
-      "sourceFile": "checkout/components/OrderDetails",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/hosted/HostedTestCharge.tsx": 1
-      },
-      "propsWithCallSites": {
-        "productName": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1
-        },
-        "productDescription": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1
-        },
-        "productImageUrl": { "checkout/hosted/HostedCheckout.tsx": 1 },
-        "organizationName": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1
-        },
-        "brandLogoUrl": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1
-        },
-        "brandColor": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/hosted/HostedTestCharge.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Footer",
-      "sourceFile": "checkout/components/Footer",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "checkout/hosted/HostedCheckout.tsx": 1,
-        "checkout/embedded/CustomerChargeWidget.tsx": 1,
-        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
-        "scenes/Receipts/Receipts.tsx": 1
-      },
-      "propsWithCallSites": {
-        "extendedDescription": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        },
-        "shouldShowPrivacyDisclaimerForCollectedInfo": {
-          "checkout/hosted/HostedCheckout.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1,
-          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
-          "scenes/Receipts/Receipts.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ErrorCheckout",
-      "sourceFile": "checkout/components/ErrorCheckout",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "checkout/hosted/HostedTestCharge.tsx": 1,
-        "checkout/embedded/CustomerChargeWidget.tsx": 1
-      },
-      "propsWithCallSites": {
-        "error": {
-          "checkout/hosted/HostedTestCharge.tsx": 1,
-          "checkout/embedded/CustomerChargeWidget.tsx": 1
-        },
-        "checkout": { "checkout/embedded/CustomerChargeWidget.tsx": 1 },
-        "onRetry": { "checkout/embedded/CustomerChargeWidget.tsx": 1 }
-      }
-    },
-    {
-      "name": "Redirect",
-      "sourceFile": "react-router/Redirect",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "callSites": { "checkout/hosted/Redirects.tsx": 2, "entry/marketing/index.tsx": 1 },
-      "propsWithCallSites": {
-        "to": { "checkout/hosted/Redirects.tsx": 2, "entry/marketing/index.tsx": 1 },
-        "strict": { "entry/marketing/index.tsx": 1 },
-        "from": { "entry/marketing/index.tsx": 1 }
-      }
-    },
-    {
-      "name": "HostedAppWrapper",
-      "sourceFile": "checkout/hosted/entry.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "Progress",
@@ -11239,12 +11074,12 @@
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
         "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/static/Faq/Faq.tsx": 18,
+        "scenes/static/Integrate/IntegrationCard.tsx": 1,
+        "scenes/static/Jaxx/Jaxx.tsx": 2,
         "scenes/Settings/components/ApiKeyPanel.tsx": 1,
         "scenes/Settings/components/DepositPanel.tsx": 1,
         "scenes/Settings/components/WebhookPanel.tsx": 2,
-        "scenes/Settings/components/WidgetOriginsPanel.tsx": 1,
-        "scenes/static/Integrate/IntegrationCard.tsx": 1,
-        "scenes/static/Jaxx/Jaxx.tsx": 2
+        "scenes/Settings/components/WidgetOriginsPanel.tsx": 1
       },
       "propsWithCallSites": {
         "target": { "checkout/components/FailedPayment.tsx": 3 },
@@ -11262,11 +11097,11 @@
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
           "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/static/Faq/Faq.tsx": 18,
+          "scenes/static/Jaxx/Jaxx.tsx": 2,
           "scenes/Settings/components/ApiKeyPanel.tsx": 1,
           "scenes/Settings/components/DepositPanel.tsx": 1,
           "scenes/Settings/components/WebhookPanel.tsx": 2,
-          "scenes/Settings/components/WidgetOriginsPanel.tsx": 1,
-          "scenes/static/Jaxx/Jaxx.tsx": 2
+          "scenes/Settings/components/WidgetOriginsPanel.tsx": 1
         },
         "is": { "checkout/components/FailedPayment.tsx": 3 },
         "icon": {
@@ -11743,6 +11578,171 @@
     {
       "name": "b",
       "sourceFile": "checkout/components/WaitingForConfirmations.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "CustomerCharge",
+      "sourceFile": "checkout/components/CustomerCharge",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/embedded/CustomerChargeWidget.tsx": 1
+      },
+      "propsWithCallSites": {
+        "store": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/embedded/CustomerChargeWidget.tsx": 1
+        },
+        "checkout": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/embedded/CustomerChargeWidget.tsx": 1
+        },
+        "blur": { "checkout/embedded/CustomerChargeWidget.tsx": 1 }
+      }
+    },
+    {
+      "name": "ProductCheckout",
+      "sourceFile": "checkout/components/ProductCheckout",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/embedded/ProductCheckoutWidget.tsx": 1
+      },
+      "propsWithCallSites": {
+        "store": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1
+        },
+        "isEmbedded": { "checkout/embedded/ProductCheckoutWidget.tsx": 1 }
+      }
+    },
+    {
+      "name": "DesignFeatureFlagProvider",
+      "sourceFile": "providers/DesignFeatureFlagProvider",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/hosted/HostedTestCharge.tsx": 1,
+        "checkout/embedded/CheckoutApp.tsx": 1,
+        "scenes/Receipts/Receipts.tsx": 1
+      },
+      "propsWithCallSites": {
+        "frontier": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1,
+          "checkout/embedded/CheckoutApp.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "InvoiceDetails",
+      "sourceFile": "checkout/components/InvoiceDetails",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "invoice": { "checkout/hosted/HostedCheckout.tsx": 1 },
+        "organizationName": { "checkout/hosted/HostedCheckout.tsx": 1 },
+        "brandLogoUrl": { "checkout/hosted/HostedCheckout.tsx": 1 },
+        "brandColor": { "checkout/hosted/HostedCheckout.tsx": 1 }
+      }
+    },
+    {
+      "name": "OrderDetails",
+      "sourceFile": "checkout/components/OrderDetails",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/hosted/HostedTestCharge.tsx": 1
+      },
+      "propsWithCallSites": {
+        "productName": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
+        },
+        "productDescription": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
+        },
+        "productImageUrl": { "checkout/hosted/HostedCheckout.tsx": 1 },
+        "organizationName": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
+        },
+        "brandLogoUrl": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
+        },
+        "brandColor": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/hosted/HostedTestCharge.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Footer",
+      "sourceFile": "checkout/components/Footer",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "checkout/hosted/HostedCheckout.tsx": 1,
+        "checkout/embedded/CustomerChargeWidget.tsx": 1,
+        "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+        "scenes/Receipts/Receipts.tsx": 1
+      },
+      "propsWithCallSites": {
+        "extendedDescription": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        },
+        "shouldShowPrivacyDisclaimerForCollectedInfo": {
+          "checkout/hosted/HostedCheckout.tsx": 1,
+          "checkout/embedded/CustomerChargeWidget.tsx": 1,
+          "checkout/embedded/ProductCheckoutWidget.tsx": 1,
+          "scenes/Receipts/Receipts.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ErrorCheckout",
+      "sourceFile": "checkout/components/ErrorCheckout",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "checkout/hosted/HostedTestCharge.tsx": 1,
+        "checkout/embedded/CustomerChargeWidget.tsx": 1
+      },
+      "propsWithCallSites": {
+        "error": {
+          "checkout/hosted/HostedTestCharge.tsx": 1,
+          "checkout/embedded/CustomerChargeWidget.tsx": 1
+        },
+        "checkout": { "checkout/embedded/CustomerChargeWidget.tsx": 1 },
+        "onRetry": { "checkout/embedded/CustomerChargeWidget.tsx": 1 }
+      }
+    },
+    {
+      "name": "Redirect",
+      "sourceFile": "react-router/Redirect",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "callSites": { "checkout/hosted/Redirects.tsx": 2, "entry/marketing/index.tsx": 1 },
+      "propsWithCallSites": {
+        "to": { "checkout/hosted/Redirects.tsx": 2, "entry/marketing/index.tsx": 1 },
+        "strict": { "entry/marketing/index.tsx": 1 },
+        "from": { "entry/marketing/index.tsx": 1 }
+      }
+    },
+    {
+      "name": "HostedAppWrapper",
+      "sourceFile": "checkout/hosted/entry.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -12717,6 +12717,33 @@
       }
     },
     {
+      "name": "GridRow",
+      "sourceFile": "components/Panel/GridRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "columns": { "components/ProductsList/ProductsList.tsx": 1 },
+        "selectable": { "components/ProductsList/ProductsList.tsx": 1 }
+      }
+    },
+    {
+      "name": "ProductImage",
+      "sourceFile": "components/ProductsList/ProductsList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "image": { "components/ProductsList/ProductsList.tsx": 1 } }
+    },
+    {
+      "name": "BlueButtonOutline",
+      "sourceFile": "components/BlueButtonOutline",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "border": { "components/ProductsList/ProductsList.tsx": 1 },
+        "onClick": { "components/ProductsList/ProductsList.tsx": 1 }
+      }
+    },
+    {
       "name": "Component",
       "sourceFile": "components/Route/Route.tsx",
       "totalInstances": 3,
@@ -12874,33 +12901,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "GridRow",
-      "sourceFile": "components/Panel/GridRow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "columns": { "components/ProductsList/ProductsList.tsx": 1 },
-        "selectable": { "components/ProductsList/ProductsList.tsx": 1 }
-      }
-    },
-    {
-      "name": "ProductImage",
-      "sourceFile": "components/ProductsList/ProductsList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "image": { "components/ProductsList/ProductsList.tsx": 1 } }
-    },
-    {
-      "name": "BlueButtonOutline",
-      "sourceFile": "components/BlueButtonOutline",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "border": { "components/ProductsList/ProductsList.tsx": 1 },
-        "onClick": { "components/ProductsList/ProductsList.tsx": 1 }
-      }
-    },
-    {
       "name": "TimelineRow",
       "sourceFile": "components/Timeline/Timeline.tsx",
       "totalInstances": 1,
@@ -12916,6 +12916,32 @@
         "payment": { "components/Timeline/Timeline.tsx": 1 },
         "status": { "components/Timeline/Timeline.tsx": 1 }
       }
+    },
+    {
+      "name": "form",
+      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
+      "propsWithCallSites": { "onSubmit": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 } }
+    },
+    {
+      "name": "QRCode",
+      "sourceFile": "components/TotpSetupModal/qrcode.react/QRCode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "size": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 },
+        "level": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 },
+        "value": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 }
+      }
+    },
+    {
+      "name": "Completed",
+      "sourceFile": "components/TotpSetupModal/components/Completed",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "text": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 } }
     },
     {
       "name": "FailMessage",
@@ -13317,32 +13343,6 @@
       "propsWithCallSites": { "ref": { "components/Withdrawal/WithdrawalsList.tsx": 1 } }
     },
     {
-      "name": "form",
-      "sourceFile": "components/TotpSetupModal/TotpSetupModal.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 },
-      "propsWithCallSites": { "onSubmit": { "components/TotpSetupModal/TotpSetupModal.tsx": 2 } }
-    },
-    {
-      "name": "QRCode",
-      "sourceFile": "components/TotpSetupModal/qrcode.react/QRCode",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "size": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 },
-        "level": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 },
-        "value": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "Completed",
-      "sourceFile": "components/TotpSetupModal/components/Completed",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "text": { "components/TotpSetupModal/TotpSetupModal.tsx": 1 } }
-    },
-    {
       "name": "DashboardLayout",
       "sourceFile": "components/Layouts/DashboardLayout",
       "totalInstances": 7,
@@ -13352,8 +13352,8 @@
         "scenes/Dashboard/Dashboard.tsx": 1,
         "scenes/Invoice/InvoiceScene.tsx": 1,
         "scenes/Orders/Orders.tsx": 1,
-        "scenes/Products/Products.tsx": 1,
         "scenes/PosSetup/PosSetup.tsx": 1,
+        "scenes/Products/Products.tsx": 1,
         "scenes/Settings/Settings.tsx": 1
       },
       "propsWithCallSites": {
@@ -13362,8 +13362,8 @@
           "scenes/Dashboard/Dashboard.tsx": 1,
           "scenes/Invoice/InvoiceScene.tsx": 1,
           "scenes/Orders/Orders.tsx": 1,
-          "scenes/Products/Products.tsx": 1,
           "scenes/PosSetup/PosSetup.tsx": 1,
+          "scenes/Products/Products.tsx": 1,
           "scenes/Settings/Settings.tsx": 1
         },
         "role": { "scenes/Settings/Settings.tsx": 1 }
@@ -13404,8 +13404,8 @@
         "scenes/Dashboard/Dashboard.tsx": 1,
         "scenes/Invoice/InvoiceScene.tsx": 1,
         "scenes/Orders/Orders.tsx": 1,
-        "scenes/Products/Products.tsx": 1,
         "scenes/PosSetup/PosSetup.tsx": 1,
+        "scenes/Products/Products.tsx": 1,
         "scenes/Settings/Settings.tsx": 1
       }
     },
@@ -13418,15 +13418,6 @@
         "scenes/Confirmation/Confirmation.tsx": 1,
         "scenes/ResendConfirmation/ResendConfirmation.tsx": 1,
         "scenes/static/Success/Success.tsx": 1
-      }
-    },
-    {
-      "name": "DownloadView",
-      "sourceFile": "components/AccountingReports/DownloadView",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "reportId": { "scenes/DownloadAccountingReport/DownloadAccountingReport.tsx": 1 }
       }
     },
     {
@@ -13492,6 +13483,15 @@
       "propsWithCallSites": { "user": { "scenes/Dashboard/Dashboard.tsx": 1 } }
     },
     {
+      "name": "DownloadView",
+      "sourceFile": "components/AccountingReports/DownloadView",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "reportId": { "scenes/DownloadAccountingReport/DownloadAccountingReport.tsx": 1 }
+      }
+    },
+    {
       "name": "SafeFormattedHtmlMessage",
       "sourceFile": "utils/i18n/SafeFormattedHtmlMessage",
       "totalInstances": 11,
@@ -13502,8 +13502,8 @@
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
         "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
         "scenes/TfaReset/components/TfaVerification.tsx": 1,
-        "scenes/Settings/components/CreateProApiKeyModal.tsx": 1,
-        "scenes/static/Integrate/Shopify.tsx": 1
+        "scenes/static/Integrate/Shopify.tsx": 1,
+        "scenes/Settings/components/CreateProApiKeyModal.tsx": 1
       }
     },
     {
@@ -13651,8 +13651,8 @@
         "scenes/Signin/Signin.tsx": 2,
         "components/ProductFlow/components/EditForm.tsx": 1,
         "scenes/Onboarding/components/TfaVerification.tsx": 1,
-        "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+        "scenes/TfaReset/components/TfaVerification.tsx": 1,
         "scenes/Settings/components/WebhookModal.tsx": 1,
         "scenes/Settings/components/WebhookSecretModal.tsx": 1,
         "scenes/Settings/components/WidgetOriginModal.tsx": 1
@@ -13663,8 +13663,8 @@
           "scenes/Signin/Signin.tsx": 2,
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WebhookSecretModal.tsx": 1,
           "scenes/Settings/components/WidgetOriginModal.tsx": 1
@@ -13674,8 +13674,8 @@
           "scenes/Signin/Signin.tsx": 2,
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WebhookSecretModal.tsx": 1,
           "scenes/Settings/components/WidgetOriginModal.tsx": 1
@@ -13685,8 +13685,8 @@
           "scenes/Signin/Signin.tsx": 2,
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
@@ -13695,8 +13695,8 @@
           "scenes/Signin/Signin.tsx": 1,
           "components/ProductFlow/components/EditForm.tsx": 1,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1,
           "scenes/Settings/components/WebhookModal.tsx": 1,
           "scenes/Settings/components/WidgetOriginModal.tsx": 1
         },
@@ -13704,21 +13704,21 @@
           "scenes/PointOfSale/PairingScreen.tsx": 1,
           "scenes/Signin/Signin.tsx": 2,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
-          "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1
+          "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1
         },
         "mb": {
           "scenes/PointOfSale/PairingScreen.tsx": 1,
           "scenes/Signin/Signin.tsx": 2,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
-          "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1
+          "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1
         },
         "type": {
           "scenes/Signin/Signin.tsx": 2,
           "scenes/Onboarding/components/TfaVerification.tsx": 1,
-          "scenes/TfaReset/components/TfaVerification.tsx": 1,
-          "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1
+          "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1,
+          "scenes/TfaReset/components/TfaVerification.tsx": 1
         },
         "maxLength": {
           "scenes/Signin/Signin.tsx": 1,
@@ -13785,16 +13785,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "NewProductButton",
-      "sourceFile": "scenes/Products/Products.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "scrollDirection": { "scenes/Products/Products.tsx": 1 },
-        "onClick": { "scenes/Products/Products.tsx": 1 }
-      }
-    },
-    {
       "name": "CopyableInput",
       "sourceFile": "components/CopyableInput",
       "totalInstances": 5,
@@ -13820,6 +13810,16 @@
           "scenes/Onboarding/components/TfaVerificationSetup.tsx": 1,
           "scenes/TfaReset/components/TfaVerification.tsx": 1
         }
+      }
+    },
+    {
+      "name": "NewProductButton",
+      "sourceFile": "scenes/Products/Products.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "scrollDirection": { "scenes/Products/Products.tsx": 1 },
+        "onClick": { "scenes/Products/Products.tsx": 1 }
       }
     },
     {
@@ -13921,6 +13921,85 @@
       "totalCallSites": 1
     },
     {
+      "name": "div",
+      "sourceFile": "scenes/ShopifyLink/ShopifyLink.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "form",
+      "sourceFile": "scenes/Signin/Signin.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "scenes/Signin/Signin.tsx": 3 },
+      "propsWithCallSites": { "onSubmit": { "scenes/Signin/Signin.tsx": 3 } }
+    },
+    {
+      "name": "AuthHelperText",
+      "sourceFile": "components/Layouts/AuthLayout/AuthHelperText",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": { "scenes/Signin/Signin.tsx": 4 }
+    },
+    {
+      "name": "AuthHelperLink",
+      "sourceFile": "components/Layouts/AuthLayout/AuthHelperLink",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "callSites": { "scenes/Signin/Signin.tsx": 5 },
+      "propsWithCallSites": {
+        "onClick": { "scenes/Signin/Signin.tsx": 3 },
+        "href": { "scenes/Signin/Signin.tsx": 2 }
+      }
+    },
+    {
+      "name": "AuthHelperExternalLink",
+      "sourceFile": "components/Layouts/AuthLayout/AuthHelperExternalLink",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "href": { "scenes/Signin/Signin.tsx": 1 } }
+    },
+    {
+      "name": "link",
+      "sourceFile": "scenes/Signin/Signin.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "href": { "scenes/Signin/Signin.tsx": 1 },
+        "rel": { "scenes/Signin/Signin.tsx": 1 }
+      }
+    },
+    {
+      "name": "meta",
+      "sourceFile": "scenes/Signin/Signin.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "name": { "scenes/Signin/Signin.tsx": 1 },
+        "content": { "scenes/Signin/Signin.tsx": 1 }
+      }
+    },
+    {
+      "name": "title",
+      "sourceFile": "scenes/Signin/Signin.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SigninWrapper",
+      "sourceFile": "scenes/Signin/Signin.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "setModal": { "scenes/Signin/Signin.tsx": 1 } }
+    },
+    {
+      "name": "TfaResetProcess",
+      "sourceFile": "scenes/TfaReset/components/TfaResetProcess",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "user": { "scenes/TfaReset/TfaReset.tsx": 1 } }
+    },
+    {
       "name": "ProfilePanel",
       "sourceFile": "scenes/Settings/components/ProfilePanel",
       "totalInstances": 1,
@@ -14017,85 +14096,6 @@
       "sourceFile": "components/LinkCoinbase/SettingsPanelUnlinked/LinkCoinbasePanel",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "div",
-      "sourceFile": "scenes/ShopifyLink/ShopifyLink.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "form",
-      "sourceFile": "scenes/Signin/Signin.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "scenes/Signin/Signin.tsx": 3 },
-      "propsWithCallSites": { "onSubmit": { "scenes/Signin/Signin.tsx": 3 } }
-    },
-    {
-      "name": "AuthHelperText",
-      "sourceFile": "components/Layouts/AuthLayout/AuthHelperText",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "callSites": { "scenes/Signin/Signin.tsx": 4 }
-    },
-    {
-      "name": "AuthHelperLink",
-      "sourceFile": "components/Layouts/AuthLayout/AuthHelperLink",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "callSites": { "scenes/Signin/Signin.tsx": 5 },
-      "propsWithCallSites": {
-        "onClick": { "scenes/Signin/Signin.tsx": 3 },
-        "href": { "scenes/Signin/Signin.tsx": 2 }
-      }
-    },
-    {
-      "name": "AuthHelperExternalLink",
-      "sourceFile": "components/Layouts/AuthLayout/AuthHelperExternalLink",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "href": { "scenes/Signin/Signin.tsx": 1 } }
-    },
-    {
-      "name": "link",
-      "sourceFile": "scenes/Signin/Signin.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": { "scenes/Signin/Signin.tsx": 1 },
-        "rel": { "scenes/Signin/Signin.tsx": 1 }
-      }
-    },
-    {
-      "name": "meta",
-      "sourceFile": "scenes/Signin/Signin.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "name": { "scenes/Signin/Signin.tsx": 1 },
-        "content": { "scenes/Signin/Signin.tsx": 1 }
-      }
-    },
-    {
-      "name": "title",
-      "sourceFile": "scenes/Signin/Signin.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SigninWrapper",
-      "sourceFile": "scenes/Signin/Signin.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "setModal": { "scenes/Signin/Signin.tsx": 1 } }
-    },
-    {
-      "name": "TfaResetProcess",
-      "sourceFile": "scenes/TfaReset/components/TfaResetProcess",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "user": { "scenes/TfaReset/TfaReset.tsx": 1 } }
     },
     {
       "name": "div",
@@ -14645,6 +14645,36 @@
       }
     },
     {
+      "name": "form",
+      "sourceFile": "scenes/ResetPassword/components/CompletePasswordReset.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onSubmit": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1 }
+      }
+    },
+    {
+      "name": "b",
+      "sourceFile": "scenes/ResetPassword/components/CompletePasswordReset.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "form",
+      "sourceFile": "scenes/ResetPassword/components/RequestPasswordReset.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onSubmit": { "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1 }
+      }
+    },
+    {
+      "name": "AuthCenteredFooter",
+      "sourceFile": "components/Layouts/AuthLayout/AuthCenteredFooter",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "TfaVerification",
       "sourceFile": "scenes/TfaReset/components/TfaVerification",
       "totalInstances": 1,
@@ -14700,36 +14730,6 @@
         "level": { "scenes/TfaReset/components/TfaVerification.tsx": 1 },
         "value": { "scenes/TfaReset/components/TfaVerification.tsx": 1 }
       }
-    },
-    {
-      "name": "form",
-      "sourceFile": "scenes/ResetPassword/components/CompletePasswordReset.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onSubmit": { "scenes/ResetPassword/components/CompletePasswordReset.tsx": 1 }
-      }
-    },
-    {
-      "name": "b",
-      "sourceFile": "scenes/ResetPassword/components/CompletePasswordReset.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "form",
-      "sourceFile": "scenes/ResetPassword/components/RequestPasswordReset.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onSubmit": { "scenes/ResetPassword/components/RequestPasswordReset.tsx": 1 }
-      }
-    },
-    {
-      "name": "AuthCenteredFooter",
-      "sourceFile": "components/Layouts/AuthLayout/AuthCenteredFooter",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "StaticLayout",
@@ -14803,6 +14803,290 @@
       "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": { "scenes/static/Faq/Faq.tsx": 2 }
+    },
+    {
+      "name": "link",
+      "sourceFile": "scenes/static/Integrate/Integrate.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "href": { "scenes/static/Integrate/Integrate.tsx": 1 },
+        "rel": { "scenes/static/Integrate/Integrate.tsx": 1 }
+      }
+    },
+    {
+      "name": "meta",
+      "sourceFile": "scenes/static/Integrate/Integrate.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "name": { "scenes/static/Integrate/Integrate.tsx": 1 },
+        "content": { "scenes/static/Integrate/Integrate.tsx": 1 }
+      }
+    },
+    {
+      "name": "title",
+      "sourceFile": "scenes/static/Integrate/Integrate.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "IntegrationCardComponent",
+      "sourceFile": "scenes/static/Integrate/IntegrationCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "innerRef": { "scenes/static/Integrate/IntegrationCard.tsx": 1 } }
+    },
+    {
+      "name": "IntegrationDetailSidebar",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "meta": { "scenes/static/Integrate/IntegrationDetail.tsx": 1 } }
+    },
+    {
+      "name": "IntegrationDetailFooter",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "IntegrationCarousel",
+      "sourceFile": "scenes/static/Integrate/IntegrationCarousel",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "img",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 },
+      "propsWithCallSites": {
+        "src": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 },
+        "alt": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 },
+        "width": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 },
+        "height": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "tbody",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "a",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "href": { "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1 },
+        "target": { "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1 },
+        "rel": { "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1 }
+      }
+    },
+    {
+      "name": "IntegrationDetail",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetail",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "scenes/static/Integrate/Shopify.tsx": 1,
+        "scenes/static/Integrate/WooCommerce.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "scenes/static/Integrate/Shopify.tsx": 1,
+          "scenes/static/Integrate/WooCommerce.tsx": 1
+        },
+        "isInModalView": {
+          "scenes/static/Integrate/Shopify.tsx": 1,
+          "scenes/static/Integrate/WooCommerce.tsx": 1
+        },
+        "meta": { "scenes/static/Integrate/WooCommerce.tsx": 1 }
+      }
+    },
+    {
+      "name": "link",
+      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "href": { "scenes/static/Integrate/Shopify.tsx": 1 },
+        "rel": { "scenes/static/Integrate/Shopify.tsx": 1 }
+      }
+    },
+    {
+      "name": "meta",
+      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "name": { "scenes/static/Integrate/Shopify.tsx": 1 },
+        "content": { "scenes/static/Integrate/Shopify.tsx": 1 }
+      }
+    },
+    {
+      "name": "title",
+      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Header",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetail/Header",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "scenes/static/Integrate/Shopify.tsx": 1,
+        "scenes/static/Integrate/WooCommerce.tsx": 1
+      }
+    },
+    {
+      "name": "Subheader",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetail/Subheader",
+      "totalInstances": 7,
+      "totalCallSites": 2,
+      "callSites": {
+        "scenes/static/Integrate/Shopify.tsx": 2,
+        "scenes/static/Integrate/WooCommerce.tsx": 5
+      }
+    },
+    {
+      "name": "li",
+      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Integrate/Shopify.tsx": 5 }
+    },
+    {
+      "name": "link",
+      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "href": { "scenes/static/Integrate/WooCommerce.tsx": 1 },
+        "rel": { "scenes/static/Integrate/WooCommerce.tsx": 1 }
+      }
+    },
+    {
+      "name": "meta",
+      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "name": { "scenes/static/Integrate/WooCommerce.tsx": 1 },
+        "content": { "scenes/static/Integrate/WooCommerce.tsx": 1 }
+      }
+    },
+    {
+      "name": "title",
+      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Text",
+      "sourceFile": "scenes/static/Integrate/IntegrationDetail/Text",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Integrate/WooCommerce.tsx": 2 }
+    },
+    {
+      "name": "ol",
+      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Integrate/WooCommerce.tsx": 3 }
+    },
+    {
+      "name": "li",
+      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
+      "totalInstances": 9,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Integrate/WooCommerce.tsx": 9 }
+    },
+    {
+      "name": "LegacyStaticLayout",
+      "sourceFile": "scenes/static/StaticLayout/LegacyStaticLayout",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "meta",
+      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "name": { "scenes/static/Jaxx/Jaxx.tsx": 1 },
+        "content": { "scenes/static/Jaxx/Jaxx.tsx": 1 }
+      }
+    },
+    {
+      "name": "link",
+      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "href": { "scenes/static/Jaxx/Jaxx.tsx": 1 },
+        "rel": { "scenes/static/Jaxx/Jaxx.tsx": 1 }
+      }
+    },
+    {
+      "name": "title",
+      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "h1",
+      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "h2",
+      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "p",
+      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
+      "totalInstances": 10,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Jaxx/Jaxx.tsx": 10 }
+    },
+    {
+      "name": "b",
+      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Jaxx/Jaxx.tsx": 3 }
+    },
+    {
+      "name": "h3",
+      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
+      "totalInstances": 6,
+      "totalCallSites": 1,
+      "callSites": { "scenes/static/Jaxx/Jaxx.tsx": 6 }
+    },
+    {
+      "name": "StaticNavbar",
+      "sourceFile": "scenes/static/StaticLayout/StaticNavbar/index",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "scenes/static/StaticLayout/LegacyStaticLayout.tsx": 1,
+        "scenes/static/StaticLayout/StaticLayout.tsx": 1
+      }
     },
     {
       "name": "BusinessName",
@@ -15366,290 +15650,6 @@
       "propsWithCallSites": {
         "store": { "scenes/Settings/components/WidgetOriginsPanel.tsx": 1 },
         "close": { "scenes/Settings/components/WidgetOriginsPanel.tsx": 1 }
-      }
-    },
-    {
-      "name": "link",
-      "sourceFile": "scenes/static/Integrate/Integrate.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": { "scenes/static/Integrate/Integrate.tsx": 1 },
-        "rel": { "scenes/static/Integrate/Integrate.tsx": 1 }
-      }
-    },
-    {
-      "name": "meta",
-      "sourceFile": "scenes/static/Integrate/Integrate.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "name": { "scenes/static/Integrate/Integrate.tsx": 1 },
-        "content": { "scenes/static/Integrate/Integrate.tsx": 1 }
-      }
-    },
-    {
-      "name": "title",
-      "sourceFile": "scenes/static/Integrate/Integrate.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "IntegrationCardComponent",
-      "sourceFile": "scenes/static/Integrate/IntegrationCard.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "innerRef": { "scenes/static/Integrate/IntegrationCard.tsx": 1 } }
-    },
-    {
-      "name": "IntegrationDetailSidebar",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "meta": { "scenes/static/Integrate/IntegrationDetail.tsx": 1 } }
-    },
-    {
-      "name": "IntegrationDetailFooter",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "IntegrationCarousel",
-      "sourceFile": "scenes/static/Integrate/IntegrationCarousel",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "img",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailFooter.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 },
-      "propsWithCallSites": {
-        "src": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 },
-        "alt": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 },
-        "width": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 },
-        "height": { "scenes/static/Integrate/IntegrationDetailFooter.tsx": 3 }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "tbody",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "a",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetailSidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": { "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1 },
-        "target": { "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1 },
-        "rel": { "scenes/static/Integrate/IntegrationDetailSidebar.tsx": 1 }
-      }
-    },
-    {
-      "name": "IntegrationDetail",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetail",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "scenes/static/Integrate/Shopify.tsx": 1,
-        "scenes/static/Integrate/WooCommerce.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": {
-          "scenes/static/Integrate/Shopify.tsx": 1,
-          "scenes/static/Integrate/WooCommerce.tsx": 1
-        },
-        "isInModalView": {
-          "scenes/static/Integrate/Shopify.tsx": 1,
-          "scenes/static/Integrate/WooCommerce.tsx": 1
-        },
-        "meta": { "scenes/static/Integrate/WooCommerce.tsx": 1 }
-      }
-    },
-    {
-      "name": "link",
-      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": { "scenes/static/Integrate/Shopify.tsx": 1 },
-        "rel": { "scenes/static/Integrate/Shopify.tsx": 1 }
-      }
-    },
-    {
-      "name": "meta",
-      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "name": { "scenes/static/Integrate/Shopify.tsx": 1 },
-        "content": { "scenes/static/Integrate/Shopify.tsx": 1 }
-      }
-    },
-    {
-      "name": "title",
-      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Header",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetail/Header",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "scenes/static/Integrate/Shopify.tsx": 1,
-        "scenes/static/Integrate/WooCommerce.tsx": 1
-      }
-    },
-    {
-      "name": "Subheader",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetail/Subheader",
-      "totalInstances": 7,
-      "totalCallSites": 2,
-      "callSites": {
-        "scenes/static/Integrate/Shopify.tsx": 2,
-        "scenes/static/Integrate/WooCommerce.tsx": 5
-      }
-    },
-    {
-      "name": "li",
-      "sourceFile": "scenes/static/Integrate/Shopify.tsx",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Integrate/Shopify.tsx": 5 }
-    },
-    {
-      "name": "link",
-      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": { "scenes/static/Integrate/WooCommerce.tsx": 1 },
-        "rel": { "scenes/static/Integrate/WooCommerce.tsx": 1 }
-      }
-    },
-    {
-      "name": "meta",
-      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "name": { "scenes/static/Integrate/WooCommerce.tsx": 1 },
-        "content": { "scenes/static/Integrate/WooCommerce.tsx": 1 }
-      }
-    },
-    {
-      "name": "title",
-      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Text",
-      "sourceFile": "scenes/static/Integrate/IntegrationDetail/Text",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Integrate/WooCommerce.tsx": 2 }
-    },
-    {
-      "name": "ol",
-      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Integrate/WooCommerce.tsx": 3 }
-    },
-    {
-      "name": "li",
-      "sourceFile": "scenes/static/Integrate/WooCommerce.tsx",
-      "totalInstances": 9,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Integrate/WooCommerce.tsx": 9 }
-    },
-    {
-      "name": "LegacyStaticLayout",
-      "sourceFile": "scenes/static/StaticLayout/LegacyStaticLayout",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "meta",
-      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "name": { "scenes/static/Jaxx/Jaxx.tsx": 1 },
-        "content": { "scenes/static/Jaxx/Jaxx.tsx": 1 }
-      }
-    },
-    {
-      "name": "link",
-      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": { "scenes/static/Jaxx/Jaxx.tsx": 1 },
-        "rel": { "scenes/static/Jaxx/Jaxx.tsx": 1 }
-      }
-    },
-    {
-      "name": "title",
-      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "h1",
-      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "h2",
-      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "p",
-      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
-      "totalInstances": 10,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Jaxx/Jaxx.tsx": 10 }
-    },
-    {
-      "name": "b",
-      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Jaxx/Jaxx.tsx": 3 }
-    },
-    {
-      "name": "h3",
-      "sourceFile": "scenes/static/Jaxx/Jaxx.tsx",
-      "totalInstances": 6,
-      "totalCallSites": 1,
-      "callSites": { "scenes/static/Jaxx/Jaxx.tsx": 6 }
-    },
-    {
-      "name": "StaticNavbar",
-      "sourceFile": "scenes/static/StaticLayout/StaticNavbar/index",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "scenes/static/StaticLayout/LegacyStaticLayout.tsx": 1,
-        "scenes/static/StaticLayout/StaticLayout.tsx": 1
       }
     },
     {
