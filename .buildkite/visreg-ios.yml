@@ -15,7 +15,7 @@ steps:
     artifact_paths:
       - 'apps/mobile-playground/artifacts/**/*'
 
-  - label: 'Visreg Test (iOS) %n'
+  - label: 'Visreg Test (iOS) %N'
     key: 'visreg_ios'
     depends_on: 'visreg_ios_prebuild'
     parallelism: 8

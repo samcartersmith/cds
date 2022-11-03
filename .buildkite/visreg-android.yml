@@ -76,7 +76,7 @@ steps:
     commands:
       - tools/ci/visreg.sh android build
 
-  - label: 'Visreg Test (Android) %n'
+  - label: 'Visreg Test (Android) %N'
     <<: *visreg_android_shared
     depends_on: 'visreg_android_prebuild'
     key: 'visreg_android'
