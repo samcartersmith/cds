@@ -4,6 +4,7 @@ import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { tileSize } from '@cbhq/cds-common/tokens/tile';
 import { SharedProps, TileBaseProps } from '@cbhq/cds-common/types';
+import { isDevelopment } from '@cbhq/cds-utils';
 
 import { focusVisibleClassName, insetFocusRing } from '../styles/focus';
 import { Pressable, PressableInternalProps } from '../system/Pressable';
@@ -38,6 +39,13 @@ export const TileButton = memo(
     { pictogram, title, count, ...props }: TileButtonProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) {
+    if (isDevelopment() && title.trim() === '') {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'Setting an empty title in TileButton violates accessibility and CDS usage guidelines.',
+      );
+    }
+
     const [shouldOverflow, toggleShouldOverflow] = useToggler(false);
 
     const handleShowOverflow = useCallback(() => {

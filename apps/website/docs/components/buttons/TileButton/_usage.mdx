@@ -1,5 +1,11 @@
 `TileButton`s are a pressable layout component that displays a Pictogram with a Title. The Title will reveal truncated text on hover.
 
+:::tip Accessibility tip
+
+To ensure your `TileButton` implementation is accessible, the Title must contain text. Do not set the `title` prop with an empty string.
+
+:::
+
 ```jsx live
 function TileButtonExample() {
   function NoopFn() {
