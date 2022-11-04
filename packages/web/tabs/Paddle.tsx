@@ -10,7 +10,7 @@ import {
   paddleVisible,
 } from '@cbhq/cds-common/animation/paddle';
 import { durations } from '@cbhq/cds-common/motion/tokens';
-import { tabsPaddleSpacing } from '@cbhq/cds-common/tokens/tabs';
+import { tabsPaddleSpacing, tabsPaddleWidth } from '@cbhq/cds-common/tokens/tabs';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { IconButton } from '../buttons/IconButton';
@@ -34,7 +34,7 @@ export const paddleStaticClassName = 'cds-paddle';
 const gradientClassName = css`
   &.${gradientStaticClassName} {
     &.${paddleStaticClassName} {
-      width: calc(80px + ${spacing[tabsPaddleSpacing]});
+      width: calc(${tabsPaddleWidth}px + ${spacing[tabsPaddleSpacing]});
     }
   }
 `;

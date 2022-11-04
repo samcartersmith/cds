@@ -1,10 +1,12 @@
 import React, {
   createElement,
+  createRef,
   ForwardedRef,
   forwardRef,
   ForwardRefExoticComponent,
   memo,
   RefAttributes,
+  RefObject,
   useCallback,
   useEffect,
   useImperativeHandle,
@@ -15,6 +17,7 @@ import React, {
 import { css } from 'linaria';
 import { TabIndicatorProps, TabNavigationProps, TabProps, useToggler } from '@cbhq/cds-common';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
+import { tabsPaddleWidth } from '@cbhq/cds-common/tokens/tabs';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { noop } from '@cbhq/cds-utils';
 
@@ -30,6 +33,9 @@ import { TabIndicator } from './TabIndicator';
 import { TabLabel } from './TabLabel';
 
 const SCROLL_PADDING = 5; // How much breathing room do we want before showing the paddles
+const PRESS_TIMEOUT = 50;
+
+let scrollTimeout: number;
 const containerClassName = css`
   position: relative;
   display: flex;
@@ -142,9 +148,41 @@ export const TabNavigation = memo(
         [tabs, value],
       );
 
+      const getScrollIntoViewHandler = useCallback((ref: RefObject<HTMLElement>) => {
+        return function handleFocus() {
+          // Container
+          const container = scrollRef.current;
+          const containerScrollLeft = Number(container?.scrollLeft);
+          const containerWidth = Number(container?.getBoundingClientRect().width);
+          const containerRightEdge = containerWidth + Number(container?.scrollLeft);
+          // Element
+          const element = ref.current;
+          const elementWidth = Number(element?.clientWidth);
+          const elementOffsetLeft = Number(element?.offsetLeft);
+          // State
+          const isOffscreenLeft = elementOffsetLeft < containerScrollLeft + tabsPaddleWidth;
+          const isOffscreenRight =
+            elementOffsetLeft + elementWidth > containerRightEdge - tabsPaddleWidth;
+          // Set the new scroll location
+          let newPosition: number | undefined;
+          if (isOffscreenLeft) newPosition = elementOffsetLeft - tabsPaddleWidth;
+          if (isOffscreenRight)
+            newPosition = elementWidth + elementOffsetLeft + tabsPaddleWidth - containerWidth;
+
+          // SCROLL TO THE NEW POSITION
+          // Wrapped in a timeout so the scroll event doesn't fire before the press handler
+          scrollTimeout = setTimeout(() => {
+            if (newPosition && (isOffscreenLeft || isOffscreenRight)) {
+              container?.scrollTo({ left: newPosition, behavior: 'smooth' });
+            }
+          }, PRESS_TIMEOUT);
+        };
+      }, []);
+
       const getTabPressHandler = useCallback(
         (id: string, onPress: (id: string) => void) => {
-          return function handleTabPres() {
+          return function handleTabPress() {
+            clearTimeout(scrollTimeout);
             onChange(id);
             onPress?.(id); // handle callback
           };
@@ -181,6 +219,7 @@ export const TabNavigation = memo(
                 count,
                 testID: tabLabelTestID = `${testID}-tabLabel--${id}`,
               }) => {
+                const ref: RefObject<HTMLElement> = createRef();
                 return createElement(
                   PressableOpacityWithoutChildren,
                   {
@@ -189,14 +228,16 @@ export const TabNavigation = memo(
                     accessibilityLabel,
                     accessibilityHint: accessibilityLabel,
                     onPress: getTabPressHandler(id, onPress as (id: string) => void),
+                    onFocus: getScrollIntoViewHandler(ref),
                     className: cx(pressableClass, insetFocusRing),
                     testID: tabLabelTestID,
+                    ref,
                   },
                   getChildren({ id, count, label }),
                 );
               },
             ),
-        [tabs, testID, getTabPressHandler, getChildren],
+        [tabs, testID, getTabPressHandler, getScrollIntoViewHandler, getChildren],
       );
 
       return (
