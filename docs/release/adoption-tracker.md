@@ -4,7 +4,7 @@
 
 config - `packages/codegen/adoption/config.ts`
 
-script - `packages/codegen/adoption/prepare.ts`
+script - `packages/codegen/adoption/main.ts`
 
 parser - `packages/codegen/adoption/parsers/Parser.ts`
 

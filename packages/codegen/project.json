@@ -94,7 +94,7 @@
     "adoption": {
       "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "script": "./adoption/prepare.ts",
+        "script": "./adoption/main.ts",
         "NODE_OPTIONS": {
           "trace-deprecation": true,
           "abort-on-uncaught-exception": true,

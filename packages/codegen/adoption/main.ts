@@ -75,35 +75,39 @@ async function writeFiles(project: ProjectParser) {
   ]);
 }
 
-async function prepare() {
+async function generateAdoptionStats() {
+  await writeFile({
+    template: 'objectMap.ejs',
+    data: { adopters: adoptersWithPillar },
+    dest: `apps/website/data/adopters.ts`,
+  });
+  await writeFile({
+    template: 'objectMap.ejs',
+    data: { hiddenAdopters: hiddenAdoptersWithPillar },
+    dest: `apps/website/data/hidden-adopters.ts`,
+  });
+  // Required to for website sidebar.
+  await writeFile({
+    template: 'objectMap.ejs',
+    data: { adopters: adoptersSidebar },
+    dest: `apps/website/data/sidebar/adopters.js`,
+    config: { commonJS: true },
+  });
+  await Promise.all(
+    adopters.map(async (config) => {
+      const previousStats = await getPreviousStats(config.id);
+      const project = await new ProjectParser(config, previousStats).parse();
+      await writeFiles(project);
+    }),
+  );
+}
+
+async function main() {
   try {
     await preCleanup();
     await getTempRepos();
     // Required to associate adopters with their stats.json file for Adoption Overview page.
-    await writeFile({
-      template: 'objectMap.ejs',
-      data: { adopters: adoptersWithPillar },
-      dest: `apps/website/data/adopters.ts`,
-    });
-    await writeFile({
-      template: 'objectMap.ejs',
-      data: { hiddenAdopters: hiddenAdoptersWithPillar },
-      dest: `apps/website/data/hidden-adopters.ts`,
-    });
-    // Required to for website sidebar.
-    await writeFile({
-      template: 'objectMap.ejs',
-      data: { adopters: adoptersSidebar },
-      dest: `apps/website/data/sidebar/adopters.js`,
-      config: { commonJS: true },
-    });
-    await Promise.all(
-      adopters.map(async (config) => {
-        const previousStats = await getPreviousStats(config.id);
-        const project = await new ProjectParser(config, previousStats).parse();
-        await writeFiles(project);
-      }),
-    );
+    await generateAdoptionStats();
     cleanup();
   } catch (err) {
     if (err instanceof Error) {
@@ -115,4 +119,4 @@ async function prepare() {
   }
 }
 
-void prepare();
+void main();
