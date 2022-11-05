@@ -20,7 +20,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "cwd": "packages/codegen",
-        "commands": ["yarn ts-node ./stories/createIconStories.ts"],
+        "commands": ["yarn ts-node ./createIconStories/main.ts"],
         "parallel": false
       }
     },
@@ -28,7 +28,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "cwd": "packages/codegen",
-        "commands": ["yarn ts-node ./stories/createIllustrationStories.ts"],
+        "commands": ["yarn ts-node ./createIllustrationStories/main.ts"],
         "parallel": false
       }
     },

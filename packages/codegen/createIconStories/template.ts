@@ -1,4 +1,4 @@
-/**
+export const baseTemplate = `/**
  * DO NOT MODIFY
  * Generated from packages/codegen/createIconStories/main.ts
  */
@@ -23,11 +23,4 @@ const { IconSheet } = iconSheetBuilderWeb({
   Icon,
 } as CreateIconSheetParams);
 
-export const Sheet0 = () => IconSheet(0, 50);
-export const Sheet1 = () => IconSheet(50, 100);
-export const Sheet2 = () => IconSheet(100, 150);
-export const Sheet3 = () => IconSheet(150, 200);
-export const Sheet4 = () => IconSheet(200, 250);
-export const Sheet5 = () => IconSheet(250, 300);
-export const Sheet6 = () => IconSheet(300, 350);
-export const Sheet7 = () => IconSheet(350, 400);
+`;
