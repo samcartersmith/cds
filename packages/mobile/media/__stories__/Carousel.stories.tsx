@@ -2,6 +2,7 @@
 import React, { memo, useCallback, useMemo, useRef } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';
+import { svgs } from '@cbhq/cds-common/internal/data/assets';
 
 import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -16,8 +17,8 @@ import { RemoteImage } from '../RemoteImage';
 
 import { ProgressBarsExample } from './CarouselAlphaExample';
 
-const ExampleCarouselItem = memo(() => {
-  const { dismiss, id } = useCarouselItem();
+const ExampleCarouselItem = memo(({ svgId = 1 }: { svgId?: number }) => {
+  const { dismiss } = useCarouselItem();
   return (
     <Card spacing={2} onPress={() => dismiss()}>
       <TextLabel1 ellipsize="tail">Label</TextLabel1>
@@ -29,7 +30,7 @@ const ExampleCarouselItem = memo(() => {
         width={120}
         height={120}
         resizeMode="cover"
-        source={{ uri: `https://source.unsplash.com/120x120?bitcoin-${id}` }}
+        source={svgs[svgId]}
       />
     </Card>
   );
@@ -40,12 +41,12 @@ const SimpleExample = () => {
     <Example title="Carousel">
       <Carousel
         items={[
-          <ExampleCarouselItem key="item1" />,
-          <ExampleCarouselItem key="item2" />,
-          <ExampleCarouselItem key="item3" />,
-          <ExampleCarouselItem key="item4" />,
-          <ExampleCarouselItem key="item5" />,
-          <ExampleCarouselItem key="item6" />,
+          <ExampleCarouselItem key="item1" svgId={3} />,
+          <ExampleCarouselItem key="item2" svgId={2} />,
+          <ExampleCarouselItem key="item3" svgId={4} />,
+          <ExampleCarouselItem key="item4" svgId={2} />,
+          <ExampleCarouselItem key="item5" svgId={1} />,
+          <ExampleCarouselItem key="item6" svgId={2} />,
         ]}
       />
     </Example>
@@ -62,12 +63,12 @@ const UpdateOnMountExample = () => {
       <Carousel
         onReady={handleOnReady}
         items={[
-          <ExampleCarouselItem key="item1" />,
-          <ExampleCarouselItem key="item2" />,
-          <ExampleCarouselItem key="item3" />,
-          <ExampleCarouselItem key="item4" />,
-          <ExampleCarouselItem key="item5" />,
-          <ExampleCarouselItem key="item6" />,
+          <ExampleCarouselItem key="item1" svgId={4} />,
+          <ExampleCarouselItem key="item2" svgId={3} />,
+          <ExampleCarouselItem key="item3" svgId={2} />,
+          <ExampleCarouselItem key="item4" svgId={5} />,
+          <ExampleCarouselItem key="item5" svgId={2} />,
+          <ExampleCarouselItem key="item6" svgId={2} />,
         ]}
       />
     </Example>
@@ -86,12 +87,12 @@ const TriggerViaButton = () => {
       <Carousel
         carouselRef={carousel}
         items={[
-          <ExampleCarouselItem key="item1" />,
-          <ExampleCarouselItem key="item2" />,
-          <ExampleCarouselItem key="item3" />,
-          <ExampleCarouselItem key="item4" />,
-          <ExampleCarouselItem key="item5" />,
-          <ExampleCarouselItem key="item6" />,
+          <ExampleCarouselItem key="item1" svgId={1} />,
+          <ExampleCarouselItem key="item2" svgId={2} />,
+          <ExampleCarouselItem key="item3" svgId={3} />,
+          <ExampleCarouselItem key="item4" svgId={4} />,
+          <ExampleCarouselItem key="item5" svgId={5} />,
+          <ExampleCarouselItem key="item6" svgId={2} />,
         ]}
       />
     </Example>

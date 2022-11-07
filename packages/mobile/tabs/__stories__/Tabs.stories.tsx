@@ -35,7 +35,6 @@ const tabs: TabProps[] = [
 // TODO update once _Tabs_ component is complete
 const TabScreen = () => {
   const [activeTabOne, setActiveTabOne] = useState<TabNavigationProps['value']>(tabs[0].id);
-  const [activeTabTwo, setActiveTabTwo] = useState<TabNavigationProps['value']>(tabs[1].id);
 
   return (
     <ExampleScreen>
@@ -54,8 +53,8 @@ const TabScreen = () => {
       <Example title="Tab System (Secondary)" spacing={gutter} overflow="visible">
         <TabNavigation
           variant="secondary"
-          value={activeTabTwo}
-          onChange={setActiveTabTwo}
+          value={activeTabOne}
+          onChange={setActiveTabOne}
           tabs={tabs}
         />
         <VStack
@@ -65,7 +64,7 @@ const TabScreen = () => {
           spacingVertical={6}
         >
           <TextLabel1>Static preview</TextLabel1>
-          <TextTitle2 color="primary">{activeTabTwo}</TextTitle2>
+          <TextTitle2 color="primary">{activeTabOne}</TextTitle2>
         </VStack>
       </Example>
     </ExampleScreen>

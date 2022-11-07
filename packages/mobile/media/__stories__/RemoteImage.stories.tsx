@@ -1,5 +1,5 @@
 import React from 'react';
-import { assets, svgs } from '@cbhq/cds-common/internal/data/assets';
+import { assets, squareAssets, svgs } from '@cbhq/cds-common/internal/data/assets';
 import { remoteImageBuilder } from '@cbhq/cds-common/internal/remoteImageBuilder';
 import { entries } from '@cbhq/cds-utils';
 
@@ -49,12 +49,7 @@ const RemoteImageScreen = () => {
           {mockItems.map((_, idx) => {
             const key = `square-${idx}`;
             return (
-              <RemoteImage
-                key={key}
-                source={getSource(`https://source.unsplash.com/120x120?beach-${idx}`)}
-                {...sharedProps}
-                shape="square"
-              />
+              <RemoteImage key={key} source={squareAssets.human2} {...sharedProps} shape="square" />
             );
           })}
         </HStack>
@@ -63,13 +58,7 @@ const RemoteImageScreen = () => {
         <HStack gap={2}>
           {mockItems.map((_, idx) => {
             const key = `circle-${idx}`;
-            return (
-              <RemoteImage
-                key={key}
-                source={getSource(`https://source.unsplash.com/120x120?avatar-${idx}`)}
-                {...sharedProps}
-              />
-            );
+            return <RemoteImage key={key} source={squareAssets.human1} {...sharedProps} />;
           })}
         </HStack>
       </Example>
@@ -80,7 +69,7 @@ const RemoteImageScreen = () => {
             return (
               <RemoteImage
                 key={key}
-                source={getSource(`https://source.unsplash.com/120x120?user-${idx}`)}
+                source={squareAssets.human3}
                 {...sharedProps}
                 shape="squircle"
               />
