@@ -1,5 +1,4 @@
 {
-  "root": "packages/docusaurus-plugin-kbar",
   "sourceRoot": "packages/docusaurus-plugin-kbar",
   "projectType": "library",
   "targets": {
@@ -8,7 +7,7 @@
       "outputs": ["{projectRoot}/lib"]
     },
     "watch": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/docusaurus-plugin-kbar",
         "commands": ["yarn docusaurus-plugin watch"]

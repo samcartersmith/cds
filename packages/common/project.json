@@ -1,5 +1,4 @@
 {
-  "root": "packages/common",
   "sourceRoot": "packages/common",
   "projectType": "library",
   "tags": [],
@@ -21,7 +20,7 @@
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
-      "outputs": [".nx/dist/packages/common"],
+      "outputs": ["{workspaceRoot}/.nx/dist/packages/common"],
       "options": {
         "destinationDir": ".nx/dist/packages/common",
         "staticFilesToIgnore": [

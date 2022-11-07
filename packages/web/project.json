@@ -1,5 +1,4 @@
 {
-  "root": "packages/web",
   "sourceRoot": "packages/web",
   "projectType": "library",
   "tags": [],
@@ -21,7 +20,7 @@
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
-      "outputs": [".nx/dist/packages/web"],
+      "outputs": ["{workspaceRoot}/.nx/dist/packages/web"],
       "options": {
         "destinationDir": ".nx/dist/packages/web",
         "staticFilesToIgnore": [
@@ -48,7 +47,7 @@
     },
     "build-esm": {
       "executor": "@cbhq/cds-tools:build-package-esm",
-      "outputs": [".nx/dist/packages/web-esm"],
+      "outputs": ["{workspaceRoot}/.nx/dist/packages/web-esm"],
       "options": {
         "destinationDir": ".nx/dist/packages/web-esm",
         "staticFilesToIgnore": [
@@ -77,7 +76,7 @@
     },
     "build-css": {
       "executor": "@cbhq/cds-tools:build-css",
-      "outputs": [".nx/dist/cloud/css"],
+      "outputs": ["{workspaceRoot}/.nx/dist/cloud/css"],
       "options": {
         "fontsOutputDir": ".nx/dist/packages/fonts",
         "webOutputDir": ".nx/dist/packages/web",

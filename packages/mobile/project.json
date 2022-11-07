@@ -1,5 +1,4 @@
 {
-  "root": "packages/mobile",
   "sourceRoot": "packages/mobile",
   "projectType": "library",
   "tags": [],
@@ -22,7 +21,7 @@
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
-      "outputs": [".nx/dist/packages/mobile"],
+      "outputs": ["{workspaceRoot}/.nx/dist/packages/mobile"],
       "options": {
         "destinationDir": ".nx/dist/packages/mobile",
         "staticFilesToIgnore": [

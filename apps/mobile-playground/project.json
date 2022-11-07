@@ -1,5 +1,4 @@
 {
-  "root": "apps/mobile-playground",
   "sourceRoot": "apps/mobile-playground/src",
   "projectType": "application",
   "targets": {
@@ -32,7 +31,7 @@
       "executor": "@cbhq/mono-tasks:typecheck"
     },
     "visreg": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           "buildkite-agent pipeline upload .buildkite/visreg-ios.yml",
@@ -44,7 +43,7 @@
     },
     "build-ios-e2e": {
       "executor": "@cbhq/mono-tasks-mobile:build-ios",
-      "outputs": ["ios/build"],
+      "outputs": ["{projectRoot}/ios/build"],
       "options": {
         "buildType": "e2e",
         "detoxConfig": "ios.release"
@@ -74,7 +73,7 @@
     },
     "build-android-e2e": {
       "executor": "@cbhq/mono-tasks-mobile:build-android",
-      "outputs": ["android/build", "android/app/build"],
+      "outputs": ["{projectRoot}/android/build", "{projectRoot}/android/app/build"],
       "options": {
         "buildType": "e2e",
         "clean": true,
@@ -110,7 +109,7 @@
       "dependsOn": ["^build"]
     },
     "android-e2e-emulator": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose 'system-images;android-30;default;x86_64'",

@@ -1,4 +1,4 @@
-import React, { ComponentType, useCallback } from 'react';
+import React, { ComponentType, ReactElement, useCallback } from 'react';
 
 import { LinkBaseProps } from '../types';
 import { BannerBaseProps } from '../types/BannerBaseProps';
@@ -54,7 +54,7 @@ export function bannerBuilder(
     showVariations = true,
   }: {
     title: string;
-    children: React.ReactNode;
+    children: ReactElement<Partial<BannerBaseProps>>;
     gap?: SpacingScale;
     showVariations?: boolean;
   }) => {

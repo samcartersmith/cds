@@ -1,4 +1,4 @@
-import { entries } from '@cbhq/cds-utils/object';
+import { entries } from 'lodash';
 
 /**
  * Works like linaria's css tagged template function.

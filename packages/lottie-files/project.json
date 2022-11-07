@@ -1,5 +1,4 @@
 {
-  "root": "packages/lottie-files",
   "sourceRoot": "packages/lottie-files",
   "projectType": "library",
   "tags": [],
@@ -15,7 +14,7 @@
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
-      "outputs": [".nx/dist/packages/lottie-files"],
+      "outputs": ["{workspaceRoot}/.nx/dist/packages/lottie-files"],
       "options": {
         "destinationDir": ".nx/dist/packages/lottie-files",
         "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],

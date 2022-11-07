@@ -7,20 +7,6 @@
     "defaultCollection": "@nrwl/workspace",
     "packageManager": "yarn"
   },
-  "implicitDependencies": {
-    ".buildkite/*.yml": "*",
-    ".eslintrc.js": "*",
-    ".*ignore": "*",
-    "*.config.js": "*",
-    "nx.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
-    "tsconfig.json": "*",
-    "tsconfig.*.json": "*",
-    "workspace.json": "*"
-  },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
@@ -45,33 +31,43 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "start": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "lint": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "test": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "typecheck": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "workspaceLayout": {
     "appsDir": "apps",
     "libsDir": "packages"
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [
+      "{workspaceRoot}/.buildkite/*.yml",
+      "{workspaceRoot}/.eslintrc.js",
+      "{workspaceRoot}/.*ignore",
+      "{workspaceRoot}/*.config.js",
+      "{workspaceRoot}/nx.json",
+      "{workspaceRoot}/package.json",
+      "{workspaceRoot}/tsconfig.json",
+      "{workspaceRoot}/tsconfig.*.json",
+      "{workspaceRoot}/workspace.json"
+    ],
+    "production": ["default"]
   }
 }

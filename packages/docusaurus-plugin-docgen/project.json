@@ -1,5 +1,4 @@
 {
-  "root": "packages/docusaurus-plugin-docgen",
   "sourceRoot": "packages/docusaurus-plugin-docgen",
   "projectType": "library",
   "targets": {
@@ -8,14 +7,14 @@
       "outputs": ["{projectRoot}/lib"]
     },
     "debug": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/docusaurus-plugin-docgen",
         "commands": ["node /lib/scripts/debug.js"]
       }
     },
     "watch": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/docusaurus-plugin-docgen",
         "commands": ["yarn docusaurus-plugin watch"]

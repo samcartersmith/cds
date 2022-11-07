@@ -1,5 +1,4 @@
 {
-  "root": "packages/codegen",
   "sourceRoot": "packages/codegen",
   "projectType": "library",
   "implicitDependencies": ["!web", "!common", "!utils", "!web-utils"],
@@ -17,7 +16,7 @@
       "executor": "@cbhq/mono-tasks:typecheck"
     },
     "generate-icon-stories": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/codegen",
         "commands": ["yarn ts-node ./createIconStories/main.ts"],
@@ -25,7 +24,7 @@
       }
     },
     "generate-illustration-stories": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/codegen",
         "commands": ["yarn ts-node ./createIllustrationStories/main.ts"],
@@ -33,7 +32,7 @@
       }
     },
     "icons": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/codegen",
         "commands": [
@@ -46,7 +45,7 @@
       }
     },
     "illustrations": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/codegen",
         "commands": [
@@ -60,7 +59,7 @@
       }
     },
     "uploadToStaticAssets": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/codegen/illustrations",
         "commands": ["./uploadToStaticAssets.sh"],
@@ -81,7 +80,7 @@
       }
     },
     "mobile-routes": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/codegen",
         "commands": [

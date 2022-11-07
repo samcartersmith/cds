@@ -1,5 +1,4 @@
 {
-  "root": "apps/storybook",
   "sourceRoot": "apps/storybook",
   "projectType": "library",
   "tags": [],
@@ -37,7 +36,7 @@
       "dependsOn": ["build-for-tests"]
     },
     "serve-storybook": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "cwd": "apps/storybook",
       "options": {
         "commands": [
@@ -46,7 +45,7 @@
       }
     },
     "storybook-e2e-test": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "cwd": "apps/storybook",
       "options": {
         "commands": [

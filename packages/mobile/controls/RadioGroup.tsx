@@ -113,7 +113,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
       {...accessibilityProps}
     >
       {label}
-      {entries<RadioGroupProps<T>['options']>(options).map(([value, optionLabel]) => (
+      {entries<Record<T, string>>(options).map(([value, optionLabel]) => (
         <Radio<T>
           key={value}
           value={value}

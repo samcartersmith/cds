@@ -2,7 +2,7 @@ import { AnyObject, StringKey } from './types';
 
 export const emptyObject = {};
 
-export function entries<T>(item: T) {
+export function entries<T extends Record<string, unknown>>(item: T) {
   return Object.entries(item) as [keyof T, T[keyof T]][];
 }
 

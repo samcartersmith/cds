@@ -1,10 +1,9 @@
 {
-  "root": "packages/figma-api",
   "sourceRoot": "packages/figma-api/src",
   "projectType": "library",
   "targets": {
     "watch": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/figma-api",
         "command": "packemon watch --quiet --loadConfigs"
@@ -12,7 +11,7 @@
     },
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": ["dts", "lib"]
+      "outputs": ["{projectRoot}/dts", "{projectRoot}/lib"]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

@@ -1,5 +1,4 @@
 {
-  "root": "libs/figma-styles",
   "sourceRoot": "libs/figma-styles",
   "projectType": "library",
   "targets": {
@@ -10,7 +9,7 @@
       "executor": "@cbhq/mono-tasks:lint"
     },
     "sync": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "dependsOn": ["^build"],
       "options": {
         "cwd": "libs/figma-styles",
