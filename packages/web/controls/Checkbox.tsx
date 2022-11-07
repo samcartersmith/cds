@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo } from 'react';
+import { m as motion } from 'framer-motion';
 import { css } from 'linaria';
+import { curves, durations } from '@cbhq/cds-common/motion/tokens';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 
 import { Icon } from '../icons/Icon';
@@ -8,6 +10,7 @@ import { borderWidth, control, palette } from '../tokens';
 import { cx } from '../utils/linaria';
 
 import { Control, ControlProps } from './Control';
+import { useControlMotionProps } from './useControlMotionProps';
 
 export type CheckboxProps<T extends string> = ControlBaseProps<T> & ControlProps;
 
@@ -16,6 +19,11 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
   ref: React.ForwardedRef<HTMLInputElement>,
 ) {
   const { checked } = props;
+
+  const { outerContainerMotionProps, innerContainerMotionProps } = useControlMotionProps({
+    checked,
+  });
+
   return (
     <Control
       type="checkbox"
@@ -24,9 +32,16 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
       ref={ref}
       {...props}
     >
-      <div role="presentation" className={cx(checkbox, focusRing)} data-filled={checked}>
-        {checked && <Icon name="checkmark" size="s" color="primaryForeground" />}
-      </div>
+      <motion.div
+        role="presentation"
+        className={cx(checkbox, focusRing)}
+        data-filled={checked}
+        {...outerContainerMotionProps}
+      >
+        <motion.div {...innerContainerMotionProps}>
+          <Icon name="checkmark" size="s" color="primaryForeground" />
+        </motion.div>
+      </motion.div>
     </Control>
   );
 }) as <T extends string>(
@@ -47,14 +62,7 @@ const checkbox = css`
   align-items: center;
   justify-content: center;
 
-  background-color: ${palette.background};
-  border: ${borderWidth.checkbox} solid ${palette.lineHeavy};
-  transition: border-color 150ms ease-out;
-
-  &[data-filled='true'] {
-    background-color: ${palette.primary};
-    border-color: ${palette.primary};
-  }
+  border: ${borderWidth.checkbox} solid;
 `;
 
 const focusRing = css`
@@ -70,7 +78,7 @@ const focusRing = css`
     bottom: ${FOCUS_PADDING};
 
     opacity: 0;
-    transition: opacity 100ms ease-out;
+    transition: opacity ${durations.fast1}ms cubic-bezier(${curves.enterFunctional.join(',')});
   }
 
   /* for control inputs */

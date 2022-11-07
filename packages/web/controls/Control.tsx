@@ -35,7 +35,7 @@ const interactableContainer = css`
   width: fit-content;
   position: relative;
 
-  // turn off control input opacity for hiddent control in interactable
+  // turn off control input opacity for hidden control in interactable
   &:active,
   &:visited,
   &:focus,

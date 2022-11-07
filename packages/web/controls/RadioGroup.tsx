@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo, useCallback } from 'react';
+import { m as motion } from 'framer-motion';
 import { css } from 'linaria';
 import { SharedProps } from '@cbhq/cds-common';
+import { curves, durations } from '@cbhq/cds-common/motion/tokens';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
 
@@ -12,6 +14,7 @@ import { FilteredHTMLAttributes } from '../types';
 import { cx } from '../utils/linaria';
 
 import { Control, ControlProps } from './Control';
+import { useControlMotionProps } from './useControlMotionProps';
 
 export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps;
 
@@ -20,6 +23,11 @@ const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
   ref: React.ForwardedRef<HTMLInputElement>,
 ) {
   const { checked = false } = props;
+  const { outerContainerMotionProps, innerContainerMotionProps } = useControlMotionProps({
+    checked,
+    shouldAnimateBackground: false,
+  });
+
   return (
     <Control
       type="radio"
@@ -29,9 +37,16 @@ const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
       borderRadius="round"
       {...props}
     >
-      <div role="presentation" className={cx(radio, focusRing)} data-filled={checked}>
-        {checked && <Icon name="dot" size="s" color="primary" />}
-      </div>
+      <motion.div
+        role="presentation"
+        className={cx(radio, focusRing)}
+        data-filled={checked}
+        {...outerContainerMotionProps}
+      >
+        <motion.div {...innerContainerMotionProps}>
+          {checked && <Icon name="dot" size="s" color="primary" />}
+        </motion.div>
+      </motion.div>
     </Control>
   );
 }) as <T extends string>(
@@ -105,12 +120,8 @@ const radio = css`
   justify-content: center;
 
   background-color: ${palette.background};
-  border: ${borderWidth.checkbox} solid ${palette.lineHeavy};
+  border: ${borderWidth.checkbox} solid;
   border-radius: ${borderRadius.round};
-  transition: border-color 150ms ease-out;
-  &[data-filled='true'] {
-    border-color: ${palette.primary};
-  }
 `;
 
 const focusRing = css`
@@ -126,7 +137,7 @@ const focusRing = css`
     bottom: ${FOCUS_PADDING};
 
     opacity: 0;
-    transition: opacity 100ms ease-out;
+    transition: opacity ${durations.fast1}ms cubic-bezier(${curves.enterFunctional.join(',')});
   }
 
   /* for control inputs */

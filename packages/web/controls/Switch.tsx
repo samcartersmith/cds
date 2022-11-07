@@ -1,20 +1,26 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo } from 'react';
+import { m as motion } from 'framer-motion';
 import { css } from 'linaria';
 import { switchPalette } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
+import { switchTransitionConfig } from '@cbhq/cds-common/motion/switch';
+import { curves, durations } from '@cbhq/cds-common/motion/tokens';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 
 import { Box } from '../layout/Box';
-import { round } from '../styles/borderRadius';
-import { level1 } from '../styles/elevation';
+import { convertTransition } from '../motion/utils';
+import { roundedFull } from '../styles/borderRadius';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { borderRadius, borderWidth, control, palette } from '../tokens';
 import { cx } from '../utils/linaria';
 
 import { Control, ControlProps } from './Control';
+import { useControlMotionProps } from './useControlMotionProps';
 
 export type SwitchProps = Omit<ControlBaseProps<string> & ControlProps, 'value'>;
+
+const MotionBox = motion(Box);
 
 const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchWithRef(
   { children, checked, ...props },
@@ -24,6 +30,11 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
   const thumbColor = useSpectrumConditional({
     light: primaryForegroundThumb,
     dark: foregroundThumb,
+  });
+
+  const { outerContainerMotionProps } = useControlMotionProps({
+    checked,
+    initialBackground: palette.backgroundAlternate,
   });
 
   const switchNode = (
@@ -37,17 +48,22 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
       checked={checked}
       {...props}
     >
-      <div className={cx(track, focusRing)} data-filled={checked}>
-        <div
-          className={cx(
-            thumb,
-            round,
-            // TODO (hannah): Once elevation design is ready, revisit this.
-            level1,
-            thumbColor,
-          )}
+      <motion.div
+        className={cx(track, focusRing)}
+        data-filled={checked}
+        {...outerContainerMotionProps}
+      >
+        <MotionBox
+          dangerouslySetClassName={cx(thumb, roundedFull, thumbColor)}
+          elevation={1}
+          /**
+           * Framer layout animation has better performance than CSS transforms
+           * more about layout animation https://www.framer.com/docs/layout-animations/
+           */
+          layout
+          transition={convertTransition(switchTransitionConfig)}
         />
-      </div>
+      </motion.div>
     </Control>
   );
 
@@ -74,34 +90,24 @@ export const Switch = memo(SwitchWithRef);
 const track = css`
   width: ${control.switchWidth};
   height: ${control.switchHeight};
-  border-radius: ${borderRadius.pill};
+  border-radius: ${borderRadius.roundedFull};
   flex-shrink: 0;
-  position: relative;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 1px;
 
-  background-color: ${palette.backgroundAlternate};
-  transition: background-color 150ms ease-out;
   &[data-filled='true'] {
-    background-color: ${palette.primary};
+    justify-content: flex-end;
   }
 `;
 
 const thumb = css`
   width: ${control.switchThumbSize};
   height: ${control.switchThumbSize};
-  position: absolute;
-  top: 1px;
-  left: 1px;
   background-color: ${palette.primaryForeground};
   border: 0.5 solid ${palette.line};
-
-  transition: transform 150ms ease-out;
-  [data-filled='true'] & {
-    transform: translateX(calc(${control.switchWidth} - ${control.switchThumbSize} - 2px));
-  }
 `;
 
 const primaryForegroundThumb = css`
@@ -115,11 +121,10 @@ const foregroundThumb = css`
 const FOCUS_PADDING = 4;
 
 const focusRing = css`
-  position: relative;
   &::after {
     content: '';
     border: ${borderWidth.focusRing} solid ${palette.primary};
-    border-radius: calc(${borderRadius.pill} + 2px);
+    border-radius: ${borderRadius.roundedFull};
     position: absolute;
     left: -${FOCUS_PADDING}px;
     top: -${FOCUS_PADDING}px;
@@ -127,7 +132,7 @@ const focusRing = css`
     bottom: -${FOCUS_PADDING}px;
 
     opacity: 0;
-    transition: opacity 100ms ease-out;
+    transition: opacity ${durations.fast1}ms cubic-bezier(${curves.enterFunctional.join(',')});
   }
 
   /* for control inputs */
