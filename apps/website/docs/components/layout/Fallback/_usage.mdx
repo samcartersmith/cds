@@ -44,3 +44,28 @@ render(<RenderFallbacksInList />);
 ```
 
 :::
+
+Here is an example of how to use dangerouslySetIterations.
+
+```jsx noInline
+function DangerouslySetIterations() {
+  return <Fallback width={150} height={30} dangerouslySetIterations={30} />;
+}
+```
+
+:::danger DangerouslySetIterations
+
+On mobile, Fallback loops for 10 times and stops animating after that. We do
+this for performance reasons, and anything that loads for more than 10s should
+not go to production anyways.
+
+<br />
+
+On web, it doesn't have this restriction. With that said, if something is loading for more than 10s, you should seriously re-consider the architecture.
+
+<br />
+
+If you truly need the animation to exceed more than 10s on mobile, here is an escape hatch.
+
+<br />
+:::

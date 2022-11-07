@@ -2,13 +2,14 @@ import React, { memo } from 'react';
 import { ContentCellFallbackProps } from '@cbhq/cds-common';
 import { getRectWidthVariant } from '@cbhq/cds-common/utils/getRectWidthVariant';
 
-import { Fallback } from '../layout';
+import { Fallback, FallbackProps } from '../layout';
 import { useLineHeightMap } from '../typography/useLineHeightMap';
 
 import { ContentCell } from './ContentCell';
 import { MediaFallback } from './MediaFallback';
 
-export type { ContentCellFallbackProps };
+export type ContentCellFallbackMobileProps = Pick<FallbackProps, 'dangerouslySetIterations'> &
+  ContentCellFallbackProps;
 
 export const ContentCellFallback = memo(function ContentCellFallback({
   title,
@@ -18,7 +19,8 @@ export const ContentCellFallback = memo(function ContentCellFallback({
   subtitle,
   disableRandomRectWidth,
   rectWidthVariant,
-}: ContentCellFallbackProps) {
+  dangerouslySetIterations = 10,
+}: ContentCellFallbackMobileProps) {
   const lineHeight = useLineHeightMap();
 
   return (
@@ -29,17 +31,23 @@ export const ContentCellFallback = memo(function ContentCellFallback({
             height={lineHeight.body}
             width={110}
             spacingTop={0.5}
+            dangerouslySetIterations={dangerouslySetIterations}
             disableRandomRectWidth={disableRandomRectWidth}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 0)}
           />
         )
       }
-      media={media ? <MediaFallback type={media} /> : undefined}
+      media={
+        media ? (
+          <MediaFallback dangerouslySetIterations={dangerouslySetIterations} type={media} />
+        ) : undefined
+      }
       meta={
         meta && (
           <Fallback
             height={lineHeight.label2}
             width={50}
+            dangerouslySetIterations={dangerouslySetIterations}
             disableRandomRectWidth={disableRandomRectWidth}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 1)}
           />
@@ -50,6 +58,7 @@ export const ContentCellFallback = memo(function ContentCellFallback({
           <Fallback
             height={lineHeight.label2}
             width={90}
+            dangerouslySetIterations={dangerouslySetIterations}
             disableRandomRectWidth={disableRandomRectWidth}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 2)}
           />

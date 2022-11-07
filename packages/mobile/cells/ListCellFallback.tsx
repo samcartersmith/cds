@@ -2,13 +2,14 @@ import React, { memo } from 'react';
 import { ListCellFallbackProps } from '@cbhq/cds-common';
 import { getRectWidthVariant } from '@cbhq/cds-common/utils/getRectWidthVariant';
 
-import { Fallback } from '../layout/Fallback';
+import { Fallback, FallbackProps } from '../layout/Fallback';
 import { useLineHeightMap } from '../typography/useLineHeightMap';
 
 import { ListCell } from './ListCell';
 import { MediaFallback } from './MediaFallback';
 
-export type { ListCellFallbackProps };
+export type ListCellFallbackMobileProps = Pick<FallbackProps, 'dangerouslySetIterations'> &
+  ListCellFallbackProps;
 
 export const ListCellFallback = memo(function ListCellFallback({
   title,
@@ -17,9 +18,10 @@ export const ListCellFallback = memo(function ListCellFallback({
   subdetail,
   media,
   compact,
+  dangerouslySetIterations = 10,
   disableRandomRectWidth,
   rectWidthVariant,
-}: ListCellFallbackProps) {
+}: ListCellFallbackMobileProps) {
   const lineHeight = useLineHeightMap();
 
   return (
@@ -30,6 +32,7 @@ export const ListCellFallback = memo(function ListCellFallback({
             height={lineHeight.body}
             width={110}
             spacingTop={0.5}
+            dangerouslySetIterations={dangerouslySetIterations}
             disableRandomRectWidth={disableRandomRectWidth}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 0)}
           />
@@ -41,18 +44,24 @@ export const ListCellFallback = memo(function ListCellFallback({
           <Fallback
             height={lineHeight.body}
             width={60}
+            dangerouslySetIterations={dangerouslySetIterations}
             disableRandomRectWidth={disableRandomRectWidth}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 1)}
           />
         )
       }
-      media={media ? <MediaFallback type={media} /> : undefined}
+      media={
+        media ? (
+          <MediaFallback dangerouslySetIterations={dangerouslySetIterations} type={media} />
+        ) : undefined
+      }
       subdetail={
         subdetail && (
           <Fallback
             height={lineHeight.body}
             width={60}
             spacingTop={0.5}
+            dangerouslySetIterations={dangerouslySetIterations}
             disableRandomRectWidth={disableRandomRectWidth}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 2)}
           />
@@ -63,6 +72,7 @@ export const ListCellFallback = memo(function ListCellFallback({
           <Fallback
             height={lineHeight.headline}
             width={90}
+            dangerouslySetIterations={dangerouslySetIterations}
             disableRandomRectWidth={disableRandomRectWidth}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 3)}
           />

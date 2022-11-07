@@ -83,6 +83,10 @@ export const routes = [
     getComponent: () => require('../overlays/__stories__/Drawer.stories').default,
   },
   {
+    key: 'Fallback',
+    getComponent: () => require('../layout/__stories__/Fallback.stories').default,
+  },
+  {
     key: 'Group',
     getComponent: () => require('../layout/__stories__/Group.stories').default,
   },
