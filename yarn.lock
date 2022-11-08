@@ -2296,7 +2296,7 @@ __metadata:
     react-native-inappbrowser-reborn: 3.6.3
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.1
-    react-native-reanimated: 2.10.0
+    react-native-reanimated: 2.12.0
     react-native-safe-area-context: ^3.2.0
     react-native-svg: 12.1.0
     react-test-renderer: ^17.0.2
@@ -2312,7 +2312,7 @@ __metadata:
     react-native-inappbrowser-reborn: 3.6.3
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.1
-    react-native-reanimated: 2.10.0
+    react-native-reanimated: 2.12.0
     react-native-safe-area-context: ">=3.2.0"
     react-native-screens: ^3.12.0
     react-native-svg: 12.1.0
@@ -2883,7 +2883,7 @@ __metadata:
     react-native-gesture-handler: 2.6.2
     react-native-inappbrowser-reborn: ^3.6.3
     react-native-navigation-bar-color: ^2.0.1
-    react-native-reanimated: 2.10.0
+    react-native-reanimated: 2.12.0
     react-native-safe-area-context: ^3.2.0
     react-native-screens: ^3.12.0
     react-native-svg: ^12.1.0
@@ -29664,9 +29664,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-reanimated@npm:2.10.0":
-  version: 2.10.0
-  resolution: "react-native-reanimated@npm:2.10.0"
+"react-native-reanimated@npm:2.12.0":
+  version: 2.12.0
+  resolution: "react-native-reanimated@npm:2.12.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-native-reanimated%2F-%2Freact-native-reanimated-2.12.0.tgz"
   dependencies:
     "@babel/plugin-transform-object-assign": ^7.16.7
     "@babel/preset-typescript": ^7.16.7
@@ -29679,7 +29679,7 @@ __metadata:
     "@babel/core": ^7.0.0-0
     react: "*"
     react-native: "*"
-  checksum: 7f01ee15e0f2d48af543370b10b8d257e22d09c3fcdbeff1d74d68bfc72f0e9cf74d0634edb10beef4671a20068d7be128678bb52d976aefdf78f5c80a0baa90
+  checksum: ef94d7888ad77859a9cf13156a88d6b7f2d96622bf8f7a19415fd3b7f2a588a1a78214711ce77259bfc45ceb5112c43cad8b96b034dc3ab749a1e0a835a923d0
   languageName: node
   linkType: hard
 
