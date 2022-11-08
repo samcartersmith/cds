@@ -1,5 +1,8 @@
+/* eslint-disable no-restricted-globals */
 import { danger, message, warn } from 'danger';
 import chainsmoker from 'danger/distribution/commands/utils/chainsmoker';
+
+import { findFileDifferences } from './utils';
 
 danger.git.fileMatch = chainsmoker({
   created: danger.git.created_files,
@@ -9,26 +12,65 @@ danger.git.fileMatch = chainsmoker({
 });
 
 const bigPRThreshold = 600;
-const app = danger.git.fileMatch(
-  'packages/**/*.(ts|tsx)',
-  // Add ignorable files to the bottom of this list
-  // Example: "!**/*.native.(ts|tsx)" would ignore *.native.ts or *.native.tsx files
+
+// Add ignorable files to the bottom of this list
+// Example: "!**/*.native.(ts|tsx)" would ignore *.native.ts or *.native.tsx files
+const fileIgnorePatterns = [
   '!**/*.test.(ts|tsx)',
   '!**/*.stories.(ts|tsx)',
   '!**/*.d.(ts|tsx)',
   '!**/dangerfile.ts',
   '!**/dangerfile-coverage.ts',
+  '!**/types/*.ts',
+];
+
+const nonTestTsFiles = danger.git.fileMatch(
+  `packages/${process.env.NX_PROJECT_NAME}/**/*.(ts|tsx)`,
+  ...fileIgnorePatterns,
 );
-const tests = danger.git.fileMatch('**/*.test.(ts|tsx)');
+const testTsFiles = danger.git.fileMatch(
+  `packages/${process.env.NX_PROJECT_NAME}/**/*.test.(ts|tsx)`,
+);
+
+const nonTestTsxFiles = danger.git.fileMatch(
+  `packages/${process.env.NX_PROJECT_NAME}/**/*.tsx`,
+  ...fileIgnorePatterns,
+);
+const storyFiles = danger.git.fileMatch(
+  `packages/${process.env.NX_PROJECT_NAME}/**/*.stories.(ts|tsx)`,
+);
+
 const { pr } = danger.github;
 const bodyAndTitle = (pr.body + pr.title).toLowerCase();
 
 // Custom modifiers for people submitting PRs to be able to say "skip this"
 const acceptedNoTests = bodyAndTitle.includes('#skip_tests');
+const acceptedNoStories = bodyAndTitle.includes('#skip_stories');
+
+// Encourage stories
+if (nonTestTsxFiles.created && !storyFiles.edited && !acceptedNoStories) {
+  warn(
+    [
+      "#### Don't forget to add stories!",
+      `You have added .tsx files in the **${process.env.NX_PROJECT_NAME}** package. Please consider adding **stories** or add \`#skip_stories\` in the PR description to skip this check.\n`,
+      findFileDifferences(nonTestTsxFiles.getKeyedPaths().edited, storyFiles.getKeyedPaths().edited)
+        .map((file) => `- ${file}`)
+        .join('\n'),
+    ].join('\n'),
+  );
+}
 
 // Encourage tests
-if (app.edited && !tests.edited && !acceptedNoTests) {
-  warn('You have package changes without tests.');
+if (nonTestTsFiles.edited && !testTsFiles.edited && !acceptedNoTests) {
+  warn(
+    [
+      "#### Don't forget to add tests!",
+      `You have edited files in the **${process.env.NX_PROJECT_NAME}** package. Please consider adding **tests** or add \`#skip_tests\` in the PR description to skip this check.\n`,
+      findFileDifferences(nonTestTsFiles.getKeyedPaths().edited, testTsFiles.getKeyedPaths().edited)
+        .map((file) => `- ${file}`)
+        .join('\n'),
+    ].join('\n'),
+  );
 }
 
 // Make sure PR title follows CDS convention

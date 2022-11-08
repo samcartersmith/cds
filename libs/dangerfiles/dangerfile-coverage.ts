@@ -1,5 +1,4 @@
 /* eslint-disable no-restricted-globals */
-
 import { message, schedule } from 'danger';
 import { codeCoverage } from '@cbhq/danger-plugin-code-coverage';
 
