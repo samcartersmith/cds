@@ -8,7 +8,6 @@ import {
   isExpectedIosDevice,
   launchApp,
   navigateToRoute,
-  reloadApp,
   takeRouteScreenshots as takeDetoxRouteScreenshots,
   takeScreenshot as takeDetoxScreenshot,
 } from './detox';
@@ -76,7 +75,6 @@ async function takeRouteScreenshots(dirPath: string, routeName: string) {
  *    The sdk will generate a set of route names leveraging the routes in the Mobile Playground.
  */
 export async function assertVisualDiffsForPlayground(routeName: string) {
-  await reloadApp();
   await navigateToRoute(routeName);
 
   const parentDir = `${baseDir}/${playgroundDir}`;
@@ -138,4 +136,5 @@ export function finishVisregTests() {
   removeAllFilesFromDir(baseDir);
 }
 
+export * from './detox';
 export { getPlaygroundRoutes } from './getPlaygroundRoutes';

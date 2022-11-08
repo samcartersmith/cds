@@ -1,6 +1,11 @@
 /* eslint-disable no-restricted-globals */
 import { routes as codegenRoutes } from '@cbhq/cds-mobile/examples/newRoutes';
 
+//  https://buildkite.com/docs/tutorials/parallel-builds
+// BUILDKITE_PARALLEL_JOB starts at zero based index and VISREG_JOB_NUMBER expects 1 based index
+const TOTAL_JOBS = Number(process.env.BUILDKITE_PARALLEL_JOB_COUNT ?? 1);
+const JOB_INDEX = Number(process.env.BUILDKITE_PARALLEL_JOB ?? 0);
+
 /**
  * Gets non-blacklisted route names from the Mobile Playground
  */
@@ -23,21 +28,9 @@ export function getPlaygroundRoutes({
     ) /** Remove device issue routes */
     .map((route) => route.key);
 
-  const totalJobs = process?.env?.VISREG_TOTAL_JOBS as unknown as number;
-
-  if (totalJobs === undefined) {
-    throw Error('VISREG_TOTAL_JOBS environment variable is not defined.');
-  }
-
-  const jobNumber = process?.env?.VISREG_JOB_NUMBER as unknown as number;
-
-  if (jobNumber === undefined) {
-    throw Error('VISREG_JOB_NUMBER environment variable is not defined.');
-  }
-
-  const jobSize = Math.floor(routeNames.length / totalJobs);
-  const startIndex = (jobNumber - 1) * jobSize;
-  const endIndex = jobNumber === totalJobs ? routeNames.length : startIndex + jobSize;
+  const jobSize = Math.ceil(routeNames.length / TOTAL_JOBS);
+  const startIndex = JOB_INDEX * jobSize;
+  const endIndex = startIndex + jobSize;
 
   return routeNames.slice(startIndex, endIndex);
 }

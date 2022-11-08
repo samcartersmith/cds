@@ -6,6 +6,7 @@ import {
   finishVisregTests,
   getPlaygroundRoutes,
   initializeVisregTests,
+  reloadApp,
 } from '@cbhq/ui-mobile-playground/visreg';
 
 import config from '../detox.config';
@@ -22,6 +23,7 @@ describe('All Playground Routes', () => {
   it.each(getPlaygroundRoutes({ routes, ...config.disabledRoutes }))(
     '%p Visual Diff Test.',
     async (routeName) => {
+      await reloadApp();
       await assertVisualDiffsForPlayground(routeName);
     },
   );

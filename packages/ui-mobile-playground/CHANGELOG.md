@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.3.5 (11/7/2022 PST)
+
+#### 🐞 Fixes
+
+- Simplify parallelization logic and reload logic. Decouple reload react native from package.
+
 ## 0.3.4 (9/8/2022 PST)
 
 #### 🚀 Updates

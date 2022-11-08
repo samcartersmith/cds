@@ -45,9 +45,6 @@ if [[ "$1" == "ios" ]]; then
         tar -xzf /tmp/$BUILDKITE_JOB_ID/$ARTIFACT_PATH/$IOS_TAR_NAME --directory $RN_PATH/ios/build/Build/Products/Release-iphonesimulator
         echo "Prebuild extracted."
 
-        echo "--- Setup for Tests"
-        . tools/ci/visreg-setup-parallel.sh
-
         echo "--- Running Visreg Tests"
         yarn nx run mobile-playground:ios-e2e
     fi
@@ -82,7 +79,6 @@ else
         adb start-server
 
         echo "--- Running Android E2E tests"
-        . tools/ci/visreg-setup-parallel.sh
         yarn nx run mobile-playground:android-e2e-emulator
         yarn nx run mobile-playground:android-e2e
 
