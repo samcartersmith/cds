@@ -248,9 +248,6 @@ const sidebars = {
           type: 'doc',
           id: 'components/banner/banner',
           label: 'Banner',
-          customProps: {
-            tag: 'new',
-          },
         },
         {
           type: 'category',
@@ -327,9 +324,6 @@ const sidebars = {
           type: 'doc',
           id: 'components/dropdown/Dropdown/dropdown',
           label: 'Dropdown',
-          customProps: {
-            tag: 'new',
-          },
         },
         { type: 'doc', id: 'components/layout/Fallback/fallback', label: 'Fallback' },
         {
@@ -392,9 +386,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'Motion',
-          customProps: {
-            tag: 'new',
-          },
           items: [
             'components/motion/ColorSurge/color-surge',
             'components/motion/Pulse/pulse',
@@ -430,28 +421,6 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Popover Menu',
-          customProps: { tag: 'deprecated' },
-          items: [
-            {
-              type: 'doc',
-              id: 'components/overlays/PopoverMenu/popover-menu',
-              label: 'Popover Menu',
-            },
-            {
-              type: 'doc',
-              id: 'components/overlays/PopoverTrigger/popover-trigger',
-              label: 'Popover Trigger',
-            },
-            {
-              type: 'doc',
-              id: 'components/overlays/PopoverTriggerWrapper/popover-trigger-wrapper',
-              label: 'Popover Trigger Wrapper',
-            },
-          ],
-        },
-        {
-          type: 'category',
           label: 'Pressable',
           items: [
             { type: 'doc', id: 'components/system/Pressable/pressable', label: 'Pressable' },
@@ -472,9 +441,6 @@ const sidebars = {
               type: 'doc',
               id: 'components/media/RemoteImageGroup/remote-image-group',
               label: 'Remote Image Group',
-              customProps: {
-                tag: 'new',
-              },
             },
           ],
         },
@@ -585,9 +551,6 @@ const sidebars = {
           type: 'doc',
           id: 'components/tag/tag',
           label: 'Tag',
-          customProps: {
-            tag: 'new',
-          },
         },
         { type: 'doc', id: 'components/typography/Text/text', label: 'Text' },
         { type: 'doc', id: 'components/controls/TextInput/text-input', label: 'Text Input' },
