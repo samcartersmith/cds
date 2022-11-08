@@ -43,7 +43,7 @@ Once you have run commands above you are ready to start contributing.
 - [Component Development Best Practices](./docs/component-development.md)
 - [Release Workflows](./docs/release.md)
 - [Bug Priorization Framework](https://coda.io/d/CDS-Team_dFaC-pktuzN/Prioritization-framework_su6Sj#_lu3rn)
-- Incident Runbook (coming soon)
+- On call guide: [http://go/cds-on-call](https://docs.google.com/document/d/1UQpvgfo7AhA6NKQ9baglmQC7NKu5rJIuzUnvoSvdFyQ/edit#heading=h.g4i6psiisqyg)
 - Version Management (coming soon)
 - Best practice usage of our build tool - [NX](https://nx.dev/) (coming soon)
 - Upgrading React Native in the Mobile Playground (coming soon)
