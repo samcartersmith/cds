@@ -57,11 +57,12 @@
     "scope": "typescript,typescriptreact,javascript,javascriptreact",
     "prefix": "test-web",
     "body": [
-      "import { render } from '@testing-library/react';",
+      "import { render, screen } from '@testing-library/react';",
       "",
       "describe('$TM_FILENAME_BASE', () => {",
       "  it('renders $1', () => {",
-      "    const { $3 }= render($2)",
+      "    render($2)",
+      "    expect(screen.$3)",
       "  });",
       "});",
       ""
@@ -72,16 +73,17 @@
     "scope": "typescript,typescriptreact,javascript,javascriptreact",
     "prefix": "test-mobile",
     "body": [
-      "import { render } from '@testing-library/react-native';",
+      "import { render, screen } from '@testing-library/react-native';",
       "",
       "describe('$TM_FILENAME_BASE', () => {",
       "  it('renders $1', () => {",
-      "    const { $3 }= render($2)",
+      "    render($2)",
+      "    expect(screen.$3)",
       "  });",
       "});",
       ""
     ],
-    "description": "Bolierplate for component unit test"
+    "description": "Boilerplate for component unit test"
   },
   "testHook": {
     "scope": "typescript,typescriptreact,javascript,javascriptreact",
