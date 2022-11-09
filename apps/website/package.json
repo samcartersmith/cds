@@ -24,7 +24,9 @@
     "semver": "^7.3.7"
   },
   "devDependencies": {
-    "concurrently": "^7.2.1"
+    "@cbhq/script-utils": "workspace:^",
+    "concurrently": "^7.2.1",
+    "get-tsconfig": "^4.2.0"
   },
   "browserslist": {
     "production": [

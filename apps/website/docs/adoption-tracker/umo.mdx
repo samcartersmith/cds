@@ -10,9 +10,15 @@ import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTrack
 import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
 import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
-<AdopterStatsProvider {...require('@site/static/data/adoption/umo/stats.json')}>
-  <AdopterProjectInfoProvider {...require('@site/static/data/adoption/umo/project.json')}>
-    <AdopterComponentsProvider {...require('@site/static/data/adoption/umo/components.json')}>
+<AdopterStatsProvider
+  {...require(':cds-website/static/data/__generated__/adoption/umo/stats.json')}
+>
+  <AdopterProjectInfoProvider
+    {...require(':cds-website/static/data/__generated__/adoption/umo/info.json')}
+  >
+    <AdopterComponentsProvider
+      {...require(':cds-website/static/data/__generated__/adoption/umo/components.json')}
+    >
       <AdopterDetails />
     </AdopterComponentsProvider>
   </AdopterProjectInfoProvider>

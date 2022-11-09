@@ -67,9 +67,6 @@ examples/nextjs/.yarn
 .pnp.*
 install-state.gz
 
-# Codegen
-packages/codegen/adoption/temp
-
 # Docusaurus
 .docusaurus
 

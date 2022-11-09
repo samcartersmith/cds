@@ -1,6 +1,6 @@
 // @ts-check
 
-const { adopters } = require('./data/sidebar/adopters');
+const { adopters } = require('./data/__generated__/adoption/adopters-sidebar');
 
 /**
  * Please see the [website docs](../../docs/website.md) for more info

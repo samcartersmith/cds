@@ -11,13 +11,13 @@ import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTrac
 import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
 <AdopterStatsProvider
-  {...require('@site/static/data/adoption/unified-business-onboarding/stats.json')}
+  {...require(':cds-website/static/data/__generated__/adoption/unified-business-onboarding/stats.json')}
 >
   <AdopterProjectInfoProvider
-    {...require('@site/static/data/adoption/unified-business-onboarding/project.json')}
+    {...require(':cds-website/static/data/__generated__/adoption/unified-business-onboarding/info.json')}
   >
     <AdopterComponentsProvider
-      {...require('@site/static/data/adoption/unified-business-onboarding/components.json')}
+      {...require(':cds-website/static/data/__generated__/adoption/unified-business-onboarding/components.json')}
     >
       <AdopterDetails />
     </AdopterComponentsProvider>

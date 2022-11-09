@@ -1,0 +1,23 @@
+import fs from 'node:fs';
+
+import { generatedStaticDataDir } from '../config';
+import type { PreviousAdoptionStats } from '../types';
+
+export async function getPreviousStats(id: string): Promise<PreviousAdoptionStats | undefined> {
+  try {
+    const statsPath = `${generatedStaticDataDir.absolutePath}/${id}/stats.json`;
+    // New projects won't have a stats.json file associated with it
+    if (fs.existsSync(statsPath)) {
+      const data = await fs.promises.readFile(statsPath, 'utf8');
+      if (data) return JSON.parse(data) as PreviousAdoptionStats;
+    }
+    return undefined;
+  } catch (err) {
+    if (err instanceof Error) {
+      console.error(err);
+      throw new Error(`Couldn't get previous adoption stats for ${id}.`);
+    } else {
+      throw err;
+    }
+  }
+}

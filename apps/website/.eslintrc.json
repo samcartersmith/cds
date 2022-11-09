@@ -8,6 +8,13 @@
         "react/react-in-jsx-scope": "off",
         "import/no-extraneous-dependencies": "off"
       }
+    },
+    {
+      "files": ["scripts/**/*.ts"],
+      "extends": ["plugin:@cbhq/node"],
+      "rules": {
+        "no-restricted-globals": "off"
+      }
     }
   ]
 }

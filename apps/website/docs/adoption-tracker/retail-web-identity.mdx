@@ -10,12 +10,14 @@ import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTrack
 import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
 import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
-<AdopterStatsProvider {...require('@site/static/data/adoption/retail-web-identity/stats.json')}>
+<AdopterStatsProvider
+  {...require(':cds-website/static/data/__generated__/adoption/retail-web-identity/stats.json')}
+>
   <AdopterProjectInfoProvider
-    {...require('@site/static/data/adoption/retail-web-identity/project.json')}
+    {...require(':cds-website/static/data/__generated__/adoption/retail-web-identity/info.json')}
   >
     <AdopterComponentsProvider
-      {...require('@site/static/data/adoption/retail-web-identity/components.json')}
+      {...require(':cds-website/static/data/__generated__/adoption/retail-web-identity/components.json')}
     >
       <AdopterDetails />
     </AdopterComponentsProvider>

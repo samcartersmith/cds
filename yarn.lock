@@ -2847,7 +2847,6 @@ __metadata:
     axios: ^0.18.0
     ejs: ^3.1.7
     enquirer: ^2.3.6
-    get-tsconfig: ^4.2.0
     hygen: "patch:hygen@^6.2.0#./patches/hygen.patch"
     react-docgen-typescript: ^2.0.0
     svgo: ^2.3.0
@@ -2926,6 +2925,7 @@ __metadata:
     "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-web": "workspace:^"
     "@cbhq/docusaurus-preset": "workspace:^"
+    "@cbhq/script-utils": "workspace:^"
     "@contentful/rich-text-plain-text-renderer": ^15.12.1
     "@docusaurus/core": 2.0.0-beta.18
     "@docusaurus/module-type-aliases": 2.0.0-beta.18
@@ -2938,6 +2938,7 @@ __metadata:
     contentful: ^7.14.6
     dayjs: ^1.11.3
     dayjs-recur: ^1.0.1
+    get-tsconfig: ^4.2.0
     react: ^17.0.2
     react-dom: ^17.0.2
     react-virtualized: ^9.22.3
@@ -18383,7 +18384,7 @@ __metadata:
 
 "get-tsconfig@npm:^4.2.0":
   version: 4.2.0
-  resolution: "get-tsconfig@npm:4.2.0"
+  resolution: "get-tsconfig@npm:4.2.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fget-tsconfig%2F-%2Fget-tsconfig-4.2.0.tgz"
   checksum: dfae3520bee20b71a651fdc93fd29901013dfc4df9fb41a423cf3efb4468c79087ef9d3bc3d0625b6486397730991d2a749eed4985d8ab411f481319c3e931e5
   languageName: node
   linkType: hard

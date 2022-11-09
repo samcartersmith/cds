@@ -22,8 +22,6 @@ nx run common:lint
 | yarn nx affected --target=test                      | Test all of the affected packages                            |
 | yarn nx affected --target=typecheck                 | typecheck all of the affected packages                       |
 | ----                                                | ----                                                         |
-| yarn nx run codegen:adoption                        | Prepare adoption numbers                                     |
-| yarn nx run codegen:adoption --DEBUG=1              | Debug adoption tracker script                                |
 | yarn nx run codegen:all                             | Generate code in design system.                              |
 | yarn nx run codegen:docs.internal                   | Copy CHANGELOG.md from packages to website.                  |
 | yarn nx run codegen:format                          | Format the `codegen` project.                                |
@@ -78,6 +76,8 @@ nx run common:lint
 | yarn nx run web:test --collect-coverage             | Test the `web` package with coverage report                  |
 | yarn nx run web:typecheck                           | Typecheck the `web` package.                                 |
 | ----                                                | ----                                                         |
+| yarn nx run website:adoption                        | Prepare adoption numbers                                     |
+| yarn nx run website:adoption --DEBUG=1              | Debug adoption tracker script                                |
 | yarn nx run website:build                           | Build website.                                               |
 | yarn nx run website:format                          | Format the `website`                                         |
 | yarn nx run website:lint                            | Lint the `website`.                                          |

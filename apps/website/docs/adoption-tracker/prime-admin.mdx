@@ -10,10 +10,14 @@ import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTrack
 import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
 import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
-<AdopterStatsProvider {...require('@site/static/data/adoption/prime-admin/stats.json')}>
-  <AdopterProjectInfoProvider {...require('@site/static/data/adoption/prime-admin/project.json')}>
+<AdopterStatsProvider
+  {...require(':cds-website/static/data/__generated__/adoption/prime-admin/stats.json')}
+>
+  <AdopterProjectInfoProvider
+    {...require(':cds-website/static/data/__generated__/adoption/prime-admin/info.json')}
+  >
     <AdopterComponentsProvider
-      {...require('@site/static/data/adoption/prime-admin/components.json')}
+      {...require(':cds-website/static/data/__generated__/adoption/prime-admin/components.json')}
     >
       <AdopterDetails />
     </AdopterComponentsProvider>

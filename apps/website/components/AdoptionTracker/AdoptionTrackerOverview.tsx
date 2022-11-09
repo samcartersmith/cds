@@ -26,8 +26,8 @@ import {
 } from '@cbhq/cds-web/typography';
 
 import { BetaCell } from ':cds-website/components/BetaCell';
-import { adopters } from ':cds-website/data/adopters';
-import { hiddenAdopters } from ':cds-website/data/hidden-adopters';
+import { adopters } from ':cds-website/data/__generated__/adoption/adopters';
+import { hiddenAdopters } from ':cds-website/data/__generated__/adoption/adopters-hidden';
 
 import { SplitScreenStack } from '../SplitScreenStack';
 
@@ -54,8 +54,9 @@ const titleClass = css`
 
 function useProject(id: Adopter) {
   const projectInfo =
-    require(`@site/static/data/adoption/${id}/project.json`) as AdopterProjectInfo;
-  const stats = require(`@site/static/data/adoption/${id}/stats.json`) as AdopterStats;
+    require(`@site/static/data/__generated__/adoption/${id}/info.json`) as AdopterProjectInfo;
+  const stats =
+    require(`@site/static/data/__generated__/adoption/${id}/stats.json`) as AdopterStats;
   return useMemo(() => ({ projectInfo, stats }), [projectInfo, stats]);
 }
 
@@ -75,7 +76,7 @@ const getProjects = (pillar?: string) => {
 };
 
 const getStats = (project: ProjectProps) => {
-  return require(`@site/static/data/adoption/${project.id}/stats.json`) as AdopterStats;
+  return require(`@site/static/data/__generated__/adoption/${project.id}/stats.json`) as AdopterStats;
 };
 
 type PercentageGetterProps = { pillar?: string; average?: boolean };

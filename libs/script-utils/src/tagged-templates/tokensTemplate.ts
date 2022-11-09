@@ -76,9 +76,13 @@ export function tokensTemplate(strings: TemplateStringsArray, ...expr: unknown[]
       result = itemSorted;
     }
 
-    if (item && Array.isArray(item) && isPrimitiveArray(item)) {
-      const itemSorted = item.sort();
-      result = itemSorted;
+    if (item && Array.isArray(item)) {
+      if (isPrimitiveArray(item)) {
+        const itemSorted = item.sort();
+        result = itemSorted;
+      } else {
+        result = item;
+      }
     }
 
     /**

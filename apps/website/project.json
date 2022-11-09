@@ -2,6 +2,17 @@
   "sourceRoot": "apps/website",
   "projectType": "application",
   "targets": {
+    "adoption": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./scripts/adoption/main.ts",
+        "NODE_OPTIONS": {
+          "trace-deprecation": true,
+          "abort-on-uncaught-exception": true,
+          "max-old-space-size": 4096
+        }
+      }
+    },
     "start": {
       "executor": "nx:run-commands",
       "options": {

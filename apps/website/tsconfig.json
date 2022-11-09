@@ -18,6 +18,14 @@
     },
     {
       "path": "../../packages/docusaurus-theme"
+    },
+    {
+      "path": "../../libs/script-utils"
     }
-  ]
+  ],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"],
+    "transpileOnly": true,
+    "transpiler": "ts-node/transpilers/swc"
+  }
 }
