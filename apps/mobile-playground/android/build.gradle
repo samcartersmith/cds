@@ -61,5 +61,17 @@ allprojects {
             url "$nodeModulesPath/detox/Detox-android"
         }
         maven { url 'https://www.jitpack.io' }
+        // this is a temporary fix to force maven to use the version of react-native installed in this project
+        // and resolves a regression introduced in react-native@0.71.0-RC.0
+        exclusiveContent {
+           filter {
+               includeGroup "com.facebook.react"
+           }
+           forRepository {
+               maven {
+                   url "$nodeModulesPath/react-native/android"
+               }
+           }
+       }
     }
 }
