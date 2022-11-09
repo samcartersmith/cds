@@ -2,7 +2,7 @@
 
 Components for React Native.
 
-## To Get Started
+## How To Get Started
 
 Add the relative path to the CDS icon font to your react-native.config.js. If your project lives in the monorepo this lives in the root `react-native.config.js` file. There is an example for CDS playground in there.
 
