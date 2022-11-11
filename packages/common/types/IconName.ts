@@ -248,7 +248,12 @@ export type IconName =
   | 'metaverse'
   | 'music'
   | 'save'
-  | 'breifcase';
+  | 'breifcase'
+  | 'fingerprint'
+  | 'faceScan'
+  | 'twitterLogo'
+  | 'instagramLogo'
+  | 'discordLogo';
 
 export type NavigationIconName =
   | 'planet'

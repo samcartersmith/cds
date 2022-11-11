@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 61559,
+  lastUnicode: 61584,
   unicodeMap: {
     cashUSD: { '8': 'uE966', '12': 'uE967', '16': 'uE968', '24': 'uE969', '32': 'uE96A' },
     cashGBP: { '8': 'uE96B', '12': 'uE96C', '16': 'uE96D', '24': 'uE96E', '32': 'uE96F' },
@@ -601,5 +601,10 @@ export const manifest = {
     cryptobasics: { '8': 'uF069', '12': 'uF06A', '16': 'uF06B', '24': 'uF06C', '32': 'uF06D' },
     menuInactive: { '8': 'uF06E', '12': 'uF06F', '16': 'uF070', '24': 'uF071', '32': 'uF072' },
     menuActive: { '8': 'uF073', '12': 'uF074', '16': 'uF075', '24': 'uF076', '32': 'uF077' },
+    fingerprint: { '8': 'uF078', '12': 'uF079', '16': 'uF07A', '24': 'uF07B', '32': 'uF07C' },
+    faceScan: { '8': 'uF07D', '12': 'uF07E', '16': 'uF07F', '24': 'uF080', '32': 'uF081' },
+    twitterLogo: { '8': 'uF082', '12': 'uF083', '16': 'uF084', '24': 'uF085', '32': 'uF086' },
+    instagramLogo: { '8': 'uF087', '12': 'uF088', '16': 'uF089', '24': 'uF08A', '32': 'uF08B' },
+    discordLogo: { '8': 'uF08C', '12': 'uF08D', '16': 'uF08E', '24': 'uF08F', '32': 'uF090' },
   },
 };

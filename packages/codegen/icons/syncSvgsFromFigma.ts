@@ -143,8 +143,6 @@ async function syncIcons() {
       throttle();
     });
 
-    console.log('imageUrls', imageUrls);
-
     spinner.text = `Download svg images from urls in parallel.`;
     const requests = imageUrls.map((url) => {
       return async () => axios.get(url);

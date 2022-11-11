@@ -253,6 +253,11 @@ export const iconNames = [
   'music',
   'save',
   'breifcase',
+  'fingerprint',
+  'faceScan',
+  'twitterLogo',
+  'instagramLogo',
+  'discordLogo',
 ] as const;
 
 export const navigationIconNames = [
@@ -783,4 +788,9 @@ export const unicodeMap = {
   cryptobasics: { '8': 'uF069', '12': 'uF06A', '16': 'uF06B', '24': 'uF06C', '32': 'uF06D' },
   menuInactive: { '8': 'uF06E', '12': 'uF06F', '16': 'uF070', '24': 'uF071', '32': 'uF072' },
   menuActive: { '8': 'uF073', '12': 'uF074', '16': 'uF075', '24': 'uF076', '32': 'uF077' },
+  fingerprint: { '8': 'uF078', '12': 'uF079', '16': 'uF07A', '24': 'uF07B', '32': 'uF07C' },
+  faceScan: { '8': 'uF07D', '12': 'uF07E', '16': 'uF07F', '24': 'uF080', '32': 'uF081' },
+  twitterLogo: { '8': 'uF082', '12': 'uF083', '16': 'uF084', '24': 'uF085', '32': 'uF086' },
+  instagramLogo: { '8': 'uF087', '12': 'uF088', '16': 'uF089', '24': 'uF08A', '32': 'uF08B' },
+  discordLogo: { '8': 'uF08C', '12': 'uF08D', '16': 'uF08E', '24': 'uF08F', '32': 'uF090' },
 } as const;
