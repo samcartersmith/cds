@@ -1,6 +1,5 @@
-Modals should include one or more ways to exit the modal:
+:::tip Accessibility tip (Web only)
 
-- click Cancel or Dismiss in the footer
-- click X in the header (if included)
-- press Esc on a keyboard
-- click anywhere on the `Background Overlay`
+A `ref` to the trigger that opens the modal, along with an `onDidClose` method to reset focus on the trigger when the modal closes, needs to be wired up for accessibility (see code examples below).
+
+:::

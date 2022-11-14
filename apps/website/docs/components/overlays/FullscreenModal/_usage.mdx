@@ -1,11 +1,24 @@
+import A11Y from './_a11y.mdx';
+
+Please refer to the [Modal](/components/modal) docs for more info on setup and usage.
+
+<A11Y />
+
 ```jsx live
 function DefaultModal() {
   const [visible, { toggleOn, toggleOff }] = useToggler();
+  const triggerRef = useRef(null);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     console.log('modal closing');
     toggleOff();
-  };
+  }, [toggleOff]);
+
+  const handleDidClose = useCallback(() => {
+    if (triggerRef.current) {
+      triggerRef.current.focus();
+    }
+  }, []);
 
   const SelectComponent = () => {
     const [value, setValue] = useState();
@@ -55,8 +68,8 @@ function DefaultModal() {
       />
       <SelectComponent />
       <HStack spacingVertical={3} gap={3}>
-        <Button onPress={toggleOff}>Yes</Button>
-        <Button onPress={toggleOff} variant="secondary">
+        <Button onPress={handleClose}>Yes</Button>
+        <Button onPress={handleClose} variant="secondary">
           No
         </Button>
       </HStack>
@@ -79,10 +92,13 @@ function DefaultModal() {
   return (
     <PortalProvider>
       <ExampleWithThemeToggles>
-        <Button onPress={toggleOn}>Open Modal</Button>
+        <Button onPress={toggleOn} ref={triggerRef}>
+          Open Modal
+        </Button>
         <FullscreenModal
           visible={visible}
           onRequestClose={handleClose}
+          onDidClose={handleDidClose}
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
           title="Modal title"

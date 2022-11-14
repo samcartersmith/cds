@@ -6,6 +6,7 @@ import { IconButton } from '../../buttons';
 import { Button } from '../../buttons/Button';
 import { FeedCard } from '../../cards/FeedCard';
 import { ListCell } from '../../cells';
+import { useTriggerFocus } from '../../hooks/useTriggerFocus';
 import { Box, VStack } from '../../layout';
 import { TextBody, TextTitle1 } from '../../typography';
 import { FullscreenModal } from '../Modal/FullscreenModal';
@@ -25,6 +26,7 @@ export default {
 
 export const Basic = () => {
   const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const primaryContent = (
     <Box height={800} background="backgroundAlternate">
@@ -40,10 +42,13 @@ export const Basic = () => {
 
   return (
     <>
-      <Button onPress={toggleOn}>Open Modal</Button>
+      <Button onPress={toggleOn} ref={triggerRef}>
+        Open Modal
+      </Button>
       <FullscreenModal
         visible={visible}
         onRequestClose={toggleOff}
+        onDidClose={focusTrigger}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
         title="Modal title"
@@ -54,6 +59,7 @@ export const Basic = () => {
 
 export const NoTitle = () => {
   const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const primaryContent = (
     <Box height={800} background="backgroundAlternate">
@@ -69,10 +75,13 @@ export const NoTitle = () => {
 
   return (
     <>
-      <Button onPress={toggleOn}>Open Modal</Button>
+      <Button onPress={toggleOn} ref={triggerRef}>
+        Open Modal
+      </Button>
       <FullscreenModal
         visible={visible}
         onRequestClose={toggleOff}
+        onDidClose={focusTrigger}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
       />
@@ -82,6 +91,7 @@ export const NoTitle = () => {
 
 export const NoSecondary = () => {
   const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const primaryContent = (
     <Box height={800} background="backgroundAlternate">
@@ -91,10 +101,13 @@ export const NoSecondary = () => {
 
   return (
     <>
-      <Button onPress={toggleOn}>Open Modal</Button>
+      <Button onPress={toggleOn} ref={triggerRef}>
+        Open Modal
+      </Button>
       <FullscreenModal
         visible={visible}
         onRequestClose={toggleOff}
+        onDidClose={focusTrigger}
         primaryContent={primaryContent}
         title="Modal title"
       />
@@ -104,6 +117,7 @@ export const NoSecondary = () => {
 
 export const Example = () => {
   const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const feedCard = (
     <FeedCard
@@ -166,10 +180,13 @@ export const Example = () => {
 
   return (
     <>
-      <Button onPress={toggleOn}>Open Modal</Button>
+      <Button onPress={toggleOn} ref={triggerRef}>
+        Open Modal
+      </Button>
       <FullscreenModal
         visible={visible}
         onRequestClose={toggleOff}
+        onDidClose={focusTrigger}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
         title="Modal title"

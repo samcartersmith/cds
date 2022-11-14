@@ -74,6 +74,7 @@ export type FullscreenModalProps = {
   | 'testID'
   | 'zIndex'
   | 'role'
+  | 'onDidClose'
 >;
 
 export const FullscreenModal = memo(function FullscreenModal({
@@ -90,6 +91,7 @@ export const FullscreenModal = memo(function FullscreenModal({
   hideDivider = false,
   showSecondaryContentDivider = false,
   role,
+  onDidClose,
 }: FullscreenModalProps) {
   const pinStyles = usePinStyles('all');
   const overlayMotionProps = useMotionProps({
@@ -163,6 +165,7 @@ export const FullscreenModal = memo(function FullscreenModal({
       zIndex={zIndex}
       disablePortal={disablePortal}
       role={role}
+      onDidClose={onDidClose}
     >
       {overlay}
       <motion.div {...dialogMotionProps} className={pinStyles}>

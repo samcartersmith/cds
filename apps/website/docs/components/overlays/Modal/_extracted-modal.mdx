@@ -1,12 +1,24 @@
-Most likely you'd want to extract your Modal into a separate component.
+Most likely you'd want to extract your `Modal` into a separate component.
 You can do that by adding a `visible: boolean` and `onDidClose: () => void` prop to your extracted component and pass through those props to `Modal`.
 See example below:
 
 ```jsx live
 function PortalModalExample() {
+  const triggerRef = useRef(null); // only required for web
+
   function ExtractedModal({ visible, closeModal, onDidClose }) {
+    const handleDidClose = useCallback(() => {
+      if (onDidClose) {
+        onDidClose();
+      }
+
+      if (triggerRef.current) {
+        triggerRef.current.focus(); // only required for web
+      }
+    }, []);
+
     return (
-      <Modal visible={visible} onRequestClose={closeModal} onDidClose={onDidClose}>
+      <Modal visible={visible} onRequestClose={closeModal} onDidClose={handleDidClose}>
         <ModalHeader title="Basic Modal" />
         <ModalBody>
           <TextBody as="p">{loremIpsum}</TextBody>
@@ -26,7 +38,9 @@ function PortalModalExample() {
 
     return (
       <Box>
-        <Button onPress={handlePress}>Open Modal</Button>
+        <Button onPress={handlePress} ref={triggerRef}>
+          Open Modal
+        </Button>
       </Box>
     );
   }

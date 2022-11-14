@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { RefObject, useCallback } from 'react';
 
 import { useToggler } from '../hooks/useToggler';
 import { useModal } from '../overlays/useModal';
@@ -17,8 +17,16 @@ export type CreateModalProps = {
   ModalHeader: React.ComponentType<ModalHeaderBaseProps>;
   ModalFooter: React.ComponentType<ModalFooterBaseProps>;
   LoremIpsum: React.ComponentType<Record<string, unknown>>;
-  Button: React.ComponentType<ButtonBaseProps & SharedProps & { onPress?: () => void }>;
+  Button: React.ComponentType<
+    ButtonBaseProps &
+      SharedProps & { onPress?: () => void } & { ref?: RefObject<HTMLButtonElement> }
+  >;
   TextInput?: React.ComponentType<TextInputBaseProps>;
+};
+
+type ModalTriggerProps = {
+  triggerRef?: RefObject<HTMLButtonElement>;
+  focusTrigger?: () => void;
 };
 
 export function modalBuilder({
@@ -30,21 +38,33 @@ export function modalBuilder({
   TextInput, // test keyboard avoiding on mobile
   LoremIpsum,
 }: CreateModalProps) {
-  const BasicModalExample: React.FC<{
-    disablePortal?: boolean;
-    visible?: boolean;
-    hideDividers?: boolean;
-  }> = ({ children, disablePortal, visible: defaultVisible, hideDividers }) => {
+  const BasicModalExample: React.FC<
+    ModalTriggerProps & {
+      disablePortal?: boolean;
+      visible?: boolean;
+      hideDividers?: boolean;
+    }
+  > = ({
+    children,
+    disablePortal,
+    visible: defaultVisible,
+    hideDividers,
+    triggerRef,
+    focusTrigger,
+  }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(defaultVisible ?? true);
 
     return (
       <>
-        <Button onPress={toggleOn}>Open Modal</Button>
+        <Button onPress={toggleOn} ref={triggerRef}>
+          Open Modal
+        </Button>
         <Modal
           visible={visible}
           onRequestClose={toggleOff}
           disablePortal={disablePortal}
           hideDividers={hideDividers}
+          onDidClose={focusTrigger}
         >
           <ModalHeader title="Basic Modal" />
           <ModalBody>{children}</ModalBody>
@@ -61,13 +81,17 @@ export function modalBuilder({
     );
   };
 
-  const PortalModalExample: React.FC = ({ children }) => {
+  const PortalModalExample: React.FC<ModalTriggerProps> = ({
+    children,
+    triggerRef,
+    focusTrigger,
+  }) => {
     const { openModal, closeModal } = useModal();
 
     const handlePress = useCallback(
       () =>
         openModal(
-          <Modal visible onRequestClose={closeModal}>
+          <Modal visible onRequestClose={closeModal} onDidClose={focusTrigger}>
             <ModalHeader title="Basic Modal" />
             <ModalBody>{children}</ModalBody>
             <ModalFooter
@@ -80,18 +104,24 @@ export function modalBuilder({
             />
           </Modal>,
         ),
-      [openModal, closeModal, children],
+      [openModal, closeModal, focusTrigger, children],
     );
 
-    return <Button onPress={handlePress}>Open Modal</Button>;
+    return (
+      <Button onPress={handlePress} ref={triggerRef}>
+        Open Modal
+      </Button>
+    );
   };
 
-  const MockModal: React.FC<Partial<ModalBaseProps & ModalHeaderBaseProps>> = ({
+  const MockModal: React.FC<Partial<ModalBaseProps & ModalHeaderBaseProps> & ModalTriggerProps> = ({
     onRequestClose,
     onBackButtonPress,
     title = 'Basic Modal',
     visible: externalVisible,
     testID,
+    triggerRef,
+    focusTrigger,
   }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(externalVisible);
 
@@ -102,10 +132,16 @@ export function modalBuilder({
 
     return (
       <>
-        <Button onPress={toggleOn} testID="modal-trigger">
+        <Button onPress={toggleOn} ref={triggerRef} testID="modal-trigger">
           Open Modal
         </Button>
-        <Modal testID={testID} visible={visible} onRequestClose={handleClose} disablePortal>
+        <Modal
+          testID={testID}
+          visible={visible}
+          onRequestClose={handleClose}
+          onDidClose={focusTrigger}
+          disablePortal
+        >
           <ModalHeader onBackButtonPress={onBackButtonPress} title={title} />
           <ModalBody>
             <LoremIpsum />
@@ -128,34 +164,34 @@ export function modalBuilder({
     );
   };
 
-  const BasicModal = () => (
-    <BasicModalExample>
+  const BasicModal = ({ triggerRef, focusTrigger }: ModalTriggerProps) => (
+    <BasicModalExample triggerRef={triggerRef} focusTrigger={focusTrigger}>
       <LoremIpsum />
     </BasicModalExample>
   );
 
-  const VisibleModal = () => (
-    <BasicModalExample visible>
+  const VisibleModal = ({ triggerRef, focusTrigger }: ModalTriggerProps) => (
+    <BasicModalExample triggerRef={triggerRef} focusTrigger={focusTrigger} visible>
       <LoremIpsum />
     </BasicModalExample>
   );
 
-  const ModalWithoutPortal = () => (
-    <BasicModalExample disablePortal>
+  const ModalWithoutPortal = ({ triggerRef, focusTrigger }: ModalTriggerProps) => (
+    <BasicModalExample triggerRef={triggerRef} focusTrigger={focusTrigger} disablePortal>
       <LoremIpsum />
     </BasicModalExample>
   );
 
-  const LongModal = () => (
-    <BasicModalExample>
+  const LongModal = ({ triggerRef, focusTrigger }: ModalTriggerProps) => (
+    <BasicModalExample triggerRef={triggerRef} focusTrigger={focusTrigger}>
       <LoremIpsum repeat={30} />
       {!!TextInput && <TextInput label="" placeholder="test input" />}
     </BasicModalExample>
   );
 
-  const PortalModal = () => {
+  const PortalModal = ({ triggerRef, focusTrigger }: ModalTriggerProps) => {
     return (
-      <PortalModalExample>
+      <PortalModalExample triggerRef={triggerRef} focusTrigger={focusTrigger}>
         <LoremIpsum />
       </PortalModalExample>
     );

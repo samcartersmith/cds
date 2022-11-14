@@ -1,9 +1,10 @@
+import A11Y from './_a11y.mdx';
 import ExtractedModal from './_extracted-modal.mdx';
 
 ### Get Started
 
 1. Add [PortalProvider](/components/portal-provider) to the root of your app. Import it from `import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';`.
-2. Compose `Modal` with `ModalHeader`, `ModalBody`, and `ModalFooter` like below for consistency.
+2. Compose the `Modal` with [ModalHeader](/components/modal-header), [ModalBody](/components/modal-body), and [ModalFooter](/components/modal-footer) for consistency:
 
 ```
 <Modal>
@@ -15,11 +16,22 @@ import ExtractedModal from './_extracted-modal.mdx';
 </Modal>
 ```
 
-3. Wire up `visible` and `onRequestClose` to control visibility.
+3. Wire up `visible` and `onRequestClose` to control visibility (see code examples below).
+4. Include one or more of the following methods to exit the modal:
+
+   - a close button in the header (present by default, can be hidden by setting `hideCloseButton` prop to `true`)
+   - a cancel or dismiss button in `ModalFooter` (setup required, see code examples below)
+
+   **Web only**
+
+   - clicking outside of the modal (default behavior, can opt out by setting `disableOverlayPress` prop to `true`)
+   - pressing the Esc key (default behavior, can opt out by setting `shouldCloseOnEscPress` prop to `false` but not recommended as it's bad for accessibility)
+
+<A11Y />
 
 ### Default Modal
 
-Modal is using React Portal by default, which will port the node to the end of the `body` tag. You can add `disabledPortal` to disable this behavior.
+`Modal` uses a React [Portal](https://reactjs.org/docs/portals.html) by default, which will port the node to the end of the `body` tag. You can set `disablePortal` to opt out of this behavior.
 
 ```jsx live
 // import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
@@ -27,17 +39,26 @@ Modal is using React Portal by default, which will port the node to the end of t
 function DefaultModalExample() {
   const [visible, { toggleOn, toggleOff }] = useToggler();
   const [scrolling, { toggle: toggleScrolling }] = useToggler();
+  const triggerRef = useRef(null); // only required for web
+
+  const handleDidClose = useCallback(() => {
+    if (triggerRef.current) {
+      triggerRef.current.focus(); // only required for web
+    }
+  }, []);
 
   return (
     <ExampleWithThemeToggles showFrontier>
       <PortalProvider>
         <ButtonGroup>
-          <Button onPress={toggleOn}>Open Modal</Button>
+          <Button onPress={toggleOn} ref={triggerRef}>
+            Open Modal
+          </Button>
           <Switch onChange={toggleScrolling} checked={scrolling}>
             Show long content
           </Switch>
         </ButtonGroup>
-        <Modal visible={visible} onRequestClose={toggleOff}>
+        <Modal visible={visible} onRequestClose={toggleOff} onDidClose={handleDidClose}>
           <ModalHeader title="Basic Modal" />
           <ModalBody>
             <TextBody as="p">{loremIpsum.repeat(scrolling ? 50 : 1)}</TextBody>
@@ -57,16 +78,16 @@ function DefaultModalExample() {
 }
 ```
 
-### Programmatically Control Modal
+### Programmatically Controlled Modal
 
 `PortalProvider` is a convenient way for adding anything to the CDS portal. The CDS portal is what CDS uses to centralize all elements that need a portal and handles the zIndex of those pieces.
-You can control Modal visibility programmatically using `openModal()` and `closeModal()` from the `useModal()` hook which consumes `PortalProvider` under the hood.
+You can control `Modal` visibility programmatically using `openModal()` and `closeModal()` from the `useModal()` hook which consumes `PortalProvider` under the hood.
 
 To **open** the modal, pass your `Modal` component into `openModal()` and pass in the `closeModal` handler to the `onRequestClose` prop to make the modal close properly on pressing the X button.
 
 To **close** the modal, use the `closeModal()` function from `useModal()`.
 
-Multiple Modals? No problem, check the example [here](/hooks/useOverlay#multiple)
+Multiple modals? No problem, check out this example [here](/hooks/useOverlay#multiple).
 
 ```jsx live
 // import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
@@ -75,11 +96,18 @@ Multiple Modals? No problem, check the example [here](/hooks/useOverlay#multiple
 function PortalModalExample() {
   function PortalModal() {
     const { openModal, closeModal } = useModal();
+    const triggerRef = useRef(null); // only required for web
+
+    const handleDidClose = useCallback(() => {
+      if (triggerRef.current) {
+        triggerRef.current.focus(); // only required for web
+      }
+    }, []);
 
     const handlePress = useCallback(
       () =>
         openModal(
-          <Modal visible onRequestClose={closeModal}>
+          <Modal visible onRequestClose={closeModal} onDidClose={handleDidClose}>
             <ModalHeader title="Basic Modal" />
             <ModalBody>
               <TextBody as="p">{loremIpsum}</TextBody>
@@ -92,7 +120,9 @@ function PortalModalExample() {
 
     return (
       <Box>
-        <Button onPress={handlePress}>Open Modal</Button>
+        <Button onPress={handlePress} ref={triggerRef}>
+          Open Modal
+        </Button>
       </Box>
     );
   }
