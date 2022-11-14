@@ -418,6 +418,53 @@ const loadImagesLocally = async (nodeIds: string[], outDirPath: string) => {
 };
 
 /**
+ * Illustration Build Figma should not have duplicated names
+ * otherwise, the name would be overriden. When there are
+ * duplicated names, the release will take the svg of the last obtained name
+ *
+ * If the illustration names are not unique. This will throw an error, halt
+ * further operation. Additionally, it will also list out the illustrations
+ * that do have duplicated names so our illustrators can remediate this issue.
+ * @param components
+ */
+function checkNamesAreUnique(components: IllustrationComponent) {
+  const spectrumNamesMap: Record<string, boolean> = {};
+  const duplicatedNames: string[] = [];
+
+  // There are some illustrations that we can't quite
+  // figure out why its considered duplicate. We don't
+  // see it on Figma. We are skipping this for now, and
+  // revisiting the problem later
+  const skipNames: Record<string, boolean> = {
+    'dark/walletWarning': true,
+    'light/walletWarning': true,
+  };
+
+  Object.entries(components).forEach((component) => {
+    const [, metadata] = component;
+    const props = normalizeIllustration(metadata.name);
+    if (!props) return;
+
+    const { name, variant, spectrum } = props;
+    const spectrumName = `${spectrum}/${name}`;
+    const spectrumNameNotInSkipNames = !(spectrumName in skipNames);
+
+    if (spectrumName in spectrumNamesMap && spectrumNameNotInSkipNames) {
+      console.log(`Duplicated: ${variant}/${spectrum}/${name}`);
+      duplicatedNames.push(`${variant}/${spectrum}/${name}`);
+    } else {
+      spectrumNamesMap[spectrumName] = true;
+    }
+  });
+
+  if (duplicatedNames.length > 0) {
+    throw new Error(
+      `You have duplicated names. Please talk to the illustration to make all names unique.`,
+    );
+  }
+}
+
+/**
  *
  * @param components - Components from Figma
  * @param blacklistOn - if set to true, it will not include the illustrations defined in blacklist.ts. @default false
@@ -762,6 +809,11 @@ const main = async (deleteImgsDir = false) => {
     }
 
     if (!components) return;
+
+    // First check that every illustration have a unique name.
+    // If it doesn't, then don't bother doing anything else cause
+    // it will break it anyways
+    checkNamesAreUnique(components);
 
     const { camelCaseNames, pascalCaseNames, variants } =
       getIllustrationNamesAndVariants(components);
