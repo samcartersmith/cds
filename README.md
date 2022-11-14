@@ -23,6 +23,8 @@ yarn setup
 FIGMA_ACCESS_TOKEN=[ask the team for shared last pass secret note]
 ```
 
+You need this for releasing icons, illustrations, and figma plugin. If the script uses this FIGMA_ACCESS_TOKEN, you need this.
+
 ## Organization of our Docs
 
 To ensure doc discoverability we try to keep all docs in the same location; the [docs folder](/docs/). The README in each package simply points to its most relevant documentation which lives in the [docs folder](/docs/).
