@@ -12,7 +12,7 @@ import { Control, ControlIconProps, ControlProps } from './Control';
 export type CheckboxProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;
 
 const CheckboxIcon: React.FC<ControlIconProps> = memo(
-  ({ pressed, checked, disabled, animatedScaleValue, testID }) => {
+  ({ pressed, checked, disabled, animatedScaleValue, animatedOpacityValue, testID }) => {
     const cdsScale = useScale();
     const { checkboxSize } = scaleStyles[cdsScale].control;
     const backgroundColor = useMemo(() => {
@@ -44,7 +44,9 @@ const CheckboxIcon: React.FC<ControlIconProps> = memo(
           },
         ]}
       >
-        <Animated.View style={{ transform: [{ scale: animatedScaleValue }] }}>
+        <Animated.View
+          style={{ transform: [{ scale: animatedScaleValue }], opacity: animatedOpacityValue }}
+        >
           <Icon size="s" name="checkmark" color="primaryForeground" />
         </Animated.View>
       </Interactable>

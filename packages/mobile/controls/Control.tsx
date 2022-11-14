@@ -21,12 +21,15 @@ import { TextBody } from '../typography/TextBody';
 import { useLineHeight } from '../typography/useLineHeight';
 import { Haptics } from '../utils/haptics';
 
+import { useControlMotionProps } from './useControlMotionProps';
+
 export type ControlIconProps = {
   pressed: boolean;
   checked?: boolean;
   disabled?: boolean;
   backgroundColor: PaletteBackground;
   animatedScaleValue: Animated.Value;
+  animatedOpacityValue: Animated.Value;
 } & SharedProps;
 
 export type ControlProps<T extends string> = {
@@ -40,6 +43,8 @@ type ControlInternalProps<T extends string> = {
   children: React.ComponentType<ControlIconProps>;
   /** Label associated with the multiple choice option control. */
   label?: TextProps['children'];
+  /** If control is a switch. This will use switch motion token. */
+  shouldUseSwitchTransition?: boolean;
 } & ControlProps<T>;
 
 const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
@@ -56,6 +61,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     accessibilityLabel,
     accessibilityHint,
     children: ControlIcon,
+    shouldUseSwitchTransition,
     ...props
   }: ControlInternalProps<T>,
   ref: React.ForwardedRef<View>,
@@ -71,30 +77,18 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   const bodyLineHeight = useLineHeight('body');
   const isMounted = useRef(false);
 
-  // TODO: create a custom hook to initialize animated values so that they are not called on every render
-  const animatedBoxValue = useRef(new Animated.Value(checked && !disabled ? 1 : 0)).current;
-  const animatedScaleValue = useRef(new Animated.Value(checked ? 1 : 0)).current;
+  const { animation, animatedBoxValue, animatedScaleValue, animatedOpacityValue } =
+    useControlMotionProps({ checked, disabled, shouldUseSwitchTransition });
 
   const pressDisabled = disabled || readOnly;
 
   useEffect(() => {
     if (isMounted.current) {
-      Animated.parallel([
-        Animated.timing(animatedBoxValue, {
-          toValue: checked && !disabled ? 1 : 0,
-          duration: 150,
-          useNativeDriver: false,
-        }),
-        Animated.spring(animatedScaleValue, {
-          toValue: checked ? 1 : 0,
-          friction: 8,
-          useNativeDriver: true,
-        }),
-      ]).start();
+      animation.start();
     } else {
       isMounted.current = true;
     }
-  }, [checked, animatedBoxValue, animatedScaleValue, disabled]);
+  }, [checked, animation]);
 
   const handlePress = useCallback(() => {
     void Haptics.lightImpact();
@@ -107,6 +101,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     backgroundColor: checked ? ('primary' as const) : ('background' as const),
     disabled: pressDisabled,
     animatedScaleValue,
+    animatedOpacityValue,
     testID,
   };
 

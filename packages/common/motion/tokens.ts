@@ -1,4 +1,4 @@
-import type { MotionAnimation, MotionBaseSpec, MotionDuration, MotionEffect } from '../types';
+import type { MotionBaseSpec, MotionDuration, MotionEffect } from '../types';
 
 import { generateAnimToken } from './utils';
 
@@ -30,7 +30,7 @@ export const durations = {
   slow4: 1000,
 } as const;
 
-export const animations: MotionAnimation = {
+export const animations = {
   fadeIn: generateAnimToken('opacity', [0, 1], 'enterFunctional'),
   fadeIn10: generateAnimToken('opacity', [0, 0.1], 'enterFunctional'),
   fadeIn20: generateAnimToken('opacity', [0, 0.2], 'enterFunctional'),
@@ -65,7 +65,7 @@ export const animations: MotionAnimation = {
   scaleDownXXS: generateAnimToken('scale', [1, 0.98], 'global'),
   scaleDownXS: generateAnimToken('scale', [1, 0.95], 'global'),
   scaleDownS: generateAnimToken('scale', [1, 0.9], 'global'),
-};
+} as const;
 
 export const createMotionConfig = (
   effect: MotionEffect,

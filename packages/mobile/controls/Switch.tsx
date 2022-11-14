@@ -46,7 +46,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
         transform: [
           {
             translateX: animatedScaleValue.interpolate({
-              inputRange: [0, 1],
+              inputRange: [0.9, 1],
               outputRange: [0, switchWidth - switchThumbSize - 2],
             }),
           },
@@ -86,7 +86,14 @@ const SwitchWithRef = forwardRef(function SwitchWithRef(
   const { switchHeight } = scaleStyles[cdsScale].control;
 
   const switchNode = (
-    <Control {...props} accessible accessibilityRole="switch" label={children} ref={ref}>
+    <Control
+      {...props}
+      accessible
+      accessibilityRole="switch"
+      label={children}
+      ref={ref}
+      shouldUseSwitchTransition
+    >
       {SwitchIcon}
     </Control>
   );

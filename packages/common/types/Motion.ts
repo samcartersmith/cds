@@ -69,8 +69,8 @@ export type MotionTransition = {
 export type MotionBaseSpec = {
   // TODO: use MotionProperty
   property: string;
-  toValue: number;
-  fromValue?: number;
+  toValue: MotionValue;
+  fromValue?: MotionValue;
   delay?: number;
   useNativeDriver?: boolean;
 } & MotionTransition;

@@ -21,6 +21,12 @@ export const convertMotionConfig = ({
   useNativeDriver = true,
   oneOffDuration,
 }: MotionSpec): Animated.TimingAnimationConfig => {
+  if (typeof toValue === 'string') {
+    throw new Error(
+      'RN Animation methods does not work with string values. Please use interpolation instead.',
+    );
+  }
+
   return {
     toValue,
     delay,
