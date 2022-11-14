@@ -19,19 +19,11 @@ export const useWebBrowserOpener = () => {
 
       // Handle other schemes such as mailto, tel, and sms
       try {
-        const canOpenUrl = await Linking.canOpenURL(url);
-
-        if (!canOpenUrl) {
-          // TODO: replace these with Bugsnag one day
-          // eslint-disable-next-line no-console
-          console.error(`Cannot open URL ${url}`);
-          return;
-        }
-
         await Linking.openURL(url);
       } catch (err) {
+        // TODO: replace these with Bugsnag one day
         // eslint-disable-next-line no-console
-        console.error(err);
+        console.error(`Cannot open URL ${url}`, err);
       }
     },
     [spectrum],
