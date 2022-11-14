@@ -37,6 +37,10 @@ export const defaultFeatureFlags = {
    * @link https://developer.mozilla.org/en-US/docs/Web/CSS/gap
    */
   flexGap: false,
+  /** Mobile only - Consumers can enable this flag if they are using the new Fabric renderer
+   * @link https://reactnative.dev/architecture/fabric-renderer
+   */
+  fabric: false,
 };
 
 export const frontierFeaturesOn = {

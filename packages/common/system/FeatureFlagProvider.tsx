@@ -43,6 +43,7 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
     frontierCard: frontierCardProp,
     frontierSparkline: frontierSparklineProp,
     flexGap: flexGapProp,
+    fabric: fabricProp,
     onChange,
   }) => {
     const {
@@ -53,6 +54,7 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
       frontierCard: frontierCardContext,
       frontierSparkline: frontierSparklineContext,
       flexGap: flexGapContext,
+      fabric: fabricContext,
     } = useFeatureFlags();
 
     const [featureFlagsState, dispatch] = useReducer(featureFlagReducer, emptyObject);
@@ -68,9 +70,12 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
         frontierCard: frontierCardProp ?? (hasFrontier || frontierCardContext),
         frontierSparkline: frontierSparklineProp ?? (hasFrontier || frontierSparklineContext),
         flexGap: flexGapProp ?? flexGapContext,
+        fabric: fabricProp ?? fabricContext,
         ...otherFeatureFlagsState,
       };
     }, [
+      fabricContext,
+      fabricProp,
       featureFlagsState,
       flexGapContext,
       flexGapProp,

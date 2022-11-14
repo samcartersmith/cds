@@ -18,6 +18,7 @@ describe('BetaProvider', () => {
       wrapper: (props) => <BetaProvider features={features} {...props} />,
     });
     expect(result.current).toEqual({
+      fabric: false,
       flexGap: false,
       frontier: true,
       frontierButton: true,
@@ -34,6 +35,7 @@ describe('BetaProvider', () => {
       wrapper: (props) => <BetaProvider features={features} {...props} />,
     });
     expect(result.current).toEqual({
+      fabric: false,
       flexGap: false,
       frontier: true,
       frontierCard: true,

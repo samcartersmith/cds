@@ -19,6 +19,7 @@ describe('FeatureFlagProvider', () => {
       wrapper: (props) => <FeatureFlagProvider {...features} {...props} />,
     });
     expect(result.current).toEqual({
+      fabric: false,
       flexGap: false,
       frontier: true,
       frontierButton: true,
@@ -35,6 +36,7 @@ describe('FeatureFlagProvider', () => {
       wrapper: (props) => <FeatureFlagProvider {...features} {...props} />,
     });
     expect(result.current).toEqual({
+      fabric: false,
       flexGap: false,
       frontier: true,
       frontierCard: true,
