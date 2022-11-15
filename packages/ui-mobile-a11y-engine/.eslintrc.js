@@ -2,7 +2,7 @@ module.exports = {
   extends: ['plugin:@cbhq/react-native'],
   overrides: [
     {
-      files: ['**/__stories__/*'],
+      files: ['*.ts', '*.tsx'],
       rules: {
         'no-console': 'off',
       },

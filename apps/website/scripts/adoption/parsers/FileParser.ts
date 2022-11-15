@@ -66,7 +66,7 @@ function findNodeWithType(
   return foundNode;
 }
 
-export class FileParser {
+export class FilesParser {
   /** Project the file belongs to. An instance of ProjectParser class. */
   public readonly project: ProjectParser;
 
@@ -128,7 +128,7 @@ export class FileParser {
       return this;
     } catch (err) {
       if (err instanceof Error) {
-        this.project.spinner.fail(`FileParser failed ${err?.message}`);
+        this.project.spinner.fail(`FilesParser failed ${err?.message}`);
       } else {
         throw err;
       }
@@ -142,7 +142,7 @@ export class FileParser {
       return this;
     } catch (err) {
       if (err instanceof Error) {
-        this.project.spinner.fail(`FileParser failed ${err?.message}`);
+        this.project.spinner.fail(`FilesParser failed ${err?.message}`);
       } else {
         throw err;
       }
@@ -156,7 +156,7 @@ export class FileParser {
       return this;
     } catch (err) {
       if (err instanceof Error) {
-        this.project.spinner.fail(`FileParser failed ${err?.message}`);
+        this.project.spinner.fail(`FilesParser failed ${err?.message}`);
       } else {
         throw err;
       }
@@ -170,7 +170,7 @@ export class FileParser {
       return this;
     } catch (err) {
       if (err instanceof Error) {
-        this.project.spinner.fail(`FileParser failed ${err?.message}`);
+        this.project.spinner.fail(`FilesParser failed ${err?.message}`);
       } else {
         throw err;
       }
