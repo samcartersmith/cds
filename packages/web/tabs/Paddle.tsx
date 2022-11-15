@@ -1,7 +1,12 @@
 import React from 'react';
 import { AnimatePresence, m as motion } from 'framer-motion';
 import { css } from 'linaria';
-import { PaletteBackground, TabLabelProps } from '@cbhq/cds-common';
+import {
+  PaletteBackground,
+  SharedAccessibilityProps,
+  SharedProps,
+  TabLabelProps,
+} from '@cbhq/cds-common';
 import {
   animateGradientScaleConfig,
   animatePaddleOpacityConfig,
@@ -28,7 +33,8 @@ export type PaddleProps = {
   variant: TabLabelProps['variant'];
   background?: PaletteBackground;
   onPress: () => void;
-};
+} & SharedProps &
+  SharedAccessibilityProps;
 
 export const paddleStaticClassName = 'cds-paddle';
 const gradientClassName = css`
@@ -74,6 +80,8 @@ export const Paddle = ({
   show,
   background = 'background',
   onPress,
+  testID = `${paddleStaticClassName}--${direction}`,
+  accessibilityLabel,
 }: PaddleProps) => {
   const palette = usePalette();
   const className = cx(
@@ -105,12 +113,18 @@ export const Paddle = ({
   return (
     <AnimatePresence>
       {show && (
-        <span className={className} style={{ color: palette[background] }}>
+        <span
+          className={className}
+          style={{ color: palette[background] }}
+          data-testid={`${testID}--container`}
+        >
           <motion.span className={buttonClassName} {...buttonMotionProps}>
             <IconButton
               name={direction === 'left' ? 'caretLeft' : 'caretRight'}
               onPress={onPress}
               variant="secondary"
+              testID={testID}
+              accessibilityLabel={accessibilityLabel}
             />
           </motion.span>
           <motion.span className={paddleGradientClassName} {...gradientMotionProps} />

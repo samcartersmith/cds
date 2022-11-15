@@ -1,15 +1,29 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 import sample from 'lodash/sample';
+import { loremIpsum } from '@cbhq/cds-common/internal/loremIpsumBuilder';
 import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
 
+import { VStack } from '../../alpha/VStack';
 import { Button } from '../../buttons/Button';
 import { Select, SelectOption } from '../../controls';
-import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system';
-import { TextHeadline } from '../../typography';
+import { Link, TextBody, TextHeadline, TextTitle1 } from '../../typography';
 import { enableJavascript } from '../../utils/storybookParams/percy';
 import { TabNavigation } from '../TabNavigation';
+
+import { MockTabPanel } from './MockTabPanel';
+
+const a11ySkipConfig = {
+  config: {
+    /** The TabNavigation docs explain the proper way to setup the tabpanel, and
+     *  this is handled in the Accessibility and TabNavigationInteractive stories */
+    rules: [
+      { id: 'aria-valid-attr-value', enabled: false },
+      { id: 'duplicate-id-active', enabled: false },
+    ],
+  },
+};
 
 const longTabs: TabProps[] = [
   {
@@ -96,14 +110,17 @@ export const Default: Story = () => {
     </>
   );
 };
-Default.parameters = { percy: enableJavascript };
+Default.parameters = {
+  percy: enableJavascript,
+  a11y: a11ySkipConfig,
+};
 
 export const WithPaddles: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
 
   return <TabNavigation value={value} tabs={longTabs} onChange={setValue} />;
 };
-WithPaddles.parameters = { percy: enableJavascript };
+WithPaddles.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
 export const WithDotCountChange: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
@@ -155,6 +172,7 @@ export const WithDotCountChange: Story = () => {
     </>
   );
 };
+WithDotCountChange.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
 export const Secondary: Story = () => {
   const [currentTab, setCurrentTab] = useState<TabNavigationProps['value']>();
@@ -204,4 +222,53 @@ export const Secondary: Story = () => {
     </>
   );
 };
-Secondary.parameters = { percy: enableJavascript };
+Secondary.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
+
+export const AccessibilityTest: Story = () => {
+  const [currentTab, setCurrentTab] = useState<TabNavigationProps['value']>(tabs[0].id);
+
+  return (
+    <VStack gap={2}>
+      <TabNavigation
+        accessibilityLabel="Really nice tab navigation"
+        value={currentTab}
+        tabs={tabs.slice(0, 3)}
+        onChange={setCurrentTab}
+      />
+      <MockTabPanel id={tabs[0].id} isActive={currentTab === tabs[0].id}>
+        <TextTitle1 as="h2" spacingBottom={2}>
+          This is tab one
+        </TextTitle1>
+        <TextBody as="p">
+          <Link to="/">This is the body</Link> of tab one. You are going to love it
+        </TextBody>
+        <TextBody as="p">{loremIpsum}</TextBody>
+      </MockTabPanel>
+      <MockTabPanel id={tabs[1].id} isActive={currentTab === tabs[1].id}>
+        <TextTitle1 as="h2" spacingBottom={2}>
+          Here we have tab two
+        </TextTitle1>
+        <TextBody as="p">
+          And look, <Link to="/">this another link</Link> in the body of tab one. You are going to
+          love it
+        </TextBody>
+        <TextBody as="p">
+          {loremIpsum} {loremIpsum}
+        </TextBody>
+      </MockTabPanel>
+      <MockTabPanel id={tabs[2].id} isActive={currentTab === tabs[2].id}>
+        <TextTitle1 as="h2" spacingBottom={2}>
+          Heyooo, tab three!
+        </TextTitle1>
+        <TextBody as="p">
+          Again, we can put a link like <Link to="/">this another link</Link> in the body of tab
+          one. You are going to love it
+        </TextBody>
+        <TextBody as="p">
+          {loremIpsum} {loremIpsum}
+        </TextBody>
+      </MockTabPanel>
+    </VStack>
+  );
+};
+AccessibilityTest.parameters = { percy: enableJavascript };

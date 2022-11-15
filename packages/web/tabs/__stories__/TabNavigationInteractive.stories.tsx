@@ -1,15 +1,28 @@
 import { useState } from 'react';
 import { expect } from '@storybook/jest';
 import { ComponentStoryObj } from '@storybook/react';
-import { userEvent, within } from '@storybook/testing-library';
+import { fireEvent, userEvent, within } from '@storybook/testing-library';
 
-import { TabNavigation } from '../TabNavigation';
+import { VStack } from '../../layout';
+import { TextTitle1 } from '../../typography';
+import { pauseStory } from '../../utils/storybook';
+import { enableJavascript } from '../../utils/storybookParams/percy';
+import { TabNavigation, tabNavigationStaticClassName } from '../TabNavigation';
 
-const TEST_ID = 'cds-tab-navigation';
+const WAIT = 200;
+const TEST_IDS = {
+  paddle: {
+    left: `${tabNavigationStaticClassName}--paddle-left`,
+    right: `${tabNavigationStaticClassName}--paddle-right`,
+  },
+  tabNavigation: tabNavigationStaticClassName,
+};
+
 const tabs = [
   {
     id: 'first-test',
     label: 'First label',
+    testID: 'first',
   },
   {
     id: 'second-test',
@@ -59,34 +72,56 @@ const tabs = [
 
 const MockTabNavigation = () => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
-  return <TabNavigation testID={TEST_ID} value={activeTab} tabs={tabs} onChange={setActiveTab} />;
+  return (
+    <VStack gap={2}>
+      <TabNavigation
+        testID={TEST_IDS.tabNavigation}
+        value={activeTab}
+        tabs={tabs}
+        onChange={setActiveTab}
+      />
+      <VStack
+        spacing={2}
+        bordered
+        borderRadius="rounded"
+        background="primaryWash"
+        role="tabpanel"
+        id={`tabpanel--${activeTab}`}
+        accessibilityLabelledBy={`tab--${activeTab}`}
+      >
+        <TextTitle1 as="h2">This is tab {activeTab}</TextTitle1>
+      </VStack>
+    </VStack>
+  );
 };
 
 export default {
   title: 'Interactive/TabNavigation',
   component: MockTabNavigation,
 };
-
 export const Story: ComponentStoryObj<typeof MockTabNavigation> = {
   args: {},
   parameters: {
-    percy: {
-      waitForTimeout: 500,
-    },
+    percy: { waitForTimeout: tabs.length * WAIT, enableJavascript },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
+
+    const firstTab = canvas.getByText(tabs[0].label).closest('button');
+    const lastTab = canvas.getByText(tabs[tabs.length - 1].label).closest('button');
+
+    // Tab into the document and expect the active element to be in focus
     userEvent.tab();
-    userEvent.tab();
-    userEvent.tab();
-    userEvent.tab();
-    userEvent.tab();
-    userEvent.tab();
-    userEvent.tab();
-    userEvent.tab();
-    userEvent.tab();
-    userEvent.tab();
-    userEvent.tab();
-    expect(canvas.getByTestId('eleventh')).toHaveFocus();
+    expect(firstTab).toHaveFocus();
+
+    for (const { label } of tabs) {
+      const tabButton = canvas.getByText(label).closest('button') ?? canvas.getByText(label);
+      if (tabButton !== lastTab) {
+        // Tab again and expect the paddle to be in focus
+        fireEvent.keyDown(tabButton, { key: 'ArrowRight' });
+      }
+      // eslint-disable-next-line no-await-in-loop
+      await pauseStory(WAIT);
+    }
   },
 };

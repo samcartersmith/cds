@@ -4,9 +4,10 @@ import React, {
   ForwardedRef,
   forwardRef,
   ForwardRefExoticComponent,
+  KeyboardEvent,
   memo,
+  Ref,
   RefAttributes,
-  RefObject,
   useCallback,
   useEffect,
   useImperativeHandle,
@@ -32,26 +33,34 @@ import { Paddle } from './Paddle';
 import { TabIndicator } from './TabIndicator';
 import { TabLabel } from './TabLabel';
 
+export const tabNavigationStaticClassName = 'cds-tab-navigation';
+
 const SCROLL_PADDING = 5; // How much breathing room do we want before showing the paddles
 const PRESS_TIMEOUT = 50;
 
 let scrollTimeout: number;
 const containerClassName = css`
-  position: relative;
-  display: flex;
-  align-items: center;
+  &.${tabNavigationStaticClassName} {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
 `;
 const scrollContainerClassName = css`
-  overflow-y: hidden;
-  overflow-x: auto;
-  &::-webkit-scrollbar {
-    display: none;
+  &.${tabNavigationStaticClassName} {
+    overflow-y: hidden;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 `;
 const pressableClass = css`
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
+  &.${tabNavigationStaticClassName} {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
 `;
 
 const PressableOpacityWithoutChildren = PressableOpacity as ForwardRefExoticComponent<
@@ -59,6 +68,7 @@ const PressableOpacityWithoutChildren = PressableOpacity as ForwardRefExoticComp
 >;
 type LayoutProps = { width: number; x: number };
 type TabsLayoutsMap = Map<string, LayoutProps>;
+type TabRefs = Ref<{ id: string; ref: React.RefObject<HTMLElement> }[]>;
 const fallbackLayout: LayoutProps = { width: 0, x: 0 };
 
 export const TabNavigation = memo(
@@ -71,6 +81,8 @@ export const TabNavigation = memo(
         testID = 'tabNavigation',
         onChange = noop,
         background,
+        accessibilityLabelledBy,
+        accessibilityLabel,
         ...rest
       }: TabNavigationProps,
       forwardedRef: ForwardedRef<HTMLElement | null>,
@@ -82,6 +94,7 @@ export const TabNavigation = memo(
       const shouldOverrideScale = useMemo(() => isDense && isPrimary, [isDense, isPrimary]);
       const offsetRef = useRef(0);
       const tabsLayoutsMap = useRef<TabsLayoutsMap>(new Map());
+      const tabsRefs: TabRefs = useRef(tabs.map(({ id }) => ({ id, ref: createRef() })));
       const scrollRef = useRef<HTMLElement>(null);
       useImperativeHandle(forwardedRef, () => scrollRef.current as HTMLDivElement);
       const end = Number(scrollRef.current?.scrollWidth) - Number(scrollRef.current?.offsetWidth);
@@ -148,7 +161,30 @@ export const TabNavigation = memo(
         [tabs, value],
       );
 
-      const getScrollIntoViewHandler = useCallback((ref: RefObject<HTMLElement>) => {
+      const getTabKeydownHandler = useCallback((currentId: string) => {
+        return function handleKeyDown(e: KeyboardEvent<HTMLElement>) {
+          const refs = tabsRefs?.current;
+          const currentActiveIndex = refs?.findIndex(({ id }) => id === currentId) ?? 0;
+          const lastIndex = Number(refs?.length) - 1;
+          const nextIndex = currentActiveIndex < lastIndex ? currentActiveIndex + 1 : 0;
+          const prevIndex = currentActiveIndex !== 0 ? currentActiveIndex - 1 : lastIndex;
+
+          switch (e.key) {
+            case 'ArrowRight':
+              e.preventDefault();
+              refs?.[nextIndex].ref?.current?.focus();
+              break;
+            case 'ArrowLeft':
+              e.preventDefault();
+              refs?.[prevIndex].ref?.current?.focus();
+              break;
+            default:
+              break;
+          }
+        };
+      }, []);
+
+      const getScrollIntoViewHandler = useCallback((ref) => {
         return function handleFocus() {
           // Container
           const container = scrollRef.current;
@@ -156,9 +192,8 @@ export const TabNavigation = memo(
           const containerWidth = Number(container?.getBoundingClientRect().width);
           const containerRightEdge = containerWidth + Number(container?.scrollLeft);
           // Element
-          const element = ref.current;
-          const elementWidth = Number(element?.clientWidth);
-          const elementOffsetLeft = Number(element?.offsetLeft);
+          const elementWidth = Number(ref?.current?.clientWidth);
+          const elementOffsetLeft = Number(ref?.current?.offsetLeft);
           // State
           const isOffscreenLeft = elementOffsetLeft < containerScrollLeft + tabsPaddleWidth;
           const isOffscreenRight =
@@ -215,38 +250,55 @@ export const TabNavigation = memo(
                 id,
                 onPress,
                 label,
-                accessibilityLabel = label,
+                accessibilityLabel: tabA11yLabel = label,
                 count,
                 testID: tabLabelTestID = `${testID}-tabLabel--${id}`,
               }) => {
-                const ref: RefObject<HTMLElement> = createRef();
+                const refs = tabsRefs.current;
+                const currentRef =
+                  refs?.find(({ id: currentId }) => id === currentId)?.ref ?? createRef();
+
                 return createElement(
                   PressableOpacityWithoutChildren,
                   {
                     key: `${id}--button`,
+                    ref: currentRef,
                     role: 'tab',
-                    accessibilityLabel,
-                    accessibilityHint: accessibilityLabel,
+                    'aria-selected': id === value,
+                    id: `tab--${id}`,
+                    'aria-controls': `tabpanel--${id}`,
+                    accessibilityLabel: tabA11yLabel,
                     onPress: getTabPressHandler(id, onPress as (id: string) => void),
-                    onFocus: getScrollIntoViewHandler(ref),
-                    className: cx(pressableClass, insetFocusRing),
+                    onKeyDown: getTabKeydownHandler(id),
+                    onFocus: getScrollIntoViewHandler(currentRef),
+                    className: cx(tabNavigationStaticClassName, pressableClass, insetFocusRing),
                     testID: tabLabelTestID,
-                    ref,
+                    tabIndex: id === value ? undefined : -1,
                   },
                   getChildren({ id, count, label }),
                 );
               },
             ),
-        [tabs, testID, getTabPressHandler, getScrollIntoViewHandler, getChildren],
+        [
+          tabs,
+          testID,
+          getTabPressHandler,
+          getTabKeydownHandler,
+          getScrollIntoViewHandler,
+          value,
+          getChildren,
+        ],
       );
 
       return (
-        <div ref={observe} className={containerClassName}>
+        <div ref={observe} className={cx(tabNavigationStaticClassName, containerClassName)}>
           <Paddle
             background={background}
             show={leftPaddle}
             onPress={handleScrollLeft}
             variant={variant}
+            accessibilityLabel="Skip to beginning"
+            testID={`${tabNavigationStaticClassName}--paddle-left`}
           />
           <HStack
             ref={scrollRef}
@@ -254,19 +306,32 @@ export const TabNavigation = memo(
             alignItems="center"
             position="relative"
             background={background}
-            dangerouslySetClassName={scrollContainerClassName}
+            dangerouslySetClassName={cx(tabNavigationStaticClassName, scrollContainerClassName)}
           >
             <VStack testID={testID} {...rest} spacing={0}>
               {shouldOverrideScale ? (
                 <span style={{ zIndex: zIndex.navigation }}>
                   <ThemeProvider scale="large">
-                    <HStack role="tablist" gap={4} flexShrink={0}>
+                    <HStack
+                      role="tablist"
+                      accessibilityLabelledBy={accessibilityLabelledBy}
+                      accessibilityLabel={accessibilityLabel}
+                      gap={4}
+                      flexShrink={0}
+                    >
                       {tabLabels}
                     </HStack>
                   </ThemeProvider>
                 </span>
               ) : (
-                <HStack role="tablist" gap={4} flexShrink={0} zIndex={zIndex.navigation}>
+                <HStack
+                  role="tablist"
+                  accessibilityLabelledBy={accessibilityLabelledBy}
+                  accessibilityLabel={accessibilityLabel}
+                  gap={4}
+                  flexShrink={0}
+                  zIndex={zIndex.navigation}
+                >
                   {tabLabels}
                 </HStack>
               )}
@@ -281,6 +346,8 @@ export const TabNavigation = memo(
             show={rightPaddle}
             onPress={handleScrollRight}
             variant={variant}
+            accessibilityLabel="skip to end"
+            testID={`${tabNavigationStaticClassName}--paddle-right`}
           />
         </div>
       );

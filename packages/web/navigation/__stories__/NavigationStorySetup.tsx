@@ -13,6 +13,7 @@ import { Avatar } from '../../media';
 import { PortalProvider } from '../../overlays/PortalProvider';
 import { Pressable } from '../../system';
 import { TabNavigation } from '../../tabs';
+import { MockTabPanel } from '../../tabs/__stories__/MockTabPanel';
 import { palette } from '../../tokens';
 import { TextDisplay2, TextHeadline, TextLegal } from '../../typography';
 import { enableJavascript } from '../../utils/storybookParams/percy';
@@ -75,12 +76,36 @@ const tabs = [
     label: 'Schill',
   },
 ];
-export const NavigationBarFullExample: React.FC = () => {
+type NavigationBarFullExampleProps = {
+  pageTitle: string;
+  onTabChange: (id: string) => void;
+  onBackPress: () => void;
+};
+export function NavigationBarFullExample({
+  pageTitle,
+  onTabChange,
+  onBackPress,
+}: NavigationBarFullExampleProps) {
   const [value, setValue] = useState(tabs[0].id);
-  const showBackButton = useMemo(() => value !== tabs[0].id, [value]);
+  const showBackButton = useMemo(
+    () => (pageTitle ? pageTitle !== 'Dashboard' : value !== tabs[0].id),
+    [pageTitle, value],
+  );
   const handleBackPress = useCallback(() => {
-    setValue(tabs[0].id);
-  }, []);
+    if (onBackPress) {
+      onBackPress();
+    } else {
+      setValue(tabs[0].id);
+    }
+  }, [onBackPress]);
+
+  const handleTabChange = useCallback(
+    (id: string) => {
+      onTabChange?.(id);
+      setValue?.(id);
+    },
+    [onTabChange],
+  );
 
   return (
     <NavigationBar
@@ -104,12 +129,12 @@ export const NavigationBarFullExample: React.FC = () => {
           </Pressable>
         </HStack>
       }
-      bottom={<TabNavigation tabs={tabs} value={value} onChange={setValue} />}
+      bottom={<TabNavigation tabs={tabs} value={value} onChange={handleTabChange} />}
     >
-      <NavigationTitle>{`Personal Portfolio (${value})`}</NavigationTitle>
+      <NavigationTitle>{pageTitle ?? `Personal Portfolio (${value})`}</NavigationTitle>
     </NavigationBar>
   );
-};
+}
 
 export const NavigationBarTitle: React.FC = () => {
   return (
@@ -131,7 +156,22 @@ export const NavigationBarTitle: React.FC = () => {
 };
 
 export const ComposedSystem = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeSidebarIndex, setActiveSidebarIndex] = useState(0);
+  const [activeTabId, setActiveTabId] = useState('all');
+
+  const activeTabTitle = useMemo(
+    () => tabs.find(({ id }) => id === activeTabId),
+    [activeTabId],
+  )?.label;
+
+  const activePageTitle = useMemo(
+    () => items[activeSidebarIndex]?.title ?? 'Dashboard',
+    [activeSidebarIndex],
+  );
+
+  const handleTabChange = (id: string) => {
+    setActiveTabId(id);
+  };
 
   return (
     <HStack>
@@ -139,19 +179,31 @@ export const ComposedSystem = () => {
         {items.map((props, index) => (
           <SidebarItem
             key={`sidebar-item--${props.title}`}
-            active={index === activeIndex}
-            onPress={() => setActiveIndex(index)}
+            active={index === activeSidebarIndex}
+            onPress={() => setActiveSidebarIndex(index)}
             {...props}
           />
         ))}
       </Sidebar>
       <VStack overflow="clip">
-        <NavigationBarFullExample />
-        <VStack spacing={4}>
-          <TextDisplay2 as="h2" spacingBottom={1}>
-            {items[activeIndex].title}
-          </TextDisplay2>
-          <LoremIpsum repeat={20} />
+        <NavigationBarFullExample
+          pageTitle={activePageTitle}
+          onTabChange={handleTabChange}
+          onBackPress={() => setActiveSidebarIndex(-1)}
+        />
+        <VStack spacing={2}>
+          {tabs.map(({ id }, idx) => {
+            const isActive = id === activeTabId;
+
+            return (
+              <MockTabPanel id={id} isActive={isActive}>
+                <TextDisplay2 as="h2" spacingBottom={1}>
+                  {activeTabTitle}
+                </TextDisplay2>
+                <LoremIpsum repeat={1 * (idx + 1)} />
+              </MockTabPanel>
+            );
+          })}
         </VStack>
       </VStack>
     </HStack>

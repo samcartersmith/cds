@@ -12,6 +12,14 @@ import { NavigationBar } from '../NavigationBar';
   <Story
     name="NavigationBar full example"
     decorators={[withStoryLabel('NavigationBar full example (click the avatar)')]}
+    parameters={{
+      a11y: {
+        config: {
+          <!-- TODO: Use tsx CSF3 stories -->
+          rules: [{ id: 'aria-valid-attr-value', enabled: false }],
+        },
+      },
+    }}
   >
     <NavigationBarFullExample />
   </Story>
