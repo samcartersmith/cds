@@ -1,5 +1,5 @@
-import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
-import { TextInput } from 'react-native';
+import React, { memo, useCallback, useEffect, useMemo } from 'react';
+import { useSharedValue } from 'react-native-reanimated';
 import * as interpolate from 'd3-interpolate-path';
 import { useValueChanges } from '@cbhq/cds-common/hooks/useValueChanges';
 import { SparklineInteractiveAnimatedPathProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
@@ -16,15 +16,15 @@ export const SparklineInteractiveAnimatedPath = memo(
     d = '',
     color,
     selectedPeriod,
-    area,
+    area: areaProp,
     yAxisScalingFactor,
     initialPath,
     initialArea,
   }: SparklineInteractiveAnimatedPathProps) => {
     const { isFallbackVisible, hideFallback, animateMinMaxIn, compact } =
       useSparklineInteractiveContext();
-    const pathRef = useRef<TextInput | null>(null);
-    const areaRef = useRef<TextInput | null>(null);
+    const path = useSharedValue(initialPath);
+    const area = useSharedValue(initialArea);
 
     // Only tween animation on period changes
     const { hasNotChanged: skipAnimation, addPreviousValue: addPreviousPeriod } =
@@ -41,7 +41,7 @@ export const SparklineInteractiveAnimatedPath = memo(
       newValue: newArea,
       hasChanged: shouldUpdateArea,
       addPreviousValue: addPreviousArea,
-    } = useValueChanges(area ?? '');
+    } = useValueChanges(areaProp ?? '');
 
     const pathInterpolator = useMemo(
       () => interpolate.interpolatePath((previousPath ?? initialPath) as string, newPath),
@@ -56,27 +56,19 @@ export const SparklineInteractiveAnimatedPath = memo(
     const animationListener = useCallback(
       ({ value }: { value: number }) => {
         const val = Number(value.toFixed(4));
-        pathRef.current?.setNativeProps({
-          d: pathInterpolator(val),
-        });
-        areaRef.current?.setNativeProps({
-          d: areaInterpolator(val),
-        });
+        path.value = pathInterpolator(val);
+        area.value = areaInterpolator(val);
       },
-      [areaInterpolator, pathInterpolator],
+      [area, areaInterpolator, path, pathInterpolator],
     );
 
     const updatePathWithoutAnimation = useCallback(() => {
-      pathRef.current?.setNativeProps({
-        d: pathInterpolator(1),
-      });
+      path.value = pathInterpolator(1);
 
-      areaRef.current?.setNativeProps({
-        d: areaInterpolator(1),
-      });
+      area.value = areaInterpolator(1);
 
       animateMinMaxIn.start();
-    }, [animateMinMaxIn, areaInterpolator, pathInterpolator]);
+    }, [animateMinMaxIn, area, areaInterpolator, path, pathInterpolator]);
 
     const playAnimation = useInterruptiblePathAnimation({
       animationListener,
@@ -122,14 +114,13 @@ export const SparklineInteractiveAnimatedPath = memo(
 
     return (
       <SparklineGradient
-        path={initialPath}
-        ref={pathRef}
+        animatedPath={path}
         width={chartWidth}
         height={chartHeight}
         color={color}
         yAxisScalingFactor={yAxisScalingFactor}
       >
-        {!!area && <SparklineArea area={initialArea} ref={areaRef} />}
+        {!!areaProp && <SparklineArea animatedArea={area} />}
       </SparklineGradient>
     );
   },
