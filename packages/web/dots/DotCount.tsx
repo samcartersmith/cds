@@ -1,12 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { AnimatePresence, m as motion } from 'framer-motion';
 import { css } from 'linaria';
-import {
-  dotOpacityEnterConfig,
-  dotOpacityExitConfig,
-  dotScaleEnterConfig,
-  dotScaleExitConfig,
-} from '@cbhq/cds-common/motion/dot';
 import {
   dotCountContent,
   dotCountPadding,
@@ -16,7 +9,6 @@ import { DotCountBaseProps } from '@cbhq/cds-common/types/DotCountBaseProps';
 import { parseDotCountMaxOverflow } from '@cbhq/cds-common/utils/parseDotCountMaxOverflow';
 
 import { usePalette } from '../hooks/usePalette';
-import { useMotionProps } from '../motion/useMotionProps';
 import { TextCaption } from '../typography/TextCaption';
 import { handlePreventPropagation } from '../utils/eventHandlers';
 
@@ -53,12 +45,6 @@ export const DotCount = memo(
       };
     }, [palette, pinStyles, variant]);
 
-    const motionProps = useMotionProps({
-      enterConfigs: [dotOpacityEnterConfig, dotScaleEnterConfig],
-      exitConfigs: [dotOpacityExitConfig, dotScaleExitConfig],
-      exit: 'exit',
-    });
-
     return (
       <div
         aria-label={accessibilityLabel}
@@ -67,21 +53,19 @@ export const DotCount = memo(
         {...props}
       >
         {children}
-        <AnimatePresence>
-          {count > 0 && (
-            <motion.div
-              {...motionProps}
-              className={dotCountContentLinaria}
-              data-testid="dotcount-outer-container"
-              style={styles}
-              onClick={handlePreventPropagation}
-            >
-              <TextCaption align="center" as="p" color="primaryForeground">
-                {parseDotCountMaxOverflow(count, max)}
-              </TextCaption>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {count > 0 && (
+          // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+          <div
+            className={dotCountContentLinaria}
+            data-testid="dotcount-outer-container"
+            style={styles}
+            onClick={handlePreventPropagation}
+          >
+            <TextCaption align="center" as="p" color="primaryForeground">
+              {parseDotCountMaxOverflow(count, max)}
+            </TextCaption>
+          </div>
+        )}
       </div>
     );
   },

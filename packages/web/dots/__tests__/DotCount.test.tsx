@@ -46,7 +46,7 @@ describe('DotCount', () => {
       position: 'absolute',
       top: 0,
       right: 0,
-      transform: 'translateX(50%) translateY(-50%) scale(0.9) translateZ(0)',
+      transform: 'translate(50%, -50%)',
     });
   });
 });

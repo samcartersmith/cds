@@ -29,7 +29,7 @@ export const getTransform = (pin?: PinPlacement, overlap?: DotOverlap) => {
   // If the content we are overlapping has a circular shape
   // we need to apply more transformation to the dot
   // so it sits on the circle rather than awkwardly outside
-  // inspiration: https://mui.com/material-ui/react-badge/#badge-overlap
+  // inpsiration: https://mui.com/material-ui/react-badge/#badge-overlap
   // 14% because that is what yields the best result :p
   const amountToShift = overlap === 'circular' ? '14%' : 0;
 
@@ -38,8 +38,5 @@ export const getTransform = (pin?: PinPlacement, overlap?: DotOverlap) => {
     [transformedHorizontal]: amountToShift,
     [vertical]: amountToShift,
     transform: `translate(${horizontalMultiplier * 50}%, ${verticalMultiplier * 50}%)`,
-    // for DotCount because transform will be overridden by motion styles
-    translateX: `${horizontalMultiplier * 50}%`,
-    translateY: `${verticalMultiplier * 50}%`,
   } as const;
 };
