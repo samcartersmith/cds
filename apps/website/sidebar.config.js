@@ -598,7 +598,13 @@ const sidebars = {
         {
           type: 'category',
           label: 'Messaging',
-          items: ['patterns/messaging/overview', 'patterns/messaging/error'],
+          items: [
+            'patterns/messaging/overview',
+            'patterns/messaging/error',
+            'patterns/messaging/informational',
+            'patterns/messaging/success',
+            'patterns/messaging/warning',
+          ],
         },
         'patterns/empty-states',
         'patterns/forms',
