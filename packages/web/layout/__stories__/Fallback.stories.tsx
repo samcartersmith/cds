@@ -1,5 +1,3 @@
-import { fallbackBuilder } from '@cbhq/cds-common/internal/fallbackBuilder';
-
 import { TextBody } from '../../typography';
 import { Fallback } from '../Fallback';
 import { VStack } from '../VStack';
@@ -9,8 +7,41 @@ export default {
   component: Fallback,
 };
 
-export const { Basic, RectangleWidthVariants } = fallbackBuilder({
-  VStack,
-  Fallback,
-  TextBody: (props) => <TextBody as="p" {...props} />,
-});
+export const Basic = () => {
+  // index 0 = width, index 1 = height
+  const sizes = [
+    [10, 100],
+    [120, 200],
+    [900, 100],
+    [10, 10],
+  ];
+
+  return (
+    <VStack gap={3}>
+      {sizes.map(([width, height]) => (
+        <>
+          <TextBody as="p">
+            Width: {width}, Height: {height}
+          </TextBody>
+          <Fallback width={width} height={height} disableRandomRectWidth />
+        </>
+      ))}
+    </VStack>
+  );
+};
+
+export const HeightAsCSSVar = () => {
+  return <Fallback width={100} height="var(--title3-line-height)" />;
+};
+
+export const RectangleWidthVariants = () => {
+  return (
+    <VStack gap={3}>
+      {Array(10)
+        .fill({})
+        .map((_, i) => (
+          <Fallback width={100} height={20} rectWidthVariant={i} />
+        ))}
+    </VStack>
+  );
+};

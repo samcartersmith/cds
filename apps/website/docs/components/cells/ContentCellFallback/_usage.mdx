@@ -31,28 +31,3 @@ render(<RenderContentCellFallbacksInList />);
 ```
 
 :::
-
-Here is an example of how to use dangerouslySetIterations.
-
-```jsx noInline
-function DangerouslySetIterations() {
-  return <ContentCellFallback title dangerouslySetIterations={30} />;
-}
-```
-
-:::danger DangerouslySetIterations
-
-On mobile, ContentCellFallback loops for 10 times and stops animating after that. We do
-this for performance reasons, and anything that loads for more than 10s should
-not go to production anyways.
-
-<br />
-
-On web, it doesn't have this restriction. With that said, if something is loading for more than 10s, you should seriously re-consider the architecture.
-
-<br />
-
-If you truly need the animation to exceed more than 10s on mobile, here is an escape hatch.
-
-<br />
-:::

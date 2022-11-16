@@ -25,7 +25,6 @@ export const routes = {
   Divider: () => require('../layout/__stories__/Divider.stories').default,
   Dots: () => require('../dots/__stories__/Dots.stories').default,
   Drawer: () => require('../overlays/__stories__/Drawer.stories').default,
-  Fallback: () => require('../layout/__stories__/Fallback.stories').default,
   Group: () => require('../layout/__stories__/Group.stories').default,
   HeroSquare: () => require('../illustrations/__stories__/HeroSquare.stories').default,
   HintMotion: () => require('../motion/__stories__/HintMotion.stories').default,

@@ -10,21 +10,7 @@ import { fallbackShimmer } from '../styles/fallbackShimmer';
 
 import { Box, BoxProps } from './Box';
 
-export type FallbackProps = {
-  /**
-   * By default, Fallback will iterate 10 times
-   * and then it will stop the animation. We do
-   * this for performance reasons.
-   *
-   * If your Fallback loader takes more than 10s,
-   * then you are use this. However, please use this
-   * sparingly. Its best to fix the slow operation
-   * before proceeding with this approach
-   * @default 10
-   */
-  dangerouslySetIterations?: number;
-} & FallbackBaseProps &
-  Omit<BoxProps, 'borderRadius' | 'height' | 'width'>;
+export type FallbackProps = FallbackBaseProps & Omit<BoxProps, 'borderRadius' | 'height' | 'width'>;
 
 export const Fallback = memo(function Fallback({
   height,
@@ -32,7 +18,6 @@ export const Fallback = memo(function Fallback({
   width: baseWidth,
   disableRandomRectWidth,
   rectWidthVariant,
-  dangerouslySetIterations = 10,
   ...props
 }: FallbackProps) {
   const fallbackShapeOptions = useMemo(
@@ -60,7 +45,7 @@ export const Fallback = memo(function Fallback({
         isInteraction: false,
       }),
       {
-        iterations: dangerouslySetIterations,
+        iterations: 10,
       },
     );
 
@@ -71,7 +56,7 @@ export const Fallback = memo(function Fallback({
     animateShimmer();
 
     return () => shimmerAnimation.stop();
-  }, [dangerouslySetIterations]);
+  }, []);
 
   const containerStyle: ViewStyle = useMemo(
     () => ({
