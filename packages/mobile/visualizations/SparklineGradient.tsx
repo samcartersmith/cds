@@ -1,7 +1,6 @@
 import React, { forwardRef, memo, useMemo, useRef } from 'react';
 import { TextInput } from 'react-native';
-import Animated, { SharedValue, useAnimatedProps } from 'react-native-reanimated';
-import Svg, { Defs, G, LinearGradient, Path, PathProps, Stop } from 'react-native-svg';
+import Svg, { Defs, G, LinearGradient, Path, Stop } from 'react-native-svg';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { SparklineBaseProps } from '@cbhq/cds-common/types/SparklineBaseProps';
 import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
@@ -13,18 +12,9 @@ import { useAccessibleForegroundGradient } from '../color/useAccessibleForegroun
 
 import { SparklineAreaPattern } from './SparklineAreaPattern';
 
-const AnimatedPath = Animated.createAnimatedComponent(Path);
-
-type SparklineGradientProps = {
-  animatedPath?: SharedValue<string | undefined>;
-} & SparklineBaseProps;
-
 export const SparklineGradient = memo(
-  forwardRef<TextInput | null, SparklineGradientProps>(
-    (
-      { background, color, path, animatedPath, height, width, yAxisScalingFactor, children },
-      ref,
-    ) => {
+  forwardRef<TextInput | null, SparklineBaseProps>(
+    ({ background, color, path, height, width, yAxisScalingFactor, children }, ref) => {
       const patternId = useRef<string>(generateRandomId());
       const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
       const gradient = useAccessibleForegroundGradient({ background, color, usage: 'graphic' });
@@ -43,26 +33,18 @@ export const SparklineGradient = memo(
         );
       }, [areaColor, children, gradient]);
 
-      const animatedPathProps = useAnimatedProps(() => ({
-        d: animatedPath?.value,
-      }));
-
-      const sharedProps: PathProps = {
-        strokeLinejoin: 'round',
-        strokeLinecap: 'round',
-        strokeWidth: borderWidth.sparkline,
-        stroke: 'url(#gradient)',
-      };
-
       return (
-        <Svg width={width} height={height} ref={ref}>
+        <Svg width={width} height={height}>
           {linearGradient}
           <G {...translateProps}>
-            {animatedPath ? (
-              <AnimatedPath {...sharedProps} animatedProps={animatedPathProps} />
-            ) : (
-              <Path d={path} {...sharedProps} />
-            )}
+            <Path
+              ref={ref}
+              d={path}
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              strokeWidth={borderWidth.sparkline}
+              stroke="url(#gradient)"
+            />
             {generateSparklineAreaWithId(patternId.current, children)}
           </G>
         </Svg>

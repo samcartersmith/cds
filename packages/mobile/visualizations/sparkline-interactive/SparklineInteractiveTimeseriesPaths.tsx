@@ -1,5 +1,5 @@
-import React, { memo, useCallback, useEffect, useMemo } from 'react';
-import Animated, { useAnimatedProps, useSharedValue } from 'react-native-reanimated';
+import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
+import { TextInput } from 'react-native';
 import Svg, { G, Path } from 'react-native-svg';
 import * as interpolate from 'd3-interpolate-path';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
@@ -14,12 +14,10 @@ import { useAccessibleForeground } from '../../color/useAccessibleForeground';
 
 import { useInterruptiblePathAnimation } from './useInterruptiblePathAnimation';
 
-const AnimatedPath = Animated.createAnimatedComponent(Path);
-
 const TimeseriesPath = memo(
   ({ timeseries, lineFn, initialPath, onRender, areaFn }: TimeseriesPathProps) => {
+    const pathRef = useRef<TextInput | null>(null);
     const { strokeColor } = timeseries;
-    const animatedPath = useSharedValue<string>(initialPath);
 
     const lineColor = useAccessibleForeground({ color: strokeColor, usage: 'graphic' });
 
@@ -37,14 +35,18 @@ const TimeseriesPath = memo(
     const animationListener = useCallback(
       ({ value }: { value: number }) => {
         const val = Number(value.toFixed(4));
-        animatedPath.value = pathInterpolator(val);
+        pathRef.current?.setNativeProps({
+          d: pathInterpolator(val),
+        });
       },
-      [animatedPath, pathInterpolator],
+      [pathInterpolator],
     );
 
     const updatePathWithoutAnimation = useCallback(() => {
-      animatedPath.value = pathInterpolator(1);
-    }, [animatedPath, pathInterpolator]);
+      pathRef.current?.setNativeProps({
+        d: pathInterpolator(1),
+      });
+    }, [pathInterpolator]);
 
     const playAnimation = useInterruptiblePathAnimation({
       animationListener,
@@ -61,18 +63,14 @@ const TimeseriesPath = memo(
       });
     }, [newArea, newPath, onRender, pathInterpolator, playAnimation]);
 
-    const animatedPathProps = useAnimatedProps(() => ({
-      d: animatedPath.value,
-    }));
-
     return (
-      <AnimatedPath
+      <Path
+        ref={pathRef}
         d={initialPath}
         strokeLinejoin="round"
         strokeLinecap="round"
         strokeWidth={borderWidth.sparkline}
         stroke={lineColor}
-        animatedProps={animatedPathProps}
       />
     );
   },
