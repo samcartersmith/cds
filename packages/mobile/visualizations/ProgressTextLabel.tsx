@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import { MotionDuration } from '@cbhq/cds-common';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
@@ -12,6 +12,7 @@ import { Counter } from './Counter';
 export const ProgressTextLabel = memo(
   ({ value, renderLabel, disabled, color }: ProgressTextLabelProps) => {
     const { getPreviousValue, addPreviousValue } = usePreviousValues<number>([0]);
+    const accessibilityState = useMemo(() => ({ disabled: !!disabled }), [disabled]);
 
     addPreviousValue(value);
 
@@ -27,6 +28,7 @@ export const ProgressTextLabel = memo(
               noWrap
               color={color ?? 'foreground'}
               disabled={disabled}
+              accessibilityState={accessibilityState}
               align="end"
             >
               {textValue}
@@ -36,7 +38,7 @@ export const ProgressTextLabel = memo(
 
         return textValue;
       },
-      [color, disabled, renderLabel],
+      [color, disabled, accessibilityState, renderLabel],
     );
     return (
       <Counter

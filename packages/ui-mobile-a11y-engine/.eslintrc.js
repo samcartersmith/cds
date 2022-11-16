@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['plugin:@cbhq/react-native'],
+  extends: [],
   overrides: [
     {
       files: ['*.ts', '*.tsx'],

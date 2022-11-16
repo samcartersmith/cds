@@ -1,5 +1,5 @@
-import '@cbhq/ui-mobile-a11y-engine';
 import 'react-native-gesture-handler/jestSetup';
+import 'react-native-accessibility-engine';
 
 import { mockStatusBarHeight } from './constants';
 

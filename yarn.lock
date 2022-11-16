@@ -2282,13 +2282,13 @@ __metadata:
     "@cbhq/cds-lottie-files": "workspace:*"
     "@cbhq/cds-tools": "workspace:*"
     "@cbhq/cds-utils": "workspace:*"
-    "@cbhq/ui-mobile-a11y-engine": "workspace:*"
     "@react-native-community/netinfo": ^7.1.7
     "@testing-library/react-native": ^11.3.0
     "@types/react-native": ^0.68.2
     d3-interpolate-path: ^2.2.2
     eslint-plugin-reanimated: ^2.0.0
     lodash: ^4.17.21
+    react-native-accessibility-engine: ^3.2.0
     react-native-gesture-handler: 2.6.2
     react-native-inappbrowser-reborn: 3.6.3
     react-native-linear-gradient: 2.5.6
@@ -2775,7 +2775,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/ui-mobile-a11y-engine@workspace:*, @cbhq/ui-mobile-a11y-engine@workspace:packages/ui-mobile-a11y-engine":
+"@cbhq/ui-mobile-a11y-engine@workspace:packages/ui-mobile-a11y-engine":
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-mobile-a11y-engine@workspace:packages/ui-mobile-a11y-engine"
   dependencies:
@@ -29578,6 +29578,19 @@ __metadata:
   version: 1.1.0
   resolution: "react-merge-refs@npm:1.1.0"
   checksum: 90884352999002d868ab9f1bcfe3222fb0f2178ed629f1da7e98e5a9b02a2c96b4aa72800db92aabd69d2483211b4be57a2088e89a11a0b660e7ada744d4ddf7
+  languageName: node
+  linkType: hard
+
+"react-native-accessibility-engine@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "react-native-accessibility-engine@npm:3.2.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-native-accessibility-engine%2F-%2Freact-native-accessibility-engine-3.2.0.tgz"
+  dependencies:
+    lodash.groupby: ^4.6.0
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-test-renderer: "*"
+  checksum: 84cf65599080d92b54813c49970202b9056e47773533dc6bcc4099724ce13a47f5408713a82e6033694bbf2edb01c976608826c65b0ea45c17a675824b799cf8
   languageName: node
   linkType: hard
 

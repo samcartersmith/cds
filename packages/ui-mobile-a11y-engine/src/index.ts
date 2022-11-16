@@ -1,5 +1,2 @@
-import * as extensions from './matchers';
-
-export * from './types';
-
-expect.extend(extensions);
+// This just exists for the package to build!
+export {};

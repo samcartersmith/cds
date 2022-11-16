@@ -40,20 +40,21 @@ export type ProgressBarFloatLabelProps = Pick<
   'label' | 'progress' | 'disabled' | 'labelPlacement'
 >;
 
-export type ProgressBarFixedLabelContainerProps = Omit<
-  ProgressBarWithFixedLabelsProps,
-  'labelPlacement' | 'progress'
-> &
+export type ProgressBarFixedLabelContainerProps = {
+  visuallyDisabled: boolean;
+} & Omit<ProgressBarWithFixedLabelsProps, 'labelPlacement' | 'progress' | 'disabled'> &
   Pick<SpacingProps, 'spacingBottom' | 'spacingTop'>;
 
 export type ProgressBarFixedLabelBesideProps = {
   label: ProgressBarLabel;
-} & Pick<ProgressBarWithFixedLabelsProps, 'disabled'>;
+  visuallyDisabled: boolean;
+};
 
 export type ProgressBarFixedLabelProps = {
   position: 'start' | 'end';
   label: ProgressBarLabel;
-} & Pick<ProgressBarWithFixedLabelsProps, 'disabled'>;
+  visuallyDisabled: boolean;
+};
 
 export type ProgressTextLabelProps = {
   value: number;

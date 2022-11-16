@@ -168,7 +168,23 @@ describe('ProgressBar test', () => {
     expect(screen.getByTestId('mock-progress-bar')).toBeAccessible();
   });
 
-  it('handles disabled state correctly', () => {
+  it('handles disabled state for just ProgressBar correctly & passes a11y', () => {
+    render(
+      <Box width="200">
+        <ProgressBar progress={0.77} disabled testID="mock-progress-bar" />
+      </Box>,
+    );
+    fireTextContainerEvent(screen.getByTestId('cds-progress-bar-inner-bar-container'));
+
+    const bar = screen.getByTestId('cds-progress-bar-inner-bar');
+    expect(bar).toHaveStyle({
+      backgroundColor: paletteValueToRgbaString(defaultPalette.lineHeavy, 'light'),
+      transform: [{ translateX: -46 }], // -1 * (200 - (200 * 0.77))
+    });
+    expect(screen.getByTestId('mock-progress-bar')).toBeAccessible();
+  });
+
+  it('handles disabled state correctly for fixed labels', () => {
     render(
       <Box width="200">
         <ProgressBarWithFixedLabels
@@ -177,21 +193,15 @@ describe('ProgressBar test', () => {
           endLabel={77}
           disabled
         >
-          <ProgressBar progress={0.77} disabled />
+          <ProgressBar progress={0.77} />
         </ProgressBarWithFixedLabels>
       </Box>,
     );
 
     fireTextContainerEvent(screen.getByTestId('cds-progress-bar-inner-bar-container'));
 
-    const bar = screen.getByTestId('cds-progress-bar-inner-bar');
     const startLabelText = screen.getAllByText('0%')[0];
     const endLabelText = screen.getAllByText('77%')[0];
-
-    expect(bar).toHaveStyle({
-      backgroundColor: paletteValueToRgbaString(defaultPalette.lineHeavy, 'light'),
-      transform: [{ translateX: -46 }], // -1 * (200 - (200 * 0.77))
-    });
 
     expect(startLabelText).toHaveStyle({
       color: paletteValueToRgbaString(defaultPalette.foreground, 'light'),

@@ -133,6 +133,7 @@ export const Select = memo(
                       color="foregroundMuted"
                       ellipsize="tail"
                       disabled={disabled}
+                      accessibilityState={accessibilityState}
                       align={compact ? 'end' : 'start'}
                     >
                       {valueLabel ?? value ?? placeholder ?? (!compact && label)}

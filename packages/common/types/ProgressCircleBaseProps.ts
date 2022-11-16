@@ -10,5 +10,7 @@ export type ProgressCircleBaseProps = {
 
 export type ProgressCircleTextBaseProps = Pick<ProgressCircleBaseProps, 'progress' | 'disabled'>;
 
-export type ProgressInnerCircleBaseProps = Pick<ProgressCircleBaseProps, 'progress' | 'disabled'> &
+export type ProgressInnerCircleBaseProps = {
+  visuallyDisabled?: boolean;
+} & Pick<ProgressCircleBaseProps, 'progress'> &
   Required<Pick<ProgressCircleBaseProps, 'size' | 'weight' | 'color'>>;

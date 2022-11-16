@@ -38,7 +38,7 @@ const ProgressCircleText: React.FC<ProgressCircleTextBaseProps> = memo(({ progre
 });
 
 const ProgressCircleInner: React.FC<ProgressInnerCircleBaseProps> = memo(
-  ({ size, progress, color, weight, disabled }) => {
+  ({ size, progress, color, weight, visuallyDisabled }) => {
     const strokeWidth = useProgressSize(weight);
     const palette = usePalette();
     const circleRef = useRef<SVGCircleElement>(null);
@@ -68,7 +68,7 @@ const ProgressCircleInner: React.FC<ProgressInnerCircleBaseProps> = memo(
         {...getProgressCircleParams({
           size,
           strokeWidth,
-          stroke: !disabled ? palette[color] : palette.lineHeavy,
+          stroke: !visuallyDisabled ? palette[color] : palette.lineHeavy,
         })}
       />
     );
@@ -129,7 +129,7 @@ export const ProgressCircle = memo(
                     color={color}
                     size={circleSize}
                     weight={weight}
-                    disabled={disabled}
+                    visuallyDisabled={disabled}
                   />
                 </svg>
                 {!hideText && <ProgressCircleText progress={progress} disabled={disabled} />}

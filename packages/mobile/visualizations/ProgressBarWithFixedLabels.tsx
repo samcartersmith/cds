@@ -13,14 +13,14 @@ import { Box, VStack } from '../layout';
 import { ProgressTextLabel } from './ProgressTextLabel';
 
 const ProgressBarFixedLabelBeside: React.FC<ProgressBarFixedLabelBesideProps> = memo(
-  ({ label, disabled }) => {
+  ({ label, visuallyDisabled }) => {
     const { value: labelNum, render: renderLabel } = getProgressBarLabelParts(label);
 
     return (
       <ProgressTextLabel
         value={labelNum}
         renderLabel={renderLabel}
-        disabled={disabled}
+        disabled={visuallyDisabled}
         color="foreground"
       />
     );
@@ -28,24 +28,24 @@ const ProgressBarFixedLabelBeside: React.FC<ProgressBarFixedLabelBesideProps> = 
 );
 
 const ProgressBarFixedLabel: React.FC<ProgressBarFixedLabelProps> = memo(
-  ({ label, position, disabled }) => {
+  ({ label, position, visuallyDisabled }) => {
     return (
       <View testID={`cds-progress-bar-fixed-label-${position}`}>
-        <ProgressBarFixedLabelBeside label={label} disabled={disabled} />
+        <ProgressBarFixedLabelBeside label={label} visuallyDisabled={visuallyDisabled} />
       </View>
     );
   },
 );
 
 const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerProps> = memo(
-  ({ startLabel, endLabel, disabled, spacingBottom, spacingTop }) => {
+  ({ startLabel, endLabel, visuallyDisabled, spacingBottom, spacingTop }) => {
     const nodes: React.ReactElement[] = [];
 
     if (typeof startLabel !== 'undefined') {
       nodes.push(
         <ProgressBarFixedLabel
           key="start-label"
-          disabled={disabled}
+          visuallyDisabled={visuallyDisabled}
           position="start"
           label={startLabel}
         />,
@@ -59,7 +59,7 @@ const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerPro
       nodes.push(
         <ProgressBarFixedLabel
           key="end-label"
-          disabled={disabled}
+          visuallyDisabled={visuallyDisabled}
           position="end"
           label={endLabel}
         />,
@@ -90,16 +90,16 @@ const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerPro
 );
 
 export const ProgressBarWithFixedLabels: React.FC<ProgressBarWithFixedLabelsProps> = memo(
-  ({ startLabel, endLabel, labelPlacement = 'beside', disabled, children, testID }) => {
+  ({ startLabel, endLabel, labelPlacement = 'beside', disabled = false, children, testID }) => {
     const startLabelEl = typeof startLabel !== 'undefined' && (
       <Box flexShrink={0} flexGrow={0} spacingEnd={1}>
-        <ProgressBarFixedLabelBeside label={startLabel} disabled={disabled} />
+        <ProgressBarFixedLabelBeside label={startLabel} visuallyDisabled={disabled} />
       </Box>
     );
 
     const endLabelEl = typeof endLabel !== 'undefined' && (
       <Box flexShrink={0} flexGrow={0} spacingStart={1}>
-        <ProgressBarFixedLabelBeside label={endLabel} disabled={disabled} />
+        <ProgressBarFixedLabelBeside label={endLabel} visuallyDisabled={disabled} />
       </Box>
     );
 
@@ -110,7 +110,7 @@ export const ProgressBarWithFixedLabels: React.FC<ProgressBarWithFixedLabelsProp
       <VStack testID={testID}>
         {labelPlacement === 'above' && (
           <ProgressBarFixedLabelContainer
-            disabled={disabled}
+            visuallyDisabled={disabled}
             startLabel={startLabel}
             endLabel={endLabel}
             spacingBottom={1}
@@ -125,7 +125,7 @@ export const ProgressBarWithFixedLabels: React.FC<ProgressBarWithFixedLabelsProp
 
         {labelPlacement === 'below' && (
           <ProgressBarFixedLabelContainer
-            disabled={disabled}
+            visuallyDisabled={disabled}
             startLabel={startLabel}
             endLabel={endLabel}
             spacingTop={1}

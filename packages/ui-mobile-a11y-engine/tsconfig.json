@@ -9,7 +9,6 @@
     "package.json"
   ],
   "exclude": [
-    "babel.config.js",
     "cjs",
     "dts",
     "jest.config.js",
