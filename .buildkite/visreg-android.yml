@@ -90,4 +90,5 @@ steps:
     parallelism: 1
     <<: *visreg_android_shared
     commands:
-      - tools/ci/visreg-finalize.sh
+      - npm install -g @percy/cli
+      - npx percy build:finalize
