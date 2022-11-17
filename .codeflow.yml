@@ -2,6 +2,7 @@ secure:
   required_reviews: 1
   branches:
     - master
+    - alpha-fabric-arch
 build:
   engines:
     # Apps
