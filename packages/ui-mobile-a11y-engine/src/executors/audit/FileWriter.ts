@@ -19,7 +19,7 @@ export class FileWriter extends TestTask {
     // By default, the outDirectory is the directory where coverage is
     // However, you can use setOutDirectory to change the output location
     // if you wish
-    this.outDirectory = jestCoverageLogger.getCoverageOutPath;
+    this.outDirectory = `${jestCoverageLogger.getCoverageOutPath}/__generated__/`;
   }
 
   public get getOutDirectory(): string {

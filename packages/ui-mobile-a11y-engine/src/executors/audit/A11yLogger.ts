@@ -1,5 +1,7 @@
+import { performance } from 'node:perf_hooks';
 import { color, logDebug, logError, logSuccess } from '@cbhq/mono-tasks';
 
+import { A11yAuditor } from './A11yAuditor';
 import { ASTParser } from './ASTParser';
 import { FilesParser } from './FilesParser';
 import { ansiToHumanText } from './FormatUtils';
@@ -12,6 +14,7 @@ type DebugOptions = {
   printComponentTestFiles?: boolean;
   printTestFilesWithToBeAccessible?: boolean;
   printTestFilesWithoutToBeAccessibleTest?: boolean;
+  printComponents?: boolean;
   logToConsole?: boolean;
 };
 
@@ -22,7 +25,7 @@ export class A11yLogger extends TestTask {
 
   private jestCoverageLogger: JestCoverageLogger;
 
-  private testRunner: TestRunner;
+  private a11yAuditor: A11yAuditor;
 
   constructor(task: Task, filePaths: string[] = []) {
     super(task);
@@ -43,13 +46,15 @@ export class A11yLogger extends TestTask {
       componentsWithZeroCoverage: 'unknown',
       testFilesWithToBeAccessibleTest: [],
       componentsWithoutToBeAccessibleTest: [],
+      components: [],
+      totalNumberOfComponents: 0,
     };
 
     this.filePaths = filePaths;
 
     this.jestCoverageLogger = new JestCoverageLogger(this.getTask);
 
-    this.testRunner = new TestRunner(this.getTask);
+    this.a11yAuditor = new A11yAuditor(this.getTask);
   }
 
   get getLog(): A11yLogType {
@@ -58,6 +63,35 @@ export class A11yLogger extends TestTask {
 
   static logFunctionAndDuration(functionName: string, elapsed: number) {
     logSuccess(`Logged ${functionName} - ${color.shell(`duration: [${elapsed / 1000}s]`)}`);
+  }
+
+  public async logComponents({
+    printComponents = false,
+  }: Pick<DebugOptions, 'printComponents'> = {}) {
+    const start = performance.now();
+
+    const components = await this.a11yAuditor.getComponentsList();
+
+    if (printComponents) {
+      console.log(components);
+    }
+
+    this.log.components = components;
+
+    const elapsed = performance.now() - start;
+
+    A11yLogger.logFunctionAndDuration('getListOfComponents', elapsed);
+  }
+
+  public async logTotalNumberOfComponents() {
+    const start = new Date().getTime();
+
+    const components = await this.a11yAuditor.getComponentsList();
+    this.log.totalNumberOfComponents = components.length;
+
+    const elapsed = new Date().getTime() - start;
+
+    A11yLogger.logFunctionAndDuration('getTotalNumberOfComponents', elapsed);
   }
 
   public logTotalNumberOfComponentTests({
@@ -252,71 +286,6 @@ export class A11yLogger extends TestTask {
     A11yLogger.logFunctionAndDuration('componentsWithZeroCoverage', elapsed);
   }
 
-  static getComponentsMissingTestFiles(testFiles: string[], relatedFiles: string[]): string[] {
-    const difference = relatedFiles.filter((cmptFile) => {
-      const baseFileName = cmptFile.split('/')[cmptFile.split('/').length - 1];
-      const componentNameWithoutSuffix = baseFileName.split('.')[0];
-      const indexOfTestFile = testFiles.findIndex((file) =>
-        file.includes(`${componentNameWithoutSuffix}.test.tsx`),
-      );
-
-      return indexOfTestFile === -1;
-    });
-
-    return difference;
-  }
-
-  public async auditComponentsMissingA11yCoverage({
-    componentsWithoutTestFiles,
-    testFilesWithToBeAccessibleTest,
-    jestArgs,
-  }: {
-    componentsWithoutTestFiles: string[];
-    testFilesWithToBeAccessibleTest: string[]; // files from log that have a11y coverage via tests
-    jestArgs: string[];
-  }): Promise<string[]> {
-    const componentsWithoutToBeAccessibleTest: string[] = [];
-
-    await Promise.all(
-      componentsWithoutTestFiles.map(async (missingFileName: string) => {
-        // this is necessary to get the relative path name to correctly execute jest command on file path
-        const removePackageName = missingFileName.split(`${this.getTask.projectPath}/`)[1];
-        const args = [
-          ...jestArgs,
-          '--findRelatedTests', // shows tests that cover component coverage
-          '--listTests', // this gives the list of tests that would be run without actually running them
-          '--color=false',
-          'silent=false',
-          removePackageName,
-        ];
-
-        // call jest --findRelatedFiles --listTests <missingTestFile component>
-        const execResult = await this.testRunner.runJest(args);
-
-        // Break down jest output into array
-        const arrayOfRelatedTestFiles = execResult.stdout.split(/\r?\n/);
-
-        // Iterate over related tests and see if they have accessibility coverage
-        // if tests have coverage (valid index),  missingTestFile has a11y coverage.
-        // if tests do not have coverage (index is -1), then assume missingTestFile has no a11y coverage
-        const isCovered = arrayOfRelatedTestFiles.filter((relatedTest) => {
-          const indexOfAccessibilityTest = testFilesWithToBeAccessibleTest.findIndex(
-            (accessibilityTestFilePath) => relatedTest.includes(accessibilityTestFilePath),
-          );
-
-          return indexOfAccessibilityTest > -1;
-        });
-
-        // No coverage for this component, either directly or from other related components
-        if (isCovered.length === 0) {
-          componentsWithoutToBeAccessibleTest.push(missingFileName);
-        }
-      }),
-    );
-
-    return componentsWithoutToBeAccessibleTest;
-  }
-
   public async logComponentsMissingA11yCoverage(jestArgs: string[]) {
     const start = new Date().getTime();
 
@@ -336,16 +305,17 @@ export class A11yLogger extends TestTask {
       .filterTestFiles()
       .removeNonComponentFiles().getFilePaths;
 
-    const componentsWithoutTestFiles = A11yLogger.getComponentsMissingTestFiles(
+    const componentsWithoutTestFiles = A11yAuditor.getComponentsMissingTestFiles(
       testFiles,
       relatedFiles,
     );
 
-    const componentsWithoutToBeAccessibleTest = await this.auditComponentsMissingA11yCoverage({
-      componentsWithoutTestFiles,
-      testFilesWithToBeAccessibleTest: this.log.testFilesWithToBeAccessibleTest,
-      jestArgs,
-    });
+    const componentsWithoutToBeAccessibleTest =
+      await this.a11yAuditor.getComponentsMissingA11yCoverage({
+        componentsWithoutTestFiles,
+        testFilesWithToBeAccessibleTest: this.log.testFilesWithToBeAccessibleTest,
+        jestArgs,
+      });
 
     this.log.componentsWithoutToBeAccessibleTest = componentsWithoutToBeAccessibleTest;
 

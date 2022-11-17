@@ -172,7 +172,12 @@ export class FilesParser extends TestTask {
     const fileDoesNotStartWithUse = !fileName.startsWith('use');
     const fileStartsWithCapitalLetter = fileName[0].toUpperCase() === fileName[0];
     const fileDoesNotContainProvider = !fileName.match(/.*Provider.*/);
-    return fileDoesNotStartWithUse && fileStartsWithCapitalLetter && fileDoesNotContainProvider;
+    return (
+      fileDoesNotStartWithUse &&
+      fileStartsWithCapitalLetter &&
+      fileDoesNotContainProvider &&
+      this.isReactFile(fileName)
+    );
   }
 
   // If a file ends with tsx or jsx, it is likely to be

@@ -29,7 +29,7 @@ export type TestOptions = {
   file?: string[];
   serial?: boolean;
   includeZeroCoverageAudit?: boolean;
-  auditComponentsMissingA11yCoverage?: boolean;
+  getComponentsMissingA11yCoverage?: boolean;
 };
 
 export type CoverageAreas = {
@@ -94,4 +94,12 @@ export type A11yLogType = {
    * executor is ran on
    */
   jestCoverage?: CoverageAreas;
+  /**
+   * A list of components in project
+   */
+  components: string[];
+  /**
+   * Total number of components
+   */
+  totalNumberOfComponents: number;
 };

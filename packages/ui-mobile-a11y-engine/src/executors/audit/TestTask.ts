@@ -7,7 +7,7 @@ export type TestOptions = {
   file?: string[];
   serial?: boolean;
   includeZeroCoverageAudit?: boolean;
-  auditComponentsMissingA11yCoverage?: boolean;
+  getComponentsMissingA11yCoverage?: boolean;
 };
 
 export type Task = MonoTask<TestOptions>;
