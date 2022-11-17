@@ -101,7 +101,7 @@ export class FilesParser extends TestTask {
    */
   excludeStories(): this {
     const filePathsWithoutStoryFilePaths = this.filePaths.filter((file) => {
-      return !file.match(/.*.stories.tsx/);
+      return !file.match(/.*__stories__.*/);
     });
     this.filePaths = filePathsWithoutStoryFilePaths;
     return this;
