@@ -1,7 +1,7 @@
 import path from 'path';
 import * as ts from 'typescript';
 
-import type { FilesParser } from './FileParser';
+import type { FileParser } from './FileParser';
 
 export type ParsedImportStatementCallback = (item: ImportStatementParser) => void;
 
@@ -11,13 +11,13 @@ export type TsImportStatement = {
 } & Omit<ts.Statement, 'importClause'>;
 
 export class ImportStatementParser {
-  /** The file the import statement belongs to. A reference to a FilesParser class. */
-  file: FilesParser;
+  /** The file the import statement belongs to. A reference to a FileParser class. */
+  file: FileParser;
 
   /** A Typescript import statement */
   statement: TsImportStatement;
 
-  constructor(file: FilesParser, statement: TsImportStatement) {
+  constructor(file: FileParser, statement: TsImportStatement) {
     this.file = file;
     this.statement = statement;
   }

@@ -66,7 +66,7 @@ function findNodeWithType(
   return foundNode;
 }
 
-export class FilesParser {
+export class FileParser {
   /** Project the file belongs to. An instance of ProjectParser class. */
   public readonly project: ProjectParser;
 

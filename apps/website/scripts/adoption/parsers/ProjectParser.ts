@@ -12,7 +12,7 @@ import { getStats } from '../utils/getStats';
 import { getMatchingDirectory, getTypescriptAliases } from '../utils/getTypescriptAliases';
 import { fromId, toId } from '../utils/id';
 
-import { FilesParser } from './FileParser';
+import { FileParser } from './FileParser';
 
 const DEFAULT_PRESENTATIONAL_LIBRARIES = [
   '@ant-design',
@@ -143,8 +143,8 @@ export class ProjectParser {
   /** Path aliases dictionary from tsconfig. Only present if tsAlias param is passed into ProjectParser. */
   private tsAliasesRelative!: Record<string, string>;
 
-  /** Parsed files. The output of running FilesParser on a file path. */
-  private files: FilesParser[] = [];
+  /** Parsed files. The output of running FileParser on a file path. */
+  private files: FileParser[] = [];
 
   /** All JSX components in a project */
   private jsxComponents: Map<string, { callSite: string; props: string[] }[]> = new Map();
@@ -507,11 +507,11 @@ export class ProjectParser {
       }
 
       // Parse the files
-      const promises: Promise<FilesParser>[] = [];
+      const promises: Promise<FileParser>[] = [];
       projectFilePaths.forEach(({ filePaths, absolutePathForProject, projectTsAlias }) => {
         for (const filePath of filePaths) {
           promises.push(
-            new FilesParser(this, absolutePathForProject, filePath, projectTsAlias).init(),
+            new FileParser(this, absolutePathForProject, filePath, projectTsAlias).init(),
           );
         }
       });
@@ -519,9 +519,9 @@ export class ProjectParser {
       this.files = await Promise.all(promises);
 
       // meta needs to be done before the jsx parsing because the jsx parsing augments what is stored in meta for the project
-      await Promise.all(this.files.map(async (file: FilesParser) => file.parseStyle()));
-      await Promise.all(this.files.map(async (file: FilesParser) => file.parseWrapped()));
-      await Promise.all(this.files.map(async (file: FilesParser) => file.parseJsx()));
+      await Promise.all(this.files.map(async (file: FileParser) => file.parseStyle()));
+      await Promise.all(this.files.map(async (file: FileParser) => file.parseWrapped()));
+      await Promise.all(this.files.map(async (file: FileParser) => file.parseJsx()));
 
       this.spinner.stop();
       return this;
