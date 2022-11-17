@@ -16,7 +16,7 @@
       "path": "../../packages/figma-api"
     },
     {
-      "path": "../script-utils"
+      "path": "../../packages/script-utils"
     }
   ],
   "ts-node": {

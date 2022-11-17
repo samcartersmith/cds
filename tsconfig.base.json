@@ -38,7 +38,7 @@
       "@cbhq/docusaurus-theme": ["packages/docusaurus-theme"],
       "@cbhq/figma-api": ["packages/figma-api/src"],
       "@cbhq/figma-styles/*": ["libs/figma-styles/*"],
-      "@cbhq/script-utils/*": ["libs/script-utils/src/*"],
+      "@cbhq/script-utils/*": ["packages/script-utils/src/*"],
       "@cbhq/ui-mobile-playground": ["packages/ui-mobile-playground"],
       "@cbhq/ui-scorecard": ["packages/ui-scorecard"]
     }

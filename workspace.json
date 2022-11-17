@@ -17,7 +17,7 @@
     "mobile": "packages/mobile",
     "mobile-playground": "apps/mobile-playground",
     "nextjs-example": "examples/nextjs",
-    "script-utils": "libs/script-utils",
+    "script-utils": "packages/script-utils",
     "storybook": "apps/storybook",
     "ui-mobile-a11y-engine": "packages/ui-mobile-a11y-engine",
     "ui-mobile-playground": "packages/ui-mobile-playground",

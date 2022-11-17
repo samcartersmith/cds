@@ -1,7 +1,11 @@
 {
-  "sourceRoot": "libs/script-utils/src",
+  "sourceRoot": "packages/script-utils/src",
   "projectType": "library",
   "targets": {
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": ["dts", "lib"]
+    },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
     },

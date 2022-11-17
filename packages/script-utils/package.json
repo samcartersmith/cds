@@ -1,0 +1,37 @@
+{
+  "name": "@cbhq/script-utils",
+  "version": "0.0.0",
+  "description": "Script utils",
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "packages/script-utils"
+  },
+  "keywords": [
+    "script",
+    "utils"
+  ],
+  "packemon": {
+    "format": "lib",
+    "platform": "node"
+  },
+  "peerDependencies": {
+    "@cbhq/eslint-plugin": "*",
+    "prettier": "*"
+  },
+  "types": "./dts/index.d.ts",
+  "main": "./lib/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "node": "./lib/*.js",
+      "default": "./lib/*.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "node": "./lib/index.js",
+      "default": "./lib/index.js"
+    }
+  }
+}

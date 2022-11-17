@@ -2769,9 +2769,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/script-utils@workspace:^, @cbhq/script-utils@workspace:libs/script-utils":
+"@cbhq/script-utils@workspace:^, @cbhq/script-utils@workspace:packages/script-utils":
   version: 0.0.0-use.local
-  resolution: "@cbhq/script-utils@workspace:libs/script-utils"
+  resolution: "@cbhq/script-utils@workspace:packages/script-utils"
+  peerDependencies:
+    "@cbhq/eslint-plugin": "*"
+    prettier: "*"
   languageName: unknown
   linkType: soft
 
