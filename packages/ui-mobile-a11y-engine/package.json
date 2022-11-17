@@ -65,6 +65,7 @@
   },
   "dependencies": {
     "execa": "^5.1.1",
+    "fast-glob": "^3.2.12",
     "jest-matcher-utils": "^24.0.0",
     "jest-serializer-ansi-escapes": "^2.0.1",
     "lodash.groupby": "^4.6.0",

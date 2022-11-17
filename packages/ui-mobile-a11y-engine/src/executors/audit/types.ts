@@ -102,4 +102,12 @@ export type A11yLogType = {
    * Total number of components
    */
   totalNumberOfComponents: number;
+  /**
+   * A list of components that have tests
+   */
+  componentsWithTest: string[];
+  /**
+   * Total number of components with tests
+   */
+  totalNumberOfComponentsWithTest: number;
 };

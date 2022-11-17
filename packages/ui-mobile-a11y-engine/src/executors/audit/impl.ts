@@ -32,8 +32,12 @@ async function runAudit({
   a11yLogger.logTestFilesWithToBeAccessible();
   a11yLogger.logTestFilesWithoutToBeAccessible();
   a11yLogger.logCoverageSummaryTotal();
+
   await a11yLogger.logComponents();
   await a11yLogger.logTotalNumberOfComponents();
+
+  await a11yLogger.logComponentsWithTest();
+  await a11yLogger.logTotalNumberOfComponentsWithTest();
 
   console.log(
     color.project(`\nStart running and capturing test results for tests that have toBeAccessible`),

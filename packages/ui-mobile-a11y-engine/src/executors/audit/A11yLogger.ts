@@ -14,6 +14,7 @@ type DebugOptions = {
   printComponentTestFiles?: boolean;
   printTestFilesWithToBeAccessible?: boolean;
   printTestFilesWithoutToBeAccessibleTest?: boolean;
+  printComponentsWithTests?: boolean;
   printComponents?: boolean;
   logToConsole?: boolean;
 };
@@ -48,6 +49,8 @@ export class A11yLogger extends TestTask {
       componentsWithoutToBeAccessibleTest: [],
       components: [],
       totalNumberOfComponents: 0,
+      componentsWithTest: [],
+      totalNumberOfComponentsWithTest: 0,
     };
 
     this.filePaths = filePaths;
@@ -63,6 +66,39 @@ export class A11yLogger extends TestTask {
 
   static logFunctionAndDuration(functionName: string, elapsed: number) {
     logSuccess(`Logged ${functionName} - ${color.shell(`duration: [${elapsed / 1000}s]`)}`);
+  }
+
+  public async logComponentsWithTest({
+    printComponentsWithTests = false,
+  }: Pick<DebugOptions, 'printComponentsWithTests'> = {}) {
+    const start = performance.now();
+
+    const componentsWithTest = await this.a11yAuditor.getComponentsWithTestList();
+
+    if (printComponentsWithTests) {
+      console.log(componentsWithTest);
+    }
+
+    this.log.componentsWithTest = componentsWithTest;
+
+    const elapsed = performance.now() - start;
+
+    A11yLogger.logFunctionAndDuration('componentsWithTest', elapsed);
+  }
+
+  public async logTotalNumberOfComponentsWithTest() {
+    const start = performance.now();
+
+    if (this.log.componentsWithTest.length > 0) {
+      this.log.totalNumberOfComponentsWithTest = this.log.componentsWithTest.length;
+    } else {
+      const componentsWithTest = await this.a11yAuditor.getComponentsWithTestList();
+      this.log.totalNumberOfComponentTests = componentsWithTest.length;
+    }
+
+    const elapsed = performance.now() - start;
+
+    A11yLogger.logFunctionAndDuration('totalNumberOfComponentsWithTest', elapsed);
   }
 
   public async logComponents({
@@ -91,7 +127,7 @@ export class A11yLogger extends TestTask {
 
     const elapsed = new Date().getTime() - start;
 
-    A11yLogger.logFunctionAndDuration('getTotalNumberOfComponents', elapsed);
+    A11yLogger.logFunctionAndDuration('totalNumberOfComponents', elapsed);
   }
 
   public logTotalNumberOfComponentTests({

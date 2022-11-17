@@ -1,3 +1,6 @@
+import glob from 'fast-glob';
+import path from 'path';
+
 import { FilesParser } from './FilesParser';
 import { TestRunner } from './TestRunner';
 import { Task, TestTask } from './TestTask';
@@ -73,6 +76,53 @@ export class A11yAuditor extends TestTask {
     });
 
     return difference;
+  }
+
+  /**
+   * This comment describes the logic for figuring out whether a component has
+   * a test or not
+   *
+   * First, obtain a list of components. Then, find **\/<component>.test.tsx
+   * file in project.
+   *
+   * An example:
+   * Say we have a component, Accordion.tsx. If **\/Accordion.test.tsx exists,
+   * then a test file exist for this component.
+   *
+   * Assumptions:
+   * If a test file isn't prefixed with its component, then this
+   * logic fails. We assume this case to be rare, which is true most of the
+   * time.
+   *
+   * @components components - list of components
+   * @returns a list of components with test file. This is the test file name,
+   *          not the component name. (i.e Accordion.test.tsx)
+   */
+  public async getComponentsWithTestList({ components }: { components?: string[] } = {}) {
+    // If we already have components list in other place,
+    // don't regenerate. Otherwise, generate it.
+    // We add this check because we should not assume that a user needs to
+    // run these operation in any particular order.
+    // But, if we already have a list of components, we don't want to
+    // regenerate it to speed up operation.
+    const internalComponents =
+      components === undefined ? await this.getComponentsList() : components;
+
+    const testFilesToSearch = internalComponents.map((component) => {
+      const extName = path.extname(component);
+      const baseName = path.basename(component, extName);
+      return `**/${baseName}.test${extName}`;
+    });
+
+    // Using globbing here to make this operation super fast
+    // TODO: Migrate from using filter to globbing for all file filter.
+    // This makes the operation a lot faster
+    const componentsWithTests = await glob(testFilesToSearch, {
+      onlyFiles: true,
+      cwd: this.getTask.projectRoot.toString(),
+    });
+
+    return componentsWithTests;
   }
 
   public async getComponentsList() {
