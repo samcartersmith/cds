@@ -8,6 +8,28 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.2.0 (11/16/2022, 01:14 PM PST)
+
+#### 🚀 Updates
+
+- **[ui-mobile-a11y-engine, mobile]** Use react-native-accessibility-engine. [#1330](https://github.cbhq.net/frontend/cds/pull/1330), [CDS-2754](https://jira.coinbase-corp.com/browse/CDS-2754)
+- **[FullscreenModal]** Expose onDidClose prop to enable trigger focus after modal close. [#1354](https://github.cbhq.net/frontend/cds/pull/1354), [A11Y-183](https://jira.coinbase-corp.com/browse/A11Y-183)
+- **[Control]** Migrate Switch, Checkbox, and RadioGroup to animation tokens. [#1343](https://github.cbhq.net/frontend/cds/pull/1343)
+- **[Control]** Migrate Switch, Checkbox, and RadioGroup to animation tokens. [#1289](https://github.cbhq.net/frontend/cds/pull/1289)
+- **[RemoteImage]** Add accessibilityLabel and accessibilityHint props. [#1310](https://github.cbhq.net/frontend/cds/pull/1310), [A11Y-199](https://jira.coinbase-corp.com/browse/A11Y-199), [A11Y-209](https://jira.coinbase-corp.com/browse/A11Y-209)
+
+#### 🐞 Fixes
+
+- **[Illustrations]** Publish illustrations 11/15/2022. [#1383](https://github.cbhq.net/frontend/cds/pull/1383)
+- **[TabNavigation]** Keyboard paradigm. [#1340](https://github.cbhq.net/frontend/cds/pull/1340), [A11Y-219](https://jira.coinbase-corp.com/browse/A11Y-219), [A11Y-223](https://jira.coinbase-corp.com/browse/A11Y-223)
+- **[FeatureFlagProvider]** Added fabric flag. [#1374](https://github.cbhq.net/frontend/cds/pull/1374), [CDS-2800](https://jira.coinbase-corp.com/browse/CDS-2800)
+- **[icons]** Publish 11/10/22 Icons. [#1367](https://github.cbhq.net/frontend/cds/pull/1367)
+- **[TabNavigation]** Scroll into view on focus events. [#1337](https://github.cbhq.net/frontend/cds/pull/1337), [A11Y-204](https://jira.coinbase-corp.com/browse/A11Y-204)
+
+#### 📘 Misc
+
+- **[upgrade deps]** Upgrade NX from v14 to v15. [#1334](https://github.cbhq.net/frontend/cds/pull/1334)
+
 ## 3.1.0 (11/2/2022, 06:22 PM PST)
 
 This is an artificial version bump with no new change.

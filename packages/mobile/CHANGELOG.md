@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.2.0 (11/16/2022, 01:14 PM PST)
+
+#### 🚀 Updates
+
+- **[ui-mobile-a11y-engine, mobile]** Use react-native-accessibility-engine. [#1330](https://github.cbhq.net/frontend/cds/pull/1330), [CDS-2754](https://jira.coinbase-corp.com/browse/CDS-2754)
+- **[Control]** Migrate Switch, Checkbox, and RadioGroup to animation tokens. [#1343](https://github.cbhq.net/frontend/cds/pull/1343)
+
+#### 🐞 Fixes
+
+- **[Illustrations]** Publish illustrations 11/15/2022. [#1383](https://github.cbhq.net/frontend/cds/pull/1383)
+- **[A11y Engine]** Refactor A11y Executor script to make it more readable and scalable. [#1298](https://github.cbhq.net/frontend/cds/pull/1298), [CDS-2637](https://jira.coinbase-corp.com/browse/CDS-2637), [CDS-2654](https://jira.coinbase-corp.com/browse/CDS-2654)
+- **[useWebBrowserOpener]** Remove canOpenUrl call to resolve Android compatibility issue. [#1373](https://github.cbhq.net/frontend/cds/pull/1373), [CDS-2810](https://jira.coinbase-corp.com/browse/CDS-2810)
+- **[icons]** Publish 11/10/22 Icons. [#1367](https://github.cbhq.net/frontend/cds/pull/1367)
+- **[Upgrade deps]** Upgrade babel. [#1349](https://github.cbhq.net/frontend/cds/pull/1349)
+
+#### 📘 Misc
+
+- **[Visreg]** Fix ios visreg flake. [#1342](https://github.cbhq.net/frontend/cds/pull/1342)
+- **[upgrade deps]** Upgrade NX from v14 to v15. [#1334](https://github.cbhq.net/frontend/cds/pull/1334)
+
 ## 3.1.0 (11/2/2022, 06:22 PM PST)
 
 This is an artificial version bump with no new change.
