@@ -13,7 +13,9 @@ import type {
 import { loremIpsum } from './data/loremIpsum';
 
 export type CreateCollapsibleProps = {
-  Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void; id?: string }>;
+  Button: React.ComponentType<
+    ButtonBaseProps & { onPress?: () => void; id?: string; disableDebounce?: boolean }
+  >;
   Collapsible: React.ComponentType<
     CollapsibleBaseProps & {
       id?: string;
@@ -46,6 +48,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           id={triggerId}
           aria-expanded={!collapsed}
+          disableDebounce
         >
           Click me!
         </Button>
@@ -66,7 +69,7 @@ export function collapsibleBuilder({
         <Collapsible collapsed={collapsed} accessibilityLabelledBy={triggerId} id={collapsibleId}>
           <TextBody as="p">{loremIpsum}</TextBody>
         </Collapsible>
-        <Button onPress={toggle} aria-controls={collapsibleId} id={triggerId}>
+        <Button onPress={toggle} aria-controls={collapsibleId} id={triggerId} disableDebounce>
           Click me!
         </Button>
       </>
@@ -85,6 +88,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           id={triggerId}
           aria-expanded={!collapsed}
+          disableDebounce
         >
           Click me!
         </Button>
@@ -107,6 +111,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           id={triggerId}
           aria-expanded={!collapsed}
+          disableDebounce
         >
           Click me!
         </Button>
@@ -134,6 +139,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           id={triggerId}
           aria-expanded={!collapsed}
+          disableDebounce
         >
           Click me!
         </Button>
@@ -164,6 +170,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           id={triggerId}
           aria-expanded={!collapsed}
+          disableDebounce
         >
           Click me!
         </Button>
