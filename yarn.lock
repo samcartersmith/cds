@@ -2790,7 +2790,6 @@ __metadata:
     "@types/react-native": ^0.68.2
     "@types/react-test-renderer": 17.0.1
     execa: ^5.1.1
-    fast-glob: ^3.2.12
     jest-matcher-utils: ^24.0.0
     jest-serializer-ansi-escapes: ^2.0.1
     jest-transform-stub: ^2.0.0
@@ -17274,7 +17273,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.5, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
+"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.5, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
   version: 3.2.12
   resolution: "fast-glob@npm:3.2.12::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ffast-glob%2F-%2Ffast-glob-3.2.12.tgz"
   dependencies:

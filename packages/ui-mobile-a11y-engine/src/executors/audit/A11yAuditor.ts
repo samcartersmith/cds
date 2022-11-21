@@ -1,4 +1,3 @@
-import glob from 'fast-glob';
 import path from 'path';
 
 import { FilesParser } from './FilesParser';
@@ -111,16 +110,10 @@ export class A11yAuditor extends TestTask {
     const testFilesToSearch = internalComponents.map((component) => {
       const extName = path.extname(component);
       const baseName = path.basename(component, extName);
-      return `**/${baseName}.test${extName}`;
+      return `${this.getTask.projectRoot}/**/${baseName}.test${extName}`;
     });
 
-    // Using globbing here to make this operation super fast
-    // TODO: Migrate from using filter to globbing for all file filter.
-    // This makes the operation a lot faster
-    const componentsWithTests = await glob(testFilesToSearch, {
-      onlyFiles: true,
-      cwd: this.getTask.projectRoot.toString(),
-    });
+    const componentsWithTests = FilesParser.listFilePathsInRepo(testFilesToSearch);
 
     return componentsWithTests;
   }

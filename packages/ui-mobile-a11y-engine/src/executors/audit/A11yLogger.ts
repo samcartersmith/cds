@@ -72,8 +72,15 @@ export class A11yLogger extends TestTask {
     printComponentsWithTests = false,
   }: Pick<DebugOptions, 'printComponentsWithTests'> = {}) {
     const start = performance.now();
+    let componentsWithTest = [];
 
-    const componentsWithTest = await this.a11yAuditor.getComponentsWithTestList();
+    if (this.log.components.length > 0) {
+      componentsWithTest = await this.a11yAuditor.getComponentsWithTestList({
+        components: this.log.components,
+      });
+    } else {
+      componentsWithTest = await this.a11yAuditor.getComponentsWithTestList();
+    }
 
     if (printComponentsWithTests) {
       console.log(componentsWithTest);
