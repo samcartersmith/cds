@@ -68,9 +68,15 @@ export type CellDetailVariant = Extract<
 >;
 
 export type CellDetailProps = {
-  /** Label and or extra detail. */
+  /**
+   * Label and/or extra detail. This prop is only intended to accept a string or Text component;
+   * other use cases, while allowed, are not supported and may result in unexpected behavior.
+   */
   detail?: React.ReactNode;
-  /** Subdetail providing more information. */
+  /**
+   * Subdetail providing more information. This prop is only intended to accept a string or Text component;
+   * other use cases, while allowed, are not supported and may result in unexpected behavior.
+   */
   subdetail?: React.ReactNode;
   /** Variant color to apply to the subdetail text. */
   variant?: CellDetailVariant;

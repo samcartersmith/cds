@@ -5,6 +5,12 @@ A cell row is divided into the following 4 columns:
 - End: Detailed information in neutral, negative, and positive variants.
 - Accessory: A whitelisted icon displayed at the end.
 
+:::note
+
+The `detail` and `subdetail` props are only intended to accept a string or `Text` component. Other use cases, while allowed, are not supported and may result in unexpected behavior.
+
+:::
+
 ```jsx live
 <ListCell
   title="Bitcoin"
