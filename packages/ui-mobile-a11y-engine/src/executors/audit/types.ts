@@ -41,6 +41,8 @@ export type CoverageAreas = {
 
 export type CoverageOutput = Record<string, CoverageAreas>;
 
+export type TestDetail = Record<string, ExecaReturnValue | { success: boolean }>;
+
 /**
  * You can get more information about what these log represents
  * from this TDD
@@ -60,6 +62,10 @@ export type A11yLogType = {
    */
   totalNumberOfToBeAccessibleTests: number;
   /**
+   * Number of tests that have toBeAccessible jest test and is passing
+   */
+  totalNumberOfPassingToBeAccessibleTests: number;
+  /**
    * Capturing the file path for components that have test
    * but does not have toBeAccessible
    */
@@ -71,7 +77,7 @@ export type A11yLogType = {
    * If it succeeded, it will not capture the message so we can optimize log
    * size. It will just log it as { success: boolean }
    */
-  testDetails: Record<string, ExecaReturnValue | { success: boolean }>;
+  testDetails: TestDetail;
   /**
    * Metadata for a project
    */

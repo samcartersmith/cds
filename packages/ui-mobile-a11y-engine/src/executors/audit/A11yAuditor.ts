@@ -3,6 +3,7 @@ import path from 'path';
 import { FilesParser } from './FilesParser';
 import { TestRunner } from './TestRunner';
 import { Task, TestTask } from './TestTask';
+import { TestDetail } from './types';
 
 export class A11yAuditor extends TestTask {
   private testRunner: TestRunner;
@@ -75,6 +76,18 @@ export class A11yAuditor extends TestTask {
     });
 
     return difference;
+  }
+
+  static getTotalNumberOfPassingToBeAccessibleTests(testDetails: TestDetail) {
+    let numberOfPassingToBeAccessibleTests = 0;
+
+    Object.entries(testDetails).forEach(([, detail]) => {
+      if ('success' in detail) {
+        numberOfPassingToBeAccessibleTests += 1;
+      }
+    });
+
+    return numberOfPassingToBeAccessibleTests;
   }
 
   /**

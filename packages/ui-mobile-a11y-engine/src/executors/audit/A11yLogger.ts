@@ -35,6 +35,7 @@ export class A11yLogger extends TestTask {
       timestamp: new Date(),
       totalNumberOfComponentTests: 0,
       totalNumberOfToBeAccessibleTests: 0,
+      totalNumberOfPassingToBeAccessibleTests: 0,
       testFilesWithoutToBeAccessibleTest: [],
       testDetails: {},
       projectMetadata: {
@@ -106,6 +107,23 @@ export class A11yLogger extends TestTask {
     const elapsed = performance.now() - start;
 
     A11yLogger.logFunctionAndDuration('totalNumberOfComponentsWithTest', elapsed);
+  }
+
+  public logTotalNumberOfPassingToBeAccessibleTests() {
+    const start = performance.now();
+
+    if (Object.keys(this.log.testDetails).length <= 0) {
+      throw new Error(
+        'Due to the how expensive it is to run jest tests, please first run logAccessibleTestsJestOutput before running logTotalNumberOfPassingToBeAccessibleTests.',
+      );
+    }
+
+    this.log.totalNumberOfPassingToBeAccessibleTests =
+      A11yAuditor.getTotalNumberOfPassingToBeAccessibleTests(this.log.testDetails);
+
+    const elapsed = performance.now() - start;
+
+    A11yLogger.logFunctionAndDuration('totalNumberOfPassingToBeAccessibleTests', elapsed);
   }
 
   public async logComponents({
@@ -236,7 +254,7 @@ export class A11yLogger extends TestTask {
    * two things in a function. Its much less readable, but
    * this is for performance reason. This way, we don't have to
    * run the test two times.
-   * @param param0
+   *
    */
   public async logAccessibleTestJestOutput({
     filePath,

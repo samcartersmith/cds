@@ -26,7 +26,7 @@ async function runAudit({
 }) {
   console.log(color.project(`Start populating a11y log for project:${task.projectName}`));
 
-  await a11yLogger.logComponentsMissingA11yCoverage(jestArgs);
+  // await a11yLogger.logComponentsMissingA11yCoverage(jestArgs);
   a11yLogger.logTotalNumberOfComponentTests();
   a11yLogger.logTotalNumberOfToBeAccessibleTests();
   a11yLogger.logTestFilesWithToBeAccessible();
@@ -44,6 +44,8 @@ async function runAudit({
   );
 
   await a11yLogger.logAccessibleTestsJestOutput(jestArgs);
+
+  a11yLogger.logTotalNumberOfPassingToBeAccessibleTests();
 }
 
 const audit = createTask<TestOptions>('audit', async (task, options) => {
