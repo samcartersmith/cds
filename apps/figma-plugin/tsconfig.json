@@ -8,7 +8,7 @@
   "exclude": ["dist", "node_modules", "public"],
   "references": [
     {
-      "path": "../../libs/figma-styles"
+      "path": "../../packages/figma-styles"
     },
     {
       "path": "../../packages/script-utils"

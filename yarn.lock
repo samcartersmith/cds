@@ -2581,9 +2581,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/figma-styles@workspace:^, @cbhq/figma-styles@workspace:libs/figma-styles":
+"@cbhq/figma-styles@workspace:^, @cbhq/figma-styles@workspace:packages/figma-styles":
   version: 0.0.0-use.local
-  resolution: "@cbhq/figma-styles@workspace:libs/figma-styles"
+  resolution: "@cbhq/figma-styles@workspace:packages/figma-styles"
   dependencies:
     "@cbhq/figma-api": "workspace:^"
     "@cbhq/script-utils": "workspace:^"

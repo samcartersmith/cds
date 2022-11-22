@@ -1,5 +1,5 @@
 {
-  "sourceRoot": "libs/figma-styles",
+  "sourceRoot": "packages/figma-styles",
   "projectType": "library",
   "targets": {
     "format": {
@@ -12,7 +12,7 @@
       "executor": "nx:run-commands",
       "dependsOn": ["^build"],
       "options": {
-        "cwd": "libs/figma-styles",
+        "cwd": "packages/figma-styles",
         "command": "ts-node scripts/sync/main.ts"
       }
     },

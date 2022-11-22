@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:frontend/cds.git",
-    "directory": "libs/figma-styles"
+    "directory": "packages/figma-styles"
   },
   "devDependencies": {
     "@cbhq/figma-api": "workspace:^",

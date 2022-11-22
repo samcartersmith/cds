@@ -11,7 +11,7 @@
     "figma-api": "packages/figma-api",
     "figma-icons-plugin": "apps/figma-icons-plugin",
     "figma-plugin": "apps/figma-plugin",
-    "figma-styles": "libs/figma-styles",
+    "figma-styles": "packages/figma-styles",
     "fonts": "packages/fonts",
     "lottie-files": "packages/lottie-files",
     "mobile": "packages/mobile",
