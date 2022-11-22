@@ -10,7 +10,7 @@ function SortingExample() {
     sortDirection: 'ascending',
   });
 
-  // Nieve sort iterator -> ascending / descending / none
+  // Naive sort iterator -> ascending / descending / none
   const onChange = (key) => {
     const isAscending = key === sortBy && sortDirection === 'ascending';
     const ascendingOrDescending = isAscending ? 'descending' : 'ascending';
@@ -24,7 +24,7 @@ function SortingExample() {
   const getSortableProps = useSortableCell({ sortBy, sortDirection, onChange });
 
   return (
-    <Table maxHeight={300} bordered cellSpacing={4}>
+    <Table maxHeight={300} bordered>
       <TableHeader sticky>
         <TableRow>
           <TableCell title="Asset" {...getSortableProps('name')} />

@@ -1,6 +1,6 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import { useCallback, useState } from 'react';
-import { Meta, Story } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import startCase from 'lodash/startCase';
 import { useSort } from '@cbhq/cds-common/hooks/useSort';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
@@ -22,7 +22,7 @@ export default {
   component: Table,
 } as Meta;
 
-export const SampleTable: Story = () => {
+export const SampleTable = () => {
   const [hasBorder, { toggle }] = useToggler();
   const [variant, setVariant] = useState<TableVariant | undefined>('default');
 
@@ -83,7 +83,7 @@ export const SampleTable: Story = () => {
 };
 
 type Columns = 'name' | 'ticker' | 'appStatus';
-export const SortingExample: Story = () => {
+export const SortingExample = () => {
   const [{ sortBy, sortDirection }, setSort] = useState<{
     sortBy: Columns;
     sortDirection: UseSortableCellProps['sortDirection'];
@@ -133,7 +133,7 @@ export const SortingExample: Story = () => {
   );
 };
 
-export const FixedLayoutExample: Story = () => {
+export const FixedLayoutExample = () => {
   const [isFixed, { toggle }] = useToggler(true);
 
   const data = assetHubMock.slice(0, 6);
@@ -191,7 +191,7 @@ export const FixedLayoutExample: Story = () => {
 
 const COMPACT_LABELS = ['name', 'ticker', 'appStatus'];
 const mediaTypes: CellMediaType[] = ['asset', 'avatar', 'icon', 'image', 'pictogram'];
-export const CompactExample: Story = () => {
+export const CompactExample = () => {
   const [compact, { toggle }] = useToggler(true);
   const data = assetHubMock.slice(0, 20);
 

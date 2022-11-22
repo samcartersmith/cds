@@ -12,6 +12,7 @@ import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { useResponsiveCellSpacingStyles } from '../hooks/useResponsiveCellSpacing';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
+import { insetFocusRing } from '../styles/focus';
 import { responsiveClassName } from '../styles/responsive';
 import { LinkableProps, Pressable } from '../system/Pressable';
 import { cx } from '../utils/linaria';
@@ -199,7 +200,7 @@ export const Cell = memo(
           onPress={onPress}
           onKeyDown={onKeyDown}
           to={to}
-          className={`${pressClassName} ${offsetClassName}`}
+          className={cx(pressClassName, offsetClassName, insetFocusRing)}
           tabIndex={tabIndex}
           testID={testID && `${testID}-cell-pressable`}
         >
