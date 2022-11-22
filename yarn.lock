@@ -2797,7 +2797,7 @@ __metadata:
     pretty-format: ^29.3.1
     react-test-renderer: ^17.0.2
   peerDependencies:
-    "@cbhq/mono-tasks": ^0.4.21
+    "@cbhq/mono-tasks": ^0.6.2
     react: "*"
     react-native: "*"
     typescript: ~4.7.2

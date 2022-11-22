@@ -58,7 +58,7 @@
     "jest-transform-stub": "^2.0.0"
   },
   "peerDependencies": {
-    "@cbhq/mono-tasks": "^0.4.21",
+    "@cbhq/mono-tasks": "^0.6.2",
     "react": "*",
     "react-native": "*",
     "typescript": "~4.7.2"
