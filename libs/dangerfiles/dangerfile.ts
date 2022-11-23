@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-import { danger, message, warn } from 'danger';
+import { danger, fail, message, warn } from 'danger';
 import chainsmoker from 'danger/distribution/commands/utils/chainsmoker';
 
 import { findFileDifferences } from './utils';
@@ -24,6 +24,12 @@ const fileIgnorePatterns = [
   '!**/types/*.ts',
 ];
 
+const frozenComponentPatterns = [
+  'packages/mobile/visualizations/sparkline-interactive/*.(ts|tsx)',
+  'packages/mobile/visualizations/sparkline-interactive-header/*.(ts|tsx)',
+  'packages/web/dropdown/*.(ts|tsx)',
+];
+
 const nonTestTsFiles = danger.git.fileMatch(
   `packages/${process.env.NX_PROJECT_NAME}/**/*.(ts|tsx)`,
   ...fileIgnorePatterns,
@@ -40,12 +46,15 @@ const storyFiles = danger.git.fileMatch(
   `packages/${process.env.NX_PROJECT_NAME}/**/*.stories.(ts|tsx)`,
 );
 
+const frozenComponentFiles = danger.git.fileMatch(...frozenComponentPatterns);
+
 const { pr } = danger.github;
 const bodyAndTitle = (pr.body + pr.title).toLowerCase();
 
 // Custom modifiers for people submitting PRs to be able to say "skip this"
 const acceptedNoTests = bodyAndTitle.includes('#skip_tests');
 const acceptedNoStories = bodyAndTitle.includes('#skip_stories');
+const acceptedOverrideFrozenComponent = bodyAndTitle.includes('#skip_frozen_component');
 
 // Encourage stories
 if (nonTestTsxFiles.created && !storyFiles.edited && !acceptedNoStories) {
@@ -68,6 +77,20 @@ if (nonTestTsFiles.edited && !testTsFiles.edited && !acceptedNoTests) {
       `You have edited files in the **${process.env.NX_PROJECT_NAME}** package. Please consider adding **tests** or add \`#skip_tests\` in the PR description to skip this check.\n`,
       findFileDifferences(nonTestTsFiles.getKeyedPaths().edited, testTsFiles.getKeyedPaths().edited)
         .map((file) => `- ${file}`)
+        .join('\n'),
+    ].join('\n'),
+  );
+}
+
+// Warn against modifying a frozen component
+if (frozenComponentFiles.edited && !acceptedOverrideFrozenComponent) {
+  fail(
+    [
+      '#### Do no modify frozen components!',
+      `You have edited file(s) belonging to a **frozen component**. You must qualify for an exception and add \`#skip_frozen_component\` in the PR description to skip this check.\n`,
+      frozenComponentFiles
+        .getKeyedPaths()
+        .edited.map((file) => `- ${file}`)
         .join('\n'),
     ].join('\n'),
   );
