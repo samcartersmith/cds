@@ -1,7 +1,5 @@
 import { createClient } from './createClient';
-import type { Component } from './getComponent';
-import type { ComponentSet } from './getComponentSet';
-import type { Style } from './getStyle';
+import { FileNodesResponse } from './types';
 
 export type GetFileNodesParams = {
   /** Comma separated list of nodes that you care about in the document.
@@ -34,49 +32,8 @@ export type GetFileNodesParams = {
   branch_data?: boolean;
 };
 
-type Config = {
-  componentName: string;
-  componentSetName: string;
-};
-
-type SvgData = {
-  path: string;
-  /**
-   * https://www.figma.com/plugin-docs/api/properties/VectorPath-windingrule/
-   * https://oreillymedia.github.io/Using_SVG/extras/ch06-fill-rule.html
-   *
-   * Certain export formats (e.g. TrueType fonts, Android VectorDrawable) only support the 'NONZERO' fill rule.
-   * Design can use, https://www.figma.com/community/plugin/771155994770327940/Fill-Rule-Editor,
-   * to manually convert even-odd to non-zero to make the exporters for these formats work.
-   */
-  windingRule: 'NONZERO' | 'EVENODD' | 'NONE';
-};
-
-export type FileNode<T extends Config = Config> = {
-  document: {
-    id: string;
-    name: T['componentSetName'];
-    children: { id: T['componentName']; children: [{ fillGeometry: SvgData[] }] }[];
-  };
-  components: Record<string, Component<T['componentName']>>;
-  componentSets: Record<string, ComponentSet<T['componentSetName']>>;
-  styles: Record<string, Style>;
-};
-
-export type GetFileNodesResponse<T extends Config = Config> = {
-  name: string;
-  role: string;
-  lastModified: string;
-  editorType: string;
-  thumbnailUrl: string;
-  nodes: Record<string, FileNode<T>>;
-};
-
 /** https://www.figma.com/developers/api#get-file-nodes-endpoint */
-export async function getFileNodes<T extends Config = Config>(
-  fileKey: string,
-  params: GetFileNodesParams,
-) {
-  const client = createClient<GetFileNodesParams, GetFileNodesResponse<T>>();
+export async function getFileNodes(fileKey: string, params: GetFileNodesParams) {
+  const client = createClient<GetFileNodesParams, FileNodesResponse>();
   return client(`files/${fileKey}/nodes`, params);
 }

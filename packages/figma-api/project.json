@@ -11,7 +11,7 @@
     },
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": ["{projectRoot}/dts", "{projectRoot}/lib"]
+      "outputs": ["dts", "lib"]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

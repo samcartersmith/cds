@@ -1,7 +1,5 @@
 import { createClient } from './createClient';
-import type { Component } from './getComponent';
-import type { ComponentSet } from './getComponentSet';
-import type { Style } from './getStyle';
+import { FileResponse } from './types';
 
 export type GetFileParams = {
   /** Comma separated list of nodes that you care about in the document.
@@ -34,35 +32,9 @@ export type GetFileParams = {
   branch_data?: boolean;
 };
 
-type GetFileResponse = {
-  name: string;
-  role: string;
-  lastModified: string;
-  editorType: string;
-  thumbnailUrl: string;
-  version: string;
-  document: {
-    children: Node[];
-  };
-  components: Record<string, Component>;
-  componentSets: Record<string, ComponentSet>;
-  schemaVersion: 0;
-  styles: Record<string, Style>;
-  mainFileKey: string;
-  branches: [
-    {
-      key: string;
-      name: string;
-      thumbnail_url: string;
-      last_modified: string;
-      link_access: string;
-    },
-  ];
-};
-
-const client = createClient<GetFileParams, GetFileResponse>();
+const client = createClient<GetFileParams, FileResponse>();
 
 /** https://www.figma.com/developers/api#get-files-endpoint */
-export async function getFile(fileKey: string, params: GetFileParams) {
-  return client(`file/${fileKey}`, params);
+export async function getFile(fileKey: string, params?: GetFileParams) {
+  return client(`files/${fileKey}`, params);
 }

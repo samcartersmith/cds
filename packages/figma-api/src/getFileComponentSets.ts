@@ -1,18 +1,10 @@
 import { createClient } from './createClient';
-import type { ComponentSet } from './getComponentSet';
+import type { FileComponentSetsResponse } from './types';
 
 type GetFileComponentSetsParams = never;
 
-type GetFileComponentSetsResponse<Name extends string = string> = {
-  status: number;
-  error: boolean;
-  meta: {
-    component_sets: ComponentSet<Name>[];
-  };
-};
-
 /** https://www.figma.com/developers/api#get-file-component-sets-endpoint */
-export async function getFileComponentSets<Name extends string = string>(fileKey: string) {
-  const client = createClient<GetFileComponentSetsParams, GetFileComponentSetsResponse<Name>>();
+export async function getFileComponentSets(fileKey: string) {
+  const client = createClient<GetFileComponentSetsParams, FileComponentSetsResponse>();
   return client(`files/${fileKey}/component_sets`);
 }

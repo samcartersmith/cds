@@ -2576,8 +2576,6 @@ __metadata:
 "@cbhq/figma-api@workspace:^, @cbhq/figma-api@workspace:packages/figma-api":
   version: 0.0.0-use.local
   resolution: "@cbhq/figma-api@workspace:packages/figma-api"
-  dependencies:
-    "@figma/plugin-typings": ^1.49.0
   languageName: unknown
   linkType: soft
 

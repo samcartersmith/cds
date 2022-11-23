@@ -1,4 +1,5 @@
 import { createClient } from './createClient';
+import { FileImageResponse } from './types';
 
 type GetImageParams = {
   /** Comma separated list of nodes that you care about in the document. If specified, only a subset of the document will be returned corresponding to the nodes listed, their children, and everything between the root node and the listed nodes */
@@ -24,13 +25,7 @@ type GetImageParams = {
   version?: string;
 };
 
-type GetImageResponse = {
-  err: string;
-  images: Record<string, string>;
-  status: number;
-};
-
-const client = createClient<GetImageParams, GetImageResponse>();
+const client = createClient<GetImageParams, FileImageResponse>();
 
 /** https://www.figma.com/developers/api#get-images-endpoint */
 export async function getImage(fileKey: string, params: GetImageParams) {

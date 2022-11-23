@@ -15,9 +15,6 @@
     "format": "lib",
     "platform": "node"
   },
-  "devDependencies": {
-    "@figma/plugin-typings": "^1.49.0"
-  },
   "types": "./dts/index.d.ts",
   "main": "./lib/index.js",
   "exports": {

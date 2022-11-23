@@ -33,6 +33,25 @@ export const lightKeyMap = {
   e613081622fbcdb5de3ae7d50102a5d8c79f2e0f: '0451b1902be1d63b4f15db21aa9399d8d0193e61',
 };
 
+/**
+ * light id mapped to dark rgba value.
+ * Useful for light mode only assets where we generate the dark mode
+ * version using the light mode id.
+ */
+export const lightIdToDarkRgba = {
+  '2:39': 'rgba(88,138,245,1)',
+  '2:40': 'rgba(10,11,13,1)',
+  '2:41': 'rgba(255,255,255,1)',
+  '2:42': 'rgba(70,75,85,1)',
+  '2:43': 'rgba(68,194,141,1)',
+  '2:44': 'rgba(240,97,109,1)',
+  '2:45': 'rgba(236,208,105,1)',
+  '2:46': 'rgba(69,218,246,1)',
+  '2:47': 'rgba(240,120,54,1)',
+  '2:48': 'rgba(165,193,253,1)',
+  '2:49': 'rgba(255,255,255,1)',
+};
+
 /** dark name mapped to dark style key */
 export const dark = {
   'accent 1': '0ff77d80426791f2267b75fa305db8df42874b01',
@@ -61,4 +80,23 @@ export const darkKeyMap = {
   a7fbb6f0b37327245d5ca844d7faa8fe7871076c: '8f53e52a157deabff263aef65ed4b3b84043ec7a',
   bdcbce298e4f0de070cf94d51e5dd8b55248b2ec: '1f6bf67d22e6cb7ae716ff900b11a54b1d861d70',
   be3e3bd2911fc0f0a72c734c7151ba79ecf27b47: '798d2b758d75d0cbf24f0136d6a1e24b2f5f3172',
+};
+
+/**
+ * dark id mapped to light rgba value.
+ * Useful for dark mode only assets where we generate the light mode
+ * version using the dark mode id.
+ */
+export const darkIdToLightRgba = {
+  '2:25': 'rgba(0,82,255,1)',
+  '2:26': 'rgba(10,11,13,1)',
+  '2:27': 'rgba(255,255,255,1)',
+  '2:28': 'rgba(206,210,219,1)',
+  '2:29': 'rgba(0,209,127,1)',
+  '2:30': 'rgba(255,51,68,1)',
+  '2:31': 'rgba(255,210,0,1)',
+  '2:32': 'rgba(93,226,248,1)',
+  '2:33': 'rgba(237,112,47,1)',
+  '2:34': 'rgba(115,162,255,1)',
+  '2:35': 'rgba(10,11,13,1)',
 };
