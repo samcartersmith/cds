@@ -6853,4 +6853,166 @@ export const iconManifest = {
     description: '',
     documentationLinks: [],
   },
+  '10013:809': {
+    key: 'd280cd8a843222b5acbf5b20c8b2c40ae610654a',
+    name: 'Icon/refresh_24',
+    description:
+      'refresh, update, renew, restore, control+F5, command+R, reinstall, updating, ↩️, 🔄, ⌘+R',
+    documentationLinks: [],
+  },
+  '10013:818': {
+    key: '77d8119098fd89f4298e2407b8e2d0c0a2666104',
+    name: 'Icon/payouts_24',
+    description:
+      'payment, pay, cash, withdrawals, deposits, checks, online, payments, debit, card charges, wire, transfers, 💸, 💰, 💵, 🏦, 🏧, 💎',
+    documentationLinks: [],
+  },
+  '10013:815': {
+    key: '4c85161e5e6fd42ff0374af1e45b408aa2af4ad6',
+    name: 'Icon/wrapToken_24',
+    description:
+      'token, wrap, wrapping, staking, ETH, BTC, stake, ethereum, rush, movement, forward, exciting',
+    documentationLinks: [],
+  },
+  '10013:812': {
+    key: '6addbd4d07a067828321fecfd31697c3195ef490',
+    name: 'Icon/transactions_24',
+    description:
+      'transactions, transferring, transfer, cash, withdrawals, deposits, checks, online, payments, debit, card charges, wire transfers, make money move',
+    documentationLinks: [],
+  },
+  '10013:816': {
+    key: '16d498a371f95d8585c819e60d7139b9f7d2c021',
+    name: 'Icon/wrapToken_16',
+    description:
+      'token, wrap, wrapping, staking, ETH, BTC, stake, ethereum, rush, movement, forward, exciting',
+    documentationLinks: [],
+  },
+  '10013:813': {
+    key: '91fd87668ca774db59360fe2e49ce7a7f3599be3',
+    name: 'Icon/transactions_16',
+    description:
+      'transactions, transferring, transfer, cash, withdrawals, deposits, checks, online, payments, debit, card charges, wire transfers, make money move',
+    documentationLinks: [],
+  },
+  '10013:810': {
+    key: '93028f1eb07ad1d93d3bbb684276abc5a23ebad3',
+    name: 'Icon/refresh_16',
+    description:
+      'refresh, update, renew, restore, control+F5, command+R, reinstall, updating, ↩️, 🔄, ⌘+R',
+    documentationLinks: [],
+  },
+  '10013:811': {
+    key: 'e92d3c491106dce2c9494c661e11b5ed58e4cafe',
+    name: 'Icon/refresh_12',
+    description:
+      'refresh, update, renew, restore, control+F5, command+R, reinstall, updating, ↩️, 🔄, ⌘+R',
+    documentationLinks: [],
+  },
+  '10013:817': {
+    key: '1999490b8501cc782864a0821359f133df957326',
+    name: 'Icon/wrapToken_12',
+    description:
+      'token, wrap, wrapping, staking, ETH, BTC, stake, ethereum, rush, movement, forward, exciting',
+    documentationLinks: [],
+  },
+  '10013:819': {
+    key: 'f3b928750a9bfa2186c12dca1653e84fb94b271b',
+    name: 'Icon/payouts_16',
+    description:
+      'payment, pay, cash, withdrawals, deposits, checks, online, payments, debit, card charges, wire, transfers, 💸, 💰, 💵, 🏦, 🏧, 💎',
+    documentationLinks: [],
+  },
+  '10013:820': {
+    key: '21ab7e0d18e846adf33bd3cac8944ff49486e6a1',
+    name: 'Icon/payouts_12',
+    description:
+      'payment, pay, cash, withdrawals, deposits, checks, online, payments, debit, card charges, wire, transfers, 💸, 💰, 💵, 🏦, 🏧, 💎',
+    documentationLinks: [],
+  },
+  '10013:814': {
+    key: 'a6783b7ff99cc51de7d5d9fdb67acddf31745c44',
+    name: 'Icon/transactions_12',
+    description:
+      'transactions, transferring, transfer, cash, withdrawals, deposits, checks, online, payments, debit, card charges, wire transfers, make money move',
+    documentationLinks: [],
+  },
+  '10013:801': {
+    key: 'fa1e3002534762c7f5abd108b3bad1c22ec70c1e',
+    name: 'NavigationIcon/rocketShip_24/active',
+    description:
+      'rocket, advance, vehicle, speed, fast, space, universe, did we really land on the moon?, 🚀',
+    documentationLinks: [],
+  },
+  '10013:802': {
+    key: 'e00f3bee6b4e651d8f3646ccb3d4db53090fa72a',
+    name: 'NavigationIcon/rocketShip_16/active',
+    description:
+      'rocket, advance, vehicle, speed, fast, space, universe, did we really land on the moon?, 🚀',
+    documentationLinks: [],
+  },
+  '10013:803': {
+    key: 'bc1d7ab68ec38ee14f2553bbfb3ec43dfa074a09',
+    name: 'NavigationIcon/rocketShip_12/active',
+    description:
+      'rocket, advance, vehicle, speed, fast, space, universe, did we really land on the moon?, 🚀',
+    documentationLinks: [],
+  },
+  '10013:798': {
+    key: 'e9c7c42a3ed9bd8c8c000fdcad8d555a7f26c70c',
+    name: 'NavigationIcon/rocketShip_24/inactive',
+    description:
+      'rocket, advance, vehicle, speed, fast, space, universe, did we really land on the moon?, 🚀',
+    documentationLinks: [],
+  },
+  '10013:799': {
+    key: '219405667e14a39da22c50ffbe7d05fbc317ca93',
+    name: 'NavigationIcon/rocketShip_16/inactive',
+    description:
+      'rocket, advance, vehicle, speed, fast, space, universe, did we really land on the moon?, 🚀',
+    documentationLinks: [],
+  },
+  '10013:800': {
+    key: 'dfeabf383a0f5d5248ed58d8a5c90f620ce91fe4',
+    name: 'NavigationIcon/rocketShip_12/inactive',
+    description:
+      'rocket, advance, vehicle, speed, fast, space, universe, did we really land on the moon?, 🚀',
+    documentationLinks: [],
+  },
+  '10039:785': {
+    key: 'af4b8d382d38aa228c213d2db76e4db12b9b24a4',
+    name: 'Icon/faucet_24/inactive',
+    description: 'faucet, drip, droplet, water, hydration, 💧, 🚰, 💦',
+    documentationLinks: [],
+  },
+  '10039:786': {
+    key: 'd9717e5b0c68223f7d640013e2841c15cb83e2d7',
+    name: 'Icon/faucet_16/inactive',
+    description: 'faucet, drip, droplet, water, hydration, 💧, 🚰, 💦',
+    documentationLinks: [],
+  },
+  '10039:787': {
+    key: '65608c6bad2efb5446fa610e440d18d39901b975',
+    name: 'Icon/faucet_12/inactive',
+    description: 'faucet, drip, droplet, water, hydration, 💧, 🚰, 💦',
+    documentationLinks: [],
+  },
+  '10039:788': {
+    key: '494795dd335855d099ab5495cec308bb0625003b',
+    name: 'Icon/faucet_24/active',
+    description: 'faucet, drip, droplet, water, hydration, 💧, 🚰, 💦',
+    documentationLinks: [],
+  },
+  '10039:789': {
+    key: 'bbdddf8e34308ab1b8cba7381de73a132295c247',
+    name: 'Icon/faucet_16/active',
+    description: 'faucet, drip, droplet, water, hydration, 💧, 🚰, 💦',
+    documentationLinks: [],
+  },
+  '10039:790': {
+    key: '440101009a1890e6cea216043787e75a63835199',
+    name: 'Icon/faucet_12/active',
+    description: 'faucet, drip, droplet, water, hydration, 💧, 🚰, 💦',
+    documentationLinks: [],
+  },
 };

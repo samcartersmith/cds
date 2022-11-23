@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 61584,
+  lastUnicode: 61624,
   unicodeMap: {
     cashUSD: { '8': 'uE966', '12': 'uE967', '16': 'uE968', '24': 'uE969', '32': 'uE96A' },
     cashGBP: { '8': 'uE96B', '12': 'uE96C', '16': 'uE96D', '24': 'uE96E', '32': 'uE96F' },
@@ -606,5 +606,19 @@ export const manifest = {
     twitterLogo: { '8': 'uF082', '12': 'uF083', '16': 'uF084', '24': 'uF085', '32': 'uF086' },
     instagramLogo: { '8': 'uF087', '12': 'uF088', '16': 'uF089', '24': 'uF08A', '32': 'uF08B' },
     discordLogo: { '8': 'uF08C', '12': 'uF08D', '16': 'uF08E', '24': 'uF08F', '32': 'uF090' },
+    refresh: { '8': 'uF091', '12': 'uF092', '16': 'uF093', '24': 'uF094', '32': 'uF095' },
+    payouts: { '8': 'uF096', '12': 'uF097', '16': 'uF098', '24': 'uF099', '32': 'uF09A' },
+    wrapToken: { '8': 'uF09B', '12': 'uF09C', '16': 'uF09D', '24': 'uF09E', '32': 'uF09F' },
+    transactions: { '8': 'uF0A0', '12': 'uF0A1', '16': 'uF0A2', '24': 'uF0A3', '32': 'uF0A4' },
+    rocketShipActive: { '8': 'uF0A5', '12': 'uF0A6', '16': 'uF0A7', '24': 'uF0A8', '32': 'uF0A9' },
+    rocketShipInactive: {
+      '8': 'uF0AA',
+      '12': 'uF0AB',
+      '16': 'uF0AC',
+      '24': 'uF0AD',
+      '32': 'uF0AE',
+    },
+    faucetInactive: { '8': 'uF0AF', '12': 'uF0B0', '16': 'uF0B1', '24': 'uF0B2', '32': 'uF0B3' },
+    faucetActive: { '8': 'uF0B4', '12': 'uF0B5', '16': 'uF0B6', '24': 'uF0B7', '32': 'uF0B8' },
   },
 };

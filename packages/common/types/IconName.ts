@@ -253,7 +253,13 @@ export type IconName =
   | 'faceScan'
   | 'twitterLogo'
   | 'instagramLogo'
-  | 'discordLogo';
+  | 'discordLogo'
+  | 'refresh'
+  | 'payouts'
+  | 'wrapToken'
+  | 'transactions'
+  | 'faucetInactive'
+  | 'faucetActive';
 
 export type NavigationIconName =
   | 'planet'
@@ -316,7 +322,8 @@ export type NavigationIconName =
   | 'account'
   | 'magnifyingGlass'
   | 'copyNav'
-  | 'menu';
+  | 'menu'
+  | 'rocketShip';
 
 export type NavigationIconInternalName =
   | 'planetInactive'
@@ -440,4 +447,6 @@ export type NavigationIconInternalName =
   | 'copyNavInactive'
   | 'copyNavActive'
   | 'menuInactive'
-  | 'menuActive';
+  | 'menuActive'
+  | 'rocketShipActive'
+  | 'rocketShipInactive';
