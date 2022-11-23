@@ -28,6 +28,8 @@ const frozenComponentPatterns = [
   'packages/mobile/visualizations/sparkline-interactive/*.(ts|tsx)',
   'packages/mobile/visualizations/sparkline-interactive-header/*.(ts|tsx)',
   'packages/web/dropdown/*.(ts|tsx)',
+  'packages/web/overlays/popover/*.(ts|tsx)',
+  'packages/common/animation/dropdown.ts',
 ];
 
 const nonTestTsFiles = danger.git.fileMatch(
