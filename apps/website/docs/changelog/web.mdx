@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.3.0 (11/23/2022, 04:32 PM PST)
+
+#### 🐞 Fixes
+
+- **[Illustrations]** Publish illustrations 11/22/2022. [#1420](https://github.cbhq.net/frontend/cds/pull/1420)
+- **[icons]** Publish 11/22/22 Icons. [#1419](https://github.cbhq.net/frontend/cds/pull/1419)
+- **[Table]** Use inset focus ring for table cell pressables. [#1417](https://github.cbhq.net/frontend/cds/pull/1417), [A11Y-195](https://jira.coinbase-corp.com/browse/A11Y-195)
+
 ## 3.2.0 (11/16/2022, 01:14 PM PST)
 
 #### 🚀 Updates
