@@ -1,4 +1,8 @@
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import {
+  advanceAnimationByTime,
+  withReanimatedTimer,
+} from 'react-native-reanimated/lib/reanimated2/jestUtils';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 
@@ -87,36 +91,58 @@ describe('DotCount', () => {
     expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeAccessible();
   });
 
-  it('DotCount is placed in the correct position relative to its children', () => {
-    const iconSize = normalScaleMap.l;
-    const dotSize = 24;
+  it('DotCount is placed in the correct position relative to its children', async () => {
+    withReanimatedTimer(() => {
+      const iconSize = normalScaleMap.l;
+      const dotSize = 24;
 
-    render(
-      <DotCount pin="top-end" testID={DOTCOUNT_TESTID} variant="negative" count={1}>
-        <Icon name="airdrop" size="l" />
-      </DotCount>,
-    );
+      render(
+        <DotCount pin="top-end" testID={DOTCOUNT_TESTID} variant="negative" count={2}>
+          <Icon name="airdrop" size="l" />
+        </DotCount>,
+      );
 
-    // Trigger onLayout for the icon
-    fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
-      nativeEvent: { layout: { height: iconSize, width: iconSize } },
-    });
+      // Trigger onLayout for the icon
+      fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
+        nativeEvent: { layout: { height: iconSize, width: iconSize } },
+      });
 
-    // Trigger onLayout for the dot
-    fireEvent(screen.getByTestId('dotcount-inner-container'), 'layout', {
-      nativeEvent: { layout: { height: dotSize, width: dotSize } },
-    });
+      // Trigger onLayout for the dot
+      fireEvent(screen.getByTestId('dotcount-inner-container'), 'layout', {
+        nativeEvent: { layout: { height: dotSize, width: dotSize } },
+      });
 
-    expect(screen.getByTestId('dotcount-inner-container')).toHaveStyle({
-      position: 'absolute',
-      transform: [
-        {
-          translateX: iconSize - dotSize / 2,
-        },
-        {
-          translateY: -(dotSize / 2),
-        },
-      ],
+      // initial styles
+      expect(screen.getByTestId('dotcount-inner-container')).toHaveAnimatedStyle({
+        position: 'absolute',
+        transform: [
+          { scale: 0.9 },
+          {
+            translateX: 0,
+          },
+          {
+            translateY: 0,
+          },
+        ],
+      });
+
+      act(() => {
+        advanceAnimationByTime(200);
+
+        // styles after animation
+        expect(screen.getByTestId('dotcount-inner-container')).toHaveAnimatedStyle({
+          position: 'absolute',
+          transform: [
+            { scale: 1 },
+            {
+              translateX: iconSize - dotSize / 2,
+            },
+            {
+              translateY: -(dotSize / 2),
+            },
+          ],
+        });
+      });
     });
   });
 

@@ -1,6 +1,8 @@
 import 'react-native-gesture-handler/jestSetup';
 import 'react-native-accessibility-engine';
 
+import { setUpTests } from 'react-native-reanimated/lib/reanimated2/jestUtils';
+
 import { mockStatusBarHeight } from './constants';
 
 jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
@@ -17,3 +19,5 @@ jest.mock('react-native', () => {
 
   return RN;
 });
+
+setUpTests();

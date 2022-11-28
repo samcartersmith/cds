@@ -29715,6 +29715,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-reanimated@patch:react-native-reanimated@npm:2.10.0#.yarn/patches/react-native-reanimated-npm-2.10.0-650a2a0008::locator=design-system%40workspace%3A.":
+  version: 2.10.0
+  resolution: "react-native-reanimated@patch:react-native-reanimated@npm%3A2.10.0#.yarn/patches/react-native-reanimated-npm-2.10.0-650a2a0008::version=2.10.0&hash=de97c1&locator=design-system%40workspace%3A."
+  dependencies:
+    "@babel/plugin-transform-object-assign": ^7.16.7
+    "@babel/preset-typescript": ^7.16.7
+    "@types/invariant": ^2.2.35
+    invariant: ^2.2.4
+    lodash.isequal: ^4.5.0
+    setimmediate: ^1.0.5
+    string-hash-64: ^1.0.3
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+    react: "*"
+    react-native: "*"
+  checksum: ffea88c5e823f47fcf70c7bdb03c03a0898e489b1404beb029e957f204cc6d2db08a8f57f3bbac48d674ac426dc62fa092ea3ace7c48d57097db92bf4330468e
+  languageName: node
+  linkType: hard
+
 "react-native-safe-area-context@npm:^3.2.0":
   version: 3.4.1
   resolution: "react-native-safe-area-context@npm:3.4.1"
