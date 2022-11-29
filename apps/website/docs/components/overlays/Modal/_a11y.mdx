@@ -1,5 +1,13 @@
 :::tip Accessibility tip (Web only)
 
+**Trigger Focus**
+
 A `ref` to the trigger that opens the modal, along with an `onDidClose` method to reset focus on the trigger when the modal closes, needs to be wired up for accessibility (see code examples below).
+
+<br />
+
+**Labels**
+
+Modals also require an accessibility label, which we set to the `ModalHeader` `title` prop by default. However, if you don't want to provide a `title` or there's other text that gives the user better context to the modal, then you can pass an element id to `accessibilityLabelledBy`. Alternatively, you may directly provide a contextual label to `accessibilityLabel`.
 
 :::

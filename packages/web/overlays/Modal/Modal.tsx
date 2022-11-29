@@ -10,6 +10,7 @@ import {
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
 import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 
+import { useA11yLabels } from '../../hooks/useA11yLabels';
 import { VStack } from '../../layout';
 import { useMotionProps } from '../../motion/useMotionProps';
 import { cx } from '../../utils/linaria';
@@ -46,8 +47,8 @@ export const Modal = memo(
       onDidClose,
       disableOverlayPress = false,
       disablePortal = false,
-      accessibilityLabelledBy = 'modal_title',
-      accessibilityLabel = 'modal',
+      accessibilityLabelledBy,
+      accessibilityLabel,
       zIndex: customZIndex,
       dangerouslySetWidth,
       dangerouslyDisableResponsiveness = false,
@@ -60,6 +61,12 @@ export const Modal = memo(
       hideCloseButton,
       hideDividers,
     } = props;
+
+    const { labelledBySource, labelledBy, label } = useA11yLabels({
+      labelledByIdPrefix: 'modal-title-',
+      accessibilityLabelledBy,
+      accessibilityLabel,
+    });
 
     const motionProps = useMotionProps({
       enterConfigs: [animateInOpacityConfig, animateInScaleConfig],
@@ -83,11 +90,11 @@ export const Modal = memo(
       () => ({
         visible,
         onRequestClose: handleClose,
-        accessibilityLabelledBy,
+        accessibilityLabelledBy: labelledBySource,
         hideCloseButton,
         hideDividers,
       }),
-      [visible, handleClose, accessibilityLabelledBy, hideCloseButton, hideDividers],
+      [visible, handleClose, labelledBySource, hideCloseButton, hideDividers],
     );
 
     // TODO: remove render props as we no longer need the method to close modal
@@ -104,8 +111,8 @@ export const Modal = memo(
       <ModalWrapper
         visible={visible}
         disablePortal={disablePortal}
-        accessibilityLabelledBy={accessibilityLabelledBy}
-        accessibilityLabel={accessibilityLabel}
+        accessibilityLabelledBy={labelledBy}
+        accessibilityLabel={label}
         zIndex={customZIndex}
         dangerouslySetClassName={dangerouslySetClassName}
         id={id}

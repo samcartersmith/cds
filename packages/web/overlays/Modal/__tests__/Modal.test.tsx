@@ -16,6 +16,10 @@ import { ModalBody } from '../ModalBody';
 import { ModalFooter } from '../ModalFooter';
 import { ModalHeader } from '../ModalHeader';
 
+const TITLE = 'Basic Modal';
+const LABELLED_BY = 'some-id';
+const LABEL = 'A label';
+
 const LoremIpsum = loremIpsumBuilder({
   TextBody,
   TextLabel1,
@@ -48,15 +52,54 @@ describe('Modal', () => {
     ).toHaveNoViolations();
   });
 
-  it('show modal on click', async () => {
+  it('has expected default a11y attrs', () => {
+    render(<MockModal visible />);
+
+    const modal = screen.getByRole('dialog');
+
+    expect(modal).toHaveAttribute('aria-modal', 'true');
+    expect(modal).toHaveAttribute('aria-labelledby', expect.stringMatching(/modal-title-.*/));
+    expect(screen.getByText(TITLE)).toHaveAttribute('id', expect.stringMatching(/modal-title-.*/));
+    expect(modal).not.toHaveAttribute('aria-label');
+  });
+
+  it('overrides default a11y attrs when accessibilityLabelledBy is provided', () => {
+    render(<MockModal visible accessibilityLabelledBy={LABELLED_BY} />);
+
+    const modal = screen.getByRole('dialog');
+
+    expect(modal).toHaveAttribute('aria-labelledby', LABELLED_BY);
+    expect(screen.getByText(TITLE)).not.toHaveAttribute('id');
+    expect(modal).not.toHaveAttribute('aria-label');
+  });
+
+  it('overrides default a11y attrs when accessibilityLabel is provided', () => {
+    render(<MockModal visible accessibilityLabel={LABEL} />);
+
+    const modal = screen.getByRole('dialog');
+
+    expect(modal).not.toHaveAttribute('aria-labelledby');
+    expect(screen.getByText(TITLE)).not.toHaveAttribute('id');
+    expect(modal).toHaveAttribute('aria-label', LABEL);
+  });
+
+  it('overrides accessibilityLabel with accessibilityLabelledBy when both are provided', () => {
+    render(<MockModal visible accessibilityLabelledBy={LABELLED_BY} accessibilityLabel={LABEL} />);
+
+    const modal = screen.getByRole('dialog');
+
+    expect(modal).toHaveAttribute('aria-labelledby', LABELLED_BY);
+    expect(screen.getByText(TITLE)).not.toHaveAttribute('id');
+    expect(modal).not.toHaveAttribute('aria-label');
+  });
+
+  it('shows modal on click', async () => {
     render(<MockModal />);
 
     fireEvent.click(screen.getByRole('button'));
 
     const modal = await screen.findByRole('dialog');
-    expect(modal).toBeDefined();
-    expect(modal).toHaveAttribute('aria-modal', 'true');
-    expect(modal).toHaveAttribute('aria-labelledby', 'modal_title');
+    expect(modal).toBeVisible();
   });
 
   it('triggers close on overlay click', async () => {
@@ -107,11 +150,10 @@ describe('Modal', () => {
   });
 
   it('renders modal title', async () => {
-    const title = 'Basic Modal';
-    render(<MockModal visible onRequestClose={jest.fn()} title={title} />);
-    expect(screen.getByText(title)).not.toBeVisible();
+    render(<MockModal visible onRequestClose={jest.fn()} />);
+    expect(screen.getByText(TITLE)).not.toBeVisible();
 
-    expect(await screen.findByText(title)).toBeVisible();
+    expect(await screen.findByText(TITLE)).toBeVisible();
   });
 
   it('renders modal body', async () => {

@@ -15,10 +15,11 @@ type UseA11yIdType = Partial<{
  * the generated ID should be passed via accessibilityLabelledBy or accessibilityHint to the target element
  * and passed as ID to the label or descriptive element
  * */
-export const useA11yId = (options: UseA11yIdType = {}) =>
+export const useA11yId = ({ prefix, shouldNotGenerate }: UseA11yIdType = {}) =>
   useMemo(() => {
-    if (options?.shouldNotGenerate) {
+    if (shouldNotGenerate) {
       return undefined;
     }
-    return generateRandomId(options?.prefix ?? 'a11y-id-');
-  }, [options?.prefix, options?.shouldNotGenerate]);
+
+    return generateRandomId(prefix ?? 'a11y-id-');
+  }, [prefix, shouldNotGenerate]);

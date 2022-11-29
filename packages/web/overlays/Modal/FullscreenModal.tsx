@@ -10,6 +10,7 @@ import {
 } from '@cbhq/cds-common/animation/fullscreenModal';
 
 import { IconButton } from '../../buttons';
+import { useA11yLabels } from '../../hooks/useA11yLabels';
 import { usePinStyles } from '../../hooks/usePinStyles';
 import { LogoMark } from '../../icons';
 import { Box, HStack, VStack } from '../../layout';
@@ -92,13 +93,22 @@ export const FullscreenModal = memo(function FullscreenModal({
   showSecondaryContentDivider = false,
   role,
   onDidClose,
+  accessibilityLabelledBy,
+  accessibilityLabel,
 }: FullscreenModalProps) {
+  const { labelledBySource, labelledBy, label } = useA11yLabels({
+    labelledByIdPrefix: 'modal-title-',
+    accessibilityLabelledBy,
+    accessibilityLabel,
+  });
+
   const pinStyles = usePinStyles('all');
   const overlayMotionProps = useMotionProps({
     enterConfigs: [animateInOverlayOpacityConfig],
     exitConfigs: [animateOutOverlayOpacityConfig],
     exit: 'exit',
   });
+
   const dialogMotionProps = useMotionProps({
     enterConfigs: [animateInOpacityConfig, animateInTranslateYConfig],
     exitConfigs: [animateOutOpacityConfig, animateOutTranslateYConfig],
@@ -124,7 +134,9 @@ export const FullscreenModal = memo(function FullscreenModal({
       </Box>
       <Box flexGrow={1}>
         {title ? (
-          <TextTitle1 as="h1">{title}</TextTitle1>
+          <TextTitle1 id={labelledBySource} as="h1">
+            {title}
+          </TextTitle1>
         ) : (
           <div className={headerLogoInnerClassName}>
             <LogoMark size={32} />
@@ -166,6 +178,8 @@ export const FullscreenModal = memo(function FullscreenModal({
       disablePortal={disablePortal}
       role={role}
       onDidClose={onDidClose}
+      accessibilityLabelledBy={labelledBy}
+      accessibilityLabel={label}
     >
       {overlay}
       <motion.div {...dialogMotionProps} className={pinStyles}>

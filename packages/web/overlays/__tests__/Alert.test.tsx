@@ -6,6 +6,10 @@ import { Button } from '../../buttons';
 import { Alert } from '../Alert';
 import { PortalProvider } from '../PortalProvider';
 
+const TITLE = 'Alert title';
+const LABELLED_BY = 'some-id';
+const LABEL = 'A label';
+
 const { MockAlert } = alertBuilder({
   Alert,
   Button,
@@ -29,7 +33,47 @@ describe('Alert', () => {
     ).toHaveNoViolations();
   });
 
-  it('show alert on press', async () => {
+  it('has expected default a11y attrs', () => {
+    render(<MockAlert visible />);
+
+    const modal = screen.getByRole('alertdialog');
+
+    expect(modal).toHaveAttribute('aria-modal', 'true');
+    expect(modal).toHaveAttribute('aria-labelledby', expect.stringMatching(/alert-title-.*/));
+    expect(screen.getByText(TITLE)).toHaveAttribute('id', expect.stringMatching(/alert-title-.*/));
+  });
+
+  it('overrides default a11y attrs when accessibilityLabelledBy is provided', () => {
+    render(<MockAlert visible accessibilityLabelledBy={LABELLED_BY} />);
+
+    const modal = screen.getByRole('alertdialog');
+
+    expect(modal).toHaveAttribute('aria-labelledby', LABELLED_BY);
+    expect(screen.getByText(TITLE)).not.toHaveAttribute('id');
+    expect(modal).not.toHaveAttribute('aria-label');
+  });
+
+  it('overrides default a11y attrs when accessibilityLabel is provided', () => {
+    render(<MockAlert visible accessibilityLabel={LABEL} />);
+
+    const modal = screen.getByRole('alertdialog');
+
+    expect(modal).not.toHaveAttribute('aria-labelledby');
+    expect(screen.getByText(TITLE)).not.toHaveAttribute('id');
+    expect(modal).toHaveAttribute('aria-label', LABEL);
+  });
+
+  it('overrides accessibilityLabel with accessibilityLabelledBy when both are provided', () => {
+    render(<MockAlert visible accessibilityLabelledBy={LABELLED_BY} accessibilityLabel={LABEL} />);
+
+    const modal = screen.getByRole('alertdialog');
+
+    expect(modal).toHaveAttribute('aria-labelledby', LABELLED_BY);
+    expect(screen.getByText(TITLE)).not.toHaveAttribute('id');
+    expect(modal).not.toHaveAttribute('aria-label');
+  });
+
+  it('shows alert on press', async () => {
     render(<MockAlert />);
 
     fireEvent.click(screen.getByText('Show Alert'));
@@ -41,16 +85,24 @@ describe('Alert', () => {
 
   it('renders title', async () => {
     const title = 'Test title';
+
     render(<MockAlert visible title={title} />);
 
-    expect(await screen.findByText(title)).toBeVisible();
+    const found = await screen.findByText(title);
+
+    // need to use waitFor here or test is flaky for some reason
+    await waitFor(() => expect(found).toBeVisible());
   });
 
   it('renders body', async () => {
     const body = 'Test body';
+
     render(<MockAlert visible body={body} />);
 
-    expect(await screen.findByText(body)).toBeVisible();
+    const found = await screen.findByText(body);
+
+    // need to use waitFor here or test is flaky for some reason
+    await waitFor(() => expect(found).toBeVisible());
   });
 
   it('renders preferred action', () => {

@@ -2,12 +2,22 @@ import React, { useCallback } from 'react';
 
 import { useToggler } from '../hooks/useToggler';
 import { useAlert } from '../overlays/useAlert';
-import type { AlertBaseProps, ButtonBaseProps, SharedProps } from '../types';
+import type {
+  AlertBaseProps,
+  ButtonBaseProps,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '../types';
 
 const onPressConsole = () => console.log('pressed');
 
+type AlertA11yProps = Pick<
+  SharedAccessibilityProps,
+  'accessibilityLabelledBy' | 'accessibilityLabel'
+>;
+
 export type CreateAlertProps = {
-  Alert: React.ComponentType<AlertBaseProps & { disablePortal?: boolean }>;
+  Alert: React.ComponentType<AlertBaseProps & AlertA11yProps & { disablePortal?: boolean }>;
   Button: React.ComponentType<ButtonBaseProps & SharedProps & { onPress?: () => void }>;
   PortalProvider: React.ComponentType;
 };
@@ -84,7 +94,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
   };
 
   // for unit testing
-  const MockAlert: React.FC<Partial<AlertBaseProps>> = ({
+  const MockAlert: React.FC<Partial<AlertBaseProps> & AlertA11yProps> = ({
     visible: externalVisible,
     onRequestClose,
     title,
@@ -94,6 +104,8 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
     onPreferredActionPress,
     dismissActionLabel,
     testID,
+    accessibilityLabelledBy,
+    accessibilityLabel,
   }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler();
 
@@ -112,6 +124,8 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
           preferredActionLabel={preferredActionLabel ?? 'Save'}
           onPreferredActionPress={onPreferredActionPress ?? onPressConsole}
           dismissActionLabel={dismissActionLabel}
+          accessibilityLabelledBy={accessibilityLabelledBy}
+          accessibilityLabel={accessibilityLabel}
           disablePortal
         />
       </>

@@ -3,6 +3,7 @@ import { css } from 'linaria';
 import type { AlertActionsBaseProps, IllustrationHeroSquareNames } from '@cbhq/cds-common';
 
 import { Button } from '../buttons';
+import { useA11yLabels } from '../hooks/useA11yLabels';
 import { HeroSquare } from '../illustrations';
 import { Box, VStack } from '../layout';
 import { deviceBreakpoints } from '../layout/breakpoints';
@@ -77,12 +78,18 @@ export const FullscreenAlert = memo(function FullscreenAlert({
   accessibilityLabelledBy,
   testID,
 }: FullscreenAlertProps) {
+  const { labelledBySource, labelledBy, label } = useA11yLabels({
+    labelledByIdPrefix: 'alert-title-',
+    accessibilityLabelledBy,
+    accessibilityLabel,
+  });
+
   const primaryContent = (
     <VStack alignItems="center" height="100%" justifyContent="space-between">
       <VStack spacingBottom={4} alignItems="center">
         {!!heroSquare && <HeroSquare name={heroSquare} />}
         <Box spacingTop={3} spacingBottom={1}>
-          <TextTitle3 as="h3" align="center">
+          <TextTitle3 id={labelledBySource} as="h3" align="center">
             {title}
           </TextTitle3>
         </Box>
@@ -111,8 +118,8 @@ export const FullscreenAlert = memo(function FullscreenAlert({
       dangerouslySetContentClassName={centerContentClassName}
       hideDivider
       disablePortal={disablePortal}
-      accessibilityLabel={accessibilityLabel}
-      accessibilityLabelledBy={accessibilityLabelledBy}
+      accessibilityLabel={label}
+      accessibilityLabelledBy={labelledBy}
       testID={testID}
       role="alertdialog"
     />

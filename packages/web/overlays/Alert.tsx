@@ -2,6 +2,7 @@ import React, { forwardRef, memo, useCallback, useMemo } from 'react';
 import type { AlertBaseProps, AlertRefBaseProps } from '@cbhq/cds-common';
 
 import { Button } from '../buttons';
+import { useA11yLabels } from '../hooks/useA11yLabels';
 import { Pictogram } from '../illustrations';
 import { Box, HStack, VStack } from '../layout';
 import { TextBody, TextTitle3 } from '../typography';
@@ -37,10 +38,18 @@ export const Alert = memo(
         testID,
         stacked,
         actionLayout = 'horizontal',
+        accessibilityLabelledBy,
+        accessibilityLabel,
         ...props
       },
       ref,
     ) => {
+      const { labelledBySource, labelledBy, label } = useA11yLabels({
+        labelledByIdPrefix: 'alert-title-',
+        accessibilityLabelledBy,
+        accessibilityLabel,
+      });
+
       const isVerticalActions = actionLayout === 'vertical';
 
       const handlePreferredActionPress = useCallback(() => {
@@ -88,6 +97,8 @@ export const Alert = memo(
         <Portal containerId={alertContainerId} disablePortal={disablePortal}>
           <Modal
             visible={visible}
+            accessibilityLabelledBy={labelledBy}
+            accessibilityLabel={label}
             onRequestClose={onRequestClose}
             disablePortal
             hideDividers
@@ -120,7 +131,7 @@ export const Alert = memo(
                   />
                 </Box>
               )}
-              <TextTitle3 as="h3" spacingBottom={0.5} align="center">
+              <TextTitle3 id={labelledBySource} as="h3" spacingBottom={0.5} align="center">
                 {title}
               </TextTitle3>
               <TextBody as="p" color="foregroundMuted" align="center">

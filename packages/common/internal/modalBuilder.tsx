@@ -7,12 +7,25 @@ import type {
   ModalBaseProps,
   ModalFooterBaseProps,
   ModalHeaderBaseProps,
+  SharedAccessibilityProps,
   SharedProps,
   TextInputBaseProps,
 } from '../types';
 
+type ModalAccessibilityProps = Pick<
+  SharedAccessibilityProps,
+  'accessibilityLabelledBy' | 'accessibilityLabel'
+>;
+
+type ModalA11yProps = {
+  triggerRef?: RefObject<HTMLButtonElement>;
+  focusTrigger?: () => void;
+} & ModalAccessibilityProps;
+
 export type CreateModalProps = {
-  Modal: React.ComponentType<ModalBaseProps & { disablePortal?: boolean }>;
+  Modal: React.ComponentType<
+    ModalBaseProps & ModalAccessibilityProps & { disablePortal?: boolean }
+  >;
   ModalBody: React.ComponentType;
   ModalHeader: React.ComponentType<ModalHeaderBaseProps>;
   ModalFooter: React.ComponentType<ModalFooterBaseProps>;
@@ -22,11 +35,6 @@ export type CreateModalProps = {
       SharedProps & { onPress?: () => void } & { ref?: RefObject<HTMLButtonElement> }
   >;
   TextInput?: React.ComponentType<TextInputBaseProps>;
-};
-
-type ModalTriggerProps = {
-  triggerRef?: RefObject<HTMLButtonElement>;
-  focusTrigger?: () => void;
 };
 
 export function modalBuilder({
@@ -39,7 +47,7 @@ export function modalBuilder({
   LoremIpsum,
 }: CreateModalProps) {
   const BasicModalExample: React.FC<
-    ModalTriggerProps & {
+    ModalA11yProps & {
       disablePortal?: boolean;
       visible?: boolean;
       hideDividers?: boolean;
@@ -81,11 +89,7 @@ export function modalBuilder({
     );
   };
 
-  const PortalModalExample: React.FC<ModalTriggerProps> = ({
-    children,
-    triggerRef,
-    focusTrigger,
-  }) => {
+  const PortalModalExample: React.FC<ModalA11yProps> = ({ children, triggerRef, focusTrigger }) => {
     const { openModal, closeModal } = useModal();
 
     const handlePress = useCallback(
@@ -114,7 +118,7 @@ export function modalBuilder({
     );
   };
 
-  const MockModal: React.FC<Partial<ModalBaseProps & ModalHeaderBaseProps> & ModalTriggerProps> = ({
+  const MockModal: React.FC<Partial<ModalBaseProps & ModalHeaderBaseProps> & ModalA11yProps> = ({
     onRequestClose,
     onBackButtonPress,
     title = 'Basic Modal',
@@ -122,6 +126,8 @@ export function modalBuilder({
     testID,
     triggerRef,
     focusTrigger,
+    accessibilityLabelledBy,
+    accessibilityLabel,
   }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(externalVisible);
 
@@ -138,6 +144,8 @@ export function modalBuilder({
         <Modal
           testID={testID}
           visible={visible}
+          accessibilityLabelledBy={accessibilityLabelledBy}
+          accessibilityLabel={accessibilityLabel}
           onRequestClose={handleClose}
           onDidClose={focusTrigger}
           disablePortal
@@ -164,34 +172,34 @@ export function modalBuilder({
     );
   };
 
-  const BasicModal = ({ triggerRef, focusTrigger }: ModalTriggerProps) => (
-    <BasicModalExample triggerRef={triggerRef} focusTrigger={focusTrigger}>
+  const BasicModal = (props: ModalA11yProps) => (
+    <BasicModalExample {...props}>
       <LoremIpsum />
     </BasicModalExample>
   );
 
-  const VisibleModal = ({ triggerRef, focusTrigger }: ModalTriggerProps) => (
-    <BasicModalExample triggerRef={triggerRef} focusTrigger={focusTrigger} visible>
+  const VisibleModal = (props: ModalA11yProps) => (
+    <BasicModalExample {...props} visible>
       <LoremIpsum />
     </BasicModalExample>
   );
 
-  const ModalWithoutPortal = ({ triggerRef, focusTrigger }: ModalTriggerProps) => (
-    <BasicModalExample triggerRef={triggerRef} focusTrigger={focusTrigger} disablePortal>
+  const ModalWithoutPortal = (props: ModalA11yProps) => (
+    <BasicModalExample {...props} disablePortal>
       <LoremIpsum />
     </BasicModalExample>
   );
 
-  const LongModal = ({ triggerRef, focusTrigger }: ModalTriggerProps) => (
-    <BasicModalExample triggerRef={triggerRef} focusTrigger={focusTrigger}>
+  const LongModal = (props: ModalA11yProps) => (
+    <BasicModalExample {...props}>
       <LoremIpsum repeat={30} />
       {!!TextInput && <TextInput label="" placeholder="test input" />}
     </BasicModalExample>
   );
 
-  const PortalModal = ({ triggerRef, focusTrigger }: ModalTriggerProps) => {
+  const PortalModal = (props: ModalA11yProps) => {
     return (
-      <PortalModalExample triggerRef={triggerRef} focusTrigger={focusTrigger}>
+      <PortalModalExample {...props}>
         <LoremIpsum />
       </PortalModalExample>
     );

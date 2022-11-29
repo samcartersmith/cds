@@ -84,6 +84,7 @@ export const NoTitle = () => {
         onDidClose={focusTrigger}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
+        accessibilityLabel="Modal context info"
       />
     </>
   );
