@@ -1,4 +1,12 @@
-import React, { ForwardedRef, forwardRef, memo, useCallback, useRef, useState } from 'react';
+import React, {
+  ForwardedRef,
+  forwardRef,
+  memo,
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import {
   GestureResponderEvent,
   NativeSyntheticEvent,
@@ -106,6 +114,15 @@ export const SearchInput = memo(
         [onBack],
       );
 
+      const startIconAccessabilityLabel = useMemo(
+        () => (startIconName === 'backArrow' ? 'Back' : undefined),
+        [startIconName],
+      );
+      const startIconAccessabilityHint = useMemo(
+        () => (startIconName === 'backArrow' ? 'Return to previous view' : undefined),
+        [startIconName],
+      );
+
       return (
         <TextInput
           onFocus={handleOnFocus}
@@ -117,11 +134,15 @@ export const SearchInput = memo(
             !hideStartIcon && (
               <InputIconButton
                 testID={testID && `${testID}-searchinput-iconbtn`}
-                accessibilityLabel={startIconName}
-                accessibilityHint={startIconName}
                 onPress={startIconName === 'backArrow' ? handleOnBack : handleOnSearch}
                 disabled={disabled}
                 name={startIconName}
+                // A11y props will get passed to the pressable wrapper
+                accessibilityLabel={startIconAccessabilityLabel}
+                accessibilityHint={startIconAccessabilityHint}
+                // The pressable wrapper will be accessible, not the icon
+                accessibilityElementsHidden
+                importantForAccessibility="no"
               />
             )
           }

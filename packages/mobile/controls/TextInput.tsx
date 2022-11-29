@@ -1,4 +1,14 @@
-import React, { ForwardedRef, forwardRef, memo, useCallback, useRef, useState } from 'react';
+import React, {
+  cloneElement,
+  ForwardedRef,
+  forwardRef,
+  isValidElement,
+  memo,
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import {
   NativeSyntheticEvent,
   Pressable,
@@ -20,6 +30,7 @@ import { TextLabel1 } from '../typography/TextLabel1';
 
 import { TextInputFocusVariantContext } from './context';
 import { HelperText } from './HelperText';
+import { InputIconButton, InputIconButtonProps } from './InputIconButton';
 import { InputLabel } from './InputLabel';
 import { InputStack } from './InputStack';
 import { NativeInput } from './NativeInput';
@@ -94,11 +105,35 @@ export const TextInput = memo(
        * If startContent exist, the padding
        * between input area and icon should be 0.5 (4px).
        * This is not the case when there is no startContent.
-       * In normal circumnstances, spacing horizontal should be 2 (16px)
+       * In normal circumstances, spacing horizontal should be 2 (16px)
        */
       const startSpacing = useSpacingStyles({
         spacingStart: 0.5,
       });
+
+      // Get the accessability label from the start node child
+      const startIconA11yLabel = useMemo(() => {
+        if (isValidElement(start) && start.type === InputIconButton) {
+          return (start.props as InputIconButtonProps).accessibilityLabel;
+        }
+
+        return undefined;
+      }, [start]);
+
+      // The Pressable element steals the accessability props 🥷
+      const inaccessibleStart = useMemo(() => {
+        if (isValidElement(start) && start.type === InputIconButton) {
+          return cloneElement(start, {
+            ...start.props,
+            accessibilityLabel: undefined,
+            accessibilityHint: undefined,
+            accessibilityElementsHidden: true,
+            importantForAccessibility: 'no',
+          } as InputIconButtonProps);
+        }
+
+        return start;
+      }, [start]);
 
       return (
         <InputStack
@@ -137,7 +172,10 @@ export const TextInput = memo(
             ((compact && !!label) || !!start) && (
               <Box justifyContent="center" alignItems="center" testID={testIDMap?.start}>
                 <Pressable
-                  accessibilityElementsHidden
+                  accessibilityElementsHidden={!startIconA11yLabel}
+                  importantForAccessibility={startIconA11yLabel ? 'auto' : 'no'}
+                  accessibilityLabel={startIconA11yLabel}
+                  accessibilityHint={startIconA11yLabel}
                   accessibilityRole="button"
                   disabled={disabled}
                   onPress={handleNodePress}
@@ -146,7 +184,7 @@ export const TextInput = memo(
                     {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
                     {!!start && (
                       <TextInputFocusVariantContext.Provider value={focusedVariant}>
-                        {start}
+                        {inaccessibleStart}
                       </TextInputFocusVariantContext.Provider>
                     )}
                   </HStack>
@@ -162,12 +200,7 @@ export const TextInput = memo(
                 gap={2}
                 testID={testIDMap?.end ?? ''}
               >
-                <Pressable
-                  accessibilityElementsHidden
-                  accessibilityRole="button"
-                  disabled={disabled}
-                  onPress={handleNodePress}
-                >
+                <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
                   <HStack>
                     {suffix !== '' && (
                       <TextLabel1 spacingEnd={2} color="foregroundMuted">

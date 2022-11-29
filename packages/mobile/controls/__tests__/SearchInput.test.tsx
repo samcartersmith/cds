@@ -47,9 +47,19 @@ describe('Search', () => {
   });
 
   it('renders a backArrow icon button at the start node', () => {
-    render(SearchComponent);
+    render(
+      <SearchInput
+        value="value"
+        testID={TEST_ID}
+        onSearch={onSearchSpy}
+        onClear={onClearSpy}
+        onChangeText={onChangeTextSpy}
+        placeholder="Placeholder"
+        startIcon="backArrow"
+      />,
+    );
 
-    expect(screen.getByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeDefined();
+    expect(screen.getByLabelText(`Back`)).toBeDefined();
   });
 
   it('does not render a startIcon when hideStartIcon=true', () => {
@@ -64,6 +74,29 @@ describe('Search', () => {
     );
 
     expect(screen.queryByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeNull();
+  });
+
+  it('announces a single search label (no-dupes test)', () => {
+    render(SearchComponent);
+
+    // This will throw if we find duplicates
+    expect(screen.getByLabelText(`search`)).toBeAccessible();
+  });
+
+  it('announces the Back arrow icon button', () => {
+    render(
+      <SearchInput
+        value="value"
+        testID={TEST_ID}
+        onSearch={onSearchSpy}
+        onClear={onClearSpy}
+        onChangeText={onChangeTextSpy}
+        placeholder="Placeholder"
+        startIcon="backArrow"
+      />,
+    );
+
+    expect(screen.getByLabelText(`Back`)).toBeAccessible();
   });
 
   it('renders a close icon button at the end node', () => {
