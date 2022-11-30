@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.4.0 (11/30/2022, 12:45 PM PST)
+
+#### 🚀 Updates
+
+- **[Tooltip]** Animate Tooltip base on placement. [#1428](https://github.cbhq.net/frontend/cds/pull/1428), [CDS-2546](https://jira.coinbase-corp.com/browse/CDS-2546)
+- **[Dots]** Migrate Dots to animation token. [#1412](https://github.cbhq.net/frontend/cds/pull/1412), [CDS-2530](https://jira.coinbase-corp.com/browse/CDS-2530)
+
+#### 🐞 Fixes
+
+- **[Modal, FullscreenModal, Alert, FullscreenAlert]** Fix aria labelling and add better defaults. [#1386](https://github.cbhq.net/frontend/cds/pull/1386), [A11Y-221](https://jira.coinbase-corp.com/browse/A11Y-221)
+
 ## 3.3.0 (11/23/2022, 04:32 PM PST)
 
 #### 🚀 Updates

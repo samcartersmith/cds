@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.4.0 (11/30/2022, 12:45 PM PST)
+
+#### 🚀 Updates
+
+- **[Tooltip]** Animate Tooltip base on placement. [#1428](https://github.cbhq.net/frontend/cds/pull/1428), [CDS-2546](https://jira.coinbase-corp.com/browse/CDS-2546)
+- **[Dots]** Migrate Dots to animation token. [#1412](https://github.cbhq.net/frontend/cds/pull/1412), [CDS-2530](https://jira.coinbase-corp.com/browse/CDS-2530)
+
+#### 🐞 Fixes
+
+- **[SearchInput]** Make sure search input icon buttons are properly setup. [#1413](https://github.cbhq.net/frontend/cds/pull/1413), [A11Y-54](https://jira.coinbase-corp.com/browse/A11Y-54)
+
+#### 📘 Misc
+
+- **[Collapsible]** Add tests for alpha Collapsible. [#1430](https://github.cbhq.net/frontend/cds/pull/1430)
+
 ## 3.3.0 (11/23/2022, 04:32 PM PST)
 
 #### 🚀 Updates
