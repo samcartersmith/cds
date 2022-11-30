@@ -55,6 +55,7 @@ export const Tooltip = ({
           gap={gap}
           testID={testID}
           zIndex={zIndex}
+          placement={placement}
         />
       }
     >

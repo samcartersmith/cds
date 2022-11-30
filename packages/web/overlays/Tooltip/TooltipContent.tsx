@@ -2,9 +2,8 @@ import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
 import { m as motion } from 'framer-motion';
 import {
   animateInOpacityConfig,
-  animateInYConfig,
   animateOutOpacityConfig,
-  animateOutYConfig,
+  getTranslateConfigByPlacement,
 } from '@cbhq/cds-common/animation/tooltip';
 import { maxWidth, spacingHorizontal, spacingVertical } from '@cbhq/cds-common/tokens/tooltip';
 import { zIndex as cdsZIndex } from '@cbhq/cds-common/tokens/zIndex';
@@ -19,7 +18,7 @@ import { PopperTooltipProps } from './TooltipProps';
 export const TooltipContent = memo(
   forwardRef(
     (
-      { content, gap, testID, zIndex, tooltipId }: PopperTooltipProps,
+      { content, gap, testID, zIndex, tooltipId, placement = 'top' }: PopperTooltipProps,
       ref: ForwardedRef<HTMLDivElement>,
     ) => {
       const outerStyle = useMemo(
@@ -32,8 +31,11 @@ export const TooltipContent = memo(
 
       const motionProps = useMotionProps({
         style: outerStyle,
-        enterConfigs: [animateInOpacityConfig, animateInYConfig],
-        exitConfigs: [animateOutOpacityConfig, animateOutYConfig],
+        enterConfigs: [animateInOpacityConfig, getTranslateConfigByPlacement({ placement })],
+        exitConfigs: [
+          animateOutOpacityConfig,
+          getTranslateConfigByPlacement({ placement, isExiting: true }),
+        ],
         exit: 'exit',
       });
 

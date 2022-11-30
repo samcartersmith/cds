@@ -2,40 +2,40 @@ import { useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
 import {
   animateInOpacityConfig,
-  animateInYConfig,
   animateOutOpacityConfig,
-  animateOutYConfig,
+  getTranslateConfigByPlacement,
   tooltipHiddenOpacity,
-  tooltipHiddenY,
 } from '@cbhq/cds-common/animation/tooltip';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
+
+import { TooltipPlacement } from './TooltipProps';
 
 // opacity animation
 const opacityInConfig = convertMotionConfig(animateInOpacityConfig);
 const opacityOutConfig = convertMotionConfig(animateOutOpacityConfig);
 
-// Y transform animation
-const yInConfig = convertMotionConfig(animateInYConfig);
-const yOutConfig = convertMotionConfig(animateOutYConfig);
+export const useTooltipAnimation = (placement: TooltipPlacement) => {
+  // translate animation
+  const enterConfigByPlacement = getTranslateConfigByPlacement({ placement });
+  const exitConfigByPlacement = getTranslateConfigByPlacement({ placement, isExiting: true });
 
-export const useTooltipAnimation = () => {
   const opacity = useRef(new Animated.Value(tooltipHiddenOpacity)).current;
-  const translateY = useRef(new Animated.Value(tooltipHiddenY)).current;
+  const translateY = useRef(new Animated.Value(enterConfigByPlacement.fromValue as number)).current;
 
   const animateIn = useMemo(() => {
     return Animated.parallel([
       Animated.timing(opacity, opacityInConfig),
-      Animated.timing(translateY, yInConfig),
+      Animated.timing(translateY, convertMotionConfig(enterConfigByPlacement)),
     ]);
-  }, [opacity, translateY]);
+  }, [opacity, translateY, enterConfigByPlacement]);
 
   const animateOut = useMemo(() => {
     return Animated.parallel([
       Animated.timing(opacity, opacityOutConfig),
-      Animated.timing(translateY, yOutConfig),
+      Animated.timing(translateY, convertMotionConfig(exitConfigByPlacement)),
     ]);
-  }, [opacity, translateY]);
+  }, [opacity, translateY, exitConfigByPlacement]);
 
   return {
     opacity,

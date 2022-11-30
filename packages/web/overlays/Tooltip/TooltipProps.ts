@@ -29,4 +29,4 @@ export type TooltipProps = {
 
 export type PopperTooltipProps = {
   gap: GapSpacing;
-} & Pick<TooltipProps, 'content' | 'testID' | 'zIndex' | 'tooltipId'>;
+} & Pick<TooltipProps, 'content' | 'testID' | 'zIndex' | 'tooltipId' | 'placement'>;

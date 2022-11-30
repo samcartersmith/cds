@@ -25,7 +25,7 @@ export const Tooltip = memo(
     const [isOpen, setIsOpen] = useState(false);
     const [subjectLayout, setSubjectLayout] = useState<SubjectLayout>();
 
-    const { opacity, translateY, animateIn, animateOut } = useTooltipAnimation();
+    const { opacity, translateY, animateIn, animateOut } = useTooltipAnimation(placement);
 
     const handleRequestClose = useCallback(() => {
       animateOut.start(() => {

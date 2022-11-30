@@ -1,4 +1,4 @@
-import { MotionBaseSpec } from '../types';
+import { BaseTooltipPlacement, MotionBaseSpec } from '../types';
 
 export const tooltipHiddenOpacity = 0;
 export const tooltipVisibleOpacity = 1;
@@ -6,14 +6,14 @@ export const tooltipVisibleOpacity = 1;
 export const tooltipHiddenY = 16;
 export const tooltipVisibleY = 0;
 
-const baseAnimation: Pick<MotionBaseSpec, 'duration' | 'delay'> = {
+const baseTiming: Pick<MotionBaseSpec, 'duration' | 'delay'> = {
   duration: 'fast1',
   delay: 25,
 };
 
 export const animateInOpacityConfig: MotionBaseSpec = {
   property: 'opacity',
-  ...baseAnimation,
+  ...baseTiming,
   easing: 'enterFunctional',
   toValue: tooltipVisibleOpacity,
   fromValue: tooltipHiddenOpacity,
@@ -21,24 +21,50 @@ export const animateInOpacityConfig: MotionBaseSpec = {
 
 export const animateOutOpacityConfig: MotionBaseSpec = {
   property: 'opacity',
-  ...baseAnimation,
+  ...baseTiming,
   easing: 'exitFunctional',
   toValue: tooltipHiddenOpacity,
   fromValue: tooltipVisibleOpacity,
 };
 
-export const animateInYConfig: MotionBaseSpec = {
-  property: 'y',
-  ...baseAnimation,
-  easing: 'enterFunctional',
-  toValue: tooltipVisibleY,
-  fromValue: tooltipHiddenY,
-};
+/**
+ * Build tooltip translation config base on placement
+ * @param placement Tooltip placement
+ * @param transitionType animation type
+ * @returns Motion config
+ */
+export const getTranslateConfigByPlacement = ({
+  placement,
+  isExiting = false,
+}: {
+  placement: BaseTooltipPlacement;
+  isExiting?: boolean;
+}): MotionBaseSpec => {
+  let config;
 
-export const animateOutYConfig: MotionBaseSpec = {
-  property: 'y',
-  ...baseAnimation,
-  easing: 'exitFunctional',
-  toValue: tooltipHiddenY,
-  fromValue: tooltipVisibleY,
+  switch (placement) {
+    case 'top':
+      config = { property: 'translateY', fromValue: 16, toValue: 0 };
+      break;
+    case 'bottom':
+      config = { property: 'translateY', fromValue: -16, toValue: 0 };
+      break;
+    case 'left':
+      config = { property: 'translateX', fromValue: 16, toValue: 0 };
+      break;
+    case 'right':
+      config = { property: 'translateX', fromValue: -16, toValue: 0 };
+      break;
+    default:
+      config = { property: 'translateY', fromValue: 16, toValue: 0 };
+  }
+
+  // swap from and to value for exit config
+  if (isExiting) {
+    const tempValue = config.fromValue;
+    config.fromValue = config.toValue;
+    config.toValue = tempValue;
+  }
+
+  return { ...baseTiming, ...config, easing: isExiting ? 'exitFunctional' : 'enterFunctional' };
 };
