@@ -15,7 +15,6 @@ Add to `apps/website/scripts/adoption/config.ts` and run `yarn nx run website:ad
 ### Running the script
 
 1. Run `yarn nx run website:adoption`
-
-2. The result will be output to json files to website
-
-3. Commit changes
+2. The result will output JSON files within the website directory
+3. Commit the files using the following commit message convention: `[trivial] internal(AdoptionTracker): Update Adoption Tracker <DATE>`
+4. After you merge, manually deploy `corporate::cds-docs` via Codeflow
