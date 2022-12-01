@@ -5,6 +5,7 @@ import WindowScroller, {
   WindowScrollerChildProps,
 } from 'react-virtualized/dist/commonjs/WindowScroller';
 import { ListCell } from '@cbhq/cds-web/cells';
+import { TextLabel1 } from '@cbhq/cds-web/typography';
 
 import {
   AdopterTabContext,
@@ -26,6 +27,8 @@ type ListCellProps = ComponentData & {
   setActiveComponent: () => void;
 };
 
+const innerCellSpacing = { spacingHorizontal: 1 } as const;
+const outerCellSpacing = { spacingHorizontal: 2, spacingEnd: 4 } as const;
 const ComponentListCell = memo((props: ListCellProps) => {
   const { isActive, setActiveComponent, ...componentInfo } = props;
   const { name, totalCallSites, totalInstances } = componentInfo;
@@ -40,7 +43,8 @@ const ComponentListCell = memo((props: ListCellProps) => {
       accessory={isActive ? 'selected' : 'arrow'}
       onPress={handleOnPress}
       selected={isActive}
-      reduceHorizontalSpacing
+      innerSpacing={innerCellSpacing}
+      outerSpacing={outerCellSpacing}
     />
   );
 });
@@ -127,6 +131,15 @@ export const AdopterComponentsList = memo(
 
     const start = (
       <div style={{ height: `${80 * filteredComponents.length}px` }}>
+        {type === 'cds' && (
+          <TextLabel1 as="p" color="foregroundMuted" spacingBottom={3}>
+            🎨 This project depends on{' '}
+            <TextLabel1 as="span" color="foreground" spacingBottom={3}>
+              {components.length} components
+            </TextLabel1>{' '}
+            from CDS
+          </TextLabel1>
+        )}
         <WindowScroller>
           {({ height, scrollTop }: WindowScrollerChildProps) => (
             <AutoSizer>
