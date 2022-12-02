@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler/jestSetup';
 import 'react-native-accessibility-engine';
+import '@testing-library/jest-native/extend-expect';
 
 import { setUpTests } from 'react-native-reanimated/lib/reanimated2/jestUtils';
 
