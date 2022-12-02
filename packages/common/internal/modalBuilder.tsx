@@ -120,6 +120,7 @@ export function modalBuilder({
 
   const MockModal: React.FC<Partial<ModalBaseProps & ModalHeaderBaseProps> & ModalA11yProps> = ({
     onRequestClose,
+    onDidClose,
     onBackButtonPress,
     title = 'Basic Modal',
     visible: externalVisible,
@@ -136,6 +137,11 @@ export function modalBuilder({
       toggleOff();
     }, [onRequestClose, toggleOff]);
 
+    const handleDidClose = useCallback(() => {
+      onDidClose?.();
+      focusTrigger?.();
+    }, [onDidClose, focusTrigger]);
+
     return (
       <>
         <Button onPress={toggleOn} ref={triggerRef} testID="modal-trigger">
@@ -147,7 +153,7 @@ export function modalBuilder({
           accessibilityLabelledBy={accessibilityLabelledBy}
           accessibilityLabel={accessibilityLabel}
           onRequestClose={handleClose}
-          onDidClose={focusTrigger}
+          onDidClose={handleDidClose}
           disablePortal
         >
           <ModalHeader onBackButtonPress={onBackButtonPress} title={title} />

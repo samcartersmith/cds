@@ -107,7 +107,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
     accessibilityLabelledBy,
     accessibilityLabel,
   }) => {
-    const [visible, { toggleOn, toggleOff }] = useToggler();
+    const [visible, { toggleOn, toggleOff }] = useToggler(false);
 
     return (
       <>

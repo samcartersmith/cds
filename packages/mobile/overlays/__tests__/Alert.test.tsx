@@ -1,14 +1,14 @@
 import { Animated, Modal as RNModal } from 'react-native';
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import {
+  advanceAnimationByTime,
+  withReanimatedTimer,
+} from 'react-native-reanimated/lib/reanimated2/jestUtils';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
 
 import { Button } from '../../buttons';
 import { Alert } from '../Alert';
 import { PortalProvider } from '../PortalProvider';
-
-jest.useFakeTimers({
-  legacyFakeTimers: true,
-});
 
 const { MockAlert } = alertBuilder({
   Alert,
@@ -27,7 +27,9 @@ describe('Alert', () => {
   });
 
   it('show alert on press', () => {
-    render(<MockAlert />);
+    const title = 'Alert title';
+
+    render(<MockAlert title={title} />);
 
     expect(screen.UNSAFE_queryByProps({ visible: false })).toBeTruthy();
 
@@ -41,23 +43,26 @@ describe('Alert', () => {
 
   it('renders title and passes a11y', () => {
     const title = 'Test title';
-    render(<MockAlert testID="mock-alert" visible title={title} />);
+    render(<MockAlert testID="mock-alert" title={title} />);
+
+    fireEvent.press(screen.getByText('Show Alert'));
 
     expect(screen.getByText(title)).toBeTruthy();
-
     expect(screen.getByTestId('mock-alert')).toBeAccessible();
   });
 
   it('renders body and passes a11y', () => {
     const body = 'Test body';
-    render(<MockAlert testID="mock-alert" visible body={body} />);
+    render(<MockAlert testID="mock-alert" body={body} />);
+
+    fireEvent.press(screen.getByText('Show Alert'));
 
     expect(screen.getByText(body)).toBeTruthy();
-
+    expect(screen.getByTestId('mock-alert-pictogram')).toBeTruthy();
     expect(screen.getByTestId('mock-alert')).toBeAccessible();
   });
 
-  it('renders preferred action and passes a11y', async () => {
+  it('renders preferred action and passes a11y', () => {
     const onPreferredActionPress = jest.fn();
     const onRequestClose = jest.fn();
 
@@ -82,23 +87,30 @@ describe('Alert', () => {
   });
 
   it('renders dismiss action and passes a11y', () => {
-    const onRequestClose = jest.fn();
+    withReanimatedTimer(() => {
+      const onRequestClose = jest.fn();
 
-    render(
-      <MockAlert
-        testID="mock-alert"
-        visible
-        dismissActionLabel="Cancel"
-        onRequestClose={onRequestClose}
-      />,
-    );
+      render(
+        <MockAlert
+          testID="mock-alert"
+          visible
+          dismissActionLabel="Cancel"
+          onRequestClose={onRequestClose}
+        />,
+      );
 
-    expect(screen.getByTestId('mock-alert')).toBeAccessible();
+      expect(screen.getByTestId('mock-alert')).toBeAccessible();
 
-    fireEvent.press(screen.getByText('Cancel'));
+      fireEvent.press(screen.getByText('Cancel'));
 
-    // out animation
-    expect(animationParallelSpy).toHaveBeenCalled();
-    expect(animationTimingSpy).toHaveBeenCalled();
+      // out animation
+      expect(animationParallelSpy).toHaveBeenCalled();
+      expect(animationTimingSpy).toHaveBeenCalled();
+
+      act(() => {
+        advanceAnimationByTime(100);
+        expect(onRequestClose).toHaveBeenCalledTimes(1);
+      });
+    });
   });
 });

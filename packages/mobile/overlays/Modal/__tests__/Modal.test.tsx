@@ -1,6 +1,10 @@
 import React from 'react';
 import { Animated, Modal as RNModal } from 'react-native';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
+import {
+  advanceAnimationByTime,
+  withReanimatedTimer,
+} from 'react-native-reanimated/lib/reanimated2/jestUtils';
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react-native';
 import {
   CreateLoremIpsumProps,
   loremIpsum,
@@ -54,18 +58,35 @@ describe('Modal', () => {
     expect(screen.UNSAFE_queryByProps({ visible: true })).toBeTruthy();
   });
 
-  it('triggers close on close button press', async () => {
+  it('triggers close on close button press', () => {
     const onRequestClose = jest.fn();
-    render(<MockModal onRequestClose={onRequestClose} />);
+    const onDidClose = jest.fn();
+
+    render(<MockModal onRequestClose={onRequestClose} onDidClose={onDidClose} />);
 
     fireEvent.press(screen.getByText('Open Modal'));
     fireEvent.press(screen.getByTestId('modal-close-button'));
 
-    // wait for animation to finish
-    await waitFor(() => expect(onRequestClose).toHaveBeenCalledTimes(1));
+    expect(onRequestClose).toHaveBeenCalledTimes(1);
   });
 
-  it('triggers back action on back button press', async () => {
+  it('triggers onDidClose after animation finished', () => {
+    withReanimatedTimer(() => {
+      const onDidClose = jest.fn();
+
+      render(<MockModal onDidClose={onDidClose} />);
+
+      fireEvent.press(screen.getByText('Open Modal'));
+      fireEvent.press(screen.getByTestId('modal-close-button'));
+
+      act(() => {
+        advanceAnimationByTime(100);
+        expect(onDidClose).toHaveBeenCalledTimes(1);
+      });
+    });
+  });
+
+  it('triggers back action on back button press', () => {
     const onBackButtonPress = jest.fn();
     render(<MockModal onBackButtonPress={onBackButtonPress} />);
 
@@ -81,8 +102,7 @@ describe('Modal', () => {
 
     fireEvent.press(screen.getByText('Open Modal'));
 
-    await screen.findByText(title);
-    expect(screen.getByText(title)).toBeTruthy();
+    expect(await screen.findByText(title)).toBeTruthy();
   });
 
   it('renders modal body', async () => {
@@ -90,8 +110,7 @@ describe('Modal', () => {
 
     fireEvent.press(screen.getByText('Open Modal'));
 
-    await screen.findByText(loremIpsum);
-    expect(screen.getByText(loremIpsum)).toBeTruthy();
+    expect(await screen.findByText(loremIpsum)).toBeTruthy();
   });
 
   it('renders modal body without dividers', async () => {
@@ -99,8 +118,7 @@ describe('Modal', () => {
 
     fireEvent.press(screen.getByText('Open Modal'));
 
-    await screen.findByText(loremIpsum);
-    expect(screen.getByText(loremIpsum)).toBeTruthy();
+    expect(await screen.findByText(loremIpsum)).toBeTruthy();
   });
 
   it('renders modal footer', () => {
