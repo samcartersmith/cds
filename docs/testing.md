@@ -36,10 +36,10 @@ yarn nx run web:test --file packages/web/layout/__tests__/Box.test.tsx --watch
 
 ## **Testing Locally on external projects**
 
-- Build your project and any dependencies of that project with `yarn nx run affected --target=build`.
-- The output of the packages above will be in `.nx/dist/packages` or `packages/<package name>/lib`. This output path varies depending on setup. The package.json > main field should show where the transpiled files are output to. For example, `cds-mobile` would be in `.nx/dist/packages/mobile`
-- Copy the absolute path to your package
-- In the external project add to dependencies and resolution portion of package.json to guarantee everything is pulling from your local packages:
+1. Build your project and any dependencies of that project with `yarn nx run affected --target=build`.
+2. The output of the packages above will be in `.nx/dist/packages` or `packages/<package name>/lib`. This output path varies depending on setup. The package.json > main field should show where the transpiled files are output to. For example, `cds-mobile` would be in `.nx/dist/packages/mobile`
+3. Copy the absolute path to your package
+4. In the external project add to dependencies and resolution portion of package.json to guarantee everything is pulling from your local packages:
 
 ```
   "@cbhq/cds-common": "file:/absolute path to this/.nx/dist/packages/common",
@@ -50,8 +50,46 @@ yarn nx run web:test --file packages/web/layout/__tests__/Box.test.tsx --watch
   "@cbhq/cds-web": "file:/absolute path to this/.nx/dist/packages/web"
 ```
 
-- Run `yarn install` on the external project
-- If you update the package in the cds repo and want to sync it in the external project then you will have to run `yarn upgrade [dependency]`. For example `yarn upgrade @cbhq/cds-common`
+5. Run `yarn install` on the external project
+6. If you update the package in the cds repo and want to sync it in the external project then you will have to run `yarn upgrade [dependency]`. For example `yarn upgrade @cbhq/cds-common`
+
+## **Testing animations(mobile)**
+
+Mobile animation test is powered by Reanimated jest utils. Check the [official doc](https://docs.swmansion.com/react-native-reanimated/docs/guide/testing) for more info. Follow the guide below for testing Reanimated animation styles and advancing timers.
+
+1. Import test utils from reanimated `lib` directory. **Note:** You need to import from `libs` instead of `src`, otherwise tests will be flaky.
+
+```js
+import {
+  advanceAnimationByTime,
+  withReanimatedTimer,
+} from 'react-native-reanimated/lib/reanimated2/jestUtils';
+```
+
+2. Advancing timer and match animated styles. **Note:** The timer will also work with RN Animated powered animations.
+
+```jsx
+it('has correct animated styles', () => {
+  withReanimatedTimer(() => {
+    render(<Component />);
+
+    const view = screen.getByTestId('view');
+    const style = { opacity: 0 };
+
+    // default style
+    expect(view).toHaveAnimatedStyle(style);
+
+    act(() => {
+      // duration of the animation
+      advanceAnimationByTime(200);
+
+      style.opacity = 1;
+      // style after animation
+      expect(view).toHaveAnimatedStyle(style);
+    });
+  });
+});
+```
 
 # **Troubleshooting**
 
