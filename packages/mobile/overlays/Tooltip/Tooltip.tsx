@@ -42,9 +42,9 @@ export const Tooltip = memo(
           pageOffsetX,
           pageOffsetY,
         });
-        setIsOpen(true);
-        onOpenTooltip?.();
       });
+      setIsOpen(true);
+      onOpenTooltip?.();
     }, [onOpenTooltip]);
 
     // The accessibility props for the trigger component. Trigger component

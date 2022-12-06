@@ -1,7 +1,10 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
+import { Button } from '../../../buttons';
 import { useDimensions } from '../../../hooks/useDimensions';
-import { TooltipPlacement, UseTooltipPositionParams } from '../TooltipProps';
+import { Tooltip } from '../Tooltip';
+import { TooltipPlacement, TooltipProps, UseTooltipPositionParams } from '../TooltipProps';
 import { useTooltipPosition } from '../useTooltipPosition';
 
 import { basicCenterSubject } from './UseTooltipPositionTestData';
@@ -26,6 +29,15 @@ const createHookInstance = (options: UseTooltipPositionParams) => {
     return useTooltipPosition(options);
   });
 };
+
+const contentText = 'Test content';
+const subjectText = 'Open Tooltip';
+
+const MockTooltip = ({ children, ...props }: Omit<TooltipProps, 'content'>) => (
+  <Tooltip content={contentText} {...props}>
+    {children}
+  </Tooltip>
+);
 
 describe('Tooltip', () => {
   describe('useTooltipPosition', () => {
@@ -61,5 +73,25 @@ describe('Tooltip', () => {
         it.todo('should correct below subject');
       });
     });
+  });
+  it('opens the Tooltip when the subject (as an element) is pressed and fires onOpenTooltip', async () => {
+    const onOpenTooltip = jest.fn();
+    render(
+      <MockTooltip
+        onOpenTooltip={onOpenTooltip}
+        accessibilityLabel="test-a11y-label"
+        accessibilityHint="test-a11y-hint"
+      >
+        <Button>{subjectText}</Button>
+      </MockTooltip>,
+    );
+
+    // since the subject is wrapped in a TouchableOpacity which swallows events on children
+    // have to getBy on the a11y label which ends up getting applied to the subject wrapper
+    // when the subject is an element/node
+    fireEvent.press(screen.getByAccessibilityHint('test-a11y-hint'));
+
+    expect(await screen.findByText(contentText)).toBeTruthy();
+    expect(onOpenTooltip).toHaveBeenCalled();
   });
 });
