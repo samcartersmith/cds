@@ -24,6 +24,7 @@ const fileIgnorePatterns = [
   '!**/types/*.ts',
 ];
 
+/** See go/frozen-components for more info */
 const frozenComponentPatterns = [
   'packages/mobile/visualizations/sparkline-interactive/*.(ts|tsx)',
   'packages/mobile/visualizations/sparkline-interactive-header/*.(ts|tsx)',
