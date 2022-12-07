@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.4.1 (12/7/2022, 09:24 AM PST)
+
+#### 🐞 Fixes
+
+- **[Tooltip]** Established pattern for testing Tooltip interactions. [#1427](https://github.cbhq.net/frontend/cds/pull/1427), [CDS-2966](https://jira.coinbase-corp.com/browse/CDS-2966)
+- Improvement Modal and Alert tests on mobile. [#1435](https://github.cbhq.net/frontend/cds/pull/1435)
+- **[ListCell]** Remove problematic a11y label and hint handling. [#1436](https://github.cbhq.net/frontend/cds/pull/1436), [CDS-2967](https://jira.coinbase-corp.com/browse/CDS-2967)
+
+#### 📘 Misc
+
+- **[AdoptionTracker]** Update Adoption Tracker 12-06-2022. [#1439](https://github.cbhq.net/frontend/cds/pull/1439)
+
 ## 3.4.0 (11/30/2022, 12:45 PM PST)
 
 #### 🚀 Updates

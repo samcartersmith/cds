@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.4.1 (12/7/2022, 09:24 AM PST)
+
+#### 🐞 Fixes
+
+- Improvement Modal and Alert tests on mobile. [#1435](https://github.cbhq.net/frontend/cds/pull/1435)
+
+#### 📘 Misc
+
+- **[AdoptionTracker]** Update Adoption Tracker 12-06-2022. [#1439](https://github.cbhq.net/frontend/cds/pull/1439)
+
 ## 3.4.0 (11/30/2022, 12:45 PM PST)
 
 #### 🚀 Updates
