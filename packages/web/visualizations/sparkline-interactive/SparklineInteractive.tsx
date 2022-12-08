@@ -22,7 +22,7 @@ import { getBrowserGlobals } from '../../utils/browser';
 import { cx } from '../../utils/linaria';
 import { VisualizationContainer } from '../VisualizationContainer';
 
-import { fadeInClassName, fadeOutClassName } from './fade';
+import { baseSimpleFadeClassName, simpleFadeInClassName, simpleFadeOutClassName } from './fade';
 import { InnerSparklineInteractiveProvider } from './InnerSparklineInteractiveProvider';
 import { SparklineInteractiveHoverDate } from './SparklineInteractiveHoverDate';
 import { SparklineInteractiveLineVertical } from './SparklineInteractiveLineVertical';
@@ -54,6 +54,7 @@ const DefaultFallback = memo(({ fallbackType }: SparklineInteractiveDefaultFallb
     </ThemeProvider>
   );
 });
+const stylesToPreventInteraction = { pointerEvents: 'none' } as const;
 
 const mobileLayoutBreakpoint = 650;
 function SparklineInteractiveContentWithGeneric<Period extends string>({
@@ -164,19 +165,18 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     );
   }
 
-  const animatedFeatureClassName = useMemo(
-    () => ({
-      periodSelector: cx(
+  const showBottomMarkerDates = useMemo(
+    () => periodSelectorPlacement === 'above' || isMarkerDateVisible,
+    [isMarkerDateVisible, periodSelectorPlacement],
+  );
+  const animatedPeriodSelectorClassName = useMemo(
+    () =>
+      cx(
+        baseSimpleFadeClassName,
         periodSelectorPlacement === 'below' && !isMarkerDateVisible
-          ? fadeInClassName
-          : fadeOutClassName,
+          ? simpleFadeInClassName
+          : simpleFadeOutClassName,
       ),
-      markerDates: cx(
-        periodSelectorPlacement === 'above' || isMarkerDateVisible
-          ? fadeInClassName
-          : fadeOutClassName,
-      ),
-    }),
     [isMarkerDateVisible, periodSelectorPlacement],
   );
 
@@ -257,22 +257,27 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
           )}
         </VisualizationContainer>
       </SparklineInteractiveScrubProvider>
-      <Box width="100%" position="relative">
+      <Box position="relative">
+        {showBottomMarkerDates && (
+          <Box pin="top" width="100%" dangerouslySetStyle={stylesToPreventInteraction} background>
+            <SparklineInteractiveMarkerDates
+              getMarker={getMarker}
+              formatDate={formatDate}
+              selectedPeriod={selectedPeriod}
+              timePeriodGutter={timePeriodGutter}
+            />
+          </Box>
+        )}
+        {/* Must always be mounted so we can tab directly to it */}
         <Box
           width="100%"
           spacingTop={1}
           zIndex={1}
-          dangerouslySetClassName={animatedFeatureClassName.periodSelector}
+          pin="top"
+          dangerouslySetClassName={animatedPeriodSelectorClassName}
+          background
         >
           {periodSelector}
-        </Box>
-        <Box width="100%" dangerouslySetClassName={animatedFeatureClassName.markerDates} pin="left">
-          <SparklineInteractiveMarkerDates
-            getMarker={getMarker}
-            formatDate={formatDate}
-            selectedPeriod={selectedPeriod}
-            timePeriodGutter={timePeriodGutter}
-          />
         </Box>
       </Box>
     </div>

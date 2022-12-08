@@ -40,6 +40,26 @@ export const fadeOutClassName = css`
   }
 `;
 
+// Using css transitions for simple fades to avoid a flash of 1 or 0 opacity when rerendering
+export const baseSimpleFadeClassName = css`
+  && {
+    opacity: 0;
+    transition: opacity ${fadeDuration}ms ${cubicBezier('global')};
+  }
+`;
+
+export const simpleFadeInClassName = css`
+  && {
+    opacity: 1;
+  }
+`;
+
+export const simpleFadeOutClassName = css`
+  && {
+    opacity: 0;
+  }
+`;
+
 export function fadeOut(domNode?: HTMLElement | null) {
   domNode?.classList.remove(fadeInClassName);
   domNode?.classList.add(fadeOutClassName);
