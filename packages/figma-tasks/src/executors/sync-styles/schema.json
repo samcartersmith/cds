@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "cli": "nx",
+  "additionalProperties": false,
+  "required": ["figmaApiFileId", "manifestFile"],
+  "properties": {
+    "figmaApiFileId": {
+      "type": "string",
+      "description": "The file ID for the Figma file to pull styles from"
+    },
+    "changelogFile": {
+      "type": "string",
+      "description": "The CHANGELOG.md file to read and write overview of changes to"
+    },
+    "manifestFile": {
+      "type": "string",
+      "description": "The manifest.json file to track illustration syncs."
+    },
+    "generatedKeyToNameLookupFile": {
+      "type": "string",
+      "description": "The file to output the generated keyToNameMap file"
+    },
+    "generatedNameToKeyLookupFile": {
+      "type": "string",
+      "description": "The file to output the generated nameToKeyMap file"
+    },
+    "generatedKeyToValueLookupFile": {
+      "type": "string",
+      "description": "The file to output the generated nameToValueMap file"
+    },
+    "generatedCssVariablesLookupFile": {
+      "type": "string",
+      "description": "The file to output the generated cssVariablesMap file"
+    },
+    "generatedCssVariablesPrefix": {
+      "type": "string",
+      "description": "Prefix to add to generated css variables"
+    },
+    "generatedTypesDirectory": {
+      "type": "string",
+      "description": "The directory to output generated types."
+    }
+  }
+}

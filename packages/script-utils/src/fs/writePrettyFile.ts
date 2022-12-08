@@ -16,6 +16,9 @@ function getPrettierParser(file: string): PrettierParser {
       return 'json';
     case '.css':
       return 'css';
+    case '.html':
+    case '.svg':
+      return 'html';
     default:
       return 'typescript';
   }

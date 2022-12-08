@@ -20,7 +20,7 @@ Each util category has its own subfolder. For example, all string utils live in 
 In consumers this can pulled in via @cbhq/script-utils deep imports like so:
 
 ```
-import { split } from "@cbhq/script-utils/string"
+import { split } from "@cbhq/script-utils"
 
 const colorName = 'color/blue/0'
 const [prefix, ...rest] =  split(colorName, '/');

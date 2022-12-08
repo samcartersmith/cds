@@ -1,6 +1,5 @@
 import { FigmaTokens, ParsedTokenValue } from '@cbhq/figma-api';
-import { writePrettyFile } from '@cbhq/script-utils/fs';
-import { tokensTemplate } from '@cbhq/script-utils/tagged-templates';
+import { tokensTemplate, writePrettyFile } from '@cbhq/script-utils';
 
 const FIGMA_LIGHT_STYLES_FILE_ID = '0LGLs39lCL3WIFUadyGH1A';
 const FIGMA_DARK_STYLES_FILE_ID = 'lQEzxkEp0nQPS6zV1ZpLNO';

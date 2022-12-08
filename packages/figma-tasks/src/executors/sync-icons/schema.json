@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "cli": "nx",
+  "required": ["figmaApiFileId", "manifestFile", "generatedSvgsDirectory"],
+  "properties": {
+    "figmaApiFileId": {
+      "type": "string",
+      "description": "The file ID for the Figma file to pull icons from"
+    },
+    "changelogFile": {
+      "type": "string",
+      "description": "The CHANGELOG.md file to read and write overview of changes to"
+    },
+    "manifestFile": {
+      "type": "string",
+      "description": "The manifest.json file to track icon syncs."
+    },
+    "generatedGlyphMapFile": {
+      "type": "string",
+      "description": "File to output generated glyphMap to."
+    },
+    "generatedSvgsDirectory": {
+      "type": "string",
+      "description": "The directory to output generated svgs."
+    },
+    "generatedTypesDirectory": {
+      "type": "string",
+      "description": "The directory to output generated types."
+    },
+    "generatedFontName": {
+      "type": "string",
+      "description": "The font family name to use in generated fonts."
+    },
+    "generatedFontFormats": {
+      "type": "array",
+      "description": "Formats of font files to generate.",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["generatedFontFormat", "generatedFontDirectory"],
+            "properties": {
+              "generatedFontFormat": {
+                "type": "string",
+                "description": "Format of the font file to generate.",
+                "enum": ["eot", "woff", "woff2", "svg", "ttf"]
+              },
+              "generatedGlyphMapFile": {
+                "type": "string",
+                "description": "File to output generated glyphMap to."
+              },
+              "generatedFontDirectory": {
+                "type": "string",
+                "description": "Directory to output generated font to."
+              },
+              "generatedCssDirectory": {
+                "type": "string",
+                "description": " Generate a companion CSS file which references the generated font file."
+              },
+              "generatedCssFileName": {
+                "type": "string",
+                "description": " The basename of the generated companion CSS file."
+              },
+              "hashed": {
+                "type": "boolean",
+                "description": "If the generated font file name should include a hash."
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

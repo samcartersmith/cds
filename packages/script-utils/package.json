@@ -17,7 +17,11 @@
   },
   "peerDependencies": {
     "@cbhq/eslint-plugin": "*",
+    "@cbhq/mono-tasks": "^0.5.2",
     "prettier": "*"
+  },
+  "dependencies": {
+    "type-fest": "1.2.0"
   },
   "types": "./dts/index.d.ts",
   "main": "./lib/index.js",

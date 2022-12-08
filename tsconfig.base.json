@@ -22,6 +22,8 @@
       "@cbhq/cds-common/*": ["packages/common/*"],
       "@cbhq/cds-fonts": ["packages/fonts"],
       "@cbhq/cds-fonts/*": ["packages/fonts/*"],
+      "@cbhq/cds-illustrations": ["packages/illustrations/src"],
+      "@cbhq/cds-illustrations/*": ["packages/illustrations/src/*"],
       "@cbhq/cds-lottie-files": ["packages/lottie-files"],
       "@cbhq/cds-lottie-files/*": ["packages/lottie-files/*"],
       "@cbhq/cds-mobile": ["packages/mobile"],
@@ -38,7 +40,7 @@
       "@cbhq/docusaurus-theme": ["packages/docusaurus-theme"],
       "@cbhq/figma-api": ["packages/figma-api/src"],
       "@cbhq/figma-styles/*": ["packages/figma-styles/*"],
-      "@cbhq/script-utils/*": ["packages/script-utils/src/*"],
+      "@cbhq/script-utils": ["packages/script-utils/src"],
       "@cbhq/ui-mobile-playground": ["packages/ui-mobile-playground"],
       "@cbhq/ui-scorecard": ["packages/ui-scorecard"]
     }

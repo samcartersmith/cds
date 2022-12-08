@@ -28,6 +28,6 @@ type GetImageParams = {
 const client = createClient<GetImageParams, FileImageResponse>();
 
 /** https://www.figma.com/developers/api#get-images-endpoint */
-export async function getImage(fileKey: string, params: GetImageParams) {
-  return client(`image/${fileKey}`, params);
+export async function getFileImages(fileKey: string, params: GetImageParams) {
+  return client(`images/${fileKey}`, params);
 }

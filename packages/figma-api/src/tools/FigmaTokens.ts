@@ -138,21 +138,23 @@ export class FigmaTokens {
   ): ParsedFill | ParsedStroke | ParsedFillGradient | ParsedStrokeGradient {
     if (paints.length === 1) {
       const paint = paints[0];
-      if (paint.color) {
+      if (paint.type === 'SOLID') {
         return { type: prefix, value: figmaColorToRgba(paint.color) };
       }
-      if (paint.gradientStops && paint.gradientHandlePositions) {
+      if (paint.type === 'GRADIENT_LINEAR') {
         const handlePositions = paint.gradientHandlePositions;
-        return {
-          type: `${prefix}Gradient` as const,
-          value: paint.gradientStops.map((stop, index) => {
-            return {
-              color: figmaColorToRgba(stop.color),
-              y: paint.type === 'GRADIENT_LINEAR' ? stop.position : handlePositions[index].y,
-              x: paint.type === 'GRADIENT_LINEAR' ? undefined : handlePositions[index].x,
-            };
-          }),
-        };
+        if (handlePositions && paint.gradientStops) {
+          return {
+            type: `${prefix}Gradient` as const,
+            value: paint.gradientStops.map((stop, index) => {
+              return {
+                color: figmaColorToRgba(stop.color),
+                y: paint.type === 'GRADIENT_LINEAR' ? stop.position : handlePositions[index].y,
+                x: paint.type === 'GRADIENT_LINEAR' ? undefined : handlePositions[index].x,
+              };
+            }),
+          };
+        }
       }
       console.log(paints);
       throw new Error('There were multiple values for solid fill and only expected one.');

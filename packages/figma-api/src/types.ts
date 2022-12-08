@@ -120,6 +120,15 @@ export type Node =
   | ComponentSet
   | Instance;
 
+export type VectorNode =
+  | Vector
+  | BooleanOperation
+  | Star
+  | Line
+  | Ellipse
+  | RegularPolygon
+  | Rectangle
+  | Text;
 /** Node Properties */
 
 /** The root node */
@@ -145,10 +154,6 @@ export type Canvas = {
 export type FrameBase = {
   /** An array of nodes that are direct children of this node */
   readonly children: readonly Node[];
-  /** Background of the node. This is deprecated, as backgrounds for frames are now in the fills field. */
-  readonly background: readonly Paint[];
-  /** Background color of the node. This is deprecated, as frames now support more than a solid color as a fills. Please use the fills field instead. */
-  readonly backgroundColor: Color;
   /**
    * An array of fill paints applied to the node
    * @default []
@@ -695,10 +700,12 @@ export type Effect = {
   readonly offset?: Vector2d;
 };
 
-/** A solid color, gradient, or image texture that can be applied as fills or strokes */
-export type Paint = {
-  /** Type of paint as a string enum */
-  readonly type: PaintType;
+type PaintBase = {
+  /**
+   * How this node blends with nodes behind it in the scene
+   * (see blend mode section for more details)
+   */
+  readonly blendMode: BlendMode;
   /**
    * Is the paint enabled?
    * @default true
@@ -710,14 +717,16 @@ export type Paint = {
    * @default 1
    */
   readonly opacity?: number;
-  // for solid paints
+};
+
+export type SolidPaint = PaintBase & {
+  readonly type: 'SOLID';
   /** Solid color of the paint */
-  readonly color?: Color;
-  /**
-   * How this node blends with nodes behind it in the scene
-   * (see blend mode section for more details)
-   */
-  readonly blendMode: BlendMode;
+  readonly color: Color;
+};
+
+export type GradientPaint = PaintBase & {
+  type: PaintTypeGradient;
   // for gradient paints
   /**
    * This field contains three vectors, each of which are a position in
@@ -737,9 +746,10 @@ export type Paint = {
    * between neighboring gradient stops.
    */
   readonly gradientStops?: readonly ColorStop[];
+};
 
-  // for image paints
-
+export type ImagePaint = {
+  type: PaintTypeImage;
   /** Image scaling mode */
   readonly scaleMode?: ScaleMode;
   /**
@@ -762,6 +772,9 @@ export type Paint = {
    */
   readonly gifRef?: string;
 };
+
+/** A solid color, gradient, or image texture that can be applied as fills or strokes */
+export type Paint = SolidPaint | GradientPaint | ImagePaint;
 
 export type Path = {
   /** A sequence of path commands in SVG notation */
@@ -837,6 +850,19 @@ export type ComponentMetadata = {
   readonly name: string;
   /** The description of the element as entered in the editor */
   readonly description: string;
+  /** Links to documentation */
+  readonly documentationLinks: string[];
+};
+
+export type ComponentSetMetadata = {
+  /** The unique identifier of the element */
+  readonly key: string;
+  /** The name of the element */
+  readonly name: string;
+  /** The description of the element as entered in the editor */
+  readonly description: string;
+  /** Links to documentation */
+  readonly documentationLinks: string[];
 };
 
 export type FrameInfo = {
@@ -852,7 +878,7 @@ export type FrameInfo = {
   readonly page_name: string;
 };
 
-type SharedElement = {
+export type SharedElement = {
   /** The unique identifier of the figma file which contains the element */
   readonly file_key: string;
   /** Id of the component node within the figma file */
@@ -876,6 +902,8 @@ export type FullComponentMetadata = {
   /** Data on component's containing page, if component resides in a multi-page file */
   readonly containing_page: unknown; // broken link in the doc
 } & SharedElement;
+
+export type FullComponentSetMetadata = FullComponentMetadata;
 
 export type FullStyleMetadata = {
   /** The type of style */
@@ -964,18 +992,18 @@ export type FileResponse = {
   readonly version: string;
 };
 
+export type NodeStyles = Readonly<Record<string, Style>>;
+
+export type NodeResponse = {
+  readonly document: Node;
+  readonly components: Readonly<Record<string, ComponentMetadata>>;
+  readonly componentSets: Readonly<Record<string, ComponentSetMetadata>>;
+  readonly styles: NodeStyles;
+  readonly schemaVersion: number;
+};
+
 export type FileNodesResponse = {
-  readonly nodes: Readonly<
-    Record<
-      string,
-      null | {
-        readonly document: Node;
-        readonly components: Readonly<Record<string, ComponentMetadata>>;
-        readonly styles: Readonly<Record<string, Style>>;
-        readonly schemaVersion: number;
-      }
-    >
-  >;
+  readonly nodes: Readonly<Record<string, null | NodeResponse>>;
   readonly lastModified: string;
   readonly name: string;
   readonly role: RoleType;
@@ -1026,7 +1054,7 @@ export type ComponentResponse = {
 export type ComponentSetResponse = {
   readonly error: boolean;
   readonly status: number;
-  readonly meta: FullComponentMetadata;
+  readonly meta: FullComponentSetMetadata;
 };
 
 export type StyleResponse = {
@@ -1078,7 +1106,7 @@ export type TeamComponentSetsResponse = {
   readonly error: boolean;
   readonly status: number;
   readonly meta: {
-    readonly component_sets: readonly FullComponentMetadata[];
+    readonly component_sets: readonly FullComponentSetMetadata[];
     readonly cursor: PaginationMeta;
   };
 };
@@ -1087,7 +1115,7 @@ export type FileComponentSetsResponse = {
   readonly error: boolean;
   readonly status: number;
   readonly meta: {
-    readonly component_sets: readonly FullComponentMetadata[];
+    readonly component_sets: readonly FullComponentSetMetadata[];
   };
 };
 

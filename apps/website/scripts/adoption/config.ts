@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { getPath } from '@cbhq/script-utils/path';
+import { getPath } from '@cbhq/script-utils';
 
 import { flattenConfig } from './utils/flattenConfig';
 import { formatSidebar } from './utils/formatSidebar';

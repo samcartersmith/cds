@@ -3,12 +3,12 @@ import { typescriptTypesTemplate } from '../typescriptTypesTemplate';
 
 describe('typescriptTypesTemplate template', () => {
   it('correctly creates union from an array of strings', async () => {
-    const mockArray = ['one', 'two', 'three'];
+    const mockArray = ['orange', 'apple', 'pear'];
     const content = typescriptTypesTemplate`
       export type MockArray = ${mockArray};
     `;
     const prettifiedContent = await prettify(content, 'typescript');
-    const expectedContent = `export type MockArray = 'one' | 'two' | 'three';\n`;
+    const expectedContent = `export type MockArray = 'apple' | 'orange' | 'pear';\n`;
     expect(prettifiedContent).toEqual(expectedContent);
   });
 

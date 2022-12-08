@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.buildOptions.json",
+  "compilerOptions": {
+    "outDir": "dts"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dts",
+    "lib"
+  ],
+  "references": [
+    {
+      "path": "../figma-api"
+    },
+    {
+      "path": "../script-utils"
+    }
+  ]
+}

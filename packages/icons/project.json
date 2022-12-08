@@ -1,0 +1,54 @@
+{
+  "root": "packages/icons",
+  "sourceRoot": "packages/icons",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": ["dts", "lib"]
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "sync": {
+      "executor": "@cbhq/figma-tasks:sync-icons",
+      "dependsOn": ["^build"],
+      "options": {
+        "figmaApiFileId": "tuc9LpASTO9mBrbg1tAdAl",
+        "changelogFile": "./CHANGELOG.md",
+        "manifestFile": "./manifest.json",
+        "generatedSvgsDirectory": "./src/__generated__/svg",
+        "generatedTypesDirectory": "./src/__generated__/types",
+        "generatedFontName": "CoinbaseIcons",
+        "generatedGlyphMapFile": "./src/__generated__/glyphMap.ts",
+        "generatedFontFormats": [
+          {
+            "generatedFontFormat": "woff2",
+            "generatedFontDirectory": "./src/__generated__/font",
+            "generatedCssDirectory": "./src/__generated__/font",
+            "generatedCssFileName": "icon-font",
+            "hashed": true
+          },
+          {
+            "generatedFontFormat": "ttf",
+            "generatedFontDirectory": "./src/__generated__/font"
+          }
+        ]
+      }
+    },
+    "test": { "executor": "@cbhq/mono-tasks:test" },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "watch": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "packages/icons",
+        "commands": ["nx run figma-tasks:watch", "packemon watch --quiet --loadConfigs"]
+      }
+    }
+  }
+}

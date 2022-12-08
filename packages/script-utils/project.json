@@ -17,6 +17,13 @@
     },
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "watch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/script-utils",
+        "commands": ["packemon watch --quiet --loadConfigs"]
+      }
     }
   }
 }

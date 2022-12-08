@@ -33,7 +33,13 @@ export type GetFileNodesParams = {
 };
 
 /** https://www.figma.com/developers/api#get-file-nodes-endpoint */
-export async function getFileNodes(fileKey: string, params: GetFileNodesParams) {
+export async function getFileNodes(
+  fileKey: string,
+  { ids, ...otherParams }: Omit<GetFileNodesParams, 'ids'> & { ids: string | string[] },
+) {
   const client = createClient<GetFileNodesParams, FileNodesResponse>();
-  return client(`files/${fileKey}/nodes`, params);
+  return client(`files/${fileKey}/nodes`, {
+    ...otherParams,
+    ids: Array.isArray(ids) ? ids.join(',') : ids,
+  });
 }

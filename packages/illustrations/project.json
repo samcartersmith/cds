@@ -1,0 +1,71 @@
+{
+  "root": "packages/illustrations",
+  "sourceRoot": "packages/illustrations",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": ["dts", "esm", "lib"]
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "sync-dark-styles": {
+      "executor": "@cbhq/figma-tasks:sync-styles",
+      "dependsOn": ["^build"],
+      "options": {
+        "figmaApiFileId": "etJaiHq7aFlJFICLKIrcK7",
+        "changelogFile": "./CHANGELOG.md",
+        "manifestFile": "./src/__generated__/styles/dark/manifest.json",
+        "generatedKeyToNameLookupFile": "./src/__generated__/styles/dark/keyToNameMap.ts",
+        "generatedNameToKeyLookupFile": "./src/__generated__/styles/dark/nameToKeyMap.ts",
+        "generatedCssVariablesLookupFile": "./src/__generated__/styles/dark/cssVariablesMap.ts",
+        "generatedCssVariablesPrefix": "illustration"
+      }
+    },
+    "sync-light-styles": {
+      "executor": "@cbhq/figma-tasks:sync-styles",
+      "dependsOn": ["^build"],
+      "options": {
+        "figmaApiFileId": "skPXKFmI64GqqEkOaBSHcL",
+        "changelogFile": "./CHANGELOG.md",
+        "manifestFile": "./src/__generated__/styles/light/manifest.json",
+        "generatedKeyToNameLookupFile": "./src/__generated__/styles/light/keyToNameMap.ts",
+        "generatedNameToKeyLookupFile": "./src/__generated__/styles/light/nameToKeyMap.ts",
+        "generatedCssVariablesLookupFile": "./src/__generated__/styles/light/cssVariablesMap.ts",
+        "generatedCssVariablesPrefix": "illustration"
+      }
+    },
+    "sync": {
+      "executor": "@cbhq/figma-tasks:sync-illustrations",
+      "dependsOn": ["^build"],
+      "options": {
+        "figmaApiFileId": "LmkJatvMRVzNgfiIkJDb99",
+        "changelogFile": "./CHANGELOG.md",
+        "manifestFile": "./src/__generated__/manifest.json",
+        "manifestVersioning": true,
+        "darkModeManifestFile": "./src/__generated__/styles/dark/manifest.json",
+        "lightModeManifestFile": "./src/__generated__/styles/light/manifest.json",
+        "generatedSvgsDirectory": "./src/__generated__/svgs",
+        "generatedSvgsJsDirectory": "./src/__generated__/js",
+        "generatedTypesDirectory": "./src/__generated__/types"
+      }
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "watch": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "packages/illustrations",
+        "commands": ["nx run figma-tasks:watch", "packemon watch --quiet --loadConfigs"]
+      }
+    }
+  }
+}

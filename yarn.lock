@@ -2265,6 +2265,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@cbhq/cds-icons@workspace:packages/icons":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/cds-icons@workspace:packages/icons"
+  dependencies:
+    "@cbhq/figma-tasks": "workspace:^"
+  languageName: unknown
+  linkType: soft
+
+"@cbhq/cds-illustrations@workspace:packages/illustrations":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/cds-illustrations@workspace:packages/illustrations"
+  dependencies:
+    "@cbhq/figma-tasks": "workspace:^"
+  peerDependencies:
+    react: ">=17.0.0"
+    react-dom: ">=17.0.0"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+  languageName: unknown
+  linkType: soft
+
 "@cbhq/cds-lottie-files@workspace:*, @cbhq/cds-lottie-files@workspace:packages/lottie-files":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-lottie-files@workspace:packages/lottie-files"
@@ -2588,6 +2610,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@cbhq/figma-tasks@workspace:^, @cbhq/figma-tasks@workspace:packages/figma-tasks":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/figma-tasks@workspace:packages/figma-tasks"
+  dependencies:
+    "@cbhq/figma-api": "workspace:^"
+    "@cbhq/mono-tasks": ^0.5.2
+    "@cbhq/script-utils": "workspace:^"
+    "@types/svgo": ^2.6.4
+    lodash: ^4.17.21
+    svgo: ^2.8.0
+    update-notifier: ^5.1.0
+    webfont: 9.0.0
+  peerDependencies:
+    "@nrwl/devkit": ^15.0.0
+  languageName: unknown
+  linkType: soft
+
 "@cbhq/jest-preset-mobile@npm:^0.2.0":
   version: 0.2.0
   resolution: "@cbhq/jest-preset-mobile@npm:0.2.0"
@@ -2770,8 +2809,11 @@ __metadata:
 "@cbhq/script-utils@workspace:^, @cbhq/script-utils@workspace:packages/script-utils":
   version: 0.0.0-use.local
   resolution: "@cbhq/script-utils@workspace:packages/script-utils"
+  dependencies:
+    type-fest: 1.2.0
   peerDependencies:
     "@cbhq/eslint-plugin": "*"
+    "@cbhq/mono-tasks": ^0.5.2
     prettier: "*"
   languageName: unknown
   linkType: soft
@@ -9053,12 +9095,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/svgo@npm:^2.3.0":
-  version: 2.6.2
-  resolution: "@types/svgo@npm:2.6.2"
+"@types/svgo@npm:^2.3.0, @types/svgo@npm:^2.6.4":
+  version: 2.6.4
+  resolution: "@types/svgo@npm:2.6.4::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Fsvgo%2F-%2Fsvgo-2.6.4.tgz"
   dependencies:
     "@types/node": "*"
-  checksum: e1eb4be176f83510a88e5688309713be0ef89c7e99cf6b451799a19467535501f159bbd35eba731be150dbbea42c67e0b52315c38434bc063a645324a90e8438
+  checksum: 8af0a5e1896c4d9c6725a7ba41e4d220c1b2cd25a0252872ce12c4c1d939b91ae7d03e074b8afd61bebd363facde89ab3e55123245f7ad273b2837945c6ceeef
   languageName: node
   linkType: hard
 
@@ -33184,7 +33226,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svgo@npm:^2.3.0, svgo@npm:^2.5.0, svgo@npm:^2.7.0":
+"svgo@npm:^2.3.0, svgo@npm:^2.5.0, svgo@npm:^2.7.0, svgo@npm:^2.8.0":
   version: 2.8.0
   resolution: "svgo@npm:2.8.0"
   dependencies:

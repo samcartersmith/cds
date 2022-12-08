@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import { writePrettyFile } from '@cbhq/script-utils/fs';
+import { writePrettyFile } from '@cbhq/script-utils';
 
 import { ProjectParser } from './parsers/ProjectParser';
 import { getPreviousStats } from './utils/getPreviousStats';

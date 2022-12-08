@@ -1,0 +1,32 @@
+{
+  "name": "@cbhq/cds-icons",
+  "version": "0.0.0",
+  "description": "CDS icons",
+  "keywords": [
+    "cds",
+    "icons"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "packages/cds-icons"
+  },
+  "packemon": {
+    "format": "lib",
+    "platform": "node"
+  },
+  "executors": "./executors.json",
+  "main": "./lib/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "node": "./lib/index.js",
+      "default": "./lib/index.js"
+    }
+  },
+  "devDependencies": {
+    "@cbhq/figma-tasks": "workspace:^"
+  }
+}

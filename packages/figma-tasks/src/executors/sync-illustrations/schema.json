@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "cli": "nx",
+  "required": ["figmaApiFileId", "manifestFile", "generatedSvgsDirectory"],
+  "properties": {
+    "figmaApiFileId": {
+      "type": "string",
+      "description": "The file ID for the Figma file to pull icons from"
+    },
+    "changelogFile": {
+      "type": "string",
+      "description": "The CHANGELOG.md file to output changelog updates to."
+    },
+    "manifestFile": {
+      "type": "string",
+      "description": "The manifest.json file to track illustration syncs."
+    },
+    "manifestVersioning": {
+      "type": "boolean",
+      "description": "If the manifest.json file should track versions for any updates."
+    },
+    "lightModeManifestFile": {
+      "type": "string",
+      "description": "The manifest.json file for light color styles"
+    },
+    "darkModeManifestFile": {
+      "type": "string",
+      "description": "The manifest.json file for dark color styles"
+    },
+    "generatedSvgsDirectory": {
+      "type": "string",
+      "description": "The directory to output generated svgs."
+    },
+    "generatedSvgsJsDirectory": {
+      "type": "string",
+      "description": "The directory to output generated js version of svgs."
+    },
+    "generatedTypesDirectory": {
+      "type": "string",
+      "description": "The directory to output generated types."
+    }
+  }
+}

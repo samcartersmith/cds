@@ -1,0 +1,50 @@
+{
+  "name": "@cbhq/cds-illustrations",
+  "version": "0.0.0",
+  "description": "CDS illustrations",
+  "keywords": [
+    "cds",
+    "illustrations"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "packages/cds-illustrations"
+  },
+  "packemon": {
+    "format": "esm",
+    "platform": "browser",
+    "support": "legacy",
+    "bundle": false,
+    "inputs": {
+      "index": "src/index.ts"
+    }
+  },
+  "devDependencies": {
+    "@cbhq/figma-tasks": "workspace:^"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "types": "./dts/index.d.ts",
+  "main": "./lib/index.js",
+  "module": "./esm/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "browser": {
+        "module": "./esm/index.js",
+        "import": "./esm/index.js",
+        "default": "./lib/index.js"
+      },
+      "default": "./lib/index.js"
+    }
+  }
+}
