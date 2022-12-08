@@ -212,9 +212,6 @@ const sidebars = {
             {
               type: 'doc',
               id: 'components/overlays/FullscreenAlert/fullscreen-alert',
-              customProps: {
-                tag: 'new',
-              },
             },
             'hooks/useAlert',
           ],
@@ -377,9 +374,6 @@ const sidebars = {
               type: 'doc',
               id: 'components/overlays/FullscreenModal/fullscreen-modal',
               label: 'Fullscreen Modal',
-              customProps: {
-                tag: 'new',
-              },
             },
           ],
         },
@@ -608,6 +602,8 @@ const sidebars = {
         },
         'patterns/empty-states',
         'patterns/forms',
+        'patterns/loading-states',
+        'patterns/disclosures',
       ],
       customProps: {
         kbar: {
@@ -654,7 +650,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'BreakpointsProvider',
-          customProps: { tag: 'new' },
           items: [
             {
               type: 'doc',
@@ -667,7 +662,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'BrowserOnly',
-          customProps: { tag: 'new' },
           items: [
             {
               type: 'doc',

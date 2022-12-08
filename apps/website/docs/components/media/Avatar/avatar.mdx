@@ -3,24 +3,6 @@ title: Avatar
 slug: /components/avatar
 ---
 
-import Metadata, { toc as metadataToc } from './_metadata.mdx';
-import Intro, { toc as introToc } from './_intro.mdx';
-import Usage, { toc as usageToc } from './_usage.mdx';
-import Implementation, { toc as implementationToc } from './_implementation.mdx';
-import Changelog, { toc as changelogToc } from './_changelog.mdx';
+import AvatarLegacy from './avatar_legacy.mdx';
 
-<Tabs groupId="page">
-  <TabItem
-    value="implementation"
-    label="Implementation"
-    toc={[...metadataToc, ...introToc, ...usageToc, ...implementationToc]}
-  >
-    <Metadata />
-    <Intro />
-    <Usage />
-    <Implementation />
-  </TabItem>
-  <TabItem value="changelog" label="Changelog" toc={changelogToc}>
-    <Changelog />
-  </TabItem>
-</Tabs>
+<Page fallback={<AvatarLegacy />} />
