@@ -14,18 +14,4 @@ describe('getRecentlyUpdated', () => {
     const result = getRecentlyUpdated({ remoteItems, lastUpdated });
     expect(result).toEqual(expected);
   });
-
-  test('getRecentlyUpdated throws an error if there are no new updates', () => {
-    const remoteItems = [
-      { node_id: '1', updated_at: '2022-12-01T00:00:00.000Z' },
-      { node_id: '2', updated_at: '2022-12-02T00:00:00.000Z' },
-      { node_id: '3', updated_at: '2022-12-03T00:00:00.000Z' },
-      { node_id: '4', updated_at: '2022-12-04T00:00:00.000Z' },
-    ];
-
-    const lastUpdated = '2022-12-05T00:00:00.000Z';
-    expect(() => getRecentlyUpdated({ remoteItems, lastUpdated })).toThrow(
-      'There are no new updates',
-    );
-  });
 });

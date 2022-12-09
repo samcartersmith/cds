@@ -13,64 +13,66 @@ export type SyncStylesTaskOptions = {
   /** Prefix to add to generated CSS variables */
   generatedCssVariablesPrefix?: string;
   /** The file to output the generated cssVariablesMap file */
-  generatedCssVariablesLookupFile?: string;
+  generatedCssVariablesMapFile?: string;
   /** The file to output the generated keyToNameMap to */
-  generatedKeyToNameLookupFile?: string;
+  generatedKeyToNameMapFile?: string;
   /** The file to output the generated keyToNameMap to */
-  generatedKeyToValueLookupFile?: string;
+  generatedKeyToValueMapFile?: string;
   /** The file to output the generate nameToKeyMap */
-  generatedNameToKeyLookupFile?: string;
+  generatedNameToKeyMapFile?: string;
   /** The directory to output generated types. */
   generatedTypesDirectory?: string;
 };
 
 export const syncStyles = createTask<SyncStylesTaskOptions>('sync-styles', async (task) => {
   const generatedPromises: Promise<void>[] = [];
-  const { changelog, manifest } = await syncStylesFn(task);
+  const { changelog, manifest } = await syncStylesFn(task, {
+    executor: 'sync-styles',
+  });
   const styles = [...manifest.items.values()];
   const generateFile = fileGenerator(task);
 
-  if (task.options.generatedCssVariablesLookupFile) {
+  if (task.options.generatedCssVariablesMapFile) {
     const content = tokensTemplate`
       /** style name (as css var) mapped to style value */
       export const cssVariablesMap = ${Object.fromEntries(
         [...styles.values()].map((style) => [style.cssVarSetter, style.fill]),
       )}
     `;
-    const promise = generateFile(task.options.generatedCssVariablesLookupFile, content);
+    const promise = generateFile(task.options.generatedCssVariablesMapFile, content);
     generatedPromises.push(promise);
   }
 
-  if (task.options.generatedKeyToNameLookupFile) {
+  if (task.options.generatedKeyToNameMapFile) {
     const content = tokensTemplate`
       /** style key mapped to style name */
       export const keyToNameMap: Record<string, string> = ${Object.fromEntries(
         styles.map((item) => [item.key, item.name]),
       )} as const;
     `;
-    const promise = generateFile(task.options.generatedKeyToNameLookupFile, content);
+    const promise = generateFile(task.options.generatedKeyToNameMapFile, content);
     generatedPromises.push(promise);
   }
 
-  if (task.options.generatedKeyToValueLookupFile) {
+  if (task.options.generatedKeyToValueMapFile) {
     const content = tokensTemplate`
       /** style key mapped to style value */
       export const keyToValueMap: Record<string, string> = ${Object.fromEntries(
         styles.map((style) => [style.key, style.fill]),
       )} as const;
     `;
-    const promise = generateFile(task.options.generatedKeyToValueLookupFile, content);
+    const promise = generateFile(task.options.generatedKeyToValueMapFile, content);
     generatedPromises.push(promise);
   }
 
-  if (task.options.generatedNameToKeyLookupFile) {
+  if (task.options.generatedNameToKeyMapFile) {
     const content = tokensTemplate`
       /** style name mapped to style key */
       export const keyToNameMap: Record<string, string> = ${Object.fromEntries(
         styles.map((item) => [item.name, item.key]),
       )} as const;
     `;
-    const promise = generateFile(task.options.generatedNameToKeyLookupFile, content);
+    const promise = generateFile(task.options.generatedNameToKeyMapFile, content);
     generatedPromises.push(promise);
   }
 

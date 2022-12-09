@@ -17,19 +17,19 @@
       "type": "string",
       "description": "The manifest.json file to track illustration syncs."
     },
-    "generatedKeyToNameLookupFile": {
+    "generatedKeyToNameMapFile": {
       "type": "string",
       "description": "The file to output the generated keyToNameMap file"
     },
-    "generatedNameToKeyLookupFile": {
+    "generatedNameToKeyMapFile": {
       "type": "string",
       "description": "The file to output the generated nameToKeyMap file"
     },
-    "generatedKeyToValueLookupFile": {
+    "generatedKeyToValueMapFile": {
       "type": "string",
       "description": "The file to output the generated nameToValueMap file"
     },
-    "generatedCssVariablesLookupFile": {
+    "generatedCssVariablesMapFile": {
       "type": "string",
       "description": "The file to output the generated cssVariablesMap file"
     },

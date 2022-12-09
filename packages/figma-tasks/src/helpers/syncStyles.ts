@@ -3,6 +3,7 @@ import { Task as MonoTask } from '@cbhq/mono-tasks';
 import { ColorStyle } from '../tools/ColorStyle';
 import { ColorStyleManifestType } from '../tools/ColorStyles';
 import { Manifest } from '../tools/Manifest';
+import { ExecutorName } from '../types';
 
 import { loadChangelog } from './loadChangelog';
 import { loadRemoteData } from './loadRemoteData';
@@ -15,15 +16,22 @@ export type SyncStylesTaskOptions = {
   /** The CHANGELOG.md file to document changes to. */
   changelogFile?: string;
   /** Prefix to add to generated css variables */
-  cssVariablesPrefix?: string;
+  generatedCssVariablesPrefix?: string;
+};
+
+type SyncStylesParams = {
+  /** The name of the executor the manifest originated from */
+  executor: ExecutorName;
 };
 
 export async function syncStyles<TaskOptions extends SyncStylesTaskOptions = SyncStylesTaskOptions>(
   task: MonoTask<TaskOptions>,
+  { executor }: SyncStylesParams,
 ) {
   const { figmaApiFileId, manifestFile } = task.options;
 
   const manifest = await Manifest.init<ColorStyleManifestType>(task, {
+    executor,
     manifestFile,
   });
 
@@ -43,7 +51,7 @@ export async function syncStyles<TaskOptions extends SyncStylesTaskOptions = Syn
     Object.values(remoteData.nodes).forEach((node) => {
       if (node) {
         const newStyle = new ColorStyle(node, {
-          cssVariablesPrefix: task.options.cssVariablesPrefix,
+          cssVariablesPrefix: task.options.generatedCssVariablesPrefix,
         });
         manifest.addNewItem(newStyle);
       }

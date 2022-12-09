@@ -1,6 +1,10 @@
+import { sortByAlphabet } from '../sort';
+import { transformKeyAndValue } from '../transform';
+
 function isPrimitiveArray(items: unknown[]): items is (string | number)[] {
   return items.every((val) => typeof val === 'string' || typeof val === 'number');
 }
+
 /**
  * Tagged template function for formatting codegenerated objects.
  * This util will sort and stringify Maps, Sets, Objects and Arrays.
@@ -30,10 +34,11 @@ function isPrimitiveArray(items: unknown[]): items is (string | number)[] {
  * }
  *
  */
-export function tokensTemplate(strings: TemplateStringsArray, ...expr: unknown[]) {
+export function tokensTemplate(strings: TemplateStringsArray, ...values: unknown[]) {
   let str = '';
+  const stringValues: string[] = [];
   /**
-   * The `expr` argument represents all the interpolations within the string.
+   * The `values` argument represents all the interpolations within the string.
    * i.e. tokensTemplate`Hi my name is ${name} and I am ${age} years old.`
    *
    * the `name` value will be the first expression.
@@ -42,67 +47,34 @@ export function tokensTemplate(strings: TemplateStringsArray, ...expr: unknown[]
    * Below we check what type the expression is and the do some
    * automatic formatting based on that information.
    */
-  expr.forEach((item) => {
-    let result: unknown;
-
-    if (
-      item &&
-      typeof item === 'object' &&
-      !(item instanceof Map) &&
-      !(item instanceof Set) &&
-      !Array.isArray(item)
-    ) {
-      const sortedByKeys = Object.entries(item).sort(([prevKey], [nextKey]) => {
-        return prevKey.localeCompare(nextKey);
-      });
-      const sortedObject = Object.fromEntries(sortedByKeys);
-      result = sortedObject;
-    }
-
-    if (item && item instanceof Map) {
+  values.forEach((item, index) => {
+    if (item instanceof Map) {
       const itemMap = item as Map<string, unknown>;
-      const sortedByKeys = [...itemMap.entries()].sort(([prevKey], [nextKey]) => {
-        return prevKey.localeCompare(nextKey);
-      });
-      const sortedObject = Object.fromEntries(sortedByKeys);
-      result = sortedObject;
-    }
-
-    if (item && item instanceof Set) {
+      const itemString = [...itemMap.entries()]
+        .sort(sortByAlphabet)
+        .map(transformKeyAndValue(`[key]: [value]`))
+        .join(',\n');
+      stringValues[index] = `{ ${itemString} }`;
+    } else if (item instanceof Set) {
       const itemSet = item as Set<string>;
-      const itemSorted = [...itemSet.values()].sort((prev, next) => {
-        return prev.localeCompare(next);
-      });
-      result = itemSorted;
-    }
-
-    if (item && Array.isArray(item)) {
-      if (isPrimitiveArray(item)) {
-        const itemSorted = item.sort();
-        result = itemSorted;
-      } else {
-        result = item;
-      }
-    }
-
-    /**
-     * Tagged template functions will assume each
-     * expression was already converted to a string.
-     * Because we are stringifying the values in this function
-     * we have to add a toString property to the original expression and
-     * return our result as a string.
-     */
-    if (result && typeof result !== 'string') {
-      Object.defineProperty(item, 'toString', {
-        value() {
-          return JSON.stringify(result);
-        },
-      });
+      const itemSorted = [...itemSet.values()].sort(sortByAlphabet);
+      stringValues[index] = JSON.stringify(itemSorted);
+    } else if (Array.isArray(item)) {
+      const itemMaybeSorted = isPrimitiveArray(item) ? item.sort() : item;
+      stringValues[index] = JSON.stringify(itemMaybeSorted);
+    } else if (item instanceof Object) {
+      const itemString = Object.entries(item)
+        .sort(sortByAlphabet)
+        .map(transformKeyAndValue(`[key]: [value]`))
+        .join(',\n');
+      stringValues[index] = `{ ${itemString} }`;
+    } else {
+      stringValues[index] = `${item}`;
     }
   });
 
   strings.forEach((string, i) => {
-    str = `${str}${string}${expr[i] || ''}`;
+    str = `${str}${string}${stringValues[i] || ''}`;
   });
   return str;
 }

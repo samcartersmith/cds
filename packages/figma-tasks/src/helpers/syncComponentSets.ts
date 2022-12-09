@@ -2,6 +2,7 @@ import { Task as MonoTask } from '@cbhq/mono-tasks';
 
 import { ComponentSet } from '../tools/ComponentSet';
 import { Manifest, ManifestShape } from '../tools/Manifest';
+import type { ExecutorName } from '../types';
 
 import { loadChangelog } from './loadChangelog';
 import { loadColorStyles } from './loadColorStyles';
@@ -26,16 +27,19 @@ export type SyncComponentSetsTaskOptions = {
 } & Partial<GenerateSvgsTaskOptions>;
 
 type SyncComponentSetsParams = {
+  /** The name of the executor the manifest originated from */
+  executor: ExecutorName;
   downloadSvgs?: boolean;
 };
 
 export async function syncComponentSets<
   ManifestType extends ManifestShape<ComponentSet>,
   TaskOptions extends SyncComponentSetsTaskOptions = SyncComponentSetsTaskOptions,
->(task: MonoTask<TaskOptions>, { downloadSvgs }: SyncComponentSetsParams) {
+>(task: MonoTask<TaskOptions>, { downloadSvgs, executor }: SyncComponentSetsParams) {
   const { figmaApiFileId, manifestFile, manifestVersioning } = task.options;
 
   const manifest = await Manifest.init<ManifestType>(task, {
+    executor,
     manifestFile,
     manifestVersioning,
   });

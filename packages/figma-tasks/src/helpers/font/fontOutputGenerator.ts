@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { Task } from '@cbhq/mono-tasks';
-import { existsOrCreateDir, getAbsolutePath, writePrettyFile } from '@cbhq/script-utils';
+import { getAbsolutePath, writePrettyFile } from '@cbhq/script-utils';
 
 import { getFontNameAndHash } from './getFontNameAndHash';
 import { getGlyphMapContent } from './getGlyphMapContent';
@@ -42,8 +42,6 @@ export function fontOutputGenerator({
       if (hash) {
         fs.rmSync(fontFileDir, { recursive: true });
         fs.mkdirSync(fontFileDir, { recursive: true });
-      } else {
-        await existsOrCreateDir(fontFileDir);
       }
 
       promises.push(fs.promises.writeFile(fontFilePath, fontContents));
@@ -57,7 +55,6 @@ export function fontOutputGenerator({
 
       if (generatedCssDirectory) {
         const cssOutputDir = getAbsolutePath(task, generatedCssDirectory);
-        await existsOrCreateDir(fontFileDir);
         const cssFileBasename = generatedCssFileName ?? generatedFontName;
         const cssFilePath = path.join(cssOutputDir, `${cssFileBasename}.css`);
         // const fontDirAsRelative = path.relative(path.dirname(cssFilePath), fontFileDir);

@@ -3,6 +3,8 @@ import path from 'node:path';
 
 import { PrettierParser, prettify } from '../format/prettify';
 
+import { existsOrCreateDir } from './existsOrCreateDir';
+
 function getPrettierParser(file: string): PrettierParser {
   const ext = path.extname(file);
   switch (ext) {
@@ -32,5 +34,6 @@ function getPrettierParser(file: string): PrettierParser {
  */
 export async function writePrettyFile(dest: string, contents: string, parser?: PrettierParser) {
   const formattedContent = await prettify(contents, parser ?? getPrettierParser(dest));
+  await existsOrCreateDir(dest);
   return fs.promises.writeFile(dest, formattedContent, 'utf-8');
 }

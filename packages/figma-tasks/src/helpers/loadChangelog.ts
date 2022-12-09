@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import { logInfo, Task } from '@cbhq/mono-tasks';
-import { existsOrCreateDir, getAbsolutePath } from '@cbhq/script-utils';
+import { getAbsolutePath, writePrettyFile } from '@cbhq/script-utils';
 
 import { Changelog } from '../tools/Changelog';
 
@@ -13,14 +13,14 @@ export async function loadChangelog(task: Task<LoadChangelogTaskOptions>) {
   if (task.options?.changelogFile) {
     const filePath = getAbsolutePath(task, task.options.changelogFile);
     let previousContent = '';
-    const existed = await existsOrCreateDir(filePath);
+    const exists = fs.existsSync(filePath);
 
-    if (existed) {
+    if (exists) {
       previousContent = await fs.promises.readFile(filePath, 'utf-8');
     } else {
       logInfo('Creating changelog');
       previousContent = ``;
-      await fs.promises.writeFile(filePath, previousContent);
+      await writePrettyFile(filePath, previousContent);
     }
 
     return new Changelog({ filePath, content: previousContent });

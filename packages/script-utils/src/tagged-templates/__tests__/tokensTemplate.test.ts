@@ -48,4 +48,46 @@ describe('tokensTemplate', () => {
     const expectedContent = `export const lightStyles = { background: 'background_id', foreground: 'foreground_id' };\n`;
     expect(prettifiedContent).toEqual(expectedContent);
   });
+  it('correctly formats an object with an inline function', async () => {
+    const mockData = {
+      heroSquareSvg: `() => require('./hero-symbolSquare.svg')`,
+    };
+
+    const mockContent = tokensTemplate`
+      export const svgsMap = ${mockData};
+    `;
+    const prettifiedContent = await prettify(mockContent, 'typescript');
+    const expectedContent = `export const svgsMap = { heroSquareSvg: () => require('./hero-symbolSquare.svg') };\n`;
+    expect(prettifiedContent).toEqual(expectedContent);
+  });
+
+  it('correctly handles kebab case keys', async () => {
+    const mockData = {
+      'hero-square-svg': `() => require('./hero-symbolSquare.svg')`,
+    };
+
+    const mockContent = tokensTemplate`
+      export const svgsMap = ${mockData};
+    `;
+    const prettifiedContent = await prettify(mockContent, 'typescript');
+    const expectedContent = `export const svgsMap = { 'hero-square-svg': () => require('./hero-symbolSquare.svg') };\n`;
+    expect(prettifiedContent).toEqual(expectedContent);
+  });
+  it('correctly formats a template with as const', async () => {
+    const mockData = [
+      {
+        name: 'john doe',
+        key: 'some_key',
+      },
+    ];
+
+    const mockContent = tokensTemplate`
+      export const nameToKeyMap = ${Object.fromEntries(
+        mockData.map((item) => [item.name, item.key]),
+      )} as const;
+    `;
+    const prettifiedContent = await prettify(mockContent, 'typescript');
+    const expectedContent = `export const nameToKeyMap = { 'john doe': 'some_key' } as const;\n`;
+    expect(prettifiedContent).toEqual(expectedContent);
+  });
 });

@@ -110,7 +110,7 @@ export function normalizeNodes({
 
 type LoadNodesParams = {
   figmaApiFileId: string;
-  recentlyUpdatedIds: string[];
+  remoteIds: string[];
   downloadSvgs: boolean;
   remoteStyles: RemoteStyles;
 };
@@ -118,16 +118,16 @@ type LoadNodesParams = {
 export async function loadNodes({
   figmaApiFileId,
   downloadSvgs,
-  recentlyUpdatedIds,
+  remoteIds,
   remoteStyles,
 }: LoadNodesParams) {
-  let idGroups: string[][] = [recentlyUpdatedIds];
+  let idGroups: string[][] = [remoteIds];
   let svgs: Svgs | undefined = downloadSvgs ? {} : undefined;
   let nodes: Record<string, NodeResponse> = {};
 
   /** Cap each request to only 500 items or less at a time */
-  if (recentlyUpdatedIds.length >= 500) {
-    idGroups = [...chunks(recentlyUpdatedIds, 500)];
+  if (remoteIds.length >= 500) {
+    idGroups = [...chunks(remoteIds, 500)];
   }
 
   await Promise.all(
@@ -172,7 +172,7 @@ export async function loadRemoteData({
   const { nodes, svgs } = await loadNodes({
     figmaApiFileId,
     downloadSvgs,
-    recentlyUpdatedIds,
+    remoteIds,
     remoteStyles: file.styles,
   });
 

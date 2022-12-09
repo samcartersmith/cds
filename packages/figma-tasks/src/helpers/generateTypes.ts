@@ -1,6 +1,6 @@
 import groupBy from 'lodash/groupBy';
 import startCase from 'lodash/startCase';
-import { existsOrCreateDir, typescriptTypesTemplate, writePrettyFile } from '@cbhq/script-utils';
+import { typescriptTypesTemplate, writePrettyFile } from '@cbhq/script-utils';
 
 import { Component } from '../tools/Component';
 import { ComponentSet } from '../tools/ComponentSet';
@@ -17,7 +17,6 @@ export async function generateTypes<Item extends Component | ComponentSet>(
 ) {
   const groupedItems = groupBy(items, 'type');
   const promises: Promise<void>[] = [];
-  await existsOrCreateDir(outputDir);
 
   Object.entries(groupedItems).forEach(([type, group]) => {
     const typeName = formatTypeName?.(type) ?? startCase(type).replace(/ /g, '');

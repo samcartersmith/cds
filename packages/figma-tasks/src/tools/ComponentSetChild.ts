@@ -28,6 +28,8 @@ export class ComponentSetChild<ChildShape extends ComponentSetChildShape = Compo
 
   public readonly id: string;
 
+  public readonly type: string;
+
   public readonly name: string;
 
   public readonly node: NodeShape;
@@ -48,7 +50,8 @@ export class ComponentSetChild<ChildShape extends ComponentSetChildShape = Compo
     this.componentSet = componentSet;
     this._metadata = metadata;
     this.id = document.id;
-    let name = `${componentSet.type}-${componentSet.name}`;
+    this.type = componentSet.type;
+    let { name } = componentSet;
     this.node = node;
     this.width = width;
     this.height = height;
@@ -97,6 +100,10 @@ export class ComponentSetChild<ChildShape extends ComponentSetChildShape = Compo
 
   public setMetadata(metadata: ChildShape['metadata']) {
     this._metadata = { ...this._metadata, ...metadata };
+  }
+
+  public get version() {
+    return this.componentSet.version;
   }
 
   public toJSON() {

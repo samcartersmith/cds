@@ -1,5 +1,5 @@
 import { createTask } from '@cbhq/mono-tasks';
-import { existsOrCreateDir, getAbsolutePath } from '@cbhq/script-utils';
+import { getAbsolutePath } from '@cbhq/script-utils';
 
 import { generateFont } from '../../helpers/font/generateFont';
 import { getFontProcessor } from '../../helpers/font/getFontProcessor';
@@ -51,15 +51,14 @@ function formatTypeName(type: string) {
   return type;
 }
 
-const syncIconComponentSets = syncComponentSets<IconsManifestShape>;
-const iconsSvgGenerator = svgsGenerator<IconComponentSetChild & { name: string }>;
-
 export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (task) => {
-  const { changelog, manifest, colorStyles, remoteSvgs } = await syncIconComponentSets(task, {
-    downloadSvgs: false,
-  });
+  const { changelog, manifest, colorStyles, remoteSvgs } =
+    await syncComponentSets<IconsManifestShape>(task, {
+      executor: 'sync-icons',
+      downloadSvgs: false,
+    });
 
-  const generateSvgs = iconsSvgGenerator({
+  const generateSvgs = svgsGenerator<IconComponentSetChild>({
     colorStyles,
     task,
     remoteSvgs,
@@ -89,7 +88,6 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
 
   if (task.options.generatedTypesDirectory) {
     const outputDir = getAbsolutePath(task, task.options.generatedTypesDirectory);
-    await existsOrCreateDir(outputDir);
     const typesPromise = generateTypes(componentSets, {
       formatTypeName,
       formatTypeValue: getName,

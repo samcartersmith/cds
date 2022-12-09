@@ -2,11 +2,14 @@
 import { parseJson, writeJsonFile } from '@nrwl/devkit';
 import fs from 'node:fs';
 import { Task } from '@cbhq/mono-tasks';
-import { existsOrCreateDir, getAbsolutePath } from '@cbhq/script-utils';
+import { getAbsolutePath, writePrettyFile } from '@cbhq/script-utils';
+
+import { ExecutorName } from '../types';
 
 export type ItemShape = {
   id: string;
   name: string;
+  type: string;
   outputs: string[];
   incrementVersion?: () => void;
 };
@@ -15,14 +18,17 @@ export type ManifestShape<
   Item extends ItemShape = ItemShape,
   Metadata = Record<string, unknown>,
 > = {
-  items: [string, Item][];
+  executor?: ExecutorName;
   lastUpdated: string;
   metadata: Metadata;
+  items: [string, Item][];
 };
 
 export type GetManifestItem<T extends ManifestShape> = T['items'][number][1];
 
 type InitManifestParams = {
+  /** The name of the executor the manifest originated from */
+  executor: ExecutorName;
   /** The manifest.json file to get information about previous syncs and to update after new syncs. */
   manifestFile: string;
   /** If the manifest.json file should track versions for any updates. */
@@ -30,6 +36,7 @@ type InitManifestParams = {
 };
 
 type ManifestOptions<PreviousManifest extends ManifestShape> = {
+  executor: ExecutorName;
   previousManifest: PreviousManifest;
   filePath: string;
   versioned?: boolean;
@@ -39,6 +46,8 @@ type ManifestOptions<PreviousManifest extends ManifestShape> = {
 const FALLBACK_MANIFEST = { lastUpdated: '', items: [] };
 
 export class Manifest<T extends ManifestShape = ManifestShape> {
+  private readonly executor: ExecutorName;
+
   private readonly filePath: string;
 
   private _metadata: T['metadata'];
@@ -65,13 +74,22 @@ export class Manifest<T extends ManifestShape = ManifestShape> {
 
   private readonly task: Task;
 
-  constructor({ previousManifest, filePath, task, versioned }: ManifestOptions<T>) {
+  constructor({ executor, previousManifest, filePath, task, versioned }: ManifestOptions<T>) {
+    this.executor = executor;
     this.filePath = filePath;
     this.lastUpdated = previousManifest.lastUpdated;
     this._metadata = previousManifest.metadata;
     this.previousItems = new Map(previousManifest.items);
     this.task = task;
     this.versioned = Boolean(versioned);
+
+    /** If the manifest should keep track of previousItems separately from items.
+     * Set this to `true` if the manifest is for the task currently running.
+     * Set this to `false` if the manifest is for a different task than the one currently running.
+     */
+    if (this.executor !== task.name) {
+      this.items = new Map(previousManifest.items);
+    }
   }
 
   public checkIfRenamed(newItem: GetManifestItem<T>) {
@@ -161,6 +179,7 @@ export class Manifest<T extends ManifestShape = ManifestShape> {
 
   public toJSON() {
     return {
+      executor: this.executor,
       lastUpdated: new Date().toISOString(),
       ...(this.metadata ? { metadata: this.metadata } : {}),
       items: [...this.previousItems.entries(), ...this.items.entries()],
@@ -173,9 +192,9 @@ export class Manifest<T extends ManifestShape = ManifestShape> {
 
   static async readPrevious<T extends ManifestShape>(manifestPath: string): Promise<T> {
     /** If manifest file doesn't exist, create it */
-    const existed = await existsOrCreateDir(manifestPath);
+    const existed = fs.existsSync(manifestPath);
     if (!existed) {
-      await fs.promises.writeFile(manifestPath, JSON.stringify(FALLBACK_MANIFEST));
+      await writePrettyFile(manifestPath, JSON.stringify(FALLBACK_MANIFEST));
     }
 
     const manifestAsString = await fs.promises.readFile(manifestPath, 'utf-8');
@@ -184,15 +203,17 @@ export class Manifest<T extends ManifestShape = ManifestShape> {
 
   static async init<T extends ManifestShape>(
     task: Task,
-    { manifestFile, manifestVersioning }: InitManifestParams,
+    { manifestFile, manifestVersioning, executor }: InitManifestParams,
   ) {
     const manifestPath = getAbsolutePath(task, manifestFile);
     const previousManifest = await Manifest.readPrevious<T>(manifestPath);
+
     return new Manifest<T>({
       task,
       filePath: manifestPath,
       previousManifest,
       versioned: manifestVersioning,
+      executor,
     });
   }
 }

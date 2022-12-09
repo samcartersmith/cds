@@ -36,6 +36,10 @@
       "type": "string",
       "description": "The directory to output generated js version of svgs."
     },
+    "generatedSvgsJsMapFile": {
+      "type": "string",
+      "description": "The file to output a generated lookup file."
+    },
     "generatedTypesDirectory": {
       "type": "string",
       "description": "The directory to output generated types."

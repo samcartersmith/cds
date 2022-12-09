@@ -5,6 +5,4 @@ updateNotifier({
   shouldNotifyInNpmScript: true,
 }).notify();
 
-export * from './executors/sync-icons/sync-icons';
-export * from './executors/sync-illustrations/sync-illustrations';
-export * from './executors/sync-styles/sync-styles';
+export * from './executors';

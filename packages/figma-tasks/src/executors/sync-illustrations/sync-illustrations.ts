@@ -1,5 +1,5 @@
-import { createTask, Task } from '@cbhq/mono-tasks';
-import { existsOrCreateDir, getAbsolutePath } from '@cbhq/script-utils';
+import { createTask } from '@cbhq/mono-tasks';
+import { getAbsolutePath } from '@cbhq/script-utils';
 
 import { generateTypes } from '../../helpers/generateTypes';
 import { GenerateSvgsTaskOptions, svgsGenerator } from '../../helpers/svgsGenerator';
@@ -23,21 +23,6 @@ export type SyncIllustrationsTaskOptions = {
   generatedTypesDirectory?: string;
 } & GenerateSvgsTaskOptions;
 
-function svgNameFormatter(task: Task<SyncIllustrationsTaskOptions>) {
-  return function formatSvgName(component: Component) {
-    const typeAndName = `${component.type}-${component.name}`;
-
-    if (task.options.manifestVersioning) {
-      if (component.version === 0) {
-        return typeAndName;
-      }
-      return `${typeAndName}-${component.version}`;
-    }
-
-    return typeAndName;
-  };
-}
-
 function formatTypeValue(component: Component) {
   return component.name;
 }
@@ -46,9 +31,9 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
   'sync-illustrations',
   async (task) => {
     const generatedPromises: Promise<void>[] = [];
-    const formatSvgName = svgNameFormatter(task);
 
     const data = await syncComponents(task, {
+      executor: 'sync-illustrations',
       downloadSvgs: true,
     });
 
@@ -60,8 +45,9 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
       colorStyles,
       task,
       remoteSvgs,
-      formatSvgName,
     });
+
+    await generateSvgs(components);
 
     // if (illustrations.warnings) {
     //   console.error(illustrations.warnings);
@@ -70,12 +56,9 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
 
     if (task.options.generatedTypesDirectory) {
       const outputDir = getAbsolutePath(task, task.options.generatedTypesDirectory);
-      await existsOrCreateDir(outputDir);
       const generateTypesPromise = generateTypes(components, { outputDir, formatTypeValue });
       generatedPromises.push(generateTypesPromise);
     }
-
-    await generateSvgs(components);
 
     await Promise.all([
       ...generatedPromises,

@@ -18,6 +18,7 @@ async function loadColorStyle(
 ) {
   const { manifestVersioning } = task.options;
   return Manifest.init<ColorStyleManifestType>(task, {
+    executor: 'sync-styles',
     manifestFile: colorStyleManifestFile,
     manifestVersioning,
   });
@@ -31,6 +32,7 @@ export async function loadColorStyles(task: Task<LoadColorStylesTaskOptions>) {
       loadColorStyle(task, darkModeManifestFile),
       loadColorStyle(task, lightModeManifestFile),
     ]);
+
     return new ColorStyles({ dark, light });
   }
   return undefined;

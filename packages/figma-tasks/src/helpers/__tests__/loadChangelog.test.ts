@@ -1,13 +1,12 @@
 import fs from 'node:fs';
 import { logInfo } from '@cbhq/mono-tasks';
-import { existsOrCreateDir, getAbsolutePath } from '@cbhq/script-utils';
+import { getAbsolutePath, writePrettyFile } from '@cbhq/script-utils';
 
 import { createMockTask } from '../../__fixtures__/createMockTask';
 import { Changelog } from '../../tools/Changelog';
 import { loadChangelog } from '../loadChangelog';
 
 jest.mock('@cbhq/script-utils');
-
 const mockTask = createMockTask({
   targetName: 'sync-icons',
 });
@@ -18,6 +17,7 @@ jest.mock('@cbhq/mono-tasks', () => ({
 }));
 
 jest.mock('node:fs', () => ({
+  existsSync: jest.fn(),
   promises: {
     readFile: jest.fn(),
     writeFile: jest.fn(),
@@ -34,7 +34,7 @@ describe('loadChangelog', () => {
   });
 
   it('should return a Changelog instance with previous content if the changelog file exists', async () => {
-    (existsOrCreateDir as jest.Mock).mockResolvedValue(true);
+    (fs.existsSync as jest.Mock).mockReturnValue(true);
     const mockChangelog = {
       filePath: './CHANGELOG.md',
       content: 'content',
@@ -48,7 +48,7 @@ describe('loadChangelog', () => {
   });
 
   it('should return a Changelog instance with empty content if the changelog file does not exist', async () => {
-    (existsOrCreateDir as jest.Mock).mockResolvedValue(false);
+    (fs.existsSync as jest.Mock).mockReturnValue(false);
 
     const result = await loadChangelog(mockTask);
     expect(logInfo).toHaveBeenCalled();
@@ -57,6 +57,6 @@ describe('loadChangelog', () => {
       filePath: './CHANGELOG.md',
       content: '',
     });
-    expect(fs.promises.writeFile).toHaveBeenCalled();
+    expect(writePrettyFile).toHaveBeenCalled();
   });
 });

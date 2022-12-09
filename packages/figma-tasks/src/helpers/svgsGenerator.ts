@@ -1,9 +1,11 @@
 import fs from 'node:fs';
+import path from 'node:path';
 import { Task } from '@cbhq/mono-tasks';
 import {
   existsOrCreateDir,
   getAbsolutePath,
   getRelativePath,
+  tokensTemplate,
   writePrettyFile,
 } from '@cbhq/script-utils';
 
@@ -16,11 +18,24 @@ import { getSvgData } from './getSvgData';
 import { getSvgMarkup } from './getSvgMarkup';
 
 export type GenerateSvgsTaskOptions = {
+  /** The directory to output generated svgs */
   generatedSvgsDirectory: string;
+  /** The directory to output generated js version of svgs. */
   generatedSvgsJsDirectory?: string;
+  /** The file to output a generated lookup file. */
+  generatedSvgsJsMapFile?: string;
+  /** If the manifest.json file should track versions for any updates. */
+  manifestVersioning?: boolean;
 };
 
+type GenerateSvgsTask<Options extends GenerateSvgsTaskOptions = GenerateSvgsTaskOptions> =
+  Task<Options>;
+
+export type SvgFileNameParts = { fileName: string; lookupName: string };
+
 export type SvgItemShape = Component | ComponentSetChild;
+
+export type SvgOutputCategory = 'light' | 'dark' | 'themeable';
 
 export type SvgOutputShape<Item extends SvgItemShape> = {
   relativeFilePath: string;
@@ -28,6 +43,12 @@ export type SvgOutputShape<Item extends SvgItemShape> = {
   fileContent: string;
   item: Item;
   writeParams?: { prettier: boolean };
+};
+
+export type SvgsJsLookupOutputShape = {
+  relativeFilePath: string;
+  filePath: string;
+  fileContent: string;
 };
 
 function svgContentParser<Item extends SvgItemShape>({
@@ -45,6 +66,7 @@ function svgContentParser<Item extends SvgItemShape>({
       if (resp) {
         lightContent = resp;
         darkContent = colorStyles?.replaceLightWithDarkFills(lightContent);
+        themeableContent = colorStyles?.replaceWithCssVariables(lightContent);
       }
     } else if (item.node) {
       const data = getSvgData(item.node, colorStyles);
@@ -62,38 +84,77 @@ function svgContentParser<Item extends SvgItemShape>({
   };
 }
 
-function outputGenerator<Item extends SvgItemShape>({
-  task,
-  formatSvgName,
-}: SvgsGeneratorParams<Item>) {
-  const generatedSvgsDirectory = getAbsolutePath(task, task.options.generatedSvgsDirectory);
+function getSvgNamePartsFallback<
+  Item extends SvgItemShape,
+  TaskType extends GenerateSvgsTask = GenerateSvgsTask,
+>(task: TaskType, item: Item) {
+  const lookupName = `${item.type}-${item.name}`;
+  let fileName = lookupName;
 
-  return function format(item: Item) {
+  if (task.options.manifestVersioning) {
+    // TODO: add lookup to mapping of old versions
+    fileName = `${lookupName}-${item.version}`;
+  }
+
+  return { fileName: `${fileName}.svg`, lookupName };
+}
+
+function outputGenerator<
+  Item extends SvgItemShape,
+  TaskType extends GenerateSvgsTask = GenerateSvgsTask,
+>({ task, getSvgNameParts = getSvgNamePartsFallback }: SvgsGeneratorParams<Item, TaskType>) {
+  const [generatedSvgsDirectory, generatedSvgsJsDirectory, generatedSvgsJsMapFile] = [
+    task.options.generatedSvgsDirectory,
+    task.options.generatedSvgsJsDirectory,
+    task.options.generatedSvgsJsMapFile,
+  ].map((item) => getAbsolutePath(task, item));
+
+  const svgsJsLookupObject: Record<string, string> = {};
+
+  function getSvgJsMapFileOutput(filePath: string) {
+    return (): SvgsJsLookupOutputShape => {
+      const { name: exportName } = path.parse(filePath);
+
+      const fileContent = tokensTemplate`      
+      /* eslint-disable import/extensions */
+      /* eslint-disable global-require */
+      /* eslint-disable @typescript-eslint/no-unsafe-return */
+
+      export const ${exportName}: Record<string, () => string> = ${svgsJsLookupObject}
+      `;
+
+      return {
+        fileContent,
+        filePath,
+        relativeFilePath: getRelativePath(task, filePath), // for tracking outputs in manifest file
+      };
+    };
+  }
+
+  function getOuputsForItem(item: Item) {
     const outputs: SvgOutputShape<Item>[] = [];
 
-    function addOutput(content: string, subDirectory?: string) {
-      const svgBasename = formatSvgName?.(item) ?? item.name;
+    function addOutput(content: string, category?: SvgOutputCategory) {
+      if (!generatedSvgsDirectory) return;
 
-      const svgName = `${svgBasename}.svg`;
-      const filePath = subDirectory
-        ? `${generatedSvgsDirectory}/${subDirectory}/${svgName}`
-        : `${generatedSvgsDirectory}/${svgName}`;
+      const { fileName, lookupName } = getSvgNameParts(task, item);
+
+      const filePath = category
+        ? `${generatedSvgsDirectory}/${category}/${fileName}`
+        : `${generatedSvgsDirectory}/${fileName}`;
+
+      const relativeFilePath = getRelativePath(task, filePath);
 
       const svgOutput = {
         filePath,
-        relativeFilePath: getRelativePath(task, filePath),
+        relativeFilePath,
         fileContent: content,
         item,
       };
 
       outputs.push(svgOutput);
 
-      if (task.options.generatedSvgsJsDirectory) {
-        const generatedSvgsJsDirectory = getAbsolutePath(
-          task,
-          task.options.generatedSvgsJsDirectory,
-        );
-
+      if (generatedSvgsJsDirectory) {
         const svgJsFilePath = filePath
           .replace(generatedSvgsDirectory, generatedSvgsJsDirectory)
           .replace('.svg', '.js');
@@ -107,18 +168,45 @@ function outputGenerator<Item extends SvgItemShape>({
         };
 
         outputs.push(svgJsOutput);
+
+        if (generatedSvgsJsMapFile) {
+          // Compute the relative path of the SVG file based on the two absolute paths
+          const relativeSvgFilePath = path.relative(
+            path.dirname(generatedSvgsJsMapFile),
+            svgJsOutput.filePath,
+          );
+          const lookupContent = `() => require('./${relativeSvgFilePath}').content`;
+          const lookupKey = category ? `${category}-${lookupName}` : lookupName;
+          // TODO: should maybe have separate loopup maps for each category
+          if (category !== 'themeable') {
+            svgsJsLookupObject[lookupKey] = lookupContent;
+          }
+        }
       }
     }
 
-    return { outputs, addOutput };
+    return {
+      outputs,
+      addOutput,
+    };
+  }
+
+  return {
+    getOuputsForItem,
+    getSvgJsMapFileOutput: generatedSvgsJsMapFile
+      ? getSvgJsMapFileOutput(generatedSvgsJsMapFile)
+      : undefined,
   };
 }
 
-type SvgsGeneratorParams<Item extends SvgItemShape> = {
+type SvgsGeneratorParams<
+  Item extends SvgItemShape,
+  TaskType extends GenerateSvgsTask = GenerateSvgsTask,
+> = {
   colorStyles?: ColorStyles;
   remoteSvgs?: Record<string, string>;
-  task: Task<GenerateSvgsTaskOptions>;
-  formatSvgName?: (item: Item) => string;
+  task: TaskType;
+  getSvgNameParts?: (task: TaskType, item: Item) => SvgFileNameParts;
 };
 
 export type GeneratedSvgs = Map<string, SvgOutputShape<SvgItemShape>>;
@@ -127,11 +215,11 @@ export function svgsGenerator<Item extends SvgItemShape>(params: SvgsGeneratorPa
   let allOutputs: SvgOutputShape<Item>[] = [];
   return async function generateSvgs(items: Item[]) {
     const getSvgContent = svgContentParser(params);
-    const getOuputs = outputGenerator<Item>(params);
+    const { getOuputsForItem, getSvgJsMapFileOutput } = outputGenerator<Item>(params);
 
     await Promise.all(
       items.map(async (item) => {
-        const { outputs, addOutput } = getOuputs(item);
+        const { outputs, addOutput } = getOuputsForItem(item);
         const { lightContent, darkContent, themeableContent } = await getSvgContent(item);
 
         /** If we have these items we know we are create multiple svgs and will need to use sub directories  */
@@ -152,11 +240,11 @@ export function svgsGenerator<Item extends SvgItemShape>(params: SvgsGeneratorPa
              * we can easily know which files we should delete if the items are removed from Figma.
              */
             item.addToOutputs(relativeFilePath);
-            await existsOrCreateDir(filePath);
 
             if (writeParams?.prettier) {
               await writePrettyFile(filePath, fileContent);
             } else {
+              await existsOrCreateDir(filePath);
               await fs.promises.writeFile(filePath, fileContent);
             }
           }),
@@ -165,6 +253,12 @@ export function svgsGenerator<Item extends SvgItemShape>(params: SvgsGeneratorPa
         allOutputs = [...allOutputs, ...outputs];
       }),
     );
+
+    if (getSvgJsMapFileOutput) {
+      const { filePath, fileContent } = getSvgJsMapFileOutput();
+      await writePrettyFile(filePath, fileContent);
+    }
+
     const svgs: GeneratedSvgs = new Map(
       allOutputs.map((output) => [output.filePath, output] as const),
     );

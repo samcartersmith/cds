@@ -12,11 +12,5 @@ export function getRecentlyUpdated({ remoteItems, lastUpdated = '' }: GetRecentl
     return true;
   });
 
-  const recentlyUpdatedIds = recentlyUpdatedItems.map((item) => item.node_id);
-
-  if (recentlyUpdatedIds.length === 0) {
-    throw new Error('There are no new updates');
-  }
-
-  return recentlyUpdatedIds;
+  return recentlyUpdatedItems.map((item) => item.node_id);
 }

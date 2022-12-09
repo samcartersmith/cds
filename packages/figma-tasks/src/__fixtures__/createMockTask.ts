@@ -47,9 +47,9 @@ export const mockTaskOptions = {
     figmaApiFileId: 'skPXKFmI64GqqEkOaBSHcL',
     changelogFile: './CHANGELOG.md',
     manifestFile: './src/__generated__/styles/light/manifest.json',
-    generatedKeyToNameLookupFile: './src/__generated__/styles/light/keyToNameMap.ts',
-    generatedNameToKeyLookupFile: './src/__generated__/styles/light/nameToKeyMap.ts',
-    generatedCssVariablesLookupFile: './src/__generated__/styles/light/cssVariablesMap.ts',
+    generatedKeyToNameMapFile: './src/__generated__/styles/light/keyToNameMap.ts',
+    generatedNameToKeyMapFile: './src/__generated__/styles/light/nameToKeyMap.ts',
+    generatedCssVariablesMapFile: './src/__generated__/styles/light/cssVariablesMap.ts',
     cssVariablesPrefix: 'illustration',
   },
 };

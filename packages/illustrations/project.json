@@ -20,9 +20,9 @@
         "figmaApiFileId": "etJaiHq7aFlJFICLKIrcK7",
         "changelogFile": "./CHANGELOG.md",
         "manifestFile": "./src/__generated__/styles/dark/manifest.json",
-        "generatedKeyToNameLookupFile": "./src/__generated__/styles/dark/keyToNameMap.ts",
-        "generatedNameToKeyLookupFile": "./src/__generated__/styles/dark/nameToKeyMap.ts",
-        "generatedCssVariablesLookupFile": "./src/__generated__/styles/dark/cssVariablesMap.ts",
+        "generatedKeyToNameMapFile": "./src/__generated__/styles/dark/keyToNameMap.ts",
+        "generatedNameToKeyMapFile": "./src/__generated__/styles/dark/nameToKeyMap.ts",
+        "generatedCssVariablesMapFile": "./src/__generated__/styles/dark/cssVariablesMap.ts",
         "generatedCssVariablesPrefix": "illustration"
       }
     },
@@ -33,9 +33,9 @@
         "figmaApiFileId": "skPXKFmI64GqqEkOaBSHcL",
         "changelogFile": "./CHANGELOG.md",
         "manifestFile": "./src/__generated__/styles/light/manifest.json",
-        "generatedKeyToNameLookupFile": "./src/__generated__/styles/light/keyToNameMap.ts",
-        "generatedNameToKeyLookupFile": "./src/__generated__/styles/light/nameToKeyMap.ts",
-        "generatedCssVariablesLookupFile": "./src/__generated__/styles/light/cssVariablesMap.ts",
+        "generatedKeyToNameMapFile": "./src/__generated__/styles/light/keyToNameMap.ts",
+        "generatedNameToKeyMapFile": "./src/__generated__/styles/light/nameToKeyMap.ts",
+        "generatedCssVariablesMapFile": "./src/__generated__/styles/light/cssVariablesMap.ts",
         "generatedCssVariablesPrefix": "illustration"
       }
     },
@@ -46,11 +46,12 @@
         "figmaApiFileId": "LmkJatvMRVzNgfiIkJDb99",
         "changelogFile": "./CHANGELOG.md",
         "manifestFile": "./src/__generated__/manifest.json",
-        "manifestVersioning": true,
         "darkModeManifestFile": "./src/__generated__/styles/dark/manifest.json",
         "lightModeManifestFile": "./src/__generated__/styles/light/manifest.json",
+        "manifestVersioning": true,
         "generatedSvgsDirectory": "./src/__generated__/svgs",
         "generatedSvgsJsDirectory": "./src/__generated__/js",
+        "generatedSvgsJsMapFile": "./src/__generated__/js/illustrationSpectrumMap.ts",
         "generatedTypesDirectory": "./src/__generated__/types"
       }
     },

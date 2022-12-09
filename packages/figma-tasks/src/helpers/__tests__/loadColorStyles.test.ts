@@ -18,6 +18,7 @@ describe('loadColorStyles', () => {
     });
 
     const mockDark = new Manifest<ColorStyleManifestType>({
+      executor: 'sync-styles',
       filePath: '',
       task: mockTask,
       previousManifest: {
@@ -50,6 +51,7 @@ describe('loadColorStyles', () => {
     });
 
     const mockLight = new Manifest({
+      executor: 'sync-styles',
       filePath: '',
       task: mockTask,
       previousManifest: {

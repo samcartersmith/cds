@@ -103,8 +103,8 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
       width: this.width,
       height: this.height,
       description: this.description,
+      version: this.version,
       ...(this.outputs.length ? { outputs: [...new Set(this.outputs).values()] } : {}),
-      ...(this.version ? { version: this.version } : {}),
       ...(this.metadata ? { metadata: this.metadata } : {}),
     };
   }
