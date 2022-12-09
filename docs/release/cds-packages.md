@@ -18,7 +18,10 @@ The `yarn release` script will automatically update the `CHANGELOG` with the lat
 
 5. Copy the title that is in the output logs after "Pull request title: " and use it for **BOTH** the commit and the PR title. It can be found directly above " > NX Successfully ran target release for project codegen (24s)".
 
-Note: Since this is likely a single commit, if the commit message is not the provided title, it will break the `CHANGELOG` for future commits.
+**Notes**:
+
+- Since this is likely a single commit, if the commit message is not the provided title, it will break the `CHANGELOG` for future commits.
+- cds-mobile, cds-web, and cds-common all need to bump at the same time. If a bump is not introduced for one of these packages, please add one like [this](https://github.cbhq.net/frontend/cds/pull/1448).
 
 Your PR should like [this](https://github.cbhq.net/frontend/cds/pull/1112).
 
