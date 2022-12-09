@@ -57,10 +57,24 @@ export const useSparklineCoordinates = ({
       };
     };
 
+    /*
+      This is a hack that will only support straight lines when 2 data points are passed. When this is true, we append `M-10,10` to the path.
+
+      We do not do this for all lines because it warps the transition between time periods, which is visual jank. This provides a solution for straight lines, while minimizing impact for most charts.
+
+      We apply M-10,10 so that the browser recognizes data for straight, horizontal lines. This does not impact non-straight lines. 
+      This is due to a browser bug which refuses to acknowledge a line if the height remains exactly the same, and therefore renders the "height" of the path as 0 (invisible).
+
+      "M", or move to, will simply move the cursor. Since we're appending two moves (the beginning of the path generate is always M), no line will be drawn but the browser will be activated. 
+
+      Stack overflow: https://stackoverflow.com/questions/19708943/svg-straight-path-with-clip-path-not-visible-in-chrome/19709615#19709615
+    */
+    const isAStraightLine = data.length === 2 && data[0].value === data[1].value;
+
     return {
       xFunction,
       yFunction,
-      path: createSparklinePath(data) ?? '',
+      path: `${isAStraightLine ? 'M-10,10' : ''}${createSparklinePath(data)}` ?? '',
       area: createSparklineArea(data) ?? '',
       getMarker,
     };
