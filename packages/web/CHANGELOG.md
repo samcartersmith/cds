@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.4.2 (12/8/2022, 04:39 PM PST)
+
+#### 🐞 Fixes
+
+- **[SparklineInteractiveHeader]** Ensure period selector and marker dates are not accessible when hidden #skip_tests. [#1438](https://github.cbhq.net/frontend/cds/pull/1438), [CDS-2700](https://jira.coinbase-corp.com/browse/CDS-2700)
+
 ## 3.4.1 (12/7/2022, 09:24 AM PST)
 
 This is an artificial version bump with no new change.

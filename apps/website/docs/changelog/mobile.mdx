@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.4.2 (12/8/2022, 04:39 PM PST)
+
+#### 🐞 Fixes
+
+- Remove these old test files. [#1443](https://github.cbhq.net/frontend/cds/pull/1443)
+
+#### 📘 Misc
+
+- Add figma-tasks for new figma libraries. [#1444](https://github.cbhq.net/frontend/cds/pull/1444)
+
 ## 3.4.1 (12/7/2022, 09:24 AM PST)
 
 #### 🐞 Fixes

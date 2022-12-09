@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.4.2 (12/8/2022, 04:39 PM PST)
+
+#### 🐞 Fixes
+
+- **[SparklineInteractiveHeader]** Fixes invisible sparkline for horizontal data. [#1446](https://github.cbhq.net/frontend/cds/pull/1446), [CDS-2985](https://jira.coinbase-corp.com/browse/CDS-2985)
+
 ## 3.4.1 (12/7/2022, 09:24 AM PST)
 
 #### 🐞 Fixes
