@@ -1,5 +1,3 @@
-import { ExecaReturnValue } from 'execa';
-
 /** ********************************************** */
 /* TYPES THAT ARE NOT EXPORTED
 /*
@@ -41,7 +39,13 @@ export type CoverageAreas = {
 
 export type CoverageOutput = Record<string, CoverageAreas>;
 
-export type TestDetail = Record<string, ExecaReturnValue | { success: boolean }>;
+export type TestDetail = Record<
+  string,
+  {
+    status: 'passed' | 'failed';
+    message: string;
+  }
+>;
 
 /**
  * You can get more information about what these log represents

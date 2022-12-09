@@ -250,56 +250,74 @@ export class A11yLogger extends TestTask {
   }
 
   /**
-   * This is one of the few exceptions where we will do
-   * two things in a function. Its much less readable, but
-   * this is for performance reason. This way, we don't have to
-   * run the test two times.
-   *
+   * This function is responsible for running a batch of tests using the jest
+   * runner. We will then parse these output and log it into testDetails of the
+   * log
    */
-  public async logAccessibleTestJestOutput({
-    filePath,
+  public async logAccessibleTestBatchJestOutput({
+    filePaths,
     args,
     logToConsole = true,
   }: {
-    filePath: string;
+    filePaths: string[];
     args: string[];
   } & Pick<DebugOptions, 'logToConsole'>) {
     const testRunner = new TestRunner(this.getTask);
 
-    if (!this.log.testFilesWithToBeAccessibleTest.includes(filePath)) {
-      logDebug(
-        `Skipping, test does not have a11y coverage or is not testing a component: ${color.file(
-          filePath,
-        )}`,
-      );
-      return;
-    }
-
-    const execResult = await testRunner.runJest([...args, '--forceExit', filePath]);
+    const execResult = await testRunner.runJest([...args, '--forceExit', ...filePaths]);
 
     if (logToConsole) {
-      console.log(execResult.stdout);
       console.log(execResult.stderr);
     }
 
-    // When a jest test has a warning, it will output
-    // the result to stderr, and stdout will be empty.
-    // Its a bit of a weird design
-    // To make it more readable, I created a function here
-    // to state what this means
-    const testTriggeredWarning = execResult.stdout !== '';
+    const passDelimiter = '\u001b[0m\u001b[7m\u001b[1m\u001b[32m PASS ';
 
-    // Only add the output log if it fails or test results in console.warn,
-    // otherwise, just return success.
-    // Reason: output gets really long, so this will optimize space usage
-    if (execResult.failed || testTriggeredWarning) {
-      execResult.stdout = ansiToHumanText(execResult.stdout);
-      execResult.stderr = ansiToHumanText(execResult.stderr);
+    // Currently, the execResult.stderr is a really large text with all the results of the tests. We need to split them up such that each test has its own output. As long as there is a PASS, it means it is a new test.
+    const stderrForEachTest = execResult.stderr.split(passDelimiter);
 
-      this.log.testDetails[filePath] = execResult;
-    } else {
-      this.log.testDetails[filePath] = { success: true };
-    }
+    // Strip out the first value in the array as that is an empty string
+    stderrForEachTest.shift();
+
+    stderrForEachTest.forEach((stderr) => {
+      const projectNameDelimiter = `[37m ${this.getTask.projectName} \u001b[39m\u001b[27m\u001b[0m`;
+
+      const stderrWithProjectNameRemoved = stderr.split(projectNameDelimiter);
+
+      // Some tests include the project name while some don't.
+      // On our repo, the project name is included. On retail, it is not
+      // So we check whether the project name is there, if it is, strip it out,
+      // if it isn't, we do nothing.
+      // We then only obtain strings that showed up before the first next line
+      const unsanitizedFilePath =
+        stderrWithProjectNameRemoved[stderrWithProjectNameRemoved.length > 1 ? 1 : 0].split(
+          '\n',
+        )[0];
+
+      // We need to strip away the colors (they are the unicode values which make it look pretty in the console), and the time it took to run the test if it exist.
+      // original input may look something like this: \u001b[39m\u001b[22m\u001b[27m\u001b[0m \u001b[2m src/components/AccountChecklistV2/Carousel/\u001b[22m\u001b[1mCarousel.test.tsx\u001b[22m\n  \u001b\u001b[2m:15:22)\u001b
+      // Converting it into ansi will turn it into something like this:
+      // /components/AccountChecklistV2/Carousel/<grey><intent>Carousel.test.tsx<gray>(<red>2m:15:22</red>)
+      // When turned into an ansi form, we can easily strip out any brackets like this <>, (). We also need to strip out white spaces
+      // It is much easier to remove those color and non file path values when converted into the pretty form. Hence, the conversion was necessary
+      const filePathBeingTested = ansiToHumanText(unsanitizedFilePath)
+        .replaceAll(/<.*?>/g, '')
+        .replaceAll(/\(.*?\)/g, '')
+        .replaceAll(/\s/g, '');
+
+      let status: 'passed' | 'failed' = 'passed';
+
+      // We only consider it failing if it contains the following regex pattern  /.*pathToComponent:.*problem:.*solution:.*link:.*/}.
+
+      // There may be times when there are other console.error errors, but are not A11y VIOLATION, therefore this check is important to capture failures that are specific to A11y
+      if (stderr.match(/.*pathToComponent:.*problem:.*solution:.*link:.*/) != null) {
+        status = 'failed';
+      }
+
+      this.log.testDetails[filePathBeingTested] = {
+        status,
+        message: passDelimiter + stderr,
+      };
+    });
   }
 
   // There is subtle different between this function, and
@@ -311,14 +329,17 @@ export class A11yLogger extends TestTask {
      * Running jest on files that have toBeAccessible tests. If printed, it
      * means it was skipped. It could be because it does not have toBeAccessible
      */
-    await Promise.all(
-      this.filePaths.map(async (filePath) =>
-        this.logAccessibleTestJestOutput({
-          filePath,
-          args,
-        }),
-      ),
-    );
+
+    if (this.log.testFilesWithToBeAccessibleTest.length <= 0) {
+      throw new Error(
+        'To reduce computational time, please run A11yLogger.logTestFilesWithToBeAccessibleTest() to obtain the a list of test files with toBeAccessible before running this command',
+      );
+    }
+
+    await this.logAccessibleTestBatchJestOutput({
+      filePaths: this.log.testFilesWithToBeAccessibleTest,
+      args,
+    });
   }
 
   public logCoverageSummaryTotal() {

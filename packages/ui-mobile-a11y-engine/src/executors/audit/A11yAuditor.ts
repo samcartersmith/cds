@@ -82,7 +82,7 @@ export class A11yAuditor extends TestTask {
     let numberOfPassingToBeAccessibleTests = 0;
 
     Object.entries(testDetails).forEach(([, detail]) => {
-      if ('success' in detail) {
+      if (detail.status === 'passed') {
         numberOfPassingToBeAccessibleTests += 1;
       }
     });
