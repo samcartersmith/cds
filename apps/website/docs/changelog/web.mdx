@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.4.3 (12/12/2022, 10:04 AM PST)
+
+This is an artificial version bump with no new change.
+
 ## 3.4.2 (12/8/2022, 04:39 PM PST)
 
 #### 🐞 Fixes
