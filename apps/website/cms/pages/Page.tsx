@@ -3,6 +3,7 @@ import { TOCItems } from '@theme/createTOCManager';
 import { CMSProvider, ComponentMapValue } from '@cb/cms';
 import { Box } from '@cbhq/cds-web/layout';
 import { Spinner } from '@cbhq/cds-web/loaders';
+import { TextTitle2 } from '@cbhq/cds-web/typography';
 
 import { Accordion } from '../misc/Accordion';
 import { Embedded } from '../misc/Embedded';
@@ -74,7 +75,7 @@ export const Page = memo(function CMS({ fallback, ...props }: CMSProps) {
       return fallback;
     }
 
-    return null;
+    return <TextTitle2 as="h2">Nothing here yet, please check back later.</TextTitle2>;
   }
 
   const renderPage = () => {

@@ -445,6 +445,11 @@ const sidebars = {
           label: 'Section Title',
         },
         {
+          type: 'doc',
+          id: 'components/controls/SegmentedControl/segmented-control',
+          label: 'Segmented Control',
+        },
+        {
           type: 'category',
           label: 'Select',
           items: [
