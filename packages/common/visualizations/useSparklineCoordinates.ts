@@ -69,7 +69,9 @@ export const useSparklineCoordinates = ({
 
       Stack overflow: https://stackoverflow.com/questions/19708943/svg-straight-path-with-clip-path-not-visible-in-chrome/19709615#19709615
     */
-    const isAStraightLine = data.length === 2 && data[0].value === data[1].value;
+    const isAStraightLine =
+      data.length < 5 &&
+      data.filter((dataPoint) => dataPoint.value === data[0].value).length === data.length;
 
     return {
       xFunction,
