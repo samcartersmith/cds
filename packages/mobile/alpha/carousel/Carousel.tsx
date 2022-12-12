@@ -130,7 +130,7 @@ export const Carousel = memo(
             // if you dismiss the last item you have to scroll to the new end position on Android.
             // The ScrollView does not automatically do this
             if (id === visibleItems[visibleItems.length - 1].id) {
-              scrollToEnd();
+              scrollToEnd({ animated: false });
             }
           };
         },
