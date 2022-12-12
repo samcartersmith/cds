@@ -90,7 +90,9 @@ function CollapsibleCategory({
   level,
   parentLevel = 0,
 }: CollapsibleCategoryProps) {
-  const [collapsed, { toggle }] = useToggler(item.collapsed ?? true);
+  const isActive = isActiveSidebarItem(item, activePath);
+  const [collapsed, { toggle }] = useToggler(isActive ? false : item.collapsed);
+
   return (
     <VStack spacingHorizontal={0}>
       <Pressable
