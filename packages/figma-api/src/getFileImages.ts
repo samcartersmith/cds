@@ -1,13 +1,15 @@
 import { createClient } from './createClient';
 import { FileImageResponse } from './types';
 
-type GetImageParams = {
+export type ImageFormat = 'jpg' | 'png' | 'svg' | 'pdf';
+
+export type GetImageParams = {
   /** Comma separated list of nodes that you care about in the document. If specified, only a subset of the document will be returned corresponding to the nodes listed, their children, and everything between the root node and the listed nodes */
   ids?: string;
   /** A number between 0.01 and 4, the image scaling factor */
   scale?: number;
   /** The image output format */
-  format?: 'jpg' | 'png' | 'svg' | 'pdf';
+  format: ImageFormat;
   /** Whether to include id attributes for all SVG elements.
    * @default false
    */

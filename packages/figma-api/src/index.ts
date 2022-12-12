@@ -9,5 +9,6 @@ export * from './getFileImages';
 export * from './getFileNodes';
 export * from './getFileStyles';
 export * from './getStyle';
+export * from './helpers';
 export * from './tools/FigmaTokens';
 export * from './types';
