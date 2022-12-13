@@ -760,8 +760,7 @@ const createMobileSpectrumMap = async (names: IllustrationNamesMap, outDirPath: 
     [] as string[],
   );
 
-  const paths = reduce(
-    allNames,
+  const paths = allNames.sort(sortByAlphabet).reduce(
     (acc, name) => {
       try {
         acc[`"${name}"`] = {

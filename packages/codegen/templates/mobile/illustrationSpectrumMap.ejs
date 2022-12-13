@@ -9,6 +9,7 @@ type IllustrationSpectrumMap = { light: () => string, dark: null | (() => string
 export const <%- name %>: Record<IllustrationNames, IllustrationSpectrumMap>  = {
 <%_ Object.entries(values).map(([key, value]) => { _%>
   <%- key %>: {<%_ Object.entries(value).map(([spectrum, path]) => { _%><%- spectrum %>:<%- path === null ? 'null' : '() =>' + path+'.content' %>,<%_ }) _%>},
+  
 <%_ }) _%>
 };
 <%_ }) _%>
