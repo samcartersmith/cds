@@ -50,6 +50,12 @@ const newIllustrations: string[] = [];
 const modifiedIllustrations: string[] = [];
 const deletedIllustrations: Set<string> = new Set([]);
 
+function sortByAlphabet(prev: string | [string, unknown], next: string | [string, unknown]) {
+  const prevValue = Array.isArray(prev) ? prev[0] : prev;
+  const nextValue = Array.isArray(next) ? next[0] : next;
+  return prevValue.localeCompare(nextValue);
+}
+
 function normalizeIllustration(illustrationName: string): IllustrationProps | null {
   const [type, spectrum, variant, name] = illustrationName.split('/');
 
@@ -490,32 +496,38 @@ const getIllustrationNamesAndVariants = (
 
     const { name, variant } = props;
 
+    // add variant if not already in variant list
     variants.add(variant);
 
     const variantKey = `${variant}Names`;
     if (variantKey in illustrationNames) {
+      // add name to map if variant already there
       illustrationNames[variantKey].add(name.trim());
     } else {
+      // create new map w/ variant key
       illustrationNames[variantKey] = new Set([name.trim()]);
     }
   });
 
   const toIllustrationNamesMap = (caseMethod: 'camelcase' | 'pascalcase') => {
     const names: IllustrationNamesMap = {};
-    Object.keys(illustrationNames).forEach((variant) => {
-      names[variant] = Array.from(illustrationNames[variant])
-        .sort()
-        .map((name) => {
-          switch (caseMethod) {
-            case 'camelcase':
-              return camelCase(name);
-            case 'pascalcase':
-              return pascalCase(name);
-            default:
-              throw new Error(`usage: ${caseMethod} is invalid.`);
-          }
-        });
-    });
+    Object.keys(illustrationNames)
+      .sort(sortByAlphabet) // sort variant names (heroRectangle, pictogram, etc)
+      .forEach((variant) => {
+        names[variant] = Array.from(illustrationNames[variant])
+          .sort(sortByAlphabet) // sort icon names
+          .map((name) => {
+            switch (caseMethod) {
+              case 'camelcase':
+                return camelCase(name);
+              case 'pascalcase':
+                return pascalCase(name);
+              default:
+                throw new Error(`usage: ${caseMethod} is invalid.`);
+            }
+          });
+      });
+
     return names;
   };
 
@@ -603,9 +615,9 @@ const genStatistics = async (destPath: string, names: IllustrationNamesMap) => {
   const illustrationMetadata = {
     numIllustrations: Object.keys(localManifestData.svg).length,
     ...variantCountMap,
-    newIllustrations: newIllustrations.sort(),
-    modifiedIllustrations: modifiedIllustrations.sort(),
-    deletedIllustrations: Array.from(deletedIllustrations).sort(),
+    newIllustrations: newIllustrations.sort(sortByAlphabet),
+    modifiedIllustrations: modifiedIllustrations.sort(sortByAlphabet),
+    deletedIllustrations: Array.from(deletedIllustrations).sort(sortByAlphabet),
   };
 
   await writeFile({
