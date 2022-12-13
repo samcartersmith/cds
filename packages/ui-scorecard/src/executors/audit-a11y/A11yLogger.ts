@@ -41,8 +41,6 @@ export class A11yLogger extends TestTask {
       projectMetadata: {
         projectName: task.projectName,
         projectPath: task.projectPath,
-        // this disable is necessary for accessible repo variable in buildkite execution
-        // eslint-disable-next-line no-restricted-globals
         githubURL: process.env.BUILDKITE_REPO,
       },
       componentsWithZeroCoverage: 'unknown',

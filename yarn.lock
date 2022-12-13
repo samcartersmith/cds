@@ -2307,6 +2307,7 @@ __metadata:
     "@react-native-community/netinfo": ^7.1.7
     "@testing-library/react-native": ^11.3.0
     "@types/react-native": ^0.68.2
+    "@types/react-test-renderer": ^18.0.0
     d3-interpolate-path: ^2.2.2
     eslint-plugin-reanimated: ^2.0.0
     lodash: ^4.17.21
@@ -2818,32 +2819,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/ui-mobile-a11y-engine@workspace:packages/ui-mobile-a11y-engine":
-  version: 0.0.0-use.local
-  resolution: "@cbhq/ui-mobile-a11y-engine@workspace:packages/ui-mobile-a11y-engine"
-  dependencies:
-    "@react-native-community/slider": 4.2.0
-    "@testing-library/jest-native": 5.0.0
-    "@testing-library/react-native": 11.3.0
-    "@types/lodash.groupby": 4.6.6
-    "@types/react": ^17.0.3
-    "@types/react-native": ^0.68.2
-    "@types/react-test-renderer": 17.0.1
-    execa: ^5.1.1
-    jest-matcher-utils: ^24.0.0
-    jest-serializer-ansi-escapes: ^2.0.1
-    jest-transform-stub: ^2.0.0
-    lodash.groupby: ^4.6.0
-    pretty-format: ^29.3.1
-    react-test-renderer: ^17.0.2
-  peerDependencies:
-    "@cbhq/mono-tasks": ^0.6.2
-    react: "*"
-    react-native: "*"
-    typescript: ~4.7.2
-  languageName: unknown
-  linkType: soft
-
 "@cbhq/ui-mobile-playground@workspace:^, @cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground":
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground"
@@ -2875,11 +2850,17 @@ __metadata:
     "@types/yargs": ^17.0.11
     aws-sdk: ^2.1207.0
     chalk: ^4.1.2
+    execa: ^5.1.1
+    jest-serializer-ansi-escapes: ^2.0.1
     packemon: ^2.4.0
+    pretty-format: ^29.3.1
     update-notifier: ^5.1.0
     yargs: ^17.5.1
+  peerDependencies:
+    "@cbhq/mono-tasks": ">=0.6.3"
+    typescript: ">=4.7.2"
   bin:
-    ui-scorecard: ./lib/bin.js
+    ui-scorecard: ./cjs/bin.cjs
   languageName: unknown
   linkType: soft
 
@@ -4636,17 +4617,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/types@npm:^24.9.0":
-  version: 24.9.0
-  resolution: "@jest/types@npm:24.9.0"
-  dependencies:
-    "@types/istanbul-lib-coverage": ^2.0.0
-    "@types/istanbul-reports": ^1.1.1
-    "@types/yargs": ^13.0.0
-  checksum: 603698f774cf22f9d16a0e0fac9e10e7db21052aebfa33db154c8a5940e0eb1fa9c079a8c91681041ad3aeee2adfa950608dd0c663130316ba034b8bca7b301c
-  languageName: node
-  linkType: hard
-
 "@jest/types@npm:^26.6.2":
   version: 26.6.2
   resolution: "@jest/types@npm:26.6.2"
@@ -6003,16 +5973,6 @@ __metadata:
   peerDependencies:
     react-native: ">=0.59"
   checksum: ea5b532da54b5e0976f8b330eb0d1324c30bc77d4b89232ed8325c5a032570de8a9e9cc015c516efd573fdddc613fccc59c8082c9977c1d8a986b6de61457360
-  languageName: node
-  linkType: hard
-
-"@react-native-community/slider@npm:4.2.0":
-  version: 4.2.0
-  resolution: "@react-native-community/slider@npm:4.2.0"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: aeec1dfd7f7a28478f575b57cff162285a652af03ea9daeab36858716be33b1346552b510e5875d1bedf365fecf710bdb03cec654360f95aefbe8f4ecf1f6479
   languageName: node
   linkType: hard
 
@@ -8047,23 +8007,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-native@npm:5.0.0":
-  version: 5.0.0
-  resolution: "@testing-library/jest-native@npm:5.0.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40testing-library%252fjest-native%2F-%2Fjest-native-5.0.0.tgz"
-  dependencies:
-    chalk: ^4.1.2
-    jest-diff: ^29.0.1
-    jest-matcher-utils: ^29.0.1
-    pretty-format: ^29.0.3
-    redent: ^3.0.0
-  peerDependencies:
-    react: ">=16.0.0"
-    react-native: ">=0.59"
-    react-test-renderer: ">=16.0.0"
-  checksum: b5c8541c03abcb159182a8eb3475538fc89fa36b0a1f7c946aa9a24165370dc41851b196afadd7314bb8627fe333e1af4e12d36cfb8f0667df355e91ce2c309a
-  languageName: node
-  linkType: hard
-
 "@testing-library/jest-native@npm:^4.0.11":
   version: 4.0.12
   resolution: "@testing-library/jest-native@npm:4.0.12"
@@ -8103,7 +8046,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react-native@npm:11.3.0, @testing-library/react-native@npm:^11.3.0":
+"@testing-library/react-native@npm:^11.3.0":
   version: 11.3.0
   resolution: "@testing-library/react-native@npm:11.3.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40testing-library%252freact-native%2F-%2Freact-native-11.3.0.tgz"
   dependencies:
@@ -8628,16 +8571,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/istanbul-reports@npm:^1.1.1":
-  version: 1.1.2
-  resolution: "@types/istanbul-reports@npm:1.1.2"
-  dependencies:
-    "@types/istanbul-lib-coverage": "*"
-    "@types/istanbul-lib-report": "*"
-  checksum: 00866e815d1e68d0a590d691506937b79d8d65ad8eab5ed34dbfee66136c7c0f4ea65327d32046d5fe469f22abea2b294987591dc66365ebc3991f7e413b2d78
-  languageName: node
-  linkType: hard
-
 "@types/istanbul-reports@npm:^3.0.0":
   version: 3.0.1
   resolution: "@types/istanbul-reports@npm:3.0.1"
@@ -8722,16 +8655,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash.groupby@npm:4.6.6":
-  version: 4.6.6
-  resolution: "@types/lodash.groupby@npm:4.6.6"
-  dependencies:
-    "@types/lodash": "*"
-  checksum: d1c3bf09b5da403d4c8923422d4aba1b1747d0233d1fdcdbb7f179e34a022c50e7dc0993ec7fea049a09f7913cbfd9494dea7d5ae2a5b404bbc83eb8b0a2ab30
-  languageName: node
-  linkType: hard
-
-"@types/lodash@npm:*, @types/lodash@npm:^4.14.167, @types/lodash@npm:^4.14.174, @types/lodash@npm:^4.14.178":
+"@types/lodash@npm:^4.14.167, @types/lodash@npm:^4.14.174, @types/lodash@npm:^4.14.178":
   version: 4.14.186
   resolution: "@types/lodash@npm:4.14.186"
   checksum: ee0c1368a8100bb6efb88335107473a41928fc307ff1ef4ff1278868ccddba9c04c68c36d1ffe3a0392ef4a956e1955f7de3203ec09df4f1655dd1b88485c549
@@ -8968,12 +8892,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-test-renderer@npm:17.0.1":
-  version: 17.0.1
-  resolution: "@types/react-test-renderer@npm:17.0.1"
+"@types/react-test-renderer@npm:^18.0.0":
+  version: 18.0.0
+  resolution: "@types/react-test-renderer@npm:18.0.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Freact-test-renderer%2F-%2Freact-test-renderer-18.0.0.tgz"
   dependencies:
     "@types/react": "*"
-  checksum: ecaae8df36cd8cfeb89080d52534856acc3789bad9a6e369ff5119426377c827b4e5b5daa638507f2c1c2fd6c994bf45de288a698143178cd4049c2cd8b77b35
+  checksum: 6afc938a1d7618d88ab8793e251f0bd5981bf3f08c1b600f74df3f8800b92589ea534dc6dcb7c8d683893fcc740bf8d7843a42bf2dae59785cfe88f004bd7b0b
   languageName: node
   linkType: hard
 
@@ -9221,15 +9145,6 @@ __metadata:
   version: 20.2.1
   resolution: "@types/yargs-parser@npm:20.2.1"
   checksum: 1d039e64494a7a61ddd278349a3dc60b19f99ff0517425696e796f794e4252452b9d62178e69755ad03f439f9dc0c8c3d7b3a1201b3a24e134bac1a09fa11eaa
-  languageName: node
-  linkType: hard
-
-"@types/yargs@npm:^13.0.0":
-  version: 13.0.12
-  resolution: "@types/yargs@npm:13.0.12"
-  dependencies:
-    "@types/yargs-parser": "*"
-  checksum: 4eb34d8c071892299646e5a3fb02a643f5a5ea8da8f4d1817001882ebbcfa4fbda235b8978732f8eb55fa16433296e2087907fe69678a69125f0dca627a91426
   languageName: node
   linkType: hard
 
@@ -10375,7 +10290,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-regex@npm:^4.0.0, ansi-regex@npm:^4.1.0":
+"ansi-regex@npm:^4.1.0":
   version: 4.1.0
   resolution: "ansi-regex@npm:4.1.0"
   checksum: 97aa4659538d53e5e441f5ef2949a3cffcb838e57aeaad42c4194e9d7ddb37246a6526c4ca85d3940a9d1e19b11cc2e114530b54c9d700c8baf163c31779baf8
@@ -15201,13 +15116,6 @@ __metadata:
   version: 1.1.0
   resolution: "diagnostics_channel@npm:1.1.0"
   checksum: 08b058e6ddc5aac3151ba470b42738f31a70c0882e671b3d1aef35d0f1b7962063f0648471cfcd75c621a09ce681ba06eb0b3708f91909d56b84861f949e6894
-  languageName: node
-  linkType: hard
-
-"diff-sequences@npm:^24.9.0":
-  version: 24.9.0
-  resolution: "diff-sequences@npm:24.9.0"
-  checksum: b81f906ff1737e0a65e8f7ee3ad1d27b426dcc25498731365aeaccc32333da3bf3a7100c963c7104f12c8e64e545114d4fe4c0b90daf2565b0b00b79f0df45c4
   languageName: node
   linkType: hard
 
@@ -21356,18 +21264,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-diff@npm:^24.9.0":
-  version: 24.9.0
-  resolution: "jest-diff@npm:24.9.0"
-  dependencies:
-    chalk: ^2.0.1
-    diff-sequences: ^24.9.0
-    jest-get-type: ^24.9.0
-    pretty-format: ^24.9.0
-  checksum: 462ccb128cb1b64eb285d28245d0c5bfc230cb063624bd117550d6dbc94332f606828a5de86938611d1e6a78489e576c496737ae139084f6049a56b768ad6402
-  languageName: node
-  linkType: hard
-
 "jest-diff@npm:^26.6.2":
   version: 26.6.2
   resolution: "jest-diff@npm:26.6.2"
@@ -21511,13 +21407,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-get-type@npm:^24.9.0":
-  version: 24.9.0
-  resolution: "jest-get-type@npm:24.9.0"
-  checksum: 821e6cd46434c917370cd362fbc4ce564c6e22780351f3ca468b230fbbc657ae19905ed5cdcc5e112d81a2c79cbd3fbcbe0dd44dc62860414b60ea223009958c
-  languageName: node
-  linkType: hard
-
 "jest-get-type@npm:^26.3.0":
   version: 26.3.0
   resolution: "jest-get-type@npm:26.3.0"
@@ -21653,18 +21542,6 @@ __metadata:
     jest-get-type: ^28.0.2
     pretty-format: ^28.1.3
   checksum: 2e976a4880cf9af11f53a19f6a3820e0f90b635a900737a5427fc42e337d5628ba446dcd7c020ecea3806cf92bc0bbf6982ed62a9cd84e5a13d8751aa30fbbb7
-  languageName: node
-  linkType: hard
-
-"jest-matcher-utils@npm:^24.0.0":
-  version: 24.9.0
-  resolution: "jest-matcher-utils@npm:24.9.0"
-  dependencies:
-    chalk: ^2.0.1
-    jest-diff: ^24.9.0
-    jest-get-type: ^24.9.0
-    pretty-format: ^24.9.0
-  checksum: e9dcd4c7a0bf52dccb4890de7ac2da3e857af067e71633b730fdc865dd271b8a2c3d68a2761d5ca6060ea4a455be42176f58462006468b8eb7c216921251e2ee
   languageName: node
   linkType: hard
 
@@ -22108,13 +21985,6 @@ __metadata:
     pretty-format: ^29.0.3
     semver: ^7.3.5
   checksum: 412c0fc4c12c14470aa33beeddfeb04fa0d5724235321e8284b52097c74c97ada40ea52f5ac52a8e01e6d42dd5894b9a0260577d30c8c723ca84fcc7a60bd40c
-  languageName: node
-  linkType: hard
-
-"jest-transform-stub@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "jest-transform-stub@npm:2.0.0"
-  checksum: c46134257e5fb047f5952e4a4a1339925dd009da15aa8d3310ba1d3e4d22266ed6c675cd18e58c9d5ca2246718d6cc8ff00ea6a4b6f3b2a6b285b6426f6ae8fe
   languageName: node
   linkType: hard
 
@@ -28098,18 +27968,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^24.9.0":
-  version: 24.9.0
-  resolution: "pretty-format@npm:24.9.0"
-  dependencies:
-    "@jest/types": ^24.9.0
-    ansi-regex: ^4.0.0
-    ansi-styles: ^3.2.0
-    react-is: ^16.8.4
-  checksum: ba9291c8dafd50d2fea1fbad5d2863a6f94e0c8835cce9778ec03bc11bb0f52b9ed0e4ee56aaa331d022ccae2fe52b92f73465a0af58fd0edb59deb6391c6847
-  languageName: node
-  linkType: hard
-
 "pretty-format@npm:^26.5.2, pretty-format@npm:^26.6.2":
   version: 26.6.2
   resolution: "pretty-format@npm:26.6.2"
@@ -29554,7 +29412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.12.0, react-is@npm:^16.13.0, react-is@npm:^16.13.1, react-is@npm:^16.6.0, react-is@npm:^16.7.0, react-is@npm:^16.8.3, react-is@npm:^16.8.4":
+"react-is@npm:^16.12.0, react-is@npm:^16.13.0, react-is@npm:^16.13.1, react-is@npm:^16.6.0, react-is@npm:^16.7.0, react-is@npm:^16.8.3":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f

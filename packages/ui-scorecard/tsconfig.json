@@ -8,7 +8,7 @@
   ],
   "exclude": [
     ".eslintrc.js",
-    "dts",
-    "lib"
+    "cjs",
+    "dts"
   ]
 }

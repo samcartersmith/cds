@@ -15,8 +15,8 @@
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
     },
-    "a11y": {
-      "executor": "@cbhq/ui-mobile-a11y-engine:audit",
+    "audit-a11y": {
+      "executor": "@cbhq/ui-scorecard:audit-a11y",
       "dependsOn": ["^build", "test"]
     },
     "build": {

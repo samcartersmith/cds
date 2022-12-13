@@ -1,9 +1,0 @@
-{
-  "executors": {
-    "audit": {
-      "implementation": "./cjs/executors/audit/impl.cjs",
-      "schema": "./src/executors/audit/schema.json",
-      "description": "Output a11y test report"
-    }
-  }
-}

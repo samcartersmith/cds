@@ -38,9 +38,6 @@ build:
         name: package-d3
         path: ./packages/d3/publish.Dockerfile
     - BaldurNode:
-        name: package-ui-mobile-a11y-engine
-        path: ./packages/ui-mobile-a11y-engine/publish.Dockerfile
-    - BaldurNode:
         name: package-ui-mobile-playground
         path: ./packages/ui-mobile-playground/publish.Dockerfile
     - BaldurNode:
