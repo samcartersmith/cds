@@ -41,6 +41,10 @@ build:
         name: package-ui-mobile-playground
         path: ./packages/ui-mobile-playground/publish.Dockerfile
     - BaldurNode:
+        name: package-ui-scorecard
+        path: ./packages/ui-scorecard/publish.Dockerfile
+        autobuild: false
+    - BaldurNode:
         name: package-cds-utils
         path: ./packages/utils/publish.Dockerfile
     - BaldurNode:

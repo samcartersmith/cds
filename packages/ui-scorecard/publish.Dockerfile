@@ -13,7 +13,7 @@ RUN yarn --immutable
 RUN yarn nx run ui-scorecard:build
 
 # Prepare the package for publish
-RUN cd packages/ui-scorecard && npm pack
+RUN cd packages/ui-scorecard && yarn pack 
 RUN mv /repo/packages/ui-scorecard /shared
 
 WORKDIR /shared
