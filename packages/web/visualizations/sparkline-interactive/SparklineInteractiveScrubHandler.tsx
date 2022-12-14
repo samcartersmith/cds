@@ -137,6 +137,7 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
       }, 20),
     [setXPos],
   );
+
   const safelyUpdatePosition = useCallback(debouncedUpdatePositionHandler, [
     debouncedUpdatePositionHandler,
   ]);
@@ -232,6 +233,7 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
     },
     [steps, xPos],
   );
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLSpanElement>) => {
       const multiSkip = !!e.shiftKey;
@@ -275,8 +277,8 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
       {!disabled && (
         <div
           ref={observe}
-          role="none"
-          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+          role="button"
+          aria-label="Price chart (use arrow keys to adjust view)"
           tabIndex={0}
           onKeyDown={handleKeyDown}
           onMouseEnter={handleMouseEnter}

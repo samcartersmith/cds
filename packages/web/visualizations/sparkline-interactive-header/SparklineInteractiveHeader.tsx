@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useCallback, useImperativeHandle, useRef } from 'react';
+import React, { forwardRef, memo, useCallback, useImperativeHandle, useMemo, useRef } from 'react';
 import { subheadIconSignMap } from '@cbhq/cds-common/tokens/sparkline';
 import {
   SparklineInteractiveHeaderProps,
@@ -6,8 +6,10 @@ import {
   SparklineInteractiveHeaderValues,
   SparklineInteractiveSubHead,
 } from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
+import { debounce } from '@cbhq/cds-common/utils/debounce';
 import { interpolateSubHeadText } from '@cbhq/cds-common/visualizations/interpolateSubHeadText';
 
+import { AccessibilityAnnouncer } from '../../AccessibilityAnnouncer/AccessibilityAnnouncer';
 import { usePalette } from '../../hooks/usePalette';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 import { VStack } from '../../layout';
@@ -56,6 +58,23 @@ const SparklineInteractiveHeaderStable = memo(
         }
       }, []);
 
+      // To make sure we don't spam the screen reader, we debounce this update
+      const debouncedUpdateMessage = useMemo(
+        () =>
+          debounce((subHead: SparklineInteractiveSubHead) => {
+            if (subHeadA11yRef.current) {
+              const message = `${valuesRef.current.label} was ${valuesRef.current.title} ${
+                subHead.accessibilityLabel
+              } ${interpolateSubHeadText(subHead)}`;
+              subHeadA11yRef.current.innerText = message;
+            }
+          }, 500),
+        [],
+      );
+      const safelyUpdateSubHeadA11yRef = useCallback(debouncedUpdateMessage, [
+        debouncedUpdateMessage,
+      ]);
+
       const updateSubHead = useCallback(
         (subHead: SparklineInteractiveSubHead) => {
           const prevSubHead = valuesRef.current?.subHead;
@@ -75,16 +94,15 @@ const SparklineInteractiveHeaderStable = memo(
               subHeadAccessoryRef.current.innerText = subHead.accessoryText ?? '';
             }
 
+            // Update a11y message
             if (subHeadA11yRef.current) {
-              subHeadA11yRef.current.ariaLabel = `${
-                subHead.accessibilityLabel
-              } ${interpolateSubHeadText(subHead)}`;
+              safelyUpdateSubHeadA11yRef(subHead);
             }
 
             valuesRef.current = { ...valuesRef.current, subHead };
           }
         },
-        [palette],
+        [palette, safelyUpdateSubHeadA11yRef],
       );
 
       // update is triggered from a parent component.
@@ -128,7 +146,7 @@ const SparklineInteractiveHeaderStable = memo(
 
       const TextSubHead = createText(compact ? 'label1' : 'title4');
       const subHead = !!defaultSubHead && (
-        <div ref={subHeadA11yRef}>
+        <>
           <TextSubHead tabularNumbers as="span">
             <span ref={subHeadIconRef} style={subHeadColorStyles}>
               {subheadIconSignMap[defaultSubHead.sign]}
@@ -138,11 +156,17 @@ const SparklineInteractiveHeaderStable = memo(
             </span>
           </TextSubHead>
           {!!defaultSubHead.accessoryText && (
-            <TextSubHead tabularNumbers as="span" color="foregroundMuted" spacingStart={1}>
+            <TextSubHead
+              tabularNumbers
+              as="span"
+              color="foregroundMuted"
+              spacingStart={1}
+              aria-hidden
+            >
               <span ref={subHeadAccessoryRef}>{defaultSubHead.accessoryText}</span>
             </TextSubHead>
           )}
-        </div>
+        </>
       );
 
       const TextTitle = createText(compact ? 'title1' : 'display3');
@@ -156,16 +180,13 @@ const SparklineInteractiveHeaderStable = memo(
       );
 
       return (
-        <div
-          data-testid={testID}
-          style={{ width: '100%' }}
-          aria-live="polite"
-          role="region"
-          aria-label="Asset summary"
-        >
-          {labelNode ?? label}
-          {title}
-        </div>
+        <>
+          <div data-testid={testID} style={{ width: '100%' }} aria-hidden>
+            {labelNode ?? label}
+            {title}
+          </div>
+          <AccessibilityAnnouncer ref={subHeadA11yRef} />
+        </>
       );
     },
   ),

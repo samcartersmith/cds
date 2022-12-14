@@ -10,7 +10,6 @@ import {
 } from '../types/SparklineInteractiveHeaderBaseProps';
 
 export type SparklinePeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
-
 type SparklineInteractivePriceProps = Omit<
   SparklineInteractiveBaseProps<SparklinePeriod>,
   'periods' | 'defaultPeriod' | 'formatMinMaxLabel' | 'formatDate'
@@ -26,6 +25,14 @@ type SparklineInteractivePriceProps = Omit<
   };
 
 export const DEFAULT_PERIOD = 'day';
+const DATE_TIME_OPTIONS = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+} as const;
 
 const periodsAlt = [
   {
@@ -222,9 +229,9 @@ function generateSubHead(
     sign: increase ? 'upwardTrend' : 'downwardTrend',
     variant: increase ? 'positive' : 'negative',
     // NOTE: Ensure this string is localized in your product implementation
-    accessibilityLabel: increase
-      ? 'Price increase in the amount of'
-      : 'Price reduction in the amount of',
+    accessibilityLabel: `on ${new Intl.DateTimeFormat('en-US', DATE_TIME_OPTIONS).format(
+      point?.date,
+    )}, ${increase ? 'up' : 'down'}`,
     priceChange: `$${numToLocaleString(Math.abs(point.value - firstPoint.value))}`,
   };
 
@@ -296,7 +303,7 @@ export const sparklineInteractiveWithHeaderBuilder = ({
     const header = (
       <SparklineInteractiveHeader
         ref={headerRef}
-        defaultLabel="Bitcoin Price"
+        defaultLabel={labelNode ? 'CustomHeader' : 'Bitcoin Price'}
         defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
         defaultSubHead={generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData)}
         trailing={trailing}
