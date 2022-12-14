@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.5.0 (12/14/2022, 01:57 PM PST)
+
+#### 🚀 Updates
+
+- **[Table]** Add A11Y props and update docs to show TableCaption usage. [#1468](https://github.cbhq.net/frontend/cds/pull/1468), [A11Y-216](https://jira.coinbase-corp.com/browse/A11Y-216)
+- **[TableCaption]** Add caption component for semantic table labeling. [#1466](https://github.cbhq.net/frontend/cds/pull/1466), [A11Y-216](https://jira.coinbase-corp.com/browse/A11Y-216)
+
+#### 🐞 Fixes
+
+- **[SparklineInteractiveHeader]** Provide a friendly announcement when interactive with Sparkline. [#1467](https://github.cbhq.net/frontend/cds/pull/1467), [A11Y-274](https://jira.coinbase-corp.com/browse/A11Y-274)
+
+#### 📘 Misc
+
+- **[A11y Measurement]** Remove ui-mobile-a11y-engine. Move executor script to ui-scorecard. [#1460](https://github.cbhq.net/frontend/cds/pull/1460), [CDS-2989](https://jira.coinbase-corp.com/browse/CDS-2989)
+
 ## 3.4.3 (12/12/2022, 10:04 AM PST)
 
 This is an artificial version bump with no new change.
