@@ -1,0 +1,29 @@
+`TableCaption` sets a caption or title on your [Table](/components/table) and is the preferred method for giving a table an accessible label. It renders a [caption](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption) as the base element, so in addition to our custom props, all of the normal `<caption>` attributes are available to you. When using a `TableCaption`, set it as the first child in your `Table` just as you would a normal `<caption>` element to ensure it is properly rendered.
+
+Simply pass the string you want to use for the caption as `children`:
+
+```jsx live
+function StringExample() {
+  return (
+    <Table bordered>
+      <TableCaption>String Example</TableCaption>
+    </Table>
+  );
+}
+```
+
+If you need more flexibility, you can provide custom `children` instead:
+
+```jsx live
+function CustomExample() {
+  return (
+    <Table bordered>
+      <TableCaption>
+        <TextTitle2 as="h2" underline>
+          Custom Example
+        </TextTitle2>
+      </TableCaption>
+    </Table>
+  );
+}
+```

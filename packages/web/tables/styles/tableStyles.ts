@@ -41,6 +41,10 @@ export const tableVariantBase = css`
 
 export const tableVariantGraph = css`
   table {
+    & > caption {
+      border-bottom: ${TABLE_BORDER};
+    }
+
     & > tfoot {
       border-top: ${TABLE_BORDER};
     }
@@ -78,6 +82,10 @@ export const tableVariantGraph = css`
 
 export const tableVariantRuled = css`
   table {
+    & > caption {
+      border-bottom: ${TABLE_BORDER};
+    }
+
     & > tfoot {
       border-top: ${TABLE_BORDER};
     }
@@ -103,7 +111,7 @@ export const tableVariantRuled = css`
 
 export const tableBorder = css`
   border: ${TABLE_BORDER};
-  border-radius: ${borderRadius.standard};
+  border-radius: ${borderRadius.rounded};
 `;
 
 export const tableStickyClassName = css`

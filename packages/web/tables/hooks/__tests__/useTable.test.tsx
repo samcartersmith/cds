@@ -1,17 +1,11 @@
-import '@testing-library/jest-dom';
-
 import { PropsWithChildren } from 'react';
-import { render, screen } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { ThemeProvider } from '../../../system/ThemeProvider';
-import { tableHeaderStaticClassName, tableStickyClassName } from '../../styles/tableStyles';
 import { Table } from '../../Table';
 import { TableBody } from '../../TableBody';
-import { TableCell } from '../../TableCell';
 import { TableFooter } from '../../TableFooter';
 import { TableHeader } from '../../TableHeader';
-import { TableRow } from '../../TableRow';
 import {
   compactCellSpacing,
   defaultCellSpacing,
@@ -25,14 +19,16 @@ const HOOK_ERROR = Error(
   'This component must be wrapped in a TableHeader, TableBody or TableFooter.',
 );
 describe('useTableTag', () => {
-  it('Throw an error warning devs to use this hook in context', async () => {
+  it('Throw an error warning devs to use this hook in context', () => {
     const { result: sectionResult } = renderHook(() => useTableSectionTag());
     const { result: cellResult } = renderHook(() => useTableCellTag());
+    const { result: cellSpacingResult } = renderHook(() => useTableCellSpacing());
     expect(sectionResult.error).toEqual(HOOK_ERROR);
     expect(cellResult.error).toEqual(HOOK_ERROR);
+    expect(cellSpacingResult.error).toEqual(HOOK_ERROR);
   });
 
-  it('Get proper section tag for TableHeader', async () => {
+  it('Get proper section tag for TableHeader', () => {
     const wrapper = ({ children }: PropsWithChildren<unknown>) => (
       <TableHeader>{children}</TableHeader>
     );
@@ -41,14 +37,14 @@ describe('useTableTag', () => {
     expect(result.current).toBe('thead');
   });
 
-  it('Get proper section tag for TableBody', async () => {
+  it('Get proper section tag for TableBody', () => {
     const wrapper = ({ children }: PropsWithChildren<unknown>) => <TableBody>{children}</TableBody>;
     const { result } = renderHook(() => useTableSectionTag(), { wrapper });
 
     expect(result.current).toBe('tbody');
   });
 
-  it('Get proper section tag for TableFooter', async () => {
+  it('Get proper section tag for TableFooter', () => {
     const wrapper = ({ children }: PropsWithChildren<unknown>) => (
       <TableFooter>{children}</TableFooter>
     );
@@ -57,7 +53,7 @@ describe('useTableTag', () => {
     expect(result.current).toBe('tfoot');
   });
 
-  it('Get proper cell tag in TableHeader', async () => {
+  it('Get proper cell tag in TableHeader', () => {
     const wrapper = ({ children }: PropsWithChildren<unknown>) => (
       <TableHeader>{children}</TableHeader>
     );
@@ -66,14 +62,14 @@ describe('useTableTag', () => {
     expect(result.current).toBe('th');
   });
 
-  it('Get proper cell tag in TableBody', async () => {
+  it('Get proper cell tag in TableBody', () => {
     const wrapper = ({ children }: PropsWithChildren<unknown>) => <TableBody>{children}</TableBody>;
     const { result } = renderHook(() => useTableCellTag(), { wrapper });
 
     expect(result.current).toBe('td');
   });
 
-  it('Get proper cell tag in TableFooter', async () => {
+  it('Get proper cell tag in TableFooter', () => {
     const wrapper = ({ children }: PropsWithChildren<unknown>) => (
       <TableFooter>{children}</TableFooter>
     );
@@ -82,14 +78,14 @@ describe('useTableTag', () => {
     expect(result.current).toBe('td');
   });
 
-  it('Get proper cell tag in TableBody when using the as prop', async () => {
+  it('Get proper cell tag in TableBody when using the as prop', () => {
     const wrapper = ({ children }: PropsWithChildren<unknown>) => <TableBody>{children}</TableBody>;
     const { result } = renderHook(() => useTableCellTag('th'), { wrapper });
 
     expect(result.current).toBe('th');
   });
 
-  it('Get proper cell spacing', async () => {
+  it('Get proper cell spacing', () => {
     const cellSpacing = {
       outer: { spacingVertical: 0, spacingHorizontal: 0 },
       inner: { spacingVertical: 0 },
@@ -105,7 +101,7 @@ describe('useTableTag', () => {
     expect(result.current).toEqual(cellSpacing);
   });
 
-  it('Get default cell spacing', async () => {
+  it('Get default cell spacing', () => {
     const wrapper = ({ children }: PropsWithChildren<unknown>) => (
       <Table>
         <TableBody>{children}</TableBody>
@@ -116,7 +112,7 @@ describe('useTableTag', () => {
     expect(result.current).toEqual(defaultCellSpacing);
   });
 
-  it('Get default cell spacing dense', async () => {
+  it('Get default cell spacing dense', () => {
     const wrapper = ({ children }: PropsWithChildren<unknown>) => (
       <ThemeProvider spectrum="light" scale="xSmall">
         <Table>
@@ -129,7 +125,7 @@ describe('useTableTag', () => {
     expect(result.current).toEqual(defaultDenseCellSpacing);
   });
 
-  it('Get compact cell spacing', async () => {
+  it('Get compact cell spacing', () => {
     const wrapper = ({ children }: PropsWithChildren<unknown>) => (
       <Table compact>
         <TableBody>{children}</TableBody>
@@ -140,57 +136,9 @@ describe('useTableTag', () => {
     expect(result.current).toEqual(compactCellSpacing);
   });
 
-  it('TableHeader with sticky gets proper className', async () => {
-    const TEST_ID = 'table-header';
+  it('Get cell spacing can skip as validation', () => {
+    const { result } = renderHook(() => useTableCellSpacing({ skipAsValidation: true }));
 
-    render(
-      <Table>
-        <TableHeader sticky testID={TEST_ID}>
-          <TableRow>
-            <TableCell title="Header 1" />
-            <TableCell title="Header 2" />
-            <TableCell title="Header 3" />
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow>
-            <TableCell title="Header 1" />
-            <TableCell title="Header 2" />
-            <TableCell title="Header 3" />
-          </TableRow>
-        </TableBody>
-      </Table>,
-    );
-
-    const tableHeader: HTMLElement | null = screen.getByTestId(TEST_ID);
-    expect(tableHeader).toHaveClass(tableHeaderStaticClassName);
-    expect(tableHeader).toHaveClass(tableStickyClassName);
-  });
-
-  it('TableHeader without sticky gets proper className', async () => {
-    const TEST_ID = 'table-header';
-
-    render(
-      <Table>
-        <TableHeader testID={TEST_ID}>
-          <TableRow>
-            <TableCell title="Header 1" />
-            <TableCell title="Header 2" />
-            <TableCell title="Header 3" />
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow>
-            <TableCell title="Header 1" />
-            <TableCell title="Header 2" />
-            <TableCell title="Header 3" />
-          </TableRow>
-        </TableBody>
-      </Table>,
-    );
-
-    const tableHeader: HTMLElement | null = screen.getByTestId(TEST_ID);
-    expect(tableHeader).toHaveClass(tableHeaderStaticClassName);
-    expect(tableHeader).not.toHaveClass(tableStickyClassName);
+    expect(result.error).toBeUndefined();
   });
 });

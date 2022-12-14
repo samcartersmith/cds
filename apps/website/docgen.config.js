@@ -143,6 +143,7 @@ module.exports = {
     'overlays/Tray/Tray',
     'tables/Table',
     'tables/TableBody',
+    'tables/TableCaption',
     'tables/TableCell',
     'tables/TableCellFallback',
     'tables/TableFooter',

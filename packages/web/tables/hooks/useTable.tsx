@@ -28,11 +28,15 @@ export const compactCellSpacing: TableCellSpacing = {
   inner: { spacingHorizontal: 1, spacingVertical: 1 },
 };
 
-export const useTableContext = () => {
+type UseTableContext = {
+  skipAsValidation?: boolean;
+};
+
+export const useTableContext = ({ skipAsValidation }: UseTableContext = {}) => {
   const { as } = useContext(TableSectionContext);
   const { cellSpacing, compact } = useContext(TableContext);
 
-  if (!as) {
+  if (!skipAsValidation && !as) {
     throw new Error('This component must be wrapped in a TableHeader, TableBody or TableFooter.');
   }
 
@@ -56,9 +60,10 @@ export const useTableSectionTag = () => {
 type UseTableCellSpacing = {
   outer?: SpacingProps;
   inner?: SpacingProps;
-};
+} & UseTableContext;
+
 export const useTableCellSpacing = (props?: UseTableCellSpacing) => {
-  const { cellSpacing, compact } = useTableContext();
+  const { cellSpacing, compact } = useTableContext({ skipAsValidation: props?.skipAsValidation });
   const defaultCellSpacingWithScale = useScaleConditional({
     dense: defaultDenseCellSpacing,
     normal: defaultCellSpacing,

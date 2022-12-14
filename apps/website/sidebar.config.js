@@ -527,6 +527,11 @@ const sidebars = {
           items: [
             'components/tables/Table/table',
             { type: 'doc', id: 'components/tables/TableBody/table-body', label: 'Table Body' },
+            {
+              type: 'doc',
+              id: 'components/tables/TableCaption/table-caption',
+              label: 'Table Caption',
+            },
             { type: 'doc', id: 'components/tables/TableCell/table-cell', label: 'Table Cell' },
             {
               type: 'doc',
