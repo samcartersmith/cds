@@ -1,5 +1,6 @@
 import { arrayToObject, mapValues, toCssVarFn } from '@cbhq/cds-utils/index';
 
+import { responsiveClassName } from './configs/constants';
 import { spacingConfig, spacingDirections, spacingScale } from './configs/spacingConfig';
 
 export const escape = <T extends number>(input: T) => String(input).replace('.', '\\\\.') as `${T}`;
@@ -17,7 +18,9 @@ export const paddingStylesForDevice = (device: string) => {
         const escapedPadding = `var(--spacing-${escape(spacing)})`;
         return `
           @media (${device}) {
-            ${[fullAttribute]}: ${escapedPadding}
+            &.${responsiveClassName} {
+              ${[fullAttribute]}: ${escapedPadding}
+            }
           }
         `;
       });
