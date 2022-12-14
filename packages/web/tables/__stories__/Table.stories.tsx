@@ -10,10 +10,9 @@ import { HStack } from '../../alpha/HStack';
 import { Button } from '../../buttons';
 import { CellMedia } from '../../cells';
 import { Switch } from '../../controls/Switch';
-import { TextDisplay2 } from '../../typography';
 import { assetHubMock } from '../__mocks__';
 import { useSortableCell, UseSortableCellProps } from '../hooks/useSortableCell';
-import { Table, TableBody, TableCell, TableHeader, TableRow, TableVariant } from '..';
+import { Table, TableBody, TableCaption, TableCell, TableHeader, TableRow, TableVariant } from '..';
 
 const LABELS = ['name', 'ticker', 'appStatus', 'type', 'bookmarked'];
 const LABELS_SHORT = LABELS.slice(0, 3);
@@ -39,51 +38,50 @@ export const SampleTable = () => {
   });
 
   return (
-    <Table bordered={hasBorder} variant={variant}>
-      <TableHeader>
-        <TableRow fullWidth>
-          <HStack alignItems="center" justifyContent="space-between" flexGrow={1}>
-            <TextDisplay2 as="h2">Sample Table</TextDisplay2>
-            <HStack alignItems="center" justifyContent="space-between" gap={1}>
-              {variants.map((v: TableVariant) => (
-                <Button
-                  compact
-                  key={v}
-                  variant={v === variant ? 'primary' : 'secondary'}
-                  onPress={() => setVariant(v)}
-                >
-                  {v}
-                </Button>
-              ))}
-              <Switch onChange={toggle} checked={hasBorder}>
-                Border
-              </Switch>
-            </HStack>
-          </HStack>
-        </TableRow>
-        <TableRow backgroundColor="backgroundAlternate">
-          {LABELS_SHORT.map((label) => (
-            <TableCell key={`${label}--idk`} title={startCase(label)} />
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {data.map((row) => (
-          <TableRow key={`row-${row.name}--${row.appSubmittedAt}`} {...pressEvents(row.name)}>
-            {Object.entries(row)
-              .filter(([label]) => LABELS_SHORT.includes(label))
-              .map(([key, val]) => (
-                <TableCell key={`${key}--idk`}>{val}</TableCell>
-              ))}
-          </TableRow>
+    <>
+      <HStack alignItems="center" justifyContent="flex-end" gap={1} spacingBottom={3}>
+        {variants.map((v: TableVariant) => (
+          <Button
+            compact
+            key={v}
+            variant={v === variant ? 'primary' : 'secondary'}
+            onPress={() => setVariant(v)}
+          >
+            {v}
+          </Button>
         ))}
-      </TableBody>
-    </Table>
+        <Switch onChange={toggle} checked={hasBorder}>
+          Border
+        </Switch>
+      </HStack>
+      <Table bordered={hasBorder} variant={variant}>
+        <TableCaption as="h2">Sample Table</TableCaption>
+        <TableHeader>
+          <TableRow backgroundColor="backgroundAlternate">
+            {LABELS_SHORT.map((label) => (
+              <TableCell key={`${label}--idk`} title={startCase(label)} />
+            ))}
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {data.map((row) => (
+            <TableRow key={`row-${row.name}--${row.appSubmittedAt}`} {...pressEvents(row.name)}>
+              {Object.entries(row)
+                .filter(([label]) => LABELS_SHORT.includes(label))
+                .map(([key, val]) => (
+                  <TableCell key={`${key}--idk`}>{val}</TableCell>
+                ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </>
   );
 };
 
 type Columns = 'name' | 'ticker' | 'appStatus';
-export const SortingExample = () => {
+
+export const StickyHeaderSortingExample = () => {
   const [{ sortBy, sortDirection }, setSort] = useState<{
     sortBy: Columns;
     sortDirection: UseSortableCellProps['sortDirection'];
@@ -105,15 +103,10 @@ export const SortingExample = () => {
 
   return (
     <Table bordered variant="ruled" maxHeight={500}>
+      <TableCaption as="h2" backgroundColor="background">
+        Sticky Header + Sorting Table
+      </TableCaption>
       <TableHeader sticky>
-        <TableRow fullWidth>
-          <HStack alignItems="center" justifyContent="space-between" flexGrow={1}>
-            <TextDisplay2 as="h2">Your assets</TextDisplay2>
-            <Button variant="secondary" compact onPress={() => console.log('Fake Export')}>
-              Export
-            </Button>
-          </HStack>
-        </TableRow>
         <TableRow backgroundColor="backgroundAlternate">
           <TableCell title="Asset" {...getSortableProps('name')} />
           <TableCell title="Ticker" {...getSortableProps('name')} />
@@ -149,15 +142,15 @@ export const FixedLayoutExample = () => {
 
   return (
     <>
-      <HStack spacingBottom={2} alignItems="center" justifyContent="space-between" flexGrow={1}>
-        <TextDisplay2 as="h2">Sample Table</TextDisplay2>
-        <HStack alignItems="center" justifyContent="space-between" gap={1}>
-          <Switch onChange={toggle} checked={isFixed}>
-            Fixed Layout
-          </Switch>
-        </HStack>
+      <HStack spacingBottom={3} alignItems="center" justifyContent="flex-end" flexGrow={1}>
+        <Switch onChange={toggle} checked={isFixed}>
+          Fixed Layout
+        </Switch>
       </HStack>
       <Table tableLayout={isFixed ? 'fixed' : 'auto'} variant="graph" bordered>
+        <TableCaption as="h2" backgroundColor="background">
+          Fixed Layout Table
+        </TableCaption>
         <TableHeader>
           <TableRow backgroundColor="backgroundAlternate">
             {LABELS.map((label, index) => (
@@ -191,62 +184,71 @@ export const FixedLayoutExample = () => {
 
 const COMPACT_LABELS = ['name', 'ticker', 'appStatus'];
 const mediaTypes: CellMediaType[] = ['asset', 'avatar', 'icon', 'image', 'pictogram'];
+
 export const CompactExample = () => {
   const [compact, { toggle }] = useToggler(true);
   const data = assetHubMock.slice(0, 20);
 
   return (
-    <Table variant="ruled" bordered compact={compact}>
-      <TableHeader>
-        <TableRow fullWidth>
-          <HStack alignItems="center" justifyContent="space-between" flexGrow={1}>
-            <TextDisplay2 as="h2">Compact Table</TextDisplay2>
-            <Switch onChange={toggle} checked={compact}>
-              Compact
-            </Switch>
-          </HStack>
-        </TableRow>
-        <TableRow backgroundColor="backgroundAlternate">
-          {COMPACT_LABELS.map((label) => (
-            <TableCell key={`header-cell-${label}`} title={label} />
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        <TableRow>
-          <TableCell title="Title" />
-          <TableCell title="Title" />
-          <TableCell title="Title" />
-        </TableRow>
-        <TableRow>
-          <TableCell title="Title" subtitle="A description" />
-          <TableCell title="Title" subtitle="A description" />
-          <TableCell title="Title" subtitle="A description" />
-        </TableRow>
-        {data.map((row, index) => (
-          <TableRow key={`row-${row.name}--${row.appSubmittedAt}`}>
-            {Object.entries(row)
-              .filter(([label]) => COMPACT_LABELS.includes(label))
-              .map(([key, val]) => {
-                const mediaType = mediaTypes[index % mediaTypes.length];
-                return (
-                  <TableCell
-                    key={`cell-${key}`}
-                    title={`${val}`}
-                    subtitle="Some subtitle"
-                    start={
-                      mediaType === 'image' ? (
-                        <CellMedia type="image" source="https://images.coinbase.com/avatar?s=350" />
-                      ) : (
-                        <CellMedia type="avatar" source="https://images.coinbase.com/avatar?s=56" />
-                      )
-                    }
-                  />
-                );
-              })}
+    <>
+      <HStack alignItems="center" justifyContent="flex-end" spacingBottom={3}>
+        <Switch onChange={toggle} checked={compact}>
+          Compact
+        </Switch>
+      </HStack>
+      <Table variant="ruled" bordered compact={compact}>
+        <TableCaption as="h2" backgroundColor="background">
+          Compact Table
+        </TableCaption>
+        <TableHeader>
+          <TableRow backgroundColor="backgroundAlternate">
+            {COMPACT_LABELS.map((label) => (
+              <TableCell key={`header-cell-${label}`} title={label} />
+            ))}
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell title="Title" />
+            <TableCell title="Title" />
+            <TableCell title="Title" />
+          </TableRow>
+          <TableRow>
+            <TableCell title="Title" subtitle="A description" />
+            <TableCell title="Title" subtitle="A description" />
+            <TableCell title="Title" subtitle="A description" />
+          </TableRow>
+          {data.map((row, index) => (
+            <TableRow key={`row-${row.name}--${row.appSubmittedAt}`}>
+              {Object.entries(row)
+                .filter(([label]) => COMPACT_LABELS.includes(label))
+                .map(([key, val]) => {
+                  const mediaType = mediaTypes[index % mediaTypes.length];
+                  return (
+                    <TableCell
+                      key={`cell-${key}`}
+                      title={`${val}`}
+                      subtitle="Some subtitle"
+                      start={
+                        mediaType === 'image' ? (
+                          <CellMedia
+                            type="image"
+                            source="https://images.coinbase.com/avatar?s=350"
+                          />
+                        ) : (
+                          <CellMedia
+                            type="avatar"
+                            source="https://images.coinbase.com/avatar?s=56"
+                          />
+                        )
+                      }
+                    />
+                  );
+                })}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </>
   );
 };

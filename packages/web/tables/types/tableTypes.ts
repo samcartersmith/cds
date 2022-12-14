@@ -1,5 +1,10 @@
 import { ReactNode } from 'react';
-import { CellSpacing, DimensionValue, SharedProps } from '@cbhq/cds-common';
+import {
+  CellSpacing,
+  DimensionValue,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '@cbhq/cds-common';
 
 /**
  * The table variant will be provided via context and available
@@ -29,7 +34,7 @@ export type TableProps = {
    */
   children: ReactNode;
   /**
-   * When provided, we'll apply a bordered around the entire table
+   * When set, a border will be applied around the entire table
    */
   bordered?: boolean;
   /**
@@ -45,4 +50,6 @@ export type TableProps = {
   height?: DimensionValue;
   /** Set a maximum height. */
   maxHeight?: DimensionValue;
-} & SharedProps;
+} & SharedProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabelledBy' | 'accessibilityLabel'> &
+  Omit<React.HTMLAttributes<HTMLTableElement>, 'dangerouslySetInnerHTML'>;

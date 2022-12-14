@@ -20,6 +20,8 @@ export const Table = memo(
     compact,
     maxHeight,
     height,
+    accessibilityLabelledBy,
+    accessibilityLabel,
     ...rest
   }: TableProps) => {
     const variantStyles = useTableStyles({ variant, bordered });
@@ -40,7 +42,14 @@ export const Table = memo(
     return (
       <TableContext.Provider value={value}>
         <div className={variantStyles} style={containerStyles}>
-          <table className={tableStyles} data-testid={testID} {...rest} tabIndex={0}>
+          <table
+            className={tableStyles}
+            aria-labelledby={accessibilityLabelledBy}
+            aria-label={accessibilityLabel}
+            data-testid={testID}
+            {...rest}
+            tabIndex={0}
+          >
             {children}
           </table>
         </div>

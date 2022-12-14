@@ -1,21 +1,19 @@
 ```jsx live
-function TableCellFallbackExample() {
+function TableCellCompactExample() {
   const MOCK_DATA = Object.entries(mocks.assets).slice(0, 20);
   const mediaTypes = ['Text', 'Asset', 'Image', 'Avatar'];
   const [compact, { toggle }] = useToggler(true);
 
   return (
-    <ThemeProvider spectrum="light">
+    <>
+      <HStack justifyContent="flex-end" spacingBottom={3}>
+        <Switch onChange={toggle} checked={compact}>
+          Compact
+        </Switch>
+      </HStack>
       <Table variant="ruled" bordered compact={compact}>
+        <TableCaption>Compact Example</TableCaption>
         <TableHeader>
-          <TableRow fullWidth>
-            <HStack alignItems="center" justifyContent="space-between" flexGrow={1}>
-              <TextDisplay2 as="h2">Compact example</TextDisplay2>
-              <Switch onChange={toggle} checked={compact}>
-                Compact
-              </Switch>
-            </HStack>
-          </TableRow>
           <TableRow backgroundColor="backgroundAlternate">
             {mediaTypes.map((label) => (
               <TableCell key={`header-cell-${label}`} title={label} />
@@ -52,7 +50,7 @@ function TableCellFallbackExample() {
           ))}
         </TableBody>
       </Table>
-    </ThemeProvider>
+    </>
   );
 }
 ```

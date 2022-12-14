@@ -1,7 +1,8 @@
-Because CDS Tables extend the [HTML Table spec](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table), any attr's available on [table](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table), [td](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td), [tr](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr), [th](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th), [tbody](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody), [thead](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead) and [tfoot](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot) are available to you. This means you can build complex tables as you would HTML Tables.
+Because CDS Tables extend the [HTML Table spec](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table), any attributes available on [table](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table), [td](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td), [tr](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr), [th](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th), [tbody](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody), [thead](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead), [tfoot](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot), and [caption](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption) are available to you. This means you can build a complex table as you would any normal HTML Table.
 
 ```jsx live
 <Table variant="graph" bordered>
+  <TableCaption>DOM Example</TableCaption>
   <TableHeader>
     <TableRow>
       <TableCell title="Transfer type" rowSpan={2} />
