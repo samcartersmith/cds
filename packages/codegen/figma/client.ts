@@ -65,5 +65,8 @@ export const FigmaClient = (personalAccessToken?: string) => {
         },
       });
     },
+    components: async (fileKey: string): Promise<AxiosResponse<Figma.FileComponentsResponse>> => {
+      return client.get(`files/${fileKey}/components`);
+    },
   };
 };

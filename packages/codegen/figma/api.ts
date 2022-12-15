@@ -792,6 +792,7 @@ export type ComponentMetadata = {
   readonly name: string;
   /** The description of the element as entered in the editor */
   readonly description: string;
+  lastUpdated: string;
 };
 
 export type FrameInfo = {

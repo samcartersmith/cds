@@ -569,6 +569,7 @@ const updateManifest = async (
       name: imgName,
       spectrum: props.spectrum,
       versionNum: -1,
+      lastUpdated: metadata.lastUpdated,
     };
 
     const nameAndSpectrum = `${imgName}-${props.spectrum}`;
@@ -638,7 +639,7 @@ const createManifestFile = async (destPath: string) => {
     dest: destPath,
     types: {
       manifestData:
-        'Record<string, Record<string, {variant: string;description: string;name: string;spectrum: string;versionNum: number;}>>',
+        'Record<string, Record<string, {variant: string;description: string;name: string;spectrum: string;versionNum: number;lastUpdated: string;}>>',
     },
   });
 };
@@ -666,8 +667,25 @@ const createTypes = async (names: IllustrationNamesMap, variants: string[]) => {
 };
 
 const createVersionNumManifest = async (destPath: string): Promise<VersionNumManifestStruct> => {
+  // sort function to sort by lastUpdated date
+  const sortByLastUpdated = (
+    [, prevMetadata]: [string, IllustrationSummary],
+    [, nextMetadata]: [string, IllustrationSummary],
+  ) => {
+    const prevDate = new Date(prevMetadata.lastUpdated).valueOf();
+    const nextDate = new Date(nextMetadata.lastUpdated).valueOf();
+
+    return prevDate - nextDate;
+  };
+
+  // sort manifest lastUpdated & restore into map
+  const sortedManifestByLastUpdated = Object.fromEntries(
+    Object.entries(localManifestData[FILE_FORMAT]).sort(sortByLastUpdated),
+  );
+
+  // create key value pairs with ordered manifest
   const versionNumManifest: VersionNumManifestStruct = reduce(
-    localManifestData[FILE_FORMAT],
+    sortedManifestByLastUpdated,
     (res, metadata) => {
       res[`${metadata.name}-${metadata.spectrum}`] = metadata.versionNum;
       return res;
@@ -675,6 +693,7 @@ const createVersionNumManifest = async (destPath: string): Promise<VersionNumMan
     {} as VersionNumManifestStruct,
   );
 
+  // generate versionNumManifest, order determines sortedIllustrationData order.
   await writeFile({
     template: 'objectMap.ejs',
     data: { versionNumManifest },
@@ -820,6 +839,20 @@ const main = async (deleteImgsDir = false) => {
     }
 
     if (!components) return;
+
+    // Get Components w/ Metadata
+    const {
+      data: {
+        meta: { components: componentsWithMetadata },
+      },
+    } = await figmaClient.components(ILLUSTRATION_FILE_ID);
+
+    // add lastUpdated to manifest data
+    componentsWithMetadata.forEach((cmptData) => {
+      if (components[cmptData.node_id]) {
+        components[cmptData.node_id].lastUpdated = cmptData.updated_at;
+      }
+    });
 
     // First check that every illustration have a unique name.
     // If it doesn't, then don't bother doing anything else cause

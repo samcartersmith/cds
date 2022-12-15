@@ -7,7 +7,14 @@ export const manifestData: Record<
   string,
   Record<
     string,
-    { variant: string; description: string; name: string; spectrum: string; versionNum: number }
+    {
+      variant: string;
+      description: string;
+      name: string;
+      spectrum: string;
+      versionNum: number;
+      lastUpdated: string;
+    }
   >
 > = {
   svg: {
@@ -18,6 +25,7 @@ export const manifestData: Record<
       name: 'defiEarnAnnouncement',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:11.092Z',
     },
     '4201:5036': {
       variant: 'spotRectangle',
@@ -26,6 +34,7 @@ export const manifestData: Record<
       name: 'protectedNotes',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:22.197Z',
     },
     '4201:5029': {
       variant: 'spotRectangle',
@@ -34,6 +43,7 @@ export const manifestData: Record<
       name: 'protectedNotes',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.624Z',
     },
     '4201:5057': {
       variant: 'spotRectangle',
@@ -42,6 +52,7 @@ export const manifestData: Record<
       name: 'transferCoins',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.529Z',
     },
     '4201:4943': {
       variant: 'heroSquare',
@@ -49,6 +60,7 @@ export const manifestData: Record<
       name: 'coinbaseOneDiscountedAmount',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:32.970Z',
     },
     '4201:4936': {
       variant: 'heroSquare',
@@ -57,6 +69,7 @@ export const manifestData: Record<
       name: 'coinbaseOneSavingFunds',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:35.333Z',
     },
     '4201:4883': {
       variant: 'heroSquare',
@@ -64,6 +77,7 @@ export const manifestData: Record<
       name: 'coinbaseOneInsufficientWallet',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:35.197Z',
     },
     '4201:4933': {
       variant: 'heroSquare',
@@ -72,6 +86,7 @@ export const manifestData: Record<
       name: 'coinbaseOneCardWarning',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:32.700Z',
     },
     '4201:4928': {
       variant: 'heroSquare',
@@ -79,6 +94,7 @@ export const manifestData: Record<
       name: 'coinbaseOnePhoneLightning',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-19T15:15:15.557Z',
     },
     '4201:4929': {
       variant: 'heroSquare',
@@ -86,6 +102,7 @@ export const manifestData: Record<
       name: 'coinbaseOneDocWarning',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:36.203Z',
     },
     '4201:4924': {
       variant: 'heroSquare',
@@ -93,6 +110,7 @@ export const manifestData: Record<
       name: 'coinbaseOneProtectedCrypto',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:32.777Z',
     },
     '4201:4902': {
       variant: 'heroSquare',
@@ -101,6 +119,7 @@ export const manifestData: Record<
       name: 'fileYourCryptoTaxesCheck',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:32.818Z',
     },
     '4201:4898': {
       variant: 'heroSquare',
@@ -109,6 +128,7 @@ export const manifestData: Record<
       name: 'fileYourCryptoTaxes',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:32.822Z',
     },
     '4201:4911': {
       variant: 'heroSquare',
@@ -116,6 +136,7 @@ export const manifestData: Record<
       name: 'p2pGifting',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.628Z',
     },
     '4835:1659': {
       variant: 'heroSquare',
@@ -124,6 +145,7 @@ export const manifestData: Record<
       name: 'collectableNfts',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:52:09.546Z',
     },
     '4201:4888': {
       variant: 'heroSquare',
@@ -131,6 +153,7 @@ export const manifestData: Record<
       name: 'exploreDecentralizedApps',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.741Z',
     },
     '4201:4942': {
       variant: 'heroSquare',
@@ -138,6 +161,7 @@ export const manifestData: Record<
       name: 'desktopAuthorized',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.238Z',
     },
     '4201:4923': {
       variant: 'heroSquare',
@@ -145,6 +169,7 @@ export const manifestData: Record<
       name: 'supportAndMore',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.947Z',
     },
     '4201:4932': {
       variant: 'heroSquare',
@@ -152,6 +177,7 @@ export const manifestData: Record<
       name: 'borrow',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-21T00:41:46.287Z',
     },
     '4201:4899': {
       variant: 'heroSquare',
@@ -159,6 +185,7 @@ export const manifestData: Record<
       name: 'coinbaseFees',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.268Z',
     },
     '4201:4921': {
       variant: 'heroSquare',
@@ -166,6 +193,7 @@ export const manifestData: Record<
       name: 'slippageTolerance',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.981Z',
     },
     '4201:4893': {
       variant: 'heroSquare',
@@ -173,6 +201,7 @@ export const manifestData: Record<
       name: 'estimatedAmount',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.347Z',
     },
     '4201:4869': {
       variant: 'heroSquare',
@@ -180,6 +209,7 @@ export const manifestData: Record<
       name: 'cryptoAndMore',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.264Z',
     },
     '4201:4891': {
       variant: 'heroSquare',
@@ -187,6 +217,7 @@ export const manifestData: Record<
       name: 'addMoreCrypto',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.746Z',
     },
     '4201:4917': {
       variant: 'heroSquare',
@@ -194,6 +225,7 @@ export const manifestData: Record<
       name: 'bitcoinAndOtherCrypto',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.622Z',
     },
     '4201:4938': {
       variant: 'heroSquare',
@@ -201,6 +233,7 @@ export const manifestData: Record<
       name: 'coinbaseCardSpend',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.732Z',
     },
     '4201:4912': {
       variant: 'heroSquare',
@@ -208,6 +241,7 @@ export const manifestData: Record<
       name: 'walletLoading',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:32.784Z',
     },
     '4201:4894': {
       variant: 'heroSquare',
@@ -215,6 +249,7 @@ export const manifestData: Record<
       name: 'cryptoAppsWallet',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:33.670Z',
     },
     '4201:4908': {
       variant: 'heroSquare',
@@ -222,6 +257,7 @@ export const manifestData: Record<
       name: 'cryptoApps',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:32.558Z',
     },
     '4201:4862': {
       variant: 'heroSquare',
@@ -229,6 +265,7 @@ export const manifestData: Record<
       name: 'directDepositPhone',
       spectrum: 'dark',
       versionNum: 6,
+      lastUpdated: '2022-09-14T15:36:37.364Z',
     },
     '4201:4919': {
       variant: 'heroSquare',
@@ -236,6 +273,7 @@ export const manifestData: Record<
       name: 'defiEarn',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.114Z',
     },
     '4201:4907': {
       variant: 'heroSquare',
@@ -243,6 +281,7 @@ export const manifestData: Record<
       name: 'defiRisk',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-23T21:05:52.761Z',
     },
     '4201:4940': {
       variant: 'heroSquare',
@@ -250,6 +289,7 @@ export const manifestData: Record<
       name: 'defiHow',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-11-09T20:49:23.981Z',
     },
     '4201:4905': {
       variant: 'heroSquare',
@@ -257,6 +297,7 @@ export const manifestData: Record<
       name: 'defiEnrollBoost',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.355Z',
     },
     '4201:4903': {
       variant: 'heroSquare',
@@ -264,6 +305,7 @@ export const manifestData: Record<
       name: 'tradeHistory',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.595Z',
     },
     '4201:4900': {
       variant: 'heroSquare',
@@ -271,6 +313,7 @@ export const manifestData: Record<
       name: 'orderBooks',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-13T22:36:11.601Z',
     },
     '4201:4896': {
       variant: 'heroSquare',
@@ -278,6 +321,7 @@ export const manifestData: Record<
       name: 'currencyPairs',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.991Z',
     },
     '4201:4910': {
       variant: 'heroSquare',
@@ -286,6 +330,7 @@ export const manifestData: Record<
       name: 'coinbaseCard',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.129Z',
     },
     '4201:4889': {
       variant: 'heroSquare',
@@ -293,6 +338,7 @@ export const manifestData: Record<
       name: 'coinbaseRedesigned',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.645Z',
     },
     '4201:4887': {
       variant: 'heroSquare',
@@ -300,6 +346,7 @@ export const manifestData: Record<
       name: 'cashExcitement',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.995Z',
     },
     '4201:4885': {
       variant: 'heroSquare',
@@ -307,6 +354,7 @@ export const manifestData: Record<
       name: 'coinbaseWalletToTrade',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.431Z',
     },
     '4201:4874': {
       variant: 'heroSquare',
@@ -315,6 +363,7 @@ export const manifestData: Record<
       name: 'downloadCoinbaseWallet',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:36.513Z',
     },
     '4201:4844': {
       variant: 'heroSquare',
@@ -322,6 +371,7 @@ export const manifestData: Record<
       name: 'advancedTrading',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:26.707Z',
     },
     '4345:650': {
       variant: 'heroSquare',
@@ -329,6 +379,7 @@ export const manifestData: Record<
       name: 'advancedTrading',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:34.792Z',
     },
     '4201:4914': {
       variant: 'heroSquare',
@@ -336,6 +387,7 @@ export const manifestData: Record<
       name: 'focusLimitOrders',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:32.850Z',
     },
     '4201:4854': {
       variant: 'heroSquare',
@@ -343,6 +395,7 @@ export const manifestData: Record<
       name: 'accessToAdvancedCharts',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:32.807Z',
     },
     '4201:4886': {
       variant: 'heroSquare',
@@ -350,6 +403,7 @@ export const manifestData: Record<
       name: 'walletNotifications',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.585Z',
     },
     '4201:4892': {
       variant: 'heroSquare',
@@ -358,6 +412,7 @@ export const manifestData: Record<
       name: 'coinbaseCardPocket',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.335Z',
     },
     '4201:4879': {
       variant: 'heroSquare',
@@ -365,6 +420,7 @@ export const manifestData: Record<
       name: 'contactsListWarning',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-11-29T20:16:37.390Z',
     },
     '4201:4866': {
       variant: 'heroSquare',
@@ -372,6 +428,7 @@ export const manifestData: Record<
       name: 'earnInterest',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-21T21:35:46.112Z',
     },
     '4201:4877': {
       variant: 'heroSquare',
@@ -379,6 +436,7 @@ export const manifestData: Record<
       name: 'notificationsAlt',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.591Z',
     },
     '4201:4875': {
       variant: 'heroSquare',
@@ -386,6 +444,7 @@ export const manifestData: Record<
       name: 'appTrackingTransparency',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:33.557Z',
     },
     '4201:4872': {
       variant: 'heroSquare',
@@ -393,6 +452,7 @@ export const manifestData: Record<
       name: 'openEmail',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.619Z',
     },
     '4201:4871': {
       variant: 'heroSquare',
@@ -400,6 +460,7 @@ export const manifestData: Record<
       name: 'commerceAccounting',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-12-05T15:21:12.163Z',
     },
     '4201:4870': {
       variant: 'heroSquare',
@@ -407,6 +468,7 @@ export const manifestData: Record<
       name: 'commerceInvoices',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-12-05T15:19:21.943Z',
     },
     '4201:4934': {
       variant: 'heroSquare',
@@ -415,6 +477,7 @@ export const manifestData: Record<
       name: 'coinbaseCardLock',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.731Z',
     },
     '4225:4468': {
       variant: 'heroSquare',
@@ -423,6 +486,7 @@ export const manifestData: Record<
       name: 'pending',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-10-13T22:36:28.415Z',
     },
     '4225:4440': {
       variant: 'heroSquare',
@@ -431,6 +495,7 @@ export const manifestData: Record<
       name: 'coinbaseIsDownMobile',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-07T18:11:28.396Z',
     },
     '4225:4448': {
       variant: 'heroSquare',
@@ -439,6 +504,7 @@ export const manifestData: Record<
       name: 'errorRefresh',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.068Z',
     },
     '4225:4451': {
       variant: 'heroSquare',
@@ -447,6 +513,7 @@ export const manifestData: Record<
       name: 'coinbaseCardSpendCrypto',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.711Z',
     },
     '4225:4473': {
       variant: 'heroSquare',
@@ -455,6 +522,7 @@ export const manifestData: Record<
       name: 'coinbaseCardIssue',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.089Z',
     },
     '4225:4458': {
       variant: 'heroSquare',
@@ -463,6 +531,7 @@ export const manifestData: Record<
       name: 'insufficientBalance',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.855Z',
     },
     '4225:4466': {
       variant: 'heroSquare',
@@ -471,6 +540,7 @@ export const manifestData: Record<
       name: 'sendCryptoFaster',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.225Z',
     },
     '4225:4461': {
       variant: 'heroSquare',
@@ -479,6 +549,7 @@ export const manifestData: Record<
       name: 'recurringReward',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.960Z',
     },
     '4225:4470': {
       variant: 'heroSquare',
@@ -487,6 +558,7 @@ export const manifestData: Record<
       name: 'invite',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.039Z',
     },
     '4225:4455': {
       variant: 'heroSquare',
@@ -494,6 +566,7 @@ export const manifestData: Record<
       name: 'error400',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.557Z',
     },
     '4225:4460': {
       variant: 'heroSquare',
@@ -502,6 +575,7 @@ export const manifestData: Record<
       name: 'walletUi',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-04T18:41:22.260Z',
     },
     '4225:4446': {
       variant: 'heroSquare',
@@ -510,6 +584,7 @@ export const manifestData: Record<
       name: 'earnIdVerification',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.952Z',
     },
     '4225:4459': {
       variant: 'heroSquare',
@@ -518,6 +593,7 @@ export const manifestData: Record<
       name: 'routingAccount',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.546Z',
     },
     '4225:4453': {
       variant: 'heroSquare',
@@ -526,6 +602,7 @@ export const manifestData: Record<
       name: 'notificationsAndUpdates',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.804Z',
     },
     '4225:4452': {
       variant: 'heroSquare',
@@ -534,6 +611,7 @@ export const manifestData: Record<
       name: 'yourContacts',
       spectrum: 'dark',
       versionNum: 3,
+      lastUpdated: '2022-09-14T15:36:33.974Z',
     },
     '4225:4429': {
       variant: 'heroSquare',
@@ -542,6 +620,7 @@ export const manifestData: Record<
       name: 'whyNotBoth',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-06T12:08:33.013Z',
     },
     '4225:4449': {
       variant: 'heroSquare',
@@ -549,6 +628,7 @@ export const manifestData: Record<
       name: 'errorApp500',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.286Z',
     },
     '4225:4445': {
       variant: 'heroSquare',
@@ -557,6 +637,7 @@ export const manifestData: Record<
       name: 'errorWeb404',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-10-26T15:53:52.740Z',
     },
     '4225:4465': {
       variant: 'heroSquare',
@@ -565,6 +646,7 @@ export const manifestData: Record<
       name: 'coinbaseIsDown',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:33.361Z',
     },
     '4225:4422': {
       variant: 'heroSquare',
@@ -573,6 +655,7 @@ export const manifestData: Record<
       name: 'selectCorrectCrypto',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:34.017Z',
     },
     '4225:4443': {
       variant: 'heroSquare',
@@ -581,6 +664,7 @@ export const manifestData: Record<
       name: 'buyFirstCrypto',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:33.138Z',
     },
     '4225:4441': {
       variant: 'heroSquare',
@@ -589,6 +673,7 @@ export const manifestData: Record<
       name: 'twoIdVerify',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.257Z',
     },
     '4225:4447': {
       variant: 'heroSquare',
@@ -597,6 +682,7 @@ export const manifestData: Record<
       name: 'accountUnderReview',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.066Z',
     },
     '4225:4467': {
       variant: 'heroSquare',
@@ -604,6 +690,7 @@ export const manifestData: Record<
       name: 'verifyCardTransactions',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.902Z',
     },
     '4225:4439': {
       variant: 'heroSquare',
@@ -612,6 +699,7 @@ export const manifestData: Record<
       name: 'verifyBankTransactions',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.884Z',
     },
     '4225:4456': {
       variant: 'heroSquare',
@@ -620,6 +708,7 @@ export const manifestData: Record<
       name: 'freeBtc',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-11-16T20:04:43.817Z',
     },
     '4225:4438': {
       variant: 'heroSquare',
@@ -628,6 +717,7 @@ export const manifestData: Record<
       name: 'remittances',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:35.342Z',
     },
     '4225:4450': {
       variant: 'heroSquare',
@@ -636,6 +726,7 @@ export const manifestData: Record<
       name: 'docError',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.881Z',
     },
     '4225:4436': {
       variant: 'heroSquare',
@@ -644,6 +735,7 @@ export const manifestData: Record<
       name: 'transactionLimit',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.299Z',
     },
     '4225:4433': {
       variant: 'heroSquare',
@@ -652,6 +744,7 @@ export const manifestData: Record<
       name: 'emailNotification',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.823Z',
     },
     '4225:4431': {
       variant: 'heroSquare',
@@ -660,6 +753,7 @@ export const manifestData: Record<
       name: 'automaticPayments',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.303Z',
     },
     '4225:4430': {
       variant: 'heroSquare',
@@ -668,6 +762,7 @@ export const manifestData: Record<
       name: 'cardAndPhone',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.508Z',
     },
     '4225:4428': {
       variant: 'heroSquare',
@@ -676,6 +771,7 @@ export const manifestData: Record<
       name: 'payUpFront',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:36.640Z',
     },
     '4225:4427': {
       variant: 'heroSquare',
@@ -684,6 +780,7 @@ export const manifestData: Record<
       name: 'limitOrders',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.990Z',
     },
     '4225:4426': {
       variant: 'heroSquare',
@@ -692,6 +789,7 @@ export const manifestData: Record<
       name: 'earnMore',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-17T14:16:24.665Z',
     },
     '4354:1064': {
       variant: 'heroSquare',
@@ -700,6 +798,7 @@ export const manifestData: Record<
       name: 'earnGrowth',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:35.903Z',
     },
     '4225:4425': {
       variant: 'heroSquare',
@@ -708,6 +807,7 @@ export const manifestData: Record<
       name: 'holdingCrypto',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.183Z',
     },
     '4225:4442': {
       variant: 'heroSquare',
@@ -716,6 +816,7 @@ export const manifestData: Record<
       name: 'myNameIsSatoshi',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:34.099Z',
     },
     '4225:4424': {
       variant: 'heroSquare',
@@ -724,6 +825,7 @@ export const manifestData: Record<
       name: 'bigBtc',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:34.145Z',
     },
     '4225:4423': {
       variant: 'heroSquare',
@@ -732,6 +834,7 @@ export const manifestData: Record<
       name: 'coinsInWallet',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.840Z',
     },
     '4225:4435': {
       variant: 'heroSquare',
@@ -740,6 +843,7 @@ export const manifestData: Record<
       name: 'idBack',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.168Z',
     },
     '4225:4444': {
       variant: 'heroSquare',
@@ -748,6 +852,7 @@ export const manifestData: Record<
       name: 'idFront',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.802Z',
     },
     '4225:4471': {
       variant: 'heroSquare',
@@ -756,6 +861,7 @@ export const manifestData: Record<
       name: 'idAngles',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.997Z',
     },
     '4225:4464': {
       variant: 'heroSquare',
@@ -764,6 +870,7 @@ export const manifestData: Record<
       name: 'idVerificationSecure',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.080Z',
     },
     '4225:4421': {
       variant: 'heroSquare',
@@ -771,6 +878,7 @@ export const manifestData: Record<
       name: 'sendToUsername',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.126Z',
     },
     '4225:4437': {
       variant: 'heroSquare',
@@ -778,6 +886,7 @@ export const manifestData: Record<
       name: 'errorWeb400',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-12-05T22:05:57.830Z',
     },
     '4225:4457': {
       variant: 'heroSquare',
@@ -785,6 +894,7 @@ export const manifestData: Record<
       name: 'errorWeb500',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:35.846Z',
     },
     '4225:4462': {
       variant: 'heroSquare',
@@ -793,6 +903,7 @@ export const manifestData: Record<
       name: 'rocket',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-11-16T07:19:39.459Z',
     },
     '4225:4420': {
       variant: 'heroSquare',
@@ -800,6 +911,7 @@ export const manifestData: Record<
       name: 'tradeImmediately',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:35.297Z',
     },
     '4225:4419': {
       variant: 'heroSquare',
@@ -807,6 +919,7 @@ export const manifestData: Record<
       name: 'addPhoneNumber',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.309Z',
     },
     '4225:4469': {
       variant: 'heroSquare',
@@ -815,6 +928,7 @@ export const manifestData: Record<
       name: 'japanVerifyId',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.254Z',
     },
     '4225:4418': {
       variant: 'heroSquare',
@@ -823,6 +937,7 @@ export const manifestData: Record<
       name: 'documentCertified',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:36.009Z',
     },
     '4225:4417': {
       variant: 'heroSquare',
@@ -831,6 +946,7 @@ export const manifestData: Record<
       name: 'onTheList',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.768Z',
     },
     '4225:4415': {
       variant: 'heroSquare',
@@ -838,6 +954,7 @@ export const manifestData: Record<
       name: 'addBankAccount',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.765Z',
     },
     '4225:4454': {
       variant: 'heroSquare',
@@ -846,6 +963,7 @@ export const manifestData: Record<
       name: 'addCreditCard',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:35.160Z',
     },
     '4225:4414': {
       variant: 'heroSquare',
@@ -853,6 +971,7 @@ export const manifestData: Record<
       name: 'documentSuccess',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-12-07T14:43:05.525Z',
     },
     '4225:4413': {
       variant: 'heroSquare',
@@ -861,6 +980,7 @@ export const manifestData: Record<
       name: 'verifyIdDetails',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:34.814Z',
     },
     '4225:4412': {
       variant: 'heroSquare',
@@ -869,6 +989,7 @@ export const manifestData: Record<
       name: 'idIssue',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.644Z',
     },
     '4225:4411': {
       variant: 'heroSquare',
@@ -877,6 +998,7 @@ export const manifestData: Record<
       name: 'verifyInfo',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:32.829Z',
     },
     '4225:4410': {
       variant: 'heroSquare',
@@ -884,6 +1006,7 @@ export const manifestData: Record<
       name: 'readyToTrade',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-22T21:12:06.641Z',
     },
     '4225:4409': {
       variant: 'heroSquare',
@@ -891,6 +1014,7 @@ export const manifestData: Record<
       name: 'idCard',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.691Z',
     },
     '4225:4408': {
       variant: 'heroSquare',
@@ -898,6 +1022,7 @@ export const manifestData: Record<
       name: 'phoneNumber',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.664Z',
     },
     '4225:4407': {
       variant: 'heroSquare',
@@ -905,6 +1030,7 @@ export const manifestData: Record<
       name: 'securityShield',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-12-12T18:56:17.453Z',
     },
     '4225:4416': {
       variant: 'heroSquare',
@@ -912,6 +1038,7 @@ export const manifestData: Record<
       name: 'verifyEmail',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-04T13:26:22.067Z',
     },
     '4201:4939': {
       variant: 'heroSquare',
@@ -919,6 +1046,7 @@ export const manifestData: Record<
       name: 'coinbaseOneDiscountedAmount',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:23.358Z',
     },
     '4201:4904': {
       variant: 'heroSquare',
@@ -927,6 +1055,7 @@ export const manifestData: Record<
       name: 'coinbaseOneSavingFunds',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-18T22:28:03.587Z',
     },
     '4201:4868': {
       variant: 'heroSquare',
@@ -934,6 +1063,7 @@ export const manifestData: Record<
       name: 'coinbaseOneInsufficientWallet',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:26.106Z',
     },
     '4201:4867': {
       variant: 'heroSquare',
@@ -942,6 +1072,7 @@ export const manifestData: Record<
       name: 'coinbaseOneCardWarning',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:21.522Z',
     },
     '4201:4935': {
       variant: 'heroSquare',
@@ -949,6 +1080,7 @@ export const manifestData: Record<
       name: 'coinbaseOnePhoneLightning',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-14T01:15:53.989Z',
     },
     '4201:4864': {
       variant: 'heroSquare',
@@ -956,6 +1088,7 @@ export const manifestData: Record<
       name: 'coinbaseOneDocWarning',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:24.375Z',
     },
     '4201:4863': {
       variant: 'heroSquare',
@@ -963,6 +1096,7 @@ export const manifestData: Record<
       name: 'coinbaseOneProtectedCrypto',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:23.723Z',
     },
     '4201:4861': {
       variant: 'heroSquare',
@@ -971,6 +1105,7 @@ export const manifestData: Record<
       name: 'fileYourCryptoTaxesCheck',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:24.078Z',
     },
     '4201:4856': {
       variant: 'heroSquare',
@@ -979,6 +1114,7 @@ export const manifestData: Record<
       name: 'fileYourCryptoTaxes',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:23.755Z',
     },
     '4201:4859': {
       variant: 'heroSquare',
@@ -986,6 +1122,7 @@ export const manifestData: Record<
       name: 'p2pGifting',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.004Z',
     },
     '4835:1556': {
       variant: 'heroSquare',
@@ -994,6 +1131,7 @@ export const manifestData: Record<
       name: 'collectableNfts',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-08T15:12:02.192Z',
     },
     '4201:4895': {
       variant: 'heroSquare',
@@ -1001,6 +1139,7 @@ export const manifestData: Record<
       name: 'exploreDecentralizedApps',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-17T14:42:36.215Z',
     },
     '4201:4858': {
       variant: 'heroSquare',
@@ -1008,6 +1147,7 @@ export const manifestData: Record<
       name: 'desktopAuthorized',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-12T20:21:37.000Z',
     },
     '4201:4925': {
       variant: 'heroSquare',
@@ -1015,6 +1155,7 @@ export const manifestData: Record<
       name: 'supportAndMore',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-07T01:42:37.585Z',
     },
     '4201:4857': {
       variant: 'heroSquare',
@@ -1022,6 +1163,7 @@ export const manifestData: Record<
       name: 'borrow',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-14T18:50:00.791Z',
     },
     '4201:4909': {
       variant: 'heroSquare',
@@ -1029,6 +1171,7 @@ export const manifestData: Record<
       name: 'coinbaseFees',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.252Z',
     },
     '4201:4855': {
       variant: 'heroSquare',
@@ -1036,6 +1179,7 @@ export const manifestData: Record<
       name: 'slippageTolerance',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-09T18:26:42.862Z',
     },
     '4201:4853': {
       variant: 'heroSquare',
@@ -1043,6 +1187,7 @@ export const manifestData: Record<
       name: 'estimatedAmount',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.909Z',
     },
     '4201:4852': {
       variant: 'heroSquare',
@@ -1050,6 +1195,7 @@ export const manifestData: Record<
       name: 'cryptoAndMore',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-09T16:44:59.230Z',
     },
     '4201:4913': {
       variant: 'heroSquare',
@@ -1057,6 +1203,7 @@ export const manifestData: Record<
       name: 'addMoreCrypto',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-28T16:17:49.333Z',
     },
     '4201:4876': {
       variant: 'heroSquare',
@@ -1064,6 +1211,7 @@ export const manifestData: Record<
       name: 'bitcoinAndOtherCrypto',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-15T14:17:58.177Z',
     },
     '4201:4851': {
       variant: 'heroSquare',
@@ -1071,6 +1219,7 @@ export const manifestData: Record<
       name: 'coinbaseCardSpend',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T21:25:32.595Z',
     },
     '4201:4881': {
       variant: 'heroSquare',
@@ -1078,6 +1227,7 @@ export const manifestData: Record<
       name: 'walletLoading',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:25.605Z',
     },
     '4201:4847': {
       variant: 'heroSquare',
@@ -1085,6 +1235,7 @@ export const manifestData: Record<
       name: 'cryptoAppsWallet',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:24.049Z',
     },
     '4201:4890': {
       variant: 'heroSquare',
@@ -1092,6 +1243,7 @@ export const manifestData: Record<
       name: 'cryptoApps',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:26.610Z',
     },
     '4201:4850': {
       variant: 'heroSquare',
@@ -1099,6 +1251,7 @@ export const manifestData: Record<
       name: 'directDepositPhone',
       spectrum: 'light',
       versionNum: 6,
+      lastUpdated: '2022-10-12T16:38:22.812Z',
     },
     '4201:4897': {
       variant: 'heroSquare',
@@ -1106,6 +1259,7 @@ export const manifestData: Record<
       name: 'defiEarn',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-12T18:09:58.541Z',
     },
     '4201:4848': {
       variant: 'heroSquare',
@@ -1113,6 +1267,7 @@ export const manifestData: Record<
       name: 'defiRisk',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-17T22:34:01.658Z',
     },
     '4201:4849': {
       variant: 'heroSquare',
@@ -1120,6 +1275,7 @@ export const manifestData: Record<
       name: 'defiHow',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-14T17:06:23.516Z',
     },
     '4201:4927': {
       variant: 'heroSquare',
@@ -1127,6 +1283,7 @@ export const manifestData: Record<
       name: 'defiEnrollBoost',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-12T18:09:58.596Z',
     },
     '4201:4873': {
       variant: 'heroSquare',
@@ -1134,6 +1291,7 @@ export const manifestData: Record<
       name: 'tradeHistory',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:27.174Z',
     },
     '4201:4880': {
       variant: 'heroSquare',
@@ -1141,6 +1299,7 @@ export const manifestData: Record<
       name: 'orderBooks',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.573Z',
     },
     '4201:4922': {
       variant: 'heroSquare',
@@ -1148,6 +1307,7 @@ export const manifestData: Record<
       name: 'currencyPairs',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.694Z',
     },
     '4201:4916': {
       variant: 'heroSquare',
@@ -1156,6 +1316,7 @@ export const manifestData: Record<
       name: 'coinbaseCard',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.342Z',
     },
     '4201:4920': {
       variant: 'heroSquare',
@@ -1163,6 +1324,7 @@ export const manifestData: Record<
       name: 'coinbaseRedesigned',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.103Z',
     },
     '4201:4860': {
       variant: 'heroSquare',
@@ -1170,6 +1332,7 @@ export const manifestData: Record<
       name: 'cashExcitement',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-14T17:09:03.915Z',
     },
     '4201:4915': {
       variant: 'heroSquare',
@@ -1177,6 +1340,7 @@ export const manifestData: Record<
       name: 'coinbaseWalletToTrade',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-09T20:49:14.300Z',
     },
     '4201:4846': {
       variant: 'heroSquare',
@@ -1185,6 +1349,7 @@ export const manifestData: Record<
       name: 'downloadCoinbaseWallet',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.520Z',
     },
     '4201:4941': {
       variant: 'heroSquare',
@@ -1193,6 +1358,7 @@ export const manifestData: Record<
       name: 'receivedCard',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:22.632Z',
     },
     '4201:4878': {
       variant: 'heroSquare',
@@ -1200,6 +1366,7 @@ export const manifestData: Record<
       name: 'focusLimitOrders',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.616Z',
     },
     '4201:4843': {
       variant: 'heroSquare',
@@ -1207,6 +1374,7 @@ export const manifestData: Record<
       name: 'accessToAdvancedCharts',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:27.224Z',
     },
     '4201:4840': {
       variant: 'heroSquare',
@@ -1214,6 +1382,7 @@ export const manifestData: Record<
       name: 'walletNotifications',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.916Z',
     },
     '4201:4901': {
       variant: 'heroSquare',
@@ -1222,6 +1391,7 @@ export const manifestData: Record<
       name: 'coinbaseCardPocket',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.862Z',
     },
     '4201:4839': {
       variant: 'heroSquare',
@@ -1229,6 +1399,7 @@ export const manifestData: Record<
       name: 'contactsListWarning',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:23.355Z',
     },
     '4201:4884': {
       variant: 'heroSquare',
@@ -1236,6 +1407,7 @@ export const manifestData: Record<
       name: 'earnInterest',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-17T14:43:14.457Z',
     },
     '4201:4865': {
       variant: 'heroSquare',
@@ -1243,6 +1415,7 @@ export const manifestData: Record<
       name: 'notificationsAlt',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-08T11:19:35.225Z',
     },
     '4201:4845': {
       variant: 'heroSquare',
@@ -1250,6 +1423,7 @@ export const manifestData: Record<
       name: 'appTrackingTransparency',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:21.996Z',
     },
     '4201:4906': {
       variant: 'heroSquare',
@@ -1257,6 +1431,7 @@ export const manifestData: Record<
       name: 'openEmail',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.479Z',
     },
     '4201:4838': {
       variant: 'heroSquare',
@@ -1264,6 +1439,7 @@ export const manifestData: Record<
       name: 'commerceAccounting',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.479Z',
     },
     '4201:4930': {
       variant: 'heroSquare',
@@ -1271,6 +1447,7 @@ export const manifestData: Record<
       name: 'commerceInvoices',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.812Z',
     },
     '4201:4837': {
       variant: 'heroSquare',
@@ -1279,6 +1456,7 @@ export const manifestData: Record<
       name: 'coinbaseCardLock',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-08T23:17:54.193Z',
     },
     '4131:794': {
       variant: 'heroSquare',
@@ -1287,6 +1465,7 @@ export const manifestData: Record<
       name: 'pending',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:26.670Z',
     },
     '4131:793': {
       variant: 'heroSquare',
@@ -1295,6 +1474,7 @@ export const manifestData: Record<
       name: 'coinbaseIsDownMobile',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-08T23:17:54.194Z',
     },
     '4131:773': {
       variant: 'heroSquare',
@@ -1303,6 +1483,7 @@ export const manifestData: Record<
       name: 'errorRefresh',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-08T23:17:54.117Z',
     },
     '4131:792': {
       variant: 'heroSquare',
@@ -1311,6 +1492,7 @@ export const manifestData: Record<
       name: 'coinbaseCardSpendCrypto',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.490Z',
     },
     '4131:783': {
       variant: 'heroSquare',
@@ -1319,6 +1501,7 @@ export const manifestData: Record<
       name: 'coinbaseCardIssue',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.883Z',
     },
     '4131:823': {
       variant: 'heroSquare',
@@ -1327,6 +1510,7 @@ export const manifestData: Record<
       name: 'insufficientBalance',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-21T14:07:37.966Z',
     },
     '4131:838': {
       variant: 'heroSquare',
@@ -1335,6 +1519,7 @@ export const manifestData: Record<
       name: 'sendCryptoFaster',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.585Z',
     },
     '4131:845': {
       variant: 'heroSquare',
@@ -1343,6 +1528,7 @@ export const manifestData: Record<
       name: 'recurringReward',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.401Z',
     },
     '4131:789': {
       variant: 'heroSquare',
@@ -1351,6 +1537,7 @@ export const manifestData: Record<
       name: 'invite',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-14T17:06:23.524Z',
     },
     '4131:788': {
       variant: 'heroSquare',
@@ -1358,6 +1545,7 @@ export const manifestData: Record<
       name: 'error400',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-08T23:17:54.193Z',
     },
     '4131:802': {
       variant: 'heroSquare',
@@ -1366,6 +1554,7 @@ export const manifestData: Record<
       name: 'walletUi',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-16T15:33:11.253Z',
     },
     '4131:787': {
       variant: 'heroSquare',
@@ -1374,6 +1563,7 @@ export const manifestData: Record<
       name: 'earnIdVerification',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-18T23:49:22.913Z',
     },
     '4131:785': {
       variant: 'heroSquare',
@@ -1382,6 +1572,7 @@ export const manifestData: Record<
       name: 'routingAccount',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-13T10:41:37.155Z',
     },
     '4131:807': {
       variant: 'heroSquare',
@@ -1390,6 +1581,7 @@ export const manifestData: Record<
       name: 'notificationsAndUpdates',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:20.996Z',
     },
     '4131:791': {
       variant: 'heroSquare',
@@ -1398,6 +1590,7 @@ export const manifestData: Record<
       name: 'yourContacts',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-23T12:22:32.548Z',
     },
     '4131:784': {
       variant: 'heroSquare',
@@ -1406,6 +1599,7 @@ export const manifestData: Record<
       name: 'whyNotBoth',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.603Z',
     },
     '4131:797': {
       variant: 'heroSquare',
@@ -1413,6 +1607,7 @@ export const manifestData: Record<
       name: 'errorApp500',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-01T16:58:33.613Z',
     },
     '4131:782': {
       variant: 'heroSquare',
@@ -1421,6 +1616,7 @@ export const manifestData: Record<
       name: 'errorWeb404',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-08T23:17:53.775Z',
     },
     '4131:780': {
       variant: 'heroSquare',
@@ -1429,6 +1625,7 @@ export const manifestData: Record<
       name: 'coinbaseIsDown',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-08T23:17:53.673Z',
     },
     '4131:800': {
       variant: 'heroSquare',
@@ -1437,6 +1634,7 @@ export const manifestData: Record<
       name: 'selectCorrectCrypto',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:22.394Z',
     },
     '4131:809': {
       variant: 'heroSquare',
@@ -1445,6 +1643,7 @@ export const manifestData: Record<
       name: 'buyFirstCrypto',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-12T13:25:41.037Z',
     },
     '4131:843': {
       variant: 'heroSquare',
@@ -1453,6 +1652,7 @@ export const manifestData: Record<
       name: 'twoIdVerify',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.433Z',
     },
     '4131:779': {
       variant: 'heroSquare',
@@ -1461,6 +1661,7 @@ export const manifestData: Record<
       name: 'accountUnderReview',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-22T15:05:28.076Z',
     },
     '4131:819': {
       variant: 'heroSquare',
@@ -1469,6 +1670,7 @@ export const manifestData: Record<
       name: 'verifyCardTransactions',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.641Z',
     },
     '4131:776': {
       variant: 'heroSquare',
@@ -1477,6 +1679,7 @@ export const manifestData: Record<
       name: 'verifyBankTransactions',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:22.543Z',
     },
     '4131:857': {
       variant: 'heroSquare',
@@ -1485,6 +1688,7 @@ export const manifestData: Record<
       name: 'freeBtc',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-16T20:06:33.330Z',
     },
     '4131:775': {
       variant: 'heroSquare',
@@ -1493,6 +1697,7 @@ export const manifestData: Record<
       name: 'remittances',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-21T15:05:42.644Z',
     },
     '4131:774': {
       variant: 'heroSquare',
@@ -1501,6 +1706,7 @@ export const manifestData: Record<
       name: 'docError',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-14T18:29:22.687Z',
     },
     '4131:859': {
       variant: 'heroSquare',
@@ -1509,6 +1715,7 @@ export const manifestData: Record<
       name: 'transactionLimit',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-08T14:02:22.080Z',
     },
     '4131:772': {
       variant: 'heroSquare',
@@ -1517,6 +1724,7 @@ export const manifestData: Record<
       name: 'emailNotification',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-12T20:20:34.686Z',
     },
     '4131:862': {
       variant: 'heroSquare',
@@ -1525,6 +1733,7 @@ export const manifestData: Record<
       name: 'automaticPayments',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.495Z',
     },
     '4131:878': {
       variant: 'heroSquare',
@@ -1533,6 +1742,7 @@ export const manifestData: Record<
       name: 'cardAndPhone',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.115Z',
     },
     '4131:864': {
       variant: 'heroSquare',
@@ -1541,6 +1751,7 @@ export const manifestData: Record<
       name: 'payUpFront',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.697Z',
     },
     '4131:770': {
       variant: 'heroSquare',
@@ -1549,6 +1760,7 @@ export const manifestData: Record<
       name: 'limitOrders',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.324Z',
     },
     '4131:768': {
       variant: 'heroSquare',
@@ -1557,6 +1769,7 @@ export const manifestData: Record<
       name: 'holdingCrypto',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:22.519Z',
     },
     '4131:767': {
       variant: 'heroSquare',
@@ -1565,6 +1778,7 @@ export const manifestData: Record<
       name: 'myNameIsSatoshi',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.819Z',
     },
     '4131:816': {
       variant: 'heroSquare',
@@ -1573,6 +1787,7 @@ export const manifestData: Record<
       name: 'bigBtc',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:22.643Z',
     },
     '4131:766': {
       variant: 'heroSquare',
@@ -1581,6 +1796,7 @@ export const manifestData: Record<
       name: 'coinsInWallet',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-07T15:14:14.383Z',
     },
     '4131:839': {
       variant: 'heroSquare',
@@ -1589,6 +1805,7 @@ export const manifestData: Record<
       name: 'idBack',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:22.069Z',
     },
     '4131:830': {
       variant: 'heroSquare',
@@ -1597,6 +1814,7 @@ export const manifestData: Record<
       name: 'idFront',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.674Z',
     },
     '4131:844': {
       variant: 'heroSquare',
@@ -1605,6 +1823,7 @@ export const manifestData: Record<
       name: 'idAngles',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.499Z',
     },
     '4131:765': {
       variant: 'heroSquare',
@@ -1612,6 +1831,7 @@ export const manifestData: Record<
       name: 'sendToUsername',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-23T12:22:29.217Z',
     },
     '4131:764': {
       variant: 'heroSquare',
@@ -1620,6 +1840,7 @@ export const manifestData: Record<
       name: 'idVerificationSecure',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-09T16:44:59.282Z',
     },
     '4131:851': {
       variant: 'heroSquare',
@@ -1627,6 +1848,7 @@ export const manifestData: Record<
       name: 'errorWeb400',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-08T23:17:54.016Z',
     },
     '4131:763': {
       variant: 'heroSquare',
@@ -1634,6 +1856,7 @@ export const manifestData: Record<
       name: 'errorWeb500',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-21T16:50:37.420Z',
     },
     '4131:828': {
       variant: 'heroSquare',
@@ -1642,6 +1865,7 @@ export const manifestData: Record<
       name: 'rocket',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-16T04:06:09.078Z',
     },
     '4131:762': {
       variant: 'heroSquare',
@@ -1649,6 +1873,7 @@ export const manifestData: Record<
       name: 'tradeImmediately',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-29T15:14:03.162Z',
     },
     '4131:761': {
       variant: 'heroSquare',
@@ -1656,6 +1881,7 @@ export const manifestData: Record<
       name: 'addPhoneNumber',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-09T16:44:59.221Z',
     },
     '4131:759': {
       variant: 'heroSquare',
@@ -1664,6 +1890,7 @@ export const manifestData: Record<
       name: 'japanVerifyId',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.102Z',
     },
     '4131:820': {
       variant: 'heroSquare',
@@ -1672,6 +1899,7 @@ export const manifestData: Record<
       name: 'documentCertified',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.665Z',
     },
     '4131:758': {
       variant: 'heroSquare',
@@ -1680,6 +1908,7 @@ export const manifestData: Record<
       name: 'onTheList',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.915Z',
     },
     '4131:757': {
       variant: 'heroSquare',
@@ -1687,6 +1916,7 @@ export const manifestData: Record<
       name: 'addBankAccount',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.731Z',
     },
     '4131:861': {
       variant: 'heroSquare',
@@ -1695,6 +1925,7 @@ export const manifestData: Record<
       name: 'addCreditCard',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-19T17:00:59.919Z',
     },
     '4131:756': {
       variant: 'heroSquare',
@@ -1702,6 +1933,7 @@ export const manifestData: Record<
       name: 'advancedTradingUi',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.505Z',
     },
     '4131:869': {
       variant: 'heroSquare',
@@ -1709,6 +1941,7 @@ export const manifestData: Record<
       name: 'documentSuccess',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.863Z',
     },
     '4131:841': {
       variant: 'heroSquare',
@@ -1717,6 +1950,7 @@ export const manifestData: Record<
       name: 'verifyIdDetails',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-17T19:38:05.566Z',
     },
     '4131:806': {
       variant: 'heroSquare',
@@ -1725,6 +1959,7 @@ export const manifestData: Record<
       name: 'idIssue',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-13T01:01:14.162Z',
     },
     '4131:755': {
       variant: 'heroSquare',
@@ -1733,6 +1968,7 @@ export const manifestData: Record<
       name: 'verifyInfo',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-10T23:46:21.705Z',
     },
     '4131:754': {
       variant: 'heroSquare',
@@ -1740,6 +1976,7 @@ export const manifestData: Record<
       name: 'readyToTrade',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-01T08:43:57.866Z',
     },
     '4131:753': {
       variant: 'heroSquare',
@@ -1747,6 +1984,7 @@ export const manifestData: Record<
       name: 'idCard',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-09T16:44:59.249Z',
     },
     '4131:752': {
       variant: 'heroSquare',
@@ -1754,6 +1992,7 @@ export const manifestData: Record<
       name: 'phoneNumber',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-12T20:20:01.090Z',
     },
     '4131:875': {
       variant: 'heroSquare',
@@ -1761,6 +2000,7 @@ export const manifestData: Record<
       name: 'securityShield',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-09T16:44:59.226Z',
     },
     '4131:771': {
       variant: 'heroSquare',
@@ -1768,6 +2008,7 @@ export const manifestData: Record<
       name: 'verifyEmail',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-09T16:44:59.156Z',
     },
     '4201:5054': {
       variant: 'spotRectangle',
@@ -1776,6 +2017,7 @@ export const manifestData: Record<
       name: 'coinbaseOnePhoneLightningAlt',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:36.696Z',
     },
     '4201:5050': {
       variant: 'spotRectangle',
@@ -1784,6 +2026,7 @@ export const manifestData: Record<
       name: 'fileYourCryptoTaxesCheckAlt',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:36.917Z',
     },
     '4201:5049': {
       variant: 'spotRectangle',
@@ -1792,6 +2035,7 @@ export const manifestData: Record<
       name: 'fileYourCryptoTaxesAlt',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:34.950Z',
     },
     '4201:5048': {
       variant: 'spotRectangle',
@@ -1799,6 +2043,7 @@ export const manifestData: Record<
       name: 'yieldHoldingAlt',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:35.765Z',
     },
     '4201:5021': {
       variant: 'spotRectangle',
@@ -1807,6 +2052,7 @@ export const manifestData: Record<
       name: 'sendingCrypto',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.730Z',
     },
     '4201:5055': {
       variant: 'spotRectangle',
@@ -1815,6 +2061,7 @@ export const manifestData: Record<
       name: 'addBank',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.766Z',
     },
     '4201:5056': {
       variant: 'spotRectangle',
@@ -1823,6 +2070,7 @@ export const manifestData: Record<
       name: 'referralsBonusGray',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.263Z',
     },
     '4201:5045': {
       variant: 'spotRectangle',
@@ -1831,6 +2079,7 @@ export const manifestData: Record<
       name: 'referralsBonus',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.260Z',
     },
     '4201:5044': {
       variant: 'spotRectangle',
@@ -1839,6 +2088,7 @@ export const manifestData: Record<
       name: 'highFees',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.090Z',
     },
     '4201:5010': {
       variant: 'spotRectangle',
@@ -1847,6 +2097,7 @@ export const manifestData: Record<
       name: 'walletReconnectSuccess',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:35.404Z',
     },
     '4201:5039': {
       variant: 'spotRectangle',
@@ -1855,6 +2106,7 @@ export const manifestData: Record<
       name: 'walletReconnect',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:35.355Z',
     },
     '4201:5043': {
       variant: 'spotRectangle',
@@ -1862,6 +2114,7 @@ export const manifestData: Record<
       name: 'transferEth',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:36.282Z',
     },
     '4201:5040': {
       variant: 'spotRectangle',
@@ -1870,6 +2123,7 @@ export const manifestData: Record<
       name: 'portfolioOverview',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.207Z',
     },
     '4201:5031': {
       variant: 'spotRectangle',
@@ -1878,6 +2132,7 @@ export const manifestData: Record<
       name: 'switchAdvancedToSimpleTradingAlt',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:36.252Z',
     },
     '4201:5038': {
       variant: 'spotRectangle',
@@ -1885,6 +2140,7 @@ export const manifestData: Record<
       name: 'focusLimitOrdersAlt',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:34.304Z',
     },
     '4201:5037': {
       variant: 'spotRectangle',
@@ -1893,6 +2149,7 @@ export const manifestData: Record<
       name: 'accessToAdvancedChartsAlt',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:35.396Z',
     },
     '4201:5034': {
       variant: 'spotRectangle',
@@ -1901,6 +2158,7 @@ export const manifestData: Record<
       name: 'cardWaitlist',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:34.375Z',
     },
     '4201:5032': {
       variant: 'spotRectangle',
@@ -1908,6 +2166,7 @@ export const manifestData: Record<
       name: 'linkCoinbaseWallet',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-11-08T00:57:37.310Z',
     },
     '4201:5042': {
       variant: 'spotRectangle',
@@ -1915,6 +2174,7 @@ export const manifestData: Record<
       name: 'giftBoxRewards',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:37.022Z',
     },
     '4201:5059': {
       variant: 'spotRectangle',
@@ -1923,6 +2183,7 @@ export const manifestData: Record<
       name: 'trade',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.834Z',
     },
     '4201:5026': {
       variant: 'spotRectangle',
@@ -1931,6 +2192,7 @@ export const manifestData: Record<
       name: 'ratDashboard',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:34.924Z',
     },
     '4201:5025': {
       variant: 'spotRectangle',
@@ -1939,6 +2201,7 @@ export const manifestData: Record<
       name: 'diamond',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.215Z',
     },
     '4201:5047': {
       variant: 'spotRectangle',
@@ -1947,6 +2210,7 @@ export const manifestData: Record<
       name: 'creditCardExcitement',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.230Z',
     },
     '4201:5024': {
       variant: 'spotRectangle',
@@ -1955,6 +2219,7 @@ export const manifestData: Record<
       name: 'currency',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:37.573Z',
     },
     '4201:5023': {
       variant: 'spotRectangle',
@@ -1963,6 +2228,7 @@ export const manifestData: Record<
       name: 'coinbaseOnePhoneLightningAlt',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:23.560Z',
     },
     '4201:5018': {
       variant: 'spotRectangle',
@@ -1971,6 +2237,7 @@ export const manifestData: Record<
       name: 'fileYourCryptoTaxesCheckAlt',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:23.615Z',
     },
     '4201:5022': {
       variant: 'spotRectangle',
@@ -1979,6 +2246,7 @@ export const manifestData: Record<
       name: 'fileYourCryptoTaxesAlt',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-25T18:34:10.449Z',
     },
     '4201:5020': {
       variant: 'spotRectangle',
@@ -1986,6 +2254,7 @@ export const manifestData: Record<
       name: 'yieldHoldingAlt',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-18T15:58:36.578Z',
     },
     '4201:5027': {
       variant: 'spotRectangle',
@@ -1994,6 +2263,7 @@ export const manifestData: Record<
       name: 'sendingCrypto',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-13T10:34:29.707Z',
     },
     '4201:5019': {
       variant: 'spotRectangle',
@@ -2002,6 +2272,7 @@ export const manifestData: Record<
       name: 'addBank',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:20.943Z',
     },
     '4201:5053': {
       variant: 'spotRectangle',
@@ -2010,6 +2281,7 @@ export const manifestData: Record<
       name: 'referralsBonusGray',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:22.209Z',
     },
     '4201:5016': {
       variant: 'spotRectangle',
@@ -2018,6 +2290,7 @@ export const manifestData: Record<
       name: 'referralsBonus',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-18T15:57:51.554Z',
     },
     '4201:5017': {
       variant: 'spotRectangle',
@@ -2026,6 +2299,7 @@ export const manifestData: Record<
       name: 'highFees',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:22.322Z',
     },
     '4201:5028': {
       variant: 'spotRectangle',
@@ -2034,6 +2308,7 @@ export const manifestData: Record<
       name: 'walletReconnectSuccess',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:22.779Z',
     },
     '4201:5041': {
       variant: 'spotRectangle',
@@ -2042,6 +2317,7 @@ export const manifestData: Record<
       name: 'walletReconnect',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:21.572Z',
     },
     '4201:5015': {
       variant: 'spotRectangle',
@@ -2049,6 +2325,7 @@ export const manifestData: Record<
       name: 'transferEth',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-15T16:49:40.068Z',
     },
     '4201:5014': {
       variant: 'spotRectangle',
@@ -2057,6 +2334,7 @@ export const manifestData: Record<
       name: 'portfolioOverview',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-16T15:28:10.930Z',
     },
     '4201:5013': {
       variant: 'spotRectangle',
@@ -2065,6 +2343,7 @@ export const manifestData: Record<
       name: 'switchAdvancedToSimpleTradingAlt',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:22.298Z',
     },
     '4201:5058': {
       variant: 'spotRectangle',
@@ -2072,6 +2351,7 @@ export const manifestData: Record<
       name: 'focusLimitOrdersAlt',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.038Z',
     },
     '4201:5030': {
       variant: 'spotRectangle',
@@ -2080,6 +2360,7 @@ export const manifestData: Record<
       name: 'accessToAdvancedChartsAlt',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.477Z',
     },
     '4201:5012': {
       variant: 'spotRectangle',
@@ -2088,6 +2369,7 @@ export const manifestData: Record<
       name: 'cardWaitlist',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.795Z',
     },
     '4201:5051': {
       variant: 'spotRectangle',
@@ -2095,6 +2377,7 @@ export const manifestData: Record<
       name: 'linkCoinbaseWallet',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-08T23:17:53.248Z',
     },
     '4201:5011': {
       variant: 'spotRectangle',
@@ -2102,6 +2385,7 @@ export const manifestData: Record<
       name: 'giftBoxRewards',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.275Z',
     },
     '4201:5033': {
       variant: 'spotRectangle',
@@ -2110,6 +2394,7 @@ export const manifestData: Record<
       name: 'trade',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-22T23:34:28.948Z',
     },
     '4201:5009': {
       variant: 'spotRectangle',
@@ -2118,6 +2403,7 @@ export const manifestData: Record<
       name: 'ratDashboard',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.016Z',
     },
     '4201:5046': {
       variant: 'spotRectangle',
@@ -2126,6 +2412,7 @@ export const manifestData: Record<
       name: 'diamond',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-16T15:26:00.544Z',
     },
     '4201:5035': {
       variant: 'spotRectangle',
@@ -2134,6 +2421,7 @@ export const manifestData: Record<
       name: 'creditCardExcitement',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:22.004Z',
     },
     '4201:5008': {
       variant: 'spotRectangle',
@@ -2142,6 +2430,7 @@ export const manifestData: Record<
       name: 'currency',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-19T18:07:30.854Z',
     },
     '4201:5052': {
       variant: 'spotRectangle',
@@ -2150,6 +2439,7 @@ export const manifestData: Record<
       name: 'transferCoins',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-02T14:13:00.227Z',
     },
     '4201:4836': {
       variant: 'heroSquare',
@@ -2157,6 +2447,7 @@ export const manifestData: Record<
       name: 'givingToOthers',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.532Z',
     },
     '4201:4835': {
       variant: 'heroSquare',
@@ -2164,6 +2455,7 @@ export const manifestData: Record<
       name: 'givingTogether',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.761Z',
     },
     '4131:751': {
       variant: 'heroSquare',
@@ -2171,6 +2463,7 @@ export const manifestData: Record<
       name: 'earnProgress',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.959Z',
     },
     '4131:750': {
       variant: 'heroSquare',
@@ -2178,6 +2471,7 @@ export const manifestData: Record<
       name: 'earnSuccess',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.541Z',
     },
     '4131:749': {
       variant: 'heroSquare',
@@ -2186,6 +2480,7 @@ export const manifestData: Record<
       name: 'processing',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:27.226Z',
     },
     '4131:760': {
       variant: 'heroSquare',
@@ -2194,6 +2489,7 @@ export const manifestData: Record<
       name: 'success',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-01T19:07:36.905Z',
     },
     '4131:748': {
       variant: 'heroSquare',
@@ -2201,6 +2497,7 @@ export const manifestData: Record<
       name: 'bigWarning',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-13T10:38:58.799Z',
     },
     '4131:882': {
       variant: 'heroSquare',
@@ -2208,6 +2505,7 @@ export const manifestData: Record<
       name: 'polling',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-31T22:24:33.657Z',
     },
     '4201:4834': {
       variant: 'heroSquare',
@@ -2215,6 +2513,7 @@ export const manifestData: Record<
       name: 'givingToOthers',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.135Z',
     },
     '4201:4918': {
       variant: 'heroSquare',
@@ -2222,6 +2521,7 @@ export const manifestData: Record<
       name: 'givingTogether',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.577Z',
     },
     '4225:4434': {
       variant: 'heroSquare',
@@ -2229,6 +2529,7 @@ export const manifestData: Record<
       name: 'earnProgress',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:34.270Z',
     },
     '4225:4432': {
       variant: 'heroSquare',
@@ -2236,6 +2537,7 @@ export const manifestData: Record<
       name: 'earnSuccess',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:37.424Z',
     },
     '4225:4472': {
       variant: 'heroSquare',
@@ -2244,6 +2546,7 @@ export const manifestData: Record<
       name: 'processing',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-12-05T15:18:32.513Z',
     },
     '4225:4463': {
       variant: 'heroSquare',
@@ -2252,6 +2555,7 @@ export const manifestData: Record<
       name: 'success',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-24T21:11:59.269Z',
     },
     '4225:4406': {
       variant: 'heroSquare',
@@ -2259,6 +2563,7 @@ export const manifestData: Record<
       name: 'bigWarning',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-19T16:30:52.478Z',
     },
     '4225:4405': {
       variant: 'heroSquare',
@@ -2266,6 +2571,7 @@ export const manifestData: Record<
       name: 'polling',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-31T22:24:32.081Z',
     },
     '4201:2591': {
       variant: 'spotSquare',
@@ -2274,6 +2580,7 @@ export const manifestData: Record<
       name: 'bullishCase',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:44.124Z',
     },
     '4201:2604': {
       variant: 'spotSquare',
@@ -2281,6 +2588,7 @@ export const manifestData: Record<
       name: 'nuxChecklist',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:44.672Z',
     },
     '4201:2588': {
       variant: 'spotSquare',
@@ -2289,6 +2597,7 @@ export const manifestData: Record<
       name: 'waitlistNft',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:57.722Z',
     },
     '4201:2547': {
       variant: 'spotSquare',
@@ -2297,6 +2606,7 @@ export const manifestData: Record<
       name: 'gifting',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:56.697Z',
     },
     '4201:2592': {
       variant: 'spotSquare',
@@ -2304,6 +2614,7 @@ export const manifestData: Record<
       name: 'waitlistSignup',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:43.617Z',
     },
     '4201:2596': {
       variant: 'spotSquare',
@@ -2312,6 +2623,7 @@ export const manifestData: Record<
       name: 'walletApp',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:22.790Z',
     },
     '4201:2589': {
       variant: 'spotSquare',
@@ -2320,6 +2632,7 @@ export const manifestData: Record<
       name: 'directDepositExcitement',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:10.574Z',
     },
     '4201:2595': {
       variant: 'spotSquare',
@@ -2328,6 +2641,7 @@ export const manifestData: Record<
       name: 'yieldCenterUSDC',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-12-02T17:22:01.284Z',
     },
     '4201:2580': {
       variant: 'spotSquare',
@@ -2335,6 +2649,7 @@ export const manifestData: Record<
       name: 'addPasswordProtection',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:11.218Z',
     },
     '4201:2560': {
       variant: 'spotSquare',
@@ -2342,6 +2657,7 @@ export const manifestData: Record<
       name: 'nuxRecurringBuys',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:52:56.672Z',
     },
     '4201:2579': {
       variant: 'spotSquare',
@@ -2350,6 +2666,7 @@ export const manifestData: Record<
       name: 'nuxPopularAssets',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T18:56:55.553Z',
     },
     '4201:2600': {
       variant: 'spotSquare',
@@ -2358,6 +2675,7 @@ export const manifestData: Record<
       name: 'transferringCrypto',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:43.822Z',
     },
     '4201:2576': {
       variant: 'spotSquare',
@@ -2366,6 +2684,7 @@ export const manifestData: Record<
       name: 'algoStaking',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:11.342Z',
     },
     '4201:2586': {
       variant: 'spotSquare',
@@ -2374,6 +2693,7 @@ export const manifestData: Record<
       name: 'borrowLimitsAddressed',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T18:56:55.552Z',
     },
     '4201:2574': {
       variant: 'spotSquare',
@@ -2382,6 +2702,7 @@ export const manifestData: Record<
       name: 'coinbaseCardSparkle',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:52:43.882Z',
     },
     '4201:2572': {
       variant: 'spotSquare',
@@ -2389,6 +2710,7 @@ export const manifestData: Record<
       name: 'sparkleToken',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:53:10.671Z',
     },
     '4201:2597': {
       variant: 'spotSquare',
@@ -2397,6 +2719,7 @@ export const manifestData: Record<
       name: 'assetForward',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:23.453Z',
     },
     '4201:2584': {
       variant: 'spotSquare',
@@ -2405,6 +2728,7 @@ export const manifestData: Record<
       name: 'yieldCenter',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:24.467Z',
     },
     '4201:2585': {
       variant: 'spotSquare',
@@ -2412,6 +2736,7 @@ export const manifestData: Record<
       name: 'refreshMobileApp',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:24.188Z',
     },
     '4201:2570': {
       variant: 'spotSquare',
@@ -2419,6 +2744,7 @@ export const manifestData: Record<
       name: 'announcementAdvancedTrading',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T21:07:58.642Z',
     },
     '4201:2587': {
       variant: 'spotSquare',
@@ -2427,6 +2753,7 @@ export const manifestData: Record<
       name: 'cosmosStaking',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:11.156Z',
     },
     '4201:2598': {
       variant: 'spotSquare',
@@ -2435,6 +2762,7 @@ export const manifestData: Record<
       name: 'daiRewards',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-10-12T13:29:26.835Z',
     },
     '4201:2569': {
       variant: 'spotSquare',
@@ -2443,6 +2771,7 @@ export const manifestData: Record<
       name: 'tezosStakingRewards',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:57.035Z',
     },
     '4201:2568': {
       variant: 'spotSquare',
@@ -2451,6 +2780,7 @@ export const manifestData: Record<
       name: 'cardAnnouncement',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:10.782Z',
     },
     '4201:2566': {
       variant: 'spotSquare',
@@ -2458,6 +2788,7 @@ export const manifestData: Record<
       name: 'assetRefresh',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:10.470Z',
     },
     '4201:2564': {
       variant: 'spotSquare',
@@ -2465,6 +2796,7 @@ export const manifestData: Record<
       name: 'saveTheDate',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:10.958Z',
     },
     '4201:2590': {
       variant: 'spotSquare',
@@ -2473,6 +2805,7 @@ export const manifestData: Record<
       name: 'ethereumStaking',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:11.194Z',
     },
     '4201:2583': {
       variant: 'spotSquare',
@@ -2480,6 +2813,7 @@ export const manifestData: Record<
       name: 'cardShipped',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:11.127Z',
     },
     '4201:2563': {
       variant: 'spotSquare',
@@ -2487,6 +2821,7 @@ export const manifestData: Record<
       name: 'darkModeIntroduction',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.615Z',
     },
     '4201:2581': {
       variant: 'spotSquare',
@@ -2494,6 +2829,7 @@ export const manifestData: Record<
       name: 'addMultipleCrypto',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:10.112Z',
     },
     '4201:2562': {
       variant: 'spotSquare',
@@ -2501,6 +2837,7 @@ export const manifestData: Record<
       name: 'phoneNotifications',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-06T20:17:03.414Z',
     },
     '4201:2561': {
       variant: 'spotSquare',
@@ -2508,6 +2845,7 @@ export const manifestData: Record<
       name: 'moneyRewards',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:10.622Z',
     },
     '4201:2556': {
       variant: 'spotSquare',
@@ -2515,6 +2853,7 @@ export const manifestData: Record<
       name: 'interestForYou',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.221Z',
     },
     '4201:2559': {
       variant: 'spotSquare',
@@ -2522,6 +2861,7 @@ export const manifestData: Record<
       name: 'giftBoxCrypto',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.202Z',
     },
     '4201:2558': {
       variant: 'spotSquare',
@@ -2530,6 +2870,7 @@ export const manifestData: Record<
       name: 'starToken',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:56.891Z',
     },
     '4201:2557': {
       variant: 'spotSquare',
@@ -2538,6 +2879,7 @@ export const manifestData: Record<
       name: 'defiNfts',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:57.213Z',
     },
     '4201:2553': {
       variant: 'spotSquare',
@@ -2545,6 +2887,7 @@ export const manifestData: Record<
       name: 'nuxEarnCrypto',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-11-16T20:04:56.346Z',
     },
     '4201:2565': {
       variant: 'spotSquare',
@@ -2552,6 +2895,7 @@ export const manifestData: Record<
       name: 'nuxEarnYield',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:53:11.098Z',
     },
     '4201:2551': {
       variant: 'spotSquare',
@@ -2559,6 +2903,7 @@ export const manifestData: Record<
       name: 'givingTogetherSmall',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:43.505Z',
     },
     '4122:11815': {
       variant: 'pictogram',
@@ -2566,6 +2911,7 @@ export const manifestData: Record<
       name: 'coinbaseOneRefreshed',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-12-07T16:17:01.057Z',
     },
     '4122:11865': {
       variant: 'pictogram',
@@ -2574,6 +2920,7 @@ export const manifestData: Record<
       name: 'coinbaseOneTrusted',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-12-06T16:36:33.381Z',
     },
     '4122:11871': {
       variant: 'pictogram',
@@ -2581,6 +2928,7 @@ export const manifestData: Record<
       name: 'coinbaseOneEarnCoins',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-12-07T16:17:28.070Z',
     },
     '4122:11877': {
       variant: 'pictogram',
@@ -2588,6 +2936,7 @@ export const manifestData: Record<
       name: 'coinbaseOneAuthenticator',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-12-07T16:17:15.453Z',
     },
     '4122:11867': {
       variant: 'pictogram',
@@ -2596,6 +2945,7 @@ export const manifestData: Record<
       name: 'coinbaseOneShield',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-12-07T16:18:00.315Z',
     },
     '4122:11850': {
       variant: 'pictogram',
@@ -2604,6 +2954,7 @@ export const manifestData: Record<
       name: 'coinbaseOneChat',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-29T15:46:42.212Z',
     },
     '4122:11870': {
       variant: 'pictogram',
@@ -2612,6 +2963,7 @@ export const manifestData: Record<
       name: 'coinbaseOneFiat',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-29T14:18:28.946Z',
     },
     '4122:11725': {
       variant: 'pictogram',
@@ -2620,6 +2972,7 @@ export const manifestData: Record<
       name: 'taxes',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-18T22:28:03.190Z',
     },
     '4122:11778': {
       variant: 'pictogram',
@@ -2627,6 +2980,7 @@ export const manifestData: Record<
       name: 'taxBeta',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:25.411Z',
     },
     '4122:11869': {
       variant: 'pictogram',
@@ -2634,6 +2988,7 @@ export const manifestData: Record<
       name: 'taxSeason',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:24.974Z',
     },
     '4122:11776': {
       variant: 'pictogram',
@@ -2641,6 +2996,7 @@ export const manifestData: Record<
       name: 'receipt',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-13T00:53:46.783Z',
     },
     '4122:11748': {
       variant: 'pictogram',
@@ -2648,6 +3004,7 @@ export const manifestData: Record<
       name: 'support',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-17T09:01:59.074Z',
     },
     '4122:11782': {
       variant: 'pictogram',
@@ -2656,6 +3013,7 @@ export const manifestData: Record<
       name: 'walletWarning',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-17T15:42:26.868Z',
     },
     '4122:11852': {
       variant: 'pictogram',
@@ -2664,6 +3022,7 @@ export const manifestData: Record<
       name: 'graphsGray',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.467Z',
     },
     '4122:11849': {
       variant: 'pictogram',
@@ -2671,6 +3030,7 @@ export const manifestData: Record<
       name: 'noVisibility',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.453Z',
     },
     '4122:11860': {
       variant: 'pictogram',
@@ -2678,6 +3038,7 @@ export const manifestData: Record<
       name: 'noTransactionsPictogram',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:22:38.999Z',
     },
     '4122:11840': {
       variant: 'pictogram',
@@ -2685,6 +3046,7 @@ export const manifestData: Record<
       name: 'defiEarnMoment',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:22.656Z',
     },
     '4122:11848': {
       variant: 'pictogram',
@@ -2692,6 +3054,7 @@ export const manifestData: Record<
       name: 'noNotificationsGray',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:25.405Z',
     },
     '4122:11818': {
       variant: 'pictogram',
@@ -2699,6 +3062,7 @@ export const manifestData: Record<
       name: 'pendingApprovalGray',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.357Z',
     },
     '4122:11846': {
       variant: 'pictogram',
@@ -2706,6 +3070,7 @@ export const manifestData: Record<
       name: 'bundleGray',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.481Z',
     },
     '4122:11825': {
       variant: 'pictogram',
@@ -2714,6 +3079,7 @@ export const manifestData: Record<
       name: 'exploreGray',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.635Z',
     },
     '4122:11876': {
       variant: 'pictogram',
@@ -2722,6 +3088,7 @@ export const manifestData: Record<
       name: 'advancedTradingDesktop',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:27.117Z',
     },
     '4122:11851': {
       variant: 'pictogram',
@@ -2730,6 +3097,7 @@ export const manifestData: Record<
       name: 'commerceNoPaymentsGray',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.475Z',
     },
     '4122:11838': {
       variant: 'pictogram',
@@ -2738,6 +3106,7 @@ export const manifestData: Record<
       name: 'commerceCheckout',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:27.218Z',
     },
     '4122:11856': {
       variant: 'pictogram',
@@ -2746,6 +3115,7 @@ export const manifestData: Record<
       name: 'commerceInvoice',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-16T18:54:00.683Z',
     },
     '4122:11836': {
       variant: 'pictogram',
@@ -2754,6 +3124,7 @@ export const manifestData: Record<
       name: 'newUserChecklistVerifyId',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.296Z',
     },
     '4122:11831': {
       variant: 'pictogram',
@@ -2761,6 +3132,7 @@ export const manifestData: Record<
       name: 'newUserChecklistCompleteAccount',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.044Z',
     },
     '4122:11829': {
       variant: 'pictogram',
@@ -2768,6 +3140,7 @@ export const manifestData: Record<
       name: 'newUserChecklistBuyCrypto',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.422Z',
     },
     '4122:11827': {
       variant: 'pictogram',
@@ -2775,6 +3148,7 @@ export const manifestData: Record<
       name: 'noAnnualFee',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.308Z',
     },
     '4122:11773': {
       variant: 'pictogram',
@@ -2782,6 +3156,7 @@ export const manifestData: Record<
       name: 'transistor',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:27.151Z',
     },
     '4122:11839': {
       variant: 'pictogram',
@@ -2790,6 +3165,7 @@ export const manifestData: Record<
       name: 'applyForHigherLimits',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.344Z',
     },
     '4122:11830': {
       variant: 'pictogram',
@@ -2797,6 +3173,7 @@ export const manifestData: Record<
       name: 'giftbox',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.067Z',
     },
     '4122:11821': {
       variant: 'pictogram',
@@ -2804,6 +3181,7 @@ export const manifestData: Record<
       name: 'orders',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.115Z',
     },
     '4122:11716': {
       variant: 'pictogram',
@@ -2811,6 +3189,7 @@ export const manifestData: Record<
       name: 'worldwide',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-01T22:21:03.574Z',
     },
     '4122:11763': {
       variant: 'pictogram',
@@ -2819,6 +3198,7 @@ export const manifestData: Record<
       name: 'clock',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.272Z',
     },
     '4122:11808': {
       variant: 'pictogram',
@@ -2827,6 +3207,7 @@ export const manifestData: Record<
       name: 'predictionMarkets',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.249Z',
     },
     '4122:11862': {
       variant: 'pictogram',
@@ -2835,6 +3216,7 @@ export const manifestData: Record<
       name: 'waiting',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.102Z',
     },
     '4122:11659': {
       variant: 'pictogram',
@@ -2842,6 +3224,7 @@ export const manifestData: Record<
       name: 'usaProduct',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-14T12:22:27.091Z',
     },
     '4122:11817': {
       variant: 'pictogram',
@@ -2849,6 +3232,7 @@ export const manifestData: Record<
       name: 'bitcoinPizza',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-21T23:18:45.031Z',
     },
     '4122:11868': {
       variant: 'pictogram',
@@ -2857,6 +3241,7 @@ export const manifestData: Record<
       name: 'bitcoinWhitePaper',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-16T16:11:28.726Z',
     },
     '4122:11844': {
       variant: 'pictogram',
@@ -2864,6 +3249,7 @@ export const manifestData: Record<
       name: 'pizza',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.844Z',
     },
     '4122:11857': {
       variant: 'pictogram',
@@ -2872,6 +3258,7 @@ export const manifestData: Record<
       name: 'contactInfo',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-02T20:18:34.017Z',
     },
     '4122:11824': {
       variant: 'pictogram',
@@ -2880,6 +3267,7 @@ export const manifestData: Record<
       name: 'addressBook',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.079Z',
     },
     '4122:11826': {
       variant: 'pictogram',
@@ -2888,6 +3276,7 @@ export const manifestData: Record<
       name: 'startToday',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.262Z',
     },
     '4122:11820': {
       variant: 'pictogram',
@@ -2895,6 +3284,7 @@ export const manifestData: Record<
       name: 'noWiFi',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.467Z',
     },
     '4122:11816': {
       variant: 'pictogram',
@@ -2903,6 +3293,7 @@ export const manifestData: Record<
       name: 'reviewAndAdd',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.001Z',
     },
     '4122:11832': {
       variant: 'pictogram',
@@ -2911,6 +3302,7 @@ export const manifestData: Record<
       name: 'fast',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.051Z',
     },
     '4122:11813': {
       variant: 'pictogram',
@@ -2919,6 +3311,7 @@ export const manifestData: Record<
       name: 'tryAgainLater',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.656Z',
     },
     '4122:11751': {
       variant: 'pictogram',
@@ -2926,6 +3319,7 @@ export const manifestData: Record<
       name: 'typeScript',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.963Z',
     },
     '4122:11810': {
       variant: 'pictogram',
@@ -2933,6 +3327,7 @@ export const manifestData: Record<
       name: 'multiPlatform',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.937Z',
     },
     '4122:11743': {
       variant: 'pictogram',
@@ -2941,6 +3336,7 @@ export const manifestData: Record<
       name: 'takeQuiz',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-18T22:28:03.379Z',
     },
     '4122:11720': {
       variant: 'pictogram',
@@ -2948,6 +3344,7 @@ export const manifestData: Record<
       name: 'chat',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-10T06:14:12.946Z',
     },
     '4122:11805': {
       variant: 'pictogram',
@@ -2955,6 +3352,7 @@ export const manifestData: Record<
       name: 'email',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-04T00:09:59.386Z',
     },
     '4122:11741': {
       variant: 'pictogram',
@@ -2963,6 +3361,7 @@ export const manifestData: Record<
       name: 'recurringPurchases',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.982Z',
     },
     '4122:11859': {
       variant: 'pictogram',
@@ -2971,6 +3370,7 @@ export const manifestData: Record<
       name: 'delegate',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-04T00:09:59.234Z',
     },
     '4122:11842': {
       variant: 'pictogram',
@@ -2979,6 +3379,7 @@ export const manifestData: Record<
       name: 'waitingForConsensus',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.339Z',
     },
     '4122:11798': {
       variant: 'pictogram',
@@ -2986,6 +3387,7 @@ export const manifestData: Record<
       name: 'enableVoting',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.921Z',
     },
     '4122:11769': {
       variant: 'pictogram',
@@ -2994,6 +3396,7 @@ export const manifestData: Record<
       name: 'formDownload',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.253Z',
     },
     '4122:11796': {
       variant: 'pictogram',
@@ -3001,6 +3404,7 @@ export const manifestData: Record<
       name: 'settings',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-17T22:34:01.588Z',
     },
     '4122:11795': {
       variant: 'pictogram',
@@ -3009,6 +3413,7 @@ export const manifestData: Record<
       name: 'priceTracking',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-04T22:47:43.277Z',
     },
     '4122:11794': {
       variant: 'pictogram',
@@ -3016,6 +3421,7 @@ export const manifestData: Record<
       name: 'moneySwift',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-29T14:16:14.531Z',
     },
     '4122:11784': {
       variant: 'pictogram',
@@ -3023,6 +3429,7 @@ export const manifestData: Record<
       name: 'increaseLimits',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:30.336Z',
     },
     '4122:11735': {
       variant: 'pictogram',
@@ -3031,6 +3438,7 @@ export const manifestData: Record<
       name: 'fiat',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-16T16:45:10.000Z',
     },
     '4122:11873': {
       variant: 'pictogram',
@@ -3039,6 +3447,7 @@ export const manifestData: Record<
       name: 'walletExchange',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-21T21:32:14.887Z',
     },
     '4122:11791': {
       variant: 'pictogram',
@@ -3047,6 +3456,7 @@ export const manifestData: Record<
       name: 'addWallet',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-12T13:07:17.355Z',
     },
     '4122:11853': {
       variant: 'pictogram',
@@ -3055,6 +3465,7 @@ export const manifestData: Record<
       name: 'walletDeposit',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-07T17:07:08.708Z',
     },
     '4122:11807': {
       variant: 'pictogram',
@@ -3063,6 +3474,7 @@ export const manifestData: Record<
       name: 'wallet',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-21T21:32:22.730Z',
     },
     '4122:11657': {
       variant: 'pictogram',
@@ -3070,6 +3482,7 @@ export const manifestData: Record<
       name: 'tokenBaskets',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-16T16:54:07.366Z',
     },
     '4122:11786': {
       variant: 'pictogram',
@@ -3078,6 +3491,7 @@ export const manifestData: Record<
       name: 'addToWatchlist',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-21T23:19:07.588Z',
     },
     '4122:11783': {
       variant: 'pictogram',
@@ -3085,6 +3499,7 @@ export const manifestData: Record<
       name: 'bundle',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-08T11:51:21.000Z',
     },
     '4122:11726': {
       variant: 'pictogram',
@@ -3093,6 +3508,7 @@ export const manifestData: Record<
       name: 'trading',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-12T15:26:26.055Z',
     },
     '4122:11779': {
       variant: 'pictogram',
@@ -3100,6 +3516,7 @@ export const manifestData: Record<
       name: 'multipleAssets',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.789Z',
     },
     '4122:11837': {
       variant: 'pictogram',
@@ -3107,6 +3524,7 @@ export const manifestData: Record<
       name: 'moreThanBitcoin',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.725Z',
     },
     '4122:11670': {
       variant: 'pictogram',
@@ -3115,6 +3533,7 @@ export const manifestData: Record<
       name: 'lowFees',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.913Z',
     },
     '4122:11767': {
       variant: 'pictogram',
@@ -3123,6 +3542,7 @@ export const manifestData: Record<
       name: 'listingFees',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-14T12:22:49.087Z',
     },
     '4122:11713': {
       variant: 'pictogram',
@@ -3131,6 +3551,7 @@ export const manifestData: Record<
       name: 'institutions',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-04T00:09:59.447Z',
     },
     '4122:11718': {
       variant: 'pictogram',
@@ -3138,6 +3559,7 @@ export const manifestData: Record<
       name: 'earnCoins',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-08T11:52:02.514Z',
     },
     '4122:11764': {
       variant: 'pictogram',
@@ -3145,6 +3567,7 @@ export const manifestData: Record<
       name: 'partialCoins',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-17T21:56:06.049Z',
     },
     '4122:11835': {
       variant: 'pictogram',
@@ -3152,6 +3575,7 @@ export const manifestData: Record<
       name: 'paypal',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.906Z',
     },
     '4122:11777': {
       variant: 'pictogram',
@@ -3160,6 +3584,7 @@ export const manifestData: Record<
       name: 'moneyEarn',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-14T23:26:31.807Z',
     },
     '4122:11834': {
       variant: 'pictogram',
@@ -3167,6 +3592,7 @@ export const manifestData: Record<
       name: 'creditCard',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-14T18:50:01.173Z',
     },
     '4122:11736': {
       variant: 'pictogram',
@@ -3175,6 +3601,7 @@ export const manifestData: Record<
       name: 'cardBlocked',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-04T19:55:49.719Z',
     },
     '4122:11662': {
       variant: 'pictogram',
@@ -3183,6 +3610,7 @@ export const manifestData: Record<
       name: 'cardDeclined',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:21.957Z',
     },
     '4122:11802': {
       variant: 'pictogram',
@@ -3190,6 +3618,7 @@ export const manifestData: Record<
       name: 'addCard',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-14T18:50:00.753Z',
     },
     '4122:11845': {
       variant: 'pictogram',
@@ -3197,6 +3626,7 @@ export const manifestData: Record<
       name: 'addPayment',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-12T12:01:21.336Z',
     },
     '4122:11774': {
       variant: 'pictogram',
@@ -3205,6 +3635,7 @@ export const manifestData: Record<
       name: 'identityCard',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-12T20:42:58.241Z',
     },
     '4122:11804': {
       variant: 'pictogram',
@@ -3212,6 +3643,7 @@ export const manifestData: Record<
       name: 'safe',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.730Z',
     },
     '4122:11772': {
       variant: 'pictogram',
@@ -3219,6 +3651,7 @@ export const manifestData: Record<
       name: 'smsAuthenticate',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.679Z',
     },
     '4122:11705': {
       variant: 'pictogram',
@@ -3226,6 +3659,7 @@ export const manifestData: Record<
       name: 'googleAuthenticator',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.473Z',
     },
     '4122:11771': {
       variant: 'pictogram',
@@ -3233,6 +3667,7 @@ export const manifestData: Record<
       name: 'authenticatorAlt',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.166Z',
     },
     '4122:11809': {
       variant: 'pictogram',
@@ -3240,6 +3675,7 @@ export const manifestData: Record<
       name: 'authenticator',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.891Z',
     },
     '4122:11822': {
       variant: 'pictogram',
@@ -3248,6 +3684,7 @@ export const manifestData: Record<
       name: 'idVerification',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-06T16:37:25.380Z',
     },
     '4122:11770': {
       variant: 'pictogram',
@@ -3256,6 +3693,7 @@ export const manifestData: Record<
       name: 'key',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-10T06:34:59.160Z',
     },
     '4122:11768': {
       variant: 'pictogram',
@@ -3264,6 +3702,7 @@ export const manifestData: Record<
       name: 'ubiKey',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-10T06:05:12.338Z',
     },
     '4122:11766': {
       variant: 'pictogram',
@@ -3272,6 +3711,7 @@ export const manifestData: Record<
       name: 'authenticationApp',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.973Z',
     },
     '4122:11841': {
       variant: 'pictogram',
@@ -3279,6 +3719,7 @@ export const manifestData: Record<
       name: 'shield',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-04T06:27:31.247Z',
     },
     '4122:11683': {
       variant: 'pictogram',
@@ -3286,6 +3727,7 @@ export const manifestData: Record<
       name: 'lock',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-14T18:50:01.463Z',
     },
     '4122:11760': {
       variant: 'pictogram',
@@ -3293,6 +3735,7 @@ export const manifestData: Record<
       name: 'security',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:20.925Z',
     },
     '4122:11758': {
       variant: 'pictogram',
@@ -3301,6 +3744,7 @@ export const manifestData: Record<
       name: 'laptopVideo',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-09T21:29:53.751Z',
     },
     '4122:11689': {
       variant: 'pictogram',
@@ -3309,6 +3753,7 @@ export const manifestData: Record<
       name: 'laptopCharts',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.469Z',
     },
     '4122:11756': {
       variant: 'pictogram',
@@ -3317,6 +3762,7 @@ export const manifestData: Record<
       name: 'mobileCharts',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.037Z',
     },
     '4122:11814': {
       variant: 'pictogram',
@@ -3325,6 +3771,7 @@ export const manifestData: Record<
       name: 'addPhone',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:20.958Z',
     },
     '4122:11755': {
       variant: 'pictogram',
@@ -3332,6 +3779,7 @@ export const manifestData: Record<
       name: 'browser',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.146Z',
     },
     '4122:11819': {
       variant: 'pictogram',
@@ -3339,6 +3787,7 @@ export const manifestData: Record<
       name: 'internet',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-04T00:09:59.223Z',
     },
     '4122:11754': {
       variant: 'pictogram',
@@ -3346,6 +3795,7 @@ export const manifestData: Record<
       name: 'mobileNotifcation',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.026Z',
     },
     '4122:11752': {
       variant: 'pictogram',
@@ -3353,6 +3803,7 @@ export const manifestData: Record<
       name: 'browserTransaction',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:20.893Z',
     },
     '4122:11855': {
       variant: 'pictogram',
@@ -3360,6 +3811,7 @@ export const manifestData: Record<
       name: 'laptop',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-09T21:29:58.612Z',
     },
     '4122:11750': {
       variant: 'pictogram',
@@ -3367,6 +3819,7 @@ export const manifestData: Record<
       name: 'successPhone',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:22.110Z',
     },
     '4122:11745': {
       variant: 'pictogram',
@@ -3374,6 +3827,7 @@ export const manifestData: Record<
       name: 'phone',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-10T06:14:24.625Z',
     },
     '4122:11744': {
       variant: 'pictogram',
@@ -3381,6 +3835,7 @@ export const manifestData: Record<
       name: '2fa',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-29T15:22:59.277Z',
     },
     '4122:11742': {
       variant: 'pictogram',
@@ -3388,6 +3843,7 @@ export const manifestData: Record<
       name: 'strongInfo',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-22T16:24:38.989Z',
     },
     '4122:11790': {
       variant: 'pictogram',
@@ -3395,6 +3851,7 @@ export const manifestData: Record<
       name: 'cryptoCard',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:20.888Z',
     },
     '4122:11740': {
       variant: 'pictogram',
@@ -3403,6 +3860,7 @@ export const manifestData: Record<
       name: 'transferSend',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-08T23:01:17.657Z',
     },
     '4122:11739': {
       variant: 'pictogram',
@@ -3411,6 +3869,7 @@ export const manifestData: Record<
       name: 'higherLimits',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-12T13:19:51.389Z',
     },
     '4122:11737': {
       variant: 'pictogram',
@@ -3418,6 +3877,7 @@ export const manifestData: Record<
       name: 'authenticatorProgress',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:26.070Z',
     },
     '4122:11699': {
       variant: 'pictogram',
@@ -3426,6 +3886,7 @@ export const manifestData: Record<
       name: 'strongWarning',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-07T20:44:47.647Z',
     },
     '4122:11734': {
       variant: 'pictogram',
@@ -3433,6 +3894,7 @@ export const manifestData: Record<
       name: 'trusted',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-21T13:25:52.866Z',
     },
     '4122:11732': {
       variant: 'pictogram',
@@ -3440,6 +3902,7 @@ export const manifestData: Record<
       name: 'easyToUse',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-07T17:07:08.767Z',
     },
     '4122:11730': {
       variant: 'pictogram',
@@ -3447,6 +3910,7 @@ export const manifestData: Record<
       name: 'target',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:20.916Z',
     },
     '4122:11729': {
       variant: 'pictogram',
@@ -3454,6 +3918,7 @@ export const manifestData: Record<
       name: 'explore',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-14T18:50:00.405Z',
     },
     '4122:11797': {
       variant: 'pictogram',
@@ -3461,6 +3926,7 @@ export const manifestData: Record<
       name: 'learn',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-16T16:40:26.431Z',
     },
     '4122:11727': {
       variant: 'pictogram',
@@ -3468,6 +3934,7 @@ export const manifestData: Record<
       name: 'barChart',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.150Z',
     },
     '4122:11722': {
       variant: 'pictogram',
@@ -3475,6 +3942,7 @@ export const manifestData: Record<
       name: 'notifications',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.366Z',
     },
     '4122:11676': {
       variant: 'pictogram',
@@ -3482,6 +3950,7 @@ export const manifestData: Record<
       name: 'gem',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-14T18:50:01.015Z',
     },
     '4122:11721': {
       variant: 'pictogram',
@@ -3489,6 +3958,7 @@ export const manifestData: Record<
       name: 'calendar',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.615Z',
     },
     '4122:11723': {
       variant: 'pictogram',
@@ -3496,6 +3966,7 @@ export const manifestData: Record<
       name: 'alerts',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-22T15:05:27.962Z',
     },
     '4122:11714': {
       variant: 'pictogram',
@@ -3503,6 +3974,7 @@ export const manifestData: Record<
       name: 'chart',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.515Z',
     },
     '4122:11749': {
       variant: 'pictogram',
@@ -3510,6 +3982,7 @@ export const manifestData: Record<
       name: 'envelope',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.247Z',
     },
     '4122:11712': {
       variant: 'pictogram',
@@ -3517,6 +3990,7 @@ export const manifestData: Record<
       name: 'pieChart',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:24.026Z',
     },
     '4122:11711': {
       variant: 'pictogram',
@@ -3525,6 +3999,7 @@ export const manifestData: Record<
       name: 'warning',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-07T15:14:15.137Z',
     },
     '4122:11793': {
       variant: 'pictogram',
@@ -3533,6 +4008,7 @@ export const manifestData: Record<
       name: 'done',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-16T16:44:59.277Z',
     },
     '4122:11707': {
       variant: 'pictogram',
@@ -3540,6 +4016,7 @@ export const manifestData: Record<
       name: 'error',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-09T17:25:17.608Z',
     },
     '4122:11704': {
       variant: 'pictogram',
@@ -3547,6 +4024,7 @@ export const manifestData: Record<
       name: 'settled',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-11T12:21:04.150Z',
     },
     '4122:11812': {
       variant: 'pictogram',
@@ -3554,6 +4032,7 @@ export const manifestData: Record<
       name: 'add',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:23.246Z',
     },
     '4122:11702': {
       variant: 'pictogram',
@@ -3562,6 +4041,7 @@ export const manifestData: Record<
       name: 'checkmark',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-13T14:28:14.465Z',
     },
     '4169:1195': {
       variant: 'pictogram',
@@ -3570,6 +4050,7 @@ export const manifestData: Record<
       name: 'ordersGray',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-12T16:38:24.576Z',
     },
     '4122:11709': {
       variant: 'pictogram',
@@ -3577,6 +4058,7 @@ export const manifestData: Record<
       name: 'coinbaseOneRefreshed',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:36.880Z',
     },
     '4122:11701': {
       variant: 'pictogram',
@@ -3585,6 +4067,7 @@ export const manifestData: Record<
       name: 'coinbaseOneTrusted',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:36.872Z',
     },
     '4122:11803': {
       variant: 'pictogram',
@@ -3592,6 +4075,7 @@ export const manifestData: Record<
       name: 'coinbaseOneEarnCoins',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:37.157Z',
     },
     '4122:11811': {
       variant: 'pictogram',
@@ -3599,6 +4083,7 @@ export const manifestData: Record<
       name: 'coinbaseOneAuthenticator',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:37.207Z',
     },
     '4122:11697': {
       variant: 'pictogram',
@@ -3607,6 +4092,7 @@ export const manifestData: Record<
       name: 'coinbaseOneShield',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-10-18T22:28:03.482Z',
     },
     '4122:11680': {
       variant: 'pictogram',
@@ -3615,6 +4101,7 @@ export const manifestData: Record<
       name: 'coinbaseOneChat',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:36.887Z',
     },
     '4122:11696': {
       variant: 'pictogram',
@@ -3623,6 +4110,7 @@ export const manifestData: Record<
       name: 'coinbaseOneFiat',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-10-18T22:28:02.955Z',
     },
     '4122:11692': {
       variant: 'pictogram',
@@ -3631,6 +4119,7 @@ export const manifestData: Record<
       name: 'taxes',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-10-18T22:28:02.783Z',
     },
     '4122:11690': {
       variant: 'pictogram',
@@ -3638,6 +4127,7 @@ export const manifestData: Record<
       name: 'taxBeta',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:34.671Z',
     },
     '4122:11687': {
       variant: 'pictogram',
@@ -3645,6 +4135,7 @@ export const manifestData: Record<
       name: 'taxSeason',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:34.999Z',
     },
     '4122:11686': {
       variant: 'pictogram',
@@ -3652,6 +4143,7 @@ export const manifestData: Record<
       name: 'receipt',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:36.847Z',
     },
     '4182:615': {
       variant: 'pictogram',
@@ -3660,6 +4152,7 @@ export const manifestData: Record<
       name: 'ordersGray',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:34.660Z',
     },
     '4122:11746': {
       variant: 'pictogram',
@@ -3667,6 +4160,7 @@ export const manifestData: Record<
       name: 'support',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.307Z',
     },
     '4122:11673': {
       variant: 'pictogram',
@@ -3675,6 +4169,7 @@ export const manifestData: Record<
       name: 'walletWarning',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:35.168Z',
     },
     '4122:11828': {
       variant: 'pictogram',
@@ -3683,6 +4178,7 @@ export const manifestData: Record<
       name: 'graphsGray',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.623Z',
     },
     '4122:11775': {
       variant: 'pictogram',
@@ -3690,6 +4186,7 @@ export const manifestData: Record<
       name: 'noVisibility',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.185Z',
     },
     '4122:11738': {
       variant: 'pictogram',
@@ -3697,6 +4194,7 @@ export const manifestData: Record<
       name: 'noTransactionsPictogram',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:22:39.039Z',
     },
     '4122:11684': {
       variant: 'pictogram',
@@ -3704,6 +4202,7 @@ export const manifestData: Record<
       name: 'defiEarnMoment',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.954Z',
     },
     '4122:11781': {
       variant: 'pictogram',
@@ -3711,6 +4210,7 @@ export const manifestData: Record<
       name: 'noNotificationsGray',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:34.519Z',
     },
     '4122:11789': {
       variant: 'pictogram',
@@ -3718,6 +4218,7 @@ export const manifestData: Record<
       name: 'pendingApprovalGray',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.291Z',
     },
     '4122:11682': {
       variant: 'pictogram',
@@ -3725,6 +4226,7 @@ export const manifestData: Record<
       name: 'bundleGray',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.447Z',
     },
     '4122:11679': {
       variant: 'pictogram',
@@ -3733,6 +4235,7 @@ export const manifestData: Record<
       name: 'exploreGray',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.640Z',
     },
     '4122:11695': {
       variant: 'pictogram',
@@ -3741,6 +4244,7 @@ export const manifestData: Record<
       name: 'advancedTradingDesktop',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.759Z',
     },
     '4122:11724': {
       variant: 'pictogram',
@@ -3749,6 +4253,7 @@ export const manifestData: Record<
       name: 'commerceNoPaymentsGray',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.375Z',
     },
     '4122:11677': {
       variant: 'pictogram',
@@ -3757,6 +4262,7 @@ export const manifestData: Record<
       name: 'commerceCheckout',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.833Z',
     },
     '4122:11858': {
       variant: 'pictogram',
@@ -3765,6 +4271,7 @@ export const manifestData: Record<
       name: 'commerceInvoice',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-12-08T01:51:28.756Z',
     },
     '4122:11806': {
       variant: 'pictogram',
@@ -3773,6 +4280,7 @@ export const manifestData: Record<
       name: 'newUserChecklistVerifyId',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.299Z',
     },
     '4122:11872': {
       variant: 'pictogram',
@@ -3780,6 +4288,7 @@ export const manifestData: Record<
       name: 'newUserChecklistCompleteAccount',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.088Z',
     },
     '4122:11710': {
       variant: 'pictogram',
@@ -3787,6 +4296,7 @@ export const manifestData: Record<
       name: 'newUserChecklistBuyCrypto',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.789Z',
     },
     '4122:11703': {
       variant: 'pictogram',
@@ -3794,6 +4304,7 @@ export const manifestData: Record<
       name: 'noAnnualFee',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.575Z',
     },
     '4122:11663': {
       variant: 'pictogram',
@@ -3801,6 +4312,7 @@ export const manifestData: Record<
       name: 'transistor',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.728Z',
     },
     '4122:11800': {
       variant: 'pictogram',
@@ -3809,6 +4321,7 @@ export const manifestData: Record<
       name: 'applyForHigherLimits',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.694Z',
     },
     '4122:11666': {
       variant: 'pictogram',
@@ -3816,6 +4329,7 @@ export const manifestData: Record<
       name: 'giftbox',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.701Z',
     },
     '4122:11792': {
       variant: 'pictogram',
@@ -3823,6 +4337,7 @@ export const manifestData: Record<
       name: 'orders',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.480Z',
     },
     '4122:11847': {
       variant: 'pictogram',
@@ -3830,6 +4345,7 @@ export const manifestData: Record<
       name: 'worldwide',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.468Z',
     },
     '4122:11854': {
       variant: 'pictogram',
@@ -3838,6 +4354,7 @@ export const manifestData: Record<
       name: 'clock',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.645Z',
     },
     '4122:11675': {
       variant: 'pictogram',
@@ -3846,6 +4363,7 @@ export const manifestData: Record<
       name: 'predictionMarkets',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.015Z',
     },
     '4122:11674': {
       variant: 'pictogram',
@@ -3854,6 +4372,7 @@ export const manifestData: Record<
       name: 'waiting',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.725Z',
     },
     '4122:11672': {
       variant: 'pictogram',
@@ -3861,6 +4380,7 @@ export const manifestData: Record<
       name: 'usaProduct',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.190Z',
     },
     '4122:11761': {
       variant: 'pictogram',
@@ -3868,6 +4388,7 @@ export const manifestData: Record<
       name: 'bitcoinPizza',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.137Z',
     },
     '4122:11671': {
       variant: 'pictogram',
@@ -3876,6 +4397,7 @@ export const manifestData: Record<
       name: 'bitcoinWhitePaper',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.137Z',
     },
     '4122:11694': {
       variant: 'pictogram',
@@ -3883,6 +4405,7 @@ export const manifestData: Record<
       name: 'pizza',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.607Z',
     },
     '4122:11669': {
       variant: 'pictogram',
@@ -3891,6 +4414,7 @@ export const manifestData: Record<
       name: 'contactInfo',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.409Z',
     },
     '4122:11799': {
       variant: 'pictogram',
@@ -3899,6 +4423,7 @@ export const manifestData: Record<
       name: 'addressBook',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.601Z',
     },
     '4122:11667': {
       variant: 'pictogram',
@@ -3907,6 +4432,7 @@ export const manifestData: Record<
       name: 'startToday',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.818Z',
     },
     '4122:11664': {
       variant: 'pictogram',
@@ -3914,6 +4440,7 @@ export const manifestData: Record<
       name: 'noWiFi',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.237Z',
     },
     '4122:11685': {
       variant: 'pictogram',
@@ -3922,6 +4449,7 @@ export const manifestData: Record<
       name: 'reviewAndAdd',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.083Z',
     },
     '4122:11719': {
       variant: 'pictogram',
@@ -3930,6 +4458,7 @@ export const manifestData: Record<
       name: 'fast',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.082Z',
     },
     '4122:11731': {
       variant: 'pictogram',
@@ -3938,6 +4467,7 @@ export const manifestData: Record<
       name: 'tryAgainLater',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.105Z',
     },
     '4122:11706': {
       variant: 'pictogram',
@@ -3945,6 +4475,7 @@ export const manifestData: Record<
       name: 'typeScript',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.987Z',
     },
     '4122:11681': {
       variant: 'pictogram',
@@ -3952,6 +4483,7 @@ export const manifestData: Record<
       name: 'multiPlatform',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.743Z',
     },
     '4122:11678': {
       variant: 'pictogram',
@@ -3960,6 +4492,7 @@ export const manifestData: Record<
       name: 'takeQuiz',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.690Z',
     },
     '4122:11700': {
       variant: 'pictogram',
@@ -3967,6 +4500,7 @@ export const manifestData: Record<
       name: 'chat',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-11-29T15:45:16.857Z',
     },
     '4122:11661': {
       variant: 'pictogram',
@@ -3974,6 +4508,7 @@ export const manifestData: Record<
       name: 'email',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.461Z',
     },
     '4122:11660': {
       variant: 'pictogram',
@@ -3982,6 +4517,7 @@ export const manifestData: Record<
       name: 'recurringPurchases',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.264Z',
     },
     '4122:11875': {
       variant: 'pictogram',
@@ -3990,6 +4526,7 @@ export const manifestData: Record<
       name: 'delegate',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.939Z',
     },
     '4122:11863': {
       variant: 'pictogram',
@@ -3998,6 +4535,7 @@ export const manifestData: Record<
       name: 'waitingForConsensus',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.686Z',
     },
     '4122:11785': {
       variant: 'pictogram',
@@ -4005,6 +4543,7 @@ export const manifestData: Record<
       name: 'enableVoting',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.782Z',
     },
     '4122:11658': {
       variant: 'pictogram',
@@ -4013,6 +4552,7 @@ export const manifestData: Record<
       name: 'formDownload',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.644Z',
     },
     '4122:11866': {
       variant: 'pictogram',
@@ -4020,6 +4560,7 @@ export const manifestData: Record<
       name: 'settings',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-10T17:39:04.414Z',
     },
     '4122:11823': {
       variant: 'pictogram',
@@ -4028,6 +4569,7 @@ export const manifestData: Record<
       name: 'priceTracking',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.665Z',
     },
     '4122:11656': {
       variant: 'pictogram',
@@ -4035,6 +4577,7 @@ export const manifestData: Record<
       name: 'moneySwift',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.724Z',
     },
     '4122:11717': {
       variant: 'pictogram',
@@ -4042,6 +4585,7 @@ export const manifestData: Record<
       name: 'increaseLimits',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.644Z',
     },
     '4122:11655': {
       variant: 'pictogram',
@@ -4050,6 +4594,7 @@ export const manifestData: Record<
       name: 'fiat',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.149Z',
     },
     '4122:11654': {
       variant: 'pictogram',
@@ -4058,6 +4603,7 @@ export const manifestData: Record<
       name: 'walletExchange',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.794Z',
     },
     '4122:11759': {
       variant: 'pictogram',
@@ -4066,6 +4612,7 @@ export const manifestData: Record<
       name: 'addWallet',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.481Z',
     },
     '4122:11753': {
       variant: 'pictogram',
@@ -4074,6 +4621,7 @@ export const manifestData: Record<
       name: 'walletDeposit',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-07T22:13:43.861Z',
     },
     '4122:11652': {
       variant: 'pictogram',
@@ -4082,6 +4630,7 @@ export const manifestData: Record<
       name: 'wallet',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.593Z',
     },
     '4122:11651': {
       variant: 'pictogram',
@@ -4089,6 +4638,7 @@ export const manifestData: Record<
       name: 'tokenBaskets',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.897Z',
     },
     '4122:11757': {
       variant: 'pictogram',
@@ -4097,6 +4647,7 @@ export const manifestData: Record<
       name: 'addToWatchlist',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.682Z',
     },
     '4122:11788': {
       variant: 'pictogram',
@@ -4104,6 +4655,7 @@ export const manifestData: Record<
       name: 'bundle',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.177Z',
     },
     '4122:11668': {
       variant: 'pictogram',
@@ -4112,6 +4664,7 @@ export const manifestData: Record<
       name: 'trading',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.253Z',
     },
     '4122:11650': {
       variant: 'pictogram',
@@ -4119,6 +4672,7 @@ export const manifestData: Record<
       name: 'multipleAssets',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.568Z',
     },
     '4122:11649': {
       variant: 'pictogram',
@@ -4126,6 +4680,7 @@ export const manifestData: Record<
       name: 'moreThanBitcoin',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.175Z',
     },
     '4122:11648': {
       variant: 'pictogram',
@@ -4134,6 +4689,7 @@ export const manifestData: Record<
       name: 'lowFees',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.528Z',
     },
     '4122:11647': {
       variant: 'pictogram',
@@ -4142,6 +4698,7 @@ export const manifestData: Record<
       name: 'listingFees',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-11-14T12:21:20.748Z',
     },
     '4122:11780': {
       variant: 'pictogram',
@@ -4150,6 +4707,7 @@ export const manifestData: Record<
       name: 'institutions',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.510Z',
     },
     '4122:11715': {
       variant: 'pictogram',
@@ -4157,6 +4715,7 @@ export const manifestData: Record<
       name: 'earnCoins',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.311Z',
     },
     '4122:11765': {
       variant: 'pictogram',
@@ -4164,6 +4723,7 @@ export const manifestData: Record<
       name: 'partialCoins',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.694Z',
     },
     '4122:11646': {
       variant: 'pictogram',
@@ -4171,6 +4731,7 @@ export const manifestData: Record<
       name: 'paypal',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.899Z',
     },
     '4122:11645': {
       variant: 'pictogram',
@@ -4179,6 +4740,7 @@ export const manifestData: Record<
       name: 'moneyEarn',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.719Z',
     },
     '4122:11644': {
       variant: 'pictogram',
@@ -4186,6 +4748,7 @@ export const manifestData: Record<
       name: 'creditCard',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.155Z',
     },
     '4122:11643': {
       variant: 'pictogram',
@@ -4194,6 +4757,7 @@ export const manifestData: Record<
       name: 'cardBlocked',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-11-04T19:16:49.267Z',
     },
     '4122:11642': {
       variant: 'pictogram',
@@ -4202,6 +4766,7 @@ export const manifestData: Record<
       name: 'cardDeclined',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:35.721Z',
     },
     '4122:11641': {
       variant: 'pictogram',
@@ -4209,6 +4774,7 @@ export const manifestData: Record<
       name: 'addCard',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-19T17:01:17.041Z',
     },
     '4122:11640': {
       variant: 'pictogram',
@@ -4216,6 +4782,7 @@ export const manifestData: Record<
       name: 'addPayment',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.133Z',
     },
     '4122:11639': {
       variant: 'pictogram',
@@ -4224,6 +4791,7 @@ export const manifestData: Record<
       name: 'identityCard',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-06T16:14:54.042Z',
     },
     '4122:11843': {
       variant: 'pictogram',
@@ -4231,6 +4799,7 @@ export const manifestData: Record<
       name: 'safe',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.283Z',
     },
     '4122:11638': {
       variant: 'pictogram',
@@ -4238,6 +4807,7 @@ export const manifestData: Record<
       name: 'smsAuthenticate',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.224Z',
     },
     '4122:11637': {
       variant: 'pictogram',
@@ -4245,6 +4815,7 @@ export const manifestData: Record<
       name: 'googleAuthenticator',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.041Z',
     },
     '4122:11636': {
       variant: 'pictogram',
@@ -4252,6 +4823,7 @@ export const manifestData: Record<
       name: 'authenticatorAlt',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.969Z',
     },
     '4122:11693': {
       variant: 'pictogram',
@@ -4259,6 +4831,7 @@ export const manifestData: Record<
       name: 'authenticator',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.060Z',
     },
     '4122:11635': {
       variant: 'pictogram',
@@ -4267,6 +4840,7 @@ export const manifestData: Record<
       name: 'idVerification',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.969Z',
     },
     '4122:11634': {
       variant: 'pictogram',
@@ -4275,6 +4849,7 @@ export const manifestData: Record<
       name: 'key',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-22T13:57:50.764Z',
     },
     '4122:11633': {
       variant: 'pictogram',
@@ -4283,6 +4858,7 @@ export const manifestData: Record<
       name: 'ubiKey',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.900Z',
     },
     '4122:11632': {
       variant: 'pictogram',
@@ -4291,6 +4867,7 @@ export const manifestData: Record<
       name: 'authenticationApp',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.365Z',
     },
     '4122:11631': {
       variant: 'pictogram',
@@ -4298,6 +4875,7 @@ export const manifestData: Record<
       name: 'shield',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.753Z',
     },
     '4122:11630': {
       variant: 'pictogram',
@@ -4305,6 +4883,7 @@ export const manifestData: Record<
       name: 'lock',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.492Z',
     },
     '4122:11864': {
       variant: 'pictogram',
@@ -4312,6 +4891,7 @@ export const manifestData: Record<
       name: 'security',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-12-01T23:28:16.490Z',
     },
     '4122:11629': {
       variant: 'pictogram',
@@ -4320,6 +4900,7 @@ export const manifestData: Record<
       name: 'laptopVideo',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.312Z',
     },
     '4122:11628': {
       variant: 'pictogram',
@@ -4328,6 +4909,7 @@ export const manifestData: Record<
       name: 'laptopCharts',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.457Z',
     },
     '4122:11787': {
       variant: 'pictogram',
@@ -4336,6 +4918,7 @@ export const manifestData: Record<
       name: 'mobileCharts',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.992Z',
     },
     '4122:11627': {
       variant: 'pictogram',
@@ -4344,6 +4927,7 @@ export const manifestData: Record<
       name: 'addPhone',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.520Z',
     },
     '4122:11626': {
       variant: 'pictogram',
@@ -4351,6 +4935,7 @@ export const manifestData: Record<
       name: 'browser',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.591Z',
     },
     '4122:11625': {
       variant: 'pictogram',
@@ -4358,6 +4943,7 @@ export const manifestData: Record<
       name: 'internet',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.065Z',
     },
     '4122:11624': {
       variant: 'pictogram',
@@ -4365,6 +4951,7 @@ export const manifestData: Record<
       name: 'mobileNotifcation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.450Z',
     },
     '4122:11733': {
       variant: 'pictogram',
@@ -4372,6 +4959,7 @@ export const manifestData: Record<
       name: 'browserTransaction',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.464Z',
     },
     '4122:11623': {
       variant: 'pictogram',
@@ -4379,6 +4967,7 @@ export const manifestData: Record<
       name: 'laptop',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.525Z',
     },
     '4122:11622': {
       variant: 'pictogram',
@@ -4386,6 +4975,7 @@ export const manifestData: Record<
       name: 'successPhone',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.262Z',
     },
     '4122:11621': {
       variant: 'pictogram',
@@ -4393,6 +4983,7 @@ export const manifestData: Record<
       name: 'phone',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.538Z',
     },
     '4122:11708': {
       variant: 'pictogram',
@@ -4400,6 +4991,7 @@ export const manifestData: Record<
       name: '2fa',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-12-13T20:37:59.179Z',
     },
     '4122:11833': {
       variant: 'pictogram',
@@ -4407,6 +4999,7 @@ export const manifestData: Record<
       name: 'strongInfo',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-10T21:48:56.302Z',
     },
     '4122:11620': {
       variant: 'pictogram',
@@ -4414,6 +5007,7 @@ export const manifestData: Record<
       name: 'cryptoCard',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.491Z',
     },
     '4122:11874': {
       variant: 'pictogram',
@@ -4422,6 +5016,7 @@ export const manifestData: Record<
       name: 'transferSend',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-21T21:35:44.897Z',
     },
     '4122:11619': {
       variant: 'pictogram',
@@ -4430,6 +5025,7 @@ export const manifestData: Record<
       name: 'higherLimits',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.517Z',
     },
     '4122:11762': {
       variant: 'pictogram',
@@ -4437,6 +5033,7 @@ export const manifestData: Record<
       name: 'authenticatorProgress',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.002Z',
     },
     '4122:11618': {
       variant: 'pictogram',
@@ -4445,6 +5042,7 @@ export const manifestData: Record<
       name: 'strongWarning',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-10-06T20:17:44.924Z',
     },
     '4122:11617': {
       variant: 'pictogram',
@@ -4452,6 +5050,7 @@ export const manifestData: Record<
       name: 'trusted',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.363Z',
     },
     '4122:11616': {
       variant: 'pictogram',
@@ -4459,6 +5058,7 @@ export const manifestData: Record<
       name: 'easyToUse',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:33.574Z',
     },
     '4122:11861': {
       variant: 'pictogram',
@@ -4466,6 +5066,7 @@ export const manifestData: Record<
       name: 'target',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.830Z',
     },
     '4122:11688': {
       variant: 'pictogram',
@@ -4473,6 +5074,7 @@ export const manifestData: Record<
       name: 'explore',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.208Z',
     },
     '4122:11615': {
       variant: 'pictogram',
@@ -4480,6 +5082,7 @@ export const manifestData: Record<
       name: 'learn',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-11-16T16:44:25.134Z',
     },
     '4122:11614': {
       variant: 'pictogram',
@@ -4487,6 +5090,7 @@ export const manifestData: Record<
       name: 'barChart',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.105Z',
     },
     '4122:11691': {
       variant: 'pictogram',
@@ -4494,6 +5098,7 @@ export const manifestData: Record<
       name: 'notifications',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-11-29T18:50:11.799Z',
     },
     '4122:11653': {
       variant: 'pictogram',
@@ -4501,6 +5106,7 @@ export const manifestData: Record<
       name: 'gem',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:32.674Z',
     },
     '4122:11613': {
       variant: 'pictogram',
@@ -4508,6 +5114,7 @@ export const manifestData: Record<
       name: 'calendar',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.425Z',
     },
     '4122:11612': {
       variant: 'pictogram',
@@ -4515,6 +5122,7 @@ export const manifestData: Record<
       name: 'alerts',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-12-13T17:57:31.004Z',
     },
     '4122:11698': {
       variant: 'pictogram',
@@ -4522,6 +5130,7 @@ export const manifestData: Record<
       name: 'chart',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.200Z',
     },
     '4122:11611': {
       variant: 'pictogram',
@@ -4529,6 +5138,7 @@ export const manifestData: Record<
       name: 'envelope',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:37.439Z',
     },
     '4122:11610': {
       variant: 'pictogram',
@@ -4536,6 +5146,7 @@ export const manifestData: Record<
       name: 'pieChart',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.728Z',
     },
     '4122:11747': {
       variant: 'pictogram',
@@ -4544,6 +5155,7 @@ export const manifestData: Record<
       name: 'warning',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-10-07T23:03:10.027Z',
     },
     '4122:11609': {
       variant: 'pictogram',
@@ -4552,6 +5164,7 @@ export const manifestData: Record<
       name: 'done',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:34.216Z',
     },
     '4122:11608': {
       variant: 'pictogram',
@@ -4559,6 +5172,7 @@ export const manifestData: Record<
       name: 'error',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-11-09T17:25:19.662Z',
     },
     '4122:11728': {
       variant: 'pictogram',
@@ -4566,6 +5180,7 @@ export const manifestData: Record<
       name: 'settled',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.935Z',
     },
     '4122:11801': {
       variant: 'pictogram',
@@ -4573,6 +5188,7 @@ export const manifestData: Record<
       name: 'add',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:36.290Z',
     },
     '4122:11665': {
       variant: 'pictogram',
@@ -4581,6 +5197,7 @@ export const manifestData: Record<
       name: 'checkmark',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-11-23T19:32:24.496Z',
     },
     '4201:2549': {
       variant: 'spotSquare',
@@ -4589,6 +5206,7 @@ export const manifestData: Record<
       name: 'defiNfts',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-21T23:15:17.800Z',
     },
     '4201:2575': {
       variant: 'spotSquare',
@@ -4597,6 +5215,7 @@ export const manifestData: Record<
       name: 'bullishCase',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:10.770Z',
     },
     '4201:2582': {
       variant: 'spotSquare',
@@ -4604,6 +5223,7 @@ export const manifestData: Record<
       name: 'nuxChecklist',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-22T15:05:28.232Z',
     },
     '4201:2545': {
       variant: 'spotSquare',
@@ -4612,6 +5232,7 @@ export const manifestData: Record<
       name: 'waitlistNft',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-14T18:50:01.057Z',
     },
     '4201:2544': {
       variant: 'spotSquare',
@@ -4620,6 +5241,7 @@ export const manifestData: Record<
       name: 'gifting',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-09T16:44:59.294Z',
     },
     '4201:2543': {
       variant: 'spotSquare',
@@ -4627,6 +5249,7 @@ export const manifestData: Record<
       name: 'waitlistSignup',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:57.055Z',
     },
     '4201:2542': {
       variant: 'spotSquare',
@@ -4635,6 +5258,7 @@ export const manifestData: Record<
       name: 'walletApp',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-10T18:33:51.060Z',
     },
     '4201:2541': {
       variant: 'spotSquare',
@@ -4643,6 +5267,7 @@ export const manifestData: Record<
       name: 'directDepositExcitement',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:23.038Z',
     },
     '4201:2540': {
       variant: 'spotSquare',
@@ -4651,6 +5276,7 @@ export const manifestData: Record<
       name: 'yieldCenterUSDC',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-02T15:24:28.615Z',
     },
     '4201:2555': {
       variant: 'spotSquare',
@@ -4659,6 +5285,7 @@ export const manifestData: Record<
       name: 'defiEarnAnnouncement',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-07T20:44:47.622Z',
     },
     '4201:2539': {
       variant: 'spotSquare',
@@ -4666,6 +5293,7 @@ export const manifestData: Record<
       name: 'addPasswordProtection',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-07T18:25:27.325Z',
     },
     '4201:2537': {
       variant: 'spotSquare',
@@ -4673,6 +5301,7 @@ export const manifestData: Record<
       name: 'nuxRecurringBuys',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:52:22.932Z',
     },
     '4201:2550': {
       variant: 'spotSquare',
@@ -4681,6 +5310,7 @@ export const manifestData: Record<
       name: 'nuxPopularAssets',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-14T18:50:00.286Z',
     },
     '4201:2546': {
       variant: 'spotSquare',
@@ -4689,6 +5319,7 @@ export const manifestData: Record<
       name: 'transferringCrypto',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-04T00:09:59.259Z',
     },
     '4201:2536': {
       variant: 'spotSquare',
@@ -4697,6 +5328,7 @@ export const manifestData: Record<
       name: 'algoStaking',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:53:25.148Z',
     },
     '4201:2593': {
       variant: 'spotSquare',
@@ -4705,6 +5337,7 @@ export const manifestData: Record<
       name: 'borrowLimitsAddressed',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:21.465Z',
     },
     '4201:2535': {
       variant: 'spotSquare',
@@ -4713,6 +5346,7 @@ export const manifestData: Record<
       name: 'coinbaseCardSparkle',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-12-01T16:07:51.450Z',
     },
     '4201:2534': {
       variant: 'spotSquare',
@@ -4720,6 +5354,7 @@ export const manifestData: Record<
       name: 'sparkleToken',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-22T15:05:27.988Z',
     },
     '4201:2533': {
       variant: 'spotSquare',
@@ -4728,6 +5363,7 @@ export const manifestData: Record<
       name: 'assetForward',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-09T00:28:14.969Z',
     },
     '4201:2571': {
       variant: 'spotSquare',
@@ -4736,6 +5372,7 @@ export const manifestData: Record<
       name: 'yieldCenter',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-07T22:13:43.922Z',
     },
     '4201:2601': {
       variant: 'spotSquare',
@@ -4743,6 +5380,7 @@ export const manifestData: Record<
       name: 'refreshMobileApp',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:52:23.164Z',
     },
     '4201:2532': {
       variant: 'spotSquare',
@@ -4750,6 +5388,7 @@ export const manifestData: Record<
       name: 'announcementAdvancedTrading',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-14T23:26:31.122Z',
     },
     '4201:2530': {
       variant: 'spotSquare',
@@ -4758,6 +5397,7 @@ export const manifestData: Record<
       name: 'cosmosStaking',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:24.218Z',
     },
     '4201:2531': {
       variant: 'spotSquare',
@@ -4766,6 +5406,7 @@ export const manifestData: Record<
       name: 'daiRewards',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:52:24.037Z',
     },
     '4201:2567': {
       variant: 'spotSquare',
@@ -4774,6 +5415,7 @@ export const manifestData: Record<
       name: 'tezosStakingRewards',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:10.334Z',
     },
     '4201:2554': {
       variant: 'spotSquare',
@@ -4782,6 +5424,7 @@ export const manifestData: Record<
       name: 'cardAnnouncement',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-01T16:07:05.090Z',
     },
     '4201:2529': {
       variant: 'spotSquare',
@@ -4789,6 +5432,7 @@ export const manifestData: Record<
       name: 'assetRefresh',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-08T23:17:53.185Z',
     },
     '4201:2528': {
       variant: 'spotSquare',
@@ -4796,6 +5440,7 @@ export const manifestData: Record<
       name: 'saveTheDate',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-03T20:00:32.671Z',
     },
     '4201:2527': {
       variant: 'spotSquare',
@@ -4804,6 +5449,7 @@ export const manifestData: Record<
       name: 'ethereumStaking',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-16T21:08:35.941Z',
     },
     '4201:2526': {
       variant: 'spotSquare',
@@ -4811,6 +5457,7 @@ export const manifestData: Record<
       name: 'cardShipped',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-14T17:06:23.580Z',
     },
     '4201:2577': {
       variant: 'spotSquare',
@@ -4818,6 +5465,7 @@ export const manifestData: Record<
       name: 'darkModeIntroduction',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:10.525Z',
     },
     '4201:2573': {
       variant: 'spotSquare',
@@ -4825,6 +5473,7 @@ export const manifestData: Record<
       name: 'addMultipleCrypto',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:24.940Z',
     },
     '4201:2525': {
       variant: 'spotSquare',
@@ -4832,6 +5481,7 @@ export const manifestData: Record<
       name: 'phoneNotifications',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-03T20:00:32.829Z',
     },
     '4201:2538': {
       variant: 'spotSquare',
@@ -4839,6 +5489,7 @@ export const manifestData: Record<
       name: 'moneyRewards',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-10T18:33:51.083Z',
     },
     '4201:2552': {
       variant: 'spotSquare',
@@ -4846,6 +5497,7 @@ export const manifestData: Record<
       name: 'interestForYou',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-18T22:28:03.409Z',
     },
     '4201:2524': {
       variant: 'spotSquare',
@@ -4853,6 +5505,7 @@ export const manifestData: Record<
       name: 'giftBoxCrypto',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:23.424Z',
     },
     '4201:2523': {
       variant: 'spotSquare',
@@ -4861,6 +5514,7 @@ export const manifestData: Record<
       name: 'starToken',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:24.093Z',
     },
     '4201:2522': {
       variant: 'spotSquare',
@@ -4868,6 +5522,7 @@ export const manifestData: Record<
       name: 'nuxEarnCrypto',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:52:43.996Z',
     },
     '4201:2599': {
       variant: 'spotSquare',
@@ -4875,6 +5530,7 @@ export const manifestData: Record<
       name: 'nuxEarnYield',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:52:09.588Z',
     },
     '4201:2521': {
       variant: 'spotSquare',
@@ -4882,6 +5538,7 @@ export const manifestData: Record<
       name: 'givingTogetherSmall',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:23.848Z',
     },
     '4345:678': {
       variant: 'heroSquare',
@@ -4889,6 +5546,7 @@ export const manifestData: Record<
       name: 'advancedTradingUi',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-14T15:36:35.888Z',
     },
     '4354:1059': {
       variant: 'heroSquare',
@@ -4896,6 +5554,7 @@ export const manifestData: Record<
       name: 'holdCrypto',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:30:55.148Z',
     },
     '4354:1061': {
       variant: 'heroSquare',
@@ -4903,6 +5562,7 @@ export const manifestData: Record<
       name: 'holdCrypto',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:24:42.365Z',
     },
     '4354:1063': {
       variant: 'heroSquare',
@@ -4910,6 +5570,7 @@ export const manifestData: Record<
       name: 'coinCheckmark',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-25T17:59:56.654Z',
     },
     '4354:1060': {
       variant: 'heroSquare',
@@ -4917,6 +5578,7 @@ export const manifestData: Record<
       name: 'coinCheckmark',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:34.632Z',
     },
     '4354:1062': {
       variant: 'heroSquare',
@@ -4925,6 +5587,7 @@ export const manifestData: Record<
       name: 'add2Fa',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-29T15:27:29.127Z',
     },
     '4354:1056': {
       variant: 'heroSquare',
@@ -4933,6 +5596,7 @@ export const manifestData: Record<
       name: 'add2Fa',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-29T15:28:01.193Z',
     },
     '4354:1054': {
       variant: 'heroSquare',
@@ -4940,6 +5604,7 @@ export const manifestData: Record<
       name: 'powerOfCrypto',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:32:21.594Z',
     },
     '4354:1058': {
       variant: 'heroSquare',
@@ -4947,6 +5612,7 @@ export const manifestData: Record<
       name: 'powerOfCrypto',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-17T00:19:49.825Z',
     },
     '4354:1055': {
       variant: 'heroSquare',
@@ -4955,6 +5621,7 @@ export const manifestData: Record<
       name: 'feeScale',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-12T16:38:25.487Z',
     },
     '4354:1057': {
       variant: 'heroSquare',
@@ -4963,6 +5630,7 @@ export const manifestData: Record<
       name: 'feeScale',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:35.751Z',
     },
     '4345:623': {
       variant: 'heroSquare',
@@ -4970,6 +5638,7 @@ export const manifestData: Record<
       name: 'switchAdvancedToSimpleTrading',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-12T16:38:25.559Z',
     },
     '4386:440': {
       variant: 'heroSquare',
@@ -4977,6 +5646,7 @@ export const manifestData: Record<
       name: 'switchAdvancedToSimpleTrading',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:37.409Z',
     },
     '4354:1053': {
       variant: 'heroSquare',
@@ -4985,6 +5655,7 @@ export const manifestData: Record<
       name: 'earnGrowth',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-12T16:38:21.431Z',
     },
     '4131:769': {
       variant: 'heroSquare',
@@ -4993,6 +5664,7 @@ export const manifestData: Record<
       name: 'earnMore',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-22T15:05:27.867Z',
     },
     '4362:1657': {
       variant: 'heroSquare',
@@ -5001,6 +5673,7 @@ export const manifestData: Record<
       name: 'selectReward',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-23T14:40:30.451Z',
     },
     '4362:1656': {
       variant: 'heroSquare',
@@ -5009,6 +5682,7 @@ export const manifestData: Record<
       name: 'selectReward',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-12-02T15:24:04.499Z',
     },
     '4362:1792': {
       variant: 'spotSquare',
@@ -5017,6 +5691,7 @@ export const manifestData: Record<
       name: 'rewardExpiring',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.578Z',
     },
     '4362:1791': {
       variant: 'spotSquare',
@@ -5025,6 +5700,7 @@ export const manifestData: Record<
       name: 'rewardExpiring',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.899Z',
     },
     '4362:1790': {
       variant: 'spotSquare',
@@ -5032,6 +5708,7 @@ export const manifestData: Record<
       name: 'switchReward',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.131Z',
     },
     '4362:1789': {
       variant: 'spotSquare',
@@ -5039,6 +5716,7 @@ export const manifestData: Record<
       name: 'switchReward',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.503Z',
     },
     '4391:448': {
       variant: 'pictogram',
@@ -5046,6 +5724,7 @@ export const manifestData: Record<
       name: 'restaking',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-12T18:56:28.178Z',
     },
     '4391:446': {
       variant: 'pictogram',
@@ -5053,6 +5732,7 @@ export const manifestData: Record<
       name: 'restaking',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:32.872Z',
     },
     '4391:449': {
       variant: 'pictogram',
@@ -5060,6 +5740,7 @@ export const manifestData: Record<
       name: 'stacking',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-12T16:38:22.720Z',
     },
     '4391:447': {
       variant: 'pictogram',
@@ -5067,6 +5748,7 @@ export const manifestData: Record<
       name: 'stacking',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-21T21:35:45.080Z',
     },
     '4395:592': {
       variant: 'spotSquare',
@@ -5074,6 +5756,7 @@ export const manifestData: Record<
       name: 'nft',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-06T16:40:32.739Z',
     },
     '4411:571': {
       variant: 'spotSquare',
@@ -5081,6 +5764,7 @@ export const manifestData: Record<
       name: 'nft',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.778Z',
     },
     '4397:648': {
       variant: 'spotSquare',
@@ -5089,6 +5773,7 @@ export const manifestData: Record<
       name: 'fileYourCryptoTaxesCheckOther',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:52:44.091Z',
     },
     '4397:647': {
       variant: 'spotSquare',
@@ -5097,6 +5782,7 @@ export const manifestData: Record<
       name: 'fileYourCryptoTaxesOther',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:52:08.873Z',
     },
     '4397:703': {
       variant: 'spotSquare',
@@ -5105,6 +5791,7 @@ export const manifestData: Record<
       name: 'fileYourCryptoTaxesCheckOther',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:52:23.519Z',
     },
     '4397:704': {
       variant: 'spotSquare',
@@ -5113,6 +5800,7 @@ export const manifestData: Record<
       name: 'fileYourCryptoTaxesOther',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-13T17:52:22.843Z',
     },
     '4435:630': {
       variant: 'heroSquare',
@@ -5120,6 +5808,7 @@ export const manifestData: Record<
       name: 'coinbaseOneLogoHeroSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-12T16:38:27.162Z',
     },
     '4435:624': {
       variant: 'heroSquare',
@@ -5127,6 +5816,7 @@ export const manifestData: Record<
       name: 'coinbaseOneLogoHeroSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:35.439Z',
     },
     '4435:629': {
       variant: 'spotRectangle',
@@ -5134,6 +5824,7 @@ export const manifestData: Record<
       name: 'coinbaseOneLogoSpotRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-12T16:38:22.417Z',
     },
     '4435:627': {
       variant: 'spotRectangle',
@@ -5141,6 +5832,7 @@ export const manifestData: Record<
       name: 'coinbaseOneLogoSpotRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:36:37.330Z',
     },
     '4435:625': {
       variant: 'spotSquare',
@@ -5148,6 +5840,7 @@ export const manifestData: Record<
       name: 'coinbaseOneLogoSpotSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-14T18:50:00.181Z',
     },
     '4435:628': {
       variant: 'spotSquare',
@@ -5155,6 +5848,7 @@ export const manifestData: Record<
       name: 'coinbaseOneLogoSpotSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.530Z',
     },
     '4435:626': {
       variant: 'pictogram',
@@ -5162,6 +5856,7 @@ export const manifestData: Record<
       name: 'coinbaseOneLogoPictogram',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-18T22:28:02.826Z',
     },
     '4435:623': {
       variant: 'pictogram',
@@ -5169,6 +5864,7 @@ export const manifestData: Record<
       name: 'coinbaseOneLogoPictogram',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-12-14T18:50:01.266Z',
     },
     '4201:4842': {
       variant: 'heroSquare',
@@ -5177,6 +5873,7 @@ export const manifestData: Record<
       name: 'receivedCard',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-14T15:36:33.402Z',
     },
     '4604:771': {
       variant: 'pictogram',
@@ -5184,6 +5881,7 @@ export const manifestData: Record<
       name: 'supportChat',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.634Z',
     },
     '4604:798': {
       variant: 'pictogram',
@@ -5191,6 +5889,7 @@ export const manifestData: Record<
       name: 'supportChat',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.910Z',
     },
     '4710:828': {
       variant: 'heroSquare',
@@ -5198,6 +5897,7 @@ export const manifestData: Record<
       name: 'reviewInfo',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-17T19:38:35.230Z',
     },
     '4710:829': {
       variant: 'heroSquare',
@@ -5205,6 +5905,7 @@ export const manifestData: Record<
       name: 'reviewInfo',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:56.993Z',
     },
     '4810:1459': {
       variant: 'pictogram',
@@ -5213,6 +5914,7 @@ export const manifestData: Record<
       name: 'doneGray',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:22.911Z',
     },
     '4776:804': {
       variant: 'heroSquare',
@@ -5220,6 +5922,7 @@ export const manifestData: Record<
       name: 'camera',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-10T22:25:10.746Z',
     },
     '4776:805': {
       variant: 'heroSquare',
@@ -5227,6 +5930,7 @@ export const manifestData: Record<
       name: 'camera',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-11-10T22:24:33.221Z',
     },
     '4835:1737': {
       variant: 'heroSquare',
@@ -5234,6 +5938,7 @@ export const manifestData: Record<
       name: 'coinbaseOneWaitlist',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.081Z',
     },
     '4835:1736': {
       variant: 'heroSquare',
@@ -5241,6 +5946,7 @@ export const manifestData: Record<
       name: 'coinbaseOneWaitlist',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.594Z',
     },
     '4835:2124': {
       variant: 'heroSquare',
@@ -5248,6 +5954,7 @@ export const manifestData: Record<
       name: 'mic',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.055Z',
     },
     '4835:2118': {
       variant: 'heroSquare',
@@ -5255,6 +5962,7 @@ export const manifestData: Record<
       name: 'mic',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.561Z',
     },
     '4835:2117': {
       variant: 'heroSquare',
@@ -5262,6 +5970,7 @@ export const manifestData: Record<
       name: 'videoRequest',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.549Z',
     },
     '4835:2123': {
       variant: 'heroSquare',
@@ -5269,6 +5978,7 @@ export const manifestData: Record<
       name: 'videoRequest',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.521Z',
     },
     '4835:2115': {
       variant: 'heroSquare',
@@ -5276,6 +5986,7 @@ export const manifestData: Record<
       name: 'videoUpload',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.399Z',
     },
     '4835:2122': {
       variant: 'heroSquare',
@@ -5283,6 +5994,7 @@ export const manifestData: Record<
       name: 'videoUpload',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.535Z',
     },
     '4835:2114': {
       variant: 'heroSquare',
@@ -5290,6 +6002,7 @@ export const manifestData: Record<
       name: 'videoReview',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.973Z',
     },
     '4835:2120': {
       variant: 'heroSquare',
@@ -5297,6 +6010,7 @@ export const manifestData: Record<
       name: 'videoReview',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.840Z',
     },
     '4835:2116': {
       variant: 'heroSquare',
@@ -5304,6 +6018,7 @@ export const manifestData: Record<
       name: 'bigError',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-13T10:39:31.633Z',
     },
     '4835:2121': {
       variant: 'heroSquare',
@@ -5311,6 +6026,7 @@ export const manifestData: Record<
       name: 'bigError',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.575Z',
     },
     '4846:1395': {
       variant: 'spotSquare',
@@ -5318,6 +6034,7 @@ export const manifestData: Record<
       name: 'guideCryptoBeginner',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-14T17:06:23.568Z',
     },
     '4846:1394': {
       variant: 'spotSquare',
@@ -5325,6 +6042,7 @@ export const manifestData: Record<
       name: 'guideCryptoBeginner',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.202Z',
     },
     '4846:1390': {
       variant: 'spotSquare',
@@ -5333,6 +6051,7 @@ export const manifestData: Record<
       name: 'guideStartInvesting',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-14T18:50:00.299Z',
     },
     '4846:1393': {
       variant: 'spotSquare',
@@ -5340,6 +6059,7 @@ export const manifestData: Record<
       name: 'guideNftDefi',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.608Z',
     },
     '4846:1392': {
       variant: 'spotSquare',
@@ -5347,6 +6067,7 @@ export const manifestData: Record<
       name: 'guideNftDefi',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.465Z',
     },
     '4846:1389': {
       variant: 'spotSquare',
@@ -5355,6 +6076,7 @@ export const manifestData: Record<
       name: 'guideStartInvesting',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.551Z',
     },
     '4846:1387': {
       variant: 'spotSquare',
@@ -5363,6 +6085,7 @@ export const manifestData: Record<
       name: 'guideBullCase',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.060Z',
     },
     '4846:1391': {
       variant: 'spotSquare',
@@ -5371,6 +6094,7 @@ export const manifestData: Record<
       name: 'guideBullCase',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.389Z',
     },
     '4846:1386': {
       variant: 'spotSquare',
@@ -5379,6 +6103,7 @@ export const manifestData: Record<
       name: 'guideFiveThings',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-14T18:50:01.244Z',
     },
     '4846:1385': {
       variant: 'spotSquare',
@@ -5387,6 +6112,7 @@ export const manifestData: Record<
       name: 'guideFiveThings',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.716Z',
     },
     '4846:1384': {
       variant: 'spotSquare',
@@ -5394,6 +6120,7 @@ export const manifestData: Record<
       name: 'priceAlerts',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.027Z',
     },
     '4846:1388': {
       variant: 'spotSquare',
@@ -5401,6 +6128,7 @@ export const manifestData: Record<
       name: 'priceAlerts',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.638Z',
     },
     '4953:1928': {
       variant: 'heroSquare',
@@ -5409,6 +6137,7 @@ export const manifestData: Record<
       name: 'cardReloadFunds',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.417Z',
     },
     '4953:1934': {
       variant: 'spotSquare',
@@ -5416,6 +6145,7 @@ export const manifestData: Record<
       name: 'confirmAddress',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.022Z',
     },
     '4953:1935': {
       variant: 'heroSquare',
@@ -5424,6 +6154,7 @@ export const manifestData: Record<
       name: 'cardReloadFunds',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.028Z',
     },
     '4953:1936': {
       variant: 'spotSquare',
@@ -5432,6 +6163,7 @@ export const manifestData: Record<
       name: 'confirmIDCard',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-06T16:41:28.148Z',
     },
     '4953:1933': {
       variant: 'spotSquare',
@@ -5439,6 +6171,7 @@ export const manifestData: Record<
       name: 'confirmAddress',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.614Z',
     },
     '4953:1926': {
       variant: 'spotSquare',
@@ -5447,6 +6180,7 @@ export const manifestData: Record<
       name: 'confirmSocialSecurity',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.852Z',
     },
     '4953:1931': {
       variant: 'spotSquare',
@@ -5455,6 +6189,7 @@ export const manifestData: Record<
       name: 'confirmIDCard',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.190Z',
     },
     '4953:1930': {
       variant: 'spotSquare',
@@ -5462,6 +6197,7 @@ export const manifestData: Record<
       name: 'confirmEmail',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-02T14:13:00.238Z',
     },
     '4953:1932': {
       variant: 'spotSquare',
@@ -5470,6 +6206,7 @@ export const manifestData: Record<
       name: 'confirmSocialSecurity',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:28.429Z',
     },
     '4953:1927': {
       variant: 'spotSquare',
@@ -5477,6 +6214,7 @@ export const manifestData: Record<
       name: 'confirmEmail',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T18:49:08.391Z',
     },
     '4953:1929': {
       variant: 'heroSquare',
@@ -5484,6 +6222,7 @@ export const manifestData: Record<
       name: 'desktopUnknown',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.722Z',
     },
     '4953:1925': {
       variant: 'heroSquare',
@@ -5491,6 +6230,7 @@ export const manifestData: Record<
       name: 'desktopUnknown',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.290Z',
     },
     '4953:1924': {
       variant: 'heroSquare',
@@ -5498,6 +6238,7 @@ export const manifestData: Record<
       name: 'phoneUnknown',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.632Z',
     },
     '4953:1923': {
       variant: 'heroSquare',
@@ -5505,6 +6246,7 @@ export const manifestData: Record<
       name: 'phoneUnknown',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.856Z',
     },
     '4960:1564': {
       variant: 'heroSquare',
@@ -5512,6 +6254,7 @@ export const manifestData: Record<
       name: 'stopLimitOrder',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:23:48.500Z',
     },
     '4960:1585': {
       variant: 'heroSquare',
@@ -5519,6 +6262,7 @@ export const manifestData: Record<
       name: 'stopLimitOrder',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.680Z',
     },
     '5198:1525': {
       variant: 'spotRectangle',
@@ -5526,6 +6270,7 @@ export const manifestData: Record<
       name: 'downloadCoinbaseWalletArrow',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.698Z',
     },
     '5381:1482': {
       variant: 'spotRectangle',
@@ -5533,6 +6278,7 @@ export const manifestData: Record<
       name: 'downloadCoinbaseWalletArrow',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.423Z',
     },
     '5220:1565': {
       variant: 'heroSquare',
@@ -5540,6 +6286,7 @@ export const manifestData: Record<
       name: 'stopLimitOrderDown',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.944Z',
     },
     '5220:1592': {
       variant: 'heroSquare',
@@ -5547,6 +6294,7 @@ export const manifestData: Record<
       name: 'stopLimitOrderDown',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.315Z',
     },
     '5439:1485': {
       variant: 'spotSquare',
@@ -5555,6 +6303,7 @@ export const manifestData: Record<
       name: 'adaStaking',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.851Z',
     },
     '5439:1486': {
       variant: 'spotSquare',
@@ -5562,6 +6311,7 @@ export const manifestData: Record<
       name: 'adaStaking',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.593Z',
     },
     '5503:1506': {
       variant: 'heroSquare',
@@ -5569,6 +6319,7 @@ export const manifestData: Record<
       name: 'ethStakingUpsell',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T21:24:09.035Z',
     },
     '5503:1505': {
       variant: 'heroSquare',
@@ -5576,6 +6327,7 @@ export const manifestData: Record<
       name: 'ethStakingUpsell',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.657Z',
     },
     '5508:1523': {
       variant: 'heroSquare',
@@ -5583,6 +6335,7 @@ export const manifestData: Record<
       name: 'earnCryptoCard',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-01T21:31:21.949Z',
     },
     '5512:1461': {
       variant: 'spotRectangle',
@@ -5590,6 +6343,7 @@ export const manifestData: Record<
       name: 'downloadingStatement',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-01T19:07:36.911Z',
     },
     '5508:1554': {
       variant: 'heroSquare',
@@ -5597,6 +6351,7 @@ export const manifestData: Record<
       name: 'earnCryptoCard',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.542Z',
     },
     '5512:1481': {
       variant: 'spotRectangle',
@@ -5604,6 +6359,7 @@ export const manifestData: Record<
       name: 'downloadingStatement',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.540Z',
     },
     '5516:1672': {
       variant: 'heroSquare',
@@ -5611,6 +6367,7 @@ export const manifestData: Record<
       name: 'ledgerPlugin',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-05T17:23:21.594Z',
     },
     '5516:1671': {
       variant: 'heroSquare',
@@ -5618,6 +6375,7 @@ export const manifestData: Record<
       name: 'ledgerAccess',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-05T17:23:21.619Z',
     },
     '5525:1463': {
       variant: 'spotRectangle',
@@ -5626,6 +6384,7 @@ export const manifestData: Record<
       name: 'sendCryptoFasterHorizontal',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-28T17:32:31.580Z',
     },
     '5525:1462': {
       variant: 'spotRectangle',
@@ -5634,6 +6393,7 @@ export const manifestData: Record<
       name: 'sendCryptoFasterHorizontal',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:23:20.118Z',
     },
     '5630:1461': {
       variant: 'pictogram',
@@ -5642,6 +6402,7 @@ export const manifestData: Record<
       name: 'doneGray',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.626Z',
     },
     '5623:1461': {
       variant: 'heroSquare',
@@ -5649,6 +6410,7 @@ export const manifestData: Record<
       name: 'ledgerPlugin',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.621Z',
     },
     '5623:1462': {
       variant: 'heroSquare',
@@ -5656,6 +6418,7 @@ export const manifestData: Record<
       name: 'ledgerAccess',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.662Z',
     },
     '5615:1496': {
       variant: 'spotSquare',
@@ -5663,6 +6426,7 @@ export const manifestData: Record<
       name: 'cardAutoReload',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-03T20:00:32.863Z',
     },
     '5617:1553': {
       variant: 'heroSquare',
@@ -5670,6 +6434,7 @@ export const manifestData: Record<
       name: 'performance',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-13T22:36:56.980Z',
     },
     '5615:1497': {
       variant: 'spotSquare',
@@ -5677,6 +6442,7 @@ export const manifestData: Record<
       name: 'cardAutoReload',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.378Z',
     },
     '5617:1552': {
       variant: 'heroSquare',
@@ -5684,6 +6450,7 @@ export const manifestData: Record<
       name: 'performance',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.011Z',
     },
     '5617:1574': {
       variant: 'spotSquare',
@@ -5691,6 +6458,7 @@ export const manifestData: Record<
       name: 'performanceSpotSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T18:56:55.552Z',
     },
     '5617:1575': {
       variant: 'spotSquare',
@@ -5698,6 +6466,7 @@ export const manifestData: Record<
       name: 'performanceSpotSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T21:04:19.814Z',
     },
     '5627:1859': {
       variant: 'spotRectangle',
@@ -5705,6 +6474,7 @@ export const manifestData: Record<
       name: 'ledgerSignatureRejected',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.319Z',
     },
     '5627:1858': {
       variant: 'spotRectangle',
@@ -5712,6 +6482,7 @@ export const manifestData: Record<
       name: 'ledgerFailed',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:24.832Z',
     },
     '5627:1857': {
       variant: 'spotRectangle',
@@ -5719,6 +6490,7 @@ export const manifestData: Record<
       name: 'ledgerFailed',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-10T23:46:15.323Z',
     },
     '5627:1856': {
       variant: 'spotRectangle',
@@ -5726,6 +6498,7 @@ export const manifestData: Record<
       name: 'ledgerSignatureRejected',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.283Z',
     },
     '5627:1865': {
       variant: 'pictogram',
@@ -5733,6 +6506,7 @@ export const manifestData: Record<
       name: 'hardwareWallet',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T18:31:58.950Z',
     },
     '5627:1860': {
       variant: 'pictogram',
@@ -5740,6 +6514,7 @@ export const manifestData: Record<
       name: 'seedPhrase',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:11.289Z',
     },
     '5627:1864': {
       variant: 'pictogram',
@@ -5747,6 +6522,7 @@ export const manifestData: Record<
       name: 'hardwareWallet',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-21T23:18:22.803Z',
     },
     '5627:1863': {
       variant: 'pictogram',
@@ -5754,6 +6530,7 @@ export const manifestData: Record<
       name: 'seedPhrase',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-19T15:15:15.448Z',
     },
     '5627:1917': {
       variant: 'spotRectangle',
@@ -5762,6 +6539,7 @@ export const manifestData: Record<
       name: 'ethAddress',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-05T17:23:22.198Z',
     },
     '5627:1918': {
       variant: 'spotRectangle',
@@ -5770,6 +6548,7 @@ export const manifestData: Record<
       name: 'ethAddress',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.304Z',
     },
     '5775:1146': {
       variant: 'spotSquare',
@@ -5777,6 +6556,7 @@ export const manifestData: Record<
       name: 'taxDocuments',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.070Z',
     },
     '5775:1147': {
       variant: 'spotSquare',
@@ -5784,6 +6564,7 @@ export const manifestData: Record<
       name: 'taxDocuments',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-15T16:37:54.154Z',
     },
     '5787:1150': {
       variant: 'spotSquare',
@@ -5791,6 +6572,7 @@ export const manifestData: Record<
       name: 'linkCoinbaseWalletSmall',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.488Z',
     },
     '5787:1151': {
       variant: 'spotSquare',
@@ -5798,6 +6580,7 @@ export const manifestData: Record<
       name: 'linkCoinbaseWalletSmall',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.599Z',
     },
     '5788:1166': {
       variant: 'spotRectangle',
@@ -5805,6 +6588,7 @@ export const manifestData: Record<
       name: 'transferFundsGray',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-05T17:23:22.155Z',
     },
     '5788:1195': {
       variant: 'spotRectangle',
@@ -5812,6 +6596,7 @@ export const manifestData: Record<
       name: 'transferFundsGray',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.034Z',
     },
     '6025:1850': {
       variant: 'spotRectangle',
@@ -5819,6 +6604,7 @@ export const manifestData: Record<
       name: 'apiKey',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-01T23:25:59.344Z',
     },
     '6025:1852': {
       variant: 'spotRectangle',
@@ -5826,6 +6612,7 @@ export const manifestData: Record<
       name: 'apiKey',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.835Z',
     },
     '6025:1851': {
       variant: 'heroSquare',
@@ -5834,6 +6621,7 @@ export const manifestData: Record<
       name: 'recommendInvest',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-17T14:17:11.299Z',
     },
     '6025:1846': {
       variant: 'heroSquare',
@@ -5842,6 +6630,7 @@ export const manifestData: Record<
       name: 'recommendInvest',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.070Z',
     },
     '6025:1843': {
       variant: 'heroSquare',
@@ -5849,6 +6638,7 @@ export const manifestData: Record<
       name: 'ethereumToWallet',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.739Z',
     },
     '6025:1847': {
       variant: 'heroSquare',
@@ -5856,6 +6646,7 @@ export const manifestData: Record<
       name: 'ethereumToWallet',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.117Z',
     },
     '6025:1849': {
       variant: 'spotSquare',
@@ -5864,6 +6655,7 @@ export const manifestData: Record<
       name: 'recommendInvestments',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-12T16:38:22.135Z',
     },
     '6025:1848': {
       variant: 'spotSquare',
@@ -5872,6 +6664,7 @@ export const manifestData: Record<
       name: 'sendCryptoFasterSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-19T18:07:30.792Z',
     },
     '6025:1845': {
       variant: 'spotSquare',
@@ -5880,6 +6673,7 @@ export const manifestData: Record<
       name: 'recommendInvestments',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T18:49:08.398Z',
     },
     '6025:1844': {
       variant: 'spotSquare',
@@ -5888,6 +6682,7 @@ export const manifestData: Record<
       name: 'sendCryptoFasterSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-14T01:15:57.122Z',
     },
     '6028:1574': {
       variant: 'heroSquare',
@@ -5895,6 +6690,7 @@ export const manifestData: Record<
       name: 'diamondHands',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-03T13:31:52.949Z',
     },
     '6028:1575': {
       variant: 'heroSquare',
@@ -5902,6 +6698,7 @@ export const manifestData: Record<
       name: 'diamondHands',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:56.830Z',
     },
     '6028:1576': {
       variant: 'heroSquare',
@@ -5909,6 +6706,7 @@ export const manifestData: Record<
       name: 'paperHands',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.318Z',
     },
     '6028:1577': {
       variant: 'heroSquare',
@@ -5916,6 +6714,7 @@ export const manifestData: Record<
       name: 'paperHands',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-29T20:16:03.102Z',
     },
     '6049:1156': {
       variant: 'pictogram',
@@ -5923,6 +6722,7 @@ export const manifestData: Record<
       name: 'calendarCaution',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.822Z',
     },
     '6049:1155': {
       variant: 'pictogram',
@@ -5930,6 +6730,7 @@ export const manifestData: Record<
       name: 'calendarCaution',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.705Z',
     },
     '6121:1152': {
       variant: 'heroSquare',
@@ -5937,6 +6738,7 @@ export const manifestData: Record<
       name: 'watchVideos',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.520Z',
     },
     '6121:1185': {
       variant: 'heroSquare',
@@ -5944,6 +6746,7 @@ export const manifestData: Record<
       name: 'walletSecurity',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:25.258Z',
     },
     '6121:1188': {
       variant: 'heroSquare',
@@ -5951,6 +6754,7 @@ export const manifestData: Record<
       name: 'stressTestedColdStorage',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.620Z',
     },
     '6121:1186': {
       variant: 'heroSquare',
@@ -5958,6 +6762,7 @@ export const manifestData: Record<
       name: 'stayInControlSelfHostedWalletsStorage',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.394Z',
     },
     '6121:1174': {
       variant: 'heroSquare',
@@ -5965,6 +6770,7 @@ export const manifestData: Record<
       name: 'calendarStartDay',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:22:39.054Z',
     },
     '6121:1177': {
       variant: 'heroSquare',
@@ -5972,6 +6778,7 @@ export const manifestData: Record<
       name: 'staking',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-17T14:41:34.516Z',
     },
     '6121:1184': {
       variant: 'heroSquare',
@@ -5979,6 +6786,7 @@ export const manifestData: Record<
       name: 'stableValue',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.235Z',
     },
     '6121:1176': {
       variant: 'heroSquare',
@@ -5986,6 +6794,7 @@ export const manifestData: Record<
       name: 'selfCustody',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-01T21:42:14.642Z',
     },
     '6121:1178': {
       variant: 'heroSquare',
@@ -5993,6 +6802,7 @@ export const manifestData: Record<
       name: 'secureStorage',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.344Z',
     },
     '6121:1171': {
       variant: 'heroSquare',
@@ -6000,6 +6810,7 @@ export const manifestData: Record<
       name: 'secureGlobalTransactions',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:24.201Z',
     },
     '6121:1169': {
       variant: 'heroSquare',
@@ -6007,6 +6818,7 @@ export const manifestData: Record<
       name: 'secureAndTrusted',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-21T13:26:16.300Z',
     },
     '6121:1167': {
       variant: 'heroSquare',
@@ -6014,6 +6826,7 @@ export const manifestData: Record<
       name: 'poweredByEthereum',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.829Z',
     },
     '6121:1148': {
       variant: 'heroSquare',
@@ -6021,6 +6834,7 @@ export const manifestData: Record<
       name: 'p2pPayments',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-16T12:58:31.002Z',
     },
     '6121:1168': {
       variant: 'heroSquare',
@@ -6028,6 +6842,7 @@ export const manifestData: Record<
       name: 'noFees',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-17T14:27:56.148Z',
     },
     '6121:1166': {
       variant: 'heroSquare',
@@ -6035,6 +6850,7 @@ export const manifestData: Record<
       name: 'multicoinSupport',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.767Z',
     },
     '6121:1179': {
       variant: 'heroSquare',
@@ -6043,6 +6859,7 @@ export const manifestData: Record<
       name: 'multiPlatformMobileAppBrowserExtension',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.679Z',
     },
     '6121:1172': {
       variant: 'heroSquare',
@@ -6050,6 +6867,7 @@ export const manifestData: Record<
       name: 'moneyDecentralized',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:11.273Z',
     },
     '6121:1163': {
       variant: 'heroSquare',
@@ -6057,6 +6875,7 @@ export const manifestData: Record<
       name: 'mining',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.603Z',
     },
     '6121:1161': {
       variant: 'heroSquare',
@@ -6064,6 +6883,7 @@ export const manifestData: Record<
       name: 'linkingYourWalletToYourCoinbaseAccount',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:31:51.892Z',
     },
     '6121:1160': {
       variant: 'heroSquare',
@@ -6071,6 +6891,7 @@ export const manifestData: Record<
       name: 'invest',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:51.095Z',
     },
     '6121:1140': {
       variant: 'heroSquare',
@@ -6078,6 +6899,7 @@ export const manifestData: Record<
       name: 'insuranceProtection',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.901Z',
     },
     '6121:1187': {
       variant: 'heroSquare',
@@ -6085,6 +6907,7 @@ export const manifestData: Record<
       name: 'globalTransactionsBeyond',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:22:39.123Z',
     },
     '6121:1158': {
       variant: 'heroSquare',
@@ -6092,6 +6915,7 @@ export const manifestData: Record<
       name: 'getStartedInMinutes',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:30:44.521Z',
     },
     '6121:1170': {
       variant: 'heroSquare',
@@ -6099,6 +6923,7 @@ export const manifestData: Record<
       name: 'encryptedEverything',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.434Z',
     },
     '6121:1155': {
       variant: 'heroSquare',
@@ -6106,6 +6931,7 @@ export const manifestData: Record<
       name: 'earn',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.889Z',
     },
     '6121:1154': {
       variant: 'heroSquare',
@@ -6113,6 +6939,7 @@ export const manifestData: Record<
       name: 'digitalCollectibles',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.905Z',
     },
     '6121:1175': {
       variant: 'heroSquare',
@@ -6120,6 +6947,7 @@ export const manifestData: Record<
       name: 'decentralizedWebWeb3',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.475Z',
     },
     '6121:1153': {
       variant: 'heroSquare',
@@ -6127,6 +6955,7 @@ export const manifestData: Record<
       name: 'decentralization',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.050Z',
     },
     '6121:1150': {
       variant: 'heroSquare',
@@ -6134,6 +6963,7 @@ export const manifestData: Record<
       name: 'defiDecentralizedTradingExchange',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.496Z',
     },
     '6121:1149': {
       variant: 'heroSquare',
@@ -6142,6 +6972,7 @@ export const manifestData: Record<
       name: 'defiDecentralizedBorrowingLending',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-07T20:44:47.724Z',
     },
     '6121:1147': {
       variant: 'heroSquare',
@@ -6149,6 +6980,7 @@ export const manifestData: Record<
       name: 'cryptoWallet',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:29:38.807Z',
     },
     '6121:1183': {
       variant: 'heroSquare',
@@ -6156,6 +6988,7 @@ export const manifestData: Record<
       name: 'cryptoEconomy',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:29:34.337Z',
     },
     '6121:1151': {
       variant: 'heroSquare',
@@ -6163,6 +6996,7 @@ export const manifestData: Record<
       name: 'cryptoAssets',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:29:20.477Z',
     },
     '6121:1146': {
       variant: 'heroSquare',
@@ -6170,6 +7004,7 @@ export const manifestData: Record<
       name: 'crossBorderPayments',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:22.904Z',
     },
     '6121:1157': {
       variant: 'heroSquare',
@@ -6177,6 +7012,7 @@ export const manifestData: Record<
       name: 'completeAQuiz',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.510Z',
     },
     '6121:1165': {
       variant: 'heroSquare',
@@ -6185,6 +7021,7 @@ export const manifestData: Record<
       name: 'collectingNfts',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-07T17:07:08.684Z',
     },
     '6121:1173': {
       variant: 'heroSquare',
@@ -6192,6 +7029,7 @@ export const manifestData: Record<
       name: 'browserExtension',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:22.681Z',
     },
     '6121:1144': {
       variant: 'heroSquare',
@@ -6199,6 +7037,7 @@ export const manifestData: Record<
       name: 'basedInUsa',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:22.850Z',
     },
     '6121:1142': {
       variant: 'heroSquare',
@@ -6206,6 +7045,7 @@ export const manifestData: Record<
       name: 'backedByUsDollar',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.411Z',
     },
     '6121:1141': {
       variant: 'heroSquare',
@@ -6213,6 +7053,7 @@ export const manifestData: Record<
       name: 'trendingHotAssets',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-14T18:42:15.904Z',
     },
     '6121:1164': {
       variant: 'heroSquare',
@@ -6220,6 +7061,7 @@ export const manifestData: Record<
       name: 'taxesDetails',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.101Z',
     },
     '6121:1162': {
       variant: 'heroSquare',
@@ -6227,6 +7069,7 @@ export const manifestData: Record<
       name: 'sidechain',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.668Z',
     },
     '6121:1139': {
       variant: 'heroSquare',
@@ -6234,6 +7077,7 @@ export const manifestData: Record<
       name: 'shareOnSocialMedia',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-19T15:15:15.544Z',
     },
     '6121:1159': {
       variant: 'heroSquare',
@@ -6241,6 +7085,7 @@ export const manifestData: Record<
       name: 'semiCustodial',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:21:17.227Z',
     },
     '6121:1181': {
       variant: 'heroSquare',
@@ -6248,6 +7093,7 @@ export const manifestData: Record<
       name: 'selfCustodyCrypto',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:22:39.009Z',
     },
     '6121:1156': {
       variant: 'heroSquare',
@@ -6255,6 +7101,7 @@ export const manifestData: Record<
       name: 'ratingsAndReviews',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.567Z',
     },
     '6121:1138': {
       variant: 'heroSquare',
@@ -6262,6 +7109,7 @@ export const manifestData: Record<
       name: 'quickAndSimple',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.084Z',
     },
     '6121:1137': {
       variant: 'heroSquare',
@@ -6269,6 +7117,7 @@ export const manifestData: Record<
       name: 'portfolioPerformance',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:11.282Z',
     },
     '6121:1135': {
       variant: 'heroSquare',
@@ -6276,6 +7125,7 @@ export const manifestData: Record<
       name: 'optInPushNotificationsEmail',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-03T13:31:53.532Z',
     },
     '6121:1145': {
       variant: 'heroSquare',
@@ -6283,6 +7133,7 @@ export const manifestData: Record<
       name: 'multipleAccountsWalletsForOneUser',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:15:46.951Z',
     },
     '6121:1134': {
       variant: 'heroSquare',
@@ -6290,6 +7141,7 @@ export const manifestData: Record<
       name: 'layeredNetworks',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.492Z',
     },
     '6121:1133': {
       variant: 'heroSquare',
@@ -6297,6 +7149,7 @@ export const manifestData: Record<
       name: 'hardwareWallets',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.037Z',
     },
     '6121:1132': {
       variant: 'heroSquare',
@@ -6304,6 +7157,7 @@ export const manifestData: Record<
       name: 'gasFeesNetworkFees',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:24.023Z',
     },
     '6121:1131': {
       variant: 'heroSquare',
@@ -6311,6 +7165,7 @@ export const manifestData: Record<
       name: 'gainsAndLosses',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.352Z',
     },
     '6121:1130': {
       variant: 'heroSquare',
@@ -6318,6 +7173,7 @@ export const manifestData: Record<
       name: 'earnToLearn',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.674Z',
     },
     '6121:1129': {
       variant: 'heroSquare',
@@ -6325,6 +7181,7 @@ export const manifestData: Record<
       name: 'dappsMusic',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.705Z',
     },
     '6121:1180': {
       variant: 'heroSquare',
@@ -6332,6 +7189,7 @@ export const manifestData: Record<
       name: 'dappsGaming',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.754Z',
     },
     '6121:1136': {
       variant: 'heroSquare',
@@ -6339,6 +7197,7 @@ export const manifestData: Record<
       name: 'dappsFinance',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-20T13:51:54.938Z',
     },
     '6121:1128': {
       variant: 'heroSquare',
@@ -6346,6 +7205,7 @@ export const manifestData: Record<
       name: 'dappsArts',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:25.134Z',
     },
     '6121:1127': {
       variant: 'heroSquare',
@@ -6353,6 +7213,7 @@ export const manifestData: Record<
       name: 'didDecentralizedIdentity',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-21T21:20:51.286Z',
     },
     '6121:1143': {
       variant: 'heroSquare',
@@ -6360,6 +7221,7 @@ export const manifestData: Record<
       name: 'cryptoPortfolio',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.023Z',
     },
     '6121:1126': {
       variant: 'heroSquare',
@@ -6367,6 +7229,7 @@ export const manifestData: Record<
       name: 'cryptoForBeginners',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-03T13:31:53.038Z',
     },
     '6121:1125': {
       variant: 'heroSquare',
@@ -6374,6 +7237,7 @@ export const manifestData: Record<
       name: 'congratulationsOnEarningCrypto',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-07T17:07:08.740Z',
     },
     '6121:1124': {
       variant: 'heroSquare',
@@ -6381,6 +7245,7 @@ export const manifestData: Record<
       name: 'borrowWallet',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-25T19:11:49.184Z',
     },
     '6121:1182': {
       variant: 'heroSquare',
@@ -6388,6 +7253,7 @@ export const manifestData: Record<
       name: 'blockchain',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.921Z',
     },
     '6121:1123': {
       variant: 'heroSquare',
@@ -6395,6 +7261,7 @@ export const manifestData: Record<
       name: 'advancedTradingChartsIndicatorsCandles',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.795Z',
     },
     '6121:1240': {
       variant: 'heroSquare',
@@ -6402,6 +7269,7 @@ export const manifestData: Record<
       name: 'watchVideos',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.155Z',
     },
     '6121:1235': {
       variant: 'heroSquare',
@@ -6409,6 +7277,7 @@ export const manifestData: Record<
       name: 'walletSecurity',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-19T15:15:15.494Z',
     },
     '6121:1245': {
       variant: 'heroSquare',
@@ -6416,6 +7285,7 @@ export const manifestData: Record<
       name: 'stressTestedColdStorage',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.122Z',
     },
     '6121:1252': {
       variant: 'heroSquare',
@@ -6423,6 +7293,7 @@ export const manifestData: Record<
       name: 'stayInControlSelfHostedWalletsStorage',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.309Z',
     },
     '6121:1248': {
       variant: 'heroSquare',
@@ -6430,6 +7301,7 @@ export const manifestData: Record<
       name: 'calendarStartDay',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:22:39.019Z',
     },
     '6121:1247': {
       variant: 'heroSquare',
@@ -6437,6 +7309,7 @@ export const manifestData: Record<
       name: 'staking',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.824Z',
     },
     '6121:1254': {
       variant: 'heroSquare',
@@ -6444,6 +7317,7 @@ export const manifestData: Record<
       name: 'stableValue',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:51.048Z',
     },
     '6121:1216': {
       variant: 'heroSquare',
@@ -6451,6 +7325,7 @@ export const manifestData: Record<
       name: 'selfCustody',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-12-01T21:42:06.649Z',
     },
     '6121:1232': {
       variant: 'heroSquare',
@@ -6458,6 +7333,7 @@ export const manifestData: Record<
       name: 'secureStorage',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:25.243Z',
     },
     '6121:1217': {
       variant: 'heroSquare',
@@ -6465,6 +7341,7 @@ export const manifestData: Record<
       name: 'secureGlobalTransactions',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.932Z',
     },
     '6121:1209': {
       variant: 'heroSquare',
@@ -6472,6 +7349,7 @@ export const manifestData: Record<
       name: 'secureAndTrusted',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-12-12T18:55:14.711Z',
     },
     '6121:1242': {
       variant: 'heroSquare',
@@ -6479,6 +7357,7 @@ export const manifestData: Record<
       name: 'poweredByEthereum',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.310Z',
     },
     '6121:1238': {
       variant: 'heroSquare',
@@ -6486,6 +7365,7 @@ export const manifestData: Record<
       name: 'p2pPayments',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:51.072Z',
     },
     '6121:1219': {
       variant: 'heroSquare',
@@ -6493,6 +7373,7 @@ export const manifestData: Record<
       name: 'noFees',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.952Z',
     },
     '6121:1246': {
       variant: 'heroSquare',
@@ -6500,6 +7381,7 @@ export const manifestData: Record<
       name: 'multicoinSupport',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.400Z',
     },
     '6121:1236': {
       variant: 'heroSquare',
@@ -6508,6 +7390,7 @@ export const manifestData: Record<
       name: 'multiPlatformMobileAppBrowserExtension',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.650Z',
     },
     '6121:1221': {
       variant: 'heroSquare',
@@ -6515,6 +7398,7 @@ export const manifestData: Record<
       name: 'moneyDecentralized',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.933Z',
     },
     '6121:1228': {
       variant: 'heroSquare',
@@ -6522,6 +7406,7 @@ export const manifestData: Record<
       name: 'mining',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.463Z',
     },
     '6121:1244': {
       variant: 'heroSquare',
@@ -6529,6 +7414,7 @@ export const manifestData: Record<
       name: 'linkingYourWalletToYourCoinbaseAccount',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.878Z',
     },
     '6121:1202': {
       variant: 'heroSquare',
@@ -6536,6 +7422,7 @@ export const manifestData: Record<
       name: 'invest',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.738Z',
     },
     '6121:1223': {
       variant: 'heroSquare',
@@ -6543,6 +7430,7 @@ export const manifestData: Record<
       name: 'insuranceProtection',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.367Z',
     },
     '6121:1241': {
       variant: 'heroSquare',
@@ -6550,6 +7438,7 @@ export const manifestData: Record<
       name: 'globalTransactionsBeyond',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:22:39.107Z',
     },
     '6121:1233': {
       variant: 'heroSquare',
@@ -6557,6 +7446,7 @@ export const manifestData: Record<
       name: 'getStartedInMinutes',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.659Z',
     },
     '6121:1251': {
       variant: 'heroSquare',
@@ -6564,6 +7454,7 @@ export const manifestData: Record<
       name: 'encryptedEverything',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.933Z',
     },
     '6121:1222': {
       variant: 'heroSquare',
@@ -6571,6 +7462,7 @@ export const manifestData: Record<
       name: 'earn',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.051Z',
     },
     '6121:1208': {
       variant: 'heroSquare',
@@ -6578,6 +7470,7 @@ export const manifestData: Record<
       name: 'digitalCollectibles',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.331Z',
     },
     '6121:1220': {
       variant: 'heroSquare',
@@ -6585,6 +7478,7 @@ export const manifestData: Record<
       name: 'decentralizedWebWeb3',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.927Z',
     },
     '6121:1214': {
       variant: 'heroSquare',
@@ -6592,6 +7486,7 @@ export const manifestData: Record<
       name: 'decentralization',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.582Z',
     },
     '6121:1234': {
       variant: 'heroSquare',
@@ -6599,6 +7494,7 @@ export const manifestData: Record<
       name: 'defiDecentralizedTradingExchange',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-21T23:16:02.441Z',
     },
     '6121:1213': {
       variant: 'heroSquare',
@@ -6607,6 +7503,7 @@ export const manifestData: Record<
       name: 'defiDecentralizedBorrowingLending',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:23:03.390Z',
     },
     '6121:1212': {
       variant: 'heroSquare',
@@ -6614,6 +7511,7 @@ export const manifestData: Record<
       name: 'cryptoWallet',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.001Z',
     },
     '6121:1226': {
       variant: 'heroSquare',
@@ -6621,6 +7519,7 @@ export const manifestData: Record<
       name: 'cryptoEconomy',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:51.034Z',
     },
     '6121:1250': {
       variant: 'heroSquare',
@@ -6628,6 +7527,7 @@ export const manifestData: Record<
       name: 'cryptoAssets',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.583Z',
     },
     '6121:1211': {
       variant: 'heroSquare',
@@ -6635,6 +7535,7 @@ export const manifestData: Record<
       name: 'crossBorderPayments',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.169Z',
     },
     '6121:1239': {
       variant: 'heroSquare',
@@ -6642,6 +7543,7 @@ export const manifestData: Record<
       name: 'completeAQuiz',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.483Z',
     },
     '6121:1218': {
       variant: 'heroSquare',
@@ -6650,6 +7552,7 @@ export const manifestData: Record<
       name: 'collectingNfts',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-12-08T23:35:08.739Z',
     },
     '6121:1210': {
       variant: 'heroSquare',
@@ -6657,6 +7560,7 @@ export const manifestData: Record<
       name: 'browserExtension',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.939Z',
     },
     '6121:1243': {
       variant: 'heroSquare',
@@ -6664,6 +7568,7 @@ export const manifestData: Record<
       name: 'basedInUsa',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.405Z',
     },
     '6121:1225': {
       variant: 'heroSquare',
@@ -6671,6 +7576,7 @@ export const manifestData: Record<
       name: 'backedByUsDollar',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.685Z',
     },
     '6121:1203': {
       variant: 'heroSquare',
@@ -6678,6 +7584,7 @@ export const manifestData: Record<
       name: 'trendingHotAssets',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.031Z',
     },
     '6121:1207': {
       variant: 'heroSquare',
@@ -6685,6 +7592,7 @@ export const manifestData: Record<
       name: 'taxesDetails',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:22.967Z',
     },
     '6121:1200': {
       variant: 'heroSquare',
@@ -6692,6 +7600,7 @@ export const manifestData: Record<
       name: 'sidechain',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.015Z',
     },
     '6121:1206': {
       variant: 'heroSquare',
@@ -6699,6 +7608,7 @@ export const manifestData: Record<
       name: 'shareOnSocialMedia',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.008Z',
     },
     '6121:1230': {
       variant: 'heroSquare',
@@ -6706,6 +7616,7 @@ export const manifestData: Record<
       name: 'semiCustodial',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-15T01:20:47.514Z',
     },
     '6121:1205': {
       variant: 'heroSquare',
@@ -6713,6 +7624,7 @@ export const manifestData: Record<
       name: 'selfCustodyCrypto',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:22:39.070Z',
     },
     '6144:1153': {
       variant: 'pictogram',
@@ -6720,6 +7632,7 @@ export const manifestData: Record<
       name: 'videoContent',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-18T16:35:12.979Z',
     },
     '6144:1189': {
       variant: 'pictogram',
@@ -6727,6 +7640,7 @@ export const manifestData: Record<
       name: 'passwordWalletLocked',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-09T21:30:14.802Z',
     },
     '6144:1178': {
       variant: 'pictogram',
@@ -6734,6 +7648,7 @@ export const manifestData: Record<
       name: 'coldStorageCheck',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-25T17:58:28.126Z',
     },
     '6144:1176': {
       variant: 'pictogram',
@@ -6741,6 +7656,7 @@ export const manifestData: Record<
       name: 'controlWalletStorage',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.509Z',
     },
     '6144:1182': {
       variant: 'pictogram',
@@ -6748,6 +7664,7 @@ export const manifestData: Record<
       name: 'videoCalendar',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.888Z',
     },
     '6144:1275': {
       variant: 'pictogram',
@@ -6755,6 +7672,7 @@ export const manifestData: Record<
       name: 'stakingGraph',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-22T13:57:50.810Z',
     },
     '6144:1141': {
       variant: 'pictogram',
@@ -6762,6 +7680,7 @@ export const manifestData: Record<
       name: 'stableCoinMetaphor',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.537Z',
     },
     '6144:1165': {
       variant: 'pictogram',
@@ -6769,6 +7688,7 @@ export const manifestData: Record<
       name: 'selfCustodyWallet',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T18:33:21.924Z',
     },
     '6144:1174': {
       variant: 'pictogram',
@@ -6776,6 +7696,7 @@ export const manifestData: Record<
       name: 'securedAssets',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-01T03:06:17.105Z',
     },
     '6144:1173': {
       variant: 'pictogram',
@@ -6783,6 +7704,7 @@ export const manifestData: Record<
       name: 'globalTransactions',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.658Z',
     },
     '6144:1172': {
       variant: 'pictogram',
@@ -6790,6 +7712,7 @@ export const manifestData: Record<
       name: 'securityCoinShield',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-21T14:07:51.519Z',
     },
     '6144:1161': {
       variant: 'pictogram',
@@ -6797,6 +7720,7 @@ export const manifestData: Record<
       name: 'ethereumFocus',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.151Z',
     },
     '6144:1188': {
       variant: 'pictogram',
@@ -6804,6 +7728,7 @@ export const manifestData: Record<
       name: 'sendPaymentToOthers',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-15T17:28:49.714Z',
     },
     '6144:1150': {
       variant: 'pictogram',
@@ -6811,6 +7736,7 @@ export const manifestData: Record<
       name: 'feesRestriction',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-17T14:28:07.482Z',
     },
     '6144:1162': {
       variant: 'pictogram',
@@ -6818,6 +7744,7 @@ export const manifestData: Record<
       name: 'coinFocus',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.698Z',
     },
     '6144:1166': {
       variant: 'pictogram',
@@ -6825,6 +7752,7 @@ export const manifestData: Record<
       name: 'browserMultiPlatform',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.175Z',
     },
     '6144:1143': {
       variant: 'pictogram',
@@ -6832,6 +7760,7 @@ export const manifestData: Record<
       name: 'holdingCoin',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-14T12:22:09.202Z',
     },
     '6144:1163': {
       variant: 'pictogram',
@@ -6839,6 +7768,7 @@ export const manifestData: Record<
       name: 'miningCoins',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-17T01:22:44.527Z',
     },
     '6144:1181': {
       variant: 'pictogram',
@@ -6846,6 +7776,7 @@ export const manifestData: Record<
       name: 'linkYourAccount',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.333Z',
     },
     '6144:1187': {
       variant: 'pictogram',
@@ -6853,6 +7784,7 @@ export const manifestData: Record<
       name: 'investGraph',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.388Z',
     },
     '6144:1160': {
       variant: 'pictogram',
@@ -6860,6 +7792,7 @@ export const manifestData: Record<
       name: 'protectionPlan',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-22T13:57:50.842Z',
     },
     '6144:1169': {
       variant: 'pictogram',
@@ -6867,6 +7800,7 @@ export const manifestData: Record<
       name: 'globalConnections',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.809Z',
     },
     '6144:1157': {
       variant: 'pictogram',
@@ -6874,6 +7808,7 @@ export const manifestData: Record<
       name: 'getStarted',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.539Z',
     },
     '6144:1152': {
       variant: 'pictogram',
@@ -6881,6 +7816,7 @@ export const manifestData: Record<
       name: 'assetEncryption',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.064Z',
     },
     '6144:1171': {
       variant: 'pictogram',
@@ -6888,6 +7824,7 @@ export const manifestData: Record<
       name: 'earnGraph',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-14T23:26:31.588Z',
     },
     '6144:1168': {
       variant: 'pictogram',
@@ -6895,6 +7832,7 @@ export const manifestData: Record<
       name: 'collectionOfAssets',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.258Z',
     },
     '6144:1155': {
       variant: 'pictogram',
@@ -6903,6 +7841,7 @@ export const manifestData: Record<
       name: 'decentralizedWeb3',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-17T14:23:52.321Z',
     },
     '6144:1151': {
       variant: 'pictogram',
@@ -6910,6 +7849,7 @@ export const manifestData: Record<
       name: 'decentralizationEverything',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-27T23:23:21.479Z',
     },
     '6144:1149': {
       variant: 'pictogram',
@@ -6917,6 +7857,7 @@ export const manifestData: Record<
       name: 'decentralizedExchange',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-13T19:08:59.448Z',
     },
     '6144:1148': {
       variant: 'pictogram',
@@ -6924,6 +7865,7 @@ export const manifestData: Record<
       name: 'borrowingLending',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-29T14:16:58.977Z',
     },
     '6144:1265': {
       variant: 'pictogram',
@@ -6931,6 +7873,7 @@ export const manifestData: Record<
       name: 'walletPassword',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.473Z',
     },
     '6144:1159': {
       variant: 'pictogram',
@@ -6938,6 +7881,7 @@ export const manifestData: Record<
       name: 'economyGlobal',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-14T18:50:00.738Z',
     },
     '6144:1146': {
       variant: 'pictogram',
@@ -6945,6 +7889,7 @@ export const manifestData: Record<
       name: 'assetMovement',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-14T18:50:00.952Z',
     },
     '6144:1185': {
       variant: 'pictogram',
@@ -6952,6 +7897,7 @@ export const manifestData: Record<
       name: 'globalPayments',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-14T12:20:27.388Z',
     },
     '6144:1145': {
       variant: 'pictogram',
@@ -6959,6 +7905,7 @@ export const manifestData: Record<
       name: 'completeQuiz',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-08T23:15:39.628Z',
     },
     '6144:1144': {
       variant: 'pictogram',
@@ -6967,6 +7914,7 @@ export const manifestData: Record<
       name: 'nftLibrary',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.802Z',
     },
     '6144:1158': {
       variant: 'pictogram',
@@ -6974,6 +7922,7 @@ export const manifestData: Record<
       name: 'pluginBrowser',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.491Z',
     },
     '6144:1142': {
       variant: 'pictogram',
@@ -6981,6 +7930,7 @@ export const manifestData: Record<
       name: 'locationUsa',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:22.857Z',
     },
     '6144:1180': {
       variant: 'pictogram',
@@ -6988,6 +7938,7 @@ export const manifestData: Record<
       name: 'dollarShowcase',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:22.688Z',
     },
     '6144:1170': {
       variant: 'pictogram',
@@ -6995,6 +7946,7 @@ export const manifestData: Record<
       name: 'trendingAssets',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-21T23:18:39.835Z',
     },
     '6144:1140': {
       variant: 'pictogram',
@@ -7002,6 +7954,7 @@ export const manifestData: Record<
       name: 'taxesArrangement',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.665Z',
     },
     '6144:1147': {
       variant: 'pictogram',
@@ -7009,6 +7962,7 @@ export const manifestData: Record<
       name: 'sideChainSide',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-22T13:57:50.867Z',
     },
     '6144:1154': {
       variant: 'pictogram',
@@ -7016,6 +7970,7 @@ export const manifestData: Record<
       name: 'coinShare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.502Z',
     },
     '6144:1164': {
       variant: 'pictogram',
@@ -7023,6 +7978,7 @@ export const manifestData: Record<
       name: 'custodialJourney',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T16:02:28.585Z',
     },
     '6144:1139': {
       variant: 'pictogram',
@@ -7030,6 +7986,7 @@ export const manifestData: Record<
       name: 'selfServe',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-23T11:25:02.233Z',
     },
     '6144:1138': {
       variant: 'pictogram',
@@ -7037,6 +7994,7 @@ export const manifestData: Record<
       name: 'positiveReviews',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.851Z',
     },
     '6144:1136': {
       variant: 'pictogram',
@@ -7044,6 +8002,7 @@ export const manifestData: Record<
       name: 'timingCheck',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.768Z',
     },
     '6144:1135': {
       variant: 'pictogram',
@@ -7051,6 +8010,7 @@ export const manifestData: Record<
       name: 'monitoringPerformance',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-14T17:06:23.580Z',
     },
     '6144:1134': {
       variant: 'pictogram',
@@ -7058,6 +8018,7 @@ export const manifestData: Record<
       name: 'emailAndMessages',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.456Z',
     },
     '6144:1133': {
       variant: 'pictogram',
@@ -7065,6 +8026,7 @@ export const manifestData: Record<
       name: 'multiAccountsAndCards',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-01T21:07:32.382Z',
     },
     '6144:1132': {
       variant: 'pictogram',
@@ -7072,6 +8034,7 @@ export const manifestData: Record<
       name: 'layerNetworks',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-07T22:13:43.935Z',
     },
     '6144:1131': {
       variant: 'pictogram',
@@ -7079,6 +8042,7 @@ export const manifestData: Record<
       name: 'gasFees',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.915Z',
     },
     '6144:1130': {
       variant: 'pictogram',
@@ -7086,6 +8050,7 @@ export const manifestData: Record<
       name: 'assetMeasurements',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.800Z',
     },
     '6144:1177': {
       variant: 'pictogram',
@@ -7093,6 +8058,7 @@ export const manifestData: Record<
       name: 'lightbulbLearn',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-14T18:50:11.157Z',
     },
     '6144:1129': {
       variant: 'pictogram',
@@ -7100,6 +8066,7 @@ export const manifestData: Record<
       name: 'musicAndSounds',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.200Z',
     },
     '6144:1128': {
       variant: 'pictogram',
@@ -7107,6 +8074,7 @@ export const manifestData: Record<
       name: 'findYourSelection',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-19T16:30:52.397Z',
     },
     '6144:1186': {
       variant: 'pictogram',
@@ -7114,6 +8082,7 @@ export const manifestData: Record<
       name: 'finance',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-02T16:33:05.884Z',
     },
     '6144:1127': {
       variant: 'pictogram',
@@ -7121,6 +8090,7 @@ export const manifestData: Record<
       name: 'creative',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.613Z',
     },
     '6144:1126': {
       variant: 'pictogram',
@@ -7128,6 +8098,7 @@ export const manifestData: Record<
       name: 'decentralizedIdentity',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-22T13:57:51.269Z',
     },
     '6144:1125': {
       variant: 'pictogram',
@@ -7135,6 +8106,7 @@ export const manifestData: Record<
       name: 'cryptoFolder',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.601Z',
     },
     '6144:1124': {
       variant: 'pictogram',
@@ -7142,6 +8114,7 @@ export const manifestData: Record<
       name: 'crypto101',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.136Z',
     },
     '6144:1137': {
       variant: 'pictogram',
@@ -7149,6 +8122,7 @@ export const manifestData: Record<
       name: 'congratulations',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-14T23:26:30.864Z',
     },
     '6144:1123': {
       variant: 'pictogram',
@@ -7156,6 +8130,7 @@ export const manifestData: Record<
       name: 'borrowCoins',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:24.183Z',
     },
     '6144:1122': {
       variant: 'pictogram',
@@ -7163,6 +8138,7 @@ export const manifestData: Record<
       name: 'blockchainConnection',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-20T13:51:54.822Z',
     },
     '6144:1179': {
       variant: 'pictogram',
@@ -7170,6 +8146,7 @@ export const manifestData: Record<
       name: 'candleSticksGraph',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-12T15:28:06.105Z',
     },
     '6121:1204': {
       variant: 'heroSquare',
@@ -7177,6 +8154,7 @@ export const manifestData: Record<
       name: 'ratingsAndReviews',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.065Z',
     },
     '6121:1201': {
       variant: 'heroSquare',
@@ -7184,6 +8162,7 @@ export const manifestData: Record<
       name: 'quickAndSimple',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.210Z',
     },
     '6121:1224': {
       variant: 'heroSquare',
@@ -7191,6 +8170,7 @@ export const manifestData: Record<
       name: 'portfolioPerformance',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.939Z',
     },
     '6121:1199': {
       variant: 'heroSquare',
@@ -7198,6 +8178,7 @@ export const manifestData: Record<
       name: 'optInPushNotificationsEmail',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.862Z',
     },
     '6121:1198': {
       variant: 'heroSquare',
@@ -7205,6 +8186,7 @@ export const manifestData: Record<
       name: 'multipleAccountsWalletsForOneUser',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:24.152Z',
     },
     '6121:1196': {
       variant: 'heroSquare',
@@ -7212,6 +8194,7 @@ export const manifestData: Record<
       name: 'layeredNetworks',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.185Z',
     },
     '6121:1195': {
       variant: 'heroSquare',
@@ -7219,6 +8202,7 @@ export const manifestData: Record<
       name: 'hardwareWallets',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:22.889Z',
     },
     '6121:1229': {
       variant: 'heroSquare',
@@ -7226,6 +8210,7 @@ export const manifestData: Record<
       name: 'gasFeesNetworkFees',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.406Z',
     },
     '6121:1215': {
       variant: 'heroSquare',
@@ -7233,6 +8218,7 @@ export const manifestData: Record<
       name: 'gainsAndLosses',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:22.960Z',
     },
     '6121:1197': {
       variant: 'heroSquare',
@@ -7240,6 +8226,7 @@ export const manifestData: Record<
       name: 'earnToLearn',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.069Z',
     },
     '6121:1249': {
       variant: 'heroSquare',
@@ -7247,6 +8234,7 @@ export const manifestData: Record<
       name: 'dappsMusic',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.979Z',
     },
     '6121:1194': {
       variant: 'heroSquare',
@@ -7254,6 +8242,7 @@ export const manifestData: Record<
       name: 'dappsGaming',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:24.225Z',
     },
     '6121:1193': {
       variant: 'heroSquare',
@@ -7261,6 +8250,7 @@ export const manifestData: Record<
       name: 'dappsFinance',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.560Z',
     },
     '6121:1192': {
       variant: 'heroSquare',
@@ -7268,6 +8258,7 @@ export const manifestData: Record<
       name: 'dappsArts',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.085Z',
     },
     '6121:1253': {
       variant: 'heroSquare',
@@ -7275,6 +8266,7 @@ export const manifestData: Record<
       name: 'didDecentralizedIdentity',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-15T01:20:02.508Z',
     },
     '6121:1191': {
       variant: 'heroSquare',
@@ -7282,6 +8274,7 @@ export const manifestData: Record<
       name: 'cryptoPortfolio',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.171Z',
     },
     '6121:1237': {
       variant: 'heroSquare',
@@ -7289,6 +8282,7 @@ export const manifestData: Record<
       name: 'cryptoForBeginners',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-15T01:19:19.758Z',
     },
     '6121:1190': {
       variant: 'heroSquare',
@@ -7296,6 +8290,7 @@ export const manifestData: Record<
       name: 'congratulationsOnEarningCrypto',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.801Z',
     },
     '6121:1189': {
       variant: 'heroSquare',
@@ -7303,6 +8298,7 @@ export const manifestData: Record<
       name: 'borrowWallet',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.131Z',
     },
     '6121:1231': {
       variant: 'heroSquare',
@@ -7310,6 +8306,7 @@ export const manifestData: Record<
       name: 'blockchain',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.585Z',
     },
     '6121:1227': {
       variant: 'heroSquare',
@@ -7317,6 +8314,7 @@ export const manifestData: Record<
       name: 'advancedTradingChartsIndicatorsCandles',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.604Z',
     },
     '6144:1252': {
       variant: 'pictogram',
@@ -7324,6 +8322,7 @@ export const manifestData: Record<
       name: 'videoContent',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.653Z',
     },
     '6144:1254': {
       variant: 'pictogram',
@@ -7331,6 +8330,7 @@ export const manifestData: Record<
       name: 'passwordWalletLocked',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:11.224Z',
     },
     '6144:1232': {
       variant: 'pictogram',
@@ -7338,6 +8338,7 @@ export const manifestData: Record<
       name: 'coldStorageCheck',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.644Z',
     },
     '6144:1203': {
       variant: 'pictogram',
@@ -7345,6 +8346,7 @@ export const manifestData: Record<
       name: 'controlWalletStorage',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:28.436Z',
     },
     '6144:1220': {
       variant: 'pictogram',
@@ -7352,6 +8354,7 @@ export const manifestData: Record<
       name: 'videoCalendar',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.968Z',
     },
     '6144:1248': {
       variant: 'pictogram',
@@ -7359,6 +8362,7 @@ export const manifestData: Record<
       name: 'stakingGraph',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:11.390Z',
     },
     '6144:1221': {
       variant: 'pictogram',
@@ -7366,6 +8370,7 @@ export const manifestData: Record<
       name: 'stableCoinMetaphor',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.493Z',
     },
     '6144:1238': {
       variant: 'pictogram',
@@ -7373,6 +8378,7 @@ export const manifestData: Record<
       name: 'selfCustodyWallet',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.045Z',
     },
     '6144:1247': {
       variant: 'pictogram',
@@ -7380,6 +8386,7 @@ export const manifestData: Record<
       name: 'securedAssets',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-21T23:17:19.803Z',
     },
     '6144:1240': {
       variant: 'pictogram',
@@ -7387,6 +8394,7 @@ export const manifestData: Record<
       name: 'globalTransactions',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.333Z',
     },
     '6144:1211': {
       variant: 'pictogram',
@@ -7394,6 +8402,7 @@ export const manifestData: Record<
       name: 'securityCoinShield',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.096Z',
     },
     '6144:1230': {
       variant: 'pictogram',
@@ -7401,6 +8410,7 @@ export const manifestData: Record<
       name: 'ethereumFocus',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.796Z',
     },
     '6144:1234': {
       variant: 'pictogram',
@@ -7408,6 +8418,7 @@ export const manifestData: Record<
       name: 'sendPaymentToOthers',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.075Z',
     },
     '6144:1236': {
       variant: 'pictogram',
@@ -7415,6 +8426,7 @@ export const manifestData: Record<
       name: 'feesRestriction',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.450Z',
     },
     '6144:1227': {
       variant: 'pictogram',
@@ -7422,6 +8434,7 @@ export const manifestData: Record<
       name: 'coinFocus',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-21T23:16:44.483Z',
     },
     '6144:1229': {
       variant: 'pictogram',
@@ -7429,6 +8442,7 @@ export const manifestData: Record<
       name: 'browserMultiPlatform',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.756Z',
     },
     '6144:1231': {
       variant: 'pictogram',
@@ -7436,6 +8450,7 @@ export const manifestData: Record<
       name: 'holdingCoin',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-15T18:17:52.250Z',
     },
     '6144:1228': {
       variant: 'pictogram',
@@ -7443,6 +8458,7 @@ export const manifestData: Record<
       name: 'miningCoins',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.483Z',
     },
     '6144:1253': {
       variant: 'pictogram',
@@ -7450,6 +8466,7 @@ export const manifestData: Record<
       name: 'linkYourAccount',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:11.079Z',
     },
     '6144:1241': {
       variant: 'pictogram',
@@ -7457,6 +8474,7 @@ export const manifestData: Record<
       name: 'investGraph',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.337Z',
     },
     '6144:1226': {
       variant: 'pictogram',
@@ -7464,6 +8482,7 @@ export const manifestData: Record<
       name: 'protectionPlan',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.216Z',
     },
     '6144:1246': {
       variant: 'pictogram',
@@ -7471,6 +8490,7 @@ export const manifestData: Record<
       name: 'globalConnections',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:11.065Z',
     },
     '6144:1210': {
       variant: 'pictogram',
@@ -7478,6 +8498,7 @@ export const manifestData: Record<
       name: 'getStarted',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.951Z',
     },
     '6144:1239': {
       variant: 'pictogram',
@@ -7485,6 +8506,7 @@ export const manifestData: Record<
       name: 'assetEncryption',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.330Z',
     },
     '6144:1243': {
       variant: 'pictogram',
@@ -7492,6 +8514,7 @@ export const manifestData: Record<
       name: 'earnGraph',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-14T23:26:31.774Z',
     },
     '6144:1223': {
       variant: 'pictogram',
@@ -7499,6 +8522,7 @@ export const manifestData: Record<
       name: 'collectionOfAssets',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.005Z',
     },
     '6144:1222': {
       variant: 'pictogram',
@@ -7506,6 +8530,7 @@ export const manifestData: Record<
       name: 'decentralizedWeb3',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.234Z',
     },
     '6144:1245': {
       variant: 'pictogram',
@@ -7513,6 +8538,7 @@ export const manifestData: Record<
       name: 'decentralizationEverything',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-21T21:35:45.640Z',
     },
     '6144:1219': {
       variant: 'pictogram',
@@ -7520,6 +8546,7 @@ export const manifestData: Record<
       name: 'decentralizedExchange',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.869Z',
     },
     '6144:1209': {
       variant: 'pictogram',
@@ -7527,6 +8554,7 @@ export const manifestData: Record<
       name: 'borrowingLending',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.340Z',
     },
     '6144:1217': {
       variant: 'pictogram',
@@ -7534,6 +8562,7 @@ export const manifestData: Record<
       name: 'walletPassword',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.632Z',
     },
     '6144:1250': {
       variant: 'pictogram',
@@ -7541,6 +8570,7 @@ export const manifestData: Record<
       name: 'economyGlobal',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T18:32:53.766Z',
     },
     '6144:1216': {
       variant: 'pictogram',
@@ -7548,6 +8578,7 @@ export const manifestData: Record<
       name: 'assetMovement',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.627Z',
     },
     '6144:1249': {
       variant: 'pictogram',
@@ -7555,6 +8586,7 @@ export const manifestData: Record<
       name: 'globalPayments',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:11.231Z',
     },
     '6144:1215': {
       variant: 'pictogram',
@@ -7562,6 +8594,7 @@ export const manifestData: Record<
       name: 'completeQuiz',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.718Z',
     },
     '6144:1214': {
       variant: 'pictogram',
@@ -7570,6 +8603,7 @@ export const manifestData: Record<
       name: 'nftLibrary',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.357Z',
     },
     '6144:1213': {
       variant: 'pictogram',
@@ -7577,6 +8611,7 @@ export const manifestData: Record<
       name: 'pluginBrowser',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.847Z',
     },
     '6144:1225': {
       variant: 'pictogram',
@@ -7584,6 +8619,7 @@ export const manifestData: Record<
       name: 'locationUsa',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.735Z',
     },
     '6144:1212': {
       variant: 'pictogram',
@@ -7591,6 +8627,7 @@ export const manifestData: Record<
       name: 'dollarShowcase',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.016Z',
     },
     '6144:1237': {
       variant: 'pictogram',
@@ -7598,6 +8635,7 @@ export const manifestData: Record<
       name: 'trendingAssets',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.644Z',
     },
     '6144:1233': {
       variant: 'pictogram',
@@ -7605,6 +8643,7 @@ export const manifestData: Record<
       name: 'sideChainSide',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.837Z',
     },
     '6144:1207': {
       variant: 'pictogram',
@@ -7612,6 +8651,7 @@ export const manifestData: Record<
       name: 'taxesArrangement',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.883Z',
     },
     '6144:1218': {
       variant: 'pictogram',
@@ -7619,6 +8659,7 @@ export const manifestData: Record<
       name: 'coinShare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-21T23:17:23.531Z',
     },
     '6144:1206': {
       variant: 'pictogram',
@@ -7626,6 +8667,7 @@ export const manifestData: Record<
       name: 'custodialJourney',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:25.229Z',
     },
     '6144:1242': {
       variant: 'pictogram',
@@ -7633,6 +8675,7 @@ export const manifestData: Record<
       name: 'selfServe',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.339Z',
     },
     '6144:1205': {
       variant: 'pictogram',
@@ -7640,6 +8683,7 @@ export const manifestData: Record<
       name: 'positiveReviews',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.324Z',
     },
     '6144:1204': {
       variant: 'pictogram',
@@ -7647,6 +8691,7 @@ export const manifestData: Record<
       name: 'timingCheck',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.045Z',
     },
     '6144:1202': {
       variant: 'pictogram',
@@ -7654,6 +8699,7 @@ export const manifestData: Record<
       name: 'monitoringPerformance',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:23.949Z',
     },
     '6144:1201': {
       variant: 'pictogram',
@@ -7661,6 +8707,7 @@ export const manifestData: Record<
       name: 'emailAndMessages',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.712Z',
     },
     '6144:1208': {
       variant: 'pictogram',
@@ -7668,6 +8715,7 @@ export const manifestData: Record<
       name: 'multiAccountsAndCards',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.649Z',
     },
     '6144:1224': {
       variant: 'pictogram',
@@ -7675,6 +8723,7 @@ export const manifestData: Record<
       name: 'layerNetworks',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-07T22:13:43.866Z',
     },
     '6144:1200': {
       variant: 'pictogram',
@@ -7682,6 +8731,7 @@ export const manifestData: Record<
       name: 'gasFees',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.578Z',
     },
     '6144:1199': {
       variant: 'pictogram',
@@ -7689,6 +8739,7 @@ export const manifestData: Record<
       name: 'assetMeasurements',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.392Z',
     },
     '6144:1198': {
       variant: 'pictogram',
@@ -7696,6 +8747,7 @@ export const manifestData: Record<
       name: 'lightbulbLearn',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.415Z',
     },
     '6144:1251': {
       variant: 'pictogram',
@@ -7703,6 +8755,7 @@ export const manifestData: Record<
       name: 'musicAndSounds',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.800Z',
     },
     '6144:1244': {
       variant: 'pictogram',
@@ -7710,6 +8763,7 @@ export const manifestData: Record<
       name: 'findYourSelection',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.895Z',
     },
     '6144:1197': {
       variant: 'pictogram',
@@ -7717,6 +8771,7 @@ export const manifestData: Record<
       name: 'finance',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T18:32:38.513Z',
     },
     '6144:1196': {
       variant: 'pictogram',
@@ -7724,6 +8779,7 @@ export const manifestData: Record<
       name: 'creative',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.128Z',
     },
     '6144:1195': {
       variant: 'pictogram',
@@ -7731,6 +8787,7 @@ export const manifestData: Record<
       name: 'decentralizedIdentity',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.279Z',
     },
     '6144:1194': {
       variant: 'pictogram',
@@ -7738,6 +8795,7 @@ export const manifestData: Record<
       name: 'cryptoFolder',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.420Z',
     },
     '6144:1193': {
       variant: 'pictogram',
@@ -7745,6 +8803,7 @@ export const manifestData: Record<
       name: 'crypto101',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.945Z',
     },
     '6144:1192': {
       variant: 'pictogram',
@@ -7752,6 +8811,7 @@ export const manifestData: Record<
       name: 'congratulations',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.757Z',
     },
     '6144:1191': {
       variant: 'pictogram',
@@ -7759,6 +8819,7 @@ export const manifestData: Record<
       name: 'borrowCoins',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.193Z',
     },
     '6144:1235': {
       variant: 'pictogram',
@@ -7766,6 +8827,7 @@ export const manifestData: Record<
       name: 'blockchainConnection',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.889Z',
     },
     '6144:1190': {
       variant: 'pictogram',
@@ -7773,6 +8835,7 @@ export const manifestData: Record<
       name: 'candleSticksGraph',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.835Z',
     },
     '6122:1214': {
       variant: 'heroSquare',
@@ -7780,6 +8843,7 @@ export const manifestData: Record<
       name: 'networkWarning',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.044Z',
     },
     '6122:1215': {
       variant: 'heroSquare',
@@ -7787,6 +8851,7 @@ export const manifestData: Record<
       name: 'networkWarning',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.297Z',
     },
     '6122:1240': {
       variant: 'pictogram',
@@ -7794,6 +8859,7 @@ export const manifestData: Record<
       name: 'agent',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-04T00:09:59.236Z',
     },
     '6122:1241': {
       variant: 'pictogram',
@@ -7801,6 +8867,7 @@ export const manifestData: Record<
       name: 'agent',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.519Z',
     },
     '6142:1372': {
       variant: 'spotRectangle',
@@ -7809,6 +8876,7 @@ export const manifestData: Record<
       name: 'primeTradePreferences',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.090Z',
     },
     '6142:1369': {
       variant: 'spotRectangle',
@@ -7817,6 +8885,7 @@ export const manifestData: Record<
       name: 'primePriceLadder',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.335Z',
     },
     '6142:1367': {
       variant: 'spotRectangle',
@@ -7825,6 +8894,7 @@ export const manifestData: Record<
       name: 'primeOrderConfirmation',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.318Z',
     },
     '6142:1370': {
       variant: 'spotRectangle',
@@ -7833,6 +8903,7 @@ export const manifestData: Record<
       name: 'primeTradePreferences',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.098Z',
     },
     '6142:1368': {
       variant: 'spotRectangle',
@@ -7841,6 +8912,7 @@ export const manifestData: Record<
       name: 'primePriceLadder',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.610Z',
     },
     '6142:1371': {
       variant: 'spotRectangle',
@@ -7849,6 +8921,7 @@ export const manifestData: Record<
       name: 'primeOrderConfirmation',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.863Z',
     },
     '6146:1550': {
       variant: 'heroSquare',
@@ -7857,6 +8930,7 @@ export const manifestData: Record<
       name: 'primeStakingHero',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-17T14:42:53.229Z',
     },
     '6146:1548': {
       variant: 'heroSquare',
@@ -7865,6 +8939,7 @@ export const manifestData: Record<
       name: 'primeStakingHero',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:25.250Z',
     },
     '6146:1544': {
       variant: 'heroSquare',
@@ -7873,6 +8948,7 @@ export const manifestData: Record<
       name: 'primeDeFiHero',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.681Z',
     },
     '6146:1539': {
       variant: 'heroSquare',
@@ -7881,6 +8957,7 @@ export const manifestData: Record<
       name: 'primeDeFiHero',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-07T18:28:14.564Z',
     },
     '6146:1543': {
       variant: 'heroSquare',
@@ -7889,6 +8966,7 @@ export const manifestData: Record<
       name: 'primeEarnHero',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-12T13:26:26.752Z',
     },
     '6146:1537': {
       variant: 'heroSquare',
@@ -7897,6 +8975,7 @@ export const manifestData: Record<
       name: 'primeEarnHero',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-15T16:25:35.227Z',
     },
     '6146:1540': {
       variant: 'spotRectangle',
@@ -7905,6 +8984,7 @@ export const manifestData: Record<
       name: 'primeStakingRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-15T16:49:37.598Z',
     },
     '6146:1546': {
       variant: 'spotRectangle',
@@ -7913,6 +8993,7 @@ export const manifestData: Record<
       name: 'primeDeFiRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-23T00:17:33.290Z',
     },
     '6146:1545': {
       variant: 'spotRectangle',
@@ -7921,6 +9002,7 @@ export const manifestData: Record<
       name: 'primeEarnRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-07T20:44:47.629Z',
     },
     '6146:1551': {
       variant: 'spotRectangle',
@@ -7929,6 +9011,7 @@ export const manifestData: Record<
       name: 'primeStakingRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.453Z',
     },
     '6146:1547': {
       variant: 'spotRectangle',
@@ -7937,6 +9020,7 @@ export const manifestData: Record<
       name: 'primeDeFiRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:25.010Z',
     },
     '6146:1536': {
       variant: 'spotRectangle',
@@ -7945,6 +9029,7 @@ export const manifestData: Record<
       name: 'primeEarnRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:56.980Z',
     },
     '6146:1866': {
       variant: 'spotSquare',
@@ -7953,6 +9038,7 @@ export const manifestData: Record<
       name: 'primeStakingSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-14T18:50:01.056Z',
     },
     '6146:1863': {
       variant: 'spotSquare',
@@ -7961,6 +9047,7 @@ export const manifestData: Record<
       name: 'primeDeFiSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-06T16:42:44.778Z',
     },
     '6146:1862': {
       variant: 'spotSquare',
@@ -7969,6 +9056,7 @@ export const manifestData: Record<
       name: 'primeEarnSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-01T21:07:48.433Z',
     },
     '6146:1865': {
       variant: 'spotSquare',
@@ -7977,6 +9065,7 @@ export const manifestData: Record<
       name: 'primeStakingSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.125Z',
     },
     '6146:1864': {
       variant: 'spotSquare',
@@ -7985,6 +9074,7 @@ export const manifestData: Record<
       name: 'primeDeFiSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.640Z',
     },
     '6146:1861': {
       variant: 'spotSquare',
@@ -7993,6 +9083,7 @@ export const manifestData: Record<
       name: 'primeEarnSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.327Z',
     },
     '6153:1195': {
       variant: 'spotRectangle',
@@ -8000,6 +9091,7 @@ export const manifestData: Record<
       name: 'ratMigrationerror',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:10.764Z',
     },
     '6153:1192': {
       variant: 'spotRectangle',
@@ -8007,6 +9099,7 @@ export const manifestData: Record<
       name: 'ratMigrationerror',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:53:11.337Z',
     },
     '6153:1193': {
       variant: 'spotRectangle',
@@ -8014,6 +9107,7 @@ export const manifestData: Record<
       name: 'ratMigration',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-14T21:45:19.699Z',
     },
     '6153:1194': {
       variant: 'spotRectangle',
@@ -8021,6 +9115,7 @@ export const manifestData: Record<
       name: 'ratMigration',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.710Z',
     },
     '6153:1227': {
       variant: 'pictogram',
@@ -8029,6 +9124,7 @@ export const manifestData: Record<
       name: 'emptyNft',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.199Z',
     },
     '6153:1226': {
       variant: 'pictogram',
@@ -8037,6 +9133,7 @@ export const manifestData: Record<
       name: 'emptyNft',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.511Z',
     },
     '6153:1318': {
       variant: 'spotSquare',
@@ -8044,6 +9141,7 @@ export const manifestData: Record<
       name: 'cryptoAppsSpotSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-06T16:42:16.914Z',
     },
     '6153:1321': {
       variant: 'spotSquare',
@@ -8051,6 +9149,7 @@ export const manifestData: Record<
       name: 'cryptoAppsSpotSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.864Z',
     },
     '6153:1319': {
       variant: 'spotSquare',
@@ -8059,6 +9158,7 @@ export const manifestData: Record<
       name: 'emptyNftSpotSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.869Z',
     },
     '6153:1320': {
       variant: 'spotSquare',
@@ -8067,6 +9167,7 @@ export const manifestData: Record<
       name: 'emptyNftSpotSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-12-07T20:44:47.657Z',
     },
     '6153:1541': {
       variant: 'heroSquare',
@@ -8074,6 +9175,7 @@ export const manifestData: Record<
       name: 'emptyCrypto',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.134Z',
     },
     '6153:1539': {
       variant: 'heroSquare',
@@ -8081,6 +9183,7 @@ export const manifestData: Record<
       name: 'emptyCrypto',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.853Z',
     },
     '6153:1542': {
       variant: 'heroSquare',
@@ -8088,6 +9191,7 @@ export const manifestData: Record<
       name: 'emptyTrading',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-05T17:23:21.728Z',
     },
     '6153:1538': {
       variant: 'heroSquare',
@@ -8095,6 +9199,7 @@ export const manifestData: Record<
       name: 'emptyTrading',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.403Z',
     },
     '6153:1540': {
       variant: 'heroSquare',
@@ -8102,6 +9207,7 @@ export const manifestData: Record<
       name: 'walletSolana',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.865Z',
     },
     '6153:1620': {
       variant: 'heroSquare',
@@ -8109,6 +9215,7 @@ export const manifestData: Record<
       name: 'walletSolana',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T16:57:03.047Z',
     },
     '6172:1162': {
       variant: 'spotRectangle',
@@ -8116,6 +9223,7 @@ export const manifestData: Record<
       name: 'uob',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.247Z',
     },
     '6172:1163': {
       variant: 'spotRectangle',
@@ -8123,6 +9231,7 @@ export const manifestData: Record<
       name: 'uob',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.846Z',
     },
     '6253:1983': {
       variant: 'pictogram',
@@ -8130,6 +9239,7 @@ export const manifestData: Record<
       name: 'participateNavigation',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-12-12T21:17:20.312Z',
     },
     '6253:1968': {
       variant: 'pictogram',
@@ -8137,6 +9247,7 @@ export const manifestData: Record<
       name: 'assetHubNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.293Z',
     },
     '6253:1967': {
       variant: 'pictogram',
@@ -8144,6 +9255,7 @@ export const manifestData: Record<
       name: 'privateClientNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-22T13:57:50.822Z',
     },
     '6253:1975': {
       variant: 'pictogram',
@@ -8151,6 +9263,7 @@ export const manifestData: Record<
       name: 'primeNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.318Z',
     },
     '6253:1971': {
       variant: 'pictogram',
@@ -8158,6 +9271,7 @@ export const manifestData: Record<
       name: 'exchangeNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-12-14T18:50:00.261Z',
     },
     '6253:1980': {
       variant: 'pictogram',
@@ -8165,6 +9279,7 @@ export const manifestData: Record<
       name: 'borrowNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.213Z',
     },
     '6253:1966': {
       variant: 'pictogram',
@@ -8172,6 +9287,7 @@ export const manifestData: Record<
       name: 'analyticsNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-12-13T22:36:18.636Z',
     },
     '6253:1970': {
       variant: 'pictogram',
@@ -8179,6 +9295,7 @@ export const manifestData: Record<
       name: 'venturesNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-15T16:11:57.118Z',
     },
     '6253:1982': {
       variant: 'pictogram',
@@ -8186,6 +9303,7 @@ export const manifestData: Record<
       name: 'queryTransactNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-16T16:02:55.224Z',
     },
     '6253:1989': {
       variant: 'pictogram',
@@ -8193,6 +9311,7 @@ export const manifestData: Record<
       name: 'signInNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:22.854Z',
     },
     '6253:1977': {
       variant: 'pictogram',
@@ -8200,6 +9319,7 @@ export const manifestData: Record<
       name: 'institutionalNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-10-03T13:31:52.879Z',
     },
     '6253:1985': {
       variant: 'pictogram',
@@ -8207,6 +9327,7 @@ export const manifestData: Record<
       name: 'cloudNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:22.945Z',
     },
     '6253:1987': {
       variant: 'pictogram',
@@ -8214,6 +9335,7 @@ export const manifestData: Record<
       name: 'walletLinkNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:22.860Z',
     },
     '6253:1986': {
       variant: 'pictogram',
@@ -8221,6 +9343,7 @@ export const manifestData: Record<
       name: 'rosettaNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.035Z',
     },
     '6253:1984': {
       variant: 'pictogram',
@@ -8228,6 +9351,7 @@ export const manifestData: Record<
       name: 'nftNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-12-14T18:50:00.374Z',
     },
     '6253:1979': {
       variant: 'pictogram',
@@ -8235,6 +9359,7 @@ export const manifestData: Record<
       name: 'earnNavigation',
       spectrum: 'light',
       versionNum: 3,
+      lastUpdated: '2022-09-16T16:33:23.219Z',
     },
     '6253:1974': {
       variant: 'pictogram',
@@ -8242,6 +9367,7 @@ export const manifestData: Record<
       name: 'commerceNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:22.961Z',
     },
     '6253:1978': {
       variant: 'pictogram',
@@ -8249,6 +9375,7 @@ export const manifestData: Record<
       name: 'custodyNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-12-06T16:36:21.106Z',
     },
     '6253:1973': {
       variant: 'pictogram',
@@ -8256,6 +9383,7 @@ export const manifestData: Record<
       name: 'connectNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-16T18:54:00.639Z',
     },
     '6253:1981': {
       variant: 'pictogram',
@@ -8263,6 +9391,7 @@ export const manifestData: Record<
       name: 'cardNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.271Z',
     },
     '6253:1972': {
       variant: 'pictogram',
@@ -8270,6 +9399,7 @@ export const manifestData: Record<
       name: 'proNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.173Z',
     },
     '6253:1969': {
       variant: 'pictogram',
@@ -8277,6 +9407,7 @@ export const manifestData: Record<
       name: 'walletNavigation',
       spectrum: 'light',
       versionNum: 3,
+      lastUpdated: '2022-12-14T18:50:00.583Z',
     },
     '6239:1171': {
       variant: 'heroSquare',
@@ -8284,6 +9415,7 @@ export const manifestData: Record<
       name: 'rotatingRewards',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.773Z',
     },
     '6229:1166': {
       variant: 'heroSquare',
@@ -8291,6 +9423,7 @@ export const manifestData: Record<
       name: 'restrictedCountry',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:23.842Z',
     },
     '6229:1167': {
       variant: 'heroSquare',
@@ -8298,6 +9431,7 @@ export const manifestData: Record<
       name: 'restrictedCountry',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:23.668Z',
     },
     '6236:1325': {
       variant: 'spotSquare',
@@ -8306,6 +9440,7 @@ export const manifestData: Record<
       name: 'cardDeclinedSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.172Z',
     },
     '6239:1170': {
       variant: 'heroSquare',
@@ -8313,6 +9448,7 @@ export const manifestData: Record<
       name: 'rotatingRewards',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.151Z',
     },
     '6236:1324': {
       variant: 'spotSquare',
@@ -8321,6 +9457,7 @@ export const manifestData: Record<
       name: 'cardBlockedSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.858Z',
     },
     '6236:1321': {
       variant: 'spotSquare',
@@ -8329,6 +9466,7 @@ export const manifestData: Record<
       name: 'addCardSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.393Z',
     },
     '6236:1323': {
       variant: 'spotSquare',
@@ -8337,6 +9475,7 @@ export const manifestData: Record<
       name: 'cardDeclinedSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.312Z',
     },
     '6236:1322': {
       variant: 'spotSquare',
@@ -8345,6 +9484,7 @@ export const manifestData: Record<
       name: 'cardBlockedSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:11.122Z',
     },
     '6236:1320': {
       variant: 'spotSquare',
@@ -8353,6 +9493,7 @@ export const manifestData: Record<
       name: 'addCardSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.191Z',
     },
     '6251:1147': {
       variant: 'spotRectangle',
@@ -8360,6 +9501,7 @@ export const manifestData: Record<
       name: 'emptyNfts',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-25T16:03:22.255Z',
     },
     '6251:1146': {
       variant: 'spotRectangle',
@@ -8367,6 +9509,7 @@ export const manifestData: Record<
       name: 'emptyNfts',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.795Z',
     },
     '6251:1392': {
       variant: 'heroSquare',
@@ -8374,6 +9517,7 @@ export const manifestData: Record<
       name: 'discardAssets',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.541Z',
     },
     '6251:1419': {
       variant: 'heroSquare',
@@ -8381,6 +9525,7 @@ export const manifestData: Record<
       name: 'discardAssets',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.239Z',
     },
     '6251:1511': {
       variant: 'heroSquare',
@@ -8388,6 +9533,7 @@ export const manifestData: Record<
       name: 'walletAsset',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.051Z',
     },
     '6251:1550': {
       variant: 'heroSquare',
@@ -8395,6 +9541,7 @@ export const manifestData: Record<
       name: 'walletAsset',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-04T18:41:15.943Z',
     },
     '6253:2168': {
       variant: 'pictogram',
@@ -8402,6 +9549,7 @@ export const manifestData: Record<
       name: 'signInNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.110Z',
     },
     '6253:2164': {
       variant: 'pictogram',
@@ -8409,6 +9557,7 @@ export const manifestData: Record<
       name: 'institutionalNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.337Z',
     },
     '6253:2163': {
       variant: 'pictogram',
@@ -8416,6 +9565,7 @@ export const manifestData: Record<
       name: 'cloudNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.391Z',
     },
     '6253:2162': {
       variant: 'pictogram',
@@ -8423,6 +9573,7 @@ export const manifestData: Record<
       name: 'walletLinkNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-12-04T23:16:43.755Z',
     },
     '6253:2158': {
       variant: 'pictogram',
@@ -8430,6 +9581,7 @@ export const manifestData: Record<
       name: 'rosettaNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.053Z',
     },
     '6253:2157': {
       variant: 'pictogram',
@@ -8437,6 +9589,7 @@ export const manifestData: Record<
       name: 'nftNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.030Z',
     },
     '6253:2166': {
       variant: 'pictogram',
@@ -8444,6 +9597,7 @@ export const manifestData: Record<
       name: 'earnNavigation',
       spectrum: 'dark',
       versionNum: 3,
+      lastUpdated: '2022-09-16T16:33:23.276Z',
     },
     '6253:2154': {
       variant: 'pictogram',
@@ -8451,6 +9605,7 @@ export const manifestData: Record<
       name: 'commerceNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:22.989Z',
     },
     '6253:2159': {
       variant: 'pictogram',
@@ -8458,6 +9613,7 @@ export const manifestData: Record<
       name: 'custodyNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.081Z',
     },
     '6253:2152': {
       variant: 'pictogram',
@@ -8465,6 +9621,7 @@ export const manifestData: Record<
       name: 'connectNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.332Z',
     },
     '6253:2150': {
       variant: 'pictogram',
@@ -8472,6 +9629,7 @@ export const manifestData: Record<
       name: 'cardNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.047Z',
     },
     '6253:2167': {
       variant: 'pictogram',
@@ -8479,6 +9637,7 @@ export const manifestData: Record<
       name: 'proNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.298Z',
     },
     '6253:2156': {
       variant: 'pictogram',
@@ -8486,6 +9645,7 @@ export const manifestData: Record<
       name: 'walletNavigation',
       spectrum: 'dark',
       versionNum: 3,
+      lastUpdated: '2022-09-16T16:33:23.266Z',
     },
     '6253:2165': {
       variant: 'pictogram',
@@ -8493,6 +9653,7 @@ export const manifestData: Record<
       name: 'participateNavigation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.363Z',
     },
     '6253:2161': {
       variant: 'pictogram',
@@ -8500,6 +9661,7 @@ export const manifestData: Record<
       name: 'assetHubNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.168Z',
     },
     '6253:2149': {
       variant: 'pictogram',
@@ -8507,6 +9669,7 @@ export const manifestData: Record<
       name: 'privateClientNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.151Z',
     },
     '6253:2147': {
       variant: 'pictogram',
@@ -8514,6 +9677,7 @@ export const manifestData: Record<
       name: 'primeNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.134Z',
     },
     '6253:2148': {
       variant: 'pictogram',
@@ -8521,6 +9685,7 @@ export const manifestData: Record<
       name: 'exchangeNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:22.878Z',
     },
     '6253:2153': {
       variant: 'pictogram',
@@ -8528,6 +9693,7 @@ export const manifestData: Record<
       name: 'borrowNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:22.971Z',
     },
     '6253:2160': {
       variant: 'pictogram',
@@ -8535,6 +9701,7 @@ export const manifestData: Record<
       name: 'analyticsNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-11-21T23:17:44.511Z',
     },
     '6253:2151': {
       variant: 'pictogram',
@@ -8542,6 +9709,7 @@ export const manifestData: Record<
       name: 'venturesNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-11-21T23:17:09.561Z',
     },
     '6253:2155': {
       variant: 'pictogram',
@@ -8549,6 +9717,7 @@ export const manifestData: Record<
       name: 'queryTransactNavigation',
       spectrum: 'dark',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:22.929Z',
     },
     '6576:1325': {
       variant: 'spotRectangle',
@@ -8556,6 +9725,7 @@ export const manifestData: Record<
       name: 'emptyTradingSpotRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T23:34:00.447Z',
     },
     '6546:1163': {
       variant: 'pictogram',
@@ -8563,6 +9733,7 @@ export const manifestData: Record<
       name: 'nftAvatar',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-21T21:35:44.880Z',
     },
     '6546:1164': {
       variant: 'pictogram',
@@ -8570,6 +9741,7 @@ export const manifestData: Record<
       name: 'nftAvatar',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-07T22:13:44.014Z',
     },
     '6408:1125': {
       variant: 'spotRectangle',
@@ -8577,6 +9749,7 @@ export const manifestData: Record<
       name: 'ethStakingRewardsHorizontal',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.970Z',
     },
     '6408:1151': {
       variant: 'spotRectangle',
@@ -8584,6 +9757,7 @@ export const manifestData: Record<
       name: 'ethStakingRewardsHorizontal',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.700Z',
     },
     '6408:1177': {
       variant: 'heroSquare',
@@ -8591,6 +9765,7 @@ export const manifestData: Record<
       name: 'ethStakingRewardsHero',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-01T21:31:18.148Z',
     },
     '6408:1236': {
       variant: 'heroSquare',
@@ -8598,6 +9773,7 @@ export const manifestData: Record<
       name: 'ethStakingRewardsHero',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.914Z',
     },
     '6408:1295': {
       variant: 'spotSquare',
@@ -8605,6 +9781,7 @@ export const manifestData: Record<
       name: 'ethStakingRewardsSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.910Z',
     },
     '6408:1317': {
       variant: 'spotSquare',
@@ -8612,6 +9789,7 @@ export const manifestData: Record<
       name: 'ethStakingRewardsSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-12-08T15:04:27.061Z',
     },
     '6547:1455': {
       variant: 'heroSquare',
@@ -8619,6 +9797,7 @@ export const manifestData: Record<
       name: 'quickBuy',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.761Z',
     },
     '6547:1454': {
       variant: 'heroSquare',
@@ -8626,6 +9805,7 @@ export const manifestData: Record<
       name: 'quickBuy',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-16T07:19:34.727Z',
     },
     '6552:1227': {
       variant: 'heroSquare',
@@ -8633,6 +9813,7 @@ export const manifestData: Record<
       name: 'emptyCollection',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-05T17:23:21.818Z',
     },
     '6552:1228': {
       variant: 'heroSquare',
@@ -8640,6 +9821,7 @@ export const manifestData: Record<
       name: 'emptyCollection',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-18T21:11:02.360Z',
     },
     '6556:1135': {
       variant: 'pictogram',
@@ -8647,6 +9829,7 @@ export const manifestData: Record<
       name: 'rewardsNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.005Z',
     },
     '6556:1141': {
       variant: 'pictogram',
@@ -8654,6 +9837,7 @@ export const manifestData: Record<
       name: 'rewardsNavigation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.163Z',
     },
     '6572:1132': {
       variant: 'spotSquare',
@@ -8661,6 +9845,7 @@ export const manifestData: Record<
       name: 'eth2SendSell',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.346Z',
     },
     '6572:1133': {
       variant: 'spotSquare',
@@ -8668,6 +9853,7 @@ export const manifestData: Record<
       name: 'eth2SendSell',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.398Z',
     },
     '6571:1127': {
       variant: 'spotRectangle',
@@ -8675,6 +9861,7 @@ export const manifestData: Record<
       name: 'cbEth',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.706Z',
     },
     '6572:1136': {
       variant: 'spotRectangle',
@@ -8682,6 +9869,7 @@ export const manifestData: Record<
       name: 'eth2SellSend',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-01T22:14:42.454Z',
     },
     '6572:1135': {
       variant: 'spotSquare',
@@ -8689,6 +9877,7 @@ export const manifestData: Record<
       name: 'ethStakeOrWrap',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-20T18:37:09.955Z',
     },
     '6571:1128': {
       variant: 'spotRectangle',
@@ -8696,6 +9885,7 @@ export const manifestData: Record<
       name: 'eth2SellSend',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.763Z',
     },
     '6572:1134': {
       variant: 'spotSquare',
@@ -8703,6 +9893,7 @@ export const manifestData: Record<
       name: 'ethStakeOrWrap',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-12T20:25:45.858Z',
     },
     '6572:1138': {
       variant: 'pictogram',
@@ -8710,6 +9901,7 @@ export const manifestData: Record<
       name: 'ethStakingPicto',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.823Z',
     },
     '6572:1137': {
       variant: 'pictogram',
@@ -8717,6 +9909,7 @@ export const manifestData: Record<
       name: 'ethStakingPicto',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.551Z',
     },
     '6587:1126': {
       variant: 'spotRectangle',
@@ -8724,6 +9917,7 @@ export const manifestData: Record<
       name: 'ethStakingMovement',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:25.222Z',
     },
     '6571:1129': {
       variant: 'spotRectangle',
@@ -8731,6 +9925,7 @@ export const manifestData: Record<
       name: 'ethStakingMovement',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.976Z',
     },
     '6571:1130': {
       variant: 'spotRectangle',
@@ -8738,6 +9933,7 @@ export const manifestData: Record<
       name: 'ethStakingRewardsHorizontalTwo',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T21:24:09.011Z',
     },
     '6571:1131': {
       variant: 'spotRectangle',
@@ -8745,6 +9941,7 @@ export const manifestData: Record<
       name: 'ethStakingRewardsHorizontalTwo',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T21:24:09.014Z',
     },
     '6587:1125': {
       variant: 'spotRectangle',
@@ -8752,6 +9949,7 @@ export const manifestData: Record<
       name: 'cbEth',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-01T22:14:21.627Z',
     },
     '6572:1150': {
       variant: 'pictogram',
@@ -8759,6 +9957,7 @@ export const manifestData: Record<
       name: 'wrapEth',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-14T22:55:48.792Z',
     },
     '6572:1186': {
       variant: 'pictogram',
@@ -8766,6 +9965,7 @@ export const manifestData: Record<
       name: 'wrapEth',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.957Z',
     },
     '6573:1186': {
       variant: 'spotRectangle',
@@ -8774,6 +9974,7 @@ export const manifestData: Record<
       name: 'nftSpotRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T07:14:13.474Z',
     },
     '6573:1287': {
       variant: 'spotRectangle',
@@ -8782,6 +9983,7 @@ export const manifestData: Record<
       name: 'nftSpotRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.556Z',
     },
     '6576:1434': {
       variant: 'spotRectangle',
@@ -8789,6 +9991,7 @@ export const manifestData: Record<
       name: 'emptyTradingSpotRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.746Z',
     },
     '6579:1571': {
       variant: 'spotRectangle',
@@ -8796,6 +9999,7 @@ export const manifestData: Record<
       name: 'bridging',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-05T17:23:21.637Z',
     },
     '6579:1704': {
       variant: 'spotRectangle',
@@ -8803,6 +10007,7 @@ export const manifestData: Record<
       name: 'bridging',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.032Z',
     },
     '6915:9356': {
       variant: 'heroSquare',
@@ -8810,6 +10015,7 @@ export const manifestData: Record<
       name: 'hiddenCollection',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-05T17:23:21.546Z',
     },
     '6915:9355': {
       variant: 'heroSquare',
@@ -8817,6 +10023,7 @@ export const manifestData: Record<
       name: 'hiddenCollection',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.562Z',
     },
     '7022:2320': {
       variant: 'pictogram',
@@ -8824,6 +10031,7 @@ export const manifestData: Record<
       name: 'advancedTradingNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:23.304Z',
     },
     '7022:2319': {
       variant: 'pictogram',
@@ -8831,6 +10039,7 @@ export const manifestData: Record<
       name: 'directDepositNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-11-22T15:56:24.496Z',
     },
     '7022:2318': {
       variant: 'pictogram',
@@ -8838,6 +10047,7 @@ export const manifestData: Record<
       name: 'taxCenterNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:22.916Z',
     },
     '7022:2356': {
       variant: 'pictogram',
@@ -8845,6 +10055,7 @@ export const manifestData: Record<
       name: 'directDepositNavigation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:22.847Z',
     },
     '7022:2355': {
       variant: 'pictogram',
@@ -8852,6 +10063,7 @@ export const manifestData: Record<
       name: 'taxCenterNavigation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:22.892Z',
     },
     '7022:2354': {
       variant: 'pictogram',
@@ -8859,6 +10071,7 @@ export const manifestData: Record<
       name: 'advancedTradingNavigation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.248Z',
     },
     '7039:2110': {
       variant: 'pictogram',
@@ -8866,6 +10079,7 @@ export const manifestData: Record<
       name: 'helpCenterNavigation',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.178Z',
     },
     '7039:2118': {
       variant: 'pictogram',
@@ -8873,6 +10087,7 @@ export const manifestData: Record<
       name: 'helpCenterNavigation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.237Z',
     },
     '7148:2219': {
       variant: 'spotSquare',
@@ -8880,6 +10095,7 @@ export const manifestData: Record<
       name: 'miniGift',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.819Z',
     },
     '7148:2220': {
       variant: 'spotSquare',
@@ -8887,6 +10103,7 @@ export const manifestData: Record<
       name: 'miniGift',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.513Z',
     },
     '7148:2218': {
       variant: 'heroSquare',
@@ -8894,6 +10111,7 @@ export const manifestData: Record<
       name: 'receiveGift',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.862Z',
     },
     '7148:2217': {
       variant: 'heroSquare',
@@ -8901,6 +10119,7 @@ export const manifestData: Record<
       name: 'receiveGift',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.813Z',
     },
     '7148:2215': {
       variant: 'heroSquare',
@@ -8908,6 +10127,7 @@ export const manifestData: Record<
       name: 'brdGift',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-21T16:50:37.284Z',
     },
     '7148:2216': {
       variant: 'heroSquare',
@@ -8915,6 +10135,7 @@ export const manifestData: Record<
       name: 'brdGift',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.286Z',
     },
     '7170:2069': {
       variant: 'spotRectangle',
@@ -8923,6 +10144,7 @@ export const manifestData: Record<
       name: 'login',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-12T20:20:19.380Z',
     },
     '7170:2070': {
       variant: 'spotRectangle',
@@ -8931,6 +10153,7 @@ export const manifestData: Record<
       name: 'login',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.987Z',
     },
     '7359:2120': {
       variant: 'spotSquare',
@@ -8938,6 +10161,7 @@ export const manifestData: Record<
       name: 'bridgingSpotSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-21T15:05:42.605Z',
     },
     '7359:2121': {
       variant: 'spotSquare',
@@ -8945,6 +10169,7 @@ export const manifestData: Record<
       name: 'bridgingSpotSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.690Z',
     },
     '7453:2125': {
       variant: 'heroSquare',
@@ -8952,6 +10177,7 @@ export const manifestData: Record<
       name: 'referralsWalletPhones',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.692Z',
     },
     '7453:2123': {
       variant: 'heroSquare',
@@ -8960,6 +10186,7 @@ export const manifestData: Record<
       name: 'referralsAvatars',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-15T14:17:58.247Z',
     },
     '7453:2121': {
       variant: 'heroSquare',
@@ -8968,6 +10195,7 @@ export const manifestData: Record<
       name: 'referralsBitcoin',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-03T13:31:53.281Z',
     },
     '7453:2124': {
       variant: 'heroSquare',
@@ -8975,6 +10203,7 @@ export const manifestData: Record<
       name: 'referralsWalletPhones',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.622Z',
     },
     '7453:2122': {
       variant: 'heroSquare',
@@ -8983,6 +10212,7 @@ export const manifestData: Record<
       name: 'referralsAvatars',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.536Z',
     },
     '7453:2120': {
       variant: 'heroSquare',
@@ -8991,6 +10221,7 @@ export const manifestData: Record<
       name: 'referralsBitcoin',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.559Z',
     },
     '7460:2169': {
       variant: 'spotRectangle',
@@ -8998,6 +10229,7 @@ export const manifestData: Record<
       name: 'browserHistory',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.156Z',
     },
     '7460:2168': {
       variant: 'spotRectangle',
@@ -9005,6 +10237,7 @@ export const manifestData: Record<
       name: 'browserHistory',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.806Z',
     },
     '7465:2247': {
       variant: 'spotSquare',
@@ -9012,6 +10245,7 @@ export const manifestData: Record<
       name: 'offersEmpty',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-02T18:13:59.039Z',
     },
     '7465:2246': {
       variant: 'spotSquare',
@@ -9019,6 +10253,7 @@ export const manifestData: Record<
       name: 'offersEmpty',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:52:08.819Z',
     },
     '7465:2306': {
       variant: 'spotSquare',
@@ -9026,6 +10261,7 @@ export const manifestData: Record<
       name: 'frameEmpty',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T18:49:08.424Z',
     },
     '7465:2305': {
       variant: 'spotSquare',
@@ -9033,6 +10269,7 @@ export const manifestData: Record<
       name: 'frameEmpty',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:51:53.599Z',
     },
     '7469:2329': {
       variant: 'spotSquare',
@@ -9040,6 +10277,7 @@ export const manifestData: Record<
       name: 'nftTag',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.605Z',
     },
     '7469:2330': {
       variant: 'spotSquare',
@@ -9047,6 +10285,7 @@ export const manifestData: Record<
       name: 'nftTag',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-24T16:54:10.660Z',
     },
     '7470:2172': {
       variant: 'pictogram',
@@ -9054,6 +10293,7 @@ export const manifestData: Record<
       name: 'dataMarketplaceNavigation',
       spectrum: 'light',
       versionNum: 2,
+      lastUpdated: '2022-09-16T16:33:22.910Z',
     },
     '7470:2171': {
       variant: 'pictogram',
@@ -9061,6 +10301,7 @@ export const manifestData: Record<
       name: 'accountsNavigation',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-04T00:09:59.224Z',
     },
     '7470:2170': {
       variant: 'pictogram',
@@ -9068,6 +10309,7 @@ export const manifestData: Record<
       name: 'accountsNavigation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.202Z',
     },
     '7470:2169': {
       variant: 'pictogram',
@@ -9075,6 +10317,7 @@ export const manifestData: Record<
       name: 'dataMarketplaceNavigation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:22.873Z',
     },
     '7691:2400': {
       variant: 'heroSquare',
@@ -9083,6 +10326,7 @@ export const manifestData: Record<
       name: 'emptyStateNft404Page',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-16T18:45:20.447Z',
     },
     '7691:2401': {
       variant: 'heroSquare',
@@ -9091,6 +10335,7 @@ export const manifestData: Record<
       name: 'emptyStateCheckBackLater',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:30:34.911Z',
     },
     '7691:2399': {
       variant: 'heroSquare',
@@ -9099,6 +10344,7 @@ export const manifestData: Record<
       name: 'emptyStateNftSoldOut',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T17:27:47.472Z',
     },
     '7691:2542': {
       variant: 'heroSquare',
@@ -9107,6 +10353,7 @@ export const manifestData: Record<
       name: 'emptyStateNft404Page',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.859Z',
     },
     '7691:2543': {
       variant: 'heroSquare',
@@ -9115,6 +10362,7 @@ export const manifestData: Record<
       name: 'emptyStateNftSoldOut',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.567Z',
     },
     '7691:2541': {
       variant: 'heroSquare',
@@ -9123,6 +10371,7 @@ export const manifestData: Record<
       name: 'emptyStateCheckBackLater',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-16T20:58:36.575Z',
     },
     '7718:2315': {
       variant: 'spotRectangle',
@@ -9131,6 +10380,7 @@ export const manifestData: Record<
       name: 'referralsBitcoinRect',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.107Z',
     },
     '7718:2310': {
       variant: 'spotRectangle',
@@ -9139,6 +10389,7 @@ export const manifestData: Record<
       name: 'referralsBitcoinRect',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.338Z',
     },
     '7718:2314': {
       variant: 'spotSquare',
@@ -9147,6 +10398,7 @@ export const manifestData: Record<
       name: 'referralsPeopleSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-12T13:27:26.977Z',
     },
     '7718:2313': {
       variant: 'spotSquare',
@@ -9155,6 +10407,7 @@ export const manifestData: Record<
       name: 'referralsPeopleSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.236Z',
     },
     '7729:2568': {
       variant: 'pictogram',
@@ -9162,6 +10415,7 @@ export const manifestData: Record<
       name: 'payNavigation',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-15T00:09:59.368Z',
     },
     '7729:2567': {
       variant: 'pictogram',
@@ -9169,6 +10423,7 @@ export const manifestData: Record<
       name: 'delegateNavigation',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.042Z',
     },
     '7729:2581': {
       variant: 'pictogram',
@@ -9176,6 +10431,7 @@ export const manifestData: Record<
       name: 'payNavigation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.075Z',
     },
     '7729:2580': {
       variant: 'pictogram',
@@ -9183,6 +10439,7 @@ export const manifestData: Record<
       name: 'delegateNavigation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.232Z',
     },
     '7825:2297': {
       variant: 'spotRectangle',
@@ -9190,6 +10447,7 @@ export const manifestData: Record<
       name: 'noTransactions',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-19T18:00:51.247Z',
     },
     '7825:2298': {
       variant: 'spotRectangle',
@@ -9197,6 +10455,7 @@ export const manifestData: Record<
       name: 'noTransactions',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.394Z',
     },
     '7827:2327': {
       variant: 'spotSquare',
@@ -9204,6 +10463,7 @@ export const manifestData: Record<
       name: 'unsupportedAsset',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:10.498Z',
     },
     '7827:2328': {
       variant: 'spotSquare',
@@ -9211,6 +10471,7 @@ export const manifestData: Record<
       name: 'unsupportedAsset',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.750Z',
     },
     '8005:2495': {
       variant: 'pictogram',
@@ -9218,6 +10479,7 @@ export const manifestData: Record<
       name: 'apartOfDropsNft',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-19T16:30:52.397Z',
     },
     '8005:2496': {
       variant: 'pictogram',
@@ -9225,6 +10487,7 @@ export const manifestData: Record<
       name: 'selectAddNft',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.260Z',
     },
     '8005:2497': {
       variant: 'pictogram',
@@ -9233,6 +10496,7 @@ export const manifestData: Record<
       name: 'mintedNft',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-10-13T17:33:03.313Z',
     },
     '8005:2498': {
       variant: 'pictogram',
@@ -9241,6 +10505,7 @@ export const manifestData: Record<
       name: 'noNftFound',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:22.934Z',
     },
     '8005:2504': {
       variant: 'pictogram',
@@ -9249,6 +10514,7 @@ export const manifestData: Record<
       name: 'apyInterest',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-04T00:09:59.179Z',
     },
     '8005:2505': {
       variant: 'pictogram',
@@ -9256,6 +10522,7 @@ export const manifestData: Record<
       name: 'sellSendAnytime',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-11-21T23:18:33.614Z',
     },
     '8005:2508': {
       variant: 'pictogram',
@@ -9264,6 +10531,7 @@ export const manifestData: Record<
       name: 'riskStaking',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.145Z',
     },
     '8005:2499': {
       variant: 'pictogram',
@@ -9271,6 +10539,7 @@ export const manifestData: Record<
       name: 'apartOfDropsNft',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-16T16:33:23.000Z',
     },
     '8005:2500': {
       variant: 'pictogram',
@@ -9278,6 +10547,7 @@ export const manifestData: Record<
       name: 'selectAddNft',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-16T16:33:23.139Z',
     },
     '8005:2501': {
       variant: 'pictogram',
@@ -9286,6 +10556,7 @@ export const manifestData: Record<
       name: 'mintedNft',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-16T16:33:23.374Z',
     },
     '8005:2502': {
       variant: 'pictogram',
@@ -9294,6 +10565,7 @@ export const manifestData: Record<
       name: 'noNftFound',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-11T15:48:38.837Z',
     },
     '8005:2503': {
       variant: 'pictogram',
@@ -9302,6 +10574,7 @@ export const manifestData: Record<
       name: 'apyInterest',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:51:53.363Z',
     },
     '8005:2506': {
       variant: 'pictogram',
@@ -9309,6 +10582,7 @@ export const manifestData: Record<
       name: 'sellSendAnytime',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-11-16T20:05:00.282Z',
     },
     '8005:2507': {
       variant: 'pictogram',
@@ -9317,6 +10591,7 @@ export const manifestData: Record<
       name: 'riskStaking',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:51:53.253Z',
     },
     '8018:2178': {
       variant: 'pictogram',
@@ -9324,6 +10599,7 @@ export const manifestData: Record<
       name: 'walletLogoNavigation',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-16T16:33:23.023Z',
     },
     '8018:2201': {
       variant: 'pictogram',
@@ -9331,6 +10607,7 @@ export const manifestData: Record<
       name: 'walletLogoNavigation',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-16T16:33:23.189Z',
     },
     '8052:2155': {
       variant: 'spotSquare',
@@ -9338,6 +10615,7 @@ export const manifestData: Record<
       name: 'dappWallet',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-21T21:41:58.806Z',
     },
     '8052:2154': {
       variant: 'spotSquare',
@@ -9345,6 +10623,7 @@ export const manifestData: Record<
       name: 'dappWallet',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.695Z',
     },
     '8062:2315': {
       variant: 'spotSquare',
@@ -9353,6 +10632,7 @@ export const manifestData: Record<
       name: 'boostedCard',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.906Z',
     },
     '8062:2314': {
       variant: 'spotSquare',
@@ -9361,6 +10641,7 @@ export const manifestData: Record<
       name: 'boostedCard',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-07T22:34:44.356Z',
     },
     '8145:2172': {
       variant: 'pictogram',
@@ -9368,6 +10649,7 @@ export const manifestData: Record<
       name: 'coinbaseLogoNavigation',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-28T11:12:06.646Z',
     },
     '8145:2171': {
       variant: 'pictogram',
@@ -9375,6 +10657,7 @@ export const manifestData: Record<
       name: 'coinbaseLogoNavigation',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-27T19:17:00.483Z',
     },
     '8277:2203': {
       variant: 'pictogram',
@@ -9382,6 +10665,7 @@ export const manifestData: Record<
       name: 'learningRewardsNavigation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:22.994Z',
     },
     '8277:2262': {
       variant: 'pictogram',
@@ -9389,6 +10673,7 @@ export const manifestData: Record<
       name: 'learningRewardsNavigation',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:22.885Z',
     },
     '8277:2326': {
       variant: 'pictogram',
@@ -9396,6 +10681,7 @@ export const manifestData: Record<
       name: 'derivativesNavigation',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.157Z',
     },
     '8277:2363': {
       variant: 'pictogram',
@@ -9403,6 +10689,7 @@ export const manifestData: Record<
       name: 'derivativesNavigation',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-16T16:33:23.325Z',
     },
     '8311:2845': {
       variant: 'heroSquare',
@@ -9411,6 +10698,7 @@ export const manifestData: Record<
       name: 'webRAT',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:32:50.135Z',
     },
     '8311:2847': {
       variant: 'heroSquare',
@@ -9419,6 +10707,7 @@ export const manifestData: Record<
       name: 'webRAT',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.455Z',
     },
     '8311:2846': {
       variant: 'spotRectangle',
@@ -9427,6 +10716,7 @@ export const manifestData: Record<
       name: 'cardBoostedRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.894Z',
     },
     '8311:2831': {
       variant: 'spotRectangle',
@@ -9435,6 +10725,7 @@ export const manifestData: Record<
       name: 'cardBoostedRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-08T01:15:16.893Z',
     },
     '8311:2826': {
       variant: 'heroSquare',
@@ -9443,6 +10734,7 @@ export const manifestData: Record<
       name: 'cardBoosted',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.981Z',
     },
     '8311:2832': {
       variant: 'heroSquare',
@@ -9451,6 +10743,7 @@ export const manifestData: Record<
       name: 'cardBoosted',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.410Z',
     },
     '8311:2836': {
       variant: 'heroSquare',
@@ -9458,6 +10751,7 @@ export const manifestData: Record<
       name: 'governance',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.958Z',
     },
     '8311:2841': {
       variant: 'spotRectangle',
@@ -9465,6 +10759,7 @@ export const manifestData: Record<
       name: 'governanceRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-25T16:03:32.087Z',
     },
     '8311:2825': {
       variant: 'spotRectangle',
@@ -9472,6 +10767,7 @@ export const manifestData: Record<
       name: 'governanceRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.403Z',
     },
     '8311:2828': {
       variant: 'heroSquare',
@@ -9479,6 +10775,7 @@ export const manifestData: Record<
       name: 'governance',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.222Z',
     },
     '8311:2835': {
       variant: 'heroSquare',
@@ -9487,6 +10784,7 @@ export const manifestData: Record<
       name: 'futuresHeroSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-08T20:41:23.282Z',
     },
     '8311:2833': {
       variant: 'heroSquare',
@@ -9495,6 +10793,7 @@ export const manifestData: Record<
       name: 'futuresHeroSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:24.856Z',
     },
     '8311:2830': {
       variant: 'spotRectangle',
@@ -9503,6 +10802,7 @@ export const manifestData: Record<
       name: 'leverageRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-19T16:48:25.146Z',
     },
     '8311:2837': {
       variant: 'spotRectangle',
@@ -9511,6 +10811,7 @@ export const manifestData: Record<
       name: 'leverageRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.803Z',
     },
     '8311:2829': {
       variant: 'spotRectangle',
@@ -9519,6 +10820,7 @@ export const manifestData: Record<
       name: 'marginRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:34:42.590Z',
     },
     '8311:2838': {
       variant: 'spotRectangle',
@@ -9527,6 +10829,7 @@ export const manifestData: Record<
       name: 'marginRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.238Z',
     },
     '8311:2848': {
       variant: 'spotRectangle',
@@ -9535,6 +10838,7 @@ export const manifestData: Record<
       name: 'marginWarningRectangle',
       spectrum: 'light',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:51:53.086Z',
     },
     '8311:2827': {
       variant: 'spotRectangle',
@@ -9543,6 +10847,7 @@ export const manifestData: Record<
       name: 'marginWarningRectangle',
       spectrum: 'dark',
       versionNum: 1,
+      lastUpdated: '2022-09-13T17:51:52.925Z',
     },
     '8311:2842': {
       variant: 'spotRectangle',
@@ -9551,6 +10856,7 @@ export const manifestData: Record<
       name: 'futuresRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.618Z',
     },
     '8311:2844': {
       variant: 'spotRectangle',
@@ -9559,6 +10865,7 @@ export const manifestData: Record<
       name: 'futuresRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:08.963Z',
     },
     '8311:2839': {
       variant: 'heroSquare',
@@ -9567,6 +10874,7 @@ export const manifestData: Record<
       name: 'marginHeroSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.843Z',
     },
     '8311:2824': {
       variant: 'heroSquare',
@@ -9575,6 +10883,7 @@ export const manifestData: Record<
       name: 'marginHeroSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.638Z',
     },
     '8311:2823': {
       variant: 'heroSquare',
@@ -9583,6 +10892,7 @@ export const manifestData: Record<
       name: 'marginWarningHeroSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.780Z',
     },
     '8311:2834': {
       variant: 'heroSquare',
@@ -9591,6 +10901,7 @@ export const manifestData: Record<
       name: 'marginWarningHeroSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:44.319Z',
     },
     '8311:2822': {
       variant: 'heroSquare',
@@ -9599,6 +10910,7 @@ export const manifestData: Record<
       name: 'leverageHeroSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:22.777Z',
     },
     '8311:2821': {
       variant: 'heroSquare',
@@ -9607,6 +10919,7 @@ export const manifestData: Record<
       name: 'leverageHeroSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.732Z',
     },
     '8311:2843': {
       variant: 'pictogram',
@@ -9614,6 +10927,7 @@ export const manifestData: Record<
       name: 'governancePictogram',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-10T14:34:35.126Z',
     },
     '8311:2840': {
       variant: 'pictogram',
@@ -9621,6 +10935,7 @@ export const manifestData: Record<
       name: 'governancePictogram',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-12T13:29:32.521Z',
     },
     '8318:2139': {
       variant: 'pictogram',
@@ -9628,6 +10943,7 @@ export const manifestData: Record<
       name: 'advancedTradingRebates',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-12T11:35:26.092Z',
     },
     '8318:2166': {
       variant: 'pictogram',
@@ -9635,6 +10951,7 @@ export const manifestData: Record<
       name: 'advancedTradingRebates',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-16T16:33:22.904Z',
     },
     '8432:3421': {
       variant: 'spotSquare',
@@ -9642,6 +10959,7 @@ export const manifestData: Record<
       name: 'futuresSpotSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-12T15:29:42.438Z',
     },
     '8432:3433': {
       variant: 'spotSquare',
@@ -9649,6 +10967,7 @@ export const manifestData: Record<
       name: 'futuresSpotSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-12-12T15:29:55.244Z',
     },
     '8502:3521': {
       variant: 'pictogram',
@@ -9657,6 +10976,7 @@ export const manifestData: Record<
       name: 'myNumberCard',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-12T04:00:09.134Z',
     },
     '8502:3535': {
       variant: 'pictogram',
@@ -9665,6 +10985,7 @@ export const manifestData: Record<
       name: 'myNumberCard',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-16T16:33:23.386Z',
     },
     '8542:3888': {
       variant: 'heroSquare',
@@ -9672,6 +10993,7 @@ export const manifestData: Record<
       name: 'browseDecentralizedApps',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-08T14:01:50.369Z',
     },
     '8542:3887': {
       variant: 'heroSquare',
@@ -9679,6 +11001,7 @@ export const manifestData: Record<
       name: 'browseDecentralizedApps',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.002Z',
     },
     '8558:3529': {
       variant: 'pictogram',
@@ -9686,6 +11009,7 @@ export const manifestData: Record<
       name: 'cardSuccess',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.039Z',
     },
     '8558:3528': {
       variant: 'pictogram',
@@ -9693,6 +11017,7 @@ export const manifestData: Record<
       name: 'mobileSuccess',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-14T23:30:34.750Z',
     },
     '8558:3527': {
       variant: 'pictogram',
@@ -9700,6 +11025,7 @@ export const manifestData: Record<
       name: 'walletSuccess',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T16:54:17.887Z',
     },
     '8558:3569': {
       variant: 'pictogram',
@@ -9707,6 +11033,7 @@ export const manifestData: Record<
       name: 'cardSuccess',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.508Z',
     },
     '8558:3567': {
       variant: 'pictogram',
@@ -9714,6 +11041,7 @@ export const manifestData: Record<
       name: 'mobileSuccess',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.247Z',
     },
     '8558:3568': {
       variant: 'pictogram',
@@ -9721,6 +11049,7 @@ export const manifestData: Record<
       name: 'walletSuccess',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.439Z',
     },
     '8558:3968': {
       variant: 'pictogram',
@@ -9728,6 +11057,7 @@ export const manifestData: Record<
       name: 'mobileWarning',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.495Z',
     },
     '8558:3987': {
       variant: 'pictogram',
@@ -9735,6 +11065,7 @@ export const manifestData: Record<
       name: 'mobileWarning',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.299Z',
     },
     '8558:4356': {
       variant: 'pictogram',
@@ -9742,6 +11073,7 @@ export const manifestData: Record<
       name: 'mobileError',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-06T19:28:32.701Z',
     },
     '8558:4357': {
       variant: 'pictogram',
@@ -9750,6 +11082,7 @@ export const manifestData: Record<
       name: 'walletError',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-21T17:01:47.242Z',
     },
     '8558:4391': {
       variant: 'pictogram',
@@ -9757,6 +11090,7 @@ export const manifestData: Record<
       name: 'mobileError',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-06T19:28:41.296Z',
     },
     '8558:4390': {
       variant: 'pictogram',
@@ -9765,6 +11099,7 @@ export const manifestData: Record<
       name: 'walletError',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-06T20:17:24.105Z',
     },
     '8562:4822': {
       variant: 'heroSquare',
@@ -9772,6 +11107,7 @@ export const manifestData: Record<
       name: 'catLostSystemError',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.353Z',
     },
     '8562:4818': {
       variant: 'heroSquare',
@@ -9779,6 +11115,7 @@ export const manifestData: Record<
       name: 'chickenFishSystemError',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.383Z',
     },
     '8562:4816': {
       variant: 'heroSquare',
@@ -9786,6 +11123,7 @@ export const manifestData: Record<
       name: 'alienDonutSystemError',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.375Z',
     },
     '8562:4821': {
       variant: 'heroSquare',
@@ -9794,6 +11132,7 @@ export const manifestData: Record<
       name: 'iceCreamMeltingSystemError',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T17:53:06.998Z',
     },
     '8562:4820': {
       variant: 'heroSquare',
@@ -9801,6 +11140,7 @@ export const manifestData: Record<
       name: 'serverCatSystemError',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-28T20:39:06.680Z',
     },
     '8562:4819': {
       variant: 'heroSquare',
@@ -9808,6 +11148,7 @@ export const manifestData: Record<
       name: 'spacedOutSystemError',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-07T20:40:01.619Z',
     },
     '8562:4817': {
       variant: 'heroSquare',
@@ -9815,6 +11156,7 @@ export const manifestData: Record<
       name: 'octopusFloatSystemError',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-01T02:00:56.149Z',
     },
     '8562:5024': {
       variant: 'heroSquare',
@@ -9822,6 +11164,7 @@ export const manifestData: Record<
       name: 'catLostSystemError',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.344Z',
     },
     '8562:5020': {
       variant: 'heroSquare',
@@ -9829,6 +11172,7 @@ export const manifestData: Record<
       name: 'chickenFishSystemError',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.361Z',
     },
     '8562:5019': {
       variant: 'heroSquare',
@@ -9836,6 +11180,7 @@ export const manifestData: Record<
       name: 'alienDonutSystemError',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.323Z',
     },
     '8562:5023': {
       variant: 'heroSquare',
@@ -9844,6 +11189,7 @@ export const manifestData: Record<
       name: 'iceCreamMeltingSystemError',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-12-09T23:31:46.700Z',
     },
     '8562:5021': {
       variant: 'heroSquare',
@@ -9851,6 +11197,7 @@ export const manifestData: Record<
       name: 'serverCatSystemError',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.927Z',
     },
     '8562:5022': {
       variant: 'heroSquare',
@@ -9858,6 +11205,7 @@ export const manifestData: Record<
       name: 'spacedOutSystemError',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:43.755Z',
     },
     '8562:5018': {
       variant: 'heroSquare',
@@ -9865,6 +11213,7 @@ export const manifestData: Record<
       name: 'octopusFloatSystemError',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-28T20:37:53.553Z',
     },
     '8564:3566': {
       variant: 'heroSquare',
@@ -9872,6 +11221,7 @@ export const manifestData: Record<
       name: 'squidEmptyState',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T21:09:56.307Z',
     },
     '8562:5611': {
       variant: 'heroSquare',
@@ -9879,6 +11229,7 @@ export const manifestData: Record<
       name: 'catHoldingWalletEmptyState',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:20:03.315Z',
     },
     '8562:5612': {
       variant: 'heroSquare',
@@ -9886,6 +11237,7 @@ export const manifestData: Record<
       name: 'walletFlyEmptyState',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-09T21:41:41.381Z',
     },
     '8562:5863': {
       variant: 'heroSquare',
@@ -9893,6 +11245,7 @@ export const manifestData: Record<
       name: 'squidEmptyState',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-16T21:07:52.368Z',
     },
     '8567:3563': {
       variant: 'heroSquare',
@@ -9900,6 +11253,7 @@ export const manifestData: Record<
       name: 'artFrameEmptyState',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:28:55.010Z',
     },
     '8571:3407': {
       variant: 'heroSquare',
@@ -9907,6 +11261,7 @@ export const manifestData: Record<
       name: 'catHoldingWalletEmptyState',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:22:39.090Z',
     },
     '8567:4205': {
       variant: 'heroSquare',
@@ -9914,6 +11269,7 @@ export const manifestData: Record<
       name: 'walletFlyEmptyState',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.965Z',
     },
     '8569:3471': {
       variant: 'heroSquare',
@@ -9921,6 +11277,7 @@ export const manifestData: Record<
       name: 'artFrameEmptyState',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:57.810Z',
     },
     '8571:3451': {
       variant: 'heroSquare',
@@ -9928,6 +11285,7 @@ export const manifestData: Record<
       name: 'exchangeEmptyState',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:19:50.191Z',
     },
     '8571:3539': {
       variant: 'heroSquare',
@@ -9935,6 +11293,7 @@ export const manifestData: Record<
       name: 'exchangeEmptyState',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-12-12T02:03:04.461Z',
     },
     '8562:6664': {
       variant: 'heroSquare',
@@ -9942,6 +11301,7 @@ export const manifestData: Record<
       name: 'cardError',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-20T07:03:13.813Z',
     },
     '8562:6697': {
       variant: 'heroSquare',
@@ -9949,6 +11309,7 @@ export const manifestData: Record<
       name: 'cardError',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:23.835Z',
     },
     '8981:3309': {
       variant: 'spotSquare',
@@ -9956,6 +11317,7 @@ export const manifestData: Record<
       name: 'cbEthWrappingUnavailable',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-11T03:26:16.875Z',
     },
     '8981:3308': {
       variant: 'spotSquare',
@@ -9963,6 +11325,7 @@ export const manifestData: Record<
       name: 'cbEthWrappingUnavailable',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.409Z',
     },
     '8558:4004': {
       variant: 'pictogram',
@@ -9971,6 +11334,7 @@ export const manifestData: Record<
       name: 'walletWarning',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:34:21.162Z',
     },
     '8558:4022': {
       variant: 'pictogram',
@@ -9979,6 +11343,7 @@ export const manifestData: Record<
       name: 'walletWarning',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:34:36.829Z',
     },
     '8710:3284': {
       variant: 'heroSquare',
@@ -9986,6 +11351,7 @@ export const manifestData: Record<
       name: 'coinbaseOneWalletWarning',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-03T17:36:57.969Z',
     },
     '8710:3325': {
       variant: 'heroSquare',
@@ -9993,6 +11359,7 @@ export const manifestData: Record<
       name: 'coinbaseOneWalletWarning',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.782Z',
     },
     '8851:3267': {
       variant: 'pictogram',
@@ -10001,6 +11368,7 @@ export const manifestData: Record<
       name: 'ssnCard',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-16T16:33:23.183Z',
     },
     '8851:3270': {
       variant: 'pictogram',
@@ -10009,6 +11377,7 @@ export const manifestData: Record<
       name: 'genericCountryIDCard',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-10T14:34:47.188Z',
     },
     '8851:3269': {
       variant: 'pictogram',
@@ -10017,6 +11386,7 @@ export const manifestData: Record<
       name: 'driversLicense',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-23T11:25:18.950Z',
     },
     '8851:3264': {
       variant: 'pictogram',
@@ -10025,6 +11395,7 @@ export const manifestData: Record<
       name: 'driversLicenseWheel',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-16T16:33:23.087Z',
     },
     '8851:3268': {
       variant: 'pictogram',
@@ -10033,6 +11404,7 @@ export const manifestData: Record<
       name: 'ssnCard',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-16T16:33:23.380Z',
     },
     '8851:3271': {
       variant: 'pictogram',
@@ -10041,6 +11413,7 @@ export const manifestData: Record<
       name: 'genericCountryIDCard',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-16T16:33:22.940Z',
     },
     '8851:3265': {
       variant: 'pictogram',
@@ -10049,6 +11422,7 @@ export const manifestData: Record<
       name: 'driversLicense',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-21T22:35:06.204Z',
     },
     '8851:3266': {
       variant: 'pictogram',
@@ -10057,6 +11431,7 @@ export const manifestData: Record<
       name: 'driversLicenseWheel',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-06T16:35:18.787Z',
     },
     '8977:3541': {
       variant: 'spotSquare',
@@ -10064,6 +11439,7 @@ export const manifestData: Record<
       name: 'pixBankDeposits',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-07T15:23:08.526Z',
     },
     '8977:3539': {
       variant: 'spotSquare',
@@ -10071,6 +11447,7 @@ export const manifestData: Record<
       name: 'pixDeposits',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.628Z',
     },
     '8977:3540': {
       variant: 'spotSquare',
@@ -10078,6 +11455,7 @@ export const manifestData: Record<
       name: 'pixBankDeposits',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-08T15:52:17.478Z',
     },
     '8977:3538': {
       variant: 'spotSquare',
@@ -10085,6 +11463,7 @@ export const manifestData: Record<
       name: 'pixDeposits',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:52:09.161Z',
     },
     '9049:3487': {
       variant: 'heroSquare',
@@ -10092,6 +11471,7 @@ export const manifestData: Record<
       name: 'dappsL2Support',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-27T22:06:06.744Z',
     },
     '9049:3488': {
       variant: 'heroSquare',
@@ -10099,6 +11479,7 @@ export const manifestData: Record<
       name: 'dappsL2Support',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:13:46.762Z',
     },
     '9053:3496': {
       variant: 'spotRectangle',
@@ -10106,6 +11487,7 @@ export const manifestData: Record<
       name: 'emptyStateClawMachinePig',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T07:13:32.103Z',
     },
     '9053:3623': {
       variant: 'spotRectangle',
@@ -10113,6 +11495,7 @@ export const manifestData: Record<
       name: 'emptyStateClawMachinePig',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T07:27:56.790Z',
     },
     '9053:3495': {
       variant: 'spotRectangle',
@@ -10120,6 +11503,7 @@ export const manifestData: Record<
       name: 'emptyStateRatFoundWallet',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T21:01:37.016Z',
     },
     '9053:3550': {
       variant: 'spotRectangle',
@@ -10127,6 +11511,7 @@ export const manifestData: Record<
       name: 'emptyStateRatFoundWallet',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:21:42.166Z',
     },
     '9063:3384': {
       variant: 'heroSquare',
@@ -10134,6 +11519,7 @@ export const manifestData: Record<
       name: 'cbOneWelcome',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:13:46.749Z',
     },
     '9063:3423': {
       variant: 'heroSquare',
@@ -10141,6 +11527,7 @@ export const manifestData: Record<
       name: 'cbOneWelcome',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-14T15:13:46.756Z',
     },
     '9217:3425': {
       variant: 'spotSquare',
@@ -10148,6 +11535,7 @@ export const manifestData: Record<
       name: 'cbOneStakeOrWrap',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-07T16:17:10.317Z',
     },
     '9217:3427': {
       variant: 'spotSquare',
@@ -10156,6 +11544,7 @@ export const manifestData: Record<
       name: 'cbOnestarToken',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-16T15:55:11.337Z',
     },
     '9217:3426': {
       variant: 'spotSquare',
@@ -10164,6 +11553,7 @@ export const manifestData: Record<
       name: 'cbOneStaking',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T18:01:51.768Z',
     },
     '9217:3424': {
       variant: 'spotSquare',
@@ -10171,6 +11561,7 @@ export const manifestData: Record<
       name: 'cbOneStakeOrWrap',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-12T20:37:42.080Z',
     },
     '9217:3422': {
       variant: 'spotSquare',
@@ -10179,6 +11570,7 @@ export const manifestData: Record<
       name: 'cbOnestarToken',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.368Z',
     },
     '9217:3423': {
       variant: 'spotSquare',
@@ -10187,6 +11579,7 @@ export const manifestData: Record<
       name: 'cbOneStaking',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:53.000Z',
     },
     '9323:3265': {
       variant: 'spotSquare',
@@ -10194,6 +11587,7 @@ export const manifestData: Record<
       name: 'addEth',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:52.908Z',
     },
     '9323:3281': {
       variant: 'spotSquare',
@@ -10201,6 +11595,7 @@ export const manifestData: Record<
       name: 'addEth',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:53:11.072Z',
     },
     '9394:3379': {
       variant: 'pictogram',
@@ -10209,6 +11604,7 @@ export const manifestData: Record<
       name: 'notificationHubSocial',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:51.959Z',
     },
     '9394:3376': {
       variant: 'pictogram',
@@ -10217,6 +11613,7 @@ export const manifestData: Record<
       name: 'notificationHubSocial',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:51.954Z',
     },
     '9394:3375': {
       variant: 'pictogram',
@@ -10224,6 +11621,7 @@ export const manifestData: Record<
       name: 'notificationHubNews',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-10T14:35:05.995Z',
     },
     '9394:3374': {
       variant: 'pictogram',
@@ -10231,6 +11629,7 @@ export const manifestData: Record<
       name: 'notificationHubNews',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:51.943Z',
     },
     '9394:3377': {
       variant: 'pictogram',
@@ -10239,6 +11638,7 @@ export const manifestData: Record<
       name: 'notificationHubAnalysis',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:51.938Z',
     },
     '9394:3373': {
       variant: 'pictogram',
@@ -10247,6 +11647,7 @@ export const manifestData: Record<
       name: 'notificationHubAnalysis',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:51.932Z',
     },
     '9394:3372': {
       variant: 'pictogram',
@@ -10255,6 +11656,7 @@ export const manifestData: Record<
       name: 'notificationHubPortfolio',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:51.927Z',
     },
     '9394:3378': {
       variant: 'pictogram',
@@ -10263,6 +11665,7 @@ export const manifestData: Record<
       name: 'notificationHubPortfolio',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:51.921Z',
     },
     '9445:3394': {
       variant: 'heroSquare',
@@ -10271,6 +11674,7 @@ export const manifestData: Record<
       name: 'faceMatchReal',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-09-13T19:28:34.505Z',
     },
     '9445:3395': {
       variant: 'heroSquare',
@@ -10279,6 +11683,7 @@ export const manifestData: Record<
       name: 'faceMatchReal',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-09-13T17:51:51.964Z',
     },
     '9691:5298': {
       variant: 'spotSquare',
@@ -10286,6 +11691,7 @@ export const manifestData: Record<
       name: 'wrapEthSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-12-14T22:56:06.684Z',
     },
     '9691:5299': {
       variant: 'spotSquare',
@@ -10293,6 +11699,7 @@ export const manifestData: Record<
       name: 'wrapEthSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-12T20:37:42.074Z',
     },
     '9739:5268': {
       variant: 'spotRectangle',
@@ -10300,6 +11707,7 @@ export const manifestData: Record<
       name: 'ethStakeOrWrapRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-08T00:57:30.512Z',
     },
     '9746:5268': {
       variant: 'spotRectangle',
@@ -10307,6 +11715,7 @@ export const manifestData: Record<
       name: 'ethStakeOrWrapRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-19T20:36:41.318Z',
     },
     '9788:5344': {
       variant: 'spotSquare',
@@ -10314,6 +11723,7 @@ export const manifestData: Record<
       name: 'earnInterestOnCryptocurrency',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-25T19:11:49.163Z',
     },
     '9788:5343': {
       variant: 'spotSquare',
@@ -10321,6 +11731,7 @@ export const manifestData: Record<
       name: 'earnInterestOnCryptocurrency',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-25T19:11:49.156Z',
     },
     '9788:5346': {
       variant: 'heroSquare',
@@ -10328,6 +11739,7 @@ export const manifestData: Record<
       name: 'earnCryptoInterest',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-10-25T19:11:49.171Z',
     },
     '9788:5345': {
       variant: 'heroSquare',
@@ -10335,6 +11747,7 @@ export const manifestData: Record<
       name: 'earnCryptoInterest',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-10-25T19:11:49.149Z',
     },
     '10031:9260': {
       variant: 'spotRectangle',
@@ -10342,6 +11755,7 @@ export const manifestData: Record<
       name: 'defiDecentralizedBorrowingLendingRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.114Z',
     },
     '10031:9264': {
       variant: 'spotRectangle',
@@ -10349,6 +11763,7 @@ export const manifestData: Record<
       name: 'defiDecentralizedBorrowingLendingRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.246Z',
     },
     '10031:9239': {
       variant: 'spotRectangle',
@@ -10356,6 +11771,7 @@ export const manifestData: Record<
       name: 'cryptoAssetsRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.290Z',
     },
     '10031:9234': {
       variant: 'spotRectangle',
@@ -10363,6 +11779,7 @@ export const manifestData: Record<
       name: 'cryptoAssetsRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.260Z',
     },
     '10031:9247': {
       variant: 'spotRectangle',
@@ -10370,6 +11787,7 @@ export const manifestData: Record<
       name: 'cryptoWalletRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.246Z',
     },
     '10031:9258': {
       variant: 'spotRectangle',
@@ -10377,6 +11795,7 @@ export const manifestData: Record<
       name: 'cryptoWalletRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.286Z',
     },
     '10031:9240': {
       variant: 'spotRectangle',
@@ -10384,6 +11803,7 @@ export const manifestData: Record<
       name: 'cryptoEconomyRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.179Z',
     },
     '10031:9261': {
       variant: 'spotRectangle',
@@ -10391,6 +11811,7 @@ export const manifestData: Record<
       name: 'cryptoEconomyRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.659Z',
     },
     '10031:9206': {
       variant: 'spotRectangle',
@@ -10398,6 +11819,7 @@ export const manifestData: Record<
       name: 'completeAQuizRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.317Z',
     },
     '10031:9172': {
       variant: 'spotRectangle',
@@ -10405,6 +11827,7 @@ export const manifestData: Record<
       name: 'completeAQuizRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.744Z',
     },
     '10031:9253': {
       variant: 'spotRectangle',
@@ -10412,6 +11835,7 @@ export const manifestData: Record<
       name: 'crossBorderPaymentsRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.230Z',
     },
     '10031:9250': {
       variant: 'spotRectangle',
@@ -10419,6 +11843,7 @@ export const manifestData: Record<
       name: 'crossBorderPaymentsRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.888Z',
     },
     '10031:9255': {
       variant: 'spotRectangle',
@@ -10426,6 +11851,7 @@ export const manifestData: Record<
       name: 'collectingNftsRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.807Z',
     },
     '10031:9244': {
       variant: 'spotRectangle',
@@ -10433,6 +11859,7 @@ export const manifestData: Record<
       name: 'collectingNftsRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.210Z',
     },
     '10031:9208': {
       variant: 'spotRectangle',
@@ -10440,6 +11867,7 @@ export const manifestData: Record<
       name: 'basedInUsaRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.928Z',
     },
     '10031:9232': {
       variant: 'spotRectangle',
@@ -10447,6 +11875,7 @@ export const manifestData: Record<
       name: 'basedInUsaRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.336Z',
     },
     '10031:9235': {
       variant: 'spotRectangle',
@@ -10454,6 +11883,7 @@ export const manifestData: Record<
       name: 'backedByUsDollarRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.213Z',
     },
     '10031:9171': {
       variant: 'spotRectangle',
@@ -10461,6 +11891,7 @@ export const manifestData: Record<
       name: 'backedByUsDollarRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.597Z',
     },
     '10031:9242': {
       variant: 'spotRectangle',
@@ -10469,6 +11900,7 @@ export const manifestData: Record<
       name: 'browserExtensionRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.506Z',
     },
     '10031:9237': {
       variant: 'spotRectangle',
@@ -10477,6 +11909,7 @@ export const manifestData: Record<
       name: 'browserExtensionRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.948Z',
     },
     '10031:9233': {
       variant: 'spotRectangle',
@@ -10484,6 +11917,7 @@ export const manifestData: Record<
       name: 'defiDecentralizedTradingExchangeRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.623Z',
     },
     '10031:9211': {
       variant: 'spotRectangle',
@@ -10491,6 +11925,7 @@ export const manifestData: Record<
       name: 'defiDecentralizedTradingExchangeRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.588Z',
     },
     '10031:9241': {
       variant: 'spotRectangle',
@@ -10498,6 +11933,7 @@ export const manifestData: Record<
       name: 'decentralizationRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.468Z',
     },
     '10031:9230': {
       variant: 'spotRectangle',
@@ -10505,6 +11941,7 @@ export const manifestData: Record<
       name: 'decentralizationRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.236Z',
     },
     '10031:9221': {
       variant: 'spotRectangle',
@@ -10512,6 +11949,7 @@ export const manifestData: Record<
       name: 'encryptedEverythingRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.460Z',
     },
     '10031:9229': {
       variant: 'spotRectangle',
@@ -10519,6 +11957,7 @@ export const manifestData: Record<
       name: 'encryptedEverythingRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.364Z',
     },
     '10031:9231': {
       variant: 'spotRectangle',
@@ -10527,6 +11966,7 @@ export const manifestData: Record<
       name: 'insuranceProtectionRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.104Z',
     },
     '10031:9228': {
       variant: 'spotRectangle',
@@ -10535,6 +11975,7 @@ export const manifestData: Record<
       name: 'insuranceProtectionRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.754Z',
     },
     '10031:9248': {
       variant: 'spotRectangle',
@@ -10542,6 +11983,7 @@ export const manifestData: Record<
       name: 'investRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.063Z',
     },
     '10031:9226': {
       variant: 'spotRectangle',
@@ -10549,6 +11991,7 @@ export const manifestData: Record<
       name: 'investRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.339Z',
     },
     '10031:9223': {
       variant: 'spotRectangle',
@@ -10556,6 +11999,7 @@ export const manifestData: Record<
       name: 'digitalCollectiblesRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.982Z',
     },
     '10031:9238': {
       variant: 'spotRectangle',
@@ -10563,6 +12007,7 @@ export const manifestData: Record<
       name: 'digitalCollectiblesRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.970Z',
     },
     '10031:9224': {
       variant: 'spotRectangle',
@@ -10570,6 +12015,7 @@ export const manifestData: Record<
       name: 'globalTransactionsRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.239Z',
     },
     '10031:9193': {
       variant: 'spotRectangle',
@@ -10577,6 +12023,7 @@ export const manifestData: Record<
       name: 'globalTransactionsRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.764Z',
     },
     '10031:9243': {
       variant: 'spotRectangle',
@@ -10584,6 +12031,7 @@ export const manifestData: Record<
       name: 'earnRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.095Z',
     },
     '10031:9256': {
       variant: 'spotRectangle',
@@ -10591,6 +12039,7 @@ export const manifestData: Record<
       name: 'earnRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.787Z',
     },
     '10031:9183': {
       variant: 'spotRectangle',
@@ -10598,6 +12047,7 @@ export const manifestData: Record<
       name: 'getStartedInMinutesRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.320Z',
     },
     '10031:9219': {
       variant: 'spotRectangle',
@@ -10605,6 +12055,7 @@ export const manifestData: Record<
       name: 'getStartedInMinutesRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.269Z',
     },
     '10031:9216': {
       variant: 'spotRectangle',
@@ -10612,6 +12063,7 @@ export const manifestData: Record<
       name: 'decentralizedWebWeb3Rectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.296Z',
     },
     '10031:9192': {
       variant: 'spotRectangle',
@@ -10619,6 +12071,7 @@ export const manifestData: Record<
       name: 'decentralizedWebWeb3Rectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.844Z',
     },
     '10031:9236': {
       variant: 'spotRectangle',
@@ -10626,6 +12079,7 @@ export const manifestData: Record<
       name: 'moneyDecentralizedRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.614Z',
     },
     '10031:9209': {
       variant: 'spotRectangle',
@@ -10633,6 +12087,7 @@ export const manifestData: Record<
       name: 'moneyDecentralizedRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.167Z',
     },
     '10031:9215': {
       variant: 'spotRectangle',
@@ -10640,6 +12095,7 @@ export const manifestData: Record<
       name: 'p2pPaymentsRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.858Z',
     },
     '10031:9185': {
       variant: 'spotRectangle',
@@ -10647,6 +12103,7 @@ export const manifestData: Record<
       name: 'p2pPaymentsRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.389Z',
     },
     '10031:9213': {
       variant: 'spotRectangle',
@@ -10654,6 +12111,7 @@ export const manifestData: Record<
       name: 'miningRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.299Z',
     },
     '10031:9218': {
       variant: 'spotRectangle',
@@ -10661,6 +12119,7 @@ export const manifestData: Record<
       name: 'miningRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.562Z',
     },
     '10031:9252': {
       variant: 'spotRectangle',
@@ -10668,6 +12127,7 @@ export const manifestData: Record<
       name: 'linkingYourWalletToYourCoinbaseAccountRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.407Z',
     },
     '10031:9210': {
       variant: 'spotRectangle',
@@ -10675,6 +12135,7 @@ export const manifestData: Record<
       name: 'linkingYourWalletToYourCoinbaseAccountRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.605Z',
     },
     '10031:9205': {
       variant: 'spotRectangle',
@@ -10682,6 +12143,7 @@ export const manifestData: Record<
       name: 'secureAndTrustedRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.034Z',
     },
     '10031:9202': {
       variant: 'spotRectangle',
@@ -10689,6 +12151,7 @@ export const manifestData: Record<
       name: 'secureAndTrustedRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.326Z',
     },
     '10031:9201': {
       variant: 'spotRectangle',
@@ -10697,6 +12160,7 @@ export const manifestData: Record<
       name: 'secureGlobalTransactionsRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.104Z',
     },
     '10031:9199': {
       variant: 'spotRectangle',
@@ -10705,6 +12169,7 @@ export const manifestData: Record<
       name: 'secureGlobalTransactionsRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.515Z',
     },
     '10031:9197': {
       variant: 'spotRectangle',
@@ -10712,6 +12177,7 @@ export const manifestData: Record<
       name: 'multicoinSupportRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.696Z',
     },
     '10031:9204': {
       variant: 'spotRectangle',
@@ -10719,6 +12185,7 @@ export const manifestData: Record<
       name: 'multicoinSupportRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.424Z',
     },
     '10031:9194': {
       variant: 'spotRectangle',
@@ -10726,6 +12193,7 @@ export const manifestData: Record<
       name: 'noFeesRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.023Z',
     },
     '10031:9217': {
       variant: 'spotRectangle',
@@ -10733,6 +12201,7 @@ export const manifestData: Record<
       name: 'noFeesRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.013Z',
     },
     '10031:9251': {
       variant: 'spotRectangle',
@@ -10740,6 +12209,7 @@ export const manifestData: Record<
       name: 'multiPlatformMobileAppBrowserExtensionRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.220Z',
     },
     '10031:9191': {
       variant: 'spotRectangle',
@@ -10747,6 +12217,7 @@ export const manifestData: Record<
       name: 'multiPlatformMobileAppBrowserExtensionRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.354Z',
     },
     '10031:9245': {
       variant: 'spotRectangle',
@@ -10754,6 +12225,7 @@ export const manifestData: Record<
       name: 'poweredByEthereumRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.372Z',
     },
     '10031:9190': {
       variant: 'spotRectangle',
@@ -10761,6 +12233,7 @@ export const manifestData: Record<
       name: 'poweredByEthereumRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.938Z',
     },
     '10031:9187': {
       variant: 'spotRectangle',
@@ -10768,6 +12241,7 @@ export const manifestData: Record<
       name: 'secureStorageRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.441Z',
     },
     '10031:9249': {
       variant: 'spotRectangle',
@@ -10775,6 +12249,7 @@ export const manifestData: Record<
       name: 'stableValueRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.387Z',
     },
     '10031:9214': {
       variant: 'spotRectangle',
@@ -10782,6 +12257,7 @@ export const manifestData: Record<
       name: 'walletSecurityRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.702Z',
     },
     '10031:9181': {
       variant: 'spotRectangle',
@@ -10789,6 +12265,7 @@ export const manifestData: Record<
       name: 'stayInControlSelfHostedWalletsStorageRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.994Z',
     },
     '10031:9259': {
       variant: 'spotRectangle',
@@ -10796,6 +12273,7 @@ export const manifestData: Record<
       name: 'selfCustodyRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.398Z',
     },
     '10031:9186': {
       variant: 'spotRectangle',
@@ -10803,6 +12281,7 @@ export const manifestData: Record<
       name: 'startTodayRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.963Z',
     },
     '10031:9222': {
       variant: 'spotRectangle',
@@ -10810,6 +12289,7 @@ export const manifestData: Record<
       name: 'trendingHotAssetsRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.952Z',
     },
     '10031:9198': {
       variant: 'spotRectangle',
@@ -10817,6 +12297,7 @@ export const manifestData: Record<
       name: 'watchVideosRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.936Z',
     },
     '10031:9227': {
       variant: 'spotRectangle',
@@ -10824,6 +12305,7 @@ export const manifestData: Record<
       name: 'stressTestedColdStorageRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.855Z',
     },
     '10031:9184': {
       variant: 'spotRectangle',
@@ -10831,6 +12313,7 @@ export const manifestData: Record<
       name: 'stakingRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.650Z',
     },
     '10031:9165': {
       variant: 'spotRectangle',
@@ -10838,6 +12321,7 @@ export const manifestData: Record<
       name: 'advancedTradingChartsIndicatorsCandlesRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.269Z',
     },
     '10031:9189': {
       variant: 'spotRectangle',
@@ -10845,6 +12329,7 @@ export const manifestData: Record<
       name: 'semiCustodialRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.632Z',
     },
     '10031:9180': {
       variant: 'spotRectangle',
@@ -10852,6 +12337,7 @@ export const manifestData: Record<
       name: 'congratulationsOnEarningCryptoRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.919Z',
     },
     '10031:9257': {
       variant: 'spotRectangle',
@@ -10859,6 +12345,7 @@ export const manifestData: Record<
       name: 'cryptoForBeginnersRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.024Z',
     },
     '10031:9179': {
       variant: 'spotRectangle',
@@ -10866,6 +12353,7 @@ export const manifestData: Record<
       name: 'cryptoPortfolioRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.191Z',
     },
     '10031:9167': {
       variant: 'spotRectangle',
@@ -10873,6 +12361,7 @@ export const manifestData: Record<
       name: 'shareOnSocialMediaRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.868Z',
     },
     '10031:9176': {
       variant: 'spotRectangle',
@@ -10880,6 +12369,7 @@ export const manifestData: Record<
       name: 'didDecentralizedIdentityRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.847Z',
     },
     '10031:9178': {
       variant: 'spotRectangle',
@@ -10887,6 +12377,7 @@ export const manifestData: Record<
       name: 'blockchainRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.865Z',
     },
     '10031:9212': {
       variant: 'spotRectangle',
@@ -10894,6 +12385,7 @@ export const manifestData: Record<
       name: 'sidechainRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.855Z',
     },
     '10031:9175': {
       variant: 'spotRectangle',
@@ -10901,6 +12393,7 @@ export const manifestData: Record<
       name: 'borrowWalletRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.044Z',
     },
     '10031:9263': {
       variant: 'spotRectangle',
@@ -10908,6 +12401,7 @@ export const manifestData: Record<
       name: 'secureStorageRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.004Z',
     },
     '10031:9225': {
       variant: 'spotRectangle',
@@ -10915,6 +12409,7 @@ export const manifestData: Record<
       name: 'walletSecurityRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.820Z',
     },
     '10031:9203': {
       variant: 'spotRectangle',
@@ -10922,6 +12417,7 @@ export const manifestData: Record<
       name: 'stayInControlSelfHostedWalletsStorageRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.345Z',
     },
     '10031:9174': {
       variant: 'spotRectangle',
@@ -10929,6 +12425,7 @@ export const manifestData: Record<
       name: 'selfCustodyRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.837Z',
     },
     '10031:9182': {
       variant: 'spotRectangle',
@@ -10936,6 +12433,7 @@ export const manifestData: Record<
       name: 'startTodayRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.518Z',
     },
     '10031:9173': {
       variant: 'spotRectangle',
@@ -10943,6 +12441,7 @@ export const manifestData: Record<
       name: 'trendingHotAssetsRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.798Z',
     },
     '10031:9196': {
       variant: 'spotRectangle',
@@ -10950,6 +12449,7 @@ export const manifestData: Record<
       name: 'watchVideosRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.337Z',
     },
     '10031:9177': {
       variant: 'spotRectangle',
@@ -10957,6 +12457,7 @@ export const manifestData: Record<
       name: 'stressTestedColdStorageRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.787Z',
     },
     '10031:9169': {
       variant: 'spotRectangle',
@@ -10964,6 +12465,7 @@ export const manifestData: Record<
       name: 'stableValueRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.776Z',
     },
     '10031:9207': {
       variant: 'spotRectangle',
@@ -10971,6 +12473,7 @@ export const manifestData: Record<
       name: 'stakingRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.687Z',
     },
     '10031:9254': {
       variant: 'spotRectangle',
@@ -10978,6 +12481,7 @@ export const manifestData: Record<
       name: 'advancedTradingChartsIndicatorsCandlesRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.817Z',
     },
     '10031:9195': {
       variant: 'spotRectangle',
@@ -10985,6 +12489,7 @@ export const manifestData: Record<
       name: 'semiCustodialRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.753Z',
     },
     '10031:9168': {
       variant: 'spotRectangle',
@@ -10992,6 +12497,7 @@ export const manifestData: Record<
       name: 'congratulationsOnEarningCryptoRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.751Z',
     },
     '10031:9166': {
       variant: 'spotRectangle',
@@ -10999,6 +12505,7 @@ export const manifestData: Record<
       name: 'cryptoForBeginnersRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.053Z',
     },
     '10031:9262': {
       variant: 'spotRectangle',
@@ -11006,6 +12513,7 @@ export const manifestData: Record<
       name: 'cryptoPortfolioRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.257Z',
     },
     '10031:9164': {
       variant: 'spotRectangle',
@@ -11013,6 +12521,7 @@ export const manifestData: Record<
       name: 'shareOnSocialMediaRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.535Z',
     },
     '10031:9188': {
       variant: 'spotRectangle',
@@ -11020,6 +12529,7 @@ export const manifestData: Record<
       name: 'didDecentralizedIdentityRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.147Z',
     },
     '10031:9200': {
       variant: 'spotRectangle',
@@ -11027,6 +12537,7 @@ export const manifestData: Record<
       name: 'blockchainRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.698Z',
     },
     '10031:9163': {
       variant: 'spotRectangle',
@@ -11034,6 +12545,7 @@ export const manifestData: Record<
       name: 'sidechainRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.906Z',
     },
     '10031:9220': {
       variant: 'spotRectangle',
@@ -11041,6 +12553,7 @@ export const manifestData: Record<
       name: 'borrowWalletRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.308Z',
     },
     '10040:7323': {
       variant: 'heroSquare',
@@ -11048,6 +12561,7 @@ export const manifestData: Record<
       name: 'retailUSDCRewardsHeroSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.680Z',
     },
     '10040:7302': {
       variant: 'heroSquare',
@@ -11055,6 +12569,7 @@ export const manifestData: Record<
       name: 'earnNuxHome',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.569Z',
     },
     '10040:7304': {
       variant: 'heroSquare',
@@ -11062,6 +12577,7 @@ export const manifestData: Record<
       name: 'bitcoinGlobe',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T22:07:11.303Z',
     },
     '10040:7305': {
       variant: 'heroSquare',
@@ -11069,6 +12585,7 @@ export const manifestData: Record<
       name: 'cbOneUSDCIncentives',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.529Z',
     },
     '10040:7321': {
       variant: 'heroSquare',
@@ -11076,6 +12593,7 @@ export const manifestData: Record<
       name: 'cbOnePercentOff',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.611Z',
     },
     '10040:7303': {
       variant: 'heroSquare',
@@ -11083,6 +12601,7 @@ export const manifestData: Record<
       name: 'cbOneTokenRewardsHeroSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.601Z',
     },
     '10040:7322': {
       variant: 'heroSquare',
@@ -11090,6 +12609,7 @@ export const manifestData: Record<
       name: 'cbOneRewardsHeroSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.549Z',
     },
     '10040:7295': {
       variant: 'heroSquare',
@@ -11097,6 +12617,7 @@ export const manifestData: Record<
       name: 'retailUSDCRewardsHeroSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.643Z',
     },
     '10040:7301': {
       variant: 'heroSquare',
@@ -11104,6 +12625,7 @@ export const manifestData: Record<
       name: 'earnNuxHome',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T21:59:42.986Z',
     },
     '10040:7299': {
       variant: 'heroSquare',
@@ -11111,6 +12633,7 @@ export const manifestData: Record<
       name: 'bitcoinGlobe',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T21:59:43.029Z',
     },
     '10040:7298': {
       variant: 'heroSquare',
@@ -11118,6 +12641,7 @@ export const manifestData: Record<
       name: 'cbOneUSDCIncentives',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T21:59:42.977Z',
     },
     '10040:7297': {
       variant: 'heroSquare',
@@ -11125,6 +12649,7 @@ export const manifestData: Record<
       name: 'cbOnePercentOff',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T21:59:43.020Z',
     },
     '10040:7300': {
       variant: 'heroSquare',
@@ -11132,6 +12657,7 @@ export const manifestData: Record<
       name: 'cbOneTokenRewardsHeroSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T21:59:43.012Z',
     },
     '10040:7296': {
       variant: 'heroSquare',
@@ -11139,6 +12665,7 @@ export const manifestData: Record<
       name: 'cbOneRewardsHeroSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T21:59:43.003Z',
     },
     '10043:7329': {
       variant: 'spotRectangle',
@@ -11146,6 +12673,7 @@ export const manifestData: Record<
       name: 'retailUSDCRewardsSpotRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T19:41:23.519Z',
     },
     '10043:7330': {
       variant: 'spotRectangle',
@@ -11153,6 +12681,7 @@ export const manifestData: Record<
       name: 'cbOneRewardsSpotRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T19:41:23.543Z',
     },
     '10043:7327': {
       variant: 'spotRectangle',
@@ -11160,6 +12689,7 @@ export const manifestData: Record<
       name: 'retailUSDCRewardsSpotRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T21:07:54.972Z',
     },
     '10043:7328': {
       variant: 'spotRectangle',
@@ -11167,6 +12697,7 @@ export const manifestData: Record<
       name: 'cbOneRewardsSpotRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T21:07:54.981Z',
     },
     '10043:7333': {
       variant: 'spotSquare',
@@ -11174,6 +12705,7 @@ export const manifestData: Record<
       name: 'cbOneTokenRewardsSpotSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.668Z',
     },
     '10043:7332': {
       variant: 'spotSquare',
@@ -11181,6 +12713,7 @@ export const manifestData: Record<
       name: 'cbOneRewardsSpotSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.658Z',
     },
     '10043:7331': {
       variant: 'spotSquare',
@@ -11188,6 +12721,7 @@ export const manifestData: Record<
       name: 'retailUSDCRewardsSpotSquare',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.648Z',
     },
     '10043:7324': {
       variant: 'spotSquare',
@@ -11195,6 +12729,7 @@ export const manifestData: Record<
       name: 'cbOneTokenRewardsSpotSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.968Z',
     },
     '10043:7325': {
       variant: 'spotSquare',
@@ -11202,6 +12737,7 @@ export const manifestData: Record<
       name: 'cbOneRewardsSpotSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:49.637Z',
     },
     '10043:7326': {
       variant: 'spotSquare',
@@ -11209,6 +12745,7 @@ export const manifestData: Record<
       name: 'retailUSDCRewardsSpotSquare',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-10T18:33:50.440Z',
     },
     '10155:5518': {
       variant: 'spotRectangle',
@@ -11216,6 +12753,7 @@ export const manifestData: Record<
       name: 'taxesDetailsRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.936Z',
     },
     '10155:5516': {
       variant: 'spotRectangle',
@@ -11223,6 +12761,7 @@ export const manifestData: Record<
       name: 'taxesDetailsRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.900Z',
     },
     '10155:5504': {
       variant: 'spotRectangle',
@@ -11231,6 +12770,7 @@ export const manifestData: Record<
       name: 'optInPushNotificationsEmailRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.871Z',
     },
     '10155:5514': {
       variant: 'spotRectangle',
@@ -11239,6 +12779,7 @@ export const manifestData: Record<
       name: 'optInPushNotificationsEmailRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.918Z',
     },
     '10155:5515': {
       variant: 'spotRectangle',
@@ -11246,6 +12787,7 @@ export const manifestData: Record<
       name: 'gasFeesNetworkFeesRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.923Z',
     },
     '10155:5510': {
       variant: 'spotRectangle',
@@ -11253,6 +12795,7 @@ export const manifestData: Record<
       name: 'gasFeesNetworkFeesRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.895Z',
     },
     '10155:5507': {
       variant: 'spotRectangle',
@@ -11260,6 +12803,7 @@ export const manifestData: Record<
       name: 'hardwareWalletsRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.133Z',
     },
     '10155:5509': {
       variant: 'spotRectangle',
@@ -11267,6 +12811,7 @@ export const manifestData: Record<
       name: 'hardwareWalletsRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.860Z',
     },
     '10155:5512': {
       variant: 'spotRectangle',
@@ -11274,6 +12819,7 @@ export const manifestData: Record<
       name: 'layeredNetworksRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.877Z',
     },
     '10155:5505': {
       variant: 'spotRectangle',
@@ -11281,6 +12827,7 @@ export const manifestData: Record<
       name: 'layeredNetworksRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.883Z',
     },
     '10155:5508': {
       variant: 'spotRectangle',
@@ -11288,6 +12835,7 @@ export const manifestData: Record<
       name: 'portfolioPerformanceRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.253Z',
     },
     '10155:5503': {
       variant: 'spotRectangle',
@@ -11295,6 +12843,7 @@ export const manifestData: Record<
       name: 'portfolioPerformanceRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.866Z',
     },
     '10155:5513': {
       variant: 'spotRectangle',
@@ -11302,6 +12851,7 @@ export const manifestData: Record<
       name: 'multipleAccountsWalletsForOneUserRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.906Z',
     },
     '10155:5502': {
       variant: 'spotRectangle',
@@ -11309,6 +12859,7 @@ export const manifestData: Record<
       name: 'multipleAccountsWalletsForOneUserRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.165Z',
     },
     '10155:5501': {
       variant: 'spotRectangle',
@@ -11316,6 +12867,7 @@ export const manifestData: Record<
       name: 'quickAndSimpleRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.854Z',
     },
     '10155:5511': {
       variant: 'spotRectangle',
@@ -11323,6 +12875,7 @@ export const manifestData: Record<
       name: 'quickAndSimpleRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.889Z',
     },
     '10155:5506': {
       variant: 'spotRectangle',
@@ -11330,6 +12883,7 @@ export const manifestData: Record<
       name: 'earnToLearnRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.176Z',
     },
     '10155:5499': {
       variant: 'spotRectangle',
@@ -11337,6 +12891,7 @@ export const manifestData: Record<
       name: 'earnToLearnRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.159Z',
     },
     '10155:5500': {
       variant: 'spotRectangle',
@@ -11344,6 +12899,7 @@ export const manifestData: Record<
       name: 'gainsAndLossesRectangle',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.912Z',
     },
     '10155:5517': {
       variant: 'spotRectangle',
@@ -11351,6 +12907,7 @@ export const manifestData: Record<
       name: 'gainsAndLossesRectangle',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.930Z',
     },
     '10155:6938': {
       variant: 'spotSquare',
@@ -11358,6 +12915,7 @@ export const manifestData: Record<
       name: 'backedByUsDollarSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.816Z',
     },
     '10155:6949': {
       variant: 'spotSquare',
@@ -11365,6 +12923,7 @@ export const manifestData: Record<
       name: 'cryptoAssetsSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.810Z',
     },
     '10155:6945': {
       variant: 'spotSquare',
@@ -11372,6 +12931,7 @@ export const manifestData: Record<
       name: 'cryptoEconomySpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.182Z',
     },
     '10155:6924': {
       variant: 'spotSquare',
@@ -11379,6 +12939,7 @@ export const manifestData: Record<
       name: 'defiDecentralizedBorrowingLendingSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.716Z',
     },
     '10155:6948': {
       variant: 'spotSquare',
@@ -11386,6 +12947,7 @@ export const manifestData: Record<
       name: 'crossBorderPaymentsSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.798Z',
     },
     '10155:6930': {
       variant: 'spotSquare',
@@ -11393,6 +12955,7 @@ export const manifestData: Record<
       name: 'completeAQuizSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.039Z',
     },
     '10155:6937': {
       variant: 'spotSquare',
@@ -11400,6 +12963,7 @@ export const manifestData: Record<
       name: 'collectingNftsSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.792Z',
     },
     '10155:6933': {
       variant: 'spotSquare',
@@ -11408,6 +12972,7 @@ export const manifestData: Record<
       name: 'browserExtensionSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.983Z',
     },
     '10155:6944': {
       variant: 'spotSquare',
@@ -11415,6 +12980,7 @@ export const manifestData: Record<
       name: 'basedInUsaSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.786Z',
     },
     '10155:6928': {
       variant: 'spotSquare',
@@ -11422,6 +12988,7 @@ export const manifestData: Record<
       name: 'cryptoWalletSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.953Z',
     },
     '10155:6941': {
       variant: 'spotSquare',
@@ -11429,6 +12996,7 @@ export const manifestData: Record<
       name: 'decentralizedWebWeb3Spot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.781Z',
     },
     '10155:6932': {
       variant: 'spotSquare',
@@ -11437,6 +13005,7 @@ export const manifestData: Record<
       name: 'insuranceProtectionSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.247Z',
     },
     '10155:6921': {
       variant: 'spotSquare',
@@ -11444,6 +13013,7 @@ export const manifestData: Record<
       name: 'decentralizationSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.775Z',
     },
     '10155:6947': {
       variant: 'spotSquare',
@@ -11451,6 +13021,7 @@ export const manifestData: Record<
       name: 'digitalCollectiblesSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.769Z',
     },
     '10155:6935': {
       variant: 'spotSquare',
@@ -11458,6 +13029,7 @@ export const manifestData: Record<
       name: 'encryptedEverythingSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.348Z',
     },
     '10155:6931': {
       variant: 'spotSquare',
@@ -11465,6 +13037,7 @@ export const manifestData: Record<
       name: 'earnSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.083Z',
     },
     '10155:6929': {
       variant: 'spotSquare',
@@ -11472,6 +13045,7 @@ export const manifestData: Record<
       name: 'globalTransactionsSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.433Z',
     },
     '10155:6923': {
       variant: 'spotSquare',
@@ -11479,6 +13053,7 @@ export const manifestData: Record<
       name: 'getStartedInMinutesSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.279Z',
     },
     '10155:6995': {
       variant: 'spotSquare',
@@ -11486,6 +13061,7 @@ export const manifestData: Record<
       name: 'secureAndTrustedSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.487Z',
     },
     '10155:6993': {
       variant: 'spotSquare',
@@ -11493,6 +13069,7 @@ export const manifestData: Record<
       name: 'multicoinSupportSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.115Z',
     },
     '10155:6980': {
       variant: 'spotSquare',
@@ -11500,6 +13077,7 @@ export const manifestData: Record<
       name: 'miningSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.641Z',
     },
     '10155:6994': {
       variant: 'spotSquare',
@@ -11507,6 +13085,7 @@ export const manifestData: Record<
       name: 'linkingYourWalletToYourCoinbaseAccountSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.737Z',
     },
     '10155:6990': {
       variant: 'spotSquare',
@@ -11514,6 +13093,7 @@ export const manifestData: Record<
       name: 'moneyDecentralizedSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.729Z',
     },
     '10155:6989': {
       variant: 'spotSquare',
@@ -11521,6 +13101,7 @@ export const manifestData: Record<
       name: 'p2pPaymentsSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.726Z',
     },
     '10155:6987': {
       variant: 'spotSquare',
@@ -11528,6 +13109,7 @@ export const manifestData: Record<
       name: 'noFeesSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.027Z',
     },
     '10155:6992': {
       variant: 'spotSquare',
@@ -11535,6 +13117,7 @@ export const manifestData: Record<
       name: 'poweredByEthereumSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.288Z',
     },
     '10155:6983': {
       variant: 'spotSquare',
@@ -11543,6 +13126,7 @@ export const manifestData: Record<
       name: 'secureGlobalTransactionsSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.021Z',
     },
     '10155:6981': {
       variant: 'spotSquare',
@@ -11550,6 +13134,7 @@ export const manifestData: Record<
       name: 'multiPlatformMobileAppBrowserExtensionSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.842Z',
     },
     '10155:6978': {
       variant: 'spotSquare',
@@ -11557,6 +13142,7 @@ export const manifestData: Record<
       name: 'stayInControlSelfHostedWalletsStorageSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.415Z',
     },
     '10155:6976': {
       variant: 'spotSquare',
@@ -11564,6 +13150,7 @@ export const manifestData: Record<
       name: 'selfCustodySpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.775Z',
     },
     '10155:6964': {
       variant: 'spotSquare',
@@ -11571,6 +13158,7 @@ export const manifestData: Record<
       name: 'stakingSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.714Z',
     },
     '10155:7031': {
       variant: 'spotSquare',
@@ -11578,6 +13166,7 @@ export const manifestData: Record<
       name: 'shareOnSocialMediaSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.708Z',
     },
     '10155:7035': {
       variant: 'spotSquare',
@@ -11585,6 +13174,7 @@ export const manifestData: Record<
       name: 'cryptoForBeginnersSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.702Z',
     },
     '10155:7034': {
       variant: 'spotSquare',
@@ -11592,6 +13182,7 @@ export const manifestData: Record<
       name: 'blockchainSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.696Z',
     },
     '10155:7017': {
       variant: 'spotSquare',
@@ -11599,6 +13190,7 @@ export const manifestData: Record<
       name: 'sidechainSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.690Z',
     },
     '10155:7023': {
       variant: 'spotSquare',
@@ -11606,6 +13198,7 @@ export const manifestData: Record<
       name: 'advancedTradingChartsIndicatorsCandlesSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.683Z',
     },
     '10155:7018': {
       variant: 'spotSquare',
@@ -11613,6 +13206,7 @@ export const manifestData: Record<
       name: 'borrowWalletSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.677Z',
     },
     '10155:6972': {
       variant: 'spotSquare',
@@ -11620,6 +13214,7 @@ export const manifestData: Record<
       name: 'walletSecuritySpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.823Z',
     },
     '10155:6971': {
       variant: 'spotSquare',
@@ -11627,6 +13222,7 @@ export const manifestData: Record<
       name: 'startTodaySpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.092Z',
     },
     '10155:6988': {
       variant: 'spotSquare',
@@ -11634,6 +13230,7 @@ export const manifestData: Record<
       name: 'trendingHotAssetsSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.051Z',
     },
     '10155:6979': {
       variant: 'spotSquare',
@@ -11641,6 +13238,7 @@ export const manifestData: Record<
       name: 'watchVideosSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.068Z',
     },
     '10155:6982': {
       variant: 'spotSquare',
@@ -11648,6 +13246,7 @@ export const manifestData: Record<
       name: 'stressTestedColdStorageSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.170Z',
     },
     '10155:6966': {
       variant: 'spotSquare',
@@ -11655,6 +13254,7 @@ export const manifestData: Record<
       name: 'secureStorageSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.279Z',
     },
     '10155:7028': {
       variant: 'spotSquare',
@@ -11662,6 +13262,7 @@ export const manifestData: Record<
       name: 'semiCustodialSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.671Z',
     },
     '10155:7025': {
       variant: 'spotSquare',
@@ -11669,6 +13270,7 @@ export const manifestData: Record<
       name: 'cryptoPortfolioSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.665Z',
     },
     '10155:7027': {
       variant: 'spotSquare',
@@ -11676,6 +13278,7 @@ export const manifestData: Record<
       name: 'didDecentralizedIdentitySpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.658Z',
     },
     '10155:7029': {
       variant: 'spotSquare',
@@ -11683,6 +13286,7 @@ export const manifestData: Record<
       name: 'congratulationsOnEarningCryptoSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.652Z',
     },
     '10155:7021': {
       variant: 'spotSquare',
@@ -11690,6 +13294,7 @@ export const manifestData: Record<
       name: 'portfolioPerformanceSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.829Z',
     },
     '10155:7015': {
       variant: 'spotSquare',
@@ -11698,6 +13303,7 @@ export const manifestData: Record<
       name: 'optInPushNotificationsEmailSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.646Z',
     },
     '10155:7032': {
       variant: 'spotSquare',
@@ -11705,6 +13311,7 @@ export const manifestData: Record<
       name: 'hardwareWalletsSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.135Z',
     },
     '10155:7030': {
       variant: 'spotSquare',
@@ -11712,6 +13319,7 @@ export const manifestData: Record<
       name: 'layeredNetworksSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.523Z',
     },
     '10155:7012': {
       variant: 'spotSquare',
@@ -11719,6 +13327,7 @@ export const manifestData: Record<
       name: 'multipleAccountsWalletsForOneUserSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.229Z',
     },
     '10155:7011': {
       variant: 'spotSquare',
@@ -11726,6 +13335,7 @@ export const manifestData: Record<
       name: 'earnToLearnSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.249Z',
     },
     '10155:7013': {
       variant: 'spotSquare',
@@ -11733,6 +13343,7 @@ export const manifestData: Record<
       name: 'quickAndSimpleSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.104Z',
     },
     '10155:7010': {
       variant: 'spotSquare',
@@ -11740,6 +13351,7 @@ export const manifestData: Record<
       name: 'gasFeesNetworkFeesSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.477Z',
     },
     '10155:7009': {
       variant: 'spotSquare',
@@ -11747,6 +13359,7 @@ export const manifestData: Record<
       name: 'gainsAndLossesSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.627Z',
     },
     '10155:7024': {
       variant: 'spotSquare',
@@ -11754,6 +13367,7 @@ export const manifestData: Record<
       name: 'taxesDetailsSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.621Z',
     },
     '10155:6927': {
       variant: 'spotSquare',
@@ -11761,6 +13375,7 @@ export const manifestData: Record<
       name: 'defiDecentralizedTradingExchangeSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.062Z',
     },
     '10155:6965': {
       variant: 'spotSquare',
@@ -11768,6 +13383,7 @@ export const manifestData: Record<
       name: 'stableValueSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.614Z',
     },
     '10155:6934': {
       variant: 'spotSquare',
@@ -11775,6 +13391,7 @@ export const manifestData: Record<
       name: 'investSpot',
       spectrum: 'dark',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.608Z',
     },
     '10155:6925': {
       variant: 'spotSquare',
@@ -11782,6 +13399,7 @@ export const manifestData: Record<
       name: 'backedByUsDollarSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.602Z',
     },
     '10155:6922': {
       variant: 'spotSquare',
@@ -11789,6 +13407,7 @@ export const manifestData: Record<
       name: 'cryptoAssetsSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.595Z',
     },
     '10155:6942': {
       variant: 'spotSquare',
@@ -11796,6 +13415,7 @@ export const manifestData: Record<
       name: 'cryptoEconomySpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.589Z',
     },
     '10155:6936': {
       variant: 'spotSquare',
@@ -11803,6 +13423,7 @@ export const manifestData: Record<
       name: 'crossBorderPaymentsSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.582Z',
     },
     '10155:6920': {
       variant: 'spotSquare',
@@ -11810,6 +13431,7 @@ export const manifestData: Record<
       name: 'completeAQuizSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.555Z',
     },
     '10155:6919': {
       variant: 'spotSquare',
@@ -11817,6 +13439,7 @@ export const manifestData: Record<
       name: 'collectingNftsSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.549Z',
     },
     '10155:6917': {
       variant: 'spotSquare',
@@ -11825,6 +13448,7 @@ export const manifestData: Record<
       name: 'browserExtensionSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.543Z',
     },
     '10155:6926': {
       variant: 'spotSquare',
@@ -11832,6 +13456,7 @@ export const manifestData: Record<
       name: 'basedInUsaSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.045Z',
     },
     '10155:6915': {
       variant: 'spotSquare',
@@ -11839,6 +13464,7 @@ export const manifestData: Record<
       name: 'cryptoWalletSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.127Z',
     },
     '10155:6914': {
       variant: 'spotSquare',
@@ -11846,6 +13472,7 @@ export const manifestData: Record<
       name: 'decentralizedWebWeb3Spot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.537Z',
     },
     '10155:6940': {
       variant: 'spotSquare',
@@ -11854,6 +13481,7 @@ export const manifestData: Record<
       name: 'insuranceProtectionSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.529Z',
     },
     '10155:6913': {
       variant: 'spotSquare',
@@ -11861,6 +13489,7 @@ export const manifestData: Record<
       name: 'decentralizationSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.523Z',
     },
     '10155:6916': {
       variant: 'spotSquare',
@@ -11868,6 +13497,7 @@ export const manifestData: Record<
       name: 'investSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.517Z',
     },
     '10155:6912': {
       variant: 'spotSquare',
@@ -11875,6 +13505,7 @@ export const manifestData: Record<
       name: 'digitalCollectiblesSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.309Z',
     },
     '10155:6939': {
       variant: 'spotSquare',
@@ -11882,6 +13513,7 @@ export const manifestData: Record<
       name: 'encryptedEverythingSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.878Z',
     },
     '10155:6946': {
       variant: 'spotSquare',
@@ -11889,6 +13521,7 @@ export const manifestData: Record<
       name: 'earnSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.299Z',
     },
     '10155:6911': {
       variant: 'spotSquare',
@@ -11896,6 +13529,7 @@ export const manifestData: Record<
       name: 'globalTransactionsSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.492Z',
     },
     '10155:6918': {
       variant: 'spotSquare',
@@ -11903,6 +13537,7 @@ export const manifestData: Record<
       name: 'getStartedInMinutesSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.329Z',
     },
     '10155:6910': {
       variant: 'spotSquare',
@@ -11910,6 +13545,7 @@ export const manifestData: Record<
       name: 'defiDecentralizedTradingExchangeSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.224Z',
     },
     '10155:6974': {
       variant: 'spotSquare',
@@ -11917,6 +13553,7 @@ export const manifestData: Record<
       name: 'secureAndTrustedSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.579Z',
     },
     '10155:6961': {
       variant: 'spotSquare',
@@ -11924,6 +13561,7 @@ export const manifestData: Record<
       name: 'multicoinSupportSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.211Z',
     },
     '10155:6962': {
       variant: 'spotSquare',
@@ -11931,6 +13569,7 @@ export const manifestData: Record<
       name: 'miningSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.552Z',
     },
     '10155:6970': {
       variant: 'spotSquare',
@@ -11938,6 +13577,7 @@ export const manifestData: Record<
       name: 'linkingYourWalletToYourCoinbaseAccountSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.014Z',
     },
     '10155:6991': {
       variant: 'spotSquare',
@@ -11945,6 +13585,7 @@ export const manifestData: Record<
       name: 'moneyDecentralizedSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.469Z',
     },
     '10155:6960': {
       variant: 'spotSquare',
@@ -11952,6 +13593,7 @@ export const manifestData: Record<
       name: 'p2pPaymentsSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.735Z',
     },
     '10155:6977': {
       variant: 'spotSquare',
@@ -11959,6 +13601,7 @@ export const manifestData: Record<
       name: 'noFeesSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.977Z',
     },
     '10155:6959': {
       variant: 'spotSquare',
@@ -11966,6 +13609,7 @@ export const manifestData: Record<
       name: 'poweredByEthereumSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.456Z',
     },
     '10155:6963': {
       variant: 'spotSquare',
@@ -11974,6 +13618,7 @@ export const manifestData: Record<
       name: 'secureGlobalTransactionsSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.450Z',
     },
     '10155:6958': {
       variant: 'spotSquare',
@@ -11981,6 +13626,7 @@ export const manifestData: Record<
       name: 'multiPlatformMobileAppBrowserExtensionSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.443Z',
     },
     '10155:6957': {
       variant: 'spotSquare',
@@ -11988,6 +13634,7 @@ export const manifestData: Record<
       name: 'stableValueSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.972Z',
     },
     '10155:6984': {
       variant: 'spotSquare',
@@ -11995,6 +13642,7 @@ export const manifestData: Record<
       name: 'secureStorageSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.201Z',
     },
     '10155:6956': {
       variant: 'spotSquare',
@@ -12002,6 +13650,7 @@ export const manifestData: Record<
       name: 'walletSecuritySpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.960Z',
     },
     '10155:6955': {
       variant: 'spotSquare',
@@ -12009,6 +13658,7 @@ export const manifestData: Record<
       name: 'startTodaySpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.124Z',
     },
     '10155:6973': {
       variant: 'spotSquare',
@@ -12016,6 +13666,7 @@ export const manifestData: Record<
       name: 'stayInControlSelfHostedWalletsStorageSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.826Z',
     },
     '10155:6954': {
       variant: 'spotSquare',
@@ -12023,6 +13674,7 @@ export const manifestData: Record<
       name: 'trendingHotAssetsSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.033Z',
     },
     '10155:6975': {
       variant: 'spotSquare',
@@ -12030,6 +13682,7 @@ export const manifestData: Record<
       name: 'watchVideosSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.241Z',
     },
     '10155:6969': {
       variant: 'spotSquare',
@@ -12037,6 +13690,7 @@ export const manifestData: Record<
       name: 'stressTestedColdStorageSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.205Z',
     },
     '10155:6953': {
       variant: 'spotSquare',
@@ -12044,6 +13698,7 @@ export const manifestData: Record<
       name: 'selfCustodySpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.797Z',
     },
     '10155:6952': {
       variant: 'spotSquare',
@@ -12051,6 +13706,7 @@ export const manifestData: Record<
       name: 'stakingSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.941Z',
     },
     '10155:7008': {
       variant: 'spotSquare',
@@ -12058,6 +13714,7 @@ export const manifestData: Record<
       name: 'shareOnSocialMediaSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.959Z',
     },
     '10155:7007': {
       variant: 'spotSquare',
@@ -12065,6 +13722,7 @@ export const manifestData: Record<
       name: 'semiCustodialSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.139Z',
     },
     '10155:7006': {
       variant: 'spotSquare',
@@ -12072,6 +13730,7 @@ export const manifestData: Record<
       name: 'cryptoForBeginnersSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.157Z',
     },
     '10155:7005': {
       variant: 'spotSquare',
@@ -12079,6 +13738,7 @@ export const manifestData: Record<
       name: 'cryptoPortfolioSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.217Z',
     },
     '10155:7020': {
       variant: 'spotSquare',
@@ -12086,6 +13746,7 @@ export const manifestData: Record<
       name: 'didDecentralizedIdentitySpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.432Z',
     },
     '10155:7004': {
       variant: 'spotSquare',
@@ -12093,6 +13754,7 @@ export const manifestData: Record<
       name: 'blockchainSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.146Z',
     },
     '10155:7003': {
       variant: 'spotSquare',
@@ -12100,6 +13762,7 @@ export const manifestData: Record<
       name: 'sidechainSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.669Z',
     },
     '10155:7019': {
       variant: 'spotSquare',
@@ -12107,6 +13770,7 @@ export const manifestData: Record<
       name: 'advancedTradingChartsIndicatorsCandlesSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.571Z',
     },
     '10155:7033': {
       variant: 'spotSquare',
@@ -12114,6 +13778,7 @@ export const manifestData: Record<
       name: 'congratulationsOnEarningCryptoSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.426Z',
     },
     '10155:7001': {
       variant: 'spotSquare',
@@ -12121,6 +13786,7 @@ export const manifestData: Record<
       name: 'borrowWalletSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.014Z',
     },
     '10155:7022': {
       variant: 'spotSquare',
@@ -12128,6 +13794,7 @@ export const manifestData: Record<
       name: 'portfolioPerformanceSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.415Z',
     },
     '10155:7000': {
       variant: 'spotSquare',
@@ -12136,6 +13803,7 @@ export const manifestData: Record<
       name: 'optInPushNotificationsEmailSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:41.264Z',
     },
     '10155:6999': {
       variant: 'spotSquare',
@@ -12143,6 +13811,7 @@ export const manifestData: Record<
       name: 'hardwareWalletsSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.543Z',
     },
     '10155:6998': {
       variant: 'spotSquare',
@@ -12150,6 +13819,7 @@ export const manifestData: Record<
       name: 'layeredNetworksSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.450Z',
     },
     '10155:7014': {
       variant: 'spotSquare',
@@ -12157,6 +13827,7 @@ export const manifestData: Record<
       name: 'multipleAccountsWalletsForOneUserSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.836Z',
     },
     '10155:6997': {
       variant: 'spotSquare',
@@ -12164,6 +13835,7 @@ export const manifestData: Record<
       name: 'earnToLearnSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:25.072Z',
     },
     '10155:7026': {
       variant: 'spotSquare',
@@ -12171,6 +13843,7 @@ export const manifestData: Record<
       name: 'quickAndSimpleSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-18T21:29:40.396Z',
     },
     '10155:6996': {
       variant: 'spotSquare',
@@ -12178,6 +13851,7 @@ export const manifestData: Record<
       name: 'gasFeesNetworkFeesSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.707Z',
     },
     '10155:7016': {
       variant: 'spotSquare',
@@ -12185,6 +13859,7 @@ export const manifestData: Record<
       name: 'gainsAndLossesSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.381Z',
     },
     '10155:7002': {
       variant: 'spotSquare',
@@ -12192,6 +13867,7 @@ export const manifestData: Record<
       name: 'taxesDetailsSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-22T15:56:24.678Z',
     },
     '10229:3354': {
       variant: 'spotSquare',
@@ -12199,6 +13875,7 @@ export const manifestData: Record<
       name: 'defiDecentralizedBorrowingLendingSpot',
       spectrum: 'light',
       versionNum: 0,
+      lastUpdated: '2022-11-23T17:56:24.283Z',
     },
   },
 };

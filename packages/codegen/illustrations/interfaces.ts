@@ -15,6 +15,7 @@ export type IllustrationSummary = {
   name: string;
   spectrum: string;
   versionNum: number;
+  lastUpdated: string;
 };
 
 export type IllustrationProps = {
