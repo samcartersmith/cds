@@ -9,7 +9,7 @@ import { TableSection } from './TableSection';
 export type TableHeaderProps = TableSectionProps & {
   /**
    * Use to make a header stick to the top of the table when scrolled
-   * This will require setting a height or maxHeight on the Table or it's parent
+   * This will require setting a height or maxHeight on the Table or its parent
    * @default false
    */
   sticky?: boolean;
