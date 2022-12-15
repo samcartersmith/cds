@@ -33,6 +33,7 @@ export const isMetadataEqual = (
   metadata2: IllustrationSummary,
 ): boolean => {
   return (
+    metadata1.id === metadata2.id &&
     metadata1.name === metadata2.name &&
     metadata1.spectrum === metadata2.spectrum &&
     metadata1.variant === metadata2.variant &&

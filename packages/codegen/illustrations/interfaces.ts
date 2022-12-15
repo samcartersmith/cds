@@ -10,6 +10,7 @@ import { ComponentMetadata } from '../figma/api';
  * - The image on Figma is different from the one stored locally here
  */
 export type IllustrationSummary = {
+  id: string;
   variant: string;
   description: string;
   name: string;

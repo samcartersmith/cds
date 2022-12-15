@@ -564,6 +564,7 @@ const updateManifest = async (
     const imgName = camelCase(props.name);
 
     const nodeIdData: IllustrationSummary = {
+      id: nodeId,
       variant: props.variant,
       description: metadata.description,
       name: imgName,
@@ -639,7 +640,7 @@ const createManifestFile = async (destPath: string) => {
     dest: destPath,
     types: {
       manifestData:
-        'Record<string, Record<string, {variant: string;description: string;name: string;spectrum: string;versionNum: number;lastUpdated: string;}>>',
+        'Record<string, Record<string, {id: string;variant: string;description: string;name: string;spectrum: string;versionNum: number;lastUpdated: string;}>>',
     },
   });
 };
