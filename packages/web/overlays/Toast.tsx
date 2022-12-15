@@ -119,6 +119,7 @@ export const Toast: React.FC<ToastProps> = memo(
                 // persist toast when hovering
                 onMouseEnter={pauseTimer}
                 onMouseLeave={resumeTimer}
+                role="alert"
                 testID={testID}
                 {...rest}
               >
@@ -135,7 +136,7 @@ export const Toast: React.FC<ToastProps> = memo(
                   overflow="hidden"
                 >
                   {/* avoid pushing contents off screen */}
-                  <Box flexShrink={1} spacingEnd={2} spacingVertical={1} role="alert">
+                  <Box flexShrink={1} spacingEnd={2} spacingVertical={1}>
                     <TextHeadline as="p" tabIndex={0}>
                       {text}
                     </TextHeadline>

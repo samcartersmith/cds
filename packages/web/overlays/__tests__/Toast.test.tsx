@@ -3,6 +3,7 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Toast } from '../Toast';
 
+const TEXT = 'Toast copy';
 const MOCK_A11Y_LABEL = 'We can jam';
 const MOCK_CLOSE_LABEL = 'We can slam';
 const MOCK_A11Y_PROPS = { accessibilityLabel: MOCK_CLOSE_LABEL };
@@ -18,26 +19,22 @@ describe('Toast', () => {
   });
 
   it('renders text and close button', async () => {
-    const text = 'Toast copy';
-    render(<Toast text={text} />);
+    render(<Toast text={TEXT} />);
 
-    expect(await screen.findByText(text)).toBeVisible();
+    expect(await screen.findByText(TEXT)).toBeVisible();
     expect(await screen.findByTestId('cds-toast-close-button')).toBeVisible();
     expect(await screen.findByTestId('cds-toast-close-button')).toHaveAccessibleName('close');
   });
 
   it('renders action', () => {
-    const text = 'Toast copy';
-
-    render(<Toast text={text} action={mockAction} />);
+    render(<Toast text={TEXT} action={mockAction} />);
 
     fireEvent.click(screen.getByTestId(mockAction.testID));
     expect(mockAction.onPress).toHaveBeenCalledTimes(1);
   });
 
   it('has correct styles at the end of animation', async () => {
-    const text = 'Toast copy';
-    render(<Toast text={text} action={mockAction} testID="mock-toast" />);
+    render(<Toast text={TEXT} action={mockAction} testID="mock-toast" />);
 
     await waitFor(() =>
       expect(screen.getByTestId('mock-toast-motion')).toHaveStyle({
@@ -47,11 +44,16 @@ describe('Toast', () => {
     );
   });
 
+  it('has the correct a11y role', async () => {
+    render(<Toast text={TEXT} testID="mock-toast" />);
+
+    expect(await screen.findByTestId('mock-toast')).toHaveAttribute('role', 'alert');
+  });
+
   it('can provide a11y props', async () => {
-    const text = 'Toast copy';
     render(
       <Toast
-        text={text}
+        text={TEXT}
         action={mockAction}
         testID="mock-toast"
         accessibilityLabel={MOCK_A11Y_LABEL}
