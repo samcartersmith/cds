@@ -12,7 +12,6 @@ export type TableRowRef = MutableRefObject<HTMLTableRowElement | null>;
 export type TableRowProps = {
   /**
    * Children are required, and should always include TableCell | TableCell[].
-   * @default undefined
    */
   children: NonNullable<ReactNode>;
   /**
@@ -49,15 +48,15 @@ export type TableRowProps = {
    * The spacing to use on the parent wrapper of Cell.
    * Will only take effect when fullWidth is set to true
    */
-  outerSpacing?: TableCellProps['innerSpacing'];
+  outerSpacing?: TableCellProps['outerSpacing'];
   /**
    * The spacing to use on the inner content of Cell.
    * Will only take effect when fullWidth is set to true
    */
   innerSpacing?: TableCellProps['innerSpacing'];
   /**
-   * Specify props by device breakpoint
-   *  Can only be used when TableRow is fullWidth
+   * Specify props by device breakpoint.
+   * Can only be used when TableRow is fullWidth
    */
   responsiveConfig?: ResponsiveCellSpacingProps;
 } & SharedProps &
