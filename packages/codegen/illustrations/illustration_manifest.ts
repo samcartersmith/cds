@@ -26,7 +26,7 @@ export const manifestData: Record<
         'yield, center, usdc, earn, interest, growth, money, stake, reward, more, proof, assets',
       name: 'defiEarnAnnouncement',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:11.092Z',
     },
     '4201:5036': {
@@ -36,7 +36,7 @@ export const manifestData: Record<
         'document, form, file, lock, key, protection, privacy, investment, contract, no access, 🔒, 🔐, 🔑, 🗝, 📄, 📃, 📜, 📑',
       name: 'protectedNotes',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:22.197Z',
     },
     '4201:5029': {
@@ -46,7 +46,7 @@ export const manifestData: Record<
         'document, form, file, lock, key, protection, privacy, investment, contract, no access, 🔒, 🔐, 🔑, 🗝, 📄, 📃, 📜, 📑',
       name: 'protectedNotes',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.624Z',
     },
     '4201:5057': {
@@ -56,7 +56,7 @@ export const manifestData: Record<
         'move, give, transmit, sparkle, send, receive, coin, crypto, money, 🪙, 💸, 💵, 💶, 💷, 💴, 💰, ✨, ❇️',
       name: 'transferCoins',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.529Z',
     },
     '4201:4943': {
@@ -65,7 +65,7 @@ export const manifestData: Record<
       description: 'tag, coinbaseone, one, discounted, amount',
       name: 'coinbaseOneDiscountedAmount',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:32.970Z',
     },
     '4201:4936': {
@@ -75,7 +75,7 @@ export const manifestData: Record<
         'piggy, bank, pig, arrow, coin, safe, money, funds, saving, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷, 🐖, 💲',
       name: 'coinbaseOneSavingFunds',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:35.333Z',
     },
     '4201:4883': {
@@ -84,7 +84,7 @@ export const manifestData: Record<
       description: 'wallet, coinbaseone, one, insufficient, red',
       name: 'coinbaseOneInsufficientWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:35.197Z',
     },
     '4201:4933': {
@@ -94,7 +94,7 @@ export const manifestData: Record<
         'add, credit, card, plastic, money, plus, payment, method, confirm, details, account, warning state',
       name: 'coinbaseOneCardWarning',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:32.700Z',
     },
     '4201:4928': {
@@ -103,7 +103,7 @@ export const manifestData: Record<
       description: 'phone, lighting, fast, speed, 📱, 🔋,⚡',
       name: 'coinbaseOnePhoneLightning',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-19T15:15:15.557Z',
     },
     '4201:4929': {
@@ -112,7 +112,7 @@ export const manifestData: Record<
       description: 'coinbaseone, one, document, warning, caution, warning state',
       name: 'coinbaseOneDocWarning',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:36.203Z',
     },
     '4201:4924': {
@@ -121,7 +121,7 @@ export const manifestData: Record<
       description: 'coinbaseone, one, shield, protect, protected',
       name: 'coinbaseOneProtectedCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:32.777Z',
     },
     '4201:4902': {
@@ -131,7 +131,7 @@ export const manifestData: Record<
         'taxes, file, crypto, percentage, save, pay, government, irs, tax, center, forms, check, mark, checkmark, ✅',
       name: 'fileYourCryptoTaxesCheck',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:32.818Z',
     },
     '4201:4898': {
@@ -141,7 +141,7 @@ export const manifestData: Record<
         'taxes, file, crypto, percentage, save, pay, government, irs, tax, center, forms',
       name: 'fileYourCryptoTaxes',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:32.822Z',
     },
     '4201:4911': {
@@ -150,7 +150,7 @@ export const manifestData: Record<
       description: 'p2p, gifting, cards, giftcard',
       name: 'p2pGifting',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.628Z',
     },
     '4835:1659': {
@@ -160,7 +160,7 @@ export const manifestData: Record<
         'NFTs, nft, collectable, collectible, cat, avatar, nyan, art, artwork, 🖼, flowers',
       name: 'collectableNfts',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:52:09.546Z',
     },
     '4201:4888': {
@@ -170,7 +170,7 @@ export const manifestData: Record<
         'art, image, ghost, graph, phone, magical, nft, phone, coinbase, wallet, 👻, 🖼, 📱, 📲, 📊',
       name: 'exploreDecentralizedApps',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.741Z',
     },
     '4201:4942': {
@@ -179,7 +179,7 @@ export const manifestData: Record<
       description: 'decktop, authorized, laptop, check, arrow, 💻, success state',
       name: 'desktopAuthorized',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.238Z',
     },
     '4201:4923': {
@@ -189,7 +189,7 @@ export const manifestData: Record<
         'support, help, guidance, question mark, cog, sparkle, aid, assist, 🙋‍♀️, 🙋, 🙋‍♂️, ❓, ✨, ❇️',
       name: 'supportAndMore',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.947Z',
     },
     '4201:4932': {
@@ -198,7 +198,7 @@ export const manifestData: Record<
       description: 'hand, borrow, cash, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷, 💲',
       name: 'borrow',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-21T00:41:46.287Z',
     },
     '4201:4899': {
@@ -207,7 +207,7 @@ export const manifestData: Record<
       description: 'fees, coin, arrow, ',
       name: 'coinbaseFees',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.268Z',
     },
     '4201:4921': {
@@ -216,7 +216,7 @@ export const manifestData: Record<
       description: 'slippage, tolerance, advanced, trading, candlesticks',
       name: 'slippageTolerance',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.981Z',
     },
     '4201:4893': {
@@ -225,7 +225,7 @@ export const manifestData: Record<
       description: 'estimated, amount, prices, browser, money, crypto, coin, calculation',
       name: 'estimatedAmount',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.347Z',
     },
     '4201:4869': {
@@ -234,7 +234,7 @@ export const manifestData: Record<
       description: 'coin, coins, moon, more, empty state',
       name: 'cryptoAndMore',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.264Z',
     },
     '4201:4891': {
@@ -243,7 +243,7 @@ export const manifestData: Record<
       description: 'money, payment, details, account, hand, add',
       name: 'addMoreCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.746Z',
     },
     '4201:4917': {
@@ -252,7 +252,7 @@ export const manifestData: Record<
       description: 'money, payment, details, account, hand',
       name: 'bitcoinAndOtherCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.622Z',
     },
     '4201:4938': {
@@ -261,7 +261,7 @@ export const manifestData: Record<
       description: 'credit, card, plastic, money, payment, details, account, hand, success state',
       name: 'coinbaseCardSpend',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.732Z',
     },
     '4201:4912': {
@@ -270,7 +270,7 @@ export const manifestData: Record<
       description: 'wallet, load, loading,',
       name: 'walletLoading',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:32.784Z',
     },
     '4201:4894': {
@@ -279,7 +279,7 @@ export const manifestData: Record<
       description: 'apps, wallet, crypto, gather',
       name: 'cryptoAppsWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:33.670Z',
     },
     '4201:4908': {
@@ -288,7 +288,7 @@ export const manifestData: Record<
       description: 'apps, ghost, unicorn, charts',
       name: 'cryptoApps',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:32.558Z',
     },
     '4201:4862': {
@@ -297,7 +297,7 @@ export const manifestData: Record<
       description: 'direct, deposit, coin, phone, bank, coins, 📱, 📱',
       name: 'directDepositPhone',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 6,
       lastUpdated: '2022-09-14T15:36:37.364Z',
     },
     '4201:4919': {
@@ -306,7 +306,7 @@ export const manifestData: Record<
       description: 'earn, defi, coins, coins, percentage, arrows',
       name: 'defiEarn',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.114Z',
     },
     '4201:4907': {
@@ -315,7 +315,7 @@ export const manifestData: Record<
       description: 'defi, coin, coins, percentage, badge, ribbon  ',
       name: 'defiRisk',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-23T21:05:52.761Z',
     },
     '4201:4940': {
@@ -324,7 +324,7 @@ export const manifestData: Record<
       description: 'defi, how, staking, coin, coins, arrow',
       name: 'defiHow',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T20:49:23.981Z',
     },
     '4201:4905': {
@@ -333,7 +333,7 @@ export const manifestData: Record<
       description: 'enroll, boost, chart, percentage, graph, defi',
       name: 'defiEnrollBoost',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.355Z',
     },
     '4201:4903': {
@@ -342,7 +342,7 @@ export const manifestData: Record<
       description: 'trade, history, clock, document',
       name: 'tradeHistory',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.595Z',
     },
     '4201:4900': {
@@ -351,7 +351,7 @@ export const manifestData: Record<
       description: 'order, books, ui, chart, buying, selling, trading',
       name: 'orderBooks',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-13T22:36:11.601Z',
     },
     '4201:4896': {
@@ -360,7 +360,7 @@ export const manifestData: Record<
       description: 'pairs, paring, currency, coin, coins, ✨',
       name: 'currencyPairs',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.991Z',
     },
     '4201:4910': {
@@ -370,7 +370,7 @@ export const manifestData: Record<
         'add, credit, card, plastic, money, plus, payment, method, confirm, details, account',
       name: 'coinbaseCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.129Z',
     },
     '4201:4889': {
@@ -379,7 +379,7 @@ export const manifestData: Record<
       description: 'coinbase, redesign, new, excitement',
       name: 'coinbaseRedesigned',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.645Z',
     },
     '4201:4887': {
@@ -388,7 +388,7 @@ export const manifestData: Record<
       description: 'cash, money, excitement, payment, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷',
       name: 'cashExcitement',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.995Z',
     },
     '4201:4885': {
@@ -397,7 +397,7 @@ export const manifestData: Record<
       description: 'wallet, trade, thunderbolt, arrow, speed',
       name: 'coinbaseWalletToTrade',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.431Z',
     },
     '4201:4874': {
@@ -407,7 +407,7 @@ export const manifestData: Record<
         'add, credit, card, download, money, plus, payment, method, arrow, walllet, 📱, 📱',
       name: 'downloadCoinbaseWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:36.513Z',
     },
     '4201:4844': {
@@ -416,7 +416,7 @@ export const manifestData: Record<
       description: 'switch, advanced, trading, rat, candlesticks, 📊, 📈, 📉',
       name: 'advancedTrading',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:26.707Z',
     },
     '4345:650': {
@@ -425,7 +425,7 @@ export const manifestData: Record<
       description: 'switch, advanced, trading, rat, candlesticks, 📊, 📈, 📉',
       name: 'advancedTrading',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:34.792Z',
     },
     '4201:4914': {
@@ -434,7 +434,7 @@ export const manifestData: Record<
       description: 'focus, limit, limitorders, arrow, chart, advanced, advancedtrading ',
       name: 'focusLimitOrders',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:32.850Z',
     },
     '4201:4854': {
@@ -443,7 +443,7 @@ export const manifestData: Record<
       description: 'chart, advanced, arrow, barchart, candle, candlesticks, rat',
       name: 'accessToAdvancedCharts',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:32.807Z',
     },
     '4201:4886': {
@@ -452,7 +452,7 @@ export const manifestData: Record<
       description: 'wallet, notifications, green, phone, 📱, 📱',
       name: 'walletNotifications',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.585Z',
     },
     '4201:4892': {
@@ -462,7 +462,7 @@ export const manifestData: Record<
         'add, credit, card, plastic, money, plus, payment, method, confirm, details, account',
       name: 'coinbaseCardPocket',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.335Z',
     },
     '4201:4879': {
@@ -471,7 +471,7 @@ export const manifestData: Record<
       description: 'contacts, contact, list, warning, ⚠, warning state',
       name: 'contactsListWarning',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-29T20:16:37.390Z',
     },
     '4201:4866': {
@@ -480,7 +480,7 @@ export const manifestData: Record<
       description: 'chart, earn, interest, percentage, barchart, chart,  📊, 📈, 📉',
       name: 'earnInterest',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-21T21:35:46.112Z',
     },
     '4201:4877': {
@@ -489,7 +489,7 @@ export const manifestData: Record<
       description: 'notification, bell, alert, 🔔, 🔕 ',
       name: 'notificationsAlt',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.591Z',
     },
     '4201:4875': {
@@ -498,7 +498,7 @@ export const manifestData: Record<
       description: 'tracking, transparency, check, phone, account,  ✔️, 📱, 📱, success state',
       name: 'appTrackingTransparency',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:33.557Z',
     },
     '4201:4872': {
@@ -507,7 +507,7 @@ export const manifestData: Record<
       description: 'open, email, envelope, letter, 📧 📥 📤 ✉ 📩 📨 ',
       name: 'openEmail',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.619Z',
     },
     '4201:4871': {
@@ -516,7 +516,7 @@ export const manifestData: Record<
       description: 'commerce, accounting, arrow, document, 📝, 📄, 📃, 📑,  ⬇ ',
       name: 'commerceAccounting',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-05T15:21:12.163Z',
     },
     '4201:4870': {
@@ -525,7 +525,7 @@ export const manifestData: Record<
       description: 'commerce, invoices, plus, document, 📝, 📄, 📃, 📑, ➕, 💲 ',
       name: 'commerceInvoices',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-05T15:19:21.943Z',
     },
     '4201:4934': {
@@ -535,7 +535,7 @@ export const manifestData: Record<
         'add, credit, card, plastic, money, plus, payment, method, confirm, details, account',
       name: 'coinbaseCardLock',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.731Z',
     },
     '4225:4468': {
@@ -545,7 +545,7 @@ export const manifestData: Record<
         'pending, transaction, wait, time, timing, clock, waiting, clock, timer, soon, patient, patience',
       name: 'pending',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-13T22:36:28.415Z',
     },
     '4225:4440': {
@@ -555,7 +555,7 @@ export const manifestData: Record<
         'browser, window, error, web, generic, general, coinbase, is, down, funds, secure, safu, secure, security, lock, mobile, ⚠️, 🔒',
       name: 'coinbaseIsDownMobile',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-07T18:11:28.396Z',
     },
     '4225:4448': {
@@ -565,7 +565,7 @@ export const manifestData: Record<
         'browser, window, error, mobile, refresh, page, pull, try, again, extra, life, ⚠️',
       name: 'errorRefresh',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.068Z',
     },
     '4225:4451': {
@@ -575,7 +575,7 @@ export const manifestData: Record<
         'Coinbase, Card, Spend, crypto, currency, cryptocurrency, coins, assets, sparkles, real, world, use, case, 💳',
       name: 'coinbaseCardSpendCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.711Z',
     },
     '4225:4473': {
@@ -585,7 +585,7 @@ export const manifestData: Record<
         'coinbase, card, issue, error, concern, generic, warning, something, is, not, right, 💳, ⚠️, warning state',
       name: 'coinbaseCardIssue',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.089Z',
     },
     '4225:4458': {
@@ -595,7 +595,7 @@ export const manifestData: Record<
         'insufficient, balance, not, enough, money, add, more, wallet, low, need, more, coins, gauge',
       name: 'insufficientBalance',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.855Z',
     },
     '4225:4466': {
@@ -605,7 +605,7 @@ export const manifestData: Record<
         'send, crypto, faster, coins, lightning, bolt, move, money, quicker, currency, asset, ⚡️',
       name: 'sendCryptoFaster',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.225Z',
     },
     '4225:4461': {
@@ -615,7 +615,7 @@ export const manifestData: Record<
         'recurring, reward, usdc, yield, earn, hold, hodl, stake, interest, growth, schedule, payment, from, Coinbase',
       name: 'recurringReward',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.960Z',
     },
     '4225:4470': {
@@ -625,7 +625,7 @@ export const manifestData: Record<
         'refer, a, friend, referrals, earn, free, bitcoin, btc, money, reward, friends, family, associates',
       name: 'invite',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.039Z',
     },
     '4225:4455': {
@@ -634,7 +634,7 @@ export const manifestData: Record<
       description: 'error, 400, web, generic, browser, window, mobile, ⚠️',
       name: 'error400',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.557Z',
     },
     '4225:4460': {
@@ -644,7 +644,7 @@ export const manifestData: Record<
         'download, wallet, app, coinbase, self, custody, defi, NFT, self, custody, your, keys, your, coins',
       name: 'walletUi',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-04T18:41:22.260Z',
     },
     '4225:4446': {
@@ -654,7 +654,7 @@ export const manifestData: Record<
         'id, Earn, License, Front, Card, documentation, onboarding, verify, verification, to, earn, crypto, make, money, money, monnneeeyyyyy',
       name: 'earnIdVerification',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.952Z',
     },
     '4225:4459': {
@@ -664,7 +664,7 @@ export const manifestData: Record<
         'check, routing, account, number, bank, connect, account, 1,2,3,4,5,6,7,8,9,0, tradfi, old, school, boring',
       name: 'routingAccount',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.546Z',
     },
     '4225:4453': {
@@ -674,7 +674,7 @@ export const manifestData: Record<
         'notification, price, alert, new, assets, asset, crypto, currency, chart, receive, details, specific, hit',
       name: 'notificationsAndUpdates',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.804Z',
     },
     '4225:4452': {
@@ -684,7 +684,7 @@ export const manifestData: Record<
         'contacts, add, list, avatar, people, person, friends, family, associates, connect, access, send, select, success state',
       name: 'yourContacts',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 3,
       lastUpdated: '2022-09-14T15:36:33.974Z',
     },
     '4225:4429': {
@@ -694,7 +694,7 @@ export const manifestData: Record<
         'both, addresses, check, confirm, details, address, wallet, receive, currency, make, sure',
       name: 'whyNotBoth',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-06T12:08:33.013Z',
     },
     '4225:4449': {
@@ -703,7 +703,7 @@ export const manifestData: Record<
       description: 'mobile, error, web, 500, connection, plug, issue, concern, ⚠️',
       name: 'errorApp500',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.286Z',
     },
     '4225:4445': {
@@ -713,7 +713,7 @@ export const manifestData: Record<
         'browser, window, error, web, 404, connection, magnifying, glass, can, not, find, locate, issue, desktop, ⚠️',
       name: 'errorWeb404',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-26T15:53:52.740Z',
     },
     '4225:4465': {
@@ -723,7 +723,7 @@ export const manifestData: Record<
         'browser, window, error, web, generic, general, coinbase, is, down, funds, secure, safu, secure, security, lock, desktop, ⚠️, 🔒',
       name: 'coinbaseIsDown',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:33.361Z',
     },
     '4225:4422': {
@@ -733,7 +733,7 @@ export const manifestData: Record<
         'select, correct, crypto, be, sure, confirm, details, double, check, selection, choose, wisely',
       name: 'selectCorrectCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:34.017Z',
     },
     '4225:4443': {
@@ -743,7 +743,7 @@ export const manifestData: Record<
         'buy, first, crypto, purchase, coins, assets, financial, freedom, HODL, plus, add, gain, receive, phone, mobile',
       name: 'buyFirstCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:33.138Z',
     },
     '4225:4441': {
@@ -753,7 +753,7 @@ export const manifestData: Record<
         'id, identity, verify, verification, documents, picture, two, different, forms, license, documentation, avatar',
       name: 'twoIdVerify',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.257Z',
     },
     '4225:4447': {
@@ -763,7 +763,7 @@ export const manifestData: Record<
         'account, under, review, user, profile, avatar, magnifying, glass, checking, confirming, pending, details',
       name: 'accountUnderReview',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.066Z',
     },
     '4225:4467': {
@@ -773,7 +773,7 @@ export const manifestData: Record<
         'verify, card, transaction, amounts, fiat, dollar, add, account, process, details',
       name: 'verifyCardTransactions',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.902Z',
     },
     '4225:4439': {
@@ -783,7 +783,7 @@ export const manifestData: Record<
         'verify, account, transaction, amounts, fiat, dollar, add, account, process, details',
       name: 'verifyBankTransactions',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.884Z',
     },
     '4225:4456': {
@@ -793,7 +793,7 @@ export const manifestData: Record<
         'free, bitcoin, get, money, get, paid, sparkle, star, join, refer, referral, coin, BTC, earn, hodl',
       name: 'freeBtc',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-16T20:04:43.817Z',
     },
     '4225:4438': {
@@ -803,7 +803,7 @@ export const manifestData: Record<
         'MXD, Mexico, dollar, remit, remittances, international, send, money, cross, border, 🇲🇽',
       name: 'remittances',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:35.342Z',
     },
     '4225:4450': {
@@ -813,7 +813,7 @@ export const manifestData: Record<
         'Document, error, issue, concern, problem, validation, documentation, doc, 📑, ⚠️, warning state',
       name: 'docError',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.881Z',
     },
     '4225:4436': {
@@ -823,7 +823,7 @@ export const manifestData: Record<
         'transaction, limit, increase, increased, more, send, coins, money, asset, token, crypto, currency',
       name: 'transactionLimit',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.299Z',
     },
     '4225:4433': {
@@ -833,7 +833,7 @@ export const manifestData: Record<
         'email, notification, phone, check, receive, notify, next, step, onboarding, click, 💌, 📨, 📧, 📩, 📬, ✉️',
       name: 'emailNotification',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.823Z',
     },
     '4225:4431': {
@@ -843,7 +843,7 @@ export const manifestData: Record<
         'recurring, automatic, payments, pay, card, loan, arrow, calendar, once, month, one, time',
       name: 'automaticPayments',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.303Z',
     },
     '4225:4430': {
@@ -853,7 +853,7 @@ export const manifestData: Record<
         'credit, card, phone, add, payment, pay, method, plastic, visa, mastercard, discover, bank, debit',
       name: 'cardAndPhone',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.508Z',
     },
     '4225:4428': {
@@ -863,7 +863,7 @@ export const manifestData: Record<
         'credit, card, payment, pay, method, plastic, visa, mastercard, discover, bank, debit, up, front, success state',
       name: 'payUpFront',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:36.640Z',
     },
     '4225:4427': {
@@ -873,7 +873,7 @@ export const manifestData: Record<
         'limit, orders, phone, bottom, base, purchase, buy, coin, set, order, specific, price',
       name: 'limitOrders',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.990Z',
     },
     '4225:4426': {
@@ -883,7 +883,7 @@ export const manifestData: Record<
         'earn, crypto, coin, assets, yield, stake, store, interest, return, growth, increase, value',
       name: 'earnMore',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-17T14:16:24.665Z',
     },
     '4354:1064': {
@@ -893,7 +893,7 @@ export const manifestData: Record<
         'earn, crypto, coin, assets, yield, stake, store, interest, return, growth, increase, value',
       name: 'earnGrowth',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:35.903Z',
     },
     '4225:4425': {
@@ -903,7 +903,7 @@ export const manifestData: Record<
         'Hold, crypto, HODL, coins, assets, cryptocurrency, currency, arrow, down, store, save, stake',
       name: 'holdingCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.183Z',
     },
     '4225:4442': {
@@ -913,7 +913,7 @@ export const manifestData: Record<
         'hello, my, name, is, satoshi, nakamoto, bitcoin, white, paper, author, crypto, og',
       name: 'myNameIsSatoshi',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:34.099Z',
     },
     '4225:4424': {
@@ -923,7 +923,7 @@ export const manifestData: Record<
         'Coin, Coins, Currency, Crypto, Bitcoin, BTC, store, value, money, asset, sparkles, stars, ✨, success state',
       name: 'bigBtc',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:34.145Z',
     },
     '4225:4423': {
@@ -933,7 +933,7 @@ export const manifestData: Record<
         'Coin, Coins, Currency, Crypto, Wallet, Deposit, Send, Receive, asset, buy, purchase, hold',
       name: 'coinsInWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.840Z',
     },
     '4225:4435': {
@@ -943,7 +943,7 @@ export const manifestData: Record<
         'ID, identity, verify, verification, documents, picture, license, documentation, avatar, back',
       name: 'idBack',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.168Z',
     },
     '4225:4444': {
@@ -953,7 +953,7 @@ export const manifestData: Record<
         'ID, identity, verify, verification, documents, picture, license, documentation, avatar, front',
       name: 'idFront',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.802Z',
     },
     '4225:4471': {
@@ -963,7 +963,7 @@ export const manifestData: Record<
         'ID, identity, documents, license, verify, verification, angles, front, back, 3D, rotate',
       name: 'idAngles',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.997Z',
     },
     '4225:4464': {
@@ -973,7 +973,7 @@ export const manifestData: Record<
         'License, ID, Secure, Verification, Documents, Personal, avatar, lock, security, protect, data, protection',
       name: 'idVerificationSecure',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.080Z',
     },
     '4225:4421': {
@@ -982,7 +982,7 @@ export const manifestData: Record<
       description: 'Send, Username, Avatar, Person, P2P, Payment, Arrow, Direct, Pay, Back  ',
       name: 'sendToUsername',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.126Z',
     },
     '4225:4437': {
@@ -991,7 +991,7 @@ export const manifestData: Record<
       description: 'error, 400, web, generic, browser, window, desktop, ⚠️',
       name: 'errorWeb400',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-05T22:05:57.830Z',
     },
     '4225:4457': {
@@ -1000,7 +1000,7 @@ export const manifestData: Record<
       description: 'browser, window, error, web, 500, connection, plug, issue, desktop, ⚠️',
       name: 'errorWeb500',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:35.846Z',
     },
     '4225:4462': {
@@ -1010,7 +1010,7 @@ export const manifestData: Record<
         'rocket, space, blast, off, moon, party, 🚀, success, celebrate, positive, growth, excitement, success state',
       name: 'rocket',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T07:19:39.459Z',
     },
     '4225:4420': {
@@ -1020,7 +1020,7 @@ export const manifestData: Record<
         'trade, immediately, swap, now, start, today, coin, currency, asset, switch, empty state',
       name: 'tradeImmediately',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:35.297Z',
     },
     '4225:4419': {
@@ -1029,7 +1029,7 @@ export const manifestData: Record<
       description: 'add, phone, number, account, details, onboarding, security',
       name: 'addPhoneNumber',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.309Z',
     },
     '4225:4469': {
@@ -1039,7 +1039,7 @@ export const manifestData: Record<
         'ID, identity, verification, reviewing, documents, onboarding, account,  japan, bank, building, 🇯🇵, 🏦',
       name: 'japanVerifyId',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.254Z',
     },
     '4225:4418': {
@@ -1049,7 +1049,7 @@ export const manifestData: Record<
         'document, certified, correct, ribbon, checkmark, confirmed, reviewed, approved, stamped, papers, success state',
       name: 'documentCertified',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:36.009Z',
     },
     '4225:4417': {
@@ -1059,7 +1059,7 @@ export const manifestData: Record<
         'clipboard, list, checkmark, confirmed, on, waiting, notify, document, paper, details, success state',
       name: 'onTheList',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.768Z',
     },
     '4225:4415': {
@@ -1068,7 +1068,7 @@ export const manifestData: Record<
       description: 'add, bank, building, clock, tower, columns, money, plus, onboarding, details',
       name: 'addBankAccount',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.765Z',
     },
     '4225:4454': {
@@ -1078,7 +1078,7 @@ export const manifestData: Record<
         'add, credit, card, plastic, money, plus, payment, method, confirm, details, account ',
       name: 'addCreditCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:35.160Z',
     },
     '4225:4414': {
@@ -1087,7 +1087,7 @@ export const manifestData: Record<
       description: 'Documents, reviewed, success, checkmark, confirm, complete, ✅, success state',
       name: 'documentSuccess',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-07T14:43:05.525Z',
     },
     '4225:4413': {
@@ -1097,7 +1097,7 @@ export const manifestData: Record<
         'ID, identity, verification, reviewing, magnifying, glass, documents, onboarding, account, 🔍',
       name: 'verifyIdDetails',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:34.814Z',
     },
     '4225:4412': {
@@ -1107,7 +1107,7 @@ export const manifestData: Record<
         'ID, Identity, Verification, Issue, Concern, Error, document, license, avatar, ⚠️, warning state',
       name: 'idIssue',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.644Z',
     },
     '4225:4411': {
@@ -1117,7 +1117,7 @@ export const manifestData: Record<
         'clipboard, verify, info, information, document, warning, error, issue, concern, ⚠️, warning state',
       name: 'verifyInfo',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-15T02:20:24.937Z',
     },
     '4225:4410': {
@@ -1127,7 +1127,7 @@ export const manifestData: Record<
         'success, coin, balloon, welcome, account, created, start, trading, success state',
       name: 'readyToTrade',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-22T21:12:06.641Z',
     },
     '4225:4409': {
@@ -1136,7 +1136,7 @@ export const manifestData: Record<
       description: 'Id, Drivers, License, Front, Card, documentation, onboarding, verify',
       name: 'idCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.691Z',
     },
     '4225:4408': {
@@ -1145,7 +1145,7 @@ export const manifestData: Record<
       description: 'phone, number, 2FA, security, passcode, lock, asterisk',
       name: 'phoneNumber',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.664Z',
     },
     '4225:4407': {
@@ -1154,7 +1154,7 @@ export const manifestData: Record<
       description: 'security, lock, onboarding, safety, coin, padlock, secure',
       name: 'securityShield',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T18:56:17.453Z',
     },
     '4225:4416': {
@@ -1163,7 +1163,7 @@ export const manifestData: Record<
       description: 'verify, email, envelope, checkmark, nux, onboarding, ✅, success state',
       name: 'verifyEmail',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-04T13:26:22.067Z',
     },
     '4201:4939': {
@@ -1172,7 +1172,7 @@ export const manifestData: Record<
       description: 'tag, coinbaseone, one, discounted, amount',
       name: 'coinbaseOneDiscountedAmount',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:23.358Z',
     },
     '4201:4904': {
@@ -1182,7 +1182,7 @@ export const manifestData: Record<
         'piggy, bank, pig, arrow, coin, safe, money, funds, saving, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷, 🐖, 💲',
       name: 'coinbaseOneSavingFunds',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-18T22:28:03.587Z',
     },
     '4201:4868': {
@@ -1191,7 +1191,7 @@ export const manifestData: Record<
       description: 'wallet, coinbaseone, one, insufficient, red',
       name: 'coinbaseOneInsufficientWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:26.106Z',
     },
     '4201:4867': {
@@ -1201,7 +1201,7 @@ export const manifestData: Record<
         'add, credit, card, plastic, money, plus, payment, method, confirm, details, account, warning state',
       name: 'coinbaseOneCardWarning',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:21.522Z',
     },
     '4201:4935': {
@@ -1210,7 +1210,7 @@ export const manifestData: Record<
       description: 'phone, lighting, fast, speed, 📱, 🔋,⚡',
       name: 'coinbaseOnePhoneLightning',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-14T01:15:53.989Z',
     },
     '4201:4864': {
@@ -1219,7 +1219,7 @@ export const manifestData: Record<
       description: 'coinbaseone, one, document, warning, caution, warning state',
       name: 'coinbaseOneDocWarning',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:24.375Z',
     },
     '4201:4863': {
@@ -1228,7 +1228,7 @@ export const manifestData: Record<
       description: 'coinbaseone, one, shield, protect, protected',
       name: 'coinbaseOneProtectedCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:23.723Z',
     },
     '4201:4861': {
@@ -1238,7 +1238,7 @@ export const manifestData: Record<
         'taxes, file, crypto, percentage, save, pay, government, irs, tax, center, forms, check, mark, checkmark, ✅',
       name: 'fileYourCryptoTaxesCheck',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:24.078Z',
     },
     '4201:4856': {
@@ -1248,7 +1248,7 @@ export const manifestData: Record<
         'taxes, file, crypto, percentage, save, pay, government, irs, tax, center, forms',
       name: 'fileYourCryptoTaxes',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:23.755Z',
     },
     '4201:4859': {
@@ -1257,7 +1257,7 @@ export const manifestData: Record<
       description: 'p2p, gifting, cards, giftcard',
       name: 'p2pGifting',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.004Z',
     },
     '4835:1556': {
@@ -1267,7 +1267,7 @@ export const manifestData: Record<
         'NFTs, nft, collectable, collectible, cat, avatar, nyan, art, artwork, 🖼, flowers',
       name: 'collectableNfts',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-08T15:12:02.192Z',
     },
     '4201:4895': {
@@ -1277,7 +1277,7 @@ export const manifestData: Record<
         'art, image, ghost, graph, phone, magical, nft, phone, coinbase, wallet, 👻, 🖼, 📱, 📲, 📊',
       name: 'exploreDecentralizedApps',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-17T14:42:36.215Z',
     },
     '4201:4858': {
@@ -1286,7 +1286,7 @@ export const manifestData: Record<
       description: 'decktop, authorized, laptop, check, arrow, 💻, success state',
       name: 'desktopAuthorized',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T20:21:37.000Z',
     },
     '4201:4925': {
@@ -1296,7 +1296,7 @@ export const manifestData: Record<
         'support, help, guidance, question mark, cog, sparkle, aid, assist, 🙋‍♀️, 🙋, 🙋‍♂️, ❓, ✨, ❇️',
       name: 'supportAndMore',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-07T01:42:37.585Z',
     },
     '4201:4857': {
@@ -1305,7 +1305,7 @@ export const manifestData: Record<
       description: 'hand, borrow, cash, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷, 💲',
       name: 'borrow',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-14T18:50:00.791Z',
     },
     '4201:4909': {
@@ -1314,7 +1314,7 @@ export const manifestData: Record<
       description: 'fees, coin, arrow, ',
       name: 'coinbaseFees',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.252Z',
     },
     '4201:4855': {
@@ -1323,7 +1323,7 @@ export const manifestData: Record<
       description: 'slippage, tolerance, advanced, trading, candlesticks',
       name: 'slippageTolerance',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T18:26:42.862Z',
     },
     '4201:4853': {
@@ -1332,7 +1332,7 @@ export const manifestData: Record<
       description: 'estimated, amount, prices, browser, money, crypto, coin, calculation',
       name: 'estimatedAmount',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.909Z',
     },
     '4201:4852': {
@@ -1341,7 +1341,7 @@ export const manifestData: Record<
       description: 'coin, coins, moon, more, empty state',
       name: 'cryptoAndMore',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T16:44:59.230Z',
     },
     '4201:4913': {
@@ -1350,7 +1350,7 @@ export const manifestData: Record<
       description: 'money, payment, details, account, hand, add',
       name: 'addMoreCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-28T16:17:49.333Z',
     },
     '4201:4876': {
@@ -1359,7 +1359,7 @@ export const manifestData: Record<
       description: 'money, payment, details, account, hand',
       name: 'bitcoinAndOtherCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-15T14:17:58.177Z',
     },
     '4201:4851': {
@@ -1368,7 +1368,7 @@ export const manifestData: Record<
       description: 'credit, card, plastic, money, payment, details, account, hand, success state',
       name: 'coinbaseCardSpend',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T21:25:32.595Z',
     },
     '4201:4881': {
@@ -1377,7 +1377,7 @@ export const manifestData: Record<
       description: 'wallet, load, loading,',
       name: 'walletLoading',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:25.605Z',
     },
     '4201:4847': {
@@ -1386,7 +1386,7 @@ export const manifestData: Record<
       description: 'apps, wallet, crypto, gather',
       name: 'cryptoAppsWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:24.049Z',
     },
     '4201:4890': {
@@ -1395,7 +1395,7 @@ export const manifestData: Record<
       description: 'apps, ghost, unicorn, charts',
       name: 'cryptoApps',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-15T15:11:24.396Z',
     },
     '4201:4850': {
@@ -1404,7 +1404,7 @@ export const manifestData: Record<
       description: 'direct, deposit, coin, phone, bank, coins, 📱, 📱',
       name: 'directDepositPhone',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 6,
       lastUpdated: '2022-10-12T16:38:22.812Z',
     },
     '4201:4897': {
@@ -1413,7 +1413,7 @@ export const manifestData: Record<
       description: 'earn, defi, coins, coins, percentage, arrows',
       name: 'defiEarn',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T18:09:58.541Z',
     },
     '4201:4848': {
@@ -1422,7 +1422,7 @@ export const manifestData: Record<
       description: 'defi, coin, coins, percentage, badge, ribbon  ',
       name: 'defiRisk',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-17T22:34:01.658Z',
     },
     '4201:4849': {
@@ -1431,7 +1431,7 @@ export const manifestData: Record<
       description: 'defi, how, staking, coin, coins, arrow',
       name: 'defiHow',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-14T17:06:23.516Z',
     },
     '4201:4927': {
@@ -1440,7 +1440,7 @@ export const manifestData: Record<
       description: 'enroll, boost, chart, percentage, graph, defi',
       name: 'defiEnrollBoost',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T18:09:58.596Z',
     },
     '4201:4873': {
@@ -1449,7 +1449,7 @@ export const manifestData: Record<
       description: 'trade, history, clock, document',
       name: 'tradeHistory',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:27.174Z',
     },
     '4201:4880': {
@@ -1458,7 +1458,7 @@ export const manifestData: Record<
       description: 'order, books, ui, chart, buying, selling, trading',
       name: 'orderBooks',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.573Z',
     },
     '4201:4922': {
@@ -1467,7 +1467,7 @@ export const manifestData: Record<
       description: 'pairs, paring, currency, coin, coins, ✨',
       name: 'currencyPairs',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.694Z',
     },
     '4201:4916': {
@@ -1477,7 +1477,7 @@ export const manifestData: Record<
         'add, credit, card, plastic, money, plus, payment, method, confirm, details, account',
       name: 'coinbaseCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.342Z',
     },
     '4201:4920': {
@@ -1486,7 +1486,7 @@ export const manifestData: Record<
       description: 'coinbase, redesign, new, excitement',
       name: 'coinbaseRedesigned',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.103Z',
     },
     '4201:4860': {
@@ -1495,7 +1495,7 @@ export const manifestData: Record<
       description: 'cash, money, excitement, payment, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷',
       name: 'cashExcitement',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-14T17:09:03.915Z',
     },
     '4201:4915': {
@@ -1504,7 +1504,7 @@ export const manifestData: Record<
       description: 'wallet, trade, thunderbolt, arrow, speed',
       name: 'coinbaseWalletToTrade',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T20:49:14.300Z',
     },
     '4201:4846': {
@@ -1514,7 +1514,7 @@ export const manifestData: Record<
         'add, credit, card, download, money, plus, payment, method, arrow, walllet, 📱, 📱',
       name: 'downloadCoinbaseWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.520Z',
     },
     '4201:4941': {
@@ -1524,7 +1524,7 @@ export const manifestData: Record<
         'add, credit, card, plastic, money, plus, payment, method, confirm, details, account, ✔️, 📱, 📱, success state',
       name: 'receivedCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:22.632Z',
     },
     '4201:4878': {
@@ -1533,7 +1533,7 @@ export const manifestData: Record<
       description: 'focus, limit, limitorders, arrow, chart, advanced, advancedtrading ',
       name: 'focusLimitOrders',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.616Z',
     },
     '4201:4843': {
@@ -1542,7 +1542,7 @@ export const manifestData: Record<
       description: 'chart, advanced, arrow, barchart, candle, candlesticks, rat',
       name: 'accessToAdvancedCharts',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:27.224Z',
     },
     '4201:4840': {
@@ -1551,7 +1551,7 @@ export const manifestData: Record<
       description: 'wallet, notifications, green, phone, 📱, 📱',
       name: 'walletNotifications',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.916Z',
     },
     '4201:4901': {
@@ -1561,7 +1561,7 @@ export const manifestData: Record<
         'add, credit, card, plastic, money, plus, payment, method, confirm, details, account',
       name: 'coinbaseCardPocket',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.862Z',
     },
     '4201:4839': {
@@ -1570,7 +1570,7 @@ export const manifestData: Record<
       description: 'contacts, contact, list, warning, ⚠, warning state',
       name: 'contactsListWarning',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:23.355Z',
     },
     '4201:4884': {
@@ -1579,7 +1579,7 @@ export const manifestData: Record<
       description: 'chart, earn, interest, percentage, barchart, chart,  📊, 📈, 📉',
       name: 'earnInterest',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-17T14:43:14.457Z',
     },
     '4201:4865': {
@@ -1588,7 +1588,7 @@ export const manifestData: Record<
       description: 'notification, bell, alert, 🔔, 🔕 ',
       name: 'notificationsAlt',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-08T11:19:35.225Z',
     },
     '4201:4845': {
@@ -1597,7 +1597,7 @@ export const manifestData: Record<
       description: 'tracking, transparency, check, phone, account,  ✔️, 📱, 📱, success state',
       name: 'appTrackingTransparency',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:21.996Z',
     },
     '4201:4906': {
@@ -1606,7 +1606,7 @@ export const manifestData: Record<
       description: 'open, email, envelope, letter, 📧 📥 📤 ✉ 📩 📨 ',
       name: 'openEmail',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.479Z',
     },
     '4201:4838': {
@@ -1615,7 +1615,7 @@ export const manifestData: Record<
       description: 'commerce, accounting, arrow, document, 📝, 📄, 📃, 📑,  ⬇ ',
       name: 'commerceAccounting',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.479Z',
     },
     '4201:4930': {
@@ -1624,7 +1624,7 @@ export const manifestData: Record<
       description: 'commerce, invoices, plus, document, 📝, 📄, 📃, 📑, ➕, 💲 ',
       name: 'commerceInvoices',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.812Z',
     },
     '4201:4837': {
@@ -1634,7 +1634,7 @@ export const manifestData: Record<
         'add, credit, card, plastic, money, plus, payment, method, confirm, details, account',
       name: 'coinbaseCardLock',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-08T23:17:54.193Z',
     },
     '4131:794': {
@@ -1644,7 +1644,7 @@ export const manifestData: Record<
         'pending, transaction, wait, time, timing, clock, waiting, clock, timer, soon, patient, patience',
       name: 'pending',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:26.670Z',
     },
     '4131:793': {
@@ -1654,7 +1654,7 @@ export const manifestData: Record<
         'browser, window, error, web, generic, general, coinbase, is, down, funds, secure, safu, secure, security, lock, mobile, ⚠️, 🔒, , system error',
       name: 'coinbaseIsDownMobile',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-08T23:17:54.194Z',
     },
     '4131:773': {
@@ -1664,7 +1664,7 @@ export const manifestData: Record<
         'browser, window, error, mobile, refresh, page, pull, try, again, extra, life, ⚠️, , system error',
       name: 'errorRefresh',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-08T23:17:54.117Z',
     },
     '4131:792': {
@@ -1674,7 +1674,7 @@ export const manifestData: Record<
         'Coinbase, Card, Spend, crypto, currency, cryptocurrency, coins, assets, sparkles, real, world, use, case, 💳',
       name: 'coinbaseCardSpendCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.490Z',
     },
     '4131:783': {
@@ -1684,7 +1684,7 @@ export const manifestData: Record<
         'Coinbase, Card, issue, error, concern, generic, warning, something, is, not, right, 💳, ⚠️, warning state',
       name: 'coinbaseCardIssue',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.883Z',
     },
     '4131:823': {
@@ -1694,7 +1694,7 @@ export const manifestData: Record<
         'insufficient, balance, not, enough, money, add, more, wallet, low, need, more, coins, gauge',
       name: 'insufficientBalance',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-21T14:07:37.966Z',
     },
     '4131:838': {
@@ -1704,7 +1704,7 @@ export const manifestData: Record<
         'send, crypto, faster, coins, lightning, bolt, move, money, quicker, currency, asset, ⚡️',
       name: 'sendCryptoFaster',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.585Z',
     },
     '4131:845': {
@@ -1714,7 +1714,7 @@ export const manifestData: Record<
         'Recurring, reward, usdc, yield, earn, hold, hodl, stake, interest, growth, schedule, payment, from, Coinbase',
       name: 'recurringReward',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.401Z',
     },
     '4131:789': {
@@ -1724,7 +1724,7 @@ export const manifestData: Record<
         'refer, a, friend, referrals, earn, free, bitcoin, btc, money, reward, friends, family, associates',
       name: 'invite',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-14T17:06:23.524Z',
     },
     '4131:788': {
@@ -1733,7 +1733,7 @@ export const manifestData: Record<
       description: 'error, 400, web, generic, browser, window, mobile, ⚠️, system error',
       name: 'error400',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-08T23:17:54.193Z',
     },
     '4131:802': {
@@ -1743,7 +1743,7 @@ export const manifestData: Record<
         'download, wallet, app, coinbase, self, custody, defi, NFT, self, custody, your, keys, your, coins',
       name: 'walletUi',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T15:33:11.253Z',
     },
     '4131:787': {
@@ -1753,7 +1753,7 @@ export const manifestData: Record<
         'Id, Earn, License, Front, Card, documentation, onboarding, verify, verification, to, earn, crypto, make, money, money, make, money, money, monnneeeyyyyy',
       name: 'earnIdVerification',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-18T23:49:22.913Z',
     },
     '4131:785': {
@@ -1763,7 +1763,7 @@ export const manifestData: Record<
         'check, routing, account, number, bank, connect, account, 1,2,3,4,5,6,7,8,9,0, tradfi, old, school, boring',
       name: 'routingAccount',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-13T10:41:37.155Z',
     },
     '4131:807': {
@@ -1773,7 +1773,7 @@ export const manifestData: Record<
         'notification, price, alert, new, assets, asset, crypto, currency, chart, receive, details, specific, hit',
       name: 'notificationsAndUpdates',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:20.996Z',
     },
     '4131:791': {
@@ -1783,7 +1783,7 @@ export const manifestData: Record<
         'contacts, add, list, avatar, people, person, friends, family, associates, connect, access, send, select, success state',
       name: 'yourContacts',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-23T12:22:32.548Z',
     },
     '4131:784': {
@@ -1793,7 +1793,7 @@ export const manifestData: Record<
         'both, addresses, check, confirm, details, address, wallet, receive, currency, make, sure',
       name: 'whyNotBoth',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.603Z',
     },
     '4131:797': {
@@ -1802,7 +1802,7 @@ export const manifestData: Record<
       description: 'mobile, error, web, 500, connection, plug, issue, concern, ⚠️, , system error',
       name: 'errorApp500',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-01T16:58:33.613Z',
     },
     '4131:782': {
@@ -1812,7 +1812,7 @@ export const manifestData: Record<
         'browser, window, error, web, 404, connection, magnifying, glass, can, not, find, locate, issue, desktop, ⚠️, , system error',
       name: 'errorWeb404',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-08T23:17:53.775Z',
     },
     '4131:780': {
@@ -1822,7 +1822,7 @@ export const manifestData: Record<
         'browser, window, error, web, generic, general, coinbase, is, down, funds, secure, safu, secure, security, lock, desktop, ⚠️, 🔒, system error',
       name: 'coinbaseIsDown',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-08T23:17:53.673Z',
     },
     '4131:800': {
@@ -1832,7 +1832,7 @@ export const manifestData: Record<
         'Select, correct, crypto, be, sure, confirm, details, double, check, selection, choose, wisely',
       name: 'selectCorrectCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:22.394Z',
     },
     '4131:809': {
@@ -1842,7 +1842,7 @@ export const manifestData: Record<
         'buy, first, crypto, purchase, coins, assets, financial, freedom, HODL, plus, add, gain, receive, phone, mobile',
       name: 'buyFirstCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T13:25:41.037Z',
     },
     '4131:843': {
@@ -1852,7 +1852,7 @@ export const manifestData: Record<
         'ID, identity, verify, verification, documents, picture, two, different, forms, license, documentation, avatar',
       name: 'twoIdVerify',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.433Z',
     },
     '4131:779': {
@@ -1862,7 +1862,7 @@ export const manifestData: Record<
         'Account, under, review, user, profile, avatar, magnifying, glass, checking, confirming, pending, details',
       name: 'accountUnderReview',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-22T15:05:28.076Z',
     },
     '4131:819': {
@@ -1872,7 +1872,7 @@ export const manifestData: Record<
         'verify, card, transaction, amounts, fiat, dollar, add, account, process, details',
       name: 'verifyCardTransactions',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.641Z',
     },
     '4131:776': {
@@ -1882,7 +1882,7 @@ export const manifestData: Record<
         'verify, account, transaction, amounts, fiat, dollar, add, account, process, details',
       name: 'verifyBankTransactions',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:22.543Z',
     },
     '4131:857': {
@@ -1892,7 +1892,7 @@ export const manifestData: Record<
         'free, bitcoin, get, money, get, paid, sparkle, star, join, refer, referral, coin, BTC, earn, hodl',
       name: 'freeBtc',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-16T20:06:33.330Z',
     },
     '4131:775': {
@@ -1902,7 +1902,7 @@ export const manifestData: Record<
         'MXD, Mexico, dollar, remit, remittances, international, send, money, cross, border, 🇲🇽',
       name: 'remittances',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-21T15:05:42.644Z',
     },
     '4131:774': {
@@ -1912,7 +1912,7 @@ export const manifestData: Record<
         'Document, error, issue, concern, problem, validation, documentation, doc, 📑, ⚠️, warning state',
       name: 'docError',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-14T18:29:22.687Z',
     },
     '4131:859': {
@@ -1922,7 +1922,7 @@ export const manifestData: Record<
         'transaction, limit, increase, increased, more, send, coins, money, asset, token, crypto, currency',
       name: 'transactionLimit',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-08T14:02:22.080Z',
     },
     '4131:772': {
@@ -1932,7 +1932,7 @@ export const manifestData: Record<
         'email, notification, phone, check, receive, notify, next, step, onboarding, click, 💌, 📨, 📧, 📩, 📬, ✉️',
       name: 'emailNotification',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T20:20:34.686Z',
     },
     '4131:862': {
@@ -1942,7 +1942,7 @@ export const manifestData: Record<
         'recurring, automatic, payments, pay, card, loan, arrow, calendar, once, month, one, time',
       name: 'automaticPayments',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.495Z',
     },
     '4131:878': {
@@ -1952,7 +1952,7 @@ export const manifestData: Record<
         'credit, card, phone, add, payment, pay, method, plastic, visa, mastercard, discover, bank, debit',
       name: 'cardAndPhone',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.115Z',
     },
     '4131:864': {
@@ -1962,7 +1962,7 @@ export const manifestData: Record<
         'credit, card, payment, pay, method, plastic, visa, mastercard, discover, bank, debit, up, front, success state',
       name: 'payUpFront',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.697Z',
     },
     '4131:770': {
@@ -1972,7 +1972,7 @@ export const manifestData: Record<
         'limit, orders, phone, bottom, base, purchase, buy, coin, set, order, specific, price',
       name: 'limitOrders',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.324Z',
     },
     '4131:768': {
@@ -1982,7 +1982,7 @@ export const manifestData: Record<
         'Hold, crypto, HODL, coins, assets, cryptocurrency, currency, arrow, down, store, save, stake',
       name: 'holdingCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:22.519Z',
     },
     '4131:767': {
@@ -1992,7 +1992,7 @@ export const manifestData: Record<
         'hello, my, name, is, satoshi, nakamoto, bitcoin, white, paper, author, crypto, og',
       name: 'myNameIsSatoshi',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.819Z',
     },
     '4131:816': {
@@ -2002,7 +2002,7 @@ export const manifestData: Record<
         'Coin, Coins, Currency, Crypto, Bitcoin, BTC, store, value, money, asset, sparkles, stars, ✨, success state',
       name: 'bigBtc',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:22.643Z',
     },
     '4131:766': {
@@ -2012,7 +2012,7 @@ export const manifestData: Record<
         'Coin, Coins, Currency, Crypto, Wallet, Deposit, Send, Receive, asset, buy, purchase, hold',
       name: 'coinsInWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-07T15:14:14.383Z',
     },
     '4131:839': {
@@ -2022,7 +2022,7 @@ export const manifestData: Record<
         'ID, identity, verify, verification, documents, picture, license, documentation, avatar, back',
       name: 'idBack',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:22.069Z',
     },
     '4131:830': {
@@ -2032,7 +2032,7 @@ export const manifestData: Record<
         'ID, identity, verify, verification, documents, picture, license, documentation, avatar, front',
       name: 'idFront',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.674Z',
     },
     '4131:844': {
@@ -2042,7 +2042,7 @@ export const manifestData: Record<
         'ID, identity, documents, license, verify, verification, angles, front, back, 3D, rotate',
       name: 'idAngles',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.499Z',
     },
     '4131:765': {
@@ -2051,7 +2051,7 @@ export const manifestData: Record<
       description: 'Send, Username, Avatar, Person, P2P, Payment, Arrow, Direct, Pay, Back  ',
       name: 'sendToUsername',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-23T12:22:29.217Z',
     },
     '4131:764': {
@@ -2061,7 +2061,7 @@ export const manifestData: Record<
         'License, ID, Secure, Verification, Documents, Personal, avatar, lock, security, protect, data, protection',
       name: 'idVerificationSecure',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T16:44:59.282Z',
     },
     '4131:851': {
@@ -2070,7 +2070,7 @@ export const manifestData: Record<
       description: 'error, 400, web, generic, browser, window, desktop, ⚠️, system error',
       name: 'errorWeb400',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-08T23:17:54.016Z',
     },
     '4131:763': {
@@ -2080,7 +2080,7 @@ export const manifestData: Record<
         'browser, window, error, web, 500, connection, plug, issue, desktop, ⚠️, system error',
       name: 'errorWeb500',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-21T16:50:37.420Z',
     },
     '4131:828': {
@@ -2090,7 +2090,7 @@ export const manifestData: Record<
         'rocket, space, blast, off, moon, party, 🚀, success, celebrate, positive, growth, excitement, success state',
       name: 'rocket',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T04:06:09.078Z',
     },
     '4131:762': {
@@ -2100,7 +2100,7 @@ export const manifestData: Record<
         'trade, immediately, swap, now, start, today, coin, currency, asset, switch, empty state',
       name: 'tradeImmediately',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-29T15:14:03.162Z',
     },
     '4131:761': {
@@ -2109,7 +2109,7 @@ export const manifestData: Record<
       description: 'add, phone, number, account, details, onboarding, security',
       name: 'addPhoneNumber',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T16:44:59.221Z',
     },
     '4131:759': {
@@ -2119,7 +2119,7 @@ export const manifestData: Record<
         'ID, identity, verification, reviewing, documents, onboarding, account,  japan, bank, building, 🇯🇵, 🏦',
       name: 'japanVerifyId',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.102Z',
     },
     '4131:820': {
@@ -2129,7 +2129,7 @@ export const manifestData: Record<
         'document, certified, correct, ribbon, checkmark, confirmed, reviewed, approved, stamped, papers, success state',
       name: 'documentCertified',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-15T15:12:31.150Z',
     },
     '4131:758': {
@@ -2139,7 +2139,7 @@ export const manifestData: Record<
         'clipboard, list, checkmark, confirmed, on, waiting, notify, document, paper, details, success state',
       name: 'onTheList',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.915Z',
     },
     '4131:757': {
@@ -2148,7 +2148,7 @@ export const manifestData: Record<
       description: 'add, bank, building, clock, tower, columns, money, plus, onboarding, details',
       name: 'addBankAccount',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.731Z',
     },
     '4131:861': {
@@ -2158,7 +2158,7 @@ export const manifestData: Record<
         'add, credit, card, plastic, money, plus, payment, method, confirm, details, account',
       name: 'addCreditCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-19T17:00:59.919Z',
     },
     '4131:756': {
@@ -2167,7 +2167,7 @@ export const manifestData: Record<
       description: 'trading, UI, advanced, chart, candlestick, order, book, depth',
       name: 'advancedTradingUi',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.505Z',
     },
     '4131:869': {
@@ -2176,7 +2176,7 @@ export const manifestData: Record<
       description: 'Documents, reviewed, success, checkmark, confirm, complete, ✅, success state',
       name: 'documentSuccess',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.863Z',
     },
     '4131:841': {
@@ -2186,7 +2186,7 @@ export const manifestData: Record<
         'ID, identity, verification, reviewing, magnifying, glass, documents, onboarding, account, 🔍',
       name: 'verifyIdDetails',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-17T19:38:05.566Z',
     },
     '4131:806': {
@@ -2196,7 +2196,7 @@ export const manifestData: Record<
         'ID, Identity, Verification, Issue, Concern, Error, document, license, avatar, ⚠️, warning state',
       name: 'idIssue',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-13T01:01:14.162Z',
     },
     '4131:755': {
@@ -2206,7 +2206,7 @@ export const manifestData: Record<
         'clipboard, verify, info, information, document, warning, error, issue, concern, ⚠️, warning state',
       name: 'verifyInfo',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-10T23:46:21.705Z',
     },
     '4131:754': {
@@ -2216,7 +2216,7 @@ export const manifestData: Record<
         'success, coin, balloon, welcome, account, created, start, trading, success state',
       name: 'readyToTrade',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-01T08:43:57.866Z',
     },
     '4131:753': {
@@ -2225,7 +2225,7 @@ export const manifestData: Record<
       description: 'Id, Drivers, License, Front, Card, documentation, onboarding, verify',
       name: 'idCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T16:44:59.249Z',
     },
     '4131:752': {
@@ -2234,7 +2234,7 @@ export const manifestData: Record<
       description: 'phone, number, 2FA, security, passcode, lock, asterisk',
       name: 'phoneNumber',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T20:20:01.090Z',
     },
     '4131:875': {
@@ -2243,7 +2243,7 @@ export const manifestData: Record<
       description: 'security, lock, onboarding, safety, coin, padlock, secure',
       name: 'securityShield',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T16:44:59.226Z',
     },
     '4131:771': {
@@ -2252,7 +2252,7 @@ export const manifestData: Record<
       description: 'verify, email, envelope, checkmark, nux, onboarding, ✅, success state',
       name: 'verifyEmail',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T16:44:59.156Z',
     },
     '4201:5054': {
@@ -2262,7 +2262,7 @@ export const manifestData: Record<
         'coinbase, one, cb1, authentication, phone, device, mobile, support, fast, quick, lightning, ⚡️, 📞, ☎️, 📱, 🤳, 📳',
       name: 'coinbaseOnePhoneLightningAlt',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:36.696Z',
     },
     '4201:5050': {
@@ -2272,7 +2272,7 @@ export const manifestData: Record<
         'taxes, calculator, charts, pie, data, visualization, numbers, graph, file, organize, check, checkmark, sparkle, %, 📊, 📉, 📈, 🥧, 🧮, 🗄, 🗃, 📁, 📂, 🗂, ✨, ❇️',
       name: 'fileYourCryptoTaxesCheckAlt',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:36.917Z',
     },
     '4201:5049': {
@@ -2282,7 +2282,7 @@ export const manifestData: Record<
         'taxes, calculator, charts, pie, data, visualization, numbers, graph, file, organize, sparkle, %, 📊, 📉, 📈, 🥧, 🧮, 🗄, 🗃, 📁, 📂, 🗂, ✨, ❇️',
       name: 'fileYourCryptoTaxesAlt',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:34.950Z',
     },
     '4201:5048': {
@@ -2291,7 +2291,7 @@ export const manifestData: Record<
       description: '',
       name: 'yieldHoldingAlt',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:35.765Z',
     },
     '4201:5021': {
@@ -2301,7 +2301,7 @@ export const manifestData: Record<
         'send, add, receive, crypto, coin, sparkle, give, offer, 🪙, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️, ✨, ❇️',
       name: 'sendingCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.730Z',
     },
     '4201:5055': {
@@ -2311,7 +2311,7 @@ export const manifestData: Record<
         'bank, fund, stock, currency, money, building, institution, add, plus, addition, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷, ➕',
       name: 'addBank',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.766Z',
     },
     '4201:5056': {
@@ -2321,7 +2321,7 @@ export const manifestData: Record<
         'gray, empty state, recommendation, send, add, people, person, human, sparkle, reward, invitation, invite, request, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️, 💌, ✉️, 📨, 📩, 📧, 🎁, ✨, ❇️, ➕, 📇',
       name: 'referralsBonusGray',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.263Z',
     },
     '4201:5045': {
@@ -2331,7 +2331,7 @@ export const manifestData: Record<
         'recommendation, send, add, people, person, human, sparkle, reward, invitation, invite, request, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️, 💌, ✉️, 📨, 📩, 📧, 🎁, ✨, ❇️, ➕, 📇',
       name: 'referralsBonus',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.260Z',
     },
     '4201:5044': {
@@ -2341,7 +2341,7 @@ export const manifestData: Record<
         'money, cash, currency, arrow, up, 💰, 💵, 💸,  💲, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺, 💶, 💷, 💴, 💰',
       name: 'highFees',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.090Z',
     },
     '4201:5010': {
@@ -2351,7 +2351,7 @@ export const manifestData: Record<
         'wallet, success, check, checkmark, sparkle, connection, connect, link, send, crypto, coin, 🪙, 📲, 📱, 🤳, 📳, 📞, ☎️, 🔗, 🖇, ✅, ✔️, ✨, ❇️',
       name: 'walletReconnectSuccess',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:35.404Z',
     },
     '4201:5039': {
@@ -2361,7 +2361,7 @@ export const manifestData: Record<
         'wallet, phone, device, connection, connect, link, send, crypto, coin, 🪙, 📲, 📱, 🤳, 📳, 📞, ☎️, 🔗, 🖇',
       name: 'walletReconnect',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:35.355Z',
     },
     '4201:5043': {
@@ -2370,7 +2370,7 @@ export const manifestData: Record<
       description: 'transfer, send, receive, wallet, eth, crypto, coin, 🪙',
       name: 'transferEth',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:36.282Z',
     },
     '4201:5040': {
@@ -2380,7 +2380,7 @@ export const manifestData: Record<
         'portfolio, investments, stocks, cash, funds, coin, crypto, management, dashboard, summary, sparkle, trending, browser, 💼, 🧐, 💵, 🤑, 💴, 💸, 💶, 🪙, 💷, 📈, 📉, 🥧, 📊, 👩‍💻, 🧑‍💻, 👨‍💻, 🔎, 🔍, 👀',
       name: 'portfolioOverview',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.207Z',
     },
     '4201:5031': {
@@ -2390,7 +2390,7 @@ export const manifestData: Record<
         'switch, swap, improved, chart, trading, candles, graph, numbers, data, visualization, positive, negative, trending, advanced, 🕯, 🪔, 📈, 📉, 📊',
       name: 'switchAdvancedToSimpleTradingAlt',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:36.252Z',
     },
     '4201:5038': {
@@ -2399,7 +2399,7 @@ export const manifestData: Record<
       description: 'buy, sell, stock, coin, crypto, lower, down, 👇, ⬇️, 🔻, 🪙',
       name: 'focusLimitOrdersAlt',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:34.304Z',
     },
     '4201:5037': {
@@ -2409,7 +2409,7 @@ export const manifestData: Record<
         'chart, trading, candles, graph, numbers, data, visualization, positive, negative, trending, advanced, 🕯, 🪔, 📈, 📉, 📊',
       name: 'accessToAdvancedChartsAlt',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:35.396Z',
     },
     '4201:5034': {
@@ -2419,7 +2419,7 @@ export const manifestData: Record<
         'card, coin, credit, sparkle, list, waiting, pending, delay, check, checkmark, approved, ✅, ✔️, 📋,   💳, ✨, ❇️, success state',
       name: 'cardWaitlist',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:34.375Z',
     },
     '4201:5032': {
@@ -2428,7 +2428,7 @@ export const manifestData: Record<
       description: 'link, connect, apps, wallet, coinbase, 🔗, 🖇',
       name: 'linkCoinbaseWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-08T00:57:37.310Z',
     },
     '4201:5042': {
@@ -2437,7 +2437,7 @@ export const manifestData: Record<
       description: 'gift box, present, rewards, joy, contribution, perk, giving, 🎁, 🎉, 🎊, 🥳',
       name: 'giftBoxRewards',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:37.022Z',
     },
     '4201:5059': {
@@ -2447,7 +2447,7 @@ export const manifestData: Record<
         'chart, trading, coins, crypto, currency, money, graph, numbers, data, visualization, up, down, 📈, 📉, 📊, 🪙, 💵, 💴, 💷, 💸, 💰, 👇, ⬇️, 🔻, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺',
       name: 'trade',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.834Z',
     },
     '4201:5026': {
@@ -2457,7 +2457,7 @@ export const manifestData: Record<
         'chart, trading, dashboard, interface, browser, analyze, breakdown, candles, graph, numbers, data, visualization, 📈, 📉, 📊, 🐀, 💻, 🖥',
       name: 'ratDashboard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:34.924Z',
     },
     '4201:5025': {
@@ -2467,7 +2467,7 @@ export const manifestData: Record<
         'gem, coins, crypto, rewards, excitement, hype, hand, holding, hold, movement, sparkle, 💎, 💍, 👋, ✋, 🤌, 🪙, ✨, ❇️, success state',
       name: 'diamond',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.215Z',
     },
     '4201:5047': {
@@ -2477,7 +2477,7 @@ export const manifestData: Record<
         'card, add, bank, details, credit, excitement, hype, sparkle, ✨, ❇️,  💳, ➕, 🏧, 🏦, 💸, 💵, 💶, 💷, 💴, 🪙, 💎, success state',
       name: 'creditCardExcitement',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.230Z',
     },
     '4201:5024': {
@@ -2487,7 +2487,7 @@ export const manifestData: Record<
         'bank, fund, stock, currency, money, building, institution, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷',
       name: 'currency',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:37.573Z',
     },
     '4201:5023': {
@@ -2497,7 +2497,7 @@ export const manifestData: Record<
         'coinbase, one, cb1, authentication, phone, device, mobile, support, fast, quick, lightning, ⚡️, 📞, ☎️, 📱, 🤳, 📳',
       name: 'coinbaseOnePhoneLightningAlt',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:23.560Z',
     },
     '4201:5018': {
@@ -2507,7 +2507,7 @@ export const manifestData: Record<
         'taxes, calculator, charts, pie, data, visualization, numbers, graph, file, organize, check, checkmark, sparkle, %, 📊, 📉, 📈, 🥧, 🧮, 🗄, 🗃, 📁, 📂, 🗂, ✨, ❇️',
       name: 'fileYourCryptoTaxesCheckAlt',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:23.615Z',
     },
     '4201:5022': {
@@ -2517,7 +2517,7 @@ export const manifestData: Record<
         'taxes, calculator, charts, pie, data, visualization, numbers, graph, file, organize, sparkle, %, 📊, 📉, 📈, 🥧, 🧮, 🗄, 🗃, 📁, 📂, 🗂, ✨, ❇️',
       name: 'fileYourCryptoTaxesAlt',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-25T18:34:10.449Z',
     },
     '4201:5020': {
@@ -2526,7 +2526,7 @@ export const manifestData: Record<
       description: '',
       name: 'yieldHoldingAlt',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-18T15:58:36.578Z',
     },
     '4201:5027': {
@@ -2536,7 +2536,7 @@ export const manifestData: Record<
         'send, add, receive, crypto, coin, sparkle, give, offer, 🪙, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️, ✨, ❇️',
       name: 'sendingCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-13T10:34:29.707Z',
     },
     '4201:5019': {
@@ -2546,7 +2546,7 @@ export const manifestData: Record<
         'bank, fund, stock, currency, money, building, institution, add, plus, addition, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷, ➕',
       name: 'addBank',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:20.943Z',
     },
     '4201:5053': {
@@ -2556,7 +2556,7 @@ export const manifestData: Record<
         'gray, empty state, recommendation, send, add, people, person, human, sparkle, reward, invitation, invite, request, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️, 💌, ✉️, 📨, 📩, 📧, 🎁, ✨, ❇️, ➕, 📇',
       name: 'referralsBonusGray',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:22.209Z',
     },
     '4201:5016': {
@@ -2566,7 +2566,7 @@ export const manifestData: Record<
         'recommendation, send, add, people, person, human, sparkle, reward, invitation, invite, request, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️, 💌, ✉️, 📨, 📩, 📧, 🎁, ✨, ❇️, ➕, 📇',
       name: 'referralsBonus',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-18T15:57:51.554Z',
     },
     '4201:5017': {
@@ -2576,7 +2576,7 @@ export const manifestData: Record<
         'money, cash, currency, arrow, up, 💰, 💵, 💸,  💲, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺, 💶, 💷, 💴, 💰',
       name: 'highFees',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:22.322Z',
     },
     '4201:5028': {
@@ -2586,7 +2586,7 @@ export const manifestData: Record<
         'wallet, success, check, checkmark, sparkle, connection, connect, link, send, crypto, coin, 🪙, 📲, 📱, 🤳, 📳, 📞, ☎️, 🔗, 🖇, ✅, ✔️, ✨, ❇️',
       name: 'walletReconnectSuccess',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:22.779Z',
     },
     '4201:5041': {
@@ -2596,7 +2596,7 @@ export const manifestData: Record<
         'wallet, phone, device, connection, connect, link, send, crypto, coin, 🪙, 📲, 📱, 🤳, 📳, 📞, ☎️, 🔗, 🖇',
       name: 'walletReconnect',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:21.572Z',
     },
     '4201:5015': {
@@ -2605,7 +2605,7 @@ export const manifestData: Record<
       description: 'transfer, send, receive, wallet, eth, crypto, coin, 🪙',
       name: 'transferEth',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-15T16:49:40.068Z',
     },
     '4201:5014': {
@@ -2615,7 +2615,7 @@ export const manifestData: Record<
         'portfolio, investments, stocks, cash, funds, coin, crypto, management, dashboard, summary, sparkle, trending, browser, 💼, 🧐, 💵, 🤑, 💴, 💸, 💶, 🪙, 💷, 📈, 📉, 🥧, 📊, 👩‍💻, 🧑‍💻, 👨‍💻, 🔎, 🔍, 👀',
       name: 'portfolioOverview',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T15:28:10.930Z',
     },
     '4201:5013': {
@@ -2625,7 +2625,7 @@ export const manifestData: Record<
         'switch, swap, improved, chart, trading, candles, graph, numbers, data, visualization, positive, negative, trending, advanced, 🕯, 🪔, 📈, 📉, 📊',
       name: 'switchAdvancedToSimpleTradingAlt',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:22.298Z',
     },
     '4201:5058': {
@@ -2634,7 +2634,7 @@ export const manifestData: Record<
       description: 'buy, sell, stock, coin, crypto, lower, down, 👇, ⬇️, 🔻, 🪙',
       name: 'focusLimitOrdersAlt',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.038Z',
     },
     '4201:5030': {
@@ -2644,7 +2644,7 @@ export const manifestData: Record<
         'chart, trading, candles, graph, numbers, data, visualization, positive, negative, trending, advanced, 🕯, 🪔, 📈, 📉, 📊',
       name: 'accessToAdvancedChartsAlt',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.477Z',
     },
     '4201:5012': {
@@ -2654,7 +2654,7 @@ export const manifestData: Record<
         'card, coin, credit, sparkle, list, waiting, pending, delay, check, checkmark, approved, ✅, ✔️, 📋,   💳, ✨, ❇️, success state',
       name: 'cardWaitlist',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.795Z',
     },
     '4201:5051': {
@@ -2663,7 +2663,7 @@ export const manifestData: Record<
       description: 'link, connect, apps, wallet, coinbase, 🔗, 🖇',
       name: 'linkCoinbaseWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-08T23:17:53.248Z',
     },
     '4201:5011': {
@@ -2672,7 +2672,7 @@ export const manifestData: Record<
       description: 'gift box, present, rewards, joy, contribution, perk, giving, 🎁, 🎉, 🎊, 🥳',
       name: 'giftBoxRewards',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.275Z',
     },
     '4201:5033': {
@@ -2682,7 +2682,7 @@ export const manifestData: Record<
         'chart, trading, coins, crypto, currency, money, graph, numbers, data, visualization, up, down, 📈, 📉, 📊, 🪙, 💵, 💴, 💷, 💸, 💰, 👇, ⬇️, 🔻, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺',
       name: 'trade',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-22T23:34:28.948Z',
     },
     '4201:5009': {
@@ -2692,7 +2692,7 @@ export const manifestData: Record<
         'chart, trading, dashboard, interface, browser, analyze, breakdown, candles, graph, numbers, data, visualization, 📈, 📉, 📊, 🐀, 💻, 🖥',
       name: 'ratDashboard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.016Z',
     },
     '4201:5046': {
@@ -2702,7 +2702,7 @@ export const manifestData: Record<
         'gem, coins, crypto, rewards, excitement, hype, hand, holding, hold, movement, sparkle, 💎, 💍, 👋, ✋, 🤌, 🪙, ✨, ❇️, success state',
       name: 'diamond',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T15:26:00.544Z',
     },
     '4201:5035': {
@@ -2712,7 +2712,7 @@ export const manifestData: Record<
         'card, add, bank, details, credit, excitement, hype, sparkle, ✨, ❇️,  💳, ➕, 🏧, 🏦, 💸, 💵, 💶, 💷, 💴, 🪙, 💎, success state',
       name: 'creditCardExcitement',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:22.004Z',
     },
     '4201:5008': {
@@ -2722,7 +2722,7 @@ export const manifestData: Record<
         'bank, fund, stock, currency, money, building, institution, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷',
       name: 'currency',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-19T18:07:30.854Z',
     },
     '4201:5052': {
@@ -2732,7 +2732,7 @@ export const manifestData: Record<
         'move, give, transmit, sparkle, send, receive, coin, crypto, money, 🪙, 💸, 💵, 💶, 💷, 💴, 💰, ✨, ❇️',
       name: 'transferCoins',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-02T14:13:00.227Z',
     },
     '4201:4836': {
@@ -2741,7 +2741,7 @@ export const manifestData: Record<
       description: 'do, not, use, except, for, GIVE, CRYPTO',
       name: 'givingToOthers',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.532Z',
     },
     '4201:4835': {
@@ -2750,7 +2750,7 @@ export const manifestData: Record<
       description: 'do, not, use, except, for, GIVE, CRYPTO',
       name: 'givingTogether',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.761Z',
     },
     '4131:751': {
@@ -2759,7 +2759,7 @@ export const manifestData: Record<
       description: 'DO, NOT, USE, except, for, Earn',
       name: 'earnProgress',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.959Z',
     },
     '4131:750': {
@@ -2768,7 +2768,7 @@ export const manifestData: Record<
       description: 'DO, NOT, USE, except, for, Earn',
       name: 'earnSuccess',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.541Z',
     },
     '4131:749': {
@@ -2778,7 +2778,7 @@ export const manifestData: Record<
         'Document, docs, processing, confirm, info, information, received, reviewing, yes, correct',
       name: 'processing',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:27.226Z',
     },
     '4131:760': {
@@ -2788,7 +2788,7 @@ export const manifestData: Record<
         'general, generic, confirm, confirmation, success, positive, agree, correct, yes, check, checkmark, mark, animation',
       name: 'success',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-01T19:07:36.905Z',
     },
     '4131:748': {
@@ -2797,7 +2797,7 @@ export const manifestData: Record<
       description: 'general, generic, error, warning, confirmation, negative, animation',
       name: 'bigWarning',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-13T10:38:58.799Z',
     },
     '4131:882': {
@@ -2806,7 +2806,7 @@ export const manifestData: Record<
       description: 'progress, loading, animation, process, processing, working, pending, waiting',
       name: 'polling',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-31T22:24:33.657Z',
     },
     '4201:4834': {
@@ -2815,7 +2815,7 @@ export const manifestData: Record<
       description: 'do, not, use, except, for, GIVE, CRYPTO',
       name: 'givingToOthers',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.135Z',
     },
     '4201:4918': {
@@ -2824,7 +2824,7 @@ export const manifestData: Record<
       description: 'do, not, use, except, for, GIVE, CRYPTO',
       name: 'givingTogether',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.577Z',
     },
     '4225:4434': {
@@ -2833,7 +2833,7 @@ export const manifestData: Record<
       description: 'DO, NOT, USE, except, for, Earn',
       name: 'earnProgress',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:34.270Z',
     },
     '4225:4432': {
@@ -2842,7 +2842,7 @@ export const manifestData: Record<
       description: 'DO, NOT, USE, except, for, Earn',
       name: 'earnSuccess',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:37.424Z',
     },
     '4225:4472': {
@@ -2852,7 +2852,7 @@ export const manifestData: Record<
         'document, docs, processing, confirm, info, information, received, reviewing, yes, correct',
       name: 'processing',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-05T15:18:32.513Z',
     },
     '4225:4463': {
@@ -2862,7 +2862,7 @@ export const manifestData: Record<
         'general, generic, confirm, confirmation, success, positive, agree, correct, yes, check, checkmark, mark, animation',
       name: 'success',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-24T21:11:59.269Z',
     },
     '4225:4406': {
@@ -2871,7 +2871,7 @@ export const manifestData: Record<
       description: 'general, generic, error, warning, confirmation, negative, animation',
       name: 'bigWarning',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-19T16:30:52.478Z',
     },
     '4225:4405': {
@@ -2880,7 +2880,7 @@ export const manifestData: Record<
       description: 'progress, loading, animation, process, processing, working, pending, waiting',
       name: 'polling',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-31T22:24:32.081Z',
     },
     '4201:2591': {
@@ -2890,7 +2890,7 @@ export const manifestData: Record<
         'new, user, education, bullish, case, crypto, currency, chart, up, candlesticks, right, arrow',
       name: 'bullishCase',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:44.124Z',
     },
     '4201:2604': {
@@ -2899,7 +2899,7 @@ export const manifestData: Record<
       description: 'checklist, checkmark, waitlist, clip, board, clipboard, wait, list, sparkle',
       name: 'nuxChecklist',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:44.672Z',
     },
     '4201:2588': {
@@ -2909,7 +2909,7 @@ export const manifestData: Record<
         'NFT, wait, list, waitlist, non, fungible, token, right, click, save, JPG, JPEG, floor, price',
       name: 'waitlistNft',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:57.722Z',
     },
     '4201:2547': {
@@ -2919,7 +2919,7 @@ export const manifestData: Record<
         'gift, crypto, send, card, give, money, coins, asset, token, icon, friends, family, associates',
       name: 'gifting',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:56.697Z',
     },
     '4201:2592': {
@@ -2928,7 +2928,7 @@ export const manifestData: Record<
       description: 'waitlist, signup, sign, up, wait, list, confirm, confirmation, you, made, it',
       name: 'waitlistSignup',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:43.617Z',
     },
     '4201:2596': {
@@ -2938,7 +2938,7 @@ export const manifestData: Record<
         'wallet, app, add, coinbase, sid, kevin, landowners, download, access, defi, nfts, yield, nft, self, storage, currency',
       name: 'walletApp',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:22.790Z',
     },
     '4201:2589': {
@@ -2948,7 +2948,7 @@ export const manifestData: Record<
         'direct, deposit, paycheck, pay, check, bank, roll, automatic, auto, crypto, receive, dca, money, deposit, excitement, celebrate, celebration',
       name: 'directDepositExcitement',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:10.574Z',
     },
     '4201:2595': {
@@ -2958,7 +2958,7 @@ export const manifestData: Record<
         'defi, earn, money, stake, buy, hold, make, money, interest, growth, account, balance',
       name: 'yieldCenterUSDC',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-02T17:22:01.284Z',
     },
     '4201:2580': {
@@ -2967,7 +2967,7 @@ export const manifestData: Record<
       description: 'password, protection, add, plus, sign, lock, padlock, key, secure, security',
       name: 'addPasswordProtection',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:11.218Z',
     },
     '4201:2560': {
@@ -2976,7 +2976,7 @@ export const manifestData: Record<
       description: 'nux, recurring, buys, dca, recur, calendar, weekly, purchase, repeat',
       name: 'nuxRecurringBuys',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:52:56.672Z',
     },
     '4201:2579': {
@@ -2986,7 +2986,7 @@ export const manifestData: Record<
         'nux, popular, asset, star, token, crypto, cryptocurrency, currency, sparkle, ✨',
       name: 'nuxPopularAssets',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T18:56:55.553Z',
     },
     '4201:2600': {
@@ -2996,7 +2996,7 @@ export const manifestData: Record<
         'transfer, crypto, send, to, person, friends, family, associate, fast, sending, immediate, newfi',
       name: 'transferringCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:43.822Z',
     },
     '4201:2576': {
@@ -3006,7 +3006,7 @@ export const manifestData: Record<
         'algo, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'algoStaking',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:11.342Z',
     },
     '4201:2586': {
@@ -3016,7 +3016,7 @@ export const manifestData: Record<
         'borrow, limits, increase, leverage, bill, dollar, fiat, currency, up, arrow, excitment',
       name: 'borrowLimitsAddressed',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T18:56:55.552Z',
     },
     '4201:2574': {
@@ -3026,7 +3026,7 @@ export const manifestData: Record<
         'coinbase, card, spend, crypto, currency, coin, credit, sparkle, excitement, debit',
       name: 'coinbaseCardSparkle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:52:43.882Z',
     },
     '4201:2572': {
@@ -3035,7 +3035,7 @@ export const manifestData: Record<
       description: 'sparkle, star, coin, earn, hodl',
       name: 'sparkleToken',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:53:10.671Z',
     },
     '4201:2597': {
@@ -3045,7 +3045,7 @@ export const manifestData: Record<
         'Earn, crypto, coin, assets, yield, stake, store, interest, return, growth, increase, value',
       name: 'assetForward',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:23.453Z',
     },
     '4201:2584': {
@@ -3055,7 +3055,7 @@ export const manifestData: Record<
         'Earn, crypto, coin, assets, yield, stake, store, interest, return, growth, increase, value',
       name: 'yieldCenter',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:24.467Z',
     },
     '4201:2585': {
@@ -3064,7 +3064,7 @@ export const manifestData: Record<
       description: 'refresh, phone, mobile, app',
       name: 'refreshMobileApp',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:24.188Z',
     },
     '4201:2570': {
@@ -3073,7 +3073,7 @@ export const manifestData: Record<
       description: 'Announcement, advanced, trading,  chart, up, candlesticks, right, arrow',
       name: 'announcementAdvancedTrading',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T21:07:58.642Z',
     },
     '4201:2587': {
@@ -3083,7 +3083,7 @@ export const manifestData: Record<
         'cosmos, atom, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'cosmosStaking',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:11.156Z',
     },
     '4201:2598': {
@@ -3093,7 +3093,7 @@ export const manifestData: Record<
         'dai, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'daiRewards',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T13:29:26.835Z',
     },
     '4201:2569': {
@@ -3103,7 +3103,7 @@ export const manifestData: Record<
         'tezos, xtz, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'tezosStakingRewards',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:57.035Z',
     },
     '4201:2568': {
@@ -3113,7 +3113,7 @@ export const manifestData: Record<
         'coinbase, card, spend, crypto, currency, coin, credit, sparkle, announcement, debit',
       name: 'cardAnnouncement',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:10.782Z',
     },
     '4201:2566': {
@@ -3122,7 +3122,7 @@ export const manifestData: Record<
       description: 'asset, refresh, growth, make, money, asset, more, increase',
       name: 'assetRefresh',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:10.470Z',
     },
     '4201:2564': {
@@ -3131,7 +3131,7 @@ export const manifestData: Record<
       description: 'calendar, 🗓, 📅, check, date,  ',
       name: 'saveTheDate',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:10.958Z',
     },
     '4201:2590': {
@@ -3141,7 +3141,7 @@ export const manifestData: Record<
         'eth, ethereum, 2.0, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'ethereumStaking',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:11.194Z',
     },
     '4201:2583': {
@@ -3150,7 +3150,7 @@ export const manifestData: Record<
       description: ' card, ship, shipped, check',
       name: 'cardShipped',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:11.127Z',
     },
     '4201:2563': {
@@ -3159,7 +3159,7 @@ export const manifestData: Record<
       description: 'moon, dark, darkmode, sparkle, night',
       name: 'darkModeIntroduction',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.615Z',
     },
     '4201:2581': {
@@ -3168,7 +3168,7 @@ export const manifestData: Record<
       description: 'add, multiple, coins, coin, ➕',
       name: 'addMultipleCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:10.112Z',
     },
     '4201:2562': {
@@ -3177,7 +3177,7 @@ export const manifestData: Record<
       description: 'phone, notification, alert, red',
       name: 'phoneNotifications',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-06T20:17:03.414Z',
     },
     '4201:2561': {
@@ -3186,7 +3186,7 @@ export const manifestData: Record<
       description: 'money, rewards, cash, funds, star, reward',
       name: 'moneyRewards',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:10.622Z',
     },
     '4201:2556': {
@@ -3195,7 +3195,7 @@ export const manifestData: Record<
       description: 'interest, you, percentage, coin',
       name: 'interestForYou',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:57.221Z',
     },
     '4201:2559': {
@@ -3204,7 +3204,7 @@ export const manifestData: Record<
       description: 'gift, box, coin, present, arrow, 🎁',
       name: 'giftBoxCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.202Z',
     },
     '4201:2558': {
@@ -3214,7 +3214,7 @@ export const manifestData: Record<
         'nux, popular, asset, star, token, crypto, cryptocurrency, currency, sparkle, ✨',
       name: 'starToken',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:56.891Z',
     },
     '4201:2557': {
@@ -3224,7 +3224,7 @@ export const manifestData: Record<
         'defi, nft, non, fungible, token, decentralized, finance, new, user, education, collect, store, trade, earn',
       name: 'defiNfts',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:57.213Z',
     },
     '4201:2553': {
@@ -3233,7 +3233,7 @@ export const manifestData: Record<
       description: 'nux, earn, crypto, learn, make, more, money, stake, interest',
       name: 'nuxEarnCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-16T20:04:56.346Z',
     },
     '4201:2565': {
@@ -3242,7 +3242,7 @@ export const manifestData: Record<
       description: 'stake, interest, yield, earn, nux, growth, make, money, asset, more, increase',
       name: 'nuxEarnYield',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:53:11.098Z',
     },
     '4201:2551': {
@@ -3251,7 +3251,7 @@ export const manifestData: Record<
       description: 'do, not, use, except, for, GIVE, CRYPTO',
       name: 'givingTogetherSmall',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:43.505Z',
     },
     '4122:11815': {
@@ -3260,7 +3260,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, refresh, restore, refill, 🔄',
       name: 'coinbaseOneRefreshed',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-07T16:17:01.057Z',
     },
     '4122:11865': {
@@ -3270,7 +3270,7 @@ export const manifestData: Record<
         'coinbase, one, cb1, confidence, joy, care, belief, heart, sparkle, faith, ❤️, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 😍, 😻, ✨,  ❇️',
       name: 'coinbaseOneTrusted',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-06T16:36:33.381Z',
     },
     '4122:11871': {
@@ -3279,7 +3279,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, add, more, plus, coin, additional, crypto, 🪙, ➕',
       name: 'coinbaseOneEarnCoins',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-07T16:17:28.070Z',
     },
     '4122:11877': {
@@ -3288,7 +3288,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, trust, true, genuine, actual, verification',
       name: 'coinbaseOneAuthenticator',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-07T16:17:15.453Z',
     },
     '4122:11867': {
@@ -3298,7 +3298,7 @@ export const manifestData: Record<
         'coinbase, one, cb1, shield, protection, guard, defense, cover, safety, security',
       name: 'coinbaseOneShield',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-07T16:18:00.315Z',
     },
     '4122:11850': {
@@ -3308,7 +3308,7 @@ export const manifestData: Record<
         'coinbase, one, cb1, chat bubble, speech, communication, social, interaction, message, 💬',
       name: 'coinbaseOneChat',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-29T15:46:42.212Z',
     },
     '4122:11870': {
@@ -3318,7 +3318,7 @@ export const manifestData: Record<
         'coinbase, one, cb1, bank, fund, stock, currency, money, building, institution, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷',
       name: 'coinbaseOneFiat',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-29T14:18:28.946Z',
     },
     '4122:11725': {
@@ -3328,7 +3328,7 @@ export const manifestData: Record<
         'taxes, calculator, charts, pie, data, visualization, numbers, graph, %, 📊, 📉, 📈, 🥧, 🧮',
       name: 'taxes',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-18T22:28:03.190Z',
     },
     '4122:11778': {
@@ -3337,7 +3337,7 @@ export const manifestData: Record<
       description: 'beta, taxes, charts, pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧',
       name: 'taxBeta',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:25.411Z',
     },
     '4122:11869': {
@@ -3346,7 +3346,7 @@ export const manifestData: Record<
       description: 'calendar, percentage, taxes, money, schedule, organize, funds, %, 📆, 📅, 🗓',
       name: 'taxSeason',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:24.974Z',
     },
     '4122:11776': {
@@ -3355,7 +3355,7 @@ export const manifestData: Record<
       description: 'proof, commerce, purchase, stub, income, revenue, 🧾, 🏷',
       name: 'receipt',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-13T00:53:46.783Z',
     },
     '4122:11748': {
@@ -3364,7 +3364,7 @@ export const manifestData: Record<
       description: 'help, aid, assist, buoy, life saver',
       name: 'support',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-17T09:01:59.074Z',
     },
     '4122:11782': {
@@ -3374,7 +3374,7 @@ export const manifestData: Record<
         'wallet, storage, crypto transactions, pay, retrieve, digital assets, exclamation mark, warning, alert, help, crucial, indication, yellow, 💰, 💵, 💸, ⚠️',
       name: 'walletWarning',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-17T15:42:26.868Z',
     },
     '4122:11852': {
@@ -3384,7 +3384,7 @@ export const manifestData: Record<
         'gray, empty state, chart bar, data, visualization, numbers, pie, graph, 📊, 📉, 📈, 🥧',
       name: 'graphsGray',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.467Z',
     },
     '4122:11849': {
@@ -3393,7 +3393,7 @@ export const manifestData: Record<
       description: 'closed, eye, unwatch, not visible, inactive, 👀, 👁, ❌, 🙅‍♀️, 🙅, 🙅‍♂️, ⛔️',
       name: 'noVisibility',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.453Z',
     },
     '4122:11860': {
@@ -3402,7 +3402,7 @@ export const manifestData: Record<
       description: 'document, empty state',
       name: 'noTransactionsPictogram',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:22:38.999Z',
     },
     '4122:11840': {
@@ -3411,7 +3411,7 @@ export const manifestData: Record<
       description: 'decentralized, finance, blockchain, percentage, exchanges, crypto, coin, 🪙',
       name: 'defiEarnMoment',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:22.656Z',
     },
     '4122:11848': {
@@ -3420,7 +3420,7 @@ export const manifestData: Record<
       description: 'gray, empty state, notification, update, news, new, bell, 🔔, 🛎',
       name: 'noNotificationsGray',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:25.405Z',
     },
     '4122:11818': {
@@ -3429,7 +3429,7 @@ export const manifestData: Record<
       description: 'gray, empty state, unresolved, undecided, unsettled, uncertain',
       name: 'pendingApprovalGray',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.357Z',
     },
     '4122:11846': {
@@ -3438,7 +3438,7 @@ export const manifestData: Record<
       description: 'gray, empty state, collection, bulk, coins, crypto, sparkle, ✨, ❇️',
       name: 'bundleGray',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.481Z',
     },
     '4122:11825': {
@@ -3448,7 +3448,7 @@ export const manifestData: Record<
         'gray, empty state, search, magnifying glass, look, more, sparkle, ✨,  ❇️, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️',
       name: 'exploreGray',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.635Z',
     },
     '4122:11876': {
@@ -3458,7 +3458,7 @@ export const manifestData: Record<
         'chart, trading, computer, desktop, candles, graph, numbers, data, visualization, 📈, 📉, 📊, 💻, 👩‍💻, 🧑‍💻, 👨‍💻',
       name: 'advancedTradingDesktop',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:27.117Z',
     },
     '4122:11851': {
@@ -3468,7 +3468,7 @@ export const manifestData: Record<
         'gray, empty state, wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸',
       name: 'commerceNoPaymentsGray',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.475Z',
     },
     '4122:11838': {
@@ -3478,7 +3478,7 @@ export const manifestData: Record<
         'tag, money, list, commerce, invoice, receipt, form, document, report, add, plus, contract, 📄, 📃, 📜, 📑, 🧾, 💰, 💸, 📈, 📉, ➕, 🏷, 🔖',
       name: 'commerceCheckout',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:27.218Z',
     },
     '4122:11856': {
@@ -3488,7 +3488,7 @@ export const manifestData: Record<
         'money, list, commerce, invoice, receipt, form, document, report, add, plus, contract, 📄, 📃, 📜, 📑, 🧾, 💰, 💸, 📈, 📉, ➕',
       name: 'commerceInvoice',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T18:54:00.683Z',
     },
     '4122:11836': {
@@ -3498,7 +3498,7 @@ export const manifestData: Record<
         'identity, verification, verify, card, magnifying glass, search, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️,  💳, 🆔',
       name: 'newUserChecklistVerifyId',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.296Z',
     },
     '4122:11831': {
@@ -3507,7 +3507,7 @@ export const manifestData: Record<
       description: 'list, users, people, add, sparkle, accounts, ✅, 📋, ✨, ❇️',
       name: 'newUserChecklistCompleteAccount',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.044Z',
     },
     '4122:11829': {
@@ -3516,7 +3516,7 @@ export const manifestData: Record<
       description: 'list, users, people, add, sparkle, accounts, ✅, 📋, ➕, ✨, ❇️',
       name: 'newUserChecklistBuyCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.422Z',
     },
     '4122:11827': {
@@ -3525,7 +3525,7 @@ export const manifestData: Record<
       description: 'calendar, zero, no, fees, cancel, cross, ❌, ⛔️, 📆, 📅, 🗓, 🙅‍♀️, 🙅, 🙅‍♂️',
       name: 'noAnnualFee',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.308Z',
     },
     '4122:11773': {
@@ -3534,7 +3534,7 @@ export const manifestData: Record<
       description: 'connection, radio, circuits, device, 📡, 📻',
       name: 'transistor',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:27.151Z',
     },
     '4122:11839': {
@@ -3544,7 +3544,7 @@ export const manifestData: Record<
         'application, form, agreement, checklist, arrow, upwards, up, direction, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺, 📋, 📄, 📃, 📜, 📑',
       name: 'applyForHigherLimits',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.344Z',
     },
     '4122:11830': {
@@ -3553,7 +3553,7 @@ export const manifestData: Record<
       description: 'gift box, present, rewards, joy, contribution, perk, giving, 🎁, 🎉, 🎊, 🥳',
       name: 'giftbox',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.067Z',
     },
     '4122:11821': {
@@ -3562,7 +3562,7 @@ export const manifestData: Record<
       description: 'order, list, inventory, document, records, form, 📄, 📃, 📜, 📑',
       name: 'orders',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.115Z',
     },
     '4122:11716': {
@@ -3571,7 +3571,7 @@ export const manifestData: Record<
       description: 'globe, earth, international, continents, global, 🌎, 🌍, 🌐, 🌏',
       name: 'worldwide',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-01T22:21:03.574Z',
     },
     '4122:11763': {
@@ -3581,7 +3581,7 @@ export const manifestData: Record<
         'clock, time, record, minute, hour, day, 24 hours, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
       name: 'clock',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.272Z',
     },
     '4122:11808': {
@@ -3591,7 +3591,7 @@ export const manifestData: Record<
         'interesting, sparkle, crystal ball, psychic, forecast, foretell, foresee, ✨, ❇️, 🧐, 🔮, 🧙‍♀️, 🧙, 🧙‍♂️, 🪄',
       name: 'predictionMarkets',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.249Z',
     },
     '4122:11862': {
@@ -3601,7 +3601,7 @@ export const manifestData: Record<
         'time, delay, intermission, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
       name: 'waiting',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.102Z',
     },
     '4122:11659': {
@@ -3610,7 +3610,7 @@ export const manifestData: Record<
       description: 'america, 🇺🇸',
       name: 'usaProduct',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-14T12:22:27.091Z',
     },
     '4122:11817': {
@@ -3619,7 +3619,7 @@ export const manifestData: Record<
       description: 'coin, crypto, food, delicious, slice, pepperoni, margherita, hawaiian, 🍕, 🪙',
       name: 'bitcoinPizza',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-21T23:18:45.031Z',
     },
     '4122:11868': {
@@ -3629,7 +3629,7 @@ export const manifestData: Record<
         'coin, paper, document, documentation, report, contract, record, form, 📄, 📃, 📜, 📑',
       name: 'bitcoinWhitePaper',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T16:11:28.726Z',
     },
     '4122:11844': {
@@ -3638,7 +3638,7 @@ export const manifestData: Record<
       description: 'food, delicious, slice, pepperoni, margherita, hawaiian, 🍕',
       name: 'pizza',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.844Z',
     },
     '4122:11857': {
@@ -3648,7 +3648,7 @@ export const manifestData: Record<
         'identity card, profile, personal, ID, card, 🆔, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️',
       name: 'contactInfo',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-02T20:18:34.017Z',
     },
     '4122:11824': {
@@ -3658,7 +3658,7 @@ export const manifestData: Record<
         'address, contacts, book, people, phone numbers, names, 📕, 📗, 📘, 📙, 📖, 📚, 📓, 📒, 📔, 📇, 📲, 📱, 🤳, 📳, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️',
       name: 'addressBook',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.079Z',
     },
     '4122:11826': {
@@ -3668,7 +3668,7 @@ export const manifestData: Record<
         'calendar, date, year, month, week, confirm, today, present, schedule, 📆, 📅, 🗓',
       name: 'startToday',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.262Z',
     },
     '4122:11820': {
@@ -3678,7 +3678,7 @@ export const manifestData: Record<
         'internet, disconnect, disconnection, wireless, ❌, 🙅‍♀️, 🙅, 🙅‍♂️, ⛔️, error state',
       name: 'noWiFi',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.467Z',
     },
     '4122:11816': {
@@ -3688,7 +3688,7 @@ export const manifestData: Record<
         'check, review, monitor, search, magnifying glass, look, more, add, ➕, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️',
       name: 'reviewAndAdd',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.001Z',
     },
     '4122:11832': {
@@ -3698,7 +3698,7 @@ export const manifestData: Record<
         'quick, time, clock, speed, lightning, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
       name: 'fast',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.051Z',
     },
     '4122:11813': {
@@ -3708,7 +3708,7 @@ export const manifestData: Record<
         'refresh, later, attempt, calendar, waiting, reschedule, 📆, 📅, 🗓, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
       name: 'tryAgainLater',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.656Z',
     },
     '4122:11751': {
@@ -3717,7 +3717,7 @@ export const manifestData: Record<
       description: 'programming, language, microsoft, typing',
       name: 'typeScript',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.963Z',
     },
     '4122:11810': {
@@ -3726,7 +3726,7 @@ export const manifestData: Record<
       description: 'platform, multiple, devices, screens, types, 📲, 📱, 🤳, 📳, 💻, 👩‍💻, 🧑‍💻, 👨‍💻',
       name: 'multiPlatform',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.937Z',
     },
     '4122:11743': {
@@ -3736,7 +3736,7 @@ export const manifestData: Record<
         'question, interview, probe, examine, check, clipboard, checkmark, ✅, ✔️, 📋, 🤔, 🤨, 🧐',
       name: 'takeQuiz',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-18T22:28:03.379Z',
     },
     '4122:11720': {
@@ -3745,7 +3745,7 @@ export const manifestData: Record<
       description: 'chat bubble, speech, communication, social, interaction, message, 💬',
       name: 'chat',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-10T06:14:12.946Z',
     },
     '4122:11805': {
@@ -3754,7 +3754,7 @@ export const manifestData: Record<
       description: 'envelope, letter, online, send, message, 💌, ✉️, 📨, 📩, 📧',
       name: 'email',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-04T00:09:59.386Z',
     },
     '4122:11741': {
@@ -3764,7 +3764,7 @@ export const manifestData: Record<
         'reoccur, regular, schedule, calendar, organize, date, year, month, week, book, refresh,  📆, 📅, 🗓',
       name: 'recurringPurchases',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.982Z',
     },
     '4122:11859': {
@@ -3774,7 +3774,7 @@ export const manifestData: Record<
         'represent, envoy, agent, assign, entrust, give, person, check, checkmark, ✅, ✔️, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️',
       name: 'delegate',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-04T00:09:59.234Z',
     },
     '4122:11842': {
@@ -3784,7 +3784,7 @@ export const manifestData: Record<
         'waiting, time, clipboard, clock, agreement, consent, record, minute, hour, day, 24 hours, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️, 📋',
       name: 'waitingForConsensus',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.339Z',
     },
     '4122:11798': {
@@ -3793,7 +3793,7 @@ export const manifestData: Record<
       description: 'elect, choose, pick, adopt, suggest, check, checkmark, ⬇️, ⬆️, 🗳, ✅, ✔️',
       name: 'enableVoting',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.921Z',
     },
     '4122:11769': {
@@ -3803,7 +3803,7 @@ export const manifestData: Record<
         'document, paper, download, arrow, down, documentation, report, contract, record, form, 📄, 📃, 📜, 📑, 👇, ⬇️, 🔻',
       name: 'formDownload',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.253Z',
     },
     '4122:11796': {
@@ -3812,7 +3812,7 @@ export const manifestData: Record<
       description: 'gear, settings, browser, cog, machine, tool, ⚙️',
       name: 'settings',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-17T22:34:01.588Z',
     },
     '4122:11795': {
@@ -3822,7 +3822,7 @@ export const manifestData: Record<
         'monitor, observe, search, magnifying glass, look, more, sparkle, ✨,  ❇️, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️, 🤑, 🏷',
       name: 'priceTracking',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-04T22:47:43.277Z',
     },
     '4122:11794': {
@@ -3831,7 +3831,7 @@ export const manifestData: Record<
       description: 'globe, currency, money, world, 🌎, 🌍, 🌏, 🌐, 💵, 💸, 🏦, 💴, 💶, 💷',
       name: 'moneySwift',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-29T14:16:14.531Z',
     },
     '4122:11784': {
@@ -3840,7 +3840,7 @@ export const manifestData: Record<
       description: 'arrow, upwards, up, direction, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺',
       name: 'increaseLimits',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:30.336Z',
     },
     '4122:11735': {
@@ -3850,7 +3850,7 @@ export const manifestData: Record<
         'bank, fund, stock, currency, money, building, institution, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷',
       name: 'fiat',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T16:45:10.000Z',
     },
     '4122:11873': {
@@ -3860,7 +3860,7 @@ export const manifestData: Record<
         'wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸,  🔄',
       name: 'walletExchange',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-21T21:32:14.887Z',
     },
     '4122:11791': {
@@ -3870,7 +3870,7 @@ export const manifestData: Record<
         'add, plus, additional, wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸, ➕',
       name: 'addWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T13:07:17.355Z',
     },
     '4122:11853': {
@@ -3880,7 +3880,7 @@ export const manifestData: Record<
         'wallet, storage, crypto transactions, coin, pay, retrieve, digital assets, 💰, 💵, 💸, 🪙',
       name: 'walletDeposit',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-07T17:07:08.708Z',
     },
     '4122:11807': {
@@ -3890,7 +3890,7 @@ export const manifestData: Record<
         'wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸',
       name: 'wallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-21T21:32:22.730Z',
     },
     '4122:11657': {
@@ -3899,7 +3899,7 @@ export const manifestData: Record<
       description: 'check, checkmark, coin, crypto, token, 🪙, ✅, 🧺, ✔️',
       name: 'tokenBaskets',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T16:54:07.366Z',
     },
     '4122:11786': {
@@ -3909,7 +3909,7 @@ export const manifestData: Record<
         'list, watching, collection, listing, plus, addition, add, coins, crypto, 🪙, ✨, ❇️, ➕',
       name: 'addToWatchlist',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-21T23:19:07.588Z',
     },
     '4122:11783': {
@@ -3918,7 +3918,7 @@ export const manifestData: Record<
       description: 'collection, bulk, coins, crypto, sparkle, ✨, ❇️',
       name: 'bundle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-08T11:51:21.000Z',
     },
     '4122:11726': {
@@ -3928,7 +3928,7 @@ export const manifestData: Record<
         'chart, trading, candles, graph, numbers, data, visualization, 📈, 📉, 📊, 🕯, 🪔,',
       name: 'trading',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T15:26:26.055Z',
     },
     '4122:11779': {
@@ -3937,7 +3937,7 @@ export const manifestData: Record<
       description: 'add, more, plus, coin, additional, crypto, 🪙, ➕',
       name: 'multipleAssets',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.789Z',
     },
     '4122:11837': {
@@ -3946,7 +3946,7 @@ export const manifestData: Record<
       description: 'add, more, plus, coin, additional, crypto, 🪙, ➕',
       name: 'moreThanBitcoin',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.725Z',
     },
     '4122:11670': {
@@ -3956,7 +3956,7 @@ export const manifestData: Record<
         'below, currency, money, arrow, downwards, down, direction, 👇, ⬇️, 🔻, 💰, 💸, 💵, 💶, 💷, 💴',
       name: 'lowFees',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.913Z',
     },
     '4122:11767': {
@@ -3966,7 +3966,7 @@ export const manifestData: Record<
         'check, checkmark, money, fees, listing, currency, ✅, ✔️, 💰, 💸, 💵, 💶, 💷, 💴',
       name: 'listingFees',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-14T12:22:49.087Z',
     },
     '4122:11713': {
@@ -3976,7 +3976,7 @@ export const manifestData: Record<
         'bank, fund, stock, currency, money, building, institution, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷',
       name: 'institutions',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-04T00:09:59.447Z',
     },
     '4122:11718': {
@@ -3985,7 +3985,7 @@ export const manifestData: Record<
       description: 'add, more, plus, coin, additional, crypto, 🪙, ➕',
       name: 'earnCoins',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-08T11:52:02.514Z',
     },
     '4122:11764': {
@@ -3994,7 +3994,7 @@ export const manifestData: Record<
       description: 'some, part, divided',
       name: 'partialCoins',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-17T21:56:06.049Z',
     },
     '4122:11835': {
@@ -4003,7 +4003,7 @@ export const manifestData: Record<
       description: 'payment, online, virtual, method',
       name: 'paypal',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.906Z',
     },
     '4122:11777': {
@@ -4013,7 +4013,7 @@ export const manifestData: Record<
         'currency, money, arrow, downwards, down, direction, 👇, ⬇️, 🔻, 💰, 💸, 💵, 💶, 💷, 💴',
       name: 'moneyEarn',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-14T23:26:31.807Z',
     },
     '4122:11834': {
@@ -4022,7 +4022,7 @@ export const manifestData: Record<
       description: 'card, pay, credit, debit, money, 💳, 🏦, 🏧',
       name: 'creditCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-14T18:50:01.173Z',
     },
     '4122:11736': {
@@ -4032,7 +4032,7 @@ export const manifestData: Record<
         'card, cancelled, declined, warning, credit, alert, help, crucial, indication, emphasis, cross, ❌, 🙅‍♀️, 🙅, 🙅‍♂️, 💳, , error state',
       name: 'cardBlocked',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-04T19:55:49.719Z',
     },
     '4122:11662': {
@@ -4042,7 +4042,7 @@ export const manifestData: Record<
         'card, cancelled, warning, credit, alert, help, crucial, indication, emphasis, !, 💳, ⚠️, ❗️, warning state',
       name: 'cardDeclined',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:21.957Z',
     },
     '4122:11802': {
@@ -4051,7 +4051,7 @@ export const manifestData: Record<
       description: 'card, add, credit, 💳, ➕',
       name: 'addCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-14T18:50:00.753Z',
     },
     '4122:11845': {
@@ -4060,7 +4060,7 @@ export const manifestData: Record<
       description: 'card, add, bank, details, credit, 💳, ➕, 🏧, 🏦, 💸, 💵, 💶, 💷, 💴, 🪙, 💎',
       name: 'addPayment',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T12:01:21.336Z',
     },
     '4122:11774': {
@@ -4070,7 +4070,7 @@ export const manifestData: Record<
         'identity card, profile, personal, ID, human, card, 🆔, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️',
       name: 'identityCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T20:42:58.241Z',
     },
     '4122:11804': {
@@ -4079,7 +4079,7 @@ export const manifestData: Record<
       description: 'safe, storage, protection, safety, crypt, security, protect',
       name: 'safe',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.730Z',
     },
     '4122:11772': {
@@ -4088,7 +4088,7 @@ export const manifestData: Record<
       description: 'message, device, text, sms, 2fa, authenticate,  💬',
       name: 'smsAuthenticate',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.679Z',
     },
     '4122:11705': {
@@ -4097,7 +4097,7 @@ export const manifestData: Record<
       description: 'trust, true, genuine, actual, verification, protect, 2fa, device, authenticate',
       name: 'googleAuthenticator',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.473Z',
     },
     '4122:11771': {
@@ -4106,7 +4106,7 @@ export const manifestData: Record<
       description: 'trust, true, genuine, actual, verification, 2fa, authenticate, device',
       name: 'authenticatorAlt',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.166Z',
     },
     '4122:11809': {
@@ -4115,7 +4115,7 @@ export const manifestData: Record<
       description: 'trust, true, genuine, actual, verification, 2fa, authenticate, device',
       name: 'authenticator',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.891Z',
     },
     '4122:11822': {
@@ -4125,7 +4125,7 @@ export const manifestData: Record<
         'check, checkmark, secure, 2fa, protection, identity card, profile, personal, ID, human, card, 🆔, ✅, ✔️, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️, success state',
       name: 'idVerification',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-06T16:37:25.380Z',
     },
     '4122:11770': {
@@ -4135,7 +4135,7 @@ export const manifestData: Record<
         'lock, secure, security, protect, shield, key, protection, guard, defense, cover, safety, 🔑, 🗝, 🔐, 🔒',
       name: 'key',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-10T06:34:59.160Z',
     },
     '4122:11768': {
@@ -4145,7 +4145,7 @@ export const manifestData: Record<
         '2fa, security, trust, true, genuine, actual, verification, protect, key, 🔑, 🗝, 🔐, 🚨',
       name: 'ubiKey',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-10T06:05:12.338Z',
     },
     '4122:11766': {
@@ -4155,7 +4155,7 @@ export const manifestData: Record<
         'trust, true, genuine, actual, verification, phone, device, mobile, support, 2fa, authenticate,  📱, 🤳, 📳',
       name: 'authenticationApp',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.973Z',
     },
     '4122:11841': {
@@ -4164,7 +4164,7 @@ export const manifestData: Record<
       description: 'shield, protection, guard, defense, cover, safety, security',
       name: 'shield',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-04T06:27:31.247Z',
     },
     '4122:11683': {
@@ -4173,7 +4173,7 @@ export const manifestData: Record<
       description: 'lock, no access, latch, blocked, 🔒, 🔐, 🔑, 🗝',
       name: 'lock',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-14T18:50:01.463Z',
     },
     '4122:11760': {
@@ -4182,7 +4182,7 @@ export const manifestData: Record<
       description: 'lock, no access, latch, blocked, 🔒, 🔐, 🔑, 🗝',
       name: 'security',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:20.925Z',
     },
     '4122:11758': {
@@ -4192,7 +4192,7 @@ export const manifestData: Record<
         'laptop, device, computer, charts, play, media, video, 🎥, 📹, ▶️,  💻, 👩‍💻, 🧑‍💻, 👨‍💻',
       name: 'laptopVideo',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-09T21:29:53.751Z',
     },
     '4122:11689': {
@@ -4202,7 +4202,7 @@ export const manifestData: Record<
         'laptop, device, computer, charts, data, visualization, numbers, graph, 📊, 📉, 📈, 💻, 👩‍💻, 🧑‍💻, 👨‍💻',
       name: 'laptopCharts',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.469Z',
     },
     '4122:11756': {
@@ -4212,7 +4212,7 @@ export const manifestData: Record<
         'mobile, device, cellphone, chart bar, data, visualization, numbers, graph, 📊, 📉, 📈, 📲, 📱, 🤳, 📳',
       name: 'mobileCharts',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.037Z',
     },
     '4122:11814': {
@@ -4222,7 +4222,7 @@ export const manifestData: Record<
         'two, factor, authentication, phone, device, mobile, support, add, plus, addition, ➕,  📱, 🤳, 📳',
       name: 'addPhone',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:20.958Z',
     },
     '4122:11755': {
@@ -4231,7 +4231,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: 'browser',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.146Z',
     },
     '4122:11819': {
@@ -4240,7 +4240,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: 'internet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-04T00:09:59.223Z',
     },
     '4122:11754': {
@@ -4249,7 +4249,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: 'mobileNotifcation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.026Z',
     },
     '4122:11752': {
@@ -4258,7 +4258,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: 'browserTransaction',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:20.893Z',
     },
     '4122:11855': {
@@ -4267,7 +4267,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: 'laptop',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-09T21:29:58.612Z',
     },
     '4122:11750': {
@@ -4277,7 +4277,7 @@ export const manifestData: Record<
         'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳, success state',
       name: 'successPhone',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:22.110Z',
     },
     '4122:11745': {
@@ -4286,7 +4286,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: 'phone',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-10T06:14:24.625Z',
     },
     '4122:11744': {
@@ -4295,7 +4295,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: '2fa',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-29T15:22:59.277Z',
     },
     '4122:11742': {
@@ -4304,7 +4304,7 @@ export const manifestData: Record<
       description: 'information, info, resource, help, guide, details, facts, circle, blue,  ℹ️',
       name: 'strongInfo',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-22T16:24:38.989Z',
     },
     '4122:11790': {
@@ -4313,7 +4313,7 @@ export const manifestData: Record<
       description: 'card, coin, credit, sparkle, 💳, ✨, ❇️',
       name: 'cryptoCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:20.888Z',
     },
     '4122:11740': {
@@ -4323,7 +4323,7 @@ export const manifestData: Record<
         'move, give, transmit, phone, coin, crypto, money, 🪙, 📱, 📲, 💸, 💵, 💶, 💷, 💴, 💰',
       name: 'transferSend',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-08T23:01:17.657Z',
     },
     '4122:11739': {
@@ -4333,7 +4333,7 @@ export const manifestData: Record<
         'money, cash, currency, arrow, up, 💰, 💵, 💸,  💲, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺, 💶, 💷, 💴, 💰',
       name: 'higherLimits',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T13:19:51.389Z',
     },
     '4122:11737': {
@@ -4342,7 +4342,7 @@ export const manifestData: Record<
       description: 'trust, true, genuine, actual, verification',
       name: 'authenticatorProgress',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:26.070Z',
     },
     '4122:11699': {
@@ -4352,7 +4352,7 @@ export const manifestData: Record<
         'exclamation mark, warning, alert, help, crucial, indication, red, serious, circle, emphasis, !,  ❗️, error state',
       name: 'strongWarning',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-07T20:44:47.647Z',
     },
     '4122:11734': {
@@ -4361,7 +4361,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'trusted',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-21T13:25:52.866Z',
     },
     '4122:11732': {
@@ -4370,7 +4370,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'easyToUse',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-07T17:07:08.767Z',
     },
     '4122:11730': {
@@ -4379,7 +4379,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'target',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:20.916Z',
     },
     '4122:11729': {
@@ -4388,7 +4388,7 @@ export const manifestData: Record<
       description: 'search, magnifying glass, look, more, sparkle, ✨,  ❇️, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️',
       name: 'explore',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-14T18:50:00.405Z',
     },
     '4122:11797': {
@@ -4397,7 +4397,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'learn',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T16:40:26.431Z',
     },
     '4122:11727': {
@@ -4406,7 +4406,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'barChart',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.150Z',
     },
     '4122:11722': {
@@ -4415,7 +4415,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'notifications',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.366Z',
     },
     '4122:11676': {
@@ -4424,7 +4424,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'gem',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-14T18:50:01.015Z',
     },
     '4122:11721': {
@@ -4434,7 +4434,7 @@ export const manifestData: Record<
         'calendar, date, year, month, week, confirm, verify, schedule, 📆, 📅, 🗓, success state',
       name: 'calendar',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.615Z',
     },
     '4122:11723': {
@@ -4443,7 +4443,7 @@ export const manifestData: Record<
       description: 'notification, update, news, new, bell, 🔔, 🛎',
       name: 'alerts',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-22T15:05:27.962Z',
     },
     '4122:11714': {
@@ -4452,7 +4452,7 @@ export const manifestData: Record<
       description: 'chart bar, data, visualization, numbers, graph, 📊, 📉, 📈',
       name: 'chart',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.515Z',
     },
     '4122:11749': {
@@ -4461,7 +4461,7 @@ export const manifestData: Record<
       description: 'envelope, letter, email, message, 💌, ✉️, 📨, 📩, 📧',
       name: 'envelope',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.247Z',
     },
     '4122:11712': {
@@ -4470,7 +4470,7 @@ export const manifestData: Record<
       description: 'chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧',
       name: 'pieChart',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:24.026Z',
     },
     '4122:11711': {
@@ -4480,7 +4480,7 @@ export const manifestData: Record<
         'exclamation mark, warning, alert, help, crucial, indication, yellow, circle, emphasis, !,  ❗️, warning state',
       name: 'warning',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-07T15:14:15.137Z',
     },
     '4122:11793': {
@@ -4490,7 +4490,7 @@ export const manifestData: Record<
         'circle, checkmark, check, tick, confirmation, success, positive, done, green, circle, ✅, ✔️, success state',
       name: 'done',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T16:44:59.277Z',
     },
     '4122:11707': {
@@ -4499,7 +4499,7 @@ export const manifestData: Record<
       description: 'close, cross, circle, decline, reject, no, cancel, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎',
       name: 'error',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T17:25:17.608Z',
     },
     '4122:11704': {
@@ -4508,7 +4508,7 @@ export const manifestData: Record<
       description: 'arrow, downwards, down, circle, direction, 👇, ⬇️, 🔻',
       name: 'settled',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-11T12:21:04.150Z',
     },
     '4122:11812': {
@@ -4517,7 +4517,7 @@ export const manifestData: Record<
       description: 'add, addition, more, plus, circle, ➕',
       name: 'add',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:23.246Z',
     },
     '4122:11702': {
@@ -4527,7 +4527,7 @@ export const manifestData: Record<
         'circle, checkmark, check, tick, confirmation, success, positive, primary, blue, circle, ✅, ✔️',
       name: 'checkmark',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-13T14:28:14.465Z',
     },
     '4169:1195': {
@@ -4537,7 +4537,7 @@ export const manifestData: Record<
         'gray, empty state, order, list, inventory, document, records, form, 📄, 📃, 📜, 📑',
       name: 'ordersGray',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-12T16:38:24.576Z',
     },
     '4122:11709': {
@@ -4546,7 +4546,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, refresh, restore, refill, 🔄',
       name: 'coinbaseOneRefreshed',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:36.880Z',
     },
     '4122:11701': {
@@ -4556,7 +4556,7 @@ export const manifestData: Record<
         'coinbase, one, cb1, confidence, joy, care, belief, heart, sparkle, faith, ❤️, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 😍, 😻, ✨,  ❇️',
       name: 'coinbaseOneTrusted',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:36.872Z',
     },
     '4122:11803': {
@@ -4565,7 +4565,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, add, more, plus, coin, additional, crypto, 🪙, ➕',
       name: 'coinbaseOneEarnCoins',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:37.157Z',
     },
     '4122:11811': {
@@ -4574,7 +4574,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, trust, true, genuine, actual, verification',
       name: 'coinbaseOneAuthenticator',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:37.207Z',
     },
     '4122:11697': {
@@ -4584,7 +4584,7 @@ export const manifestData: Record<
         'coinbase, one, cb1, shield, protection, guard, defense, cover, safety, security',
       name: 'coinbaseOneShield',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-18T22:28:03.482Z',
     },
     '4122:11680': {
@@ -4594,7 +4594,7 @@ export const manifestData: Record<
         'coinbase, one, cb1, chat bubble, speech, communication, social, interaction, message, 💬',
       name: 'coinbaseOneChat',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:36.887Z',
     },
     '4122:11696': {
@@ -4604,7 +4604,7 @@ export const manifestData: Record<
         'coinbase, one, cb1, bank, fund, stock, currency, money, building, institution, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷',
       name: 'coinbaseOneFiat',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-18T22:28:02.955Z',
     },
     '4122:11692': {
@@ -4614,7 +4614,7 @@ export const manifestData: Record<
         'taxes, calculator, charts, pie, data, visualization, numbers, graph, %, 📊, 📉, 📈, 🥧, 🧮',
       name: 'taxes',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-18T22:28:02.783Z',
     },
     '4122:11690': {
@@ -4623,7 +4623,7 @@ export const manifestData: Record<
       description: 'beta, taxes, charts, pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧',
       name: 'taxBeta',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:34.671Z',
     },
     '4122:11687': {
@@ -4632,7 +4632,7 @@ export const manifestData: Record<
       description: 'calendar, percentage, taxes, money, schedule, organize, funds, %, 📆, 📅, 🗓',
       name: 'taxSeason',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:34.999Z',
     },
     '4122:11686': {
@@ -4641,7 +4641,7 @@ export const manifestData: Record<
       description: 'proof, commerce, purchase, stub, income, revenue, 🧾, 🏷',
       name: 'receipt',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:36.847Z',
     },
     '4182:615': {
@@ -4651,7 +4651,7 @@ export const manifestData: Record<
         'gray, empty state, order, list, inventory, document, records, form, 📄, 📃, 📜, 📑',
       name: 'ordersGray',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:34.660Z',
     },
     '4122:11746': {
@@ -4660,7 +4660,7 @@ export const manifestData: Record<
       description: 'help, aid, assist, buoy, life saver',
       name: 'support',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.307Z',
     },
     '4122:11673': {
@@ -4670,7 +4670,7 @@ export const manifestData: Record<
         'wallet, storage, crypto transactions, pay, retrieve, digital assets, exclamation mark, warning, alert, help, crucial, indication, yellow, 💰, 💵, 💸, ⚠️',
       name: 'walletWarning',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:35.168Z',
     },
     '4122:11828': {
@@ -4680,7 +4680,7 @@ export const manifestData: Record<
         'gray, empty state, chart bar, data, visualization, numbers, pie, graph, 📊, 📉, 📈, 🥧',
       name: 'graphsGray',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.623Z',
     },
     '4122:11775': {
@@ -4689,7 +4689,7 @@ export const manifestData: Record<
       description: 'closed, eye, unwatch, not visible, inactive, 👀, 👁, ❌, 🙅‍♀️, 🙅, 🙅‍♂️, ⛔️',
       name: 'noVisibility',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.185Z',
     },
     '4122:11738': {
@@ -4698,7 +4698,7 @@ export const manifestData: Record<
       description: 'document, empty state',
       name: 'noTransactionsPictogram',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:22:39.039Z',
     },
     '4122:11684': {
@@ -4707,7 +4707,7 @@ export const manifestData: Record<
       description: 'decentralized, finance, blockchain, percentage, exchanges, crypto, coin, 🪙',
       name: 'defiEarnMoment',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.954Z',
     },
     '4122:11781': {
@@ -4716,7 +4716,7 @@ export const manifestData: Record<
       description: 'gray, empty state, notification, update, news, new, bell, 🔔, 🛎',
       name: 'noNotificationsGray',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:34.519Z',
     },
     '4122:11789': {
@@ -4725,7 +4725,7 @@ export const manifestData: Record<
       description: 'gray, empty state, unresolved, undecided, unsettled, uncertain',
       name: 'pendingApprovalGray',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.291Z',
     },
     '4122:11682': {
@@ -4734,7 +4734,7 @@ export const manifestData: Record<
       description: 'gray, empty state, collection, bulk, coins, crypto, sparkle, ✨, ❇️',
       name: 'bundleGray',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.447Z',
     },
     '4122:11679': {
@@ -4744,7 +4744,7 @@ export const manifestData: Record<
         'gray, empty state, search, magnifying glass, look, more, sparkle, ✨,  ❇️, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️',
       name: 'exploreGray',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.640Z',
     },
     '4122:11695': {
@@ -4754,7 +4754,7 @@ export const manifestData: Record<
         'chart, trading, computer, desktop, candles, graph, numbers, data, visualization, 📈, 📉, 📊, 💻, 👩‍💻, 🧑‍💻, 👨‍💻',
       name: 'advancedTradingDesktop',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.759Z',
     },
     '4122:11724': {
@@ -4764,7 +4764,7 @@ export const manifestData: Record<
         'gray, empty state, wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸',
       name: 'commerceNoPaymentsGray',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.375Z',
     },
     '4122:11677': {
@@ -4774,7 +4774,7 @@ export const manifestData: Record<
         'tag, money, list, commerce, invoice, receipt, form, document, report, add, plus, contract, 📄, 📃, 📜, 📑, 🧾, 💰, 💸, 📈, 📉, ➕, 🏷, 🔖',
       name: 'commerceCheckout',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.833Z',
     },
     '4122:11858': {
@@ -4784,7 +4784,7 @@ export const manifestData: Record<
         'money, list, commerce, invoice, receipt, form, document, report, add, plus, contract, 📄, 📃, 📜, 📑, 🧾, 💰, 💸, 📈, 📉, ➕',
       name: 'commerceInvoice',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-08T01:51:28.756Z',
     },
     '4122:11806': {
@@ -4794,7 +4794,7 @@ export const manifestData: Record<
         'identity, verification, verify, card, magnifying glass, search, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️,  💳, 🆔',
       name: 'newUserChecklistVerifyId',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.299Z',
     },
     '4122:11872': {
@@ -4803,7 +4803,7 @@ export const manifestData: Record<
       description: 'list, users, people, add, sparkle, accounts, ✅, 📋, ✨, ❇️',
       name: 'newUserChecklistCompleteAccount',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.088Z',
     },
     '4122:11710': {
@@ -4812,7 +4812,7 @@ export const manifestData: Record<
       description: 'list, users, people, add, sparkle, accounts, ✅, 📋, ➕, ✨, ❇️',
       name: 'newUserChecklistBuyCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.789Z',
     },
     '4122:11703': {
@@ -4821,7 +4821,7 @@ export const manifestData: Record<
       description: 'calendar, zero, no, fees, cancel, cross, ❌, ⛔️, 📆, 📅, 🗓, 🙅‍♀️, 🙅, 🙅‍♂️',
       name: 'noAnnualFee',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.575Z',
     },
     '4122:11663': {
@@ -4830,7 +4830,7 @@ export const manifestData: Record<
       description: 'connection, radio, circuits, device, 📡, 📻',
       name: 'transistor',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.728Z',
     },
     '4122:11800': {
@@ -4840,7 +4840,7 @@ export const manifestData: Record<
         'application, form, agreement, checklist, arrow, upwards, up, direction, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺, 📋, 📄, 📃, 📜, 📑',
       name: 'applyForHigherLimits',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.694Z',
     },
     '4122:11666': {
@@ -4849,7 +4849,7 @@ export const manifestData: Record<
       description: 'gift box, present, rewards, joy, contribution, perk, giving, 🎁, 🎉, 🎊, 🥳',
       name: 'giftbox',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.701Z',
     },
     '4122:11792': {
@@ -4858,7 +4858,7 @@ export const manifestData: Record<
       description: 'order, list, inventory, document, records, form, 📄, 📃, 📜, 📑',
       name: 'orders',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.480Z',
     },
     '4122:11847': {
@@ -4867,7 +4867,7 @@ export const manifestData: Record<
       description: 'globe, earth, international, continents, global, 🌎, 🌍, 🌐, 🌏',
       name: 'worldwide',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.468Z',
     },
     '4122:11854': {
@@ -4877,7 +4877,7 @@ export const manifestData: Record<
         'clock, time, record, minute, hour, day, 24 hours, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
       name: 'clock',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.645Z',
     },
     '4122:11675': {
@@ -4887,7 +4887,7 @@ export const manifestData: Record<
         'interesting, sparkle, crystal ball, psychic, forecast, foretell, foresee, ✨, ❇️, 🧐, 🔮, 🧙‍♀️, 🧙, 🧙‍♂️, 🪄',
       name: 'predictionMarkets',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.015Z',
     },
     '4122:11674': {
@@ -4897,7 +4897,7 @@ export const manifestData: Record<
         'time, delay, intermission, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
       name: 'waiting',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.725Z',
     },
     '4122:11672': {
@@ -4906,7 +4906,7 @@ export const manifestData: Record<
       description: 'america, 🇺🇸',
       name: 'usaProduct',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.190Z',
     },
     '4122:11761': {
@@ -4915,7 +4915,7 @@ export const manifestData: Record<
       description: 'coin, crypto, food, delicious, slice, pepperoni, margherita, hawaiian, 🍕, 🪙',
       name: 'bitcoinPizza',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.137Z',
     },
     '4122:11671': {
@@ -4925,7 +4925,7 @@ export const manifestData: Record<
         'coin, paper, document, documentation, report, contract, record, form, 📄, 📃, 📜, 📑',
       name: 'bitcoinWhitePaper',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.137Z',
     },
     '4122:11694': {
@@ -4934,7 +4934,7 @@ export const manifestData: Record<
       description: 'food, delicious, slice, pepperoni, margherita, hawaiian, 🍕',
       name: 'pizza',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.607Z',
     },
     '4122:11669': {
@@ -4944,7 +4944,7 @@ export const manifestData: Record<
         'identity card, profile, personal, ID, card, 🆔, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️',
       name: 'contactInfo',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.409Z',
     },
     '4122:11799': {
@@ -4954,7 +4954,7 @@ export const manifestData: Record<
         'address, contacts, book, people, phone numbers, names, 📕, 📗, 📘, 📙, 📖, 📚, 📓, 📒, 📔, 📇, 📲, 📱, 🤳, 📳, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️',
       name: 'addressBook',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.601Z',
     },
     '4122:11667': {
@@ -4964,7 +4964,7 @@ export const manifestData: Record<
         'calendar, date, year, month, week, confirm, today, present, schedule, 📆, 📅, 🗓',
       name: 'startToday',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.818Z',
     },
     '4122:11664': {
@@ -4974,7 +4974,7 @@ export const manifestData: Record<
         'internet, disconnect, disconnection, wireless, ❌, 🙅‍♀️, 🙅, 🙅‍♂️, ⛔️, error state',
       name: 'noWiFi',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.237Z',
     },
     '4122:11685': {
@@ -4984,7 +4984,7 @@ export const manifestData: Record<
         'check, review, monitor, search, magnifying glass, look, more, add, ➕, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️',
       name: 'reviewAndAdd',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.083Z',
     },
     '4122:11719': {
@@ -4994,7 +4994,7 @@ export const manifestData: Record<
         'quick, time, clock, speed, lightning, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
       name: 'fast',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.082Z',
     },
     '4122:11731': {
@@ -5004,7 +5004,7 @@ export const manifestData: Record<
         'refresh, later, attempt, calendar, waiting, reschedule, 📆, 📅, 🗓, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
       name: 'tryAgainLater',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.105Z',
     },
     '4122:11706': {
@@ -5013,7 +5013,7 @@ export const manifestData: Record<
       description: 'programming, language, microsoft, typing',
       name: 'typeScript',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.987Z',
     },
     '4122:11681': {
@@ -5022,7 +5022,7 @@ export const manifestData: Record<
       description: 'platform, multiple, devices, screens, types, 📲, 📱, 🤳, 📳, 💻, 👩‍💻, 🧑‍💻, 👨‍💻',
       name: 'multiPlatform',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.743Z',
     },
     '4122:11678': {
@@ -5032,7 +5032,7 @@ export const manifestData: Record<
         'question, interview, probe, examine, check, clipboard, checkmark, ✅, ✔️, 📋, 🤔, 🤨, 🧐',
       name: 'takeQuiz',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.690Z',
     },
     '4122:11700': {
@@ -5041,7 +5041,7 @@ export const manifestData: Record<
       description: 'chat bubble, speech, communication, social, interaction, message, 💬',
       name: 'chat',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-29T15:45:16.857Z',
     },
     '4122:11661': {
@@ -5050,7 +5050,7 @@ export const manifestData: Record<
       description: 'envelope, letter, online, send, message, 💌, ✉️, 📨, 📩, 📧',
       name: 'email',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.461Z',
     },
     '4122:11660': {
@@ -5060,7 +5060,7 @@ export const manifestData: Record<
         'reoccur, regular, schedule, calendar, organize, date, year, month, week, book, refresh,  📆, 📅, 🗓',
       name: 'recurringPurchases',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.264Z',
     },
     '4122:11875': {
@@ -5070,7 +5070,7 @@ export const manifestData: Record<
         'represent, envoy, agent, assign, entrust, give, person, check, checkmark, ✅, ✔️, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️',
       name: 'delegate',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.939Z',
     },
     '4122:11863': {
@@ -5080,7 +5080,7 @@ export const manifestData: Record<
         'waiting, time, clipboard, clock, agreement, consent, record, minute, hour, day, 24 hours, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️, 📋',
       name: 'waitingForConsensus',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.686Z',
     },
     '4122:11785': {
@@ -5089,7 +5089,7 @@ export const manifestData: Record<
       description: 'elect, choose, pick, adopt, suggest, check, checkmark, ⬇️, ⬆️, 🗳, ✅, ✔️',
       name: 'enableVoting',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.782Z',
     },
     '4122:11658': {
@@ -5099,7 +5099,7 @@ export const manifestData: Record<
         'document, paper, download, arrow, down, documentation, report, contract, record, form, 📄, 📃, 📜, 📑, 👇, ⬇️, 🔻',
       name: 'formDownload',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.644Z',
     },
     '4122:11866': {
@@ -5108,7 +5108,7 @@ export const manifestData: Record<
       description: 'gear, settings, browser, cog, machine, tool, ⚙️',
       name: 'settings',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-10T17:39:04.414Z',
     },
     '4122:11823': {
@@ -5118,7 +5118,7 @@ export const manifestData: Record<
         'monitor, observe, search, magnifying glass, look, more, sparkle, ✨,  ❇️, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️, 🤑, 🏷',
       name: 'priceTracking',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.665Z',
     },
     '4122:11656': {
@@ -5127,7 +5127,7 @@ export const manifestData: Record<
       description: 'globe, currency, money, world, 🌎, 🌍, 🌏, 🌐, 💵, 💸, 🏦, 💴, 💶, 💷',
       name: 'moneySwift',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.724Z',
     },
     '4122:11717': {
@@ -5136,7 +5136,7 @@ export const manifestData: Record<
       description: 'arrow, upwards, up, direction, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺',
       name: 'increaseLimits',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.644Z',
     },
     '4122:11655': {
@@ -5146,7 +5146,7 @@ export const manifestData: Record<
         'bank, fund, stock, currency, money, building, institution, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷',
       name: 'fiat',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.149Z',
     },
     '4122:11654': {
@@ -5156,7 +5156,7 @@ export const manifestData: Record<
         'wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸,  🔄',
       name: 'walletExchange',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.794Z',
     },
     '4122:11759': {
@@ -5166,7 +5166,7 @@ export const manifestData: Record<
         'add, plus, additional, wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸, ➕',
       name: 'addWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.481Z',
     },
     '4122:11753': {
@@ -5176,7 +5176,7 @@ export const manifestData: Record<
         'wallet, storage, crypto transactions, coin, pay, retrieve, digital assets, 💰, 💵, 💸, 🪙',
       name: 'walletDeposit',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-07T22:13:43.861Z',
     },
     '4122:11652': {
@@ -5186,7 +5186,7 @@ export const manifestData: Record<
         'wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸',
       name: 'wallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.593Z',
     },
     '4122:11651': {
@@ -5195,7 +5195,7 @@ export const manifestData: Record<
       description: 'check, checkmark, coin, crypto, token, 🪙, ✅, 🧺, ✔️',
       name: 'tokenBaskets',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.897Z',
     },
     '4122:11757': {
@@ -5205,7 +5205,7 @@ export const manifestData: Record<
         'list, watching, collection, listing, plus, addition, add, coins, crypto, 🪙, ✨, ❇️, ➕',
       name: 'addToWatchlist',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.682Z',
     },
     '4122:11788': {
@@ -5214,7 +5214,7 @@ export const manifestData: Record<
       description: 'collection, bulk, coins, crypto, sparkle, ✨, ❇️',
       name: 'bundle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.177Z',
     },
     '4122:11668': {
@@ -5224,7 +5224,7 @@ export const manifestData: Record<
         'chart, trading, candles, graph, numbers, data, visualization, 📈, 📉, 📊, 🕯, 🪔',
       name: 'trading',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.253Z',
     },
     '4122:11650': {
@@ -5233,7 +5233,7 @@ export const manifestData: Record<
       description: 'add, more, plus, coin, additional, crypto, 🪙, ➕',
       name: 'multipleAssets',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.568Z',
     },
     '4122:11649': {
@@ -5242,7 +5242,7 @@ export const manifestData: Record<
       description: 'add, more, plus, coin, additional, crypto, 🪙, ➕',
       name: 'moreThanBitcoin',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.175Z',
     },
     '4122:11648': {
@@ -5252,7 +5252,7 @@ export const manifestData: Record<
         'below, currency, money, arrow, downwards, down, direction, 👇, ⬇️, 🔻, 💰, 💸, 💵, 💶, 💷, 💴',
       name: 'lowFees',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.528Z',
     },
     '4122:11647': {
@@ -5262,7 +5262,7 @@ export const manifestData: Record<
         'check, checkmark, money, fees, listing, currency, ✅, ✔️, 💰, 💸, 💵, 💶, 💷, 💴',
       name: 'listingFees',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-14T12:21:20.748Z',
     },
     '4122:11780': {
@@ -5272,7 +5272,7 @@ export const manifestData: Record<
         'bank, fund, stock, currency, money, building, institution, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷',
       name: 'institutions',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.510Z',
     },
     '4122:11715': {
@@ -5281,7 +5281,7 @@ export const manifestData: Record<
       description: 'add, more, plus, coin, additional, crypto, 🪙, ➕',
       name: 'earnCoins',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.311Z',
     },
     '4122:11765': {
@@ -5290,7 +5290,7 @@ export const manifestData: Record<
       description: 'some, part, divided',
       name: 'partialCoins',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.694Z',
     },
     '4122:11646': {
@@ -5299,7 +5299,7 @@ export const manifestData: Record<
       description: 'payment, online, virtual, method',
       name: 'paypal',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.899Z',
     },
     '4122:11645': {
@@ -5309,7 +5309,7 @@ export const manifestData: Record<
         'currency, money, arrow, downwards, down, direction, 👇, ⬇️, 🔻, 💰, 💸, 💵, 💶, 💷, 💴',
       name: 'moneyEarn',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.719Z',
     },
     '4122:11644': {
@@ -5318,7 +5318,7 @@ export const manifestData: Record<
       description: 'card, pay, credit, debit, money, 💳, 🏦, 🏧',
       name: 'creditCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.155Z',
     },
     '4122:11643': {
@@ -5328,7 +5328,7 @@ export const manifestData: Record<
         'card, cancelled, declined, warning, credit, alert, help, crucial, indication, emphasis, cross, ❌, 🙅‍♀️, 🙅, 🙅‍♂️, 💳, error state',
       name: 'cardBlocked',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-04T19:16:49.267Z',
     },
     '4122:11642': {
@@ -5338,7 +5338,7 @@ export const manifestData: Record<
         'card, cancelled, warning, credit, alert, help, crucial, indication, emphasis, !, 💳, ⚠️, ❗️, warning state',
       name: 'cardDeclined',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:35.721Z',
     },
     '4122:11641': {
@@ -5347,7 +5347,7 @@ export const manifestData: Record<
       description: 'card, add, credit, 💳, ➕',
       name: 'addCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-19T17:01:17.041Z',
     },
     '4122:11640': {
@@ -5356,7 +5356,7 @@ export const manifestData: Record<
       description: 'card, add, bank, details, credit, 💳, ➕, 🏧, 🏦, 💸, 💵, 💶, 💷, 💴, 🪙, 💎',
       name: 'addPayment',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.133Z',
     },
     '4122:11639': {
@@ -5366,7 +5366,7 @@ export const manifestData: Record<
         'identity card, profile, personal, ID, human, card, 🆔, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️',
       name: 'identityCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-06T16:14:54.042Z',
     },
     '4122:11843': {
@@ -5375,7 +5375,7 @@ export const manifestData: Record<
       description: 'safe, storage, protection, safety, crypt, security, protect',
       name: 'safe',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.283Z',
     },
     '4122:11638': {
@@ -5384,7 +5384,7 @@ export const manifestData: Record<
       description: 'message, device, text, sms, 2fa, authenticate,  💬',
       name: 'smsAuthenticate',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.224Z',
     },
     '4122:11637': {
@@ -5393,7 +5393,7 @@ export const manifestData: Record<
       description: 'trust, true, genuine, actual, verification, protect, 2fa, device, authenticate',
       name: 'googleAuthenticator',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.041Z',
     },
     '4122:11636': {
@@ -5402,7 +5402,7 @@ export const manifestData: Record<
       description: 'trust, true, genuine, actual, verification, 2fa, authenticate, device',
       name: 'authenticatorAlt',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.969Z',
     },
     '4122:11693': {
@@ -5411,7 +5411,7 @@ export const manifestData: Record<
       description: 'trust, true, genuine, actual, verification, 2fa, authenticate, device',
       name: 'authenticator',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.060Z',
     },
     '4122:11635': {
@@ -5421,7 +5421,7 @@ export const manifestData: Record<
         'check, checkmark, secure, 2fa, protection, identity card, profile, personal, ID, human, card, 🆔, ✅, ✔️, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️, success state',
       name: 'idVerification',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.969Z',
     },
     '4122:11634': {
@@ -5431,7 +5431,7 @@ export const manifestData: Record<
         'lock, secure, security, protect, shield, key, protection, guard, defense, cover, safety, 🔑, 🗝, 🔐, 🔒',
       name: 'key',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-22T13:57:50.764Z',
     },
     '4122:11633': {
@@ -5441,7 +5441,7 @@ export const manifestData: Record<
         '2fa, security, trust, true, genuine, actual, verification, protect, key, 🔑, 🗝, 🔐, 🚨',
       name: 'ubiKey',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.900Z',
     },
     '4122:11632': {
@@ -5451,7 +5451,7 @@ export const manifestData: Record<
         'trust, true, genuine, actual, verification, phone, device, mobile, support, 2fa, authenticate,  📱, 🤳, 📳',
       name: 'authenticationApp',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.365Z',
     },
     '4122:11631': {
@@ -5460,7 +5460,7 @@ export const manifestData: Record<
       description: 'shield, protection, guard, defense, cover, safety, security',
       name: 'shield',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.753Z',
     },
     '4122:11630': {
@@ -5469,7 +5469,7 @@ export const manifestData: Record<
       description: 'lock, no access, latch, blocked, 🔒, 🔐, 🔑, 🗝',
       name: 'lock',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.492Z',
     },
     '4122:11864': {
@@ -5478,7 +5478,7 @@ export const manifestData: Record<
       description: 'lock, no access, latch, blocked, 🔒, 🔐, 🔑, 🗝',
       name: 'security',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-01T23:28:16.490Z',
     },
     '4122:11629': {
@@ -5488,7 +5488,7 @@ export const manifestData: Record<
         'laptop, device, computer, charts, play, media, video, 🎥, 📹, ▶️,  💻, 👩‍💻, 🧑‍💻, 👨‍💻',
       name: 'laptopVideo',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.312Z',
     },
     '4122:11628': {
@@ -5498,7 +5498,7 @@ export const manifestData: Record<
         'laptop, device, computer, charts, data, visualization, numbers, graph, 📊, 📉, 📈, 💻, 👩‍💻, 🧑‍💻, 👨‍💻',
       name: 'laptopCharts',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.457Z',
     },
     '4122:11787': {
@@ -5508,7 +5508,7 @@ export const manifestData: Record<
         'mobile, device, cellphone, chart bar, data, visualization, numbers, graph, 📊, 📉, 📈, 📲, 📱, 🤳, 📳',
       name: 'mobileCharts',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.992Z',
     },
     '4122:11627': {
@@ -5518,7 +5518,7 @@ export const manifestData: Record<
         'two, factor, authentication, phone, device, mobile, support, add, plus, addition, ➕,  📱, 🤳, 📳',
       name: 'addPhone',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.520Z',
     },
     '4122:11626': {
@@ -5527,7 +5527,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: 'browser',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.591Z',
     },
     '4122:11625': {
@@ -5536,7 +5536,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: 'internet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.065Z',
     },
     '4122:11624': {
@@ -5545,7 +5545,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: 'mobileNotifcation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.450Z',
     },
     '4122:11733': {
@@ -5554,7 +5554,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: 'browserTransaction',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.464Z',
     },
     '4122:11623': {
@@ -5563,7 +5563,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: 'laptop',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.525Z',
     },
     '4122:11622': {
@@ -5573,7 +5573,7 @@ export const manifestData: Record<
         'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳, success state',
       name: 'successPhone',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.262Z',
     },
     '4122:11621': {
@@ -5582,7 +5582,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: 'phone',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.538Z',
     },
     '4122:11708': {
@@ -5591,7 +5591,7 @@ export const manifestData: Record<
       description: 'two, factor, authentication, phone, device, mobile, support, 📱, 🤳, 📳',
       name: '2fa',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-13T20:37:59.179Z',
     },
     '4122:11833': {
@@ -5600,7 +5600,7 @@ export const manifestData: Record<
       description: 'information, info, resource, help, guide, details, facts, circle, blue,  ℹ️',
       name: 'strongInfo',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-10T21:48:56.302Z',
     },
     '4122:11620': {
@@ -5609,7 +5609,7 @@ export const manifestData: Record<
       description: 'card, coin, credit, sparkle, 💳, ✨, ❇️',
       name: 'cryptoCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.491Z',
     },
     '4122:11874': {
@@ -5619,7 +5619,7 @@ export const manifestData: Record<
         'move, give, transmit, phone, coin, crypto, money, 🪙, 📱, 📲, 💸, 💵, 💶, 💷, 💴, 💰',
       name: 'transferSend',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-21T21:35:44.897Z',
     },
     '4122:11619': {
@@ -5629,7 +5629,7 @@ export const manifestData: Record<
         'money, cash, currency, arrow, up, 💰, 💵, 💸,  💲, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺, 💶, 💷, 💴, 💰',
       name: 'higherLimits',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.517Z',
     },
     '4122:11762': {
@@ -5638,7 +5638,7 @@ export const manifestData: Record<
       description: 'trust, true, genuine, actual, verification',
       name: 'authenticatorProgress',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.002Z',
     },
     '4122:11618': {
@@ -5648,7 +5648,7 @@ export const manifestData: Record<
         'exclamation mark, warning, alert, help, crucial, indication, red, serious, circle, emphasis, !,  ❗️, error state',
       name: 'strongWarning',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-06T20:17:44.924Z',
     },
     '4122:11617': {
@@ -5657,7 +5657,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'trusted',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.363Z',
     },
     '4122:11616': {
@@ -5666,7 +5666,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'easyToUse',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:33.574Z',
     },
     '4122:11861': {
@@ -5675,7 +5675,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'target',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.830Z',
     },
     '4122:11688': {
@@ -5684,7 +5684,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'explore',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.208Z',
     },
     '4122:11615': {
@@ -5693,7 +5693,7 @@ export const manifestData: Record<
       description: '',
       name: 'learn',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T16:44:25.134Z',
     },
     '4122:11614': {
@@ -5702,7 +5702,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'barChart',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.105Z',
     },
     '4122:11691': {
@@ -5711,7 +5711,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'notifications',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-29T18:50:11.799Z',
     },
     '4122:11653': {
@@ -5720,7 +5720,7 @@ export const manifestData: Record<
       description: 'diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️',
       name: 'gem',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:32.674Z',
     },
     '4122:11613': {
@@ -5730,7 +5730,7 @@ export const manifestData: Record<
         'calendar, date, year, month, week, confirm, verify, schedule, 📆, 📅, 🗓, success state',
       name: 'calendar',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.425Z',
     },
     '4122:11612': {
@@ -5739,7 +5739,7 @@ export const manifestData: Record<
       description: 'notification, update, news, new, bell, 🔔, 🛎',
       name: 'alerts',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-13T17:57:31.004Z',
     },
     '4122:11698': {
@@ -5748,7 +5748,7 @@ export const manifestData: Record<
       description: 'chart bar, data, visualization, numbers, graph, 📊, 📉, 📈',
       name: 'chart',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.200Z',
     },
     '4122:11611': {
@@ -5757,7 +5757,7 @@ export const manifestData: Record<
       description: 'envelope, letter, email, message, 💌, ✉️, 📨, 📩, 📧',
       name: 'envelope',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:37.439Z',
     },
     '4122:11610': {
@@ -5766,7 +5766,7 @@ export const manifestData: Record<
       description: 'chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧',
       name: 'pieChart',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.728Z',
     },
     '4122:11747': {
@@ -5776,7 +5776,7 @@ export const manifestData: Record<
         'exclamation mark, warning, alert, help, crucial, indication, yellow, circle, emphasis, !,  ❗️, warning state',
       name: 'warning',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-07T23:03:10.027Z',
     },
     '4122:11609': {
@@ -5786,7 +5786,7 @@ export const manifestData: Record<
         'circle, checkmark, check, tick, confirmation, success, positive, done, green, circle, ✅, ✔️, success state',
       name: 'done',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:34.216Z',
     },
     '4122:11608': {
@@ -5795,7 +5795,7 @@ export const manifestData: Record<
       description: 'close, cross, circle, decline, reject, no, cancel, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎',
       name: 'error',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T17:25:19.662Z',
     },
     '4122:11728': {
@@ -5804,7 +5804,7 @@ export const manifestData: Record<
       description: 'arrow, downwards, down, circle, direction, 👇, ⬇️, 🔻',
       name: 'settled',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.935Z',
     },
     '4122:11801': {
@@ -5813,7 +5813,7 @@ export const manifestData: Record<
       description: 'add, addition, more, plus, circle, ➕',
       name: 'add',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:36.290Z',
     },
     '4122:11665': {
@@ -5823,7 +5823,7 @@ export const manifestData: Record<
         'circle, checkmark, check, tick, confirmation, success, positive, primary, blue, circle, ✅, ✔️',
       name: 'checkmark',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-23T19:32:24.496Z',
     },
     '4201:2549': {
@@ -5833,7 +5833,7 @@ export const manifestData: Record<
         'defi, nft, non, fungible, token, decentralized, finance, new, user, education, collect, store, trade, earn',
       name: 'defiNfts',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-21T23:15:17.800Z',
     },
     '4201:2575': {
@@ -5843,7 +5843,7 @@ export const manifestData: Record<
         'new, user, education, bullish, case, crypto, currency, chart, up, candlesticks, right, arrow',
       name: 'bullishCase',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:10.770Z',
     },
     '4201:2582': {
@@ -5852,7 +5852,7 @@ export const manifestData: Record<
       description: 'checklist, checkmark, waitlist, clip, board, clipboard, wait, list, sparkle',
       name: 'nuxChecklist',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-22T15:05:28.232Z',
     },
     '4201:2545': {
@@ -5862,7 +5862,7 @@ export const manifestData: Record<
         'NFT, wait, list, waitlist, non, fungible, token, right, click, save, JPG, JPEG, floor, price',
       name: 'waitlistNft',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-14T18:50:01.057Z',
     },
     '4201:2544': {
@@ -5872,7 +5872,7 @@ export const manifestData: Record<
         'gift, crypto, send, card, give, money, coins, asset, token, icon, friends, family, associates',
       name: 'gifting',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T16:44:59.294Z',
     },
     '4201:2543': {
@@ -5881,7 +5881,7 @@ export const manifestData: Record<
       description: 'waitlist, signup, sign, up, wait, list, confirm, confirmation, you, made, it',
       name: 'waitlistSignup',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:57.055Z',
     },
     '4201:2542': {
@@ -5891,7 +5891,7 @@ export const manifestData: Record<
         'wallet, app, add, coinbase, sid, kevin, landowners, download, access, defi, nfts, yield, nft, self, storage, currency',
       name: 'walletApp',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-10T18:33:51.060Z',
     },
     '4201:2541': {
@@ -5901,7 +5901,7 @@ export const manifestData: Record<
         'direct, deposit, paycheck, pay, check, bank, roll, automatic, auto, crypto, receive, dca, money, deposit, excitement, celebrate, celebration',
       name: 'directDepositExcitement',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:23.038Z',
     },
     '4201:2540': {
@@ -5911,7 +5911,7 @@ export const manifestData: Record<
         'yield, center, usdc, earn, interest, growth, money, stake, reward, more, proof, assets',
       name: 'yieldCenterUSDC',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-02T15:24:28.615Z',
     },
     '4201:2555': {
@@ -5921,7 +5921,7 @@ export const manifestData: Record<
         'defi, earn, money, stake, buy, hold, make, money, interest, growth, account, balance',
       name: 'defiEarnAnnouncement',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-07T20:44:47.622Z',
     },
     '4201:2539': {
@@ -5930,7 +5930,7 @@ export const manifestData: Record<
       description: 'password, protection, add, plus, sign, lock, padlock, key, secure, security',
       name: 'addPasswordProtection',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-07T18:25:27.325Z',
     },
     '4201:2537': {
@@ -5939,7 +5939,7 @@ export const manifestData: Record<
       description: 'nux, recurring, buys, dca, recur, calendar, weekly, purchase, repeat',
       name: 'nuxRecurringBuys',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:52:22.932Z',
     },
     '4201:2550': {
@@ -5949,7 +5949,7 @@ export const manifestData: Record<
         'nux, popular, asset, star, token, crypto, cryptocurrency, currency, sparkle, ✨',
       name: 'nuxPopularAssets',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-14T18:50:00.286Z',
     },
     '4201:2546': {
@@ -5959,7 +5959,7 @@ export const manifestData: Record<
         'transfer, crypto, send, to, person, friends, family, associate, fast, sending, immediate, newfi',
       name: 'transferringCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-04T00:09:59.259Z',
     },
     '4201:2536': {
@@ -5969,7 +5969,7 @@ export const manifestData: Record<
         'algo, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'algoStaking',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:53:25.148Z',
     },
     '4201:2593': {
@@ -5979,7 +5979,7 @@ export const manifestData: Record<
         'borrow, limits, increase, leverage, bill, dollar, fiat, currency, up, arrow, excitment',
       name: 'borrowLimitsAddressed',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:21.465Z',
     },
     '4201:2535': {
@@ -5989,7 +5989,7 @@ export const manifestData: Record<
         'coinbase, card, spend, crypto, currency, coin, credit, sparkle, excitement, debit',
       name: 'coinbaseCardSparkle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-01T16:07:51.450Z',
     },
     '4201:2534': {
@@ -5998,7 +5998,7 @@ export const manifestData: Record<
       description: 'sparkle, star, coin, earn, hodl',
       name: 'sparkleToken',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-22T15:05:27.988Z',
     },
     '4201:2533': {
@@ -6008,7 +6008,7 @@ export const manifestData: Record<
         'Earn, crypto, coin, assets, yield, stake, store, interest, return, growth, increase, value',
       name: 'assetForward',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-09T00:28:14.969Z',
     },
     '4201:2571': {
@@ -6018,7 +6018,7 @@ export const manifestData: Record<
         'Earn, crypto, coin, assets, yield, stake, store, interest, return, growth, increase, value',
       name: 'yieldCenter',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-07T22:13:43.922Z',
     },
     '4201:2601': {
@@ -6027,7 +6027,7 @@ export const manifestData: Record<
       description: 'refresh, phone, mobile, app',
       name: 'refreshMobileApp',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:52:23.164Z',
     },
     '4201:2532': {
@@ -6036,7 +6036,7 @@ export const manifestData: Record<
       description: 'Announcement, advanced, trading,  chart, up, candlesticks, right, arrow',
       name: 'announcementAdvancedTrading',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-14T23:26:31.122Z',
     },
     '4201:2530': {
@@ -6046,7 +6046,7 @@ export const manifestData: Record<
         'cosmos, atom, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'cosmosStaking',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:24.218Z',
     },
     '4201:2531': {
@@ -6056,7 +6056,7 @@ export const manifestData: Record<
         'dai, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'daiRewards',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:52:24.037Z',
     },
     '4201:2567': {
@@ -6066,7 +6066,7 @@ export const manifestData: Record<
         'tezos, xtz, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'tezosStakingRewards',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:10.334Z',
     },
     '4201:2554': {
@@ -6076,7 +6076,7 @@ export const manifestData: Record<
         'coinbase, card, spend, crypto, currency, coin, credit, sparkle, announcement, debit',
       name: 'cardAnnouncement',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-01T16:07:05.090Z',
     },
     '4201:2529': {
@@ -6085,7 +6085,7 @@ export const manifestData: Record<
       description: 'asset, refresh, growth, make, money, asset, more, increase',
       name: 'assetRefresh',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-08T23:17:53.185Z',
     },
     '4201:2528': {
@@ -6094,7 +6094,7 @@ export const manifestData: Record<
       description: 'calendar, 🗓, 📅, check, date,  ',
       name: 'saveTheDate',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-03T20:00:32.671Z',
     },
     '4201:2527': {
@@ -6104,7 +6104,7 @@ export const manifestData: Record<
         'eth, ethereum, 2.0, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'ethereumStaking',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T21:08:35.941Z',
     },
     '4201:2526': {
@@ -6113,7 +6113,7 @@ export const manifestData: Record<
       description: 'card, ship, shipped, check',
       name: 'cardShipped',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-14T17:06:23.580Z',
     },
     '4201:2577': {
@@ -6122,7 +6122,7 @@ export const manifestData: Record<
       description: 'moon, dark, darkmode, sparkle, night',
       name: 'darkModeIntroduction',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:10.525Z',
     },
     '4201:2573': {
@@ -6131,7 +6131,7 @@ export const manifestData: Record<
       description: 'add, multiple, coins, coin, ➕',
       name: 'addMultipleCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:24.940Z',
     },
     '4201:2525': {
@@ -6140,7 +6140,7 @@ export const manifestData: Record<
       description: 'phone, notification, alert, red',
       name: 'phoneNotifications',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-03T20:00:32.829Z',
     },
     '4201:2538': {
@@ -6149,7 +6149,7 @@ export const manifestData: Record<
       description: 'money, rewards, cash, funds, star, reward',
       name: 'moneyRewards',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-10T18:33:51.083Z',
     },
     '4201:2552': {
@@ -6158,7 +6158,7 @@ export const manifestData: Record<
       description: 'interest, you, percentage, coin',
       name: 'interestForYou',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-18T22:28:03.409Z',
     },
     '4201:2524': {
@@ -6167,7 +6167,7 @@ export const manifestData: Record<
       description: 'gift, box, coin, present, arrow, 🎁',
       name: 'giftBoxCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:23.424Z',
     },
     '4201:2523': {
@@ -6177,7 +6177,7 @@ export const manifestData: Record<
         'nux, popular, asset, star, token, crypto, cryptocurrency, currency, sparkle, ✨',
       name: 'starToken',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:24.093Z',
     },
     '4201:2522': {
@@ -6186,7 +6186,7 @@ export const manifestData: Record<
       description: 'nux, earn, crypto, learn, make, more, money, stake, interest',
       name: 'nuxEarnCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:52:43.996Z',
     },
     '4201:2599': {
@@ -6195,7 +6195,7 @@ export const manifestData: Record<
       description: 'stake, interest, yield, earn, nux, growth, make, money, asset, more, increase',
       name: 'nuxEarnYield',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:52:09.588Z',
     },
     '4201:2521': {
@@ -6204,7 +6204,7 @@ export const manifestData: Record<
       description: 'do, not, use, except, for, GIVE, CRYPTO',
       name: 'givingTogetherSmall',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:23.848Z',
     },
     '4345:678': {
@@ -6213,7 +6213,7 @@ export const manifestData: Record<
       description: 'trading, UI, advanced, chart, candlestick, order, book, depth',
       name: 'advancedTradingUi',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-14T15:36:35.888Z',
     },
     '4354:1059': {
@@ -6222,7 +6222,7 @@ export const manifestData: Record<
       description: 'yield, hold, crypto, coins, hodl, currency, basket, stake, store, bowl',
       name: 'holdCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:30:55.148Z',
     },
     '4354:1061': {
@@ -6231,7 +6231,7 @@ export const manifestData: Record<
       description: 'yield, hold, crypto, coins, hodl, currency, basket, stake, store, bowl',
       name: 'holdCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:24:42.365Z',
     },
     '4354:1063': {
@@ -6240,7 +6240,7 @@ export const manifestData: Record<
       description: 'confirm, confirmation, check, mark, checkmark, yellow, coin, crypto',
       name: 'coinCheckmark',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-25T17:59:56.654Z',
     },
     '4354:1060': {
@@ -6249,7 +6249,7 @@ export const manifestData: Record<
       description: 'confirm, confirmation, check, mark, checkmark, yellow, coin, crypto',
       name: 'coinCheckmark',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:34.632Z',
     },
     '4354:1062': {
@@ -6259,7 +6259,7 @@ export const manifestData: Record<
         '2FA, Secure, security, two, factor, authentication, safe, safety, add, plus, lock, combination, password',
       name: 'add2Fa',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-29T15:27:29.127Z',
     },
     '4354:1056': {
@@ -6269,7 +6269,7 @@ export const manifestData: Record<
         '2FA, Secure, security, two, factor, authentication, safe, safety, add, plus, lock, combination, password',
       name: 'add2Fa',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-29T15:28:01.193Z',
     },
     '4354:1054': {
@@ -6279,7 +6279,7 @@ export const manifestData: Record<
         'Power, crypto, in, your, hands, pattern, coin, tech, network, platform, L1, L2, success state',
       name: 'powerOfCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:32:21.594Z',
     },
     '4354:1058': {
@@ -6289,7 +6289,7 @@ export const manifestData: Record<
         'power, crypto, in, your, hands, pattern, coin, tech, network, platform, L1, L2, success state',
       name: 'powerOfCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-17T00:19:49.825Z',
     },
     '4354:1055': {
@@ -6299,7 +6299,7 @@ export const manifestData: Record<
         'coin, scale, fee, value, estimate, approx, approximate, weight, costs, gauge, guess',
       name: 'feeScale',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T16:38:25.487Z',
     },
     '4354:1057': {
@@ -6309,7 +6309,7 @@ export const manifestData: Record<
         'coin, scale, fee, value, estimate, approx, approximate, weight, costs, gauge, guess',
       name: 'feeScale',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:35.751Z',
     },
     '4345:623': {
@@ -6318,7 +6318,7 @@ export const manifestData: Record<
       description: 'switch, advanced, candle, candlesticks, graph, simple, ui, change, browser',
       name: 'switchAdvancedToSimpleTrading',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-12T16:38:25.559Z',
     },
     '4386:440': {
@@ -6327,7 +6327,7 @@ export const manifestData: Record<
       description: 'switch, advanced, candle, candlesticks, graph, simple, ui, change, browser',
       name: 'switchAdvancedToSimpleTrading',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:37.409Z',
     },
     '4354:1053': {
@@ -6337,7 +6337,7 @@ export const manifestData: Record<
         'Earn, crypto, coin, assets, yield, stake, store, interest, return, growth, increase, value',
       name: 'earnGrowth',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T16:38:21.431Z',
     },
     '4131:769': {
@@ -6347,7 +6347,7 @@ export const manifestData: Record<
         'Earn, crypto, coin, assets, yield, stake, store, interest, return, growth, increase, value',
       name: 'earnMore',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-22T15:05:27.867Z',
     },
     '4362:1657': {
@@ -6357,7 +6357,7 @@ export const manifestData: Record<
         'congratulations, win, prize, reward, gift, celebration, coin, select, chosen, options, sparkle, joy, item, coin, crypto, 🎁, 🪙, ✨, ❇️, 🙌, 🏆',
       name: 'selectReward',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-23T14:40:30.451Z',
     },
     '4362:1656': {
@@ -6367,7 +6367,7 @@ export const manifestData: Record<
         'congratulations, win, prize, reward, gift, celebration, coin, select, chosen, options, sparkle, joy, item, coin, crypto, 🎁, 🪙, ✨, ❇️, 🙌, 🏆',
       name: 'selectReward',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-02T15:24:04.499Z',
     },
     '4362:1792': {
@@ -6377,7 +6377,7 @@ export const manifestData: Record<
         'gift, reward, moment, clock, time, record, minute, hour, day, 24 hours, expiring, end, countdown, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
       name: 'rewardExpiring',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.578Z',
     },
     '4362:1791': {
@@ -6387,7 +6387,7 @@ export const manifestData: Record<
         'gift, reward, moment, clock, time, record, minute, hour, day, 24 hours, expiring, end, countdown, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
       name: 'rewardExpiring',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.899Z',
     },
     '4362:1790': {
@@ -6396,7 +6396,7 @@ export const manifestData: Record<
       description: 'gift, rewards, exchange, switch, crypto, coin, 🔄, 🎁, 🪙',
       name: 'switchReward',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.131Z',
     },
     '4362:1789': {
@@ -6405,7 +6405,7 @@ export const manifestData: Record<
       description: 'gift, rewards, exchange, switch, crypto, coin, 🔄, 🎁, 🪙',
       name: 'switchReward',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.503Z',
     },
     '4391:448': {
@@ -6414,7 +6414,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, refresh, restore, refill, 🔄, staking',
       name: 'restaking',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T18:56:28.178Z',
     },
     '4391:446': {
@@ -6423,7 +6423,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, refresh, restore, refill, 🔄, staking',
       name: 'restaking',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:32.872Z',
     },
     '4391:449': {
@@ -6432,7 +6432,7 @@ export const manifestData: Record<
       description: 'crypto, staking, stacking, coin',
       name: 'stacking',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T16:38:22.720Z',
     },
     '4391:447': {
@@ -6441,7 +6441,7 @@ export const manifestData: Record<
       description: 'crypto, staking, stacking, coin',
       name: 'stacking',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-21T21:35:45.080Z',
     },
     '4395:592': {
@@ -6450,7 +6450,7 @@ export const manifestData: Record<
       description: 'cat, crown, nft, art, collectible',
       name: 'nft',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-06T16:40:32.739Z',
     },
     '4411:571': {
@@ -6459,7 +6459,7 @@ export const manifestData: Record<
       description: 'cat, crown, nft, art, collectible',
       name: 'nft',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.778Z',
     },
     '4397:648': {
@@ -6469,7 +6469,7 @@ export const manifestData: Record<
         'taxes, file, crypto, percentage, save, pay, government, irs, tax, center, forms, check, mark, checkmark, ✅',
       name: 'fileYourCryptoTaxesCheckOther',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:52:44.091Z',
     },
     '4397:647': {
@@ -6479,7 +6479,7 @@ export const manifestData: Record<
         'taxes, file, crypto, percentage, save, pay, government, irs, tax, center, forms',
       name: 'fileYourCryptoTaxesOther',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:52:08.873Z',
     },
     '4397:703': {
@@ -6489,7 +6489,7 @@ export const manifestData: Record<
         'taxes, file, crypto, percentage, save, pay, government, irs, tax, center, forms, check, mark, checkmark, ✅',
       name: 'fileYourCryptoTaxesCheckOther',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:52:23.519Z',
     },
     '4397:704': {
@@ -6499,7 +6499,7 @@ export const manifestData: Record<
         'taxes, file, crypto, percentage, save, pay, government, irs, tax, center, forms',
       name: 'fileYourCryptoTaxesOther',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-13T17:52:22.843Z',
     },
     '4435:630': {
@@ -6508,7 +6508,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, logo, logomark, brand',
       name: 'coinbaseOneLogoHeroSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T16:38:27.162Z',
     },
     '4435:624': {
@@ -6517,7 +6517,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, logo, logomark, brand',
       name: 'coinbaseOneLogoHeroSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:35.439Z',
     },
     '4435:629': {
@@ -6526,7 +6526,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, logo, logomark, brand',
       name: 'coinbaseOneLogoSpotRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T16:38:22.417Z',
     },
     '4435:627': {
@@ -6535,7 +6535,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, logo, logomark, brand',
       name: 'coinbaseOneLogoSpotRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:36:37.330Z',
     },
     '4435:625': {
@@ -6544,7 +6544,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, logo, logomark, brand',
       name: 'coinbaseOneLogoSpotSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-14T18:50:00.181Z',
     },
     '4435:628': {
@@ -6553,7 +6553,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, logo, logomark, brand',
       name: 'coinbaseOneLogoSpotSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.530Z',
     },
     '4435:626': {
@@ -6562,7 +6562,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, logo, logomark, brand',
       name: 'coinbaseOneLogoPictogram',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-18T22:28:02.826Z',
     },
     '4435:623': {
@@ -6571,7 +6571,7 @@ export const manifestData: Record<
       description: 'coinbase, one, cb1, logo, logomark, brand',
       name: 'coinbaseOneLogoPictogram',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-14T18:50:01.266Z',
     },
     '4201:4842': {
@@ -6581,7 +6581,7 @@ export const manifestData: Record<
         'add, credit, card, plastic, money, plus, payment, method, confirm, details, account, ✔️, 📱, 📱, success state',
       name: 'receivedCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-14T15:36:33.402Z',
     },
     '4604:771': {
@@ -6590,7 +6590,7 @@ export const manifestData: Record<
       description: 'support, heart, speech bubble, speech, ❤️, help',
       name: 'supportChat',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.634Z',
     },
     '4604:798': {
@@ -6599,7 +6599,7 @@ export const manifestData: Record<
       description: 'support, heart, speech bubble, help, ❤️',
       name: 'supportChat',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.910Z',
     },
     '4710:828': {
@@ -6608,7 +6608,7 @@ export const manifestData: Record<
       description: 'clipboard, review, info, information, document, issue, magnifying glass',
       name: 'reviewInfo',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-17T19:38:35.230Z',
     },
     '4710:829': {
@@ -6617,7 +6617,7 @@ export const manifestData: Record<
       description: 'clipboard, review, info, information, document, issue, magnifying glass',
       name: 'reviewInfo',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:56.993Z',
     },
     '4810:1459': {
@@ -6627,7 +6627,7 @@ export const manifestData: Record<
         'circle, checkmark, check, tick, confirmation, success, positive, done, green, circle, ✅, ✔️',
       name: 'doneGray',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:22.911Z',
     },
     '4776:804': {
@@ -6636,7 +6636,7 @@ export const manifestData: Record<
       description: 'camera, flash, video, photo, 📷, 📸',
       name: 'camera',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-10T22:25:10.746Z',
     },
     '4776:805': {
@@ -6645,7 +6645,7 @@ export const manifestData: Record<
       description: 'camera, flash, video, photo, 📷, 📸',
       name: 'camera',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-10T22:24:33.221Z',
     },
     '4835:1737': {
@@ -6654,7 +6654,7 @@ export const manifestData: Record<
       description: 'clipboard, waitlist, checklist, waiting list, waiting, 📋, ⏱, time',
       name: 'coinbaseOneWaitlist',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.081Z',
     },
     '4835:1736': {
@@ -6663,7 +6663,7 @@ export const manifestData: Record<
       description: 'clipboard, waitlist, checklist, waiting list, waiting, 📋, ⏱, time',
       name: 'coinbaseOneWaitlist',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.594Z',
     },
     '4835:2124': {
@@ -6672,7 +6672,7 @@ export const manifestData: Record<
       description: 'mic, microphone, talk, speech, voice, 🎙',
       name: 'mic',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.055Z',
     },
     '4835:2118': {
@@ -6681,7 +6681,7 @@ export const manifestData: Record<
       description: 'mic, microphone, talk, speech, voice, 🎙',
       name: 'mic',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.561Z',
     },
     '4835:2117': {
@@ -6690,7 +6690,7 @@ export const manifestData: Record<
       description: 'record, message, phone, speech bubble, red, circle',
       name: 'videoRequest',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.549Z',
     },
     '4835:2123': {
@@ -6699,7 +6699,7 @@ export const manifestData: Record<
       description: 'record, message, phone, speech bubble, red, circle',
       name: 'videoRequest',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.521Z',
     },
     '4835:2115': {
@@ -6708,7 +6708,7 @@ export const manifestData: Record<
       description: 'upload, video, play, phone',
       name: 'videoUpload',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.399Z',
     },
     '4835:2122': {
@@ -6717,7 +6717,7 @@ export const manifestData: Record<
       description: 'upload, video, play, phone',
       name: 'videoUpload',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.535Z',
     },
     '4835:2114': {
@@ -6726,7 +6726,7 @@ export const manifestData: Record<
       description: 'video, review, phone, triangle, magnifying glass',
       name: 'videoReview',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.973Z',
     },
     '4835:2120': {
@@ -6735,7 +6735,7 @@ export const manifestData: Record<
       description: 'video, review, phone, triangle, magnifying glass',
       name: 'videoReview',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.840Z',
     },
     '4835:2116': {
@@ -6744,7 +6744,7 @@ export const manifestData: Record<
       description: 'failure, error, mistake, wrong, red, circle',
       name: 'bigError',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-13T10:39:31.633Z',
     },
     '4835:2121': {
@@ -6753,7 +6753,7 @@ export const manifestData: Record<
       description: 'failure, error, mistake, wrong, red, circle',
       name: 'bigError',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.575Z',
     },
     '4846:1395': {
@@ -6762,7 +6762,7 @@ export const manifestData: Record<
       description: 'crypto, beginner, guide, start, here, get, going, coin, doc, paper',
       name: 'guideCryptoBeginner',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-14T17:06:23.568Z',
     },
     '4846:1394': {
@@ -6771,7 +6771,7 @@ export const manifestData: Record<
       description: 'crypto, beginner, guide, start, here, get, going, coin, doc, paper',
       name: 'guideCryptoBeginner',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.202Z',
     },
     '4846:1390': {
@@ -6781,7 +6781,7 @@ export const manifestData: Record<
         'crypto, beginner, guide, coin, crypto, currency, cryptocurrency, forward, arrow, start, investing, buy',
       name: 'guideStartInvesting',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-14T18:50:00.299Z',
     },
     '4846:1393': {
@@ -6790,7 +6790,7 @@ export const manifestData: Record<
       description: 'crypto, beginner, guide, nft, yield, collect, trade, earn, grow, defi',
       name: 'guideNftDefi',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.608Z',
     },
     '4846:1392': {
@@ -6799,7 +6799,7 @@ export const manifestData: Record<
       description: 'crypto, beginner, guide, nft, yield, collect, trade, earn, grow, defi',
       name: 'guideNftDefi',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.465Z',
     },
     '4846:1389': {
@@ -6809,7 +6809,7 @@ export const manifestData: Record<
         'crypto, beginner, guide, coin, crypto, currency, cryptocurrency, forward, arrow, start, investing, buy',
       name: 'guideStartInvesting',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.551Z',
     },
     '4846:1387': {
@@ -6819,7 +6819,7 @@ export const manifestData: Record<
         'crypto, beginner, guide, bull, case, crypto, cryptocurrency, candlesticks, chart, trading, number, go, up',
       name: 'guideBullCase',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.060Z',
     },
     '4846:1391': {
@@ -6829,7 +6829,7 @@ export const manifestData: Record<
         'crypto, beginner, guide, bull, case, crypto, cryptocurrency, candlesticks, chart, trading, number, go, up',
       name: 'guideBullCase',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.389Z',
     },
     '4846:1386': {
@@ -6839,7 +6839,7 @@ export const manifestData: Record<
         'crypto, beginner, guide, check, list, checklist, start, here, do, these, things',
       name: 'guideFiveThings',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-14T18:50:01.244Z',
     },
     '4846:1385': {
@@ -6849,7 +6849,7 @@ export const manifestData: Record<
         'crypto, beginner, guide, check, list, checklist, start, here, do, these, things',
       name: 'guideFiveThings',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.716Z',
     },
     '4846:1384': {
@@ -6858,7 +6858,7 @@ export const manifestData: Record<
       description: 'watchlist, price, price alert, phone, notification, star, ⭐️, 📱',
       name: 'priceAlerts',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.027Z',
     },
     '4846:1388': {
@@ -6867,7 +6867,7 @@ export const manifestData: Record<
       description: 'watchlist, price, price alert, phone, notification, star, ⭐️, 📱',
       name: 'priceAlerts',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.638Z',
     },
     '4953:1928': {
@@ -6877,7 +6877,7 @@ export const manifestData: Record<
         'coinbase, card, recurring, add, funds, refresh, auto, reload, automate, money, crypto, asset, credit',
       name: 'cardReloadFunds',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.417Z',
     },
     '4953:1934': {
@@ -6887,7 +6887,7 @@ export const manifestData: Record<
         'confirm, check, validate, address, envelope, mail, checkmark, kyc, onboarding, success state',
       name: 'confirmAddress',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.022Z',
     },
     '4953:1935': {
@@ -6897,7 +6897,7 @@ export const manifestData: Record<
         'coinbase, card, recurring, add, funds, refresh, auto, reload, automate, money, crypto, asset, credit',
       name: 'cardReloadFunds',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:57.028Z',
     },
     '4953:1936': {
@@ -6907,7 +6907,7 @@ export const manifestData: Record<
         'onboarding, kyc, confirm, validate, check, id, indentification, card, license, checkmark, success state',
       name: 'confirmIDCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-06T16:41:28.148Z',
     },
     '4953:1933': {
@@ -6917,7 +6917,7 @@ export const manifestData: Record<
         'confirm, check, validate, address, envelope, mail, checkmark, kyc, onboarding, success state',
       name: 'confirmAddress',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:57.614Z',
     },
     '4953:1926': {
@@ -6927,7 +6927,7 @@ export const manifestData: Record<
         'confirm, check, validate, kyc, onboarding, social, security, card, number, ssn, checkmark, success state',
       name: 'confirmSocialSecurity',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:57.852Z',
     },
     '4953:1931': {
@@ -6937,7 +6937,7 @@ export const manifestData: Record<
         'onboarding, kyc, confirm, validate, check, id, indentification, card, license, checkmark, success state',
       name: 'confirmIDCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.190Z',
     },
     '4953:1930': {
@@ -6947,7 +6947,7 @@ export const manifestData: Record<
         'confirm, check, validate, kyc, onboarding, envelope, email, checkmark, success state',
       name: 'confirmEmail',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-02T14:13:00.238Z',
     },
     '4953:1932': {
@@ -6957,7 +6957,7 @@ export const manifestData: Record<
         'confirm, check, validate, kyc, onboarding, social, security, card, number, ssn, checkmark, success state',
       name: 'confirmSocialSecurity',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:28.429Z',
     },
     '4953:1927': {
@@ -6967,7 +6967,7 @@ export const manifestData: Record<
         'confirm, check, validate, kyc, onboarding, envelope, email, checkmark, success state',
       name: 'confirmEmail',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T18:49:08.391Z',
     },
     '4953:1929': {
@@ -6976,7 +6976,7 @@ export const manifestData: Record<
       description: 'desktop, lap top, unknown, question mark, ❓ , ❔ ',
       name: 'desktopUnknown',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.722Z',
     },
     '4953:1925': {
@@ -6985,7 +6985,7 @@ export const manifestData: Record<
       description: 'desktop, lap top, unknown, question mark, ❓ , ❔ ',
       name: 'desktopUnknown',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:57.290Z',
     },
     '4953:1924': {
@@ -6994,7 +6994,7 @@ export const manifestData: Record<
       description: 'phone, unknown, question mark, ❓ , ❔ ',
       name: 'phoneUnknown',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.632Z',
     },
     '4953:1923': {
@@ -7003,7 +7003,7 @@ export const manifestData: Record<
       description: 'phone, unknown, question mark, ❓ , ❔ ',
       name: 'phoneUnknown',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.856Z',
     },
     '4960:1564': {
@@ -7012,7 +7012,7 @@ export const manifestData: Record<
       description: 'focus, limit, stoplimitorder, arrow, chart, advanced, advancedtrading ',
       name: 'stopLimitOrder',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:23:48.500Z',
     },
     '4960:1585': {
@@ -7021,7 +7021,7 @@ export const manifestData: Record<
       description: 'focus, limit, stoplimitorder, arrow, chart, advanced, advancedtrading ',
       name: 'stopLimitOrder',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.680Z',
     },
     '5198:1525': {
@@ -7030,7 +7030,7 @@ export const manifestData: Record<
       description: 'wallet, phone, arrow, download',
       name: 'downloadCoinbaseWalletArrow',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.698Z',
     },
     '5381:1482': {
@@ -7039,7 +7039,7 @@ export const manifestData: Record<
       description: 'wallet, phone, arrow, download',
       name: 'downloadCoinbaseWalletArrow',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.423Z',
     },
     '5220:1565': {
@@ -7048,7 +7048,7 @@ export const manifestData: Record<
       description: 'focus, limit, stoplimitorder, arrow, chart, advanced, advancedtrading ',
       name: 'stopLimitOrderDown',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.944Z',
     },
     '5220:1592': {
@@ -7057,7 +7057,7 @@ export const manifestData: Record<
       description: 'focus, limit, stoplimitorder, arrow, chart, advanced, advancedtrading ',
       name: 'stopLimitOrderDown',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.315Z',
     },
     '5439:1485': {
@@ -7067,7 +7067,7 @@ export const manifestData: Record<
         'ada, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'adaStaking',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.851Z',
     },
     '5439:1486': {
@@ -7076,7 +7076,7 @@ export const manifestData: Record<
       description: 'yield, interest, growth, make, money, asset, increase, reward',
       name: 'adaStaking',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.593Z',
     },
     '5503:1506': {
@@ -7085,7 +7085,7 @@ export const manifestData: Record<
       description: 'eth, staking, ethereum, upsell, hand, earn, interest, eth2, 2.0, sparkles, ✨',
       name: 'ethStakingUpsell',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T21:24:09.035Z',
     },
     '5503:1505': {
@@ -7094,7 +7094,7 @@ export const manifestData: Record<
       description: 'eth, staking, ethereum, upsell, hand, earn, interest, eth2, 2.0, sparkles, ✨',
       name: 'ethStakingUpsell',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.657Z',
     },
     '5508:1523': {
@@ -7103,7 +7103,7 @@ export const manifestData: Record<
       description: 'card, coin, earn, debit, visa, delight',
       name: 'earnCryptoCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-01T21:31:21.949Z',
     },
     '5512:1461': {
@@ -7112,7 +7112,7 @@ export const manifestData: Record<
       description: 'download, statement, taxes, arrow, sparkles',
       name: 'downloadingStatement',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-01T19:07:36.911Z',
     },
     '5508:1554': {
@@ -7121,7 +7121,7 @@ export const manifestData: Record<
       description: 'card, coin, earn, debit, visa, delight',
       name: 'earnCryptoCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.542Z',
     },
     '5512:1481': {
@@ -7130,7 +7130,7 @@ export const manifestData: Record<
       description: 'report, statement, taxes, download, arrow, sparkles',
       name: 'downloadingStatement',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.540Z',
     },
     '5516:1672': {
@@ -7139,7 +7139,7 @@ export const manifestData: Record<
       description: 'ledger, plugin, instructional, connect',
       name: 'ledgerPlugin',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-05T17:23:21.594Z',
     },
     '5516:1671': {
@@ -7148,7 +7148,7 @@ export const manifestData: Record<
       description: 'ledger, plugin, instructional, access, entry',
       name: 'ledgerAccess',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-05T17:23:21.619Z',
     },
     '5525:1463': {
@@ -7158,7 +7158,7 @@ export const manifestData: Record<
         'send, crypto, faster, coins, lightning, bolt, move, money, quicker, currency, asset, ⚡️',
       name: 'sendCryptoFasterHorizontal',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-28T17:32:31.580Z',
     },
     '5525:1462': {
@@ -7168,7 +7168,7 @@ export const manifestData: Record<
         'send, crypto, faster, coins, lightning, bolt, move, money, quicker, currency, asset, ⚡️',
       name: 'sendCryptoFasterHorizontal',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:23:20.118Z',
     },
     '5630:1461': {
@@ -7178,7 +7178,7 @@ export const manifestData: Record<
         'circle, checkmark, check, tick, confirmation, success, positive, done, green, circle, ✅, ✔️',
       name: 'doneGray',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:57.626Z',
     },
     '5623:1461': {
@@ -7187,7 +7187,7 @@ export const manifestData: Record<
       description: 'ledger, plugin, instructional, connect',
       name: 'ledgerPlugin',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.621Z',
     },
     '5623:1462': {
@@ -7196,7 +7196,7 @@ export const manifestData: Record<
       description: 'ledger, plugin, instructional, access, entry',
       name: 'ledgerAccess',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.662Z',
     },
     '5615:1496': {
@@ -7205,7 +7205,7 @@ export const manifestData: Record<
       description: 'card, coin, reload, sparkles, debit card, arrows, chip',
       name: 'cardAutoReload',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-03T20:00:32.863Z',
     },
     '5617:1553': {
@@ -7214,7 +7214,7 @@ export const manifestData: Record<
       description: 'bar, graph, performance, arrow, red, green',
       name: 'performance',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-13T22:36:56.980Z',
     },
     '5615:1497': {
@@ -7223,7 +7223,7 @@ export const manifestData: Record<
       description: 'card, coin, reload, sparkles, debit card, arrows, chip',
       name: 'cardAutoReload',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.378Z',
     },
     '5617:1552': {
@@ -7232,7 +7232,7 @@ export const manifestData: Record<
       description: 'bar, graph, performance, arrow, red, green',
       name: 'performance',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.011Z',
     },
     '5617:1574': {
@@ -7241,7 +7241,7 @@ export const manifestData: Record<
       description: 'bar, graph, performance, arrow, red, green',
       name: 'performanceSpotSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T18:56:55.552Z',
     },
     '5617:1575': {
@@ -7250,7 +7250,7 @@ export const manifestData: Record<
       description: 'bar, graph, performance, arrow, red, green',
       name: 'performanceSpotSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T21:04:19.814Z',
     },
     '5627:1859': {
@@ -7259,7 +7259,7 @@ export const manifestData: Record<
       description: 'ledger, plugin, instructional, rejection, decline, no, ❌, error state',
       name: 'ledgerSignatureRejected',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.319Z',
     },
     '5627:1858': {
@@ -7268,7 +7268,7 @@ export const manifestData: Record<
       description: 'ledger, plugin, instructional, warning, alert, failed, declined, warning state',
       name: 'ledgerFailed',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:24.832Z',
     },
     '5627:1857': {
@@ -7277,7 +7277,7 @@ export const manifestData: Record<
       description: 'ledger, plugin, instructional, warning, alert, failed, declined, warning state',
       name: 'ledgerFailed',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-10T23:46:15.323Z',
     },
     '5627:1856': {
@@ -7286,7 +7286,7 @@ export const manifestData: Record<
       description: 'ledger, plugin, instructional, rejection, decline, no, ❌, error state',
       name: 'ledgerSignatureRejected',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.283Z',
     },
     '5627:1865': {
@@ -7295,7 +7295,7 @@ export const manifestData: Record<
       description: 'hardware, device, wallet',
       name: 'hardwareWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T18:31:58.950Z',
     },
     '5627:1860': {
@@ -7304,7 +7304,7 @@ export const manifestData: Record<
       description: 'seed, phrase, word, code, unique',
       name: 'seedPhrase',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:11.289Z',
     },
     '5627:1864': {
@@ -7313,7 +7313,7 @@ export const manifestData: Record<
       description: 'hardware, device, wallet',
       name: 'hardwareWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-21T23:18:22.803Z',
     },
     '5627:1863': {
@@ -7322,7 +7322,7 @@ export const manifestData: Record<
       description: 'seed, phrase, word, code, unique',
       name: 'seedPhrase',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-19T15:15:15.448Z',
     },
     '5627:1917': {
@@ -7332,7 +7332,7 @@ export const manifestData: Record<
         'eth, address, contact, unique, number, code,  👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️',
       name: 'ethAddress',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-05T17:23:22.198Z',
     },
     '5627:1918': {
@@ -7342,7 +7342,7 @@ export const manifestData: Record<
         'eth, address, contact, unique, number, code,  👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️',
       name: 'ethAddress',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.304Z',
     },
     '5775:1146': {
@@ -7351,7 +7351,7 @@ export const manifestData: Record<
       description: 'taxes, tax, document, paper, percentage',
       name: 'taxDocuments',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.070Z',
     },
     '5775:1147': {
@@ -7360,7 +7360,7 @@ export const manifestData: Record<
       description: 'taxes, tax, document, paper, percentage',
       name: 'taxDocuments',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-15T16:37:54.154Z',
     },
     '5787:1150': {
@@ -7369,7 +7369,7 @@ export const manifestData: Record<
       description: 'link, connect, apps, wallet, coinbase, 🔗, 🖇',
       name: 'linkCoinbaseWalletSmall',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.488Z',
     },
     '5787:1151': {
@@ -7378,7 +7378,7 @@ export const manifestData: Record<
       description: 'link, connect, apps, wallet, coinbase, 🔗, 🖇',
       name: 'linkCoinbaseWalletSmall',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.599Z',
     },
     '5788:1166': {
@@ -7387,7 +7387,7 @@ export const manifestData: Record<
       description: 'empty, state, transfer, send, phone, wallet, crypto, 📱, 🤳, 📲, empty state',
       name: 'transferFundsGray',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-05T17:23:22.155Z',
     },
     '5788:1195': {
@@ -7396,7 +7396,7 @@ export const manifestData: Record<
       description: 'empty state, transfer, send, phone, wallet, crypto, 📱, 🤳, 📲',
       name: 'transferFundsGray',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.034Z',
     },
     '6025:1850': {
@@ -7405,7 +7405,7 @@ export const manifestData: Record<
       description: 'API, key, access, account, connect, unlock, gain, trust',
       name: 'apiKey',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-01T23:25:59.344Z',
     },
     '6025:1852': {
@@ -7414,7 +7414,7 @@ export const manifestData: Record<
       description: 'API, key, access, account, connect, unlock, gain, trust',
       name: 'apiKey',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.835Z',
     },
     '6025:1851': {
@@ -7424,7 +7424,7 @@ export const manifestData: Record<
         'recommend, recommended, recommendation, invest, investments, choose, assets, tokens',
       name: 'recommendInvest',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-17T14:17:11.299Z',
     },
     '6025:1846': {
@@ -7434,7 +7434,7 @@ export const manifestData: Record<
         'recommend, recommended, recommendation, invest, investments, choose, assets, tokens',
       name: 'recommendInvest',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.070Z',
     },
     '6025:1843': {
@@ -7443,7 +7443,7 @@ export const manifestData: Record<
       description: 'eth, ethereum, wallet, send, coins, receive, defi, dapps, access',
       name: 'ethereumToWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.739Z',
     },
     '6025:1847': {
@@ -7452,7 +7452,7 @@ export const manifestData: Record<
       description: 'eth, ethereum, wallet, send, coins, receive, defi, dapps, access',
       name: 'ethereumToWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.117Z',
     },
     '6025:1849': {
@@ -7462,7 +7462,7 @@ export const manifestData: Record<
         'recommend, recommended, recommendation, invest, investments, choose, assets, tokens',
       name: 'recommendInvestments',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T16:38:22.135Z',
     },
     '6025:1848': {
@@ -7472,7 +7472,7 @@ export const manifestData: Record<
         'send, crypto, fast, faster, speed, bolt, lightning, coins, assets, cryptocurrency, ⚡️',
       name: 'sendCryptoFasterSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-19T18:07:30.792Z',
     },
     '6025:1845': {
@@ -7482,7 +7482,7 @@ export const manifestData: Record<
         'recommend, recommended, recommendation, invest, investments, choose, assets, tokens',
       name: 'recommendInvestments',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T18:49:08.398Z',
     },
     '6025:1844': {
@@ -7492,7 +7492,7 @@ export const manifestData: Record<
         'send, crypto, fast, faster, speed, bolt, lightning, coins, assets, cryptocurrency, ⚡️',
       name: 'sendCryptoFasterSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-14T01:15:57.122Z',
     },
     '6028:1574': {
@@ -7501,7 +7501,7 @@ export const manifestData: Record<
       description: 'diamond, hand, hold, shiny, success state',
       name: 'diamondHands',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-03T13:31:52.949Z',
     },
     '6028:1575': {
@@ -7510,7 +7510,7 @@ export const manifestData: Record<
       description: 'diamond, hand, hold, shiny, success state',
       name: 'diamondHands',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:56.830Z',
     },
     '6028:1576': {
@@ -7519,7 +7519,7 @@ export const manifestData: Record<
       description: 'paper hands, paper, hand, toilet paper, sell off',
       name: 'paperHands',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:57.318Z',
     },
     '6028:1577': {
@@ -7528,7 +7528,7 @@ export const manifestData: Record<
       description: 'paper hands, paper, hand, toilet paper, sell off',
       name: 'paperHands',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-29T20:16:03.102Z',
     },
     '6049:1156': {
@@ -7537,7 +7537,7 @@ export const manifestData: Record<
       description: 'calendar, caution, schedule, error, warning, ⛔️, error state',
       name: 'calendarCaution',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.822Z',
     },
     '6049:1155': {
@@ -7546,7 +7546,7 @@ export const manifestData: Record<
       description: 'calendar, caution, schedule, error, warning, ⛔️, error state',
       name: 'calendarCaution',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.705Z',
     },
     '6121:1152': {
@@ -7555,7 +7555,7 @@ export const manifestData: Record<
       description: 'play, eye, circle, square, blue, watch, videos, green',
       name: 'watchVideos',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.520Z',
     },
     '6121:1185': {
@@ -7564,7 +7564,7 @@ export const manifestData: Record<
       description: 'lock, circle, square, blue, wallet, security',
       name: 'walletSecurity',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:25.258Z',
     },
     '6121:1188': {
@@ -7573,7 +7573,7 @@ export const manifestData: Record<
       description: 'circles, blue, check, square, yellow, arrow\n',
       name: 'stressTestedColdStorage',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.620Z',
     },
     '6121:1186': {
@@ -7582,7 +7582,7 @@ export const manifestData: Record<
       description: 'arrows, blue, circle, green, coins',
       name: 'stayInControlSelfHostedWalletsStorage',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.394Z',
     },
     '6121:1174': {
@@ -7591,7 +7591,7 @@ export const manifestData: Record<
       description: 'circles, play, blue, start, today',
       name: 'calendarStartDay',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:22:39.054Z',
     },
     '6121:1177': {
@@ -7600,7 +7600,7 @@ export const manifestData: Record<
       description: 'circles, coins, yellow, blue, graph, staking',
       name: 'staking',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-17T14:41:34.516Z',
     },
     '6121:1184': {
@@ -7609,7 +7609,7 @@ export const manifestData: Record<
       description: 'balance, coins, circles, law, blue, stable, value',
       name: 'stableValue',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.235Z',
     },
     '6121:1176': {
@@ -7618,7 +7618,7 @@ export const manifestData: Record<
       description: 'wallet, user, blue, circle, self custody',
       name: 'selfCustody',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-01T21:42:14.642Z',
     },
     '6121:1178': {
@@ -7627,7 +7627,7 @@ export const manifestData: Record<
       description: 'circle, yellow, blue, coin, secure, storage',
       name: 'secureStorage',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.344Z',
     },
     '6121:1171': {
@@ -7636,7 +7636,7 @@ export const manifestData: Record<
       description: 'blue, globe, global, transactions, secure',
       name: 'secureGlobalTransactions',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:24.201Z',
     },
     '6121:1169': {
@@ -7645,7 +7645,7 @@ export const manifestData: Record<
       description: 'shield, circles, coin, blue, secure, trust, yellow',
       name: 'secureAndTrusted',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-21T13:26:16.300Z',
     },
     '6121:1167': {
@@ -7654,7 +7654,7 @@ export const manifestData: Record<
       description: 'ethereum, blue, circle, powered',
       name: 'poweredByEthereum',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.829Z',
     },
     '6121:1148': {
@@ -7663,7 +7663,7 @@ export const manifestData: Record<
       description: 'users, arrows, circles, blue, P2P, payments',
       name: 'p2pPayments',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-16T12:58:31.002Z',
     },
     '6121:1168': {
@@ -7672,7 +7672,7 @@ export const manifestData: Record<
       description: 'cancel, circle, blue, tag, fees, yellow',
       name: 'noFees',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-17T14:27:56.148Z',
     },
     '6121:1166': {
@@ -7681,7 +7681,7 @@ export const manifestData: Record<
       description: 'coin, circles, square, yellow, blue',
       name: 'multicoinSupport',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.767Z',
     },
     '6121:1179': {
@@ -7691,7 +7691,7 @@ export const manifestData: Record<
         'circle, blue, yellow, monitor, multiplatform, browser, app, mobile, extension, green, puzzle',
       name: 'multiPlatformMobileAppBrowserExtension',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.679Z',
     },
     '6121:1172': {
@@ -7700,7 +7700,7 @@ export const manifestData: Record<
       description: 'users, yellow, blue, coin, circle, money, decentralized',
       name: 'moneyDecentralized',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:11.273Z',
     },
     '6121:1163': {
@@ -7709,7 +7709,7 @@ export const manifestData: Record<
       description: 'coin, yellow, circle, blue, mining',
       name: 'mining',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.603Z',
     },
     '6121:1161': {
@@ -7718,7 +7718,7 @@ export const manifestData: Record<
       description: 'circle, square, blue, user, wallet, coinbase',
       name: 'linkingYourWalletToYourCoinbaseAccount',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:31:51.892Z',
     },
     '6121:1160': {
@@ -7727,7 +7727,7 @@ export const manifestData: Record<
       description: 'coins, circles, graph, blue, yellow, green, investing, steps',
       name: 'invest',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:51.095Z',
     },
     '6121:1140': {
@@ -7736,7 +7736,7 @@ export const manifestData: Record<
       description: 'coins, yellow, blue, umbrella, insurance, protection',
       name: 'insuranceProtection',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.901Z',
     },
     '6121:1187': {
@@ -7745,7 +7745,7 @@ export const manifestData: Record<
       description: 'circles, blue, globe, connections, global transactions',
       name: 'globalTransactionsBeyond',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:22:39.123Z',
     },
     '6121:1158': {
@@ -7754,7 +7754,7 @@ export const manifestData: Record<
       description: 'stop watch, circles, timer, blue, get started\n',
       name: 'getStartedInMinutes',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:30:44.521Z',
     },
     '6121:1170': {
@@ -7763,7 +7763,7 @@ export const manifestData: Record<
       description: 'circle, yellow, blue, coin, encrypted, everything',
       name: 'encryptedEverything',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.434Z',
     },
     '6121:1155': {
@@ -7772,7 +7772,7 @@ export const manifestData: Record<
       description: 'graph, bars, circle, blue, yellow, earn',
       name: 'earn',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.889Z',
     },
     '6121:1154': {
@@ -7781,7 +7781,7 @@ export const manifestData: Record<
       description: 'circles, blue, square, music, user, play',
       name: 'digitalCollectibles',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.905Z',
     },
     '6121:1175': {
@@ -7790,7 +7790,7 @@ export const manifestData: Record<
       description: 'circles, blue, squares, arrow, pointer, grid, yellow, decentralized, web, web3',
       name: 'decentralizedWebWeb3',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.475Z',
     },
     '6121:1153': {
@@ -7799,7 +7799,7 @@ export const manifestData: Record<
       description: 'connecting dots, blue, circle, decentralization, green',
       name: 'decentralization',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.050Z',
     },
     '6121:1150': {
@@ -7808,7 +7808,7 @@ export const manifestData: Record<
       description: 'circles, blue, yellow, trading, exchange, defi',
       name: 'defiDecentralizedTradingExchange',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.496Z',
     },
     '6121:1149': {
@@ -7818,7 +7818,7 @@ export const manifestData: Record<
         'circles, blue, connections, defi, decentralized, lending, borrowing, green, yellow',
       name: 'defiDecentralizedBorrowingLending',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-07T20:44:47.724Z',
     },
     '6121:1147': {
@@ -7827,7 +7827,7 @@ export const manifestData: Record<
       description: 'coins, blue, yellow, stars, wallet, crypto',
       name: 'cryptoWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:29:38.807Z',
     },
     '6121:1183': {
@@ -7836,7 +7836,7 @@ export const manifestData: Record<
       description: 'coins, globe, circle, yellow, blue, crypto, economy',
       name: 'cryptoEconomy',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:29:34.337Z',
     },
     '6121:1151': {
@@ -7845,7 +7845,7 @@ export const manifestData: Record<
       description: 'yellow, blue, coins, circles, crypto, assets\n',
       name: 'cryptoAssets',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:29:20.477Z',
     },
     '6121:1146': {
@@ -7854,7 +7854,7 @@ export const manifestData: Record<
       description: 'circles, blue, connection, cross border, payments',
       name: 'crossBorderPayments',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:22.904Z',
     },
     '6121:1157': {
@@ -7863,7 +7863,7 @@ export const manifestData: Record<
       description: 'circles, blue, pencil, check, cross, complete, quiz',
       name: 'completeAQuiz',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.510Z',
     },
     '6121:1165': {
@@ -7873,7 +7873,7 @@ export const manifestData: Record<
         'square, blue, music, music note, user, play, document, digital, collectibles, nfts',
       name: 'collectingNfts',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-07T17:07:08.684Z',
     },
     '6121:1173': {
@@ -7882,7 +7882,7 @@ export const manifestData: Record<
       description: 'puzzle, blue, monitor, yellow',
       name: 'browserExtension',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:22.681Z',
     },
     '6121:1144': {
@@ -7891,7 +7891,7 @@ export const manifestData: Record<
       description: 'star, location, blue, location, USA',
       name: 'basedInUsa',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:22.850Z',
     },
     '6121:1142': {
@@ -7900,7 +7900,7 @@ export const manifestData: Record<
       description: 'circles, blue, yellow, coins, USA, Dollar',
       name: 'backedByUsDollar',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.411Z',
     },
     '6121:1141': {
@@ -7909,7 +7909,7 @@ export const manifestData: Record<
       description: 'arrow, coins, up, gain, blue, yellow, circle, trending, hot',
       name: 'trendingHotAssets',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T18:42:15.904Z',
     },
     '6121:1164': {
@@ -7918,7 +7918,7 @@ export const manifestData: Record<
       description: 'check, plus, equal, lines, circle, document, blue, yellow, green',
       name: 'taxesDetails',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.101Z',
     },
     '6121:1162': {
@@ -7927,7 +7927,7 @@ export const manifestData: Record<
       description: 'chain, hexagon, connections, yellow, blue',
       name: 'sidechain',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.668Z',
     },
     '6121:1139': {
@@ -7936,7 +7936,7 @@ export const manifestData: Record<
       description: 'share, social media, circles, blue, yellow',
       name: 'shareOnSocialMedia',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-19T15:15:15.544Z',
     },
     '6121:1159': {
@@ -7945,7 +7945,7 @@ export const manifestData: Record<
       description: 'semi custodial, coin, user, yellow, blue, bank',
       name: 'semiCustodial',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:21:17.227Z',
     },
     '6121:1181': {
@@ -7954,7 +7954,7 @@ export const manifestData: Record<
       description: 'self custody, coins, arrow, circles, user, blue, yellow',
       name: 'selfCustodyCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:22:39.009Z',
     },
     '6121:1156': {
@@ -7963,7 +7963,7 @@ export const manifestData: Record<
       description: 'rating, review, phone, coins, stars, speech bubble, blue, yellow, circles',
       name: 'ratingsAndReviews',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.567Z',
     },
     '6121:1138': {
@@ -7972,7 +7972,7 @@ export const manifestData: Record<
       description: 'quick, simple, clock, timer, check, blue, yellow',
       name: 'quickAndSimple',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.084Z',
     },
     '6121:1137': {
@@ -7981,7 +7981,7 @@ export const manifestData: Record<
       description: 'arrow, coins, up, gain, blue, yellow, circle, green, portfolio',
       name: 'portfolioPerformance',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:11.282Z',
     },
     '6121:1135': {
@@ -7990,7 +7990,7 @@ export const manifestData: Record<
       description: 'mail, speech bubble, yellow, circles, check, blue',
       name: 'optInPushNotificationsEmail',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-03T13:31:53.532Z',
     },
     '6121:1145': {
@@ -7999,7 +7999,7 @@ export const manifestData: Record<
       description: 'multiple wallets, green, blue, yellow',
       name: 'multipleAccountsWalletsForOneUser',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:15:46.951Z',
     },
     '6121:1134': {
@@ -8008,7 +8008,7 @@ export const manifestData: Record<
       description: 'layers, isometric, networks, ethereum, blue, yellow',
       name: 'layeredNetworks',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.492Z',
     },
     '6121:1133': {
@@ -8017,7 +8017,7 @@ export const manifestData: Record<
       description: 'wallet, hardware, storage, blue',
       name: 'hardwareWallets',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.037Z',
     },
     '6121:1132': {
@@ -8026,7 +8026,7 @@ export const manifestData: Record<
       description: 'gas fees, fees, fuel tank, circle, green',
       name: 'gasFeesNetworkFees',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:24.023Z',
     },
     '6121:1131': {
@@ -8035,7 +8035,7 @@ export const manifestData: Record<
       description: 'gain, loss, coins, balance, blue, yellow',
       name: 'gainsAndLosses',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.352Z',
     },
     '6121:1130': {
@@ -8044,7 +8044,7 @@ export const manifestData: Record<
       description: 'earn, learn, bulb, circle, coin, yellow, blue, arrow',
       name: 'earnToLearn',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.674Z',
     },
     '6121:1129': {
@@ -8053,7 +8053,7 @@ export const manifestData: Record<
       description: 'music, yellow, blue, music note',
       name: 'dappsMusic',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.705Z',
     },
     '6121:1180': {
@@ -8062,7 +8062,7 @@ export const manifestData: Record<
       description: 'coin, circle, triangle, square, cross, blue, yellow',
       name: 'dappsGaming',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.754Z',
     },
     '6121:1136': {
@@ -8071,7 +8071,7 @@ export const manifestData: Record<
       description: 'coins, globe, circles, blue, yellow',
       name: 'dappsFinance',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-20T13:51:54.938Z',
     },
     '6121:1128': {
@@ -8080,7 +8080,7 @@ export const manifestData: Record<
       description: 'art, palette, circles, blue, yellow',
       name: 'dappsArts',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:25.134Z',
     },
     '6121:1127': {
@@ -8089,7 +8089,7 @@ export const manifestData: Record<
       description: 'user, check, circles, blue, yellow',
       name: 'didDecentralizedIdentity',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-21T21:20:51.286Z',
     },
     '6121:1143': {
@@ -8098,7 +8098,7 @@ export const manifestData: Record<
       description: 'coin, folder, blue, yellow',
       name: 'cryptoPortfolio',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.023Z',
     },
     '6121:1126': {
@@ -8107,7 +8107,7 @@ export const manifestData: Record<
       description: 'crypto, beginner, coin, circle, book, lines, yellow, blue',
       name: 'cryptoForBeginners',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-03T13:31:53.038Z',
     },
     '6121:1125': {
@@ -8116,7 +8116,7 @@ export const manifestData: Record<
       description: 'congratulations, prize, coin, yellow, blue',
       name: 'congratulationsOnEarningCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-07T17:07:08.740Z',
     },
     '6121:1124': {
@@ -8125,7 +8125,7 @@ export const manifestData: Record<
       description: 'borrow, arrows, wallet, coins, green, blue, yellow',
       name: 'borrowWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-25T19:11:49.184Z',
     },
     '6121:1182': {
@@ -8134,7 +8134,7 @@ export const manifestData: Record<
       description: 'chain, blockchain, hexagon, blue, yellow, sequence',
       name: 'blockchain',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.921Z',
     },
     '6121:1123': {
@@ -8143,7 +8143,7 @@ export const manifestData: Record<
       description: 'chart, indicator, candles, green, red',
       name: 'advancedTradingChartsIndicatorsCandles',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.795Z',
     },
     '6121:1240': {
@@ -8152,7 +8152,7 @@ export const manifestData: Record<
       description: 'play, eye, circle, square, blue, watch, videos, green',
       name: 'watchVideos',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.155Z',
     },
     '6121:1235': {
@@ -8161,7 +8161,7 @@ export const manifestData: Record<
       description: 'lock, circle, square, blue, wallet, security',
       name: 'walletSecurity',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-19T15:15:15.494Z',
     },
     '6121:1245': {
@@ -8170,7 +8170,7 @@ export const manifestData: Record<
       description: 'circles, blue, check, square, yellow, arrow',
       name: 'stressTestedColdStorage',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.122Z',
     },
     '6121:1252': {
@@ -8179,7 +8179,7 @@ export const manifestData: Record<
       description: 'arrows, blue, circle, green, coins',
       name: 'stayInControlSelfHostedWalletsStorage',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.309Z',
     },
     '6121:1248': {
@@ -8188,7 +8188,7 @@ export const manifestData: Record<
       description: 'circles, play, blue, start, today',
       name: 'calendarStartDay',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:22:39.019Z',
     },
     '6121:1247': {
@@ -8197,7 +8197,7 @@ export const manifestData: Record<
       description: 'circles, coins, yellow, blue, graph, staking',
       name: 'staking',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.824Z',
     },
     '6121:1254': {
@@ -8206,7 +8206,7 @@ export const manifestData: Record<
       description: 'balance, coins, circles, law, blue, stable, value',
       name: 'stableValue',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:51.048Z',
     },
     '6121:1216': {
@@ -8215,7 +8215,7 @@ export const manifestData: Record<
       description: 'wallet, user, blue, circle, self custody',
       name: 'selfCustody',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-01T21:42:06.649Z',
     },
     '6121:1232': {
@@ -8224,7 +8224,7 @@ export const manifestData: Record<
       description: 'circle, yellow, blue, coin, secure, storage',
       name: 'secureStorage',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:25.243Z',
     },
     '6121:1217': {
@@ -8233,7 +8233,7 @@ export const manifestData: Record<
       description: 'blue, globe, global, transactions, secure',
       name: 'secureGlobalTransactions',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.932Z',
     },
     '6121:1209': {
@@ -8242,7 +8242,7 @@ export const manifestData: Record<
       description: 'shield, circles, coin, blue, secure, trust, yellow',
       name: 'secureAndTrusted',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-12T18:55:14.711Z',
     },
     '6121:1242': {
@@ -8251,7 +8251,7 @@ export const manifestData: Record<
       description: 'ethereum, blue, circle, powered',
       name: 'poweredByEthereum',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.310Z',
     },
     '6121:1238': {
@@ -8260,7 +8260,7 @@ export const manifestData: Record<
       description: 'users, arrows, circles, blue, P2P, payments',
       name: 'p2pPayments',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:51.072Z',
     },
     '6121:1219': {
@@ -8269,7 +8269,7 @@ export const manifestData: Record<
       description: 'cancel, circle, blue, tag, fees, yellow',
       name: 'noFees',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.952Z',
     },
     '6121:1246': {
@@ -8278,7 +8278,7 @@ export const manifestData: Record<
       description: 'coin, circles, square, yellow, blue',
       name: 'multicoinSupport',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.400Z',
     },
     '6121:1236': {
@@ -8288,7 +8288,7 @@ export const manifestData: Record<
         'circle, blue, yellow, monitor, multiplatform, browser, app, mobile, extension, green, puzzle',
       name: 'multiPlatformMobileAppBrowserExtension',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.650Z',
     },
     '6121:1221': {
@@ -8297,7 +8297,7 @@ export const manifestData: Record<
       description: 'users, yellow, blue, coin, circle, money, decentralized',
       name: 'moneyDecentralized',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.933Z',
     },
     '6121:1228': {
@@ -8306,7 +8306,7 @@ export const manifestData: Record<
       description: 'coin, green, blue, mining',
       name: 'mining',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.463Z',
     },
     '6121:1244': {
@@ -8315,7 +8315,7 @@ export const manifestData: Record<
       description: 'circle, square, blue, user, wallet, coinbase, green',
       name: 'linkingYourWalletToYourCoinbaseAccount',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.878Z',
     },
     '6121:1202': {
@@ -8324,7 +8324,7 @@ export const manifestData: Record<
       description: 'coins, circles, graph, blue, yellow, green, investing, steps',
       name: 'invest',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.738Z',
     },
     '6121:1223': {
@@ -8333,7 +8333,7 @@ export const manifestData: Record<
       description: 'coins, yellow, blue, umbrella, insurance, protection',
       name: 'insuranceProtection',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.367Z',
     },
     '6121:1241': {
@@ -8342,7 +8342,7 @@ export const manifestData: Record<
       description: 'circles, blue, globe, connections, global transactions',
       name: 'globalTransactionsBeyond',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:22:39.107Z',
     },
     '6121:1233': {
@@ -8351,7 +8351,7 @@ export const manifestData: Record<
       description: 'stop watch, circles, timer, blue, get started\n',
       name: 'getStartedInMinutes',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.659Z',
     },
     '6121:1251': {
@@ -8360,7 +8360,7 @@ export const manifestData: Record<
       description: 'circle, yellow, blue, coin, encrypted, everything',
       name: 'encryptedEverything',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.933Z',
     },
     '6121:1222': {
@@ -8369,7 +8369,7 @@ export const manifestData: Record<
       description: 'graph, bars, circle, blue, yellow, earn',
       name: 'earn',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.051Z',
     },
     '6121:1208': {
@@ -8378,7 +8378,7 @@ export const manifestData: Record<
       description: 'circles, blue, square, music, user, play',
       name: 'digitalCollectibles',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.331Z',
     },
     '6121:1220': {
@@ -8387,7 +8387,7 @@ export const manifestData: Record<
       description: 'circles, blue, squares, arrow, pointer, grid, yellow, decentralized, web, web3',
       name: 'decentralizedWebWeb3',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.927Z',
     },
     '6121:1214': {
@@ -8396,7 +8396,7 @@ export const manifestData: Record<
       description: 'connecting dots, blue, circle, decentralization, green',
       name: 'decentralization',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.582Z',
     },
     '6121:1234': {
@@ -8405,7 +8405,7 @@ export const manifestData: Record<
       description: 'circles, blue, yellow, trading, exchange, defi',
       name: 'defiDecentralizedTradingExchange',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-21T23:16:02.441Z',
     },
     '6121:1213': {
@@ -8415,7 +8415,7 @@ export const manifestData: Record<
         'circles, blue, connections, defi, decentralized, lending, borrowing, green, yellow',
       name: 'defiDecentralizedBorrowingLending',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:23:03.390Z',
     },
     '6121:1212': {
@@ -8424,7 +8424,7 @@ export const manifestData: Record<
       description: 'coins, blue, yellow, stars, wallet, crypto',
       name: 'cryptoWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.001Z',
     },
     '6121:1226': {
@@ -8433,7 +8433,7 @@ export const manifestData: Record<
       description: 'coins, globe, circle, yellow, blue, crypto, economy',
       name: 'cryptoEconomy',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:51.034Z',
     },
     '6121:1250': {
@@ -8442,7 +8442,7 @@ export const manifestData: Record<
       description: 'yellow, blue, coins, circles, crypto, assets\n',
       name: 'cryptoAssets',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.583Z',
     },
     '6121:1211': {
@@ -8451,7 +8451,7 @@ export const manifestData: Record<
       description: 'circles, blue, connection, cross border, payments',
       name: 'crossBorderPayments',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.169Z',
     },
     '6121:1239': {
@@ -8460,7 +8460,7 @@ export const manifestData: Record<
       description: 'circles, blue, pencil, check, cross, complete, quiz',
       name: 'completeAQuiz',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.483Z',
     },
     '6121:1218': {
@@ -8470,7 +8470,7 @@ export const manifestData: Record<
         'square, blue, music, music note, user, play, document, digital, collectibles, nfts',
       name: 'collectingNfts',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-08T23:35:08.739Z',
     },
     '6121:1210': {
@@ -8479,7 +8479,7 @@ export const manifestData: Record<
       description: 'puzzle, blue, monitor, yellow',
       name: 'browserExtension',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.939Z',
     },
     '6121:1243': {
@@ -8488,7 +8488,7 @@ export const manifestData: Record<
       description: 'star, location, blue, location, USA',
       name: 'basedInUsa',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.405Z',
     },
     '6121:1225': {
@@ -8497,7 +8497,7 @@ export const manifestData: Record<
       description: 'circles, blue, yellow, coins, USA, Dollar',
       name: 'backedByUsDollar',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.685Z',
     },
     '6121:1203': {
@@ -8506,7 +8506,7 @@ export const manifestData: Record<
       description: 'arrow, coins, up, gain, blue, yellow, circle, trending, hot',
       name: 'trendingHotAssets',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.031Z',
     },
     '6121:1207': {
@@ -8515,7 +8515,7 @@ export const manifestData: Record<
       description: 'check, plus, equal, lines, circle, document, blue, yellow, green',
       name: 'taxesDetails',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:22.967Z',
     },
     '6121:1200': {
@@ -8524,7 +8524,7 @@ export const manifestData: Record<
       description: 'chain, hexagon, connections, yellow, blue',
       name: 'sidechain',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.015Z',
     },
     '6121:1206': {
@@ -8533,7 +8533,7 @@ export const manifestData: Record<
       description: 'share, social media, circles, blue, yellow',
       name: 'shareOnSocialMedia',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.008Z',
     },
     '6121:1230': {
@@ -8542,7 +8542,7 @@ export const manifestData: Record<
       description: 'semi custodial, coin, user, yellow, blue, bank',
       name: 'semiCustodial',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-15T01:20:47.514Z',
     },
     '6121:1205': {
@@ -8551,7 +8551,7 @@ export const manifestData: Record<
       description: 'self custody, coins, arrow, circles, user, blue, yellow',
       name: 'selfCustodyCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:22:39.070Z',
     },
     '6144:1153': {
@@ -8560,7 +8560,7 @@ export const manifestData: Record<
       description: 'play, eye, circle, square, blue, watch, videos',
       name: 'videoContent',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-18T16:35:12.979Z',
     },
     '6144:1189': {
@@ -8569,7 +8569,7 @@ export const manifestData: Record<
       description: 'lock, circle, square, blue',
       name: 'passwordWalletLocked',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-09T21:30:14.802Z',
     },
     '6144:1178': {
@@ -8578,7 +8578,7 @@ export const manifestData: Record<
       description: 'circles, blue, check, square',
       name: 'coldStorageCheck',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-25T17:58:28.126Z',
     },
     '6144:1176': {
@@ -8587,7 +8587,7 @@ export const manifestData: Record<
       description: 'arrows, blue, circle',
       name: 'controlWalletStorage',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.509Z',
     },
     '6144:1182': {
@@ -8596,7 +8596,7 @@ export const manifestData: Record<
       description: 'circles, play, blue, start, today',
       name: 'videoCalendar',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.888Z',
     },
     '6144:1275': {
@@ -8605,7 +8605,7 @@ export const manifestData: Record<
       description: 'circles, coins, yellow, blue, graph, staking',
       name: 'stakingGraph',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-22T13:57:50.810Z',
     },
     '6144:1141': {
@@ -8614,7 +8614,7 @@ export const manifestData: Record<
       description: 'balance, coins, circles, law, blue, stable, value',
       name: 'stableCoinMetaphor',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.537Z',
     },
     '6144:1165': {
@@ -8623,7 +8623,7 @@ export const manifestData: Record<
       description: 'wallet, user, blue, circle, self custody',
       name: 'selfCustodyWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T18:33:21.924Z',
     },
     '6144:1174': {
@@ -8632,7 +8632,7 @@ export const manifestData: Record<
       description: 'circle, yellow, blue, coin, secure, storage',
       name: 'securedAssets',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-01T03:06:17.105Z',
     },
     '6144:1173': {
@@ -8641,7 +8641,7 @@ export const manifestData: Record<
       description: 'blue, globe, global, transactions',
       name: 'globalTransactions',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.658Z',
     },
     '6144:1172': {
@@ -8650,7 +8650,7 @@ export const manifestData: Record<
       description: 'shield, circles, coin, blue, secure, trust',
       name: 'securityCoinShield',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-21T14:07:51.519Z',
     },
     '6144:1161': {
@@ -8659,7 +8659,7 @@ export const manifestData: Record<
       description: 'ethereum, blue, circle, powered',
       name: 'ethereumFocus',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.151Z',
     },
     '6144:1188': {
@@ -8668,7 +8668,7 @@ export const manifestData: Record<
       description: 'users, arrows, circles, blue, P2P, payments',
       name: 'sendPaymentToOthers',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-15T17:28:49.714Z',
     },
     '6144:1150': {
@@ -8677,7 +8677,7 @@ export const manifestData: Record<
       description: 'cancel, circle, blue, tag, fees',
       name: 'feesRestriction',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-17T14:28:07.482Z',
     },
     '6144:1162': {
@@ -8686,7 +8686,7 @@ export const manifestData: Record<
       description: 'coin, circles, square, yellow, blue',
       name: 'coinFocus',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.698Z',
     },
     '6144:1166': {
@@ -8695,7 +8695,7 @@ export const manifestData: Record<
       description: 'circle, blue, yellow, monitor, multiplatform, browser, app, mobile, extension',
       name: 'browserMultiPlatform',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.175Z',
     },
     '6144:1143': {
@@ -8704,7 +8704,7 @@ export const manifestData: Record<
       description: 'users, yellow, blue, coin, circle',
       name: 'holdingCoin',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-14T12:22:09.202Z',
     },
     '6144:1163': {
@@ -8713,7 +8713,7 @@ export const manifestData: Record<
       description: 'coin, yellow, circle, blue',
       name: 'miningCoins',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-17T01:22:44.527Z',
     },
     '6144:1181': {
@@ -8722,7 +8722,7 @@ export const manifestData: Record<
       description: 'circle, square, blue, user',
       name: 'linkYourAccount',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.333Z',
     },
     '6144:1187': {
@@ -8731,7 +8731,7 @@ export const manifestData: Record<
       description: 'coins, circles, graph, blue',
       name: 'investGraph',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.388Z',
     },
     '6144:1160': {
@@ -8740,7 +8740,7 @@ export const manifestData: Record<
       description: 'coins, yellow, blue, umbrella, insurance, protection',
       name: 'protectionPlan',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-22T13:57:50.842Z',
     },
     '6144:1169': {
@@ -8749,7 +8749,7 @@ export const manifestData: Record<
       description: 'circles, blue, globe, connections, global transactions',
       name: 'globalConnections',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.809Z',
     },
     '6144:1157': {
@@ -8758,7 +8758,7 @@ export const manifestData: Record<
       description: 'stop watch, circles, timer, blue',
       name: 'getStarted',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.539Z',
     },
     '6144:1152': {
@@ -8767,7 +8767,7 @@ export const manifestData: Record<
       description: 'circle, yellow, blue, coin, encrypted, everything',
       name: 'assetEncryption',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.064Z',
     },
     '6144:1171': {
@@ -8776,7 +8776,7 @@ export const manifestData: Record<
       description: 'graph, bars, circle, blue, yellow, earn',
       name: 'earnGraph',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-14T23:26:31.588Z',
     },
     '6144:1168': {
@@ -8785,7 +8785,7 @@ export const manifestData: Record<
       description: 'circles, blue, square',
       name: 'collectionOfAssets',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.258Z',
     },
     '6144:1155': {
@@ -8795,7 +8795,7 @@ export const manifestData: Record<
         'circles, blue, squares, arrow, pointer, grid, yellow\n, decentralized, web, web3',
       name: 'decentralizedWeb3',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-17T14:23:52.321Z',
     },
     '6144:1151': {
@@ -8804,7 +8804,7 @@ export const manifestData: Record<
       description: 'connecting dots, blue, circle, decentralization',
       name: 'decentralizationEverything',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-27T23:23:21.479Z',
     },
     '6144:1149': {
@@ -8813,7 +8813,7 @@ export const manifestData: Record<
       description: 'circles, blue, yellow, trading, exchange, defi',
       name: 'decentralizedExchange',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-13T19:08:59.448Z',
     },
     '6144:1148': {
@@ -8822,7 +8822,7 @@ export const manifestData: Record<
       description: 'circles, blue, connections, defi, decentralized, lending, borrowing',
       name: 'borrowingLending',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-29T14:16:58.977Z',
     },
     '6144:1265': {
@@ -8831,7 +8831,7 @@ export const manifestData: Record<
       description: 'coins, blue, yellow, stars, wallet, crypto',
       name: 'walletPassword',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.473Z',
     },
     '6144:1159': {
@@ -8840,7 +8840,7 @@ export const manifestData: Record<
       description: 'coins, globe, circle, yellow, blue, crypto, economy',
       name: 'economyGlobal',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-14T18:50:00.738Z',
     },
     '6144:1146': {
@@ -8849,7 +8849,7 @@ export const manifestData: Record<
       description: 'yellow, blue, coins, circles, crypto, assets\n',
       name: 'assetMovement',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-14T18:50:00.952Z',
     },
     '6144:1185': {
@@ -8858,7 +8858,7 @@ export const manifestData: Record<
       description: 'circles, blue, connection',
       name: 'globalPayments',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-14T12:20:27.388Z',
     },
     '6144:1145': {
@@ -8867,7 +8867,7 @@ export const manifestData: Record<
       description: 'circles, blue, pencil, check, cross, complete, quiz',
       name: 'completeQuiz',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-08T23:15:39.628Z',
     },
     '6144:1144': {
@@ -8877,7 +8877,7 @@ export const manifestData: Record<
         'square, blue, music, music note, user, play, document, digital, collectibles, nfts',
       name: 'nftLibrary',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.802Z',
     },
     '6144:1158': {
@@ -8886,7 +8886,7 @@ export const manifestData: Record<
       description: 'puzzle, blue, monitor',
       name: 'pluginBrowser',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.491Z',
     },
     '6144:1142': {
@@ -8895,7 +8895,7 @@ export const manifestData: Record<
       description: 'star, location, blue, location, USA',
       name: 'locationUsa',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:22.857Z',
     },
     '6144:1180': {
@@ -8904,7 +8904,7 @@ export const manifestData: Record<
       description: 'circles, blue, yellow, coins, USA, Dollar',
       name: 'dollarShowcase',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:22.688Z',
     },
     '6144:1170': {
@@ -8913,7 +8913,7 @@ export const manifestData: Record<
       description: 'arrow, coins, up, gain, blue, yellow, circle, trending, hot\n',
       name: 'trendingAssets',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-21T23:18:39.835Z',
     },
     '6144:1140': {
@@ -8922,7 +8922,7 @@ export const manifestData: Record<
       description: 'check, equal, circle, document, blue ',
       name: 'taxesArrangement',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.665Z',
     },
     '6144:1147': {
@@ -8931,7 +8931,7 @@ export const manifestData: Record<
       description: 'chain, hexagon, connections, blue',
       name: 'sideChainSide',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-22T13:57:50.867Z',
     },
     '6144:1154': {
@@ -8940,7 +8940,7 @@ export const manifestData: Record<
       description: 'share, social media, circles, blue, yellow',
       name: 'coinShare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.502Z',
     },
     '6144:1164': {
@@ -8949,7 +8949,7 @@ export const manifestData: Record<
       description: 'semi custodial, coin, user, yellow, blue, bank',
       name: 'custodialJourney',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T16:02:28.585Z',
     },
     '6144:1139': {
@@ -8958,7 +8958,7 @@ export const manifestData: Record<
       description: 'self custody, coins, circles, user, blue, yellow',
       name: 'selfServe',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-23T11:25:02.233Z',
     },
     '6144:1138': {
@@ -8967,7 +8967,7 @@ export const manifestData: Record<
       description: 'rating, review, phone, coin, star, speech bubble, blue, yellow, circle',
       name: 'positiveReviews',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-15T15:12:18.225Z',
     },
     '6144:1136': {
@@ -8976,7 +8976,7 @@ export const manifestData: Record<
       description: 'quick, simple, clock, timer, check, blue',
       name: 'timingCheck',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.768Z',
     },
     '6144:1135': {
@@ -8985,7 +8985,7 @@ export const manifestData: Record<
       description: 'arrow, coins, up, gain, blue, circle, portfolio',
       name: 'monitoringPerformance',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-14T17:06:23.580Z',
     },
     '6144:1134': {
@@ -8994,7 +8994,7 @@ export const manifestData: Record<
       description: 'mail, speech bubble, yellow, blue',
       name: 'emailAndMessages',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.456Z',
     },
     '6144:1133': {
@@ -9003,7 +9003,7 @@ export const manifestData: Record<
       description: 'multiple wallets, blue, yellow',
       name: 'multiAccountsAndCards',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-01T21:07:32.382Z',
     },
     '6144:1132': {
@@ -9012,7 +9012,7 @@ export const manifestData: Record<
       description: 'layers, isometric, networks, ethereum, blue, yellow',
       name: 'layerNetworks',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-07T22:13:43.935Z',
     },
     '6144:1131': {
@@ -9021,7 +9021,7 @@ export const manifestData: Record<
       description: 'gas fees, fees, fuel tank, circle\n',
       name: 'gasFees',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.915Z',
     },
     '6144:1130': {
@@ -9030,7 +9030,7 @@ export const manifestData: Record<
       description: 'gain, loss, coins, balance, blue',
       name: 'assetMeasurements',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.800Z',
     },
     '6144:1177': {
@@ -9039,7 +9039,7 @@ export const manifestData: Record<
       description: 'earn, learn, bulb, circle, coin, yellow, blue',
       name: 'lightbulbLearn',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-14T18:50:11.157Z',
     },
     '6144:1129': {
@@ -9048,7 +9048,7 @@ export const manifestData: Record<
       description: 'music, blue, music note',
       name: 'musicAndSounds',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.200Z',
     },
     '6144:1128': {
@@ -9057,7 +9057,7 @@ export const manifestData: Record<
       description: 'coin, circle, blue, yellow',
       name: 'findYourSelection',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-19T16:30:52.397Z',
     },
     '6144:1186': {
@@ -9066,7 +9066,7 @@ export const manifestData: Record<
       description: 'coins, globe, circles, blue',
       name: 'finance',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-02T16:33:05.884Z',
     },
     '6144:1127': {
@@ -9075,7 +9075,7 @@ export const manifestData: Record<
       description: 'art, palette, circles, blue',
       name: 'creative',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.613Z',
     },
     '6144:1126': {
@@ -9084,7 +9084,7 @@ export const manifestData: Record<
       description: 'user, check, blue ',
       name: 'decentralizedIdentity',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-22T13:57:51.269Z',
     },
     '6144:1125': {
@@ -9093,7 +9093,7 @@ export const manifestData: Record<
       description: 'coin, folder, blue, yellow',
       name: 'cryptoFolder',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.601Z',
     },
     '6144:1124': {
@@ -9102,7 +9102,7 @@ export const manifestData: Record<
       description: 'crypto, beginner, coin, circle, book, yellow, blue',
       name: 'crypto101',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.136Z',
     },
     '6144:1137': {
@@ -9111,7 +9111,7 @@ export const manifestData: Record<
       description: 'congratulations, prize, coin, yellow, blue',
       name: 'congratulations',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-14T23:26:30.864Z',
     },
     '6144:1123': {
@@ -9120,7 +9120,7 @@ export const manifestData: Record<
       description: 'borrow, coins, blue, yellow',
       name: 'borrowCoins',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:24.183Z',
     },
     '6144:1122': {
@@ -9129,7 +9129,7 @@ export const manifestData: Record<
       description: 'chain, blockchain, hexagon, blue, sequence\n',
       name: 'blockchainConnection',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-20T13:51:54.822Z',
     },
     '6144:1179': {
@@ -9138,7 +9138,7 @@ export const manifestData: Record<
       description: 'chart, indicator, candles, green, red',
       name: 'candleSticksGraph',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-12T15:28:06.105Z',
     },
     '6121:1204': {
@@ -9147,7 +9147,7 @@ export const manifestData: Record<
       description: 'rating, review, phone, coins, stars, speech bubble, blue, yellow, circles',
       name: 'ratingsAndReviews',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.065Z',
     },
     '6121:1201': {
@@ -9156,7 +9156,7 @@ export const manifestData: Record<
       description: 'quick, simple, clock, timer, check, blue, yellow',
       name: 'quickAndSimple',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.210Z',
     },
     '6121:1224': {
@@ -9165,7 +9165,7 @@ export const manifestData: Record<
       description: 'arrow, coins, up, gain, blue, yellow, circle, green, portfolio',
       name: 'portfolioPerformance',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.939Z',
     },
     '6121:1199': {
@@ -9174,7 +9174,7 @@ export const manifestData: Record<
       description: 'mail, speech bubble, yellow, circles, check, blue',
       name: 'optInPushNotificationsEmail',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.862Z',
     },
     '6121:1198': {
@@ -9183,7 +9183,7 @@ export const manifestData: Record<
       description: 'multiple wallets, green, blue, yellow',
       name: 'multipleAccountsWalletsForOneUser',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:24.152Z',
     },
     '6121:1196': {
@@ -9192,7 +9192,7 @@ export const manifestData: Record<
       description: 'layers, isometric, networks, ethereum, blue, yellow',
       name: 'layeredNetworks',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.185Z',
     },
     '6121:1195': {
@@ -9201,7 +9201,7 @@ export const manifestData: Record<
       description: 'wallet, hardware, storage, blue',
       name: 'hardwareWallets',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:22.889Z',
     },
     '6121:1229': {
@@ -9210,7 +9210,7 @@ export const manifestData: Record<
       description: '≈',
       name: 'gasFeesNetworkFees',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.406Z',
     },
     '6121:1215': {
@@ -9219,7 +9219,7 @@ export const manifestData: Record<
       description: 'gain, loss, coins, balance, blue, yellow',
       name: 'gainsAndLosses',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:22.960Z',
     },
     '6121:1197': {
@@ -9228,7 +9228,7 @@ export const manifestData: Record<
       description: 'earn, learn, bulb, circle, coin, yellow, blue, arrow',
       name: 'earnToLearn',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.069Z',
     },
     '6121:1249': {
@@ -9237,7 +9237,7 @@ export const manifestData: Record<
       description: 'music, yellow, blue, music note',
       name: 'dappsMusic',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.979Z',
     },
     '6121:1194': {
@@ -9246,7 +9246,7 @@ export const manifestData: Record<
       description: 'coin, circle, triangle, square, cross, blue, yellow',
       name: 'dappsGaming',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:24.225Z',
     },
     '6121:1193': {
@@ -9255,7 +9255,7 @@ export const manifestData: Record<
       description: 'coins, globe, circles, blue, yellow',
       name: 'dappsFinance',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.560Z',
     },
     '6121:1192': {
@@ -9264,7 +9264,7 @@ export const manifestData: Record<
       description: 'art, palette, circles, blue, yellow',
       name: 'dappsArts',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.085Z',
     },
     '6121:1253': {
@@ -9273,7 +9273,7 @@ export const manifestData: Record<
       description: 'user, check, circles, blue, yellow',
       name: 'didDecentralizedIdentity',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-15T01:20:02.508Z',
     },
     '6121:1191': {
@@ -9282,7 +9282,7 @@ export const manifestData: Record<
       description: 'coin, folder, blue, yellow',
       name: 'cryptoPortfolio',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.171Z',
     },
     '6121:1237': {
@@ -9291,7 +9291,7 @@ export const manifestData: Record<
       description: 'crypto, beginner, coin, circle, book, lines, yellow, blue',
       name: 'cryptoForBeginners',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-15T01:19:19.758Z',
     },
     '6121:1190': {
@@ -9300,7 +9300,7 @@ export const manifestData: Record<
       description: 'congratulations, prize, coin, yellow, blue',
       name: 'congratulationsOnEarningCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.801Z',
     },
     '6121:1189': {
@@ -9309,7 +9309,7 @@ export const manifestData: Record<
       description: 'borrow, arrows, wallet, coins, green, blue, yellow',
       name: 'borrowWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.131Z',
     },
     '6121:1231': {
@@ -9318,7 +9318,7 @@ export const manifestData: Record<
       description: 'chain, blockchain, hexagon, blue, yellow, sequence',
       name: 'blockchain',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.585Z',
     },
     '6121:1227': {
@@ -9327,7 +9327,7 @@ export const manifestData: Record<
       description: 'chart, indicator, candles, green, red',
       name: 'advancedTradingChartsIndicatorsCandles',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.604Z',
     },
     '6144:1252': {
@@ -9336,7 +9336,7 @@ export const manifestData: Record<
       description: 'play, eye, circle, square, blue, watch, videos',
       name: 'videoContent',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.653Z',
     },
     '6144:1254': {
@@ -9345,7 +9345,7 @@ export const manifestData: Record<
       description: 'lock, circle, square, blue',
       name: 'passwordWalletLocked',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:11.224Z',
     },
     '6144:1232': {
@@ -9354,7 +9354,7 @@ export const manifestData: Record<
       description: 'circles, blue, check, square',
       name: 'coldStorageCheck',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.644Z',
     },
     '6144:1203': {
@@ -9363,7 +9363,7 @@ export const manifestData: Record<
       description: 'arrows, blue, circle',
       name: 'controlWalletStorage',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:28.436Z',
     },
     '6144:1220': {
@@ -9372,7 +9372,7 @@ export const manifestData: Record<
       description: 'circles, play, blue, start, today',
       name: 'videoCalendar',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.968Z',
     },
     '6144:1248': {
@@ -9381,7 +9381,7 @@ export const manifestData: Record<
       description: 'circles, coins, yellow, blue, graph, staking',
       name: 'stakingGraph',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:11.390Z',
     },
     '6144:1221': {
@@ -9390,7 +9390,7 @@ export const manifestData: Record<
       description: 'balance, coins, circles, law, blue, stable, value',
       name: 'stableCoinMetaphor',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.493Z',
     },
     '6144:1238': {
@@ -9399,7 +9399,7 @@ export const manifestData: Record<
       description: 'wallet, user, blue, circle, self custody',
       name: 'selfCustodyWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.045Z',
     },
     '6144:1247': {
@@ -9408,7 +9408,7 @@ export const manifestData: Record<
       description: 'circle, yellow, blue, coin, secure, storage',
       name: 'securedAssets',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-21T23:17:19.803Z',
     },
     '6144:1240': {
@@ -9417,7 +9417,7 @@ export const manifestData: Record<
       description: 'blue, globe, secure, global, transactions',
       name: 'globalTransactions',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.333Z',
     },
     '6144:1211': {
@@ -9426,7 +9426,7 @@ export const manifestData: Record<
       description: 'shield, circles, coin, blue, secure, trust',
       name: 'securityCoinShield',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.096Z',
     },
     '6144:1230': {
@@ -9435,7 +9435,7 @@ export const manifestData: Record<
       description: 'ethereum, blue, circle, powered',
       name: 'ethereumFocus',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.796Z',
     },
     '6144:1234': {
@@ -9444,7 +9444,7 @@ export const manifestData: Record<
       description: 'users, arrows, circles, blue, P2P, payments',
       name: 'sendPaymentToOthers',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.075Z',
     },
     '6144:1236': {
@@ -9453,7 +9453,7 @@ export const manifestData: Record<
       description: 'cancel, circle, blue, tag, fees\n',
       name: 'feesRestriction',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.450Z',
     },
     '6144:1227': {
@@ -9462,7 +9462,7 @@ export const manifestData: Record<
       description: 'coin, circles, square, yellow, blue',
       name: 'coinFocus',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-21T23:16:44.483Z',
     },
     '6144:1229': {
@@ -9471,7 +9471,7 @@ export const manifestData: Record<
       description: 'circle, blue, yellow, monitor, multiplatform, browser, app, mobile, extension',
       name: 'browserMultiPlatform',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.756Z',
     },
     '6144:1231': {
@@ -9480,7 +9480,7 @@ export const manifestData: Record<
       description: 'users, yellow, blue, coin, circle',
       name: 'holdingCoin',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-15T18:17:52.250Z',
     },
     '6144:1228': {
@@ -9489,7 +9489,7 @@ export const manifestData: Record<
       description: 'coin, yellow, circle, blue, mining',
       name: 'miningCoins',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.483Z',
     },
     '6144:1253': {
@@ -9498,7 +9498,7 @@ export const manifestData: Record<
       description: 'circle, square, blue, user',
       name: 'linkYourAccount',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:11.079Z',
     },
     '6144:1241': {
@@ -9507,7 +9507,7 @@ export const manifestData: Record<
       description: 'coins, circles, graph, blue',
       name: 'investGraph',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.337Z',
     },
     '6144:1226': {
@@ -9516,7 +9516,7 @@ export const manifestData: Record<
       description: 'coins, yellow, blue, umbrella, insurance, protection',
       name: 'protectionPlan',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.216Z',
     },
     '6144:1246': {
@@ -9525,7 +9525,7 @@ export const manifestData: Record<
       description: 'circles, blue, globe, connections, global transactions',
       name: 'globalConnections',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:11.065Z',
     },
     '6144:1210': {
@@ -9534,7 +9534,7 @@ export const manifestData: Record<
       description: 'stop watch, circles, timer, blue',
       name: 'getStarted',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.951Z',
     },
     '6144:1239': {
@@ -9543,7 +9543,7 @@ export const manifestData: Record<
       description: 'circle, yellow, blue, coin, encrypted, everything',
       name: 'assetEncryption',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.330Z',
     },
     '6144:1243': {
@@ -9552,7 +9552,7 @@ export const manifestData: Record<
       description: 'graph, bars, circle, blue, yellow, earn\n',
       name: 'earnGraph',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-14T23:26:31.774Z',
     },
     '6144:1223': {
@@ -9561,7 +9561,7 @@ export const manifestData: Record<
       description: 'circles, blue, square',
       name: 'collectionOfAssets',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.005Z',
     },
     '6144:1222': {
@@ -9570,7 +9570,7 @@ export const manifestData: Record<
       description: 'circles, blue, squares, arrow, pointer, grid, decentralized, web, web3',
       name: 'decentralizedWeb3',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.234Z',
     },
     '6144:1245': {
@@ -9579,7 +9579,7 @@ export const manifestData: Record<
       description: 'connecting dots, blue, circle, decentralization',
       name: 'decentralizationEverything',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-21T21:35:45.640Z',
     },
     '6144:1219': {
@@ -9588,7 +9588,7 @@ export const manifestData: Record<
       description: 'circles, blue, yellow, trading, exchange, defi',
       name: 'decentralizedExchange',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.869Z',
     },
     '6144:1209': {
@@ -9597,7 +9597,7 @@ export const manifestData: Record<
       description: 'circles, blue, connections, defi, decentralized, lending, borrowing',
       name: 'borrowingLending',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.340Z',
     },
     '6144:1217': {
@@ -9606,7 +9606,7 @@ export const manifestData: Record<
       description: 'coins, blue, yellow, stars, wallet, crypto',
       name: 'walletPassword',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.632Z',
     },
     '6144:1250': {
@@ -9615,7 +9615,7 @@ export const manifestData: Record<
       description: 'coins, globe, circle, yellow, blue, crypto, economy',
       name: 'economyGlobal',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T18:32:53.766Z',
     },
     '6144:1216': {
@@ -9624,7 +9624,7 @@ export const manifestData: Record<
       description: 'yellow, blue, coins, circles, crypto, assets',
       name: 'assetMovement',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.627Z',
     },
     '6144:1249': {
@@ -9633,7 +9633,7 @@ export const manifestData: Record<
       description: 'circles, blue, connection',
       name: 'globalPayments',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:11.231Z',
     },
     '6144:1215': {
@@ -9642,7 +9642,7 @@ export const manifestData: Record<
       description: 'circles, blue, pencil, check, cross, complete, quiz',
       name: 'completeQuiz',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.718Z',
     },
     '6144:1214': {
@@ -9652,7 +9652,7 @@ export const manifestData: Record<
         'square, blue, music, music note, user, play, document, digital, collectibles, nfts',
       name: 'nftLibrary',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.357Z',
     },
     '6144:1213': {
@@ -9661,7 +9661,7 @@ export const manifestData: Record<
       description: 'puzzle, blue, monitor',
       name: 'pluginBrowser',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.847Z',
     },
     '6144:1225': {
@@ -9670,7 +9670,7 @@ export const manifestData: Record<
       description: 'star, location, blue, location, USA\n',
       name: 'locationUsa',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.735Z',
     },
     '6144:1212': {
@@ -9679,7 +9679,7 @@ export const manifestData: Record<
       description: 'circles, blue, yellow, coins, USA, Dollar',
       name: 'dollarShowcase',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.016Z',
     },
     '6144:1237': {
@@ -9688,7 +9688,7 @@ export const manifestData: Record<
       description: 'arrow, coins, up, gain, blue, yellow, circle, trending, hot\n',
       name: 'trendingAssets',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.644Z',
     },
     '6144:1233': {
@@ -9697,7 +9697,7 @@ export const manifestData: Record<
       description: 'chain, hexagon, connections, blue',
       name: 'sideChainSide',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.837Z',
     },
     '6144:1207': {
@@ -9706,7 +9706,7 @@ export const manifestData: Record<
       description: 'check, equal, circle, document, blue ',
       name: 'taxesArrangement',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.883Z',
     },
     '6144:1218': {
@@ -9715,7 +9715,7 @@ export const manifestData: Record<
       description: 'share, social media, circles, blue, yellow',
       name: 'coinShare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-21T23:17:23.531Z',
     },
     '6144:1206': {
@@ -9724,7 +9724,7 @@ export const manifestData: Record<
       description: 'semi custodial, coin, user, yellow, blue, bank',
       name: 'custodialJourney',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:25.229Z',
     },
     '6144:1242': {
@@ -9733,7 +9733,7 @@ export const manifestData: Record<
       description: 'self custody, coins, circles, user, blue, yellow',
       name: 'selfServe',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.339Z',
     },
     '6144:1205': {
@@ -9742,7 +9742,7 @@ export const manifestData: Record<
       description: 'rating, review, phone, coin, star, speech bubble, blue, yellow, circle',
       name: 'positiveReviews',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.324Z',
     },
     '6144:1204': {
@@ -9751,7 +9751,7 @@ export const manifestData: Record<
       description: 'quick, simple, clock, timer, check, blue',
       name: 'timingCheck',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.045Z',
     },
     '6144:1202': {
@@ -9760,7 +9760,7 @@ export const manifestData: Record<
       description: 'arrow, coins, up, gain, blue, circle, portfolio',
       name: 'monitoringPerformance',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:23.949Z',
     },
     '6144:1201': {
@@ -9769,7 +9769,7 @@ export const manifestData: Record<
       description: 'mail, speech bubble, yellow, blue',
       name: 'emailAndMessages',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.712Z',
     },
     '6144:1208': {
@@ -9778,7 +9778,7 @@ export const manifestData: Record<
       description: 'multiple wallets, blue, yellow',
       name: 'multiAccountsAndCards',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.649Z',
     },
     '6144:1224': {
@@ -9787,7 +9787,7 @@ export const manifestData: Record<
       description: 'layers, isometric, networks, ethereum, blue, yellow',
       name: 'layerNetworks',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-07T22:13:43.866Z',
     },
     '6144:1200': {
@@ -9796,7 +9796,7 @@ export const manifestData: Record<
       description: 'gas fees, fees, fuel tank, circle\n\n',
       name: 'gasFees',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.578Z',
     },
     '6144:1199': {
@@ -9805,7 +9805,7 @@ export const manifestData: Record<
       description: 'gain, loss, coins, balance, blue',
       name: 'assetMeasurements',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.392Z',
     },
     '6144:1198': {
@@ -9814,7 +9814,7 @@ export const manifestData: Record<
       description: 'earn, learn, bulb, circle, coin, yellow, blue',
       name: 'lightbulbLearn',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.415Z',
     },
     '6144:1251': {
@@ -9823,7 +9823,7 @@ export const manifestData: Record<
       description: 'music, blue, music note',
       name: 'musicAndSounds',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.800Z',
     },
     '6144:1244': {
@@ -9832,7 +9832,7 @@ export const manifestData: Record<
       description: 'coin, circle, blue, yellow',
       name: 'findYourSelection',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.895Z',
     },
     '6144:1197': {
@@ -9841,7 +9841,7 @@ export const manifestData: Record<
       description: 'coins, globe, circles, blue',
       name: 'finance',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T18:32:38.513Z',
     },
     '6144:1196': {
@@ -9850,7 +9850,7 @@ export const manifestData: Record<
       description: 'art, palette, circles, blue',
       name: 'creative',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.128Z',
     },
     '6144:1195': {
@@ -9859,7 +9859,7 @@ export const manifestData: Record<
       description: 'user, check, blue ',
       name: 'decentralizedIdentity',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.279Z',
     },
     '6144:1194': {
@@ -9868,7 +9868,7 @@ export const manifestData: Record<
       description: 'coin, folder, blue, yellow',
       name: 'cryptoFolder',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.420Z',
     },
     '6144:1193': {
@@ -9877,7 +9877,7 @@ export const manifestData: Record<
       description: 'crypto, beginner, coin, circle, book, yellow, blue',
       name: 'crypto101',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.945Z',
     },
     '6144:1192': {
@@ -9886,7 +9886,7 @@ export const manifestData: Record<
       description: 'congratulations, prize, coin, yellow, blue',
       name: 'congratulations',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.757Z',
     },
     '6144:1191': {
@@ -9895,7 +9895,7 @@ export const manifestData: Record<
       description: 'borrow, coins, blue, yellow\n',
       name: 'borrowCoins',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.193Z',
     },
     '6144:1235': {
@@ -9904,7 +9904,7 @@ export const manifestData: Record<
       description: 'chain, blockchain, hexagon, blue, sequence\n',
       name: 'blockchainConnection',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.889Z',
     },
     '6144:1190': {
@@ -9913,7 +9913,7 @@ export const manifestData: Record<
       description: 'chart, indicator, candles, green, red',
       name: 'candleSticksGraph',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.835Z',
     },
     '6122:1214': {
@@ -9922,7 +9922,7 @@ export const manifestData: Record<
       description: 'network, coin, asset, warning, arrow, path, direction',
       name: 'networkWarning',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.044Z',
     },
     '6122:1215': {
@@ -9931,7 +9931,7 @@ export const manifestData: Record<
       description: 'network, coin, asset, warning, arrow, path, direction',
       name: 'networkWarning',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.297Z',
     },
     '6122:1240': {
@@ -9940,7 +9940,7 @@ export const manifestData: Record<
       description: 'agent, avatar, speech bubble, chat',
       name: 'agent',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-04T00:09:59.236Z',
     },
     '6122:1241': {
@@ -9949,7 +9949,7 @@ export const manifestData: Record<
       description: 'agent, avatar, speech bubble, chat',
       name: 'agent',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.519Z',
     },
     '6142:1372': {
@@ -9959,7 +9959,7 @@ export const manifestData: Record<
         'prime, trading, crypto, interface, interaction, chart, candlesticks, settings, gear, preferences',
       name: 'primeTradePreferences',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.090Z',
     },
     '6142:1369': {
@@ -9969,7 +9969,7 @@ export const manifestData: Record<
         'prime, trading, interface, price, ladder, prices, crypto, select, match, interact',
       name: 'primePriceLadder',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.335Z',
     },
     '6142:1367': {
@@ -9979,7 +9979,7 @@ export const manifestData: Record<
         'prime, trading, interface, order, confirmation, book, checkmark, exclamation, yes, no, trade',
       name: 'primeOrderConfirmation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.318Z',
     },
     '6142:1370': {
@@ -9989,7 +9989,7 @@ export const manifestData: Record<
         'prime, trading, crypto, interface, interaction, chart, candlesticks, settings, gear, preferences',
       name: 'primeTradePreferences',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.098Z',
     },
     '6142:1368': {
@@ -9999,7 +9999,7 @@ export const manifestData: Record<
         'prime, trading, interface, price, ladder, prices, crypto, select, match, interact',
       name: 'primePriceLadder',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.610Z',
     },
     '6142:1371': {
@@ -10009,7 +10009,7 @@ export const manifestData: Record<
         'prime, trading, interface, order, confirmation, book, checkmark, exclamation, yes, no, trade',
       name: 'primeOrderConfirmation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.863Z',
     },
     '6146:1550': {
@@ -10019,7 +10019,7 @@ export const manifestData: Record<
         'Prime, Staking, Stake, Crypto, Interest, Earn, Coins, Assets, Circles, Universe, sparkles, ✨',
       name: 'primeStakingHero',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-17T14:42:53.229Z',
     },
     '6146:1548': {
@@ -10029,7 +10029,7 @@ export const manifestData: Record<
         'Prime, Staking, Stake, Crypto, Interest, Earn, Coins, Assets, Circles, Universe, sparkles, ✨',
       name: 'primeStakingHero',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:25.250Z',
     },
     '6146:1544': {
@@ -10039,7 +10039,7 @@ export const manifestData: Record<
         'Prime, DeFi, Decentralized, Finance, Explore, Assets, Crypto, Universe, Circles, Coins, Coin, Stars, ✨',
       name: 'primeDeFiHero',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.681Z',
     },
     '6146:1539': {
@@ -10049,7 +10049,7 @@ export const manifestData: Record<
         'Prime, DeFi, Decentralized, Finance, Explore, Assets, Crypto, Universe, Circles, Coins, Coin, Stars, ✨',
       name: 'primeDeFiHero',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-07T18:28:14.564Z',
     },
     '6146:1543': {
@@ -10059,7 +10059,7 @@ export const manifestData: Record<
         'Prime, Wallet, Earn, Rewards, Coins, Assets, Coin, Crypto, Currency, Money, Cash, ✨',
       name: 'primeEarnHero',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T13:26:26.752Z',
     },
     '6146:1537': {
@@ -10069,7 +10069,7 @@ export const manifestData: Record<
         'Prime, Wallet, Earn, Rewards, Coins, Assets, Coin, Crypto, Currency, Money, Cash, ✨',
       name: 'primeEarnHero',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-15T16:25:35.227Z',
     },
     '6146:1540': {
@@ -10079,7 +10079,7 @@ export const manifestData: Record<
         'Prime, Staking, Stake, Crypto, Interest, Earn, Coins, Assets, Circles, Universe, sparkles, ✨',
       name: 'primeStakingRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-15T16:49:37.598Z',
     },
     '6146:1546': {
@@ -10089,7 +10089,7 @@ export const manifestData: Record<
         'Prime, DeFi, Decentralized, Finance, Explore, Assets, Crypto, Universe, Circles, Coins, Coin, Stars, ✨',
       name: 'primeDeFiRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-23T00:17:33.290Z',
     },
     '6146:1545': {
@@ -10099,7 +10099,7 @@ export const manifestData: Record<
         'Prime, Wallet, Earn, Rewards, Coins, Assets, Coin, Crypto, Currency, Money, Cash, ✨',
       name: 'primeEarnRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-07T20:44:47.629Z',
     },
     '6146:1551': {
@@ -10109,7 +10109,7 @@ export const manifestData: Record<
         'Prime, Staking, Stake, Crypto, Interest, Earn, Coins, Assets, Circles, Universe, sparkles, ✨',
       name: 'primeStakingRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.453Z',
     },
     '6146:1547': {
@@ -10119,7 +10119,7 @@ export const manifestData: Record<
         'Prime, DeFi, Decentralized, Finance, Explore, Assets, Crypto, Universe, Circles, Coins, Coin, Stars, ✨',
       name: 'primeDeFiRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:25.010Z',
     },
     '6146:1536': {
@@ -10129,7 +10129,7 @@ export const manifestData: Record<
         'Prime, Wallet, Earn, Rewards, Coins, Assets, Coin, Crypto, Currency, Money, Cash, ✨',
       name: 'primeEarnRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:56.980Z',
     },
     '6146:1866': {
@@ -10139,7 +10139,7 @@ export const manifestData: Record<
         'Prime, Staking, Stake, Crypto, Interest, Earn, Coins, Assets, Circles, Universe, sparkles, ✨',
       name: 'primeStakingSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-14T18:50:01.056Z',
     },
     '6146:1863': {
@@ -10149,7 +10149,7 @@ export const manifestData: Record<
         'Prime, DeFi, Decentralized, Finance, Explore, Assets, Crypto, Universe, Circles, Coins, Coin, Stars, ✨',
       name: 'primeDeFiSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-06T16:42:44.778Z',
     },
     '6146:1862': {
@@ -10159,7 +10159,7 @@ export const manifestData: Record<
         'Prime, Wallet, Earn, Rewards, Coins, Assets, Coin, Crypto, Currency, Money, Cash, ✨',
       name: 'primeEarnSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-01T21:07:48.433Z',
     },
     '6146:1865': {
@@ -10169,7 +10169,7 @@ export const manifestData: Record<
         'Prime, Staking, Stake, Crypto, Interest, Earn, Coins, Assets, Circles, Universe, sparkles, ✨',
       name: 'primeStakingSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.125Z',
     },
     '6146:1864': {
@@ -10179,7 +10179,7 @@ export const manifestData: Record<
         'Prime, DeFi, Decentralized, Finance, Explore, Assets, Crypto, Universe, Circles, Coins, Coin, Stars, ✨',
       name: 'primeDeFiSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.640Z',
     },
     '6146:1861': {
@@ -10189,7 +10189,7 @@ export const manifestData: Record<
         'Prime, Wallet, Earn, Rewards, Coins, Assets, Coin, Crypto, Currency, Money, Cash, ✨',
       name: 'primeEarnSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.327Z',
     },
     '6153:1195': {
@@ -10198,7 +10198,7 @@ export const manifestData: Record<
       description: 'error state',
       name: 'ratMigrationerror',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:10.764Z',
     },
     '6153:1192': {
@@ -10207,7 +10207,7 @@ export const manifestData: Record<
       description: 'error state',
       name: 'ratMigrationerror',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:53:11.337Z',
     },
     '6153:1193': {
@@ -10216,7 +10216,7 @@ export const manifestData: Record<
       description: '',
       name: 'ratMigration',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T21:45:19.699Z',
     },
     '6153:1194': {
@@ -10225,7 +10225,7 @@ export const manifestData: Record<
       description: '',
       name: 'ratMigration',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.710Z',
     },
     '6153:1227': {
@@ -10235,7 +10235,7 @@ export const manifestData: Record<
         'interesting, sparkle, crystal ball, psychic, forecast, foretell, foresee, ✨, ❇️, 🧐, 🔮, 🧙‍♀️, 🧙, 🧙‍♂️, 🪄',
       name: 'emptyNft',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.199Z',
     },
     '6153:1226': {
@@ -10245,7 +10245,7 @@ export const manifestData: Record<
         'interesting, sparkle, crystal ball, psychic, forecast, foretell, foresee, ✨, ❇️, 🧐, 🔮, 🧙‍♀️, 🧙, 🧙‍♂️, 🪄',
       name: 'emptyNft',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.511Z',
     },
     '6153:1318': {
@@ -10254,7 +10254,7 @@ export const manifestData: Record<
       description: '',
       name: 'cryptoAppsSpotSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-06T16:42:16.914Z',
     },
     '6153:1321': {
@@ -10263,7 +10263,7 @@ export const manifestData: Record<
       description: '',
       name: 'cryptoAppsSpotSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.864Z',
     },
     '6153:1319': {
@@ -10273,7 +10273,7 @@ export const manifestData: Record<
         'send, crypto, fast, faster, speed, bolt, lightning, coins, assets, cryptocurrency, ⚡️',
       name: 'emptyNftSpotSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.869Z',
     },
     '6153:1320': {
@@ -10283,7 +10283,7 @@ export const manifestData: Record<
         'send, crypto, fast, faster, speed, bolt, lightning, coins, assets, cryptocurrency, ⚡️',
       name: 'emptyNftSpotSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-07T20:44:47.657Z',
     },
     '6153:1541': {
@@ -10292,7 +10292,7 @@ export const manifestData: Record<
       description: 'coin, coins, moon, more',
       name: 'emptyCrypto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.134Z',
     },
     '6153:1539': {
@@ -10301,7 +10301,7 @@ export const manifestData: Record<
       description: 'coin, coins, moon, more',
       name: 'emptyCrypto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.853Z',
     },
     '6153:1542': {
@@ -10310,7 +10310,7 @@ export const manifestData: Record<
       description: 'trade, immediately, swap, now, start, today, coin, currency, asset, switch',
       name: 'emptyTrading',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-05T17:23:21.728Z',
     },
     '6153:1538': {
@@ -10319,7 +10319,7 @@ export const manifestData: Record<
       description: 'trade, immediately, swap, now, start, today, coin, currency, asset, switch',
       name: 'emptyTrading',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.403Z',
     },
     '6153:1540': {
@@ -10328,7 +10328,7 @@ export const manifestData: Record<
       description: '',
       name: 'walletSolana',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.865Z',
     },
     '6153:1620': {
@@ -10337,7 +10337,7 @@ export const manifestData: Record<
       description: '',
       name: 'walletSolana',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T16:57:03.047Z',
     },
     '6172:1162': {
@@ -10346,7 +10346,7 @@ export const manifestData: Record<
       description: 'uob, coinbase logo, avatar, institution, person, bank',
       name: 'uob',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.247Z',
     },
     '6172:1163': {
@@ -10355,7 +10355,7 @@ export const manifestData: Record<
       description: 'uob, coinbase logo, avatar, institution, person, bank',
       name: 'uob',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:57.846Z',
     },
     '6253:1983': {
@@ -10364,7 +10364,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, participate',
       name: 'participateNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-12-12T21:17:20.312Z',
     },
     '6253:1968': {
@@ -10373,7 +10373,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, asset hub',
       name: 'assetHubNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.293Z',
     },
     '6253:1967': {
@@ -10382,7 +10382,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, diamond',
       name: 'privateClientNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-22T13:57:50.822Z',
     },
     '6253:1975': {
@@ -10391,7 +10391,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, prime',
       name: 'primeNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.318Z',
     },
     '6253:1971': {
@@ -10400,7 +10400,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, exchange, x',
       name: 'exchangeNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-14T18:50:00.261Z',
     },
     '6253:1980': {
@@ -10409,7 +10409,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, borrow, plus sign, money',
       name: 'borrowNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.213Z',
     },
     '6253:1966': {
@@ -10418,7 +10418,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, analytics',
       name: 'analyticsNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-13T22:36:18.636Z',
     },
     '6253:1970': {
@@ -10427,7 +10427,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, ventures',
       name: 'venturesNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-15T16:11:57.118Z',
     },
     '6253:1982': {
@@ -10436,7 +10436,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, query, transact',
       name: 'queryTransactNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-16T16:02:55.224Z',
     },
     '6253:1989': {
@@ -10445,7 +10445,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, arrow, sign in',
       name: 'signInNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:22.854Z',
     },
     '6253:1977': {
@@ -10454,7 +10454,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, institution, bank',
       name: 'institutionalNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-10-03T13:31:52.879Z',
     },
     '6253:1985': {
@@ -10463,7 +10463,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, cloud',
       name: 'cloudNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:22.945Z',
     },
     '6253:1987': {
@@ -10472,7 +10472,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'walletLinkNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:22.860Z',
     },
     '6253:1986': {
@@ -10481,7 +10481,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'rosettaNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.035Z',
     },
     '6253:1984': {
@@ -10490,7 +10490,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'nftNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-14T18:50:00.374Z',
     },
     '6253:1979': {
@@ -10499,7 +10499,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'earnNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 3,
       lastUpdated: '2022-09-16T16:33:23.219Z',
     },
     '6253:1974': {
@@ -10508,7 +10508,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'commerceNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:22.961Z',
     },
     '6253:1978': {
@@ -10517,7 +10517,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'custodyNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-06T16:36:21.106Z',
     },
     '6253:1973': {
@@ -10526,7 +10526,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'connectNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-16T18:54:00.639Z',
     },
     '6253:1981': {
@@ -10535,7 +10535,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'cardNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.271Z',
     },
     '6253:1972': {
@@ -10544,7 +10544,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'proNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.173Z',
     },
     '6253:1969': {
@@ -10553,7 +10553,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'walletNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 3,
       lastUpdated: '2022-12-14T18:50:00.583Z',
     },
     '6239:1171': {
@@ -10562,7 +10562,7 @@ export const manifestData: Record<
       description: 'card, coin, switch, rotate, rewards, coinbase, arrows',
       name: 'rotatingRewards',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.773Z',
     },
     '6229:1166': {
@@ -10571,7 +10571,7 @@ export const manifestData: Record<
       description: 'restricted, country, warning, map, pin, point, location, warning state',
       name: 'restrictedCountry',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:23.842Z',
     },
     '6229:1167': {
@@ -10580,7 +10580,7 @@ export const manifestData: Record<
       description: 'restricted, country, warning, map, pin, point, location, warning state',
       name: 'restrictedCountry',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:23.668Z',
     },
     '6236:1325': {
@@ -10590,7 +10590,7 @@ export const manifestData: Record<
         'coinbase, card, credit, card, status, icon, blue, spend, earn, crypto, declined, error, warning',
       name: 'cardDeclinedSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.172Z',
     },
     '6239:1170': {
@@ -10599,7 +10599,7 @@ export const manifestData: Record<
       description: 'card, coin, switch, rotate, rewards, coinbase, arrows',
       name: 'rotatingRewards',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.151Z',
     },
     '6236:1324': {
@@ -10609,7 +10609,7 @@ export const manifestData: Record<
         'coinbase, card, credit, card, status, icon, blue, spend, earn, crypto, blocked, denied, rejected',
       name: 'cardBlockedSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:57.858Z',
     },
     '6236:1321': {
@@ -10619,7 +10619,7 @@ export const manifestData: Record<
         'coinbase, card, credit, card, status, icon, blue, spend, earn, crypto, add, plus, green',
       name: 'addCardSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.393Z',
     },
     '6236:1323': {
@@ -10629,7 +10629,7 @@ export const manifestData: Record<
         'coinbase, card, credit, card, status, icon, blue, spend, earn, crypto, declined, error, warning',
       name: 'cardDeclinedSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:57.312Z',
     },
     '6236:1322': {
@@ -10639,7 +10639,7 @@ export const manifestData: Record<
         'coinbase, card, credit, card, status, icon, blue, spend, earn, crypto, blocked, denied, rejected',
       name: 'cardBlockedSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:11.122Z',
     },
     '6236:1320': {
@@ -10649,7 +10649,7 @@ export const manifestData: Record<
         'coinbase, card, credit, card, status, icon, blue, spend, earn, crypto, add, plus, green',
       name: 'addCardSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.191Z',
     },
     '6251:1147': {
@@ -10658,7 +10658,7 @@ export const manifestData: Record<
       description: 'empty, state, transfer, send, phone, wallet, crypto, 📱, 🤳, 📲, empty state',
       name: 'emptyNfts',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-25T16:03:22.255Z',
     },
     '6251:1146': {
@@ -10667,7 +10667,7 @@ export const manifestData: Record<
       description: 'empty, state, transfer, send, phone, wallet, crypto, 📱, 🤳, 📲, empty state',
       name: 'emptyNfts',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.795Z',
     },
     '6251:1392': {
@@ -10676,7 +10676,7 @@ export const manifestData: Record<
       description: '',
       name: 'discardAssets',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.541Z',
     },
     '6251:1419': {
@@ -10685,7 +10685,7 @@ export const manifestData: Record<
       description: '',
       name: 'discardAssets',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.239Z',
     },
     '6251:1511': {
@@ -10694,7 +10694,7 @@ export const manifestData: Record<
       description: '',
       name: 'walletAsset',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.051Z',
     },
     '6251:1550': {
@@ -10703,7 +10703,7 @@ export const manifestData: Record<
       description: '',
       name: 'walletAsset',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-04T18:41:15.943Z',
     },
     '6253:2168': {
@@ -10712,7 +10712,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'signInNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.110Z',
     },
     '6253:2164': {
@@ -10721,7 +10721,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'institutionalNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.337Z',
     },
     '6253:2163': {
@@ -10730,7 +10730,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'cloudNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.391Z',
     },
     '6253:2162': {
@@ -10739,7 +10739,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'walletLinkNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-12-04T23:16:43.755Z',
     },
     '6253:2158': {
@@ -10748,7 +10748,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'rosettaNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.053Z',
     },
     '6253:2157': {
@@ -10757,7 +10757,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'nftNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.030Z',
     },
     '6253:2166': {
@@ -10766,7 +10766,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'earnNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 3,
       lastUpdated: '2022-09-16T16:33:23.276Z',
     },
     '6253:2154': {
@@ -10775,7 +10775,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'commerceNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:22.989Z',
     },
     '6253:2159': {
@@ -10784,7 +10784,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'custodyNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.081Z',
     },
     '6253:2152': {
@@ -10793,7 +10793,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'connectNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.332Z',
     },
     '6253:2150': {
@@ -10802,7 +10802,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'cardNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.047Z',
     },
     '6253:2167': {
@@ -10811,7 +10811,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'proNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.298Z',
     },
     '6253:2156': {
@@ -10820,7 +10820,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'walletNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 3,
       lastUpdated: '2022-09-16T16:33:23.266Z',
     },
     '6253:2165': {
@@ -10829,7 +10829,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'participateNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.363Z',
     },
     '6253:2161': {
@@ -10838,7 +10838,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'assetHubNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.168Z',
     },
     '6253:2149': {
@@ -10847,7 +10847,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'privateClientNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.151Z',
     },
     '6253:2147': {
@@ -10856,7 +10856,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'primeNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.134Z',
     },
     '6253:2148': {
@@ -10865,7 +10865,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'exchangeNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:22.878Z',
     },
     '6253:2153': {
@@ -10874,7 +10874,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'borrowNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:22.971Z',
     },
     '6253:2160': {
@@ -10883,7 +10883,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'analyticsNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-21T23:17:44.511Z',
     },
     '6253:2151': {
@@ -10892,7 +10892,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'venturesNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-21T23:17:09.561Z',
     },
     '6253:2155': {
@@ -10901,7 +10901,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'queryTransactNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:22.929Z',
     },
     '6576:1325': {
@@ -10910,7 +10910,7 @@ export const manifestData: Record<
       description: 'empty state, trading, exchange',
       name: 'emptyTradingSpotRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T23:34:00.447Z',
     },
     '6546:1163': {
@@ -10919,7 +10919,7 @@ export const manifestData: Record<
       description: 'nft, avatar, profile photo, robot',
       name: 'nftAvatar',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-21T21:35:44.880Z',
     },
     '6546:1164': {
@@ -10928,7 +10928,7 @@ export const manifestData: Record<
       description: 'nft, avatar, profile photo, robot',
       name: 'nftAvatar',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-07T22:13:44.014Z',
     },
     '6408:1125': {
@@ -10937,7 +10937,7 @@ export const manifestData: Record<
       description: 'eth, staking, trade, coins, stars, eth2, stacks of coins, graph',
       name: 'ethStakingRewardsHorizontal',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.970Z',
     },
     '6408:1151': {
@@ -10946,7 +10946,7 @@ export const manifestData: Record<
       description: 'eth, staking, trade, coins, stars, eth2, stacks of coins, graph, dark',
       name: 'ethStakingRewardsHorizontal',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.700Z',
     },
     '6408:1177': {
@@ -10955,7 +10955,7 @@ export const manifestData: Record<
       description: 'eth, staking, trade, coins, stars, eth2, stacks of coins, graph',
       name: 'ethStakingRewardsHero',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-01T21:31:18.148Z',
     },
     '6408:1236': {
@@ -10964,7 +10964,7 @@ export const manifestData: Record<
       description: 'eth, staking, trade, coins, stars, eth2, stacks of coins, graph, dark',
       name: 'ethStakingRewardsHero',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.914Z',
     },
     '6408:1295': {
@@ -10973,7 +10973,7 @@ export const manifestData: Record<
       description: 'eth, staking, trade, coins, stars, eth2, stacks of coins, graph',
       name: 'ethStakingRewardsSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.910Z',
     },
     '6408:1317': {
@@ -10982,7 +10982,7 @@ export const manifestData: Record<
       description: 'eth, staking, trade, coins, stars, eth2, stacks of coins, graph, dark',
       name: 'ethStakingRewardsSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-08T15:04:27.061Z',
     },
     '6547:1455': {
@@ -10991,7 +10991,7 @@ export const manifestData: Record<
       description: 'quick, buy, fast, speedy, coins, assets, crypto, currencies, clock, time',
       name: 'quickBuy',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.761Z',
     },
     '6547:1454': {
@@ -11000,7 +11000,7 @@ export const manifestData: Record<
       description: 'quick, buy, fast, speedy, coins, assets, crypto, currencies, clock, time',
       name: 'quickBuy',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T07:19:34.727Z',
     },
     '6552:1227': {
@@ -11009,7 +11009,7 @@ export const manifestData: Record<
       description: 'collection, art, spider, museum, nft, web',
       name: 'emptyCollection',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-15T15:11:12.566Z',
     },
     '6552:1228': {
@@ -11018,7 +11018,7 @@ export const manifestData: Record<
       description: 'collection, art, spider, museum, nft, web',
       name: 'emptyCollection',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-18T21:11:02.360Z',
     },
     '6556:1135': {
@@ -11027,7 +11027,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, rewards',
       name: 'rewardsNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.005Z',
     },
     '6556:1141': {
@@ -11036,7 +11036,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'rewardsNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.163Z',
     },
     '6572:1132': {
@@ -11045,7 +11045,7 @@ export const manifestData: Record<
       description: 'ethereum, sell, send, transfer, eth2, ➡️',
       name: 'eth2SendSell',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.346Z',
     },
     '6572:1133': {
@@ -11054,7 +11054,7 @@ export const manifestData: Record<
       description: 'ethereum, sell, send, transfer, eth2, ➡️',
       name: 'eth2SendSell',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.398Z',
     },
     '6571:1127': {
@@ -11063,7 +11063,7 @@ export const manifestData: Record<
       description: 'coinbase, ethereum, sending, movement, phone, minus, add, 📱',
       name: 'cbEth',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.706Z',
     },
     '6572:1136': {
@@ -11072,7 +11072,7 @@ export const manifestData: Record<
       description: 'ethereum, sell, send, transfer, eth2, ➡️',
       name: 'eth2SellSend',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-01T22:14:42.454Z',
     },
     '6572:1135': {
@@ -11081,7 +11081,7 @@ export const manifestData: Record<
       description: 'stake, wrap, ethereum, rush, movement, forward, exciting',
       name: 'ethStakeOrWrap',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-20T18:37:09.955Z',
     },
     '6571:1128': {
@@ -11090,7 +11090,7 @@ export const manifestData: Record<
       description: 'ethereum, sell, send, transfer, eth2, ➡️',
       name: 'eth2SellSend',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.763Z',
     },
     '6572:1134': {
@@ -11099,7 +11099,7 @@ export const manifestData: Record<
       description: 'stake, wrap, ethereum, rush, movement, forward, exciting',
       name: 'ethStakeOrWrap',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T20:25:45.858Z',
     },
     '6572:1138': {
@@ -11108,7 +11108,7 @@ export const manifestData: Record<
       description: 'eth, ethereum, staking',
       name: 'ethStakingPicto',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.823Z',
     },
     '6572:1137': {
@@ -11117,7 +11117,7 @@ export const manifestData: Record<
       description: 'eth, ethereum, staking',
       name: 'ethStakingPicto',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.551Z',
     },
     '6587:1126': {
@@ -11126,7 +11126,7 @@ export const manifestData: Record<
       description: 'eth, staking, send, transfer, circles, movement, forward, exciting, 🟣, 🟢, 🔵',
       name: 'ethStakingMovement',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:25.222Z',
     },
     '6571:1129': {
@@ -11135,7 +11135,7 @@ export const manifestData: Record<
       description: 'eth, staking, send, transfer, circles, movement, forward, exciting, 🟣, 🟢, 🔵',
       name: 'ethStakingMovement',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.976Z',
     },
     '6571:1130': {
@@ -11144,7 +11144,7 @@ export const manifestData: Record<
       description: 'eth, staking, trade, coins, stars, eth2, stacks of coins, graph',
       name: 'ethStakingRewardsHorizontalTwo',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T21:24:09.011Z',
     },
     '6571:1131': {
@@ -11153,7 +11153,7 @@ export const manifestData: Record<
       description: 'eth, staking, trade, coins, stars, eth2, stacks of coins, graph',
       name: 'ethStakingRewardsHorizontalTwo',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T21:24:09.014Z',
     },
     '6587:1125': {
@@ -11162,7 +11162,7 @@ export const manifestData: Record<
       description: 'coinbase, ethereum, sending, movement, phone, minus, add, 📱',
       name: 'cbEth',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-01T22:14:21.627Z',
     },
     '6572:1150': {
@@ -11171,7 +11171,7 @@ export const manifestData: Record<
       description: 'stake, wrap, ethereum, rush, movement, forward, exciting',
       name: 'wrapEth',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-14T22:55:48.792Z',
     },
     '6572:1186': {
@@ -11180,7 +11180,7 @@ export const manifestData: Record<
       description: 'stake, wrap, ethereum, rush, movement, forward, exciting',
       name: 'wrapEth',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.957Z',
     },
     '6573:1186': {
@@ -11190,7 +11190,7 @@ export const manifestData: Record<
         'nft, non fungible, collectable, collectible, cat, avatar, nyan, art, artwork, 🖼, ✨',
       name: 'nftSpotRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T07:14:13.474Z',
     },
     '6573:1287': {
@@ -11200,7 +11200,7 @@ export const manifestData: Record<
         'nft, non fungible, collectable, collectible, cat, avatar, nyan, art, artwork, 🖼, ✨',
       name: 'nftSpotRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.556Z',
     },
     '6576:1434': {
@@ -11209,7 +11209,7 @@ export const manifestData: Record<
       description: 'empty state, trading',
       name: 'emptyTradingSpotRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.746Z',
     },
     '6579:1571': {
@@ -11218,7 +11218,7 @@ export const manifestData: Record<
       description: 'bridge, blockchain, send, one to another, tokens, 🌁, 🌉',
       name: 'bridging',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-05T17:23:21.637Z',
     },
     '6579:1704': {
@@ -11227,7 +11227,7 @@ export const manifestData: Record<
       description: 'bridge, blockchain, send, one to another, tokens, 🌁, 🌉',
       name: 'bridging',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.032Z',
     },
     '6915:9356': {
@@ -11236,7 +11236,7 @@ export const manifestData: Record<
       description: 'hidden, collection, eye, frame, blinds, nft, art',
       name: 'hiddenCollection',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-05T17:23:21.546Z',
     },
     '6915:9355': {
@@ -11245,7 +11245,7 @@ export const manifestData: Record<
       description: 'hidden, collection, eye, frame, blinds, nft, art',
       name: 'hiddenCollection',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.562Z',
     },
     '7022:2320': {
@@ -11254,7 +11254,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, advanced trading',
       name: 'advancedTradingNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:23.304Z',
     },
     '7022:2319': {
@@ -11263,7 +11263,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, direct deposit',
       name: 'directDepositNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-11-22T15:56:24.496Z',
     },
     '7022:2318': {
@@ -11272,7 +11272,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, tax center',
       name: 'taxCenterNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:22.916Z',
     },
     '7022:2356': {
@@ -11281,7 +11281,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'directDepositNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:22.847Z',
     },
     '7022:2355': {
@@ -11290,7 +11290,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'taxCenterNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:22.892Z',
     },
     '7022:2354': {
@@ -11299,7 +11299,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'advancedTradingNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.248Z',
     },
     '7039:2110': {
@@ -11308,7 +11308,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, help center',
       name: 'helpCenterNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.178Z',
     },
     '7039:2118': {
@@ -11317,7 +11317,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'helpCenterNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.237Z',
     },
     '7148:2219': {
@@ -11326,7 +11326,7 @@ export const manifestData: Record<
       description: 'Gift, BRD, box, 🎁, nft,',
       name: 'miniGift',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.819Z',
     },
     '7148:2220': {
@@ -11335,7 +11335,7 @@ export const manifestData: Record<
       description: 'Gift, BRD, box, 🎁, nft,',
       name: 'miniGift',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.513Z',
     },
     '7148:2218': {
@@ -11344,7 +11344,7 @@ export const manifestData: Record<
       description: 'Gift, BRD, box, 🎁, nft, hand',
       name: 'receiveGift',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.862Z',
     },
     '7148:2217': {
@@ -11353,7 +11353,7 @@ export const manifestData: Record<
       description: 'Gift, BRD, box, 🎁, nft, hand',
       name: 'receiveGift',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.813Z',
     },
     '7148:2215': {
@@ -11362,7 +11362,7 @@ export const manifestData: Record<
       description: 'Gift, BRD, box, 🎁, nft, hand, success state',
       name: 'brdGift',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-21T16:50:37.284Z',
     },
     '7148:2216': {
@@ -11371,7 +11371,7 @@ export const manifestData: Record<
       description: 'Gift, BRD, box, 🎁, nft, hand, success state',
       name: 'brdGift',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.286Z',
     },
     '7170:2069': {
@@ -11381,7 +11381,7 @@ export const manifestData: Record<
         'login, signIn, computer, screen, useraccount, mouse, cursor, password, enter, light',
       name: 'login',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-12T20:20:19.380Z',
     },
     '7170:2070': {
@@ -11391,7 +11391,7 @@ export const manifestData: Record<
         'login, signIn, computer, screen, useraccount, mouse, cursor, password, enter, dark',
       name: 'login',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.987Z',
     },
     '7359:2120': {
@@ -11400,7 +11400,7 @@ export const manifestData: Record<
       description: 'bridge, blockchain, send, one to another, tokens, 🌁, 🌉',
       name: 'bridgingSpotSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-21T15:05:42.605Z',
     },
     '7359:2121': {
@@ -11409,7 +11409,7 @@ export const manifestData: Record<
       description: 'bridge, blockchain, send, one to another, tokens, 🌁, 🌉',
       name: 'bridgingSpotSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.690Z',
     },
     '7453:2125': {
@@ -11418,7 +11418,7 @@ export const manifestData: Record<
       description: 'phone, device, wallet, coinbase, referral, avatar, magic, network, share',
       name: 'referralsWalletPhones',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.692Z',
     },
     '7453:2123': {
@@ -11428,7 +11428,7 @@ export const manifestData: Record<
         'coinbase, referral, avatar, magic, network, share, heads, people, profile, pic, PFP',
       name: 'referralsAvatars',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-15T14:17:58.247Z',
     },
     '7453:2121': {
@@ -11438,7 +11438,7 @@ export const manifestData: Record<
         'coinbase, referral, avatar, magic, network, share, heads, people, profile, pic, PFP, Bitcoin, BTC, reward',
       name: 'referralsBitcoin',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-03T13:31:53.281Z',
     },
     '7453:2124': {
@@ -11447,7 +11447,7 @@ export const manifestData: Record<
       description: 'phone, device, wallet, coinbase, referral, avatar, magic, network, share',
       name: 'referralsWalletPhones',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.622Z',
     },
     '7453:2122': {
@@ -11457,7 +11457,7 @@ export const manifestData: Record<
         'coinbase, referral, avatar, magic, network, share, heads, people, profile, pic, PFP',
       name: 'referralsAvatars',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.536Z',
     },
     '7453:2120': {
@@ -11467,7 +11467,7 @@ export const manifestData: Record<
         'coinbase, referral, avatar, magic, network, share, heads, people, profile, pic, PFP, Bitcoin, BTC, reward',
       name: 'referralsBitcoin',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.559Z',
     },
     '7460:2169': {
@@ -11476,7 +11476,7 @@ export const manifestData: Record<
       description: 'browser History chart 📝',
       name: 'browserHistory',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.156Z',
     },
     '7460:2168': {
@@ -11485,7 +11485,7 @@ export const manifestData: Record<
       description: '',
       name: 'browserHistory',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.806Z',
     },
     '7465:2247': {
@@ -11494,7 +11494,7 @@ export const manifestData: Record<
       description: 'art nft ❗️⚠️ offer, warning state',
       name: 'offersEmpty',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-02T18:13:59.039Z',
     },
     '7465:2246': {
@@ -11503,7 +11503,7 @@ export const manifestData: Record<
       description: 'art nft ❗️⚠️ offer, warning state',
       name: 'offersEmpty',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:52:08.819Z',
     },
     '7465:2306': {
@@ -11512,7 +11512,7 @@ export const manifestData: Record<
       description: 'empty frame art nft ⚠️, warning state',
       name: 'frameEmpty',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T18:49:08.424Z',
     },
     '7465:2305': {
@@ -11521,7 +11521,7 @@ export const manifestData: Record<
       description: 'empty frame art nft ⚠️, warning state',
       name: 'frameEmpty',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:51:53.599Z',
     },
     '7469:2329': {
@@ -11530,7 +11530,7 @@ export const manifestData: Record<
       description: 'empty nft tag zero ',
       name: 'nftTag',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.605Z',
     },
     '7469:2330': {
@@ -11539,7 +11539,7 @@ export const manifestData: Record<
       description: 'empty nft tag zero ⚠️',
       name: 'nftTag',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-24T16:54:10.660Z',
     },
     '7470:2172': {
@@ -11548,7 +11548,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, data marketplace',
       name: 'dataMarketplaceNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 2,
       lastUpdated: '2022-09-16T16:33:22.910Z',
     },
     '7470:2171': {
@@ -11557,7 +11557,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, accounts',
       name: 'accountsNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-04T00:09:59.224Z',
     },
     '7470:2170': {
@@ -11566,7 +11566,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'accountsNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.202Z',
     },
     '7470:2169': {
@@ -11575,7 +11575,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'dataMarketplaceNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:22.873Z',
     },
     '7691:2400': {
@@ -11585,7 +11585,7 @@ export const manifestData: Record<
         'nft, cat, vortex, sparkle, empty state, coin, party, lets go, lfg, 404, error, ✨, ❇️,  🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼',
       name: 'emptyStateNft404Page',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-16T18:45:20.447Z',
     },
     '7691:2401': {
@@ -11595,7 +11595,7 @@ export const manifestData: Record<
         'nft, swirl, cat, browser, empty state, fun, vibes, big energy, shapes, movement, 🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼, 📱, 🔴',
       name: 'emptyStateCheckBackLater',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:30:34.911Z',
     },
     '7691:2399': {
@@ -11605,7 +11605,7 @@ export const manifestData: Record<
         'nft, cat, empty state, distinguished, artwork, gallery, painting, moment, notice me, mona lisa, mona cat, cat in a hat, 🎩, 🖼, 🎨, 🖌,  ✨, ❇️,  🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼',
       name: 'emptyStateNftSoldOut',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T17:27:47.472Z',
     },
     '7691:2542': {
@@ -11615,7 +11615,7 @@ export const manifestData: Record<
         'nft, cat, vortex, sparkle, empty state, coin, party, lets go, lfg, 404, error, ✨, ❇️,  🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼',
       name: 'emptyStateNft404Page',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.859Z',
     },
     '7691:2543': {
@@ -11625,7 +11625,7 @@ export const manifestData: Record<
         'nft, cat, distinguished, artwork, gallery, painting, moment, notice me, mona lisa, mona cat, cat in a hat, 🎩, 🖼, 🎨, 🖌,  ✨, ❇️,  🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼, empty state',
       name: 'emptyStateNftSoldOut',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.567Z',
     },
     '7691:2541': {
@@ -11635,7 +11635,7 @@ export const manifestData: Record<
         'nft, swirl, cat, browser, empty state, fun, vibes, big energy, shapes, movement, 🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼, 📱, 🔴',
       name: 'emptyStateCheckBackLater',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T20:58:36.575Z',
     },
     '7718:2315': {
@@ -11645,7 +11645,7 @@ export const manifestData: Record<
         'Referrals, Friends, Bitcoin, BTC, Reward, Crypto, Coins, Sign, Up, Share, Link, Refer, Friend',
       name: 'referralsBitcoinRect',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.107Z',
     },
     '7718:2310': {
@@ -11655,7 +11655,7 @@ export const manifestData: Record<
         'Referrals, Friends, Bitcoin, BTC, Reward, Crypto, Coins, Sign, Up, Share, Link, Refer, Friend',
       name: 'referralsBitcoinRect',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.338Z',
     },
     '7718:2314': {
@@ -11665,7 +11665,7 @@ export const manifestData: Record<
         'Referrals, Friends, Bitcoin, BTC, Reward, Crypto, Coins, Sign, Up, Share, Link, Refer, Friend',
       name: 'referralsPeopleSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T13:27:26.977Z',
     },
     '7718:2313': {
@@ -11675,7 +11675,7 @@ export const manifestData: Record<
         'Referrals, Friends, Bitcoin, BTC, Reward, Crypto, Coins, Sign, Up, Share, Link, Refer, Friend',
       name: 'referralsPeopleSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.236Z',
     },
     '7729:2568': {
@@ -11684,7 +11684,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, pay',
       name: 'payNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-15T00:09:59.368Z',
     },
     '7729:2567': {
@@ -11693,7 +11693,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, delegate',
       name: 'delegateNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.042Z',
     },
     '7729:2581': {
@@ -11702,7 +11702,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'payNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.075Z',
     },
     '7729:2580': {
@@ -11711,7 +11711,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out',
       name: 'delegateNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.232Z',
     },
     '7825:2297': {
@@ -11720,7 +11720,7 @@ export const manifestData: Record<
       description: 'no transaction, coin, arrow, warning, crypto, send',
       name: 'noTransactions',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-19T18:00:51.247Z',
     },
     '7825:2298': {
@@ -11729,7 +11729,7 @@ export const manifestData: Record<
       description: 'no transaction, coin, arrow, warning, crypto, send',
       name: 'noTransactions',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.394Z',
     },
     '7827:2327': {
@@ -11738,7 +11738,7 @@ export const manifestData: Record<
       description: 'asset, star, token, crypto, cryptocurrency, currency, unsupported',
       name: 'unsupportedAsset',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:10.498Z',
     },
     '7827:2328': {
@@ -11747,7 +11747,7 @@ export const manifestData: Record<
       description: 'asset, star, token, crypto, cryptocurrency, currency, unsupported',
       name: 'unsupportedAsset',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.750Z',
     },
     '8005:2495': {
@@ -11756,7 +11756,7 @@ export const manifestData: Record<
       description: 'drops, NFT, special, apart, exclusive, limited, release, unique,🖼,✨',
       name: 'apartOfDropsNft',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-19T16:30:52.397Z',
     },
     '8005:2496': {
@@ -11765,7 +11765,7 @@ export const manifestData: Record<
       description: 'NFT, picture, upload, select, add, mint, collection, apart,🖼,✨',
       name: 'selectAddNft',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.260Z',
     },
     '8005:2497': {
@@ -11775,7 +11775,7 @@ export const manifestData: Record<
         'special, add, magic, rabbit, hat, NFT, limited, sparkles, unique, mint, minted,🖼,✨',
       name: 'mintedNft',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-10-13T17:33:03.313Z',
     },
     '8005:2498': {
@@ -11785,7 +11785,7 @@ export const manifestData: Record<
         'searching, search, NFT, picture, magnifying, magnifyGlass, special, missing, unfound, clear, filter, 🖼,✨',
       name: 'noNftFound',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:22.934Z',
     },
     '8005:2504': {
@@ -11795,7 +11795,7 @@ export const manifestData: Record<
         'APY, interest, growth, graph, chart, yield, coin, arrow, trending, value, increase, growing, 📈',
       name: 'apyInterest',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-04T00:09:59.179Z',
     },
     '8005:2505': {
@@ -11804,7 +11804,7 @@ export const manifestData: Record<
       description: 'world, send, sending, anytime, now, money, sell, selling, market, staking',
       name: 'sellSendAnytime',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-21T23:18:33.614Z',
     },
     '8005:2508': {
@@ -11814,7 +11814,7 @@ export const manifestData: Record<
         'exclamation, risk, caution, wrapping, ETH, staking, graph, growth, chart, value, market',
       name: 'riskStaking',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.145Z',
     },
     '8005:2499': {
@@ -11823,7 +11823,7 @@ export const manifestData: Record<
       description: 'drops, NFT, special, apart, exclusive, limited, release, unique,🖼,✨',
       name: 'apartOfDropsNft',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-16T16:33:23.000Z',
     },
     '8005:2500': {
@@ -11832,7 +11832,7 @@ export const manifestData: Record<
       description: 'NFT, picture, upload, select, add, mint, collection, apart,🖼,✨',
       name: 'selectAddNft',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-16T16:33:23.139Z',
     },
     '8005:2501': {
@@ -11842,7 +11842,7 @@ export const manifestData: Record<
         'special, add, magic, rabbit, hat, NFT, limited, sparkles, unique, mint, minted,🖼,✨',
       name: 'mintedNft',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-16T16:33:23.374Z',
     },
     '8005:2502': {
@@ -11852,7 +11852,7 @@ export const manifestData: Record<
         'searching, search, NFT, picture, magnifying, magnifyGlass, special, missing, unfound, clear, filter, 🖼,✨',
       name: 'noNftFound',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-11T15:48:38.837Z',
     },
     '8005:2503': {
@@ -11862,7 +11862,7 @@ export const manifestData: Record<
         'APY, interest, growth, graph, chart, yield, coin, arrow, trending, value, increase, growing, 📈',
       name: 'apyInterest',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:51:53.363Z',
     },
     '8005:2506': {
@@ -11871,7 +11871,7 @@ export const manifestData: Record<
       description: 'world, send, sending, anytime, now, money, sell, selling, market, staking',
       name: 'sellSendAnytime',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-11-16T20:05:00.282Z',
     },
     '8005:2507': {
@@ -11881,7 +11881,7 @@ export const manifestData: Record<
         'exclamation, risk, caution, wrapping, ETH, staking, graph, growth, chart, value, market',
       name: 'riskStaking',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:51:53.253Z',
     },
     '8018:2178': {
@@ -11890,7 +11890,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, logo',
       name: 'walletLogoNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-16T16:33:23.023Z',
     },
     '8018:2201': {
@@ -11899,7 +11899,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, logo',
       name: 'walletLogoNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-16T16:33:23.189Z',
     },
     '8052:2155': {
@@ -11908,7 +11908,7 @@ export const manifestData: Record<
       description: 'dappwallet, wallet, 🌐, web3',
       name: 'dappWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-21T21:41:58.806Z',
     },
     '8052:2154': {
@@ -11917,7 +11917,7 @@ export const manifestData: Record<
       description: 'dappwallet, wallet, 🌐, web3',
       name: 'dappWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.695Z',
     },
     '8062:2315': {
@@ -11927,7 +11927,7 @@ export const manifestData: Record<
         'coinbase, card, spend, crypto, currency, coin, credit, sparkle, excitement, debit, boost, boosted',
       name: 'boostedCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:57.906Z',
     },
     '8062:2314': {
@@ -11937,7 +11937,7 @@ export const manifestData: Record<
         'coinbase, card, spend, crypto, currency, coin, credit, sparkle, excitement, debit, boost, boosted',
       name: 'boostedCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-07T22:34:44.356Z',
     },
     '8145:2172': {
@@ -11946,7 +11946,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, logo',
       name: 'coinbaseLogoNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-28T11:12:06.646Z',
     },
     '8145:2171': {
@@ -11955,7 +11955,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, logo',
       name: 'coinbaseLogoNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-27T19:17:00.483Z',
     },
     '8277:2203': {
@@ -11964,7 +11964,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, logo',
       name: 'learningRewardsNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:22.994Z',
     },
     '8277:2262': {
@@ -11973,7 +11973,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, logo',
       name: 'learningRewardsNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:22.885Z',
     },
     '8277:2326': {
@@ -11982,7 +11982,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, logo',
       name: 'derivativesNavigation',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.157Z',
     },
     '8277:2363': {
@@ -11991,7 +11991,7 @@ export const manifestData: Record<
       description: 'navigation illustration, app switcher, logged out, logo',
       name: 'derivativesNavigation',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-16T16:33:23.325Z',
     },
     '8311:2845': {
@@ -12001,7 +12001,7 @@ export const manifestData: Record<
         'crypto, currency, trading, cryptocurrency, advanced, retail, RAT, web, education, UI, trade',
       name: 'webRAT',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:32:50.135Z',
     },
     '8311:2847': {
@@ -12011,7 +12011,7 @@ export const manifestData: Record<
         'crypto, currency, trading, cryptocurrency, advanced, retail, RAT, web, education, UI, trade',
       name: 'webRAT',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.455Z',
     },
     '8311:2846': {
@@ -12021,7 +12021,7 @@ export const manifestData: Record<
         'coinbase, card, boosted, rewards, coin, crypto, chip, visa, select, award, money',
       name: 'cardBoostedRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.894Z',
     },
     '8311:2831': {
@@ -12031,7 +12031,7 @@ export const manifestData: Record<
         'coinbase, card, boosted, rewards, coin, crypto, chip, visa, select, award, money',
       name: 'cardBoostedRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-08T01:15:16.893Z',
     },
     '8311:2826': {
@@ -12041,7 +12041,7 @@ export const manifestData: Record<
         'coinbase, card, boosted, rewards, coin, crypto, chip, visa, select, award, money',
       name: 'cardBoosted',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.981Z',
     },
     '8311:2832': {
@@ -12051,7 +12051,7 @@ export const manifestData: Record<
         'coinbase, card, boosted, rewards, coin, crypto, chip, visa, select, award, money',
       name: 'cardBoosted',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.410Z',
     },
     '8311:2836': {
@@ -12060,7 +12060,7 @@ export const manifestData: Record<
       description: 'governance, vote, staking, proposal, ballot, box, yes, no, maybe, so, coin',
       name: 'governance',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.958Z',
     },
     '8311:2841': {
@@ -12069,7 +12069,7 @@ export const manifestData: Record<
       description: 'governance, vote, staking, proposal, ballot, box, yes, no, maybe, so, coin',
       name: 'governanceRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-25T16:03:32.087Z',
     },
     '8311:2825': {
@@ -12078,7 +12078,7 @@ export const manifestData: Record<
       description: 'governance, vote, staking, proposal, ballot, box, yes, no, maybe, so, coin',
       name: 'governanceRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.403Z',
     },
     '8311:2828': {
@@ -12087,7 +12087,7 @@ export const manifestData: Record<
       description: 'governance, vote, staking, proposal, ballot, box, yes, no, maybe, so, coin',
       name: 'governance',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.222Z',
     },
     '8311:2835': {
@@ -12097,7 +12097,7 @@ export const manifestData: Record<
         'futures, trading, future, buy, sell, put, short, hedge, balance, risk, clock, coin, plus, arrow',
       name: 'futuresHeroSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-08T20:41:23.282Z',
     },
     '8311:2833': {
@@ -12107,7 +12107,7 @@ export const manifestData: Record<
         'futures, trading, future, buy, sell, put, short, hedge, balance, risk, clock, coin, plus, arrow',
       name: 'futuresHeroSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:24.856Z',
     },
     '8311:2830': {
@@ -12117,7 +12117,7 @@ export const manifestData: Record<
         'leverage, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
       name: 'leverageRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-19T16:48:25.146Z',
     },
     '8311:2837': {
@@ -12127,7 +12127,7 @@ export const manifestData: Record<
         'leverage, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
       name: 'leverageRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.803Z',
     },
     '8311:2829': {
@@ -12137,7 +12137,7 @@ export const manifestData: Record<
         'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
       name: 'marginRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:34:42.590Z',
     },
     '8311:2838': {
@@ -12147,7 +12147,7 @@ export const manifestData: Record<
         'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
       name: 'marginRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.238Z',
     },
     '8311:2848': {
@@ -12157,7 +12157,7 @@ export const manifestData: Record<
         'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk, clock, error state',
       name: 'marginWarningRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:51:53.086Z',
     },
     '8311:2827': {
@@ -12167,7 +12167,7 @@ export const manifestData: Record<
         'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk, error state, clock',
       name: 'marginWarningRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 1,
       lastUpdated: '2022-09-13T17:51:52.925Z',
     },
     '8311:2842': {
@@ -12177,7 +12177,7 @@ export const manifestData: Record<
         'futures, trading, future, buy, sell, put, short, hedge, balance, risk, clock, coin, plus, arrow',
       name: 'futuresRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.618Z',
     },
     '8311:2844': {
@@ -12187,7 +12187,7 @@ export const manifestData: Record<
         'futures, trading, future, buy, sell, put, short, hedge, balance, risk, clock, coin, plus, arrow',
       name: 'futuresRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:08.963Z',
     },
     '8311:2839': {
@@ -12197,7 +12197,7 @@ export const manifestData: Record<
         'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
       name: 'marginHeroSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.843Z',
     },
     '8311:2824': {
@@ -12207,7 +12207,7 @@ export const manifestData: Record<
         'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
       name: 'marginHeroSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.638Z',
     },
     '8311:2823': {
@@ -12217,7 +12217,7 @@ export const manifestData: Record<
         'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk, clock, error state',
       name: 'marginWarningHeroSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.780Z',
     },
     '8311:2834': {
@@ -12227,7 +12227,7 @@ export const manifestData: Record<
         'margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk, clock, error state',
       name: 'marginWarningHeroSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:44.319Z',
     },
     '8311:2822': {
@@ -12237,7 +12237,7 @@ export const manifestData: Record<
         'leverage, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
       name: 'leverageHeroSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:22.777Z',
     },
     '8311:2821': {
@@ -12247,7 +12247,7 @@ export const manifestData: Record<
         'leverage, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk',
       name: 'leverageHeroSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.732Z',
     },
     '8311:2843': {
@@ -12256,7 +12256,7 @@ export const manifestData: Record<
       description: 'governance, vote, staking, proposal, ballot, box, yes, no, maybe, so, coin',
       name: 'governancePictogram',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-10T14:34:35.126Z',
     },
     '8311:2840': {
@@ -12265,7 +12265,7 @@ export const manifestData: Record<
       description: 'governance, vote, staking, proposal, ballot, box, yes, no, maybe, so, coin',
       name: 'governancePictogram',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T13:29:32.521Z',
     },
     '8318:2139': {
@@ -12274,7 +12274,7 @@ export const manifestData: Record<
       description: '',
       name: 'advancedTradingRebates',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T11:35:26.092Z',
     },
     '8318:2166': {
@@ -12283,7 +12283,7 @@ export const manifestData: Record<
       description: '',
       name: 'advancedTradingRebates',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-16T16:33:22.904Z',
     },
     '8432:3421': {
@@ -12292,7 +12292,7 @@ export const manifestData: Record<
       description: 'futures, trading, future, clock, coin, crypto, cryptocurrency, arrow, circle',
       name: 'futuresSpotSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-12T15:29:42.438Z',
     },
     '8432:3433': {
@@ -12301,7 +12301,7 @@ export const manifestData: Record<
       description: 'futures, trading, future, clock, coin, crypto, cryptocurrency, arrow, circle',
       name: 'futuresSpotSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-12T15:29:55.244Z',
     },
     '8502:3521': {
@@ -12311,7 +12311,7 @@ export const manifestData: Record<
         'identity card, profile, personal, ID, human, card, 🆔, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️',
       name: 'myNumberCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-12T04:00:09.134Z',
     },
     '8502:3535': {
@@ -12321,7 +12321,7 @@ export const manifestData: Record<
         'identity card, profile, personal, ID, human, card, 🆔, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️',
       name: 'myNumberCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-16T16:33:23.386Z',
     },
     '8542:3888': {
@@ -12330,7 +12330,7 @@ export const manifestData: Record<
       description: 'browser, apps, wallet, crypto, gather',
       name: 'browseDecentralizedApps',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-08T14:01:50.369Z',
     },
     '8542:3887': {
@@ -12339,7 +12339,7 @@ export const manifestData: Record<
       description: 'browser, apps, wallet, crypto, gather',
       name: 'browseDecentralizedApps',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:57.002Z',
     },
     '8558:3529': {
@@ -12348,7 +12348,7 @@ export const manifestData: Record<
       description: 'check, checkmark, secure, credit, card, 🆔, ✅, ✔️, 💳,  success state',
       name: 'cardSuccess',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.039Z',
     },
     '8558:3528': {
@@ -12357,7 +12357,7 @@ export const manifestData: Record<
       description: 'mobile, phone, check, ✅, success state',
       name: 'mobileSuccess',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-14T23:30:34.750Z',
     },
     '8558:3527': {
@@ -12366,7 +12366,7 @@ export const manifestData: Record<
       description: 'wallet, check, ✅, success state',
       name: 'walletSuccess',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T16:54:17.887Z',
     },
     '8558:3569': {
@@ -12375,7 +12375,7 @@ export const manifestData: Record<
       description: 'check, checkmark, secure, credit, card, 🆔, ✅, ✔️, 💳,  success state',
       name: 'cardSuccess',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.508Z',
     },
     '8558:3567': {
@@ -12384,7 +12384,7 @@ export const manifestData: Record<
       description: 'mobile, phone, check, ✅, success state',
       name: 'mobileSuccess',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.247Z',
     },
     '8558:3568': {
@@ -12393,7 +12393,7 @@ export const manifestData: Record<
       description: 'wallet, check, ✅, success state',
       name: 'walletSuccess',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.439Z',
     },
     '8558:3968': {
@@ -12402,7 +12402,7 @@ export const manifestData: Record<
       description: 'mobile, device, cellphone, warning state',
       name: 'mobileWarning',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.495Z',
     },
     '8558:3987': {
@@ -12411,7 +12411,7 @@ export const manifestData: Record<
       description: 'mobile, device, cellphone, warning state',
       name: 'mobileWarning',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.299Z',
     },
     '8558:4356': {
@@ -12420,7 +12420,7 @@ export const manifestData: Record<
       description: 'mobile, device, cellphone, error state',
       name: 'mobileError',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-06T19:28:32.701Z',
     },
     '8558:4357': {
@@ -12430,7 +12430,7 @@ export const manifestData: Record<
         'wallet, storage, alert, help, crucial, indication, red, 💰, 💵, 💸, ⚠️, error state',
       name: 'walletError',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-21T17:01:47.242Z',
     },
     '8558:4391': {
@@ -12439,7 +12439,7 @@ export const manifestData: Record<
       description: 'mobile, device, error state',
       name: 'mobileError',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-06T19:28:41.296Z',
     },
     '8558:4390': {
@@ -12449,7 +12449,7 @@ export const manifestData: Record<
         'wallet, storage, alert, help, crucial, indication, red, 💰, 💵, 💸, ⚠️, error state',
       name: 'walletError',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-06T20:17:24.105Z',
     },
     '8562:4822': {
@@ -12458,7 +12458,7 @@ export const manifestData: Record<
       description: 'cat, magnifying glass, system error,  🐱, 🐈, 🐈‍⬛',
       name: 'catLostSystemError',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.353Z',
     },
     '8562:4818': {
@@ -12467,7 +12467,7 @@ export const manifestData: Record<
       description: 'chicken fish, merge, uh oh, wtf, 🐟, 🐠, 🍣, 🎣, 🐡, 🐓, 🐔, system error',
       name: 'chickenFishSystemError',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.383Z',
     },
     '8562:4816': {
@@ -12476,7 +12476,7 @@ export const manifestData: Record<
       description: 'alien, donut, take a break, relax, space, 👽, 🪐, 🛸, 🍩, system error',
       name: 'alienDonutSystemError',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.375Z',
     },
     '8562:4821': {
@@ -12486,7 +12486,7 @@ export const manifestData: Record<
         "ice cream, melt, waiting, laptop, homage, we don't like waiting, 🍦, 🍨, 💻, system error",
       name: 'iceCreamMeltingSystemError',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T17:53:06.998Z',
     },
     '8562:4820': {
@@ -12495,7 +12495,7 @@ export const manifestData: Record<
       description: 'server, cat, get out, cat being a cat,  🐱, 🐈, 🐈‍⬛, system error',
       name: 'serverCatSystemError',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-28T20:39:06.680Z',
     },
     '8562:4819': {
@@ -12504,7 +12504,7 @@ export const manifestData: Record<
       description: 'gateway, door, space, empty feeling, glimpse, oh no, uh oh, 🪐, error state',
       name: 'spacedOutSystemError',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-07T20:40:01.619Z',
     },
     '8562:4817': {
@@ -12513,7 +12513,7 @@ export const manifestData: Record<
       description: 'octopus, floating, ocean, sea, angry, 🐙, 🛟, 🌊, empty state',
       name: 'octopusFloatSystemError',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-01T02:00:56.149Z',
     },
     '8562:5024': {
@@ -12522,7 +12522,7 @@ export const manifestData: Record<
       description: 'cat, magnifying glass, system error,  🐱, 🐈, 🐈‍⬛',
       name: 'catLostSystemError',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.344Z',
     },
     '8562:5020': {
@@ -12531,7 +12531,7 @@ export const manifestData: Record<
       description: 'chicken fish, merge, uh oh, wtf, 🐟, 🐠, 🍣, 🎣, 🐡, 🐓, 🐔, system error',
       name: 'chickenFishSystemError',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.361Z',
     },
     '8562:5019': {
@@ -12540,7 +12540,7 @@ export const manifestData: Record<
       description: 'alien, donut, take a break, relax, space, 👽, 🪐, 🛸, 🍩, system error',
       name: 'alienDonutSystemError',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.323Z',
     },
     '8562:5023': {
@@ -12550,7 +12550,7 @@ export const manifestData: Record<
         "ice cream, melt, waiting, laptop, homage, we don't like waiting, 🍦, 🍨, 💻, system error",
       name: 'iceCreamMeltingSystemError',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-09T23:31:46.700Z',
     },
     '8562:5021': {
@@ -12559,7 +12559,7 @@ export const manifestData: Record<
       description: 'server, cat, get out, cat being a cat,  🐱, 🐈, 🐈‍⬛, system error',
       name: 'serverCatSystemError',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:43.927Z',
     },
     '8562:5022': {
@@ -12568,7 +12568,7 @@ export const manifestData: Record<
       description: 'gateway, door, space, empty feeling, glimpse, oh no, uh oh, 🪐, system error',
       name: 'spacedOutSystemError',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-15T15:04:18.684Z',
     },
     '8562:5018': {
@@ -12577,7 +12577,7 @@ export const manifestData: Record<
       description: 'octopus, floating, ocean, sea, angry, 🐙, 🛟, 🌊, error state',
       name: 'octopusFloatSystemError',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-28T20:37:53.553Z',
     },
     '8564:3566': {
@@ -12586,7 +12586,7 @@ export const manifestData: Record<
       description: 'squid, document, folder, 🦑, 📁, empty state',
       name: 'squidEmptyState',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T21:09:56.307Z',
     },
     '8562:5611': {
@@ -12595,7 +12595,7 @@ export const manifestData: Record<
       description: 'empty, wallet, cat, cute, 🐱, 🐈, 🐈‍⬛',
       name: 'catHoldingWalletEmptyState',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:20:03.315Z',
     },
     '8562:5612': {
@@ -12604,7 +12604,7 @@ export const manifestData: Record<
       description: 'fly, document, folder, missing, 🪰, 📁, empty state',
       name: 'walletFlyEmptyState',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-09T21:41:41.381Z',
     },
     '8562:5863': {
@@ -12613,7 +12613,7 @@ export const manifestData: Record<
       description: 'squid, document, folder, 🦑, 📁, empty state',
       name: 'squidEmptyState',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T21:07:52.368Z',
     },
     '8567:3563': {
@@ -12622,7 +12622,7 @@ export const manifestData: Record<
       description: 'art, artwork, museum, 🖼, empty state',
       name: 'artFrameEmptyState',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:28:55.010Z',
     },
     '8571:3407': {
@@ -12631,7 +12631,7 @@ export const manifestData: Record<
       description: 'empty, wallet, cat, cute, 🐱, 🐈, 🐈‍⬛',
       name: 'catHoldingWalletEmptyState',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:22:39.090Z',
     },
     '8567:4205': {
@@ -12640,7 +12640,7 @@ export const manifestData: Record<
       description: 'fly, document, folder, missing, 🪰, 📁, empty state',
       name: 'walletFlyEmptyState',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-15T15:04:34.926Z',
     },
     '8569:3471': {
@@ -12649,7 +12649,7 @@ export const manifestData: Record<
       description: 'art, artwork, museum, 🖼, empty state',
       name: 'artFrameEmptyState',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-15T15:04:16.749Z',
     },
     '8571:3451': {
@@ -12658,7 +12658,7 @@ export const manifestData: Record<
       description: 'wallet, cat, cute, 🐱, 🐈, 🐈‍⬛, empty state',
       name: 'exchangeEmptyState',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:19:50.191Z',
     },
     '8571:3539': {
@@ -12667,7 +12667,7 @@ export const manifestData: Record<
       description: 'wallet, cat, cute, 🐱, 🐈, 🐈‍⬛, empty state',
       name: 'exchangeEmptyState',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-12T02:03:04.461Z',
     },
     '8562:6664': {
@@ -12676,7 +12676,7 @@ export const manifestData: Record<
       description: 'credit card, uh oh, error state',
       name: 'cardError',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-20T07:03:13.813Z',
     },
     '8562:6697': {
@@ -12685,7 +12685,7 @@ export const manifestData: Record<
       description: 'credit card, uh oh, error state',
       name: 'cardError',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:23.835Z',
     },
     '8981:3309': {
@@ -12694,7 +12694,7 @@ export const manifestData: Record<
       description: 'unavailable, wrapping, eth, error, ',
       name: 'cbEthWrappingUnavailable',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-11T03:26:16.875Z',
     },
     '8981:3308': {
@@ -12703,7 +12703,7 @@ export const manifestData: Record<
       description: 'unavailable, wrapping, eth, error, ',
       name: 'cbEthWrappingUnavailable',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.409Z',
     },
     '8558:4004': {
@@ -12713,7 +12713,7 @@ export const manifestData: Record<
         'wallet, storage, alert, help, crucial, indication, yellow, 💰, 💵, 💸, ⚠️, warning state',
       name: 'walletWarning',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:34:21.162Z',
     },
     '8558:4022': {
@@ -12723,7 +12723,7 @@ export const manifestData: Record<
         'wallet, storage, alert, help, crucial, indication, yellow, 💰, 💵, 💸, ⚠️, warning state',
       name: 'walletWarning',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:34:36.829Z',
     },
     '8710:3284': {
@@ -12732,7 +12732,7 @@ export const manifestData: Record<
       description: '',
       name: 'coinbaseOneWalletWarning',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-03T17:36:57.969Z',
     },
     '8710:3325': {
@@ -12741,7 +12741,7 @@ export const manifestData: Record<
       description: '',
       name: 'coinbaseOneWalletWarning',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.782Z',
     },
     '8851:3267': {
@@ -12751,7 +12751,7 @@ export const manifestData: Record<
         'license, id, person, avatar, documentation, kyc, human, identity, identified, card, social, security, SSN, number',
       name: 'ssnCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-16T16:33:23.183Z',
     },
     '8851:3270': {
@@ -12761,7 +12761,7 @@ export const manifestData: Record<
         'license, id, person, avatar, documentation, kyc, human, identity, identified, card, vertical, state',
       name: 'genericCountryIDCard',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-10T14:34:47.188Z',
     },
     '8851:3269': {
@@ -12771,7 +12771,7 @@ export const manifestData: Record<
         'license, id, person, avatar, documentation, kyc, human, identity, identified, card',
       name: 'driversLicense',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-23T11:25:18.950Z',
     },
     '8851:3264': {
@@ -12781,7 +12781,7 @@ export const manifestData: Record<
         'license, id, person, avatar, documentation, kyc, human, identity, identified, card, drivers, driving, steering wheel, car, no wheels',
       name: 'driversLicenseWheel',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-16T16:33:23.087Z',
     },
     '8851:3268': {
@@ -12791,7 +12791,7 @@ export const manifestData: Record<
         'license, id, person, avatar, documentation, kyc, human, identity, identified, card, social, security, SSN, number',
       name: 'ssnCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-16T16:33:23.380Z',
     },
     '8851:3271': {
@@ -12801,7 +12801,7 @@ export const manifestData: Record<
         'license, id, person, avatar, documentation, kyc, human, identity, identified, card, vertical, state',
       name: 'genericCountryIDCard',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-16T16:33:22.940Z',
     },
     '8851:3265': {
@@ -12811,7 +12811,7 @@ export const manifestData: Record<
         'license, id, person, avatar, documentation, kyc, human, identity, identified, card',
       name: 'driversLicense',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-21T22:35:06.204Z',
     },
     '8851:3266': {
@@ -12821,7 +12821,7 @@ export const manifestData: Record<
         'license, id, person, avatar, documentation, kyc, human, identity, identified, card, drivers, driving, steering wheel, car, no wheels',
       name: 'driversLicenseWheel',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-06T16:35:18.787Z',
     },
     '8977:3541': {
@@ -12830,7 +12830,7 @@ export const manifestData: Record<
       description: 'PIX, Deposits, bank, coin, brazil, south, america, latam, arrow',
       name: 'pixBankDeposits',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-07T15:23:08.526Z',
     },
     '8977:3539': {
@@ -12839,7 +12839,7 @@ export const manifestData: Record<
       description: 'PIX, Deposits, bank, coin, brazil, south, america, latam, arrow',
       name: 'pixDeposits',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.628Z',
     },
     '8977:3540': {
@@ -12848,7 +12848,7 @@ export const manifestData: Record<
       description: 'PIX, Deposits, bank, coin, brazil, south, america, latam, arrow',
       name: 'pixBankDeposits',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-08T15:52:17.478Z',
     },
     '8977:3538': {
@@ -12857,7 +12857,7 @@ export const manifestData: Record<
       description: 'PIX, Deposits, bank, coin, brazil, south, america, latam, arrow',
       name: 'pixDeposits',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:52:09.161Z',
     },
     '9049:3487': {
@@ -12866,7 +12866,7 @@ export const manifestData: Record<
       description: 'dapps, L2, badging, token, support, coins',
       name: 'dappsL2Support',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-27T22:06:06.744Z',
     },
     '9049:3488': {
@@ -12875,7 +12875,7 @@ export const manifestData: Record<
       description: 'dapps, L2, badging, token, support, coins',
       name: 'dappsL2Support',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:13:46.762Z',
     },
     '9053:3496': {
@@ -12884,7 +12884,7 @@ export const manifestData: Record<
       description: 'Empty state, NFT, Claw machine, pig, Buy NFT, Notorious P.I.G',
       name: 'emptyStateClawMachinePig',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T07:13:32.103Z',
     },
     '9053:3623': {
@@ -12893,7 +12893,7 @@ export const manifestData: Record<
       description: 'Empty state, NFT, Claw machine, pig, Buy NFT, Notorious P.I.G',
       name: 'emptyStateClawMachinePig',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T07:27:56.790Z',
     },
     '9053:3495': {
@@ -12902,7 +12902,7 @@ export const manifestData: Record<
       description: 'Empty State, ASAP Ratty, Rat found wallet, Wallet, Rat',
       name: 'emptyStateRatFoundWallet',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T21:01:37.016Z',
     },
     '9053:3550': {
@@ -12911,7 +12911,7 @@ export const manifestData: Record<
       description: 'Empty State, ASAP Ratty, Rat found wallet, Wallet, Rat',
       name: 'emptyStateRatFoundWallet',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:21:42.166Z',
     },
     '9063:3384': {
@@ -12920,7 +12920,7 @@ export const manifestData: Record<
       description: 'coinbase, welcome, coin, benefits, program',
       name: 'cbOneWelcome',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:13:46.749Z',
     },
     '9063:3423': {
@@ -12929,7 +12929,7 @@ export const manifestData: Record<
       description: 'coinbase, welcome, coin, benefits, program',
       name: 'cbOneWelcome',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-14T15:13:46.756Z',
     },
     '9217:3425': {
@@ -12938,7 +12938,7 @@ export const manifestData: Record<
       description: 'stake, wrap, CB1, rush, movement, forward, exciting',
       name: 'cbOneStakeOrWrap',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-07T16:17:10.317Z',
     },
     '9217:3427': {
@@ -12948,7 +12948,7 @@ export const manifestData: Record<
         'CB1, nux, popular, asset, star, token, crypto, cryptocurrency, currency, sparkle, ✨',
       name: 'cbOnestarToken',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-16T15:55:11.337Z',
     },
     '9217:3426': {
@@ -12958,7 +12958,7 @@ export const manifestData: Record<
         'CB1, xtz, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'cbOneStaking',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T18:01:51.768Z',
     },
     '9217:3424': {
@@ -12967,7 +12967,7 @@ export const manifestData: Record<
       description: 'stake, wrap, CB1, rush, movement, forward, exciting',
       name: 'cbOneStakeOrWrap',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T20:37:42.080Z',
     },
     '9217:3422': {
@@ -12977,7 +12977,7 @@ export const manifestData: Record<
         'CB1, nux, popular, asset, star, token, crypto, cryptocurrency, currency, sparkle, ✨',
       name: 'cbOnestarToken',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.368Z',
     },
     '9217:3423': {
@@ -12987,7 +12987,7 @@ export const manifestData: Record<
         'CB1, xtz, staking, crypto, currency, earn, yield, interest, growth, make, money, asset, increase, reward',
       name: 'cbOneStaking',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:53.000Z',
     },
     '9323:3265': {
@@ -12996,7 +12996,7 @@ export const manifestData: Record<
       description: '',
       name: 'addEth',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:52.908Z',
     },
     '9323:3281': {
@@ -13005,7 +13005,7 @@ export const manifestData: Record<
       description: '',
       name: 'addEth',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:53:11.072Z',
     },
     '9394:3379': {
@@ -13015,7 +13015,7 @@ export const manifestData: Record<
         'notification, hub, notify, alert, ping, red, dot, social, analysis, media, twitter, chart',
       name: 'notificationHubSocial',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:51.959Z',
     },
     '9394:3376': {
@@ -13025,7 +13025,7 @@ export const manifestData: Record<
         'notification, hub, notify, alert, ping, red, dot, social, analysis, media, twitter, chart',
       name: 'notificationHubSocial',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:51.954Z',
     },
     '9394:3375': {
@@ -13034,7 +13034,7 @@ export const manifestData: Record<
       description: 'notification, hub, notify, alert, ping, red, dot, news, paper, doc',
       name: 'notificationHubNews',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-10T14:35:05.995Z',
     },
     '9394:3374': {
@@ -13043,7 +13043,7 @@ export const manifestData: Record<
       description: 'notification, hub, notify, alert, ping, red, dot, news, paper, doc',
       name: 'notificationHubNews',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:51.943Z',
     },
     '9394:3377': {
@@ -13053,7 +13053,7 @@ export const manifestData: Record<
         'notification, hub, notify, alert, ping, red, dot, analysis, review, doc, magnifying, glass',
       name: 'notificationHubAnalysis',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-15T02:22:42.959Z',
     },
     '9394:3373': {
@@ -13063,7 +13063,7 @@ export const manifestData: Record<
         'notification, hub, notify, alert, ping, red, dot, analysis, review, doc, magnifying, glass',
       name: 'notificationHubAnalysis',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:51.932Z',
     },
     '9394:3372': {
@@ -13073,7 +13073,7 @@ export const manifestData: Record<
         'notification, hub, notify, alert, ping, red, dot, portfolio, chart, spark, graph',
       name: 'notificationHubPortfolio',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:51.927Z',
     },
     '9394:3378': {
@@ -13083,7 +13083,7 @@ export const manifestData: Record<
         'notification, hub, notify, alert, ping, red, dot, portfolio, chart, spark, graph',
       name: 'notificationHubPortfolio',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:51.921Z',
     },
     '9445:3394': {
@@ -13093,7 +13093,7 @@ export const manifestData: Record<
         'Face, Match, KYC, Identity, ID, Person, Human, head, photo, checkmark, correct, positive',
       name: 'faceMatchReal',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T19:28:34.505Z',
     },
     '9445:3395': {
@@ -13103,7 +13103,7 @@ export const manifestData: Record<
         'Face, Match, KYC, Identity, ID, Person, Human, head, photo, checkmark, correct, positive',
       name: 'faceMatchReal',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-09-13T17:51:51.964Z',
     },
     '9691:5298': {
@@ -13112,7 +13112,7 @@ export const manifestData: Record<
       description: 'stake, wrap, ethereum, rush, movement, forward, exciting',
       name: 'wrapEthSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-12-14T22:56:06.684Z',
     },
     '9691:5299': {
@@ -13121,7 +13121,7 @@ export const manifestData: Record<
       description: 'stake, wrap, ethereum, rush, movement, forward, exciting',
       name: 'wrapEthSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-12T20:37:42.074Z',
     },
     '9739:5268': {
@@ -13130,7 +13130,7 @@ export const manifestData: Record<
       description: '',
       name: 'ethStakeOrWrapRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-08T00:57:30.512Z',
     },
     '9746:5268': {
@@ -13139,7 +13139,7 @@ export const manifestData: Record<
       description: '',
       name: 'ethStakeOrWrapRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-19T20:36:41.318Z',
     },
     '9788:5344': {
@@ -13148,7 +13148,7 @@ export const manifestData: Record<
       description: 'crypto, interest, farming, lending, percentage, growth, %',
       name: 'earnInterestOnCryptocurrency',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-25T19:11:49.163Z',
     },
     '9788:5343': {
@@ -13157,7 +13157,7 @@ export const manifestData: Record<
       description: 'crypto, interest, farming, lending, percentage, growth, %',
       name: 'earnInterestOnCryptocurrency',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-25T19:11:49.156Z',
     },
     '9788:5346': {
@@ -13166,7 +13166,7 @@ export const manifestData: Record<
       description: 'crypto, interest, farming, lending, percentage, growth, %',
       name: 'earnCryptoInterest',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-25T19:11:49.171Z',
     },
     '9788:5345': {
@@ -13175,7 +13175,7 @@ export const manifestData: Record<
       description: 'crypto, interest, farming, lending, percentage, growth, %',
       name: 'earnCryptoInterest',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-10-25T19:11:49.149Z',
     },
     '10031:9260': {
@@ -13184,7 +13184,7 @@ export const manifestData: Record<
       description: 'decentralized, borrow, lend, store, safety, security, wallet, coins',
       name: 'defiDecentralizedBorrowingLendingRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.114Z',
     },
     '10031:9264': {
@@ -13193,7 +13193,7 @@ export const manifestData: Record<
       description: 'decentralized, borrow, lend, store, safety, security, wallet, coins',
       name: 'defiDecentralizedBorrowingLendingRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.246Z',
     },
     '10031:9239': {
@@ -13202,7 +13202,7 @@ export const manifestData: Record<
       description: 'network, assets, crypto, cryptography, ledger, balance, transactions',
       name: 'cryptoAssetsRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.290Z',
     },
     '10031:9234': {
@@ -13211,7 +13211,7 @@ export const manifestData: Record<
       description: 'network, assets, crypto, cryptography, ledger, balance, transactions',
       name: 'cryptoAssetsRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.260Z',
     },
     '10031:9247': {
@@ -13220,7 +13220,7 @@ export const manifestData: Record<
       description: 'decentralized, borrow, lend, store, safety, security, wallet, coins',
       name: 'cryptoWalletRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.246Z',
     },
     '10031:9258': {
@@ -13229,7 +13229,7 @@ export const manifestData: Record<
       description: 'decentralized, borrow, lend, store, safety, security, wallet, coins',
       name: 'cryptoWalletRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.286Z',
     },
     '10031:9240': {
@@ -13238,7 +13238,7 @@ export const manifestData: Record<
       description: 'globe, international, economy, freedom, growth, crypto, economic, money, coins',
       name: 'cryptoEconomyRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.179Z',
     },
     '10031:9261': {
@@ -13247,7 +13247,7 @@ export const manifestData: Record<
       description: 'globe, international, economy, freedom, growth, crypto, economic, money, coins',
       name: 'cryptoEconomyRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.659Z',
     },
     '10031:9206': {
@@ -13256,7 +13256,7 @@ export const manifestData: Record<
       description: 'quiz, complete, check, checkmark, X, wrong, right, pencil, earn, money',
       name: 'completeAQuizRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.317Z',
     },
     '10031:9172': {
@@ -13265,7 +13265,7 @@ export const manifestData: Record<
       description: 'quiz, complete, check, checkmark, X, wrong, right, pencil, earn, money',
       name: 'completeAQuizRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.744Z',
     },
     '10031:9253': {
@@ -13274,7 +13274,7 @@ export const manifestData: Record<
       description: 'cross, border, international, payments, send, receive, money, coins',
       name: 'crossBorderPaymentsRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.230Z',
     },
     '10031:9250': {
@@ -13283,7 +13283,7 @@ export const manifestData: Record<
       description: 'cross, border, international, payments, send, receive, money, coins',
       name: 'crossBorderPaymentsRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.888Z',
     },
     '10031:9255': {
@@ -13292,7 +13292,7 @@ export const manifestData: Record<
       description: 'nfts, music, avatar, play, file, document, non, fungible, token',
       name: 'collectingNftsRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.807Z',
     },
     '10031:9244': {
@@ -13301,7 +13301,7 @@ export const manifestData: Record<
       description: 'nfts, music, avatar, play, file, document, non, fungible, token',
       name: 'collectingNftsRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.210Z',
     },
     '10031:9208': {
@@ -13310,7 +13310,7 @@ export const manifestData: Record<
       description: 'made, USA, America, fuck, yeah, star, location, marker, pin, United States,',
       name: 'basedInUsaRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.928Z',
     },
     '10031:9232': {
@@ -13319,7 +13319,7 @@ export const manifestData: Record<
       description: 'made, USA, America, fuck, yeah, star, location, marker, pin, United States,',
       name: 'basedInUsaRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.336Z',
     },
     '10031:9235': {
@@ -13328,7 +13328,7 @@ export const manifestData: Record<
       description: 'money, coins, backed, by, dollars, US, decentralized, yield, earn',
       name: 'backedByUsDollarRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.213Z',
     },
     '10031:9171': {
@@ -13337,7 +13337,7 @@ export const manifestData: Record<
       description: 'money, coins, backed, by, dollars, US, decentralized, yield, earn',
       name: 'backedByUsDollarRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.597Z',
     },
     '10031:9242': {
@@ -13347,7 +13347,7 @@ export const manifestData: Record<
         'browser, extension, desktop, integrate, wallet, leverage, web, website, coinbase',
       name: 'browserExtensionRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.506Z',
     },
     '10031:9237': {
@@ -13357,7 +13357,7 @@ export const manifestData: Record<
         'browser, extension, desktop, integrate, wallet, leverage, web, website, coinbase',
       name: 'browserExtensionRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.948Z',
     },
     '10031:9233': {
@@ -13366,7 +13366,7 @@ export const manifestData: Record<
       description: 'coins, decentralized, trading, DeFi, coins, swap',
       name: 'defiDecentralizedTradingExchangeRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.623Z',
     },
     '10031:9211': {
@@ -13375,7 +13375,7 @@ export const manifestData: Record<
       description: 'coins, decentralized, trading, DeFi, coins, swap',
       name: 'defiDecentralizedTradingExchangeRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.588Z',
     },
     '10031:9241': {
@@ -13384,7 +13384,7 @@ export const manifestData: Record<
       description: 'decentralized, network, crypto, cryptography, connection',
       name: 'decentralizationRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.468Z',
     },
     '10031:9230': {
@@ -13393,7 +13393,7 @@ export const manifestData: Record<
       description: 'decentralized, network, crypto, cryptography, connection',
       name: 'decentralizationRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.236Z',
     },
     '10031:9221': {
@@ -13402,7 +13402,7 @@ export const manifestData: Record<
       description: 'encrypted, cryptography, computers, computation, network, confirmation, coins',
       name: 'encryptedEverythingRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.460Z',
     },
     '10031:9229': {
@@ -13411,7 +13411,7 @@ export const manifestData: Record<
       description: 'encrypted, cryptography, computers, computation, network, confirmation, coins',
       name: 'encryptedEverythingRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.364Z',
     },
     '10031:9231': {
@@ -13421,7 +13421,7 @@ export const manifestData: Record<
         'umbrella, insurance, protection, secure, safety, security, storage, coins, crypto',
       name: 'insuranceProtectionRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.104Z',
     },
     '10031:9228': {
@@ -13431,7 +13431,7 @@ export const manifestData: Record<
         'umbrella, insurance, protection, secure, safety, security, storage, coins, crypto',
       name: 'insuranceProtectionRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.754Z',
     },
     '10031:9248': {
@@ -13440,7 +13440,7 @@ export const manifestData: Record<
       description: 'chart, invest, grow, money, save, earn, coins, graph',
       name: 'investRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.063Z',
     },
     '10031:9226': {
@@ -13449,7 +13449,7 @@ export const manifestData: Record<
       description: 'chart, invest, grow, money, save, earn, coins, graph',
       name: 'investRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.339Z',
     },
     '10031:9223': {
@@ -13458,7 +13458,7 @@ export const manifestData: Record<
       description: 'NFT, digital, collect, collectibles, art, music, PFP, avatar, coins',
       name: 'digitalCollectiblesRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.982Z',
     },
     '10031:9238': {
@@ -13467,7 +13467,7 @@ export const manifestData: Record<
       description: 'NFT, digital, collect, collectibles, art, music, PFP, avatar, coins',
       name: 'digitalCollectiblesRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.970Z',
     },
     '10031:9224': {
@@ -13476,7 +13476,7 @@ export const manifestData: Record<
       description: 'international, world, i18n, coins, send, transactions, receive, money, globe',
       name: 'globalTransactionsRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.239Z',
     },
     '10031:9193': {
@@ -13485,7 +13485,7 @@ export const manifestData: Record<
       description: 'international, world, i18n, coins, send, transactions, receive, money, globe',
       name: 'globalTransactionsRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.764Z',
     },
     '10031:9243': {
@@ -13494,7 +13494,7 @@ export const manifestData: Record<
       description: 'earn, chart, bar, graph, up, grow, invest, money, future',
       name: 'earnRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.095Z',
     },
     '10031:9256': {
@@ -13503,7 +13503,7 @@ export const manifestData: Record<
       description: 'earn, chart, bar, graph, up, grow, invest, money, future',
       name: 'earnRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.787Z',
     },
     '10031:9183': {
@@ -13512,7 +13512,7 @@ export const manifestData: Record<
       description: 'get, started, stopwatch, clock, time, fast, get, going, please',
       name: 'getStartedInMinutesRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.320Z',
     },
     '10031:9219': {
@@ -13521,7 +13521,7 @@ export const manifestData: Record<
       description: 'get, started, stopwatch, clock, time, fast, get, going, please',
       name: 'getStartedInMinutesRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.269Z',
     },
     '10031:9216': {
@@ -13530,7 +13530,7 @@ export const manifestData: Record<
       description: 'decentralized, web, web3, network, self, custody, ownership, data',
       name: 'decentralizedWebWeb3Rectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.296Z',
     },
     '10031:9192': {
@@ -13539,7 +13539,7 @@ export const manifestData: Record<
       description: 'decentralized, web, web3, network, self, custody, ownership, data',
       name: 'decentralizedWebWeb3Rectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.844Z',
     },
     '10031:9236': {
@@ -13548,7 +13548,7 @@ export const manifestData: Record<
       description: 'decentralized, money, value, coins, users, avatar, network',
       name: 'moneyDecentralizedRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.614Z',
     },
     '10031:9209': {
@@ -13557,7 +13557,7 @@ export const manifestData: Record<
       description: 'decentralized, money, value, coins, users, avatar, network',
       name: 'moneyDecentralizedRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.167Z',
     },
     '10031:9215': {
@@ -13566,7 +13566,7 @@ export const manifestData: Record<
       description: 'peer, to, peer, payments, P2P, send, money, receive, fast, quick, value',
       name: 'p2pPaymentsRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.858Z',
     },
     '10031:9185': {
@@ -13575,7 +13575,7 @@ export const manifestData: Record<
       description: 'peer, to, peer, payments, P2P, send, money, receive, fast, quick, value',
       name: 'p2pPaymentsRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.389Z',
     },
     '10031:9213': {
@@ -13584,7 +13584,7 @@ export const manifestData: Record<
       description: 'mining, value, MEV, cart, coins, crypto, cryptocurrency',
       name: 'miningRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.299Z',
     },
     '10031:9218': {
@@ -13593,7 +13593,7 @@ export const manifestData: Record<
       description: 'mining, value, MEV, cart, coins, crypto, cryptocurrency',
       name: 'miningRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.562Z',
     },
     '10031:9252': {
@@ -13602,7 +13602,7 @@ export const manifestData: Record<
       description: 'wallet, link, account, linking, to, connect, both, user, avatar, coins',
       name: 'linkingYourWalletToYourCoinbaseAccountRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.407Z',
     },
     '10031:9210': {
@@ -13611,7 +13611,7 @@ export const manifestData: Record<
       description: 'wallet, link, account, linking, to, connect, both, user, avatar, coins',
       name: 'linkingYourWalletToYourCoinbaseAccountRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.605Z',
     },
     '10031:9205': {
@@ -13620,7 +13620,7 @@ export const manifestData: Record<
       description: 'Trust, secure, trusted, security, shield, coin, store, safe',
       name: 'secureAndTrustedRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.034Z',
     },
     '10031:9202': {
@@ -13629,7 +13629,7 @@ export const manifestData: Record<
       description: 'Trust, secure, trusted, security, shield, coin, store, safe',
       name: 'secureAndTrustedRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.326Z',
     },
     '10031:9201': {
@@ -13639,7 +13639,7 @@ export const manifestData: Record<
         'international, world, globe, transactions, secure, lock, send, receive, peer to peer',
       name: 'secureGlobalTransactionsRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.104Z',
     },
     '10031:9199': {
@@ -13649,7 +13649,7 @@ export const manifestData: Record<
         'international, world, globe, transactions, secure, lock, send, receive, peer to peer',
       name: 'secureGlobalTransactionsRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.515Z',
     },
     '10031:9197': {
@@ -13658,7 +13658,7 @@ export const manifestData: Record<
       description: 'multi, multicoin, support, networks, many, coins',
       name: 'multicoinSupportRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.696Z',
     },
     '10031:9204': {
@@ -13667,7 +13667,7 @@ export const manifestData: Record<
       description: 'multi, multicoin, support, networks, many, coins',
       name: 'multicoinSupportRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.424Z',
     },
     '10031:9194': {
@@ -13676,7 +13676,7 @@ export const manifestData: Record<
       description: 'no, fees, save, money, transactions, price, tag, sale, reduced, costs',
       name: 'noFeesRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.023Z',
     },
     '10031:9217': {
@@ -13685,7 +13685,7 @@ export const manifestData: Record<
       description: 'no, fees, save, money, transactions, price, tag, sale, reduced, costs',
       name: 'noFeesRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.013Z',
     },
     '10031:9251': {
@@ -13694,7 +13694,7 @@ export const manifestData: Record<
       description: 'multi, platform, mobile, desktop, coins, users',
       name: 'multiPlatformMobileAppBrowserExtensionRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.220Z',
     },
     '10031:9191': {
@@ -13703,7 +13703,7 @@ export const manifestData: Record<
       description: 'multi, platform, mobile, desktop, coins, users',
       name: 'multiPlatformMobileAppBrowserExtensionRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.354Z',
     },
     '10031:9245': {
@@ -13712,7 +13712,7 @@ export const manifestData: Record<
       description: 'powered, by, ethereum, eth, icon, arrows, network',
       name: 'poweredByEthereumRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.372Z',
     },
     '10031:9190': {
@@ -13721,7 +13721,7 @@ export const manifestData: Record<
       description: 'powered, by, ethereum, eth, icon, arrows, network',
       name: 'poweredByEthereumRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.938Z',
     },
     '10031:9187': {
@@ -13730,7 +13730,7 @@ export const manifestData: Record<
       description: 'secure, storage, store, coin, wallet, lock, security, keep, money',
       name: 'secureStorageRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.441Z',
     },
     '10031:9249': {
@@ -13739,7 +13739,7 @@ export const manifestData: Record<
       description: 'stable, scale, stablecoin, value, store, earn',
       name: 'stableValueRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.387Z',
     },
     '10031:9214': {
@@ -13748,7 +13748,7 @@ export const manifestData: Record<
       description: 'Lock, security, key, authentication, 2FA, wallet, secure, passcode',
       name: 'walletSecurityRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.702Z',
     },
     '10031:9181': {
@@ -13757,7 +13757,7 @@ export const manifestData: Record<
       description: 'self, hosted, wallet, storage, stay, in, control, coins, your, access, account',
       name: 'stayInControlSelfHostedWalletsStorageRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.994Z',
     },
     '10031:9259': {
@@ -13766,7 +13766,7 @@ export const manifestData: Record<
       description: 'self, custody, store, storage, wallet, coins, user, avatar',
       name: 'selfCustodyRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.398Z',
     },
     '10031:9186': {
@@ -13775,7 +13775,7 @@ export const manifestData: Record<
       description: 'start, today, watch, earn, videos, calendar, week, learn',
       name: 'startTodayRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.963Z',
     },
     '10031:9222': {
@@ -13784,7 +13784,7 @@ export const manifestData: Record<
       description: 'arrow, up, trend, trending, assets, hot, coin, and, to, the, right',
       name: 'trendingHotAssetsRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.952Z',
     },
     '10031:9198': {
@@ -13793,7 +13793,7 @@ export const manifestData: Record<
       description: 'watch, video, eye, earn, browser, window, play, button',
       name: 'watchVideosRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.936Z',
     },
     '10031:9227': {
@@ -13802,7 +13802,7 @@ export const manifestData: Record<
       description: 'cold, storage, check, mark, checkmark, coins, secure, trusted, security',
       name: 'stressTestedColdStorageRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.855Z',
     },
     '10031:9184': {
@@ -13811,7 +13811,7 @@ export const manifestData: Record<
       description: 'coins, chart, stake, staking, liquid, earn, more, finance, graph, bar',
       name: 'stakingRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.650Z',
     },
     '10031:9165': {
@@ -13820,7 +13820,7 @@ export const manifestData: Record<
       description: 'chart, candle, candlesticks, wick, up, bar, graph',
       name: 'advancedTradingChartsIndicatorsCandlesRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.269Z',
     },
     '10031:9189': {
@@ -13829,7 +13829,7 @@ export const manifestData: Record<
       description: 'semi, custodial, semi custodial, bank, user, avatar, coin',
       name: 'semiCustodialRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.632Z',
     },
     '10031:9180': {
@@ -13838,7 +13838,7 @@ export const manifestData: Record<
       description: 'crypto, trophy, win, rewards, coin, success',
       name: 'congratulationsOnEarningCryptoRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.919Z',
     },
     '10031:9257': {
@@ -13847,7 +13847,7 @@ export const manifestData: Record<
       description: 'crypto, beginners, education, understanding, learning, coin, article, reading',
       name: 'cryptoForBeginnersRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.024Z',
     },
     '10031:9179': {
@@ -13856,7 +13856,7 @@ export const manifestData: Record<
       description: 'coin, folder, crypto, portfolio, storage, cryptocurrency',
       name: 'cryptoPortfolioRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.191Z',
     },
     '10031:9167': {
@@ -13865,7 +13865,7 @@ export const manifestData: Record<
       description: 'share, social, media, circles, blue, yellow, coins',
       name: 'shareOnSocialMediaRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.868Z',
     },
     '10031:9176': {
@@ -13874,7 +13874,7 @@ export const manifestData: Record<
       description: 'user, check, list, checklist, avatar, id, did, decentralized, identity',
       name: 'didDecentralizedIdentityRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.847Z',
     },
     '10031:9178': {
@@ -13883,7 +13883,7 @@ export const manifestData: Record<
       description: 'crypto, hex, block, chain, blockchain, network, decentralized',
       name: 'blockchainRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.865Z',
     },
     '10031:9212': {
@@ -13892,7 +13892,7 @@ export const manifestData: Record<
       description: 'chain, hexagon, connections, yellow, blue',
       name: 'sidechainRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.855Z',
     },
     '10031:9175': {
@@ -13901,7 +13901,7 @@ export const manifestData: Record<
       description: 'borrow, wallet, coins, receive, money, finance',
       name: 'borrowWalletRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.044Z',
     },
     '10031:9263': {
@@ -13910,7 +13910,7 @@ export const manifestData: Record<
       description: 'secure, storage, store, coin, wallet, lock, security, keep, money',
       name: 'secureStorageRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.004Z',
     },
     '10031:9225': {
@@ -13919,7 +13919,7 @@ export const manifestData: Record<
       description: 'Lock, security, key, authentication, 2FA, wallet, secure, passcode',
       name: 'walletSecurityRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.820Z',
     },
     '10031:9203': {
@@ -13928,7 +13928,7 @@ export const manifestData: Record<
       description: 'self, hosted, wallet, storage, stay, in, control, coins, your, access, account',
       name: 'stayInControlSelfHostedWalletsStorageRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.345Z',
     },
     '10031:9174': {
@@ -13937,7 +13937,7 @@ export const manifestData: Record<
       description: 'self, custody, store, storage, wallet, coins, user, avatar',
       name: 'selfCustodyRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.837Z',
     },
     '10031:9182': {
@@ -13946,7 +13946,7 @@ export const manifestData: Record<
       description: 'start, today, watch, earn, videos, calendar, week, learn',
       name: 'startTodayRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.518Z',
     },
     '10031:9173': {
@@ -13955,7 +13955,7 @@ export const manifestData: Record<
       description: 'arrow, up, trend, trending, assets, hot, coin, and, to, the, right',
       name: 'trendingHotAssetsRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.798Z',
     },
     '10031:9196': {
@@ -13964,7 +13964,7 @@ export const manifestData: Record<
       description: 'watch, video, eye, earn, browser, window, play, button',
       name: 'watchVideosRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.337Z',
     },
     '10031:9177': {
@@ -13973,7 +13973,7 @@ export const manifestData: Record<
       description: 'cold, storage, check, mark, checkmark, coins, secure, trusted, security',
       name: 'stressTestedColdStorageRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.787Z',
     },
     '10031:9169': {
@@ -13982,7 +13982,7 @@ export const manifestData: Record<
       description: 'stable, scale, stablecoin, value, store, earn',
       name: 'stableValueRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.776Z',
     },
     '10031:9207': {
@@ -13991,7 +13991,7 @@ export const manifestData: Record<
       description: 'coins, chart, stake, staking, liquid, earn, more, finance, graph, bar',
       name: 'stakingRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.687Z',
     },
     '10031:9254': {
@@ -14000,7 +14000,7 @@ export const manifestData: Record<
       description: 'chart, candle, candlesticks, wick, up, bar, graph',
       name: 'advancedTradingChartsIndicatorsCandlesRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.817Z',
     },
     '10031:9195': {
@@ -14009,7 +14009,7 @@ export const manifestData: Record<
       description: 'semi, custodial, semi custodial, bank, user, avatar, coin',
       name: 'semiCustodialRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.753Z',
     },
     '10031:9168': {
@@ -14018,7 +14018,7 @@ export const manifestData: Record<
       description: 'crypto, trophy, win, rewards, coin, success',
       name: 'congratulationsOnEarningCryptoRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.751Z',
     },
     '10031:9166': {
@@ -14027,7 +14027,7 @@ export const manifestData: Record<
       description: 'crypto, beginners, education, understanding, learning, coin, article, reading',
       name: 'cryptoForBeginnersRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.053Z',
     },
     '10031:9262': {
@@ -14036,7 +14036,7 @@ export const manifestData: Record<
       description: 'coin, folder, crypto, portfolio, storage, cryptocurrency',
       name: 'cryptoPortfolioRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.257Z',
     },
     '10031:9164': {
@@ -14045,7 +14045,7 @@ export const manifestData: Record<
       description: 'share, social, media, circles, blue, yellow, coins',
       name: 'shareOnSocialMediaRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.535Z',
     },
     '10031:9188': {
@@ -14054,7 +14054,7 @@ export const manifestData: Record<
       description: 'user, check, list, checklist, avatar, id, did, decentralized, identity',
       name: 'didDecentralizedIdentityRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.147Z',
     },
     '10031:9200': {
@@ -14063,7 +14063,7 @@ export const manifestData: Record<
       description: 'crypto, hex, block, chain, blockchain, network, decentralized',
       name: 'blockchainRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.698Z',
     },
     '10031:9163': {
@@ -14072,7 +14072,7 @@ export const manifestData: Record<
       description: 'chain, hexagon, connections, yellow, blue',
       name: 'sidechainRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.906Z',
     },
     '10031:9220': {
@@ -14081,7 +14081,7 @@ export const manifestData: Record<
       description: 'borrow, wallet, coins, receive, money, finance',
       name: 'borrowWalletRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.308Z',
     },
     '10040:7323': {
@@ -14090,7 +14090,7 @@ export const manifestData: Record<
       description: 'USDC, earn, interest, APY, growth, rate, growth, value, 📈',
       name: 'retailUSDCRewardsHeroSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.680Z',
     },
     '10040:7302': {
@@ -14099,7 +14099,7 @@ export const manifestData: Record<
       description: 'earn, hub, discover, tracking, manage, interest, precent, growth',
       name: 'earnNuxHome',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.569Z',
     },
     '10040:7304': {
@@ -14108,7 +14108,7 @@ export const manifestData: Record<
       description: 'BTC, rewards, incentives, crystalBall, reward, returns, 🔮',
       name: 'bitcoinGlobe',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T22:07:11.303Z',
     },
     '10040:7305': {
@@ -14117,7 +14117,7 @@ export const manifestData: Record<
       description: 'USDC, rewards, incentives, crystalBall, reward, returns, 🔮',
       name: 'cbOneUSDCIncentives',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.529Z',
     },
     '10040:7321': {
@@ -14126,7 +14126,7 @@ export const manifestData: Record<
       description: 'percent, percentage, discount, incentives, priceTag, rate, 🏷️',
       name: 'cbOnePercentOff',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.611Z',
     },
     '10040:7303': {
@@ -14135,7 +14135,7 @@ export const manifestData: Record<
       description: 'cbone, rewards, incentives, gift, surprise, token, 🎁',
       name: 'cbOneTokenRewardsHeroSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.601Z',
     },
     '10040:7322': {
@@ -14144,7 +14144,7 @@ export const manifestData: Record<
       description: 'cbone, earn, interest, APY, growth, rate, growth, value, 📈',
       name: 'cbOneRewardsHeroSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.549Z',
     },
     '10040:7295': {
@@ -14153,7 +14153,7 @@ export const manifestData: Record<
       description: 'USDC, earn, interest, APY, growth, rate, growth, value, 📈',
       name: 'retailUSDCRewardsHeroSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.643Z',
     },
     '10040:7301': {
@@ -14162,7 +14162,7 @@ export const manifestData: Record<
       description: 'earn, hub, discover, tracking, manage, interest, precent, growth',
       name: 'earnNuxHome',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T21:59:42.986Z',
     },
     '10040:7299': {
@@ -14171,7 +14171,7 @@ export const manifestData: Record<
       description: 'BTC, rewards, incentives, crystalBall, reward, returns, 🔮',
       name: 'bitcoinGlobe',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T21:59:43.029Z',
     },
     '10040:7298': {
@@ -14180,7 +14180,7 @@ export const manifestData: Record<
       description: 'USDC, rewards, incentives, crystalBall, reward, returns, 🔮',
       name: 'cbOneUSDCIncentives',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T21:59:42.977Z',
     },
     '10040:7297': {
@@ -14189,7 +14189,7 @@ export const manifestData: Record<
       description: 'percent, percentage, discount, incentives, priceTag, rate, 🏷️',
       name: 'cbOnePercentOff',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T21:59:43.020Z',
     },
     '10040:7300': {
@@ -14198,7 +14198,7 @@ export const manifestData: Record<
       description: 'cbone, rewards, incentives, gift, surprise, token, 🎁',
       name: 'cbOneTokenRewardsHeroSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T21:59:43.012Z',
     },
     '10040:7296': {
@@ -14207,7 +14207,7 @@ export const manifestData: Record<
       description: 'cbone, earn, interest, APY, growth, rate, growth, value, 📈',
       name: 'cbOneRewardsHeroSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T21:59:43.003Z',
     },
     '10043:7329': {
@@ -14216,7 +14216,7 @@ export const manifestData: Record<
       description: 'USDC, earn, interest, APY, growth, rate, growth, value, 📈',
       name: 'retailUSDCRewardsSpotRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T19:41:23.519Z',
     },
     '10043:7330': {
@@ -14225,7 +14225,7 @@ export const manifestData: Record<
       description: 'cbone, earn, interest, APY, growth, rate, growth, value, 📈',
       name: 'cbOneRewardsSpotRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T19:41:23.543Z',
     },
     '10043:7327': {
@@ -14234,7 +14234,7 @@ export const manifestData: Record<
       description: 'USDC, earn, interest, APY, growth, rate, growth, value, 📈',
       name: 'retailUSDCRewardsSpotRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T21:07:54.972Z',
     },
     '10043:7328': {
@@ -14243,7 +14243,7 @@ export const manifestData: Record<
       description: 'cbone, earn, interest, APY, growth, rate, growth, value, 📈',
       name: 'cbOneRewardsSpotRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T21:07:54.981Z',
     },
     '10043:7333': {
@@ -14252,7 +14252,7 @@ export const manifestData: Record<
       description: 'cbone, rewards, incentives, gift, surprise, token, 🎁',
       name: 'cbOneTokenRewardsSpotSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.668Z',
     },
     '10043:7332': {
@@ -14261,7 +14261,7 @@ export const manifestData: Record<
       description: 'cbone, earn, interest, APY, growth, rate, growth, value, 📈',
       name: 'cbOneRewardsSpotSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.658Z',
     },
     '10043:7331': {
@@ -14270,7 +14270,7 @@ export const manifestData: Record<
       description: 'USDC, earn, interest, APY, growth, rate, growth, value, 📈',
       name: 'retailUSDCRewardsSpotSquare',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.648Z',
     },
     '10043:7324': {
@@ -14279,7 +14279,7 @@ export const manifestData: Record<
       description: 'cbone, rewards, incentives, gift, surprise, token, 🎁',
       name: 'cbOneTokenRewardsSpotSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.968Z',
     },
     '10043:7325': {
@@ -14288,7 +14288,7 @@ export const manifestData: Record<
       description: 'cbone, earn, interest, APY, growth, rate, growth, value, 📈',
       name: 'cbOneRewardsSpotSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:49.637Z',
     },
     '10043:7326': {
@@ -14297,7 +14297,7 @@ export const manifestData: Record<
       description: 'USDC, earn, interest, APY, growth, rate, growth, value, 📈',
       name: 'retailUSDCRewardsSpotSquare',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-10T18:33:50.440Z',
     },
     '10155:5518': {
@@ -14306,7 +14306,7 @@ export const manifestData: Record<
       description: 'Pie, Chart, Doc, Plus, Minus, Check, Mark, Done, Taxes, Details',
       name: 'taxesDetailsRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.936Z',
     },
     '10155:5516': {
@@ -14315,7 +14315,7 @@ export const manifestData: Record<
       description: 'Pie, Chart, Doc, Plus, Minus, Check, Mark, Done, Taxes, Details',
       name: 'taxesDetailsRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.900Z',
     },
     '10155:5504': {
@@ -14325,7 +14325,7 @@ export const manifestData: Record<
         'Opt, In, Push, Notifications, Email, Bubble, Window, Notify, Account, Security, Prices',
       name: 'optInPushNotificationsEmailRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.871Z',
     },
     '10155:5514': {
@@ -14335,7 +14335,7 @@ export const manifestData: Record<
         'Opt, In, Push, Notifications, Email, Bubble, Window, Notify, Account, Security, Prices',
       name: 'optInPushNotificationsEmailRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.918Z',
     },
     '10155:5515': {
@@ -14344,7 +14344,7 @@ export const manifestData: Record<
       description: 'Eth, Gas, Ethereum, Fees, Network, Gas, Payment, Pump, Token, Chart, Range',
       name: 'gasFeesNetworkFeesRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.923Z',
     },
     '10155:5510': {
@@ -14353,7 +14353,7 @@ export const manifestData: Record<
       description: 'Eth, Gas, Ethereum, Fees, Network, Gas, Payment, Pump, Token, Chart, Range',
       name: 'gasFeesNetworkFeesRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.895Z',
     },
     '10155:5507': {
@@ -14362,7 +14362,7 @@ export const manifestData: Record<
       description: 'Wallet, Hardware, Ledger, USB, authentication, account, storage, cold, crypto',
       name: 'hardwareWalletsRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.133Z',
     },
     '10155:5509': {
@@ -14371,7 +14371,7 @@ export const manifestData: Record<
       description: 'Wallet, Hardware, Ledger, USB, authentication, account, storage, cold, crypto',
       name: 'hardwareWalletsRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.860Z',
     },
     '10155:5512': {
@@ -14380,7 +14380,7 @@ export const manifestData: Record<
       description: 'Layered, Networks, ethereum, layer, 1, 2, eth, side, chain',
       name: 'layeredNetworksRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.877Z',
     },
     '10155:5505': {
@@ -14389,7 +14389,7 @@ export const manifestData: Record<
       description: 'Layered, Networks, ethereum, layer, 1, 2, eth, side, chain',
       name: 'layeredNetworksRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.883Z',
     },
     '10155:5508': {
@@ -14398,7 +14398,7 @@ export const manifestData: Record<
       description: 'portfolio, performance, chart, up, to, the, right, coins, arrow',
       name: 'portfolioPerformanceRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.253Z',
     },
     '10155:5503': {
@@ -14407,7 +14407,7 @@ export const manifestData: Record<
       description: 'portfolio, performance, chart, up, to, the, right, coins, arrow',
       name: 'portfolioPerformanceRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.866Z',
     },
     '10155:5513': {
@@ -14416,7 +14416,7 @@ export const manifestData: Record<
       description: 'wallets, multiple, users, single account, lots, of, wallets',
       name: 'multipleAccountsWalletsForOneUserRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.906Z',
     },
     '10155:5502': {
@@ -14425,7 +14425,7 @@ export const manifestData: Record<
       description: 'wallets, multiple, users, single account, lots, of, wallets',
       name: 'multipleAccountsWalletsForOneUserRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.165Z',
     },
     '10155:5501': {
@@ -14434,7 +14434,7 @@ export const manifestData: Record<
       description: 'quick, simple, clock, fast, time, efficient, checkmark',
       name: 'quickAndSimpleRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.854Z',
     },
     '10155:5511': {
@@ -14443,7 +14443,7 @@ export const manifestData: Record<
       description: 'quick, simple, clock, fast, time, efficient, checkmark',
       name: 'quickAndSimpleRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.889Z',
     },
     '10155:5506': {
@@ -14452,7 +14452,7 @@ export const manifestData: Record<
       description: 'Light, Bulb, Earn, Learn, Coin, Up, Make, Money',
       name: 'earnToLearnRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.176Z',
     },
     '10155:5499': {
@@ -14461,7 +14461,7 @@ export const manifestData: Record<
       description: 'Light, Bulb, Earn, Learn, Coin, Up, Make, Money',
       name: 'earnToLearnRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.159Z',
     },
     '10155:5500': {
@@ -14470,7 +14470,7 @@ export const manifestData: Record<
       description: 'Gains, Losses, Scale, Growth, Money, Chart, Up, Down, Arrow',
       name: 'gainsAndLossesRectangle',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.912Z',
     },
     '10155:5517': {
@@ -14479,7 +14479,7 @@ export const manifestData: Record<
       description: 'Gains, Losses, Scale, Growth, Money, Chart, Up, Down, Arrow',
       name: 'gainsAndLossesRectangle',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.930Z',
     },
     '10155:6938': {
@@ -14488,7 +14488,7 @@ export const manifestData: Record<
       description: 'money, coins, backed, by, dollars, US, decentralized, yield, earn',
       name: 'backedByUsDollarSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.816Z',
     },
     '10155:6949': {
@@ -14497,7 +14497,7 @@ export const manifestData: Record<
       description: 'network, assets, crypto, cryptography, ledger, balance, transactions',
       name: 'cryptoAssetsSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.810Z',
     },
     '10155:6945': {
@@ -14506,7 +14506,7 @@ export const manifestData: Record<
       description: 'globe, international, economy, freedom, growth, crypto, economic, money, coins',
       name: 'cryptoEconomySpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.182Z',
     },
     '10155:6924': {
@@ -14515,7 +14515,7 @@ export const manifestData: Record<
       description: 'decentralized, borrow, lend, store, safety, security, wallet, coins',
       name: 'defiDecentralizedBorrowingLendingSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.716Z',
     },
     '10155:6948': {
@@ -14524,7 +14524,7 @@ export const manifestData: Record<
       description: 'cross, border, international, payments, send, receive, money, coins',
       name: 'crossBorderPaymentsSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.798Z',
     },
     '10155:6930': {
@@ -14533,7 +14533,7 @@ export const manifestData: Record<
       description: 'quiz, complete, check, checkmark, X, wrong, right, pencil, earn, money',
       name: 'completeAQuizSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.039Z',
     },
     '10155:6937': {
@@ -14542,7 +14542,7 @@ export const manifestData: Record<
       description: 'nfts, music, avatar, play, file, document, non, fungible, token',
       name: 'collectingNftsSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.792Z',
     },
     '10155:6933': {
@@ -14552,7 +14552,7 @@ export const manifestData: Record<
         'browser, extension, desktop, integrate, wallet, leverage, web, website, coinbase',
       name: 'browserExtensionSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.983Z',
     },
     '10155:6944': {
@@ -14561,7 +14561,7 @@ export const manifestData: Record<
       description: 'made, USA, America, fuck, yeah, star, location, marker, pin, United States,',
       name: 'basedInUsaSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.786Z',
     },
     '10155:6928': {
@@ -14570,7 +14570,7 @@ export const manifestData: Record<
       description: 'decentralized, borrow, lend, store, safety, security, wallet, coins',
       name: 'cryptoWalletSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.953Z',
     },
     '10155:6941': {
@@ -14579,7 +14579,7 @@ export const manifestData: Record<
       description: 'decentralized, web, web3, network, self, custody, ownership, data',
       name: 'decentralizedWebWeb3Spot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.781Z',
     },
     '10155:6932': {
@@ -14589,7 +14589,7 @@ export const manifestData: Record<
         'umbrella, insurance, protection, secure, safety, security, storage, coins, crypto',
       name: 'insuranceProtectionSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.247Z',
     },
     '10155:6921': {
@@ -14598,7 +14598,7 @@ export const manifestData: Record<
       description: 'decentralized, network, crypto, cryptography, connection',
       name: 'decentralizationSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.775Z',
     },
     '10155:6947': {
@@ -14607,7 +14607,7 @@ export const manifestData: Record<
       description: 'NFT, digital, collect, collectibles, art, music, PFP, avatar, coins',
       name: 'digitalCollectiblesSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.769Z',
     },
     '10155:6935': {
@@ -14616,7 +14616,7 @@ export const manifestData: Record<
       description: 'encrypted, cryptography, computers, computation, network, confirmation, coins',
       name: 'encryptedEverythingSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.348Z',
     },
     '10155:6931': {
@@ -14625,7 +14625,7 @@ export const manifestData: Record<
       description: 'earn, chart, bar, graph, up, grow, invest, money, future',
       name: 'earnSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.083Z',
     },
     '10155:6929': {
@@ -14634,7 +14634,7 @@ export const manifestData: Record<
       description: 'international, world, i18n, coins, send, transactions, receive, money, globe',
       name: 'globalTransactionsSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.433Z',
     },
     '10155:6923': {
@@ -14643,7 +14643,7 @@ export const manifestData: Record<
       description: 'get, started, stopwatch, clock, time, fast, get, going, please',
       name: 'getStartedInMinutesSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.279Z',
     },
     '10155:6995': {
@@ -14652,7 +14652,7 @@ export const manifestData: Record<
       description: 'Trust, secure, trusted, security, shield, coin, store, safe',
       name: 'secureAndTrustedSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.487Z',
     },
     '10155:6993': {
@@ -14661,7 +14661,7 @@ export const manifestData: Record<
       description: 'multi, multicoin, support, networks, many, coins',
       name: 'multicoinSupportSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.115Z',
     },
     '10155:6980': {
@@ -14670,7 +14670,7 @@ export const manifestData: Record<
       description: 'mining, value, MEV, cart, coins, crypto, cryptocurrency',
       name: 'miningSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.641Z',
     },
     '10155:6994': {
@@ -14679,7 +14679,7 @@ export const manifestData: Record<
       description: 'wallet, link, account, linking, to, connect, both, user, avatar, coins',
       name: 'linkingYourWalletToYourCoinbaseAccountSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.737Z',
     },
     '10155:6990': {
@@ -14688,7 +14688,7 @@ export const manifestData: Record<
       description: 'decentralized, money, value, coins, users, avatar, network',
       name: 'moneyDecentralizedSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.729Z',
     },
     '10155:6989': {
@@ -14697,7 +14697,7 @@ export const manifestData: Record<
       description: 'peer, to, peer, payments, P2P, send, money, receive, fast, quick, value',
       name: 'p2pPaymentsSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.726Z',
     },
     '10155:6987': {
@@ -14706,7 +14706,7 @@ export const manifestData: Record<
       description: 'no, fees, save, money, transactions, price, tag, sale, reduced, costs',
       name: 'noFeesSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.027Z',
     },
     '10155:6992': {
@@ -14715,7 +14715,7 @@ export const manifestData: Record<
       description: 'powered, by, ethereum, eth, icon, arrows, network',
       name: 'poweredByEthereumSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.288Z',
     },
     '10155:6983': {
@@ -14725,7 +14725,7 @@ export const manifestData: Record<
         'international, world, globe, transactions, secure, lock, send, receive, peer to peer',
       name: 'secureGlobalTransactionsSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.021Z',
     },
     '10155:6981': {
@@ -14734,7 +14734,7 @@ export const manifestData: Record<
       description: 'multi, platform, mobile, desktop, coins, users',
       name: 'multiPlatformMobileAppBrowserExtensionSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.842Z',
     },
     '10155:6978': {
@@ -14743,7 +14743,7 @@ export const manifestData: Record<
       description: 'self, hosted, wallet, storage, stay, in, control, coins, your, access, account',
       name: 'stayInControlSelfHostedWalletsStorageSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.415Z',
     },
     '10155:6976': {
@@ -14752,7 +14752,7 @@ export const manifestData: Record<
       description: 'self, custody, store, storage, wallet, coins, user, avatar',
       name: 'selfCustodySpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.775Z',
     },
     '10155:6964': {
@@ -14761,7 +14761,7 @@ export const manifestData: Record<
       description: 'coins, chart, stake, staking, liquid, earn, more, finance, graph, bar',
       name: 'stakingSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.714Z',
     },
     '10155:7031': {
@@ -14770,7 +14770,7 @@ export const manifestData: Record<
       description: 'share, social, media, circles, blue, yellow, coins',
       name: 'shareOnSocialMediaSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.708Z',
     },
     '10155:7035': {
@@ -14779,7 +14779,7 @@ export const manifestData: Record<
       description: 'crypto, beginners, education, understanding, learning, coin, article, reading',
       name: 'cryptoForBeginnersSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.702Z',
     },
     '10155:7034': {
@@ -14788,7 +14788,7 @@ export const manifestData: Record<
       description: 'crypto, hex, block, chain, blockchain, network, decentralized',
       name: 'blockchainSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.696Z',
     },
     '10155:7017': {
@@ -14797,7 +14797,7 @@ export const manifestData: Record<
       description: 'chain, hexagon, connections, yellow, blue',
       name: 'sidechainSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.690Z',
     },
     '10155:7023': {
@@ -14806,7 +14806,7 @@ export const manifestData: Record<
       description: 'chart, candle, candlesticks, wick, up, bar, graph',
       name: 'advancedTradingChartsIndicatorsCandlesSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.683Z',
     },
     '10155:7018': {
@@ -14815,7 +14815,7 @@ export const manifestData: Record<
       description: 'borrow, wallet, coins, receive, money, finance',
       name: 'borrowWalletSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.677Z',
     },
     '10155:6972': {
@@ -14824,7 +14824,7 @@ export const manifestData: Record<
       description: 'Lock, security, key, authentication, 2FA, wallet, secure, passcode',
       name: 'walletSecuritySpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.823Z',
     },
     '10155:6971': {
@@ -14833,7 +14833,7 @@ export const manifestData: Record<
       description: 'start, today, watch, earn, videos, calendar, week, learn',
       name: 'startTodaySpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.092Z',
     },
     '10155:6988': {
@@ -14842,7 +14842,7 @@ export const manifestData: Record<
       description: 'arrow, up, trend, trending, assets, hot, coin, and, to, the, right',
       name: 'trendingHotAssetsSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.051Z',
     },
     '10155:6979': {
@@ -14851,7 +14851,7 @@ export const manifestData: Record<
       description: 'watch, video, eye, earn, browser, window, play, button',
       name: 'watchVideosSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.068Z',
     },
     '10155:6982': {
@@ -14860,7 +14860,7 @@ export const manifestData: Record<
       description: 'cold, storage, check, mark, checkmark, coins, secure, trusted, security',
       name: 'stressTestedColdStorageSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.170Z',
     },
     '10155:6966': {
@@ -14869,7 +14869,7 @@ export const manifestData: Record<
       description: 'secure, storage, store, coin, wallet, lock, security, keep, money',
       name: 'secureStorageSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.279Z',
     },
     '10155:7028': {
@@ -14878,7 +14878,7 @@ export const manifestData: Record<
       description: 'semi, custodial, semi custodial, bank, user, avatar, coin',
       name: 'semiCustodialSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.671Z',
     },
     '10155:7025': {
@@ -14887,7 +14887,7 @@ export const manifestData: Record<
       description: 'coin, folder, crypto, portfolio, storage, cryptocurrency',
       name: 'cryptoPortfolioSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.665Z',
     },
     '10155:7027': {
@@ -14896,7 +14896,7 @@ export const manifestData: Record<
       description: 'user, check, list, checklist, avatar, id, did, decentralized, identity',
       name: 'didDecentralizedIdentitySpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.658Z',
     },
     '10155:7029': {
@@ -14905,7 +14905,7 @@ export const manifestData: Record<
       description: 'crypto, trophy, win, rewards, coin, success',
       name: 'congratulationsOnEarningCryptoSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.652Z',
     },
     '10155:7021': {
@@ -14914,7 +14914,7 @@ export const manifestData: Record<
       description: 'portfolio, performance, chart, up, to, the, right, coins, arrow',
       name: 'portfolioPerformanceSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.829Z',
     },
     '10155:7015': {
@@ -14924,7 +14924,7 @@ export const manifestData: Record<
         'Opt, In, Push, Notifications, Email, Bubble, Window, Notify, Account, Security, Prices',
       name: 'optInPushNotificationsEmailSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.646Z',
     },
     '10155:7032': {
@@ -14933,7 +14933,7 @@ export const manifestData: Record<
       description: 'Wallet, Hardware, Ledger, USB, authentication, account, storage, cold, crypto',
       name: 'hardwareWalletsSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.135Z',
     },
     '10155:7030': {
@@ -14942,7 +14942,7 @@ export const manifestData: Record<
       description: 'Layered, Networks, ethereum, layer, 1, 2, eth, side, chain',
       name: 'layeredNetworksSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.523Z',
     },
     '10155:7012': {
@@ -14951,7 +14951,7 @@ export const manifestData: Record<
       description: 'wallets, multiple, users, single account, lots, of, wallets',
       name: 'multipleAccountsWalletsForOneUserSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.229Z',
     },
     '10155:7011': {
@@ -14960,7 +14960,7 @@ export const manifestData: Record<
       description: 'Light, Bulb, Earn, Learn, Coin, Up, Make, Money',
       name: 'earnToLearnSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.249Z',
     },
     '10155:7013': {
@@ -14969,7 +14969,7 @@ export const manifestData: Record<
       description: 'quick, simple, clock, fast, time, efficient, checkmark',
       name: 'quickAndSimpleSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.104Z',
     },
     '10155:7010': {
@@ -14978,7 +14978,7 @@ export const manifestData: Record<
       description: 'Eth, Gas, Ethereum, Fees, Network, Gas, Payment, Pump, Token, Chart, Range',
       name: 'gasFeesNetworkFeesSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.477Z',
     },
     '10155:7009': {
@@ -14987,7 +14987,7 @@ export const manifestData: Record<
       description: 'Gains, Losses, Scale, Growth, Money, Chart, Up, Down, Arrow',
       name: 'gainsAndLossesSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.627Z',
     },
     '10155:7024': {
@@ -14996,7 +14996,7 @@ export const manifestData: Record<
       description: 'Pie, Chart, Doc, Plus, Minus, Check, Mark, Done, Taxes, Details',
       name: 'taxesDetailsSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.621Z',
     },
     '10155:6927': {
@@ -15005,7 +15005,7 @@ export const manifestData: Record<
       description: 'coins, decentralized, trading, DeFi, coins, swap',
       name: 'defiDecentralizedTradingExchangeSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.062Z',
     },
     '10155:6965': {
@@ -15014,7 +15014,7 @@ export const manifestData: Record<
       description: 'stable, scale, stablecoin, value, store, earn',
       name: 'stableValueSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.614Z',
     },
     '10155:6934': {
@@ -15023,7 +15023,7 @@ export const manifestData: Record<
       description: 'chart, invest, grow, money, save, earn, coins, graph',
       name: 'investSpot',
       spectrum: 'dark',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.608Z',
     },
     '10155:6925': {
@@ -15032,7 +15032,7 @@ export const manifestData: Record<
       description: 'money, coins, backed, by, dollars, US, decentralized, yield, earn',
       name: 'backedByUsDollarSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.602Z',
     },
     '10155:6922': {
@@ -15041,7 +15041,7 @@ export const manifestData: Record<
       description: 'network, assets, crypto, cryptography, ledger, balance, transactions',
       name: 'cryptoAssetsSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.595Z',
     },
     '10155:6942': {
@@ -15050,7 +15050,7 @@ export const manifestData: Record<
       description: 'globe, international, economy, freedom, growth, crypto, economic, money, coins',
       name: 'cryptoEconomySpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.589Z',
     },
     '10155:6936': {
@@ -15059,7 +15059,7 @@ export const manifestData: Record<
       description: 'cross, border, international, payments, send, receive, money, coins',
       name: 'crossBorderPaymentsSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.582Z',
     },
     '10155:6920': {
@@ -15068,7 +15068,7 @@ export const manifestData: Record<
       description: 'quiz, complete, check, checkmark, X, wrong, right, pencil, earn, money',
       name: 'completeAQuizSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.555Z',
     },
     '10155:6919': {
@@ -15077,7 +15077,7 @@ export const manifestData: Record<
       description: 'nfts, music, avatar, play, file, document, non, fungible, token',
       name: 'collectingNftsSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.549Z',
     },
     '10155:6917': {
@@ -15087,7 +15087,7 @@ export const manifestData: Record<
         'browser, extension, desktop, integrate, wallet, leverage, web, website, coinbase',
       name: 'browserExtensionSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.543Z',
     },
     '10155:6926': {
@@ -15096,7 +15096,7 @@ export const manifestData: Record<
       description: 'made, USA, America, fuck, yeah, star, location, marker, pin, United States,',
       name: 'basedInUsaSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.045Z',
     },
     '10155:6915': {
@@ -15105,7 +15105,7 @@ export const manifestData: Record<
       description: 'decentralized, borrow, lend, store, safety, security, wallet, coins',
       name: 'cryptoWalletSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.127Z',
     },
     '10155:6914': {
@@ -15114,7 +15114,7 @@ export const manifestData: Record<
       description: 'decentralized, web, web3, network, self, custody, ownership, data',
       name: 'decentralizedWebWeb3Spot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.537Z',
     },
     '10155:6940': {
@@ -15124,7 +15124,7 @@ export const manifestData: Record<
         'umbrella, insurance, protection, secure, safety, security, storage, coins, crypto',
       name: 'insuranceProtectionSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.529Z',
     },
     '10155:6913': {
@@ -15133,7 +15133,7 @@ export const manifestData: Record<
       description: 'decentralized, network, crypto, cryptography, connection',
       name: 'decentralizationSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.523Z',
     },
     '10155:6916': {
@@ -15142,7 +15142,7 @@ export const manifestData: Record<
       description: 'chart, invest, grow, money, save, earn, coins, graph',
       name: 'investSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.517Z',
     },
     '10155:6912': {
@@ -15151,7 +15151,7 @@ export const manifestData: Record<
       description: 'NFT, digital, collect, collectibles, art, music, PFP, avatar, coins',
       name: 'digitalCollectiblesSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.309Z',
     },
     '10155:6939': {
@@ -15160,7 +15160,7 @@ export const manifestData: Record<
       description: 'encrypted, cryptography, computers, computation, network, confirmation, coins',
       name: 'encryptedEverythingSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.878Z',
     },
     '10155:6946': {
@@ -15169,7 +15169,7 @@ export const manifestData: Record<
       description: 'earn, chart, bar, graph, up, grow, invest, money, future',
       name: 'earnSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.299Z',
     },
     '10155:6911': {
@@ -15178,7 +15178,7 @@ export const manifestData: Record<
       description: 'international, world, i18n, coins, send, transactions, receive, money, globe',
       name: 'globalTransactionsSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.492Z',
     },
     '10155:6918': {
@@ -15187,7 +15187,7 @@ export const manifestData: Record<
       description: 'get, started, stopwatch, clock, time, fast, get, going, please',
       name: 'getStartedInMinutesSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.329Z',
     },
     '10155:6910': {
@@ -15196,7 +15196,7 @@ export const manifestData: Record<
       description: 'coins, decentralized, trading, DeFi, coins, swap',
       name: 'defiDecentralizedTradingExchangeSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.224Z',
     },
     '10155:6974': {
@@ -15205,7 +15205,7 @@ export const manifestData: Record<
       description: 'Trust, secure, trusted, security, shield, coin, store, safe',
       name: 'secureAndTrustedSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.579Z',
     },
     '10155:6961': {
@@ -15214,7 +15214,7 @@ export const manifestData: Record<
       description: 'multi, multicoin, support, networks, many, coins',
       name: 'multicoinSupportSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.211Z',
     },
     '10155:6962': {
@@ -15223,7 +15223,7 @@ export const manifestData: Record<
       description: 'mining, value, MEV, cart, coins, crypto, cryptocurrency',
       name: 'miningSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.552Z',
     },
     '10155:6970': {
@@ -15232,7 +15232,7 @@ export const manifestData: Record<
       description: 'wallet, link, account, linking, to, connect, both, user, avatar, coins',
       name: 'linkingYourWalletToYourCoinbaseAccountSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.014Z',
     },
     '10155:6991': {
@@ -15241,7 +15241,7 @@ export const manifestData: Record<
       description: 'decentralized, money, value, coins, users, avatar, network',
       name: 'moneyDecentralizedSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.469Z',
     },
     '10155:6960': {
@@ -15250,7 +15250,7 @@ export const manifestData: Record<
       description: 'peer, to, peer, payments, P2P, send, money, receive, fast, quick, value',
       name: 'p2pPaymentsSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.735Z',
     },
     '10155:6977': {
@@ -15259,7 +15259,7 @@ export const manifestData: Record<
       description: 'no, fees, save, money, transactions, price, tag, sale, reduced, costs',
       name: 'noFeesSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.977Z',
     },
     '10155:6959': {
@@ -15268,7 +15268,7 @@ export const manifestData: Record<
       description: 'powered, by, ethereum, eth, icon, arrows, network',
       name: 'poweredByEthereumSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.456Z',
     },
     '10155:6963': {
@@ -15278,7 +15278,7 @@ export const manifestData: Record<
         'international, world, globe, transactions, secure, lock, send, receive, peer to peer',
       name: 'secureGlobalTransactionsSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.450Z',
     },
     '10155:6958': {
@@ -15287,7 +15287,7 @@ export const manifestData: Record<
       description: 'multi, platform, mobile, desktop, coins, users',
       name: 'multiPlatformMobileAppBrowserExtensionSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.443Z',
     },
     '10155:6957': {
@@ -15296,7 +15296,7 @@ export const manifestData: Record<
       description: 'stable, scale, stablecoin, value, store, earn',
       name: 'stableValueSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.972Z',
     },
     '10155:6984': {
@@ -15305,7 +15305,7 @@ export const manifestData: Record<
       description: 'secure, storage, store, coin, wallet, lock, security, keep, money',
       name: 'secureStorageSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.201Z',
     },
     '10155:6956': {
@@ -15314,7 +15314,7 @@ export const manifestData: Record<
       description: 'Lock, security, key, authentication, 2FA, wallet, secure, passcode',
       name: 'walletSecuritySpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.960Z',
     },
     '10155:6955': {
@@ -15323,7 +15323,7 @@ export const manifestData: Record<
       description: 'start, today, watch, earn, videos, calendar, week, learn',
       name: 'startTodaySpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.124Z',
     },
     '10155:6973': {
@@ -15332,7 +15332,7 @@ export const manifestData: Record<
       description: 'self, hosted, wallet, storage, stay, in, control, coins, your, access, account',
       name: 'stayInControlSelfHostedWalletsStorageSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.826Z',
     },
     '10155:6954': {
@@ -15341,7 +15341,7 @@ export const manifestData: Record<
       description: 'arrow, up, trend, trending, assets, hot, coin, and, to, the, right',
       name: 'trendingHotAssetsSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.033Z',
     },
     '10155:6975': {
@@ -15350,7 +15350,7 @@ export const manifestData: Record<
       description: 'watch, video, eye, earn, browser, window, play, button',
       name: 'watchVideosSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.241Z',
     },
     '10155:6969': {
@@ -15359,7 +15359,7 @@ export const manifestData: Record<
       description: 'cold, storage, check, mark, checkmark, coins, secure, trusted, security',
       name: 'stressTestedColdStorageSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.205Z',
     },
     '10155:6953': {
@@ -15368,7 +15368,7 @@ export const manifestData: Record<
       description: 'self, custody, store, storage, wallet, coins, user, avatar',
       name: 'selfCustodySpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.797Z',
     },
     '10155:6952': {
@@ -15377,7 +15377,7 @@ export const manifestData: Record<
       description: 'coins, chart, stake, staking, liquid, earn, more, finance, graph, bar',
       name: 'stakingSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.941Z',
     },
     '10155:7008': {
@@ -15386,7 +15386,7 @@ export const manifestData: Record<
       description: 'share, social, media, circles, blue, yellow, coins',
       name: 'shareOnSocialMediaSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.959Z',
     },
     '10155:7007': {
@@ -15395,7 +15395,7 @@ export const manifestData: Record<
       description: 'semi, custodial, semi custodial, bank, user, avatar, coin',
       name: 'semiCustodialSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.139Z',
     },
     '10155:7006': {
@@ -15404,7 +15404,7 @@ export const manifestData: Record<
       description: 'crypto, beginners, education, understanding, learning, coin, article, reading',
       name: 'cryptoForBeginnersSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.157Z',
     },
     '10155:7005': {
@@ -15413,7 +15413,7 @@ export const manifestData: Record<
       description: 'coin, folder, crypto, portfolio, storage, cryptocurrency',
       name: 'cryptoPortfolioSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.217Z',
     },
     '10155:7020': {
@@ -15422,7 +15422,7 @@ export const manifestData: Record<
       description: 'user, check, list, checklist, avatar, id, did, decentralized, identity',
       name: 'didDecentralizedIdentitySpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.432Z',
     },
     '10155:7004': {
@@ -15431,7 +15431,7 @@ export const manifestData: Record<
       description: 'crypto, hex, block, chain, blockchain, network, decentralized',
       name: 'blockchainSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.146Z',
     },
     '10155:7003': {
@@ -15440,7 +15440,7 @@ export const manifestData: Record<
       description: 'chain, hexagon, connections, yellow, blue',
       name: 'sidechainSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.669Z',
     },
     '10155:7019': {
@@ -15449,7 +15449,7 @@ export const manifestData: Record<
       description: 'chart, candle, candlesticks, wick, up, bar, graph',
       name: 'advancedTradingChartsIndicatorsCandlesSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.571Z',
     },
     '10155:7033': {
@@ -15458,7 +15458,7 @@ export const manifestData: Record<
       description: 'crypto, trophy, win, rewards, coin, success',
       name: 'congratulationsOnEarningCryptoSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.426Z',
     },
     '10155:7001': {
@@ -15467,7 +15467,7 @@ export const manifestData: Record<
       description: 'borrow, wallet, coins, receive, money, finance',
       name: 'borrowWalletSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.014Z',
     },
     '10155:7022': {
@@ -15476,7 +15476,7 @@ export const manifestData: Record<
       description: 'portfolio, performance, chart, up, to, the, right, coins, arrow',
       name: 'portfolioPerformanceSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.415Z',
     },
     '10155:7000': {
@@ -15486,7 +15486,7 @@ export const manifestData: Record<
         'Opt, In, Push, Notifications, Email, Bubble, Window, Notify, Account, Security, Prices',
       name: 'optInPushNotificationsEmailSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:41.264Z',
     },
     '10155:6999': {
@@ -15495,7 +15495,7 @@ export const manifestData: Record<
       description: 'Wallet, Hardware, Ledger, USB, authentication, account, storage, cold, crypto',
       name: 'hardwareWalletsSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.543Z',
     },
     '10155:6998': {
@@ -15504,7 +15504,7 @@ export const manifestData: Record<
       description: 'Layered, Networks, ethereum, layer, 1, 2, eth, side, chain',
       name: 'layeredNetworksSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.450Z',
     },
     '10155:7014': {
@@ -15513,7 +15513,7 @@ export const manifestData: Record<
       description: 'wallets, multiple, users, single account, lots, of, wallets',
       name: 'multipleAccountsWalletsForOneUserSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.836Z',
     },
     '10155:6997': {
@@ -15522,7 +15522,7 @@ export const manifestData: Record<
       description: 'Light, Bulb, Earn, Learn, Coin, Up, Make, Money',
       name: 'earnToLearnSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:25.072Z',
     },
     '10155:7026': {
@@ -15531,7 +15531,7 @@ export const manifestData: Record<
       description: 'quick, simple, clock, fast, time, efficient, checkmark',
       name: 'quickAndSimpleSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-18T21:29:40.396Z',
     },
     '10155:6996': {
@@ -15540,7 +15540,7 @@ export const manifestData: Record<
       description: 'Eth, Gas, Ethereum, Fees, Network, Gas, Payment, Pump, Token, Chart, Range',
       name: 'gasFeesNetworkFeesSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.707Z',
     },
     '10155:7016': {
@@ -15549,7 +15549,7 @@ export const manifestData: Record<
       description: 'Gains, Losses, Scale, Growth, Money, Chart, Up, Down, Arrow',
       name: 'gainsAndLossesSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.381Z',
     },
     '10155:7002': {
@@ -15558,7 +15558,7 @@ export const manifestData: Record<
       description: 'Pie, Chart, Doc, Plus, Minus, Check, Mark, Done, Taxes, Details',
       name: 'taxesDetailsSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-22T15:56:24.678Z',
     },
     '10229:3354': {
@@ -15567,7 +15567,7 @@ export const manifestData: Record<
       description: 'decentralized, borrow, lend, store, safety, security, wallet, coins',
       name: 'defiDecentralizedBorrowingLendingSpot',
       spectrum: 'light',
-      versionNum: -1,
+      versionNum: 0,
       lastUpdated: '2022-11-23T17:56:24.283Z',
     },
   },
