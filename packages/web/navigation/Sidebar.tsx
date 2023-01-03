@@ -42,7 +42,7 @@ export type SidebarProps = {
    * The logo to display
    * @default undefined
    */
-  logo: ReactElement;
+  logo?: ReactElement;
   /**
    * Children are expected to be an array of SidebarItems
    * @default undefined
@@ -123,10 +123,12 @@ export const Sidebar: React.FC<SidebarProps> = memo(
             accessibilityLabel={accessibilityLabel}
             {...rest}
           >
-            <VStack gap={4}>
-              <VStack spacingTop={1} spacingStart={1}>
-                {logo}
-              </VStack>
+            <VStack>
+              {logo && (
+                <VStack spacingBottom={4} spacingTop={1} spacingStart={1}>
+                  {logo}
+                </VStack>
+              )}
               <VStack gap={0.5} offsetStart={0.5} as="ul" dangerouslySetClassName={ulClassName}>
                 {liWrappedChildren}
               </VStack>
