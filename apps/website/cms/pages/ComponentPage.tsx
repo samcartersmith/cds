@@ -50,6 +50,7 @@ export const ComponentPage = memo(function ComponentPage({
   content: contentData,
   metadata,
   propsTable,
+  changelog,
 }: ComponentPageProps) {
   const {
     codeExamples,
@@ -150,6 +151,11 @@ export const ComponentPage = memo(function ComponentPage({
         </Section>
       )}
     </TabItemOriginal>,
+    changelog && (
+      <TabItemOriginal value="changelog" label="Changelog" toc={changelog.toc}>
+        {changelog.element}
+      </TabItemOriginal>
+    ),
   ].filter(Boolean);
 
   return (

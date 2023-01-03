@@ -4,5 +4,13 @@ slug: /components/avatar
 ---
 
 import AvatarLegacy from './avatar_legacy.mdx';
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
+import Changelog, { toc as changelogToc } from './_changelog.mdx';
+import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-<Page fallback={<AvatarLegacy />} />
+<Page
+  changelog={{ element: <Changelog />, toc: changelogToc }}
+  propsTable={{ element: <Implementation />, toc: implementationToc }}
+  metadata={{ element: <Metadata />, toc: metadataToc }}
+  fallback={<AvatarLegacy />}
+/>
