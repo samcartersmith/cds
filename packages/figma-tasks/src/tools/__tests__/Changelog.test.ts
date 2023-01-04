@@ -3,8 +3,7 @@ import { logInfo } from '@cbhq/mono-tasks';
 import { getAbsolutePath, writePrettyFile } from '@cbhq/script-utils';
 
 import { createMockTask } from '../../__fixtures__/createMockTask';
-import { Changelog } from '../../tools/Changelog';
-import { loadChangelog } from '../loadChangelog';
+import { Changelog } from '../Changelog';
 
 jest.mock('@cbhq/script-utils');
 const mockTask = createMockTask({
@@ -24,7 +23,7 @@ jest.mock('node:fs', () => ({
   },
 }));
 
-describe('loadChangelog', () => {
+describe('Changelog', () => {
   beforeEach(() => {
     (getAbsolutePath as jest.Mock).mockImplementation((_task: unknown, val: string) => val);
   });
@@ -40,7 +39,7 @@ describe('loadChangelog', () => {
       content: 'content',
     };
     jest.spyOn(fs.promises, 'readFile').mockResolvedValue(mockChangelog.content);
-    const result = await loadChangelog(mockTask);
+    const result = await Changelog.loadFromDisk(mockTask);
 
     expect(result).toEqual(new Changelog(mockChangelog));
     expect(fs.promises.readFile).toHaveBeenCalledWith('./CHANGELOG.md', 'utf-8');
@@ -50,7 +49,7 @@ describe('loadChangelog', () => {
   it('should return a Changelog instance with empty content if the changelog file does not exist', async () => {
     (fs.existsSync as jest.Mock).mockReturnValue(false);
 
-    const result = await loadChangelog(mockTask);
+    const result = await Changelog.loadFromDisk(mockTask);
     expect(logInfo).toHaveBeenCalled();
 
     expect(result).toEqual({

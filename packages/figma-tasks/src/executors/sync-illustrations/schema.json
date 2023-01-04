@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/schema",
   "type": "object",
   "cli": "nx",
-  "required": ["figmaApiFileId", "manifestFile", "generatedSvgsDirectory"],
+  "required": ["figmaApiFileId", "manifestFile", "generatedDirectory"],
   "properties": {
     "figmaApiFileId": {
       "type": "string",
@@ -16,10 +16,6 @@
       "type": "string",
       "description": "The manifest.json file to track illustration syncs."
     },
-    "manifestVersioning": {
-      "type": "boolean",
-      "description": "If the manifest.json file should track versions for any updates."
-    },
     "lightModeManifestFile": {
       "type": "string",
       "description": "The manifest.json file for light color styles"
@@ -28,21 +24,9 @@
       "type": "string",
       "description": "The manifest.json file for dark color styles"
     },
-    "generatedSvgsDirectory": {
+    "generatedDirectory": {
       "type": "string",
-      "description": "The directory to output generated svgs."
-    },
-    "generatedSvgsJsDirectory": {
-      "type": "string",
-      "description": "The directory to output generated js version of svgs."
-    },
-    "generatedSvgsJsMapFile": {
-      "type": "string",
-      "description": "The file to output a generated lookup file."
-    },
-    "generatedTypesDirectory": {
-      "type": "string",
-      "description": "The directory to output generated types."
+      "description": "The directory to output generated files."
     }
   }
 }

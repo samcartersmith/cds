@@ -36,7 +36,6 @@ export const mockTaskOptions = {
     figmaApiFileId: 'LmkJatvMRVzNgfiIkJDb99',
     changelogFile: './CHANGELOG.md',
     manifestFile: './src/__generated__/manifest.json',
-    manifestVersioning: true,
     darkModeManifestFile: './src/__generated__/styles/dark/manifest.json',
     lightModeManifestFile: './src/__generated__/styles/light/manifest.json',
     generatedSvgsDirectory: './src/__generated__/svgs',

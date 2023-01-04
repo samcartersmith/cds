@@ -1,0 +1,94 @@
+{
+  "executor": "sync-dark-styles",
+  "lastUpdated": "2023-01-03T05:55:06.009Z",
+  "items": {
+    "2:25": {
+      "key": "be3e3bd2911fc0f0a72c734c7151ba79ecf27b47",
+      "name": "primary",
+      "type": "dark",
+      "fill": "#588AF5",
+      "cssVarSetter": "--illustration-primary",
+      "cssVarGetter": "var(--illustration-primary)"
+    },
+    "2:26": {
+      "key": "5c08db6b126da225319e68fd2fc8a42a57b2f4ed",
+      "name": "black",
+      "type": "dark",
+      "fill": "#0A0B0D",
+      "cssVarSetter": "--illustration-black",
+      "cssVarGetter": "var(--illustration-black)"
+    },
+    "2:29": {
+      "key": "0ef092ea18cd11b0eac5bb4ab27c6034ac129411",
+      "name": "positive",
+      "type": "dark",
+      "fill": "#44C28D",
+      "cssVarSetter": "--illustration-positive",
+      "cssVarGetter": "var(--illustration-positive)"
+    },
+    "2:27": {
+      "key": "0451b1902be1d63b4f15db21aa9399d8d0193e61",
+      "name": "white",
+      "type": "dark",
+      "fill": "#FFFFFF",
+      "cssVarSetter": "--illustration-white",
+      "cssVarGetter": "var(--illustration-white)"
+    },
+    "2:28": {
+      "key": "903ba6ea7726d298c6fbdb015782d31cab16af4d",
+      "name": "gray",
+      "type": "dark",
+      "fill": "#464B55",
+      "cssVarSetter": "--illustration-gray",
+      "cssVarGetter": "var(--illustration-gray)"
+    },
+    "2:30": {
+      "key": "65f8c9ac76bf54c47866eeee77cb9531aabd1763",
+      "name": "negative",
+      "type": "dark",
+      "fill": "#F0616D",
+      "cssVarSetter": "--illustration-negative",
+      "cssVarGetter": "var(--illustration-negative)"
+    },
+    "2:33": {
+      "key": "bdcbce298e4f0de070cf94d51e5dd8b55248b2ec",
+      "name": "accent-3",
+      "type": "dark",
+      "fill": "#F07836",
+      "cssVarSetter": "--illustration-accent-3",
+      "cssVarGetter": "var(--illustration-accent-3)"
+    },
+    "2:31": {
+      "key": "0ff77d80426791f2267b75fa305db8df42874b01",
+      "name": "accent-1",
+      "type": "dark",
+      "fill": "#ECD069",
+      "cssVarSetter": "--illustration-accent-1",
+      "cssVarGetter": "var(--illustration-accent-1)"
+    },
+    "2:34": {
+      "key": "a7fbb6f0b37327245d5ca844d7faa8fe7871076c",
+      "name": "accent-4",
+      "type": "dark",
+      "fill": "#A5C1FD",
+      "cssVarSetter": "--illustration-accent-4",
+      "cssVarGetter": "var(--illustration-accent-4)"
+    },
+    "2:32": {
+      "key": "7883d117fd4b77a93a8e2c8ec8c0fed767a4ed06",
+      "name": "accent-2",
+      "type": "dark",
+      "fill": "#45DAF6",
+      "cssVarSetter": "--illustration-accent-2",
+      "cssVarGetter": "var(--illustration-accent-2)"
+    },
+    "2:35": {
+      "key": "52a47a0d4d526aa348f891acd6a6fdc160350b20",
+      "name": "invert",
+      "type": "dark",
+      "fill": "#FFFFFF",
+      "cssVarSetter": "--illustration-invert",
+      "cssVarGetter": "var(--illustration-invert)"
+    }
+  }
+}

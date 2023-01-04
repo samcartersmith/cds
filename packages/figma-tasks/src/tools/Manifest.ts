@@ -1,95 +1,114 @@
 /* eslint-disable no-underscore-dangle */
-import { parseJson, writeJsonFile } from '@nrwl/devkit';
-import fs from 'node:fs';
+import { writeJsonFile } from '@nrwl/devkit';
+import mapValues from 'lodash/mapValues';
+import { ImageFormats, RequestType, SyncedLibrary, syncLibrary } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
-import { getAbsolutePath, writePrettyFile } from '@cbhq/script-utils';
+import { getAbsolutePath } from '@cbhq/script-utils';
 
-import { ExecutorName } from '../types';
+import { getManifestFromDisk } from '../helpers/getManifestFromDisk';
+import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
+
+import { Changelog } from './Changelog';
+import { ColorStyles } from './ColorStyles';
 
 export type ItemShape = {
   id: string;
   name: string;
   type: string;
-  outputs: string[];
-  incrementVersion?: () => void;
+  version?: number;
+  outputs?: Record<string, string>;
+  setVersion?: (num: number) => void;
 };
 
 export type ManifestShape<
   Item extends ItemShape = ItemShape,
   Metadata = Record<string, unknown>,
 > = {
-  executor?: ExecutorName;
+  executor?: string;
+  imageFormats?: ImageFormats;
   lastUpdated: string;
   metadata: Metadata;
   items: [string, Item][];
 };
 
-export type GetManifestItem<T extends ManifestShape> = T['items'][number][1];
-
-type InitManifestParams = {
-  /** The name of the executor the manifest originated from */
-  executor: ExecutorName;
+export type ManifestTaskOptions = {
+  /** The file ID to use when making requests to Figma API  */
+  figmaApiFileId: string;
   /** The manifest.json file to get information about previous syncs and to update after new syncs. */
   manifestFile: string;
-  /** If the manifest.json file should track versions for any updates. */
-  manifestVersioning?: boolean;
+  /** The CHANGELOG.md file to document changes to. */
+  changelogFile?: string;
+  /** The manifest.json file which contains light color styles */
+  lightModeManifestFile?: string;
+  /** The manifest.json file which contains dark color styles */
+  darkModeManifestFile?: string;
 };
 
-type ManifestOptions<PreviousManifest extends ManifestShape> = {
-  executor: ExecutorName;
+export type GetManifestItem<T extends ManifestShape> = T['items'][number][1];
+
+type InitManifestParams<
+  T extends ManifestShape,
+  TaskOptions extends ManifestTaskOptions = ManifestTaskOptions,
+> = {
+  /** The image formats to get image urls for when syncing Figma libraries */
+  imageFormats?: ImageFormats;
+  /** The request type to use when syncing a figma library */
+  requestType: RequestType;
+  createItem: (manifest: Manifest<T>, taskOptions: TaskOptions) => void;
+};
+
+type ManifestOptions<PreviousManifest extends ManifestShape, TaskOptions = unknown> = {
   previousManifest: PreviousManifest;
+  syncedLibrary: SyncedLibrary;
   filePath: string;
   versioned?: boolean;
-  task: Task;
+  task: Task<TaskOptions>;
 };
 
-const FALLBACK_MANIFEST = { lastUpdated: '', items: [] };
-
-export class Manifest<T extends ManifestShape = ManifestShape> {
-  private readonly executor: ExecutorName;
-
+export class Manifest<
+  T extends ManifestShape = ManifestShape,
+  TaskOptions extends ManifestTaskOptions = ManifestTaskOptions,
+> {
   private readonly filePath: string;
 
   private _metadata: T['metadata'];
 
+  public readonly task: Task<TaskOptions>;
+
   public readonly lastUpdated: string;
 
-  public readonly previousItems: Map<string, GetManifestItem<T>>;
+  public readonly previousItems: Map<string, ItemShape>;
 
   public readonly items = new Map<string, GetManifestItem<T>>();
 
-  public additions = new Set<GetManifestItem<T>>();
+  public additions = new Set<ItemShape>();
 
-  public deletions = new Set<GetManifestItem<T>>();
+  public deletions = new Set<ItemShape>();
 
   public renames = new Map<string, string>();
 
-  public updates = new Set<GetManifestItem<T>>();
+  public updates = new Set<ItemShape>();
 
-  private remoteIds = new Set<string>();
-
-  private recentlyUpdatedIds = new Set<string>();
+  public readonly syncedLibrary: SyncedLibrary;
 
   private readonly versioned: boolean;
 
-  private readonly task: Task;
+  private outputs: Record<string, string> = {};
 
-  constructor({ executor, previousManifest, filePath, task, versioned }: ManifestOptions<T>) {
-    this.executor = executor;
+  constructor({
+    previousManifest,
+    filePath,
+    task,
+    versioned,
+    syncedLibrary,
+  }: ManifestOptions<T, TaskOptions>) {
     this.filePath = filePath;
     this.lastUpdated = previousManifest.lastUpdated;
     this._metadata = previousManifest.metadata;
     this.previousItems = new Map(previousManifest.items);
     this.task = task;
     this.versioned = Boolean(versioned);
-
-    /** If the manifest should keep track of previousItems separately from items.
-     * Set this to `true` if the manifest is for the task currently running.
-     * Set this to `false` if the manifest is for a different task than the one currently running.
-     */
-    if (this.executor !== task.name) {
-      this.items = new Map(previousManifest.items);
-    }
+    this.syncedLibrary = syncedLibrary;
   }
 
   public checkIfRenamed(newItem: GetManifestItem<T>) {
@@ -104,23 +123,22 @@ export class Manifest<T extends ManifestShape = ManifestShape> {
   }
 
   public checkIfAdded(item: GetManifestItem<T>) {
-    if (!this.previousItems.has(item.id) && this.remoteIds.has(item.id)) {
+    if (!this.previousItems.has(item.id) && this.syncedLibrary.remoteIds.includes(item.id)) {
       this.additions.add(item);
     }
   }
 
   public checkIfUpdated(item: GetManifestItem<T>) {
-    if (this.previousItems.has(item.id) && this.recentlyUpdatedIds.has(item.id)) {
+    if (
+      this.previousItems.has(item.id) &&
+      this.syncedLibrary.recentlyUpdatedIds.includes(item.id)
+    ) {
       this.updates.add(item);
-      if (this.versioned && item.incrementVersion) {
-        console.log(`Increment version ${item.name}`);
-        item.incrementVersion();
-      }
     }
   }
 
   private checkIfDeleted(item: GetManifestItem<T>) {
-    if (this.previousItems.has(item.id) && !this.remoteIds.has(item.id)) {
+    if (this.previousItems.has(item.id) && !this.syncedLibrary.remoteIds.includes(item.id)) {
       this.previousItems.delete(item.id);
       this.deletions.add(item);
     }
@@ -140,35 +158,6 @@ export class Manifest<T extends ManifestShape = ManifestShape> {
     this.items.set(item.id, item);
   }
 
-  public onRemoteDataLoaded({
-    recentlyUpdatedIds,
-    remoteIds,
-  }: {
-    recentlyUpdatedIds: string[];
-    remoteIds: string[];
-  }) {
-    this.recentlyUpdatedIds = new Set(recentlyUpdatedIds);
-    this.remoteIds = new Set(remoteIds);
-  }
-
-  public async deleteStaleFiles() {
-    const rmPromises: Promise<void>[] = [];
-    if (this.versioned && this.updates.size > 0) {
-      this.updates.forEach((item) => {
-        const oldVersion = this.previousItems.get(item.id);
-        if (oldVersion) {
-          oldVersion.outputs.forEach((output) => {
-            const absolutePath = getAbsolutePath(this.task, output);
-            console.log(`Delete ${absolutePath}`);
-            // rmPromises.push(fs.promises.rm(absolutePath));
-          });
-        }
-      });
-    }
-
-    await Promise.all(rmPromises);
-  }
-
   public get metadata() {
     return this._metadata;
   }
@@ -177,12 +166,21 @@ export class Manifest<T extends ManifestShape = ManifestShape> {
     this._metadata = { ...this._metadata, ...metadata };
   }
 
+  public addToOutputs(newOutputs: Record<string, string>) {
+    this.outputs = { ...this.outputs, ...newOutputs };
+  }
+
   public toJSON() {
+    const normalizeOutputPath = outputPathNormalizer(this.task);
+
     return {
-      executor: this.executor,
+      executor: this.task.context.targetName,
       lastUpdated: new Date().toISOString(),
       ...(this.metadata ? { metadata: this.metadata } : {}),
-      items: [...this.previousItems.entries(), ...this.items.entries()],
+      ...(Object.values(this.outputs).length
+        ? { outputs: mapValues(this.outputs, normalizeOutputPath) }
+        : {}),
+      items: Object.fromEntries([...this.previousItems.entries(), ...this.items.entries()]),
     };
   }
 
@@ -190,30 +188,43 @@ export class Manifest<T extends ManifestShape = ManifestShape> {
     writeJsonFile(this.filePath, this.toJSON());
   }
 
-  static async readPrevious<T extends ManifestShape>(manifestPath: string): Promise<T> {
-    /** If manifest file doesn't exist, create it */
-    const existed = fs.existsSync(manifestPath);
-    if (!existed) {
-      await writePrettyFile(manifestPath, JSON.stringify(FALLBACK_MANIFEST));
+  static async init<
+    T extends ManifestShape,
+    TaskOptions extends ManifestTaskOptions = ManifestTaskOptions,
+  >(task: Task<TaskOptions>, params: InitManifestParams<T, TaskOptions>) {
+    const { imageFormats, requestType, createItem } = params;
+
+    const manifestPath = getAbsolutePath(task, task.options.manifestFile);
+    const previousManifest = await getManifestFromDisk<T>(manifestPath);
+    const syncedLibrary = await syncLibrary({
+      fileId: task.options.figmaApiFileId,
+      requestType,
+      /** TODO: uncomment once migration from old library is complete */
+      // lastUpdated: previousManifest.lastUpdated,
+      imageFormats,
+      batchSize: 500,
+    });
+
+    if (syncedLibrary.recentlyUpdatedIds.length === 0) {
+      throw new Error(
+        `There are no new updates since last update on ${previousManifest.lastUpdated}`,
+      );
     }
 
-    const manifestAsString = await fs.promises.readFile(manifestPath, 'utf-8');
-    return parseJson(manifestAsString);
-  }
-
-  static async init<T extends ManifestShape>(
-    task: Task,
-    { manifestFile, manifestVersioning, executor }: InitManifestParams,
-  ) {
-    const manifestPath = getAbsolutePath(task, manifestFile);
-    const previousManifest = await Manifest.readPrevious<T>(manifestPath);
-
-    return new Manifest<T>({
+    const manifest = new Manifest<T, TaskOptions>({
       task,
       filePath: manifestPath,
       previousManifest,
-      versioned: manifestVersioning,
-      executor,
+      syncedLibrary,
     });
+
+    createItem(manifest, task.options);
+
+    const [changelog, colorStyles] = await Promise.all([
+      Changelog.loadFromDisk(task),
+      ColorStyles.loadFromDisk(task),
+    ]);
+
+    return { changelog, colorStyles, manifest };
   }
 }

@@ -3,7 +3,7 @@
   "type": "object",
   "cli": "nx",
   "additionalProperties": false,
-  "required": ["figmaApiFileId", "manifestFile"],
+  "required": ["figmaApiFileId", "manifestFile", "generatedDirectory"],
   "properties": {
     "figmaApiFileId": {
       "type": "string",
@@ -17,29 +17,13 @@
       "type": "string",
       "description": "The manifest.json file to track illustration syncs."
     },
-    "generatedKeyToNameMapFile": {
+    "generatedDirectory": {
       "type": "string",
-      "description": "The file to output the generated keyToNameMap file"
-    },
-    "generatedNameToKeyMapFile": {
-      "type": "string",
-      "description": "The file to output the generated nameToKeyMap file"
-    },
-    "generatedKeyToValueMapFile": {
-      "type": "string",
-      "description": "The file to output the generated nameToValueMap file"
-    },
-    "generatedCssVariablesMapFile": {
-      "type": "string",
-      "description": "The file to output the generated cssVariablesMap file"
+      "description": "The directory to output generated files."
     },
     "generatedCssVariablesPrefix": {
       "type": "string",
       "description": "Prefix to add to generated css variables"
-    },
-    "generatedTypesDirectory": {
-      "type": "string",
-      "description": "The directory to output generated types."
     }
   }
 }

@@ -1,6 +1,8 @@
 import { createClient } from './createClient';
 import { FileImageResponse } from './types';
 
+export type ImageFormats = GetImageParams[] | ImageFormat[];
+
 export type ImageFormat = 'jpg' | 'png' | 'svg' | 'pdf';
 
 export type GetImageParams = {

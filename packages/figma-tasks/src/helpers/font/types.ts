@@ -1,5 +1,3 @@
-import { ItemShape, ManifestShape } from '../../tools/Manifest';
-
 export type FontFormat = 'eot' | 'woff' | 'woff2' | 'svg' | 'ttf';
 
 export type FontGlyphData = {
@@ -30,15 +28,6 @@ export type FontConfig = {
   /** If the generated font file name should include a hash */
   hashed?: boolean;
 };
-
-type FontManifestMetadata = {
-  lastUnicode: number;
-};
-
-export type FontManifestShape<Item extends ItemShape = ItemShape> = ManifestShape<
-  Item,
-  FontManifestMetadata
->;
 
 export type FontProcessorCallbackFunction = (
   err: unknown,

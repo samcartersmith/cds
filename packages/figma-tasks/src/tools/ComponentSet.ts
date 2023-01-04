@@ -1,8 +1,10 @@
 /* eslint-disable no-underscore-dangle */
-import { NodeResponse } from '@cbhq/figma-api';
+import { mapValues } from 'lodash';
+import { NodeResponseWithMetadata } from '@cbhq/figma-api';
+import { Task } from '@cbhq/mono-tasks';
 
+import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
 import { parseName } from '../helpers/parseName';
-import { NodeShape } from '../types';
 
 // import { validators } from '../validators';
 import { ComponentSetChild, ComponentSetChildShape } from './ComponentSetChild';
@@ -18,10 +20,12 @@ export type ComponentSetParams<Metadata extends MetadataShape = MetadataShape> =
   description: string;
   name: string;
   type: string;
-  node?: NodeResponse;
+  node?: NodeResponseWithMetadata;
+  lastUpdated: string;
   metadata?: Metadata;
-  outputs?: string[];
+  outputs?: Record<string, string>;
   version?: number;
+  task: Task;
 };
 
 export class ComponentSet<
@@ -38,15 +42,19 @@ export class ComponentSet<
 
   public readonly name: string;
 
-  public readonly node: NodeShape | undefined;
+  public readonly node: NodeResponseWithMetadata | undefined;
 
   public readonly type: string;
 
+  public readonly lastUpdated: string;
+
   private _metadata: Metadata | undefined = undefined;
 
-  public outputs: string[] = [];
+  public outputs: Record<string, string> = {};
 
-  public version = 0;
+  public version: number | undefined;
+
+  private task: Task;
 
   constructor({
     description,
@@ -56,12 +64,16 @@ export class ComponentSet<
     type,
     version,
     outputs,
+    lastUpdated,
     metadata,
+    task,
   }: ComponentSetParams<Metadata>) {
     this.id = id;
     this.description = description;
     this.name = name;
     this.type = type;
+    this.lastUpdated = lastUpdated;
+    this.task = task;
 
     if (node) {
       this.node = node;
@@ -72,7 +84,7 @@ export class ComponentSet<
             this.components.push(
               new ComponentSetChild<ChildShape>({
                 componentSet: this,
-                node: { document: child },
+                node: { ...node, document: child },
               }),
             );
           }
@@ -91,12 +103,12 @@ export class ComponentSet<
     }
   }
 
-  public incrementVersion() {
-    this.version += 1;
+  public setVersion(version: number) {
+    this.version = version;
   }
 
-  public addToOutputs(filePath: string) {
-    this.outputs.push(filePath);
+  public addToOutputs(newOutputs: Record<string, string>) {
+    this.outputs = { ...this.outputs, ...newOutputs };
   }
 
   public get metadata() {
@@ -121,30 +133,31 @@ export class ComponentSet<
   // }
 
   public toJSON() {
+    const normalizeOutputPath = outputPathNormalizer(this.task);
+
     return {
       type: this.type,
       name: this.name,
       description: this.description,
       components: this.components,
-      outputs: [...new Set(this.outputs).values()],
-      ...(this.version ? { version: this.version } : {}),
+      lastUpdated: this.lastUpdated,
+      ...(Object.values(this.outputs).length
+        ? { outputs: mapValues(this.outputs, normalizeOutputPath) }
+        : {}),
+      ...(this.version !== undefined ? { version: this.version } : {}),
       ...(this.metadata ? { metadata: this.metadata } : {}),
     };
   }
 
-  static init<ChildShape extends ComponentSetChildShape = ComponentSetChildShape>({
-    manifest,
-    remoteNodes,
-  }: {
-    manifest: ComponentSetManifest;
-    remoteNodes: Record<string, NodeResponse>;
-  }) {
+  static create<ChildShape extends ComponentSetChildShape = ComponentSetChildShape>(
+    manifest: ComponentSetManifest,
+  ) {
     const componentSets: ComponentSet[] = [];
-    Object.values(remoteNodes).forEach((node) => {
+    Object.values(manifest.syncedLibrary.nodes).forEach((node) => {
       if (node) {
         const { id } = node.document;
         const { type, name } = parseName(node);
-        const { description } = node.componentSets[id];
+        const { description, updated_at: lastUpdated } = node.metadata;
         const oldVersion = manifest.previousItems.get(node.document.id);
 
         const params = {
@@ -154,6 +167,8 @@ export class ComponentSet<
           type,
           name,
           description,
+          lastUpdated,
+          task: manifest.task,
         };
         const newComponentSet = new ComponentSet<ChildShape>(params);
         manifest.addNewItem(newComponentSet);

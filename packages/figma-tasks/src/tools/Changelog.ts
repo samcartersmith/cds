@@ -1,10 +1,11 @@
 import camelCase from 'lodash/camelCase';
 import groupBy from 'lodash/groupBy';
 import startCase from 'lodash/startCase';
-import { Task } from '@cbhq/mono-tasks';
-import { writePrettyFile } from '@cbhq/script-utils';
+import fs from 'node:fs';
+import { logInfo, Task } from '@cbhq/mono-tasks';
+import { getAbsolutePath, writePrettyFile } from '@cbhq/script-utils';
 
-import { ItemShape, Manifest } from './Manifest';
+import type { ItemShape, Manifest } from './Manifest';
 
 type ChangelogOptions = {
   content: string;
@@ -15,6 +16,11 @@ type UpdateChangelogParams = {
   task: Task;
   manifest: Manifest;
   groupByType?: boolean;
+};
+
+type ChangelogTaskOptions = {
+  /** The CHANGELOG.md file to document changes to. */
+  changelogFile?: string;
 };
 
 function alphabeticalList(prev: string, next: string) {
@@ -99,5 +105,24 @@ export class Changelog {
 
       await writePrettyFile(this.filePath, newContent.join(`\n`));
     }
+  }
+
+  static async loadFromDisk(task: Task<ChangelogTaskOptions>) {
+    if (task.options?.changelogFile) {
+      const filePath = getAbsolutePath(task, task.options.changelogFile);
+      let previousContent = '';
+      const exists = fs.existsSync(filePath);
+
+      if (exists) {
+        previousContent = await fs.promises.readFile(filePath, 'utf-8');
+      } else {
+        logInfo('Creating changelog');
+        previousContent = ``;
+        await writePrettyFile(filePath, previousContent);
+      }
+
+      return new Changelog({ filePath, content: previousContent });
+    }
+    return undefined;
   }
 }

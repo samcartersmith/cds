@@ -33,11 +33,15 @@
     "@cbhq/script-utils": "workspace:^",
     "@types/svgo": "^2.6.4",
     "lodash": "^4.17.21",
+    "sharp": "^0.31.2",
     "svgo": "^2.8.0",
     "update-notifier": "^5.1.0",
     "webfont": "9.0.0"
   },
   "peerDependencies": {
     "@nrwl/devkit": "^15.0.0"
+  },
+  "devDependencies": {
+    "@types/sharp": "^0.31.0"
   }
 }

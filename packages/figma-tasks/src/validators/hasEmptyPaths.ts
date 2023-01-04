@@ -1,6 +1,7 @@
-import { getSvgData } from '../helpers/getSvgData';
-import { NodeShape } from '../types';
+import { NodeResponseWithMetadata } from '@cbhq/figma-api';
 
-export function hasEmptyPaths(item: NodeShape) {
+import { getSvgData } from '../helpers/image/getSvgData';
+
+export function hasEmptyPaths(item: NodeResponseWithMetadata) {
   return getSvgData(item).paths.length === 0;
 }

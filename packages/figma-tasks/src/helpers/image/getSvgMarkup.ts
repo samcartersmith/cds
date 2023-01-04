@@ -1,11 +1,15 @@
 import { optimize } from 'svgo';
+import { NodeResponseWithMetadata } from '@cbhq/figma-api';
 
-import { SvgData } from './getSvgData';
+import { ColorStyles } from '../../tools/ColorStyles';
+
+import { getSvgData, SvgData } from './getSvgData';
 import svgoConfig from './svgoConfig';
 
 export type SvgMarkup = {
   light: string;
   dark?: string;
+  themeable?: string;
 };
 
 function createSvgMarkup({ width, height, paths }: Omit<SvgData, 'darkPaths'>) {
@@ -30,13 +34,7 @@ function createSvgMarkup({ width, height, paths }: Omit<SvgData, 'darkPaths'>) {
   return svgString;
 }
 
-export function getSvgMarkup({ darkPaths, ...params }: SvgData): SvgMarkup {
-  const light = createSvgMarkup(params);
-  if (darkPaths) {
-    return {
-      light,
-      dark: createSvgMarkup({ ...params, paths: darkPaths }),
-    };
-  }
-  return { light };
+export function getSvgMarkup(node: NodeResponseWithMetadata, colorStyles?: ColorStyles): string {
+  const params = getSvgData(node, colorStyles);
+  return createSvgMarkup(params);
 }

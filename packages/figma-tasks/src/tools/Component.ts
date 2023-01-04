@@ -1,9 +1,11 @@
 /* eslint-disable no-underscore-dangle */
-import type { NodeResponse } from '@cbhq/figma-api';
+import { mapValues } from 'lodash';
+import type { NodeResponseWithMetadata } from '@cbhq/figma-api';
+import { Task } from '@cbhq/mono-tasks';
 
 import { getSize } from '../helpers/getSize';
+import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
 import { parseName } from '../helpers/parseName';
-import { NodeShape } from '../types';
 
 import { Manifest, ManifestShape } from './Manifest';
 
@@ -16,10 +18,12 @@ export type ComponentParams<Metadata extends MetadataShape = MetadataShape> = {
   name: string;
   type: string;
   width: number;
-  node?: NodeResponse;
+  lastUpdated: string;
+  node?: NodeResponseWithMetadata;
   metadata?: Metadata;
   version?: number;
-  outputs?: string[];
+  outputs?: Record<string, string>;
+  task: Task;
 };
 
 export class Component<Metadata extends MetadataShape = MetadataShape> {
@@ -33,17 +37,21 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
 
   public readonly name: string;
 
-  public readonly node: NodeShape | undefined;
+  public readonly node: NodeResponseWithMetadata | undefined;
 
   public readonly type: string;
 
   public readonly width: number;
 
-  public outputs: string[] = [];
+  public readonly lastUpdated: string;
 
-  public version = 0;
+  public outputs: Record<string, string> = {};
+
+  public version: number | undefined;
 
   private _metadata: Metadata | undefined = undefined;
+
+  private task: Task;
 
   constructor({
     description,
@@ -53,9 +61,11 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     name,
     node,
     type,
+    lastUpdated,
     version,
     outputs,
     metadata,
+    task,
   }: ComponentParams<Metadata>) {
     this.id = id;
     this.description = description;
@@ -63,6 +73,8 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     this.type = type;
     this.height = height;
     this.width = width;
+    this.lastUpdated = lastUpdated;
+    this.task = task;
 
     if (node) {
       this.node = node;
@@ -79,13 +91,12 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     }
   }
 
-  public incrementVersion() {
-    this.version += 1;
+  public setVersion(num: number) {
+    this.version = num;
   }
 
-  public addToOutputs(filePath: string) {
-    // console.log(`Add ${filePath} to outputs`);
-    this.outputs.push(filePath);
+  public addToOutputs(newOutputs: Record<string, string>) {
+    this.outputs = { ...this.outputs, ...newOutputs };
   }
 
   public get metadata() {
@@ -97,33 +108,31 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
   }
 
   public toJSON() {
+    const normalizeOutputPath = outputPathNormalizer(this.task);
     return {
       type: this.type,
       name: this.name,
       width: this.width,
       height: this.height,
       description: this.description,
-      version: this.version,
-      ...(this.outputs.length ? { outputs: [...new Set(this.outputs).values()] } : {}),
+      lastUpdated: this.lastUpdated,
+      ...(Object.values(this.outputs).length
+        ? { outputs: mapValues(this.outputs, normalizeOutputPath) }
+        : {}),
+      ...(this.version !== undefined ? { version: this.version } : {}),
       ...(this.metadata ? { metadata: this.metadata } : {}),
     };
   }
 
-  static init({
-    manifest,
-    remoteNodes,
-  }: {
-    manifest: Manifest<ManifestShape<Component>>;
-    remoteNodes: Record<string, NodeResponse>;
-  }) {
+  static create(manifest: Manifest<ManifestShape<Component>>) {
     const components: Component[] = [];
-    Object.values(remoteNodes).forEach((node) => {
+    Object.values(manifest.syncedLibrary.nodes).forEach((node) => {
       if (node?.document?.type === 'COMPONENT') {
         const { id } = node.document;
         const oldVersion = manifest.previousItems.get(id);
         const { type, name } = parseName(node);
         const { width, height } = getSize(node.document);
-        const { description } = node.components[id];
+        const { description, updated_at: lastUpdated } = node.metadata;
 
         const params = {
           ...oldVersion,
@@ -134,6 +143,8 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
           width,
           height,
           description,
+          lastUpdated,
+          task: manifest.task,
         };
         const newComponent = new Component(params);
         manifest.addNewItem(newComponent);

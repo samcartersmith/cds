@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { Task } from '@cbhq/mono-tasks';
-import { getAbsolutePath, writePrettyFile } from '@cbhq/script-utils';
+import { existsOrCreateDir, getAbsolutePath, writePrettyFile } from '@cbhq/script-utils';
 
 import { getFontNameAndHash } from './getFontNameAndHash';
 import { getGlyphMapContent } from './getGlyphMapContent';
@@ -39,11 +39,12 @@ export function fontOutputGenerator({
       const fontNameWithExt = `${fontName}.${generatedFontFormat}`;
       const fontFilePath = path.join(fontOutputDir, fontNameWithExt);
       const fontFileDir = path.dirname(fontFilePath);
-      if (hash) {
+      if (hash && fs.existsSync(fontFileDir)) {
         fs.rmSync(fontFileDir, { recursive: true });
         fs.mkdirSync(fontFileDir, { recursive: true });
       }
 
+      await existsOrCreateDir(fontFilePath);
       promises.push(fs.promises.writeFile(fontFilePath, fontContents));
 
       if (generatedGlyphMapFile) {
@@ -70,6 +71,8 @@ export function fontOutputGenerator({
         }`;
         promises.push(writePrettyFile(cssFilePath, cssContent));
       }
+
+      await Promise.all(promises);
     }
   };
 }

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/schema",
   "type": "object",
   "cli": "nx",
-  "required": ["figmaApiFileId", "manifestFile", "generatedSvgsDirectory"],
+  "required": ["figmaApiFileId", "manifestFile", "generatedDirectory"],
   "properties": {
     "figmaApiFileId": {
       "type": "string",
@@ -16,17 +16,9 @@
       "type": "string",
       "description": "The manifest.json file to track icon syncs."
     },
-    "generatedGlyphMapFile": {
+    "generatedDirectory": {
       "type": "string",
-      "description": "File to output generated glyphMap to."
-    },
-    "generatedSvgsDirectory": {
-      "type": "string",
-      "description": "The directory to output generated svgs."
-    },
-    "generatedTypesDirectory": {
-      "type": "string",
-      "description": "The directory to output generated types."
+      "description": "The directory to output generated files."
     },
     "generatedFontName": {
       "type": "string",

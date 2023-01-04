@@ -18,6 +18,7 @@
   "peerDependencies": {
     "@cbhq/eslint-plugin": "*",
     "@cbhq/mono-tasks": "^0.5.2",
+    "lodash": "*",
     "prettier": "*"
   },
   "dependencies": {

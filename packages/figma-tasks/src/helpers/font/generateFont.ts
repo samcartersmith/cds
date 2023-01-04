@@ -1,7 +1,6 @@
 // @ts-expect-error No types for this package
 import webfont from 'webfont';
 import { Task } from '@cbhq/mono-tasks';
-import { getAbsolutePath } from '@cbhq/script-utils';
 
 import { fontOutputGenerator } from './fontOutputGenerator';
 import { FontConfig, FontGlyphData, FontProcessor, GeneratedFont } from './types';
@@ -15,7 +14,7 @@ type GenerateFontParams = {
   /** File to output generated glyphMap to */
   generatedGlyphMapFile?: string;
   /** Glob of svg files to generate font from. */
-  sourceSvgsDirectory: string;
+  sourceSvgsGlob: string;
   /**
    * A function which determines the metadata for an icon. It takes a parameter file with an icon svg and should return icon metadata (asynchronously) via the callback function.
    * You can use this function to provide custom logic for svg to codepoint mapping.
@@ -30,19 +29,18 @@ type GenerateFontParams = {
 
 export async function generateFont({
   task,
-  sourceSvgsDirectory,
+  sourceSvgsGlob,
   generatedFontName,
   generatedFontFormats,
   generatedGlyphMapFile,
   processor,
 }: GenerateFontParams) {
-  const sourceSvgs = getAbsolutePath(task, `${sourceSvgsDirectory}/**/*.svg`);
   const formats = generatedFontFormats.map((item) => item.generatedFontFormat);
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const generatedFont = (await webfont({
     centerHorizontally: true,
-    files: sourceSvgs,
+    files: sourceSvgsGlob,
     fontHeight: 4096,
     fontName: generatedFontName,
     formats,

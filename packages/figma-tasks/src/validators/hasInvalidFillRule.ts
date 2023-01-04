@@ -1,7 +1,8 @@
-import { getSvgData } from '../helpers/getSvgData';
-import { NodeShape } from '../types';
+import { NodeResponseWithMetadata } from '@cbhq/figma-api';
 
-export function hasInvalidFillRule(node: NodeShape) {
+import { getSvgData } from '../helpers/image/getSvgData';
+
+export function hasInvalidFillRule(node: NodeResponseWithMetadata) {
   return getSvgData(node).paths.some((item) => {
     return item.fillRule !== 'nonzero';
   });

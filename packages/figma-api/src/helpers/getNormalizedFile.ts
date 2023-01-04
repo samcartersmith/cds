@@ -8,7 +8,7 @@ export type RequestType = 'components' | 'component_sets' | 'styles';
 export type NormalizedFile = {
   /** Figma file id that response is for */
   id: string;
-  items: Record<string, SharedElement>;
+  items: Record<string, SharedElement | FullStyleMetadata>;
   styles: Record<string, Style>;
 };
 
@@ -48,7 +48,7 @@ export async function getNormalizedFile(
 
     return {
       id: fileId,
-      items: {},
+      items: arrayToIdMap(resp.meta.styles),
       styles,
     };
   }

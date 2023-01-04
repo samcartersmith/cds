@@ -1,18 +1,18 @@
-import { NodeResponse } from '@cbhq/figma-api';
+import { NodeResponseWithMetadata } from '@cbhq/figma-api';
 
 type CreateComponentNodeParams = {
   name: `${string}/${string}`;
-  id: `${number}:${number}`;
+  id?: `${number}:${number}`;
   width?: number;
   height?: number;
 };
 
 export function createMockComponentNode({
   name,
-  id,
+  id = '123:123',
   width = 240,
   height = 240,
-}: CreateComponentNodeParams): NodeResponse {
+}: CreateComponentNodeParams): NodeResponseWithMetadata {
   return {
     document: {
       id,
@@ -60,5 +60,21 @@ export function createMockComponentNode({
     componentSets: {},
     schemaVersion: 0,
     styles: {},
+    metadata: {
+      key: '',
+      name,
+      documentationLinks: [],
+      node_id: '',
+      thumbnail_url: '',
+      created_at: '',
+      updated_at: '',
+      user: {
+        id: '',
+        handle: '',
+        img_url: '',
+      },
+      file_key: '',
+      description: '',
+    },
   };
 }

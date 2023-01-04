@@ -1,4 +1,4 @@
-import { getFileImages, GetImageParams, ImageFormat } from '../getFileImages';
+import { getFileImages, ImageFormat, ImageFormats } from '../getFileImages';
 import { getFileNodes } from '../getFileNodes';
 
 import { getBatch } from './getBatch';
@@ -6,33 +6,42 @@ import { NormalizedFile } from './getNormalizedFile';
 import { NodeResponseWithMetadata, normalizeNodes } from './normalizeNodes';
 
 type BatchDownloadParams = {
+  /** The normalized file to merge detailed node information with */
   file: NormalizedFile;
+  /** The node ids to fetch detailed node information for */
   ids: string[];
-  downloadFormats?: GetImageParams[] | ImageFormat[];
+  /** The image formats to fetch urls for */
+  imageFormats?: ImageFormats;
+  /** The of group size to use for staggering API requests */
+  batchSize: number;
 };
 
-type DownloadFormatMap = Record<ImageFormat, Record<string, string>>;
+export type SyncedLibraryImageUrls = { [key in ImageFormat]: Record<string, string> };
 
-export type DownloadInformation = DownloadFormatMap & {
-  nodes: Record<string, NodeResponseWithMetadata>;
+export type SyncedLibraryNodes = Record<string, NodeResponseWithMetadata>;
+
+export type SyncedNodesAndImageUrls = {
+  nodes: SyncedLibraryNodes;
+  imageUrls: SyncedLibraryImageUrls;
 };
 
 export async function getNodesAndImageUrls({
   file,
-  downloadFormats,
+  imageFormats,
   ids,
-}: BatchDownloadParams): Promise<DownloadInformation> {
-  const resolvedDownloads: DownloadFormatMap = { jpg: {}, png: {}, svg: {}, pdf: {} };
+  batchSize,
+}: BatchDownloadParams): Promise<SyncedNodesAndImageUrls> {
+  const imageUrls: SyncedLibraryImageUrls = { jpg: {}, png: {}, svg: {}, pdf: {} };
 
   let nodes: Record<string, NodeResponseWithMetadata> = {};
 
-  const idGroups = getBatch(ids);
+  const idGroups = getBatch(ids, batchSize);
 
   for await (const idGroup of idGroups) {
     const idsForGroup = idGroup.join(',');
 
-    if (downloadFormats) {
-      for await (const params of downloadFormats) {
+    if (imageFormats) {
+      for await (const params of imageFormats) {
         const formatParams = typeof params === 'string' ? { format: params } : params;
         const { format } = formatParams;
         const { images } = await getFileImages(file.id, {
@@ -40,8 +49,8 @@ export async function getNodesAndImageUrls({
           ...formatParams,
         });
 
-        resolvedDownloads[format] = {
-          ...resolvedDownloads[format],
+        imageUrls[format] = {
+          ...imageUrls[format],
           ...images,
         };
       }
@@ -59,5 +68,5 @@ export async function getNodesAndImageUrls({
     };
   }
 
-  return { nodes, ...resolvedDownloads };
+  return { nodes, imageUrls };
 }

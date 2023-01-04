@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
+import { NodeResponseWithMetadata } from '@cbhq/figma-api';
+
 import { getSize } from '../helpers/getSize';
-import { NodeShape } from '../types';
 
 import type { ComponentSet } from './ComponentSet';
 
@@ -18,7 +19,7 @@ function isNumeric(value: string) {
 export type ComponentSetChildParams<ChildShape extends ComponentSetChildShape> = {
   componentSet: ComponentSet<ChildShape>;
   metadata?: Record<string, Primitive>;
-  node: NodeShape;
+  node: NodeResponseWithMetadata;
 };
 
 export class ComponentSetChild<ChildShape extends ComponentSetChildShape = ComponentSetChildShape> {
@@ -28,11 +29,7 @@ export class ComponentSetChild<ChildShape extends ComponentSetChildShape = Compo
 
   public readonly id: string;
 
-  public readonly type: string;
-
-  public readonly name: string;
-
-  public readonly node: NodeShape;
+  public readonly node: NodeResponseWithMetadata;
 
   public readonly width: number;
 
@@ -50,8 +47,6 @@ export class ComponentSetChild<ChildShape extends ComponentSetChildShape = Compo
     this.componentSet = componentSet;
     this._metadata = metadata;
     this.id = document.id;
-    this.type = componentSet.type;
-    let { name } = componentSet;
     this.node = node;
     this.width = width;
     this.height = height;
@@ -69,29 +64,18 @@ export class ComponentSetChild<ChildShape extends ComponentSetChildShape = Compo
         const numericValue = Number(value);
         // @ts-expect-error this is fine
         this.props[prop] = numericValue;
-        name = `${name}-${numericValue}`;
         /** Return original value */
       } else if (['true', 'false'].includes(value)) {
         /** Convert string booleans to boolean */
         const isTrue = value === 'true';
         // @ts-expect-error this is fine
         this.props[prop] = isTrue;
-        if (prop === 'active') {
-          const activeLabel = isTrue ? 'active' : 'inactive';
-          name = `${name}-${activeLabel}`;
-        }
         /** Convert numeric strings to number */
       } else {
         // @ts-expect-error this is fine
         this.props[prop] = value;
       }
     }
-
-    this.name = name;
-  }
-
-  public addToOutputs(filePath: string) {
-    this.componentSet.addToOutputs(filePath);
   }
 
   public get metadata() {
@@ -104,6 +88,10 @@ export class ComponentSetChild<ChildShape extends ComponentSetChildShape = Compo
 
   public get version() {
     return this.componentSet.version;
+  }
+
+  public setVersion(version: number) {
+    this.componentSet.setVersion(version);
   }
 
   public toJSON() {

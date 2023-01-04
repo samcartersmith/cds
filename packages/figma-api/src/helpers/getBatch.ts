@@ -1,13 +1,11 @@
-function* chunks(ids: string[], chunkSize: number) {
+function* chunks<T>(ids: T[], chunkSize: number) {
   for (let i = 0; i < ids.length; i += chunkSize) {
     yield ids.slice(i, i + chunkSize);
   }
 }
 
-export function getBatch(ids: string[]) {
-  let idGroups: string[][] = [ids];
-  const groupSize = 400;
-  /** Cap each request to only 400 items or less at a time */
-  idGroups = [...chunks(ids, groupSize)];
+export function getBatch<T>(ids: T[], batchSize: number) {
+  let idGroups: T[][] = [ids];
+  idGroups = [...chunks(ids, batchSize)];
   return idGroups;
 }

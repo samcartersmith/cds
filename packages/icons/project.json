@@ -19,11 +19,10 @@
       "options": {
         "figmaApiFileId": "tuc9LpASTO9mBrbg1tAdAl",
         "changelogFile": "./CHANGELOG.md",
-        "manifestFile": "./manifest.json",
-        "generatedSvgsDirectory": "./src/__generated__/svg",
-        "generatedTypesDirectory": "./src/__generated__/types",
-        "generatedFontName": "CoinbaseIcons",
+        "manifestFile": "./src/__generated__/manifest.json",
+        "generatedDirectory": "./src/__generated__",
         "generatedGlyphMapFile": "./src/__generated__/glyphMap.ts",
+        "generatedFontName": "CoinbaseIcons",
         "generatedFontFormats": [
           {
             "generatedFontFormat": "woff2",

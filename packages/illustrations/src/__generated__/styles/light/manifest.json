@@ -1,0 +1,94 @@
+{
+  "executor": "sync-light-styles",
+  "lastUpdated": "2023-01-03T05:55:10.701Z",
+  "items": {
+    "2:49": {
+      "key": "557256b66f06196cca2c11ae7b5fc30f85f31b8b",
+      "name": "invert",
+      "type": "light",
+      "fill": "#101114",
+      "cssVarSetter": "--illustration-invert",
+      "cssVarGetter": "var(--illustration-invert)"
+    },
+    "2:43": {
+      "key": "882bbfed6181d5769683efc3c76ac1c1b06fd709",
+      "name": "positive",
+      "type": "light",
+      "fill": "#00D17F",
+      "cssVarSetter": "--illustration-positive",
+      "cssVarGetter": "var(--illustration-positive)"
+    },
+    "2:40": {
+      "key": "3a6d095966594e4318e8142c9c298199d29598bc",
+      "name": "black",
+      "type": "light",
+      "fill": "#0A0B0D",
+      "cssVarSetter": "--illustration-black",
+      "cssVarGetter": "var(--illustration-black)"
+    },
+    "2:47": {
+      "key": "1f6bf67d22e6cb7ae716ff900b11a54b1d861d70",
+      "name": "accent-3",
+      "type": "light",
+      "fill": "#ED702F",
+      "cssVarSetter": "--illustration-accent-3",
+      "cssVarGetter": "var(--illustration-accent-3)"
+    },
+    "2:39": {
+      "key": "798d2b758d75d0cbf24f0136d6a1e24b2f5f3172",
+      "name": "primary",
+      "type": "light",
+      "fill": "#0052FF",
+      "cssVarSetter": "--illustration-primary",
+      "cssVarGetter": "var(--illustration-primary)"
+    },
+    "2:42": {
+      "key": "61c55ab48d16952c781d4aa8832b5d848c28c796",
+      "name": "gray",
+      "type": "light",
+      "fill": "#CED2DB",
+      "cssVarSetter": "--illustration-gray",
+      "cssVarGetter": "var(--illustration-gray)"
+    },
+    "2:41": {
+      "key": "e613081622fbcdb5de3ae7d50102a5d8c79f2e0f",
+      "name": "white",
+      "type": "light",
+      "fill": "#FFFFFF",
+      "cssVarSetter": "--illustration-white",
+      "cssVarGetter": "var(--illustration-white)"
+    },
+    "2:45": {
+      "key": "34c2b4db03fbd81f2da306c427863aa7f03b76b1",
+      "name": "accent-1",
+      "type": "light",
+      "fill": "#FFD200",
+      "cssVarSetter": "--illustration-accent-1",
+      "cssVarGetter": "var(--illustration-accent-1)"
+    },
+    "2:46": {
+      "key": "6d9ccf05030b543864b329c8381741731e90f69b",
+      "name": "accent-2",
+      "type": "light",
+      "fill": "#5DE2F8",
+      "cssVarSetter": "--illustration-accent-2",
+      "cssVarGetter": "var(--illustration-accent-2)"
+    },
+    "2:48": {
+      "key": "8f53e52a157deabff263aef65ed4b3b84043ec7a",
+      "name": "accent-4",
+      "type": "light",
+      "fill": "#73A2FF",
+      "cssVarSetter": "--illustration-accent-4",
+      "cssVarGetter": "var(--illustration-accent-4)"
+    },
+    "2:44": {
+      "key": "d3549f5a080fa5626f0054db5868e28254e8c81d",
+      "name": "negative",
+      "type": "light",
+      "fill": "#FF3344",
+      "cssVarSetter": "--illustration-negative",
+      "cssVarGetter": "var(--illustration-negative)"
+    }
+  }
+}

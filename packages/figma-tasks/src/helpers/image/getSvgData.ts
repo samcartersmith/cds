@@ -1,8 +1,8 @@
-import type { ColorStyles } from '../tools/ColorStyles';
-import { NodeShape } from '../types';
+import { NodeResponseWithMetadata } from '@cbhq/figma-api';
 
-import { getFillFromNode } from './getFillFromNode';
-import { getSize } from './getSize';
+import type { ColorStyles } from '../../tools/ColorStyles';
+import { getFillFromNode } from '../getFillFromNode';
+import { getSize } from '../getSize';
 
 type PathFillRule = 'nonzero' | 'evenodd';
 
@@ -17,34 +17,27 @@ export type SvgData = {
   width: number;
   height: number;
   paths: Path[];
-  darkPaths?: Path[];
 };
 
 export function getSvgData(
-  { document, styles = {} }: NodeShape,
+  { document, styles = {} }: NodeResponseWithMetadata,
   colorStyles?: ColorStyles,
 ): SvgData {
   const paths: Path[] = [];
-  const darkPaths: Path[] = [];
 
   const { width, height } = getSize(document);
 
   if ('children' in document) {
     document.children.forEach((child) => {
       let fill: string | undefined;
-      let darkFill: string | undefined;
 
       if ('styles' in child && child.styles !== undefined && 'fill' in child.styles) {
         const matchingStyle = styles[child.styles.fill];
         // lookup color style
         if (matchingStyle && colorStyles) {
           const match = colorStyles.light.nameMap.get(matchingStyle.name);
-          const darkMatch = colorStyles.dark.nameMap.get(matchingStyle.name);
           if (match) {
             fill = match.fill;
-          }
-          if (darkMatch) {
-            darkFill = darkMatch.fill;
           }
         }
         // convert fill directly
@@ -63,13 +56,6 @@ export function getSvgData(
             ...shared,
             fill,
           });
-
-          if (darkFill) {
-            darkPaths.push({
-              ...shared,
-              fill: darkFill,
-            });
-          }
         });
       }
     });
@@ -80,6 +66,5 @@ export function getSvgData(
     width,
     height,
     paths,
-    ...(darkPaths.length ? { darkPaths } : {}),
   };
 }

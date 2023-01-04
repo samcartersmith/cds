@@ -1,42 +1,29 @@
-import { Manifest } from '../../tools/Manifest';
-import { GeneratedSvgs } from '../svgsGenerator';
+import path from 'node:path';
+
+import { ComponentSetChild } from '../../tools/ComponentSetChild';
 
 import { convertCodepoint } from './convertCodepoint';
-import { oldManifest } from './oldManifest';
-import { FontManifestShape, FontProcessorCallbackFunction } from './types';
+import { FontProcessorCallbackFunction } from './types';
 
-type FontProcessorParams<ManifestType extends FontManifestShape> = {
-  manifest: Manifest<ManifestType>;
-  svgs: GeneratedSvgs;
+type FontProcessorParams<T extends ComponentSetChild> = {
+  lastUnicode: number;
+  onUnicodeUpdate: (unicode: number) => void;
+  svgFileMap: Map<string, T>;
 };
 
-export function getFontProcessor<ManifestType extends FontManifestShape>({
-  manifest,
-  svgs,
-}: FontProcessorParams<ManifestType>) {
-  return function fontProcessor(filePath: string, callbackFn: FontProcessorCallbackFunction) {
-    // TODO: remove `?? oldManifest.lastUnicode` once migration complete since this will be set in manifest.json after inital run
-    const lastUnicode = manifest.metadata?.lastUnicode ?? oldManifest.lastUnicode;
-
-    manifest.setMetadata({ lastUnicode });
-
-    const svgMatch = svgs.get(filePath);
-    if (svgMatch) {
-      const svgName = svgMatch.item.name;
-
-      // TODO: remove once migration complete
-      let unicodeCodePoint =
-        (svgMatch.item.metadata?.unicode as string | undefined) ??
-        oldManifest.unicodeMap[svgName as keyof typeof oldManifest.unicodeMap];
+export function getFontProcessor<T extends ComponentSetChild>({
+  lastUnicode,
+  onUnicodeUpdate,
+  svgFileMap,
+}: FontProcessorParams<T>) {
+  return function fontProcessor(file: string, callbackFn: FontProcessorCallbackFunction) {
+    const item = svgFileMap.get(file);
+    if (item) {
+      let unicodeCodePoint = item.metadata?.unicode as string | undefined;
 
       if (!unicodeCodePoint) {
-        // TODO: remove once migration complete
-        manifest.updates.add(
-          svgMatch.item.nodeType === 'componentSet' ? svgMatch.item : svgMatch.item?.componentSet,
-        );
-
         /** Decimal representation of a unicode code point */
-        const decimalValue = manifest.metadata.lastUnicode + 1;
+        const decimalValue = lastUnicode + 1;
         /**
          * ^^^^^^^ tldr ^^^^^^^
          * We use decimal format in our manifest to ensure we increment upwards within the custom code point range.
@@ -65,21 +52,21 @@ export function getFontProcessor<ManifestType extends FontManifestShape>({
         /** Once in hexadecimal format we can safely update our manifest so lastUnicode decimal value
          * can be used/incremented by the next icon
          */
-        manifest.setMetadata({ lastUnicode: decimalValue });
+        onUnicodeUpdate(decimalValue);
       }
 
       if (unicodeCodePoint) {
-        svgMatch.item.setMetadata({ unicode: unicodeCodePoint });
+        item.setMetadata({ unicode: unicodeCodePoint });
 
         return callbackFn(null, {
-          file: svgMatch.filePath,
-          name: svgName,
+          file,
+          name: path.parse(file).name,
           unicode: [unicodeCodePoint],
           renamed: false,
         });
       }
     }
 
-    return callbackFn(new Error(`Unable to find matching ${filePath} in svgs.`));
+    return callbackFn(new Error(`Unable to find matching ${file} in svgs.`));
   };
 }
