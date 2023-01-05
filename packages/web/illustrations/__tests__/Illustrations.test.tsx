@@ -13,12 +13,16 @@ const getURL = (name: string, versionNum: number, spectrum: Spectrum) => {
 
 type ImageData = [name: string, spectrum: Spectrum, url: string];
 
-const images: ImageData[] = sortedImg.map((nameAndSpectrum) => {
-  const [name, spectrum] = nameAndSpectrum.split('-') as [string, Spectrum];
-  const versionNum = versionNumManifest[nameAndSpectrum];
-  const url = getURL(name, versionNum, spectrum);
+const images: ImageData[] = [];
 
-  return [name, spectrum, url];
+Object.entries(sortedImg).forEach(([, names]) => {
+  names.forEach((nameAndSpectrum) => {
+    const [name, spectrum] = nameAndSpectrum.split('-') as [string, Spectrum];
+    const versionNum = versionNumManifest[nameAndSpectrum];
+    const url = getURL(name, versionNum, spectrum);
+
+    images.push([name, spectrum, url]);
+  });
 });
 
 const TEST_ILLO_NAME: IllustrationNames = 'accessToAdvancedCharts';

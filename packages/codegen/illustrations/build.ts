@@ -728,17 +728,45 @@ const checkLightModeExistsForAllAssets = (versionNumManifest: VersionNumManifest
 
 // Super long name, but at least you know exactly what
 // this function does 🐒🐒🐒
-const outputImgBasedOnMostRecentlyUpdated = (
-  versionNumManifest: VersionNumManifestStruct,
-  outPaths: string[],
-) => {
+const outputImgBasedOnMostRecentlyUpdated = (outPaths: string[]) => {
+  // Loop through localManifestData, and put variants that are the same
+  // in the same hash-key. The sortedImgGroupedByVariantMap will look
+  // something like this:
+  // {
+  //    pictogram: ['illoName1-dark', illoName2-light',
+  //               'illoName3-dark', .....],
+  //    spotSquare: [..an array of illo....],
+  //    spotRectangle: [...an array of illo.....]
+  // }
+  const sortedImgGroupedByVariantMap: Record<string, string[]> = Object.entries(
+    localManifestData.svg,
+  ).reduce((res, [nodeId]) => {
+    const { variant, name, spectrum } = localManifestData.svg[nodeId];
+    const nameAndSpectrum = `${name}-${spectrum}`;
+
+    if (variant in res) {
+      res[variant].push(nameAndSpectrum);
+      res[variant] = res[variant].sort(sortByAlphabet);
+    } else {
+      res[variant] = [nameAndSpectrum];
+    }
+
+    return res;
+  }, {} as Record<string, string[]>);
+
   try {
     for (const dest of outPaths) {
       writeFile({
         template: 'objectMap.ejs',
         dest,
         data: {
-          sortedImg: Object.keys(versionNumManifest),
+          sortedImg: sortedImgGroupedByVariantMap,
+        },
+        config: {
+          disableAsConst: true,
+        },
+        types: {
+          sortedImg: 'Record<string, string[]>',
         },
       }).catch((err) => console.error(err));
     }
@@ -891,7 +919,7 @@ const main = async (deleteImgsDir = false) => {
     );
     checkLightModeExistsForAllAssets(versionNumManifest);
 
-    outputImgBasedOnMostRecentlyUpdated(versionNumManifest, [
+    outputImgBasedOnMostRecentlyUpdated([
       'packages/common/internal/data/sortedIllustrationData.ts',
     ]);
   } catch (err) {

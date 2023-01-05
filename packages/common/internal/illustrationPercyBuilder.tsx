@@ -1,9 +1,11 @@
 import React from 'react';
-import { split } from '@cbhq/cds-utils';
 
 import type {
   BoxBaseProps,
   IllustrationBaseProps,
+  IllustrationNames,
+  IllustrationVariant,
+  Spectrum,
   StackBaseProps,
   TextBaseProps,
   ThemeProviderBaseProps,
@@ -19,7 +21,7 @@ export function illustrationPercyBuilder(
   Box: React.ComponentType<BoxBaseProps>,
   TextLabel1: React.ComponentType<TextBaseProps>,
 ) {
-  const ListIllustrations = (startIdx: number, endIdx: number) => {
+  const ListIllustrations = (variant: IllustrationVariant, startIdx: number, endIdx: number) => {
     return (
       <HStack
         flexWrap="wrap"
@@ -28,8 +30,15 @@ export function illustrationPercyBuilder(
         justifyContent="flex-start"
         alignItems="center"
       >
-        {sortedImg.slice(startIdx, endIdx).map((nameAndSpectrum) => {
-          const [name, spectrum] = split(nameAndSpectrum, '-');
+        {sortedImg[variant].slice(startIdx, endIdx).map((nameAndSpectrum) => {
+          const token = nameAndSpectrum.split('-');
+
+          if (token.length <= 1) {
+            throw new Error('The name does not have a spectrum');
+          }
+
+          const [name, spectrum] = token as [name: IllustrationNames, spectrum: Spectrum];
+
           return (
             <VStack gap={1} alignItems="center">
               <ThemeProvider spectrum={spectrum}>

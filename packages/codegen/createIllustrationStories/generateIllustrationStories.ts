@@ -1,6 +1,5 @@
 import { createWriteStream } from 'fs';
-
-import { manifestData } from '../illustrations/illustration_manifest';
+import { sortedImg } from '@cbhq/cds-common/internal/data/sortedIllustrationData';
 
 import { baseTemplate } from './template';
 
@@ -14,16 +13,18 @@ export function generateIllustrationStories(outputFile: string, chunkSize: numbe
 
   stream.write(baseTemplate);
 
-  let sheetNumber = 0;
-  const numIllustrations = Object.keys(manifestData.svg).length;
+  Object.entries(sortedImg).forEach(([variant, names]) => {
+    let sheetNumber = 0;
+    const numIllustrations = names.length;
 
-  for (let startRange = 0; startRange < numIllustrations; startRange += chunkSize) {
-    const endRange = startRange + chunkSize;
+    for (let startRange = 0; startRange < numIllustrations; startRange += chunkSize) {
+      const endRange = startRange + chunkSize;
 
-    stream.write(
-      `export const Sheet${sheetNumber} = () => ListIllustrations(${startRange}, ${endRange});\n`,
-    );
-    sheetNumber += 1;
-  }
+      stream.write(
+        `export const ${variant}_${sheetNumber} = () => ListIllustrations('${variant}', ${startRange}, ${endRange});\n`,
+      );
+      sheetNumber += 1;
+    }
+  });
   stream.end();
 }
