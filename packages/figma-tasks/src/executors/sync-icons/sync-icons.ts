@@ -1,4 +1,3 @@
-import groupBy from 'lodash/groupBy';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createTask } from '@cbhq/mono-tasks';
@@ -17,6 +16,7 @@ import { generateFont } from '../../helpers/font/generateFont';
 import { getFontProcessor } from '../../helpers/font/getFontProcessor';
 import { oldManifest } from '../../helpers/font/oldManifest';
 import { FontConfig } from '../../helpers/font/types';
+import { getOutputDirectories } from '../../helpers/getOutputDirectories';
 import { getSvgMarkup } from '../../helpers/image/getSvgMarkup';
 import { ComponentSet } from '../../tools/ComponentSet';
 import { ComponentSetChild } from '../../tools/ComponentSetChild';
@@ -88,10 +88,7 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
   const svgFileMap = new Map<string, IconComponentSetChild>();
 
   const generatedDirectory = getAbsolutePath(task, task.options.generatedDirectory);
-
-  const componentSets = [...manifest.items.values()];
-  const groupedByType = groupBy(componentSets, 'type');
-  const groupTypes = Object.entries(groupedByType);
+  const iconEntries = manifest.itemEntries;
 
   function generateSvg(svgDir: string) {
     return async (item: IconComponentSetChild) => {
@@ -123,17 +120,18 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
   }
 
   await Promise.all(
-    groupTypes.map(async ([groupTypeProp, componentSetsInGroup]) => {
-      const groupType = `${groupTypeProp}Icon`; // Prepend Icon to groupType to be more explicit
+    iconEntries.map(async ([iconType, iconComponentSets]) => {
+      const groupType = `${iconType}Icon`; // Prepend Icon to iconType to be more explicit
       const groupTypeInPascalCase = pascalCase(groupType); // convert uiIcon to UiIcon and navIcon to NavIcon
-
-      const dataDir = `${generatedDirectory}/${groupType}/data`;
-      const svgDir = `${generatedDirectory}/${groupType}/svg`;
+      const { dataDir, svgDir, typesDir } = getOutputDirectories({
+        type: iconType,
+        generatedDirectory,
+      });
 
       await existsOrCreateDir(svgDir); // we don't use writePrettyFile, which does this automatically, for generating .svg assets
 
       const componentSetChildren = await Promise.all(
-        componentSetsInGroup.flatMap((componentSet) =>
+        iconComponentSets.flatMap((componentSet) =>
           componentSet.components.map(generateSvg(svgDir)),
         ),
       );
@@ -141,22 +139,19 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
       const typescriptData = {
         exportName: `${groupTypeInPascalCase}Name`, // UiIconName, NavIconName
         get dest() {
-          return `${generatedDirectory}/${groupType}/types/${this.exportName}.ts`;
+          return `${typesDir}/${this.exportName}.ts`;
         },
         get content() {
           return typescriptTypesTemplate`
             ${codegenHeader}
           
-            export type ${this.exportName} = ${componentSetsInGroup.map((item) => item.name)};
+            export type ${this.exportName} = ${iconComponentSets.map((item) => item.name)};
           `;
         },
       };
 
       const websiteSheetData = {
-        exportName: `${groupType}Names`, // uiIconNames, navIconNames
-        get dest() {
-          return `${dataDir}/${this.exportName}.ts`;
-        },
+        dest: `${dataDir}/names.ts`,
         get content() {
           return tokensSortedTemplate`
             ${codegenHeader}
@@ -165,16 +160,15 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
              * An array of all ${groupTypeInPascalCase} icons.
              * This is being used to display a sheet of all ${groupTypeInPascalCase} illustration on the CDS website.
              */
-            export const ${this.exportName} = ${componentSetChildren.map(getSvgName)} as const;
+            const names = ${componentSetChildren.map(getSvgName)} as const;
+
+            export default names;
           `;
         },
       };
 
       const websiteSearchData = {
-        exportName: `${groupType}DescriptionsMap`, // uiIconDescriptionsMap, navIconDescriptionsMap
-        get dest() {
-          return `${dataDir}/${this.exportName}.ts`;
-        },
+        dest: `${dataDir}/descriptionMap.ts`,
         get content() {
           return tokensTemplate`
             ${codegenHeader}
@@ -184,10 +178,12 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
              * This is being used on the search portion of the ${groupTypeInPascalCase} page on the CDS website.
              * The search query filters the shown icons based on matches with name or description. 
              */ 
-            export const ${this.exportName}: Record<string, string[]> = ${createDescriptionGraph(
-            componentSets,
-          )};
-            `;
+            const descriptionMap: Record<string, string[]> = ${createDescriptionGraph(
+              iconComponentSets,
+            )};
+
+            export default descriptionMap;
+          `;
         },
       };
 

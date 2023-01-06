@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import { writeJsonFile } from '@nrwl/devkit';
+import groupBy from 'lodash/groupBy';
 import mapValues from 'lodash/mapValues';
 import { ImageFormats, RequestType, SyncedLibrary, syncLibrary } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
@@ -148,6 +149,12 @@ export class Manifest<
     return new Map(
       [...this.previousItems.values(), ...this.items.values()].map((item) => [item.name, item]),
     );
+  }
+
+  public get itemEntries() {
+    const itemsAsArray = [...this.items.values()];
+    const groupedByType = groupBy(itemsAsArray, 'type');
+    return Object.entries(groupedByType);
   }
 
   public addNewItem(item: GetManifestItem<T>) {

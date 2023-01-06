@@ -61,7 +61,7 @@ export async function createSvgContent({
     svgContent.dark = colorStyles.replaceLightWithDarkFills(svgContent.light);
     svgContent.themeable = colorStyles.replaceWithCssVariables(svgContent.light);
 
-    const [svgLight, svgDark, svgThemed, jsLight, jsDark] = await Promise.all([
+    const [svgLight, svgDark, svgThemed, svgJsLight, svgJsDark] = await Promise.all([
       writeVersionedFile({
         ...sharedParams,
         category: 'light',
@@ -107,8 +107,8 @@ export async function createSvgContent({
         ...(svgLight ? { svgLight } : {}),
         ...(svgDark ? { svgDark } : {}),
         ...(svgThemed ? { svgThemed } : {}),
-        ...(jsLight ? { jsLight } : {}),
-        ...(jsDark ? { jsDark } : {}),
+        ...(svgJsLight ? { svgJsLight } : {}),
+        ...(svgJsDark ? { svgJsDark } : {}),
       },
       svgContent,
     };

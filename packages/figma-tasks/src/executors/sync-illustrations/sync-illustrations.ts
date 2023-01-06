@@ -1,4 +1,3 @@
-import groupBy from 'lodash/groupBy';
 import path from 'node:path';
 import { createTask } from '@cbhq/mono-tasks';
 import {
@@ -12,6 +11,7 @@ import {
 } from '@cbhq/script-utils';
 
 import { createDescriptionGraph } from '../../helpers/createDescriptionGraph';
+import { getOutputDirectories } from '../../helpers/getOutputDirectories';
 import { getRelativePathForImport } from '../../helpers/getRelativePathForImport';
 import { createPngContent } from '../../helpers/image/createPngContent';
 import { createSvgContent } from '../../helpers/image/createSvgContent';
@@ -52,18 +52,13 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
     });
 
     const generatedDirectory = getAbsolutePath(task, task.options.generatedDirectory);
-
-    const components = [...manifest.items.values()];
-    const groupedByType = groupBy(components, 'type');
-    const groupTypes = Object.entries(groupedByType);
+    const illustrationEntries = manifest.itemEntries;
 
     function generateImageFormatsForItem(type: string) {
       return async (item: Component) => {
+        const { svgDir, svgJsDir, pngDir } = getOutputDirectories({ type, generatedDirectory });
         let imageOutputs: Record<string, string> = {};
         const imageName = item.name;
-        const svgDir = `${generatedDirectory}/${type}/svg`;
-        const pngDir = `${generatedDirectory}/${type}/png`;
-        const svgJsDir = `${generatedDirectory}/${type}/js`;
 
         const version = {
           previous: item.version ?? -1,
@@ -101,73 +96,71 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
     }
 
     await Promise.all(
-      groupTypes.map(async ([groupType, itemsInGroup]) => {
-        const groupTypeInPascalCase = pascalCase(groupType); // convert heroSquare to HeroSquare
-
-        const dataDir = `${generatedDirectory}/${groupType}/data`;
+      illustrationEntries.map(async ([illustrationType, illustrationsForType]) => {
+        const pascalCaseIllustrationType = pascalCase(illustrationType); // convert heroSquare to HeroSquare
+        const { dataDir, svgJsDir } = getOutputDirectories({
+          type: illustrationType,
+          generatedDirectory,
+        });
 
         const illustrations = await Promise.all(
-          itemsInGroup.map(generateImageFormatsForItem(groupType)),
+          illustrationsForType.map(generateImageFormatsForItem(illustrationType)),
         );
 
         const typescriptData = {
-          exportName: `${groupTypeInPascalCase}Name`, // HeroSquareName, SpotSquareName, etc
+          exportName: `${pascalCaseIllustrationType}Name`, // HeroSquareName, SpotSquareName, etc
           get dest() {
-            return `${generatedDirectory}/${groupType}/types/${this.exportName}.ts`;
+            return `${generatedDirectory}/${illustrationType}/types/${this.exportName}.ts`;
           },
           get content() {
             return typescriptTypesTemplate`
               ${codegenHeader}
             
-              export type ${this.exportName} = ${itemsInGroup.map((item) => item.name)};
+              export type ${this.exportName} = ${illustrationsForType.map((item) => item.name)};
             `;
           },
         };
 
         const websiteSheetData = {
-          exportName: `${groupType}Names`, // heroSquareNames, spotSquareNames, etc
-          get dest() {
-            return `${dataDir}/${this.exportName}.ts`;
-          },
+          dest: `${dataDir}/names.ts`,
           get content() {
             return tokensSortedTemplate`
               ${codegenHeader}
             
               /** 
-                * An array of all ${groupTypeInPascalCase} illustrations.
-                * This is being used to display a sheet of all ${groupTypeInPascalCase} illustration on the CDS website.
+                * An array of all ${pascalCaseIllustrationType} illustrations.
+                * This is being used to display a sheet of all ${pascalCaseIllustrationType} illustration on the CDS website.
                 */
-              export const ${this.exportName} = ${illustrations.map((item) => item.name)} as const;
+              const names = ${illustrations.map((item) => item.name)} as const;
+
+              export default names;
             `;
           },
         };
 
         const websiteSearchData = {
-          exportName: `${groupType}DescriptionsMap`, // heroSquareDescriptionMap, spotSquareDescriptionMap, etc
-          get dest() {
-            return `${dataDir}/${this.exportName}.ts`;
-          },
+          dest: `${dataDir}/descriptionMap.ts`,
           get content() {
-            const { name: exportName } = path.parse(this.dest);
             return tokensTemplate`
                 ${codegenHeader}
                 
                 /** 
                   * Mapping of descriptions to associated illustrations.
-                  * This is being used on the search portion of the ${groupTypeInPascalCase} page on the CDS website.
+                  * This is being used on the search portion of the ${pascalCaseIllustrationType} page on the CDS website.
                   * The search query filters the shown illustrations based on matches with name or description. 
                   */ 
-                export const ${exportName}: Record<string, string[]> = ${createDescriptionGraph(
-              illustrations,
-            )};
+                const descriptionMap: Record<string, string[]> = ${createDescriptionGraph(
+                  illustrations,
+                )};
+
+                export default descriptionMap;
               `;
           },
         };
 
         const versionMapData = {
-          dest: path.join(dataDir, `${groupType}VersionMap.ts`), // heroSquareVersionMap, spotSquareVersionMap, etc
+          dest: `${dataDir}/versionMap.ts`,
           get content() {
-            const { name: exportName } = path.parse(this.dest);
             const sortedItemsForVersion = Object.fromEntries(
               illustrations.sort(sortByLastUpdated).map((item) => [item.name, item.version]),
             );
@@ -178,36 +171,38 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
                 /** 
                  * Currently used on web for interpolating the URL to CDN hosted asset using the name and version number.
                  *
-                 * For example, given the following ${exportName}, 'export const ${exportName} = { someIllustration: 2 }', and 
-                 * JSX such as '<${groupTypeInPascalCase} name="someIllustration />' will result in an image with the following URL:
+                 * For example, given the following ${pascalCaseIllustrationType} versionMap, '{ someIllustration: 2 }', and 
+                 * JSX such as '<${pascalCaseIllustrationType} name="someIllustration />' will result in an image with the following URL:
                  * 
-                 * 'https://static-assets.coinbase.com/design-system/illustrations/${groupType}/light/someIllustration-2.svg
+                 * 'https://static-assets.coinbase.com/design-system/illustrations/${illustrationType}/light/someIllustration-2.svg
                  * 
-                 * In addition, this file is used to populate ${groupTypeInPascalCase} stories in percy, so the sort order based on last updated is important.
+                 * In addition, this file is used to populate ${pascalCaseIllustrationType} stories in percy, so the sort order based on last updated is important.
                  */
-                export const ${exportName} = ${sortedItemsForVersion};
+                const versionMap = ${sortedItemsForVersion};
+
+                export default versionMap;
             `;
           },
         };
 
         const jsData = {
-          dest: `${generatedDirectory}/${groupType}/js/index.ts`,
+          dest: `${svgJsDir}/index.ts`,
           get content() {
             const destDir = path.dirname(this.dest);
 
             const contentAsString = illustrations
               .sort((prev, next) => sortByAlphabet(prev.name, next.name))
               .reduce((prev, next) => {
-                if (!next.outputs.jsLight) {
-                  throw new Error(`Unable to find jsLight file path for ${next.name}`);
+                if (!next.outputs.svgJsLight) {
+                  throw new Error(`Unable to find svgJsLight file path for ${next.name}`);
                 }
 
-                if (!next.outputs.jsDark) {
-                  throw new Error(`Unable to find jsDark file path for ${next.name}`);
+                if (!next.outputs.svgJsDark) {
+                  throw new Error(`Unable to find svgJsDark file path for ${next.name}`);
                 }
 
-                const relativeLight = getRelativePathForImport(destDir, next.outputs.jsLight);
-                const relativeDark = getRelativePathForImport(destDir, next.outputs.jsDark);
+                const relativeLight = getRelativePathForImport(destDir, next.outputs.svgJsLight);
+                const relativeDark = getRelativePathForImport(destDir, next.outputs.svgJsDark);
 
                 const newContent = `
                     '${next.name}': {
@@ -228,9 +223,11 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
               
               ${codegenHeader}
               
-              export default {
+              const svgJs = {
                 ${contentAsString}
               } as Record<${typescriptData.exportName}, { light: () => string; dark: () => string }>;
+
+              export default svgJs;
             `;
           },
         };
