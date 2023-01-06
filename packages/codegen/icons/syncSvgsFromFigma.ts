@@ -9,6 +9,7 @@ import { ComponentMetadata } from '../figma/api';
 import { FigmaClient } from '../figma/client';
 import { buildTemplates } from '../utils/buildTemplates';
 import { getSourcePath } from '../utils/getSourcePath';
+import { sortByAlphabet } from '../utils/sortAlphabetically';
 import { writeFile } from '../utils/writeFile';
 
 import { createIconSet } from './createIconSet';
@@ -245,12 +246,14 @@ async function syncIcons() {
       }),
     );
 
-    delete toCategoryArrMap.NavigationIconInternal;
+    const renamedKeys = renameKeys(toCategoryArrMap, newTypeNamesMap('camelCase'));
 
     const iconData = {
       iconSizes: ['xs', 's', 'm', 'l'],
       navigationIconSizes: ['s', 'm', 'l'],
-      ...renameKeys(toCategoryArrMap, newTypeNamesMap('camelCase')),
+      navigationIconInternalNames: toCategoryArrMap.NavigationIconInternal.sort(sortByAlphabet),
+      iconNames: renamedKeys.iconNames.sort(sortByAlphabet),
+      navigationIconNames: renamedKeys.navigationIconNames.sort(sortByAlphabet),
     };
 
     const templates = {
@@ -264,6 +267,8 @@ async function syncIcons() {
         },
       ],
     };
+
+    delete toCategoryArrMap.NavigationIconInternal;
 
     writePromises.push(buildTemplates(templates));
 

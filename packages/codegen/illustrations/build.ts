@@ -11,6 +11,7 @@ import { FileImageResponse } from '../figma/api';
 import { FigmaClient } from '../figma/client';
 import { createDescriptionGraph } from '../utils/createDescriptionGraph';
 import { getSourcePath } from '../utils/getSourcePath';
+import { sortByAlphabet } from '../utils/sortAlphabetically';
 import { writeFile } from '../utils/writeFile';
 
 import { blacklist } from './blacklist';
@@ -49,12 +50,6 @@ let mobileImagesPath: string;
 const newIllustrations: string[] = [];
 const modifiedIllustrations: string[] = [];
 const deletedIllustrations: Set<string> = new Set([]);
-
-function sortByAlphabet(prev: string | [string, unknown], next: string | [string, unknown]) {
-  const prevValue = Array.isArray(prev) ? prev[0] : prev;
-  const nextValue = Array.isArray(next) ? next[0] : next;
-  return prevValue.localeCompare(nextValue);
-}
 
 function normalizeIllustration(illustrationName: string): IllustrationProps | null {
   const [type, spectrum, variant, name] = illustrationName.split('/');

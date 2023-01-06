@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+
 /**
  * DO NOT MODIFY
  * Generated from packages/codegen/createIconStories/main.ts
@@ -23,11 +25,12 @@ const { IconSheet } = iconSheetBuilderWeb({
   Icon,
 } as CreateIconSheetParams);
 
-export const Sheet0 = () => IconSheet(0, 50);
-export const Sheet1 = () => IconSheet(50, 100);
-export const Sheet2 = () => IconSheet(100, 150);
-export const Sheet3 = () => IconSheet(150, 200);
-export const Sheet4 = () => IconSheet(200, 250);
-export const Sheet5 = () => IconSheet(250, 300);
-export const Sheet6 = () => IconSheet(300, 350);
-export const Sheet7 = () => IconSheet(350, 400);
+export const ui_0 = () => IconSheet('ui', 0, 50);
+export const ui_1 = () => IconSheet('ui', 50, 100);
+export const ui_2 = () => IconSheet('ui', 100, 150);
+export const ui_3 = () => IconSheet('ui', 150, 200);
+export const ui_4 = () => IconSheet('ui', 200, 250);
+export const ui_5 = () => IconSheet('ui', 250, 300);
+export const nav_0 = () => IconSheet('nav', 0, 50);
+export const nav_1 = () => IconSheet('nav', 50, 100);
+export const nav_2 = () => IconSheet('nav', 100, 150);

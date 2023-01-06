@@ -7,7 +7,7 @@ import { ScaleProvider } from '../scale/ScaleProvider';
 import type { BoxBaseProps, IconBaseProps, StackBaseProps } from '../types';
 import flattenNodes from '../utils/flattenNodes';
 
-import { unicodeMap } from './data/iconData';
+import { iconNames, navigationIconInternalNames, unicodeMap } from './data/iconData';
 
 export type CreateIconSheetParams = {
   VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
@@ -19,10 +19,12 @@ export function iconSheetBuilderWeb({ VStack, HStack, Icon }: CreateIconSheetPar
   // Need to paginate this because percy can't serve 1200 images
   // in a single page. So breaking it to separate pages.
   // [startIdx, endIdx). Last index is excluded
-  function IconSheet(startIdx: number, endIdx: number) {
-    const components = [];
+  function IconSheet(variant: 'ui' | 'nav', startIdx: number, endIdx: number) {
+    const components: React.ReactNode[] = [];
 
-    for (const [name] of entries(unicodeMap).slice(startIdx, endIdx)) {
+    const names = variant === 'ui' ? iconNames : navigationIconInternalNames;
+
+    names.slice(startIdx, endIdx).forEach((name) => {
       const originalIcons = [];
       const transformedIcons = [];
 
@@ -54,7 +56,8 @@ export function iconSheetBuilderWeb({ VStack, HStack, Icon }: CreateIconSheetPar
           </HStack>
         </VStack>,
       );
-    }
+    });
+
     return (
       <VStack>
         {

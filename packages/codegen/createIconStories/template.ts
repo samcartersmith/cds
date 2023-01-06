@@ -1,4 +1,6 @@
-export const baseTemplate = `/**
+export const baseTemplate = `/* eslint-disable @typescript-eslint/naming-convention */
+
+/**
  * DO NOT MODIFY
  * Generated from packages/codegen/createIconStories/main.ts
  */
