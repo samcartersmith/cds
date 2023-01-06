@@ -26,6 +26,7 @@ export const Normal = () => {
         <HStack gap={2} alignItems="center">
           <Avatar alt="Sneezy" src={avatarImageUrl} />
           <Avatar alt="Happy" src={avatarImageUrl} shape="square" />
+          <Avatar alt="Happy" src={avatarImageUrl} shape="hexagon" />
           <Avatar alt="Sleepy" src={avatarImageUrl} borderColor="positive" />
           <Avatar alt="Bashful" src={avatarImageUrl} size="m" />
           <Avatar alt="Grumpy" src={avatarImageUrl} size="l" />
@@ -90,6 +91,10 @@ export const FallbackColored = ({ scale }: Pick<ThemeProviderBaseProps, 'scale'>
         <TextHeadline as="h3">Square Selected</TextHeadline>
         <FallbackColoredBase shape="square" selected />
       </VStack>
+      <VStack gap={2} spacingTop={4}>
+        <TextHeadline as="h3">Hexagon</TextHeadline>
+        <Avatar alt="" name="Happy" colorScheme="blue" shape="hexagon" />
+      </VStack>
     </ThemeProvider>
   );
 };
@@ -103,6 +108,7 @@ export const FallbackImage = () => {
         <HStack gap={2} alignItems="center">
           <Avatar alt="Sneezy" />
           <Avatar alt="Happy" shape="square" />
+          <Avatar alt="Happy" shape="hexagon" />
           <Avatar alt="Sleepy" borderColor="positive" />
           <Avatar alt="Bashful" size="m" />
           <Avatar alt="Grumpy" size="l" />

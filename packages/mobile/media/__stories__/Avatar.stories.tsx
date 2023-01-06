@@ -42,6 +42,7 @@ const AvatarScreen = () => {
         <HStack gap={2} alignItems="center" flexWrap="wrap">
           <Avatar alt="" src={image} />
           <Avatar alt="" name="Happy" src={image} shape="square" />
+          <Avatar alt="" name="Grumpy" src={image} shape="hexagon" />
           <Avatar alt="" name="Sleepy" src={image} borderColor="positive" />
           <Avatar alt="" name="Bashful" src={image} size="m" />
           <Avatar alt="" name="Grumpy" src={image} size="l" />
@@ -55,6 +56,7 @@ const AvatarScreen = () => {
         <HStack gap={2} alignItems="center" flexWrap="wrap">
           <Avatar alt="" />
           <Avatar alt="" shape="square" />
+          <Avatar alt="" shape="hexagon" />
           <Avatar alt="" borderColor="positive" />
           <Avatar alt="" size="m" />
           <Avatar alt="" size="l" />

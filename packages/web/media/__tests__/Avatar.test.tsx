@@ -66,6 +66,11 @@ describe('Avatar', () => {
     expect(square).toBeTruthy();
     expect(square?.className).not.toContain('standard');
     expect(square?.className).toContain('roundedSmall');
+
+    render(<Avatar alt="TestName" shape="hexagon" src={src} testID="avatar-hexagon-component" />);
+    const hexagon = screen.getByTestId('avatar-hexagon-component');
+    expect(hexagon).toBeTruthy();
+    expect(hexagon?.className).toContain('cds-hexagon');
   });
   it('when passed a name prop and no src is provided it shows a fallback color and first letter of name prop', () => {
     render(<Avatar alt="" name="TestName" colorScheme="pink" testID="avatar-component" />);

@@ -51,9 +51,9 @@ export const Avatar: React.FC<AvatarBaseProps> = memo(
     });
 
     const computedSize = dangerouslySetSize ?? avatarSize;
-    const shouldShowAvatarImage = src ?? !name;
+    const shouldShowAvatarImage = !!src || !name;
     // only show a border for normal and fallback image treatments
-    const hasBorder = shouldShowAvatarImage && borderColor;
+    const hasBorder = shouldShowAvatarImage && borderColor && shape !== 'hexagon';
 
     const avatarText = useMemo(() => {
       if (isLargestSize || isNormalAvatarButton) {

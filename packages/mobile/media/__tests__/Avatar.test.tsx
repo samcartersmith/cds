@@ -106,6 +106,18 @@ describe('Avatar', () => {
     expect(box).toHaveStyle({
       borderRadius: borderRadius.roundedSmall,
     });
+
+    render(
+      <Avatar
+        alt=""
+        name="TestName"
+        shape="hexagon"
+        src="https://images.coinbase.com/avatar?s=56"
+        testID="hexagon"
+      />,
+    );
+    box = screen.queryByTestId('hexagon');
+    expect(box).toBeTruthy();
   });
   it('when passed a name prop and no src is provided it shows a fallback color and first letter of name prop', async () => {
     render(<Avatar alt="" name="TestName" colorScheme="pink" testID="avatar" />);

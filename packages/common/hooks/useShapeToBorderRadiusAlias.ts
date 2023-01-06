@@ -3,20 +3,19 @@ import { useMemo } from 'react';
 import { BorderRadiusAlpha } from '../types/BorderRadius';
 import { Shape } from '../types/Shape';
 
-export function useShapeToBorderRadiusAlias(shape: Shape | undefined) {
+export function useShapeToBorderRadiusAlias(
+  shape: Shape | undefined,
+): BorderRadiusAlpha | undefined {
   return useMemo(() => {
-    let borderRadius: BorderRadiusAlpha | undefined;
-
-    if (shape === 'circle') {
-      borderRadius = 'roundedFull';
+    switch (shape) {
+      case 'circle':
+        return 'roundedFull';
+      case 'squircle':
+        return 'rounded';
+      case 'square':
+        return 'roundedSmall';
+      default:
+        return undefined;
     }
-    if (shape === 'squircle') {
-      borderRadius = 'rounded';
-    }
-    if (shape === 'square') {
-      borderRadius = 'roundedSmall';
-    }
-
-    return borderRadius;
   }, [shape]);
 }

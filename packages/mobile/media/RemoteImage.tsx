@@ -7,7 +7,7 @@ import {
   ImageStyle,
   ImageURISource,
 } from 'react-native';
-import { SvgCssUri, SvgXml } from 'react-native-svg';
+import Svg, { ClipPath, Defs, Image as SvgImage, Path, SvgCssUri, SvgXml } from 'react-native-svg';
 import { AspectRatio, FixedValue, RemoteImageBaseProps, useSpectrum } from '@cbhq/cds-common';
 import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
 import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
@@ -72,6 +72,23 @@ export function getSource(
 function isSvg(source: SourceProp): boolean {
   return typeof source === 'object' && 'headers' in source && source.headers?.format === 'svg';
 }
+
+type HexagonClipPathProps = {
+  image: React.ReactElement;
+};
+
+export const HexagonClipPath = ({ image }: HexagonClipPathProps) => {
+  return (
+    <Svg viewBox="0 0 66 62">
+      <Defs>
+        <ClipPath id="hex-hw-shapeclip-clipconfig">
+          <Path d="M63.4372 22.8624C66.2475 27.781 66.2475 33.819 63.4372 38.7376L54.981 53.5376C52.1324 58.5231 46.8307 61.6 41.0887 61.6H24.4562C18.7142 61.6 13.4125 58.5231 10.564 53.5376L2.10774 38.7376C-0.702577 33.819 -0.702582 27.781 2.10774 22.8624L10.564 8.06243C13.4125 3.07687 18.7142 0 24.4562 0H41.0887C46.8307 0 52.1324 3.07686 54.981 8.06242L63.4372 22.8624Z" />
+        </ClipPath>
+      </Defs>
+      {image}
+    </Svg>
+  );
+};
 
 export const RemoteImage = memo(function RemoteImage({
   width,
@@ -173,6 +190,23 @@ export const RemoteImage = memo(function RemoteImage({
         xml={spectrum === 'dark' ? darkFallback.content : lightFallback.content}
         width={finalWidth}
         height={finalHeight}
+      />
+    );
+  }
+
+  if (shape === 'hexagon') {
+    return (
+      <HexagonClipPath
+        image={
+          <SvgImage
+            href={source as ImageProps['source']}
+            clipPath="url(#hex-hw-shapeclip-clipconfig)"
+            x={0}
+            y={0}
+            width="100%"
+            height="100%"
+          />
+        }
       />
     );
   }

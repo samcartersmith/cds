@@ -17,12 +17,20 @@ import { cx } from '../utils/linaria';
 import { RemoteImage } from './RemoteImage';
 
 export const staticClassName = 'cds-avatar';
+const staticHexagonClassName = 'cds-hexagon';
 const borderWidth = 2;
 export const avatarColoredFallbackClassName = 'cds-avatar-colored-fallback';
 
 export const borderStyles = css`
   &.${staticClassName} {
     border-width: ${borderWidth}px;
+  }
+`;
+
+export const hexagonStyles = css`
+  &.${staticHexagonClassName} {
+    clip-path: url(#hex-hw-shapeclip-clipconfig);
+    --webkit-clip-path: url(#hex-hw-shapeclip-clipconfig);
   }
 `;
 
@@ -34,6 +42,23 @@ export type AvatarWebProps = {
   /** Adds treatment that indicates that the Avatar is currently selected */
   selected?: boolean;
 } & AvatarBaseProps;
+
+export const HexagonClipPath = () => {
+  // to get scale values use equation 1/x, where x is height or width. for this case 1/66 and 1/62
+  return (
+    <svg height="0" viewBox="0 0 66 62" width="0">
+      <defs>
+        <clipPath
+          id="hex-hw-shapeclip-clipconfig"
+          clipPathUnits="objectBoundingBox"
+          transform="scale(0.01515151515 0.01612903225)"
+        >
+          <path d="M63.4372 22.8624C66.2475 27.781 66.2475 33.819 63.4372 38.7376L54.981 53.5376C52.1324 58.5231 46.8307 61.6 41.0887 61.6H24.4562C18.7142 61.6 13.4125 58.5231 10.564 53.5376L2.10774 38.7376C-0.702577 33.819 -0.702582 27.781 2.10774 22.8624L10.564 8.06243C13.4125 3.07687 18.7142 0 24.4562 0H41.0887C46.8307 0 52.1324 3.07686 54.981 8.06242L63.4372 22.8624Z" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
 
 export const Avatar: React.FC<AvatarWebProps> = memo(
   ({
@@ -71,9 +96,9 @@ export const Avatar: React.FC<AvatarWebProps> = memo(
     });
 
     const computedSize = dangerouslySetSize ?? avatarSize;
-    const shouldShowAvatarImage = src ?? !name;
+    const shouldShowAvatarImage = !!src || !name;
     // only show a border for normal and fallback image treatments
-    const hasBorder = shouldShowAvatarImage && borderColor;
+    const hasBorder = shouldShowAvatarImage && borderColor && shape !== 'hexagon';
 
     const styleOverrides = useMemo(
       () => ({
@@ -87,6 +112,8 @@ export const Avatar: React.FC<AvatarWebProps> = memo(
       }),
       [colorSchemeRgb],
     );
+
+    const boxOverflow = useMemo(() => (shape !== 'hexagon' ? 'hidden' : undefined), [shape]);
 
     const avatarText = useMemo(() => {
       if (isLargestSize || isNormalAvatarButton) {
@@ -118,6 +145,15 @@ export const Avatar: React.FC<AvatarWebProps> = memo(
       size,
     ]);
 
+    const isHexagon = shape === 'hexagon';
+
+    const hexagonClassName = useMemo(() => {
+      if (isHexagon) {
+        return `${hexagonStyles} ${staticHexagonClassName}`;
+      }
+      return undefined;
+    }, [isHexagon]);
+
     const coloredFallback = useMemo(() => {
       return (
         <Box
@@ -135,21 +171,32 @@ export const Avatar: React.FC<AvatarWebProps> = memo(
       );
     }, [avatarText, borderRadius, styleOverrides, testID]);
 
+    const dangerouslySetBackground = useMemo(() => {
+      if (src) {
+        return src;
+      }
+      if (!src && isHexagon) {
+        return !colorSchemeProp ? 'transparent' : colorSchemeRgb;
+      }
+      return undefined;
+    }, [colorSchemeProp, colorSchemeRgb, isHexagon, src]);
+
     return (
       <Box
         dangerouslySetClassName={cx(
           staticClassName,
           dangerouslySetClassName as string,
           hasBorder ? borderStyles : undefined,
+          hexagonClassName,
         )}
-        dangerouslySetStyle={selected ? ringStyles : undefined}
-        dangerouslySetBackground={src}
+        dangerouslySetStyle={selected && !isHexagon ? ringStyles : undefined}
+        dangerouslySetBackground={dangerouslySetBackground}
         borderRadius={borderRadius}
         borderColor={hasBorder ? borderColor : 'transparent'}
         width={computedSize}
         height={computedSize}
         position="relative"
-        overflow="hidden"
+        overflow={boxOverflow}
         alignItems="center"
         justifyContent="center"
         flexShrink={0}
@@ -161,6 +208,7 @@ export const Avatar: React.FC<AvatarWebProps> = memo(
         ) : (
           coloredFallback
         )}
+        {isHexagon && <HexagonClipPath />}
       </Box>
     );
   },
