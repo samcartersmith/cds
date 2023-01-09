@@ -21,6 +21,8 @@ export const SparklineGradient = memo(
         : `sparkline-gradient-${color}`;
       const cleanId = gradientId.replace('#', '');
       const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
+
+      const hasChildren = !!children;
       const linearGradient = useMemo(() => {
         return (
           <defs>
@@ -30,10 +32,10 @@ export const SparklineGradient = memo(
                 <stop key={`${i}_${item}`} offset={item.offset} stopColor={item.color} />
               ))}
             </linearGradient>
-            {!!children && <SparklineAreaPattern id={patternId.current} color={areaColor} />}
+            {hasChildren && <SparklineAreaPattern id={patternId.current} color={areaColor} />}
           </defs>
         );
-      }, [cleanId, gradient, children, areaColor]);
+      }, [cleanId, gradient, hasChildren, areaColor]);
 
       return (
         <svg width={width} height={height}>

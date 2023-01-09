@@ -57,11 +57,13 @@ type LinearGradientProps = {
   angle?: number;
 } & SharedProps;
 
+const defaultStops = [0, 1];
+
 export function LinearGradient({
   children,
   start,
   end,
-  stops = [0, 1],
+  stops = defaultStops,
   colors,
   isBelowChildren = true,
   angle = 180,

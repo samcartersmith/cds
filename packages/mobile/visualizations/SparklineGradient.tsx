@@ -19,6 +19,8 @@ export const SparklineGradient = memo(
       const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
       const gradient = useAccessibleForegroundGradient({ background, color, usage: 'graphic' });
       const areaColor = useAccessibleForeground({ background, color, usage: 'graphic' });
+
+      const hasChildren = !!children;
       const linearGradient = useMemo(() => {
         return (
           <Defs>
@@ -28,10 +30,10 @@ export const SparklineGradient = memo(
                 <Stop key={`${i}_${item}`} offset={item.offset} stopColor={item.color} />
               ))}
             </LinearGradient>
-            {!!children && <SparklineAreaPattern id={patternId.current} color={areaColor} />}
+            {hasChildren && <SparklineAreaPattern id={patternId.current} color={areaColor} />}
           </Defs>
         );
-      }, [areaColor, children, gradient]);
+      }, [areaColor, hasChildren, gradient]);
 
       return (
         <Svg width={width} height={height}>
