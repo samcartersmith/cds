@@ -23,11 +23,11 @@
         "parallel": false
       }
     },
-    "generate-illustration-stories": {
+    "generate-illustration-web-stories": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/codegen",
-        "commands": ["yarn ts-node ./createIllustrationStories/main.ts"],
+        "commands": ["yarn ts-node ./createIllustrationStories/generateWebStories.ts"],
         "parallel": false
       }
     },
@@ -50,7 +50,7 @@
         "cwd": "packages/codegen",
         "commands": [
           "ts-node ./illustrations/build.ts",
-          "nx run codegen:generate-illustration-stories",
+          "nx run codegen:generate-illustration-web-stories",
           "nx run codegen:format",
           "nx run mobile:format",
           "nx run codegen:uploadToStaticAssets"

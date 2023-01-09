@@ -1,9 +1,11 @@
 import { createWriteStream } from 'fs';
 import { sortedImg } from '@cbhq/cds-common/internal/data/sortedIllustrationData';
 
-import { baseTemplate } from './template';
+import { getSourcePath } from '../utils/getSourcePath';
 
-export function generateIllustrationStories(outputFile: string, chunkSize: number) {
+import { baseWebTemplate } from './template';
+
+function generateWebStories(outputFile: string, chunkSize: number) {
   const stream = createWriteStream(outputFile);
 
   stream.on('error', (err) => {
@@ -11,7 +13,7 @@ export function generateIllustrationStories(outputFile: string, chunkSize: numbe
     stream.end();
   });
 
-  stream.write(baseTemplate);
+  stream.write(baseWebTemplate);
 
   Object.entries(sortedImg).forEach(([variant, names]) => {
     let sheetNumber = 0;
@@ -28,3 +30,17 @@ export function generateIllustrationStories(outputFile: string, chunkSize: numbe
   });
   stream.end();
 }
+/**
+ * The script generates the illustration stories for web in a storybook v7 compatible manner.
+ */
+function main() {
+  const CHUNK_SIZE = 120;
+
+  const outputFile = getSourcePath(
+    `packages/web/illustrations/__stories__/Illustration.stories.tsx`,
+  );
+
+  generateWebStories(outputFile, CHUNK_SIZE);
+}
+
+main();

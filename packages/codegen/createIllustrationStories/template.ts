@@ -1,8 +1,8 @@
-export const baseTemplate = `/* eslint-disable @typescript-eslint/naming-convention */
+export const baseWebTemplate = `/* eslint-disable @typescript-eslint/naming-convention */
 
 /**
  * DO NOT MODIFY
- * Generated from packages/codegen/stories/createIllustrationStories.ts
+ * Generated from packages/codegen/createIllustrationStories/generateWebStories.ts
  */
 
 import { illustrationPercyBuilder } from '@cbhq/cds-common/internal/illustrationPercyBuilder';
