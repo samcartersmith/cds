@@ -98,7 +98,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
     await Promise.all(
       illustrationEntries.map(async ([illustrationType, illustrationsForType]) => {
         const pascalCaseIllustrationType = pascalCase(illustrationType); // convert heroSquare to HeroSquare
-        const { dataDir, svgJsDir } = getOutputDirectories({
+        const { dataDir, typescriptDir } = getOutputDirectories({
           type: illustrationType,
           generatedDirectory,
         });
@@ -110,7 +110,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
         const typescriptData = {
           exportName: `${pascalCaseIllustrationType}Name`, // HeroSquareName, SpotSquareName, etc
           get dest() {
-            return `${generatedDirectory}/${illustrationType}/types/${this.exportName}.ts`;
+            return `${typescriptDir}/${this.exportName}.ts`;
           },
           get content() {
             return typescriptTypesTemplate`
@@ -124,14 +124,21 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
         const websiteSheetData = {
           dest: `${dataDir}/names.ts`,
           get content() {
+            const destDir = path.dirname(this.dest);
+            const relativeTypes = getRelativePathForImport(destDir, typescriptData.dest);
+
             return tokensSortedTemplate`
               ${codegenHeader}
-            
+              
+              import type { ${typescriptData.exportName} } from '${relativeTypes}';
+              
               /** 
                 * An array of all ${pascalCaseIllustrationType} illustrations.
                 * This is being used to display a sheet of all ${pascalCaseIllustrationType} illustration on the CDS website.
                 */
-              const names = ${illustrations.map((item) => item.name)} as const;
+              const names: ${typescriptData.exportName}[] = ${illustrations.map(
+              (item) => item.name,
+            )};
 
               export default names;
             `;
@@ -161,6 +168,9 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
         const versionMapData = {
           dest: `${dataDir}/versionMap.ts`,
           get content() {
+            const destDir = path.dirname(this.dest);
+            const relativeTypes = getRelativePathForImport(destDir, typescriptData.dest);
+
             const sortedItemsForVersion = Object.fromEntries(
               illustrations.sort(sortByLastUpdated).map((item) => [item.name, item.version]),
             );
@@ -168,27 +178,30 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
             return tokensTemplate`
               ${codegenHeader}
 
-                /** 
-                 * Currently used on web for interpolating the URL to CDN hosted asset using the name and version number.
-                 *
-                 * For example, given the following ${pascalCaseIllustrationType} versionMap, '{ someIllustration: 2 }', and 
-                 * JSX such as '<${pascalCaseIllustrationType} name="someIllustration />' will result in an image with the following URL:
-                 * 
-                 * 'https://static-assets.coinbase.com/design-system/illustrations/${illustrationType}/light/someIllustration-2.svg
-                 * 
-                 * In addition, this file is used to populate ${pascalCaseIllustrationType} stories in percy, so the sort order based on last updated is important.
-                 */
-                const versionMap = ${sortedItemsForVersion};
+              import type { ${typescriptData.exportName} } from '${relativeTypes}';
 
-                export default versionMap;
+              /** 
+               * Currently used on web for interpolating the URL to CDN hosted asset using the name and version number.
+               *
+               * For example, given the following ${pascalCaseIllustrationType} versionMap, '{ someIllustration: 2 }', and 
+               * JSX such as '<${pascalCaseIllustrationType} name="someIllustration />' will result in an image with the following URL:
+               * 
+               * 'https://static-assets.coinbase.com/design-system/illustrations/${illustrationType}/light/someIllustration-2.svg
+               * 
+               * In addition, this file is used to populate ${pascalCaseIllustrationType} stories in percy, so the sort order based on last updated is important.
+               */
+              const versionMap: Record<${typescriptData.exportName}, number> = ${sortedItemsForVersion};
+
+              export default versionMap;
             `;
           },
         };
 
         const jsData = {
-          dest: `${svgJsDir}/index.ts`,
+          dest: `${dataDir}/svgJsMap.ts`,
           get content() {
             const destDir = path.dirname(this.dest);
+            const relativeTypes = getRelativePathForImport(destDir, typescriptData.dest);
 
             const contentAsString = illustrations
               .sort((prev, next) => sortByAlphabet(prev.name, next.name))
@@ -206,14 +219,12 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
 
                 const newContent = `
                     '${next.name}': {
-                      light: () => require('./${relativeLight}').content,
-                      dark: () => require('./${relativeDark}').content,
+                      light: () => require('${relativeLight}').content,
+                      dark: () => require('${relativeDark}').content,
                     },
                   `.trimStart();
                 return `${prev}${newContent}`;
               }, '');
-
-            const relativeTypes = getRelativePathForImport(destDir, typescriptData.dest);
 
             return tokensTemplate`
               /* eslint-disable global-require */
@@ -223,11 +234,11 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
               
               ${codegenHeader}
               
-              const svgJs = {
+              const svgJsMap = {
                 ${contentAsString}
               } as Record<${typescriptData.exportName}, { light: () => string; dark: () => string }>;
 
-              export default svgJs;
+              export default svgJsMap;
             `;
           },
         };

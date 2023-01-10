@@ -4,7 +4,7 @@ import fs, { existsSync, readFileSync, renameSync, unlink } from 'fs';
 import { reduce } from 'lodash';
 import ora from 'ora';
 import path from 'path';
-import { loadConfig, optimize, OptimizedSvg, OptimizeOptions } from 'svgo';
+import { Config as SvgoConfig, loadConfig, optimize } from 'svgo';
 import { camelCase, pascalCase, renameKeys } from '@cbhq/cds-utils/index';
 
 import { FileImageResponse } from '../figma/api';
@@ -44,7 +44,7 @@ const figmaClient = FigmaClient();
 
 const localManifestData: Record<string, Record<string, IllustrationSummary>> = manifestData;
 const nameToNodeIdMap: Record<string, string> = {};
-let svgOptimizerConfig: OptimizeOptions;
+let svgOptimizerConfig: SvgoConfig;
 let mobileImagesPath: string;
 
 const newIllustrations: string[] = [];
@@ -271,7 +271,7 @@ const loadOneImage = async (
   if (fileStatus === 'modified' && !modified.includes(nameAndSpectrum)) return;
 
   const optimizedSVG = optimize(String(svgRes.data), svgOptimizerConfig);
-  fs.writeFileSync(fileNameFullPath, (optimizedSVG as OptimizedSvg).data, ENCODING);
+  fs.writeFileSync(fileNameFullPath, optimizedSVG.data, ENCODING);
 
   /** Enable to recreate all the js files  */
   // createSvgXML({
@@ -304,7 +304,7 @@ const loadOneImage = async (
     // the illustration was changed or it is new.
     createSvgXML({
       outPath: newJsOutFullPath,
-      svgStr: (optimizedSVG as OptimizedSvg).data,
+      svgStr: optimizedSVG.data,
       fileName: newJsFileName,
       fileStatus,
     });

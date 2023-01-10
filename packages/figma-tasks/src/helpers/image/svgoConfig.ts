@@ -1,42 +1,61 @@
-import type { OptimizeOptions } from 'svgo';
+import type { Config } from 'svgo';
+import { color } from '@cbhq/d3/color';
 
-const svgoConfig: OptimizeOptions = {
+/** https://github.com/svg/svgo/blob/main/plugins/_collections.js#L2161 */
+const colorsProps = ['color', 'fill', 'stroke', 'stop-color', 'flood-color', 'lighting-color'];
+
+function colorTo6DigitUppercaseHex(val: string) {
+  const hex = color(val)?.formatHex();
+  return hex?.toUpperCase();
+}
+
+const svgoConfig: Config = {
   multipass: true,
+  /** https://github.com/svg/svgo#built-in-plugins */
   plugins: [
-    // set of built-in plugins enabled by default
-    'preset-default',
+    'convertStyleToAttrs',
     {
-      name: 'cleanupListOfValues',
-      active: true,
-    },
-    {
-      name: 'convertStyleToAttrs',
-      active: true,
-    },
-    {
-      name: 'removeRasterImages',
-      active: false,
-    },
-    {
-      name: 'sortAttrs',
-      active: true,
-    },
-    {
-      name: 'removeDimensions',
-      active: true,
-    },
-    {
-      name: 'removeElementsByAttr',
-      active: true,
-    },
-    {
-      name: 'removeStyleElement',
-      active: true,
-    },
-    {
-      name: 'cleanupNumericValues',
+      name: 'preset-default',
       params: {
-        floatPrecision: 2,
+        overrides: {
+          cleanupNumericValues: {
+            floatPrecision: 2,
+          },
+          convertColors: {
+            names2hex: true,
+            rgb2hex: true,
+            shortname: false,
+            shorthex: false, // ensure 6 digit long hex format
+          },
+        },
+      },
+    },
+    'removeDimensions',
+    'cleanupListOfValues',
+    'removeRasterImages',
+    'removeStyleElement',
+    {
+      /**
+       * Ensure all fills are uppercase 6 digit hex values.
+       * This is a simplified version of https://github.com/svg/svgo/blob/main/plugins/convertColors.js
+       */
+      name: 'customColorPlugin',
+      fn: () => {
+        return {
+          element: {
+            enter: (node) => {
+              Object.entries(node.attributes).forEach(([key, value]) => {
+                if (colorsProps.includes(key)) {
+                  const hex = colorTo6DigitUppercaseHex(value);
+                  if (hex) {
+                    // eslint-disable-next-line no-param-reassign
+                    node.attributes[key] = hex; // we have to re-assign to apply change
+                  }
+                }
+              });
+            },
+          },
+        };
       },
     },
   ],

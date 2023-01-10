@@ -1,10 +1,9 @@
-import { optimize } from 'svgo';
 import { NodeResponseWithMetadata } from '@cbhq/figma-api';
 
 import { ColorStyles } from '../../tools/ColorStyles';
 
 import { getSvgData, SvgData } from './getSvgData';
-import svgoConfig from './svgoConfig';
+import { optimizeSvg } from './optimizeSvg';
 
 export type SvgMarkup = {
   light: string;
@@ -21,17 +20,7 @@ function createSvgMarkup({ width, height, paths }: Omit<SvgData, 'darkPaths'>) {
     .join('\n')}
   </svg>`;
 
-  const optimizedSvg = optimize(svgString, svgoConfig);
-  if ('data' in optimizedSvg) {
-    return optimizedSvg.data;
-  }
-
-  if ('modernError' in optimizedSvg) {
-    console.log(optimizedSvg.modernError);
-    throw new Error(`${name} is not valid svg`);
-  }
-
-  return svgString;
+  return optimizeSvg(svgString);
 }
 
 export function getSvgMarkup(node: NodeResponseWithMetadata, colorStyles?: ColorStyles): string {

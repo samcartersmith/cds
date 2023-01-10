@@ -17,6 +17,7 @@ import { getFontProcessor } from '../../helpers/font/getFontProcessor';
 import { oldManifest } from '../../helpers/font/oldManifest';
 import { FontConfig } from '../../helpers/font/types';
 import { getOutputDirectories } from '../../helpers/getOutputDirectories';
+import { getRelativePathForImport } from '../../helpers/getRelativePathForImport';
 import { getSvgMarkup } from '../../helpers/image/getSvgMarkup';
 import { ComponentSet } from '../../tools/ComponentSet';
 import { ComponentSetChild } from '../../tools/ComponentSetChild';
@@ -123,7 +124,7 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
     iconEntries.map(async ([iconType, iconComponentSets]) => {
       const groupType = `${iconType}Icon`; // Prepend Icon to iconType to be more explicit
       const groupTypeInPascalCase = pascalCase(groupType); // convert uiIcon to UiIcon and navIcon to NavIcon
-      const { dataDir, svgDir, typesDir } = getOutputDirectories({
+      const { dataDir, svgDir, typescriptDir } = getOutputDirectories({
         type: iconType,
         generatedDirectory,
       });
@@ -139,7 +140,7 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
       const typescriptData = {
         exportName: `${groupTypeInPascalCase}Name`, // UiIconName, NavIconName
         get dest() {
-          return `${typesDir}/${this.exportName}.ts`;
+          return `${typescriptDir}/${this.exportName}.ts`;
         },
         get content() {
           return typescriptTypesTemplate`
@@ -153,14 +154,19 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
       const websiteSheetData = {
         dest: `${dataDir}/names.ts`,
         get content() {
+          const destDir = path.dirname(this.dest);
+          const relativeTypes = getRelativePathForImport(destDir, typescriptData.dest);
+
           return tokensSortedTemplate`
             ${codegenHeader}
           
+            import type { ${typescriptData.exportName} } from '${relativeTypes}';
+
             /** 
              * An array of all ${groupTypeInPascalCase} icons.
              * This is being used to display a sheet of all ${groupTypeInPascalCase} illustration on the CDS website.
              */
-            const names = ${componentSetChildren.map(getSvgName)} as const;
+            const names: ${typescriptData.exportName}[] = ${componentSetChildren.map(getSvgName)};
 
             export default names;
           `;

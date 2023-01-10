@@ -11,13 +11,14 @@ export function getOutputDirectories<T>({
   const pngDir = `${typeDir}/png`;
   const svgDir = `${typeDir}/svg`;
   const svgJsDir = `${typeDir}/svgJs`;
-  const typesDir = `${typeDir}/types`;
+  const typescriptDir = `${typeDir}/types`;
 
   return {
+    typeDir,
     dataDir,
     pngDir,
     svgDir,
     svgJsDir,
-    typesDir,
+    typescriptDir,
   };
 }
