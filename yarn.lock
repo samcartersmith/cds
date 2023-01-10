@@ -242,7 +242,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/cli@npm:^7.17.10, @babel/cli@npm:^7.19.3":
+"@babel/cli@npm:^7.19.3":
   version: 7.19.3
   resolution: "@babel/cli@npm:7.19.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40babel%2Fcli%2F-%2Fcli-7.19.3.tgz"
   dependencies:
@@ -1707,7 +1707,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:>=7, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.15.6, @babel/preset-env@npm:^7.16.11, @babel/preset-env@npm:^7.18.2, @babel/preset-env@npm:^7.19.0, @babel/preset-env@npm:^7.19.4, @babel/preset-env@npm:^7.20.2":
+"@babel/preset-env@npm:>=7, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.15.6, @babel/preset-env@npm:^7.16.11, @babel/preset-env@npm:^7.19.0, @babel/preset-env@npm:^7.19.4, @babel/preset-env@npm:^7.20.2":
   version: 7.20.2
   resolution: "@babel/preset-env@npm:7.20.2::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40babel%2Fpreset-env%2F-%2Fpreset-env-7.20.2.tgz"
   dependencies:
@@ -1792,7 +1792,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-flow@npm:^7.12.1, @babel/preset-flow@npm:^7.13.13, @babel/preset-flow@npm:^7.17.12, @babel/preset-flow@npm:^7.18.6":
+"@babel/preset-flow@npm:^7.12.1, @babel/preset-flow@npm:^7.13.13, @babel/preset-flow@npm:^7.18.6":
   version: 7.18.6
   resolution: "@babel/preset-flow@npm:7.18.6"
   dependencies:
@@ -1820,7 +1820,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-react@npm:^7.12.10, @babel/preset-react@npm:^7.14.5, @babel/preset-react@npm:^7.16.7, @babel/preset-react@npm:^7.17.12, @babel/preset-react@npm:^7.18.6":
+"@babel/preset-react@npm:^7.12.10, @babel/preset-react@npm:^7.14.5, @babel/preset-react@npm:^7.16.7, @babel/preset-react@npm:^7.18.6":
   version: 7.18.6
   resolution: "@babel/preset-react@npm:7.18.6"
   dependencies:
@@ -1836,7 +1836,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-typescript@npm:^7.12.16, @babel/preset-typescript@npm:^7.12.7, @babel/preset-typescript@npm:^7.13.0, @babel/preset-typescript@npm:^7.15.0, @babel/preset-typescript@npm:^7.16.7, @babel/preset-typescript@npm:^7.17.12, @babel/preset-typescript@npm:^7.18.6":
+"@babel/preset-typescript@npm:^7.12.16, @babel/preset-typescript@npm:^7.12.7, @babel/preset-typescript@npm:^7.13.0, @babel/preset-typescript@npm:^7.15.0, @babel/preset-typescript@npm:^7.16.7, @babel/preset-typescript@npm:^7.18.6":
   version: 7.18.6
   resolution: "@babel/preset-typescript@npm:7.18.6"
   dependencies:
@@ -2616,7 +2616,7 @@ __metadata:
   resolution: "@cbhq/figma-tasks@workspace:packages/figma-tasks"
   dependencies:
     "@cbhq/figma-api": "workspace:^"
-    "@cbhq/mono-tasks": ^0.5.2
+    "@cbhq/mono-tasks": ^0.6.5
     "@cbhq/script-utils": "workspace:^"
     "@types/sharp": ^0.31.0
     "@types/svgo": ^2.6.4
@@ -2731,30 +2731,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/mono-tasks@npm:^0.5.2":
-  version: 0.5.2
-  resolution: "@cbhq/mono-tasks@npm:0.5.2::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40cbhq%252fmono-tasks%2F-%2Fmono-tasks-0.5.2.tgz"
+"@cbhq/mono-tasks@npm:^0.6.5":
+  version: 0.6.5
+  resolution: "@cbhq/mono-tasks@npm:0.6.5::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-tasks%2F-%2F%40cbhq%2Fmono-tasks-0.6.5.tgz"
   dependencies:
-    "@babel/cli": ^7.17.10
-    "@babel/core": ^7.18.5
-    "@babel/preset-env": ^7.18.2
-    "@babel/preset-flow": ^7.17.12
-    "@babel/preset-react": ^7.17.12
-    "@babel/preset-typescript": ^7.17.12
+    "@babel/cli": ^7.19.3
+    "@babel/core": ^7.20.2
+    "@babel/preset-env": ^7.20.2
+    "@babel/preset-flow": ^7.18.6
+    "@babel/preset-react": ^7.18.6
+    "@babel/preset-typescript": ^7.18.6
     "@boost/common": ^4.0.0
     "@cbhq/cca": ^3.6.1
     "@graphql-tools/stitch": ^8.7.6
     "@graphql-tools/wrap": ^9.0.4
-    "@nrwl/devkit": ^15.0.0
-    babel-jest: ^29.0.1
+    "@nrwl/devkit": ^15.0.9
+    babel-jest: ^29.3.0
     chalk: ^4.1.2
     execa: ^5.1.1
     node-fetch: ^2.6.7
     packemon: ^2.4.1
     proper-lockfile: ^4.1.2
     semver: ^7.3.5
-    ts-node: ^10.8.1
-    tsconfig-paths: ^3.14.1
+    ts-node: ^10.9.1
+    tsconfig-paths: ^4.1.0
     update-notifier: ^5.1.0
   peerDependencies:
     "@cbhq/mono-env": ">=0.2.0"
@@ -2793,7 +2793,7 @@ __metadata:
       optional: true
     webpack:
       optional: true
-  checksum: 4f8ebf1d2e82e9ff5e87e534f672529767d5ead339559e7ad90357f3abb61b7df13bcf116a67e84e91c2dae3a731ba53b6341b76325685db4459a7835a13a23e
+  checksum: eb2b1f7555d2b828ba2523d4848d04a38af7fadafbf2d682594a80250de839780cbd1b3948324cf6eb0e7aa168cbe692571ac64e0796ad3bf4eb4c5e1e96067b
   languageName: node
   linkType: hard
 
@@ -4597,26 +4597,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/transform@npm:^29.0.3, @jest/transform@npm:^29.2.2":
-  version: 29.2.2
-  resolution: "@jest/transform@npm:29.2.2::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40jest%252ftransform%2F-%2Ftransform-29.2.2.tgz"
+"@jest/transform@npm:^29.0.3, @jest/transform@npm:^29.3.1":
+  version: 29.3.1
+  resolution: "@jest/transform@npm:29.3.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Ftransform%2F-%2Ftransform-29.3.1.tgz"
   dependencies:
     "@babel/core": ^7.11.6
-    "@jest/types": ^29.2.1
+    "@jest/types": ^29.3.1
     "@jridgewell/trace-mapping": ^0.3.15
     babel-plugin-istanbul: ^6.1.1
     chalk: ^4.0.0
-    convert-source-map: ^1.4.0
+    convert-source-map: ^2.0.0
     fast-json-stable-stringify: ^2.1.0
     graceful-fs: ^4.2.9
-    jest-haste-map: ^29.2.1
+    jest-haste-map: ^29.3.1
     jest-regex-util: ^29.2.0
-    jest-util: ^29.2.1
+    jest-util: ^29.3.1
     micromatch: ^4.0.4
     pirates: ^4.0.4
     slash: ^3.0.0
     write-file-atomic: ^4.0.1
-  checksum: ac12069100c260d1c46e5048bbad35bf0b5408592b918692b87a52c1c0c0e189c9f37ecf48dbcaa6f00ef083e1bc68201844999e1c0f66cd4d9b70127bf77537
+  checksum: 673df5900ffc95bc811084e09d6e47948034dea6ab6cc4f81f80977e3a52468a6c2284d0ba9796daf25a62ae50d12f7e97fc9a3a0c587f11f2a479ff5493ca53
   languageName: node
   linkType: hard
 
@@ -4660,9 +4660,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/types@npm:^29.0.3, @jest/types@npm:^29.1.2, @jest/types@npm:^29.2.1":
-  version: 29.2.1
-  resolution: "@jest/types@npm:29.2.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40jest%252ftypes%2F-%2Ftypes-29.2.1.tgz"
+"@jest/types@npm:^29.0.3, @jest/types@npm:^29.1.2, @jest/types@npm:^29.3.1":
+  version: 29.3.1
+  resolution: "@jest/types@npm:29.3.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Ftypes%2F-%2Ftypes-29.3.1.tgz"
   dependencies:
     "@jest/schemas": ^29.0.0
     "@types/istanbul-lib-coverage": ^2.0.0
@@ -4670,7 +4670,7 @@ __metadata:
     "@types/node": "*"
     "@types/yargs": ^17.0.8
     chalk: ^4.0.0
-  checksum: a83f20727425179aa05974aa7553c307d207fbb6b7ae5ab1e37fbb6ba9b6655f26655301fc804f2545d33f4c4a6b59d41eed1737c005d2b83fce9e14841b4150
+  checksum: 6f9faf27507b845ff3839c1adc6dbd038d7046d03d37e84c9fc956f60718711a801a5094c7eeee6b39ccf42c0ab61347fdc0fa49ab493ae5a8efd2fd41228ee8
   languageName: node
   linkType: hard
 
@@ -5026,7 +5026,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/devkit@npm:15.0.8, @nrwl/devkit@npm:^15.0.0":
+"@nrwl/devkit@npm:15.0.8":
   version: 15.0.8
   resolution: "@nrwl/devkit@npm:15.0.8::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fdevkit%2F-%2Fdevkit-15.0.8.tgz"
   dependencies:
@@ -5038,6 +5038,21 @@ __metadata:
   peerDependencies:
     nx: ">= 14 <= 16"
   checksum: c371182949f6f51acbbc99b4b1d0407eb294d71a4b1478fa49d87794e7be1bc5591630db958165f21eb2b0f9a8eb2e0dc444ca846c2f7321b44374702f24da86
+  languageName: node
+  linkType: hard
+
+"@nrwl/devkit@npm:^15.0.0, @nrwl/devkit@npm:^15.0.9":
+  version: 15.4.5
+  resolution: "@nrwl/devkit@npm:15.4.5::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fdevkit%2F-%2Fdevkit-15.4.5.tgz"
+  dependencies:
+    "@phenomnomnominal/tsquery": 4.1.1
+    ejs: ^3.1.7
+    ignore: ^5.0.4
+    semver: 7.3.4
+    tslib: ^2.3.0
+  peerDependencies:
+    nx: ">= 14 <= 16"
+  checksum: 90d10ab7fbd65c2fdb8adacfcb6676eb96ba654444effd176f83bb41cae88f97e2acdc97ea3b853555faa9f42721f79c8c7e630466f2a4a6aac39bacf74f18d4
   languageName: node
   linkType: hard
 
@@ -11088,11 +11103,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-jest@npm:^29.0.1":
-  version: 29.2.2
-  resolution: "babel-jest@npm:29.2.2::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2Fbabel-jest%2F-%2Fbabel-jest-29.2.2.tgz"
+"babel-jest@npm:^29.3.0":
+  version: 29.3.1
+  resolution: "babel-jest@npm:29.3.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fbabel-jest%2F-%2Fbabel-jest-29.3.1.tgz"
   dependencies:
-    "@jest/transform": ^29.2.2
+    "@jest/transform": ^29.3.1
     "@types/babel__core": ^7.1.14
     babel-plugin-istanbul: ^6.1.1
     babel-preset-jest: ^29.2.0
@@ -11101,7 +11116,7 @@ __metadata:
     slash: ^3.0.0
   peerDependencies:
     "@babel/core": ^7.8.0
-  checksum: 35f0eb895ab9218b55cacedbfe62dd94c99924d89a0a8096354c4fbb4c8465c0a2c4aba82e5bedf367def6c89635f4f134c7ebc22f07b6f9c930f7b43b7bbdde
+  checksum: 793848238a771a931ddeb5930b9ec8ab800522ac8d64933665698f4a39603d157e572e20b57d79610277e1df88d3ee82b180d59a21f3570388f602beeb38a595
   languageName: node
   linkType: hard
 
@@ -13480,6 +13495,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"convert-source-map@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "convert-source-map@npm:2.0.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fconvert-source-map%2F-%2Fconvert-source-map-2.0.0.tgz"
+  checksum: 63ae9933be5a2b8d4509daca5124e20c14d023c820258e484e32dc324d34c2754e71297c94a05784064ad27615037ef677e3f0c00469fb55f409d2bb21261035
+  languageName: node
+  linkType: hard
+
 "convert-to-spaces@npm:^1.0.1":
   version: 1.0.2
   resolution: "convert-to-spaces@npm:1.0.2"
@@ -14913,7 +14935,7 @@ __metadata:
     "@cbhq/jest-preset-mobile": ^0.2.0
     "@cbhq/mono-env": ^0.2.16
     "@cbhq/mono-pipeline": ^0.11.4
-    "@cbhq/mono-tasks": ^0.5.2
+    "@cbhq/mono-tasks": ^0.6.5
     "@cbhq/mono-tasks-mobile": ^0.3.7
     "@cbhq/mono-templates": ^0.3.1
     "@joshcena/docusaurus-plugin-utils": ^0.1.3
@@ -21533,11 +21555,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-haste-map@npm:^29.0.3, jest-haste-map@npm:^29.2.1":
-  version: 29.2.1
-  resolution: "jest-haste-map@npm:29.2.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2Fjest-haste-map%2F-%2Fjest-haste-map-29.2.1.tgz"
+"jest-haste-map@npm:^29.0.3, jest-haste-map@npm:^29.3.1":
+  version: 29.3.1
+  resolution: "jest-haste-map@npm:29.3.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-haste-map%2F-%2Fjest-haste-map-29.3.1.tgz"
   dependencies:
-    "@jest/types": ^29.2.1
+    "@jest/types": ^29.3.1
     "@types/graceful-fs": ^4.1.3
     "@types/node": "*"
     anymatch: ^3.0.3
@@ -21545,14 +21567,14 @@ __metadata:
     fsevents: ^2.3.2
     graceful-fs: ^4.2.9
     jest-regex-util: ^29.2.0
-    jest-util: ^29.2.1
-    jest-worker: ^29.2.1
+    jest-util: ^29.3.1
+    jest-worker: ^29.3.1
     micromatch: ^4.0.4
     walker: ^1.0.8
   dependenciesMeta:
     fsevents:
       optional: true
-  checksum: 1880e5dd12b83c8ffbd527b80c81bd694a9018ed003d1ecc72ed4e1a0c2be0bc2a26a96c7439c4be8954912cd01ecaea807d2739b24d2ac7dd23f5aa672d9da1
+  checksum: 97ea26af0c28a2ba568c9c65d06211487bbcd501cb4944f9d55e07fd2b00ad96653ea2cc9033f3d5b7dc1feda33e47ae9cc56b400191ea4533be213c9f82e67c
   languageName: node
   linkType: hard
 
@@ -22077,17 +22099,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-util@npm:^29.0.3, jest-util@npm:^29.1.2, jest-util@npm:^29.2.1":
-  version: 29.2.1
-  resolution: "jest-util@npm:29.2.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2Fjest-util%2F-%2Fjest-util-29.2.1.tgz"
+"jest-util@npm:^29.0.3, jest-util@npm:^29.1.2, jest-util@npm:^29.3.1":
+  version: 29.3.1
+  resolution: "jest-util@npm:29.3.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-util%2F-%2Fjest-util-29.3.1.tgz"
   dependencies:
-    "@jest/types": ^29.2.1
+    "@jest/types": ^29.3.1
     "@types/node": "*"
     chalk: ^4.0.0
     ci-info: ^3.2.0
     graceful-fs: ^4.2.9
     picomatch: ^2.2.3
-  checksum: 781bd14a65599d24b7449877020f4da32e8cb8fbc31c4e849c589ffde58f0eec27de9f690dba182e3ca369fe651c0bb9c307de29a0927d12777677ded56bafb8
+  checksum: f67c60f062b94d21cb60e84b3b812d64b7bfa81fe980151de5c17a74eb666042d0134e2e756d099b7606a1fcf1d633824d2e58197d01d76dde1e2dc00dfcd413
   languageName: node
   linkType: hard
 
@@ -22215,15 +22237,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-worker@npm:^29.2.1":
-  version: 29.2.1
-  resolution: "jest-worker@npm:29.2.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2Fjest-worker%2F-%2Fjest-worker-29.2.1.tgz"
+"jest-worker@npm:^29.3.1":
+  version: 29.3.1
+  resolution: "jest-worker@npm:29.3.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-worker%2F-%2Fjest-worker-29.3.1.tgz"
   dependencies:
     "@types/node": "*"
-    jest-util: ^29.2.1
+    jest-util: ^29.3.1
     merge-stream: ^2.0.0
     supports-color: ^8.0.0
-  checksum: 10365612fae02412376e963de9f069d854deaf5aec8ff818ce49c299cd0373256a387a2da68db8225fb0f18483f2cc9072a52d1846881d44b756b1e36bc7f4ed
+  checksum: 38687fcbdc2b7ddc70bbb5dfc703ae095b46b3c7f206d62ecdf5f4d16e336178e217302138f3b906125576bb1cfe4cfe8d43681276fa5899d138ed9422099fb3
   languageName: node
   linkType: hard
 
@@ -22563,12 +22585,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.1.0, json5@npm:^2.1.2, json5@npm:^2.1.3, json5@npm:^2.2.0, json5@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "json5@npm:2.2.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2Fjson5%2F-%2Fjson5-2.2.1.tgz"
+"json5@npm:^2.1.0, json5@npm:^2.1.2, json5@npm:^2.1.3, json5@npm:^2.2.0, json5@npm:^2.2.1, json5@npm:^2.2.2":
+  version: 2.2.3
+  resolution: "json5@npm:2.2.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjson5%2F-%2Fjson5-2.2.3.tgz"
   bin:
     json5: lib/cli.js
-  checksum: 74b8a23b102a6f2bf2d224797ae553a75488b5adbaee9c9b6e5ab8b510a2fc6e38f876d4c77dea672d4014a44b2399e15f2051ac2b37b87f74c0c7602003543b
+  checksum: 2a7436a93393830bce797d4626275152e37e877b265e94ca69c99e3d20c2b9dab021279146a39cdb700e71b2dd32a4cebd1514cd57cee102b1af906ce5040349
   languageName: node
   linkType: hard
 
@@ -33874,7 +33896,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:^10.0.0, ts-node@npm:^10.7.0, ts-node@npm:^10.8.1":
+"ts-node@npm:^10.0.0, ts-node@npm:^10.7.0, ts-node@npm:^10.9.1":
   version: 10.9.1
   resolution: "ts-node@npm:10.9.1"
   dependencies:
@@ -33929,7 +33951,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig-paths@npm:^3.12.0, tsconfig-paths@npm:^3.14.1, tsconfig-paths@npm:^3.9.0":
+"tsconfig-paths@npm:^3.12.0, tsconfig-paths@npm:^3.9.0":
   version: 3.14.1
   resolution: "tsconfig-paths@npm:3.14.1"
   dependencies:
@@ -33941,14 +33963,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig-paths@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "tsconfig-paths@npm:4.0.0"
+"tsconfig-paths@npm:^4.0.0, tsconfig-paths@npm:^4.1.0":
+  version: 4.1.2
+  resolution: "tsconfig-paths@npm:4.1.2::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ftsconfig-paths%2F-%2Ftsconfig-paths-4.1.2.tgz"
   dependencies:
-    json5: ^2.2.1
+    json5: ^2.2.2
     minimist: ^1.2.6
     strip-bom: ^3.0.0
-  checksum: a8cf746ffe438513a71c70c1bcdee8da7d62ab2af286efbe2728ff55c4d4c92c2aea80a0822982ded6d0a13c7686c24632934d7c0f4f564be9e1b2cdc3d65eea
+  checksum: 3d9151ecea139594e25618717de15769ab9f38f8e6d510ac16e592b23e7f7105ea13cec5694c3de7e132c98277b775e18edd1651964164ee6d75737c408494cc
   languageName: node
   linkType: hard
 

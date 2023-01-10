@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@cbhq/figma-api": "workspace:^",
-    "@cbhq/mono-tasks": "^0.5.2",
+    "@cbhq/mono-tasks": "^0.6.5",
     "@cbhq/script-utils": "workspace:^",
     "@types/svgo": "^2.6.4",
     "lodash": "^4.17.21",
