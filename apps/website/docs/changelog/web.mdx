@@ -8,6 +8,29 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.6.0 (1/10/2023, 02:54 PM PST)
+
+#### 🚀 Updates
+
+- **[Sidebar]** Make 'logo' prop optional. [#1484](https://github.cbhq.net/frontend/cds/pull/1484), [CDS-3011](https://jira.coinbase-corp.com/browse/CDS-3011)
+
+#### 🐞 Fixes
+
+- Object memoization. [#1504](https://github.cbhq.net/frontend/cds/pull/1504)
+- **[Cell]** Ran codegen to update more specific responsive cell styles. [#1489](https://github.cbhq.net/frontend/cds/pull/1489), [CDS-2995](https://jira.coinbase-corp.com/browse/CDS-2995)
+- Add hexagon to CDS Avatar. [#1447](https://github.cbhq.net/frontend/cds/pull/1447), [WALL-17455](https://jira.coinbase-corp.com/browse/WALL-17455)
+- **[TextComponents]** Handle word breaks for mobile web. [#1483](https://github.cbhq.net/frontend/cds/pull/1483), [CDS-3007](https://jira.coinbase-corp.com/browse/CDS-3007)
+- **[Toast]** Lift alert role attr so toasts announce all content. [#1474](https://github.cbhq.net/frontend/cds/pull/1474), [A11Y-228](https://jira.coinbase-corp.com/browse/A11Y-228)
+- **[Illustration]** Update sorted order to use lastUpdated timestamp. [#1475](https://github.cbhq.net/frontend/cds/pull/1475), [CDS-2993](https://jira.coinbase-corp.com/browse/CDS-2993)
+- **[TableRow]** Fix incorrect outerSpacing type. [#1470](https://github.cbhq.net/frontend/cds/pull/1470)
+
+#### 📘 Misc
+
+- **[createIllustrationStories]** Refactor generateIllustrationStories. Separate the logic for web and mobile. [#1497](https://github.cbhq.net/frontend/cds/pull/1497)
+- **[Icon Story]** Group Icon Percy such that it is based on variant. [#1490](https://github.cbhq.net/frontend/cds/pull/1490)
+- **[Illustration Storybook]** Chunk Illustrations on Storybook such that it is separated by Variant. [#1488](https://github.cbhq.net/frontend/cds/pull/1488)
+- **[TableBody, TableRow, TableCell, TableHeader, TableFooter]** Clean up duplicate examples and language. [#1469](https://github.cbhq.net/frontend/cds/pull/1469)
+
 ## 3.5.0 (12/14/2022, 01:57 PM PST)
 
 #### 🚀 Updates

@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.6.0 (1/10/2023, 02:54 PM PST)
+
+#### 🐞 Fixes
+
+- Add hexagon to CDS Avatar. [#1447](https://github.cbhq.net/frontend/cds/pull/1447), [WALL-17455](https://jira.coinbase-corp.com/browse/WALL-17455)
+- **[Illustration]** Update sorted order to use lastUpdated timestamp. [#1475](https://github.cbhq.net/frontend/cds/pull/1475), [CDS-2993](https://jira.coinbase-corp.com/browse/CDS-2993)
+
+#### 📘 Misc
+
+- **[Icon Story]** Group Icon Percy such that it is based on variant. [#1490](https://github.cbhq.net/frontend/cds/pull/1490)
+- **[Illustration Storybook]** Chunk Illustrations on Storybook such that it is separated by Variant. [#1488](https://github.cbhq.net/frontend/cds/pull/1488)
+
 ## 3.5.0 (12/14/2022, 01:57 PM PST)
 
 #### 🐞 Fixes

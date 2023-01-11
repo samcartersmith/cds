@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.6.0 (1/10/2023, 02:54 PM PST)
+
+#### 🐞 Fixes
+
+- Object memoization. [#1504](https://github.cbhq.net/frontend/cds/pull/1504)
+- Add hexagon to CDS Avatar. [#1447](https://github.cbhq.net/frontend/cds/pull/1447), [WALL-17455](https://jira.coinbase-corp.com/browse/WALL-17455)
+
 ## 3.5.0 (12/14/2022, 01:57 PM PST)
 
 #### 🐞 Fixes
