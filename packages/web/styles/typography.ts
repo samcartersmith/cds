@@ -62,10 +62,13 @@ const overflow: CSSMap<TextProps['overflow']> = {
   `,
   break: css`
     /**
-     * Fallback for mobile safari 
+     * Fallback for mobile safari on iOS < 15.4
      * @link https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap#browser_compatibility 
      */
-    overflow-wrap: break-word;
+    @supports not (overflow-wrap: anywhere) {
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
 
     /* Desktop solution */
     overflow-wrap: anywhere;
