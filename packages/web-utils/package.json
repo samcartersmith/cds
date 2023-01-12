@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Jest utils and developer tools.",
   "dependencies": {
-    "@babel/types": "^7.20.7",
+    "@babel/types": "^7.20.2",
     "@cbhq/cds-tools": "workspace:*",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "chalk": "^4.1.0",
