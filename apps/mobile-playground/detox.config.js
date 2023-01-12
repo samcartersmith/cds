@@ -19,10 +19,6 @@ const disabledRoutes = {
     'Alerts', // pointless
     'TooltipV2', // pointless
     'Tray', // pointless
-    'HeroSquare' /** large; 29 scrolls @ 500 px scroll */,
-    'Pictogram' /** large; 29 scrolls @ 500 px scroll */,
-    'SpotRectangle' /** large; 45 scrolls @ 500 px scroll */,
-    'SpotSquare' /** large; 41 scrolls @ 500 px scroll */,
     'LottieStatusAnimation' /** Animation */,
     'Modal' /** Modal is displayed over expected screen */,
   ],

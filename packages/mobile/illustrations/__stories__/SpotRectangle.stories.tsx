@@ -1,35 +1,6 @@
-import React from 'react';
-import { illustrationBuilder } from '@cbhq/cds-common/internal/illustrationBuilder';
+import { getIllustrationSheet } from './getIllustrationSheet';
 
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { Box } from '../../layout/Box';
-import { HStack } from '../../layout/HStack';
-import { VStack } from '../../layout/VStack';
-import { TextLabel1 } from '../../typography/TextLabel1';
-import { HeroSquare } from '../HeroSquare';
-import { Pictogram } from '../Pictogram';
-import { SpotRectangle } from '../SpotRectangle';
-import { SpotSquare } from '../SpotSquare';
-
-const { ListSpotRectangles } = illustrationBuilder(
-  Pictogram,
-  SpotSquare,
-  SpotRectangle,
-  HeroSquare,
-  HStack,
-  VStack,
-  Box,
-  TextLabel1,
-);
-
-const SpotRectangleStory = () => {
-  return (
-    <ExampleScreen>
-      <Example title="Illustration - HeroSquare">
-        <ListSpotRectangles />
-      </Example>
-    </ExampleScreen>
-  );
-};
-
-export default SpotRectangleStory;
+export default getIllustrationSheet('spotRectangle', {
+  dimension: '240x120',
+  scaleMultiplier: 0.3, // render a 72x36 thumbnail
+});
