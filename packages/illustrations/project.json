@@ -47,6 +47,13 @@
         "generatedDirectory": "./src/__generated__"
       }
     },
+    "uploadToStaticAssets": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/illustrations",
+        "commands": ["./uploadToStaticAssets.sh"]
+      }
+    },
     "test": {
       "executor": "@cbhq/mono-tasks:test"
     },
