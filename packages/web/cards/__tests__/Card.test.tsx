@@ -1,42 +1,125 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { noop } from '@cbhq/cds-utils';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { FeatureFlagProvider } from '../../system';
 import { Card } from '../Card';
 
-describe('Card.test', () => {
-  it('renders', () => {
-    render(
-      <Card testID="test-card">
-        <div />
-      </Card>,
-    );
+const CARD_TEXT = 'Some cell text';
+const URL = 'https://www.google.com';
 
-    expect(screen.getByTestId('test-card')).toBeTruthy();
+describe('Card', () => {
+  it('passes accessibility', async () => {
+    expect(await renderA11y(<Card>{CARD_TEXT}</Card>)).toHaveNoViolations();
   });
 
-  it('triggers onPress', () => {
-    const onPress = jest.fn();
-    render(
-      <Card onPress={onPress} testID="test-card">
-        <div />
-      </Card>,
-    );
+  it('passes accessibility when a button', async () => {
+    expect(await renderA11y(<Card onPress={noop}>{CARD_TEXT}</Card>)).toHaveNoViolations();
+  });
 
-    fireEvent.click(screen.getByTestId('test-card'));
+  it('passes accessibility when a link', async () => {
+    expect(await renderA11y(<Card to={URL}>{CARD_TEXT}</Card>)).toHaveNoViolations();
+  });
 
-    expect(onPress).toHaveBeenCalledTimes(1);
+  it('renders children', () => {
+    render(<Card>{CARD_TEXT}</Card>);
+
+    expect(screen.getByText(CARD_TEXT)).toBeVisible();
   });
 
   it('renders frontier', () => {
-    const onPress = jest.fn();
     render(
       <FeatureFlagProvider frontierCard>
-        <Card onPress={onPress} testID="test-card">
-          <div />
-        </Card>
+        <Card onPress={noop}>{CARD_TEXT}</Card>
       </FeatureFlagProvider>,
     );
 
-    expect(screen.getByTestId('test-card')).toBeTruthy();
+    expect(screen.getByText(CARD_TEXT)).toBeVisible();
+  });
+
+  it('renders button when onPress is defined', () => {
+    render(<Card onPress={noop}>{CARD_TEXT}</Card>);
+
+    expect(screen.getByRole('button')).toBeVisible();
+  });
+
+  it('renders button when onKeyPress is defined', () => {
+    render(<Card onKeyPress={noop}>{CARD_TEXT}</Card>);
+
+    expect(screen.getByRole('button')).toBeVisible();
+  });
+
+  it('renders link when to is set with a url', () => {
+    render(<Card to={URL}>{CARD_TEXT}</Card>);
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', URL);
+  });
+
+  it('renders link when href is set with a url', () => {
+    render(<Card href={URL}>{CARD_TEXT}</Card>);
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', URL);
+  });
+
+  it('renders link when pressable callback is defined but to is set with a url', () => {
+    render(
+      <Card onPress={noop} to={URL}>
+        {CARD_TEXT}
+      </Card>,
+    );
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', URL);
+  });
+
+  it('renders link when pressable callback is defined but href is set with a url', () => {
+    render(
+      <Card onPress={noop} href={URL}>
+        {CARD_TEXT}
+      </Card>,
+    );
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', URL);
+  });
+
+  it('sets target on link when target is defined', () => {
+    const target = '_blank';
+
+    render(
+      <Card to={URL} target={target}>
+        {CARD_TEXT}
+      </Card>,
+    );
+
+    expect(screen.getByRole('link')).toHaveAttribute('target', target);
+  });
+
+  it('fires onPress', () => {
+    const onPressSpy = jest.fn();
+
+    render(<Card onPress={onPressSpy}>{CARD_TEXT}</Card>);
+    fireEvent.click(screen.getByRole('button'));
+
+    expect(onPressSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('fires onKeyPress', () => {
+    const onKeyPressSpy = jest.fn();
+
+    render(<Card onKeyPress={onKeyPressSpy}>{CARD_TEXT}</Card>);
+    fireEvent.keyPress(screen.getByRole('button'), { charCode: 13 });
+
+    expect(onKeyPressSpy).toHaveBeenCalledTimes(1);
   });
 });

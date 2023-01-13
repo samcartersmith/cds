@@ -31,7 +31,10 @@ export const Card: React.FC<CardProps> = memo(
     elevation = 1,
     size = 'large',
     onPress,
+    onKeyPress,
     to,
+    target,
+    href,
     pin,
     width: widthProps,
     height: heightProps,
@@ -43,7 +46,7 @@ export const Card: React.FC<CardProps> = memo(
     const height = heightProps ?? cardSizes[size].height;
     const bg = background === true ? 'background' : background;
     const pinStyles = usePinStyles(pin);
-    const linkable = Boolean(onPress ?? to);
+    const linkable = Boolean(onPress ?? onKeyPress ?? to ?? href);
     const borderColor = isFrontier ? undefined : 'line';
     const borderRadius = isFrontier ? undefined : 'standard';
 
@@ -91,8 +94,11 @@ export const Card: React.FC<CardProps> = memo(
         borderWidth={getBorderWidth('card')}
         elevation={getElevation(elevation)}
         onPress={onPress}
+        onKeyPress={onKeyPress}
         className={cx(cardPressableStyles, pinStyles)}
         to={to}
+        target={target}
+        href={href}
         width={width}
         height={height}
         testID={testID}

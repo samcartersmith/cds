@@ -92,12 +92,15 @@ export const Cell = memo(
       minHeight,
       maxHeight,
       onPress,
+      onKeyDown,
+      onKeyPress,
       priority,
       selected,
       testID,
       to,
+      target,
+      href,
       tabIndex,
-      onKeyDown,
       /**
        * For TableCell, we don't want to apply an
        * overflow class unless we've defined overflow
@@ -115,7 +118,7 @@ export const Cell = memo(
     const offsetClassName = useOffsetStyles({ offsetHorizontal: spacing.inner.offsetHorizontal });
     const { responsiveInnerSpacing, responsiveOuterSpacing } =
       useResponsiveCellSpacingStyles(responsiveConfig);
-    const linkable = Boolean(onPress ?? to);
+    const linkable = Boolean(onPress ?? onKeyDown ?? onKeyPress ?? to ?? href);
     const maybeTruncateClassName = cx(
       cellStaticClassName,
       baseStyles,
@@ -189,7 +192,7 @@ export const Cell = memo(
       </HStack>
     );
 
-    if (onPress || to) {
+    if (linkable) {
       content = (
         <Pressable
           noScaleOnPress
@@ -199,7 +202,10 @@ export const Cell = memo(
           disabled={disabled}
           onPress={onPress}
           onKeyDown={onKeyDown}
+          onKeyPress={onKeyPress}
           to={to}
+          target={target}
+          href={href}
           className={cx(pressClassName, offsetClassName, insetFocusRing)}
           tabIndex={tabIndex}
           testID={testID && `${testID}-cell-pressable`}

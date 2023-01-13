@@ -1,9 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { noop } from '@cbhq/cds-utils';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Button } from '../../buttons';
 import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
+
+const URL = 'https://www.google.com';
 
 describe('ListCell', () => {
   it('passes accessibility', async () => {
@@ -14,45 +17,163 @@ describe('ListCell', () => {
     ).toHaveNoViolations();
   });
 
+  it('passes accessibility when a button', async () => {
+    expect(
+      await renderA11y(
+        <ListCell
+          onPress={noop}
+          title="Title"
+          description="Description"
+          detail="Detail"
+          subdetail="Subdetail"
+        />,
+      ),
+    ).toHaveNoViolations();
+  });
+
+  it('passes accessibility when a link', async () => {
+    expect(
+      await renderA11y(
+        <ListCell
+          to={URL}
+          title="Title"
+          description="Description"
+          detail="Detail"
+          subdetail="Subdetail"
+        />,
+      ),
+    ).toHaveNoViolations();
+  });
+
   it('renders a title', () => {
     render(<ListCell title={<div data-testid="title">Title</div>} />);
 
-    expect(screen.getByTestId('title')).not.toBeNull();
+    expect(screen.getByTestId('title')).toBeVisible();
   });
 
   it('renders a description', () => {
     render(<ListCell description={<div data-testid="description">Description</div>} />);
 
-    expect(screen.getByTestId('description')).not.toBeNull();
+    expect(screen.getByTestId('description')).toBeVisible();
   });
 
   it('renders a detail', () => {
     render(<ListCell detail={<div data-testid="detail">Detail</div>} />);
 
-    expect(screen.getByTestId('detail')).not.toBeNull();
+    expect(screen.getByTestId('detail')).toBeVisible();
   });
 
   it('renders a subdetail', () => {
     render(<ListCell title="Title" subdetail={<div data-testid="subdetail">Subdetail</div>} />);
 
-    expect(screen.getByTestId('subdetail')).not.toBeNull();
+    expect(screen.getByTestId('subdetail')).toBeVisible();
   });
 
   it('renders media', () => {
     render(<ListCell media={<CellMedia type="icon" name="add" testID="media" />} />);
 
-    expect(screen.getByTestId('media')).not.toBeNull();
+    expect(screen.getByTestId('media')).toBeVisible();
   });
 
   it('renders an accessory', () => {
     render(<ListCell accessory="arrow" />);
 
-    expect(screen.getByTestId('accessory')).not.toBeNull();
+    expect(screen.getByTestId('accessory')).toBeVisible();
   });
+
   it('renders an action', () => {
     const button = <Button data-testid="button">Test</Button>;
     render(<ListCell action={button} />);
 
-    expect(screen.getByTestId('button')).not.toBeNull();
+    expect(screen.getByTestId('button')).toBeVisible();
+  });
+
+  it('renders button when onPress is defined', () => {
+    render(<ListCell onPress={noop} />);
+
+    expect(screen.getByRole('button')).toBeVisible();
+  });
+
+  it('renders button when onKeyPress is defined', () => {
+    render(<ListCell onKeyPress={noop} />);
+
+    expect(screen.getByRole('button')).toBeVisible();
+  });
+
+  it('renders button when onKeyDown is defined', () => {
+    render(<ListCell onKeyDown={noop} />);
+
+    expect(screen.getByRole('button')).toBeVisible();
+  });
+
+  it('renders link when to is set with a url', () => {
+    render(<ListCell to={URL} />);
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', URL);
+  });
+
+  it('renders link when href is set with a url', () => {
+    render(<ListCell href={URL} />);
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', URL);
+  });
+
+  it('renders link when pressable callback is defined but to is set with a url', () => {
+    render(<ListCell onPress={noop} to={URL} />);
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', URL);
+  });
+
+  it('renders link when pressable callback is defined but href is set with a url', () => {
+    render(<ListCell onPress={noop} href={URL} />);
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', URL);
+  });
+
+  it('sets target on link when target is defined', () => {
+    const target = '_blank';
+
+    render(<ListCell to={URL} target={target} />);
+
+    expect(screen.getByRole('link')).toHaveAttribute('target', target);
+  });
+
+  it('fires onPress', () => {
+    const onPressSpy = jest.fn();
+
+    render(<ListCell onPress={onPressSpy} />);
+    fireEvent.click(screen.getByRole('button'));
+
+    expect(onPressSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('fires onKeyPress', () => {
+    const onKeyPressSpy = jest.fn();
+
+    render(<ListCell onKeyPress={onKeyPressSpy} />);
+    fireEvent.keyPress(screen.getByRole('button'), { charCode: 13 });
+
+    expect(onKeyPressSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('fires onKeyDown', () => {
+    const onKeyDownSpy = jest.fn();
+
+    render(<ListCell onKeyDown={onKeyDownSpy} />);
+    fireEvent.keyDown(screen.getByRole('button'), { charCode: 13 });
+
+    expect(onKeyDownSpy).toHaveBeenCalledTimes(1);
   });
 });

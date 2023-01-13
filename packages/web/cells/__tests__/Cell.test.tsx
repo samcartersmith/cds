@@ -1,0 +1,154 @@
+import { fireEvent, render, screen } from '@testing-library/react';
+import { noop } from '@cbhq/cds-utils';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
+
+import { Cell } from '../Cell';
+
+const CELL_TEXT = 'Some cell text';
+const EXPECTED_TEXT = 'Some expected text';
+const URL = 'https://www.google.com';
+
+describe('Cell', () => {
+  it('passes accessibility', async () => {
+    expect(await renderA11y(<Cell>{CELL_TEXT}</Cell>)).toHaveNoViolations();
+  });
+
+  it('passes accessibility when a button', async () => {
+    expect(await renderA11y(<Cell onPress={noop}>{CELL_TEXT}</Cell>)).toHaveNoViolations();
+  });
+
+  it('passes accessibility when a link', async () => {
+    expect(await renderA11y(<Cell to={URL}>{CELL_TEXT}</Cell>)).toHaveNoViolations();
+  });
+
+  it('renders children', () => {
+    render(<Cell>{CELL_TEXT}</Cell>);
+
+    expect(screen.getByText(CELL_TEXT)).toBeVisible();
+  });
+
+  it('renders media', () => {
+    render(<Cell media={<div>{EXPECTED_TEXT}</div>}>{CELL_TEXT}</Cell>);
+
+    expect(screen.getByText(EXPECTED_TEXT)).toBeVisible();
+  });
+
+  it('renders intermediary', () => {
+    render(<Cell intermediary={<div>{EXPECTED_TEXT}</div>}>{CELL_TEXT}</Cell>);
+
+    expect(screen.getByText(EXPECTED_TEXT)).toBeVisible();
+  });
+
+  it('renders detail', () => {
+    render(<Cell detail={<div>{EXPECTED_TEXT}</div>}>{CELL_TEXT}</Cell>);
+
+    expect(screen.getByText(EXPECTED_TEXT)).toBeVisible();
+  });
+
+  it('renders accessory', () => {
+    render(<Cell accessory={<div>{EXPECTED_TEXT}</div>}>{CELL_TEXT}</Cell>);
+
+    expect(screen.getByText(EXPECTED_TEXT)).toBeVisible();
+  });
+
+  it('renders button when onPress is defined', () => {
+    render(<Cell onPress={noop}>{CELL_TEXT}</Cell>);
+
+    expect(screen.getByRole('button')).toBeVisible();
+  });
+
+  it('renders button when onKeyPress is defined', () => {
+    render(<Cell onKeyPress={noop}>{CELL_TEXT}</Cell>);
+
+    expect(screen.getByRole('button')).toBeVisible();
+  });
+
+  it('renders button when onKeyDown is defined', () => {
+    render(<Cell onKeyDown={noop}>{CELL_TEXT}</Cell>);
+
+    expect(screen.getByRole('button')).toBeVisible();
+  });
+
+  it('renders link when to is set with a url', () => {
+    render(<Cell to={URL}>{CELL_TEXT}</Cell>);
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', URL);
+  });
+
+  it('renders link when href is set with a url', () => {
+    render(<Cell href={URL}>{CELL_TEXT}</Cell>);
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', URL);
+  });
+
+  it('renders link when pressable callback is defined but to is set with a url', () => {
+    render(
+      <Cell onPress={noop} to={URL}>
+        {CELL_TEXT}
+      </Cell>,
+    );
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', URL);
+  });
+
+  it('renders link when pressable callback is defined but href is set with a url', () => {
+    render(
+      <Cell onPress={noop} href={URL}>
+        {CELL_TEXT}
+      </Cell>,
+    );
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', URL);
+  });
+
+  it('sets target on link when target is defined', () => {
+    const target = '_blank';
+
+    render(
+      <Cell to={URL} target={target}>
+        {CELL_TEXT}
+      </Cell>,
+    );
+
+    expect(screen.getByRole('link')).toHaveAttribute('target', target);
+  });
+
+  it('fires onPress', () => {
+    const onPressSpy = jest.fn();
+
+    render(<Cell onPress={onPressSpy}>{CELL_TEXT}</Cell>);
+    fireEvent.click(screen.getByRole('button'));
+
+    expect(onPressSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('fires onKeyPress', () => {
+    const onKeyPressSpy = jest.fn();
+
+    render(<Cell onKeyPress={onKeyPressSpy}>{CELL_TEXT}</Cell>);
+    fireEvent.keyPress(screen.getByRole('button'), { charCode: 13 });
+
+    expect(onKeyPressSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('fires onKeyDown', () => {
+    const onKeyDownSpy = jest.fn();
+
+    render(<Cell onKeyDown={onKeyDownSpy}>{CELL_TEXT}</Cell>);
+    fireEvent.keyDown(screen.getByRole('button'), { charCode: 13 });
+
+    expect(onKeyDownSpy).toHaveBeenCalledTimes(1);
+  });
+});

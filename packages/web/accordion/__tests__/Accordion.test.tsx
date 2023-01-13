@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { accordionBuilder, CreateAccordionProps } from '@cbhq/cds-common/internal/accordionBuilder';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
@@ -106,11 +106,16 @@ describe('Accordion', () => {
   it('renders children', async () => {
     render(<MockAccordion />);
 
-    expect(screen.getByText('Accordion Content2')).toBeVisible();
     expect(screen.getByText('Accordion Content1')).not.toBeVisible();
+    expect(screen.getByText('Accordion Content2')).toBeVisible();
 
     fireEvent.click(screen.getByTestId('mock-accordion-item1-header'));
-    expect(await screen.findByText('Accordion Content1')).toBeVisible();
-    expect(await screen.findByText('Accordion Content2')).not.toBeVisible();
+
+    await waitFor(() => {
+      expect(screen.getByText('Accordion Content1')).toBeVisible();
+    });
+    await waitFor(() => {
+      expect(screen.getByText('Accordion Content2')).not.toBeVisible();
+    });
   });
 });
