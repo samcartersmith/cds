@@ -3,7 +3,6 @@ secure:
   branches:
     - master
     - alpha-fabric-arch
-    - release-3.5.0
 build:
   engines:
     # Apps
