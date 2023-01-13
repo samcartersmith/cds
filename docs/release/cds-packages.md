@@ -62,6 +62,15 @@ Verify that the [changelogs](https://cds.cbhq.net/changelog/mobile/) on the CDS 
 
 Once verifications are complete, announce the new release in the [#announcements-cds](https://coinbase.slack.com/archives/C018PD8E6JG) Slack channel. You can reuse the same summary that you prepared for the Github release tag above.
 
+#### Deploying Old Releases
+
+Sometimes we forget to deploy after merging the release PR, and currently there's a constraint on Codeflow preventing deploys of commits older than 14 days from the master branch. If you need to deploy a release that's older than 14 days and Codeflow blocks you, do the following:
+
+1. Create and merge a PR to master to add a new branch to the protected/secure branches list in `.codeflow.yml`. The branch name should be formatted like so: `release-<version>` (e.g. `release-3.5.0`).
+2. In your local environment, checkout either the old release tag or release commit and from that create a new branch with the same name as the protected branch, then push to Github.
+3. Release from the protected branch in Codeflow (see [Manually Release Packages](#manually-release-packages) above).
+4. Create and merge a PR to master to remove the protected branch from `.codeflow.yml` once you've verified the release was successfully deployed.
+
 ### Updating Our Consumers
 
 In certain special cases we may decide to update CDS for our consumers. [This](https://github.cbhq.net/consumer/react-native/pull/8067) is an example of how we would update the retail app to use an updated version of the CDS package. Please see directions below on how to manually deploy a CDS bump to the CB Alpha app.

@@ -17,13 +17,13 @@ yarn install
 yarn setup
 ```
 
-2. Add a .env.local file at root of repo with the following:
+2. If you need to run scripts that require access to Figma, add a .env.local file at root of repo with the following:
 
 ```
-FIGMA_ACCESS_TOKEN=[ask the team for shared last pass secret note]
+FIGMA_ACCESS_TOKEN=[access or request access to the UI Infra shared vault on 1Password for the token]
 ```
 
-You need this for releasing icons, illustrations, and figma plugin. If the script uses this FIGMA_ACCESS_TOKEN, you need this.
+You need this token for the Figma plugin and to release icons or illustrations. If the script uses this FIGMA_ACCESS_TOKEN, you need this. If you are just running CDS environments locally, you do not need this.
 
 ## Organization of our Docs
 
