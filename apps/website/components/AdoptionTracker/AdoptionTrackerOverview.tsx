@@ -108,8 +108,21 @@ const getPercentageChange = ({ pillar, average }: PercentageGetterProps) => {
 
       return acc + (stats.latest.cdsPercent - (statToCompare?.cdsPercent ?? 0));
     }, 0) / (average ? projects.length : 1);
-  const variant = Number(change) > 0 ? 'positive' : 'negative';
-  const percentage = `${getPercentageText(change)}`;
+
+  let variant: CellDetailVariant = 'foregroundMuted';
+  let percentage = `${getPercentageText(change)}`;
+
+  if (change > 0) {
+    variant = 'positive';
+    percentage = `+${getPercentageText(change)}`;
+  }
+  if (change < 0) {
+    variant = 'negative';
+    percentage = getPercentageText(change);
+  }
+  if (change === 0) {
+    percentage = 'No change';
+  }
 
   return { variant, percentage } as const;
 };
@@ -368,16 +381,18 @@ const ProjectTitle = ({ pillar }: { pillar: string }) => {
         </a>
       </TextCaption>
       <TextDisplay3 as="span">{percentage}</TextDisplay3>
-      <TextLabel1 as="span" color={changedVariant}>
-        <HStack gap={1} alignItems="center">
-          <Icon
-            color={changedVariant}
-            name={`diagonal${changedVariant === 'negative' ? 'Down' : 'Up'}Arrow`}
-            size="s"
-          />
-          {changePercentage}{' '}
-        </HStack>
-      </TextLabel1>
+      {changePercentage !== 'No change' && (
+        <TextLabel1 as="span" color={changedVariant}>
+          <HStack gap={1} alignItems="center">
+            <Icon
+              color={changedVariant}
+              name={`diagonal${changedVariant === 'negative' ? 'Down' : 'Up'}Arrow`}
+              size="s"
+            />
+            {changePercentage}{' '}
+          </HStack>
+        </TextLabel1>
+      )}
     </VStack>
   );
 };
@@ -441,13 +456,15 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
           <TextTitle2 as="span" color={variant}>
             {percentage}.{' '}
           </TextTitle2>
-          <TextTitle2 as="span" color="foregroundMuted">
-            {direction}{' '}
-            <TextTitle2 as="span" color={changedVariant}>
-              {changePercentage}
-            </TextTitle2>{' '}
-            for the quarter.
-          </TextTitle2>
+          {changePercentage !== 'No change' && (
+            <TextTitle2 as="span" color="foregroundMuted">
+              {direction}{' '}
+              <TextTitle2 as="span" color={changedVariant}>
+                {changePercentage}
+              </TextTitle2>{' '}
+              for the quarter.
+            </TextTitle2>
+          )}
         </TextTitle2>
       </VStack>
       <Divider direction="horizontal" />
