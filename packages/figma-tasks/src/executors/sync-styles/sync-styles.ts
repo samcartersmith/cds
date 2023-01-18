@@ -1,13 +1,12 @@
-import path from 'node:path';
 import { createTask } from '@cbhq/mono-tasks';
-import { getAbsolutePath, tokensTemplate, writePrettyFile } from '@cbhq/script-utils';
+import { getAbsolutePath, tokensSortedTemplate, writePrettyFile } from '@cbhq/script-utils';
 
 import { ColorStyle, ColorStyleManifestType } from '../../tools/ColorStyle';
 import { Manifest, ManifestTaskOptions } from '../../tools/Manifest';
 
 export type SyncStylesTaskOptions = ManifestTaskOptions & {
   /** Prefix to add to generated CSS variables */
-  generatedCssVariablesPrefix?: string;
+  prefix: string;
   /** The directory to output generated files. */
   generatedDirectory: string;
 };
@@ -32,74 +31,25 @@ export const syncStyles = createTask<SyncStylesTaskOptions>('sync-styles', async
 
   const styles = [...manifest.items.values()];
 
-  const cssVariablesMap = {
-    dest: `${generatedDirectory}/cssVariablesMap.ts`,
+  const colorStyleMap = {
+    dest: `${generatedDirectory}/colorStyleMap.ts`,
     get content() {
-      const { name: exportName } = path.parse(this.dest);
-      return tokensTemplate`
+      return tokensSortedTemplate`
       ${tokensHeader}
 
-      /** style name (as css var) mapped to style value */
-      export const ${exportName} = ${Object.fromEntries(
-        styles.map((style) => [style.cssVarSetter, style.fill]),
-      )}
-    `;
-    },
-  };
+      /** style name mapped to style details */
+      const colorStyleMap = ${Object.fromEntries(styles.map((item) => [item.name, item]))};
 
-  const keyToNameMap = {
-    dest: `${generatedDirectory}/keyToNameMap.ts`,
-    get content() {
-      const { name: exportName } = path.parse(this.dest);
-      return tokensTemplate`
-      ${tokensHeader}
-
-      /** style key mapped to style name */
-      export const ${exportName}: Record<string, string> = ${Object.fromEntries(
-        styles.map((item) => [item.key, item.name]),
-      )} as const;
-    `;
-    },
-  };
-
-  const keyToValueMap = {
-    dest: `${generatedDirectory}/keyToValueMap.ts`,
-    get content() {
-      const { name: exportName } = path.parse(this.dest);
-      return tokensTemplate`
-      ${tokensHeader}
-
-      /** style key mapped to style value */
-      export const ${exportName}: Record<string, string> = ${Object.fromEntries(
-        styles.map((style) => [style.key, style.fill]),
-      )} as const;
-    `;
-    },
-  };
-
-  const nameToKeyMap = {
-    dest: `${generatedDirectory}/nameToKeyMap.ts`,
-    get content() {
-      const { name: exportName } = path.parse(this.dest);
-      return tokensTemplate`
-      ${tokensHeader}
-
-      /** style name mapped to style key */
-      export const ${exportName}: Record<string, string> = ${Object.fromEntries(
-        styles.map((item) => [item.name, item.key]),
-      )} as const;
+      export default colorStyleMap;
     `;
     },
   };
 
   await Promise.all([
-    writePrettyFile(cssVariablesMap.dest, cssVariablesMap.content),
-    writePrettyFile(keyToNameMap.dest, keyToNameMap.content),
-    writePrettyFile(keyToValueMap.dest, keyToValueMap.content),
-    writePrettyFile(nameToKeyMap.dest, nameToKeyMap.content),
+    writePrettyFile(colorStyleMap.dest, colorStyleMap.content),
+    manifest.generateFile(),
+    changelog?.generateFile({ task, manifest }),
   ]);
-
-  await Promise.all([manifest.generateFile(), changelog?.generateFile({ task, manifest })]);
 
   return { success: true };
 });

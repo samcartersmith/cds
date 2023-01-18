@@ -1,0 +1,118 @@
+/**
+ * DO NOT MODIFY
+ * Generated from yarn nx run figma-styles:sync-illustration-light-styles
+ */
+
+/** style name mapped to style details */
+const colorStyleMap = {
+  'accent-1': {
+    key: '34c2b4db03fbd81f2da306c427863aa7f03b76b1',
+    name: 'accent-1',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#FFD200' },
+    cssVarSetter: '--illustration-accent-1',
+    cssVarGetter: 'var(--illustration-accent-1)',
+  },
+  'accent-2': {
+    key: '6d9ccf05030b543864b329c8381741731e90f69b',
+    name: 'accent-2',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#5DE2F8' },
+    cssVarSetter: '--illustration-accent-2',
+    cssVarGetter: 'var(--illustration-accent-2)',
+  },
+  'accent-3': {
+    key: '1f6bf67d22e6cb7ae716ff900b11a54b1d861d70',
+    name: 'accent-3',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#ED702F' },
+    cssVarSetter: '--illustration-accent-3',
+    cssVarGetter: 'var(--illustration-accent-3)',
+  },
+  'accent-4': {
+    key: '8f53e52a157deabff263aef65ed4b3b84043ec7a',
+    name: 'accent-4',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#73A2FF' },
+    cssVarSetter: '--illustration-accent-4',
+    cssVarGetter: 'var(--illustration-accent-4)',
+  },
+  black: {
+    key: '3a6d095966594e4318e8142c9c298199d29598bc',
+    name: 'black',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#0A0B0D' },
+    cssVarSetter: '--illustration-black',
+    cssVarGetter: 'var(--illustration-black)',
+  },
+  gray: {
+    key: '61c55ab48d16952c781d4aa8832b5d848c28c796',
+    name: 'gray',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#CED2DB' },
+    cssVarSetter: '--illustration-gray',
+    cssVarGetter: 'var(--illustration-gray)',
+  },
+  invert: {
+    key: '557256b66f06196cca2c11ae7b5fc30f85f31b8b',
+    name: 'invert',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#101114' },
+    cssVarSetter: '--illustration-invert',
+    cssVarGetter: 'var(--illustration-invert)',
+  },
+  'invert-2': {
+    key: 'd217aa92cedf7314fcacad4ca74752ce6568c42b',
+    name: 'invert-2',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#FEFFFF' },
+    cssVarSetter: '--illustration-invert-2',
+    cssVarGetter: 'var(--illustration-invert-2)',
+  },
+  negative: {
+    key: 'd3549f5a080fa5626f0054db5868e28254e8c81d',
+    name: 'negative',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#FF3344' },
+    cssVarSetter: '--illustration-negative',
+    cssVarGetter: 'var(--illustration-negative)',
+  },
+  positive: {
+    key: '882bbfed6181d5769683efc3c76ac1c1b06fd709',
+    name: 'positive',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#00D17F' },
+    cssVarSetter: '--illustration-positive',
+    cssVarGetter: 'var(--illustration-positive)',
+  },
+  primary: {
+    key: '798d2b758d75d0cbf24f0136d6a1e24b2f5f3172',
+    name: 'primary',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#0052FF' },
+    cssVarSetter: '--illustration-primary',
+    cssVarGetter: 'var(--illustration-primary)',
+  },
+  white: {
+    key: 'e613081622fbcdb5de3ae7d50102a5d8c79f2e0f',
+    name: 'white',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#FFFFFF' },
+    cssVarSetter: '--illustration-white',
+    cssVarGetter: 'var(--illustration-white)',
+  },
+};
+
+export default colorStyleMap;

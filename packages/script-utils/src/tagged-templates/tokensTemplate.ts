@@ -93,9 +93,7 @@ export function createTokensTemplate({
         let itemValues = [...itemSet.values()];
 
         if (sortSetValues) {
-          itemValues = itemValues.sort((prev, next) => {
-            return prev.localeCompare(next);
-          });
+          itemValues = itemValues.sort(sortByAlphabet);
         }
         result = itemValues;
       }

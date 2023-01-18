@@ -1,7 +1,7 @@
 import { NodeResponseWithMetadata } from '@cbhq/figma-api';
 
 import type { ColorStyles } from '../../tools/ColorStyles';
-import { getFillFromNode } from '../getFillFromNode';
+import { getPaintFromNode } from '../getPaintFromNode';
 import { getSize } from '../getSize';
 
 type PathFillRule = 'nonzero' | 'evenodd';
@@ -36,13 +36,16 @@ export function getSvgData(
         // lookup color style
         if (matchingStyle && colorStyles) {
           const match = colorStyles.light.nameMap.get(matchingStyle.name);
-          if (match) {
-            fill = match.fill;
+          if (match?.paint.type === 'solid') {
+            fill = match.paint.value;
           }
         }
         // convert fill directly
         if (fill === undefined) {
-          fill = getFillFromNode(child);
+          const paint = getPaintFromNode(child);
+          if (paint?.type === 'solid') {
+            fill = paint.value;
+          }
         }
       }
       if ('fillGeometry' in child && child.fillGeometry !== undefined) {

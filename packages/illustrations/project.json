@@ -5,35 +5,13 @@
   "targets": {
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": ["dts", "esm", "lib"]
+      "outputs": ["dts", "lib"]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
     },
     "lint": {
       "executor": "@cbhq/mono-tasks:lint"
-    },
-    "sync-dark-styles": {
-      "executor": "@cbhq/figma-tasks:sync-styles",
-      "dependsOn": ["^build"],
-      "options": {
-        "figmaApiFileId": "etJaiHq7aFlJFICLKIrcK7",
-        "changelogFile": "./CHANGELOG.md",
-        "manifestFile": "./src/__generated__/styles/dark/manifest.json",
-        "generatedDirectory": "./src/__generated__/styles/dark",
-        "generatedCssVariablesPrefix": "illustration"
-      }
-    },
-    "sync-light-styles": {
-      "executor": "@cbhq/figma-tasks:sync-styles",
-      "dependsOn": ["^build"],
-      "options": {
-        "figmaApiFileId": "skPXKFmI64GqqEkOaBSHcL",
-        "changelogFile": "./CHANGELOG.md",
-        "manifestFile": "./src/__generated__/styles/light/manifest.json",
-        "generatedDirectory": "./src/__generated__/styles/light",
-        "generatedCssVariablesPrefix": "illustration"
-      }
     },
     "sync": {
       "executor": "@cbhq/figma-tasks:sync-illustrations",
@@ -42,9 +20,15 @@
         "figmaApiFileId": "LmkJatvMRVzNgfiIkJDb99",
         "changelogFile": "./CHANGELOG.md",
         "manifestFile": "./src/__generated__/manifest.json",
-        "darkModeManifestFile": "./src/__generated__/styles/dark/manifest.json",
-        "lightModeManifestFile": "./src/__generated__/styles/light/manifest.json",
+        "darkModeManifestFile": "../figma-styles/__generated__/illustration/dark/manifest.json",
+        "lightModeManifestFile": "../figma-styles/__generated__/illustration/light/manifest.json",
         "generatedDirectory": "./src/__generated__"
+      }
+    },
+    "sync-styles": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx run figma-styles:sync"
       }
     },
     "uploadToStaticAssets": {

@@ -12,7 +12,6 @@
     "directory": "packages/figma-styles"
   },
   "devDependencies": {
-    "@cbhq/figma-api": "workspace:^",
-    "@cbhq/script-utils": "workspace:^"
+    "@cbhq/figma-tasks": "workspace:^"
   }
 }

@@ -2606,8 +2606,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/figma-styles@workspace:packages/figma-styles"
   dependencies:
-    "@cbhq/figma-api": "workspace:^"
-    "@cbhq/script-utils": "workspace:^"
+    "@cbhq/figma-tasks": "workspace:^"
   languageName: unknown
   linkType: soft
 

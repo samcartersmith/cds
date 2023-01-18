@@ -4,24 +4,10 @@
     "outDir": "../../.nx/dts/packages/figma-styles"
   },
   "include": [
-    "src",
-    "scripts",
     "__generated__"
   ],
   "exclude": [
     ".eslintrc.js"
   ],
-  "references": [
-    {
-      "path": "../../packages/figma-api"
-    },
-    {
-      "path": "../../packages/script-utils"
-    }
-  ],
-  "ts-node": {
-    "require": ["tsconfig-paths/register"],
-    "transpileOnly": true,
-    "transpiler": "ts-node/transpilers/swc"
-  }
+  "references": []
 }

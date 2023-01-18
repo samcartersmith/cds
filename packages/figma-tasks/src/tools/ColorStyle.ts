@@ -3,7 +3,7 @@ import { NodeResponse } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
 
 import { ColorMode, getColorModeAndName } from '../helpers/getColorModeAndName';
-import { getFillFromNode } from '../helpers/getFillFromNode';
+import { getPaintFromNode, Paint } from '../helpers/getPaintFromNode';
 import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
 
 import { Manifest, ManifestShape } from './Manifest';
@@ -11,7 +11,8 @@ import { Manifest, ManifestShape } from './Manifest';
 export type ColorStyleManifestType = ManifestShape<ColorStyle>;
 
 type ColorStyleTaskOptions = {
-  generatedCssVariablesPrefix?: string;
+  /** Prefix to add to style name and generated css variables */
+  prefix: string;
 };
 
 export type ColorStyleParams = {
@@ -37,7 +38,9 @@ export class ColorStyle {
 
   public readonly node: NodeResponse;
 
-  public readonly fill: string;
+  public readonly paint: Paint;
+
+  public readonly prefix: string;
 
   public outputs: Record<string, string> = {};
 
@@ -46,7 +49,7 @@ export class ColorStyle {
   private task: Task;
 
   constructor({ node, taskOptions, task }: ColorStyleParams) {
-    const { generatedCssVariablesPrefix } = taskOptions;
+    const { prefix } = taskOptions;
     const { key, description } = node.styles[node.document.id];
     const { name, colorMode } = getColorModeAndName(node.document.name);
     this.description = description;
@@ -54,16 +57,15 @@ export class ColorStyle {
     this.key = key;
     this.name = name;
     this.node = node;
+    this.prefix = prefix;
     this.type = colorMode;
     this.task = task;
-    const fill = getFillFromNode(node.document);
-    if (!fill) {
+    const paint = getPaintFromNode(node.document);
+    if (!paint) {
       throw new Error(`Unable to extract hex color from ${node.document.name}`);
     }
-    this.fill = fill;
-    this.cssVarSetter = generatedCssVariablesPrefix
-      ? `--${generatedCssVariablesPrefix}-${this.name}`
-      : `--${this.name}`;
+    this.paint = paint;
+    this.cssVarSetter = `--${this.prefix}-${this.name}`;
     this.cssVarGetter = `var(${this.cssVarSetter})`;
   }
 
@@ -77,7 +79,8 @@ export class ColorStyle {
       key: this.key,
       name: this.name,
       type: this.type,
-      fill: this.fill,
+      prefix: this.prefix,
+      paint: this.paint,
       cssVarSetter: this.cssVarSetter,
       cssVarGetter: this.cssVarGetter,
       ...(Object.values(this.outputs).length

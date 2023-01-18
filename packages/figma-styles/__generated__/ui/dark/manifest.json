@@ -1,0 +1,2151 @@
+{
+  "executor": "sync-ui-dark-styles",
+  "lastUpdated": "2023-01-18T01:11:40.230Z",
+  "items": {
+    "419:145": {
+      "key": "f90f16a20689d50de2ec78b785d4d45e9ab78826",
+      "name": "color-indigo-0",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#080F33"
+      },
+      "cssVarSetter": "--ui-color-indigo-0",
+      "cssVarGetter": "var(--ui-color-indigo-0)"
+    },
+    "419:151": {
+      "key": "186ac0135abdd2f98bab89320053569ccc30e81a",
+      "name": "color-indigo-40",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#445CE1"
+      },
+      "cssVarSetter": "--ui-color-indigo-40",
+      "cssVarGetter": "var(--ui-color-indigo-40)"
+    },
+    "419:149": {
+      "key": "34f47e4f8ba71fa35a23beae10d58eb94b62cb73",
+      "name": "color-indigo-20",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#2138B1"
+      },
+      "cssVarSetter": "--ui-color-indigo-20",
+      "cssVarGetter": "var(--ui-color-indigo-20)"
+    },
+    "419:155": {
+      "key": "623a3882b7ef748bedaf49abb19218e2946b62e1",
+      "name": "color-indigo-80",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#BBC2FD"
+      },
+      "cssVarSetter": "--ui-color-indigo-80",
+      "cssVarGetter": "var(--ui-color-indigo-80)"
+    },
+    "419:153": {
+      "key": "0ee07b16eedb6d9735083f5d3b297c24369e2abf",
+      "name": "color-indigo-60",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#798AF5"
+      },
+      "cssVarSetter": "--ui-color-indigo-60",
+      "cssVarGetter": "var(--ui-color-indigo-60)"
+    },
+    "419:159": {
+      "key": "bad5fea754eb218da33d8d0ed52ea48a5f3c9c3a",
+      "name": "color-pink-5",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#460E3D"
+      },
+      "cssVarSetter": "--ui-color-pink-5",
+      "cssVarGetter": "var(--ui-color-pink-5)"
+    },
+    "419:157": {
+      "key": "069313a828f768ec31996c9b3f72a042b3b2f92a",
+      "name": "color-indigo-100",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#F6F7FF"
+      },
+      "cssVarSetter": "--ui-color-indigo-100",
+      "cssVarGetter": "var(--ui-color-indigo-100)"
+    },
+    "419:163": {
+      "key": "285ec7ecab28709422a12a8376ea4038029cf31e",
+      "name": "color-pink-30",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#9F2C8E"
+      },
+      "cssVarSetter": "--ui-color-pink-30",
+      "cssVarGetter": "var(--ui-color-pink-30)"
+    },
+    "419:161": {
+      "key": "f280ff7f0883f0872b7f7872699ed00a01c6a4fc",
+      "name": "color-pink-15",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#6C185E"
+      },
+      "cssVarSetter": "--ui-color-pink-15",
+      "cssVarGetter": "var(--ui-color-pink-15)"
+    },
+    "419:164": {
+      "key": "9292602c1fd91d3b021d3b63619b316afdfba73b",
+      "name": "color-pink-40",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#BB40AA"
+      },
+      "cssVarSetter": "--ui-color-pink-40",
+      "cssVarGetter": "var(--ui-color-pink-40)"
+    },
+    "419:139": {
+      "key": "622edd4287b8f8c4019035935851119f62a57991",
+      "name": "color-gray-50",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#727886"
+      },
+      "cssVarSetter": "--ui-color-gray-50",
+      "cssVarGetter": "var(--ui-color-gray-50)"
+    },
+    "419:137": {
+      "key": "126702f599ec53a3daf5917e03ce4c499ffa7c77",
+      "name": "color-gray-30",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#464B55"
+      },
+      "cssVarSetter": "--ui-color-gray-30",
+      "cssVarGetter": "var(--ui-color-gray-30)"
+    },
+    "419:143": {
+      "key": "3515460e7da9e6d0d2cdef3b5a4d94b9619af346",
+      "name": "color-gray-90",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#E0E2E7"
+      },
+      "cssVarSetter": "--ui-color-gray-90",
+      "cssVarGetter": "var(--ui-color-gray-90)"
+    },
+    "419:141": {
+      "key": "d5bb53a529ac46484f3eb48317ec047c59f94cdd",
+      "name": "color-gray-70",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#A5AAB6"
+      },
+      "cssVarSetter": "--ui-color-gray-70",
+      "cssVarGetter": "var(--ui-color-gray-70)"
+    },
+    "419:211": {
+      "key": "d7d7b55ab9cccbd8257c7c64b1173b41cea54100",
+      "name": "state-f-pressed",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#D2D2D2"
+      },
+      "cssVarSetter": "--ui-state-f-pressed",
+      "cssVarGetter": "var(--ui-state-f-pressed)"
+    },
+    "419:215": {
+      "key": "fa2fb33a058cfb7600f03a8a73d4c8c463342762",
+      "name": "state-fM-hovered",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#9299A5"
+      },
+      "cssVarSetter": "--ui-state-fM-hovered",
+      "cssVarGetter": "var(--ui-state-fM-hovered)"
+    },
+    "419:220": {
+      "key": "e0e50a20cbdd0025d28ec5191135b869ef181c23",
+      "name": "state-n-pressed",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#F17780"
+      },
+      "cssVarSetter": "--ui-state-n-pressed",
+      "cssVarGetter": "var(--ui-state-n-pressed)"
+    },
+    "419:230": {
+      "key": "3a8bd2902d76c1f29a732a3b9104214ceea2d81e",
+      "name": "state-s-hovered",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#3A3D45"
+      },
+      "cssVarSetter": "--ui-state-s-hovered",
+      "cssVarGetter": "var(--ui-state-s-hovered)"
+    },
+    "419:72": {
+      "key": "1c72541af4be5c449d902abfa3d26c15ff020bec",
+      "name": "palette-negativeForeground",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0A0B0D"
+      },
+      "cssVarSetter": "--ui-palette-negativeForeground",
+      "cssVarGetter": "var(--ui-palette-negativeForeground)"
+    },
+    "419:170": {
+      "key": "0b529d5b8e16e8a772fc25ae335c7dfd9b425883",
+      "name": "color-pink-100",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FFF5FF"
+      },
+      "cssVarSetter": "--ui-color-pink-100",
+      "cssVarGetter": "var(--ui-color-pink-100)"
+    },
+    "419:168": {
+      "key": "38a1b5c3e5135c00d86f3f76f59ae7e9fd01073d",
+      "name": "color-pink-80",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#F6B8F3"
+      },
+      "cssVarSetter": "--ui-color-pink-80",
+      "cssVarGetter": "var(--ui-color-pink-80)"
+    },
+    "419:174": {
+      "key": "44967f3ab7301519bd01c4f984ac2a50a5ba0574",
+      "name": "color-purple-15",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#502A9A"
+      },
+      "cssVarSetter": "--ui-color-purple-15",
+      "cssVarGetter": "var(--ui-color-purple-15)"
+    },
+    "419:172": {
+      "key": "e8117b1dee19ae85fb5ad457844db38335e6da26",
+      "name": "color-purple-5",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#2E175B"
+      },
+      "cssVarSetter": "--ui-color-purple-5",
+      "cssVarGetter": "var(--ui-color-purple-5)"
+    },
+    "419:114": {
+      "key": "159bdd93ac2410901c17360b5d706835692d4fbc",
+      "name": "color-orange-60",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#F07836"
+      },
+      "cssVarSetter": "--ui-color-orange-60",
+      "cssVarGetter": "var(--ui-color-orange-60)"
+    },
+    "419:112": {
+      "key": "f5755557c076fca3cf95a21827c42fe4682dcac0",
+      "name": "color-orange-40",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#D54C12"
+      },
+      "cssVarSetter": "--ui-color-orange-40",
+      "cssVarGetter": "var(--ui-color-orange-40)"
+    },
+    "419:118": {
+      "key": "641a40575667270a13208992b80a30228c54a3da",
+      "name": "color-orange-100",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FFFAF5"
+      },
+      "cssVarSetter": "--ui-color-orange-100",
+      "cssVarGetter": "var(--ui-color-orange-100)"
+    },
+    "419:88": {
+      "key": "133ab7e860c832ab460492e791534c1c04e6e515",
+      "name": "color-blue-60",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#3773F5"
+      },
+      "cssVarSetter": "--ui-color-blue-60",
+      "cssVarGetter": "var(--ui-color-blue-60)"
+    },
+    "419:117": {
+      "key": "00f42ad5212273952d481475327f877572978d6c",
+      "name": "color-orange-90",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FEDBB9"
+      },
+      "cssVarSetter": "--ui-color-orange-90",
+      "cssVarGetter": "var(--ui-color-orange-90)"
+    },
+    "419:131": {
+      "key": "9e318d3a15cf5b27a44c40296eb6be621d458250",
+      "name": "color-yellow-100",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FFFCF1"
+      },
+      "cssVarSetter": "--ui-color-yellow-100",
+      "cssVarGetter": "var(--ui-color-yellow-100)"
+    },
+    "419:101": {
+      "key": "84d5a75d3e394f4898d0dc1ae6baa57ae8cb9b47",
+      "name": "color-green-60",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#27AD75"
+      },
+      "cssVarSetter": "--ui-color-green-60",
+      "cssVarGetter": "var(--ui-color-green-60)"
+    },
+    "419:129": {
+      "key": "34eb5917d79da59598c27024c4df9ec311471903",
+      "name": "color-yellow-80",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FFDF44"
+      },
+      "cssVarSetter": "--ui-color-yellow-80",
+      "cssVarGetter": "var(--ui-color-yellow-80)"
+    },
+    "419:135": {
+      "key": "5dfc935d904c433468fa6d273a486062340bb566",
+      "name": "color-gray-15",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#282B31"
+      },
+      "cssVarSetter": "--ui-color-gray-15",
+      "cssVarGetter": "var(--ui-color-gray-15)"
+    },
+    "419:133": {
+      "key": "7d8ba14c4050c19e40abe2d0b24464ab26398d47",
+      "name": "color-gray-5",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#141519"
+      },
+      "cssVarSetter": "--ui-color-gray-5",
+      "cssVarGetter": "var(--ui-color-gray-5)"
+    },
+    "419:203": {
+      "key": "677da14e4e94c5a893310ee63ed6f91910036fef",
+      "name": "color-teal-40",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#007DB6"
+      },
+      "cssVarSetter": "--ui-color-teal-40",
+      "cssVarGetter": "var(--ui-color-teal-40)"
+    },
+    "419:205": {
+      "key": "24d6dca77758a69b2e4f82496dd2c7e1eee8f147",
+      "name": "color-teal-60",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#00AADF"
+      },
+      "cssVarSetter": "--ui-color-teal-60",
+      "cssVarGetter": "var(--ui-color-teal-60)"
+    },
+    "419:232": {
+      "key": "94604e04875d66099a06fa98b566b4bae527d09b",
+      "name": "state-b-pressed",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#1E1F20"
+      },
+      "cssVarSetter": "--ui-state-b-pressed",
+      "cssVarGetter": "var(--ui-state-b-pressed)"
+    },
+    "419:179": {
+      "key": "c975776e56e34f80a85f4b3e29b0035789571c6b",
+      "name": "color-purple-60",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#B388F5"
+      },
+      "cssVarSetter": "--ui-color-purple-60",
+      "cssVarGetter": "var(--ui-color-purple-60)"
+    },
+    "419:177": {
+      "key": "c183cdb16e212e0add68fbaf8dd0fd5958c2f53b",
+      "name": "color-purple-40",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#8956E1"
+      },
+      "cssVarSetter": "--ui-color-purple-40",
+      "cssVarGetter": "var(--ui-color-purple-40)"
+    },
+    "419:183": {
+      "key": "e47474cb9b7e0384695c3b35fd74c798ced17bec",
+      "name": "color-purple-100",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FBF7FF"
+      },
+      "cssVarSetter": "--ui-color-purple-100",
+      "cssVarGetter": "var(--ui-color-purple-100)"
+    },
+    "419:181": {
+      "key": "198438ab8d6d472d86188504f3e69ff87de99fe0",
+      "name": "color-purple-80",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#DDC3FD"
+      },
+      "cssVarSetter": "--ui-color-purple-80",
+      "cssVarGetter": "var(--ui-color-purple-80)"
+    },
+    "419:187": {
+      "key": "846d2e8279ab5cc8dc8cd02b85c20f8f8ba64dbd",
+      "name": "color-red-15",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#83040E"
+      },
+      "cssVarSetter": "--ui-color-red-15",
+      "cssVarGetter": "var(--ui-color-red-15)"
+    },
+    "419:185": {
+      "key": "7a944f1197f0fc0c86e0959d282a64adb0ebc87a",
+      "name": "color-red-5",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#4F0007"
+      },
+      "cssVarSetter": "--ui-color-red-5",
+      "cssVarGetter": "var(--ui-color-red-5)"
+    },
+    "419:191": {
+      "key": "601748413f9ff0998b5ddb461717975ecaf2e483",
+      "name": "color-red-50",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#E6404E"
+      },
+      "cssVarSetter": "--ui-color-red-50",
+      "cssVarGetter": "var(--ui-color-red-50)"
+    },
+    "419:189": {
+      "key": "9671949c7d8001de20dec6e976ecc1bc9be7779b",
+      "name": "color-red-30",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#BD1321"
+      },
+      "cssVarSetter": "--ui-color-red-30",
+      "cssVarGetter": "var(--ui-color-red-30)"
+    },
+    "419:195": {
+      "key": "be53ef5bd659a0c3166bce1c30d581d59e0f1716",
+      "name": "color-red-90",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FED5D8"
+      },
+      "cssVarSetter": "--ui-color-red-90",
+      "cssVarGetter": "var(--ui-color-red-90)"
+    },
+    "419:193": {
+      "key": "6b6f3b26c28c95dd0b38d987263b91997934361b",
+      "name": "color-red-70",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#F88690"
+      },
+      "cssVarSetter": "--ui-color-red-70",
+      "cssVarGetter": "var(--ui-color-red-70)"
+    },
+    "419:199": {
+      "key": "97fc801a9029f5e5614cb8eef038f6caada16c34",
+      "name": "color-teal-10",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#002D4F"
+      },
+      "cssVarSetter": "--ui-color-teal-10",
+      "cssVarGetter": "var(--ui-color-teal-10)"
+    },
+    "419:147": {
+      "key": "b54b7642296c1c4e400d8f0aba4b27767936fabb",
+      "name": "color-indigo-10",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#152782"
+      },
+      "cssVarSetter": "--ui-color-indigo-10",
+      "cssVarGetter": "var(--ui-color-indigo-10)"
+    },
+    "419:83": {
+      "key": "70a550867dfac178817be760d0faf1d0563f7d0d",
+      "name": "color-blue-15",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#03339A"
+      },
+      "cssVarSetter": "--ui-color-blue-15",
+      "cssVarGetter": "var(--ui-color-blue-15)"
+    },
+    "419:81": {
+      "key": "41522ab94b7bfc8ba66f6540c6ce0b4f9c9fc1f6",
+      "name": "color-blue-5",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#011D5B"
+      },
+      "cssVarSetter": "--ui-color-blue-5",
+      "cssVarGetter": "var(--ui-color-blue-5)"
+    },
+    "419:87": {
+      "key": "087404e4332a0da6fc58690bd9f39a4d9ffbcd0f",
+      "name": "color-blue-50",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#2162EE"
+      },
+      "cssVarSetter": "--ui-color-blue-50",
+      "cssVarGetter": "var(--ui-color-blue-50)"
+    },
+    "419:85": {
+      "key": "11c4d0fbf0ed15a7ac3bdd9d7245b8200cb0656e",
+      "name": "color-blue-30",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0A48CE"
+      },
+      "cssVarSetter": "--ui-color-blue-30",
+      "cssVarGetter": "var(--ui-color-blue-30)"
+    },
+    "419:91": {
+      "key": "1fed9784a5ccfd34fa060f8dda9c0567884ed848",
+      "name": "color-blue-90",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#B9CFFF"
+      },
+      "cssVarSetter": "--ui-color-blue-90",
+      "cssVarGetter": "var(--ui-color-blue-90)"
+    },
+    "419:89": {
+      "key": "678355eb910538e7d525200b0d00e3cfdb959cf0",
+      "name": "color-blue-70",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#578BFA"
+      },
+      "cssVarSetter": "--ui-color-blue-70",
+      "cssVarGetter": "var(--ui-color-blue-70)"
+    },
+    "419:98": {
+      "key": "11d55cf1b1ddfd2ef5a3dd38e51ed075f3bfcc39",
+      "name": "color-green-30",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#067044"
+      },
+      "cssVarSetter": "--ui-color-green-30",
+      "cssVarGetter": "var(--ui-color-green-30)"
+    },
+    "419:123": {
+      "key": "16dea4d0480d13b89022f38bb0347d00faaf30e4",
+      "name": "color-yellow-20",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#582900"
+      },
+      "cssVarSetter": "--ui-color-yellow-20",
+      "cssVarGetter": "var(--ui-color-yellow-20)"
+    },
+    "419:125": {
+      "key": "3f16fa8c047a77a66ad466d17634c7ac08d645f3",
+      "name": "color-yellow-40",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#A96D00"
+      },
+      "cssVarSetter": "--ui-color-yellow-40",
+      "cssVarGetter": "var(--ui-color-yellow-40)"
+    },
+    "419:100": {
+      "key": "d9ebcc3ef93167414698a68c898f39418156f485",
+      "name": "color-green-50",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#159962"
+      },
+      "cssVarSetter": "--ui-color-green-50",
+      "cssVarGetter": "var(--ui-color-green-50)"
+    },
+    "419:104": {
+      "key": "8ad1d4eff805bdbf5eb2462c38946dc16452832f",
+      "name": "color-green-90",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#ABEBD0"
+      },
+      "cssVarSetter": "--ui-color-green-90",
+      "cssVarGetter": "var(--ui-color-green-90)"
+    },
+    "419:110": {
+      "key": "39b2cb0fd73f92b70e98aa4075c3f91bc5e2cd9d",
+      "name": "color-orange-20",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#9B2C04"
+      },
+      "cssVarSetter": "--ui-color-orange-20",
+      "cssVarGetter": "var(--ui-color-orange-20)"
+    },
+    "419:108": {
+      "key": "327689173a1247d6691a99955578c974c06a7304",
+      "name": "color-orange-10",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#6B1C01"
+      },
+      "cssVarSetter": "--ui-color-orange-10",
+      "cssVarGetter": "var(--ui-color-orange-10)"
+    },
+    "419:67": {
+      "key": "12eb4356722eaf9d8bd7c0f8456671dd4ddd72e0",
+      "name": "palette-lineHeavy",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#8A919E"
+      },
+      "cssVarSetter": "--ui-palette-lineHeavy",
+      "cssVarGetter": "var(--ui-palette-lineHeavy)"
+    },
+    "419:69": {
+      "key": "379f795e7ffb0cf7e9f166889dca1ca3ae53461e",
+      "name": "palette-primaryWash",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#001033"
+      },
+      "cssVarSetter": "--ui-palette-primaryWash",
+      "cssVarGetter": "var(--ui-palette-primaryWash)"
+    },
+    "419:75": {
+      "key": "364d18c06fc1f4add319c1bce4f27be2e498ba5a",
+      "name": "palette-secondary",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#32353D"
+      },
+      "cssVarSetter": "--ui-palette-secondary",
+      "cssVarGetter": "var(--ui-palette-secondary)"
+    },
+    "419:209": {
+      "key": "daad7346014b4d837205beca3aadc62f3fda2690",
+      "name": "color-teal-100",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#F0FEFF"
+      },
+      "cssVarSetter": "--ui-color-teal-100",
+      "cssVarGetter": "var(--ui-color-teal-100)"
+    },
+    "419:62": {
+      "key": "069eb59d956466301ee46b2462e47857e6fb8187",
+      "name": "palette-foregroundMuted",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#8A919E"
+      },
+      "cssVarSetter": "--ui-palette-foregroundMuted",
+      "cssVarGetter": "var(--ui-palette-foregroundMuted)"
+    },
+    "419:190": {
+      "key": "08f02bf696b2ff2f9e8780a8401b93baac6d5265",
+      "name": "color-red-40",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#D52634"
+      },
+      "cssVarSetter": "--ui-color-red-40",
+      "cssVarGetter": "var(--ui-color-red-40)"
+    },
+    "419:188": {
+      "key": "f2021c0672199ff853dcd2a200bccfacb2c3e530",
+      "name": "color-red-20",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#9B0713"
+      },
+      "cssVarSetter": "--ui-color-red-20",
+      "cssVarGetter": "var(--ui-color-red-20)"
+    },
+    "419:194": {
+      "key": "aae2f117b993aa9ae6100b84c44015adab497a63",
+      "name": "color-red-80",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FCAEB5"
+      },
+      "cssVarSetter": "--ui-color-red-80",
+      "cssVarGetter": "var(--ui-color-red-80)"
+    },
+    "419:192": {
+      "key": "5a348e15176898c402c0b5c09eb4b1b9bc9bc6bd",
+      "name": "color-red-60",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#F0616D"
+      },
+      "cssVarSetter": "--ui-color-red-60",
+      "cssVarGetter": "var(--ui-color-red-60)"
+    },
+    "419:73": {
+      "key": "4173f472d85b3e030d5ba6c9c77e9ed6e7be0ea3",
+      "name": "palette-positive",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#27AD75"
+      },
+      "cssVarSetter": "--ui-palette-positive",
+      "cssVarGetter": "var(--ui-palette-positive)"
+    },
+    "419:79": {
+      "key": "e13ae70428bc7b670a3a3f60ced17719e8c0d09a",
+      "name": "elevation-level-2",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#32353D"
+      },
+      "cssVarSetter": "--ui-elevation-level-2",
+      "cssVarGetter": "var(--ui-elevation-level-2)"
+    },
+    "419:77": {
+      "key": "17c7d275d9cafa12509b16b687e5c4febd04ff95",
+      "name": "palette-fade",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "gradient",
+        "value": [
+          {
+            "color": "#0A0B0D",
+            "y": 0.498514324426651
+          },
+          {
+            "color": "#0A0B0D00",
+            "y": 1
+          }
+        ]
+      },
+      "cssVarSetter": "--ui-palette-fade",
+      "cssVarGetter": "var(--ui-palette-fade)"
+    },
+    "419:228": {
+      "key": "10eabe455225a0850fc4a77b8ea2b97b5b99ade1",
+      "name": "state-s-disabled",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#191B1F"
+      },
+      "cssVarSetter": "--ui-state-s-disabled",
+      "cssVarGetter": "var(--ui-state-s-disabled)"
+    },
+    "419:234": {
+      "key": "91904bf809be1ca8f5643725849bec545a218a37",
+      "name": "state-bA-disabled",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0E0F12"
+      },
+      "cssVarSetter": "--ui-state-bA-disabled",
+      "cssVarGetter": "var(--ui-state-bA-disabled)"
+    },
+    "419:178": {
+      "key": "3d5090ee00513f55e94dcd52b64b7c98fc18b0c0",
+      "name": "color-purple-50",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#9D6DEE"
+      },
+      "cssVarSetter": "--ui-color-purple-50",
+      "cssVarGetter": "var(--ui-color-purple-50)"
+    },
+    "419:180": {
+      "key": "499f149c99a162b9e8f6e18047e88b61c681ca20",
+      "name": "color-purple-70",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#C9A4FA"
+      },
+      "cssVarSetter": "--ui-color-purple-70",
+      "cssVarGetter": "var(--ui-color-purple-70)"
+    },
+    "419:186": {
+      "key": "3380bae43f512dbc3ac089f3fa82c00d8faf8e34",
+      "name": "color-red-10",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#6B010A"
+      },
+      "cssVarSetter": "--ui-color-red-10",
+      "cssVarGetter": "var(--ui-color-red-10)"
+    },
+    "419:184": {
+      "key": "30c23466bbbaec10dd8208f6f55ab700c6567bc5",
+      "name": "color-red-0",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#330004"
+      },
+      "cssVarSetter": "--ui-color-red-0",
+      "cssVarGetter": "var(--ui-color-red-0)"
+    },
+    "419:198": {
+      "key": "75042bfecbe133f206befc2f84417ff56c237567",
+      "name": "color-teal-5",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#00203B"
+      },
+      "cssVarSetter": "--ui-color-teal-5",
+      "cssVarGetter": "var(--ui-color-teal-5)"
+    },
+    "419:196": {
+      "key": "a83a4df0f43204e675bca7175a8ef8a1a6d21172",
+      "name": "color-red-100",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FFF5F6"
+      },
+      "cssVarSetter": "--ui-color-red-100",
+      "cssVarGetter": "var(--ui-color-red-100)"
+    },
+    "419:202": {
+      "key": "15ea46aaea03cfa11cf916da3e3f2e248ff4ba1a",
+      "name": "color-teal-30",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#006399"
+      },
+      "cssVarSetter": "--ui-color-teal-30",
+      "cssVarGetter": "var(--ui-color-teal-30)"
+    },
+    "419:200": {
+      "key": "6d8ebd12e6a421de60194e63d16e3c00caae4171",
+      "name": "color-teal-15",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#003A63"
+      },
+      "cssVarSetter": "--ui-color-teal-15",
+      "cssVarGetter": "var(--ui-color-teal-15)"
+    },
+    "419:201": {
+      "key": "5963d8b05657caf94bd1aaa568fa65f1a5af7cd5",
+      "name": "color-teal-20",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#004876"
+      },
+      "cssVarSetter": "--ui-color-teal-20",
+      "cssVarGetter": "var(--ui-color-teal-20)"
+    },
+    "419:206": {
+      "key": "9cf7980676ef823af421b597be1a0446067c9aca",
+      "name": "color-teal-70",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#06BEEC"
+      },
+      "cssVarSetter": "--ui-color-teal-70",
+      "cssVarGetter": "var(--ui-color-teal-70)"
+    },
+    "419:207": {
+      "key": "f569e873a33b248f305ed63a8456c373239f2ec1",
+      "name": "color-teal-80",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#45D9F5"
+      },
+      "cssVarSetter": "--ui-color-teal-80",
+      "cssVarGetter": "var(--ui-color-teal-80)"
+    },
+    "419:204": {
+      "key": "bdb5289acdaf3e206646bcd289c1845ec0589abf",
+      "name": "color-teal-50",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0095CD"
+      },
+      "cssVarSetter": "--ui-color-teal-50",
+      "cssVarGetter": "var(--ui-color-teal-50)"
+    },
+    "419:167": {
+      "key": "6a0917e58f6219a8ad0b9d2b35089e1e07b435da",
+      "name": "color-pink-70",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#ED95E6"
+      },
+      "cssVarSetter": "--ui-color-pink-70",
+      "cssVarGetter": "var(--ui-color-pink-70)"
+    },
+    "419:68": {
+      "key": "6acb4eaabeeb34c5e4eaeff8fab2ee0d332a20d4",
+      "name": "palette-primary",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#3773F5"
+      },
+      "cssVarSetter": "--ui-palette-primary",
+      "cssVarGetter": "var(--ui-palette-primary)"
+    },
+    "419:221": {
+      "key": "bcf2d2ea2aeae8107ea1db7a022b8a26d0711016",
+      "name": "state-n-hovered",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#F06E79"
+      },
+      "cssVarSetter": "--ui-state-n-hovered",
+      "cssVarGetter": "var(--ui-state-n-hovered)"
+    },
+    "419:126": {
+      "key": "ae88d71004a6acc77f1a22bc5b987c2ccfc0f540",
+      "name": "color-yellow-50",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#CC9200"
+      },
+      "cssVarSetter": "--ui-color-yellow-50",
+      "cssVarGetter": "var(--ui-color-yellow-50)"
+    },
+    "419:109": {
+      "key": "44915eb7f4ab3b5b747623a19fadf29a44ac2ec5",
+      "name": "color-orange-15",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#832402"
+      },
+      "cssVarSetter": "--ui-color-orange-15",
+      "cssVarGetter": "var(--ui-color-orange-15)"
+    },
+    "419:134": {
+      "key": "d89267e8cf00be89a1520c084bd879891d2f3815",
+      "name": "color-gray-10",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#1E2025"
+      },
+      "cssVarSetter": "--ui-color-gray-10",
+      "cssVarGetter": "var(--ui-color-gray-10)"
+    },
+    "419:154": {
+      "key": "742b3888b29ae911989b8f0c95cd2b878e84fd07",
+      "name": "color-indigo-70",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#99A5FA"
+      },
+      "cssVarSetter": "--ui-color-indigo-70",
+      "cssVarGetter": "var(--ui-color-indigo-70)"
+    },
+    "419:148": {
+      "key": "c46d94df97d498e5f7023dbad16790f1348e8b1d",
+      "name": "color-indigo-15",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#1B2F9A"
+      },
+      "cssVarSetter": "--ui-color-indigo-15",
+      "cssVarGetter": "var(--ui-color-indigo-15)"
+    },
+    "419:74": {
+      "key": "e93eea30e6e8bce8770b23265686a4fce527a0d6",
+      "name": "palette-positiveForeground",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0A0B0D"
+      },
+      "cssVarSetter": "--ui-palette-positiveForeground",
+      "cssVarGetter": "var(--ui-palette-positiveForeground)"
+    },
+    "419:70": {
+      "key": "960e82e2a9ccc4b7d57ade75a4f05599b39d0838",
+      "name": "palette-primaryForeground",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0A0B0D"
+      },
+      "cssVarSetter": "--ui-palette-primaryForeground",
+      "cssVarGetter": "var(--ui-palette-primaryForeground)"
+    },
+    "419:76": {
+      "key": "a7eff1da61332cc5ba3548041a0fd283d433b849",
+      "name": "palette-secondaryForeground",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FFFFFF"
+      },
+      "cssVarSetter": "--ui-palette-secondaryForeground",
+      "cssVarGetter": "var(--ui-palette-secondaryForeground)"
+    },
+    "419:229": {
+      "key": "d48a13062e9492d793dbbe9d8d9525768eb0e1e3",
+      "name": "state-s-pressed",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#474950"
+      },
+      "cssVarSetter": "--ui-state-s-pressed",
+      "cssVarGetter": "var(--ui-state-s-pressed)"
+    },
+    "419:64": {
+      "key": "7c2f3f66db33dc31eca35c274ca2222652a67a06",
+      "name": "palette-backgroundAlternate",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#141519"
+      },
+      "cssVarSetter": "--ui-palette-backgroundAlternate",
+      "cssVarGetter": "var(--ui-palette-backgroundAlternate)"
+    },
+    "419:217": {
+      "key": "0f52877aebdbf9d5ae2a94ce35c55f5e7ed51678",
+      "name": "state-pW-pressed",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#142343"
+      },
+      "cssVarSetter": "--ui-state-pW-pressed",
+      "cssVarGetter": "var(--ui-state-pW-pressed)"
+    },
+    "419:86": {
+      "key": "031a92a28cc21800f4937dc7815d9b76e3e1b69c",
+      "name": "color-blue-40",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#1354E1"
+      },
+      "cssVarSetter": "--ui-color-blue-40",
+      "cssVarGetter": "var(--ui-color-blue-40)"
+    },
+    "419:175": {
+      "key": "b03217b26abaa9e70c1bf1d29c55a6f667507395",
+      "name": "color-purple-20",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#5D32B1"
+      },
+      "cssVarSetter": "--ui-color-purple-20",
+      "cssVarGetter": "var(--ui-color-purple-20)"
+    },
+    "419:93": {
+      "key": "ec64e238eb9ea518ce1f7c980d1ef3500b091040",
+      "name": "color-green-0",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#00331E"
+      },
+      "cssVarSetter": "--ui-color-green-0",
+      "cssVarGetter": "var(--ui-color-green-0)"
+    },
+    "419:80": {
+      "key": "5c772c066f083f6d4c22f4e9ce6cbf18e4aa4fa9",
+      "name": "color-blue-0",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#001033"
+      },
+      "cssVarSetter": "--ui-color-blue-0",
+      "cssVarGetter": "var(--ui-color-blue-0)"
+    },
+    "419:169": {
+      "key": "47e3c72a280078e7de9e55ad6a04eb255e255a65",
+      "name": "color-pink-90",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FCD9FB"
+      },
+      "cssVarSetter": "--ui-color-pink-90",
+      "cssVarGetter": "var(--ui-color-pink-90)"
+    },
+    "419:95": {
+      "key": "50a3f49203433187de1e5938033df14f75ddf44c",
+      "name": "color-green-10",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#01472A"
+      },
+      "cssVarSetter": "--ui-color-green-10",
+      "cssVarGetter": "var(--ui-color-green-10)"
+    },
+    "419:90": {
+      "key": "c4406fe1f7bc66879d619ea14dc99cfbf1126c72",
+      "name": "color-blue-80",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#84AAFD"
+      },
+      "cssVarSetter": "--ui-color-blue-80",
+      "cssVarGetter": "var(--ui-color-blue-80)"
+    },
+    "419:115": {
+      "key": "e806463e18aff50d77247d5abc0d50053fa7f248",
+      "name": "color-orange-70",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#F89656"
+      },
+      "cssVarSetter": "--ui-color-orange-70",
+      "cssVarGetter": "var(--ui-color-orange-70)"
+    },
+    "419:122": {
+      "key": "d88c66c1cd02fb23c5ebba5563e650a55b7fb1f6",
+      "name": "color-yellow-15",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#411B00"
+      },
+      "cssVarSetter": "--ui-color-yellow-15",
+      "cssVarGetter": "var(--ui-color-yellow-15)"
+    },
+    "419:97": {
+      "key": "abf344c98086698127b12e5663414d57a5048d00",
+      "name": "color-green-20",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#025C37"
+      },
+      "cssVarSetter": "--ui-color-green-20",
+      "cssVarGetter": "var(--ui-color-green-20)"
+    },
+    "419:113": {
+      "key": "067e1af3504e0791742cee1e11ccc4cf3ebc61ec",
+      "name": "color-orange-50",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#E66020"
+      },
+      "cssVarSetter": "--ui-color-orange-50",
+      "cssVarGetter": "var(--ui-color-orange-50)"
+    },
+    "419:120": {
+      "key": "28a72a426b1bde558ff9ed79a232969f7cd7df5b",
+      "name": "color-yellow-5",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#160700"
+      },
+      "cssVarSetter": "--ui-color-yellow-5",
+      "cssVarGetter": "var(--ui-color-yellow-5)"
+    },
+    "419:103": {
+      "key": "78872cb6ccda448ac9f0ba9e64b425cd3df0cd56",
+      "name": "color-green-80",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#6FD6AB"
+      },
+      "cssVarSetter": "--ui-color-green-80",
+      "cssVarGetter": "var(--ui-color-green-80)"
+    },
+    "419:106": {
+      "key": "4822d7ee1f257a42e683a89c643fe305af1e6b03",
+      "name": "color-orange-0",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#330D00"
+      },
+      "cssVarSetter": "--ui-color-orange-0",
+      "cssVarGetter": "var(--ui-color-orange-0)"
+    },
+    "419:99": {
+      "key": "e715f18adb15a7682db8bab5f6d17570bd129fcd",
+      "name": "color-green-40",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0B8552"
+      },
+      "cssVarSetter": "--ui-color-green-40",
+      "cssVarGetter": "var(--ui-color-green-40)"
+    },
+    "419:116": {
+      "key": "5eeceabf8add1db30efd19bd861b05caaf6893ab",
+      "name": "color-orange-80",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FCB983"
+      },
+      "cssVarSetter": "--ui-color-orange-80",
+      "cssVarGetter": "var(--ui-color-orange-80)"
+    },
+    "419:94": {
+      "key": "01dfbd8997b46a9ef0c558b39149b157b0f2bd3e",
+      "name": "color-green-5",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#003D24"
+      },
+      "cssVarSetter": "--ui-color-green-5",
+      "cssVarGetter": "var(--ui-color-green-5)"
+    },
+    "419:119": {
+      "key": "51475b6d4b4194ad7ad486c21bbd5b88cfe5542c",
+      "name": "color-yellow-0",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#000000"
+      },
+      "cssVarSetter": "--ui-color-yellow-0",
+      "cssVarGetter": "var(--ui-color-yellow-0)"
+    },
+    "419:136": {
+      "key": "a8fad6a33c9c75d67754627e5fc3663aeff1fa42",
+      "name": "color-gray-20",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#32353D"
+      },
+      "cssVarSetter": "--ui-color-gray-20",
+      "cssVarGetter": "var(--ui-color-gray-20)"
+    },
+    "419:210": {
+      "key": "39e9d5f58b198cf86892d618a1030e843265d9cf",
+      "name": "state-f-disabled",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#676869"
+      },
+      "cssVarSetter": "--ui-state-f-disabled",
+      "cssVarGetter": "var(--ui-state-f-disabled)"
+    },
+    "419:107": {
+      "key": "febd3489c743556d4c8fd8ffc4a17fb43309dc06",
+      "name": "color-orange-5",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#4F1400"
+      },
+      "cssVarSetter": "--ui-color-orange-5",
+      "cssVarGetter": "var(--ui-color-orange-5)"
+    },
+    "419:124": {
+      "key": "653d53efd8e0e31f745f0b92f86a402f4818a546",
+      "name": "color-yellow-30",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#814900"
+      },
+      "cssVarSetter": "--ui-color-yellow-30",
+      "cssVarGetter": "var(--ui-color-yellow-30)"
+    },
+    "419:150": {
+      "key": "1f7b203d022c40eddff9abe3a0e303a27d89c292",
+      "name": "color-indigo-30",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#3049CE"
+      },
+      "cssVarSetter": "--ui-color-indigo-30",
+      "cssVarGetter": "var(--ui-color-indigo-30)"
+    },
+    "419:140": {
+      "key": "94314106f7831de85e54e0f7e6d6704b60e4038d",
+      "name": "color-gray-60",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#8A919E"
+      },
+      "cssVarSetter": "--ui-color-gray-60",
+      "cssVarGetter": "var(--ui-color-gray-60)"
+    },
+    "419:219": {
+      "key": "04e0f1a46262f75a08170a1692746ef7aaa77132",
+      "name": "state-n-disabled",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#612C31"
+      },
+      "cssVarSetter": "--ui-state-n-disabled",
+      "cssVarGetter": "var(--ui-state-n-disabled)"
+    },
+    "419:66": {
+      "key": "64e6597b7b714718d38cf50a0ebb4760d5736b7e",
+      "name": "palette-line",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#8A919E"
+      },
+      "cssVarSetter": "--ui-palette-line",
+      "cssVarGetter": "var(--ui-palette-line)"
+    },
+    "419:111": {
+      "key": "34f72616a866f071af71bbc81f3293d79b63c63a",
+      "name": "color-orange-30",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#BD3B09"
+      },
+      "cssVarSetter": "--ui-color-orange-30",
+      "cssVarGetter": "var(--ui-color-orange-30)"
+    },
+    "419:128": {
+      "key": "81e5e60251e70bcf2320105189b78f1c2a1c033e",
+      "name": "color-yellow-70",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FFD200"
+      },
+      "cssVarSetter": "--ui-color-yellow-70",
+      "cssVarGetter": "var(--ui-color-yellow-70)"
+    },
+    "419:105": {
+      "key": "79b8e5c4893c531e9698fa4709eec995ad49a923",
+      "name": "color-green-100",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#F5FFFB"
+      },
+      "cssVarSetter": "--ui-color-green-100",
+      "cssVarGetter": "var(--ui-color-green-100)"
+    },
+    "419:130": {
+      "key": "64e6373664da4424dfc2057c16f2b6042d088739",
+      "name": "color-yellow-90",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FFED96"
+      },
+      "cssVarSetter": "--ui-color-yellow-90",
+      "cssVarGetter": "var(--ui-color-yellow-90)"
+    },
+    "419:132": {
+      "key": "7800caadb17bdf4921c278195e99774cb1e8b61c",
+      "name": "color-gray-0",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0A0B0D"
+      },
+      "cssVarSetter": "--ui-color-gray-0",
+      "cssVarGetter": "var(--ui-color-gray-0)"
+    },
+    "419:71": {
+      "key": "3bfc0b1af6a0905ad2cc70a14a78f6ea4397f269",
+      "name": "palette-negative",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#F0616D"
+      },
+      "cssVarSetter": "--ui-palette-negative",
+      "cssVarGetter": "var(--ui-palette-negative)"
+    },
+    "419:216": {
+      "key": "c7803d50b963b8e9bb15ffd63a55fc9d1a19ddaa",
+      "name": "state-pW-disabled",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#060D1B"
+      },
+      "cssVarSetter": "--ui-state-pW-disabled",
+      "cssVarGetter": "var(--ui-state-pW-disabled)"
+    },
+    "419:231": {
+      "key": "773e3988ecf304d3ec7cd0710f86711567ace3ee",
+      "name": "state-b-disabled",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0A0B0D"
+      },
+      "cssVarSetter": "--ui-state-b-disabled",
+      "cssVarGetter": "var(--ui-state-b-disabled)"
+    },
+    "419:78": {
+      "key": "629bb64af79d7ac45eb3d8d6af0582ed8f7cf5d0",
+      "name": "elevation-level-1",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#141519"
+      },
+      "cssVarSetter": "--ui-elevation-level-1",
+      "cssVarGetter": "var(--ui-elevation-level-1)"
+    },
+    "419:138": {
+      "key": "a80af1b9d15ccb49cb18bf7955daf7a981e59763",
+      "name": "color-gray-40",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#5B616E"
+      },
+      "cssVarSetter": "--ui-color-gray-40",
+      "cssVarGetter": "var(--ui-color-gray-40)"
+    },
+    "419:142": {
+      "key": "c4fe618da34ae19cbb021b28dc3ab1b3fb34bfba",
+      "name": "color-gray-80",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#C1C6CF"
+      },
+      "cssVarSetter": "--ui-color-gray-80",
+      "cssVarGetter": "var(--ui-color-gray-80)"
+    },
+    "419:166": {
+      "key": "8b5e0c330b3d8b079e81cdbd1d6036bf67c9c96a",
+      "name": "color-pink-60",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#E175D6"
+      },
+      "cssVarSetter": "--ui-color-pink-60",
+      "cssVarGetter": "var(--ui-color-pink-60)"
+    },
+    "419:173": {
+      "key": "926bee9ca9cc0f6ed4e78e71bfe2bdbe75a95bc3",
+      "name": "color-purple-10",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#422282"
+      },
+      "cssVarSetter": "--ui-color-purple-10",
+      "cssVarGetter": "var(--ui-color-purple-10)"
+    },
+    "419:84": {
+      "key": "8f051597a28557b907dcd5d9a77641bd20e95db6",
+      "name": "color-blue-20",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#053BB1"
+      },
+      "cssVarSetter": "--ui-color-blue-20",
+      "cssVarGetter": "var(--ui-color-blue-20)"
+    },
+    "419:144": {
+      "key": "1f85af1c6ee6d850e246abd56851315b71133c4e",
+      "name": "color-gray-100",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FFFFFF"
+      },
+      "cssVarSetter": "--ui-color-gray-100",
+      "cssVarGetter": "var(--ui-color-gray-100)"
+    },
+    "419:160": {
+      "key": "78aeda5210de68d4788c9552e1ba16a283771182",
+      "name": "color-pink-10",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#59134E"
+      },
+      "cssVarSetter": "--ui-color-pink-10",
+      "cssVarGetter": "var(--ui-color-pink-10)"
+    },
+    "419:146": {
+      "key": "4977f87b14d8607617c5b07ff857c26300535c46",
+      "name": "color-indigo-5",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0E1B5B"
+      },
+      "cssVarSetter": "--ui-color-indigo-5",
+      "cssVarGetter": "var(--ui-color-indigo-5)"
+    },
+    "419:92": {
+      "key": "2d7d814cc4ba60a046cce5a1485890ddf60c2d9c",
+      "name": "color-blue-100",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#F5F8FF"
+      },
+      "cssVarSetter": "--ui-color-blue-100",
+      "cssVarGetter": "var(--ui-color-blue-100)"
+    },
+    "419:152": {
+      "key": "57a96d6d89add39bc7a4cb0d87922fb51c36d632",
+      "name": "color-indigo-50",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#5C71EE"
+      },
+      "cssVarSetter": "--ui-color-indigo-50",
+      "cssVarGetter": "var(--ui-color-indigo-50)"
+    },
+    "419:121": {
+      "key": "a1bc3490480aa75b88e379afe373ad080da4cb3f",
+      "name": "color-yellow-10",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#2B0F00"
+      },
+      "cssVarSetter": "--ui-color-yellow-10",
+      "cssVarGetter": "var(--ui-color-yellow-10)"
+    },
+    "419:96": {
+      "key": "ac222373683f57f83f607ec72b38576d006090dd",
+      "name": "color-green-15",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#025230"
+      },
+      "cssVarSetter": "--ui-color-green-15",
+      "cssVarGetter": "var(--ui-color-green-15)"
+    },
+    "419:171": {
+      "key": "6923ca72f85a2c9b0615077d1e782a112595270c",
+      "name": "color-purple-0",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#190D33"
+      },
+      "cssVarSetter": "--ui-color-purple-0",
+      "cssVarGetter": "var(--ui-color-purple-0)"
+    },
+    "419:82": {
+      "key": "219948de26d88c58673224eac8eae416b329d7d0",
+      "name": "color-blue-10",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#012A82"
+      },
+      "cssVarSetter": "--ui-color-blue-10",
+      "cssVarGetter": "var(--ui-color-blue-10)"
+    },
+    "419:156": {
+      "key": "01bd00e59c1b169b10c743cceea037b5555abf93",
+      "name": "color-indigo-90",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#DBDFFF"
+      },
+      "cssVarSetter": "--ui-color-indigo-90",
+      "cssVarGetter": "var(--ui-color-indigo-90)"
+    },
+    "419:158": {
+      "key": "9e4eebf49aa0d51d39a310e7fb74de27372a330c",
+      "name": "color-pink-0",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#330A2C"
+      },
+      "cssVarSetter": "--ui-color-pink-0",
+      "cssVarGetter": "var(--ui-color-pink-0)"
+    },
+    "419:127": {
+      "key": "041fe6c89fc0f908e76f70c5e794e5ba4712670a",
+      "name": "color-yellow-60",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#E9B300"
+      },
+      "cssVarSetter": "--ui-color-yellow-60",
+      "cssVarGetter": "var(--ui-color-yellow-60)"
+    },
+    "419:102": {
+      "key": "c334daf213ee044270e64602a91ea6192624dcff",
+      "name": "color-green-70",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#44C28D"
+      },
+      "cssVarSetter": "--ui-color-green-70",
+      "cssVarGetter": "var(--ui-color-green-70)"
+    },
+    "419:162": {
+      "key": "5005d6f51af4d493276651ac8d6575c4e56e941b",
+      "name": "color-pink-20",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#7E1E6F"
+      },
+      "cssVarSetter": "--ui-color-pink-20",
+      "cssVarGetter": "var(--ui-color-pink-20)"
+    },
+    "419:165": {
+      "key": "5554d95dceacfae5448cd9054a3341d1876ceff5",
+      "name": "color-pink-50",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#D058C1"
+      },
+      "cssVarSetter": "--ui-color-pink-50",
+      "cssVarGetter": "var(--ui-color-pink-50)"
+    },
+    "419:63": {
+      "key": "d822b4f9dec1c64064e6edac8e6b38d8f8028c6e",
+      "name": "palette-background",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0A0B0D"
+      },
+      "cssVarSetter": "--ui-palette-background",
+      "cssVarGetter": "var(--ui-palette-background)"
+    },
+    "419:208": {
+      "key": "84556de49a7c62a9bfebc4e6430f39cfd260fbc0",
+      "name": "color-teal-90",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#95EFFB"
+      },
+      "cssVarSetter": "--ui-color-teal-90",
+      "cssVarGetter": "var(--ui-color-teal-90)"
+    },
+    "419:182": {
+      "key": "a881a4bdd693650b1b1fcca0a7e04ef982cad825",
+      "name": "color-purple-90",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#EEDFFF"
+      },
+      "cssVarSetter": "--ui-color-purple-90",
+      "cssVarGetter": "var(--ui-color-purple-90)"
+    },
+    "419:61": {
+      "key": "d5dc0860f57810adada92bb29ad15c447a0cb9a3",
+      "name": "palette-foreground",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#FFFFFF"
+      },
+      "cssVarSetter": "--ui-palette-foreground",
+      "cssVarGetter": "var(--ui-palette-foreground)"
+    },
+    "419:65": {
+      "key": "412a884fdf36ee9efa71a3915a742c105687b7e4",
+      "name": "palette-backgroundOverlay",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0A0B0D"
+      },
+      "cssVarSetter": "--ui-palette-backgroundOverlay",
+      "cssVarGetter": "var(--ui-palette-backgroundOverlay)"
+    },
+    "419:197": {
+      "key": "e2c86b138ba056ca2703077bba0d3b45ff23d97f",
+      "name": "color-teal-0",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#001426"
+      },
+      "cssVarSetter": "--ui-color-teal-0",
+      "cssVarGetter": "var(--ui-color-teal-0)"
+    },
+    "419:212": {
+      "key": "d524371b1ceb5b8a9617276eb41809b32135421e",
+      "name": "state-f-hovered",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#E1E1E1"
+      },
+      "cssVarSetter": "--ui-state-f-hovered",
+      "cssVarGetter": "var(--ui-state-f-hovered)"
+    },
+    "419:214": {
+      "key": "643d806b315444176dac76dd1ead521422e1ae9c",
+      "name": "state-fM-pressed",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#999FAB"
+      },
+      "cssVarSetter": "--ui-state-fM-pressed",
+      "cssVarGetter": "var(--ui-state-fM-pressed)"
+    },
+    "419:218": {
+      "key": "cc4a5f4806778c6880bb61d5879a56d084e623d3",
+      "name": "state-pW-hovered",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#051537"
+      },
+      "cssVarSetter": "--ui-state-pW-hovered",
+      "cssVarGetter": "var(--ui-state-pW-hovered)"
+    },
+    "419:235": {
+      "key": "7da63ede272100224059912c4e8dffba7e3f80aa",
+      "name": "state-bA-pressed",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#27282B"
+      },
+      "cssVarSetter": "--ui-state-bA-pressed",
+      "cssVarGetter": "var(--ui-state-bA-pressed)"
+    },
+    "419:233": {
+      "key": "01065b18590e7870ac8e4363f13151ace30e2bc3",
+      "name": "state-b-hovered",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#0F1012"
+      },
+      "cssVarSetter": "--ui-state-b-hovered",
+      "cssVarGetter": "var(--ui-state-b-hovered)"
+    },
+    "419:236": {
+      "key": "38ec370c4ed9fa91332fab22e1c3282af1411d66",
+      "name": "state-bA-hovered",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#191A1E"
+      },
+      "cssVarSetter": "--ui-state-bA-hovered",
+      "cssVarGetter": "var(--ui-state-bA-hovered)"
+    },
+    "419:213": {
+      "key": "6fca2d6ff3c5bafead04d07bc2ceee56330f987e",
+      "name": "state-fM-disabled",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#3B3E44"
+      },
+      "cssVarSetter": "--ui-state-fM-disabled",
+      "cssVarGetter": "var(--ui-state-fM-disabled)"
+    },
+    "419:176": {
+      "key": "7b2c09ce0828095f1354546f42168602d2ff4bb8",
+      "name": "color-purple-30",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#7443CE"
+      },
+      "cssVarSetter": "--ui-color-purple-30",
+      "cssVarGetter": "var(--ui-color-purple-30)"
+    },
+    "419:227": {
+      "key": "17ce9139ca8ec45e5dca3366194a430406cd452e",
+      "name": "state-pO-hovered",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#38B380"
+      },
+      "cssVarSetter": "--ui-state-pO-hovered",
+      "cssVarGetter": "var(--ui-state-pO-hovered)"
+    },
+    "419:222": {
+      "key": "2fb8b1b11c341972c17d490d53ae0ad72307cd9f",
+      "name": "state-p-disabled",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#1B3365"
+      },
+      "cssVarSetter": "--ui-state-p-disabled",
+      "cssVarGetter": "var(--ui-state-p-disabled)"
+    },
+    "419:225": {
+      "key": "9c8847b620592986a2f5a2d0f3eb47d061aa5d06",
+      "name": "state-pO-disabled",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#154935"
+      },
+      "cssVarSetter": "--ui-state-pO-disabled",
+      "cssVarGetter": "var(--ui-state-pO-disabled)"
+    },
+    "419:226": {
+      "key": "c9785e98edf4de7df7b537a5daf970882f17435b",
+      "name": "state-pO-pressed",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#45B787"
+      },
+      "cssVarSetter": "--ui-state-pO-pressed",
+      "cssVarGetter": "var(--ui-state-pO-pressed)"
+    },
+    "419:224": {
+      "key": "d3bbd901e358c0a1963bdcd52aec3f698dcf4116",
+      "name": "state-p-hovered",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#477EF5"
+      },
+      "cssVarSetter": "--ui-state-p-hovered",
+      "cssVarGetter": "var(--ui-state-p-hovered)"
+    },
+    "419:223": {
+      "key": "f837fca809e8867908b6ab26c444ec3e664fa637",
+      "name": "state-p-pressed",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#5386F5"
+      },
+      "cssVarSetter": "--ui-state-p-pressed",
+      "cssVarGetter": "var(--ui-state-p-pressed)"
+    },
+    "419:688": {
+      "key": "e884011294a703afccd3fa691b72875aae69063d",
+      "name": "elevation-level-1",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#D9D9D9"
+      },
+      "cssVarSetter": "--ui-elevation-level-1",
+      "cssVarGetter": "var(--ui-elevation-level-1)"
+    },
+    "419:689": {
+      "key": "c32a5afb30388e3db100d5ae1064927eff65e073",
+      "name": "elevation-level-2",
+      "type": "dark",
+      "prefix": "ui",
+      "paint": {
+        "type": "solid",
+        "value": "#D9D9D9"
+      },
+      "cssVarSetter": "--ui-elevation-level-2",
+      "cssVarGetter": "var(--ui-elevation-level-2)"
+    }
+  }
+}

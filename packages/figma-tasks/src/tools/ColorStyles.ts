@@ -42,10 +42,12 @@ export class ColorStyles {
   constructor({ light, dark }: ColorStylesOptions) {
     this.light = normalizeColorStyleFromDisk(light);
     this.dark = normalizeColorStyleFromDisk(dark);
-    this.light.items.forEach((color) => {
-      const darkMatch = this.dark.nameMap.get(color.name);
+    this.light.items.forEach((colorStyle) => {
+      const darkMatch = this.dark.nameMap.get(colorStyle.name);
       if (darkMatch) {
-        this.lightToDarkTuple.push([color.fill, darkMatch.fill]);
+        if (colorStyle.paint.type === 'solid' && darkMatch.paint.type === 'solid') {
+          this.lightToDarkTuple.push([colorStyle.paint.value, darkMatch.paint.value]);
+        }
       }
     });
   }
@@ -61,7 +63,9 @@ export class ColorStyles {
   public replaceWithCssVariables(content: string) {
     let transformedContent = content;
     this.light.items.forEach((item) => {
-      transformedContent = transformedContent.replaceAll(item.fill, item.cssVarGetter);
+      if (item.paint.type === 'solid') {
+        transformedContent = transformedContent.replaceAll(item.paint.value, item.cssVarGetter);
+      }
     });
     return transformedContent;
   }

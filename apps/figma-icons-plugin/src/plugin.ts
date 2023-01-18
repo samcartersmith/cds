@@ -1,4 +1,4 @@
-import { light } from '@cbhq/figma-styles/__generated__/ui-styles';
+import lightStyleMap from '@cbhq/figma-styles/__generated__/ui/light/colorStyleMap';
 
 import type { Density, FigmaMessage } from './types';
 
@@ -126,12 +126,12 @@ function createAliasedIconComponents({
 
 const fillStyles = {
   normal: {
-    nav: light['color/blue/5'], // blue5
-    ui: light['color/yellow/10'], // yellow10
+    nav: lightStyleMap['color-blue-5'], // blue5
+    ui: lightStyleMap['color-yellow-10'], // yellow10
   },
   dense: {
-    nav: light['color/purple/15'], // purple15
-    ui: light['color/orange/15'], // orange15
+    nav: lightStyleMap['color-purple-15'], // purple15
+    ui: lightStyleMap['color-orange-15'], // orange15
   },
 };
 

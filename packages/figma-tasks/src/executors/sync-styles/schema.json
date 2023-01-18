@@ -3,7 +3,7 @@
   "type": "object",
   "cli": "nx",
   "additionalProperties": false,
-  "required": ["figmaApiFileId", "manifestFile", "generatedDirectory"],
+  "required": ["figmaApiFileId", "manifestFile", "generatedDirectory", "prefix"],
   "properties": {
     "figmaApiFileId": {
       "type": "string",
@@ -21,9 +21,9 @@
       "type": "string",
       "description": "The directory to output generated files."
     },
-    "generatedCssVariablesPrefix": {
+    "prefix": {
       "type": "string",
-      "description": "Prefix to add to generated css variables"
+      "description": "Prefix to add to style name and generated css variables"
     }
   }
 }

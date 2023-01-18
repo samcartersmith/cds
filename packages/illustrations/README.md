@@ -44,11 +44,7 @@ yarn nx run illustrations:sync
 - [Figma Illustration dark styles](https://www.figma.com/file/etJaiHq7aFlJFICLKIrcK7/%F0%9F%8C%9A--Illustration-Dark-Styles?t=NAycPBCIl5jp15ou-6)
 
 ```shell
-yarn nx run illustrations:sync-light-styles
-```
-
-```shell
-yarn nx run illustrations:sync-dark-styles
+yarn nx run illustrations:sync-styles
 ```
 
 The CDS Illustration color styles should not change often and can be run on an as-needed basis.

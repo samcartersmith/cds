@@ -1,13 +1,9 @@
 /* eslint-disable no-param-reassign */
 
-import {
-  darkKeyMap as darkIlloKeyMap,
-  lightKeyMap as lightIlloKeyMap,
-} from '@cbhq/figma-styles/__generated__/illustration-styles';
-import {
-  darkKeyMap as darkUiKeyMap,
-  lightKeyMap as lightUiKeyMap,
-} from '@cbhq/figma-styles/__generated__/ui-styles';
+import illustrationDarkMap from '@cbhq/figma-styles/__generated__/illustration/dark/colorStyleMap';
+import illustrationLightMap from '@cbhq/figma-styles/__generated__/illustration/light/colorStyleMap';
+import uiDarkMap from '@cbhq/figma-styles/__generated__/ui/dark/colorStyleMap';
+import uiLightMap from '@cbhq/figma-styles/__generated__/ui/light/colorStyleMap';
 
 import type { FigmaContext, FigmaMessage, Spectrum } from './types';
 
@@ -15,16 +11,47 @@ figma.showUI(__html__);
 figma.skipInvisibleInstanceChildren = true;
 
 type StyleType = 'fill' | 'stroke' | 'effect';
-type StyleKey = keyof typeof lightKeyMap | keyof typeof darkKeyMap;
 
-const lightKeyMap: Record<string, string> = {
-  ...lightIlloKeyMap,
-  ...lightUiKeyMap,
+type ColorStyleMap = {
+  key: string;
+  name: string;
+  prefix: string;
 };
 
-const darkKeyMap: Record<string, string> = {
-  ...darkIlloKeyMap,
-  ...darkUiKeyMap,
+function getUniqueName(item: ColorStyleMap) {
+  return `${item.prefix}-${item.name}`;
+}
+
+function getKeyToNameMap(colorStyleMap: Record<string, ColorStyleMap>) {
+  return Object.fromEntries(
+    Object.values(colorStyleMap).map((item) => [item.key, getUniqueName(item)]),
+  );
+}
+
+function getNameToKeyMap(colorStyleMap: Record<string, ColorStyleMap>) {
+  return Object.fromEntries(
+    Object.values(colorStyleMap).map((item) => [getUniqueName(item), item.key]),
+  );
+}
+
+const lightKeyToNameMap: Record<string, string> = {
+  ...getKeyToNameMap(illustrationLightMap),
+  ...getKeyToNameMap(uiLightMap),
+};
+
+const lightNameToKeyMap = {
+  ...getNameToKeyMap(illustrationLightMap),
+  ...getNameToKeyMap(uiLightMap),
+};
+
+const darkKeyToNameMap: Record<string, string> = {
+  ...getKeyToNameMap(illustrationDarkMap),
+  ...getKeyToNameMap(uiDarkMap),
+};
+
+const darkNameToKeyMap = {
+  ...getNameToKeyMap(illustrationDarkMap),
+  ...getNameToKeyMap(uiDarkMap),
 };
 
 const cache = new Map<string, string>();
@@ -49,8 +76,9 @@ async function swapStyles({
   convertTo: Spectrum;
   node: BaseNode;
 }) {
-  let currentKey: StyleKey | undefined;
-  const lookupKeyMap = convertTo === 'dark' ? lightKeyMap : darkKeyMap;
+  let currentKey: string | undefined;
+  const sourceKeyMap = convertTo === 'dark' ? lightKeyToNameMap : darkKeyToNameMap;
+  const targetNameMap = convertTo === 'dark' ? darkNameToKeyMap : lightNameToKeyMap;
 
   const isFill = type === 'fill' && 'fillStyleId' in node;
   const isStroke = type === 'stroke' && 'strokeStyleId' in node;
@@ -64,8 +92,9 @@ async function swapStyles({
     currentKey = idToKey(node.effectStyleId);
   }
 
-  if (currentKey && currentKey in lookupKeyMap) {
-    const targetKey = lookupKeyMap[currentKey];
+  if (currentKey && currentKey in sourceKeyMap) {
+    const sourceName = sourceKeyMap[currentKey];
+    const targetKey = targetNameMap[sourceName];
     let targetId = cache.get(targetKey);
 
     if (!targetId) {
