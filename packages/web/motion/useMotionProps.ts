@@ -42,11 +42,23 @@ export type UseMotionProps = {
   transition?: MotionTransition;
 } & Omit<FramerMotionProps, 'exit' | 'initial' | 'animate' | 'transition'>;
 
-/**
- * Convert CDS motion configs to framer motion props.
- * @link https://www.framer.com/docs/component/##animation
- */
-export const useMotionProps = ({
+const getVariants = (enterConfigs?: MotionConfigs, exitConfigs?: MotionConfigs) => {
+  if (!enterConfigs && !exitConfigs) return undefined;
+
+  const variant: MotionVariant = {};
+
+  if (enterConfigs) {
+    variant.enter = createVariant(enterConfigs);
+  }
+
+  if (exitConfigs) {
+    variant.exit = createVariant(exitConfigs);
+  }
+
+  return variant;
+};
+
+export const getMotionProps = ({
   enterConfigs,
   exitConfigs,
   initial = 'exit',
@@ -54,30 +66,20 @@ export const useMotionProps = ({
   transition,
   ...rest
 }: UseMotionProps) => {
-  const variants = useMemo(() => {
-    if (!enterConfigs && !exitConfigs) return undefined;
+  return {
+    variants: getVariants(enterConfigs, exitConfigs),
+    initial,
+    animate,
+    transition: transition && convertTransition(transition),
+    ...rest,
+  };
+};
 
-    const variant: MotionVariant = {};
-
-    if (enterConfigs) {
-      variant.enter = createVariant(enterConfigs);
-    }
-
-    if (exitConfigs) {
-      variant.exit = createVariant(exitConfigs);
-    }
-
-    return variant;
-  }, [enterConfigs, exitConfigs]);
-
-  return useMemo(
-    () => ({
-      variants,
-      initial,
-      animate,
-      transition: transition && convertTransition(transition),
-      ...rest,
-    }),
-    [variants, rest, initial, animate, transition],
-  );
+/**
+ * Convert CDS motion configs to framer motion props.
+ * @warning Use the function version(getMotionProps) if possible to avoid unnecessary rerenders.
+ * @link https://www.framer.com/docs/component/##animation
+ */
+export const useMotionProps = (props: UseMotionProps) => {
+  return useMemo(() => getMotionProps(props), [props]);
 };
