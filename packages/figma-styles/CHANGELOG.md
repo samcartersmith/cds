@@ -2,6 +2,18 @@
 
 ### 🚀 Added
 
+Generated with `yarn nx run figma-styles:sync-illustration-light-styles`
+
+- gray-2
+
+### 🚀 Added
+
+Generated with `yarn nx run figma-styles:sync-illustration-dark-styles`
+
+- gray-2
+
+### 🚀 Added
+
 Generated with `yarn nx run figma-styles:sync-ui-light-styles`
 
 - color-blue-0

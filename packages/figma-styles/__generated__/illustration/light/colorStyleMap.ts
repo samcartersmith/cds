@@ -59,6 +59,15 @@ const colorStyleMap = {
     cssVarSetter: '--illustration-gray',
     cssVarGetter: 'var(--illustration-gray)',
   },
+  'gray-2': {
+    key: '61739a0f18f3f51f9428261fe0577ee063046609',
+    name: 'gray-2',
+    type: 'light',
+    prefix: 'illustration',
+    paint: { type: 'solid', value: '#050607' },
+    cssVarSetter: '--illustration-gray-2',
+    cssVarGetter: 'var(--illustration-gray-2)',
+  },
   invert: {
     key: '557256b66f06196cca2c11ae7b5fc30f85f31b8b',
     name: 'invert',
