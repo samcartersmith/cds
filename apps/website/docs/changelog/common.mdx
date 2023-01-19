@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.6.1 (1/19/2023, 10:33 AM PST)
+
+#### 🐞 Fixes
+
+- **[Grid]** Upgraded typefest and added MergeExclusive to Grid. [#1117](https://github.cbhq.net/frontend/cds/pull/1117), [CDS-3016](https://jira.coinbase-corp.com/browse/CDS-3016)
+
+#### 📘 Misc
+
+- Single sheet illustration stories on mobile and web. [#1512](https://github.cbhq.net/frontend/cds/pull/1512)
+
 ## 3.6.0 (1/10/2023, 02:54 PM PST)
 
 #### 🐞 Fixes
