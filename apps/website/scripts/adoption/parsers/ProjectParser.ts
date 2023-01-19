@@ -476,7 +476,6 @@ export class ProjectParser {
       this.dependencies = (await getPackageJson(this.root)).dependencies;
       this.root = path.resolve(this.root, tsconfig.compilerOptions?.baseUrl ?? '.');
 
-      // @ts-expect-error The tsconfig is fine.
       const { absoluteAliases, relativeAliases } = getTypescriptAliases(this.root, tsconfig);
       this.tsAliases = absoluteAliases;
       this.tsAliasesRelative = relativeAliases;

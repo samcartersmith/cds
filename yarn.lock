@@ -15006,7 +15006,7 @@ __metadata:
     stylelint-prettier: ^1.1.2
     ts-node: ^10.0.0
     tsconfig-paths: ^4.0.0
-    type-fest: 1.2.0
+    type-fest: ^2.19.0
     typescript: ~4.8.4
     url-loader: 4.1.1
     webfont: 9.0.0
@@ -34190,10 +34190,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^2.5.0":
-  version: 2.12.2
-  resolution: "type-fest@npm:2.12.2"
-  checksum: ee69676da1f69d2b14bbec28c7b95220a3221ab14093f54bde179c59e185a80470859553eada535ec35d8637a245c2f0efe9d7c99cc46a43f3b4c7ef64db7957
+"type-fest@npm:^2.19.0, type-fest@npm:^2.5.0":
+  version: 2.19.0
+  resolution: "type-fest@npm:2.19.0"
+  checksum: a4ef07ece297c9fba78fc1bd6d85dff4472fe043ede98bd4710d2615d15776902b595abf62bd78339ed6278f021235fb28a96361f8be86ed754f778973a0d278
   languageName: node
   linkType: hard
 

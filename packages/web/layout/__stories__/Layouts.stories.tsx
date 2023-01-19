@@ -334,7 +334,6 @@ export const Examples = () => {
             </TextBody>
           }
         >
-          {/* @ts-expect-error for demo purposes */}
           <GridLayout />
         </Example>
         <Example

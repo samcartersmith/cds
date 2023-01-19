@@ -202,9 +202,9 @@ Partials within partials - There's really no good way to handle this at the mome
 
 The Table of Contents section below has more details about why this is necessary.
 
-## Step 4. Update sidbear
+## Step 4. Update sidebar
 
-Add doc to [sidbar.config.js](../apps/website/sidebar.config.js)
+Add doc to [sidebar.config.js](../apps/website/sidebar.config.js)
 
 # Table of contents (right sidebar)
 
@@ -293,7 +293,7 @@ Within each category they follow varying degrees of sorting, but if we were to d
 
 ## Adding content other than component docs
 
-The categories we currently have were purposfally organized in this way and we want to be more purposeful of any changes to this organization moving forward.
+The categories we currently have were purposefully organized in this way and we want to be more purposeful of any changes to this organization moving forward.
 
 Please do not add new categories/re-organize the main sections without talking with leads first.
 
