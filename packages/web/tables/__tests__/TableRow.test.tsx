@@ -1,40 +1,175 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { noop } from '@cbhq/cds-utils';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { Button } from '../../buttons';
 import { TableBody } from '../TableBody';
 import { TableRow } from '../TableRow';
+
+const TEST_ID = 'some-test-id';
 
 describe('TableRow', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <TableBody>
-          <TableRow>
-            {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
-            <>Child</>
-          </TableRow>
-        </TableBody>,
+        <table>
+          <TableBody>
+            <TableRow>
+              <td>Child</td>
+            </TableRow>
+          </TableBody>
+        </table>,
       ),
     ).toHaveNoViolations();
   });
 
-  it('spreads data props', async () => {
+  it('spreads data props', () => {
     render(
-      <TableBody>
-        <TableRow data-row="my-first-row" testID="first-row">
-          {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
-          <>First child</>
-        </TableRow>
-        <TableRow data-row="my-second-row" testID="second-row">
-          {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
-          <>Second child</>
-        </TableRow>
-      </TableBody>,
+      <table>
+        <TableBody>
+          <TableRow data-row="my-first-row" testID="first-row">
+            <td>First child</td>
+          </TableRow>
+          <TableRow data-row="my-second-row" testID="second-row">
+            <td>Second child</td>
+          </TableRow>
+        </TableBody>
+      </table>,
     );
-    const firstChild = await screen.findByTestId('first-row');
-    const secondChild = await screen.findByTestId('second-row');
 
-    expect(firstChild).toHaveAttribute('data-row', 'my-first-row');
-    expect(secondChild).toHaveAttribute('data-row', 'my-second-row');
+    expect(screen.getByTestId('first-row')).toHaveAttribute('data-row', 'my-first-row');
+    expect(screen.getByTestId('second-row')).toHaveAttribute('data-row', 'my-second-row');
+  });
+
+  it('does not set tab index by default', () => {
+    render(
+      <table>
+        <TableBody>
+          <TableRow testID={TEST_ID}>
+            <td>Child</td>
+          </TableRow>
+        </TableBody>
+      </table>,
+    );
+
+    expect(screen.getByTestId(TEST_ID)).not.toHaveAttribute('tabindex');
+  });
+
+  it('sets tab index', () => {
+    render(
+      <table>
+        <TableBody>
+          <TableRow tabIndex={-1} testID={TEST_ID}>
+            <td>Child</td>
+          </TableRow>
+        </TableBody>
+      </table>,
+    );
+
+    expect(screen.getByTestId(TEST_ID)).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('sets default tab index of 0 when onPress is defined', () => {
+    render(
+      <table>
+        <TableBody>
+          <TableRow onPress={noop} testID={TEST_ID}>
+            <td>Child</td>
+          </TableRow>
+        </TableBody>
+      </table>,
+    );
+
+    expect(screen.getByTestId(TEST_ID)).toHaveAttribute('tabindex', '0');
+  });
+
+  it('fires onPress when clicked', () => {
+    const onPressSpy = jest.fn();
+
+    render(
+      <table>
+        <TableBody>
+          <TableRow onPress={onPressSpy} testID={TEST_ID}>
+            <td>Child</td>
+          </TableRow>
+        </TableBody>
+      </table>,
+    );
+
+    fireEvent.click(screen.getByTestId(TEST_ID));
+
+    expect(onPressSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('fires onPress when enter is pressed', () => {
+    const onPressSpy = jest.fn();
+
+    render(
+      <table>
+        <TableBody>
+          <TableRow onPress={onPressSpy} testID={TEST_ID}>
+            <td>Child</td>
+          </TableRow>
+        </TableBody>
+      </table>,
+    );
+
+    fireEvent.keyDown(screen.getByTestId(TEST_ID), { key: 'Enter' });
+
+    expect(onPressSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('fires onPress when space is pressed', () => {
+    const onPressSpy = jest.fn();
+
+    render(
+      <table>
+        <TableBody>
+          <TableRow onPress={onPressSpy} testID={TEST_ID}>
+            <td>Child</td>
+          </TableRow>
+        </TableBody>
+      </table>,
+    );
+
+    fireEvent.keyDown(screen.getByTestId(TEST_ID), { code: 'Space' });
+
+    expect(onPressSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not fire onPress when a key other than space or enter is pressed', () => {
+    const onPressSpy = jest.fn();
+
+    render(
+      <table>
+        <TableBody>
+          <TableRow onPress={onPressSpy} testID={TEST_ID}>
+            <td>Child</td>
+          </TableRow>
+        </TableBody>
+      </table>,
+    );
+
+    fireEvent.keyDown(screen.getByTestId(TEST_ID), { key: 'A' });
+
+    expect(onPressSpy).toHaveBeenCalledTimes(0);
+  });
+
+  it('does not fire onPress more than once on pressable child keydown events', () => {
+    const onPressSpy = jest.fn();
+
+    render(
+      <table>
+        <TableBody>
+          <TableRow onPress={onPressSpy}>
+            <Button testID={TEST_ID}>Child</Button>
+          </TableRow>
+        </TableBody>
+      </table>,
+    );
+
+    fireEvent.keyDown(screen.getByTestId(TEST_ID), { key: 'Enter' });
+
+    expect(onPressSpy).toHaveBeenCalledTimes(1);
   });
 });

@@ -6,12 +6,13 @@ import { TableRowRef } from '../types/tableRowTypes';
 /** Call an event handler on Enter and Space keypress */
 export const useTableRowListener = (ref: TableRowRef, handler?: NoopFn) => {
   const handleEvent = useCallback(
-    ({ key, code }: KeyboardEvent) => {
-      if (key === 'Enter' || code === 'Space') {
+    ({ target, key, code }: KeyboardEvent) => {
+      // Do not trigger handler if keydown event originates from a child
+      if (ref.current === target && (key === 'Enter' || code === 'Space')) {
         handler?.();
       }
     },
-    [handler],
+    [handler, ref],
   );
 
   useEffect(() => {
