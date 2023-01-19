@@ -39,7 +39,8 @@ export function populateExamplesToc({
   metadata,
   propsTable,
   codeExamples,
-}: Pick<ComponentPageProps, 'metadata' | 'propsTable'> &
+  staticExamples,
+}: Pick<ComponentPageProps, 'metadata' | 'propsTable' | 'staticExamples'> &
   Pick<ComponentPageFields, 'codeExamples'>) {
   let temp = [] as TOCItem[];
   if (metadata?.toc) {
@@ -48,6 +49,9 @@ export function populateExamplesToc({
 
   if (propsTable?.toc) {
     temp = [...propsTable.toc, ...temp];
+  }
+  if (staticExamples?.toc) {
+    temp = [...staticExamples.toc, ...temp];
   }
 
   if (codeExamples) {
@@ -62,7 +66,13 @@ export function populateExamplesToc({
         }),
       );
 
-    temp = [{ id: 'examples', level: 2, value: 'Examples' }, ...codeExamplesToc, ...temp];
+    temp = [...codeExamplesToc, ...temp];
   }
+
+  if (codeExamples || staticExamples) {
+    // add examples as first toc item
+    temp.unshift({ id: 'examples', level: 2, value: 'Examples' });
+  }
+
   return temp;
 }

@@ -5,7 +5,7 @@ import TabItemOriginal from '@theme-original/TabItem';
 import TabsOriginal from '@theme-original/Tabs';
 import { Entry } from 'contentful';
 import { CMSContent } from '@cb/cms';
-import { Group } from '@cbhq/cds-web/layout';
+import { Group, VStack } from '@cbhq/cds-web/layout';
 
 import { Divider } from '../components/Divider';
 import { Section } from '../components/Section';
@@ -25,6 +25,7 @@ export type ComponentPageProps = {
   changelog?: DocgenProps;
   propsTable?: DocgenProps;
   metadata?: DocgenProps;
+  staticExamples?: DocgenProps;
   content: ComponentPageFields;
 };
 
@@ -51,6 +52,7 @@ export const ComponentPage = memo(function ComponentPage({
   metadata,
   propsTable,
   changelog,
+  staticExamples,
 }: ComponentPageProps) {
   const {
     codeExamples,
@@ -76,13 +78,14 @@ export const ComponentPage = memo(function ComponentPage({
         key="examples"
         value="examples"
         label="Examples"
-        toc={populateExamplesToc({ metadata, propsTable, codeExamples })}
+        toc={populateExamplesToc({ metadata, propsTable, codeExamples, staticExamples })}
       >
         <Section title="Examples">
           <Group divider={Divider}>
             {codeExamples?.map((codeExample) => (
               <CMSContent key={codeExample.sys.id} content={codeExample} />
             ))}
+            {staticExamples?.element && <VStack gap={2}>{staticExamples?.element}</VStack>}
             {metadata?.element}
             {propsTable?.element}
           </Group>
