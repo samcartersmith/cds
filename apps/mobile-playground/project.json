@@ -1,4 +1,5 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/mobile-playground/src",
   "projectType": "application",
   "targets": {
@@ -130,7 +131,8 @@
       "executor": "@cbhq/mono-tasks-mobile:prebuild",
       "options": {
         "platform": "android",
-        "buildType": "e2e"
+        "buildType": "e2e",
+        "arch": "universal"
       },
       "dependsOn": ["^build"]
     },
@@ -138,7 +140,8 @@
       "executor": "@cbhq/mono-tasks-mobile:prebuild",
       "options": {
         "platform": "ios",
-        "buildType": "e2e"
+        "buildType": "e2e",
+        "arch": "simulator_x86"
       },
       "dependsOn": ["^build"]
     }

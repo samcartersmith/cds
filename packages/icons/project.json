@@ -1,5 +1,5 @@
 {
-  "root": "packages/icons",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/icons",
   "projectType": "library",
   "targets": {
@@ -38,7 +38,9 @@
         ]
       }
     },
-    "test": { "executor": "@cbhq/mono-tasks:test" },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
     },

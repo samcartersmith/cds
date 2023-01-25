@@ -4,7 +4,6 @@
     "defaultBase": "master"
   },
   "cli": {
-    "defaultCollection": "@nrwl/workspace",
     "packageManager": "yarn"
   },
   "tasksRunnerOptions": {
@@ -69,5 +68,6 @@
       "{workspaceRoot}/workspace.json"
     ],
     "production": ["default"]
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/nx-schema.json"
 }

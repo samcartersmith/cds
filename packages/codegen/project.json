@@ -1,4 +1,5 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/codegen",
   "projectType": "library",
   "implicitDependencies": ["!web", "!common", "!utils", "!web-utils"],

@@ -49,7 +49,10 @@ steps:
     <<: *shared_step
     commands:
       - tools/ci/setup.sh
-      - yarn nx workspace-lint
+      # Disabled until bug gets fixed: https://github.cbhq.net/frontend/web/pull/1528/files#r919832
+      # Our versions match.
+      # Filed and issue: https://github.com/nrwl/nx/issues/14591
+      # - yarn nx workspace-lint
       - yarn mono-pipeline validate-codeowners
       - yarn mono-pipeline validate-lockfile
 

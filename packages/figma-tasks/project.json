@@ -1,5 +1,5 @@
 {
-  "root": "packages/figma-tasks",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/figma-tasks",
   "projectType": "library",
   "targets": {

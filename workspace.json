@@ -28,5 +28,6 @@
     "web": "packages/web",
     "web-utils": "packages/web-utils",
     "website": "apps/website"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
