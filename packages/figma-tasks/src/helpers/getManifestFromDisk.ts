@@ -19,6 +19,18 @@ export async function getManifestFromDisk<T extends ManifestShape>(
   const parsedJson = parseJson<T>(manifestAsString);
   return {
     ...parsedJson,
-    items: Object.entries(parsedJson.items),
+    items: Object.entries(parsedJson.items).map(([id, item]) => [
+      id,
+      {
+        ...item,
+        id,
+        // id is key in generated manifests, and is not duplicated in the object value.
+        // toJSON ensures we write the old item exactly as it was before, which excludes the id
+        // from being duplicated in the value object.
+        toJSON() {
+          return item;
+        },
+      },
+    ]),
   };
 }

@@ -4,7 +4,6 @@ import { writePrettyFile } from '@cbhq/script-utils';
 
 import { ColorStyles } from '../../tools/ColorStyles';
 
-import { GetImagePathParams } from './getImagePath';
 import { optimizeSvg } from './optimizeSvg';
 import { writeVersionedFile } from './writeVersionedFile';
 
@@ -13,7 +12,8 @@ type CreateSvgContentParams = {
   svgDir: string;
   svgJsDir?: string;
   colorStyles?: ColorStyles;
-} & Pick<GetImagePathParams, 'imageName' | 'version'>;
+  imageName: string;
+};
 
 export type SvgContent = {
   light?: string;
@@ -38,7 +38,6 @@ export async function createSvgContent({
   figmaUrl,
   svgDir,
   svgJsDir,
-  version,
   imageName,
 }: CreateSvgContentParams) {
   const svgContent: SvgContent = {
@@ -50,7 +49,6 @@ export async function createSvgContent({
   const sharedParams = {
     directory: svgDir,
     format: 'svg',
-    version,
     imageName,
   } as const;
 

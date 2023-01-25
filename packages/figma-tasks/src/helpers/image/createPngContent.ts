@@ -1,13 +1,13 @@
 import sharp from 'sharp';
 
 import { SvgContent } from './createSvgContent';
-import { GetImagePathParams } from './getImagePath';
 import { writeVersionedFile } from './writeVersionedFile';
 
 type CreatePngContentParams = {
   pngDir: string;
   svgContent: SvgContent;
-} & Pick<GetImagePathParams, 'imageName' | 'version'>;
+  imageName: string;
+};
 
 function pngWriter(content: string) {
   return async function writePng(filePath: string) {

@@ -44,7 +44,7 @@ export class ColorStyle {
 
   public outputs: Record<string, string> = {};
 
-  public version: number | undefined;
+  public version = 0;
 
   private task: Task;
 
@@ -73,6 +73,10 @@ export class ColorStyle {
     this.outputs = { ...this.outputs, ...newOutputs };
   }
 
+  public setVersion(num: number) {
+    this.version = num;
+  }
+
   public toJSON() {
     const normalizeOutputPath = outputPathNormalizer(this.task);
     return {
@@ -89,20 +93,22 @@ export class ColorStyle {
     };
   }
 
-  public static create(
+  public static async create(
     manifest: Manifest<ColorStyleManifestType>,
     taskOptions: ColorStyleTaskOptions,
   ) {
-    Object.values(manifest.syncedLibrary.nodes).forEach((node) => {
-      if (node) {
-        const colorStyleParams = {
-          node,
-          taskOptions,
-          task: manifest.task,
-        };
-        const newStyle = new ColorStyle(colorStyleParams);
-        manifest.addNewItem(newStyle);
-      }
-    });
+    await Promise.all(
+      Object.values(manifest.syncedLibrary.nodes).map(async (node) => {
+        if (node) {
+          const colorStyleParams = {
+            node,
+            taskOptions,
+            task: manifest.task,
+          };
+          const newStyle = new ColorStyle(colorStyleParams);
+          await manifest.syncItem(newStyle);
+        }
+      }),
+    );
   }
 }

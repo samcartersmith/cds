@@ -1,12 +1,16 @@
 /* eslint-disable no-underscore-dangle */
 import { writeJsonFile } from '@nrwl/devkit';
+import { uniqBy } from 'lodash';
 import groupBy from 'lodash/groupBy';
 import mapValues from 'lodash/mapValues';
+import fs from 'node:fs';
+import path from 'node:path';
 import { ImageFormats, RequestType, SyncedLibrary, syncLibrary } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
-import { getAbsolutePath } from '@cbhq/script-utils';
+import { getAbsolutePath, sortByAlphabet } from '@cbhq/script-utils';
 
 import { getManifestFromDisk } from '../helpers/getManifestFromDisk';
+import { logSummary } from '../helpers/logSummary';
 import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
 
 import { Changelog } from './Changelog';
@@ -16,9 +20,9 @@ export type ItemShape = {
   id: string;
   name: string;
   type: string;
-  version?: number;
+  version: number;
   outputs?: Record<string, string>;
-  setVersion?: (num: number) => void;
+  setVersion: (num: number) => void;
 };
 
 export type ManifestShape<
@@ -33,6 +37,8 @@ export type ManifestShape<
 };
 
 export type ManifestTaskOptions = {
+  /** The directory to output generated content */
+  generatedDirectory: string;
   /** The file ID to use when making requests to Figma API  */
   figmaApiFileId: string;
   /** The manifest.json file to get information about previous syncs and to update after new syncs. */
@@ -55,7 +61,8 @@ type InitManifestParams<
   imageFormats?: ImageFormats;
   /** The request type to use when syncing a figma library */
   requestType: RequestType;
-  createItem: (manifest: Manifest<T>, taskOptions: TaskOptions) => void;
+  createItem: (manifest: Manifest<T>, taskOptions: TaskOptions) => Promise<void>;
+  versioned?: boolean;
 };
 
 type ManifestOptions<PreviousManifest extends ManifestShape, TaskOptions = unknown> = {
@@ -78,7 +85,7 @@ export class Manifest<
 
   public readonly lastUpdated: string;
 
-  public readonly previousItems: Map<string, ItemShape>;
+  public readonly previousItems: Map<string, GetManifestItem<T>>;
 
   public readonly items = new Map<string, GetManifestItem<T>>();
 
@@ -86,7 +93,7 @@ export class Manifest<
 
   public deletions = new Set<ItemShape>();
 
-  public renames = new Map<string, string>();
+  public renames = new Map<ItemShape, ItemShape>();
 
   public updates = new Set<ItemShape>();
 
@@ -112,57 +119,114 @@ export class Manifest<
     this.syncedLibrary = syncedLibrary;
   }
 
-  public checkIfRenamed(newItem: GetManifestItem<T>) {
-    const prevNode = this.previousItems.get(newItem.id);
-    if (prevNode) {
-      const prevName = prevNode.name;
-      const newName = newItem.name;
-      if (prevName !== newName) {
-        this.renames.set(prevName, newName);
+  get generatedDirectory() {
+    return getAbsolutePath(this.task, this.task.options.generatedDirectory);
+  }
+
+  public get previousItemsArray() {
+    return [...this.previousItems.values()];
+  }
+
+  private renameOutput(renameFn: (output: string) => string) {
+    return async (output: string) => {
+      const oldPath = path.normalize(`${this.generatedDirectory}/${output}`);
+      const newPath = renameFn(oldPath);
+      if (fs.existsSync(oldPath)) {
+        return fs.promises.rename(oldPath, newPath);
       }
+      return undefined;
+    };
+  }
+
+  private async renameOutputs(item: GetManifestItem<T>, renameFn: (output: string) => string) {
+    if (item.outputs) {
+      await Promise.all(Object.values(item.outputs).map(this.renameOutput(renameFn)));
     }
   }
 
-  public checkIfAdded(item: GetManifestItem<T>) {
-    if (!this.previousItems.has(item.id) && this.syncedLibrary.remoteIds.includes(item.id)) {
+  public async checkIfUpdated(item: GetManifestItem<T>) {
+    const prevNode =
+      this.previousItems.get(item.id) ??
+      this.previousItemsArray.find(
+        (prev) => `${prev.type}-${prev.name}` === `${item.type}-${item.name}`,
+      );
+    const updatedRemotely = this.syncedLibrary.recentlyUpdatedIds.includes(item.id);
+
+    if (updatedRemotely) {
+      // Changed items
+      if (prevNode) {
+        // Handle renames
+        const prevName = prevNode.name;
+        const newName = item.name;
+        const wasRenamed = prevName !== newName;
+
+        if (wasRenamed) {
+          this.renames.set(prevNode, item);
+          const renameFn = (output: string) => output.replace(prevName, newName);
+          await this.renameOutputs(prevNode, renameFn);
+
+          // Reset versioning
+          if (this.versioned) {
+            item.setVersion(0);
+          }
+        } else {
+          this.updates.add(item);
+          if (this.versioned) {
+            const oldVersion = item.version;
+            const newVersion = oldVersion + 1;
+            item.setVersion(newVersion);
+
+            const renameFn = (output: string) => output.replace(`-${oldVersion}`, `-${newVersion}`);
+            // If it already existed we need to rename outputs before writting new content
+            await this.renameOutputs(item, renameFn);
+          }
+        }
+
+        this.previousItems.delete(prevNode.id); // remove old from manifest so we don't have duplicates
+      }
+    } else {
+      // New items
       this.additions.add(item);
     }
   }
 
-  public checkIfUpdated(item: GetManifestItem<T>) {
-    if (
-      this.previousItems.has(item.id) &&
-      this.syncedLibrary.recentlyUpdatedIds.includes(item.id)
-    ) {
-      this.updates.add(item);
-    }
+  private async handleDeletions(remoteIds: string[]) {
+    const promises: Promise<void>[] = [];
+    this.previousItems.forEach((item) => {
+      if (!remoteIds.includes(item.id)) {
+        // Delete outputs
+        if (item.outputs) {
+          Object.values(item.outputs).map(async (output) => {
+            const absoluteOutputPath = path.normalize(`${this.generatedDirectory}/${output}`);
+            if (fs.existsSync(absoluteOutputPath)) {
+              promises.push(fs.promises.rm(absoluteOutputPath));
+            }
+          });
+        }
+        this.previousItems.delete(item.id);
+        this.deletions.add(item);
+      }
+    });
+    await Promise.all(promises);
   }
 
-  private checkIfDeleted(item: GetManifestItem<T>) {
-    if (this.previousItems.has(item.id) && !this.syncedLibrary.remoteIds.includes(item.id)) {
-      this.previousItems.delete(item.id);
-      this.deletions.add(item);
-    }
+  public async syncItem(item: GetManifestItem<T>) {
+    await this.checkIfUpdated(item);
+    this.items.set(item.id, item);
   }
 
-  public get nameMap() {
-    return new Map(
-      [...this.previousItems.values(), ...this.items.values()].map((item) => [item.name, item]),
+  private get itemEntries() {
+    return uniqBy(
+      // if duplicate object is found in array, the first object match will resolve
+      [...this.items.entries(), ...this.previousItems.entries()],
+      ([, item]) => `${item.type}-${item.name}`,
     );
   }
 
-  public get itemEntries() {
-    const itemsAsArray = [...this.items.values()];
+  public get groupedItems() {
+    const itemsAsArray = this.itemEntries.map(([, item]) => item);
     const groupedByType = groupBy(itemsAsArray, 'type');
     return Object.entries(groupedByType);
-  }
-
-  public addNewItem(item: GetManifestItem<T>) {
-    this.checkIfUpdated(item);
-    this.checkIfAdded(item);
-    this.checkIfDeleted(item);
-    this.checkIfRenamed(item);
-    this.items.set(item.id, item);
   }
 
   public get metadata() {
@@ -187,19 +251,20 @@ export class Manifest<
       ...(Object.values(this.outputs).length
         ? { outputs: mapValues(this.outputs, normalizeOutputPath) }
         : {}),
-      items: Object.fromEntries([...this.previousItems.entries(), ...this.items.entries()]),
+      items: Object.fromEntries(this.itemEntries.sort(sortByAlphabet)),
     };
   }
 
   public async generateFile() {
     writeJsonFile(this.filePath, this.toJSON());
+    logSummary(this);
   }
 
   static async init<
     T extends ManifestShape,
     TaskOptions extends ManifestTaskOptions = ManifestTaskOptions,
   >(task: Task<TaskOptions>, params: InitManifestParams<T, TaskOptions>) {
-    const { imageFormats, requestType, createItem } = params;
+    const { imageFormats, requestType, createItem, versioned } = params;
 
     const manifestPath = getAbsolutePath(task, task.options.manifestFile);
     const previousManifest = await getManifestFromDisk<T>(manifestPath);
@@ -207,7 +272,7 @@ export class Manifest<
       fileId: task.options.figmaApiFileId,
       requestType,
       /** TODO: uncomment once migration from old library is complete */
-      // lastUpdated: previousManifest.lastUpdated,
+      lastUpdated: previousManifest.lastUpdated,
       imageFormats,
       batchSize: 500,
     });
@@ -223,9 +288,11 @@ export class Manifest<
       filePath: manifestPath,
       previousManifest,
       syncedLibrary,
+      versioned,
     });
 
-    createItem(manifest, task.options);
+    await createItem(manifest, task.options);
+    await manifest.handleDeletions(syncedLibrary.remoteIds);
 
     const [changelog, colorStyles] = await Promise.all([
       Changelog.loadFromDisk(task),

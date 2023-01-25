@@ -1,27 +1,32 @@
 import fs from 'node:fs';
-import path from 'node:path';
 import { existsOrCreateDir } from '@cbhq/script-utils';
 
-import { getImagePath, GetImagePathParams } from './getImagePath';
+type ImageCategory = 'light' | 'dark' | 'themeable';
 
-export type WriteImageParams = GetImagePathParams & {
+export type WriteImageParams = {
+  directory: string;
+  format: string;
+  category?: ImageCategory;
+  imageName: string;
   writeFile: (filePath: string) => Promise<void>;
 };
 
-export async function writeVersionedFile({ writeFile, ...params }: WriteImageParams) {
-  const { oldFilePath, newFilePath } = getImagePath(params);
-  const exists = fs.existsSync(oldFilePath);
-  if (exists) {
-    /** Write over old path with new content */
-    await writeFile(oldFilePath);
-    /** Rename old path to new path which has version incremented version */
-    fs.renameSync(oldFilePath, newFilePath);
+export async function writeVersionedFile({
+  writeFile,
+  category,
+  directory,
+  imageName,
+  format,
+}: WriteImageParams) {
+  const basename = category ? `${directory}/${category}/${imageName}` : `${directory}/${imageName}`;
+  const imagePath = `${basename}.${format}`;
+  const exists = fs.existsSync(imagePath);
 
-    console.log(`Updated ${path.basename(oldFilePath)} to ${newFilePath}`);
+  if (exists) {
+    await writeFile(imagePath);
   } else {
-    await existsOrCreateDir(newFilePath);
-    await writeFile(newFilePath);
-    console.log(`Created ${path.basename(newFilePath)} at ${newFilePath}`);
+    await existsOrCreateDir(imagePath);
+    await writeFile(imagePath);
   }
-  return newFilePath;
+  return imagePath;
 }

@@ -27,7 +27,7 @@ function alphabeticalList(prev: string, next: string) {
   return prev.localeCompare(next);
 }
 
-function getName(item: ItemShape) {
+function getName(item: { name: string }) {
   return item.name;
 }
 
@@ -35,7 +35,7 @@ function mdListItem(item: string) {
   return `- ${item}`;
 }
 
-function formatMarkdownItems(items: ItemShape[]) {
+function formatMarkdownItems(items: { name: string }[]) {
   return items.map(getName).sort(alphabeticalList).map(mdListItem);
 }
 
@@ -44,13 +44,19 @@ function titleCase(str: string) {
 }
 
 function getMarkdownForItems(
-  itemsSet: Set<ItemShape>,
+  itemsProp: Set<ItemShape> | Map<ItemShape, ItemShape>,
   params: {
     groupByType?: boolean;
   },
 ) {
   let markdownItems: string[] = [];
-  const items = [...itemsSet];
+  const isMap = itemsProp instanceof Map;
+  const items = isMap
+    ? [...itemsProp.entries()].map(([prev, next]) => ({
+        type: next.type,
+        name: `${prev.name} -> ${next.name}`,
+      }))
+    : [...itemsProp];
 
   if (params.groupByType) {
     Object.entries(groupBy(items, 'type')).forEach(([key, itemsForGroup]) => {
@@ -91,6 +97,11 @@ export class Changelog {
     if (manifest.updates.size > 0) {
       const updatedContent = getMarkdownForItems(manifest.updates, mdParams);
       newContent.push(`### 🐞 Updated\n ${commandDescription} ${updatedContent}`);
+    }
+
+    if (manifest.renames.size > 0) {
+      const updatedContent = getMarkdownForItems(manifest.renames, mdParams);
+      newContent.push(`### 🐞 Renames\n ${commandDescription} ${updatedContent}`);
     }
 
     if (manifest.deletions.size > 0) {

@@ -47,7 +47,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
 
   public outputs: Record<string, string> = {};
 
-  public version: number | undefined;
+  public version = 0;
 
   private _metadata: Metadata | undefined = undefined;
 
@@ -83,7 +83,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     if (metadata) {
       this._metadata = metadata;
     }
-    if (version) {
+    if (version !== undefined) {
       this.version = version;
     }
     if (outputs) {
@@ -124,33 +124,37 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     };
   }
 
-  static create(manifest: Manifest<ManifestShape<Component>>) {
-    const components: Component[] = [];
-    Object.values(manifest.syncedLibrary.nodes).forEach((node) => {
-      if (node?.document?.type === 'COMPONENT') {
-        const { id } = node.document;
-        const oldVersion = manifest.previousItems.get(id);
-        const { type, name } = parseName(node);
-        const { width, height } = getSize(node.document);
-        const { description, updated_at: lastUpdated } = node.metadata;
+  static async create(manifest: Manifest<ManifestShape<Component>>) {
+    await Promise.all(
+      Object.values(manifest.syncedLibrary.nodes).map(async (node) => {
+        if (node?.document?.type === 'COMPONENT') {
+          const { id } = node.document;
+          const { type, name } = parseName(node);
+          const oldVersion =
+            manifest.previousItems.get(id) ??
+            manifest.previousItemsArray.find(
+              (prev) => `${prev.type}-${prev.name}` === `${type}-${name}`,
+            );
+          const { width, height } = getSize(node.document);
+          const { description, updated_at: lastUpdated } = node.metadata;
 
-        const params = {
-          ...oldVersion,
-          node,
-          id,
-          type,
-          name,
-          width,
-          height,
-          description,
-          lastUpdated,
-          task: manifest.task,
-        };
-        const newComponent = new Component(params);
-        manifest.addNewItem(newComponent);
-        components.push(newComponent);
-      }
-    });
-    return components;
+          const params = {
+            ...oldVersion,
+            node,
+            id,
+            type,
+            name,
+            width,
+            height,
+            description,
+            lastUpdated,
+            recentlyUpdated: manifest.syncedLibrary.recentlyUpdatedIds.includes(id),
+            task: manifest.task,
+          };
+          const newComponent = new Component(params);
+          await manifest.syncItem(newComponent);
+        }
+      }),
+    );
   }
 }

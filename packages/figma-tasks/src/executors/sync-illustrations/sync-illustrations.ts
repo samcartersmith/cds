@@ -25,11 +25,16 @@ export type SyncIllustrationsTaskOptions = {
 
 export type IllustrationsManifestShape = ManifestShape<Component>;
 
-function sortByLastUpdated(prev: Component, next: Component) {
-  const prevDate = new Date(prev.lastUpdated).valueOf();
-  const nextDate = new Date(next.lastUpdated).valueOf();
+// TODO: uncomment once switch to new illustration pipeline is complete
+// function sortByLastUpdated(prev: Component, next: Component) {
+//   const prevDate = new Date(prev.lastUpdated).valueOf();
+//   const nextDate = new Date(next.lastUpdated).valueOf();
 
-  return prevDate - nextDate;
+//   return prevDate - nextDate;
+// }
+
+function sortAlphabetically(prev: Component, next: Component) {
+  return sortByAlphabet(prev.name, next.name);
 }
 
 export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
@@ -49,28 +54,43 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
       imageFormats: ['svg'],
       requestType: 'components',
       createItem: Component.create,
+      versioned: true,
     });
 
     const generatedDirectory = getAbsolutePath(task, task.options.generatedDirectory);
-    const illustrationEntries = manifest.itemEntries;
+    const illustrationEntries = manifest.groupedItems;
 
+    const invalidItems: Record<
+      string,
+      {
+        name: string;
+        figmaUrl: string;
+      }[]
+    > = {};
+
+    const validItems: Record<
+      string,
+      {
+        name: string;
+        figmaUrl: string;
+      }[]
+    > = {};
     function generateImageFormatsForItem(type: string) {
       return async (item: Component) => {
+        const hasNotChanged = !manifest.syncedLibrary.recentlyUpdatedIds.includes(item.id);
+
+        if (hasNotChanged) {
+          return item;
+        }
+        item.addToOutputs({});
+
         const { svgDir, svgJsDir, pngDir } = getOutputDirectories({ type, generatedDirectory });
         let imageOutputs: Record<string, string> = {};
-        const imageName = item.name;
-
-        const version = {
-          previous: item.version ?? -1,
-          get next() {
-            return this.previous + 1;
-          },
-        };
+        const imageName = `${item.name}-${item.version}`;
 
         const figmaUrl = manifest.syncedLibrary.imageUrls.svg[item.id];
         const { svgContent, outputs: svgOutputs } = await createSvgContent({
           imageName,
-          version,
           svgDir,
           svgJsDir,
           figmaUrl,
@@ -79,18 +99,33 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
 
         imageOutputs = { ...imageOutputs, ...svgOutputs };
 
-        if (pngDir) {
-          const { outputs: pngOutputs } = await createPngContent({
-            imageName,
-            version,
-            pngDir,
-            svgContent,
-          });
-          imageOutputs = { ...imageOutputs, ...pngOutputs };
-        }
+        const { outputs: pngOutputs } = await createPngContent({
+          imageName,
+          pngDir,
+          svgContent,
+        });
+        imageOutputs = { ...imageOutputs, ...pngOutputs };
 
         item.addToOutputs(imageOutputs);
-        item.setVersion(version.next);
+
+        if (!svgContent.light) {
+          if (!invalidItems[type]) {
+            invalidItems[type] = [];
+          }
+          invalidItems[type].push({
+            name: item.name,
+            figmaUrl,
+          });
+        } else {
+          if (!validItems[type]) {
+            validItems[type] = [];
+          }
+          validItems[type].push({
+            name: item.name,
+            figmaUrl,
+          });
+        }
+
         return item;
       };
     }
@@ -106,6 +141,15 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
         const illustrations = await Promise.all(
           illustrationsForType.map(generateImageFormatsForItem(illustrationType)),
         );
+
+        if (invalidItems[illustrationType]?.length) {
+          console.log(`
+  /* -------------------------------------------------------------------------- */
+  /*                         ${illustrationType.toUpperCase()} INVALID ITEMS    */
+  /* -------------------------------------------------------------------------- */
+  `);
+          console.table(invalidItems[illustrationType]);
+        }
 
         const typescriptData = {
           exportName: `${pascalCaseIllustrationType}Name`, // HeroSquareName, SpotSquareName, etc
@@ -172,7 +216,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
             const relativeTypes = getRelativePathForImport(destDir, typescriptData.dest);
 
             const sortedItemsForVersion = Object.fromEntries(
-              illustrations.sort(sortByLastUpdated).map((item) => [item.name, item.version]),
+              illustrations.sort(sortAlphabetically).map((item) => [item.name, item.version]),
             );
 
             return tokensTemplate`
@@ -214,8 +258,16 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
                   throw new Error(`Unable to find svgJsDark file path for ${next.name}`);
                 }
 
-                const relativeLight = getRelativePathForImport(destDir, next.outputs.svgJsLight);
-                const relativeDark = getRelativePathForImport(destDir, next.outputs.svgJsDark);
+                const absoluteLight = path.isAbsolute(next.outputs.svgJsLight)
+                  ? next.outputs.svgJsLight
+                  : path.normalize(`${manifest.generatedDirectory}/${next.outputs.svgJsLight}`);
+
+                const absoluteDark = path.isAbsolute(next.outputs.svgJsDark)
+                  ? next.outputs.svgJsDark
+                  : path.normalize(`${manifest.generatedDirectory}/${next.outputs.svgJsDark}`);
+
+                const relativeLight = getRelativePathForImport(destDir, absoluteLight);
+                const relativeDark = getRelativePathForImport(destDir, absoluteDark);
 
                 const newContent = `
                     '${next.name}': {

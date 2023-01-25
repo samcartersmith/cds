@@ -52,7 +52,7 @@ export class ComponentSet<
 
   public outputs: Record<string, string> = {};
 
-  public version: number | undefined;
+  public version = 0;
 
   private task: Task;
 
@@ -95,7 +95,7 @@ export class ComponentSet<
     if (metadata) {
       this._metadata = metadata;
     }
-    if (version) {
+    if (version !== undefined) {
       this.version = version;
     }
     if (outputs) {
@@ -149,32 +149,32 @@ export class ComponentSet<
     };
   }
 
-  static create<ChildShape extends ComponentSetChildShape = ComponentSetChildShape>(
+  static async create<ChildShape extends ComponentSetChildShape = ComponentSetChildShape>(
     manifest: ComponentSetManifest,
   ) {
-    const componentSets: ComponentSet[] = [];
-    Object.values(manifest.syncedLibrary.nodes).forEach((node) => {
-      if (node) {
-        const { id } = node.document;
-        const { type, name } = parseName(node);
-        const { description, updated_at: lastUpdated } = node.metadata;
-        const oldVersion = manifest.previousItems.get(node.document.id);
+    await Promise.all(
+      Object.values(manifest.syncedLibrary.nodes).map(async (node) => {
+        if (node) {
+          const { id } = node.document;
+          const { type, name } = parseName(node);
+          const { description, updated_at: lastUpdated } = node.metadata;
+          const oldVersion = manifest.previousItems.get(node.document.id);
 
-        const params = {
-          ...oldVersion,
-          node,
-          id,
-          type,
-          name,
-          description,
-          lastUpdated,
-          task: manifest.task,
-        };
-        const newComponentSet = new ComponentSet<ChildShape>(params);
-        manifest.addNewItem(newComponentSet);
-        componentSets.push(newComponentSet);
-      }
-    });
-    return componentSets;
+          const params = {
+            ...oldVersion,
+            node,
+            id,
+            type,
+            name,
+            description,
+            lastUpdated,
+            task: manifest.task,
+            recentlyUpdated: manifest.syncedLibrary.recentlyUpdatedIds.includes(id),
+          };
+          const newComponentSet = new ComponentSet<ChildShape>(params);
+          await manifest.syncItem(newComponentSet);
+        }
+      }),
+    );
   }
 }

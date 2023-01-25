@@ -89,7 +89,7 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
   const svgFileMap = new Map<string, IconComponentSetChild>();
 
   const generatedDirectory = getAbsolutePath(task, task.options.generatedDirectory);
-  const iconEntries = manifest.itemEntries;
+  const iconEntries = manifest.groupedItems;
 
   function generateSvg(svgDir: string) {
     return async (item: IconComponentSetChild) => {
@@ -97,13 +97,6 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
       const svgFilePath = path.join(svgDir, `${imageName}.svg`);
 
       svgFileMap.set(svgFilePath, item);
-
-      const version = {
-        previous: item.version ?? -1,
-        get next() {
-          return this.previous + 1;
-        },
-      };
 
       const svgContent = getSvgMarkup(item.node);
       await fs.promises.writeFile(svgFilePath, svgContent);
@@ -115,7 +108,6 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
       item.setMetadata({ unicode });
 
       item.componentSet.addToOutputs({ svgLight: svgFilePath });
-      item.setVersion(version.next);
       return item;
     };
   }
