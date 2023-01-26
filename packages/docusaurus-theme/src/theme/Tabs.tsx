@@ -106,7 +106,7 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
     ) {
       if (urlParams) {
         urlParams.set(groupId, relevantTabGroupChoice);
-        history.replace({ ...location, search: urlParams.toString() });
+        history.replace({ ...location, hash: urlParams.toString() });
       } else {
         setSelectedValue(relevantTabGroupChoice);
       }
@@ -128,15 +128,15 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
         if (urlParams) {
           urlParams.set(groupId, newTabValue);
           // remove url hash (anchor links) from previous toc clicks when switching tabs
-          history.replace({ ...location, hash: '', search: urlParams.toString() });
+          history.replace({ ...location, hash: urlParams.toString() });
         }
       }
     },
     [
       blockElementScrollPositionUntilNextRender,
+      location,
       groupId,
       history,
-      location,
       setTabGroupChoices,
       urlParams,
     ],
