@@ -25,16 +25,11 @@ export type SyncIllustrationsTaskOptions = {
 
 export type IllustrationsManifestShape = ManifestShape<Component>;
 
-// TODO: uncomment once switch to new illustration pipeline is complete
-// function sortByLastUpdated(prev: Component, next: Component) {
-//   const prevDate = new Date(prev.lastUpdated).valueOf();
-//   const nextDate = new Date(next.lastUpdated).valueOf();
+function sortByLastUpdated(prev: Component, next: Component) {
+  const prevDate = new Date(prev.lastUpdated).valueOf();
+  const nextDate = new Date(next.lastUpdated).valueOf();
 
-//   return prevDate - nextDate;
-// }
-
-function sortAlphabetically(prev: Component, next: Component) {
-  return sortByAlphabet(prev.name, next.name);
+  return prevDate - nextDate;
 }
 
 export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
@@ -216,7 +211,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
             const relativeTypes = getRelativePathForImport(destDir, typescriptData.dest);
 
             const sortedItemsForVersion = Object.fromEntries(
-              illustrations.sort(sortAlphabetically).map((item) => [item.name, item.version]),
+              illustrations.sort(sortByLastUpdated).map((item) => [item.name, item.version]),
             );
 
             return tokensTemplate`

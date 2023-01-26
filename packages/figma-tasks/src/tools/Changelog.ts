@@ -110,11 +110,12 @@ export class Changelog {
     }
 
     if (newContent.length > 0) {
-      this.content = this.content.replaceAll(TEMPLATE_START, '');
-      newContent.unshift(TEMPLATE_START);
-      newContent.push(this.content);
+      this.content = this.content.replace(
+        `${TEMPLATE_START}`,
+        `${TEMPLATE_START}\n\n${newContent.join(`\n`)}`,
+      );
 
-      await writePrettyFile(this.filePath, newContent.join(`\n`));
+      await writePrettyFile(this.filePath, this.content);
     }
   }
 
