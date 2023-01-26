@@ -2278,13 +2278,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-illustrations@workspace:packages/illustrations"
   dependencies:
+    "@cbhq/figma-styles": "workspace:^"
     "@cbhq/figma-tasks": "workspace:^"
-  peerDependencies:
-    react: ">=17.0.0"
-    react-dom: ">=17.0.0"
-  peerDependenciesMeta:
-    react-dom:
-      optional: true
   languageName: unknown
   linkType: soft
 

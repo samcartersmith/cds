@@ -4,13 +4,19 @@
     "outDir": "../../.nx/dts/packages/illustrations"
   },
   "include": [
-    "**/*"
+    "src"
   ],
   "exclude": [
     ".eslintrc.js",
     "dts",
-    "esm",
     "lib"
   ],
-  "references": []
+  "references": [
+    {
+      "path": "../figma-styles"
+    },
+    {
+      "path": "../figma-tasks"
+    }
+  ]
 }

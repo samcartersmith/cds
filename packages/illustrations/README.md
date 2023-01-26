@@ -8,46 +8,39 @@ CDS illustrations used in @cbhq/cds-web and @cbhq/cds-mobile.
 yarn add @cbhq/cds-illustrations
 ```
 
-## Overview
+## Contributing
 
-The [CDS Illustrations Figma components](https://www.figma.com/file/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations) are composed of vectors which leverage the [CDS Figma Illustration light color styles](https://www.figma.com/file/skPXKFmI64GqqEkOaBSHcL/%F0%9F%8C%9E--Illustration-Light-Styles?t=NAycPBCIl5jp15ou-6) to power their color fills. This allows design to create a single light mode version and engineering handles creating the dark mode version through the CDS Figma plugin or through code generation.
+### Figma links
 
-In order for engineering to be able to generate a dark mode versions of an illustration asset, we need to pull information about the light and dark mode color styles from Figma.
+- [CDS Illustrations Figma components](https://www.figma.com/file/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations)
+- [CDS Illustration Figma light styles](https://www.figma.com/file/skPXKFmI64GqqEkOaBSHcL/%F0%9F%8C%9E--Illustration-Light-Styles?t=NAycPBCIl5jp15ou-6)
+- [CDS Illustration Figma dark styles](https://www.figma.com/file/etJaiHq7aFlJFICLKIrcK7/%F0%9F%8C%9A--Illustration-Dark-Styles?t=NAycPBCIl5jp15ou-6)
 
-The `@figma-tasks:sync-styles` handles pulling styles from Figma and allows configuration of where to output the generated data. For illustrations, the color styles are output to the `@cbhq/cds-illustrations/__generated__/styles` directory when running the `yarn nx run illustrations:sync-light-styles` or `yarn nx run illustrations:sync-dark-styles` commands.
+### Commands
 
-Once we have the generated color styles data, we can then use those files as inputs for the CDS Figma plugin and `@cbhq/figma-tasks:sync-illustrations` task so they are able to convert illustration assets from light -> dark or dark -> light.
+1. Add a .env.local file at root of repo
 
-## Short term plan
+```
+FIGMA_ACCESS_TOKEN=[access or request access to the UI Infra shared vault on 1Password for the token]
+```
 
-Configure the illustration's project.json sync task to output the generated assets to relevant packages (common, mobile, web) to ensure parity with old illustration pipeline structure to minimize risk of new pipeline rollout.
+2. (optional) Sync latest Illustration Figma color styles if new color style was added
 
-## Long term plan
+```shell
+yarn nx run figma-styles:sync
+```
 
-Make `@cbhq/cds-illustrations` a dependency or peer dependency of the relevant packages (common, mobile, web) and configure all generated assets to be output to the illustration's `src/__generated__` folder instead of to the consuming packages. The consuming packages then pull in necessary files directly from `@cbhq/cds-illustrations`.
-
-## Sync tasks
-
-### Illustration assets (bi-weekly relese cycle)
-
-- [Figma Illustration assets](https://www.figma.com/file/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations)
-
-To sync illustrations with Figma, run the command below and commit the generated files.
+3. Sync latest Figma illustration components
 
 ```shell
 yarn nx run illustrations:sync
 ```
 
-### Illustration color styles (as-needed basis)
+### Summary
 
-- [Illustration light styles](https://www.figma.com/file/skPXKFmI64GqqEkOaBSHcL/%F0%9F%8C%9E--Illustration-Light-Styles?t=NAycPBCIl5jp15ou-6)
-- [Figma Illustration dark styles](https://www.figma.com/file/etJaiHq7aFlJFICLKIrcK7/%F0%9F%8C%9A--Illustration-Dark-Styles?t=NAycPBCIl5jp15ou-6)
+The [CDS Illustrations Figma components](https://www.figma.com/file/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations) are composed of vectors which leverage the [CDS Figma Illustration light color styles](https://www.figma.com/file/skPXKFmI64GqqEkOaBSHcL/%F0%9F%8C%9E--Illustration-Light-Styles?t=NAycPBCIl5jp15ou-6) to power their color fills. This allows design to create a single light mode version and engineering handles creating the dark mode version through the CDS Figma plugin or through code generation.
 
-```shell
-yarn nx run illustrations:sync-styles
-```
-
-The CDS Illustration color styles should not change often and can be run on an as-needed basis.
+In order for engineering to be able to generate a dark mode versions of an illustration asset, we need to pull information about the light and dark mode color styles from Figma (`yarn nx run figma-styles:sync`). The CDS Illustration color styles should not change often and can be run on an as-needed basis.
 
 ### Gotchas
 

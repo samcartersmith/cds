@@ -3,9 +3,20 @@
   "sourceRoot": "packages/illustrations",
   "projectType": "library",
   "targets": {
+    "prebuild": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "echo 'Building dts for .nx directory for non pakemon packages which require generated types for project references'",
+          "tsc --project packages/illustrations/tsconfig.json"
+        ],
+        "parallel": false
+      }
+    },
     "build": {
-      "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": ["dts", "lib"]
+      "outputs": ["{projectRoot}/dts", "{projectRoot}/lib"],
+      "dependsOn": ["^build", "prebuild"],
+      "executor": "@cbhq/mono-tasks:build-package"
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -20,13 +31,14 @@
         "figmaApiFileId": "LmkJatvMRVzNgfiIkJDb99",
         "changelogFile": "./CHANGELOG.md",
         "manifestFile": "./src/__generated__/manifest.json",
-        "darkModeManifestFile": "../figma-styles/__generated__/illustration/dark/manifest.json",
-        "lightModeManifestFile": "../figma-styles/__generated__/illustration/light/manifest.json",
+        "darkModeManifestFile": "packages/figma-styles/__generated__/illustration/dark/manifest.json",
+        "lightModeManifestFile": "packages/figma-styles/__generated__/illustration/light/manifest.json",
         "generatedDirectory": "./src/__generated__"
       }
     },
     "sync-styles": {
       "executor": "nx:run-commands",
+      "dependsOn": ["^build"],
       "options": {
         "command": "nx run figma-styles:sync"
       }
