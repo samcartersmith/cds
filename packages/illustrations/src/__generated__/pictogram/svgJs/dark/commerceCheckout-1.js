@@ -1,0 +1,3 @@
+module.exports = {
+  content: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48"><path fill="#588AF5" d="M34 48c7.732 0 14-6.268 14-14s-6.268-14-14-14-14 6.268-14 14 6.268 14 14 14Z"/><path fill="#464B55" fill-rule="evenodd" d="M27 0h21v21L21 48 0 27 27 0Zm15 8.25a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" clip-rule="evenodd"/><path fill="#0A0B0D" fill-rule="evenodd" d="M44.386 24.612A13.964 13.964 0 0 0 34 20c-7.732 0-14 6.268-14 14 0 4.12 1.78 7.825 4.612 10.386l19.774-19.774Z" clip-rule="evenodd"/><path fill="#FFFFFF" fill-rule="evenodd" d="M33 40V28h2v12h-2Z" clip-rule="evenodd"/><path fill="#FFFFFF" fill-rule="evenodd" d="M28 33h12v2H28v-2Z" clip-rule="evenodd"/></svg>`,
+};

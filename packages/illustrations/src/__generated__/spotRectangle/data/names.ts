@@ -10,8 +10,6 @@ import type { SpotRectangleName } from '../types/SpotRectangleName';
  * This is being used to display a sheet of all SpotRectangle illustration on the CDS website.
  */
 const names: SpotRectangleName[] = [
-  'ClawMachinePig',
-  'RatFoundWallet',
   'accessToAdvancedCharts',
   'addBank',
   'advancedTradingChartsIndicatorsCandles',
@@ -25,9 +23,11 @@ const names: SpotRectangleName[] = [
   'browserHistory',
   'cardBoosted',
   'cardWaitlist',
-  'cbOneRewards',
+  'cbEth',
+  'clawMachinePig',
   'coinbaseOneLogo',
   'coinbaseOnePhoneLightning',
+  'coinbaseOneRewards',
   'collectingNfts',
   'completeAQuiz',
   'congratulationsOnEarningCrypto',
@@ -53,8 +53,12 @@ const names: SpotRectangleName[] = [
   'emptyNfts',
   'emptyTrading',
   'encryptedEverything',
+  'eth2SellSend',
   'ethAddress',
+  'ethStakeOrWrap',
+  'ethStakingMovement',
   'ethStakingRewards',
+  'ethWrappedStakingRewards',
   'fileYourCryptoTaxes',
   'fileYourCryptoTaxesCheck',
   'focusLimitOrders',
@@ -100,6 +104,7 @@ const names: SpotRectangleName[] = [
   'protectedNotes',
   'quickAndSimple',
   'ratDashboard',
+  'ratFoundWallet',
   'ratMigration',
   'ratMigrationerror',
   'referralsBitcoin',
@@ -123,6 +128,7 @@ const names: SpotRectangleName[] = [
   'taxesDetails',
   'trade',
   'transferCoins',
+  'transferEth',
   'transferFunds',
   'trendingHotAssets',
   'uob',
@@ -130,7 +136,7 @@ const names: SpotRectangleName[] = [
   'walletReconnectSuccess',
   'walletSecurity',
   'watchVideos',
-  'yieldHoldingAlt',
+  'yieldHolding',
 ];
 
 export default names;

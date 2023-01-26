@@ -8,6 +8,472 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- accessToAdvancedCharts
+- add2Fa
+- addBankAccount
+- advancedTrading
+- appTrackingTransparency
+- artFrameEmptyState
+- backedByUsDollar
+- basedInUsa
+- bigBtc
+- bitcoinGlobe
+- blockchain
+- borrow
+- borrowWallet
+- browseDecentralizedApps
+- browserExtension
+- camera
+- catHoldingWalletEmptyState
+- coinbaseIsDown
+- coinbaseOneDiscountedAmount
+- coinbaseOneInsufficientWallet
+- coinbaseOnePhoneLightning
+- coinbaseOneSavingFunds
+- coinbaseOneWaitlist
+- coinbaseOneWalletWarning
+- collectableNfts
+- collectingNfts
+- completeAQuiz
+- crossBorderPayments
+- cryptoAssets
+- cryptoEconomy
+- cryptoPortfolio
+- cryptoWallet
+- currencyPairs
+- dappsFinance
+- dappsGaming
+- dappsL2Support
+- decentralization
+- decentralizedWebWeb3
+- defiDecentralizedTradingExchange
+- defiHow
+- diamondHands
+- didDecentralizedIdentity
+- digitalCollectibles
+- discardAssets
+- earnCryptoCard
+- earnCryptoInterest
+- earnNuxHome
+- earnToLearn
+- emptyStateCheckBackLater
+- emptyStateNft404Page
+- emptyStateNftSoldOut
+- encryptedEverything
+- errorApp500
+- exchangeEmptyState
+- faceMatchReal
+- feeScale
+- fileYourCryptoTaxes
+- fileYourCryptoTaxesCheck
+- futures
+- gasFeesNetworkFees
+- getStartedInMinutes
+- globalTransactions
+- governance
+- hardwareWallets
+- holdCrypto
+- iceCreamMeltingSystemError
+- idAngles
+- idVerificationSecure
+- insufficientBalance
+- insuranceProtection
+- invite
+- layeredNetworks
+- ledgerAccess
+- ledgerPlugin
+- limitOrders
+- linkingYourWalletToYourCoinbaseAccount
+- mining
+- moneyDecentralized
+- multicoinSupport
+- multiPlatformMobileAppBrowserExtension
+- multipleAccountsWalletsForOneUser
+- networkWarning
+- noFees
+- onTheList
+- openEmail
+- p2pPayments
+- pending
+- portfolioPerformance
+- poweredByEthereum
+- powerOfCrypto
+- primeDeFi
+- primeEarn
+- primeStaking
+- quickAndSimple
+- ratingsAndReviews
+- recommendInvest
+- recurringReward
+- referralsAvatars
+- referralsBitcoin
+- remittances
+- restrictedCountry
+- retailUSDCRewards
+- reviewInfo
+- rotatingRewards
+- routingAccount
+- secureAndTrusted
+- secureGlobalTransactions
+- secureStorage
+- selectCorrectCrypto
+- selfCustody
+- selfCustodyCrypto
+- semiCustodial
+- shareOnSocialMedia
+- sidechain
+- squidEmptyState
+- stableValue
+- stayInControlSelfHostedWalletsStorage
+- stopLimitOrder
+- stopLimitOrderDown
+- stressTestedColdStorage
+- supportAndMore
+- tradeHistory
+- transactionLimit
+- verifyBankTransactions
+- verifyCardTransactions
+- verifyEmail
+- verifyInfo
+- videoReview
+- videoUpload
+- walletSecurity
+- whyNotBoth
+
+#### Spot Square
+
+- addEth
+- addMultipleCrypto
+- addPasswordProtection
+- advancedTradingChartsIndicatorsCandles
+- announcementAdvancedTrading
+- assetForward
+- assetRefresh
+- backedByUsDollar
+- basedInUsa
+- blockchain
+- boostedCard
+- borrowLimitsAddressed
+- borrowWallet
+- bullishCase
+- cardAnnouncement
+- cardAutoReload
+- cardShipped
+- coinbaseCardSparkle
+- collectingNfts
+- completeAQuiz
+- confirmAddress
+- confirmEmail
+- confirmIDCard
+- confirmSocialSecurity
+- congratulationsOnEarningCrypto
+- crossBorderPayments
+- cryptoApps
+- cryptoAssets
+- cryptoEconomy
+- cryptoForBeginners
+- cryptoPortfolio
+- cryptoWallet
+- dappWallet
+- darkModeIntroduction
+- decentralization
+- decentralizedWebWeb3
+- defiDecentralizedTradingExchange
+- defiEarnAnnouncement
+- defiNfts
+- didDecentralizedIdentity
+- digitalCollectibles
+- directDepositExcitement
+- earn
+- earnInterestOnCryptocurrency
+- earnToLearn
+- encryptedEverything
+- fileYourCryptoTaxesCheckOther
+- fileYourCryptoTaxesOther
+- frameEmpty
+- futures
+- gainsAndLosses
+- gasFeesNetworkFees
+- getStartedInMinutes
+- giftBoxCrypto
+- gifting
+- globalTransactions
+- guideBullCase
+- guideCryptoBeginner
+- guideFiveThings
+- guideNftDefi
+- guideStartInvesting
+- insuranceProtection
+- interestForYou
+- invest
+- layeredNetworks
+- linkingYourWalletToYourCoinbaseAccount
+- miniGift
+- mining
+- moneyDecentralized
+- moneyRewards
+- multicoinSupport
+- multiPlatformMobileAppBrowserExtension
+- multipleAccountsWalletsForOneUser
+- nft
+- nftTag
+- noFees
+- nuxChecklist
+- nuxEarnCrypto
+- nuxEarnYield
+- nuxPopularAssets
+- nuxRecurringBuys
+- offersEmpty
+- p2pPayments
+- performance
+- phoneNotifications
+- pixBankDeposits
+- pixDeposits
+- portfolioPerformance
+- poweredByEthereum
+- priceAlerts
+- primeDeFi
+- primeEarn
+- primeStaking
+- quickAndSimple
+- recommendInvestments
+- refreshMobileApp
+- retailUSDCRewards
+- rewardExpiring
+- saveTheDate
+- secureAndTrusted
+- secureGlobalTransactions
+- secureStorage
+- semiCustodial
+- sendCryptoFaster
+- sparkleToken
+- stableValue
+- staking
+- starToken
+- startToday
+- stayInControlSelfHostedWalletsStorage
+- switchReward
+- taxDocuments
+- taxesDetails
+- transferringCrypto
+- waitlistSignup
+- walletApp
+- walletSecurity
+- watchVideos
+- wrapEth
+- yieldCenter
+
+#### Pictogram
+
+- accountsNavigation
+- advancedTradingNavigation
+- agent
+- analyticsNavigation
+- apyInterest
+- assetEncryption
+- assetHubNavigation
+- assetMeasurements
+- assetMovement
+- borrowNavigation
+- browserMultiPlatform
+- candleSticksGraph
+- cardNavigation
+- cloudNavigation
+- coinbaseOneRefreshed
+- coinbaseOneTrusted
+- commerceCheckout
+- commerceNavigation
+- completeQuiz
+- connectNavigation
+- controlWalletStorage
+- custodialJourney
+- custodyNavigation
+- dataMarketplaceNavigation
+- decentralizationEverything
+- decentralizedExchange
+- decentralizedWeb3
+- delegateNavigation
+- derivativesNavigation
+- directDepositNavigation
+- dollarShowcase
+- earnGraph
+- earnNavigation
+- email
+- ethereumFocus
+- exchangeNavigation
+- feesRestriction
+- gasFees
+- getStarted
+- giftbox
+- globalConnections
+- globalPayments
+- globalTransactions
+- governance
+- hardwareWallet
+- helpCenterNavigation
+- institutionalNavigation
+- investGraph
+- layerNetworks
+- learningRewardsNavigation
+- lightbulbLearn
+- listingFees
+- locationUsa
+- monitoringPerformance
+- multiAccountsAndCards
+- nftAvatar
+- nftNavigation
+- notificationHubAnalysis
+- notificationHubNews
+- notificationHubPortfolio
+- participateNavigation
+- payNavigation
+- pluginBrowser
+- primeNavigation
+- privateClientNavigation
+- proNavigation
+- queryTransactNavigation
+- rewardsNavigation
+- rosettaNavigation
+- securedAssets
+- securityCoinShield
+- selfCustodyWallet
+- sendPaymentToOthers
+- signInNavigation
+- ssnCard
+- stableCoinMetaphor
+- stakingGraph
+- support
+- supportChat
+- taxCenterNavigation
+- timingCheck
+- trusted
+- videoCalendar
+- videoContent
+- walletError
+- walletLinkNavigation
+- walletNavigation
+- walletPassword
+- walletSuccess
+- walletWarning
+
+#### Spot Rectangle
+
+- accessToAdvancedCharts
+- addBank
+- advancedTradingChartsIndicatorsCandles
+- apiKey
+- backedByUsDollar
+- blockchain
+- browserExtension
+- coinbaseOneLogo
+- coinbaseOnePhoneLightning
+- collectingNfts
+- completeAQuiz
+- congratulationsOnEarningCrypto
+- cryptoAssets
+- cryptoForBeginners
+- cryptoWallet
+- decentralization
+- decentralizedWebWeb3
+- defiDecentralizedTradingExchange
+- diamond
+- downloadCoinbaseWalletArrow
+- earnToLearn
+- encryptedEverything
+- ethStakingRewards
+- futures
+- gainsAndLosses
+- gasFeesNetworkFees
+- getStartedInMinutes
+- giftBoxRewards
+- globalTransactions
+- governance
+- hardwareWallets
+- highFees
+- insuranceProtection
+- invest
+- layeredNetworks
+- leverage
+- linkingYourWalletToYourCoinbaseAccount
+- margin
+- marginWarning
+- mining
+- multiPlatformMobileAppBrowserExtension
+- multipleAccountsWalletsForOneUser
+- noFees
+- optInPushNotificationsEmail
+- p2pPayments
+- portfolioPerformance
+- poweredByEthereum
+- primeDeFi
+- primeEarn
+- primePriceLadder
+- primeStaking
+- primeTradePreferences
+- quickAndSimple
+- referralsBitcoin
+- retailUSDCRewards
+- secureGlobalTransactions
+- secureStorage
+- selfCustody
+- semiCustodial
+- sidechain
+- stableValue
+- staking
+- startToday
+- stayInControlSelfHostedWalletsStorage
+- stressTestedColdStorage
+- switchAdvancedToSimpleTrading
+- taxesDetails
+- transferFunds
+- walletReconnect
+- walletReconnectSuccess
+- walletSecurity
+- watchVideos
+
+### 🐞 Renames
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Rectangle
+
+- cbOneRewards -> coinbaseOneRewards
+- ClawMachinePig -> clawMachinePig
+- RatFoundWallet -> ratFoundWallet
+- yieldHoldingAlt -> yieldHolding
+
+#### Spot Square
+
+- cbOneRewards -> coinbaseOneRewards
+- cbOneStakeOrWrap -> coinbaseOneStakeOrWrap
+- cbOneStaking -> coinbaseOneStaking
+- cbOnestarToken -> coinbaseOneStarToken
+- cbOneTokenRewards -> coinbaseOneTokenRewards
+- coinbaseOneLogoSpotSquare -> coinbaseOneLogo
+- hardwareWalletsSpot -> hardwareWallets
+- sidechainSpot -> sidechain
+
+#### Hero Square
+
+- cbOneLogo -> coinbaseOneLogo
+- cbOnePercentOff -> coinbaseOnePercentOff
+- cbOneRewards -> coinbaseOneRewards
+- cbOneTokenRewards -> coinbaseOneTokenRewards
+- cbOneUSDCIncentives -> coinbaseOneUSDCIncentives
+- cbOneWelcome -> coinbaseOneWelcome
+- leverageHeroSquare -> leverage
+- marginH -> margin
+
+#### Pictogram
+
+- coinbaseOneLogoPictogram -> coinbaseOneLogo
+
 ### 🚀 Added
 
 Generated with `yarn nx run illustrations:sync`
