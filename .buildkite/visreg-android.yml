@@ -67,7 +67,6 @@ env:
   NX_CAPTURE_METRICS: true
   NX_CAPTURE_TEST_METRICS: true
   ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
-  PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-android'
 
 steps:
   - label: Android - Prebuild - visreg

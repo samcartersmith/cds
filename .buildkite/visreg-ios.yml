@@ -3,7 +3,7 @@ env:
   CI: true
   NX_CAPTURE_METRICS: true
   NX_CAPTURE_TEST_METRICS: true
-  PERCY_TOKEN_SECRET_ID: 'infra/buildkite/cds-percy-token-ios'
+  IOS_PERCY_SECRET: 'infra/buildkite/cds-percy-token-ios'
 
 steps:
   - label: iOS - Prebuild - visreg
@@ -22,7 +22,7 @@ steps:
     agents:
       queue: macos-metal
     commands:
-      - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
+      - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
       - tools/ci/visreg.sh ios test
     retry:
       automatic:
@@ -34,6 +34,6 @@ steps:
     agents:
       queue: macos-metal
     commands:
-      - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$PERCY_TOKEN_SECRET_ID --query SecretString --output text)
+      - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
       - npm install -g @percy/cli
       - npx percy build:finalize
