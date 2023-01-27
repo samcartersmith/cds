@@ -2663,6 +2663,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cbhq/metro-config@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "@cbhq/metro-config@npm:0.0.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmetro-config%2F-%2F%40cbhq%2Fmetro-config-0.0.1.tgz"
+  dependencies:
+    metro: 0.72.3
+    metro-config: 0.72.3
+    metro-resolver: 0.72.3
+    resolve.exports: ^1.1.0
+    type-fest: ^3.1.0
+  checksum: 1e27471b8575220572d5e666b0fe52c6356c1897a97fce4f7ef0067bd702b30d165df063b572e850868dda6a0cd475957dbe59d378736d8f58ef9dfe2e560784
+  languageName: node
+  linkType: hard
+
 "@cbhq/mono-env@npm:^0.2.16":
   version: 0.2.16
   resolution: "@cbhq/mono-env@npm:0.2.16::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40cbhq%252fmono-env%2F-%2Fmono-env-0.2.16.tgz"
@@ -2886,6 +2899,7 @@ __metadata:
   dependencies:
     "@cbhq/cds-mobile": "workspace:^"
     "@cbhq/detox-utils": ^0.2.3
+    "@cbhq/metro-config": ^0.0.1
     "@cbhq/ui-mobile-playground": "workspace:^"
     "@cds/codegen": "workspace:^"
     "@percy/cli": ^1.13.0
@@ -10830,10 +10844,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:^3.2.3":
-  version: 3.2.3
-  resolution: "async@npm:3.2.3"
-  checksum: c4bee57ab2249af3dc83ca3ef9acfa8e822c0d5e5aa41bae3eaf7f673648343cd64ecd7d26091ffd357f3f044428b17b5f00098494b6cf8b6b3e9681f0636ca1
+"async@npm:^3.2.2, async@npm:^3.2.3":
+  version: 3.2.4
+  resolution: "async@npm:3.2.4::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fasync%2F-%2Fasync-3.2.4.tgz"
+  checksum: 43d07459a4e1d09b84a20772414aa684ff4de085cbcaec6eea3c7a8f8150e8c62aa6cd4e699fe8ee93c3a5b324e777d34642531875a0817a35697522c1b02e89
   languageName: node
   linkType: hard
 
@@ -19126,12 +19140,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hermes-estree@npm:0.8.0":
+  version: 0.8.0
+  resolution: "hermes-estree@npm:0.8.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fhermes-estree%2F-%2Fhermes-estree-0.8.0.tgz"
+  checksum: 3a169d1751d8bed000c665314205e4f033f9dd0506ac0f72528c31853f7ac3d0a13abd34c7cd69d8f5b57effd730d7da9fdadb0a3fb35303769a12f90dd0a61f
+  languageName: node
+  linkType: hard
+
 "hermes-parser@npm:0.5.0":
   version: 0.5.0
   resolution: "hermes-parser@npm:0.5.0"
   dependencies:
     hermes-estree: 0.5.0
   checksum: ef3c9aee01162fe1958e084540aa663bd9001acb6aa5d1c724bb8d7aa947dcc2961e0d572adda60895ebfe59f2caef102925f201445698e196c5626fb21e2ba6
+  languageName: node
+  linkType: hard
+
+"hermes-parser@npm:0.8.0":
+  version: 0.8.0
+  resolution: "hermes-parser@npm:0.8.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fhermes-parser%2F-%2Fhermes-parser-0.8.0.tgz"
+  dependencies:
+    hermes-estree: 0.8.0
+  checksum: 0c992bdc6c98482aef0c8bc3b55c84769d80536aa6becf9c3e296caf19647ba4fa1c516e50e313dfe44dadce140c7dc9f9f5ceee36091cf9835bbcd101b1b974
   languageName: node
   linkType: hard
 
@@ -21713,9 +21743,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-regex-util@npm:^27.5.1":
+"jest-regex-util@npm:^27.0.6, jest-regex-util@npm:^27.5.1":
   version: 27.5.1
-  resolution: "jest-regex-util@npm:27.5.1"
+  resolution: "jest-regex-util@npm:27.5.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-regex-util%2F-%2Fjest-regex-util-27.5.1.tgz"
   checksum: d45ca7a9543616a34f7f3079337439cf07566e677a096472baa2810e274b9808b76767c97b0a4029b8a5b82b9d256dee28ef9ad4138b2b9e5933f6fac106c418
   languageName: node
   linkType: hard
@@ -21894,9 +21924,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-serializer@npm:^27.5.1":
+"jest-serializer@npm:^27.0.6, jest-serializer@npm:^27.5.1":
   version: 27.5.1
-  resolution: "jest-serializer@npm:27.5.1"
+  resolution: "jest-serializer@npm:27.5.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-serializer%2F-%2Fjest-serializer-27.5.1.tgz"
   dependencies:
     "@types/node": "*"
     graceful-fs: ^4.2.9
@@ -21981,9 +22011,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-util@npm:^27.5.1":
+"jest-util@npm:^27.2.0, jest-util@npm:^27.5.1":
   version: 27.5.1
-  resolution: "jest-util@npm:27.5.1"
+  resolution: "jest-util@npm:27.5.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-util%2F-%2Fjest-util-27.5.1.tgz"
   dependencies:
     "@jest/types": ^27.5.1
     "@types/node": "*"
@@ -22125,7 +22155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-worker@npm:^27.0.2, jest-worker@npm:^27.4.5, jest-worker@npm:^27.5.1":
+"jest-worker@npm:^27.0.2, jest-worker@npm:^27.2.0, jest-worker@npm:^27.4.5, jest-worker@npm:^27.5.1":
   version: 27.5.1
   resolution: "jest-worker@npm:27.5.1"
   dependencies:
@@ -23986,10 +24016,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"metro-babel-transformer@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-babel-transformer@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-babel-transformer%2F-%2Fmetro-babel-transformer-0.72.3.tgz"
+  dependencies:
+    "@babel/core": ^7.14.0
+    hermes-parser: 0.8.0
+    metro-source-map: 0.72.3
+    nullthrows: ^1.1.1
+  checksum: 6bce52a924f1eb84ea2859b65d37ab6f90bd998ac68184680afaa627e4d0a933cd7ddba391bcd9ea9fb8cacd6228615a427342aeeec6e6053600b322990d16f6
+  languageName: node
+  linkType: hard
+
 "metro-cache-key@npm:0.67.0":
   version: 0.67.0
   resolution: "metro-cache-key@npm:0.67.0"
   checksum: 13b23f2e1a413b7a79d6f48fb739e92ba1b457c77eba14f65f6bcd1caf1832f314b319e4d690bd6bf9de94c896427b44d5da6e65ab1cde71d07306e00888e014
+  languageName: node
+  linkType: hard
+
+"metro-cache-key@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-cache-key@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-cache-key%2F-%2Fmetro-cache-key-0.72.3.tgz"
+  checksum: e188147435f2e1f3f711a0bc5ea5794d78dc882cc23702fa8676fbbabd54bb21b7c905ba52a5306bdf6869396102f02131845269be9f9a2719c243e48b004ad3
   languageName: node
   linkType: hard
 
@@ -24001,6 +24050,16 @@ __metadata:
     mkdirp: ^0.5.1
     rimraf: ^2.5.4
   checksum: 4d9fba435d3adbe0c4c883ef0361d41acf427ba57e74daa52f55d66bbb564e907c9ceec40c98fac792217e9d1efbc91e1531ec8db907165274c524e30a0dfcde
+  languageName: node
+  linkType: hard
+
+"metro-cache@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-cache@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-cache%2F-%2Fmetro-cache-0.72.3.tgz"
+  dependencies:
+    metro-core: 0.72.3
+    rimraf: ^2.5.4
+  checksum: 958e304333995ea44e5443f77250f3a5f64d6213d66408f46538dcfda9185a6518251fdaf8cdb7920a48f5c8ac7b05c867ec0268ebb9c7dc768a35e5eab47317
   languageName: node
   linkType: hard
 
@@ -24018,6 +24077,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"metro-config@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-config@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-config%2F-%2Fmetro-config-0.72.3.tgz"
+  dependencies:
+    cosmiconfig: ^5.0.5
+    jest-validate: ^26.5.2
+    metro: 0.72.3
+    metro-cache: 0.72.3
+    metro-core: 0.72.3
+    metro-runtime: 0.72.3
+  checksum: c4dff3f2c636894dc0deb44640ac0dc8a520a824cf2ba78098736ef0f796acc1a7fcb646d63ea8dbab55eb41340443a83d30f8749be5ddf577578de1cf74bb6e
+  languageName: node
+  linkType: hard
+
 "metro-core@npm:0.67.0, metro-core@npm:^0.67.0":
   version: 0.67.0
   resolution: "metro-core@npm:0.67.0"
@@ -24029,10 +24102,51 @@ __metadata:
   languageName: node
   linkType: hard
 
+"metro-core@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-core@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-core%2F-%2Fmetro-core-0.72.3.tgz"
+  dependencies:
+    lodash.throttle: ^4.1.1
+    metro-resolver: 0.72.3
+  checksum: 0a94f5d4b6e8c46b6833897a924af9985ad2887b2e41dfd28a13799c3b6861b69d3d2e72bac891e827d58d767b8132b9325ab7f57c8110bb95ca15ce47348de8
+  languageName: node
+  linkType: hard
+
+"metro-file-map@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-file-map@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-file-map%2F-%2Fmetro-file-map-0.72.3.tgz"
+  dependencies:
+    abort-controller: ^3.0.0
+    anymatch: ^3.0.3
+    debug: ^2.2.0
+    fb-watchman: ^2.0.0
+    fsevents: ^2.1.2
+    graceful-fs: ^4.2.4
+    invariant: ^2.2.4
+    jest-regex-util: ^27.0.6
+    jest-serializer: ^27.0.6
+    jest-util: ^27.2.0
+    jest-worker: ^27.2.0
+    micromatch: ^4.0.4
+    walker: ^1.0.7
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  checksum: 1c233a684395552eb47707027bad0ca8e868b1867774b305d07841b60f94ded301882dcc62c106009e3bfed1bafc7d705c74966b5afb4d68537fcda38f4c5241
+  languageName: node
+  linkType: hard
+
 "metro-hermes-compiler@npm:0.67.0":
   version: 0.67.0
   resolution: "metro-hermes-compiler@npm:0.67.0"
   checksum: 02926d5ae44f08cfec7a80d8b23c7096a44e65e5d400e6123517efffff14b5e547a25394914b7478aedb22994b317d7a3091e659089fd182b92e5afec740bd4b
+  languageName: node
+  linkType: hard
+
+"metro-hermes-compiler@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-hermes-compiler@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-hermes-compiler%2F-%2Fmetro-hermes-compiler-0.72.3.tgz"
+  checksum: ccf58abeae45e7e1489bb3bb9a88165cd73cbb9988c3f9bc0d5221677335cc89ccd8791da0734c0ff1a70191d3c0ef84a326964dd38944124414cb841f8210eb
   languageName: node
   linkType: hard
 
@@ -24050,12 +24164,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"metro-inspector-proxy@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-inspector-proxy@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-inspector-proxy%2F-%2Fmetro-inspector-proxy-0.72.3.tgz"
+  dependencies:
+    connect: ^3.6.5
+    debug: ^2.2.0
+    ws: ^7.5.1
+    yargs: ^15.3.1
+  bin:
+    metro-inspector-proxy: src/cli.js
+  checksum: 0fef6c59c35e874f209ee40f93850dd0c2b9644e90883542296b5d11f68b7b8ed960e6435d0c90bd1e5e6e9dcdfa2e27a771a436f4840ec48f2d7e62a259af2a
+  languageName: node
+  linkType: hard
+
 "metro-minify-uglify@npm:0.67.0":
   version: 0.67.0
   resolution: "metro-minify-uglify@npm:0.67.0"
   dependencies:
     uglify-es: ^3.1.9
   checksum: e0d4c7bbcaedf210d4b7379cf158818a1311c65b2518599d34d374e6fd090f47e3c55bf31a018380685db8a4570e272fb57627dd0961915ab71fb08fd13dfd29
+  languageName: node
+  linkType: hard
+
+"metro-minify-uglify@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-minify-uglify@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-minify-uglify%2F-%2Fmetro-minify-uglify-0.72.3.tgz"
+  dependencies:
+    uglify-es: ^3.1.9
+  checksum: 6384a85fec8133a2e54fe7123ec17649b183309f333c960cad42d999d8d2f0aa40d5cc8111e25013b1ccfe26de59a5a202e8a014fd673d8bb4f0eca52e9d9ac3
   languageName: node
   linkType: hard
 
@@ -24106,6 +24243,55 @@ __metadata:
   peerDependencies:
     "@babel/core": "*"
   checksum: 931105e7c76e1e69663bcf75ed8979161c6d486767ccc48c9c6ca80276adbeae7c2aaec0b5c9829f0a44fbf456e97908f81486bdb04cfe68fde375413acc654f
+  languageName: node
+  linkType: hard
+
+"metro-react-native-babel-preset@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-react-native-babel-preset@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-react-native-babel-preset%2F-%2Fmetro-react-native-babel-preset-0.72.3.tgz"
+  dependencies:
+    "@babel/core": ^7.14.0
+    "@babel/plugin-proposal-async-generator-functions": ^7.0.0
+    "@babel/plugin-proposal-class-properties": ^7.0.0
+    "@babel/plugin-proposal-export-default-from": ^7.0.0
+    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.0.0
+    "@babel/plugin-proposal-object-rest-spread": ^7.0.0
+    "@babel/plugin-proposal-optional-catch-binding": ^7.0.0
+    "@babel/plugin-proposal-optional-chaining": ^7.0.0
+    "@babel/plugin-syntax-dynamic-import": ^7.0.0
+    "@babel/plugin-syntax-export-default-from": ^7.0.0
+    "@babel/plugin-syntax-flow": ^7.2.0
+    "@babel/plugin-syntax-nullish-coalescing-operator": ^7.0.0
+    "@babel/plugin-syntax-optional-chaining": ^7.0.0
+    "@babel/plugin-transform-arrow-functions": ^7.0.0
+    "@babel/plugin-transform-async-to-generator": ^7.0.0
+    "@babel/plugin-transform-block-scoping": ^7.0.0
+    "@babel/plugin-transform-classes": ^7.0.0
+    "@babel/plugin-transform-computed-properties": ^7.0.0
+    "@babel/plugin-transform-destructuring": ^7.0.0
+    "@babel/plugin-transform-exponentiation-operator": ^7.0.0
+    "@babel/plugin-transform-flow-strip-types": ^7.0.0
+    "@babel/plugin-transform-function-name": ^7.0.0
+    "@babel/plugin-transform-literals": ^7.0.0
+    "@babel/plugin-transform-modules-commonjs": ^7.0.0
+    "@babel/plugin-transform-named-capturing-groups-regex": ^7.0.0
+    "@babel/plugin-transform-parameters": ^7.0.0
+    "@babel/plugin-transform-react-display-name": ^7.0.0
+    "@babel/plugin-transform-react-jsx": ^7.0.0
+    "@babel/plugin-transform-react-jsx-self": ^7.0.0
+    "@babel/plugin-transform-react-jsx-source": ^7.0.0
+    "@babel/plugin-transform-runtime": ^7.0.0
+    "@babel/plugin-transform-shorthand-properties": ^7.0.0
+    "@babel/plugin-transform-spread": ^7.0.0
+    "@babel/plugin-transform-sticky-regex": ^7.0.0
+    "@babel/plugin-transform-template-literals": ^7.0.0
+    "@babel/plugin-transform-typescript": ^7.5.0
+    "@babel/plugin-transform-unicode-regex": ^7.0.0
+    "@babel/template": ^7.0.0
+    react-refresh: ^0.4.0
+  peerDependencies:
+    "@babel/core": "*"
+  checksum: 678595fe00c8f9b39517094dc90facc93d514d68b32bc4bb64b7c58b9ab72a36da80b0969da932ef52e4a8d8b223a8ebc731ca0e88e221fb4187db7a4d7e5e79
   languageName: node
   linkType: hard
 
@@ -24183,10 +24369,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"metro-resolver@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-resolver@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-resolver%2F-%2Fmetro-resolver-0.72.3.tgz"
+  dependencies:
+    absolute-path: ^0.0.0
+  checksum: bbf502a1533f3099b91be94c57a34be18bd79d68fa789f0ba26806a932865aa4394f8363dc7a09579f474046cedd837b826cc9391fa9cf562515afa00d2313c1
+  languageName: node
+  linkType: hard
+
 "metro-runtime@npm:0.67.0, metro-runtime@npm:^0.67.0":
   version: 0.67.0
   resolution: "metro-runtime@npm:0.67.0"
   checksum: 06be8635277d594b17009d9b35bbd9cb65dd44980a0a87739e49801a6b6dae73109825ddd94e1a8195520b3fa41507d151b7b7f8a484cf61164e155bfdbb091b
+  languageName: node
+  linkType: hard
+
+"metro-runtime@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-runtime@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-runtime%2F-%2Fmetro-runtime-0.72.3.tgz"
+  dependencies:
+    "@babel/runtime": ^7.0.0
+    react-refresh: ^0.4.0
+  checksum: 7017fad668bdf44f1ab57eebd3d6841f7f4f3f5b747970d9e7ec9c4c497ed058c5a153eb41efd598e4bad3f89d036b38e71f3795298b8dbd31ba2a5d974d4019
   languageName: node
   linkType: hard
 
@@ -24206,6 +24411,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"metro-source-map@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-source-map@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-source-map%2F-%2Fmetro-source-map-0.72.3.tgz"
+  dependencies:
+    "@babel/traverse": ^7.14.0
+    "@babel/types": ^7.0.0
+    invariant: ^2.2.4
+    metro-symbolicate: 0.72.3
+    nullthrows: ^1.1.1
+    ob1: 0.72.3
+    source-map: ^0.5.6
+    vlq: ^1.0.0
+  checksum: 4bbd27097d0de46ed4a091424a3ef497a54f48ae3559751bb619a5a48f637786881ef170c6ef037e8e8581ff3b4f43af5ba44cf9e4bd106c703246e346bb1029
+  languageName: node
+  linkType: hard
+
 "metro-symbolicate@npm:0.67.0":
   version: 0.67.0
   resolution: "metro-symbolicate@npm:0.67.0"
@@ -24222,6 +24443,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"metro-symbolicate@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-symbolicate@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-symbolicate%2F-%2Fmetro-symbolicate-0.72.3.tgz"
+  dependencies:
+    invariant: ^2.2.4
+    metro-source-map: 0.72.3
+    nullthrows: ^1.1.1
+    source-map: ^0.5.6
+    through2: ^2.0.1
+    vlq: ^1.0.0
+  bin:
+    metro-symbolicate: ./src/index.js
+  checksum: e2b434d008a086132b999cefa07316f4b9c6e666d169c1a4534085a50046320afd5dd15eeb6849354e82ac360cddb6fa9882ac2da13a70e93bd987675e9d4209
+  languageName: node
+  linkType: hard
+
 "metro-transform-plugins@npm:0.67.0":
   version: 0.67.0
   resolution: "metro-transform-plugins@npm:0.67.0"
@@ -24232,6 +24469,19 @@ __metadata:
     "@babel/traverse": ^7.14.0
     nullthrows: ^1.1.1
   checksum: 79e468e5ba0965181f56777d998ebdfcc2792c33d8b25d5a180022e62fc3e3585050bfc82bb3b238bc778baef8ad37d1083da620b68f02240597ce73ec4efff5
+  languageName: node
+  linkType: hard
+
+"metro-transform-plugins@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-transform-plugins@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-transform-plugins%2F-%2Fmetro-transform-plugins-0.72.3.tgz"
+  dependencies:
+    "@babel/core": ^7.14.0
+    "@babel/generator": ^7.14.0
+    "@babel/template": ^7.0.0
+    "@babel/traverse": ^7.14.0
+    nullthrows: ^1.1.1
+  checksum: e85e5d8fb05ff315431c30fdd3508844224afb516bc03aa4bb2eeebb67c29cfefad165ec3e950062335c28d1b31cf434dbd7c89e22f70a33f54fc2e4f0343448
   languageName: node
   linkType: hard
 
@@ -24253,6 +24503,27 @@ __metadata:
     metro-transform-plugins: 0.67.0
     nullthrows: ^1.1.1
   checksum: 114ecd11b9945c3bf0171c2dc725bc3676a14604740d15ee8e862cd903706743407b0592ffe1b3fd53946947bcf8d00f015f823343ee1eeb843ce63e514466c6
+  languageName: node
+  linkType: hard
+
+"metro-transform-worker@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro-transform-worker@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro-transform-worker%2F-%2Fmetro-transform-worker-0.72.3.tgz"
+  dependencies:
+    "@babel/core": ^7.14.0
+    "@babel/generator": ^7.14.0
+    "@babel/parser": ^7.14.0
+    "@babel/types": ^7.0.0
+    babel-preset-fbjs: ^3.4.0
+    metro: 0.72.3
+    metro-babel-transformer: 0.72.3
+    metro-cache: 0.72.3
+    metro-cache-key: 0.72.3
+    metro-hermes-compiler: 0.72.3
+    metro-source-map: 0.72.3
+    metro-transform-plugins: 0.72.3
+    nullthrows: ^1.1.1
+  checksum: 2a0349b3e17a3c6d41f52185554a1cc4bb05665c99bcb2053c2085d72aac84fd8452cc3c51bef07a2416d0497855d02458e115b1203da308f5eb5e6da1e77e66
   languageName: node
   linkType: hard
 
@@ -24314,6 +24585,66 @@ __metadata:
   bin:
     metro: src/cli.js
   checksum: f106dd7f56380f734ae0d71afcee068b18774196889a6909963fd82b4c0db5508915735bc5be8027150ccea3b5bed5d286fdda41d0458ba3d156d8db29841fce
+  languageName: node
+  linkType: hard
+
+"metro@npm:0.72.3":
+  version: 0.72.3
+  resolution: "metro@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmetro%2F-%2Fmetro-0.72.3.tgz"
+  dependencies:
+    "@babel/code-frame": ^7.0.0
+    "@babel/core": ^7.14.0
+    "@babel/generator": ^7.14.0
+    "@babel/parser": ^7.14.0
+    "@babel/template": ^7.0.0
+    "@babel/traverse": ^7.14.0
+    "@babel/types": ^7.0.0
+    absolute-path: ^0.0.0
+    accepts: ^1.3.7
+    async: ^3.2.2
+    chalk: ^4.0.0
+    ci-info: ^2.0.0
+    connect: ^3.6.5
+    debug: ^2.2.0
+    denodeify: ^1.2.1
+    error-stack-parser: ^2.0.6
+    fs-extra: ^1.0.0
+    graceful-fs: ^4.2.4
+    hermes-parser: 0.8.0
+    image-size: ^0.6.0
+    invariant: ^2.2.4
+    jest-worker: ^27.2.0
+    lodash.throttle: ^4.1.1
+    metro-babel-transformer: 0.72.3
+    metro-cache: 0.72.3
+    metro-cache-key: 0.72.3
+    metro-config: 0.72.3
+    metro-core: 0.72.3
+    metro-file-map: 0.72.3
+    metro-hermes-compiler: 0.72.3
+    metro-inspector-proxy: 0.72.3
+    metro-minify-uglify: 0.72.3
+    metro-react-native-babel-preset: 0.72.3
+    metro-resolver: 0.72.3
+    metro-runtime: 0.72.3
+    metro-source-map: 0.72.3
+    metro-symbolicate: 0.72.3
+    metro-transform-plugins: 0.72.3
+    metro-transform-worker: 0.72.3
+    mime-types: ^2.1.27
+    node-fetch: ^2.2.0
+    nullthrows: ^1.1.1
+    rimraf: ^2.5.4
+    serialize-error: ^2.1.0
+    source-map: ^0.5.6
+    strip-ansi: ^6.0.0
+    temp: 0.8.3
+    throat: ^5.0.0
+    ws: ^7.5.1
+    yargs: ^15.3.1
+  bin:
+    metro: src/cli.js
+  checksum: 03bdd94e7857e66046131eb943b8caccb986d86ccd87f3a9abd14d0dc860f4912e49adf8aa96c34f3ea55a25d3f4832f06199e97aac38d6df3fdbe9ac0ef1aa8
   languageName: node
   linkType: hard
 
@@ -25611,6 +25942,13 @@ __metadata:
   version: 0.67.0
   resolution: "ob1@npm:0.67.0"
   checksum: 02910732e1094dd164d6dfa674250bc404503c8a85fa60b15399f9059006329d7b1bad2cb0bca1841bcf4c2c1759d91297485361523d21066984a9130f3f3b65
+  languageName: node
+  linkType: hard
+
+"ob1@npm:0.72.3":
+  version: 0.72.3
+  resolution: "ob1@npm:0.72.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fob1%2F-%2Fob1-0.72.3.tgz"
+  checksum: 21ef5c2565b3ec0b5f190f117f205548ed3ee935e5884d916da7cb570ad1bd0206e1dbd542b91c004cd4e6eb5ee5100517f37e9664f23dbb6cbecc9cdb5b26eb
   languageName: node
   linkType: hard
 
@@ -34114,6 +34452,13 @@ __metadata:
   version: 2.19.0
   resolution: "type-fest@npm:2.19.0"
   checksum: a4ef07ece297c9fba78fc1bd6d85dff4472fe043ede98bd4710d2615d15776902b595abf62bd78339ed6278f021235fb28a96361f8be86ed754f778973a0d278
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^3.1.0":
+  version: 3.5.3
+  resolution: "type-fest@npm:3.5.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ftype-fest%2F-%2Ftype-fest-3.5.3.tgz"
+  checksum: ac52b1a1c695cbbc5e18edf9b15b27d9135611b4be7a50a41ac07bed9687f79a8cad759aa4e17ef74f2ef5a72c503012de6f1a960a132040798ebc588f574f5c
   languageName: node
   linkType: hard
 

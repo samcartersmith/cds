@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@cbhq/cds-mobile": "workspace:^",
+    "@cbhq/metro-config": "^0.0.1",
     "@cbhq/ui-mobile-playground": "workspace:^",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^6.0.11",
