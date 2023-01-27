@@ -1,11 +1,12 @@
 {
+  "name": "icons",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/icons",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": ["dts", "lib"]
+      "outputs": ["{projectRoot}/dts", "{projectRoot}/lib"]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

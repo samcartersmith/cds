@@ -1,4 +1,5 @@
 {
+  "name": "figma-icons-plugin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/figma-icons-plugin",
   "projectType": "application",

@@ -1,11 +1,12 @@
 {
+  "name": "ui-mobile-playground",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/ui-mobile-playground",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": ["dts", "lib"]
+      "outputs": ["{projectRoot}/dts", "{projectRoot}/lib"]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

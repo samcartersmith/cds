@@ -1,4 +1,5 @@
 {
+  "name": "docusaurus-theme",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/docusaurus-theme",
   "projectType": "library",

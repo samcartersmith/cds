@@ -1,4 +1,5 @@
 {
+  "name": "docusaurus-preset",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/docusaurus-preset",
   "projectType": "library",

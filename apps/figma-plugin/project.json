@@ -1,4 +1,5 @@
 {
+  "name": "figma-plugin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/figma-plugin",
   "projectType": "application",
