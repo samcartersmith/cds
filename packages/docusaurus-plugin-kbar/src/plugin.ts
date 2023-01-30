@@ -1,10 +1,10 @@
 import docsPlugin from '@docusaurus/plugin-content-docs';
 import { DEFAULT_OPTIONS } from '@docusaurus/plugin-content-docs/options';
 import type { LoadContext, Plugin } from '@docusaurus/types';
-import type { PluginData, PluginOptions } from '@cbhq/docusaurus-plugin-kbar';
 
 import { getKBarActions } from './utils/getKBarActions';
 import { logger } from './utils/logger';
+import type { PluginData, PluginOptions } from './types';
 
 const PLUGIN_ID = '@cbhq/docusaurus-plugin-kbar';
 

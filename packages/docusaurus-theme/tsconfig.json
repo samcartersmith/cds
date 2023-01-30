@@ -8,6 +8,15 @@
   "exclude": ["node_modules", "**/__tests__/**/*", "lib"],
   "references": [
     {
+      "path": "../docusaurus-plugin-docgen"
+    },
+    {
+      "path": "../docusaurus-plugin-kbar"
+    },
+    {
+      "path": "../common"
+    },
+    {
       "path": "../web"
     },
     {

@@ -3,7 +3,8 @@ import { createAction } from 'kbar';
 import kebabCase from 'lodash/kebabCase';
 import uniqBy from 'lodash/uniqBy';
 import path from 'path';
-import type { KBarCustomAction, SidebarItem } from '@cbhq/docusaurus-plugin-kbar';
+
+import type { KBarCustomAction, SidebarItem } from '../types';
 
 export function getKBarActions(currentVersion: LoadedVersion): KBarCustomAction[] {
   function getDocInfo(id: string) {

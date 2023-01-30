@@ -8,6 +8,9 @@
   "exclude": ["node_modules", "**/__tests__/**/*", "lib"],
   "references": [
     {
+      "path": "../docusaurus-plugin-kbar"
+    },
+    {
       "path": "../web"
     },
     {

@@ -1,19 +1,19 @@
 {
   "name": "docusaurus-plugin-kbar",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/docusaurus-plugin-kbar",
+  "sourceRoot": "packages/docusaurus-plugin-kbar/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@cbhq/cds-tools:build-docusaurus-plugin",
-      "outputs": ["{projectRoot}/lib"]
-    },
     "watch": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/docusaurus-plugin-kbar",
-        "commands": ["yarn docusaurus-plugin watch"]
+        "commands": ["packemon watch --quiet --loadConfigs"]
       }
+    },
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": ["{projectRoot}/dts", "{projectRoot}/lib"]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

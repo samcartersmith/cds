@@ -9,13 +9,10 @@
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "authors": "Coinbase",
   "dependencies": {
-    "@cb/cms": "^0.1.4",
-    "@cbhq/cds-web": "workspace:*",
     "@docusaurus/core": "2.0.0-beta.18",
     "@docusaurus/theme-classic": "2.0.0-beta.18",
     "@docusaurus/theme-common": "2.0.0-beta.18",
     "@docusaurus/theme-live-codeblock": "2.0.0-beta.18",
-    "kbar": "^0.1.0-beta.35",
     "schedulely": "^0.0.31"
   },
   "devDependencies": {
@@ -30,6 +27,10 @@
     "ts-node": "^10.7.0"
   },
   "peerDependencies": {
+    "@cbhq/cds-common": "workspace:*",
+    "@cbhq/cds-web": "workspace:*",
+    "@cbhq/docusaurus-plugin-kbar": "workspace:*",
+    "kbar": "^0.1.0-beta.35",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
