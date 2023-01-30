@@ -101,7 +101,7 @@ async function runTsc(context: ExecutorContext, tscArgs: TscArgs, envs: Record<s
 
   const bin = 'tsc';
 
-  const args = ['--project', path.join(context.root, configFile)];
+  const args = ['--build', path.join(context.root, configFile)];
 
   return runLocalCommand(context, bin, args, envs);
 }
