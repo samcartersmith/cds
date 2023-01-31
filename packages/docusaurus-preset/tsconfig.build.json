@@ -1,13 +1,12 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.buildOptions.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/packages/docusaurus-preset"
+    "outDir": "dts"
   },
   "include": [
     "src"
   ],
   "exclude": [
-    ".eslintrc.js",
     "dts",
     "lib"
   ],

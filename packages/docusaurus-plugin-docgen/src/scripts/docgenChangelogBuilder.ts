@@ -3,8 +3,8 @@ import groupBy from 'lodash/groupBy';
 import orderBy from 'lodash/orderBy';
 import uniqBy from 'lodash/uniqBy';
 import path from 'path';
-import type { OutputDoc, WriteFileConfig } from '@cbhq/docusaurus-plugin-docgen';
 
+import type { OutputDoc, WriteFileConfig } from '../types';
 import { getGitInfoForFile } from '../utils/getGitInfoForFile';
 
 async function getGitInfo({

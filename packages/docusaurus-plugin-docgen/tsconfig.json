@@ -1,17 +1,15 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "lib"
+    "outDir": "../../.nx/dts/packages/docusaurus-plugin-docgen"
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "**/__tests__/**/*", "lib"],
-  "references": [
-    {
-      "path": "../web"
-    },
-    {
-      "path": "../web-utils"
-    }
+  "include": [
+    "src",
+    "module-declarations.d.ts"
+  ],
+  "exclude": [
+    ".eslintrc.js",
+    "dts",
+    "lib"
   ]
 }

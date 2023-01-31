@@ -1,7 +1,15 @@
 import presetClassic from '@docusaurus/preset-classic';
-import type { LoadContext, PresetOptions } from '@cbhq/docusaurus-preset';
+import type { LoadContext, PluginConfig } from '@docusaurus/types';
 
-export default function preset(context: LoadContext, opts: PresetOptions = {}) {
+import type { PresetOptions } from './types';
+
+export default function preset(
+  context: LoadContext,
+  opts: PresetOptions = {},
+): {
+  themes: PluginConfig[];
+  plugins: PluginConfig[];
+} {
   const { docgen, kbar, ...classicOptions } = opts;
 
   const { themes, plugins } = presetClassic(context, classicOptions);

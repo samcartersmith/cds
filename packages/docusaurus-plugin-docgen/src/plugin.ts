@@ -1,12 +1,12 @@
 import type { LoadContext, Plugin } from '@docusaurus/types';
 import { DEFAULT_PLUGIN_ID } from '@docusaurus/utils';
 import path from 'path';
-import type { PluginContent, PluginOptions } from '@cbhq/docusaurus-plugin-docgen';
 
 import { docgenRunner } from './scripts/docgenRunner';
 import { docgenWriter } from './scripts/docgenWriter';
 import { getMinutesBetweenDates } from './utils/getMinutesBetweenDates';
 import { logger } from './utils/logger';
+import type { PluginContent, PluginOptions } from './types';
 
 const PLUGIN_ID = '@cbhq/docusaurus-plugin-docgen';
 

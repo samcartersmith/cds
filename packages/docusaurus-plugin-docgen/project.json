@@ -1,25 +1,27 @@
 {
   "name": "docusaurus-plugin-docgen",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/docusaurus-plugin-docgen",
+  "sourceRoot": "packages/docusaurus-plugin-docgen/src",
   "projectType": "library",
   "targets": {
+    "watch": {
+      "executor": "@nrwl/workspace:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "cwd": "packages/docusaurus-plugin-docgen",
+        "command": "packemon watch --quiet --loadConfigs"
+      }
+    },
     "build": {
-      "executor": "@cbhq/cds-tools:build-docusaurus-plugin",
-      "outputs": ["{projectRoot}/lib"]
+      "executor": "@cbhq/mono-tasks:build-package",
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/dts", "{projectRoot}/lib"]
     },
     "debug": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/docusaurus-plugin-docgen",
         "commands": ["node /lib/scripts/debug.js"]
-      }
-    },
-    "watch": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "packages/docusaurus-plugin-docgen",
-        "commands": ["yarn docusaurus-plugin watch"]
       }
     },
     "format": {

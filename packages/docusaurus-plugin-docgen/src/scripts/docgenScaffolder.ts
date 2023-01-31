@@ -5,8 +5,8 @@ import orderBy from 'lodash/orderBy';
 import startCase from 'lodash/startCase';
 import uniqBy from 'lodash/uniqBy';
 import path from 'path';
-import type { OutputDoc, PluginOptions, WriteFileConfig } from '@cbhq/docusaurus-plugin-docgen';
 
+import type { OutputDoc, PluginOptions, WriteFileConfig } from '../types';
 import { logger } from '../utils/logger';
 
 type DocgenScaffolderParams = Pick<PluginOptions, 'docsDir' | 'forceDocs' | 'sourceFiles'> & {

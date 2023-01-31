@@ -4,6 +4,7 @@ import mapValues from 'lodash/mapValues';
 import omit from 'lodash/omit';
 import orderBy from 'lodash/orderBy';
 import path from 'path';
+
 import type {
   Doc,
   OnProcessDoc,
@@ -12,7 +13,7 @@ import type {
   ProcessedDoc,
   ProcessedPropItem,
   PropItem,
-} from '@cbhq/docusaurus-plugin-docgen';
+} from '../types';
 
 export const sharedParentTypesCache = new Set<ProcessedPropItem>();
 export const sharedTypeAliasesCache: Map<string, unknown> = new Map();

@@ -6,6 +6,7 @@ import mapValues from 'lodash/mapValues';
 import uniqBy from 'lodash/uniqBy';
 import path from 'path';
 import { PackageJson } from 'type-fest';
+
 import type {
   OutputDoc,
   PluginContent,
@@ -13,8 +14,7 @@ import type {
   ProcessedDoc,
   Projects,
   WriteFileConfig,
-} from '@cbhq/docusaurus-plugin-docgen';
-
+} from '../types';
 import { getPackageJsonFromTsconfig } from '../utils/getPackageJsonFromTsconfig';
 import { logger } from '../utils/logger';
 

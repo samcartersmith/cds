@@ -5,7 +5,8 @@ import kebabCase from 'lodash/kebabCase';
 import startCase from 'lodash/startCase';
 import path from 'path';
 import prettier from 'prettier';
-import type { WriteFileConfig } from '@cbhq/docusaurus-plugin-docgen';
+
+import type { WriteFileConfig } from '../types';
 
 type WriteFileParams<T> = {
   dest: string;
