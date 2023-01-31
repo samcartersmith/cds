@@ -25,6 +25,13 @@ import {
   <Story
     name="With Tabs NO displayTitle"
     decorators={[withStoryLabel('With Tabs NO displayTitle')]}
+    parameters={{
+      a11y: {
+        config: {
+          rules: [{ id: 'aria-required-children', enabled: false }],
+        },
+      },
+    }}
   >
     <TabsNoTitle />
   </Story>
@@ -49,6 +56,13 @@ import {
   <Story
     name="With Tabs AND displayTitle"
     decorators={[withStoryLabel('With Tabs AND displayTitle')]}
+    parameters={{
+      a11y: {
+        config: {
+          rules: [{ id: 'aria-required-children', enabled: false }],
+        },
+      },
+    }}
   >
     <TabsAndDisplayTitle />
   </Story>

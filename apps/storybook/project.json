@@ -31,11 +31,15 @@
       "options": {
         "script": "./scripts/run-a11y-tests.ts"
       },
-      "dependsOn": ["build-for-tests"]
+      "dependsOn": [
+        "build-for-tests"
+      ]
     },
     "percy": {
       "executor": "@cbhq/mono-tasks:run-percy",
-      "dependsOn": ["build-for-tests"]
+      "dependsOn": [
+        "build-for-tests"
+      ]
     },
     "serve-storybook": {
       "executor": "nx:run-commands",
@@ -55,7 +59,9 @@
           "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"nx run storybook:build && npx http-server /workdir/.nx/outs/projects/apps/storybook/storybook --port 6006 --silent\" \"wait-on tcp:6006 && yarn workspace @cds/storybook test-storybook --index-json\""
         ]
       },
-      "dependsOn": ["build-for-tests"]
+      "dependsOn": [
+        "build-for-tests"
+      ]
     }
   }
 }

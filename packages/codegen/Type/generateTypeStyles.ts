@@ -132,7 +132,7 @@ export const typographyScaleMapWithCssVariables = mapValues(scaleConfig, (_, sca
       ...prev,
       ...next,
     };
-  }, {} as typeof textVariants[keyof typeof textVariants]);
+  }, {} as (typeof textVariants)[keyof typeof textVariants]);
 });
 
 export const typographyCss = mapValues(

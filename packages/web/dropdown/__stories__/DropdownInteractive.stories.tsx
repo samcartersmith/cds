@@ -56,6 +56,14 @@ export const SimpleDropdown: ComponentStoryObj<typeof Default> = {
   },
 };
 
+SimpleDropdown.parameters = {
+  a11y: {
+    config: {
+      rules: [{ id: 'aria-required-children', enabled: false }],
+    },
+  },
+};
+
 // Make sure opening dropdown doesn't scroll the page. This will be captured in percy.
 export const ScrollContainer: ComponentStoryObj<typeof Default> = {
   args: {

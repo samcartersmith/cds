@@ -2,7 +2,7 @@ import { adopters } from ':cds-website/data/__generated__/adoption/adopters';
 import { hiddenAdopters } from ':cds-website/data/__generated__/adoption/adopters-hidden';
 
 export type Adopters = typeof adopters | typeof hiddenAdopters;
-export type Adopter = typeof adopters[number]['id'] | typeof hiddenAdopters[number]['id'];
+export type Adopter = (typeof adopters)[number]['id'] | (typeof hiddenAdopters)[number]['id'];
 
 export type AdopterProjectInfo = {
   github: string;

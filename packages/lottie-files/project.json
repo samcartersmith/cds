@@ -16,13 +16,26 @@
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
-      "outputs": ["{workspaceRoot}/.nx/dist/packages/lottie-files"],
+      "outputs": [
+        "{workspaceRoot}/.nx/dist/packages/lottie-files"
+      ],
       "options": {
         "destinationDir": ".nx/dist/packages/lottie-files",
-        "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],
+        "staticFilesToIgnore": [
+          "tsconfig.json",
+          "tsconfig.build.json",
+          "project.json"
+        ],
         "babelConfig": "./babel.config.js",
-        "babelExtensions": [".ts", ".tsx"],
-        "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ],
         "typescriptConfig": "packages/lottie-files/tsconfig.build.json"
       }
     }

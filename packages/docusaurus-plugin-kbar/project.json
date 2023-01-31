@@ -8,12 +8,17 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/docusaurus-plugin-kbar",
-        "commands": ["packemon watch --quiet --loadConfigs"]
+        "commands": [
+          "packemon watch --quiet --loadConfigs"
+        ]
       }
     },
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": ["{projectRoot}/dts", "{projectRoot}/lib"]
+      "outputs": [
+        "{projectRoot}/dts",
+        "{projectRoot}/lib"
+      ]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

@@ -4,7 +4,9 @@
     "outDir": "../../.nx/dist/packages/web-esm",
     "rootDir": "./"
   },
-  "include": ["**/*"],
+  "include": [
+    "**/*"
+  ],
   "exclude": [
     "storybook-decorators/**/*.tsx",
     "storybook-decorators/**/*.ts",

@@ -6,7 +6,9 @@
   "targets": {
     "watch": {
       "executor": "@nrwl/workspace:run-commands",
-      "dependsOn": ["build"],
+      "dependsOn": [
+        "build"
+      ],
       "options": {
         "cwd": "packages/docusaurus-plugin-docgen",
         "command": "packemon watch --quiet --loadConfigs"
@@ -14,14 +16,21 @@
     },
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "dependsOn": ["^build"],
-      "outputs": ["{projectRoot}/dts", "{projectRoot}/lib"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "{projectRoot}/dts",
+        "{projectRoot}/lib"
+      ]
     },
     "debug": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/docusaurus-plugin-docgen",
-        "commands": ["node /lib/scripts/debug.js"]
+        "commands": [
+          "node /lib/scripts/debug.js"
+        ]
       }
     },
     "format": {

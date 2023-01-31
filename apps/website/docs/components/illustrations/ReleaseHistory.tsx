@@ -14,7 +14,7 @@ const blackBackground = css`
   background-color: black;
 `;
 
-type ReleasedIllustrationsTypes = typeof illustrationReleaseHistory[string];
+type ReleasedIllustrationsTypes = (typeof illustrationReleaseHistory)[string];
 
 type HistoryDetailsType = {
   info: ReleasedIllustrationsTypes;

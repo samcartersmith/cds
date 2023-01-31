@@ -74,6 +74,9 @@ const SparklineInteractiveHeaderStable = memo(
         const prevLabel = valuesRef.current?.label;
 
         if (prevLabel !== label) {
+          // BAD: We only disabled this lint rule to enable eslint upgrade after this component was implemented. These apis should never be used.
+          // Usage in this component are known making this a high risk component. Contact team for more information.
+          // eslint-disable-next-line @cbhq/react-native-no-fabric-incompatible-apis
           labelRef.current?.setNativeProps({
             text: label,
           });
@@ -86,6 +89,9 @@ const SparklineInteractiveHeaderStable = memo(
           const prevTitle = valuesRef.current?.title;
 
           if (prevTitle !== title) {
+            // BAD: We only disabled this lint rule to enable eslint upgrade after this component was implemented. These apis should never be used.
+            // Usage in this component are known making this a high risk component. Contact team for more information.
+            // eslint-disable-next-line @cbhq/react-native-no-fabric-incompatible-apis
             titleRef.current?.setNativeProps({
               text: title,
               style: styles.title(title),
@@ -101,14 +107,23 @@ const SparklineInteractiveHeaderStable = memo(
           const prevSubHead = valuesRef.current?.subHead;
 
           if (prevSubHead !== subHead) {
+            // BAD: We only disabled this lint rule to enable eslint upgrade after this component was implemented. These apis should never be used.
+            // Usage in this component are known making this a high risk component. Contact team for more information.
+            // eslint-disable-next-line @cbhq/react-native-no-fabric-incompatible-apis
             subHeadIconRef.current?.setNativeProps({
               text: subheadIconSignMap[subHead.sign],
               style: styles.subHeadIcon(subHead.variant),
             });
+            // BAD: We only disabled this lint rule to enable eslint upgrade after this component was implemented. These apis should never be used.
+            // Usage in this component are known making this a high risk component. Contact team for more information.
+            // eslint-disable-next-line @cbhq/react-native-no-fabric-incompatible-apis
             subHeadRef.current?.setNativeProps({
               text: interpolateSubHeadText(subHead),
               style: styles.subHead(subHead.variant, subHead.accessoryText === undefined),
             });
+            // BAD: We only disabled this lint rule to enable eslint upgrade after this component was implemented. These apis should never be used.
+            // Usage in this component are known making this a high risk component. Contact team for more information.
+            // eslint-disable-next-line @cbhq/react-native-no-fabric-incompatible-apis
             subHeadAccessoryRef.current?.setNativeProps({
               text: subHead.accessoryText ?? '',
               style: styles.subHeadAccessory(),

@@ -112,7 +112,7 @@ const options = [
 ] as const;
 
 function createMenuOption() {
-  return (item: typeof options[number]) => (
+  return (item: (typeof options)[number]) => (
     <SelectOption
       key={item.name}
       value={item.value}

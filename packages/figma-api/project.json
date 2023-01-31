@@ -13,7 +13,10 @@
     },
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": ["{projectRoot}/dts", "{projectRoot}/lib"]
+      "outputs": [
+        "{projectRoot}/dts",
+        "{projectRoot}/lib"
+      ]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

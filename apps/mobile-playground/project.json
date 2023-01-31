@@ -6,19 +6,29 @@
   "targets": {
     "start-android": {
       "executor": "@cbhq/mono-tasks-mobile:start-android",
-      "dependsOn": ["^build", "^mobile-routes"]
+      "dependsOn": [
+        "^build",
+        "^mobile-routes"
+      ]
     },
     "build-android": {
       "executor": "@cbhq/mono-tasks-mobile:build-android",
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "start-ios": {
       "executor": "@cbhq/mono-tasks-mobile:start-ios",
-      "dependsOn": ["^build", "^mobile-routes"]
+      "dependsOn": [
+        "^build",
+        "^mobile-routes"
+      ]
     },
     "build-ios": {
       "executor": "@cbhq/mono-tasks-mobile:build-ios",
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "start-metro": {
       "executor": "@cbhq/mono-tasks-mobile:start-metro"
@@ -41,11 +51,15 @@
         ],
         "parallel": true
       },
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "build-ios-e2e": {
       "executor": "@cbhq/mono-tasks-mobile:build-ios",
-      "outputs": ["{projectRoot}/ios/build"],
+      "outputs": [
+        "{projectRoot}/ios/build"
+      ],
       "options": {
         "buildType": "e2e",
         "detoxConfig": "ios.release"
@@ -55,7 +69,9 @@
           "detoxConfig": "ios.debug"
         }
       },
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "ios-e2e": {
       "executor": "@cbhq/mono-tasks:test-detox",
@@ -68,14 +84,22 @@
         "debug": {
           "config": "ios.debug",
           "debug": true,
-          "detoxArgs": ["--debug-synchronization", "500"]
+          "detoxArgs": [
+            "--debug-synchronization",
+            "500"
+          ]
         }
       },
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "build-android-e2e": {
       "executor": "@cbhq/mono-tasks-mobile:build-android",
-      "outputs": ["{projectRoot}/android/build", "{projectRoot}/android/app/build"],
+      "outputs": [
+        "{projectRoot}/android/build",
+        "{projectRoot}/android/app/build"
+      ],
       "options": {
         "buildType": "e2e",
         "clean": true,
@@ -86,13 +110,18 @@
           "detoxConfig": "android.debug"
         }
       },
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "android-e2e": {
       "executor": "@cbhq/mono-tasks:test-detox",
       "options": {
         "config": "android.functionalTest",
-        "detoxArgs": ["--device-name", "Pixel_3a_API_30"],
+        "detoxArgs": [
+          "--device-name",
+          "Pixel_3a_API_30"
+        ],
         "record": true
       },
       "configurations": {
@@ -108,7 +137,9 @@
           "config": "android.debug"
         }
       },
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "android-e2e-emulator": {
       "executor": "nx:run-commands",
@@ -135,7 +166,9 @@
         "buildType": "e2e",
         "arch": "universal"
       },
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "prebuild-ios-e2e": {
       "executor": "@cbhq/mono-tasks-mobile:prebuild",
@@ -144,7 +177,9 @@
         "buildType": "e2e",
         "arch": "simulator_x86"
       },
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     }
   },
   "tags": []

@@ -2,7 +2,11 @@
   "$schema": "http://json-schema.org/schema",
   "type": "object",
   "cli": "nx",
-  "required": ["figmaApiFileId", "manifestFile", "generatedDirectory"],
+  "required": [
+    "figmaApiFileId",
+    "manifestFile",
+    "generatedDirectory"
+  ],
   "properties": {
     "figmaApiFileId": {
       "type": "string",
@@ -32,12 +36,21 @@
           {
             "type": "object",
             "additionalProperties": false,
-            "required": ["generatedFontFormat", "generatedFontDirectory"],
+            "required": [
+              "generatedFontFormat",
+              "generatedFontDirectory"
+            ],
             "properties": {
               "generatedFontFormat": {
                 "type": "string",
                 "description": "Format of the font file to generate.",
-                "enum": ["eot", "woff", "woff2", "svg", "ttf"]
+                "enum": [
+                  "eot",
+                  "woff",
+                  "woff2",
+                  "svg",
+                  "ttf"
+                ]
               },
               "generatedFontDirectory": {
                 "type": "string",

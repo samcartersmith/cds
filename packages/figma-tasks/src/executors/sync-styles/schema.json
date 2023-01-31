@@ -3,7 +3,12 @@
   "type": "object",
   "cli": "nx",
   "additionalProperties": false,
-  "required": ["figmaApiFileId", "manifestFile", "generatedDirectory", "prefix"],
+  "required": [
+    "figmaApiFileId",
+    "manifestFile",
+    "generatedDirectory",
+    "prefix"
+  ],
   "properties": {
     "figmaApiFileId": {
       "type": "string",

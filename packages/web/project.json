@@ -22,7 +22,9 @@
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
-      "outputs": ["{workspaceRoot}/.nx/dist/packages/web"],
+      "outputs": [
+        "{workspaceRoot}/.nx/dist/packages/web"
+      ],
       "options": {
         "destinationDir": ".nx/dist/packages/web",
         "staticFilesToIgnore": [
@@ -35,7 +37,10 @@
           "project.json"
         ],
         "babelConfig": "./packages/web/babel.config.js",
-        "babelExtensions": [".ts", ".tsx"],
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
         "babelIgnore": [
           "**/*.js",
           "**/*.test.ts",
@@ -45,11 +50,16 @@
         ],
         "typescriptConfig": "packages/web/tsconfig.build.json"
       },
-      "dependsOn": ["^build", "build-esm"]
+      "dependsOn": [
+        "^build",
+        "build-esm"
+      ]
     },
     "build-esm": {
       "executor": "@cbhq/cds-tools:build-package-esm",
-      "outputs": ["{workspaceRoot}/.nx/dist/packages/web-esm"],
+      "outputs": [
+        "{workspaceRoot}/.nx/dist/packages/web-esm"
+      ],
       "options": {
         "destinationDir": ".nx/dist/packages/web-esm",
         "staticFilesToIgnore": [
@@ -62,7 +72,10 @@
           "project.json"
         ],
         "babelConfig": "./packages/web/babel.config.js",
-        "babelExtensions": [".ts", ".tsx"],
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
         "babelIgnore": [
           "**/*.js",
           "**/*.test.ts",
@@ -74,17 +87,23 @@
         "fontsOutputDir": "packages/fonts",
         "maxFileSizeInKb": 115
       },
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "build-css": {
       "executor": "@cbhq/cds-tools:build-css",
-      "outputs": ["{workspaceRoot}/.nx/dist/cloud/css"],
+      "outputs": [
+        "{workspaceRoot}/.nx/dist/cloud/css"
+      ],
       "options": {
         "fontsOutputDir": ".nx/dist/packages/fonts",
         "webOutputDir": ".nx/dist/packages/web",
         "outputDir": ".nx/dist/cloud/css"
       },
-      "dependsOn": ["build"]
+      "dependsOn": [
+        "build"
+      ]
     },
     "danger": {
       "executor": "@cbhq/mono-tasks:danger",

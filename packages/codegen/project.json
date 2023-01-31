@@ -3,7 +3,12 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/codegen",
   "projectType": "library",
-  "implicitDependencies": ["!web", "!common", "!utils", "!web-utils"],
+  "implicitDependencies": [
+    "!web",
+    "!common",
+    "!utils",
+    "!web-utils"
+  ],
   "targets": {
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -21,7 +26,9 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/codegen",
-        "commands": ["yarn ts-node ./createIconStories/main.ts"],
+        "commands": [
+          "yarn ts-node ./createIconStories/main.ts"
+        ],
         "parallel": false
       }
     },
@@ -55,7 +62,9 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/codegen/illustrations",
-        "commands": ["./uploadToStaticAssets.sh"],
+        "commands": [
+          "./uploadToStaticAssets.sh"
+        ],
         "parallel": false
       }
     },
@@ -69,7 +78,9 @@
       "executor": "@cbhq/mono-tasks:run-script",
       "options": {
         "script": "./releasePackages.ts",
-        "args": ["--packages=d3|fonts|web|lottie-files|mobile|utils|common"]
+        "args": [
+          "--packages=d3|fonts|web|lottie-files|mobile|utils|common"
+        ]
       }
     },
     "mobile-routes": {

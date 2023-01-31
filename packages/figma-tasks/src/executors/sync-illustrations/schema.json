@@ -2,7 +2,11 @@
   "$schema": "http://json-schema.org/schema",
   "type": "object",
   "cli": "nx",
-  "required": ["figmaApiFileId", "manifestFile", "generatedDirectory"],
+  "required": [
+    "figmaApiFileId",
+    "manifestFile",
+    "generatedDirectory"
+  ],
   "properties": {
     "figmaApiFileId": {
       "type": "string",

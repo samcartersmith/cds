@@ -12,7 +12,9 @@
     },
     "sync-ui-dark-styles": {
       "executor": "@cbhq/figma-tasks:sync-styles",
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "options": {
         "figmaApiFileId": "lQEzxkEp0nQPS6zV1ZpLNO",
         "changelogFile": "./CHANGELOG.md",
@@ -23,7 +25,9 @@
     },
     "sync-ui-light-styles": {
       "executor": "@cbhq/figma-tasks:sync-styles",
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "options": {
         "figmaApiFileId": "0LGLs39lCL3WIFUadyGH1A",
         "changelogFile": "./CHANGELOG.md",
@@ -34,7 +38,9 @@
     },
     "sync-illustration-dark-styles": {
       "executor": "@cbhq/figma-tasks:sync-styles",
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "options": {
         "figmaApiFileId": "etJaiHq7aFlJFICLKIrcK7",
         "changelogFile": "./CHANGELOG.md",
@@ -45,7 +51,9 @@
     },
     "sync-illustration-light-styles": {
       "executor": "@cbhq/figma-tasks:sync-styles",
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "options": {
         "figmaApiFileId": "skPXKFmI64GqqEkOaBSHcL",
         "changelogFile": "./CHANGELOG.md",
@@ -56,7 +64,9 @@
     },
     "sync": {
       "executor": "nx:run-commands",
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "options": {
         "commands": [
           "nx run figma-styles:sync-illustration-dark-styles",

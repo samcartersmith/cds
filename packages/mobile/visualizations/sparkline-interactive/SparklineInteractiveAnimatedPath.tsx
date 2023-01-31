@@ -56,9 +56,15 @@ export const SparklineInteractiveAnimatedPath = memo(
     const animationListener = useCallback(
       ({ value }: { value: number }) => {
         const val = Number(value.toFixed(4));
+        // BAD: We only disabled this lint rule to enable eslint upgrade after this component was implemented. These apis should never be used.
+        // Usage in this component are known making this a high risk component. Contact team for more information.
+        // eslint-disable-next-line @cbhq/react-native-no-fabric-incompatible-apis
         pathRef.current?.setNativeProps({
           d: pathInterpolator(val),
         });
+        // BAD: We only disabled this lint rule to enable eslint upgrade after this component was implemented. These apis should never be used.
+        // Usage in this component are known making this a high risk component. Contact team for more information.
+        // eslint-disable-next-line @cbhq/react-native-no-fabric-incompatible-apis
         areaRef.current?.setNativeProps({
           d: areaInterpolator(val),
         });
@@ -67,10 +73,16 @@ export const SparklineInteractiveAnimatedPath = memo(
     );
 
     const updatePathWithoutAnimation = useCallback(() => {
+      // BAD: We only disabled this lint rule to enable eslint upgrade after this component was implemented. These apis should never be used.
+      // Usage in this component are known making this a high risk component. Contact team for more information.
+      // eslint-disable-next-line @cbhq/react-native-no-fabric-incompatible-apis
       pathRef.current?.setNativeProps({
         d: pathInterpolator(1),
       });
 
+      // BAD: We only disabled this lint rule to enable eslint upgrade after this component was implemented. These apis should never be used.
+      // Usage in this component are known making this a high risk component. Contact team for more information.
+      // eslint-disable-next-line @cbhq/react-native-no-fabric-incompatible-apis
       areaRef.current?.setNativeProps({
         d: areaInterpolator(1),
       });

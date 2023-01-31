@@ -16,13 +16,26 @@
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
-      "outputs": ["{projectRoot}/dist"],
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
       "options": {
         "destinationDir": "packages/web-utils/dist",
-        "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],
+        "staticFilesToIgnore": [
+          "tsconfig.json",
+          "tsconfig.build.json",
+          "project.json"
+        ],
         "babelConfig": "./babel.config.js",
-        "babelExtensions": [".ts", ".tsx"],
-        "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ],
         "typescriptConfig": "packages/web-utils/tsconfig.build.json"
       }
     }

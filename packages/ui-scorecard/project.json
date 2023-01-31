@@ -6,7 +6,10 @@
   "targets": {
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": ["{projectRoot}/cjs", "{projectRoot}/dts"]
+      "outputs": [
+        "{projectRoot}/cjs",
+        "{projectRoot}/dts"
+      ]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

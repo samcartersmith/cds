@@ -11,7 +11,7 @@ import { SpacingScale } from './SpacingScale';
 
 export type CellSpacing = SpacingProps & OffsetProps;
 export type CellSpacingConfig = Pick<CellBaseProps, 'innerSpacing' | 'outerSpacing'>;
-export type CellPriority = typeof cellPriorities[number];
+export type CellPriority = (typeof cellPriorities)[number];
 
 export type CellCommonProps = {
   borderRadius?: BorderRadius;

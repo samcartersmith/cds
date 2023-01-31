@@ -23,3 +23,6 @@ tsconfig.build.json
 
 .next/
 *.ejs
+
+# Lottie
+packages/lottie-files/**/*.json

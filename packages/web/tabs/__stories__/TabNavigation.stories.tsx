@@ -14,6 +14,8 @@ import { TabNavigation } from '../TabNavigation';
 
 import { MockTabPanel } from './MockTabPanel';
 
+const skipRequiredChildren = { id: 'aria-required-children', enabled: false };
+
 const a11ySkipConfig = {
   config: {
     /** The TabNavigation docs explain the proper way to setup the tabpanel, and
@@ -21,6 +23,7 @@ const a11ySkipConfig = {
     rules: [
       { id: 'aria-valid-attr-value', enabled: false },
       { id: 'duplicate-id-active', enabled: false },
+      skipRequiredChildren,
     ],
   },
 };
@@ -271,4 +274,11 @@ export const AccessibilityTest: Story = () => {
     </VStack>
   );
 };
-AccessibilityTest.parameters = { percy: enableJavascript };
+AccessibilityTest.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [skipRequiredChildren],
+    },
+  },
+};

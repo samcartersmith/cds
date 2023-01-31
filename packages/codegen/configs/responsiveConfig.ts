@@ -18,14 +18,14 @@ const deviceKeys = [
   'phone',
 ] as const;
 
-export type DeviceBreakpoint = typeof deviceKeys[number];
+export type DeviceBreakpoint = (typeof deviceKeys)[number];
 type DeviceBreakpoints = Record<DeviceBreakpoint, number>;
 
 const internalResponsivePropsDevices = ['desktop', 'tabletLandscape', 'phoneLandscape'] as const;
-type InternalResponsivePropsDevices = typeof internalResponsivePropsDevices[number];
+type InternalResponsivePropsDevices = (typeof internalResponsivePropsDevices)[number];
 
 const responsivePropsDevices = ['desktop', 'tablet', 'phone'] as const;
-type ResponsivePropsDevices = typeof responsivePropsDevices[number];
+type ResponsivePropsDevices = (typeof responsivePropsDevices)[number];
 
 const deviceBreakpoints: DeviceBreakpoints = {
   phone: 360,

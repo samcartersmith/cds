@@ -115,7 +115,7 @@ export const typographyConfig = {
 };
 
 export type TypographyConfig = Omit<
-  typeof typographyConfig[keyof typeof typographyConfig],
+  (typeof typographyConfig)[keyof typeof typographyConfig],
   'allowAllCaps' | 'tnum' | 'disableMinimums'
 > & {
   allowAllCaps?: boolean;

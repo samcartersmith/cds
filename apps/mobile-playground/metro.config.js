@@ -1,8 +1,7 @@
 const path = require('path');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const blacklist = require('metro-config/src/defaults/exclusionList');
-// eslint-disable-next-line import/no-unresolved
-const { resolveRequest } = require('@cbhq/metro-config/resolveRequest'); // eslint doesn't like a deep import when required in commonjs
+const { resolveRequest } = require('@cbhq/metro-config/resolveRequest');
 
 const projectRoot = __dirname;
 

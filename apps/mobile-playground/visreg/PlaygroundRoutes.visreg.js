@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 /* eslint-disable no-undef */
 import { routes } from '@cbhq/cds-mobile/examples/newRoutes';
 import {

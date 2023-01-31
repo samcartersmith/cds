@@ -6,7 +6,10 @@
   "targets": {
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": ["{projectRoot}/dts", "{projectRoot}/lib"]
+      "outputs": [
+        "{projectRoot}/dts",
+        "{projectRoot}/lib"
+      ]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -16,7 +19,9 @@
     },
     "sync": {
       "executor": "@cbhq/figma-tasks:sync-icons",
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "options": {
         "figmaApiFileId": "tuc9LpASTO9mBrbg1tAdAl",
         "changelogFile": "./CHANGELOG.md",
@@ -48,7 +53,10 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "cwd": "packages/icons",
-        "commands": ["nx run figma-tasks:watch", "packemon watch --quiet --loadConfigs"]
+        "commands": [
+          "nx run figma-tasks:watch",
+          "packemon watch --quiet --loadConfigs"
+        ]
       }
     }
   }

@@ -9,7 +9,9 @@
       "options": {
         "postbuild": "./scripts/postbuild.ts"
       },
-      "outputs": ["{projectRoot}/lib"]
+      "outputs": [
+        "{projectRoot}/lib"
+      ]
     },
     "watch": {
       "executor": "nx:run-commands",

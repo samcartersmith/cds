@@ -11,7 +11,7 @@ import { palette } from '../tokens';
 export type UseControlMotionParams = {
   checked?: boolean;
   shouldAnimateBackground?: boolean;
-  initialBackground?: typeof palette[keyof typeof palette];
+  initialBackground?: (typeof palette)[keyof typeof palette];
 };
 
 export const useControlMotionProps = ({

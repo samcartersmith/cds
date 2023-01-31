@@ -84,7 +84,7 @@ export const createIconFont = async () => {
   font.glyphsData.forEach(({ metadata }) => {
     const [name, size] = metadata.name.split('-') as [
       keyof typeof manifest.unicodeMap,
-      keyof typeof manifest.unicodeMap[keyof typeof manifest.unicodeMap],
+      keyof (typeof manifest.unicodeMap)[keyof typeof manifest.unicodeMap],
     ];
     nameSet.add(name);
     sizeMap[size][name] = metadata.unicode.join('');

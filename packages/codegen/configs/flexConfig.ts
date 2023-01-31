@@ -17,7 +17,7 @@ const flexStyles = [
 const flexShrink = [1, 2, 3];
 const flexGrow = [1, 2, 3];
 
-type FlexStyle = typeof flexStyles[number];
+type FlexStyle = (typeof flexStyles)[number];
 
 // shared values
 const flexAxisValue = ['flex-start', 'flex-end', 'center'];

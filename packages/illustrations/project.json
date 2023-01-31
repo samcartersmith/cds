@@ -15,8 +15,14 @@
       }
     },
     "build": {
-      "outputs": ["{projectRoot}/dts", "{projectRoot}/lib"],
-      "dependsOn": ["^build", "prebuild"],
+      "outputs": [
+        "{projectRoot}/dts",
+        "{projectRoot}/lib"
+      ],
+      "dependsOn": [
+        "^build",
+        "prebuild"
+      ],
       "executor": "@cbhq/mono-tasks:build-package"
     },
     "format": {
@@ -27,7 +33,9 @@
     },
     "sync": {
       "executor": "@cbhq/figma-tasks:sync-illustrations",
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "options": {
         "figmaApiFileId": "LmkJatvMRVzNgfiIkJDb99",
         "changelogFile": "./CHANGELOG.md",
@@ -39,7 +47,9 @@
     },
     "sync-styles": {
       "executor": "nx:run-commands",
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "options": {
         "command": "nx run figma-styles:sync"
       }
@@ -48,7 +58,9 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/illustrations",
-        "commands": ["./uploadToStaticAssets.sh"]
+        "commands": [
+          "./uploadToStaticAssets.sh"
+        ]
       }
     },
     "test": {
@@ -61,7 +73,10 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "cwd": "packages/illustrations",
-        "commands": ["nx run figma-tasks:watch", "packemon watch --quiet --loadConfigs"]
+        "commands": [
+          "nx run figma-tasks:watch",
+          "packemon watch --quiet --loadConfigs"
+        ]
       }
     }
   }

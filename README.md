@@ -8,7 +8,7 @@ If you are looking for something else here are some other important links:
 - [Submit a request for new features/tooling](https://coda.io/d/CDS-Team_dFaC-pktuzN/Submit-a-Request-to-CDS_suHBY#_luhU2)
 - Visit the #ask-cds slack channel to ask the team a question
 
-## Getting started
+## Getting Started
 
 1. To get started you can run the following commands:
 

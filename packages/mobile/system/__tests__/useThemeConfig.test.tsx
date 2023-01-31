@@ -110,7 +110,6 @@ describe('ThemeProvider', () => {
             <ThemeProvider name="example3" spectrum="dark">
               <ThemeProvider name="example4" spectrum="light">
                 <FeatureFlagContext.Provider
-                  // eslint-disable-next-line react/jsx-no-constructed-context-values
                   value={{ ...defaultFeatureFlags, frontierColor: true }}
                 >
                   <ThemeProvider name="example5" spectrum="dark">
@@ -155,7 +154,6 @@ describe('ThemeProvider', () => {
             <ThemeProvider name="example3" spectrum="dark">
               <ThemeProvider name="example4" spectrum="light">
                 <FeatureFlagContext.Provider
-                  // eslint-disable-next-line react/jsx-no-constructed-context-values
                   value={{ ...defaultFeatureFlags, frontierColor: true }}
                 >
                   <ThemeProvider name="example5" spectrum="dark" palette={{ primary: 'indigo40' }}>

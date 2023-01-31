@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { SharedAccessibilityProps, useToggler } from '@cbhq/cds-common';
 import { renderA11y } from '@cbhq/cds-web-utils';
@@ -105,7 +105,17 @@ describe('FullscreenModal', () => {
   });
 
   it('renders content when modal is visible', async () => {
-    render(<FullscreenModalExample />);
+    render(
+      <FullscreenModalExample
+        visible
+        accessibilityLabelledBy={LABELLED_BY}
+        accessibilityLabel={LABEL}
+      />,
+    );
+
+    await waitFor(async () => {
+      await screen.findByText(TITLE);
+    });
 
     expect(await screen.findByText(TITLE)).toBeVisible();
     expect(await screen.findByText(PRIMARY_CONTENT)).toBeVisible();

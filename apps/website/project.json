@@ -39,7 +39,9 @@
     },
     "build": {
       "executor": "@cbhq/mono-tasks:build-docusaurus",
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

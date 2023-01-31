@@ -19,11 +19,16 @@
     },
     "audit-a11y": {
       "executor": "@cbhq/ui-scorecard:audit-a11y",
-      "dependsOn": ["^build", "test"]
+      "dependsOn": [
+        "^build",
+        "test"
+      ]
     },
     "build": {
       "executor": "@cbhq/cds-tools:build-package",
-      "outputs": ["{workspaceRoot}/.nx/dist/packages/mobile"],
+      "outputs": [
+        "{workspaceRoot}/.nx/dist/packages/mobile"
+      ],
       "options": {
         "destinationDir": ".nx/dist/packages/mobile",
         "staticFilesToIgnore": [
@@ -34,8 +39,15 @@
           "project.json"
         ],
         "babelConfig": "./packages/mobile/babel.config.js",
-        "babelExtensions": [".ts", ".tsx"],
-        "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ],
         "typescriptConfig": "packages/mobile/tsconfig.build.json"
       }
     },

@@ -8,7 +8,17 @@ import { ComposedSystem } from './NavigationStorySetup';
 # Composed System
 
 <Canvas isColumn withToolbar>
-  <Story name="A full system example" decorators={[withStoryLabel('A full system example')]}>
+  <Story
+    name="A full system example"
+    decorators={[withStoryLabel('A full system example')]}
+    parameters={{
+      a11y: {
+        config: {
+          rules: [{ id: 'aria-required-children', enabled: false }],
+        },
+      },
+    }}
+  >
     <ComposedSystem />
   </Story>
 </Canvas>

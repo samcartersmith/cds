@@ -73,6 +73,9 @@ const SparklineInteractiveHoverDateWithGeneric = forwardRef(
           return;
         }
 
+        // BAD: We only disabled this lint rule to enable eslint upgrade after this component was implemented. These apis should never be used.
+        // Usage in this component are known making this a high risk component. Contact team for more information.
+        // eslint-disable-next-line @cbhq/react-native-no-fabric-incompatible-apis
         textInputRef.current?.setNativeProps({
           text: formatHoverDate?.(date, period),
         });

@@ -4,6 +4,8 @@
   "testRunner": "jest-circus/runner",
   "testTimeout": 120000,
   "testRegex": "\\.visreg\\.js$",
-  "reporters": ["detox/runners/jest/streamlineReporter"],
+  "reporters": [
+    "detox/runners/jest/streamlineReporter"
+  ],
   "verbose": true
 }

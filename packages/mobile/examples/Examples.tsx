@@ -49,7 +49,7 @@ type OriginalKey = keyof RoutesMap | typeof initialRouteKey | typeof searchRoute
 export type DebugCdsStackParamList = {
   [key in `Debug${OriginalKey}`]: {};
 };
-export type DebugCdsRoute = typeof routes[number];
+export type DebugCdsRoute = (typeof routes)[number];
 export type DebugCdsNavigation = StackNavigationProp<{ [key in keyof DebugCdsStackParamList]: {} }>;
 export type ExamplesProps = {
   navigation: DebugCdsNavigation;

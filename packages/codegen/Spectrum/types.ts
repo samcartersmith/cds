@@ -3,8 +3,8 @@ import type { Color, ColorOptions, ColorProps } from '@k-vyn/coloralgorithm/src/
 import type { hueNames, hueSteps } from './Spectrum';
 
 export type ModeConfig = { properties: ColorProps; options: ColorOptions }[];
-export type HueName = typeof hueNames[number];
-export type HueStep = typeof hueSteps[number];
+export type HueName = (typeof hueNames)[number];
+export type HueStep = (typeof hueSteps)[number];
 export type HueStepName = `${HueName}${HueStep}`;
 export type HueColor = Omit<Color, 'step'> & { step: HueStep };
 export type HueSet = { colors: HueColor[]; name: HueName }[][];

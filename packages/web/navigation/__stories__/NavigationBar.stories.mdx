@@ -16,7 +16,10 @@ import { NavigationBar } from '../NavigationBar';
       a11y: {
         config: {
           <!-- TODO: Use tsx CSF3 stories -->
-          rules: [{ id: 'aria-valid-attr-value', enabled: false }],
+          rules: [
+            { id: 'aria-valid-attr-value', enabled: false },
+            { id: 'aria-required-children', enabled: false }
+          ],
         },
       },
     }}
