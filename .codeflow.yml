@@ -30,6 +30,9 @@ build:
         name: package-cds-fonts
         path: ./packages/fonts/publish.Dockerfile
     - BaldurNode:
+        name: package-cds-icons
+        path: ./packages/icons/publish.Dockerfile
+    - BaldurNode:
         name: package-cds-illustrations
         path: ./packages/illustrations/publish.Dockerfile
     - BaldurNode:

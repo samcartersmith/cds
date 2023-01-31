@@ -22,6 +22,8 @@
       "@cbhq/cds-common/*": ["packages/common/*"],
       "@cbhq/cds-fonts": ["packages/fonts"],
       "@cbhq/cds-fonts/*": ["packages/fonts/*"],
+      "@cbhq/cds-icons": ["packages/icons/src"],
+      "@cbhq/cds-icons/*": ["packages/icons/src/*"],
       "@cbhq/cds-illustrations": ["packages/illustrations/src"],
       "@cbhq/cds-illustrations/*": ["packages/illustrations/src/*"],
       "@cbhq/cds-lottie-files": ["packages/lottie-files"],

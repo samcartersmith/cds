@@ -22,7 +22,6 @@
         "changelogFile": "./CHANGELOG.md",
         "manifestFile": "./src/__generated__/manifest.json",
         "generatedDirectory": "./src/__generated__",
-        "generatedGlyphMapFile": "./src/__generated__/glyphMap.ts",
         "generatedFontName": "CoinbaseIcons",
         "generatedFontFormats": [
           {

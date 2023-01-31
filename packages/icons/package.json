@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-icons",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "CDS icons",
   "keywords": [
     "cds",
@@ -15,7 +15,6 @@
     "format": "lib",
     "platform": "node"
   },
-  "executors": "./executors.json",
   "main": "./lib/index.js",
   "types": "./dts/index.d.ts",
   "exports": {
@@ -24,6 +23,11 @@
       "types": "./dts/index.d.ts",
       "node": "./lib/index.js",
       "default": "./lib/index.js"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "node": "./lib/*.js",
+      "default": "./lib/*.js"
     }
   },
   "devDependencies": {
