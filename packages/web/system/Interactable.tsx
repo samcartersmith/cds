@@ -89,7 +89,7 @@ export type InteractableProps = {
     | 'span'
     | 'textarea'
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    | React.ComponentType<any>;
+    | React.ComponentType<React.PropsWithChildren<any>>;
   /** Apply class names to the outer container. */
   className?: string;
   /** Inject and wrap the content with overlay and underlay elements. */

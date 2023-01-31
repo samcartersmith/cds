@@ -11,11 +11,11 @@ import type {
 import { loremIpsum } from './data/loremIpsum';
 
 export type CreateAccordionProps = {
-  Accordion: React.ComponentType<AccordionBaseProps>;
-  AccordionItem: React.ComponentType<AccordionItemBaseProps>;
-  TextBody: React.ComponentType<TextBaseProps & { as?: string }>;
-  CellMedia: React.ComponentType<CellMediaProps>;
-  TextInput: React.ComponentType<TextInputBaseProps>;
+  Accordion: React.ComponentType<React.PropsWithChildren<AccordionBaseProps>>;
+  AccordionItem: React.ComponentType<React.PropsWithChildren<AccordionItemBaseProps>>;
+  TextBody: React.ComponentType<React.PropsWithChildren<TextBaseProps & { as?: string }>>;
+  CellMedia: React.ComponentType<React.PropsWithChildren<CellMediaProps>>;
+  TextInput: React.ComponentType<React.PropsWithChildren<TextInputBaseProps>>;
 };
 
 type OnPress = (key: string) => void;

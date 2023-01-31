@@ -13,7 +13,7 @@ import { iconButton } from './buttonStyles';
 import { useIconButtonStyles } from './useIconButtonStyles';
 
 export type IconButtonProps = {
-  as?: React.ComponentType<React.HTMLAttributes<HTMLElement>>;
+  as?: React.ComponentType<React.PropsWithChildren<React.HTMLAttributes<HTMLElement>>>;
 } & IconButtonBaseProps &
   PressableProps &
   SharedProps &

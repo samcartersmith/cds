@@ -4,8 +4,8 @@ import { useAccessibilityProps } from '../accessibility/useAccessibilityProps';
 import { CardBaseProps, CardBodyBaseProps, FeatureEntryCardBaseProps } from '../types/alpha';
 
 type CreateFeatureEntryCardParams<OnPressFn> = {
-  Card: React.ComponentType<CardBaseProps<OnPressFn>>;
-  CardBody: React.ComponentType<CardBodyBaseProps<OnPressFn>>;
+  Card: React.ComponentType<React.PropsWithChildren<CardBaseProps<OnPressFn>>>;
+  CardBody: React.ComponentType<React.PropsWithChildren<CardBodyBaseProps<OnPressFn>>>;
 };
 
 export function createFeatureEntryCard<OnPressFn>({

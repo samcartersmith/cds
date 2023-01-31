@@ -24,17 +24,19 @@ type ModalA11yProps = {
 
 export type CreateModalProps = {
   Modal: React.ComponentType<
-    ModalBaseProps & ModalAccessibilityProps & { disablePortal?: boolean }
+    React.PropsWithChildren<ModalBaseProps & ModalAccessibilityProps & { disablePortal?: boolean }>
   >;
-  ModalBody: React.ComponentType;
-  ModalHeader: React.ComponentType<ModalHeaderBaseProps>;
-  ModalFooter: React.ComponentType<ModalFooterBaseProps>;
-  LoremIpsum: React.ComponentType<Record<string, unknown>>;
+  ModalBody: React.ComponentType<React.PropsWithChildren<unknown>>;
+  ModalHeader: React.ComponentType<React.PropsWithChildren<ModalHeaderBaseProps>>;
+  ModalFooter: React.ComponentType<React.PropsWithChildren<ModalFooterBaseProps>>;
+  LoremIpsum: React.ComponentType<React.PropsWithChildren<Record<string, unknown>>>;
   Button: React.ComponentType<
-    ButtonBaseProps &
-      SharedProps & { onPress?: () => void } & { ref?: RefObject<HTMLButtonElement> }
+    React.PropsWithChildren<
+      ButtonBaseProps &
+        SharedProps & { onPress?: () => void } & { ref?: RefObject<HTMLButtonElement> }
+    >
   >;
-  TextInput?: React.ComponentType<TextInputBaseProps>;
+  TextInput?: React.ComponentType<React.PropsWithChildren<TextInputBaseProps>>;
 };
 
 export function modalBuilder({
@@ -47,11 +49,13 @@ export function modalBuilder({
   LoremIpsum,
 }: CreateModalProps) {
   const BasicModalExample: React.FC<
-    ModalA11yProps & {
-      disablePortal?: boolean;
-      visible?: boolean;
-      hideDividers?: boolean;
-    }
+    React.PropsWithChildren<
+      ModalA11yProps & {
+        disablePortal?: boolean;
+        visible?: boolean;
+        hideDividers?: boolean;
+      }
+    >
   > = ({
     children,
     disablePortal,
@@ -89,7 +93,11 @@ export function modalBuilder({
     );
   };
 
-  const PortalModalExample: React.FC<ModalA11yProps> = ({ children, triggerRef, focusTrigger }) => {
+  const PortalModalExample: React.FC<React.PropsWithChildren<ModalA11yProps>> = ({
+    children,
+    triggerRef,
+    focusTrigger,
+  }) => {
     const { openModal, closeModal } = useModal();
 
     const handlePress = useCallback(
@@ -118,7 +126,7 @@ export function modalBuilder({
     );
   };
 
-  const MockModal: React.FC<Partial<ModalBaseProps & ModalHeaderBaseProps> & ModalA11yProps> = ({
+  const MockModal = ({
     onRequestClose,
     onDidClose,
     onBackButtonPress,
@@ -129,7 +137,7 @@ export function modalBuilder({
     focusTrigger,
     accessibilityLabelledBy,
     accessibilityLabel,
-  }) => {
+  }: Partial<ModalBaseProps & ModalHeaderBaseProps> & ModalA11yProps) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(externalVisible);
 
     const handleClose = useCallback(() => {

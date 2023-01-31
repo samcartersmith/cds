@@ -7,8 +7,8 @@ import { TextLabel1, TextLegal } from '../typography';
 
 type CardHeaderProps = CardHeaderBaseProps;
 
-export const CardHeader: React.FC<CardHeaderProps> = memo(
-  ({ avatarUrl, metaData, description, action, testID }) => {
+export const CardHeader = memo(
+  ({ avatarUrl, metaData, description, action, testID }: CardHeaderProps) => {
     return (
       <HStack
         justifyContent="space-between"

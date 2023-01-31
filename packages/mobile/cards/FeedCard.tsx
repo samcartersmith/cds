@@ -10,7 +10,7 @@ import { CardHeader } from './CardHeader';
 
 const aspectRatio = [240, 120] as [number, number];
 
-export const FeedCard: React.FC<FeedCardBaseProps> = memo(
+export const FeedCard: React.FC<React.PropsWithChildren<FeedCardBaseProps>> = memo(
   ({
     avatarUrl,
     headerMetaData,

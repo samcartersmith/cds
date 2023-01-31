@@ -51,8 +51,8 @@ const closeButtonAccessibilityDefaults: ToastProps['closeButtonAccessibilityProp
   accessibilityLabel: 'close',
 };
 
-export const Toast: React.FC<ToastProps> = memo(
-  forwardRef<ToastRefBaseProps, React.PropsWithChildren<ToastProps>>(
+export const Toast = memo(
+  forwardRef<ToastRefBaseProps, ToastProps>(
     (
       {
         text,

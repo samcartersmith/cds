@@ -251,7 +251,7 @@ describe('ThemeProvider', () => {
   });
 
   it('works with nested spectrums and elevation=2 in frontier', () => {
-    const Wrapper: React.FC = ({ children }) => {
+    const Wrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
       return (
         <FeatureFlagContext.Provider value={{ ...defaultFeatureFlags, frontierColor: true }}>
           <ThemeProvider name="example1" spectrum="light">

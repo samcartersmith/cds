@@ -6,6 +6,8 @@ import { FeatureFlagProvider, FeatureFlagProviderProps } from '../system/Feature
 export type BetaProviderProps = { features?: FeatureFlagProviderProps };
 
 /** @deprecated BetaProvider has been renamed to FeatureFlagProvider and moved to common/system directory */
-export const BetaProvider: React.FC<BetaProviderProps> = memo(({ features, children }) => {
-  return <FeatureFlagProvider {...features}>{children}</FeatureFlagProvider>;
-});
+export const BetaProvider: React.FC<React.PropsWithChildren<BetaProviderProps>> = memo(
+  ({ features, children }) => {
+    return <FeatureFlagProvider {...features}>{children}</FeatureFlagProvider>;
+  },
+);

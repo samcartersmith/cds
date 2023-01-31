@@ -17,13 +17,13 @@ export type SwitchProps = {
 } & Omit<ControlBaseProps<string>, 'value'> &
   Omit<PressableProps, 'disabled' | 'children' | 'style'>;
 
-const SwitchIcon: React.FC<ControlIconProps> = ({
+const SwitchIcon = ({
   pressed,
   checked,
   disabled,
   animatedScaleValue,
   testID,
-}) => {
+}: ControlIconProps) => {
   const cdsScale = useScale();
   const { switchWidth, switchHeight, switchThumbSize } = scaleStyles[cdsScale].control;
 

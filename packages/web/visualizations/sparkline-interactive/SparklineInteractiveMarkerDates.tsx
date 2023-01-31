@@ -10,9 +10,11 @@ import { fadeInClassName } from './fade';
 
 const labelWidth = 125;
 
-const SparklineInteractiveMarkerDate: FunctionComponent<{
-  getFormattedDate: (xPosition: number) => string;
-}> = memo(({ getFormattedDate }) => {
+const SparklineInteractiveMarkerDate: FunctionComponent<
+  React.PropsWithChildren<{
+    getFormattedDate: (xPosition: number) => string;
+  }>
+> = memo(({ getFormattedDate }) => {
   const [xPos, setXPos] = useState<number>(0);
   const setupRef = useCallback((ref: HTMLSpanElement | null) => {
     if (ref) {

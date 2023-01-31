@@ -13,57 +13,53 @@ import { createFallbackThemeConfig, createThemeConfig } from './createThemeConfi
 import { ElevationConfigsProvider } from './ElevationConfigsProvider';
 import { FeatureFlagContext } from './FeatureFlagContext';
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = memo(function ThemeProvider({
-  children,
-  palette,
-  name,
-  scale,
-  spectrum,
-}) {
-  const hasFrontier = useContext(FeatureFlagContext)?.frontierColor;
-  const parentThemeConfigContext = useContext(ThemeConfigContext)?.config;
-  const config = useMemo(() => {
-    const parentThemeConfig = parentThemeConfigContext ?? createFallbackThemeConfig(hasFrontier);
-    if (palette) {
-      return createThemeConfig({
-        parentThemeConfig,
-        palette,
-        hasFrontier,
-        name: hasFrontier ? `${name}-frontier` : name,
-      });
-    }
-    // This means this is the root ThemeProvider
-    if (parentThemeConfigContext === undefined) return parentThemeConfig;
-    // If frontier was updated we need ThemeConfigContext to update activeConfig
-    if (hasFrontier)
-      return createThemeConfig({
-        parentThemeConfig,
-        palette: frontierSpectrumPalette,
-        hasFrontier,
-        name: `${name}-frontier`,
-      });
-    // If only spectrum was overwritten we need ThemeConfigContext to update activeConfig
-    if (spectrum) return parentThemeConfig;
-    // Skip rendering ThemeConfigProvider if there are no changes
-    return undefined;
-  }, [hasFrontier, name, palette, parentThemeConfigContext, spectrum]);
-  const skipThemeConfig = config === undefined;
-  return (
-    <ScaleProvider value={scale}>
-      <SpectrumProvider value={spectrum}>
-        {skipThemeConfig ? (
-          children
-        ) : (
-          <ThemeConfigProvider value={config}>
-            <ElevationConfigsProvider parentThemeConfig={config} hasFrontier={hasFrontier}>
-              {children}
-            </ElevationConfigsProvider>
-          </ThemeConfigProvider>
-        )}
-      </SpectrumProvider>
-    </ScaleProvider>
-  );
-});
+export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>> = memo(
+  function ThemeProvider({ children, palette, name, scale, spectrum }) {
+    const hasFrontier = useContext(FeatureFlagContext)?.frontierColor;
+    const parentThemeConfigContext = useContext(ThemeConfigContext)?.config;
+    const config = useMemo(() => {
+      const parentThemeConfig = parentThemeConfigContext ?? createFallbackThemeConfig(hasFrontier);
+      if (palette) {
+        return createThemeConfig({
+          parentThemeConfig,
+          palette,
+          hasFrontier,
+          name: hasFrontier ? `${name}-frontier` : name,
+        });
+      }
+      // This means this is the root ThemeProvider
+      if (parentThemeConfigContext === undefined) return parentThemeConfig;
+      // If frontier was updated we need ThemeConfigContext to update activeConfig
+      if (hasFrontier)
+        return createThemeConfig({
+          parentThemeConfig,
+          palette: frontierSpectrumPalette,
+          hasFrontier,
+          name: `${name}-frontier`,
+        });
+      // If only spectrum was overwritten we need ThemeConfigContext to update activeConfig
+      if (spectrum) return parentThemeConfig;
+      // Skip rendering ThemeConfigProvider if there are no changes
+      return undefined;
+    }, [hasFrontier, name, palette, parentThemeConfigContext, spectrum]);
+    const skipThemeConfig = config === undefined;
+    return (
+      <ScaleProvider value={scale}>
+        <SpectrumProvider value={spectrum}>
+          {skipThemeConfig ? (
+            children
+          ) : (
+            <ThemeConfigProvider value={config}>
+              <ElevationConfigsProvider parentThemeConfig={config} hasFrontier={hasFrontier}>
+                {children}
+              </ElevationConfigsProvider>
+            </ThemeConfigProvider>
+          )}
+        </SpectrumProvider>
+      </ScaleProvider>
+    );
+  },
+);
 export const NormalScaleProvider = memo((props: SystemProviderProps) => (
   <ThemeProvider name="normal-only-scale" scale="large" {...props} />
 ));

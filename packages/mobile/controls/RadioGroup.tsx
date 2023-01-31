@@ -15,7 +15,7 @@ import { Control, ControlIconProps, ControlProps } from './Control';
 
 export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;
 
-const RadioIcon: React.FC<ControlIconProps> = ({
+const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
   pressed,
   disabled,
   checked,

@@ -5,12 +5,15 @@ import type { AvatarBaseProps, PaletteForeground, TextBaseProps } from '../types
 import type { CardBoxProps, CardHeaderProps } from '../types/alpha';
 
 type CreateCardHeaderParams<T> = {
-  HStack: React.ComponentType<CardBoxProps>;
-  VStack: React.ComponentType<CardBoxProps>;
-  Avatar: React.ComponentType<AvatarBaseProps>;
-  TextLabel1: React.ComponentType<TextBaseProps>;
+  HStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
+  VStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
+  Avatar: React.ComponentType<React.PropsWithChildren<AvatarBaseProps>>;
+  TextLabel1: React.ComponentType<React.PropsWithChildren<TextBaseProps>>;
   TextLegal: React.ComponentType<
-    { color?: PaletteForeground } | (T extends { color?: infer Color } ? { color?: Color } : never)
+    React.PropsWithChildren<
+      | { color?: PaletteForeground }
+      | (T extends { color?: infer Color } ? { color?: Color } : never)
+    >
   >;
 };
 

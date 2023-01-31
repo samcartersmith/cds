@@ -12,8 +12,8 @@ import { Box, VStack } from '../layout';
 
 import { ProgressTextLabel } from './ProgressTextLabel';
 
-const ProgressBarFixedLabelBeside: React.FC<ProgressBarFixedLabelBesideProps> = memo(
-  ({ label, visuallyDisabled }) => {
+const ProgressBarFixedLabelBeside = memo(
+  ({ label, visuallyDisabled }: ProgressBarFixedLabelBesideProps) => {
     const { value: labelNum, render: renderLabel } = getProgressBarLabelParts(label);
 
     return (
@@ -27,8 +27,8 @@ const ProgressBarFixedLabelBeside: React.FC<ProgressBarFixedLabelBesideProps> = 
   },
 );
 
-const ProgressBarFixedLabel: React.FC<ProgressBarFixedLabelProps> = memo(
-  ({ label, position, visuallyDisabled }) => {
+const ProgressBarFixedLabel = memo(
+  ({ label, position, visuallyDisabled }: ProgressBarFixedLabelProps) => {
     return (
       <View testID={`cds-progress-bar-fixed-label-${position}`}>
         <ProgressBarFixedLabelBeside label={label} visuallyDisabled={visuallyDisabled} />
@@ -37,8 +37,14 @@ const ProgressBarFixedLabel: React.FC<ProgressBarFixedLabelProps> = memo(
   },
 );
 
-const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerProps> = memo(
-  ({ startLabel, endLabel, visuallyDisabled, spacingBottom, spacingTop }) => {
+const ProgressBarFixedLabelContainer = memo(
+  ({
+    startLabel,
+    endLabel,
+    visuallyDisabled,
+    spacingBottom,
+    spacingTop,
+  }: ProgressBarFixedLabelContainerProps) => {
     const nodes: React.ReactElement[] = [];
 
     if (typeof startLabel !== 'undefined') {
@@ -89,7 +95,9 @@ const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerPro
   },
 );
 
-export const ProgressBarWithFixedLabels: React.FC<ProgressBarWithFixedLabelsProps> = memo(
+export const ProgressBarWithFixedLabels: React.FC<
+  React.PropsWithChildren<ProgressBarWithFixedLabelsProps>
+> = memo(
   ({ startLabel, endLabel, labelPlacement = 'beside', disabled = false, children, testID }) => {
     const startLabelEl = typeof startLabel !== 'undefined' && (
       <Box flexShrink={0} flexGrow={0} spacingEnd={1}>

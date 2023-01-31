@@ -22,7 +22,7 @@ import { createThemeConfig } from './createThemeConfig';
 
 type ElevationLevel = Exclude<ElevationLevels, 0>;
 export type ElevationConfigForSpectrum = {
-  WrapperForChildren: React.ComponentType;
+  WrapperForChildren: React.ComponentType<React.PropsWithChildren<unknown>>;
   getBorderColor: (value?: PaletteBorder) => string;
   getBorderWidth: (value?: BorderWidth) => number | undefined;
   styles: ViewStyle;
@@ -116,13 +116,15 @@ export const createElevationConfigForSpectrum = ({
     activeConfig: spectrum === 'light' ? childrenConfig.light : childrenConfig.dark,
   };
 
-  const ElevationChildrenWrapper: React.FC = memo(function ElevationChildrenWrapper({ children }) {
-    return (
-      <ThemeConfigContext.Provider value={childrenContextValue}>
-        {children}
-      </ThemeConfigContext.Provider>
-    );
-  });
+  const ElevationChildrenWrapper: React.FC<React.PropsWithChildren<unknown>> = memo(
+    function ElevationChildrenWrapper({ children }) {
+      return (
+        <ThemeConfigContext.Provider value={childrenContextValue}>
+          {children}
+        </ThemeConfigContext.Provider>
+      );
+    },
+  );
   ElevationChildrenWrapper.displayName = 'ElevationChildrenWrapper';
   return {
     level,

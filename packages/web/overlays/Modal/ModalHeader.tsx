@@ -12,7 +12,10 @@ export type ModalHeaderProps = {
   onBackButtonPress?: React.MouseEventHandler;
 } & Omit<ModalHeaderBaseProps, 'onRequestClose' | 'onBackButtonPress'>;
 
-export const ModalHeader: React.FC<ModalHeaderProps> = ({ title, onBackButtonPress }) => {
+export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = ({
+  title,
+  onBackButtonPress,
+}) => {
   const height = useInteractableHeight(true);
   const { onRequestClose, accessibilityLabelledBy, hideCloseButton, hideDividers } =
     useModalParent();

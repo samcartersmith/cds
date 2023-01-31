@@ -10,9 +10,9 @@ import flattenNodes from '../utils/flattenNodes';
 import { iconNames, navigationIconInternalNames, unicodeMap } from './data/iconData';
 
 export type CreateIconSheetParams = {
-  VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
-  HStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
-  Icon: React.ComponentType<IconBaseProps & { color: string }>;
+  VStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
+  HStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
+  Icon: React.ComponentType<React.PropsWithChildren<IconBaseProps & { color: string }>>;
 };
 
 export function iconSheetBuilderWeb({ VStack, HStack, Icon }: CreateIconSheetParams) {

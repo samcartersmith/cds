@@ -17,7 +17,11 @@ type ArgType<T> = {
 
 type ArgTypes<Props> = { [key in keyof Props]?: ArgType<Props[key]> };
 
-type Parameters<Props, WrapperProps, Wrapper extends React.ComponentType<WrapperProps>> = {
+type Parameters<
+  Props,
+  WrapperProps,
+  Wrapper extends React.ComponentType<React.PropsWithChildren<WrapperProps>>,
+> = {
   stories?: Story<Props, WrapperProps>[];
   wrapper?: Wrapper;
   wrapperProps?: WrapperProps;
@@ -83,7 +87,11 @@ export type Story<Props, WrapperProps, ExampleFnReturnType = React.ReactElement<
    * Custom metadata for a story.
    * @see [Parameters](https://storybook.js.org/docs/basics/writing-stories/#parameters)
    */
-  parameters?: Parameters<Props, WrapperProps, React.ComponentType<WrapperProps>>;
+  parameters?: Parameters<
+    Props,
+    WrapperProps,
+    React.ComponentType<React.PropsWithChildren<WrapperProps>>
+  >;
   /**
    * Wrapper components or Storybook decorators that wrap a story.
    *
@@ -103,7 +111,11 @@ export type StoryBuilderConfig<Props, WrapperProps> = {
     scale?: Scale;
   } & Props;
   argTypes?: ArgTypes<Props>;
-  parameters?: Parameters<Props, WrapperProps, React.ComponentType<WrapperProps>>;
+  parameters?: Parameters<
+    Props,
+    WrapperProps,
+    React.ComponentType<React.PropsWithChildren<WrapperProps>>
+  >;
 };
 
 export const baseConfig = {
@@ -161,7 +173,7 @@ export function storyBuilder<StoryBuilderArgs, WrapperProps>(
   builderConfig?: StoryBuilderConfig<StoryBuilderArgs, WrapperProps>,
 ) {
   function builder<Props, PropsWithoutChildren extends Omit<Props, 'children'>>(
-    Component: React.ComponentType<Props>,
+    Component: React.ComponentType<React.PropsWithChildren<Props>>,
     sharedConfig?: StoryBuilderConfig<PropsWithoutChildren, WrapperProps>,
   ) {
     const storiesSet = new Set<Story<PropsWithoutChildren, WrapperProps>>();

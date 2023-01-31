@@ -4,14 +4,14 @@ import { DevicePreferencesBaseProviderProps } from '@cbhq/cds-common/system/Devi
 import { RootScaleProvider } from './RootScaleProvider';
 import { RootSpectrumProvider } from './RootSpectrumProvider';
 
-export const DevicePreferencesProvider: React.FC<DevicePreferencesBaseProviderProps> = memo(
-  ({ children, spectrum, scale }) => {
-    return (
-      <RootSpectrumProvider value={spectrum ?? 'system'}>
-        <RootScaleProvider value={scale ?? 'system'}>{children}</RootScaleProvider>
-      </RootSpectrumProvider>
-    );
-  },
-);
+export const DevicePreferencesProvider: React.FC<
+  React.PropsWithChildren<DevicePreferencesBaseProviderProps>
+> = memo(({ children, spectrum, scale }) => {
+  return (
+    <RootSpectrumProvider value={spectrum ?? 'system'}>
+      <RootScaleProvider value={scale ?? 'system'}>{children}</RootScaleProvider>
+    </RootSpectrumProvider>
+  );
+});
 
 DevicePreferencesProvider.displayName = 'DevicePreferencesProvider';

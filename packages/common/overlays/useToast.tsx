@@ -10,7 +10,7 @@ import { ToastBaseProps, ToastOptions, ToastText } from '../types';
 
 import { ToastContext } from './ToastProvider';
 
-export const useToast = <T,>(Toast: ComponentType<ToastBaseProps>) => {
+export const useToast = <T,>(Toast: ComponentType<React.PropsWithChildren<ToastBaseProps>>) => {
   const { addToast, removeToast, hideToast, clearToastQueue } = useContext(ToastContext);
 
   const showToast = useCallback(

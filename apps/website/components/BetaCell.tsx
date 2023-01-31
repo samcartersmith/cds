@@ -58,7 +58,7 @@ function getFlexShrink(width: number | undefined, priority: boolean) {
   return 1;
 }
 
-export const BetaCell: React.FC<BetaCellProps> = memo(
+export const BetaCell: React.FC<React.PropsWithChildren<BetaCellProps>> = memo(
   ({
     disabled,
     onPress,

@@ -28,7 +28,7 @@ export type NavigationProps = {
   sidebarLayout?: SidebarLayout;
 };
 
-const NavigationContent: React.FC<NavigationProps> = memo(
+const NavigationContent: React.FC<React.PropsWithChildren<NavigationProps>> = memo(
   ({ sidebar, navbar, displayTitle, tabs, children }) => {
     const { isMobileMenuVisible, toggleMobileMenuHidden, setSidebarLayout } = useNavigation();
     const [showDisplayTitle, setShowDisplayTitle] = useState(!!displayTitle);
@@ -172,7 +172,7 @@ const NavigationContent: React.FC<NavigationProps> = memo(
   },
 );
 
-export const Navigation: React.FC<NavigationProps> = memo(
+export const Navigation: React.FC<React.PropsWithChildren<NavigationProps>> = memo(
   ({ sidebarLayout = defaultLayout, ...props }) => {
     return (
       <MotionConfig>

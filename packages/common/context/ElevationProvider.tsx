@@ -14,7 +14,7 @@ export type ElevationProviderProps = {
 const ElevationContext = createContext<ElevationLevels | undefined>(undefined);
 const ElevationChildContext = createContext<boolean>(false);
 
-export const ElevationProvider: React.FC<ElevationProviderProps> = memo(
+export const ElevationProvider: React.FC<React.PropsWithChildren<ElevationProviderProps>> = memo(
   ({ elevation, children }) => {
     const spectrum = useSpectrum();
     if (elevation) {
@@ -33,23 +33,25 @@ export const ElevationProvider: React.FC<ElevationProviderProps> = memo(
   },
 );
 
-export const ElevationChildrenProvider: React.FC = memo(({ children }) => {
-  /** Check if child of Elevated surface */
-  const elevation = useContext(ElevationContext);
-  /** Only apply overrides to children in dark mode */
-  const spectrum = useSpectrum();
-  if (elevation && spectrum === 'dark') {
-    return (
-      <ElevationChildContext.Provider value>
-        <PaletteConfigProvider value={elevationChildrenPalette[elevation]}>
-          {children}
-        </PaletteConfigProvider>
-      </ElevationChildContext.Provider>
-    );
-  }
+export const ElevationChildrenProvider: React.FC<React.PropsWithChildren<unknown>> = memo(
+  ({ children }) => {
+    /** Check if child of Elevated surface */
+    const elevation = useContext(ElevationContext);
+    /** Only apply overrides to children in dark mode */
+    const spectrum = useSpectrum();
+    if (elevation && spectrum === 'dark') {
+      return (
+        <ElevationChildContext.Provider value>
+          <PaletteConfigProvider value={elevationChildrenPalette[elevation]}>
+            {children}
+          </PaletteConfigProvider>
+        </ElevationChildContext.Provider>
+      );
+    }
 
-  return <>{children}</>;
-});
+    return <>{children}</>;
+  },
+);
 
 export const useElevationChildOverrides = () => useContext(ElevationChildContext);
 

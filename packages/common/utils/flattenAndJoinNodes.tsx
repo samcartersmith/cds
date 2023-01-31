@@ -5,8 +5,8 @@ import type { GroupBaseProps, SpacerBaseProps } from '../types';
 import flattenNodes from './flattenNodes';
 
 type FlattenAndJoinNodesParams<BoxProps> = {
-  Spacer: React.ComponentType<SpacerBaseProps>;
-  ItemWrapper?: React.ComponentType<BoxProps>;
+  Spacer: React.ComponentType<React.PropsWithChildren<SpacerBaseProps>>;
+  ItemWrapper?: React.ComponentType<React.PropsWithChildren<BoxProps>>;
 } & GroupBaseProps<BoxProps>;
 
 export function flattenAndJoinNodes<BoxProps>({

@@ -14,28 +14,30 @@ export type SidebarProps = {
   children: React.ReactNode;
 };
 
-export const Sidebar: React.FC<SidebarProps> = memo(({ logo, children }) => {
-  return (
-    <ScaleProvider value={DEFAULT_SCALE}>
-      <VStack
-        background
-        borderedEnd
-        height="100%"
-        width="100%"
-        spacingHorizontal={2}
-        spacingBottom={2}
-        spacingTop={gutter}
-        dangerouslySetClassName={hideForMobile}
-      >
-        <VStack spacingTop={0.5} spacingStart={1} spacingBottom={3}>
-          {logo}
+export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
+  ({ logo, children }) => {
+    return (
+      <ScaleProvider value={DEFAULT_SCALE}>
+        <VStack
+          background
+          borderedEnd
+          height="100%"
+          width="100%"
+          spacingHorizontal={2}
+          spacingBottom={2}
+          spacingTop={gutter}
+          dangerouslySetClassName={hideForMobile}
+        >
+          <VStack spacingTop={0.5} spacingStart={1} spacingBottom={3}>
+            {logo}
+          </VStack>
+          <ul className={sidebarListReset}>
+            <TrackIndexProvider>{children}</TrackIndexProvider>
+          </ul>
         </VStack>
-        <ul className={sidebarListReset}>
-          <TrackIndexProvider>{children}</TrackIndexProvider>
-        </ul>
-      </VStack>
-    </ScaleProvider>
-  );
-});
+      </ScaleProvider>
+    );
+  },
+);
 
 Sidebar.displayName = 'DeprecatedSidebar';

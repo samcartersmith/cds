@@ -6,7 +6,7 @@
   https://mdxjs.com/advanced/typescript
 */
 declare module '*.mdx' {
-  export default MDXComponent as React.FC;
+  export default MDXComponent as React.FC<React.PropsWithChildren<unknown>>;
 }
 
 declare module '@contentful/rich-text-plain-text-renderer' {

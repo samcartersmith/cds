@@ -5,7 +5,9 @@ import { noop } from '@cbhq/cds-utils';
 export const SearchFilterContext = React.createContext('');
 export const SetSearchFilterContext = React.createContext<SetState<string>>(noop);
 
-export const ExamplesSearchProvider: React.FC = ({ children }) => {
+export const ExamplesSearchProvider: React.FC<React.PropsWithChildren<unknown>> = ({
+  children,
+}) => {
   const [filter, setFilter] = useState('');
 
   return (

@@ -16,14 +16,18 @@ import type {
 } from '../types/alpha';
 
 type CreateFeatureEntryCardParams<OnPressFn> = {
-  Card: React.ComponentType<CardBaseProps<OnPressFn>>;
-  CardBody: React.ComponentType<CardBodyBaseProps<OnPressFn>>;
-  HStack: React.ComponentType<CardBoxProps>;
-  ProgressCircle: React.ComponentType<ProgressCircleBaseProps>;
-  ProgressBar: React.ComponentType<ProgressBaseProps>;
-  TextBody: React.ComponentType<TextBaseProps & { color?: PaletteForeground }>;
-  TextHeadline: React.ComponentType<TextBaseProps>;
-  TextLabel2: React.ComponentType<TextBaseProps & { color?: PaletteForeground }>;
+  Card: React.ComponentType<React.PropsWithChildren<CardBaseProps<OnPressFn>>>;
+  CardBody: React.ComponentType<React.PropsWithChildren<CardBodyBaseProps<OnPressFn>>>;
+  HStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
+  ProgressCircle: React.ComponentType<React.PropsWithChildren<ProgressCircleBaseProps>>;
+  ProgressBar: React.ComponentType<React.PropsWithChildren<ProgressBaseProps>>;
+  TextBody: React.ComponentType<
+    React.PropsWithChildren<TextBaseProps & { color?: PaletteForeground }>
+  >;
+  TextHeadline: React.ComponentType<React.PropsWithChildren<TextBaseProps>>;
+  TextLabel2: React.ComponentType<
+    React.PropsWithChildren<TextBaseProps & { color?: PaletteForeground }>
+  >;
 };
 
 export function createDataCard<OnPressFn>({

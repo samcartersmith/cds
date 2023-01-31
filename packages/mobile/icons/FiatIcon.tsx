@@ -18,7 +18,7 @@ type FiatIconProps = {
   size?: Exclude<IconSize, 'xs'>;
 } & SharedProps;
 
-export const FiatIcon: FunctionComponent<FiatIconProps> = ({
+export const FiatIcon: FunctionComponent<React.PropsWithChildren<FiatIconProps>> = ({
   currencyCode,
   size = 'l',
   testID,

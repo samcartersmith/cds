@@ -9,11 +9,7 @@ import { modalFooterClassName } from './modalStyles';
 
 export type ModalFooterProps = ModalFooterBaseProps;
 
-export const ModalFooter: React.FC<ModalFooterProps> = ({
-  primaryAction,
-  secondaryAction,
-  testID,
-}) => {
+export const ModalFooter = ({ primaryAction, secondaryAction, testID }: ModalFooterProps) => {
   const { hideDividers } = useModalParent();
 
   if (primaryAction.type !== Button || (secondaryAction && primaryAction.type !== Button)) {

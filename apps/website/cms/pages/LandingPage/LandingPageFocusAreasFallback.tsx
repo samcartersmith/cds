@@ -22,7 +22,7 @@ const LandingAreaFocusAreaGroupFallback = () => {
   );
 };
 
-const LandingPageFocusAreasFallback: React.FC = () => {
+const LandingPageFocusAreasFallback = () => {
   return (
     <HStack minHeight={600}>
       <Box spacing={gutter} width="50%" borderedEnd>

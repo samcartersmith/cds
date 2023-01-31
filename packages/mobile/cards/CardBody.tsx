@@ -8,7 +8,7 @@ import { TextHeadline } from '../typography/TextHeadline';
 
 export type CardBodyProps = CardBodyBaseProps & CardBodyOrientationProps;
 
-export const CardBody: React.FC<CardBodyProps> = memo(
+export const CardBody: React.FC<React.PropsWithChildren<CardBodyProps>> = memo(
   ({
     title,
     description,

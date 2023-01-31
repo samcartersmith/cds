@@ -67,7 +67,7 @@ export type SidebarProps = {
 } & SharedProps &
   SharedAccessibilityProps;
 
-export const Sidebar: React.FC<SidebarProps> = memo(
+export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
   ({
     logo,
     children,

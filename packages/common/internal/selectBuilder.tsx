@@ -33,13 +33,15 @@ export type SelectProps = {
 } & SelectBaseProps;
 
 export type CreateSelectStoriesProps = {
-  Select: ComponentType<SelectProps>;
-  VStack: ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
-  SelectOption: ComponentType<SelectOptionProps>;
-  ThemeProvider: ComponentType<ThemeProviderBaseProps>;
+  Select: ComponentType<React.PropsWithChildren<SelectProps>>;
+  VStack: ComponentType<
+    React.PropsWithChildren<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>
+  >;
+  SelectOption: ComponentType<React.PropsWithChildren<SelectOptionProps>>;
+  ThemeProvider: ComponentType<React.PropsWithChildren<ThemeProviderBaseProps>>;
   spectrum?: Spectrum;
   scale?: Scale;
-  InputIcon: ComponentType<Omit<IconBaseProps, 'size'>>;
+  InputIcon: ComponentType<React.PropsWithChildren<Omit<IconBaseProps, 'size'>>>;
 };
 
 export const priceOptions = [
@@ -246,13 +248,13 @@ type SelectOptionMobileProps = {
 } & Omit<SelectOptionBaseProps, 'compact'>;
 
 export type CreateSelectProps = {
-  Select: ComponentType<SelectBaseProps>;
-  Tray: ComponentType<TrayBaseProps>;
-  SelectOption: ComponentType<SelectOptionMobileProps>;
-  ScrollView: ComponentType;
-  HStack: ComponentType<BoxBaseProps & StackBaseProps>;
-  VStack: ComponentType<BoxBaseProps & StackBaseProps>;
-  TextInput: ComponentType<TextInputBaseProps>;
+  Select: ComponentType<React.PropsWithChildren<SelectBaseProps>>;
+  Tray: ComponentType<React.PropsWithChildren<TrayBaseProps>>;
+  SelectOption: ComponentType<React.PropsWithChildren<SelectOptionMobileProps>>;
+  ScrollView: ComponentType<React.PropsWithChildren<unknown>>;
+  HStack: ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
+  VStack: ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
+  TextInput: ComponentType<React.PropsWithChildren<TextInputBaseProps>>;
 };
 
 type DefaultSelectTypes = {

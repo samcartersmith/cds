@@ -5,12 +5,7 @@ import { useCounter } from '@cbhq/cds-common/visualizations/useCounter';
 
 import { Box } from '../layout';
 
-export const Counter: React.FC<CounterBaseProps> = ({
-  startNum,
-  endNum,
-  renderNum,
-  durationInMillis,
-}) => {
+export const Counter = ({ startNum, endNum, renderNum, durationInMillis }: CounterBaseProps) => {
   const count = useCounter({ startNum, endNum, durationInMillis });
   const renderFunction = useMemo(() => {
     return (num: number) => {

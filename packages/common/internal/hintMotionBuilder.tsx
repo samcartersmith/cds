@@ -14,15 +14,19 @@ import {
 } from '../types';
 
 export type CreateHintMotionProps = {
-  VStack: React.ComponentType<BoxBaseProps & { gap?: number }>;
-  Box: React.ComponentType<BoxBaseProps & { overflow?: string }>;
-  Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
-  TextBody: React.ComponentType<TextBaseProps & { as?: string }>;
+  VStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & { gap?: number }>>;
+  Box: React.ComponentType<React.PropsWithChildren<BoxBaseProps & { overflow?: string }>>;
+  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps & { onPress?: () => void }>>;
+  TextBody: React.ComponentType<React.PropsWithChildren<TextBaseProps & { as?: string }>>;
   ColorSurge: React.ComponentType<
-    ColorSurgeBaseProps & { ref: ForwardedRef<ColorSurgeRefBaseProps> }
+    React.PropsWithChildren<ColorSurgeBaseProps & { ref: ForwardedRef<ColorSurgeRefBaseProps> }>
   >;
-  Shake: React.ComponentType<ShakeBaseProps & { ref: ForwardedRef<ShakeRefBaseProps> }>;
-  Pulse: React.ComponentType<PulseBaseProps & { ref: ForwardedRef<PulseRefBaseProps> }>;
+  Shake: React.ComponentType<
+    React.PropsWithChildren<ShakeBaseProps & { ref: ForwardedRef<ShakeRefBaseProps> }>
+  >;
+  Pulse: React.ComponentType<
+    React.PropsWithChildren<PulseBaseProps & { ref: ForwardedRef<PulseRefBaseProps> }>
+  >;
 };
 
 export function hintMotionBuilder({

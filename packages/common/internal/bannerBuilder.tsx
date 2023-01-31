@@ -41,11 +41,11 @@ const styleProps = [
 ] as const;
 
 export function bannerBuilder(
-  Banner: ComponentType<BannerBaseProps>,
-  Link: ComponentType<LinkBaseProps>,
-  TextTitle1: ComponentType<TextBaseProps>,
-  VStack: ComponentType<StackBaseProps>,
-  Spacer: ComponentType<SpacerBaseProps>,
+  Banner: ComponentType<React.PropsWithChildren<BannerBaseProps>>,
+  Link: ComponentType<React.PropsWithChildren<LinkBaseProps>>,
+  TextTitle1: ComponentType<React.PropsWithChildren<TextBaseProps>>,
+  VStack: ComponentType<React.PropsWithChildren<StackBaseProps>>,
+  Spacer: ComponentType<React.PropsWithChildren<SpacerBaseProps>>,
 ) {
   const Container = ({
     children,

@@ -10,10 +10,10 @@ import { RemoteImageBuilderTypes } from './remoteImageGroupBuilder';
 const imageURL = avatars[0];
 
 export type RemoteImageBuilderProps = {
-  RemoteImage: ComponentType<RemoteImageBuilderTypes>;
-  VStack: ComponentType<StackBaseProps>;
-  HStack: ComponentType<StackBaseProps>;
-  TextBody: ComponentType<TextBaseProps>;
+  RemoteImage: ComponentType<React.PropsWithChildren<RemoteImageBuilderTypes>>;
+  VStack: ComponentType<React.PropsWithChildren<StackBaseProps>>;
+  HStack: ComponentType<React.PropsWithChildren<StackBaseProps>>;
+  TextBody: ComponentType<React.PropsWithChildren<TextBaseProps>>;
 };
 
 export const remoteImageBuilder = ({

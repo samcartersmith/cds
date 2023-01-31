@@ -9,10 +9,10 @@ import {
 } from '../types';
 
 type CreateFeatureEntryCardParams<T> = {
-  Button: React.ComponentType<ButtonBaseProps & { onPress?: T }>;
-  Card: React.ComponentType<CardBaseProps>;
-  CardBody: React.ComponentType<CardBodyBaseProps>;
-  SpotSquare: React.ComponentType<SpotSquareProps>;
+  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps & { onPress?: T }>>;
+  Card: React.ComponentType<React.PropsWithChildren<CardBaseProps>>;
+  CardBody: React.ComponentType<React.PropsWithChildren<CardBodyBaseProps>>;
+  SpotSquare: React.ComponentType<React.PropsWithChildren<SpotSquareProps>>;
 };
 
 export type FeatureEntryCardProps<T> = {

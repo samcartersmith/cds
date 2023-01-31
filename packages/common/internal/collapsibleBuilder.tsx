@@ -14,18 +14,22 @@ import { loremIpsum } from './data/loremIpsum';
 
 export type CreateCollapsibleProps = {
   Button: React.ComponentType<
-    ButtonBaseProps & { onPress?: () => void; id?: string; disableDebounce?: boolean }
+    React.PropsWithChildren<
+      ButtonBaseProps & { onPress?: () => void; id?: string; disableDebounce?: boolean }
+    >
   >;
   Collapsible: React.ComponentType<
-    CollapsibleBaseProps & {
-      id?: string;
-      accessibilityLabelledBy?: string;
-      maxHeight?: number;
-    }
+    React.PropsWithChildren<
+      CollapsibleBaseProps & {
+        id?: string;
+        accessibilityLabelledBy?: string;
+        maxHeight?: number;
+      }
+    >
   >;
-  TextBody: React.ComponentType<TextBaseProps & { as?: string }>;
-  DotCount: React.ComponentType<DotCountBaseProps>;
-  HStack: React.ComponentType<BoxBaseProps>;
+  TextBody: React.ComponentType<React.PropsWithChildren<TextBaseProps & { as?: string }>>;
+  DotCount: React.ComponentType<React.PropsWithChildren<DotCountBaseProps>>;
+  HStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps>>;
 };
 
 export function collapsibleBuilder({

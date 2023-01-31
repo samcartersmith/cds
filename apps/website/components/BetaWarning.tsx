@@ -5,7 +5,7 @@ type BetaWarningProps = {
   component: string;
 };
 
-export const BetaWarning: React.FC<BetaWarningProps> = ({ component }) => {
+export const BetaWarning = ({ component }: BetaWarningProps) => {
   return (
     <TextTitle3 as="h3" color="negative">
       🚨 BETA: {component} is likely to change. Production use in Beta is strongly discouraged

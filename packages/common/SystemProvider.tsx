@@ -7,7 +7,7 @@ import type { ThemeProviderBaseProps } from './types';
 
 export type SystemProviderProps = ThemeProviderBaseProps;
 
-export const SystemProvider: React.FC<SystemProviderProps> = memo(
+export const SystemProvider: React.FC<React.PropsWithChildren<SystemProviderProps>> = memo(
   ({ scale, spectrum, palette, children }) => {
     return (
       <ScaleProvider value={scale}>

@@ -54,7 +54,7 @@ type CarouselItemProps = {
   onMount: CarouselOnItemMount;
 };
 
-export const CarouselItem: React.FC<CarouselItemProps> = memo(
+export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> = memo(
   ({
     children,
     id,

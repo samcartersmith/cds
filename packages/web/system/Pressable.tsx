@@ -71,7 +71,7 @@ export type PressableInternalProps = {
     | 'a'
     | 'button'
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    | React.ComponentType<any>;
+    | React.ComponentType<React.PropsWithChildren<any>>;
   /** Dont scale element on press. */
   noScaleOnPress?: boolean;
 } & PressableProps &

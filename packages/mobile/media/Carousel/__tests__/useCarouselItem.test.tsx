@@ -50,7 +50,7 @@ describe('useCarouselItem', () => {
   it('returns an object with dismiss and id', () => {
     const dismissSpy = jest.fn();
 
-    const Wrapper: React.FC = ({ children }) => (
+    const Wrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
       <CarouselItemContext.Provider
         value={{
           id: 'item1',

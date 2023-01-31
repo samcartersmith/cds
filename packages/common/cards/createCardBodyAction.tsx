@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import type { ButtonBaseProps } from '../types/alpha';
 
 type CreateCardBodyParams<OnPressFn> = {
-  Button: React.ComponentType<ButtonBaseProps<OnPressFn>>;
+  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps<OnPressFn>>>;
 };
 
 export function createCardBodyAction<OnPressFn>({ Button }: CreateCardBodyParams<OnPressFn>) {

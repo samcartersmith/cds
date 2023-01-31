@@ -39,8 +39,10 @@ const textComponents = [
 ] as const;
 
 type TextComponent =
-  | React.ComponentType<DynamicElement<TextProps, HTMLTextTags, true>>
-  | React.ComponentType<DynamicElement<TextProps, HTMLNonHeadingTextTags, true>>;
+  | React.ComponentType<React.PropsWithChildren<DynamicElement<TextProps, HTMLTextTags, true>>>
+  | React.ComponentType<
+      React.PropsWithChildren<DynamicElement<TextProps, HTMLNonHeadingTextTags, true>>
+    >;
 
 const textTestRunner = (testFn: (type: TextComponent) => void) => {
   textComponents.map(async (TextComponent) => testFn(TextComponent));

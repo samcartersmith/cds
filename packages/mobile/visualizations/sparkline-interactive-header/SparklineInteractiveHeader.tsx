@@ -248,7 +248,7 @@ const SparklineInteractiveHeaderStable = memo(
   ),
 );
 
-const Trailing: FunctionComponent = ({ children }) => {
+const Trailing: FunctionComponent<React.PropsWithChildren<unknown>> = ({ children }) => {
   if (children) {
     return (
       <VStack spacingStart={2} flexShrink={0} justifyContent="center" alignItems="center">

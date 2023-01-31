@@ -10,9 +10,13 @@ import {
 import { storyBuilder } from '../utils/storyBuilder';
 
 type CreateFeedCardSheetParams<WrapperProps, PressFn> = {
-  Button: React.ComponentType<ButtonBaseProps & { onPress?: NoopFn | PressFn }>;
-  CardGroup: React.ComponentType<GroupBaseProps<WrapperProps>>;
-  IconButton: React.ComponentType<IconButtonBaseProps & { onPress?: NoopFn | PressFn }>;
+  Button: React.ComponentType<
+    React.PropsWithChildren<ButtonBaseProps & { onPress?: NoopFn | PressFn }>
+  >;
+  CardGroup: React.ComponentType<React.PropsWithChildren<GroupBaseProps<WrapperProps>>>;
+  IconButton: React.ComponentType<
+    React.PropsWithChildren<IconButtonBaseProps & { onPress?: NoopFn | PressFn }>
+  >;
   renderHorizontalItem: RenderGroupItem<WrapperProps>;
 };
 

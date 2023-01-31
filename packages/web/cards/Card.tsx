@@ -24,7 +24,7 @@ export type CardProps = {
 } & CardBaseProps &
   LinkableProps;
 
-export const Card: React.FC<CardProps> = memo(
+export const Card: React.FC<React.PropsWithChildren<CardProps>> = memo(
   ({
     children,
     background = 'background',

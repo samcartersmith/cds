@@ -8,10 +8,12 @@ export type CardFooterProps = {
   children: React.ReactNode;
 } & SharedProps;
 
-export const CardFooter: React.FC<CardFooterProps> = memo(({ children, testID }) => {
-  return (
-    <HStack spacingBottom={2} spacingHorizontal={3} testID={testID}>
-      {children}
-    </HStack>
-  );
-});
+export const CardFooter: React.FC<React.PropsWithChildren<CardFooterProps>> = memo(
+  ({ children, testID }) => {
+    return (
+      <HStack spacingBottom={2} spacingHorizontal={3} testID={testID}>
+        {children}
+      </HStack>
+    );
+  },
+);

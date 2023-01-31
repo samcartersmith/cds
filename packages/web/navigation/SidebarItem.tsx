@@ -28,7 +28,10 @@ export type SidebarItemProps = {
   /**
    * Render as custom React Node like React Routers Link component
    */
-  as?: 'a' | 'button' | React.ComponentType<React.HTMLAttributes<HTMLElement>>;
+  as?:
+    | 'a'
+    | 'button'
+    | React.ComponentType<React.PropsWithChildren<React.HTMLAttributes<HTMLElement>>>;
   /**
    *  URL that this links to when pressed. When set, the pressabel will render as a link
    */

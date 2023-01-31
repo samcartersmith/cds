@@ -28,7 +28,10 @@ export const ToastContext = createContext<ToastProviderStates>({
   resumeTimer: () => {},
 });
 
-export const ToastProvider: React.FC<ToastProviderProps> = ({ children, toastBottomOffset }) => {
+export const ToastProvider: React.FC<React.PropsWithChildren<ToastProviderProps>> = ({
+  children,
+  toastBottomOffset,
+}) => {
   const {
     activeToast,
     addToast,

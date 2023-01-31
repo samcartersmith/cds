@@ -15,8 +15,8 @@ type SearchInputProps = Omit<TextInputBaseProps, 'helperText' | 'suffix' | 'star
 } & SearchInputBaseProps;
 
 export function searchInputBuilder(
-  SearchInput: ComponentType<SearchInputProps>,
-  TextLabel1: ComponentType<TextBaseProps>,
+  SearchInput: ComponentType<React.PropsWithChildren<SearchInputProps>>,
+  TextLabel1: ComponentType<React.PropsWithChildren<TextBaseProps>>,
 ) {
   const Basic = () => {
     const [text, setText] = useState('Value');

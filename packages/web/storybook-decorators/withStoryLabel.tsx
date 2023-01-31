@@ -7,7 +7,10 @@ type StoryNameLabelProps = {
   name: string;
 };
 
-export const StoryNameLabel: React.FC<StoryNameLabelProps> = ({ name, children }) => {
+export const StoryNameLabel: React.FC<React.PropsWithChildren<StoryNameLabelProps>> = ({
+  name,
+  children,
+}) => {
   return (
     <div
       className={css`

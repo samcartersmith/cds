@@ -8,13 +8,15 @@ const onPressConsole = () => console.log('pressed');
 
 export function contentCellBuilder(
   ContentCell: React.ComponentType<
-    ContentCellBaseProps & {
-      onPress?: () => void;
-      to?: string;
-    }
+    React.PropsWithChildren<
+      ContentCellBaseProps & {
+        onPress?: () => void;
+        to?: string;
+      }
+    >
   >,
-  CellMedia: React.ComponentType<CellMediaProps>,
-  Pictogram: React.ComponentType<{ name: IllustrationPictogramNames }>,
+  CellMedia: React.ComponentType<React.PropsWithChildren<CellMediaProps>>,
+  Pictogram: React.ComponentType<React.PropsWithChildren<{ name: IllustrationPictogramNames }>>,
 ) {
   const Content = () => (
     <>

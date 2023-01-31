@@ -1,8 +1,8 @@
 import React from 'react';
 
 export function performanceBenchmarkBuilder(
-  CDSComponent: React.ComponentType<unknown>,
-  HTMLComponent: React.ComponentType<unknown>,
+  CDSComponent: React.ComponentType<React.PropsWithChildren<unknown>>,
+  HTMLComponent: React.ComponentType<React.PropsWithChildren<unknown>>,
 ) {
   function generateHTMLComponent(n: number) {
     const divs = [];

@@ -146,7 +146,7 @@ type SparklineInteractiveBuilderComponentProps<Period extends string> =
 
 type SparklineInteractiveBuilderProps = {
   SparklineInteractive: React.ComponentType<
-    SparklineInteractiveBuilderComponentProps<SparklinePeriod>
+    React.PropsWithChildren<SparklineInteractiveBuilderComponentProps<SparklinePeriod>>
   >;
   isMobile?: boolean;
   alternatePeriods?: boolean;

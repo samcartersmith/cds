@@ -16,6 +16,8 @@ export const statsFallback = {
 
 export const AdopterStatsContext = createContext(statsFallback);
 
-export const AdopterStatsProvider: React.FC<AdopterStats> = memo(({ children, ...stats }) => {
-  return <AdopterStatsContext.Provider value={stats}>{children}</AdopterStatsContext.Provider>;
-});
+export const AdopterStatsProvider: React.FC<React.PropsWithChildren<AdopterStats>> = memo(
+  ({ children, ...stats }) => {
+    return <AdopterStatsContext.Provider value={stats}>{children}</AdopterStatsContext.Provider>;
+  },
+);

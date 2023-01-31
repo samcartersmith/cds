@@ -24,7 +24,7 @@ type AnimatedStyles = {
   height: Animated.Value;
 };
 
-export const CarouselItem: React.FC<CarouselItemProps> = memo(
+export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> = memo(
   ({ children, dismiss, id, spacingEnd, updateLayoutMap }) => {
     const innerBox = useRef<View>(null);
     /** All animations go from to 1 to 0 when dismissed. Width and height are interpolated from those values. */

@@ -3,7 +3,7 @@ import React from 'react';
 import type { ContentCellFallbackProps } from '../types';
 
 export function contentCellFallbackBuilder(
-  ContentCellFallback: React.ComponentType<ContentCellFallbackProps>,
+  ContentCellFallback: React.ComponentType<React.PropsWithChildren<ContentCellFallbackProps>>,
 ) {
   const Fallbacks = () => {
     return (

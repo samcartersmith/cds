@@ -4,7 +4,7 @@ import { GroupBaseProps, RenderGroupItem } from '../../types';
 import { storyBuilder } from '../utils/storyBuilder';
 
 type Params<WrapperProps> = {
-  CardGroup: React.ComponentType<GroupBaseProps<WrapperProps>>;
+  CardGroup: React.ComponentType<React.PropsWithChildren<GroupBaseProps<WrapperProps>>>;
   renderHorizontalItem: RenderGroupItem<WrapperProps>;
 };
 

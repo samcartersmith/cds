@@ -20,7 +20,7 @@ const LoremIpsum = loremIpsumBuilder({
   TextLabel1,
 } as CreateLoremIpsumProps);
 
-const MockDrawer: React.FC<Partial<DrawerBaseProps>> = ({ onCloseComplete, pin = 'bottom' }) => {
+const MockDrawer = ({ onCloseComplete, pin = 'bottom' }: Partial<DrawerBaseProps>) => {
   const [isVisible, { toggleOn, toggleOff }] = useToggler(false);
 
   // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop

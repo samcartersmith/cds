@@ -4,7 +4,11 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
 import { TextProps } from '../createText';
 
-const TextExamplesScreen = ({ component: Text }: { component: React.ComponentType<TextProps> }) => {
+const TextExamplesScreen = ({
+  component: Text,
+}: {
+  component: React.ComponentType<React.PropsWithChildren<TextProps>>;
+}) => {
   return (
     <ExampleScreen>
       <Example title="Mono">

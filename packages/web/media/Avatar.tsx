@@ -60,7 +60,7 @@ export const HexagonClipPath = () => {
   );
 };
 
-export const Avatar: React.FC<AvatarWebProps> = memo(
+export const Avatar = memo(
   ({
     alt,
     src,
@@ -73,7 +73,7 @@ export const Avatar: React.FC<AvatarWebProps> = memo(
     selected,
     colorScheme: colorSchemeProp,
     name,
-  }) => {
+  }: AvatarWebProps) => {
     const borderRadius = useShapeToBorderRadiusAlias(shape);
     const avatarSize = useAvatarSize(size);
     const avatarSrc = useAvatarSrc(src);

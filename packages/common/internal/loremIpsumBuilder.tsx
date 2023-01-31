@@ -9,8 +9,8 @@ export type LoremIpsumProps = {
 };
 
 export type CreateLoremIpsumProps = {
-  TextLabel1: React.ComponentType<TextBaseProps & { as?: string }>;
-  TextBody: React.ComponentType<TextBaseProps & { as?: string }>;
+  TextLabel1: React.ComponentType<React.PropsWithChildren<TextBaseProps & { as?: string }>>;
+  TextBody: React.ComponentType<React.PropsWithChildren<TextBaseProps & { as?: string }>>;
 };
 
 export const loremIpsum =

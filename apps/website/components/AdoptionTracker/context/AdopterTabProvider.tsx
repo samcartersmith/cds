@@ -9,8 +9,10 @@ export type AdopterTabContextType = {
 
 export const AdopterTabContext = createContext<AdopterTabContextType | undefined>(undefined);
 
-export const AdopterTabProvider: React.FC = memo(({ children }) => {
-  const [tabKey, setTabKey] = useState<AdopterTabKey>('cds');
-  const value = useMemo(() => ({ tabKey, setTabKey }), [tabKey]);
-  return <AdopterTabContext.Provider value={value}>{children}</AdopterTabContext.Provider>;
-});
+export const AdopterTabProvider: React.FC<React.PropsWithChildren<unknown>> = memo(
+  ({ children }) => {
+    const [tabKey, setTabKey] = useState<AdopterTabKey>('cds');
+    const value = useMemo(() => ({ tabKey, setTabKey }), [tabKey]);
+    return <AdopterTabContext.Provider value={value}>{children}</AdopterTabContext.Provider>;
+  },
+);

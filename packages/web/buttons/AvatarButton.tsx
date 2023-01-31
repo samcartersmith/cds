@@ -11,7 +11,7 @@ import { cx } from '../utils/linaria';
 import { avatarButton } from './buttonStyles';
 
 export type AvatarButtonProps = {
-  as?: React.ComponentType<React.HTMLAttributes<HTMLElement>>;
+  as?: React.ComponentType<React.PropsWithChildren<React.HTMLAttributes<HTMLElement>>>;
 } & PressableProps &
   SharedProps &
   Omit<React.HTMLAttributes<HTMLButtonElement>, 'className' | 'style' | 'dangerouslySetInnerHTML'> &

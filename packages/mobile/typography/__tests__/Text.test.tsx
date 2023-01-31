@@ -36,7 +36,9 @@ const Type = {
   TextLegal,
 };
 
-const textTestRunner = (testFn: (type: React.ComponentType<TextProps>) => void) => {
+const textTestRunner = (
+  testFn: (type: React.ComponentType<React.PropsWithChildren<TextProps>>) => void,
+) => {
   entries<Record<string, React.FC<TextProps>>>(Type).map(async ([, TextComponent]) =>
     testFn(TextComponent),
   );

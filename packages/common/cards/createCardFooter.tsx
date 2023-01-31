@@ -4,11 +4,11 @@ import { gutter } from '../tokens/sizing';
 import type { CardBoxProps, CardFooterProps } from '../types/alpha';
 
 type CreateCardFooterParams = {
-  HStack: React.ComponentType<CardBoxProps>;
+  HStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
 };
 
 export function createCardFooter({ HStack }: CreateCardFooterParams) {
-  const CardFooter: React.FC<CardFooterProps> = memo(function CardFooter({
+  const CardFooter: React.FC<React.PropsWithChildren<CardFooterProps>> = memo(function CardFooter({
     children,
     spacingBottom = 2,
     spacingHorizontal = gutter,

@@ -14,7 +14,10 @@ import { VStack } from '../VStack';
 
 import { LoremIpsum } from './LoremIpsum';
 
-const Item: React.FC<HStackProps<BoxElement>> = ({ children, ...props }) => (
+const Item: React.FC<React.PropsWithChildren<HStackProps<BoxElement>>> = ({
+  children,
+  ...props
+}) => (
   <HStack
     background="backgroundAlternate"
     justifyContent="center"

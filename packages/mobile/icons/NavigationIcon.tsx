@@ -10,22 +10,19 @@ export type NavigationIconProps = NavigationBaseIconProps &
     'name' | 'size' | 'bordered' | 'dangerouslySetColor' | 'color' | 'dangerouslySetStyle'
   >;
 
-export const NavigationIcon: FunctionComponent<NavigationIconProps> = memo(function NavigationIcon({
-  name,
-  size = 'm',
-  active = false,
-  ...props
-}: NavigationIconProps) {
-  const navigationIconName: NavigationIconInternalName = active
-    ? `${name}Active`
-    : `${name}Inactive`;
+export const NavigationIcon: FunctionComponent<React.PropsWithChildren<NavigationIconProps>> = memo(
+  function NavigationIcon({ name, size = 'm', active = false, ...props }: NavigationIconProps) {
+    const navigationIconName: NavigationIconInternalName = active
+      ? `${name}Active`
+      : `${name}Inactive`;
 
-  return (
-    <IconBase
-      color={active ? 'primary' : 'foreground'}
-      size={size}
-      name={navigationIconName}
-      {...props}
-    />
-  );
-});
+    return (
+      <IconBase
+        color={active ? 'primary' : 'foreground'}
+        size={size}
+        name={navigationIconName}
+        {...props}
+      />
+    );
+  },
+);

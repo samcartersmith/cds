@@ -40,7 +40,7 @@ export type ControlProps<T extends string> = {
 
 type ControlInternalProps<T extends string> = {
   /** Control icon to show. */
-  children: React.ComponentType<ControlIconProps>;
+  children: React.ComponentType<React.PropsWithChildren<ControlIconProps>>;
   /** Label associated with the multiple choice option control. */
   label?: TextProps['children'];
   /** If control is a switch. This will use switch motion token. */

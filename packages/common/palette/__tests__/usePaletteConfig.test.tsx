@@ -10,7 +10,7 @@ type TestAppProviderProps = {
   spectrum?: SystemProviderProps['spectrum'];
   frontierColor?: boolean;
 };
-const TestAppProvider: React.FC<TestAppProviderProps> = ({
+const TestAppProvider: React.FC<React.PropsWithChildren<TestAppProviderProps>> = ({
   children,
   frontierColor,
   palette,

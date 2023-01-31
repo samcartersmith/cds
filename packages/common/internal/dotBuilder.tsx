@@ -22,20 +22,22 @@ export const PIN_DIRECTIONS = ['top-start', 'top-end', 'bottom-start', 'bottom-e
 export const SIZES = ['s', 'm', 'l'] as const;
 
 export function dotBuilder(
-  DotCount: ComponentType<DotCountBaseProps>,
-  DotStatusColor: ComponentType<DotBaseProps>,
+  DotCount: ComponentType<React.PropsWithChildren<DotCountBaseProps>>,
+  DotStatusColor: ComponentType<React.PropsWithChildren<DotBaseProps>>,
   DotSymbol: ComponentType<
-    DotSymbolBaseProps & {
-      source?: string;
-    }
+    React.PropsWithChildren<
+      DotSymbolBaseProps & {
+        source?: string;
+      }
+    >
   >,
-  Box: ComponentType<BoxBaseProps>,
-  Avatar: ComponentType<AvatarBaseProps>,
-  TextLabel1: ComponentType<TextBaseProps>,
-  TextLegal: ComponentType<TextBaseProps>,
-  Icon: ComponentType<IconBaseProps & { name: IconName }>,
-  VStack: ComponentType<BoxBaseProps & StackBaseProps>,
-  HStack: ComponentType<BoxBaseProps & StackBaseProps>,
+  Box: ComponentType<React.PropsWithChildren<BoxBaseProps>>,
+  Avatar: ComponentType<React.PropsWithChildren<AvatarBaseProps>>,
+  TextLabel1: ComponentType<React.PropsWithChildren<TextBaseProps>>,
+  TextLegal: ComponentType<React.PropsWithChildren<TextBaseProps>>,
+  Icon: ComponentType<React.PropsWithChildren<IconBaseProps & { name: IconName }>>,
+  VStack: ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>,
+  HStack: ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>,
 ) {
   /** START DOTCOUNT */
   const DotCountBasic = () => {

@@ -8,7 +8,10 @@ import { Box } from '../../layout';
 
 type ModalBodyProps = ScrollViewProps;
 
-export const ModalBody: React.FC<ModalBodyProps> = ({ children, ...props }) => {
+export const ModalBody: React.FC<React.PropsWithChildren<ModalBodyProps>> = ({
+  children,
+  ...props
+}) => {
   const [{ height: contentHeight }, onContentSizeChange] = useContentSize();
   const [{ height: scrollHeight }, onLayout] = useLayout();
   const { hideDividers } = useModalParent();

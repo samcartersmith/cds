@@ -56,18 +56,24 @@ type FlatListProps = {
 };
 
 export type CreateTrayProps = {
-  Tray: React.ComponentType<TrayProps>;
-  Button: React.ComponentType<ButtonBaseProps & SharedProps & { onPress?: () => void }>;
-  SelectOption: React.ComponentType<SelectOptionProps>;
-  FlatList: React.ComponentType<FlatListProps>;
-  FeedCard: React.ComponentType<FeedCardBaseProps>;
-  IconButton: React.ComponentType<IconButtonBaseProps & PressableProps>;
-  Pictogram: React.ComponentType<PictogramProps>;
-  HStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
-  VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
-  Fallback: React.ComponentType<FallbackBaseProps & FallbackRectWidthProps>;
-  TextBody: React.ComponentType<TextProps>;
-  Menu: React.ComponentType<React.PropsWithChildren<Pick<SelectBaseProps, 'onChange' | 'value'>>>;
+  Tray: React.ComponentType<React.PropsWithChildren<TrayProps>>;
+  Button: React.ComponentType<
+    React.PropsWithChildren<ButtonBaseProps & SharedProps & { onPress?: () => void }>
+  >;
+  SelectOption: React.ComponentType<React.PropsWithChildren<SelectOptionProps>>;
+  FlatList: React.ComponentType<React.PropsWithChildren<FlatListProps>>;
+  FeedCard: React.ComponentType<React.PropsWithChildren<FeedCardBaseProps>>;
+  IconButton: React.ComponentType<React.PropsWithChildren<IconButtonBaseProps & PressableProps>>;
+  Pictogram: React.ComponentType<React.PropsWithChildren<PictogramProps>>;
+  HStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
+  VStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
+  Fallback: React.ComponentType<
+    React.PropsWithChildren<FallbackBaseProps & FallbackRectWidthProps>
+  >;
+  TextBody: React.ComponentType<React.PropsWithChildren<TextProps>>;
+  Menu: React.ComponentType<
+    React.PropsWithChildren<React.PropsWithChildren<Pick<SelectBaseProps, 'onChange' | 'value'>>>
+  >;
 };
 
 type DefaultTrayTypes = {

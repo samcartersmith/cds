@@ -56,7 +56,7 @@ export const Example = ({ children, inline, title, titleSpacing, ...props }: Exa
   return content;
 };
 
-const Screen: React.FC = ({ children }) => {
+const Screen: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const palette = usePalette();
 
   return (
@@ -73,7 +73,7 @@ const Screen: React.FC = ({ children }) => {
   );
 };
 
-export const ExampleScreen: React.FC = ({ children }) => {
+export const ExampleScreen: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const rootScale = useRootScale();
   const rootSpectrum = useRootSpectrum();
   const toggleFeatureFlag = useFeatureFlagToggler();

@@ -47,7 +47,9 @@ export const linkInParagraph = css`
 const TYPOGRAPHY_MAP: Record<
   LinkTypography,
   React.ComponentType<
-    DynamicElement<TextProps, HTMLNonHeadingTextTags, true /* as prop is required */>
+    React.PropsWithChildren<
+      DynamicElement<TextProps, HTMLNonHeadingTextTags, true /* as prop is required */>
+    >
   >
 > = {
   body: TextBody,

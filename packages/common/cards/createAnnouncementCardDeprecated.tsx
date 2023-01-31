@@ -12,12 +12,12 @@ import {
 } from '../types';
 
 type CreateAnnouncementCardParams<T> = {
-  Button: React.ComponentType<ButtonBaseProps & { onPress?: T }>;
-  CardHeader: React.ComponentType<CardHeaderBaseProps>;
-  Card: React.ComponentType<CardBaseProps>;
-  CardBody: React.ComponentType<CardBodyBaseProps>;
-  IconButton: React.ComponentType<IconButtonBaseProps & { onPress?: T }>;
-  Pictogram: React.ComponentType<PictogramProps>;
+  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps & { onPress?: T }>>;
+  CardHeader: React.ComponentType<React.PropsWithChildren<CardHeaderBaseProps>>;
+  Card: React.ComponentType<React.PropsWithChildren<CardBaseProps>>;
+  CardBody: React.ComponentType<React.PropsWithChildren<CardBodyBaseProps>>;
+  IconButton: React.ComponentType<React.PropsWithChildren<IconButtonBaseProps & { onPress?: T }>>;
+  Pictogram: React.ComponentType<React.PropsWithChildren<PictogramProps>>;
 };
 
 export type AnnouncementCardProps<T> = {

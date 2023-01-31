@@ -49,25 +49,31 @@ type PopoverTriggerWrapperProps = {
 };
 
 export type CreatePopoverMenuStoriesProps = {
-  PopoverMenu: ComponentType<PopoverMenuBaseProps>;
-  PopoverTrigger: ComponentType<PopoverTriggerProps>;
-  PopoverTriggerWrapper: ComponentType<PopoverTriggerWrapperProps>;
-  VStack: ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
-  HStack: ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
-  SelectOption: ComponentType<SelectOptionBaseProps & LinkableProps>;
-  IconButton: ComponentType<IconButtonBaseProps & SharedProps>;
-  NavigationBar: ComponentType<NavigationBarProps>;
-  NavigationTitle: ComponentType<NavigationTitleProps>;
-  Pictogram: ComponentType<PictogramProps>;
-  CellMedia: ComponentType<CellMediaProps>;
-  FeedCard: ComponentType<FeedCardBaseProps>;
-  Button: ComponentType<ButtonBaseProps>;
-  Divider: ComponentType<DividerBaseProps>;
-  SectionTitle: ComponentType<TypographyProps>;
-  DotStatusColor: ComponentType<DotBaseProps>;
-  AvatarButton: ComponentType<AvatarBaseProps>;
-  Pressable: ComponentType<PressableInternalProps & PressableProps & LinkableProps>;
-  NavigationIcon: ComponentType<NavigationIconProps>;
+  PopoverMenu: ComponentType<React.PropsWithChildren<PopoverMenuBaseProps>>;
+  PopoverTrigger: ComponentType<React.PropsWithChildren<PopoverTriggerProps>>;
+  PopoverTriggerWrapper: ComponentType<React.PropsWithChildren<PopoverTriggerWrapperProps>>;
+  VStack: ComponentType<
+    React.PropsWithChildren<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>
+  >;
+  HStack: ComponentType<
+    React.PropsWithChildren<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>
+  >;
+  SelectOption: ComponentType<React.PropsWithChildren<SelectOptionBaseProps & LinkableProps>>;
+  IconButton: ComponentType<React.PropsWithChildren<IconButtonBaseProps & SharedProps>>;
+  NavigationBar: ComponentType<React.PropsWithChildren<NavigationBarProps>>;
+  NavigationTitle: ComponentType<React.PropsWithChildren<NavigationTitleProps>>;
+  Pictogram: ComponentType<React.PropsWithChildren<PictogramProps>>;
+  CellMedia: ComponentType<React.PropsWithChildren<CellMediaProps>>;
+  FeedCard: ComponentType<React.PropsWithChildren<FeedCardBaseProps>>;
+  Button: ComponentType<React.PropsWithChildren<ButtonBaseProps>>;
+  Divider: ComponentType<React.PropsWithChildren<DividerBaseProps>>;
+  SectionTitle: ComponentType<React.PropsWithChildren<TypographyProps>>;
+  DotStatusColor: ComponentType<React.PropsWithChildren<DotBaseProps>>;
+  AvatarButton: ComponentType<React.PropsWithChildren<AvatarBaseProps>>;
+  Pressable: ComponentType<
+    React.PropsWithChildren<PressableInternalProps & PressableProps & LinkableProps>
+  >;
+  NavigationIcon: ComponentType<React.PropsWithChildren<NavigationIconProps>>;
 };
 
 export const priceOptions = [

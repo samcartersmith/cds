@@ -16,7 +16,7 @@ export default {
   component: Card,
 };
 
-const DarkThemeProvider: React.FC = ({ children }) => (
+const DarkThemeProvider: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
   <ThemeProvider spectrum="dark">{children}</ThemeProvider>
 );
 

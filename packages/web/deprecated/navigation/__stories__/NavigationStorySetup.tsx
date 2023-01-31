@@ -51,7 +51,7 @@ export const DefaultTabs = () => (
   </Tabs>
 );
 
-export const NoTabsNoTitle: React.FC = () => {
+export const NoTabsNoTitle = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showSidebarSections, { toggle: toggleSidebarSections }] = useToggler(false);
 
@@ -143,7 +143,7 @@ export const NoTabsNoTitle: React.FC = () => {
   );
 };
 
-export const TabsNoTitle: React.FC = () => {
+export const TabsNoTitle = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showTabs, { toggle: toggleTabs }] = useToggler(true);
   const [showSidebarSections, { toggle: toggleSidebarSections }] = useToggler(false);
@@ -253,7 +253,7 @@ export const TabsNoTitle: React.FC = () => {
   );
 };
 
-export const TitleNoTabs: React.FC = () => {
+export const TitleNoTabs = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showDisplayTitle, setShowDisplayTitle] = useState(true);
   const [showSidebarSections, { toggle: toggleSidebarSections }] = useToggler(false);
@@ -357,7 +357,7 @@ export const TitleNoTabs: React.FC = () => {
   );
 };
 
-export const TabsAndDisplayTitle: React.FC = () => {
+export const TabsAndDisplayTitle = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showTabs, { toggle: toggleTabs }] = useToggler(true);
   const [showDisplayTitle, { toggle: toggleDisplayTitle }] = useToggler(false);
@@ -478,7 +478,7 @@ export const TabsAndDisplayTitle: React.FC = () => {
   );
 };
 
-export const SidebarCollapsed: React.FC = () => {
+export const SidebarCollapsed = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showTabs, { toggle: toggleTabs }] = useToggler(false);
   const [showDisplayTitle, { toggle: toggleDisplayTitle }] = useToggler(false);
@@ -565,7 +565,7 @@ export const SidebarCollapsed: React.FC = () => {
   );
 };
 
-export const SidebarWithSections: React.FC = () => {
+export const SidebarWithSections = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showTabs, { toggle: toggleTabs }] = useToggler(false);
   const [showDisplayTitle, { toggle: toggleDisplayTitle }] = useToggler(false);

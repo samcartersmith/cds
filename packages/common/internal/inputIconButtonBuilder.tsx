@@ -3,13 +3,15 @@ import React, { ComponentType } from 'react';
 import type { BoxBaseProps, IconButtonBaseProps, TextInputBaseProps } from '../types';
 
 export function inputIconButtonBuilder(
-  TextInput: ComponentType<TextInputBaseProps>,
+  TextInput: ComponentType<React.PropsWithChildren<TextInputBaseProps>>,
   InputIconButton: ComponentType<
-    {
-      disableInheritFocusStyle?: boolean;
-    } & IconButtonBaseProps
+    React.PropsWithChildren<
+      {
+        disableInheritFocusStyle?: boolean;
+      } & IconButtonBaseProps
+    >
   >,
-  Box: ComponentType<BoxBaseProps>,
+  Box: ComponentType<React.PropsWithChildren<BoxBaseProps>>,
 ) {
   const Basic = () => {
     const variants = ['foreground', 'foregroundMuted', 'primary', 'negative', 'positive'] as const;

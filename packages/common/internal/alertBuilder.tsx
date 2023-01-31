@@ -17,9 +17,13 @@ type AlertA11yProps = Pick<
 >;
 
 export type CreateAlertProps = {
-  Alert: React.ComponentType<AlertBaseProps & AlertA11yProps & { disablePortal?: boolean }>;
-  Button: React.ComponentType<ButtonBaseProps & SharedProps & { onPress?: () => void }>;
-  PortalProvider: React.ComponentType;
+  Alert: React.ComponentType<
+    React.PropsWithChildren<AlertBaseProps & AlertA11yProps & { disablePortal?: boolean }>
+  >;
+  Button: React.ComponentType<
+    React.PropsWithChildren<ButtonBaseProps & SharedProps & { onPress?: () => void }>
+  >;
+  PortalProvider: React.ComponentType<React.PropsWithChildren<unknown>>;
 };
 
 export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps) {
@@ -94,7 +98,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
   };
 
   // for unit testing
-  const MockAlert: React.FC<Partial<AlertBaseProps> & AlertA11yProps> = ({
+  const MockAlert = ({
     visible: externalVisible,
     onRequestClose,
     title,
@@ -106,7 +110,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
     testID,
     accessibilityLabelledBy,
     accessibilityLabel,
-  }) => {
+  }: Partial<AlertBaseProps> & AlertA11yProps) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(false);
 
     return (

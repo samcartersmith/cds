@@ -3,7 +3,7 @@ import React from 'react';
 import { GroupBaseProps } from '../../types';
 
 export function cardGroupBuilder<WrapperProps>(
-  CardGroup: React.ComponentType<GroupBaseProps<WrapperProps>>,
+  CardGroup: React.ComponentType<React.PropsWithChildren<GroupBaseProps<WrapperProps>>>,
 ) {
   function buildCardGroup<Examples>(examples: Examples[] | Readonly<Examples[]>) {
     const VerticalGroup = CardGroup;

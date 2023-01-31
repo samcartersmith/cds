@@ -9,15 +9,17 @@ import type {
 } from '../types';
 
 export function inputIconBuilder(
-  TextInput: ComponentType<TextInputBaseProps>,
+  TextInput: ComponentType<React.PropsWithChildren<TextInputBaseProps>>,
   InputIcon: ComponentType<
-    {
-      disableInheritFocusStyle?: boolean;
-      name: IconName;
-      color?: PaletteForeground;
-    } & Omit<IconBaseProps, 'name' | 'size'>
+    React.PropsWithChildren<
+      {
+        disableInheritFocusStyle?: boolean;
+        name: IconName;
+        color?: PaletteForeground;
+      } & Omit<IconBaseProps, 'name' | 'size'>
+    >
   >,
-  Box: ComponentType<BoxBaseProps>,
+  Box: ComponentType<React.PropsWithChildren<BoxBaseProps>>,
 ) {
   const Basic = () => {
     const variants = ['foreground', 'foregroundMuted', 'primary', 'negative', 'positive'] as const;

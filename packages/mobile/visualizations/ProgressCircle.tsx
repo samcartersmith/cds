@@ -24,7 +24,7 @@ import { VisualizationContainer } from './VisualizationContainer';
 type CircleType = React.ComponentClass<CircleProps & SharedProps>;
 const AnimatedCircle = Animated.createAnimatedComponent(Circle as CircleType);
 
-const ProgressCircleText: React.FC<ProgressCircleTextBaseProps> = memo(({ progress, disabled }) => {
+const ProgressCircleText = memo(({ progress, disabled }: ProgressCircleTextBaseProps) => {
   return (
     <Box width="100%" height="100%" position="absolute" justifyContent="center" alignItems="center">
       <Box flexGrow={0} flexShrink={0} alignSelf="center">
@@ -38,8 +38,8 @@ const ProgressCircleText: React.FC<ProgressCircleTextBaseProps> = memo(({ progre
   );
 });
 
-const ProgressCircleInner: React.FC<ProgressInnerCircleBaseProps> = memo(
-  ({ size, progress, color, weight, visuallyDisabled }) => {
+const ProgressCircleInner = memo(
+  ({ size, progress, color, weight, visuallyDisabled }: ProgressInnerCircleBaseProps) => {
     const strokeWidth = useProgressSize(weight);
     const palette = usePalette();
     const circleRef = useRef<typeof AnimatedCircle | undefined>();

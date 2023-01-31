@@ -242,7 +242,7 @@ export const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps)
   );
 });
 
-export const Project: React.FC<ProjectProps> = memo(({ id, children }) => {
+export const Project: React.FC<React.PropsWithChildren<ProjectProps>> = memo(({ id, children }) => {
   const { projectInfo, stats } = useProject(id);
   return (
     <AdopterProjectInfoProvider {...projectInfo}>

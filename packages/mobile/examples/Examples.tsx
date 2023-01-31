@@ -71,7 +71,7 @@ export function formatRoute<T>({
   key,
   options = emptyObject,
 }: {
-  getComponent: () => React.ComponentType<T>;
+  getComponent: () => React.ComponentType<React.PropsWithChildren<T>>;
   key: OriginalKey;
   options?: StackNavigationOptions | undefined;
 }) {

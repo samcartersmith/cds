@@ -13,7 +13,7 @@ export type GroupBaseProps<BoxProps> = {
    */
   direction?: GroupDirection;
   /** Divider Component to include between each item in a group. */
-  divider?: React.ComponentType | null;
+  divider?: React.ComponentType<React.PropsWithChildren<unknown>> | null;
   /** Gap to insert between siblings. */
   gap?: SpacingScale;
   /**
@@ -32,7 +32,7 @@ export type GroupBaseProps<BoxProps> = {
    * ```
    */
   renderItem?: (info: {
-    Wrapper: React.ComponentType<BoxProps>;
+    Wrapper: React.ComponentType<React.PropsWithChildren<BoxProps>>;
     item: React.ReactChild;
     index: number;
     isFirst: boolean;

@@ -9,7 +9,7 @@ import { Scale } from '../../types';
 import { useInteractableHeight } from '../useInteractableHeight';
 
 function createWrapper({ frontierButton, scale }: { frontierButton: boolean; scale: Scale }) {
-  const Wrapper: React.FC = ({ children }) => (
+  const Wrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
     <FeatureFlagProvider frontierButton={frontierButton}>
       <SystemProvider scale={scale}>{children}</SystemProvider>
     </FeatureFlagProvider>

@@ -10,7 +10,7 @@ import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { usePalette } from '../hooks/usePalette';
 import { Box, HStack, VStack } from '../layout';
 
-export const ProgressBar: React.FC<ProgressBaseProps> = memo(
+export const ProgressBar = memo(
   forwardRef(
     (
       {

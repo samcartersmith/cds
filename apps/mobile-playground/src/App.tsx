@@ -18,7 +18,7 @@ if (Platform.OS === 'android') {
   require('intl/locale-data/jsonp/en-US');
 }
 
-const CdsSafeAreaProvider: React.FC = memo(({ children }) => {
+const CdsSafeAreaProvider: React.FC<React.PropsWithChildren<unknown>> = memo(({ children }) => {
   const { background } = usePalette();
   const style = useMemo(() => ({ backgroundColor: background }), [background]);
   return <SafeAreaProvider style={style}>{children}</SafeAreaProvider>;

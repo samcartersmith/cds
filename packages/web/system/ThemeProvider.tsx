@@ -21,7 +21,10 @@ type ThemeManagerProps = {
 
 export type ThemeProviderProps = SystemProviderProps & ThemeManagerProps;
 
-const ThemeManager: React.FC<ThemeManagerProps> = ({ children, display }) => {
+const ThemeManager: React.FC<React.PropsWithChildren<ThemeManagerProps>> = ({
+  children,
+  display,
+}) => {
   const { style, className } = useThemeProviderStyles();
   return (
     <div style={style} className={cx(className, display === 'contents' && displayContents)}>
@@ -30,7 +33,7 @@ const ThemeManager: React.FC<ThemeManagerProps> = ({ children, display }) => {
   );
 };
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = memo(
+export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>> = memo(
   ({ children, display, ...props }) => {
     return (
       <FramerMotionProvider>

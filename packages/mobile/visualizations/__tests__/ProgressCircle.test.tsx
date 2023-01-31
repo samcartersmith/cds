@@ -31,7 +31,7 @@ jest.mock('react-native/Libraries/Animated/Animated', () => {
         }),
       };
     },
-    createAnimatedComponent: (c: React.ComponentType<unknown>) => c,
+    createAnimatedComponent: (c: React.ComponentType<React.PropsWithChildren<unknown>>) => c,
   };
 });
 

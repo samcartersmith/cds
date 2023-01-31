@@ -29,7 +29,7 @@ function getComponentsInfo(data: ComponentData[]) {
   };
 }
 
-export const AdopterComponentsProvider: React.FC<AdopterComponents> = memo(
+export const AdopterComponentsProvider: React.FC<React.PropsWithChildren<AdopterComponents>> = memo(
   ({ cds, presentational, other, children }) => {
     const value = useMemo(
       () => ({

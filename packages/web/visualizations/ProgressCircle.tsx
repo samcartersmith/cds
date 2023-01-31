@@ -25,7 +25,7 @@ const svgClassName = css`
   max-width: 100%;
 `;
 
-const ProgressCircleText: React.FC<ProgressCircleTextBaseProps> = memo(({ progress, disabled }) => {
+const ProgressCircleText = memo(({ progress, disabled }: ProgressCircleTextBaseProps) => {
   return (
     <Box width="100%" height="100%" position="absolute" justifyContent="center" alignItems="center">
       <ProgressTextLabel
@@ -37,8 +37,8 @@ const ProgressCircleText: React.FC<ProgressCircleTextBaseProps> = memo(({ progre
   );
 });
 
-const ProgressCircleInner: React.FC<ProgressInnerCircleBaseProps> = memo(
-  ({ size, progress, color, weight, visuallyDisabled }) => {
+const ProgressCircleInner = memo(
+  ({ size, progress, color, weight, visuallyDisabled }: ProgressInnerCircleBaseProps) => {
     const strokeWidth = useProgressSize(weight);
     const palette = usePalette();
     const circleRef = useRef<SVGCircleElement>(null);

@@ -16,7 +16,7 @@ export type CardProps = {
 } & CardBaseProps &
   DangerouslySetStyle<ViewStyle>;
 
-const OldCard: React.FC<CardProps> = memo(function OldCard({
+const OldCard: React.FC<React.PropsWithChildren<CardProps>> = memo(function OldCard({
   children,
   background = 'background',
   elevation = 1,
@@ -79,7 +79,7 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
   );
 });
 
-export const Card: React.FC<CardProps> = memo(function Card(props) {
+export const Card: React.FC<React.PropsWithChildren<CardProps>> = memo(function Card(props) {
   const isFrontier = useFeatureFlag('frontierCard');
   return isFrontier ? <FrontierCard {...props} /> : <OldCard {...props} />;
 });

@@ -10,10 +10,10 @@ const onWillHideConsole = () => console.log('toast hiding');
 const onDidHideConsole = () => console.log('toast hidden');
 
 export type CreateToastProps = {
-  Toast: React.ComponentType<ToastBaseProps>;
-  Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
-  PortalProvider?: React.ComponentType;
-  Stack: React.ComponentType<BoxBaseProps & StackBaseProps>;
+  Toast: React.ComponentType<React.PropsWithChildren<ToastBaseProps>>;
+  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps & { onPress?: () => void }>>;
+  PortalProvider?: React.ComponentType<React.PropsWithChildren<unknown>>;
+  Stack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
 };
 
 type UseToastProps = {

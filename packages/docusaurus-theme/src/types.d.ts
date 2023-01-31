@@ -352,14 +352,16 @@ declare module '@theme/createCustomTheme' {
     palette?: SpectrumAwarePartialPaletteConfig;
   };
 
-  export type CustomThemeComponentType = React.ComponentType<OriginalThemeProviderProps>;
+  export type CustomThemeComponentType = React.ComponentType<
+    React.PropsWithChildren<OriginalThemeProviderProps>
+  >;
 
   function createCustomTheme(
     palette: SpectrumAwarePartialPaletteConfig,
-  ): React.ComponentType<SpectrumAwareThemeProviderProps>;
+  ): React.ComponentType<React.PropsWithChildren<SpectrumAwareThemeProviderProps>>;
   function createCustomTheme(
     palette: PartialPaletteConfig,
-  ): React.ComponentType<OriginalThemeProviderProps>;
+  ): React.ComponentType<React.PropsWithChildren<OriginalThemeProviderProps>>;
 
   export default function createCustomTheme(
     palette: PartialPaletteConfig | SpectrumAwarePartialPaletteConfig,

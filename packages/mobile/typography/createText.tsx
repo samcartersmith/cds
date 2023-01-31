@@ -53,7 +53,7 @@ export type TextProps = {
   DangerouslySetStyle<TextStyle>;
 
 export const createText = (name: Typography, overrides?: TextProps) => {
-  const TextComponent: React.FC<TextProps> = function TextComponent({
+  const TextComponent: React.FC<React.PropsWithChildren<TextProps>> = function TextComponent({
     children = overrides?.children,
     color = overrides?.color ?? 'foreground',
     align = overrides?.align ?? 'start',

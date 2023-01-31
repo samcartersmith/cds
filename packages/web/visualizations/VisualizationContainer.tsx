@@ -8,25 +8,25 @@ import { Box } from '../layout';
 /*
 Some visualizations need a static width to render. This container can be dynamically sized and it will inject its static calculated dimensions into its child
  */
-export const VisualizationContainer: React.FC<VisualizationContainerBaseProps> = memo(
-  ({ width, height, children }) => {
-    const { observe, width: boxWidth, height: boxHeight } = useDimensions();
-    const dimensions = useVisualizationDimensions({
-      userDefinedWidth: width,
-      userDefinedHeight: height,
-      calculatedWidth: boxWidth,
-      calculatedHeight: boxHeight,
-    });
+export const VisualizationContainer: React.FC<
+  React.PropsWithChildren<VisualizationContainerBaseProps>
+> = memo(({ width, height, children }) => {
+  const { observe, width: boxWidth, height: boxHeight } = useDimensions();
+  const dimensions = useVisualizationDimensions({
+    userDefinedWidth: width,
+    userDefinedHeight: height,
+    calculatedWidth: boxWidth,
+    calculatedHeight: boxHeight,
+  });
 
-    return (
-      <Box
-        ref={dimensions.shouldObserve ? observe : undefined}
-        width={width}
-        height={height}
-        role="application"
-      >
-        {dimensions.width && dimensions.height ? children(dimensions) : null}
-      </Box>
-    );
-  },
-);
+  return (
+    <Box
+      ref={dimensions.shouldObserve ? observe : undefined}
+      width={width}
+      height={height}
+      role="application"
+    >
+      {dimensions.width && dimensions.height ? children(dimensions) : null}
+    </Box>
+  );
+});

@@ -11,8 +11,8 @@ export type PaletteConfigProviderProps = {
   value?: PartialPaletteConfig;
 };
 
-export const PaletteConfigProvider: React.FC<PaletteConfigProviderProps> = memo(
-  ({ value = emptyObject, children }) => {
+export const PaletteConfigProvider: React.FC<React.PropsWithChildren<PaletteConfigProviderProps>> =
+  memo(({ value = emptyObject, children }) => {
     const palette = usePaletteConfig();
     const memoizedPaletteConfig = useMemo(
       () => ({
@@ -31,7 +31,6 @@ export const PaletteConfigProvider: React.FC<PaletteConfigProviderProps> = memo(
         {children}
       </PaletteConfigContext.Provider>
     );
-  },
-);
+  });
 
 PaletteConfigProvider.displayName = 'PaletteProvider';

@@ -6,7 +6,7 @@ import { Box } from '../../layout';
 
 export type ModalBodyProps = Pick<BoxBaseProps, 'flexDirection' | 'alignItems'>;
 
-export const ModalBody: React.FC<ModalBodyProps> = ({
+export const ModalBody: React.FC<React.PropsWithChildren<ModalBodyProps>> = ({
   children,
   flexDirection = 'column',
   ...props

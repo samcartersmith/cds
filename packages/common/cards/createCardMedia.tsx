@@ -10,8 +10,8 @@ import type {
 } from '../types/alpha';
 
 type CreateCardMediaParams = {
-  Illustration: React.ComponentType<CardMediaIllustrationProps>;
-  CardRemoteImage: React.ComponentType<CardRemoteImageProps>;
+  Illustration: React.ComponentType<React.PropsWithChildren<CardMediaIllustrationProps>>;
+  CardRemoteImage: React.ComponentType<React.PropsWithChildren<CardRemoteImageProps>>;
 };
 
 export function createCardMedia({ Illustration, CardRemoteImage }: CreateCardMediaParams) {

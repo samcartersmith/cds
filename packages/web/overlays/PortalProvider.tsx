@@ -79,7 +79,7 @@ export const PortalHost = memo(() => {
   );
 });
 
-export const PortalProvider: React.FC<PortalProviderProps> = memo(
+export const PortalProvider: React.FC<React.PropsWithChildren<PortalProviderProps>> = memo(
   ({ children, toastBottomOffset = 0 }) => {
     const portalState = usePortalState();
 

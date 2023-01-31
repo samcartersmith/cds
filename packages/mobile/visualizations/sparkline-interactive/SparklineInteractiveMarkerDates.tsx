@@ -57,9 +57,11 @@ export const SparklineInteractiveMarkerDates = memo(
   SparklineInteractiveMarkerDatesWithGeneric,
 ) as typeof SparklineInteractiveMarkerDatesWithGeneric;
 
-const SparklineInteractiveMarkerDate: FunctionComponent<{
-  getFormattedDate: (xPosition: number) => string;
-}> = memo(({ getFormattedDate }) => {
+const SparklineInteractiveMarkerDate: FunctionComponent<
+  React.PropsWithChildren<{
+    getFormattedDate: (xPosition: number) => string;
+  }>
+> = memo(({ getFormattedDate }) => {
   const [label, onLayout] = useLayout();
   const x = useMemo(() => {
     return label.x + label.width / 2;

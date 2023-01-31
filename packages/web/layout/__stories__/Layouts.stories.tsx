@@ -20,7 +20,10 @@ import { VStack } from '../VStack';
 
 import { LoremIpsum } from './LoremIpsum';
 
-const Item: React.FC<HStackProps<BoxElement>> = ({ children, ...props }) => (
+const Item: React.FC<React.PropsWithChildren<HStackProps<BoxElement>>> = ({
+  children,
+  ...props
+}) => (
   <HStack
     background="backgroundAlternate"
     justifyContent="center"
@@ -33,11 +36,9 @@ const Item: React.FC<HStackProps<BoxElement>> = ({ children, ...props }) => (
   </HStack>
 );
 
-const Example: React.FC<{ title: string; description?: string | ReactNode }> = ({
-  children,
-  title,
-  description,
-}) => {
+const Example: React.FC<
+  React.PropsWithChildren<{ title: string; description?: string | ReactNode }>
+> = ({ children, title, description }) => {
   return (
     <VStack gap={2}>
       <TextTitle3 as="h3">{title}</TextTitle3>

@@ -8,7 +8,7 @@ import { TextLabel2 } from '../typography/TextLabel2';
 
 export type CardBodyProps = CardBodyBaseProps & CardBodyOrientationProps;
 
-export const CardBody: React.FC<CardBodyProps> = memo(
+export const CardBody: React.FC<React.PropsWithChildren<CardBodyProps>> = memo(
   ({ title, description, media, children, orientation = 'vertical', testID }) => {
     const verticalContent = (
       <VStack testID={testID}>

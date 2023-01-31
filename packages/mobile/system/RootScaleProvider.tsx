@@ -20,14 +20,14 @@ const LocalScaleProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export const RootScaleProvider: React.FC<RootScalePreferenceProviderProps> = memo(
-  ({ children, value }) => {
-    return (
-      <RootScalePreferenceProvider value={value}>
-        <LocalScaleProvider>{children}</LocalScaleProvider>
-      </RootScalePreferenceProvider>
-    );
-  },
-);
+export const RootScaleProvider: React.FC<
+  React.PropsWithChildren<RootScalePreferenceProviderProps>
+> = memo(({ children, value }) => {
+  return (
+    <RootScalePreferenceProvider value={value}>
+      <LocalScaleProvider>{children}</LocalScaleProvider>
+    </RootScalePreferenceProvider>
+  );
+});
 
 RootScaleProvider.displayName = 'RootScaleProvider';

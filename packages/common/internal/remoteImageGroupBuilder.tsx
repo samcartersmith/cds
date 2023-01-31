@@ -11,11 +11,11 @@ export type RemoteImageBuilderTypes = {
 } & RemoteImageBaseProps;
 
 type RemoteImageGroupBuilder = {
-  RemoteImageGroup: ComponentType<RemoteImageGroupBaseProps>;
-  RemoteImage: ComponentType<RemoteImageBuilderTypes>;
-  VStack: ComponentType<BoxBaseProps & StackBaseProps>;
-  TextLabel1: ComponentType<TextBaseProps>;
-  TextBody: ComponentType<TextBaseProps>;
+  RemoteImageGroup: ComponentType<React.PropsWithChildren<RemoteImageGroupBaseProps>>;
+  RemoteImage: ComponentType<React.PropsWithChildren<RemoteImageBuilderTypes>>;
+  VStack: ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
+  TextLabel1: ComponentType<React.PropsWithChildren<TextBaseProps>>;
+  TextBody: ComponentType<React.PropsWithChildren<TextBaseProps>>;
 };
 
 export const remoteImageGroupBuilder = ({

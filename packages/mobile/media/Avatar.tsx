@@ -18,7 +18,7 @@ import { RemoteImage } from './RemoteImage';
 const borderWidth = 2;
 export const coloredFallbackTestID = 'cds-avatar-colored-fallback';
 
-export const Avatar: React.FC<AvatarBaseProps> = memo(
+export const Avatar = memo(
   ({
     src,
     shape = 'circle',
@@ -28,7 +28,7 @@ export const Avatar: React.FC<AvatarBaseProps> = memo(
     dangerouslySetSize,
     colorScheme: colorSchemeProp,
     name,
-  }) => {
+  }: AvatarBaseProps) => {
     const borderRadius = useShapeToBorderRadiusAlias(shape);
     const avatarSize = useAvatarSize(size);
     const imgSrc = useAvatarSrc(src);

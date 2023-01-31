@@ -33,7 +33,7 @@ export type NavigationListItemProps = {
   icon?: NavigationIconName;
   label: string;
   badge?: BadgeValue;
-  as?: React.ComponentType<NavigationListItemLinkProps>;
+  as?: React.ComponentType<React.PropsWithChildren<NavigationListItemLinkProps>>;
   to?: string;
 } & PressableProps;
 

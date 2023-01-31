@@ -6,8 +6,8 @@ import type { BoxBaseProps, ButtonBaseProps, Scale, Spectrum, StackBaseProps } f
 const onPressConsole = () => console.log('pressed');
 
 export type CreateButtonStoriesParams = {
-  Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
-  VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
+  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps & { onPress?: () => void }>>;
+  VStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
   frontier?: boolean;
   spectrum?: Spectrum;
   scale?: Scale;

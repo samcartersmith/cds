@@ -89,25 +89,25 @@ const ProgressBarFloatLabel = memo(
   },
 );
 
-export const ProgressBarWithFloatLabel: React.FC<ProgressBarWithFloatLabelProps> = memo(
-  ({ label, labelPlacement = 'above', progress, disabled, children, testID }) => {
-    const progressBarFloatLabel = (
-      <ProgressBarFloatLabel
-        label={label}
-        progress={progress}
-        disabled={disabled}
-        labelPlacement={labelPlacement}
-      />
-    );
+export const ProgressBarWithFloatLabel: React.FC<
+  React.PropsWithChildren<ProgressBarWithFloatLabelProps>
+> = memo(({ label, labelPlacement = 'above', progress, disabled, children, testID }) => {
+  const progressBarFloatLabel = (
+    <ProgressBarFloatLabel
+      label={label}
+      progress={progress}
+      disabled={disabled}
+      labelPlacement={labelPlacement}
+    />
+  );
 
-    return (
-      <VStack testID={testID}>
-        {labelPlacement === 'above' && progressBarFloatLabel}
+  return (
+    <VStack testID={testID}>
+      {labelPlacement === 'above' && progressBarFloatLabel}
 
-        {children}
+      {children}
 
-        {labelPlacement === 'below' && progressBarFloatLabel}
-      </VStack>
-    );
-  },
-);
+      {labelPlacement === 'below' && progressBarFloatLabel}
+    </VStack>
+  );
+});

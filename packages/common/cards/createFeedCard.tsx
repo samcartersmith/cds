@@ -14,14 +14,14 @@ import type {
 } from '../types/alpha';
 
 type CreateFeedCardParams<OnPressFn> = {
-  Button: React.ComponentType<ButtonBaseProps<OnPressFn>>;
-  Card: React.ComponentType<CardBaseProps<OnPressFn>>;
-  CardBody: React.ComponentType<CardBodyBaseProps<OnPressFn>>;
-  CardHeader: React.ComponentType<CardHeaderProps>;
-  CardFooter: React.ComponentType<CardFooterProps>;
-  HStack: React.ComponentType<CardBoxProps>;
-  IconButton: React.ComponentType<IconButtonBaseProps<OnPressFn>>;
-  LikeButton: React.ComponentType<LikeButtonBaseProps<OnPressFn>>;
+  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps<OnPressFn>>>;
+  Card: React.ComponentType<React.PropsWithChildren<CardBaseProps<OnPressFn>>>;
+  CardBody: React.ComponentType<React.PropsWithChildren<CardBodyBaseProps<OnPressFn>>>;
+  CardHeader: React.ComponentType<React.PropsWithChildren<CardHeaderProps>>;
+  CardFooter: React.ComponentType<React.PropsWithChildren<CardFooterProps>>;
+  HStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
+  IconButton: React.ComponentType<React.PropsWithChildren<IconButtonBaseProps<OnPressFn>>>;
+  LikeButton: React.ComponentType<React.PropsWithChildren<LikeButtonBaseProps<OnPressFn>>>;
   platform: CdsPlatform;
 };
 

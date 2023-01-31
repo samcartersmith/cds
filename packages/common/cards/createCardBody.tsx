@@ -18,12 +18,12 @@ type TextProps = TextBaseProps & {
 } & SharedProps;
 
 type CreateCardBodyParams<OnPressFn> = {
-  HStack: React.ComponentType<CardBoxProps>;
-  VStack: React.ComponentType<CardBoxProps>;
-  TextHeadline: React.ComponentType<TextProps>;
-  TextLabel2: React.ComponentType<TextProps>;
-  CardBodyAction: React.ComponentType<ButtonBaseProps<OnPressFn>>;
-  CardMedia: React.ComponentType<CardMediaProps>;
+  HStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
+  VStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
+  TextHeadline: React.ComponentType<React.PropsWithChildren<TextProps>>;
+  TextLabel2: React.ComponentType<React.PropsWithChildren<TextProps>>;
+  CardBodyAction: React.ComponentType<React.PropsWithChildren<ButtonBaseProps<OnPressFn>>>;
+  CardMedia: React.ComponentType<React.PropsWithChildren<CardMediaProps>>;
   platform: CdsPlatform;
 };
 

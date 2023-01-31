@@ -30,8 +30,8 @@ const toastActionPalette = {
 
 export type ToastProps = ToastBaseProps;
 
-export const Toast: React.FC<ToastProps> = memo(
-  forwardRef<ToastRefBaseProps, React.PropsWithChildren<ToastProps>>(
+export const Toast = memo(
+  forwardRef<ToastRefBaseProps, ToastProps>(
     ({ text, action, onWillHide, onDidHide, bottomOffset, variant, ...rest }, ref) => {
       const [{ opacity, bottom }, animateIn, animateOut] = useToastAnimation();
       const spacing = useSpacingScale();

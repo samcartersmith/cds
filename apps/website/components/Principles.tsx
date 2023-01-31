@@ -19,7 +19,7 @@ export type PrinciplesProps = {
   [key in keyof typeof principlesPictogramMap]: string;
 };
 
-export const Principles: React.FC<PrinciplesProps> = (props: PrinciplesProps) => {
+export const Principles = (props: PrinciplesProps) => {
   const principles = Object.entries(props);
 
   return (

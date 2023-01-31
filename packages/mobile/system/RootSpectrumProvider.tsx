@@ -21,14 +21,14 @@ const LocalSpectrumProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export const RootSpectrumProvider: React.FC<RootSpectrumPreferenceProviderProps> = memo(
-  ({ children, value }) => {
-    return (
-      <RootSpectrumPreferenceProvider value={value}>
-        <LocalSpectrumProvider>{children}</LocalSpectrumProvider>
-      </RootSpectrumPreferenceProvider>
-    );
-  },
-);
+export const RootSpectrumProvider: React.FC<
+  React.PropsWithChildren<RootSpectrumPreferenceProviderProps>
+> = memo(({ children, value }) => {
+  return (
+    <RootSpectrumPreferenceProvider value={value}>
+      <LocalSpectrumProvider>{children}</LocalSpectrumProvider>
+    </RootSpectrumPreferenceProvider>
+  );
+});
 
 RootSpectrumProvider.displayName = 'RootSpectrumProvider';

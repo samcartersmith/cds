@@ -17,17 +17,21 @@ const onPressConsole = () => console.log('onPress');
 
 export function listCellBuilder(
   ListCell: React.ComponentType<
-    ListCellBaseProps & {
-      onPress?: () => void;
-      to?: string;
-      disableMultilineTitle?: boolean;
-    }
+    React.PropsWithChildren<
+      ListCellBaseProps & {
+        onPress?: () => void;
+        to?: string;
+        disableMultilineTitle?: boolean;
+      }
+    >
   >,
-  CellMedia: React.ComponentType<CellMediaProps>,
-  Button: React.ComponentType<ButtonBaseProps>,
-  IconButton: React.ComponentType<IconButtonBaseProps>,
-  Checkbox: React.ComponentType<ControlBaseProps<string> & { accessibilityLabel: string }>,
-  Pictogram: React.ComponentType<{ name: IllustrationPictogramNames }>,
+  CellMedia: React.ComponentType<React.PropsWithChildren<CellMediaProps>>,
+  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps>>,
+  IconButton: React.ComponentType<React.PropsWithChildren<IconButtonBaseProps>>,
+  Checkbox: React.ComponentType<
+    React.PropsWithChildren<ControlBaseProps<string> & { accessibilityLabel: string }>
+  >,
+  Pictogram: React.ComponentType<React.PropsWithChildren<{ name: IllustrationPictogramNames }>>,
 ) {
   const Content = () => {
     return (

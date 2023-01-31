@@ -33,72 +33,73 @@ function featureFlagReducer(state: FeatureFlagsPartial, action: FeatureFlagDispa
   }
 }
 
-export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
-  ({
-    children,
-    frontier: frontierProp,
-    frontierTypography: frontierTypographyProp,
-    frontierButton: frontierButtonProp,
-    frontierColor: frontierColorProp,
-    frontierCard: frontierCardProp,
-    frontierSparkline: frontierSparklineProp,
-    flexGap: flexGapProp,
-    fabric: fabricProp,
-    onChange,
-  }) => {
-    const {
-      frontier: frontierContext,
-      frontierTypography: frontierTypographyContext,
-      frontierButton: frontierButtonContext,
-      frontierColor: frontierColorContext,
-      frontierCard: frontierCardContext,
-      frontierSparkline: frontierSparklineContext,
-      flexGap: flexGapContext,
-      fabric: fabricContext,
-    } = useFeatureFlags();
+export const FeatureFlagProvider: React.FC<React.PropsWithChildren<FeatureFlagProviderProps>> =
+  memo(
+    ({
+      children,
+      frontier: frontierProp,
+      frontierTypography: frontierTypographyProp,
+      frontierButton: frontierButtonProp,
+      frontierColor: frontierColorProp,
+      frontierCard: frontierCardProp,
+      frontierSparkline: frontierSparklineProp,
+      flexGap: flexGapProp,
+      fabric: fabricProp,
+      onChange,
+    }) => {
+      const {
+        frontier: frontierContext,
+        frontierTypography: frontierTypographyContext,
+        frontierButton: frontierButtonContext,
+        frontierColor: frontierColorContext,
+        frontierCard: frontierCardContext,
+        frontierSparkline: frontierSparklineContext,
+        flexGap: flexGapContext,
+        fabric: fabricContext,
+      } = useFeatureFlags();
 
-    const [featureFlagsState, dispatch] = useReducer(featureFlagReducer, emptyObject);
+      const [featureFlagsState, dispatch] = useReducer(featureFlagReducer, emptyObject);
 
-    const contextValue = useMemo(() => {
-      const { frontier, ...otherFeatureFlagsState } = featureFlagsState;
-      const hasFrontier = frontier ?? frontierProp ?? frontierContext;
-      return {
-        frontier: hasFrontier,
-        frontierTypography: frontierTypographyProp ?? (hasFrontier || frontierTypographyContext),
-        frontierButton: frontierButtonProp ?? (hasFrontier || frontierButtonContext),
-        frontierColor: frontierColorProp ?? (hasFrontier || frontierColorContext),
-        frontierCard: frontierCardProp ?? (hasFrontier || frontierCardContext),
-        frontierSparkline: frontierSparklineProp ?? (hasFrontier || frontierSparklineContext),
-        flexGap: flexGapProp ?? flexGapContext,
-        fabric: fabricProp ?? fabricContext,
-        ...otherFeatureFlagsState,
-      };
-    }, [
-      fabricContext,
-      fabricProp,
-      featureFlagsState,
-      flexGapContext,
-      flexGapProp,
-      frontierButtonContext,
-      frontierButtonProp,
-      frontierCardContext,
-      frontierCardProp,
-      frontierColorContext,
-      frontierColorProp,
-      frontierContext,
-      frontierProp,
-      frontierSparklineContext,
-      frontierSparklineProp,
-      frontierTypographyContext,
-      frontierTypographyProp,
-    ]);
+      const contextValue = useMemo(() => {
+        const { frontier, ...otherFeatureFlagsState } = featureFlagsState;
+        const hasFrontier = frontier ?? frontierProp ?? frontierContext;
+        return {
+          frontier: hasFrontier,
+          frontierTypography: frontierTypographyProp ?? (hasFrontier || frontierTypographyContext),
+          frontierButton: frontierButtonProp ?? (hasFrontier || frontierButtonContext),
+          frontierColor: frontierColorProp ?? (hasFrontier || frontierColorContext),
+          frontierCard: frontierCardProp ?? (hasFrontier || frontierCardContext),
+          frontierSparkline: frontierSparklineProp ?? (hasFrontier || frontierSparklineContext),
+          flexGap: flexGapProp ?? flexGapContext,
+          fabric: fabricProp ?? fabricContext,
+          ...otherFeatureFlagsState,
+        };
+      }, [
+        fabricContext,
+        fabricProp,
+        featureFlagsState,
+        flexGapContext,
+        flexGapProp,
+        frontierButtonContext,
+        frontierButtonProp,
+        frontierCardContext,
+        frontierCardProp,
+        frontierColorContext,
+        frontierColorProp,
+        frontierContext,
+        frontierProp,
+        frontierSparklineContext,
+        frontierSparklineProp,
+        frontierTypographyContext,
+        frontierTypographyProp,
+      ]);
 
-    const dispatcherValue = useMemo(() => ({ onChange, dispatch }), [onChange]);
+      const dispatcherValue = useMemo(() => ({ onChange, dispatch }), [onChange]);
 
-    return (
-      <FeatureFlagDispatcherContext.Provider value={dispatcherValue}>
-        <FeatureFlagContext.Provider value={contextValue}>{children}</FeatureFlagContext.Provider>
-      </FeatureFlagDispatcherContext.Provider>
-    );
-  },
-);
+      return (
+        <FeatureFlagDispatcherContext.Provider value={dispatcherValue}>
+          <FeatureFlagContext.Provider value={contextValue}>{children}</FeatureFlagContext.Provider>
+        </FeatureFlagDispatcherContext.Provider>
+      );
+    },
+  );

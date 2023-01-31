@@ -7,12 +7,12 @@ import { Box } from '../../layout';
 
 export type ModalFooterProps = Pick<ButtonGroupProps, 'vertical'> & ModalFooterBaseProps;
 
-export const ModalFooter: React.FC<ModalFooterProps> = ({
+export const ModalFooter = ({
   primaryAction,
   secondaryAction,
   vertical,
   testID,
-}) => {
+}: ModalFooterProps) => {
   const { hideDividers = false } = useModalParent();
   const actions = [secondaryAction, primaryAction].filter(Boolean);
 

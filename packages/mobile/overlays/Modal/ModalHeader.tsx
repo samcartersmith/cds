@@ -12,7 +12,10 @@ type ModalHeaderProps = {
   onBackButtonPress?: (event: GestureResponderEvent) => void;
 } & ModalHeaderBaseProps;
 
-export const ModalHeader: React.FC<ModalHeaderProps> = ({ title, onBackButtonPress }) => {
+export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = ({
+  title,
+  onBackButtonPress,
+}) => {
   const { onRequestClose, hideCloseButton, hideDividers } = useModalParent();
 
   return (

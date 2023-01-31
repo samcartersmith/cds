@@ -32,23 +32,27 @@ const pinnedSharedWrapperProps = {
 } as const;
 
 export type CreateCardProps = {
-  Box: React.ComponentType<BoxBaseProps>;
-  Card: React.ComponentType<CardBaseProps & BoxBaseProps>;
-  CardBody?: React.ComponentType<CardBodyBaseProps>;
-  SpotSquare?: React.ComponentType<SpotSquareProps & BoxBaseProps>;
-  FeedCard?: React.ComponentType<FeedCardBaseProps>;
-  IconButton: React.ComponentType<IconButtonBaseProps>;
-  VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
-  LoremIpsum: React.ComponentType<{ title: string; color?: PaletteForeground; concise?: boolean }>;
-  Button: React.ComponentType<ButtonBaseProps>;
-  ListCell: React.ComponentType<
-    ListCellBaseProps & {
-      onPress?: () => void;
-      to?: string;
-    }
+  Box: React.ComponentType<React.PropsWithChildren<BoxBaseProps>>;
+  Card: React.ComponentType<React.PropsWithChildren<CardBaseProps & BoxBaseProps>>;
+  CardBody?: React.ComponentType<React.PropsWithChildren<CardBodyBaseProps>>;
+  SpotSquare?: React.ComponentType<React.PropsWithChildren<SpotSquareProps & BoxBaseProps>>;
+  FeedCard?: React.ComponentType<React.PropsWithChildren<FeedCardBaseProps>>;
+  IconButton: React.ComponentType<React.PropsWithChildren<IconButtonBaseProps>>;
+  VStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
+  LoremIpsum: React.ComponentType<
+    React.PropsWithChildren<{ title: string; color?: PaletteForeground; concise?: boolean }>
   >;
-  CellMedia: React.ComponentType<CellMediaProps>;
-  ThemeProvider: React.ComponentType;
+  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps>>;
+  ListCell: React.ComponentType<
+    React.PropsWithChildren<
+      ListCellBaseProps & {
+        onPress?: () => void;
+        to?: string;
+      }
+    >
+  >;
+  CellMedia: React.ComponentType<React.PropsWithChildren<CellMediaProps>>;
+  ThemeProvider: React.ComponentType<React.PropsWithChildren<unknown>>;
 };
 
 export function cardBuilder({

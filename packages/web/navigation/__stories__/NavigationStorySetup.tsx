@@ -136,7 +136,7 @@ export function NavigationBarFullExample({
   );
 }
 
-export const NavigationBarTitle: React.FC = () => {
+export const NavigationBarTitle = () => {
   return (
     <NavigationBar
       end={
@@ -217,7 +217,7 @@ const testOverrideClass = css`
   }
 `;
 
-export const NavLinkExample: React.FC = () => {
+export const NavLinkExample = () => {
   const [activeItem, setActiveItem] = useState('assets');
   const getProps = (name: string) => ({
     onPress: () => setActiveItem(name),

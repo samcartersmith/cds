@@ -45,7 +45,10 @@ export type EventHandlerProviderProps = {
   config?: EventHandlerConfig;
 };
 
-export const EventHandlerProvider: React.FC<EventHandlerProviderProps> = ({ config, children }) => {
+export const EventHandlerProvider: React.FC<React.PropsWithChildren<EventHandlerProviderProps>> = ({
+  config,
+  children,
+}) => {
   const configuration = useMemo(() => config ?? DEFAULT_EVENT_HANDLER_CONTEXT, [config]);
   return (
     <EventHandlerContext.Provider value={configuration}>{children}</EventHandlerContext.Provider>

@@ -23,7 +23,7 @@ export const NavigationContext = createContext<{
   setSidebarLayout: noop,
 });
 
-export const NavigationProvider: React.FC<NavigationProviderProps> = memo(
+export const NavigationProvider: React.FC<React.PropsWithChildren<NavigationProviderProps>> = memo(
   ({ variant, children }) => {
     const [sidebarLayout, setSidebarLayout] = useState<SidebarLayout>(variant);
     const [

@@ -31,12 +31,7 @@ const visibleClassName = css`
   }
 `;
 
-export const Counter: React.FC<CounterBaseProps> = ({
-  startNum,
-  endNum,
-  renderNum,
-  durationInMillis,
-}) => {
+export const Counter = ({ startNum, endNum, renderNum, durationInMillis }: CounterBaseProps) => {
   const count = useCounter({ startNum, endNum, durationInMillis });
 
   const renderFunction = useMemo(() => {

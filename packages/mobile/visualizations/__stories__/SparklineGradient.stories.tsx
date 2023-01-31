@@ -24,13 +24,13 @@ type SparklineGradientExampleProps = {
   fill?: boolean;
 };
 
-const SparklineGradientExample: React.FC<SparklineGradientExampleProps> = ({
+const SparklineGradientExample = ({
   imageUrl,
   name,
   symbol,
   color,
   fill,
-}) => {
+}: SparklineGradientExampleProps) => {
   const spacing = useSpacingScale();
   const chartHorizontalGutter = spacing[gutter];
   const width = Dimensions.get('screen').width - chartHorizontalGutter * 2;
@@ -64,7 +64,9 @@ type SparklineCompactExampleProps = {
   fill?: boolean;
 };
 
-const SparklineScalingExample: React.FC<SparklineCompactExampleProps> = (props) => {
+const SparklineScalingExample: React.FC<React.PropsWithChildren<SparklineCompactExampleProps>> = (
+  props,
+) => {
   const spacing = useSpacingScale();
   const chartHorizontalGutter = spacing[gutter];
   const width = Dimensions.get('screen').width - chartHorizontalGutter * 2;

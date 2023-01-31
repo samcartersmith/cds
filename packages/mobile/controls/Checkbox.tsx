@@ -11,8 +11,15 @@ import { Control, ControlIconProps, ControlProps } from './Control';
 
 export type CheckboxProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;
 
-const CheckboxIcon: React.FC<ControlIconProps> = memo(
-  ({ pressed, checked, disabled, animatedScaleValue, animatedOpacityValue, testID }) => {
+const CheckboxIcon = memo(
+  ({
+    pressed,
+    checked,
+    disabled,
+    animatedScaleValue,
+    animatedOpacityValue,
+    testID,
+  }: ControlIconProps) => {
     const cdsScale = useScale();
     const { checkboxSize } = scaleStyles[cdsScale].control;
     const backgroundColor = useMemo(() => {

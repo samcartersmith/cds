@@ -13,12 +13,12 @@ jest.mock('react-native/Libraries/Components/StatusBar/StatusBar', () => ({
   setTranslucent: jest.fn(),
 }));
 
-const MockDarkMode: React.FC = ({ children }) => (
+const MockDarkMode: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
   <ThemeProvider name="mock-dark-mode" spectrum="dark">
     {children}
   </ThemeProvider>
 );
-const MockCustomPalette: React.FC = ({ children }) => (
+const MockCustomPalette: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
   <ThemeProvider name="mock-custom-palette" palette={{ background: 'orange60' }}>
     {children}
   </ThemeProvider>
