@@ -54,7 +54,7 @@ describe('Changelog', () => {
 
     expect(result).toEqual({
       filePath: './CHANGELOG.md',
-      content: '',
+      content: '<!-- template-start -->',
     });
     expect(writePrettyFile).toHaveBeenCalled();
   });

@@ -183,10 +183,9 @@ export class Manifest<
         }
 
         this.previousItems.delete(prevNode.id); // remove old from manifest so we don't have duplicates
+      } else {
+        this.additions.add(item);
       }
-    } else {
-      // New items
-      this.additions.add(item);
     }
   }
 

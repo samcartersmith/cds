@@ -129,7 +129,7 @@ export class Changelog {
         previousContent = await fs.promises.readFile(filePath, 'utf-8');
       } else {
         logInfo('Creating changelog');
-        previousContent = ``;
+        previousContent = `${TEMPLATE_START}`;
         await writePrettyFile(filePath, previousContent);
       }
 

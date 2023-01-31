@@ -1,16 +1,18 @@
+import { ComponentSet } from '../../tools/ComponentSet';
+import { ComponentSetChild, Primitive } from '../../tools/ComponentSetChild';
+import { Manifest, ManifestShape } from '../../tools/Manifest';
+
 export type FontFormat = 'eot' | 'woff' | 'woff2' | 'svg' | 'ttf';
 
 export type FontGlyphData = {
   contents: string;
   srcPath: string;
   metadata: {
-    path: string;
+    file: string;
     name: string;
     unicode: string[];
     renamed: boolean;
-    width: number;
-    height: number;
-    color: string;
+    lastUpdated: string;
   };
 };
 
@@ -31,7 +33,7 @@ export type FontConfig = {
 
 export type FontProcessorCallbackFunction = (
   err: unknown,
-  metadata?: { file: string; name: string; unicode: string[]; renamed: boolean },
+  metadata?: FontGlyphData['metadata'],
 ) => void;
 
 export type FontProcessor = (filePath: string, callbackFn: FontProcessorCallbackFunction) => void;
@@ -41,4 +43,25 @@ export type GeneratedFont = {
 } & {
   hash: string;
   glyphsData: FontGlyphData[];
+  name: string;
+};
+
+type ComponentSetChildShape = {
+  metadata: { unicode: string };
+  props?: Record<string, Primitive>;
+};
+
+export type FontProcessorComponentSetChild = ComponentSetChild<ComponentSetChildShape>;
+
+export type FontProcessorManifest = ManifestShape<
+  ComponentSet<ComponentSetChildShape>,
+  { lastUnicode: number }
+>;
+
+export type FontProcessorParams<
+  T extends FontProcessorManifest,
+  K extends FontProcessorComponentSetChild,
+> = {
+  manifest: Manifest<T>;
+  svgFileMap: Map<string, K>;
 };

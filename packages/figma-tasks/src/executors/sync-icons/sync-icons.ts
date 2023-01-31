@@ -19,6 +19,7 @@ import { FontConfig } from '../../helpers/font/types';
 import { getOutputDirectories } from '../../helpers/getOutputDirectories';
 import { getRelativePathForImport } from '../../helpers/getRelativePathForImport';
 import { getSvgMarkup } from '../../helpers/image/getSvgMarkup';
+import { CodegenItemConfig } from '../../helpers/types';
 import { ComponentSet } from '../../tools/ComponentSet';
 import { ComponentSetChild } from '../../tools/ComponentSetChild';
 import { Manifest, ManifestShape, ManifestTaskOptions } from '../../tools/Manifest';
@@ -43,8 +44,6 @@ export type SyncIconsTaskOptions = {
   generatedFontName: string;
   /** Formats of font files to generate. */
   generatedFontFormats: FontConfig[];
-  /** File to output generated glyphMap to */
-  generatedGlyphMapFile?: string;
 } & ManifestTaskOptions;
 
 /**
@@ -58,7 +57,15 @@ function getSvgName({ componentSet, props }: IconComponentSetChild) {
   }
   /** Nav icons have active prop */
   const activeLabel = props.active ? 'active' : 'inactive';
-  return `${componentSet.type}-${componentSet.name}-${activeLabel}-${props.size}`;
+  return `${componentSet.type}-${componentSet.name}-${props.size}-${activeLabel}`;
+}
+
+function getOutputKey({ props }: IconComponentSetChild) {
+  if (props.active === undefined) {
+    return 'svg';
+  }
+
+  return props.active ? 'svgActive' : 'svgInactive';
 }
 
 export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (task) => {
@@ -94,6 +101,8 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
   function generateSvg(svgDir: string) {
     return async (item: IconComponentSetChild) => {
       const imageName = getSvgName(item);
+      const outputKey = getOutputKey(item);
+
       const svgFilePath = path.join(svgDir, `${imageName}.svg`);
 
       svgFileMap.set(svgFilePath, item);
@@ -107,10 +116,12 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
         oldManifest.unicodeMap[imageName as keyof typeof oldManifest.unicodeMap];
       item.setMetadata({ unicode });
 
-      item.componentSet.addToOutputs({ svgLight: svgFilePath });
+      item.componentSet.addToOutputs({ [outputKey]: svgFilePath });
       return item;
     };
   }
+
+  const internalTypescriptItems: CodegenItemConfig[] = [];
 
   await Promise.all(
     iconEntries.map(async ([iconType, iconComponentSets]) => {
@@ -143,7 +154,23 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
         },
       };
 
-      const websiteSheetData = {
+      const internalTypescriptData = {
+        exportName: `${groupTypeInPascalCase}NameInternal`, // UiIconName, NavIconName
+        get dest() {
+          return `${typescriptDir}/${this.exportName}.ts`;
+        },
+        get content() {
+          return typescriptTypesTemplate`
+            ${codegenHeader}
+          
+            export type ${this.exportName} = ${componentSetChildren.map(getSvgName)};
+          `;
+        },
+      };
+
+      internalTypescriptItems.push(internalTypescriptData);
+
+      const namesData = {
         dest: `${dataDir}/names.ts`,
         get content() {
           const destDir = path.dirname(this.dest);
@@ -158,14 +185,16 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
              * An array of all ${groupTypeInPascalCase} icons.
              * This is being used to display a sheet of all ${groupTypeInPascalCase} illustration on the CDS website.
              */
-            const names: ${typescriptData.exportName}[] = ${componentSetChildren.map(getSvgName)};
+            const names: ${typescriptData.exportName}[] = ${iconComponentSets.map(
+            (item) => item.name,
+          )};
 
             export default names;
           `;
         },
       };
 
-      const websiteSearchData = {
+      const descriptionMapData = {
         dest: `${dataDir}/descriptionMap.ts`,
         get content() {
           return tokensTemplate`
@@ -186,18 +215,16 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
       };
 
       await Promise.all([
-        writePrettyFile(websiteSheetData.dest, websiteSheetData.content),
-        writePrettyFile(websiteSearchData.dest, websiteSearchData.content),
+        writePrettyFile(namesData.dest, namesData.content),
+        writePrettyFile(descriptionMapData.dest, descriptionMapData.content),
         writePrettyFile(typescriptData.dest, typescriptData.content),
+        writePrettyFile(internalTypescriptData.dest, internalTypescriptData.content),
       ]);
     }),
   );
 
   const fontProcessor = getFontProcessor({
-    // TODO: remove oldManifest fallback after we remove old manifest.json in codegen
-    lastUnicode: manifest.metadata?.lastUnicode ?? oldManifest.lastUnicode,
-    /** Update the lastUnicode value in icon's manifest.json on each increment */
-    onUnicodeUpdate: (unicode) => manifest.setMetadata({ lastUnicode: unicode }),
+    manifest,
     svgFileMap,
   });
 
@@ -210,7 +237,9 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
     sourceSvgsGlob: `${generatedDirectory}/**/svg/*.svg`,
     generatedFontName: task.options.generatedFontName,
     generatedFontFormats: task.options.generatedFontFormats,
-    generatedGlyphMapFile: task.options.generatedGlyphMapFile,
+    generatedGlyphMapFile: `${generatedDirectory}/font/data/glyphMap.ts`,
+    glyphMapTypes: internalTypescriptItems,
+    codegenHeader,
     processor: fontProcessor,
   });
 

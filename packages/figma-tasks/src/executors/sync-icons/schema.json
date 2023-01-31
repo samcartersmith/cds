@@ -39,10 +39,6 @@
                 "description": "Format of the font file to generate.",
                 "enum": ["eot", "woff", "woff2", "svg", "ttf"]
               },
-              "generatedGlyphMapFile": {
-                "type": "string",
-                "description": "File to output generated glyphMap to."
-              },
               "generatedFontDirectory": {
                 "type": "string",
                 "description": "Directory to output generated font to."

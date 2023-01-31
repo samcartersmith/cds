@@ -15,6 +15,7 @@ import { getOutputDirectories } from '../../helpers/getOutputDirectories';
 import { getRelativePathForImport } from '../../helpers/getRelativePathForImport';
 import { createPngContent } from '../../helpers/image/createPngContent';
 import { createSvgContent } from '../../helpers/image/createSvgContent';
+import { sortByLastUpdated } from '../../helpers/sortByLastUpdated';
 import { Component } from '../../tools/Component';
 import { Manifest, ManifestShape, ManifestTaskOptions } from '../../tools/Manifest';
 
@@ -24,13 +25,6 @@ export type SyncIllustrationsTaskOptions = {
 } & ManifestTaskOptions;
 
 export type IllustrationsManifestShape = ManifestShape<Component>;
-
-function sortByLastUpdated(prev: Component, next: Component) {
-  const prevDate = new Date(prev.lastUpdated).valueOf();
-  const nextDate = new Date(next.lastUpdated).valueOf();
-
-  return prevDate - nextDate;
-}
 
 export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
   'sync-illustrations',

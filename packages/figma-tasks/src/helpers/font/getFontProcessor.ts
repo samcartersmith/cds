@@ -1,29 +1,33 @@
 import path from 'node:path';
 
-import { ComponentSetChild } from '../../tools/ComponentSetChild';
-
 import { convertCodepoint } from './convertCodepoint';
-import { FontProcessorCallbackFunction } from './types';
+import { oldManifest } from './oldManifest';
+import {
+  FontProcessorCallbackFunction,
+  FontProcessorComponentSetChild,
+  FontProcessorManifest,
+  FontProcessorParams,
+} from './types';
 
-type FontProcessorParams<T extends ComponentSetChild> = {
-  lastUnicode: number;
-  onUnicodeUpdate: (unicode: number) => void;
-  svgFileMap: Map<string, T>;
-};
-
-export function getFontProcessor<T extends ComponentSetChild>({
-  lastUnicode,
-  onUnicodeUpdate,
-  svgFileMap,
-}: FontProcessorParams<T>) {
+export function getFontProcessor<
+  T extends FontProcessorManifest,
+  K extends FontProcessorComponentSetChild,
+>({ manifest, svgFileMap }: FontProcessorParams<T, K>) {
   return function fontProcessor(file: string, callbackFn: FontProcessorCallbackFunction) {
     const item = svgFileMap.get(file);
+    const { name: imageName } = path.parse(file);
     if (item) {
-      let unicodeCodePoint = item.metadata?.unicode as string | undefined;
+      // TODO: remove oldManifest fallback after we run first sync
+      let unicodeCodePoint =
+        item.metadata?.unicode ??
+        oldManifest.unicodeMap[imageName as keyof typeof oldManifest.unicodeMap];
+
+      let { lastUnicode } = manifest.metadata;
 
       if (!unicodeCodePoint) {
         /** Decimal representation of a unicode code point */
-        const decimalValue = lastUnicode + 1;
+        lastUnicode += 1;
+        manifest.setMetadata({ lastUnicode });
         /**
          * ^^^^^^^ tldr ^^^^^^^
          * We use decimal format in our manifest to ensure we increment upwards within the custom code point range.
@@ -35,7 +39,7 @@ export function getFontProcessor<T extends ComponentSetChild>({
          */
 
         /** Convert the decimal value into a hexadecimal value, which is required in the unicode character encoding system. */
-        const hexadecimal = convertCodepoint.decimalToHexadecimal(decimalValue);
+        const hexadecimal = convertCodepoint.decimalToHexadecimal(lastUnicode);
         /**
          * ^^^^^^^ tldr ^^^^^^^
          * hexadecimal is a positional numeral system that represents numbers using a base of 16.
@@ -52,7 +56,6 @@ export function getFontProcessor<T extends ComponentSetChild>({
         /** Once in hexadecimal format we can safely update our manifest so lastUnicode decimal value
          * can be used/incremented by the next icon
          */
-        onUnicodeUpdate(decimalValue);
       }
 
       if (unicodeCodePoint) {
@@ -63,6 +66,12 @@ export function getFontProcessor<T extends ComponentSetChild>({
           name: path.parse(file).name,
           unicode: [unicodeCodePoint],
           renamed: false,
+          /**
+           * `lastUpdated` is custom metadata property we have added onto the default webfont
+           * ones so we can sort the generated glyphMap by lastUpdated when displaying
+           * in visreg environments
+           */
+          lastUpdated: item.componentSet.lastUpdated,
         });
       }
     }

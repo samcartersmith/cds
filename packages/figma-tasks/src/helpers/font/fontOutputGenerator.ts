@@ -3,24 +3,24 @@ import path from 'node:path';
 import { Task } from '@cbhq/mono-tasks';
 import { existsOrCreateDir, getAbsolutePath, writePrettyFile } from '@cbhq/script-utils';
 
+import { generateGlyphMap, GenerateGlyphMapParams } from './generateGlyphMap';
 import { getFontNameAndHash } from './getFontNameAndHash';
-import { getGlyphMapContent } from './getGlyphMapContent';
 import { FontConfig, GeneratedFont } from './types';
 
-type FontOutputGeneratorParams = {
+export type FontOutputGeneratorParams = {
   task: Task;
   /** The font family name to use in generated fonts. */
   generatedFontName: string;
   generatedFont: GeneratedFont;
-  /** File to output generated glyphMap to */
-  generatedGlyphMapFile?: string;
-};
+} & Omit<GenerateGlyphMapParams, 'glyphsData'>;
 
 export function fontOutputGenerator({
   task,
   generatedFontName,
   generatedFont,
   generatedGlyphMapFile: fallbackGeneratedGlyphMapFile,
+  glyphMapTypes,
+  codegenHeader,
 }: FontOutputGeneratorParams) {
   return async function generateFontOutput({
     generatedFontFormat,
@@ -47,12 +47,14 @@ export function fontOutputGenerator({
       await existsOrCreateDir(fontFilePath);
       promises.push(fs.promises.writeFile(fontFilePath, fontContents));
 
-      if (generatedGlyphMapFile) {
-        const glyphMapAbsolutePath = getAbsolutePath(task, generatedGlyphMapFile);
-        const glyphMapContent = getGlyphMapContent(generatedFont.glyphsData);
+      const glyphMapPromise = generateGlyphMap({
+        generatedGlyphMapFile,
+        glyphsData: generatedFont.glyphsData,
+        glyphMapTypes,
+        codegenHeader,
+      });
 
-        promises.push(writePrettyFile(glyphMapAbsolutePath, glyphMapContent));
-      }
+      promises.push(glyphMapPromise);
 
       if (generatedCssDirectory) {
         const cssOutputDir = getAbsolutePath(task, generatedCssDirectory);

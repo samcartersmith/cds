@@ -5,7 +5,7 @@ import { getSize } from '../helpers/getSize';
 
 import type { ComponentSet } from './ComponentSet';
 
-type Primitive = string | number | boolean;
+export type Primitive = string | number | boolean;
 
 export type ComponentSetChildShape = {
   props?: Record<string, Primitive>;
@@ -76,6 +76,10 @@ export class ComponentSetChild<ChildShape extends ComponentSetChildShape = Compo
         this.props[prop] = value;
       }
     }
+  }
+
+  public get lastUpdated() {
+    return this.componentSet.lastUpdated;
   }
 
   public get metadata() {

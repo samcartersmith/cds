@@ -1,18 +1,12 @@
 // @ts-expect-error No types for this package
 import webfont from 'webfont';
-import { Task } from '@cbhq/mono-tasks';
 
-import { fontOutputGenerator } from './fontOutputGenerator';
+import { fontOutputGenerator, FontOutputGeneratorParams } from './fontOutputGenerator';
 import { FontConfig, FontGlyphData, FontProcessor, GeneratedFont } from './types';
 
 type GenerateFontParams = {
-  task: Task;
-  /** The font family name to use in generated fonts. */
-  generatedFontName: string;
   /** Formats of font files to generate. */
   generatedFontFormats: FontConfig[];
-  /** File to output generated glyphMap to */
-  generatedGlyphMapFile?: string;
   /** Glob of svg files to generate font from. */
   sourceSvgsGlob: string;
   /**
@@ -25,7 +19,7 @@ type GenerateFontParams = {
    * Callback function to return
    */
   onComplete?: (data: FontGlyphData[]) => void;
-};
+} & Omit<FontOutputGeneratorParams, 'generatedFont'>;
 
 export async function generateFont({
   task,
@@ -33,6 +27,8 @@ export async function generateFont({
   generatedFontName,
   generatedFontFormats,
   generatedGlyphMapFile,
+  glyphMapTypes,
+  codegenHeader,
   processor,
 }: GenerateFontParams) {
   const formats = generatedFontFormats.map((item) => item.generatedFontFormat);
@@ -61,6 +57,8 @@ export async function generateFont({
     generatedFont,
     generatedFontName,
     generatedGlyphMapFile,
+    glyphMapTypes,
+    codegenHeader,
   });
   await Promise.all(generatedFontFormats.map(generateOutput));
 }
