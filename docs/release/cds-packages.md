@@ -1,6 +1,6 @@
 ## Release CDS Packages (@cbhq/cds-web, @cbhq/cds-mobile, etc.)
 
-We release our packages to consumers through Coinbase's internal NPM registry (Verdaccio - https://publish-npm.cbhq.net/). Each package includes source TypeScript files for all typings information, and Babel transpiled ES modules. To split up the CSS code, we wrote a custom Babel plugin to take Linaria transpiled styles and put them into `.css` files corresponding to the `.js` files.
+We release our packages to consumers through Coinbase's internal NPM registry (Artifactory - https://publish-npm.cbhq.net/). Each package includes source TypeScript files for all typings information, and Babel transpiled ES modules. To split up the CSS code, we wrote a custom Babel plugin to take Linaria transpiled styles and put them into `.css` files corresponding to the `.js` files.
 
 The following sections describe how to push new package releases to our consumers through Verdaccio.
 
