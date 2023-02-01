@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.0.3
+
+#### 📘 Misc
+
+- Fixed issue with not including certain files in the package.
 
 #### 📘 Misc
 
