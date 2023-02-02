@@ -47,6 +47,26 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
     );
   };
 
+  const LongTitleAlert = ({ singleAction }: { singleAction?: boolean }) => {
+    const [visible, { toggleOn, toggleOff }] = useToggler();
+
+    return (
+      <>
+        <Button onPress={toggleOn}>Show Alert</Button>
+        <Alert
+          visible={visible}
+          title="Multiline title should be centered"
+          body="Alert body type that can run over multiple lines, but should be kept short."
+          pictogram="warning"
+          onRequestClose={toggleOff}
+          preferredActionLabel="Primary"
+          onPreferredActionPress={onPressConsole}
+          dismissActionLabel={singleAction ? undefined : 'Cancel'}
+        />
+      </>
+    );
+  };
+
   const VisibleAlert = ({ singleAction }: { singleAction?: boolean }) => {
     const [visible, { toggleOff }] = useToggler(true);
 
@@ -138,6 +158,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
 
   return {
     BasicAlert,
+    LongTitleAlert,
     VisibleAlert,
     SingleActionAlert: () => <BasicAlert singleAction />,
     PortalAlert,

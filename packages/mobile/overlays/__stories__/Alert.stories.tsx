@@ -12,7 +12,7 @@ import { ModalBody } from '../Modal/ModalBody';
 import { ModalFooter } from '../Modal/ModalFooter';
 import { PortalProvider } from '../PortalProvider';
 
-const { BasicAlert, SingleActionAlert, PortalAlert } = alertBuilder({
+const { BasicAlert, LongTitleAlert, SingleActionAlert, PortalAlert } = alertBuilder({
   Alert,
   Button,
   PortalProvider,
@@ -61,6 +61,9 @@ const AlertScreen = () => {
     <ExampleScreen>
       <Example title="Basic Alert">
         <BasicAlert />
+      </Example>
+      <Example title="Long Title Alert">
+        <LongTitleAlert />
       </Example>
       <Example title="Single Action Alert">
         <SingleActionAlert />

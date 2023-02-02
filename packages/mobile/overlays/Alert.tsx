@@ -130,7 +130,9 @@ export const Alert = memo(
                     />
                   </Box>
                 )}
-                <TextTitle3 spacingBottom={0.5}>{title}</TextTitle3>
+                <TextTitle3 spacingBottom={0.5} align="center">
+                  {title}
+                </TextTitle3>
                 <TextBody color="foregroundMuted" align="center">
                   {body}
                 </TextBody>

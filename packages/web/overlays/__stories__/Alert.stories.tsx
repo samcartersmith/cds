@@ -9,8 +9,9 @@ export default {
   component: Alert,
 };
 
-export const { BasicAlert, VisibleAlert, SingleActionAlert, PortalAlert } = alertBuilder({
-  Alert,
-  Button,
-  PortalProvider,
-} as CreateAlertProps);
+export const { BasicAlert, LongTitleAlert, VisibleAlert, SingleActionAlert, PortalAlert } =
+  alertBuilder({
+    Alert,
+    Button,
+    PortalProvider,
+  } as CreateAlertProps);
