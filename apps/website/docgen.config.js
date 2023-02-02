@@ -89,6 +89,7 @@ module.exports = {
     'controls/NativeTextArea',
     'controls/RadioGroup',
     'controls/SearchInput',
+    'controls/SegmentedControl',
     'controls/Select',
     'controls/SelectOption',
     'controls/Switch',

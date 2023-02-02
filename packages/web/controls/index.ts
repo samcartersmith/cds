@@ -5,6 +5,7 @@ export * from './InputIconButton';
 export * from './NativeTextArea';
 export * from './RadioGroup';
 export * from './SearchInput';
+export * from './SegmentedControl';
 export * from './Select';
 export * from './SelectOption';
 export * from './Switch';

@@ -3,4 +3,37 @@ title: Segmented Control
 slug: /components/segmented-control
 ---
 
-<Page />
+# Segmented Control
+
+Segmented Controls allow users to switch through different views of data on a page. Use segmented control when there are two or three views to toggle between. For more than three view options, we recommend using another selection component like Select Input.
+
+## Principles
+
+Single selection
+Segmented controllers must always have a selected segment/view, only one segment/view can be selected at once.
+
+Large content groups
+The content switcher is used for displaying larger groups of content or data. If a decision is binary (“Yes/No” or “On/Off” use the switch.
+
+Use segmented controlers when there are two or three views to toggle between. For more than three view options, we recommend using another selection component like Select Input.
+
+- ✅ Use the segmented controller to switch between data and content views
+- ❌ Have more than 3 segments within a view.
+- ❌ Mix icon and text segments together.
+
+## Usage
+
+<ImportBlock name="SegmentedControl" from="@cbhq/cds-web/controls/SegmentedControl" />
+
+### Example
+
+```jsx live
+function Example() {
+  const options = {
+    btc: 'Bitcoin',
+    eth: 'Ethereum',
+  };
+
+  return <SegmentedControl options={options} />;
+}
+```

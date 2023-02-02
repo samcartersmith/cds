@@ -46,6 +46,7 @@ export const insetFocusRing = css`
   &:focus {
     outline: none;
   }
+  &.${focusVisibleClassName} + label,
   &.${focusVisibleClassName} {
     &::before {
       content: '';
@@ -56,6 +57,24 @@ export const insetFocusRing = css`
       bottom: ${INSET_FOCUS_RING_PADDING}px;
       border: ${borderWidth.focusRing} solid ${palette.primary};
       border-radius: ${borderRadius.compact};
+    }
+  }
+  &.${focusVisibleClassName} + label {
+    &::before {
+      border-radius: ${borderRadius.roundedNone};
+    }
+  }
+  &.${focusVisibleClassName}:first-of-type + label {
+    &::before {
+      border-top-left-radius: ${borderRadius.rounded};
+      border-bottom-left-radius: ${borderRadius.rounded};
+    }
+  }
+
+  &.${focusVisibleClassName}:last-of-type + label {
+    &::before {
+      border-top-right-radius: ${borderRadius.rounded};
+      border-bottom-right-radius: ${borderRadius.rounded};
     }
   }
 `;
