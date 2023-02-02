@@ -31,14 +31,14 @@
         "generatedFontFormats": [
           {
             "generatedFontFormat": "woff2",
-            "generatedFontDirectory": "./src/__generated__/font",
-            "generatedCssDirectory": "./src/__generated__/font",
+            "generatedFontDirectory": "./font",
+            "generatedCssDirectory": "./font",
             "generatedCssFileName": "icon-font",
             "hashed": true
           },
           {
             "generatedFontFormat": "ttf",
-            "generatedFontDirectory": "./src/__generated__/font"
+            "generatedFontDirectory": "./font"
           }
         ]
       }
