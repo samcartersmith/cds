@@ -7,9 +7,11 @@ import { Divider } from '../../layout/Divider';
 import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 
 export function CarouselItem({
-  illustration,
+  pictogram,
+  spotSquare,
 }: {
-  illustration: NonNullable<AnnouncementCardProps['illustration']>;
+  pictogram?: AnnouncementCardProps['pictogram'];
+  spotSquare?: AnnouncementCardProps['spotSquare'];
 }) {
   const handleOnPress = useCallback(() => {
     console.log('pressed card');
@@ -19,7 +21,8 @@ export function CarouselItem({
     <AnnouncementCard
       title="Title/Headline"
       description="You can fit up to fifty two chararcters on 2 lines"
-      illustration={illustration}
+      spotSquare={spotSquare}
+      pictogram={pictogram}
       onPress={handleOnPress}
     />
   );
@@ -57,10 +60,10 @@ export function ProgressBarsExample() {
         onDismissItem={onDismissItem}
         onDismissLastItem={onDismissLastItem}
         items={[
-          <CarouselItem key="item1" illustration="adaStaking" />,
-          <CarouselItem key="item2" illustration="addressBook" />,
-          <CarouselItem key="item3" illustration="announcementAdvancedTrading" />,
-          <CarouselItem key="item4" illustration="worldwide" />,
+          <CarouselItem key="item1" spotSquare="adaStaking" />,
+          <CarouselItem key="item2" pictogram="addressBook" />,
+          <CarouselItem key="item3" spotSquare="announcementAdvancedTrading" />,
+          <CarouselItem key="item4" pictogram="worldwide" />,
         ]}
       />
       <Divider />

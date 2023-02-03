@@ -72,7 +72,12 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(
     return (
       <ThemeProvider name="default" scale="xSmall" spectrum={item.spectrum}>
         <VStack overflow="hidden" background width={ITEM_WIDTH}>
-          <Illustration name={item.name} dimension={dimension} scaleMultiplier={scaleMultiplier} />
+          <Illustration
+            type={type}
+            name={item.name}
+            dimension={dimension}
+            scaleMultiplier={scaleMultiplier}
+          />
           <TextLegal ellipsize="tail">{item.name}</TextLegal>
         </VStack>
       </ThemeProvider>

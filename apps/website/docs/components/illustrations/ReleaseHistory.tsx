@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import illustrationReleaseHistory from '@site/static/data/illustration/releaseHistory.json';
 import { css } from 'linaria';
+import type { IllustrationVariant } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common';
 import { illustrationDimensionDefaults } from '@cbhq/cds-common/tokens/illustrations';
 import { Button } from '@cbhq/cds-web/buttons';
@@ -70,6 +71,7 @@ const HistoryDetails = ({ info }: HistoryDetailsType) => {
 
         const illustration = (
           <Illustration
+            type={variant as IllustrationVariant}
             name={spectrumLessName as never}
             dimension={
               illustrationDimensionDefaults[variant as keyof typeof illustrationDimensionDefaults]

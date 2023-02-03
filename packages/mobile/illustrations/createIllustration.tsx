@@ -8,7 +8,7 @@ import { getDefaultSizeObjectForIllustration } from '@cbhq/cds-common/utils/getD
 
 import { useIllustrationXml } from './useIllustrationXml';
 
-export function createIllustration<T extends IllustrationVariant>(variant?: T) {
+export function createIllustration<T extends IllustrationVariant>(variant: T) {
   const defaultSize = getDefaultSizeObjectForIllustration(variant);
 
   return memo(function Illustration({

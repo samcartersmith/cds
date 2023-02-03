@@ -78,15 +78,19 @@ const KBarResultItem = memo(
       }, [action.name, searchPrefix]);
 
       const media = useMemo(() => {
-        if (action.illustration) {
-          return <Illustration name={action.illustration} dimension="48x48" />;
+        if (action.spotSquare) {
+          return <Illustration type="spotSquare" name={action.spotSquare} dimension="48x48" />;
+        }
+
+        if (action.pictogram) {
+          return <Illustration type="pictogram" name={action.pictogram} dimension="48x48" />;
         }
 
         if (action.image) {
           return <RemoteImage size="xl" alt={action.name} source={action.image} />;
         }
         return undefined;
-      }, [action.illustration, action.image, action.name]);
+      }, [action.image, action.name, action.pictogram, action.spotSquare]);
 
       return (
         <KBarListCell

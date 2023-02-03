@@ -54,7 +54,8 @@ declare module '@theme/KBarListCell' {
 declare module '@theme/KBarResultItem' {
   export type KBarResultItemProps = {
     action: import('kbar').ActionImpl & {
-      illustration?: import('@cbhq/cds-web').IllustrationNames;
+      spotSquare?: import('@cbhq/cds-web').SpotSquareName;
+      pictogram?: import('@cbhq/cds-web').PictogramName;
       image?: string;
     };
     active: boolean;

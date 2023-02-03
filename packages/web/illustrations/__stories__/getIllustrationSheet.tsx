@@ -54,7 +54,7 @@ export function getIllustrationSheet(type: IllustrationVariant) {
                 height={ITEM_SIZE + 20}
                 overflow="hidden"
               >
-                <Illustration name={name} dimension={ITEM_DIMENSION} />
+                <Illustration type={type} name={name} dimension={ITEM_DIMENSION} />
                 <TextLegal as="p" noWrap>
                   {name}
                 </TextLegal>

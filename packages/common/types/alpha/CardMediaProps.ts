@@ -1,13 +1,9 @@
-import type { IllustrationVariant } from '../IllustrationNames';
-import type { IllustrationBaseProps } from '../IllustrationProps';
+import type { PictogramName, SpotSquareName } from '../IllustrationProps';
 import type { AspectRatio } from '../Shape';
 
 import type { CardRemoteImageDimensionValue } from './CardRemoteImageProps';
 
 export type CardMediaPlacement = 'start' | 'above' | 'end';
-export type CardMediaSize = Extract<IllustrationVariant, 'spotSquare' | 'pictogram'>;
-export type CardMediaIllustrationProps = IllustrationBaseProps<CardMediaSize>;
-export type CardMediaIllustrationName = CardMediaIllustrationProps['name'];
 
 export type CardMediaImageSizeObject =
   | {
@@ -30,7 +26,11 @@ export type CardMediaProps = {
       src: string;
     }
   | {
-      type: 'illustration';
-      name: CardMediaIllustrationName;
+      type: 'spotSquare';
+      name: SpotSquareName;
+    }
+  | {
+      type: 'pictogram';
+      name: PictogramName;
     }
 );

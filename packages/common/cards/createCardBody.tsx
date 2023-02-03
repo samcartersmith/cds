@@ -44,7 +44,8 @@ export function createCardBody<OnPressFn>({
     onActionPress,
     actionLabel,
     action: actionProp,
-    illustration,
+    pictogram,
+    spotSquare,
     image,
     media: mediaProp,
     spacing = gutter,
@@ -55,11 +56,26 @@ export function createCardBody<OnPressFn>({
     spacingStart = spacingHorizontal,
     spacingEnd = spacingHorizontal,
     numberOfLines = 3,
-    maxWidth = !!illustration || !!image || !!mediaProp ? '70%' : undefined,
-    minHeight = !!illustration || !!image || !!mediaProp ? defaultMediaSize.height : undefined,
     accessibilityLabel,
     ...props
   }: CardBodyBaseProps<OnPressFn>) {
+    let mediaContent: React.ReactNode = mediaProp;
+
+    if (spotSquare) {
+      mediaContent = <CardMedia type="spotSquare" placement={mediaPlacement} name={spotSquare} />;
+    }
+
+    if (pictogram) {
+      mediaContent = <CardMedia type="pictogram" placement={mediaPlacement} name={pictogram} />;
+    }
+
+    if (image) {
+      mediaContent = <CardMedia type="image" placement={mediaPlacement} src={image} />;
+    }
+
+    const maxWidth = props.maxWidth ?? !!mediaContent ? '70%' : undefined;
+    const minHeight = props.minHeight ?? !!mediaContent ? defaultMediaSize.height : undefined;
+
     const action = useMemo(() => {
       if (actionLabel && onActionPress) {
         return (
@@ -75,31 +91,6 @@ export function createCardBody<OnPressFn>({
       }
       return actionProp;
     }, [accessibilityLabel, actionLabel, actionProp, onActionPress, testID]);
-
-    const media = useMemo(() => {
-      if (mediaProp) return mediaProp;
-      if (illustration) {
-        return (
-          <CardMedia
-            type="illustration"
-            name={illustration}
-            placement={mediaPlacement}
-            testID={`${testID}-media`}
-          />
-        );
-      }
-      if (image) {
-        return (
-          <CardMedia
-            type="image"
-            src={image}
-            placement={mediaPlacement}
-            testID={`${testID}-media`}
-          />
-        );
-      }
-      return null;
-    }, [illustration, image, mediaPlacement, mediaProp, testID]);
 
     /** TODO: Add ellipsize functionality to web and remove this conditional */
     const textProps: TextProps = useMemo(
@@ -119,7 +110,7 @@ export function createCardBody<OnPressFn>({
           spacingBottom={spacingBottom}
           {...props}
         >
-          {media}
+          {mediaContent}
           <VStack gap={1} spacingStart={spacingStart} spacingEnd={spacingEnd}>
             <TextHeadline {...textProps} testID={`${testID}-title`}>
               {title}
@@ -155,7 +146,7 @@ export function createCardBody<OnPressFn>({
           </TextLabel2>
           {action}
         </VStack>
-        {media}
+        {mediaContent}
       </HStack>
     );
   });

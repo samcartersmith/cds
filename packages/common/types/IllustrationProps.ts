@@ -1,25 +1,27 @@
 import { illustrationDimensions } from '../tokens/illustrations';
 
-import {
+import type {
   IllustrationHeroSquareNames,
   IllustrationPictogramNames,
   IllustrationSpotRectangleNames,
   IllustrationSpotSquareNames,
+  IllustrationVariant,
 } from './IllustrationNames';
-import { SharedProps } from './SharedProps';
+import type { SharedProps } from './SharedProps';
 
-export type IllustrationNames =
-  | IllustrationHeroSquareNames
-  | IllustrationSpotRectangleNames
-  | IllustrationPictogramNames
-  | IllustrationSpotSquareNames;
+export type IllustrationNames = HeroSquareName | SpotSquareName | SpotRectangleName | PictogramName;
+
+export type HeroSquareName = IllustrationHeroSquareNames;
+export type PictogramName = IllustrationPictogramNames;
+export type SpotRectangleName = IllustrationSpotRectangleNames;
+export type SpotSquareName = IllustrationSpotSquareNames;
+export type IllustrationType = IllustrationVariant;
 
 export type IllustrationNamesMap = {
-  all: IllustrationNames;
-  heroSquare: IllustrationHeroSquareNames;
-  spotRectangle: IllustrationSpotRectangleNames;
-  pictogram: IllustrationPictogramNames;
-  spotSquare: IllustrationSpotSquareNames;
+  heroSquare: HeroSquareName;
+  spotRectangle: SpotRectangleName;
+  pictogram: PictogramName;
+  spotSquare: SpotSquareName;
 };
 
 type HeroSquareDimension = (typeof illustrationDimensions.heroSquare)[number];
@@ -34,7 +36,6 @@ export type IllustrationDimension =
   | PictogramDimension;
 
 export type IllustrationDimensionsMap = {
-  all: IllustrationDimension;
   heroSquare: HeroSquareDimension;
   /** @deprecated spotSquare size 120x120 is deprecated. Use size 96x96 */
   spotSquare: SpotSquareDimension;
@@ -102,3 +103,17 @@ export type SpotRectangleProps = IllustrationBaseProps<'spotRectangle'> & {
    * */
   dimension?: IllustrationDimensionsMap['spotRectangle'];
 };
+
+export type IllustrationPropsDiscriminatedUnion =
+  | ({
+      type: 'heroSquare';
+    } & HeroSquareProps)
+  | ({
+      type: 'spotSquare';
+    } & SpotSquareProps)
+  | ({
+      type: 'spotRectangle';
+    } & SpotRectangleProps)
+  | ({
+      type: 'pictogram';
+    } & PictogramProps);

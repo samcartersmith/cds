@@ -13,26 +13,21 @@ import {
   illustrationDimensionDefaults,
   illustrationDimensions,
 } from '@cbhq/cds-common/tokens/illustrations';
-import {
-  IllustrationHeroSquareNames,
-  IllustrationPictogramNames,
-  IllustrationSpotRectangleNames,
-  IllustrationSpotSquareNames,
+import type {
+  HeroSquareName,
   IllustrationVariant,
-} from '@cbhq/cds-common/types/IllustrationNames';
+  PictogramName,
+  SpotRectangleName,
+  SpotSquareName,
+} from '@cbhq/cds-common/types';
 import { SearchInput, Select, SelectOption } from '@cbhq/cds-web/controls';
 import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
 import { Box, HStack, VStack } from '@cbhq/cds-web/layout';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
 
 const variantToNamesMap: Record<
-  string,
-  readonly (
-    | IllustrationHeroSquareNames
-    | IllustrationSpotRectangleNames
-    | IllustrationPictogramNames
-    | IllustrationSpotSquareNames
-  )[]
+  IllustrationVariant,
+  readonly (HeroSquareName | SpotRectangleName | PictogramName | SpotSquareName)[]
 > = {
   heroSquare: heroSquareNames,
   spotRectangle: spotRectangleNames,
@@ -160,7 +155,7 @@ export const IllustrationSheet = function IllustrationSheet({
                   })
                   .map((filteredName) => (
                     <VStack spacing={3} alignItems="center" key={filteredName}>
-                      <Illustration name={filteredName} dimension={dim} />
+                      <Illustration type={variant} name={filteredName} dimension={dim} />
                       <TextLabel1 align="center" as="p" spacing={2}>
                         {filteredName}
                       </TextLabel1>

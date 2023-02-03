@@ -41,7 +41,8 @@ export function createFeedCard<OnPressFn>({
     avatar,
     author,
     metadata,
-    illustration,
+    pictogram,
+    spotSquare,
     image,
     mediaPlacement = platform === 'web' ? 'start' : 'above',
     title,
@@ -94,7 +95,8 @@ export function createFeedCard<OnPressFn>({
         <CardBody
           title={title}
           description={description}
-          illustration={illustration}
+          pictogram={pictogram}
+          spotSquare={spotSquare}
           image={image}
           mediaPlacement={mediaPlacement}
           /** Only override default CardBody spacing if footer is present */

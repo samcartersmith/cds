@@ -1,5 +1,7 @@
+import type { PictogramName, SpotSquareName } from '../IllustrationProps';
+
 import type { CardBoxProps } from './CardBaseProps';
-import type { CardMediaIllustrationName, CardMediaPlacement } from './CardMediaProps';
+import type { CardMediaPlacement } from './CardMediaProps';
 
 export type CardBodyBaseProps<OnPressFn> = {
   /** Text to be displayed in TextHeadline. */
@@ -10,8 +12,10 @@ export type CardBodyBaseProps<OnPressFn> = {
    * @default end
    */
   mediaPlacement?: CardMediaPlacement;
-  /** The name of the Illustration to use in CardMedia. */
-  illustration?: CardMediaIllustrationName;
+  /** The name of the SpotSquare Illustration to use in CardMedia. */
+  spotSquare?: SpotSquareName;
+  /** The name of the Pictogram Illustration to use in CardMedia. */
+  pictogram?: PictogramName;
   /** The image url to use in the CardMedia. Will not be used if illustration is present. */
   image?: string;
   /**

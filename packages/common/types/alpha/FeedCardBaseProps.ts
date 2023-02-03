@@ -1,8 +1,9 @@
+import { PictogramName, SpotSquareName } from '../IllustrationProps';
 import type { SharedProps } from '../SharedProps';
 
 import type { ButtonBaseProps } from './ButtonBaseProps';
 import type { CardBaseProps } from './CardBaseProps';
-import type { CardMediaIllustrationName, CardMediaPlacement } from './CardMediaProps';
+import type { CardMediaPlacement } from './CardMediaProps';
 import type { IconButtonBaseProps } from './IconButtonBaseProps';
 import type { LikeButtonBaseProps } from './LikeButtonBaseProps';
 
@@ -13,8 +14,10 @@ export type FeedCardBaseProps<OnPressFn> = {
   author?: string;
   /** Metadata to be displayed under author text. */
   metadata?: string;
-  /** The name of the Illustration to use in CardMedia. */
-  illustration?: CardMediaIllustrationName;
+  /** The name of the SpotSquare Illustration to use in CardMedia. */
+  spotSquare?: SpotSquareName;
+  /** The name of the Pictogram Illustration to use in CardMedia. */
+  pictogram?: PictogramName;
   /** The image url to use in the CardMedia. Will not be used if illustration is present. */
   image?: string;
   /** Above places media above text content, start & end places media to the side of text content

@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import type { IllustrationNames } from '@cbhq/cds-common';
+import type { PictogramName, SpotSquareName } from '@cbhq/cds-common';
 import { CardBody } from '@cbhq/cds-web/alpha/CardBody';
 import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
 import { Box } from '@cbhq/cds-web/layout/Box';
@@ -8,27 +8,21 @@ import useGoToLinkHandler from '@cbhq/docusaurus-theme/src/theme/useGoToLinkHand
 export type LandingPageCategoryItemProps = {
   title: string;
   description: string;
-  illustration: IllustrationNames;
   actionLabel: string;
   href: string;
+  /** The name of the Pictogram Illustration to use in CardMedia. */
+  pictogram?: PictogramName;
+  /** The name of the SpotSquare Illustration to use in CardMedia. */
+  spotSquare?: SpotSquareName;
 };
-
-type LandingIllustrationProps = { name: IllustrationNames };
-
-function LandingIllustration({ name }: LandingIllustrationProps) {
-  return (
-    <Box spacingStart={3}>
-      <Illustration name={name} dimension="48x48" />
-    </Box>
-  );
-}
 
 const LandingPageCategoryItem = memo(function LandingPageCategoryItem({
   title,
   description,
-  illustration,
   actionLabel,
   href,
+  pictogram,
+  spotSquare,
 }: LandingPageCategoryItemProps) {
   const handlePress = useGoToLinkHandler(href);
   return (
@@ -37,7 +31,12 @@ const LandingPageCategoryItem = memo(function LandingPageCategoryItem({
         title={title}
         description={description}
         mediaPlacement="above"
-        media={<LandingIllustration name={illustration} />}
+        media={
+          <Box spacingStart={3}>
+            {pictogram && <Illustration type="pictogram" name={pictogram} dimension="48x48" />}
+            {spotSquare && <Illustration type="spotSquare" name={spotSquare} dimension="48x48" />}
+          </Box>
+        }
         actionLabel={actionLabel}
         justifyContent="space-between"
         onActionPress={handlePress}

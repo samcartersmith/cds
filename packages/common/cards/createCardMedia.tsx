@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 
 import { defaultMediaDimension, defaultMediaSize } from '../tokens/card';
+import type { IllustrationPropsDiscriminatedUnion } from '../types';
 import type {
-  CardMediaIllustrationProps,
   CardMediaImageSizeObject,
   CardMediaPlacement,
   CardMediaProps,
@@ -10,7 +10,7 @@ import type {
 } from '../types/alpha';
 
 type CreateCardMediaParams = {
-  Illustration: React.ComponentType<React.PropsWithChildren<CardMediaIllustrationProps>>;
+  Illustration: React.ComponentType<React.PropsWithChildren<IllustrationPropsDiscriminatedUnion>>;
   CardRemoteImage: React.ComponentType<React.PropsWithChildren<CardRemoteImageProps>>;
 };
 
@@ -28,9 +28,22 @@ export function createCardMedia({ Illustration, CardRemoteImage }: CreateCardMed
   };
 
   const CardMedia = memo(function CardMedia(props: CardMediaProps) {
-    if (props.type === 'illustration') {
+    if (props.type === 'spotSquare') {
       return (
         <Illustration
+          type="spotSquare"
+          dimension={defaultMediaDimension}
+          name={props.name}
+          testID={props.testID}
+          alt={props.alt ?? ''}
+        />
+      );
+    }
+
+    if (props.type === 'pictogram') {
+      return (
+        <Illustration
+          type="pictogram"
           dimension={defaultMediaDimension}
           name={props.name}
           testID={props.testID}

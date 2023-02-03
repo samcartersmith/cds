@@ -23,7 +23,7 @@ const sidebars = {
       collapsed: false,
       customProps: {
         kbar: {
-          illustration: 'commerceNavigation',
+          pictogram: 'commerceNavigation',
           description: 'Get started with the Coinbase Design System.',
         },
       },
@@ -109,7 +109,7 @@ const sidebars = {
       label: 'Assets',
       customProps: {
         kbar: {
-          illustration: 'connectNavigation',
+          pictogram: 'connectNavigation',
           description: 'Illustration, icons, and logos for building immersive experiences.',
         },
       },
@@ -199,7 +199,7 @@ const sidebars = {
       label: 'Components',
       customProps: {
         kbar: {
-          illustration: 'rosettaNavigation',
+          pictogram: 'rosettaNavigation',
           description: 'Design guidelines, figma resources and code components',
         },
       },
@@ -617,7 +617,7 @@ const sidebars = {
       ],
       customProps: {
         kbar: {
-          illustration: 'participateNavigation',
+          pictogram: 'participateNavigation',
           description: 'How pieces work together in your experiences.',
         },
       },
@@ -627,7 +627,7 @@ const sidebars = {
       label: 'Recipes',
       customProps: {
         kbar: {
-          illustration: 'earnNavigation',
+          pictogram: 'earnNavigation',
           description: 'Examples of complex CDS compositions to build off of.',
         },
       },
@@ -652,7 +652,7 @@ const sidebars = {
       label: 'Abstract Components',
       customProps: {
         kbar: {
-          illustration: 'walletNavigation',
+          pictogram: 'walletNavigation',
           description: 'Abstractions that are UI agnostic.',
         },
       },
@@ -751,7 +751,7 @@ const sidebars = {
       label: 'Resources',
       customProps: {
         kbar: {
-          illustration: 'pluginBrowser',
+          pictogram: 'pluginBrowser',
           description: 'Everything you need to work with CDS.',
         },
       },
