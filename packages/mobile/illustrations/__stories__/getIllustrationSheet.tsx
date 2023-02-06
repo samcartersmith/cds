@@ -8,21 +8,25 @@ import {
 } from '@cbhq/cds-common';
 import { convertDimensionToSize } from '@cbhq/cds-common/utils/convertDimensionToSize';
 import { convertSizeWithMultiplier } from '@cbhq/cds-common/utils/convertSizeWithMultiplier';
-import heroSquareImages from '@cbhq/cds-illustrations/__generated__/heroSquare/data/names';
-import pictogramImages from '@cbhq/cds-illustrations/__generated__/pictogram/data/names';
-import spotRectangleImages from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/names';
-import spotSquareImages from '@cbhq/cds-illustrations/__generated__/spotSquare/data/names';
+import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
+import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
+import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
+import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/versionMap';
 
 import { Divider, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { TextLegal } from '../../typography';
 import { Illustration } from '../Illustration';
 
+function keys<T>(obj: { [key in keyof T]: T[key] }) {
+  return Object.keys(obj) as unknown as Extract<keyof T, string>[];
+}
+
 const images = {
-  heroSquare: heroSquareImages,
-  pictogram: pictogramImages,
-  spotRectangle: spotRectangleImages,
-  spotSquare: spotSquareImages,
+  heroSquare: keys(heroSquareVersionMap),
+  pictogram: keys(pictogramVersionMap),
+  spotRectangle: keys(spotRectangleVersionMap),
+  spotSquare: keys(spotSquareVersionMap),
 };
 
 export function getIllustrationSheet<Type extends IllustrationVariant>(

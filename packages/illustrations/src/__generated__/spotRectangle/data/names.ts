@@ -10,134 +10,133 @@ import type { SpotRectangleName } from '../types/SpotRectangleName';
  * This is being used to display a sheet of all SpotRectangle illustration on the CDS website.
  */
 const names: SpotRectangleName[] = [
-  'accessToAdvancedCharts', // original name accessToAdvancedChartsAlt
+  'accessToAdvancedCharts',
   'addBank',
-  'advancedTradingChartsIndicatorsCandles', // original name advancedTradingChartsIndicatorsCandlesRectangle
+  'advancedTradingChartsIndicatorsCandles',
   'apiKey',
-  'backedByUsDollar', // original name backedByUsDollarRectangle
-  'basedInUsa', // original name basedInUsaRectangle
-  'blockchain', // original name blockchainRectangle
-  'borrowWallet', // original name borrowWalletRectangle
+  'backedByUsDollar',
+  'basedInUsa',
+  'blockchain',
+  'borrowWallet',
   'bridging',
-  'browserExtension', // original name browserExtensionRectangle
+  'browserExtension',
   'browserHistory',
-  'cardBoosted', // original name cardBoostedRectangle
+  'cardBoosted',
   'cardWaitlist',
   'cbEth',
-  'coinbaseOneRewards', // original name cbOneRewardsSpotRectangle
-  'coinbaseOneLogo', // original name coinbaseOneLogoSpotRectangle
-  'coinbaseOnePhoneLightning', // original name coinbaseOnePhoneLightningAlt
-  'collectingNfts', // original name collectingNftsRectangle
-  'completeAQuiz', // original name completeAQuizRectangle
-  'congratulationsOnEarningCrypto', // original name congratulationsOnEarningCryptoRectangle
+  'clawMachinePig',
+  'coinbaseOneLogo',
+  'coinbaseOnePhoneLightning',
+  'coinbaseOneRewards',
+  'collectingNfts',
+  'completeAQuiz',
+  'congratulationsOnEarningCrypto',
   'creditCardExcitement',
-  'crossBorderPayments', // original name crossBorderPaymentsRectangle
-  'cryptoAssets', // original name cryptoAssetsRectangle
-  'cryptoEconomy', // original name cryptoEconomyRectangle
-  'cryptoForBeginners', // original name cryptoForBeginnersRectangle
-  'cryptoPortfolio', // original name cryptoPortfolioRectangle
-  'cryptoWallet', // original name cryptoWalletRectangle
+  'crossBorderPayments',
+  'cryptoAssets',
+  'cryptoEconomy',
+  'cryptoForBeginners',
+  'cryptoPortfolio',
+  'cryptoWallet',
   'currency',
-  'decentralization', // original name decentralizationRectangle
-  'decentralizedWebWeb3', // original name decentralizedWebWeb3Rectangle
-  'defiDecentralizedBorrowingLending', // original name defiDecentralizedBorrowingLendingRectangle
-  'defiDecentralizedTradingExchange', // original name defiDecentralizedTradingExchangeRectangle
+  'decentralization',
+  'decentralizedWebWeb3',
+  'defiDecentralizedBorrowingLending',
+  'defiDecentralizedTradingExchange',
   'diamond',
-  'didDecentralizedIdentity', // original name didDecentralizedIdentityRectangle
-  'digitalCollectibles', // original name digitalCollectiblesRectangle
+  'didDecentralizedIdentity',
+  'digitalCollectibles',
   'downloadCoinbaseWalletArrow',
   'downloadingStatement',
-  'earn', // original name earnRectangle
-  'earnToLearn', // original name earnToLearnRectangle
+  'earn',
+  'earnToLearn',
   'emptyNfts',
-  'clawMachinePig', // original name emptyStateClawMachinePig
-  'ratFoundWallet', // original name emptyStateRatFoundWallet
-  'emptyTrading', // original name emptyTradingSpotRectangle
-  'encryptedEverything', // original name encryptedEverythingRectangle
+  'emptyTrading',
+  'encryptedEverything',
   'eth2SellSend',
   'ethAddress',
-  'ethStakeOrWrap', // original name ethStakeOrWrapRectangle
+  'ethStakeOrWrap',
   'ethStakingMovement',
-  'ethStakingRewards', // original name ethStakingRewardsHorizontal
-  'ethWrappedStakingRewards', // original name ethStakingRewardsHorizontalTwo
-  'fileYourCryptoTaxes', // original name fileYourCryptoTaxesAlt
-  'fileYourCryptoTaxesCheck', // original name fileYourCryptoTaxesCheckAlt
-  'focusLimitOrders', // original name focusLimitOrdersAlt
-  'futures', // original name futuresRectangle
-  'gainsAndLosses', // original name gainsAndLossesRectangle
-  'gasFeesNetworkFees', // original name gasFeesNetworkFeesRectangle
-  'getStartedInMinutes', // original name getStartedInMinutesRectangle
+  'ethStakingRewards',
+  'ethWrappedStakingRewards',
+  'fileYourCryptoTaxes',
+  'fileYourCryptoTaxesCheck',
+  'focusLimitOrders',
+  'futures',
+  'gainsAndLosses',
+  'gasFeesNetworkFees',
+  'getStartedInMinutes',
   'giftBoxRewards',
-  'globalTransactions', // original name globalTransactionsRectangle
-  'governance', // original name governanceRectangle
-  'hardwareWallets', // original name hardwareWalletsRectangle
+  'globalTransactions',
+  'governance',
+  'hardwareWallets',
   'highFees',
-  'insuranceProtection', // original name insuranceProtectionRectangle
-  'invest', // original name investRectangle
-  'layeredNetworks', // original name layeredNetworksRectangle
+  'insuranceProtection',
+  'invest',
+  'layeredNetworks',
   'ledgerFailed',
   'ledgerSignatureRejected',
-  'leverage', // original name leverageRectangle
+  'leverage',
   'linkCoinbaseWallet',
-  'linkingYourWalletToYourCoinbaseAccount', // original name linkingYourWalletToYourCoinbaseAccountRectangle
+  'linkingYourWalletToYourCoinbaseAccount',
   'login',
-  'margin', // original name marginRectangle
-  'marginWarning', // original name marginWarningRectangle
-  'mining', // original name miningRectangle
-  'moneyDecentralized', // original name moneyDecentralizedRectangle
-  'multicoinSupport', // original name multicoinSupportRectangle
-  'multiPlatformMobileAppBrowserExtension', // original name multiPlatformMobileAppBrowserExtensionRectangle
-  'multipleAccountsWalletsForOneUser', // original name multipleAccountsWalletsForOneUserRectangle
-  'nft', // original name nftSpotRectangle. missing from doc
-  'noFees', // original name noFeesRectangle
+  'margin',
+  'marginWarning',
+  'mining',
+  'moneyDecentralized',
+  'multiPlatformMobileAppBrowserExtension',
+  'multicoinSupport',
+  'multipleAccountsWalletsForOneUser',
+  'nft',
+  'noFees',
   'noTransactions',
-  'optInPushNotificationsEmail', // original name optInPushNotificationsEmailRectangle
-  'p2pPayments', // original name p2pPaymentsRectangle
+  'optInPushNotificationsEmail',
+  'p2pPayments',
   'portfolioOverview',
-  'portfolioPerformance', // original name portfolioPerformanceRectangle
-  'poweredByEthereum', // original name poweredByEthereumRectangle
-  'primeDeFi', // original name primeDeFiRectangle
-  'primeEarn', // original name primeEarnRectangle
+  'portfolioPerformance',
+  'poweredByEthereum',
+  'primeDeFi',
+  'primeEarn',
   'primeOrderConfirmation',
   'primePriceLadder',
-  'primeStaking', // original name primeStakingRectangle
+  'primeStaking',
   'primeTradePreferences',
   'protectedNotes',
-  'quickAndSimple', // original name quickAndSimpleRectangle
+  'quickAndSimple',
   'ratDashboard',
+  'ratFoundWallet',
   'ratMigration',
   'ratMigrationerror',
-  'referralsBitcoin', // original name referralsBitcoinRect
+  'referralsBitcoin',
   'referralsBonus',
-  'referralsBonus', // original name referralsBonusGray
-  'retailUSDCRewards', // original name retailUSDCRewardsSpotRectangle
-  'secureAndTrusted', // original name secureAndTrustedRectangle
-  'secureGlobalTransactions', // original name secureGlobalTransactionsRectangle
-  'secureStorage', // original name secureStorageRectangle
-  'selfCustody', // original name selfCustodyRectangle
-  'semiCustodial', // original name semiCustodialRectangle
-  'sendCryptoFaster', // original name sendCryptoFasterHorizontal
+  'retailUSDCRewards',
+  'secureAndTrusted',
+  'secureGlobalTransactions',
+  'secureStorage',
+  'selfCustody',
+  'semiCustodial',
+  'sendCryptoFaster',
   'sendingCrypto',
-  'shareOnSocialMedia', // original name shareOnSocialMediaRectangle
-  'sidechain', // original name sidechainRectangle
-  'stableValue', // original name stableValueRectangle
-  'staking', // original name stakingRectangle
-  'startToday', // original name startTodayRectangle
-  'stayInControlSelfHostedWalletsStorage', // original name stayInControlSelfHostedWalletsStorageRectangle
-  'stressTestedColdStorage', // original name stressTestedColdStorageRectangle
-  'switchAdvancedToSimpleTrading', // original name switchAdvancedToSimpleTradingAlt
-  'taxesDetails', // original name taxesDetailsRectangle
+  'shareOnSocialMedia',
+  'sidechain',
+  'stableValue',
+  'staking',
+  'startToday',
+  'stayInControlSelfHostedWalletsStorage',
+  'stressTestedColdStorage',
+  'switchAdvancedToSimpleTrading',
+  'taxesDetails',
   'trade',
   'transferCoins',
   'transferEth',
-  'transferFunds', // original name transferFundsGray
-  'trendingHotAssets', // original name trendingHotAssetsRectangle
+  'transferFunds',
+  'trendingHotAssets',
   'uob',
   'walletReconnect',
   'walletReconnectSuccess',
-  'walletSecurity', // original name walletSecurityRectangle
-  'watchVideos', // original name watchVideosRectangle
-  'yieldHolding', // original name yieldHoldingAlt
+  'walletSecurity',
+  'watchVideos',
+  'yieldHolding',
 ];
 
 export default names;

@@ -21,10 +21,10 @@ import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 
 const variantToNamesMap = {
-  heroSquare: [...new Set(heroSquareNames)], // TODO: remove - temproary until we remove duplicate names required for percy during illustration migration
-  spotRectangle: [...new Set(spotRectangleNames)], // TODO: remove - temproary until we remove duplicate names required for percy during illustration migration
-  spotSquare: [...new Set(spotSquareNames)], // TODO: remove - temproary until we remove duplicate names required for percy during illustration migration
-  pictogram: [...new Set(pictogramNames)], // TODO: remove - temproary until we remove duplicate names required for percy during illustration migration
+  heroSquare: heroSquareNames,
+  spotRectangle: spotRectangleNames,
+  spotSquare: spotSquareNames,
+  pictogram: pictogramNames,
 };
 
 const descriptionMap = {
