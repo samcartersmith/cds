@@ -45,29 +45,6 @@
         "parallel": false
       }
     },
-    "illustrations": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "packages/codegen",
-        "commands": [
-          "ts-node ./illustrations/build.ts",
-          "nx run codegen:format",
-          "nx run mobile:format",
-          "nx run codegen:uploadToStaticAssets"
-        ],
-        "parallel": false
-      }
-    },
-    "uploadToStaticAssets": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "packages/codegen/illustrations",
-        "commands": [
-          "./uploadToStaticAssets.sh"
-        ],
-        "parallel": false
-      }
-    },
     "all": {
       "executor": "@cbhq/mono-tasks:run-script",
       "options": {
